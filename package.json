@@ -1,0 +1,20 @@
+{
+  "name": "project-thing",
+  "version": "1.0.0",
+  "description": "",
+  "dependencies": {},
+  "private": true,
+  "devDependencies": {
+    "@11ty/eleventy": "^0.12.1",
+    "tailwindcss": "^2.0.3",
+    "tailwindcss-cli": "^0.1.2"
+  },
+  "scripts": {
+      "build": "NODE_ENV=production npm run tailwind && npm run eleventy",
+      "tailwind": "npx tailwindcss-cli build ./src/css/style.css -o ./_site/css/style.css",
+      "eleventy": "npx @11ty/eleventy"
+  },
+  "keywords": [],
+  "author": "Nick O'Leary",
+  "license": "Apache-2.0"
+}
