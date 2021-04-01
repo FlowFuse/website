@@ -17,8 +17,9 @@ module.exports = {
                     hero: {
                         lighter: "#c3d4d5",
                         DEFAULT: "#779fa1",
-                        darker: "#4b6c6b"
-                    }
+                        darker: "#4b6c6b",
+                    },
+                    600: "#779fa1"
                 }
             }
         }
@@ -26,5 +27,7 @@ module.exports = {
     variants: {
         extend: {},
     },
-    plugins: [],
+    plugins: [
+        require(`@tailwindcss/typography`)
+    ]
 }

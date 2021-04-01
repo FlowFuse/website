@@ -6,13 +6,6 @@
    <stop stop-color="#d6c2c2" offset=".3793"/>
    <stop stop-color="#8e5c5c" offset="1"/>
   </linearGradient>
-  <linearGradient id="PortWalls">
-   <stop stop-color="#9a6a66" offset="0"/>
-   <stop stop-color="#9a6a66" offset=".2369"/>
-   <stop stop-color="#cb9692" offset=".2961"/>
-   <stop stop-color="#cb9692" offset=".9745"/>
-   <stop stop-color="#9a6a66" offset="1"/>
-  </linearGradient>
   <linearGradient id="NodeWalls">
    <stop stop-color="#9a6a66" offset="0"/>
    <stop stop-color="#9a6a66" offset=".4182"/>
@@ -21,7 +14,13 @@
    <stop stop-color="#9a6a66" offset="1"/>
   </linearGradient>
   <linearGradient id="linearGradient8165" x1="456.1" x2="498.2" y1="247.7" y2="247.7" gradientUnits="userSpaceOnUse" xlink:href="#NodeWalls"/>
-  <linearGradient id="linearGradient8295" x1="242.3" x2="501.4" y1="230.2" y2="230.2" gradientUnits="userSpaceOnUse" xlink:href="#PortWalls"/>
+  <linearGradient id="linearGradient8295" x1="242.3" x2="501.4" y1="230.2" y2="230.2" gradientUnits="userSpaceOnUse">
+   <stop stop-color="#9a6a66" offset="0"/>
+   <stop stop-color="#9a6a66" offset=".2369"/>
+   <stop stop-color="#cb9692" offset=".2961"/>
+   <stop stop-color="#cb9692" offset=".9745"/>
+   <stop stop-color="#9a6a66" offset="1"/>
+  </linearGradient>
   <linearGradient id="linearGradient8299" x1="260.4" x2="302.7" y1="368.7" y2="368.7" gradientUnits="userSpaceOnUse" xlink:href="#NodeWalls"/>
   <linearGradient id="linearGradient8596" x1="-9.817" x2="-8.067" y1="117" y2="120.1" gradientTransform="matrix(.5258 0 0 .5258 209.3 32.77)" gradientUnits="userSpaceOnUse" xlink:href="#Wires-1"/>
   <linearGradient id="linearGradient8654" x1="-9.339" x2="-10.98" y1="121.1" y2="118.2" gradientTransform="matrix(-.2671 -.4529 .4529 -.2671 133.5 116.2)" gradientUnits="userSpaceOnUse" xlink:href="#Wires-1"/>
@@ -50,7 +49,7 @@
    </cc:Work>
   </rdf:RDF>
  </metadata>
- <g transform="translate(1217 191.8)" opacity=".88">
+ <g transform="translate(1217 191.8)">
   <g transform="translate(-1313 -209.5)">
    <g transform="translate(4.397 -2.245)" filter="url(#filter3719)">
     <g transform="matrix(.5258 0 0 .5258 295 -22.05)">

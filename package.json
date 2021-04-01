@@ -2,17 +2,22 @@
   "name": "project-thing",
   "version": "1.0.0",
   "description": "",
-  "dependencies": {},
+  "dependencies": {
+  },
   "private": true,
   "devDependencies": {
     "@11ty/eleventy": "^0.12.1",
+    "@11ty/eleventy-plugin-rss": "^1.1.1",
+    "@tailwindcss/typography": "^0.4.0",
     "tailwindcss": "^2.0.3",
-    "tailwindcss-cli": "^0.1.2"
+    "tailwindcss-cli": "^0.1.2",
+    "spacetime": "^6.14.0"
   },
   "scripts": {
-      "build": "NODE_ENV=production npm run tailwind && npm run eleventy",
-      "tailwind": "npx tailwindcss-cli build ./src/css/style.css -o ./_site/css/style.css",
-      "eleventy": "npx @11ty/eleventy"
+    "build": "NODE_ENV=production npm run tailwind && npm run eleventy",
+    "serve": "npx @11ty/eleventy --serve",
+    "tailwind": "npx tailwindcss-cli build ./src/css/style.css -o ./_site/css/style.css",
+    "eleventy": "npx @11ty/eleventy"
   },
   "keywords": [],
   "author": "Nick O'Leary",

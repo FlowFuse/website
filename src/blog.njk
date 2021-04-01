@@ -1,0 +1,42 @@
+---
+title: Blog
+heading: Blog
+layout: default
+---
+<div class="w-full bg-white">
+    {% if collections.posts.length > 0 %}
+    <ul class="flex flex-wrap">
+        {%- for item in collections.posts | reverse -%}
+        <li class="w-full {% if not loop.first %}md:w-1/3{% endif %} my-2 px-2 pb-6 border-b">
+            <a href="{{ item.url }}" class="hover:pointer-cursor w-full flex flex-col {% if loop.first %}md:flex-row{% endif %}">
+            <div class="{% if loop.first %}md:w-1/4{%endif%}">
+                <h2 class="text-xl text-black-hero-heading font-medium hover:underline">{{ item.data.title }}</h2>
+                <div class="text-xs text-blue-hero mt-1 mb-6">
+                    <div class="author">
+                        {% set comma = joiner() %}
+                        {%- for author in item.data.authors %}
+                        {{ comma() }} {{ team[author].name }}
+                        {%- endfor %}
+                    </div>
+                    <time class="text-xs" value="{{ item.date }}" class="text-gray-400">{{ item.date | shortDate }}</time>
+                </div>
+            </div>
+            <div class="prose prose-blue {% if loop.first %}md:w-3/4{%endif%}">
+                {% if loop.first %}
+                    {{ item.templateContent | excerpt | safe }}
+                    <p class="mt-7 text-blue-hero  hover:underline">read more...</p>
+                {% else %}
+                    {{ item.data.description | excerpt | safe }}
+                {% endif %}
+            </div>
+            </a>
+        </li>
+    {%- endfor -%}
+  </ul>
+  {% else %}
+<div class="max-w-lg mx-auto">
+    <div class="text-3xl md:text-5xl text-blue-hero font-medium pb-3">Ooops!</div>
+    <div class="text-lg text-black-hero-body">No-one has written anything yet. Come back soon!</div>
+</div>
+  {% endif %}
+</div>

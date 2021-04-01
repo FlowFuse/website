@@ -4,3 +4,11 @@
 
 
 @tailwind utilities;
+
+.home {
+    background-image: url(/images/grid.svg); background-position:center;
+}
+
+pre code {
+    background: #030303
+}

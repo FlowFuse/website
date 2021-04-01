@@ -1,0 +1,22 @@
+---
+layout: layouts/base.njk
+---
+<div class="max-w-xl mx-auto bg-white">
+    <h1 class="text-3xl md:text-5xl text-black-hero-heading font-medium pb-3">{{ title }}</h1>
+    {% if subtitle %}
+    <h2 class="text-lg text-gray-400 pb-3">{{ subtitle }}</h2>
+    {% endif %}
+    <hr>
+    <div class="text-xs text-blue-hero mt-1">
+        <div class="author">
+            {% set comma = joiner() %}
+            {%- for author in authors %}
+            {{ comma() }} {{ team[author].name }}
+            {%- endfor %}
+        </div>
+        <time value="{{ item.date }}" class="text-xs text-gray-400">{{ date  | shortDate }}</time>
+    </div>
+    <div class="mt-6 mb-4 prose prose-lg prose-blue">
+        {{ content | safe }}
+    </div>
+</div>
