@@ -3,52 +3,6 @@
     <title>FlowForge</title>
     <link href="https://flowforge.com/blog/index.xml" rel="self"/>
     <link href="https://flowforge.com/blog"/>
-    <updated>2020-04-08T00:00:00Z</updated>
+    <updated>2021-04-02T10:35:34Z</updated>
     <id>https://flowforge.com/blog</id>
-    
-    <entry>
-        <id>https://flowforge.com/blog/the-tricky-second-post/</id>
-        <title>Tricky Second post</title>
-        <summary>Can I do it again?</summary>
-        <updated>2020-04-08T00:00:00Z</updated>
-        <link href="https://flowforge.com/blog/the-tricky-second-post/"/>
-        <author><name>Nick O&#39;Leary</name></author>
-        <content type="html">&lt;p&gt;Leverage agile frameworks to provide a robust synopsis for high level overviews. Iterative approaches to corporate strategy foster collaborative thinking to further the overall value proposition. Organically grow the holistic world view of disruptive innovation via workplace diversity and empowerment.&lt;/p&gt;
-&lt;p&gt;Bring to the table win-win survival strategies to ensure proactive domination. At the end of the day, going forward, a new normal that has evolved from generation X is on the runway heading towards a streamlined cloud solution. User generated content in real-time will have multiple touchpoints for offshoring.&lt;/p&gt;
-&lt;h2&gt;Section Header&lt;/h2&gt;
-&lt;p&gt;Capitalize on low hanging fruit to identify a ballpark value added activity to beta test. Override the digital divide with additional clickthroughs from DevOps. Nanotechnology immersion along the information highway will close the loop on focusing solely on the bottom line.&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;language-text/2-3&quot;&gt;// this is a command
-function myCommand() {
-	let counter = 0;
-	counter++;
-}
-
-// Test with a line break above this line.
-console.log(&#39;Test&#39;);
-&lt;/code&gt;&lt;/pre&gt;
-</content>
-    </entry>
-    
-    <entry>
-        <id>https://flowforge.com/blog/first-deploy/</id>
-        <title>First Post</title>
-        <summary>Subtweet much?</summary>
-        <updated>2020-04-06T00:00:00Z</updated>
-        <link href="https://flowforge.com/blog/first-deploy/"/>
-        <author><name>Nick O&#39;Leary</name></author>
-        <content type="html">&lt;p&gt;Leverage agile frameworks to provide a robust synopsis for high level overviews. Iterative approaches to corporate strategy foster collaborative thinking to further the overall value proposition. Organically grow the holistic world view of disruptive innovation via workplace diversity and empowerment.&lt;/p&gt;
-&lt;p&gt;Bring to the table win-win survival strategies to ensure proactive domination. At the end of the day, going forward, a new normal that has evolved from generation X is on the runway heading towards a streamlined cloud solution. User generated content in real-time will have multiple touchpoints for offshoring.&lt;/p&gt;
-&lt;h2&gt;Section Header&lt;/h2&gt;
-&lt;p&gt;Capitalize on low hanging fruit to identify a ballpark value added activity to beta test. Override the digital divide with additional clickthroughs from DevOps. Nanotechnology immersion along the information highway will close the loop on focusing solely on the bottom line.&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;language-text/2-3&quot;&gt;// this is a command
-function myCommand() {
-	let counter = 0;
-	counter++;
-}
-
-// Test with a line break above this line.
-console.log(&#39;Test&#39;);
-&lt;/code&gt;&lt;/pre&gt;
-</content>
-    </entry>
 </feed>
