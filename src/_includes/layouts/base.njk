@@ -21,12 +21,12 @@
                         </button>
                     </div>
 
-                    <ul id="nav-content" class="duration-200 transition-opacity opacity-0 absolute top-8 right-0 border shadow-sm sm:opacity-100 sm:shadow-none w-36 sm:border-0 bg-white sm:bg-transparent sm:w-auto rounded sm:static sm:float-none sm:flex sm:flex-row flex-col items-center justify-between font-medium text text-red-hero no-underline">
-                        <li class="flex"><a class="hover:underline px-2 py-2 sm:px-4" href="/about">about</a></li>
-                        <!-- <li class="flex"><a class="hover:underline px-2 py-2 sm:px-4" href="/team">team</a></li> -->
-                        <li class="flex"><a class="hover:underline px-2 py-2 sm:px-4" href="/blog">blog</a></li>
-                        <li class="flex"><a class="hover:underline px-2 py-2 sm:px-4" href="https://twitter.com/flowforgeinc">{% include "components/twitter.njk" %}</a></li>
-                        <li class="flex"><a class="hover:underline px-2 py-2 sm:px-4" href="/blog/index.xml">{% include "components/rss.njk" %}</a></li>
+                    <ul id="nav-content" class="hidden absolute top-8 -right-7 border shadow-sm sm:inline sm:shadow-none w-36 sm:border-0 bg-white sm:bg-transparent sm:w-auto rounded sm:static sm:float-none sm:flex sm:flex-row flex-col items-center justify-between font-medium text text-red-hero no-underline">
+                        <li class="flex"><a class="flex-grow hover:underline px-4 py-2" href="/about">about</a></li>
+                        <!-- <li class="flex"><a class="hover:underline px-4 py-2" href="/team">team</a></li> -->
+                        <li class="flex"><a class="flex-grow hover:underline px-4 py-2" href="/blog">blog</a></li>
+                        <li class="flex"><a class="flex-grow hover:underline px-4 py-2" href="https://twitter.com/flowforgeinc">{% include "components/twitter.njk" %}</a></li>
+                        <li class="flex"><a class="flex-grow hover:underline px-4 py-2" href="/blog/index.xml">{% include "components/rss.njk" %}</a></li>
                     </ul>
                 </nav>
             </header>
@@ -54,8 +54,7 @@
 <script>
 document.getElementById('nav-toggle').onclick = function(){
     let classes = document.getElementById("nav-content").classList;
-    classes.toggle("opacity-0");
-    classes.toggle("opacity-100");
+    classes.toggle("hidden");
 }
 </script>
 </html>
