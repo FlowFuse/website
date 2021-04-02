@@ -983,6 +983,10 @@ video {
   display: none;
 }
 
+.flex-row {
+  flex-direction: row;
+}
+
 .flex-col {
   flex-direction: column;
 }
@@ -1449,7 +1453,7 @@ video {
 }
 
 .home {
-  background-image: url(/images/grid.svg); background-position:center;
+  background-image: url(/images/grid.svg);
 }
 
 pre code {
@@ -1538,10 +1542,6 @@ pre code {
 
   .md\:text-left {
     text-align: left;
-  }
-
-  .md\:text-right {
-    text-align: right;
   }
 
   .md\:w-60 {
