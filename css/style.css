@@ -1467,6 +1467,14 @@ pre code {
     float: none;
   }
 
+  .sm\:pr-0 {
+    padding-right: 0px;
+  }
+
+  .sm\:pl-0 {
+    padding-left: 0px;
+  }
+
   .sm\:static {
     position: static;
   }
