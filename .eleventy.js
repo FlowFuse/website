@@ -3,8 +3,13 @@ module.exports = function(eleventyConfig) {
 
     eleventyConfig.addLayoutAlias('default', 'layouts/base.njk');
     eleventyConfig.addLayoutAlias('page', 'layouts/page.njk');
-    eleventyConfig.addPassthroughCopy({ "src/images":"images"});
-    eleventyConfig.addPassthroughCopy({ "src/CNAME": "CNAME" });
+    eleventyConfig.addPassthroughCopy("src/images");
+    eleventyConfig.addPassthroughCopy("src/CNAME");
+    eleventyConfig.addPassthroughCopy("src/*png");
+    eleventyConfig.addPassthroughCopy("src/*svg");
+    eleventyConfig.addPassthroughCopy("src/favicon.ico");
+    eleventyConfig.addPassthroughCopy("src/browserconfig.xml");
+    eleventyConfig.addPassthroughCopy("src/site.webmanifest");
     eleventyConfig.addFilter("head", (array, n) => {
         if( n < 0 ) {
             return array.slice(n);
