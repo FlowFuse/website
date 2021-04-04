@@ -27,11 +27,12 @@
                     </div>
 
                     <ul id="nav-content" class="hidden absolute top-8 -right-7 border shadow-sm sm:inline sm:shadow-none w-36 sm:border-0 bg-white sm:bg-transparent sm:w-auto rounded sm:static sm:float-none sm:flex sm:flex-row flex-col items-center justify-between font-medium text text-red-hero no-underline">
-                        <li class="flex"><a class="flex-grow hover:underline px-4 py-2" href="/about">about</a></li>
-                        <!-- <li class="flex"><a class="hover:underline px-4 py-2" href="/team">team</a></li> -->
+                        <li class="flex"><a class="flex-grow hover:underline px-4 sm:pl-0 py-2" href="/about">about</a></li>
+                        <!-- <li class="flex"><a class="flex-grow hover:underline px-4 py-2" href="/team">team</a></li> -->
                         <li class="flex"><a class="flex-grow hover:underline px-4 py-2" href="/blog">blog</a></li>
                         <li class="flex"><a class="flex-grow hover:underline px-4 py-2" href="https://twitter.com/flowforgeinc">{% include "components/twitter.njk" %}</a></li>
-                        <li class="flex"><a class="flex-grow hover:underline px-4 py-2" href="/blog/index.xml">{% include "components/rss.njk" %}</a></li>
+                        <li class="flex"><a class="flex-grow hover:underline px-4 py-2" href="https://github.com/flowforge">{% include "components/github.njk" %}</a></li>
+                        <li class="flex"><a class="flex-grow hover:underline px-4 sm:pr-0 py-2" href="/blog/index.xml">{% include "components/rss.njk" %}</a></li>
                     </ul>
                 </nav>
             </header>
@@ -49,6 +50,7 @@
                 <span class="hidden md:inline-flex px-2">|</span>
                 <span class="flex flex-row">
                     <a class="px-2" href="https://twitter.com/flowforgeinc">{% include "components/twitter.njk" %}</a>
+                    <a class="px-2" href="https://github.com/flowforge">{% include "components/github.njk" %}</a>
                     <a class="px-2" href="/blog/index.xml">{% include "components/rss.njk" %}</a>
                 </span>
 
