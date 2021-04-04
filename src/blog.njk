@@ -21,7 +21,7 @@ layout: default
                     <time class="text-xs" value="{{ item.date }}" class="text-gray-400">{{ item.date | shortDate }}</time>
                 </div>
             </div>
-            <div class="prose prose-blue {% if loop.first %}md:w-3/4{%endif%}">
+            <div class="prose prose-blue md:prose-lg {% if loop.first %}md:w-3/4{%endif%}">
                 {% if loop.first %}
                     {{ item.templateContent | excerpt | safe }}
                     <p class="mt-7 text-blue-hero  hover:underline">read more...</p>

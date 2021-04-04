@@ -18,7 +18,3 @@ The stewardship of the OpenJS Foundation will ensure there are no constraints to
 ## Open-source first
 
 Our goal is to incorporate as much of our work directly into the core project as possible. Where we do create closed-source components, we will work with the community to ensure the right APIs and extension points are in the core for all to benefit from.
-
-
-
-
