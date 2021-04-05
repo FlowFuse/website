@@ -1,9 +1,8 @@
 {
-  "name": "project-thing",
+  "name": "FlowForge-Website",
   "version": "1.0.0",
   "description": "",
-  "dependencies": {
-  },
+  "dependencies": {},
   "private": true,
   "devDependencies": {
     "@11ty/eleventy": "^0.12.1",
