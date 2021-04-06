@@ -9,7 +9,7 @@ layout: default
         {%- for item in collections.posts | reverse -%}
         <li class="w-full {% if not loop.first %}md:w-1/3{% endif %} my-2 px-2 pb-6 border-b">
             <a href="{{ item.url }}" class="hover:pointer-cursor w-full flex flex-col {% if loop.first %}md:flex-row{% endif %}">
-            <div class="{% if loop.first %}md:w-1/4{%endif%}">
+            <div class="{% if loop.first %}md:w-1/4 pr-2{%endif%}">
                 <h2 class="text-xl text-black-hero-heading font-medium hover:underline">{{ item.data.title }}</h2>
                 <div class="text-xs text-blue-hero mt-1 mb-6">
                     <div class="author">
@@ -23,7 +23,7 @@ layout: default
             </div>
             <div class="prose prose-blue md:prose-lg {% if loop.first %}md:w-3/4{%endif%}">
                 {% if loop.first %}
-                    {{ item.templateContent | excerpt | safe }}
+                    {{ item.templateContent | excerpt | striptags(true)| restoreParagraphs | safe }}
                     <p class="mt-7 text-blue-hero  hover:underline">read more...</p>
                 {% else %}
                     {{ item.data.description | excerpt | safe }}
