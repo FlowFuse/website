@@ -577,8 +577,16 @@ video {
   font-weight: 600;
 }
 
+.prose ol[type="A"] {
+  --list-counter-style: upper-alpha;
+}
+
 .prose ol[type="a"] {
   --list-counter-style: lower-alpha;
+}
+
+.prose ol[type="I"] {
+  --list-counter-style: upper-roman;
 }
 
 .prose ol[type="i"] {
@@ -1088,6 +1096,11 @@ video {
   margin-bottom: 1rem;
 }
 
+.my-8 {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
 .mx-auto {
   margin-left: auto;
   margin-right: auto;
@@ -1099,6 +1112,10 @@ video {
 
 .mt-2 {
   margin-top: 0.5rem;
+}
+
+.mt-4 {
+  margin-top: 1rem;
 }
 
 .mb-4 {
@@ -1204,6 +1221,10 @@ video {
 .px-10 {
   padding-left: 2.5rem;
   padding-right: 2.5rem;
+}
+
+.pr-2 {
+  padding-right: 0.5rem;
 }
 
 .pb-3 {
@@ -1473,6 +1494,10 @@ pre code {
 
   .sm\:pl-0 {
     padding-left: 0px;
+  }
+
+  .sm\:pr-2 {
+    padding-right: 0.5rem;
   }
 
   .sm\:static {

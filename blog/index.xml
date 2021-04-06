@@ -3,6 +3,48 @@
     <title>FlowForge</title>
     <link href="https://flowforge.com/blog/index.xml" rel="self"/>
     <link href="https://flowforge.com/blog"/>
-    <updated>2021-04-05T10:52:41Z</updated>
+    <updated>2021-04-06T00:00:00Z</updated>
     <id>https://flowforge.com/blog</id>
+    
+    <entry>
+        <id>https://flowforge.com/blog/first-deploy/</id>
+        <title>Introducing FlowForge Inc.</title>
+        <summary>Building a new low-code development platform around the Node-RED project</summary>
+        <updated>2021-04-06T00:00:00Z</updated>
+        <link href="https://flowforge.com/blog/first-deploy/"/>
+        <author><name>Nick O&#39;Leary</name></author>
+        <content type="html">&lt;p&gt;When Dave and I first created &lt;a href=&quot;https://nodered.org/&quot;&gt;Node-RED&lt;/a&gt;, it was a tool to solve a
+problem - allowing us to do our day job more effectively when building IoT solutions
+for clients. That gave us the means and purpose to create a truly useful platform.&lt;/p&gt;
+&lt;p&gt;When it became an open source project, it quickly found an enthusiastic audience that
+has seen the community grow beyond our imagination. From both individual users, to a wide
+range of companies integrating it into their own products.&lt;/p&gt;
+&lt;p&gt;But with that growth, the question in my mind has always been how to take it further
+and secure its long term future.&lt;/p&gt;
+&lt;p&gt;I wrote on the &lt;a href=&quot;https://nodered.org/blog/2020/10/13/future-plans&quot;&gt;project blog&lt;/a&gt;
+last year about the future plans of the project. A key piece of that is its sustainability -
+how we can increase the commercial adoption of Node-RED and how we can get more people
+contributing back.&lt;/p&gt;
+&lt;p&gt;An opportunity presented itself earlier this year that I believe will bring a
+step-change to what the Node-RED project is able to achieve.&lt;/p&gt;
+&lt;!--more--&gt;
+&lt;h3&gt;Introducing FlowForge Inc.&lt;/h3&gt;
+&lt;p&gt;So today, I&#39;m launching FlowForge Inc - a new company whose mission is to build a low-coding development
+platform fit for the enterprise with Node-RED at its heart.&lt;/p&gt;
+&lt;p&gt;Backed by &lt;a href=&quot;https://www.linkedin.com/in/sijbrandij/&quot;&gt;Sid Sijbrandij&lt;/a&gt;, we have funding
+in place to create a fully remote team dedicated to an open core model.&lt;/p&gt;
+&lt;p&gt;In the short term, this means helping to accelerate the plans already in place for
+the Open Source project. Getting the 2.0 release done in the next few weeks, working on
+long-standing features such as the Test framework and Flow Debugger.&lt;/p&gt;
+&lt;p&gt;Alongside that we&#39;ll also be building a platform around Node-RED that will make it easier
+to adopt at scale and integrate into existing enterprise environments.&lt;/p&gt;
+&lt;p&gt;Node-RED remains a fully open source project, with its home at the OpenJS Foundation
+and an open governance model that allows anyone to have a say in its development.&lt;/p&gt;
+&lt;p&gt;Our goal is to incorporate as much of our work directly into the core project as possible. Where we do create closed-source components, we will work with the community to ensure the right APIs and extension points are in the core for all to benefit from.&lt;/p&gt;
+&lt;p&gt;We will only be successful if the whole Node-RED community is successful.&lt;/p&gt;
+&lt;p&gt;For me personally, this is a really exciting next step. I never expected to turn my little side project into a full-time job and now into a company.&lt;/p&gt;
+&lt;h3&gt;Hiring soon!&lt;/h3&gt;
+&lt;p&gt;We&#39;ll be hiring soon - so keep an eye out if you&#39;re interesting in getting involved.&lt;/p&gt;
+</content>
+    </entry>
 </feed>
