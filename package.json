@@ -2,7 +2,9 @@
   "name": "FlowForge-Website",
   "version": "1.0.0",
   "description": "",
-  "dependencies": {},
+  "dependencies": {
+    "seedrandom": "^3.0.5"
+  },
   "private": true,
   "devDependencies": {
     "@11ty/eleventy": "^0.12.1",

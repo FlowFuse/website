@@ -1,4 +1,6 @@
 const spacetime = require("spacetime");
+const heroGen = require("./lib/post-hero-gen.js");
+
 module.exports = function(eleventyConfig) {
 
     eleventyConfig.addLayoutAlias('default', 'layouts/base.njk');
@@ -27,7 +29,9 @@ module.exports = function(eleventyConfig) {
           return "<p>"+content.split(/\.\n/).join(".</p><p>")+"</p>"
       });
 
-
+      eleventyConfig.addFilter("generatePostSVG", function(id) {
+          return heroGen(new String(id))
+      })
 
      eleventyConfig.addPlugin(require("@11ty/eleventy-plugin-rss"))
 

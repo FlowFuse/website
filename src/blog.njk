@@ -11,7 +11,7 @@ layout: default
             <a href="{{ item.url }}" class="hover:pointer-cursor w-full flex flex-col {% if loop.first %}md:flex-row{% endif %}">
             <div class="{% if loop.first %}md:w-1/4 pr-2{%endif%}">
                 <h2 class="text-xl text-black-hero-heading font-medium hover:underline">{{ item.data.title }}</h2>
-                <div class="text-xs text-blue-hero mt-1 mb-6">
+                <div class="text-xs text-blue-hero mt-1 mb-1">
                     <div class="author">
                         {% set comma = joiner() %}
                         {%- for author in item.data.authors %}
@@ -20,6 +20,7 @@ layout: default
                     </div>
                     <time class="text-xs" value="{{ item.date }}" class="text-gray-400">{{ item.date | shortDate }}</time>
                 </div>
+                <div>{% if item.image %}<img class="w-full h-auto" src="{{item.image}}" />{% else %}{{ item.url | generatePostSVG |safe}}{% endif %}</div>
             </div>
             <div class="prose prose-blue md:prose-lg {% if loop.first %}md:w-3/4{%endif%}">
                 {% if loop.first %}

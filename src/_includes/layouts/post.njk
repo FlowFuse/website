@@ -6,8 +6,7 @@ layout: layouts/base.njk
     {% if subtitle %}
     <h2 class="text-lg text-gray-400 pb-3">{{ subtitle }}</h2>
     {% endif %}
-    <hr>
-    <div class="text-xs text-blue-hero mt-1">
+    <div class="text-xs text-blue-hero my-1">
         <div class="author">
             {% set comma = joiner() %}
             {%- for author in authors %}
@@ -16,6 +15,7 @@ layout: layouts/base.njk
         </div>
         <time value="{{ item.date }}" class="text-xs text-gray-400">{{ date  | shortDate }}</time>
     </div>
+    <div>{% if image %}<img class="w-full h-auto" src="{{image}}" />{% else %}{{ page.url | generatePostSVG |safe}}{% endif %}</div>
     <div class="mt-6 mb-4 prose prose-blue md:prose-lg">
         {{ content | safe }}
     </div>
