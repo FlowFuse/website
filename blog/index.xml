@@ -3,8 +3,29 @@
     <title>FlowForge</title>
     <link href="https://flowforge.com/blog/index.xml" rel="self"/>
     <link href="https://flowforge.com/blog"/>
-    <updated>2021-04-06T00:00:00Z</updated>
+    <updated>2021-05-10T00:00:00Z</updated>
     <id>https://flowforge.com/blog</id>
+    
+    <entry>
+        <id>https://flowforge.com/blog/welcome-ben/</id>
+        <title>Welcome Ben</title>
+        <summary></summary>
+        <updated>2021-05-10T00:00:00Z</updated>
+        <link href="https://flowforge.com/blog/welcome-ben/"/>
+        <author><name>Nick O&#39;Leary</name></author>
+        <content type="html">&lt;p&gt;I&#39;m excited to share the news that Ben Hardill (&lt;a href=&quot;https://twitter.com/hardillb&quot;&gt;@hardillb&lt;/a&gt;) is joining FlowForge as a Senior Engineer.&lt;/p&gt;
+&lt;!--more--&gt;
+&lt;p&gt;I&#39;ve known Ben for many years, having worked together at IBM. He&#39;s been an active member
+of the Node-RED community since the start of the project and he published one of
+the very first &lt;a href=&quot;https://flows.nodered.org/node/node-red-node-geofence&quot;&gt;3rd party nodes&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;He is ever-present on Stack Overflow, to the point where I&#39;ve long since stopped
+rushing to respond to questions tagged with &lt;a href=&quot;https://stackoverflow.com/questions/tagged/node-red&quot;&gt;&lt;code&gt;node-red&lt;/code&gt;&lt;/a&gt;
+in the full knowledge that he has usually beaten me to it.&lt;/p&gt;
+&lt;p&gt;More recently he&#39;s been doing some really interesting work exploring &lt;a href=&quot;https://www.hardill.me.uk/wordpress/2020/10/01/multi-tenant-node-red/&quot;&gt;multi-tenant Node-RED systems&lt;/a&gt; - something we&#39;ll
+be continuing at FlowForge.&lt;/p&gt;
+&lt;p&gt;Welcome aboard Ben!&lt;/p&gt;
+</content>
+    </entry>
     
     <entry>
         <id>https://flowforge.com/blog/first-deploy/</id>

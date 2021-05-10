@@ -1463,6 +1463,14 @@ pre code {
   background: #030303
 }
 
+.prose code::after {
+  content:''
+}
+
+.prose code::before {
+  content:''
+}
+
 @media (min-width: 640px) {
   .sm\:bg-transparent {
     background-color: transparent;
