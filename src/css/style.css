@@ -12,3 +12,10 @@
 pre code {
     background: #030303
 }
+
+.prose code::after {
+    content:''
+}
+.prose code::before {
+    content:''
+}
