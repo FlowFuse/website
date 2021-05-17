@@ -30,7 +30,7 @@ module.exports = function(eleventyConfig) {
       });
 
       eleventyConfig.addFilter("generatePostSVG", function(id) {
-          return heroGen(new String(id))
+          return heroGen(""+id)
       })
 
      eleventyConfig.addPlugin(require("@11ty/eleventy-plugin-rss"))

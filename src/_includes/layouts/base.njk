@@ -12,6 +12,16 @@
     <meta name="msapplication-TileColor" content="#00aba9">
     <meta name="theme-color" content="#ffffff">
     <title>FlowForge | An open source low-code development platform</title>
+
+    {% if tags and 'posts' in tags %}
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@flowforgeinc" />
+    <meta name="twitter:creator" content="@{{ team[authors|first].twitter }}" />
+    <meta property="og:url" content="{{ site.baseURL }}{{ page.url }}" />
+    <meta property="og:title" content="{{title}}" />
+    <meta property="og:description" content="{{description}}" />
+    {% endif %}
+
 </head>
 <body class="leading-normal tracking-normal  gradient text-gray-500 min-h-screen flex flex-col" style="">
     <div class="bg-white flex-grow home">
