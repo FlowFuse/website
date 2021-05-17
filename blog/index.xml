@@ -3,8 +3,33 @@
     <title>FlowForge</title>
     <link href="https://flowforge.com/blog/index.xml" rel="self"/>
     <link href="https://flowforge.com/blog"/>
-    <updated>2021-05-10T00:00:00Z</updated>
+    <updated>2021-05-17T00:00:00Z</updated>
     <id>https://flowforge.com/blog</id>
+    
+    <entry>
+        <id>https://flowforge.com/blog/welcome-sam/</id>
+        <title>Welcome Sam</title>
+        <summary></summary>
+        <updated>2021-05-17T00:00:00Z</updated>
+        <link href="https://flowforge.com/blog/welcome-sam/"/>
+        <author><name>Nick O&#39;Leary</name></author>
+        <content type="html">&lt;p&gt;One of the things I&#39;m most looking forward to with starting FlowForge is building
+the team who are going to help create something special and have fun whilst doing it.
+With Ben having joined last week, this week I get to share the news that Sam Machin (&lt;a href=&quot;https://twitter.com/sammachin&quot;&gt;@sammachin&lt;/a&gt;) is joining the team as a Senior Developer Advocate.&lt;/p&gt;
+&lt;!--more--&gt;
+&lt;p&gt;Sam is a seasoned Developer Advocate, who really understands the difference
+between evangelism and advocacy. He is acutely aware of the differences between
+developers as customers and as partners in an ecosystem.&lt;/p&gt;
+&lt;p&gt;The Node-RED community is so important to us - we simply wouldn&#39;t be doing what
+we do today without their support. As we continue to drive the project forward,
+and build the FlowForge platform around it, we have to keep developers are the heart
+of what we do.&lt;/p&gt;
+&lt;p&gt;Keeping that 2-way conversation open is not an easy task, but Sam&#39;s in a great
+position to help us do just that.&lt;/p&gt;
+&lt;p&gt;Sam is an experienced Product Manager and will be able to give the community a seat at the table when it comes to shaping our plans. The Node-RED community is an integral part of what will make FlowForge a success and his first responsibility is to ensure that.&lt;/p&gt;
+&lt;p&gt;Welcome aboard Sam!&lt;/p&gt;
+</content>
+    </entry>
     
     <entry>
         <id>https://flowforge.com/blog/welcome-ben/</id>
