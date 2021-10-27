@@ -1,26 +1,33 @@
 {
-  "name": "FlowForge-Website",
-  "version": "1.0.0",
-  "description": "",
-  "dependencies": {
-    "seedrandom": "^3.0.5"
-  },
-  "private": true,
-  "devDependencies": {
-    "@11ty/eleventy": "^0.12.1",
-    "@11ty/eleventy-plugin-rss": "^1.1.1",
-    "@tailwindcss/typography": "^0.4.0",
-    "tailwindcss": "^2.0.3",
-    "tailwindcss-cli": "^0.1.2",
-    "spacetime": "^6.14.0"
-  },
-  "scripts": {
-    "build": "NODE_ENV=production npm run tailwind && npm run eleventy",
-    "serve": "npx @11ty/eleventy --serve",
-    "tailwind": "npx tailwindcss-cli build ./src/css/style.css -o ./_site/css/style.css",
-    "eleventy": "npx @11ty/eleventy"
-  },
-  "keywords": [],
-  "author": "Nick O'Leary",
-  "license": "Apache-2.0"
+    "name": "FlowForge-Website",
+    "version": "1.0.0",
+    "description": "",
+    "dependencies": {
+        "autoprefixer": "^10.3.7",
+        "postcss-import": "^14.0.2",
+        "seedrandom": "^3.0.5"
+    },
+    "private": true,
+    "devDependencies": {
+        "@11ty/eleventy": "^0.12.1",
+        "@11ty/eleventy-plugin-rss": "^1.1.2",
+        "@tailwindcss/typography": "^0.4.1",
+        "postcss": "^8.3.11",
+        "postcss-cli": "^9.0.1",
+        "spacetime": "^6.16.3",
+        "tailwindcss": "^2.2.17",
+        "terser": "^5.9.0",
+        "vanilla-cookieconsent": "^2.6.1"
+    },
+    "scripts": {
+        "build": "NODE_ENV=production npm run postcss && npm run eleventy",
+        "postbuild": "terser -c -m -o _site/js/cc.min.js node_modules/vanilla-cookieconsent/dist/cookieconsent.js _site/js/cookies.js",
+        "preserve": "npm run postcss && npm run postbuild",
+        "serve": "npx @11ty/eleventy --serve",
+        "postcss": "postcss ./src/css/style.css -o ./_site/css/style.css",
+        "eleventy": "npx @11ty/eleventy"
+    },
+    "keywords": [],
+    "author": "Nick O'Leary",
+    "license": "Apache-2.0"
 }

@@ -1,9 +1,10 @@
-/* ./src/tailwind.css */
-@tailwind base;
+@import "./style.base.css";
+@import "../../node_modules/vanilla-cookieconsent/dist/cookieconsent.css";
+
 @tailwind components;
-
-
 @tailwind utilities;
+
+
 
 .home {
     background-image: url(/images/grid.svg);
@@ -18,4 +19,10 @@ pre code {
 }
 .prose code::before {
     content:''
+}
+
+body {
+    --cc-btn-primary-bg: theme(colors.blue.hero.DEFAULT);
+    --cc-btn-primary-text: var(--cc-bg);
+    --cc-btn-primary-hover-bg: #1d2e38;
 }

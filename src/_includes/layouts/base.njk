@@ -54,23 +54,40 @@
         </div>
     </div>
     <footer class="bg-red-hero w-full">
-        <div class="max-w-screen-xl mx-2 xl:mx-auto lg:mx-24 py-3 px-10 text-sm text-white">
-            <div class="flex flex-col md:flex-row justify-center items-center">
-                <span>Copyright 2021 FlowForge Inc.</span>
-                <span class="hidden md:inline-flex px-2">|</span>
-                <span>All Rights Reserved</span>
-                <span class="hidden md:inline-flex px-2">|</span>
-                <span class="flex flex-row">
-                    <a class="px-2" href="https://twitter.com/flowforgeinc">{% include "components/twitter.njk" %}</a>
-                    <a class="px-2" href="https://github.com/flowforge">{% include "components/github.njk" %}</a>
-                    <a class="px-2" href="https://www.linkedin.com/company/flowforge-inc">{% include "components/linkedin.njk" %}</a>
-                    <a class="px-2" href="/blog/index.xml">{% include "components/rss.njk" %}</a>
-                </span>
-
+        <div class="max-w-screen-xl mx-2 xl:mx-auto lg:mx-24 py-3 px-10 text-white">
+            <div class="flex flex-col md:flex-row justify-center space-x-8">
+                <div class="w-full md:w-96 mb-4">
+                    <div class="flex flex-row md:flex-col">
+                        <span>Copyright 2021 FlowForge Inc.</span>
+                        <span class=" md:hidden inline-flex px-2">|</span>
+                        <span>All Rights Reserved</span>
+                    </div>
+                    <div class="text-sm mt-8">This site uses cookies. Click <a href="#" onclick="initCookieConsent().showSettings()">here</a> to manage your preferences</a>.</div>
+                </div>
+                <div class="w-full md:w-52 mb-4">
+                    <div class="space-y-2"><span class="text-xl font-bold">Social</span>
+                        <ul class="text-base space-y-2">
+                            <li class="inline mr-3 md:mr-0 md:block"><a href="https://twitter.com/flowforgeinc">Twitter</a></li>
+                            <li class="inline mr-3 md:mr-0 md:block"><a href="https://github.com/flowforge">GitHub</a></li>
+                            <li class="inline mr-3 md:mr-0 md:block"><a href="https://www.linkedin.com/company/flowforge-inc">LinkedIn</a></li>
+                            <li class="inline mr-3 md:mr-0 md:block"><a href="/blog/index.xml">RSS Feed</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="w-full md:w-52 mb-4">
+                    <div class="space-y-2"><span class="text-xl font-bold">Company</span>
+                        <ul class="text-base  space-y-2">
+                            <li class="inline mr-3 md:mr-0 md:block"><a href="/about">About</a></li>
+                            <li class="inline mr-3 md:mr-0 md:block"><a href="/blog">Blog</a></li>
+                            <li class="inline mr-3 md:mr-0 md:block"><a href="/privacy-policy">Privacy</a></li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </div>
     </footer>
 </body>
+<script src="/js/cc.min.js"></script>
 <script>
 document.getElementById('nav-toggle').onclick = function(){
     let classes = document.getElementById("nav-content").classList;
