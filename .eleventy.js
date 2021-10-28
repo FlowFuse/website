@@ -5,6 +5,11 @@ const heroGen = require("./lib/post-hero-gen.js");
 
 module.exports = function(eleventyConfig) {
     eleventyConfig.setWatchThrottleWaitTime(200); // in milliseconds
+    eleventyConfig.setUseGitIgnore(false);
+
+    // TODO: when we move to 11ty v1.0, use the following
+    // rather than ignoring git ignore
+    //eleventyConfig.ignores.delete("src/handbook");
 
     eleventyConfig.addLayoutAlias('default', 'layouts/base.njk');
     eleventyConfig.addLayoutAlias('page', 'layouts/page.njk');
