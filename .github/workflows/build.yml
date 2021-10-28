@@ -1,6 +1,9 @@
 name: Build Site
-on: [push]
-
+on:
+  repository_dispatch:
+  push:
+    branches:
+      - main
 jobs:
   build_deploy:
     runs-on: ubuntu-latest
