@@ -25,9 +25,9 @@
     "scripts": {
         "clean": "rm -rf _site && mkdir -p _site/js",
         "start": "npm-run-all clean build:js --parallel dev:*",
-        "build": "NODE_ENV=production npm-run-all clean build:js --parallel prod:*",
+        "build": "NODE_ENV=production npm-run-all clean build:js handbook --parallel prod:*",
         "build:js": "terser -c -m -o _site/js/cc.min.js node_modules/vanilla-cookieconsent/dist/cookieconsent.js src/js/cookies.js",
-        "prod:handbook": "[ -e ../handbook ] && cp -R ../handbook/* ./src/handbook/ && mv ./src/handbook/README.md ./src/handbook/index.md",
+        "handbook": "[ -e ../handbook ] && cp -R ../handbook/* ./src/handbook/ && mv ./src/handbook/README.md ./src/handbook/index.md",
         "dev:handbook": "[ -e ../handbook ] && nodemon -w ../handbook -e md --exec 'npm run prod:handbook' ",
         "dev:postcss": "TAILWIND_MODE=watch postcss ./src/css/style.css -o ./_site/css/style.css --config ./postcss.config.js -w",
         "prod:postcss": "postcss ./src/css/style.css -o ./_site/css/style.css --config ./postcss.config.js",
