@@ -1,13 +1,15 @@
+const markdownIt = require("markdown-it")
+const markdownItAnchor = require("markdown-it-anchor")
 const spacetime = require("spacetime");
 const heroGen = require("./lib/post-hero-gen.js");
-const { minify } = require("terser");
 
 module.exports = function(eleventyConfig) {
+    eleventyConfig.setWatchThrottleWaitTime(200); // in milliseconds
 
     eleventyConfig.addLayoutAlias('default', 'layouts/base.njk');
     eleventyConfig.addLayoutAlias('page', 'layouts/page.njk');
     eleventyConfig.addPassthroughCopy("src/images");
-    eleventyConfig.addPassthroughCopy("src/js");
+    // eleventyConfig.addPassthroughCopy("src/js");
     eleventyConfig.addPassthroughCopy("src/CNAME");
     eleventyConfig.addPassthroughCopy({"src/favicon/*":"/"});
 
@@ -35,19 +37,52 @@ module.exports = function(eleventyConfig) {
     eleventyConfig.addFilter("generatePostSVG", function(id) {
         return heroGen(""+id)
     })
-
-    eleventyConfig.addPlugin(require("@11ty/eleventy-plugin-rss"))
-
-    eleventyConfig.addTransform("jsmin", async function(content, outputPath) {
-        // Eleventy 1.0+: use this.inputPath and this.outputPath instead
-        if( outputPath && outputPath.endsWith(".js") ) {
-            let minified = await minify(content)
-            return minified;
+    eleventyConfig.addFilter("handbookBreadcrumbs", (str) => {
+        const parts = str.split("/");
+        parts.shift();
+        if (parts[parts.length-1] === "index") {
+            parts.pop();
         }
-
-        return content;
+        let path = "";
+        return "/"+parts.map(p => {
+            let url = `${path}/${p}`;
+            path = url;
+            return `<a class="mx-2" href="${url}">${p}</a>`
+        }).join("/")
     });
 
+    eleventyConfig.addFilter("rewriteHandbookLinks", (str) => {
+        str = str.replace(/href="\.\/([^/]*?)\.md(#.*)?"/g,'href="../$1/$2"')
+        str = str.replace(/href="(.*?)\.md(#.*)?"/g,'href="$1/$2"')
+        return str;
+    })
+    eleventyConfig.addFilter("handbookMapOriginalPath", (str) => {
+        str = str.replace("/handbook/","");
+        if (str === "index") {
+            return "README.md"
+        }
+        return str+".md";
+    })
+    eleventyConfig.addPlugin(require("@11ty/eleventy-plugin-rss"))
+
+    const markdownItOptions = {
+        html: true,
+    }
+
+    // Options for the `markdown-it-anchor` library
+    const markdownItAnchorOptions = {
+        permalink: markdownItAnchor.permalink.linkInsideHeader({
+            symbol: `#&nbsp;`,
+            placement: 'before'
+        })
+    }
+
+    const markdownLib = markdownIt(markdownItOptions).use(
+        markdownItAnchor,
+        markdownItAnchorOptions
+    )
+
+    eleventyConfig.setLibrary("md", markdownLib)
 
     return {
         dir: {

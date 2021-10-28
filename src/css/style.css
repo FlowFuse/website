@@ -9,7 +9,9 @@
 .home {
     background-image: url(/images/grid.svg);
 }
-
+main  a {
+    color: theme(colors.blue.600);
+}
 pre code {
     background: #030303
 }
@@ -25,4 +27,19 @@ body {
     --cc-btn-primary-bg: theme(colors.blue.hero.DEFAULT);
     --cc-btn-primary-text: var(--cc-bg);
     --cc-btn-primary-hover-bg: #1d2e38;
+}
+
+h1,h2,h3,h4 {
+    position: relative;
+}
+.header-anchor {
+    display: none;
+    position:absolute;
+    right: calc(100%);
+}
+h1:hover .header-anchor,
+h2:hover .header-anchor,
+h3:hover .header-anchor,
+h4:hover .header-anchor {
+    display: inline;
 }

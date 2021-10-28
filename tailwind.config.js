@@ -20,6 +20,12 @@ module.exports = {
                         darker: "#4b6c6b",
                     },
                     600: "#779fa1"
+                },
+                yellow: {
+                    hero: {
+                        DEFAULT: "#FAFAC6",
+                        darker: "#EFD09E"
+                    }
                 }
             }
         }
