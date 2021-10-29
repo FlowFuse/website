@@ -6,6 +6,7 @@ on:
       - main
 jobs:
   build_deploy:
+    if: ${{ github.repository == 'flowforge/website' }}
     runs-on: ubuntu-latest
     steps:
       - name: Check out website repository

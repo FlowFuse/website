@@ -1,3 +1,6 @@
 {
-    "layout": "layouts/handbook.njk"
+    "layout": "layouts/handbook.njk",
+    "tags": [
+        "handbook"
+    ]
 }
