@@ -35,6 +35,7 @@ h1,h2,h3,h4 {
 .header-anchor {
     display: none;
     position:absolute;
+    text-decoration: none !important;
     right: calc(100%);
 }
 h1:hover .header-anchor,
