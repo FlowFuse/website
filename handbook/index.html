@@ -51,9 +51,11 @@
                 </nav>
             </header>
             <main class="container pt-14 md:pt-18 px-6 mx-auto flex flex-wrap flex-col md:flex-row items-center">
-                <div class="w-full mx-auto bg-white flex">
-    <div class="flex-grow">
-        <div class="font-medium border-b pb-1">/<a class="mx-2" href="/handbook">handbook</a></div>
+                <div class="w-full mx-auto bg-white">
+    <div class="font-medium border-b pb-1">/<a class="mx-2" href="/handbook">handbook</a></div>
+</div>
+<div class="w-full mx-auto bg-white flex flex-col md:flex-row">
+    <div class="flex-grow order-last md:order-first">
         <div class="mt-6 mb-4 prose prose-blue main-content">
             <h2 id="introduction" tabindex="-1"><a class="header-anchor" href="#introduction">#&nbsp;</a> Introduction</h2>
 <p>This handbook contains all the information about how FlowForge Inc. is run.</p>
@@ -78,11 +80,10 @@ to make public. That content should be shared on the FlowForge Google Drive.</p>
 
         </div>
     </div>
-    <div class="w-64 ml-8 px-2">
+    <div class="w-full md:w-64 md:ml-8 mt-4 md:mt-6 px-2">
         <h3 class="font-medium border-b pb-1 mb-4">On this page</h3>
         <ul id="toc" class="text-sm border-b mb-4"></ul>
-
-        <div class="text-sm pb-1 text-right mb-4"><a href="https://github.com/flowforge/handbook/edit/main/README.md">Contribute to this page</a></div>
+        <div class="text-sm pb-1 text-right mb-4"><a href="https://github.com/flowforge/handbook/edit/main/README.md">Edit this page</a></div>
     </div>
 </div>
 <script>
@@ -117,15 +118,12 @@ to make public. That content should be shared on the FlowForge Google Drive.</p>
         </div>
     </div>
     <footer class="bg-red-hero w-full">
-        <div class="max-w-screen-xl mx-2 xl:mx-auto lg:mx-24 py-8 px-10 text-white">
-            <div class="flex flex-col md:flex-row justify-center space-x-8">
-                <div class="w-full md:w-96 mb-4 text-sm flex flex-col self-end ">
-                    <div class="flex flex-row md:flex-col">
-                        <span>Copyright 2021 FlowForge Inc.</span>
-                        <span class=" md:hidden inline-flex px-2">|</span>
-                        <span>All Rights Reserved</span>
-                    </div>
-                    <div class="mt-8 text-xs">This site uses cookies. Click <a href="#" class="underline" onclick="initCookieConsent().showSettings()">here</a> to manage your preferences</a>.</div>
+        <div class="max-w-screen-xl xl:mx-auto lg:mx-24 py-8 px-10 text-white">
+            <div class="flex flex-col md:flex-row justify-center md:space-x-8">
+                <div class="w-full md:w-96 mb-4 text-sm flex flex-col self-end order-last md:order-first">
+                    <div>Copyright 2021 FlowForge Inc.</div>
+                    <div>All Rights Reserved</div>
+                    <div class="mt-2 text-xs">This site uses cookies. Click <a href="#" class="underline" onclick="initCookieConsent().showSettings()">here</a> to manage your preferences</a>.</div>
                 </div>
                 <div class="w-full md:w-52 mb-4">
                     <div class="space-y-2"><span class="text-xl font-bold">Social</span>
