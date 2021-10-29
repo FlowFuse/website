@@ -5,6 +5,7 @@ on:
       - main
 jobs:
   publish:
+    if: ${{ github.repository == 'flowforge/handbook' }}
     runs-on: ubuntu-latest
     steps:
       - run: |
