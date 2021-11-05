@@ -9,6 +9,12 @@ The handbook is here for the whole company to help maintain. Pull-requests are w
 and strongly encouraged.
 
 
+### Company
+
+ - [About](./company/about.md)
+ - [Values](./company/values.md)
+ - [Strategy](./company/strategy.md)
+
 ### Colophon
 
 The FlowForge handbook is inspire by the [GitLab handbook](https://about.gitlab.com/handbook/about/).
