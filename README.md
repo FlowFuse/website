@@ -35,5 +35,5 @@ All changes merged to the `main` branch will be automatically deployed to the ha
 
 #### Private information
 
-Whilst instinctively want to be open in all we do, there will inevitably by content that is not appropriate
+Whilst instinctively we want to be open in all we do, there will inevitably by content that is not appropriate
 to make public. That content should be shared on the FlowForge Google Drive.
