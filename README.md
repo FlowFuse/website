@@ -15,7 +15,7 @@ After cloning the repository, install the project dependencies, then run the bui
 ```bash
 npm install
 
-npm run serve
+npm run dev:eleventy
 ```
 
 This will start a server on http://localhost:8080 that will live reload whenever
