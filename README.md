@@ -14,6 +14,7 @@ and strongly encouraged.
  - [About](./company/about.md)
  - [Values](./company/values.md)
  - [Strategy](./company/strategy.md)
+ - [Communication](./company/communication.md)
 
 ### Colophon
 
