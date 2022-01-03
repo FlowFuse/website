@@ -17,7 +17,7 @@ and strongly encouraged.
 
 ### Colophon
 
-The FlowForge handbook is inspire by the [GitLab handbook](https://about.gitlab.com/handbook/about/).
+The FlowForge handbook is inspired by the [GitLab handbook](https://about.gitlab.com/handbook/about/).
 As an all-remote company, we share [their rationale](https://about.gitlab.com/handbook/about/#advantages) for having a handbook.
 
 The aim is to avoid institutional knowledge building up inside our heads without
