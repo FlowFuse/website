@@ -3,4 +3,4 @@
  - [About](../company/about.md)
  - [Values](../company/values.md)
  - [Strategy](../company/strategy.md)
- - [Communication](./communication.md)
+ - [Communication](../company/communication.md)
