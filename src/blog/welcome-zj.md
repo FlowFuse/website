@@ -6,7 +6,7 @@ authors: ["nick-oleary"]
 ---
 
 This year the FlowForge team will grow further, and I'm excited to announce our
-newest addition to the team; Zeger-Jan van de Weg ([@ZJvandeWeg](https://twitter.com/JvandeWeg)).
+newest addition to the team; Zeger-Jan van de Weg ([@ZJvandeWeg](https://twitter.com/ZJvandeWeg)).
 Zeger-Jan, also known as ZJ, is joining FlowForge as CEO.
 
 <!--more-->
