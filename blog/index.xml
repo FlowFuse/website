@@ -3,8 +3,33 @@
     <title>FlowForge</title>
     <link href="https://flowforge.com/blog/index.xml" rel="self"/>
     <link href="https://flowforge.com/blog"/>
-    <updated>2021-05-17T00:00:00Z</updated>
+    <updated>2022-01-03T00:00:00Z</updated>
     <id>https://flowforge.com/blog</id>
+    
+    <entry>
+        <id>https://flowforge.com/blog/welcome-zj/</id>
+        <title>Welcome ZJ</title>
+        <summary></summary>
+        <updated>2022-01-03T00:00:00Z</updated>
+        <link href="https://flowforge.com/blog/welcome-zj/"/>
+        <author><name>Nick O&#39;Leary</name></author>
+        <content type="html">&lt;p&gt;This year the FlowForge team will grow further, and I&#39;m excited to announce our
+newest addition to the team; Zeger-Jan van de Weg (&lt;a href=&quot;https://twitter.com/JvandeWeg&quot;&gt;@ZJvandeWeg&lt;/a&gt;).
+Zeger-Jan, also known as ZJ, is joining FlowForge as CEO.&lt;/p&gt;
+&lt;!--more--&gt;
+&lt;p&gt;ZJ previously worked at GitLab where he helped build a vibrant open source
+community and we&#39;re thrilled to have him to continue this with the Node-RED
+community. Under his supervision the involvement of GitLab in the Git project
+grew significantly, allowing Git and GitLab to be successful together. This aligns
+well with our vision for FlowForge:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;We will only be successful if the whole Node-RED community is successful.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;As our first non-engineering hire, ZJ will be focussed on growing the business side
+of FlowForge, working on marketing and ongoing business development.&lt;/p&gt;
+&lt;p&gt;Welcome aboard ZJ!&lt;/p&gt;
+</content>
+    </entry>
     
     <entry>
         <id>https://flowforge.com/blog/welcome-sam/</id>
