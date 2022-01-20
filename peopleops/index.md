@@ -18,14 +18,9 @@ Before you can take time off you should _always_:
 
 ## Expenses
 
-Expenses can be added on [work.pilot.co/expenses]
+Expenses can be added on [work.pilot.co/expenses](https://work.pilot.co/expenses)
 * Create a new expense by clicking <kbd>Add new expense</kbd>
 * Enter a description, category, price and attach an invoice, then click <kbd>Add new expense</kbd>
   * This expense will now appear in your "Unreported expenses" list
 * Apply a check against the expense in your "Unreported expenses" list then click <kbd>Create expense report</kbd>
 * Fill out the description fields then click <kbd>Send expense report</kbd>
-
-
-
-[references]:References
-[work.pilot.co/expenses]: https://work.pilot.co/expenses
