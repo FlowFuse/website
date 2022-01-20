@@ -56,7 +56,7 @@ on Thursday 17th February.
 
 As we're only at 0.1 today, there is a lot still to do. We will be following the
 principles of [Semantic Versioning](https://semver.org/) with our releases,
-but until we reach 1.0, there may be disruptive changes between releases.
+but until we reach 1.0, there may be some disruptive changes along the way.
 
 Sign up to the mailing list below if you want to hear more about the work we're
 doing.
