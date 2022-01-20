@@ -3,8 +3,36 @@
     <title>FlowForge</title>
     <link href="https://flowforge.com/blog/index.xml" rel="self"/>
     <link href="https://flowforge.com/blog"/>
-    <updated>2022-01-03T00:00:00Z</updated>
+    <updated>2022-01-20T00:00:00Z</updated>
     <id>https://flowforge.com/blog</id>
+    
+    <entry>
+        <id>https://flowforge.com/blog/welcome-steve/</id>
+        <title>Welcome Steve</title>
+        <summary></summary>
+        <updated>2022-01-20T00:00:00Z</updated>
+        <link href="https://flowforge.com/blog/welcome-steve/"/>
+        <author><name>Nick O&#39;Leary</name></author>
+        <content type="html">&lt;p&gt;We&#39;re continuing to grow the FlowForge team with our latest hire; Steve McLaughlin
+who is joining our development team.&lt;/p&gt;
+&lt;!--more--&gt;
+&lt;p&gt;Steve is a well known face in the Node-RED community. He is a regular contributor
+to the community forum, always happy to help users with their questions.&lt;/p&gt;
+&lt;p&gt;He has published a number of very popular nodes, include &lt;a href=&quot;https://flows.nodered.org/node/node-red-contrib-buffer-parser&quot;&gt;buffer-parser&lt;/a&gt;,
+&lt;a href=&quot;https://flows.nodered.org/node/node-red-contrib-cron-plus&quot;&gt;cron-plus&lt;/a&gt; and
+&lt;a href=&quot;https://flows.nodered.org/node/node-red-contrib-image-tools&quot;&gt;image-tools&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;He has also made some significant contributions to the core of Node-RED, such as
+delivering MQTTv5 support and introducing the Monaco code editor into the heart
+of the editor.&lt;/p&gt;
+&lt;p&gt;Steve joins us from a background in Industrial IoT in the automative manufacturing
+space - experience and knowledge that will be invaluable as we look to growing the
+FlowForge platform.&lt;/p&gt;
+&lt;p&gt;Steve will be focussed on the Node-RED side of our activities - helping to continue
+the ongoing development and growth of the open source project at the heart of what
+FlowForge is about.&lt;/p&gt;
+&lt;p&gt;Welcome aboard Steve!&lt;/p&gt;
+</content>
+    </entry>
     
     <entry>
         <id>https://flowforge.com/blog/welcome-zj/</id>
