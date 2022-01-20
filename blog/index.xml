@@ -3,8 +3,55 @@
     <title>FlowForge</title>
     <link href="https://flowforge.com/blog/index.xml" rel="self"/>
     <link href="https://flowforge.com/blog"/>
-    <updated>2022-01-20T00:00:00Z</updated>
+    <updated>2022-01-20T01:00:00Z</updated>
     <id>https://flowforge.com/blog</id>
+    
+    <entry>
+        <id>https://flowforge.com/blog/flowforge-01-released/</id>
+        <title>FlowForge 0.1 released</title>
+        <summary>Making the first release of the platform and transitioning to open development</summary>
+        <updated>2022-01-20T01:00:00Z</updated>
+        <link href="https://flowforge.com/blog/flowforge-01-released/"/>
+        <author><name>Nick O&#39;Leary</name></author>
+        <content type="html">&lt;p&gt;For an open core company, we haven&#39;t been very open with what we&#39;re doing. That all
+changes today with the release of FlowForge 0.1 and making all of our repositories
+public.&lt;/p&gt;
+&lt;p&gt;This is a significant step for the company as we look to build a platform around Node-RED.&lt;/p&gt;
+&lt;!--more--&gt;
+&lt;p&gt;The main question we get asked is: &#39;What is FlowForge?&amp;quot; - which is a very reasonable
+question to ask.&lt;/p&gt;
+&lt;p&gt;FlowForge is a platform for managing Node-RED instances at scale. It lets you have
+multiple users on the platform, organised into teams to provide proper access control
+to individual Node-RED instances, or Projects as we call them.&lt;/p&gt;
+&lt;p&gt;With the 0.1 release, we have the basic building blocks of the platform in place.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Add multiple users to the platform&lt;/li&gt;
+&lt;li&gt;Create teams for those users&lt;/li&gt;
+&lt;li&gt;Create Node-RED projects quickly and easily through the platform UI&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;For a more complete walk-through of the platform in this early release, you can
+watch this video.&lt;/p&gt;
+&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/YYZDx8n17Ys&quot; title=&quot;YouTube video player&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
+&lt;h3 id=&quot;getting-started-with-flowforge&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://flowforge.com/blog/flowforge-01-released/#getting-started-with-flowforge&quot;&gt;#&amp;nbsp;&lt;/a&gt; Getting started with FlowForge&lt;/h3&gt;
+&lt;p&gt;The documentation provides a guide for &lt;a href=&quot;https://github.com/flowforge/flowforge/tree/main/docs&quot;&gt;installing FlowForge on a local server&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;We also have drivers for deploying to Docker Compose and Kubernetes based environments
+to enable a larger scale of deployment. We&#39;ll have more documentation on those options
+in the near future.&lt;/p&gt;
+&lt;h3 id=&quot;getting-help&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://flowforge.com/blog/flowforge-01-released/#getting-help&quot;&gt;#&amp;nbsp;&lt;/a&gt; Getting help&lt;/h3&gt;
+&lt;p&gt;If you hit any problems with the platform, or have questions to ask, please do
+raise an &lt;a href=&quot;https://github.com/flowforge/flowforge/issues&quot;&gt;issue on GitHub&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;That also includes if you have any feedback or feature requests.&lt;/p&gt;
+&lt;h3 id=&quot;what&#39;s-next%3F&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://flowforge.com/blog/flowforge-01-released/#what&#39;s-next%3F&quot;&gt;#&amp;nbsp;&lt;/a&gt; What&#39;s next?&lt;/h3&gt;
+&lt;p&gt;With so much in the plan and lots of exciting features to come, we will have a
+regular cycle of releases every four weeks. So you can expect the next release, 0.2,
+on Thursday 17th February.&lt;/p&gt;
+&lt;p&gt;As we&#39;re only at 0.1 today, there is a lot still to do. We will be following the
+principles of &lt;a href=&quot;https://semver.org/&quot;&gt;Semantic Versioning&lt;/a&gt; with our releases,
+but until we reach 1.0, there may be some disruptive changes along the way.&lt;/p&gt;
+&lt;p&gt;Sign up to the mailing list below if you want to hear more about the work we&#39;re
+doing.&lt;/p&gt;
+</content>
+    </entry>
     
     <entry>
         <id>https://flowforge.com/blog/welcome-steve/</id>
