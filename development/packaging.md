@@ -14,6 +14,18 @@ All Git Repositories must contain the following files:
  - README.md
  - LICENSE
 
+### Notifications
+
+Repositories should be added to the appropriate Slack channel. For core code reposities,
+this would be in the `#gh-flowforge` channel.
+
+To create a subscription, go to that channel and type the message:
+
+```
+/github subscribe flowforge/NAME-OF-REPO comments
+```
+
+This will subscribe to any notifications covering: `issues`, `pulls`, `commits`, `releases`, `deployments` and `comments`
 
 ## NPM packages
 
