@@ -36,9 +36,9 @@ There are three types of issue used for planning work:
  - **Task**: a piece of work that isn't necessarily tied to a specific Epic or Story.
    For example, items related to technical debt or house-keeping chores.
 
-A planning meeting held at the start of the release. In this meeting the team
+A planning meeting is held at the start of the release. In this meeting the team
 discuss the current backlog of stories, tasks and bugs to propose items to be added
-to the release. All items should have an assigned owner.
+to the release. All items assigned to a milestone should have an assigned owner.
 
 ### Retrospective
 
