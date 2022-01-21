@@ -63,6 +63,7 @@
 <ul>
 <li>Flow Forge Components should start with <code>flowforge-</code></li>
 <li>If a Node-RED plugin/node should start with <code>flowforge-nr-</code></li>
+<li>Installers or Orchestration projects are named without the leading <code>flowforge-</code> e.g. <code>installer</code> or <code>helm</code></li>
 </ul>
 <h3 id="content" tabindex="-1"><a class="header-anchor" href="#content">#&nbsp;</a> Content</h3>
 <p>All Git Repositories must contain the following files:</p>
@@ -123,6 +124,9 @@ this would be in the <code>#gh-flowforge</code> channel.</p>
 </code></pre>
 </li>
 </ul>
+<h3 id="package-version-numbering" tabindex="-1"><a class="header-anchor" href="#package-version-numbering">#&nbsp;</a> Package Version Numbering</h3>
+<p>Package numbers should follow the Semantic Versioning Scheme as laid out on <a href="https://semver.org/">semver.org</a>.</p>
+<p>Each component will stay in step with the core flowforge/flowforge release numbering for <code>major.minor</code> but will increment their own <code>fix</code> values as needed. e.g. On release of v0.2.0 all components will tag and release v0.2.0, but can independantly release v0.2.1 as needed.</p>
 
         </div>
     </div>
@@ -130,7 +134,7 @@ this would be in the <code>#gh-flowforge</code> channel.</p>
         <h3 class="font-medium border-b pb-1 mb-4">On this page</h3>
         <ul id="toc" class="text-sm border-b mb-4"></ul>
         <div class="text-sm pb-1 text-right mb-4"><a href="https://github.com/flowforge/handbook/edit/main/development/packaging.md">Edit this page</a></div>
-        <div class="text-xs pb-1 text-right mb-4 italic">Updated: 2022-01-21 09:31:39 +0100</div>
+        <div class="text-xs pb-1 text-right mb-4 italic">Updated: 2022-01-21 16:02:52 +0000</div>
     </div>
 </div>
 <script>
