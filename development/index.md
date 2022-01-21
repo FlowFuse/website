@@ -2,9 +2,11 @@
 
 ### How we work
 
-- [Packaging](../development/packaging.md)
+- [Packaging](../development/packaging.md) 
 
 ## Releases
+
+Instructions for creating a release are [here](../development/release.md)
 
 ### Cadence
 

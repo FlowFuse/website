@@ -6,6 +6,7 @@ Flow Forge Packaging Guidelines
 
 - Flow Forge Components should start with `flowforge-`
 - If a Node-RED plugin/node should start with `flowforge-nr-`
+- Installers or Orchestration projects are named without the leading `flowforge-` e.g. `installer` or `helm`
 
 ### Content
 
@@ -75,3 +76,8 @@ The `package.json` must contain the following keys
     },
     ```
  
+### Package Version Numbering
+
+Package numbers should follow the Semantic Versioning Scheme as laid out on [semver.org](https://semver.org/).
+
+Each component will stay in step with the core flowforge/flowforge release numbering for `major.minor` but will increment their own `fix` values as needed. e.g. On release of v0.2.0 all components will tag and release v0.2.0, but can independantly release v0.2.1 as needed.
