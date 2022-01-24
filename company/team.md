@@ -1,3 +1,10 @@
+## Interviews
+
+When a candidate applied they'll have at least two interviews with two different
+interviewers before an offer is extended to them. One interview will investigate
+the [fit on values](../company/values.md). The second will be a competency based
+interview.
+
 ## Onboarding
 
 Just before the first day working at FlowForge you'll receive an email 
