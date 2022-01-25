@@ -16,9 +16,10 @@ your local currency unless explicitly discussed otherwise.
 Salary can be increased twice a year. In September, a performance adjustment is
 done. Performance review is based on values, and meeting role expectations.
 
-Each December compensation is adjusted for each employee with the company for
-over 6 months. Inflation is set to the year average for the country the employee
-lives in.
+Each January compensation is adjusted for each employee with the company for
+over 6 months. Inflation is set to the value for the preceding calendar year as
+reported by a international authority (IMF) or else by a recognised national
+statistics authority.
 
 ## Equity
 
