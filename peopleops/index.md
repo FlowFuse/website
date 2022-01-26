@@ -1,3 +1,5 @@
+- [Compensation](../peopleops/compensation.md)
+
 ## Vacation Policy
 
 FlowForge has a unlimited time off policy. Taking vacation is encouraged for all
