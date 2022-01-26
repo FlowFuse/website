@@ -52,47 +52,41 @@
             </header>
             <main class="container pt-14 md:pt-18 px-6 mx-auto flex flex-wrap flex-col md:flex-row items-center">
                 <div class="w-full mx-auto bg-white">
-    <div class="font-medium border-b pb-1">/<a class="mx-2" href="/handbook">handbook</a>/<a class="mx-2" href="/handbook/development">development</a>/<a class="mx-2" href="/handbook/development/release">release</a></div>
+    <div class="font-medium border-b pb-1">/<a class="mx-2" href="/handbook">handbook</a>/<a class="mx-2" href="/handbook/peopleops">peopleops</a>/<a class="mx-2" href="/handbook/peopleops/compensation">compensation</a></div>
 </div>
 <div class="w-full mx-auto bg-white flex flex-col md:flex-row">
     <div class="flex-grow order-last md:order-first">
         <div class="mt-6 mb-4 prose prose-blue main-content">
-            <h1 id="release-process" tabindex="-1"><a class="header-anchor" href="#release-process">#&nbsp;</a> Release Process</h1>
-<p>The follow process should be followed for a FlowForge release</p>
-<h2 id="setup" tabindex="-1"><a class="header-anchor" href="#setup">#&nbsp;</a> Setup</h2>
-<ul>
-<li>Decide who will be Release Manager for this release. This should be shared across the whole team to prevent it becoming a single point of failure.</li>
-<li>Create a Release check list issue (using template) on the flowforge/admin project to keep track of all components included in the release (e.g. https://github.com/flowforge/admin/issues/7)</li>
-<li>Assign the issue to the Release Manager</li>
-<li>Ensure you have a valid login token for npmjs as the flowforge user (credentials in the shared password vault)</li>
-<li>Create a directory to hold fresh checkout of all packages being released (e.g. <code>mkdir flowforge-x.y.z</code>)</li>
-</ul>
-<h2 id="steps" tabindex="-1"><a class="header-anchor" href="#steps">#&nbsp;</a> Steps</h2>
-<ul>
-<li>PR raised to update all relevent version numbers (Please reffer to <a href="packaging/#package-verion-numbering">Packaging</a> for details). This should include updating any entries in the <code>dependencies</code> section of the <code>package.json</code> if applicable and remember to run <code>npm install</code> and check in the new updated <code>package-lock.json</code> as part of the PR.</li>
-<li>All package numbering PRs to be merged upfront</li>
-<li>Create Releases tagged in Github project</li>
-<li>The following tasks should be done in order of dependency e.g. if Component A depends on Component B then Component B should br published first
-<ul>
-<li>Clean clone of the project using the tag created for the release in the previous step (e.g. <code>git clone -b 'v0.1.0' --single-branch --depth 1 git@github.com:flowforge/flowforge.git</code>)</li>
-<li>Run <code>npm install</code></li>
-<li>Run any build step needed (e.g. <code>npm run build</code> for the flowforge/flowforge project)</li>
-<li>Run <code>npm publish</code> in the project directory. (If this is the first release of a scoped package remember to add <code>--access=public</code>)</li>
-</ul>
-</li>
-<li>Once all the components have been built and published to npm the <code>installer</code>, <code>helm</code> and <code>docker-compose</code> components can be updated and tagged.</li>
-</ul>
-<h2 id="next-steps" tabindex="-1"><a class="header-anchor" href="#next-steps">#&nbsp;</a> Next Steps</h2>
-<ul>
-<li>As much as possible of the previous steps should be converted into a CI Pipeline making use of GitHub Actions.</li>
-</ul>
+            <h1 id="compensation" tabindex="-1"><a class="header-anchor" href="#compensation">#&nbsp;</a> Compensation</h1>
+<p>Total compensation consists of 3 elements, salary, equity, and benefits.
+FlowForge aims to provide a total compensation package on par with similar
+companies in terms of: stage of the company, market, role, and level of the role.</p>
+<h2 id="salary" tabindex="-1"><a class="header-anchor" href="#salary">#&nbsp;</a> Salary</h2>
+<p>Salary for each role is determined initially during the hiring process based
+on compensation expectation of the candidate as well as the market rates. Salary
+is based on your location you live in and the company context. FlowForge pays in
+your local currency unless explicitly discussed otherwise.</p>
+<h3 id="adjustments" tabindex="-1"><a class="header-anchor" href="#adjustments">#&nbsp;</a> Adjustments</h3>
+<p>Salary can be increased twice a year. In September, a performance adjustment is
+done. Performance review is based on values, and meeting role expectations.</p>
+<p>Each January compensation is adjusted for each employee with the company for
+over 6 months. Inflation is set to the value for the preceding calendar year as
+reported by a international authority (IMF) or else by a recognised national
+statistics authority.</p>
+<h2 id="equity" tabindex="-1"><a class="header-anchor" href="#equity">#&nbsp;</a> Equity</h2>
+<p>FlowForge offers equity for all roles depending on the same variables that decide
+salary, except your location. Equity is offered as stock options, which upon
+execution will be transformed in the underlying stock. Stock compensation are
+awarded on a 4 year vesting schedule with a 1 year cliff. Equity compensation
+will not vary based on employee location.</p>
+<p>Equity is only increased on employee promotions.</p>
 
         </div>
     </div>
     <div class="w-full md:w-64 md:ml-8 mt-4 md:mt-6 px-2">
         <h3 class="font-medium border-b pb-1 mb-4">On this page</h3>
         <ul id="toc" class="text-sm border-b mb-4"></ul>
-        <div class="text-sm pb-1 text-right mb-4"><a href="https://github.com/flowforge/handbook/edit/main/development/release.md">Edit this page</a></div>
+        <div class="text-sm pb-1 text-right mb-4"><a href="https://github.com/flowforge/handbook/edit/main/peopleops/compensation.md">Edit this page</a></div>
         <div class="text-xs pb-1 text-right mb-4 italic">Updated: 2022-01-26 10:43:57 +0100</div>
     </div>
 </div>
