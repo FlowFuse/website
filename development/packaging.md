@@ -12,8 +12,18 @@ Flow Forge Packaging Guidelines
 
 All Git Repositories must contain the following files:
 
- - README.md
- - LICENSE
+ - `README.md`
+ - `LICENSE`
+
+### Linting
+
+All code repositories should adopt our standard linting rules by copying the
+`.eslintrc` from the [flowforge/.github repository](https://github.com/flowforge/.github/blob/main/.eslintrc).
+
+If a repository has any additional requirements for linting, such as handling Vue
+code, then additional plugins can be added.
+
+We use [StandardJS](https://standardjs.com/), with one exception - 4 spaces not 2.
 
 ### Notifications
 
