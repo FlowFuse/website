@@ -68,9 +68,15 @@
 <h3 id="content" tabindex="-1"><a class="header-anchor" href="#content">#&nbsp;</a> Content</h3>
 <p>All Git Repositories must contain the following files:</p>
 <ul>
-<li>README.md</li>
-<li>LICENSE</li>
+<li><code>README.md</code></li>
+<li><code>LICENSE</code></li>
 </ul>
+<h3 id="linting" tabindex="-1"><a class="header-anchor" href="#linting">#&nbsp;</a> Linting</h3>
+<p>All code repositories should adopt our standard linting rules by copying the
+<code>.eslintrc</code> from the <a href="https://github.com/flowforge/.github/blob/main/.eslintrc">flowforge/.github repository</a>.</p>
+<p>If a repository has any additional requirements for linting, such as handling Vue
+code, then additional plugins can be added.</p>
+<p>We use <a href="https://standardjs.com/">StandardJS</a>, with one exception - 4 spaces not 2.</p>
 <h3 id="notifications" tabindex="-1"><a class="header-anchor" href="#notifications">#&nbsp;</a> Notifications</h3>
 <p>Repositories should be added to the appropriate Slack channel. For core code repositories,
 this would be in the <code>#gh-flowforge</code> channel.</p>
@@ -145,7 +151,7 @@ issues or PRs opened/closed against the repo are automatically tracked on the De
         <h3 class="font-medium border-b pb-1 mb-4">On this page</h3>
         <ul id="toc" class="text-sm border-b mb-4"></ul>
         <div class="text-sm pb-1 text-right mb-4"><a href="https://github.com/flowforge/handbook/edit/main/development/packaging.md">Edit this page</a></div>
-        <div class="text-xs pb-1 text-right mb-4 italic">Updated: 2022-01-28 15:16:51 +0000</div>
+        <div class="text-xs pb-1 text-right mb-4 italic">Updated: 2022-01-28 18:06:05 +0000</div>
     </div>
 </div>
 <script>
