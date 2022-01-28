@@ -17,6 +17,7 @@ and strongly encouraged.
  - [Communication](./company/communication.md)
  - [Development](./development)
  - [PeopleOps](./peopleops)
+ - [Security](./company/security.md)
 
 ### Colophon
 
