@@ -1,10 +1,10 @@
 # Release Process
 
-The follow process should be followed for a FlowForge release
+The follow process should be followed for a FlowForge release.
 
 ## Setup
 
- - Decide who will be Release Manager for this release. This should be shared across the whole team to prevent it becoming a single point of failure.
+ - Decide who will be Release Manager for this release. For Major/Minor releases this should be shared across the whole team to prevent it becoming a single point of failure. For Fix releases it can be the developer committing the fix.
  - Create a Release check list issue (using template) on the flowforge/admin project to keep track of all components included in the release (e.g. https://github.com/flowforge/admin/issues/7)
  - Assign the issue to the Release Manager
  - Ensure you have a valid login token for npmjs as the flowforge user (credentials in the shared password vault)
@@ -13,6 +13,7 @@ The follow process should be followed for a FlowForge release
 ## Steps
 
  - PR raised to update all relevent version numbers (Please reffer to [Packaging](packaging.md#package-verion-numbering) for details). This should include updating any entries in the `dependencies` section of the `package.json` if applicable and remember to run `npm install` and check in the new updated `package-lock.json` as part of the PR.
+ - Have update PR reviewed by somebody other than the Release Manager
  - All package numbering PRs to be merged upfront
  - Create Releases tagged in Github projects
  - The following tasks should be completed in order of dependency e.g. if Component A depends on Component B then Component B should br published first
