@@ -1,4 +1,4 @@
-Welcome to the first Flowforge newsletter, we’re going to publish this as a regular roundup of what\`s happening with both Flowforge and the wider Node-RED community, if you want to receive it via email [sign up for updates](https://flowforge.com/) on our main page
+Welcome to the first Flowforge newsletter, we’re going to publish this as a regular roundup of what\`s happening with both Flowforge and the wider Node-RED community, if you want to receive it via email, sign up for updates at the bottom of the page.
 
 If you’ve got something that you’d like us to share please email [contact@flowforge.com](mailto:contact@flowforge.com).
 
