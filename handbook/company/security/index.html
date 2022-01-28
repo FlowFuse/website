@@ -52,63 +52,27 @@
             </header>
             <main class="container pt-14 md:pt-18 px-6 mx-auto flex flex-wrap flex-col md:flex-row items-center">
                 <div class="w-full mx-auto bg-white">
-    <div class="font-medium border-b pb-1">/<a class="mx-2" href="/handbook">handbook</a>/<a class="mx-2" href="/handbook/development">development</a></div>
+    <div class="font-medium border-b pb-1">/<a class="mx-2" href="/handbook">handbook</a>/<a class="mx-2" href="/handbook/company">company</a>/<a class="mx-2" href="/handbook/company/security">security</a></div>
 </div>
 <div class="w-full mx-auto bg-white flex flex-col md:flex-row">
     <div class="flex-grow order-last md:order-first">
         <div class="mt-6 mb-4 prose prose-blue main-content">
-            <h2 id="development" tabindex="-1"><a class="header-anchor" href="#development">#&nbsp;</a> Development</h2>
-<h3 id="how-we-work" tabindex="-1"><a class="header-anchor" href="#how-we-work">#&nbsp;</a> How we work</h3>
-<ul>
-<li><a href="../development/packaging/">Packaging</a></li>
-</ul>
-<h2 id="releases" tabindex="-1"><a class="header-anchor" href="#releases">#&nbsp;</a> Releases</h2>
-<p>Instructions for creating a release are <a href="../development/release/">here</a></p>
-<h3 id="cadence" tabindex="-1"><a class="header-anchor" href="#cadence">#&nbsp;</a> Cadence</h3>
-<p>FlowForge is released every four weeks, on a Thursday. There's 13 releases each
-year. The initial release is scheduled for the 20th of January. This implies:</p>
-<p>v0.2 is scheduled for 2022/02/17</p>
-<p>v0.3 is scheduled for 2022/03/17</p>
-<h3 id="planning" tabindex="-1"><a class="header-anchor" href="#planning">#&nbsp;</a> Planning</h3>
-<p>We use GitHub issues for planning the work in a release. A Milestone should exist
-for the current release (N) and the next one (N+1). We do not schedule work beyond
-that as priorities can change through a release.</p>
-<p>There are three types of issue used for planning work:</p>
-<ul>
-<li>
-<p><strong>Epic</strong>: a significant feature or piece of work that doesn't easily fit into
-a single release. It will typically have a number of Stories
-and/or Tasks associated with it that can be delivered iteratively.</p>
-</li>
-<li>
-<p><strong>Story</strong>: a <em>user-oriented</em> description of a feature. It should describe what
-a user should be able to do and identify the value that brings to the user.
-A story should be deliverable in a single release.</p>
-</li>
-<li>
-<p><strong>Task</strong>: a piece of work that isn't necessarily tied to a specific Epic or Story.
-For example, items related to technical debt or house-keeping chores.</p>
-</li>
-</ul>
-<p>A planning meeting is held at the start of the release. In this meeting the team
-discuss the current backlog of stories, tasks and bugs to propose items to be added
-to the release. All items assigned to a milestone should have an assigned owner.</p>
-<h3 id="retrospective" tabindex="-1"><a class="header-anchor" href="#retrospective">#&nbsp;</a> Retrospective</h3>
-<p>The day after each FlowForge release, always a Friday, a meeting is scheduled
-by the CTO. This meeting includes 3 parts: a retrospective on the last release,
-complete scheduling for the next release, and kick off development for the next
-release.</p>
-<h3 id="launch-lunch" tabindex="-1"><a class="header-anchor" href="#launch-lunch">#&nbsp;</a> Launch Lunch</h3>
-<p>To celebrate the launch of a new version of FlowForge, we organize a lunch on the
-release day. Each team member is encouraged to order a lunch (Expensable up to 20$
-per launch) and join a social lunch zoom call.</p>
+            <h1 id="security" tabindex="-1"><a class="header-anchor" href="#security">#&nbsp;</a> Security</h1>
+<p>##Credentials</p>
+<h2 id="password-vault" tabindex="-1"><a class="header-anchor" href="#password-vault">#&nbsp;</a> Password vault</h2>
+<p>The company provides a Password Vault account to all employees, this should be used for both individual user accounts and shared accounts (e.g. flowforge npmjs account).</p>
+<p>Any shared accounts should be in an approate vault shared with those that need it only, but always more than just one person.</p>
+<h2 id="strong-passwords" tabindex="-1"><a class="header-anchor" href="#strong-passwords">#&nbsp;</a> Strong passwords</h2>
+<p>Passwords should be randomly generated using the Password Vault to ensure strength and that they are not reused across services</p>
+<h2 id="2fa" tabindex="-1"><a class="header-anchor" href="#2fa">#&nbsp;</a> 2FA</h2>
+<p>For all services that support it, 2FA authentication should be enabled and if possible enforced by policy. Where possible the 2FA seed keys should be added to the entry in the Password Vault.</p>
 
         </div>
     </div>
     <div class="w-full md:w-64 md:ml-8 mt-4 md:mt-6 px-2">
         <h3 class="font-medium border-b pb-1 mb-4">On this page</h3>
         <ul id="toc" class="text-sm border-b mb-4"></ul>
-        <div class="text-sm pb-1 text-right mb-4"><a href="https://github.com/flowforge/handbook/edit/main/development/index.md">Edit this page</a></div>
+        <div class="text-sm pb-1 text-right mb-4"><a href="https://github.com/flowforge/handbook/edit/main/company/security.md">Edit this page</a></div>
         <div class="text-xs pb-1 text-right mb-4 italic">Updated: 2022-01-28 15:16:51 +0000</div>
     </div>
 </div>
