@@ -10,7 +10,7 @@ Any shared accounts should be in an approate vault shared with those that need i
 
 ## Strong passwords
 
-Passwords should be randomly generated using the Password Vault to ensure streanth and that they are not reused across services
+Passwords should be randomly generated using the Password Vault to ensure strength and that they are not reused across services
 
 ## 2FA
 
