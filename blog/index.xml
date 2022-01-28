@@ -3,8 +3,33 @@
     <title>FlowForge</title>
     <link href="https://flowforge.com/blog/index.xml" rel="self"/>
     <link href="https://flowforge.com/blog"/>
-    <updated>2022-01-20T01:00:00Z</updated>
+    <updated>2022-01-28T00:00:00Z</updated>
     <id>https://flowforge.com/blog</id>
+    
+    <entry>
+        <id>https://flowforge.com/blog/community-news-01/</id>
+        <title>Community News</title>
+        <summary>News from the FlowForge and Node-RED communities</summary>
+        <updated>2022-01-28T00:00:00Z</updated>
+        <link href="https://flowforge.com/blog/community-news-01/"/>
+        <author><name>Sam Machin</name></author>
+        <content type="html">&lt;p&gt;Welcome to the first FlowForge newsletter, we’re going to publish this as a regular roundup of what`s happening with both FlowForge and the wider Node-RED community, if you want to receive it via email, sign up for updates at the bottom of the page.&lt;/p&gt;
+&lt;!--more--&gt;
+&lt;p&gt;If you’ve got something that you’d like us to share please email &lt;a href=&quot;mailto:contact@flowforge.com&quot;&gt;contact@flowforge.com&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://flowforge.com/blog/flowforge-01-released&quot;&gt;FlowForge 0.1 Released&lt;/a&gt;&lt;br /&gt;
+First up we are really pleased to ship the first version of our platform, this is a very early release but hopefully will give you an idea of the direction we’re going in.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://nodered.org/blog/2022/01/27/version-2-2-released&quot;&gt;Node-RED 2.2&lt;/a&gt;&lt;br /&gt;
+The next version of Node-RED has been released with new editor features, predefined environment variables and improvements to some of the core nodes. Checkout the blog post and change log for more details.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://blog.golioth.io/building-iot-dashboards-with-golioth-grafana-and-node-red&quot;&gt;Make your IoT data beautiful&lt;/a&gt;&lt;br /&gt;
+Ben Mawby wrote a guide on connecting Golioth&#39;s WebSocket endpoints to Grafana using Node-RED and InfluxDB&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://www.sammachin.com/posts/alexaweb-reborn&quot;&gt;Alexa Voice Service on Node-RED&lt;/a&gt;&lt;br /&gt;
+Sam Machin rebuilt an app on Node-RED allowing you to talk to Alexa through the browser. And he has published a new &lt;a href=&quot;https://flows.nodered.org/node/@sammachin/node-red-alexa-voice-service&quot;&gt;node&lt;/a&gt; to use the Alexa Voice Service within your own flows.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://flowforge.com/blog&quot;&gt;New Team Members&lt;/a&gt;&lt;br /&gt;
+We welcomed 2 new members of the FlowForge team this month &lt;a href=&quot;https://flowforge.com/blog/welcome-zj&quot;&gt;ZJ&lt;/a&gt; joins as our CEO and &lt;a href=&quot;https://flowforge.com/blog/welcome-steve&quot;&gt;Steve&lt;/a&gt; has come onboard to work on the Node-RED project&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://boards.greenhouse.io/flowforge/jobs/4312861004&quot;&gt;We are Hiring&lt;/a&gt;&lt;br /&gt;
+We&#39;re looking for the next member of our team, If you&#39;re a Node.JS developer and want to work with us take a look at the link.&lt;/p&gt;
+</content>
+    </entry>
     
     <entry>
         <id>https://flowforge.com/blog/flowforge-01-released/</id>
