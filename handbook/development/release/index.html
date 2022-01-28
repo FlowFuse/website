@@ -58,10 +58,10 @@
     <div class="flex-grow order-last md:order-first">
         <div class="mt-6 mb-4 prose prose-blue main-content">
             <h1 id="release-process" tabindex="-1"><a class="header-anchor" href="#release-process">#&nbsp;</a> Release Process</h1>
-<p>The follow process should be followed for a FlowForge release</p>
+<p>The follow process should be followed for a FlowForge release.</p>
 <h2 id="setup" tabindex="-1"><a class="header-anchor" href="#setup">#&nbsp;</a> Setup</h2>
 <ul>
-<li>Decide who will be Release Manager for this release. This should be shared across the whole team to prevent it becoming a single point of failure.</li>
+<li>Decide who will be Release Manager for this release. For Major/Minor releases this should be shared across the whole team to prevent it becoming a single point of failure. For Fix releases it can be the developer committing the fix.</li>
 <li>Create a Release check list issue (using template) on the flowforge/admin project to keep track of all components included in the release (e.g. https://github.com/flowforge/admin/issues/7)</li>
 <li>Assign the issue to the Release Manager</li>
 <li>Ensure you have a valid login token for npmjs as the flowforge user (credentials in the shared password vault)</li>
@@ -70,6 +70,7 @@
 <h2 id="steps" tabindex="-1"><a class="header-anchor" href="#steps">#&nbsp;</a> Steps</h2>
 <ul>
 <li>PR raised to update all relevent version numbers (Please reffer to <a href="packaging/#package-verion-numbering">Packaging</a> for details). This should include updating any entries in the <code>dependencies</code> section of the <code>package.json</code> if applicable and remember to run <code>npm install</code> and check in the new updated <code>package-lock.json</code> as part of the PR.</li>
+<li>Have update PR reviewed by somebody other than the Release Manager</li>
 <li>All package numbering PRs to be merged upfront</li>
 <li>Create Releases tagged in Github projects</li>
 <li>The following tasks should be completed in order of dependency e.g. if Component A depends on Component B then Component B should br published first
@@ -93,7 +94,7 @@
         <h3 class="font-medium border-b pb-1 mb-4">On this page</h3>
         <ul id="toc" class="text-sm border-b mb-4"></ul>
         <div class="text-sm pb-1 text-right mb-4"><a href="https://github.com/flowforge/handbook/edit/main/development/release.md">Edit this page</a></div>
-        <div class="text-xs pb-1 text-right mb-4 italic">Updated: 2022-01-28 18:06:05 +0000</div>
+        <div class="text-xs pb-1 text-right mb-4 italic">Updated: 2022-01-28 18:06:37 +0000</div>
     </div>
 </div>
 <script>
