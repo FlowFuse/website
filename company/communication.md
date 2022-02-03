@@ -39,3 +39,13 @@ scroll to a notes section.
 
 Coffee calls are social of nature and thus are the exception to the rule that
 each meeting should have an agenda.
+
+
+## Node-RED community interations
+
+As an employee of FlowForge, when we interact with the OSS Node-RED comunity we 
+must be mindful of our position.  For example, when offering advice on the Node-RED 
+forum or the Node-RED slack, the first answer we offer should be how a solution can 
+be achieved using Node-RED.  If a native Node-RED solution is not possible or the 
+user would benefit from the advantages that FlowForge offers, then, like any other 
+person or company, we can offer FlowForge as a potential solution.
