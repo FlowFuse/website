@@ -25,10 +25,8 @@ have the equipment (laptop/monitor/accessories) you need to do the job. As an
 all-remote company, we meet via Zoom. As such, we will cover the cost of a good
 webcam/microphone/lighting arrangement.
 
-If you do require any equipment, talk to your manager to discuss options.
-
 The general rule is: treat it like your own money - seek good value and use 
-common sense.
+common sense. If you do require any equipment, talk to your manager to discuss options.
 
 There are two ways of spending company money - either using a company credit card,
 or through reimbursement.
