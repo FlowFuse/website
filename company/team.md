@@ -15,7 +15,7 @@ the team and you to complete once you started.
 The day you start an email will send to your personal email address to gain
 access to your FlowForge email address which you can leverage to gain access to
 Slack and other resources. On your first day you should prioritise gaining access
-to Slack, the FlowForge GitHub organisation, and complete your onbaording issue.
+to Slack, the FlowForge GitHub organisation, and complete your onboarding issue.
 Your manager will also assign work to start on in the first week.
 
 [issue-tracker]: https://github.com/flowforge/admin/issues
