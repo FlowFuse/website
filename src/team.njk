@@ -1,0 +1,44 @@
+---
+title: Meet the Team
+layout: page
+---
+<div class="w-full bg-white">
+    <div class="grid grid-cols-1 grid-gap-4 sm:grid-cols-2">
+        {%- for member in team.members -%}
+        <div class="w-full my-2 px-2 pb-6 border-b text-center sm:text-left">
+            <div class="font-bold">{{ team[member].name }}</div>
+            <div class="sm:-mt-1">{{ team[member].title }}</div>
+            <div class="flex list-none justify-center sm:justify-left">
+                {% if team[member].twitter %}
+                <span class="group flex">
+                    <a class="group-hover:text-red-hero group-hover:underline px-4 sm:pr-2 py-2 pl-0" target="_blank" href="https://twitter.com/{{ team[member].twitter }}">
+                        {% include "components/twitter.njk" %}
+                    </a>
+                </span>
+                {% endif %}
+                {% if team[member].github %}
+                <span class="group flex">
+                    <a class="group-hover:text-red-hero group-hover:underline px-4 sm:pr-2 py-2" target="_blank" href="https://github.com/{{ team[member].github }}">
+                        {% include "components/github.njk" %}
+                    </a>
+                </span>
+                {% endif %}
+                {% if team[member].linkedin %}
+                <span class="group flex">
+                    <a class="group-hover:text-red-hero group-hover:underline px-4 sm:pr-2 py-2" target="_blank" href="https://www.linkedin.com/in/{{ team[member].linkedin }}">
+                        {% include "components/linkedin.njk" %}
+                    </a>
+                </span>
+                {% endif %}
+                {% if team[member].blog %}
+                <span class="group flex">
+                    <a class="group-hover:text-red-hero  group-hover:underline px-4 sm:pr-2 py-2" target="_blank" href="{{ team[member].blog }}">
+                        {% include "components/rss.njk" %}
+                    </a>
+                </span>
+                {% endif %}
+            </div>
+        </div>
+    {%- endfor -%}
+  </div>
+</div>
