@@ -3,7 +3,6 @@ title: Meet the Team
 layout: page
 ---
 <div class="w-full bg-white">
-    {% if collections.posts.length > 0 %}
     <div class="grid grid-cols-1 grid-gap-4 sm:grid-cols-2">
         {%- for member in team.members -%}
         <div class="w-full my-2 px-2 pb-6 border-b text-center sm:text-left">
@@ -42,10 +41,4 @@ layout: page
         </div>
     {%- endfor -%}
   </div>
-  {% else %}
-<div class="max-w-lg mx-auto">
-    <div class="text-3xl md:text-5xl text-blue-hero font-medium pb-3">Ooops!</div>
-    <div class="text-lg text-black-hero-body">No-one has written anything yet. Come back soon!</div>
-</div>
-  {% endif %}
 </div>
