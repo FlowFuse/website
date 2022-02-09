@@ -10,7 +10,9 @@ authors: ["zeger-jan-van-de-weg"]
 for [spb sonne](https://www.sbp.solar), a engineering consultancy for renewable
 energy. Within the company he is part of the engineering effort on the
 [Gömbhal](https://www.sbp.de/en/news/goembhal-sbp-sonnes-pioneering-floating-pv-system/)
-project, creating a floatation device for solar panels. 
+project, creating a floatation device for solar panels.
+
+In this post, he shares his experiences of using Node-RED.
 
 <!--more-->
 
@@ -41,4 +43,9 @@ not the same on older versions.
 
 However, I’d choose Node-RED again, it’s well known as well as easy to learn.
 Furthermore I found it very versatile.”
+
+---
+
+Thanks to Krisnan for sharing his story. If you have a Node-RED story for us
+to share, please get in touch via [contact@flowforge.com](mailto:contact@flowforge.com).
 
