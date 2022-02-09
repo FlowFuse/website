@@ -1,0 +1,51 @@
+---
+title: Meet the Team
+layout: page
+---
+<div class="w-full bg-white">
+    {% if collections.posts.length > 0 %}
+    <div class="grid grid-cols-2 grid-gap-4">
+        {%- for member in team.members -%}
+        <div class="w-full my-2 px-2 pb-6 border-b">
+            <div class="font-bold">{{ team[member].name }}</div>
+            <div class="-mt-1">{{ team[member].title }}</div>
+            <div class="flex list-none">
+                {% if team[member].twitter %}
+                <span class="group flex">
+                    <a class="group-hover:text-red-hero group-hover:underline px-4 sm:pr-2 py-2 pl-0" target="_blank" href="https://twitter.com/{{ team[member].twitter }}">
+                        {% include "components/twitter.njk" %}
+                    </a>
+                </span>
+                {% endif %}
+                {% if team[member].github %}
+                <span class="group flex">
+                    <a class="group-hover:text-red-hero group-hover:underline px-4 sm:pr-2 py-2" target="_blank" href="https://github.com/{{ team[member].github }}">
+                        {% include "components/github.njk" %}
+                    </a>
+                </span>
+                {% endif %}
+                {% if team[member].linkedin %}
+                <span class="group flex">
+                    <a class="group-hover:text-red-hero group-hover:underline px-4 sm:pr-2 py-2" target="_blank" href="https://www.linkedin.com/in/{{ team[member].linkedin }}">
+                        {% include "components/linkedin.njk" %}
+                    </a>
+                </span>
+                {% endif %}
+                {% if team[member].blog %}
+                <span class="group flex">
+                    <a class="group-hover:text-red-hero  group-hover:underline px-4 sm:pr-2 py-2" target="_blank" href="{{ team[member].blog }}">
+                        {% include "components/rss.njk" %}
+                    </a>
+                </span>
+                {% endif %}
+            </div>
+        </div>
+    {%- endfor -%}
+  </div>
+  {% else %}
+<div class="max-w-lg mx-auto">
+    <div class="text-3xl md:text-5xl text-blue-hero font-medium pb-3">Ooops!</div>
+    <div class="text-lg text-black-hero-body">No-one has written anything yet. Come back soon!</div>
+</div>
+  {% endif %}
+</div>
