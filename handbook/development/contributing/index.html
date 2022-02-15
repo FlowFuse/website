@@ -52,31 +52,35 @@
             </header>
             <main class="container pt-14 md:pt-18 px-6 mx-auto flex flex-wrap flex-col md:flex-row items-center">
                 <div class="w-full mx-auto bg-white">
-    <div class="font-medium border-b pb-1">/<a class="mx-2" href="/handbook">handbook</a>/<a class="mx-2" href="/handbook/company">company</a>/<a class="mx-2" href="/handbook/company/values">values</a></div>
+    <div class="font-medium border-b pb-1">/<a class="mx-2" href="/handbook">handbook</a>/<a class="mx-2" href="/handbook/development">development</a>/<a class="mx-2" href="/handbook/development/contributing">contributing</a></div>
 </div>
 <div class="w-full mx-auto bg-white flex flex-col md:flex-row">
     <div class="flex-grow order-last md:order-first">
         <div class="mt-6 mb-4 prose prose-blue main-content">
-            <h3 id="be-a-community" tabindex="-1"><a class="header-anchor" href="#be-a-community">#&nbsp;</a> Be a community</h3>
-<p>As an open core company our community spans our employees, the open source contributors and our users. We strive to build a healthy, positive community through our values and actions.
-We celebrate the diversity of others, we listen to each other, we support each other.</p>
-<p>We are inclusive of all and are mindful of how our words and actions can impact others. We welcome discussion and debate, but take care to ensure it is not at the expense or exclusion of others. We value empathy, courtesy and respect for each other.</p>
-<h3 id="focus-on-results" tabindex="-1"><a class="header-anchor" href="#focus-on-results">#&nbsp;</a> Focus on results</h3>
-<p>We value results over measuring hours spent working. We do not dictate how someone should schedule their day - we trust individuals to do what is right. Everyone should feel empowered to do the work needed to achieve our goals.</p>
-<p>There may be times when more is needed to meet a goal, deadline or customer situation. We take the responsibility to ensure they are the exceptions rather than the rule.</p>
-<h3 id="bias-for-action" tabindex="-1"><a class="header-anchor" href="#bias-for-action">#&nbsp;</a> Bias for action</h3>
-<p>We value getting things done and continually moving forward. It is better to iterate rapidly rather than get stuck over-thinking a problem. We move with an urgency and a focus to achieve our best.</p>
-<h3 id="use-candor" tabindex="-1"><a class="header-anchor" href="#use-candor">#&nbsp;</a> Use candor</h3>
-<p>We use truth as a superpower, even when inconvenient to ourselves. We use it with care and consideration of others. We won’t get everything right all of the time. The only way we can improve is by being honest with ourselves and each other. It can be difficult to achieve and it can feel awkward. When done right, with respect and a shared understanding, it can lead to a better outcome for everyone.</p>
-<h3 id="be-optimistic" tabindex="-1"><a class="header-anchor" href="#be-optimistic">#&nbsp;</a> Be optimistic</h3>
-<p>We will treat all situations with an optimism that a positive result is possible. We don’t let that get in the way of planning for all outcomes and making the hard choices when they are needed.</p>
+            <h2 id="contributing" tabindex="-1"><a class="header-anchor" href="#contributing">#&nbsp;</a> Contributing</h2>
+<h3 id="git-commit-messages" tabindex="-1"><a class="header-anchor" href="#git-commit-messages">#&nbsp;</a> Git Commit Messages</h3>
+<ul>
+<li>First line should be an imperative/present tense, e.g. <code>change</code> (not <code>changed</code> or <code>changes</code>)</li>
+<li>Capitalise the first letter, no trailing dot, 72 chars or less.</li>
+<li>Do not include the issue number in the first line, this means that commit message are then suitable to include in a changelog as-is.</li>
+<li>Second line should either be blank, or reference to an issue/PR using one of the GitHub recognised keywords, e.g. <code>closes #...</code> <code>fixes #...</code> <code>part of #...</code></li>
+<li>The remainder should be any further narrative that is needed. Wrapped at 72 chars.</li>
+</ul>
+<h3 id="branching-vs.-forking" tabindex="-1"><a class="header-anchor" href="#branching-vs.-forking">#&nbsp;</a> Branching vs. Forking</h3>
+<p>Commits should never be pushed directly to <code>main</code>. Instead, branch or fork from the relevant branch (most likely <code>main</code>) and work from there.</p>
+<p>It is preferred that new work be added on a branch (rather than in a forked repository), although this is not enforced. Branch names should be short, informative, and if directly linked to a single issue number, reference such issue number, e.g. <code>29-issue-summary</code>.</p>
+<p>Once code is merged, please close any related branches in order to keep the repository tidy.</p>
+<h3 id="pull-requests" tabindex="-1"><a class="header-anchor" href="#pull-requests">#&nbsp;</a> Pull Requests</h3>
+<p>PRs, when opened, should have at least one reviewer assigned, and a consequent review approved, before any merge takes place. If a PR is opened for review/discussion purposes, this PR should be set to <code>draft</code> state.</p>
+<p>When merging a PR, you should choose the &quot;Merge pull request&quot; option. There is no need to rebase or squash the PR commits.</p>
+<p>When conducting a PR review, if you are the last (or only) reviewer and all reviews (including your own) are approvals, unless there is a comment from the author stating otherwise, you are free to conduct the merge. Otherwise, leave the merge to the author of the PR, or a future reviewer.</p>
 
         </div>
     </div>
     <div class="w-full md:w-64 md:ml-8 mt-4 md:mt-6 px-2">
         <h3 class="font-medium border-b pb-1 mb-4">On this page</h3>
         <ul id="toc" class="text-sm border-b mb-4"></ul>
-        <div class="text-sm pb-1 text-right mb-4"><a href="https://github.com/flowforge/handbook/edit/main/company/values.md">Edit this page</a></div>
+        <div class="text-sm pb-1 text-right mb-4"><a href="https://github.com/flowforge/handbook/edit/main/development/contributing.md">Edit this page</a></div>
         <div class="text-xs pb-1 text-right mb-4 italic">Updated: 2022-02-15 16:24:05 +0000</div>
     </div>
 </div>
