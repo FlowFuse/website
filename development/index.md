@@ -3,6 +3,7 @@
 ### How we work
 
 - [Packaging](../development/packaging.md)
+- [Contributing](../development/contributing.md)
 
 ## Releases
 
