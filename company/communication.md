@@ -43,7 +43,7 @@ each meeting should have an agenda.
 ### Async standup meetings
 
 To make the standup meeting async, we're using [Geekbot](https://geekbot.com/).
-Geekbot will trigger each workday morning at 10:00 local time, when online in
+Geekbot will trigger each workday morning at 9:00 local time, when online in
 Slack. Everyone who's a member of the #standup channel in Slack will be
 prompted.
 
