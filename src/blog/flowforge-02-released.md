@@ -50,6 +50,7 @@ guide for [upgrading FlowForge on a local server](https://github.com/flowforge/f
 If you hit any problems with the platform, or have questions to ask, please do
 raise an [issue on GitHub](https://github.com/flowforge/flowforge/issues).
 
+We also have a `#flowforge` channel on the [Node-RED Slack workspace](https://nodered.org/slack).
 That also includes if you have any feedback or feature requests.
 
 ### What's next?
