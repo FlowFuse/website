@@ -55,7 +55,7 @@ That also includes if you have any feedback or feature requests.
 ### What's next?
 
 Our regular release cycle puts the next release on Thursday 17th March. We've
-got some key features planned in this release around Project Templates and Stacks -
+got some key features planned in this release around [Project Templates](https://github.com/flowforge/flowforge/issues/141) and [Stacks](https://github.com/flowforge/flowforge/issues/285) -
 which will underpin how you can customise Node-RED within FlowForge.
 
 We'll also have some exciting news to share about our own hosted service you'll
