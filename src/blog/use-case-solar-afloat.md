@@ -1,7 +1,7 @@
 ---
 title: Using Node-RED to keep Solar PV afloat
-subtitle:
-description:
+subtitle: How spb sonne used Node-RED with a renewable energy solution
+description: How spb sonne used Node-RED with a renewable energy solution
 date: 2022-02-09 09:26:00.0
 authors: ["zeger-jan-van-de-weg"]
 ---
@@ -25,7 +25,7 @@ performance, and provide reporting back to our offices.
 Node-RED is embedded in the ADAM 6717, it was very new to me. I was already
 experienced in programming, mainly Python, and within a month I felt very
 comfortable and productive in Node-RED. Understanding programming is useful,
-though not a necessity. 
+though not a necessity.
 
 Building and improving flows I did on my own through trial-and-error, as well
 as a lot of times through help on the [Node-RED Forum](https://discourse.nodered.org/).
@@ -48,4 +48,3 @@ Furthermore I found it very versatile.”
 
 Thanks to Krisnan for sharing his story. If you have a Node-RED story for us
 to share, please get in touch via [contact@flowforge.com](mailto:contact@flowforge.com).
-
