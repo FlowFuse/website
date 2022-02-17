@@ -5,15 +5,22 @@ layout: page
 <div class="w-full bg-white">
     <div class="grid grid-cols-1 grid-gap-4 sm:grid-cols-2">
         {%- for member in team.members -%}
-        <div class="w-full my-2 px-2 pb-6 border-b text-center sm:text-left">
-            <div class="font-bold">{{ team[member].name }}</div>
-            <div class="sm:-mt-1">{{ team[member].title }}</div>
-            <div class="flex list-none justify-center sm:justify-left">
-	        {% if team[member].country %}
-	        <span class="group flex px-4 sm:pr-2 py-2 pl-0">
-		  {{ team[member].country | countryFlag }}
-		</span>
-	        {% endif %}
+        <div class="w-full my-2 px-2 pb-6 pr-16 border-b text-center sm:text-left">
+            <div class="font-bold flex items-center">
+                {{ team[member].name }}
+                {% if team[member].country %}
+                <span class="group flex px-4 sm:pr-2 pl-4">
+                    {{ team[member].country | countryFlag }}
+                </span>
+                {% endif %}
+            </div>
+            <div class="sm:-mt-1 text-left">{{ team[member].title }}</div>
+            <div class="flex list-none items-center justify-start sm:justify-start">
+                {# {% if team[member].country %}
+                <span class="group cursor-default flex px-4 sm:pr-2 pl-0">
+                    {{ team[member].country | countryFlag }}
+                </span>
+                {% endif %} #}
                 {% if team[member].twitter %}
                 <span class="group flex">
                     <a class="group-hover:text-red-hero group-hover:underline px-4 sm:pr-2 py-2 pl-0" target="_blank" href="https://twitter.com/{{ team[member].twitter }}">
