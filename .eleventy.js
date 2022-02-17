@@ -2,6 +2,7 @@ const markdownIt = require("markdown-it")
 const markdownItAnchor = require("markdown-it-anchor")
 const spacetime = require("spacetime");
 const heroGen = require("./lib/post-hero-gen.js");
+const countryFlag = require("./lib/country-flag-emoji");
 
 module.exports = function(eleventyConfig) {
     eleventyConfig.setWatchThrottleWaitTime(200); // in milliseconds
@@ -41,6 +42,10 @@ module.exports = function(eleventyConfig) {
 
     eleventyConfig.addFilter("generatePostSVG", function(id) {
         return heroGen(""+id)
+    })
+
+    eleventyConfig.addFilter("countryFlag", function(country) {
+        return countryFlag(country)
     })
     eleventyConfig.addFilter("handbookBreadcrumbs", (str) => {
         const parts = str.split("/");
