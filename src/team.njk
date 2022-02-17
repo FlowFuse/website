@@ -9,6 +9,11 @@ layout: page
             <div class="font-bold">{{ team[member].name }}</div>
             <div class="sm:-mt-1">{{ team[member].title }}</div>
             <div class="flex list-none justify-center sm:justify-left">
+	        {% if team[member].country %}
+	        <span class="group flex px-4 sm:pr-2 py-2 pl-0">
+		  {{ team[member].country | countryFlag }}
+		</span>
+	        {% endif %}
                 {% if team[member].twitter %}
                 <span class="group flex">
                     <a class="group-hover:text-red-hero group-hover:underline px-4 sm:pr-2 py-2 pl-0" target="_blank" href="https://twitter.com/{{ team[member].twitter }}">
