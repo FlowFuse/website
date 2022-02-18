@@ -7,7 +7,7 @@
 
 ## Releases
 
-Instructions for creating a release are [here](../development/release.md)
+Instructions for creating a release are [here](../development/release.md).
 
 ### Cadence
 
@@ -47,6 +47,24 @@ The day after each FlowForge release, always a Friday, a meeting is scheduled
 by the CTO. This meeting includes 3 parts: a retrospective on the last release,
 complete scheduling for the next release, and kick off development for the next
 release.
+
+### What to work on
+
+For each release a selection of epics is being worked on. When an epic assigned
+to a milestone there will be developments to complete it, however it might not
+be fully completed and closed in the assigned milestone.
+
+Epics are assigned to one or more individuals responsible for executing the work
+and keeping the epics up-to-date.
+
+Stories and tasks are assigned by the assignee of the associated epic, depending
+on how the work is distributed.
+
+#### Milestones are overscheduled
+
+As epics and stories are assigned to milestones, it's unlikely there's not
+enough work to be done. On the flipside, this means that not all scheduled epics
+or stories will be completed.
 
 ### Launch Lunch
 
