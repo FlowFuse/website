@@ -73,14 +73,7 @@
 <li>Have update PR reviewed by somebody other than the Release Manager</li>
 <li>All package numbering PRs to be merged upfront</li>
 <li>Create Releases tagged in Github projects</li>
-<li>The following tasks should be completed in order of dependency e.g. if Component A depends on Component B then Component B should br published first
-<ul>
-<li>Clean clone of the project using the tag created for the release in the previous step (e.g. <code>git clone -b 'v0.1.0' --single-branch --depth 1 git@github.com:flowforge/flowforge.git</code>)</li>
-<li>Run <code>npm install</code></li>
-<li>Run any build step needed (e.g. <code>npm run build</code> for the flowforge/flowforge project)</li>
-<li>Run <code>npm publish</code> in the project directory. (If this is the first release of a scoped package remember to add <code>--access=public</code>)</li>
-</ul>
-</li>
+<li>Tagging the release will automatically publish the npm modules, please ensure the publish has completed before moving on to the next project as those with dependencies will need to be able to download them as part of the GitHub Action that does the publish.</li>
 <li>Once all the components have been built and published to npm the <code>installer</code>, <code>helm</code> and <code>docker-compose</code> components can be updated and tagged.</li>
 </ul>
 <h2 id="next-steps" tabindex="-1"><a class="header-anchor" href="#next-steps">#&nbsp;</a> Next Steps</h2>
@@ -94,7 +87,7 @@
         <h3 class="font-medium border-b pb-1 mb-4">On this page</h3>
         <ul id="toc" class="text-sm border-b mb-4"></ul>
         <div class="text-sm pb-1 text-right mb-4"><a href="https://github.com/flowforge/handbook/edit/main/development/release.md">Edit this page</a></div>
-        <div class="text-xs pb-1 text-right mb-4 italic">Updated: 2022-02-21 10:00:55 +0100</div>
+        <div class="text-xs pb-1 text-right mb-4 italic">Updated: 2022-02-21 15:42:27 +0000</div>
     </div>
 </div>
 <script>
