@@ -16,11 +16,7 @@ The follow process should be followed for a FlowForge release.
  - Have update PR reviewed by somebody other than the Release Manager
  - All package numbering PRs to be merged upfront
  - Create Releases tagged in Github projects
- - The following tasks should be completed in order of dependency e.g. if Component A depends on Component B then Component B should br published first
-   - Clean clone of the project using the tag created for the release in the previous step (e.g. `git clone -b 'v0.1.0' --single-branch --depth 1 git@github.com:flowforge/flowforge.git`)
-    - Run `npm install`
-    - Run any build step needed (e.g. `npm run build` for the flowforge/flowforge project)
-    - Run `npm publish` in the project directory. (If this is the first release of a scoped package remember to add `--access=public`)
+ - Tagging the release will automatically publish the npm modules, please ensure the publish has completed before moving on to the next project as those with dependencies will need to be able to download them as part of the GitHub Action that does the publish.
  - Once all the components have been built and published to npm the `installer`, `helm` and `docker-compose` components can be updated and tagged.
 
 ## Next Steps
