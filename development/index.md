@@ -48,6 +48,9 @@ by the CTO. This meeting includes 3 parts: a retrospective on the last release,
 complete scheduling for the next release, and kick off development for the next
 release.
 
+An action from this meeting is that a release manager is allocated for the next release, 
+that person takes the action to create the next release issue from the template then assign it to them.
+
 ### What to work on
 
 For each release a selection of epics is being worked on. When an epic assigned
