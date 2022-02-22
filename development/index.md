@@ -48,6 +48,9 @@ by the CTO. This meeting includes 3 parts: a retrospective on the last release,
 complete scheduling for the next release, and kick off development for the next
 release.
 
+An action from this meeting is that a release manager is allocated for the next release, 
+that person takes the action to create the next release issue from the template then assign it to them.
+
 ### Launch Lunch
 
 To celebrate the launch of a new version of FlowForge, we organize a lunch on the
