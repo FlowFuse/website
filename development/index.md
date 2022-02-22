@@ -7,7 +7,7 @@
 
 ## Releases
 
-Instructions for creating a release are [here](../development/release.md)
+Instructions for creating a release are [here](../development/release.md).
 
 ### Cadence
 
@@ -50,6 +50,24 @@ release.
 
 An action from this meeting is that a release manager is allocated for the next release, 
 that person takes the action to create the next release issue from the template then assign it to them.
+
+### What to work on
+
+For each release a selection of epics is being worked on. When an epic assigned
+to a milestone there will be developments to complete it, however it might not
+be fully completed and closed in the assigned milestone.
+
+Epics are assigned to one or more individuals responsible for executing the work
+and keeping the epics up-to-date.
+
+Stories and tasks are assigned by the assignee of the associated epic, depending
+on how the work is distributed.
+
+#### Milestones are overscheduled
+
+As epics and stories are assigned to milestones, it's unlikely there's not
+enough work to be done. On the flipside, this means that not all scheduled epics
+or stories will be completed.
 
 ### Launch Lunch
 
