@@ -4,7 +4,7 @@
 
 We use stripe to bill our customers and to manage subscriptions for FlowForge Cloud.
 
-Team members will be given a login to the  Stripe dashbaord as required for thier role with an appropriate level of access.
+Team members will be given a login to the  Stripe dashboard as required for their role with an appropriate level of access.
 
 
 ## Support
