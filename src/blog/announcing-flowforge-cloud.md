@@ -47,6 +47,6 @@ or later.
 More details on the exact pricing will be availble nearer the time.
 
 Once you are invited you will be able to;
-Create multiple Node-RED projects hosted on flowforge.cloud,
-Invite team members to collaborate on those projects,
-And many more features will become availble with each new release.
+- Create multiple Node-RED projects hosted on flowforge.cloud,
+- Invite team members to collaborate on those projects,
+- And many more features will automatically become availble with each new release.
