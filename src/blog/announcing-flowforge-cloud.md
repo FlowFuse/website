@@ -7,7 +7,7 @@ authors: ["zeger-jan-van-de-weg"]
 ---
 
 As an open core company, anyone is free to [download and install][install-docs]
-our Community Edition. In many cases this is a great solution, it
+our platform. In many cases this is a great solution, it
 allows for custom setups in your own environment. We know this isn't for everyone
 though, some people just want to start building with Node-RED without having to manage their servers.
 
