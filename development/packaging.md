@@ -111,4 +111,4 @@ Major and minor releases will follow the schedule laid out in the [Cadence](inde
 
 A Fix release can be made at any time, depending on the best judgement of the engineer making the fix but requires a review by another team member.
 
-The process for making a release is documented [here](../development/packaging.md).
+The process for making a release is documented [here](../release.md).
