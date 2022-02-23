@@ -18,6 +18,12 @@ Before you can take time off you should _always_:
 * Add an 'Out of office' appointment in your personal Google Calendar, and decline
    all meetings automatically.
 
+#### Sick leave
+
+Sick leave, or having limited availibility is not recorded currently. Keep your
+manager updated on your health, and let them know what FlowForge can do for you
+to aid in your recovery.
+
 ## Expenses
 
 The company will cover any reasonable work-related expense, including ensuring you
