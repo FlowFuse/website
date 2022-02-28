@@ -45,7 +45,16 @@ by adding [`.github/workflows/project-automation.yml`](https://github.com/flowfo
 issues or PRs opened/closed against the repo are automatically tracked on the Development
 [Project board](https://github.com/orgs/flowforge/projects/1)
 
-**Note**: this workflow can only be added to *public* repositories in the organisation.
+#### Private Repositories
+
+For *private* repositories, you will also need to add a Repository Secret as
+they cannot access the organisation-wide secret we have in place.
+
+1. Generate a [Personal Access Token](https://github.com/settings/tokens) with
+   `repo, write:org` scope.
+
+2. Add it as a Repository Secret to the Private Repo (https://github.com/flowforge/<repo-name>/settings/secrets/actions)
+   with the name `PROJECT_ACCESS_TOKEN`
 
 ## NPM packages
 
