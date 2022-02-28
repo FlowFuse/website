@@ -3,8 +3,49 @@
     <title>FlowForge</title>
     <link href="https://flowforge.com/blog/index.xml" rel="self"/>
     <link href="https://flowforge.com/blog"/>
-    <updated>2022-02-17T01:00:00Z</updated>
+    <updated>2022-02-23T19:44:00Z</updated>
     <id>https://flowforge.com/blog</id>
+    
+    <entry>
+        <id>https://flowforge.com/blog/announcing-flowforge-cloud/</id>
+        <title>Announcing FlowForge Cloud</title>
+        <summary>Hosting your Node-RED, so you don&#39;t have to.</summary>
+        <updated>2022-02-23T19:44:00Z</updated>
+        <link href="https://flowforge.com/blog/announcing-flowforge-cloud/"/>
+        <author><name>Zeger-Jan van de Weg</name></author>
+        <content type="html">&lt;p&gt;As an open core company, anyone is free to &lt;a href=&quot;https://github.com/flowforge/flowforge/tree/9219e81399eaf52fb0ee5573707a52f5520fbfdd/docs/install&quot;&gt;download and install&lt;/a&gt;
+our platform. In many cases this is a great solution, it
+allows for custom setups in your own environment. We know this isn&#39;t for everyone
+though, some people just want to start building with Node-RED without having to manage their servers.&lt;/p&gt;
+&lt;p&gt;We are excited to announce FlowForge Cloud, a hosted
+Node-RED as a service offering and today we are opening the waitlist.&lt;/p&gt;
+&lt;!--more--&gt;
+&lt;p&gt;Our waitlist captures your email, and we&#39;ll reach out to you on that address once your account is created.&lt;/p&gt;
+&lt;h4 id=&quot;joining-the-wait-list&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://flowforge.com/blog/announcing-flowforge-cloud/#joining-the-wait-list&quot;&gt;#&amp;nbsp;&lt;/a&gt; Joining the wait list&lt;/h4&gt;
+&lt;div class=&quot;mt-4 flex flex-col&quot;&gt;
+    &lt;form action=&quot;https://buttondown.email/api/emails/embed-subscribe/flowforge-waitlist&quot; method=&quot;post&quot; target=&quot;popupwindow&quot; onsubmit=&quot;window.open(&#39;https://buttondown.email/flowforge-waitlist&#39;, &#39;popupwindow&#39;)&quot; class=&quot;embeddable-buttondown-form p-1 my-1 &quot;&gt;
+    &lt;div class=&quot;flex flex-col md:flex-row&quot;&gt;
+        &lt;input type=&quot;email&quot; name=&quot;email&quot; id=&quot;bd-email&quot; placeholder=&quot;Enter your email&quot; class=&quot;lg:w-80 md:w-60 py-2 px-4 rounded border-blue-hero border-2 focus:border-blue-hero-darker  focus:outline-none&quot; /&gt;
+        &lt;input type=&quot;hidden&quot; value=&quot;1&quot; name=&quot;embed&quot; /&gt;
+        &lt;input type=&quot;submit&quot; value=&quot;Sign Up&quot; class=&quot;cursor-pointer mt-2 md:mt-0 md:ml-3 py-2 px-4 text-white font-semibold rounded bg-blue-hero border-2 border-blue-hero hover:bg-blue-hero-darker hover:border-blue-hero-darker&quot; /&gt;
+    &lt;/div&gt;
+&lt;/form&gt;
+&lt;/div&gt;
+&lt;h3 id=&quot;starting-operations&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://flowforge.com/blog/announcing-flowforge-cloud/#starting-operations&quot;&gt;#&amp;nbsp;&lt;/a&gt; Starting operations&lt;/h3&gt;
+&lt;p&gt;After having released v0.2 recently, we&#39;re now working on v0.3 that will include
+a user flow for &lt;a href=&quot;https://github.com/flowforge/flowforge/issues/224&quot;&gt;billing&lt;/a&gt;.
+When that work has been done and deployed people on the waitlist will slowly be invited to the platform.
+Currently that&#39;s scheduled for April 1st, no joke, although it could happen either sooner
+or later.
+More details on the exact pricing will be availble nearer the time.&lt;/p&gt;
+&lt;p&gt;Once you are invited you will be able to;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Create multiple Node-RED projects hosted on flowforge.cloud,&lt;/li&gt;
+&lt;li&gt;Invite team members to collaborate on those projects,&lt;/li&gt;
+&lt;li&gt;And many more features will automatically become availble with each new release.&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+    </entry>
     
     <entry>
         <id>https://flowforge.com/blog/flowforge-02-released/</id>
