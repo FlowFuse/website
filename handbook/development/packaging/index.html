@@ -89,7 +89,19 @@ this would be in the <code>#gh-flowforge</code> channel.</p>
 by adding <a href="https://github.com/flowforge/flowforge/blob/main/.github/workflows/project-automation.yml"><code>.github/workflows/project-automation.yml</code></a>. This workflow will ensure any
 issues or PRs opened/closed against the repo are automatically tracked on the Development
 <a href="https://github.com/orgs/flowforge/projects/1">Project board</a></p>
-<p><strong>Note</strong>: this workflow can only be added to <em>public</em> repositories in the organisation.</p>
+<h4 id="private-repositories" tabindex="-1"><a class="header-anchor" href="#private-repositories">#&nbsp;</a> Private Repositories</h4>
+<p>For <em>private</em> repositories, you will also need to add a Repository Secret as
+they cannot access the organisation-wide secret we have in place.</p>
+<ol>
+<li>
+<p>Generate a <a href="https://github.com/settings/tokens">Personal Access Token</a> with
+<code>repo, write:org</code> scope.</p>
+</li>
+<li>
+<p>Add it as a Repository Secret to the Private Repo (https://github.com/flowforge/<repo-name>/settings/secrets/actions)
+with the name <code>PROJECT_ACCESS_TOKEN</code></p>
+</li>
+</ol>
 <h2 id="npm-packages" tabindex="-1"><a class="header-anchor" href="#npm-packages">#&nbsp;</a> NPM packages</h2>
 <h3 id="naming-1" tabindex="-1"><a class="header-anchor" href="#naming-1">#&nbsp;</a> Naming</h3>
 <ul>
@@ -154,7 +166,7 @@ issues or PRs opened/closed against the repo are automatically tracked on the De
         <h3 class="font-medium border-b pb-1 mb-4">On this page</h3>
         <ul id="toc" class="text-sm border-b mb-4"></ul>
         <div class="text-sm pb-1 text-right mb-4"><a href="https://github.com/flowforge/handbook/edit/main/development/packaging.md">Edit this page</a></div>
-        <div class="text-xs pb-1 text-right mb-4 italic">Updated: 2022-02-23 09:25:39 +0000</div>
+        <div class="text-xs pb-1 text-right mb-4 italic">Updated: 2022-02-28 09:37:37 +0000</div>
     </div>
 </div>
 <script>
