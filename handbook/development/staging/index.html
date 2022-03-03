@@ -52,33 +52,36 @@
             </header>
             <main class="container pt-14 md:pt-18 px-6 mx-auto flex flex-wrap flex-col md:flex-row items-center">
                 <div class="w-full mx-auto bg-white">
-    <div class="font-medium border-b pb-1">/<a class="mx-2" href="/handbook">handbook</a>/<a class="mx-2" href="/handbook/company">company</a>/<a class="mx-2" href="/handbook/company/team">team</a></div>
+    <div class="font-medium border-b pb-1">/<a class="mx-2" href="/handbook">handbook</a>/<a class="mx-2" href="/handbook/development">development</a>/<a class="mx-2" href="/handbook/development/staging">staging</a></div>
 </div>
 <div class="w-full mx-auto bg-white flex flex-col md:flex-row">
     <div class="flex-grow order-last md:order-first">
         <div class="mt-6 mb-4 prose prose-blue main-content">
-            <h2 id="interviews" tabindex="-1"><a class="header-anchor" href="#interviews">#&nbsp;</a> Interviews</h2>
-<p>When a candidate applied they'll have at least two interviews with two different
-interviewers before an offer is extended to them. One interview will investigate
-the <a href="../company/values/">fit on values</a>. The second will be a competency based
-interview.</p>
-<h2 id="onboarding" tabindex="-1"><a class="header-anchor" href="#onboarding">#&nbsp;</a> Onboarding</h2>
-<p>Just before the first day working at FlowForge you'll receive an email
-requesting for GitHub username and preferred company email address. An issue
-will be created at our <a href="https://github.com/flowforge/admin/issues">internal issue tracker</a> with steps for
-the team and you to complete once you started.</p>
-<p>The day you start an email will send to your personal email address to gain
-access to your FlowForge email address which you can leverage to gain access to
-Slack and other resources. On your first day you should prioritise gaining access
-to Slack, the FlowForge GitHub organisation, and complete your onboarding issue.
-Your manager will also assign work to start on in the first week.</p>
+            <h1 id="staging-environment" tabindex="-1"><a class="header-anchor" href="#staging-environment">#&nbsp;</a> Staging Environment</h1>
+<p>We have a staging environment running on AWS which is a scaled down replica of FlowForge Cloud.</p>
+<p>It uses the domain flowforge.dev</p>
+<h2 id="aws-account" tabindex="-1"><a class="header-anchor" href="#aws-account">#&nbsp;</a> AWS Account</h2>
+<p>It uses a separate AWS account ending in ..9937</p>
+<p>Ben or ZJ can provision a user account for this account.</p>
+<p>The services are running in EU-West-1.</p>
+<h2 id="nodes" tabindex="-1"><a class="header-anchor" href="#nodes">#&nbsp;</a> Nodes</h2>
+<p>The staging environment uses one node running on a t2.small for the management app and a pair of t2.small nodes for the projects cluster.</p>
+<p>t2.small is the smallest instance that can be used with EKS.</p>
+<h2 id="email" tabindex="-1"><a class="header-anchor" href="#email">#&nbsp;</a> Email</h2>
+<p>Amazon SES is setup on staging however it is still running in sandbox mode which means only verified address &amp; domains can RECEIVE emails from it, this is currently limited to flowforge.com email addresses.</p>
+<p>There is no intention to move this from sandbox as this helps to limit access to staging.</p>
+<p>If you need to use another email address with staging then you should verify the address through SES in the AWS Console.</p>
+<h2 id="forge-app-login" tabindex="-1"><a class="header-anchor" href="#forge-app-login">#&nbsp;</a> Forge App Login</h2>
+<p>There is an admin user in the Developer vault of 1Password</p>
+<h2 id="deployment" tabindex="-1"><a class="header-anchor" href="#deployment">#&nbsp;</a> Deployment</h2>
+<p>Currently there is no auto deployment to staging, this should be rectified in the future so that staging is running the code in the main branches  of the respective repos.</p>
 
         </div>
     </div>
     <div class="w-full md:w-64 md:ml-8 mt-4 md:mt-6 px-2">
         <h3 class="font-medium border-b pb-1 mb-4">On this page</h3>
         <ul id="toc" class="text-sm border-b mb-4"></ul>
-        <div class="text-sm pb-1 text-right mb-4"><a href="https://github.com/flowforge/handbook/edit/main/company/team.md">Edit this page</a></div>
+        <div class="text-sm pb-1 text-right mb-4"><a href="https://github.com/flowforge/handbook/edit/main/development/staging.md">Edit this page</a></div>
         <div class="text-xs pb-1 text-right mb-4 italic">Updated: 2022-03-03 11:26:03 +0000</div>
     </div>
 </div>
