@@ -13,9 +13,9 @@ Ben or ZJ can provision a user account for this account.
 The services are running in EU-West-1.
 
 ## Nodes
-The staging environment uses one node running on a t2.micro for the management app and a pair of t2.micro nodes for the projects cluster.
+The staging environment uses one node running on a t2.small for the management app and a pair of t2.small nodes for the projects cluster.
 
-t2.micro is the smallest instance that can be used with EKS.
+t2.small is the smallest instance that can be used with EKS.
 
 ## Email
 Amazon SES is setup on staging however it is still running in sandbox mode which means only verified address & domains can RECEIVE emails from it, this is currently limited to flowforge.com email addresses.
