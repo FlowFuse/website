@@ -4,6 +4,7 @@
 
 - [Packaging](../development/packaging.md)
 - [Contributing](../development/contributing.md)
+- [Staging Environment](../development/staging.md)
 
 ## Releases
 
