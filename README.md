@@ -8,13 +8,13 @@ and discover new things.
 The handbook is here for the whole company to help maintain. Pull-requests are welcome
 and strongly encouraged.
 
-
 ### Company
 
  - [About](./company/about.md)
  - [Values](./company/values.md)
  - [Strategy](./company/strategy.md)
  - [Communication](./company/communication.md)
+ - [Design](./design)
  - [Development](./development)
  - [PeopleOps](./peopleops)
  - [Security](./company/security.md)
