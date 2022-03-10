@@ -52,120 +52,54 @@
             </header>
             <main class="container pt-14 md:pt-18 px-6 mx-auto flex flex-wrap flex-col md:flex-row items-center">
                 <div class="w-full mx-auto bg-white">
-    <div class="font-medium border-b pb-1">/<a class="mx-2" href="/handbook">handbook</a>/<a class="mx-2" href="/handbook/development">development</a>/<a class="mx-2" href="/handbook/development/packaging">packaging</a></div>
+    <div class="font-medium border-b pb-1">/<a class="mx-2" href="/handbook">handbook</a>/<a class="mx-2" href="/handbook/design">design</a></div>
 </div>
 <div class="w-full mx-auto bg-white flex flex-col md:flex-row">
     <div class="flex-grow order-last md:order-first">
         <div class="mt-6 mb-4 prose prose-blue main-content">
-            <p>Flow Forge Packaging Guidelines</p>
-<h2 id="github-projects" tabindex="-1"><a class="header-anchor" href="#github-projects">#&nbsp;</a> Github projects</h2>
-<h3 id="naming" tabindex="-1"><a class="header-anchor" href="#naming">#&nbsp;</a> Naming</h3>
+            <h2 id="process" tabindex="-1"><a class="header-anchor" href="#process">#&nbsp;</a> Process</h2>
+<p>As per our <a href="../development#cadence">Development Cadence</a>, we release a new version of FlowForge every four weeks. Work begins on formal design (mid and high-fidelity UX and visual design assets) two weeks prior to a release cycle beginning, i.e. 6 weeks ahead of the release.</p>
+<p>In getting a headstart on major design work, we ensure that prior thinking has been conducted on the high-level UX, and development is not blocked at the start of a release sprint. Both visual and UX design iterations will occur throughout the first two weeks of a cycle, alongside development efforts.</p>
+<h2 id="tools" tabindex="-1"><a class="header-anchor" href="#tools">#&nbsp;</a> Tools</h2>
+<p>If you ever require a license to one of the following tools (where applicable), then please read our <a href="../peopleops#software-licenses">licensing</a> section in order to attain one.</p>
+<h3 id="figma-(more-info)" tabindex="-1"><a class="header-anchor" href="#figma-(more-info)">#&nbsp;</a> Figma (<a href="https://www.figma.com/">more info</a>)</h3>
+<p>Figma is used to construct mid- and high-fidelity designs. We have two primary working documents for design iterations:</p>
 <ul>
-<li>Flow Forge Components should start with <code>flowforge-</code></li>
-<li>If a Node-RED plugin/node should start with <code>flowforge-nr-</code></li>
-<li>Installers or Orchestration projects are named without the leading <code>flowforge-</code> e.g. <code>installer</code> or <code>helm</code></li>
+<li>Website</li>
+<li>Platform</li>
 </ul>
-<h3 id="content" tabindex="-1"><a class="header-anchor" href="#content">#&nbsp;</a> Content</h3>
-<p>All Git Repositories must contain the following files:</p>
+<p>Underlying each of these Figma files is a standardised component library, which coincides with FlowForge's <code>forge-ui-component</code> library.</p>
+<h3 id="figjam-(more-info)" tabindex="-1"><a class="header-anchor" href="#figjam-(more-info)">#&nbsp;</a> FigJam (<a href="https://www.figma.com/figjam/">more info</a>)</h3>
+<p>Figjam, a sister-product of Figma, is a cloud-hosted white boarding tool that enables remote, digital collaboration.</p>
+<p>Any in-person whiteboard discussions should have a documented digitial copy. Additionally, FigJam can be used to host and run digital workshops.</p>
+<h3 id="adobe-creative-cloud-(more-info)" tabindex="-1"><a class="header-anchor" href="#adobe-creative-cloud-(more-info)">#&nbsp;</a> Adobe Creative Cloud (<a href="https://www.adobe.com/uk/creativecloud.html">more info</a>)</h3>
+<p>For visual design elements of the user interface and public-facing material, we predominantly use Adobe Illustrator and Adobe After Effects.</p>
 <ul>
-<li><code>README.md</code></li>
-<li><code>LICENSE</code></li>
-</ul>
-<h3 id="linting" tabindex="-1"><a class="header-anchor" href="#linting">#&nbsp;</a> Linting</h3>
-<p>All code repositories should adopt our standard linting rules by copying the
-<code>.eslintrc</code> from the <a href="https://github.com/flowforge/.github/blob/main/.eslintrc">flowforge/.github repository</a>.</p>
-<p>If a repository has any additional requirements for linting, such as handling Vue
-code, then additional plugins can be added.</p>
-<p>We use <a href="https://standardjs.com/">StandardJS</a>, with one exception - 4 spaces not 2.</p>
-<h3 id="notifications" tabindex="-1"><a class="header-anchor" href="#notifications">#&nbsp;</a> Notifications</h3>
-<p>Repositories should be added to the appropriate Slack channel. For core code repositories,
-this would be in the <code>#gh-flowforge</code> channel.</p>
-<p>To create a subscription, go to that channel and type the message:</p>
-<pre><code>/github subscribe flowforge/NAME-OF-REPO comments
-</code></pre>
-<p>This will subscribe to any notifications covering: <code>issues</code>, <code>pulls</code>, <code>commits</code>, <code>releases</code>, <code>deployments</code> and <code>comments</code></p>
-<h3 id="workflows" tabindex="-1"><a class="header-anchor" href="#workflows">#&nbsp;</a> Workflows</h3>
-<p>All code repositories must have the Project Automation workflow added. This is done
-by adding <a href="https://github.com/flowforge/flowforge/blob/main/.github/workflows/project-automation.yml"><code>.github/workflows/project-automation.yml</code></a>. This workflow will ensure any
-issues or PRs opened/closed against the repo are automatically tracked on the Development
-<a href="https://github.com/orgs/flowforge/projects/1">Project board</a></p>
-<h4 id="private-repositories" tabindex="-1"><a class="header-anchor" href="#private-repositories">#&nbsp;</a> Private Repositories</h4>
-<p>For <em>private</em> repositories, you will also need to add a Repository Secret as
-they cannot access the organisation-wide secret we have in place.</p>
-<ol>
 <li>
-<p>Generate a <a href="https://github.com/settings/tokens">Personal Access Token</a> with
-<code>repo, write:org</code> scope.</p>
+<p><strong>Illustrator</strong> provides us tooling to create high-quality, static SVG assets to suplement the user experience on both the website and the FlowForge platform.</p>
 </li>
 <li>
-<p>Add it as a Repository Secret to the Private Repo (https://github.com/flowforge/<repo-name>/settings/secrets/actions)
-with the name <code>PROJECT_ACCESS_TOKEN</code></p>
-</li>
-</ol>
-<h2 id="npm-packages" tabindex="-1"><a class="header-anchor" href="#npm-packages">#&nbsp;</a> NPM packages</h2>
-<h3 id="naming-1" tabindex="-1"><a class="header-anchor" href="#naming-1">#&nbsp;</a> Naming</h3>
-<ul>
-<li>All packages should be scoped to <code>@flowforge</code></li>
-</ul>
-<p>Node-RED plugins should start with <code>nr-</code> e.g.</p>
-<ul>
-<li>@flowforge/nr-storage</li>
-<li>@flowforge/nr-auth</li>
-</ul>
-<p>Flow Forge plugins should start with <code>forge-</code> e.g.</p>
-<ul>
-<li>@flowforge/forge-driver-localfs</li>
-<li>@flowforge/forge-driver-docker</li>
-<li>@flowforge/forge-driver-k8s</li>
-</ul>
-<h3 id="content-1" tabindex="-1"><a class="header-anchor" href="#content-1">#&nbsp;</a> Content</h3>
-<p>The <code>package.json</code> must contain the following keys</p>
-<ul>
-<li>description</li>
-<li>repository<pre><code>&quot;repository&quot;: {
-   &quot;type&quot;: &quot;git&quot;,
-   &quot;url&quot;: &quot;git+https://github.com/flowforge/flowforge.git&quot;
-},
-</code></pre>
-</li>
-<li>homepage<pre><code>&quot;homepage&quot;: &quot;https://github.com/flowforge/flowforge#readme&quot;,
-</code></pre>
-</li>
-<li>bugs<pre><code>&quot;bugs&quot;: {
-    &quot;url&quot;: &quot;https://github.com/flowforge/flowforge/issues&quot;
-},
-</code></pre>
-</li>
-<li>license
-<ul>
-<li>Apache-2.0</li>
-<li>SEE LICENSE IN ./LICENSE</li>
-</ul>
-</li>
-<li>author<pre><code>&quot;author&quot;: {
-    &quot;name&quot;: &quot;FlowFlow Inc.&quot;
-},
-</code></pre>
-</li>
-<li>engines<pre><code>&quot;engines&quot;: {
-  &quot;node&quot;: &quot;&gt;=16.x&quot;
-}
-</code></pre>
+<p><strong>After Effects</strong> enables the generation of animated SVG elements. In particular, we work with <a href="https://lottiefiles.com/">Lottie Files</a> for injection into both our website and FlowForge platform.</p>
 </li>
 </ul>
-<h3 id="package-version-numbering" tabindex="-1"><a class="header-anchor" href="#package-version-numbering">#&nbsp;</a> Package Version Numbering</h3>
-<p>Package numbers should follow the Semantic Versioning Scheme as laid out on <a href="https://semver.org/">semver.org</a>.</p>
-<p>Each component will stay in step with the core flowforge/flowforge release numbering for <code>major.minor</code> but will increment their own <code>fix</code> values as needed. e.g. On release of v0.2.0 all components will tag and release v0.2.0, but can independantly release v0.2.1 as needed.</p>
-<p>Major and minor releases will follow the schedule laid out in the <a href="index/#cadence">Cadence</a> section of the handbook.</p>
-<p>A Fix release can be made at any time, depending on the best judgement of the engineer making the fix but requires a review by another team member.</p>
-<p>The process for making a release is documented <a href="../release/">here</a>.</p>
+<p>Other tools included in the Creative Cloud suite that may be useful include:</p>
+<ul>
+<li>
+<p><strong>Photoshop</strong> can be used for raster image and photo-editing.</p>
+</li>
+<li>
+<p><strong>Premiere Pro</strong> is an excellent video-editing software.</p>
+</li>
+</ul>
+<h3 id="blender-(more-info)" tabindex="-1"><a class="header-anchor" href="#blender-(more-info)">#&nbsp;</a> Blender (<a href="https://blender.org">more info</a>)</h3>
+<p>Blender is a free and open-source 3D computer graphics software toolset. It can be used to create static renders of 3d assets, or entire 2d &amp; 3d animations.</p>
 
         </div>
     </div>
     <div class="w-full md:w-64 md:ml-8 mt-4 md:mt-6 px-2">
         <h3 class="font-medium border-b pb-1 mb-4">On this page</h3>
         <ul id="toc" class="text-sm border-b mb-4"></ul>
-        <div class="text-sm pb-1 text-right mb-4"><a href="https://github.com/flowforge/handbook/edit/main/development/packaging.md">Edit this page</a></div>
+        <div class="text-sm pb-1 text-right mb-4"><a href="https://github.com/flowforge/handbook/edit/main/design/index.md">Edit this page</a></div>
         <div class="text-xs pb-1 text-right mb-4 italic">Updated: 2022-03-10 12:18:41 +0000</div>
     </div>
 </div>
