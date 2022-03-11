@@ -57,7 +57,8 @@ with respect and a shared understanding, it can lead to a better outcome for
 everyone.
 
 We strongly encourage the sharing of thanks and feedback within FlowForge. This
-can be done formally through our `@Feedback` Slackbot.
+can be done formally through our `@Feedback` Slackbot. You can read more in
+[Communications](./communication#feedback-%26-thanks)
 
 ### Be optimistic
 
