@@ -56,6 +56,9 @@ other. It can be difficult to achieve and it can feel awkward. When done right,
 with respect and a shared understanding, it can lead to a better outcome for
 everyone.
 
+We strongly encourage the sharing of thanks and feedback within FlowForge. This
+can be done formally through our `@Feedback` Slackbot.
+
 ### Be optimistic
 
 We will treat all situations with an optimism that a positive result is
