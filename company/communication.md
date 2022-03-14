@@ -59,3 +59,14 @@ forum or the Node-RED slack, the first answer we offer should be how a solution 
 be achieved using Node-RED.  If a native Node-RED solution is not possible or the 
 user would benefit from the advantages that FlowForge offers, then, like any other 
 person or company, we can offer FlowForge as a potential solution.
+
+## Feedback & Thanks
+
+In FlowForge, we strongly encourage the sharing of feedback and thank you's. We have
+a custom-built SlackBot (built in Node-RED and hosted in FlowForge of course), that 
+enables users to message `@Feedback` with:
+
+- `/give-thanks @to_user <message>` - for short thank you messages
+- `/give-feedback` - to be prompted with a more formal template, within which you can provide structured feedback to a particular person. This template contains sections for _"Keep Doing"_, _"Do More Of"_, _"Do Less Of"_ and _"General Comments"_, of which you can complete, and send, the relevant sections.
+
+All feedback is then sent directly to the relevant user via the Slack App, meaning that feedback and thank you messages are all nicely stored in a single place for future review.
