@@ -24,6 +24,19 @@ Sick leave, or having limited availibility is not recorded currently. Keep your
 manager updated on your health, and let them know what FlowForge can do for you
 to aid in your recovery.
 
+## Parental Leave
+
+If you live in a country where a statutory Parental Leave benefit is available,
+you will be required to claim statutory Parental Leave pay (if you are eligible).
+
+Whilst statutory parental leave will vary from country-to-country, at FlowForge
+we have a mandatory 4-week, full-pay, Parental Leave policy. Any employee is
+able to extend this to 6-weeks if they wish, without requiring manager approval.
+Further leave can be requested, but should be discussed with your manager.
+
+If you live in a country that offers statuatory leave longer than this, then
+FlowForge will abide by this.
+
 ## Expenses
 
 The company will cover any reasonable work-related expense, including ensuring you
