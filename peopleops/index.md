@@ -29,10 +29,7 @@ to aid in your recovery.
 If you live in a country where a statutory Parental Leave benefit is available,
 you will be required to claim statutory Parental Leave pay (if you are eligible).
 
-Whilst statutory parental leave will vary from country-to-country, at FlowForge
-we have a mandatory 4-week, full-pay, Parental Leave policy. Any employee is
-able to extend this to 6-weeks if they wish, without requiring manager approval.
-Further leave can be requested, but should be discussed with your manager.
+Any employee can take up to 6-weeks if they wish without requiring manager approval. We recommend a minimum of 4 weeks, but recognise it's a personal choice to make. Further leave can be requested, but should be discussed with your manager.
 
 If you live in a country that offers statuatory leave longer than this, then
 FlowForge will abide by this.
