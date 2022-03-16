@@ -4,20 +4,27 @@
 
 [effective-oxford]: https://www.oxfordlearnersdictionaries.com/definition/english/effective
 
-Being effective is split up in two parts; producing results and communication
+Being effective is split up in two parts; producing ***results*** and ***communication***
 about what our goals are.
 
 ### Results
 
-We value results over measuring hours spent working. We do not dictate how
-someone should schedule their day - we trust individuals to do what is right.
-Everyone should feel empowered to do the work needed to achieve our goals.
+#### Results not Hours
+
+We care about what you achieve: the code you shipped, the user you made happy,
+and the team member you helped. We value results over measuring hours spent
+working. We do not dictate how someone should schedule their day - we trust
+individuals to do what is right. Everyone should feel empowered to do the work
+needed to achieve our goals.
 
 There may be times when more is needed to meet a goal, deadline or customer
 situation. We take the responsibility to ensure they are the exceptions rather
 than the rule.
 
-#### Bias for action
+Do not incite competition by proclaiming how many hours you worked yesterday.
+If you are working too many hours, talk to your manager to discuss solutions.
+
+#### Iteration
 
 We value getting things done and continually moving forward. It is better to 
 iterate rapidly rather than get stuck over-thinking a problem. We move with an
@@ -26,7 +33,7 @@ urgency and a focus to achieve our best.
 When you disagree with a solution to a problem, provide a concrete alternate
 solution to allow momentum to be maintained or even gained.
 
-#### Be trusting
+#### Be Trusting
 
 To move with high velocity, trust needs to be given before one has had the
 opportunity to earn it. People can only grow when they're able to take up
@@ -35,7 +42,7 @@ challenged, ask for feedback and support, not for permission or approval.
 
 ### Communication
 
-### Be a community
+#### Community-First
 
 As an open core company our community spans our employees, the open source
 contributors and our users. We strive to build a healthy, positive community
@@ -47,7 +54,7 @@ others. We welcome discussion and debate, but take care to ensure it is not at
 the expense or exclusion of others. We value empathy, courtesy and respect for
 each other.
 
-### Use candor
+#### Use Candor
 
 We use truth as a superpower, even when inconvenient to ourselves. We use it
 with care and consideration of others. We won’t get everything right all of the
@@ -60,7 +67,7 @@ We strongly encourage the sharing of thanks and feedback within FlowForge. This
 can be done formally through our `@Feedback` Slackbot. You can read more in
 [Communications](../communication#feedback-%26-thanks)
 
-### Be optimistic
+#### Be Optimistic
 
 We will treat all situations with an optimism that a positive result is
 possible. We don’t let that get in the way of planning for all outcomes and
