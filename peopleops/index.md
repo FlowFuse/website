@@ -68,6 +68,10 @@ This is done in a Google Sheet kept in a drive shared with the Finance team that
 is not generally accessible. Send details of the purchase to Nick or ZJ so it can be
 recorded.
 
+### Education & Conferences
+
+Continue proofessional development is very important, and FlowForge will support you by funding relevant conferences and educational materials. Speak to your manager if you have particular material you would like to study, or an event you would like to attend.
+
 ### Software Licenses
 
 Licenses and software assets can be purchased for third-party software will be useful for particular tasks, efforts and processes at FlowForge.
