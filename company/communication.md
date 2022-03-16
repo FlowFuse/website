@@ -40,12 +40,19 @@ scroll to a notes section.
 Coffee calls are social of nature and thus are the exception to the rule that
 each meeting should have an agenda.
 
-### Async standup meetings
+## Asynchronous communication
 
-To make the standup meeting async, we're using [Geekbot](https://geekbot.com/).
-Geekbot will trigger each workday morning at 9:00 local time, when online in
-Slack. Everyone who's a member of the #standup channel in Slack will be
-prompted.
+### Slack
+
+When using Slack, prefer to keep discussions in a thread. This reduces scroll
+back, and focusses channels.
+
+### Standup meetings
+
+Standup meetings are hard to scale across multiple timezones. To make standups
+async, we're using [Geekbot](https://geekbot.com/). Geekbot will trigger each
+workday morning at 9:00 local time, when online in Slack. Everyone who's a
+member of the #standup channel in Slack will be prompted.
 
 Pro-tips:
 - When a questions doesn't need answering, fill in `-` to skip
