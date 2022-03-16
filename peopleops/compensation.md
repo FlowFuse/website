@@ -31,3 +31,18 @@ will not vary based on employee location.
 
 Equity is only increased on employee promotions.
 
+## Benefits
+
+Last component of the total compensation are the benefits offered. The intent is
+to keep these as location independant as possible and practical. However, as a
+company we strive to offer everyone a decent standard of living. As such we might
+offer location dependant benefits to ensure standards are met.
+
+### For everyone
+
+- [Unlimited PTO][./index.md#vacation-policy]
+
+### United States
+
+FlowForge offers a health care package, including dental, for all US-based
+employees.
