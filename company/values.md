@@ -24,7 +24,7 @@ than the rule.
 Do not incite competition by proclaiming how many hours you worked yesterday.
 If you are working too many hours, talk to your manager to discuss solutions.
 
-#### Iteration
+#### Bias for Action
 
 We value getting things done and continually moving forward. It is better to 
 iterate rapidly rather than get stuck over-thinking a problem. We move with an
