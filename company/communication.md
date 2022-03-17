@@ -58,6 +58,31 @@ Pro-tips:
 - When a questions doesn't need answering, fill in `-` to skip
 - When you want to report earlier that day, message Geekbot `report`
 
+### Current meetings
+
+#### Tuesday Kick Off
+
+Weekly kick off meetings have the intention to set goals for the week, create
+accountability, and discover blockers before they occur. Each participant will
+get the opportunity to share:
+
+1. (optional) Personal updates, show-and-tell of side projects etc.
+1. The goals for this week
+1. What challenges they're faced with, and discuss who will help
+
+The meeting itself is wrapped up with an 'Open Mic' section, for ideas, problems,
+and smaller discussion items that can be discussed in a group in few minutes.
+
+#### Friday Wrap up
+
+To review the week, and learn from the progress made by the team, each week is
+closed out with another meeting. Each participant reviews their goals of the week
+and takes a moment to briefly review on those goals.
+
+The meeting is also leveraged to walk the [project board][gh-board] on GitHub.
+
+[gh-board]: https://github.com/orgs/flowforge/projects/1/views/1
+
 ## Node-RED community interactions.
 
 As an employee of FlowForge, when we interact with the OSS Node-RED community we 
