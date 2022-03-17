@@ -51,13 +51,13 @@ exposing more options for customisation in the future.
 
 ### Billing Integration
 
-With our open core philosophy, the heard of the FlowForge platform is open source
+With our open core philosophy, the heart of the FlowForge platform is open source
 and available under the Apache 2 license for anyone to use.
 
 But the plan was always to have certain features that were licensed separately.
 
-This release brings the first of those features - Strip Billing Integration. This
-feature brings the ability to require a Team to have a Strip Billing agreement
+This release brings the first of those features - Stripe Billing Integration. This
+feature brings the ability to require a Team to have a Stripe Billing agreement
 in place and to be able to charge on a per-project basis within that Team.
 
 Being able to charge is an important feature for any commercial platform, and
