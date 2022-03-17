@@ -65,12 +65,16 @@ company, you can claim back the money through [work.pilot.co/expenses](https://w
 
 Any asset purchase over $500 (laptops, devices etc) needs to be centrally recorded.
 This is done in a Google Sheet kept in a drive shared with the Finance team that
-is not generally accessible. Send details of the purchase to Nick or ZJ so it can be
-recorded.
+is not generally accessible. Send details of the purchase to the CEO or CTO so 
+it can be recorded.
 
 ### Education & Conferences
 
-Continue proofessional development is very important, and FlowForge will support you by funding relevant conferences and educational materials. Speak to your manager if you have particular material you would like to study, or an event you would like to attend.
+Continual professional development is very important, and FlowForge will support
+you in any activities you wish to undertake. Speak to your manager if you have
+particular material you would like to study, or an event you would like to
+attend. FlowForge will help cover reasonable costs associated with the activity
+- such as travel and ticket fees.
 
 ### Software Licenses
 
