@@ -3,8 +3,95 @@
     <title>FlowForge</title>
     <link href="https://flowforge.com/blog/index.xml" rel="self"/>
     <link href="https://flowforge.com/blog"/>
-    <updated>2022-03-02T00:00:00Z</updated>
+    <updated>2022-03-17T01:00:00Z</updated>
     <id>https://flowforge.com/blog</id>
+    
+    <entry>
+        <id>https://flowforge.com/blog/flowforge-03-released/</id>
+        <title>FlowForge 0.3 released</title>
+        <summary>Moving towards the launch of FlowForge Cloud</summary>
+        <updated>2022-03-17T01:00:00Z</updated>
+        <link href="https://flowforge.com/blog/flowforge-03-released/"/>
+        <author><name>Nick O&#39;Leary</name></author>
+        <content type="html">&lt;p&gt;The FlowForge 0.3 release brings us closer to the launch of FlowForge Cloud.
+Find out more about what&#39;s in this new release.&lt;/p&gt;
+&lt;!--more--&gt;
+&lt;p&gt;This release of the FlowForge platform brings some significant new features that
+will underpin more of what is to come.&lt;/p&gt;
+&lt;h3 id=&quot;project-stacks-%26-templates&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://flowforge.com/blog/flowforge-03-released/#project-stacks-%26-templates&quot;&gt;#&amp;nbsp;&lt;/a&gt; Project Stacks &amp;amp; Templates&lt;/h3&gt;
+&lt;p&gt;When we think about what a makes a Project inside FlowForge, the simple answer
+is Node-RED.&lt;/p&gt;
+&lt;p&gt;The more complete answer is: a version of Node-RED, a version of Node.js, some
+memory, some CPU and a bunch of Node-RED settings to customise the instance.&lt;/p&gt;
+&lt;p&gt;In a platform like FlowForge, it&#39;s important to have the tools to manage all
+of these things.&lt;/p&gt;
+&lt;p&gt;This is where Project Stacks and Template come in.&lt;/p&gt;
+&lt;p&gt;A Project Stack defines the underlying characteristics of the Node-RED process -
+or the container it is running in. For example, with our Local deployment model,
+it defines the version of Node-RED to use and how much memory the process should
+try to use. In our container based deployment models, the stack identifies the
+container to use for the project, along with memory and CPU limits.&lt;/p&gt;
+&lt;p&gt;In a future release, this will be the way we will support upgrading the version
+of Node-RED a project is using - and doing so in a well managed way. An Administrator
+will be able to create a new Stack containing the new version of Node-RED.
+Project owners will then be able to update their projects to use the new Stack -
+at a time that is convenient to them.&lt;/p&gt;
+&lt;p&gt;A Project Template is more about how the Node-RED instance is configured - exposing
+the options a user would traditional modify in their Node-RED settings file.
+With this release, we&#39;re not exposing a lot of settings as the focus has been
+more on the underlying Template concept. But it will be the basis for gradually
+exposing more options for customisation in the future.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/flowforge/flowforge/issues/285&quot;&gt;Epic #285 - Project Stacks&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/flowforge/flowforge/issues/141&quot;&gt;Epic #141 - Project Templates&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;billing-integration&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://flowforge.com/blog/flowforge-03-released/#billing-integration&quot;&gt;#&amp;nbsp;&lt;/a&gt; Billing Integration&lt;/h3&gt;
+&lt;p&gt;With our open core philosophy, the heart of the FlowForge platform is open source
+and available under the Apache 2 license for anyone to use.&lt;/p&gt;
+&lt;p&gt;But the plan was always to have certain features that were licensed separately.&lt;/p&gt;
+&lt;p&gt;This release brings the first of those features - Stripe Billing Integration. This
+feature brings the ability to require a Team to have a Stripe Billing agreement
+in place and to be able to charge on a per-project basis within that Team.&lt;/p&gt;
+&lt;p&gt;Being able to charge is an important feature for any commercial platform, and
+with our own FlowForge Cloud launching soon, we needed to get this feature in
+place today.&lt;/p&gt;
+&lt;p&gt;We&#39;ve structured the code in the repository and updated the LICENSE file to make it
+very clear what parts of the code base are &lt;em&gt;not&lt;/em&gt; covered by the Apache 2 license.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/flowforge/flowforge/issues/224&quot;&gt;Epic #224 - Billing&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;getting-started-with-flowforge&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://flowforge.com/blog/flowforge-03-released/#getting-started-with-flowforge&quot;&gt;#&amp;nbsp;&lt;/a&gt; Getting started with FlowForge&lt;/h3&gt;
+&lt;p&gt;The documentation provides a guide for &lt;a href=&quot;https://github.com/flowforge/flowforge/tree/main/docs&quot;&gt;installing FlowForge on a local server&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;If you haven&#39;t played with FlowForge yet, here&#39;s a more complete walk-through
+of the platform:&lt;/p&gt;
+&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/YYZDx8n17Ys&quot; title=&quot;YouTube video player&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
+&lt;h3 id=&quot;upgrading-flowforge&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://flowforge.com/blog/flowforge-03-released/#upgrading-flowforge&quot;&gt;#&amp;nbsp;&lt;/a&gt; Upgrading FlowForge&lt;/h3&gt;
+&lt;p&gt;If you installed FlowForge 0.1 or 0.2 and want to upgrade, our documentation provides a
+guide for &lt;a href=&quot;https://github.com/flowforge/flowforge/tree/main/docs/install/local#upgrade&quot;&gt;upgrading FlowForge on a local server&lt;/a&gt;.&lt;/p&gt;
+&lt;h3 id=&quot;getting-help&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://flowforge.com/blog/flowforge-03-released/#getting-help&quot;&gt;#&amp;nbsp;&lt;/a&gt; Getting help&lt;/h3&gt;
+&lt;p&gt;If you hit any problems with the platform, or have questions to ask, please do
+raise an &lt;a href=&quot;https://github.com/flowforge/flowforge/issues&quot;&gt;issue on GitHub&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;That also includes if you have any feedback or feature requests.&lt;/p&gt;
+&lt;p&gt;We also have a &lt;code&gt;#flowforge&lt;/code&gt; channel on the &lt;a href=&quot;https://nodered.org/slack&quot;&gt;Node-RED Slack workspace&lt;/a&gt;.&lt;/p&gt;
+&lt;h3 id=&quot;what&#39;s-next%3F&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://flowforge.com/blog/flowforge-03-released/#what&#39;s-next%3F&quot;&gt;#&amp;nbsp;&lt;/a&gt; What&#39;s next?&lt;/h3&gt;
+&lt;p&gt;Our regular release cycle puts the next release on Thursday 14th April.&lt;/p&gt;
+&lt;p&gt;We&#39;re still in planning stage for the release, but we&#39;ll also be beginning to invite
+people from the waiting list to sign-up to FlowForge Cloud.&lt;/p&gt;
+&lt;p&gt;For more information, check out the &lt;a href=&quot;https://flowforge.com/blog/announcing-flowforge-cloud/&quot;&gt;annoucement blog post&lt;/a&gt;, or join the waiting
+list here:&lt;/p&gt;
+&lt;div class=&quot;mt-4 flex flex-col&quot;&gt;
+    &lt;form action=&quot;https://buttondown.email/api/emails/embed-subscribe/flowforge-waitlist&quot; method=&quot;post&quot; target=&quot;popupwindow&quot; onsubmit=&quot;window.open(&#39;https://buttondown.email/flowforge-waitlist&#39;, &#39;popupwindow&#39;)&quot; class=&quot;embeddable-buttondown-form p-1 my-1 &quot;&gt;
+    &lt;div class=&quot;flex flex-col md:flex-row&quot;&gt;
+        &lt;input type=&quot;email&quot; name=&quot;email&quot; id=&quot;bd-email&quot; placeholder=&quot;Enter your email&quot; class=&quot;lg:w-80 md:w-60 py-2 px-4 rounded border-blue-hero border-2 focus:border-blue-hero-darker  focus:outline-none&quot; /&gt;
+        &lt;input type=&quot;hidden&quot; value=&quot;1&quot; name=&quot;embed&quot; /&gt;
+        &lt;input type=&quot;submit&quot; value=&quot;Sign Up&quot; class=&quot;cursor-pointer mt-2 md:mt-0 md:ml-3 py-2 px-4 text-white font-semibold rounded bg-blue-hero border-2 border-blue-hero hover:bg-blue-hero-darker hover:border-blue-hero-darker&quot; /&gt;
+    &lt;/div&gt;
+&lt;/form&gt;
+&lt;/div&gt;
+&lt;p&gt;You can also sign up to our general mailing list below if you want to hear more
+about the work we&#39;re doing.&lt;/p&gt;
+</content>
+    </entry>
     
     <entry>
         <id>https://flowforge.com/blog/community-news-02/</id>
