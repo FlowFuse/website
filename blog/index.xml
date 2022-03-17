@@ -7,11 +7,11 @@
     <id>https://flowforge.com/blog</id>
     
     <entry>
-        <id>https://flowforge.com/blog/2022/community-news-02/</id>
+        <id>https://flowforge.com/blog/community-news-02/</id>
         <title>Community News</title>
         <summary>News from the FlowForge and Node-RED communities</summary>
         <updated>2022-03-02T00:00:00Z</updated>
-        <link href="https://flowforge.com/blog/2022/community-news-02/"/>
+        <link href="https://flowforge.com/blog/community-news-02/"/>
         <author><name>Sam Machin</name></author>
         <content type="html">&lt;p&gt;Welcome to the FlowForge newsletter, a regular roundup of what`s happening with both FlowForge and the wider Node-RED community.&lt;/p&gt;
 &lt;!--more--&gt;
@@ -30,11 +30,11 @@ We&#39;re looking for the next member of our team, If you&#39;re a Node.JS devel
     </entry>
     
     <entry>
-        <id>https://flowforge.com/blog/2022/announcing-flowforge-cloud/</id>
+        <id>https://flowforge.com/blog/announcing-flowforge-cloud/</id>
         <title>Announcing FlowForge Cloud</title>
         <summary>Hosting your Node-RED, so you don&#39;t have to.</summary>
         <updated>2022-02-23T19:44:00Z</updated>
-        <link href="https://flowforge.com/blog/2022/announcing-flowforge-cloud/"/>
+        <link href="https://flowforge.com/blog/announcing-flowforge-cloud/"/>
         <author><name>Zeger-Jan van de Weg</name></author>
         <content type="html">&lt;p&gt;As an open core company, anyone is free to &lt;a href=&quot;https://github.com/flowforge/flowforge/tree/9219e81399eaf52fb0ee5573707a52f5520fbfdd/docs/install&quot;&gt;download and install&lt;/a&gt;
 our platform. In many cases this is a great solution, it
@@ -44,7 +44,7 @@ though, some people just want to start building with Node-RED without having to 
 Node-RED as a service offering and today we are opening the waitlist.&lt;/p&gt;
 &lt;!--more--&gt;
 &lt;p&gt;Our waitlist captures your email, and we&#39;ll reach out to you on that address once your account is created.&lt;/p&gt;
-&lt;h4 id=&quot;joining-the-wait-list&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://flowforge.com/blog/2022/announcing-flowforge-cloud/#joining-the-wait-list&quot;&gt;#&amp;nbsp;&lt;/a&gt; Joining the wait list&lt;/h4&gt;
+&lt;h4 id=&quot;joining-the-wait-list&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://flowforge.com/blog/announcing-flowforge-cloud/#joining-the-wait-list&quot;&gt;#&amp;nbsp;&lt;/a&gt; Joining the wait list&lt;/h4&gt;
 &lt;div class=&quot;mt-4 flex flex-col&quot;&gt;
     &lt;form action=&quot;https://buttondown.email/api/emails/embed-subscribe/flowforge-waitlist&quot; method=&quot;post&quot; target=&quot;popupwindow&quot; onsubmit=&quot;window.open(&#39;https://buttondown.email/flowforge-waitlist&#39;, &#39;popupwindow&#39;)&quot; class=&quot;embeddable-buttondown-form p-1 my-1 &quot;&gt;
     &lt;div class=&quot;flex flex-col md:flex-row&quot;&gt;
@@ -54,7 +54,7 @@ Node-RED as a service offering and today we are opening the waitlist.&lt;/p&gt;
     &lt;/div&gt;
 &lt;/form&gt;
 &lt;/div&gt;
-&lt;h3 id=&quot;starting-operations&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://flowforge.com/blog/2022/announcing-flowforge-cloud/#starting-operations&quot;&gt;#&amp;nbsp;&lt;/a&gt; Starting operations&lt;/h3&gt;
+&lt;h3 id=&quot;starting-operations&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://flowforge.com/blog/announcing-flowforge-cloud/#starting-operations&quot;&gt;#&amp;nbsp;&lt;/a&gt; Starting operations&lt;/h3&gt;
 &lt;p&gt;After having released v0.2 recently, we&#39;re now working on v0.3 that will include
 a user flow for &lt;a href=&quot;https://github.com/flowforge/flowforge/issues/224&quot;&gt;billing&lt;/a&gt;.
 When that work has been done and deployed people on the waitlist will slowly be invited to the platform.
@@ -71,11 +71,11 @@ More details on the exact pricing will be availble nearer the time.&lt;/p&gt;
     </entry>
     
     <entry>
-        <id>https://flowforge.com/blog/2022/flowforge-02-released/</id>
+        <id>https://flowforge.com/blog/flowforge-02-released/</id>
         <title>FlowForge 0.2 released</title>
         <summary>Keeping the releases flowing of our open platform for Node-RED</summary>
         <updated>2022-02-17T01:00:00Z</updated>
-        <link href="https://flowforge.com/blog/2022/flowforge-02-released/"/>
+        <link href="https://flowforge.com/blog/flowforge-02-released/"/>
         <author><name>Nick O&#39;Leary</name></author>
         <content type="html">&lt;p&gt;Four weeks have passed since our initial release of FlowForge, and we&#39;re happy
 to release v0.2 today as we continue moving forward and evolve the platform.&lt;/p&gt;
@@ -95,20 +95,20 @@ own cloud service we&#39;ll be sharing more about in the coming days.&lt;/p&gt;
 But with a further 15 repositories containing different components, each with its
 own change-log, we&#39;re still thinking about how best to share a single view of the
 updates.&lt;/p&gt;
-&lt;h3 id=&quot;getting-started-with-flowforge&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://flowforge.com/blog/2022/flowforge-02-released/#getting-started-with-flowforge&quot;&gt;#&amp;nbsp;&lt;/a&gt; Getting started with FlowForge&lt;/h3&gt;
+&lt;h3 id=&quot;getting-started-with-flowforge&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://flowforge.com/blog/flowforge-02-released/#getting-started-with-flowforge&quot;&gt;#&amp;nbsp;&lt;/a&gt; Getting started with FlowForge&lt;/h3&gt;
 &lt;p&gt;The documentation provides a guide for &lt;a href=&quot;https://github.com/flowforge/flowforge/tree/main/docs&quot;&gt;installing FlowForge on a local server&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;If you haven&#39;t played with FlowForge 0.1 yet, here&#39;s a more complete walk-through
 of the platform:&lt;/p&gt;
 &lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/YYZDx8n17Ys&quot; title=&quot;YouTube video player&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
-&lt;h3 id=&quot;upgrading-flowforge&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://flowforge.com/blog/2022/flowforge-02-released/#upgrading-flowforge&quot;&gt;#&amp;nbsp;&lt;/a&gt; Upgrading FlowForge&lt;/h3&gt;
+&lt;h3 id=&quot;upgrading-flowforge&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://flowforge.com/blog/flowforge-02-released/#upgrading-flowforge&quot;&gt;#&amp;nbsp;&lt;/a&gt; Upgrading FlowForge&lt;/h3&gt;
 &lt;p&gt;If you installed FlowForge 0.1 and want to upgrade, our documentation provides a
 guide for &lt;a href=&quot;https://github.com/flowforge/flowforge/tree/main/docs/install/local#upgrade&quot;&gt;upgrading FlowForge on a local server&lt;/a&gt;.&lt;/p&gt;
-&lt;h3 id=&quot;getting-help&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://flowforge.com/blog/2022/flowforge-02-released/#getting-help&quot;&gt;#&amp;nbsp;&lt;/a&gt; Getting help&lt;/h3&gt;
+&lt;h3 id=&quot;getting-help&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://flowforge.com/blog/flowforge-02-released/#getting-help&quot;&gt;#&amp;nbsp;&lt;/a&gt; Getting help&lt;/h3&gt;
 &lt;p&gt;If you hit any problems with the platform, or have questions to ask, please do
 raise an &lt;a href=&quot;https://github.com/flowforge/flowforge/issues&quot;&gt;issue on GitHub&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;That also includes if you have any feedback or feature requests.&lt;/p&gt;
 &lt;p&gt;We also have a &lt;code&gt;#flowforge&lt;/code&gt; channel on the &lt;a href=&quot;https://nodered.org/slack&quot;&gt;Node-RED Slack workspace&lt;/a&gt;.&lt;/p&gt;
-&lt;h3 id=&quot;what&#39;s-next%3F&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://flowforge.com/blog/2022/flowforge-02-released/#what&#39;s-next%3F&quot;&gt;#&amp;nbsp;&lt;/a&gt; What&#39;s next?&lt;/h3&gt;
+&lt;h3 id=&quot;what&#39;s-next%3F&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://flowforge.com/blog/flowforge-02-released/#what&#39;s-next%3F&quot;&gt;#&amp;nbsp;&lt;/a&gt; What&#39;s next?&lt;/h3&gt;
 &lt;p&gt;Our regular release cycle puts the next release on Thursday 17th March. We&#39;ve
 got some key features planned in this release around &lt;a href=&quot;https://github.com/flowforge/flowforge/issues/141&quot;&gt;Project Templates&lt;/a&gt; and &lt;a href=&quot;https://github.com/flowforge/flowforge/issues/285&quot;&gt;Stacks&lt;/a&gt; -
 which will underpin how you can customise Node-RED within FlowForge.&lt;/p&gt;
@@ -120,11 +120,11 @@ doing.&lt;/p&gt;
     </entry>
     
     <entry>
-        <id>https://flowforge.com/blog/2022/use-case-solar-afloat/</id>
+        <id>https://flowforge.com/blog/use-case-solar-afloat/</id>
         <title>Using Node-RED to keep Solar PV afloat</title>
         <summary>How spb sonne used Node-RED with a renewable energy solution</summary>
         <updated>2022-02-09T09:26:00Z</updated>
-        <link href="https://flowforge.com/blog/2022/use-case-solar-afloat/"/>
+        <link href="https://flowforge.com/blog/use-case-solar-afloat/"/>
         <author><name>Zeger-Jan van de Weg</name></author>
         <content type="html">&lt;p&gt;&lt;a href=&quot;https://www.linkedin.com/in/krishnanravichandran/&quot;&gt;Krisnan Ravichandran&lt;/a&gt; works
 for &lt;a href=&quot;https://www.sbp.solar/&quot;&gt;spb sonne&lt;/a&gt;, a engineering consultancy for renewable
@@ -163,11 +163,11 @@ to share, please get in touch via &lt;a href=&quot;mailto:contact@flowforge.com&
     </entry>
     
     <entry>
-        <id>https://flowforge.com/blog/2022/welcome-joe/</id>
+        <id>https://flowforge.com/blog/welcome-joe/</id>
         <title>Welcome Joe</title>
         <summary></summary>
         <updated>2022-02-08T00:00:00Z</updated>
-        <link href="https://flowforge.com/blog/2022/welcome-joe/"/>
+        <link href="https://flowforge.com/blog/welcome-joe/"/>
         <author><name>Nick O&#39;Leary</name></author>
         <content type="html">&lt;p&gt;Today we welcome Joe Pavitt (&lt;a href=&quot;https://twitter.com/joepavitt3d&quot;&gt;@joepavitt3d&lt;/a&gt;) as
 our new Head of UX &amp;amp; Design. This is a key role that will help deliver the awesome
@@ -185,11 +185,11 @@ seeing the real impact he&#39;ll have on what we&#39;re building.&lt;/p&gt;
     </entry>
     
     <entry>
-        <id>https://flowforge.com/blog/2022/community-news-01/</id>
+        <id>https://flowforge.com/blog/community-news-01/</id>
         <title>Community News</title>
         <summary>News from the FlowForge and Node-RED communities</summary>
         <updated>2022-01-28T00:00:00Z</updated>
-        <link href="https://flowforge.com/blog/2022/community-news-01/"/>
+        <link href="https://flowforge.com/blog/community-news-01/"/>
         <author><name>Sam Machin</name></author>
         <content type="html">&lt;p&gt;Welcome to the first FlowForge newsletter, we’re going to publish this as a regular roundup of what`s happening with both FlowForge and the wider Node-RED community, if you want to receive it via email, sign up for updates at the bottom of the page.&lt;/p&gt;
 &lt;!--more--&gt;
@@ -210,11 +210,11 @@ We&#39;re looking for the next member of our team, If you&#39;re a Node.JS devel
     </entry>
     
     <entry>
-        <id>https://flowforge.com/blog/2022/flowforge-01-released/</id>
+        <id>https://flowforge.com/blog/flowforge-01-released/</id>
         <title>FlowForge 0.1 released</title>
         <summary>Making the first release of the platform and transitioning to open development</summary>
         <updated>2022-01-20T01:00:00Z</updated>
-        <link href="https://flowforge.com/blog/2022/flowforge-01-released/"/>
+        <link href="https://flowforge.com/blog/flowforge-01-released/"/>
         <author><name>Nick O&#39;Leary</name></author>
         <content type="html">&lt;p&gt;For an open core company, we haven&#39;t been very open with what we&#39;re doing. That all
 changes today with the release of FlowForge 0.1 and making all of our repositories
@@ -235,16 +235,16 @@ to individual Node-RED instances, or Projects as we call them.&lt;/p&gt;
 &lt;p&gt;For a more complete walk-through of the platform in this early release, you can
 watch this video.&lt;/p&gt;
 &lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/YYZDx8n17Ys&quot; title=&quot;YouTube video player&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
-&lt;h3 id=&quot;getting-started-with-flowforge&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://flowforge.com/blog/2022/flowforge-01-released/#getting-started-with-flowforge&quot;&gt;#&amp;nbsp;&lt;/a&gt; Getting started with FlowForge&lt;/h3&gt;
+&lt;h3 id=&quot;getting-started-with-flowforge&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://flowforge.com/blog/flowforge-01-released/#getting-started-with-flowforge&quot;&gt;#&amp;nbsp;&lt;/a&gt; Getting started with FlowForge&lt;/h3&gt;
 &lt;p&gt;The documentation provides a guide for &lt;a href=&quot;https://github.com/flowforge/flowforge/tree/main/docs&quot;&gt;installing FlowForge on a local server&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;We also have drivers for deploying to Docker Compose and Kubernetes based environments
 to enable a larger scale of deployment. We&#39;ll have more documentation on those options
 in the near future.&lt;/p&gt;
-&lt;h3 id=&quot;getting-help&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://flowforge.com/blog/2022/flowforge-01-released/#getting-help&quot;&gt;#&amp;nbsp;&lt;/a&gt; Getting help&lt;/h3&gt;
+&lt;h3 id=&quot;getting-help&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://flowforge.com/blog/flowforge-01-released/#getting-help&quot;&gt;#&amp;nbsp;&lt;/a&gt; Getting help&lt;/h3&gt;
 &lt;p&gt;If you hit any problems with the platform, or have questions to ask, please do
 raise an &lt;a href=&quot;https://github.com/flowforge/flowforge/issues&quot;&gt;issue on GitHub&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;That also includes if you have any feedback or feature requests.&lt;/p&gt;
-&lt;h3 id=&quot;what&#39;s-next%3F&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://flowforge.com/blog/2022/flowforge-01-released/#what&#39;s-next%3F&quot;&gt;#&amp;nbsp;&lt;/a&gt; What&#39;s next?&lt;/h3&gt;
+&lt;h3 id=&quot;what&#39;s-next%3F&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://flowforge.com/blog/flowforge-01-released/#what&#39;s-next%3F&quot;&gt;#&amp;nbsp;&lt;/a&gt; What&#39;s next?&lt;/h3&gt;
 &lt;p&gt;With so much in the plan and lots of exciting features to come, we will have a
 regular cycle of releases every four weeks. So you can expect the next release, 0.2,
 on Thursday 17th February.&lt;/p&gt;
@@ -257,11 +257,11 @@ doing.&lt;/p&gt;
     </entry>
     
     <entry>
-        <id>https://flowforge.com/blog/2022/welcome-steve/</id>
+        <id>https://flowforge.com/blog/welcome-steve/</id>
         <title>Welcome Steve</title>
         <summary></summary>
         <updated>2022-01-20T00:00:00Z</updated>
-        <link href="https://flowforge.com/blog/2022/welcome-steve/"/>
+        <link href="https://flowforge.com/blog/welcome-steve/"/>
         <author><name>Nick O&#39;Leary</name></author>
         <content type="html">&lt;p&gt;We&#39;re continuing to grow the FlowForge team with our latest hire; Steve McLaughlin
 who is joining our development team.&lt;/p&gt;
@@ -285,11 +285,11 @@ FlowForge is about.&lt;/p&gt;
     </entry>
     
     <entry>
-        <id>https://flowforge.com/blog/2022/welcome-zj/</id>
+        <id>https://flowforge.com/blog/welcome-zj/</id>
         <title>Welcome ZJ</title>
         <summary></summary>
         <updated>2022-01-03T00:00:00Z</updated>
-        <link href="https://flowforge.com/blog/2022/welcome-zj/"/>
+        <link href="https://flowforge.com/blog/welcome-zj/"/>
         <author><name>Nick O&#39;Leary</name></author>
         <content type="html">&lt;p&gt;This year the FlowForge team will grow further, and I&#39;m excited to announce our
 newest addition to the team; Zeger-Jan van de Weg (&lt;a href=&quot;https://twitter.com/ZJvandeWeg&quot;&gt;@ZJvandeWeg&lt;/a&gt;).
@@ -310,11 +310,11 @@ of FlowForge, working on marketing and ongoing business development.&lt;/p&gt;
     </entry>
     
     <entry>
-        <id>https://flowforge.com/blog/2021/welcome-sam/</id>
+        <id>https://flowforge.com/blog/welcome-sam/</id>
         <title>Welcome Sam</title>
         <summary></summary>
         <updated>2021-05-17T00:00:00Z</updated>
-        <link href="https://flowforge.com/blog/2021/welcome-sam/"/>
+        <link href="https://flowforge.com/blog/welcome-sam/"/>
         <author><name>Nick O&#39;Leary</name></author>
         <content type="html">&lt;p&gt;One of the things I&#39;m most looking forward to with starting FlowForge is building
 the team who are going to help create something special and have fun whilst doing it.
@@ -335,11 +335,11 @@ position to help us do just that.&lt;/p&gt;
     </entry>
     
     <entry>
-        <id>https://flowforge.com/blog/2021/welcome-ben/</id>
+        <id>https://flowforge.com/blog/welcome-ben/</id>
         <title>Welcome Ben</title>
         <summary></summary>
         <updated>2021-05-10T00:00:00Z</updated>
-        <link href="https://flowforge.com/blog/2021/welcome-ben/"/>
+        <link href="https://flowforge.com/blog/welcome-ben/"/>
         <author><name>Nick O&#39;Leary</name></author>
         <content type="html">&lt;p&gt;I&#39;m excited to share the news that Ben Hardill (&lt;a href=&quot;https://twitter.com/hardillb&quot;&gt;@hardillb&lt;/a&gt;) is joining FlowForge as a Senior Engineer.&lt;/p&gt;
 &lt;!--more--&gt;
@@ -356,11 +356,11 @@ be continuing at FlowForge.&lt;/p&gt;
     </entry>
     
     <entry>
-        <id>https://flowforge.com/blog/2021/first-deploy/</id>
+        <id>https://flowforge.com/blog/first-deploy/</id>
         <title>Introducing FlowForge Inc.</title>
         <summary>Building a new low-code development platform around the Node-RED project</summary>
         <updated>2021-04-06T00:00:00Z</updated>
-        <link href="https://flowforge.com/blog/2021/first-deploy/"/>
+        <link href="https://flowforge.com/blog/first-deploy/"/>
         <author><name>Nick O&#39;Leary</name></author>
         <content type="html">&lt;p&gt;When Dave and I first created &lt;a href=&quot;https://nodered.org/&quot;&gt;Node-RED&lt;/a&gt;, it was a tool to solve a
 problem - allowing us to do our day job more effectively when building IoT solutions
@@ -377,7 +377,7 @@ contributing back.&lt;/p&gt;
 &lt;p&gt;An opportunity presented itself earlier this year that I believe will bring a
 step-change to what the Node-RED project is able to achieve.&lt;/p&gt;
 &lt;!--more--&gt;
-&lt;h3 id=&quot;introducing-flowforge-inc.&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://flowforge.com/blog/2021/first-deploy/#introducing-flowforge-inc.&quot;&gt;#&amp;nbsp;&lt;/a&gt; Introducing FlowForge Inc.&lt;/h3&gt;
+&lt;h3 id=&quot;introducing-flowforge-inc.&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://flowforge.com/blog/first-deploy/#introducing-flowforge-inc.&quot;&gt;#&amp;nbsp;&lt;/a&gt; Introducing FlowForge Inc.&lt;/h3&gt;
 &lt;p&gt;So today, I&#39;m launching FlowForge Inc - a new company whose mission is to build a low-coding development
 platform fit for the enterprise with Node-RED at its heart.&lt;/p&gt;
 &lt;p&gt;Backed by &lt;a href=&quot;https://www.linkedin.com/in/sijbrandij/&quot;&gt;Sid Sijbrandij&lt;/a&gt;, we have funding
@@ -392,7 +392,7 @@ and an open governance model that allows anyone to have a say in its development
 &lt;p&gt;Our goal is to incorporate as much of our work directly into the core project as possible. Where we do create closed-source components, we will work with the community to ensure the right APIs and extension points are in the core for all to benefit from.&lt;/p&gt;
 &lt;p&gt;We will only be successful if the whole Node-RED community is successful.&lt;/p&gt;
 &lt;p&gt;For me personally, this is a really exciting next step. I never expected to turn my little side project into a full-time job and now into a company.&lt;/p&gt;
-&lt;h3 id=&quot;hiring-soon!&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://flowforge.com/blog/2021/first-deploy/#hiring-soon!&quot;&gt;#&amp;nbsp;&lt;/a&gt; Hiring soon!&lt;/h3&gt;
+&lt;h3 id=&quot;hiring-soon!&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://flowforge.com/blog/first-deploy/#hiring-soon!&quot;&gt;#&amp;nbsp;&lt;/a&gt; Hiring soon!&lt;/h3&gt;
 &lt;p&gt;We&#39;ll be hiring soon - so keep an eye out if you&#39;re interesting in getting involved.&lt;/p&gt;
 </content>
     </entry>
