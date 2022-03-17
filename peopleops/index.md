@@ -70,7 +70,11 @@ recorded.
 
 ### Education & Conferences
 
-Continue proofessional development is very important, and FlowForge will support you by funding relevant conferences and educational materials. Speak to your manager if you have particular material you would like to study, or an event you would like to attend.
+Continual professional development is very important, and FlowForge will support
+you in any activities you wish to undertake. Speak to your manager if you have
+particular material you would like to study, or an event you would like to
+attend. FlowForge will help cover reasonable costs associated with the activity
+- such as travel and ticket fees.
 
 ### Software Licenses
 
