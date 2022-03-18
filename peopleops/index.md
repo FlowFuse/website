@@ -89,8 +89,8 @@ When seeking an additional license for existing software we pay for, then you ju
 As an all remote company we don't have offices. It is envisaged that most people will work from their home the majority of the time. Equipment & Furniture required for a home workspace should be discussed with your manager as part of the hiring process.
 The company covering certain costs, such as broadband can have tax implications depending on your local legislation. You should consult an independent advisor in your location for your particular situation.
 
+#### Coworking space allowance
+
 If you want to occasionally use a separate workspace to your home, the company will cover up to $100 a month in charges for renting a desk in a co-working space on an ad-hoc basis. 
 
 If you want to work from a rented co-working space full time this should be discussed with your manager.
-
-If you wish to change the country or timezone that you are working from for more than 2 weeks this should be raised with your manager at the earliest opportunity.
