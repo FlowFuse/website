@@ -60,28 +60,22 @@ Pro-tips:
 
 ### Current meetings
 
-#### Tuesday Kick Off
+#### Wednesday Team meeting
 
-Weekly kick off meetings have the intention to set goals for the week, create
-accountability, and discover blockers before they occur. Each participant will
-get the opportunity to share:
+Weekly a meeting is held to announce company wide updates, get to know each
+other, and share things you want to share both professionally as personally.
 
-1. (optional) Personal updates, show-and-tell of side projects etc.
-1. The goals for this week
-1. What challenges they're faced with, and discuss who will help
+Announcements should be written down in the agenda as participation is not
+required. Reading the agenda the day after the meeting should be enough to stay
+in the loop on company updates.
 
-The meeting itself is wrapped up with an 'Open Mic' section, for ideas, problems,
-and smaller discussion items that can be discussed in a group in few minutes.
+Personal updates don't have to be documented in the agenda, but please do keep a
+list of names in the agenda so everyone gets the opportunity to share.
 
-#### Friday Wrap up
-
-To review the week, and learn from the progress made by the team, each week is
-closed out with another meeting. Each participant reviews their goals of the week
-and takes a moment to briefly review on those goals.
-
-The meeting is also leveraged to walk the [project board][gh-board] on GitHub.
-
-[gh-board]: https://github.com/orgs/flowforge/projects/1/views/1
+The meeting itself is wrapped up with an 'Open Mic' section, for ideas,
+problems, and smaller discussion items that can be discussed in a group in few
+minutes, to a an hour. It's not required to stick around for the full
+discussion.
 
 ## Node-RED community interactions.
 
