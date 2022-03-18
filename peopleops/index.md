@@ -83,3 +83,14 @@ Licenses and software assets can be purchased for third-party software will be u
 If you are seeking a license of software that we do not currently use, put together a short summary as to the costs associated with the licenses and describe the value that the software would provide. If it would modify the way in which the company operates, then the best place to present this is as a PR to the Handbook. With approval from the CEO and CTO you can proceed with the acquisition of the licenses.
 
 When seeking an additional license for existing software we pay for, then you just need to justify why the expenditure is justified for you to be able to access it via an e-mail. Similarly, if the CEO & CTO agree, then you can proceed with purchasing the additional license.
+
+### Workspace & Location
+
+As an all remote company we don't have offices. It is envisaged that most people will work from their home the majority of the time. Equipment & Furniture required for a home workspace should be discussed with your manager as part of the hiring process.
+The company covering certain costs, such as broadband can have tax implications depending on your local legislation. You should consult an independent advisor in your location for your particular situation.
+
+We recognize that working alone at home all the time is not always healthy for personal wellbeing, therefore the company will cover up to $100 a month in charges for renting a desk in a co-working space on an ad-hoc basis (around 2-3 days a month). Choosing a co-working space should also help to provide visibility of FlowForge as a product to other companies in that space and serve to generate potential customers, be prepared to talk about the product at the water-cooler.
+
+If you want to work from a rented co-working space full time this should be discussed with your manager.
+
+If you wish to change the country or timezone that you are working from for more than 2 weeks this should be raised with your manager at the earliest opportunity.
