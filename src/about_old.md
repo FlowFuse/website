@@ -1,6 +1,7 @@
 ---
 layout: page
-title: About Us
+title: About FlowForge
+description: FlowForge is an open core
 ---
 
 FlowForge is an open core company creating a low-code programming platform based on the [OpenJS Foundation Node-RED project](https://nodered.org).

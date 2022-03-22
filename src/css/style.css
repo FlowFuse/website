@@ -1,13 +1,21 @@
 @import "./style.base.css";
+@import "./style.page.css";
+@import "../../node_modules/@flowforge/forge-ui-components/dist/forge-ui-components.css";
 @import "../../node_modules/vanilla-cookieconsent/dist/cookieconsent.css";
 
 @tailwind components;
 @tailwind utilities;
 
+.ff-website {
+    background-color: theme(colors.gray.800);
+}
 
-
-.home {
-    background-image: url(/images/grid.svg);
+.base {
+    background-image: url('/images/ff-cloud.svg');
+    background-repeat: no-repeat;
+    background-position-x: 50%;
+    background-position-y: 120px;
+    background-size: contain;
 }
 main  a {
     color: theme(colors.blue.600);
@@ -24,7 +32,7 @@ pre code {
 }
 
 body {
-    --cc-btn-primary-bg: theme(colors.blue.hero.DEFAULT);
+    --cc-btn-primary-bg: theme(colors.teal.500);
     --cc-btn-primary-text: var(--cc-bg);
     --cc-btn-primary-hover-bg: #1d2e38;
 }
@@ -43,4 +51,42 @@ h2:hover .header-anchor,
 h3:hover .header-anchor,
 h4:hover .header-anchor {
     display: inline;
+}
+
+.ff-bg-dark {
+    background-color: theme(colors.gray.800);
+}
+.ff-bg-mid {
+    background-color: theme(colors.gray.700);
+}
+.ff-bg-light {
+    background-color: theme(colors.gray.50);
+}
+
+
+.ff-website .ff-footer {
+    background-color: theme(colors.red.700);
+}
+
+.ff-website .ff-video {
+    border-radius: 12px;
+    border: 2px solid theme(colors.red.500);
+    background-color: theme(colors.white);
+}
+
+.ff-website .ff-btn {
+    background-color: theme(colors.teal.500);
+    color: theme(colors.white);
+    justify-content: center;
+    font-weight: bold;
+    height: auto;
+    padding: 8px 16px;
+}
+
+.ff-website .ff-text-input {
+    background-color: theme(colors.gray.700);
+    border-color: theme(colors.teal.500);
+    padding: 8px 12px;
+    font-weight: 200;
+    color: theme(colors.white);
 }

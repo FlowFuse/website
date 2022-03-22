@@ -3,6 +3,7 @@
     "version": "1.0.0",
     "description": "",
     "dependencies": {
+        "@flowforge/forge-ui-components": "^0.1.1",
         "autoprefixer": "^10.3.7",
         "postcss-import": "^14.0.2",
         "seedrandom": "^3.0.5"

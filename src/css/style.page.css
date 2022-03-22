@@ -1,0 +1,66 @@
+.page h1 {
+    color: theme(colors.teal.500);
+    font-size: 2.5rem;
+}
+
+.page .hero h1 {
+    margin-bottom: 48px;
+}
+
+.page h4 {
+    color: theme(colors.teal.500);
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 12px;
+}
+
+.page p {
+    color: theme(colors.white);
+    line-height: 32px;
+    font-size: 16px;
+    margin-bottom: 18px;
+    font-weight: 300;
+}
+
+.page .hero img {
+    width: 320px;
+    height: 320px;
+}
+
+.highlight-feature {
+    text-align: center;
+}
+
+.highlight-feature h2 {
+    color: theme(colors.teal.600);
+}
+
+.highlight-feature img {
+    width: 172px;
+    margin: 12px auto;
+}
+
+.highlight-feature p {
+    color: black;
+    padding: 0 24px;
+}
+
+.company-value {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 33%;
+}
+
+.company-value img {
+    width: 150px;
+}
+
+.company-value h3 {
+    color: theme(colors.teal.500);
+    font-weight: bold;
+    font-size: 1.25rem;
+    margin-top: 12px;
+    margin-bottom: 96px;
+}

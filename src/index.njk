@@ -1,31 +1,58 @@
 ---
 layout: default
 ---
-<!--Left Col-->
-<div class="flex flex-col w-full md:w-1/2 justify-center lg:items-start overflow-y-hidden bg-white  px-3 py-2 rounded shadow-xl">
-    <h1 class="my-4 text-3xl md:text-4xl text-black-hero-heading font-medium leading-tight text-center md:text-left slide-in-bottom-h1">Enterprise-ready <span class="text-red-hero">Node-RED</span> for your business.</h1>
-    <p class="text-black-hero-body md:text-xl mb-8 text-center md:text-left slide-in-bottom-subtitle">
-	Create your own workflows in our secure, scalable, collaborative environment.
-    </p>
-    <div class="flex flex-col">
-        <h2 class="text-lg font-medium text-blue-hero">Join the waitlist</h2>
-        <form
-            action="https://buttondown.email/api/emails/embed-subscribe/flowforge-waitlist"
-            method="post"
-            target="popupwindow"
-            onsubmit="window.open('https://buttondown.email/flowforge-waitlist', 'popupwindow')"
-            class="embeddable-buttondown-form p-1 my-1 "
-        >
-        <div class="flex flex-col md:flex-row">
-            <input type="email" name="email" id="bd-email" placeholder="Enter your email" class="lg:w-80 md:w-60 py-2 px-4 rounded border-blue-hero border-2 focus:border-blue-hero-darker  focus:outline-none" />
-            <input type="hidden" value="1" name="embed" />
-            <input type="submit" value="Sign up" class="cursor-pointer mt-2 md:mt-0 md:ml-3 py-2 px-4 text-white font-semibold rounded bg-blue-hero border-2 border-blue-hero hover:bg-blue-hero-darker hover:border-blue-hero-darker"/>
-        </div>
-    </form>
-    </div>
+<!--Hero Content-->
+<div class="w-full pb-24 mt-12">
+    <div class="container m-auto text-center max-w-2xl">
+        <h1 class="text-4xl text-gray-50 max-w-lg m-auto">
+            Open source, <span class="text-teal-500">low code</span> integration and automation.
+        </h1>
+        <h3 class="mt-8 text-gray-400 text-lg font-normal">
+            Combine applications, devices and data in a secure, scalable and collaborative
+            environment built around the open-source Node-RED project
+        </h3>
+        <div class="flex flex-col">
+            <h2 class="text-lg font-medium text-teal-500 mt-8">Sign up for updates</h2>
+            <form
+                action="https://buttondown.email/api/emails/embed-subscribe/flowforge-waitlist"
+                method="post"
+                target="popupwindow"
+                onsubmit="window.open('https://buttondown.email/flowforge-waitlist', 'popupwindow')"
+                class="embeddable-buttondown-form p-1 my-1 "
+            >
+                <div class="max-w-md m-auto">
+                    <input type="email" name="email" id="bd-email" placeholder="Enter your email" class="ff-input ff-text-input" />
+                    <input type="hidden" value="1" name="embed" />
+                    <input type="submit" value="Subscribe" class="leading-6 m-auto mt-4 ff-btn"/>
+                </div>
+            </form>
+        </div> 
+    </div>  
 </div>
 
-<!--Right Col-->
-<div class="w-full md:w-1/2 py-6 overflow-y-hidden">
-    <img class="w-5/6 mx-auto slide-in-bottom" src="images/node-box.svg">
+<!-- Secondary Content -->
+<div class="w-full ff-bg-light pb-24">
+    <div class="container m-auto text-center max-w-2xl">
+        <div class="mt-24 w-full max-w-2xl text-center">
+            <h2 class="text-3xl font-normal">One or two line tag line will go here</h2>
+            <video class="ff-video m-auto mt-8 w-full"></video>
+        </div>
+        <div class=" mt-12 w-full max-w-2xl text-center flex">
+            <div>
+                <img src=""/>
+                <h4>SECURE</h4>
+                <label>Further detail here on how FlowForge is secure.</label>
+            </div>
+            <div>
+                <img src=""/>
+                <h4>SECURE</h4>
+                <label>Further detail here on how FlowForge is secure.</label>
+            </div>
+            <div>
+                <img src=""/>
+                <h4>SECURE</h4>
+                <label>Further detail here on how FlowForge is secure.</label>
+            </div>
+        </div>
+    </div>
 </div>
