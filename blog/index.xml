@@ -3,8 +3,31 @@
     <title>FlowForge</title>
     <link href="https://flowforge.com/blog/index.xml" rel="self"/>
     <link href="https://flowforge.com/blog"/>
-    <updated>2022-03-17T01:00:00Z</updated>
+    <updated>2022-03-23T00:00:00Z</updated>
     <id>https://flowforge.com/blog</id>
+    
+    <entry>
+        <id>https://flowforge.com/blog/2022/03/welcome-sean/</id>
+        <title>Welcome Sean</title>
+        <summary></summary>
+        <updated>2022-03-23T00:00:00Z</updated>
+        <link href="https://flowforge.com/blog/2022/03/welcome-sean/"/>
+        <author><name>Nick O&#39;Leary</name></author>
+        <content type="html">&lt;p&gt;The FlowForge development team welcomes a new member with Sean Terrell joining
+as a Software Developer&lt;/p&gt;
+&lt;!--more--&gt;
+&lt;p&gt;Sean is a seasoned developer heavily experienced in the industrial automation and
+process controls. The &amp;quot;PLC Mercenary&amp;quot; as he is known, has been a FOSS advocate, and
+champion of vendor agnostic control systems. Sean became a Node-RED fanatic after
+using the platform for critical system monitoring of Oil and Gas production sites.&lt;/p&gt;
+&lt;p&gt;For several years he has pioneered cloud deployed Supervisory Control Data
+Acquisition System (SCADA) projects tightly integrated with Node-RED. Sean brings
+experience in automating cloud deployment, and production container systems for critical
+safety and environmental protection. Invaluable insight for customers as we grow
+FlowForge into the digital distruptor industry needs.&lt;/p&gt;
+&lt;p&gt;Welcome aboard Sean!&lt;/p&gt;
+</content>
+    </entry>
     
     <entry>
         <id>https://flowforge.com/blog/2022/03/flowforge-03-released/</id>
