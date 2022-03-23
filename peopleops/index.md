@@ -84,6 +84,13 @@ If you are seeking a license of software that we do not currently use, put toget
 
 When seeking an additional license for existing software we pay for, then you just need to justify why the expenditure is justified for you to be able to access it via an e-mail. Similarly, if the CEO & CTO agree, then you can proceed with purchasing the additional license.
 
+#### Zoom
+
+When your role at FlowForge requires you to have calls with external parties, a
+Zoom pro license can be requested by opening an issue to provision you one
+in the [flowforge/admin][gh-admin] GitHub project. Assign this issue to the CTO
+or CEO, who will provision it for you.
+
 ### Workspace & Location
 
 As an all remote company we don't have offices. It is envisaged that most people will work from their home the majority of the time. Equipment & Furniture required for a home workspace should be discussed with your manager as part of the hiring process.
@@ -94,3 +101,5 @@ The company covering certain costs, such as broadband can have tax implications 
 If you want to occasionally use a separate workspace to your home, the company will cover up to $100 a month in charges for renting a desk in a co-working space on an ad-hoc basis. 
 
 If you want to work from a rented co-working space full time this should be discussed with your manager.
+
+[gh-admin]: https://github.com/flowforge/admin
