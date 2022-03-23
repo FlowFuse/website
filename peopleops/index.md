@@ -82,7 +82,14 @@ Licenses and software assets can be purchased for third-party software will be u
 
 If you are seeking a license of software that we do not currently use, put together a short summary as to the costs associated with the licenses and describe the value that the software would provide. If it would modify the way in which the company operates, then the best place to present this is as a PR to the Handbook. With approval from the CEO and CTO you can proceed with the acquisition of the licenses.
 
-When seeking an additional license for existing software we pay for, then you just need to justify why the expenditure is justified for you to be able to access it via an e-mail. Similarly, if the CEO & CTO agree, then you can proceed with purchasing the additional license.
+When seeking an additional license for existing software we pay for, file an issue in the [flowforge/admin][gh-admin] project to request it to be provisioned with a justification on the expenditure. Assign this issue to the CEO or CTO.
+
+#### Zoom
+
+When your role at FlowForge requires you to have calls with external parties, a
+Zoom pro license can be requested by opening an issue to provision you one
+in the [flowforge/admin][gh-admin] GitHub project. Assign this issue to the CTO
+or CEO, who will provision it for you.
 
 ### Workspace & Location
 
@@ -94,3 +101,5 @@ The company covering certain costs, such as broadband can have tax implications 
 If you want to occasionally use a separate workspace to your home, the company will cover up to $100 a month in charges for renting a desk in a co-working space on an ad-hoc basis. 
 
 If you want to work from a rented co-working space full time this should be discussed with your manager.
+
+[gh-admin]: https://github.com/flowforge/admin
