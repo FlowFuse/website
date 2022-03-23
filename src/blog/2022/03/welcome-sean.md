@@ -21,5 +21,4 @@ experience in automating cloud deployment, and production container systems for 
 safety and environmental protection. Invaluable insight for customers as we grow
 FlowForge into the digital distruptor industry needs.
 
-
-
+Welcome aboard Sean!
