@@ -14,6 +14,7 @@ module.exports = function(eleventyConfig) {
 
     eleventyConfig.addLayoutAlias('default', 'layouts/base.njk');
     eleventyConfig.addLayoutAlias('page', 'layouts/page.njk');
+    eleventyConfig.addLayoutAlias('redirect', 'layouts/redirect.njk');
     eleventyConfig.addPassthroughCopy("src/images");
     // eleventyConfig.addPassthroughCopy("src/js");
     eleventyConfig.addPassthroughCopy("src/CNAME");
