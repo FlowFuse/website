@@ -82,7 +82,7 @@ Licenses and software assets can be purchased for third-party software will be u
 
 If you are seeking a license of software that we do not currently use, put together a short summary as to the costs associated with the licenses and describe the value that the software would provide. If it would modify the way in which the company operates, then the best place to present this is as a PR to the Handbook. With approval from the CEO and CTO you can proceed with the acquisition of the licenses.
 
-When seeking an additional license for existing software we pay for, then you just need to justify why the expenditure is justified for you to be able to access it via an e-mail. Similarly, if the CEO & CTO agree, then you can proceed with purchasing the additional license.
+When seeking an additional license for existing software we pay for, file an issue in the [flowforge/admin][gh-admin] project to request it to be provisioned with a justification on the expenditure. Assign this issue to the CEO or CTO.
 
 #### Zoom
 
