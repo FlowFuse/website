@@ -11,6 +11,11 @@ html, body {
     font-size: 16px;
 }
 
+* {
+    transition: 0.3s background-color, 0.3s color;
+    -webkit-transition: 0.3s background-color, 0.3s color;
+}
+
 /*
     Standard FlowForge Sizings
 */
@@ -45,6 +50,20 @@ p {
     line-height: 1.5rem;
 }
 
+h1, h2, h3, h4, h5, p {
+    color: theme(colors.teal.400);
+}
+
+.ff-bg-light h1,
+.ff-bg-light h2,
+.ff-bg-light h3,
+.ff-bg-light h4,
+.ff-bg-light h5 {
+    color: theme(colors.teal.600);
+}
+.ff-bg-light p {
+    color: theme(colors.gray.800);
+}
 
 
 .ff-website {
@@ -137,6 +156,7 @@ h4:hover .header-anchor {
 
 .ff-footer h4 {
     margin-bottom: 1rem;
+    color: white;
 }
 
 .ff-footer .copyright-statement {
@@ -160,6 +180,14 @@ h4:hover .header-anchor {
     Components
 */
 
+.ff-icon {
+    width: 24px;
+    height: 24px;
+    display: inline-flex;
+    stroke-width: 2px;
+    color: theme(colors.red.600);
+}
+
 .ff-website .ff-video {
     border-radius: 12px;
     border: 2px solid theme(colors.red.500);
@@ -181,4 +209,113 @@ h4:hover .header-anchor {
     padding: 8px 12px;
     font-weight: 200;
     color: theme(colors.white);
+}
+
+.ff-toggle-switch {
+    background-color: theme(colors.gray.800);
+    color: theme(colors.white);
+    border-radius: 2rem;
+    text-transform: uppercase;
+    padding: .25rem;
+    line-height: 2rem;
+}
+
+.ff-toggle-switch {
+    background-color: theme(colors.gray.800);
+    color: theme(colors.white);
+    border-radius: 2rem;
+    text-transform: uppercase;
+    padding: .25rem;
+    line-height: 2rem;
+    display: flex;
+    grid-gap: 1rem;
+}
+
+.ff-toggle-switch .ff-option {
+    padding: 0.25rem 1.5rem;
+    border-radius: 1.5rem;
+    cursor: pointer;
+}
+
+.ff-toggle-switch .ff-option:hover {
+    background-color: theme(colors.teal.700);
+}
+
+.ff-toggle-switch .ff-option.ff--active {
+    background-color: theme(colors.red.700);
+    cursor: default;
+}
+
+.ff-tab-content {
+    display: none;
+}
+
+.ff-tab-content.ff--active {
+    display: block;
+}
+
+.ff-feature-table {
+    margin-top: 3rem;
+    position: relative;
+}
+
+.ff-feature-table-section {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    position: relative;
+}
+
+.ff-feature-table-section ul:last-child svg {
+    stroke: theme(colors.teal.700);
+}
+
+.ff-feature-table .divider-v {
+    background-color: theme(colors.red.500);
+    background-image: linear-gradient(white, theme(colors.red.500));
+    position: absolute;
+    left: calc(50% - 2px);
+    height: 100%;
+    width: 4px;
+    z-index: 2;
+}
+
+.ff-feature-table .divider-h {
+    background-color: theme(colors.red.500);
+    background-image: linear-gradient(90deg, white, theme(colors.red.500));
+    position: absolute;
+    top: -2px;
+    width: 100%;
+    height: 4px;
+}
+
+.ff-feature-table .divider-h.reverse {
+    background-image: linear-gradient(-90deg, white, theme(colors.red.500));
+}
+
+.ff-feature-table-pricing {
+    padding-bottom: 1.25rem;
+}
+
+.ff-feature-table ul {
+    padding-top: 1.25rem;
+    padding-bottom: 1.25rem;
+    position: relative;
+}
+
+.ff-feature-table ul:last-child {
+    padding-bottom: 2.5rem;
+}
+
+.ff-feature-table li {
+    text-align: left;
+    width: 50%;
+    min-width: 250px;
+    margin: auto;
+    margin-bottom: 0.375rem;
+    display: flex;
+    align-items: center;
+}
+
+.ff-feature-table li svg {
+    margin-right: .75rem;
 }

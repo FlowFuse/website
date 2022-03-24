@@ -1,10 +1,99 @@
 ---
 title: Product
 layout: layouts/page.njk
-nohero: true
+subtitle: FlowForge Cloud
+description: "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vitae malesuada amet ullamcorper.</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vitae malesuada amet ullamcorper.</p><button class='ff-btn'>Sign Up</button>"
+heroimg: "../images/node-box.png"
 ---
-<div class="team w-full pb-24">
-    <div class="container m-auto text-left max-w-4xl">
-        Content
+
+<script>
+    function switchProductTab (tab) {
+        // set active tab
+        const tabOptions = document.getElementsByClassName("ff-option");
+        for (i = 0; i < tabOptions.length; i++) {
+            if (tabOptions[i].id !== 'option-' + tab) {
+                tabOptions[i].className = tabOptions[i].className.replace(" ff--active", "")
+            } else {
+                tabOptions[i].className = "ff-option ff--active"
+            }
+        }
+        // reset tab content
+        const tabcontent = document.getElementsByClassName("ff-tab-content");
+        for (i = 0; i < tabcontent.length; i++) {
+            if (tabcontent[i].id !== 'tab-' + tab) {
+                tabcontent[i].className = tabcontent[i].className.replace(" ff--active", "")
+            } else {
+                tabcontent[i].className = "ff-tab-content ff--active"
+            }
+        }
+        const tabHtml = document.getElementById("tab-" + tab)
+    }
+
+</script>
+
+<!-- Key Features -->
+<div class="about w-full ff-bg-dark pb-24">
+    <div class="container m-auto text-center max-w-4xl">
+        <div class="mt-9 pt-24">
+            <h1 class="mb-4">Key Features</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis at morbi sed tincidunt eu faucibus.</p>
+        </div>
+        <div class="mt-20 flex flex-wrap justify-center">
+            <div class="company-value">
+                <img src="../images/pictograms/time.png" />
+                <h5>Sub-Minute Setup</h5>
+            </div>
+            <div class="company-value">
+                <img src="../images/pictograms/security.png" />
+                <h5>SSO</h5>
+            </div>
+            <div class="company-value">
+                <img src="../images/pictograms/community.png" />
+                <h5>Team-Based Collaboration</h5>
+            </div>
+            <div class="company-value">
+                <img src="../images/pictograms/node_catalog.png" />
+                <h5>Custom Node Catalog</h5>
+            </div>
+            <div class="company-value">
+                <img src="../images/pictograms/audit.png" />
+                <h5>Audit Log</h5>
+            </div>
+            <div class="company-value">
+                <img src="../images/pictograms/ticket.png" />
+                <h5>Ticket-Based Support</h5>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Feature List -->
+
+{% set cloudFeaturesHtml %}
+<div>
+    {% include "feature_lists/cloud.njk" %}
+</div>
+{% endset -%}
+
+{% set selfFeaturesHtml %}
+<div>
+    Hello Self Managed
+</div>
+{% endset -%}
+
+
+<div class="about w-full ff-bg-light pb-24">
+    <div class="container m-auto text-center max-w-4xl">
+        <div class="mt-24 pt-24 flex justify-center">
+            <div class="ff-toggle-switch">
+                <span class="ff-option ff--active" id="option-cloud" onclick="switchProductTab('cloud')">Cloud</span>
+                <span class="ff-option" id="option-self-managed" onclick="switchProductTab('self-managed')">Self-Managed</span>
+            </div>
+        </div>
+        <!-- Cloud Feature List -->
+        <div id="tab-cloud" class="ff-tab-content ff--active">{{ cloudFeaturesHtml | safe }}</div>
+        <!-- Self-Managed Feature List -->
+        <div id="tab-self-managed" class="ff-tab-content">{{ selfFeaturesHtml | safe }}</div>
     </div>
 </div>
