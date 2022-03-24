@@ -21,8 +21,7 @@ There may be times when more is needed to meet a goal, deadline or customer
 situation. We take the responsibility to ensure they are the exceptions rather
 than the rule.
 
-Do not incite competition by proclaiming how many hours you worked yesterday.
-If you are working too many hours, talk to your manager to discuss solutions.
+We don't try to compete over the hours we work - everyone does what is right for them.  We focus on what gets done and take pride in seeing each other succeed.
 
 #### Bias for Action
 
