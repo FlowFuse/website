@@ -8,22 +8,42 @@
     margin-top: 0;
 }
 
-.article h2 {
-    color: #111827;
-    font-weight: 700;
-    font-size: 1.5em;
-    margin-top: 2em;
-    margin-bottom: 1em;
-    line-height: 1.3333333;
+.article h1,
+.article h2,
+.article h3,
+.article h4,
+.article h5 {
+    color: theme(colors.gray.800) !important; 
 }
 
-.article a {
-    color: theme(colors.blue.600);
+.article h1 {
+    font-size: 2.625rem;
+    line-height: 3.75rem;
+}
+
+.article h2 {
+    font-size: 1.5rem;
+    line-height: 2rem;
+}
+
+.article h3 {
+    font-size: 1.25rem;
+    line-height: 2rem;
+}
+
+.article h4 {
+    font-size: 1rem;
+    line-height: 2rem;
 }
 
 .article p {
     color: theme(colors.gray.800);
     margin-bottom: 0.5rem;
+    line-height: 1.75rem;
+}
+
+.article a {
+    color: theme(colors.blue.600);
 }
 
 .article strong {

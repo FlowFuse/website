@@ -2,10 +2,10 @@
 layout: article
 ---
 <div class="handbook">
-    <div class="w-full mx-auto bg-white">
+    <div class="w-full mx-auto ff-bg-light">
         <div class="font-medium border-b pb-1">{{ page.filePathStem | handbookBreadcrumbs |safe }}</div>
     </div>
-    <div class="w-full mx-auto bg-white flex flex-col md:flex-row">
+    <div class="w-full mx-auto ff-bg-light flex flex-col md:flex-row">
         <div class="flex-grow order-last md:order-first">
             <div class="mt-6 mb-4 prose prose-blue main-content">
                 {{ content | rewriteHandbookLinks | safe }}
