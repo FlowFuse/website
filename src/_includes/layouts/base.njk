@@ -29,9 +29,9 @@
     <div class="flex-grow base">
         <div class="w-full">
             <!-- Navigation Header -->
-            <header class="max-w-screen-lg w-full container mx-auto p-6 mb-12">
+            <header class="max-w-screen-lg w-full container mx-auto p-6">
                 <nav class="relative w-full flex items-center justify-between">
-                    <a class="no-underline hover:no-underline font-bold h-8 w-40 text-red-500 flex flex-row"  href="/" style="font-family:'Baloo 2', sans-serif">
+                    <a class="no-underline hover:no-underline font-bold h-8 w-40 flex flex-row"  href="/" style="font-family:'Baloo 2', sans-serif">
                         {% include "components/flowforge-wordmark.njk" %}
                     </a>
                     <div class="block sm:hidden">
@@ -40,14 +40,12 @@
                         </button>
                     </div>
 
-                    <ul id="nav-content" class="hidden absolute top-8 -right-7 border shadow-sm sm:inline sm:shadow-none w-36 z-10 sm:border-0 bg-white sm:bg-transparent sm:w-auto rounded sm:static sm:float-none sm:flex sm:flex-row flex-col items-center justify-between font-medium text text-red-500 no-underline">
-                        <li class="flex"><a class="flex-grow hover:underline px-4 sm:pl-0 py-2" href="/about">about</a></li>
+                    <ul id="nav-content" class="hidden absolute top-8 -right-7 border shadow-sm sm:inline sm:shadow-none w-36 z-10 sm:border-0 bg-white sm:bg-transparent sm:w-auto rounded sm:static sm:float-none sm:flex sm:flex-row flex-col items-center justify-between font-medium text no-underline">
+                        <li class="flex"><a class="flex-grow px-4 sm:pl-0 py-2" href="/about">about</a></li>
                         <!-- <li class="flex"><a class="flex-grow hover:underline px-4 py-2" href="/team">team</a></li> -->
-                        <li class="flex"><a class="flex-grow hover:underline px-4 py-2" href="/blog">blog</a></li>
-                        <li class="flex"><a class="flex-grow hover:underline px-4 sm:pr-2 py-2" href="https://twitter.com/flowforgeinc">{% include "components/twitter.njk" %}</a></li>
-                        <li class="flex"><a class="flex-grow hover:underline px-4 sm:pr-2 py-2" href="https://github.com/flowforge">{% include "components/github.njk" %}</a></li>
-                        <li class="flex"><a class="flex-grow hover:underline px-4 sm:pr-2 py-2" href="https://www.linkedin.com/company/flowforge-inc">{% include "components/linkedin.njk" %}</a></li>
-                        <li class="flex"><a class="flex-grow hover:underline px-4 sm:pr-2 sm:pr-0 py-2" href="/blog/index.xml">{% include "components/rss.njk" %}</a></li>
+                        <li class="flex"><a href="/product">product</a></li>
+                        <li class="flex"><a href="/blog">blog</a></li>
+                        <li class="flex"><a href="https://github.com/flowforge">{% include "components/github.njk" %}</a></li>
                     </ul>
                 </nav>
             </header>
@@ -60,33 +58,34 @@
     <!-- Footer -->
     <footer class="ff-footer bg-red-hero w-full">
         <div class="max-w-screen-xl xl:mx-auto lg:mx-24 py-8 px-10 text-white">
-            <div class="flex flex-col md:flex-row justify-center md:space-x-8">
-                <div class="w-full md:w-96 mb-4 text-sm flex flex-col self-end order-last md:order-first">
-                    <div>Copyright 2022 FlowForge Inc.</div>
-                    <div>All Rights Reserved</div>
+            <div class="ff-footer-columns flex flex-col md:flex-row justify-center md:space-x-8">
+                <div class="">
+                    <img src="../images/flowforge-logo-wordmark-white.svg" />
+                    <div class="copyright-statement">
+                        <div>Copyright 2022 FlowForge Inc.</div>
+                        <div>All Rights Reserved</div>
+                    </div>
                     <div class="mt-2 text-xs">This site uses cookies. Click <a href="#" class="underline" onclick="initCookieConsent().showSettings()">here</a> to manage your preferences</a>.</div>
                 </div>
-                <div class="w-full md:w-52 mb-4">
-                    <div class="space-y-2"><span class="text-xl font-bold">Social</span>
-                        <ul class="text-base space-y-2">
-                            <li class="inline mr-3 md:mr-0 md:block"><a href="https://twitter.com/flowforgeinc">Twitter</a></li>
-                            <li class="inline mr-3 md:mr-0 md:block"><a href="https://github.com/flowforge">GitHub</a></li>
-                            <li class="inline mr-3 md:mr-0 md:block"><a href="https://www.linkedin.com/company/flowforge-inc">LinkedIn</a></li>
-                            <li class="inline mr-3 md:mr-0 md:block"><a href="/blog/index.xml">RSS Feed</a></li>
-                        </ul>
-                    </div>
+                <div class="w-full">
+                    <h4 class=""><span class="text-xl font-bold">Social</h4>
+                    <ul class="text-base space-y-2">
+                        <li class="inline mr-3 md:mr-0 md:block"><a href="https://twitter.com/flowforgeinc">Twitter</a></li>
+                        <li class="inline mr-3 md:mr-0 md:block"><a href="https://github.com/flowforge">GitHub</a></li>
+                        <li class="inline mr-3 md:mr-0 md:block"><a href="https://www.linkedin.com/company/flowforge-inc">LinkedIn</a></li>
+                        <li class="inline mr-3 md:mr-0 md:block"><a href="/blog/index.xml">RSS Feed</a></li>
+                    </ul>
                 </div>
-                <div class="w-full md:w-52 mb-4">
-                    <div class="space-y-2"><span class="text-xl font-bold">Company</span>
-                        <ul class="text-base  space-y-2">
-                            <li class="inline mr-3 md:mr-0 md:block"><a href="/handbook">Handbook</a></li>
-                            <li class="inline mr-3 md:mr-0 md:block"><a href="/about">About</a></li>
-                            <li class="inline mr-3 md:mr-0 md:block"><a href="/team">Team</a></li>
-                            <li class="inline mr-3 md:mr-0 md:block"><a href="https://boards.greenhouse.io/flowforge">Jobs</a></li>
-                            <li class="inline mr-3 md:mr-0 md:block"><a href="/blog">Blog</a></li>
-                            <li class="inline mr-3 md:mr-0 md:block"><a href="/privacy-policy">Privacy</a></li>
-                        </ul>
-                    </div>
+                <div class="w-full">
+                    <h4 class=""><span class="text-xl font-bold">Company</h4>
+                    <ul class="text-base  space-y-2">
+                        <li class="inline mr-3 md:mr-0 md:block"><a href="/handbook">Handbook</a></li>
+                        <li class="inline mr-3 md:mr-0 md:block"><a href="/about">About</a></li>
+                        <li class="inline mr-3 md:mr-0 md:block"><a href="/team">Team</a></li>
+                        <li class="inline mr-3 md:mr-0 md:block"><a href="https://boards.greenhouse.io/flowforge">Jobs</a></li>
+                        <li class="inline mr-3 md:mr-0 md:block"><a href="/blog">Blog</a></li>
+                        <li class="inline mr-3 md:mr-0 md:block"><a href="/privacy-policy">Privacy</a></li>
+                    </ul>
                 </div>
             </div>
         </div>

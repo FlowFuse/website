@@ -1,34 +1,71 @@
 @import "./style.base.css";
 @import "./style.page.css";
+@import "./style.article.css";
 @import "../../node_modules/@flowforge/forge-ui-components/dist/forge-ui-components.css";
 @import "../../node_modules/vanilla-cookieconsent/dist/cookieconsent.css";
 
 @tailwind components;
 @tailwind utilities;
 
+html, body {
+    font-size: 16px;
+}
+
+/*
+    Standard FlowForge Sizings
+*/
+h1 {
+    font-size: 2.625rem;
+    line-height: 3.75rem;
+}
+
+h2 {
+    font-size: 2.625rem;
+    line-height: 3.75rem;
+}
+
+h3 {
+    font-size: 2rem;
+    line-height: 2.5rem;
+}
+
+h4 {
+    font-size: 1.5rem;
+    line-height: 1.75rem;
+}
+
+h5 {
+    font-size: 1rem;
+    line-height: 1.75rem;
+    font-weight: bold;
+}
+
+p {
+    font-size: 1rem;
+    line-height: 1.5rem;
+}
+
+
+
 .ff-website {
     background-color: theme(colors.gray.800);
 }
 
 .base {
-    background-image: url('/images/ff-cloud.svg');
+    background-image: url('/images/ff-cloud_75.svg');
     background-repeat: no-repeat;
     background-position-x: 50%;
-    background-position-y: 120px;
+    background-position-y: 100px;
     background-size: contain;
 }
 main  a {
-    color: theme(colors.blue.600);
+    color: theme(colors.teal.500);
+}
+main  a:hover {
+    text-decoration: underline;
 }
 pre code {
     background: #030303
-}
-
-.prose code::after {
-    content:''
-}
-.prose code::before {
-    content:''
 }
 
 body {
@@ -46,6 +83,7 @@ h1,h2,h3,h4 {
     text-decoration: none !important;
     right: calc(100%);
 }
+
 h1:hover .header-anchor,
 h2:hover .header-anchor,
 h3:hover .header-anchor,
@@ -63,10 +101,64 @@ h4:hover .header-anchor {
     background-color: theme(colors.gray.50);
 }
 
+/*
+    Header
+*/
 
-.ff-website .ff-footer {
+.ff-website header path {
+    fill: theme(colors.red.400);
+}
+
+.ff-website header a {
+    color: theme(colors.red.400);
+}
+
+.ff-website header ul a {
+    font-size: 1.25rem;
+    flex-grow: 1;
+    padding: 0.25rem 1rem;
+}
+
+.ff-website header ul a:hover {
+    color: white;
+}
+
+/*
+    Footer
+*/
+.ff-footer {
     background-color: theme(colors.red.700);
 }
+
+.ff-footer-columns {
+    display: grid;
+    grid-template-columns: 1fr 25% 35%;
+}
+
+.ff-footer h4 {
+    margin-bottom: 1rem;
+}
+
+.ff-footer .copyright-statement {
+    font-size: 0.75rem;
+    margin-top: 0.75rem;
+    color: theme(colors.gray.100);
+    font-weight: 200;
+}
+
+.ff-footer li {
+    color: theme(colors.gray.100);
+    font-weight: 200;
+}
+
+.ff-footer li:hover {
+    color: theme(colors.white);
+    font-weight: 500;
+}
+
+/*
+    Components
+*/
 
 .ff-website .ff-video {
     border-radius: 12px;

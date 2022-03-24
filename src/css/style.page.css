@@ -1,14 +1,14 @@
 .page h1 {
-    color: theme(colors.teal.500);
+    color: theme(colors.teal.400);
     font-size: 2.5rem;
 }
 
 .page .hero h1 {
-    margin-bottom: 48px;
+    margin-bottom: 1.5rem;
 }
 
 .page h4 {
-    color: theme(colors.teal.500);
+    color: theme(colors.teal.400);
     font-size: 1.5rem;
     font-weight: bold;
     margin-bottom: 12px;
@@ -18,14 +18,16 @@
     color: theme(colors.white);
     line-height: 32px;
     font-size: 16px;
-    margin-bottom: 18px;
     font-weight: 300;
+    margin-bottom: 1rem;
 }
 
 .page .hero img {
     width: 320px;
     height: 320px;
 }
+
+/* ABOUT */
 
 .highlight-feature {
     text-align: center;
@@ -45,6 +47,8 @@
     padding: 0 24px;
 }
 
+/* COMPANY VALUE */
+
 .company-value {
     display: flex;
     flex-direction: column;
@@ -54,13 +58,44 @@
 }
 
 .company-value img {
-    width: 150px;
+    width: 128px;
 }
 
-.company-value h3 {
+.company-value h5 {
     color: theme(colors.teal.500);
     font-weight: bold;
     font-size: 1.25rem;
-    margin-top: 12px;
-    margin-bottom: 96px;
+    margin-top: 1rem;
+    margin-bottom: 3rem;
+}
+
+/* MEET THE TEAM */
+
+.team .name {
+    color: white;
+    display: flex;
+    align-items: center;
+}
+
+.team .name span {
+    font-size: 1.5rem;
+}
+
+.team .role {
+    color: white;
+    line-height: 0.75rem;
+}
+
+.team .socials {
+    display: flex;
+    margin-top: 1rem;
+}
+
+.team .socials span {
+    display: flex;
+    margin-right: 1rem;
+}
+
+.team .socials span a {
+    color: theme(colors.teal.200);
 }

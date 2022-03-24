@@ -1,0 +1,45 @@
+.article {
+    color: #111827;
+    font-size: 0.875em;
+    font-weight: 300;
+}
+
+.article>:first-child {
+    margin-top: 0;
+}
+
+.article h2 {
+    color: #111827;
+    font-weight: 700;
+    font-size: 1.5em;
+    margin-top: 2em;
+    margin-bottom: 1em;
+    line-height: 1.3333333;
+}
+
+.article a {
+    color: theme(colors.blue.600);
+}
+
+.article p {
+    color: theme(colors.gray.800);
+    margin-bottom: 0.5rem;
+}
+
+.article strong {
+    font-weight: 400;
+}
+
+.article code {
+    background-color: transparent;
+    border-radius: 0;
+    border: none;
+    padding: 0;
+}
+
+.prose code::after {
+    content:''
+}
+.prose code::before {
+    content:''
+}

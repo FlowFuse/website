@@ -3,14 +3,26 @@ layout: layouts/base.njk
 ---
 <!--Hero Content-->
 <div class="w-full page">
-    <div class="hero container m-auto text-center max-w-4xl flex mb-32">
-        <div class="text-left">
-            <h1 class="text-4xl">{{ title }}</h1>
-            <h4>{{ subtitle | safe }}</h4>
-            <div>{{ description | safe }}</div>
+    {% if title %}
+        {% if nohero %}
+        <div class="container m-auto text-center max-w-4xl flex mt-12 mb-6">
+        {% else %}
+        <div class="hero container m-auto text-center max-w-4xl flex mt-12 mb-32">
+        {% endif %}
+            <div class="text-left pr-32">
+                <h1>{{ title }}</h1>
+                {% if subtitle %}
+                <h4>{{ subtitle | safe }}</h4>
+                {% endif %}
+                {% if description %}
+                <div>{{ description | safe }}</div>
+                {% endif %}
+            </div>
+            {% if heroimg %}
+            <img src="{{heroimg}}"/>
+            {% endif %}
         </div>
-        <img src="{{heroimg}}"/>
-    </div>
+    {% endif %}
     <div class="content">
         {{ content | safe }}
     </div>
