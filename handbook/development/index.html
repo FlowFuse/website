@@ -67,11 +67,26 @@
 <h2 id="releases" tabindex="-1"><a class="header-anchor" href="#releases">#&nbsp;</a> Releases</h2>
 <p>Instructions for creating a release are <a href="../development/release/">here</a>.</p>
 <h3 id="cadence" tabindex="-1"><a class="header-anchor" href="#cadence">#&nbsp;</a> Cadence</h3>
-<p>FlowForge is released every four weeks, on a Thursday. There's 13 releases each
-year. The initial release is scheduled for the 20th of January. This implies:</p>
-<p>v0.2 is scheduled for 2022/02/17</p>
-<p>v0.3 is scheduled for 2022/03/17</p>
+<p>FlowForge is released every four weeks, on a Thursday. There are 13 releases each
+year. The initial release was published on 20th of January. This implies releases
+will be scheduled on the following dates.</p>
+<ul>
+<li>2022/02/17 (0.2)</li>
+<li>2022/03/17 (0.3)</li>
+<li>2022/04/14 (0.4)</li>
+<li>2022/05/12</li>
+<li>2022/06/09</li>
+<li>2022/07/07</li>
+<li>2022/08/04</li>
+<li>2022/09/01</li>
+<li>2022/09/29</li>
+<li>2022/10/27</li>
+<li>2022/11/24</li>
+</ul>
 <h3 id="planning" tabindex="-1"><a class="header-anchor" href="#planning">#&nbsp;</a> Planning</h3>
+<p>Our planning process is continually evolving as we find the right way to accommodate
+both a growing team and a growing set of requirements on both how and what we deliver.</p>
+<p>The following reflects both where we are at today and where we want to get to. That</p>
 <p>We use GitHub issues for planning the work in a release. A Milestone should exist
 for the current release (N) and the next one (N+1). We do not schedule work beyond
 that as priorities can change through a release.</p>
@@ -92,32 +107,126 @@ A story should be deliverable in a single release.</p>
 For example, items related to technical debt or house-keeping chores.</p>
 </li>
 </ul>
-<p>A planning meeting is held at the start of the release. In this meeting the team
-discuss the current backlog of stories, tasks and bugs to propose items to be added
-to the release. All items assigned to a milestone should have an assigned owner.</p>
-<h3 id="retrospective" tabindex="-1"><a class="header-anchor" href="#retrospective">#&nbsp;</a> Retrospective</h3>
+<p>Whenever an issue is raised, it will be reviewed by the Product Owner/CTO and added
+to the Product Board for prioritisation and planning. The exception to this are
+tasks/bugs related to work already in progress and that need to be addressed in
+the current milestone. They should be added to the Development Board and current
+milestone directly.</p>
+<h3 id="project-boards" tabindex="-1"><a class="header-anchor" href="#project-boards">#&nbsp;</a> Project Boards</h3>
+<p>We use three project boards to plan and track our work.</p>
+<ul>
+<li><a href="https://github.com/orgs/flowforge/projects/5">Roadmap Board</a></li>
+<li><a href="https://github.com/orgs/flowforge/projects/3/views/1">Product Board</a></li>
+<li><a href="https://github.com/orgs/flowforge/projects/1/views/1">Development Board</a></li>
+</ul>
+<h4 id="roadmap-board" tabindex="-1"><a class="header-anchor" href="#roadmap-board">#&nbsp;</a> Roadmap Board</h4>
+<p>This is a high-level view of our product roadmap over the coming releases. It
+identifies the themes and priorities for the releases.</p>
+<h4 id="product-board" tabindex="-1"><a class="header-anchor" href="#product-board">#&nbsp;</a> Product Board</h4>
+<p><a href="https://github.com/orgs/flowforge/projects/3/views/1">This board</a> is maintained
+by the Product Owner (PO) and CTO. It is the main entry point for all epics and
+stories.</p>
+<p>Items on this board have the following states:</p>
+<ul>
+<li><code>➡️ Incoming</code> - where all items start their planning journey.
+<ul>
+<li>Items are regularly prioritised and triaged on this list.</li>
+<li>Items that require further refinement or design work are assigned to someone on the team.</li>
+<li>When an item is assigned, move to the <code>📐 Design</code> state.</li>
+</ul>
+</li>
+<li><code>📐 Design</code> - items that are being refined.
+<ul>
+<li>This means someone is adding more detail to the story, providing a high-level
+technical outline (database model impact, API changes) as well as any UX mockups
+or high-level descriptions. Once complete, the item is moved to the <code>👀 Review</code> state.</li>
+</ul>
+</li>
+<li><code>👀 Review</code> - Items that are ready to be reviewed by PO/CTO (and any other stackholders)
+<ul>
+<li>This review ensures the design meets the acceptance criteria and/or is headed
+in the right direction.</li>
+<li>If more work is needed, it moves back to the <code>📐 Design</code> state.</li>
+<li>If the design is approved, it moves to the <code>🧮 Estimate</code> state.</li>
+</ul>
+</li>
+<li><code>🧮 Estimate</code> - items that need a rough sizing to be added.
+<ul>
+<li>Sizings are applied on a scale of 1, 2, 3, 5, 8, 13 (Fibonaci FTW) using labels.</li>
+<li>Once sized, it is moved to the <code>✅ Ready</code> state.</li>
+</ul>
+</li>
+<li><code>✅ Ready</code> - items that have been sufficiently designed, and sized, to allow them
+to be considered for assigning to a milestone</li>
+</ul>
+<p>A weekly review is held to keep the backlog in order - triaging new items that
+have been raised and not yet added to the backlog, reflecting on changing priorities
+and requirements.</p>
+<h4 id="development-board" tabindex="-1"><a class="header-anchor" href="#development-board">#&nbsp;</a> Development Board</h4>
+<p>The <a href="https://github.com/orgs/flowforge/projects/1/views/1">Development Board</a> is
+used to plan and track the work within the current milestone release.</p>
+<p>It has the following states:</p>
+<ul>
+<li><code>ToDo</code> - items assigned to the milestone but not yet started</li>
+<li><code>In Progress</code> - items being worked on</li>
+<li><code>Review</code> - items that are ready to be reviewed</li>
+<li><code>Done</code> - items that are <a href="#defining-done">Done</a></li>
+</ul>
+<h3 id="retrospective%2Fkick-off" tabindex="-1"><a class="header-anchor" href="#retrospective%2Fkick-off">#&nbsp;</a> Retrospective/Kick-Off</h3>
 <p>The day after each FlowForge release, always a Friday, a meeting is scheduled
-by the CTO. This meeting includes 3 parts: a retrospective on the last release,
-complete scheduling for the next release, and kick off development for the next
-release.</p>
-<p>An action from this meeting is that a release manager is allocated for the next release,
-that person takes the action to create the next release issue from the template then assign it to them.</p>
+by the CTO. This meeting includes 2 parts:</p>
+<ol>
+<li>A retrospective on the last release. This should capture feedback on what
+went well and what could be improved and generate action items to act on the
+feedback.</li>
+<li>Kicking off the next release. The involves:
+<ol>
+<li>The Product Owner describing the themes, goals and priorities of the new release</li>
+<li>Reviewing the <a href="https://github.com/orgs/flowforge/projects/1/views/1">Development Board</a>
+for the new milestone.
+High-priority items are assigned owners so that everyone has something to
+get started on.</li>
+<li>Identifying the release manager - the person who will co-ordinate things
+on release day.
+<ul>
+<li>Once identified, they take the action to create the next release issue
+using the <a href="https://github.com/flowforge/admin/issues/new?assignees=&amp;labels=&amp;template=release.md&amp;title=Release%3A">Release Template</a>
+in the <code>flowforge/admin</code> repo.</li>
+</ul>
+</li>
+</ol>
+</li>
+</ol>
 <h3 id="what-to-work-on" tabindex="-1"><a class="header-anchor" href="#what-to-work-on">#&nbsp;</a> What to work on</h3>
-<p>For each release a selection of epics is being worked on. When an epic assigned
-to a milestone there will be developments to complete it, however it might not
-be fully completed and closed in the assigned milestone.</p>
-<p>Epics are assigned to one or more individuals responsible for executing the work
-and keeping the epics up-to-date.</p>
-<p>Stories and tasks are assigned by the assignee of the associated epic, depending
-on how the work is distributed.</p>
+<p>Work comes from two places:</p>
+<ul>
+<li>Items assigned for Design/Estimation on the Product Board</li>
+<li>Items from the ToDo status on the Development Board</li>
+</ul>
+<p>It is important we make progress on both sides to ensure a steady velocity across
+milestones.</p>
+<p>Naturally there will be items that crop up unexpectedly and have to be dealt with
+pragmatically. For example, we may realise an item is needed for the current release
+that needs to be expedited through the process. We should remain flexible in how
+we work.</p>
+<p>When picking up an unassigned item assign it to yourself and move it to the
+<strong>In Progress</strong> state (for Development items) or the appropriate Product board state.</p>
 <h4 id="milestones-are-overscheduled" tabindex="-1"><a class="header-anchor" href="#milestones-are-overscheduled">#&nbsp;</a> Milestones are overscheduled</h4>
-<p>As epics and stories are assigned to milestones, it's unlikely there's not
+<p>As stories and tasks are assigned to milestones, it's unlikely there's not
 enough work to be done. On the flipside, this means that not all scheduled epics
 or stories will be completed.</p>
-<h3 id="launch-lunch" tabindex="-1"><a class="header-anchor" href="#launch-lunch">#&nbsp;</a> Launch Lunch</h3>
-<p>To celebrate the launch of a new version of FlowForge, we organize a lunch on the
-release day. Each team member is encouraged to order a lunch (Expensable up to 20$
-per launch) and join a social lunch zoom call.</p>
+<p>The Product Owner/CTO have overall responsibility to ensure any 'must-have' items
+are making progress in a release.</p>
+<h3 id="defining-done" tabindex="-1"><a class="header-anchor" href="#defining-done">#&nbsp;</a> Defining Done</h3>
+<p>An item should only be marked as 'Done' on the Development board when the following
+criteria are met:</p>
+<ul>
+<li>All related code changes have been merged</li>
+<li>Suitable unit/system level tests have been added</li>
+<li>Documentation has been updated</li>
+<li>Acceptance criteria identified in the Story have been met</li>
+<li>Product Owner accepts the story is complete</li>
+</ul>
 
         </div>
     </div>
@@ -125,7 +234,7 @@ per launch) and join a social lunch zoom call.</p>
         <h3 class="font-medium border-b pb-1 mb-4">On this page</h3>
         <ul id="toc" class="text-sm border-b mb-4"></ul>
         <div class="text-sm pb-1 text-right mb-4"><a href="https://github.com/flowforge/handbook/edit/main/development/index.md">Edit this page</a></div>
-        <div class="text-xs pb-1 text-right mb-4 italic">Updated: 2022-03-25 11:55:47 +0100</div>
+        <div class="text-xs pb-1 text-right mb-4 italic">Updated: 2022-03-25 14:05:26 +0000</div>
     </div>
 </div>
 <script>
