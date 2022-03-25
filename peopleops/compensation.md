@@ -14,7 +14,8 @@ your local currency unless explicitly discussed otherwise.
 ### Adjustments
 
 Salary can be increased twice a year. In September, a performance adjustment is
-done. Performance review is based on values, and meeting role expectations.
+done. Performance review is based on [our values](../company#values), and
+meeting role expectations.
 
 Each January compensation is adjusted for each employee with the company for
 over 6 months. Inflation is set to the value for the preceding calendar year as
