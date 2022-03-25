@@ -1,5 +1,7 @@
 ### Strategy
 
+> We will only be successful if the whole Node-RED community is successful.
+
 Our company strategy has three parts:
 
  - Drive the growth and success of the Node-RED OSS project
@@ -33,11 +35,8 @@ Our [values](../company#values) help shape the culture we want to build, both in
 
 ### Principles
 
- - **All-remote**: we are able to hire the right people from wherever they are in the world. We work openly with one another and value clear communication and decision making without being sat in the same room.
  - **Open Source Stewardship**: be good role models of OSS participation at all levels
- - **Speed**: deliver and iterate across releases to maximise responsiveness and learning
  - **Reach**: avoid pigeon-holing to a single domain or industry. Be general by default, and allow for specialisation by plugin/extension
- - **Life balance**: our focus on results is not an excuse for long hours and unsociable expectations. Taking time-off and work/life balance are key to the success of an all-remote company
  - **Communication**: we communicate the good and the bad in a forward looking, constructive and supportive manner. We write things down.
 
 ### Strategic Initiatives

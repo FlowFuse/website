@@ -1,5 +1,8 @@
 # Company
 
+FlowForge is an open core company creating a low-code programming platform based
+on the [OpenJS Foundation Node-RED project](https://nodered.org).
+
  - [About](../company/about.md)
  - [Values](../company/)
  - [Strategy](../company/strategy.md)
@@ -81,4 +84,24 @@ can be done formally through our `@Feedback` Slackbot. You can read more in
 We will treat all situations with an optimism that a positive result is
 possible. We don’t let that get in the way of planning for all outcomes and
 making the hard choices when they are needed.
+
+# Principles
+
+## All Remote
+
+We are a fully remote company that puts a strong emphasis on trust and respect
+for its employees, customers, partners and communities. We are able to hire the
+right people from wherever they are in the world. We work openly with one
+another and value clear communication and decision making without being sat in
+the same room.
+
+## Open Source Stewardship
+
+We believe strongly that Open Source lives at the heart of everything we do. 
+Ever since Node-RED was published as  an Open Source project, we have taken
+great care to stay true to that principle.
+
+Node-RED has an open governance model which means everyone has a seat at the
+table. We will continue to champion that model and work with the community to
+ensure anyone who wants to contribute to the project is able to.
 
