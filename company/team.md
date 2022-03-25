@@ -4,7 +4,7 @@
 
 When a candidate applied they'll have at least two interviews with two different
 interviewers before an offer is extended to them. One interview will investigate
-the [fit on values](../company/values.md). The second will be a competency based
+the [fit on values](../company#values). The second will be a competency based
 interview.
 
 When interviewing to hire new team members, optimize for value-fit over

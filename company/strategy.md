@@ -29,7 +29,7 @@ The value needs to increase exponentially as the platform scales to teams of dev
 
 As a new company that starts small but aspires to grow, we need to ensure that growth is well managed, sustainable and rewarding.
 
-Our [values](./values.md) help shape the culture we want to build, both inside the company and beyond.
+Our [values](../company#values) help shape the culture we want to build, both inside the company and beyond.
 
 ### Principles
 
@@ -39,7 +39,6 @@ Our [values](./values.md) help shape the culture we want to build, both inside t
  - **Reach**: avoid pigeon-holing to a single domain or industry. Be general by default, and allow for specialisation by plugin/extension
  - **Life balance**: our focus on results is not an excuse for long hours and unsociable expectations. Taking time-off and work/life balance are key to the success of an all-remote company
  - **Communication**: we communicate the good and the bad in a forward looking, constructive and supportive manner. We write things down.
-
 
 ### Strategic Initiatives
 
