@@ -13,6 +13,12 @@
     margin-bottom: 12px;
 }
 
+.page .hero h4 {
+    margin-bottom: 1.5rem;
+    font-weight: 400;
+    color: white;
+}
+
 .page p {
     color: theme(colors.white);
     line-height: 32px;

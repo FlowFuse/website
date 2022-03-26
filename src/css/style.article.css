@@ -8,11 +8,11 @@
     margin-top: 0;
 }
 
-.article h1,
-.article h2,
-.article h3,
-.article h4,
-.article h5 {
+.article .container:not(.hero) h1,
+.article .container:not(.hero) h2,
+.article .container:not(.hero) h3,
+.article .container:not(.hero) h4,
+.article .container:not(.hero) h5 {
     color: theme(colors.gray.800) !important; 
 }
 

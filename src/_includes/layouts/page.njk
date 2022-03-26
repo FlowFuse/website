@@ -14,7 +14,7 @@ layout: layouts/base.njk
                 {% if subtitle %}
                 <h4>{{ subtitle | safe }}</h4>
                 {% endif %}
-                {% if description %}
+                {% if (description and not hideDescription) %}
                 <div>{{ description | safe }}</div>
                 {% endif %}
             </div>
