@@ -1,6 +1,6 @@
 @import "./style.base.css";
 @import "./style.page.css";
-@import "./style.article.css";
+@import "./style.nohero.css";
 @import "../../node_modules/@flowforge/forge-ui-components/dist/forge-ui-components.css";
 @import "../../node_modules/vanilla-cookieconsent/dist/cookieconsent.css";
 

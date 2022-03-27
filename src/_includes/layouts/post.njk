@@ -1,41 +1,33 @@
 ---
 layout: layouts/base.njk
 ---
-<div class="w-full max-w-3xl mx-auto bg-white">
-    <h1 class="text-3xl md:text-5xl text-black-hero-heading font-medium pb-3">{{ title }}</h1>
-    {% if subtitle %}
-    <h2 class="text-lg text-gray-400 pb-3">{{ subtitle }}</h2>
-    {% endif %}
-    <div class="text-xs text-blue-hero my-1">
-        <div class="author">
-            {% set comma = joiner() %}
-            {%- for author in authors %}
-            {{ comma() }} {{ team[author].name }}
-            {%- endfor %}
+
+<div class="w-full page">
+    {% if title %}
+        <div class="container m-auto text-center max-w-screen-lg px-6 flex mt-12 mb-6">
+            <div class="text-left pr-32">
+                <h1>{{ title }}</h1>
+                {% if subtitle %}
+                <h4>{{ subtitle | safe }}</h4>
+                {% endif %}
+                <p class="author">
+                    <time value="{{ item.date }}">{{ date  | shortDate }}</time>
+                    |
+                    {% set comma = joiner() %}
+                    {%- for author in authors %}
+                    {{ comma() }} {{ team[author].name }}
+                    {%- endfor %}
+                </p>
+            </div>
         </div>
-        <time value="{{ item.date }}" class="text-xs text-gray-400">{{ date  | shortDate }}</time>
+    {% endif %}
+    <div class="blog nohero w-full pt-6 pb-24 ff-bg-light">
+        <div class="container m-auto text-left max-w-screen-lg px-6">
+            <a class="block mb-4" href="/blog">&lt; Back to Blog Posts</a>
+            <div class="prose">
+                <div>{% if image %}<img class="w-full h-auto" src="{{image}}" />{% else %}{{ page.url | generatePostSVG |safe}}{% endif %}</div>
+                {{ content | safe }}
+            </div>
+        </div>
     </div>
-    <div>{% if image %}<img class="w-full h-auto" src="{{image}}" />{% else %}{{ page.url | generatePostSVG |safe}}{% endif %}</div>
-    <div class="mt-6 mb-4 prose prose-blue md:prose-lg">
-        {{ content | safe }}
-    </div>
-
-<hr class="my-8">
-
-<div class="mt-4 flex flex-col">
-    <h2 class="text-lg font-medium text-blue-hero">Sign up for updates</h2>
-    <form
-        action="https://buttondown.email/api/emails/embed-subscribe/flowforge"
-        method="post"
-        target="popupwindow"
-        onsubmit="window.open('https://buttondown.email/flowforge', 'popupwindow')"
-        class="embeddable-buttondown-form p-1 my-1 ">
-    <div class="flex flex-col md:flex-row">
-        <input type="email" name="email" id="bd-email" placeholder="Enter your email" class="lg:w-80 md:w-60 py-2 px-4 rounded border-blue-hero border-2 focus:border-blue-hero-darker  focus:outline-none" />
-        <input type="hidden" value="1" name="embed" />
-        <input type="submit" value="Subscribe" class="cursor-pointer mt-2 md:mt-0 md:ml-3 py-2 px-4 text-white font-semibold rounded bg-blue-hero border-2 border-blue-hero hover:bg-blue-hero-darker hover:border-blue-hero-darker"/>
-    </div>
-</form>
-</div>
-
 </div>
