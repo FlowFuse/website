@@ -54,6 +54,11 @@ h1, h2, h3, h4, h5, p {
     color: theme(colors.teal.400);
 }
 
+.container {
+    position: relative;
+    z-index: 2;
+}
+
 .ff-bg-light h1,
 .ff-bg-light h2,
 .ff-bg-light h3,
@@ -146,7 +151,10 @@ h4:hover .header-anchor {
     Footer
 */
 .ff-footer {
-    background-color: theme(colors.red.700);
+    background-image: url(../images/footer-bg.svg);
+    background-size: cover;
+    margin-top: -48px;
+    padding-top: 48px;
 }
 
 .ff-footer-columns {
@@ -257,6 +265,7 @@ h4:hover .header-anchor {
 .ff-feature-table {
     margin-top: 3rem;
     position: relative;
+    color: theme(colors.gray.800);
 }
 
 .ff-feature-table-section {
@@ -318,4 +327,25 @@ h4:hover .header-anchor {
 
 .ff-feature-table li svg {
     margin-right: .75rem;
+}
+
+/*
+    SVG Dividers
+*/
+.ff-divider {
+    position: relative;
+    width: 100%;
+}
+
+.ff-divider svg {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    height: 400px;
+    margin-top: -200px;
+}
+
+.ff-divider--shallow svg {
+    height: 180px;
+    margin-top: -180px;
 }

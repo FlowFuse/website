@@ -32,8 +32,10 @@ heroimg: "../images/node-box.png"
 
 </script>
 
+{% include "components/divider-flow--default.njk" %}
+
 <!-- Key Features -->
-<div class="about w-full ff-bg-dark pb-24">
+<div class="about w-full ff-bg-dark pt-24 pb-48">
     <div class="container m-auto text-center max-w-4xl">
         <div class="mt-9 pt-24">
             <h1 class="mb-4">Key Features</h1>
@@ -68,8 +70,9 @@ heroimg: "../images/node-box.png"
     </div>
 </div>
 
-<!-- Feature List -->
+{% include "components/divider-flow--top-red--light.njk" %}
 
+<!-- Feature List -->
 {% set cloudFeaturesHtml %}
 <div>
     {% include "feature_lists/cloud.njk" %}
@@ -83,9 +86,9 @@ heroimg: "../images/node-box.png"
 {% endset -%}
 
 
-<div class="about w-full ff-bg-light pb-24">
+<div class="about w-full ff-bg-light pb-32">
     <div class="container m-auto text-center max-w-4xl">
-        <div class="mt-24 pt-24 flex justify-center">
+        <div class="pt-24 flex justify-center">
             <div class="ff-toggle-switch">
                 <span class="ff-option ff--active" id="option-cloud" onclick="switchProductTab('cloud')">Cloud</span>
                 <span class="ff-option" id="option-self-managed" onclick="switchProductTab('self-managed')">Self-Managed</span>
