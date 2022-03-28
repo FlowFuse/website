@@ -5,11 +5,11 @@ layout: layouts/base.njk
 <div class="w-full page">
     {% if title %}
         {% if nohero %}
-        <div class="container m-auto text-center max-w-4xl flex mt-12 mb-6">
+        <div class="container m-auto text-center flex mt-12 p-6 mb-6 md:max-w-4xl">
         {% else %}
-        <div class="hero container m-auto text-center max-w-4xl flex mt-12 mb-32">
+        <div class="hero container m-auto text-center flex flex-wrap mt-12 p-6 mb-32 md:flex-nowrap md:max-w-4xl">
         {% endif %}
-            <div class="text-left pr-32">
+            <div class="text-left md:pr-32">
                 <h1>{{ title }}</h1>
                 {% if subtitle %}
                 <h4>{{ subtitle | safe }}</h4>
@@ -19,7 +19,7 @@ layout: layouts/base.njk
                 {% endif %}
             </div>
             {% if heroimg %}
-            <img src="{{heroimg}}"/>
+            <img class="hidden lg:block" src="{{heroimg}}"/>
             {% endif %}
         </div>
     {% endif %}
