@@ -168,7 +168,15 @@ h4:hover .header-anchor {
 
     .ff-footer-columns {
         grid-template-columns: 1fr 25% 35%;
-        @apply flex flex-col-reverse gap-6 md:grid md:gap-0;
+        @apply flex flex-col-reverse md:grid;
+    }
+
+    .ff-footer-columns > div {
+        @apply mb-6 md:mb-0;
+    }
+
+    .ff-footer-columns > div:first-child {
+        @apply mb-2;
     }
 
     .ff-footer h4 {
