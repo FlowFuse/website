@@ -370,6 +370,10 @@ h4:hover .header-anchor {
         @apply h-40 -mt-20 md:h-80 md:-mt-40;
     }
     
+    .ff-divider--shallow {
+        margin-bottom: -1px;
+    }
+
     .ff-divider--shallow svg {
         height: 180px;
         margin-top: -180px;
