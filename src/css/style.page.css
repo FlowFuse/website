@@ -32,8 +32,13 @@
 }
 
 .page .hero img {
-    width: 320px;
-    height: 320px;
+    width: 250px;
+    height: 250px;
+}
+
+.page .hero-lg img {
+    width: 325px;
+    height: 325px;
 }
 
 /* ABOUT */

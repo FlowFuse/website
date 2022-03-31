@@ -7,7 +7,7 @@ layout: layouts/base.njk
         {% if nohero %}
         <div class="container m-auto text-center flex mt-12 p-6 mb-6 md:max-w-4xl">
         {% else %}
-        <div class="hero container m-auto text-center flex flex-wrap mt-12 p-6 mb-32 md:flex-nowrap md:max-w-4xl">
+        <div class="hero {{ 'hero-lg' if heroLg else ''}} container m-auto text-center flex flex-wrap mt-12 p-6 mb-32 md:flex-nowrap md:max-w-4xl">
         {% endif %}
             <div class="text-left md:pr-32">
                 <h1>{{ title }}</h1>
