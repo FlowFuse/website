@@ -4,7 +4,7 @@ layout: layouts/base.njk
 
 <div class="w-full page">
     {% if title %}
-        <div class="container m-auto text-center max-w-screen-lg px-6 flex mt-6 mb-6 md:mt-12">
+        <div class="container m-auto text-center px-6 flex mt-6 mb-6 md:max-w-screen-lg md:mt-12">
             <div class="text-left md:pr-32">
                 <h1>{{ title }}</h1>
                 {% if subtitle %}
@@ -22,11 +22,26 @@ layout: layouts/base.njk
         </div>
     {% endif %}
     <div class="blog nohero w-full pt-6 pb-24 ff-bg-light">
-        <div class="container m-auto text-left max-w-screen-lg px-6">
+        <div class="container m-auto text-left px-6 md:max-w-screen-lg">
             <a class="block mb-4" href="/blog">&lt; Back to Blog Posts</a>
             <div class="prose">
                 <div>{% if image %}<img class="w-full h-auto" src="{{image}}" />{% else %}{{ page.url | generatePostSVG |safe}}{% endif %}</div>
                 {{ content | safe }}
+            </div>
+            <div class="mt-12 pt-12 flex flex-col border-t-2">
+                <h3 class="mb-6">Sign up for updates</h3>
+                <form
+                    action="https://buttondown.email/api/emails/embed-subscribe/flowforge"
+                    method="post"
+                    target="popupwindow"
+                    onsubmit="window.open('https://buttondown.email/flowforge', 'popupwindow')"
+                    class="embeddable-buttondown-form my-1 ">
+                    <div class="flex flex-col sm:flex-row">
+                        <input type="email" name="email" id="bd-email" placeholder="Enter your email" class="ff-input ff-text-input lg:w-80 md:w-60" />
+                        <input type="hidden" value="1" name="embed" />
+                        <input type="submit" value="Subscribe" class="ff-btn ff-btn--primary w-full mt-3 sm:w-auto sm:mt-0 sm:ml-3"/>
+                    </div>
+                </form>
             </div>
         </div>
     </div>
