@@ -3,7 +3,7 @@ title: Product
 layout: layouts/page.njk
 subtitle: FlowForge Cloud
 description: "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vitae malesuada amet ullamcorper.</p>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vitae malesuada amet ullamcorper.</p><button class='ff-btn'>Sign Up</button>"
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vitae malesuada amet ullamcorper.</p><button class='ff-btn ff-btn--primary'>Join the Waitlist</button>"
 heroimg: "../images/pictograms/cloud.png"
 heroLg: true
 ---
@@ -40,7 +40,9 @@ heroLg: true
     <div class="container m-auto text-center max-w-4xl">
         <div class="mt-9">
             <h1 class="mb-4">Key Features</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis at morbi sed tincidunt eu faucibus.</p>
+            <p>Collaborate with your team to , with one-click management of Node-RED in FlowForge Cloud. Deploy in 10 seconds
+
+One click management of Node-RED</p>
         </div>
         <div class="mt-20 flex flex-wrap justify-center">
             <div class="company-value">
@@ -89,15 +91,15 @@ heroLg: true
 
 <div class="about w-full ff-bg-light pb-32">
     <div class="container m-auto text-center max-w-4xl">
-        <div class="pt-24 flex justify-center">
+        {# <div class="pt-24 flex justify-center">
             <div class="ff-toggle-switch">
                 <span class="ff-option ff--active" id="option-cloud" onclick="switchProductTab('cloud')">Cloud</span>
                 <span class="ff-option" id="option-self-managed" onclick="switchProductTab('self-managed')">Self-Managed</span>
             </div>
-        </div>
+        </div> #}
         <!-- Cloud Feature List -->
         <div id="tab-cloud" class="ff-tab-content ff--active">{{ cloudFeaturesHtml | safe }}</div>
         <!-- Self-Managed Feature List -->
-        <div id="tab-self-managed" class="ff-tab-content">{{ selfFeaturesHtml | safe }}</div>
+        {# <div id="tab-self-managed" class="ff-tab-content">{{ selfFeaturesHtml | safe }}</div> #}
     </div>
 </div>

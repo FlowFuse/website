@@ -1,35 +1,38 @@
 {%
     set columns = [{
         product: 'FlowForge Cloud',
-        pricing: '$10',
+        pricing: '<h2 class="mb-0">$15</h2><span class="text-xs mb-6">/project/mo</span><a class="ff-btn ff-btn--primary">Join the Waitlist</a>',
         cta: '',
         sections: [[{
-            label: "Project Templates",
-            icon: "check"
-        }, {
-            label: "Audit Log",
-            icon: "check"
-        }, {
-            label: "Team Based Collaboration",
+            label: "Fully Browser-Based",
             icon: "check"
         }, {
             label: "Multiple Projects",
             icon: "check"
         }, {
-            label: "RBAC",
+            label: "Project Templates",
+            icon: "check"
+        }, {
+            label: "Individual Project Configuration",
+            icon: "check"
+        }, {
+            label: "Audit Log",
+            icon: "check"
+        }, {
+            label: "Team-Based Collaboration",
+            icon: "check"
+        }, {
+            label: "Roll-Based Access Control",
             icon: "check"
         }, {
             label: "Custom Node Catalog",
-            icon: "check"
+            icon: "time"
         }, {
             label: "Shared Team Library",
-            icon: "check"
+            icon: "time"
         }, {
             label: "Persistent Context Storage",
-            icon: "check"
-        }, {
-            label: "SSO (Enterprise)",
-            icon: "check"
+            icon: "time"
         }, {
             label: "Version History",
             icon: "time"
@@ -43,14 +46,14 @@
             label: "Sub-Minute Setup",
             icon: "check"
         }, {
+            label: "Easy Node-RED Upgrades",
+            icon: "check"
+        }, {
             label: "FlowForge Managed",
             icon: "check"
         }, {
             label: "Custom (Per-Project) Domain",
-            icon: "check"
-        }, {
-            label: "Stacks / CPU / Infrastructure",
-            icon: "addon"
+            icon: "time"
         }], [{
             label: "Ticket-Based Support",
             icon: "check"
@@ -59,42 +62,48 @@
             icon: "check"
         }]]
     }, {
-        product: 'FlowForge Cloud Enterprise',
-        pricing: "Let's Talk",
+        product: 'FlowForge Enterprise',
+        pricing: "<div class='font-light text-2xl mt-2'>Let's Talk</div><span class='text-xs mb-6'>Want a bespoke solution?</span><a class='ff-btn ff-btn--secondary' href='mailto:sales@flowforge.com?subject=Enquiry - FlowForge Cloud Enterprise'>Contact Us</a>",
         cta: '',
         sections: [[{
-            label: "Project Templates",
-            icon: "check"
-        }, {
-            label: "Audit Log",
-            icon: "check"
-        }, {
-            label: "Team Based Collaboration",
+            label: "Fully Browser-Based",
             icon: "check"
         }, {
             label: "Multiple Projects",
             icon: "check"
         }, {
-            label: "RBAC",
+            label: "Project Templates",
             icon: "check"
         }, {
-            label: "Custom Node Catalog",
+            label: "Individual Project Configuration",
             icon: "check"
         }, {
-            label: "Shared Team Library",
+            label: "Audit Log",
             icon: "check"
         }, {
-            label: "Persistent Context Storage",
+            label: "Team-Based Collaboration",
             icon: "check"
         }, {
-            label: "SSO (Enterprise)",
+            label: "Roll-Based Access Control",
             icon: "check"
         }, {
             label: "Dedicated Instance",
             icon: "check"
         }, {
+            label: "SSO (Enterprise)",
+            icon: "time"
+        }, {
+            label: "Custom Node Catalog",
+            icon: "time"
+        }, {
+            label: "Shared Team Library",
+            icon: "time"
+        }, {
+            label: "Persistent Context Storage",
+            icon: "time"
+        }, {
             label: "Private npm repo support",
-            icon: "check"
+            icon: "time"
         }, {
             label: "Version History",
             icon: "time"
@@ -105,19 +114,16 @@
             label: "Usage Reporting",
             icon: "time"
         }], [{
-            label: "Sub-Minute Setup",
+            label: "Easy Node-RED Upgrades",
             icon: "check"
         }, {
-            label: "FlowForge Managed",
+            label: "FlowForge or Self-Managed",
             icon: "check"
         }, {
-            label: "Custom (Per-Project) Domain",
+            label: "Dedicated Domain",
             icon: "check"
         }, {
-            label: "Custom (Hosting) Domain",
-            icon: "check"
-        }, {
-            label: "Stacks / CPU / Infrastructure",
+            label: "Configurable Infrastructure",
             icon: "check"
         }], [{
             label: "Ticket-Based Support",
@@ -138,7 +144,7 @@
     </div>
     <div class="ff-feature-table-section">
         {% for col in columns %}
-        <ul>
+        <ul class="ff-feature-table--pricing">
             <div class="divider-h {{ 'reverse' if loop.index0 === 0 }}"></div>
             {{ col.pricing | safe }}
         </ul>
@@ -153,15 +159,15 @@
             {% for feature in col.sections[sectionIndex] %}
                 <li>
                     {% if feature.icon === "check" %}
-                    <svg class="ff-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <svg title="Available Now" class="ff-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
                     </svg>
                     {% elif feature.icon === "time" %}
-                    <svg class="ff-icon"  xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <svg title="Coming Soon" class="ff-icon"  xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                     </svg>
                     {% elif feature.icon === "addon" %}
-                    <svg class="ff-icon"  xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <svg title="Available as an Add-On" class="ff-icon"  xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4" />
                     </svg>
                     {% endif %}

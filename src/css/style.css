@@ -89,6 +89,9 @@ main  a {
 main  a:hover {
     text-decoration: underline;
 }
+main  a.ff-btn:hover {
+    text-decoration: none;
+}
 pre code {
     background: #030303
 }
@@ -225,12 +228,31 @@ h4:hover .header-anchor {
     }
     
     .ff-website .ff-btn {
-        background-color: theme(colors.teal.500);
-        color: theme(colors.white);
         justify-content: center;
         font-weight: bold;
         height: auto;
         padding: 8px 16px;
+        border: 0;
+    }
+
+    .ff-website .ff-btn.ff-btn--primary {
+        background-color: theme(colors.red.600);
+        color: white;
+    }
+    
+    .ff-website .ff-btn.ff-btn--primary:hover {
+        background-color: theme(colors.red.700);
+        color: white;
+    }
+
+    .ff-website .ff-btn.ff-btn--secondary {
+        background-color: theme(colors.teal.700);
+        color: white;
+    }
+    
+    .ff-website .ff-btn.ff-btn--secondary:hover {
+        background-color: theme(colors.teal.800);
+        color: white;
     }
     
     .ff-website .ff-text-input {
@@ -325,8 +347,10 @@ h4:hover .header-anchor {
         background-image: linear-gradient(-90deg, white, theme(colors.red.500));
     }
     
-    .ff-feature-table-pricing {
-        padding-bottom: 1.25rem;
+    .ff-feature-table--pricing {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
     
     .ff-feature-table ul {
@@ -335,18 +359,19 @@ h4:hover .header-anchor {
         position: relative;
     }
     
-    .ff-feature-table ul:last-child {
+    .ff-feature-table ul:not(.ff-feature-table--pricing):last-child {
         padding-bottom: 2.5rem;
     }
     
     .ff-feature-table li {
         text-align: left;
-        width: 50%;
+        width: 70%;
         min-width: 250px;
         margin: auto;
         margin-bottom: 0.375rem;
         display: flex;
         align-items: center;
+        font-weight: 300;
     }
     
     .ff-feature-table li svg {
