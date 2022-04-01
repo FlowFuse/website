@@ -2,35 +2,25 @@
 title: FlowForge Cloud
 layout: layouts/page.njk
 subtitle: Team-based Low-Code Development
-description: "<p>Start building your low-code workflows on our platform.</p><p>Get started with Node-RED with just a few clicks.</p><button class='ff-btn ff-btn--primary'>Join the Waitlist</button>"
+description:
+    <p>Start building your low-code workflows on our platform.</p><p>Get started with Node-RED with just a few clicks.</p>
+    <form
+        action="https://buttondown.email/api/emails/embed-subscribe/flowforge-waitlist"
+        method="post"
+        target="popupwindow"
+        onsubmit="window.open('https://buttondown.email/flowforge-waitlist', 'popupwindow')"
+        class="embeddable-buttondown-form p-1 my-1 "
+    >
+        <div class="max-w-md m-auto">
+            <h5 class="mt-4 mb-2">Join the Waitlist</h5>
+            <input type="email" name="email" id="bd-email" placeholder="Enter your email" class="ff-input ff-text-input" />
+            <input type="hidden" value="1" name="embed" />
+            <button type="submit" class='ff-btn ff-btn--secondary mt-4'>Sign Up</button>
+        </div>
+    </form>
 heroimg: "../images/pictograms/cloud.png"
 heroLg: true
 ---
-
-<script>
-    function switchProductTab (tab) {
-        // set active tab
-        const tabOptions = document.getElementsByClassName("ff-option");
-        for (i = 0; i < tabOptions.length; i++) {
-            if (tabOptions[i].id !== 'option-' + tab) {
-                tabOptions[i].className = tabOptions[i].className.replace(" ff--active", "")
-            } else {
-                tabOptions[i].className = "ff-option ff--active"
-            }
-        }
-        // reset tab content
-        const tabcontent = document.getElementsByClassName("ff-tab-content");
-        for (i = 0; i < tabcontent.length; i++) {
-            if (tabcontent[i].id !== 'tab-' + tab) {
-                tabcontent[i].className = tabcontent[i].className.replace(" ff--active", "")
-            } else {
-                tabcontent[i].className = "ff-tab-content ff--active"
-            }
-        }
-        const tabHtml = document.getElementById("tab-" + tab)
-    }
-
-</script>
 
 {% include "components/divider-flow--default.njk" %}
 
@@ -66,7 +56,7 @@ heroLg: true
                 <h5>Ticket-Based Support</h5>
             </div>
         </div>
-        <div class="mt-2"><p>Some features coming soon</p></div>
+        <div class="mt-2"><p class="opacity-70">(some features coming soon)</p></div>
     </div>
 </div>
 
@@ -88,15 +78,7 @@ heroLg: true
 
 <div class="about w-full ff-bg-light pb-32">
     <div class="container m-auto text-center max-w-4xl">
-        {# <div class="pt-24 flex justify-center">
-            <div class="ff-toggle-switch">
-                <span class="ff-option ff--active" id="option-cloud" onclick="switchProductTab('cloud')">Cloud</span>
-                <span class="ff-option" id="option-self-managed" onclick="switchProductTab('self-managed')">Self-Managed</span>
-            </div>
-        </div> #}
         <!-- Cloud Feature List -->
         <div id="tab-cloud" class="ff-tab-content ff--active">{{ cloudFeaturesHtml | safe }}</div>
-        <!-- Self-Managed Feature List -->
-        {# <div id="tab-self-managed" class="ff-tab-content">{{ selfFeaturesHtml | safe }}</div> #}
     </div>
 </div>
