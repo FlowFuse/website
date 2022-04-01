@@ -45,6 +45,12 @@ urgency and a focus to achieve our best.
 When you disagree with a solution to a problem, provide a concrete alternate
 solution to allow momentum to be maintained or even gained.
 
+Ship the minimun viable change possible. Small changes allow fast feedback loops
+which in turn can aid in deciding the next minimal viable iteration. Further,
+iteration naturally splits big problems into small steps, creates positive
+momentum, and allows to capture value quicker.
+
+
 #### Be Trusting
 
 To move with high velocity, trust needs to be given before one has had the
@@ -65,6 +71,12 @@ We are inclusive of all and are mindful of how our words and actions can impact
 others. We welcome discussion and debate, but take care to ensure it is not at
 the expense or exclusion of others. We value empathy, courtesy and respect for
 each other.
+
+##### Transparency
+
+A community can better aid with the success of FlowForge when they're trusted
+with the same information. This openness builds trust with our community and helps
+in collaboration. Further, it allows for knowledge sharing and builds understanding.
 
 #### Use Candor
 
