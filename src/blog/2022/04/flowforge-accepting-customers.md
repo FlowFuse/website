@@ -14,11 +14,12 @@ first customers.
 <!--more-->
 
 A few weeks ago our product was nearly in a state where it could support customers,
-when that was the case, we [opened up our waitlist](...). The waitlist is growing
-daily, a trend we're aiming to break today. The first lucky few users are being
-added today, and each working day for the foreseeable future we'll continue
-onboarding users. New users will receive an email from our team with their login
-details and can start creating new workflows with Node-RED minutes after.
+when that was the case, we [opened up our waitlist](https://flowforge.com/blog/2022/02/announcing-flowforge-cloud/).
+The waitlist is growing daily, a trend we're aiming to break today. The first
+lucky few users are being added today, and each working day for the foreseeable
+future we'll continue onboarding users. New users will receive an email from our
+team with their login details and can start creating new workflows with Node-RED
+minutes after.
 
 While the source code of FlowForge is [available](https://github.com/flowforge/flowforge),
 there's a chance you're unfamiliar with what has been built around Node-RED.
@@ -26,8 +27,9 @@ With FlowForge, our intent is to build a platform to aid with colaboration of
 flows in Node-RED. The first steps to our vision include a managed Node-RED 
 instance to connect virtually any online service. Multiple users will have
 access to the same flows and can collaborate. Further, once Node-RED 3.0 has
-been release, upgrading will take only a single click. There's many more
-exciting features right around the corner on our [roadmap](https://github.com/orgs/flowforge/projects/5).
+been released, the platform will provide a pain-free way to upgrade and keep
+your projects up to date. There's many more exciting features right around the
+corner on our [roadmap](https://github.com/orgs/flowforge/projects/5).
 
 #### Joining the wait list
 
@@ -45,5 +47,4 @@ exciting features right around the corner on our [roadmap](https://github.com/or
     </div>
 </form>
 </div>
-
 
