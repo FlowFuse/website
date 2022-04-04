@@ -3,8 +3,49 @@
     <title>FlowForge</title>
     <link href="https://flowforge.com/blog/index.xml" rel="self"/>
     <link href="https://flowforge.com/blog"/>
-    <updated>2022-03-23T00:00:00Z</updated>
+    <updated>2022-04-04T00:00:00Z</updated>
     <id>https://flowforge.com/blog</id>
+    
+    <entry>
+        <id>https://flowforge.com/blog/2022/04/flowforge-accepting-customers/</id>
+        <title>FlowForge is accepting customers now</title>
+        <summary>From today forward, we start accepting customers of our waitlist</summary>
+        <updated>2022-04-04T00:00:00Z</updated>
+        <link href="https://flowforge.com/blog/2022/04/flowforge-accepting-customers/"/>
+        <author><name>Zeger-Jan van de Weg</name></author>
+        <content type="html">&lt;p&gt;A year ago our CTO, Nick O&#39;Leary, &lt;a href=&quot;https://flowforge.com/blog/2021/04/first-deploy/&quot;&gt;introduced FlowForge&lt;/a&gt;.
+Since then major milestones have been achieved. As we grow as a company, important
+steps are taken. Today we make another very important step; we&#39;re accepting our
+first customers.&lt;/p&gt;
+&lt;!--more--&gt;
+&lt;p&gt;A few weeks ago our product was nearly in a state where it could support customers,
+when that was the case, we &lt;a href=&quot;https://flowforge.com/blog/2022/02/announcing-flowforge-cloud/&quot;&gt;opened up our waitlist&lt;/a&gt;.
+The waitlist is growing daily, a trend we&#39;re aiming to break today. The first
+lucky few users are being added today, and each working day for the foreseeable
+future we&#39;ll continue onboarding users. New users will receive an email from our
+team with their login details and can start creating new workflows with Node-RED
+minutes after.&lt;/p&gt;
+&lt;p&gt;While the source code of FlowForge is &lt;a href=&quot;https://github.com/flowforge/flowforge&quot;&gt;available&lt;/a&gt;,
+there&#39;s a chance you&#39;re unfamiliar with what has been built around Node-RED.
+With FlowForge, our intent is to build a platform to aid with colaboration of
+flows in Node-RED. The first steps to our vision include a managed Node-RED
+instance to connect virtually any online service. Multiple users will have
+access to the same flows and can collaborate. Further, once Node-RED 3.0 has
+been released, the platform will provide a pain-free way to upgrade and keep
+your projects up to date. There&#39;s many more exciting features right around the
+corner on our &lt;a href=&quot;https://github.com/orgs/flowforge/projects/5&quot;&gt;roadmap&lt;/a&gt;.&lt;/p&gt;
+&lt;h4 id=&quot;joining-the-wait-list&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://flowforge.com/blog/2022/04/flowforge-accepting-customers/#joining-the-wait-list&quot;&gt;#&amp;nbsp;&lt;/a&gt; Joining the wait list&lt;/h4&gt;
+&lt;div class=&quot;mt-4 flex flex-col&quot;&gt;
+    &lt;form action=&quot;https://buttondown.email/api/emails/embed-subscribe/flowforge-waitlist&quot; method=&quot;post&quot; target=&quot;popupwindow&quot; onsubmit=&quot;window.open(&#39;https://buttondown.email/flowforge-waitlist&#39;, &#39;popupwindow&#39;)&quot; class=&quot;embeddable-buttondown-form p-1 my-1 &quot;&gt;
+    &lt;div class=&quot;flex flex-col md:flex-row&quot;&gt;
+        &lt;input type=&quot;email&quot; name=&quot;email&quot; id=&quot;bd-email&quot; placeholder=&quot;Enter your email&quot; class=&quot;lg:w-80 md:w-60 py-2 px-4 rounded border-blue-hero border-2 focus:border-blue-hero-darker  focus:outline-none&quot; /&gt;
+        &lt;input type=&quot;hidden&quot; value=&quot;1&quot; name=&quot;embed&quot; /&gt;
+        &lt;input type=&quot;submit&quot; value=&quot;Sign Up&quot; class=&quot;cursor-pointer mt-2 md:mt-0 md:ml-3 py-2 px-4 text-white font-semibold rounded bg-blue-hero border-2 border-blue-hero hover:bg-blue-hero-darker hover:border-blue-hero-darker&quot; /&gt;
+    &lt;/div&gt;
+&lt;/form&gt;
+&lt;/div&gt;
+</content>
+    </entry>
     
     <entry>
         <id>https://flowforge.com/blog/2022/03/welcome-sean/</id>
