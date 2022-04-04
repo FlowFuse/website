@@ -3,5 +3,4 @@
         "posts"
     ],
     "layout": "layouts/post.njk"
-
 }

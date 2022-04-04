@@ -22,14 +22,16 @@
     <meta property="og:description" content="{{description}}" />
     <meta property="og:image" content="{{ site.baseURL }}/images/flowforge-logo.png" />
     {% endif %}
+
     <script defer data-domain="flowforge.com" src="https://plausible.io/js/plausible.js"></script>
 </head>
-<body class="leading-normal tracking-normal  gradient text-gray-500 min-h-screen flex flex-col" style="">
-    <div class="bg-white flex-grow home">
-        <div class="pb-14 max-w-screen-lg mx-2 lg:mx-auto ">
-            <header class="w-full container mx-auto p-6">
+<body class="ff-website leading-normal tracking-normal gradient text-gray-500 min-h-screen flex flex-col" style="">
+    <div class="flex-grow base">
+        <div class="w-full">
+            <!-- Navigation Header -->
+            <header class="ff-header w-full container mx-auto p-6 md:max-w-screen-lg">
                 <nav class="relative w-full flex items-center justify-between">
-                    <a class="bg-white no-underline hover:no-underline font-bold h-8 w-40 text-red-hero flex flex-row"  href="/" style="font-family:'Baloo 2', sans-serif">
+                    <a class="no-underline hover:no-underline font-bold h-8 w-40 flex flex-row"  href="/" style="font-family:'Baloo 2', sans-serif">
                         {% include "components/flowforge-wordmark.njk" %}
                     </a>
                     <div class="block sm:hidden">
@@ -38,51 +40,51 @@
                         </button>
                     </div>
 
-                    <ul id="nav-content" class="hidden absolute top-8 -right-7 border shadow-sm sm:inline sm:shadow-none w-36 z-10 sm:border-0 bg-white sm:bg-transparent sm:w-auto rounded sm:static sm:float-none sm:flex sm:flex-row flex-col items-center justify-between font-medium text text-red-hero no-underline">
-                        <li class="flex"><a class="flex-grow hover:underline px-4 sm:pl-0 py-2" href="/about">about</a></li>
-                        <!-- <li class="flex"><a class="flex-grow hover:underline px-4 py-2" href="/team">team</a></li> -->
-                        <li class="flex"><a class="flex-grow hover:underline px-4 py-2" href="/blog">blog</a></li>
-                        <li class="flex"><a class="flex-grow hover:underline px-4 sm:pr-2 py-2" href="https://twitter.com/flowforgeinc">{% include "components/twitter.njk" %}</a></li>
-                        <li class="flex"><a class="flex-grow hover:underline px-4 sm:pr-2 py-2" href="https://github.com/flowforge">{% include "components/github.njk" %}</a></li>
-                        <li class="flex"><a class="flex-grow hover:underline px-4 sm:pr-2 py-2" href="https://www.linkedin.com/company/flowforge-inc">{% include "components/linkedin.njk" %}</a></li>
-                        <li class="flex"><a class="flex-grow hover:underline px-4 sm:pr-2 sm:pr-0 py-2" href="/blog/index.xml">{% include "components/rss.njk" %}</a></li>
+                    <ul id="nav-content" class="hidden absolute top-8 right-0 border shadow-sm sm:inline sm:shadow-none w-36 z-10 sm:border-0 bg-white sm:bg-transparent sm:w-auto rounded sm:static sm:float-none sm:flex sm:flex-row flex-col items-center justify-between font-medium text no-underline">
+                        <li class="flex"><a class="flex-grow sm:px-4 sm:pl-0 sm:py-2" href="/about">about</a></li>
+                        <li class="flex"><a href="/product">product</a></li>
+                        <li class="flex"><a href="/blog">news</a></li>
+                        <li class="flex"><a href="https://github.com/flowforge" target="_blank">{% include "components/github.njk" %}</a></li>
                     </ul>
                 </nav>
             </header>
-            <main class="container pt-14 md:pt-18 px-6 mx-auto flex flex-wrap flex-col md:flex-row items-center">
+            <!-- Main Content -->
+            <main class="flex flex-col mx-auto items-center justify-center">
                 {{ content | safe }}
             </main>
         </div>
     </div>
-    <footer class="bg-red-hero w-full">
-        <div class="max-w-screen-xl xl:mx-auto lg:mx-24 py-8 px-10 text-white">
-            <div class="flex flex-col md:flex-row justify-center md:space-x-8">
-                <div class="w-full md:w-96 mb-4 text-sm flex flex-col self-end order-last md:order-first">
-                    <div>Copyright 2022 FlowForge Inc.</div>
-                    <div>All Rights Reserved</div>
+    <!-- Footer -->
+    <footer class="ff-footer bg-red-hero w-full">
+        <div class="py-2 pb-8 px-10 text-white md:py-8 md:max-w-screen-xl xl:mx-auto lg:mx-24">
+            <div class="ff-footer-columns flex flex-col md:flex-row justify-center md:space-x-8">
+                <div class="">
+                    <img src="../../images/flowforge-logo-wordmark-white.svg" />
+                    <div class="copyright-statement">
+                        <div>Copyright 2022 FlowForge Inc.</div>
+                        <div>All Rights Reserved</div>
+                    </div>
                     <div class="mt-2 text-xs">This site uses cookies. Click <a href="#" class="underline" onclick="initCookieConsent().showSettings()">here</a> to manage your preferences</a>.</div>
                 </div>
-                <div class="w-full md:w-52 mb-4">
-                    <div class="space-y-2"><span class="text-xl font-bold">Social</span>
-                        <ul class="text-base space-y-2">
-                            <li class="inline mr-3 md:mr-0 md:block"><a href="https://twitter.com/flowforgeinc">Twitter</a></li>
-                            <li class="inline mr-3 md:mr-0 md:block"><a href="https://github.com/flowforge">GitHub</a></li>
-                            <li class="inline mr-3 md:mr-0 md:block"><a href="https://www.linkedin.com/company/flowforge-inc">LinkedIn</a></li>
-                            <li class="inline mr-3 md:mr-0 md:block"><a href="/blog/index.xml">RSS Feed</a></li>
-                        </ul>
-                    </div>
+                <div class="w-full">
+                    <h4 class=""><span class="text-xl font-bold">Social</h4>
+                    <ul class="text-base space-y-2">
+                        <li class="inline mr-3 md:mr-0 md:block"><a href="https://twitter.com/flowforgeinc">Twitter</a></li>
+                        <li class="inline mr-3 md:mr-0 md:block"><a href="https://github.com/flowforge">GitHub</a></li>
+                        <li class="inline mr-3 md:mr-0 md:block"><a href="https://www.linkedin.com/company/flowforge-inc">LinkedIn</a></li>
+                        <li class="inline mr-3 md:mr-0 md:block"><a href="/blog/index.xml">RSS Feed</a></li>
+                    </ul>
                 </div>
-                <div class="w-full md:w-52 mb-4">
-                    <div class="space-y-2"><span class="text-xl font-bold">Company</span>
-                        <ul class="text-base  space-y-2">
-                            <li class="inline mr-3 md:mr-0 md:block"><a href="/handbook">Handbook</a></li>
-                            <li class="inline mr-3 md:mr-0 md:block"><a href="/about">About</a></li>
-                            <li class="inline mr-3 md:mr-0 md:block"><a href="/team">Team</a></li>
-                            <li class="inline mr-3 md:mr-0 md:block"><a href="https://boards.greenhouse.io/flowforge">Jobs</a></li>
-                            <li class="inline mr-3 md:mr-0 md:block"><a href="/blog">Blog</a></li>
-                            <li class="inline mr-3 md:mr-0 md:block"><a href="/privacy-policy">Privacy</a></li>
-                        </ul>
-                    </div>
+                <div class="w-full">
+                    <h4 class=""><span class="text-xl font-bold">Company</h4>
+                    <ul class="text-base  space-y-2">
+                        <li class="inline mr-3 md:mr-0 md:block"><a href="/about">About</a></li>
+                        <li class="inline mr-3 md:mr-0 md:block"><a href="/team">Team</a></li>
+                        <li class="inline mr-3 md:mr-0 md:block"><a href="https://boards.greenhouse.io/flowforge">Jobs</a></li>
+                        <li class="inline mr-3 md:mr-0 md:block"><a href="/handbook">Handbook</a></li>
+                        <li class="inline mr-3 md:mr-0 md:block"><a href="/blog">News</a></li>
+                        <li class="inline mr-3 md:mr-0 md:block"><a href="/privacy-policy">Privacy</a></li>
+                    </ul>
                 </div>
             </div>
         </div>

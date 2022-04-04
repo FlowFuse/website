@@ -1,8 +1,10 @@
 ---
-layout: page
-title: Privacy Policy
+layout: nohero
 ---
 
+<div class="prose prose-blue container m-auto max-w-4xl">
+
+# Privacy Policy
 
 This Privacy Policy describes the privacy practices of FlowForge Inc (**“FlowForge”**, **“we”**, **“us”** or **“our”**) and how we handle personal information that we collect through our digital properties that link to this Privacy Policy, including our website, (the **“Service”**), as well as through social media, our marketing activities, our events and other activities described in this policy.
 
@@ -23,7 +25,7 @@ Our Service is designed for businesses and their representatives. We do not offe
  - <a href="#changes-to-this-privacy-policy">Changes to this Privacy Policy</a>
  - <a href="#how-to-contact-us">How to contact us</a>
 
-## <a name="personal-information-we-collect" href="#personal-information-we-collect">Personal information we collect</a>
+## <span name="personal-information-we-collect">Personal information we collect</span>
 
 **Information you provide to us.** Personal information you may provide to us through the Service or otherwise, such as when you view our website or contact us includes:
 
@@ -53,7 +55,7 @@ Our Service is designed for businesses and their representatives. We do not offe
 
 **Data about others**. Users of the Service may have the opportunity to refer friends or other contacts to us and share their contact information with us. Please do not refer someone to us or share their contact information with us unless you have their permission to do so.
 
-## <a name="how-we-use-your-personal-information" href="#how-we-use-your-personal-information">How we use your personal information</a>
+## <span name="how-we-use-your-personal-information">How we use your personal information</span>
 
 We may use your personal information for the following purposes or as otherwise described at the time of collection:
 
@@ -82,7 +84,7 @@ We may use your personal information for the following purposes or as otherwise 
 
 **With your consent.**  In some cases, we may specifically ask for your consent to collect, use or share your personal information, such as when required by law.
 
-## <a name="how-we-share-your-personal-information" href="#how-we-share-your-personal-information">How we share your personal information</a>
+## <span name="how-we-share-your-personal-information">How we share your personal information</span>
 
 We may share your personal information with the following parties and as otherwise described in this Privacy Policy or at the time of collection.
 
@@ -96,7 +98,7 @@ We may share your personal information with the following parties and as otherwi
 
 **Business transferees.**  Acquirers and other relevant participants in business transactions (or negotiations and diligence for such transactions) involving a corporate divestiture, merger, consolidation, acquisition, reorganization, sale or other disposition of all or any portion of the business or assets of, or equity interests in, Open Core Ventures or our affiliates (including, in connection with a bankruptcy or similar proceedings).
 
-## <a name="your-choices" href="#your-choices">Your choices</a>
+## <span name="your-choices">Your choices</span>
 
 You have the following choices with respect to your personal information.
 
@@ -108,27 +110,28 @@ You have the following choices with respect to your personal information.
 
 **Declining to provide information.** We need to collect personal information to provide certain services.  If you do not provide the information we identify as required or mandatory, we may not be able to provide those services.
 
-## <a name="other-sites-and-services" href="#other-sites-and-services">Other sites and services</a>
+## <span name="other-sites-and-services">Other sites and services</span>
 
 The Service may contain links to websites, mobile applications, and other online services operated by third parties.  In addition, our content may be integrated into web pages or other online services that are not associated with us.  These links and integrations are not an endorsement of, or representation that we are affiliated with, any third party.  We do not control websites, mobile applications or online services operated by third parties, and we are not responsible for their actions. We encourage you to read the privacy policies of the other websites and mobile applications and online services you use.
 
-## <a name="security" href="#security">Security</a>
+## <span name="security">Security</span>
 
 We employ technical, organizational and physical safeguards designed to protect the personal information we collect.  However, security risk is inherent in all internet and information technologies and we cannot guarantee the security of your personal information.
 
-## <a name="international-data-transfer" href="#international-data-transfer">International data transfer</a>
+## <span name="international-data-transfer">International data transfer</span>
 
 We are headquartered in the United States and may use service providers that operate in other countries. Your personal information may be transferred to the United States or other locations where privacy laws may not be as protective as those in your state, province, or country.
 
-## <a name="children" href="#children">Children</a>
+## <span name="children">Children</span>
 
 The Service is not intended for use by children under 16 years of age. If we learn that we have collected personal information through the Service from a child under 16 without the consent of the child’s parent or guardian as required by law, we will delete it. We encourage parents or guardians with concerns to contact us.
 
-## <a name="changes-to-this-privacy-policy" href="#changes-to-this-privacy-policy">Changes to this Privacy Policy</a>
+## <span name="changes-to-this-privacy-policy">Changes to this Privacy Policy</span>
 
 We reserve the right to modify this Privacy Policy at any time. If we make material changes to this Privacy Policy, we will notify you by updating the date of this Privacy Policy and posting it on the Service. If required by law we will also provide notification of changes in another way that we believe is reasonably likely to reach you, such as via email or another manner through the Service.  Any modifications to this Privacy Policy will be effective upon our posting the modified version (or as otherwise indicated at the time of posting). In all cases, your use of the Service after the effective date of any modified Privacy Policy indicates your acceptance of the modified Privacy Policy.
 
-## <a name="how-to-contact-us" href="#how-to-contact-us">How to contact us</a>
+## <span name="how-to-contact-us">How to contact us</span>
 
  - **Email:** `contact@flowforge.com`
  - **Mail:** `PO Box 7775 #29439, San Francisco, CA 94120-7775`
+</div>

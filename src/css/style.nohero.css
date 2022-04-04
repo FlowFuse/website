@@ -1,0 +1,65 @@
+.nohero {
+    color: #111827;
+    font-size: 0.875em;
+    font-weight: 300;
+}
+
+.nohero>:first-child {
+    margin-top: 0;
+}
+
+.nohero .container:not(.hero) h1,
+.nohero .container:not(.hero) h2,
+.nohero .container:not(.hero) h3,
+.nohero .container:not(.hero) h4,
+.nohero .container:not(.hero) h5 {
+    color: theme(colors.gray.800) !important; 
+}
+
+.nohero h1 {
+    font-size: 2.625rem;
+    line-height: 3.75rem;
+}
+
+.nohero h2 {
+    font-size: 1.5rem;
+    line-height: 2rem;
+}
+
+.nohero h3 {
+    font-size: 1.25rem;
+    line-height: 2rem;
+}
+
+.nohero h4 {
+    font-size: 1rem;
+    line-height: 2rem;
+}
+
+.nohero p {
+    color: theme(colors.gray.800);
+    margin-bottom: 0.5rem;
+    line-height: 1.75rem;
+}
+
+.nohero a {
+    color: theme(colors.teal.700);
+}
+
+.nohero strong {
+    font-weight: 400;
+}
+
+.nohero code {
+    background-color: transparent;
+    border-radius: 0;
+    border: none;
+    padding: 0;
+}
+
+.prose code::after {
+    content:''
+}
+.prose code::before {
+    content:''
+}

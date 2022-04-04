@@ -1,36 +1,116 @@
 @import "./style.base.css";
+@import "./style.page.css";
+@import "./style.nohero.css";
+@import "../../node_modules/@flowforge/forge-ui-components/dist/forge-ui-components.css";
 @import "../../node_modules/vanilla-cookieconsent/dist/cookieconsent.css";
 
 @tailwind components;
 @tailwind utilities;
 
+html, body {
+    font-size: 16px;
+}
+
+* {
+    transition: 0.3s background-color, 0.3s color, 0.3s fill;
+    -webkit-transition: 0.3s background-color, 0.3s color, 0.3s fill;
+}
+
+/*
+    Standard FlowForge Sizings
+*/
+h1 {
+    font-size: 2.625rem;
+    line-height: 3.75rem;
+}
+
+h2 {
+    font-size: 2.25rem;
+    line-height: 2.5rem;
+}
+
+h3 {
+    font-size: 2rem;
+    line-height: 2.5rem;
+}
+
+h4 {
+    font-size: 1.5rem;
+    line-height: 1.75rem;
+}
+
+h5 {
+    font-size: 1rem;
+    line-height: 1.75rem;
+    font-weight: bold;
+}
+
+p {
+    font-size: 1rem;
+    line-height: 1.5rem;
+}
+
+h1, h2, h3, h4, h5, p {
+    color: theme(colors.teal.400);
+}
+
+.container {
+    position: relative;
+    z-index: 2;
+}
+
+.ff-bg-light h1,
+.ff-bg-light h2,
+.ff-bg-light h3,
+.ff-bg-light h4,
+.ff-bg-light h5 {
+    color: theme(colors.gray.700);
+}
+.ff-bg-light p {
+    color: theme(colors.gray.800);
+}
 
 
-.home {
-    background-image: url(/images/grid.svg);
+.ff-website {
+    background-color: theme(colors.gray.800);
+}
+
+.base {
+    background-color: theme(colors.gray.800);
+    background-image: url('/images/ff-cloud_75.svg');
+    background-repeat: no-repeat;
+    background-position-x: 50%;
+    background-position-y: 100px;
+    background-size: contain;
 }
 main  a {
-    color: theme(colors.blue.600);
+    color: theme(colors.teal.500);
+}
+main  a:hover {
+    text-decoration: underline;
+}
+main  a.ff-btn:hover {
+    text-decoration: none;
 }
 pre code {
     background: #030303
 }
 
-.prose code::after {
-    content:''
-}
-.prose code::before {
-    content:''
-}
-
 body {
-    --cc-btn-primary-bg: theme(colors.blue.hero.DEFAULT);
+    --cc-btn-primary-bg: theme(colors.teal.500);
     --cc-btn-primary-text: var(--cc-bg);
     --cc-btn-primary-hover-bg: #1d2e38;
 }
 
+video, iframe {
+    max-width: 100%;
+}
+
 h1,h2,h3,h4 {
     position: relative;
+}
+.ff-header {
+    z-index: 10;
 }
 .header-anchor {
     display: none;
@@ -38,9 +118,299 @@ h1,h2,h3,h4 {
     text-decoration: none !important;
     right: calc(100%);
 }
+
 h1:hover .header-anchor,
 h2:hover .header-anchor,
 h3:hover .header-anchor,
 h4:hover .header-anchor {
     display: inline;
+}
+
+.ff-bg-dark {
+    background-color: theme(colors.gray.800);
+}
+.ff-bg-mid {
+    background-color: theme(colors.gray.700);
+}
+.ff-bg-light {
+    background-color: theme(colors.gray.50);
+}
+
+/*
+    Header
+*/
+@layer components {
+    .ff-website header path {
+        fill: theme(colors.red.400);
+    }
+
+    .ff-website header a {
+        color: theme(colors.red.400);
+    }
+
+    .ff-website header ul a {
+        flex-grow: 1;
+        border-color: theme(colors.gray.200);
+        @apply border-b py-3 px-4 text-base sm:border-b-0 sm:text-lg;
+    }
+
+    .ff-website header ul a:hover {
+        color: white;
+    }
+
+    .ff-website header a:hover path {
+        fill: white;
+    }
+}
+
+/*
+    Footer
+*/
+@layer components {
+    .ff-footer {
+        background-image: url(../images/footer-bg.svg);
+        background-size: cover;
+        margin-top: -48px;
+        padding-top: 48px;
+    }
+
+    .ff-footer-columns {
+        grid-template-columns: 1fr 25% 35%;
+        @apply flex flex-col-reverse md:grid;
+    }
+
+    .ff-footer-columns > div {
+        @apply mb-6 md:mb-0;
+    }
+
+    .ff-footer-columns > div:first-child {
+        @apply mb-2;
+    }
+
+    .ff-footer h4 {
+        color: white;
+        @apply mb-2;
+    }
+
+    .ff-footer .copyright-statement {
+        font-size: 0.75rem;
+        margin-top: 0.75rem;
+        color: theme(colors.gray.100);
+        font-weight: 200;
+    }
+
+    .ff-footer li {
+        color: theme(colors.gray.100);
+        font-weight: 200;
+    }
+
+    .ff-footer li:hover {
+        color: theme(colors.white);
+        font-weight: 500;
+    }
+
+    /*
+        Components
+    */
+
+    .ff-icon {
+        width: 24px;
+        height: 24px;
+        display: inline-flex;
+        stroke-width: 2px;
+        color: theme(colors.red.600);
+    }
+    
+    .ff-website .ff-video {
+        border-radius: 12px;
+        border: 2px solid theme(colors.red.500);
+        background-color: theme(colors.white);
+    }
+    
+    .ff-website .ff-btn {
+        justify-content: center;
+        font-weight: bold;
+        height: auto;
+        padding: 8px 16px;
+        border: 0;
+    }
+
+    .ff-website .ff-btn.ff-btn--primary {
+        background-color: theme(colors.red.600);
+        color: white;
+    }
+    
+    .ff-website .ff-btn.ff-btn--primary:hover {
+        background-color: theme(colors.red.700);
+        color: white;
+    }
+
+    .ff-website .ff-btn.ff-btn--secondary {
+        background-color: theme(colors.teal.700);
+        color: white;
+    }
+    
+    .ff-website .ff-btn.ff-btn--secondary:hover {
+        background-color: theme(colors.teal.800);
+        color: white;
+    }
+    
+    .ff-website .ff-text-input {
+        background-color: theme(colors.gray.700);
+        border-color: theme(colors.teal.500);
+        border-width: 1px;
+        padding: 8px 12px;
+        font-weight: 200;
+        height: 36px;
+        color: theme(colors.white);
+    }
+
+    .ff-website .ff-bg-light .ff-text-input {
+        background-color: theme(colors.gray.50);
+        border-color: theme(colors.gray.300);
+        color: theme(colors.gray.800);
+    }
+    
+    .ff-toggle-switch {
+        background-color: theme(colors.gray.800);
+        color: theme(colors.white);
+        border-radius: 2rem;
+        text-transform: uppercase;
+        padding: .25rem;
+        line-height: 2rem;
+    }
+    
+    .ff-toggle-switch {
+        background-color: theme(colors.gray.800);
+        color: theme(colors.white);
+        border-radius: 2rem;
+        text-transform: uppercase;
+        padding: .25rem;
+        line-height: 2rem;
+        display: flex;
+        grid-gap: 1rem;
+    }
+    
+    .ff-toggle-switch .ff-option {
+        padding: 0.25rem 1.5rem;
+        border-radius: 1.5rem;
+        cursor: pointer;
+    }
+    
+    .ff-toggle-switch .ff-option:hover {
+        background-color: theme(colors.teal.700);
+    }
+    
+    .ff-toggle-switch .ff-option.ff--active {
+        background-color: theme(colors.red.700);
+        cursor: default;
+    }
+    
+    .ff-tab-content {
+        display: none;
+        @apply px-8 sm:py-0;
+    }
+    
+    .ff-tab-content.ff--active {
+        display: block;
+    }
+    
+    .ff-feature-table {
+        margin-top: 3rem;
+        position: relative;
+        color: theme(colors.gray.800);
+        min-width: 648px;
+    }
+    
+    .ff-feature-table-section {
+        display: grid;
+        grid-template-columns: 50% 50%;
+        position: relative;
+    }
+    
+    .ff-feature-table-section ul:last-child svg {
+        stroke: theme(colors.teal.700);
+    }
+    
+    .ff-feature-table .divider-v {
+        background-color: theme(colors.red.500);
+        background-image: linear-gradient(white, theme(colors.red.500));
+        position: absolute;
+        left: calc(50% - 2px);
+        height: 100%;
+        width: 4px;
+        z-index: 2;
+    }
+    
+    .ff-feature-table .divider-h {
+        background-color: theme(colors.red.500);
+        background-image: linear-gradient(90deg, white, theme(colors.red.500));
+        position: absolute;
+        top: -2px;
+        width: 100%;
+        height: 4px;
+    }
+    
+    .ff-feature-table .divider-h.reverse {
+        background-image: linear-gradient(-90deg, white, theme(colors.red.500));
+    }
+    
+    .ff-feature-table--pricing {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .ff-feature-table ul {
+        padding-top: 1.25rem;
+        padding-bottom: 1.25rem;
+        position: relative;
+    }
+    
+    .ff-feature-table ul:not(.ff-feature-table--pricing):last-child {
+        padding-bottom: 2.5rem;
+    }
+    
+    .ff-feature-table li {
+        text-align: left;
+        width: 70%;
+        min-width: 250px;
+        margin: auto;
+        margin-bottom: 0.375rem;
+        display: flex;
+        align-items: center;
+        font-weight: 300;
+    }
+    
+    .ff-feature-table li svg {
+        margin-right: .75rem;
+    }
+    
+    /*
+        SVG Dividers
+    */
+    .ff-divider {
+        position: relative;
+        width: 100%;
+    }
+    
+    .ff-divider svg {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        /* height: 400px; */
+        /* margin-top: -200px; */
+        @apply h-40 -mt-20 md:h-80 md:-mt-40;
+    }
+    
+    .ff-divider--shallow {
+        margin-bottom: -1px;
+    }
+
+    .ff-divider--shallow svg {
+        height: 180px;
+        margin-top: -180px;
+        /* @apply mt-20; */
+        @apply h-20 -mt-20 md:h-28 md:-mt-28;
+    }
 }

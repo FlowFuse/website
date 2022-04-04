@@ -1,10 +1,29 @@
 ---
 layout: layouts/base.njk
 ---
-<div class="w-full max-w-3xl mx-auto bg-white">
-    <h1 class="text-3xl md:text-5xl text-black-hero-heading font-medium pb-3">{{ title }}</h1>
-    <hr>
-    <div class="mt-6 mb-4 prose prose-blue md:prose-lg">
+<!--Hero Content-->
+<div class="w-full page">
+    {% if title %}
+        {% if nohero %}
+        <div class="container m-auto text-center flex mt-12 p-6 mb-6 md:max-w-4xl">
+        {% else %}
+        <div class="hero {{ 'hero-lg' if heroLg else ''}} container m-auto text-center flex flex-wrap mt-12 p-6 mb-32 md:flex-nowrap md:max-w-4xl">
+        {% endif %}
+            <div class="text-left {{ 'md:pr-20' if heroLg else 'md:pr-32'}}">
+                <h1>{{ title }}</h1>
+                {% if subtitle %}
+                <h4>{{ subtitle | safe }}</h4>
+                {% endif %}
+                {% if (description and not hideDescription) %}
+                <div>{{ description | safe }}</div>
+                {% endif %}
+            </div>
+            {% if heroimg %}
+            <img class="hidden md:block" src="{{heroimg}}"/>
+            {% endif %}
+        </div>
+    {% endif %}
+    <div class="content">
         {{ content | safe }}
     </div>
 </div>

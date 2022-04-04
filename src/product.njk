@@ -1,0 +1,84 @@
+---
+title: FlowForge Cloud
+layout: layouts/page.njk
+subtitle: Team-based Low-Code Development
+description:
+    <p>Start building your low-code workflows on our platform.</p><p>Get started with Node-RED with just a few clicks.</p>
+    <form
+        action="https://buttondown.email/api/emails/embed-subscribe/flowforge-waitlist"
+        method="post"
+        target="popupwindow"
+        onsubmit="window.open('https://buttondown.email/flowforge-waitlist', 'popupwindow')"
+        class="embeddable-buttondown-form p-1 my-1 "
+    >
+        <div class="max-w-md m-auto">
+            <h5 class="mt-4 mb-2">Join the Waitlist</h5>
+            <input type="email" name="email" id="bd-email" placeholder="Enter your email" class="ff-input ff-text-input" />
+            <input type="hidden" value="1" name="embed" />
+            <button type="submit" class='ff-btn ff-btn--secondary mt-4'>Sign Up</button>
+        </div>
+    </form>
+heroimg: "../images/pictograms/cloud.png"
+heroLg: true
+---
+
+{% include "components/divider-flow--default.njk" %}
+
+<!-- Key Features -->
+<div class="product w-full ff-bg-dark px-6 pt-20 pb-24 md:px-0 md:pt-32 md:pb-48">
+    <div class="container m-auto text-center max-w-4xl">
+        <div class="mt-9">
+            <h1 class="mb-4">Key Features</h1>
+        </div>
+        <div class="mt-20 flex flex-wrap justify-center">
+            <div class="company-value">
+                <img src="../images/pictograms/time.png" />
+                <h5>Sub-Minute Setup</h5>
+            </div>
+            <div class="company-value">
+                <img src="../images/pictograms/security.png" />
+                <h5>SSO</h5>
+            </div>
+            <div class="company-value">
+                <img src="../images/pictograms/community.png" />
+                <h5>Team-Based Collaboration</h5>
+            </div>
+            <div class="company-value">
+                <img src="../images/pictograms/node_catalog.png" />
+                <h5>Custom Node Catalog</h5>
+            </div>
+            <div class="company-value">
+                <img src="../images/pictograms/audit.png" />
+                <h5>Audit Log</h5>
+            </div>
+            <div class="company-value">
+                <img src="../images/pictograms/ticket.png" />
+                <h5>Ticket-Based Support</h5>
+            </div>
+        </div>
+        <div class="mt-2"><p class="opacity-70">(some features coming soon)</p></div>
+    </div>
+</div>
+
+{% include "components/divider-flow--top-red--light.njk" %}
+
+<!-- Feature List -->
+{% set cloudFeaturesHtml %}
+<div class="max-w-full overflow-x-scroll">
+    {% include "feature_lists/cloud.njk" %}
+</div>
+{% endset -%}
+
+{% set selfFeaturesHtml %}
+<div class="max-w-full overflow-x-scroll">
+    Hello Self Managed
+</div>
+{% endset -%}
+
+
+<div class="about w-full ff-bg-light pb-32">
+    <div class="container m-auto text-center max-w-4xl">
+        <!-- Cloud Feature List -->
+        <div id="tab-cloud" class="ff-tab-content ff--active">{{ cloudFeaturesHtml | safe }}</div>
+    </div>
+</div>
