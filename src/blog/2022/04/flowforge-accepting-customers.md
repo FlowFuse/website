@@ -1,7 +1,7 @@
 ---
 title: FlowForge is accepting customers now
-subtitle: From today forward, we start accepting customers of our waitlist
-description: From today forward, we start accepting customers of our waitlist
+subtitle: We're starting to onboard users from the waitlist
+description: We're starting to onboard users from the waitlist
 date: 2022-04-04
 authors: ["zeger-jan-van-de-weg"]
 ---
@@ -15,7 +15,8 @@ first customers.
 
 A few weeks ago our product was nearly in a state where it could support customers,
 when that was the case, we [opened up our waitlist](https://flowforge.com/blog/2022/02/announcing-flowforge-cloud/).
-The waitlist is growing daily, a trend we're aiming to break today. The first
+The waitlist has been growing daily and now we're ready to start inviting those
+users onto the platform. The first
 lucky few users are being added today, and each working day for the foreseeable
 future we'll continue onboarding users. New users will receive an email from our
 team with their login details and can start creating new workflows with Node-RED
