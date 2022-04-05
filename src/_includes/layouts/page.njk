@@ -5,9 +5,9 @@ layout: layouts/base.njk
 <div class="w-full page">
     {% if title %}
         {% if nohero %}
-        <div class="container m-auto text-center flex mt-12 p-6 mb-6 md:max-w-4xl">
+        <div class="container m-auto text-center flex mt-6 p-6 mb-6 md:max-w-4xl md:mt-12">
         {% else %}
-        <div class="hero {{ 'hero-lg' if heroLg else ''}} container m-auto text-center flex flex-wrap mt-12 p-6 mb-32 md:flex-nowrap md:max-w-4xl">
+        <div class="hero {{ 'hero-lg' if heroLg else ''}} container m-auto text-center flex flex-wrap mt-6 p-6 mb-32 md:flex-nowrap md:max-w-4xl md:mt-12">
         {% endif %}
             <div class="text-left {{ 'md:pr-20' if heroLg else 'md:pr-32'}}">
                 <h1>{{ title }}</h1>

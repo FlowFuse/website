@@ -13,14 +13,13 @@
 
 .page h4 {
     font-size: 1.5rem;
-    font-weight: bold;
+    font-weight: 600;
     margin-bottom: 12px;
+    color: white;
 }
 
 .page .hero h4 {
     margin-bottom: 1.5rem;
-    font-weight: 400;
-    color: white;
 }
 
 .page p {
