@@ -3,8 +3,29 @@
     <title>FlowForge</title>
     <link href="https://flowforge.com/blog/index.xml" rel="self"/>
     <link href="https://flowforge.com/blog"/>
-    <updated>2022-04-04T00:00:00Z</updated>
+    <updated>2022-04-05T00:00:00Z</updated>
     <id>https://flowforge.com/blog</id>
+    
+    <entry>
+        <id>https://flowforge.com/blog/2022/04/community-news-03/</id>
+        <title>Community News</title>
+        <summary>News from the FlowForge and Node-RED communities</summary>
+        <updated>2022-04-05T00:00:00Z</updated>
+        <link href="https://flowforge.com/blog/2022/04/community-news-03/"/>
+        <author><name>Sam Machin</name></author>
+        <content type="html">&lt;p&gt;Welcome to the FlowForge newsletter, a regular roundup of what`s happening with both FlowForge and the wider Node-RED community.&lt;/p&gt;
+&lt;!--more--&gt;
+&lt;p&gt;If you&#39;ve got something that you&#39;d like us to share please email &lt;a href=&quot;mailto:contact@flowforge.com&quot;&gt;contact@flowforge.com&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://flowforge.com/&quot;&gt;New Website&lt;/a&gt;&lt;br /&gt;
+Some of you may have noticed the new design on our website, this is the first step in our more refined corporate identity, the same look will be coming to the FlowForge application &lt;a href=&quot;https://github.com/flowforge/flowforge/issues/430&quot;&gt;soon.&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://flowforge.com/blog/2022/03/flowforge-03-released/&quot;&gt;FlowForge 0.3&lt;/a&gt;&lt;br /&gt;
+The latest release introduced 2 new concepts, Templates and Stacks, with these we are starting to show the value of the FlowForge platform allowing you to easily manage the Node-RED settings and versions used by your projects.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://www.opto22.com/support/resources-tools/videos/video-introduction-to-json-for-node-red/&quot;&gt;Intro to JSON for Node-RED&lt;/a&gt;&lt;br /&gt;
+Our friends over at Opto 22 published a handy guide to JSON and how it works in Node-RED, great introduction for new builders and a good refresher for seasoned pros.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://flowforge.com/blog/2022/03/welcome-sean/&quot;&gt;New Team Members&lt;/a&gt;&lt;br /&gt;
+Another new hire joined us this month, meet Sean Terrell.&lt;/p&gt;
+</content>
+    </entry>
     
     <entry>
         <id>https://flowforge.com/blog/2022/04/flowforge-accepting-customers/</id>
