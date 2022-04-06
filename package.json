@@ -27,7 +27,7 @@
     "scripts": {
         "clean": "rm -rf _site && mkdir -p _site/js",
         "start": "npm-run-all clean build:js --parallel dev:*",
-        "build": "NODE_ENV=production npm-run-all clean build:js handbook --parallel prod:*",
+        "build": "NODE_ENV=production npm-run-all clean build:js handbook docs --parallel prod:*",
         "build:js": "terser -c -m -o _site/js/cc.min.js node_modules/vanilla-cookieconsent/dist/cookieconsent.js src/js/cookies.js",
         "docs": "/bin/sh scripts/copy_docs.sh",
         "handbook": "/bin/sh scripts/copy_handbook.sh",
