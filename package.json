@@ -31,6 +31,7 @@
         "build:js": "terser -c -m -o _site/js/cc.min.js node_modules/vanilla-cookieconsent/dist/cookieconsent.js src/js/cookies.js",
         "docs": "/bin/sh scripts/copy_docs.sh",
         "handbook": "/bin/sh scripts/copy_handbook.sh",
+        "dev:docs": "[ -e ../flowforge/docs ] && nodemon -w ../flowforge/docs -e md --exec 'npm run docs' || echo 'docs not found - skipping...'",
         "dev:handbook": "[ -e ../handbook ] && nodemon -w ../handbook -e md --exec 'npm run handbook' || echo 'handbook not found - skipping...'",
         "dev:postcss": "TAILWIND_MODE=watch postcss ./src/css/style.css -o ./_site/css/style.css --config ./postcss.config.js -w",
         "prod:postcss": "postcss ./src/css/style.css -o ./_site/css/style.css --config ./postcss.config.js",
