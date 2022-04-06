@@ -2,3 +2,5 @@
 _site
 node_modules
 src/handbook
+src/docs/*
+!src/docs/docs.json

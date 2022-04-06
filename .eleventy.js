@@ -66,6 +66,7 @@ module.exports = function(eleventyConfig) {
     eleventyConfig.addFilter("rewriteHandbookLinks", (str) => {
         str = str.replace(/href="\.\/([^/]*?)\.md(#.*)?"/g,'href="../$1/$2"')
         str = str.replace(/href="(.*?)\.md(#.*)?"/g,'href="$1/$2"')
+        str = str.replace(/href="(.*?)README\/?"/g, 'href="$1"')
         return str;
     })
     eleventyConfig.addFilter("handbookMapOriginalPath", (str) => {
