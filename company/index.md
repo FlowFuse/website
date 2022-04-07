@@ -3,8 +3,6 @@
 FlowForge is an open core company creating a low-code programming platform based
 on the [OpenJS Foundation Node-RED project](https://nodered.org).
 
- - [About](../company/about.md)
- - [Values](../company/)
  - [Strategy](../company/strategy.md)
  - [Communication](../company/communication.md)
  - [Security](../company/security.md)
