@@ -10,11 +10,11 @@ We use [StandardJS](https://standardjs.com/), with one exception - 4 spaces not 
 
 If you're using VSCode, then we recommend using the [ESLint extenstion](https://github.com/Microsoft/vscode-eslint) and setting `all` for the `Eslint › Code Actions On Save: Mode` setting:
 
-<img width="429" alt="Screenshot 2022-04-07 at 10 11 04" src="https://user-images.githubusercontent.com/99246719/162164540-53cdf921-83a5-4d6e-9062-1552db24f453.png">
+<img width="429" alt="ESLint - Action on Save" src="../images/eslint_actiononsave.png">
 
 In the case of working with `vue` or `njk` files (found in the [frontend](https://github.com/flowforge/flowforge/tree/main/frontend) and [website](https://github.com/flowforge/website) repositories), then you can add `vue` and `njk` to the `Eslint: Probe` setting in order to enable auto-formatting on save for these file types.
 
-<img width="478" alt="Screenshot 2022-04-07 at 10 09 15" src="https://user-images.githubusercontent.com/99246719/162164162-6822e32c-680d-4c5c-af73-64aae24b03a0.png">
+<img width="478" alt="ESLint - Probe" src="../images/eslint_probe.png">
 
 ### Git Best Practices
 
