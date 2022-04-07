@@ -17,6 +17,8 @@ module.exports = function(eleventyConfig) {
     eleventyConfig.addLayoutAlias('nohero', 'layouts/nohero.njk');
     eleventyConfig.addLayoutAlias('redirect', 'layouts/redirect.njk');
     eleventyConfig.addPassthroughCopy("src/images");
+    eleventyConfig.addPassthroughCopy("src/handbook/images");
+    eleventyConfig.addPassthroughCopy("src/docs/images");
     // eleventyConfig.addPassthroughCopy("src/js");
     eleventyConfig.addPassthroughCopy("src/CNAME");
     eleventyConfig.addPassthroughCopy({"src/favicon/*":"/"});
@@ -65,6 +67,7 @@ module.exports = function(eleventyConfig) {
 
     eleventyConfig.addFilter("rewriteHandbookLinks", (str) => {
         str = str.replace(/href="\.\/([^/]*?)\.md(#.*)?"/g,'href="../$1/$2"')
+        str = str.replace(/src="(\.\.\/images)(.*?)"/g,'src="../$1$2"')
         str = str.replace(/href="(.*?)\.md(#.*)?"/g,'href="$1/$2"')
         str = str.replace(/href="(.*?)README\/?"/g, 'href="$1"')
         return str;

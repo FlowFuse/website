@@ -17,6 +17,7 @@ cd ../flowforge/docs
 for file in `find . -type f -not -path "./.*/*"`
 do
      lastUpdate=$(git log -1 --pretty="format:%ci" $file)
+     version="`jq .version ../package.json`"
 
      dir=$(dirname $file)
      dest=../../website/src/docs/$dir
@@ -27,6 +28,7 @@ do
          *.md)
             echo "---" > $destFile
             echo "updated: $lastUpdate" >> $destFile
+            echo "version: $version" >> $destFile
             echo "---" >> $destFile
             cat $file >> $destFile
          ;;
