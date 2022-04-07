@@ -20,14 +20,16 @@ In the case of working with `vue` or `njk` files (found in the [frontend](https:
 
 ### Committing
 
-Take care when adding files to a commit. It's easy just to `git add -A` but this can result in commits and PRs being clogged with excessive changes that aren't linked to the actual issue/feature at hand.
+Take care when adding files to a commit. It's easy just to `git add -A` (i.e. add all local changes to a commit) but this can result in commits and PRs being clogged with excessive changes that aren't linked to the actual issue/feature at hand.
+
+Take your time when commiting files. Review each file carefully and ensure what you're adding to a commit is relevant and necessary.
 
 #### Git Commit Messages
 
 - Capitalise the first letter, no trailing dot, 72 chars or less.
 - First line should be an imperative/present tense, e.g. `Change` (not `Changed` or `Changes`)
 - Do not include the issue number in the first line, this means that commit message are then suitable to include in a changelog as-is.
-- Second line should either be blank, or reference to an issue/PR using one of the GitHub recognised keywords, e.g. `Closes #...` `Cixes #...` `Cart of #...`
+- Second line should either be blank, or reference to an issue/PR using one of the GitHub recognised keywords, e.g. `closes #...` `fixes #...` `part of #...`
 - The remainder should be any further narrative that is needed. Wrapped at 72 chars.
 
 #### Branching vs. Forking
