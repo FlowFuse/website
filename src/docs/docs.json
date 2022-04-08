@@ -1,0 +1,6 @@
+{
+    "layout": "layouts/handbook.njk",
+    "tags": [
+        "docs"
+    ]
+}
