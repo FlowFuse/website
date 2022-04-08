@@ -29,7 +29,7 @@
         "start": "npm-run-all clean build:js --parallel dev:*",
         "build": "NODE_ENV=production npm-run-all clean build:js handbook docs --parallel prod:*",
         "build:js": "terser -c -m -o _site/js/cc.min.js node_modules/vanilla-cookieconsent/dist/cookieconsent.js src/js/cookies.js",
-        "docs": "/bin/sh scripts/copy_docs.sh",
+        "docs": "/bin/bash scripts/copy_docs.sh",
         "handbook": "/bin/sh scripts/copy_handbook.sh",
         "dev:docs": "[ -e ../flowforge/docs ] && nodemon -w ../flowforge/docs -e md --exec 'npm run docs' || echo 'docs not found - skipping...'",
         "dev:handbook": "[ -e ../handbook ] && nodemon -w ../handbook -e md --exec 'npm run handbook' || echo 'handbook not found - skipping...'",
