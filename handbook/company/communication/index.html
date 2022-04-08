@@ -59,7 +59,10 @@
     <div class="container m-auto text-left px-6 md:max-w-screen-lg">
         <div class="handbook">
     <div class="w-full mx-auto ff-bg-light">
-        <div class="font-medium border-b pb-1">/<a class="mx-2" href="/handbook">handbook</a>/<a class="mx-2" href="/handbook/company">company</a>/<a class="mx-2" href="/handbook/company/communication">communication</a></div>
+        <div class="font-medium border-b pb-1">
+            
+            /<a class="mx-2" href="/handbook">handbook</a>/<a class="mx-2" href="/handbook/company">company</a>/<a class="mx-2" href="/handbook/company/communication">communication</a>
+        </div>
     </div>
     <div class="w-full mx-auto ff-bg-light flex flex-col md:flex-row">
         <div class="flex-grow order-last md:order-first">
@@ -152,10 +155,16 @@ enables users to message <code>@Feedback</code> with:</p>
     let currentTag = "";
     let currentToc = toc;
     let currentItem;
-    document.querySelectorAll(".main-content > h3, .main-content > h4").forEach(function(n) {
-        if (n.nodeName === "H3" && currentTag === "H4") {
+    document.querySelectorAll(".main-content > h2, .main-content > h3, .main-content > h4").forEach(function(n) {
+        // which level of "H_" are we working with, and which one did we see most recently
+        const level = parseInt(n.nodeName[1])
+        const prevLevel = currentTag.length > 1 ? parseInt(currentTag[1]) : 0
+
+        if (prevLevel > 0 && level - prevLevel < 0) {
+            // we are moving left with our indent
             currentToc = toc;
-        } else if (n.nodeName === "H4" && currentTag === "H3") {
+        } else if (prevLevel > 0 && level - prevLevel > 0) {
+            // we are creating a new, nested `<ul>`
             currentToc = document.createElement("ul");
             currentToc.classList.add("ml-4")
             currentToc.classList.add("mt-2")
