@@ -50,31 +50,19 @@ Our [values](../company#values) help shape the culture we want to build, both in
 
 ### Strategic Initiatives
 
-#### Q2 2022
+#### 2022
 
-##### FlowForge Platform
+There's four pillars of the product we're investing in:
+1. Node-RED management
+1. Edge Deployments and management
+1. Collaboration features
+1. Enterprise and compliance
 
+Check out our roadmap for on what we're pursuing in the next few releases.
 
+Furthermore, we'll continueing our involvement with the Node-RED community.
 
-##### Node-RED 
-
-
-
-_November 2021_
-
-Our strategic initiatives are what we're focussed on _today_ to help deliver the overall strategy _tomorrow_.
-
-They will evolve and continually update. We may also have initiatives that are not listed here for commercial reasons.
-
-#### FlowForge Platform
-
-1. **Make the forge app repository public** - as an open core project, whilst the core is not necessary OSS, we do want to develop in the open where the community are able to contribute.
-
-    Making the repo public will attract attention due to the community's natural interest in what we are doing. So we want to make sure it's done at the right time, when there is something worthwhile for them to see.
-
-#### Node-RED
-
-1. **Provide technical leadership and direction** - with the 2.2 Milestone release scheduled for January, now is the time to be driving discussions around the items we want to prioritise. This includes, but not limited to:
+1. **Provide technical leadership and direction** - This includes
     - Flow Testing Framework
     - Runtime Hooks on Deploy path
 
