@@ -154,6 +154,9 @@ want to begin.</p>
 <p>After cloning the core repository, you will need to install the dependencies by running</p>
 <pre><code>npm install
 </code></pre>
+<p><strong>Note</strong> If running on MacOS 12.3 or newer you may get an error around node-gyp being unable to build sqllite3.
+This is because MacOS no longer includes python2.7.
+The solution is to run the command <code>npm config set python python3</code> to alias to python3 and then run <code>npm install</code> again</p>
 <p>By default this will install the latest released versions of the FlowForge components. If
 you want to run from the latest source code then you can check out all the required
 projects in the same directory</p>
@@ -170,10 +173,29 @@ projects in the same directory</p>
 <pre><code>npm run dev:local
 </code></pre>
 <p>This will create all the required symlinks to the relevent projects.</p>
+<p>Next in the <code>forge-ui-components</code>  directory run</p>
+<pre><code>npm install
+npm run build
+</code></pre>
+<p>In the <code>flowforge-nr-auth</code> directory run</p>
+<pre><code>npm install
+</code></pre>
+<p>In the <code>flowforge-nr-audit-logger</code> directory run</p>
+<pre><code>npm install
+</code></pre>
+<p>In the <code>flowforge-nr-storage</code> directory run</p>
+<pre><code>npm install
+</code></pre>
 <p><strong>Note</strong>: do not check in the modified <code>package.json</code> that will be created in the
 <code>flowforge</code>, <code>flowforge-nr-launcher</code> or <code>flowforge-driver-localfs</code> projects.</p>
+<h3 id="create-a-stack" tabindex="-1"><a class="header-anchor" href="#create-a-stack">#&nbsp;</a> Create a Stack</h3>
+<p>You will need to setup the version(s) of Node-RED you want to use in your stacks.</p>
+<p>From the flowforge directory run</p>
+<pre><code>npm run install-stack --vers=2.2.2
+</code></pre>
+<p>Where <code>2.2.2</code> is the version of Node-RED you want to use in the stack</p>
 <h3 id="running-flowforge" tabindex="-1"><a class="header-anchor" href="#running-flowforge">#&nbsp;</a> Running FlowForge</h3>
-<p>A number of <code>npm</code> tasks are defined in the <code>package.json</code> file. To get started use:</p>
+<p>A number of <code>npm</code> tasks are defined in the <code>package.json</code> file. To get started from the flowforge directory use:</p>
 <pre><code>npm run serve
 </code></pre>
 <p>This does a couple things in parallel:</p>
@@ -241,7 +263,7 @@ printed to the console and generates a browseable HTML copy under <code>coverage
             <h3 class="font-medium border-b pb-1 mb-4">On this page</h3>
             <ul id="toc" class="text-sm border-b mb-4"></ul>
             <div class="text-sm pb-1 text-right mb-4"><a href="https://github.com/flowforge/handbook/edit/main//docs/contribute/index.md">Edit this page</a></div>
-            <div class="text-xs pb-1 text-right mb-4 italic">Updated: 2022-04-07 22:04:03 +0100</div>
+            <div class="text-xs pb-1 text-right mb-4 italic">Updated: 2022-04-12 10:13:19 +0100</div>
         </div>
     </div>
 </div>
