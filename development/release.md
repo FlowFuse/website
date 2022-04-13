@@ -17,7 +17,7 @@ The follow process should be followed for a FlowForge release.
  - From within the `release-0.4.0` directory run the `prepare-release 0.4.0` script (from the admin project). This will raise update all the required
  `package.json` files and raise PRs to update the projects.
  - Have update PR reviewed by somebody other than the Release Manager
- - All package numbering PRs to be merged and releases tagged in order in release issue in the admin project.
+ - All package numbering PRs to be merged, and releases to be tagged, in the order defined in the auto-generated release issue in the admin project.
  - Once all the components have been built and published to npm the `installer`, `helm` and `docker-compose` components can be updated and tagged.
 
 ## Next Steps
