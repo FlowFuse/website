@@ -14,7 +14,7 @@ The follow process should be followed for a FlowForge release.
 
  - Use the `checkout-release` script (from the admin project) to check out clean clones of the packages required to do a release 
  (e.g. `./checkout-release 0.4.0` will create a directory called `release-0.4.0` containing all the required projects)
- - From with in the `release-0.4.0` directory run the `prepare-release 0.4.0` script (from the admin project). This will raise update all the required
+ - From within the `release-0.4.0` directory run the `prepare-release 0.4.0` script (from the admin project). This will raise update all the required
  `package.json` files and raise PRs to update the projects.
  - Have update PR reviewed by somebody other than the Release Manager
  - All package numbering PRs to be merged and releases tagged in order in release issue in the admin project.
