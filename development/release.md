@@ -12,11 +12,12 @@ The follow process should be followed for a FlowForge release.
 
 ## Steps
 
- - PR raised to update all relevent version numbers (Please reffer to [Packaging](packaging.md#package-verion-numbering) for details). This should include updating any entries in the `dependencies` section of the `package.json` if applicable and remember to run `npm install` and check in the new updated `package-lock.json` as part of the PR.
+ - Use the `checkout-release` script (from the admin project) to check out clean clones of the packages required to do a release 
+ (e.g. `./checkout-release 0.4.0` will create a directory called `release-0.4.0` containing all the required projects)
+ - From within the `release-0.4.0` directory run the `prepare-release 0.4.0` script (from the admin project). This will update all the required
+ `package.json` files and raise PRs to update the projects.
  - Have update PR reviewed by somebody other than the Release Manager
- - All package numbering PRs to be merged upfront
- - Create Releases tagged in Github projects
- - Tagging the release will automatically publish the npm modules, please ensure the publish has completed before moving on to the next project as those with dependencies will need to be able to download them as part of the GitHub Action that does the publish.
+ - All package numbering PRs to be merged, and releases to be tagged, in the order defined in the auto-generated release issue in the admin project.
  - Once all the components have been built and published to npm the `installer`, `helm` and `docker-compose` components can be updated and tagged.
 
 ## Next Steps
