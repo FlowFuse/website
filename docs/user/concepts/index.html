@@ -76,9 +76,9 @@ are a few concepts the platform introduces to help organise things.</p>
 <p>The platform refers to each Node-RED instance as a Project.</p>
 <p>Within the FlowForge application, you can create/start/stop projects and view
 its logs.</p>
-<p>With the 0.1.0 release, the projects are fairly plain instances of Node-RED -
-with some custom settings to integrate them into the platform properly. In the
-future it will be possible to further customise the project settings.</p>
+<p>At present, the projects are fairly plain instances of Node-RED -
+with some custom settings to integrate them into the platform properly.
+There are a number of settings that can be modified for a project based on what has been configured and allowed in the <a href="#project-template">Project Template</a>. These can be access from the Settings page of the project and there is a description of each one in the settings.</p>
 <h3 id="team" tabindex="-1"><a class="header-anchor" href="#team">#&nbsp;</a> Team</h3>
 <p>Each project is owned by a Team. Only members of that team have access to the
 Node-RED editor for the project.</p>
@@ -98,6 +98,8 @@ comes to create a new project, they chose from the available stacks.</p>
 settings a user familiar with Node-RED would be used to modifying in their settings
 file. But it can also be used to customise the palette of nodes that are preinstalled,
 provide a set of default flows and change the look and feel of the editor.</p>
+<p>A template can also specify <a href="envvar">Environment Variables</a> which can then have their values as editable for each project or locked.
+It is not possible to disable the use of environment variables in a project.</p>
 <p><em>Note:</em> not all of these features are available today.</p>
 <p>In the current release of FlowForge, Project Templates are created by the Administrator.
 As well as define the values, they also get to choose whether projects are able
@@ -109,7 +111,7 @@ to override any of the settings for themselves.</p>
             <h3 class="font-medium border-b pb-1 mb-4">On this page</h3>
             <ul id="toc" class="text-sm border-b mb-4"></ul>
             <div class="text-sm pb-1 text-right mb-4"><a href="https://github.com/flowforge/handbook/edit/main//docs/user/concepts.md">Edit this page</a></div>
-            <div class="text-xs pb-1 text-right mb-4 italic">Updated: 2022-04-12 10:13:19 +0100</div>
+            <div class="text-xs pb-1 text-right mb-4 italic">Updated: 2022-04-13 15:24:08 +0100</div>
         </div>
     </div>
 </div>

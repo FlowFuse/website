@@ -63,28 +63,32 @@
             
             v0.3.0
             
-            /<a class="mx-2" href="/docs">docs</a>/<a class="mx-2" href="/docs/contribute">contribute</a>/<a class="mx-2" href="/docs/contribute/workflows">workflows</a>
+            /<a class="mx-2" href="/docs">docs</a>/<a class="mx-2" href="/docs/user">user</a>/<a class="mx-2" href="/docs/user/changestack">changestack</a>
         </div>
     </div>
     <div class="w-full mx-auto ff-bg-light flex flex-col md:flex-row">
         <div class="flex-grow order-last md:order-first">
             <div class="mt-6 mb-4 prose prose-blue main-content">
-                <h1 id="workflows" tabindex="-1"><a class="header-anchor" href="#workflows">#&nbsp;</a> Workflows</h1>
-<p>A collection of sequence diagrams for key parts of the FlowForge platform</p>
+                <h1 id="changing-the-stack" tabindex="-1"><a class="header-anchor" href="#changing-the-stack">#&nbsp;</a> Changing the Stack</h1>
+<p><a href="concepts#project-stack">Project Stacks</a> define various aspects of how the project is run.</p>
+<p>Notably the Version of Node-RED which a project uses, you can now change the stack of an existing project which allows you to upgrade the version of Node-RED</p>
+<p><strong>Note:</strong> An administrator must make a specific version of Node-RED availble by creating the relevent stack</p>
+<h2 id="how-to-change-stack" tabindex="-1"><a class="header-anchor" href="#how-to-change-stack">#&nbsp;</a> How to Change Stack</h2>
+<p>Before changing a stack you should ensure that you have a backup of your data from Node-RED and that there are no active workflows, switching the stack will restart the project and involve a few seconds of downtime.</p>
 <ul>
-<li><a href="../signup/">User Sign Up</a></li>
-<li><a href="../password-reset/">Password Reset</a></li>
-<li><a href="../invite-external-user/">Invite ExternalUser</a></li>
-<li><a href="../team-create/">Team Create</a></li>
-<li><a href="../project-create/">Project Create</a></li>
+<li>From the project page  select the <code>Settings</code> tab then  the <code>Danger</code> section.</li>
+<li>Click the <code>Change Project Stack</code> Button</li>
+<li>When prompted select your new stack from the availble list</li>
+<li>Click <code>Change Stack</code></li>
 </ul>
+<p>Your project will now restart on the new stack</p>
 
             </div>
         </div>
         <div class="w-full md:w-64 md:ml-8 mt-4 md:mt-6 px-2">
             <h3 class="font-medium border-b pb-1 mb-4">On this page</h3>
             <ul id="toc" class="text-sm border-b mb-4"></ul>
-            <div class="text-sm pb-1 text-right mb-4"><a href="https://github.com/flowforge/handbook/edit/main//docs/contribute/workflows/index.md">Edit this page</a></div>
+            <div class="text-sm pb-1 text-right mb-4"><a href="https://github.com/flowforge/handbook/edit/main//docs/user/changestack.md">Edit this page</a></div>
             <div class="text-xs pb-1 text-right mb-4 italic">Updated: 2022-04-13 15:24:08 +0100</div>
         </div>
     </div>

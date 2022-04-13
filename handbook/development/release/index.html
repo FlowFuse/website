@@ -79,11 +79,12 @@
 </ul>
 <h2 id="steps" tabindex="-1"><a class="header-anchor" href="#steps">#&nbsp;</a> Steps</h2>
 <ul>
-<li>PR raised to update all relevent version numbers (Please reffer to <a href="packaging/#package-verion-numbering">Packaging</a> for details). This should include updating any entries in the <code>dependencies</code> section of the <code>package.json</code> if applicable and remember to run <code>npm install</code> and check in the new updated <code>package-lock.json</code> as part of the PR.</li>
+<li>Use the <code>checkout-release</code> script (from the admin project) to check out clean clones of the packages required to do a release
+(e.g. <code>./checkout-release 0.4.0</code> will create a directory called <code>release-0.4.0</code> containing all the required projects)</li>
+<li>From within the <code>release-0.4.0</code> directory run the <code>prepare-release 0.4.0</code> script (from the admin project). This will update all the required
+<code>package.json</code> files and raise PRs to update the projects.</li>
 <li>Have update PR reviewed by somebody other than the Release Manager</li>
-<li>All package numbering PRs to be merged upfront</li>
-<li>Create Releases tagged in Github projects</li>
-<li>Tagging the release will automatically publish the npm modules, please ensure the publish has completed before moving on to the next project as those with dependencies will need to be able to download them as part of the GitHub Action that does the publish.</li>
+<li>All package numbering PRs to be merged, and releases to be tagged, in the order defined in the auto-generated release issue in the admin project.</li>
 <li>Once all the components have been built and published to npm the <code>installer</code>, <code>helm</code> and <code>docker-compose</code> components can be updated and tagged.</li>
 </ul>
 <h2 id="next-steps" tabindex="-1"><a class="header-anchor" href="#next-steps">#&nbsp;</a> Next Steps</h2>
@@ -97,7 +98,7 @@
             <h3 class="font-medium border-b pb-1 mb-4">On this page</h3>
             <ul id="toc" class="text-sm border-b mb-4"></ul>
             <div class="text-sm pb-1 text-right mb-4"><a href="https://github.com/flowforge/handbook/edit/main/development/release.md">Edit this page</a></div>
-            <div class="text-xs pb-1 text-right mb-4 italic">Updated: 2022-04-12 11:35:45 +0200</div>
+            <div class="text-xs pb-1 text-right mb-4 italic">Updated: 2022-04-13 16:41:19 +0100</div>
         </div>
     </div>
 </div>
