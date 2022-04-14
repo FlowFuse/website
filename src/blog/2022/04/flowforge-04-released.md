@@ -10,7 +10,7 @@ This release of the FlowForge add a seemingly small but significant new feature.
 
 <!--more-->
 
-With (Node-RED 3.0 fast approaching)[https://nodered.org/about/releases/] we've been making sure we are ready to support this.
+With [Node-RED 3.0 fast approaching](https://nodered.org/about/releases/) we've been making sure we are ready to support this.
 
 ### Upgrading Node-RED
 
