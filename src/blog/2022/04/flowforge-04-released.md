@@ -30,7 +30,7 @@ We will also be making available the Beta's of Node-RED 3.0 within FlowForge Clo
 
 Another key new feature we are introducing is the ability to set and manage environment variables within your projects.
 Environment Variables are a key tool when building applications as they allow you to to separate the configuration of your system from the logic in the code. Even in Low-Code platforms this is an important design pattern. Environment variables are fully integrated into [Templates](https://flowforge.com/docs/user/concepts/#project-template) that we introduced last month so they can be set both at the platform level or on an individual project.
-Our plans for 0.5 will make these even more useful as we introduce the ability to [duplicate a project](https://github.com/flowforge/flowforge/issues/271) and then modify those variables for the new project.
+Our plans for the next release will make these even more useful as we introduce the ability to [duplicate a project](https://github.com/flowforge/flowforge/issues/271) and then modify those variables for the new project.
 
  - [Story #225 - Project Environment Variables](https://github.com/flowforge/flowforge/issues/225)
  - [Docs](https://flowforge.com/docs/user/envvar/)
