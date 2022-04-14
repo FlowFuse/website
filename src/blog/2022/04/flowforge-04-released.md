@@ -45,7 +45,7 @@ We would like to say a big thank-you to [Fakorede Damilola Idris](https://fakoco
 
 ### Getting started with FlowForge
 
-The documentation provides a guide for [installing FlowForge on a local server](https://github.com/flowforge/flowforge/tree/main/docs).
+The documentation provides a guide for [installing FlowForge on a local server](http://flowforge.com/docs/install/).
 
 If you haven't played with FlowForge yet, here's a more complete walk-through
 of the platform:
