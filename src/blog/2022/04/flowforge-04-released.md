@@ -55,7 +55,7 @@ of the platform:
 ### Upgrading FlowForge
 
 If you installed a previous version of FlowForge  and want to upgrade, our documentation provides a
-guide for [upgrading FlowForge on a local server](https://github.com/flowforge/flowforge/tree/main/docs/install/local#upgrade).
+guide for [upgrading FlowForge on a local server](http://flowforge.com/docs/install#upgrade).
 
 ### Getting help
 
