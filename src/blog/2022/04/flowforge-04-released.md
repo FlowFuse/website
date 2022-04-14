@@ -14,7 +14,7 @@ With [Node-RED 3.0 fast approaching](https://nodered.org/about/releases/) we've 
 
 ### Upgrading Node-RED
 
-The goal of FlowForge is to be the best way to run Node-RED at scale, whether thats many users or many instances. Node-RED is a constantly developing as a platform and therefore part of running Node-RED is also upgrading the version you are running.
+The goal of FlowForge is to be the best way to run Node-RED at any scale, whether that's many users or many instances. Node-RED is a constantly developing as a platform and therefore part of running Node-RED is also upgrading the version you are running.
 
 With the 0.4 release today we've made that super simple in FlowForge. Last month we introduced the concept of [Project Stacks](https://flowforge.com/docs/user/concepts/#project-stack), and one of the key elements of a Stack was the version of Node-RED in use. Initially this may have seemed fairly basic, when you create a new project you usually want to use the latest version of Node-RED. However what happens when a new version is released and you have an existing project?
 Now you can change the stack that a project is running on, which in turn will change the version of Node-RED. This is a simple process from the project settings, it only requires a short period of downtime while the project restarts on the new stack, typically around 10-15 seconds.
