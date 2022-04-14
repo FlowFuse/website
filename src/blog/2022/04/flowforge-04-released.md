@@ -6,7 +6,7 @@ date: 2022-04-14 12:00:00.0
 authors: ["sam-machin"]
 ---
 
-This release of the FlowForge add a seemingly small but significant new feature.
+This release of the FlowForge adds a seemingly small, but significant new feature.
 
 <!--more-->
 
@@ -72,7 +72,7 @@ Our regular release cycle puts the next release on Thursday 12th May.
 We will be building on features in the last few releases around managing your projects and using templates, we're also  setting the foundations of our work to [manage Node-RED on your own devices running at the Edge](https://github.com/flowforge/flowforge/issues/446).
 
 
-We've started inviting people to FlowForge Cloud but its not too late to join the waiting list.
+Our first users have already been creating projects on FlowForge, you can too if you enter your email below to join the waitlist.
 
 For more information, check out the [announcement blog post](https://flowforge.com/blog/announcing-flowforge-cloud/), or join the waiting
 list here:
