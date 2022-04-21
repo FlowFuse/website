@@ -40,7 +40,7 @@ Our plans for the next release will make these even more useful as we introduce 
 There are many more improvements in this release, such as the ability to [Set the timezone](https://github.com/flowforge/flowforge/issues/239) your project is running in, we've also been iterating on our billing experience as we've welcomed the first paying customers to FlowForge Cloud.
 
 Finally we're very happy that we've had our first external contribution to the code base, as an Open Core company we believe strongly that Open Source lives at the heart of everything we do. 
-We would like to say a big thank-you to [Fakorede Damilola Idris](https://fakocodes.netlify.app/) for his work on fixing a [bug[(https://github.com/flowforge/flowforge/issues/424) in the UI.
+We would like to say a big thank-you to [Fakorede Damilola Idris](https://fakocodes.netlify.app/) for his work on fixing a [bug](https://github.com/flowforge/flowforge/issues/424) in the UI.
 
 
 ### Getting started with FlowForge
