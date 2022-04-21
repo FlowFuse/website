@@ -61,7 +61,7 @@
     <div class="w-full mx-auto ff-bg-light">
         <div class="font-medium border-b pb-1">
             
-            v0.4.1
+            v0.4.3
             
             /<a class="mx-2" href="/docs">docs</a>/<a class="mx-2" href="/docs/install">install</a>/<a class="mx-2" href="/docs/install/docker">docker</a>
         </div>
@@ -99,6 +99,7 @@ cd docker-compose-0.x.0
 <p>This is the container you can customise for your deployment.</p>
 <h3 id="configuring-flowforge" tabindex="-1"><a class="header-anchor" href="#configuring-flowforge">#&nbsp;</a> Configuring FlowForge</h3>
 <p>Configuration details are stored in the <code>etc/flowforge.yml</code> file which is mapped into the <code>flowforge/forge-docker</code> container. You will need to edit this file to update the <code>domain</code> and <code>base_url</code> entries to match the DNS settings.</p>
+<p>You also need to update the VIRTUAL_HOST entry in the docker-compose.yml file to use the same domain as in the etc/flowforge.yml file.</p>
 <p>For more details on the options available, see the <a href="../configuration/">configuration guide</a>.</p>
 <h3 id="running-flowforge" tabindex="-1"><a class="header-anchor" href="#running-flowforge">#&nbsp;</a> Running FlowForge</h3>
 <p>Once the containers have been built you can start FlowForge by running:</p>
@@ -116,7 +117,7 @@ creating an administrator for the platform and other configuration options.</p>
             <h3 class="font-medium border-b pb-1 mb-4">On this page</h3>
             <ul id="toc" class="text-sm border-b mb-4"></ul>
             <div class="text-sm pb-1 text-right mb-4"><a href="https://github.com/flowforge/handbook/edit/main//docs/install/docker/index.md">Edit this page</a></div>
-            <div class="text-xs pb-1 text-right mb-4 italic">Updated: 2022-04-19 14:55:57 +0100</div>
+            <div class="text-xs pb-1 text-right mb-4 italic">Updated: 2022-04-20 10:59:53 +0100</div>
         </div>
     </div>
 </div>
