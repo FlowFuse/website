@@ -18,7 +18,7 @@ Yesterday the first beta of Node-RED 3.0 was [released](https://discourse.nodere
 ![Selecting the beta Stack](../images/beta_stack.gif "Selecting the beta Stack")
 
 
-FlowForge is the best  way to run multiple Node-RED instances and different versions, betas are exciting but you don't want to risk your production applications with an early upgrade, so why not create a new project just to try things out.
+FlowForge is the best way to run multiple Node-RED instances at different versions. Beta releases are exciting to try out, but you don't want to risk your production applications with an early upgrade. FlowForge makes it easy to create a new project to try things out.
 
 We'll continue to update the stack choice with each beta as and when they are released.
 
