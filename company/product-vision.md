@@ -2,7 +2,7 @@
 
 ## Background
 
-Our [Company Strategy](stratigy.md) sets out 4 pillars that our product work is focussed around
+Our [Company Strategy](strategy.md) sets out 4 pillars that our product work is focussed around
 
 - Provide the best Node-RED experience.
 - Enable users to run Node-RED at the edge.
