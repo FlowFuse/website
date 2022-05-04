@@ -17,10 +17,21 @@
 &lt;!--more--&gt;
 &lt;p&gt;When we released &lt;a href=&quot;https://flowforge.com/blog/2022/04/flowforge-04-released/&quot;&gt;FlowForge 0.4&lt;/a&gt; last month we talked about allowing users to select the stack their project runs on.
 Until now we&#39;ve only offered one stack which has been the latest Node-RED release (2.2.2).&lt;/p&gt;
-&lt;p&gt;Yesterday the first beta of Node-RED 3.0 was &lt;a href=&quot;https://discourse.nodered.org/t/node-red-3-0-0-beta-1-released/62124&quot;&gt;released&lt;/a&gt;, so as of today we have a choice of stacks. You can stick with the &lt;em&gt;Default&lt;/em&gt; and use Node-RED 2.2.2 or if you want to try out the beta you can select &lt;em&gt;Node-RED-3.0.0-beta-1&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;Yesterday the first beta of Node-RED 3.0 was &lt;a href=&quot;https://discourse.nodered.org/t/node-red-3-0-0-beta-1-released/62124&quot;&gt;released&lt;/a&gt;, so as of today we have added a choice of stacks to FlowForge Cloud. You can stick with the &lt;em&gt;Default&lt;/em&gt; and use Node-RED 2.2.2 or if you want to try out the beta you can select &lt;em&gt;Node-RED-3.0.0-beta-1&lt;/em&gt;.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;https://flowforge.com/blog/2022/05/images/beta_stack.gif&quot; alt=&quot;Selecting the beta Stack&quot; title=&quot;Selecting the beta Stack&quot; /&gt;&lt;/p&gt;
 &lt;p&gt;FlowForge is the best way to run multiple Node-RED instances at different versions. Beta releases are exciting to try out, but you don&#39;t want to risk your production applications with an early upgrade. FlowForge makes it easy to create a new project to try things out.&lt;/p&gt;
-&lt;p&gt;We&#39;ll continue to update the stack choice with each beta as and when they are released.&lt;/p&gt;
+&lt;p&gt;We&#39;ll continue to update the stack choice with each beta when they are released.&lt;/p&gt;
+&lt;p&gt;We&#39;re still draining the wait list for FlowForge Cloud, so it&#39;s not too late to sign up.&lt;/p&gt;
+&lt;h4 id=&quot;joining-the-wait-list&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://flowforge.com/blog/2022/05/node-red-3-beta-stack/#joining-the-wait-list&quot;&gt;#&amp;nbsp;&lt;/a&gt; Joining the wait list&lt;/h4&gt;
+&lt;div class=&quot;mt-4 flex flex-col&quot;&gt;
+    &lt;form action=&quot;https://buttondown.email/api/emails/embed-subscribe/flowforge-waitlist&quot; method=&quot;post&quot; target=&quot;popupwindow&quot; onsubmit=&quot;window.open(&#39;https://buttondown.email/flowforge-waitlist&#39;, &#39;popupwindow&#39;)&quot; class=&quot;embeddable-buttondown-form p-1 my-1 &quot;&gt;
+    &lt;div class=&quot;flex flex-col md:flex-row&quot;&gt;
+        &lt;input type=&quot;email&quot; name=&quot;email&quot; id=&quot;bd-email&quot; placeholder=&quot;Enter your email&quot; class=&quot;lg:w-80 md:w-60 py-2 px-4 rounded border-blue-hero border-2 focus:border-blue-hero-darker  focus:outline-none&quot; /&gt;
+        &lt;input type=&quot;hidden&quot; value=&quot;1&quot; name=&quot;embed&quot; /&gt;
+        &lt;input type=&quot;submit&quot; value=&quot;Sign Up&quot; class=&quot;ff-btn ff-btn--secondary ml-4&quot; /&gt;
+    &lt;/div&gt;
+&lt;/form&gt;
+&lt;/div&gt;
 </content>
     </entry>
     
