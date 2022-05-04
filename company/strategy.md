@@ -58,9 +58,10 @@ There's four pillars of the product we're investing in:
 1. Collaboration features
 1. Enterprise and compliance
 
-Check out our roadmap for on what we're pursuing in the next few releases.
+The [product vision](../company/product-vision.md) goes into this in more depth.
+Check out our [roadmap](https://github.com/orgs/flowforge/projects/5) for on what we're pursuing in the next few releases.
 
-Furthermore, we'll continueing our involvement with the Node-RED community.
+Furthermore, we'll continuing our involvement with the Node-RED community.
 
 1. **Provide technical leadership and direction** - This includes
     - Flow Testing Framework

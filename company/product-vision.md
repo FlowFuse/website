@@ -4,11 +4,6 @@
 
 Our [Company Strategy](strategy.md) sets out 4 pillars that our product work is focussed around
 
-- Provide the best Node-RED experience.
-- Enable users to run Node-RED at the edge.
-- Enable teams to collaborate when working with Node-RED.
-- Meet the compliance needs of the enterprise.
-
 Therefore our product activities should be related back to at least one of these 4 pillars.
 
 IN addition to these pillars we will still do the work needed to ensure a stable, manageable,  platform with a high quality codebase.
@@ -18,7 +13,7 @@ IN addition to these pillars we will still do the work needed to ensure a stable
 Until the end of 2022 we will focus on the following:
 
 In order to **provide the best Node-RED experience**;
-- We will continue to expose the most useful configuration options for Node-RED within your  project, features like Time Zone support, modifying the editor path and Environment Variables mean that people can use Node-RED on FlowForge in more use-cases
+- We will continue to expose the most useful configuration options for Node-RED meaning that people can use Node-RED on FlowForge in more use-cases
 - Custom Domains for projects will also improve the Node-RED experience allowing users to publish their applications to the web with their own identity.
 - Persistent context will alow users to build flows with better confidence in the integrity of their data.
 - Additional service like Message Brokers and Persistent Storage will provide additional utility and value to the platform while providing the opportunity to increase revenue through add-ons
