@@ -15,7 +15,7 @@ IN addition to these pillars we will still do the work needed to ensure a stable
 
 ## 2022 Plan
 
-Until the end of 2022 We will focus on the following:
+Until the end of 2022 we will focus on the following:
 
 In order to **provide the Best Node-RED experience**;
 - We will continue to expose the most useful configuration options for Node-RED within your  project, features like Time Zone support, modifying the editor path and Environment Variables mean that people can use Node-RED on FlowForge in more use-cases
