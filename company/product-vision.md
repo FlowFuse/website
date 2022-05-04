@@ -17,7 +17,7 @@ IN addition to these pillars we will still do the work needed to ensure a stable
 
 Until the end of 2022 we will focus on the following:
 
-In order to **provide the Best Node-RED experience**;
+In order to **provide the best Node-RED experience**;
 - We will continue to expose the most useful configuration options for Node-RED within your  project, features like Time Zone support, modifying the editor path and Environment Variables mean that people can use Node-RED on FlowForge in more use-cases
 - Custom Domains for projects will also improve the Node-RED experience allowing users to publish their applications to the web with their own identity.
 - Persistent context will alow users to build flows with better confidence in the integrity of their data.
