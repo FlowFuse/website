@@ -3,8 +3,26 @@
     <title>FlowForge</title>
     <link href="https://flowforge.com/blog/index.xml" rel="self"/>
     <link href="https://flowforge.com/blog"/>
-    <updated>2022-04-14T12:00:00Z</updated>
+    <updated>2022-05-04T00:00:00Z</updated>
     <id>https://flowforge.com/blog</id>
+    
+    <entry>
+        <id>https://flowforge.com/blog/2022/05/node-red-3-beta-stack/</id>
+        <title>Node-RED 3.0 Beta Stack</title>
+        <summary>Try out the next major Node-RED release</summary>
+        <updated>2022-05-04T00:00:00Z</updated>
+        <link href="https://flowforge.com/blog/2022/05/node-red-3-beta-stack/"/>
+        <author><name>Sam Machin</name></author>
+        <content type="html">&lt;p&gt;The first beta of Node-RED 3.0 is here and FlowForge is ready for you to try it out.&lt;/p&gt;
+&lt;!--more--&gt;
+&lt;p&gt;When we released &lt;a href=&quot;https://flowforge.com/blog/2022/04/flowforge-04-released/&quot;&gt;FlowForge 0.4&lt;/a&gt; last month we talked about allowing users to select the stack their project runs on.
+Until now we&#39;ve only offered one stack which has been the latest Node-RED release (2.2.2).&lt;/p&gt;
+&lt;p&gt;Yesterday the first beta of Node-RED 3.0 was &lt;a href=&quot;https://discourse.nodered.org/t/node-red-3-0-0-beta-1-released/62124&quot;&gt;released&lt;/a&gt;, so as of today we have a choice of stacks. You can stick with the &lt;em&gt;Default&lt;/em&gt; and use Node-RED 2.2.2 or if you want to try out the beta you can select &lt;em&gt;Node-RED-3.0.0-beta-1&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://flowforge.com/blog/2022/05/images/beta_stack.gif&quot; alt=&quot;Selecting the beta Stack&quot; title=&quot;Selecting the beta Stack&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;FlowForge is the best way to run multiple Node-RED instances at different versions. Beta releases are exciting to try out, but you don&#39;t want to risk your production applications with an early upgrade. FlowForge makes it easy to create a new project to try things out.&lt;/p&gt;
+&lt;p&gt;We&#39;ll continue to update the stack choice with each beta as and when they are released.&lt;/p&gt;
+</content>
+    </entry>
     
     <entry>
         <id>https://flowforge.com/blog/2022/04/flowforge-04-released/</id>
