@@ -11,7 +11,7 @@ The first beta of Node-RED 3.0 is here and FlowForge is ready for you to try it 
 <!--more-->
 
 When we released [FlowForge 0.4](/blog/2022/04/flowforge-04-released/) last month we talked about allowing users to select the stack their project runs on.
-Until now we've only offered one stack which has been the latest Node-RED release (2.2.2) 
+Until now we've only offered one stack which has been the latest Node-RED release (2.2.2).
 
 Yesterday the first beta of Node-RED 3.0 was [released](https://discourse.nodered.org/t/node-red-3-0-0-beta-1-released/62124), so as of today we have a choice of stacks, you can stick with the _Default_ and use Node-RED 2.2.2 or if you want to try out the beta you can select _Node-RED-3.0.0-beta-1_.
 
