@@ -3,6 +3,8 @@ const markdownItAnchor = require("markdown-it-anchor")
 const spacetime = require("spacetime");
 const heroGen = require("./lib/post-hero-gen.js");
 const countryFlag = require("./lib/country-flag-emoji");
+const pluginMermaid = require("@kevingimbel/eleventy-plugin-mermaid");
+
 
 module.exports = function(eleventyConfig) {
     eleventyConfig.setWatchThrottleWaitTime(200); // in milliseconds
@@ -82,6 +84,7 @@ module.exports = function(eleventyConfig) {
         return str+".md";
     })
     eleventyConfig.addPlugin(require("@11ty/eleventy-plugin-rss"))
+    eleventyConfig.addPlugin(pluginMermaid);
 
     const markdownItOptions = {
         html: true,
