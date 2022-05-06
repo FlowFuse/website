@@ -1,0 +1,57 @@
+---
+title: Pricing
+layout: layouts/page.njk
+---
+
+<div class="pricing-tiles">
+    <div class="pricing-tile">
+        <div class="flex justify-between items-center mb-4 px-4 md:-mb-0 md:px-0 md:block">
+            <h4>Community<br>Edition</h4>
+            <div>
+                <h2>$0</h2>
+                <label>Apache 2.0 License</label>
+            </div>
+        </div>
+        <a class="ff-btn ff-btn--secondary" href="https://github.com/flowforge/flowforge">View on GitHub</a>
+    </div>
+    <div class="pricing-tile">
+        <div class="flex justify-between items-center mb-4 px-4 md:-mb-0 md:px-0 md:block">
+            <h4>Cloud<br>Edition</h4>
+            <div>
+                <h2>$15</h2>
+                <label>/project/mo</label>
+            </div>
+        </div>
+        <a class="ff-btn ff-btn--primary" href="https://flowforge.com/blog/2022/02/announcing-flowforge-cloud/">Get Started</a>
+    </div>
+    <div class="pricing-tile">
+        <div class="flex justify-between items-center mb-4 px-4 md:-mb-0 md:px-0 md:block">
+            <h4>Enterprise<br>Edition</h4>
+            <div>
+                <h2 class="lets-talk">Let's Talk</h2>
+                <label>want a bespoke solution?</label>
+            </div>
+        </div>
+        <a class='ff-btn ff-btn--secondary' href='mailto:sales@flowforge.com?subject=Enquiry - FlowForge Cloud Enterprise'>Contact Us</a>
+    </div>
+</div>
+
+{% include "components/divider-flow--default.njk" %}
+
+<!-- Feature List -->
+{% set featuresHtml %}
+<div class="max-w-full overflow-x-scroll">
+    {% include "feature_lists/cloud.njk" %}
+</div>
+{% endset -%}
+
+<!-- Feature Comparison -->
+<div class="product w-full ff-bg-light px-6 pt-20 pb-24 md:px-0 md:pt-32 md:pb-48">
+    <div class="container m-auto text-center">
+        <div class="mt-9">
+            <h1 class="mb-4">Feature Comparison</h1>
+        </div>
+        <!-- Feature List -->
+        <div>{{ featuresHtml | safe }}</div>
+    </div>
+</div>
