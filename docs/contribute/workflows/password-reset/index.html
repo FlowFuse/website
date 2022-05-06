@@ -70,36 +70,36 @@
         <div class="flex-grow order-last md:order-first">
             <div class="mt-6 mb-4 prose prose-blue main-content">
                 <h1 id="reset-password-flow" tabindex="-1"><a class="header-anchor" href="#reset-password-flow">#&nbsp;</a> Reset Password Flow</h1>
-<pre><code class="language-mermaid">sequenceDiagram
+<pre class="mermaid">sequenceDiagram
     autonumber
     participant UserEmail
     participant User
     participant UI
     participant Runtime
     participant DB
-    User-&gt;&gt;UI: Access the login page
-    UI-&gt;&gt;UI: Displays 'forgot pw' if `user:reset-password`=true
-    User-&gt;&gt;UI: Clicks 'forgot password'
-    User-&gt;&gt;UI: Enters their email address, clicks submit
-    UI-&gt;&gt;+Runtime: POST /account/forgot_password { email: &lt;email&gt; }
-    Runtime-&gt;&gt;DB: Get user
-    DB-&gt;&gt;Runtime: User
-    Runtime-&gt;&gt;DB: Generate AccessToken { scope: 'password:reset' }
-    Runtime-&gt;&gt;UserEmail: Send email containing reset link
-    Runtime--&gt;&gt;-UI: { status: 'okay' }
+    User->>UI: Access the login page
+    UI->>UI: Displays 'forgot pw' if `user:reset-password`=true
+    User->>UI: Clicks 'forgot password'
+    User->>UI: Enters their email address, clicks submit
+    UI->>+Runtime: POST /account/forgot_password { email: <email> }
+    Runtime->>DB: Get user
+    DB->>Runtime: User
+    Runtime->>DB: Generate AccessToken { scope: 'password:reset' }
+    Runtime->>UserEmail: Send email containing reset link
+    Runtime-->>-UI: { status: 'okay' }
 
-    UserEmail--&gt;&gt;User: Email received
-    User-&gt;&gt;UI: Opens /account/change-password/{token}
-    User-&gt;&gt;UI: Enters new details, clicks submit
-    UI-&gt;&gt;+Runtime: POST /account/reset_password/:token { password }
-    Runtime-&gt;&gt;DB: Validate {token} is a valid password reset token
-    Runtime-&gt;&gt;DB: Get the user associated with token
-    Runtime-&gt;&gt;DB: Change users password
-    Runtime-&gt;&gt;DB: Delete the token
-    Runtime-&gt;&gt;-UI: {status: 'okay' }
-    UI-&gt;UI: Prompt user to login
+    UserEmail-->>User: Email received
+    User->>UI: Opens /account/change-password/{token}
+    User->>UI: Enters new details, clicks submit
+    UI->>+Runtime: POST /account/reset_password/:token { password }
+    Runtime->>DB: Validate {token} is a valid password reset token
+    Runtime->>DB: Get the user associated with token
+    Runtime->>DB: Change users password
+    Runtime->>DB: Delete the token
+    Runtime->>-UI: {status: 'okay' }
+    UI->UI: Prompt user to login
 
-</code></pre>
+</pre>
 
             </div>
         </div>
@@ -144,6 +144,7 @@
         currentToc.append(currentItem);
     })
 </script>
+<script async src="https://unpkg.com/mermaid/dist/mermaid.min.js">mermaid.initialize({ startOnLoad: true });</script>
 
     </div>
 </div>

@@ -142,18 +142,18 @@ that make up the platform:</p>
 <p>The <code>flowforge/flowforge</code> repository is the core of the platform and where you'll likely
 want to begin.</p>
 <h3 id="flowforge-code-structure" tabindex="-1"><a class="header-anchor" href="#flowforge-code-structure">#&nbsp;</a> FlowForge Code Structure</h3>
-<pre><code>/
+<pre class="">/
 ├── config   - developer tools configuration files  
 ├── docs     - documentation
 ├── etc      - runtime configuration files
 ├── forge    - the core platform application
 ├── frontend - the frontend source code
 └── test     - test material
-</code></pre>
+</a>
 <h3 id="installing-code-dependencies" tabindex="-1"><a class="header-anchor" href="#installing-code-dependencies">#&nbsp;</a> Installing code dependencies</h3>
 <p>After cloning the core repository, you will need to install the dependencies by running</p>
-<pre><code>npm install
-</code></pre>
+<pre class="">npm install
+</a>
 <p><strong>Note</strong> If running on MacOS 12.3 or newer you may get an error around node-gyp being unable to build sqllite3.
 This is because MacOS no longer includes python2.7.
 The solution is to run the command <code>npm config set python python3</code> to alias to python3 and then run <code>npm install</code> again</p>
@@ -170,34 +170,34 @@ projects in the same directory</p>
 <li>flowforge/flowforge-nr-audit-logger</li>
 </ul>
 <p>Then in the flowforge directory run</p>
-<pre><code>npm run dev:local
-</code></pre>
+<pre class="">npm run dev:local
+</a>
 <p>This will create all the required symlinks to the relevent projects.</p>
 <p>Next in the <code>forge-ui-components</code>  directory run</p>
-<pre><code>npm install
+<pre class="">npm install
 npm run build
-</code></pre>
+</a>
 <p>In the <code>flowforge-nr-auth</code> directory run</p>
-<pre><code>npm install
-</code></pre>
+<pre class="">npm install
+</a>
 <p>In the <code>flowforge-nr-audit-logger</code> directory run</p>
-<pre><code>npm install
-</code></pre>
+<pre class="">npm install
+</a>
 <p>In the <code>flowforge-nr-storage</code> directory run</p>
-<pre><code>npm install
-</code></pre>
+<pre class="">npm install
+</a>
 <p><strong>Note</strong>: do not check in the modified <code>package.json</code> that will be created in the
 <code>flowforge</code>, <code>flowforge-nr-launcher</code> or <code>flowforge-driver-localfs</code> projects.</p>
 <h3 id="create-a-stack" tabindex="-1"><a class="header-anchor" href="#create-a-stack">#&nbsp;</a> Create a Stack</h3>
 <p>You will need to setup the version(s) of Node-RED you want to use in your stacks.</p>
 <p>From the flowforge directory run</p>
-<pre><code>npm run install-stack --vers=2.2.2
-</code></pre>
+<pre class="">npm run install-stack --vers=2.2.2
+</a>
 <p>Where <code>2.2.2</code> is the version of Node-RED you want to use in the stack</p>
 <h3 id="running-flowforge" tabindex="-1"><a class="header-anchor" href="#running-flowforge">#&nbsp;</a> Running FlowForge</h3>
 <p>A number of <code>npm</code> tasks are defined in the <code>package.json</code> file. To get started from the flowforge directory use:</p>
-<pre><code>npm run serve
-</code></pre>
+<pre class="">npm run serve
+</a>
 <p>This does a couple things in parallel:</p>
 <ul>
 <li>Starts the core FlowForge application and watches the source code for any
@@ -300,6 +300,7 @@ printed to the console and generates a browseable HTML copy under <code>coverage
         currentToc.append(currentItem);
     })
 </script>
+<script async src="https://unpkg.com/mermaid/dist/mermaid.min.js">mermaid.initialize({ startOnLoad: true });</script>
 
     </div>
 </div>

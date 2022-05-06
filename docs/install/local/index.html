@@ -101,19 +101,19 @@ how to do this can be found on the Node.js website here:</p>
 <p>On Windows, the standard Node.js installer will offer to do that for you.</p>
 <p>On MacOS, you will need the <code>XCode Command Line Tools</code> to be installed. This can
 be done by running the following command:</p>
-<pre><code>xcode-select --install
-</code></pre>
+<pre class="">xcode-select --install
+</a>
 <h3 id="installing-flowforge" tabindex="-1"><a class="header-anchor" href="#installing-flowforge">#&nbsp;</a> Installing FlowForge</h3>
 <ol>
 <li>
 <p>Create a directory to be the base of your FlowForge install. For example: <code>/opt/flowforge</code> or <code>c:\flowforge</code></p>
 <p>For Linux/MacOS:</p>
-<pre><code>sudo mkdir /opt/flowforge
+<pre class="">sudo mkdir /opt/flowforge
 sudo chown $USER /opt/flowforge
-</code></pre>
+</a>
 <p>For Windows:</p>
-<pre><code class="language-console">mkdir c:\flowforge
-</code></pre>
+<pre class="console">mkdir c:\flowforge
+</a>
 </li>
 <li>
 <p>Download the Installer zip file from https://github.com/flowforge/installer/releases</p>
@@ -122,26 +122,26 @@ sudo chown $USER /opt/flowforge
 <p>Unzip the downloaded file into a temporary location and copy its contents to
 the FlowForge directory</p>
 <p>For Linux/MacOS:</p>
-<pre><code>cd /tmp/
+<pre class="">cd /tmp/
 unzip flowforge-installer-x.y.z.zip
 cp -R flowforge-installer-x.y.z/* /opt/flowforge
-</code></pre>
+</a>
 <p>For Windows:</p>
-<pre><code class="language-console">cd c:\temp
+<pre class="console">cd c:\temp
 tar -xf flowforge-installer-x.y.z.zip
 xcopy /E /I flowforge-installer-x.y.z c:\flowforge
-</code></pre>
+</a>
 </li>
 <li>
 <p>Run the installer and follow the prompts</p>
 <p>For Linux/MacOS:</p>
-<pre><code>cd /opt/flowforge
+<pre class="">cd /opt/flowforge
 ./install.sh
-</code></pre>
+</a>
 <p>For Windows:</p>
-<pre><code class="language-console">cd c:\flowforge
+<pre class="console">cd c:\flowforge
 install.bat
-</code></pre>
+</a>
 </li>
 </ol>
 <h4 id="installing-as-a-service" tabindex="-1"><a class="header-anchor" href="#installing-as-a-service">#&nbsp;</a> Installing as a service</h4>
@@ -155,14 +155,14 @@ user, it will also change the ownership of the FlowForge directory to that user.
 <p>For more details on the options available, see the <a href="../configuration/">configuration guide</a>.</p>
 <h3 id="running-flowforge" tabindex="-1"><a class="header-anchor" href="#running-flowforge">#&nbsp;</a> Running FlowForge</h3>
 <p>If you have installed FlowForge as a service, it can be started by running:</p>
-<pre><code>service flowforge start
-</code></pre>
+<pre class="">service flowforge start
+</a>
 <p>To run it manually, you can use:</p>
 <ul>
 <li>
 <p>Linux/MacOS:</p>
-<pre><code>/opt/flowforge/bin/flowforge.sh
-</code></pre>
+<pre class="">/opt/flowforge/bin/flowforge.sh
+</a>
 </li>
 <li>
 <p>Windows:</p>
@@ -233,6 +233,7 @@ create any more projects. See <a href="../first-run/#next-steps">this guide</a> 
         currentToc.append(currentItem);
     })
 </script>
+<script async src="https://unpkg.com/mermaid/dist/mermaid.min.js">mermaid.initialize({ startOnLoad: true });</script>
 
     </div>
 </div>

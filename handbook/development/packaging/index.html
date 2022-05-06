@@ -91,8 +91,8 @@ code, then additional plugins can be added.</p>
 <p>Repositories should be added to the appropriate Slack channel. For core code repositories,
 this would be in the <code>#gh-flowforge</code> channel.</p>
 <p>To create a subscription, go to that channel and type the message:</p>
-<pre><code>/github subscribe flowforge/NAME-OF-REPO comments
-</code></pre>
+<pre class="">/github subscribe flowforge/NAME-OF-REPO comments
+</a>
 <p>This will subscribe to any notifications covering: <code>issues</code>, <code>pulls</code>, <code>commits</code>, <code>releases</code>, <code>deployments</code> and <code>comments</code></p>
 <h3 id="workflows" tabindex="-1"><a class="header-anchor" href="#workflows">#&nbsp;</a> Workflows</h3>
 <p>All code repositories must have the Project Automation workflow added. This is done
@@ -131,19 +131,19 @@ with the name <code>PROJECT_ACCESS_TOKEN</code></p>
 <p>The <code>package.json</code> must contain the following keys</p>
 <ul>
 <li>description</li>
-<li>repository<pre><code>&quot;repository&quot;: {
-   &quot;type&quot;: &quot;git&quot;,
-   &quot;url&quot;: &quot;git+https://github.com/flowforge/flowforge.git&quot;
+<li>repository<pre class="">"repository": {
+   "type": "git",
+   "url": "git+https://github.com/flowforge/flowforge.git"
 },
-</code></pre>
+</a>
 </li>
-<li>homepage<pre><code>&quot;homepage&quot;: &quot;https://github.com/flowforge/flowforge#readme&quot;,
-</code></pre>
+<li>homepage<pre class="">"homepage": "https://github.com/flowforge/flowforge#readme",
+</a>
 </li>
-<li>bugs<pre><code>&quot;bugs&quot;: {
-    &quot;url&quot;: &quot;https://github.com/flowforge/flowforge/issues&quot;
+<li>bugs<pre class="">"bugs": {
+    "url": "https://github.com/flowforge/flowforge/issues"
 },
-</code></pre>
+</a>
 </li>
 <li>license
 <ul>
@@ -151,15 +151,15 @@ with the name <code>PROJECT_ACCESS_TOKEN</code></p>
 <li>SEE LICENSE IN ./LICENSE</li>
 </ul>
 </li>
-<li>author<pre><code>&quot;author&quot;: {
-    &quot;name&quot;: &quot;FlowFlow Inc.&quot;
+<li>author<pre class="">"author": {
+    "name": "FlowFlow Inc."
 },
-</code></pre>
+</a>
 </li>
-<li>engines<pre><code>&quot;engines&quot;: {
-  &quot;node&quot;: &quot;&gt;=16.x&quot;
+<li>engines<pre class="">"engines": {
+  "node": ">=16.x"
 }
-</code></pre>
+</a>
 </li>
 </ul>
 <h3 id="package-version-numbering" tabindex="-1"><a class="header-anchor" href="#package-version-numbering">#&nbsp;</a> Package Version Numbering</h3>
@@ -212,6 +212,7 @@ with the name <code>PROJECT_ACCESS_TOKEN</code></p>
         currentToc.append(currentItem);
     })
 </script>
+<script async src="https://unpkg.com/mermaid/dist/mermaid.min.js">mermaid.initialize({ startOnLoad: true });</script>
 
     </div>
 </div>

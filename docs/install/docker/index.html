@@ -86,9 +86,9 @@
 <p>Download the latest release tar.gz from the docker-compose project:</p>
 <p>[https://github.com/flowforge/docker-compose/releases/latest] (https://github.com/flowforge/docker-compose/releases/latest)</p>
 <p>Unpack this and cd into the created directory.</p>
-<pre><code>tar zxf v0.x.0.tar.gz
+<pre class="">tar zxf v0.x.0.tar.gz
 cd docker-compose-0.x.0
-</code></pre>
+</a>
 <h4 id="building-containers" tabindex="-1"><a class="header-anchor" href="#building-containers">#&nbsp;</a> Building Containers</h4>
 <p>To build the 2 required containers run <code>./build-containers.sh</code>.</p>
 <p>This will build and tag both <code>flowforge/forge-docker</code> and <code>flowforge/node-red</code></p>
@@ -103,8 +103,8 @@ cd docker-compose-0.x.0
 <p>For more details on the options available, see the <a href="../configuration/">configuration guide</a>.</p>
 <h3 id="running-flowforge" tabindex="-1"><a class="header-anchor" href="#running-flowforge">#&nbsp;</a> Running FlowForge</h3>
 <p>Once the containers have been built you can start FlowForge by running:</p>
-<pre><code>docker-compose up -d
-</code></pre>
+<pre class="">docker-compose up -d
+</a>
 <p>This will also create a directory called <code>db</code> to hold the database files used to store project instance and user information.</p>
 <h3 id="first-run-setup" tabindex="-1"><a class="header-anchor" href="#first-run-setup">#&nbsp;</a> First Run Setup</h3>
 <p>The first time you access the platform in your browser, it will take you through
@@ -154,6 +154,7 @@ creating an administrator for the platform and other configuration options.</p>
         currentToc.append(currentItem);
     })
 </script>
+<script async src="https://unpkg.com/mermaid/dist/mermaid.min.js">mermaid.initialize({ startOnLoad: true });</script>
 
     </div>
 </div>

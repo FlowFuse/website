@@ -70,7 +70,7 @@
         <div class="flex-grow order-last md:order-first">
             <div class="mt-6 mb-4 prose prose-blue main-content">
                 <h1 id="sequence-for-team-creation" tabindex="-1"><a class="header-anchor" href="#sequence-for-team-creation">#&nbsp;</a> Sequence For Team Creation</h1>
-<pre><code class="language-mermaid">sequenceDiagram
+<pre class="mermaid">sequenceDiagram
 autonumber
 participant User
 participant Ui
@@ -79,32 +79,32 @@ participant ContainerDriver
 participant DB
 participant Stripe
 
-User-&gt;&gt;Ui: Clicks Create Team
-User-&gt;&gt;Ui: Enters Team Name
+User->>Ui: Clicks Create Team
+User->>Ui: Enters Team Name
 alt billing enabled
-Ui-&gt;&gt;Runtime: POST /api/v1/teams
-Runtime-&gt;&gt;DB: Create Team
-Runtime-&gt;&gt;Stripe: checkout.create.session
-Stripe-&gt;&gt;Runtime: Session ID
-Runtime-&gt;&gt;Ui: { billingURL: &quot;https://stripe...&quot; }
-Ui-&gt;&gt;Stripe: Redirect
-User-&gt;&gt;Stripe: Enters Credit Card info
+Ui->>Runtime: POST /api/v1/teams
+Runtime->>DB: Create Team
+Runtime->>Stripe: checkout.create.session
+Stripe->>Runtime: Session ID
+Runtime->>Ui: { billingURL: "https://stripe..." }
+Ui->>Stripe: Redirect
+User->>Stripe: Enters Credit Card info
 alt complete
-Stripe-&gt;&gt;Ui: Redirect to Ui
-Ui-&gt;&gt;Ui: Show Team Overview
-Stripe-&gt;&gt;Runtime: POST /ee/billing/callback
-Runtime-&gt;&gt;DB: Create Subscription
+Stripe->>Ui: Redirect to Ui
+Ui->>Ui: Show Team Overview
+Stripe->>Runtime: POST /ee/billing/callback
+Runtime->>DB: Create Subscription
 else abort
-Stripe-&gt;&gt;Ui: Message 
-Ui-&gt;&gt;Runtime: DELETE /api/v1/teams/{id}
+Stripe->>Ui: Message 
+Ui->>Runtime: DELETE /api/v1/teams/{id}
 end
 else: no billing
-Ui-&gt;&gt;Runtime: POST /teams
-Runtime-&gt;&gt;DB: Create Team
-Runtime-&gt;&gt;Ui: { status: &quot;okay&quot;}
-Ui-&gt;&gt;Ui: Show Team Overview
+Ui->>Runtime: POST /teams
+Runtime->>DB: Create Team
+Runtime->>Ui: { status: "okay"}
+Ui->>Ui: Show Team Overview
 end
-</code></pre>
+</pre>
 
             </div>
         </div>
@@ -149,6 +149,7 @@ end
         currentToc.append(currentItem);
     })
 </script>
+<script async src="https://unpkg.com/mermaid/dist/mermaid.min.js">mermaid.initialize({ startOnLoad: true });</script>
 
     </div>
 </div>

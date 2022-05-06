@@ -78,8 +78,8 @@ it provides - we have our own.</p>
 <h3 id="filename" tabindex="-1"><a class="header-anchor" href="#filename">#&nbsp;</a> Filename</h3>
 <p>A migration is provided as a JavaScript in the directory <code>forge/db/migrations</code>.
 Its file name must follow the pattern:</p>
-<pre><code>YYYYMMDD-nn-description.js
-</code></pre>
+<pre class="">YYYYMMDD-nn-description.js
+</a>
 <ul>
 <li><code>YYYYMMDD</code> - the date the migration is added</li>
 <li><code>nn</code> - a two digit number</li>
@@ -91,15 +91,15 @@ the name allows multiple migrations to be added on the same day, but kept in the
 right order.</p>
 <h3 id="structure" tabindex="-1"><a class="header-anchor" href="#structure">#&nbsp;</a> Structure</h3>
 <p>The migration code should use the following layout:</p>
-<pre><code>module.exports = {
-    up: async (context) =&gt; {
+<pre class="">module.exports = {
+    up: async (context) => {
         // Apply the migration
     },
-    down: async (context) =&gt; {
+    down: async (context) => {
         // Remove the migration
     }
 }
-</code></pre>
+</a>
 <p>The <code>up</code> function applies the migration. This can be to create new tables, add columns
 to existing ones - whatever is needed.</p>
 <p>The <code>down</code> function reverses the migration. It should restore the database back to
@@ -150,6 +150,7 @@ operations on the database.</p>
         currentToc.append(currentItem);
     })
 </script>
+<script async src="https://unpkg.com/mermaid/dist/mermaid.min.js">mermaid.initialize({ startOnLoad: true });</script>
 
     </div>
 </div>

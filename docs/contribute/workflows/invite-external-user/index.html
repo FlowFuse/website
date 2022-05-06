@@ -70,7 +70,7 @@
         <div class="flex-grow order-last md:order-first">
             <div class="mt-6 mb-4 prose prose-blue main-content">
                 <h1 id="invite-external-user-flow" tabindex="-1"><a class="header-anchor" href="#invite-external-user-flow">#&nbsp;</a> Invite External User Flow</h1>
-<pre><code class="language-mermaid">sequenceDiagram
+<pre class="mermaid">sequenceDiagram
     autonumber
     participant UserEmail
     participant InvitedUser
@@ -79,23 +79,23 @@
     participant Runtime
     participant DB
     Note over TeamOwner: TeamOwner wants to invite an external user to a team
-    TeamOwner-&gt;&gt;UI: Opens Add Team Mambers dialog
-    TeamOwner-&gt;&gt;UI: Enters User email, clicks okay
-    UI-&gt;&gt;+Runtime: POST /api/v1/teams/:teamId/invitations
-    Runtime-&gt;&gt;DB: Create Invitiation
-    Runtime-&gt;&gt;UserEmail: Send email containing link to /account/create?email={email}`
-    Runtime-&gt;&gt;DB: Update audit log
-    Runtime--&gt;&gt;-UI: { status: 'okay' }
+    TeamOwner->>UI: Opens Add Team Mambers dialog
+    TeamOwner->>UI: Enters User email, clicks okay
+    UI->>+Runtime: POST /api/v1/teams/:teamId/invitations
+    Runtime->>DB: Create Invitiation
+    Runtime->>UserEmail: Send email containing link to /account/create?email={email}`
+    Runtime->>DB: Update audit log
+    Runtime-->>-UI: { status: 'okay' }
     Note over TeamOwner: TeamOwner role complete
-    UserEmail--&gt;&gt;InvitedUser: Email received
-    InvitedUser-&gt;&gt;+UI: Opens /account/create?email={email}
-    UI-&gt;&gt;UI: Prefills email field of signup page
-    InvitedUser-&gt;&gt;UI: Enters details on sign-up page
-    InvitedUser-&gt;&gt;UI: Clicks Sign-up
-    UI-&gt;&gt;+Runtime: POST /account/register
-    Runtime-&gt;&gt;Runtime: Checks an invite exists for this email
+    UserEmail-->>InvitedUser: Email received
+    InvitedUser->>+UI: Opens /account/create?email={email}
+    UI->>UI: Prefills email field of signup page
+    InvitedUser->>UI: Enters details on sign-up page
+    InvitedUser->>UI: Clicks Sign-up
+    UI->>+Runtime: POST /account/register
+    Runtime->>Runtime: Checks an invite exists for this email
     Note over InvitedUser,Runtime: Standard sign-up flow continues
-</code></pre>
+</pre>
 <ul>
 <li>See also <a href="../signup/">User Sign Up</a></li>
 </ul>
@@ -143,6 +143,7 @@
         currentToc.append(currentItem);
     })
 </script>
+<script async src="https://unpkg.com/mermaid/dist/mermaid.min.js">mermaid.initialize({ startOnLoad: true });</script>
 
     </div>
 </div>

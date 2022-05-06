@@ -70,7 +70,7 @@
         <div class="flex-grow order-last md:order-first">
             <div class="mt-6 mb-4 prose prose-blue main-content">
                 <h1 id="sequence-for-project-creation" tabindex="-1"><a class="header-anchor" href="#sequence-for-project-creation">#&nbsp;</a> Sequence For Project Creation</h1>
-<pre><code class="language-mermaid">sequenceDiagram
+<pre class="mermaid">sequenceDiagram
 autonumber
 participant User
 participant Ui
@@ -79,34 +79,34 @@ participant ContainerDriver
 participant DB
 participant Stripe
 
-User-&gt;&gt;Ui: Clicks Create Project
-User-&gt;&gt;Ui: Enters Project Name
-Ui-&gt;&gt;Runtime: POST /projects
+User->>Ui: Clicks Create Project
+User->>Ui: Enters Project Name
+Ui->>Runtime: POST /projects
 alt billing enabled
-  Runtime-&gt;DB: Team has Subscription
-  DB-&gt;&gt;Runtime: Subscription
+  Runtime->DB: Team has Subscription
+  DB->>Runtime: Subscription
   alt Valid Subscription
-    Runtime-&gt;&gt;Stripe: Add Project to Subscription
-    Runtime-&gt;&gt;ContainerDriver: create()
-    Runtime-&gt;&gt;ContainerDriver: start()
-    Runtime-&gt;&gt;Ui: { status: &quot;okay&quot; }
-    Ui-&gt;&gt;Ui: Show Project Overview
+    Runtime->>Stripe: Add Project to Subscription
+    Runtime->>ContainerDriver: create()
+    Runtime->>ContainerDriver: start()
+    Runtime->>Ui: { status: "okay" }
+    Ui->>Ui: Show Project Overview
     alt success
-      Stripe-&gt;&gt;Runtime: POST /ee/billing/callback
+      Stripe->>Runtime: POST /ee/billing/callback
     else failure
-      Stripe-&gt;&gt;Runtime: POST /ee/billing/callback
-      Runtime-&gt;&gt;ContainerDriver: stop()
-      Runtime-&gt;&gt;ContainerDriver: disable()
-      Runtime-&gt;&gt;User: email message
+      Stripe->>Runtime: POST /ee/billing/callback
+      Runtime->>ContainerDriver: stop()
+      Runtime->>ContainerDriver: disable()
+      Runtime->>User: email message
     end
   else no Subscription
-    Runtime-&gt;&gt;Ui: Failed to create project, no Billing info
+    Runtime->>Ui: Failed to create project, no Billing info
   end
 else no billing
-  Runtime-&gt;&gt;Ui: { status: &quot;okay&quot; }
-  Ui-&gt;&gt;Ui: Show Project Overview
+  Runtime->>Ui: { status: "okay" }
+  Ui->>Ui: Show Project Overview
 end
-</code></pre>
+</pre>
 
             </div>
         </div>
@@ -151,6 +151,7 @@ end
         currentToc.append(currentItem);
     })
 </script>
+<script async src="https://unpkg.com/mermaid/dist/mermaid.min.js">mermaid.initialize({ startOnLoad: true });</script>
 
     </div>
 </div>

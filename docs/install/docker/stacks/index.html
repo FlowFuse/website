@@ -83,32 +83,32 @@ applied to each project when created.</p>
 directory of the <a href="https://github.com/flowforge/docker-compose">docker-compose</a> project. This will start with <code>nodered/node-red:latest</code>
 as it's base and then add the required FlowForge components.</p>
 <p>If you wanted to pin at Node-RED v2.2.2 you would change the first line to:</p>
-<pre><code class="language-Dockerfile">FROM nodered/node-red:2.2.2
+<pre class="Dockerfile">FROM nodered/node-red:2.2.2
 
 ARG REGISTRY
-RUN if [[ ! -z &quot;$REGISTRY&quot; ]] ; then npm config set @flowforge:registry &quot;$REGISTRY&quot;; fi
+RUN if [[ ! -z "$REGISTRY" ]] ; then npm config set @flowforge:registry "$REGISTRY"; fi
 
 COPY package.json /data
 ...
-</code></pre>
+</a>
 <p>To add nodes to the default image you can add them to the <code>package.json</code> file along
 side the FlowForge plugins</p>
-<pre><code class="language-json">{
-    &quot;name&quot;: &quot;node-red-project&quot;,
-    &quot;description&quot;: &quot;A Node-RED Project&quot;,
-    &quot;version&quot;: &quot;0.3.0&quot;,
-    &quot;private&quot;: true,
-    &quot;dependencies&quot;:{
-        &quot;@flowforge/nr-storage&quot;: &quot;^0.2.0&quot;,
-        &quot;@flowforge/nr-auth&quot;: &quot;^0.2.0&quot;,
-        &quot;@flowforge/nr-audit-logger&quot;: &quot;^0.2.0&quot;,
-        &quot;node-red-dashboard&quot;: &quot;^3.1.6&quot;
+<pre class="json">{
+    "name": "node-red-project",
+    "description": "A Node-RED Project",
+    "version": "0.3.0",
+    "private": true,
+    "dependencies":{
+        "@flowforge/nr-storage": "^0.2.0",
+        "@flowforge/nr-auth": "^0.2.0",
+        "@flowforge/nr-audit-logger": "^0.2.0",
+        "node-red-dashboard": "^3.1.6"
     }
 }
-</code></pre>
+</a>
 <p>To build the container run the following:</p>
-<pre><code class="language-shell">docker build node-red-container -t flowforge/node-red-dashboard:2.2.2
-</code></pre>
+<pre class="shell">docker build node-red-container -t flowforge/node-red-dashboard:2.2.2
+</a>
 <p>You would then enter <code>flowforge/node-red-dashboard:2.2.2</code> in the <code>container</code> section
 of the Stack configuration.</p>
 <p><em>Note:</em> with the 0.3 release, it is not possible to change the Stack being used
@@ -157,6 +157,7 @@ by a project. That will come in a future release.</p>
         currentToc.append(currentItem);
     })
 </script>
+<script async src="https://unpkg.com/mermaid/dist/mermaid.min.js">mermaid.initialize({ startOnLoad: true });</script>
 
     </div>
 </div>
