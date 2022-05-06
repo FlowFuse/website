@@ -19,13 +19,12 @@ module.exports = function(eleventyConfig) {
     eleventyConfig.addLayoutAlias('nohero', 'layouts/nohero.njk');
     eleventyConfig.addLayoutAlias('redirect', 'layouts/redirect.njk');
     eleventyConfig.addPassthroughCopy("src/images");
-    eleventyConfig.addPassthroughCopy("src/handbook/images");
-    eleventyConfig.addPassthroughCopy("src/docs/images");
     // eleventyConfig.addPassthroughCopy("src/js");
     eleventyConfig.addPassthroughCopy("src/CNAME");
     eleventyConfig.addPassthroughCopy({"src/favicon/*":"/"});
     eleventyConfig.addPassthroughCopy("src/.well-known")
-    eleventyConfig.addPassthroughCopy("src/blog/*/*/images/*");
+    eleventyConfig.addPassthroughCopy("src/**/images/*");
+
 
     eleventyConfig.addFilter("head", (array, n) => {
         if( n < 0 ) {
