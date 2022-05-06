@@ -1,0 +1,45 @@
+---
+title: Pricing
+layout: layouts/page.njk
+---
+
+<div class="pricing-tiles">
+    <div class="pricing-tile">
+        <h4>Community<br>Edition</h4>
+        <h2>$0</h2>
+        <label>Apache 2.0 License</label>
+        <a class="ff-btn ff-btn--secondary" href="https://github.com/flowforge/flowforge">View on GitHub</a>
+    </div>
+    <div class="pricing-tile">
+        <h4>Cloud<br>Edition</h4>
+        <h2>$15</h2>
+        <label>/project/mo</label>
+        <button class="ff-btn ff-btn--primary">Get Started</button>
+    </div>
+    <div class="pricing-tile">
+        <h4>Enterprise<br>Edition</h4>
+        <h2 class="lets-talk">Let's Talk</h2>
+        <label>want a bespoke solution?</label>
+        <button class="ff-btn ff-btn--secondary">Contact Us</button>
+    </div>
+</div>
+
+{% include "components/divider-flow--default.njk" %}
+
+<!-- Feature List -->
+{% set featuresHtml %}
+<div class="max-w-full overflow-x-scroll">
+    {% include "feature_lists/cloud.njk" %}
+</div>
+{% endset -%}
+
+<!-- Feature Comparison -->
+<div class="product w-full ff-bg-light px-6 pt-20 pb-24 md:px-0 md:pt-32 md:pb-48">
+    <div class="container m-auto text-center">
+        <div class="mt-9">
+            <h1 class="mb-4">Feature Comparison</h1>
+        </div>
+        <!-- Feature List -->
+        <div>{{ featuresHtml | safe }}</div>
+    </div>
+</div>

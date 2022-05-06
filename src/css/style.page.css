@@ -56,6 +56,49 @@
     padding: 0 24px;
 }
 
+/*
+    PRICING
+*/
+@layer components {
+    .pricing-tiles {
+        position: relative;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 48px;
+        z-index: 2;
+        margin: auto;
+        @apply -mt-24 max-w-3xl;
+    }
+    .pricing-tile {
+        text-align: center;
+        padding: 48px 36px;
+        border-radius: 12px;
+        border: 4px solid theme(colors.gray.400);
+        background-color: #37415194;
+        display: flex;
+        flex-direction: column;
+    }
+    .pricing-tile h4 {
+        font-weight: normal;
+        margin: 0;
+    }
+    .pricing-tile h2 {
+        font-size: 48px;
+        color: theme(colors.white);
+        margin: 32px 0 3px;
+    }
+    .pricing-tile label {
+        display: block;
+        color: theme(colors.white);
+        font-size: 12px;
+        margin-bottom: 32px;
+    }
+    .pricing-tile .lets-talk {
+        font-weight: 300;
+        font-size: 24px;
+    }
+}
+
 /* COMPANY VALUE */
 
 @layer components {

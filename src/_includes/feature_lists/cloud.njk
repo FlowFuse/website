@@ -1,181 +1,130 @@
 {%
-    set columns = [{
-        product: 'FlowForge Cloud',
-        pricing: '<h2 class="mb-0">$15</h2><span class="text-xs mb-6">/project/mo</span><a class="ff-btn ff-btn--primary" href="#bd-email">Join the Waitlist</a>',
-        cta: '',
-        sections: [[{
-            label: "Fully Browser-Based",
-            icon: "check"
-        }, {
+    set sections = [{
+        label: "Features",
+        rows: [{
             label: "Multiple Projects",
-            icon: "check"
+            values: ['check', 'check', 'check']
         }, {
             label: "Project Templates",
-            icon: "check"
+            values: ['check', 'check', 'check']
         }, {
             label: "Individual Project Configuration",
-            icon: "check"
+            values: ['check', 'check', 'check']
         }, {
             label: "Audit Log",
-            icon: "check"
+            values: ['check', 'check', 'check']
         }, {
-            label: "Team-Based Collaboration",
-            icon: "check"
+            label: "Team-Based Configuraton",
+            values: ['check', 'check', 'check']
         }, {
             label: "Role-Based Access Control",
-            icon: "check"
+            values: ['check', 'check', 'check']
+        }, {
+            label: "Fully Browser-Based",
+            values: [null, 'check', 'check']
+        }, {
+            label: "Single Sign-On (SSO)",
+            values: [null, null, 'check']
         }, {
             label: "Custom Node Catalog",
-            icon: "time"
+            values: [null, 'time', 'time']
         }, {
             label: "Shared Team Library",
-            icon: "time"
+            values: [null, 'time', 'time']
         }, {
             label: "Persistent Context Storage",
-            icon: "time"
+            values: [null, 'time', 'time']
+        }, {
+            label: "Private npm Repo Support",
+            values: [null, 'time', 'time']
         }, {
             label: "Version History",
-            icon: "time"
+            values: [null, 'time', 'time']
         }, {
             label: "Devops Workflow",
-            icon: "time"
+            values: [null, 'time', 'time']
         }, {
             label: "Usage Reporting",
-            icon: "time"
-        }], [{
-            label: "Sub-Minute Setup",
-            icon: "check"
-        }, {
+            values: [null, 'time', 'time']
+        }]
+    }, {
+        label: "Setup & Infrastructure",
+        rows: [{
             label: "Easy Node-RED Upgrades",
-            icon: "check"
+            values: ['check', 'check', 'check']
+        }, {
+            label: "Sub-Minute Setup",
+            values: [null, 'check', 'check']
         }, {
             label: "FlowForge Managed",
-            icon: "check"
-        }, {
-            label: "Custom (Per-Project) Domain",
-            icon: "time"
-        }], [{
-            label: "Ticket-Based Support",
-            icon: "check"
-        }, {
-            label: "Community Support",
-            icon: "check"
-        }]]
-    }, {
-        product: 'FlowForge Enterprise',
-        pricing: "<div class='font-light text-2xl mt-2'>Let's Talk</div><span class='text-xs mb-6'>Want a bespoke solution?</span><a class='ff-btn ff-btn--secondary' href='mailto:sales@flowforge.com?subject=Enquiry - FlowForge Cloud Enterprise'>Contact Us</a>",
-        cta: '',
-        sections: [[{
-            label: "Fully Browser-Based",
-            icon: "check"
-        }, {
-            label: "Multiple Projects",
-            icon: "check"
-        }, {
-            label: "Project Templates",
-            icon: "check"
-        }, {
-            label: "Individual Project Configuration",
-            icon: "check"
-        }, {
-            label: "Audit Log",
-            icon: "check"
-        }, {
-            label: "Team-Based Collaboration",
-            icon: "check"
-        }, {
-            label: "Role-Based Access Control",
-            icon: "check"
-        }, {
-            label: "Dedicated Instance",
-            icon: "check"
-        }, {
-            label: "SSO (Enterprise)",
-            icon: "time"
-        }, {
-            label: "Custom Node Catalog",
-            icon: "time"
-        }, {
-            label: "Shared Team Library",
-            icon: "time"
-        }, {
-            label: "Persistent Context Storage",
-            icon: "time"
-        }, {
-            label: "Private npm repo support",
-            icon: "time"
-        }, {
-            label: "Version History",
-            icon: "time"
-        }, {
-            label: "Devops Workflow",
-            icon: "time"
-        }, {
-            label: "Usage Reporting",
-            icon: "time"
-        }], [{
-            label: "Easy Node-RED Upgrades",
-            icon: "check"
-        }, {
-            label: "FlowForge Hosted or Self Hosted",
-            icon: "check"
-        }, {
-            label: "Dedicated Domain",
-            icon: "check"
+            values: [null, 'check', 'optional']
         }, {
             label: "Configurable Infrastructure",
-            icon: "check"
-        }], [{
+            values: ['check', null, 'check']
+        }]
+    }, {
+        label: "Support",
+        rows: [{
             label: "Ticket-Based Support",
-            icon: "check"
+            values: [null, 'check', 'check']
         }, {
             label: "Community Support",
-            icon: "check"
-        }]]
+            values: ['check', 'check', 'check']
+        }]
     }]
 %}
 
-<div class="ff-feature-table max-w-3xl m-auto">
-    <div class="divider-v"></div>
+<div class="ff-feature-table m-auto">
     <div class="ff-feature-table-section">
         {% for col in columns %}
         <h4>{{ col.product | safe }}</h4>
         {% endfor %}
     </div>
-    <div class="ff-feature-table-section">
-        {% for col in columns %}
-        <ul class="ff-feature-table--pricing">
-            <div class="divider-h {{ 'reverse' if loop.index0 === 0 }}"></div>
-            {{ col.pricing | safe }}
-        </ul>
-        {% endfor %}
-    </div>
-    {% for section in columns[0].sections %}
-    {% set sectionIndex = loop.index0 %}
-    <div class="ff-feature-table-section">
-        {% for col in columns %}
-        <ul>
-            <div class="divider-h {{ 'reverse' if loop.index0 === 0 }}"></div>
-            {% for feature in col.sections[sectionIndex] %}
-                <li>
-                    {% if feature.icon === "check" %}
-                    <svg title="Available Now" class="ff-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
-                    </svg>
-                    {% elif feature.icon === "time" %}
-                    <svg title="Coming Soon" class="ff-icon"  xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                    </svg>
-                    {% elif feature.icon === "addon" %}
-                    <svg title="Available as an Add-On" class="ff-icon"  xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4" />
-                    </svg>
-                    {% endif %}
-                    {{ feature.label }}
-                </li>
+    {% for section in sections %}
+    <ul class="ff-feature-table-section">
+        <li class="ff-feature--column-header">
+            <span></span>
+            <label>Community</label>
+            <label>Cloud</label>
+            <label>Enterprise</label>
+        </li>
+        <li class="ff-feature--header">
+            {{ section.label }}
+        </li>
+        {% for row in section.rows %}
+        <li class="ff-feature-row">
+            <label>{{ row.label }}</label>
+            {% for value in row.values %}
+            <span>
+                {% if value === "check" %}
+                {% include "components/feature-check.svg" %}
+                {% elif value === "time" %}
+                {% include "components/feature-time.svg" %}
+                {% elif value === "optional" %}
+                {% include "components/feature-optional.svg" %}
+                {% elif value === "addon" %}
+                {% include "components/feature-addon.svg" %}
+                {% else %}
+                <span></span>
+                {% endif %}
+            </span>
             {% endfor %}
-        </ul>
+        </li>
         {% endfor %}
-    </div>
+    </ul>
     {% endfor %}
+    <ul class="ff-features-key">
+        <li>
+            {% include "components/feature-check.svg" %}
+            <label>Included</label>
+        </li>
+        <li>
+            {% include "components/feature-time.svg" %}
+            <label>On the Roadmap</label>
+        </li>
+        <li>
+            {% include "components/feature-optional.svg" %}
+            <label>Optional</label>
+        </li>
+    </ul>
 </div>
