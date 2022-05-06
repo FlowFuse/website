@@ -414,3 +414,6 @@ h4:hover .header-anchor {
         @apply h-20 -mt-20 md:h-28 md:-mt-28;
     }
 }
+pre.mermaid {
+    background-color: #ffffff
+}
