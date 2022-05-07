@@ -3,8 +3,31 @@
     <title>FlowForge</title>
     <link href="https://flowforge.com/blog/index.xml" rel="self"/>
     <link href="https://flowforge.com/blog"/>
-    <updated>2022-05-04T00:00:00Z</updated>
+    <updated>2022-05-06T00:00:00Z</updated>
     <id>https://flowforge.com/blog</id>
+    
+    <entry>
+        <id>https://flowforge.com/blog/2022/05/community-news-04/</id>
+        <title>Community News</title>
+        <summary>News from the FlowForge and Node-RED communities</summary>
+        <updated>2022-05-06T00:00:00Z</updated>
+        <link href="https://flowforge.com/blog/2022/05/community-news-04/"/>
+        <author><name>Sam Machin</name></author>
+        <content type="html">&lt;p&gt;Welcome to the FlowForge newsletter, a regular roundup of what`s happening with both FlowForge and the wider Node-RED community.&lt;/p&gt;
+&lt;!--more--&gt;
+&lt;p&gt;If you&#39;ve got something that you&#39;d like us to share please email &lt;a href=&quot;mailto:contact@flowforge.com&quot;&gt;contact@flowforge.com&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://flowforge.com/blog/2022/04/flowforge-04-released/&quot;&gt;FlowForge 0.4&lt;/a&gt;&lt;br /&gt;
+The next release has enabled us to offer multiple versions of Node-RED along with adding more features to help you configure your Node-RED projects.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://discourse.nodered.org/t/node-red-3-0-0-beta-1-released/62124&quot;&gt;Node-RED 3.0.0-beta-1&lt;/a&gt;&lt;br /&gt;
+The first beta for Node-RED 3.0.0 has been published, there&#39;s some exciting improvements on UI in the editor to make designing your flows even easier.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://flowforge.com/blog/2022/05/node-red-3-beta-stack/&quot;&gt;Node-RED Beta on FlowForge&lt;/a&gt;&lt;br /&gt;
+As promised in out 0.4 announcement, we&#39;ve made the beta available to our users on FlowForge as a separate stack, this is just one way that we&#39;re able to demonstrate the flexibility you get from running Node-RED on FlowForge.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://developer.cisco.com/meraki/build/exploring-meraki-and-spark-apis-with-node-red/&quot;&gt;Cisco &amp;amp; Node-RED&lt;/a&gt;&lt;br /&gt;
+The team at Cisco DevNet published some great guides on using Node-RED to manage both your Meraki Access points and to integrate with WebEx Teams, they&#39;ve also produced a handy &lt;a href=&quot;https://blogs.cisco.com/developer/helloworldlowcodenodered01&quot;&gt;starter guide&lt;/a&gt; for those that are new to Node-RED&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://nrcon.nodered.org/&quot;&gt;Node-RED Con 2022&lt;/a&gt;&lt;br /&gt;
+Our friends in the Node-RED Japan User Group have run a number of successful Node-RED conferences over the last few years. This year, we&#39;re joining forces with them to bring the event to a wider audience. The &lt;a href=&quot;https://www.papercall.io/nrcon2022&quot;&gt;Call for Papers&lt;/a&gt; is open now and we&#39;d love to see your submissions.&lt;/p&gt;
+</content>
+    </entry>
     
     <entry>
         <id>https://flowforge.com/blog/2022/05/node-red-3-beta-stack/</id>
