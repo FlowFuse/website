@@ -7,6 +7,12 @@
     font-size: 2.5rem;
 }
 
+.page h2 {
+    color: theme(colors.gray.800);
+    font-size: 2rem;
+    font-weight: 600;
+}
+
 .page h4 {
     font-size: 1.5rem;
     font-weight: 600;
@@ -55,6 +61,32 @@
     color: black;
     padding: 0 24px;
 }
+
+/*
+    PRODUCT
+*/
+@layer components {
+    .product-left,
+    .product-right {
+        padding-bottom: 48px;
+        @apply text-center sm:text-left flex items-center flex-col-reverse sm:flex-row;
+    }
+    .product-left > div {
+        @apply sm:pr-12;
+    }
+    .product-right > div {
+        @apply sm:pl-12 sm:text-right;
+    }
+    .product-left img,
+    .product-right img {
+        width: 150px;
+        height: 150px;
+    }
+    .product-right {
+        @apply sm:flex-row-reverse;
+    }
+}
+
 
 /*
     PRICING
