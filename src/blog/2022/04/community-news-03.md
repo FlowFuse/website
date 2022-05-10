@@ -20,5 +20,3 @@ The latest release introduced 2 new concepts, Templates and Stacks, with these w
 [Intro to JSON for Node-RED](https://www.opto22.com/support/resources-tools/videos/video-introduction-to-json-for-node-red/)      
 Our friends over at Opto 22 published a handy guide to JSON and how it works in Node-RED, great introduction for new builders and a good refresher for seasoned pros.
 
-[New Team Members](https://flowforge.com/blog/2022/03/welcome-sean/)  
-Another new hire joined us this month, meet Sean Terrell.
