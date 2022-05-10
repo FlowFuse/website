@@ -139,8 +139,6 @@ Some of you may have noticed the new design on our website, this is the first st
 The latest release introduced 2 new concepts, Templates and Stacks, with these we are starting to show the value of the FlowForge platform allowing you to easily manage the Node-RED settings and versions used by your projects.&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://www.opto22.com/support/resources-tools/videos/video-introduction-to-json-for-node-red/&quot;&gt;Intro to JSON for Node-RED&lt;/a&gt;&lt;br /&gt;
 Our friends over at Opto 22 published a handy guide to JSON and how it works in Node-RED, great introduction for new builders and a good refresher for seasoned pros.&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://flowforge.com/blog/2022/03/welcome-sean/&quot;&gt;New Team Members&lt;/a&gt;&lt;br /&gt;
-Another new hire joined us this month, meet Sean Terrell.&lt;/p&gt;
 </content>
     </entry>
     
@@ -183,29 +181,6 @@ corner on our &lt;a href=&quot;https://github.com/orgs/flowforge/projects/5&quot
     &lt;/div&gt;
 &lt;/form&gt;
 &lt;/div&gt;
-</content>
-    </entry>
-    
-    <entry>
-        <id>https://flowforge.com/blog/2022/03/welcome-sean/</id>
-        <title>Welcome Sean</title>
-        <summary></summary>
-        <updated>2022-03-23T00:00:00Z</updated>
-        <link href="https://flowforge.com/blog/2022/03/welcome-sean/"/>
-        <author><name>Nick O&#39;Leary</name></author>
-        <content type="html">&lt;p&gt;The FlowForge development team welcomes a new member with Sean Terrell joining
-as a Software Developer&lt;/p&gt;
-&lt;!--more--&gt;
-&lt;p&gt;Sean is a seasoned developer heavily experienced in the industrial automation and
-process controls. The &amp;quot;PLC Mercenary&amp;quot; as he is known, has been a FOSS advocate, and
-champion of vendor agnostic control systems. Sean became a Node-RED fanatic after
-using the platform for critical system monitoring of Oil and Gas production sites.&lt;/p&gt;
-&lt;p&gt;For several years he has pioneered cloud deployed Supervisory Control Data
-Acquisition System (SCADA) projects tightly integrated with Node-RED. Sean brings
-experience in automating cloud deployment, and production container systems for critical
-safety and environmental protection. Invaluable insight for customers as we grow
-FlowForge into the digital distruptor industry needs.&lt;/p&gt;
-&lt;p&gt;Welcome aboard Sean!&lt;/p&gt;
 </content>
     </entry>
     
