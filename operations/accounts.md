@@ -6,7 +6,7 @@ Shared accounts should be avoided wherever possible, particularly on our own sys
 
 ## User Accounts
 
-All employees of Flowforge should have a user account on flowforge.cloud and be added to the `FlowForge Team` in order to access out own company projects.
+All employees of Flowforge should have a user account on flowforge.cloud and be added to the `FlowForge Team` in order to access our own company projects.
 The email address for this account should be their normal @flowforge.com address
 
 ## Admin
