@@ -61,7 +61,7 @@
     <div class="w-full mx-auto ff-bg-light">
         <div class="font-medium border-b pb-1">
             
-            v0.4.3
+            v0.5.1
             
             /<a class="mx-2" href="/docs">docs</a>/<a class="mx-2" href="/docs/admin">admin</a>/<a class="mx-2" href="/docs/admin/telemetry">telemetry</a>
         </div>
@@ -79,7 +79,8 @@ and how we should prioritise future work.</p>
 <li>Any personally identifiable information. We do store a secure hash of the sending IP address - but the plain value is never stored</li>
 <li>Any specific details of the flows running on the platform.</li>
 </ul>
-<h2 id="configuring-telemetry" tabindex="-1"><a class="header-anchor" href="#configuring-telemetry">#&nbsp;</a> Configuring Telemetry</h2>
+<h2 id="core-telemetry" tabindex="-1"><a class="header-anchor" href="#core-telemetry">#&nbsp;</a> Core Telemetry</h2>
+<h3 id="configuring-telemetry" tabindex="-1"><a class="header-anchor" href="#configuring-telemetry">#&nbsp;</a> Configuring Telemetry</h3>
 <p>By default, usage telemetry is enabled on the platform. The administrator can
 opt-out of sharing information as part of the initial setup, or through the Admin
 Settings section of the platform UI.</p>
@@ -88,7 +89,7 @@ overrides whatever option is set in the Admin Settings UI.</p>
 <pre class="">telemetry:
   enabled: false
 </a>
-<h2 id="collected-data" tabindex="-1"><a class="header-anchor" href="#collected-data">#&nbsp;</a> Collected Data</h2>
+<h3 id="collected-data" tabindex="-1"><a class="header-anchor" href="#collected-data">#&nbsp;</a> Collected Data</h3>
 <p>The following pieces of information are included in the telemetry sent back to us:</p>
 <pre class="">{
   instanceId: '5db51f99-c6fb-4340-9c19-78adce58cc1b',
@@ -138,13 +139,36 @@ overrides whatever option is set in the Admin Settings UI.</p>
 </table>
 <p>When the data is collected, we also store the timestamp the data was received and
 a <strong>hash</strong> of the sending IP address - we do not store the plain value.</p>
-<h2 id="schedule" tabindex="-1"><a class="header-anchor" href="#schedule">#&nbsp;</a> Schedule</h2>
-<p>The platform will send the telemetry data:</p>
+<h3 id="schedule" tabindex="-1"><a class="header-anchor" href="#schedule">#&nbsp;</a> Schedule</h3>
+<p>For the core tracking, the platform will send the telemetry data:</p>
 <ul>
 <li>30 seconds after the platform starts up (but only if the platform has already been initialised)</li>
 <li>Once every 24 hours at a time randomly picked when the platform starts</li>
 </ul>
 <p>The data is sent via an HTTP Post to <code>https://ping.flowforge.com</code>.</p>
+<h2 id="frontend-telemetry" tabindex="-1"><a class="header-anchor" href="#frontend-telemetry">#&nbsp;</a> Frontend Telemetry</h2>
+<p>The FlowForge UI can be configured to track usage to help understand how users are navigating the pages.</p>
+<p>It currently supports using <a href="https://plausible.io/">Plausible Analytics</a> to gather the information.</p>
+<h3 id="configuring-telemetry-1" tabindex="-1"><a class="header-anchor" href="#configuring-telemetry-1">#&nbsp;</a> Configuring Telemetry</h3>
+<p>Further details about how users are navigating around your instance of FlowForge can be enabled via <a href="https://plausible.io/">Plausible</a>. This can be enabled with:</p>
+<pre class="">telemetry:
+  enabled: true
+  frontend:
+    plausible:
+      domain: <data-domain>
+</a>
+<p>Optionally, you can use a Plausible <code>extension</code> too:</p>
+<pre class="">telemetry:
+  enabled: true
+  frontend:
+    plausible:
+      domain: <data-domain>
+      extension: local
+</a>
+<h3 id="collected-data-1" tabindex="-1"><a class="header-anchor" href="#collected-data-1">#&nbsp;</a> Collected Data</h3>
+<p>Details on the metrics gathered through Plausible can be found in the <a href="https://plausible.io/docs/metrics-definitions">Plausible Documentation</a></p>
+<h3 id="schedule-1" tabindex="-1"><a class="header-anchor" href="#schedule-1">#&nbsp;</a> Schedule</h3>
+<p>Plausible tracking is sent as the relevant events are triggered, e.g. as a user navigates between two pages, or as they load the platform.</p>
 
             </div>
         </div>
@@ -152,7 +176,7 @@ a <strong>hash</strong> of the sending IP address - we do not store the plain va
             <h3 class="font-medium border-b pb-1 mb-4">On this page</h3>
             <ul id="toc" class="text-sm border-b mb-4"></ul>
             <div class="text-sm pb-1 text-right mb-4"><a href="https://github.com/flowforge/handbook/edit/main//docs/admin/telemetry.md">Edit this page</a></div>
-            <div class="text-xs pb-1 text-right mb-4 italic">Updated: 2022-04-20 10:59:53 +0100</div>
+            <div class="text-xs pb-1 text-right mb-4 italic">Updated: 2022-05-12 14:23:02 +0100</div>
         </div>
     </div>
 </div>

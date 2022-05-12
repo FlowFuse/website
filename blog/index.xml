@@ -3,8 +3,91 @@
     <title>FlowForge</title>
     <link href="https://flowforge.com/blog/index.xml" rel="self"/>
     <link href="https://flowforge.com/blog"/>
-    <updated>2022-05-06T00:00:00Z</updated>
+    <updated>2022-05-12T12:00:00Z</updated>
     <id>https://flowforge.com/blog</id>
+    
+    <entry>
+        <id>https://flowforge.com/blog/2022/05/flowforge-05-released/</id>
+        <title>FlowForge 0.5 released</title>
+        <summary>Bringing a new look to the platform</summary>
+        <updated>2022-05-12T12:00:00Z</updated>
+        <link href="https://flowforge.com/blog/2022/05/flowforge-05-released/"/>
+        <author><name>Nick O&#39;Leary</name></author>
+        <content type="html">&lt;p&gt;The cycle continues with our next regularly scheduled release, bringing a fresh
+new look to the platform.&lt;/p&gt;
+&lt;!--more--&gt;
+&lt;p&gt;Since joining the team, Joe has been hard at work bringing a more consistent
+design language to what we&#39;re doing. This release brings a lot of his hardwork
+to the platform itself.&lt;/p&gt;
+&lt;p&gt;There&#39;s more to be done on the individual pages of the platform, but this
+gives us a solid framework to build on.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://flowforge.com/blog/2022/05/images/ff-05-dashboard.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/flowforge/flowforge/issues/430&quot;&gt;Epic #430 - Rebrand Forage App&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;copying-projects&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://flowforge.com/blog/2022/05/flowforge-05-released/#copying-projects&quot;&gt;#&amp;nbsp;&lt;/a&gt; Copying Projects&lt;/h3&gt;
+&lt;p&gt;One of the usage scenarios we want to support is having an easy way to have separate
+test and production environments. The previous release added the ability to configure
+environment variables on individual projects.&lt;/p&gt;
+&lt;p&gt;This release unlocks the next piece of the puzzle - making it easy to copy flows
+between projects.&lt;/p&gt;
+&lt;p&gt;The Project settings page has two new options:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Copy Project lets you create a complete copy of the project.&lt;/li&gt;
+&lt;li&gt;Export to existing project lets you copy over selected aspects of the project
+over to another project.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;In both cases, you get to pick what parts of the project should be copied.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/flowforge/flowforge/issues/268&quot;&gt;Epic #268 - Export Project&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/flowforge/flowforge/issues/271&quot;&gt;Story #271 - Duplicate Project&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/flowforge/flowforge/issues/272&quot;&gt;Story #272 - Export to Existing Project&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;improve-billing-information&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://flowforge.com/blog/2022/05/flowforge-05-released/#improve-billing-information&quot;&gt;#&amp;nbsp;&lt;/a&gt; Improve Billing Information&lt;/h3&gt;
+&lt;p&gt;We&#39;ve been getting some great feedback from the users of FlowForge Cloud. One of the
+areas we identified as needing some more clarity was around the point users are
+asked to setup their billing information.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/flowforge/flowforge/issues/563&quot;&gt;Story #563 - Improve Information on billing&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;edge-devices&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://flowforge.com/blog/2022/05/flowforge-05-released/#edge-devices&quot;&gt;#&amp;nbsp;&lt;/a&gt; Edge Devices&lt;/h3&gt;
+&lt;p&gt;Whilst we always want to deliver new functionality to end users in each release,
+sometimes bits of work don&#39;t fit naturally into a single four week iteration.&lt;/p&gt;
+&lt;p&gt;That&#39;s the case here with some of the preliminary work we&#39;ve done to introduce
+the idea of Edge Devices to the platform.&lt;/p&gt;
+&lt;p&gt;The goal here is to provide a way to easily deploy and manage Node-RED projects
+on remote devices.&lt;/p&gt;
+&lt;p&gt;This release introduces a bunch of work to the core app and front-end to begin
+introducing the concept of a Device. It includes the basic workflows for registering
+a device on the platform and being able to assign it to a team.&lt;/p&gt;
+&lt;p&gt;The whole feature is hidden behind a feature flag so users on FlowForge Cloud won&#39;t
+see any of this quite yet.&lt;/p&gt;
+&lt;p&gt;The next release will introduce the Edge Agent piece of this - the bit that runs
+on devices.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/flowforge/flowforge/issues/446&quot;&gt;Epic #446 - Devices&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;upgrading-flowforge&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://flowforge.com/blog/2022/05/flowforge-05-released/#upgrading-flowforge&quot;&gt;#&amp;nbsp;&lt;/a&gt; Upgrading FlowForge&lt;/h3&gt;
+&lt;p&gt;If you installed a previous version of FlowForge  and want to upgrade, our documentation provides a
+guide for &lt;a href=&quot;http://flowforge.com/docs/install#upgrade&quot;&gt;upgrading FlowForge on a local server&lt;/a&gt;.&lt;/p&gt;
+&lt;h3 id=&quot;getting-help&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://flowforge.com/blog/2022/05/flowforge-05-released/#getting-help&quot;&gt;#&amp;nbsp;&lt;/a&gt; Getting help&lt;/h3&gt;
+&lt;p&gt;If you hit any problems with the platform, or have questions to ask, please do
+raise an &lt;a href=&quot;https://github.com/flowforge/flowforge/issues&quot;&gt;issue on GitHub&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;That also includes if you have any feedback or feature requests.&lt;/p&gt;
+&lt;p&gt;We also have a &lt;code&gt;#flowforge&lt;/code&gt; channel on the &lt;a href=&quot;https://nodered.org/slack&quot;&gt;Node-RED Slack workspace&lt;/a&gt;.&lt;/p&gt;
+&lt;h3 id=&quot;flowforge-cloud&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://flowforge.com/blog/2022/05/flowforge-05-released/#flowforge-cloud&quot;&gt;#&amp;nbsp;&lt;/a&gt; FlowForge Cloud&lt;/h3&gt;
+&lt;p&gt;If you want to sign-up to FlowForge Cloud you can join the waitlist below.&lt;/p&gt;
+&lt;div class=&quot;mt-4 flex flex-col&quot;&gt;
+    &lt;form action=&quot;https://buttondown.email/api/emails/embed-subscribe/flowforge-waitlist&quot; method=&quot;post&quot; target=&quot;popupwindow&quot; onsubmit=&quot;window.open(&#39;https://buttondown.email/flowforge-waitlist&#39;, &#39;popupwindow&#39;)&quot; class=&quot;embeddable-buttondown-form p-1 my-1 &quot;&gt;
+    &lt;div class=&quot;flex flex-col md:flex-row&quot;&gt;
+        &lt;input type=&quot;email&quot; name=&quot;email&quot; id=&quot;bd-email&quot; placeholder=&quot;Enter your email&quot; class=&quot;lg:w-80 md:w-60 py-2 px-4 rounded border-blue-hero border-2 focus:border-blue-hero-darker  focus:outline-none&quot; /&gt;
+        &lt;input type=&quot;hidden&quot; value=&quot;1&quot; name=&quot;embed&quot; /&gt;
+        &lt;input type=&quot;submit&quot; value=&quot;Sign Up&quot; class=&quot;ff-btn ff-btn--secondary cursor-pointer mt-2 md:mt-0 md:ml-3 py-2 px-4 text-white font-semibold rounded bg-blue-hero border-2 border-blue-hero hover:bg-blue-hero-darker hover:border-blue-hero-darker&quot; /&gt;
+    &lt;/div&gt;
+&lt;/form&gt;
+&lt;/div&gt;
+</content>
+    </entry>
     
     <entry>
         <id>https://flowforge.com/blog/2022/05/community-news-04/</id>

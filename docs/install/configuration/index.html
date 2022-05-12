@@ -61,7 +61,7 @@
     <div class="w-full mx-auto ff-bg-light">
         <div class="font-medium border-b pb-1">
             
-            v0.4.3
+            v0.5.1
             
             /<a class="mx-2" href="/docs">docs</a>/<a class="mx-2" href="/docs/install">install</a>/<a class="mx-2" href="/docs/install/configuration">configuration</a>
         </div>
@@ -186,7 +186,8 @@ inviting new users to join.</p>
 <h2 id="telemetry-configuration" tabindex="-1"><a class="header-anchor" href="#telemetry-configuration">#&nbsp;</a> Telemetry configuration</h2>
 <p>By default, the platform will send anonymous usage information back to us at FlowForge Inc.
 This can be disabled via the Admin Settings in the UI, or turned off in the configuration file.</p>
-<p>For more information about this feature, see <a href="../admin/telemetry/">here</a></p>
+<p>Additionally, you can configure your own instance of FlowForge to report back to you on how users are using FlowForge. FlowForge is designed to work with <a href="https://plausible.io/">Plausible</a>. You can setup your own account, and pass the releavnt domain to the <code>yml</code> in the telemetry configuration</p>
+<p>For more information about this feature, see <a href="/docs/admin/telemetry/">here</a></p>
 <table>
 <thead>
 <tr>
@@ -199,6 +200,14 @@ This can be disabled via the Admin Settings in the UI, or turned off in the conf
 <td><code>telemetry.enabled</code></td>
 <td>Enables the anonymous usage telemetry of the platform. Default: <code>true</code></td>
 </tr>
+<tr>
+<td><code>telemetry.frontend.plausible.domain</code></td>
+<td>The <code>data-domain</code> of your site (see <a href="https://plausible.io/docs/plausible-script">Plausible docs</a>). Default: <code>null</code></td>
+</tr>
+<tr>
+<td><code>telemetry.frontend.plausible.extension</code></td>
+<td>By default, Plausible only detects events running in a production environment, it is possible to enhance measurements with <a href="https://plausible.io/docs/script-extensions">script extensions</a>. You can, for example, detect localhost events using <code>local</code>. Default: <code>null</code></td>
+</tr>
 </tbody>
 </table>
 
@@ -208,7 +217,7 @@ This can be disabled via the Admin Settings in the UI, or turned off in the conf
             <h3 class="font-medium border-b pb-1 mb-4">On this page</h3>
             <ul id="toc" class="text-sm border-b mb-4"></ul>
             <div class="text-sm pb-1 text-right mb-4"><a href="https://github.com/flowforge/handbook/edit/main//docs/install/configuration.md">Edit this page</a></div>
-            <div class="text-xs pb-1 text-right mb-4 italic">Updated: 2022-04-20 10:59:53 +0100</div>
+            <div class="text-xs pb-1 text-right mb-4 italic">Updated: 2022-05-12 14:23:02 +0100</div>
         </div>
     </div>
 </div>

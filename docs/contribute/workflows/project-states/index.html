@@ -63,54 +63,60 @@
             
             v0.5.1
             
-            /<a class="mx-2" href="/docs">docs</a>/<a class="mx-2" href="/docs/user">user</a>/<a class="mx-2" href="/docs/user/concepts">concepts</a>
+            /<a class="mx-2" href="/docs">docs</a>/<a class="mx-2" href="/docs/contribute">contribute</a>/<a class="mx-2" href="/docs/contribute/workflows">workflows</a>/<a class="mx-2" href="/docs/contribute/workflows/project-states">project-states</a>
         </div>
     </div>
     <div class="w-full mx-auto ff-bg-light flex flex-col md:flex-row">
         <div class="flex-grow order-last md:order-first">
             <div class="mt-6 mb-4 prose prose-blue main-content">
-                <h1 id="flowforge-concepts" tabindex="-1"><a class="header-anchor" href="#flowforge-concepts">#&nbsp;</a> FlowForge Concepts</h1>
-<p>FlowForge makes it easy to create and manage Node-RED instances. To do that, there
-are a few concepts the platform introduces to help organise things.</p>
-<h3 id="project" tabindex="-1"><a class="header-anchor" href="#project">#&nbsp;</a> Project</h3>
-<p>The platform refers to each Node-RED instance as a Project.</p>
-<p>Within the FlowForge application, you can create/start/stop projects and view
-its logs.</p>
-<p>At present, the projects are fairly plain instances of Node-RED -
-with some custom settings to integrate them into the platform properly.
-There are a number of settings that can be modified for a project based on what has been configured and allowed in the <a href="#project-template">Project Template</a>. These can be access from the Settings page of the project and there is a description of each one in the settings.</p>
-<h3 id="team" tabindex="-1"><a class="header-anchor" href="#team">#&nbsp;</a> Team</h3>
-<p>Each project is owned by a Team. Only members of that team have access to the
-Node-RED editor for the project.</p>
-<p>Each user in a team can have one of two roles:</p>
+                <h1 id="0.4.0" tabindex="-1"><a class="header-anchor" href="#0.4.0">#&nbsp;</a> 0.4.0</h1>
+<pre class="mermaid">stateDiagram-v2
+direction TB
+ConStarting: Container Starting
+ConRunning: Container Running
+ConStopped: Container Stopped
+ConRemoved: Contianer Removed
+ProjStateSus: project.state = suspended
+NRStopped: Node-RED Stopped
+NRStarted: Node-RED Started
+NRSafe: Node-RED Safe Mode
+Crash: Crash Loop
+state crash_loop <<choice>>
+[*] --> ConStarting : container.start
+ConStarting --> ProjStateSus : failed
+ConStarting --> ConRunning
+state ConRunning {
+    direction TB
+    NRStarted --> NRStopped : container.stopFlows
+    NRStopped --> NRStarted : container.startFlows
+    NRStopped --> NRSafe : container.startFlows(safe)
+    NRSafe --> NRStarted
+    NRSafe --> NRStopped : container.stopFlows
+    NRStarted --> Crash
+    Crash --> crash_loop
+    crash_loop --> NRSafe : y
+    crash_loop --> NRStarted : n
+    
+}
+ConRunning --> ConRemoved : container.remove
+ConRunning --> ConStopped : container.stop
+ConStopped --> ConRemoved : container.remove
+ConStopped --> ConStarting : container.start
+note right of ConStopped : project.state = suspended
+ConRemoved --> [*]
+</pre>
 <ul>
-<li><strong>Owner</strong> - with full administrative access to the team and its projects</li>
-<li><strong>Member</strong> - can access the projects, but limited access to changing Team and project settings.</li>
+<li>Node-RED Stopped: project.state = stopped</li>
+<li>Node-RED Started: project.state = running</li>
+<li>Node-RED Safe Mode: project.state = safe</li>
 </ul>
-<h3 id="project-stack" tabindex="-1"><a class="header-anchor" href="#project-stack">#&nbsp;</a> Project Stack</h3>
-<p>A Project Stack describes properties of the Project runtime. This can include the
-version of Node-RED, memory and CPU allocation. The specific details will depend
-on how and where FlowForge is running.</p>
-<p>Project Stacks are created and owned by the platform Administrator. When a User
-comes to create a new project, they chose from the available stacks.</p>
-<h3 id="project-template" tabindex="-1"><a class="header-anchor" href="#project-template">#&nbsp;</a> Project Template</h3>
-<p>A Project Template describes properties of Node-RED itself. It is how many of the
-settings a user familiar with Node-RED would be used to modifying in their settings
-file. But it can also be used to customise the palette of nodes that are preinstalled,
-provide a set of default flows and change the look and feel of the editor.</p>
-<p>A template can also specify <a href="envvar">Environment Variables</a> which can then have their values as editable for each project or locked.
-It is not possible to disable the use of environment variables in a project.</p>
-<p><em>Note:</em> not all of these features are available today.</p>
-<p>In the current release of FlowForge, Project Templates are created by the Administrator.
-As well as define the values, they also get to choose whether projects are able
-to override any of the settings for themselves.</p>
 
             </div>
         </div>
         <div class="w-full md:w-64 md:ml-8 mt-4 md:mt-6 px-2">
             <h3 class="font-medium border-b pb-1 mb-4">On this page</h3>
             <ul id="toc" class="text-sm border-b mb-4"></ul>
-            <div class="text-sm pb-1 text-right mb-4"><a href="https://github.com/flowforge/handbook/edit/main//docs/user/concepts.md">Edit this page</a></div>
+            <div class="text-sm pb-1 text-right mb-4"><a href="https://github.com/flowforge/handbook/edit/main//docs/contribute/workflows/project-states.md">Edit this page</a></div>
             <div class="text-xs pb-1 text-right mb-4 italic">Updated: 2022-05-12 14:23:02 +0100</div>
         </div>
     </div>
