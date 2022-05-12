@@ -6,7 +6,7 @@ date: 2022-05-12 12:00:00.0
 authors: ["nick-oleary"]
 ---
 
-The cycle continues with our next regularly scheduled release, bring a fresh
+The cycle continues with our next regularly scheduled release, bringing a fresh
 new look to the platform.
 
 <!--more-->
