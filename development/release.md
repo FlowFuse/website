@@ -9,6 +9,8 @@ The follow process should be followed for a FlowForge release.
  - Assign the issue to the Release Manager
  - Ensure you have a valid login token for npmjs as the flowforge user (credentials in the shared password vault)
  - Create a directory to hold fresh checkout of all packages being released (e.g. `mkdir flowforge-x.y.z`)
+ - Ensure you have the [GitHub client](https://github.com/cli/cli) and [jq](https://stedolan.github.io/jq/download/) and installed on your machine
+ - Ensure you're machine is authenticated witht he GitHub client: `gh auth login`
 
 ## Steps
 
@@ -17,9 +19,13 @@ The follow process should be followed for a FlowForge release.
  - If required, ensure that the correct `user.name` and `user.email` git configuration settings are in place for each repository (only a problem if not using a global configuration)
  - From within the `release-0.4.0` directory run the `prepare-release 0.4.0` script (from the admin project). This will update all the required
  `package.json` and `CHANGELOG.md` file updates then raise PRs to update the projects.
+ - Do not panic when you see "All jobs have failed" for `flowforge/flowforge`. The repo will be pointing to newer versions of other packages, which have not yet been published to npm. 
  - Have update PR reviewed by somebody other than the Release Manager
  - All package numbering PRs to be merged, and releases to be tagged, in the order defined in the admin project release issue. Between each release
- ensure that the previous package has been sucessfully published to npmjs.org (bot will post to #gh-flowforge Slack channel or look on npmjs.org page for each package).
+ ensure that the previous package has been sucessfully published to npmjs.org. You can track this in three ways:
+    - Track the "Release Published" action on the GH repository
+    - A bot will post to #gh-flowforge Slack channel, although slightly delayed
+    - Keep an eye on npmjs.org page for each package.
  - Once all the node module components have been built and published to npm the `installer`, `helm` and `docker-compose` components can be updated and tagged.
 
 ## Next Steps
