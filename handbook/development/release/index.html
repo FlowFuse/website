@@ -76,6 +76,8 @@
 <li>Assign the issue to the Release Manager</li>
 <li>Ensure you have a valid login token for npmjs as the flowforge user (credentials in the shared password vault)</li>
 <li>Create a directory to hold fresh checkout of all packages being released (e.g. <code>mkdir flowforge-x.y.z</code>)</li>
+<li>Ensure you have the <a href="https://github.com/cli/cli">GitHub client</a> and <a href="https://stedolan.github.io/jq/download/">jq</a> and installed on your machine</li>
+<li>Ensure you're machine is authenticated witht he GitHub client: <code>gh auth login</code></li>
 </ul>
 <h2 id="steps" tabindex="-1"><a class="header-anchor" href="#steps">#&nbsp;</a> Steps</h2>
 <ul>
@@ -84,9 +86,16 @@
 <li>If required, ensure that the correct <code>user.name</code> and <code>user.email</code> git configuration settings are in place for each repository (only a problem if not using a global configuration)</li>
 <li>From within the <code>release-0.4.0</code> directory run the <code>prepare-release 0.4.0</code> script (from the admin project). This will update all the required
 <code>package.json</code> and <code>CHANGELOG.md</code> file updates then raise PRs to update the projects.</li>
+<li>Do not panic when you see &quot;All jobs have failed&quot; for <code>flowforge/flowforge</code>. The repo will be pointing to newer versions of other packages, which have not yet been published to npm.</li>
 <li>Have update PR reviewed by somebody other than the Release Manager</li>
 <li>All package numbering PRs to be merged, and releases to be tagged, in the order defined in the admin project release issue. Between each release
-ensure that the previous package has been sucessfully published to npmjs.org (bot will post to #gh-flowforge Slack channel or look on npmjs.org page for each package).</li>
+ensure that the previous package has been sucessfully published to npmjs.org. You can track this in three ways:
+<ul>
+<li>Track the &quot;Release Published&quot; action on the GH repository</li>
+<li>A bot will post to #gh-flowforge Slack channel, although slightly delayed</li>
+<li>Keep an eye on npmjs.org page for each package.</li>
+</ul>
+</li>
 <li>Once all the node module components have been built and published to npm the <code>installer</code>, <code>helm</code> and <code>docker-compose</code> components can be updated and tagged.</li>
 </ul>
 <h2 id="next-steps" tabindex="-1"><a class="header-anchor" href="#next-steps">#&nbsp;</a> Next Steps</h2>
@@ -100,7 +109,7 @@ ensure that the previous package has been sucessfully published to npmjs.org (bo
             <h3 class="font-medium border-b pb-1 mb-4">On this page</h3>
             <ul id="toc" class="text-sm border-b mb-4"></ul>
             <div class="text-sm pb-1 text-right mb-4"><a href="https://github.com/flowforge/handbook/edit/main/development/release.md">Edit this page</a></div>
-            <div class="text-xs pb-1 text-right mb-4 italic">Updated: 2022-04-14 16:14:23 +0100</div>
+            <div class="text-xs pb-1 text-right mb-4 italic">Updated: 2022-05-13 11:01:13 +0100</div>
         </div>
     </div>
 </div>
