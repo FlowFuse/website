@@ -13,6 +13,7 @@
     "devDependencies": {
         "@11ty/eleventy": "^0.12.1",
         "@11ty/eleventy-plugin-rss": "^1.1.2",
+        "@11ty/eleventy-plugin-syntaxhighlight": "^4.0.0",
         "@tailwindcss/typography": "^0.4.1",
         "markdown-it-anchor": "^8.4.1",
         "nodemon": "^2.0.15",
