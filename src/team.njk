@@ -23,6 +23,13 @@ nohero: true
                         {{ team[member].country | countryFlag }}
                     </span>
                     {% endif %} #}
+                    {% if team[member].email %}
+                    <span class="">
+                        <a href="mailto:{{ team[member].email }}">
+                            {% include "components/mail.njk" %}
+			</a>
+                    </span>
+                    {% endif %}
                     {% if team[member].twitter %}
                     <span class="">
                         <a class="" target="_blank" href="https://twitter.com/{{ team[member].twitter }}">
