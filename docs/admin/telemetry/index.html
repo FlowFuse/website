@@ -44,7 +44,8 @@
 			<li class="flex"><a class="flex-grow sm:px-4 sm:pl-0 sm:py-2" href="/product">product</a></li>
                         <li class="flex"><a href="/pricing">pricing</a></li>
                         <li class="flex"><a href="/blog">news</a></li>
-			<li class="flex"><a href="https://app.flowforge.com">sign in</a></li>
+			            <li class="flex"><a href="https://app.flowforge.com">sign in</a></li>
+                        <li class="flex"><a href="/docs">documentation</a></li>
                         <li class="flex"><a href="https://github.com/flowforge" target="_blank"><svg class="fill-current hover:text-red-hero h-5" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg></a></li>
                     </ul>
                 </nav>
@@ -61,7 +62,7 @@
     <div class="w-full mx-auto ff-bg-light">
         <div class="font-medium border-b pb-1">
             
-            v0.5.1
+            v0.5.2
             
             /<a class="mx-2" href="/docs">docs</a>/<a class="mx-2" href="/docs/admin">admin</a>/<a class="mx-2" href="/docs/admin/telemetry">telemetry</a>
         </div>
@@ -86,12 +87,12 @@ opt-out of sharing information as part of the initial setup, or through the Admi
 Settings section of the platform UI.</p>
 <p>It is also possible to disable in the <code>flowforge.yml</code> configuration file. This
 overrides whatever option is set in the Admin Settings UI.</p>
-<pre class="">telemetry:
+<pre><code>telemetry:
   enabled: false
-</a>
+</code></pre>
 <h3 id="collected-data" tabindex="-1"><a class="header-anchor" href="#collected-data">#&nbsp;</a> Collected Data</h3>
 <p>The following pieces of information are included in the telemetry sent back to us:</p>
-<pre class="">{
+<pre><code>{
   instanceId: '5db51f99-c6fb-4340-9c19-78adce58cc1b',
   os: { type: 'Darwin', release: '20.5.0', arch: 'x64' },
   env: { nodejs: 'v16.13.1', flowforge: '0.1.1' },
@@ -106,7 +107,7 @@ overrides whatever option is set in the Admin Settings UI.</p>
     }
   }
 }
-</a>
+</code></pre>
 <table>
 <thead>
 <tr>
@@ -151,20 +152,20 @@ a <strong>hash</strong> of the sending IP address - we do not store the plain va
 <p>It currently supports using <a href="https://plausible.io/">Plausible Analytics</a> to gather the information.</p>
 <h3 id="configuring-telemetry-1" tabindex="-1"><a class="header-anchor" href="#configuring-telemetry-1">#&nbsp;</a> Configuring Telemetry</h3>
 <p>Further details about how users are navigating around your instance of FlowForge can be enabled via <a href="https://plausible.io/">Plausible</a>. This can be enabled with:</p>
-<pre class="">telemetry:
+<pre><code>telemetry:
   enabled: true
   frontend:
     plausible:
-      domain: <data-domain>
-</a>
+      domain: &lt;data-domain&gt;
+</code></pre>
 <p>Optionally, you can use a Plausible <code>extension</code> too:</p>
-<pre class="">telemetry:
+<pre><code>telemetry:
   enabled: true
   frontend:
     plausible:
-      domain: <data-domain>
+      domain: &lt;data-domain&gt;
       extension: local
-</a>
+</code></pre>
 <h3 id="collected-data-1" tabindex="-1"><a class="header-anchor" href="#collected-data-1">#&nbsp;</a> Collected Data</h3>
 <p>Details on the metrics gathered through Plausible can be found in the <a href="https://plausible.io/docs/metrics-definitions">Plausible Documentation</a></p>
 <h3 id="schedule-1" tabindex="-1"><a class="header-anchor" href="#schedule-1">#&nbsp;</a> Schedule</h3>
@@ -176,7 +177,7 @@ a <strong>hash</strong> of the sending IP address - we do not store the plain va
             <h3 class="font-medium border-b pb-1 mb-4">On this page</h3>
             <ul id="toc" class="text-sm border-b mb-4"></ul>
             <div class="text-sm pb-1 text-right mb-4"><a href="https://github.com/flowforge/handbook/edit/main//docs/admin/telemetry.md">Edit this page</a></div>
-            <div class="text-xs pb-1 text-right mb-4 italic">Updated: 2022-05-12 14:23:02 +0100</div>
+            <div class="text-xs pb-1 text-right mb-4 italic">Updated: 2022-05-19 11:26:56 +0100</div>
         </div>
     </div>
 </div>

@@ -44,7 +44,8 @@
 			<li class="flex"><a class="flex-grow sm:px-4 sm:pl-0 sm:py-2" href="/product">product</a></li>
                         <li class="flex"><a href="/pricing">pricing</a></li>
                         <li class="flex"><a href="/blog">news</a></li>
-			<li class="flex"><a href="https://app.flowforge.com">sign in</a></li>
+			            <li class="flex"><a href="https://app.flowforge.com">sign in</a></li>
+                        <li class="flex"><a href="/docs">documentation</a></li>
                         <li class="flex"><a href="https://github.com/flowforge" target="_blank"><svg class="fill-current hover:text-red-hero h-5" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg></a></li>
                     </ul>
                 </nav>
@@ -61,7 +62,7 @@
     <div class="w-full mx-auto ff-bg-light">
         <div class="font-medium border-b pb-1">
             
-            v0.5.1
+            v0.5.2
             
             /<a class="mx-2" href="/docs">docs</a>/<a class="mx-2" href="/docs/install">install</a>/<a class="mx-2" href="/docs/install/local">local</a>
         </div>
@@ -101,19 +102,19 @@ how to do this can be found on the Node.js website here:</p>
 <p>On Windows, the standard Node.js installer will offer to do that for you.</p>
 <p>On MacOS, you will need the <code>XCode Command Line Tools</code> to be installed. This can
 be done by running the following command:</p>
-<pre class="">xcode-select --install
-</a>
+<pre><code>xcode-select --install
+</code></pre>
 <h3 id="installing-flowforge" tabindex="-1"><a class="header-anchor" href="#installing-flowforge">#&nbsp;</a> Installing FlowForge</h3>
 <ol>
 <li>
 <p>Create a directory to be the base of your FlowForge install. For example: <code>/opt/flowforge</code> or <code>c:\flowforge</code></p>
 <p>For Linux/MacOS:</p>
-<pre class="">sudo mkdir /opt/flowforge
+<pre><code>sudo mkdir /opt/flowforge
 sudo chown $USER /opt/flowforge
-</a>
+</code></pre>
 <p>For Windows:</p>
-<pre class="console">mkdir c:\flowforge
-</a>
+<pre><code>mkdir c:\flowforge
+</code></pre>
 </li>
 <li>
 <p>Download the Installer zip file from https://github.com/flowforge/installer/releases</p>
@@ -122,26 +123,26 @@ sudo chown $USER /opt/flowforge
 <p>Unzip the downloaded file into a temporary location and copy its contents to
 the FlowForge directory</p>
 <p>For Linux/MacOS:</p>
-<pre class="">cd /tmp/
+<pre><code>cd /tmp/
 unzip flowforge-installer-x.y.z.zip
 cp -R flowforge-installer-x.y.z/* /opt/flowforge
-</a>
+</code></pre>
 <p>For Windows:</p>
-<pre class="console">cd c:\temp
+<pre><code>cd c:\temp
 tar -xf flowforge-installer-x.y.z.zip
 xcopy /E /I flowforge-installer-x.y.z c:\flowforge
-</a>
+</code></pre>
 </li>
 <li>
 <p>Run the installer and follow the prompts</p>
 <p>For Linux/MacOS:</p>
-<pre class="">cd /opt/flowforge
+<pre><code>cd /opt/flowforge
 ./install.sh
-</a>
+</code></pre>
 <p>For Windows:</p>
-<pre class="console">cd c:\flowforge
+<pre><code>cd c:\flowforge
 install.bat
-</a>
+</code></pre>
 </li>
 </ol>
 <h4 id="installing-as-a-service" tabindex="-1"><a class="header-anchor" href="#installing-as-a-service">#&nbsp;</a> Installing as a service</h4>
@@ -155,14 +156,14 @@ user, it will also change the ownership of the FlowForge directory to that user.
 <p>For more details on the options available, see the <a href="../configuration/">configuration guide</a>.</p>
 <h3 id="running-flowforge" tabindex="-1"><a class="header-anchor" href="#running-flowforge">#&nbsp;</a> Running FlowForge</h3>
 <p>If you have installed FlowForge as a service, it can be started by running:</p>
-<pre class="">service flowforge start
-</a>
+<pre><code>service flowforge start
+</code></pre>
 <p>To run it manually, you can use:</p>
 <ul>
 <li>
 <p>Linux/MacOS:</p>
-<pre class="">/opt/flowforge/bin/flowforge.sh
-</a>
+<pre><code>/opt/flowforge/bin/flowforge.sh
+</code></pre>
 </li>
 <li>
 <p>Windows:</p>
@@ -196,7 +197,7 @@ create any more projects. See <a href="../first-run/#next-steps">this guide</a> 
             <h3 class="font-medium border-b pb-1 mb-4">On this page</h3>
             <ul id="toc" class="text-sm border-b mb-4"></ul>
             <div class="text-sm pb-1 text-right mb-4"><a href="https://github.com/flowforge/handbook/edit/main//docs/install/local/index.md">Edit this page</a></div>
-            <div class="text-xs pb-1 text-right mb-4 italic">Updated: 2022-05-12 14:23:02 +0100</div>
+            <div class="text-xs pb-1 text-right mb-4 italic">Updated: 2022-05-19 11:26:56 +0100</div>
         </div>
     </div>
 </div>

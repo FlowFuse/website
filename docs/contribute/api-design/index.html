@@ -44,7 +44,8 @@
 			<li class="flex"><a class="flex-grow sm:px-4 sm:pl-0 sm:py-2" href="/product">product</a></li>
                         <li class="flex"><a href="/pricing">pricing</a></li>
                         <li class="flex"><a href="/blog">news</a></li>
-			<li class="flex"><a href="https://app.flowforge.com">sign in</a></li>
+			            <li class="flex"><a href="https://app.flowforge.com">sign in</a></li>
+                        <li class="flex"><a href="/docs">documentation</a></li>
                         <li class="flex"><a href="https://github.com/flowforge" target="_blank"><svg class="fill-current hover:text-red-hero h-5" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg></a></li>
                     </ul>
                 </nav>
@@ -61,7 +62,7 @@
     <div class="w-full mx-auto ff-bg-light">
         <div class="font-medium border-b pb-1">
             
-            v0.5.1
+            v0.5.2
             
             /<a class="mx-2" href="/docs">docs</a>/<a class="mx-2" href="/docs/contribute">contribute</a>/<a class="mx-2" href="/docs/contribute/api-design">api-design</a>
         </div>
@@ -81,22 +82,22 @@ of the <code>id</code> property. This property should be used on the API but ali
 <code>id</code> property.</p>
 <p>Each database model has a pair of helper functions to encode and decode hashids
 to/from the true <code>id</code> value:</p>
-<pre class="">const encodedHashid = app.db.models.User.encodeHashid(123);
-const objectId = app.db.models.User.decodeHashid("edjEbo2K1w")
-</a>
+<pre><code>const encodedHashid = app.db.models.User.encodeHashid(123);
+const objectId = app.db.models.User.decodeHashid(&quot;edjEbo2K1w&quot;)
+</code></pre>
 <h2 id="api-path-design" tabindex="-1"><a class="header-anchor" href="#api-path-design">#&nbsp;</a> API Path design</h2>
 <h3 id="admin-routes" tabindex="-1"><a class="header-anchor" href="#admin-routes">#&nbsp;</a> Admin routes</h3>
 <p>All admin-only routes exist under:</p>
-<pre class="">/api/v1/admin/...
-</a>
+<pre><code>/api/v1/admin/...
+</code></pre>
 <h3 id="logged-in-user-routes" tabindex="-1"><a class="header-anchor" href="#logged-in-user-routes">#&nbsp;</a> Logged-in user routes</h3>
 <p>All routes relating to the logged-in user exist under:</p>
-<pre class="">/api/v1/user/...
-</a>
+<pre><code>/api/v1/user/...
+</code></pre>
 <h3 id="object-collection-routes" tabindex="-1"><a class="header-anchor" href="#object-collection-routes">#&nbsp;</a> Object collection routes</h3>
 <p>API routes that related to objects in collections follow the pattern:</p>
-<pre class="">/api/v1/<plural-noun>/<instance-id>/...
-</a>
+<pre><code>/api/v1/&lt;plural-noun&gt;/&lt;instance-id&gt;/...
+</code></pre>
 <h2 id="implementing-routes" tabindex="-1"><a class="header-anchor" href="#implementing-routes">#&nbsp;</a> Implementing routes</h2>
 <p>All API routes exist under <code>forge/routes/api</code> in the repository, grouped into
 files based on the entity/functionality the api is related to.</p>
@@ -106,10 +107,10 @@ a valid session for a logged in user, or an access token.</p>
 <h3 id="opening-a-route-to-anonymous-users" tabindex="-1"><a class="header-anchor" href="#opening-a-route-to-anonymous-users">#&nbsp;</a> Opening a route to anonymous users</h3>
 <p>In rare cases, a route needs to be accessible to anonymous users. To by-pass
 the built-in preHandler, you can set <code>allowAnonymous</code> on the routes <code>config</code> object:</p>
-<pre class="">app.get('/', { config: { allowAnonymous: true } }, async (request, reply) => {
+<pre><code>app.get('/', { config: { allowAnonymous: true } }, async (request, reply) =&gt; {
      ...
 })
-</a>
+</code></pre>
 <h3 id="team-routes" tabindex="-1"><a class="header-anchor" href="#team-routes">#&nbsp;</a> Team routes</h3>
 <p>Routes under <code>forge/routes/api/team.js</code> that relate to a specific team,
 must use <code>:teamId</code> as the placeholder in the route. A request preHandler will
@@ -136,13 +137,13 @@ generate a preHandler function that will ensure any requesting user has that
 permission.</p>
 <p>For example, to add a user to a team, the requesting user needs to have
 <code>&quot;team:user:add&quot;</code>:</p>
-<pre class="">app.post('/', { preHandler: app.needsPermission("team:user:add") }, async (request, reply) => {
+<pre><code>app.post('/', { preHandler: app.needsPermission(&quot;team:user:add&quot;) }, async (request, reply) =&gt; {
     // This is defined under forge/routes/api/teamMembers.js - and is mounted
     // under the path `/api/v1/teams/:teamId/members/`
     // Due to the team route preHandler, this means `request.teamMembership`
     // will be defined and will be used by the `needsPermission` handler
 });
-</a>
+</code></pre>
 <h2 id="pagination" tabindex="-1"><a class="header-anchor" href="#pagination">#&nbsp;</a> Pagination</h2>
 <p>All routes that return collections of things must use pagination to allow for
 future growth.</p>
@@ -156,14 +157,14 @@ the <code>/api/v1/projects/:id/logs</code> for example.</li>
 <li>Each end-point should have a sensible default for the <code>limit</code> parameter</li>
 </ul>
 <p>The response object for paginated end-points should have the format:</p>
-<pre class="">{
-    "meta": {
-        "next_cursor": "16416724188790000",
+<pre><code>{
+    &quot;meta&quot;: {
+        &quot;next_cursor&quot;: &quot;16416724188790000&quot;,
     },
-    "<object-type>": [ ]
-    "count": 123
+    &quot;&lt;object-type&gt;&quot;: [ ]
+    &quot;count&quot;: 123
 }
-</a>
+</code></pre>
 <p>The <code>meta</code> property contains information to help the client navigate the collection.</p>
 <ul>
 <li><code>next_cursor</code> - if set, provides the cursor to use to get the next page of results</li>
@@ -190,12 +191,12 @@ direction to the collection's natural order.</p>
 <p>Within a route handler for a paginated end-point, the following helper function
 can be used to get the pagination options from the request, as well as specifying
 default options:</p>
-<pre class="">const paginationOptions = app.getPaginationOptions(request, {limit: 30})
+<pre><code>const paginationOptions = app.getPaginationOptions(request, {limit: 30})
 
 // paginationOptions.limit = how many results to return
 // paginationOptions.cursor = starting cursor
 
-</a>
+</code></pre>
 <p>Wherever possible, the pagination options should be applied as part of the database
 query, using the <code>where</code> and <code>limit</code> options.</p>
 
@@ -205,7 +206,7 @@ query, using the <code>where</code> and <code>limit</code> options.</p>
             <h3 class="font-medium border-b pb-1 mb-4">On this page</h3>
             <ul id="toc" class="text-sm border-b mb-4"></ul>
             <div class="text-sm pb-1 text-right mb-4"><a href="https://github.com/flowforge/handbook/edit/main//docs/contribute/api-design.md">Edit this page</a></div>
-            <div class="text-xs pb-1 text-right mb-4 italic">Updated: 2022-05-12 14:23:02 +0100</div>
+            <div class="text-xs pb-1 text-right mb-4 italic">Updated: 2022-05-19 11:26:56 +0100</div>
         </div>
     </div>
 </div>
