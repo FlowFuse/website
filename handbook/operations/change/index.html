@@ -62,27 +62,28 @@
     <div class="w-full mx-auto ff-bg-light">
         <div class="font-medium border-b pb-1">
             
-            /<a class="mx-2" href="/handbook">handbook</a>/<a class="mx-2" href="/handbook/operations">operations</a>
+            /<a class="mx-2" href="/handbook">handbook</a>/<a class="mx-2" href="/handbook/operations">operations</a>/<a class="mx-2" href="/handbook/operations/change">change</a>
         </div>
     </div>
     <div class="w-full mx-auto ff-bg-light flex flex-col md:flex-row">
         <div class="flex-grow order-last md:order-first">
             <div class="mt-6 mb-4 prose prose-blue main-content">
-                <h1 id="operations" tabindex="-1"><a class="header-anchor" href="#operations">#&nbsp;</a> Operations</h1>
-<p>This covers how we run our business and deliver service to our customers.</p>
+                <h1 id="change-control" tabindex="-1"><a class="header-anchor" href="#change-control">#&nbsp;</a> Change Control</h1>
+<p>We have a simple change control process for flowforge.cloud</p>
+<p>Any configuration is changed or new code deployment must go through the following steps.</p>
+<p>The key points here are:</p>
 <ul>
-<li><a href="../operations/support/">Support</a></li>
-<li><a href="../operations/billing/">Billing</a></li>
-<li><a href="../operations/accounts/">Accounts</a></li>
-<li><a href="../operations/change/">Change Control</a></li>
+<li>This is a 2 person process, someone to implement and someone to review</li>
+<li>All changes are recorded</li>
 </ul>
+<pre class="language-mermaid"><code class="language-mermaid"><span class="token keyword">flowchart</span> TD<br>    A<span class="token text string">[Create issue in cloud project detailing the changes]</span> <span class="token arrow operator">--></span>  <br>    B<span class="token text string">[Issue assigned to implementer]</span> <span class="token arrow operator">--></span> <br>    C<span class="token text string">[Second person adds approval comment]</span> <span class="token arrow operator">--></span> <br>    D<span class="token text string">[Change made on Staging]</span> <span class="token arrow operator">--></span> <br>    E<span class="token text string">[Second Person reviews staging and approves]</span> <span class="token arrow operator">--></span> <br>    F<span class="token text string">[Change Made on Production]</span> <span class="token arrow operator">--></span> <br>    G<span class="token text string">[Second Person reviews Prod and closes issue]</span></code></pre>
 
             </div>
         </div>
         <div class="w-full md:w-64 md:ml-8 mt-4 md:mt-6 px-2">
             <h3 class="font-medium border-b pb-1 mb-4">On this page</h3>
             <ul id="toc" class="text-sm border-b mb-4"></ul>
-            <div class="text-sm pb-1 text-right mb-4"><a href="https://github.com/flowforge/handbook/edit/main/operations/index.md">Edit this page</a></div>
+            <div class="text-sm pb-1 text-right mb-4"><a href="https://github.com/flowforge/handbook/edit/main/operations/change.md">Edit this page</a></div>
             <div class="text-xs pb-1 text-right mb-4 italic">Updated: 2022-05-20 14:23:23 +0100</div>
         </div>
     </div>
