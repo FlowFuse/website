@@ -41,9 +41,8 @@ This will subscribe to any notifications covering: `issues`, `pulls`, `commits`,
 ### Workflows
 
 All code repositories must have the Project Automation workflow added. This is done
-by adding [`.github/workflows/project-automation.yml`](https://github.com/flowforge/flowforge/blob/main/.github/workflows/project-automation.yml). This workflow will ensure any
-issues or PRs opened/closed against the repo are automatically tracked on the Development
-[Project board](https://github.com/orgs/flowforge/projects/1)
+by adding [`.github/workflows/project-automation.yml`](https://github.com/flowforge/flowforge/blob/main/.github/workflows/project-automation.yml).
+This workflow will ensure any opened issues are automatically added to the [Product board](https://github.com/orgs/flowforge/projects/3) where it can be triaged and prioritised.
 
 #### Private Repositories
 

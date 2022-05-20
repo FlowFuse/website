@@ -52,16 +52,17 @@ Our [values](../company#values) help shape the culture we want to build, both in
 
 #### 2022
 
-There's four pillars of the product we're investing in:
-1. Node-RED management
-1. Edge Deployments and management
-1. Collaboration features
-1. Enterprise and compliance
+There are four pillars of the product we're investing in:
+1. Provide the best Node-RED experience.
+1. Enable users to run Node-RED at the edge.
+1. Enable teams to collaborate when working with Node-RED.
+1. Meet the compliance needs of the enterprise.
 
 The [product vision](../company/product-vision.md) goes into this in more depth.
 Check out our [roadmap](https://github.com/orgs/flowforge/projects/5) for on what we're pursuing in the next few releases.
 
-Furthermore, we'll continuing our involvement with the Node-RED community.
+Furthermore, we will continue our involvement with the Node-RED community.
+
 
 1. **Provide technical leadership and direction** - This includes
     - Flow Testing Framework
