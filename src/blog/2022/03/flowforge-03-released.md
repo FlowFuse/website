@@ -100,24 +100,6 @@ Our regular release cycle puts the next release on Thursday 14th April.
 We're still in planning stage for the release, but we'll also be beginning to invite
 people from the waiting list to sign-up to FlowForge Cloud.
 
-For more information, check out the [annoucement blog post](https://flowforge.com/blog/announcing-flowforge-cloud/), or join the waiting
-list here:
-
-<div class="mt-4 flex flex-col">
-    <form
-        action="https://buttondown.email/api/emails/embed-subscribe/flowforge-waitlist"
-        method="post"
-        target="popupwindow"
-        onsubmit="window.open('https://buttondown.email/flowforge-waitlist', 'popupwindow')"
-        class="embeddable-buttondown-form p-1 my-1 ">
-    <div class="flex flex-col md:flex-row">
-        <input type="email" name="email" id="bd-email" placeholder="Enter your email" class="lg:w-80 md:w-60 py-2 px-4 rounded border-blue-hero border-2 focus:border-blue-hero-darker  focus:outline-none" />
-        <input type="hidden" value="1" name="embed" />
-        <input type="submit" value="Sign Up" class="ff-btn ff-btn--secondary cursor-pointer mt-2 md:mt-0 md:ml-3 py-2 px-4 text-white font-semibold rounded bg-blue-hero border-2 border-blue-hero hover:bg-blue-hero-darker hover:border-blue-hero-darker"/>
-    </div>
-</form>
-</div>
-
-
+For more information, check out the [annoucement blog post](https://flowforge.com/blog/announcing-flowforge-cloud/).
 You can also sign up to our general mailing list below if you want to hear more
 about the work we're doing.
