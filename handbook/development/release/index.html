@@ -69,8 +69,10 @@
         <div class="flex-grow order-last md:order-first">
             <div class="mt-6 mb-4 prose prose-blue main-content">
                 <h1 id="release-process" tabindex="-1"><a class="header-anchor" href="#release-process">#&nbsp;</a> Release Process</h1>
-<p>The follow process should be followed for a FlowForge release.</p>
-<h2 id="setup" tabindex="-1"><a class="header-anchor" href="#setup">#&nbsp;</a> Setup</h2>
+<p>There's two processes, one for major/minor point releases. The second for patch
+releases.</p>
+<h2 id="major%2Fminor-point-releases" tabindex="-1"><a class="header-anchor" href="#major%2Fminor-point-releases">#&nbsp;</a> Major/minor point releases</h2>
+<h3 id="setup" tabindex="-1"><a class="header-anchor" href="#setup">#&nbsp;</a> Setup</h3>
 <ul>
 <li>Decide who will be Release Manager for this release. For Major/Minor releases this should be shared across the whole team to prevent it becoming a single point of failure. For Fix releases it can be the developer committing the fix.</li>
 <li>Create a Release check list issue (using template) on the flowforge/admin project to keep track of all components included in the release (e.g. https://github.com/flowforge/admin/issues/7)</li>
@@ -80,7 +82,7 @@
 <li>Ensure you have the <a href="https://github.com/cli/cli">GitHub client</a> and <a href="https://stedolan.github.io/jq/download/">jq</a> and installed on your machine</li>
 <li>Ensure you're machine is authenticated witht he GitHub client: <code>gh auth login</code></li>
 </ul>
-<h2 id="steps" tabindex="-1"><a class="header-anchor" href="#steps">#&nbsp;</a> Steps</h2>
+<h3 id="steps" tabindex="-1"><a class="header-anchor" href="#steps">#&nbsp;</a> Steps</h3>
 <ul>
 <li>Use the <code>checkout-release</code> script (from the admin project) to check out clean clones of the packages required to do a release
 (e.g. <code>./checkout-release 0.4.0</code> will create a directory called <code>release-0.4.0</code> containing all the required projects)</li>
@@ -99,10 +101,27 @@ ensure that the previous package has been sucessfully published to npmjs.org. Yo
 </li>
 <li>Once all the node module components have been built and published to npm the <code>installer</code>, <code>helm</code> and <code>docker-compose</code> components can be updated and tagged.</li>
 </ul>
-<h2 id="next-steps" tabindex="-1"><a class="header-anchor" href="#next-steps">#&nbsp;</a> Next Steps</h2>
+<h3 id="next-steps" tabindex="-1"><a class="header-anchor" href="#next-steps">#&nbsp;</a> Next Steps</h3>
 <ul>
 <li>As much as possible of the previous steps should be converted into a CI Pipeline making use of GitHub Actions.</li>
 </ul>
+<h2 id="patch-releases" tabindex="-1"><a class="header-anchor" href="#patch-releases">#&nbsp;</a> Patch releases</h2>
+<p>Patch releases are done at hoc basis, and have a much lighter process to allow
+fixes to quickly be released.</p>
+<ol>
+<li>In the #dev slack channel, explain the need for a patch release and invite others
+to have their fixes included.</li>
+<li>Create a patch release issue in the <code>flowforge/admin</code> repository with a list of all PRs
+to cherry pick into <code>X.Y-maint</code></li>
+<li>Create PRs for each of these changes with the target branch being <code>X.Y-maint</code></li>
+<li>Have the list of changes approved by one other developer, who also merges the list of PRs</li>
+<li>Create a new PR to <code>X.Y-maint</code> to bump the version, and update the CHANGELOG.md</li>
+<li>Check the list of PRs target merge branch again for each PR</li>
+<li>Assign all PRs to one developer, and get them merged.</li>
+<li>Once merged, checkout <code>X.Y-maint</code> and tag using `git tag v0.X.Y -m &quot;<One line description of this release>&quot;</li>
+<li>Push the tag to the GitHub repository, and create a corresponding GitHub release</li>
+<li>Create two change request issues, one for staging and one for production to upgrade to the latest version</li>
+</ol>
 
             </div>
         </div>
@@ -110,7 +129,7 @@ ensure that the previous package has been sucessfully published to npmjs.org. Yo
             <h3 class="font-medium border-b pb-1 mb-4">On this page</h3>
             <ul id="toc" class="text-sm border-b mb-4"></ul>
             <div class="text-sm pb-1 text-right mb-4"><a href="https://github.com/flowforge/handbook/edit/main/development/release.md">Edit this page</a></div>
-            <div class="text-xs pb-1 text-right mb-4 italic">Updated: 2022-05-20 15:13:07 +0100</div>
+            <div class="text-xs pb-1 text-right mb-4 italic">Updated: 2022-05-24 16:31:56 +0100</div>
         </div>
     </div>
 </div>
