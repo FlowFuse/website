@@ -1,8 +1,11 @@
 # Release Process
 
-The follow process should be followed for a FlowForge release.
+There's two processes, one for major/minor point releases. The second for patch
+releases.
 
-## Setup
+## Major/minor point releases
+
+### Setup
 
  - Decide who will be Release Manager for this release. For Major/Minor releases this should be shared across the whole team to prevent it becoming a single point of failure. For Fix releases it can be the developer committing the fix.
  - Create a Release check list issue (using template) on the flowforge/admin project to keep track of all components included in the release (e.g. https://github.com/flowforge/admin/issues/7)
@@ -10,7 +13,7 @@ The follow process should be followed for a FlowForge release.
  - Ensure you have a valid login token for npmjs as the flowforge user (credentials in the shared password vault)
  - Create a directory to hold fresh checkout of all packages being released (e.g. `mkdir flowforge-x.y.z`)
 
-## Steps
+### Steps
 
  - Use the `checkout-release` script (from the admin project) to check out clean clones of the packages required to do a release 
  (e.g. `./checkout-release 0.4.0` will create a directory called `release-0.4.0` containing all the required projects)
@@ -22,6 +25,24 @@ The follow process should be followed for a FlowForge release.
  ensure that the previous package has been sucessfully published to npmjs.org (bot will post to #gh-flowforge Slack channel or look on npmjs.org page for each package).
  - Once all the node module components have been built and published to npm the `installer`, `helm` and `docker-compose` components can be updated and tagged.
 
-## Next Steps
+### Next Steps
 
  - As much as possible of the previous steps should be converted into a CI Pipeline making use of GitHub Actions.
+
+## Patch releases
+
+Patch releases are done at hoc basis, and have a much lighter process to allow
+fixes to quickly be released.
+
+1. In the #dev slack channel, explain the need for a patch release and invite others
+to have their fixes included.
+1. Create a patch release issue in the `flowforge/admin` repository with a list of all PRs
+to cherry pick into `X.Y-maint`
+1. Create PRs for each of these changes with the target branch being `X.Y-maint`
+1. Have the list of changes approved by one other developer, who also merges the list of PRs
+1. Create a new PR to `X.Y-maint` to bump the version, and update the CHANGELOG.md
+1. Check the list of PRs target merge branch again for each PR
+1. Assign all PRs to one developer, and get them merged.
+1. Once merged, checkout `X.Y-maint` and tag using `git tag v0.X.Y -m "<One line description of this release>"
+1. Push the tag to the GitHub repository, and create a corresponding GitHub release
+1. Create two change request issues, one for staging and one for production to upgrade to the latest version
