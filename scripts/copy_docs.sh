@@ -27,6 +27,7 @@ do
      case "$file" in
          *.md)
             echo "---" > $destFile
+            echo "originalPath: $file" >> $destFile
             echo "updated: $lastUpdate" >> $destFile
             echo "version: $version" >> $destFile
             echo "---" >> $destFile
