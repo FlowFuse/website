@@ -4,6 +4,7 @@ const spacetime = require("spacetime");
 const heroGen = require("./lib/post-hero-gen.js");
 const countryFlag = require("./lib/country-flag-emoji");
 const pluginMermaid = require("@kevingimbel/eleventy-plugin-mermaid");
+const { stringify } = require("postcss");
 
 
 module.exports = function(eleventyConfig) {
@@ -68,19 +69,45 @@ module.exports = function(eleventyConfig) {
         }).join("/")
     });
 
-    eleventyConfig.addFilter("rewriteHandbookLinks", (str) => {
-        str = str.replace(/href="\.\/([^/]*?)\.md(#.*)?"/g,'href="../$1/$2"')
-        str = str.replace(/src="(\.\.\/images)(.*?)"/g,'src="../$1$2"')
-        str = str.replace(/href="(.*?)\.md(#.*)?"/g,'href="$1/$2"')
-        str = str.replace(/href="(.*?)README\/?"/g, 'href="$1"')
+    eleventyConfig.addFilter("rewriteHandbookLinks", (str, page) => {
+        // If page.inputPath looks like: ./src/handbook/abc/def.md
+        // then the url of the page will be `/handbook/abc/def/`
+        // links of the form `./` or `[^/]` must be prepended with `../`
+        // to ensure it links to the right place
+
+        const isIndexPage = /(README.md|index.md)$/i.test(page.inputPath)
+
+        const matcher = /((href|src)="([^"]*))"/g
+        let match
+        while ((match = matcher.exec(str)) !== null) {
+            let url = match[3]
+            if (/^(http|#|mailto:)/.test(url)) {
+                // Do not rewrite absolute urls, in-page anchors or emails
+                continue
+            }
+            // */abc.md#anchor => */abc/#anchor
+            url = url.replace(/.md(#.*)?$/, '$1')
+            // */README#anchor => */#anchor
+            url = url.replace(/README(#.*)?$/, '$1')
+            if (url[0] !== '/' && !isIndexPage) {
+                url = '../'+url
+            }
+            // console.log(" rewrite link:", match[3],'=>',url)
+            str = str.substring(0, match.index) + `${match[2]}="${url}"` + str.substring(match.index+match[1].length)
+        }
         return str;
     })
-    eleventyConfig.addFilter("handbookMapOriginalPath", (str) => {
-        str = str.replace("/handbook/","");
-        if (str === "index") {
-            return "README.md"
+    eleventyConfig.addFilter("handbookEditLink", (page, originalPath) => {
+        let baseUrl
+        let filePath = page.filePathStem
+        if (/^\/docs/.test(page.url)) {
+            baseUrl = 'https://github.com/flowforge/flowforge/edit/main/docs/'
+        } else if (/^\/handbook/.test(page.url)) {
+            baseUrl = 'https://github.com/flowforge/handbook/edit/main/'
+            // Handbook files are at the root of their repo - so strip the prefix
+            filePath = filePath.substring('/handbook'.length)
         }
-        return str+".md";
+        return baseUrl+originalPath.replace(/^.\//,'')
     })
     eleventyConfig.addPlugin(require("@11ty/eleventy-plugin-rss"))
     eleventyConfig.addPlugin(pluginMermaid);
