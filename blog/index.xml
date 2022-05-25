@@ -3,8 +3,58 @@
     <title>FlowForge</title>
     <link href="https://flowforge.com/blog/index.xml" rel="self"/>
     <link href="https://flowforge.com/blog"/>
-    <updated>2022-05-12T12:00:00Z</updated>
+    <updated>2022-05-25T09:00:00Z</updated>
     <id>https://flowforge.com/blog</id>
+    
+    <entry>
+        <id>https://flowforge.com/blog/2022/05/sign-up-for-flowforge-cloud/</id>
+        <title>FlowForge open for everybody</title>
+        <summary>Sign up and start a new Node-RED project within a minute!</summary>
+        <updated>2022-05-25T09:00:00Z</updated>
+        <link href="https://flowforge.com/blog/2022/05/sign-up-for-flowforge-cloud/"/>
+        <author><name>Zeger-Jan van de Weg</name></author>
+        <content type="html">&lt;p&gt;FlowForge wants to enable everyone to build workflows in Node-RED. Since announcing
+&lt;a href=&quot;https://flowforge.com/blog/2022/02/announcing-flowforge-cloud/&quot;&gt;FlowForge Cloud&lt;/a&gt;
+two months ago we&#39;ve had a waiting list for users to sign up to. That allowed us
+to control the pace we were bringing new users onto the platform, learning what
+is needed to scale up our platform and continue to improve our first user experience.&lt;/p&gt;
+&lt;p&gt;Today we have removed the waiting list. Anyone can sign up to FlowForge and start a
+new Node-RED project in under a minute!&lt;/p&gt;
+&lt;!--more--&gt;
+&lt;div class=&quot;max-w-md m-auto&quot;&gt;
+  &lt;a class=&quot;ff-btn ff-btn--primary&quot; href=&quot;https://app.flowforge.com/account/create&quot;&gt;Sign up&lt;/a&gt;
+&lt;/div&gt;
+&lt;h2 id=&quot;what-we-offer&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://flowforge.com/blog/2022/05/sign-up-for-flowforge-cloud/#what-we-offer&quot;&gt;#&amp;nbsp;&lt;/a&gt; What we offer&lt;/h2&gt;
+&lt;p&gt;Besides the sub minute time to start a new Node-RED project, there&#39;s many more
+features our offering includes. Two we&#39;d like to highlight.&lt;/p&gt;
+&lt;p&gt;To start our blog highlight reel: Collaboration. FlowForge allows you to work
+with a team on your flows. There&#39;s the ability to create multiple users, each
+with their own credentials that can alter the flows on Node-RED, and it&#39;s
+execution environment like for example the &lt;a href=&quot;https://flowforge.com/docs/user/envvar/&quot;&gt;environments variables&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Furthermore, &lt;a href=&quot;https://flowforge.com/docs/user/changestack&quot;&gt;stacks&lt;/a&gt;. These allow
+a user to select the execution environment for their Node-RED project. For example; the
+Node-RED version being used. Combined with the ability for one to copy a project
+to a new stack, this allows FlowForge users to copy their project to the Node-RED
+3.0-beta stack to validate their solutions will continue to work on the new release
+without disrupting their main project.&lt;/p&gt;
+&lt;h2 id=&quot;our-roadmap&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://flowforge.com/blog/2022/05/sign-up-for-flowforge-cloud/#our-roadmap&quot;&gt;#&amp;nbsp;&lt;/a&gt; Our roadmap&lt;/h2&gt;
+&lt;p&gt;Currently we&#39;re working towards our 0.6 release. The main feature of this release
+will be support for Devices. This will allow you to send a snapshot of a project
+to a Node-RED instance running outside of the FlowForge platform and update the flows
+remotely. Remote devices will run our &lt;a href=&quot;https://github.com/flowforge/flowforge-device-agent&quot;&gt;agent&lt;/a&gt;
+to communicate with the FlowForge Cloud project.&lt;/p&gt;
+&lt;p&gt;While the first iteration will be considered an Alpha release, by shipping early and often, it lets us get
+welcome feedback from our users and the wider community - helping to shape the future direction.
+It also allows users to start validating the feature for their own proof of concept projects.&lt;/p&gt;
+&lt;p&gt;Over the next few months we&#39;re continuing to drive development of the platform
+across a number of areas - including further improvements to the Device feature.
+But also looking at new Enterprise-ready features, such as Single-Sign On integration
+and more tools to make collaboration even easy.&lt;/p&gt;
+&lt;p&gt;We intend to grow our offering so that FlowForge remains the best way to run
+Node-RED.&lt;/p&gt;
+&lt;p&gt;Stay informed by registering for our newsletter!&lt;/p&gt;
+</content>
+    </entry>
     
     <entry>
         <id>https://flowforge.com/blog/2022/05/flowforge-05-released/</id>
