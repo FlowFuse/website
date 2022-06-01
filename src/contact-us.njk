@@ -1,0 +1,58 @@
+---
+layout: layouts/nohero.njk
+title: Contact us
+---
+<div>
+  <div class="flex justify-between items-center mb-4 md:px-4 md:-mb-0 md:px-0 md:block">
+    <div class="ff-bg-light product px-4 pb-24 pt-4 md:pt-12 md:p-12 md:grid grid-cols-2">
+      <img class="hidden md:w-72 md:m-auto md:block md:mt-0" src="../images/pictograms/browser_red.png" />
+
+
+      <script src="https://www.google.com/recaptcha/api.js?render=6LfiTCkgAAAAAKX6CuT8mPiXWJM6BUq4QSEaiNtb"></script>
+      <script>
+        function timestamp() {
+          var response = document.getElementById("g-recaptcha-response");
+          if (response == null || response.value.trim() == "") {
+            var elems = JSON.parse(document.getElementsByName("captcha_settings")[0].value);
+            elems["ts"] = JSON.stringify(new Date().getTime());
+            document.getElementsByName("captcha_settings")[0].value = JSON.stringify(elems);
+          }
+        }
+        setInterval(timestamp, 500); 
+      </script>
+
+      <!--  ----------------------------------------------------------------------  -->
+      <!--  NOTE: Please add the following <FORM> element to your page.             -->
+      <!--  ----------------------------------------------------------------------  -->
+
+      <form action="https://webto.salesforce.com/servlet/servlet.WebToCase?encoding=UTF-8" method="POST">
+
+        <input type=hidden name='captcha_settings' value='{"keyname":"recaptcha","fallback":"true","orgId":"00D8a0000028InL","ts":""}'>
+        <input type=hidden name="orgid" value="00D8a0000028InL">
+        <input type=hidden name="retURL" value="https://flowforge.com/contact-us?sumbit=true">
+
+        <!--  ----------------------------------------------------------------------  -->
+        <!--  NOTE: These fields are optional debugging elements. Please uncomment    -->
+        <!--  these lines if you wish to test in debug mode.                          -->
+        <!--  <input type="hidden" name="debug" value=1>                              -->
+        <!--  <input type="hidden" name="debugEmail" value="zj@flowforge.com">        -->
+        <!--  ----------------------------------------------------------------------  -->
+
+        <label for="name" class="font-medium">Name</label><input class="ff-input ff-text-input mb-4" id="name" maxlength="80" name="name" size="20" type="text" /><br>
+
+        <label for="email" class="font-medium">Email</label><input class="ff-input ff-text-input mb-4" id="email" maxlength="80" name="email" size="20" type="text" /><br>
+
+        <label for="phone" class="font-medium">Phone</label><input class="ff-input ff-text-input mb-4" id="phone" maxlength="40" name="phone" size="20" type="text" /><br>
+
+        <label for="subject" class="font-medium">Subject</label><input class="ff-input ff-text-input mb-4" id="subject" maxlength="80" name="subject" size="20" type="text" /><br>
+
+        <label for="description" class="font-medium">Description</label>
+        <textarea name="description" class="h-32 w-full border border-grey-300 px-2 py-1 mb-4"></textarea><br>
+
+        <div class="w-full g-recaptcha" data-sitekey="6LfiTCkgAAAAAKX6CuT8mPiXWJM6BUq4QSEaiNtb"></div><br>
+        <input type="submit" name="submit" class="ff-btn ff-btn--primary w-full mt-0">
+
+      </form>
+    </div>
+  </div>
+</div>

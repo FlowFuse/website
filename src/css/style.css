@@ -136,6 +136,18 @@ h4:hover .header-anchor {
     background-color: theme(colors.gray.50);
 }
 
+.ff-website .ff-bg-light .ff-input.ff-text-input {
+    background-color: white;
+}
+
+.ff-website .ff-bg-light .ff-dropdown-selected {
+    background-color: white;
+}
+
+.ff-website .ff-bg-light textarea {
+    background-color: white;
+}
+
 /*
     Header
 */
