@@ -2,11 +2,22 @@
 
 ## Background
 
-Our [Company Strategy](strategy.md) sets out 4 pillars that our product work is focussed around
+Our [Company Strategy](strategy.md) sets out 4 pillars that our product work is
+focussed around. Therefore our product activities should be related back to at
+least one of these 4 pillars. In addition to these pillars we will still do the
+work needed to ensure a stable, manageable, platform with a high quality
+codebase.
 
-Therefore our product activities should be related back to at least one of these 4 pillars.
+## Principles
 
-IN addition to these pillars we will still do the work needed to ensure a stable, manageable,  platform with a high quality codebase.
+#### Convention over configuration
+
+Default to picking sane default to standardize the experience for customers and
+users. This enables everyone to get the most out of FlowForge. FlowForge.com
+should always run the default configuration if possible to ensure the best
+experience across the board.
+
+See also: [Convention over Configuration on Wikipedia](https://en.wikipedia.org/wiki/Convention_over_configuration).
 
 ## 2022 Plan
 
@@ -26,7 +37,6 @@ In order to **Enable Users to Run Node-RED at the Edge**;
 - Provide functionality to allow for debugging of flows running on edge devices
 - Enable users to manage and deploy flows to multiple edge devices
 - Allow edge devices to communicate with both the cloud and other devices.
-
 
 Features that **Enable teams to collaborate when working with Node-RED**; 
 
