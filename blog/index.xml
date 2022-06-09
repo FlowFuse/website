@@ -3,8 +3,68 @@
     <title>FlowForge</title>
     <link href="https://flowforge.com/blog/index.xml" rel="self"/>
     <link href="https://flowforge.com/blog"/>
-    <updated>2022-05-25T09:00:00Z</updated>
+    <updated>2022-06-19T12:00:00Z</updated>
     <id>https://flowforge.com/blog</id>
+    
+    <entry>
+        <id>https://flowforge.com/blog/2022/06/flowforge-06-released/</id>
+        <title>FlowForge 0.6 released</title>
+        <summary>Adding Devices to the platform</summary>
+        <updated>2022-06-19T12:00:00Z</updated>
+        <link href="https://flowforge.com/blog/2022/06/flowforge-06-released/"/>
+        <author><name>Nick O&#39;Leary</name></author>
+        <content type="html">&lt;p&gt;Node-RED is well known for its role in IoT solutions - which often means running
+flows on devices.&lt;/p&gt;
+&lt;p&gt;This was something we always wanted to support in FlowForge and with this release
+we&#39;re taking the next steps in that direction.&lt;/p&gt;
+&lt;!--more--&gt;
+&lt;h3 id=&quot;devices&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://flowforge.com/blog/2022/06/flowforge-06-released/#devices&quot;&gt;#&amp;nbsp;&lt;/a&gt; Devices&lt;/h3&gt;
+&lt;p&gt;This release includes the first alpha release of the &lt;a href=&quot;https://github.com/flowforge/flowforge-device-agent&quot;&gt;FlowForge Device Agent&lt;/a&gt;. This is a small piece of node.js software that can be
+installed on a device, such as a Raspberry Pi. It connects back to the FlowForge
+platform to get the Node-RED flows it should be running.&lt;/p&gt;
+&lt;p&gt;This builds on the work we added in 0.5 that lets you register the device,
+generate credentials for it and pick which Project in your team it should be assigned
+to.&lt;/p&gt;
+&lt;p&gt;It makes it super simple to start developing your flows in FlowForge and push them
+out to a group of devices with a couple clicks.&lt;/p&gt;
+&lt;p&gt;There&#39;s plenty of work still to come on the Devices feature. Under the covers
+it uses an HTTP polling approach to check for updates. That was a pragmatic choice
+to get something working - but it isn&#39;t our long term strategy. We&#39;ll be working
+towards a more IoT-native MQTT/WebSocket appoach in the coming releases.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://flowforge.com/docs/user/devices/&quot;&gt;Devices documentation&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/flowforge/flowforge/issues/446&quot;&gt;Epic #446 - Devices&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;snapshots&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://flowforge.com/blog/2022/06/flowforge-06-released/#snapshots&quot;&gt;#&amp;nbsp;&lt;/a&gt; Snapshots&lt;/h3&gt;
+&lt;p&gt;This release adds the ability to create Snapshots of your projects. These are
+point-in-time backups of your project&#39;s flows, credentials and settings.&lt;/p&gt;
+&lt;p&gt;With this release we support &lt;em&gt;creating&lt;/em&gt; snapshots and pushing them to devices.&lt;/p&gt;
+&lt;p&gt;We don&#39;t have the ability to revert a project back to a previous snapshot, but
+that will come soon.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://flowforge.com/docs/user/snapshots/&quot;&gt;Snapshot documentation&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/flowforge/flowforge/issues/587&quot;&gt;Story #587 - Snapshot/Rollback&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;other-updates&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://flowforge.com/blog/2022/06/flowforge-06-released/#other-updates&quot;&gt;#&amp;nbsp;&lt;/a&gt; Other updates&lt;/h3&gt;
+&lt;p&gt;Beyond these headline features, there are a number of smaller, but just as useful
+items in this release.&lt;/p&gt;
+&lt;p&gt;We&#39;ve continued with the rebranding work started in 0.5 with some more improvements
+to the overall UX of the platform. Little touches like placeholder loading graphics
+give the UI a more responsive feel.&lt;/p&gt;
+&lt;p&gt;When you log out of the platform we now also automatically log you out of any
+Node-RED editor sessions you have open.&lt;/p&gt;
+&lt;h3 id=&quot;upgrading-flowforge&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://flowforge.com/blog/2022/06/flowforge-06-released/#upgrading-flowforge&quot;&gt;#&amp;nbsp;&lt;/a&gt; Upgrading FlowForge&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&quot;https://app.flowforge.com/&quot;&gt;FlowForge Cloud&lt;/a&gt; is already running 0.6 - ready for
+you to start creating snapshots and adding devices right now.&lt;/p&gt;
+&lt;p&gt;If you installed a previous version of FlowForge and want to upgrade, our documentation provides a
+guide for &lt;a href=&quot;http://flowforge.com/docs/install#upgrade&quot;&gt;upgrading FlowForge on a local server&lt;/a&gt;.&lt;/p&gt;
+&lt;h3 id=&quot;getting-help&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://flowforge.com/blog/2022/06/flowforge-06-released/#getting-help&quot;&gt;#&amp;nbsp;&lt;/a&gt; Getting help&lt;/h3&gt;
+&lt;p&gt;If you hit any problems with the platform, or have questions to ask, please do
+raise an &lt;a href=&quot;https://github.com/flowforge/flowforge/issues&quot;&gt;issue on GitHub&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;That also includes if you have any feedback or feature requests.&lt;/p&gt;
+&lt;p&gt;We also have a &lt;code&gt;#flowforge&lt;/code&gt; channel on the &lt;a href=&quot;https://nodered.org/slack&quot;&gt;Node-RED Slack workspace&lt;/a&gt;.&lt;/p&gt;
+</content>
+    </entry>
     
     <entry>
         <id>https://flowforge.com/blog/2022/05/sign-up-for-flowforge-cloud/</id>
