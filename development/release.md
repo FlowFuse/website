@@ -17,11 +17,11 @@ releases.
 
 ### Steps
 
- - Use the `checkout-release` script (from the admin project) to check out clean clones of the packages required to do a release 
- (e.g. `./checkout-release 0.4.0` will create a directory called `release-0.4.0` containing all the required projects)
+ - Use the `checkout-release` script (available in the admin project) to check out clean clones of the packages required to do a release 
+ (e.g. `./admin/checkout-release 0.4.0` will create a directory called `release-0.4.0` containing all the required projects). This script must be run at the same level as your `/admin` directory. 
  - If required, ensure that the correct `user.name` and `user.email` git configuration settings are in place for each repository (only a problem if not using a global configuration)
- - From within the `release-0.4.0` directory run the `prepare-release 0.4.0` script (from the admin project). This will update all the required
- `package.json` and `CHANGELOG.md` file updates then raise PRs to update the projects.
+ - From within the `release-0.4.0` directory run the `prepare-release 0.4.0` script (available in the admin project). This will update all the required
+ `package.json` and `CHANGELOG.md` file updates then raise PRs to update the projects. (e.g. `../admin/prepare-release 0.6.0`)
  - Do not panic when you see "All jobs have failed" for `flowforge/flowforge`. The repo will be pointing to newer versions of other packages, which have not yet been published to npm. 
  - Have update PR reviewed by somebody other than the Release Manager
  - All package numbering PRs to be merged, and releases to be tagged, in the order defined in the admin project release issue. Between each release
@@ -30,6 +30,7 @@ releases.
     - A bot will post to #gh-flowforge Slack channel, although slightly delayed
     - Keep an eye on npmjs.org page for each package.
  - Once all the node module components have been built and published to npm the `installer`, `helm` and `docker-compose` components can be updated and tagged.
+ - Run [staging CI pipeline publish](https://github.com/flowforge/CloudProject/actions/workflows/build-kube.yml), to ensure staging is running the latest release.
 
 ### Next Steps
 
