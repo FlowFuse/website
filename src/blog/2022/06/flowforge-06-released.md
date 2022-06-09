@@ -6,7 +6,7 @@ date: 2022-06-19 12:00:00.0
 authors: ["nick-oleary"]
 ---
 
-Node-RED is well know for its role in IoT solutions - which often means running
+Node-RED is well known for its role in IoT solutions - which often means running
 flows on devices.
 
 This was something we always wanted to support in FlowForge and with this release
