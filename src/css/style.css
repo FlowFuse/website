@@ -84,7 +84,7 @@ h1, h2, h3, h4, h5, p {
     background-size: contain;
 }
 main  a {
-    color: theme(colors.teal.500);
+    color: theme(colors.teal.400);
 }
 main  a:hover {
     text-decoration: underline;
