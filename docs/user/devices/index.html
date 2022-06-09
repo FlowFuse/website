@@ -64,33 +64,114 @@
             
             v0.6.0
             
-            /<a class="mx-2" href="/docs">docs</a>/<a class="mx-2" href="/docs/install">install</a>/<a class="mx-2" href="/docs/install/email_providers">email_providers</a>
+            /<a class="mx-2" href="/docs">docs</a>/<a class="mx-2" href="/docs/user">user</a>/<a class="mx-2" href="/docs/user/devices">devices</a>
         </div>
     </div>
     <div class="w-full mx-auto ff-bg-light flex flex-col md:flex-row">
         <div class="flex-grow order-last md:order-first">
             <div class="mt-6 mb-4 prose prose-blue main-content">
-                <h2 id="example-configuration-for-common-email-platforms" tabindex="-1"><a class="header-anchor" href="#example-configuration-for-common-email-platforms">#&nbsp;</a> Example configuration for common email platforms</h2>
-<h3 id="gmail" tabindex="-1"><a class="header-anchor" href="#gmail">#&nbsp;</a> GMail</h3>
-<pre><code>email:
-  enabled: true
-  debug: false
-  smtp:
-    host: smtp.gmail.com
-    port: 465
-    secure: true
-    auth:
-        user: [USER]@gmail.com
-        pass: [PASSWORD]
+                <h1 id="devices" tabindex="-1"><a class="header-anchor" href="#devices">#&nbsp;</a> Devices</h1>
+<p>The FlowForge platform can be used to manage projects running on remote Devices.
+A Device runs a software agent that connects back to the platform to receive updates.</p>
+<p>This guide explains how to get starting with the Devices feature.</p>
+<h2 id="installing-the-device-agent" tabindex="-1"><a class="header-anchor" href="#installing-the-device-agent">#&nbsp;</a> Installing the Device Agent</h2>
+<p>The Device Agent is published to the public npm repository as <a href="https://www.npmjs.com/package/@flowforge/flowforge-device-agent">@flowforge/flowforge-device-agent</a>.</p>
+<p>It can be installed as a global npm module. This will ensure the agent
+command is on the path:</p>
+<pre><code>npm install -g @flowforge/flowforge-device-agent
 </code></pre>
-<p>Note: Gmail may require an app specific password to be created if you are using 2FA on the account you can set that up <a href="https://security.google.com/settings/security/apppasswords">here</a></p>
+<h3 id="configuration-directory" tabindex="-1"><a class="header-anchor" href="#configuration-directory">#&nbsp;</a> Configuration directory</h3>
+<p>By default the agent uses <code>/opt/flowforge-device</code> as its working directory.
+This can be overridden with the <code>-d/--dir</code> option.</p>
+<p>The directory must exist and be accessible to the user that will be
+running the agent.</p>
+<pre><code>sudo mkdir /opt/flowforge-device
+sudo chown -R $USER /opt/flowforge-device
+</code></pre>
+<h2 id="register-the-device" tabindex="-1"><a class="header-anchor" href="#register-the-device">#&nbsp;</a> Register the device</h2>
+<p>To connect a device to the platform it must be registered in order to generate
+a set of credentials for it to use.</p>
+<p>The device is first registered to a team and then assigned to the project it
+should run.</p>
+<ol>
+<li>Go to your teams's <strong>Devices</strong> page.</li>
+<li>Click the <strong>Register Device</strong> button.</li>
+<li>You will be prompted to give the device a <strong>name</strong> and an optional <strong>type</strong>.
+The type field can be used to record additional meta information about the device.</li>
+<li>Click <strong>Register</strong></li>
+</ol>
+<p>Once the device has been registered, you will be shown the <strong>Device Credentials</strong>
+dialog. This is the only time the platform will show you this information without
+resetting it. Make sure to take a copy or use the <strong>Download</strong> button to save
+the configuration file locally.</p>
+<h2 id="connect-the-device" tabindex="-1"><a class="header-anchor" href="#connect-the-device">#&nbsp;</a> Connect the device</h2>
+<p>Copy the <strong>Device Credentials</strong> information into a file called <code>device.yml</code> in
+the device configuration directory (<code>/opt/flowforge-device</code> or whatever is set
+with the <code>-d</code> option).</p>
+<p>The agent can then be started with the command:</p>
+<pre><code>$ flowforge-device-agent
+</code></pre>
+<p><em>Note:</em> This assume the agent was installed as a global npm module and your path
+is properly configured to pick that up.</p>
+<p>You will see the device start and perform a 'call-home' where it connects back
+to the platform to check what it should be running.</p>
+<h2 id="assign-the-device-to-a-project" tabindex="-1"><a class="header-anchor" href="#assign-the-device-to-a-project">#&nbsp;</a> Assign the device to a project</h2>
+<p>The next step is to assign the device to a project.</p>
+<ol>
+<li>Go to your teams's <strong>Devices</strong> page.</li>
+<li>Open the dropdown menu to the right of the device you want to assign and
+select the <strong>Add to project</strong> option.</li>
+<li>Select the project to add the project to in the dialog - click <strong>Add</strong> to continue.</li>
+</ol>
+<h2 id="deploying-a-project-to-the-device" tabindex="-1"><a class="header-anchor" href="#deploying-a-project-to-the-device">#&nbsp;</a> Deploying a project to the device</h2>
+<p>To deploy a project to the device:</p>
+<ol>
+<li><a href="../snapshots#create-a-snapshot"">Create a snapshot</a> - a point-in-time
+backup of the project</li>
+<li><a href="../snapshots#setting-a-device-target-snapshot"">Mark that snapshot</a> as the <strong>Device Target</strong> snapshot.</li>
+</ol>
+<p>This model allows you to develop your project in FlowForge and only push it out
+to the registered devices when you're happy with what you've created.</p>
+<h2 id="remove-a-device-from-a-project" tabindex="-1"><a class="header-anchor" href="#remove-a-device-from-a-project">#&nbsp;</a> Remove a device from a project</h2>
+<p>To remove the device from the project:</p>
+<ol>
+<li>Go to your teams's <strong>Devices</strong> page.</li>
+<li>Open the dropdown menu to the right of the device you want to remove and
+select the <strong>Remove from project</strong> option.</li>
+<li>Confirm the action by clicking the <strong>Remove</strong> option.</li>
+</ol>
+<p>The device will stop running the current project and wait to be added back to
+a project.</p>
+<h2 id="regenerating-credentials" tabindex="-1"><a class="header-anchor" href="#regenerating-credentials">#&nbsp;</a> Regenerating credentials</h2>
+<p>To regenerate device credentials:</p>
+<ol>
+<li>Go to your teams or project's <strong>Devices</strong> page.</li>
+<li>Open the dropdown menu to the right of the device and select the
+<strong>Regenerate credentials</strong> option.</li>
+<li>You will need to confirm this action as the existing credentials will be
+immediately revoked. If the device tries to use the old credentials it will
+fail to connect and will delete its local copy of the project snapshot it was
+running. Click <strong>Regenerate credentials</strong> to continue.</li>
+</ol>
+<p>You will then be shown the <strong>Device Credentials</strong> dialog again with a new set of
+credentials to copy or download.</p>
+<h2 id="deleting-a-device" tabindex="-1"><a class="header-anchor" href="#deleting-a-device">#&nbsp;</a> Deleting a device</h2>
+<p>To delete a device:</p>
+<ol>
+<li>Go to your teams or project's <strong>Devices</strong> page.</li>
+<li>Open the dropdown menu to the right of the device and select the
+<strong>Delete device</strong> option.</li>
+<li>Confirm the action by clicking the <strong>Delete</strong> option.</li>
+</ol>
+<p>The next time the device calls home it will find it is no longer authorised and
+will stop and delete its local copy of the project it was running.</p>
 
             </div>
         </div>
         <div class="w-full md:w-64 md:ml-8 mt-4 md:mt-6 px-2">
             <h3 class="font-medium border-b pb-1 mb-4">On this page</h3>
             <ul id="toc" class="text-sm border-b mb-4"></ul>
-            <div class="text-sm pb-1 text-right mb-4"><a href="https://github.com/flowforge/flowforge/edit/main/docs/install/email_providers.md">Edit this page</a></div>
+            <div class="text-sm pb-1 text-right mb-4"><a href="https://github.com/flowforge/flowforge/edit/main/docs/user/devices.md">Edit this page</a></div>
             <div class="text-xs pb-1 text-right mb-4 italic">Updated: 2022-06-09 10:23:29 +0100</div>
         </div>
     </div>

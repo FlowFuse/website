@@ -62,7 +62,7 @@
     <div class="w-full mx-auto ff-bg-light">
         <div class="font-medium border-b pb-1">
             
-            v0.5.3
+            v0.6.0
             
             /<a class="mx-2" href="/docs">docs</a>/<a class="mx-2" href="/docs/install">install</a>/<a class="mx-2" href="/docs/install/docker">docker</a>
         </div>
@@ -72,7 +72,7 @@
             <div class="mt-6 mb-4 prose prose-blue main-content">
                 <h1 id="docker-install" tabindex="-1"><a class="header-anchor" href="#docker-install">#&nbsp;</a> Docker Install</h1>
 <p>This version of the FlowForge platform is intended for running in the Docker Container management system. Typically suited for small/medium on premise deployments.</p>
-<h3 id="prerequistes" tabindex="-1"><a class="header-anchor" href="#prerequistes">#&nbsp;</a> Prerequistes</h3>
+<h3 id="prerequisites" tabindex="-1"><a class="header-anchor" href="#prerequisites">#&nbsp;</a> Prerequisites</h3>
 <h4 id="docker-compose" tabindex="-1"><a class="header-anchor" href="#docker-compose">#&nbsp;</a> Docker Compose</h4>
 <p>FlowForge uses Docker Compose to install and manager the required components. Instructions on how to install Docker Compose on your system can be found here:</p>
 <p><a href="https://docs.docker.com/compose/install/">https://docs.docker.com/compose/install/</a></p>
@@ -96,7 +96,7 @@ cd docker-compose-0.x.0
 <h5 id="flowforge%2Fflowforge-docker" tabindex="-1"><a class="header-anchor" href="#flowforge%2Fflowforge-docker">#&nbsp;</a> flowforge/flowforge-docker</h5>
 <p>This container holds the FlowForge App and the Docker Driver</p>
 <h5 id="flowforge%2Fnode-red" tabindex="-1"><a class="header-anchor" href="#flowforge%2Fnode-red">#&nbsp;</a> flowforge/node-red</h5>
-<p>This is a basic Node-RED image with the FlowForge Lanucher and the required Node-RED plugins to talk to the FlowForge Platform.</p>
+<p>This is a basic Node-RED image with the FlowForge Launcher and the required Node-RED plugins to talk to the FlowForge Platform.</p>
 <p>This is the container you can customise for your deployment.</p>
 <h3 id="configuring-flowforge" tabindex="-1"><a class="header-anchor" href="#configuring-flowforge">#&nbsp;</a> Configuring FlowForge</h3>
 <p>Configuration details are stored in the <code>etc/flowforge.yml</code> file which is mapped into the <code>flowforge/forge-docker</code> container. You will need to edit this file to update the <code>domain</code> and <code>base_url</code> entries to match the DNS settings.</p>
@@ -136,7 +136,7 @@ creating an administrator for the platform and other configuration options.</p>
             <h3 class="font-medium border-b pb-1 mb-4">On this page</h3>
             <ul id="toc" class="text-sm border-b mb-4"></ul>
             <div class="text-sm pb-1 text-right mb-4"><a href="https://github.com/flowforge/flowforge/edit/main/docs/install/docker/README.md">Edit this page</a></div>
-            <div class="text-xs pb-1 text-right mb-4 italic">Updated: 2022-05-24 11:30:15 +0100</div>
+            <div class="text-xs pb-1 text-right mb-4 italic">Updated: 2022-06-09 10:23:29 +0100</div>
         </div>
     </div>
 </div>

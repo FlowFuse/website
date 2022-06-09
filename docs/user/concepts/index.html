@@ -62,7 +62,7 @@
     <div class="w-full mx-auto ff-bg-light">
         <div class="font-medium border-b pb-1">
             
-            v0.5.3
+            v0.6.0
             
             /<a class="mx-2" href="/docs">docs</a>/<a class="mx-2" href="/docs/user">user</a>/<a class="mx-2" href="/docs/user/concepts">concepts</a>
         </div>
@@ -73,38 +73,67 @@
                 <h1 id="flowforge-concepts" tabindex="-1"><a class="header-anchor" href="#flowforge-concepts">#&nbsp;</a> FlowForge Concepts</h1>
 <p>FlowForge makes it easy to create and manage Node-RED instances. To do that, there
 are a few concepts the platform introduces to help organise things.</p>
+<ul>
+<li><a href="#project">Project</a>
+<ul>
+<li><a href="#project-stack">Stack</a></li>
+<li><a href="#project-template">Template</a></li>
+<li><a href="#project-snapshot">Snapshot</a></li>
+</ul>
+</li>
+<li><a href="#team">Team</a></li>
+<li><a href="#device">Device</a></li>
+</ul>
 <h3 id="project" tabindex="-1"><a class="header-anchor" href="#project">#&nbsp;</a> Project</h3>
 <p>The platform refers to each Node-RED instance as a Project.</p>
 <p>Within the FlowForge application, you can create/start/stop projects and view
 its logs.</p>
-<p>At present, the projects are fairly plain instances of Node-RED -
-with some custom settings to integrate them into the platform properly.
-There are a number of settings that can be modified for a project based on what has been configured and allowed in the <a href="#project-template">Project Template</a>. These can be access from the Settings page of the project and there is a description of each one in the settings.</p>
+<p>At present, the projects are fairly plain instances of Node-RED - with some
+custom settings to integrate them into the platform properly. There are a number
+of settings that can be modified for a project based on what has been configured
+and allowed in the <a href="#project-template">Project Template</a>. These can be access
+from the Settings page of the project and there is a description of each one in
+the settings.</p>
+<h4 id="project-stack" tabindex="-1"><a class="header-anchor" href="#project-stack">#&nbsp;</a> Project Stack</h4>
+<p>A Project Stack describes properties of the Project runtime. This can include the
+version of Node-RED, memory and CPU allocation. The specific details will depend
+on how and where FlowForge is running.</p>
+<p>Project Stacks are created and owned by the platform Administrator. When a User
+comes to create a new project, they chose from the available stacks.</p>
+<h4 id="project-template" tabindex="-1"><a class="header-anchor" href="#project-template">#&nbsp;</a> Project Template</h4>
+<p>A Project Template describes properties of Node-RED itself. It is how many of the
+settings a user familiar with Node-RED would be used to modifying in their settings
+file. But it can also be used to customise the palette of nodes that are pre-installed,
+provide a set of default flows and change the look and feel of the editor.</p>
+<p>A template can also specify <a href="../envvar"">Environment Variables</a> which can then have
+their values as editable for each project or locked. It is not possible to disable
+the use of environment variables in a project.</p>
+<p><em>Note:</em> not all of these features are available today.</p>
+<p>In the current release of FlowForge, Project Templates are created by the Administrator.
+As well as define the values, they also get to choose whether projects are able
+to override any of the settings for themselves.</p>
+<h4 id="project-snapshot" tabindex="-1"><a class="header-anchor" href="#project-snapshot">#&nbsp;</a> Project Snapshot</h4>
+<p>A snapshot is a point-in-time backup of a project. It captures the flows, credentials
+and runtime settings.</p>
+<p>Snapshots can be created (and deleted) on the FlowForge dashboard.</p>
+<p><em>Note:</em> a future release will add the ability to restore a project to a particular
+snapshot. The 0.6 release introduces snapshots as part of the Device feature.</p>
 <h3 id="team" tabindex="-1"><a class="header-anchor" href="#team">#&nbsp;</a> Team</h3>
 <p>Each project is owned by a Team. Only members of that team have access to the
 Node-RED editor for the project.</p>
 <p>Each user in a team can have one of two roles:</p>
 <ul>
 <li><strong>Owner</strong> - with full administrative access to the team and its projects</li>
-<li><strong>Member</strong> - can access the projects, but limited access to changing Team and project settings.</li>
+<li><strong>Member</strong> - can access the projects, but limited access to changing Team and
+project settings.</li>
 </ul>
-<h3 id="project-stack" tabindex="-1"><a class="header-anchor" href="#project-stack">#&nbsp;</a> Project Stack</h3>
-<p>A Project Stack describes properties of the Project runtime. This can include the
-version of Node-RED, memory and CPU allocation. The specific details will depend
-on how and where FlowForge is running.</p>
-<p>Project Stacks are created and owned by the platform Administrator. When a User
-comes to create a new project, they chose from the available stacks.</p>
-<h3 id="project-template" tabindex="-1"><a class="header-anchor" href="#project-template">#&nbsp;</a> Project Template</h3>
-<p>A Project Template describes properties of Node-RED itself. It is how many of the
-settings a user familiar with Node-RED would be used to modifying in their settings
-file. But it can also be used to customise the palette of nodes that are preinstalled,
-provide a set of default flows and change the look and feel of the editor.</p>
-<p>A template can also specify <a href="../envvar"">Environment Variables</a> which can then have their values as editable for each project or locked.
-It is not possible to disable the use of environment variables in a project.</p>
-<p><em>Note:</em> not all of these features are available today.</p>
-<p>In the current release of FlowForge, Project Templates are created by the Administrator.
-As well as define the values, they also get to choose whether projects are able
-to override any of the settings for themselves.</p>
+<h3 id="device" tabindex="-1"><a class="header-anchor" href="#device">#&nbsp;</a> Device</h3>
+<p>The FlowForge platform can be used to manage projects running on remote Devices.
+A Device runs a software agent that connects back to the platform to receive updates.</p>
+<p>Devices are registered to a Team, and then assigned to a Project withing that team.
+A user can create a <a href="#project-snapshot">project snapshot</a> can mark it as the
+<em>target</em> snapshot for devices. The platform will then deploy that snapshot to
+all of the devices assigned to the project.</p>
 
             </div>
         </div>
@@ -112,7 +141,7 @@ to override any of the settings for themselves.</p>
             <h3 class="font-medium border-b pb-1 mb-4">On this page</h3>
             <ul id="toc" class="text-sm border-b mb-4"></ul>
             <div class="text-sm pb-1 text-right mb-4"><a href="https://github.com/flowforge/flowforge/edit/main/docs/user/concepts.md">Edit this page</a></div>
-            <div class="text-xs pb-1 text-right mb-4 italic">Updated: 2022-05-24 11:30:15 +0100</div>
+            <div class="text-xs pb-1 text-right mb-4 italic">Updated: 2022-06-09 10:23:29 +0100</div>
         </div>
     </div>
 </div>

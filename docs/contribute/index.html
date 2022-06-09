@@ -62,7 +62,7 @@
     <div class="w-full mx-auto ff-bg-light">
         <div class="font-medium border-b pb-1">
             
-            v0.5.3
+            v0.6.0
             
             /<a class="mx-2" href="/docs">docs</a>/<a class="mx-2" href="/docs/contribute">contribute</a>
         </div>
@@ -82,7 +82,11 @@ we welcome contributions from the community.</p>
 <ul>
 <li>Linux: <code>apt-get install build-essential</code></li>
 <li>MacOS: <code>xcode-select --install</code></li>
-<li>Windows: installed as part of the official node.js installer</li>
+<li>Windows: installed as part of the official node.js installer
+<ul>
+<li>☑️ Automatically install the necessary tools must be checked</li>
+</ul>
+</li>
 </ul>
 </li>
 <li>Git</li>
@@ -151,47 +155,69 @@ want to begin.</p>
 ├── frontend - the frontend source code
 └── test     - test material
 </code></pre>
-<h3 id="installing-code-dependencies" tabindex="-1"><a class="header-anchor" href="#installing-code-dependencies">#&nbsp;</a> Installing code dependencies</h3>
-<p>After cloning the core repository, you will need to install the dependencies by running</p>
-<pre><code>npm install
+<h3 id="instructions" tabindex="-1"><a class="header-anchor" href="#instructions">#&nbsp;</a> Instructions</h3>
+<ol>
+<li><a href="#clone-the-flowforgeflowforge-repository">Clone the repository</a></li>
+<li><a href="#install-flowforgeflowforge-dependencies">Install dependencies</a></li>
+<li><a href="#running-flowforge">Running FlowForge</a></li>
+<li><a href="#create-a-stack">Create a Stack</a></li>
+<li><a href="#configuring-flowforge">Configuring FlowForge</a></li>
+<li><a href="#mocking-email">Mocking email</a></li>
+<li><a href="#testing">Testing</a></li>
+<li><a href="#vscode-tips">VSCode Tips</a></li>
+</ol>
+<h3 id="clone-the-flowforge%2Fflowforge-repository" tabindex="-1"><a class="header-anchor" href="#clone-the-flowforge%2Fflowforge-repository">#&nbsp;</a> Clone the <code>flowforge/flowforge</code> repository</h3>
+<pre><code>git clone https://github.com/flowforge/flowforge
 </code></pre>
-<p><strong>Note</strong> If running on MacOS 12.3 or newer you may get an error around node-gyp being unable to build sqllite3.
-This is because MacOS no longer includes python2.7.
-The solution is to run the command <code>npm config set python python3</code> to alias to python3 and then run <code>npm install</code> again</p>
-<p>By default this will install the latest released versions of the FlowForge components. If
-you want to run from the latest source code then you can check out all the required
-projects in the same directory</p>
+<h3 id="install-flowforge%2Fflowforge-dependencies" tabindex="-1"><a class="header-anchor" href="#install-flowforge%2Fflowforge-dependencies">#&nbsp;</a> Install <code>flowforge/flowforge</code> dependencies</h3>
+<p>Once the core project is cloned, you will need to install its dependencies.
+There are 2 options here...</p>
 <ul>
-<li>flowforge/flowforge</li>
-<li>flowforge/forge-ui-components</li>
-<li>flowforge/flowforge-driver-localfs</li>
-<li>flowforge/flowforge-nr-launcher</li>
-<li>flowforge/flowforge-nr-storage</li>
-<li>flowforge/flowforge-nr-auth</li>
-<li>flowforge/flowforge-nr-audit-logger</li>
+<li><a href="#option-1-npm">OPTION 1</a> - Install <code>flowforge/flowforge</code> dependencies from NPM</li>
+<li><a href="#option-2-source-code">OPTION 2</a> - Install <code>flowforge/flowforge</code> dependencies from GitHub</li>
 </ul>
-<p>Then in the flowforge directory run</p>
-<pre><code>npm run dev:local
+<blockquote>
+<p><strong>NOTE:</strong><br>
+If running on MacOS 12.3 or newer you may get an error around <code>node-gyp</code>
+being unable to build sqlite3. This is because MacOS no longer includes
+python2.7. The solution is to run the command <code>npm config set python python3</code>
+to alias to python3 and then run <code>npm install</code> again</p>
+</blockquote>
+<h4 id="option-1-npm" tabindex="-1"><a class="header-anchor" href="#option-1-npm">#&nbsp;</a> OPTION 1 NPM</h4>
+<p>After cloning the core repository, you will need to install
+<code>flowforge/flowforge</code> dependencies</p>
+<pre><code>cd flowforge
+npm install
 </code></pre>
-<p>This will create all the required symlinks to the relevent projects.</p>
-<p>Next in the <code>forge-ui-components</code>  directory run</p>
-<pre><code>npm install
+<p>By default this will install the latest released versions of the FlowForge
+components.</p>
+<h4 id="option-2-source-code" tabindex="-1"><a class="header-anchor" href="#option-2-source-code">#&nbsp;</a> OPTION 2 Source Code</h4>
+<p>After cloning the core repository, you will need to install
+<code>flowforge/flowforge</code> dependencies</p>
+<p>Instead of using NPM, you can instead run from the latest source code.
+You can check out all the required projects in the same directory along
+side the newly cloned <code>flowforge</code> directory. The following commands will
+setup everything for you...</p>
+<pre><code>git clone https://github.com/flowforge/flowforge-driver-localfs.git
+git clone https://github.com/flowforge/flowforge-nr-launcher.git
+git clone https://github.com/flowforge/flowforge-nr-storage.git
+git clone https://github.com/flowforge/flowforge-nr-auth.git
+git clone https://github.com/flowforge/flowforge-nr-audit-logger.git
+git clone https://github.com/flowforge/forge-ui-components.git
+cd flowforge
+npm run dev:local
 npm run build
 </code></pre>
-<p>In the <code>flowforge-nr-auth</code> directory run</p>
-<pre><code>npm install
-</code></pre>
-<p>In the <code>flowforge-nr-audit-logger</code> directory run</p>
-<pre><code>npm install
-</code></pre>
-<p>In the <code>flowforge-nr-storage</code> directory run</p>
-<pre><code>npm install
-</code></pre>
-<p><strong>Note</strong>: do not check in the modified <code>package.json</code> that will be created in the
-<code>flowforge</code>, <code>flowforge-nr-launcher</code> or <code>flowforge-driver-localfs</code> projects.</p>
+<p>This will install all the dependencies from source code, create all the required symlinks to the relevant projects and install the necessary npm dependencies.</p>
+<blockquote>
+<p><strong>Note</strong>
+The <code>npm run dev:local</code> script will modify <code>package.json</code> in the
+<code>flowforge</code>, <code>flowforge-nr-launcher</code> and <code>flowforge-driver-localfs</code> projects.
+DO NOT check these modifications into git.</p>
+</blockquote>
 <h3 id="create-a-stack" tabindex="-1"><a class="header-anchor" href="#create-a-stack">#&nbsp;</a> Create a Stack</h3>
 <p>You will need to setup the version(s) of Node-RED you want to use in your stacks.</p>
-<p>From the flowforge directory run</p>
+<p>From the <code>flowforge</code> directory run</p>
 <pre><code>npm run install-stack --vers=2.2.2
 </code></pre>
 <p>Where <code>2.2.2</code> is the version of Node-RED you want to use in the stack</p>
@@ -255,8 +281,22 @@ does <em>not</em> generate the report.</li>
 <li><code>npm run cover:system</code> - runs the system tests with code coverage enabled. It
 does <em>not</em> generate the report.</li>
 <li><code>npm run cover:report</code> - generates a report of the code coverage. This is
-printed to the console and generates a browseable HTML copy under <code>coverage/index.html</code></li>
+printed to the console and generates a browsable HTML copy under <code>coverage/index.html</code></li>
 </ul>
+<h3 id="vscode-tips" tabindex="-1"><a class="header-anchor" href="#vscode-tips">#&nbsp;</a> VSCode Tips</h3>
+<p>To step debug in VSCode</p>
+<ol>
+<li>Open <code>launch.json</code> config and enter the JavaScript below</li>
+<li>Choose <code>Start-Watch</code> from the &quot;Run and Debug&quot; menu</li>
+<li>Press ▶️ or <kbd>F5</kbd> to start debugging</li>
+</ol>
+<p>There are 2 other &quot;Run and Debug&quot; entries in the menu...</p>
+<ul>
+<li>&quot;Attach by Process ID&quot; - this will allow you to attach to a launched driver</li>
+<li>&quot;Debug Current Test&quot; - this will enable you to step debug a test (starts debugging the currently open test file)</li>
+</ul>
+<h4 id="" tabindex="-1"><a class="header-anchor" href="#">#&nbsp;</a> </h4>
+<pre class="language-javascript"><code class="language-javascript"><span class="token punctuation">{</span><br>    <span class="token comment">// Use IntelliSense to learn about possible attributes.</span><br>    <span class="token comment">// Hover to view descriptions of existing attributes.</span><br>    <span class="token comment">// For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387</span><br>    <span class="token string-property property">"version"</span><span class="token operator">:</span> <span class="token string">"0.2.0"</span><span class="token punctuation">,</span><br>    <span class="token string-property property">"configurations"</span><span class="token operator">:</span> <span class="token punctuation">[</span><br>        <span class="token punctuation">{</span><br>            <span class="token string-property property">"command"</span><span class="token operator">:</span> <span class="token string">"npm run start-watch"</span><span class="token punctuation">,</span><br>            <span class="token string-property property">"name"</span><span class="token operator">:</span> <span class="token string">"Start-Watch"</span><span class="token punctuation">,</span><br>            <span class="token string-property property">"request"</span><span class="token operator">:</span> <span class="token string">"launch"</span><span class="token punctuation">,</span><br>            <span class="token string-property property">"type"</span><span class="token operator">:</span> <span class="token string">"node-terminal"</span><span class="token punctuation">,</span><br>            <span class="token string-property property">"env"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>                <span class="token string-property property">"NODE_ENV"</span><span class="token operator">:</span> <span class="token string">"development"</span><br>            <span class="token punctuation">}</span><br>        <span class="token punctuation">}</span><span class="token punctuation">,</span><br>        <span class="token punctuation">{</span><br>            <span class="token string-property property">"name"</span><span class="token operator">:</span> <span class="token string">"Attach by Process ID"</span><span class="token punctuation">,</span><br>            <span class="token string-property property">"processId"</span><span class="token operator">:</span> <span class="token string">"${command:PickProcess}"</span><span class="token punctuation">,</span><br>            <span class="token string-property property">"request"</span><span class="token operator">:</span> <span class="token string">"attach"</span><span class="token punctuation">,</span><br>            <span class="token string-property property">"skipFiles"</span><span class="token operator">:</span> <span class="token punctuation">[</span><br>                <span class="token string">"&lt;node_internals>/**"</span><br>            <span class="token punctuation">]</span><span class="token punctuation">,</span><br>            <span class="token string-property property">"type"</span><span class="token operator">:</span> <span class="token string">"node"</span><br>        <span class="token punctuation">}</span><span class="token punctuation">,</span><br>        <span class="token punctuation">{</span><br>            <span class="token string-property property">"type"</span><span class="token operator">:</span> <span class="token string">"node"</span><span class="token punctuation">,</span><br>            <span class="token string-property property">"request"</span><span class="token operator">:</span> <span class="token string">"launch"</span><span class="token punctuation">,</span><br>            <span class="token string-property property">"name"</span><span class="token operator">:</span> <span class="token string">"Debug Current Test"</span><span class="token punctuation">,</span><br>            <span class="token string-property property">"program"</span><span class="token operator">:</span> <span class="token string">"${workspaceFolder}/node_modules/mocha/bin/_mocha"</span><span class="token punctuation">,</span><br>            <span class="token string-property property">"args"</span><span class="token operator">:</span> <span class="token punctuation">[</span><br>              <span class="token string">"--no-warnings"</span><span class="token punctuation">,</span><br>              <span class="token string">"-u"</span><span class="token punctuation">,</span><br>              <span class="token string">"bdd"</span><span class="token punctuation">,</span><span class="token comment">// set to bdd, not tdd</span><br>              <span class="token string">"--timeout"</span><span class="token punctuation">,</span><br>              <span class="token string">"999999"</span><span class="token punctuation">,</span><br>              <span class="token string">"--colors"</span><span class="token punctuation">,</span><br>              <span class="token string">"${file}"</span><br>            <span class="token punctuation">]</span><span class="token punctuation">,</span><br>            <span class="token string-property property">"env"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>                <span class="token string-property property">"NODE_ENV"</span><span class="token operator">:</span> <span class="token string">"development"</span><br>            <span class="token punctuation">}</span><span class="token punctuation">,</span><br>            <span class="token string-property property">"internalConsoleOptions"</span><span class="token operator">:</span> <span class="token string">"openOnSessionStart"</span><br>        <span class="token punctuation">}</span><br>    <span class="token punctuation">]</span><br><span class="token punctuation">}</span></code></pre>
 
             </div>
         </div>
@@ -264,7 +304,7 @@ printed to the console and generates a browseable HTML copy under <code>coverage
             <h3 class="font-medium border-b pb-1 mb-4">On this page</h3>
             <ul id="toc" class="text-sm border-b mb-4"></ul>
             <div class="text-sm pb-1 text-right mb-4"><a href="https://github.com/flowforge/flowforge/edit/main/docs/contribute/README.md">Edit this page</a></div>
-            <div class="text-xs pb-1 text-right mb-4 italic">Updated: 2022-05-24 11:30:15 +0100</div>
+            <div class="text-xs pb-1 text-right mb-4 italic">Updated: 2022-06-09 10:23:29 +0100</div>
         </div>
     </div>
 </div>

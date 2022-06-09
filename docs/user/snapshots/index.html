@@ -64,33 +64,56 @@
             
             v0.6.0
             
-            /<a class="mx-2" href="/docs">docs</a>/<a class="mx-2" href="/docs/install">install</a>/<a class="mx-2" href="/docs/install/email_providers">email_providers</a>
+            /<a class="mx-2" href="/docs">docs</a>/<a class="mx-2" href="/docs/user">user</a>/<a class="mx-2" href="/docs/user/snapshots">snapshots</a>
         </div>
     </div>
     <div class="w-full mx-auto ff-bg-light flex flex-col md:flex-row">
         <div class="flex-grow order-last md:order-first">
             <div class="mt-6 mb-4 prose prose-blue main-content">
-                <h2 id="example-configuration-for-common-email-platforms" tabindex="-1"><a class="header-anchor" href="#example-configuration-for-common-email-platforms">#&nbsp;</a> Example configuration for common email platforms</h2>
-<h3 id="gmail" tabindex="-1"><a class="header-anchor" href="#gmail">#&nbsp;</a> GMail</h3>
-<pre><code>email:
-  enabled: true
-  debug: false
-  smtp:
-    host: smtp.gmail.com
-    port: 465
-    secure: true
-    auth:
-        user: [USER]@gmail.com
-        pass: [PASSWORD]
-</code></pre>
-<p>Note: Gmail may require an app specific password to be created if you are using 2FA on the account you can set that up <a href="https://security.google.com/settings/security/apppasswords">here</a></p>
+                <h1 id="snapshots" tabindex="-1"><a class="header-anchor" href="#snapshots">#&nbsp;</a> Snapshots</h1>
+<p>A Project Snapshot is a point-in-time backup of a project. It captures the flows,
+credentials and runtime settings.</p>
+<p>In the current release, snapshots can be created and deleted. They can also be
+pushed to devices connected to the Project.</p>
+<h2 id="create-a-snapshot" tabindex="-1"><a class="header-anchor" href="#create-a-snapshot">#&nbsp;</a> Create a snapshot</h2>
+<p>To create a project snapshot:</p>
+<ol>
+<li>Go to the project's page and select <strong>Snapshots</strong> in the sidebar.</li>
+<li>Click the <strong>Create Snapshot</strong> button.</li>
+<li>You will be prompted to give the snapshot a <strong>name</strong> and optional <strong>description</strong>.</li>
+<li>Click <strong>Create</strong></li>
+</ol>
+<p>The list of snapshots will update with the newly created entry at the top.</p>
+<h2 id="delete-a-snapshot" tabindex="-1"><a class="header-anchor" href="#delete-a-snapshot">#&nbsp;</a> Delete a snapshot</h2>
+<p>To delete a project snapshot:</p>
+<ol>
+<li>Go to the project's page and select <strong>Snapshots</strong> in the sidebar.</li>
+<li>Open the dropdown menu to the right of the snapshot you want to delete and
+select the <strong>Delete snapshot</strong> option.</li>
+<li>You will be asked to confirm - click <strong>Delete</strong> to continue.</li>
+</ol>
+<p><em>Note:</em> If the snapshot is the current <strong>Device Target</strong> snapshot, this will
+cause any connected devices to stop running the snapshot when they next check in.</p>
+<h2 id="setting-a-device-target-snapshot" tabindex="-1"><a class="header-anchor" href="#setting-a-device-target-snapshot">#&nbsp;</a> Setting a Device Target snapshot</h2>
+<p>Snapshots are used to identify a version of the project that should be pushed
+out to any connected devices. This allows you to develop you project in FlowForge
+and only push out to the devices when it is ready.</p>
+<p>To set the <strong>Device Target</strong>:</p>
+<ol>
+<li>Go to the project's page and select <strong>Snapshots</strong> in the sidebar.</li>
+<li>Open the dropdown menu to the right of the snapshot you want to set as the
+device target and select the <strong>Set as Device Target</strong> option.</li>
+<li>You will be asked to confirm - click <strong>Set Target</strong> to continue.</li>
+</ol>
+<p>This will cause the snapshot to be pushed out to any connected devices the
+next time they check in.</p>
 
             </div>
         </div>
         <div class="w-full md:w-64 md:ml-8 mt-4 md:mt-6 px-2">
             <h3 class="font-medium border-b pb-1 mb-4">On this page</h3>
             <ul id="toc" class="text-sm border-b mb-4"></ul>
-            <div class="text-sm pb-1 text-right mb-4"><a href="https://github.com/flowforge/flowforge/edit/main/docs/install/email_providers.md">Edit this page</a></div>
+            <div class="text-sm pb-1 text-right mb-4"><a href="https://github.com/flowforge/flowforge/edit/main/docs/user/snapshots.md">Edit this page</a></div>
             <div class="text-xs pb-1 text-right mb-4 italic">Updated: 2022-06-09 10:23:29 +0100</div>
         </div>
     </div>

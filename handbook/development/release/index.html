@@ -84,11 +84,11 @@ releases.</p>
 </ul>
 <h3 id="steps" tabindex="-1"><a class="header-anchor" href="#steps">#&nbsp;</a> Steps</h3>
 <ul>
-<li>Use the <code>checkout-release</code> script (from the admin project) to check out clean clones of the packages required to do a release
-(e.g. <code>./checkout-release 0.4.0</code> will create a directory called <code>release-0.4.0</code> containing all the required projects)</li>
+<li>Use the <code>checkout-release</code> script (available in the admin project) to check out clean clones of the packages required to do a release
+(e.g. <code>./admin/checkout-release 0.4.0</code> will create a directory called <code>release-0.4.0</code> containing all the required projects). This script must be run at the same level as your <code>/admin</code> directory.</li>
 <li>If required, ensure that the correct <code>user.name</code> and <code>user.email</code> git configuration settings are in place for each repository (only a problem if not using a global configuration)</li>
-<li>From within the <code>release-0.4.0</code> directory run the <code>prepare-release 0.4.0</code> script (from the admin project). This will update all the required
-<code>package.json</code> and <code>CHANGELOG.md</code> file updates then raise PRs to update the projects.</li>
+<li>From within the <code>release-0.4.0</code> directory run the <code>prepare-release 0.4.0</code> script (available in the admin project). This will update all the required
+<code>package.json</code> and <code>CHANGELOG.md</code> file updates then raise PRs to update the projects. (e.g. <code>../admin/prepare-release 0.6.0</code>)</li>
 <li>Do not panic when you see &quot;All jobs have failed&quot; for <code>flowforge/flowforge</code>. The repo will be pointing to newer versions of other packages, which have not yet been published to npm.</li>
 <li>Have update PR reviewed by somebody other than the Release Manager</li>
 <li>All package numbering PRs to be merged, and releases to be tagged, in the order defined in the admin project release issue. Between each release
@@ -100,6 +100,7 @@ ensure that the previous package has been sucessfully published to npmjs.org. Yo
 </ul>
 </li>
 <li>Once all the node module components have been built and published to npm the <code>installer</code>, <code>helm</code> and <code>docker-compose</code> components can be updated and tagged.</li>
+<li>Run <a href="https://github.com/flowforge/CloudProject/actions/workflows/build-kube.yml">staging CI pipeline publish</a>, to ensure staging is running the latest release.</li>
 </ul>
 <h3 id="next-steps" tabindex="-1"><a class="header-anchor" href="#next-steps">#&nbsp;</a> Next Steps</h3>
 <ul>
@@ -129,7 +130,7 @@ to cherry pick into <code>X.Y-maint</code></li>
             <h3 class="font-medium border-b pb-1 mb-4">On this page</h3>
             <ul id="toc" class="text-sm border-b mb-4"></ul>
             <div class="text-sm pb-1 text-right mb-4"><a href="https://github.com/flowforge/handbook/edit/main/development/release.md">Edit this page</a></div>
-            <div class="text-xs pb-1 text-right mb-4 italic">Updated: 2022-05-24 16:31:56 +0100</div>
+            <div class="text-xs pb-1 text-right mb-4 italic">Updated: 2022-06-09 15:56:04 +0100</div>
         </div>
     </div>
 </div>

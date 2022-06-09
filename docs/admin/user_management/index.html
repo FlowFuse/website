@@ -64,33 +64,34 @@
             
             v0.6.0
             
-            /<a class="mx-2" href="/docs">docs</a>/<a class="mx-2" href="/docs/install">install</a>/<a class="mx-2" href="/docs/install/email_providers">email_providers</a>
+            /<a class="mx-2" href="/docs">docs</a>/<a class="mx-2" href="/docs/admin">admin</a>/<a class="mx-2" href="/docs/admin/user_management">user_management</a>
         </div>
     </div>
     <div class="w-full mx-auto ff-bg-light flex flex-col md:flex-row">
         <div class="flex-grow order-last md:order-first">
             <div class="mt-6 mb-4 prose prose-blue main-content">
-                <h2 id="example-configuration-for-common-email-platforms" tabindex="-1"><a class="header-anchor" href="#example-configuration-for-common-email-platforms">#&nbsp;</a> Example configuration for common email platforms</h2>
-<h3 id="gmail" tabindex="-1"><a class="header-anchor" href="#gmail">#&nbsp;</a> GMail</h3>
-<pre><code>email:
-  enabled: true
-  debug: false
-  smtp:
-    host: smtp.gmail.com
-    port: 465
-    secure: true
-    auth:
-        user: [USER]@gmail.com
-        pass: [PASSWORD]
-</code></pre>
-<p>Note: Gmail may require an app specific password to be created if you are using 2FA on the account you can set that up <a href="https://security.google.com/settings/security/apppasswords">here</a></p>
+                <h1 id="user-management" tabindex="-1"><a class="header-anchor" href="#user-management">#&nbsp;</a> User management</h1>
+<h2 id="user-registration" tabindex="-1"><a class="header-anchor" href="#user-registration">#&nbsp;</a> User registration</h2>
+<p>Depending on where FlowForge is installed, users should or should not be allowed
+to sign up to the service. User registration can be configured in the admin panel.
+Go to &quot;Admin Settings&quot; &gt; &quot;Settings&quot; and select or deselect &quot;Allow new users to register on the login screen&quot;.</p>
+<h2 id="creating-new-users" tabindex="-1"><a class="header-anchor" href="#creating-new-users">#&nbsp;</a> Creating new users</h2>
+<p>To add new users to the platform go to &quot;Admin Settings&quot; &gt; &quot;Users&quot; and click the
+&quot;New User&quot; button. Fill out the form, and provide the new user with their password.</p>
+<p>To require users to change their password the next time they log in, use the &quot;Expire Password&quot; option
+on the &quot;Edit User&quot; dialog.</p>
+<h2 id="deleting-a-user" tabindex="-1"><a class="header-anchor" href="#deleting-a-user">#&nbsp;</a> Deleting a user</h2>
+<p>Users can only be removed if they don't own any teams and projects. As such the
+user should delete any projects and ensure their teams have alternative owners. They
+can either do this themselves or an Admin user can do it for them.</p>
+<p>Once all teams and projects are removed, the user can be removed using the option in the &quot;Edit User&quot; dialog.</p>
 
             </div>
         </div>
         <div class="w-full md:w-64 md:ml-8 mt-4 md:mt-6 px-2">
             <h3 class="font-medium border-b pb-1 mb-4">On this page</h3>
             <ul id="toc" class="text-sm border-b mb-4"></ul>
-            <div class="text-sm pb-1 text-right mb-4"><a href="https://github.com/flowforge/flowforge/edit/main/docs/install/email_providers.md">Edit this page</a></div>
+            <div class="text-sm pb-1 text-right mb-4"><a href="https://github.com/flowforge/flowforge/edit/main/docs/admin/user_management.md">Edit this page</a></div>
             <div class="text-xs pb-1 text-right mb-4 italic">Updated: 2022-06-09 10:23:29 +0100</div>
         </div>
     </div>

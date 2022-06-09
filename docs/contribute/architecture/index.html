@@ -62,7 +62,7 @@
     <div class="w-full mx-auto ff-bg-light">
         <div class="font-medium border-b pb-1">
             
-            v0.5.3
+            v0.6.0
             
             /<a class="mx-2" href="/docs">docs</a>/<a class="mx-2" href="/docs/contribute">contribute</a>/<a class="mx-2" href="/docs/contribute/architecture">architecture</a>
         </div>
@@ -83,7 +83,7 @@
 <p><img src=".././images/ff-localfs.png"" alt="LocalFS Architecture"></p>
 </li>
 <li>
-<p>Using a Container Orchestation platform (Kubernetes/Docker Compose)</p>
+<p>Using a Container Orchestration platform (Kubernetes/Docker Compose)</p>
 <p><img src=".././images/ff-containers.png"" alt="Container Architecture"></p>
 </li>
 </ul>
@@ -99,11 +99,11 @@
 <h4 id="kubernetes" tabindex="-1"><a class="header-anchor" href="#kubernetes">#&nbsp;</a> Kubernetes</h4>
 <p>This driver runs Projects in separate containers and each instance is accessed by a dedicated hostname via a HTTP Ingres proxy.</p>
 <p>State is stored in a provided PostgreSQL database.</p>
-<p>Project containers are segragrated into their own namespace (currently hardcoded to <code>flowforge</code>)</p>
+<p>Project containers are segregated into their own namespace (currently hardcoded to <code>flowforge</code>)</p>
 <p>The driver uses the <a href="https://www.npmjs.com/package/@kubernetes/client-node">@kubernetes/client-node</a> to interact with the cluster.</p>
-<p>The driver will create the required Service and Ingres Kubernetes resources to expose each instance via what ever Ingress Controller the underlying Kubernetes cluster provideds.</p>
+<p>The driver will create the required Service and Ingres Kubernetes resources to expose each instance via what ever Ingress Controller the underlying Kubernetes cluster provides.</p>
 <h4 id="docker-compose" tabindex="-1"><a class="header-anchor" href="#docker-compose">#&nbsp;</a> Docker-Compose</h4>
-<p>This driver runs Projects in seperate containers and each instance is accessed by a dedicated hostname via a HTTP Ingres proxy.</p>
+<p>This driver runs Projects in separate containers and each instance is accessed by a dedicated hostname via a HTTP Ingres proxy.</p>
 <p>State is stored in a provided PostgreSQL database.</p>
 <p>The driver uses the <a href="https://www.npmjs.com/package/dockerode">dockerode</a> to interact with the cluster.</p>
 <p>The driver will add the required Environment variables to each Project container to work with the <a href="https://hub.docker.com/r/jwilder/nginx-proxy">jwilder/nginx-proxy</a> NGINX proxy.</p>
@@ -117,7 +117,7 @@
 <h3 id="flowforge-launcher" tabindex="-1"><a class="header-anchor" href="#flowforge-launcher">#&nbsp;</a> FlowForge Launcher</h3>
 <p>This is a small application that handles downloading the Project specific settings, building a <code>settings.js</code> from those settings and then starting the Node-RED instance.</p>
 <p>The launcher presents a HTTP API (it defaults to the Node-RED port + 1000) that allows the FlowForge Management Application to start/stop/restart the Node-RED instance as well as query it's current state and retrieve the console logs.</p>
-<p>The launcher projet can be found <a href="https://github.com/flowforge/flowforge-nr-launcher">here</a></p>
+<p>The launcher project can be found <a href="https://github.com/flowforge/flowforge-nr-launcher">here</a></p>
 <h3 id="node-red-instance" tabindex="-1"><a class="header-anchor" href="#node-red-instance">#&nbsp;</a> Node-RED Instance</h3>
 <p>This is the standard Node-RED package with the following plugins</p>
 <ul>
@@ -141,7 +141,7 @@
             <h3 class="font-medium border-b pb-1 mb-4">On this page</h3>
             <ul id="toc" class="text-sm border-b mb-4"></ul>
             <div class="text-sm pb-1 text-right mb-4"><a href="https://github.com/flowforge/flowforge/edit/main/docs/contribute/architecture.md">Edit this page</a></div>
-            <div class="text-xs pb-1 text-right mb-4 italic">Updated: 2022-05-24 11:30:15 +0100</div>
+            <div class="text-xs pb-1 text-right mb-4 italic">Updated: 2022-06-09 10:23:29 +0100</div>
         </div>
     </div>
 </div>
