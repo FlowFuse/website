@@ -63,19 +63,16 @@ Pro-tips:
 #### Wednesday Team meeting
 
 Weekly a meeting is held to announce company wide updates, get to know each
-other, and share things you want to share both professionally as personally.
+other, and share things you want to share both professionally and personally.
 
 Announcements should be written down in the agenda as participation is not
 required. Reading the agenda the day after the meeting should be enough to stay
-in the loop on company updates.
+in the loop on company updates. Announcements and work related topics are
+timeboxed to the first 15 minutes of the meeting to allow plenty time to talk
+about other topics.
 
 Personal updates don't have to be documented in the agenda, but please do keep a
 list of names in the agenda so everyone gets the opportunity to share.
-
-The meeting itself is wrapped up with an 'Open Mic' section, for ideas,
-problems, and smaller discussion items that can be discussed in a group in few
-minutes, to a an hour. It's not required to stick around for the full
-discussion.
 
 ## Node-RED community interactions.
 
