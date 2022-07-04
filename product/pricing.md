@@ -39,7 +39,7 @@ There may be features in EE licensed versions that are not offered in public clo
 
 
 ## Summary Table
-__this feature list is not exhaustive__
+_this feature list is not exhaustive_
 
 | Feature                     | Cloud                                         | Licensed                                                |
 |-----------------------------|-----------------------------------------------|---------------------------------------------------------|
