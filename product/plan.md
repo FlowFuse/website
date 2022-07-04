@@ -1,8 +1,8 @@
-# Product Vision
+# Product  Plan
 
 ## Background
 
-Our [Company Strategy](strategy.md) sets out 4 pillars that our product work is focussed around
+Our [Company Strategy](../company/strategy.md) sets out 4 pillars that our product work is focussed around
 
 Therefore our product activities should be related back to at least one of these 4 pillars.
 
