@@ -6,13 +6,13 @@ The 1.0 Release of FlowForge represents a significant milestone, we are making a
 
 Therefore the following are considerations & requirements in order to be able to stand behind that statement.
 
-- The data model is sufficiently mature as to support our plans for the 1.x timeline. This doesn't mean we won't make changes to the model, with an appropriate migration script. But this should be a last resort
-- The devices feature is capable of supporting at least one real world use case end to end.
-- Both the Forge app and Device Agent are at 1.0 and the interface between them is locked, such that agents running 1.0 can connect to any 1.x forge application.
 - We have the admin features required to manage the platform at an appropriate scale.
 - We have the monitoring and alerting features to run a commercial SaaS platform.
 - We have a suitable licensing model in place
-- The platform is capable of supporting the planned SaaS billing model including features planned for the 1.x timeline.
+- The pricing model is sufficiently mature and implemented in the platform as to support our plans for the 1.x timeline. 
+- The devices feature is capable of supporting at least one real world use case end to end.
+- Both the Forge app and Device Agent are at 1.0 and the interface between them is locked, such that agents running 1.0 can connect to any 1.x forge application.
+
 
 ### Backports
 
