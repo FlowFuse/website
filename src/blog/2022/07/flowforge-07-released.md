@@ -7,6 +7,7 @@ authors: ["sam-machin"]
 ---
 Rollback projects to a previous snapshot, Improvements in using Devices and more.
 
+<!--more-->
 
 ## Features
 [Rollback](https://github.com/flowforge/flowforge/issues/587)
