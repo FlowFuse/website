@@ -1,7 +1,7 @@
 ---
 title: FlowForge 0.7 released
-subtitle: Rollbacks Device Environment Variables and a FlowForge Theme
-description: Rollbacks Device Environment Variables and a FlowForge Theme
+subtitle: Rollbacks, Device Environment Variables and a FlowForge Theme
+description: Rollbacks, Device Environment Variables and a FlowForge Theme
 date: 2022-07-07 12:00:00.0
 authors: ["sam-machin"]
 ---
