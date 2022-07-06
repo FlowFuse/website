@@ -25,7 +25,10 @@ layout: layouts/base.njk
         <div class="container m-auto text-left px-6 md:max-w-screen-lg">
             <a class="block mb-4" href="/blog">&lt; Back to Blog Posts</a>
             <div class="prose">
-                <div>{% if image %}<img class="w-full h-auto" src="{{image}}" />{% else %}{{ page.url | generatePostSVG |safe}}{% endif %}</div>
+                <div>{% if video %}<iframe width="560" height="315" src="https://www.youtube.com/embed/{{video}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                     {% elif image %}<img class="w-full h-auto" src="{{image}}" />
+                     {% else %}{{ page.url | generatePostSVG |safe}}{% endif %}
+                </div>
                 {{ content | safe }}
             </div>
             <div class="mt-12 pt-12 flex flex-col border-t-2">
