@@ -31,7 +31,7 @@ Now that we have a stronger visual identity in the Forge application we have con
 The introduction of ProjectTypes is largely an internal feature to support our FlowForge Cloud proposition by being able to have different price points for projects based on the capacity and features available. While Stacks were a part of this ProjectTypes allows for an aggregation of stacks so that users can change versions of Node-RED while remaining on the same pricing tier.
 
 [Stack Versions](https://github.com/flowforge/flowforge/issues/694)
-This allows an admin to link different stacks together in their lineage so for example when an updated version of Node-RED on a particular stack is deployed any users with projects on that old version will be prompted that their is an update availble, making it even easier to stay up to date with Node-RED versions when you build your flows on FlowForge.
+This allows an admin to link different stacks together in their lineage so for example when an updated version of Node-RED on a particular stack is deployed any users with projects on that old version will be prompted that there is an update available, making it even easier to stay up to date with Node-RED versions when you build your flows on FlowForge.
 
 
 ## Improvements
