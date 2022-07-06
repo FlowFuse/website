@@ -46,12 +46,12 @@ We've made a number of improvements to the overall experience of running FlowFor
 ## Bug Fixes
 We've fixed the following bugs in this release.
 - [Devices now listen on all Interfaces allowing you to run local http servers](https://github.com/flowforge/flowforge-device-agent/issues/7)<br>
-- [Fixed an error where a device gets an error  unknown device](https://github.com/flowforge/flowforge-device-agent/issues/7)<br>
+- [Solved an issue where a device gets an error  unknown device](https://github.com/flowforge/flowforge-device-agent/issues/7)<br>
 - [The Audit Log in the Forge app displays the correct IP when a user logs in to Node-RED](https://github.com/flowforge/flowforge/issues/507)<br>
-- [Fixed an error with devices downloading snaphots from legacy stacks](https://github.com/flowforge/flowforge/issues/507)<br>
+- [Resolved an issue with devices downloading snaphots from legacy stacks](https://github.com/flowforge/flowforge/issues/507)<br>
 - [Fixed an error where objects in the node-red log would hang the log page](https://github.com/flowforge/flowforge/issues/735)<br>
-- [Fixed an error where the Next Billing Date was incorrect](https://github.com/flowforge/flowforge/issues/745)<br>
-- [Fixed a big where the loading page would flash during polling](https://github.com/flowforge/flowforge/issues/689)<br>
+- [Next Billing Date is now shown correctly](https://github.com/flowforge/flowforge/issues/745)<br>
+- [Fixed a bug where the loading page would flash during polling](https://github.com/flowforge/flowforge/issues/689)<br>
 
 ### Upgrading FlowForge
 
