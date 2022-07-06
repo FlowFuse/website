@@ -18,7 +18,7 @@ We're pleased to announce version 0.7 is now available. the next release of the 
 
 ## Features
 [Rollback](https://github.com/flowforge/flowforge/issues/587)
-FlowForge is about running Node-RED at scale, part of that scale is having multiple users collaborate on the same project. When you are collaborating with people sometimes stuff needs to be undone. AS part of that we are introducing rollbacks, this means that you can now take a snapshot of your project at a point in time and then make changes safe in the knowledge that you can rollback to that previous snapshot if you need to.
+FlowForge is about running Node-RED at any scale, part of that scale is having multiple users collaborate on the same project. When you are collaborating with people it's important to be able to go back in time to a known working state. As part of that we are introducing rollbacks, this means that you can now take a snapshot of your project at a point in time and then make changes safe in the knowledge that you can rollback to that previous snapshot if you need to.
 
 [Device Environment Variables](https://github.com/flowforge/flowforge/issues/680)
 In the last release we introduced the concept of devices, we're already learning from how these are used and one feature we've added in 0.7 is Device Environment Variables, you have been able to set Environment Varibles at the project level for a while now but when deploying a snapshot to multiple devices you may want to overide these values for each device, eg to set a site ID or something, this feature enables that.
