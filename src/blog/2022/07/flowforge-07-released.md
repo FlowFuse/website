@@ -36,22 +36,23 @@ This allows an admin to link different stacks together in their lineage so for e
 
 ## Improvements
 We've made a number of improvements to the overall experience of running FlowForge.
-
-The Team Switch menu has been moved to a more prominent position in the interface, this also makes it easier to see how to create a new team. (#616)[https://github.com/flowforge/flowforge/issues/616]
-Notifications have had an overhaul, you will now see waiting invites on all pages (#515)[https://github.com/flowforge/flowforge/issues/515]
-If you are running your own copy of FlowForge you can now see the version details in the admin pages (#655)[https://github.com/flowforge/flowforge/issues/655]
-Device polling is no longer an INFO level message  filling the log on your devices (#10)[https://github.com/flowforge/flowforge-device-agent/issues/10]
+- The Team Switch menu has been moved to a more prominent position in the interface, this also makes it easier to see how to create a new team. [#616](https://github.com/flowforge/flowforge/issues/616)
+- Notifications have had an overhaul, you will now see waiting invites on all pages. [#515](https://github.com/flowforge/flowforge/issues/515)
+- If you are running your own copy of FlowForge you can now see the version details in the admin pages [#655](https://github.com/flowforge/flowforge/issues/655)
+- Device polling is no longer an INFO level message  filling the log on your devices [#10](https://github.com/flowforge/flowforge-device-agent/issues/10)
 
 
 
 ## Bug Fixes
-[Devices now listen on all Interfaces allowing you to run local http servers](https://github.com/flowforge/flowforge-device-agent/issues/7)
-[Fixed an error where a device gets an error  unknown device](https://github.com/flowforge/flowforge-device-agent/issues/7)
-[The Audit Log in the Forge app displays the correct IP when a user logs in to Node-RED](https://github.com/flowforge/flowforge/issues/507)
-[Fixed an error with devices downloading snaphots from legacy stacks](https://github.com/flowforge/flowforge/issues/507)
-[Fixed an error where objects in the node-red log would hang the log page](https://github.com/flowforge/flowforge/issues/735)
-[Fixed an error where the Next Billing Date was incorrect](https://github.com/flowforge/flowforge/issues/745)
-[Fixed a big where the loading page would flash during polling](https://github.com/flowforge/flowforge/issues/689)
+We've fixed the following bugs in this release.
+- [Devices now listen on all Interfaces allowing you to run local http servers](https://github.com/flowforge/flowforge-device-agent/issues/7)<br>
+- [Fixed an error where a device gets an error  unknown device](https://github.com/flowforge/flowforge-device-agent/issues/7)<br>
+- [The Audit Log in the Forge app displays the correct IP when a user logs in to Node-RED](https://github.com/flowforge/flowforge/issues/507)<br>
+- [Fixed an error with devices downloading snaphots from legacy stacks](https://github.com/flowforge/flowforge/issues/507)<br>
+- [Fixed an error where objects in the node-red log would hang the log page](https://github.com/flowforge/flowforge/issues/735)<br>
+- [Fixed an error where the Next Billing Date was incorrect](https://github.com/flowforge/flowforge/issues/745)<br>
+- [Fixed a big where the loading page would flash during polling](https://github.com/flowforge/flowforge/issues/689)<br>
+
 ### Upgrading FlowForge
 
 [FlowForge Cloud](https://app.flowforge.com) is already running 0.7 - 
