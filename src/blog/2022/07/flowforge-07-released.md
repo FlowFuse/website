@@ -4,15 +4,14 @@ subtitle: Rollbacks, Device Environment Variables and a FlowForge Theme
 description: Rollbacks, Device Environment Variables and a FlowForge Theme
 date: 2022-07-07 12:00:00.0
 authors: ["sam-machin"]
+video: BBNzFInc_2E
 ---
 Rollback projects to a previous snapshot, Improvements in using Devices and more.
 
 <!--more-->
-[TODO] Update video url and time below.
+[TODO] Update video url and time.
 
-Scroll down to read the details of whats in this release our you can watch our 1min roundup video of the 0.7 release
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/BBNzFInc_2E" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+Keep reading for  the details of whats in this release our you can watch our 1 min roundup video of the new release above. 
 
 We're pleased to announce version 0.7 is now available. the next release of the FlowForge application.
 
