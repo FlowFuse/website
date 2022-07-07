@@ -6,7 +6,7 @@ date: 2022-07-07 12:00:00.0
 authors: ["sam-machin"]
 video: v=rl_Ln2_uEtg
 ---
-Rollback projects to a previous snapshot, Improvements in using Devices and more.
+Rollback projects to a previous snapshot, improvements in using Devices, and more.
 
 <!--more-->
 
