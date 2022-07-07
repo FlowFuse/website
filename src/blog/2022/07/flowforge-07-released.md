@@ -26,7 +26,7 @@ Now that we have a stronger visual identity in the Forge application we have con
 ![](../images/ff-07-theme.png)
 
 [ProjectTypes](https://github.com/flowforge/flowforge/issues/380)
-The introduction of ProjectTypes is largely an internal feature to support our FlowForge Cloud proposition by being able to have different price points for projects based on the capacity and features available. While Stacks were a part of this ProjectTypes allows for an aggregation of stacks so that users can change versions of Node-RED while remaining on the same pricing tier.
+The introduction of ProjectTypes is a way to group Stacks together that share common characteristics - such as memory/cpu limits, or the availability of particular features. In platforms with billing enabled, such as our own FlowForge Cloud, the ProjectTypes can have different price points set on them. Within FlowForge Cloud, you'll see we've introduced the Small ProjectType - which applies to all existing projects on the platform.
 
 [Stack Versions](https://github.com/flowforge/flowforge/issues/694)
 This allows an admin to link different stacks together in their lineage. This allows administrators to nudge users to new Node-RED versions or upgrade pre-installed dependencies when running in a container environment. Any users with projects on an old version will be prompted that there is an update available, making it even easier to stay up to date with Node-RED versions when you build your flows on FlowForge.
