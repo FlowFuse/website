@@ -22,7 +22,7 @@ FlowForge is about running Node-RED at any scale, part of that scale is having m
 In the last release we introduced the concept of devices. We're already learning from how these are used and one feature we've added in 0.7 is Device Environment Variables. You have been able to set Environment Variables at the project level but when deploying a snapshot to multiple devices you may want to override these values for each device, for example to set a site ID. With device specific variable users are enabled to differentiate based on the context in their flows.
 
 [FlowForge Theme](https://github.com/flowforge/flowforge-nr-theme/)
-Now that we have a stronger visual identity in the Forge application we have continued that work through to the Node-RED editor. If you are running a Node-RED 3.0 stack you will see a different theme in the editor. It's still very much Node-RED but just has some subtle hints to tie it back to the FlowForge application. We will continue to iterate on this to further integrate the experience between FlowForge and Node-RED in both directions.
+Now that we have a stronger visual identity in the Forge application we have continued that work through to the Node-RED editor. If you create or upgrade a project with a Node-RED 3.0 stack you will see a different theme in the editor. It's still very much Node-RED but just has some subtle hints to tie it back to the FlowForge application. We will continue to iterate on this to further integrate the experience between FlowForge and Node-RED in both directions.
 ![](../images/ff-07-theme.png)
 
 [ProjectTypes](https://github.com/flowforge/flowforge/issues/380)
