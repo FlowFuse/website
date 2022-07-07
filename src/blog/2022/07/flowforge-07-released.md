@@ -9,7 +9,6 @@ video: BBNzFInc_2E
 Rollback projects to a previous snapshot, Improvements in using Devices and more.
 
 <!--more-->
-[TODO] Update video url and time.
 
 Keep reading for  the details of whats in this release our you can watch our 1 min roundup video of the new release above. 
 
@@ -54,7 +53,8 @@ We've fixed the following bugs in this release.
 
 ### Upgrading FlowForge
 
-[FlowForge Cloud](https://app.flowforge.com) is already running 0.7 - 
+[FlowForge Cloud](https://app.flowforge.com) is already running 0.7 - ready for
+you to try out rollbacks and the new theme. 
 
 If you installed a previous version of FlowForge and want to upgrade, our documentation provides a
 guide for [upgrading FlowForge on a local server](http://flowforge.com/docs/install#upgrade).
