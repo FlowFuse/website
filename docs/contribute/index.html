@@ -62,7 +62,7 @@
     <div class="w-full mx-auto ff-bg-light">
         <div class="font-medium border-b pb-1">
             
-            v0.6.2
+            v0.7.0
             
             /<a class="mx-2" href="/docs">docs</a>/<a class="mx-2" href="/docs/contribute">contribute</a>
         </div>
@@ -92,8 +92,8 @@ we welcome contributions from the community.</p>
 <li>Git</li>
 </ul>
 <h3 id="project-repositories" tabindex="-1"><a class="header-anchor" href="#project-repositories">#&nbsp;</a> Project Repositories</h3>
-<p>There are a number of repositories under the <a href="https://github.com/flowforge">flowforge GitHub organisation</a>
-that make up the platform:</p>
+<p>There are a number of repositories under the <a href="https://github.com/flowforge">FlowForge GitHub organisation</a>
+that make up the platform.</p>
 <table>
 <thead>
 <tr>
@@ -142,87 +142,88 @@ that make up the platform:</p>
 <td><a href="https://github.com/flowforge/flowforge-nr-storage">flowforge-nr-storage</a></td>
 <td>A Node-RED storage plugin that stores Node-RED state in the FlowForge platform</td>
 </tr>
+<tr>
+<td><a href="https://github.com/flowforge/flowforge-nr-theme">flowforge-nr-theme</a></td>
+<td>A custom Node-RED theme</td>
+</tr>
 </tbody>
 </table>
-<p>The <code>flowforge/flowforge</code> repository is the core of the platform and where you'll likely
-want to begin.</p>
-<h3 id="flowforge-code-structure" tabindex="-1"><a class="header-anchor" href="#flowforge-code-structure">#&nbsp;</a> FlowForge Code Structure</h3>
-<pre><code>/
-├── config   - developer tools configuration files  
-├── docs     - documentation
-├── etc      - runtime configuration files
-├── forge    - the core platform application
-├── frontend - the frontend source code
-└── test     - test material
+<h3 id="setting-up-a-development-environment" tabindex="-1"><a class="header-anchor" href="#setting-up-a-development-environment">#&nbsp;</a> Setting Up A Development Environment</h3>
+<p>With the project split across multiple repositories, setting up a development
+environment manually takes quite a lot of steps to ensure everything is checked
+out and configured properly.</p>
+<p>To make it easier, you can use the <a href="https://github.com/flowforge/flowforge-dev-env">FlowForge Development Environment</a> project to get set up.</p>
+<p>The following steps will get your development environment setup in no time:</p>
+<pre><code>   git clone https://github.com/flowforge/flowforge-dev-env.git
+   cd flowforge-dev-env
+   npm install
+   npm run init
 </code></pre>
-<h3 id="instructions" tabindex="-1"><a class="header-anchor" href="#instructions">#&nbsp;</a> Instructions</h3>
+<p>This clones all of the main project repositories, installs their dependencies and builds
+the repositories that need it.</p>
+<p>All of the repositories are cloned under the <code>packages</code> directory:</p>
+<pre><code>flowforge-dev-env
+└── packages
+    ├── flowforge
+    ├── flowforge-driver-localfs
+    ├── flowforge-nr-audit-logger
+    ├── flowforge-nr-auth
+    ├── flowforge-nr-launcher
+    ├── flowforge-nr-storage
+    ├── flowforge-nr-theme
+    └── forge-ui-components
+</code></pre>
+<p>More details on using the FlowForge Development Environment are available in its
+<a href="https://github.com/flowforge/flowforge-dev-env">documentation</a>.</p>
+<h3 id="flowforge-code-structure" tabindex="-1"><a class="header-anchor" href="#flowforge-code-structure">#&nbsp;</a> FlowForge Code Structure</h3>
+<p>The <code>flowforge/flowforge</code> repository is the core of the platform and where you'll
+likely want to begin.</p>
+<pre><code>.
+├── bin
+├── config               - build config files
+├── docs
+├── etc                  - FlowForge platform configuration files
+├── forge                - Platform core code
+│   ├── config
+│   ├── containers
+│   ├── db
+│   ├── ee
+│   ├── lib
+│   ├── licensing
+│   ├── monitor
+│   ├── postoffice
+│   ├── routes
+│   └── settings
+├── frontend             - Frontend code
+│   ├── dist             - build output - created by `npm run build`
+│   ├── public           - static assets
+│   └── src              - vue src
+│       ├── api
+│       ├── components
+│       ├── pages
+│       ├── routes
+│       └── store
+├── test                 - tests for FlowForge
+└── var                  - where the database and localfs project directories are created
+</code></pre>
+<h2 id="development-setup" tabindex="-1"><a class="header-anchor" href="#development-setup">#&nbsp;</a> Development Setup</h2>
 <ol>
-<li><a href="#clone-the-flowforgeflowforge-repository">Clone the repository</a></li>
-<li><a href="#install-flowforgeflowforge-dependencies">Install dependencies</a></li>
-<li><a href="#running-flowforge">Running FlowForge</a></li>
 <li><a href="#create-a-stack">Create a Stack</a></li>
+<li><a href="#running-flowforge">Running FlowForge</a></li>
 <li><a href="#configuring-flowforge">Configuring FlowForge</a></li>
 <li><a href="#mocking-email">Mocking email</a></li>
 <li><a href="#testing">Testing</a></li>
 <li><a href="#vscode-tips">VSCode Tips</a></li>
 </ol>
-<h3 id="clone-the-flowforge%2Fflowforge-repository" tabindex="-1"><a class="header-anchor" href="#clone-the-flowforge%2Fflowforge-repository">#&nbsp;</a> Clone the <code>flowforge/flowforge</code> repository</h3>
-<pre><code>git clone https://github.com/flowforge/flowforge
-</code></pre>
-<h3 id="install-flowforge%2Fflowforge-dependencies" tabindex="-1"><a class="header-anchor" href="#install-flowforge%2Fflowforge-dependencies">#&nbsp;</a> Install <code>flowforge/flowforge</code> dependencies</h3>
-<p>Once the core project is cloned, you will need to install its dependencies.
-There are 2 options here...</p>
-<ul>
-<li><a href="#option-1-npm">OPTION 1</a> - Install <code>flowforge/flowforge</code> dependencies from NPM</li>
-<li><a href="#option-2-source-code">OPTION 2</a> - Install <code>flowforge/flowforge</code> dependencies from GitHub</li>
-</ul>
-<blockquote>
-<p><strong>NOTE:</strong><br>
-If running on MacOS 12.3 or newer you may get an error around <code>node-gyp</code>
-being unable to build sqlite3. This is because MacOS no longer includes
-python2.7. The solution is to run the command <code>npm config set python python3</code>
-to alias to python3 and then run <code>npm install</code> again</p>
-</blockquote>
-<h4 id="option-1-npm" tabindex="-1"><a class="header-anchor" href="#option-1-npm">#&nbsp;</a> OPTION 1 NPM</h4>
-<p>After cloning the core repository, you will need to install
-<code>flowforge/flowforge</code> dependencies</p>
-<pre><code>cd flowforge
-npm install
-</code></pre>
-<p>By default this will install the latest released versions of the FlowForge
-components.</p>
-<h4 id="option-2-source-code" tabindex="-1"><a class="header-anchor" href="#option-2-source-code">#&nbsp;</a> OPTION 2 Source Code</h4>
-<p>After cloning the core repository, you will need to install
-<code>flowforge/flowforge</code> dependencies</p>
-<p>Instead of using NPM, you can instead run from the latest source code.
-You can check out all the required projects in the same directory along
-side the newly cloned <code>flowforge</code> directory. The following commands will
-setup everything for you...</p>
-<pre><code>git clone https://github.com/flowforge/flowforge-driver-localfs.git
-git clone https://github.com/flowforge/flowforge-nr-launcher.git
-git clone https://github.com/flowforge/flowforge-nr-storage.git
-git clone https://github.com/flowforge/flowforge-nr-auth.git
-git clone https://github.com/flowforge/flowforge-nr-audit-logger.git
-git clone https://github.com/flowforge/forge-ui-components.git
-cd flowforge
-npm run dev:local
-npm run build
-</code></pre>
-<p>This will install all the dependencies from source code, create all the required symlinks to the relevant projects and install the necessary npm dependencies.</p>
-<blockquote>
-<p><strong>Note</strong>
-The <code>npm run dev:local</code> script will modify <code>package.json</code> in the
-<code>flowforge</code>, <code>flowforge-nr-launcher</code> and <code>flowforge-driver-localfs</code> projects.
-DO NOT check these modifications into git.</p>
-</blockquote>
 <h3 id="create-a-stack" tabindex="-1"><a class="header-anchor" href="#create-a-stack">#&nbsp;</a> Create a Stack</h3>
 <p>You will need to setup the version(s) of Node-RED you want to use in your stacks.</p>
 <p>From the <code>flowforge</code> directory run</p>
 <pre><code>npm run install-stack --vers=2.2.2
 </code></pre>
-<p>Where <code>2.2.2</code> is the version of Node-RED you want to use in the stack</p>
+<p>Where <code>2.2.2</code> is the version of Node-RED you want to use in the stack.</p>
 <h3 id="running-flowforge" tabindex="-1"><a class="header-anchor" href="#running-flowforge">#&nbsp;</a> Running FlowForge</h3>
-<p>A number of <code>npm</code> tasks are defined in the <code>package.json</code> file. To get started from the flowforge directory use:</p>
+<p>A number of <code>npm</code> tasks are defined in the <code>package.json</code> file of this repository.
+To get started from the <code>flowforge</code> directory use:</p>
 <pre><code>npm run serve
 </code></pre>
 <p>This does a couple things in parallel:</p>
@@ -232,8 +233,10 @@ changes - triggering a restart if needed.</li>
 <li>Builds the frontend application using WebPack and watches for any changes - triggering a rebuild as needed.</li>
 </ul>
 <p>When running like this, the <code>NODE_ENV</code> environment variable gets set to <code>development</code>.</p>
+<p><em>Note</em>: if you have not used the <a href="#setting-up-a-development-environment">FlowForge Development Environment</a>, then you will need to run <code>npm run build</code>
+to build the platform before you can use <code>npm run serve</code>.</p>
 <h3 id="configuring-flowforge" tabindex="-1"><a class="header-anchor" href="#configuring-flowforge">#&nbsp;</a> Configuring FlowForge</h3>
-<p>When running in this mode, the core app will use <code>etc/flowforge.yml</code> for its configuration.
+<p>When running in development mode, the core app will use <code>etc/flowforge.yml</code> for its configuration.
 As you may want to have local configuration that you don't want to commit back to git,
 you can create a file called <code>etc/flowforge.local.yml</code> and it will use that instead.
 That filename is setup to be ignored by git so it won't be accidentally committed.</p>
@@ -260,8 +263,6 @@ busy work writing tests that don't provide any real value in understanding the
 overall quality of the system.</p>
 <p>Unit tests should provide sufficient coverage to give us confidence that a
 component's behaviour does not unexpectedly change.</p>
-<p>We do not <em>currently</em> have automated testing capability for the front-end. That
-relies on manual verification.</p>
 <h4 id="running-tests" tabindex="-1"><a class="header-anchor" href="#running-tests">#&nbsp;</a> Running tests</h4>
 <p>To run the tests for the project, you can use the following npm tasks:</p>
 <ul>
@@ -270,6 +271,30 @@ relies on manual verification.</p>
 <li><code>npm run test:unit</code> - runs the unit tests</li>
 <li><code>npm run test:system</code> - runs the system tests</li>
 </ul>
+<h5 id="testing-against-postgresql" tabindex="-1"><a class="header-anchor" href="#testing-against-postgresql">#&nbsp;</a> Testing against PostgreSQL</h5>
+<p>By default, the tests use an in-memory sqlite database to test against. This is
+the most self-contained way of testing the platform. But it is also necessary to
+test against PostgreSQL. To enable the use of PostgreSQL in the tests:</p>
+<ol>
+<li>
+<p>Ensure you have an instance of PostgreSQL running locally. For example, via
+docker:</p>
+<pre><code> docker run -it -p 5432:5432 --name ff-postgres -e POSTGRES_PASSWORD=secret postgres
+</code></pre>
+</li>
+<li>
+<p>Enable PostgrSQL mode by setting the following environment variable:</p>
+<pre><code> export FF_TEST_DB_POSTGRES=true
+</code></pre>
+<p>The database connection can be set using the following env vars (default values shown)</p>
+<pre><code> export FF_TEST_DB_POSTGRES_HOST=localhost
+ export FF_TEST_DB_POSTGRES_PORT=5432
+ export FF_TEST_DB_POSTGRES_USER=postgres
+ export FF_TEST_DB_POSTGRES_PASSWORD=secret
+ export FF_TEST_DB_POSTGRES_DATABASE=flowforge_test
+</code></pre>
+</li>
+</ol>
 <h4 id="reporting-code-coverage" tabindex="-1"><a class="header-anchor" href="#reporting-code-coverage">#&nbsp;</a> Reporting code coverage</h4>
 <p>The <code>test:*</code> tasks have corresponding code coverage tasks. These tasks run the
 tests using <code>nyc</code> to generate code coverage information.</p>
@@ -304,7 +329,7 @@ printed to the console and generates a browsable HTML copy under <code>coverage/
             <h3 class="font-medium border-b pb-1 mb-4">On this page</h3>
             <ul id="toc" class="text-sm border-b mb-4"></ul>
             <div class="text-sm pb-1 text-right mb-4"><a href="https://github.com/flowforge/flowforge/edit/main/docs/contribute/README.md">Edit this page</a></div>
-            <div class="text-xs pb-1 text-right mb-4 italic">Updated: 2022-06-14 13:56:06 +0100</div>
+            <div class="text-xs pb-1 text-right mb-4 italic">Updated: 2022-07-07 10:03:23 +0100</div>
         </div>
     </div>
 </div>

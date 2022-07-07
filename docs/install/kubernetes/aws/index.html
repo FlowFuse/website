@@ -64,77 +64,130 @@
             
             v0.7.0
             
-            /<a class="mx-2" href="/docs">docs</a>/<a class="mx-2" href="/docs/install">install</a>/<a class="mx-2" href="/docs/install/first-run">first-run</a>
+            /<a class="mx-2" href="/docs">docs</a>/<a class="mx-2" href="/docs/install">install</a>/<a class="mx-2" href="/docs/install/kubernetes">kubernetes</a>/<a class="mx-2" href="/docs/install/kubernetes/aws">aws</a>
         </div>
     </div>
     <div class="w-full mx-auto ff-bg-light flex flex-col md:flex-row">
         <div class="flex-grow order-last md:order-first">
             <div class="mt-6 mb-4 prose prose-blue main-content">
-                <h1 id="first-run-setup" tabindex="-1"><a class="header-anchor" href="#first-run-setup">#&nbsp;</a> First-run Setup</h1>
-<p>Following a successful install, you will be able to access the platform to go
-through the initial setup.</p>
-<p>By default, you can access the platform at <a href="http://localhost:3000">http://localhost:3000</a>.</p>
-<img src="../images/setup-01.png"" width=300 />
-<p>## 1. Create an Administrator</p>
-<p>The first user you create will be an Administrator. They will have full access
-to the platform, be able to set platform-wide configuration and manage users and teams.</p>
-<p><strong>Note</strong>: with the 0.3 release, it is possible to reset your password <em>if</em> you have email
-configured and enabled the <code>user:reset-password</code> option in Admin settings. Otherwise,
-make sure you make a note of the password you set. We will provide tools to manage passwords
-outside of the platform in a future release.</p>
-<img src="../images/setup-02-user.png"" width=300 />
-<h2 id="2.-upload-a-license" tabindex="-1"><a class="header-anchor" href="#2.-upload-a-license">#&nbsp;</a> 2. Upload a license</h2>
-<p>FlowForge Community Edition is Open Source and can be used freely without a license.</p>
-<p>If you have a FlowForge Enterprise Edition license you can upload it here.</p>
-<img src="../images/setup-03-license.png"" width=300 />
-<h2 id="3.-platform-options" tabindex="-1"><a class="header-anchor" href="#3.-platform-options">#&nbsp;</a> 3. Platform Options</h2>
-<p>There are some runtime configuration options that can be configured at this stage.</p>
-<img src="../images/setup-04-options.png"" width=300 />
-<h3 id="anonymous-usage-statistics" tabindex="-1"><a class="header-anchor" href="#anonymous-usage-statistics">#&nbsp;</a> Anonymous usage statistics</h3>
-<p>To help us understand how the project is being used, we gather high level
-anonymous usage information from running instances.</p>
-<p>The Administrator can opt-out of this feature.</p>
-<h2 id="login" tabindex="-1"><a class="header-anchor" href="#login">#&nbsp;</a> Login</h2>
-<p>Once you complete the setup, you will be able to login as the Administrator user
-you created in the first step.</p>
-<h2 id="next-steps" tabindex="-1"><a class="header-anchor" href="#next-steps">#&nbsp;</a> Next Steps</h2>
-<p>Once logged in, there are three remaining tasks the Administrator must complete
-before projects can be created</p>
-<h3 id="1.-create-a-project-type" tabindex="-1"><a class="header-anchor" href="#1.-create-a-project-type">#&nbsp;</a> 1. Create a Project Type</h3>
-<p>The Project Type provides a way to have different collections of Project Stacks
-the user can choose from when creating a project.</p>
-<p>They are managed on the <code>Project Types</code> section of Admin Settings.</p>
-<p>When creating a Project Type you give it a name and description. If you have
-billing enabled, you can associate a Stripe Product and Price ID with the type.</p>
-<p>The <code>default stack</code> property lets you pick which stack should be used by default
-for this project type. If you haven't created any stacks yet, this will be an
-empty list, but you can update it later.</p>
-<p>The <code>order</code> property controls how the project types are sorted when shown to the
-user.</p>
-<h3 id="2.-create-a-project-stack" tabindex="-1"><a class="header-anchor" href="#2.-create-a-project-stack">#&nbsp;</a> 2. Create a Project Stack</h3>
-<p>The Project Stack defines a set of platform configuration options that will get
-applied to each project when it is created.</p>
-<p>They are managed on the <code>Stacks</code> section of Admin Settings.</p>
-<p>When creating a Stack, the options available will depend on which deployment
-option is being used. For more information, refer to the documentation of your
-chosen deployment model.</p>
+                <h1 id="aws-eks-specific-details" tabindex="-1"><a class="header-anchor" href="#aws-eks-specific-details">#&nbsp;</a> AWS EKS Specific details</h1>
+<p>This document includes details of installing FlowForge on AWS EKS</p>
+<h2 id="prerequisites" tabindex="-1"><a class="header-anchor" href="#prerequisites">#&nbsp;</a> Prerequisites</h2>
+<h3 id="aws-cli" tabindex="-1"><a class="header-anchor" href="#aws-cli">#&nbsp;</a> AWS Cli</h3>
+<p>This is used to interact with the whole AWS environment</p>
+<p>https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html</p>
+<h3 id="eksctl" tabindex="-1"><a class="header-anchor" href="#eksctl">#&nbsp;</a> eksctl</h3>
+<p>This tool is used to create/modify AWS EKS Clusters, it uses the credentials from the AWS Cli.</p>
+<p>https://docs.aws.amazon.com/eks/latest/userguide/eksctl.html</p>
+<h2 id="setup-a-new-domain-on-route53" tabindex="-1"><a class="header-anchor" href="#setup-a-new-domain-on-route53">#&nbsp;</a> Setup a new domain on Route53</h2>
+<p>Do this in the AWS Console/Your DNS provider</p>
+<h2 id="create-an-aws-certificate" tabindex="-1"><a class="header-anchor" href="#create-an-aws-certificate">#&nbsp;</a> Create an AWS Certificate</h2>
+<p>Request a certificate for <code>*.[DOMAIN]</code> from Amazon Certificate Manager</p>
+<p>Do this in AWS Console, with Route53 validation</p>
+<h2 id="create-aws-container-repositories" tabindex="-1"><a class="header-anchor" href="#create-aws-container-repositories">#&nbsp;</a> Create AWS Container Repositories</h2>
+<p>https://eu-west-1.console.aws.amazon.com/ecr/repositories</p>
+<p>(URL above assumes setting up in eu-west-1, change this to the region you intent to run)</p>
+<p>To start with we need the following 2 repositories (more later when we have more templates)</p>
 <ul>
-<li><a href=".././local/stacks"">Local Stacks</a></li>
-<li><a href=".././docker/stacks"">Docker Stacks</a></li>
-<li>Kubernetes Stacks - <em>coming soon</em></li>
+<li><code>flowforge/forge-k8s</code></li>
+<li><code>flowforge/node-red</code></li>
 </ul>
-<h3 id="2.-create-a-project-template" tabindex="-1"><a class="header-anchor" href="#2.-create-a-project-template">#&nbsp;</a> 2. Create a Project Template</h3>
-<p>A Project Template provides a default set of Node-RED settings, such as the path
-the editor is served from and whether users can install new nodes.</p>
-<p>The template currently provides a minimal set of options, but this will be
-expanded in future releases.</p>
+<p>Record the host name it will look like <code>[aws id].dkr.ecr.[aws region].amazonaws.com</code></p>
+<h2 id="create-eks-cluster" tabindex="-1"><a class="header-anchor" href="#create-eks-cluster">#&nbsp;</a> Create EKS Cluster</h2>
+<p>Edit the <code>cluster.yml</code> file in <code>aws_eks</code> to set your preferred instance type and count along with AWS Region</p>
+<pre><code>eksctl create cluster -f cluster.yml
+</code></pre>
+<p>Add oidc provider for Loadbalance and IAM roles</p>
+<pre><code>eksctl utils associate-iam-oidc-provider --cluster flowforge-test --approve
+</code></pre>
+<p>Add AWS Load balancer (remember to update <code>[aws id]</code>)</p>
+<pre><code>curl -o iam_policy.json https://raw.githubusercontent.com/kubernetes-sigs/aws-load-balancer-controller/v2.2.0/docs/install/iam_policy.json
+
+aws iam create-policy --policy-name AWSLoadBalancerControllerIAMPolicy --policy-document file://iam_policy.json
+eksctl create iamserviceaccount --cluster=flowforge-test --namespace=kube-system --name=aws-load-balancer-controller --attach-policy-arn=arn:aws:iam::[aws id]:policy/AWSLoadBalancerControllerIAMPolicy --override-existing-serviceaccounts --approve
+
+helm repo add eks https://aws.github.io/eks-charts
+kubectl apply -k &quot;github.com/aws/eks-charts/stable/aws-load-balancer-controller//crds?ref=master&quot;
+
+K8S_VPC_ID=$(aws ec2 describe-vpcs --filters &quot;Name=tag:eksctl.cluster.k8s.io/v1alpha1/cluster-name,Values=flowforge-test&quot; | jq -r '.Vpcs[].VpcId')
+helm install aws-load-balancer-controller eks/aws-load-balancer-controller --set clusterName=flowforge-test --set serviceAccount.create=false --set region=eu-west-1 --set vpcId=$K8S_VPC_ID --set serviceAccount.name=aws-load-balancer-controller -n kube-system
+</code></pre>
+<h3 id="references" tabindex="-1"><a class="header-anchor" href="#references">#&nbsp;</a> References</h3>
+<p>https://aws.amazon.com/premiumsupport/knowledge-center/eks-alb-ingress-controller-fargate/</p>
+<h2 id="setup-aws-ses-for-email" tabindex="-1"><a class="header-anchor" href="#setup-aws-ses-for-email">#&nbsp;</a> Setup AWS SES for email</h2>
+<p>https://eu-west-1.console.aws.amazon.com/ses/home?region=eu-west-1#/homepage</p>
+<p>Setup identity to match sending domain (requires DNS entries)
+Setup email identity to send test emails to
+Request move to production from sandbox (need to include examples of emails being sent and why/when those emails will be sent should only need this for prod)</p>
+<p><code>ses_policy.json</code> (with suitable aws id, aws region and domain modifications):</p>
+<pre><code>{
+    &quot;Version&quot;: &quot;2012-10-17&quot;,
+    &quot;Statement&quot;: [
+        {
+            &quot;Sid&quot;: &quot;VisualEditor0&quot;,
+            &quot;Effect&quot;: &quot;Allow&quot;,
+            &quot;Action&quot;: [
+                &quot;ses:SendEmail&quot;,
+                &quot;ses:SendTemplatedEmail&quot;,
+                &quot;ses:SendRawEmail&quot;
+            ],
+            &quot;Resource&quot;: &quot;arn:aws:ses:[aws region]:[aws id]:identity/[domain name]&quot;
+        }
+    ]
+}
+</code></pre>
+<pre><code>IAM_POLICY_ARN=$(aws iam create-policy --policy-name FlowForgeSendEmail --policy-document file://ses_policy.json | jq -r .Policy.Arn)
+ACCOUNT_ID=$(aws sts get-caller-identity --query &quot;Account&quot; --output text)
+OIDC_PROVIDER=$(aws eks describe-cluster --name flowforge --query &quot;cluster.identity.oidc.issuer&quot; --output text | sed -e &quot;s/^https:\/\///&quot;)
+
+
+read -r -d '' TRUST_RELATIONSHIP &lt;&lt;EOF
+{
+  &quot;Version&quot;: &quot;2012-10-17&quot;,
+  &quot;Statement&quot;: [
+    {
+      &quot;Effect&quot;: &quot;Allow&quot;,
+      &quot;Principal&quot;: {
+        &quot;Federated&quot;: &quot;arn:aws:iam::${ACCOUNT_ID}:oidc-provider/${OIDC_PROVIDER}&quot;
+      },
+      &quot;Action&quot;: &quot;sts:AssumeRoleWithWebIdentity&quot;,
+      &quot;Condition&quot;: {
+        &quot;StringEquals&quot;: {
+          &quot;${OIDC_PROVIDER}:sub&quot;: &quot;system:serviceaccount:default:flowforge&quot;
+        }
+      }
+    }
+  ]
+}
+EOF
+echo &quot;${TRUST_RELATIONSHIP}&quot; &gt; trust.json
+
+aws iam create-role --role-name flowforge_service_account_role --assume-role-policy-document file://trust.json --description &quot;Role to bind to flowforge service account&quot;
+
+aws iam attach-role-policy --role-name flowforge_service_account_role --policy-arn=$IAM_POLICY_ARN
+</code></pre>
+<p>Make a note of the  ARN for the IAM Role (flowforge_service_account_role) is needed in the helm chart values yaml file.
+<code>aws iam get-role --role-name flowforge_service_account_role</code></p>
+<h3 id="references-1" tabindex="-1"><a class="header-anchor" href="#references-1">#&nbsp;</a> References</h3>
+<p>Create a IAM Role to bind IAM Policies to the service account https://docs.aws.amazon.com/eks/latest/userguide/iam-roles-for-service-accounts.html</p>
+<p>Create IAM Policy to allow sending emails (example: https://docs.aws.amazon.com/ses/latest/dg/sending-authorization-policy-examples.html)</p>
+<h2 id="use-aws-rds-postgresql-instance" tabindex="-1"><a class="header-anchor" href="#use-aws-rds-postgresql-instance">#&nbsp;</a> Use AWS RDS PostgreSQL instance</h2>
+<p>Run the following command</p>
+<pre><code>./aws-eks/setup-rds.sh
+</code></pre>
+<p>(Need to either make this script available, it's very complex as it sets up the VPS network routing between the RDS instance and the EKS cluster)</p>
+<p>Make a note of the postgress hostname</p>
+<pre><code>aws rds describe-db-instances | jq .DBInstances[].Endpoint.Address
+</code></pre>
+<h3 id="references-2" tabindex="-1"><a class="header-anchor" href="#references-2">#&nbsp;</a> References</h3>
+<p>https://dev.to/bensooraj/accessing-amazon-rds-from-aws-eks-2pc3</p>
 
             </div>
         </div>
         <div class="w-full md:w-64 md:ml-8 mt-4 md:mt-6 px-2">
             <h3 class="font-medium border-b pb-1 mb-4">On this page</h3>
             <ul id="toc" class="text-sm border-b mb-4"></ul>
-            <div class="text-sm pb-1 text-right mb-4"><a href="https://github.com/flowforge/flowforge/edit/main/docs/install/first-run.md">Edit this page</a></div>
+            <div class="text-sm pb-1 text-right mb-4"><a href="https://github.com/flowforge/flowforge/edit/main/docs/install/kubernetes/aws.md">Edit this page</a></div>
             <div class="text-xs pb-1 text-right mb-4 italic">Updated: 2022-07-07 10:03:23 +0100</div>
         </div>
     </div>

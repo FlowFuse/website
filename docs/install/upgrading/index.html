@@ -64,77 +64,47 @@
             
             v0.7.0
             
-            /<a class="mx-2" href="/docs">docs</a>/<a class="mx-2" href="/docs/install">install</a>/<a class="mx-2" href="/docs/install/first-run">first-run</a>
+            /<a class="mx-2" href="/docs">docs</a>/<a class="mx-2" href="/docs/install">install</a>/<a class="mx-2" href="/docs/install/upgrading">upgrading</a>
         </div>
     </div>
     <div class="w-full mx-auto ff-bg-light flex flex-col md:flex-row">
         <div class="flex-grow order-last md:order-first">
             <div class="mt-6 mb-4 prose prose-blue main-content">
-                <h1 id="first-run-setup" tabindex="-1"><a class="header-anchor" href="#first-run-setup">#&nbsp;</a> First-run Setup</h1>
-<p>Following a successful install, you will be able to access the platform to go
-through the initial setup.</p>
-<p>By default, you can access the platform at <a href="http://localhost:3000">http://localhost:3000</a>.</p>
-<img src="../images/setup-01.png"" width=300 />
-<p>## 1. Create an Administrator</p>
-<p>The first user you create will be an Administrator. They will have full access
-to the platform, be able to set platform-wide configuration and manage users and teams.</p>
-<p><strong>Note</strong>: with the 0.3 release, it is possible to reset your password <em>if</em> you have email
-configured and enabled the <code>user:reset-password</code> option in Admin settings. Otherwise,
-make sure you make a note of the password you set. We will provide tools to manage passwords
-outside of the platform in a future release.</p>
-<img src="../images/setup-02-user.png"" width=300 />
-<h2 id="2.-upload-a-license" tabindex="-1"><a class="header-anchor" href="#2.-upload-a-license">#&nbsp;</a> 2. Upload a license</h2>
-<p>FlowForge Community Edition is Open Source and can be used freely without a license.</p>
-<p>If you have a FlowForge Enterprise Edition license you can upload it here.</p>
-<img src="../images/setup-03-license.png"" width=300 />
-<h2 id="3.-platform-options" tabindex="-1"><a class="header-anchor" href="#3.-platform-options">#&nbsp;</a> 3. Platform Options</h2>
-<p>There are some runtime configuration options that can be configured at this stage.</p>
-<img src="../images/setup-04-options.png"" width=300 />
-<h3 id="anonymous-usage-statistics" tabindex="-1"><a class="header-anchor" href="#anonymous-usage-statistics">#&nbsp;</a> Anonymous usage statistics</h3>
-<p>To help us understand how the project is being used, we gather high level
-anonymous usage information from running instances.</p>
-<p>The Administrator can opt-out of this feature.</p>
-<h2 id="login" tabindex="-1"><a class="header-anchor" href="#login">#&nbsp;</a> Login</h2>
-<p>Once you complete the setup, you will be able to login as the Administrator user
-you created in the first step.</p>
-<h2 id="next-steps" tabindex="-1"><a class="header-anchor" href="#next-steps">#&nbsp;</a> Next Steps</h2>
-<p>Once logged in, there are three remaining tasks the Administrator must complete
-before projects can be created</p>
-<h3 id="1.-create-a-project-type" tabindex="-1"><a class="header-anchor" href="#1.-create-a-project-type">#&nbsp;</a> 1. Create a Project Type</h3>
-<p>The Project Type provides a way to have different collections of Project Stacks
-the user can choose from when creating a project.</p>
-<p>They are managed on the <code>Project Types</code> section of Admin Settings.</p>
-<p>When creating a Project Type you give it a name and description. If you have
-billing enabled, you can associate a Stripe Product and Price ID with the type.</p>
-<p>The <code>default stack</code> property lets you pick which stack should be used by default
-for this project type. If you haven't created any stacks yet, this will be an
-empty list, but you can update it later.</p>
-<p>The <code>order</code> property controls how the project types are sorted when shown to the
-user.</p>
-<h3 id="2.-create-a-project-stack" tabindex="-1"><a class="header-anchor" href="#2.-create-a-project-stack">#&nbsp;</a> 2. Create a Project Stack</h3>
-<p>The Project Stack defines a set of platform configuration options that will get
-applied to each project when it is created.</p>
-<p>They are managed on the <code>Stacks</code> section of Admin Settings.</p>
-<p>When creating a Stack, the options available will depend on which deployment
-option is being used. For more information, refer to the documentation of your
-chosen deployment model.</p>
-<ul>
-<li><a href=".././local/stacks"">Local Stacks</a></li>
-<li><a href=".././docker/stacks"">Docker Stacks</a></li>
-<li>Kubernetes Stacks - <em>coming soon</em></li>
-</ul>
-<h3 id="2.-create-a-project-template" tabindex="-1"><a class="header-anchor" href="#2.-create-a-project-template">#&nbsp;</a> 2. Create a Project Template</h3>
-<p>A Project Template provides a default set of Node-RED settings, such as the path
-the editor is served from and whether users can install new nodes.</p>
-<p>The template currently provides a minimal set of options, but this will be
-expanded in future releases.</p>
+                <h1 id="upgrading-flowforge" tabindex="-1"><a class="header-anchor" href="#upgrading-flowforge">#&nbsp;</a> Upgrading FlowForge</h1>
+<p>If you are upgrading an existing FlowForge installation, this page will list any
+particular requirements needed to upgrade to a given level.</p>
+<p>Note that we do not support downgrading FlowForge to previous levels once an upgrade
+has been performed.</p>
+<h3 id="upgrading-to-0.7" tabindex="-1"><a class="header-anchor" href="#upgrading-to-0.7">#&nbsp;</a> Upgrading to 0.7</h3>
+<p>The 0.7 release introduces the <a href="../../user/concepts#project-type"">ProjectType concept</a>.</p>
+<p>After upgrading to 0.7, an administrator must perform the following tasks before
+users will be able to create new projects:</p>
+<ol>
+<li>Create a Project Type.
+<ol>
+<li>On the Administrator Settings -&gt; Project Types page, click 'Create project type'.</li>
+<li>Provide a name and description. If you have billing enabled, copy in the default
+Stripe Product/Price IDs from your runtime settings file.</li>
+<li>Click 'create'</li>
+</ol>
+</li>
+<li>Assign your existing stacks to that type
+<ol>
+<li>On the Administrator Settings -&gt; Stacks page, edit each existing stack via
+the drop-down menu in the table.</li>
+<li>As a one-time action, set its Project Type to the one just created.</li>
+<li>Click 'save'. This will update the stack <em>and</em> all existing projects to
+be associated with the new Project Type</li>
+</ol>
+</li>
+</ol>
 
             </div>
         </div>
         <div class="w-full md:w-64 md:ml-8 mt-4 md:mt-6 px-2">
             <h3 class="font-medium border-b pb-1 mb-4">On this page</h3>
             <ul id="toc" class="text-sm border-b mb-4"></ul>
-            <div class="text-sm pb-1 text-right mb-4"><a href="https://github.com/flowforge/flowforge/edit/main/docs/install/first-run.md">Edit this page</a></div>
+            <div class="text-sm pb-1 text-right mb-4"><a href="https://github.com/flowforge/flowforge/edit/main/docs/install/upgrading.md">Edit this page</a></div>
             <div class="text-xs pb-1 text-right mb-4 italic">Updated: 2022-07-07 10:03:23 +0100</div>
         </div>
     </div>

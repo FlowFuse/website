@@ -62,7 +62,7 @@
     <div class="w-full mx-auto ff-bg-light">
         <div class="font-medium border-b pb-1">
             
-            v0.6.2
+            v0.7.0
             
             /<a class="mx-2" href="/docs">docs</a>/<a class="mx-2" href="/docs/user">user</a>/<a class="mx-2" href="/docs/user/concepts">concepts</a>
         </div>
@@ -76,6 +76,7 @@ are a few concepts the platform introduces to help organise things.</p>
 <ul>
 <li><a href="#project">Project</a>
 <ul>
+<li><a href="#project-type">Type</a></li>
 <li><a href="#project-stack">Stack</a></li>
 <li><a href="#project-template">Template</a></li>
 <li><a href="#project-snapshot">Snapshot</a></li>
@@ -94,12 +95,20 @@ of settings that can be modified for a project based on what has been configured
 and allowed in the <a href="#project-template">Project Template</a>. These can be access
 from the Settings page of the project and there is a description of each one in
 the settings.</p>
+<h4 id="project-type" tabindex="-1"><a class="header-anchor" href="#project-type">#&nbsp;</a> Project Type</h4>
+<p>When you create a project, you can pick its type from the list the platform
+Administrator has made available. For example, each type could provide a different
+amount of memory or CPU allocation. In the future, they will also enable different
+feature sets.</p>
+<p>If the platform has billing enabled, each type may have a different monthly price
+associated with it.</p>
 <h4 id="project-stack" tabindex="-1"><a class="header-anchor" href="#project-stack">#&nbsp;</a> Project Stack</h4>
 <p>A Project Stack describes properties of the Project runtime. This can include the
 version of Node-RED, memory and CPU allocation. The specific details will depend
 on how and where FlowForge is running.</p>
 <p>Project Stacks are created and owned by the platform Administrator. When a User
-comes to create a new project, they chose from the available stacks.</p>
+comes to create a new project, they chose from the available stacks associated
+with the chosen Project Type.</p>
 <h4 id="project-template" tabindex="-1"><a class="header-anchor" href="#project-template">#&nbsp;</a> Project Template</h4>
 <p>A Project Template describes properties of Node-RED itself. It is how many of the
 settings a user familiar with Node-RED would be used to modifying in their settings
@@ -120,16 +129,12 @@ and runtime settings.</p>
 snapshot. The 0.6 release introduces snapshots as part of the Device feature.</p>
 <h3 id="team" tabindex="-1"><a class="header-anchor" href="#team">#&nbsp;</a> Team</h3>
 <p>Each project is owned by a Team. Only members of that team have access to the
-Node-RED editor for the project.</p>
-<p>Each user in a team can have one of two roles:</p>
-<ul>
-<li><strong>Owner</strong> - with full administrative access to the team and its projects</li>
-<li><strong>Member</strong> - can access the projects, but limited access to changing Team and
-project settings.</li>
-</ul>
+Node-RED editor for the project. Members have different roles assigned to them
+and their <a href=".././team/#role-based-access-control"">roles determine their authorization level</a>.</p>
 <h3 id="device" tabindex="-1"><a class="header-anchor" href="#device">#&nbsp;</a> Device</h3>
-<p>The FlowForge platform can be used to manage projects running on remote Devices.
-A Device runs a software agent that connects back to the platform to receive updates.</p>
+<p>The FlowForge platform can be used to manage projects running on remote devices.
+A Device runs a software agent that connects back to the platform to receive updates.
+Users must <a href="../devices"">install the agent</a> on the devices.</p>
 <p>Devices are registered to a Team, and then assigned to a Project withing that team.
 A user can create a <a href="#project-snapshot">project snapshot</a> can mark it as the
 <em>target</em> snapshot for devices. The platform will then deploy that snapshot to
@@ -141,7 +146,7 @@ all of the devices assigned to the project.</p>
             <h3 class="font-medium border-b pb-1 mb-4">On this page</h3>
             <ul id="toc" class="text-sm border-b mb-4"></ul>
             <div class="text-sm pb-1 text-right mb-4"><a href="https://github.com/flowforge/flowforge/edit/main/docs/user/concepts.md">Edit this page</a></div>
-            <div class="text-xs pb-1 text-right mb-4 italic">Updated: 2022-06-14 13:56:06 +0100</div>
+            <div class="text-xs pb-1 text-right mb-4 italic">Updated: 2022-07-07 10:03:23 +0100</div>
         </div>
     </div>
 </div>

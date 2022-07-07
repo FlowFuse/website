@@ -64,77 +64,81 @@
             
             v0.7.0
             
-            /<a class="mx-2" href="/docs">docs</a>/<a class="mx-2" href="/docs/install">install</a>/<a class="mx-2" href="/docs/install/first-run">first-run</a>
+            /<a class="mx-2" href="/docs">docs</a>/<a class="mx-2" href="/docs/install">install</a>/<a class="mx-2" href="/docs/install/kubernetes">kubernetes</a>
         </div>
     </div>
     <div class="w-full mx-auto ff-bg-light flex flex-col md:flex-row">
         <div class="flex-grow order-last md:order-first">
             <div class="mt-6 mb-4 prose prose-blue main-content">
-                <h1 id="first-run-setup" tabindex="-1"><a class="header-anchor" href="#first-run-setup">#&nbsp;</a> First-run Setup</h1>
-<p>Following a successful install, you will be able to access the platform to go
-through the initial setup.</p>
-<p>By default, you can access the platform at <a href="http://localhost:3000">http://localhost:3000</a>.</p>
-<img src="../images/setup-01.png"" width=300 />
-<p>## 1. Create an Administrator</p>
-<p>The first user you create will be an Administrator. They will have full access
-to the platform, be able to set platform-wide configuration and manage users and teams.</p>
-<p><strong>Note</strong>: with the 0.3 release, it is possible to reset your password <em>if</em> you have email
-configured and enabled the <code>user:reset-password</code> option in Admin settings. Otherwise,
-make sure you make a note of the password you set. We will provide tools to manage passwords
-outside of the platform in a future release.</p>
-<img src="../images/setup-02-user.png"" width=300 />
-<h2 id="2.-upload-a-license" tabindex="-1"><a class="header-anchor" href="#2.-upload-a-license">#&nbsp;</a> 2. Upload a license</h2>
-<p>FlowForge Community Edition is Open Source and can be used freely without a license.</p>
-<p>If you have a FlowForge Enterprise Edition license you can upload it here.</p>
-<img src="../images/setup-03-license.png"" width=300 />
-<h2 id="3.-platform-options" tabindex="-1"><a class="header-anchor" href="#3.-platform-options">#&nbsp;</a> 3. Platform Options</h2>
-<p>There are some runtime configuration options that can be configured at this stage.</p>
-<img src="../images/setup-04-options.png"" width=300 />
-<h3 id="anonymous-usage-statistics" tabindex="-1"><a class="header-anchor" href="#anonymous-usage-statistics">#&nbsp;</a> Anonymous usage statistics</h3>
-<p>To help us understand how the project is being used, we gather high level
-anonymous usage information from running instances.</p>
-<p>The Administrator can opt-out of this feature.</p>
-<h2 id="login" tabindex="-1"><a class="header-anchor" href="#login">#&nbsp;</a> Login</h2>
-<p>Once you complete the setup, you will be able to login as the Administrator user
-you created in the first step.</p>
-<h2 id="next-steps" tabindex="-1"><a class="header-anchor" href="#next-steps">#&nbsp;</a> Next Steps</h2>
-<p>Once logged in, there are three remaining tasks the Administrator must complete
-before projects can be created</p>
-<h3 id="1.-create-a-project-type" tabindex="-1"><a class="header-anchor" href="#1.-create-a-project-type">#&nbsp;</a> 1. Create a Project Type</h3>
-<p>The Project Type provides a way to have different collections of Project Stacks
-the user can choose from when creating a project.</p>
-<p>They are managed on the <code>Project Types</code> section of Admin Settings.</p>
-<p>When creating a Project Type you give it a name and description. If you have
-billing enabled, you can associate a Stripe Product and Price ID with the type.</p>
-<p>The <code>default stack</code> property lets you pick which stack should be used by default
-for this project type. If you haven't created any stacks yet, this will be an
-empty list, but you can update it later.</p>
-<p>The <code>order</code> property controls how the project types are sorted when shown to the
-user.</p>
-<h3 id="2.-create-a-project-stack" tabindex="-1"><a class="header-anchor" href="#2.-create-a-project-stack">#&nbsp;</a> 2. Create a Project Stack</h3>
-<p>The Project Stack defines a set of platform configuration options that will get
-applied to each project when it is created.</p>
-<p>They are managed on the <code>Stacks</code> section of Admin Settings.</p>
-<p>When creating a Stack, the options available will depend on which deployment
-option is being used. For more information, refer to the documentation of your
-chosen deployment model.</p>
+                <h1 id="kubernetes-install" tabindex="-1"><a class="header-anchor" href="#kubernetes-install">#&nbsp;</a> Kubernetes Install</h1>
+<p>This version of the FlowForge platform is intended for running in the Kubernetes Container management system. Typically suited for large on permise deployments or deployment in Cloud infrastucture.</p>
+<h3 id="prerequisites" tabindex="-1"><a class="header-anchor" href="#prerequisites">#&nbsp;</a> Prerequisites</h3>
+<h4 id="kubernetes" tabindex="-1"><a class="header-anchor" href="#kubernetes">#&nbsp;</a> Kubernetes</h4>
+<p>You will need a Kubernetes environment. The deployment has currently been tested on the following environments:</p>
 <ul>
-<li><a href=".././local/stacks"">Local Stacks</a></li>
-<li><a href=".././docker/stacks"">Docker Stacks</a></li>
-<li>Kubernetes Stacks - <em>coming soon</em></li>
+<li>AWS EKS</li>
+<li>MicroK8s</li>
 </ul>
-<h3 id="2.-create-a-project-template" tabindex="-1"><a class="header-anchor" href="#2.-create-a-project-template">#&nbsp;</a> 2. Create a Project Template</h3>
-<p>A Project Template provides a default set of Node-RED settings, such as the path
-the editor is served from and whether users can install new nodes.</p>
-<p>The template currently provides a minimal set of options, but this will be
-expanded in future releases.</p>
+<p>It should run on any Kubernetes platform, but may require some changes for vendor specific Ingress setup.</p>
+<h4 id="helm" tabindex="-1"><a class="header-anchor" href="#helm">#&nbsp;</a> Helm</h4>
+<p>FlowForge uses a Helm Chart to manage deployment</p>
+<h4 id="docker-container-registry" tabindex="-1"><a class="header-anchor" href="#docker-container-registry">#&nbsp;</a> Docker Container Registry</h4>
+<p>FlowForge on Kubernetes will require a Docker Container Registry to host the both the core platform container and the containers that back any Stacks you wish to deploy.</p>
+<h3 id="postgresql-database" tabindex="-1"><a class="header-anchor" href="#postgresql-database">#&nbsp;</a> PostgreSQL Database</h3>
+<p>The Helm chart can either install a dedicated PostgreSQL database into the same K8s cluster or can configure the install to use an external instance.</p>
+<h4 id="dns" tabindex="-1"><a class="header-anchor" href="#dns">#&nbsp;</a> DNS</h4>
+<p>A wildcard DNS entry will be needed to point to the domain that is used fro the project instances. This will need to point to the K8s Ingress controller.</p>
+<h4 id="email" tabindex="-1"><a class="header-anchor" href="#email">#&nbsp;</a> Email</h4>
+<p>Some features require the ability to send email to users. This can be currently be provided by:</p>
+<ul>
+<li>Details of a SMTP server</li>
+<li>AWS SES</li>
+</ul>
+<h3 id="installing-flowforge" tabindex="-1"><a class="header-anchor" href="#installing-flowforge">#&nbsp;</a> Installing FlowForge</h3>
+<h4 id="download" tabindex="-1"><a class="header-anchor" href="#download">#&nbsp;</a> Download</h4>
+<p>Download the helm project from GitHub here:</p>
+<p>https://github.com/flowforge/helm/</p>
+<h4 id="building-containers" tabindex="-1"><a class="header-anchor" href="#building-containers">#&nbsp;</a> Building Containers</h4>
+<p>At a minimum there are 2 container required.</p>
+<ul>
+<li>flowforge/forge-k8s</li>
+<li>flowforge/node-red</li>
+</ul>
+<p>These can be built usinth the <code>./build-containers.sh</code> script in the root of the <code>helm</code> project. This script takes the hostname of the Docker Container Registry as it's only argument. This will be pre-pended to the constainer names. e.g.</p>
+<pre><code>./build-containers.sh containers.example.com
+</code></pre>
+<p>This will build and publish</p>
+<ul>
+<li>containers.example.com/flowforge/forge-k8s</li>
+<li>containers.example.com/flowforge/node-red</li>
+</ul>
+<h5 id="flowforge%2Fforge-k8s" tabindex="-1"><a class="header-anchor" href="#flowforge%2Fforge-k8s">#&nbsp;</a> flowforge/forge-k8s</h5>
+<p>This container includes the FlowForge App and the Kubernetes Drivers</p>
+<h5 id="flowforge%2Fnode-red" tabindex="-1"><a class="header-anchor" href="#flowforge%2Fnode-red">#&nbsp;</a> flowforge/node-red</h5>
+<p>This is a basic Node-RED image with the FlowForge Launcher and the required Node-RED plugins to talk to the FlowForge Platform. This is the basis for the initial Stack.</p>
+<p>This is the container you can customise for your deployment.</p>
+<h3 id="configure-flowforge" tabindex="-1"><a class="header-anchor" href="#configure-flowforge">#&nbsp;</a> Configure FlowForge</h3>
+<p>All the initial configuration is handled by the Helm chart. This is done by creating a <code>values.yml</code> file in the <code>helm</code> directory that will be passed to the helm along with the chart.</p>
+<p>This is the minimal configuration</p>
+<pre class="language-yaml"><code class="language-yaml"><span class="token key atrule">forge</span><span class="token punctuation">:</span><br>  <span class="token key atrule">entryPoint</span><span class="token punctuation">:</span> forge.example.com<br>  <span class="token key atrule">domain</span><span class="token punctuation">:</span> example.com<br>  <span class="token key atrule">https</span><span class="token punctuation">:</span> <span class="token boolean important">false</span><br>  <span class="token key atrule">registry</span><span class="token punctuation">:</span> containers.example.com<br>  <span class="token key atrule">registrySecret</span><span class="token punctuation">:</span> password<br>  <span class="token key atrule">localPostgresql</span><span class="token punctuation">:</span> <span class="token boolean important">true</span></code></pre>
+<p>When running on AWS EKS and using AWS SES for email (The IAMRole needs to have the required permissions to use SES) it would look something like:</p>
+<pre class="language-yaml"><code class="language-yaml"><span class="token key atrule">forge</span><span class="token punctuation">:</span><br>  <span class="token key atrule">entryPoint</span><span class="token punctuation">:</span> forge.example.com<br>  <span class="token key atrule">domain</span><span class="token punctuation">:</span> example.com<br>  <span class="token key atrule">registry</span><span class="token punctuation">:</span> &lt;aws<span class="token punctuation">-</span>account<span class="token punctuation">-</span>id<span class="token punctuation">></span>.dkr.ecr.eu<span class="token punctuation">-</span>west<span class="token punctuation">-</span>1.amazonaws.com<br>  <span class="token key atrule">cloudProvider</span><span class="token punctuation">:</span> aws<br>  <span class="token key atrule">aws</span><span class="token punctuation">:</span><br>    <span class="token key atrule">IAMRole</span><span class="token punctuation">:</span> arn<span class="token punctuation">:</span>aws<span class="token punctuation">:</span>iam<span class="token punctuation">:</span><span class="token punctuation">:</span>&lt;aws<span class="token punctuation">-</span>account<span class="token punctuation">-</span>id<span class="token punctuation">></span><span class="token punctuation">:</span>role/flowforge_service_account_role<br>  <span class="token key atrule">email</span><span class="token punctuation">:</span><br>    <span class="token key atrule">ses</span><span class="token punctuation">:</span><br>      <span class="token key atrule">region</span><span class="token punctuation">:</span> eu<span class="token punctuation">-</span>west<span class="token punctuation">-</span><span class="token number">1</span></code></pre>
+<p>TODO: <em>Detailed walk through for AWS in internal Cloud Project docs. Will add extra page with sanitised version</em> <a href="aws"">AWS setup notes</a></p>
+<p>A full list of all the configable values can be found in the Helm Chart README.md <a href="https://github.com/flowforge/helm/blob/main/helm/flowforge/README.md">here</a></p>
+<pre><code>helm install flowforge flowforge -f values.yml
+</code></pre>
+<h3 id="running-flowforge" tabindex="-1"><a class="header-anchor" href="#running-flowforge">#&nbsp;</a> Running FlowForge</h3>
+<h3 id="first-run-setup" tabindex="-1"><a class="header-anchor" href="#first-run-setup">#&nbsp;</a> First Run Setup</h3>
+<p>The first time you access the platform in your browser, it will take you through
+creating an administrator for the platform and other configuration options.</p>
+<p>For more information, follow <a href="../first-run"">this guide</a>.</p>
 
             </div>
         </div>
         <div class="w-full md:w-64 md:ml-8 mt-4 md:mt-6 px-2">
             <h3 class="font-medium border-b pb-1 mb-4">On this page</h3>
             <ul id="toc" class="text-sm border-b mb-4"></ul>
-            <div class="text-sm pb-1 text-right mb-4"><a href="https://github.com/flowforge/flowforge/edit/main/docs/install/first-run.md">Edit this page</a></div>
+            <div class="text-sm pb-1 text-right mb-4"><a href="https://github.com/flowforge/flowforge/edit/main/docs/install/kubernetes/README.md">Edit this page</a></div>
             <div class="text-xs pb-1 text-right mb-4 italic">Updated: 2022-07-07 10:03:23 +0100</div>
         </div>
     </div>

@@ -62,7 +62,7 @@
     <div class="w-full mx-auto ff-bg-light">
         <div class="font-medium border-b pb-1">
             
-            v0.6.2
+            v0.7.0
             
             /<a class="mx-2" href="/docs">docs</a>/<a class="mx-2" href="/docs/admin">admin</a>
         </div>
@@ -74,7 +74,7 @@
 <h2 id="getting-started" tabindex="-1"><a class="header-anchor" href="#getting-started">#&nbsp;</a> Getting started</h2>
 <ul>
 <li><a href="../contribute/architecture"">Understanding the FlowForge Architecture</a></li>
-<li><a href="../install"">Install</a> - requirements, deployment models, installation methods</li>
+<li><a href="../install"">Install/Upgrade</a> - requirements, deployment models, installation methods and upgrading</li>
 <li><a href="../install/configuration""><code>flowforge.yml</code> configuration</a> - base platform configuration, done before you run.</li>
 <li><a href="../install/first-run"">First Run Setup</a> - create your admin user</li>
 <li><a href="../user/concepts"">FlowForge Concepts</a></li>
@@ -86,8 +86,8 @@
 <p>The Admin Settings can be accessed from the main menu:</p>
 <img src="images/admin-menu-option.png"" width=300 />
 <h3 id="admin-settings" tabindex="-1"><a class="header-anchor" href="#admin-settings">#&nbsp;</a> Admin Settings</h3>
-<p>The Admin Settings view lets you manage the platform and its users.</p>
-<p>With the 0.3.0 release, the following settings are available:</p>
+<p>The Admin Settings view lets you manage the platform and its users. The
+following settings are available:</p>
 <ul>
 <li>
 <p><strong>Allow new users to register on the login screen</strong> (default: <code>false</code>)</p>
@@ -143,9 +143,21 @@ to what team.</p>
 <h3 id="managing-teams" tabindex="-1"><a class="header-anchor" href="#managing-teams">#&nbsp;</a> Managing Teams</h3>
 <p>With the 0.1.0 release, the Teams page just lists the teams on the platform.</p>
 <p>Further team management options will come in later releases.</p>
+<h3 id="managing-project-types" tabindex="-1"><a class="header-anchor" href="#managing-project-types">#&nbsp;</a> Managing Project Types</h3>
+<p>The Project Types page can be used to manage the Project Types on the platform.</p>
+<p>When billing is enabled, a project type can be associated with a particular
+Stripe Product/Price - allowing each type to have a different monthly price
+associated with it.</p>
+<p>The Project Types page shows what types are current active, how many stacks
+each type has assigned to it, and how many projects have been created of that
+type.</p>
 <h3 id="managing-stacks" tabindex="-1"><a class="header-anchor" href="#managing-stacks">#&nbsp;</a> Managing Stacks</h3>
 <p>The Stacks page can be used to manage the Project Stacks on the platform.</p>
 <p>It can be used to create and edit the stacks on the platform.</p>
+<p>You can create a new version of an existing stack via the
+drop-down menu in the stack table. This allows the platform to notify users
+that an update is available for their project, allowing them to upgrade the stack
+at their convenience.</p>
 <p>It is <em>not</em> possible to edit a stack that is being used by Projects.</p>
 <p>For Deployment specific information about working with stacks, refer to the
 documentation of your chosen deployment model:</p>
@@ -166,7 +178,7 @@ applied the next time the project is restarted.</p>
             <h3 class="font-medium border-b pb-1 mb-4">On this page</h3>
             <ul id="toc" class="text-sm border-b mb-4"></ul>
             <div class="text-sm pb-1 text-right mb-4"><a href="https://github.com/flowforge/flowforge/edit/main/docs/admin/README.md">Edit this page</a></div>
-            <div class="text-xs pb-1 text-right mb-4 italic">Updated: 2022-06-14 13:56:06 +0100</div>
+            <div class="text-xs pb-1 text-right mb-4 italic">Updated: 2022-07-07 10:03:23 +0100</div>
         </div>
     </div>
 </div>
