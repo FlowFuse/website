@@ -12,7 +12,7 @@ codebase.
 
 #### Convention over configuration
 
-Default to picking sane default to standardize the experience for customers and
+Default to picking sensible defaults to standardize the experience for customers and
 users. This enables everyone to get the most out of FlowForge. FlowForge.com
 should always run the default configuration if possible to ensure the best
 experience across the board.
