@@ -1,5 +1,3 @@
-# Product  Plan
-
 # Product Plan
 
 ## Background
