@@ -19,7 +19,7 @@ releases.
     - Ensure you have the latest with a `git pull`.
  - In the *parent* directory to where you have the `admin` checked out, run:
    
-      ./admin/checkout-release 0.x.y
+        ./admin/checkout-release 0.x.y
    
    This will create a directory called `release-0.x.y` and checkout all of the releasable
    repositories under it.
@@ -29,8 +29,8 @@ releases.
 
  - Within the release directory run:
    
-      cd release-0.x.y
-      ../admin/prepare-release 0.x.y
+        cd release-0.x.y
+        ../admin/prepare-release 0.x.y
    
    This will check all of the repositories are ready to be released, update
    their `package.json` files to reflect the new version (including cross-package
