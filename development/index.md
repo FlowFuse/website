@@ -107,11 +107,24 @@ and requirements.
 The [Development Board](https://github.com/orgs/flowforge/projects/1/views/1) is
 used to plan and track the work within the current milestone release.
 
-It has the following states:
+Within the board we use:
+
+ - Milestones to indicate what release an item is planned to be released in
+ - Iterations to indicate when an item is being worked on
+
+By separating these two out, we can have a single view of everything the team
+is working on at a particular time (iteration) without it being part of the current
+release (milestone).
+
+For example, Design work needed for a future milestone can be assigned to an Iteration
+for when that work needs to happen.
+
+The board has the following states:
 
  - `ToDo` - items assigned to the milestone but not yet started
  - `In Progress` - items being worked on
- - `Review` - items that are ready to be reviewed
+ - `Review` - items that are ready to be reviewed (PR open)
+ - `Verify` - items that have been merged and can be verified once deployed to the Staging environment
  - `Done` - items that are [Done](#defining-done)
 
 ### Retrospective/Kick-Off
