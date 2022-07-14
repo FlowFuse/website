@@ -77,30 +77,55 @@ releases.</p>
 <li>Decide who will be Release Manager for this release. For Major/Minor releases this should be shared across the whole team to prevent it becoming a single point of failure. For Fix releases it can be the developer committing the fix.</li>
 <li>Create a Release check list issue (using template) on the flowforge/admin project to keep track of all components included in the release (e.g. https://github.com/flowforge/admin/issues/7)</li>
 <li>Assign the issue to the Release Manager</li>
-<li>Ensure you have a valid login token for npmjs as the flowforge user (credentials in the shared password vault)</li>
-<li>Create a directory to hold fresh checkout of all packages being released (e.g. <code>mkdir flowforge-x.y.z</code>)</li>
-<li>Ensure you have the <a href="https://github.com/cli/cli">GitHub client</a> and <a href="https://stedolan.github.io/jq/download/">jq</a> and installed on your machine</li>
-<li>Ensure you're machine is authenticated witht he GitHub client: <code>gh auth login</code></li>
+<li>Ensure you have the <a href="https://github.com/cli/cli">GitHub client</a> and <a href="https://stedolan.github.io/jq/download/">jq</a> installed on your machine</li>
+<li>Ensure you're machine is authenticated with the GitHub client: <code>gh auth login</code></li>
 </ul>
 <h3 id="steps" tabindex="-1"><a class="header-anchor" href="#steps">#&nbsp;</a> Steps</h3>
 <ul>
-<li>Use the <code>checkout-release</code> script (available in the admin project) to check out clean clones of the packages required to do a release
-(e.g. <code>./admin/checkout-release 0.4.0</code> will create a directory called <code>release-0.4.0</code> containing all the required projects). This script must be run at the same level as your <code>/admin</code> directory.</li>
-<li>If required, ensure that the correct <code>user.name</code> and <code>user.email</code> git configuration settings are in place for each repository (only a problem if not using a global configuration)</li>
-<li>From within the <code>release-0.4.0</code> directory run the <code>prepare-release 0.4.0</code> script (available in the admin project). This will update all the required
-<code>package.json</code> and <code>CHANGELOG.md</code> file updates then raise PRs to update the projects. (e.g. <code>../admin/prepare-release 0.6.0</code>)</li>
-<li>Do not panic when you see &quot;All jobs have failed&quot; for <code>flowforge/flowforge</code>. The repo will be pointing to newer versions of other packages, which have not yet been published to npm.</li>
-<li>Have update PR reviewed by somebody other than the Release Manager</li>
-<li>All package numbering PRs to be merged, and releases to be tagged, in the order defined in the admin project release issue. Between each release
-ensure that the previous package has been sucessfully published to npmjs.org. You can track this in three ways:
+<li>
+<p>Checkout the <code>flowforge/admin</code> repository if you do not already have it.</p>
 <ul>
-<li>Track the &quot;Release Published&quot; action on the GH repository</li>
-<li>A bot will post to #gh-flowforge Slack channel, although slightly delayed</li>
-<li>Keep an eye on npmjs.org page for each package.</li>
+<li>Ensure you have the latest with a <code>git pull</code>.</li>
 </ul>
 </li>
-<li>Once all the node module components have been built and published to npm the <code>installer</code>, <code>helm</code> and <code>docker-compose</code> components can be updated and tagged.</li>
-<li>Run <a href="https://github.com/flowforge/CloudProject/actions/workflows/build-kube.yml">staging CI pipeline publish</a>, to ensure staging is running the latest release.</li>
+<li>
+<p>In the <em>parent</em> directory to where you have the <code>admin</code> checked out, run:</p>
+<pre><code> ./admin/checkout-release 0.x.y
+</code></pre>
+<p>This will create a directory called <code>release-0.x.y</code> and checkout all of the releasable
+repositories under it.</p>
+<p>If you do not have a global git configuration, you will need to set <code>user.name</code> and <code>user.email</code>
+in each of those repositories.</p>
+</li>
+<li>
+<p>Within the release directory run:</p>
+<pre><code> cd release-0.x.y
+ ../admin/prepare-release 0.x.y
+</code></pre>
+<p>This will check all of the repositories are ready to be released, update
+their <code>package.json</code> files to reflect the new version (including cross-package
+dependencies) and update the CHANGELOG files.</p>
+<p>It will then raise PRs against each repository with these changes in.</p>
+</li>
+<li>
+<p>Do not panic when you see &quot;All jobs have failed&quot; for <code>flowforge/flowforge</code>. The repo will be pointing to newer versions of other packages, which have not yet been published to npm.</p>
+</li>
+<li>
+<p>Follow through the release checklist to review each PR in turn, get it merged then create the GitHub release.
+The updated packages will be automatically published to npm by our GitHub actions. Verify each one has published
+before moving to the next. You can do this by:</p>
+<ul>
+<li>Track the &quot;Release Published&quot; action on the GH repository</li>
+<li>Keep an eye on npmjs.org page for each package.</li>
+<li>A bot will post to #gh-flowforge Slack channel, although this can be quite delayed</li>
+</ul>
+</li>
+<li>
+<p>Once all the node module components have been built and published to npm the <code>installer</code>, <code>helm</code> and <code>docker-compose</code> components can be updated and tagged.</p>
+</li>
+<li>
+<p>Run <a href="https://github.com/flowforge/CloudProject/actions/workflows/build-kube.yml">staging CI pipeline publish</a>, to ensure staging is running the latest release.</p>
+</li>
 </ul>
 <h3 id="next-steps" tabindex="-1"><a class="header-anchor" href="#next-steps">#&nbsp;</a> Next Steps</h3>
 <ul>
@@ -130,7 +155,7 @@ to cherry pick into <code>X.Y-maint</code></li>
             <h3 class="font-medium border-b pb-1 mb-4">On this page</h3>
             <ul id="toc" class="text-sm border-b mb-4"></ul>
             <div class="text-sm pb-1 text-right mb-4"><a href="https://github.com/flowforge/handbook/edit/main/development/release.md">Edit this page</a></div>
-            <div class="text-xs pb-1 text-right mb-4 italic">Updated: 2022-07-11 16:21:55 +0100</div>
+            <div class="text-xs pb-1 text-right mb-4 italic">Updated: 2022-07-14 14:06:13 +0100</div>
         </div>
     </div>
 </div>
