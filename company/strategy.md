@@ -77,3 +77,34 @@ Furthermore, we will continue our involvement with the Node-RED community.
 4. **Community events**
     - Establish a regular Node-RED virtual meetup for community members to share what they are doing with Node-RED.
     - Work towards a global Node-RED Con 2022 event in conjunction with the Node-RED Japan User Group. Build on the success of the 2021 event's global track, to make it bigger, with more EU/US-centric content and timezone accessibility
+
+### Key metrics
+
+At FlowForge we're engaged in many initiatives to grow our offering and assess
+product market fit. Currently we're measuring 2 key metrics which serve as
+heuristic for company wide success.
+
+#### Managed Instances
+
+Node-RED is at the core of our product offering. FlowForge helps everyone manage
+and run their Node-RED instances, whether it's in the cloud or on edge locations.
+Through telemetry users of FlowForge report the number of projects and attached
+devices, both of these numbers are running Node-RED instances.
+
+Per distinct IP address that sends back telemetry the last payload per month
+collected. Of these the sum of devices and projects is defined as
+**Managed Instances** for that month. Telemetry collection is opt-in, and dependant
+on an internet connection. As such it's anticipated to under report the true
+number of FlowForge managed instances.
+
+Target growth for this metric is 40% month over month.
+
+#### Annual Recurring Revenue (ARR)
+
+As very early company pre-Product Market Fit company, revenue is an imperfect
+heuristic. However as a business it's a good metric as it's the ultimate goal.
+FlowForge Cloud generates Monthly Recurring Revenue (MRR) through subscriptions,
+while enterprise sales is done on annual contracts. To normalize to one metric
+to report our MRR is multiplied by 12 and added to the ARR of enterprise sales.
+
+Target growth for this metric is 40% month over month.
