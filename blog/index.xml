@@ -3,8 +3,29 @@
     <title>FlowForge</title>
     <link href="https://flowforge.com/blog/index.xml" rel="self"/>
     <link href="https://flowforge.com/blog"/>
-    <updated>2022-07-07T12:00:00Z</updated>
+    <updated>2022-07-19T00:00:00Z</updated>
     <id>https://flowforge.com/blog</id>
+    
+    <entry>
+        <id>https://flowforge.com/blog/2022/07/community-news-06/</id>
+        <title>Community News</title>
+        <summary>News from the FlowForge and Node-RED communities</summary>
+        <updated>2022-07-19T00:00:00Z</updated>
+        <link href="https://flowforge.com/blog/2022/07/community-news-06/"/>
+        <author><name>Sam Machin</name></author>
+        <content type="html">&lt;p&gt;Welcome to the FlowForge newsletter, a regular roundup of what`s happening with both FlowForge and the wider Node-RED community.&lt;/p&gt;
+&lt;!--more--&gt;
+&lt;p&gt;If you&#39;ve got something that you&#39;d like us to share please email &lt;a href=&quot;mailto:contact@flowforge.com&quot;&gt;contact@flowforge.com&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://flowforge.com/blog/2022/07/flowforge-07-released&quot;&gt;FlowForge 0.7 &lt;/a&gt;&lt;br /&gt;
+We&#39;ve shipped the next version of FlowForge, features in this release include the ability to Rollback a project to a previous snapshot, setting environment variables for a specific device and we&#39;ve begun to unify the experience between the Forge app and the Node-RED editor with our own Node-RED theme.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://nodered.org/blog/2022/07/14/version-3-0-released&quot;&gt;Node-RED 3.0 Released &lt;/a&gt;&lt;br /&gt;
+Node-RED 3.0 Has been officially released, there are a lot of improvements in the user experience of the editor, with new menus and junctions. There&#39;s also the ability to stop your flows while you can continue to edit and deploy. Take a look at the blog post for all the details. This is now the default stack on FlowForge Cloud.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://discourse.nodered.org/t/node-red-flows-on-esp8266-and-esp32/64345&quot;&gt;Node-RED for Microcontrollers&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&quot;https://twitter.com/phoddie&quot;&gt;Peter Hoddie&lt;/a&gt; of &lt;a href=&quot;https://moddable.com/&quot;&gt;Moddable&lt;/a&gt; Has released some early &lt;a href=&quot;https://github.com/phoddie/node-red-mcu&quot;&gt;work&lt;/a&gt; on getting the Node-RED runtime to execute a flow on a microcontroller like the ESP32. It&#39;s still very early days so don&#39;t expect to be building flows directly on the MCU, and the number of nodes that are supported is limited, but this is an interesting development for Node-RED in the IoT space.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://www.papercall.io/nrcon2022&quot;&gt;Node-RED Con CFP&lt;/a&gt;&lt;br /&gt;
+A reminder about Node-RED Con and the call for papers, submissions close at the end of July so get your proposals in now.&lt;/p&gt;
+</content>
+    </entry>
     
     <entry>
         <id>https://flowforge.com/blog/2022/07/flowforge-07-released/</id>
@@ -119,6 +140,35 @@ guide for &lt;a href=&quot;http://flowforge.com/docs/install#upgrade&quot;&gt;up
 raise an &lt;a href=&quot;https://github.com/flowforge/flowforge/issues&quot;&gt;issue on GitHub&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;That also includes if you have any feedback or feature requests.&lt;/p&gt;
 &lt;p&gt;We also have a &lt;code&gt;#flowforge&lt;/code&gt; channel on the &lt;a href=&quot;https://nodered.org/slack&quot;&gt;Node-RED Slack workspace&lt;/a&gt;.&lt;/p&gt;
+</content>
+    </entry>
+    
+    <entry>
+        <id>https://flowforge.com/blog/2022/06/community-news-05/</id>
+        <title>Community News</title>
+        <summary>News from the FlowForge and Node-RED communities</summary>
+        <updated>2022-06-17T00:00:00Z</updated>
+        <link href="https://flowforge.com/blog/2022/06/community-news-05/"/>
+        <author><name>Sam Machin</name></author>
+        <content type="html">&lt;p&gt;Welcome to the FlowForge newsletter, a regular roundup of what`s happening with both FlowForge and the wider Node-RED community.&lt;/p&gt;
+&lt;!--more--&gt;
+&lt;p&gt;If you&#39;ve got something that you&#39;d like us to share please email &lt;a href=&quot;mailto:contact@flowforge.com&quot;&gt;contact@flowforge.com&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://flowforge.com/blog/2022/06/flowforge-06-released/&quot;&gt;FlowForge 0.5 AND 0.6&lt;/a&gt;&lt;br /&gt;
+We&#39;ve had two releases since our last newsletter, there are a lot of related features between them.
+We introduced a new design for the forge application which aligns with the branding on our website.
+We&#39;ve added &lt;a href=&quot;https://flowforge.com/docs/user/concepts/#device&quot;&gt;Devices&lt;/a&gt;, allowing you to run and manage your node-red projects on your own hardware, this is ideal for applications that need to connect to either sensor data or specialist hardware deployed outside the cloud.
+We added a new concept as part of this work, &lt;a href=&quot;https://flowforge.com/docs/user/concepts/#project-snapshot&quot;&gt;Snapshots&lt;/a&gt; allow you to take a point in time copy of your project, today that can then be deployed to one or more devices but we have plans to expand this concept for things like &lt;a href=&quot;https://github.com/flowforge/flowforge/issues/587&quot;&gt;rolling back&lt;/a&gt; a project to a previous point in time.
+&lt;a href=&quot;https://flowforge.com/blog/2022/05/flowforge-05-released/&quot;&gt;0.5&lt;/a&gt; Introduced the capabilities of copying a project or certain parts of it, allowing for scenarios like having multiple environments for Development and Production.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://discourse.nodered.org/t/node-red-3-0-0-beta-3-released/64027&quot;&gt;Node-RED 3.0.0-beta-3&lt;/a&gt;&lt;br /&gt;
+The Node-RED 3.0 beta releases continue as the project is getting very close to the full release in the coming weeks, We&#39;ll be making it availble on FlowForge cloud very soon.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://kazuhitoyokoi.medium.com/creating-custom-node-from-subflow-in-node-red-ce52cc42bbba&quot;&gt;Creating custom node from subflow in Node-RED&lt;/a&gt;&lt;br /&gt;
+One of the contributors to Node-RED, Kazuhito Yokoi wrote a nice tutorial on how to turn a subflow into a custom node.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://www.youtube.com/channel/UCbBzP8NZbv3WDtlt4UouA-g&quot;&gt;YouTube Channel&lt;/a&gt;&lt;br /&gt;
+Joe has been busy creating short videos to present FlowForge and our key concepts, these will start to appear on our YouTube channel, so please like and subscribe!&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://www.42flows.tech/blog/why-have-we-decided-to-implement-visa-direct-api-for-node-red/&quot;&gt;Visa Direct in Node-RED&lt;/a&gt;&lt;br /&gt;
+The folks over at 42flows use Node-RED in a financial and banking context, they&#39;ve published an article about integrating with the Visa payments APIs&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://www.papercall.io/nrcon2022&quot;&gt;Node-RED Con CFP&lt;/a&gt;&lt;br /&gt;
+A reminder about Node-RED Con and the call for papers, submissions close at the end of July but don&#39;t wait until the last minute to submit your proposal.&lt;/p&gt;
 </content>
     </entry>
     
