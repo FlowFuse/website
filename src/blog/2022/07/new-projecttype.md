@@ -1,5 +1,5 @@
 ---
-title: New Project Type
+title: Introducing Medium Projects on FlowForge Cloud
 subtitle: A bigger project with more resources
 description: A bigger project with more resources
 date: 2022-07-22 12:00:00.0
