@@ -112,18 +112,25 @@
     .pricing-tile h4 {
         font-weight: normal;
         margin: 0;
+        margin-bottom: 24px;
         @apply text-left md:text-center;
     }
     .pricing-tile h2 {
         font-size: 48px;
         color: theme(colors.white);
-        @apply mt-0 mb-1 md:mt-8
+        @apply mt-0 mb-1
     }
-    .pricing-tile label {
+    .pricing-tile .sub-label {
         display: block;
         color: theme(colors.white);
         font-size: 12px;
         @apply md:mb-8;
+    }
+    .pricing-tile .top-label {
+        display: block;
+        color: theme(colors.white);
+        font-size: 12px;
+        @apply md:h-4 sm:h-0;
     }
     .pricing-tile .lets-talk {
         font-weight: 300;
