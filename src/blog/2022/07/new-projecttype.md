@@ -5,7 +5,7 @@ description: A bigger project with more resources
 date: 2022-07-22 12:00:00.0
 authors: ["sam-machin"]
 ---
-We've added a second size of project to our offering on FlowForge Cloud
+We've added a second size of project to FlowForge Cloud. A bigger project type with more resources available to it.
 <!--more-->
 
 Our [0.7 release](https://flowforge.com/blog/2022/07/flowforge-07-released/) introduced the concept of Project Types, this allows us to offer projects at different price points based on the stack they are using.
