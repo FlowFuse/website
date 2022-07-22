@@ -8,9 +8,9 @@ authors: ["sam-machin"]
 We've added a second size of project to FlowForge Cloud. A bigger project type with more resources available to it.
 <!--more-->
 
-Our [0.7 release](https://flowforge.com/blog/2022/07/flowforge-07-released/) introduced the concept of Project Types, this allows us to offer projects at different price points based on the stack they are using.
-Today we've put this feature to work by introducing the medium sized project alongside the existing small size, you will be offered the choice of types when you create a new project.
+Our [0.7 release](https://flowforge.com/blog/2022/07/flowforge-07-released/) introduced the concept of Project Types. This allows platforms to provide different sizes of projects, varying the memory/cpu or features available within a given type.
 
+Today we've put this feature to work on FlowForge Cloud by introducing the new **Medium Project** type.
 ![](../images/project-type.png)
 
 Medium projects have 3 times the resources of the small allowing for more complex flows and larger message objects, this will be useful to business users looking to process complex sets of data.
