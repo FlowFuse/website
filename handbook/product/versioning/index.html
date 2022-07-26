@@ -62,88 +62,36 @@
     <div class="w-full mx-auto ff-bg-light">
         <div class="font-medium border-b pb-1">
             
-            /<a class="mx-2" href="/handbook">handbook</a>/<a class="mx-2" href="/handbook/company">company</a>/<a class="mx-2" href="/handbook/company/communication">communication</a>
+            /<a class="mx-2" href="/handbook">handbook</a>/<a class="mx-2" href="/handbook/product">product</a>/<a class="mx-2" href="/handbook/product/versioning">versioning</a>
         </div>
     </div>
     <div class="w-full mx-auto ff-bg-light flex flex-col md:flex-row">
         <div class="flex-grow order-last md:order-first">
             <div class="mt-6 mb-4 prose prose-blue main-content">
-                <p>As a distributed company we should be mindful of how we communicate.</p>
-<h2 id="timezones" tabindex="-1"><a class="header-anchor" href="#timezones">#&nbsp;</a> Timezones</h2>
-<h3 id="use-utc-for-times" tabindex="-1"><a class="header-anchor" href="#use-utc-for-times">#&nbsp;</a> Use UTC for times</h3>
-<p>Unless explicitly stated otherwise, communicate times in UTC. This allows each
-team member to remember just their offset to UTC and makes communication around
-timezones less error-prone (e.g. misremembering your own offset to a collegues
-timezone) and more efficient. <strong>Exception</strong>: When communicating to meet in
-phisical locations, the timezone of that location will be assumed as default.</p>
-<h3 id="time-of-day" tabindex="-1"><a class="header-anchor" href="#time-of-day">#&nbsp;</a> Time of day</h3>
-<p>A 24 hour clock is assumed in time notations like <code>10:00</code>, when referencing a
-time in the afternoon either use e.g. <code>15:00</code> or explicitly <code>3 PM</code>.</p>
-<h2 id="meetings" tabindex="-1"><a class="header-anchor" href="#meetings">#&nbsp;</a> Meetings</h2>
-<h3 id="general-guidance" tabindex="-1"><a class="header-anchor" href="#general-guidance">#&nbsp;</a> General guidance</h3>
-<p>Each meeting should have an agenda. This allows potential participants to prepare
-and decide whether attendance is required. Any partipant can add items to the
-agenda, please prefix your item with your name or initials to communcate who's
-going to talk and lead the discussion. Adding new items to the agenda while the
-meeting is started is good practise and can be leveraged to keep the currently
-discussed item focussed and on-rails.</p>
-<h3 id="during-the-meeting" tabindex="-1"><a class="header-anchor" href="#during-the-meeting">#&nbsp;</a> During the meeting</h3>
-<p>Meetings start on time by the person with the first item on the agenda, verbalize
-and discuss the item. Once done, hand over to the owner of the next agenda item.</p>
-<p>During the meeting notes should be taken in an inline fashion. Non-participants
-can then read the agenda after the meeting and are up-to-date without having to
-scroll to a notes section.</p>
-<h3 id="coffee-calls" tabindex="-1"><a class="header-anchor" href="#coffee-calls">#&nbsp;</a> Coffee calls</h3>
-<p>Coffee calls are social of nature and thus are the exception to the rule that
-each meeting should have an agenda.</p>
-<h2 id="asynchronous-communication" tabindex="-1"><a class="header-anchor" href="#asynchronous-communication">#&nbsp;</a> Asynchronous communication</h2>
-<h3 id="slack" tabindex="-1"><a class="header-anchor" href="#slack">#&nbsp;</a> Slack</h3>
-<p>When using Slack, prefer to keep discussions in a thread. This reduces scroll
-back, and focusses channels.</p>
-<h3 id="standup-meetings" tabindex="-1"><a class="header-anchor" href="#standup-meetings">#&nbsp;</a> Standup meetings</h3>
-<p>Standup meetings are hard to scale across multiple timezones. To make standups
-async, we're using <a href="https://geekbot.com/">Geekbot</a>. Geekbot will trigger each
-workday morning at 9:00 local time, when online in Slack. Everyone who's a
-member of the #standup channel in Slack will be prompted.</p>
-<p>Pro-tips:</p>
+                <h1 id="versioning" tabindex="-1"><a class="header-anchor" href="#versioning">#&nbsp;</a> Versioning</h1>
+<h2 id="1.0" tabindex="-1"><a class="header-anchor" href="#1.0">#&nbsp;</a> 1.0</h2>
+<p>The 1.0 Release of FlowForge represents a significant milestone, we are making a statement to our customers about the product.</p>
+<p>Therefore the following are considerations &amp; requirements in order to be able to stand behind that statement.</p>
 <ul>
-<li>When a questions doesn't need answering, fill in <code>-</code> to skip</li>
-<li>When you want to report earlier that day, message Geekbot <code>report</code></li>
+<li>We have the admin features required to manage the platform at an appropriate scale.</li>
+<li>We have the monitoring and alerting features to run a commercial SaaS platform.</li>
+<li>We have a suitable licensing model in place</li>
+<li>The pricing model is sufficiently mature and implemented in the platform as to support our plans for the 1.x timeline.</li>
+<li>The devices feature is capable of supporting at least one real world use case end to end.</li>
+<li>Both the Forge app and Device Agent are at 1.0 and the interface between them is locked, such that agents running 1.0 can connect to any 1.x forge application.</li>
 </ul>
-<h3 id="current-meetings" tabindex="-1"><a class="header-anchor" href="#current-meetings">#&nbsp;</a> Current meetings</h3>
-<h4 id="wednesday-team-meeting" tabindex="-1"><a class="header-anchor" href="#wednesday-team-meeting">#&nbsp;</a> Wednesday Team meeting</h4>
-<p>Weekly a meeting is held to announce company wide updates, get to know each
-other, and share things you want to share both professionally and personally.</p>
-<p>Announcements should be written down in the agenda as participation is not
-required. Reading the agenda the day after the meeting should be enough to stay
-in the loop on company updates. Announcements and work related topics are
-timeboxed to the first 15 minutes of the meeting to allow plenty time to talk
-about other topics.</p>
-<p>Personal updates don't have to be documented in the agenda, but please do keep a
-list of names in the agenda so everyone gets the opportunity to share.</p>
-<h2 id="node-red-community-interactions." tabindex="-1"><a class="header-anchor" href="#node-red-community-interactions.">#&nbsp;</a> Node-RED community interactions.</h2>
-<p>As an employee of FlowForge, when we interact with the OSS Node-RED community we
-must be mindful of our position.  For example, when offering advice on the Node-RED
-forum or the Node-RED slack, the first answer we offer should be how a solution can
-be achieved using Node-RED.  If a native Node-RED solution is not possible or the
-user would benefit from the advantages that FlowForge offers, then, like any other
-person or company, we can offer FlowForge as a potential solution.</p>
-<h2 id="feedback-%26-thanks" tabindex="-1"><a class="header-anchor" href="#feedback-%26-thanks">#&nbsp;</a> Feedback &amp; Thanks</h2>
-<p>In FlowForge, we strongly encourage the sharing of feedback and thank you's. We have
-a custom-built SlackBot (built in Node-RED and hosted in FlowForge of course), that
-enables users to message <code>@Feedback</code> with:</p>
-<ul>
-<li><code>/give-thanks @to_user &lt;message&gt;</code> - for short thank you messages</li>
-<li><code>/give-feedback</code> - to be prompted with a more formal template, within which you can provide structured feedback to a particular person. This template contains sections for <em>&quot;Keep Doing&quot;</em>, <em>&quot;Do More Of&quot;</em>, <em>&quot;Do Less Of&quot;</em> and <em>&quot;General Comments&quot;</em>, of which you can complete, and send, the relevant sections.</li>
-</ul>
-<p>All feedback is then sent directly to the relevant user via the Slack App, meaning that feedback and thank you messages are all nicely stored in a single place for future review.</p>
+<h3 id="backports" tabindex="-1"><a class="header-anchor" href="#backports">#&nbsp;</a> Backports</h3>
+<p>Once 1.0 has been released the 0.x line will become deprecated. In general no fixes will be backported to the 0.x line, critical security updates may be considered on a case by case basis.</p>
+<p>After 1.0 each major release will be supported for at least 12 months. Customers may need to update through minor releases in order to receive fixes and new features. After a new major release the latest minor release will receive back ported fixes for the duration of the support period.</p>
+<h2 id="2.0" tabindex="-1"><a class="header-anchor" href="#2.0">#&nbsp;</a> 2.0</h2>
+<p>The 2.0 release may happen within the period that 1.0 is still supported, timing and scope for 2.0 is to be determined.</p>
 
             </div>
         </div>
         <div class="w-full md:w-64 md:ml-8 mt-4 md:mt-6 px-2">
             <h3 class="font-medium border-b pb-1 mb-4">On this page</h3>
             <ul id="toc" class="text-sm border-b mb-4"></ul>
-            <div class="text-sm pb-1 text-right mb-4"><a href="https://github.com/flowforge/handbook/edit/main/company/communication.md">Edit this page</a></div>
+            <div class="text-sm pb-1 text-right mb-4"><a href="https://github.com/flowforge/handbook/edit/main/product/versioning.md">Edit this page</a></div>
             <div class="text-xs pb-1 text-right mb-4 italic">Updated: 2022-07-26 11:20:56 +0100</div>
         </div>
     </div>
