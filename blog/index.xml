@@ -3,8 +3,26 @@
     <title>FlowForge</title>
     <link href="https://flowforge.com/blog/index.xml" rel="self"/>
     <link href="https://flowforge.com/blog"/>
-    <updated>2022-07-19T00:00:00Z</updated>
+    <updated>2022-07-22T12:00:00Z</updated>
     <id>https://flowforge.com/blog</id>
+    
+    <entry>
+        <id>https://flowforge.com/blog/2022/07/new-projecttype/</id>
+        <title>Introducing Medium Projects on FlowForge Cloud</title>
+        <summary>A bigger project with more resources</summary>
+        <updated>2022-07-22T12:00:00Z</updated>
+        <link href="https://flowforge.com/blog/2022/07/new-projecttype/"/>
+        <author><name>Sam Machin</name></author>
+        <content type="html">&lt;p&gt;We&#39;ve added a second size of project to FlowForge Cloud. A bigger project type with more resources available to it.&lt;/p&gt;
+&lt;!--more--&gt;
+&lt;p&gt;Our &lt;a href=&quot;https://flowforge.com/blog/2022/07/flowforge-07-released/&quot;&gt;0.7 release&lt;/a&gt; introduced the concept of Project Types. This allows platforms to provide different sizes of projects, varying the memory/cpu or features available within a given type.&lt;/p&gt;
+&lt;p&gt;Today we&#39;ve put this feature to work on FlowForge Cloud by introducing the new &lt;strong&gt;Medium Project&lt;/strong&gt; type.
+&lt;img src=&quot;https://flowforge.com/blog/2022/07/images/project-type.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;Medium projects have 3 times the resources of the existing Small type, allowing for more complex flows and larger message objects. This will be useful to business users looking to process complex sets of data.&lt;/p&gt;
+&lt;p&gt;Our Medium project is priced at $50 a month and we&#39;ll be adding new features to this project type in the coming months to further enhance the value of this new tier.&lt;/p&gt;
+&lt;p&gt;We don&#39;t currently support directly upgrading a project between types, but that is in the &lt;a href=&quot;https://github.com/flowforge/flowforge/issues/595&quot;&gt;plan for the future&lt;/a&gt;. In the meantime, you can use the &#39;Export Project&#39; feature on a project&#39;s settings tab to copy it over into a new Medium type project.&lt;/p&gt;
+</content>
+    </entry>
     
     <entry>
         <id>https://flowforge.com/blog/2022/07/community-news-06/</id>
