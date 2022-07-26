@@ -2,26 +2,7 @@
 
 ## Background
 
-<<<<<<< HEAD:product/plan.md
 Our [Company Strategy](../company/strategy.md) sets out 4 pillars that our product work is focussed around
-=======
-Our [Company Strategy](strategy.md) sets out 4 pillars that our product work is
-focussed around. Therefore our product activities should be related back to at
-least one of these 4 pillars. In addition to these pillars we will still do the
-work needed to ensure a stable, manageable, platform with a high quality
-codebase.
->>>>>>> main:company/product-vision.md
-
-## Principles
-
-#### Convention over configuration
-
-Default to picking sensible defaults to standardize the experience for customers and
-users. This enables everyone to get the most out of FlowForge. FlowForge.com
-should always run the default configuration if possible to ensure the best
-experience across the board.
-
-See also: [Convention over Configuration on Wikipedia](https://en.wikipedia.org/wiki/Convention_over_configuration).
 
 ## Principles
 
