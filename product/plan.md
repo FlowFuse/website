@@ -8,6 +8,17 @@ Therefore our product activities should be related back to at least one of these
 
 IN addition to these pillars we will still do the work needed to ensure a stable, manageable,  platform with a high quality codebase.
 
+## Principles
+
+#### Convention over configuration
+
+Default to picking sensible defaults to standardize the experience for customers and
+users. This enables everyone to get the most out of FlowForge. FlowForge.com
+should always run the default configuration if possible to ensure the best
+experience across the board.
+
+See also: [Convention over Configuration on Wikipedia](https://en.wikipedia.org/wiki/Convention_over_configuration).
+
 ## 2022 
 
 Until the end of 2022 we will focus on the following:
