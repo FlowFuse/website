@@ -18,6 +18,7 @@ and strongly encouraged.
  - [PeopleOps](./peopleops)
  - [Security](./company/security.md)
  - [Operations](./operations)
+ - [Product](./product)
 
 ### Colophon
 
