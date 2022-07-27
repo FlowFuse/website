@@ -4,7 +4,6 @@ title: Contact us
 ---
 <div>
   <div class="flex justify-between items-center mb-4 md:px-4 md:-mb-0 md:px-0 md:block">
-    <p>For support queries please email <a href="mailto:support@flowforge.com">support@flowforge.com</a>.</p>
     <div class="ff-bg-light product px-4 pb-24 pt-4 md:pt-12 md:p-12 md:grid grid-cols-2">
       <img class="hidden md:w-72 md:m-auto md:block md:mt-0" src="../images/pictograms/browser_red.png" />
 
@@ -19,9 +18,21 @@ title: Contact us
           }
         }
         setInterval(timestamp, 500); 
+        function toggleType(){
+          switch (document.getElementById("type").value){
+            case 'sales':
+              document.getElementById("contact-form").action = "https://webto.salesforce.com/servlet/servlet.WebToCase?encoding=UTF-8"
+              document.getElementsByName('submit')[0].style.display = 'block'
+              break;
+            case 'support':
+              document.getElementById("contact-form").action = "https://fftools.flowforge.cloud/contact-support"
+              document.getElementsByName('submit')[0].style.display = 'block'
+              break;
+          }
+        }
       </script>
 
-      <form action="https://webto.salesforce.com/servlet/servlet.WebToCase?encoding=UTF-8" method="POST">
+      <form id="contact-form" action="" method="POST">
         <input type=hidden name='captcha_settings' value='{"keyname":"googlerecaptchav2","fallback":"true","orgId":"00D8a0000028InL","ts":""}'>
         <input type=hidden name="orgid" value="00D8a0000028InL">
         <input type=hidden name="retURL" value="https://flowforge.com/contact-us?submit=true">
@@ -36,9 +47,16 @@ title: Contact us
 
         <label for="description" class="font-medium">Description</label>
         <textarea name="description" class="h-32 w-full border border-grey-300 px-2 py-1 mb-4"></textarea><br>
-
+        
+        <select class="font-medium" id="type" onchange="toggleType()">
+          <option value="" disabled selected>Select topic</option>
+          <option value="sales">Sales Enquiry</option>
+          <option value="support">Support Request</option>
+        </select></br></br>
+        
         <div class="w-full g-recaptcha" data-sitekey="6LdMxjcgAAAAAI2YRWs1lf7DnXfxxaZdUSlI0AUO"></div><br>
-        <input type="submit" name="submit" class="ff-btn ff-btn--primary w-full mt-0">
+    
+        <input type="submit" name="submit" class="ff-btn ff-btn--primary w-full mt-0" style = "display:none">
       </form>
     </div>
   </div>
