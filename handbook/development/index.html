@@ -174,11 +174,23 @@ and requirements.</p>
 <h4 id="development-board" tabindex="-1"><a class="header-anchor" href="#development-board">#&nbsp;</a> Development Board</h4>
 <p>The <a href="https://github.com/orgs/flowforge/projects/1/views/1">Development Board</a> is
 used to plan and track the work within the current milestone release.</p>
-<p>It has the following states:</p>
+<p>Within the board we use:</p>
 <ul>
-<li><code>ToDo</code> - items assigned to the milestone but not yet started</li>
-<li><code>In Progress</code> - items being worked on</li>
-<li><code>Review</code> - items that are ready to be reviewed</li>
+<li>Milestones to indicate what release an item is planned to be released in</li>
+<li>Iterations to indicate when an item is being worked on</li>
+</ul>
+<p>By separating these two out, we can have a single view of everything the team
+is working on at a particular time (iteration) without it being part of the current
+release (milestone).</p>
+<p>For example, Design work needed for a future milestone can be assigned to an Iteration
+for when that work needs to happen.</p>
+<p>The board has the following states:</p>
+<ul>
+<li><code>ToDo</code> - items assigned to the milestone or iteration but not yet started</li>
+<li><code>In Design</code> - items being designed</li>
+<li><code>In Progress</code> - items being developed</li>
+<li><code>Review</code> - items that are ready to be reviewed (PR open)</li>
+<li><code>Verify</code> - items that have been merged and can be verified once deployed to the Staging environment</li>
 <li><code>Done</code> - items that are <a href="#defining-done">Done</a></li>
 </ul>
 <h3 id="retrospective%2Fkick-off" tabindex="-1"><a class="header-anchor" href="#retrospective%2Fkick-off">#&nbsp;</a> Retrospective/Kick-Off</h3>
@@ -243,7 +255,7 @@ criteria are met:</p>
             <h3 class="font-medium border-b pb-1 mb-4">On this page</h3>
             <ul id="toc" class="text-sm border-b mb-4"></ul>
             <div class="text-sm pb-1 text-right mb-4"><a href="https://github.com/flowforge/handbook/edit/main/development/index.md">Edit this page</a></div>
-            <div class="text-xs pb-1 text-right mb-4 italic">Updated: 2022-07-26 11:33:01 +0100</div>
+            <div class="text-xs pb-1 text-right mb-4 italic">Updated: 2022-07-29 10:30:30 +0100</div>
         </div>
     </div>
 </div>
