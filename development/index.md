@@ -122,7 +122,8 @@ for when that work needs to happen.
 The board has the following states:
 
  - `ToDo` - items assigned to the milestone but not yet started
- - `In Progress` - items being worked on
+ - `In Design` - items being designed
+ - `In Progress` - items being developed
  - `Review` - items that are ready to be reviewed (PR open)
  - `Verify` - items that have been merged and can be verified once deployed to the Staging environment
  - `Done` - items that are [Done](#defining-done)
