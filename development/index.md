@@ -121,7 +121,7 @@ for when that work needs to happen.
 
 The board has the following states:
 
- - `ToDo` - items assigned to the milestone but not yet started
+ - `ToDo` - items assigned to the milestone or iteration but not yet started
  - `In Design` - items being designed
  - `In Progress` - items being developed
  - `Review` - items that are ready to be reviewed (PR open)
