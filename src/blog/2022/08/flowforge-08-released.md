@@ -39,7 +39,6 @@ We've made a number of improvements to the overall experience of running FlowFor
 - The Verification email page has been cleaned up [#718](https://github.com/flowforge/flowforge/issues/718)
 - The initial Thank-you page has been cleaned up [#648](https://github.com/flowforge/flowforge/issues/648)
 
-
 ## Bug Fixes
 We've fixed the following bugs in this release.
 - [Logo Distorted in Safari](https://github.com/flowforge/flowforge/issues/793)<br>
@@ -51,6 +50,11 @@ We've fixed the following bugs in this release.
 - [Notification of member deletion contains internal ID](https://github.com/flowforge/flowforge/issues/833)<br>
 - [Pressing Enter in the Team Delete modal triggers cancel](https://github.com/flowforge/flowforge/issues/334)<br>
 - [Node-Red Isn't ready when Forge app says it is running (Docker)](https://github.com/flowforge/flowforge/issues/751)<br>
+
+## Contributors
+We'd like the thank the following for their contributions to this release.
+[HaroldPetersInskipp](https://github.com/HaroldPetersInskipp) made their first contribution in https://github.com/flowforge/flowforge/pull/812<br>
+[Steveorevo](https://github.com/Steveorevo) made their first contribution in https://github.com/flowforge/flowforge/pull/818
 
 ### Upgrading FlowForge
 
