@@ -4,13 +4,12 @@ subtitle: Inter-Project Communication, Default Teams, and realtime device manage
 description: Inter-Project Communication, Default Teams, and realtime device management.
 date: 2022-08-04 12:00:00.0
 authors: ["sam-machin"]
-video: BBNzFInc_2E
+video: nCe_qs0G6ZQ
 ---
 
 Easily pass messages between your projects on the cloud or devices, UX improvements, and more.
 
 <!--more-->
-TODO! Update Video ID
 
 Keep reading for  the details of whats in this release our you can watch our 1 min roundup video of the new release above. 
 
