@@ -25,7 +25,7 @@ Try these out today on FlowForge Cloud by creating a new project or updating you
 ![](../images/ProjectLink.gif)
 
 [Start & Stop Flows](https://github.com/flowforge/flowforge/issues/839)
-Node-RED 3.0 [introduced a new feature](https://nodered.org/blog/2022/07/14/version-3-0-released#editing-stopped-flows) that allows you to stop your flows from processing requests while still being able to work in the editor and deploy changes, We've now enabled this feature within FlowForge for projects running a Node-RED 3.x stack.
+Node-RED 3.0 [introduced a new feature](https://nodered.org/blog/2022/07/14/version-3-0-released#editing-stopped-flows) that allows you to stop your flows from processing requests while still being able to work in the editor and deploy changes. We've now enabled this feature within FlowForge for projects running a Node-RED 3.x stack.
 
 [Default Team](https://github.com/flowforge/flowforge/issues/298)
 If you are a member of multiple teams you can now set your preferred default saving you from having to change teams each time you log in.
