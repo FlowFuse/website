@@ -33,7 +33,7 @@ If you are a member of multiple teams you can now set your preferred default sav
 ## Improvements
 We've made a number of improvements to the overall experience of running FlowForge.
 
-- Devices now communicate to the Forge application over MQTT instead of polling [#754](https://github.com/flowforge/flowforge/issues/754)
+- Devices now communicate to the Forge application over MQTT instead of polling [#754](https://github.com/flowforge/flowforge/issues/754). You'll need to update your Device Agent to the latest version to take advantage of this.
 - The table views have had a major overhaul allowing you to sort and search items [#28](https://github.com/flowforge/forge-ui-components/issues/28)
 - If the application receives an error you now see a notification in the UI. [#771](https://github.com/flowforge/flowforge/issues/771)
 - The Verification email page has been cleaned up [#718](https://github.com/flowforge/flowforge/issues/718)
