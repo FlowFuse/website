@@ -6,11 +6,11 @@ date: 2022-08-04 12:00:00.0
 authors: ["sam-machin"]
 video: BBNzFInc_2E
 ---
-TODO! Update Video ID<br>
 
 Easily pass messages between your projects on the cloud or devices, UX improvements, and more.
 
 <!--more-->
+TODO! Update Video ID
 
 Keep reading for  the details of whats in this release our you can watch our 1 min roundup video of the new release above. 
 
@@ -18,11 +18,12 @@ We're pleased to announce version 0.8 is now available. the next release of the 
 
 ## Features
 [Project Link Nodes](https://github.com/flowforge/flowforge/issues/662)
-We've introduced some custom FlowForge nodes to the palette of new projects. These are Project Link nodes that allow you to easily pass data between different projects within the same team. 
-These projects can be running in the cloud or on devices, the communication is powered by our own internal MQTT broker.
-These nodes are available to all users of FlowForge Cloud but will only work with an Enterprise Edition of FlowForge.
-Try these out today on FlowForge Cloud by creating a new project or updating your stack, there's more information in the [README](https://github.com/flowforge/flowforge-nr-project-nodes/blob/main/README.md) for the nodes 
+We've introduced some custom FlowForge nodes to the palette of new projects. The Project Link nodes allow you to easily pass data between different projects within the same team. 
+These projects can be running in the cloud or on devices, with the communication powered by our own internal MQTT broker.
+Try these out today on FlowForge Cloud by creating a new project or updating your existing project's stack. There's more information in the [README](https://github.com/flowforge/flowforge-nr-project-nodes/blob/main/README.md) for the nodes 
+For local installs of FlowForge, the nodes are only available with an Enterprise Edition license.
 ![](../images/ProjectLink.gif)
+
 
 [Start & Stop Flows](https://github.com/flowforge/flowforge/issues/839)
 Node-RED 3.0 [introduced a new feature](https://nodered.org/blog/2022/07/14/version-3-0-released#editing-stopped-flows) that allows you to stop your flows from processing requests while still being able to work in the editor and deploy changes. We've now enabled this feature within FlowForge for projects running a Node-RED 3.x stack.
