@@ -13,7 +13,7 @@ Easily pass messages between your projects on the cloud or devices, UX improveme
 
 Keep reading for  the details of whats in this release our you can watch our 1 min roundup video of the new release above. 
 
-We're pleased to announce version 0.8 is now available. the next release of the FlowForge application.
+We're pleased to announce version 0.8 is now available. The next release of the FlowForge application containing new features, a number of improvements, and bug fixes.
 
 ## Features
 [Project Link Nodes](https://github.com/flowforge/flowforge/issues/662)
