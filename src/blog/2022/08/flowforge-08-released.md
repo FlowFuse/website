@@ -37,7 +37,7 @@ We've made a number of improvements to the overall experience of running FlowFor
 - The table views have had a major overhaul allowing you to sort and search items [#28](https://github.com/flowforge/forge-ui-components/issues/28)
 - If the application receives an error you now see a notification in the UI. [#771](https://github.com/flowforge/flowforge/issues/771)
 - The Verification email page has been cleaned up [#718](https://github.com/flowforge/flowforge/issues/718)
-- The Initial  Thank-you page has been cleaned up [#648](https://github.com/flowforge/flowforge/issues/648)
+- The initial Thank-you page has been cleaned up [#648](https://github.com/flowforge/flowforge/issues/648)
 
 
 ## Bug Fixes
