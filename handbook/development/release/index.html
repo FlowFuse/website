@@ -77,7 +77,13 @@ releases.</p>
 <li>Decide who will be Release Manager for this release. For Major/Minor releases this should be shared across the whole team to prevent it becoming a single point of failure. For Fix releases it can be the developer committing the fix.</li>
 <li>Create a Release check list issue (using template) on the flowforge/admin project to keep track of all components included in the release (e.g. https://github.com/flowforge/admin/issues/7)</li>
 <li>Assign the issue to the Release Manager</li>
-<li>Ensure you have the <a href="https://github.com/cli/cli">GitHub client</a> and <a href="https://stedolan.github.io/jq/download/">jq</a> installed on your machine</li>
+<li>Ensure you have the following installed on your machine:
+<ul>
+<li><a href="https://github.com/cli/cli">GitHub client</a></li>
+<li><a href="https://stedolan.github.io/jq/download/">jq</a></li>
+<li><a href="https://mikefarah.gitbook.io/yq/#install">yq</a></li>
+</ul>
+</li>
 <li>Ensure you're machine is authenticated with the GitHub client: <code>gh auth login</code></li>
 </ul>
 <h3 id="steps" tabindex="-1"><a class="header-anchor" href="#steps">#&nbsp;</a> Steps</h3>
@@ -155,7 +161,7 @@ to cherry pick into <code>X.Y-maint</code></li>
             <h3 class="font-medium border-b pb-1 mb-4">On this page</h3>
             <ul id="toc" class="text-sm border-b mb-4"></ul>
             <div class="text-sm pb-1 text-right mb-4"><a href="https://github.com/flowforge/handbook/edit/main/development/release.md">Edit this page</a></div>
-            <div class="text-xs pb-1 text-right mb-4 italic">Updated: 2022-08-04 18:13:58 +0200</div>
+            <div class="text-xs pb-1 text-right mb-4 italic">Updated: 2022-08-04 17:32:24 +0100</div>
         </div>
     </div>
 </div>
