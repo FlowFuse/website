@@ -62,7 +62,7 @@
     <div class="w-full mx-auto ff-bg-light">
         <div class="font-medium border-b pb-1">
             
-            v0.7.0
+            v0.8.0
             
             /<a class="mx-2" href="/docs">docs</a>/<a class="mx-2" href="/docs/install">install</a>/<a class="mx-2" href="/docs/install/docker">docker</a>
         </div>
@@ -102,6 +102,31 @@ cd docker-compose-0.x.0
 <p>Configuration details are stored in the <code>etc/flowforge.yml</code> file which is mapped into the <code>flowforge/forge-docker</code> container. You will need to edit this file to update the <code>domain</code> and <code>base_url</code> entries to match the DNS settings. Please note that once set, the <code>domain</code> and <code>base_url</code> values should not be changed as these values are used as part of the configuration stored in the database of each project. The ability to migrate <code>domains</code> is on the feature backlog.</p>
 <p>You also need to update the <code>VIRTUAL_HOST</code> entry in the <code>docker-compose.yml</code> file to use the same domain as in the <code>etc/flowforge.yml</code> file.</p>
 <p>For more details on the options available, see the <a href="../configuration"">configuration guide</a>.</p>
+<h3 id="mqtt-broker" tabindex="-1"><a class="header-anchor" href="#mqtt-broker">#&nbsp;</a> MQTT Broker</h3>
+<p>The only configuration needed will be to edit the <code>VIRTUAL_HOST</code> line in the <code>flowforge-broker</code> section of <code>docker-compose.yml</code> to
+set the correct domain name and make the same change to the <code>public_url</code> entry in the <code>etc/flowforge.yml</code> file.</p>
+<p><code>docker-compose.yml</code></p>
+<pre><code>  ...
+  flowforge-broker:
+    image: &quot;iegomez/mosquitto-go-auth&quot;
+    networks:
+      - flowforge
+    restart: always
+    ulimits:
+      nofile: 2048
+    environment:
+      - &quot;VIRTUAL_HOST=mqtt.example.com&quot;
+      - &quot;VIRTUAL_PORT=1884&quot;
+    volumes:
+      - &quot;./broker/mosquitto.conf:/etc/mosquitto/mosquitto.conf&quot;
+  ...
+</code></pre>
+<p><code>etc/flowforge.yml</code></p>
+<pre><code>  ...
+  broker:
+    url: mqtt://forge:1883
+    public_url: ws://forge.example.com
+</code></pre>
 <h3 id="ssl-(optional)" tabindex="-1"><a class="header-anchor" href="#ssl-(optional)">#&nbsp;</a> SSL (optional)</h3>
 <p>If you want to serve the forge app and projects via SSL you will need to obtain wildcard SSL certs for the domain you are using eg <code>*.example.com</code></p>
 <p>Create a folder in the <code>docker-compose-0.x.0</code> directory named <code>certs</code>, place your .crt and .key files in there, they should be named for the domain without the <code>*</code> eg <code>example.com.crt</code> &amp; <code>example.com.key</code></p>
@@ -120,6 +145,7 @@ cd docker-compose-0.x.0
 <pre><code>environment:
       - &quot;HTTPS_METHOD=redirect&quot;
 </code></pre>
+<p>If you are running with the MQTT broker then you should adjust the <code>public_url</code> to start with <code>wss://</code> rather than <code>ws://</code></p>
 <h3 id="running-flowforge" tabindex="-1"><a class="header-anchor" href="#running-flowforge">#&nbsp;</a> Running FlowForge</h3>
 <p>Once the containers have been built you can start FlowForge by running:</p>
 <pre><code>docker-compose up -d
@@ -136,7 +162,7 @@ creating an administrator for the platform and other configuration options.</p>
             <h3 class="font-medium border-b pb-1 mb-4">On this page</h3>
             <ul id="toc" class="text-sm border-b mb-4"></ul>
             <div class="text-sm pb-1 text-right mb-4"><a href="https://github.com/flowforge/flowforge/edit/main/docs/install/docker/README.md">Edit this page</a></div>
-            <div class="text-xs pb-1 text-right mb-4 italic">Updated: 2022-07-07 10:03:23 +0100</div>
+            <div class="text-xs pb-1 text-right mb-4 italic">Updated: 2022-08-04 14:01:29 +0200</div>
         </div>
     </div>
 </div>

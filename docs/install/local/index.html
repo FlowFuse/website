@@ -62,7 +62,7 @@
     <div class="w-full mx-auto ff-bg-light">
         <div class="font-medium border-b pb-1">
             
-            v0.7.0
+            v0.8.0
             
             /<a class="mx-2" href="/docs">docs</a>/<a class="mx-2" href="/docs/install">install</a>/<a class="mx-2" href="/docs/install/local">local</a>
         </div>
@@ -104,6 +104,106 @@ how to do this can be found on the Node.js website here:</p>
 be done by running the following command:</p>
 <pre><code>xcode-select --install
 </code></pre>
+<h4 id="mosquitto" tabindex="-1"><a class="header-anchor" href="#mosquitto">#&nbsp;</a> Mosquitto</h4>
+<p>The platform depends on the <a href="https://mosquitto.org/">Mosquitto MQTT Broker</a> to
+provide real-time messaging between devices and the platform.</p>
+<p>We do <strong>not</strong> support sharing a broker with other non-FlowForge applications. If you
+already have mosquitto installed and running, you will need to run a second instance
+dedicated to FlowForge</p>
+<p>This is currently an <em>optional</em> component - the platform will work without the
+broker, but some features will not be available.</p>
+<p>You can either follow the manual install steps, which involve building the authentication
+plugin from scratch, or make use of the <a href="#docker-install">Docker install</a></p>
+<h5 id="manual-install" tabindex="-1"><a class="header-anchor" href="#manual-install">#&nbsp;</a> Manual install</h5>
+<p><strong>Note</strong>: if you are running on Windows, you will need to follow the <a href="#docker-install">Docker install</a>
+instructions below due to a limitation of the authentication plugin we use.</p>
+<p>Follow the appropriate <a href="https://mosquitto.org/download/">install instructions</a> for
+your operating system.</p>
+<p>Once installed, you will need to build and install the authentication plugin.</p>
+<ol>
+<li>
+<p>Clone the plugin repository</p>
+<pre><code>git clone https://github.com/iegomez/mosquitto-go-auth.git
+</code></pre>
+</li>
+<li>
+<p>Follow the instructions on <a href="https://github.com/iegomez/mosquitto-go-auth#building-the-plugin">building the plugin</a></p>
+</li>
+<li>
+<p>This should result in a file called <code>go-auth.so</code> being generated</p>
+</li>
+<li>
+<p>Run mosquitto with a configuration file with the following contents:</p>
+<pre><code>per_listener_settings false
+allow_anonymous false
+listener 1883 0.0.0.0
+listener 1884 0.0.0.0
+protocol websockets
+auth_plugin /mosquitto/go-auth.so
+auth_opt_backends http
+auth_opt_hasher bcrypt
+auth_opt_cache true
+auth_opt_auth_cache_seconds 30
+auth_opt_acl_cache_seconds 90
+auth_opt_auth_jitter_second 3
+auth_opt_acl_jitter_seconds 5
+auth_opt_http_host localhost
+auth_opt_http_port 3000
+auth_opt_http_getuser_uri /api/comms/auth/client
+auth_opt_http_aclcheck_uri /api/comms/auth/acl
+</code></pre>
+<p>You will need to customise the values to match your local configuration:</p>
+<ul>
+<li><code>auth_plugin</code> - set to the path of the <code>go-auth.so</code> file built in the previous step</li>
+<li><code>listener 1883/1884</code> - if you already have mosquitto running locally, you'll need to
+change these ports to something else.</li>
+<li><code>auth_opt_http_host</code> / <code>auth_opt_http_port</code> - if you plan to run the platform
+on a different port, change these settings to match.</li>
+</ul>
+</li>
+</ol>
+<h5 id="docker-install" tabindex="-1"><a class="header-anchor" href="#docker-install">#&nbsp;</a> Docker Install</h5>
+<p>Instead of installing and building mosquitto and the authentication plugin from source,
+you can use a pre-built docker image that provides everything needed.</p>
+<ol>
+<li>
+<p>First pull the latest version of the pre-built container</p>
+<pre><code>docker pull iegomez/mosquitto-go-auth
+</code></pre>
+</li>
+<li>
+<p>Create a mosquitto.conf file with the following values:</p>
+<pre><code>per_listener_settings false
+allow_anonymous false
+listener 1883 0.0.0.0
+listener 1884 0.0.0.0
+protocol websockets
+auth_plugin /mosquitto/go-auth.so
+auth_opt_backends http
+auth_opt_hasher bcrypt
+auth_opt_cache true
+auth_opt_auth_cache_seconds 30
+auth_opt_acl_cache_seconds 90
+auth_opt_auth_jitter_second 3
+auth_opt_acl_jitter_seconds 5
+auth_opt_http_host 172.17.0.1
+auth_opt_http_port 3000
+auth_opt_http_getuser_uri /api/comms/auth/client
+auth_opt_http_aclcheck_uri /api/comms/auth/acl
+</code></pre>
+<p>You will need to customise the values to match your local configuration:</p>
+<ul>
+<li><code>auth_opt_http_host</code> value to match the IP address of either the docker0 interface or the external IP address of the machine running the Forge platform</li>
+<li><code>auth_opt_http_port</code> if you have changed the port the Forge platform is running on</li>
+</ul>
+</li>
+<li>
+<p>Start the container with the following command</p>
+<pre><code>docker run -d -v /full/path/to/mosquitto.conf:/etc/mosquitto/mosquitto.conf -p 1883:1883 -p 1884:1884 --name flowforge-broker iegomez/mosquitto-go-auth
+</code></pre>
+<p>This will map the <code>1883</code>/<code>1884</code> ports to the host machine so they can be accessed outside of the container. If you already have an MQTT broker running on port 1883, then you'll need to modify the <code>-p</code> options to use a different set of ports. For example: <code>-p 9883:1883 -p 9884:1884</code>.</p>
+</li>
+</ol>
 <h3 id="installing-flowforge" tabindex="-1"><a class="header-anchor" href="#installing-flowforge">#&nbsp;</a> Installing FlowForge</h3>
 <ol>
 <li>
@@ -197,7 +297,7 @@ create any more projects. See <a href="../first-run#next-steps"">this guide</a> 
             <h3 class="font-medium border-b pb-1 mb-4">On this page</h3>
             <ul id="toc" class="text-sm border-b mb-4"></ul>
             <div class="text-sm pb-1 text-right mb-4"><a href="https://github.com/flowforge/flowforge/edit/main/docs/install/local/README.md">Edit this page</a></div>
-            <div class="text-xs pb-1 text-right mb-4 italic">Updated: 2022-07-07 10:03:23 +0100</div>
+            <div class="text-xs pb-1 text-right mb-4 italic">Updated: 2022-08-04 14:01:29 +0200</div>
         </div>
     </div>
 </div>

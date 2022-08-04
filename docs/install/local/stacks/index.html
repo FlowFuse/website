@@ -62,7 +62,7 @@
     <div class="w-full mx-auto ff-bg-light">
         <div class="font-medium border-b pb-1">
             
-            v0.7.0
+            v0.8.0
             
             /<a class="mx-2" href="/docs">docs</a>/<a class="mx-2" href="/docs/install">install</a>/<a class="mx-2" href="/docs/install/local">local</a>/<a class="mx-2" href="/docs/install/local/stacks">stacks</a>
         </div>
@@ -82,8 +82,7 @@ is useful when running on a memory constrained device such as a Raspberry Pi. Re
 <li><code>nodered</code> - the version number of Node-RED to use. This should match the value used in the steps following.</li>
 </ul>
 <h2 id="upgrading-node-red" tabindex="-1"><a class="header-anchor" href="#upgrading-node-red">#&nbsp;</a> Upgrading Node-RED</h2>
-<p>By default, FlowForge 0.3 will use Node-RED 2.2.x - which is installed when
-FlowForge is installed.</p>
+<p>FlowForge supports Node-RED 2.2.x and later for creating stacks.</p>
 <p>As new versions of Node-RED are released, the following steps can be used to
 make them available within FlowForge.</p>
 <h3 id="development" tabindex="-1"><a class="header-anchor" href="#development">#&nbsp;</a> Development</h3>
@@ -95,10 +94,10 @@ the following command in the project root</p>
 commands where <code>bin</code> is in the FlowForge Home directory
 (e.g. <code>/opt/flowforge</code>)</p>
 <p>Linux/Mac</p>
-<pre><code>bin/install-stack.sh 2.2.2
+<pre><code>bin/ff-install-stack.sh 2.2.2
 </code></pre>
 <p>Windows:</p>
-<pre><code>bin\install-stack.bat 2.2.2
+<pre><code>bin\ff-install-stack.bat 2.2.2
 </code></pre>
 <p>These scripts will automate the following steps</p>
 <ol>
@@ -113,10 +112,8 @@ name created under <code>var/stacks</code>.</li>
 </ol>
 </li>
 </ol>
-<p>At this point, new projects can select the new Stack in order to use the new version
+<p>At this point, projects can select the new Stack in order to use the new version
 of Node-RED.</p>
-<p><em>Note:</em> with the 0.3 release, it is <em>not</em> possible to change the Stack being used
-by a project. That will come in a future release.</p>
 
             </div>
         </div>
@@ -124,7 +121,7 @@ by a project. That will come in a future release.</p>
             <h3 class="font-medium border-b pb-1 mb-4">On this page</h3>
             <ul id="toc" class="text-sm border-b mb-4"></ul>
             <div class="text-sm pb-1 text-right mb-4"><a href="https://github.com/flowforge/flowforge/edit/main/docs/install/local/stacks.md">Edit this page</a></div>
-            <div class="text-xs pb-1 text-right mb-4 italic">Updated: 2022-07-07 10:03:23 +0100</div>
+            <div class="text-xs pb-1 text-right mb-4 italic">Updated: 2022-08-04 14:01:29 +0200</div>
         </div>
     </div>
 </div>

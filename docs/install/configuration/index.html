@@ -62,7 +62,7 @@
     <div class="w-full mx-auto ff-bg-light">
         <div class="font-medium border-b pb-1">
             
-            v0.7.0
+            v0.8.0
             
             /<a class="mx-2" href="/docs">docs</a>/<a class="mx-2" href="/docs/install">install</a>/<a class="mx-2" href="/docs/install/configuration">configuration</a>
         </div>
@@ -211,6 +211,50 @@ This can be disabled via the Admin Settings in the UI, or turned off in the conf
 </tr>
 </tbody>
 </table>
+<h2 id="mqtt-broker-configuration" tabindex="-1"><a class="header-anchor" href="#mqtt-broker-configuration">#&nbsp;</a> MQTT Broker configuration</h2>
+<p>The platform depends on the <a href="https://mosquitto.org/">Mosquitto MQTT Broker</a> to
+provide real-time messaging between devices and the platform.</p>
+<p>This is currently an <em>optional</em> component - the platform will work without the
+broker, but some features will not be available.</p>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>broker.url</code></td>
+<td>The full url to the platform broker. This is used by the platform and project launchers to connect to the broker. For example: <code>mqtt://localhost:1883</code>.</td>
+</tr>
+<tr>
+<td><code>broker.public_url</code></td>
+<td>If set, this is the url provided to Devices to connect to the broker with. When running in a Docker or K8S environment, this url should be the externally addressable url the broker is provided on. This could be via WebSockets, for example: <code>ws://example.com:1884</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="logging-configuration" tabindex="-1"><a class="header-anchor" href="#logging-configuration">#&nbsp;</a> Logging configuration</h2>
+<p>By default the forge app is set to <code>info</code> level logging, with the HTTP routes logged at <code>warn</code></p>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>logging.level</code></td>
+<td>Change the default logging level. Default: <code>info</code></td>
+</tr>
+<tr>
+<td><code>logging.http</code></td>
+<td>Change the default HTTP route logging level. Default: <code>warn</code></td>
+</tr>
+</tbody>
+</table>
+<p>Setting <code>logging.http</code> to <code>info</code> will log every HTTP request and response details.</p>
 
             </div>
         </div>
@@ -218,7 +262,7 @@ This can be disabled via the Admin Settings in the UI, or turned off in the conf
             <h3 class="font-medium border-b pb-1 mb-4">On this page</h3>
             <ul id="toc" class="text-sm border-b mb-4"></ul>
             <div class="text-sm pb-1 text-right mb-4"><a href="https://github.com/flowforge/flowforge/edit/main/docs/install/configuration.md">Edit this page</a></div>
-            <div class="text-xs pb-1 text-right mb-4 italic">Updated: 2022-07-07 10:03:23 +0100</div>
+            <div class="text-xs pb-1 text-right mb-4 italic">Updated: 2022-08-04 14:01:29 +0200</div>
         </div>
     </div>
 </div>

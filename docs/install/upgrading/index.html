@@ -62,7 +62,7 @@
     <div class="w-full mx-auto ff-bg-light">
         <div class="font-medium border-b pb-1">
             
-            v0.7.0
+            v0.8.0
             
             /<a class="mx-2" href="/docs">docs</a>/<a class="mx-2" href="/docs/install">install</a>/<a class="mx-2" href="/docs/install/upgrading">upgrading</a>
         </div>
@@ -98,6 +98,31 @@ be associated with the new Project Type</li>
 </ol>
 </li>
 </ol>
+<h3 id="upgrading-to-0.8" tabindex="-1"><a class="header-anchor" href="#upgrading-to-0.8">#&nbsp;</a> Upgrading to 0.8</h3>
+<h4 id="mqtt-broker-added" tabindex="-1"><a class="header-anchor" href="#mqtt-broker-added">#&nbsp;</a> MQTT Broker added</h4>
+<p>This release introduces an MQTT Broker into the FlowForge platform used to communicate
+between devices and the core platform.</p>
+<p>For LocalFS users, they will need to manually setup the broker and ensure it is
+properly configured. The documentation for this is available <a href=".././local/#mosquitto"">here</a></p>
+<h4 id="localfs-users" tabindex="-1"><a class="header-anchor" href="#localfs-users">#&nbsp;</a> LocalFS Users</h4>
+<p>With the 0.8 release we have updated the version of the SQLite3 module used by the localfs
+container driver. We are moving from v5.0.2 to v5.0.8.</p>
+<p>There appears to be a clash with the bcrypt module when doing an inplace upgrade of the
+SQLite3 module that gives an error similar to the following:</p>
+<pre><code>npm ERR! path /opt/share/projects/flowforge/sqlite-test/node_modules/sqlite3
+npm ERR! command failed
+npm ERR! command sh -c node-pre-gyp install --fallback-to-build
+npm ERR! sh: line 1: node-pre-gyp: command not found
+</code></pre>
+<p>If you see this then the simplest fix is to remove the <code>node_modules</code> directory and reinstall
+the modules.</p>
+<h4 id="project-nodes" tabindex="-1"><a class="header-anchor" href="#project-nodes">#&nbsp;</a> Project Nodes</h4>
+<p>This release adds support for the new Project Link nodes that can be used to send
+messages between projects seamlessly.</p>
+<p>These nodes require the MQTT Broker to be properly configured.</p>
+<p>To deploy flows using these nodes to a Device will require the Device to be running
+the latest 0.2.0 release. They will also need to have their credentials regenerated
+once the MQTT Broker has been added.</p>
 
             </div>
         </div>
@@ -105,7 +130,7 @@ be associated with the new Project Type</li>
             <h3 class="font-medium border-b pb-1 mb-4">On this page</h3>
             <ul id="toc" class="text-sm border-b mb-4"></ul>
             <div class="text-sm pb-1 text-right mb-4"><a href="https://github.com/flowforge/flowforge/edit/main/docs/install/upgrading.md">Edit this page</a></div>
-            <div class="text-xs pb-1 text-right mb-4 italic">Updated: 2022-07-07 10:03:23 +0100</div>
+            <div class="text-xs pb-1 text-right mb-4 italic">Updated: 2022-08-04 14:01:29 +0200</div>
         </div>
     </div>
 </div>

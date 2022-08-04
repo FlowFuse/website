@@ -14,6 +14,14 @@
     <title>FlowForge | Open-source low-code integration for applications, data and devices</title>
 
     
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@flowforgeinc" />
+    <meta name="twitter:creator" content="@sammachin" />
+    <meta property="og:url" content="https://flowforge.com/blog/2022/08/flowforge-08-released/" />
+    <meta property="og:title" content="FlowForge 0.8 released" />
+    <meta property="og:description" content="Inter-Project Communication, Default Teams, and realtime device management." />
+    <meta property="og:image" content="https://flowforge.com/images/flowforge-logo.png" />
+    
 
     <script defer data-domain="flowforge.com" src="https://plausible.io/js/plausible.js"></script>
 </head>
@@ -52,162 +60,106 @@
             </header>
             <!-- Main Content -->
             <main class="flex flex-col mx-auto items-center justify-center">
-                <!--Hero Content-->
+                
 <div class="w-full page">
     
-    <div class="content">
-        <div class="nohero w-full pt-12 pb-24 ff-bg-light">
-    <div class="container m-auto text-left px-6 md:max-w-screen-lg">
-        <div class="handbook">
-    <div class="w-full mx-auto ff-bg-light">
-        <div class="font-medium border-b pb-1">
-            
-            v0.8.0
-            
-            /<a class="mx-2" href="/docs">docs</a>/<a class="mx-2" href="/docs/contribute">contribute</a>/<a class="mx-2" href="/docs/contribute/adding-template-settings">adding-template-settings</a>
-        </div>
-    </div>
-    <div class="w-full mx-auto ff-bg-light flex flex-col md:flex-row">
-        <div class="flex-grow order-last md:order-first">
-            <div class="mt-6 mb-4 prose prose-blue main-content">
-                <h1 id="adding-template-settings" tabindex="-1"><a class="header-anchor" href="#adding-template-settings">#&nbsp;</a> Adding Template Settings</h1>
-<p>Within FlowForge, each Project is created from a Template. The Template defines
-a set of preconfigured options for the Project. This includes runtime settings -
-values that you would normally expect to set in your Node-RED settings.js file.</p>
-<p>The Template also defines which of those options can be customised by a Project.</p>
-<p>This guide explains how to add a new Node-RED runtime option to the Template object
-so that it can be customised for individual Projects and passed through to the
-underlying Node-RED settings.js file.</p>
-<p>This is reasonably straight-forward for simple boolean/string/numeric types.
-For other types (objects/arrays) it gets more complicated and we don't currently
-have good examples to follow.</p>
-<p>For the 'simple' cases, the steps are:</p>
-<ol>
-<li>Update the Frontend
-<ol>
-<li>Pick a name for the setting, add it to the list of known settings and any
-validation logic that is needed</li>
-<li>Add it to the appropriate Template section</li>
-</ol>
-</li>
-<li>Update the runtime
-<ol>
-<li>Add it to the known list of settings and any additional validation logic</li>
-</ol>
-</li>
-<li>Update the Launcher
-<ol>
-<li>Update the template used to generate settings.js with the new property</li>
-</ol>
-</li>
-</ol>
-<h2 id="1.-updating-the-frontend" tabindex="-1"><a class="header-anchor" href="#1.-updating-the-frontend">#&nbsp;</a> 1. Updating the Frontend</h2>
-<p>There are a set of views in the frontend used to present and edit templates. They
-get used in two different ways:</p>
-<ol>
-<li>When creating/editing a template.
-All options are available and there is a dropdown that lets the user set the
-policy on the setting (which controls whether a project is allowed to override
-the setting)</li>
-<li>When editing project settings.
-All options are shown, but only lets the user modify those that the template
-policy allows to be changed.</li>
-</ol>
-<p>This reuse of the views saves a lot of code duplication, at the cost of some
-complication in implementing it.</p>
-<h3 id="1.1---pick-a-name-for-the-setting" tabindex="-1"><a class="header-anchor" href="#1.1---pick-a-name-for-the-setting">#&nbsp;</a> 1.1 - Pick a name for the setting</h3>
-<p>The name should try to match its corresponding property in the Node-RED settings.js
-file. Some thought should be made as to organisation of the properties.</p>
-<ol>
-<li>Edit <code>frontend/src/pages/admin/Template/utils.js</code></li>
-<li>Add the new property name to the <code>templateFields</code> and <code>defaultTemplateValues</code> objects.
-Notice the names are flat strings with <code>_</code> used as a hierarchy separator... that
-will make more sense if you're looking at the file.</li>
-<li>If the value needs any sort of validation, add it to <code>templateValidators</code> in the
-same file.</li>
-</ol>
-<h3 id="1.2---add-it-to-the-appropriate-template-section" tabindex="-1"><a class="header-anchor" href="#1.2---add-it-to-the-appropriate-template-section">#&nbsp;</a> 1.2 - Add it to the appropriate Template section</h3>
-<p>Current there are:</p>
-<ul>
-<li>Editor</li>
-<li>Palette</li>
-<li>Environment - a special case that is unlikely to get other options added</li>
-</ul>
-<p>These each live in their own file under <code>frontend/src/pages/admin/Template/sections/</code>.</p>
-<p>Pick an existing setting that most closely matches the setting you want to add
-(ie checkbox or text input), and copy its entry to the appropriate place.</p>
-<p>Make sure you update <em>all</em> of the references of the copied property name to your
-new property name.</p>
-<h2 id="2.-updating-the-runtime" tabindex="-1"><a class="header-anchor" href="#2.-updating-the-runtime">#&nbsp;</a> 2. Updating the Runtime</h2>
-<h3 id="2.1---adding-it-to-the-known-list" tabindex="-1"><a class="header-anchor" href="#2.1---adding-it-to-the-known-list">#&nbsp;</a> 2.1 - Adding it to the known list</h3>
-<ol>
-<li>
-<p>Edit <code>forge/db/controllers/ProjectTemplate.js</code> to add the new property to the
-list of known settings.</p>
-</li>
-<li>
-<p>In that same file, update the <code>validateSettings</code> function with any additional
-validation or data cleansing needed.</p>
-</li>
-</ol>
-<h2 id="3.-update-nr-launcher" tabindex="-1"><a class="header-anchor" href="#3.-update-nr-launcher">#&nbsp;</a> 3. Update nr-launcher</h2>
-<p>In the <code>flowforge-nr-launcher</code> repo...</p>
-<ol>
-<li>Edit <code>lib/runtimeSettings.js</code> to include the new setting in the generate settings.js
-file. Note that you must handle the case where the new setting is not present -
-either by applying a sensible default, or omitting the value.</li>
-</ol>
-
+        <div class="container m-auto text-center px-6 flex mt-6 mb-6 md:max-w-screen-lg md:mt-12">
+            <div class="text-left md:pr-32">
+                <h1>FlowForge 0.8 released</h1>
+                
+                <h4>Inter-Project Communication, Default Teams, and realtime device management.</h4>
+                
+                <p class="author">
+                    <time value="">4 Aug, 2022</time>
+                    |
+                    
+                     Sam Machin
+                </p>
             </div>
         </div>
-        <div class="w-full md:w-64 md:ml-8 mt-4 md:mt-6 px-2">
-            <h3 class="font-medium border-b pb-1 mb-4">On this page</h3>
-            <ul id="toc" class="text-sm border-b mb-4"></ul>
-            <div class="text-sm pb-1 text-right mb-4"><a href="https://github.com/flowforge/flowforge/edit/main/docs/contribute/adding-template-settings.md">Edit this page</a></div>
-            <div class="text-xs pb-1 text-right mb-4 italic">Updated: 2022-08-04 14:01:29 +0200</div>
+    
+    <div class="blog nohero w-full pt-6 pb-24 ff-bg-light">
+        <div class="container m-auto text-left px-6 md:max-w-screen-lg">
+            <a class="block mb-4" href="/blog">&lt; Back to Blog Posts</a>
+            <div class="prose">
+                <div><iframe width="560" height="315" src="https://www.youtube.com/embed/nCe_qs0G6ZQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                     
+                </div>
+                <p>Easily pass messages between your projects on the cloud or devices, UX improvements, and more.</p>
+<!--more-->
+<p>Keep reading for  the details of whats in this release our you can watch our 1 min roundup video of the new release above.</p>
+<p>We're pleased to announce version 0.8 is now available. The next release of the FlowForge application containing new features, a number of improvements, and bug fixes.</p>
+<h2 id="features" tabindex="-1"><a class="header-anchor" href="#features">#&nbsp;</a> Features</h2>
+<p><a href="https://github.com/flowforge/flowforge/issues/662">Project Link Nodes</a>
+We've introduced our first custom FlowForge nodes to the palette of new projects. The Project Link nodes allow you to easily pass data between different projects within the same team.
+These projects can be running in the cloud or on devices, with the communication powered by our own internal MQTT broker.
+Try these out today on FlowForge Cloud by creating a new project or updating your existing project's stack. There's more information in the <a href="https://github.com/flowforge/flowforge-nr-project-nodes/blob/main/README.md">README</a> for the nodes.
+For local installs of FlowForge, the nodes are only available with an Enterprise Edition license.
+<img src="../images/ProjectLink.gif" alt=""></p>
+<p><a href="https://github.com/flowforge/flowforge/issues/839">Start &amp; Stop Flows</a>
+Node-RED 3.0 <a href="https://nodered.org/blog/2022/07/14/version-3-0-released#editing-stopped-flows">introduced a new feature</a> that allows you to stop your flows from processing requests while still being able to work in the editor and deploy changes. We've now enabled this feature within FlowForge for projects running a Node-RED 3.x stack.</p>
+<p><a href="https://github.com/flowforge/flowforge/issues/298">Default Team</a>
+If you are a member of multiple teams you can now set your preferred default saving you from having to change teams each time you log in.</p>
+<h2 id="improvements" tabindex="-1"><a class="header-anchor" href="#improvements">#&nbsp;</a> Improvements</h2>
+<p>We've made a number of improvements to the overall experience of running FlowForge.</p>
+<ul>
+<li>Devices now communicate to the Forge application over MQTT instead of polling <a href="https://github.com/flowforge/flowforge/issues/754">#754</a>. You'll need to update your Device Agent to the latest version to take advantage of this.</li>
+<li>The table views have had a major overhaul allowing you to sort and search items <a href="https://github.com/flowforge/forge-ui-components/issues/28">#28</a></li>
+<li>If the application receives an error you now see a notification in the UI. <a href="https://github.com/flowforge/flowforge/issues/771">#771</a></li>
+<li>The Verification email page has been cleaned up <a href="https://github.com/flowforge/flowforge/issues/718">#718</a></li>
+<li>The initial Thank-you page has been cleaned up <a href="https://github.com/flowforge/flowforge/issues/648">#648</a></li>
+</ul>
+<h2 id="bug-fixes" tabindex="-1"><a class="header-anchor" href="#bug-fixes">#&nbsp;</a> Bug Fixes</h2>
+<p>We've fixed the following bugs in this release.</p>
+<ul>
+<li><a href="https://github.com/flowforge/flowforge/issues/793">Logo Distorted in Safari</a><br></li>
+<li><a href="https://github.com/flowforge/flowforge/issues/729">LocalFS Install doesn't check for Build Tools</a><br></li>
+<li><a href="https://github.com/flowforge/flowforge/pull/842">Users with Expired passwords can create teams</a><br></li>
+<li><a href="https://github.com/flowforge/flowforge/pull/790">Click-jacking Vulnerability</a></li>
+<li><a href="https://github.com/flowforge/flowforge/pull/824">Users with can create teams without verifying email</a><br></li>
+<li><a href="https://github.com/flowforge/flowforge-nr-storage/issues/17">Occasional Timeout when deploying flows</a><br></li>
+<li><a href="https://github.com/flowforge/flowforge/issues/833">Notification of member deletion contains internal ID</a><br></li>
+<li><a href="https://github.com/flowforge/flowforge/issues/334">Pressing Enter in the Team Delete modal triggers cancel</a><br></li>
+<li><a href="https://github.com/flowforge/flowforge/issues/751">Node-Red Isn't ready when Forge app says it is running (Docker)</a><br></li>
+</ul>
+<h2 id="contributors" tabindex="-1"><a class="header-anchor" href="#contributors">#&nbsp;</a> Contributors</h2>
+<p>We'd like the thank the following for their contributions to this release:</p>
+<ul>
+<li><a href="https://github.com/HaroldPetersInskipp">HaroldPetersInskipp</a> made their first contribution in https://github.com/flowforge/flowforge/pull/812</li>
+<li><a href="https://github.com/Steveorevo">Steveorevo</a> made their first contribution in https://github.com/flowforge/flowforge/pull/818</li>
+</ul>
+<p>As an open-source project, we welcome the community involvement in what we're building. If you're interested in contributing, checkout our <a href="https://flowforge.com/docs/contribute/">guide in the docs</a>.</p>
+<h3 id="upgrading-flowforge" tabindex="-1"><a class="header-anchor" href="#upgrading-flowforge">#&nbsp;</a> Upgrading FlowForge</h3>
+<p><a href="https://app.flowforge.com">FlowForge Cloud</a> is already running 0.8 and the stacks updated. Upgrade your project stacks to the latest version and start using the Project Link nodes now.</p>
+<p>If you installed a previous version of FlowForge and want to upgrade, our documentation provides a
+guide for <a href="http://flowforge.com/docs/install#upgrade">upgrading FlowForge on a local server</a>.</p>
+<h3 id="getting-help" tabindex="-1"><a class="header-anchor" href="#getting-help">#&nbsp;</a> Getting help</h3>
+<p>If you hit any problems with the platform, or have questions to ask, please do
+raise an <a href="https://github.com/flowforge/flowforge/issues">issue on GitHub</a>.
+That also includes if you have any feedback or feature requests.</p>
+<p>Customers of FlowForge Cloud can raise a ticket by emailing support@flowforge.com</p>
+<p>We also have a <code>#flowforge</code> channel on the <a href="https://nodered.org/slack">Node-RED Slack workspace</a>.</p>
+
+            </div>
+            <div class="mt-12 pt-12 flex flex-col border-t-2">
+                <h3 class="mb-6">Sign up for updates</h3>
+                <form
+                    action="https://buttondown.email/api/emails/embed-subscribe/flowforge"
+                    method="post"
+                    target="popupwindow"
+                    onsubmit="window.open('https://buttondown.email/flowforge', 'popupwindow')"
+                    class="embeddable-buttondown-form my-1 ">
+                    <div class="flex flex-col sm:flex-row">
+                        <input type="email" name="email" id="bd-email" placeholder="Enter your email" class="ff-input ff-text-input lg:w-80 md:w-60" />
+                        <input type="hidden" value="1" name="embed" />
+                        <input type="submit" value="Subscribe" class="ff-btn ff-btn--primary w-full mt-3 sm:w-auto sm:mt-0 sm:ml-3"/>
+                    </div>
+                </form>
+            </div>
         </div>
     </div>
 </div>
-<script>
-    let toc = document.getElementById("toc")
 
-    let currentTag = "";
-    let currentToc = toc;
-    let currentItem;
-    document.querySelectorAll(".main-content > h2, .main-content > h3, .main-content > h4").forEach(function(n) {
-        // which level of "H_" are we working with, and which one did we see most recently
-        const level = parseInt(n.nodeName[1])
-        const prevLevel = currentTag.length > 1 ? parseInt(currentTag[1]) : 0
-
-        if (prevLevel > 0 && level - prevLevel < 0) {
-            // we are moving left with our indent
-            currentToc = toc;
-        } else if (prevLevel > 0 && level - prevLevel > 0) {
-            // we are creating a new, nested `<ul>`
-            currentToc = document.createElement("ul");
-            currentToc.classList.add("ml-4")
-            currentToc.classList.add("mt-2")
-            currentToc.classList.add("mb-4")
-            currentItem.append(currentToc);
-        }
-        currentTag = n.nodeName;
-        currentItem = document.createElement("li");
-        currentItem.classList.add("mb-2")
-        let currentLink = document.createElement("a");
-        currentItem.append(currentLink);
-        let link = n.getElementsByTagName('a')
-        currentLink.href = link[0].href;
-        currentLink.textContent = n.textContent.replace(/#\s+/g,"");
-        currentToc.append(currentItem);
-    })
-</script>
-<script async src="https://unpkg.com/mermaid/dist/mermaid.min.js">mermaid.initialize({ startOnLoad: true });</script>
-
-    </div>
-</div>
-
-    </div>
-</div>
             </main>
         </div>
     </div>
