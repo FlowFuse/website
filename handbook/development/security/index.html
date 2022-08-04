@@ -62,69 +62,73 @@
     <div class="w-full mx-auto ff-bg-light">
         <div class="font-medium border-b pb-1">
             
-            /<a class="mx-2" href="/handbook">handbook</a>/<a class="mx-2" href="/handbook/product">product</a>/<a class="mx-2" href="/handbook/product/plan">plan</a>
+            /<a class="mx-2" href="/handbook">handbook</a>/<a class="mx-2" href="/handbook/development">development</a>/<a class="mx-2" href="/handbook/development/security">security</a>
         </div>
     </div>
     <div class="w-full mx-auto ff-bg-light flex flex-col md:flex-row">
         <div class="flex-grow order-last md:order-first">
             <div class="mt-6 mb-4 prose prose-blue main-content">
-                <h1 id="product-plan" tabindex="-1"><a class="header-anchor" href="#product-plan">#&nbsp;</a> Product Plan</h1>
-<h2 id="background" tabindex="-1"><a class="header-anchor" href="#background">#&nbsp;</a> Background</h2>
-<p>Our <a href="../../company/strategy"">Company Strategy</a> sets out 4 pillars that our product work is focussed around</p>
-<h2 id="principles" tabindex="-1"><a class="header-anchor" href="#principles">#&nbsp;</a> Principles</h2>
-<h4 id="convention-over-configuration" tabindex="-1"><a class="header-anchor" href="#convention-over-configuration">#&nbsp;</a> Convention over configuration</h4>
-<p>Default to picking sensible defaults to standardize the experience for customers and
-users. This enables everyone to get the most out of FlowForge. FlowForge.com
-should always run the default configuration if possible to ensure the best
-experience across the board.</p>
-<p>See also: <a href="https://en.wikipedia.org/wiki/Convention_over_configuration">Convention over Configuration on Wikipedia</a>.</p>
-<h2 id="2022" tabindex="-1"><a class="header-anchor" href="#2022">#&nbsp;</a> 2022</h2>
-<p>Until the end of 2022 we will focus on the following:</p>
-<p>In order to <strong>provide the best Node-RED experience</strong>;</p>
+                <p># Security Policy</p>
+<h2 id="reporting-a-vulnerability" tabindex="-1"><a class="header-anchor" href="#reporting-a-vulnerability">#&nbsp;</a> Reporting a Vulnerability</h2>
+<p>Please report any vulnerabilities discovered in FlowForge products to security@flowforge.com.</p>
+<p>We will endeavour to acknowledge and fix any reported vulnerabilities ASAP based
+on its severity and assessed impact to our users.</p>
+<h2 id="bug-bounties" tabindex="-1"><a class="header-anchor" href="#bug-bounties">#&nbsp;</a> Bug Bounties</h2>
+<p>At our sole discretion, we offer rewards for responsibly disclosed issues according
+to their severity.</p>
+<p>Please note the following are general guidelines and any reward decisions are up
+to the discretion of FlowForge. We keep these reward levels under review to ensure
+they provide a fair reflection of the issues being reported.</p>
+<table>
+<thead>
+<tr>
+<th>Low</th>
+<th>Medium</th>
+<th>High</th>
+<th>Critical</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>$128</td>
+<td>$256</td>
+<td>$512</td>
+<td>$1024</td>
+</tr>
+</tbody>
+</table>
+<p>Multiple reports of the same issue manifesting in different ways will be treated
+as a single report.</p>
+<p>The quality of bug report will also impact any ultimate reward decision.</p>
+<h3 id="sample-criteria" tabindex="-1"><a class="header-anchor" href="#sample-criteria">#&nbsp;</a> Sample criteria</h3>
+<p>The following are examples of the types of bug for each severity. It is not
+definitive and each reported bug will be considered on its own merits.</p>
+<p><em>Critical Severity Bugs</em></p>
 <ul>
-<li>We will continue to expose the most useful configuration options for Node-RED meaning that people can use Node-RED on FlowForge in more use-cases</li>
-<li>Custom Domains for projects will also improve the Node-RED experience allowing users to publish their applications to the web with their own identity.</li>
-<li>Persistent context will alow users to build flows with better confidence in the integrity of their data.</li>
-<li>Additional service like Message Brokers and Persistent Storage will provide additional utility and value to the platform while providing the opportunity to increase revenue through add-ons</li>
-<li>We will work to identify a sustainable solution for building interfaces as part of FlowForge, either through the Node-RED Dashboard and its successor or via another service.</li>
+<li>SQL Injection</li>
+<li>Remote Code Execution</li>
+<li>Privilege Escalation</li>
 </ul>
-<p>In order to <strong>Enable Users to Run Node-RED at the Edge</strong>;</p>
+<p><em>High Severity Bugs</em></p>
 <ul>
-<li>Introduce the concept of Devices to the platform allowing users to manage their edge installs</li>
-<li>Create an Edge Agent reference install for the Raspberry Pi which allows user hardware to be managed by the FlowForge platform and run a project.</li>
-<li>Work to rollout that Edge Agent to other devices such as PLCs either via our own development or through partnerships with hardware manufacturers.</li>
-<li>Provide functionality to allow for debugging of flows running on edge devices</li>
-<li>Enable users to manage and deploy flows to multiple edge devices</li>
-<li>Allow edge devices to communicate with both the cloud and other devices.</li>
+<li>Cross-Site Request Forgery</li>
+<li>Information leaks of user data</li>
 </ul>
-<p>Features that <strong>Enable teams to collaborate when working with Node-RED</strong>;</p>
+<p><em>Medium Severity Bugs</em></p>
 <ul>
-<li>Duplicating Projects allow teams to have dev and prod projects and to move flows between them</li>
-<li>Team level templates allow teams to create baseline projects that can be reused.</li>
-<li>Team Libraries provide a way for teams to share and reuse parts of flows</li>
-<li>Version control of flows gives teams the ability to track changes.</li>
+<li>Information leaks of non-user data</li>
 </ul>
-<p>We will build the following to <strong>Meet the compliance needs of the enterprise</strong>;</p>
+<p><em>Low Severity Bugs</em></p>
 <ul>
-<li>Integration with at least one major enterprise SSO platform eg Okta, Active Directory etc.</li>
-<li>Full Audit logging of events</li>
-<li>User lifecycle management, delete, suspend etc.</li>
-<li>Customizable password policies</li>
-<li>Secure storage of secrets in environment variables</li>
-<li>Custom Node Catalogs</li>
-<li>Comprehensive platform monitoring and reporting.</li>
+<li>Exposure of any integer resource IDs (primary keys in our database)</li>
 </ul>
-<p>## Open Source &amp; Enterprise</p>
-<p>We offer a number of ways that users can run the FlowForge product, we will always offer an open source version that has the core features. Features that offer higher business value or permit users to share across larger groups will be offered as part of our paid enterprise proposition.
-FlowForge Cloud is our hosted public cloud offering, this will generally include all features that are availble but may not offer certain features such as SSO where integration is required between the platform and an enterprise. We will offer customers the ability to have a dedicated cloud instance managed by us if thats is a deployment model they require.
-A more detailed breakdown of the pricing and split between our Open Source and Enterprise Editions is on the <a href="../pricing"">pricing principles</a> page</p>
 
             </div>
         </div>
         <div class="w-full md:w-64 md:ml-8 mt-4 md:mt-6 px-2">
             <h3 class="font-medium border-b pb-1 mb-4">On this page</h3>
             <ul id="toc" class="text-sm border-b mb-4"></ul>
-            <div class="text-sm pb-1 text-right mb-4"><a href="https://github.com/flowforge/handbook/edit/main/product/plan.md">Edit this page</a></div>
+            <div class="text-sm pb-1 text-right mb-4"><a href="https://github.com/flowforge/handbook/edit/main/development/security.md">Edit this page</a></div>
             <div class="text-xs pb-1 text-right mb-4 italic">Updated: 2022-08-04 18:13:58 +0200</div>
         </div>
     </div>
