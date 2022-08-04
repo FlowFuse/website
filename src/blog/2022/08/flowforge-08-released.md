@@ -6,7 +6,8 @@ date: 2022-08-04 12:00:00.0
 authors: ["sam-machin"]
 video: BBNzFInc_2E
 ---
-TODO! Update Video ID
+TODO! Update Video ID<br>
+
 Easily pass messages between your projects on the cloud or devices, UX improvements, and more.
 
 <!--more-->
@@ -19,7 +20,7 @@ We're pleased to announce version 0.8 is now available. the next release of the 
 [Project Link Nodes](https://github.com/flowforge/flowforge/issues/662)
 We've introduced some custom FlowForge nodes to the pallette of new projects, These are Project Link nodes that allow you to easily pass data between different projects within the same team. 
 These projects can be running in the cloud or on devices, the communication is powered by our own internal MQTT broker.
-These nodes are availble to all users of FlowForge Cloud but will only work with an Enterprise licensed version of FlowForge.
+These nodes are available to all users of FlowForge Cloud but will only work with an Enterprise Edition of FlowForge.
 Try these out today on FlowForge Cloud by creating a new project or updating your stack, there's more information in the [README](https://github.com/flowforge/flowforge-nr-project-nodes/blob/main/README.md) for the nodes 
 ![](../images/ProjectLink.gif)
 
@@ -53,8 +54,7 @@ We've fixed the following bugs in this release.
 
 ### Upgrading FlowForge
 
-[FlowForge Cloud](https://app.flowforge.com) is already running 0.7 - ready for
-you to try out rollbacks and the new theme. 
+[FlowForge Cloud](https://app.flowforge.com) is already running 0.8 - so you can link your Projects now.
 
 If you installed a previous version of FlowForge and want to upgrade, our documentation provides a
 guide for [upgrading FlowForge on a local server](http://flowforge.com/docs/install#upgrade).
