@@ -10,7 +10,10 @@ releases.
  - Decide who will be Release Manager for this release. For Major/Minor releases this should be shared across the whole team to prevent it becoming a single point of failure. For Fix releases it can be the developer committing the fix.
  - Create a Release check list issue (using template) on the flowforge/admin project to keep track of all components included in the release (e.g. https://github.com/flowforge/admin/issues/7)
  - Assign the issue to the Release Manager
- - Ensure you have the [GitHub client](https://github.com/cli/cli) and [jq](https://stedolan.github.io/jq/download/) installed on your machine
+ - Ensure you have the following installed on your machine:
+    - [GitHub client](https://github.com/cli/cli)
+    - [jq](https://stedolan.github.io/jq/download/)
+    - [yq](https://mikefarah.gitbook.io/yq/#install)
  - Ensure you're machine is authenticated with the GitHub client: `gh auth login`
 
 ### Steps
