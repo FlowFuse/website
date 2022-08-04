@@ -52,9 +52,12 @@ We've fixed the following bugs in this release.
 - [Node-Red Isn't ready when Forge app says it is running (Docker)](https://github.com/flowforge/flowforge/issues/751)<br>
 
 ## Contributors
-We'd like the thank the following for their contributions to this release.
-[HaroldPetersInskipp](https://github.com/HaroldPetersInskipp) made their first contribution in https://github.com/flowforge/flowforge/pull/812<br>
-[Steveorevo](https://github.com/Steveorevo) made their first contribution in https://github.com/flowforge/flowforge/pull/818
+We'd like the thank the following for their contributions to this release:
+
+  - [HaroldPetersInskipp](https://github.com/HaroldPetersInskipp) made their first contribution in https://github.com/flowforge/flowforge/pull/812
+ - [Steveorevo](https://github.com/Steveorevo) made their first contribution in https://github.com/flowforge/flowforge/pull/818
+
+As an open-source project, we welcome the community involvement in what we're building. If you're interested in contributing, checkout our [guide in the docs](https://flowforge.com/docs/contribute/).
 
 ### Upgrading FlowForge
 
