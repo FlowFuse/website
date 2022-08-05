@@ -6,3 +6,4 @@ This covers how we run our business and deliver service to our customers.
 - [Billing](../operations/billing.md)
 - [Accounts](../operations/accounts.md)
 - [Change Control](../operations/change.md)
+- [Vendors](../operations/vendors.md)
