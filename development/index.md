@@ -17,15 +17,12 @@ FlowForge is released every four weeks, on a Thursday. There are 13 releases eac
 year. The initial release was published on 20th of January. This implies releases
 will be scheduled on the following dates.
 
- -  2022/04/14 (0.4)
- -  2022/05/12 (0.5)
- -  2022/06/09 (0.6)
  -  2022/07/07 (0.7)
- -  2022/08/04
- -  2022/09/01
- -  2022/09/29
- -  2022/10/27
- -  2022/11/24
+ -  2022/08/04 (0.8)
+ -  2022/09/01 (0.9)
+ -  2022/09/29 (1.0)
+ -  2022/10/27 (1.1)
+ -  2022/11/24 (1.2)
 
 ### Planning
 
