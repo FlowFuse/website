@@ -50,7 +50,7 @@ There are three types of issue used for planning work:
 
 
 Whenever an issue is raised, it will be reviewed by the Product Owner/CTO and added
-to the Product Board for prioritisation and planning. The exception to this are
+to the Product Board for prioritization and planning. The exception to this are
 tasks/bugs related to work already in progress and that need to be addressed in
 the current milestone. They should be added to the Development Board and current
 milestone directly.
@@ -68,33 +68,23 @@ We use three project boards to plan and track our work.
 This is a high-level view of our product roadmap over the coming releases. It 
 identifies the themes and priorities for the releases.
 
-#### Product Board
+#### Product Backlog Board
 
 [This board](https://github.com/orgs/flowforge/projects/3/views/1) is maintained
 by the Product Owner (PO) and CTO. It is the main entry point for all epics and
 stories.
 
-Items on this board have the following states:
+Items on this board are put into one of the following states to indicate their priority in the backlog, they can move up or down the priority depending on business needs.
 
- - `➡️ Incoming` - where all items start their planning journey.
-   - Items are regularly prioritised and triaged on this list.
-   - Items that require further refinement or design work are assigned to someone on the team.
-   - When an item is assigned, move to the `📐 Design` state.
- - `📐 Design` - items that are being refined.
-   - This means someone is adding more detail to the story, providing a high-level
-     technical outline (database model impact, API changes) as well as any UX mockups
-     or high-level descriptions. Once complete, the item is moved to the `👀 Review` state.
- - `👀 Review` - Items that are ready to be reviewed by PO/CTO (and any other stackholders)
-   - This review ensures the design meets the acceptance criteria and/or is headed
-     in the right direction. 
-   - If more work is needed, it moves back to the `📐 Design` state.
-   - If the design is approved, it moves to the `🧮 Estimate` state.
- - `🧮 Estimate` - items that need a rough sizing to be added.
-   - Sizings are applied on a scale of 1, 2, 3, 5, 8, 13 (Fibonaci FTW) using labels.
-   - Once sized, it is moved to the `✅ Ready` state.
- - `✅ Ready` - items that have been sufficiently designed, and sized, to allow them
-   to be considered for assigning to a milestone
+ - 'No Status' This is where all new items initially land so that they can be appropriately triaged and assigned by the PO and CTO
+ - 'Long' This is the long term horizon, items that we know we will want to do one day but at the moment are long term goals, typically this could be 12 months away or more.
+ - 'Medium' These are items that are in the 6-12 month time frame. 
+ - 'Short' These are items in the 3-6 month time frame, Often these items will get pulled into a milestone from this point depending on capacity.
+ - 'Next' These are items which we should be targeting for the next milestone to be planned, We plan milestones 2-3 iterations ahead so this timeframe will typically be 2-3 months. 
+ - 'Ready' This is for items which could be developed today but for various reasons have not been added to a milestone, often this will be items which have been descoped from a previous milestone but could be picked up if there is spare development capacity.
 
+Once an Item is assigned to a milestone it will be removed from the Product Board and added to the Development board, with appropriate iterations allocated for design and development.
+Largely the position within the individual column is irrelevant, it may be used to aid in reviews or groupings but does not indicate any priority.
 
 A weekly review is held to keep the backlog in order - triaging new items that
 have been raised and not yet added to the backlog, reflecting on changing priorities
