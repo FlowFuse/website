@@ -83,6 +83,7 @@ Items on this board are put into one of the following states to indicate their p
  - 'Next' These are items which we should be targeting for the next milestone to be planned, We plan milestones 2-3 iterations ahead so this timeframe will typically be 2-3 months. 
  - 'Ready' This is for items which could be developed today but for various reasons have not been added to a milestone, often this will be items which have been descoped from a previous milestone but could be picked up if there is spare development capacity.
 
+As items move up the list and get closer to Next we should have a greater understanding of what the detail and demand is for that feature, This is an iterative approach and as we gain understanding on an item we will use that information to aid in reviewing its position on the board.
 Once an Item is assigned to a milestone it will be removed from the Product Board and added to the Development board, with appropriate iterations allocated for design and development.
 Largely the position within the individual column is irrelevant, it may be used to aid in reviews or groupings but does not indicate any priority.
 
