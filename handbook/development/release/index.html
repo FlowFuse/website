@@ -69,7 +69,7 @@
         <div class="flex-grow order-last md:order-first">
             <div class="mt-6 mb-4 prose prose-blue main-content">
                 <h1 id="release-process" tabindex="-1"><a class="header-anchor" href="#release-process">#&nbsp;</a> Release Process</h1>
-<p>There's two processes, one for major/minor point releases. The second for patch
+<p>There are two processes, one for major/minor point releases. The second for patch
 releases.</p>
 <h2 id="major%2Fminor-point-releases" tabindex="-1"><a class="header-anchor" href="#major%2Fminor-point-releases">#&nbsp;</a> Major/minor point releases</h2>
 <h3 id="setup" tabindex="-1"><a class="header-anchor" href="#setup">#&nbsp;</a> Setup</h3>
@@ -85,6 +85,19 @@ releases.</p>
 </ul>
 </li>
 <li>Ensure you're machine is authenticated with the GitHub client: <code>gh auth login</code></li>
+</ul>
+<h3 id="unmanaged-repositories" tabindex="-1"><a class="header-anchor" href="#unmanaged-repositories">#&nbsp;</a> Unmanaged Repositories</h3>
+<p>Not all repositories are covered by the release automation and must be published
+separately. This is typically done by the development team in the build up to the
+full release.</p>
+<p>The Release Manager should verify the following repositories are up to date and
+have been published as needed.</p>
+<ul>
+<li><code>flowforge/usage-ping-collector</code></li>
+<li><code>flowforge/forge-ui-components</code></li>
+<li><code>flowforge/flowforge-device-agent</code></li>
+<li><code>flowforge/flowforge-nr-theme</code></li>
+<li><code>flowforge/flowforge-nr-project-nodes</code></li>
 </ul>
 <h3 id="steps" tabindex="-1"><a class="header-anchor" href="#steps">#&nbsp;</a> Steps</h3>
 <ul>
@@ -161,7 +174,7 @@ to cherry pick into <code>X.Y-maint</code></li>
             <h3 class="font-medium border-b pb-1 mb-4">On this page</h3>
             <ul id="toc" class="text-sm border-b mb-4"></ul>
             <div class="text-sm pb-1 text-right mb-4"><a href="https://github.com/flowforge/handbook/edit/main/development/release.md">Edit this page</a></div>
-            <div class="text-xs pb-1 text-right mb-4 italic">Updated: 2022-08-05 13:57:13 +0100</div>
+            <div class="text-xs pb-1 text-right mb-4 italic">Updated: 2022-08-09 14:56:02 +0200</div>
         </div>
     </div>
 </div>
