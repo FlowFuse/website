@@ -1,6 +1,6 @@
 # Release Process
 
-There's two processes, one for major/minor point releases. The second for patch
+There are two processes, one for major/minor point releases. The second for patch
 releases.
 
 ## Major/minor point releases
@@ -15,6 +15,22 @@ releases.
     - [jq](https://stedolan.github.io/jq/download/)
     - [yq](https://mikefarah.gitbook.io/yq/#install)
  - Ensure you're machine is authenticated with the GitHub client: `gh auth login`
+
+
+### Unmanaged Repositories
+
+Not all repositories are covered by the release automation and must be published
+separately. This is typically done by the development team in the build up to the
+full release.
+
+The Release Manager should verify the following repositories are up to date and
+have been published as needed.
+
+ - `flowforge/usage-ping-collector`
+ - `flowforge/forge-ui-components`
+ - `flowforge/flowforge-device-agent`
+ - `flowforge/flowforge-nr-theme`
+ - `flowforge/flowforge-nr-project-nodes`
 
 ### Steps
 
