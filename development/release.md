@@ -32,6 +32,7 @@ have been published as needed.
  - `flowforge/flowforge-nr-theme`
  - `flowforge/flowforge-nr-project-nodes`
 
+See the process for releasing to these further down the page.
 ### Steps
 
  - Checkout the `flowforge/admin` repository if you do not already have it.
@@ -87,3 +88,13 @@ to cherry pick into `X.Y-maint`
 1. Once merged, checkout `X.Y-maint` and tag using `git tag v0.X.Y -m "<One line description of this release>"
 1. Push the tag to the GitHub repository, and create a corresponding GitHub release
 1. Create two change request issues, one for staging and one for production to upgrade to the latest version
+
+### Unmanaged Releases
+
+The unmanaged repoisitories listed above have a simpler release process.
+
+1. Make announcement in #dev so team is aware
+1. Check that all changes have been merged to main
+1. Update package.json version number
+1. Tag new release in GitHub with the appropriate verison number eg `v0.1.1` and add some description of changes
+1. The GitHub Action will take care of publishing to NPM, check the actions to ensure it completes.
