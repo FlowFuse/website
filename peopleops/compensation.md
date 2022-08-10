@@ -28,9 +28,13 @@ FlowForge offers equity for all roles depending on the same variables that decid
 salary, except your location. Equity is offered as stock options, which upon
 execution will be transformed in the underlying stock. Stock compensation are
 awarded on a 4 year vesting schedule with a 1 year cliff. Equity compensation
-will not vary based on employee location.
+will not vary based on employee location. Equity is only increased on employee
+promotions.
 
-Equity is only increased on employee promotions.
+Employees might be taxed personally when accepting or executing stock options.
+FlowForge does not provide any advice on financial decisions for employees. For
+FlowForge employees the Fair Market Value of the underlying stock can be found
+in [this internal document](https://docs.google.com/document/d/1_DmqzQ5rmjYHlBvF5owJpj3JVR_BlJUg_S-pwfRtA5g).
 
 ## Benefits
 
