@@ -93,6 +93,7 @@ to cherry pick into `X.Y-maint`
 
 The unmanaged repoisitories listed above have a simpler release process.
 
+1. Make announcement in #dev so team is aware
 1. Check that all changes have been merged to main
 1. Update package.json version number
 1. Tag new release in GitHub with the appropriate verison number eg `v0.1.1` and add some description of changes
