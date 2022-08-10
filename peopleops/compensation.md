@@ -15,8 +15,8 @@ your local currency unless explicitly discussed otherwise.
 
 Salary can be increased twice a year. In September, a performance adjustment is
 done. Performance review is based on [our values](../company#values), and
-meeting role expectations. A review is held by the CEO and CTO and each employee
-will write 2 to 3 paragraphs of text on what has gone will this year and where
+meeting role expectations. A review is held by the CEO and CTO for each employee.
+They will write 2 to 3 paragraphs of text on what has gone well this year and where
 the employee can still grow. This text is shared with each individual employee.
 Compensation increase is expected to be between 0 and 5 percent for October
 onwards.
