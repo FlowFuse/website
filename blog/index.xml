@@ -3,8 +3,32 @@
     <title>FlowForge</title>
     <link href="https://flowforge.com/blog/index.xml" rel="self"/>
     <link href="https://flowforge.com/blog"/>
-    <updated>2022-08-04T12:00:00Z</updated>
+    <updated>2022-08-11T00:00:00Z</updated>
     <id>https://flowforge.com/blog</id>
+    
+    <entry>
+        <id>https://flowforge.com/blog/2022/08/community-news-06/</id>
+        <title>Community News</title>
+        <summary>News from the FlowForge and Node-RED communities</summary>
+        <updated>2022-08-11T00:00:00Z</updated>
+        <link href="https://flowforge.com/blog/2022/08/community-news-06/"/>
+        <author><name>Sam Machin</name></author>
+        <content type="html">&lt;p&gt;Welcome to the FlowForge newsletter, a regular roundup of what`s happening with both FlowForge and the wider Node-RED community.&lt;/p&gt;
+&lt;!--more--&gt;
+&lt;p&gt;If you&#39;ve got something that you&#39;d like us to share please email &lt;a href=&quot;mailto:contact@flowforge.com&quot;&gt;contact@flowforge.com&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://flowforge.com/blog/2022/08/flowforge-08-released/&quot;&gt;FlowForge 0.8 &lt;/a&gt;&lt;br /&gt;
+Version 0.8 was released, notable features include the new Project Link nodes for sharing data between projects, and the ability to stop and start flows within Node-RED.
+We&#39;ve updated the format of our release posts as well to detail all the user facing changes, from new Features through to small improvements and bugs.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://www.tomshardware.com/how-to/raspberry-pi-pico-w-node-red&quot;&gt;Raspberry Pi Pico with Node-RED&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&quot;https://twitter.com/biglesp&quot;&gt;Les Pounder&lt;/a&gt; Has published a great tutorial on communicating with the new &lt;a href=&quot;https://www.raspberrypi.com/products/raspberry-pi-pico/&quot;&gt;Raspberry Pi Pico W&lt;/a&gt; and Node-RED. He shows you how to capture data from an environmental sensor then display this on a dashboard.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://flowforge.com/blog/2022/07/new-projecttype/&quot;&gt;Medium Projects&lt;/a&gt;&lt;br /&gt;
+We&#39;ve added a second size of project to FlowForge Cloud. A bigger project type with more resources available to it.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://blog.golioth.io/how-to-use-node-red-to-control-iot-devices-on-golioth/&quot;&gt;Using Node-RED to control IoT Devices on Golioth&lt;/a&gt;&lt;br /&gt;
+Our friends at &lt;a href=&quot;https://golioth.io/&quot;&gt;Golioth&lt;/a&gt; have published an article on how to use Node-RED to control and process data from IoT Devices connected to their platform.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://discourse.nodered.org/t/node-red-2-2-3-and-3-0-2-released/66018&quot;&gt;Node-RED 3.0.2 and 2.2.3&lt;/a&gt;&lt;br /&gt;
+Node-RED 3.0.2 has been released fixing some bugs in the 3.0.0 release, The Node-RED 2.x stream has also had a maintenance release with many of the fixes in 3.0 back-ported. As usual these are already available as stacks on FlowForge Cloud.&lt;/p&gt;
+</content>
+    </entry>
     
     <entry>
         <id>https://flowforge.com/blog/2022/08/flowforge-08-released/</id>
