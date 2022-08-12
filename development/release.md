@@ -96,5 +96,10 @@ The unmanaged repoisitories listed above have a simpler release process.
 1. Make announcement in #dev so team is aware
 1. Check that all changes have been merged to main
 1. Update package.json version number
-1. Tag new release in GitHub with the appropriate verison number eg `v0.1.1` and add some description of changes
-1. The GitHub Action will take care of publishing to NPM, check the actions to ensure it completes.
+1. Run the `generate-changelog` script from `flowforge/admin` repository. This
+   generates a list of the PRs merged since the last tagged release. Note: this
+   script require the `gh` cli to be installed and logged in.
+   Update CHANGELOG.md with the output of the script.
+1. Open a new PR to merge the package.json and CHANGELOG.md changes - get it merged
+1. Tag new release in GitHub with the appropriate verison number eg `v0.1.1`. Copy the CHANGELOG update into the description.
+1. Once the release is created, the GitHub Action will take care of publishing to NPM. Check the action to ensure it completes.
