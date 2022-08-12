@@ -65,11 +65,12 @@ Pro-tips:
 Weekly a meeting is held to announce company wide updates, get to know each
 other, and share things you want to share both professionally and personally.
 
-Announcements should be written down in the agenda as participation is not
-required. Reading the agenda the day after the meeting should be enough to stay
-in the loop on company updates. Announcements and work related topics are
-timeboxed to the first 15 minutes of the meeting to allow plenty time to talk
-about other topics.
+The meeting starts with announcements and reporting on [key metrics](../company/strategy.md#key-metrics)
+These should be written down in the agenda as participation is not required.
+Reading the agenda the day after the meeting should be enough to stay in the
+loop on company updates. Announcements and work related topics are timeboxed to
+the first 15 minutes of the meeting to allow plenty time to talk about other
+topics.
 
 Personal updates don't have to be documented in the agenda, but please do keep a
 list of names in the agenda so everyone gets the opportunity to share.
