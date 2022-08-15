@@ -128,12 +128,12 @@ As we build more FlowForge specific nodes we will need to add these to the Stack
 
 #### Localfs
 
-Currently bundled packages for the localfs driver need to be added to the [flowforge-nr-launcher](https://github.com/flowforge/flowforge-nr-launcher) `package.json`. And path to the node needs to be added to the `nodesDir` array in the `lib/lancher.js` file (arround line 70). This will be updated in the next release to be controlled by the [flowforge-driver-localfs](https://github.com/flowforge/flowforge-driver-localfs) project
+Currently bundled packages for the localfs driver need to be added to the [flowforge-nr-launcher](https://github.com/flowforge/flowforge-nr-launcher) `package.json`  and the path to the node needs to be added to the `nodesDir` array in the `lib/lancher.js` file (around line 70). This will be updated in the next release to be controlled by the [flowforge-driver-localfs](https://github.com/flowforge/flowforge-driver-localfs) project
 
 #### Docker
 
-Any nodes or theams should be added to the `package.json` in `node-red-container/` directory of the [docker-compose](https://github.com/flowforge/docker-compose) project
+Any nodes or themes should be added to the `package.json` in `node-red-container/` directory of the [docker-compose](https://github.com/flowforge/docker-compose) project
 
 #### K8s
 
-Any nodes or theams should be added to the `package.json` in `node-red-container/` directory of the [helm](https://github.com/flowforge/helm) project
+Any nodes or themes should be added to the `package.json` in `node-red-container/` directory of the [helm](https://github.com/flowforge/helm) project
