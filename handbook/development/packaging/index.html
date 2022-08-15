@@ -68,7 +68,7 @@
     <div class="w-full mx-auto ff-bg-light flex flex-col md:flex-row">
         <div class="flex-grow order-last md:order-first">
             <div class="mt-6 mb-4 prose prose-blue main-content">
-                <p>Flow Forge Packaging Guidelines</p>
+                <p>FlowForge Packaging Guidelines</p>
 <h2 id="github-projects" tabindex="-1"><a class="header-anchor" href="#github-projects">#&nbsp;</a> Github projects</h2>
 <h3 id="naming" tabindex="-1"><a class="header-anchor" href="#naming">#&nbsp;</a> Naming</h3>
 <ul>
@@ -96,9 +96,18 @@ this would be in the <code>#gh-flowforge</code> channel.</p>
 </code></pre>
 <p>This will subscribe to any notifications covering: <code>issues</code>, <code>pulls</code>, <code>commits</code>, <code>releases</code>, <code>deployments</code> and <code>comments</code></p>
 <h3 id="workflows" tabindex="-1"><a class="header-anchor" href="#workflows">#&nbsp;</a> Workflows</h3>
+<h4 id="project-automation" tabindex="-1"><a class="header-anchor" href="#project-automation">#&nbsp;</a> Project Automation</h4>
 <p>All code repositories must have the Project Automation workflow added. This is done
 by adding <a href="https://github.com/flowforge/flowforge/blob/main/.github/workflows/project-automation.yml"><code>.github/workflows/project-automation.yml</code></a>.
 This workflow will ensure any opened issues are automatically added to the <a href="https://github.com/orgs/flowforge/projects/3">Product board</a> where it can be triaged and prioritised.</p>
+<h4 id="release-publish" tabindex="-1"><a class="header-anchor" href="#release-publish">#&nbsp;</a> Release Publish</h4>
+<p>For any repositories that contain modules to be published to npm, they should also
+have a copy of <a href="https://github.com/flowforge/flowforge/blob/main/.github/workflows/release-publish.yml"><code>.github/workflows/release-publish.yml</code></a>.</p>
+<p>This workflow will publish to npm whenever the repository is tagged with a <code>vX.Y.Z</code> format
+tag.</p>
+<p>Note that each repository may have slightly different pre-publish requirements - for
+example if there is a build step or not. You may need to customise the workflow
+to match what is needed.</p>
 <h4 id="private-repositories" tabindex="-1"><a class="header-anchor" href="#private-repositories">#&nbsp;</a> Private Repositories</h4>
 <p>For <em>private</em> repositories, you will also need to add a Repository Secret as
 they cannot access the organisation-wide secret we have in place.</p>
@@ -176,7 +185,7 @@ with the name <code>PROJECT_ACCESS_TOKEN</code></p>
             <h3 class="font-medium border-b pb-1 mb-4">On this page</h3>
             <ul id="toc" class="text-sm border-b mb-4"></ul>
             <div class="text-sm pb-1 text-right mb-4"><a href="https://github.com/flowforge/handbook/edit/main/development/packaging.md">Edit this page</a></div>
-            <div class="text-xs pb-1 text-right mb-4 italic">Updated: 2022-08-12 15:54:41 +0100</div>
+            <div class="text-xs pb-1 text-right mb-4 italic">Updated: 2022-08-15 09:37:57 +0100</div>
         </div>
     </div>
 </div>
