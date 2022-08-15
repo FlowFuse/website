@@ -1,4 +1,4 @@
-Flow Forge Packaging Guidelines
+FlowForge Packaging Guidelines
 
 ## Github projects
 
@@ -40,9 +40,23 @@ This will subscribe to any notifications covering: `issues`, `pulls`, `commits`,
 
 ### Workflows
 
+#### Project Automation
+
 All code repositories must have the Project Automation workflow added. This is done
 by adding [`.github/workflows/project-automation.yml`](https://github.com/flowforge/flowforge/blob/main/.github/workflows/project-automation.yml).
 This workflow will ensure any opened issues are automatically added to the [Product board](https://github.com/orgs/flowforge/projects/3) where it can be triaged and prioritised.
+
+#### Release Publish
+
+For any repositories that contain modules to be published to npm, they should also
+have a copy of [`.github/workflows/release-publish.yml`](https://github.com/flowforge/flowforge/blob/main/.github/workflows/release-publish.yml).
+
+This workflow will publish to npm whenever the repository is tagged with a `vX.Y.Z` format
+tag.
+
+Note that each repository may have slightly different pre-publish requirements - for
+example if there is a build step or not. You may need to customise the workflow
+to match what is needed.
 
 #### Private Repositories
 
