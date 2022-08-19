@@ -39,7 +39,7 @@ Node-RED 3.0.2 has been released fixing some bugs in the 3.0.0 release, The Node
         <author><name>Sam Machin</name></author>
         <content type="html">&lt;p&gt;Easily pass messages between your projects on the cloud or devices, UX improvements, and more.&lt;/p&gt;
 &lt;!--more--&gt;
-&lt;p&gt;Keep reading for  the details of whats in this release our you can watch our 1 min roundup video of the new release above.&lt;/p&gt;
+&lt;p&gt;Keep reading for  the details of whats in this release our you can watch our 1 minute roundup video of the new release above.&lt;/p&gt;
 &lt;p&gt;We&#39;re pleased to announce version 0.8 is now available. The next release of the FlowForge application containing new features, a number of improvements, and bug fixes.&lt;/p&gt;
 &lt;h2 id=&quot;features&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://flowforge.com/blog/2022/08/flowforge-08-released/#features&quot;&gt;#&amp;nbsp;&lt;/a&gt; Features&lt;/h2&gt;
 &lt;p&gt;&lt;a href=&quot;https://github.com/flowforge/flowforge/issues/662&quot;&gt;Project Link Nodes&lt;/a&gt;
@@ -77,8 +77,8 @@ If you are a member of multiple teams you can now set your preferred default sav
 &lt;h2 id=&quot;contributors&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://flowforge.com/blog/2022/08/flowforge-08-released/#contributors&quot;&gt;#&amp;nbsp;&lt;/a&gt; Contributors&lt;/h2&gt;
 &lt;p&gt;We&#39;d like the thank the following for their contributions to this release:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/HaroldPetersInskipp&quot;&gt;HaroldPetersInskipp&lt;/a&gt; made their first contribution in https://github.com/flowforge/flowforge/pull/812&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/Steveorevo&quot;&gt;Steveorevo&lt;/a&gt; made their first contribution in https://github.com/flowforge/flowforge/pull/818&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/HaroldPetersInskipp&quot;&gt;HaroldPetersInskipp&lt;/a&gt; helped &lt;a href=&quot;https://github.com/flowforge/flowforge/pull/812&quot;&gt;updating our documentation&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/Steveorevo&quot;&gt;Steveorevo&lt;/a&gt; also &lt;a href=&quot;https://github.com/flowforge/flowforge/pull/818&quot;&gt;updated our documentation&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;As an open-source project, we welcome the community involvement in what we&#39;re building. If you&#39;re interested in contributing, checkout our &lt;a href=&quot;https://flowforge.com/docs/contribute/&quot;&gt;guide in the docs&lt;/a&gt;.&lt;/p&gt;
 &lt;h3 id=&quot;upgrading-flowforge&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://flowforge.com/blog/2022/08/flowforge-08-released/#upgrading-flowforge&quot;&gt;#&amp;nbsp;&lt;/a&gt; Upgrading FlowForge&lt;/h3&gt;
