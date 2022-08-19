@@ -11,7 +11,7 @@ Easily pass messages between your projects on the cloud or devices, UX improveme
 
 <!--more-->
 
-Keep reading for  the details of whats in this release our you can watch our 1 min roundup video of the new release above. 
+Keep reading for  the details of whats in this release our you can watch our 1 minute roundup video of the new release above. 
 
 We're pleased to announce version 0.8 is now available. The next release of the FlowForge application containing new features, a number of improvements, and bug fixes.
 
@@ -54,8 +54,8 @@ We've fixed the following bugs in this release.
 ## Contributors
 We'd like the thank the following for their contributions to this release:
 
-  - [HaroldPetersInskipp](https://github.com/HaroldPetersInskipp) made their first contribution in https://github.com/flowforge/flowforge/pull/812
- - [Steveorevo](https://github.com/Steveorevo) made their first contribution in https://github.com/flowforge/flowforge/pull/818
+ - [HaroldPetersInskipp](https://github.com/HaroldPetersInskipp) helped [updating our documentation](https://github.com/flowforge/flowforge/pull/812)
+ - [Steveorevo](https://github.com/Steveorevo) also [updated our documentation](https://github.com/flowforge/flowforge/pull/818)
 
 As an open-source project, we welcome the community involvement in what we're building. If you're interested in contributing, checkout our [guide in the docs](https://flowforge.com/docs/contribute/).
 
