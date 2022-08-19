@@ -43,7 +43,7 @@
 }
 
 .nohero a {
-    color: theme(colors.teal.700);
+    color: theme(colors.blue.600);
 }
 
 .nohero strong {
