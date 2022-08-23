@@ -11,6 +11,10 @@ Not yet written
 
 ## E2E Integration Tests
 
+### Foreword
+*When running e2e tests locally, the NPM scripts are in the `flowforge` package.*
+*Be sure to `cd` to `flowforge` before attempting to run them*
+
 ### Running Locally
 
 To run the E2E tests yourself, we need to first run our own local web server that the tests will run on. For our testing, we have a single server configured with multiple users, teams and projects for testing purposes. To run this, open a terminal and run:
