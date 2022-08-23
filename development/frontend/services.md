@@ -32,13 +32,13 @@ The Dialog service should be used when user confirmation is required, after an a
 import Dialog from '@services/dialog'
 
 /*
- * msg - {
- *     header: '<header title>',
- *     kind: (optional) 'danger',
- *     text: 'show this message in the dialog',
- *     html: 'instead of "text", you can provide html for more custom appearance and content',
- *     confirmLabel: '<confirm-label>'
- * }
+ * msg      - {
+ *               header: '<header title>',
+ *               kind: 'danger` | `primary` | `secondary` | `tertiary',  (default = 'primary') 
+ *               text: 'show this message in the dialog',
+ *               html: 'instead of "text", you can provide html for more custom appearance and content',
+ *               confirmLabel: '<confirm-label>'
+ *            }
  * callback - function to run when the user confirms the dialog
  */
 Dialog.show(msg, callback)
