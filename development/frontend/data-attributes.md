@@ -30,7 +30,7 @@ Used to identify buttons that do not navigate, but instead complete an action. T
 ```  
 
 ### data-el
-A catch all for evertything else, an element that we're likely going to want to capture, but doesn't fit into any of the other categories, e.g.,
+A catch all for everything else, an element that we're likely going to want to capture, but doesn't fit into any of the other categories, e.g.,
 
 ```html
 <ff-data-table data-el="templates">...</ff-data-table>
