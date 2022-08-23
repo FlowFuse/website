@@ -13,7 +13,7 @@ users. This enables everyone to get the most out of FlowForge. FlowForge.com
 should always run the default configuration if possible to ensure the best
 experience across the board.
 
-This does not mean that we don't allow users to change settings where appropriate, setting sensible defaults means that we don't require users to make selections or enter information where at all possible, we use placeholders or generate a default value for fields, we ensure that dropdowns have the sensible default as the already selected option. 
+Setting sensible defaults means that we don't *require* users to make selections or enter information where at all possible, we use placeholders or generate a default value for fields, we ensure that dropdowns have the sensible default as the already selected option. However we do still allow users to change settings where there is value in having a choice.
 
 See also: [Convention over Configuration on Wikipedia](https://en.wikipedia.org/wiki/Convention_over_configuration).
 
