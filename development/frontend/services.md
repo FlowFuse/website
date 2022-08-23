@@ -4,7 +4,7 @@ The frontend contains two helper services that can be called anywhere in the UI.
 <video width="500" controls>
   <source src="../../videos/ui-services-demo.mp4" type="video/mp4">
 </video>
-Here we see an example of a `Dialog` being used to confirmd deletion of a snapshot, followed by confirmation of the deletion via an `Alert`.
+Here we see an example of a `Dialog` being used to confirmed deletion of a snapshot, followed by confirmation of the deletion via an `Alert`.
 
 ### Alerts
 Alerts should be used to reinforce the completion of an action, or to alert a user that something has gone wrong.
