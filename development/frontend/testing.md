@@ -17,7 +17,9 @@ Not yet written
 
 ### Running Locally
 
-To run the E2E tests yourself, we need to first run our own local web server that the tests will run on. For our testing, we have a single server configured with multiple users, teams and projects for testing purposes. To run this, open a terminal and run:
+To run the E2E tests yourself, we need to first run our own local web server that the tests will run on.
+For our testing purposes, we have a single server configured with multiple users, teams and projects.
+To run this, open a terminal and run:
 
 ```bash
 npm run cy:web-server
