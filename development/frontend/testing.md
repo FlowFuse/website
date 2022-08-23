@@ -33,7 +33,10 @@ Once this is up and running, you then have two options:
 npm run cy:run
 ```
 
-Simply run, in a terminal, all of the front-end E2E tests and displays the results. If you just want to run all the tests, and aren't necessarily developing your own, this is the command to run.
+
+This will execute all of the front-end E2E tests in the terminal and display the results. 
+Typically, this is the command to run if you simply want to run all of the tests
+When developing/debugging tests, opening the Cypress Application will likely be more useful.
 
 
 #### Run Tests via Cypress Application
