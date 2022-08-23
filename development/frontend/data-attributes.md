@@ -23,7 +23,7 @@ Identify particular form elements like text-input, textarea of dropdowns using t
 ```
 
 ### data-action
-Used to idenitfy buttons that do not navigate, but instead complete an action. This could include submitting a form, or opening a dialog, e.g.,
+Used to identify buttons that do not navigate, but instead complete an action. This could include submitting a form, or opening a dialog, e.g.,
 
 ```html
 <ff-button data-action="delete-project" kind="danger" @click="deleteProject()"></ff-button>
