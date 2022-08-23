@@ -67,7 +67,8 @@ This will log you into FlowForge as the given user. The test users are defined i
 ```js
 cy.home()
 ```
-Recommended to call this for every test you do that requires a login too. It navigates the test to the homepage of the application, but most importantly contains several `cy.wait()` calls to make sure the relevant API calls have completed before continuing.
+This will navigate the test to the homepage of the application, but more importantly it contains several `cy.wait()` calls to make sure the relevant API calls have completed before continuing.
+It is recommended that you call this for every test that requires a login. 
 
 #### Selecting Elements & Actions
 
