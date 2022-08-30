@@ -62,36 +62,45 @@
     <div class="w-full mx-auto ff-bg-light">
         <div class="font-medium border-b pb-1">
             
-            /<a class="mx-2" href="/handbook">handbook</a>/<a class="mx-2" href="/handbook/development">development</a>/<a class="mx-2" href="/handbook/development/staging">staging</a>
+            /<a class="mx-2" href="/handbook">handbook</a>/<a class="mx-2" href="/handbook/product">product</a>/<a class="mx-2" href="/handbook/product/verticals">verticals</a>
         </div>
     </div>
     <div class="w-full mx-auto ff-bg-light flex flex-col md:flex-row">
         <div class="flex-grow order-last md:order-first">
             <div class="mt-6 mb-4 prose prose-blue main-content">
-                <h1 id="staging-environment" tabindex="-1"><a class="header-anchor" href="#staging-environment">#&nbsp;</a> Staging Environment</h1>
-<p>We have a staging environment running on AWS which is a scaled down replica of
-FlowForge Cloud, with a separate domain. Staging URL and sign in details can be
-found in the Developer Vault in 1Password.</p>
-<h2 id="aws-account" tabindex="-1"><a class="header-anchor" href="#aws-account">#&nbsp;</a> AWS Account</h2>
-<p>It uses a separate AWS account ending in ..9937</p>
-<p>Ben or ZJ can provision a user account for this account.</p>
-<p>The services are running in EU-West-1.</p>
-<h2 id="nodes" tabindex="-1"><a class="header-anchor" href="#nodes">#&nbsp;</a> Nodes</h2>
-<p>The staging environment uses one node running on a t2.small for the management app and a pair of t2.small nodes for the projects cluster.</p>
-<p>t2.small is the smallest instance that can be used with EKS.</p>
-<h2 id="email" tabindex="-1"><a class="header-anchor" href="#email">#&nbsp;</a> Email</h2>
-<p>Amazon SES is setup on staging however it is still running in sandbox mode which means only verified address &amp; domains can RECEIVE emails from it, this is currently limited to flowforge.com email addresses.</p>
-<p>There is no intention to move this from sandbox as this helps to limit access to staging.</p>
-<p>If you need to use another email address with staging then you should verify the address through SES in the AWS Console.</p>
-<h2 id="deployment" tabindex="-1"><a class="header-anchor" href="#deployment">#&nbsp;</a> Deployment</h2>
-<p>Currently there is no auto deployment to staging, this should be rectified in the future so that staging is running the code in the main branches  of the respective repos.</p>
+                <h1 id="product-verticals" tabindex="-1"><a class="header-anchor" href="#product-verticals">#&nbsp;</a> Product Verticals</h1>
+<h2 id="background" tabindex="-1"><a class="header-anchor" href="#background">#&nbsp;</a> Background</h2>
+<p>Node-RED is best used for connecting <em>things</em> together, and doing logic or manipulation of the data in that connection. Those things can be wide ranging from Web APIs using HTTP to physical hardware on serial connections.
+FlowForge competes in specific market verticals which allow us to optimize for certain use-cases.</p>
+<h2 id="digital-integration" tabindex="-1"><a class="header-anchor" href="#digital-integration">#&nbsp;</a> Digital Integration</h2>
+<p>Also known as IPaaS (Integration Platform as a Service) This market serves business users looking to integrate workflows across multiple different systems. Typically these are Cloud Hosted SaaS types of systems, usualy with some sort of Public API.
+There is also the scenario of integrating between cloud systems and internal company systems or data stores.</p>
+<p>Some of the companies that are in this market include:</p>
+<ul>
+<li>n8n.io</li>
+<li>Zapier</li>
+<li>IFTTT</li>
+<li>Dell Boomi</li>
+<li>OneReach.ai</li>
+<li>Microsoft Flow</li>
+<li>Workato</li>
+<li>Snap Logic</li>
+<li>tray.io</li>
+<li>Webmethods.io</li>
+<li>Mulesoft Anypoint</li>
+<li>Integromat</li>
+<li>UiPath</li>
+<li>HubSpot</li>
+</ul>
+<h3 id="market-size" tabindex="-1"><a class="header-anchor" href="#market-size">#&nbsp;</a> Market size</h3>
+<p>The marketsize has been reported to be <a href="https://www.marketwatch.com/press-release/ipaas-market-size-2022-in-depth-players-analysis-industry-trends-share-estimation-global-growth-regional-forecast-till-2030-2022-08-08">at least $1.4b in 2021</a>. Potentially growing to <a href="https://www.vynzresearch.com/ict-media/global-ipaas-market">$12.3b in 2027</a>.</p>
 
             </div>
         </div>
         <div class="w-full md:w-64 md:ml-8 mt-4 md:mt-6 px-2">
             <h3 class="font-medium border-b pb-1 mb-4">On this page</h3>
             <ul id="toc" class="text-sm border-b mb-4"></ul>
-            <div class="text-sm pb-1 text-right mb-4"><a href="https://github.com/flowforge/handbook/edit/main/development/staging.md">Edit this page</a></div>
+            <div class="text-sm pb-1 text-right mb-4"><a href="https://github.com/flowforge/handbook/edit/main/product/verticals.md">Edit this page</a></div>
             <div class="text-xs pb-1 text-right mb-4 italic">Updated: 2022-08-30 15:53:52 +0100</div>
         </div>
     </div>
