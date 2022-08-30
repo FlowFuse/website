@@ -8,12 +8,42 @@ Our [Company Strategy](../company/strategy.md) sets out 4 pillars that our produ
 
 #### Convention over configuration
 
-Default to picking sensible defaults to standardize the experience for customers and
-users. This enables everyone to get the most out of FlowForge. FlowForge.com
-should always run the default configuration if possible to ensure the best
-experience across the board.
+We want the default configuration of FlowForge to be the best user experience for
+the majority of users. 
 
-Setting sensible defaults means that we don't *require* users to make selections or enter information where at all possible. We use placeholders or generate a default value for fields, we ensure that dropdowns have the sensible default as the already selected option. However we do still allow users to change settings where there is value in having a choice.
+Every new option we add to the platform, whether for an administrator or end-user,
+represents another choice they have to deal with. This increases the cognitive burden
+of using the platform and can have a negative impact on user experience. It also
+increases the engineering cost to develop and test features where there are many
+possible combinations to consider.
+
+For every feature we add that has some scope for configuration, our starting point
+in the design is to **identify the right configuration and hard-code it in**.
+
+This removes the choice from users' hands and minds. It does not prevent us from
+choosing to make it more configurable in the future if user-feedback/business-needs
+requires it.
+
+Where there is a strong case to expose an option to the end user, it should still
+be provided with a sensible default value where possible that removes the need
+for the user to set it themselves. This gives users the ability to customise
+the option if/when they are ready to. But the default value should be the right
+answer for most users.
+
+Some configuration options cannot be defaulted - the user has to do make a choice.
+For example, setting up email on the platform. The UX around these options must
+be carefully considered to help the user get to the right choice with a minimum
+of effort.
+
+Node-RED provides a lot of configuration options. We should not assume they are all
+candidates to be exposed to FlowForge users. For example, options to customise the
+editor appearance should be reserved options that we determine the right values for
+to ensure a consistent user experience across FlowForge instances.
+
+Options that have an impact on the behaviour of flows will need to be considered
+on a case-by-case basis. But the starting point should always be to pick the right
+default and only expose to the user if absolutely necessary.
+
 
 See also: [Convention over Configuration on Wikipedia](https://en.wikipedia.org/wiki/Convention_over_configuration).
 
