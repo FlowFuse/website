@@ -7,7 +7,7 @@ authors: ["sam-machin"]
 video: BBNzFInc_2E
 ---
 
-Suspend your projects when you don't need them, forgot your username? login with your email instead, and introducing Team Types
+Suspend your projects when you don't need them, login with either your username or email, and introducing Team Types
 <!--more-->
 
 Keep reading for the details of whats in this release our you can watch our 1 minute roundup video of the new release above. 
