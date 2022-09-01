@@ -19,7 +19,8 @@ We're pleased to announce version 0.9 is now available. The next release of the 
 Sometimes you want to put a project to one side for a while, maybe your development has stalled or you're waiting on something external to be ready. Perhaps you don't need it to be running all the time. With the 0.9 release we've added the ability to suspend a project. Once suspended, your flows are safely stored in the platform database, but Node-RED isn't running and the project doesn't consume any resources. In FlowForge Cloud we do not charge you for suspended projects - you only pay when the project is running.
 Your project will be there ready to start back up when you need it with just one click.
 Remember that any context data or anything written to the filesystem will not persist through a restart or a suspend of a project.
-As a result of this change we've also removed the facility to stop a project, Stopping only halted the Node-RED process it didn't remove the resources so was of very limited value, as of Node-RED 3.0 you can stop the flows from executing while still being able to make changes which is a better experience.
+
+Alongside this change, we've removed the option to 'stop' a project. That option would only stop Node-RED, but the underlying container would still be running, consuming resources. With Node-RED 3.0 adding the ability to stop the flows, but still be able to edit them, that provides a much better user experience.
 You can still restart the Node-RED process from the Forge app as before for example when you have updated a package in your flows.
 
 [Team Types](https://github.com/flowforge/flowforge/issues/733)
