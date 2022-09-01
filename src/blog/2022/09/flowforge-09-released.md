@@ -24,7 +24,7 @@ Alongside this change, we've removed the option to 'stop' a project. That option
 You can still restart the Node-RED process from the Forge app as before for example when you have updated a package in your flows.
 
 [Team Types](https://github.com/flowforge/flowforge/issues/733)
-We've introduced another concept into the platform with this release. Team Types will allow us to offer more advanced features to teams on FlowForge Cloud, You won't see much difference in this release but it allows us to build on in future releases.
+We've introduced another concept into the platform with this release. Team Types will allow us to offer more advanced features to teams on FlowForge Cloud. You won't see much difference in this release but it allows us to build on in future releases.
 
 [PostHog Analytics](https://github.com/flowforge/flowforge/issues/695)
 We've changed the analytics tooling integrated into the platform. With this release, we've deprecated the use of Plausible Analytics as it didn't quite provide the sort of insight we wanted. We now integrate with [PostHog](https://posthog.com/). They share our ethos and approach to open source and self hosting - something you can take advantage of if you're running your own FlowForge platform.
