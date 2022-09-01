@@ -1,18 +1,18 @@
 ---
 title: FlowForge 0.9 released
-subtitle: Inter-Project Communication, Default Teams, and realtime device management.
-description: Inter-Project Communication, Default Teams, and realtime device management.
+subtitle: Suspended projects, login with email and Team Types
+description: Suspended projects, login with email and Team Types
 date: 2022-09-01 12:00:00.0
 authors: ["sam-machin"]
-video: nCe_qs0G6ZQ
+video: BBNzFInc_2E
 ---
 
-Suspend your projects, and introducing Team Types
+Suspend your projects when you don't need them, forgot your username? login with your email instead, and introducing Team Types
 <!--more-->
 
-Keep reading for  the details of whats in this release our you can watch our 1 minute roundup video of the new release above. 
+Keep reading for the details of whats in this release our you can watch our 1 minute roundup video of the new release above. 
 
-We're pleased to announce version 0.9 is now available. The next release of the FlowForge application containing new features, a number of improvements, and bug fixes.
+We're pleased to announce version 0.9 is now available. The next release of the FlowForge application containing new features, a number of improvements, and bug fixes. Keep reading for a promotion code to get your first month free on FlowForge Cloud. 
 
 ## Features
 [Suspend Projects](https://github.com/flowforge/flowforge/issues/893)
@@ -62,6 +62,11 @@ We'd like the thank the following for their contributions to this release:
 [Bonantech](https://github.com/bonanitech) for his work [cleaning up the theme CSS](https://github.com/flowforge/flowforge-nr-theme/commit/30e21a3777dc3438ef206157ee9110728011f59c)
 
 As an open-source project, we welcome the community involvement in what we're building. If you're interested in contributing, checkout our [guide in the docs](https://flowforge.com/docs/contribute/).
+
+
+### Try it out
+
+[Sign up for FlowForge Cloud](https://app.flowforge.com/account/create) and at the checkout enter the code **RELEASE09** to get your first project free for a month.
 
 ### Upgrading FlowForge
 
