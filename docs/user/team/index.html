@@ -62,7 +62,7 @@
     <div class="w-full mx-auto ff-bg-light">
         <div class="font-medium border-b pb-1">
             
-            v0.8.0
+            v0.9.0
             
             /<a class="mx-2" href="/docs">docs</a>/<a class="mx-2" href="/docs/user">user</a>/<a class="mx-2" href="/docs/user/team">team</a>
         </div>
@@ -89,10 +89,342 @@ user which expires in 7 days. Once accepted the user is added as &quot;Member&qu
 <h2 id="role-based-access-control" tabindex="-1"><a class="header-anchor" href="#role-based-access-control">#&nbsp;</a> Role based access control</h2>
 <p>Members can have 1 role for all projects in the team. Below there's a table to
 describe the different Roles apply for all projects in the team</p>
-<p>| Role | Manage team members | Create and Delete Projects | Update flows in Projects | Manage Devices | View Audit Log | Update and Delete Team | Manage Billing  |
-|---|---|---|---|---|
-| Owner  | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ |
-| Member | - | - | ✓ | ✓ | ✓ | - | - |</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Role</th>
+<th style="text-align:center">Owner</th>
+<th style="text-align:center">Member</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:left">Manage Billing</td>
+<td style="text-align:center">✓</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:left"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>Overview</strong></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:left">• View Projects</td>
+<td style="text-align:center">✓</td>
+<td style="text-align:center">✓</td>
+</tr>
+<tr>
+<td style="text-align:left">• Create Project</td>
+<td style="text-align:center">✓</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:left"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>Projects</strong></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:left">• View Projects</td>
+<td style="text-align:center">✓</td>
+<td style="text-align:center">✓</td>
+</tr>
+<tr>
+<td style="text-align:left">• Create Project</td>
+<td style="text-align:center">✓</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:left"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>Project</strong></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:left">• Actions Menu</td>
+<td style="text-align:center">✓</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:left">• Editor Link + Status</td>
+<td style="text-align:center">✓</td>
+<td style="text-align:center">✓</td>
+</tr>
+<tr>
+<td style="text-align:left">• Modifiy Flows</td>
+<td style="text-align:center">✓</td>
+<td style="text-align:center">✓</td>
+</tr>
+<tr>
+<td style="text-align:left"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>Selected Project</strong></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:left">• Overview</td>
+<td style="text-align:center">✓</td>
+<td style="text-align:center">✓</td>
+</tr>
+<tr>
+<td style="text-align:left">• Activity</td>
+<td style="text-align:center">✓</td>
+<td style="text-align:center">✓</td>
+</tr>
+<tr>
+<td style="text-align:left">• Snapshots...</td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:left">  • View Snapshots</td>
+<td style="text-align:center">✓</td>
+<td style="text-align:center">✓</td>
+</tr>
+<tr>
+<td style="text-align:left">  • Create Snapshot</td>
+<td style="text-align:center">✓</td>
+<td style="text-align:center">✓</td>
+</tr>
+<tr>
+<td style="text-align:left">  • Rollback</td>
+<td style="text-align:center">✓</td>
+<td style="text-align:center">✓</td>
+</tr>
+<tr>
+<td style="text-align:left">  • Set as Device Target</td>
+<td style="text-align:center">✓</td>
+<td style="text-align:center">✓</td>
+</tr>
+<tr>
+<td style="text-align:left">  • Delete Snapshot</td>
+<td style="text-align:center">✓</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:left">• Devices...</td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:left">  • View Devices</td>
+<td style="text-align:center">✓</td>
+<td style="text-align:center">✓</td>
+</tr>
+<tr>
+<td style="text-align:left">  • Register Device</td>
+<td style="text-align:center">✓</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:left">  • Device Row Menu</td>
+<td style="text-align:center">✓</td>
+<td style="text-align:center">✓</td>
+</tr>
+<tr>
+<td style="text-align:left">  • Device Row Menu &gt; delete device</td>
+<td style="text-align:center">✓</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:left">  • Device Overview</td>
+<td style="text-align:center">✓</td>
+<td style="text-align:center">✓</td>
+</tr>
+<tr>
+<td style="text-align:left">  • Device Settings...</td>
+<td style="text-align:center">✓</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:left">   • Edit Device</td>
+<td style="text-align:center">✓</td>
+<td style="text-align:center">✓</td>
+</tr>
+<tr>
+<td style="text-align:left">   • View Environment Variables</td>
+<td style="text-align:center">✓</td>
+<td style="text-align:center">✓</td>
+</tr>
+<tr>
+<td style="text-align:left">   • Edit Environment Variables</td>
+<td style="text-align:center">✓</td>
+<td style="text-align:center">✓</td>
+</tr>
+<tr>
+<td style="text-align:left">   • Delete Device</td>
+<td style="text-align:center">✓</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:left">• Logs</td>
+<td style="text-align:center">✓</td>
+<td style="text-align:center">✓</td>
+</tr>
+<tr>
+<td style="text-align:left">• Settings...</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:left">  • View General</td>
+<td style="text-align:center">✓</td>
+<td style="text-align:center">✓</td>
+</tr>
+<tr>
+<td style="text-align:left">  • View Environment Variables</td>
+<td style="text-align:center">✓</td>
+<td style="text-align:center">✓</td>
+</tr>
+<tr>
+<td style="text-align:left">  • Edit Environment Variables</td>
+<td style="text-align:center">✓</td>
+<td style="text-align:center">✓</td>
+</tr>
+<tr>
+<td style="text-align:left">  • View Other Settings</td>
+<td style="text-align:center">✓</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:left">  • Edit Other Settings</td>
+<td style="text-align:center">✓</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:left"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>Devices</strong></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:left">• View Devices</td>
+<td style="text-align:center">✓</td>
+<td style="text-align:center">✓</td>
+</tr>
+<tr>
+<td style="text-align:left">• Register Device</td>
+<td style="text-align:center">✓</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:left">• Device Row Menu</td>
+<td style="text-align:center">✓</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:left">• Device Overview</td>
+<td style="text-align:center">✓</td>
+<td style="text-align:center">✓</td>
+</tr>
+<tr>
+<td style="text-align:left">• Device Settings...</td>
+<td style="text-align:center">✓</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:left">  • General</td>
+<td style="text-align:center">✓</td>
+<td style="text-align:center">✓</td>
+</tr>
+<tr>
+<td style="text-align:left">  • Edit Device</td>
+<td style="text-align:center">✓</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:left">  • View Environment Variables</td>
+<td style="text-align:center">✓</td>
+<td style="text-align:center">✓</td>
+</tr>
+<tr>
+<td style="text-align:left">  • Edit Environment Variables</td>
+<td style="text-align:center">✓</td>
+<td style="text-align:center">✓</td>
+</tr>
+<tr>
+<td style="text-align:left">  • Delete Device</td>
+<td style="text-align:center">✓</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:left"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>Members</strong></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:left">• Invite</td>
+<td style="text-align:center">✓</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:left">• Member List Row Menu</td>
+<td style="text-align:center">✓</td>
+<td style="text-align:center">✓</td>
+</tr>
+<tr>
+<td style="text-align:left">  • Change Role</td>
+<td style="text-align:center">✓</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:left">  • Remove From Team</td>
+<td style="text-align:center">✓</td>
+<td style="text-align:center">✓</td>
+</tr>
+<tr>
+<td style="text-align:left">  • Remove Other from Team</td>
+<td style="text-align:center">✓</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:left"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>Audit Log</strong></td>
+<td style="text-align:center">✓</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>Team Settings</strong></td>
+<td style="text-align:center">✓</td>
+<td style="text-align:center">-</td>
+</tr>
+</tbody>
+</table>
 <h4 id="changing-roles" tabindex="-1"><a class="header-anchor" href="#changing-roles">#&nbsp;</a> Changing roles</h4>
 <p>Owners can change roles by selecting &quot;Change Role&quot; on the members tab of a team.
 The member selected will after submitting have a new role assigned with the new
@@ -104,7 +436,7 @@ authorization scheme.</p>
             <h3 class="font-medium border-b pb-1 mb-4">On this page</h3>
             <ul id="toc" class="text-sm border-b mb-4"></ul>
             <div class="text-sm pb-1 text-right mb-4"><a href="https://github.com/flowforge/flowforge/edit/main/docs/user/team/README.md">Edit this page</a></div>
-            <div class="text-xs pb-1 text-right mb-4 italic">Updated: 2022-08-04 14:01:29 +0200</div>
+            <div class="text-xs pb-1 text-right mb-4 italic">Updated: 2022-09-01 12:16:54 +0100</div>
         </div>
     </div>
 </div>

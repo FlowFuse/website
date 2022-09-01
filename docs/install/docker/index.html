@@ -62,7 +62,7 @@
     <div class="w-full mx-auto ff-bg-light">
         <div class="font-medium border-b pb-1">
             
-            v0.8.0
+            v0.9.0
             
             /<a class="mx-2" href="/docs">docs</a>/<a class="mx-2" href="/docs/install">install</a>/<a class="mx-2" href="/docs/install/docker">docker</a>
         </div>
@@ -129,7 +129,8 @@ set the correct domain name and make the same change to the <code>public_url</co
 </code></pre>
 <h3 id="ssl-(optional)" tabindex="-1"><a class="header-anchor" href="#ssl-(optional)">#&nbsp;</a> SSL (optional)</h3>
 <p>If you want to serve the forge app and projects via SSL you will need to obtain wildcard SSL certs for the domain you are using eg <code>*.example.com</code></p>
-<p>Create a folder in the <code>docker-compose-0.x.0</code> directory named <code>certs</code>, place your .crt and .key files in there, they should be named for the domain without the <code>*</code> eg <code>example.com.crt</code> &amp; <code>example.com.key</code></p>
+<p>Create a folder in the <code>docker-compose-0.x.0</code> directory named <code>certs</code>, place your .crt and .key files in there, they should be named for the domain without the <code>*</code> eg <code>example.com.crt</code> &amp; <code>example.com.key</code>
+You  also need to create a copy of the .crt and .key files named <code>default.crt</code> &amp; <code>default.key</code> in the same folder. This is used for serving unknown hosts.</p>
 <p>In the <code>docker-compose.yml</code> file,</p>
 <ul>
 <li>uncomment the line</li>
@@ -162,7 +163,7 @@ creating an administrator for the platform and other configuration options.</p>
             <h3 class="font-medium border-b pb-1 mb-4">On this page</h3>
             <ul id="toc" class="text-sm border-b mb-4"></ul>
             <div class="text-sm pb-1 text-right mb-4"><a href="https://github.com/flowforge/flowforge/edit/main/docs/install/docker/README.md">Edit this page</a></div>
-            <div class="text-xs pb-1 text-right mb-4 italic">Updated: 2022-08-04 14:01:29 +0200</div>
+            <div class="text-xs pb-1 text-right mb-4 italic">Updated: 2022-09-01 12:16:54 +0100</div>
         </div>
     </div>
 </div>

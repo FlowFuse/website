@@ -62,7 +62,7 @@
     <div class="w-full mx-auto ff-bg-light">
         <div class="font-medium border-b pb-1">
             
-            v0.8.0
+            v0.9.0
             
             /<a class="mx-2" href="/docs">docs</a>/<a class="mx-2" href="/docs/install">install</a>/<a class="mx-2" href="/docs/install/configuration">configuration</a>
         </div>
@@ -186,8 +186,12 @@ inviting new users to join.</p>
 <p>See <a href=".././email_providers"">here</a> for example configuration with common email providers.</p>
 <h2 id="telemetry-configuration" tabindex="-1"><a class="header-anchor" href="#telemetry-configuration">#&nbsp;</a> Telemetry configuration</h2>
 <p>By default, the platform will send anonymous usage information back to us at FlowForge Inc.
-This can be disabled via the Admin Settings in the UI, or turned off in the configuration file.</p>
-<p>Additionally, you can configure your own instance of FlowForge to report back to you on how users are using FlowForge. FlowForge is designed to work with <a href="https://plausible.io/">Plausible</a>. You can setup your own account, and pass the relevant domain to the <code>yml</code> in the telemetry configuration</p>
+This can be disabled via the Admin Settings in the UI, or turned off in the configuration file with the <code>telemetry.enabled</code> option.</p>
+<p>Additionally, you can configure your own instance of FlowForge to report back to you on how users are using your instance of FlowForge. FlowForge supports integration with two different services:</p>
+<ul>
+<li><a href="https://posthog.com/">PostHog</a> <em>(recommended)</em>: You will require your own API key to pass into the <code>yml</code>, which will begin the logging of user interactions.</li>
+<li><a href="https://plausible.io/">Plausible</a>: <em>(deprecated since 0.9 and will be removed in the future)</em>: You can setup your own account, and pass the relevant domain to the <code>yml</code> in the telemetry configuration</li>
+</ul>
 <p>For more information about this feature, see <a href="/docs/admin/telemetry"">here</a></p>
 <table>
 <thead>
@@ -202,12 +206,20 @@ This can be disabled via the Admin Settings in the UI, or turned off in the conf
 <td>Enables the anonymous usage telemetry of the platform. Default: <code>true</code></td>
 </tr>
 <tr>
+<td><code>telemetry.frontend.posthog.apikey</code></td>
+<td>The API key provided to you from your own PostHog account. Default: <code>null</code></td>
+</tr>
+<tr>
+<td><code>telemetry.frontend.posthog.capture_pageview</code></td>
+<td>FlowForge is designed as to provide custom posthog <code>$pageview</code> events that provide more detail on navigation than the default, and suit a single page application better. As such, we recommend setting this to false in order to prevent duplicate <code>pageleave</code>/<code>pageview</code> events firing. Default: <code>true</code></td>
+</tr>
+<tr>
 <td><code>telemetry.frontend.plausible.domain</code></td>
-<td>The <code>data-domain</code> of your site (see <a href="https://plausible.io/docs/plausible-script">Plausible docs</a>). Default: <code>null</code></td>
+<td><em>(deprecated)</em> The <code>data-domain</code> of your site (see <a href="https://plausible.io/docs/plausible-script">Plausible docs</a>). Default: <code>null</code></td>
 </tr>
 <tr>
 <td><code>telemetry.frontend.plausible.extension</code></td>
-<td>By default, Plausible only detects events running in a production environment, it is possible to enhance measurements with <a href="https://plausible.io/docs/script-extensions">script extensions</a>. You can, for example, detect localhost events using <code>local</code>. Default: <code>null</code></td>
+<td><em>(deprecated)</em>  By default, Plausible only detects events running in a production environment, it is possible to enhance measurements with <a href="https://plausible.io/docs/script-extensions">script extensions</a>. You can, for example, detect localhost events using <code>local</code>. Default: <code>null</code></td>
 </tr>
 </tbody>
 </table>
@@ -262,7 +274,7 @@ broker, but some features will not be available.</p>
             <h3 class="font-medium border-b pb-1 mb-4">On this page</h3>
             <ul id="toc" class="text-sm border-b mb-4"></ul>
             <div class="text-sm pb-1 text-right mb-4"><a href="https://github.com/flowforge/flowforge/edit/main/docs/install/configuration.md">Edit this page</a></div>
-            <div class="text-xs pb-1 text-right mb-4 italic">Updated: 2022-08-04 14:01:29 +0200</div>
+            <div class="text-xs pb-1 text-right mb-4 italic">Updated: 2022-09-01 12:16:54 +0100</div>
         </div>
     </div>
 </div>
