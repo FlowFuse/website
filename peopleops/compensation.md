@@ -51,6 +51,17 @@ offer location dependant benefits to ensure standards are met.
 
 - [Unlimited PTO](./index.md#vacation-policy)
 
+#### 1Password Family
+
+As bussines users of 1Password each team member gets a free 1Password Family
+account. You'll need to link your family, see also [their docs](https://support.1password.com/link-family/).
+
+#### Launch Lunch
+
+Each release is celebrated with a lunch. Team members that join a social Zoom
+call are encouraged to order a lunch. Lunch can be [expensed](./index.md#expenses)
+up to $25.
+
 ### United States
 
 FlowForge offers a health care package, including dental, for all US-based
