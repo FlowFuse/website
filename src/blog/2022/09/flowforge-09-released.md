@@ -27,7 +27,7 @@ We've introduced another concept into the platform with this release. Team Types
 
 [PostHog Analytics](https://github.com/flowforge/flowforge/issues/695)
 We've changed the analytics tooling integrated into the platform. With this release, we've deprecated the use of Plausible Analytics as it didn't quite provide the sort of insight we wanted. We now integrate with [PostHog](https://posthog.com/). They share our ethos and approach to open source and self hosting - something you can take advantage of if you're running your own FlowForge platform.
-For FlowForge Cloud users the data is sent to our PostHog account, but if you're running your own instance then it won't send analytics to us, you are free to configure your own PostHog service though to receive the data yourself.
+For FlowForge Cloud, the data is sent to our PostHog account so we can better understand how the platform is being used. If you're running your own instance, the information is only captured if you configure it with your own PostHog instance details - it does not send any data back to us.
 
 
 [Login with email](https://github.com/flowforge/flowforge/issues/856)
