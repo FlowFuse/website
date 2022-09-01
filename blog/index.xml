@@ -3,8 +3,72 @@
     <title>FlowForge</title>
     <link href="https://flowforge.com/blog/index.xml" rel="self"/>
     <link href="https://flowforge.com/blog"/>
-    <updated>2022-08-11T00:00:00Z</updated>
+    <updated>2022-09-01T12:00:00Z</updated>
     <id>https://flowforge.com/blog</id>
+    
+    <entry>
+        <id>https://flowforge.com/blog/2022/09/flowforge-09-released/</id>
+        <title>FlowForge 0.9 released</title>
+        <summary>Suspended projects, login with email and Team Types</summary>
+        <updated>2022-09-01T12:00:00Z</updated>
+        <link href="https://flowforge.com/blog/2022/09/flowforge-09-released/"/>
+        <author><name>Sam Machin</name></author>
+        <content type="html">&lt;p&gt;Suspend your projects when you don&#39;t need them, login with either your username or email, and introducing Team Types&lt;/p&gt;
+&lt;!--more--&gt;
+&lt;p&gt;Keep reading for the details of what&#39;s in this release our you can watch our 1 minute roundup video of the new release above.&lt;/p&gt;
+&lt;p&gt;We&#39;re pleased to announce version 0.9 is now available. The next release of the FlowForge application containing new features, a number of improvements, and bug fixes. Keep reading for a promotion code to get your first month free on FlowForge Cloud.&lt;/p&gt;
+&lt;h2 id=&quot;features&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://flowforge.com/blog/2022/09/flowforge-09-released/#features&quot;&gt;#&amp;nbsp;&lt;/a&gt; Features&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/flowforge/flowforge/issues/893&quot;&gt;Suspend Projects&lt;/a&gt;
+Sometimes you want to put a project to one side for a while, maybe your development has stalled or you&#39;re waiting on something external to be ready. Perhaps you don&#39;t need it to be running all the time. With the 0.9 release we&#39;ve added the ability to suspend a project. Once suspended, your flows are safely stored in the platform database, but Node-RED isn&#39;t running and the project doesn&#39;t consume any resources. In FlowForge Cloud we do not charge you for suspended projects - you only pay when the project is running.
+Your project will be there ready to start back up when you need it with just one click.
+Remember that any context data or anything written to the filesystem will not persist through a restart or a suspend of a project.&lt;/p&gt;
+&lt;p&gt;Alongside this change, we&#39;ve removed the option to &#39;stop&#39; a project. That option would only stop Node-RED, but the underlying container would still be running, consuming resources. With Node-RED 3.0 adding the ability to stop the flows, but still be able to edit them, that provides a much better user experience.
+You can still restart the Node-RED process from the Forge app as before for example when you have updated a package in your flows.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/flowforge/flowforge/issues/733&quot;&gt;Team Types&lt;/a&gt;
+We&#39;ve introduced another concept into the platform with this release. Team Types will allow us to offer more advanced features to teams on FlowForge Cloud. You won&#39;t see much difference in this release but it allows us to build on in future releases.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/flowforge/flowforge/issues/695&quot;&gt;PostHog Analytics&lt;/a&gt;
+We&#39;ve changed the analytics tooling integrated into the platform. With this release, we&#39;ve deprecated the use of Plausible Analytics as it didn&#39;t quite provide the sort of insight we wanted. We now integrate with &lt;a href=&quot;https://posthog.com/&quot;&gt;PostHog&lt;/a&gt;. They share our ethos and approach to open source and self hosting - something you can take advantage of if you&#39;re running your own FlowForge platform.
+For FlowForge Cloud, the data is sent to our PostHog account so we can better understand how the platform is being used. If you&#39;re running your own instance, the information is only captured if you configure it with your own PostHog instance details - it does not send any data back to us.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/flowforge/flowforge/issues/856&quot;&gt;Login with email&lt;/a&gt;
+A common problem that we&#39;ve seen from users is trying to login with their email address instead of their username. As of 0.9 you can now enter either at the login screen.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/flowforge/flowforge/issues/774&quot;&gt;Custom Dashboard Path&lt;/a&gt;
+If you are using the Node-RED Dashboard set of nodes, you can now change the path where the dashboard will be served from. The default is still &lt;code&gt;/ui&lt;/code&gt; but you can now move that onto &lt;code&gt;/&lt;/code&gt; or anything else. This is helpful when migrating existing projects over to FlowForge.&lt;/p&gt;
+&lt;h2 id=&quot;improvements&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://flowforge.com/blog/2022/09/flowforge-09-released/#improvements&quot;&gt;#&amp;nbsp;&lt;/a&gt; Improvements&lt;/h2&gt;
+&lt;p&gt;We&#39;ve made a number of improvements to the overall experience of running FlowForge.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Improvements to the FlowForge Theme &lt;a href=&quot;https://github.com/flowforge/flowforge/pull/883&quot;&gt;#883&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;Upper-case characters in Project Names &lt;a href=&quot;https://github.com/flowforge/flowforge/issues/546&quot;&gt;#546&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Password reset requests are logged&lt;a href=&quot;https://github.com/flowforge/flowforge/issues/773&quot;&gt;#773&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Admin can manually verify users email &lt;a href=&quot;https://github.com/flowforge/flowforge/issues/692&quot;&gt;#902&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;bug-fixes&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://flowforge.com/blog/2022/09/flowforge-09-released/#bug-fixes&quot;&gt;#&amp;nbsp;&lt;/a&gt; Bug Fixes&lt;/h2&gt;
+&lt;p&gt;We&#39;ve fixed the following bugs in this release.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/flowforge/flowforge/issues/875&quot;&gt;Cannot edit template settings&lt;/a&gt;&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/flowforge/flowforge-nr-project-nodes/issues/10&quot;&gt;Project Link Nodes Appear in CE Install&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/flowforge/flowforge-nr-project-nodes/issues/14&quot;&gt;Project Link Nodes MQTT Connection&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/flowforge/flowforge-nr-theme/issues/19&quot;&gt;Theme shows white characters on white background&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/flowforge/flowforge-device-agent/issues/27&quot;&gt;Changing Project on device doesn&#39;t remove old modules&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/flowforge/flowforge-device-agent/issues/30&quot;&gt;Device Agent and Node-RED use different time in logs&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;contributors&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://flowforge.com/blog/2022/09/flowforge-09-released/#contributors&quot;&gt;#&amp;nbsp;&lt;/a&gt; Contributors&lt;/h2&gt;
+&lt;p&gt;We&#39;d like the thank the following for their contributions to this release:&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/bonanitech&quot;&gt;Bonantech&lt;/a&gt; for his work &lt;a href=&quot;https://github.com/flowforge/flowforge-nr-theme/commit/30e21a3777dc3438ef206157ee9110728011f59c&quot;&gt;cleaning up the theme CSS&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;As an open-source project, we welcome the community involvement in what we&#39;re building. If you&#39;re interested in contributing, checkout our &lt;a href=&quot;https://flowforge.com/docs/contribute/&quot;&gt;guide in the docs&lt;/a&gt;.&lt;/p&gt;
+&lt;h3 id=&quot;try-it-out&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://flowforge.com/blog/2022/09/flowforge-09-released/#try-it-out&quot;&gt;#&amp;nbsp;&lt;/a&gt; Try it out&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&quot;https://app.flowforge.com/account/create&quot;&gt;Sign up for FlowForge Cloud&lt;/a&gt; and at the checkout enter the code &lt;strong&gt;RELEASE09&lt;/strong&gt; to get your first project free for a month.&lt;/p&gt;
+&lt;h3 id=&quot;upgrading-flowforge&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://flowforge.com/blog/2022/09/flowforge-09-released/#upgrading-flowforge&quot;&gt;#&amp;nbsp;&lt;/a&gt; Upgrading FlowForge&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&quot;https://app.flowforge.com/&quot;&gt;FlowForge Cloud&lt;/a&gt; is already running 0.9 and the stacks updated. Upgrade your project stacks to the latest version and start using the Project Link nodes now.&lt;/p&gt;
+&lt;p&gt;If you installed a previous version of FlowForge and want to upgrade, our documentation provides a
+guide for &lt;a href=&quot;http://flowforge.com/docs/install#upgrade&quot;&gt;upgrading FlowForge on a local server&lt;/a&gt;.&lt;/p&gt;
+&lt;h3 id=&quot;getting-help&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://flowforge.com/blog/2022/09/flowforge-09-released/#getting-help&quot;&gt;#&amp;nbsp;&lt;/a&gt; Getting help&lt;/h3&gt;
+&lt;p&gt;If you hit any problems with the platform, or have questions to ask, please do
+raise an &lt;a href=&quot;https://github.com/flowforge/flowforge/issues&quot;&gt;issue on GitHub&lt;/a&gt;.
+That also includes if you have any feedback or feature requests.&lt;/p&gt;
+&lt;p&gt;Customers of FlowForge Cloud can raise a ticket by emailing support@flowforge.com&lt;/p&gt;
+&lt;p&gt;We also have a &lt;code&gt;#flowforge&lt;/code&gt; channel on the &lt;a href=&quot;https://nodered.org/slack&quot;&gt;Node-RED Slack workspace&lt;/a&gt;.&lt;/p&gt;
+</content>
+    </entry>
     
     <entry>
         <id>https://flowforge.com/blog/2022/08/community-news-06/</id>
