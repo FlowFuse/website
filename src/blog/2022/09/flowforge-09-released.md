@@ -34,7 +34,7 @@ For FlowForge Cloud, the data is sent to our PostHog account so we can better un
 A common problem that we've seen from users is trying to login with their email address instead of their username, as of 0.8 you can now enter either at the login screen.
 
 [Custom Dashboard Path](https://github.com/flowforge/flowforge/issues/774)
-You can now change the path where the dashboard will be served from, the default is still /ui but you can now move that onto / or anything else. Helpful when migrating existing projects over to FlowForge.
+If you are using the Node-RED Dashboard set of nodes, you can now change the path where the dashboard will be served from. The default is still `/ui` but you can now move that onto `/` or anything else. This is helpful when migrating existing projects over to FlowForge.
 
 
 ## Improvements
