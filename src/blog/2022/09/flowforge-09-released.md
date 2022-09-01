@@ -42,7 +42,6 @@ We've made a number of improvements to the overall experience of running FlowFor
 
 - Improvements to the FlowForge Theme [#883](https://github.com/flowforge/flowforge/pull/883). 
 - Upper-case characters in Project Names [#546](https://github.com/flowforge/flowforge/issues/546)
-- Accept an update to T&Cs[#451](https://github.com/flowforge/flowforge/issues/451)
 - Password reset requests are logged[#773](https://github.com/flowforge/flowforge/issues/773)
 - Admin can manually verify users email [#902](https://github.com/flowforge/flowforge/issues/692)
 
