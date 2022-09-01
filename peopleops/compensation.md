@@ -53,7 +53,7 @@ offer location dependant benefits to ensure standards are met.
 
 #### 1Password Family
 
-As bussines users of 1Password each team member gets a free 1Password Family
+As business users of 1Password each team member gets a free 1Password Family
 account. You'll need to link your family, see also [their docs](https://support.1password.com/link-family/).
 
 #### Launch Lunch
