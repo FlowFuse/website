@@ -10,7 +10,7 @@ video: BBNzFInc_2E
 Suspend your projects when you don't need them, login with either your username or email, and introducing Team Types
 <!--more-->
 
-Keep reading for the details of whats in this release our you can watch our 1 minute roundup video of the new release above. 
+Keep reading for the details of what's in this release our you can watch our 1 minute roundup video of the new release above. 
 
 We're pleased to announce version 0.9 is now available. The next release of the FlowForge application containing new features, a number of improvements, and bug fixes. Keep reading for a promotion code to get your first month free on FlowForge Cloud. 
 
