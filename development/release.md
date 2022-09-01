@@ -8,7 +8,7 @@ releases.
 ### Setup
 
  - Decide who will be Release Manager for this release. For Major/Minor releases this should be shared across the whole team to prevent it becoming a single point of failure. For Fix releases it can be the developer committing the fix.
- - Create a Release check list issue (using template) on the flowforge/admin project to keep track of all components included in the release (e.g. https://github.com/flowforge/admin/issues/7)
+ - Create a Release check list issue (using template) on the flowforge/admin project to keep track of all components included in the release (e.g. https://github.com/flowforge/admin/issues/80)
  - Assign the issue to the Release Manager
  - Ensure you have the following installed on your machine:
     - [GitHub client](https://github.com/cli/cli)
@@ -26,13 +26,14 @@ full release.
 The Release Manager should verify the following repositories are up to date and
 have been published as needed.
 
- - `flowforge/usage-ping-collector`
- - `flowforge/forge-ui-components`
- - `flowforge/flowforge-device-agent`
- - `flowforge/flowforge-nr-theme`
- - `flowforge/flowforge-nr-project-nodes`
+ - [`flowforge/usage-ping-collector`](https://github.com/flowforge/usage-ping-collector)
+ - [`flowforge/forge-ui-components`](https://github.com/flowforge/forge-ui-components)
+ - [`flowforge/flowforge-device-agent`](https://github.com/flowforge/flowforge-device-agent)
+ - [`flowforge/flowforge-nr-theme`](https://github.com/flowforge/flowforge-nr-theme)
+ - [`flowforge/flowforge-nr-project-nodes`](https://github.com/flowforge/flowforge-nr-project-nodes)
 
-See the process for releasing to these further down the page.
+Refer to the section [Unmanaged Releases](#unmanaged-releases) for releasing these.
+
 ### Steps
 
  - Checkout the `flowforge/admin` repository if you do not already have it.
@@ -44,7 +45,7 @@ See the process for releasing to these further down the page.
    This will create a directory called `release-0.x.y` and checkout all of the releasable
    repositories under it.
 
-   If you do not have a global git configuration, you will need to set `user.name` and `user.email`
+   NOTE: If you do not have a global git configuration, you will need to set `user.name` and `user.email`
    in each of those repositories.
 
  - Within the release directory run:
@@ -57,13 +58,16 @@ See the process for releasing to these further down the page.
    dependencies) and update the CHANGELOG files.
 
    It will then raise PRs against each repository with these changes in.
- - Do not panic when you see "All jobs have failed" for `flowforge/flowforge`. The repo will be pointing to newer versions of other packages, which have not yet been published to npm.
- - Follow through the release checklist to review each PR in turn, get it merged then create the GitHub release.
-   The updated packages will be automatically published to npm by our GitHub actions. Verify each one has published
-   before moving to the next. You can do this by:
+- Do not panic when you see "All jobs have failed" for the `flowforge/flowforge` Release PR. 
+      This is due to the repo pointing to newer versions of other packages which have not yet been published to npm.
+
+ - Follow through the current release checklist in [`flowforge/admin`](https://github.com/flowforge/admin/issues) in the order they are listed.
+   Each PR will need to be reviewed, merged and tagged taking care to verify each one has been published before moving to the next. Some steps will also require you to pause and re-run tests before continuing.
+   Updated packages will be automatically published to npm by our GitHub actions. 
+   You can check the status of these packages as following:
     - Track the "Release Published" action on the GH repository
     - Keep an eye on npmjs.org page for each package.
-    - A bot will post to #gh-flowforge Slack channel, although this can be quite delayed
+    - Watch for bot notifications in #gh-flowforge Slack channel (NOTE: although this can be quite delayed)
  - Once all the node module components have been built and published to npm the `installer`, `helm` and `docker-compose` components can be updated and tagged.
  - Run [staging CI pipeline publish](https://github.com/flowforge/CloudProject/actions/workflows/build-kube.yml), to ensure staging is running the latest release.
 
@@ -85,13 +89,13 @@ to cherry pick into `X.Y-maint`
 1. Create a new PR to `X.Y-maint` to bump the version, and update the CHANGELOG.md
 1. Check the list of PRs target merge branch again for each PR
 1. Assign all PRs to one developer, and get them merged.
-1. Once merged, checkout `X.Y-maint` and tag using `git tag v0.X.Y -m "<One line description of this release>"
+1. Once merged, checkout `X.Y-maint` and tag using `git tag v0.X.Y -m "one line description of this release"`
 1. Push the tag to the GitHub repository, and create a corresponding GitHub release
 1. Create two change request issues, one for staging and one for production to upgrade to the latest version
 
 ### Unmanaged Releases
 
-The unmanaged repoisitories listed above have a simpler release process.
+The unmanaged repositories listed above have a simpler release process.
 
 1. Make announcement in #dev so team is aware
 1. Check that all changes have been merged to main
@@ -101,5 +105,5 @@ The unmanaged repoisitories listed above have a simpler release process.
    script require the `gh` cli to be installed and logged in.
    Update CHANGELOG.md with the output of the script.
 1. Open a new PR to merge the package.json and CHANGELOG.md changes - get it merged
-1. Tag new release in GitHub with the appropriate verison number eg `v0.1.1`. Copy the CHANGELOG update into the description.
+1. Tag new release in GitHub with the appropriate version number eg `v0.1.1`. Copy the CHANGELOG update into the description.
 1. Once the release is created, the GitHub Action will take care of publishing to NPM. Check the action to ensure it completes.
