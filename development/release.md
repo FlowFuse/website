@@ -62,12 +62,12 @@ Refer to the section [Unmanaged Releases](#unmanaged-releases) for releasing the
       This is due to the repo pointing to newer versions of other packages which have not yet been published to npm.
 
  - Follow through the current release checklist in [`flowforge/admin`](https://github.com/flowforge/admin/issues) in the order they are listed.
-   Each PR will need to be reviewed, merged and tagged taking care to verify each one has been published before moving to the next. Some steps will also require you to pause and re-run tests before continuing.
-   Updated packages will be automatically published to npm by our GitHub actions. 
-   You can check the status of these packages as following:
+   Each PR will need to be reviewed, merged and tagged taking care to verify each one has been published before moving to the next.
+   Some steps will also require you to pause and re-run tests before continuing.
+   Updated packages will be automatically published to npm by our GitHub actions.  You can check the publish status of these as follows:
     - Track the "Release Published" action on the GH repository
-    - Keep an eye on npmjs.org page for each package.
-    - Watch for bot notifications in #gh-flowforge Slack channel (NOTE: although this can be quite delayed)
+    - Keep an eye on npmjs.org page for each package
+    - Watch for bot notifications in the [#gh-flowforge](https://flowforgeworkspace.slack.com/archives/C02UR3MBA1J) Slack channel (NOTE: the notifications can take quite a while to appear in the channel)
  - Once all the node module components have been built and published to npm the `installer`, `helm` and `docker-compose` components can be updated and tagged.
  - Run [staging CI pipeline publish](https://github.com/flowforge/CloudProject/actions/workflows/build-kube.yml), to ensure staging is running the latest release.
 
