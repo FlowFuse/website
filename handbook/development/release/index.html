@@ -75,7 +75,7 @@ releases.</p>
 <h3 id="setup" tabindex="-1"><a class="header-anchor" href="#setup">#&nbsp;</a> Setup</h3>
 <ul>
 <li>Decide who will be Release Manager for this release. For Major/Minor releases this should be shared across the whole team to prevent it becoming a single point of failure. For Fix releases it can be the developer committing the fix.</li>
-<li>Create a Release check list issue (using template) on the flowforge/admin project to keep track of all components included in the release (e.g. https://github.com/flowforge/admin/issues/7)</li>
+<li>Create a Release checklist issue using the <a href="https://github.com/flowforge/admin/issues/new?assignees=&amp;labels=&amp;template=release.md&amp;title=Release%3A">Release Checklist template</a></li>
 <li>Assign the issue to the Release Manager</li>
 <li>Ensure you have the following installed on your machine:
 <ul>
@@ -93,13 +93,13 @@ full release.</p>
 <p>The Release Manager should verify the following repositories are up to date and
 have been published as needed.</p>
 <ul>
-<li><code>flowforge/usage-ping-collector</code></li>
-<li><code>flowforge/forge-ui-components</code></li>
-<li><code>flowforge/flowforge-device-agent</code></li>
-<li><code>flowforge/flowforge-nr-theme</code></li>
-<li><code>flowforge/flowforge-nr-project-nodes</code></li>
+<li><a href="https://github.com/flowforge/usage-ping-collector"><code>flowforge/usage-ping-collector</code></a></li>
+<li><a href="https://github.com/flowforge/forge-ui-components"><code>flowforge/forge-ui-components</code></a></li>
+<li><a href="https://github.com/flowforge/flowforge-device-agent"><code>flowforge/flowforge-device-agent</code></a></li>
+<li><a href="https://github.com/flowforge/flowforge-nr-theme"><code>flowforge/flowforge-nr-theme</code></a></li>
+<li><a href="https://github.com/flowforge/flowforge-nr-project-nodes"><code>flowforge/flowforge-nr-project-nodes</code></a></li>
 </ul>
-<p>See the process for releasing to these further down the page.</p>
+<p>Refer to the section <a href="#unmanaged-releases">Unmanaged Releases</a> for releasing these.</p>
 <h3 id="steps" tabindex="-1"><a class="header-anchor" href="#steps">#&nbsp;</a> Steps</h3>
 <ul>
 <li>
@@ -114,7 +114,7 @@ have been published as needed.</p>
 </code></pre>
 <p>This will create a directory called <code>release-0.x.y</code> and checkout all of the releasable
 repositories under it.</p>
-<p>If you do not have a global git configuration, you will need to set <code>user.name</code> and <code>user.email</code>
+<p>NOTE: If you do not have a global git configuration, you will need to set <code>user.name</code> and <code>user.email</code>
 in each of those repositories.</p>
 </li>
 <li>
@@ -128,16 +128,18 @@ dependencies) and update the CHANGELOG files.</p>
 <p>It will then raise PRs against each repository with these changes in.</p>
 </li>
 <li>
-<p>Do not panic when you see &quot;All jobs have failed&quot; for <code>flowforge/flowforge</code>. The repo will be pointing to newer versions of other packages, which have not yet been published to npm.</p>
+<p>Do not panic when you see &quot;All jobs have failed&quot; for the <code>flowforge/flowforge</code> Release PR.
+This is due to the repo pointing to newer versions of other packages which have not yet been published to npm.</p>
 </li>
 <li>
-<p>Follow through the release checklist to review each PR in turn, get it merged then create the GitHub release.
-The updated packages will be automatically published to npm by our GitHub actions. Verify each one has published
-before moving to the next. You can do this by:</p>
+<p>Follow through the current release checklist in <a href="https://github.com/flowforge/admin/issues"><code>flowforge/admin</code></a> in the order they are listed.
+Each PR will need to be reviewed, merged and tagged taking care to verify each one has been published before moving to the next.
+Some steps will also require you to pause and re-run tests before continuing.
+Updated packages will be automatically published to npm by our GitHub actions.  You can check the publish status of these as follows:</p>
 <ul>
 <li>Track the &quot;Release Published&quot; action on the GH repository</li>
-<li>Keep an eye on npmjs.org page for each package.</li>
-<li>A bot will post to #gh-flowforge Slack channel, although this can be quite delayed</li>
+<li>Keep an eye on npmjs.org page for each package</li>
+<li>Watch for bot notifications in the <a href="https://flowforgeworkspace.slack.com/archives/C02UR3MBA1J">#gh-flowforge</a> Slack channel (NOTE: the notifications can take quite a while to appear in the channel)</li>
 </ul>
 </li>
 <li>
@@ -164,12 +166,12 @@ to cherry pick into <code>X.Y-maint</code></li>
 <li>Create a new PR to <code>X.Y-maint</code> to bump the version, and update the CHANGELOG.md</li>
 <li>Check the list of PRs target merge branch again for each PR</li>
 <li>Assign all PRs to one developer, and get them merged.</li>
-<li>Once merged, checkout <code>X.Y-maint</code> and tag using `git tag v0.X.Y -m &quot;<One line description of this release>&quot;</li>
+<li>Once merged, checkout <code>X.Y-maint</code> and tag using <code>git tag v0.X.Y -m &quot;one line description of this release&quot;</code></li>
 <li>Push the tag to the GitHub repository, and create a corresponding GitHub release</li>
 <li>Create two change request issues, one for staging and one for production to upgrade to the latest version</li>
 </ol>
 <h3 id="unmanaged-releases" tabindex="-1"><a class="header-anchor" href="#unmanaged-releases">#&nbsp;</a> Unmanaged Releases</h3>
-<p>The unmanaged repoisitories listed above have a simpler release process.</p>
+<p>The unmanaged repositories listed above have a simpler release process.</p>
 <ol>
 <li>Make announcement in #dev so team is aware</li>
 <li>Check that all changes have been merged to main</li>
@@ -179,7 +181,7 @@ generates a list of the PRs merged since the last tagged release. Note: this
 script require the <code>gh</code> cli to be installed and logged in.
 Update CHANGELOG.md with the output of the script.</li>
 <li>Open a new PR to merge the package.json and CHANGELOG.md changes - get it merged</li>
-<li>Tag new release in GitHub with the appropriate verison number eg <code>v0.1.1</code>. Copy the CHANGELOG update into the description.</li>
+<li>Tag new release in GitHub with the appropriate version number eg <code>v0.1.1</code>. Copy the CHANGELOG update into the description.</li>
 <li>Once the release is created, the GitHub Action will take care of publishing to NPM. Check the action to ensure it completes.</li>
 </ol>
 
@@ -189,7 +191,7 @@ Update CHANGELOG.md with the output of the script.</li>
             <h3 class="font-medium border-b pb-1 mb-4">On this page</h3>
             <ul id="toc" class="text-sm border-b mb-4"></ul>
             <div class="text-sm pb-1 text-right mb-4"><a href="https://github.com/flowforge/handbook/edit/main/development/release.md">Edit this page</a></div>
-            <div class="text-xs pb-1 text-right mb-4 italic">Updated: 2022-09-01 13:36:35 +0200</div>
+            <div class="text-xs pb-1 text-right mb-4 italic">Updated: 2022-09-06 09:00:55 +0100</div>
         </div>
     </div>
 </div>
