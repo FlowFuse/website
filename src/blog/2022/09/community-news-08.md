@@ -30,4 +30,4 @@ Docker has [announced](https://twitter.com/Docker/status/1559919666721693699?t=Q
 While not directly related to FlowForge we’ve enjoyed wasting a little too much time looking at the simulated IOT projects on [Wokwi](https://wokwi.com/). The [Simon Game with Score](https://wokwi.com/projects/328451800839488084) project is a little too addictive.
     
 [**Try FlowForge for Free**](https://app.flowforge.com/account/create)  
-As a thank you for reading our newsletters we’d like to offer you a free, small project for one month on FlowForge when you create a new team. To get this discount please use the code RELEASE09 when on the payment page after creating a new project.
+As a thank you for reading our newsletters we’d like to offer you a free, small project for one month on FlowForge when you create a new team. To get this discount please use the code RELEASE09 when on the payment page after creating a new team.
