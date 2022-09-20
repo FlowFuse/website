@@ -57,10 +57,10 @@ We use [Brex](https://www.brex.com/) to provide cards to the team. They are, by
 default, virtual Mastercards, although there is an option to get a physical
 card sent out.
 
-All expenses on Brex made equal or more than $25 require a receipt to be
-uploaded. Attaching a receipt to an expense can be done through their web UI,
-forwarding receipts through email, or through Slack. For full explanation,
-please [read their docs][brex-receipts].
+All expenses on Brex require a memo to be submitted what the expense if for, and
+expenses made equal or more than $25 require a receipt to be uploaded. Attaching
+a receipt to an expense can be done through their web UI, forwarding receipts
+through email, or through Slack. For full explanation, please [read their docs][brex-receipts].
 
 [brex-receipts]: https://www.brex.com/support/how-do-i-attach-receipts-to-brex-transactions/
 
