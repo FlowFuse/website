@@ -2,7 +2,8 @@
 
 Total compensation consists of 3 elements, salary, equity, and benefits.
 FlowForge aims to provide a total compensation package on par with similar
-companies in terms of: stage of the company, market, role, and level of the role.
+companies in terms of: stage of the company, market, role, and level in the role.
+The data to validate our compensation is obtained through OptionImpact/Pave.com.
 
 ## Salary
 
