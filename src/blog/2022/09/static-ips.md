@@ -10,11 +10,11 @@ As part of our upcoming 0.10 release, we are updating FlowForge Cloud to use sta
 
 Once 0.10 is released you will need to manually Suspend then Start each of your projects (a restart will not move your projects to the fixed IP addresses). Once that action is completed all outbound connections will come from one of the following IP addresses.
 
-XXX.XXX.XXX.XXX
-XXX.XXX.XXX.XXX
-XXX.XXX.XXX.XXX
-XXX.XXX.XXX.XXX
-XXX.XXX.XXX.XXX
+XXX.XXX.XXX.XXX  
+XXX.XXX.XXX.XXX  
+XXX.XXX.XXX.XXX  
+XXX.XXX.XXX.XXX  
+XXX.XXX.XXX.XXX  
 
 Any inbound traffic should still use the hostname assigned to each of your projects.
 
