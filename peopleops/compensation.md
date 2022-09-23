@@ -51,6 +51,7 @@ offer location dependant benefits to ensure standards are met.
 ### For everyone
 
 - [Unlimited PTO](./index.md#vacation-policy)
+- [Launch Lunch](../development/release.md#launch-lunch)
 
 #### 1Password Family
 

@@ -107,3 +107,9 @@ The unmanaged repositories listed above have a simpler release process.
 1. Open a new PR to merge the package.json and CHANGELOG.md changes - get it merged
 1. Tag new release in GitHub with the appropriate version number eg `v0.1.1`. Copy the CHANGELOG update into the description.
 1. Once the release is created, the GitHub Action will take care of publishing to NPM. Check the action to ensure it completes.
+
+## Launch Lunch
+
+To celebrate the launch of a new version of FlowForge, we organize a lunch on
+the release day. Each team member is encouraged to order a lunch (Expensable up
+to 25$ per launch) and join a social lunch zoom call.
