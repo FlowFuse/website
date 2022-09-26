@@ -2,80 +2,74 @@
     set sections = [{
         label: "Features",
         rows: [{
-            label: "Multiple Projects",
-            values: ['check', 'check', 'check']
-        }, {
-            label: "Project Templates",
-            values: ['check', 'check', 'check']
-        }, {
-            label: "Individual Project Configuration",
-            values: ['check', 'check', 'check']
-        }, {
-            label: "Audit Log",
-            values: ['check', 'check', 'check']
-        }, {
-            label: "Team-Based Configuraton",
-            values: ['check', 'check', 'check']
-        }, {
-            label: "Role-Based Access Control",
-            values: ['check', 'check', 'check']
-        }, {
-            label: "Edge Device Management",
-            values: ['check', 'check', 'check']
-        }, {
-            label: "Fully Browser-Based",
-            values: [null, 'check', 'check']
-        }, {
-            label: "Version History",
-            values: ['check', 'check', 'check']
-        }, {
-            label: "Inter Project Communication",
-            values: [null, 'check', 'check']
-        }, {
-            label: "Single Sign-On (SSO)",
-            values: [null, 'time', 'check']
-        }, {
-            label: "Custom Node Catalog",
-            values: [null, 'time', 'time']
-        }, {
-            label: "Shared Team Library",
-            values: [null, 'time', 'time']
-        }, {
-            label: "Persistent Context Storage",
-            values: [null, 'time', 'time']
-        }, {
-            label: "Private npm Repo Support",
-            values: [null, 'time', 'time']
-        }, {
-            label: "Git Integration",
-            values: [null, 'time', 'time']
-        }, {
-            label: "Devops Workflow",
-            values: [null, 'time', 'time']
-        }, {
-            label: "Usage Reporting",
-            values: [null, 'time', 'time']
-	}]
-    }, {
-        label: "Setup & Infrastructure",
-        rows: [{
             label: "Hosting",
-            values: ['Self-Managed', 'FlowForge-Managed', 'Either']
+            values: ['Self-Hosted', 'FlowForge Managed or Self-Hosted']
+        }, {
+            label: "Multiple Projects",
+            values: ['check', 'check']
         }, {
             label: "Easy Node-RED Upgrades",
-            values: ['check', 'check', 'check']
-        }]
+            values: ['check', 'check']
+        }, {
+            label: "Project Templates",
+            values: ['check', 'check']
+        }, {
+            label: "Individual Project Configuration",
+            values: ['check', 'check']
+        }, {
+            label: "Audit Log",
+            values: ['check', 'check']
+        }, {
+            label: "Team-Based Configuraton",
+            values: ['check', 'check']
+        }, {
+            label: "Role-Based Access Control",
+            values: ['check', 'check']
+        }, {
+            label: "Edge Device Management",
+            values: ['check', 'check']
+        }, {
+            label: "Version History",
+            values: ['check', 'check']
+        }, {
+            label: "Inter Project Communication",
+            values: [null, 'check']
+        }, {
+            label: "Single Sign-On (SSO)",
+            values: [null, 'time']
+        }, {
+            label: "Custom Node Catalog",
+            values: [null, 'time']
+        }, {
+            label: "Shared Team Library",
+            values: [null, 'time']
+        }, {
+            label: "Persistent Context Storage",
+            values: [null, 'time']
+        }, {
+            label: "Private npm Repo Support",
+            values: [null, 'time']
+        }, {
+            label: "Git Integration",
+            values: [null, 'time']
+        }, {
+            label: "Devops Workflow",
+            values: [null, 'time']
+        }, {
+            label: "Usage Reporting",
+            values: [null, 'time']
+	}]
     }, {
         label: "Support",
         rows: [{
             label: "Community Support",
-            values: ['check', 'check', 'check']
+            values: ['check', 'check']
         }, {
             label: "Ticket-Based Support",
-            values: [null, 'check', 'check']
+            values: [null, 'check']
         }, {
             label: "Long Term Support",
-            values: [null, null, 'check']
+            values: [null, 'check']
         }]
     }]
 %}
@@ -91,8 +85,7 @@
         <li class="ff-feature--column-header">
             <span></span>
             <label>Community</label>
-            <label>Cloud</label>
-            <label>Enterprise</label>
+            <label>Premium</label>
         </li>
         <li class="ff-feature--header">
             {{ section.label }}
@@ -121,20 +114,6 @@
         {% endfor %}
     </ul>
     {% endfor %}
-    <ul class="ff-feature-table-section">
-        <li>
-            <span></span>
-            <span>
-                <a class="ff-btn ff-btn--secondary" href="/docs/install">Install now</a>
-            </span>
-            <span>
-                <a class="ff-btn ff-btn--primary" href="https://app.flowforge.com/account/create">Sign up</a>
-            </span>
-            <span>
-                <a class='ff-btn ff-btn--secondary' href='/contact-us'>Contact Us</a>
-            </span>
-        </li>
-    </ul>
     <ul class="ff-features-key">
         <li>
             {% include "components/feature-check.svg" %}
@@ -144,9 +123,6 @@
             {% include "components/feature-time.svg" %}
             <label>On the Roadmap</label>
         </li>
-        <li>
-            {% include "components/feature-optional.svg" %}
-            <label>Optional</label>
-        </li>
+        
     </ul>
 </div>
