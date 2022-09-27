@@ -99,3 +99,17 @@ enables users to message `@Feedback` with:
 - `/give-feedback` - to be prompted with a more formal template, within which you can provide structured feedback to a particular person. This template contains sections for _"Keep Doing"_, _"Do More Of"_, _"Do Less Of"_ and _"General Comments"_, of which you can complete, and send, the relevant sections.
 
 All feedback is then sent directly to the relevant user via the Slack App, meaning that feedback and thank you messages are all nicely stored in a single place for future review.
+
+## 1:1 meetings
+
+Each employee at FlowForge will have regular one to one meetings with their
+manager. The primary goal of this meeting is for the report to set the agenda
+and tone. It's important to understand what's going on in ones life, how they're
+feeling, and what their challenges are.
+
+An agenda is kept for this meeting to which both parties can add items to discuss.
+It's advised to add to the agenda throughout the week, and only filter content
+during the meeting.
+
+Further, the document should include an "Action Items" list to track what needs
+doing, and when.
