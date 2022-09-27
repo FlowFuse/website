@@ -3,8 +3,23 @@
     <title>FlowForge</title>
     <link href="https://flowforge.com/blog/index.xml" rel="self"/>
     <link href="https://flowforge.com/blog"/>
-    <updated>2022-09-16T00:00:00Z</updated>
+    <updated>2022-09-27T00:00:00Z</updated>
     <id>https://flowforge.com/blog</id>
+    
+    <entry>
+        <id>https://flowforge.com/blog/2022/09/static-ips/</id>
+        <title>Introducing Static IP Addresses on FlowForge Cloud</title>
+        <summary>Static IP addresses are here for your FlowForge Cloud projects’ outbound connections</summary>
+        <updated>2022-09-27T00:00:00Z</updated>
+        <link href="https://flowforge.com/blog/2022/09/static-ips/"/>
+        <author><name>Rob Marcer</name></author>
+        <content type="html">&lt;p&gt;On Friday last week we updated FlowForge Cloud to use a static IP address for outbound traffic. This will allow you to predict which IP address your traffic will come from for example when traversing a firewall or accessing a remote database.&lt;/p&gt;
+&lt;p&gt;You will need to manually suspend then start each of your projects (a restart will not move your projects to the fixed IP address). Once that action is completed all outbound connections will come from one of our static IP address.&lt;/p&gt;
+&lt;p&gt;Any inbound traffic should still use the hostname assigned to each of your projects, you cannot use our IP address to route http traffic to your projects.&lt;/p&gt;
+&lt;p&gt;You can view our IP address in the &lt;a href=&quot;https://github.com/flowforge/flowforge/tree/main/docs/cloud#ip-addresses&quot;&gt;Docs&lt;/a&gt; section of our website.&lt;/p&gt;
+&lt;p&gt;If you’d like to stay up to date with our latest releases you can do so on &lt;a href=&quot;https://flowforge.com/blog&quot;&gt;our blog&lt;/a&gt;.&lt;/p&gt;
+</content>
+    </entry>
     
     <entry>
         <id>https://flowforge.com/blog/2022/09/community-news-08/</id>
