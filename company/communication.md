@@ -47,6 +47,11 @@ each meeting should have an agenda.
 When using Slack, prefer to keep discussions in a thread. This reduces scroll
 back, and focusses channels.
 
+Note that knowledge in Slack is empemeral, it's not a great storage of information.
+As such knowledge on a decision made in Slack, or elswhere, should always be recorded
+in the GitHub issue or Google Doc on that topic to keep a log that also works
+for asynchronous communication.
+
 ### Standup meetings
 
 Standup meetings are hard to scale across multiple timezones. To make standups
