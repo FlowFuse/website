@@ -98,7 +98,7 @@
         gap: 48px;
         z-index: 2;
         margin: auto;
-        @apply -mt-32 md:-mt-24 max-w-3xl md:grid-cols-3;
+        @apply -mt-32 md:-mt-24 max-w-2xl md:grid-cols-2;
     }
     .pricing-tile {
         position: relative;
