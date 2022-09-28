@@ -33,10 +33,10 @@ this would be in the `#gh-flowforge` channel.
 To create a subscription, go to that channel and type the message:
 
 ```
-/github subscribe flowforge/NAME-OF-REPO comments
+/github subscribe flowforge/NAME-OF-REPO comments reviews
 ```
 
-This will subscribe to any notifications covering: `issues`, `pulls`, `commits`, `releases`, `deployments` and `comments`
+This will subscribe to any notifications covering: `issues`, `pulls`, `commits`, `releases`, `deployments`, `comments` and `reviews`.
 
 ### Workflows
 
