@@ -28,34 +28,33 @@ We've updated FlowForge Cloud so that all outbound traffic from your projects no
 ## Improvements
 We've made a number of improvements to the overall experience of running FlowForge.
 
-- Allow both key and component in a ff-data-table column definition [#43](https://github.com/flowforge/flowforge/pull/43). 
+- Allow both key and component in a ff-data-table column definition [#43](https://github.com/flowforge/forge-ui-components/issues/43)
 - Default Stack and Templates [#989](https://github.com/flowforge/flowforge/issues/989)
 - Provide platform containers and base stack container for administrators [#917](https://github.com/flowforge/flowforge/issues/917)
 
 ## Bug Fixes
 We've fixed the following bugs in this release.
-- [Provide platform containers and base stack container for administrators](https://github.com/flowforge/flowforge/issues/956)
-- [User names can be same (but different case)](https://github.com/flowforge/flowforge-nr-project-nodes/issues/983)
-- [/api/v1/user/projects endpoint broken](https://github.com/flowforge/flowforge-nr-project-nodes/issues/982)
-- [User list not refreshing after changing user details](https://github.com/flowforge/flowforge-nr-theme/issues/463)
-- [Navigating directly to a device page gets the wrong team selected](https://github.com/flowforge/flowforge-device-agent/issues/986)
-- [Node-RED Isn't ready when FlowForge app says it is running following a project restart](https://github.com/flowforge/flowforge-device-agent/issues/941)
-- [Invitations left for deleted teams](https://github.com/flowforge/flowforge-device-agent/issues/923)
-- [Following email verification link twice throws error](https://github.com/flowforge/flowforge-device-agent/issues/1024)
+- [Provide platform containers and base stack container for administrators](https://github.com/flowforge/flowforge/issues/917)
+- [User names can be same (but different case)](https://github.com/flowforge/flowforge/issues/983)
+- [/api/v1/user/projects endpoint broken](https://github.com/flowforge/flowforge/issues/982)
+- [User list not refreshing after changing user details](https://github.com/flowforge/flowforge/issues/463)
+- [Navigating directly to a device page gets the wrong team selected](https://github.com/flowforge/flowforge/issues/986)
+- [Node-RED Isn't ready when FlowForge app says it is running following a project restart](https://github.com/flowforge/flowforge/issues/941)
+- [Invitations left for deleted teams](https://github.com/flowforge/flowforge/issues/923)
+- [Following email verification link twice throws error](https://github.com/flowforge/flowforge/issues/1024)
 - [package does not have issues or homepage URLs](https://github.com/flowforge/flowforge-device-agent/issues/32)
 - [Agent does not log stderr from the Node-RED process](https://github.com/flowforge/flowforge-device-agent/issues/21)
-- [On Kubernetes project names can not start with a number](https://github.com/flowforge/flowforge-device-agent/issues/948)
-- [When creating projects stack options do not wrap](https://github.com/flowforge/flowforge-device-agent/issues/930)
-- [Save button in admin user-edit dialog doesn't close dialog](https://github.com/flowforge/flowforge-device-agent/issues/979)
-- [Setting UI doesn't allow me to update settings](https://github.com/flowforge/flowforge-device-agent/issues/911)
+- [On Kubernetes project names can not start with a number](https://github.com/flowforge/flowforge/issues/948)
+- [When creating projects stack options do not wrap](https://github.com/flowforge/flowforge/issues/930)
+- [Save button in admin user-edit dialog doesn't close dialog](https://github.com/flowforge/flowforge/issues/979)
+- [Setting UI doesn't allow me to update settings](https://github.com/flowforge/flowforge/issues/911)
 
 ## Contributors
 We'd like the thank the following for their contributions to this release:
 
-[Bonantech](https://github.com/bonanitech) for his work [cleaning up the theme CSS](https://github.com/flowforge/flowforge-nr-theme/commit/30e21a3777dc3438ef206157ee9110728011f59c)
+TO BE CONFIRMED - TO BE CONFIRMED - TO BE CONFIRMED - TO BE CONFIRMED
 
 As an open-source project, we welcome the community involvement in what we're building. If you're interested in contributing, checkout our [guide in the docs](https://flowforge.com/docs/contribute/).
-
 
 ### Try it out
 
@@ -63,7 +62,7 @@ As an open-source project, we welcome the community involvement in what we're bu
 
 ### Upgrading FlowForge
 
-[FlowForge Cloud](https://app.flowforge.com) is already running 0.10 and the stacks have been updated. Upgrade your project stacks to the latest version and start using the Project Link nodes now.
+[FlowForge Cloud](https://app.flowforge.com) is already running 0.10 and the stacks updated. Upgrade your project stacks to the latest version and start using the Project Link nodes now.
 
 If you installed a previous version of FlowForge and want to upgrade, our documentation provides a
 guide for [upgrading FlowForge on a local server](http://flowforge.com/docs/install#upgrade).
