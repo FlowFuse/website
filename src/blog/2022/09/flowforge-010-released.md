@@ -11,7 +11,7 @@ Secure your HTTP endpoints, create read-only users in your teams and use our sta
 
 <!--more-->
 
-Keep reading for the details of what's in this release our you can watch our 1 minute roundup video of the new release above. 
+Keep reading for the details of what's in this release or you can watch our 1 minute roundup video of the new release above. 
 
 We're pleased to announce version 0.10 is now available. The next release of the FlowForge application containing new features, a number of improvements, and bug fixes. Keep reading for a promotion code to get your first month free on FlowForge Cloud. 
 
