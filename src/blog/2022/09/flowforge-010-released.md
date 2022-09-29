@@ -36,7 +36,6 @@ We've made a number of improvements to the overall experience of running FlowFor
 We've fixed the following bugs in this release.
 - [Provide platform containers and base stack container for administrators](https://github.com/flowforge/flowforge/issues/917)
 - [User names can be same (but different case)](https://github.com/flowforge/flowforge/issues/983)
-- [/api/v1/user/projects endpoint broken](https://github.com/flowforge/flowforge/issues/982)
 - [User list not refreshing after changing user details](https://github.com/flowforge/flowforge/issues/463)
 - [Navigating directly to a device page gets the wrong team selected](https://github.com/flowforge/flowforge/issues/986)
 - [Node-RED Isn't ready when FlowForge app says it is running following a project restart](https://github.com/flowforge/flowforge/issues/941)
