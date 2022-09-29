@@ -50,7 +50,9 @@ We've fixed the following bugs in this release.
 ## Contributors
 We'd like the thank the following for their contributions to this release:
 
-TO BE CONFIRMED - TO BE CONFIRMED - TO BE CONFIRMED - TO BE CONFIRMED
+[Pezmc](https://github.com/Pezmc) got their work on [Add device count and project counts by type to admin](https://github.com/flowforge/flowforge/pull/949)
+
+[ArshErgon](https://github.com/ArshErgon) for their work on [Update vue component name for NoVerifiedEmail.vue](https://github.com/flowforge/flowforge/pull/977)
 
 As an open-source project, we welcome the community involvement in what we're building. If you're interested in contributing, checkout our [guide in the docs](https://flowforge.com/docs/contribute/).
 
