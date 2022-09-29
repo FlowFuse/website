@@ -4,7 +4,7 @@ subtitle: Secure HTTP end points, Read-only users and Static outbound IPs
 description: Secure Node-RED HTTP end points, Read-only users and Static outbound IPs
 date: 2022-09-30 12:00:00.0
 authors: ["rob-marcer"]
-video: d23Pmyc0k7I
+video: mjR1iiEFiBg
 ---
 
 Secure your HTTP endpoints, create read-only users in your teams and use our static IP address for outbound traffic
