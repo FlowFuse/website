@@ -62,7 +62,7 @@
     <div class="w-full mx-auto ff-bg-light">
         <div class="font-medium border-b pb-1">
             
-            v0.9.0
+            v0.10.0
             
             /<a class="mx-2" href="/docs">docs</a>/<a class="mx-2" href="/docs/cloud">cloud</a>
         </div>
@@ -90,7 +90,8 @@ Websocket connections over SSL (wss:) are also supported.</p>
 <h3 id="mqtt" tabindex="-1"><a class="header-anchor" href="#mqtt">#&nbsp;</a> MQTT</h3>
 <p>MQTT Connections to an external broker using the standard MQTT nodes will work fine as the connection is initiated by Node-RED.</p>
 <h3 id="ip-addresses" tabindex="-1"><a class="header-anchor" href="#ip-addresses">#&nbsp;</a> IP Addresses</h3>
-<p>As mentioned in HTTP above incoming connections MUST be to the hostname not the IP address. In addition the Source IP address of any outgoing connections cannot be guaranteed and may change at any time, therefore this should not be used to validate requests.</p>
+<p>Outbound connections from FlowForge will always come from the IP address <code>63.33.85.112</code>.
+This can make access to a remote database or corporate network possible where those systems are protected by IP address filtering firewalls. As mentioned in HTTP above, incoming connections MUST be to the hostname not the IP address.</p>
 
             </div>
         </div>
@@ -98,7 +99,7 @@ Websocket connections over SSL (wss:) are also supported.</p>
             <h3 class="font-medium border-b pb-1 mb-4">On this page</h3>
             <ul id="toc" class="text-sm border-b mb-4"></ul>
             <div class="text-sm pb-1 text-right mb-4"><a href="https://github.com/flowforge/flowforge/edit/main/docs/cloud/README.md">Edit this page</a></div>
-            <div class="text-xs pb-1 text-right mb-4 italic">Updated: 2022-09-01 12:16:54 +0100</div>
+            <div class="text-xs pb-1 text-right mb-4 italic">Updated: 2022-09-29 10:29:27 +0100</div>
         </div>
     </div>
 </div>

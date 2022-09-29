@@ -14,6 +14,14 @@
     <title>FlowForge | Open-source low-code integration for applications, data and devices</title>
 
     
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@flowforgeinc" />
+    <meta name="twitter:creator" content="@" />
+    <meta property="og:url" content="https://flowforge.com/blog/2022/09/flowforge-010-released/" />
+    <meta property="og:title" content="FlowForge 0.10 released" />
+    <meta property="og:description" content="Secure Node-RED HTTP end points, Read-only users and Static outbound IPs" />
+    <meta property="og:image" content="https://flowforge.com/images/flowforge-logo.png" />
+    
 
     <script defer data-domain="flowforge.com" src="https://plausible.io/js/plausible.js"></script>
 </head>
@@ -52,89 +60,103 @@
             </header>
             <!-- Main Content -->
             <main class="flex flex-col mx-auto items-center justify-center">
-                <!--Hero Content-->
+                
 <div class="w-full page">
     
-    <div class="content">
-        <div class="nohero w-full pt-12 pb-24 ff-bg-light">
-    <div class="container m-auto text-left px-6 md:max-w-screen-lg">
-        <div class="handbook">
-    <div class="w-full mx-auto ff-bg-light">
-        <div class="font-medium border-b pb-1">
-            
-            v0.10.0
-            
-            /<a class="mx-2" href="/docs">docs</a>/<a class="mx-2" href="/docs/install">install</a>/<a class="mx-2" href="/docs/install/email_providers">email_providers</a>
-        </div>
-    </div>
-    <div class="w-full mx-auto ff-bg-light flex flex-col md:flex-row">
-        <div class="flex-grow order-last md:order-first">
-            <div class="mt-6 mb-4 prose prose-blue main-content">
-                <h2 id="example-configuration-for-common-email-platforms" tabindex="-1"><a class="header-anchor" href="#example-configuration-for-common-email-platforms">#&nbsp;</a> Example configuration for common email platforms</h2>
-<h3 id="gmail" tabindex="-1"><a class="header-anchor" href="#gmail">#&nbsp;</a> GMail</h3>
-<pre><code>email:
-  enabled: true
-  debug: false
-  smtp:
-    host: smtp.gmail.com
-    port: 465
-    secure: true
-    auth:
-        user: [USER]@gmail.com
-        pass: [PASSWORD]
-</code></pre>
-<p>Note: Gmail may require an app specific password to be created if you are using 2FA on the account you can set that up <a href="https://security.google.com/settings/security/apppasswords">here</a></p>
-
+        <div class="container m-auto text-center px-6 flex mt-6 mb-6 md:max-w-screen-lg md:mt-12">
+            <div class="text-left md:pr-32">
+                <h1>FlowForge 0.10 released</h1>
+                
+                <h4>Secure HTTP end points, Read-only users and Static outbound IPs</h4>
+                
+                <p class="author">
+                    <time value="">30 Sept, 2022</time>
+                    |
+                    
+                     Rob Marcer
+                </p>
             </div>
         </div>
-        <div class="w-full md:w-64 md:ml-8 mt-4 md:mt-6 px-2">
-            <h3 class="font-medium border-b pb-1 mb-4">On this page</h3>
-            <ul id="toc" class="text-sm border-b mb-4"></ul>
-            <div class="text-sm pb-1 text-right mb-4"><a href="https://github.com/flowforge/flowforge/edit/main/docs/install/email_providers.md">Edit this page</a></div>
-            <div class="text-xs pb-1 text-right mb-4 italic">Updated: 2022-09-29 10:29:27 +0100</div>
+    
+    <div class="blog nohero w-full pt-6 pb-24 ff-bg-light">
+        <div class="container m-auto text-left px-6 md:max-w-screen-lg">
+            <a class="block mb-4" href="/blog">&lt; Back to Blog Posts</a>
+            <div class="prose">
+                <div><iframe width="560" height="315" src="https://www.youtube.com/embed/mjR1iiEFiBg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                     
+                </div>
+                <p>Secure your HTTP endpoints, create read-only users in your teams and use our static IP address for outbound traffic</p>
+<!--more-->
+<p>Keep reading for the details of what's in this release or you can watch our 1 minute roundup video of the new release above.</p>
+<p>We're pleased to announce version 0.10 is now available. The next release of the FlowForge application containing new features, a number of improvements, and bug fixes. Keep reading for a promotion code to get your first month free on FlowForge Cloud.</p>
+<h2 id="features" tabindex="-1"><a class="header-anchor" href="#features">#&nbsp;</a> Features</h2>
+<p><a href="https://github.com/flowforge/flowforge/issues/578">Secure HTTP Endpoints</a>
+We've added the ability for you to secure your HTTP endpoints. You can now control who can access Dashboards or API endpoints you create in FlowForge.</p>
+<p><a href="https://github.com/flowforge/flowforge/issues/657">Read-only Users</a>
+We've added a new user role for Read-only access. This will allow users to login to your FlowForge project and view the Node-RED flows without them being able to edit anything.</p>
+<p><a href="https://github.com/flowforge/CloudProject/issues/59">Static Outbound IP Addresses</a>
+We've updated FlowForge Cloud so that all outbound traffic from your projects now comes from a single IP address. When trying to access a remote resource such as a database it is often a requirement for the IP address the traffic comes from to be fixed.</p>
+<h2 id="improvements" tabindex="-1"><a class="header-anchor" href="#improvements">#&nbsp;</a> Improvements</h2>
+<p>We've made a number of improvements to the overall experience of running FlowForge.</p>
+<ul>
+<li>Allow both key and component in a ff-data-table column definition <a href="https://github.com/flowforge/forge-ui-components/issues/43">#43</a></li>
+<li>Default Stack and Templates <a href="https://github.com/flowforge/flowforge/issues/989">#989</a></li>
+<li>Provide platform containers and base stack container for administrators <a href="https://github.com/flowforge/flowforge/issues/917">#917</a></li>
+</ul>
+<h2 id="bug-fixes" tabindex="-1"><a class="header-anchor" href="#bug-fixes">#&nbsp;</a> Bug Fixes</h2>
+<p>We've fixed the following bugs in this release.</p>
+<ul>
+<li><a href="https://github.com/flowforge/flowforge/issues/917">Provide platform containers and base stack container for administrators</a></li>
+<li><a href="https://github.com/flowforge/flowforge/issues/983">User names can be same (but different case)</a></li>
+<li><a href="https://github.com/flowforge/flowforge/issues/463">User list not refreshing after changing user details</a></li>
+<li><a href="https://github.com/flowforge/flowforge/issues/986">Navigating directly to a device page gets the wrong team selected</a></li>
+<li><a href="https://github.com/flowforge/flowforge/issues/941">Node-RED Isn't ready when FlowForge app says it is running following a project restart</a></li>
+<li><a href="https://github.com/flowforge/flowforge/issues/923">Invitations left for deleted teams</a></li>
+<li><a href="https://github.com/flowforge/flowforge/issues/1024">Following email verification link twice throws error</a></li>
+<li><a href="https://github.com/flowforge/flowforge-device-agent/issues/21">Agent does not log stderr from the Node-RED process</a></li>
+<li><a href="https://github.com/flowforge/flowforge/issues/948">On Kubernetes project names can not start with a number</a></li>
+<li><a href="https://github.com/flowforge/flowforge/issues/930">When creating projects stack options do not wrap</a></li>
+<li><a href="https://github.com/flowforge/flowforge/issues/979">Save button in admin user-edit dialog doesn't close dialog</a></li>
+<li><a href="https://github.com/flowforge/flowforge/issues/911">Setting UI doesn't allow me to update settings</a></li>
+</ul>
+<h2 id="contributors" tabindex="-1"><a class="header-anchor" href="#contributors">#&nbsp;</a> Contributors</h2>
+<p>We'd like the thank the following for their contributions to this release:</p>
+<p><a href="https://github.com/Pezmc">Pezmc</a> for their work on <a href="https://github.com/flowforge/flowforge/pull/949">Add device count and project counts by type to admin</a></p>
+<p><a href="https://github.com/ArshErgon">ArshErgon</a> for their work on <a href="https://github.com/flowforge/flowforge/pull/977">Update vue component name for NoVerifiedEmail.vue</a></p>
+<p>As an open-source project, we welcome the community involvement in what we're building. If you're interested in contributing, checkout our <a href="https://flowforge.com/docs/contribute/">guide in the docs</a>.</p>
+<h3 id="try-it-out" tabindex="-1"><a class="header-anchor" href="#try-it-out">#&nbsp;</a> Try it out</h3>
+<p><a href="https://app.flowforge.com/account/create?code=RELEASE010">Sign up for FlowForge Cloud</a> with this link  or at the checkout enter the code <strong>RELEASE010</strong> to get your first project free for a month.</p>
+<h3 id="upgrading-flowforge" tabindex="-1"><a class="header-anchor" href="#upgrading-flowforge">#&nbsp;</a> Upgrading FlowForge</h3>
+<p><a href="https://app.flowforge.com">FlowForge Cloud</a> is already running 0.10 and the stacks updated. Upgrade your project stacks to the latest version and start using the Project Link nodes now.</p>
+<p>If you installed a previous version of FlowForge and want to upgrade, our documentation provides a
+guide for <a href="http://flowforge.com/docs/install#upgrade">upgrading FlowForge on a local server</a>.</p>
+<h3 id="getting-help" tabindex="-1"><a class="header-anchor" href="#getting-help">#&nbsp;</a> Getting help</h3>
+<p>If you hit any problems with the platform, or have questions to ask, please do
+raise an <a href="https://github.com/flowforge/flowforge/issues">issue on GitHub</a>.
+That also includes if you have any feedback or feature requests.</p>
+<p>Customers of FlowForge Cloud can raise a ticket by emailing support@flowforge.com</p>
+<p>We also have a <code>#flowforge</code> channel on the <a href="https://nodered.org/slack">Node-RED Slack workspace</a>.</p>
+
+            </div>
+            <div class="mt-12 pt-12 flex flex-col border-t-2">
+                <h3 class="mb-6">Sign up for updates</h3>
+                <form
+                    action="https://buttondown.email/api/emails/embed-subscribe/flowforge"
+                    method="post"
+                    target="popupwindow"
+                    onsubmit="window.open('https://buttondown.email/flowforge', 'popupwindow')"
+                    class="embeddable-buttondown-form my-1 ">
+                    <div class="flex flex-col sm:flex-row">
+                        <input type="email" name="email" id="bd-email" placeholder="Enter your email" class="ff-input ff-text-input lg:w-80 md:w-60" />
+                        <input type="hidden" value="1" name="embed" />
+                        <input type="submit" value="Subscribe" class="ff-btn ff-btn--primary w-full mt-3 sm:w-auto sm:mt-0 sm:ml-3"/>
+                    </div>
+                </form>
+            </div>
         </div>
     </div>
 </div>
-<script>
-    let toc = document.getElementById("toc")
 
-    let currentTag = "";
-    let currentToc = toc;
-    let currentItem;
-    document.querySelectorAll(".main-content > h2, .main-content > h3, .main-content > h4").forEach(function(n) {
-        // which level of "H_" are we working with, and which one did we see most recently
-        const level = parseInt(n.nodeName[1])
-        const prevLevel = currentTag.length > 1 ? parseInt(currentTag[1]) : 0
-
-        if (prevLevel > 0 && level - prevLevel < 0) {
-            // we are moving left with our indent
-            currentToc = toc;
-        } else if (prevLevel > 0 && level - prevLevel > 0) {
-            // we are creating a new, nested `<ul>`
-            currentToc = document.createElement("ul");
-            currentToc.classList.add("ml-4")
-            currentToc.classList.add("mt-2")
-            currentToc.classList.add("mb-4")
-            currentItem.append(currentToc);
-        }
-        currentTag = n.nodeName;
-        currentItem = document.createElement("li");
-        currentItem.classList.add("mb-2")
-        let currentLink = document.createElement("a");
-        currentItem.append(currentLink);
-        let link = n.getElementsByTagName('a')
-        currentLink.href = link[0].href;
-        currentLink.textContent = n.textContent.replace(/#\s+/g,"");
-        currentToc.append(currentItem);
-    })
-</script>
-<script async src="https://unpkg.com/mermaid/dist/mermaid.min.js">mermaid.initialize({ startOnLoad: true });</script>
-
-    </div>
-</div>
-
-    </div>
-</div>
             </main>
         </div>
     </div>

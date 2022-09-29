@@ -62,7 +62,7 @@
     <div class="w-full mx-auto ff-bg-light">
         <div class="font-medium border-b pb-1">
             
-            v0.9.0
+            v0.10.0
             
             /<a class="mx-2" href="/docs">docs</a>/<a class="mx-2" href="/docs/user">user</a>/<a class="mx-2" href="/docs/user/team">team</a>
         </div>
@@ -74,252 +74,148 @@
 <p>Teams are groups of users that collaborate on their projects.</p>
 <h2 id="managing-teams" tabindex="-1"><a class="header-anchor" href="#managing-teams">#&nbsp;</a> Managing teams</h2>
 <h3 id="creating-a-new-team" tabindex="-1"><a class="header-anchor" href="#creating-a-new-team">#&nbsp;</a> Creating a new team</h3>
-<p>Users can create new teams. Creating a team requires a name and an instance wide
-unique slug. When a team is created the user that did is added as &quot;owner&quot;.</p>
+<p>Users can create new teams. Creating a team requires a name and a unique url.
+The user who creates the team is added as its &quot;owner&quot;.</p>
 <p><strong>Note</strong>: Administrators might not <a href="../../admin#admin-settings"">allow all users to create teams</a>.
 FlowForge Cloud does allow any user to create a new team.</p>
 <h3 id="adding-team-members" tabindex="-1"><a class="header-anchor" href="#adding-team-members">#&nbsp;</a> Adding team members</h3>
-<p>Each user with &quot;owner&quot; permissions on a team can add new members on the &quot;Members&quot;
-tab of the team pages. Adding members is done by inviting them by either email or
-FlowForge username. After submitting the form an invite is created for the new
-user which expires in 7 days. Once accepted the user is added as &quot;Member&quot;.</p>
+<p>Each user with &quot;owner&quot; permissions on a team can invite new members on the &quot;Members&quot;
+tab of the team page. Invitations can be sent to existing users on the platform by
+they username, or via email. Users have up to 7 days to accept, or decline, the invitation
+before it will expire.</p>
 <h3 id="removing-team-members" tabindex="-1"><a class="header-anchor" href="#removing-team-members">#&nbsp;</a> Removing team members</h3>
 <p>Owners can remove a member from a team by clicking the dropdown menu next to the username and selecting
 <code>Remove from team</code>. The team member will no longer have access to any team data.</p>
-<h2 id="role-based-access-control" tabindex="-1"><a class="header-anchor" href="#role-based-access-control">#&nbsp;</a> Role based access control</h2>
-<p>Members can have 1 role for all projects in the team. Below there's a table to
-describe the different Roles apply for all projects in the team</p>
+<h2 id="role-based-access-control" tabindex="-1"><a class="header-anchor" href="#role-based-access-control">#&nbsp;</a> Role-based access control</h2>
+<p>The role a user has in a team determines what they are able to do. The following
+table summaries what actions are available to the different roles.</p>
 <table>
 <thead>
 <tr>
 <th style="text-align:left">Role</th>
 <th style="text-align:center">Owner</th>
 <th style="text-align:center">Member</th>
+<th style="text-align:center">Viewer</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align:left"></td>
-<td style="text-align:center"></td>
-<td style="text-align:center"></td>
-</tr>
-<tr>
-<td style="text-align:left">Manage Billing</td>
+<td style="text-align:left">Manage Team Settings</td>
 <td style="text-align:center">✓</td>
+<td style="text-align:center">-</td>
 <td style="text-align:center">-</td>
 </tr>
 <tr>
-<td style="text-align:left"></td>
-<td style="text-align:center"></td>
-<td style="text-align:center"></td>
-</tr>
-<tr>
-<td style="text-align:left"><strong>Overview</strong></td>
-<td style="text-align:center"></td>
-<td style="text-align:center"></td>
-</tr>
-<tr>
-<td style="text-align:left">• View Projects</td>
-<td style="text-align:center">✓</td>
-<td style="text-align:center">✓</td>
-</tr>
-<tr>
-<td style="text-align:left">• Create Project</td>
+<td style="text-align:left">View Team Audit Log</td>
 <td style="text-align:center">✓</td>
 <td style="text-align:center">-</td>
-</tr>
-<tr>
-<td style="text-align:left"></td>
-<td style="text-align:center"></td>
-<td style="text-align:center"></td>
+<td style="text-align:center">-</td>
 </tr>
 <tr>
 <td style="text-align:left"><strong>Projects</strong></td>
 <td style="text-align:center"></td>
 <td style="text-align:center"></td>
-</tr>
-<tr>
-<td style="text-align:left">• View Projects</td>
-<td style="text-align:center">✓</td>
-<td style="text-align:center">✓</td>
+<td style="text-align:center"></td>
 </tr>
 <tr>
 <td style="text-align:left">• Create Project</td>
 <td style="text-align:center">✓</td>
 <td style="text-align:center">-</td>
-</tr>
-<tr>
-<td style="text-align:left"></td>
-<td style="text-align:center"></td>
-<td style="text-align:center"></td>
-</tr>
-<tr>
-<td style="text-align:left"><strong>Project</strong></td>
-<td style="text-align:center"></td>
-<td style="text-align:center"></td>
-</tr>
-<tr>
-<td style="text-align:left">• Actions Menu</td>
-<td style="text-align:center">✓</td>
 <td style="text-align:center">-</td>
 </tr>
 <tr>
-<td style="text-align:left">• Editor Link + Status</td>
+<td style="text-align:left">• Delete Project</td>
 <td style="text-align:center">✓</td>
-<td style="text-align:center">✓</td>
-</tr>
-<tr>
-<td style="text-align:left">• Modifiy Flows</td>
-<td style="text-align:center">✓</td>
-<td style="text-align:center">✓</td>
-</tr>
-<tr>
-<td style="text-align:left"></td>
-<td style="text-align:center"></td>
-<td style="text-align:center"></td>
-</tr>
-<tr>
-<td style="text-align:left"><strong>Selected Project</strong></td>
-<td style="text-align:center"></td>
-<td style="text-align:center"></td>
-</tr>
-<tr>
-<td style="text-align:left">• Overview</td>
-<td style="text-align:center">✓</td>
-<td style="text-align:center">✓</td>
-</tr>
-<tr>
-<td style="text-align:left">• Activity</td>
-<td style="text-align:center">✓</td>
-<td style="text-align:center">✓</td>
-</tr>
-<tr>
-<td style="text-align:left">• Snapshots...</td>
-<td style="text-align:center"></td>
-<td style="text-align:center"></td>
-</tr>
-<tr>
-<td style="text-align:left">  • View Snapshots</td>
-<td style="text-align:center">✓</td>
-<td style="text-align:center">✓</td>
-</tr>
-<tr>
-<td style="text-align:left">  • Create Snapshot</td>
-<td style="text-align:center">✓</td>
-<td style="text-align:center">✓</td>
-</tr>
-<tr>
-<td style="text-align:left">  • Rollback</td>
-<td style="text-align:center">✓</td>
-<td style="text-align:center">✓</td>
-</tr>
-<tr>
-<td style="text-align:left">  • Set as Device Target</td>
-<td style="text-align:center">✓</td>
-<td style="text-align:center">✓</td>
-</tr>
-<tr>
-<td style="text-align:left">  • Delete Snapshot</td>
-<td style="text-align:center">✓</td>
-<td style="text-align:center">-</td>
-</tr>
-<tr>
-<td style="text-align:left">• Devices...</td>
-<td style="text-align:center"></td>
-<td style="text-align:center"></td>
-</tr>
-<tr>
-<td style="text-align:left">  • View Devices</td>
-<td style="text-align:center">✓</td>
-<td style="text-align:center">✓</td>
-</tr>
-<tr>
-<td style="text-align:left">  • Register Device</td>
-<td style="text-align:center">✓</td>
-<td style="text-align:center">-</td>
-</tr>
-<tr>
-<td style="text-align:left">  • Device Row Menu</td>
-<td style="text-align:center">✓</td>
-<td style="text-align:center">✓</td>
-</tr>
-<tr>
-<td style="text-align:left">  • Device Row Menu &gt; delete device</td>
-<td style="text-align:center">✓</td>
-<td style="text-align:center">-</td>
-</tr>
-<tr>
-<td style="text-align:left">  • Device Overview</td>
-<td style="text-align:center">✓</td>
-<td style="text-align:center">✓</td>
-</tr>
-<tr>
-<td style="text-align:left">  • Device Settings...</td>
-<td style="text-align:center">✓</td>
-<td style="text-align:center"></td>
-</tr>
-<tr>
-<td style="text-align:left">   • Edit Device</td>
-<td style="text-align:center">✓</td>
-<td style="text-align:center">✓</td>
-</tr>
-<tr>
-<td style="text-align:left">   • View Environment Variables</td>
-<td style="text-align:center">✓</td>
-<td style="text-align:center">✓</td>
-</tr>
-<tr>
-<td style="text-align:left">   • Edit Environment Variables</td>
-<td style="text-align:center">✓</td>
-<td style="text-align:center">✓</td>
-</tr>
-<tr>
-<td style="text-align:left">   • Delete Device</td>
-<td style="text-align:center">✓</td>
-<td style="text-align:center">-</td>
-</tr>
-<tr>
-<td style="text-align:left">• Logs</td>
-<td style="text-align:center">✓</td>
-<td style="text-align:center">✓</td>
-</tr>
-<tr>
-<td style="text-align:left">• Settings...</td>
 <td style="text-align:center">-</td>
 <td style="text-align:center">-</td>
 </tr>
 <tr>
-<td style="text-align:left">  • View General</td>
+<td style="text-align:left">• Copy Project</td>
+<td style="text-align:center">✓</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:left">• View Project Details</td>
+<td style="text-align:center">✓</td>
 <td style="text-align:center">✓</td>
 <td style="text-align:center">✓</td>
 </tr>
 <tr>
-<td style="text-align:left">  • View Environment Variables</td>
+<td style="text-align:left">• Start, Stop, Suspend Project</td>
 <td style="text-align:center">✓</td>
-<td style="text-align:center">✓</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
 </tr>
 <tr>
-<td style="text-align:left">  • Edit Environment Variables</td>
+<td style="text-align:left">• Modify Project Settings</td>
 <td style="text-align:center">✓</td>
-<td style="text-align:center">✓</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
 </tr>
 <tr>
-<td style="text-align:left">  • View Other Settings</td>
+<td style="text-align:left">• Modify Environment Variables</td>
+<td style="text-align:center">✓</td>
 <td style="text-align:center">✓</td>
 <td style="text-align:center">-</td>
 </tr>
 <tr>
-<td style="text-align:left">  • Edit Other Settings</td>
+<td style="text-align:left"><strong>Flows</strong></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:left">• Access Flow Editor</td>
+<td style="text-align:center">✓</td>
+<td style="text-align:center">✓</td>
+<td style="text-align:center">✓</td>
+</tr>
+<tr>
+<td style="text-align:left">• Modify Flows</td>
+<td style="text-align:center">✓</td>
 <td style="text-align:center">✓</td>
 <td style="text-align:center">-</td>
 </tr>
 <tr>
-<td style="text-align:left"></td>
+<td style="text-align:left"><strong>Project Snapshots</strong></td>
 <td style="text-align:center"></td>
 <td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:left">• View Snapshots</td>
+<td style="text-align:center">✓</td>
+<td style="text-align:center">✓</td>
+<td style="text-align:center">✓</td>
+</tr>
+<tr>
+<td style="text-align:left">• Create Snapshot</td>
+<td style="text-align:center">✓</td>
+<td style="text-align:center">✓</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:left">• Rollback</td>
+<td style="text-align:center">✓</td>
+<td style="text-align:center">✓</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:left">• Set as Device Target</td>
+<td style="text-align:center">✓</td>
+<td style="text-align:center">✓</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:left">• Delete Snapshot</td>
+<td style="text-align:center">✓</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
 </tr>
 <tr>
 <td style="text-align:left"><strong>Devices</strong></td>
+<td style="text-align:center"></td>
 <td style="text-align:center"></td>
 <td style="text-align:center"></td>
 </tr>
@@ -327,108 +223,68 @@ describe the different Roles apply for all projects in the team</p>
 <td style="text-align:left">• View Devices</td>
 <td style="text-align:center">✓</td>
 <td style="text-align:center">✓</td>
+<td style="text-align:center">✓</td>
 </tr>
 <tr>
-<td style="text-align:left">• Register Device</td>
+<td style="text-align:left">• Modify Device Settings</td>
+<td style="text-align:center">✓</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:left">• Modify Environment Variables</td>
+<td style="text-align:center">✓</td>
 <td style="text-align:center">✓</td>
 <td style="text-align:center">-</td>
 </tr>
 <tr>
-<td style="text-align:left">• Device Row Menu</td>
+<td style="text-align:left">• Assign to/Remove from Project</td>
 <td style="text-align:center">✓</td>
+<td style="text-align:center">-</td>
 <td style="text-align:center">-</td>
 </tr>
 <tr>
-<td style="text-align:left">• Device Overview</td>
+<td style="text-align:left">• Delete Device</td>
 <td style="text-align:center">✓</td>
-<td style="text-align:center">✓</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
 </tr>
 <tr>
-<td style="text-align:left">• Device Settings...</td>
-<td style="text-align:center">✓</td>
+<td style="text-align:left"><strong>Team Members</strong></td>
 <td style="text-align:center"></td>
-</tr>
-<tr>
-<td style="text-align:left">  • General</td>
-<td style="text-align:center">✓</td>
-<td style="text-align:center">✓</td>
-</tr>
-<tr>
-<td style="text-align:left">  • Edit Device</td>
-<td style="text-align:center">✓</td>
-<td style="text-align:center">-</td>
-</tr>
-<tr>
-<td style="text-align:left">  • View Environment Variables</td>
-<td style="text-align:center">✓</td>
-<td style="text-align:center">✓</td>
-</tr>
-<tr>
-<td style="text-align:left">  • Edit Environment Variables</td>
-<td style="text-align:center">✓</td>
-<td style="text-align:center">✓</td>
-</tr>
-<tr>
-<td style="text-align:left">  • Delete Device</td>
-<td style="text-align:center">✓</td>
-<td style="text-align:center">-</td>
-</tr>
-<tr>
-<td style="text-align:left"></td>
 <td style="text-align:center"></td>
 <td style="text-align:center"></td>
 </tr>
 <tr>
-<td style="text-align:left"><strong>Members</strong></td>
-<td style="text-align:center"></td>
-<td style="text-align:center"></td>
-</tr>
-<tr>
-<td style="text-align:left">• Invite</td>
+<td style="text-align:left">• Invite User</td>
 <td style="text-align:center">✓</td>
+<td style="text-align:center">-</td>
 <td style="text-align:center">-</td>
 </tr>
 <tr>
-<td style="text-align:left">• Member List Row Menu</td>
+<td style="text-align:left">• Change Role</td>
 <td style="text-align:center">✓</td>
-<td style="text-align:center">✓</td>
-</tr>
-<tr>
-<td style="text-align:left">  • Change Role</td>
-<td style="text-align:center">✓</td>
+<td style="text-align:center">-</td>
 <td style="text-align:center">-</td>
 </tr>
 <tr>
-<td style="text-align:left">  • Remove From Team</td>
+<td style="text-align:left">• Remove User from Team</td>
 <td style="text-align:center">✓</td>
-<td style="text-align:center">✓</td>
-</tr>
-<tr>
-<td style="text-align:left">  • Remove Other from Team</td>
-<td style="text-align:center">✓</td>
-<td style="text-align:center">-</td>
-</tr>
-<tr>
-<td style="text-align:left"></td>
-<td style="text-align:center"></td>
-<td style="text-align:center"></td>
-</tr>
-<tr>
-<td style="text-align:left"><strong>Audit Log</strong></td>
-<td style="text-align:center">✓</td>
-<td style="text-align:center">-</td>
-</tr>
-<tr>
-<td style="text-align:left"><strong>Team Settings</strong></td>
-<td style="text-align:center">✓</td>
-<td style="text-align:center">-</td>
+<td style="text-align:center">- §1</td>
+<td style="text-align:center">- §1</td>
 </tr>
 </tbody>
 </table>
+<p>Notes:</p>
+<ul>
+<li><strong>§1</strong> A user in any role can remove themselves from a team</li>
+<li>Administrators users have owner-level access to all teams, but do not have access
+to the Flow Editor.</li>
+</ul>
 <h4 id="changing-roles" tabindex="-1"><a class="header-anchor" href="#changing-roles">#&nbsp;</a> Changing roles</h4>
-<p>Owners can change roles by selecting &quot;Change Role&quot; on the members tab of a team.
-The member selected will after submitting have a new role assigned with the new
-authorization scheme.</p>
+<p>Owners can change a user's role by selecting &quot;Change Role&quot; in the menu on the
+Team Members page. An Owner can only change their own role if the team has another
+owner in place.</p>
 
             </div>
         </div>
@@ -436,7 +292,7 @@ authorization scheme.</p>
             <h3 class="font-medium border-b pb-1 mb-4">On this page</h3>
             <ul id="toc" class="text-sm border-b mb-4"></ul>
             <div class="text-sm pb-1 text-right mb-4"><a href="https://github.com/flowforge/flowforge/edit/main/docs/user/team/README.md">Edit this page</a></div>
-            <div class="text-xs pb-1 text-right mb-4 italic">Updated: 2022-09-01 12:16:54 +0100</div>
+            <div class="text-xs pb-1 text-right mb-4 italic">Updated: 2022-09-29 10:29:27 +0100</div>
         </div>
     </div>
 </div>

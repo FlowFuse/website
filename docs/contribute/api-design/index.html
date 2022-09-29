@@ -62,7 +62,7 @@
     <div class="w-full mx-auto ff-bg-light">
         <div class="font-medium border-b pb-1">
             
-            v0.9.0
+            v0.10.0
             
             /<a class="mx-2" href="/docs">docs</a>/<a class="mx-2" href="/docs/contribute">contribute</a>/<a class="mx-2" href="/docs/contribute/api-design">api-design</a>
         </div>
@@ -144,6 +144,27 @@ permission.</p>
     // will be defined and will be used by the `needsPermission` handler
 });
 </code></pre>
+<h2 id="error-formats" tabindex="-1"><a class="header-anchor" href="#error-formats">#&nbsp;</a> Error formats</h2>
+<p>If a route needs to return an error it should respond with a payload in the format:</p>
+<pre><code>{
+    code: 'error_code',
+    error: 'Human-readable message'
+}
+</code></pre>
+<p>The <code>code</code> property should be a well-defined string that can be used to programmatically
+identify the error without relying on the human-readable message.</p>
+<p>There are a set of predefined codes that should be used where appropriate:</p>
+<ul>
+<li><code>unauthorized</code></li>
+<li><code>invalid_request</code></li>
+<li><code>unexpected_error</code></li>
+</ul>
+<p>If the error is relating to an invalid option/parameter/object selection, then the code
+should be:</p>
+<ul>
+<li><code>invalid_&lt;name of property&gt;</code></li>
+</ul>
+<p>For example: <code>invalid_project_name</code>.</p>
 <h2 id="pagination" tabindex="-1"><a class="header-anchor" href="#pagination">#&nbsp;</a> Pagination</h2>
 <p>All routes that return collections of things must use pagination to allow for
 future growth.</p>
@@ -206,7 +227,7 @@ query, using the <code>where</code> and <code>limit</code> options.</p>
             <h3 class="font-medium border-b pb-1 mb-4">On this page</h3>
             <ul id="toc" class="text-sm border-b mb-4"></ul>
             <div class="text-sm pb-1 text-right mb-4"><a href="https://github.com/flowforge/flowforge/edit/main/docs/contribute/api-design.md">Edit this page</a></div>
-            <div class="text-xs pb-1 text-right mb-4 italic">Updated: 2022-09-01 12:16:54 +0100</div>
+            <div class="text-xs pb-1 text-right mb-4 italic">Updated: 2022-09-29 10:29:27 +0100</div>
         </div>
     </div>
 </div>

@@ -62,7 +62,7 @@
     <div class="w-full mx-auto ff-bg-light">
         <div class="font-medium border-b pb-1">
             
-            v0.9.0
+            v0.10.0
             
             /<a class="mx-2" href="/docs">docs</a>/<a class="mx-2" href="/docs/cloud">cloud</a>/<a class="mx-2" href="/docs/cloud/billing">billing</a>
         </div>
@@ -81,15 +81,13 @@ If you have more than one team you will currently need to setup separate billing
 <p>Teams are billed monthly on the anniversary of the team creation. You will receive one bill for each team. Projects are billed in advance for the coming month.
 If a project is added during the billing cycle then a new charge is made for a full month and a pro-rated credit is then applied to the invoice on the next cycle for the unused time.</p>
 <h2 id="removing-projects" tabindex="-1"><a class="header-anchor" href="#removing-projects">#&nbsp;</a> Removing Projects</h2>
-<p>If you delete a project but still have other projects on their account you will receive a pro-rated credit for the number of whole days remaining in the billing cycle, which is used against a future invoice.
-If you delete your final project you will receive a pro-rated refund for the number of days remaining.
-The minimum cost for a project that is created and then deleted will be one day.</p>
-<h2 id="stopped-projects" tabindex="-1"><a class="header-anchor" href="#stopped-projects">#&nbsp;</a> Stopped Projects</h2>
-<p>Currently stopped projects are still charged as normal because the container is still running.
-We hope to offer the ability to suspend a project in a future release, please see
-<a href="https://github.com/flowforge/flowforge/issues/377">the GitHub issue</a>.</p>
+<p>When a project is deleted you will receive a pro-rated credit for the number of seconds remaining in the billing cycle, which is used against a future invoice.</p>
+<h2 id="suspended-projects" tabindex="-1"><a class="header-anchor" href="#suspended-projects">#&nbsp;</a> Suspended Projects</h2>
+<p>Suspended projects have no running editor, nor a runtime. You are not charged for suspended projects.
+When a project is suspended your account will receive a credit for the number of seconds remaining in the billing cycle.
+When a project is started up again then you will be billed for the remaining seconds in the teams billing cycle, any credit on the account from the project being suspended will be used towards this charge first.</p>
 <h2 id="managing-billing-details" tabindex="-1"><a class="header-anchor" href="#managing-billing-details">#&nbsp;</a> Managing Billing Details</h2>
-<p>The settings tab of your Team page has a link to Billing, on here you can see a summary of the teams current subscription.
+<p>The settings tab of your Team page has a link to billing, on here you can see a summary of the teams current subscription.
 There is also a link to the Stripe Customer Portal where you can change the payment card in use or the billing email address.</p>
 <h2 id="failed-payments" tabindex="-1"><a class="header-anchor" href="#failed-payments">#&nbsp;</a> Failed Payments</h2>
 <p>If your payment fails for any reason you will receive a notification to the billing email address, you may need to login and update the card on file.
@@ -101,7 +99,7 @@ Stripe will retry the payment several times over a number of days. If the card r
             <h3 class="font-medium border-b pb-1 mb-4">On this page</h3>
             <ul id="toc" class="text-sm border-b mb-4"></ul>
             <div class="text-sm pb-1 text-right mb-4"><a href="https://github.com/flowforge/flowforge/edit/main/docs/cloud/billing.md">Edit this page</a></div>
-            <div class="text-xs pb-1 text-right mb-4 italic">Updated: 2022-09-01 12:16:54 +0100</div>
+            <div class="text-xs pb-1 text-right mb-4 italic">Updated: 2022-09-29 10:29:27 +0100</div>
         </div>
     </div>
 </div>

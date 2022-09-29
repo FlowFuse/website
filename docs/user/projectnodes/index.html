@@ -64,33 +64,53 @@
             
             v0.10.0
             
-            /<a class="mx-2" href="/docs">docs</a>/<a class="mx-2" href="/docs/install">install</a>/<a class="mx-2" href="/docs/install/email_providers">email_providers</a>
+            /<a class="mx-2" href="/docs">docs</a>/<a class="mx-2" href="/docs/user">user</a>/<a class="mx-2" href="/docs/user/projectnodes">projectnodes</a>
         </div>
     </div>
     <div class="w-full mx-auto ff-bg-light flex flex-col md:flex-row">
         <div class="flex-grow order-last md:order-first">
             <div class="mt-6 mb-4 prose prose-blue main-content">
-                <h2 id="example-configuration-for-common-email-platforms" tabindex="-1"><a class="header-anchor" href="#example-configuration-for-common-email-platforms">#&nbsp;</a> Example configuration for common email platforms</h2>
-<h3 id="gmail" tabindex="-1"><a class="header-anchor" href="#gmail">#&nbsp;</a> GMail</h3>
-<pre><code>email:
-  enabled: true
-  debug: false
-  smtp:
-    host: smtp.gmail.com
-    port: 465
-    secure: true
-    auth:
-        user: [USER]@gmail.com
-        pass: [PASSWORD]
-</code></pre>
-<p>Note: Gmail may require an app specific password to be created if you are using 2FA on the account you can set that up <a href="https://security.google.com/settings/security/apppasswords">here</a></p>
+                <h1 id="flowforge-project-nodes" tabindex="-1"><a class="header-anchor" href="#flowforge-project-nodes">#&nbsp;</a> FlowForge Project Nodes</h1>
+<p>Projects running within FlowForge include a set of nodes that make it very
+quick and easy to securely send and receive messages between different projects
+in a team.</p>
+<p>The Project Nodes act in a similar way to the Node-RED Link nodes, but by allowing
+the links to extended between different projects, they open up a wide range of
+possibilities.</p>
+<p>For example, a single Project may contain a set of utility flows that you want
+to reuse in other projects. Rather than copy the flows into each project, the Project
+Nodes allow you to easily call those flows and get the result back.</p>
+<h3 id="nodes" tabindex="-1"><a class="header-anchor" href="#nodes">#&nbsp;</a> Nodes</h3>
+<p>There are three nodes in the Project Node collection:</p>
+<ul>
+<li><code>Project In</code> - listens for messages being broadcast by other projects, or for
+messages being sent just to this project</li>
+<li><code>Project Out</code> - sends messages to other projects</li>
+<li><code>Project Call</code> - sends messages to other projects and waits for a response</li>
+</ul>
+<p>The nodes send the whole <code>msg</code> object between projects. Due to the way the nodes
+encode messages, there are some data types that do not get sent. For example,
+the <code>msg.req</code>/<code>msg.res</code> properties used by the core HTTP nodes will not be sent.</p>
+<p>Each node is configured with a topic on which it either sends or receives messages
+on. This is similar in concept to MQTT topics - although the nodes do not currently
+support using MQTT wildcards in their topics.</p>
+<p>The Project Out nodes can either broadcast messages on a topic to anyone listening,
+or they can send messages on a topic to a specific other project.</p>
+<p>The Project In nodes do the opposite - they can either listen for messages being
+broadcast, or for messages sent directly to them.</p>
+<p>The Project Call node can be used to send a message to another Project In node
+and then wait for a response, with a built-in timeout if it doesn't arrive.
+The response is sent back using a Project Out node configured to respond to the call
+node.</p>
+<h3 id="github" tabindex="-1"><a class="header-anchor" href="#github">#&nbsp;</a> GitHub</h3>
+<p>The nodes are published under an Apache-2.0 license and available on <a href="https://github.com/flowforge/flowforge-nr-project-nodes">GitHub</a>.</p>
 
             </div>
         </div>
         <div class="w-full md:w-64 md:ml-8 mt-4 md:mt-6 px-2">
             <h3 class="font-medium border-b pb-1 mb-4">On this page</h3>
             <ul id="toc" class="text-sm border-b mb-4"></ul>
-            <div class="text-sm pb-1 text-right mb-4"><a href="https://github.com/flowforge/flowforge/edit/main/docs/install/email_providers.md">Edit this page</a></div>
+            <div class="text-sm pb-1 text-right mb-4"><a href="https://github.com/flowforge/flowforge/edit/main/docs/user/projectnodes.md">Edit this page</a></div>
             <div class="text-xs pb-1 text-right mb-4 italic">Updated: 2022-09-29 10:29:27 +0100</div>
         </div>
     </div>
