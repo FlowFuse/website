@@ -62,7 +62,7 @@ As an open-source project, we welcome the community involvement in what we're bu
 
 ### Upgrading FlowForge
 
-[FlowForge Cloud](https://app.flowforge.com) is already running 0.10 and the stacks updated. Upgrade your project stacks to the latest version and start using the Project Link nodes now.
+[FlowForge Cloud](https://app.flowforge.com) is already running 0.10 and the stacks updated. Upgrade your project stacks to the latest version to make sure you get all the latest changes.
 
 If you installed a previous version of FlowForge and want to upgrade, our documentation provides a
 guide for [upgrading FlowForge on a local server](http://flowforge.com/docs/install#upgrade).
