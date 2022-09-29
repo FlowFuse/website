@@ -6,6 +6,7 @@ on the [OpenJS Foundation Node-RED project](https://nodered.org).
  - [Strategy](../company/strategy.md)
  - [Communication](../company/communication.md)
  - [Security](../company/security.md)
+ - [Remote work](../company/remote.md)
 
 # Values
 
