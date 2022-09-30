@@ -62,35 +62,33 @@
     <div class="w-full mx-auto ff-bg-light">
         <div class="font-medium border-b pb-1">
             
-            /<a class="mx-2" href="/handbook">handbook</a>/<a class="mx-2" href="/handbook/development">development</a>/<a class="mx-2" href="/handbook/development/frontend">frontend</a>/<a class="mx-2" href="/handbook/development/frontend/services">services</a>
+            /<a class="mx-2" href="/handbook">handbook</a>/<a class="mx-2" href="/handbook/company">company</a>/<a class="mx-2" href="/handbook/company/remote">remote</a>
         </div>
     </div>
     <div class="w-full mx-auto ff-bg-light flex flex-col md:flex-row">
         <div class="flex-grow order-last md:order-first">
             <div class="mt-6 mb-4 prose prose-blue main-content">
-                <h2 id="services" tabindex="-1"><a class="header-anchor" href="#services">#&nbsp;</a> Services</h2>
-<p>The frontend contains two helper services that can be called anywhere in the UI. Each of the services control components built into the main <code>Platform.vue</code>.</p>
-<video width="500" controls>
-  <source src="../../../videos/ui-services-demo.mp4"" type="video/mp4">
-</video>
-Here we see an example of a `Dialog` being used to confirmed deletion of a snapshot, followed by confirmation of the deletion via an `Alert`.
-<h3 id="alerts" tabindex="-1"><a class="header-anchor" href="#alerts">#&nbsp;</a> Alerts</h3>
-<p>Alerts should be used to reinforce the completion of an action, or to alert a user that something has gone wrong.</p>
-<p>The important piece to note here is that alerts should be for <em><strong>information only</strong></em>, and should not require any actions on the user's part.</p>
-<pre class="language-js"><code class="language-js"><span class="token keyword">import</span> Alert <span class="token keyword">from</span> <span class="token string">'@/services/alerts'</span><br><br><span class="token comment">/*<br> * msg       - The text to be displayed in the alert.<br> * type      - 'info' | 'confirmation' | 'warning'<br> * countdown - (optional) If provided, the alert will disappear<br> *             after this duration (ms), defaults to 3000.<br> */</span><br>Alert<span class="token punctuation">.</span><span class="token function">emit</span><span class="token punctuation">(</span>msg<span class="token punctuation">,</span> type<span class="token punctuation">,</span> countdown<span class="token punctuation">)</span></code></pre>
-<p>The service is built from the <a href="https://flowforge.github.io/forge-ui-components/#ff-notification-toast">ff-notification-toast</a> forge-ui-component.</p>
-<h3 id="dialog" tabindex="-1"><a class="header-anchor" href="#dialog">#&nbsp;</a> Dialog</h3>
-<p>The Dialog service should be used when user confirmation is required, after an action has been taken. For example, if a user attempts to delete a resource, a confirmation Dialog should be shown to ensure this was not an accidental action.</p>
-<pre class="language-js"><code class="language-js"><span class="token keyword">import</span> Dialog <span class="token keyword">from</span> <span class="token string">'@services/dialog'</span><br><br><span class="token comment">/*<br> * msg      - {<br> *               header: '&lt;header title>',<br> *               kind: 'danger` | `primary` | `secondary` | `tertiary',  (default = 'primary') <br> *               text: 'show this message in the dialog',<br> *               html: 'instead of "text", you can provide html for more custom appearance and content',<br> *               confirmLabel: '&lt;confirm-label>'<br> *            }<br> * callback - function to run when the user confirms the dialog<br> */</span><br>Dialog<span class="token punctuation">.</span><span class="token function">show</span><span class="token punctuation">(</span>msg<span class="token punctuation">,</span> callback<span class="token punctuation">)</span></code></pre>
-<p>The service is built from the <a href="https://flowforge.github.io/forge-ui-components/#ff-dialog">ff-dialog</a> forge-ui-component.</p>
-<p>More complex <code>ff-dialog</code> instances, where you can use the component directly, can also be used for forms.</p>
+                <p>FlowForge is fully remote and our team spans multiple countries and timezones.
+Working remotely can require some changes.</p>
+<h3 id="working-from-a-coworking-space" tabindex="-1"><a class="header-anchor" href="#working-from-a-coworking-space">#&nbsp;</a> Working from a Coworking space</h3>
+<p>Not everyone wants to sit at home during work, it's recommended to work at least
+one day a week outside of home. To accomodate this, you can
+<a href="../../peopleops#coworking-space-allowance"">expense a coworking space</a>.</p>
+<h3 id="seperating-work-from-private-life" tabindex="-1"><a class="header-anchor" href="#seperating-work-from-private-life">#&nbsp;</a> Seperating work from private life</h3>
+<p>Its adviced to seperate work and private life as much as possible. Now there's
+less of a physical barrier, it's more important to create this barrier on the
+digital world. Turn off notification outside of your intended working hours for
+email, Slack, and GitHub where possible.</p>
+<p>While FlowForge allows you to use your work devices for private purposes, this
+is another venue to explore. It might work out better to have a private devices
+without any work related data to have access to work when not working.</p>
 
             </div>
         </div>
         <div class="w-full md:w-64 md:ml-8 mt-4 md:mt-6 px-2">
             <h3 class="font-medium border-b pb-1 mb-4">On this page</h3>
             <ul id="toc" class="text-sm border-b mb-4"></ul>
-            <div class="text-sm pb-1 text-right mb-4"><a href="https://github.com/flowforge/handbook/edit/main/development/frontend/services.md">Edit this page</a></div>
+            <div class="text-sm pb-1 text-right mb-4"><a href="https://github.com/flowforge/handbook/edit/main/company/remote.md">Edit this page</a></div>
             <div class="text-xs pb-1 text-right mb-4 italic">Updated: 2022-09-30 08:49:17 +0100</div>
         </div>
     </div>
