@@ -16,7 +16,7 @@ Version 0.10 was released on 30th September. Our latest release includes some gr
 If you’d like to learn more about what else was included in 0.10 you can do so on our [blog post](flowforge.com/blog/2022/09/flowforge-010-released/), on our [GitHub release page](github.com/flowforge/flowforge/releases/tag/v0.10.0) and on our [Youtube channel](youtube.com/watch?v=mjR1iiEFiBg). We’d also love for more of you to get involved in the development of FlowForge, [contributions to the code](https://github.com/flowforge/flowforge/blob/main/CONTRIBUTING.md) and [bug reports](https://github.com/flowforge/flowforge/issues) are really appreciated.
     
 [**Node-RED Con 2022**](https://nrcon.nodered.org/)  
-We are happy to again be involved in Node-RED con. The event is being held online on 7th October, with content for both English and Japanese speakers. You can find out more on the [Node-RED Con website](https://nrcon.nodered.org/).  
+We are happy to again be involved in Node-RED con. The event is being held online on 7th October, with content for both English and Japanese speakers including our collegaues Nick O'Leary and Sam Machin. You can find out more on the [Node-RED Con website](https://nrcon.nodered.org/).  
 
 [**FlowForge Team News**](https://flowforge.com/team/)    
 We are currently recruiting [NodeJS Developers](https://boards.greenhouse.io/flowforge/jobs/4463977004), if you’re interested in joining our team please [apply here](https://boards.greenhouse.io/flowforge/jobs/4463977004#app).
@@ -30,4 +30,4 @@ Docker has [announced](https://twitter.com/Docker/status/1559919666721693699?t=Q
 This faciniating project came up a few days ago and we wanted to share it with you all. The concept is to use a mesh network of IoT devices to monitor various indicators of potential and current wild fires and report that that data back to the relevant authorities. The [developer](linkedin.com/in/zainmfd/) is planning to use Node-RED to manage the reporting of fires to the authorities.
     
 [**Try FlowForge for Free**](https://app.flowforge.com/account/create)  
-As a thank you for reading our newsletters we’d like to offer you a free, small project for one month on FlowForge when you create a new team. To get this discount please use the code RELEASE09 when on the payment page after creating a new team.
+As a thank you for reading our newsletters we’d like to offer you a free, small project for one month on FlowForge when you create a new team. To get this discount please use the code RELEASE010 when on the payment page after creating a new team.
