@@ -12,7 +12,7 @@ The level of support provided to a customer will depend on the tier of our produ
 ## Support Tickets
 
 ### Freshdesk
-We use freshdesk to manage our customer support tickets for FlowForge Cloud, there is currently a single login for the support user in the Support Value of 1Password.
+We use freshdesk to manage our customer support tickets for FlowForge Cloud, there is currently a single login for the support user in the Support Vault of 1Password.
 
 Whenever a customer raises a new ticket or replies with an update a message is posted into slack #support-tickets.
 This will allow the whole team visibility of customer issues, comments on the slack thread will be added to the ticket as notes. _Note: because of the way the slack integration works freshdesk won't show who has made the comment, so please add your name_
