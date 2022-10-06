@@ -23,9 +23,6 @@ We are currently recruiting [NodeJS Developers](https://boards.greenhouse.io/flo
 
 We are also looking for a [PeopleOps Manager](boards.greenhouse.io/flowforge/jobs/4687876004) to help us grow our team. You can [apply here](boards.greenhouse.io/flowforge/jobs/4687876004#app) for that position.
     
-[**Official Node-RED Docker Image Passes Milestone**](https://twitter.com/Docker/status/1559919666721693699?t=QBzGGzY2kJ12Z5aoi1QPTA)  
-Docker has [announced](https://twitter.com/Docker/status/1559919666721693699?t=QBzGGzY2kJ12Z5aoi1QPTA) that the Node-RED Docker image has now been downloaded over 100 million times. They have also created a [guide to using Node-RED](https://www.docker.com/blog/build-retail-store-items-detection-system-no-code-ai/?utm_campaign=2022-08-17-brnd-nocode&utm_medium=social&utm_source=twitter) to Build and Deploy a Retail Store Items Detection System Using No-Code AI Vision at the Edge. We think it’s worth a read.
-    
 [**Forest Fire Alerts Using ML, IOT and Node-RED**](hackster.io/user102774/fight-fire-wild-fire-prediction-using-tinyml-df7572)  
 This fascinating project came up a few days ago and we wanted to share it with you all. The concept is to use a mesh network of IoT devices to monitor various indicators of potential and current wildfires and report data back to the relevant authorities. The system will use ML to predict wildfire risk levels and hopefully send warnings before a fire actually starts. The two developers [Muhammed](linkedin.com/in/zainmfd/) and [Salman](linkedin.com/in/salmanfarisvp/) are planning to use Node-RED to manage the reporting of fires to the authorities.
     
