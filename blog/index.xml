@@ -3,8 +3,33 @@
     <title>FlowForge</title>
     <link href="https://flowforge.com/blog/index.xml" rel="self"/>
     <link href="https://flowforge.com/blog"/>
-    <updated>2022-09-30T12:00:00Z</updated>
+    <updated>2022-10-07T00:00:00Z</updated>
     <id>https://flowforge.com/blog</id>
+    
+    <entry>
+        <id>https://flowforge.com/blog/2022/10/community-news-09/</id>
+        <title>Community News</title>
+        <summary>News from the FlowForge and Node-RED communities</summary>
+        <updated>2022-10-07T00:00:00Z</updated>
+        <link href="https://flowforge.com/blog/2022/10/community-news-09/"/>
+        <author><name>Rob Marcer</name></author>
+        <content type="html">&lt;p&gt;Welcome to the FlowForge newsletter, a regular roundup of what’s happening with both FlowForge and the wider Node-RED community.&lt;/p&gt;
+&lt;!--more--&gt;
+&lt;p&gt;If you&#39;ve got something that you&#39;d like us to share please email &lt;a href=&quot;mailto:contact@flowforge.com&quot;&gt;contact@flowforge.com&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://flowforge.com/blog/2022/09/flowforge-010-released/&quot;&gt;&lt;strong&gt;FlowForge 0.10&lt;/strong&gt;&lt;/a&gt;&lt;br /&gt;
+Version 0.10 was released on 30th September. Our latest release includes some great new features, quality of life improvements and bug fixes. Notable additions included the ability to &lt;a href=&quot;https://github.com/flowforge/flowforge/pull/893&quot;&gt;Secure your HTTP endpoints&lt;/a&gt;, &lt;a href=&quot;https://flowforge.com/blog/2022/10/community-news-09/github.com/flowforge/flowforge/issues/657&quot;&gt;Add read-only users to your projects&lt;/a&gt; and &lt;a href=&quot;https://flowforge.com/blog/2022/10/community-news-09/github.com/flowforge/CloudProject/issues/59&quot;&gt;use our static IP address for outbound connections&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;If you’d like to learn more about what else was included in 0.10 you can do so on our &lt;a href=&quot;https://flowforge.com/blog/2022/10/community-news-09/flowforge.com/blog/2022/09/flowforge-010-released/&quot;&gt;blog post&lt;/a&gt;, on our &lt;a href=&quot;https://flowforge.com/blog/2022/10/community-news-09/github.com/flowforge/flowforge/releases/tag/v0.10.0&quot;&gt;GitHub release page&lt;/a&gt; and on our &lt;a href=&quot;https://flowforge.com/blog/2022/10/community-news-09/youtube.com/watch?v=mjR1iiEFiBg&quot;&gt;Youtube channel&lt;/a&gt;. We’d also love for more of you to get involved in the development of FlowForge, &lt;a href=&quot;https://github.com/flowforge/flowforge/blob/main/CONTRIBUTING.md&quot;&gt;contributions to the code&lt;/a&gt; and &lt;a href=&quot;https://github.com/flowforge/flowforge/issues&quot;&gt;bug reports&lt;/a&gt; are really appreciated.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://nrcon.nodered.org/&quot;&gt;&lt;strong&gt;Node-RED Con 2022&lt;/strong&gt;&lt;/a&gt;&lt;br /&gt;
+We are happy to again be involved in Node-RED con. The event is being held online on 7th October, with content for both English and Japanese speakers including our collegaues Nick O&#39;Leary and Sam Machin. You can find out more on the &lt;a href=&quot;https://nrcon.nodered.org/&quot;&gt;Node-RED Con website&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://flowforge.com/team/&quot;&gt;&lt;strong&gt;FlowForge Team News&lt;/strong&gt;&lt;/a&gt;&lt;br /&gt;
+We are currently recruiting &lt;a href=&quot;https://boards.greenhouse.io/flowforge/jobs/4463977004&quot;&gt;NodeJS Developers&lt;/a&gt;, if you’re interested in joining our team please &lt;a href=&quot;https://boards.greenhouse.io/flowforge/jobs/4463977004#app&quot;&gt;apply here&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;We are also looking for a &lt;a href=&quot;https://flowforge.com/blog/2022/10/community-news-09/boards.greenhouse.io/flowforge/jobs/4687876004&quot;&gt;PeopleOps Manager&lt;/a&gt; to help us grow our team. You can &lt;a href=&quot;https://flowforge.com/blog/2022/10/community-news-09/boards.greenhouse.io/flowforge/jobs/4687876004#app&quot;&gt;apply here&lt;/a&gt; for that position.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://flowforge.com/blog/2022/10/community-news-09/hackster.io/user102774/fight-fire-wild-fire-prediction-using-tinyml-df7572&quot;&gt;&lt;strong&gt;Forest Fire Alerts Using ML, IOT and Node-RED&lt;/strong&gt;&lt;/a&gt;&lt;br /&gt;
+This fascinating project came up a few days ago and we wanted to share it with you all. The concept is to use a mesh network of IoT devices to monitor various indicators of potential and current wildfires and report data back to the relevant authorities. The system will use ML to predict wildfire risk levels and hopefully send warnings before a fire actually starts. The two developers &lt;a href=&quot;https://flowforge.com/blog/2022/10/community-news-09/linkedin.com/in/zainmfd/&quot;&gt;Muhammed&lt;/a&gt; and &lt;a href=&quot;https://flowforge.com/blog/2022/10/community-news-09/linkedin.com/in/salmanfarisvp/&quot;&gt;Salman&lt;/a&gt; are planning to use Node-RED to manage the reporting of fires to the authorities.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://flowforge.com/blog/2022/10/community-news-09/app.flowforge.com/account/create?code=RELEASE010&quot;&gt;&lt;strong&gt;Try FlowForge for Free&lt;/strong&gt;&lt;/a&gt;&lt;br /&gt;
+As a thank you for reading our newsletters we’d like to offer you a free, small project for one month on FlowForge when you create a new team. To get this discount please follow &lt;a href=&quot;https://flowforge.com/blog/2022/10/community-news-09/app.flowforge.com/account/create?code=RELEASE010&quot;&gt;this link&lt;/a&gt; or use the code RELEASE010 when on the payment page after creating a new team.&lt;/p&gt;
+</content>
+    </entry>
     
     <entry>
         <id>https://flowforge.com/blog/2022/09/flowforge-010-released/</id>
