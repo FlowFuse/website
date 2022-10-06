@@ -56,144 +56,72 @@
 <div class="w-full page">
     
         
-        <div class="hero hero-lg container m-auto text-center flex flex-wrap mt-6 p-6 mb-32 md:flex-nowrap md:max-w-4xl md:mt-12">
+        <div class="container m-auto text-center flex mt-6 p-6 mb-6 md:max-w-4xl md:mt-12">
         
-            <div class="text-left md:pr-20">
-                <h1>Team-based Low-Code Development</h1>
+            <div class="text-left md:pr-32">
+                <h1>Security Statment - FlowForge</h1>
                 
-                <h4>Get started with FlowForge today. Run it for yourself, or sign-up to our managed service.</h4>
-                
-                
-                <div><div class="space-y-4 flex flex-col"> <a class="ff-btn ff-btn--secondary max-w-xs" href="https://app.flowforge.com/account/create">Sign up to our managed service</a> <a class="ff-btn ff-btn--secondary max-w-xs" href="/docs/install">Install on your own infrastructure</a> </div></div>
                 
             </div>
-            
-            <img class="hidden md:block" src="../images/pictograms/cloud.png"/>
             
         </div>
     
     <div class="content">
-        
-<div class="ff-divider">
-    <svg xmlns="http://www.w3.org/2000/svg" width="1440" height="461" fill="none" viewBox="0 0 1440 461" preserveAspectRatio="none">
-    <path fill="url(#paint0_linear_190_762)" fill-rule="evenodd" d="M733 218.595C263 218.595 0 0 0 0v374.941s324.5 47.903 709.5-16.519S1440 154 1440 154v-.933s-237 65.528-707 65.528z" clip-rule="evenodd"/>
-    <path fill="#BC3838" d="M1440 460.5V153s-139 52.5-329 110.5S762 349 762 349s122-20.5 360 26 318 85.5 318 85.5z"/>
-    <defs>
-        <linearGradient id="paint0_linear_190_762" x1="778" x2="835.049" y1="84.537" y2="594.754" gradientUnits="userSpaceOnUse">
-        <stop stop-color="#374151"/>
-        <stop offset=".723" stop-color="#4B5563"/>
-        </linearGradient>
-    </defs>
-    </svg>
+        <div class="nohero w-full pt-12 pb-24 ff-bg-light">
+    <div class="container m-auto text-left px-6 md:max-w-screen-lg">
+        <div class="prose prose-blue container m-auto max-w-4xl">
+<p>Security aspects of FlowForge are divided up into two sections, configuration
+and application level. Application level security aspects apply to both self
+managed and FlowForge managed instances.</p>
+<h2 id="application" tabindex="-1"><a class="header-anchor" href="#application">#&nbsp;</a> Application</h2>
+<h3 id="user-sessions" tabindex="-1"><a class="header-anchor" href="#user-sessions">#&nbsp;</a> User sessions</h3>
+<p>Users are identified by an unique combination of username and password. There's
+currently no support for SSO/SAML in FlowForge, it is
+<a href="https://github.com/flowforge/flowforge/issues/226">being investigated</a> as part
+of our roadmap.</p>
+<p>User provisioning is on a per user basis.</p>
+<h2 id="configuration" tabindex="-1"><a class="header-anchor" href="#configuration">#&nbsp;</a> Configuration</h2>
+<p>Configuration of the FlowForge application influences security aspects of the
+system at large. For each section the implementation of FlowForge managed
+installs are mentioned too. For self managed installs we advise to follow the
+choices made by FlowForge Managed installs.</p>
+<h3 id="data-storage" tabindex="-1"><a class="header-anchor" href="#data-storage">#&nbsp;</a> Data storage</h3>
+<h4 id="data-at-rest" tabindex="-1"><a class="header-anchor" href="#data-at-rest">#&nbsp;</a> Data at Rest</h4>
+<p>All user data is stored in a relational database, which are encrypted by default
+for all install methods except local.</p>
+<p><em>FlowForge Managed</em>: Data is stored in a PostgreSQL database.
+<a href="https://github.com/flowforge/CloudProject/issues/79">Data will be encrypted from November 2022 onwards (internal link)</a>).</p>
+<h4 id="data-residency" tabindex="-1"><a class="header-anchor" href="#data-residency">#&nbsp;</a> Data residency</h4>
+<p>Long term data storage is depended on the location of the relational database
+storage.</p>
+<p><em>FlowForge Managed</em>: Data is stored in the European Union, specificially
+Ireland, on AWS eu-west-1.</p>
+<h3 id="data-in-transit" tabindex="-1"><a class="header-anchor" href="#data-in-transit">#&nbsp;</a> Data in Transit</h3>
+<p>Traffic from external sources to the FlowForge application can be encrypted.
+When a load balancer is used, the encryption is terminated on the edge. Internal
+traffic is not encrypted.</p>
+<p><em>FlowForge Managed</em>: Data in transit to and from external sources is protected
+with SSL/TLS. Encryption is terminated at the edge, both for HTTP and MQTT
+traffic.</p>
+<p>Adding internal SSL/TLS is <a href="https://github.com/flowforge/flowforge/issues/910">being investigated</a>.</p>
+<h4 id="inter-project-communication" tabindex="-1"><a class="header-anchor" href="#inter-project-communication">#&nbsp;</a> Inter project communication</h4>
+<p>Communication between a teams projects is MQTT based. Traffic can be encrypted
+based on the broker configuration.</p>
+<p><em>FlowForge Managed</em>: Inbound and outbound traffic is send encrypted to
+FlowForge. The encryption is terminated at the load balancer. Internal traffic
+is not encrypted.</p>
+<h3 id="service-endpoints" tabindex="-1"><a class="header-anchor" href="#service-endpoints">#&nbsp;</a> Service endpoints</h3>
+<p>It's recommended to run the FlowForge application and the flow runtimes on
+different domains. This will create separation of concerns and enhances security
+for, among others, cookies.</p>
+<p><em>FlowForge Managed</em>: Our SaaS offering has multiple service domains. The
+corporate website is hosted at <a href="https://flowforge.com">flowforge.com</a>. The
+application is served at <a href="https://app.flowforge.com">app.flowforge.com</a>, while
+the Node-RED instances are served from *.flowforge.cloud.</p>
 </div>
 
-<!-- Key Features -->
-<div class="product w-full ff-bg-dark px-6 pt-20 pb-24 md:px-0 md:pt-32 md:pb-48">
-    <div class="container m-auto text-center max-w-4xl">
-        <div class="mt-9">
-            <h1 class="mb-4">Key Features</h1>
-        </div>
-        <div class="mt-20 flex flex-wrap justify-center">
-            <div class="company-value">
-                <img src="../images/pictograms/time.png" />
-                <h5>Fast setup</h5>
-            </div>
-            <div class="company-value">
-                <img src="../images/pictograms/security.png" />
-                <h5>Enterprise Ready</h5>
-            </div>
-            <div class="company-value">
-                <img src="../images/pictograms/community.png" />
-                <h5>Team-Based Collaboration</h5>
-            </div>
-            <div class="company-value">
-                <img src="../images/pictograms/node_catalog.png" />
-                <h5>4000+ integrations available</h5>
-            </div>
-            <div class="company-value">
-                <img src="../images/pictograms/edge.png" />
-                <h5>Edge Devices</h5>
-            </div>
-            <div class="company-value">
-                <img src="../images/pictograms/ticket.png" />
-                <h5>Ticket-Based Support</h5>
-            </div>
-        </div>
     </div>
 </div>
-
-<div class="ff-divider ff-divider--shallow">
-    <svg xmlns="http://www.w3.org/2000/svg" width="1442" height="172" fill="none" viewBox="0 0 1442 172" preserveAspectRatio="none">
-        <path fill="#BC3838" d="M0 172h414.325c147.535-40.967 259.941-58.893 262.567-59.31-2.726.428-124.054 18.996-359.155-27.05C79.934 39.062 0 0 0 0v172z"/>
-        <path fill="#F9FAFB" d="M726.395 105.629C484.848 138.752 242.394 172 0 172h1442V40c-237.01 0-475.86 32.753-715.605 65.629z"/>
-    </svg>
-</div>
-
-<div class="product w-full ff-bg-light pt-12 pb-32 sm:pt-24">
-    <div class="m-auto max-w-3xl px-6">
-    	<div class="product-left">
-            <div>
-                <h2>Fast setup</h2>
-                <p>With FlowForge, deploying a new Node-RED project takes moments. No configuration of proxies and setting up DNS, get going in less time than it takes to make a cup of tea.</p>
-    	    </div>
-            <img src="../images/pictograms/time_red.png" />
-        </div>
-        <div class="product-right">
-            <div>
-                <h2>Enterprise Ready</h2>
-                <p>With centralized user management, and role based access control you can control who has access. Audit logs provide information about what changes have been made.</p>
-            </div>
-            <img src="../images/pictograms/security_red.png" />
-        </div>
-        <div class="product-left">
-            <div>
-                <h2>Flexible organization</h2>
-                <p>Use multiple teams to organize your projects and share access with the right people, invite new users to join the team quickly. Create multiple projects with shared access between all members of your team.</p>
-            </div>
-            <img src="../images/pictograms/community_red.png" />
-        </div>
-        <div class="product-right">
-            <div>
-                <h2>Huge Node Catalog</h2>
-                <p>Leverage over 4000 custom nodes already developed to connect the physical world to digital services and back again.</p>
-            </div>
-            <img src="../images/pictograms/node_catalog_red.png" />
-        </div>
-	    <div class="product-left">
-            <div>
-                <h2>Edge Device Management</h2>
-                <p>Deploy flows to edge devices with the click of a button. Updating flows in a few megabytes, no need to update Docker images, no need to compromise your security on your devices.</p>
-            </div>
-            <img src="../images/pictograms/edge_red.png" />
-        </div>
-        <div class="product-right">
-            <div>
-                <h2>Fully Browser Based</h2>
-                <p>No need to install any software, everything can be managed from a web browser. Simple drag and drop editing of your workflows. Manage your project settings and config from within the FlowForge application.</p>
-            </div>
-            <img src="../images/pictograms/browser_red.png" />
-        </div>
-        <div class="product-left">
-            <div>
-                <h2>Node-RED managed for you</h2>
-                <p>Stay up to date with the latest versions of Node-RED made available for you with easy upgrades.</p>
-            </div>
-            <img src="../images/node-red-hexagon.png" />
-        </div>
-        <div class="product-right">
-            <div>
-                <h2>EU Hosted</h2>
-                <p>Our managed platform is hosted in the EU. Dedicated instances in other regions available on request.</p>
-            </div>
-            <img src="../images/pictograms/eu.png" />
-        </div>
-
-	At FlowForge we understand that the security practises of our product
-	are important to your company. We've prepared a <a href="./security">security statement</a>
-	for you to understand the choices we've made.
-    </div>
-</div>
-
 
     </div>
 </div>
