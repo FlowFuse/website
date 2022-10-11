@@ -103,7 +103,7 @@ Target growth for this metric is 40% month over month.
 
 As very early company pre-Product Market Fit company, revenue is an imperfect
 heuristic. However as a business it's a good metric as it's the ultimate goal.
-FlowForge Cloud generates Monthly Recurring Revenue (MRR) through subscriptions,
+Our SaaS offering generates Monthly Recurring Revenue (MRR) through subscriptions,
 while enterprise sales is done on annual contracts. To normalize to one metric
 to report our MRR is multiplied by 12 and added to the ARR of enterprise sales.
 

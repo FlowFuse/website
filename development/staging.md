@@ -1,8 +1,8 @@
 # Staging Environment
 
 We have a staging environment running on AWS which is a scaled down replica of
-FlowForge Cloud, with a separate domain. Staging URL and sign in details can be
-found in the Developer Vault in 1Password.
+our managed FlowForge offering, with a separate domain. Staging URL and sign in
+details can be found in the Developer Vault in 1Password.
 
 ## AWS Account
 
