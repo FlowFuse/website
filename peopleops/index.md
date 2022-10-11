@@ -112,8 +112,6 @@ The company covering certain costs, such as broadband can have tax implications 
 
 #### Coworking space allowance
 
-If you want to occasionally use a separate workspace to your home, the company will cover up to $100 a month in charges for renting a desk in a co-working space on an ad-hoc basis. 
-
-If you want to work from a rented co-working space full time this should be discussed with your manager.
+If you want to occasionally use a separate workspace to your home, the company will cover up to $150 a month in charges for renting a desk in a co-working space. 
 
 [gh-admin]: https://github.com/flowforge/admin
