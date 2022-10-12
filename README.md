@@ -12,15 +12,19 @@ and strongly encouraged.
 
  - [Values](./company)
  - [Strategy](./company/strategy.md)
- - [Communication](./company/communication.md)
- - [Design](./design)
- - [Development](./development)
- - [PeopleOps](./peopleops)
- - [Security](./company/security.md)
  - [Operations](./operations)
  - [Product](./product)
+### Development & Design Practices
 
-### Colophon
+ - [Design](./design)
+ - [Development](./development)
+### Internal Operations
+
+ - [Communication](./company/communication.md)
+ - [PeopleOps](./peopleops)
+ - [Security](./company/security.md)
+ 
+### About the Handbook
 
 The FlowForge handbook is inspired by the [GitLab handbook](https://about.gitlab.com/handbook/about/).
 As an all-remote company, we share [their rationale](https://about.gitlab.com/handbook/about/#advantages) for having a handbook.
