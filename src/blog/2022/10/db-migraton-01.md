@@ -1,6 +1,6 @@
 # Planned Database Migration
 
-As part of an on going security [review](https://flowforge.com/product/security/#data-at-rest) of the FlowForge Managed offering we discovered that the backend database was not using encrypted storage. In keeping with industry best practices we we plan to migrate the database to a new instance using encrypted at rest storage.
+As part of an on going security [review](https://flowforge.com/product/security/#data-at-rest) of the FlowForge Managed offering we discovered that the backend database was not using encrypted storage. In keeping with industry best practices we plan to migrate the database to a new instance using encrypted at rest storage.
 
 ## Impact
 
