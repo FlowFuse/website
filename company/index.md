@@ -33,7 +33,8 @@ There may be times when more is needed to meet a goal, deadline or customer
 situation. We take the responsibility to ensure they are the exceptions rather
 than the rule.
 
-We don't try to compete over the hours we work - everyone does what is right for them.  We focus on what gets done and take pride in seeing each other succeed.
+We don't try to compete over the hours we work - everyone does what is right for them.
+We focus on what gets done and take pride in seeing each other succeed.
 
 #### Bias for Action
 
@@ -44,7 +45,7 @@ urgency and a focus to achieve our best.
 When you disagree with a solution to a problem, provide a concrete alternate
 solution to allow momentum to be maintained or even gained.
 
-Ship the minimun viable change possible. Small changes allow fast feedback loops
+Ship the minimum viable change possible. Small changes allow fast feedback loops
 which in turn can aid in deciding the next minimal viable iteration. Further,
 iteration naturally splits big problems into small steps, creates positive
 momentum, and allows to capture value quicker.

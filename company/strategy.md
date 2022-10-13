@@ -31,7 +31,7 @@ platform to help each of them to be successful. FlowForge will solve challenges
 unsolved by Node-RED and push Low-Code beyond the capabilities of Node-RED.
 
 Firstly, team collaboration. Allowing Flows to be developed by multiple
-individuals, ensuring quality and correctness. Push the boundries of Low-Code
+individuals, ensuring quality and correctness. Push the boundaries of Low-Code
 to allow more people to collaborate.
 
 Secondly, Node-RED is deployed in many different environments. FlowForge will allow

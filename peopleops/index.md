@@ -21,7 +21,7 @@ Before you can take time off you should _always_:
 
 #### Sick leave
 
-Sick leave, or having limited availibility is not recorded currently. Keep your
+Sick leave, or having limited availability is not recorded currently. Keep your
 manager updated on your health, and let them know what FlowForge can do for you
 to aid in your recovery.
 
@@ -35,7 +35,7 @@ approval. We recommend a minimum of 4 weeks, but recognise it's a personal
 choice to make. Further leave can be requested, but should be discussed with
 your manager.
 
-If you live in a country that offers statuatory leave longer than this, then
+If you live in a country that offers statutory leave longer than this, then
 FlowForge will abide by this.
 
 ## Expenses
