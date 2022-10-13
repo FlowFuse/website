@@ -1,6 +1,6 @@
 ---
 title: Planned Database Migration
-subtitle: Moving to encrypted storage
+subtitle: Moving to encrypted PostgreSQL storage
 description: Details on upcoming maintenance period
 date: 2022-10-13
 authors: ["ben-hardill"]
