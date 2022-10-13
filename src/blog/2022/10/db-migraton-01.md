@@ -1,7 +1,7 @@
 ---
 title: Planned Database Migration
 subtitle: Moving to encrypted storage
-description: Details ppcoming maintence period
+description: Details on upcoming maintenance period
 date: 2022-10-13
 authors: ["ben-hardill"]
 ---
