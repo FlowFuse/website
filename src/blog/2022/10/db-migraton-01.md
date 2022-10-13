@@ -10,7 +10,7 @@ To do this cleanly we are going to need to schdule a short period of downtime fo
 - Creating/deleting FlowForge Users
 - Deploying changes to flows running in Projects
 
-Existing FlowForge Projects will continue to run as notmal during the downtime.
+Existing FlowForge Projects will continue to run as normal during the downtime.
 
 ## When
 
