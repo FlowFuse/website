@@ -1,0 +1,63 @@
+---
+title: Node-RED consultants
+layout: layouts/page.njk
+nohero: true
+---
+
+<div class="team w-full pb-24">
+    <div class="container m-auto text-left max-w-4xl">
+        <div class="grid grid-cols-1 grid-gap-4 sm:grid-cols-2">
+            {%- for company in consultants.consultants -%}
+            <div class="w-full my-2 pb-6 pr-16 text-center sm:text-left">
+	    {% set consultant = consultants[company] %}
+                <div class="name">
+                    <h5><a href="{{consultant.website}}" alt="{{consultant.name}}">{{ consultant.name }}</a></h5>
+                    {% if consultant.country %}
+                    <span class="group flex px-4 sm:pr-2 pl-4">
+                        {{ consultant.country | countryFlag }}
+                    </span>
+                    {% endif %}
+                </div>
+		<div class="consultant-desc">
+		    <h6>Expertise:</h6>
+		      <ol>
+	              {%- for e in consultant.expertise -%}
+		        <li>{{ e }}</li>
+                      {%- endfor -%}
+		      </ol>
+		</div>
+                <div class="socials">
+                    {% if consultant.email %}
+                    <span class="">
+                        <a href="mailto:{{ consultant.email }}">
+                            {% include "components/mail.njk" %}
+			</a>
+                    </span>
+                    {% endif %}
+                    {% if consultant.twitter %}
+                    <span class="">
+                        <a class="" target="_blank" href="https://twitter.com/{{ consultant.twitter }}">
+                            {% include "components/twitter.njk" %}
+                        </a>
+                    </span>
+                    {% endif %}
+                    {% if consultant.github %}
+                    <span class="">
+                        <a class="" target="_blank" href="https://github.com/{{ consultant.github }}">
+                            {% include "components/github.njk" %}
+                        </a>
+                    </span>
+                    {% endif %}
+                    {% if consultant.linkedin %}
+                    <span class="">
+                        <a class="" target="_blank" href="https://www.linkedin.com/in/{{ consultant.linkedin }}">
+                            {% include "components/linkedin.njk" %}
+                        </a>
+                    </span>
+                    {% endif %}
+                </div>
+            </div>
+            {%- endfor -%}
+        </div>
+    </div>
+</div>
