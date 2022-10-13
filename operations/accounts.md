@@ -2,7 +2,7 @@
 
 These are the principles of how we setup and use accounts on the FlowForge.cloud platform.
 
-Shared accounts should be avoided wherever possible, particularly on our own systems as this removes the ability to track which indivual made a change.
+Shared accounts should be avoided wherever possible, particularly on our own systems as this removes the ability to track which individual made a change.
 
 ## User Accounts
 

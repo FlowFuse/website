@@ -6,7 +6,7 @@
 
 The company provides a Password Vault account to all employees, this should be used for both individual user accounts and shared accounts (e.g. flowforge npmjs account).
 
-Any shared accounts should be in an approate vault shared with those that need it only, but always more than just one person.
+Any shared accounts should be in an appropriate vault shared with those that need it only, but always more than just one person.
 
 ### Strong passwords
 

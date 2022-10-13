@@ -26,11 +26,11 @@ Freshdesk uses notes and responses within the thread, notes are internal and not
 
 ### Scope of Support
 
-Initially FlowForge Cloud customers will only get support for issues relating to the flowforge application or their account & billing. Any questions around Node-RED itself or their flows should be redirected to the usuall Node-RED community channels, eg Discourse, Slack etc. It is reasonable to also point a customer direct to a repo for a 3rd party node question.
+Initially FlowForge Cloud customers will only get support for issues relating to the flowforge application or their account & billing. Any questions around Node-RED itself or their flows should be redirected to the usual Node-RED community channels, eg Discourse, Slack etc. It is reasonable to also point a customer direct to a repo for a 3rd party node question.
 
 ### SLA
 
-Support will be avaible between 0900-1700 UK Time Monday to Friday, with anything outside of those times on a 'best effort' basis. We aim to provide an initial response or acknowledgement to a customers ticket within 4 hours during those times. No further commitments are made in terms of resolution times at this stage.
+Support will be available between 0900-1700 UK Time Monday to Friday, with anything outside of those times on a 'best effort' basis. We aim to provide an initial response or acknowledgement to a customers ticket within 4 hours during those times. No further commitments are made in terms of resolution times at this stage.
 
 ### Escalation
 

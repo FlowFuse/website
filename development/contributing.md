@@ -22,7 +22,7 @@ In the case of working with `vue` or `njk` files (found in the [frontend](https:
 
 Take care when adding files to a commit. It's easy just to `git add -A` (i.e. add all local changes to a commit) but this can result in commits and PRs being clogged with excessive changes that aren't linked to the actual issue/feature at hand.
 
-Take your time when commiting files. Review each file carefully and ensure what you're adding to a commit is relevant and necessary.
+Take your time when committing files. Review each file carefully and ensure what you're adding to a commit is relevant and necessary.
 
 #### Git Commit Messages
 
