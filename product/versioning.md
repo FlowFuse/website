@@ -13,7 +13,6 @@ Therefore the following are considerations & requirements in order to be able to
 - The devices feature is capable of supporting at least one real world use case end to end.
 - Both the Forge app and Device Agent are at 1.0 and the interface between them is locked, such that agents running 1.0 can connect to any 1.x forge application.
 
-
 ### Backports
 
 Once 1.0 has been released the 0.x line will become deprecated. In general no fixes will be backported to the 0.x line, critical security updates may be considered on a case by case basis.
