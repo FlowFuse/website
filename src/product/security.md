@@ -35,7 +35,7 @@ All user data is stored in a relational database, which are encrypted by default
 for all install methods except local.
 
 _FlowForge Managed_: Data is stored in a PostgreSQL database.
-[Data will be encrypted from November 2022 onwards (internal link)](https://github.com/flowforge/CloudProject/issues/79)).
+[Data will be encrypted from November 2022 onwards ](https://flowforge.com/blog/2022/10/db-migration-01/)).
 
 #### Data residency
 
