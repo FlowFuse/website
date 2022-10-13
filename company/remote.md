@@ -4,12 +4,12 @@ Working remotely can require some changes.
 ### Working from a Coworking space
 
 Not everyone wants to sit at home during work, it's recommended to work at least
-one day a week outside of home. To accomodate this, you can
+one day a week outside of home. To accommodate this, you can
 [expense a coworking space](../peopleops#coworking-space-allowance).
 
 ### Seperating work from private life
 
-Its adviced to seperate work and private life as much as possible. Now there's
+Its advised to separate work and private life as much as possible. Now there's
 less of a physical barrier, it's more important to create this barrier on the
 digital world. Turn off notification outside of your intended working hours for
 email, Slack, and GitHub where possible.

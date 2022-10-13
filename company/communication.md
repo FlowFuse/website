@@ -6,9 +6,9 @@ As a distributed company we should be mindful of how we communicate.
 
 Unless explicitly stated otherwise, communicate times in UTC. This allows each
 team member to remember just their offset to UTC and makes communication around
-timezones less error-prone (e.g. misremembering your own offset to a collegues
+timezones less error-prone (e.g. misremembering your own offset to a colleagues
 timezone) and more efficient. **Exception**: When communicating to meet in 
-phisical locations, the timezone of that location will be assumed as default.
+physical locations, the timezone of that location will be assumed as default.
 
 ### Time of day
 
@@ -20,10 +20,10 @@ time in the afternoon either use e.g. `15:00` or explicitly `3 PM`.
 ### General guidance
 
 Each meeting should have an agenda. This allows potential participants to prepare
-and decide whether attendance is required. Any partipant can add items to the
-agenda, please prefix your item with your name or initials to communcate who's
+and decide whether attendance is required. Any participant can add items to the
+agenda, please prefix your item with your name or initials to communicate who's
 going to talk and lead the discussion. Adding new items to the agenda while the
-meeting is started is good practise and can be leveraged to keep the currently
+meeting is started is good practice and can be leveraged to keep the currently
 discussed item focussed and on-rails.
 
 ### During the meeting
@@ -47,8 +47,8 @@ each meeting should have an agenda.
 When using Slack, prefer to keep discussions in a thread. This reduces scroll
 back, and focusses channels.
 
-Note that knowledge in Slack is empemeral, it's not a great storage of information.
-As such knowledge on a decision made in Slack, or elswhere, should always be recorded
+Note that knowledge in Slack is ephemeral, it's not a great storage of information.
+As such knowledge on a decision made in Slack, or elsewhere, should always be recorded
 in the GitHub issue or Google Doc on that topic to keep a log that also works
 for asynchronous communication.
 

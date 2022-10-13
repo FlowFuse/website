@@ -21,7 +21,7 @@ Before you can take time off you should _always_:
 
 #### Sick leave
 
-Sick leave, or having limited availibility is not recorded currently. Keep your
+Sick leave, or having limited availability is not recorded currently. Keep your
 manager updated on your health, and let them know what FlowForge can do for you
 to aid in your recovery.
 
@@ -35,7 +35,7 @@ approval. We recommend a minimum of 4 weeks, but recognise it's a personal
 choice to make. Further leave can be requested, but should be discussed with
 your manager.
 
-If you live in a country that offers statuatory leave longer than this, then
+If you live in a country that offers statutory leave longer than this, then
 FlowForge will abide by this.
 
 ## Expenses
@@ -112,8 +112,6 @@ The company covering certain costs, such as broadband can have tax implications 
 
 #### Coworking space allowance
 
-If you want to occasionally use a separate workspace to your home, the company will cover up to $100 a month in charges for renting a desk in a co-working space on an ad-hoc basis. 
-
-If you want to work from a rented co-working space full time this should be discussed with your manager.
+If you want to occasionally use a separate workspace to your home, the company will cover up to $150 a month in charges for renting a desk in a co-working space. 
 
 [gh-admin]: https://github.com/flowforge/admin
