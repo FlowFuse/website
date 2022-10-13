@@ -141,7 +141,7 @@ As a thank you for reading our newsletters we’d like to offer you a free, smal
         <summary>Suspended projects, login with email and Team Types</summary>
         <updated>2022-09-01T12:00:00Z</updated>
         <link href="https://flowforge.com/blog/2022/09/flowforge-09-released/"/>
-        <author><name>Sam Machin</name></author>
+        <author><name></name></author>
         <content type="html">&lt;p&gt;Suspend your projects when you don&#39;t need them, login with either your username or email, and introducing Team Types&lt;/p&gt;
 &lt;!--more--&gt;
 &lt;p&gt;Keep reading for the details of what&#39;s in this release our you can watch our 1 minute roundup video of the new release above.&lt;/p&gt;
@@ -205,7 +205,7 @@ That also includes if you have any feedback or feature requests.&lt;/p&gt;
         <summary>News from the FlowForge and Node-RED communities</summary>
         <updated>2022-08-11T00:00:00Z</updated>
         <link href="https://flowforge.com/blog/2022/08/community-news-06/"/>
-        <author><name>Sam Machin</name></author>
+        <author><name></name></author>
         <content type="html">&lt;p&gt;Welcome to the FlowForge newsletter, a regular roundup of what`s happening with both FlowForge and the wider Node-RED community.&lt;/p&gt;
 &lt;!--more--&gt;
 &lt;p&gt;If you&#39;ve got something that you&#39;d like us to share please email &lt;a href=&quot;mailto:contact@flowforge.com&quot;&gt;contact@flowforge.com&lt;/a&gt;.&lt;/p&gt;
@@ -229,7 +229,7 @@ Node-RED 3.0.2 has been released fixing some bugs in the 3.0.0 release, The Node
         <summary>Inter-Project Communication, Default Teams, and realtime device management.</summary>
         <updated>2022-08-04T12:00:00Z</updated>
         <link href="https://flowforge.com/blog/2022/08/flowforge-08-released/"/>
-        <author><name>Sam Machin</name></author>
+        <author><name></name></author>
         <content type="html">&lt;p&gt;Easily pass messages between your projects on the cloud or devices, UX improvements, and more.&lt;/p&gt;
 &lt;!--more--&gt;
 &lt;p&gt;Keep reading for  the details of whats in this release our you can watch our 1 minute roundup video of the new release above.&lt;/p&gt;
@@ -293,7 +293,7 @@ That also includes if you have any feedback or feature requests.&lt;/p&gt;
         <summary>A bigger project with more resources</summary>
         <updated>2022-07-22T12:00:00Z</updated>
         <link href="https://flowforge.com/blog/2022/07/new-projecttype/"/>
-        <author><name>Sam Machin</name></author>
+        <author><name></name></author>
         <content type="html">&lt;p&gt;We&#39;ve added a second size of project to FlowForge Cloud. A bigger project type with more resources available to it.&lt;/p&gt;
 &lt;!--more--&gt;
 &lt;p&gt;Our &lt;a href=&quot;https://flowforge.com/blog/2022/07/flowforge-07-released/&quot;&gt;0.7 release&lt;/a&gt; introduced the concept of Project Types. This allows platforms to provide different sizes of projects, varying the memory/cpu or features available within a given type.&lt;/p&gt;
@@ -311,7 +311,7 @@ That also includes if you have any feedback or feature requests.&lt;/p&gt;
         <summary>News from the FlowForge and Node-RED communities</summary>
         <updated>2022-07-19T00:00:00Z</updated>
         <link href="https://flowforge.com/blog/2022/07/community-news-06/"/>
-        <author><name>Sam Machin</name></author>
+        <author><name></name></author>
         <content type="html">&lt;p&gt;Welcome to the FlowForge newsletter, a regular roundup of what`s happening with both FlowForge and the wider Node-RED community.&lt;/p&gt;
 &lt;!--more--&gt;
 &lt;p&gt;If you&#39;ve got something that you&#39;d like us to share please email &lt;a href=&quot;mailto:contact@flowforge.com&quot;&gt;contact@flowforge.com&lt;/a&gt;.&lt;/p&gt;
@@ -332,7 +332,7 @@ A reminder about Node-RED Con and the call for papers, submissions close at the 
         <summary>Rollbacks, Device Environment Variables and a FlowForge Theme</summary>
         <updated>2022-07-07T12:00:00Z</updated>
         <link href="https://flowforge.com/blog/2022/07/flowforge-07-released/"/>
-        <author><name>Sam Machin</name></author>
+        <author><name></name></author>
         <content type="html">&lt;p&gt;Rollback projects to a previous snapshot, improvements in using Devices, and more.&lt;/p&gt;
 &lt;!--more--&gt;
 &lt;p&gt;Keep reading for  the details of whats in this release our you can watch our 1 min roundup video of the new release above.&lt;/p&gt;
@@ -448,7 +448,7 @@ raise an &lt;a href=&quot;https://github.com/flowforge/flowforge/issues&quot;&gt
         <summary>News from the FlowForge and Node-RED communities</summary>
         <updated>2022-06-17T00:00:00Z</updated>
         <link href="https://flowforge.com/blog/2022/06/community-news-05/"/>
-        <author><name>Sam Machin</name></author>
+        <author><name></name></author>
         <content type="html">&lt;p&gt;Welcome to the FlowForge newsletter, a regular roundup of what`s happening with both FlowForge and the wider Node-RED community.&lt;/p&gt;
 &lt;!--more--&gt;
 &lt;p&gt;If you&#39;ve got something that you&#39;d like us to share please email &lt;a href=&quot;mailto:contact@flowforge.com&quot;&gt;contact@flowforge.com&lt;/a&gt;.&lt;/p&gt;
@@ -599,7 +599,7 @@ raise an &lt;a href=&quot;https://github.com/flowforge/flowforge/issues&quot;&gt
         <summary>News from the FlowForge and Node-RED communities</summary>
         <updated>2022-05-06T00:00:00Z</updated>
         <link href="https://flowforge.com/blog/2022/05/community-news-04/"/>
-        <author><name>Sam Machin</name></author>
+        <author><name></name></author>
         <content type="html">&lt;p&gt;Welcome to the FlowForge newsletter, a regular roundup of what`s happening with both FlowForge and the wider Node-RED community.&lt;/p&gt;
 &lt;!--more--&gt;
 &lt;p&gt;If you&#39;ve got something that you&#39;d like us to share please email &lt;a href=&quot;mailto:contact@flowforge.com&quot;&gt;contact@flowforge.com&lt;/a&gt;.&lt;/p&gt;
@@ -622,7 +622,7 @@ Our friends in the Node-RED Japan User Group have run a number of successful Nod
         <summary>Try out the next major Node-RED release</summary>
         <updated>2022-05-04T00:00:00Z</updated>
         <link href="https://flowforge.com/blog/2022/05/node-red-3-beta-stack/"/>
-        <author><name>Sam Machin</name></author>
+        <author><name></name></author>
         <content type="html">&lt;p&gt;The first beta of Node-RED 3.0 is here and FlowForge is ready for you to try it out.&lt;/p&gt;
 &lt;!--more--&gt;
 &lt;p&gt;When we released &lt;a href=&quot;https://flowforge.com/blog/2022/04/flowforge-04-released/&quot;&gt;FlowForge 0.4&lt;/a&gt; last month we talked about allowing users to select the stack their project runs on.
@@ -640,7 +640,7 @@ Until now we&#39;ve only offered one stack which has been the latest Node-RED re
         <summary>Getting ready for Node-RED 3.0</summary>
         <updated>2022-04-14T12:00:00Z</updated>
         <link href="https://flowforge.com/blog/2022/04/flowforge-04-released/"/>
-        <author><name>Sam Machin</name></author>
+        <author><name></name></author>
         <content type="html">&lt;p&gt;This release of the FlowForge adds a seemingly small, but significant new feature.&lt;/p&gt;
 &lt;!--more--&gt;
 &lt;p&gt;With &lt;a href=&quot;https://nodered.org/about/releases/&quot;&gt;Node-RED 3.0 fast approaching&lt;/a&gt; we&#39;ve been making sure we are ready to support this.&lt;/p&gt;
@@ -694,7 +694,7 @@ about the work we&#39;re doing.&lt;/p&gt;
         <summary>News from the FlowForge and Node-RED communities</summary>
         <updated>2022-04-05T00:00:00Z</updated>
         <link href="https://flowforge.com/blog/2022/04/community-news-03/"/>
-        <author><name>Sam Machin</name></author>
+        <author><name></name></author>
         <content type="html">&lt;p&gt;Welcome to the FlowForge newsletter, a regular roundup of what`s happening with both FlowForge and the wider Node-RED community.&lt;/p&gt;
 &lt;!--more--&gt;
 &lt;p&gt;If you&#39;ve got something that you&#39;d like us to share please email &lt;a href=&quot;mailto:contact@flowforge.com&quot;&gt;contact@flowforge.com&lt;/a&gt;.&lt;/p&gt;
@@ -822,7 +822,7 @@ about the work we&#39;re doing.&lt;/p&gt;
         <summary>News from the FlowForge and Node-RED communities</summary>
         <updated>2022-03-02T00:00:00Z</updated>
         <link href="https://flowforge.com/blog/2022/03/community-news-02/"/>
-        <author><name>Sam Machin</name></author>
+        <author><name></name></author>
         <content type="html">&lt;p&gt;Welcome to the FlowForge newsletter, a regular roundup of what`s happening with both FlowForge and the wider Node-RED community.&lt;/p&gt;
 &lt;!--more--&gt;
 &lt;p&gt;If you&#39;ve got something that you&#39;d like us to share please email &lt;a href=&quot;mailto:contact@flowforge.com&quot;&gt;contact@flowforge.com&lt;/a&gt;.&lt;/p&gt;
@@ -990,7 +990,7 @@ seeing the real impact he&#39;ll have on what we&#39;re building.&lt;/p&gt;
         <summary>News from the FlowForge and Node-RED communities</summary>
         <updated>2022-01-28T00:00:00Z</updated>
         <link href="https://flowforge.com/blog/2022/01/community-news-01/"/>
-        <author><name>Sam Machin</name></author>
+        <author><name></name></author>
         <content type="html">&lt;p&gt;Welcome to the first FlowForge newsletter, we’re going to publish this as a regular roundup of what`s happening with both FlowForge and the wider Node-RED community, if you want to receive it via email, sign up for updates at the bottom of the page.&lt;/p&gt;
 &lt;!--more--&gt;
 &lt;p&gt;If you’ve got something that you’d like us to share please email &lt;a href=&quot;mailto:contact@flowforge.com&quot;&gt;contact@flowforge.com&lt;/a&gt;.&lt;/p&gt;
