@@ -141,7 +141,7 @@ Next we will need to edit the Email Configuration section to match your SMTP pro
 
 ![Email config](images/10.png)
 
-Finally, you need to update the public_url for your mqtt broker to match your DNS record.
+Finally, you need to update the `public_url` for your mqtt broker to match your DNS record.
 
 ![MQTT config](images/11.png)
 
