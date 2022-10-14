@@ -25,3 +25,13 @@ document these along with the script. When the demo is completed, these tasks
 are discussed and prioritized.
 
 Afterwards the next demo is scheduled, and the next demo-leader is chosen.
+
+### Customer calls
+
+FlowForge is fortunate to have a community the size of Node-REDs community. The
+product organisation should constantly be in touch with the community to
+understand their challenges, current solutions, and learn why they have or
+haven't adopted FlowForge.
+
+[YC published a good video on this topic](https://www.ycombinator.com/library/6g-how-to-talk-to-users).
+For each call document all the learnings to share internally.
