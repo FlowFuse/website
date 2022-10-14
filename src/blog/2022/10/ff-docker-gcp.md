@@ -100,9 +100,13 @@ You can read a lot more detail about what each these commands actually do [here]
 The next step is to get the codebase for FlowForge onto your VM, to do so you will need to run the following commands. Please note that we are working with our 0.10.0 build, you will need to update the version number in the commands below if you are working with a newer build.
 
 `sudo apt-get install wget`
-`wget https://github.com/flowforge/docker-compose/archive/refs/tags/v0.10.0.tar.gz
-sudo mkdir /opt/flowforge`
+
+`wget https://github.com/flowforge/docker-compose/archive/refs/tags/v0.10.0.tar.gz`
+
+`sudo mkdir /opt/flowforge`
+
 `tar zxf v0.10.0.tar.gz`
+
 `sudo cp -r docker-compose-0.10.0/ /opt/flowforge`
 
 You should now have all the code for FlowForge in the directory /opt/flowforge/docker-compose-0.10.0, it should look something like this.
