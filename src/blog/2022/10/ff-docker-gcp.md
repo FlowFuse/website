@@ -1,12 +1,12 @@
 ---
-title: Install FlowForge Docker on Google Cloud #9
-subtitle: Step my step instructions to get FLowForge Docker running on Google Cloud
-description: Step my step instructions to get FLowForge Docker running on Google Cloud
+title: Install FlowForge Docker on Google Cloud #11
+subtitle: Step by step instructions to get FlowForge Docker running on Google Cloud
+description: Step by step instructions to get FlowForge Docker running on Google Cloud
 date: 2022-10-24
 authors: ["rob-marcer"]
 ---
 
-As part of our preparation for FlowForge 1.0 we have been testing various real world scenarios to see where we can add to our documentation and where we might be able to improve our releases to make the install process easier for users. As part of that testing we have been able to hone various real world installation processes and we wanted to share one of those with you today.
+As part of our preparations for FlowForge 1.0 we have been testing various real world scenarios to see where we can add to our documentation and where we might be able to improve our releases to make the install process easier for users. As benefit of that testing we have been able to hone various real world installation processes and we wanted to share one of those with you today.
 <!--more-->
 
 In this first of three articles, we are going to run through the process for installing FlowForge on a Google Cloud Platform (GCP) virtual machine (VM) using Docker.
@@ -119,7 +119,7 @@ We can now configure FlowForge on your VM. We are going to need to edit two file
 
 `cd /opt/flowforge/docker-compose-0.10.0`
 
-Then we need to edit the flowforge.yml file, I’m using Nano to do that.
+Then we need to edit the flowforge.yml file, we're using Nano to do that.
 
 `sudo nano /opt/flowforge/docker-compose-0.10.0/etc/flowforge.yml`
 
