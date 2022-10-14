@@ -147,7 +147,7 @@ Finally, you need to update the `public_url` for your mqtt broker to match your 
 
 You can now save and close that file, in Nano you can do that by pressing ‘control x’ then ‘y’ then the Return key.
 
-Now we need to edit the docker-compose.yml file. We will use Nano again to do that.
+Now we need to edit the `docker-compose.yml` file. We will use Nano again to do that.
 
 `sudo nano /opt/flowforge/docker-compose-0.10.0/docker-compose.yml`
 
