@@ -6,18 +6,18 @@ date: 2022-10-14
 authors: ["rob-marcer"]
 ---
 
-As part of our preparations for FlowForge 1.0 we have been testing various real world scenarios to see where we can add to our documentation and where we might be able to improve our releases to make the install process easier for users. As benefit of that testing we have been able to hone various real world installation processes and we wanted to share one of those with you today.
+As part of our preparations for FlowForge 1.0 we have been testing various real world scenarios to see where we can add to our documentation and where we might be able to improve our releases to make the install process easier for users. As a benefit of that testing we have been able to hone various real world installation processes and we wanted to share one of those with you today.
 <!--more-->
 
-In this first of three articles, we are going to run through the process for installing FlowForge on a Google Cloud Platform (GCP) virtual machine (VM) using Docker.
+In this first of three articles, we are going to run through the process for installing FlowForge on Google Cloud Platform (GCP) within a virtual machine (VM) using Docker.
 
 We have set ourselves the goal of delivering a production environment. We want this installation benefit from:
 
 - Email alerts (emails to users when they are added to teams etc)
 - HTTPS access to the install
-- FlowForge Device deployment via the included MQTT server that comes in our Docker build
+- FlowForge [Device](https://flowforge.com/docs/user/concepts/#device) deployment via the included MQTT server that comes in our Docker build
 
-We will follow up with a second article covering the process of getting HTTPS running and then we will close out the series by covering how to use the Devices features of FlowForge.
+We will follow up with a second article covering the process of getting HTTPS running then we will close out the series by covering how to use the [Devices](https://flowforge.com/docs/user/concepts/#device) features of FlowForge.
 
 # Prerequisites
 
@@ -42,7 +42,7 @@ You will now need to assign a static external IP address to this VM. Click Advan
 
 ![GCP Create VM interface](images/3.png)
 
-Once you have reserved your IP it will be shown in the External IPv4 address field, write it down as we will need it later to create our DNS records. My IP address was 34.125.156.130.
+Once you have reserved your IP it will be shown in the External IPv4 address field, write it down as we will need it later to create the DNS records. Our IP address was 34.125.156.130.
 
 ![GCP Create VM interface](images/4.png)
 
@@ -58,7 +58,7 @@ Depending on your DNS provider it can take seconds to hours for these records to
 
 ![Dig command](images/6.png)
 
-Everything we need for now on DNS is in place.
+The DNS we need is now in place.
 
 # FlowForge Docker Installation
 
@@ -99,17 +99,27 @@ You can read a lot more detail about what each these commands actually do [here]
 
 The next step is to get the codebase for FlowForge onto your VM, to do so you will need to run the following commands. Please note that we are working with our 0.10.0 build, you will need to update the version number in the commands below if you are working with a newer build.
 
+Install Wget so we can download FlowForge from Github.
+
 `sudo apt-get install wget`
+
+Use Wget to download the files we need.
 
 `wget https://github.com/flowforge/docker-compose/archive/refs/tags/v0.10.0.tar.gz`
 
+Make the directory where we will store FlowForge.
+
 `sudo mkdir /opt/flowforge`
+
+Uncompress FlowForge.
 
 `tar zxf v0.10.0.tar.gz`
 
+Copy Flowforge into the directy we created.
+
 `sudo cp -r docker-compose-0.10.0/ /opt/flowforge`
 
-You should now have all the code for FlowForge in the directory /opt/flowforge/docker-compose-0.10.0, it should look something like this.
+You should now have all the code you need for FlowForge in the directory /opt/flowforge/docker-compose-0.10.0, it should look something like this.
 
 ![List command output](images/8.png)
 
