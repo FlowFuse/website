@@ -119,7 +119,7 @@ Copy Flowforge into the directy we created.
 
 `sudo cp -r docker-compose-0.10.0/ /opt/flowforge`
 
-You should now have all the code you need for FlowForge in the directory /opt/flowforge/docker-compose-0.10.0, it should look something like this.
+You should now have all the code you need for FlowForge in the directory `/opt/flowforge/docker-compose-0.10.0`, it should look something like this.
 
 ![List command output](images/8.png)
 
