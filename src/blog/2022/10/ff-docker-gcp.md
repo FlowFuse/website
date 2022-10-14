@@ -30,7 +30,7 @@ We will follow up with a second article covering the process of getting HTTPS ru
 
 Create a GCP account, once logged in navigate to Compute Engine then VM Instances. Select Create Instance you should now be [here](https://www.google.com/url?q=https://console.cloud.google.com/compute/instancesAdd?project).
 
-Give your instance a name, select a Region and Zone. I have found that the default Machine configuration works fine but depending on your project you may wish to change the resources.
+Give your instance a name, select a Region and Zone. I have found that the default machine configuration works fine but depending on your project you may wish to change the resources.
 
 ![GCP Create VM interface](images/1.png)
 
