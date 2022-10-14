@@ -1,5 +1,5 @@
 ---
-title: Install FlowForge Docker on Google Cloud #11
+title: Install FlowForge Docker on Google Cloud
 subtitle: Step by step instructions to get FlowForge Docker running on Google Cloud
 description: Step by step instructions to get FlowForge Docker running on Google Cloud
 date: 2022-10-14
