@@ -17,7 +17,7 @@ We have set ourselves the goal of delivering a production environment. We want t
 - HTTPS access to the install
 - FlowForge [Device](https://flowforge.com/docs/user/concepts/#device) deployment via the included MQTT server that comes in our Docker build
 
-We will follow up with a second article covering the process of getting HTTPS running then we will close out the series by covering how to use the [Devices](https://flowforge.com/docs/user/concepts/#device) features of FlowForge.
+We will follow up with a second article covering the process of getting HTTPS running then we will close out the series by covering how to use key features of FlowForge including [Devices](https://flowforge.com/docs/user/concepts/#device).
 
 # Prerequisites
 
