@@ -54,7 +54,7 @@ So that you can run FlowForge on your newly created GCP VM you will need to set 
 
 ![DNS interface](images/5.png)
 
-Depending on your DNS provider it can take seconds to hours for these records to become live. Our’s were in place very quickly, You can validate the DNS records on a Mac or Linux PC using the dig command.
+DNS changes need to propagate, and depending on your DNS provider, ISP, and other factors, this can take anywhere between a few seconds to 4 hours. Our’s were in place very quickly. To validate the DNS records you can use `dig` on either a Mac or Linux.
 
 ![Dig command](images/6.png)
 
