@@ -38,7 +38,7 @@ You now need to allow access to your FlowForge installation from the internet. I
 
 ![GCP Create VM interface](images/2.png)
 
-You will now need to assign a static external IP address to this VM. Click Advanced options, then Networking. Now scroll down until you see Network interfaces and click on default to expand that section. In External IPv4 address select Create IP Address, give it a name then press Reserve.
+Next up, assigna static IP address to the VM. Click Advanced options, then Networking. Now scroll down until you see Network interfaces and click on default to expand that section. In External IPv4 address select Create IP Address, give it a name than press Reserve.
 
 ![GCP Create VM interface](images/3.png)
 
