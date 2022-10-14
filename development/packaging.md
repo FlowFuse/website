@@ -8,6 +8,10 @@ FlowForge Packaging Guidelines
 - If a Node-RED plugin/node should start with `flowforge-nr-`
 - Installers or Orchestration projects are named without the leading `flowforge-` e.g. `installer` or `helm`
 
+### Settings
+
+- A rule should be added under the projects `settings/branches` to prevent pushing directly to the `main` branch
+
 ### Content
 
 All Git Repositories must contain the following files:
