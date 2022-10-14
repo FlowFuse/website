@@ -58,7 +58,7 @@ DNS changes need to propagate, and depending on your DNS provider, ISP, and othe
 
 ![Dig command](images/6.png)
 
-The DNS we need is now in place.
+The DNS records are set to the IP record we noted down earlier, so we're good to continue.
 
 # FlowForge Docker Installation
 
