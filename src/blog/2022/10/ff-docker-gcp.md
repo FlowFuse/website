@@ -69,23 +69,25 @@ The next step is to install the FlowForge Docker build on our GCP VM. If you ret
 Once you have a Secure Shell (SSH) session open, the first step is to install Docker using the following commands.
 
 `sudo apt-get update`
-  
-	
-`sudo apt-get install \
-    		ca-certificates \
-    		curl \
-    		gnupg \
-   		lsb-release`
-      
+  	
+ ```
+ sudo apt-get install \
+    ca-certificates \
+    curl \
+    gnupg \
+    lsb-release
+```
 
 `sudo mkdir -p /etc/apt/keyrings`
 
 
 `curl -fsSL https://download.docker.com/linux/debian/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg`
 
-`echo \
+```
+echo \
   "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/debian \
-  $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null`
+  $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+```
   
 
 `sudo apt-get update`
@@ -99,13 +101,9 @@ You can read a lot more detail about what each these commands actually do [here]
 
 The next step is to get the codebase for FlowForge onto your VM, to do so you will need to run the following commands. Please note that we are working with our 0.10.0 build, you will need to update the version number in the commands below if you are working with a newer build.
 
-Install Wget so we can download FlowForge from Github.
+Use curl to download the files we need.
 
-`sudo apt-get install wget`
-
-Use Wget to download the files we need.
-
-`wget https://github.com/flowforge/docker-compose/archive/refs/tags/v0.10.0.tar.gz`
+`curl https://github.com/flowforge/docker-compose/archive/refs/tags/v0.10.0.tar.gz -o flowforge-0.10.0.tar.gz`
 
 Make the directory where we will store FlowForge.
 
