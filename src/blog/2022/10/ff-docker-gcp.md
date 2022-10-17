@@ -103,7 +103,7 @@ The next step is to get the codebase for FlowForge onto your VM, to do so you wi
 
 Use curl to download the files we need.
 
-`sudo curl -L https://github.com/flowforge/docker-compose/archive/refs/tags/v0.10.0.tar.gz -o v0.10.1.tar.gz`
+`sudo curl -L https://github.com/flowforge/docker-compose/archive/refs/tags/v0.10.1.tar.gz -o v0.10.1.tar.gz`
 
 Make the directory where we will store FlowForge.
 
@@ -111,7 +111,7 @@ Make the directory where we will store FlowForge.
 
 Uncompress FlowForge and save it to the directory.
 
-`sudo tar zxf v0.10.0.tar.gz --directory /opt/flowforge`
+`sudo tar zxf v0.10.1.tar.gz --directory /opt/flowforge`
 
 You should now have all the code you need for FlowForge in the directory `/opt/flowforge/docker-compose-0.10.1`, it should look something like this.
 
