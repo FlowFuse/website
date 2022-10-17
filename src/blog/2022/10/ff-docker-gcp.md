@@ -113,7 +113,7 @@ Uncompress FlowForge.
 
 `tar zxf v0.10.0.tar.gz`
 
-Copy Flowforge into the directy we created.
+Copy FlowForge into the directy we created.
 
 `sudo cp -r docker-compose-0.10.0/ /opt/flowforge`
 
