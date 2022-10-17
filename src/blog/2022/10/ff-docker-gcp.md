@@ -155,7 +155,7 @@ Save and exit from that file, in Nano you can do that by pressing ‘control x�
 
 We are now ready to start up FlowForge for the first time, to do so we will use the following command.
 
-`sudo docker compose up -d`
+`sudo docker compose -p flowforge up -d`
 
 The build process will take a few minutes, once it’s completed let’s make sure all the docker containers are running.
 
