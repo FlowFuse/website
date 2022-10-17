@@ -18,4 +18,4 @@ Self hosted instalations are uneffected by this change.
 
 ## When
 
-The plan is to carry out this work at XX October 2022 at XX:XX UTC and the work should be complete in 2hr with the system being restored earlier if all is well.
+The plan is to carry out this work at 26 October 2022 at 22:00 UTC and the work should be complete in 2hr with the system being restored earlier if all is well.
