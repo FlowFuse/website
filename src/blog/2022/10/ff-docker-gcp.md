@@ -103,7 +103,7 @@ The next step is to get the codebase for FlowForge onto your VM, to do so you wi
 
 Use curl to download the files we need.
 
-`sudo curl -L https://github.com/flowforge/docker-compose/archive/refs/tags/v0.10.0.tar.gz -o v0.10.0.tar.gz`
+`sudo curl -L https://github.com/flowforge/docker-compose/archive/refs/tags/v0.10.0.tar.gz -o v0.10.1.tar.gz`
 
 Make the directory where we will store FlowForge.
 
@@ -113,7 +113,7 @@ Uncompress FlowForge and save it to the directory.
 
 `sudo tar zxf v0.10.0.tar.gz --directory /opt/flowforge`
 
-You should now have all the code you need for FlowForge in the directory `/opt/flowforge/docker-compose-0.10.0`, it should look something like this.
+You should now have all the code you need for FlowForge in the directory `/opt/flowforge/docker-compose-0.10.1`, it should look something like this.
 
 ![List command output](images/8.png)
 
@@ -121,11 +121,11 @@ You should now have all the code you need for FlowForge in the directory `/opt/f
 
 We can now configure FlowForge on your VM. We are going to need to edit two files. Firstly we need to switch into the directory where we just placed FlowForge.
 
-`cd /opt/flowforge/docker-compose-0.10.0`
+`cd /opt/flowforge/docker-compose-0.10.1`
 
 Then we need to edit the flowforge.yml file, we're using Nano to do that.
 
-`sudo nano /opt/flowforge/docker-compose-0.10.0/etc/flowforge.yml`
+`sudo nano /opt/flowforge/docker-compose-0.10.1/etc/flowforge.yml`
 
 At the top of the file you need to update the domain and base_url to match your domain
 
@@ -143,7 +143,7 @@ You can now save and close that file, in Nano you can do that by pressing ‘con
 
 Now we need to edit the `docker-compose.yml` file. We will use Nano again to do that.
 
-`sudo nano /opt/flowforge/docker-compose-0.10.0/docker-compose.yml`
+`sudo nano /opt/flowforge/docker-compose-0.10.1/docker-compose.yml`
 
 We need to edit the file to add in to the domain as follows.
 
