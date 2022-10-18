@@ -30,7 +30,7 @@ h2 {
 }
 
 h3 {
-    font-size: 2rem;
+    font-size: 1.75rem;
     line-height: 2.5rem;
 }
 
@@ -48,6 +48,8 @@ h5 {
 p {
     font-size: 1rem;
     line-height: 1.5rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
 }
 
 h1, h2, h3, h4, h5, p {
@@ -91,6 +93,12 @@ main  a:hover {
 }
 main  a.ff-btn:hover {
     text-decoration: none;
+}
+main .ff-bg-light a {
+    color: theme(colors.blue.600);
+}
+main .ff-bg-light a:hover {
+    color: theme(colors.blue.700);
 }
 pre code {
     background: #030303
