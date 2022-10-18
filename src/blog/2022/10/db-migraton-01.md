@@ -12,7 +12,7 @@ As part of an on going security [review](https://flowforge.com/product/security/
 
 ## Impact
 
-Customers' Node-RED instance will remain running, though any features that depend on FlowForge will not operate as expected. This includes user sessions, project and team management, as well as the project nodes for inter-project communication.
+Customers' Node-RED instances will remain running, though any features that depend on FlowForge will not operate as expected during the migration. This includes user sessions, project and team management, as well as the project nodes for inter-project communication.
 
 Self hosted instalations are uneffected by this change.
 
