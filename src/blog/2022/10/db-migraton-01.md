@@ -18,4 +18,6 @@ Self-hosted installations are unaffected by this change.
 
 ## When
 
-The plan is to carry out this work at XX October 2022 at XX:XX UTC and the work should be complete in 2hr with the system being restored earlier if all is well.
+The migration will be on XX October 2022 at XX:XX UTC and is expected to take under 2 hours. The platform will be available as soon as the migration is complete.
+
+We will post updates during the migration period to our Twitter account [https://twitter.com/flowforgeinc](@FlowForgeInc).
