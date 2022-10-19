@@ -13,6 +13,10 @@
     font-weight: 600;
 }
 
+.page .ff-bg-dark h2 {
+    color: theme(colors.teal.400);
+}
+
 .page h4 {
     font-size: 1.5rem;
     font-weight: 600;

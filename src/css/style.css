@@ -79,7 +79,7 @@ h1, h2, h3, h4, h5, p {
 
 .base {
     background-color: theme(colors.gray.800);
-    background-image: url('/images/ff-cloud_75.svg');
+    background-image: url('/images/ff-cloud_50.svg');
     background-repeat: no-repeat;
     background-position-x: 50%;
     background-position-y: 100px;
