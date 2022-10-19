@@ -12,10 +12,13 @@ As part of an on going security [review](https://flowforge.com/product/security/
 
 ## Impact
 
-Customers' Node-RED instance will remain running, though any features that depend on FlowForge will not operate as expected. This includes user sessions, project and team management, as well as the project nodes for inter-project communication.
+Customers' Node-RED instances will remain running, though any features that depend on FlowForge will not operate as expected during the migration. This includes user sessions, project and team management, as well as the project nodes for inter-project communication.
 
-Self hosted instalations are uneffected by this change.
+Self-hosted installations are unaffected by this change.
 
 ## When
 
-The plan is to carry out this work at 26 October 2022 at 22:00 UTC and the work should be complete in 2hr with the system being restored earlier if all is well.
+The migration will be on 26 October 2022 at 22:00 UTC and is expected to take under 2 hours. The platform will be available as soon as the migration is complete.
+
+We will post updates during the migration period to our Twitter account [https://twitter.com/flowforgeinc](@FlowForgeInc).
+
