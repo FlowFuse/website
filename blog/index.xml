@@ -3,8 +3,26 @@
     <title>FlowForge</title>
     <link href="https://flowforge.com/blog/index.xml" rel="self"/>
     <link href="https://flowforge.com/blog"/>
-    <updated>2022-10-14T00:00:00Z</updated>
+    <updated>2022-10-18T00:00:00Z</updated>
     <id>https://flowforge.com/blog</id>
+    
+    <entry>
+        <id>https://flowforge.com/blog/2022/10/db-migraton-01/</id>
+        <title>Scheduled maintenance: Database encryption October 2022</title>
+        <summary>Moving to encrypted PostgreSQL storage</summary>
+        <updated>2022-10-18T00:00:00Z</updated>
+        <link href="https://flowforge.com/blog/2022/10/db-migraton-01/"/>
+        <author><name>Ben Hardill</name></author>
+        <content type="html">&lt;h1 id=&quot;scheduled-maintenance%3A-database-encryption-october-2022&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://flowforge.com/blog/2022/10/db-migraton-01/#scheduled-maintenance%3A-database-encryption-october-2022&quot;&gt;#&amp;nbsp;&lt;/a&gt; Scheduled maintenance: Database encryption October 2022&lt;/h1&gt;
+&lt;p&gt;As part of an on going security &lt;a href=&quot;https://flowforge.com/product/security/#data-at-rest&quot;&gt;review&lt;/a&gt; of the FlowForge Managed offering we discovered that the backend database was not using encrypted storage. In keeping with industry best practices we plan to migrate the database to a new instance using encrypted at rest storage.&lt;/p&gt;
+&lt;h2 id=&quot;impact&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://flowforge.com/blog/2022/10/db-migraton-01/#impact&quot;&gt;#&amp;nbsp;&lt;/a&gt; Impact&lt;/h2&gt;
+&lt;p&gt;Customers&#39; Node-RED instances will remain running, though any features that depend on FlowForge will not operate as expected during the migration. This includes user sessions, project and team management, as well as the project nodes for inter-project communication.&lt;/p&gt;
+&lt;p&gt;Self-hosted installations are unaffected by this change.&lt;/p&gt;
+&lt;h2 id=&quot;when&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://flowforge.com/blog/2022/10/db-migraton-01/#when&quot;&gt;#&amp;nbsp;&lt;/a&gt; When&lt;/h2&gt;
+&lt;p&gt;The migration will be on 26 October 2022 at 22:00 UTC and is expected to take under 2 hours. The platform will be available as soon as the migration is complete.&lt;/p&gt;
+&lt;p&gt;We will post updates during the migration period to our Twitter account &lt;a href=&quot;https://flowforge.com/blog/2022/10/db-migraton-01/@FlowForgeInc&quot;&gt;https://twitter.com/flowforgeinc&lt;/a&gt;.&lt;/p&gt;
+</content>
+    </entry>
     
     <entry>
         <id>https://flowforge.com/blog/2022/10/ff-docker-gcp/</id>
