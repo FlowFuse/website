@@ -13,8 +13,8 @@
         <updated>2022-10-18T00:00:00Z</updated>
         <link href="https://flowforge.com/blog/2022/10/db-migraton-01/"/>
         <author><name>Ben Hardill</name></author>
-        <content type="html">&lt;h1 id=&quot;scheduled-maintenance%3A-database-encryption-october-2022&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://flowforge.com/blog/2022/10/db-migraton-01/#scheduled-maintenance%3A-database-encryption-october-2022&quot;&gt;#&amp;nbsp;&lt;/a&gt; Scheduled maintenance: Database encryption October 2022&lt;/h1&gt;
-&lt;p&gt;As part of an on going security &lt;a href=&quot;https://flowforge.com/product/security/#data-at-rest&quot;&gt;review&lt;/a&gt; of the FlowForge Managed offering we discovered that the backend database was not using encrypted storage. In keeping with industry best practices we plan to migrate the database to a new instance using encrypted at rest storage.&lt;/p&gt;
+        <content type="html">&lt;p&gt;As part of an on-going security &lt;a href=&quot;https://flowforge.com/product/security/#data-at-rest&quot;&gt;review&lt;/a&gt; of the FlowForge Managed offering we discovered that the backend database was not using encrypted storage. In keeping with industry best practices we plan to migrate the database to a new instance using encrypted at rest storage.&lt;/p&gt;
+&lt;!--more--&gt;
 &lt;h2 id=&quot;impact&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://flowforge.com/blog/2022/10/db-migraton-01/#impact&quot;&gt;#&amp;nbsp;&lt;/a&gt; Impact&lt;/h2&gt;
 &lt;p&gt;Customers&#39; Node-RED instances will remain running, though any features that depend on FlowForge will not operate as expected during the migration. This includes user sessions, project and team management, as well as the project nodes for inter-project communication.&lt;/p&gt;
 &lt;p&gt;Self-hosted installations are unaffected by this change.&lt;/p&gt;
