@@ -14,7 +14,11 @@ We use FreshDesk to manage our customer support tickets for the managed FlowForg
 There is currently a single login for the support user in the Support Vault of 1Password.
 
 Whenever a customer raises a new ticket or replies with an update a message is posted into slack #support-tickets.
-This will allow the whole team visibility of customer issues, comments on the slack thread will be added to the ticket as notes. _Note: because of the way the slack integration works freshdesk won't show who has made the comment, so please add your name_
+This will allow the whole team visibility of customer issues, comments on the
+Slack thread will be added to the ticket as notes. _Note: because of the way the slack integration works freshdesk won't show who has made the comment, so please add your name_
+When replying to the ticket one should have the intent to always reply with links
+to FlowForge articles or documentation. If these resources are missing, please
+start or update where applicable.
 
 When you reply to a customer via the Freshdesk UI the ticket will be automatically marked as resolved. If the customer responds back the ticket will be marked as open again. If you don't need to respond to the customer and you feel the ticket is resolved please manually set the ticket status to be resolved in the Freshdesk UI.
 
