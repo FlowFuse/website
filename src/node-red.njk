@@ -1,0 +1,131 @@
+---
+title: What is Node-RED?
+layout: layouts/page.njk
+description:
+    <p>Node-RED is a programming tool for wiring together hardware devices, APIs and online services in new and interesting ways.</p>
+    <p>It’s browser-based editor makes it easy to wire together flows using the extensive collection of nodes available, and deploy to its runtime with a single-click.</p>
+    <p>FlowForge makes it easy to run Node-RED in production, on your own hardware or in the cloud.</p>
+heroimg: "/images/node-red-hexagon.png"
+heroLg: true
+---
+
+{% include "components/divider-flow--default.njk" %}
+
+<!-- Secondary Content -->
+<div class="w-full ff-bg-light px-6 pt-12 pb-48 md:pt-32 md:px-0">
+    <div class="container m-auto text-center max-w-4xl">
+        <div class="m-auto mt-16 w-full text-center">
+            <h2>4,000+ Integrations Available</h2>
+            <h5>
+                <a class="flex justify-center gap-1" href="https://flows.nodered.org/search?type=node" target="_blank">
+                    See full list of integrations
+                    <i class="w-4">{% include "components/external.njk" %}</i>
+                </a>
+            </h5>
+        </div>
+        <div class="sm:mt-10 md:mt-16 w-full max-w-4xl text-center flex flex-wrap gap-2 justify-around">
+            <div class="w-full px-3 mt-4 sm:w-72 md:mt-0 css-full">
+                <img class="w-40 m-auto" src="/images/pictograms/community_red.png"/>
+                <h5 class="flex justify-center mb-2">SOCIAL & COMMS</h5>
+                <label class="font-light">Twitter, Twilio, Telegram, Slack, WhatsApp, Discord, etc.</label>
+            </div>
+            <div class="w-full px-3 mt-4 sm:w-72 md:mt-0">
+                <img class="w-40 m-auto" src="/images/pictograms/edge_red.png"/>
+                <h5 class="flex justify-center mb-2">HARDWARE</h5>
+                <label class="font-light">Servers, PLCs, Network Switches & Routers, Edge Devices, etc.</label>
+            </div>
+            <div class="w-full px-3 mt-4 sm:w-72 md:mt-0">
+                <img class="w-40 m-auto" src="/images/pictograms/candor_red.png"/>
+                <h5 class="flex justify-center mb-2">PROTOCOLS</h5>
+                <label class="font-light">WebSockets, HTTP, MQTT, AMQP, SNMP, RSS, FTP, etc.</label>
+            </div>
+            <div class="w-full px-3 mt-4 sm:w-72 lg:mt-10">
+                <img class="w-40 m-auto" src="/images/pictograms/cloud_red.png"/>
+                <h5 class="flex justify-center mb-2">CLOUD</h5>
+                <label class="font-light">AWS, Azure, S3, Google Cloud Platform, IBM Cloud, etc.</label>
+            </div>
+            <div class="w-full px-3 mt-4 sm:w-72 lg:mt-10">
+                <img class="w-40 m-auto" src="/images/pictograms/scalable_red.png"/>
+                <h5 class="flex justify-center mb-2">A.I.</h5>
+                <label class="font-light">TensorFlow, IBM Watson, Azure Cognitive Services, etc.</label>
+            </div>
+            <div class="w-full px-3 mt-4 sm:w-72 lg:mt-10">
+                <img class="w-40 m-auto" src="/images/pictograms/storage_red.png"/>
+                <h5 class="flex justify-center mb-2">STORAGE</h5>
+                <label class="font-light">MongoDB, MySQL, PostgreSQL, SQL Server, Redis, DB2, etc.</label>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% include "components/divider-flow--top-red--dark.njk" %}
+
+<div class="w-full ff-bg-dark px-6 pt-12 pb-48 md:pt-32 md:px-0">
+    <div class="container m-auto text-center max-w-4xl">
+        <div class="m-auto mt-0 mb-16 w-full text-center">
+            <h1>Run Node-RED in Production</h1>
+        </div>
+        <div class="flex flex-col-reverse justify-between sm:flex-row gap-3 sm:gap-12">
+            <div class="text-center sm:text-left pt-4">
+                <h3>Easy Instance Management</h3>
+                <p>FlowForge's intuitive UI lets you manage your Node-RED instances all in one place.</p>
+                <p>Spin up instances of Node-RED in seconds, monitor project health and tear down or suspend projects as required.<p>
+            </div>
+            <img class="w-96" src="/images/screen-pseudo-overview--dark.png">
+        </div>
+        <div class="my-8 sm:my-16 w-full">
+            {% include "components/divider-grey-wires-right--dark.njk" %}
+        </div>
+        <div class="flex flex-col-reverse sm:flex-row-reverse justify-between gap-3 sm:gap-12">
+            <div class="text-center sm:text-left pt-4">
+                <h3>Device Deployment at Scale</h3>
+                <p>One-click deploy to thousands of devices.</p>
+                <p>FlowForge provides a clear picture of your device health, with project snapshots and rollbacks enabling seamless version control.</p>
+            </div>
+            <img class="w-96" src="/images/screen-pseudo-devices--dark.png">
+        </div>
+        <div class="my-8 sm:my-16">
+            {% include "components/divider-grey-wires-left--dark.njk" %}
+        </div>
+        <div class="flex flex-col-reverse sm:flex-row justify-between gap-3 sm:gap-12">
+            <div class="text-center sm:text-left pt-4">
+                <h3>Reduced Operational Overheads</h3>
+                <p>Backed by consistent security across the platform, FlowForge makes hosting, deployment and management easy.</p>
+                <p>FlowForge provides centralised audit logging too, so you can see all activity in one place - bringing you peace of mind and compliance in your production environment</p>
+            </div>
+            <img class="w-96" src="/images/screen-pseudo-audit--dark.png">
+        </div>
+    </div>
+</div>
+
+{% include "components/divider-flow--top-grey.njk" %}
+
+<!-- Deployment Options -->
+<div class="w-full ff-bg-mid px-6 pt-12 pb-48 md:pt-12 md:px-0">
+    <div class="container m-auto text-center max-w-4xl">
+        <div class="m-auto mt-3 w-full text-center">
+            <h1>Flexible Hosting Options</h1>
+            <h5 class="text-white font-light">For a full feature comparison, please visit our <a href="/pricing">Pricing</a> page.</h5>
+        </div>
+        <div class="sm:mt-10 md:mt-16 w-full max-w-4xl text-center flex flex-wrap gap-2 justify-around">
+            <div class="w-full px-3 mt-4 sm:w-72 md:mt-0 css-full">
+                <img class="w-40 m-auto mb-4" src="/images/pictograms/opensource.png"/>
+                <h5 class="flex justify-center">Open Source</h5>
+                <label class="text-white mt-2 block">We are an Open Core company. Feel free to try out Flowforge on your own, for free.</label>
+                <label class="text-white mt-2 block">Available on <a href="https://github.com/flowforge/flowforge" target="_blank">GitHub</a></label>
+            </div>
+            <div class="w-full px-3 mt-4 sm:w-72 md:mt-0">
+                <img class="w-40 m-auto mb-4" src="/images/pictograms/cloud.png"/>
+                <h5 class="flex justify-center">FlowForge Managed</h5>
+                <label class="text-white mt-2 block">Get started in less than a minute, fully managed, fully secure.</label>
+                <label class="text-white mt-2 block">Sign up <a href="https://app.flowforge.com/account/create">here</a></label>
+            </div>
+            <div class="w-full px-3 mt-4 sm:w-72 md:mt-0">
+                <img class="w-40 m-auto mb-4" src="/images/pictograms/enterprise.png"/>
+                <h5 class="flex justify-center">Self Managed</h5>
+                <label class="text-white mt-2 block">Dedicated instances, additional support and enterprise scale</label>
+                <label class="text-white mt-2 block">Contact us <a href="/contact-us">here</a>.</label>
+            </div>
+        </div>
+    </div>
+</div>

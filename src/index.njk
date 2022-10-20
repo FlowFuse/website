@@ -8,8 +8,7 @@ layout: default
             Collaborative, <span class="text-teal-500">low code</span> for integration and automation.
         </h1>
         <h3 class="mt-8 text-gray-400 text-lg font-normal">
-            Combine applications, devices, and data in a secure, scalable, and team-based
-            environment, built around the open-source Node-RED project
+            An open source platform, helping you run Node-RED in production<br>in a secure, scalable and team-based environment.
         </h3>
         <div class="flex flex-col">
           <div class="m-auto mt-6 flex flex-row justify-center space-x-4">
@@ -25,40 +24,39 @@ layout: default
 <!-- Secondary Content -->
 <div class="w-full ff-bg-light px-6 pt-12 pb-48 md:pt-32 md:px-0">
     <div class="container m-auto text-center max-w-4xl">
-        <div class="m-auto mt-24 w-full text-center">
-            <h2>4,000+ Integrations Available</h2>
+        <div class="m-auto mt-16 mb-16 w-full text-center">
+            <h2>Run Node-RED in Production</h2>
+            <h5><a href="/node-red">What is Node-RED?</a></h5>
         </div>
-        <div class="sm:mt-10 md:mt-16 w-full max-w-4xl text-center flex flex-wrap gap-2 justify-around">
-            <div class="w-full px-3 mt-4 sm:w-72 md:mt-0 css-full">
-                <img class="w-40 m-auto" src="./images/pictograms/community_red.png"/>
-                <h5 class="flex justify-center mb-2">SOCIAL & COMMS</h5>
-                <label class="font-light">Twitter, Twilio, Telegram, Slack, WhatsApp, Discord, etc.</label>
+        <div class="flex flex-col-reverse justify-between sm:flex-row gap-3 sm:gap-12">
+            <div class="text-center sm:text-left pt-4">
+                <h3>Easy Instance Management</h3>
+                <p>FlowForge's intuitive UI lets you manage your Node-RED instances all in one place.</p>
+                <p>Spin up instances of Node-RED in seconds, monitor project health and tear down or suspend projects as required.<p>
             </div>
-            <div class="w-full px-3 mt-4 sm:w-72 md:mt-0">
-                <img class="w-40 m-auto" src="./images/pictograms/edge_red.png"/>
-                <h5 class="flex justify-center mb-2">HARDWARE</h5>
-                <label class="font-light">Servers, PLCs, Network Switches & Routers, Edge Devices, etc.</label>
+            <img class="w-96" src="images/screen-pseudo-overview.png">
+        </div>
+        <div class="my-8 sm:my-16 w-full">
+            {% include "components/divider-grey-wires-right.njk" %}
+        </div>
+        <div class="flex flex-col-reverse sm:flex-row-reverse justify-between gap-3 sm:gap-12">
+            <div class="text-center sm:text-left pt-4">
+                <h3>Device Deployment at Scale</h3>
+                <p>One-click deploy to thousands of devices.</p>
+                <p>FlowForge provides a clear picture of your device health, with project snapshots and rollbacks enabling seamless version control.</p>
             </div>
-            <div class="w-full px-3 mt-4 sm:w-72 md:mt-0">
-                <img class="w-40 m-auto" src="./images/pictograms/candor_red.png"/>
-                <h5 class="flex justify-center mb-2">PROTOCOLS</h5>
-                <label class="font-light">WebSockets, HTTP, MQTT, AMQP, SNMP, RSS, FTP, etc.</label>
+            <img class="w-96" src="images/screen-pseudo-devices.png">
+        </div>
+        <div class="my-8 sm:my-16">
+            {% include "components/divider-grey-wires-left.njk" %}
+        </div>
+        <div class="flex flex-col-reverse sm:flex-row justify-between gap-3 sm:gap-12">
+            <div class="text-center sm:text-left pt-4">
+                <h3>Reduced Operational Overheads</h3>
+                <p>Backed by consistent security across the platform, FlowForge makes hosting, deployment and management easy.</p>
+                <p>FlowForge provides centralised audit logging too, so you can see all activity in one place - bringing you peace of mind and compliance in your production environment</p>
             </div>
-            <div class="w-full px-3 mt-4 sm:w-72 lg:mt-10">
-                <img class="w-40 m-auto" src="./images/pictograms/cloud_red.png"/>
-                <h5 class="flex justify-center mb-2">CLOUD</h5>
-                <label class="font-light">AWS, Azure, S3, Google Cloud Platform, IBM Cloud, etc.</label>
-            </div>
-            <div class="w-full px-3 mt-4 sm:w-72 lg:mt-10">
-                <img class="w-40 m-auto" src="./images/pictograms/scalable_red.png"/>
-                <h5 class="flex justify-center mb-2">A.I.</h5>
-                <label class="font-light">TensorFlow, IBM Watson, Azure Cognitive Services, etc.</label>
-            </div>
-            <div class="w-full px-3 mt-4 sm:w-72 lg:mt-10">
-                <img class="w-40 m-auto" src="./images/pictograms/storage_red.png"/>
-                <h5 class="flex justify-center mb-2">STORAGE</h5>
-                <label class="font-light">MongoDB, MySQL, PostgreSQL, SQL Server, Redis, DB2, etc.</label>
-            </div>
+            <img class="w-96" src="images/screen-pseudo-audit.png">
         </div>
     </div>
 </div>
@@ -68,15 +66,15 @@ layout: default
 <!-- Deployment Options -->
 <div class="w-full ff-bg-dark px-6 pt-12 pb-48 md:pt-12 md:px-0">
     <div class="container m-auto text-center max-w-4xl">
-        <div class="m-auto mt-24 w-full text-center">
-            <h2>Flexible Deployment Options</h2>
+        <div class="m-auto mt-16 w-full text-center">
+            <h1>Flexible Hosting Options</h1>
             <h5 class="text-white font-light">For a full feature comparison, please visit our <a href="/pricing">Pricing</a> page.</h5>
         </div>
         <div class="sm:mt-10 md:mt-16 w-full max-w-4xl text-center flex flex-wrap gap-2 justify-around">
             <div class="w-full px-3 mt-4 sm:w-72 md:mt-0 css-full">
                 <img class="w-40 m-auto mb-4" src="./images/pictograms/opensource.png"/>
                 <h5 class="flex justify-center">Open Source</h5>
-                <label class="font-light mt-2 block">We are an Open Core company. Feel free to try out Flowforge on your own, for free.</label>
+                <label class="font-light mt-2 block">We are an Open Core company. Feel free to try out FlowForge on your own, for free.</label>
                 <label class="font-light mt-2 block">Available on <a href="https://github.com/flowforge/flowforge" target="_blank">GitHub</a></label>
             </div>
             <div class="w-full px-3 mt-4 sm:w-72 md:mt-0">
