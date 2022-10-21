@@ -4,9 +4,9 @@ align: center
 layout: layouts/page.njk
 ---
 
-<div class="pricing-tiles mb-16 md:max-w-screen-lg">
+<div class="px-6 pricing-tiles flex flex-col md:grid mb-16 md:max-w-screen-lg">
     <div class="pricing-tile pt-4 pb-6 px-8">
-        <div class="flex justify-between items-center mb-4 px-4 md:-mb-0 md:px-0 md:block">
+        <div class="flex flex-col justify-between items-center mb-4 sm:px-4 md:flex-row md:-mb-0 md:px-0 md:block">
             <h5>Community</h5>
             <div class="mt-6">
                 <h2>$0</h2>
@@ -17,7 +17,7 @@ layout: layouts/page.njk
         </div>
     </div>
     <div class="pricing-tile pt-4 pb-6 px-8">
-        <div class="flex justify-between items-center mb-4 px-4 md:-mb-0 md:px-0 md:block">
+        <div class="flex flex-col justify-between items-center mb-4 sm:px-4 md:flex-row md:-mb-0 md:px-0 md:block">
             <h5>Premium</h5>
             <div>
                 <label class="top-label">from</label>
@@ -25,14 +25,14 @@ layout: layouts/page.njk
                 <label class="sub-label">per project/mo</label>
             </div>
         </div>
-        <div class="flex items-center gap-4 mt-4">
-            <div class="w-6/12">
+        <div class="flex flex-col sm:flex-row items-center gap-4 mt-4">
+            <div class="sm:w-6/12">
                 <h5>FlowForge-Managed</h5>
                 <p class="mt-2">Get started in less than a minute, fully managed, fully secure.</p>
                 <a class="ff-btn ff-btn--primary" href="https://app.flowforge.com/account/create">Sign up</a>
             </div>
             <span style="width: 2px; background-color: gray; height: 75%"></span>
-            <div class="w-6/12">
+            <div class="sm:w-6/12">
                 <h5>Self-Managed</h5>
                 <p class="mt-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam.</p>
                 <a class='ff-btn ff-btn--secondary' href='/contact-us'>Contact Us</a>
