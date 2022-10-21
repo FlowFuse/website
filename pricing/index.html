@@ -61,43 +61,48 @@
     
         
         <div class="hero  container m-auto text-center flex flex-wrap mt-6 p-6 mb-32 md:flex-nowrap md:max-w-4xl md:mt-12">
-        
-            <div class="text-left md:pr-32">
-                <h1>Pricing</h1>
-                
-                
+            <div class="text-center w-full">
+                <h1>FlowForge Pricing</h1>
             </div>
-            
+                    
         </div>
     
     <div class="content">
         
-<div class="pricing-tiles mb-16">
-    <div class="pricing-tile">
-        <div class="flex justify-between items-center mb-4 px-4 md:-mb-0 md:px-0 md:block">
-            <h4>Community</h4>
-            <div>
-                <label class="top-label"></label>
+<div class="px-6 pricing-tiles flex flex-col md:grid mb-16 md:max-w-screen-lg">
+    <div class="pricing-tile pt-4 pb-6 px-8">
+        <div class="flex flex-col justify-between items-center mb-4 sm:px-4 md:flex-row md:-mb-0 md:px-0 md:block">
+            <h5>Community</h5>
+            <div class="mt-6">
                 <h2>$0</h2>
-                <label class="sub-label">&nbsp;</label>
+                <label class="sub-label">Apache 2.0 Licensed<label>
             </div>
+            <p class="mt-6">We are an open-core company, try for free with deployment options including Docker and K8s</p>
+            <a class="ff-btn ff-btn--secondary" href="/docs/install">Install now</a>
         </div>
-        <label class="top-label mb-1">Apache 2.0 License</label>
-        <a class="ff-btn ff-btn--secondary" href="/docs/install">Install now</a>
     </div>
-    <div class="pricing-tile">
-        <div class="flex justify-between items-center mb-4 px-4 md:-mb-0 md:px-0 md:block">
-            <h4>Premium</h4>
+    <div class="pricing-tile pt-4 pb-6 px-8">
+        <div class="flex flex-col justify-between items-center mb-4 sm:px-4 md:flex-row md:-mb-0 md:px-0 md:block">
+            <h5>Premium</h5>
             <div>
                 <label class="top-label">from</label>
                 <h2>$15</h2>
-                <label class="sub-label">/project/mo</label>
+                <label class="sub-label">per project/mo</label>
             </div>
         </div>
-        <label class="top-label mb-1">FlowForge Managed</label>
-        <a class="ff-btn ff-btn--primary" href="https://app.flowforge.com/account/create">Sign up</a>
-        <label class="top-label mt-4 mb-1">Self Managed</label>
-        <a class='ff-btn ff-btn--secondary' href='/contact-us'>Contact Us</a>
+        <div class="flex flex-col sm:flex-row items-center gap-4 mt-4">
+            <div class="sm:w-6/12">
+                <h5>FlowForge-Managed</h5>
+                <p class="mt-2">Get started in less than a minute, fully managed, fully secure.</p>
+                <a class="ff-btn ff-btn--primary" href="https://app.flowforge.com/account/create">Sign up</a>
+            </div>
+            <span style="width: 2px; background-color: gray; height: 75%"></span>
+            <div class="sm:w-6/12">
+                <h5>Self-Managed</h5>
+                <p class="mt-2">Premium features, on your own dedicated instance.</p>
+                <a class='ff-btn ff-btn--secondary' href='/contact-us'>Contact Us</a>
+            </div>
+        </div>
     </div>
 </div>
 
