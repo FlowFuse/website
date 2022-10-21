@@ -127,6 +127,8 @@ SET      - "LETSENCRYPT_HOST=forge.example.com"
 
 You can now save and close that file, in Nano you can do that by pressing ‘control x’ then ‘y’ then the Return key.
 
+# EDIT FLOWFORGE.YML to to use the public URL wss for public_url: wss://mqtt.flowforge-demo.com
+
 # Reload the Docker Compose file
 
 We now need to stop all the Docker containers which are already running using the following command.
