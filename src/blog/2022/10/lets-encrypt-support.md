@@ -24,7 +24,7 @@ This in practice allows web service operators to create SSL certificates for the
 
 # Replace the existing docker-compose.yml
 
-The first step is to create a new docker compose file in our installation. The Docker Compose file defines one or more Docker containers which will run a service. In our compose file, alongside the main FlowForge application we have containers running an Nginx reverse Proxy, a Postgres database server and a MQTT broker. We are going to edit the file to add in another container which will manage the certificates we need and make them available to the Nginx reverse proxy.
+The Docker compose file defines one or more Docker containers which will run a service. In our compose file, alongside the main FlowForge application we have containers running an Nginx reverse proxy, a Postgres database server and a MQTT broker. We are going to edit the file to add in another container which will manage the certificates we need and make them available to the Nginx reverse proxy.
 
 To add Let's Encrypt support we are using the fantastic [ACME Companion](https://github.com/nginx-proxy/acme-companion) project.
 
@@ -129,11 +129,17 @@ You can now save and close that file, in Nano you can do that by pressing ‘con
 
 # Reload the Docker Compose file
 
-We now need to stop all the Docker containers which are already running using the folling command.
+We now need to stop all the Docker containers which are already running using the following command.
 
 `sudo docker compose down`
 
-And the final step is to start the comainers up using the new file.
+And then start the comainers using the new compose file.
 
 `sudo docker compose -p flowforge up -d`
+
+# Check everything worked.
+
+You should now be able to access your FlowForge installation using both HTTP and HTTPS.
+
+
 
