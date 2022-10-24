@@ -66,7 +66,7 @@
 &lt;p&gt;&lt;img src=&quot;https://flowforge.com/blog/2022/10/images/6.png&quot; alt=&quot;Dig command&quot; /&gt;&lt;/p&gt;
 &lt;p&gt;The DNS records are set to the IP record we noted down earlier, so we&#39;re good to continue.&lt;/p&gt;
 &lt;h1 id=&quot;flowforge-docker-installation&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://flowforge.com/blog/2022/10/ff-docker-gcp/#flowforge-docker-installation&quot;&gt;#&amp;nbsp;&lt;/a&gt; FlowForge Docker Installation&lt;/h1&gt;
-&lt;p&gt;The next step is to install the FlowForge Docker build on our GCP VM. If you return to GCP you should see that your VM is now up and running, you can now click on SSH to connect to your VM. This will open up a browser based SSH session to your VM.&lt;/p&gt;
+&lt;p&gt;The next step is to install Docker on our GCP VM. If you return to GCP you should see that your VM is now up and running, you can now click on SSH to connect to your VM. This will open up a browser based SSH session to your VM.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;https://flowforge.com/blog/2022/10/images/7.png&quot; alt=&quot;Access SSH in GCP&quot; /&gt;&lt;/p&gt;
 &lt;p&gt;Once you have a Secure Shell (SSH) session open, the first step is to install Docker using the following commands.&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;sudo apt-get update&lt;/code&gt;&lt;/p&gt;
