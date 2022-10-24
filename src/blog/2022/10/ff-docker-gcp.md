@@ -62,7 +62,7 @@ The DNS records are set to the IP record we noted down earlier, so we're good to
 
 # FlowForge Docker Installation
 
-The next step is to install the FlowForge Docker build on our GCP VM. If you return to GCP you should see that your VM is now up and running, you can now click on SSH to connect to your VM. This will open up a browser based SSH session to your VM.
+The next step is to install Docker on our GCP VM. If you return to GCP you should see that your VM is now up and running, you can now click on SSH to connect to your VM. This will open up a browser based SSH session to your VM.
 
 ![Access SSH in GCP](../images/7.png)
 
