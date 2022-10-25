@@ -42,7 +42,7 @@ Other tools included in the Creative Cloud suite that may be useful include:
 
 Blender is a free and open-source 3D computer graphics software toolset. It can be used to create static renders of 3d assets, or entire 2d & 3d animations. 
 
-### Web Sites
+### Websites
 
 - All written content should be in UK English.
 - All page titles should summarise the content, keep the URL length as short as practical and use [Kebab Case](https://en.wiktionary.org/wiki/kebab_case).
