@@ -1,27 +1,42 @@
-# FlowForge Videos
+## FlowForge Videos
 
 This section of our handbook is dedicated to guidance on how to create video/media assets for FlowForge. Here you can find information on what types of videos we produce at FlowForge and the templating and formatting we recommend for each. 
 
 ## Types
 
-### FlowForge Demos & How-To's
+#### Demos & How-To's
+_Get input from Rob/Nick_
 
-### Release Videos
+Quick 1-2 min videos demonstrating a single feature or short UX Golden Path
 
-### Marketing Videos
+#### Walkthroughs
+_Get input from Rob/Nick_
 
-Much more creative license and freedom in terms of content and approach. If we are using iconography and pictograms, then they should be stylized and animated as per our branding guidelines [to be written].
+Longer form demonstrations of FlowForge
+
+#### Release Videos
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/nCe_qs0G6ZQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" style="margin-bottom: 12px;" allowfullscreen></iframe>
+
+Our Release Videos follow a very fixed pattern:
+
+1. FlowForge Intro Ident
+2. Call out 3-4 Major Features introduced in this particular release (with screen recorded demos)
+3. "and much more..." to include additional important features & bug fixes
+4. FlowForge Outro Ident
+
+
+#### Marketing Videos
+
+Much more creative license and freedom in terms of content and approach. If we are using iconography and pictograms, then they should be stylized and animated as per our [branding guidelines](../design/branding).
 
 ## Assets
-
-### Idents
-
-#### FlowForge Intro:
+#### FlowForge Intro
 <video width="500" controls>
   <source src="../videos/ff-intro.mp4" type="video/mp4">
 </video>
 
-#### FlowForge Outro:
+#### FlowForge Outro
 <video width="500" controls>
   <source src="../videos/ff-outro.mp4" type="video/mp4">
 </video>
