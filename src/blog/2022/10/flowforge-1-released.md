@@ -17,10 +17,10 @@ We're pleased to announce version 1.0 is now available. This major release of th
 
 ## Features
 [Auto assigment of unique IDs to Devices](https://github.com/flowforge/flowforge/issues/841)
-We've updated FlowForge so that each running instance of Node-RED is assigned unique IDs. This can make handling of data returned from multiple devices far more robust.
+We've updated FlowForge so that each running instance of Node-RED is assigned unique IDs. This can make handling of data returned from multiple Devices far more robust.
 
 [Define custom Nodes to be pre-installed in your Templates](https://github.com/flowforge/flowforge/issues/657)
-This feature allows you to pre-define which custom Nodes you want as part of your templates.
+This feature allows you to pre-define which custom Nodes you want as part of your FlowForge Templates.
 
 [Import credentials files into your FlowForge Projects](https://github.com/flowforge/CloudProject/issues/59)
 When migrating an existing flow into FlowForge you can now import your credentials file, saving you some error prone manual steps.
@@ -31,13 +31,13 @@ When defining your Stacks you can now give then friendly names which mean someth
 ## Improvements
 We've made a number of improvements to the overall experience of running FlowForge.
 
-- Allow both key and component in a ff-data-table column definition [#43](https://github.com/flowforge/forge-ui-components/issues/43)
+- Node-RED TCP & UDP Core Nodes in FlowForge [#999](https://github.com/flowforge/flowforge/issues/999)
 - Default Stack and Templates [#989](https://github.com/flowforge/flowforge/issues/989)
 - Provide platform containers and base stack container for administrators [#917](https://github.com/flowforge/flowforge/issues/917)
 
 ## Bug Fixes
 We've fixed the following bugs in this release.
-- [Provide platform containers and base stack container for administrators](https://github.com/flowforge/flowforge/issues/917)
+- [frewgrgrgrwg](https://github.com/flowforge/flowforge/issues/917)
 - [User names can be same (but different case)](https://github.com/flowforge/flowforge/issues/983)
 - [User list not refreshing after changing user details](https://github.com/flowforge/flowforge/issues/463)
 - [Navigating directly to a device page gets the wrong team selected](https://github.com/flowforge/flowforge/issues/986)
