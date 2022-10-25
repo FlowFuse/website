@@ -41,3 +41,10 @@ Other tools included in the Creative Cloud suite that may be useful include:
 ### Blender ([more info](https://blender.org))
 
 Blender is a free and open-source 3D computer graphics software toolset. It can be used to create static renders of 3d assets, or entire 2d & 3d animations. 
+
+### Websites
+
+- All written content should be in UK English.
+- All page titles should summarise the content, keep the URL length as short as practical and use [Kebab Case](https://en.wiktionary.org/wiki/kebab_case).
+- All images should use informative [alt tags](https://www.w3.org/WAI/tutorials/images/tips/) which clearly describe the point of an image rather than all the details. Alt tags should be no longer than 60 characters.
+- When mentioning [FlowForge Concepts](https://flowforge.com/docs/user/concepts/) (terminology) where possible we should link to an explanation of that concept.
