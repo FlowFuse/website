@@ -189,3 +189,5 @@
 All app and site iconography uses [Heroicons](https://heroicons.com/), by the makers of Tailwind CSS. Within our flowforge app, we have two icon sizes available which can be assigned with `ff-icon` and `ff-icon-sm`.
 
 ## Pictograms
+
+_to be written_
