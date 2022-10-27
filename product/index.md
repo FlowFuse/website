@@ -33,5 +33,6 @@ product organisation should constantly be in touch with the community to
 understand their challenges, current solutions, and learn why they have or
 haven't adopted FlowForge.
 
-[YC published a good video on this topic](https://www.ycombinator.com/library/6g-how-to-talk-to-users).
-For each call document all the learnings to share internally.
+For each call document all the learnings to share internally, to start; make a
+copy of [this template](https://docs.google.com/document/d/1_gya2WZTJW0G2CxlsJguLDCJI3eHRILJzd9ICsn5QTs)
+and roughly follow the questions listed.
