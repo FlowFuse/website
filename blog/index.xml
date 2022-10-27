@@ -3,8 +3,70 @@
     <title>FlowForge</title>
     <link href="https://flowforge.com/blog/index.xml" rel="self"/>
     <link href="https://flowforge.com/blog"/>
-    <updated>2022-10-18T00:00:00Z</updated>
+    <updated>2022-10-27T18:00:00Z</updated>
     <id>https://flowforge.com/blog</id>
+    
+    <entry>
+        <id>https://flowforge.com/blog/2022/10/flowforge-1-released/</id>
+        <title>FlowForge 1.0 released</title>
+        <summary>FlowForge at 1.0, a huge milestone for us.</summary>
+        <updated>2022-10-27T18:00:00Z</updated>
+        <link href="https://flowforge.com/blog/2022/10/flowforge-1-released/"/>
+        <author><name>Rob Marcer</name></author>
+        <content type="html">&lt;p&gt;Predefined environment variables for your Projects and Devices, manage your Project&#39;s modules and import your existing flows (and credentials) into your FlowForge &lt;a href=&quot;https://flowforge.com/docs/user/concepts/#project&quot;&gt;Projects&lt;/a&gt;.&lt;/p&gt;
+&lt;!--more--&gt;
+&lt;!-- Keep reading for the details of what&#39;s in this release or you can watch our 1 minute roundup video of the new release above.  --&gt;
+&lt;p&gt;We&#39;re pleased to announce version 1.0 FlowForge is now available. Keep reading for a promotion code to get your first month free on FlowForge. Version 1.0 represents our vision of the base set of features needed for you to get great value from using FlowForge in a production environment. That&#39;s not to say we are done, we will continue to add features, improve our interfaces and fix bugs with the same enthusiasm as we&#39;ve worked towards 1.0. We&#39;d like to hear your feedback on what we will be including in &lt;a href=&quot;https://github.com/orgs/flowforge/projects/5&quot;&gt;1.1 and beyond&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&quot;features&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://flowforge.com/blog/2022/10/flowforge-1-released/#features&quot;&gt;#&amp;nbsp;&lt;/a&gt; Features&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/flowforge/flowforge/issues/841&quot;&gt;Standard Environment Variables set for both Projects and Devices&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Projects now get a set of predefined environment variables that can be used by their flows. These give your flows access to the projects unique id and name. When the flows are deployed to &lt;a href=&quot;https://flowforge.com/docs/user/concepts/#device&quot;&gt;devices&lt;/a&gt;, they also get the device&#39;s id and name. That makes is easier to deploy flows across multiple devices and have each able to identify itself.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/flowforge/flowforge/issues/405&quot;&gt;Add additional node modules to your projects&lt;/a&gt;
+This feature allows you to pre-define additional Node-RED nodes and node modules you may want to be installed in your FlowForge project, making it easier to manage.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/flowforge/flowforge/issues/835&quot;&gt;Import existing projects into FlowForge&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;You can now import your existing flow and credentials files straight into your FlowForge project - making it really easy to move your existing projects into the platform.&lt;/p&gt;
+&lt;h2 id=&quot;improvements&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://flowforge.com/blog/2022/10/flowforge-1-released/#improvements&quot;&gt;#&amp;nbsp;&lt;/a&gt; Improvements&lt;/h2&gt;
+&lt;p&gt;We&#39;ve made a number of improvements to the overall experience of running FlowForge.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Editable Stack labels &lt;a href=&quot;https://github.com/flowforge/flowforge/issues/915&quot;&gt;#915&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Check for suitable version of Node on Devices &lt;a href=&quot;https://github.com/flowforge/flowforge-device-agent/issues/37&quot;&gt;#37&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Realtime Project status details in Project overview  &lt;a href=&quot;https://github.com/flowforge/flowforge/issues/990&quot;&gt;#990&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Improve Template creation &amp;amp; Edit Project Settings UX &lt;a href=&quot;https://github.com/flowforge/flowforge/issues/1041&quot;&gt;#1041&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;bug-fixes&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://flowforge.com/blog/2022/10/flowforge-1-released/#bug-fixes&quot;&gt;#&amp;nbsp;&lt;/a&gt; Bug Fixes&lt;/h2&gt;
+&lt;p&gt;We&#39;ve fixed the following bugs in this release.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/flowforge/flowforge/issues/1143&quot;&gt;Pressing return in search box reloads page&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/flowforge/flowforge/issues/1126&quot;&gt;Vue Router Warn&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/flowforge/forge-ui-components/issues/58&quot;&gt;Kebab menu in Settings breaks&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/flowforge/flowforge/issues/1096&quot;&gt;flowforge-nr-launcher missing try/catch on http request&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/flowforge/flowforge/issues/1145&quot;&gt;Invite with + in email address is incorrectly sanitised&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/flowforge/forge-ui-components/issues/59&quot;&gt;Table does not sort correctly when empty fields are present&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/flowforge/flowforge/issues/929&quot;&gt;4xx Errors not shown in App&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/flowforge/flowforge/issues/1076&quot;&gt;Inconsistent errors returned from the API&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/flowforge/flowforge-nr-launcher/issues/77&quot;&gt;Module install not working on windows&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/flowforge/flowforge/issues/1038&quot;&gt;Avatar lettering is mis-allinged when only rendering 1 character&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/flowforge/flowforge/issues/968&quot;&gt;it.only is not prohibited&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/flowforge/flowforge/issues/966&quot;&gt;No feedback when an API error occurs editing user&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/flowforge/flowforge/issues/1040&quot;&gt;Start action is available on a running project&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;contributors&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://flowforge.com/blog/2022/10/flowforge-1-released/#contributors&quot;&gt;#&amp;nbsp;&lt;/a&gt; Contributors&lt;/h2&gt;
+&lt;p&gt;We&#39;d like the thank the following for their contributions to this release:&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/Jozefik&quot;&gt;Jozefik&lt;/a&gt; for their work on &lt;a href=&quot;https://github.com/flowforge/flowforge/pull/1082&quot;&gt;Adding limits to admin panel&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;As an open-source project, we welcome community involvement in what we&#39;re building. If you&#39;re interested in contributing, checkout our &lt;a href=&quot;https://flowforge.com/docs/contribute/&quot;&gt;guide in the docs&lt;/a&gt;.&lt;/p&gt;
+&lt;h3 id=&quot;try-it-out&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://flowforge.com/blog/2022/10/flowforge-1-released/#try-it-out&quot;&gt;#&amp;nbsp;&lt;/a&gt; Try it out&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&quot;https://app.flowforge.com/account/create?code=RELEASE1&quot;&gt;Sign up for FlowForge&lt;/a&gt; with this link  or at the checkout enter the code &lt;strong&gt;RELEASE1&lt;/strong&gt; to get your first project free for a month.&lt;/p&gt;
+&lt;h3 id=&quot;upgrading-flowforge&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://flowforge.com/blog/2022/10/flowforge-1-released/#upgrading-flowforge&quot;&gt;#&amp;nbsp;&lt;/a&gt; Upgrading FlowForge&lt;/h3&gt;
+&lt;p&gt;Our managed &lt;a href=&quot;https://app.flowforge.com/&quot;&gt;FlowForge&lt;/a&gt; is already running 1.0. Upgrade your project Stacks to the latest version to make sure you get all the latest changes.&lt;/p&gt;
+&lt;p&gt;If you installed a previous version of FlowForge and want to upgrade, our documentation provides a
+guide for &lt;a href=&quot;http://flowforge.com/docs/install#upgrade&quot;&gt;upgrading FlowForge on a local server&lt;/a&gt;.&lt;/p&gt;
+&lt;h3 id=&quot;getting-help&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://flowforge.com/blog/2022/10/flowforge-1-released/#getting-help&quot;&gt;#&amp;nbsp;&lt;/a&gt; Getting help&lt;/h3&gt;
+&lt;p&gt;If you hit any problems with the platform, or have questions to ask, please raise an &lt;a href=&quot;https://github.com/flowforge/flowforge/issues&quot;&gt;issue on GitHub&lt;/a&gt;.
+That also includes if you have any feedback or feature requests.&lt;/p&gt;
+&lt;p&gt;Customers of FlowForge Cloud can raise a ticket by emailing support@flowforge.com&lt;/p&gt;
+&lt;p&gt;We also have a &lt;code&gt;#flowforge&lt;/code&gt; channel on the &lt;a href=&quot;https://nodered.org/slack&quot;&gt;Node-RED Slack workspace&lt;/a&gt;.&lt;/p&gt;
+</content>
+    </entry>
     
     <entry>
         <id>https://flowforge.com/blog/2022/10/db-migraton-01/</id>
