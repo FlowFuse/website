@@ -64,7 +64,7 @@ As an open-source project, we welcome community involvement in what we're buildi
 
 ### Upgrading FlowForge
 
-[FlowForge](https://app.flowforge.com) is already running 1.0. Upgrade your project Stacks to the latest version to make sure you get all the latest changes.
+Our managed [FlowForge](https://app.flowforge.com) is already running 1.0. Upgrade your project Stacks to the latest version to make sure you get all the latest changes.
 
 If you installed a previous version of FlowForge and want to upgrade, our documentation provides a
 guide for [upgrading FlowForge on a local server](http://flowforge.com/docs/install#upgrade).
