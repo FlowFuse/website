@@ -16,8 +16,9 @@ Auto assignment of unique IDs to Devices, define custom nodes to be pre-installe
 We're pleased to announce version 1.0 FlowForge is now available. Keep reading for a promotion code to get your first month free on FlowForge. Version 1.0 represents our vision of the base set of features needed for you to get great value from using FlowForge in a production environment. That's not to say we are done, we will continue to add features, improve our interfaces and fix bugs with the same enthusiasm as we've worked towards 1.0. We'd like to hear your feedback on what we will be including in [1.1 and beyond](https://github.com/orgs/flowforge/projects/5).
 
 ## Features
-[Auto assignment of unique IDs to Devices](https://github.com/flowforge/flowforge/issues/841)
-We've updated FlowForge so that each running instance of Node-RED is assigned unique IDs. This can make handling of data returned from multiple [Devices](https://flowforge.com/docs/user/concepts/#device) far more robust.
+[Standard Environment Variables set for both Projects and Devices](https://github.com/flowforge/flowforge/issues/841)
+
+Projects now get a set of predefined environment variables that can be used by their flows. These give your flows access to the projects unique id and name. When the flows are deployed to [devices](https://flowforge.com/docs/user/concepts/#device), they also get the device's id and name. That makes is easier to deploy flows across multiple devices and have each able to identify itself.
 
 [Define custom Nodes to be pre-installed in your Templates](https://github.com/flowforge/flowforge/issues/405)
 This feature allows you to pre-define which custom nodes you want as part of your FlowForge [Templates](https://flowforge.com/docs/user/concepts/#project-template).
