@@ -19,10 +19,10 @@ We're pleased to announce version 1.0 FlowForge is now available. Keep reading f
 [Auto assignment of unique IDs to Devices](https://github.com/flowforge/flowforge/issues/841)
 We've updated FlowForge so that each running instance of Node-RED is assigned unique IDs. This can make handling of data returned from multiple [Devices](https://flowforge.com/docs/user/concepts/#device) far more robust.
 
-[Define custom Nodes to be pre-installed in your Templates](https://github.com/flowforge/flowforge/issues/657)
+[Define custom Nodes to be pre-installed in your Templates](https://github.com/flowforge/flowforge/issues/405)
 This feature allows you to pre-define which custom nodes you want as part of your FlowForge [Templates](https://flowforge.com/docs/user/concepts/#project-template).
 
-[Import credentials files into your FlowForge Projects](https://github.com/flowforge/CloudProject/issues/59)
+[Import credentials files into your FlowForge Projects](https://github.com/flowforge/flowforge/issues/835)
 When migrating an existing flow into FlowForge you can now import your credentials file.
 
 ## Improvements
