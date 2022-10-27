@@ -7,7 +7,7 @@ authors: ["rob-marcer"]
 video: XXXXXXXXXXXX
 ---
 
-Auto assignment of unique IDs to Devices, define custom nodes to be pre-installed in your [Templates](https://flowforge.com/docs/user/concepts/#project-template) and import credentials files into your FlowForge [Projects](https://flowforge.com/docs/user/concepts/#project).
+Predefined environment variables for your Projects and Devices, manage your Project's modules and import your existing flows (and credentials) into your FlowForge [Projects](https://flowforge.com/docs/user/concepts/#project).
 
 <!--more-->
 
