@@ -20,8 +20,8 @@ We're pleased to announce version 1.0 FlowForge is now available. Keep reading f
 
 Projects now get a set of predefined environment variables that can be used by their flows. These give your flows access to the projects unique id and name. When the flows are deployed to [devices](https://flowforge.com/docs/user/concepts/#device), they also get the device's id and name. That makes is easier to deploy flows across multiple devices and have each able to identify itself.
 
-[Define custom Nodes to be pre-installed in your Templates](https://github.com/flowforge/flowforge/issues/405)
-This feature allows you to pre-define which custom nodes you want as part of your FlowForge [Templates](https://flowforge.com/docs/user/concepts/#project-template).
+[Add additional node modules to your projects](https://github.com/flowforge/flowforge/issues/405)
+This feature allows you to pre-define additional Node-RED nodes and node modules you may want to be installed in your FlowForge project, making it easier to manage.
 
 [Import existing projects into FlowForge](https://github.com/flowforge/flowforge/issues/835)
 
