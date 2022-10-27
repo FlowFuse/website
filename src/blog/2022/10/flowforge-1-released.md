@@ -4,7 +4,7 @@ subtitle: FlowForge at 1.0, a huge milestone for us.
 description: FlowForge is now 1.0!
 date: 2022-10-27 18:00:00.0
 authors: ["rob-marcer"]
-video: mjR1iiEFiBg
+video: XXXXXXXXXXXX
 ---
 
 Auto assignment of unique IDs to Devices, define custom nodes to be pre-installed in your [Templates](https://flowforge.com/docs/user/concepts/#project-template) and import credentials files into your FlowForge [Projects](https://flowforge.com/docs/user/concepts/#project).
@@ -13,7 +13,7 @@ Auto assignment of unique IDs to Devices, define custom nodes to be pre-installe
 
 Keep reading for the details of what's in this release or you can watch our 1 minute roundup video of the new release above. 
 
-We're pleased to announce version 1.0 FlowForge is now available. Keep reading for a promotion code to get your first month free on FlowForge. Version 1.0 represents our vision of the base set of features needed for you to get great value from using FlowForge in production. That's not to say we are done, we are only just getting started. We will continue to add features, improve our interfaces and fix bugs with the same enthusiasm as we've worked towards 1.0. We'd like to hear your feedback on what we will be including in [1.1 and beyond](https://github.com/orgs/flowforge/projects/5), as an open source project our users drive our development.
+We're pleased to announce version 1.0 FlowForge is now available. Keep reading for a promotion code to get your first month free on FlowForge. Version 1.0 represents our vision of the base set of features needed for you to get great value from using FlowForge in a production environment. That's not to say we are done, we will continue to add features, improve our interfaces and fix bugs with the same enthusiasm as we've worked towards 1.0. We'd like to hear your feedback on what we will be including in [1.1 and beyond](https://github.com/orgs/flowforge/projects/5).
 
 ## Features
 [Auto assignment of unique IDs to Devices](https://github.com/flowforge/flowforge/issues/841)
@@ -28,7 +28,7 @@ When migrating an existing flow into FlowForge you can now import your credentia
 ## Improvements
 We've made a number of improvements to the overall experience of running FlowForge.
 
-- Human friendly Stack names [#915](https://github.com/flowforge/flowforge/issues/915)
+- Editable Stack labels [#915](https://github.com/flowforge/flowforge/issues/915)
 - Check for suitable version of Node on Devices [#37](https://github.com/flowforge/flowforge-device-agent/issues/37)
 - Realtime Project status details in Project overview  [#990](https://github.com/flowforge/flowforge/issues/990)
 - Improve Template creation & Edit Project Settings UX [#1041](https://github.com/flowforge/flowforge/issues/1041)
@@ -52,7 +52,7 @@ We've fixed the following bugs in this release.
 ## Contributors
 We'd like the thank the following for their contributions to this release:
 
-[Jozefik]((https://github.com/Jozefik) for their work on [Added limits to admin panel](https://github.com/flowforge/flowforge/pull/1082)
+[Jozefik](https://github.com/Jozefik) for their work on [Adding limits to admin panel](https://github.com/flowforge/flowforge/pull/1082).
 
 As an open-source project, we welcome community involvement in what we're building. If you're interested in contributing, checkout our [guide in the docs](https://flowforge.com/docs/contribute/).
 
