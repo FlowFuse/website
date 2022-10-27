@@ -66,7 +66,7 @@
     <div class="w-full mx-auto ff-bg-light">
         <div class="font-medium border-b pb-1">
             
-            v0.10.0
+            v1.0.0
             
             /<a class="mx-2" href="/docs">docs</a>/<a class="mx-2" href="/docs/contribute">contribute</a>/<a class="mx-2" href="/docs/contribute/api-design">api-design</a>
         </div>
@@ -169,9 +169,10 @@ should be:</p>
 <li><code>invalid_&lt;name of property&gt;</code></li>
 </ul>
 <p>For example: <code>invalid_project_name</code>.</p>
-<h2 id="pagination" tabindex="-1"><a class="header-anchor" href="#pagination">#&nbsp;</a> Pagination</h2>
+<h2 id="pagination-%26-search" tabindex="-1"><a class="header-anchor" href="#pagination-%26-search">#&nbsp;</a> Pagination &amp; Search</h2>
 <p>All routes that return collections of things must use pagination to allow for
-future growth.</p>
+future growth, and provide a way to search the collection.</p>
+<h3 id="pagination" tabindex="-1"><a class="header-anchor" href="#pagination">#&nbsp;</a> Pagination</h3>
 <p>We use a cursor-based approach to our pagination. A cursor is a pointer to an entity
 in the collection and provides the starting point for what should be returned.</p>
 <ul>
@@ -203,7 +204,7 @@ such as <code>projects</code>.</p>
 End-points <em>should</em> include it if the number is known and is of material use. It is <em>not</em>
 returned by end-points used to query logs etc as the total count is a constantly changing
 value.</p>
-<h3 id="cursor-design" tabindex="-1"><a class="header-anchor" href="#cursor-design">#&nbsp;</a> Cursor design</h3>
+<h4 id="cursor-design" tabindex="-1"><a class="header-anchor" href="#cursor-design">#&nbsp;</a> Cursor design</h4>
 <p>A cursor should be able to point directly at an entity in the collection. It could
 be the entity hashid, or a timestamp if it is a time-series collection such as the
 logs.</p>
@@ -212,7 +213,11 @@ do not expose those ids on the api, instead using the <code>hashid</code> value 
 <p>If an end-point supports navigating the collection in reverse (by returning <code>previous_cursor</code>),
 the cursor should be prefixed with <code>-</code> to indicate the query should be in the opposite
 direction to the collection's natural order.</p>
-<h3 id="implementing-pagination" tabindex="-1"><a class="header-anchor" href="#implementing-pagination">#&nbsp;</a> Implementing pagination</h3>
+<h3 id="search" tabindex="-1"><a class="header-anchor" href="#search">#&nbsp;</a> Search</h3>
+<p>Search is done as simple case-insensitive text-based queries against string columns
+in the database model. This is a crude but effective way to implement search, but
+may need a more comprehensive approach in the future.</p>
+<h3 id="implementing-pagination-%26-search" tabindex="-1"><a class="header-anchor" href="#implementing-pagination-%26-search">#&nbsp;</a> Implementing pagination &amp; search</h3>
 <p>Within a route handler for a paginated end-point, the following helper function
 can be used to get the pagination options from the request, as well as specifying
 default options:</p>
@@ -220,10 +225,46 @@ default options:</p>
 
 // paginationOptions.limit = how many results to return
 // paginationOptions.cursor = starting cursor
+// paginationOptions.query = search string to use
 
 </code></pre>
-<p>Wherever possible, the pagination options should be applied as part of the database
-query, using the <code>where</code> and <code>limit</code> options.</p>
+<p>Typically these properties will be passed to the appropriate database model's <code>getAll</code>
+function.</p>
+<p>For example, the imaginary <code>Thing</code> model:</p>
+<pre><code>const { buildPaginationSearchClause } = require('../utils')
+
+...
+
+getAll: async (pagination = {}, where = {}) =&gt; {
+    // Ensure a sensible default limit for this particular type of thing
+    const limit = parseInt(pagination.limit) || 30
+
+    // Decode the cursor from hashid to database id
+    if (pagination.cursor) {
+        pagination.cursor = M.Thing.decodeHashid(pagination.cursor)
+    }
+
+    // Build the full where query using the buildPaginationSearchClause utility.
+    // We pass in the list of columns that should be searched against
+    where = buildPaginationSearchClause(pagination, where, ['Thing.name'])
+
+    // Run the query
+    const { count, rows } = await this.findAndCountAll({
+        where,
+        order: [['id', 'ASC']],
+        limit
+    })
+
+    // Return the results with the additional metadata
+    return {
+        meta: {
+            next_cursor: rows.length === limit ? rows[rows.length - 1].hashid : undefined
+        },
+        count,
+        things: rows
+    }
+}
+</code></pre>
 
             </div>
         </div>
@@ -231,7 +272,7 @@ query, using the <code>where</code> and <code>limit</code> options.</p>
             <h3 class="font-medium border-b pb-1 mb-4">On this page</h3>
             <ul id="toc" class="text-sm border-b mb-4"></ul>
             <div class="text-sm pb-1 text-right mb-4"><a href="https://github.com/flowforge/flowforge/edit/main/docs/contribute/api-design.md">Edit this page</a></div>
-            <div class="text-xs pb-1 text-right mb-4 italic">Updated: 2022-09-29 10:29:27 +0100</div>
+            <div class="text-xs pb-1 text-right mb-4 italic">Updated: 2022-10-27 11:13:08 +0100</div>
         </div>
     </div>
 </div>

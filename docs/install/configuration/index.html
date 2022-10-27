@@ -66,7 +66,7 @@
     <div class="w-full mx-auto ff-bg-light">
         <div class="font-medium border-b pb-1">
             
-            v0.10.0
+            v1.0.0
             
             /<a class="mx-2" href="/docs">docs</a>/<a class="mx-2" href="/docs/install">install</a>/<a class="mx-2" href="/docs/install/configuration">configuration</a>
         </div>
@@ -120,9 +120,47 @@ the options available in the configuration file.</p>
 <td><code>db.type</code></td>
 <td>The type of database to use. Default: <code>sqlite</code>.</td>
 </tr>
+</tbody>
+</table>
+<h3 id="sqlite-configuration" tabindex="-1"><a class="header-anchor" href="#sqlite-configuration">#&nbsp;</a> SQLite configuration</h3>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
 <tr>
 <td><code>db.storage</code></td>
 <td>Path to the SQLite Database file to use, relative to <code>/opt/flowforge/var/</code>. Default: <code>forge.db</code>.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="postgres-configuration" tabindex="-1"><a class="header-anchor" href="#postgres-configuration">#&nbsp;</a> Postgres configuration</h3>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>db.host</code></td>
+<td>Hostname of the Postgres Database. Default: <code>postgres</code>.</td>
+</tr>
+<tr>
+<td><code>db.database</code></td>
+<td>Database name on Postgres Server. Default: <code>flowforge</code>.</td>
+</tr>
+<tr>
+<td><code>db.user</code></td>
+<td>Username used when connecting to Postgres Server.</td>
+</tr>
+<tr>
+<td><code>db.password</code></td>
+<td>Password used when connecting to Postgres Server.</td>
 </tr>
 </tbody>
 </table>
@@ -147,6 +185,28 @@ the options available in the configuration file.</p>
 <tr>
 <td><code>driver.options.node_path</code></td>
 <td>The path to find the node.js executable - useful if Node.js has been installed with <code>nvm</code> so isn't necessarily on the system path.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="mqtt-broker-configuration" tabindex="-1"><a class="header-anchor" href="#mqtt-broker-configuration">#&nbsp;</a> MQTT Broker configuration</h2>
+<p>By default, the platform runs without an MQTT broker. This restricts some features
+in the platform, such as the Project Nodes.</p>
+<p>If a broker has been setup in the platform, the following configuration is required:</p>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>broker.url</code></td>
+<td>The url for the platform to access the broker. For example: <code>mqtt://localhost:4800</code>.</td>
+</tr>
+<tr>
+<td><code>broker.public_url</code></td>
+<td>The url used by devices to connect to the broker, if different to <code>broker.url</code>. For example, this may require devices to use WebSockets instead: <code>ws://localhost:4881</code>.</td>
 </tr>
 </tbody>
 </table>
@@ -231,7 +291,7 @@ This can be disabled via the Admin Settings in the UI, or turned off in the conf
 </tr>
 </tbody>
 </table>
-<h2 id="mqtt-broker-configuration" tabindex="-1"><a class="header-anchor" href="#mqtt-broker-configuration">#&nbsp;</a> MQTT Broker configuration</h2>
+<h2 id="mqtt-broker-configuration-1" tabindex="-1"><a class="header-anchor" href="#mqtt-broker-configuration-1">#&nbsp;</a> MQTT Broker configuration</h2>
 <p>The platform depends on the <a href="https://mosquitto.org/">Mosquitto MQTT Broker</a> to
 provide real-time messaging between devices and the platform.</p>
 <p>This is currently an <em>optional</em> component - the platform will work without the
@@ -282,7 +342,7 @@ broker, but some features will not be available.</p>
             <h3 class="font-medium border-b pb-1 mb-4">On this page</h3>
             <ul id="toc" class="text-sm border-b mb-4"></ul>
             <div class="text-sm pb-1 text-right mb-4"><a href="https://github.com/flowforge/flowforge/edit/main/docs/install/configuration.md">Edit this page</a></div>
-            <div class="text-xs pb-1 text-right mb-4 italic">Updated: 2022-09-29 10:29:27 +0100</div>
+            <div class="text-xs pb-1 text-right mb-4 italic">Updated: 2022-10-27 11:13:08 +0100</div>
         </div>
     </div>
 </div>

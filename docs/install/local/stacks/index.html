@@ -66,7 +66,7 @@
     <div class="w-full mx-auto ff-bg-light">
         <div class="font-medium border-b pb-1">
             
-            v0.10.0
+            v1.0.0
             
             /<a class="mx-2" href="/docs">docs</a>/<a class="mx-2" href="/docs/install">install</a>/<a class="mx-2" href="/docs/install/local">local</a>/<a class="mx-2" href="/docs/install/local/stacks">stacks</a>
         </div>
@@ -92,26 +92,26 @@ make them available within FlowForge.</p>
 <h3 id="development" tabindex="-1"><a class="header-anchor" href="#development">#&nbsp;</a> Development</h3>
 <p>If you are developing FlowForge having checked it out from GitHub then you can run
 the following command in the project root</p>
-<pre class="language-bash"><code class="language-bash"><span class="token function">npm</span> run install-stack --vers<span class="token operator">=</span><span class="token number">2.2</span>.2</code></pre>
+<pre class="language-bash"><code class="language-bash"><span class="token function">npm</span> run install-stack --vers<span class="token operator">=</span><span class="token number">3.0</span>.2</code></pre>
 <h3 id="production" tabindex="-1"><a class="header-anchor" href="#production">#&nbsp;</a> Production</h3>
 <p>If you are running a version from the installer then you can run the following
 commands where <code>bin</code> is in the FlowForge Home directory
 (e.g. <code>/opt/flowforge</code>)</p>
 <p>Linux/Mac</p>
-<pre><code>bin/ff-install-stack.sh 2.2.2
+<pre><code>bin/ff-install-stack.sh 3.0.2
 </code></pre>
 <p>Windows:</p>
-<pre><code>bin\ff-install-stack.bat 2.2.2
+<pre><code>bin\ff-install-stack.bat 3.0.2
 </code></pre>
 <p>These scripts will automate the following steps</p>
 <ol>
 <li>In the <code>var</code> directory in your FlowForge home directory, create a directory
 called <code>stacks</code></li>
-<li>In the <code>var/stacks</code> directory create a directory called <code>2.2.2</code></li>
-<li>In the <code>var/stacks/2.2.2</code> directory run <code>npm install --prefix . node-red@2.2.2</code></li>
+<li>In the <code>var/stacks</code> directory create a directory called <code>3.0.2</code></li>
+<li>In the <code>var/stacks/3.0.2</code> directory run <code>npm install --prefix . node-red@3.0.2</code></li>
 <li>Create a new Stack under the Admin Settings section of the FlowForge web console.
 <ol>
-<li>Enter <code>2.2.2</code> under the Node-RED version - this <em>must</em> match the directory
+<li>Enter <code>3.0.2</code> under the Node-RED version - this <em>must</em> match the directory
 name created under <code>var/stacks</code>.</li>
 </ol>
 </li>
@@ -125,7 +125,7 @@ of Node-RED.</p>
             <h3 class="font-medium border-b pb-1 mb-4">On this page</h3>
             <ul id="toc" class="text-sm border-b mb-4"></ul>
             <div class="text-sm pb-1 text-right mb-4"><a href="https://github.com/flowforge/flowforge/edit/main/docs/install/local/stacks.md">Edit this page</a></div>
-            <div class="text-xs pb-1 text-right mb-4 italic">Updated: 2022-09-29 10:29:27 +0100</div>
+            <div class="text-xs pb-1 text-right mb-4 italic">Updated: 2022-10-27 11:13:08 +0100</div>
         </div>
     </div>
 </div>

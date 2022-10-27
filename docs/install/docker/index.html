@@ -66,7 +66,7 @@
     <div class="w-full mx-auto ff-bg-light">
         <div class="font-medium border-b pb-1">
             
-            v0.10.0
+            v1.0.0
             
             /<a class="mx-2" href="/docs">docs</a>/<a class="mx-2" href="/docs/install">install</a>/<a class="mx-2" href="/docs/install/docker">docker</a>
         </div>
@@ -131,8 +131,9 @@ set the correct domain name and make the same change to the <code>public_url</co
     url: mqtt://forge:1883
     public_url: ws://forge.example.com
 </code></pre>
-<h3 id="ssl-(optional)" tabindex="-1"><a class="header-anchor" href="#ssl-(optional)">#&nbsp;</a> SSL (optional)</h3>
-<p>If you want to serve the forge app and projects via SSL you will need to obtain wildcard SSL certs for the domain you are using eg <code>*.example.com</code></p>
+<h4 id="ssl-(optional)" tabindex="-1"><a class="header-anchor" href="#ssl-(optional)">#&nbsp;</a> SSL (optional)</h4>
+<p>If you want to serve the forge app and projects via SSL you will need to obtain wildcard SSL certs for the domain you are using eg <code>*.example.com</code> or you can use the Letsencrypt acme-companion.</p>
+<h3 id="wilcard-ssl" tabindex="-1"><a class="header-anchor" href="#wilcard-ssl">#&nbsp;</a> Wilcard SSL</h3>
 <p>Create a folder in the <code>docker-compose-0.x.0</code> directory named <code>certs</code>, place your .crt and .key files in there, they should be named for the domain without the <code>*</code> eg <code>example.com.crt</code> &amp; <code>example.com.key</code>
 You  also need to create a copy of the .crt and .key files named <code>default.crt</code> &amp; <code>default.key</code> in the same folder. This is used for serving unknown hosts.</p>
 <p>In the <code>docker-compose.yml</code> file,</p>
@@ -151,9 +152,43 @@ You  also need to create a copy of the .crt and .key files named <code>default.c
       - &quot;HTTPS_METHOD=redirect&quot;
 </code></pre>
 <p>If you are running with the MQTT broker then you should adjust the <code>public_url</code> to start with <code>wss://</code> rather than <code>ws://</code></p>
-<h3 id="running-flowforge" tabindex="-1"><a class="header-anchor" href="#running-flowforge">#&nbsp;</a> Running FlowForge</h3>
+<h3 id="let's-encrypt" tabindex="-1"><a class="header-anchor" href="#let's-encrypt">#&nbsp;</a> Let's Encrypt</h3>
+<p>In the <code>docker-compose.yml</code> file, uncomment the following lines</p>
+<pre><code>- &quot;./certs:/etc/nginx/certs&quot;
+</code></pre>
+<pre><code>- &quot;443:443&quot;
+</code></pre>
+<pre><code>  acme:
+    image: nginxproxy/acme-companion
+    volumes:
+      - &quot;/var/run/docker.sock:/var/run/docker.sock:ro&quot;
+      - &quot;./acme:/etc/acme.sh&quot;
+    volumes_from:
+      - nginx:rw
+    environment:
+      - &quot;DEFAULT_EMAIL=mail@example.com&quot;
+    depends_on:
+      - &quot;nginx&quot;
+</code></pre>
+<p>If you wish to redirect all traffic to use HTTPS then add the following section to the nginx service on docker-compose.yml</p>
+<pre><code>environment:
+      - &quot;HTTPS_METHOD=redirect&quot;
+</code></pre>
+<p>Then, in the <code>docker-compose.yml</code> file, edit the following lines added your domain and email address</p>
+<pre><code>- &quot;DEFAULT_EMAIL=mail@example.com&quot;
+</code></pre>
+<pre><code>- &quot;LETSENCRYPT_HOST=mqtt.example.com&quot;
+</code></pre>
+<pre><code>- &quot;LETSENCRYPT_HOST=forge.example.com&quot;
+</code></pre>
+<p>As with the Wilcard SSL method, if you are running with the MQTT broker then you should adjust the <code>public_url</code> to start with <code>wss://</code> rather than <code>ws://</code></p>
+<h4 id="running-flowforge" tabindex="-1"><a class="header-anchor" href="#running-flowforge">#&nbsp;</a> Running FlowForge</h4>
 <p>Once the containers have been built you can start FlowForge by running:</p>
-<pre><code>docker-compose up -d
+<p>Using the docker compose plugin</p>
+<pre><code>docker compose -p flowforge up -d
+</code></pre>
+<p>Using the docker-compose command</p>
+<pre><code>docker-compose up -p flowforge up -d
 </code></pre>
 <p>This will also create a directory called <code>db</code> to hold the database files used to store project instance and user information.</p>
 <h3 id="first-run-setup" tabindex="-1"><a class="header-anchor" href="#first-run-setup">#&nbsp;</a> First Run Setup</h3>
@@ -167,7 +202,7 @@ creating an administrator for the platform and other configuration options.</p>
             <h3 class="font-medium border-b pb-1 mb-4">On this page</h3>
             <ul id="toc" class="text-sm border-b mb-4"></ul>
             <div class="text-sm pb-1 text-right mb-4"><a href="https://github.com/flowforge/flowforge/edit/main/docs/install/docker/README.md">Edit this page</a></div>
-            <div class="text-xs pb-1 text-right mb-4 italic">Updated: 2022-09-29 10:29:27 +0100</div>
+            <div class="text-xs pb-1 text-right mb-4 italic">Updated: 2022-10-27 11:13:08 +0100</div>
         </div>
     </div>
 </div>

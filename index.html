@@ -66,7 +66,7 @@
             An open source platform, helping you run Node-RED in production<br>in a secure, scalable and team-based environment.
         </h3>
         <div class="flex flex-col">
-          <div class="m-auto mt-6 flex flex-row justify-center space-x-4">
+          <div class="m-auto mt-6 flex flex-col gap-4 sm:flex-row items-center justify-center">
             <a class="ff-btn ff-btn--secondary" href="./docs/install">Install on your own infrastructure</a>
             <a class="ff-btn ff-btn--primary" href="https://app.flowforge.com/account/create">Join our managed service</a>
           </div>
@@ -87,10 +87,18 @@
     </svg>
 </div>
 
+<div class="flex justify-center">
+    <iframe width="660" height="360" frameborder="0"
+        class="absolute -mt-10 max-w-xs max-h-48 border-4 rounded-md sm:max-w-none sm:max-h-full"
+        style="border-color: black; box-shadow: 0px 4px 16px #1f2937e6;"
+        src="https://www.youtube.com/embed/K4xw09DbSdI?modestbranding=1&autohide=1&rel=0" allow="fullscreen;">
+    </iframe>
+</div>
+
 <!-- Secondary Content -->
-<div class="w-full ff-bg-light px-6 pt-12 pb-48 md:pt-32 md:px-0">
+<div class="w-full ff-bg-light px-6 pt-12 pb-48 sm:pt-32 sm:px-0">
     <div class="container m-auto text-center max-w-4xl">
-        <div class="m-auto mt-16 mb-16 w-full text-center">
+        <div class="m-auto mt-36 mb-12 sm:mt-64 sm:mb-16 w-full text-center">
             <h2>Run Node-RED in Production</h2>
             <h5><a href="/node-red">What is Node-RED?</a></h5>
         </div>
@@ -100,7 +108,7 @@
                 <p>FlowForge's intuitive UI lets you manage your Node-RED instances all in one place.</p>
                 <p>Spin up instances of Node-RED in seconds, monitor project health and tear down or suspend projects as required.<p>
             </div>
-            <img class="w-96" src="images/screen-pseudo-overview.png">
+            <img class="w-96 mx-auto" src="images/screen-pseudo-overview.png">
         </div>
         <div class="my-8 sm:my-16 w-full">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 982 70">
@@ -118,7 +126,7 @@
                 <p>One-click deploy to thousands of devices.</p>
                 <p>FlowForge provides a clear picture of your device health, with project snapshots and rollbacks enabling seamless version control.</p>
             </div>
-            <img class="w-96" src="images/screen-pseudo-devices.png">
+            <img class="w-96 mx-auto" src="images/screen-pseudo-devices.png">
         </div>
         <div class="my-8 sm:my-16">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 982 70">
@@ -136,7 +144,7 @@
                 <p>Backed by consistent security across the platform, FlowForge makes hosting, deployment and management easy.</p>
                 <p>FlowForge provides centralised audit logging too, so you can see all activity in one place - bringing you peace of mind and compliance in your production environment</p>
             </div>
-            <img class="w-96" src="images/screen-pseudo-audit.png">
+            <img class="w-96 mx-auto" src="images/screen-pseudo-audit.png">
         </div>
     </div>
 </div>

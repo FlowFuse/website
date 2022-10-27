@@ -66,7 +66,7 @@
     <div class="w-full mx-auto ff-bg-light">
         <div class="font-medium border-b pb-1">
             
-            v0.10.0
+            v1.0.0
             
             /<a class="mx-2" href="/docs">docs</a>/<a class="mx-2" href="/docs/install">install</a>/<a class="mx-2" href="/docs/install/docker">docker</a>/<a class="mx-2" href="/docs/install/docker/stacks">stacks</a>
         </div>
@@ -88,14 +88,14 @@ applied to each project when created.</p>
 <p>There is an example <code>Dockerfile</code> and <code>package.json</code> in the <a href="https://github.com/flowforge/docker-compose/tree/main/node-red-container">node-red-container</a>
 directory of the <a href="https://github.com/flowforge/docker-compose">docker-compose</a> project. This will start with <code>nodered/node-red:latest</code>
 as it's base and then add the required FlowForge components.</p>
-<p>If you wanted to pin at Node-RED v2.2.2 you would change the first line to:</p>
-<pre class="language-docker"><code class="language-docker"><span class="token instruction"><span class="token keyword">FROM</span> nodered/node-red:2.2.2</span><br><br><span class="token instruction"><span class="token keyword">ARG</span> REGISTRY</span><br><span class="token instruction"><span class="token keyword">RUN</span> if [[ ! -z <span class="token string">"$REGISTRY"</span> ]] ; then npm config set @flowforge:registry <span class="token string">"$REGISTRY"</span>; fi</span><br><br><span class="token instruction"><span class="token keyword">COPY</span> package.json /data</span><br>...</code></pre>
+<p>If you wanted to pin at Node-RED v3.0.2 you would change the first line to:</p>
+<pre class="language-docker"><code class="language-docker"><span class="token instruction"><span class="token keyword">FROM</span> nodered/node-red:3.0.2</span><br><br><span class="token instruction"><span class="token keyword">ARG</span> REGISTRY</span><br><span class="token instruction"><span class="token keyword">RUN</span> if [[ ! -z <span class="token string">"$REGISTRY"</span> ]] ; then npm config set @flowforge:registry <span class="token string">"$REGISTRY"</span>; fi</span><br><br><span class="token instruction"><span class="token keyword">COPY</span> package.json /data</span><br>...</code></pre>
 <p>To add nodes to the default image you can add them to the <code>package.json</code> file along
 side the FlowForge plugins</p>
-<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span><br>    <span class="token property">"name"</span><span class="token operator">:</span> <span class="token string">"node-red-project"</span><span class="token punctuation">,</span><br>    <span class="token property">"description"</span><span class="token operator">:</span> <span class="token string">"A Node-RED Project"</span><span class="token punctuation">,</span><br>    <span class="token property">"version"</span><span class="token operator">:</span> <span class="token string">"0.7.0"</span><span class="token punctuation">,</span><br>    <span class="token property">"private"</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span><br>    <span class="token property">"dependencies"</span><span class="token operator">:</span><span class="token punctuation">{</span><br>        <span class="token property">"@flowforge/nr-storage"</span><span class="token operator">:</span> <span class="token string">"^0.7.0"</span><span class="token punctuation">,</span><br>        <span class="token property">"@flowforge/nr-auth"</span><span class="token operator">:</span> <span class="token string">"^0.7.0"</span><span class="token punctuation">,</span><br>        <span class="token property">"@flowforge/nr-audit-logger"</span><span class="token operator">:</span> <span class="token string">"^0.7.0"</span><span class="token punctuation">,</span><br>        <span class="token property">"node-red-dashboard"</span><span class="token operator">:</span> <span class="token string">"^3.1.6"</span><br>    <span class="token punctuation">}</span><br><span class="token punctuation">}</span></code></pre>
+<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span><br>    <span class="token property">"name"</span><span class="token operator">:</span> <span class="token string">"node-red-project"</span><span class="token punctuation">,</span><br>    <span class="token property">"description"</span><span class="token operator">:</span> <span class="token string">"A Node-RED Project"</span><span class="token punctuation">,</span><br>    <span class="token property">"version"</span><span class="token operator">:</span> <span class="token string">"0.7.0"</span><span class="token punctuation">,</span><br>    <span class="token property">"private"</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span><br>    <span class="token property">"dependencies"</span><span class="token operator">:</span><span class="token punctuation">{</span><br>        <span class="token property">"@flowforge/nr-storage"</span><span class="token operator">:</span> <span class="token string">"^0.10.0"</span><span class="token punctuation">,</span><br>        <span class="token property">"@flowforge/nr-auth"</span><span class="token operator">:</span> <span class="token string">"^0.10.0"</span><span class="token punctuation">,</span><br>        <span class="token property">"@flowforge/nr-audit-logger"</span><span class="token operator">:</span> <span class="token string">"^0.10.0"</span><span class="token punctuation">,</span><br>        <span class="token property">"node-red-dashboard"</span><span class="token operator">:</span> <span class="token string">"^3.1.6"</span><br>    <span class="token punctuation">}</span><br><span class="token punctuation">}</span></code></pre>
 <p>To build the container run the following:</p>
-<pre class="language-shell"><code class="language-shell"><span class="token function">docker</span> build node-red-container -t flowforge/node-red-dashboard:2.2.2</code></pre>
-<p>You would then enter <code>flowforge/node-red-dashboard:2.2.2</code> in the <code>container</code> section
+<pre class="language-shell"><code class="language-shell"><span class="token function">docker</span> build node-red-container -t flowforge/node-red-dashboard:3.0.2</code></pre>
+<p>You would then enter <code>flowforge/node-red-dashboard:3.0.2</code> in the <code>container</code> section
 of the Stack configuration.</p>
 <p>Stacks can be changed on a per project basis, see also the
 <a href="../../../user/changestack"">user stack documentation</a>.</p>
@@ -106,7 +106,7 @@ of the Stack configuration.</p>
             <h3 class="font-medium border-b pb-1 mb-4">On this page</h3>
             <ul id="toc" class="text-sm border-b mb-4"></ul>
             <div class="text-sm pb-1 text-right mb-4"><a href="https://github.com/flowforge/flowforge/edit/main/docs/install/docker/stacks.md">Edit this page</a></div>
-            <div class="text-xs pb-1 text-right mb-4 italic">Updated: 2022-09-29 10:29:27 +0100</div>
+            <div class="text-xs pb-1 text-right mb-4 italic">Updated: 2022-10-27 11:13:08 +0100</div>
         </div>
     </div>
 </div>
