@@ -23,8 +23,9 @@ Projects now get a set of predefined environment variables that can be used by t
 [Define custom Nodes to be pre-installed in your Templates](https://github.com/flowforge/flowforge/issues/405)
 This feature allows you to pre-define which custom nodes you want as part of your FlowForge [Templates](https://flowforge.com/docs/user/concepts/#project-template).
 
-[Import credentials files into your FlowForge Projects](https://github.com/flowforge/flowforge/issues/835)
-When migrating an existing flow into FlowForge you can now import your credentials file.
+[Import existing projects into FlowForge](https://github.com/flowforge/flowforge/issues/835)
+
+You can now import your existing flow and credentials files straight into your FlowForge project - making it really easy to move your existing projects into the platform.
 
 ## Improvements
 We've made a number of improvements to the overall experience of running FlowForge.
