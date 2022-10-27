@@ -11,7 +11,7 @@ Auto assignment of unique IDs to Devices, define custom nodes to be pre-installe
 
 <!--more-->
 
-Keep reading for the details of what's in this release or you can watch our 1 minute roundup video of the new release above. 
+<!-- Keep reading for the details of what's in this release or you can watch our 1 minute roundup video of the new release above.  -->
 
 We're pleased to announce version 1.0 FlowForge is now available. Keep reading for a promotion code to get your first month free on FlowForge. Version 1.0 represents our vision of the base set of features needed for you to get great value from using FlowForge in a production environment. That's not to say we are done, we will continue to add features, improve our interfaces and fix bugs with the same enthusiasm as we've worked towards 1.0. We'd like to hear your feedback on what we will be including in [1.1 and beyond](https://github.com/orgs/flowforge/projects/5).
 
