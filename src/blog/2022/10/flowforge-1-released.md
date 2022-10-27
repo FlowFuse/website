@@ -29,8 +29,8 @@ When migrating an existing flow into FlowForge you can now import your credentia
 We've made a number of improvements to the overall experience of running FlowForge.
 
 - Human friendly Stack names [#915](https://github.com/flowforge/flowforge/issues/915)
-- Check for suitable version of Node on Devices [#989](https://github.com/flowforge/flowforge/issues/37)
-- Realtime Project status details in Project overview  [#917](https://github.com/flowforge/flowforge/issues/990)
+- Check for suitable version of Node on Devices [#37](https://github.com/flowforge/flowforge-device-agent/issues/37)
+- Realtime Project status details in Project overview  [#990](https://github.com/flowforge/flowforge/issues/990)
 - Improve Template creation & Edit Project Settings UX [#1041](https://github.com/flowforge/flowforge/issues/1041)
 
 ## Bug Fixes
@@ -44,7 +44,7 @@ We've fixed the following bugs in this release.
 - [4xx Errors not shown in App](https://github.com/flowforge/flowforge/issues/929)
 - [Inconsistent errors returned from the API](https://github.com/flowforge/flowforge/issues/1076)
 - [Module install not working on windows](https://github.com/flowforge/flowforge-nr-launcher/issues/77)
-- [avatar lettering is mis-allinged when only rendering 1 character](https://github.com/flowforge/flowforge/issues/1038)
+- [Avatar lettering is mis-allinged when only rendering 1 character](https://github.com/flowforge/flowforge/issues/1038)
 - [it.only is not prohibited](https://github.com/flowforge/flowforge/issues/968)
 - [No feedback when an API error occurs editing user](https://github.com/flowforge/flowforge/issues/966)
 - [Start action is available on a running project](https://github.com/flowforge/flowforge/issues/1040)
@@ -52,9 +52,7 @@ We've fixed the following bugs in this release.
 ## Contributors
 We'd like the thank the following for their contributions to this release:
 
-[Pezmc](https://github.com/Pezmc) for their work on [Add device count and project counts by type to admin](https://github.com/flowforge/flowforge/pull/949)
-
-[ArshErgon](https://github.com/ArshErgon) for their work on [Update vue component name for NoVerifiedEmail.vue](https://github.com/flowforge/flowforge/pull/977)
+[Jozefik]((https://github.com/Jozefik) for their work on [Added limits to admin panel](https://github.com/flowforge/flowforge/pull/1082)
 
 As an open-source project, we welcome community involvement in what we're building. If you're interested in contributing, checkout our [guide in the docs](https://flowforge.com/docs/contribute/).
 
