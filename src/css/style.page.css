@@ -104,11 +104,11 @@
 @layer components {
     .pricing-tiles {
         position: relative;
-        display: grid;
+        grid-template-columns: 1fr 2fr;
         gap: 48px;
         z-index: 2;
         margin: auto;
-        @apply -mt-32 md:-mt-24 max-w-2xl md:grid-cols-2;
+        @apply -mt-32 md:-mt-24;
     }
     .pricing-tile {
         position: relative;
@@ -118,7 +118,7 @@
         background-color: #37415194;
         display: flex;
         flex-direction: column;
-        @apply mx-12 px-3 py-4 md:mx-0 md:px-9 md:py-12;
+        box-shadow: 0px 4px 12px rgb(0 0 0 / 25%)
     }
     .pricing-tile h4 {
         font-weight: normal;
@@ -129,19 +129,22 @@
     .pricing-tile h2 {
         font-size: 48px;
         color: theme(colors.white);
-        @apply mt-0 mb-1
+        @apply mt-0
     }
-    .pricing-tile .sub-label {
-        display: block;
-        color: theme(colors.white);
-        font-size: 12px;
-        @apply md:mb-8;
+    .pricing-tile label {
+        font-weight: 200;
+        color: theme(colors.gray.300);
+        font-size: 0.875rem;
     }
-    .pricing-tile .top-label {
-        display: block;
-        color: theme(colors.white);
-        font-size: 12px;
-        @apply md:h-4 sm:h-0;
+    .pricing-tile p {
+        font-size: 0.875rem;
+        line-height: 1.5rem;
+        font-weight: 200;
+        margin-bottom: 0.5rem;
+    }
+    .pricing-tile a.ff-btn {
+        display: inline-block;
+        margin-top: 0.875rem;
     }
     .pricing-tile .lets-talk {
         font-weight: 300;

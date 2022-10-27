@@ -6,9 +6,8 @@ layout: layouts/base.njk
     {% if title %}
         {% if nohero %}
         <div class="container m-auto text-center flex mt-6 p-6 mb-6 md:max-w-4xl md:mt-12">
-        {% else %}
+        {% elif heroimg %}
         <div class="hero {{ 'hero-lg' if heroLg else ''}} container m-auto text-center flex flex-wrap mt-6 p-6 mb-32 md:flex-nowrap md:max-w-4xl md:mt-12">
-        {% endif %}
             <div class="text-left {{ 'md:pr-20' if heroLg else 'md:pr-32'}}">
                 <h1>{{ title }}</h1>
                 {% if subtitle %}
@@ -21,6 +20,12 @@ layout: layouts/base.njk
             {% if heroimg %}
             <img class="hidden md:block" src="{{heroimg}}"/>
             {% endif %}
+        {% else %}
+        <div class="hero {{ 'hero-lg' if heroLg else ''}} container m-auto text-center flex flex-wrap mt-6 p-6 mb-32 md:flex-nowrap md:max-w-4xl md:mt-12">
+            <div class="text-center w-full">
+                <h1>{{ title }}</h1>
+            </div>
+        {% endif %}            
         </div>
     {% endif %}
     <div class="content">

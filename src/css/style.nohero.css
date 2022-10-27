@@ -63,3 +63,24 @@
 .prose code::before {
     content:''
 }
+
+.handbook .prose h2 {
+    font-size: 1.75rem;
+}
+
+.handbook .prose h3 {
+    font-size: 1.5rem;
+}
+
+.handbook .prose h4 {
+    font-size: 1.25rem;
+}
+
+.handbook .prose h5 {
+    font-size: 1rem;
+}
+
+.handbook .prose p {
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
