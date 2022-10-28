@@ -83,7 +83,7 @@ If we experience unplanned downtime we should communicate in near real time to k
 
 #### Corporate Comms
 
-Major company news such as investment rounds should be communicated at the time agreed with the relevant parties involved, it is important there is no significant delay in communicating this information.
+Major company news such as investment rounds should be communicated at the time agreed with the relevant parties involved. We strive to make this information public as soon as practical and effective.
 
 ### Content Channels
 
