@@ -1,6 +1,13 @@
 # FlowForge Branding Guidelines
 
+## Fonts
 
+In both the FlowForge application and on our website, we use [Tailwind CSS](https://tailwindcss.com/). With Tailwind, comes the `font-sans` class, which we use across FlowForge.
+
+For branded materials such as videos and images we have two stylized fonts in-use:
+
+- ["DIN Alternate Bold"](https://fontsgeek.com/fonts/DIN-Alternate-Bold): Used in videos & social media content.
+- ["Baloo Da 2"](https://fonts.google.com/specimen/Baloo+Da+2): Used in the FlowForge logo.
 ## Colour Palette
 
 <div class="space-y-6">
@@ -190,4 +197,14 @@ All app and site iconography uses [Heroicons](https://heroicons.com/), by the ma
 
 ## Pictograms
 
-_to be written_
+These larger images are used for stylistic purposes. We use pictograms to communicate in a glance, offer interactivity, or simplify complex ideas.
+
+If you wish to create your own Pictograms, you can use this Adobe Illustrator file as a template:
+[pictogram.ai](https://drive.google.com/drive/u/1/folders/1guBnBUrIiRXuK6vsik_NIXIhtE1cZRRa)
+
+<img width="500" alt="An example showing how Pictograms are used in the 'Company Values' section of the FlowForge website" src="../images/pictograms_example.png">
+
+Sizings:
+
+- **128 x 128px**: Used when showing multiple pictograms in the same section of the website or application.
+- **250 x 250 px:** Used as aprt of page headers, inline with the page title and page description.

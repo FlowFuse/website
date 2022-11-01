@@ -6,7 +6,9 @@ In getting a headstart on major design work, we ensure that prior thinking has b
 
 ## Branding Guidelines
 
-Full details on our Branding guidelines can  be found [here](./branding.md)
+For FlowForge Assets (e.g. logos, pictograms, and raw design files), please look in the [`/design/Media`](https://drive.google.com/drive/u/1/folders/1guBnBUrIiRXuK6vsik_NIXIhtE1cZRRa) folder on Google Drive.
+
+A breakdown of our branding guidelines details on our Branding guidelines can  be found [here](./branding.md)
 ## Tools
 
 If you ever require a license to one of the following tools (where applicable), then please read our [licensing](../peopleops#software-licenses) section in order to attain one.
