@@ -1,8 +1,22 @@
 ## Process
 
+### Scheduling
+
 As per our [Development Cadence](../development#cadence), we release a new version of FlowForge every four weeks. Work begins on formal design (mid and high-fidelity UX and visual design assets) two weeks prior to a release cycle beginning, i.e. 6 weeks ahead of the release. 
 
 In getting a headstart on major design work, we ensure that prior thinking has been conducted on the high-level UX, and development is not blocked at the start of a release sprint. Both visual and UX design iterations will occur throughout the first two weeks of a cycle, alongside development efforts.
+
+### Design Thinking
+
+At FlowForge, we practice Design Thinking when considering our UI design and wider decisions influencing the overall user experience of FlowForge.
+
+> Design Thinking is a non-linear, iterative process that teams use to understand users, challenge assumptions, redefine problems and create innovative solutions to prototype and test.
+>
+> -- <cite>[_Design Thinking, Interaction Design Foundation_](https://www.interaction-design.org/literature/topics/design-thinking)</cite>
+
+As designers and developers, empathising with our users will lead to a better product. When proposing new feature ideas, concepts and changes to existing UX, arguments should always be considered from the perspective of our users. 
+
+Whilst most of the output from our Design Thinking workshops and sessions can be found within [FigJam](#figjam-(more-info)), we have also written up some of our [Design Thinking Findings here](./design-thinking).
 
 ## Tools
 
@@ -42,6 +56,7 @@ Other tools included in the Creative Cloud suite that may be useful include:
 
 Blender is a free and open-source 3D computer graphics software toolset. It can be used to create static renders of 3d assets, or entire 2d & 3d animations. 
 
+## Content
 ### Websites
 
 - All written content should be in UK English.
