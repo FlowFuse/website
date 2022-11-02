@@ -55,7 +55,7 @@ It's important we understand what we communicate, to whom, how, and when. This s
 
 ### Content Types
 
-Content should be published to the appropriate channels, the content we create is as follows.
+Content should be published to the appropriate channels, the types of published content we currently produce are as follows.
 
 #### Release
 
