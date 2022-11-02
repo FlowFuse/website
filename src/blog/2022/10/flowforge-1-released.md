@@ -60,7 +60,8 @@ As an open-source project, we welcome community involvement in what we're buildi
 
 ### Try it out
 
-[Sign up for FlowForge](https://app.flowforge.com/account/create?code=RELEASE1) with this link  or at the checkout enter the code **RELEASE1** to get your first project free for a month.
+[Sign up for FlowForge-Managed Premium](https://app.flowforge.com/account/create?code=RELEASE1) with this link or at the checkout enter the code **RELEASE1** to get your first project free for a month. As an open source project you can also use [FlowForge-Community](https://flowforge.com/docs/install/) for free, forever.
+
 
 ### Upgrading FlowForge
 
