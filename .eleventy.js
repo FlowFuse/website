@@ -24,8 +24,8 @@ module.exports = function(eleventyConfig) {
     eleventyConfig.addPassthroughCopy("src/CNAME");
     eleventyConfig.addPassthroughCopy({"src/favicon/*":"/"});
     eleventyConfig.addPassthroughCopy("src/.well-known")
-    eleventyConfig.addPassthroughCopy("src/**/images/*");
-    eleventyConfig.addPassthroughCopy("src/**/videos/*");
+    eleventyConfig.addPassthroughCopy("src/**/images/**/*");
+    eleventyConfig.addPassthroughCopy("src/**/videos/**/*");
 
 
     eleventyConfig.addFilter("head", (array, n) => {
