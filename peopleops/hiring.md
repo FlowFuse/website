@@ -13,7 +13,7 @@ diversity and inclusivity.
 
 ### Extending an offer
 
-When a candidate went through the full hiring process an offer might be extended
+When a candidate goes through the full hiring process an offer might be extended
 to them. At such a time it's good to understand that the offer at that time is
 conditional on background checks. If the offer includes an equity component,
 this part is conditional on board approval of such a grant. Be sure to be
