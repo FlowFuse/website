@@ -51,7 +51,7 @@ Blender is a free and open-source 3D computer graphics software toolset. It can 
 
 ## Social Media, Marketing & PR
 
-It's important we understand what we communicate, to who, how, and when. This sets out our principles for social media, marketing, and PR communications.
+It's important we understand what we communicate, to whom, how, and when. This sets out our principles for social media, marketing, and PR communications.
 
 ### Content Types
 
