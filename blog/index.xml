@@ -3,8 +3,57 @@
     <title>FlowForge</title>
     <link href="https://flowforge.com/blog/index.xml" rel="self"/>
     <link href="https://flowforge.com/blog"/>
-    <updated>2022-10-27T18:00:00Z</updated>
+    <updated>2022-11-03T17:00:00Z</updated>
     <id>https://flowforge.com/blog</id>
+    
+    <entry>
+        <id>https://flowforge.com/blog/2022/10/seed-round-bring-node-red-to-enterprise/</id>
+        <title>FlowForge raises $7.25M Seed Round to bring Node-RED to the Enterprise</title>
+        <summary>Allowing all developers to integrate IT and OT through low-code</summary>
+        <updated>2022-11-03T17:00:00Z</updated>
+        <link href="https://flowforge.com/blog/2022/10/seed-round-bring-node-red-to-enterprise/"/>
+        <author><name>Zeger-Jan van de Weg</name></author>
+        <content type="html">&lt;p&gt;Since the &lt;a href=&quot;https://flowforge.com/blog/2021/04/first-deploy/&quot;&gt;launch of FlowForge&lt;/a&gt; in April 2021 our goal has been to
+build a low-code, enterprise-ready development platform based on Node-RED. We
+wanted to make it easier for enterprises to adopt, integrate, and scale Node-RED
+into their existing environments. We published our &lt;a href=&quot;https://flowforge.com/blog/2022/01/flowforge-01-released/&quot;&gt;first version&lt;/a&gt;
+at the start of this year and have continued the journey to the
+&lt;a href=&quot;https://flowforge.com/blog/2022/10/flowforge-1-released/&quot;&gt;launch of FlowForge v1.0&lt;/a&gt; just last week. Each of these releases
+has moved us towards our goal of creating a platform for integrating the
+IT and OT for all organizations, built around an open core.&lt;/p&gt;
+&lt;!--more--&gt;
+&lt;h3 id=&quot;flowforge-is-node-red-for-the-enterprise&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://flowforge.com/blog/2022/10/seed-round-bring-node-red-to-enterprise/#flowforge-is-node-red-for-the-enterprise&quot;&gt;#&amp;nbsp;&lt;/a&gt; FlowForge is Node-RED for the enterprise&lt;/h3&gt;
+&lt;p&gt;Node-RED is an incredible tool that has allowed many organizations to quickly
+and easily integrate both their IT and OT. The sheer range and variety of
+solutions created with Node-RED today go far beyond what we imagined. But we’ve
+also seen the challenges faced by companies wanting to take their Node-RED
+solutions into production and beyond.&lt;/p&gt;
+&lt;p&gt;This is where FlowForge comes in. It addresses those challenges by adding
+security, collaboration and deployment capabilities.&lt;/p&gt;
+&lt;h3 id=&quot;our-%247.25m-seed-round&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://flowforge.com/blog/2022/10/seed-round-bring-node-red-to-enterprise/#our-%247.25m-seed-round&quot;&gt;#&amp;nbsp;&lt;/a&gt; Our $7.25M Seed Round&lt;/h3&gt;
+&lt;p&gt;Today, we’re super excited to announce a $7.25M seed round led by Cota Capital,
+joined by Westwave Capital, Uncorrelated Ventures, and Open Core Ventures. This
+brings a huge amount of extensive knowledge and experience in IoT, open source,
+enterprise-ready software solutions.&lt;/p&gt;
+&lt;p&gt;This investment will enable us to continue growing the team and platform to
+realize our vision of FlowForge being the best way to achieve enterprise-ready
+Node-RED. It will enable us to invest back into the core Node-RED project to
+further its development. One of our core company principles is around Open
+Source Stewardship - the success of FlowForge relies on a strong and successful
+Node-RED community.&lt;/p&gt;
+&lt;p&gt;We’ll be bringing more collaboration features to the FlowForge platform to
+enable true collaborative, team-based working. We’ll expand our
+&lt;a href=&quot;https://flowforge.com/docs/user/concepts/#device&quot;&gt;Devices offering&lt;/a&gt; to make it
+far easier to run Node-RED wherever it suits your use-case, from data center to
+remote edge locations.&lt;/p&gt;
+&lt;p&gt;Above all, we’ll be building a company that is open, sustainable, and fun to
+work at. We already have some job openings available - check out our
+&lt;a href=&quot;https://flowforge.com/careers&quot;&gt;jobs board&lt;/a&gt; if you’re interested in joining our
+team.&lt;/p&gt;
+&lt;p&gt;If you’re interested in learning more about what we’re doing, or have any
+questions, please do &lt;a href=&quot;https://flowforge.com/contact-us/&quot;&gt;get in touch&lt;/a&gt;!&lt;/p&gt;
+</content>
+    </entry>
     
     <entry>
         <id>https://flowforge.com/blog/2022/10/flowforge-1-released/</id>
