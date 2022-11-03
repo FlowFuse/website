@@ -94,8 +94,8 @@ Each content type has channels which are appropriate, this table sets out which 
 |Release          |*     |             |*        |*        |*        |*      |*             |  
 |Patch            |      |             |*        |         |         |*      |*             |   
 |Newsletter       |*     |*            |*        |         |*        |*      |*             |
-|How To           |      |*            |*        |         |*        | *     |*             |  
-|Planned Downtime |      |*            |*        |         |*        |*      |*             |  
+|How To           |      |*            |*        |         |*        |*      |*             |  
+|Planned Downtime |*     |             |*        |         |*        |*      |*             |  
 |Outage           |      |             |         |         |         |       |              |
 |Corporate Comms  |*     |             |*        |         |*        |       |              |
 
