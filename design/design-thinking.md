@@ -9,54 +9,6 @@ At FlowForge, we have many personas that will evolve over time. To give you an i
 <div class="grid grid-cols-2 gap-4">
     <div class="rounded-md bg-gray-900 text-white p-4 border-2 border-black">
         <div class="py-2 text-center border-b-2 border-red-400">
-            <img class="w-32 rounded-md border-2 border-white m-auto" src="../images/personas/harry.jpg">
-            <label class="block mt-2 font-bold">Harry, the Hobbyist</label>
-        </div>
-        <div class="py-2">
-            <div class="flex flex-col">
-                <label class="font-bold">Age:</label>
-                <span class="leading-6">52</span>
-            </div>
-            <div class="flex flex-col mt-1">
-                <label class="font-bold">Occupation:</label>
-                <span class="leading-6">Practical Engineer (Not Software)</span>
-            </div>
-            <div class="flex flex-col mt-1">
-                <label class="font-bold">Software Skillset:</label>
-                <span class="leading-6">Self-taught</span>
-            </div>
-            <div class="flex flex-col mt-1">
-                <label class="font-bold">Node-RED Experience:</label>
-                <span class="leading-6">Experienced - Active member of the Node-RED community</span>
-            </div>
-        </div>
-    </div>
-    <div class="rounded-md bg-gray-900 text-white p-4 border-2 border-black">
-        <div class="py-2 text-center border-b-2 border-red-400">
-            <img class="w-32 rounded-md border-2 border-white m-auto" src="../images/personas/neil.jpg">
-            <label class="block mt-2 font-bold">Neil, Node-RED Developer</label>
-        </div>
-        <div class="py-2">
-            <div class="flex flex-col">
-                <label class="font-bold">Age:</label>
-                <span class="leading-6">28</span>
-            </div>
-            <div class="flex flex-col mt-1">
-                <label class="font-bold">Occupation:</label>
-                <span class="leading-6">Software Developer, Company N</span>
-            </div>
-            <div class="flex flex-col mt-1">
-                <label class="font-bold">Software Skillset:</label>
-                <span class="leading-6">Computer Science, BSc</span>
-            </div>
-            <div class="flex flex-col mt-1">
-                <label class="font-bold">Node-RED Experience:</label>
-                <span class="leading-6">Actively developing Node-RED nodes</span>
-            </div>
-        </div>
-    </div>
-    <div class="rounded-md bg-gray-900 text-white p-4 border-2 border-black">
-        <div class="py-2 text-center border-b-2 border-red-400">
             <img class="w-32 rounded-md border-2 border-white m-auto" src="../images/personas/sahib.jpg">
             <label class="block mt-2 font-bold">Sahib, Startup CTO</label>
         </div>
@@ -76,6 +28,30 @@ At FlowForge, we have many personas that will evolve over time. To give you an i
             <div class="flex flex-col mt-1">
                 <label class="font-bold">Node-RED Experience:</label>
                 <span class="leading-6">Using it extensively in New Startup Inc.</span>
+            </div>
+        </div>
+    </div>
+    <div class="rounded-md bg-gray-900 text-white p-4 border-2 border-black">
+        <div class="py-2 text-center border-b-2 border-red-400">
+            <img class="w-32 rounded-md border-2 border-white m-auto" src="../images/personas/danielle.jpg">
+            <label class="block mt-2 font-bold">Danielle, the Developer</label>
+        </div>
+        <div class="py-2">
+            <div class="flex flex-col">
+                <label class="font-bold">Age:</label>
+                <span class="leading-6">24</span>
+            </div>
+            <div class="flex flex-col mt-1">
+                <label class="font-bold">Occupation:</label>
+                <span class="leading-6">Software Developer, New Startup Inc. (works for Sahib)</span>
+            </div>
+            <div class="flex flex-col mt-1">
+                <label class="font-bold">Software Skillset:</label>
+                <span class="leading-6">Computer Science & AI, BSc</span>
+            </div>
+            <div class="flex flex-col mt-1">
+                <label class="font-bold">Node-RED Experience:</label>
+                <span class="leading-6">Never used it, aware of it via day job and network</span>
             </div>
         </div>
     </div>
@@ -105,25 +81,49 @@ At FlowForge, we have many personas that will evolve over time. To give you an i
     </div>
     <div class="rounded-md bg-gray-900 text-white p-4 border-2 border-black">
         <div class="py-2 text-center border-b-2 border-red-400">
-            <img class="w-32 rounded-md border-2 border-white m-auto" src="../images/personas/danielle.jpg">
-            <label class="block mt-2 font-bold">Danielle, the Developer</label>
+            <img class="w-32 rounded-md border-2 border-white m-auto" src="../images/personas/neil.jpg">
+            <label class="block mt-2 font-bold">Neil, Node-RED Developer</label>
         </div>
         <div class="py-2">
             <div class="flex flex-col">
                 <label class="font-bold">Age:</label>
-                <span class="leading-6">24</span>
+                <span class="leading-6">28</span>
             </div>
             <div class="flex flex-col mt-1">
                 <label class="font-bold">Occupation:</label>
-                <span class="leading-6">Software Developer, New Startup Inc. (works for Sahib)</span>
+                <span class="leading-6">Software Developer, Company N</span>
             </div>
             <div class="flex flex-col mt-1">
                 <label class="font-bold">Software Skillset:</label>
-                <span class="leading-6">Computer Science & AI, BSc</span>
+                <span class="leading-6">Computer Science, BSc</span>
             </div>
             <div class="flex flex-col mt-1">
                 <label class="font-bold">Node-RED Experience:</label>
-                <span class="leading-6">Never used it, aware of it via day job and network</span>
+                <span class="leading-6">Actively developing Node-RED nodes</span>
+            </div>
+        </div>
+    </div>
+    <div class="rounded-md bg-gray-900 text-white p-4 border-2 border-black">
+        <div class="py-2 text-center border-b-2 border-red-400">
+            <img class="w-32 rounded-md border-2 border-white m-auto" src="../images/personas/harry.jpg">
+            <label class="block mt-2 font-bold">Harry, the Hobbyist</label>
+        </div>
+        <div class="py-2">
+            <div class="flex flex-col">
+                <label class="font-bold">Age:</label>
+                <span class="leading-6">52</span>
+            </div>
+            <div class="flex flex-col mt-1">
+                <label class="font-bold">Occupation:</label>
+                <span class="leading-6">Practical Engineer (Not Software)</span>
+            </div>
+            <div class="flex flex-col mt-1">
+                <label class="font-bold">Software Skillset:</label>
+                <span class="leading-6">Self-taught</span>
+            </div>
+            <div class="flex flex-col mt-1">
+                <label class="font-bold">Node-RED Experience:</label>
+                <span class="leading-6">Experienced - Active member of the Node-RED community</span>
             </div>
         </div>
     </div>
