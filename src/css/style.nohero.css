@@ -84,3 +84,14 @@
     margin-top: 0;
     margin-bottom: 1rem;
 }
+
+/* Reset Tailwind CSS to enable more custom uses of images, e.g. User Personas */
+.handbook .prose img {
+    margin-top: initial;
+    margin-bottom: initial;
+}
+
+.handbook .prose > img {
+    margin-top: 2em;
+    margin-bottom: 2em;
+}
