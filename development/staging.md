@@ -14,9 +14,9 @@ The services are running in EU-West-1.
 
 ## Nodes
 
-The staging environment uses one node running on a t2.small for the management app and a pair of t2.small nodes for the projects cluster.
-
-t2.small is the smallest instance that can be used with EKS.
+The staging environment uses one node running on a t2.small for the management
+app and a pair of t2.small nodes for the projects cluster. t2.small is the
+smallest instance that can be used with EKS.
 
 ## Email
 
@@ -29,3 +29,8 @@ If you need to use another email address with staging then you should verify the
 ## Deployment
 
 Currently there is no auto deployment to staging, this should be rectified in the future so that staging is running the code in the main branches  of the respective repos.
+
+## Using staging
+
+When setting up a team you'll need to enter billing details. For credit card
+details, use [the Stripe mock data](https://stripe.com/docs/testing#testing-interactively).
