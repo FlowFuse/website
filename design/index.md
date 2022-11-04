@@ -65,14 +65,6 @@ Major releases of FlowForge, the timing of these releases are governed by our [d
 
 Patch between releases, these will happen as needed and may be at short notice.
 
-#### Newsletter
-
-Monthly newsletter published at the start of each calendar month covering news from the prior month.
-
-#### How To
-
-Technical guides, published once per week.
-
 #### Planned Downtime
 
 As soon as we are aware of planned downtime we should publish the information, that should be at least one week before the downtime.
@@ -85,6 +77,15 @@ If we experience unplanned downtime we should communicate in near real time to k
 
 Major company news such as investment rounds should be communicated at the time agreed with the relevant parties involved. We strive to make this information public as soon as practical and effective.
 
+#### Newsletter
+
+Monthly newsletter published at the start of each calendar month covering news from the prior month.
+
+#### How To
+
+Technical guides, published once per week.
+
+
 ### Content Channels
 
 Each content type has channels which are appropriate, this table sets out which content should be posted on each channel.
@@ -92,12 +93,13 @@ Each content type has channels which are appropriate, this table sets out which 
 |Content          |Blog  |Mailing List |Twitter  |Youtube  |LinkedIn |Reddit |Node-RED Slack|
 |---              |---   |---          |---      |---      |---      |---    |---           |
 |Release          |*     |             |*        |*        |*        |*      |*             |  
-|Patch            |      |             |*        |         |         |*      |*             |   
-|Newsletter       |*     |*            |*        |         |*        |*      |*             |
-|How To           |      |*            |*        |         |*        |*      |*             |  
-|Planned Downtime |*     |             |*        |         |*        |*      |*             |  
+|Patch            |*     |             |*        |         |         |*      |*             |   
+|Planned Downtime |*     |             |*        |         |*        |*      |*             | 
 |Outage           |      |             |         |         |         |       |              |
 |Corporate Comms  |*     |             |*        |         |*        |       |              |
+|Newsletter       |*     |*            |*        |         |*        |*      |*             |
+|How To           |      |*            |*        |         |*        |*      |*             |  
+
 
 ### Channel Content Guidance
 
@@ -117,7 +119,7 @@ Keep it short, Tweets should be factual, informal and have a call to action (a l
 
 Videos should:
 
-- Include opening and closing idents
+- Include opening and closing idents.
 - Be clear in what they are communicating.
 - Have an appropriate thumbnail.
 - Have a call to action in the description.
@@ -129,7 +131,7 @@ Posts should be framed in the context of FlowForge as an organisation and a team
 
 #### Reddit
 
-Keep it short, Reddit posts should be factual, informal and have a call to action (a link) where a user can read more.
+Keep it short, Reddit posts should be factual, informal and have a call to action (a link) where a user can read more. If the content is a video we should post that directly on Reddit as that should result in greater interaction.
 
 #### Node-RED Slack (FlowForge section)
 
