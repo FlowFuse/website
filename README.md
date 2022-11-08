@@ -18,6 +18,7 @@ and strongly encouraged.
 
  - [Design](./design)
  - [Development](./development)
+ - [Videos](./media)
 ### Internal Operations
 
  - [Communication](./company/communication.md)
