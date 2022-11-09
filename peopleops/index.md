@@ -115,3 +115,15 @@ The company covering certain costs, such as broadband can have tax implications 
 If you want to occasionally use a separate workspace to your home, the company will cover up to $150 a month in charges for renting a desk in a co-working space. 
 
 [gh-admin]: https://github.com/flowforge/admin
+
+
+#### Mileage
+
+Use of a personal vehicle for business purposes, other than commuting to a permanent workplace, is covered according to the employees local laws.
+
+For example:
+
+ - [UK](https://www.gov.uk/government/publications/rates-and-allowances-travel-mileage-and-fuel-allowances/travel-mileage-and-fuel-rates-and-allowances) -  45p per Mile
+ - [Netherlands](https://www.belastingdienst.nl/wps/wcm/connect/bldcontentnl/belastingdienst/zakelijk/auto_en_vervoer/auto_van_de_onderneming/autokosten/u_rijdt_in_uw_eigen_auto) - €0.19 per Km
+
+A screenshot of the route and the total distance travelled should be included with any expense claim.
