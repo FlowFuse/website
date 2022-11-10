@@ -21,6 +21,6 @@ Our 12th release, with loads of goodies...
 
 A lot of effort has been put in the install documentation in this release. Most
 notably there's no requirement to setup Mosquitto in the local install method
-and XYZ.
+and [updated all screenshots](https://github.com/flowforge/flowforge/pull/1189) after the redesign.
 
 ## Bug Fixes
