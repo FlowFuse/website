@@ -1,10 +1,11 @@
 {
-    "name": "Zeger-Jan van de Weg",
+    "name": "ZJ van de Weg",
     "title": "CEO",
     "twitter": "ZJvandeWeg",
     "github": "ZJvandeWeg",
     "linkedin": "zeger-jan-van-de-weg-989799159",
     "blog": "https://www.zjvandeweg.nl",
     "country": "NL",
-    "email": "zj@flowforge.com"
+    "email": "zj@flowforge.com",
+    "headshot": "zj.png"
 }
