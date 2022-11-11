@@ -8,6 +8,11 @@ layout: layouts/nohero.njk
             {%- for member in team.members -%}
             <div class="team-headshot w-full max-w-xs m-auto">
                 <img src="/images/team/headshot-{{ team[member].headshot }}">
+                <ul class="member-facts">
+                    {%- for fact in team[member].facts -%}
+                    <li>{{ fact | safe }}</li>
+                    {%- endfor -%}
+                </ul>
                 <div class="member-info">
                     <div class="title">
                         <div class="name">{{ team[member].name }}</div>

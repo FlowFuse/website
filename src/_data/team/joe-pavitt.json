@@ -5,5 +5,11 @@
     "github": "joepavitt",
     "linkedin": "joepavitt",
     "country": "GB",
-    "headshot": "joe.png"
+    "headshot": "joe.png",
+    "facts": [
+        "10 years of UX & Design Experience",
+        "Former IBM Master Inventor &amp; Emerging Technology Specialist",
+        "18 Filed Patents",
+        "Qualified Rocket Scientist"
+    ]
 }
