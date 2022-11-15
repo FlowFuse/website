@@ -10,19 +10,19 @@ The level of support provided to a customer will depend on the tier of our produ
 ## Support Tickets
 
 ### Freshdesk
-We use FreshDesk to manage our customer support tickets for the managed FlowForge platform.
-There is currently a single login for the support user in the Support Vault of 1Password.
+We use FreshDesk to manage our customer support tickets for the managed FlowForge platform. We can give each FlowForge team member access to FreshDesk by assigning them as either a full time or occasional Agent. An explanation of the Agent types can be [read here](https://support.freshdesk.com/en/support/solutions/articles/37602-understanding-full-time-vs-occasional-agents#:~:text=Agents%20in%20Freshdesk%20can%20be,CEO%20or%20your%20field%20staff.).
+
+If you wish to be granted access to FreshDesk please post in the FlowForge support-tickets Slack channel.
 
 Whenever a customer raises a new ticket or replies with an update a message is posted into slack #support-tickets.
 This will allow the whole team visibility of customer issues, comments on the
-Slack thread will be added to the ticket as notes. _Note: because of the way the slack integration works freshdesk won't show who has made the comment, so please add your name_
+Slack thread will be added to the ticket as notes.
+
 When replying to the ticket one should have the intent to always reply with links
 to FlowForge articles or documentation. If these resources are missing, please
 start or update where applicable.
 
-When you reply to a customer via the Freshdesk UI the ticket will be automatically marked as resolved. If the customer responds back the ticket will be marked as open again. If you don't need to respond to the customer and you feel the ticket is resolved please manually set the ticket status to be resolved in the Freshdesk UI.
-
-Initially the Product Manager will monitor and respond to customer tickets, however if they are out for some reason anyone can take over.
+When you reply to a customer via the FreshDesk UI the ticket will be automatically marked as resolved. If the customer responds back the ticket will be marked as open again. If you don't need to respond to the customer and you feel the ticket is resolved please manually set the ticket status to be resolved in the Freshdesk UI.
 
 Freshdesk uses notes and responses within the thread, notes are internal and not sent to the customer, responses are sent to the customer.
 
@@ -37,7 +37,7 @@ direct to a repo for a 3rd party node question.
 
 ### SLA
 
-Support will be available between 0900-1700 UK Time Monday to Friday, with anything outside of those times on a 'best effort' basis. We aim to provide an initial response or acknowledgement to a customers ticket within 4 hours during those times. No further commitments are made in terms of resolution times at this stage.
+Support will be available between 0900-1700 UK Time Monday to Friday, with anything outside of those times on a 'best effort' basis. We aim to provide an initial response or acknowledgement to a customer's ticket within 4 hours during those times. No further commitments are made in terms of resolution times at this stage.
 
 ### Escalation
 
