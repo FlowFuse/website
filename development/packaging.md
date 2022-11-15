@@ -73,6 +73,19 @@ they cannot access the organisation-wide secret we have in place.
 2. Add it as a Repository Secret to the Private Repo (https://github.com/flowforge/<repo-name>/settings/secrets/actions)
    with the name `PROJECT_ACCESS_TOKEN`
 
+### Labels
+
+We have a standard set of labels that should be applied to all repositories. This
+ensures we have a consistent approach to planning and tracking of work.
+
+ - Type: `epic`, `story`, `task`, `bug`
+ - Sizing: `1`, `2`, `3`, `5`, `8`, `13`
+ - Area: `docs`, `db`, `migration`, `frontend`, `api`, `device`
+ - Priority: `p-1`, `p-2`, `p-3`
+ - Status: `blocked`
+ - Product Scope: `scope:devices`, `scope:enterprise`, `scope:node-red`, `scope:collaboration`
+ - Other: `good first issue`, `upstream`
+ 
 ## NPM packages
 
 ### Naming
