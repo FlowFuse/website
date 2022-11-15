@@ -38,7 +38,9 @@ scroll to a notes section.
 ### Coffee calls
 
 Coffee calls are social of nature and thus are the exception to the rule that
-each meeting should have an agenda.
+each meeting should have an agenda. If you want to be matched to a random team
+member every two weeks for a coffee call, join the #virtual-coffee channel on
+Slack to be matched automatically.
 
 ## Asynchronous communication
 
