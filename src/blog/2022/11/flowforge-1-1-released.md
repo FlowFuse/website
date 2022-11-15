@@ -1,5 +1,5 @@
 ---
-title: FlowForge 1.1 released with X and Y
+title: FlowForge 1.1 released
 subtitle: Node-RED editor on Devices, persistant file storage and import snapshots from outside FlowForge
 description: Node-RED editor on Devices, persistant file storage and import snapshots from outside FlowForge
 date: 2022-11-24 18:00:00.0
