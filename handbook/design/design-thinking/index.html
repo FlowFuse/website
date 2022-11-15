@@ -18,7 +18,7 @@
     <meta name="twitter:description" content="FlowForge is an open-source, low-code platform for integration and automation. Helping you run Node-RED at production scales in a secure, scalable and team-based environment." />
     <meta name="twitter:site" content="@flowforgeinc" />
     <meta name="twitter:image" content="/images/og-social-tile.jpg" />
-    <meta property="og:url" content="https://flowforge.com/handbook/product/" />
+    <meta property="og:url" content="https://flowforge.com/handbook/design/design-thinking/" />
     <meta property="og:title" content="" />
     <meta property="og:description" content="FlowForge is an open-source, low-code platform for integration and automation. Helping you run Node-RED at production scales in a secure, scalable and team-based environment." />
     <meta property="og:image" content="/images/og-social-tile.jpg" />
@@ -75,49 +75,144 @@
     <div class="w-full mx-auto ff-bg-light">
         <div class="font-medium border-b pb-1">
             
-            /<a class="mx-2" href="/handbook">handbook</a>/<a class="mx-2" href="/handbook/product">product</a>
+            /<a class="mx-2" href="/handbook">handbook</a>/<a class="mx-2" href="/handbook/design">design</a>/<a class="mx-2" href="/handbook/design/design-thinking">design-thinking</a>
         </div>
     </div>
     <div class="w-full mx-auto ff-bg-light flex flex-col md:flex-row">
         <div class="flex-grow order-last md:order-first">
             <div class="mt-6 mb-4 prose prose-blue main-content">
-                <h1 id="product" tabindex="-1"><a class="header-anchor" href="#product">#&nbsp;</a> Product</h1>
-<p>This covers how we run our business and deliver service to our customers.</p>
-<ul>
-<li><a href="../product/plan"">Plan</a></li>
-<li><a href="../product/versioning"">Versioning</a></li>
-<li><a href="../product/pricing"">Pricing Principles</a></li>
-<li><a href="../product/verticals"">Market Verticals</a></li>
-</ul>
-<h3 id="product-demos" tabindex="-1"><a class="header-anchor" href="#product-demos">#&nbsp;</a> Product Demos</h3>
-<p>Product demos are held internally to rapidly assess the state of a feature set
-and allow for synchronous validation of feature sets. Each demo is open to the
-whole company to allow for cross functional learning and development.</p>
-<p>A demo consists of a higher level business goal to achieve and is graded against
-that goal. Once that goal is set, the goal needs to broken down into smaller
-steps to create a script. For each meeting a participant should be marked as
-demo leader, going through the steps and try and achieve a successful demo.</p>
-<p>The demo itself is a recorded meeting where the demo leader goes through the
-script. It's anticipated that demos surface friction or fail completely. When
-problems, challenges, and/or improvement-ideas arise another participant should
-document these along with the script. When the demo is completed, these tasks
-are discussed and prioritized.</p>
-<p>Afterwards the next demo is scheduled, and the next demo-leader is chosen.</p>
-<h3 id="customer-calls" tabindex="-1"><a class="header-anchor" href="#customer-calls">#&nbsp;</a> Customer calls</h3>
-<p>FlowForge is fortunate to have a community the size of Node-REDs community. The
-product organisation should constantly be in touch with the community to
-understand their challenges, current solutions, and learn why they have or
-haven't adopted FlowForge.</p>
-<p>For each call document all the learnings to share internally, to start; make a
-copy of <a href="https://docs.google.com/document/d/1_gya2WZTJW0G2CxlsJguLDCJI3eHRILJzd9ICsn5QTs">this template</a>
-and roughly follow the questions listed.</p>
-
+                <h2 id="design-thinking" tabindex="-1"><a class="header-anchor" href="#design-thinking">#&nbsp;</a> Design Thinking</h2>
+<h3 id="user-personas" tabindex="-1"><a class="header-anchor" href="#user-personas">#&nbsp;</a> User Personas</h3>
+<p>Personas are fictional characters that represent the different users we expect to interact with FlowForge as a brand and/or platform. You can find samples of the user personas we have at FlowForge in our <a href=".././design-thinking"">Design Thinking Output</a>.</p>
+<p>At FlowForge, we have many personas that will evolve over time. To give you an insight into what we are working with currently, here is a sample of our 5 MVPs (Most Valuable Personas) to-date:</p>
+<div class="grid grid-cols-2 gap-4">
+    <div class="rounded-md bg-gray-900 text-white p-4 border-2 border-black">
+        <div class="py-2 text-center border-b-2 border-red-400">
+            <img class="w-32 rounded-md border-2 border-white m-auto" src="../../images/personas/sahib.jpg"">
+            <label class="block mt-2 font-bold">Sahib, Startup CTO</label>
+        </div>
+        <div class="py-2">
+            <div class="flex flex-col">
+                <label class="font-bold">Age:</label>
+                <span class="leading-6">33</span>
+            </div>
+            <div class="flex flex-col mt-1">
+                <label class="font-bold">Occupation:</label>
+                <span class="leading-6">CTO, New Startup Inc.</span>
+            </div>
+            <div class="flex flex-col mt-1">
+                <label class="font-bold">Software Skillset:</label>
+                <span class="leading-6">Computer Science, MSc</span>
+            </div>
+            <div class="flex flex-col mt-1">
+                <label class="font-bold">Node-RED Experience:</label>
+                <span class="leading-6">Using it extensively in New Startup Inc.</span>
+            </div>
+        </div>
+    </div>
+    <div class="rounded-md bg-gray-900 text-white p-4 border-2 border-black">
+        <div class="py-2 text-center border-b-2 border-red-400">
+            <img class="w-32 rounded-md border-2 border-white m-auto" src="../../images/personas/danielle.jpg"">
+            <label class="block mt-2 font-bold">Danielle, the Developer</label>
+        </div>
+        <div class="py-2">
+            <div class="flex flex-col">
+                <label class="font-bold">Age:</label>
+                <span class="leading-6">24</span>
+            </div>
+            <div class="flex flex-col mt-1">
+                <label class="font-bold">Occupation:</label>
+                <span class="leading-6">Software Developer, New Startup Inc. (works for Sahib)</span>
+            </div>
+            <div class="flex flex-col mt-1">
+                <label class="font-bold">Software Skillset:</label>
+                <span class="leading-6">Computer Science & AI, BSc</span>
+            </div>
+            <div class="flex flex-col mt-1">
+                <label class="font-bold">Node-RED Experience:</label>
+                <span class="leading-6">Never used it, aware of it via day job and network</span>
+            </div>
+        </div>
+    </div>
+    <div class="rounded-md bg-gray-900 text-white p-4 border-2 border-black">
+        <div class="py-2 text-center border-b-2 border-red-400">
+            <img class="w-32 rounded-md border-2 border-white m-auto" src="../../images/personas/chris.jpg"">
+            <label class="block mt-2 font-bold">Chris, the Consultant</label>
+        </div>
+        <div class="py-2">
+            <div class="flex flex-col">
+                <label class="font-bold">Age:</label>
+                <span class="leading-6">44</span>
+            </div>
+            <div class="flex flex-col mt-1">
+                <label class="font-bold">Occupation:</label>
+                <span class="leading-6">Consultant Chris' Consultancy Inc.</span>
+            </div>
+            <div class="flex flex-col mt-1">
+                <label class="font-bold">Software Skillset:</label>
+                <span class="leading-6">System Integrator, 10+ yrs experience</span>
+            </div>
+            <div class="flex flex-col mt-1">
+                <label class="font-bold">Node-RED Experience:</label>
+                <span class="leading-6">Very familiar, uses it for quick and reliable dev on customer projects</span>
+            </div>
+        </div>
+    </div>
+    <div class="rounded-md bg-gray-900 text-white p-4 border-2 border-black">
+        <div class="py-2 text-center border-b-2 border-red-400">
+            <img class="w-32 rounded-md border-2 border-white m-auto" src="../../images/personas/neil.jpg"">
+            <label class="block mt-2 font-bold">Neil, Node-RED Developer</label>
+        </div>
+        <div class="py-2">
+            <div class="flex flex-col">
+                <label class="font-bold">Age:</label>
+                <span class="leading-6">28</span>
+            </div>
+            <div class="flex flex-col mt-1">
+                <label class="font-bold">Occupation:</label>
+                <span class="leading-6">Software Developer, Company N</span>
+            </div>
+            <div class="flex flex-col mt-1">
+                <label class="font-bold">Software Skillset:</label>
+                <span class="leading-6">Computer Science, BSc</span>
+            </div>
+            <div class="flex flex-col mt-1">
+                <label class="font-bold">Node-RED Experience:</label>
+                <span class="leading-6">Actively developing Node-RED nodes</span>
+            </div>
+        </div>
+    </div>
+    <div class="rounded-md bg-gray-900 text-white p-4 border-2 border-black">
+        <div class="py-2 text-center border-b-2 border-red-400">
+            <img class="w-32 rounded-md border-2 border-white m-auto" src="../../images/personas/harry.jpg"">
+            <label class="block mt-2 font-bold">Harry, the Hobbyist</label>
+        </div>
+        <div class="py-2">
+            <div class="flex flex-col">
+                <label class="font-bold">Age:</label>
+                <span class="leading-6">52</span>
+            </div>
+            <div class="flex flex-col mt-1">
+                <label class="font-bold">Occupation:</label>
+                <span class="leading-6">Practical Engineer (Not Software)</span>
+            </div>
+            <div class="flex flex-col mt-1">
+                <label class="font-bold">Software Skillset:</label>
+                <span class="leading-6">Self-taught</span>
+            </div>
+            <div class="flex flex-col mt-1">
+                <label class="font-bold">Node-RED Experience:</label>
+                <span class="leading-6">Experienced - Active member of the Node-RED community</span>
+            </div>
+        </div>
+    </div>
+</div>
             </div>
         </div>
         <div class="w-full md:w-64 md:ml-8 mt-4 md:mt-6 px-2">
             <h3 class="font-medium border-b pb-1 mb-4">On this page</h3>
             <ul id="toc" class="text-sm border-b mb-4"></ul>
-            <div class="text-sm pb-1 text-right mb-4"><a href="https://github.com/flowforge/handbook/edit/main/product/index.md">Edit this page</a></div>
+            <div class="text-sm pb-1 text-right mb-4"><a href="https://github.com/flowforge/handbook/edit/main/design/design-thinking.md">Edit this page</a></div>
             <div class="text-xs pb-1 text-right mb-4 italic">Updated: 2022-11-15 19:22:55 +0100</div>
         </div>
     </div>
