@@ -5,5 +5,11 @@
     "github": "knolleary",
     "linkedin": "nickoleary",
     "blog": "https://knolleary.net",
-    "country": "GB"
+    "country": "GB",
+    "headshot": "nick.png",
+    "facts": [
+        "Created Node-RED in 2013 and continues to lead the Open Source project",
+        "Member of the OASIS MQTT Standards Committee",
+        "Called 'one of those computer geeks' by King Charles III many years ago"
+    ]
 }

@@ -1,10 +1,16 @@
 {
-    "name": "Zeger-Jan van de Weg",
+    "name": "ZJ van de Weg",
     "title": "CEO",
     "twitter": "ZJvandeWeg",
     "github": "ZJvandeWeg",
     "linkedin": "zeger-jan-van-de-weg-989799159",
     "blog": "https://www.zjvandeweg.nl",
     "country": "NL",
-    "email": "zj@flowforge.com"
+    "email": "zj@flowforge.com",
+    "headshot": "zj.png",
+    "facts": [
+        "Early GitLab employee, still knows too much about Git for his own good",
+        "BSc in Computer Science, developing software since his teenage years",
+	"Only half an Ironman, but certainly knows how to swim, bike, and run"
+    ]
 }

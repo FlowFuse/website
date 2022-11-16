@@ -1,7 +1,13 @@
 {
-    "name": "Stephen McLaughlin",
+    "name": "Steve McLaughlin",
     "title": "Node-RED OSS Developer",
     "twitter": "Steve_D_Mcl",
     "github": "steve-mcl",
-    "country": "GB"
+    "country": "GB",
+    "headshot": "steve.png",
+    "facts": [
+        "Programming since I was teenager. Lets just say a 'long time'",
+        "25y as an Engineer in the automotive sector primarily interfacing field technologies and IS/IT",
+        "Love to travel - it broadens the mind. Favourite places include Japan, Cuba and Thailand"
+    ]
 }
