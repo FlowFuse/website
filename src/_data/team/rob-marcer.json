@@ -7,8 +7,8 @@
     "country": "GB",
     "headshot": "rob.png",
     "facts": [
-"Founder of airship.co.uk CRM SaaS.",
-"Collects hobbies for a hobby.",
-"Loves low-code, using Node-RED is not 'work'."
-]
+        "Founder of airship.co.uk CRM SaaS.",
+        "Collects hobbies for a hobby.",
+        "Loves low-code, using Node-RED is not 'work'."
+    ]
 }
