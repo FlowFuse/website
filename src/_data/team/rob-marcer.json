@@ -6,5 +6,9 @@
     "email": "rob@flowforge.com",
     "country": "GB",
     "headshot": "rob.png",
-    "facts": "
+    "facts": [
+"Founder of airship.co.uk CRM SaaS.",
+"Collects hobbies for a hobby.",
+"Loves low-code, using Node-RED is not 'work'."
+]
 }
