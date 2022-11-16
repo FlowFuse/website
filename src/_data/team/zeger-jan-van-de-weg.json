@@ -7,5 +7,10 @@
     "blog": "https://www.zjvandeweg.nl",
     "country": "NL",
     "email": "zj@flowforge.com",
-    "headshot": "zj.png"
+    "headshot": "zj.png",
+    "facts": [
+        "Early GitLab employee, still knows too much about Git for his own good",
+        "BSc in Computer Science, developing software since his teenage years",
+	"Only half an Ironman, but certainly knows how to swim, bike, and run"
+    ]
 }
