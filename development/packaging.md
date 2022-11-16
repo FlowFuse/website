@@ -80,8 +80,8 @@ ensures we have a consistent approach to planning and tracking of work.
 
  - Type: `epic`, `story`, `task`, `bug`
  - Sizing: `1`, `2`, `3`, `5`, `8`, `13`
- - Area: `docs`, `db`, `migration`, `frontend`, `api`, `device`
- - Priority: `p-1`, `p-2`, `p-3`
+ - Area: `area:docs`, `area:db`, `area:migration`, `area:frontend`, `area:api`, `area:device`
+ - Priority: `priority:high`, `priority:medium`, `priority:low`
  - Status: `blocked`
  - Product Scope: `scope:devices`, `scope:enterprise`, `scope:node-red`, `scope:collaboration`
  - Other: `good first issue`, `upstream`
