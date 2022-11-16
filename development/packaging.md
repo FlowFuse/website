@@ -84,7 +84,13 @@ ensures we have a consistent approach to planning and tracking of work.
  - Priority: `priority:high`, `priority:medium`, `priority:low`
  - Status: `blocked`
  - Product Scope: `scope:devices`, `scope:enterprise`, `scope:node-red`, `scope:collaboration`
- - Other: `good first issue`, `upstream`
+ - Other: `good first issue`, `upstream`, `needs-triage`
+
+The labels are synchronized across the repositories via a GitHub Action in the [`.github`](https://github.com/flowforge/.github)
+repository.
+ 
+New repositories must be added to the list in [`flowforge-repositories.yml`](https://github.com/flowforge/.github/blob/main/flowforge-repositories.yml),
+and then the [Synchronize Labels](https://github.com/flowforge/.github/actions/workflows/sync-labels.yml) action manually run.
  
 ## NPM packages
 
