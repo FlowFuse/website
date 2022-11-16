@@ -138,6 +138,22 @@ they cannot access the organisation-wide secret we have in place.</p>
 with the name <code>PROJECT_ACCESS_TOKEN</code></p>
 </li>
 </ol>
+<h3 id="labels" tabindex="-1"><a class="header-anchor" href="#labels">#&nbsp;</a> Labels</h3>
+<p>We have a standard set of labels that should be applied to all repositories. This
+ensures we have a consistent approach to planning and tracking of work.</p>
+<ul>
+<li>Type: <code>epic</code>, <code>story</code>, <code>task</code>, <code>bug</code></li>
+<li>Sizing: <code>1</code>, <code>2</code>, <code>3</code>, <code>5</code>, <code>8</code>, <code>13</code></li>
+<li>Area: <code>area:docs</code>, <code>area:db</code>, <code>area:migration</code>, <code>area:frontend</code>, <code>area:api</code>, <code>area:device</code></li>
+<li>Priority: <code>priority:high</code>, <code>priority:medium</code>, <code>priority:low</code></li>
+<li>Status: <code>blocked</code></li>
+<li>Product Scope: <code>scope:devices</code>, <code>scope:enterprise</code>, <code>scope:node-red</code>, <code>scope:collaboration</code></li>
+<li>Other: <code>good first issue</code>, <code>upstream</code>, <code>needs-triage</code></li>
+</ul>
+<p>The labels are synchronized across the repositories via a GitHub Action in the <a href="https://github.com/flowforge/.github"><code>.github</code></a>
+repository.</p>
+<p>New repositories must be added to the list in <a href="https://github.com/flowforge/.github/blob/main/flowforge-repositories.yml"><code>flowforge-repositories.yml</code></a>,
+and then the <a href="https://github.com/flowforge/.github/actions/workflows/sync-labels.yml">Synchronize Labels</a> action manually run.</p>
 <h2 id="npm-packages" tabindex="-1"><a class="header-anchor" href="#npm-packages">#&nbsp;</a> NPM packages</h2>
 <h3 id="naming-1" tabindex="-1"><a class="header-anchor" href="#naming-1">#&nbsp;</a> Naming</h3>
 <ul>
@@ -210,7 +226,7 @@ with the name <code>PROJECT_ACCESS_TOKEN</code></p>
             <h3 class="font-medium border-b pb-1 mb-4">On this page</h3>
             <ul id="toc" class="text-sm border-b mb-4"></ul>
             <div class="text-sm pb-1 text-right mb-4"><a href="https://github.com/flowforge/handbook/edit/main/development/packaging.md">Edit this page</a></div>
-            <div class="text-xs pb-1 text-right mb-4 italic">Updated: 2022-11-15 19:22:55 +0100</div>
+            <div class="text-xs pb-1 text-right mb-4 italic">Updated: 2022-11-16 20:32:48 +0000</div>
         </div>
     </div>
 </div>
