@@ -39,7 +39,7 @@ As a thank you for reading our newsletters we’d like to offer you a free, smal
         <summary>Allowing all developers to integrate IT and OT through low-code</summary>
         <updated>2022-11-03T17:00:00Z</updated>
         <link href="https://flowforge.com/blog/2022/10/seed-round-bring-node-red-to-enterprise/"/>
-        <author><name>Zeger-Jan van de Weg</name></author>
+        <author><name>ZJ van de Weg</name></author>
         <content type="html">&lt;p&gt;Since the &lt;a href=&quot;https://flowforge.com/blog/2021/04/first-deploy/&quot;&gt;launch of FlowForge&lt;/a&gt; in April 2021 our goal has been to
 build a low-code, enterprise-ready development platform based on Node-RED. We
 wanted to make it easier for enterprises to adopt, integrate, and scale Node-RED
@@ -735,7 +735,7 @@ A reminder about Node-RED Con and the call for papers, submissions close at the 
         <summary>Sign up and start a new Node-RED project within a minute!</summary>
         <updated>2022-05-25T09:00:00Z</updated>
         <link href="https://flowforge.com/blog/2022/05/sign-up-for-flowforge-cloud/"/>
-        <author><name>Zeger-Jan van de Weg</name></author>
+        <author><name>ZJ van de Weg</name></author>
         <content type="html">&lt;p&gt;FlowForge wants to enable everyone to build workflows in Node-RED. Since announcing
 &lt;a href=&quot;https://flowforge.com/blog/2022/02/announcing-flowforge-cloud/&quot;&gt;FlowForge Cloud&lt;/a&gt;
 two months ago we&#39;ve had a waiting list for users to sign up to. That allowed us
@@ -971,7 +971,7 @@ Our friends over at Opto 22 published a handy guide to JSON and how it works in 
         <summary>We&#39;re starting to onboard users from the waitlist</summary>
         <updated>2022-04-04T00:00:00Z</updated>
         <link href="https://flowforge.com/blog/2022/04/flowforge-accepting-customers/"/>
-        <author><name>Zeger-Jan van de Weg</name></author>
+        <author><name>ZJ van de Weg</name></author>
         <content type="html">&lt;p&gt;A year ago our CTO, Nick O&#39;Leary, &lt;a href=&quot;https://flowforge.com/blog/2021/04/first-deploy/&quot;&gt;introduced FlowForge&lt;/a&gt;.
 Since then major milestones have been achieved. As we grow as a company, important
 steps are taken. Today we make another very important step; we&#39;re accepting our
@@ -1103,7 +1103,7 @@ We&#39;re looking for the next member of our team, If you&#39;re a Node.JS devel
         <summary>Hosting your Node-RED, so you don&#39;t have to.</summary>
         <updated>2022-02-23T19:44:00Z</updated>
         <link href="https://flowforge.com/blog/2022/02/announcing-flowforge-cloud/"/>
-        <author><name>Zeger-Jan van de Weg</name></author>
+        <author><name>ZJ van de Weg</name></author>
         <content type="html">&lt;p&gt;As an open core company, anyone is free to &lt;a href=&quot;https://github.com/flowforge/flowforge/tree/9219e81399eaf52fb0ee5573707a52f5520fbfdd/docs/install&quot;&gt;download and install&lt;/a&gt;
 our platform. In many cases this is a great solution, it
 allows for custom setups in your own environment. We know this isn&#39;t for everyone
@@ -1183,7 +1183,7 @@ doing.&lt;/p&gt;
         <summary>How spb sonne used Node-RED with a renewable energy solution</summary>
         <updated>2022-02-09T09:26:00Z</updated>
         <link href="https://flowforge.com/blog/2022/02/use-case-solar-afloat/"/>
-        <author><name>Zeger-Jan van de Weg</name></author>
+        <author><name>ZJ van de Weg</name></author>
         <content type="html">&lt;p&gt;&lt;a href=&quot;https://www.linkedin.com/in/krishnanravichandran/&quot;&gt;Krisnan Ravichandran&lt;/a&gt; works
 for &lt;a href=&quot;https://www.sbp.solar/&quot;&gt;spb sonne&lt;/a&gt;, a engineering consultancy for renewable
 energy. Within the company he is part of the engineering effort on the
