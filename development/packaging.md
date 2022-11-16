@@ -73,6 +73,25 @@ they cannot access the organisation-wide secret we have in place.
 2. Add it as a Repository Secret to the Private Repo (https://github.com/flowforge/<repo-name>/settings/secrets/actions)
    with the name `PROJECT_ACCESS_TOKEN`
 
+### Labels
+
+We have a standard set of labels that should be applied to all repositories. This
+ensures we have a consistent approach to planning and tracking of work.
+
+ - Type: `epic`, `story`, `task`, `bug`
+ - Sizing: `1`, `2`, `3`, `5`, `8`, `13`
+ - Area: `area:docs`, `area:db`, `area:migration`, `area:frontend`, `area:api`, `area:device`
+ - Priority: `priority:high`, `priority:medium`, `priority:low`
+ - Status: `blocked`
+ - Product Scope: `scope:devices`, `scope:enterprise`, `scope:node-red`, `scope:collaboration`
+ - Other: `good first issue`, `upstream`, `needs-triage`
+
+The labels are synchronized across the repositories via a GitHub Action in the [`.github`](https://github.com/flowforge/.github)
+repository.
+ 
+New repositories must be added to the list in [`flowforge-repositories.yml`](https://github.com/flowforge/.github/blob/main/flowforge-repositories.yml),
+and then the [Synchronize Labels](https://github.com/flowforge/.github/actions/workflows/sync-labels.yml) action manually run.
+ 
 ## NPM packages
 
 ### Naming
