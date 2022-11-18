@@ -71,7 +71,7 @@
     <div class="content">
         <div class="nohero w-full pt-12 pb-24 ff-bg-light">
     <div class="container m-auto text-left px-6 md:max-w-screen-lg">
-        <div class="handbook">
+        <div class="handbook" data-handbook>
     <div class="w-full mx-auto ff-bg-light">
         <div class="font-medium border-b pb-1">
             
@@ -193,6 +193,7 @@ to report our MRR is multiplied by 12 and added to the ARR of enterprise sales.<
     </div>
 </div>
 <script>
+    // Generate TOC
     let toc = document.getElementById("toc")
 
     let currentTag = "";
@@ -223,6 +224,17 @@ to report our MRR is multiplied by 12 and added to the ARR of enterprise sales.<
         currentLink.href = link[0].href;
         currentLink.textContent = n.textContent.replace(/#\s+/g,"");
         currentToc.append(currentItem);
+    })
+
+    // All external links open in new page
+    document.querySelectorAll("[data-handbook] a").forEach((link) => {
+        try {
+            if (!link.target && window.location.host !== new URL(link.href).host) {
+                link.target = "_blank";
+            }
+        } catch {
+            // Swallow errors
+        }
     })
 </script>
 <script async src="https://unpkg.com/mermaid/dist/mermaid.min.js">mermaid.initialize({ startOnLoad: true });</script>
