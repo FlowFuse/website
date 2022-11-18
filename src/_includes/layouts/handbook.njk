@@ -1,7 +1,7 @@
 ---
 layout: nohero
 ---
-<div class="handbook">
+<div class="handbook" data-handbook>
     <div class="w-full mx-auto ff-bg-light">
         <div class="font-medium border-b pb-1">
             {% if version %}
@@ -25,6 +25,7 @@ layout: nohero
     </div>
 </div>
 <script>
+    // Generate TOC
     let toc = document.getElementById("toc")
 
     let currentTag = "";
@@ -55,6 +56,17 @@ layout: nohero
         currentLink.href = link[0].href;
         currentLink.textContent = n.textContent.replace(/#\s+/g,"");
         currentToc.append(currentItem);
+    })
+
+    // All external links open in new page
+    document.querySelectorAll("[data-handbook] a").forEach((link) => {
+        try {
+            if (!link.target && window.location.host !== new URL(link.href).host) {
+                link.target = "_blank";
+            }
+        } catch {
+            // Swallow errors
+        }
     })
 </script>
 {% mermaid_js %}
