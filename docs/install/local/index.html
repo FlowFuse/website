@@ -90,7 +90,7 @@ for a smaller deployment (e.g. evaluation or home user).</p>
 <h4 id="operating-system" tabindex="-1"><a class="header-anchor" href="#operating-system">#&nbsp;</a> Operating System</h4>
 <p>The install script has been tested against the following operating systems:</p>
 <ul>
-<li>Raspbian/Raspberry Pi OS versions Buster/Bullseye [^1]</li>
+<li>Raspbian/Raspberry Pi OS versions Buster/Bullseye <sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup></li>
 <li>Debian Buster/Bullseye</li>
 <li>Fedora 35</li>
 <li>Ubuntu 20.04</li>
@@ -98,7 +98,6 @@ for a smaller deployment (e.g. evaluation or home user).</p>
 <li>MacOS Big Sur &amp; Monterey on Intel &amp; Apple M processors</li>
 <li>Windows 10 &amp; 11</li>
 </ul>
-<p>[^1]: Arm6 devices, such as the original Raspberry Pi Zero and Zero W are not supported.</p>
 <h4 id="node.js" tabindex="-1"><a class="header-anchor" href="#node.js">#&nbsp;</a> Node.js</h4>
 <p>FlowForge requires <em><strong>Node.js v16</strong></em>.</p>
 <h5 id="linux" tabindex="-1"><a class="header-anchor" href="#linux">#&nbsp;</a> Linux</h5>
@@ -298,16 +297,25 @@ auth_opt_http_aclcheck_uri /api/comms/auth/acl
 <p>To upgrade to the latest release you can follow these steps. Replace <code>x.y.z</code> with the
 version you are upgrading to.</p>
 <ol>
-<li>Stop FlowForge <code>sudo service flowforge stop</code> [^2]</li>
+<li>Stop FlowForge <code>sudo service flowforge stop</code> <sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup></li>
 <li><code>cd /opt/flowforge/app</code></li>
-<li><code>sudo -u flowforge npm install @flowforge/flowforge@x.y.z</code> [^3]</li>
+<li><code>sudo -u flowforge npm install @flowforge/flowforge@x.y.z</code> <sup class="footnote-ref"><a href="#fn3" id="fnref3">[3]</a></sup></li>
 <li>Check the release notes for any additional steps needed to upgrade the particular version</li>
-<li>Restart FlowForge <code>sudo service flowforge start</code> [^2]</li>
+<li>Restart FlowForge <code>sudo service flowforge start</code> <sup class="footnote-ref"><a href="#fn2" id="fnref2:1">[2:1]</a></sup></li>
 </ol>
 <p>If you are running as your normal user you can drop the <code>sudo -u flowforge</code> and just run <code>npm install @flowforge/flowforge@x.y.z</code></p>
 <hr>
-<p>[^2]: Assumes you are running Flowforge as a Linux service.
-[^3]: Assumes you are running Flowforge as the <code>flowforge</code> user as created by the installer</p>
+<hr class="footnotes-sep">
+<section class="footnotes">
+<ol class="footnotes-list">
+<li id="fn1" class="footnote-item"><p>Arm6 devices, such as the original Raspberry Pi Zero and Zero W are not supported. <a href="#fnref1" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn2" class="footnote-item"><p>Assumes you are running Flowforge as a Linux service. <a href="#fnref2" class="footnote-backref">↩︎</a> <a href="#fnref2:1" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn3" class="footnote-item"><p>Assumes you are running Flowforge as the <code>flowforge</code> user as created by the installer <a href="#fnref3" class="footnote-backref">↩︎</a></p>
+</li>
+</ol>
+</section>
 
             </div>
         </div>
