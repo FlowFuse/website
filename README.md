@@ -8,9 +8,27 @@ It is built using [Tailwind CSS](https://tailwindcss.com/) and [Eleventy](https:
 It is hosted on GitHub Pages and every commit to the `main` branch is automatically
 deployed using GitHub Actions.
 
+## Prerequisites 
+
+### Linux/MacOS
+* `git` and `gitbash`
+* `nodejs`
+   * IMPORTANT: Developer tools should also be installed
+* `jq`
+### Windows
+* `git` and `gitbash`
+* `nodejs`
+   * IMPORTANT: Select the [x] checkbox to install developer tools when asked
+* `choco` 
+   * Installed as part of the Node JS installer
+   * Needed for installing `jq`
+* `jq`
+   * From a administrator terminal, run `choco install jq`
+
 ## Building the site locally
 
-After cloning the repository, install the project dependencies, then run the build and the eleventy server:
+After cloning the repository, open a bash terminal and install the 
+project dependencies, then run the build and the eleventy server:
 
 ```bash
 npm install
