@@ -468,3 +468,19 @@ h4:hover .header-anchor {
 pre.mermaid {
     background-color: #ffffff
 }
+/*
+    FlowForge markdown-it rendered footnote styles
+*/
+div.content hr.footnotes-sep {
+    margin-top: 3em;
+    margin-bottom: 1em;
+}
+div.content section.footnotes ol li,
+div.content section.footnotes ol li:before,
+div.content section.footnotes ol li p {
+    font-weight: 300;
+    font-family: 'roboto', sans-serif, 'system-ui';
+    color: theme(colors.gray.400);
+    font-size: 0.8rem;
+    line-height: 0.8rem;
+}
