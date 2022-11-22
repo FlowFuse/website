@@ -92,39 +92,39 @@ of our roadmap.</p>
 <p>User provisioning is on a per user basis.</p>
 <h2 id="configuration" tabindex="-1"><a class="header-anchor" href="#configuration">#&nbsp;</a> Configuration</h2>
 <p>Configuration of the FlowForge application influences security aspects of the
-system at large. For each section the implementation of FlowForge managed
-installs are mentioned too. For self managed installs we advise to follow the
-choices made by FlowForge Managed installs.</p>
+system at large. For each section the implementation of FlowForge Cloud is
+mentioned too. For self managed installs we advise to follow the choices made
+by FlowForge Cloud.</p>
 <h3 id="data-storage" tabindex="-1"><a class="header-anchor" href="#data-storage">#&nbsp;</a> Data storage</h3>
 <h4 id="data-at-rest" tabindex="-1"><a class="header-anchor" href="#data-at-rest">#&nbsp;</a> Data at Rest</h4>
 <p>All user data is stored in a relational database, which are encrypted by default
 for all install methods except local.</p>
-<p><em>FlowForge Managed</em>: Data is stored in a PostgreSQL database. All data is encrypted
+<p><em>FlowForge Cloud</em>: Data is stored in a PostgreSQL database. All data is encrypted
 <a href="https://flowforge.com/blog/2022/10/db-migration-01/">since October 2022</a>.</p>
 <h4 id="data-residency" tabindex="-1"><a class="header-anchor" href="#data-residency">#&nbsp;</a> Data residency</h4>
 <p>Long term data storage is depended on the location of the relational database
 storage.</p>
-<p><em>FlowForge Managed</em>: Data is stored in the European Union, specificially
+<p><em>FlowForge Cloud</em>: Data is stored in the European Union, specificially
 Ireland, on AWS eu-west-1.</p>
 <h3 id="data-in-transit" tabindex="-1"><a class="header-anchor" href="#data-in-transit">#&nbsp;</a> Data in Transit</h3>
 <p>Traffic from external sources to the FlowForge application can be encrypted.
 When a load balancer is used, the encryption is terminated on the edge. Internal
 traffic is not encrypted.</p>
-<p><em>FlowForge Managed</em>: Data in transit to and from external sources is protected
+<p><em>FlowForge Cloud</em>: Data in transit to and from external sources is protected
 with SSL/TLS. Encryption is terminated at the edge, both for HTTP and MQTT
 traffic.</p>
 <p>Adding internal SSL/TLS is <a href="https://github.com/flowforge/flowforge/issues/910">being investigated</a>.</p>
 <h4 id="inter-project-communication" tabindex="-1"><a class="header-anchor" href="#inter-project-communication">#&nbsp;</a> Inter project communication</h4>
 <p>Communication between a teams projects is MQTT based. Traffic can be encrypted
 based on the broker configuration.</p>
-<p><em>FlowForge Managed</em>: Inbound and outbound traffic is send encrypted to
+<p><em>FlowForge Cloud</em>: Inbound and outbound traffic is send encrypted to
 FlowForge. The encryption is terminated at the load balancer. Internal traffic
 is not encrypted.</p>
 <h3 id="service-endpoints" tabindex="-1"><a class="header-anchor" href="#service-endpoints">#&nbsp;</a> Service endpoints</h3>
 <p>It's recommended to run the FlowForge application and the flow runtimes on
 different domains. This will create separation of concerns and enhances security
 for, among others, cookies.</p>
-<p><em>FlowForge Managed</em>: Our SaaS offering has multiple service domains. The
+<p><em>FlowForge Cloud</em>: Our SaaS offering has multiple service domains. The
 corporate website is hosted at <a href="https://flowforge.com">flowforge.com</a>. The
 application is served at <a href="https://app.flowforge.com">app.flowforge.com</a>, while
 the Node-RED instances are served from *.flowforge.cloud.</p>
