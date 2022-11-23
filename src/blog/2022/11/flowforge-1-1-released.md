@@ -7,7 +7,7 @@ authors: ["rob-marcer"]
 video: TODO
 ---
 
-Edit your flows directly on your FlowForge Devices, persist files on your FlowForge projects and import Node-RED snapshots into FlowForge.
+Edit your flows directly on your FlowForge Devices, persist files on your FlowForge projects, and import Node-RED snapshots into FlowForge.
 
 <!--more-->
 
