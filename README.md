@@ -15,6 +15,7 @@ deployed using GitHub Actions.
 * `nodejs`
    * IMPORTANT: Developer tools should also be installed
 * `jq`
+
 ### Windows
 * `git` and `gitbash`
 * `nodejs`
