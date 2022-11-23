@@ -77,21 +77,24 @@ Refer to the section [Unmanaged Releases](#unmanaged-releases) for releasing the
 
 ## Patch releases
 
-Patch releases are done at hoc basis, and have a much lighter process to allow
-fixes to quickly be released.
+Patch releases are done as needed and have a much lighter process to allow
+fixes to be released quickly.
 
-1. In the #dev slack channel, explain the need for a patch release and invite others
-to have their fixes included.
-1. Create a patch release issue in the `flowforge/admin` repository with a list of all PRs
-to cherry pick into `X.Y-maint`
-1. Create PRs for each of these changes with the target branch being `X.Y-maint`
-1. Have the list of changes approved by one other developer, who also merges the list of PRs
-1. Create a new PR to `X.Y-maint` to bump the version, and update the CHANGELOG.md
-1. Check the list of PRs target merge branch again for each PR
-1. Assign all PRs to one developer, and get them merged.
-1. Once merged, checkout `X.Y-maint` and tag using `git tag v0.X.Y -m "one line description of this release"`
-1. Push the tag to the GitHub repository, and create a corresponding GitHub release
-1. Create two change request issues, one for staging and one for production to upgrade to the latest version
+The core `flowforge` repository has some automation in place to help with this process.
+Until that is rolled out across the other repositories, some of the backporting work
+must be done manually.
+
+ - Changes must first be PR'd to the `main` branch and reviewed in the normal manner.
+ - Before merging, the PR should have the label `backport` added.
+ - If in `flowforge/flowforge`, when the PR is merged, an automation will run to create a new PR that backports
+   the change to the maintenance branch. Otherwise, the backport PR must be manually created.
+ - The backport PR must be reviewed and merged in the normal manner.
+ - Once all of the required backport PRs are merged, raise a PR on the `maintenance` branch
+   to update the version and `CHANGELOG.md` file with suitable details.
+ - Create the GitHub release with the appropriate `vX.Y.Z` tag.
+
+Finally, create two change request issues in the admin repo, one for staging and
+one for production to upgrade to the latest version.
 
 ### Unmanaged Releases
 
