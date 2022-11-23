@@ -41,7 +41,7 @@ Staging uses pre-release npm packages stored in a GitHut npm repository. To be a
 
 You will need to create a GH Personal token
 
-1. Go to your account -> settings (click on avatar then near bottom of menu)
+1. Go to your [classic personal access tokens](https://github.com/settings/tokens)
 2. Pick Developer Settings (bottom of left hand menu)
 3. Personal Access tokens
 4. Tokens (classic)
