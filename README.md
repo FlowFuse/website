@@ -28,7 +28,7 @@ deployed using GitHub Actions.
 
 ## Building the site locally
 
-After cloning the repository, open a bash terminal and install the 
+After cloning the repository, open a **bash** terminal and install the 
 project dependencies, then run the build and the eleventy server:
 
 ```bash
