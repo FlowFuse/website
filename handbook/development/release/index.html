@@ -167,22 +167,23 @@ Updated packages will be automatically published to npm by our GitHub actions.  
 <li>As much as possible of the previous steps should be converted into a CI Pipeline making use of GitHub Actions.</li>
 </ul>
 <h2 id="patch-releases" tabindex="-1"><a class="header-anchor" href="#patch-releases">#&nbsp;</a> Patch releases</h2>
-<p>Patch releases are done at hoc basis, and have a much lighter process to allow
-fixes to quickly be released.</p>
-<ol>
-<li>In the #dev slack channel, explain the need for a patch release and invite others
-to have their fixes included.</li>
-<li>Create a patch release issue in the <code>flowforge/admin</code> repository with a list of all PRs
-to cherry pick into <code>X.Y-maint</code></li>
-<li>Create PRs for each of these changes with the target branch being <code>X.Y-maint</code></li>
-<li>Have the list of changes approved by one other developer, who also merges the list of PRs</li>
-<li>Create a new PR to <code>X.Y-maint</code> to bump the version, and update the CHANGELOG.md</li>
-<li>Check the list of PRs target merge branch again for each PR</li>
-<li>Assign all PRs to one developer, and get them merged.</li>
-<li>Once merged, checkout <code>X.Y-maint</code> and tag using <code>git tag v0.X.Y -m &quot;one line description of this release&quot;</code></li>
-<li>Push the tag to the GitHub repository, and create a corresponding GitHub release</li>
-<li>Create two change request issues, one for staging and one for production to upgrade to the latest version</li>
-</ol>
+<p>Patch releases are done as needed and have a much lighter process to allow
+fixes to be released quickly.</p>
+<p>The core <code>flowforge</code> repository has some automation in place to help with this process.
+Until that is rolled out across the other repositories, some of the backporting work
+must be done manually.</p>
+<ul>
+<li>Changes must first be PR'd to the <code>main</code> branch and reviewed in the normal manner.</li>
+<li>Before merging, the PR should have the label <code>backport</code> added.</li>
+<li>If in <code>flowforge/flowforge</code>, when the PR is merged, an automation will run to create a new PR that backports
+the change to the maintenance branch. Otherwise, the backport PR must be manually created.</li>
+<li>The backport PR must be reviewed and merged in the normal manner.</li>
+<li>Once all of the required backport PRs are merged, raise a PR on the <code>maintenance</code> branch
+to update the version and <code>CHANGELOG.md</code> file with suitable details.</li>
+<li>Create the GitHub release with the appropriate <code>vX.Y.Z</code> tag.</li>
+</ul>
+<p>Finally, create two change request issues in the admin repo, one for staging and
+one for production to upgrade to the latest version.</p>
 <h3 id="unmanaged-releases" tabindex="-1"><a class="header-anchor" href="#unmanaged-releases">#&nbsp;</a> Unmanaged Releases</h3>
 <p>The unmanaged repositories listed above have a simpler release process.</p>
 <ol>
@@ -208,7 +209,7 @@ to 25$ per launch) and join a social lunch zoom call.</p>
             <h3 class="font-medium border-b pb-1 mb-4">On this page</h3>
             <ul id="toc" class="text-sm border-b mb-4"></ul>
             <div class="text-sm pb-1 text-right mb-4"><a href="https://github.com/flowforge/handbook/edit/main/development/release.md">Edit this page</a></div>
-            <div class="text-xs pb-1 text-right mb-4 italic">Updated: 2022-11-22 21:22:48 +0100</div>
+            <div class="text-xs pb-1 text-right mb-4 italic">Updated: 2022-11-23 22:25:25 +0000</div>
         </div>
     </div>
 </div>
