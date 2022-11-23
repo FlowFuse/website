@@ -11,7 +11,7 @@ deployed using GitHub Actions.
 ## Prerequisites 
 
 ### Linux/MacOS
-* `git` and `gitbash`
+* `git`
 * `nodejs`
    * IMPORTANT: Developer tools should also be installed
 * `jq`
