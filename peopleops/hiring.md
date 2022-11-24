@@ -19,6 +19,15 @@ conditional on background checks. If the offer includes an equity component,
 this part is conditional on board approval of such a grant. Be sure to be
 explicit about these conditions.
 
+### After an offer is accepted
+
+Onboarding on our EOR provider, Pilot, takes at least 3 to 4 weeks. The start
+date for a new employee should be at least 3 to 4 weeks out. When a
+[conditional offer](#extending-an-offer) has been accepted you should immediately:
+
+1. [Create an onboarding issue](https://github.com/flowforge/admin/issues/new/choose) on the admin GitHub project
+1. Update the [internal team overview spreadsheet](./index.md#internal-team-overview)
+
 ## Onboarding
 
 Just before the first day working at FlowForge you'll receive an email 
