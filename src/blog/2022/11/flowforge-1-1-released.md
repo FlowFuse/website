@@ -7,48 +7,47 @@ authors: ["rob-marcer"]
 video: TODO
 ---
 
-Persist files on your FlowForge projects, publish locally developed flows to dozens of devices in a few clicks, and use our new interface for managing Project Deployments
+Persist files on your FlowForge Projects, publish locally developed flows to dozens of Devices in a few clicks, and use our new interface for managing Project Deployments.
 
 <!--more-->
 
-We're pleased to announce version 1.1 is now available! The latest release of the FlowForge application containing new features, many improvements, and bug fixes. Keep reading for the details of what's in this release or you can watch our 1 minute roundup video of the new release above.
+We're pleased to announce version 1.1 is now available! The latest release of the FlowForge application contains new features, many improvements, and bug fixes. Keep reading for the details of what's in this release or you can watch our 1 minute roundup video of the new release above.
 
 ## Features
 
-[Persistent File Storage](TODO docs link) We've had a great deal of feed back
+[Persistent File Storage](TODO docs link) We've had a great deal of feedback
 from our customers that being able to persist files in a project is a vital feature
-in Node-RED. In FlowForge 1.1 the flows can now create and persist files within
-your projects. We know those files are used in many creative ways and we're looking
-forward to seeing how uses improve their projects using this new feature.
+in Node-RED. In FlowForge 1.1 flows can now create and persist files within
+your Projects. We know those files are used in many creative ways and we're looking
+forward to seeing how users improve their Projects using this new feature.
 
 [Import Snapshots from Outside FlowForge](TODO docs link) Developers may wish to
-work on Node-RED in a local environment but want an easy path to share that with their team. You can now link your Node-RED instances running outside of FlowForge and push snapshots directly into your FlowForge projects to leverage FlowForge fully.  With this new feature we've made it effortless to push a local build of a project to FlowForge for deployment to your staging and production FlowForge instances.
+work on Node-RED in a local environment but want an easy path to share that with their team. You can now link your Node-RED instances running outside of FlowForge and push Snapshots directly into your FlowForge Projects to leverage FlowForge fully.  With this new feature we've made it effortless to push a local build of a project to FlowForge for deployment to your staging and production FlowForge instances.
 
 ## Improvements
 
 [Project Deployments UX](https://github.com/flowforge/flowforge/issues/1046)
 We've reworked the interface for managing your FlowForge Deployments of Node-RED.
-We are seeing FlowForge users deploying their projects to edge devices at scale.
+We are seeing FlowForge users deploying their Projects to edge devices at scale.
 This is another step towards making it easier for users to manage a large quantity
-of devices in their projects.
+of devices in their Projects.
 
 When users change their username, email address, or password they'll now be
-notified through email of these changes to ensure these changes are made by the
+notified through email of changes to ensure they were made by the
 user.
 
-This release a lot of effort went into the install process, specifically the
-local install method. First and foremost; a default stack and template will be
-installed automatically. With that it ensures users get up and running with
-Node-RED much quicker. Administrators of each platform can still change stacks
-and templates when needed. Secondly, the installer now auto generates the
-configuration file for Mosquitto, the MQTT broker FlowForge uses. Again making
-administrators much quicker when installing FlowForge.
+In this release a lot of effort went into the install process, specifically the
+local install method. First and foremost; a default Stack and Template will be
+installed automatically. That will ensure users get up and running with
+Node-RED more quickly. Administrators of each platform can still change Stacks
+and Templates when needed. Secondly, the installer now auto generates the
+configuration file for Mosquitto, the MQTT broker FlowForge uses. This again should save
+administrators time when installing FlowForge.
 
 ## Bug Fixes
 
 The v1.0.1 release included a bug fix where [snapshot rollbacks](https://github.com/flowforge/flowforge/issues/1186)
 didn't work, which has also been included in v1.1 onwards.
-
 
 We've fixed the following bugs in this release.
 
@@ -76,7 +75,7 @@ We'd like the thank the following for their contributions to this release:
 
 TODO
 
-As an open-source project, we welcome the community involvement in what we're building.
+As an open-source project, we welcome community involvement in what we're building.
 If you're interested in contributing, checkout our [guide in the docs](https://flowforge.com/docs/contribute/).
 
 ### Try it out
