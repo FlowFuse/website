@@ -4,7 +4,7 @@ subtitle: A new set of features to improve FlowForge as the best solution for ru
 description: A new set of features to improve FlowForge as the best solution for running Node-RED in production in a secure, scalable, and team-based environment.
 date: 2022-11-24 18:00:00.0
 authors: ["rob-marcer"]
-video: TODO
+video: 134iljE_urI
 ---
 
 Persist files on your FlowForge Projects, publish locally developed flows to dozens of Devices in a few clicks, and use our new interface for managing Project Deployments.
@@ -15,13 +15,13 @@ We're pleased to announce version 1.1 is now available! The latest release of th
 
 ## Features
 
-[Persistent File Storage](TODO docs link) We've had a great deal of feedback
+[Persistent File Storage](https://github.com/flowforge/flowforge/issues/998) We've had a great deal of feedback
 from our customers that being able to persist files in a project is a vital feature
 in Node-RED. In FlowForge 1.1 flows can now create and persist files within
 your Projects. We know those files are used in many creative ways and we're looking
 forward to seeing how users improve their Projects using this new feature.
 
-[Import Snapshots from Outside FlowForge](TODO docs link) Developers may wish to
+[Import Snapshots from Outside FlowForge](https://flowforge.com/docs/user/node-red-tools/) Developers may wish to
 work on Node-RED in a local environment but want an easy path to share that with their team. You can now link your Node-RED instances running outside of FlowForge and push Snapshots directly into your FlowForge Projects to leverage FlowForge fully.  With this new feature we've made it effortless to push a local build of a project to FlowForge for deployment to your staging and production FlowForge instances.
 
 ## Improvements
@@ -73,7 +73,7 @@ We've fixed the following bugs in this release.
 
 We'd like the thank the following for their contributions to this release:
 
-TODO
+[mikermcneil](https://github.com/mikermcneil) for their work on [#1301](https://github.com/flowforge/flowforge/pull/1301)
 
 As an open-source project, we welcome community involvement in what we're building.
 If you're interested in contributing, checkout our [guide in the docs](https://flowforge.com/docs/contribute/).
