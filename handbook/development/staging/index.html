@@ -102,6 +102,25 @@ smallest instance that can be used with EKS.</p>
 <h2 id="using-staging" tabindex="-1"><a class="header-anchor" href="#using-staging">#&nbsp;</a> Using staging</h2>
 <p>When setting up a team you'll need to enter billing details. For credit card
 details, use <a href="https://stripe.com/docs/testing#testing-interactively">the Stripe mock data</a>.</p>
+<h2 id="using-the-flowforge-device-agent-with-staging" tabindex="-1"><a class="header-anchor" href="#using-the-flowforge-device-agent-with-staging">#&nbsp;</a> Using the FlowForge Device Agent with staging</h2>
+<p>Staging uses pre-release npm packages stored in a GitHub npm repository. To be able to use these packages you will need to authenticate with the repository.</p>
+<p>You will need to create a GH Personal token</p>
+<ol>
+<li>Go to your <a href="https://github.com/settings/tokens">classic personal access tokens</a></li>
+<li>Click Generate New Token (and again pick the classic option)</li>
+<li>You will probably be prompted for 2FA now</li>
+<li>Give the token a meaningful name</li>
+<li>Pick an expiration. I went with no expiration so I don't have to do this again and I'm going to limit the scope</li>
+<li>Tick the box next to <code>read:packages</code></li>
+<li>Click generate token button at bottom of page</li>
+</ol>
+<p>Store the token in your private 1Password vault</p>
+<p>Create the following .npmrc file:</p>
+<pre><code>//npm.pkg.github.com/:_authToken=ghp_xxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+@flowforge:registry=https://npm.pkg.github.com/
+</code></pre>
+<p>where <code>ghp_xxxxxxxxxxxxxxxxxxxxxxxxxxxxx</code> is the token you just generated.</p>
+<p>You need to place this in the project directory, e.g. <code>/opt/flowforge-device/project</code> or if you are running it in the dev env <code>flowforge-device-agent/var/project</code> (assume starting with <code>node index -d ./var -c ./var/device.yml</code>)</p>
 
             </div>
         </div>
@@ -109,7 +128,7 @@ details, use <a href="https://stripe.com/docs/testing#testing-interactively">the
             <h3 class="font-medium border-b pb-1 mb-4">On this page</h3>
             <ul id="toc" class="text-sm border-b mb-4"></ul>
             <div class="text-sm pb-1 text-right mb-4"><a href="https://github.com/flowforge/handbook/edit/main/development/staging.md">Edit this page</a></div>
-            <div class="text-xs pb-1 text-right mb-4 italic">Updated: 2022-11-24 10:59:52 +0100</div>
+            <div class="text-xs pb-1 text-right mb-4 italic">Updated: 2022-11-24 12:11:59 +0100</div>
         </div>
     </div>
 </div>
