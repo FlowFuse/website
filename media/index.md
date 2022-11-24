@@ -67,7 +67,7 @@ Our Release Videos follow a very fixed structure [with templates listed]:
 4. FlowForge Outro Ident _[Template: /Bookends/Outro]_
 
 ##### Recording Demos for Release Videos
-Screen recordings used within the Release Videos should be recorded at 1700 x 1080 in order to fit within the reusable template. The border size can be easily adjusted though if required.
+Screen recordings used within the Release Videos should be recorded at 1800 x 1080 in order to fit within the reusable template. The border size can be easily adjusted though if required.
 
 In our "FlowForge Templates" Adobe Premiere Pro library we have three "UI Preview" templates available at different lengths (10, 13 and 15 seconds). It is recommended to edit the recordings in a piece of software of your choice down to your chosen timing, as this will make use of the templates a lot easier.
 
