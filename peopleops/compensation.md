@@ -69,7 +69,7 @@ up to $25.
 
 The company's [KPI tracking FlowForge adoption](../company/strategy.md#installed-platforms)
 sets an aggresive goal for growth. When the growth target is met a $100 bonus is
-awarded to be expensed for a dinner out. The bonus is awareded per release.
+awarded to be expensed for a dinner out. The bonus is awarded per release.
 
 ### United States
 
