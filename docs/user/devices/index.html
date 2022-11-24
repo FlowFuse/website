@@ -75,7 +75,7 @@
     <div class="w-full mx-auto ff-bg-light">
         <div class="font-medium border-b pb-1">
             
-            v1.0.2
+            v1.1.0
             
             /<a class="mx-2" href="/docs">docs</a>/<a class="mx-2" href="/docs/user">user</a>/<a class="mx-2" href="/docs/user/devices">devices</a>
         </div>
@@ -93,13 +93,21 @@ A Device runs a software agent that connects back to the platform to receive upd
 command is on the path:</p>
 <pre><code>sudo npm install -g @flowforge/flowforge-device-agent
 </code></pre>
-<h3 id="configuration-directory" tabindex="-1"><a class="header-anchor" href="#configuration-directory">#&nbsp;</a> Configuration directory</h3>
+<h2 id="configuration" tabindex="-1"><a class="header-anchor" href="#configuration">#&nbsp;</a> Configuration</h2>
+<h3 id="execution-directory" tabindex="-1"><a class="header-anchor" href="#execution-directory">#&nbsp;</a> Execution directory</h3>
 <p>By default the agent uses <code>/opt/flowforge-device</code> as its working directory.
 This can be overridden with the <code>-d/--dir</code> option.</p>
 <p>The directory must exist and be accessible to the user that will be
 running the agent.</p>
 <pre><code>sudo mkdir /opt/flowforge-device
 sudo chown -R $USER /opt/flowforge-device
+</code></pre>
+<h3 id="listen-port" tabindex="-1"><a class="header-anchor" href="#listen-port">#&nbsp;</a> Listen Port</h3>
+<p>By default Node-RED will listen to port <code>1880</code>. The device agent has a flag to
+change this behaviour and listen on another port of choosing: <code>-p/--port</code>. This can
+be useful for custom firewall rules, or when running multiple device agents on
+the same machine.</p>
+<pre><code>flowforge-device-agent --port=1881
 </code></pre>
 <h2 id="register-the-device" tabindex="-1"><a class="header-anchor" href="#register-the-device">#&nbsp;</a> Register the device</h2>
 <p>To connect a device to the platform it must be registered in order to generate
@@ -185,7 +193,7 @@ will stop and delete its local copy of the project it was running.</p>
             <h3 class="font-medium border-b pb-1 mb-4">On this page</h3>
             <ul id="toc" class="text-sm border-b mb-4"></ul>
             <div class="text-sm pb-1 text-right mb-4"><a href="https://github.com/flowforge/flowforge/edit/main/docs/user/devices.md">Edit this page</a></div>
-            <div class="text-xs pb-1 text-right mb-4 italic">Updated: 2022-11-04 14:11:53 +0000</div>
+            <div class="text-xs pb-1 text-right mb-4 italic">Updated: 2022-11-24 13:58:14 +0000</div>
         </div>
     </div>
 </div>

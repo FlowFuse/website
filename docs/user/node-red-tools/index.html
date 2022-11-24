@@ -18,7 +18,7 @@
     <meta name="twitter:description" content="FlowForge is an open-source, low-code platform for integration and automation. Helping you run Node-RED at production scales in a secure, scalable and team-based environment." />
     <meta name="twitter:site" content="@flowforgeinc" />
     <meta name="twitter:image" content="/images/og-social-tile.jpg" />
-    <meta property="og:url" content="https://flowforge.com/docs/contribute/architecture/" />
+    <meta property="og:url" content="https://flowforge.com/docs/user/node-red-tools/" />
     <meta property="og:title" content="" />
     <meta property="og:description" content="FlowForge is an open-source, low-code platform for integration and automation. Helping you run Node-RED at production scales in a secure, scalable and team-based environment." />
     <meta property="og:image" content="/images/og-social-tile.jpg" />
@@ -77,83 +77,98 @@
             
             v1.1.0
             
-            /<a class="mx-2" href="/docs">docs</a>/<a class="mx-2" href="/docs/contribute">contribute</a>/<a class="mx-2" href="/docs/contribute/architecture">architecture</a>
+            /<a class="mx-2" href="/docs">docs</a>/<a class="mx-2" href="/docs/user">user</a>/<a class="mx-2" href="/docs/user/node-red-tools">node-red-tools</a>
         </div>
     </div>
     <div class="w-full mx-auto ff-bg-light flex flex-col md:flex-row">
         <div class="flex-grow order-last md:order-first">
             <div class="mt-6 mb-4 prose prose-blue main-content">
-                <h1 id="flowforge-architecture" tabindex="-1"><a class="header-anchor" href="#flowforge-architecture">#&nbsp;</a> FlowForge Architecture</h1>
-<p>A FlowForge install is made up of 2 main components</p>
-<ul>
-<li>The Management Application</li>
-<li>The Projects running instances of Node-RED</li>
-</ul>
-<p>These can be deployed in one of 2 ways</p>
-<ul>
+                <h1 id="flowforge-node-red-tools-plugin" tabindex="-1"><a class="header-anchor" href="#flowforge-node-red-tools-plugin">#&nbsp;</a> FlowForge Node-RED Tools plugin</h1>
+<p>The Node-RED Tools Plugin is a module you can install into any Node-RED instance
+running outside of FlowForge, that gives you the ability to work on your projects
+locally.</p>
+<p>The current version of the plugin allows you to create a new Project Snapshot
+using the flows you have locally and push them into a project on FlowForge.</p>
+<p>This can make it easier to develop hardware-specific flows locally, that can then
+be pushed out to your Project's devices through FlowForge.</p>
+<h2 id="install" tabindex="-1"><a class="header-anchor" href="#install">#&nbsp;</a> Install</h2>
+<p>This plugin can be installed through the Manage Palette option in the Node-RED
+editor, or on the command-line:</p>
+<pre><code>cd ~/.node-red
+npm install @flowforge/nr-tools-plugin
+</code></pre>
+<p>This assumes the default location of the Node-RED user directory. If you are not
+sure where that is, check the log output when Node-RED starts as it will log the
+full path to the <code>User directory</code>.</p>
+<h2 id="usage" tabindex="-1"><a class="header-anchor" href="#usage">#&nbsp;</a> Usage</h2>
+<p>This initial version of the plugin allows you to create a snapshot of your locally
+developed flows and push them into one of your projects running inside FlowForge.</p>
+<h3 id="connecting-to-flowforge" tabindex="-1"><a class="header-anchor" href="#connecting-to-flowforge">#&nbsp;</a> Connecting to FlowForge</h3>
+<p>Before you can do anything, you need to connect the plugin to a FlowForge platform.</p>
+<ol>
 <li>
-<p>On a single machine</p>
-<p><img src=".././images/ff-localfs.png"" alt="LocalFS Architecture"></p>
+<p>In the Node-RED editor, open the FlowForge Tools sidebar and click on the cog
+icon to open the settings panel.</p>
 </li>
 <li>
-<p>Using a Container Orchestration platform (Kubernetes/Docker Compose)</p>
-<p><img src=".././images/ff-containers.png"" alt="Container Architecture"></p>
+<p>Enter the url of your FlowForge platform. For example, if you have signed-up
+to <a href="https://app.flowforge.com/">FlowForge Cloud</a> then use the URL <code>https://app.flowforge.com</code>.</p>
 </li>
-</ul>
-<h2 id="flowforge-management-application" tabindex="-1"><a class="header-anchor" href="#flowforge-management-application">#&nbsp;</a> FlowForge Management Application</h2>
-<p>This provides the interface for managing Users and Projects. It also provides a collection of APIs to support the Projects once started.</p>
-<p>A key component is the Container API driver, this is the part that actually creates/destroys Projects, it also keeps track of what Projects should be running and restarts if needed.</p>
-<h3 id="container-drivers" tabindex="-1"><a class="header-anchor" href="#container-drivers">#&nbsp;</a> Container Drivers</h3>
-<p>Projects are started by the FlowForge Management Application via one of the following Container Drivers. Documentation for the Container Driver API will be available in the <a href="../../api/"">API</a> section.</p>
-<h4 id="localfs" tabindex="-1"><a class="header-anchor" href="#localfs">#&nbsp;</a> Localfs</h4>
-<p>This driver runs Projects as separate processes on the same machine as the FlowForge Management Application. Each Project gets its own <code>userDir</code> and a dedicated TCP/IP port to listen to.</p>
-<p>State is stored in a local SQLite database</p>
-<p>There is no automatic Ingres automation provided by this driver.</p>
-<h4 id="kubernetes" tabindex="-1"><a class="header-anchor" href="#kubernetes">#&nbsp;</a> Kubernetes</h4>
-<p>This driver runs Projects in separate containers and each instance is accessed by a dedicated hostname via a HTTP Ingres proxy.</p>
-<p>State is stored in a provided PostgreSQL database.</p>
-<p>Project containers are segregated into their own namespace (currently hardcoded to <code>flowforge</code>)</p>
-<p>The driver uses the <a href="https://www.npmjs.com/package/@kubernetes/client-node">@kubernetes/client-node</a> to interact with the cluster.</p>
-<p>The driver will create the required Service and Ingres Kubernetes resources to expose each instance via what ever Ingress Controller the underlying Kubernetes cluster provides.</p>
-<h4 id="docker-compose" tabindex="-1"><a class="header-anchor" href="#docker-compose">#&nbsp;</a> Docker-Compose</h4>
-<p>This driver runs Projects in separate containers and each instance is accessed by a dedicated hostname via a HTTP Ingres proxy.</p>
-<p>State is stored in a provided PostgreSQL database.</p>
-<p>The driver uses the <a href="https://www.npmjs.com/package/dockerode">dockerode</a> to interact with the cluster.</p>
-<p>The driver will add the required Environment variables to each Project container to work with the <a href="https://hub.docker.com/r/jwilder/nginx-proxy">jwilder/nginx-proxy</a> NGINX proxy.</p>
-<h2 id="flowforge-projects" tabindex="-1"><a class="header-anchor" href="#flowforge-projects">#&nbsp;</a> FlowForge Projects</h2>
-<p>A FlowForge Project is made up of 2 parts</p>
-<ul>
-<li>The FlowForge Launcher</li>
-<li>A Node-RED instance</li>
-</ul>
-<p><img src=".././images/ff-project-arch.png"" alt="Project Architecture"></p>
-<h3 id="flowforge-launcher" tabindex="-1"><a class="header-anchor" href="#flowforge-launcher">#&nbsp;</a> FlowForge Launcher</h3>
-<p>This is a small application that handles downloading the Project specific settings, building a <code>settings.js</code> from those settings and then starting the Node-RED instance.</p>
-<p>The launcher presents a HTTP API (it defaults to the Node-RED port + 1000) that allows the FlowForge Management Application to start/stop/restart the Node-RED instance as well as query it's current state and retrieve the console logs.</p>
-<p>The launcher project can be found <a href="https://github.com/flowforge/flowforge-nr-launcher">here</a></p>
-<h3 id="node-red-instance" tabindex="-1"><a class="header-anchor" href="#node-red-instance">#&nbsp;</a> Node-RED Instance</h3>
-<p>This is the standard Node-RED package with the following plugins</p>
-<ul>
-<li><a href="https://github.com/flowforge/flowforge-nr-storage">nr-storage</a></li>
-<li><a href="https://github.com/flowforge/flowforge-nr-auth">nr-auth</a></li>
-<li><a href="https://github.com/flowforge/flowforge-nr-audit-logger">nr-audit-logger</a></li>
-</ul>
-<h4 id="nr-storage" tabindex="-1"><a class="header-anchor" href="#nr-storage">#&nbsp;</a> nr-storage</h4>
-<p>This plugin is used to save flows, settings, sessions and library entries back to the FlowForge Management Application.</p>
-<p>This plugin uses the Node-RED <a href="https://nodered.org/docs/api/storage">Storage API</a></p>
-<h4 id="nr-auth" tabindex="-1"><a class="header-anchor" href="#nr-auth">#&nbsp;</a> nr-auth</h4>
-<p>This plugin is used to authenticate users trying to access the Node-RED Editor, it refers back to the FlowForge Management Application to ensure only members of the team that owns the project can log in.</p>
-<p>This plugin uses the Node-RED <a href="https://nodered.org/docs/user-guide/runtime/securing-node-red#custom-user-authentication">Authentication API</a></p>
-<h4 id="nr-audit-logger" tabindex="-1"><a class="header-anchor" href="#nr-audit-logger">#&nbsp;</a> nr-audit-logger</h4>
-<p>This plugin sends Node-RED Audit events (e.g. user log in and flow deployment events) back to the to the FlowForge Management Application to allow a reliable audit of what actions have taken place in the project.</p>
-<p>This plugin uses the Node-RED <a href="https://nodered.org/docs/user-guide/runtime/logging">Logging API</a></p>
+<li>
+<p>Click connect. This will open another window where you can log in to FlowForge
+and give permission for the plugin to connect to your account.</p>
+</li>
+<li>
+<p>Once connected, close the settings panel.</p>
+</li>
+</ol>
+<h3 id="working-with-snapshots" tabindex="-1"><a class="header-anchor" href="#working-with-snapshots">#&nbsp;</a> Working with Snapshots</h3>
+<p>The FlowForge Tools sidebar allows you to browse the teams you are a member of
+and their projects.</p>
+<p>When you select a project, the sidebar lists its snapshots.</p>
+<p>You can then create a new snapshot using the flows you have running locally.</p>
+<h3 id="create-a-snapshot" tabindex="-1"><a class="header-anchor" href="#create-a-snapshot">#&nbsp;</a> Create a Snapshot</h3>
+<ol>
+<li>
+<p>Click the <code>+ snapshot</code> button to open the Create Snapshot dialog.</p>
+</li>
+<li>
+<p>In the dialog, enter a name for the snapshot and an optional description.</p>
+</li>
+<li>
+<p>The dialog lists the modules your flows are using, along with the version number.
+This information is included in the snapshot when sent up to the FlowForge project.
+Check the notes below on how this is handled within FlowForge.</p>
+</li>
+<li>
+<p>Click 'Create Snapshot'</p>
+</li>
+</ol>
+<p>At this point, a new snapshot will be created in FlowForge. You can then switch
+to the FlowForge platform and from the Snapshot view either select the rollback
+option to deploy that snapshot to your project, or set it as the Device Target
+to deploy it to your project's devices.</p>
+<p>We'll be working on improving this workflow in future releases of the plugin - to
+allow you to manage more from within the Node-RED plugin.</p>
+<h4 id="adding-modules-to-a-snapshot" tabindex="-1"><a class="header-anchor" href="#adding-modules-to-a-snapshot">#&nbsp;</a> Adding modules to a snapshot</h4>
+<p>The snapshot created by the sidebar includes a list of the modules used by the flows.
+If there are any modules included that have not already been added to your project,
+you will need to manually add them via the <code>Project Settings -&gt; Palette -&gt; Installed Modules</code>
+view in the platform.</p>
+<h4 id="defining-environment-variables" tabindex="-1"><a class="header-anchor" href="#defining-environment-variables">#&nbsp;</a> Defining Environment Variables</h4>
+<p>We do not currently support defining environment variables for the project from
+within the Node-RED Plugin. This means that when you create a snapshot from the
+plugin, the platform will automatically merge in the currently defined project
+environment variables.</p>
+<p>To manage your Project's environment variables, use the <code>Project Settings -&gt; Environment</code>
+view in the platform.</p>
 
             </div>
         </div>
         <div class="w-full md:w-64 md:ml-8 mt-4 md:mt-6 px-2">
             <h3 class="font-medium border-b pb-1 mb-4">On this page</h3>
             <ul id="toc" class="text-sm border-b mb-4"></ul>
-            <div class="text-sm pb-1 text-right mb-4"><a href="https://github.com/flowforge/flowforge/edit/main/docs/contribute/architecture.md">Edit this page</a></div>
+            <div class="text-sm pb-1 text-right mb-4"><a href="https://github.com/flowforge/flowforge/edit/main/docs/user/node-red-tools.md">Edit this page</a></div>
             <div class="text-xs pb-1 text-right mb-4 italic">Updated: 2022-11-24 13:58:14 +0000</div>
         </div>
     </div>

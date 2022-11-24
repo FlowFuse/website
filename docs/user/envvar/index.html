@@ -75,7 +75,7 @@
     <div class="w-full mx-auto ff-bg-light">
         <div class="font-medium border-b pb-1">
             
-            v1.0.2
+            v1.1.0
             
             /<a class="mx-2" href="/docs">docs</a>/<a class="mx-2" href="/docs/user">user</a>/<a class="mx-2" href="/docs/user/envvar">envvar</a>
         </div>
@@ -93,7 +93,7 @@
 <p>The <a href="../concepts#project-template"">Template</a> may include some predefined environment
 variables that are automatically applied to the project. The template may lock
 some of those variables to prevent a Project from changing them.</p>
-<p>Variables provided by the template cannot be deleted, however if they are editable,their value can be set to blank.</p>
+<p>Variables provided by the template cannot be deleted, however if they are editable, their value can be set to blank.</p>
 <h2 id="project" tabindex="-1"><a class="header-anchor" href="#project">#&nbsp;</a> Project</h2>
 <p>You can create additional variables for a single project by entering the name and value in the boxes at the bottom of the list and clicking the <code>+</code> button.</p>
 <p>You can delete a project variable using the trash can icon.</p>
@@ -102,6 +102,16 @@ some of those variables to prevent a Project from changing them.</p>
 <p>The second one <code>locked</code> is set by the template and the value is set to <code>true</code> is not editable</p>
 <p>The third one <code>user</code> is set for the project, the value can be edited or the variable deleted</p>
 <img src="../images/project-envvar.png"" width="500" />
+<h2 id="standard-environment-variables" tabindex="-1"><a class="header-anchor" href="#standard-environment-variables">#&nbsp;</a> Standard environment variables</h2>
+<p>Projects running on FlowForge are assigned a standard set environment variables as follows.</p>
+<ul>
+<li>FF_PROJECT_ID</li>
+<li>FF_PROJECT_NAME</li>
+<li>FF_DEVICE_ID</li>
+<li>FF_DEVICE_NAME</li>
+</ul>
+<p><code>FF_PROJECT_ID</code> and <code>FF_PROJECT_NAME</code> are assigned to the Project running on the FlowForge server as well as all associated Devices. In all Node-RED instances within a Project these variables will be the same.</p>
+<p>Unique values for <code>FF_DEVICE_ID</code> and <code>FF_DEVICE_NAME</code> are assigned to each instance of Node-RED running on a Device within a Project however these variables are not assigned to the instance running on the FlowForge server.</p>
 
             </div>
         </div>
@@ -109,7 +119,7 @@ some of those variables to prevent a Project from changing them.</p>
             <h3 class="font-medium border-b pb-1 mb-4">On this page</h3>
             <ul id="toc" class="text-sm border-b mb-4"></ul>
             <div class="text-sm pb-1 text-right mb-4"><a href="https://github.com/flowforge/flowforge/edit/main/docs/user/envvar.md">Edit this page</a></div>
-            <div class="text-xs pb-1 text-right mb-4 italic">Updated: 2022-11-04 14:11:53 +0000</div>
+            <div class="text-xs pb-1 text-right mb-4 italic">Updated: 2022-11-24 13:58:14 +0000</div>
         </div>
     </div>
 </div>

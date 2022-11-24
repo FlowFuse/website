@@ -75,7 +75,7 @@
     <div class="w-full mx-auto ff-bg-light">
         <div class="font-medium border-b pb-1">
             
-            v1.0.2
+            v1.1.0
             
             /<a class="mx-2" href="/docs">docs</a>/<a class="mx-2" href="/docs/install">install</a>/<a class="mx-2" href="/docs/install/kubernetes">kubernetes</a>/<a class="mx-2" href="/docs/install/kubernetes/aws">aws</a>
         </div>
@@ -89,6 +89,11 @@
 <h3 id="aws-cli" tabindex="-1"><a class="header-anchor" href="#aws-cli">#&nbsp;</a> AWS Cli</h3>
 <p>This is used to interact with the whole AWS environment</p>
 <p>https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html</p>
+<p>From here onwards this document assumes that you have configured the
+AWS CLI tools with a user that has permission to carry out the steps.</p>
+<p>This document does not include details of how to configure such a user
+in AWS IAM. Please show this document to you AWS Account Admin if you
+need help.</p>
 <h3 id="eksctl" tabindex="-1"><a class="header-anchor" href="#eksctl">#&nbsp;</a> eksctl</h3>
 <p>This tool is used to create/modify AWS EKS Clusters, it uses the credentials from the AWS Cli.</p>
 <p>https://docs.aws.amazon.com/eks/latest/userguide/eksctl.html</p>
@@ -109,6 +114,38 @@
 <h2 id="create-eks-cluster" tabindex="-1"><a class="header-anchor" href="#create-eks-cluster">#&nbsp;</a> Create EKS Cluster</h2>
 <p>Edit the <code>cluster.yml</code> file in <code>aws_eks</code> to set your preferred instance type and count along with AWS Region</p>
 <pre><code>eksctl create cluster -f cluster.yml
+</code></pre>
+<p>Example cluster.yml (Please visit <a href="https://eksctl.io/usage/creating-and-managing-clusters/#using-config-files">eksctl.io</a> to be sure you understand what this does.)</p>
+<pre><code>apiVersion: eksctl.io/v1alpha5
+kind: ClusterConfig
+
+metadata:
+  name: flowforge
+  region: us-east-1
+
+nodeGroups:
+  - name: management
+    labels:
+      role: &quot;management&quot;
+    instanceType: t2.small
+    desiredCapacity: 1
+    volumeSize: 20
+    ssh:
+      allow: false
+    iam:
+      withAddonPolicies:
+        efs: true
+  - name: instance
+    labels: 
+      role: &quot;projects&quot;
+    tags:
+      k8s.io/cluster-autoscaler/enabled: &quot;true&quot;
+      k8s.io/cluster-autoscaler/flowforge: &quot;owned&quot;
+    instanceType: t2.small
+    desiredCapacity: 2
+    volumeSize:
+    ssh:
+      allow: false
 </code></pre>
 <p>Add oidc provider for Loadbalance and IAM roles</p>
 <pre><code>eksctl utils associate-iam-oidc-provider --cluster flowforge-test --approve
@@ -185,10 +222,14 @@ aws iam attach-role-policy --role-name flowforge_service_account_role --policy-a
 <p>Create a IAM Role to bind IAM Policies to the service account https://docs.aws.amazon.com/eks/latest/userguide/iam-roles-for-service-accounts.html</p>
 <p>Create IAM Policy to allow sending emails (example: https://docs.aws.amazon.com/ses/latest/dg/sending-authorization-policy-examples.html)</p>
 <h2 id="use-aws-rds-postgresql-instance" tabindex="-1"><a class="header-anchor" href="#use-aws-rds-postgresql-instance">#&nbsp;</a> Use AWS RDS PostgreSQL instance</h2>
+<p>The following script creates a AWS RDS PostgreSQL instance, it also
+sets up some network access rules so only the FlowForge app can access
+it from inside the cluster (and not the Node-RED Projects).</p>
+<p>Please read it carfully before running it to ensure you understand it.</p>
+<p>A copy of this file can be found <a href="../setup-rds.sh"">here</a></p>
 <p>Run the following command</p>
-<pre><code>./aws-eks/setup-rds.sh
+<pre><code>./setup-rds.sh
 </code></pre>
-<p>(Need to either make this script available, it's very complex as it sets up the VPS network routing between the RDS instance and the EKS cluster)</p>
 <p>Make a note of the postgress hostname</p>
 <pre><code>aws rds describe-db-instances | jq .DBInstances[].Endpoint.Address
 </code></pre>
@@ -201,7 +242,7 @@ aws iam attach-role-policy --role-name flowforge_service_account_role --policy-a
             <h3 class="font-medium border-b pb-1 mb-4">On this page</h3>
             <ul id="toc" class="text-sm border-b mb-4"></ul>
             <div class="text-sm pb-1 text-right mb-4"><a href="https://github.com/flowforge/flowforge/edit/main/docs/install/kubernetes/aws.md">Edit this page</a></div>
-            <div class="text-xs pb-1 text-right mb-4 italic">Updated: 2022-11-04 14:11:53 +0000</div>
+            <div class="text-xs pb-1 text-right mb-4 italic">Updated: 2022-11-24 13:58:14 +0000</div>
         </div>
     </div>
 </div>

@@ -75,7 +75,7 @@
     <div class="w-full mx-auto ff-bg-light">
         <div class="font-medium border-b pb-1">
             
-            v1.0.2
+            v1.1.0
             
             /<a class="mx-2" href="/docs">docs</a>/<a class="mx-2" href="/docs/install">install</a>/<a class="mx-2" href="/docs/install/upgrading">upgrading</a>
         </div>
@@ -88,29 +88,23 @@
 particular requirements needed to upgrade to a given level.</p>
 <p>Note that we do not support downgrading FlowForge to previous levels once an upgrade
 has been performed.</p>
-<h3 id="upgrading-to-0.7" tabindex="-1"><a class="header-anchor" href="#upgrading-to-0.7">#&nbsp;</a> Upgrading to 0.7</h3>
-<p>The 0.7 release introduces the <a href="../../user/concepts#project-type"">ProjectType concept</a>.</p>
-<p>After upgrading to 0.7, an administrator must perform the following tasks before
-users will be able to create new projects:</p>
-<ol>
-<li>Create a Project Type.
-<ol>
-<li>On the Administrator Settings -&gt; Project Types page, click 'Create project type'.</li>
-<li>Provide a name and description. If you have billing enabled, copy in the default
-Stripe Product/Price IDs from your runtime settings file.</li>
-<li>Click 'create'</li>
-</ol>
-</li>
-<li>Assign your existing stacks to that type
-<ol>
-<li>On the Administrator Settings -&gt; Stacks page, edit each existing stack via
-the drop-down menu in the table.</li>
-<li>As a one-time action, set its Project Type to the one just created.</li>
-<li>Click 'save'. This will update the stack <em>and</em> all existing projects to
-be associated with the new Project Type</li>
-</ol>
-</li>
-</ol>
+<h3 id="upgrading-to-1.1" tabindex="-1"><a class="header-anchor" href="#upgrading-to-1.1">#&nbsp;</a> Upgrading to 1.1</h3>
+<p>Details of how to upgrade can be found for:</p>
+<ul>
+<li>LocalFS <a href=".././local/#upgrade"">here</a>.</li>
+<li>Docker <a href=".././docker/#upgrade"">here</a>.</li>
+<li>Kubernetes <a href=".././kubernetes/#upgrade"">here</a>.</li>
+</ul>
+<h4 id="file-server-added" tabindex="-1"><a class="header-anchor" href="#file-server-added">#&nbsp;</a> File Server added</h4>
+<p>This release introduces a system for supporting persitant file storage when running on
+Docker or Kubernetes (it will also work with LocalFS, but is not required as projects
+have access to the hosts filesystem).</p>
+<p>Details of how to configure this can be found for:</p>
+<ul>
+<li>LocalFS <a href=".././file-storage/#localfs"">here</a>.</li>
+<li>Docker <a href=".././file-storage/#docker-compose"">here</a>.</li>
+<li>Kubernetes <a href=".././file-storage/#kubernetes-helm"">here</a>.</li>
+</ul>
 <h3 id="upgrading-to-0.8" tabindex="-1"><a class="header-anchor" href="#upgrading-to-0.8">#&nbsp;</a> Upgrading to 0.8</h3>
 <h4 id="mqtt-broker-added" tabindex="-1"><a class="header-anchor" href="#mqtt-broker-added">#&nbsp;</a> MQTT Broker added</h4>
 <p>This release introduces an MQTT Broker into the FlowForge platform used to communicate
@@ -136,6 +130,29 @@ messages between projects seamlessly.</p>
 <p>To deploy flows using these nodes to a Device will require the Device to be running
 the latest 0.2.0 release. They will also need to have their credentials regenerated
 once the MQTT Broker has been added.</p>
+<h3 id="upgrading-to-0.7" tabindex="-1"><a class="header-anchor" href="#upgrading-to-0.7">#&nbsp;</a> Upgrading to 0.7</h3>
+<p>The 0.7 release introduces the <a href="../../user/concepts#project-type"">ProjectType concept</a>.</p>
+<p>After upgrading to 0.7, an administrator must perform the following tasks before
+users will be able to create new projects:</p>
+<ol>
+<li>Create a Project Type.
+<ol>
+<li>On the Administrator Settings -&gt; Project Types page, click 'Create project type'.</li>
+<li>Provide a name and description. If you have billing enabled, copy in the default
+Stripe Product/Price IDs from your runtime settings file.</li>
+<li>Click 'create'</li>
+</ol>
+</li>
+<li>Assign your existing stacks to that type
+<ol>
+<li>On the Administrator Settings -&gt; Stacks page, edit each existing stack via
+the drop-down menu in the table.</li>
+<li>As a one-time action, set its Project Type to the one just created.</li>
+<li>Click 'save'. This will update the stack <em>and</em> all existing projects to
+be associated with the new Project Type</li>
+</ol>
+</li>
+</ol>
 
             </div>
         </div>
@@ -143,7 +160,7 @@ once the MQTT Broker has been added.</p>
             <h3 class="font-medium border-b pb-1 mb-4">On this page</h3>
             <ul id="toc" class="text-sm border-b mb-4"></ul>
             <div class="text-sm pb-1 text-right mb-4"><a href="https://github.com/flowforge/flowforge/edit/main/docs/install/upgrading.md">Edit this page</a></div>
-            <div class="text-xs pb-1 text-right mb-4 italic">Updated: 2022-11-04 14:11:53 +0000</div>
+            <div class="text-xs pb-1 text-right mb-4 italic">Updated: 2022-11-24 13:58:14 +0000</div>
         </div>
     </div>
 </div>

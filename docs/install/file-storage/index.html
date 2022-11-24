@@ -18,7 +18,7 @@
     <meta name="twitter:description" content="FlowForge is an open-source, low-code platform for integration and automation. Helping you run Node-RED at production scales in a secure, scalable and team-based environment." />
     <meta name="twitter:site" content="@flowforgeinc" />
     <meta name="twitter:image" content="/images/og-social-tile.jpg" />
-    <meta property="og:url" content="https://flowforge.com/docs/contribute/architecture/" />
+    <meta property="og:url" content="https://flowforge.com/docs/install/file-storage/" />
     <meta property="og:title" content="" />
     <meta property="og:description" content="FlowForge is an open-source, low-code platform for integration and automation. Helping you run Node-RED at production scales in a secure, scalable and team-based environment." />
     <meta property="og:image" content="/images/og-social-tile.jpg" />
@@ -77,83 +77,113 @@
             
             v1.1.0
             
-            /<a class="mx-2" href="/docs">docs</a>/<a class="mx-2" href="/docs/contribute">contribute</a>/<a class="mx-2" href="/docs/contribute/architecture">architecture</a>
+            /<a class="mx-2" href="/docs">docs</a>/<a class="mx-2" href="/docs/install">install</a>/<a class="mx-2" href="/docs/install/file-storage">file-storage</a>
         </div>
     </div>
     <div class="w-full mx-auto ff-bg-light flex flex-col md:flex-row">
         <div class="flex-grow order-last md:order-first">
             <div class="mt-6 mb-4 prose prose-blue main-content">
-                <h1 id="flowforge-architecture" tabindex="-1"><a class="header-anchor" href="#flowforge-architecture">#&nbsp;</a> FlowForge Architecture</h1>
-<p>A FlowForge install is made up of 2 main components</p>
+                <h1 id="flowforge-file-storage" tabindex="-1"><a class="header-anchor" href="#flowforge-file-storage">#&nbsp;</a> FlowForge File Storage</h1>
+<p>When running in cloud like environment (under Docker or Kubernetes)
+FlowForge projects do not have access to a persistent filesystem to
+use to store files. Files written to the container file system will
+be lost if the project is restarted.</p>
+<p>For this reason we recommend that the Node-RED core file nodes are
+disabled on these platforms.</p>
+<p>To solve this limitation FlowForge provides a set of replacement
+file nodes. These are backed by Object Store which can be configured
+to use a mounted volume or S3 bucket.</p>
+<p>The FlowForge File Storage system can also be used with the FlowForge
+LocalFS build. In this case the FlowForge Projects already have
+direct access to the file system of the machine hosting FlowForge.</p>
+<h2 id="configuring" tabindex="-1"><a class="header-anchor" href="#configuring">#&nbsp;</a> Configuring</h2>
+<p>The Docker Compose and Kubernetes Helm Chart will both now start a
+container running the File Server application.</p>
+<p>There are 2 main things to set up:</p>
+<ol>
+<li>Which backend to use (<code>localfs</code> or <code>s3</code>)</li>
+<li>The configuration options for the backend</li>
+</ol>
+<h3 id="localfs" tabindex="-1"><a class="header-anchor" href="#localfs">#&nbsp;</a> LocalFS</h3>
+<p>This can be used when you mount a volume into the File Server container
+to persist files.</p>
+<p>The only configuration option used is the path to the directory to use
+as the root of the storage</p>
+<pre><code>host: 0.0.0.0
+port: 3001
+base_url: http://flowforge:3000
+driver:
+  type: localfs
+  options:
+    root: var/root
+</code></pre>
+<h3 id="s3-compatible-storage" tabindex="-1"><a class="header-anchor" href="#s3-compatible-storage">#&nbsp;</a> S3 Compatible Storage</h3>
 <ul>
-<li>The Management Application</li>
-<li>The Projects running instances of Node-RED</li>
+<li>options
+<ul>
+<li>bucket - name of S3 Bucket (required)</li>
+<li>region - AWS Region for the bucket (required)</li>
+<li>endpoint - S3 ObjectStore Endpoint (if not using AWS S3)</li>
+<li>forcePathStyle: true</li>
+<li>credential
+<ul>
+<li>accessKeyId - AccountID/Username</li>
+<li>secretAccessKey - SecretKey/Password</li>
 </ul>
-<p>These can be deployed in one of 2 ways</p>
-<ul>
-<li>
-<p>On a single machine</p>
-<p><img src=".././images/ff-localfs.png"" alt="LocalFS Architecture"></p>
 </li>
-<li>
-<p>Using a Container Orchestration platform (Kubernetes/Docker Compose)</p>
-<p><img src=".././images/ff-containers.png"" alt="Container Architecture"></p>
+</ul>
 </li>
 </ul>
-<h2 id="flowforge-management-application" tabindex="-1"><a class="header-anchor" href="#flowforge-management-application">#&nbsp;</a> FlowForge Management Application</h2>
-<p>This provides the interface for managing Users and Projects. It also provides a collection of APIs to support the Projects once started.</p>
-<p>A key component is the Container API driver, this is the part that actually creates/destroys Projects, it also keeps track of what Projects should be running and restarts if needed.</p>
-<h3 id="container-drivers" tabindex="-1"><a class="header-anchor" href="#container-drivers">#&nbsp;</a> Container Drivers</h3>
-<p>Projects are started by the FlowForge Management Application via one of the following Container Drivers. Documentation for the Container Driver API will be available in the <a href="../../api/"">API</a> section.</p>
-<h4 id="localfs" tabindex="-1"><a class="header-anchor" href="#localfs">#&nbsp;</a> Localfs</h4>
-<p>This driver runs Projects as separate processes on the same machine as the FlowForge Management Application. Each Project gets its own <code>userDir</code> and a dedicated TCP/IP port to listen to.</p>
-<p>State is stored in a local SQLite database</p>
-<p>There is no automatic Ingres automation provided by this driver.</p>
-<h4 id="kubernetes" tabindex="-1"><a class="header-anchor" href="#kubernetes">#&nbsp;</a> Kubernetes</h4>
-<p>This driver runs Projects in separate containers and each instance is accessed by a dedicated hostname via a HTTP Ingres proxy.</p>
-<p>State is stored in a provided PostgreSQL database.</p>
-<p>Project containers are segregated into their own namespace (currently hardcoded to <code>flowforge</code>)</p>
-<p>The driver uses the <a href="https://www.npmjs.com/package/@kubernetes/client-node">@kubernetes/client-node</a> to interact with the cluster.</p>
-<p>The driver will create the required Service and Ingres Kubernetes resources to expose each instance via what ever Ingress Controller the underlying Kubernetes cluster provides.</p>
-<h4 id="docker-compose" tabindex="-1"><a class="header-anchor" href="#docker-compose">#&nbsp;</a> Docker-Compose</h4>
-<p>This driver runs Projects in separate containers and each instance is accessed by a dedicated hostname via a HTTP Ingres proxy.</p>
-<p>State is stored in a provided PostgreSQL database.</p>
-<p>The driver uses the <a href="https://www.npmjs.com/package/dockerode">dockerode</a> to interact with the cluster.</p>
-<p>The driver will add the required Environment variables to each Project container to work with the <a href="https://hub.docker.com/r/jwilder/nginx-proxy">jwilder/nginx-proxy</a> NGINX proxy.</p>
-<h2 id="flowforge-projects" tabindex="-1"><a class="header-anchor" href="#flowforge-projects">#&nbsp;</a> FlowForge Projects</h2>
-<p>A FlowForge Project is made up of 2 parts</p>
+<p>For further reference of all available options you can look at the S3Client documentation <a href="https://docs.aws.amazon.com/AWSJavaScriptSDK/v3/latest/clients/client-s3/interfaces/s3clientconfig.html">here</a></p>
+<p>For example:</p>
+<pre><code>host: '0.0.0.0'
+port: 3001
+base_url: http://forge.default
+driver:
+  type: s3
+  options:
+    bucket: flowforge-files
+    credentials:
+      accessKeyId: XXXXXXXXXXXXXXXXXXX
+      secretAccessKey: XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+    forcePathStyle: true
+    region: us-east-1
+</code></pre>
+<h2 id="docker-compose" tabindex="-1"><a class="header-anchor" href="#docker-compose">#&nbsp;</a> Docker Compose</h2>
+<p>You can configure the backend store for the File Server by editing the
+<code>etc/flowforge-storage.yml</code> file. It defaults to using the <code>localfs</code>
+backend driver and mounting a directory into the container.</p>
+<h2 id="kubernetes-helm" tabindex="-1"><a class="header-anchor" href="#kubernetes-helm">#&nbsp;</a> Kubernetes Helm</h2>
+<p>You can configure the backend store for the File server by including
+the following values passed to helm</p>
 <ul>
-<li>The FlowForge Launcher</li>
-<li>A Node-RED instance</li>
+<li><code>forge.fileStore.type</code> - defaults to <code>s3</code></li>
+<li><code>forge.fileStore.options</code> - an object that matches the Yaml described above</li>
 </ul>
-<p><img src=".././images/ff-project-arch.png"" alt="Project Architecture"></p>
-<h3 id="flowforge-launcher" tabindex="-1"><a class="header-anchor" href="#flowforge-launcher">#&nbsp;</a> FlowForge Launcher</h3>
-<p>This is a small application that handles downloading the Project specific settings, building a <code>settings.js</code> from those settings and then starting the Node-RED instance.</p>
-<p>The launcher presents a HTTP API (it defaults to the Node-RED port + 1000) that allows the FlowForge Management Application to start/stop/restart the Node-RED instance as well as query it's current state and retrieve the console logs.</p>
-<p>The launcher project can be found <a href="https://github.com/flowforge/flowforge-nr-launcher">here</a></p>
-<h3 id="node-red-instance" tabindex="-1"><a class="header-anchor" href="#node-red-instance">#&nbsp;</a> Node-RED Instance</h3>
-<p>This is the standard Node-RED package with the following plugins</p>
-<ul>
-<li><a href="https://github.com/flowforge/flowforge-nr-storage">nr-storage</a></li>
-<li><a href="https://github.com/flowforge/flowforge-nr-auth">nr-auth</a></li>
-<li><a href="https://github.com/flowforge/flowforge-nr-audit-logger">nr-audit-logger</a></li>
-</ul>
-<h4 id="nr-storage" tabindex="-1"><a class="header-anchor" href="#nr-storage">#&nbsp;</a> nr-storage</h4>
-<p>This plugin is used to save flows, settings, sessions and library entries back to the FlowForge Management Application.</p>
-<p>This plugin uses the Node-RED <a href="https://nodered.org/docs/api/storage">Storage API</a></p>
-<h4 id="nr-auth" tabindex="-1"><a class="header-anchor" href="#nr-auth">#&nbsp;</a> nr-auth</h4>
-<p>This plugin is used to authenticate users trying to access the Node-RED Editor, it refers back to the FlowForge Management Application to ensure only members of the team that owns the project can log in.</p>
-<p>This plugin uses the Node-RED <a href="https://nodered.org/docs/user-guide/runtime/securing-node-red#custom-user-authentication">Authentication API</a></p>
-<h4 id="nr-audit-logger" tabindex="-1"><a class="header-anchor" href="#nr-audit-logger">#&nbsp;</a> nr-audit-logger</h4>
-<p>This plugin sends Node-RED Audit events (e.g. user log in and flow deployment events) back to the to the FlowForge Management Application to allow a reliable audit of what actions have taken place in the project.</p>
-<p>This plugin uses the Node-RED <a href="https://nodered.org/docs/user-guide/runtime/logging">Logging API</a></p>
+<h2 id="enabling-the-flowforge-file-nodes" tabindex="-1"><a class="header-anchor" href="#enabling-the-flowforge-file-nodes">#&nbsp;</a> Enabling the FlowForge File Nodes</h2>
+<p>The FlowForge File nodes have been written to be direct replacements
+for the Node-RED core file-in and file-out nodes. This means that only
+one version of these nodes can be active in a project at a time.</p>
+<p>The FlowForge File nodes will automatically disable themselves if the
+core nodes are present. This means to enable the nodes you need to
+exclude the code nodes.</p>
+<p>This can be done in the FlowForge Template.</p>
+<img src="../images/file-node-template.png"" width=500 />
+<p>Adding <code>10-file.js</code> to the list of &quot;Excluded nodes by filename&quot; section will ensure that the core file nodes are not loaded by the project.</p>
+<h2 id="working-with-flowforge-devices" tabindex="-1"><a class="header-anchor" href="#working-with-flowforge-devices">#&nbsp;</a> Working with FlowForge Devices</h2>
+<p>Because the FlowForge File nodes are a direct replacement for the
+Node-RED core file nodes you can use them to build flows
+in the cloud that can then be deployed to a device and make use of
+the file system on the device.</p>
+<p>When a snapshot is pushed to a device the Node-RED core file nodes
+will be loaded.</p>
 
             </div>
         </div>
         <div class="w-full md:w-64 md:ml-8 mt-4 md:mt-6 px-2">
             <h3 class="font-medium border-b pb-1 mb-4">On this page</h3>
             <ul id="toc" class="text-sm border-b mb-4"></ul>
-            <div class="text-sm pb-1 text-right mb-4"><a href="https://github.com/flowforge/flowforge/edit/main/docs/contribute/architecture.md">Edit this page</a></div>
+            <div class="text-sm pb-1 text-right mb-4"><a href="https://github.com/flowforge/flowforge/edit/main/docs/install/file-storage/README.md">Edit this page</a></div>
             <div class="text-xs pb-1 text-right mb-4 italic">Updated: 2022-11-24 13:58:14 +0000</div>
         </div>
     </div>

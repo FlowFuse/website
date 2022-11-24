@@ -75,7 +75,7 @@
     <div class="w-full mx-auto ff-bg-light">
         <div class="font-medium border-b pb-1">
             
-            v1.0.2
+            v1.1.0
             
             /<a class="mx-2" href="/docs">docs</a>/<a class="mx-2" href="/docs/install">install</a>/<a class="mx-2" href="/docs/install/configuration">configuration</a>
         </div>
@@ -84,7 +84,9 @@
         <div class="flex-grow order-last md:order-first">
             <div class="mt-6 mb-4 prose prose-blue main-content">
                 <h1 id="configuring-flowforge" tabindex="-1"><a class="header-anchor" href="#configuring-flowforge">#&nbsp;</a> Configuring FlowForge</h1>
-<p>The base configuration of the FlowForge platform is provided in the file <code>/opt/flowforge/etc/flowforge.yml</code> <sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup>.</p>
+<p>The base configuration of the FlowForge platform is provided in the file
+<code>/opt/flowforge/etc/flowforge.yml</code>. This assumes the default install location
+of <code>/opt/flowforge</code>.</p>
 <p>To run a local install, you can use the default options. This section describes
 the options available in the configuration file.</p>
 <h2 id="server-configuration" tabindex="-1"><a class="header-anchor" href="#server-configuration">#&nbsp;</a> Server configuration</h2>
@@ -98,7 +100,7 @@ the options available in the configuration file.</p>
 <tbody>
 <tr>
 <td><code>host</code></td>
-<td>The address to serve the web ui on. This defaults to <code>localhost</code> which means the ui will only be available when browsing from the same server that is running the platform. To make it accessible to other devices on the network, set it to <code>0.0.0.0</code></td>
+<td>The address to serve the web ui on. This defaults to <code>localhost</code> which means the ui will only be available when browsing from the same server that is running the platform. To make it accessible to other devices on the network, set it to <code>0.0.0.0</code>. <br>NOTE: If <code>host</code> is changed, please also update <code>base_url</code> to match e.g.  <code>http://[ip-address-of-host]:3000</code><br>NOTE: We do not support changing the host value once you have created a project.</td>
 </tr>
 <tr>
 <td><code>port</code></td>
@@ -188,7 +190,7 @@ the options available in the configuration file.</p>
 </tr>
 <tr>
 <td><code>driver.options.start_port</code></td>
-<td>The port number to start assigning to projects as they are created. Default: <code>7880</code></td>
+<td>The port number to start assigning to projects as they are created. Default: <code>12080</code></td>
 </tr>
 <tr>
 <td><code>driver.options.node_path</code></td>
@@ -343,13 +345,23 @@ broker, but some features will not be available.</p>
 </tbody>
 </table>
 <p>Setting <code>logging.http</code> to <code>info</code> will log every HTTP request and response details.</p>
-<hr class="footnotes-sep">
-<section class="footnotes">
-<ol class="footnotes-list">
-<li id="fn1" class="footnote-item"><p>This assumes the default install location of <code>/opt/flowforge</code>. <a href="#fnref1" class="footnote-backref">↩︎</a></p>
-</li>
-</ol>
-</section>
+<h2 id="file-storage" tabindex="-1"><a class="header-anchor" href="#file-storage">#&nbsp;</a> File storage</h2>
+<p>FlowForge can provide an Object Store to allow users to read or write a
+file from flows.</p>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>fileStore.url</code></td>
+<td>The URL of the FlowForge File Server to use. Default: not set</td>
+</tr>
+</tbody>
+</table>
 
             </div>
         </div>
@@ -357,7 +369,7 @@ broker, but some features will not be available.</p>
             <h3 class="font-medium border-b pb-1 mb-4">On this page</h3>
             <ul id="toc" class="text-sm border-b mb-4"></ul>
             <div class="text-sm pb-1 text-right mb-4"><a href="https://github.com/flowforge/flowforge/edit/main/docs/install/configuration.md">Edit this page</a></div>
-            <div class="text-xs pb-1 text-right mb-4 italic">Updated: 2022-11-04 14:11:53 +0000</div>
+            <div class="text-xs pb-1 text-right mb-4 italic">Updated: 2022-11-24 13:58:14 +0000</div>
         </div>
     </div>
 </div>
