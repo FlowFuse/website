@@ -95,15 +95,15 @@ Technical guides, published once per week.
 
 Each content type has channels which are appropriate, this table sets out which content should be posted on each channel.
 
-|Content          |Blog  |Mailing List |Twitter  |Youtube  |LinkedIn |Reddit |Node-RED Slack|Node-RED Discord |
-|---              |---   |---          |---      |---      |---      |---    |---           |---              |
-|Release          |*     |             |*        |*        |*        |*      |*             |*                |
-|Patch            |*     |             |*        |         |         |*      |*             |                 | 
-|Planned Downtime |*     |             |*        |         |*        |*      |*             |                 |
-|Outage           |      |             |         |         |         |       |              |                 |
-|Corporate Comms  |*     |             |*        |         |*        |       |              |                 |
-|Newsletter       |*     |*            |*        |         |*        |*      |*             |*                |
-|How To           |      |*            |*        |         |*        |*      |*             |*                |
+|Content          |Blog  |Mailing List |Twitter  |Youtube  |LinkedIn |Reddit |Node-RED Slack|Node-RED Discorse |
+|---              |---   |---          |---      |---      |---      |---    |---           |---               |
+|Release          |*     |             |*        |*        |*        |*      |*             |*                 |
+|Patch            |*     |             |*        |         |         |*      |*             |                  | 
+|Planned Downtime |*     |             |*        |         |*        |*      |*             |                  |
+|Outage           |      |             |         |         |         |       |              |                  |
+|Corporate Comms  |*     |             |*        |         |*        |       |              |                  |
+|Newsletter       |*     |*            |*        |         |*        |*      |*             |*                 |
+|How To           |      |*            |*        |         |*        |*      |*             |*                 |
 
 
 ### Channel Content Guidance
@@ -142,6 +142,6 @@ Keep it short, Reddit posts should be factual, informal and have a call to actio
 
 Keep it short, Slack messages should be factual, informal and have a call to action (a link) where a user can read more.
 
-#### Discord (Node-RED Forums)
+#### Discorse (Node-RED Forums)
 
 Keep content short, posts to the Node-RED discord should be factual, informal and have a call to action (a link) where a user can read more.
