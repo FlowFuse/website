@@ -34,3 +34,30 @@ Currently there is no auto deployment to staging, this should be rectified in th
 
 When setting up a team you'll need to enter billing details. For credit card
 details, use [the Stripe mock data](https://stripe.com/docs/testing#testing-interactively).
+
+## Using the FlowForge Device Agent with staging
+
+Staging uses pre-release npm packages stored in a GitHub npm repository. To be able to use these packages you will need to authenticate with the repository.
+
+You will need to create a GH Personal token
+
+1. Go to your [classic personal access tokens](https://github.com/settings/tokens)
+1. Click Generate New Token (and again pick the classic option)
+1. You will probably be prompted for 2FA now
+1. Give the token a meaningful name
+1. Pick an expiration. I went with no expiration so I don't have to do this again and I'm going to limit the scope
+1. Tick the box next to `read:packages`
+1. Click generate token button at bottom of page
+
+Store the token in your private 1Password vault
+
+Create the following .npmrc file:
+
+```
+//npm.pkg.github.com/:_authToken=ghp_xxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+@flowforge:registry=https://npm.pkg.github.com/
+```
+
+where `ghp_xxxxxxxxxxxxxxxxxxxxxxxxxxxxx` is the token you just generated.
+
+You need to place this in the project directory, e.g. `/opt/flowforge-device/project` or if you are running it in the dev env `flowforge-device-agent/var/project` (assume starting with `node index -d ./var -c ./var/device.yml`)
