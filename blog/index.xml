@@ -3,8 +3,103 @@
     <title>FlowForge</title>
     <link href="https://flowforge.com/blog/index.xml" rel="self"/>
     <link href="https://flowforge.com/blog"/>
-    <updated>2022-11-04T00:00:00Z</updated>
+    <updated>2022-11-24T18:00:00Z</updated>
     <id>https://flowforge.com/blog</id>
+    
+    <entry>
+        <id>https://flowforge.com/blog/2022/11/flowforge-1-1-released/</id>
+        <title>FlowForge 1.1 released with persistent file storage</title>
+        <summary>A new set of features to improve FlowForge as the best solution for running Node-RED in production in a secure, scalable, and team-based environment.</summary>
+        <updated>2022-11-24T18:00:00Z</updated>
+        <link href="https://flowforge.com/blog/2022/11/flowforge-1-1-released/"/>
+        <author><name>Rob Marcer</name></author>
+        <content type="html">&lt;p&gt;Persist files on your FlowForge Projects, publish locally developed flows to dozens of Devices in a few clicks, and use our new interface for managing Project Deployments.&lt;/p&gt;
+&lt;!--more--&gt;
+&lt;p&gt;We&#39;re pleased to announce version 1.1 is now available! The latest release of the FlowForge application contains new features, many improvements, and bug fixes. Keep reading for the details of what&#39;s in this release or you can watch our 1 minute roundup video of the new release above.&lt;/p&gt;
+&lt;h2 id=&quot;features&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://flowforge.com/blog/2022/11/flowforge-1-1-released/#features&quot;&gt;#&amp;nbsp;&lt;/a&gt; Features&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/flowforge/flowforge/issues/998&quot;&gt;Persistent File Storage&lt;/a&gt; We&#39;ve had a great deal of feedback
+from our customers that being able to persist files in a project is a vital feature
+in Node-RED. In FlowForge 1.1 flows can now create and persist files within
+your Projects. We know those files are used in many creative ways and we&#39;re looking
+forward to seeing how users improve their Projects using this new feature.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://flowforge.com/docs/user/node-red-tools/&quot;&gt;Import Snapshots from Outside FlowForge&lt;/a&gt; Developers may wish to
+work on Node-RED in a local environment but want an easy path to share that with their team. You can now link your Node-RED instances running outside of FlowForge and push Snapshots directly into your FlowForge Projects to leverage FlowForge fully.  With this new feature we&#39;ve made it effortless to push a local build of a project to FlowForge for deployment to your staging and production FlowForge instances.&lt;/p&gt;
+&lt;h2 id=&quot;improvements&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://flowforge.com/blog/2022/11/flowforge-1-1-released/#improvements&quot;&gt;#&amp;nbsp;&lt;/a&gt; Improvements&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/flowforge/flowforge/issues/1046&quot;&gt;Project Deployments UX&lt;/a&gt;
+We&#39;ve reworked the interface for managing your FlowForge Deployments of Node-RED.
+We are seeing FlowForge users deploying their Projects to edge devices at scale.
+This is another step towards making it easier for users to manage a large quantity
+of devices in their Projects.&lt;/p&gt;
+&lt;p&gt;When users change their username, email address, or password they&#39;ll now be
+notified through email of changes to ensure they were made by the
+user.&lt;/p&gt;
+&lt;p&gt;In this release a lot of effort went into the install process, specifically the
+local install method. First and foremost; a default Stack and Template will be
+installed automatically. That will ensure users get up and running with
+Node-RED more quickly. Administrators of each platform can still change Stacks
+and Templates when needed. Secondly, the installer now auto generates the
+configuration file for Mosquitto, the MQTT broker FlowForge uses. This again should save
+administrators time when installing FlowForge.&lt;/p&gt;
+&lt;h2 id=&quot;bug-fixes&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://flowforge.com/blog/2022/11/flowforge-1-1-released/#bug-fixes&quot;&gt;#&amp;nbsp;&lt;/a&gt; Bug Fixes&lt;/h2&gt;
+&lt;p&gt;The v1.0.1 release included a bug fix where &lt;a href=&quot;https://github.com/flowforge/flowforge/issues/1186&quot;&gt;snapshot rollbacks&lt;/a&gt;
+didn&#39;t work, which has also been included in v1.1 onwards.&lt;/p&gt;
+&lt;p&gt;We&#39;ve fixed the following bugs in this release.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;When installing the stack during a FlowForge installation the process would quit on Windows &lt;a href=&quot;https://github.com/flowforge/installer/issues/62&quot;&gt;#62&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;After accepting an invite to join a team, users are no longer seeing a blank page &lt;a href=&quot;https://github.com/flowforge/flowforge/issues/1208&quot;&gt;#1208&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Pagination on device deployments wasn&#39;t showing all devices &lt;a href=&quot;https://github.com/flowforge/flowforge/issues/1207&quot;&gt;#1207&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Markdown rendering when selecting the project type wasn&#39;t quite working, fixed now! &lt;a href=&quot;https://github.com/flowforge/flowforge/issues/1171&quot;&gt;#1171&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Continuous spinner in UI body when entering a new (short) password &lt;a href=&quot;https://github.com/flowforge/flowforge/issues/1280&quot;&gt;#1280&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Friendly stack name not shown in the Change Project Stack option list &lt;a href=&quot;https://github.com/flowforge/flowforge/issues/1169&quot;&gt;#1169&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;The stacks view in the admin area didn&#39;t render properly &lt;a href=&quot;https://github.com/flowforge/flowforge/issues/1260&quot;&gt;#1260&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Like the deployments page, pagination for stacks was broken. &lt;a href=&quot;https://github.com/flowforge/flowforge/issues/1164&quot;&gt;#1164&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Several UX and UI bugs got polished away!&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;contributors&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://flowforge.com/blog/2022/11/flowforge-1-1-released/#contributors&quot;&gt;#&amp;nbsp;&lt;/a&gt; Contributors&lt;/h2&gt;
+&lt;p&gt;We&#39;d like the thank the following for their contributions to this release:&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/mikermcneil&quot;&gt;mikermcneil&lt;/a&gt; for their work on &lt;a href=&quot;https://github.com/flowforge/flowforge/pull/1301&quot;&gt;#1301&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;As an open-source project, we welcome community involvement in what we&#39;re building.
+If you&#39;re interested in contributing, checkout our &lt;a href=&quot;https://flowforge.com/docs/contribute/&quot;&gt;guide in the docs&lt;/a&gt;.&lt;/p&gt;
+&lt;h3 id=&quot;try-it-out&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://flowforge.com/blog/2022/11/flowforge-1-1-released/#try-it-out&quot;&gt;#&amp;nbsp;&lt;/a&gt; Try it out&lt;/h3&gt;
+&lt;p&gt;As said before, a lot of effort went into the local installer. We&#39;re confident
+you can have your own FlowForge running locally in about 30 minutes.
+&lt;a href=&quot;https://flowforge.com/docs/install/local/&quot;&gt;Get started right away!&lt;/a&gt;
+(&lt;a href=&quot;https://flowforge.com/docs/install/docker/&quot;&gt;Docker&lt;/a&gt; and &lt;a href=&quot;https://flowforge.com/docs/install/kubernetes/&quot;&gt;Kubernetes&lt;/a&gt;
+are available too!)&lt;/p&gt;
+&lt;p&gt;If you&#39;d rather use our hosted offering: &lt;a href=&quot;https://app.flowforge.com/account/create?code=RELEASE11&quot;&gt;Sign up for FlowForge Cloud&lt;/a&gt;
+with the coupon &lt;strong&gt;RELEASE11&lt;/strong&gt; to get your first project free for a month.&lt;/p&gt;
+&lt;h3 id=&quot;upgrading-flowforge&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://flowforge.com/blog/2022/11/flowforge-1-1-released/#upgrading-flowforge&quot;&gt;#&amp;nbsp;&lt;/a&gt; Upgrading FlowForge&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&quot;https://app.flowforge.com/&quot;&gt;FlowForge Cloud&lt;/a&gt; is already running 1.1. To use
+persisted files you&#39;ll need to upgrade your projects stack. You&#39;ll be prompted
+to do so on the project page.&lt;/p&gt;
+&lt;p&gt;If you installed a previous version of FlowForge and want to upgrade, our documentation provides a
+guide for &lt;a href=&quot;https://flowforge.com/docs/install/upgrading/&quot;&gt;upgrading your FlowForge instance&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&quot;getting-help&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://flowforge.com/blog/2022/11/flowforge-1-1-released/#getting-help&quot;&gt;#&amp;nbsp;&lt;/a&gt; Getting help&lt;/h3&gt;
+&lt;p&gt;Please check FlowForge&#39;s &lt;a href=&quot;https://flowforge.com/docs/&quot;&gt;documentation&lt;/a&gt; as the answers to many questions are covered there.&lt;/p&gt;
+&lt;p&gt;If you hit any problems with the platform please raise an &lt;a href=&quot;https://github.com/flowforge/flowforge/issues&quot;&gt;issue on GitHub&lt;/a&gt;.
+That also includes if you have any feedback or feature requests.&lt;/p&gt;
+&lt;p&gt;Chat with us on the &lt;code&gt;#flowforge&lt;/code&gt; channel on the &lt;a href=&quot;https://nodered.org/slack&quot;&gt;Node-RED Slack workspace&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;You can also raise a support ticket by emailing &lt;a href=&quot;mailto:support@flowforge.com&quot;&gt;support@flowforge.com&lt;/a&gt;&lt;/p&gt;
+</content>
+    </entry>
     
     <entry>
         <id>https://flowforge.com/blog/2022/11/community-news-10/</id>
