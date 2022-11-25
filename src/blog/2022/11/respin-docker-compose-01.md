@@ -1,7 +1,7 @@
 ---
 title: "Re-spin of Docker-Compose install package"
 subtitle: Adding ability to locally build file-server container
-description: Details about patch release
+description: Details FlowForge v1.1.1
 date: 2022-11-25
 authors: ["ben-hardill"]
 ---
