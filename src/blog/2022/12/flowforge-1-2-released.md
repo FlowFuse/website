@@ -1,4 +1,3 @@
-
 ---
 title: FlowForge 1.1 released with persistent file storage
 subtitle: A new set of features to improve FlowForge as the best solution for running Node-RED in production in a secure, scalable, and team-based environment.
