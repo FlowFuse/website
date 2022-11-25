@@ -3,8 +3,21 @@
     <title>FlowForge</title>
     <link href="https://flowforge.com/blog/index.xml" rel="self"/>
     <link href="https://flowforge.com/blog"/>
-    <updated>2022-11-24T18:00:00Z</updated>
+    <updated>2022-11-25T00:00:00Z</updated>
     <id>https://flowforge.com/blog</id>
+    
+    <entry>
+        <id>https://flowforge.com/blog/2022/11/respin-docker-compose-01/</id>
+        <title>Re-spin of Docker-Compose install package</title>
+        <summary>Adding ability to locally build file-server container</summary>
+        <updated>2022-11-25T00:00:00Z</updated>
+        <link href="https://flowforge.com/blog/2022/11/respin-docker-compose-01/"/>
+        <author><name>Ben Hardill</name></author>
+        <content type="html">&lt;p&gt;After &lt;a href=&quot;https://flowforge.com/blog/2022/11/flowforge-1-1-released/&quot;&gt;yesterdays 1.1.0 FlowForge release&lt;/a&gt; we noticed a few minor issues with the docker-compose install instructions.&lt;/p&gt;
+&lt;p&gt;We had relied on the fact we are now publishing container images to Docker Hub to install the new &lt;code&gt;flowforge/file-server&lt;/code&gt; container. At this time we are only building images for amd64 and arm64. Further, it was only tagged them with the current release number.&lt;/p&gt;
+&lt;p&gt;To remedy this we tagged v1.1.1 of the docker-compose project in which we have included the required &lt;code&gt;Dockerfile&lt;/code&gt; and resources to build the &lt;code&gt;flowforge/file-server&lt;/code&gt; locally, updated the &lt;code&gt;build-containers.sh&lt;/code&gt; script to build this container. We will also build the published containers for armv7 and include a latest tag going forward.&lt;/p&gt;
+</content>
+    </entry>
     
     <entry>
         <id>https://flowforge.com/blog/2022/11/flowforge-1-1-released/</id>
