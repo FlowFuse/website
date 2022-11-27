@@ -22,7 +22,7 @@ Instructions for creating a release are [here](../development/release.md).
 ### Cadence
 
 FlowForge is released every four weeks, on a Thursday. There are 13 releases each
-year. The initial release was published on 20th of January. This implies releases
+year. The initial release was published on 2022/01/20. This implies releases
 will be scheduled on the following dates.
 
  -  2022/07/07 (0.7)
@@ -183,5 +183,4 @@ criteria are met:
  - Documentation has been updated
  - Acceptance criteria identified in the Story have been met
  - Product Owner accepts the story is complete
-
 
