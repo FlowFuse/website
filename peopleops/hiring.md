@@ -11,6 +11,16 @@ When interviewing to hire new team members, optimize for value-fit over
 culture-fit. Hiring for value-fit allows others to add to culture and thus fosters
 diversity and inclusivity.
 
+#### STAR interviews
+
+Using [the STAR framework](https://www.themuse.com/advice/star-interview-method)
+candidates will be interviewed to describe their experiences in the past.
+Through their actions we hope to be able to predict their performance in the
+future.
+
+For the interviewer a template is available with the [STAR questions](https://docs.google.com/document/d/1v6C1Tf6B-hDOlA9GhR44Y2ftDgiwx4x_twnuo_N4pZE)
+to make a copy of.
+
 ### Extending an offer
 
 When a candidate goes through the full hiring process an offer might be extended
