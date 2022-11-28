@@ -114,14 +114,13 @@ Each content type has channels which are appropriate, this table sets out which 
 
 |Content          |Blog  |Mailing List |Twitter  |Youtube  |LinkedIn |Reddit |Node-RED Slack|
 |---              |---   |---          |---      |---      |---      |---    |---           |
-|Release          |*     |             |*        |*        |*        |*      |*             |  
-|Patch            |*     |             |*        |         |         |*      |*             |   
+|Release          |*     |             |*        |*        |*        |*      |*             |
+|Patch            |*     |             |*        |         |         |       |*             |
 |Planned Downtime |*     |             |*        |         |*        |*      |*             | 
-|Outage           |      |             |         |         |         |       |              |
+|Outage           |      |             |*        |         |         |       |              |
 |Corporate Comms  |*     |             |*        |         |*        |       |              |
 |Newsletter       |*     |*            |*        |         |*        |*      |*             |
 |How To           |      |*            |*        |         |*        |*      |*             |  
-
 
 ### Channel Content Guidance
 
