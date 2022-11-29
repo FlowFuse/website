@@ -14,11 +14,17 @@ and strongly encouraged.
  - [Strategy](./company/strategy.md)
  - [Operations](./operations)
  - [Product](./product)
+
 ### Development & Design Practices
 
  - [Design](./design)
  - [Development](./development)
  - [Videos](./media)
+
+### Sales and Marketing
+
+ - [Sales](./sales)
+
 ### Internal Operations
 
  - [Communication](./company/communication.md)
