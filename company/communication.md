@@ -113,5 +113,11 @@ An agenda is kept for this meeting to which both parties can add items to discus
 It's advised to add to the agenda throughout the week, and only filter content
 during the meeting.
 
+When struggling to fill the agenda you might want to think about:
+- What has changed in the last few weeks that worked out well?
+- What has changed in the last few weeks that didn't work out?
+- Were there difficult problems to be solved last week? What would've made it easier to solve?
+- What's important but not urgent that's left undone?
+
 Further, the document should include an "Action Items" list to track what needs
 doing, and when.
