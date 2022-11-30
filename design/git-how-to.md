@@ -2,13 +2,15 @@
 
 ## Background
 
-Git is a way for a team to create written content, track any changes to that content, and seek approval for any changes to become the published version of that content. Git can be used in many ways, our developers use it to write the code which makes FlowForge work but in this document we are focussing on the process to work with documents which are part of our Handbook and Website, we will use Git’s name for these entities ‘Projects’ for the rest of this guide. In this guide we will assume you will be using github.com to interact with Git.
+Git is a way for a team to create written content, track any changes to that content, and seek approval for any changes to become the published version of that content on Live. Git can be used in many ways, our developers use it to write the code which makes FlowForge work but in this document we are focusing on the process to work with documents which are part of our Handbook or Website, we will use Git’s name for these entities ‘Projects’ for the rest of this guide. In this guide we will assume you will be using github.com to interact with Git.
 
-## How to edit a Project
+We have also included a Glossary at the end of this document which hopefully will give you a good start with common useful terminology.
+
+## How to make changes to the Live version of a Project
 
 ### Create a Branch
 
-The first step to editing content is to create a Branch of that content. A Branch is a complete copy of the Project. Creating a Branch allows you to edit the content without those edits being seen in the published copy of the Project.
+The first step to editing content is to create a Branch of that content. A Branch is a complete copy of the Project. Creating a Branch allows you to edit the content without those edits changing the Live copy of the Project.
 
 Navigate to the Project within Github you want to work on, usually…
 
@@ -20,17 +22,17 @@ or
 
 ![Create a new Branch](../images/new-branch-1.png)
 
-The Branch name should give a brief overview of what you are planning to change in the Project, for example ‘Add Git guide for non-tech projects & staff’ the click the ‘create branch’ text.
+The Branch name should give a brief overview of what you are planning to change in the Project, for example ‘Add Git guide for non-tech projects & staff’ then click the ‘create branch’ link.
 
 You should now notice that where the drop down said ‘main’ before it now says the name of the Branch you just created.
 
 ![Create a new Branch](../images/new-branch-2.png)
 
-You can now start the process of actually creating or editing content, any changes you make will not yet be added to the Published version of the live Project.
+You can now start the process of actually creating or editing content, any changes you make will not yet be added to the Published version of the Live Project.
 
-### Create a new document
+### Create a new file (document)
 
-In this exemple I am going to create a new document in the Handbook which will help non-technical FlowForge team members use Git.
+In this example I am going to create a new document in the Handbook which will help non-technical FlowForge team members use Git.
 
 Firstly I will create a new document called git-how-to.md in the design folder.
 
@@ -50,7 +52,7 @@ I will work on the file until I think it's ready for a colleague to review the c
 
 ### Creating a Pull Request
 
-I am now ready to request a Review of my work from a colleage. To do this I need to create a Pull Request. Once you create the Pull Request an alert will be sent to your Colleagues asking them for feedback on your work.
+I am now ready to request a Review of my work from a colleague. To do this I need to create a Pull Request. Once you create the Pull Request an alert will be sent to your Colleagues asking them for feedback on your work.
 
 Github gives you an easy to find button to create a Pull Request for your current work. 
 
@@ -58,9 +60,9 @@ Github gives you an easy to find button to create a Pull Request for your curren
 
 It's a good idea to give your colleagues descriptive comments about what changes you have made or anything else you think would be useful to help them review your work.
 
-Once you press the 'Create pull request' button an alert will be sent to one of FlowForge's Slack channels letting everyone know you'd like your work reviewed. You can also request a review from a specific colleague using the Reviewers section of your Pull Request. Click on Reviewers then select the collegaue you think would be best placed to review your work.
+Once you press the 'Create pull request' button an alert will be sent to one of FlowForge's Slack channels letting everyone know you'd like your work reviewed. You can also request a review from a specific colleague using the Reviewers section of your Pull Request. Click on Reviewers then select the colleague you think would be best placed to review your work.
 
-![Request a review from a specific collegaue](../images/nominate-a-reviewer-1.gif)
+![Request a review from a specific colleague](../images/nominate-a-reviewer-1.gif)
 
 ### Requesting a review of your work
 
@@ -105,4 +107,3 @@ Project
 Pull Request
 
 Live
-
