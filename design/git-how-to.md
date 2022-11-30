@@ -4,7 +4,9 @@
 
 Git is a way for a team to create written content, track any changes to that content, and seek approval for any changes to become the published version of that content. Git can be used in many ways, our developers use it to write the code which makes FlowForge work but in this document we are focussing on the process to work with documents which are part of our Handbook and Website, we will use Git’s name for these entities ‘Projects’ for the rest of this guide. In this guide we will assume you will be using github.com to interact with Git.
 
-## How to edit content
+## How to edit a Project
+
+### Create a Branch
 
 The first step to editing content is to create a Branch of that content. A Branch is a complete copy of the Project. Creating a Branch allows you to edit the content without those edits being seen in the published copy of the Project.
 
@@ -26,6 +28,8 @@ You should now notice that where the drop down said ‘main’ before it now say
 
 You can now start the process of actually creating or editing content, any changes you make will not yet be added to the Published version of the live Project.
 
+### Create a new document
+
 In this exemple I am going to create a new document in the Handbook which will help non-technical FlowForge team members use Git.
 
 Firstly I will create a new document called git-how-to.md in the design folder.
@@ -36,8 +40,26 @@ The file type is .md (Markdown). A Markdown file is similar to a .docx or .txt. 
 
 In the video above I pressed ‘Commit changes’ which is the same as saving your document.
 
+### Editing your document
+
 I can now start the process of writing my document, first I will reopen it in the editor, then I will add the content.
 
 ![Edit the new file](../images/edit-file-1.gif)
 
 I will work on the file until I think it's ready for a colleague to review the changes I have made. Once I am happy with the content I will Commit the changes as I did before.
+
+### Creating a Pull Request
+
+I am now ready to request a Review of my work from a colleage. To do this I need to create a Pull Request. Once you create the Pull Request an alert will be sent to your Colleagues asking them for feedback on your work.
+
+Github gives you an easy to find button to create a Pull Request for your current work. 
+
+![Edit the new file](../images/create-a-pr-1.gif)
+
+It's a good idea to give your colleagues descriptive comments about what changes you have made or anything else you think would be useful to help them review your work.
+
+Once you press the 'Create pull request' button an alert will be sent to one of FlowForge's Slack channels letting everyone know you'd like your work reviewed. You can also request a review from a specific colleague using the Reviewers section of your Pull Request. Click on Reviewers then select the collegaue you think would be best placed to review your work.
+
+
+
+
