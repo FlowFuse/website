@@ -56,7 +56,11 @@ to make public. That content should be shared on the FlowForge Google Drive.
 
 ## Building the site locally
 
-To run a local copy of the handbook you first need to clone the website and the handbook into side by side directories. Once you have them both cloned open a **bash** terminal in the website root directory and install the project dependencies, then run the build and the eleventy server:
+To run a local copy of the handbook you first need to clone the website and the handbook into side by side directories.
+
+Once you have them both cloned open a **bash** terminal in the website root directory and install the project dependencies. Then, run the build and the website's eleventy server:
+
+From the website directory:
 
 ```bash
 npm install
@@ -64,6 +68,6 @@ npm install
 npm start
 ```
 
-This will start a server on http://localhost:8080 that will live reload whenever
-any content is changed. **Note:** if you modify `src/css/style.css` you will need
-to run `npm run tailwind` to rebuild the CSS content.
+This will run the website on http://localhost:8080, and then you can access then Handbook at http://localhost:8080/handbook. This will automatically reload whenever any content is changed.
+
+**Note:** if you modify any of the Handbook's CSS, it may take a while for the website to recognise the changes. As a shortcut, you can run `npm run tailwind` to rebuild the CSS content.
