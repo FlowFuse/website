@@ -54,12 +54,55 @@ I am now ready to request a Review of my work from a colleage. To do this I need
 
 Github gives you an easy to find button to create a Pull Request for your current work. 
 
-![Edit the new file](../images/create-a-pr-1.gif)
+![Create a Pull Request](../images/create-a-pr-1.gif)
 
 It's a good idea to give your colleagues descriptive comments about what changes you have made or anything else you think would be useful to help them review your work.
 
 Once you press the 'Create pull request' button an alert will be sent to one of FlowForge's Slack channels letting everyone know you'd like your work reviewed. You can also request a review from a specific colleague using the Reviewers section of your Pull Request. Click on Reviewers then select the collegaue you think would be best placed to review your work.
 
+![Request a review from a specific collegaue](../images/nominate-a-reviewer-1.gif)
 
+### Requesting a review of your work
 
+Once a colleague has reviewed your work you will review an email alert. They can provide feedback on your work in three ways, sometimes a review will include all three types of feedback.
+
+- Approval of your Branch to go live
+
+This is the easiest to deal with, the Reviewer doesn't think anything needs to be changed.
+
+- Comments on your Branch asking you to make edits.
+
+The Reviewer has given feedback on your Branch, you will need to consider making edits and provide feedback to the Reviewer to explain what you changed (or didn't) and why.
+
+TO DO - How does the user actually deal with this?
+
+- Suggested edits to your Branch.
+
+The Reviewer has editing your Branch themselves, you can read through their edits and approve them if you think they improve the content.
+
+TO DO - How does the user actually deal with this?
+
+### Publishing to live
+
+TO DO - Write up the process to publish to live.
+
+## Glossary TO DO
+
+Git
+
+Github
+
+Handbook
+
+Website
+
+Branch
+
+Publish
+
+Project
+
+Pull Request
+
+Live
 
