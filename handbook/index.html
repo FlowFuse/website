@@ -124,6 +124,13 @@ conversation about what we do.</p>
 <h4 id="private-information" tabindex="-1"><a class="header-anchor" href="#private-information">#&nbsp;</a> Private information</h4>
 <p>Whilst instinctively we want to be open in all we do, there will inevitably by content that is not appropriate
 to make public. That content should be shared on the FlowForge Google Drive.</p>
+<h2 id="building-the-site-locally" tabindex="-1"><a class="header-anchor" href="#building-the-site-locally">#&nbsp;</a> Building the site locally</h2>
+<p>To run a local copy of the handbook you first need to clone the website and the handbook into side by side directories.</p>
+<p>Once you have them both cloned, open a <strong>bash</strong> terminal in the website root directory and install the project dependencies. Then, run the website's eleventy server:</p>
+<p>From the website directory:</p>
+<pre class="language-bash"><code class="language-bash"><span class="token function">npm</span> <span class="token function">install</span><br><br><span class="token function">npm</span> start</code></pre>
+<p>This will run the website on http://localhost:8080, and then you can access the Handbook at http://localhost:8080/handbook. This will automatically reload whenever any content is changed.</p>
+<p><strong>Note:</strong> if you modify any of the Handbook's CSS, it may take a while for the website to recognise the changes. As a shortcut, you can run <code>npm run tailwind</code> to rebuild the CSS content.</p>
 
             </div>
         </div>
@@ -131,7 +138,7 @@ to make public. That content should be shared on the FlowForge Google Drive.</p>
             <h3 class="font-medium border-b pb-1 mb-4">On this page</h3>
             <ul id="toc" class="text-sm border-b mb-4"></ul>
             <div class="text-sm pb-1 text-right mb-4"><a href="https://github.com/flowforge/handbook/edit/main/README.md">Edit this page</a></div>
-            <div class="text-xs pb-1 text-right mb-4 italic">Updated: 2022-11-29 09:22:11 +0000</div>
+            <div class="text-xs pb-1 text-right mb-4 italic">Updated: 2022-11-30 09:17:22 +0000</div>
         </div>
     </div>
 </div>
