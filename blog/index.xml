@@ -9,13 +9,14 @@
     <entry>
         <id>https://flowforge.com/blog/2022/11/scaling-node-red-with-diy-tooling/</id>
         <title>Challenges scaling Node-RED with DIY tooling</title>
-        <summary></summary>
+        <summary>Node-RED is very easy to get up and running for your first instance but what about your 100th?</summary>
         <updated>2022-11-30T00:00:00Z</updated>
         <link href="https://flowforge.com/blog/2022/11/scaling-node-red-with-diy-tooling/"/>
         <author><name>ZJ van de Weg</name></author>
-        <content type="html">&lt;h3 id=&quot;introduction&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://flowforge.com/blog/2022/11/scaling-node-red-with-diy-tooling/#introduction&quot;&gt;#&amp;nbsp;&lt;/a&gt; Introduction&lt;/h3&gt;
-&lt;p&gt;In this post, I&#39;m going to share some of the challenges customers face when
-scaling Node-RED with Do-It-Yourself tooling. Specifically, we&#39;ll talk about
+        <content type="html">&lt;p&gt;In this post, I&#39;m going to share some of the challenges customers face when
+scaling Node-RED with Do-It-Yourself tooling.&lt;/p&gt;
+&lt;!--more--&gt;
+&lt;p&gt;Specifically, we&#39;ll talk about
 common threads in their journey building their own tooling around Node-RED, its
 flows, and deploying them. Node-RED is a visual programming environment for
 wiring together hardware devices, APIs and online services in a single
@@ -29,7 +30,7 @@ need to configure anything or set up credentials or security or alerts. You can
 get started with Node-RED straight away by simply running it on your machine.
 The guides and scripts provided on Node-RED or are more than enough to get
 started. You&#39;ll dive right in and start developing your flows.&lt;/p&gt;
-&lt;h2 id=&quot;onto-the-second-instance&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://flowforge.com/blog/2022/11/scaling-node-red-with-diy-tooling/#onto-the-second-instance&quot;&gt;#&amp;nbsp;&lt;/a&gt; Onto the second instance&lt;/h2&gt;
+&lt;h3 id=&quot;onto-the-second-instance&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://flowforge.com/blog/2022/11/scaling-node-red-with-diy-tooling/#onto-the-second-instance&quot;&gt;#&amp;nbsp;&lt;/a&gt; Onto the second instance&lt;/h3&gt;
 &lt;p&gt;The next instance is a simple copy of the first. You&#39;ll need to make sure that
 you are installing the same version on both instances, and that any
 configuration files (such as the &lt;code&gt;settings.js&lt;/code&gt;) are also in sync.&lt;/p&gt;
