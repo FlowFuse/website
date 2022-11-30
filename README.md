@@ -53,3 +53,17 @@ All changes merged to the `main` branch will be automatically deployed to the ha
 
 Whilst instinctively we want to be open in all we do, there will inevitably by content that is not appropriate
 to make public. That content should be shared on the FlowForge Google Drive.
+
+## Building the site locally
+
+To run a local copy of the Handbook you first need to clone the website and the handbook into side by side directories. Once you have them both cloned open a **bash** terminal in the website root directory and install the project dependencies, then run the build and the eleventy server:
+
+```bash
+npm install
+
+npm start
+```
+
+This will start a server on http://localhost:8080 that will live reload whenever
+any content is changed. **Note:** if you modify `src/css/style.css` you will need
+to run `npm run tailwind` to rebuild the CSS content.
