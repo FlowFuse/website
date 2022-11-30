@@ -1,15 +1,16 @@
 ---
 title: Challenges scaling Node-RED with DIY tooling
-subtitle: 
-description: TODO
+subtitle: Node-RED is very easy to get up and running for your first instance but what about your 100th?
+description: In this post, I'm going to share some of the challenges customers face when scaling Node-RED with Do-It-Yourself tooling
 date: 2022-11-30
 authors: ["zeger-jan-van-de-weg"]
 ---
 
-### Introduction
 
 In this post, I'm going to share some of the challenges customers face when
-scaling Node-RED with Do-It-Yourself tooling. Specifically, we'll talk about
+scaling Node-RED with Do-It-Yourself tooling.
+<!--more-->
+Specifically, we'll talk about
 common threads in their journey building their own tooling around Node-RED, its
 flows, and deploying them. Node-RED is a visual programming environment for
 wiring together hardware devices, APIs and online services in a single
@@ -26,7 +27,7 @@ get started with Node-RED straight away by simply running it on your machine.
 The guides and scripts provided on Node-RED or are more than enough to get
 started. You'll dive right in and start developing your flows.
 
-## Onto the second instance
+### Onto the second instance
 
 The next instance is a simple copy of the first. You'll need to make sure that
 you are installing the same version on both instances, and that any
@@ -85,4 +86,3 @@ think FlowForge is a great solution to keep that admin and tech debt in check.
 
 If you're running into these challenges we believe we can help, you can adopt
 our [free and open source edition](https://flowforge.com/docs/install/).
-
