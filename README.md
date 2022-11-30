@@ -68,6 +68,6 @@ npm install
 npm start
 ```
 
-This will run the website on http://localhost:8080, and then you can access then Handbook at http://localhost:8080/handbook. This will automatically reload whenever any content is changed.
+This will run the website on http://localhost:8080, and then you can access the Handbook at http://localhost:8080/handbook. This will automatically reload whenever any content is changed.
 
 **Note:** if you modify any of the Handbook's CSS, it may take a while for the website to recognise the changes. As a shortcut, you can run `npm run tailwind` to rebuild the CSS content.
