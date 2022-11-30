@@ -58,7 +58,7 @@ to make public. That content should be shared on the FlowForge Google Drive.
 
 To run a local copy of the handbook you first need to clone the website and the handbook into side by side directories.
 
-Once you have them both cloned open a **bash** terminal in the website root directory and install the project dependencies. Then, run the build and the website's eleventy server:
+Once you have them both cloned, open a **bash** terminal in the website root directory and install the project dependencies. Then, run the website's eleventy server:
 
 From the website directory:
 
