@@ -4,7 +4,8 @@
 ## Internal Team Overview
 
 An overview of the current team, soon to be team members, and planned roles can
-be found in [this spreadsheet](https://docs.google.com/spreadsheets/d/1T_J32HFxnvqVZ6Tekf720knk34pKuNdNPI0A3qM43A8).
+be found in [this spreadsheet](https://docs.google.com/spreadsheets/d/1XpBpfHMGXz127FTVAVSfjuKtKmqelyO4hj2UtZvDpSQ).
+This sheet is only accessable to HR, and C-level employees.
 
 ## Vacation Policy
 
