@@ -3,8 +3,35 @@
     <title>FlowForge</title>
     <link href="https://flowforge.com/blog/index.xml" rel="self"/>
     <link href="https://flowforge.com/blog"/>
-    <updated>2022-11-30T00:00:00Z</updated>
+    <updated>2022-12-02T00:00:00Z</updated>
     <id>https://flowforge.com/blog</id>
+    
+    <entry>
+        <id>https://flowforge.com/blog/2022/12/community-news-11/</id>
+        <title>Community News November 2022</title>
+        <summary>News from the FlowForge and Node-RED communities</summary>
+        <updated>2022-12-02T00:00:00Z</updated>
+        <link href="https://flowforge.com/blog/2022/12/community-news-11/"/>
+        <author><name>Rob Marcer</name></author>
+        <content type="html">&lt;p&gt;Welcome to the FlowForge newsletter for November 2022, a monthly roundup of what’s been happening with both FlowForge and the wider Node-RED community.&lt;/p&gt;
+&lt;!--more--&gt;
+&lt;p&gt;If you&#39;ve got something that you think we should share on our newsletters please &lt;a href=&quot;mailto:contact@flowforge.com&quot;&gt;get it touch&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/node-red/node-red/milestone/19&quot;&gt;&lt;strong&gt;Node-RED Nears 3.1 Release&lt;/strong&gt;&lt;/a&gt;
+As we mentioned last month, the release of Node-RED 3.1 is expected very soon. 3.1 includes lots of great new features such as support for &lt;a href=&quot;https://github.com/node-red/node-red/pull/3938&quot;&gt;locking flows in the editor&lt;/a&gt; and &lt;a href=&quot;https://github.com/node-red/node-red/pull/3930&quot;&gt;improving the user experience around hiding flows&lt;/a&gt;. As an open source project the development of Node-RED is entirely dependent on individuals and companies giving their time to work towards each new release. If you&#39;d like to know how you can get involved you can read more on the &lt;a href=&quot;https://nodered.org/about/contribute/&quot;&gt;Node-RED web site&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://flowforge.com/blog/2022/11/flowforge-1-1-released/&quot;&gt;&lt;strong&gt;FlowForge 1.1 Released&lt;/strong&gt;&lt;/a&gt;&lt;br /&gt;
+Version 1.1 of FlowForge was released on 24th November. Our latest release included some great new features such as &lt;a href=&quot;https://github.com/flowforge/flowforge/issues/998&quot;&gt;Persistent file storage&lt;/a&gt;, the ability to &lt;a href=&quot;https://flowforge.com/docs/user/node-red-tools/&quot;&gt;import Node-RED snapshots&lt;/a&gt; from outside of FlowForge and a much improved interface to &lt;a href=&quot;https://github.com/flowforge/flowforge/issues/1046&quot;&gt;deploy projects to your devices&lt;/a&gt;. We&#39;re now working towards our final release of 2022 which is due just before Christmas. You can see what we are planning to deliver in that release and beyond on &lt;a href=&quot;https://github.com/orgs/flowforge/projects/5&quot;&gt;FlowForge&#39;s project board&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;If you’d like to learn more about what else was included in 1.1 you can do so on our &lt;a href=&quot;http://flowforge.com/blog/2022/11/flowforge-1-1-released&quot;&gt;blog post&lt;/a&gt;, &lt;a href=&quot;https://github.com/flowforge/flowforge/releases/tag/v1.1.0&quot;&gt;GitHub release page&lt;/a&gt;, and &lt;a href=&quot;https://www.youtube.com/watch?v=134iljE_urI&quot;&gt;Youtube channel&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/playfultechnology/node-redscape&quot;&gt;&lt;strong&gt;Node-Redscape - 100% Free, Open-Source Escape Room Control Software&lt;/strong&gt;&lt;/a&gt;&lt;br /&gt;
+As we&#39;ll come to later in this newsletter, FlowForge visited an Escape Room in Winchester as part of our team meet-up. Co-incidentally, a great Node-RED project came up a few days after our visit which we thought was worth sharing. In their own words &lt;a href=&quot;https://github.com/playfultechnology/node-redscape&quot;&gt;Node-Redscape&lt;/a&gt; &#39;provides a set of templates, flows, and examples that turn Node-RED into a complete Escape Room automation system&#39;. Very topical for us and also seems like a great project. You can learn more about the project on &lt;a href=&quot;https://www.youtube.com/watch?v=f9yYDxqK_2E&quot;&gt;Youtube&lt;/a&gt; as well as on &lt;a href=&quot;https://github.com/playfultechnology/node-redscape&quot;&gt;Github&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;FlowForge team meetup&lt;/strong&gt;
+FlowForge is a fully remote team, we currently have a strong skew towards western Europe but we are in the process of adding team members in each of the continents. On that point, any great Product Managers who live in Antarctica are encouraged to &lt;a href=&quot;https://boards.greenhouse.io/flowforge/jobs/4717778004&quot;&gt;apply for a job with us&lt;/a&gt;! Remote work is great but it&#39;s also valuable to get everyone together in the real world from time to time. FlowForge had such a meet up last month in Winchester, UK. We came from near and far and took the opportunity to have productive round-table discussions about some features we are working towards in 1.2 and beyond.  We also dropped into &lt;a href=&quot;https://cluecapers.co.uk/&quot;&gt;Clue Capers&lt;/a&gt;, a great Escape Room in the center of Winchester who provided the photo below to mark the occasion.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://flowforge.com/blog/2022/12/images/clue-capers.jpg&quot; alt=&quot;The FlowForge team pictured during our visit to Clue Capers&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://flowforge.com/team/&quot;&gt;&lt;strong&gt;FlowForge Team News&lt;/strong&gt;&lt;/a&gt;&lt;br /&gt;
+We are currently recruiting a &lt;a href=&quot;https://boards.greenhouse.io/flowforge/jobs/4717778004&quot;&gt;Product Manager&lt;/a&gt;, and a &lt;a href=&quot;https://boards.greenhouse.io/flowforge/jobs/4700809004&quot;&gt;Senior Community Manager&lt;/a&gt;. You can view any of the roles we currently have open and apply on our &lt;a href=&quot;https://boards.greenhouse.io/flowforge&quot;&gt;Jobs page&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://app.flowforge.com/account/create?code=RELEASE11&quot;&gt;&lt;strong&gt;Try FlowForge for Free&lt;/strong&gt;&lt;/a&gt;&lt;br /&gt;
+As a thank you for reading our newsletters we’d like to offer you a free, small project for one month on our managed FlowForge platform when you create a new team. To get this discount please follow &lt;a href=&quot;https://app.flowforge.com/account/create?code=RELEASE11&quot;&gt;this link&lt;/a&gt; or use the code RELEASE11 when on the payment page after creating a new team. As an open source project you can also use &lt;a href=&quot;https://flowforge.com/docs/install/&quot;&gt;FlowForge&lt;/a&gt; for free, forever.&lt;/p&gt;
+</content>
+    </entry>
     
     <entry>
         <id>https://flowforge.com/blog/2022/11/scaling-node-red-with-diy-tooling/</id>
