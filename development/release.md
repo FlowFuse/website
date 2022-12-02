@@ -15,7 +15,7 @@ releases.
     - [jq](https://stedolan.github.io/jq/download/)
     - [yq](https://mikefarah.gitbook.io/yq/#install)
  - Ensure you're machine is authenticated with the GitHub client: `gh auth login`
-
+ - When we are ready to start the release process the Release Manager should start a Slack Huddle in #dev and keep that open until the release is completed.
 
 ### Unmanaged Repositories
 
