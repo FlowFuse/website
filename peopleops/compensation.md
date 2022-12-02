@@ -34,7 +34,7 @@ salary, except your location. Equity is offered as stock options, which upon
 execution will be transformed in the underlying stock. Stock compensation are
 awarded on a 4 year vesting schedule with a 1 year cliff. Equity compensation
 will not vary based on employee location. Equity is only increased on employee
-promotions.
+promotions. Carta wrote a great blog post about [vesting schedules and a cliff](https://carta.com/blog/what-is-stock-vesting).
 
 Employees might be taxed personally when accepting or executing stock options.
 FlowForge does not provide any advice on financial decisions for employees. For
