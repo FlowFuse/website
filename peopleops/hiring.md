@@ -29,6 +29,8 @@ conditional on background checks. If the offer includes an equity component,
 this part is conditional on board approval of such a grant. Be sure to be
 explicit about these conditions.
 
+Please use [this template](https://docs.google.com/document/d/1rY0gLLpkOPBVGlMy7PVhnVjmRF53MhkeDET4TkfPJIs) to stage an email.
+
 ### After an offer is accepted
 
 Onboarding on our EOR provider, Pilot, takes at least 3 to 4 weeks. The start
