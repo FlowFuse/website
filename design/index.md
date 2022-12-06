@@ -142,6 +142,6 @@ Keep it short, Reddit posts should be factual, informal and have a call to actio
 
 Keep it short, Slack messages should be factual, informal and have a call to action (a link) where a user can read more.
 
-#### Discorse (Node-RED Forums)
+#### Discourse (Node-RED Forums)
 
 Keep content short, posts to the Node-RED discord should be factual, informal and have a call to action (a link) where a user can read more.
