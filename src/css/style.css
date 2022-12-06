@@ -72,6 +72,17 @@ h1, h2, h3, h4, h5, p {
     color: theme(colors.gray.800);
 }
 
+.ff-bg-dark h1, .ff-bg-mid h1,
+.ff-bg-dark h2, .ff-bg-mid h2,
+.ff-bg-dark h3, .ff-bg-mid h3,
+.ff-bg-dark h4, .ff-bg-mid h4,
+.ff-bg-dark h5, .ff-bg-mid h5 {
+    color: theme(colors.teal.400);
+}
+.ff-bg-dark p, .ff-bg-mid p {
+    color: theme(colors.white);
+}
+
 
 .ff-website {
     background-color: theme(colors.gray.800);
@@ -85,7 +96,7 @@ h1, h2, h3, h4, h5, p {
     background-position-y: 100px;
     background-size: contain;
 }
-main  a {
+main a {
     color: theme(colors.teal.400);
 }
 main  a:hover {
@@ -99,6 +110,12 @@ main .ff-bg-light a {
 }
 main .ff-bg-light a:hover {
     color: theme(colors.blue.700);
+}
+main .ff-bg-dark a, main .ff-bg-mid a {
+    color: theme(colors.teal.400);
+}
+main .ff-bg-dark a:hover, main .ff-bg-mid a:hover {
+    color: theme(colors.teal.500);
 }
 pre code {
     background: #030303
