@@ -112,15 +112,15 @@ Technical guides, published once per week.
 
 Each content type has channels which are appropriate, this table sets out which content should be posted on each channel.
 
-|Content          |Blog  |Mailing List |Twitter  |Youtube  |LinkedIn |Reddit |Node-RED Slack|
-|---              |---   |---          |---      |---      |---      |---    |---           |
-|Release          |*     |             |*        |*        |*        |*      |*             |
-|Patch            |*     |             |*        |         |         |       |*             |
-|Planned Downtime |*     |             |*        |         |*        |*      |*             | 
-|Outage           |      |             |*        |         |         |       |              |
-|Corporate Comms  |*     |             |*        |         |*        |       |              |
-|Newsletter       |*     |*            |*        |         |*        |*      |*             |
-|How To           |      |*            |*        |         |*        |*      |*             |  
+|Content          |Blog  |Mailing List |Twitter  |Youtube  |LinkedIn |Reddit |Node-RED Slack|Node-RED Discorse |
+|---              |---   |---          |---      |---      |---      |---    |---           |---               |
+|Release          |*     |             |*        |*        |*        |*      |*             |*                 |
+|Patch            |*     |             |*        |         |         |*      |*             |                  | 
+|Planned Downtime |*     |             |*        |         |*        |*      |*             |                  |
+|Outage           |      |             |         |         |         |       |              |                  |
+|Corporate Comms  |*     |             |*        |         |*        |       |              |                  |
+|Newsletter       |*     |*            |*        |         |*        |*      |*             |*                 |
+|How To           |      |*            |*        |         |*        |*      |*             |*                 |
 
 ### Channel Content Guidance
 
@@ -148,7 +148,7 @@ Videos should:
 
 #### LinkedIn
 
-Posts should be framed in the context of FlowForge as an organisation and a team, don't get too technical. A relevant photo or image should be included in every post. Where the post is primarily of a video it should be embedded from Youtube.
+Posts should be framed in the context of FlowForge as an organisation and a team, don't get too technical. A relevant photo or image should be included in every post. Where the post is primarily of a video it should be embedded from Youtube. Where possible include the content in the post rather than linking out to external content.
 
 #### Reddit
 
@@ -157,3 +157,7 @@ Keep it short, Reddit posts should be factual, informal and have a call to actio
 #### Node-RED Slack (FlowForge section)
 
 Keep it short, Slack messages should be factual, informal and have a call to action (a link) where a user can read more.
+
+#### Discourse (Node-RED Forums)
+
+Keep content short, posts to the Node-RED discord should be factual, informal and have a call to action (a link) where a user can read more.
