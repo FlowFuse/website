@@ -38,7 +38,9 @@ scroll to a notes section.
 ### Coffee calls
 
 Coffee calls are social of nature and thus are the exception to the rule that
-each meeting should have an agenda.
+each meeting should have an agenda. If you want to be matched to a random team
+member every two weeks for a coffee call, join the #virtual-coffee channel on
+Slack to be matched automatically.
 
 ## Asynchronous communication
 
@@ -110,6 +112,12 @@ feeling, and what their challenges are.
 An agenda is kept for this meeting to which both parties can add items to discuss.
 It's advised to add to the agenda throughout the week, and only filter content
 during the meeting.
+
+When struggling to fill the agenda you might want to think about:
+- What has changed in the last few weeks that worked out well?
+- What has changed in the last few weeks that didn't work out?
+- Were there difficult problems to be solved last week? What would've made it easier to solve?
+- What's important but not urgent that's left undone?
 
 Further, the document should include an "Action Items" list to track what needs
 doing, and when.

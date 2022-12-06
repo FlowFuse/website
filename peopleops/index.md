@@ -1,6 +1,12 @@
 - [Compensation](../peopleops/compensation.md)
 - [Hiring](./hiring.md)
 
+## Internal Team Overview
+
+An overview of the current team, soon to be team members, and planned roles can
+be found in [this spreadsheet](https://docs.google.com/spreadsheets/d/1XpBpfHMGXz127FTVAVSfjuKtKmqelyO4hj2UtZvDpSQ).
+This sheet is only accessable to HR, and C-level employees.
+
 ## Vacation Policy
 
 FlowForge has a unlimited time off policy. Taking vacation is encouraged for all

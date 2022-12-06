@@ -84,27 +84,17 @@ At FlowForge we're engaged in many initiatives to grow our offering and assess
 product market fit. Currently we're measuring 2 key metrics which serve as
 heuristic for company wide success.
 
-#### Managed Instances
+#### Installed Platforms
 
-Node-RED is at the core of our product offering. FlowForge helps everyone manage
-and run their Node-RED instances, whether it's in the cloud or on edge locations.
-Through telemetry users of FlowForge report the number of projects and attached
-devices, both of these numbers are running Node-RED instances.
+FlowForge is the key product we're verifying in the market currently. Each
+platform installed and running shows value is delivered to customers. Through
+telemetry we know the number of instances that reported their unique instance ID.
 
-Per distinct IP address that sends back telemetry the last payload per month
-collected. Of these the sum of devices and projects is defined as
-**Managed Instances** for that month. Telemetry collection is opt-in, and dependant
-on an internet connection. As such it's anticipated to under report the true
-number of FlowForge managed instances.
+Other than the number of unique instances reporting on telemetry the last 7 days
+we measure the number of managed instances of Node-RED through FlowForge. This
+is the sum of projects and devices.
 
-Target growth for this metric is 40% month over month.
+Telemetry collection is opt-in, and dependant on an internet connection. As such
+it's anticipated to under report the true number of FlowForge managed instances.
 
-#### Annual Recurring Revenue (ARR)
-
-As very early company pre-Product Market Fit company, revenue is an imperfect
-heuristic. However as a business it's a good metric as it's the ultimate goal.
-Our SaaS offering generates Monthly Recurring Revenue (MRR) through subscriptions,
-while enterprise sales is done on annual contracts. To normalize to one metric
-to report our MRR is multiplied by 12 and added to the ARR of enterprise sales.
-
-Target growth for this metric is 40% month over month.
+Target growth for this metric is 10% week over week.

@@ -11,6 +11,16 @@ When interviewing to hire new team members, optimize for value-fit over
 culture-fit. Hiring for value-fit allows others to add to culture and thus fosters
 diversity and inclusivity.
 
+#### STAR interviews
+
+Using [the STAR framework](https://www.themuse.com/advice/star-interview-method)
+candidates will be interviewed to describe their experiences in the past.
+Through their actions we hope to be able to predict their performance in the
+future.
+
+For the interviewer a template is available with the [STAR questions](https://docs.google.com/document/d/1v6C1Tf6B-hDOlA9GhR44Y2ftDgiwx4x_twnuo_N4pZE)
+to make a copy of.
+
 ### Extending an offer
 
 When a candidate goes through the full hiring process an offer might be extended
@@ -18,6 +28,17 @@ to them. At such a time it's good to understand that the offer at that time is
 conditional on background checks. If the offer includes an equity component,
 this part is conditional on board approval of such a grant. Be sure to be
 explicit about these conditions.
+
+Please use [this template](https://docs.google.com/document/d/1rY0gLLpkOPBVGlMy7PVhnVjmRF53MhkeDET4TkfPJIs) to stage an email.
+
+### After an offer is accepted
+
+Onboarding on our EOR provider, Pilot, takes at least 3 to 4 weeks. The start
+date for a new employee should be at least 3 to 4 weeks out. When a
+[conditional offer](#extending-an-offer) has been accepted you should immediately:
+
+1. [Create an onboarding issue](https://github.com/flowforge/admin/issues/new/choose) on the admin GitHub project
+1. Update the [internal team overview spreadsheet](./index.md#internal-team-overview)
 
 ## Onboarding
 
