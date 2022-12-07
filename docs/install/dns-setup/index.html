@@ -18,7 +18,7 @@
     <meta name="twitter:description" content="FlowForge is an open-source, low-code platform for integration and automation. Helping you run Node-RED at production scales in a secure, scalable and team-based environment." />
     <meta name="twitter:site" content="@flowforgeinc" />
     <meta name="twitter:image" content="/images/og-social-tile.jpg" />
-    <meta property="og:url" content="https://flowforge.com/docs/user/logs/" />
+    <meta property="og:url" content="https://flowforge.com/docs/install/dns-setup/" />
     <meta property="og:title" content="" />
     <meta property="og:description" content="FlowForge is an open-source, low-code platform for integration and automation. Helping you run Node-RED at production scales in a secure, scalable and team-based environment." />
     <meta property="og:image" content="/images/og-social-tile.jpg" />
@@ -76,34 +76,114 @@
             
             v1.1.0
             
-            /<a class="mx-2" href="/docs">docs</a>/<a class="mx-2" href="/docs/user">user</a>/<a class="mx-2" href="/docs/user/logs">logs</a>
+            /<a class="mx-2" href="/docs">docs</a>/<a class="mx-2" href="/docs/install">install</a>/<a class="mx-2" href="/docs/install/dns-setup">dns-setup</a>
         </div>
     </div>
     <div class="w-full mx-auto ff-bg-light flex flex-col md:flex-row">
         <div class="flex-grow order-last md:order-first">
             <div class="mt-6 mb-4 prose prose-blue main-content">
-                <h1 id="logs" tabindex="-1"><a class="header-anchor" href="#logs">#&nbsp;</a> Logs</h1>
-<p>FlowForge presents log information in several different places depending on what you are interested in.</p>
-<h2 id="project-logs" tabindex="-1"><a class="header-anchor" href="#project-logs">#&nbsp;</a> Project Logs</h2>
-<p>Within the project view the logs tab displays the Node-RED log. This will contain information such as nodes being added and errors relating to your flows.</p>
-<p>The log information is kept back to the last time the container was restarted, you can view older information on the <code>Load earlier...</code> link at the top of the log.</p>
-<img src="../images/projectlog.png"" width="500" />
-<h2 id="project-activity" tabindex="-1"><a class="header-anchor" href="#project-activity">#&nbsp;</a> Project Activity</h2>
-<p>The activity tab on the project view shows key actions relating to the project, specifically when a user logs in to the editor, when they update the flows, when nodes are installed, and also when the project is restarted.</p>
-<p>This log will contain all data since the project was created, you can view older data using the <code>Load More...</code> link at the bottom of the log.</p>
-<img src="../images/projectactivity.png"" width="500" />
-<h2 id="team-audit-log" tabindex="-1"><a class="header-anchor" href="#team-audit-log">#&nbsp;</a> Team Audit Log</h2>
-<p>From the Team page the Audit Log shows events relating to the management of the team and projects being created or deleted.
-Users being invited to the team, accepting the invite, along with user's being given owner level access.</p>
-<p>This log will contain all data since the team was created, you can view older data using the <code>Load More...</code> link at the bottom of the log.</p>
-<img src="../images/teamauditlog.png"" width="500" />
+                <h1 id="dns-setup" tabindex="-1"><a class="header-anchor" href="#dns-setup">#&nbsp;</a> DNS Setup</h1>
+<p>When running FlowForge on Docker or Kubernetes you will need to be able to setup an entry in a DNS server.</p>
+<p>This is because FlowForge uses hostname based routing to know which project you want to access.</p>
+<p>By default the project name is used in combination with a supplied domain. In this document I will use <code>example.com</code> as the domain. (It doesn't need to be a &quot;whole&quot; domain, it could also be a sub domain of one you already own. e.g. <code>ff.example.com</code>).</p>
+<p>If you are running Docker/Kubernetes on the same machine as the DNS server and Web Browser do not use <code>127.0.0.1</code> as the IP address to point the wild card domain at. This is because the host names will be looked up by the Web Browser, the Forge Application, and the Project Node-RED instances. The last 2 are running in containers and <code>127.0.0.1</code> will resolve to the container, not the entry point.</p>
+<h2 id="production" tabindex="-1"><a class="header-anchor" href="#production">#&nbsp;</a> Production</h2>
+<p>For a production deployment you will need to have access to modify DNS, if you are not sure how to set up DNS records talk to whoever manages your DNS.</p>
+<p>As mentioned earlier you will need them to create a wild card entry that points to either the Docker host machine or the Kubernetes Nodes which are running the Ingress Controller.</p>
+<p>This can be either:</p>
+<ul>
+<li>a <code>A</code> (and <code>AAAA</code> for IPv6) record pointing to an IP address</li>
+<li>a <code>CNAME</code> record pointing to the hostname of the entry point.</li>
+</ul>
+<h3 id="aws-alb-ingress" tabindex="-1"><a class="header-anchor" href="#aws-alb-ingress">#&nbsp;</a> AWS ALB Ingress</h3>
+<p>When using AWS ALB (Application Load Balancer) as an Ingress Controller for FlowForge deployed into an EKS cluster then you would create a wildcard CNAME entry pointing to the hostname of the ALB</p>
+<h3 id="digital-ocean" tabindex="-1"><a class="header-anchor" href="#digital-ocean">#&nbsp;</a> Digital Ocean</h3>
+<p>You should create an A record pointing to the public IP address of the Load Balancer created when you install the Nginx Ingress Helm Chart.</p>
+<h2 id="local-testing-and-development" tabindex="-1"><a class="header-anchor" href="#local-testing-and-development">#&nbsp;</a> Local Testing and Development</h2>
+<p>For development and testing we probably only need to set up DNS entries for the developers local machine. The easiest way to do this is to use an application called dnsmasq.</p>
+<p>Dnsmasq is a tool that can be used as a DNS caching proxy (and a DHCP server, but we don't need that). We can set it up to point to an upstream DNS server to resolve all normal addresses, but we can also give it a list of hostname/IP address pairs to use locally.</p>
+<h3 id="dnsmasq" tabindex="-1"><a class="header-anchor" href="#dnsmasq">#&nbsp;</a> DNSMasq</h3>
+<p>Setting up dnsmasq is not too complex, what is harder is setting it up in a way that works well with the network configuration on a laptop that might move between different networks and expects to get its default DNS configuration automatically assigned by DHCP.</p>
+<p>The following headings cover how to do this on a number of different operating systems</p>
+<h4 id="ubuntu" tabindex="-1"><a class="header-anchor" href="#ubuntu">#&nbsp;</a> Ubuntu</h4>
+<p>For Docker on Linux you can use <code>172.17.0.1</code> as the address for the domain which is the IP address assigned to the <code>docker0</code> interface.</p>
+<pre><code>sudo apt-get install dnsmasq
+sudo echo &quot;bind-interfaces&quot; &gt;&gt; /etc/dnsmasq.conf
+sudo echo &quot;no-resolv&quot; &gt;&gt; /etc/dnsmasq.conf
+sudo echo &quot;conf-dir=/etc/dnsmasq.d&quot; &gt;&gt; /etc/dnsmasq.conf
+sudo echo &quot;address=/example.com/172.17.0.1&quot; &gt; /etc/dnsmasq.d/02-flowforge.conf
+sudo service dnsmasq restart
+sudo echo &quot;DNS=127.0.0.1&quot; &gt;&gt; /etc/systemd/resolved.conf
+sudo echo &quot;DOMAINS=~example.com&quot; &gt;&gt; /etc/systemd/resolved.conf
+sudo service systemd-resolved restart
+</code></pre>
+<h4 id="fedora" tabindex="-1"><a class="header-anchor" href="#fedora">#&nbsp;</a> Fedora</h4>
+<p>For Docker on Linux you can use <code>172.17.0.1</code> as the address for the domain which is the IP address assigned to the <code>docker0</code> interface.</p>
+<pre><code>sudo dnf install dnsmasq
+sudo echo &quot;bind-interfaces&quot; &gt;&gt; /etc/dnsmasq.conf
+sudo echo &quot;no-resolv&quot; &gt;&gt; /etc/dnsmasq.conf
+sudo echo &quot;conf-dir=/etc/dnsmasq.d&quot; &gt;&gt; /etc/dnsmasq.conf
+sudo echo &quot;address=/example.com/172.17.0.1&quot; &gt; /etc/dnsmasq.d/02-flowforge.conf
+sudo systemctl enable dnsmasq.service
+sudo service dnsmasq restart
+sudo echo &quot;DNS=127.0.0.1&quot; &gt;&gt; /etc/systemd/resolved.conf
+sudo echo &quot;DOMAINS=~example.com&quot; &gt;&gt; /etc/systemd/resolved.conf
+sudo service systemd-resolved restart
+</code></pre>
+<h4 id="windows" tabindex="-1"><a class="header-anchor" href="#windows">#&nbsp;</a> Windows</h4>
+<p>Unfortunately dnsmasq will not run on Windows and I have not found something similar yet.</p>
+<h4 id="macos" tabindex="-1"><a class="header-anchor" href="#macos">#&nbsp;</a> MacOS</h4>
+<p>On MacOS you can alias a private IP address to the loop back interface e.g. <code>10.128.0.1</code> with <code>sudo ifconfig lo0 alias 10.128.0.1</code></p>
+<p>You will need install dnsmasq using (homebrew)[https://docs.brew.sh/Installation]</p>
+<pre><code>brew install dnsmasq
+</code></pre>
+<p>It appears that the install location differs based on the Apple Hardware. For Intel hardware Macs it's in <code>/usr/local</code> and for M1 hardware it's <code>/opt/homebrew</code>. Please check where it installed things when the previous command has completed.</p>
+<p>Then edit a configuration file</p>
+<p>M1 mac</p>
+<pre><code>echo &quot;conf-dir=/opt/homebrew/etc/dnsmasq.d&quot; &gt;&gt; /opt/homebrew/etc/dnsmasq.conf
+echo &quot;address=/example.com/10.128.0.1&quot; &gt; /opt/homebrew/etc/dnsmasq.d/ff.conf
+</code></pre>
+<p>Intel mac</p>
+<pre><code>echo &quot;conf-dir=/usr/local/etc/dnsmasq.d&quot; &gt;&gt; /usr/local/etc/dnsmasq.conf
+echo &quot;address=/example.com/10.128.0.1&quot; &gt; /usr/local/etc/dnsmasq.d/ff.conf
+</code></pre>
+<p>Set dnsmasq to run as a service</p>
+<pre><code>brew services start dnsmasq
+dscacheutil -flushcache
+</code></pre>
+<p>Tell MacOS to use dnsmasq for our test domain</p>
+<pre><code>sudo mkdir -p /etc/resolver
+sudo tee /etc/resolver/example.com &gt; /dev/null &lt;&lt;EOF
+nameserver 127.0.0.1
+domain example.com
+search_order 1
+EOF
+</code></pre>
+<p>And finally kick the MacOS resolver so it sees the updates</p>
+<pre><code>sudo killall -HUP mDNSResponder
+</code></pre>
+<h3 id="pi-hole" tabindex="-1"><a class="header-anchor" href="#pi-hole">#&nbsp;</a> Pi Hole</h3>
+<p>Pi Hole is a package that bundles dnsmasq as an image to run on a Raspberry Pi (or in Docker container e.g. on your NAS). Its main use is to block advertisements embedded in web pages. But since in its normal configuration it is already handling all the local DNS traffic, making us work with FlowForge is possible and means you do not need to change any settings on your development/test machine.</p>
+<p>Create the following file in <code>/etc/dnsmasq.d</code> called <code>02-flowforge.conf</code></p>
+<pre><code>address=/example.com/192.168.0.22
+</code></pre>
+<p>Where 192.168.0.22 is the ipv4 address of the Docker host machine or a Kubernetes node. And <code>example.com</code> is the domain to use.</p>
+<p>After making the change you will probably need to restart things with:</p>
+<pre><code>sudo pihole restartdns
+</code></pre>
+<p>If running Pi Hole in Docker then you will need to create the file on the host and mount it to the <code>/etc/dnsmasq.d/02-flowforge.conf</code> location.</p>
+<h3 id="no-local-dns-server" tabindex="-1"><a class="header-anchor" href="#no-local-dns-server">#&nbsp;</a> No Local DNS server</h3>
+<p>If you really can't run dnsmasq then there is a possible alternative.</p>
+<p>A really useful service called sslip.io allows you to test FlowForge even when you cannot use dnsmasq. You can read more about <a href="https://sslip.io">sslip.io on their web site</a>.</p>
+<p>You will need to set the <code>domain</code> entry in the <code>flowforge.yml</code> configuration file to the following pattern <code>172.17.0.1.sslip.io</code>. Don't forget to replace the IP address with the correct one for your configuration.</p>
+<p>This will work because the <code>sslip.io</code> domain is set up to always return the IP address embedded in the hostname queried.</p>
 
             </div>
         </div>
         <div class="w-full md:w-64 md:ml-8 mt-4 md:mt-6 px-2">
             <h3 class="font-medium border-b pb-1 mb-4">On this page</h3>
             <ul id="toc" class="text-sm border-b mb-4"></ul>
-            <div class="text-sm pb-1 text-right mb-4"><a href="https://github.com/flowforge/flowforge/edit/main/docs/user/logs.md">Edit this page</a></div>
+            <div class="text-sm pb-1 text-right mb-4"><a href="https://github.com/flowforge/flowforge/edit/main/docs/install/dns-setup.md">Edit this page</a></div>
             <div class="text-xs pb-1 text-right mb-4 italic">Updated: 2022-12-07 12:19:44 +0100</div>
         </div>
     </div>

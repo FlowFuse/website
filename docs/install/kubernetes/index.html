@@ -84,97 +84,69 @@
             <div class="mt-6 mb-4 prose prose-blue main-content">
                 <h1 id="kubernetes-install" tabindex="-1"><a class="header-anchor" href="#kubernetes-install">#&nbsp;</a> Kubernetes Install</h1>
 <p>This version of the FlowForge platform is intended for running in the Kubernetes (sometimes referred to as K8s)
-Container management system. Typically suited for large on permise deployments or deployment in Cloud infrastucture.</p>
+Container management system. Typically suited for large on premise deployments or deployment in Cloud infrastructure.</p>
 <h3 id="prerequisites" tabindex="-1"><a class="header-anchor" href="#prerequisites">#&nbsp;</a> Prerequisites</h3>
+<h4 id="kubectl" tabindex="-1"><a class="header-anchor" href="#kubectl">#&nbsp;</a> Kubectl</h4>
+<p>To manage a Kubernetes cluster you will need a copy of the <code>kubectl</code> utility. Instructions on
+how to install it can be found <a href="https://kubernetes.io/docs/tasks/tools/">here</a>.</p>
+<h4 id="helm" tabindex="-1"><a class="header-anchor" href="#helm">#&nbsp;</a> Helm</h4>
+<p>FlowForge uses a Helm Chart to manage deployment. Installation can be done
+through the instructions on <a href="https://helm.sh">their website</a>.</p>
 <h4 id="kubernetes" tabindex="-1"><a class="header-anchor" href="#kubernetes">#&nbsp;</a> Kubernetes</h4>
 <p>You will need a Kubernetes environment. The deployment has currently been tested on the following environments:</p>
 <ul>
-<li>AWS EKS</li>
+<li><a href="aws"">AWS EKS</a></li>
+<li><a href="dgitial-ocean"">Digital Ocean</a></li>
 <li>MicroK8s</li>
 </ul>
 <p>It should run on any Kubernetes platform, but may require some changes for vendor specific Ingress setup.</p>
 <p>By default the Helm chart assumes that the Kubernetes cluster has at least 2 nodes:</p>
-<ol>
-<li>Used to run the FlowForge management infrastructor</li>
-<li>Used to run the Node-RED Project instances</li>
-</ol>
-<p>These are assigned using node labels as follows:</p>
-<p>FlowForge management</p>
-<pre><code>kubectl label node &lt;management node name&gt; role=management
-</code></pre>
-<p>Node-RED projects</p>
-<pre><code>kubectl label node &lt;projects node name&gt; role=projects
-</code></pre>
-<p>It is possible to run on a single node cluster by overiding the values of <code>forge.managementSelector</code> and <code>forge.projectSelector</code> when configuring the Helm chart. Details are in the Configuring FlowForge section below.</p>
-<h4 id="helm" tabindex="-1"><a class="header-anchor" href="#helm">#&nbsp;</a> Helm</h4>
-<p>FlowForge uses a Helm Chart to manage deployment. Installation can be done
-through the instructions on <a href="https://helm.sh">their website</a>.</p>
-<h4 id="docker-container-registry" tabindex="-1"><a class="header-anchor" href="#docker-container-registry">#&nbsp;</a> Docker Container Registry</h4>
-<p>FlowForge on Kubernetes will require a Docker Container Registry to host both
-the core platform container and the containers that back any Node-RED stacks you
-wish to deploy.</p>
-<p>You can use <a href="https://hub.docker.com">Dockers public registry</a>. If you do, make
-sure you create two repositories: <code>forge-k8s</code> and <code>node-red</code> under your namespace.
-Also ensure you're signed in locally by running <code>docker login</code> in your terminal.</p>
+<ul>
+<li>One used to run the FlowForge management infrastructure</li>
+<li>One or more used to run the Node-RED Project instances</li>
+</ul>
+<p>You can run a small scale Proof-of-Concept on a single node cluster, details of how to do this can be found in the <a href="#configure-flowforge">Configure FlowForge</a> section below.</p>
 <h4 id="postgresql-database" tabindex="-1"><a class="header-anchor" href="#postgresql-database">#&nbsp;</a> PostgreSQL Database</h4>
 <p>The Helm chart can either install a dedicated PostgreSQL database into the same K8s cluster or can configure the install to use an external instance.</p>
 <h4 id="dns" tabindex="-1"><a class="header-anchor" href="#dns">#&nbsp;</a> DNS</h4>
 <p>A wildcard DNS entry will be needed to point to the domain that is used fro the project instances. This will need to point to the K8s Ingress controller.</p>
+<p>Notes on how to setup DNS can be found <a href="../dns-setup"">here</a>.</p>
 <h4 id="email" tabindex="-1"><a class="header-anchor" href="#email">#&nbsp;</a> Email</h4>
 <p>Some features require the ability to send email to users. This can be currently be provided by:</p>
 <ul>
-<li>Details of a SMTP server</li>
+<li>SMTP server</li>
 <li>AWS SES</li>
 </ul>
 <h3 id="installing-flowforge" tabindex="-1"><a class="header-anchor" href="#installing-flowforge">#&nbsp;</a> Installing FlowForge</h3>
 <h4 id="download" tabindex="-1"><a class="header-anchor" href="#download">#&nbsp;</a> Download</h4>
-<p>Download the <a href="https://github.com/flowforge/helm/archive/refs/heads/main.zip">FlowForge Helm Charts</a>
-and extract the ZIP archive.</p>
-<h4 id="building-containers" tabindex="-1"><a class="header-anchor" href="#building-containers">#&nbsp;</a> Building Containers</h4>
-<p>At a minimum there are 2 container required.</p>
-<ul>
-<li>flowforge/forge-k8s</li>
-<li>flowforge/node-red</li>
-</ul>
-<p>These can be built using the <code>./build-containers.sh</code> script in the root of the
-<code>helm</code> repository. This script takes the hostname of the Docker Container
-Registry as it's only argument. This will be pre-pended to the constainer names.
-For example:</p>
-<pre><code>./build-containers.sh containers.example.com
+<pre><code>helm repo add flowforge https://flowforge.github.io/helm`
+helm repo update
 </code></pre>
-<p>This will build two containers</p>
-<ul>
-<li>containers.example.com/flowforge/forge-k8s:<current-version></li>
-<li>containers.example.com/flowforge/node-red:<current-version></li>
-</ul>
-<p>If you're using Dockers Hub you need to create two repositories: <code>forge-k8s</code> and
-<code>node-red</code>. When done retag and push the containers:</p>
-<pre><code>docker tag containers.example.com/flowforge/forge-k8s:&lt;current-version&gt; &lt;your-docker-username&gt;/forge-k8s:&lt;current-version&gt;
-docker tag containers.example.com/flowforge/forge-k8s:&lt;current-version&gt; &lt;your-docker-username&gt;/forge-k8s:&lt;current-version&gt;
-
-docker login
-
-docker push &lt;your-docker-username&gt;/forge-k8s:&lt;current-version&gt;
-docker push &lt;your-docker-username&gt;/node-red:&lt;current-version&gt;
-</code></pre>
-<h5 id="flowforge%2Fforge-k8s" tabindex="-1"><a class="header-anchor" href="#flowforge%2Fforge-k8s">#&nbsp;</a> flowforge/forge-k8s</h5>
-<p>This container includes the FlowForge application and the Kubernetes drivers.</p>
-<h5 id="flowforge%2Fnode-red" tabindex="-1"><a class="header-anchor" href="#flowforge%2Fnode-red">#&nbsp;</a> flowforge/node-red</h5>
-<p>This is the default Node-RED image with the FlowForge components needed to talk
-to the FlowForge Platform. This is the basis for the initial <a href="../../admin/"">Node-RED stack</a>.</p>
-<p>This is the container you can customise for your deployment.</p>
 <h3 id="configure-flowforge" tabindex="-1"><a class="header-anchor" href="#configure-flowforge">#&nbsp;</a> Configure FlowForge</h3>
 <p>All the initial configuration is handled by the Helm chart. This is done by creating a <code>customization.yml</code> file in the <code>helm</code> directory that will be passed to the helm along with the chart.</p>
 <p>This is the minimal configuration</p>
-<pre class="language-yaml"><code class="language-yaml"><span class="token key atrule">forge</span><span class="token punctuation">:</span><br>  <span class="token key atrule">entryPoint</span><span class="token punctuation">:</span> forge.example.com<br>  <span class="token key atrule">domain</span><span class="token punctuation">:</span> example.com<br>  <span class="token key atrule">https</span><span class="token punctuation">:</span> <span class="token boolean important">false</span><br>  <span class="token key atrule">registry</span><span class="token punctuation">:</span> containers.example.com<br>  <span class="token key atrule">registrySecret</span><span class="token punctuation">:</span> password<br>  <span class="token key atrule">localPostgresql</span><span class="token punctuation">:</span> <span class="token boolean important">true</span></code></pre>
+<pre class="language-yaml"><code class="language-yaml"><span class="token key atrule">forge</span><span class="token punctuation">:</span><br>  <span class="token key atrule">entryPoint</span><span class="token punctuation">:</span> forge.example.com<br>  <span class="token key atrule">domain</span><span class="token punctuation">:</span> example.com<br>  <span class="token key atrule">https</span><span class="token punctuation">:</span> <span class="token boolean important">false</span><br>  <span class="token key atrule">localPostgresql</span><span class="token punctuation">:</span> <span class="token boolean important">true</span></code></pre>
 <p>When running on AWS EKS and using AWS SES for email (The IAMRole needs to have the required permissions to use SES) it would look something like:</p>
-<pre class="language-yaml"><code class="language-yaml"><span class="token key atrule">forge</span><span class="token punctuation">:</span><br>  <span class="token key atrule">entryPoint</span><span class="token punctuation">:</span> forge.example.com<br>  <span class="token key atrule">domain</span><span class="token punctuation">:</span> example.com<br>  <span class="token key atrule">registry</span><span class="token punctuation">:</span> &lt;aws<span class="token punctuation">-</span>account<span class="token punctuation">-</span>id<span class="token punctuation">></span>.dkr.ecr.eu<span class="token punctuation">-</span>west<span class="token punctuation">-</span>1.amazonaws.com<br>  <span class="token key atrule">cloudProvider</span><span class="token punctuation">:</span> aws<br>  <span class="token key atrule">aws</span><span class="token punctuation">:</span><br>    <span class="token key atrule">IAMRole</span><span class="token punctuation">:</span> arn<span class="token punctuation">:</span>aws<span class="token punctuation">:</span>iam<span class="token punctuation">:</span><span class="token punctuation">:</span>&lt;aws<span class="token punctuation">-</span>account<span class="token punctuation">-</span>id<span class="token punctuation">></span><span class="token punctuation">:</span>role/flowforge_service_account_role<br>  <span class="token key atrule">email</span><span class="token punctuation">:</span><br>    <span class="token key atrule">ses</span><span class="token punctuation">:</span><br>      <span class="token key atrule">region</span><span class="token punctuation">:</span> eu<span class="token punctuation">-</span>west<span class="token punctuation">-</span><span class="token number">1</span></code></pre>
+<pre class="language-yaml"><code class="language-yaml"><span class="token key atrule">forge</span><span class="token punctuation">:</span><br>  <span class="token key atrule">entryPoint</span><span class="token punctuation">:</span> forge.example.com<br>  <span class="token key atrule">domain</span><span class="token punctuation">:</span> example.com<br>  <span class="token key atrule">cloudProvider</span><span class="token punctuation">:</span> aws<br>  <span class="token key atrule">aws</span><span class="token punctuation">:</span><br>    <span class="token key atrule">IAMRole</span><span class="token punctuation">:</span> arn<span class="token punctuation">:</span>aws<span class="token punctuation">:</span>iam<span class="token punctuation">:</span><span class="token punctuation">:</span>&lt;aws<span class="token punctuation">-</span>account<span class="token punctuation">-</span>id<span class="token punctuation">></span><span class="token punctuation">:</span>role/flowforge_service_account_role<br>  <span class="token key atrule">email</span><span class="token punctuation">:</span><br>    <span class="token key atrule">ses</span><span class="token punctuation">:</span><br>      <span class="token key atrule">region</span><span class="token punctuation">:</span> eu<span class="token punctuation">-</span>west<span class="token punctuation">-</span><span class="token number">1</span></code></pre>
 <p>A more detailed example for running on AWS can be found <a href="aws"">here</a></p>
-<p>As mentioned earlier the Helm chart defaults to expecting at least 2 nodes in the Kubernetes cluster. To overide this you can remove the node selectors with the following which will mean that all pods can run on any nodes.</p>
+<p>As mentioned earlier the Helm chart defaults to expecting at least 2 nodes in the Kubernetes cluster.</p>
+<p>You will need to label at least one node to run the management application and one to run the Node-RED Projects.</p>
+<p>You can do this with the <code>kubectl</code> utility. The following command lists
+all the nodes in the cluster</p>
+<pre><code>kubectl get nodes
+</code></pre>
+<p>You can then use <code>kubectl label node</code> to add the required labels:</p>
+<p>FlowForge management node(s)</p>
+<pre><code>kubectl label node &lt;management node name&gt; role=management
+</code></pre>
+<p>Node-RED projects node(s)</p>
+<pre><code>kubectl label node &lt;projects node name&gt; role=projects
+</code></pre>
+<p>To override this you can remove the node selectors with the following which will mean that all pods can run on any nodes.</p>
 <pre class="language-yaml"><code class="language-yaml"><span class="token key atrule">forge</span><span class="token punctuation">:</span><br>  <span class="token key atrule">projectSelector</span><span class="token punctuation">:</span><br>  <span class="token key atrule">managementSelector</span><span class="token punctuation">:</span></code></pre>
-<p>A full list of all the configable values can be found in the <a href="https://github.com/flowforge/helm/blob/main/helm/flowforge/README.md">Helm Chart README</a>.</p>
-<p>The install can then be started with the following command, should be run from the <code>helm</code> dirctory:</p>
-<pre><code>helm upgrade --install flowforge flowforge -f customization.yml
+<p>A full list of all the configurable values can be found in the <a href="https://github.com/flowforge/helm/blob/main/helm/flowforge/README.md">Helm Chart README</a>.</p>
+<p>The install can then be started with the following command:</p>
+<pre><code>helm upgrade --atomic --install flowforge flowforge/flowforge -f customization.yml
 </code></pre>
 <h4 id="enabling-the-mqtt-broker" tabindex="-1"><a class="header-anchor" href="#enabling-the-mqtt-broker">#&nbsp;</a> Enabling the MQTT broker</h4>
 <p>To enable the MQTT broker with Kubernetes install you need to add the following to the <code>customization.yml</code> file</p>
@@ -186,7 +158,7 @@ to the FlowForge Platform. This is the basis for the initial <a href="../../admi
 <h4 id="using-flowforge-file-storage" tabindex="-1"><a class="header-anchor" href="#using-flowforge-file-storage">#&nbsp;</a> Using FlowForge File Storage</h4>
 <p>FlowForge projects when running in Kubernetes do not have direct
 access to a persistent file system to store files.</p>
-<p>We recomend disabling the Node-RED core file nodes in the FlowForge
+<p>We recommend disabling the Node-RED core file nodes in the FlowForge
 Template.</p>
 <img src="../images/file-node-template.png"" width=500 />
 <p>Adding <code>10-file.js</code> to the list of &quot;Excluded nodes by filename&quot; section will ensure that the core file nodes are not loaded by the project.</p>
@@ -210,7 +182,7 @@ creating an administrator for the platform and other configuration options.</p>
             <h3 class="font-medium border-b pb-1 mb-4">On this page</h3>
             <ul id="toc" class="text-sm border-b mb-4"></ul>
             <div class="text-sm pb-1 text-right mb-4"><a href="https://github.com/flowforge/flowforge/edit/main/docs/install/kubernetes/README.md">Edit this page</a></div>
-            <div class="text-xs pb-1 text-right mb-4 italic">Updated: 2022-12-01 10:41:54 +0000</div>
+            <div class="text-xs pb-1 text-right mb-4 italic">Updated: 2022-12-07 12:19:44 +0100</div>
         </div>
     </div>
 </div>
