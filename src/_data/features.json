@@ -1,10 +1,10 @@
 [{
-    "icon": "community_red.png",
-    "title": "Enterprise Ready Node-RED",
+    "icon": "scalable_red.png",
+    "title": "Node-RED at Scale",
     "description": "<p>Lorem ipsum dolor sit amet consectetur. In venenatis diam odio velit fringilla venenatis id viverra. Feugiat volutpat nibh aliquam eu in urna porta. Vel volutpat lectus sollicitudin at.</p><p>Feugiat volutpat nibh aliquam eu in urna porta. Vel volutpat lectus sollicitudin at.</p>"
 }, {
-    "icon": "community_red.png",
-    "title": "Device Deployment at Scale",
+    "icon": "edge_red.png",
+    "title": "Fleet Management & Remote Deployment",
     "description": "<p>Lorem ipsum dolor sit amet consectetur. In venenatis diam odio velit fringilla venenatis id viverra. Feugiat volutpat nibh aliquam eu in urna porta. Vel volutpat lectus sollicitudin at.</p><p>Feugiat volutpat nibh aliquam eu in urna porta. Vel volutpat lectus sollicitudin at.</p>"
 }, {
     "icon": "community_red.png",
@@ -17,9 +17,9 @@
 }, {
     "icon": "community_red.png",
     "title": "Standardized Environments",
-    "description": "<p>Lorem ipsum dolor sit amet consectetur. In venenatis diam odio velit fringilla venenatis id viverra. Feugiat volutpat nibh aliquam eu in urna porta. Vel volutpat lectus sollicitudin at.</p>"
+    "description": "<p>Team Librarys/Flows/Nodes, Templating/Stacks, etc. In venenatis diam odio velit fringilla venenatis id viverra. Feugiat volutpat nibh aliquam eu in urna porta. Vel volutpat lectus sollicitudin at.</p>"
 }, {
-    "icon": "community_red.png",
+    "icon": "time_red.png",
     "title": "Reduced Operational Overheads",
     "description": "<p>Lorem ipsum dolor sit amet consectetur. In venenatis diam odio velit fringilla venenatis id viverra. Feugiat volutpat nibh aliquam eu in urna porta. Vel volutpat lectus sollicitudin at.</p><p>Feugiat volutpat nibh aliquam eu in urna porta. Vel volutpat lectus sollicitudin at.</p>"
 }]
