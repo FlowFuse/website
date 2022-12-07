@@ -120,7 +120,7 @@ Each content type has channels which are appropriate, this table sets out which 
 |Outage           |      |             |         |         |         |       |              |                  |
 |Corporate Comms  |*     |             |*        |         |*        |       |              |                  |
 |Newsletter       |*     |*            |*        |         |*        |*      |*             |*                 |
-|How To           |      |*            |*        |         |*        |*      |*             |*                 |
+|How To           |*     |             |*        |         |*        |*      |*             |*                 |
 
 ### Channel Content Guidance
 
