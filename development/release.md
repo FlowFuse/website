@@ -31,6 +31,7 @@ have been published as needed.
  - [`flowforge/flowforge-device-agent`](https://github.com/flowforge/flowforge-device-agent)
  - [`flowforge/flowforge-nr-theme`](https://github.com/flowforge/flowforge-nr-theme)
  - [`flowforge/flowforge-nr-project-nodes`](https://github.com/flowforge/flowforge-nr-project-nodes)
+ - [`flowforge/flowforge-nr-persistent-context`](https://github.com/flowforge/flowforge-nr-persistent-context)
 
 Refer to the section [Unmanaged Releases](#unmanaged-releases) for releasing these.
 
