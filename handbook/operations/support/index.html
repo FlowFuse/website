@@ -100,6 +100,10 @@ to FlowForge articles or documentation. If these resources are missing, please
 start or update where applicable.</p>
 <p>When you reply to a customer via the FreshDesk UI the ticket will be automatically marked as resolved. If the customer responds back the ticket will be marked as open again. If you don't need to respond to the customer and you feel the ticket is resolved please manually set the ticket status to be resolved in the Freshdesk UI.</p>
 <p>Freshdesk uses notes and responses within the thread, notes are internal and not sent to the customer, responses are sent to the customer.</p>
+<p>We monitor the time since a ticket on FreshDesk was last updated and send alerts to slack #support-tickets where those tickets have not been updated for longer than:</p>
+<p>1 day for customer created support tickets.</p>
+<p>7 days for tickets related to failed billing actions.</p>
+<p>If you want to assign a ticket to be a 'failed billing action' please assign the tag 'billing' to that ticket in FreshDesk.</p>
 <h3 id="scope-of-support" tabindex="-1"><a class="header-anchor" href="#scope-of-support">#&nbsp;</a> Scope of Support</h3>
 <p>Initially FlowForge customers will only get support for issues relating to the
 FlowForge application or their account &amp; billing. Any questions around Node-RED
@@ -117,7 +121,7 @@ direct to a repo for a 3rd party node question.</p>
             <h3 class="font-medium border-b pb-1 mb-4">On this page</h3>
             <ul id="toc" class="text-sm border-b mb-4"></ul>
             <div class="text-sm pb-1 text-right mb-4"><a href="https://github.com/flowforge/handbook/edit/main/operations/support.md">Edit this page</a></div>
-            <div class="text-xs pb-1 text-right mb-4 italic">Updated: 2022-12-07 14:37:11 +0100</div>
+            <div class="text-xs pb-1 text-right mb-4 italic">Updated: 2022-12-07 14:42:01 +0100</div>
         </div>
     </div>
 </div>
