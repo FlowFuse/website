@@ -3,8 +3,42 @@
     <title>FlowForge</title>
     <link href="https://flowforge.com/blog/index.xml" rel="self"/>
     <link href="https://flowforge.com/blog"/>
-    <updated>2022-12-05T00:00:00Z</updated>
+    <updated>2022-12-07T00:00:00Z</updated>
     <id>https://flowforge.com/blog</id>
+    
+    <entry>
+        <id>https://flowforge.com/blog/2022/12/Create-http-trigger-with-authentication/</id>
+        <title>Create HTTP triggers with authentication</title>
+        <summary>From any browser or command line you now have the ability to securely trigger your flows</summary>
+        <updated>2022-12-07T00:00:00Z</updated>
+        <link href="https://flowforge.com/blog/2022/12/Create-http-trigger-with-authentication/"/>
+        <author><name>Rob Marcer</name></author>
+        <content type="html">&lt;p&gt;Having an HTTP endpoint trigger your flows is very useful. From any browser or command line you now have the ability to trigger your flows.&lt;/p&gt;
+&lt;!--more--&gt;
+&lt;p&gt;Doing so safely with authentication is slightly harder, but not a lot. FlowForge makes it rather easy to accomplish.&lt;/p&gt;
+&lt;h3 id=&quot;creating-the-http-flow&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://flowforge.com/blog/2022/12/Create-http-trigger-with-authentication/#creating-the-http-flow&quot;&gt;#&amp;nbsp;&lt;/a&gt; Creating the HTTP flow&lt;/h3&gt;
+&lt;p&gt;When you start a project on FlowForge, remember the project name. For this how-to we’ll use &lt;code&gt;example&lt;/code&gt;. Open the editor and drag in the HTTP In node as well as the HTTP response node. Connect them, and add a debug node, which is connected to the “HTTP in” node.&lt;/p&gt;
+&lt;p&gt;First off; let’s set the HTTP in node properties:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://flowforge.com/blog/2022/12/images/edit-http-node.png&quot; alt=&quot;Shows the UI to edit the node&#39;s properties&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;You can import this flow into your own project if you’d like:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;[{&amp;quot;id&amp;quot;:&amp;quot;4faa84d37a52bb28&amp;quot;,&amp;quot;type&amp;quot;:&amp;quot;group&amp;quot;,&amp;quot;z&amp;quot;:&amp;quot;3c6e2dc732ada815&amp;quot;,&amp;quot;name&amp;quot;:&amp;quot;Allow HTTP Post request to trigger a flow&amp;quot;,&amp;quot;style&amp;quot;:{&amp;quot;label&amp;quot;:!0},&amp;quot;nodes&amp;quot;:[&amp;quot;1fa26e0ed3ddec1a&amp;quot;,&amp;quot;45a180052e1a2f43&amp;quot;,&amp;quot;09347881f4fa4057&amp;quot;],&amp;quot;x&amp;quot;:34,&amp;quot;y&amp;quot;:79,&amp;quot;w&amp;quot;:472,&amp;quot;h&amp;quot;:122},{&amp;quot;id&amp;quot;:&amp;quot;1fa26e0ed3ddec1a&amp;quot;,&amp;quot;type&amp;quot;:&amp;quot;http in&amp;quot;,&amp;quot;z&amp;quot;:&amp;quot;3c6e2dc732ada815&amp;quot;,&amp;quot;g&amp;quot;:&amp;quot;4faa84d37a52bb28&amp;quot;,&amp;quot;name&amp;quot;:&amp;quot;HTTP Trigger&amp;quot;,&amp;quot;url&amp;quot;:&amp;quot;/http-trigger&amp;quot;,&amp;quot;method&amp;quot;:&amp;quot;post&amp;quot;,&amp;quot;upload&amp;quot;:!1,&amp;quot;swaggerDoc&amp;quot;:&amp;quot;&amp;quot;,&amp;quot;x&amp;quot;:130,&amp;quot;y&amp;quot;:120,&amp;quot;wires&amp;quot;:[[&amp;quot;45a180052e1a2f43&amp;quot;,&amp;quot;09347881f4fa4057&amp;quot;]]},{&amp;quot;id&amp;quot;:&amp;quot;45a180052e1a2f43&amp;quot;,&amp;quot;type&amp;quot;:&amp;quot;http response&amp;quot;,&amp;quot;z&amp;quot;:&amp;quot;3c6e2dc732ada815&amp;quot;,&amp;quot;g&amp;quot;:&amp;quot;4faa84d37a52bb28&amp;quot;,&amp;quot;name&amp;quot;:&amp;quot;Empty HTTP response&amp;quot;,&amp;quot;statusCode&amp;quot;:&amp;quot;200&amp;quot;,&amp;quot;headers&amp;quot;:{},&amp;quot;x&amp;quot;:360,&amp;quot;y&amp;quot;:120,&amp;quot;wires&amp;quot;:[]},{&amp;quot;id&amp;quot;:&amp;quot;09347881f4fa4057&amp;quot;,&amp;quot;type&amp;quot;:&amp;quot;debug&amp;quot;,&amp;quot;z&amp;quot;:&amp;quot;3c6e2dc732ada815&amp;quot;,&amp;quot;g&amp;quot;:&amp;quot;4faa84d37a52bb28&amp;quot;,&amp;quot;name&amp;quot;:&amp;quot;Print HTTP Request&amp;quot;,&amp;quot;active&amp;quot;:!0,&amp;quot;tosidebar&amp;quot;:!0,&amp;quot;console&amp;quot;:!1,&amp;quot;tostatus&amp;quot;:!1,&amp;quot;complete&amp;quot;:&amp;quot;payload&amp;quot;,&amp;quot;targetType&amp;quot;:&amp;quot;msg&amp;quot;,&amp;quot;statusVal&amp;quot;:&amp;quot;&amp;quot;,&amp;quot;statusType&amp;quot;:&amp;quot;auto&amp;quot;,&amp;quot;x&amp;quot;:360,&amp;quot;y&amp;quot;:160,&amp;quot;wires&amp;quot;:[]}]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Now I’ve opened a terminal and executed:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;curl -X POST https://example.flowforge.com/http-trigger
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;When there’s no output, that means it’s all good! There should be an empty message in the debug console in the Node-RED editor though&lt;/p&gt;
+&lt;h3 id=&quot;securing-the-http-trigger-with-a-username-and-password&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://flowforge.com/blog/2022/12/Create-http-trigger-with-authentication/#securing-the-http-trigger-with-a-username-and-password&quot;&gt;#&amp;nbsp;&lt;/a&gt; Securing the HTTP trigger with a username and password&lt;/h3&gt;
+&lt;p&gt;The problem with our trigger is that anyone with internet access could trigger it. That’s not a great idea. So let’s secure this endpoint with HTTP Basic Authentication. There are various ways to include a secure endpoint in Node-RED, we’ve built authentication directly into FlowForge to make it easier for all users. On the FlowForge project, go to settings and then to ‘Editor’. Under the section HTTP Auth you can set a username and password. You should generate both by a random string generator, and store the credentials somewhere safe.  Restart the project to have the runtime pick up the changes, and the endpoint is secured!&lt;/p&gt;
+&lt;p&gt;Let’s validate the endpoint that worked a minute ago doesn’t anymore:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;curl -X POST https://example.flowforge.cloud/http-trigger
+=&amp;gt; Unauthorized
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Let’s get it working again: (replace &lt;username&gt; and &lt;password&gt; with the details from the sticky note)&lt;/password&gt;&lt;/username&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;curl -X POST https://&amp;lt;username&amp;gt;:&amp;lt;password&amp;gt;@example.flowforge.cloud/http-trigger
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;That’s it! You now have a flow that’s protected by a username and password combination!&lt;/p&gt;
+</content>
+    </entry>
     
     <entry>
         <id>https://flowforge.com/blog/2022/12/node-red-flow-best-practice/</id>
