@@ -36,10 +36,14 @@
 
 .page p {
     color: theme(colors.white);
-    line-height: 32px;
+    line-height: 1.5rem;
     font-size: 16px;
     font-weight: 300;
     margin-bottom: 1rem;
+}
+
+.page .hero p {
+    line-height: 32px;
 }
 
 .page .hero img {
@@ -50,6 +54,11 @@
 .page .hero-lg img {
     width: 325px;
     height: 325px;
+}
+
+.page .hero-wide img {
+    width: 600px;
+    height: auto;
 }
 
 /* ABOUT */
@@ -97,6 +106,44 @@
     }
 }
 
+/*
+    FEATURES
+*/
+
+
+@layer components {
+    .feature-tiles {
+        display: grid;
+        @apply grid-cols-1 md:grid-cols-2;
+        gap: 48px;
+    }
+    .feature-tile {
+        background-color: white;
+        border: 1px solid theme(colors.gray.200);
+        border-radius: 24px;
+        padding: 24px;
+    }
+    .feature-tile--title {
+        display: flex;
+        align-items: center;
+    }
+    .feature-tile img {
+        width: 64px;
+        height: 64px
+    }
+    .feature-tile h4 {
+        flex-grow: 1;
+        text-align: left;
+        margin: 0;
+        margin-left: 16px;
+        padding-right: 32px;
+    }
+    .feature-tile p {
+        text-align: left;
+        margin: 0;
+        margin-top: 16px;
+    }
+}
 
 /*
     PRICING

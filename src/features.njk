@@ -1,0 +1,71 @@
+---
+title: Features
+layout: layouts/page.njk
+description: <p>Lorem ipsum dolor sit amet consectetur. Vel massa urna sed netus venenatis nisl viverra fames.</p><p>Blandit egestas egestas venenatis nisl viverra fames.</p>
+heroimg: "../images/features.png"
+heroWide: true
+---
+
+<div class="-mt-24 md:-mt-32">
+    {% include "components/divider-flow--default.njk" %}
+</div>
+
+<div class="product w-full ff-bg-light px-6 pt-20 pb-20 md:px-0 md:pt-32 md:pb-40">
+    <div class="container px-3 md:px-12 md:max-w-screen-lg m-auto text-center">
+        <div class="mt-9">
+            <h1 class="mb-0">Lorum Ipsum Title</h1>
+            <p class="text-center">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Something about the roadmap
+            </p>
+        </div>
+        <!-- Feature Tiles -->
+        <div class="feature-tiles mt-12">
+            {%- for f in features -%}
+            <div class="feature-tile">
+                <div class="feature-tile--title">
+                    <img src="/images/pictograms/{{ f.icon }}" />
+                    <h4>{{ f.title }}</h4>
+                </div>
+                <div>{{ f.description | safe }}</div>
+            </div>
+            {%- endfor -%}
+        </div>
+    </div>
+</div>
+
+{% include "components/divider-flow--top-red--dark.njk" %}
+
+<div class="w-full ff-bg-dark px-6 pt-0 pb-32 md:pt-0 md:px-0">
+    <div class="container px-3 md:px-12 md:max-w-screen-lg m-auto text-center max-w-4xl">
+        <div class="m-auto mt-16 w-full text-center">
+            <h1>Benefits of FlowForge</h1>
+            <p class="font-light">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis at morbi sed tincidunt eu faucibus.</p>
+        </div>
+        <div class="mt-20 flex flex-wrap justify-center">
+            <div class="company-value">
+                <img src="../images/pictograms/time.png" />
+                <h5>One-Minute Setup</h5>
+            </div>
+            <div class="company-value">
+                <img src="../images/pictograms/security.png" />
+                <h5>Enterprise Ready</h5>
+            </div>
+            <div class="company-value">
+                <img src="../images/pictograms/ticket.png" />
+                <h5>Ticket-Based Support</h5>
+            </div>
+            <div class="company-value">
+                <img src="../images/pictograms/node_catalog.png" />
+                <h5>Node-RED, Managed<br>For You</h5>
+            </div>
+            <div class="company-value">
+                <img src="../images/pictograms/community.png" />
+                <h5>Team-Based Collaboration</h5>
+            </div>
+            <div class="company-value">
+                <img src="../images/pictograms/browser.png" />
+                <h5>Full Brower-Based</h5>
+            </div>
+        </div>
+    </div>
+</div>
