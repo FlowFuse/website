@@ -26,6 +26,14 @@ When you reply to a customer via the FreshDesk UI the ticket will be automatical
 
 Freshdesk uses notes and responses within the thread, notes are internal and not sent to the customer, responses are sent to the customer.
 
+We monitor the time since a ticket on FreshDesk was last updated and send alerts to slack #support-tickets where those tickets have not been updated for longer than:
+
+1 day for customer created support tickets.
+
+7 days for tickets related to failed billing actions.
+
+If you want to assign a ticket to be a 'failed billing action' please assign the tag 'billing' to that ticket in FreshDesk.
+
 
 ### Scope of Support
 
