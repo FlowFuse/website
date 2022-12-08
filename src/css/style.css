@@ -481,6 +481,74 @@ h4:hover .header-anchor {
         /* @apply mt-20; */
         @apply h-20 -mt-20 md:h-28 md:-mt-28;
     }
+
+    .ff-faqs {
+        
+    }
+
+    .ff-faq {
+        text-align: left;
+        width: 100%;
+    }
+
+    .ff-faq-question {
+        text-align: left;
+        font-weight: bold;
+        border-top-width: 1px;
+        border-style: solid;
+        border-color: black;
+        width: 100%;
+        padding: 12px 18px;
+        display: flex;
+        stroke: black;
+        justify-content: space-between;
+        align-items: center;
+        transition: 0.4s;
+    }
+    .ff-faq:last-child .ff-faq-question {
+        border-bottom-width: 1px;
+        border-style: solid;
+        border-color: black;
+    }
+    .ff-faq-question .icon-plus {
+        display: block;
+    }
+    .ff-faq-question .icon-minus {
+        display: none;
+    }
+    .ff-faq-question--open .icon-plus {
+        display: none;
+    }
+    .ff-faq-question--open .icon-minus {
+        display: block;
+    }
+    .ff-faq-question:hover {
+        color: theme(colors.blue.700);
+    }
+    .ff-faq-question:hover svg{
+        stroke: theme(colors.blue.700);
+    }
+
+    .ff-faq-answer {
+        padding: 0 24px;
+        max-height: 0;
+        overflow-y: hidden;
+        transition: 0.3s;
+    }
+
+    .ff-faq-answer--open {
+        padding: 12px 24px;
+        border-top-width: 1px;
+        border-style: solid;
+        border-color: black;
+    }
+
+    .ff-faq-answer p:first-child {
+        margin-top: 0;
+    }
+    .ff-faq-answer p:last-child {
+        margin-bottom: 0;
+    }
 }
 pre.mermaid {
     background-color: #ffffff

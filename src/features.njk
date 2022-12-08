@@ -67,3 +67,17 @@ heroWide: true
         </div>
     </div>
 </div>
+
+{% include "components/divider-flow--top-red--light.njk" %}
+
+<div class="w-full ff-bg-light px-6 pt-24 pb-32 md:px-0">
+    <div class="container px-3 md:px-12 md:max-w-screen-lg m-auto text-center max-w-4xl">
+        <div class="m-auto w-full text-center">
+            <h1>Frequently Asked Questions</h1>
+            <p class="font-light">If you have any questions that you don't see here, please do reach out via our <a href="/contact-us">Contact Us</a> page.</p>
+        </div>
+        <div class="ff-faqs mt-12 flex flex-wrap justify-center">
+            {% include "faqs/accordian.njk" %}
+        </div>
+    </div>
+</div>

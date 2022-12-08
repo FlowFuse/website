@@ -1,0 +1,29 @@
+<script>
+    function toggleQuestion (el) {
+        el.classList.toggle('ff-faq-question--open')
+        let answer = el.nextElementSibling
+        answer.classList.toggle('ff-faq-answer--open')
+        if (answer.style.maxHeight) {
+            answer.style.maxHeight = null;
+        } else {
+            answer.style.maxHeight = answer.scrollHeight + 48 + "px";
+        } 
+    }
+</script>
+
+{%- for faq in faqs -%}
+<div class="ff-faq">
+    <button class="ff-faq-question" onclick="toggleQuestion(this)">
+        {{ faq.question }}
+        <span class="icon-plus">
+            {% include "components/icons/plus.svg" %}
+        </span>
+        <span class="icon-minus">
+            {% include "components/icons/minus.svg" %}
+        </span>
+    </button>
+    <div class="ff-faq-answer">
+        {{ faq.answer | safe }}
+    </div>
+</div>
+{%- endfor -%}

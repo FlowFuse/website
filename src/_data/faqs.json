@@ -1,0 +1,10 @@
+[{
+    "question": "What is the difference between FlowForge & Node-RED?",
+    "answer": "<p>Lorem ipsum dolor sit amet consectetur. Pellentesque leo tristique volutpat eget sit in libero. Amet faucibus tempus neque magna sit. Semper imperdiet facilisis tortor ut. Neque tristique pellentesque sollicitudin tincidunt quis sem felis luctus velit.</p><p>Sem diam nascetur tellus lectus libero eget. Felis velit eleifend id feugiat leo ultrices. Quis amet senectus eu pellentesque a fringilla augue et. Orci ut egestas gravida at sed dictum. Penatibus felis fusce dictum in eu gravida magna. Diam eget molestie in risus dignissim. Varius aliquam in proin hendrerit euismod praesent diam massa turpis.</p>"
+}, {
+    "question": "Is there a free-tier of FlowForge?",
+    "answer": "<p>FlowForge is available to install on your own infrastructure, for free, from GitHub. You can find the install documentation <a href=\"docs/install\">here</a>.</p><p>There are more features available in our Premium offerings, available on FlowForge Cloud, or as a Premium offering on your own infrastructure. You can see a breakdown of what's included on our <a href=\"/pricing\">Pricing</a> page.</p>"
+}, {
+    "question": "When am I charged?",
+    "answer": "<p>FlowForge uses Stripe for our payment provider.</p>"
+}]
