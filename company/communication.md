@@ -54,6 +54,15 @@ As such knowledge on a decision made in Slack, or elsewhere, should always be re
 in the GitHub issue or Google Doc on that topic to keep a log that also works
 for asynchronous communication.
 
+#### Recommended channels
+
+Not all channels are joined by default when you join Slack. We've added a bunch
+below so you get to decide if you want more channels or not.
+
+- `#metrics` will output sales and engagement metrics
+- `#social-twitter` is a stream of engagement with @FlowForgeInc
+- `#virtual-coffee` to schedule coffee calls with other team members!
+
 ### Standup meetings
 
 Standup meetings are hard to scale across multiple timezones. To make standups
