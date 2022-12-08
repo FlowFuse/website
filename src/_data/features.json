@@ -1,25 +1,25 @@
 [{
     "icon": "scalable_red.png",
     "title": "Node-RED at Scale",
-    "description": "<p>Lorem ipsum dolor sit amet consectetur. In venenatis diam odio velit fringilla venenatis id viverra. Feugiat volutpat nibh aliquam eu in urna porta. Vel volutpat lectus sollicitudin at.</p><p>Feugiat volutpat nibh aliquam eu in urna porta. Vel volutpat lectus sollicitudin at.</p>"
+    "description": "<p>Easy instance management, easily suspend and tear down projects. FlowForge makes keeping track of multiple Node-RED projects a breeze.</p><p>FlowForge also provides Single-Sign On to ensure that increased scale, also comes with trusted security.</p>"
 }, {
     "icon": "edge_red.png",
     "title": "Fleet Management & Remote Deployment",
-    "description": "<p>Lorem ipsum dolor sit amet consectetur. In venenatis diam odio velit fringilla venenatis id viverra. Feugiat volutpat nibh aliquam eu in urna porta. Vel volutpat lectus sollicitudin at.</p><p>Feugiat volutpat nibh aliquam eu in urna porta. Vel volutpat lectus sollicitudin at.</p>"
+    "description": "<p>One-click deploy to thousands of devices.</p><p>Effortlessly upgrade flows remotely to your edge devices and get an overview of device health and connectivity.</p>"
 }, {
     "icon": "collaboration_red.png",
     "title": "Lorum Ipsum Collaboration",
-    "description": "<p>Lorem ipsum dolor sit amet consectetur. In venenatis diam odio velit fringilla venenatis id viverra. Feugiat volutpat nibh aliquam eu in urna porta. Vel volutpat lectus sollicitudin at.</p><p>Feugiat volutpat nibh aliquam eu in urna porta. Vel volutpat lectus sollicitudin at.</p>"
+    "description": "<p>FlowForge provides intuitive tools to help control access to your Node-RED projects and grow your team without fear of development conflicts.</p><p>Team Libraries for your own flows and nodes also make it easy to share code with your team across your Node-RED projects.</p>"
 }, {
     "icon": "orchestration_red.png",
     "title": "Frictionless Orchestration",
-    "description": "<p>Lorem ipsum dolor sit amet consectetur. In venenatis diam odio velit fringilla venenatis id viverra. Vel volutpat lectus sollicitudin at.</p><p>Feugiat volutpat nibh aliquam eu in urna porta. Vel volutpat lectus sollicitudin at.</p>"
+    "description": "<p>FlowForge Cloud takes away the headache of having to manage your own infrastructure.</p><p>FlowForge continues to grow and gain further enhancements to assist in your IT and OT integration story.</p>"
 }, {
     "icon": "enterprise_red.png",
     "title": "Standardized Environments",
-    "description": "<p>Team Librarys/Flows/Nodes, Templating/Stacks, etc. In venenatis diam odio velit fringilla venenatis id viverra. Feugiat volutpat nibh aliquam eu in urna porta. Vel volutpat lectus sollicitudin at.</p>"
+    "description": "<p>Project Templates accelerate getting started on new flows, with configuration of Node-RED versions and pre-installed third-party nodes.</p><p>FlowForge provides stacks for easy upgrading to the latest versions of Node-RED as soon as it's available.</p>"
 }, {
     "icon": "time_red.png",
     "title": "Reduced Operational Overheads",
-    "description": "<p>Lorem ipsum dolor sit amet consectetur. In venenatis diam odio velit fringilla venenatis id viverra. Feugiat volutpat nibh aliquam eu in urna porta. Vel volutpat lectus sollicitudin at.</p><p>Feugiat volutpat nibh aliquam eu in urna porta. Vel volutpat lectus sollicitudin at.</p>"
+    "description": "<p>Backed by consistent security across the platform, FlowForge makes hosting, deployment and management easy.</p><p>FlowForge provides centralised audit logging too - bringing you peace of mind and compliance in your production environment</p>"
 }]
