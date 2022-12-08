@@ -90,8 +90,15 @@ The <a href="../user/concepts"">Concepts</a> remain the same, however FlowForge 
 See the <a href="./billing"">Billing</a> page for more detailed answers about billing.</p>
 <h2 id="support" tabindex="-1"><a class="header-anchor" href="#support">#&nbsp;</a> Support</h2>
 <p>Customers can get support by emailing support@flowforge.com, we presently only offer support for the flowforge application and your account, any issues relating to Node-RED such as your flows or a 3rd party node should be raised in the appropriate community forum, for example https://discourse.nodered.org/ or the GitHub project of the third party node.</p>
+<h2 id="node-red-on-flowforge-cloud" tabindex="-1"><a class="header-anchor" href="#node-red-on-flowforge-cloud">#&nbsp;</a> Node-RED on FlowForge Cloud</h2>
+<p>FlowForge currently offers Node-RED 2.2 and 3.0 to customers. When creating a
+new project a <a href="../user/concepts#project-stack"">Stack</a> is chosen, which later
+can be <a href="../user/changestack"">upgraded to a later version</a>.</p>
+<p>Each Node-RED can install custom modules as advertised in the <a href="https://flows.nodered.org">Flow Library</a>.</p>
 <h2 id="file-system" tabindex="-1"><a class="header-anchor" href="#file-system">#&nbsp;</a> File System</h2>
-<p>The file system within a project is not persistent, therefore users should avoid writing anything to this. The Node-RED Nodes for file in and out have been removed. Other 3rd party nodes <em>may</em> attempt to access the filesystem with unpredictable results.</p>
+<p>The file system within a project is not persistent, FlowForge replaces the standard
+file nodes. These files are stored outside of the container and provide persistence.</p>
+<p>Other 3rd party nodes <em>may</em> attempt to access the filesystem with unpredictable results.</p>
 <h2 id="network-connections" tabindex="-1"><a class="header-anchor" href="#network-connections">#&nbsp;</a> Network Connections</h2>
 <h3 id="http(s)-%26-websockets" tabindex="-1"><a class="header-anchor" href="#http(s)-%26-websockets">#&nbsp;</a> HTTP(S) &amp; Websockets</h3>
 <p>Projects expose an HTTPS interface on port 443 with each project having its own hostname (example.flowforge.cloud), Plain HTTP requests to port 80 will receive a redirect to HTTPS on port 443.
@@ -111,7 +118,7 @@ This can make access to a remote database or corporate network possible where th
             <h3 class="font-medium border-b pb-1 mb-4">On this page</h3>
             <ul id="toc" class="text-sm border-b mb-4"></ul>
             <div class="text-sm pb-1 text-right mb-4"><a href="https://github.com/flowforge/flowforge/edit/main/docs/cloud/README.md">Edit this page</a></div>
-            <div class="text-xs pb-1 text-right mb-4 italic">Updated: 2022-12-07 12:19:44 +0100</div>
+            <div class="text-xs pb-1 text-right mb-4 italic">Updated: 2022-12-08 13:11:40 +0100</div>
         </div>
     </div>
 </div>
