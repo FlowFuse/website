@@ -11,19 +11,24 @@
     }
 </script>
 
-{%- for faq in faqs -%}
-<div class="ff-faq">
-    <button class="ff-faq-question" onclick="toggleQuestion(this)">
-        {{ faq.question }}
-        <span class="icon-plus">
-            {% include "components/icons/plus.svg" %}
-        </span>
-        <span class="icon-minus">
-            {% include "components/icons/minus.svg" %}
-        </span>
-    </button>
-    <div class="ff-faq-answer">
-        {{ faq.answer | safe }}
+{%- for section in faqs -%}
+<div class="ff-faq-section">
+    <h4>{{ section.title }}</h4>
+    {%- for faq in section.faqs -%}
+    <div class="ff-faq">
+        <button class="ff-faq-question" onclick="toggleQuestion(this)">
+            {{ faq.question }}
+            <span class="icon-plus">
+                {% include "components/icons/plus.svg" %}
+            </span>
+            <span class="icon-minus">
+                {% include "components/icons/minus.svg" %}
+            </span>
+        </button>
+        <div class="ff-faq-answer">
+            {{ faq.answer | safe }}
+        </div>
     </div>
+    {%- endfor -%}
 </div>
 {%- endfor -%}

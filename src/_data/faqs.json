@@ -1,10 +1,22 @@
 [{
-    "question": "What is the difference between FlowForge & Node-RED?",
-    "answer": "<p>Lorem ipsum dolor sit amet consectetur. Pellentesque leo tristique volutpat eget sit in libero. Amet faucibus tempus neque magna sit. Semper imperdiet facilisis tortor ut. Neque tristique pellentesque sollicitudin tincidunt quis sem felis luctus velit.</p><p>Sem diam nascetur tellus lectus libero eget. Felis velit eleifend id feugiat leo ultrices. Quis amet senectus eu pellentesque a fringilla augue et. Orci ut egestas gravida at sed dictum. Penatibus felis fusce dictum in eu gravida magna. Diam eget molestie in risus dignissim. Varius aliquam in proin hendrerit euismod praesent diam massa turpis.</p>"
+    "title": "General Functionality",
+    "faqs": [{
+        "question": "What is the difference between FlowForge & Node-RED?",
+        "answer": "<p>Node-RED is an open-source tool for wiring together \"things\", where these \"things\" can be anything from APIs to hardware to online services. Because of its flexibility and ease-of-use, Node-RED is well suited to building IoT integrations.</p><p>FlowForge is designed to make it easy to deploy, host and manage Node-RED in production and enterprise environments. FlowForge provides tooling to manage many instances of Node-RED. FlowForge provides fleet maangement with the ability to remote deploy to thousands of edge devices and easy collaborate with your team mates using functionality like Team Libraries to store common flows and custom nodes.</p><p>These are just some of the features on offer with FlowForge. For a deeper dive, please visit our <a href=\"/features\">Features</a> page, or for a breakdown of which features are available in our Premium offerings, please visit our <a href=\"/pricing\">Pricing</a> page."
+    }, { 
+        "question": "Are there restrictions on which nodes I can use in FlowForge?",
+        "answer": "<p>Sem diam nascetur tellus lectus libero eget. Felis velit eleifend id feugiat leo ultrices. Quis amet senectus eu pellentesque a fringilla augue et. Orci ut egestas gravida at sed dictum. Penatibus felis fusce dictum in eu gravida magna. Diam eget molestie in risus dignissim. Varius aliquam in proin hendrerit euismod praesent diam massa turpis.</p>"
+    }]
 }, {
-    "question": "Is there a free-tier of FlowForge?",
-    "answer": "<p>FlowForge is available to install on your own infrastructure, for free, from GitHub. You can find the install documentation <a href=\"docs/install\">here</a>.</p><p>There are more features available in our Premium offerings, available on FlowForge Cloud, or as a Premium offering on your own infrastructure. You can see a breakdown of what's included on our <a href=\"/pricing\">Pricing</a> page.</p>"
-}, {
-    "question": "When am I charged?",
-    "answer": "<p>FlowForge uses Stripe for our payment provider.</p>"
+    "title": "Billing",
+    "faqs": [{
+        "question": "Is there a free-tier of FlowForge?",
+        "answer": "<p>FlowForge is available to install on your own infrastructure, for free, from GitHub. You can find the install documentation <a href=\"docs/install\">here</a>.</p><p>There are more features available in our Premium offerings, available on FlowForge Cloud, or as a Premium offering on your own infrastructure. You can see a breakdown of what's included on our <a href=\"/pricing\">Pricing</a> page.</p>"
+    }, {
+        "question": "When am I charged?",
+        "answer": "<p>FlowForge uses Stripe for our payment provider. Charges are taken when a project is setup. If you cancel or suspend that project before the month is up, we will offer account credit for the remaining balance.</p>"
+    }, {
+        "question": "If I stop or suspend a project, am I charged?",
+        "answer": "<p>You are only charged for active projects.</p><p>If you suspend a project, billing is paused, and whilst the project is still availble to edit, your flows will not be running.</p><p>If you choose to stop, and delete a project, then this will remove the project, and will not be recoverable.</p>"
+    }]
 }]

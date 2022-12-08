@@ -482,8 +482,13 @@ h4:hover .header-anchor {
         @apply h-20 -mt-20 md:h-28 md:-mt-28;
     }
 
-    .ff-faqs {
-        
+    .ff-faq-section {
+        margin-bottom: 32px;
+    }
+
+    .ff-faq-section h4 {
+        text-align: left;
+        margin: 12px 0 18px;
     }
 
     .ff-faq {
