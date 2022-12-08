@@ -57,6 +57,21 @@ authors: ["nick-oleary"]
 
 The `authors` list should correspond to an entry under `src/_data/team`.
 
+## Updating the FlowForge Documentation
+
+When the website is built via GitHub Action, it will include the documentation
+from the `maintenance` branch of the [flowforge/flowforge](https://github.com/flowforge/flowforge)
+repository.
+
+To make a documentation update *and* make it live on the website:
+
+1. PR the documentation update to the `main` branch of [flowforge/flowforge](https://github.com/flowforge/flowforge)
+2. Attach the `backport` label to the PR
+3. Get the PR reviewed and merged in the normal manner.
+4. A new PR will get automatically raised that backports the change to the `maintenance` branch
+5. Review and merge the PR to that branch.
+6. Manually kick-off a website rebuild by clicking 'Run workflow' on [this page](https://github.com/flowforge/website/actions/workflows/build.yml).
+
 ## Acknowledgements
 
 This setup was inspired by:
