@@ -84,7 +84,7 @@ Next, we need to edit the public_url for the MQTT broker:
 sudo nano /opt/flowforge/docker-compose-1.1.1/docker-compose.yml
 ```
 Then replace ws:// with wss://
-```
+```yaml
 public_url: wss://mqtt.flowforge-demo.com
 ```
 Save and exit from that file, in Nano you can do that by pressing ‘control x’ then ‘y’ then the Return key.
