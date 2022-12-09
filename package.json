@@ -6,6 +6,7 @@
         "@flowforge/forge-ui-components": "^0.2.2",
         "@kevingimbel/eleventy-plugin-mermaid": "^1.1.0",
         "autoprefixer": "^10.3.7",
+        "eleventy-plugin-code-clipboard": "^0.0.9",
         "postcss-import": "^14.0.2",
         "seedrandom": "^3.0.5"
     },

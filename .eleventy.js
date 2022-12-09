@@ -1,6 +1,7 @@
 const markdownIt = require("markdown-it")
 const markdownItAnchor = require("markdown-it-anchor")
 const markdownItFootnote = require("markdown-it-footnote")
+const codeClipboard = require("eleventy-plugin-code-clipboard");
 const spacetime = require("spacetime");
 const heroGen = require("./lib/post-hero-gen.js");
 const countryFlag = require("./lib/country-flag-emoji");
@@ -125,12 +126,14 @@ module.exports = function(eleventyConfig) {
         })
     }
 
-    const markdownLib = markdownIt(markdownItOptions)
-    .use(markdownItAnchor, markdownItAnchorOptions)
-    .use(markdownItFootnote)
-
     const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
-    eleventyConfig.addPlugin(syntaxHighlight);
+    eleventyConfig.addPlugin(syntaxHighlight)
+	eleventyConfig.addPlugin(codeClipboard)
+
+    const markdownLib = markdownIt(markdownItOptions)
+        .use(markdownItAnchor, markdownItAnchorOptions)
+        .use(markdownItFootnote)
+		.use(codeClipboard.markdownItCopyButton)
 
     eleventyConfig.setLibrary("md", markdownLib)
 
