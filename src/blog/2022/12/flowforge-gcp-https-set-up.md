@@ -71,7 +71,7 @@ We now need to add the configuration for LetsEncrypt, edit the following lines t
 ```
 - "LETSENCRYPT_HOST=mqtt.example.com"
 ```
-```
+```yaml
 - "LETSENCRYPT_HOST=forge.example.com"
 ```
 
