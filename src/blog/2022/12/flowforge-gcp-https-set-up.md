@@ -6,7 +6,6 @@ date: 2022-12-09
 authors: ["rob-marcer"]
 ---
 
-
 Following on from our [previous article](https://flowforge.com/blog/2022/10/ff-docker-gcp/) in which we covered how to run FlowForge in Docker on Google’s Cloud Platform, today we are going to look at how to secure HTTP traffic to your FlowForge server.
 
 <!--more-->
