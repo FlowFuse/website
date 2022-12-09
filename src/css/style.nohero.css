@@ -50,10 +50,10 @@
 }
 
 .prose code::after {
-    content:''
+    content: '' !important;
 }
 .prose code::before {
-    content:''
+    content: '' !important;
 }
 
 .handbook .prose h2 {
