@@ -6,7 +6,6 @@ date: 2022-12-09
 authors: ["rob-marcer"]
 ---
 
-
 Following on from our [previous article](https://flowforge.com/blog/2022/10/ff-docker-gcp/) in which we covered how to run FlowForge in Docker on Google’s Cloud Platform, today we are going to look at how to secure HTTP traffic to your FlowForge server.
 
 <!--more-->
@@ -37,13 +36,13 @@ sudo nano /opt/flowforge/docker-compose-1.1.1/docker-compose.yml
 
 In the docker-compose.yml file, un-comment the following lines:
 
-```
+```yaml
 - "./certs:/etc/nginx/certs"
 ```
-```
+```yaml
 - "443:443"
 ```
-```
+```yaml
  acme:
     image: nginxproxy/acme-companion
     volumes:
@@ -55,27 +54,26 @@ In the docker-compose.yml file, un-comment the following lines:
       - "DEFAULT_EMAIL=mail@example.com"
     depends_on:
       - "nginx"
-
 ```
 
 
 We should also redirect all traffic to use HTTPS, to do that un-comment the following in the nginx service section:
 
 
-```
+```yaml
 Environment:
       - "HTTPS_METHOD=redirect"
 ```
 
 We now need to add the configuration for LetsEncrypt, edit the following lines to include a valid email address and the correct domain for where you are hosting your FlowForge server:
 
-```
+```yaml
 - "DEFAULT_EMAIL=mail@example.com"
 ```
-```
+```yaml
 - "LETSENCRYPT_HOST=mqtt.example.com"
 ```
-```
+```yaml
 - "LETSENCRYPT_HOST=forge.example.com"
 ```
 
@@ -88,7 +86,7 @@ Next, we need to edit the public_url for the MQTT broker:
 sudo nano /opt/flowforge/docker-compose-1.1.1/docker-compose.yml
 ```
 Then replace ws:// with wss://
-```
+```yaml
 public_url: wss://mqtt.flowforge-demo.com
 ```
 Save and exit from that file, in Nano you can do that by pressing ‘control x’ then ‘y’ then the Return key.
