@@ -106,9 +106,33 @@ pre code {
     background: #030303
 }
 
+/*
+    Eleventy Code Clipboard Plugin
+*/
 .code-copy {
-        color: theme(colors.red.600);
+    color: theme(colors.teal.300);
 }
+.code-copy * {
+   transition: none;
+   -webkit-transition: none;
+}
+.code-copy:hover {
+    color: white;
+}
+
+.tooltipped::before {
+    color: black !important;
+    border-bottom-color: black !important;
+}
+
+.tooltipped::after {
+    background-color: black !important;
+    color: white !important;
+}
+
+/*
+    Other
+*/
 
 body {
     --cc-btn-primary-bg: theme(colors.teal.500);
