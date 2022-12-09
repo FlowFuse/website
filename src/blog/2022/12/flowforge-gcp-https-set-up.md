@@ -39,7 +39,7 @@ In the docker-compose.yml file, un-comment the following lines:
 ```yaml
 - "443:443"
 ```
-```
+```yaml
  acme:
     image: nginxproxy/acme-companion
     volumes:
