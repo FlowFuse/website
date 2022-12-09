@@ -65,7 +65,7 @@ Environment:
 
 We now need to add the configuration for LetsEncrypt, edit the following lines to include a valid email address and the correct domain for where you are hosting your FlowForge server:
 
-```
+```yaml
 - "DEFAULT_EMAIL=mail@example.com"
 ```
 ```yaml
