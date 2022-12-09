@@ -23,6 +23,10 @@ We are also utilising a Docker image called [acme-companion](https://github.com/
 
 Now we've covered our goals and the tools we are going to use let's configure our existing GCP VM to secure all web traffic.
 
+### Prerequisites 
+
+As mentioned above, you will need to be running FlowForge version 1.0 or higher to follow this guide. If you are using an older version you can upgrade now using the [instructions here](https://flowforge.com/docs/install/upgrading/).
+
 ### Update Docker Compose
 
 The first step is to edit our Docker compose file. We're using Nano again to edit files so we will run this command:
