@@ -33,7 +33,7 @@ sudo nano /opt/flowforge/docker-compose-1.1.1/docker-compose.yml
 
 In the docker-compose.yml file, un-comment the following lines:
 
-```
+```yaml
 - "./certs:/etc/nginx/certs"
 ```
 ```
