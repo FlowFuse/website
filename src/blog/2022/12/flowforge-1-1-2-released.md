@@ -14,7 +14,7 @@ A [bug](https://github.com/flowforge/flowforge/issues/1367) was reported this we
 where a user was unable to install additional nodes into their Node-RED project
 using the editor's palette manager.
 
-We tracked it down to an issue that was introduced in the 1.1 release where the
+We tracked it down to an issue that was introduced in the 1.1 release, where the
 project template lets you list nodes that should be blocked from being installed.
 It was interpreting an empty list to mean _disallow everything_! Not quite the
 intended behaviour.
@@ -36,7 +36,7 @@ the docker and helm components:
 
 ## Contributors
 
-We'd like the thank the following people for their contributions to this release:
+We'd like to thank the following people for their contributions to this release:
 
 [flecoufle](https://github.com/flecoufle) for their work on [#59](https://github.com/flowforge/docker-compose/pull/59)
 
@@ -54,7 +54,7 @@ guide for [upgrading your FlowForge instance](https://flowforge.com/docs/install
 
 Please check FlowForge's [documentation](https://flowforge.com/docs/) as the answers to many questions are covered there.
 
-If you hit any problems with the platform please raise an [issue on GitHub](https://github.com/flowforge/flowforge/issues).
+If you hit any problems with the platform, please raise an [issue on GitHub](https://github.com/flowforge/flowforge/issues).
 That also includes if you have any feedback or feature requests.
 
 Chat with us on the `#flowforge` channel on the [Node-RED Slack workspace](https://nodered.org/slack).
