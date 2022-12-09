@@ -68,7 +68,7 @@ We now need to add the configuration for LetsEncrypt, edit the following lines t
 ```
 - "DEFAULT_EMAIL=mail@example.com"
 ```
-```
+```yaml
 - "LETSENCRYPT_HOST=mqtt.example.com"
 ```
 ```yaml
