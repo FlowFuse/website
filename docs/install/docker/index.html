@@ -132,9 +132,9 @@ set the correct domain name and make the same change to the <code>public_url</co
     url: mqtt://forge:1883
     public_url: ws://forge.example.com
 </code></pre>
-<h4 id="https-(optional)" tabindex="-1"><a class="header-anchor" href="#https-(optional)">#&nbsp;</a> HTTPS (optional)</h4>
+<h3 id="https-(optional)" tabindex="-1"><a class="header-anchor" href="#https-(optional)">#&nbsp;</a> HTTPS (optional)</h3>
 <p>If you want to serve the forge app and projects via SSL you will need to obtain a wildcard TSL certificate for the domain you are using eg <code>*.example.com</code> or you can use the LetsEncrypt acme-companion.</p>
-<h3 id="wildcard-tls-certificate" tabindex="-1"><a class="header-anchor" href="#wildcard-tls-certificate">#&nbsp;</a> Wildcard TLS Certificate</h3>
+<h4 id="wildcard-tls-certificate" tabindex="-1"><a class="header-anchor" href="#wildcard-tls-certificate">#&nbsp;</a> Wildcard TLS Certificate</h4>
 <p>Create a folder in the <code>docker-compose-1.x.0</code> directory named <code>certs</code>, place your .crt and .key files in there, they should be named for the domain without the <code>*</code> eg <code>example.com.crt</code> &amp; <code>example.com.key</code>
 You  also need to create a copy of the .crt and .key files named <code>default.crt</code> &amp; <code>default.key</code> in the same folder. This is used for serving unknown hosts.</p>
 <p>In the <code>docker-compose.yml</code> file,</p>
@@ -153,7 +153,7 @@ You  also need to create a copy of the .crt and .key files named <code>default.c
       - &quot;HTTPS_METHOD=redirect&quot;
 </code></pre>
 <p>If you are running with the MQTT broker then you should adjust the <code>public_url</code> to start with <code>wss://</code> rather than <code>ws://</code></p>
-<h3 id="let's-encrypt" tabindex="-1"><a class="header-anchor" href="#let's-encrypt">#&nbsp;</a> Let's Encrypt</h3>
+<h4 id="let's-encrypt" tabindex="-1"><a class="header-anchor" href="#let's-encrypt">#&nbsp;</a> Let's Encrypt</h4>
 <p>In the <code>docker-compose.yml</code> file, uncomment the following lines</p>
 <pre><code>- &quot;./certs:/etc/nginx/certs&quot;
 </code></pre>
@@ -196,7 +196,7 @@ You  also need to create a copy of the .crt and .key files named <code>default.c
 <pre><code>docker-compose up -p flowforge up -d
 </code></pre>
 <p>This will also create a directory called <code>db</code> to hold the database files used to store project instance and user information.</p>
-<h4 id="using-flowforge-file-storage" tabindex="-1"><a class="header-anchor" href="#using-flowforge-file-storage">#&nbsp;</a> Using FlowForge File Storage</h4>
+<h3 id="using-flowforge-file-storage" tabindex="-1"><a class="header-anchor" href="#using-flowforge-file-storage">#&nbsp;</a> Using FlowForge File Storage</h3>
 <p>FlowForge projects when running in Docker do not have direct
 access to a persistent file system to store files.</p>
 <p>We recomend disabling the Node-RED core file nodes in the FlowForge
@@ -227,7 +227,7 @@ creating an administrator for the platform and other configuration options.</p>
             <h3 class="font-medium border-b pb-1 mb-4">On this page</h3>
             <ul id="toc" class="text-sm border-b mb-4"></ul>
             <div class="text-sm pb-1 text-right mb-4"><a href="https://github.com/flowforge/flowforge/edit/main/docs/install/docker/README.md">Edit this page</a></div>
-            <div class="text-xs pb-1 text-right mb-4 italic">Updated: 2022-12-09 09:47:51 +0000</div>
+            <div class="text-xs pb-1 text-right mb-4 italic">Updated: 2022-12-09 14:39:27 +0200</div>
         </div>
     </div>
 </div>
