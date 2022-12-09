@@ -51,7 +51,6 @@ In the docker-compose.yml file, un-comment the following lines:
       - "DEFAULT_EMAIL=mail@example.com"
     depends_on:
       - "nginx"
-
 ```
 
 
