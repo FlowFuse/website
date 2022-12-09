@@ -3,8 +3,58 @@
     <title>FlowForge</title>
     <link href="https://flowforge.com/blog/index.xml" rel="self"/>
     <link href="https://flowforge.com/blog"/>
-    <updated>2022-12-07T00:00:00Z</updated>
+    <updated>2022-12-09T00:00:00Z</updated>
     <id>https://flowforge.com/blog</id>
+    
+    <entry>
+        <id>https://flowforge.com/blog/2022/12/flowforge-gcp-https-set-up/</id>
+        <title>Configure FlowForge in Docker to secure all traffic</title>
+        <summary>Use Let&#39;s Encrypt and Acme Companion to quickly set up FlowForge to encrypt all traffic</summary>
+        <updated>2022-12-09T00:00:00Z</updated>
+        <link href="https://flowforge.com/blog/2022/12/flowforge-gcp-https-set-up/"/>
+        <author><name>Rob Marcer</name></author>
+        <content type="html">&lt;p&gt;Following on from our &lt;a href=&quot;https://flowforge.com/blog/2022/10/ff-docker-gcp/&quot;&gt;previous article&lt;/a&gt; in which we covered how to run FlowForge in Docker on Google’s Cloud Platform, today we are going to look at how to secure HTTP traffic to your FlowForge server.&lt;/p&gt;
+&lt;!--more--&gt;
+&lt;h3 id=&quot;introduction&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://flowforge.com/blog/2022/12/flowforge-gcp-https-set-up/#introduction&quot;&gt;#&amp;nbsp;&lt;/a&gt; Introduction&lt;/h3&gt;
+&lt;p&gt;When we wrote the first part of this series FlowForge didn&#39;t have an easy path to secure HTTP traffic. Happily, two versions of FlowForge later and at least partially inspired by these blogs, we have added the configuration you need in Docker to use HTTPS with minimal work.&lt;/p&gt;
+&lt;p&gt;That addition makes our job of explaining this setup a lot easier, credit to our developers for seeing the value of having an easy implementation of HTTPS in FlowForge as part of our &lt;a href=&quot;https://flowforge.com/blog/2022/10/flowforge-1-released/&quot;&gt;1.0 build&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;To achieve secure HTTPS traffic we are employing a great service called &lt;a href=&quot;https://letsencrypt.org/&quot;&gt;Let&#39;s Encrypt&lt;/a&gt;. In their own words, &amp;quot;Let’s Encrypt is a free, automated, and open certificate authority (CA), run for the public’s benefit&amp;quot;. In practice Let&#39;s Encrypt will allow us to easily secure HTTPS traffic.&lt;/p&gt;
+&lt;p&gt;We are also utilising a Docker image called &lt;a href=&quot;https://github.com/nginx-proxy/acme-companion&quot;&gt;acme-companion&lt;/a&gt; which makes the configuration of Let&#39;s Encrypt a breeze. To quote the project&#39;s own Github page &amp;quot;acme-companion is a lightweight companion container for nginx-proxy. It handles the automated creation, renewal and use of SSL certificates for proxied Docker containers through the ACME protocol&amp;quot;. It&#39;s a great project and credit to the team over there for making it a lot easier to secure the internet.&lt;/p&gt;
+&lt;p&gt;Now we&#39;ve covered our goals and the tools we are going to use let&#39;s configure our existing GCP VM to secure all web traffic.&lt;/p&gt;
+&lt;h3 id=&quot;prerequisites&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://flowforge.com/blog/2022/12/flowforge-gcp-https-set-up/#prerequisites&quot;&gt;#&amp;nbsp;&lt;/a&gt; Prerequisites&lt;/h3&gt;
+&lt;p&gt;As mentioned above, you will need to be running FlowForge version 1.0 or higher to follow this guide. If you are using an older version you can upgrade now using the &lt;a href=&quot;https://flowforge.com/docs/install/upgrading/&quot;&gt;instructions here&lt;/a&gt;.&lt;/p&gt;
+&lt;h3 id=&quot;update-docker-compose&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://flowforge.com/blog/2022/12/flowforge-gcp-https-set-up/#update-docker-compose&quot;&gt;#&amp;nbsp;&lt;/a&gt; Update Docker Compose&lt;/h3&gt;
+&lt;p&gt;The first step is to edit our Docker compose file. We&#39;re using Nano again to edit files so we will run this command:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;sudo nano /opt/flowforge/docker-compose-1.1.1/docker-compose.yml
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;In the docker-compose.yml file, un-comment the following lines:&lt;/p&gt;
+&lt;pre class=&quot;language-yaml&quot;&gt;&lt;code class=&quot;language-yaml&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;./certs:/etc/nginx/certs&quot;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&quot;language-yaml&quot;&gt;&lt;code class=&quot;language-yaml&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;443:443&quot;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&quot;language-yaml&quot;&gt;&lt;code class=&quot;language-yaml&quot;&gt; &lt;span class=&quot;token key atrule&quot;&gt;acme&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;&lt;br /&gt;    &lt;span class=&quot;token key atrule&quot;&gt;image&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; nginxproxy/acme&lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt;companion&lt;br /&gt;    &lt;span class=&quot;token key atrule&quot;&gt;volumes&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;&lt;br /&gt;      &lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;/var/run/docker.sock:/var/run/docker.sock:ro&quot;&lt;/span&gt;&lt;br /&gt;      &lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;./acme:/etc/acme.sh&quot;&lt;/span&gt;&lt;br /&gt;    &lt;span class=&quot;token key atrule&quot;&gt;volumes_from&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;&lt;br /&gt;      &lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt; nginx&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;rw&lt;br /&gt;    &lt;span class=&quot;token key atrule&quot;&gt;environment&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;&lt;br /&gt;      &lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;DEFAULT_EMAIL=mail@example.com&quot;&lt;/span&gt;&lt;br /&gt;    &lt;span class=&quot;token key atrule&quot;&gt;depends_on&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;&lt;br /&gt;      &lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;nginx&quot;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;We should also redirect all traffic to use HTTPS, to do that un-comment the following in the nginx service section:&lt;/p&gt;
+&lt;pre class=&quot;language-yaml&quot;&gt;&lt;code class=&quot;language-yaml&quot;&gt;&lt;span class=&quot;token key atrule&quot;&gt;Environment&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;&lt;br /&gt;      &lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;HTTPS_METHOD=redirect&quot;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;We now need to add the configuration for LetsEncrypt, edit the following lines to include a valid email address and the correct domain for where you are hosting your FlowForge server:&lt;/p&gt;
+&lt;pre class=&quot;language-yaml&quot;&gt;&lt;code class=&quot;language-yaml&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;DEFAULT_EMAIL=mail@example.com&quot;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&quot;language-yaml&quot;&gt;&lt;code class=&quot;language-yaml&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;LETSENCRYPT_HOST=mqtt.example.com&quot;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&quot;language-yaml&quot;&gt;&lt;code class=&quot;language-yaml&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;LETSENCRYPT_HOST=forge.example.com&quot;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Save and exit from that file, in Nano you can do that by pressing ‘control x’ then ‘y’ then the Return key.&lt;/p&gt;
+&lt;h3 id=&quot;update-flowforge.yml&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://flowforge.com/blog/2022/12/flowforge-gcp-https-set-up/#update-flowforge.yml&quot;&gt;#&amp;nbsp;&lt;/a&gt; Update flowforge.yml&lt;/h3&gt;
+&lt;p&gt;Next, we need to edit the public_url for the MQTT broker:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;sudo nano /opt/flowforge/docker-compose-1.1.1/docker-compose.yml
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Then replace ws:// with wss://&lt;/p&gt;
+&lt;pre class=&quot;language-yaml&quot;&gt;&lt;code class=&quot;language-yaml&quot;&gt;&lt;span class=&quot;token key atrule&quot;&gt;public_url&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; wss&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;//mqtt.flowforge&lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt;demo.com&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Save and exit from that file, in Nano you can do that by pressing ‘control x’ then ‘y’ then the Return key.&lt;/p&gt;
+&lt;h3 id=&quot;restart-your-docker-containers&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://flowforge.com/blog/2022/12/flowforge-gcp-https-set-up/#restart-your-docker-containers&quot;&gt;#&amp;nbsp;&lt;/a&gt; Restart your Docker containers&lt;/h3&gt;
+&lt;p&gt;OK, we should be ready to restart the Docker containers, run the command:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;sudo docker compose -p flowforge up -d
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;If you reload your FlowForge root directory in a web browser you should now see that your traffic is encrypted using LetsEncypt.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://flowforge.com/blog/2022/12/images/https-working.png&quot; alt=&quot;A screenshot from Safari web browser showing that the traffic to FlowForge is encrypted&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;Nice! That’s it, you can now access your FlowForge installation securely.&lt;/p&gt;
+&lt;p&gt;In the next and final part of this series of articles, we are going to look at how we can actually use FlowForge including how to build flows and deploy and update them on Devices linked to a project.&lt;/p&gt;
+</content>
+    </entry>
     
     <entry>
         <id>https://flowforge.com/blog/2022/12/Create-http-trigger-with-authentication/</id>
