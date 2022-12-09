@@ -36,7 +36,7 @@ In the docker-compose.yml file, un-comment the following lines:
 ```yaml
 - "./certs:/etc/nginx/certs"
 ```
-```
+```yaml
 - "443:443"
 ```
 ```
