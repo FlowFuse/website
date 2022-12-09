@@ -58,7 +58,7 @@ In the docker-compose.yml file, un-comment the following lines:
 We should also redirect all traffic to use HTTPS, to do that un-comment the following in the nginx service section:
 
 
-```
+```yaml
 Environment:
       - "HTTPS_METHOD=redirect"
 ```
