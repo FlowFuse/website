@@ -9,6 +9,8 @@
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     <link rel="manifest" href="/site.webmanifest">
     <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#aa4444">
+    <!-- Syntax Highlighting CSS -->
+    <link href="https://unpkg.com/prismjs@1.20.0/themes/prism-tomorrow.css" rel="stylesheet">
     <meta name="msapplication-TileColor" content="#00aba9">
     <meta name="theme-color" content="#ffffff">
     <title>FlowForge | Open-Source platform to run Node-RED in production</title>
@@ -96,15 +98,48 @@
 <p>To run the E2E tests yourself, we need to first run our own local web server that the tests will run on.
 For our testing purposes, we have a single server configured with multiple users, teams and projects.
 To run this, open a terminal and run:</p>
-<pre class="language-bash"><code class="language-bash"><span class="token function">npm</span> run cy:web-server</code></pre>
+
+<div style="position: relative">
+  <pre class="language-bash"><code id="code-39"class="language-bash"><span class="token function">npm</span> run cy:web-server</code></pre>
+
+  <button class="code-copy "
+    data-clipboard-target="#code-39"
+    style="position: absolute; top: 7.5px; right: 6px; cursor: pointer; outline: none; opacity: 0.8;" title="Copy">
+    <span>
+      <span style="font-size: 15px; opacity: 0.8;" class="mdi mdi-content-copy"></span>
+    </span>
+  </button>
+</div>
 <p>Once this is up and running, you then have two options:</p>
 <h4 id="run-tests-via-terminal" tabindex="-1"><a class="header-anchor" href="#run-tests-via-terminal">#&nbsp;</a> Run Tests via Terminal</h4>
-<pre class="language-bash"><code class="language-bash"><span class="token function">npm</span> run cy:run</code></pre>
+
+<div style="position: relative">
+  <pre class="language-bash"><code id="code-46"class="language-bash"><span class="token function">npm</span> run cy:run</code></pre>
+
+  <button class="code-copy "
+    data-clipboard-target="#code-46"
+    style="position: absolute; top: 7.5px; right: 6px; cursor: pointer; outline: none; opacity: 0.8;" title="Copy">
+    <span>
+      <span style="font-size: 15px; opacity: 0.8;" class="mdi mdi-content-copy"></span>
+    </span>
+  </button>
+</div>
 <p>This will execute all of the front-end E2E tests in the terminal and display the results.
 Typically, this is the command to run if you simply want to run all of the tests
 When developing/debugging tests, opening the Cypress Application will likely be more useful.</p>
 <h4 id="run-tests-via-cypress-application" tabindex="-1"><a class="header-anchor" href="#run-tests-via-cypress-application">#&nbsp;</a> Run Tests via Cypress Application</h4>
-<pre class="language-bash"><code class="language-bash"><span class="token function">npm</span> run cy:open</code></pre>
+
+<div style="position: relative">
+  <pre class="language-bash"><code id="code-53"class="language-bash"><span class="token function">npm</span> run cy:open</code></pre>
+
+  <button class="code-copy "
+    data-clipboard-target="#code-53"
+    style="position: absolute; top: 7.5px; right: 6px; cursor: pointer; outline: none; opacity: 0.8;" title="Copy">
+    <span>
+      <span style="font-size: 15px; opacity: 0.8;" class="mdi mdi-content-copy"></span>
+    </span>
+  </button>
+</div>
 <p>Opens the Cypress application. From here, you can run individual test files, and see the framework clicking through the UI as the tests are run. If you're developing or debugging your own tests, we recommend this.</p>
 <h3 id="hints-%26-tips" tabindex="-1"><a class="header-anchor" href="#hints-%26-tips">#&nbsp;</a> Hints &amp; Tips</h3>
 <p>If you're looking to write your own Cypress tests, then here are some tips that can help you get started:</p>
@@ -112,16 +147,49 @@ When developing/debugging tests, opening the Cypress Application will likely be 
 <p>If you explore some of the existing tests, you'll see that <code>beforeEach</code> is a very useful way of ensuring consistent behaviour across a group of tests, e.g. starting from the same point, or making sure a user is logged in.</p>
 <h4 id="helper-functions" tabindex="-1"><a class="header-anchor" href="#helper-functions">#&nbsp;</a> Helper Functions</h4>
 <p>To make Cypress testing easier, we have created a collection of helper functions that can be called within any loop of the testing framework.</p>
-<pre class="language-js"><code class="language-js">cy<span class="token punctuation">.</span><span class="token function">login</span><span class="token punctuation">(</span><span class="token operator">&lt;</span>username<span class="token operator">></span><span class="token punctuation">,</span> <span class="token operator">&lt;</span>password<span class="token operator">></span><span class="token punctuation">)</span></code></pre>
+
+<div style="position: relative">
+  <pre class="language-js"><code id="code-75"class="language-js">cy<span class="token punctuation">.</span><span class="token function">login</span><span class="token punctuation">(</span><span class="token operator">&lt;</span>username<span class="token operator">></span><span class="token punctuation">,</span> <span class="token operator">&lt;</span>password<span class="token operator">></span><span class="token punctuation">)</span></code></pre>
+
+  <button class="code-copy "
+    data-clipboard-target="#code-75"
+    style="position: absolute; top: 7.5px; right: 6px; cursor: pointer; outline: none; opacity: 0.8;" title="Copy">
+    <span>
+      <span style="font-size: 15px; opacity: 0.8;" class="mdi mdi-content-copy"></span>
+    </span>
+  </button>
+</div>
 <p>This will log you into FlowForge as the given user. The test users are defined in the <a href="https://github.com/flowforge/flowforge/blob/main/test/e2e/frontend/environments/standard.js">test environment</a>.</p>
-<pre class="language-js"><code class="language-js">cy<span class="token punctuation">.</span><span class="token function">home</span><span class="token punctuation">(</span><span class="token punctuation">)</span></code></pre>
+
+<div style="position: relative">
+  <pre class="language-js"><code id="code-79"class="language-js">cy<span class="token punctuation">.</span><span class="token function">home</span><span class="token punctuation">(</span><span class="token punctuation">)</span></code></pre>
+
+  <button class="code-copy "
+    data-clipboard-target="#code-79"
+    style="position: absolute; top: 7.5px; right: 6px; cursor: pointer; outline: none; opacity: 0.8;" title="Copy">
+    <span>
+      <span style="font-size: 15px; opacity: 0.8;" class="mdi mdi-content-copy"></span>
+    </span>
+  </button>
+</div>
 <p>This will navigate the test to the homepage of the application, but more importantly it contains several <code>cy.wait()</code> calls to make sure the relevant API calls have completed before continuing.
 It is recommended that you call this for every test that requires a login.</p>
 <h4 id="selecting-elements-%26-actions" tabindex="-1"><a class="header-anchor" href="#selecting-elements-%26-actions">#&nbsp;</a> Selecting Elements &amp; Actions</h4>
 <p>It is recommended in the <a href="https://docs.cypress.io/guides/references/best-practices#Selecting-Elements">Cypress Best Practices</a> to utilise <code>data-</code> attributes on HTML elements in order to ensure safe selection of objects that won't evolve/change over time.</p>
 <p>Similarly, this is a best practices for <a href="https://posthog.com/">PostHog</a> which we also use. As such, we have defined <a href=".././data-attributes"">our own best practice</a> set of <code>data-</code> attributes to use.</p>
 <p>When writing your own tests, where possible, you should do element selection via these custom data tags, e.g.,</p>
-<pre class="language-js"><code class="language-js">cy<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">'a[data-nav="team-members"]'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">click</span><span class="token punctuation">(</span><span class="token punctuation">)</span></code></pre>
+
+<div style="position: relative">
+  <pre class="language-js"><code id="code-95"class="language-js">cy<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">'a[data-nav="team-members"]'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">click</span><span class="token punctuation">(</span><span class="token punctuation">)</span></code></pre>
+
+  <button class="code-copy "
+    data-clipboard-target="#code-95"
+    style="position: absolute; top: 7.5px; right: 6px; cursor: pointer; outline: none; opacity: 0.8;" title="Copy">
+    <span>
+      <span style="font-size: 15px; opacity: 0.8;" class="mdi mdi-content-copy"></span>
+    </span>
+  </button>
+</div>
 
             </div>
         </div>
@@ -224,6 +292,8 @@ It is recommended that you call this for every test that requires a login.</p>
             </div>
         </div>
     </footer>
+    <script>function showTooltip(o,e){o.trigger.className.includes("tooltipped")||(o.trigger.children[0].className="tooltipped tooltipped-s",o.trigger.children[0].ariaLabel=e)}window.addEventListener("load",()=>{var o=new ClipboardJS(".code-copy");o.on("success",o=>showTooltip(o,"Copied!")),o.on("error",o=>showTooltip(o,"Failed..."))});</script>
+<script async src="https://cdn.jsdelivr.net/npm/clipboard@2.0.8/dist/clipboard.js"></script>
 </body>
 <script src="/js/cc.min.js"></script>
 <script>

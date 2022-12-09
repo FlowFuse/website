@@ -73,22 +73,94 @@ That also includes if you have any feedback or feature requests.&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;sudo nano /opt/flowforge/docker-compose-1.1.1/docker-compose.yml
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;In the docker-compose.yml file, un-comment the following lines:&lt;/p&gt;
-&lt;pre class=&quot;language-yaml&quot;&gt;&lt;code class=&quot;language-yaml&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;./certs:/etc/nginx/certs&quot;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;pre class=&quot;language-yaml&quot;&gt;&lt;code class=&quot;language-yaml&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;443:443&quot;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;pre class=&quot;language-yaml&quot;&gt;&lt;code class=&quot;language-yaml&quot;&gt; &lt;span class=&quot;token key atrule&quot;&gt;acme&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;&lt;br /&gt;    &lt;span class=&quot;token key atrule&quot;&gt;image&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; nginxproxy/acme&lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt;companion&lt;br /&gt;    &lt;span class=&quot;token key atrule&quot;&gt;volumes&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;&lt;br /&gt;      &lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;/var/run/docker.sock:/var/run/docker.sock:ro&quot;&lt;/span&gt;&lt;br /&gt;      &lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;./acme:/etc/acme.sh&quot;&lt;/span&gt;&lt;br /&gt;    &lt;span class=&quot;token key atrule&quot;&gt;volumes_from&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;&lt;br /&gt;      &lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt; nginx&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;rw&lt;br /&gt;    &lt;span class=&quot;token key atrule&quot;&gt;environment&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;&lt;br /&gt;      &lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;DEFAULT_EMAIL=mail@example.com&quot;&lt;/span&gt;&lt;br /&gt;    &lt;span class=&quot;token key atrule&quot;&gt;depends_on&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;&lt;br /&gt;      &lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;nginx&quot;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+
+&lt;div style=&quot;position: relative&quot;&gt;
+  &lt;pre class=&quot;language-yaml&quot;&gt;&lt;code id=&quot;code-38&quot; class=&quot;language-yaml&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;./certs:/etc/nginx/certs&quot;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+
+  &lt;button class=&quot;code-copy &quot; data-clipboard-target=&quot;#code-38&quot; style=&quot;position: absolute; top: 7.5px; right: 6px; cursor: pointer; outline: none; opacity: 0.8;&quot; title=&quot;Copy&quot;&gt;
+    &lt;span&gt;
+      &lt;span style=&quot;font-size: 15px; opacity: 0.8;&quot; class=&quot;mdi mdi-content-copy&quot;&gt;&lt;/span&gt;
+    &lt;/span&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+
+&lt;div style=&quot;position: relative&quot;&gt;
+  &lt;pre class=&quot;language-yaml&quot;&gt;&lt;code id=&quot;code-39&quot; class=&quot;language-yaml&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;443:443&quot;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+
+  &lt;button class=&quot;code-copy &quot; data-clipboard-target=&quot;#code-39&quot; style=&quot;position: absolute; top: 7.5px; right: 6px; cursor: pointer; outline: none; opacity: 0.8;&quot; title=&quot;Copy&quot;&gt;
+    &lt;span&gt;
+      &lt;span style=&quot;font-size: 15px; opacity: 0.8;&quot; class=&quot;mdi mdi-content-copy&quot;&gt;&lt;/span&gt;
+    &lt;/span&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+
+&lt;div style=&quot;position: relative&quot;&gt;
+  &lt;pre class=&quot;language-yaml&quot;&gt;&lt;code id=&quot;code-40&quot; class=&quot;language-yaml&quot;&gt; &lt;span class=&quot;token key atrule&quot;&gt;acme&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;&lt;br /&gt;    &lt;span class=&quot;token key atrule&quot;&gt;image&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; nginxproxy/acme&lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt;companion&lt;br /&gt;    &lt;span class=&quot;token key atrule&quot;&gt;volumes&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;&lt;br /&gt;      &lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;/var/run/docker.sock:/var/run/docker.sock:ro&quot;&lt;/span&gt;&lt;br /&gt;      &lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;./acme:/etc/acme.sh&quot;&lt;/span&gt;&lt;br /&gt;    &lt;span class=&quot;token key atrule&quot;&gt;volumes_from&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;&lt;br /&gt;      &lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt; nginx&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;rw&lt;br /&gt;    &lt;span class=&quot;token key atrule&quot;&gt;environment&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;&lt;br /&gt;      &lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;DEFAULT_EMAIL=mail@example.com&quot;&lt;/span&gt;&lt;br /&gt;    &lt;span class=&quot;token key atrule&quot;&gt;depends_on&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;&lt;br /&gt;      &lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;nginx&quot;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+
+  &lt;button class=&quot;code-copy &quot; data-clipboard-target=&quot;#code-40&quot; style=&quot;position: absolute; top: 7.5px; right: 6px; cursor: pointer; outline: none; opacity: 0.8;&quot; title=&quot;Copy&quot;&gt;
+    &lt;span&gt;
+      &lt;span style=&quot;font-size: 15px; opacity: 0.8;&quot; class=&quot;mdi mdi-content-copy&quot;&gt;&lt;/span&gt;
+    &lt;/span&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
 &lt;p&gt;We should also redirect all traffic to use HTTPS, to do that un-comment the following in the nginx service section:&lt;/p&gt;
-&lt;pre class=&quot;language-yaml&quot;&gt;&lt;code class=&quot;language-yaml&quot;&gt;&lt;span class=&quot;token key atrule&quot;&gt;Environment&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;&lt;br /&gt;      &lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;HTTPS_METHOD=redirect&quot;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+
+&lt;div style=&quot;position: relative&quot;&gt;
+  &lt;pre class=&quot;language-yaml&quot;&gt;&lt;code id=&quot;code-44&quot; class=&quot;language-yaml&quot;&gt;&lt;span class=&quot;token key atrule&quot;&gt;Environment&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;&lt;br /&gt;      &lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;HTTPS_METHOD=redirect&quot;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+
+  &lt;button class=&quot;code-copy &quot; data-clipboard-target=&quot;#code-44&quot; style=&quot;position: absolute; top: 7.5px; right: 6px; cursor: pointer; outline: none; opacity: 0.8;&quot; title=&quot;Copy&quot;&gt;
+    &lt;span&gt;
+      &lt;span style=&quot;font-size: 15px; opacity: 0.8;&quot; class=&quot;mdi mdi-content-copy&quot;&gt;&lt;/span&gt;
+    &lt;/span&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
 &lt;p&gt;We now need to add the configuration for LetsEncrypt, edit the following lines to include a valid email address and the correct domain for where you are hosting your FlowForge server:&lt;/p&gt;
-&lt;pre class=&quot;language-yaml&quot;&gt;&lt;code class=&quot;language-yaml&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;DEFAULT_EMAIL=mail@example.com&quot;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;pre class=&quot;language-yaml&quot;&gt;&lt;code class=&quot;language-yaml&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;LETSENCRYPT_HOST=mqtt.example.com&quot;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;pre class=&quot;language-yaml&quot;&gt;&lt;code class=&quot;language-yaml&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;LETSENCRYPT_HOST=forge.example.com&quot;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+
+&lt;div style=&quot;position: relative&quot;&gt;
+  &lt;pre class=&quot;language-yaml&quot;&gt;&lt;code id=&quot;code-48&quot; class=&quot;language-yaml&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;DEFAULT_EMAIL=mail@example.com&quot;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+
+  &lt;button class=&quot;code-copy &quot; data-clipboard-target=&quot;#code-48&quot; style=&quot;position: absolute; top: 7.5px; right: 6px; cursor: pointer; outline: none; opacity: 0.8;&quot; title=&quot;Copy&quot;&gt;
+    &lt;span&gt;
+      &lt;span style=&quot;font-size: 15px; opacity: 0.8;&quot; class=&quot;mdi mdi-content-copy&quot;&gt;&lt;/span&gt;
+    &lt;/span&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+
+&lt;div style=&quot;position: relative&quot;&gt;
+  &lt;pre class=&quot;language-yaml&quot;&gt;&lt;code id=&quot;code-49&quot; class=&quot;language-yaml&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;LETSENCRYPT_HOST=mqtt.example.com&quot;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+
+  &lt;button class=&quot;code-copy &quot; data-clipboard-target=&quot;#code-49&quot; style=&quot;position: absolute; top: 7.5px; right: 6px; cursor: pointer; outline: none; opacity: 0.8;&quot; title=&quot;Copy&quot;&gt;
+    &lt;span&gt;
+      &lt;span style=&quot;font-size: 15px; opacity: 0.8;&quot; class=&quot;mdi mdi-content-copy&quot;&gt;&lt;/span&gt;
+    &lt;/span&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+
+&lt;div style=&quot;position: relative&quot;&gt;
+  &lt;pre class=&quot;language-yaml&quot;&gt;&lt;code id=&quot;code-50&quot; class=&quot;language-yaml&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;LETSENCRYPT_HOST=forge.example.com&quot;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+
+  &lt;button class=&quot;code-copy &quot; data-clipboard-target=&quot;#code-50&quot; style=&quot;position: absolute; top: 7.5px; right: 6px; cursor: pointer; outline: none; opacity: 0.8;&quot; title=&quot;Copy&quot;&gt;
+    &lt;span&gt;
+      &lt;span style=&quot;font-size: 15px; opacity: 0.8;&quot; class=&quot;mdi mdi-content-copy&quot;&gt;&lt;/span&gt;
+    &lt;/span&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
 &lt;p&gt;Save and exit from that file, in Nano you can do that by pressing ‘control x’ then ‘y’ then the Return key.&lt;/p&gt;
 &lt;h3 id=&quot;update-flowforge.yml&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://flowforge.com/blog/2022/12/flowforge-gcp-https-set-up/#update-flowforge.yml&quot;&gt;#&amp;nbsp;&lt;/a&gt; Update flowforge.yml&lt;/h3&gt;
 &lt;p&gt;Next, we need to edit the public_url for the MQTT broker:&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;sudo nano /opt/flowforge/docker-compose-1.1.1/docker-compose.yml
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Then replace ws:// with wss://&lt;/p&gt;
-&lt;pre class=&quot;language-yaml&quot;&gt;&lt;code class=&quot;language-yaml&quot;&gt;&lt;span class=&quot;token key atrule&quot;&gt;public_url&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; wss&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;//mqtt.flowforge&lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt;demo.com&lt;/code&gt;&lt;/pre&gt;
+
+&lt;div style=&quot;position: relative&quot;&gt;
+  &lt;pre class=&quot;language-yaml&quot;&gt;&lt;code id=&quot;code-64&quot; class=&quot;language-yaml&quot;&gt;&lt;span class=&quot;token key atrule&quot;&gt;public_url&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; wss&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;//mqtt.flowforge&lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt;demo.com&lt;/code&gt;&lt;/pre&gt;
+
+  &lt;button class=&quot;code-copy &quot; data-clipboard-target=&quot;#code-64&quot; style=&quot;position: absolute; top: 7.5px; right: 6px; cursor: pointer; outline: none; opacity: 0.8;&quot; title=&quot;Copy&quot;&gt;
+    &lt;span&gt;
+      &lt;span style=&quot;font-size: 15px; opacity: 0.8;&quot; class=&quot;mdi mdi-content-copy&quot;&gt;&lt;/span&gt;
+    &lt;/span&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
 &lt;p&gt;Save and exit from that file, in Nano you can do that by pressing ‘control x’ then ‘y’ then the Return key.&lt;/p&gt;
 &lt;h3 id=&quot;restart-your-docker-containers&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://flowforge.com/blog/2022/12/flowforge-gcp-https-set-up/#restart-your-docker-containers&quot;&gt;#&amp;nbsp;&lt;/a&gt; Restart your Docker containers&lt;/h3&gt;
 &lt;p&gt;OK, we should be ready to restart the Docker containers, run the command:&lt;/p&gt;

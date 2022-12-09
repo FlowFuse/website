@@ -9,6 +9,8 @@
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     <link rel="manifest" href="/site.webmanifest">
     <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#aa4444">
+    <!-- Syntax Highlighting CSS -->
+    <link href="https://unpkg.com/prismjs@1.20.0/themes/prism-tomorrow.css" rel="stylesheet">
     <meta name="msapplication-TileColor" content="#00aba9">
     <meta name="theme-color" content="#ffffff">
     <title>FlowForge | Open-Source platform to run Node-RED in production</title>
@@ -129,7 +131,18 @@ match the directory name created in your <code>stacks</code> directory.</p>
 <h3 id="development-only" tabindex="-1"><a class="header-anchor" href="#development-only">#&nbsp;</a> Development Only</h3>
 <p>If you are developing FlowForge having checked it out from GitHub then you can run
 the following command in the project root to install a stack:</p>
-<pre class="language-bash"><code class="language-bash"><span class="token function">npm</span> run install-stack <span class="token parameter variable">--vers</span><span class="token operator">=</span><span class="token number">3.0</span>.2</code></pre>
+
+<div style="position: relative">
+  <pre class="language-bash"><code id="code-77"class="language-bash"><span class="token function">npm</span> run install-stack <span class="token parameter variable">--vers</span><span class="token operator">=</span><span class="token number">3.0</span>.2</code></pre>
+
+  <button class="code-copy "
+    data-clipboard-target="#code-77"
+    style="position: absolute; top: 7.5px; right: 6px; cursor: pointer; outline: none; opacity: 0.8;" title="Copy">
+    <span>
+      <span style="font-size: 15px; opacity: 0.8;" class="mdi mdi-content-copy"></span>
+    </span>
+  </button>
+</div>
 
             </div>
         </div>
@@ -232,6 +245,8 @@ the following command in the project root to install a stack:</p>
             </div>
         </div>
     </footer>
+    <script>function showTooltip(o,e){o.trigger.className.includes("tooltipped")||(o.trigger.children[0].className="tooltipped tooltipped-s",o.trigger.children[0].ariaLabel=e)}window.addEventListener("load",()=>{var o=new ClipboardJS(".code-copy");o.on("success",o=>showTooltip(o,"Copied!")),o.on("error",o=>showTooltip(o,"Failed..."))});</script>
+<script async src="https://cdn.jsdelivr.net/npm/clipboard@2.0.8/dist/clipboard.js"></script>
 </body>
 <script src="/js/cc.min.js"></script>
 <script>

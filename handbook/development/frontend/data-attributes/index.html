@@ -9,6 +9,8 @@
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     <link rel="manifest" href="/site.webmanifest">
     <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#aa4444">
+    <!-- Syntax Highlighting CSS -->
+    <link href="https://unpkg.com/prismjs@1.20.0/themes/prism-tomorrow.css" rel="stylesheet">
     <meta name="msapplication-TileColor" content="#00aba9">
     <meta name="theme-color" content="#ffffff">
     <title>FlowForge | Open-Source platform to run Node-RED in production</title>
@@ -85,16 +87,60 @@
 <p>Similarly, this is a best practices for <a href="https://posthog.com/">PostHog</a> which we also use to track user behaviour across the application. As such, we have defined our own best practice set of <code>data-</code> attributes to use:</p>
 <h3 id="data-nav" tabindex="-1"><a class="header-anchor" href="#data-nav">#&nbsp;</a> data-nav</h3>
 <p>Tag elements that have a sole purpose of moving a user from one place to another. This is used for any navigation item in a side bar, tab or any of the primary navigation dropdown menus for switching team or user options</p>
-<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>router-link</span> <span class="token attr-name">to</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>admin/settings<span class="token punctuation">"</span></span> <span class="token attr-name">data-nav</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>admin-settings<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><br>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nav-item</span> <span class="token attr-name">label</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>Admin Settings<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nav-item</span><span class="token punctuation">></span></span><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>router-link</span><span class="token punctuation">></span></span></code></pre>
+
+<div style="position: relative">
+  <pre class="language-html"><code id="code-15"class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>router-link</span> <span class="token attr-name">to</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>admin/settings<span class="token punctuation">"</span></span> <span class="token attr-name">data-nav</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>admin-settings<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><br>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nav-item</span> <span class="token attr-name">label</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>Admin Settings<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nav-item</span><span class="token punctuation">></span></span><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>router-link</span><span class="token punctuation">></span></span></code></pre>
+
+  <button class="code-copy "
+    data-clipboard-target="#code-15"
+    style="position: absolute; top: 7.5px; right: 6px; cursor: pointer; outline: none; opacity: 0.8;" title="Copy">
+    <span>
+      <span style="font-size: 15px; opacity: 0.8;" class="mdi mdi-content-copy"></span>
+    </span>
+  </button>
+</div>
 <h3 id="data-form" tabindex="-1"><a class="header-anchor" href="#data-form">#&nbsp;</a> data-form</h3>
 <p>Identify particular form elements like text-input, textarea of dropdowns using this tag.</p>
-<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>FormRow</span> <span class="token attr-name">data-form</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>device-name<span class="token punctuation">"</span></span> <span class="token attr-name">v-model</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>input.name<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Name<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>FormRow</span><span class="token punctuation">></span></span></code></pre>
+
+<div style="position: relative">
+  <pre class="language-html"><code id="code-22"class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>FormRow</span> <span class="token attr-name">data-form</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>device-name<span class="token punctuation">"</span></span> <span class="token attr-name">v-model</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>input.name<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Name<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>FormRow</span><span class="token punctuation">></span></span></code></pre>
+
+  <button class="code-copy "
+    data-clipboard-target="#code-22"
+    style="position: absolute; top: 7.5px; right: 6px; cursor: pointer; outline: none; opacity: 0.8;" title="Copy">
+    <span>
+      <span style="font-size: 15px; opacity: 0.8;" class="mdi mdi-content-copy"></span>
+    </span>
+  </button>
+</div>
 <h3 id="data-action" tabindex="-1"><a class="header-anchor" href="#data-action">#&nbsp;</a> data-action</h3>
 <p>Used to identify buttons that do not navigate, but instead complete an action. This could include submitting a form, or opening a dialog, e.g.,</p>
-<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ff-button</span> <span class="token attr-name">data-action</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>delete-project<span class="token punctuation">"</span></span> <span class="token attr-name">kind</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>danger<span class="token punctuation">"</span></span> <span class="token attr-name">@click</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>deleteProject()<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ff-button</span><span class="token punctuation">></span></span></code></pre>
+
+<div style="position: relative">
+  <pre class="language-html"><code id="code-29"class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ff-button</span> <span class="token attr-name">data-action</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>delete-project<span class="token punctuation">"</span></span> <span class="token attr-name">kind</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>danger<span class="token punctuation">"</span></span> <span class="token attr-name">@click</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>deleteProject()<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ff-button</span><span class="token punctuation">></span></span></code></pre>
+
+  <button class="code-copy "
+    data-clipboard-target="#code-29"
+    style="position: absolute; top: 7.5px; right: 6px; cursor: pointer; outline: none; opacity: 0.8;" title="Copy">
+    <span>
+      <span style="font-size: 15px; opacity: 0.8;" class="mdi mdi-content-copy"></span>
+    </span>
+  </button>
+</div>
 <h3 id="data-el" tabindex="-1"><a class="header-anchor" href="#data-el">#&nbsp;</a> data-el</h3>
 <p>A catch all for everything else, an element that we're likely going to want to capture, but doesn't fit into any of the other categories, e.g.,</p>
-<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ff-data-table</span> <span class="token attr-name">data-el</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>templates<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>...<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ff-data-table</span><span class="token punctuation">></span></span></code></pre>
+
+<div style="position: relative">
+  <pre class="language-html"><code id="code-36"class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ff-data-table</span> <span class="token attr-name">data-el</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>templates<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>...<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ff-data-table</span><span class="token punctuation">></span></span></code></pre>
+
+  <button class="code-copy "
+    data-clipboard-target="#code-36"
+    style="position: absolute; top: 7.5px; right: 6px; cursor: pointer; outline: none; opacity: 0.8;" title="Copy">
+    <span>
+      <span style="font-size: 15px; opacity: 0.8;" class="mdi mdi-content-copy"></span>
+    </span>
+  </button>
+</div>
 
             </div>
         </div>
@@ -197,6 +243,8 @@
             </div>
         </div>
     </footer>
+    <script>function showTooltip(o,e){o.trigger.className.includes("tooltipped")||(o.trigger.children[0].className="tooltipped tooltipped-s",o.trigger.children[0].ariaLabel=e)}window.addEventListener("load",()=>{var o=new ClipboardJS(".code-copy");o.on("success",o=>showTooltip(o,"Copied!")),o.on("error",o=>showTooltip(o,"Failed..."))});</script>
+<script async src="https://cdn.jsdelivr.net/npm/clipboard@2.0.8/dist/clipboard.js"></script>
 </body>
 <script src="/js/cc.min.js"></script>
 <script>

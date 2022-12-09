@@ -9,6 +9,8 @@
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     <link rel="manifest" href="/site.webmanifest">
     <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#aa4444">
+    <!-- Syntax Highlighting CSS -->
+    <link href="https://unpkg.com/prismjs@1.20.0/themes/prism-tomorrow.css" rel="stylesheet">
     <meta name="msapplication-TileColor" content="#00aba9">
     <meta name="theme-color" content="#ffffff">
     <title>FlowForge | Open-Source platform to run Node-RED in production</title>
@@ -103,22 +105,110 @@
 <pre><code>sudo nano /opt/flowforge/docker-compose-1.1.1/docker-compose.yml
 </code></pre>
 <p>In the docker-compose.yml file, un-comment the following lines:</p>
-<pre class="language-yaml"><code class="language-yaml"><span class="token punctuation">-</span> <span class="token string">"./certs:/etc/nginx/certs"</span></code></pre>
-<pre class="language-yaml"><code class="language-yaml"><span class="token punctuation">-</span> <span class="token string">"443:443"</span></code></pre>
-<pre class="language-yaml"><code class="language-yaml"> <span class="token key atrule">acme</span><span class="token punctuation">:</span><br>    <span class="token key atrule">image</span><span class="token punctuation">:</span> nginxproxy/acme<span class="token punctuation">-</span>companion<br>    <span class="token key atrule">volumes</span><span class="token punctuation">:</span><br>      <span class="token punctuation">-</span> <span class="token string">"/var/run/docker.sock:/var/run/docker.sock:ro"</span><br>      <span class="token punctuation">-</span> <span class="token string">"./acme:/etc/acme.sh"</span><br>    <span class="token key atrule">volumes_from</span><span class="token punctuation">:</span><br>      <span class="token punctuation">-</span> nginx<span class="token punctuation">:</span>rw<br>    <span class="token key atrule">environment</span><span class="token punctuation">:</span><br>      <span class="token punctuation">-</span> <span class="token string">"DEFAULT_EMAIL=mail@example.com"</span><br>    <span class="token key atrule">depends_on</span><span class="token punctuation">:</span><br>      <span class="token punctuation">-</span> <span class="token string">"nginx"</span></code></pre>
+
+<div style="position: relative">
+  <pre class="language-yaml"><code id="code-38"class="language-yaml"><span class="token punctuation">-</span> <span class="token string">"./certs:/etc/nginx/certs"</span></code></pre>
+
+  <button class="code-copy "
+    data-clipboard-target="#code-38"
+    style="position: absolute; top: 7.5px; right: 6px; cursor: pointer; outline: none; opacity: 0.8;" title="Copy">
+    <span>
+      <span style="font-size: 15px; opacity: 0.8;" class="mdi mdi-content-copy"></span>
+    </span>
+  </button>
+</div>
+
+<div style="position: relative">
+  <pre class="language-yaml"><code id="code-39"class="language-yaml"><span class="token punctuation">-</span> <span class="token string">"443:443"</span></code></pre>
+
+  <button class="code-copy "
+    data-clipboard-target="#code-39"
+    style="position: absolute; top: 7.5px; right: 6px; cursor: pointer; outline: none; opacity: 0.8;" title="Copy">
+    <span>
+      <span style="font-size: 15px; opacity: 0.8;" class="mdi mdi-content-copy"></span>
+    </span>
+  </button>
+</div>
+
+<div style="position: relative">
+  <pre class="language-yaml"><code id="code-40"class="language-yaml"> <span class="token key atrule">acme</span><span class="token punctuation">:</span><br>    <span class="token key atrule">image</span><span class="token punctuation">:</span> nginxproxy/acme<span class="token punctuation">-</span>companion<br>    <span class="token key atrule">volumes</span><span class="token punctuation">:</span><br>      <span class="token punctuation">-</span> <span class="token string">"/var/run/docker.sock:/var/run/docker.sock:ro"</span><br>      <span class="token punctuation">-</span> <span class="token string">"./acme:/etc/acme.sh"</span><br>    <span class="token key atrule">volumes_from</span><span class="token punctuation">:</span><br>      <span class="token punctuation">-</span> nginx<span class="token punctuation">:</span>rw<br>    <span class="token key atrule">environment</span><span class="token punctuation">:</span><br>      <span class="token punctuation">-</span> <span class="token string">"DEFAULT_EMAIL=mail@example.com"</span><br>    <span class="token key atrule">depends_on</span><span class="token punctuation">:</span><br>      <span class="token punctuation">-</span> <span class="token string">"nginx"</span></code></pre>
+
+  <button class="code-copy "
+    data-clipboard-target="#code-40"
+    style="position: absolute; top: 7.5px; right: 6px; cursor: pointer; outline: none; opacity: 0.8;" title="Copy">
+    <span>
+      <span style="font-size: 15px; opacity: 0.8;" class="mdi mdi-content-copy"></span>
+    </span>
+  </button>
+</div>
 <p>We should also redirect all traffic to use HTTPS, to do that un-comment the following in the nginx service section:</p>
-<pre class="language-yaml"><code class="language-yaml"><span class="token key atrule">Environment</span><span class="token punctuation">:</span><br>      <span class="token punctuation">-</span> <span class="token string">"HTTPS_METHOD=redirect"</span></code></pre>
+
+<div style="position: relative">
+  <pre class="language-yaml"><code id="code-44"class="language-yaml"><span class="token key atrule">Environment</span><span class="token punctuation">:</span><br>      <span class="token punctuation">-</span> <span class="token string">"HTTPS_METHOD=redirect"</span></code></pre>
+
+  <button class="code-copy "
+    data-clipboard-target="#code-44"
+    style="position: absolute; top: 7.5px; right: 6px; cursor: pointer; outline: none; opacity: 0.8;" title="Copy">
+    <span>
+      <span style="font-size: 15px; opacity: 0.8;" class="mdi mdi-content-copy"></span>
+    </span>
+  </button>
+</div>
 <p>We now need to add the configuration for LetsEncrypt, edit the following lines to include a valid email address and the correct domain for where you are hosting your FlowForge server:</p>
-<pre class="language-yaml"><code class="language-yaml"><span class="token punctuation">-</span> <span class="token string">"DEFAULT_EMAIL=mail@example.com"</span></code></pre>
-<pre class="language-yaml"><code class="language-yaml"><span class="token punctuation">-</span> <span class="token string">"LETSENCRYPT_HOST=mqtt.example.com"</span></code></pre>
-<pre class="language-yaml"><code class="language-yaml"><span class="token punctuation">-</span> <span class="token string">"LETSENCRYPT_HOST=forge.example.com"</span></code></pre>
+
+<div style="position: relative">
+  <pre class="language-yaml"><code id="code-48"class="language-yaml"><span class="token punctuation">-</span> <span class="token string">"DEFAULT_EMAIL=mail@example.com"</span></code></pre>
+
+  <button class="code-copy "
+    data-clipboard-target="#code-48"
+    style="position: absolute; top: 7.5px; right: 6px; cursor: pointer; outline: none; opacity: 0.8;" title="Copy">
+    <span>
+      <span style="font-size: 15px; opacity: 0.8;" class="mdi mdi-content-copy"></span>
+    </span>
+  </button>
+</div>
+
+<div style="position: relative">
+  <pre class="language-yaml"><code id="code-49"class="language-yaml"><span class="token punctuation">-</span> <span class="token string">"LETSENCRYPT_HOST=mqtt.example.com"</span></code></pre>
+
+  <button class="code-copy "
+    data-clipboard-target="#code-49"
+    style="position: absolute; top: 7.5px; right: 6px; cursor: pointer; outline: none; opacity: 0.8;" title="Copy">
+    <span>
+      <span style="font-size: 15px; opacity: 0.8;" class="mdi mdi-content-copy"></span>
+    </span>
+  </button>
+</div>
+
+<div style="position: relative">
+  <pre class="language-yaml"><code id="code-50"class="language-yaml"><span class="token punctuation">-</span> <span class="token string">"LETSENCRYPT_HOST=forge.example.com"</span></code></pre>
+
+  <button class="code-copy "
+    data-clipboard-target="#code-50"
+    style="position: absolute; top: 7.5px; right: 6px; cursor: pointer; outline: none; opacity: 0.8;" title="Copy">
+    <span>
+      <span style="font-size: 15px; opacity: 0.8;" class="mdi mdi-content-copy"></span>
+    </span>
+  </button>
+</div>
 <p>Save and exit from that file, in Nano you can do that by pressing ‘control x’ then ‘y’ then the Return key.</p>
 <h3 id="update-flowforge.yml" tabindex="-1"><a class="header-anchor" href="#update-flowforge.yml">#&nbsp;</a> Update flowforge.yml</h3>
 <p>Next, we need to edit the public_url for the MQTT broker:</p>
 <pre><code>sudo nano /opt/flowforge/docker-compose-1.1.1/docker-compose.yml
 </code></pre>
 <p>Then replace ws:// with wss://</p>
-<pre class="language-yaml"><code class="language-yaml"><span class="token key atrule">public_url</span><span class="token punctuation">:</span> wss<span class="token punctuation">:</span>//mqtt.flowforge<span class="token punctuation">-</span>demo.com</code></pre>
+
+<div style="position: relative">
+  <pre class="language-yaml"><code id="code-64"class="language-yaml"><span class="token key atrule">public_url</span><span class="token punctuation">:</span> wss<span class="token punctuation">:</span>//mqtt.flowforge<span class="token punctuation">-</span>demo.com</code></pre>
+
+  <button class="code-copy "
+    data-clipboard-target="#code-64"
+    style="position: absolute; top: 7.5px; right: 6px; cursor: pointer; outline: none; opacity: 0.8;" title="Copy">
+    <span>
+      <span style="font-size: 15px; opacity: 0.8;" class="mdi mdi-content-copy"></span>
+    </span>
+  </button>
+</div>
 <p>Save and exit from that file, in Nano you can do that by pressing ‘control x’ then ‘y’ then the Return key.</p>
 <h3 id="restart-your-docker-containers" tabindex="-1"><a class="header-anchor" href="#restart-your-docker-containers">#&nbsp;</a> Restart your Docker containers</h3>
 <p>OK, we should be ready to restart the Docker containers, run the command:</p>
@@ -189,6 +279,8 @@
             </div>
         </div>
     </footer>
+    <script>function showTooltip(o,e){o.trigger.className.includes("tooltipped")||(o.trigger.children[0].className="tooltipped tooltipped-s",o.trigger.children[0].ariaLabel=e)}window.addEventListener("load",()=>{var o=new ClipboardJS(".code-copy");o.on("success",o=>showTooltip(o,"Copied!")),o.on("error",o=>showTooltip(o,"Failed..."))});</script>
+<script async src="https://cdn.jsdelivr.net/npm/clipboard@2.0.8/dist/clipboard.js"></script>
 </body>
 <script src="/js/cc.min.js"></script>
 <script>

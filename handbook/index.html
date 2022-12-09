@@ -9,6 +9,8 @@
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     <link rel="manifest" href="/site.webmanifest">
     <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#aa4444">
+    <!-- Syntax Highlighting CSS -->
+    <link href="https://unpkg.com/prismjs@1.20.0/themes/prism-tomorrow.css" rel="stylesheet">
     <meta name="msapplication-TileColor" content="#00aba9">
     <meta name="theme-color" content="#ffffff">
     <title>FlowForge | Open-Source platform to run Node-RED in production</title>
@@ -127,7 +129,18 @@ to make public. That content should be shared on the FlowForge Google Drive.</p>
 <p>To run a local copy of the handbook you first need to clone the website and the handbook into side by side directories.</p>
 <p>Once you have them both cloned, open a <strong>bash</strong> terminal in the website root directory and install the project dependencies. Then, run the website's eleventy server:</p>
 <p>From the website directory:</p>
-<pre class="language-bash"><code class="language-bash"><span class="token function">npm</span> <span class="token function">install</span><br><br><span class="token function">npm</span> start</code></pre>
+
+<div style="position: relative">
+  <pre class="language-bash"><code id="code-123"class="language-bash"><span class="token function">npm</span> <span class="token function">install</span><br><br><span class="token function">npm</span> start</code></pre>
+
+  <button class="code-copy "
+    data-clipboard-target="#code-123"
+    style="position: absolute; top: 7.5px; right: 6px; cursor: pointer; outline: none; opacity: 0.8;" title="Copy">
+    <span>
+      <span style="font-size: 15px; opacity: 0.8;" class="mdi mdi-content-copy"></span>
+    </span>
+  </button>
+</div>
 <p>This will run the website on http://localhost:8080, and then you can access the Handbook at http://localhost:8080/handbook. This will automatically reload whenever any content is changed.</p>
 <p><strong>Note:</strong> if you modify any of the Handbook's CSS, it may take a while for the website to recognise the changes. As a shortcut, you can run <code>npm run tailwind</code> to rebuild the CSS content.</p>
 
@@ -232,6 +245,8 @@ to make public. That content should be shared on the FlowForge Google Drive.</p>
             </div>
         </div>
     </footer>
+    <script>function showTooltip(o,e){o.trigger.className.includes("tooltipped")||(o.trigger.children[0].className="tooltipped tooltipped-s",o.trigger.children[0].ariaLabel=e)}window.addEventListener("load",()=>{var o=new ClipboardJS(".code-copy");o.on("success",o=>showTooltip(o,"Copied!")),o.on("error",o=>showTooltip(o,"Failed..."))});</script>
+<script async src="https://cdn.jsdelivr.net/npm/clipboard@2.0.8/dist/clipboard.js"></script>
 </body>
 <script src="/js/cc.min.js"></script>
 <script>

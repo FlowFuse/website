@@ -9,6 +9,8 @@
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     <link rel="manifest" href="/site.webmanifest">
     <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#aa4444">
+    <!-- Syntax Highlighting CSS -->
+    <link href="https://unpkg.com/prismjs@1.20.0/themes/prism-tomorrow.css" rel="stylesheet">
     <meta name="msapplication-TileColor" content="#00aba9">
     <meta name="theme-color" content="#ffffff">
     <title>FlowForge | Open-Source platform to run Node-RED in production</title>
@@ -125,9 +127,31 @@ helm repo update
 <h3 id="configure-flowforge" tabindex="-1"><a class="header-anchor" href="#configure-flowforge">#&nbsp;</a> Configure FlowForge</h3>
 <p>All the initial configuration is handled by the Helm chart. This is done by creating a <code>customization.yml</code> file in the <code>helm</code> directory that will be passed to the helm along with the chart.</p>
 <p>This is the minimal configuration</p>
-<pre class="language-yaml"><code class="language-yaml"><span class="token key atrule">forge</span><span class="token punctuation">:</span><br>  <span class="token key atrule">entryPoint</span><span class="token punctuation">:</span> forge.example.com<br>  <span class="token key atrule">domain</span><span class="token punctuation">:</span> example.com<br>  <span class="token key atrule">https</span><span class="token punctuation">:</span> <span class="token boolean important">false</span><br>  <span class="token key atrule">localPostgresql</span><span class="token punctuation">:</span> <span class="token boolean important">true</span></code></pre>
+
+<div style="position: relative">
+  <pre class="language-yaml"><code id="code-114"class="language-yaml"><span class="token key atrule">forge</span><span class="token punctuation">:</span><br>  <span class="token key atrule">entryPoint</span><span class="token punctuation">:</span> forge.example.com<br>  <span class="token key atrule">domain</span><span class="token punctuation">:</span> example.com<br>  <span class="token key atrule">https</span><span class="token punctuation">:</span> <span class="token boolean important">false</span><br>  <span class="token key atrule">localPostgresql</span><span class="token punctuation">:</span> <span class="token boolean important">true</span></code></pre>
+
+  <button class="code-copy "
+    data-clipboard-target="#code-114"
+    style="position: absolute; top: 7.5px; right: 6px; cursor: pointer; outline: none; opacity: 0.8;" title="Copy">
+    <span>
+      <span style="font-size: 15px; opacity: 0.8;" class="mdi mdi-content-copy"></span>
+    </span>
+  </button>
+</div>
 <p>When running on AWS EKS and using AWS SES for email (The IAMRole needs to have the required permissions to use SES) it would look something like:</p>
-<pre class="language-yaml"><code class="language-yaml"><span class="token key atrule">forge</span><span class="token punctuation">:</span><br>  <span class="token key atrule">entryPoint</span><span class="token punctuation">:</span> forge.example.com<br>  <span class="token key atrule">domain</span><span class="token punctuation">:</span> example.com<br>  <span class="token key atrule">cloudProvider</span><span class="token punctuation">:</span> aws<br>  <span class="token key atrule">aws</span><span class="token punctuation">:</span><br>    <span class="token key atrule">IAMRole</span><span class="token punctuation">:</span> arn<span class="token punctuation">:</span>aws<span class="token punctuation">:</span>iam<span class="token punctuation">:</span><span class="token punctuation">:</span>&lt;aws<span class="token punctuation">-</span>account<span class="token punctuation">-</span>id<span class="token punctuation">></span><span class="token punctuation">:</span>role/flowforge_service_account_role<br>  <span class="token key atrule">email</span><span class="token punctuation">:</span><br>    <span class="token key atrule">ses</span><span class="token punctuation">:</span><br>      <span class="token key atrule">region</span><span class="token punctuation">:</span> eu<span class="token punctuation">-</span>west<span class="token punctuation">-</span><span class="token number">1</span></code></pre>
+
+<div style="position: relative">
+  <pre class="language-yaml"><code id="code-118"class="language-yaml"><span class="token key atrule">forge</span><span class="token punctuation">:</span><br>  <span class="token key atrule">entryPoint</span><span class="token punctuation">:</span> forge.example.com<br>  <span class="token key atrule">domain</span><span class="token punctuation">:</span> example.com<br>  <span class="token key atrule">cloudProvider</span><span class="token punctuation">:</span> aws<br>  <span class="token key atrule">aws</span><span class="token punctuation">:</span><br>    <span class="token key atrule">IAMRole</span><span class="token punctuation">:</span> arn<span class="token punctuation">:</span>aws<span class="token punctuation">:</span>iam<span class="token punctuation">:</span><span class="token punctuation">:</span>&lt;aws<span class="token punctuation">-</span>account<span class="token punctuation">-</span>id<span class="token punctuation">></span><span class="token punctuation">:</span>role/flowforge_service_account_role<br>  <span class="token key atrule">email</span><span class="token punctuation">:</span><br>    <span class="token key atrule">ses</span><span class="token punctuation">:</span><br>      <span class="token key atrule">region</span><span class="token punctuation">:</span> eu<span class="token punctuation">-</span>west<span class="token punctuation">-</span><span class="token number">1</span></code></pre>
+
+  <button class="code-copy "
+    data-clipboard-target="#code-118"
+    style="position: absolute; top: 7.5px; right: 6px; cursor: pointer; outline: none; opacity: 0.8;" title="Copy">
+    <span>
+      <span style="font-size: 15px; opacity: 0.8;" class="mdi mdi-content-copy"></span>
+    </span>
+  </button>
+</div>
 <p>A more detailed example for running on AWS can be found <a href="aws"">here</a></p>
 <p>As mentioned earlier the Helm chart defaults to expecting at least 2 nodes in the Kubernetes cluster.</p>
 <p>You will need to label at least one node to run the management application and one to run the Node-RED Projects.</p>
@@ -143,7 +167,18 @@ all the nodes in the cluster</p>
 <pre><code>kubectl label node &lt;projects node name&gt; role=projects
 </code></pre>
 <p>To override this you can remove the node selectors with the following which will mean that all pods can run on any nodes.</p>
-<pre class="language-yaml"><code class="language-yaml"><span class="token key atrule">forge</span><span class="token punctuation">:</span><br>  <span class="token key atrule">projectSelector</span><span class="token punctuation">:</span><br>  <span class="token key atrule">managementSelector</span><span class="token punctuation">:</span></code></pre>
+
+<div style="position: relative">
+  <pre class="language-yaml"><code id="code-146"class="language-yaml"><span class="token key atrule">forge</span><span class="token punctuation">:</span><br>  <span class="token key atrule">projectSelector</span><span class="token punctuation">:</span><br>  <span class="token key atrule">managementSelector</span><span class="token punctuation">:</span></code></pre>
+
+  <button class="code-copy "
+    data-clipboard-target="#code-146"
+    style="position: absolute; top: 7.5px; right: 6px; cursor: pointer; outline: none; opacity: 0.8;" title="Copy">
+    <span>
+      <span style="font-size: 15px; opacity: 0.8;" class="mdi mdi-content-copy"></span>
+    </span>
+  </button>
+</div>
 <p>A full list of all the configurable values can be found in the <a href="https://github.com/flowforge/helm/blob/main/helm/flowforge/README.md">Helm Chart README</a>.</p>
 <p>The install can then be started with the following command:</p>
 <pre><code>helm upgrade --atomic --install flowforge flowforge/flowforge -f customization.yml
@@ -277,6 +312,8 @@ creating an administrator for the platform and other configuration options.</p>
             </div>
         </div>
     </footer>
+    <script>function showTooltip(o,e){o.trigger.className.includes("tooltipped")||(o.trigger.children[0].className="tooltipped tooltipped-s",o.trigger.children[0].ariaLabel=e)}window.addEventListener("load",()=>{var o=new ClipboardJS(".code-copy");o.on("success",o=>showTooltip(o,"Copied!")),o.on("error",o=>showTooltip(o,"Failed..."))});</script>
+<script async src="https://cdn.jsdelivr.net/npm/clipboard@2.0.8/dist/clipboard.js"></script>
 </body>
 <script src="/js/cc.min.js"></script>
 <script>
