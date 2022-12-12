@@ -20,7 +20,7 @@
     <meta name="twitter:description" content="FlowForge is an open-source, low-code platform for integration and automation. Helping you run Node-RED at production scales in a secure, scalable and team-based environment." />
     <meta name="twitter:site" content="@flowforgeinc" />
     <meta name="twitter:image" content="/images/og-social-tile.jpg" />
-    <meta property="og:url" content="https://flowforge.com/handbook/development/release/" />
+    <meta property="og:url" content="https://flowforge.com/handbook/company/board/" />
     <meta property="og:title" content="" />
     <meta property="og:description" content="FlowForge is an open-source, low-code platform for integration and automation. Helping you run Node-RED at production scales in a secure, scalable and team-based environment." />
     <meta property="og:image" content="/images/og-social-tile.jpg" />
@@ -76,142 +76,37 @@
     <div class="w-full mx-auto ff-bg-light">
         <div class="font-medium border-b pb-1">
             
-            /<a class="mx-2" href="/handbook">handbook</a>/<a class="mx-2" href="/handbook/development">development</a>/<a class="mx-2" href="/handbook/development/release">release</a>
+            /<a class="mx-2" href="/handbook">handbook</a>/<a class="mx-2" href="/handbook/company">company</a>/<a class="mx-2" href="/handbook/company/board">board</a>
         </div>
     </div>
     <div class="w-full mx-auto ff-bg-light flex flex-col md:flex-row">
         <div class="flex-grow order-last md:order-first">
             <div class="mt-6 mb-4 prose prose-blue main-content">
-                <h1 id="release-process" tabindex="-1"><a class="header-anchor" href="#release-process">#&nbsp;</a> Release Process</h1>
-<p>There are two processes, one for major/minor point releases. The second for patch
-releases.</p>
-<h2 id="major%2Fminor-point-releases" tabindex="-1"><a class="header-anchor" href="#major%2Fminor-point-releases">#&nbsp;</a> Major/minor point releases</h2>
-<h3 id="setup" tabindex="-1"><a class="header-anchor" href="#setup">#&nbsp;</a> Setup</h3>
-<ul>
-<li>Decide who will be Release Manager for this release. For Major/Minor releases this should be shared across the whole team to prevent it becoming a single point of failure. For Fix releases it can be the developer committing the fix.</li>
-<li>Create a Release checklist issue using the <a href="https://github.com/flowforge/admin/issues/new?assignees=&amp;labels=&amp;template=release.md&amp;title=Release%3A">Release Checklist template</a></li>
-<li>Assign the issue to the Release Manager</li>
-<li>Ensure you have the following installed on your machine:
-<ul>
-<li><a href="https://github.com/cli/cli">GitHub client</a></li>
-<li><a href="https://stedolan.github.io/jq/download/">jq</a></li>
-<li><a href="https://mikefarah.gitbook.io/yq/#install">yq</a></li>
-</ul>
-</li>
-<li>Ensure you're machine is authenticated with the GitHub client: <code>gh auth login</code></li>
-<li>When we are ready to start the release process the Release Manager should start a Slack Huddle in #dev and keep that open until the release is completed.</li>
-</ul>
-<h3 id="unmanaged-repositories" tabindex="-1"><a class="header-anchor" href="#unmanaged-repositories">#&nbsp;</a> Unmanaged Repositories</h3>
-<p>Not all repositories are covered by the release automation and must be published
-separately. This is typically done by the development team in the build up to the
-full release.</p>
-<p>The Release Manager should verify the following repositories are up to date and
-have been published as needed.</p>
-<ul>
-<li><a href="https://github.com/flowforge/usage-ping-collector"><code>flowforge/usage-ping-collector</code></a></li>
-<li><a href="https://github.com/flowforge/forge-ui-components"><code>flowforge/forge-ui-components</code></a></li>
-<li><a href="https://github.com/flowforge/flowforge-device-agent"><code>flowforge/flowforge-device-agent</code></a></li>
-<li><a href="https://github.com/flowforge/flowforge-nr-theme"><code>flowforge/flowforge-nr-theme</code></a></li>
-<li><a href="https://github.com/flowforge/flowforge-nr-project-nodes"><code>flowforge/flowforge-nr-project-nodes</code></a></li>
-<li><a href="https://github.com/flowforge/flowforge-nr-persistent-context"><code>flowforge/flowforge-nr-persistent-context</code></a></li>
-</ul>
-<p>Refer to the section <a href="#unmanaged-releases">Unmanaged Releases</a> for releasing these.</p>
-<h3 id="steps" tabindex="-1"><a class="header-anchor" href="#steps">#&nbsp;</a> Steps</h3>
-<ul>
-<li>
-<p>Checkout the <code>flowforge/admin</code> repository if you do not already have it.</p>
-<ul>
-<li>Ensure you have the latest with a <code>git pull</code>.</li>
-</ul>
-</li>
-<li>
-<p>In the <em>parent</em> directory to where you have the <code>admin</code> checked out, run:</p>
-<pre><code> ./admin/checkout-release 0.x.y
-</code></pre>
-<p>This will create a directory called <code>release-0.x.y</code> and checkout all of the releasable
-repositories under it.</p>
-<p>NOTE: If you do not have a global git configuration, you will need to set <code>user.name</code> and <code>user.email</code>
-in each of those repositories.</p>
-</li>
-<li>
-<p>Within the release directory run:</p>
-<pre><code> cd release-0.x.y
- ../admin/prepare-release 0.x.y
-</code></pre>
-<p>This will check all of the repositories are ready to be released, update
-their <code>package.json</code> files to reflect the new version (including cross-package
-dependencies) and update the CHANGELOG files.</p>
-<p>It will then raise PRs against each repository with these changes in.</p>
-</li>
-<li>
-<p>Do not panic when you see &quot;All jobs have failed&quot; for the <code>flowforge/flowforge</code> Release PR.
-This is due to the repo pointing to newer versions of other packages which have not yet been published to npm.</p>
-</li>
-<li>
-<p>Follow through the current release checklist in <a href="https://github.com/flowforge/admin/issues"><code>flowforge/admin</code></a> in the order they are listed.
-Each PR will need to be reviewed, merged and tagged taking care to verify each one has been published before moving to the next.
-Some steps will also require you to pause and re-run tests before continuing.
-Updated packages will be automatically published to npm by our GitHub actions.  You can check the publish status of these as follows:</p>
-<ul>
-<li>Track the &quot;Release Published&quot; action on the GH repository</li>
-<li>Keep an eye on npmjs.org page for each package</li>
-<li>Watch for bot notifications in the <a href="https://flowforgeworkspace.slack.com/archives/C02UR3MBA1J">#gh-flowforge</a> Slack channel (NOTE: the notifications can take quite a while to appear in the channel)</li>
-</ul>
-</li>
-<li>
-<p>Once all the node module components have been built and published to npm the <code>installer</code>, <code>helm</code> and <code>docker-compose</code> components can be updated and tagged.</p>
-</li>
-<li>
-<p>Run <a href="https://github.com/flowforge/CloudProject/actions/workflows/build-kube.yml">staging CI pipeline publish</a>, to ensure staging is running the latest release.</p>
-</li>
-</ul>
-<h3 id="next-steps" tabindex="-1"><a class="header-anchor" href="#next-steps">#&nbsp;</a> Next Steps</h3>
-<ul>
-<li>As much as possible of the previous steps should be converted into a CI Pipeline making use of GitHub Actions.</li>
-</ul>
-<h2 id="patch-releases" tabindex="-1"><a class="header-anchor" href="#patch-releases">#&nbsp;</a> Patch releases</h2>
-<p>Patch releases are done as needed and have a much lighter process to allow
-fixes to be released quickly.</p>
-<p>The core <code>flowforge</code> repository has some automation in place to help with this process.
-Until that is rolled out across the other repositories, some of the backporting work
-must be done manually.</p>
-<ul>
-<li>Changes must first be PR'd to the <code>main</code> branch and reviewed in the normal manner.</li>
-<li>Before merging, the PR should have the label <code>backport</code> added.</li>
-<li>If in <code>flowforge/flowforge</code>, when the PR is merged, an automation will run to create a new PR that backports
-the change to the maintenance branch. Otherwise, the backport PR must be manually created.</li>
-<li>The backport PR must be reviewed and merged in the normal manner.</li>
-<li>Once all of the required backport PRs are merged, raise a PR on the <code>maintenance</code> branch
-to update the version and <code>CHANGELOG.md</code> file with suitable details.</li>
-<li>Create the GitHub release with the appropriate <code>vX.Y.Z</code> tag.</li>
-</ul>
-<p>Finally, create two change request issues in the admin repo, one for staging and
-one for production to upgrade to the latest version.</p>
-<h3 id="unmanaged-releases" tabindex="-1"><a class="header-anchor" href="#unmanaged-releases">#&nbsp;</a> Unmanaged Releases</h3>
-<p>The unmanaged repositories listed above have a simpler release process.</p>
+                <h1 id="board-of-directors" tabindex="-1"><a class="header-anchor" href="#board-of-directors">#&nbsp;</a> Board of Directors</h1>
+<h2 id="board-meetings" tabindex="-1"><a class="header-anchor" href="#board-meetings">#&nbsp;</a> Board meetings</h2>
+<h3 id="preparation" tabindex="-1"><a class="header-anchor" href="#preparation">#&nbsp;</a> Preparation</h3>
+<p>One week after the last board meeting</p>
 <ol>
-<li>Make announcement in #dev so team is aware</li>
-<li>Check that all changes have been merged to main</li>
-<li>Update package.json version number</li>
-<li>Run the <code>generate-changelog</code> script from <code>flowforge/admin</code> repository. This
-generates a list of the PRs merged since the last tagged release. Note: this
-script require the <code>gh</code> cli to be installed and logged in.
-Update CHANGELOG.md with the output of the script.</li>
-<li>Open a new PR to merge the package.json and CHANGELOG.md changes - get it merged</li>
-<li>Tag new release in GitHub with the appropriate version number eg <code>v0.1.1</code>. Copy the CHANGELOG update into the description.</li>
-<li>Once the release is created, the GitHub Action will take care of publishing to NPM. Check the action to ensure it completes.</li>
+<li>Set up the next meeting
+<ul>
+<li>Invite all current board members</li>
+<li>Invite counsel to keep minutes and advise during the meeting</li>
+</ul>
+</li>
+<li>Request minutes of past meeting and circulate the minutes to attendees</li>
 </ol>
-<h2 id="launch-lunch" tabindex="-1"><a class="header-anchor" href="#launch-lunch">#&nbsp;</a> Launch Lunch</h2>
-<p>To celebrate the launch of a new version of FlowForge, we organize a lunch on
-the release day. Each team member is encouraged to order a lunch (Expensable up
-to 25$ per launch) and join a social lunch zoom call.</p>
+<p>Two weeks before the next board meeting</p>
+<ol>
+<li>Set the strategic topics to discuss. Propose 3 topics to attendees and ask them to pick two</li>
+<li>Set agenda structure and send the concept agenda to attendees</li>
+</ol>
 
             </div>
         </div>
         <div class="w-full md:w-64 md:ml-8 mt-4 md:mt-6 px-2">
             <h3 class="font-medium border-b pb-1 mb-4">On this page</h3>
             <ul id="toc" class="text-sm border-b mb-4"></ul>
-            <div class="text-sm pb-1 text-right mb-4"><a href="https://github.com/flowforge/handbook/edit/main/development/release.md">Edit this page</a></div>
+            <div class="text-sm pb-1 text-right mb-4"><a href="https://github.com/flowforge/handbook/edit/main/company/board.md">Edit this page</a></div>
             <div class="text-xs pb-1 text-right mb-4 italic">Updated: 2022-12-12 11:40:39 +0000</div>
         </div>
     </div>
