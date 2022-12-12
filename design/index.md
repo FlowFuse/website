@@ -161,3 +161,57 @@ Keep it short, Slack messages should be factual, informal and have a call to act
 #### Discourse (Node-RED Forums)
 
 Keep content short, posts to the Node-RED discord should be factual, informal and have a call to action (a link) where a user can read more.
+
+### Blog CMS
+
+When creating a blog post there are several headers which are used by the CMS to populate the blog article as well as the blog index page. The headers are as follows:
+
+#### Title
+
+The title of the page can be seen on both the blog index and the articles.
+
+#### Subtitle
+
+The subtitle is only shown on the articles.
+
+#### Description
+
+The description is unused currently
+
+#### Date
+
+The data can be seen on both the blog index and the articles.
+
+#### Authors
+
+The author can be seen on both the blog index and the articles.
+
+#### More tag
+
+The '\<\!\-\-more\-\-\>' tag is used to define the text shown in the blog index from each article.
+
+#### Example header content
+
+```
+---
+title: The title
+subtitle: The subtitle
+description: The description
+date: 2022-12-20
+authors: ["rob-marcer"]
+---
+
+above more
+<!--more-->
+below more
+```
+
+#### Example blog index item based on the header above
+
+![Example of how the headers are shown on the blog index](../images/blog-index.png)
+
+#### Example blog article based on the header above
+
+![Example of how the headers are shown on blog articles](../images/blog-article.png)
+
+
