@@ -1,9 +1,7 @@
 ---
 title: Node-RED Exec nodes explained
-subtitle: Node-RED by default comes with the Exec node. This node allows you to run a
-command as if you're on the command line. In this article we discuss how that can be useful and why exec is not included in FlowForge.
-description: Node-RED by default comes with the Exec node. This node allows you to run a
-command as if you're on the command line. In this article we discuss how that can be useful and why exec is not included in FlowForge.
+subtitle: Node-RED by default comes with the Exec node. This node allows you to run a command as if you're on the command line. In this article we discuss how that can be useful and why exec is not included in FlowForge.
+description: Node-RED by default comes with the Exec node. This node allows you to run a command as if you're on the command line. In this article we discuss how that can be useful and why exec is not included in FlowForge.
 date: 2022-12-12
 authors: ["zj-van-de-weg"]
 ---
