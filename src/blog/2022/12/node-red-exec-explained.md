@@ -1,7 +1,9 @@
 ---
-title: TODO
-subtitle: TODO
-description: TODO
+title: Node-RED Exec nodes explained
+subtitle: Node-RED by default comes with the Exec node. This node allows you to run a
+command as if you're on the command line. In this article we discuss how that can be useful and why exec is not included in FlowForge.
+description: Node-RED by default comes with the Exec node. This node allows you to run a
+command as if you're on the command line. In this article we discuss how that can be useful and why exec is not included in FlowForge.
 date: 2022-12-12
 authors: ["zj-van-de-weg"]
 ---
@@ -13,7 +15,7 @@ the `exec` node.
 
 <!--more-->
 
-### Exec
+### Exec Node
 
 Node-RED by default comes with the `exec` node. This node allows you to run a
 command as if you're on the command line. The exec node has one input, and three
@@ -52,6 +54,5 @@ processing.
 
 ### FlowForge
 
-For FlowForge Cloud, the exec nodes are disabled. The [Stacks](TODO), that is the
-containers that are run, don't include any interesting executatable that can be
-used. All the data is exposed through Javascript and Node.JS already.
+On FlowForge Cloud, the Node-RED exec nodes are disabled. The Stacks, that is the
+containers that Node-RED runs in, don't include any accessible executatables so there would be no benefit to running exec commands. All the data is exposed through Javascript and Node.JS already.
