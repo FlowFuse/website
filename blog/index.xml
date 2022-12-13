@@ -3,8 +3,36 @@
     <title>FlowForge</title>
     <link href="https://flowforge.com/blog/index.xml" rel="self"/>
     <link href="https://flowforge.com/blog"/>
-    <updated>2022-12-12T00:00:00Z</updated>
+    <updated>2022-12-13T12:00:00Z</updated>
     <id>https://flowforge.com/blog</id>
+    
+    <entry>
+        <id>https://flowforge.com/blog/2022/12/flowforge-joins-openjs-foundation/</id>
+        <title>FlowForge Inc. becomes a member of the OpenJS Foundation</title>
+        <summary>Supporting the foundation that has given Node-RED a great home</summary>
+        <updated>2022-12-13T12:00:00Z</updated>
+        <link href="https://flowforge.com/blog/2022/12/flowforge-joins-openjs-foundation/"/>
+        <author><name>Nick O&#39;Leary</name></author>
+        <content type="html">&lt;p&gt;We&#39;re pleased to share the news we&#39;ve joined the OpenJS Foundation to bolster our
+support for the Node-RED community.&lt;/p&gt;
+&lt;!--more--&gt;
+&lt;p&gt;One of our &lt;a href=&quot;https://flowforge.com/handbook/company/#open-source-stewardship&quot;&gt;founding principles&lt;/a&gt; is
+the importance of Open Source being at the core of what we do.&lt;/p&gt;
+&lt;p&gt;Node-RED has been part of the &lt;a href=&quot;https://openjsf.org/&quot;&gt;OpenJS Foundation&lt;/a&gt; since it was formed in 2019.
+The Foundation provides the project a vendor-neutral home and enables its open governance model that
+allows anyone to get involved.&lt;/p&gt;
+&lt;p&gt;It also provides some vitally important resources to the community, such as the hosting for the
+&lt;a href=&quot;https://discourse.nodered.org/&quot;&gt;community forum&lt;/a&gt;, which regularly gets over 1.5 Million page views a
+month.&lt;/p&gt;
+&lt;p&gt;With my Node-RED Project Lead hat on, I regularly see the impact the foundation has had on the growth
+of the Node-RED community. These are things that may not always be obvious to our end users, but
+we wouldn&#39;t be where we are today with them.&lt;/p&gt;
+&lt;p&gt;The success of what we&#39;re building with FlowForge relies on a strong and healthy Node-RED community.
+Becoming members of the Foundation allows us to provide more yet more support to Node-RED and the wider
+JavaScript communities represented by the foundation.&lt;/p&gt;
+&lt;p&gt;For more information about this news, check out the &lt;a href=&quot;https://openjsf.org/announcement/2022/12/13/welcoming-flowforge-to-the-openjs-foundation/&quot;&gt;OpenJS Foundation blog post&lt;/a&gt;.&lt;/p&gt;
+</content>
+    </entry>
     
     <entry>
         <id>https://flowforge.com/blog/2022/12/node-red-exec-explained/</id>
