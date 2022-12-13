@@ -24,6 +24,7 @@ and strongly encouraged.
 ### Sales and Marketing
 
  - [Sales](./sales)
+ - [Content](./content)
 
 ### Internal Operations
 
