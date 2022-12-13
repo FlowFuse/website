@@ -3,8 +3,53 @@
     <title>FlowForge</title>
     <link href="https://flowforge.com/blog/index.xml" rel="self"/>
     <link href="https://flowforge.com/blog"/>
-    <updated>2022-12-09T12:00:00Z</updated>
+    <updated>2022-12-12T00:00:00Z</updated>
     <id>https://flowforge.com/blog</id>
+    
+    <entry>
+        <id>https://flowforge.com/blog/2022/12/node-red-exec-explained/</id>
+        <title>Node-RED Exec nodes explained</title>
+        <summary>Node-RED by default comes with the Exec node. This node allows you to run a command as if you&#39;re on the command line. In this article we discuss how that can be useful and why exec is not included in FlowForge.</summary>
+        <updated>2022-12-12T00:00:00Z</updated>
+        <link href="https://flowforge.com/blog/2022/12/node-red-exec-explained/"/>
+        <author><name></name></author>
+        <content type="html">&lt;p&gt;Node-RED is written in Javascript, as are the custom nodes in the
+&lt;a href=&quot;https://flows.nodered.org/search?type=node&quot;&gt;Flows Library&lt;/a&gt;. At times it would
+be great to use programs written in other languages. In this guide we&#39;ll explain
+the &lt;code&gt;exec&lt;/code&gt; node.&lt;/p&gt;
+&lt;!--more--&gt;
+&lt;h3 id=&quot;exec-node&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://flowforge.com/blog/2022/12/node-red-exec-explained/#exec-node&quot;&gt;#&amp;nbsp;&lt;/a&gt; Exec Node&lt;/h3&gt;
+&lt;p&gt;Node-RED by default comes with the &lt;code&gt;exec&lt;/code&gt; node. This node allows you to run a
+command as if you&#39;re on the command line. The exec node has one input, and three
+outputs. Let&#39;s create a basic example and work from there. Let&#39;s connect the
+inject to the &lt;code&gt;exec&lt;/code&gt; input, and connect the three dots to debug nodes. I&#39;ve set
+the command in the exec node to &lt;code&gt;date&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://flowforge.com/blog/2022/12/images/wired-up-exec-node.png&quot; alt=&quot;&amp;quot;Wired up exec node&amp;quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;When triggered, you&#39;ll see two outputs in the debug pane. One from &lt;code&gt;Standard out&lt;/code&gt;;
+the date and timestamp of the execution and the &lt;code&gt;Exit code&lt;/code&gt; will output too.
+&lt;code&gt;Standard error&lt;/code&gt; didn&#39;t output anything.&lt;/p&gt;
+&lt;p&gt;Let&#39;s explain what happened: the &lt;code&gt;date&lt;/code&gt; command was executed by the NodeJS without
+any input. The command returned the date as a string, and execution of the commmand
+completed. There weren&#39;t any errors, so the error code is set to zero. Non-zero
+exit codes imply didn&#39;t go as intended. Output is written to the standard output,
+and not standard error. This allows us to handle errors differently from succesful
+exections and the output in standard output.&lt;/p&gt;
+&lt;h3 id=&quot;exec-vs-spawn-mode&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://flowforge.com/blog/2022/12/node-red-exec-explained/#exec-vs-spawn-mode&quot;&gt;#&amp;nbsp;&lt;/a&gt; Exec vs Spawn mode&lt;/h3&gt;
+&lt;p&gt;Let&#39;s change the &lt;code&gt;exec&lt;/code&gt; node to execute &lt;code&gt;ping google.com&lt;/code&gt;. The ping command
+provides the round-trip time to google.com in milliseconds, each second. When
+we deploy, the program is stuck. That&#39;s because the output is generated each
+second and won&#39;t complete until there&#39;s a failure in the command. Not what you&#39;d
+want.&lt;/p&gt;
+&lt;p&gt;When there&#39;s continous output you&#39;ll need to select &lt;code&gt;spawn&lt;/code&gt; mode in the settings
+windown of the &lt;code&gt;exec&lt;/code&gt; node:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://flowforge.com/blog/2022/12/images/spawn-mode-exec.png&quot; alt=&quot;spawn mode for exec in Node-RED&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;This will produce a message per line to the standard out output for further
+processing.&lt;/p&gt;
+&lt;h3 id=&quot;flowforge&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://flowforge.com/blog/2022/12/node-red-exec-explained/#flowforge&quot;&gt;#&amp;nbsp;&lt;/a&gt; FlowForge&lt;/h3&gt;
+&lt;p&gt;On FlowForge Cloud, the Node-RED exec nodes are disabled. The Stacks, that is the
+containers that Node-RED runs in, don&#39;t include any accessible executatables so there would be no benefit to running exec commands. All the data is exposed through Javascript and Node.JS already.&lt;/p&gt;
+</content>
+    </entry>
     
     <entry>
         <id>https://flowforge.com/blog/2022/12/flowforge-1-1-2-released/</id>
