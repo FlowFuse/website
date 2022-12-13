@@ -12,7 +12,7 @@
         <summary>Node-RED by default comes with the Exec node. This node allows you to run a command as if you&#39;re on the command line. In this article we discuss how that can be useful and why exec is not included in FlowForge.</summary>
         <updated>2022-12-12T00:00:00Z</updated>
         <link href="https://flowforge.com/blog/2022/12/node-red-exec-explained/"/>
-        <author><name></name></author>
+        <author><name>ZJ van de Weg</name></author>
         <content type="html">&lt;p&gt;Node-RED is written in Javascript, as are the custom nodes in the
 &lt;a href=&quot;https://flows.nodered.org/search?type=node&quot;&gt;Flows Library&lt;/a&gt;. At times it would
 be great to use programs written in other languages. In this guide we&#39;ll explain
