@@ -1,5 +1,5 @@
 ---
-title: FlowForge joins the OpenJS Foundation
+title: FlowForge Inc. becomes a member of the OpenJS Foundation
 subtitle: Supporting the foundation that has given Node-RED a great home
 description:  Supporting the foundation that has given Node-RED a great home
 date: 2022-12-13 12:00:00.0
