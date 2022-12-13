@@ -20,7 +20,7 @@
     <meta name="twitter:description" content="FlowForge is an open-source, low-code platform for integration and automation. Helping you run Node-RED at production scales in a secure, scalable and team-based environment." />
     <meta name="twitter:site" content="@flowforgeinc" />
     <meta name="twitter:image" content="/images/og-social-tile.jpg" />
-    <meta property="og:url" content="https://flowforge.com/handbook/development/frontend/data-attributes/" />
+    <meta property="og:url" content="https://flowforge.com/handbook/marketing/" />
     <meta property="og:title" content="" />
     <meta property="og:description" content="FlowForge is an open-source, low-code platform for integration and automation. Helping you run Node-RED at production scales in a secure, scalable and team-based environment." />
     <meta property="og:image" content="/images/og-social-tile.jpg" />
@@ -76,78 +76,197 @@
     <div class="w-full mx-auto ff-bg-light">
         <div class="font-medium border-b pb-1">
             
-            /<a class="mx-2" href="/handbook">handbook</a>/<a class="mx-2" href="/handbook/development">development</a>/<a class="mx-2" href="/handbook/development/frontend">frontend</a>/<a class="mx-2" href="/handbook/development/frontend/data-attributes">data-attributes</a>
+            /<a class="mx-2" href="/handbook">handbook</a>/<a class="mx-2" href="/handbook/marketing">marketing</a>
         </div>
     </div>
     <div class="w-full mx-auto ff-bg-light flex flex-col md:flex-row">
         <div class="flex-grow order-last md:order-first">
             <div class="mt-6 mb-4 prose prose-blue main-content">
-                <h2 id="data-attributes" tabindex="-1"><a class="header-anchor" href="#data-attributes">#&nbsp;</a> Data Attributes</h2>
-<p>It is recommended in the <a href="https://docs.cypress.io/guides/references/best-practices#Selecting-Elements">Cypress Best Practices</a> to utilise <code>data-</code> attributes on HTML elements in order to ensure safe selection of objects that won't evolve/change over time.</p>
-<p>Similarly, this is a best practices for <a href="https://posthog.com/">PostHog</a> which we also use to track user behaviour across the application. As such, we have defined our own best practice set of <code>data-</code> attributes to use:</p>
-<h3 id="data-nav" tabindex="-1"><a class="header-anchor" href="#data-nav">#&nbsp;</a> data-nav</h3>
-<p>Tag elements that have a sole purpose of moving a user from one place to another. This is used for any navigation item in a side bar, tab or any of the primary navigation dropdown menus for switching team or user options</p>
+                <h2 id="marketing-%26-communication" tabindex="-1"><a class="header-anchor" href="#marketing-%26-communication">#&nbsp;</a> Marketing &amp; Communication</h2>
+<h3 id="websites" tabindex="-1"><a class="header-anchor" href="#websites">#&nbsp;</a> Websites</h3>
+<ul>
+<li>All written content should be in UK English.</li>
+<li>All page titles should summarise the content, keep the URL length as short as practical and use <a href="https://en.wiktionary.org/wiki/kebab_case">Kebab Case</a>.</li>
+<li>All images should use informative <a href="https://www.w3.org/WAI/tutorials/images/tips/">alt tags</a> which clearly describe the point of an image rather than all the details. Alt tags should be no longer than 60 characters.</li>
+<li>When mentioning <a href="https://flowforge.com/docs/user/concepts/">FlowForge Concepts</a> (terminology) where possible we should link to an explanation of that concept.</li>
+<li>All written content should use the <a href="https://en.wikipedia.org/wiki/Serial_comma">Oxford Comma</a>. We believe the Oxford Comma reduces the ambiguity of written technical content.</li>
+</ul>
+<h3 id="social-media%2C-marketing-%26-pr" tabindex="-1"><a class="header-anchor" href="#social-media%2C-marketing-%26-pr">#&nbsp;</a> Social Media, Marketing &amp; PR</h3>
+<p>It's important we understand what we communicate, to whom, how, and when. This sets out our principles for social media, marketing, and PR communications.</p>
+<h3 id="content-types" tabindex="-1"><a class="header-anchor" href="#content-types">#&nbsp;</a> Content Types</h3>
+<p>Content should be published to the appropriate channels, the types of published content we currently produce are as follows.</p>
+<h4 id="release" tabindex="-1"><a class="header-anchor" href="#release">#&nbsp;</a> Release</h4>
+<p>Major releases of FlowForge, the timing of these releases are governed by our <a href="https://flowforge.com/handbook/development/#cadence">development cadence</a>.</p>
+<h4 id="patch" tabindex="-1"><a class="header-anchor" href="#patch">#&nbsp;</a> Patch</h4>
+<p>Patch between releases, these will happen as needed and may be at short notice.</p>
+<h4 id="planned-downtime" tabindex="-1"><a class="header-anchor" href="#planned-downtime">#&nbsp;</a> Planned Downtime</h4>
+<p>As soon as we are aware of planned downtime we should publish the information, that should be at least one week before the downtime.</p>
+<h4 id="outage" tabindex="-1"><a class="header-anchor" href="#outage">#&nbsp;</a> Outage</h4>
+<p>If we experience unplanned downtime we should communicate in near real time to keep our users and stakeholders up to date with the situation.</p>
+<h4 id="corporate-comms" tabindex="-1"><a class="header-anchor" href="#corporate-comms">#&nbsp;</a> Corporate Comms</h4>
+<p>Major company news such as investment rounds should be communicated at the time agreed with the relevant parties involved. We strive to make this information public as soon as practical and effective.</p>
+<h4 id="newsletter" tabindex="-1"><a class="header-anchor" href="#newsletter">#&nbsp;</a> Newsletter</h4>
+<p>Monthly newsletter published at the start of each calendar month covering news from the prior month.</p>
+<h4 id="how-to" tabindex="-1"><a class="header-anchor" href="#how-to">#&nbsp;</a> How To</h4>
+<p>Technical guides, published once per week.</p>
+<h3 id="content-channels" tabindex="-1"><a class="header-anchor" href="#content-channels">#&nbsp;</a> Content Channels</h3>
+<p>Each content type has channels which are appropriate, this table sets out which content should be posted on each channel.</p>
+<table>
+<thead>
+<tr>
+<th>Content</th>
+<th>Blog</th>
+<th>Mailing List</th>
+<th>Twitter</th>
+<th>Youtube</th>
+<th>LinkedIn</th>
+<th>Reddit</th>
+<th>Node-RED Slack</th>
+<th>Node-RED Discorse</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Release</td>
+<td>*</td>
+<td></td>
+<td>*</td>
+<td>*</td>
+<td>*</td>
+<td>*</td>
+<td>*</td>
+<td>*</td>
+</tr>
+<tr>
+<td>Patch</td>
+<td>*</td>
+<td></td>
+<td>*</td>
+<td></td>
+<td></td>
+<td>*</td>
+<td>*</td>
+<td></td>
+</tr>
+<tr>
+<td>Planned Downtime</td>
+<td>*</td>
+<td></td>
+<td>*</td>
+<td></td>
+<td>*</td>
+<td>*</td>
+<td>*</td>
+<td></td>
+</tr>
+<tr>
+<td>Outage</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Corporate Comms</td>
+<td>*</td>
+<td></td>
+<td>*</td>
+<td></td>
+<td>*</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Newsletter</td>
+<td>*</td>
+<td>*</td>
+<td>*</td>
+<td></td>
+<td>*</td>
+<td>*</td>
+<td>*</td>
+<td>*</td>
+</tr>
+<tr>
+<td>How To</td>
+<td>*</td>
+<td></td>
+<td>*</td>
+<td></td>
+<td>*</td>
+<td>*</td>
+<td>*</td>
+<td>*</td>
+</tr>
+</tbody>
+</table>
+<h3 id="channel-content-guidance" tabindex="-1"><a class="header-anchor" href="#channel-content-guidance">#&nbsp;</a> Channel Content Guidance</h3>
+<h4 id="blog" tabindex="-1"><a class="header-anchor" href="#blog">#&nbsp;</a> Blog</h4>
+<p>Content should be eloquent and an appropriate length to communicate the message.</p>
+<h4 id="mailing-list" tabindex="-1"><a class="header-anchor" href="#mailing-list">#&nbsp;</a> Mailing List</h4>
+<p>Content should be eloquent and an appropriate length to communicate the message.</p>
+<h4 id="twitter" tabindex="-1"><a class="header-anchor" href="#twitter">#&nbsp;</a> Twitter</h4>
+<p>Keep it short, Tweets should be factual, informal and have a call to action (a link) where a user can read more.</p>
+<h4 id="youtube" tabindex="-1"><a class="header-anchor" href="#youtube">#&nbsp;</a> Youtube</h4>
+<p>Videos should:</p>
+<ul>
+<li>Include opening and closing idents.</li>
+<li>Be clear in what they are communicating.</li>
+<li>Have an appropriate thumbnail.</li>
+<li>Have a call to action in the description.</li>
+<li>Be publicly listed.</li>
+</ul>
+<h4 id="linkedin" tabindex="-1"><a class="header-anchor" href="#linkedin">#&nbsp;</a> LinkedIn</h4>
+<p>Posts should be framed in the context of FlowForge as an organisation and a team, don't get too technical. A relevant photo or image should be included in every post. Where the post is primarily of a video it should be embedded from Youtube. Where possible include the content in the post rather than linking out to external content.</p>
+<h4 id="reddit" tabindex="-1"><a class="header-anchor" href="#reddit">#&nbsp;</a> Reddit</h4>
+<p>Keep it short, Reddit posts should be factual, informal and have a call to action (a link) where a user can read more. If the content is a video we should post that directly on Reddit as that should result in greater interaction.</p>
+<h4 id="node-red-slack-(flowforge-section)" tabindex="-1"><a class="header-anchor" href="#node-red-slack-(flowforge-section)">#&nbsp;</a> Node-RED Slack (FlowForge section)</h4>
+<p>Keep it short, Slack messages should be factual, informal and have a call to action (a link) where a user can read more.</p>
+<h4 id="discourse-(node-red-forums)" tabindex="-1"><a class="header-anchor" href="#discourse-(node-red-forums)">#&nbsp;</a> Discourse (Node-RED Forums)</h4>
+<p>Keep content short, posts to the Node-RED discord should be factual, informal and have a call to action (a link) where a user can read more.</p>
+<h3 id="blog-cms" tabindex="-1"><a class="header-anchor" href="#blog-cms">#&nbsp;</a> Blog CMS</h3>
+<p>When creating a blog post there are several headers which are used by the CMS to populate the blog article as well as the blog index page. The headers are as follows:</p>
+<h4 id="title" tabindex="-1"><a class="header-anchor" href="#title">#&nbsp;</a> Title</h4>
+<p>The title of the page can be seen on both the blog index and the articles.</p>
+<h4 id="subtitle" tabindex="-1"><a class="header-anchor" href="#subtitle">#&nbsp;</a> Subtitle</h4>
+<p>The subtitle is only shown on the articles.</p>
+<h4 id="description" tabindex="-1"><a class="header-anchor" href="#description">#&nbsp;</a> Description</h4>
+<p>The description is unused currently</p>
+<h4 id="date" tabindex="-1"><a class="header-anchor" href="#date">#&nbsp;</a> Date</h4>
+<p>The data can be seen on both the blog index and the articles.</p>
+<h4 id="authors" tabindex="-1"><a class="header-anchor" href="#authors">#&nbsp;</a> Authors</h4>
+<p>The author can be seen on both the blog index and the articles.</p>
+<h4 id="more-tag" tabindex="-1"><a class="header-anchor" href="#more-tag">#&nbsp;</a> More tag</h4>
+<p>The '&lt;!--more--&gt;' tag is used to define the text shown in the blog index from each article.</p>
+<h4 id="example-header-content" tabindex="-1"><a class="header-anchor" href="#example-header-content">#&nbsp;</a> Example header content</h4>
+<pre><code>---
+title: The title
+subtitle: The subtitle
+description: The description
+date: 2022-12-20
+authors: [&quot;rob-marcer&quot;]
+---
 
-<div style="position: relative">
-  <pre class="language-html"><code id="code-15"class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>router-link</span> <span class="token attr-name">to</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>admin/settings<span class="token punctuation">"</span></span> <span class="token attr-name">data-nav</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>admin-settings<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><br>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nav-item</span> <span class="token attr-name">label</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>Admin Settings<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nav-item</span><span class="token punctuation">></span></span><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>router-link</span><span class="token punctuation">></span></span></code></pre>
-
-  <button class="code-copy "
-    data-clipboard-target="#code-15"
-    style="position: absolute; top: 7.5px; right: 6px; cursor: pointer; outline: none; opacity: 0.8;" title="Copy">
-    <span>
-      <span style="font-size: 15px; opacity: 0.8;" class="mdi mdi-content-copy"></span>
-    </span>
-  </button>
-</div>
-<h3 id="data-form" tabindex="-1"><a class="header-anchor" href="#data-form">#&nbsp;</a> data-form</h3>
-<p>Identify particular form elements like text-input, textarea of dropdowns using this tag.</p>
-
-<div style="position: relative">
-  <pre class="language-html"><code id="code-22"class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>FormRow</span> <span class="token attr-name">data-form</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>device-name<span class="token punctuation">"</span></span> <span class="token attr-name">v-model</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>input.name<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Name<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>FormRow</span><span class="token punctuation">></span></span></code></pre>
-
-  <button class="code-copy "
-    data-clipboard-target="#code-22"
-    style="position: absolute; top: 7.5px; right: 6px; cursor: pointer; outline: none; opacity: 0.8;" title="Copy">
-    <span>
-      <span style="font-size: 15px; opacity: 0.8;" class="mdi mdi-content-copy"></span>
-    </span>
-  </button>
-</div>
-<h3 id="data-action" tabindex="-1"><a class="header-anchor" href="#data-action">#&nbsp;</a> data-action</h3>
-<p>Used to identify buttons that do not navigate, but instead complete an action. This could include submitting a form, or opening a dialog, e.g.,</p>
-
-<div style="position: relative">
-  <pre class="language-html"><code id="code-29"class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ff-button</span> <span class="token attr-name">data-action</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>delete-project<span class="token punctuation">"</span></span> <span class="token attr-name">kind</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>danger<span class="token punctuation">"</span></span> <span class="token attr-name">@click</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>deleteProject()<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ff-button</span><span class="token punctuation">></span></span></code></pre>
-
-  <button class="code-copy "
-    data-clipboard-target="#code-29"
-    style="position: absolute; top: 7.5px; right: 6px; cursor: pointer; outline: none; opacity: 0.8;" title="Copy">
-    <span>
-      <span style="font-size: 15px; opacity: 0.8;" class="mdi mdi-content-copy"></span>
-    </span>
-  </button>
-</div>
-<h3 id="data-el" tabindex="-1"><a class="header-anchor" href="#data-el">#&nbsp;</a> data-el</h3>
-<p>A catch all for everything else, an element that we're likely going to want to capture, but doesn't fit into any of the other categories, e.g.,</p>
-
-<div style="position: relative">
-  <pre class="language-html"><code id="code-36"class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ff-data-table</span> <span class="token attr-name">data-el</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>templates<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>...<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ff-data-table</span><span class="token punctuation">></span></span></code></pre>
-
-  <button class="code-copy "
-    data-clipboard-target="#code-36"
-    style="position: absolute; top: 7.5px; right: 6px; cursor: pointer; outline: none; opacity: 0.8;" title="Copy">
-    <span>
-      <span style="font-size: 15px; opacity: 0.8;" class="mdi mdi-content-copy"></span>
-    </span>
-  </button>
-</div>
+above more
+&lt;!--more--&gt;
+below more
+</code></pre>
+<h4 id="example-blog-index-item-based-on-the-header-above" tabindex="-1"><a class="header-anchor" href="#example-blog-index-item-based-on-the-header-above">#&nbsp;</a> Example blog index item based on the header above</h4>
+<p><img src="../images/blog-index.png"" alt="Example of how the headers are shown on the blog index"></p>
+<h4 id="example-blog-article-based-on-the-header-above" tabindex="-1"><a class="header-anchor" href="#example-blog-article-based-on-the-header-above">#&nbsp;</a> Example blog article based on the header above</h4>
+<p><img src="../images/blog-article.png"" alt="Example of how the headers are shown on blog articles"></p>
 
             </div>
         </div>
         <div class="w-full md:w-64 md:ml-8 mt-4 md:mt-6 px-2">
             <h3 class="font-medium border-b pb-1 mb-4">On this page</h3>
             <ul id="toc" class="text-sm border-b mb-4"></ul>
-            <div class="text-sm pb-1 text-right mb-4"><a href="https://github.com/flowforge/handbook/edit/main/development/frontend/data-attributes.md">Edit this page</a></div>
+            <div class="text-sm pb-1 text-right mb-4"><a href="https://github.com/flowforge/handbook/edit/main/marketing/index.md">Edit this page</a></div>
             <div class="text-xs pb-1 text-right mb-4 italic">Updated: 2022-12-13 12:54:30 +0100</div>
         </div>
     </div>
