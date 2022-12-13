@@ -1,7 +1,7 @@
 ---
 title: FlowForge joins the OpenJS Foundation
-subtitle: Supporting the foundation that has given Node-RED a home
-description: Release includes a fix for installing additional nodes into Node-RED.
+subtitle: Supporting the foundation that has given Node-RED a great home
+description:  Supporting the foundation that has given Node-RED a great home
 date: 2022-12-13 12:00:00.0
 authors: ["nick-oleary"]
 ---
