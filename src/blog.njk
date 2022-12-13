@@ -6,9 +6,9 @@ layout: nohero
     <ul class="flex flex-wrap">
         {%- for item in collections.posts | reverse -%}
         {% if loop.first %}
-        <li class="w-full my-2 px-2 pb-6 border-b">
+        <li class="w-full mt-2 px-2 pb-4">
             <a href="{{ item.url }}" class="w-full flex flex-col group hover:no-underline">
-                <div class="md:w-1/4 pr-2">
+                <div class="md:w-1/2 pr-2">
                     <time class="block text-xs" value="{{ item.date }}" class="text-gray-400">{{ item.date | shortDate }}</time>
                     <h3 class="mb-0 font-medium group-hover:underline">{{ item.data.title }}</h3>
                     <div class="italic text-xs mb-3">
@@ -37,6 +37,22 @@ layout: nohero
                 </div>
             </a>
         </li>
+        <div class="w-full px-2 pt-2 pb-2 mb-2 flex flex-col border-t-2 border-b-2">
+            <a id="sign-up"></a>
+            <h5 class="mb-0">Sign up for our monthly email updates:</h5>
+            <form
+                action="https://buttondown.email/api/emails/embed-subscribe/flowforge"
+                method="post"
+                target="popupwindow"
+                onsubmit="window.open('https://buttondown.email/flowforge', 'popupwindow')"
+                class="embeddable-buttondown-form my-1 ">
+                <div class="flex flex-col sm:flex-row">
+                    <input type="email" name="email" id="bd-email" placeholder="Enter your email" class="ff-input ff-text-input lg:w-80 md:w-60" />
+                    <input type="hidden" value="1" name="embed" />
+                    <input type="submit" value="Subscribe" class="ff-btn ff-btn--primary w-full mt-3 sm:w-auto sm:mt-0 sm:ml-3"/>
+                </div>
+            </form>
+        </div>
         {% else %}
         <li class="w-full md:w-1/3 my-2 px-2 pb-6 border-b">
             <a href="{{ item.url }}" class="w-full flex flex-col group hover:no-underline">
@@ -60,11 +76,11 @@ layout: nohero
         </li>
         {% endif %}
     {%- endfor -%}
-  </ul>
-  {% else %}
-<div class="mx-auto">
-    <div class="text-3xl md:text-5xl text-blue-hero font-medium pb-3">Ooops!</div>
-    <div class="text-lg text-black-hero-body">No-one has written anything yet. Come back soon!</div>
-</div>
-  {% endif %}
+    </ul>
+    {% else %}
+        <div class="mx-auto">
+            <div class="text-3xl md:text-5xl text-blue-hero font-medium pb-3">Ooops!</div>
+            <div class="text-lg text-black-hero-body">No-one has written anything yet. Come back soon!</div>
+        </div>
+    {% endif %}
 </div>
