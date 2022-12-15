@@ -10,7 +10,7 @@ Many organisations face challenges in IT/OT convergence. There are many protocol
 
 <!--more-->
 
-This is why Node-RED is adopted so widely, it makes a world of difference through two of its properties: Low-Code Development and the ability to integrate with a wide range of hardware and software systems. Node-RED makes it easy to program data collection, then use that data for decision making, and provide feedback to both your digital platform and the physical reality of your business. Furthermore, Node-RED is unrivaled in making data accessible. The data previously locked in a walled garden of your hardware providers is now accessible and obtainable. With that, more data is available and better decisions are made, faster.
+This is why Node-RED is adopted so widely, it makes a world of difference through two of its properties: Low-Code Development and the ability to integrate with a wide range of hardware and software systems. Node-RED makes it easy to program data collection, then use that data for decision making, and provide feedback to both your digital platform and the physical reality of your business. Furthermore, Node-RED is unrivalled in making data accessible. The data previously locked in a walled garden of your hardware providers is now accessible and obtainable. With that, more data is available and better decisions are made, faster.
 
 FlowForge makes developer collaboration, flow deployment, and scaling of infrastructure easy when working with Node-RED. It offers an intuitive user interface for creating, deploying, monitoring, and managing multiple Node-RED projects. FlowForge also provides one-click deployment to thousands of devices, making it easy to manage large-scale environments. 
 
