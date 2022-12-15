@@ -8,7 +8,17 @@
 - When mentioning [FlowForge Concepts](https://flowforge.com/docs/user/concepts/) (terminology) where possible we should link to an explanation of that concept.
 - All written content should use the [Oxford Comma](https://en.wikipedia.org/wiki/Serial_comma). We believe the Oxford Comma reduces the ambiguity of written technical content.
 
-### Social Media, Marketing & PR
+### Blogging Process
+
+When adding content to our blog we follow a similar process as changing our other codebases, with a few minor changes. The process is as follows:
+
+1. Raise an issue for the content in our private [Github repository](https://github.com/flowforge/content).
+2. If the content is date specific create an 'all day' event on the Google Calendar [FlowForge Publishing Schedule](https://calendar.google.com/calendar/u/0?cid=Y18yMGFjMmM5MmMwYmE0YTYwNDg4NDE1MjBmMGU2YWE0MGFhZGUxNTlkNThjZGY0ZGMwMjA0NTI4ZjFjMTcxZmQ0QGdyb3VwLmNhbGVuZGFyLmdvb2dsZS5jb20), include a link in the event to the issue. If you don't have access to create events please ask our Google Workspace admin to add you.
+3. If you want to work on the content immediatly please triage the issue into our [development kanban](https://github.com/orgs/flowforge/projects/1/views/33).
+4. Create a new branch of the website repository and then follow our standard [development processes](https://flowforge.com/handbook/development/#development-board).
+5. It is OK for you to merge your own PR to main without review where the content is urgent or has been reviewed outside of Git but where it is practical to follow the [standard process](https://flowforge.com/handbook/development/#development-board) we encourge you to do so.
+
+### Social Media, Marketing & Public Relations
 
 It's important we understand what we communicate, to whom, how, and when. This sets out our principles for social media, marketing, and PR communications.
 
