@@ -3,8 +3,25 @@
     <title>FlowForge</title>
     <link href="https://flowforge.com/blog/index.xml" rel="self"/>
     <link href="https://flowforge.com/blog"/>
-    <updated>2022-12-13T12:00:00Z</updated>
+    <updated>2022-12-15T00:00:00Z</updated>
     <id>https://flowforge.com/blog</id>
+    
+    <entry>
+        <id>https://flowforge.com/blog/2022/12/what-flowforge-adds-to-node-red/</id>
+        <title>Why you need FlowForge when you already have Node-RED?</title>
+        <summary>FlowForge makes developer collaboration, flow deployment, and scaling of infrastructure easy when working with Node-RED</summary>
+        <updated>2022-12-15T00:00:00Z</updated>
+        <link href="https://flowforge.com/blog/2022/12/what-flowforge-adds-to-node-red/"/>
+        <author><name>Rob Marcer</name></author>
+        <content type="html">&lt;p&gt;Many organisations face challenges in IT/OT convergence. There are many protocols, disparate devices, and everything is a brownfield project. Furthermore, skilled engineers are hard to find. Many organisations find themselves maintaining systems and integrations, and have little time left to improve continuously.&lt;/p&gt;
+&lt;!--more--&gt;
+&lt;p&gt;This is why Node-RED is adopted so widely, it makes a world of difference through two of its properties: Low-Code Development and the ability to integrate with a wide range of hardware and software systems. Node-RED makes it easy to program data collection, then use that data for decision making, and provide feedback to both your digital platform and the physical reality of your business. Furthermore, Node-RED is unrivalled in making data accessible. The data previously locked in a walled garden of your hardware providers is now accessible and obtainable. With that, more data is available and better decisions are made, faster.&lt;/p&gt;
+&lt;p&gt;FlowForge makes developer collaboration, flow deployment, and scaling of infrastructure easy when working with Node-RED. It offers an intuitive user interface for creating, deploying, monitoring, and managing multiple Node-RED projects. FlowForge also provides one-click deployment to thousands of devices, making it easy to manage large-scale environments.&lt;/p&gt;
+&lt;p&gt;These features make FlowForge a valuable tool for organisations using Node-RED to build applications and automate processes. Enabling for further adoption of Node-RED to integrate more systems, for even better decisions.&lt;/p&gt;
+&lt;p&gt;This not only reduces operational costs but it also allows an organisation to be far more agile with their Node-RED projects than was possible without FlowForge.&lt;/p&gt;
+&lt;p&gt;We would be happy to talk to you more about how FlowForge can help you get the most value from Node-RED. Please &lt;a href=&quot;https://flowforge.com/contact-us/&quot;&gt;contact us&lt;/a&gt; to learn more.&lt;/p&gt;
+</content>
+    </entry>
     
     <entry>
         <id>https://flowforge.com/blog/2022/12/flowforge-joins-openjs-foundation/</id>
