@@ -39,6 +39,8 @@ date for a new employee should be at least 3 to 4 weeks out. When a
 
 1. [Create an onboarding issue](https://github.com/flowforge/admin/issues/new/choose) on the admin GitHub project
 1. Update the [internal team overview spreadsheet](./index.md#internal-team-overview)
+1. Add their stock options to the stock option request spreadsheets
+   * Copy or create a new monthly request sheet from [this template](https://docs.google.com/spreadsheets/d/1AG75qONjObto3g2oJH_SC4gjgRsYJmKUI3fjrZuktm0/edit#gid=1970623412)
 
 ## Onboarding
 
