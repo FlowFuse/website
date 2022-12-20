@@ -25,6 +25,12 @@ heroWide: true
                     <h4>{{ f.title }}</h4>
                 </div>
                 <div>{{ f.description | safe }}</div>
+                {% if f.video.tagline %}
+                    <a class="flex items-center cursor-pointer mt-4">
+                        <i class="mr-2">{% include "components/icons/video.svg" %}</i>
+                        Demo: {{ f.video.tagline }}
+                    </a>
+                {% endif %}
             </div>
             {%- endfor -%}
         </div>
