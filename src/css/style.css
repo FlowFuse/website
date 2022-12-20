@@ -336,7 +336,7 @@ h4:hover .header-anchor {
     .ff-dialog-modal {
         background-color: white;
         z-index: 2;
-        width: 100%;
+        width: calc(100% - 48px);
         max-width: 42rem;
         text-align: left;
     }

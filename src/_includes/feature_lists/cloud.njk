@@ -2,48 +2,75 @@
     set sections = [{
         label: "Features",
         rows: [{
+            id: 'hosting',
             label: "Hosting",
-            values: ['Self Managed', 'FlowForge- or Self Managed']
+            values: ['Self Managed', 'FlowForge- or Self Managed'],
+            info: "<p>FlowForge can be deployed using Docker, Kubernetes or run the core FlowForge platform on your local machine directly.</p><p>FlowForge Cloud provides you with a browser-based, secure and cloud-based platform, with all of the FlowForge Premium features included and managed by us to reduce your operational overheads.</p>"
         }, {
+            id: 'multiple-projects',
             label: "Multiple Projects",
             values: ['check', 'check'],
-            info: "<p>Test</p><p>Test</p>"
+            info: "<p>Scale your Node-RED infrastructure with as many Node-RED instances as you need. In FlowForge, a Project manages your instance of Node-RED, attached devices, context and environment variables and version history.</p>"
         }, {
+            id: 'node-red-upgrades',
             label: "Easy Node-RED Upgrades",
-            values: ['check', 'check']
+            values: ['check', 'check'],
+            info: "<p>FlowForge Stacks enable single-click upgrading of Node-RED as new versions are released.</p><p>Our intuitive UI makes it clear when projects are running out-of-date stacks, so you have piece of mind over your flows running the latest and greatest versions that you've approved."
         }, {
+            id: "project-templates",
             label: "Project Templates",
-            values: ['check', 'check']
+            values: ['check', 'check'],
+            info: "<p>Spin up instances of Node-RED with all the relevant settings and Node-RED nodes already installed, customised to your own develoment environments.</p>"
         }, {
+            id: "project-config",
             label: "Individual Project Configuration",
-            values: ['check', 'check']
+            values: ['check', 'check'],
+            info: "<p>Control all Node-RED settings on a project-by-project basis, set Environment Variables for deployment and precise configuration of how your Node-RED instances run.</p>"
         }, {
+            id: "audit-log",
             label: "Audit Log",
-            values: ['check', 'check']
+            values: ['check', 'check'],
+            info: "<p>Keep track of everything going on in your Node-RED instances and FlowForge.</p><p>Audit Logs provide details on what actions have taken place, when they happened, and who did them.</p>"
         }, {
+            id: "team-config",
             label: "Team-Based Configuraton",
-            values: ['check', 'check']
+            values: ['check', 'check'],
+            info: "<p>Manage all of your Node-RED projects in FlowForge Teams, control access and Team-level settings in a central place to reduce operational overheads.</p>"
         }, {
+            id: "rbac",
             label: "Role-Based Access Control",
-            values: ['check', 'check']
+            values: ['check', 'check'],
+            info: "<p>FlowForge's intuitive team management tooling makes it easy for you to control whom has access to what.</p>"
         }, {
+            id: "device-mgmt",
             label: "Edge Device Management",
-            values: ['check', 'check']
+            values: ['check', 'check'],
+            info: "<p>Manage and control thousands of devices in FlowForge. Define your flow in one central place, then one-click deploy remotely to the edge, all from within FlowForge.</p>"
         }, {
+            id: "version-history",
             label: "Version History",
-            values: ['check', 'check']
+            values: ['check', 'check'],
+            info: "<p>FlowForge Snapshots provide capability to save backups of your flows. Revert back to past versions, and use those Snapshots to deploy out to remote devices.</p>"
         }, {
+            id: "persistent-file",
             label: "Persistent File Storage",
-            values: ['check', 'check']
+            values: ['check', 'check'],
+            info: "<p>Read & write to files in your Project flows. These will persist beyond container and project restarts and upgrades.</p>"
         }, {
+            id: "sso",
             label: "Single Sign-On (SSO)",
-            values: [null, 'check']
+            values: [null, 'check'],
+            info: "<p>FlowForge can be configured to run with your own SSO provider. Use the single username/password combination for your organisation, and prevent the need for users to create bespoke FlowForge login credentials.</p>"
         }, {
+            id: "project-nodes",
             label: "Inter Project Communication",
-            values: [null, 'check']
+            values: [null, 'check'],
+            info: "<p><a href=\"https://github.com/flowforge/flowforge-nr-project-nodes\" target=\"blank\">FlowForge Project Nodes</a> enable the passing of data and messages between your Node-RED projects, included with all FlowForge Projects by default.</p>"
         }, {
+            id: "persistent-context",
             label: "Persistent Context Storage",
-            values: [null, 'check']
+            values: [null, 'check'],
+            info: "In-memory values defined in a Node-RED flow will persist across project restarts and upgrades."
         }, {
             label: "Maximum Teams",
             values: [50, "Unlimited"]
@@ -118,7 +145,9 @@
         <li class="ff-feature-row">
             <label>
                 {{ row.label }}
-                <i class="ff-icon" onclick="openInfo('{{ row.label }}')">{% include "components/icons/info.svg" %}</i>
+                {% if row.info %}
+                <i id="ff-info--{{ row.id }}" class="ff-icon" onclick="openInfo('{{ row.label }}')">{% include "components/icons/info.svg" %}</i>
+                {% endif %}
             </label>
             {% for value in row.values %}
             <span>
