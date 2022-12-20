@@ -6,7 +6,8 @@
             values: ['Self Managed', 'FlowForge- or Self Managed']
         }, {
             label: "Multiple Projects",
-            values: ['check', 'check']
+            values: ['check', 'check'],
+            info: "<p>Test</p><p>Test</p>"
         }, {
             label: "Easy Node-RED Upgrades",
             values: ['check', 'check']
@@ -86,6 +87,17 @@
     }]
 %}
 
+<script>
+    function openInfo(row) {
+        console.log('hello world')
+        console.log(row)
+        document.getElementById("ff-dialog--feature--"+row).classList.add('active')
+    }
+    function closeInfo(row) {
+        document.getElementById("ff-dialog--feature--"+row).classList.remove('active')
+    }
+</script>
+
 <div class="ff-feature-table m-auto">
     <div class="ff-feature-table-section">
         {% for col in columns %}
@@ -104,7 +116,10 @@
         </li>
         {% for row in section.rows %}
         <li class="ff-feature-row">
-            <label>{{ row.label }}</label>
+            <label>
+                {{ row.label }}
+                <i class="ff-icon" onclick="openInfo('{{ row.label }}')">{% include "components/icons/info.svg" %}</i>
+            </label>
             {% for value in row.values %}
             <span>
                 {% if value === "check" %}
@@ -134,7 +149,20 @@
         <li>
             {% include "components/feature-time.svg" %}
             <label>On the Roadmap</label>
-        </li>
-        
+        </li>        
     </ul>
+</div>
+
+<div id="feature-dialogs">
+    {% for section in sections %}
+        {% for row in section.rows %}
+            <div id="ff-dialog--feature--{{ row.label }}" class="ff-dialog-container">
+                <div class="ff-dialog-shadow" onclick="closeInfo('{{ row.label }}')"></div>
+                <div class="ff-dialog-modal">
+                    <div id="ff-dialog--header" class="ff-dialog-header">Feature: {{ row.label }}</div>
+                    <div id="ff-dialog--content" class="ff-dialog-content">{{ row.info | safe }}</div>
+                </div>
+            </div>
+        {% endfor %}
+    {% endfor %}
 </div>
