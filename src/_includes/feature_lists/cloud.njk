@@ -10,7 +10,7 @@
             id: 'multiple-projects',
             label: "Multiple Projects",
             values: ['check', 'check'],
-            info: "<p>Scale your Node-RED infrastructure with as many Node-RED instances as you need. In FlowForge, a Project manages your instance of Node-RED, attached devices, context and environment variables and version history.</p>"
+            info: "<p>Scale your Node-RED infrastructure with as many Node-RED instances as you need.</p><p>In FlowForge, a Project manages your instance of Node-RED, attached devices, context, environment variables, and version history.</p>"
         }, {
             id: 'node-red-upgrades',
             label: "Easy Node-RED Upgrades",
@@ -20,7 +20,7 @@
             id: "project-templates",
             label: "Project Templates",
             values: ['check', 'check'],
-            info: "<p>Spin up instances of Node-RED with all the relevant settings and Node-RED nodes already installed, customised to your own develoment environments.</p>"
+            info: "<p>Spin up instances of Node-RED with all the relevant settings and Node-RED nodes already installed, customised to your own development environments.</p>"
         }, {
             id: "project-config",
             label: "Individual Project Configuration",
@@ -35,7 +35,7 @@
             id: "team-config",
             label: "Team-Based Configuraton",
             values: ['check', 'check'],
-            info: "<p>Manage all of your Node-RED projects in FlowForge Teams, control access and Team-level settings in a central place to reduce operational overheads.</p>"
+            info: "<p>Manage all of your Node-RED projects in FlowForge Teams, control access and Team-level settings in a central place to reduce operational overhead.</p>"
         }, {
             id: "rbac",
             label: "Role-Based Access Control",
@@ -116,8 +116,6 @@
 
 <script>
     function openInfo(row) {
-        console.log('hello world')
-        console.log(row)
         document.getElementById("ff-dialog--feature--"+row).classList.add('active')
     }
     function closeInfo(row) {
