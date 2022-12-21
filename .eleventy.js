@@ -12,6 +12,9 @@ module.exports = function(eleventyConfig) {
     eleventyConfig.setWatchThrottleWaitTime(200); // in milliseconds
     eleventyConfig.setUseGitIgnore(false);
 
+    // Put robots.txt in root
+    eleventyConfig.addPassthroughCopy({ 'src/robots.txt': '/robots.txt' });
+
     // TODO: when we move to 11ty v1.0, use the following
     // rather than ignoring git ignore
     //eleventyConfig.ignores.delete("src/handbook");

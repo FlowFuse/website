@@ -1,5 +1,6 @@
 ---
 layout: nohero
+sitemapPriority: 0.7
 ---
 
 <div class="prose prose-blue container m-auto max-w-4xl">
