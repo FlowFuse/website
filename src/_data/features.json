@@ -10,7 +10,7 @@
     "icon": "edge_red.png",
     "title": "Fleet Management & Remote Deployment",
     "video": {
-        "tagline": "Update Flow on Edge Device Remotely",
+        "tagline": "Update Flows Remotely",
         "src": ""
     },
     "description": "<p>One-click deploy to thousands of devices.</p><p>Effortlessly upgrade flows remotely to your edge devices and get an overview of device health and connectivity.</p>"
