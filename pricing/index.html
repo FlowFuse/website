@@ -143,6 +143,15 @@
 <div class="max-w-full overflow-x-scroll">
     
 
+<script>
+    function openInfo(row) {
+        document.getElementById("ff-dialog--feature--"+row).classList.add('active')
+    }
+    function closeInfo(row) {
+        document.getElementById("ff-dialog--feature--"+row).classList.remove('active')
+    }
+</script>
+
 <div class="ff-feature-table m-auto">
     <div class="ff-feature-table-section">
         
@@ -159,7 +168,15 @@
         </li>
         
         <li class="ff-feature-row">
-            <label>Hosting</label>
+            <label>
+                Hosting
+                
+                <i id="ff-info--hosting" class="ff-icon" onclick="openInfo('Hosting')"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
+  <path strokeLinecap="round" strokeLinejoin="round" d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z" />
+</svg>
+</i>
+                
+            </label>
             
             <span>
                 
@@ -176,7 +193,15 @@
         </li>
         
         <li class="ff-feature-row">
-            <label>Multiple Projects</label>
+            <label>
+                Multiple Projects
+                
+                <i id="ff-info--multiple-projects" class="ff-icon" onclick="openInfo('Multiple Projects')"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
+  <path strokeLinecap="round" strokeLinejoin="round" d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z" />
+</svg>
+</i>
+                
+            </label>
             
             <span>
                 
@@ -197,7 +222,15 @@
         </li>
         
         <li class="ff-feature-row">
-            <label>Easy Node-RED Upgrades</label>
+            <label>
+                Easy Node-RED Upgrades
+                
+                <i id="ff-info--node-red-upgrades" class="ff-icon" onclick="openInfo('Easy Node-RED Upgrades')"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
+  <path strokeLinecap="round" strokeLinejoin="round" d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z" />
+</svg>
+</i>
+                
+            </label>
             
             <span>
                 
@@ -218,7 +251,15 @@
         </li>
         
         <li class="ff-feature-row">
-            <label>Project Templates</label>
+            <label>
+                Project Templates
+                
+                <i id="ff-info--project-templates" class="ff-icon" onclick="openInfo('Project Templates')"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
+  <path strokeLinecap="round" strokeLinejoin="round" d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z" />
+</svg>
+</i>
+                
+            </label>
             
             <span>
                 
@@ -239,7 +280,15 @@
         </li>
         
         <li class="ff-feature-row">
-            <label>Individual Project Configuration</label>
+            <label>
+                Individual Project Configuration
+                
+                <i id="ff-info--project-config" class="ff-icon" onclick="openInfo('Individual Project Configuration')"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
+  <path strokeLinecap="round" strokeLinejoin="round" d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z" />
+</svg>
+</i>
+                
+            </label>
             
             <span>
                 
@@ -260,7 +309,15 @@
         </li>
         
         <li class="ff-feature-row">
-            <label>Audit Log</label>
+            <label>
+                Audit Log
+                
+                <i id="ff-info--audit-log" class="ff-icon" onclick="openInfo('Audit Log')"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
+  <path strokeLinecap="round" strokeLinejoin="round" d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z" />
+</svg>
+</i>
+                
+            </label>
             
             <span>
                 
@@ -281,7 +338,15 @@
         </li>
         
         <li class="ff-feature-row">
-            <label>Team-Based Configuraton</label>
+            <label>
+                Team-Based Configuraton
+                
+                <i id="ff-info--team-config" class="ff-icon" onclick="openInfo('Team-Based Configuraton')"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
+  <path strokeLinecap="round" strokeLinejoin="round" d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z" />
+</svg>
+</i>
+                
+            </label>
             
             <span>
                 
@@ -302,7 +367,15 @@
         </li>
         
         <li class="ff-feature-row">
-            <label>Role-Based Access Control</label>
+            <label>
+                Role-Based Access Control
+                
+                <i id="ff-info--rbac" class="ff-icon" onclick="openInfo('Role-Based Access Control')"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
+  <path strokeLinecap="round" strokeLinejoin="round" d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z" />
+</svg>
+</i>
+                
+            </label>
             
             <span>
                 
@@ -323,7 +396,15 @@
         </li>
         
         <li class="ff-feature-row">
-            <label>Edge Device Management</label>
+            <label>
+                Edge Device Management
+                
+                <i id="ff-info--device-mgmt" class="ff-icon" onclick="openInfo('Edge Device Management')"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
+  <path strokeLinecap="round" strokeLinejoin="round" d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z" />
+</svg>
+</i>
+                
+            </label>
             
             <span>
                 
@@ -344,7 +425,15 @@
         </li>
         
         <li class="ff-feature-row">
-            <label>Version History</label>
+            <label>
+                Version History
+                
+                <i id="ff-info--version-history" class="ff-icon" onclick="openInfo('Version History')"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
+  <path strokeLinecap="round" strokeLinejoin="round" d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z" />
+</svg>
+</i>
+                
+            </label>
             
             <span>
                 
@@ -365,7 +454,15 @@
         </li>
         
         <li class="ff-feature-row">
-            <label>Persistent File Storage</label>
+            <label>
+                Persistent File Storage
+                
+                <i id="ff-info--persistent-file" class="ff-icon" onclick="openInfo('Persistent File Storage')"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
+  <path strokeLinecap="round" strokeLinejoin="round" d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z" />
+</svg>
+</i>
+                
+            </label>
             
             <span>
                 
@@ -386,7 +483,15 @@
         </li>
         
         <li class="ff-feature-row">
-            <label>Single Sign-On (SSO)</label>
+            <label>
+                Single Sign-On (SSO)
+                
+                <i id="ff-info--sso" class="ff-icon" onclick="openInfo('Single Sign-On (SSO)')"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
+  <path strokeLinecap="round" strokeLinejoin="round" d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z" />
+</svg>
+</i>
+                
+            </label>
             
             <span>
                 
@@ -405,7 +510,15 @@
         </li>
         
         <li class="ff-feature-row">
-            <label>Inter Project Communication</label>
+            <label>
+                Inter Project Communication
+                
+                <i id="ff-info--project-nodes" class="ff-icon" onclick="openInfo('Inter Project Communication')"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
+  <path strokeLinecap="round" strokeLinejoin="round" d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z" />
+</svg>
+</i>
+                
+            </label>
             
             <span>
                 
@@ -424,7 +537,15 @@
         </li>
         
         <li class="ff-feature-row">
-            <label>Persistent Context Storage</label>
+            <label>
+                Persistent Context Storage
+                
+                <i id="ff-info--persistent-context" class="ff-icon" onclick="openInfo('Persistent Context Storage')"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
+  <path strokeLinecap="round" strokeLinejoin="round" d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z" />
+</svg>
+</i>
+                
+            </label>
             
             <span>
                 
@@ -443,7 +564,10 @@
         </li>
         
         <li class="ff-feature-row">
-            <label>Maximum Teams</label>
+            <label>
+                Maximum Teams
+                
+            </label>
             
             <span>
                 
@@ -460,7 +584,10 @@
         </li>
         
         <li class="ff-feature-row">
-            <label>Maximum Projects</label>
+            <label>
+                Maximum Projects
+                
+            </label>
             
             <span>
                 
@@ -477,7 +604,10 @@
         </li>
         
         <li class="ff-feature-row">
-            <label>Maximum Devices</label>
+            <label>
+                Maximum Devices
+                
+            </label>
             
             <span>
                 
@@ -494,7 +624,10 @@
         </li>
         
         <li class="ff-feature-row">
-            <label>Custom Node Catalog</label>
+            <label>
+                Custom Node Catalog
+                
+            </label>
             
             <span>
                 
@@ -513,7 +646,10 @@
         </li>
         
         <li class="ff-feature-row">
-            <label>Shared Team Library</label>
+            <label>
+                Shared Team Library
+                
+            </label>
             
             <span>
                 
@@ -532,7 +668,10 @@
         </li>
         
         <li class="ff-feature-row">
-            <label>Private npm Repo Support</label>
+            <label>
+                Private npm Repo Support
+                
+            </label>
             
             <span>
                 
@@ -551,7 +690,10 @@
         </li>
         
         <li class="ff-feature-row">
-            <label>Git Integration</label>
+            <label>
+                Git Integration
+                
+            </label>
             
             <span>
                 
@@ -570,7 +712,10 @@
         </li>
         
         <li class="ff-feature-row">
-            <label>Devops Workflow</label>
+            <label>
+                Devops Workflow
+                
+            </label>
             
             <span>
                 
@@ -589,7 +734,10 @@
         </li>
         
         <li class="ff-feature-row">
-            <label>Usage Reporting</label>
+            <label>
+                Usage Reporting
+                
+            </label>
             
             <span>
                 
@@ -620,7 +768,10 @@
         </li>
         
         <li class="ff-feature-row">
-            <label>Community Support</label>
+            <label>
+                Community Support
+                
+            </label>
             
             <span>
                 
@@ -641,7 +792,10 @@
         </li>
         
         <li class="ff-feature-row">
-            <label>Ticket-Based Support</label>
+            <label>
+                Ticket-Based Support
+                
+            </label>
             
             <span>
                 
@@ -660,7 +814,10 @@
         </li>
         
         <li class="ff-feature-row">
-            <label>Long Term Support</label>
+            <label>
+                Long Term Support
+                
+            </label>
             
             <span>
                 
@@ -692,11 +849,225 @@
     <path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
 </svg>
             <label>On the Roadmap</label>
-        </li>
-        
+        </li>        
     </ul>
 </div>
 
+<div id="feature-dialogs">
+    
+        
+            <div id="ff-dialog--feature--Hosting" class="ff-dialog-container">
+                <div class="ff-dialog-shadow" onclick="closeInfo('Hosting')"></div>
+                <div class="ff-dialog-modal">
+                    <div id="ff-dialog--header" class="ff-dialog-header">Feature: Hosting</div>
+                    <div id="ff-dialog--content" class="ff-dialog-content"><p>FlowForge can be deployed using Docker, Kubernetes or run the core FlowForge platform on your local machine directly.</p><p>FlowForge Cloud provides you with a browser-based, secure and cloud-based platform, with all of the FlowForge Premium features included and managed by us to reduce your operational overheads.</p></div>
+                </div>
+            </div>
+        
+            <div id="ff-dialog--feature--Multiple Projects" class="ff-dialog-container">
+                <div class="ff-dialog-shadow" onclick="closeInfo('Multiple Projects')"></div>
+                <div class="ff-dialog-modal">
+                    <div id="ff-dialog--header" class="ff-dialog-header">Feature: Multiple Projects</div>
+                    <div id="ff-dialog--content" class="ff-dialog-content"><p>Scale your Node-RED infrastructure with as many Node-RED instances as you need.</p><p>In FlowForge, a Project manages your instance of Node-RED, attached devices, context, environment variables, and version history.</p></div>
+                </div>
+            </div>
+        
+            <div id="ff-dialog--feature--Easy Node-RED Upgrades" class="ff-dialog-container">
+                <div class="ff-dialog-shadow" onclick="closeInfo('Easy Node-RED Upgrades')"></div>
+                <div class="ff-dialog-modal">
+                    <div id="ff-dialog--header" class="ff-dialog-header">Feature: Easy Node-RED Upgrades</div>
+                    <div id="ff-dialog--content" class="ff-dialog-content"><p>Enable users to upgrade their Node-RED with a few clicks as new versions are released.</p><p>Our intuitive UI makes it clear when projects are running out-of-date stacks, so you have piece of mind over your flows running the latest and greatest versions.</p></div>
+                </div>
+            </div>
+        
+            <div id="ff-dialog--feature--Project Templates" class="ff-dialog-container">
+                <div class="ff-dialog-shadow" onclick="closeInfo('Project Templates')"></div>
+                <div class="ff-dialog-modal">
+                    <div id="ff-dialog--header" class="ff-dialog-header">Feature: Project Templates</div>
+                    <div id="ff-dialog--content" class="ff-dialog-content"><p>Spin up instances of Node-RED with all the relevant settings and Node-RED nodes already installed, customised to your own development environments.</p></div>
+                </div>
+            </div>
+        
+            <div id="ff-dialog--feature--Individual Project Configuration" class="ff-dialog-container">
+                <div class="ff-dialog-shadow" onclick="closeInfo('Individual Project Configuration')"></div>
+                <div class="ff-dialog-modal">
+                    <div id="ff-dialog--header" class="ff-dialog-header">Feature: Individual Project Configuration</div>
+                    <div id="ff-dialog--content" class="ff-dialog-content"><p>Control all Node-RED settings on a project-by-project basis, set Environment Variables for deployment and precise configuration of how your Node-RED instances run.</p></div>
+                </div>
+            </div>
+        
+            <div id="ff-dialog--feature--Audit Log" class="ff-dialog-container">
+                <div class="ff-dialog-shadow" onclick="closeInfo('Audit Log')"></div>
+                <div class="ff-dialog-modal">
+                    <div id="ff-dialog--header" class="ff-dialog-header">Feature: Audit Log</div>
+                    <div id="ff-dialog--content" class="ff-dialog-content"><p>Keep track of everything going on in your Node-RED instances and FlowForge.</p><p>Audit Logs provide details on what actions have taken place, when they happened, and who did them.</p></div>
+                </div>
+            </div>
+        
+            <div id="ff-dialog--feature--Team-Based Configuraton" class="ff-dialog-container">
+                <div class="ff-dialog-shadow" onclick="closeInfo('Team-Based Configuraton')"></div>
+                <div class="ff-dialog-modal">
+                    <div id="ff-dialog--header" class="ff-dialog-header">Feature: Team-Based Configuraton</div>
+                    <div id="ff-dialog--content" class="ff-dialog-content"><p>Manage all of your Node-RED projects in FlowForge Teams, control access and Team-level settings in a central place to reduce operational overhead.</p></div>
+                </div>
+            </div>
+        
+            <div id="ff-dialog--feature--Role-Based Access Control" class="ff-dialog-container">
+                <div class="ff-dialog-shadow" onclick="closeInfo('Role-Based Access Control')"></div>
+                <div class="ff-dialog-modal">
+                    <div id="ff-dialog--header" class="ff-dialog-header">Feature: Role-Based Access Control</div>
+                    <div id="ff-dialog--content" class="ff-dialog-content"><p>FlowForge's intuitive team management tooling makes it easy for you to control whom has access to what.</p></div>
+                </div>
+            </div>
+        
+            <div id="ff-dialog--feature--Edge Device Management" class="ff-dialog-container">
+                <div class="ff-dialog-shadow" onclick="closeInfo('Edge Device Management')"></div>
+                <div class="ff-dialog-modal">
+                    <div id="ff-dialog--header" class="ff-dialog-header">Feature: Edge Device Management</div>
+                    <div id="ff-dialog--content" class="ff-dialog-content"><p>Manage and control thousands of devices in FlowForge. Define your flow in one central place, then one-click deploy remotely to the edge, all from within FlowForge.</p></div>
+                </div>
+            </div>
+        
+            <div id="ff-dialog--feature--Version History" class="ff-dialog-container">
+                <div class="ff-dialog-shadow" onclick="closeInfo('Version History')"></div>
+                <div class="ff-dialog-modal">
+                    <div id="ff-dialog--header" class="ff-dialog-header">Feature: Version History</div>
+                    <div id="ff-dialog--content" class="ff-dialog-content"><p>FlowForge Snapshots provide capability to save backups of your flows. Revert back to past versions, and use those Snapshots to deploy out to remote devices.</p></div>
+                </div>
+            </div>
+        
+            <div id="ff-dialog--feature--Persistent File Storage" class="ff-dialog-container">
+                <div class="ff-dialog-shadow" onclick="closeInfo('Persistent File Storage')"></div>
+                <div class="ff-dialog-modal">
+                    <div id="ff-dialog--header" class="ff-dialog-header">Feature: Persistent File Storage</div>
+                    <div id="ff-dialog--content" class="ff-dialog-content"><p>Read & write to files in your Project flows. These will persist beyond container and project restarts and upgrades.</p></div>
+                </div>
+            </div>
+        
+            <div id="ff-dialog--feature--Single Sign-On (SSO)" class="ff-dialog-container">
+                <div class="ff-dialog-shadow" onclick="closeInfo('Single Sign-On (SSO)')"></div>
+                <div class="ff-dialog-modal">
+                    <div id="ff-dialog--header" class="ff-dialog-header">Feature: Single Sign-On (SSO)</div>
+                    <div id="ff-dialog--content" class="ff-dialog-content"><p>FlowForge can be configured to run with your own Single Sign-On (SSO) provider. Allow users to access FlowForge with a single set of login credentials, improving security, user experience, and save them time.</p></div>
+                </div>
+            </div>
+        
+            <div id="ff-dialog--feature--Inter Project Communication" class="ff-dialog-container">
+                <div class="ff-dialog-shadow" onclick="closeInfo('Inter Project Communication')"></div>
+                <div class="ff-dialog-modal">
+                    <div id="ff-dialog--header" class="ff-dialog-header">Feature: Inter Project Communication</div>
+                    <div id="ff-dialog--content" class="ff-dialog-content"><p><a href="https://github.com/flowforge/flowforge-nr-project-nodes" target="blank">FlowForge Project Nodes</a> enable the passing of data and messages between your Node-RED projects, included with all FlowForge Projects by default.</p></div>
+                </div>
+            </div>
+        
+            <div id="ff-dialog--feature--Persistent Context Storage" class="ff-dialog-container">
+                <div class="ff-dialog-shadow" onclick="closeInfo('Persistent Context Storage')"></div>
+                <div class="ff-dialog-modal">
+                    <div id="ff-dialog--header" class="ff-dialog-header">Feature: Persistent Context Storage</div>
+                    <div id="ff-dialog--content" class="ff-dialog-content">In-memory values defined in a Node-RED flow will persist across project restarts and upgrades.</div>
+                </div>
+            </div>
+        
+            <div id="ff-dialog--feature--Maximum Teams" class="ff-dialog-container">
+                <div class="ff-dialog-shadow" onclick="closeInfo('Maximum Teams')"></div>
+                <div class="ff-dialog-modal">
+                    <div id="ff-dialog--header" class="ff-dialog-header">Feature: Maximum Teams</div>
+                    <div id="ff-dialog--content" class="ff-dialog-content"></div>
+                </div>
+            </div>
+        
+            <div id="ff-dialog--feature--Maximum Projects" class="ff-dialog-container">
+                <div class="ff-dialog-shadow" onclick="closeInfo('Maximum Projects')"></div>
+                <div class="ff-dialog-modal">
+                    <div id="ff-dialog--header" class="ff-dialog-header">Feature: Maximum Projects</div>
+                    <div id="ff-dialog--content" class="ff-dialog-content"></div>
+                </div>
+            </div>
+        
+            <div id="ff-dialog--feature--Maximum Devices" class="ff-dialog-container">
+                <div class="ff-dialog-shadow" onclick="closeInfo('Maximum Devices')"></div>
+                <div class="ff-dialog-modal">
+                    <div id="ff-dialog--header" class="ff-dialog-header">Feature: Maximum Devices</div>
+                    <div id="ff-dialog--content" class="ff-dialog-content"></div>
+                </div>
+            </div>
+        
+            <div id="ff-dialog--feature--Custom Node Catalog" class="ff-dialog-container">
+                <div class="ff-dialog-shadow" onclick="closeInfo('Custom Node Catalog')"></div>
+                <div class="ff-dialog-modal">
+                    <div id="ff-dialog--header" class="ff-dialog-header">Feature: Custom Node Catalog</div>
+                    <div id="ff-dialog--content" class="ff-dialog-content"></div>
+                </div>
+            </div>
+        
+            <div id="ff-dialog--feature--Shared Team Library" class="ff-dialog-container">
+                <div class="ff-dialog-shadow" onclick="closeInfo('Shared Team Library')"></div>
+                <div class="ff-dialog-modal">
+                    <div id="ff-dialog--header" class="ff-dialog-header">Feature: Shared Team Library</div>
+                    <div id="ff-dialog--content" class="ff-dialog-content"></div>
+                </div>
+            </div>
+        
+            <div id="ff-dialog--feature--Private npm Repo Support" class="ff-dialog-container">
+                <div class="ff-dialog-shadow" onclick="closeInfo('Private npm Repo Support')"></div>
+                <div class="ff-dialog-modal">
+                    <div id="ff-dialog--header" class="ff-dialog-header">Feature: Private npm Repo Support</div>
+                    <div id="ff-dialog--content" class="ff-dialog-content"></div>
+                </div>
+            </div>
+        
+            <div id="ff-dialog--feature--Git Integration" class="ff-dialog-container">
+                <div class="ff-dialog-shadow" onclick="closeInfo('Git Integration')"></div>
+                <div class="ff-dialog-modal">
+                    <div id="ff-dialog--header" class="ff-dialog-header">Feature: Git Integration</div>
+                    <div id="ff-dialog--content" class="ff-dialog-content"></div>
+                </div>
+            </div>
+        
+            <div id="ff-dialog--feature--Devops Workflow" class="ff-dialog-container">
+                <div class="ff-dialog-shadow" onclick="closeInfo('Devops Workflow')"></div>
+                <div class="ff-dialog-modal">
+                    <div id="ff-dialog--header" class="ff-dialog-header">Feature: Devops Workflow</div>
+                    <div id="ff-dialog--content" class="ff-dialog-content"></div>
+                </div>
+            </div>
+        
+            <div id="ff-dialog--feature--Usage Reporting" class="ff-dialog-container">
+                <div class="ff-dialog-shadow" onclick="closeInfo('Usage Reporting')"></div>
+                <div class="ff-dialog-modal">
+                    <div id="ff-dialog--header" class="ff-dialog-header">Feature: Usage Reporting</div>
+                    <div id="ff-dialog--content" class="ff-dialog-content"></div>
+                </div>
+            </div>
+        
+    
+        
+            <div id="ff-dialog--feature--Community Support" class="ff-dialog-container">
+                <div class="ff-dialog-shadow" onclick="closeInfo('Community Support')"></div>
+                <div class="ff-dialog-modal">
+                    <div id="ff-dialog--header" class="ff-dialog-header">Feature: Community Support</div>
+                    <div id="ff-dialog--content" class="ff-dialog-content"></div>
+                </div>
+            </div>
+        
+            <div id="ff-dialog--feature--Ticket-Based Support" class="ff-dialog-container">
+                <div class="ff-dialog-shadow" onclick="closeInfo('Ticket-Based Support')"></div>
+                <div class="ff-dialog-modal">
+                    <div id="ff-dialog--header" class="ff-dialog-header">Feature: Ticket-Based Support</div>
+                    <div id="ff-dialog--content" class="ff-dialog-content"></div>
+                </div>
+            </div>
+        
+            <div id="ff-dialog--feature--Long Term Support" class="ff-dialog-container">
+                <div class="ff-dialog-shadow" onclick="closeInfo('Long Term Support')"></div>
+                <div class="ff-dialog-modal">
+                    <div id="ff-dialog--header" class="ff-dialog-header">Feature: Long Term Support</div>
+                    <div id="ff-dialog--content" class="ff-dialog-content"></div>
+                </div>
+            </div>
+        
+    
+</div>
 </div>
 </div>
     </div>
