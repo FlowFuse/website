@@ -596,3 +596,31 @@ div.content section.footnotes ol li p {
     font-size: 0.8rem;
     line-height: 0.8rem;
 }
+
+.journey {
+
+}
+
+.journey-row {
+    display: flex;
+    padding: 0 12px;
+}
+
+.journey-row--right {
+    justify-content: flex-end;
+    padding: 0;
+}
+.journey-row--left {
+    justify-content: flex-start;
+    padding: 0;
+}
+.journey-row--reversed {
+    flex-direction: row-reverse;
+}
+.journey-row--reversed .node {
+    flex-direction: column-reverse;
+}
+
+.node label {
+    padding: 6px 0;
+}

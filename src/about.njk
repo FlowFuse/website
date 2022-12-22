@@ -1,13 +1,240 @@
 ---
 layout: layouts/page.njk
 title: About FlowForge
-description: "<p>FlowForge is an open core company creating a low-code programming platform based on the OpenJS Foundation Node-RED project.</p>
-<p>We're still in our infancy, but here is a bit about who are are, what we believe in and how we operate.</p>"
+description: "<p>Founded by the co-creator of Node-RED, Nick O'Leary, FlowForge is an open core company creating a platform that helps customers running Node-RED in production environments.</p>
+<p>We're still in our infancy, but here is a bit about who are are, our journey so far in and how we operate.</p>"
 heroimg: "../images/pictograms/anvil1.png"
 sitemapPriority: 0.7
 ---
 
+<script type="module">
+
+import * as d3 from "https://cdn.jsdelivr.net/npm/d3@7/+esm";
+
+const timeline = [{
+    "date": "April '21",
+    "title": "FlowForge Formed"
+},{
+    "date": "May '21",
+    "title": "Our First Hire"
+}, {
+    "date": "Jan '22",
+    "title": "v0.1 Released"
+}, {
+    "date": "Feb '22",
+    "title": "FlowForge Cloud"
+}, {
+    "date": "May '22",
+    "title": "UX Revamp"
+}, {
+    "date": "Aug '22",
+    "title": "Project Link Nodes"
+}, {
+    "date": "Aug '22",
+    "title": "Static Outbound IP Addresses"
+}, {
+    "date": "Aug '22",
+    "title": "v1.0 Released!"
+}, {
+    "date": "Dec '22",
+    "title": "SSO Added"
+}, {
+    "date": "View Roadmap",
+    "title": "What's Next..."
+}] 
+
+const journey = d3.selectAll("#journey");
+const svg = journey.select("svg");
+const canvas = journey.select("div#canvas");
+
+svg.on('load', () => {
+
+    const width = svg.node().clientWidth
+    const height = svg.node().clientHeight
+
+    let dTimeline = [];
+    // break the timeline into rows
+    let dRows = []
+    let aRow =[] // track active row
+    let rows = 0
+    for (let i = 0; i < timeline.length; i++) {
+        let entry = timeline[i]
+        entry.index = i
+        if (i === 0) {
+            aRow.push('node')
+            aRow.push(entry)
+        } else if ((i+1)%4 === 0) {
+            // we have a solo row
+            // finish previous row
+            aRow.push('node')
+            dRows.push(aRow)
+            dRows.push([
+                entry
+            ])
+            if (i !== timeline.length - 1) {
+                aRow = ['node']
+            } else {
+                aRow = []
+            }
+        } else {
+            aRow.push(entry)
+        }
+    }
+    // if leftover content in a row
+    if (aRow.length > 0) {
+        dRows.push(aRow)
+    }
+
+    const domRows = canvas.select('#rows')
+
+    const domRow = domRows.selectAll('div')
+        .data(dRows)
+        .enter()
+        .append('div')
+        .classed('journey-row', true)
+        .classed('journey-row--left', (d, i) => {
+            // single item rows: i = 1, 5, 9, 13, etc.
+            return ((i + 1)/2)%2 === 0 && d.length === 1 
+        })
+        .classed('journey-row--right', (d, i) => {
+            // i = 1, 5, 9, 13, etc.
+            return ((i + 1)/2)%2 === 1 && d.length === 1 
+        })
+        .classed('journey-row--reversed', (d, i) => {
+            // when moving from right-to-left
+            // i = 2, 6, 10, 14
+            return ((i/2)%2 === 1) && d.length > 1
+        })
+    
+    const node = domRow.selectAll('div')
+        .data((d) => {
+            return d
+        })
+        .enter()
+        .append('div')
+        .classed('node', true)
+
+    const fNodes = node.filter((d) => {
+        return d !== 'node'
+    })
+
+    fNodes.attr('class', (d, i) => {
+        // need to work from filtered i value
+        if ((d.index + 1)%4 === 0) {
+            // row with single node
+            if ((d.index - 3 % 8) === 0) {
+                return 'node flex flex-row-reverse gap-4 w-1/3 items-center justify-start my-12'
+            } else {
+                return 'node flex flex-row gap-4 w-1/3 items-center justify-start my-12'
+            }
+        } else {
+            return 'node flex flex-col w-1/3 items-center justify-center'
+        }
+    })
+    fNodes.append('span')
+        .attr('class', 'border-4 border-black rounded bg-white block')
+        .style('width', '24px')
+        .style('height', '24px')
+
+    const label = fNodes.append('label')
+        .attr('class', (d, i) => {
+            if ((d.index + 1)%4 === 0) {
+                if ((d.index - 3 % 8) === 0) {
+                    return 'text-right'
+                } else {
+                    return 'text-left'
+                }
+            } else {
+                return ''
+            }
+        })
+
+    label.append('span')
+        .attr('class', 'font-bold block')
+        .text((d, i) => {
+            return d.title
+        })
+    label.append('span')
+        .attr('class', 'font-light block')
+        .text((d) => {
+            return d.date
+        })
+    
+    const links = svg.select('g#links')
+
+
+    var line = d3.line()
+        .x(function(d, i) {
+            // i counter includes the empty nodes
+            const bbox = d.getBoundingClientRect()
+            const x = (bbox.width / 2) + bbox.left - d.parentElement.getBoundingClientRect().left;
+            if ((i+1)%6 === 0) {
+                // we have a single element on it's own row
+                if ((i - 5) % 12 === 0) {
+                    return x + (bbox.width / 2) - 12
+                } else {
+                    return x - (bbox.width / 2) + 12
+                }
+            } else {
+                return x
+            }
+        })
+        .y(function(d, i) {
+            d = d.parentElement
+            const bbox = d.getBoundingClientRect()
+            const y = bbox.top - d.parentElement.getBoundingClientRect().top;
+            if ((i+1)%6 === 0) {
+                // we have a single element on it's own row
+                return y + (bbox.height / 2)
+            } else if ((i+6)%12 < 5) {
+                // nodes inside a reversed row 6 -> 10, 18 -> 22, 30 -> 34
+                return y + (bbox.height) - 12
+            } else {
+                // shift the y coordinate down the height of the node box
+                return 12 + y
+            }
+            
+        })
+        .curve(d3.curveBasis);
+
+    // TODO: Stroke along path: https://gist.github.com/mbostock/4163057
+    svg.append("path")
+        .style('stroke', 'black')
+        .style('stroke-width', '8px')
+        .style('fill', 'none')
+        .datum(node)
+        .attr("d", line);
+})
+
+</script>
+
 {% include "components/divider-flow--default.njk" %}
+
+<!-- Company Values -->
+<div class="about w-full ff-bg-light pt-12 pb-24 md:pb-48 md:pt-48">
+    <div class="container m-auto text-center max-w-4xl">
+        <h1>Our Journey So Far...</h1>
+        <div id="journey" class="relative">
+            <svg class="absolute w-full h-full top-0 left-0">
+                <g id="links"></g>
+            </svg>
+            <div id="canvas" class="relative">
+                <div id="rows" class=""></div>
+            </div>
+        </div>
+        {# <div class="grid grid-cols-4 gap-6">
+            {%- for entry in timeline | reverse -%}
+            <div class="flex flex-col items-center justify-center text-center">
+                <span class="border-4 border-black rounded bg-white w-6 h-6 block"></span>
+                <label>
+                    <span class="font-bold block">{{ entry.title }}</span>
+                    <span class="font-light block">{{ entry.date }}</span>
+                </label>
+            </div>
+            {% endfor %}
+        </div> #}
+    </div>
+</div>
 
 <!-- Secondary Content -->
 <div class="about w-full ff-bg-light pt-12 pb-24 md:pb-48 md:pt-32">
@@ -17,11 +244,13 @@ sitemapPriority: 0.7
                 <h3>Node-RED</h3>
                 <img src="../images/node-red-hexagon.png" />
                 <p>Node-RED is an industry leading low-code platform that makes it easy to build applications that integrate events, data and devices. It provides the core of what we're building at FlowForge.</p>
+                <p>Read our <a href="/node-red">What is Node-RED guide</a> to find out more.</p>
             </div>
             <div class="highlight-feature">
                 <h3>Open Source</h3>
                 <img src="../images/pictograms/opensource_red.png" />
-                <p>We believe strongly that Open Source lives at the heart of everything we do - both in our work to push the Node-RED project forward as well as our own FlowForge platform.</p><p>We strive to be good Open Source citizens and want to empower the community to get involved.</p>
+                <p>We believe strongly that Open Source lives at the heart of everything we do - both in our work to push the Node-RED project forward as well as our own FlowForge platform.</p>
+                <p>We strive to be good Open Source citizens and want to empower the community to get involved.</p>
             </div>
         </div>
     </div>
@@ -29,72 +258,12 @@ sitemapPriority: 0.7
 
 {% include "components/divider-flow--top-red--dark.njk" %}
 
-<!-- Company Values -->
-<div class="about w-full ff-bg-dark px-6 pt-12 pb-24 md:pt-20 md:px-0 md:pb-48">
-    <div class="container m-auto text-center max-w-4xl">
-        <div class="">
-            <h1 class="mb-4">Company Values</h1>
-            <p>We are full open about our company values, you can read more about them in our <a href="/handbook">Handbook.</a></p>
-        </div>
-        <div class="flex flex-wrap justify-center mt-12 md:mt-20">
-            <div class="company-value">
-                <img src="../images/pictograms/community.png" />
-                <h5>Community-First</h5>
-            </div>
-            <div class="company-value">
-                <img src="../images/pictograms/optimism.png" />
-                <h5>Apply Optimism</h5>
-            </div>
-            <div class="company-value">
-                <img src="../images/pictograms/candor.png" />
-                <h5>Use Candor</h5>
-            </div>
-            <div class="company-value">
-                <img src="../images/pictograms/results.png" />
-                <h5>Results, Not Hours</h5>
-            </div>
-            <div class="company-value">
-                <img src="../images/pictograms/bias_for_action.png" />
-                <h5>Bias for Action</h5>
-            </div>
-            <div class="company-value">
-                <img src="../images/pictograms/trusting.png" />
-                <h5>Be Trusting</h5>
-            </div>
-        </div>
-    </div>
-</div>
 
 {% include "components/divider-flow--top-grey.njk" %}
 
 <!-- Employee Benefits -->
 <div class="about w-full ff-bg-mid px-6 pt-12 pb-20 md:px-0 md:pt-20">
     <div class="container m-auto text-center max-w-4xl">
-        <div>
-            <h1 class="mb-4">Employee Benefits</h1>
-            <p>Here are just some of the benefits enjoyed by our employees. We are always looking to improve and expand these too. You can read more about them in our <a href="/handbook">Handbook.</a></p>
-        </div>
-        <div class="flex flex-wrap justify-center mt-12 md:mt-20">
-            <div class="company-value">
-                <img src="../images/pictograms/remote.png" />
-                <h5>Fully Remote</h5>
-            </div>
-            <div class="company-value">
-                <img src="../images/pictograms/vacation.png" />
-                <h5>Unlimited Vacation</h5>
-            </div>
-            <div class="company-value">
-                <img src="../images/pictograms/time.png" />
-                <h5>Flexible Hours</h3>
-            </div>
-            <div class="company-value">
-                <img src="../images/pictograms/equipment.png" />
-                <h5>Equipment</h5>
-            </div>
-            <div class="company-value">
-                <img src="../images/pictograms/parental_leave.png" />
-                <h5>Paid Parental Leave</h5>
-            </div>
-        </div>
+        
     </div>
 </div>
