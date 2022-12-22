@@ -22,7 +22,7 @@
     <meta name="twitter:description" content="FlowForge is an open-source, low-code platform for integration and automation. Helping you run Node-RED at production scales in a secure, scalable and team-based environment." />
     <meta name="twitter:site" content="@flowforgeinc" />
     <meta name="twitter:image" content="/images/og-social-tile.jpg" />
-    <meta property="og:url" content="https://flowforge.com/docs/user/changestack/" />
+    <meta property="og:url" content="https://flowforge.com/docs/admin/sso/" />
     <meta property="og:title" content="" />
     <meta property="og:description" content="FlowForge is an open-source, low-code platform for integration and automation. Helping you run Node-RED at production scales in a secure, scalable and team-based environment." />
     <meta property="og:image" content="/images/og-social-tile.jpg" />
@@ -80,39 +80,149 @@
             
             v1.2.0
             
-            /<a class="mx-2" href="/docs">docs</a>/<a class="mx-2" href="/docs/user">user</a>/<a class="mx-2" href="/docs/user/changestack">changestack</a>
+            /<a class="mx-2" href="/docs">docs</a>/<a class="mx-2" href="/docs/admin">admin</a>/<a class="mx-2" href="/docs/admin/sso">sso</a>
         </div>
     </div>
     <div class="w-full mx-auto ff-bg-light flex flex-col md:flex-row">
         <div class="flex-grow order-last md:order-first">
             <div class="mt-6 mb-4 prose prose-blue main-content">
-                <h1 id="changing-the-stack" tabindex="-1"><a class="header-anchor" href="#changing-the-stack">#&nbsp;</a> Changing the Stack</h1>
-<p><a href="../concepts#project-stack"">Project Stacks</a> define various aspects of how the project is run - including the version of Node-RED being used.</p>
-<p>FlowForge allows you to change the stack a project is using - providing a way
-to upgrade Node-RED.</p>
-<p><strong>Note:</strong> Stacks are created by Administrators and made available to the teams
-and users of the platform.</p>
-<p>When an Administrator creates a new version
-of a Stack your project is using, the platform will notify you that there is a
-new version available.</p>
-<p>To change a project's stack:</p>
+                <h1 id="saml-single-sign-on" tabindex="-1"><a class="header-anchor" href="#saml-single-sign-on">#&nbsp;</a> SAML Single-Sign On</h1>
+<p><em>This feature is only available on EE licensed instances of FlowForge.</em></p>
+<p>FlowForge allows users to sign in through their SAML identity provider, such
+as Google Workspace.</p>
+<p>The platform can be configured with multiple SAML configurations and uses the
+user's email domain to identify which identity provider should be used.</p>
+<p>The user must already exist on the FlowForge platform before they can sign in via SSO.</p>
+<p>Once enabled for a particular email domain, regular users on that domain will be directed
+to the Identity Provider in order to log in. They will no longer be able to log in with
+their local password, nor will they be able to change their email address in User Settings.</p>
+<p>Admin users will still be able to log in with their original FlowForge username/password - this ensures
+they don't get locked out of the platform if there is a problem with the Identity
+Provider configuration.</p>
+<h2 id="managing-saml-sso-configurations" tabindex="-1"><a class="header-anchor" href="#managing-saml-sso-configurations">#&nbsp;</a> Managing SAML SSO Configurations</h2>
+<p>The SAML SSO Configurations are managed by the platform Administrator under the
+<code>Admin Settings &gt; Settings &gt; SSO</code> section.</p>
+<p>To fully configure SAML SSO, you will need to generate a configuration in FlowForge,
+provide some of the generated values to your Identity Provider, and copy back some
+values they provide.</p>
+<h3 id="create-a-saml-sso-configuration" tabindex="-1"><a class="header-anchor" href="#create-a-saml-sso-configuration">#&nbsp;</a> Create a SAML SSO Configuration</h3>
 <ol>
-<li>Go to the project's page and select <strong>Settings</strong> in the sidebar.</li>
-<li>Select the <strong>Danger</strong> section in the side menu</li>
-<li>Click the <strong>Change Project Stack</strong> button</li>
-<li>You will be prompted to select the new stack for the project.</li>
-<li>Click <strong>Change Stack</strong></li>
+<li>
+<p>Click 'Create SSO SAML Configuration' to create a new config</p>
+<p><img src="./images/create-sso-config.png"" alt=""></p>
+</li>
+<li>
+<p>Give the configuration a name to help identify it, and provide the email domain
+name this configuration should apply to.</p>
+</li>
+<li>
+<p>Click 'Create configuration'</p>
+<p>At this point, the configuration has been created and metadata generated for the
+configuration, but it is not active.</p>
+<p><img src="./images/edit-sso-config.png"" alt=""></p>
+</li>
+<li>
+<p>Copy the <code>ACS URL</code> and <code>Entity ID / Issuer</code> values as you will need to configure
+your Identity Provider with these values.</p>
+</li>
 </ol>
-<p>Your project will now be restart on the new stack.</p>
-<p><strong>Note:</strong> Changing the stack causes the project to be stopped and restarted. This
-will require a short downtime of the project flows.</p>
+<p>You can save the configuration at any time by clicking the <code>Update configuration</code>
+button. The configuration will only be enabled when you tick the <code>active</code> checkbox
+and save the changes.</p>
+<h3 id="configure-your-identify-provider" tabindex="-1"><a class="header-anchor" href="#configure-your-identify-provider">#&nbsp;</a> Configure your Identify Provider</h3>
+<p>Every Identity Provider uses slightly different terminology and varies what
+information they require and what they provide. This can make it a tricky task
+to complete.</p>
+<p>We provide specific guides for the providers we have verified below.</p>
+<p>If you have a working configuration for a provider not listed here, please do
+share the details so we can add them to the list.</p>
+<p>The general points are:</p>
+<ol>
+<li>
+<p>Your Identity Provider will supply you with some of the following values that
+should be entered into your FlowForge SAML SSO Configuration:</p>
+<ul>
+<li><code>Single Sign-On URL</code> - also referred to as 'SAML Endpoint', 'Login URL' or 'IdP SSO URL'.</li>
+<li><code>Issuer ID / URL</code></li>
+<li><code>X.509 Certification Public Key</code> - the public key of a certificate used to sign
+SAML requests.</li>
+</ul>
+</li>
+<li>
+<p>Configure the <code>NameID</code> SAML option to be <code>EmailAddress</code> and have it return the email
+of the user logging in. This is how FlowForge will verify they are a known user
+on the platform.</p>
+</li>
+</ol>
+<h3 id="enable-your-saml-sso-configuration" tabindex="-1"><a class="header-anchor" href="#enable-your-saml-sso-configuration">#&nbsp;</a> Enable your SAML SSO Configuration</h3>
+<p>Once you have setup both sides of the configuration you can enable it for use
+by ticking the <code>active</code> checkbox and clicking <code>Update configuration</code>.</p>
+<h2 id="providers" tabindex="-1"><a class="header-anchor" href="#providers">#&nbsp;</a> Providers</h2>
+<p>The following is a non-exhaustive list of the providers that are known to work
+with FlowForge SAML SSO.</p>
+<ul>
+<li><a href="#google-workspace">Google Workspace</a></li>
+<li><a href="#onelogin">OneLogin</a></li>
+</ul>
+<h3 id="google-workspace" tabindex="-1"><a class="header-anchor" href="#google-workspace">#&nbsp;</a> Google Workspace</h3>
+<p>Google provide a guide for creating a custom SAML Application <a href="https://support.google.com/a/answer/6087519?hl=en">here</a>.</p>
+<p>Google Workspace only supports HTTPS-based SSO URLs. You cannot use it when developing
+locally using <code>http://localhost:3000</code>.</p>
+<p>The following table maps the Google Workspace terminology to the FlowForge settings.</p>
+<table>
+<thead>
+<tr>
+<th>FlowForge Setting</th>
+<th>Google Workspace Setting</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Identity Provider Single Sign-On URL</code></td>
+<td><code>SSO URL</code></td>
+</tr>
+<tr>
+<td><code>Identity Provider Issuer ID / URL</code></td>
+<td><code>Entity ID</code></td>
+</tr>
+<tr>
+<td><code>X.509 Certificate Public Key</code></td>
+<td><code>Certificate</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="onelogin" tabindex="-1"><a class="header-anchor" href="#onelogin">#&nbsp;</a> OneLogin</h3>
+<p>Follow <a href="https://onelogin.service-now.com/support?id=kb_article&amp;sys_id=93f95543db109700d5505eea4b96198f">this guide</a>
+to create a <code>OneLogin SAML Test Connector</code>.</p>
+<table>
+<thead>
+<tr>
+<th>FlowForge Setting</th>
+<th>OneLogin Setting</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Identity Provider Single Sign-On URL</code></td>
+<td><code>SAML 2.0 Endpoint (HTTP)</code></td>
+</tr>
+<tr>
+<td><code>Identity Provider Issuer ID / URL</code></td>
+<td><code>Issuer URL</code></td>
+</tr>
+<tr>
+<td><code>X.509 Certificate Public Key</code></td>
+<td><code>X.509 Certificate</code></td>
+</tr>
+</tbody>
+</table>
 
             </div>
         </div>
         <div class="w-full md:w-64 md:ml-8 mt-4 md:mt-6 px-2">
             <h3 class="font-medium border-b pb-1 mb-4">On this page</h3>
             <ul id="toc" class="text-sm border-b mb-4"></ul>
-            <div class="text-sm pb-1 text-right mb-4"><a href="https://github.com/flowforge/flowforge/edit/main/docs/user/changestack.md">Edit this page</a></div>
+            <div class="text-sm pb-1 text-right mb-4"><a href="https://github.com/flowforge/flowforge/edit/main/docs/admin/sso/README.md">Edit this page</a></div>
             <div class="text-xs pb-1 text-right mb-4 italic">Updated: 2022-12-22 19:14:44 +0700</div>
         </div>
     </div>

@@ -78,7 +78,7 @@
     <div class="w-full mx-auto ff-bg-light">
         <div class="font-medium border-b pb-1">
             
-            v1.1.2
+            v1.2.0
             
             /<a class="mx-2" href="/docs">docs</a>/<a class="mx-2" href="/docs/install">install</a>/<a class="mx-2" href="/docs/install/file-storage">file-storage</a>
         </div>
@@ -102,9 +102,10 @@ direct access to the file system of the machine hosting FlowForge.</p>
 <h2 id="configuring" tabindex="-1"><a class="header-anchor" href="#configuring">#&nbsp;</a> Configuring</h2>
 <p>The Docker Compose and Kubernetes Helm Chart will both now start a
 container running the File Server application.</p>
-<p>There are 2 main things to set up:</p>
+<p>There are 3 main things to set up:</p>
 <ol>
 <li>Which backend to use (<code>localfs</code> or <code>s3</code>)</li>
+<li>The quota for each project in bytes (not set is unlimited)</li>
 <li>The configuration options for the backend</li>
 </ol>
 <h3 id="localfs" tabindex="-1"><a class="header-anchor" href="#localfs">#&nbsp;</a> LocalFS</h3>
@@ -112,14 +113,18 @@ container running the File Server application.</p>
 to persist files.</p>
 <p>The only configuration option used is the path to the directory to use
 as the root of the storage</p>
-<pre><code>host: 0.0.0.0
-port: 3001
-base_url: http://flowforge:3000
-driver:
-  type: localfs
-  options:
-    root: var/root
-</code></pre>
+
+<div style="position: relative">
+  <pre class="language-yaml"><code id="code-50"class="language-yaml"><span class="token key atrule">host</span><span class="token punctuation">:</span> 0.0.0.0<br><span class="token key atrule">port</span><span class="token punctuation">:</span> <span class="token number">3001</span><br><span class="token key atrule">base_url</span><span class="token punctuation">:</span> http<span class="token punctuation">:</span>//flowforge<span class="token punctuation">:</span><span class="token number">3000</span><br><span class="token key atrule">driver</span><span class="token punctuation">:</span><br>  <span class="token key atrule">type</span><span class="token punctuation">:</span> localfs<br>  <span class="token key atrule">quota</span><span class="token punctuation">:</span> <span class="token number">104857600</span><br>  <span class="token key atrule">options</span><span class="token punctuation">:</span><br>    <span class="token key atrule">root</span><span class="token punctuation">:</span> var/root</code></pre>
+
+  <button class="code-copy "
+    data-clipboard-target="#code-50"
+    style="position: absolute; top: 7.5px; right: 6px; cursor: pointer; outline: none; opacity: 0.8;" title="Copy">
+    <span>
+      <span style="font-size: 15px; opacity: 0.8;" class="mdi mdi-content-copy"></span>
+    </span>
+  </button>
+</div>
 <h3 id="s3-compatible-storage" tabindex="-1"><a class="header-anchor" href="#s3-compatible-storage">#&nbsp;</a> S3 Compatible Storage</h3>
 <ul>
 <li>options
@@ -139,28 +144,30 @@ driver:
 </ul>
 <p>For further reference of all available options you can look at the S3Client documentation <a href="https://docs.aws.amazon.com/AWSJavaScriptSDK/v3/latest/clients/client-s3/interfaces/s3clientconfig.html">here</a></p>
 <p>For example:</p>
-<pre><code>host: '0.0.0.0'
-port: 3001
-base_url: http://forge.default
-driver:
-  type: s3
-  options:
-    bucket: flowforge-files
-    credentials:
-      accessKeyId: XXXXXXXXXXXXXXXXXXX
-      secretAccessKey: XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-    forcePathStyle: true
-    region: us-east-1
-</code></pre>
+
+<div style="position: relative">
+  <pre class="language-yaml"><code id="code-106"class="language-yaml"><span class="token key atrule">host</span><span class="token punctuation">:</span> <span class="token string">'0.0.0.0'</span><br><span class="token key atrule">port</span><span class="token punctuation">:</span> <span class="token number">3001</span><br><span class="token key atrule">base_url</span><span class="token punctuation">:</span> http<span class="token punctuation">:</span>//forge.default<br><span class="token key atrule">driver</span><span class="token punctuation">:</span><br>  <span class="token key atrule">type</span><span class="token punctuation">:</span> s3<br>  <span class="token key atrule">quota</span><span class="token punctuation">:</span> <span class="token number">104857600</span><br>  <span class="token key atrule">options</span><span class="token punctuation">:</span><br>    <span class="token key atrule">bucket</span><span class="token punctuation">:</span> flowforge<span class="token punctuation">-</span>files<br>    <span class="token key atrule">credentials</span><span class="token punctuation">:</span><br>      <span class="token key atrule">accessKeyId</span><span class="token punctuation">:</span> XXXXXXXXXXXXXXXXXXX<br>      <span class="token key atrule">secretAccessKey</span><span class="token punctuation">:</span> XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX<br>    <span class="token key atrule">forcePathStyle</span><span class="token punctuation">:</span> <span class="token boolean important">true</span><br>    <span class="token key atrule">region</span><span class="token punctuation">:</span> us<span class="token punctuation">-</span>east<span class="token punctuation">-</span><span class="token number">1</span></code></pre>
+
+  <button class="code-copy "
+    data-clipboard-target="#code-106"
+    style="position: absolute; top: 7.5px; right: 6px; cursor: pointer; outline: none; opacity: 0.8;" title="Copy">
+    <span>
+      <span style="font-size: 15px; opacity: 0.8;" class="mdi mdi-content-copy"></span>
+    </span>
+  </button>
+</div>
 <h2 id="docker-compose" tabindex="-1"><a class="header-anchor" href="#docker-compose">#&nbsp;</a> Docker Compose</h2>
 <p>You can configure the backend store for the File Server by editing the
 <code>etc/flowforge-storage.yml</code> file. It defaults to using the <code>localfs</code>
 backend driver and mounting a directory into the container.</p>
+<p>File Storage quota defaults to 100MB per project</p>
 <h2 id="kubernetes-helm" tabindex="-1"><a class="header-anchor" href="#kubernetes-helm">#&nbsp;</a> Kubernetes Helm</h2>
 <p>You can configure the backend store for the File server by including
 the following values passed to helm</p>
 <ul>
-<li><code>forge.fileStore.type</code> - defaults to <code>s3</code></li>
+<li><code>forge.fileStore.enabled</code> - defaults to <code>false</code></li>
+<li><code>forge.fileStore.type</code> - defaults to <code>localfs</code></li>
+<li><code>forge.fileStore.quota</code> - defaults to <code>104857600</code> bytes (100mb)</li>
 <li><code>forge.fileStore.options</code> - an object that matches the Yaml described above</li>
 </ul>
 <h2 id="enabling-the-flowforge-file-nodes" tabindex="-1"><a class="header-anchor" href="#enabling-the-flowforge-file-nodes">#&nbsp;</a> Enabling the FlowForge File Nodes</h2>
@@ -173,6 +180,16 @@ exclude the code nodes.</p>
 <p>This can be done in the FlowForge Template.</p>
 <img src="../images/file-node-template.png"" width=500 />
 <p>Adding <code>10-file.js</code> to the list of &quot;Excluded nodes by filename&quot; section will ensure that the core file nodes are not loaded by the project.</p>
+<h2 id="persistent-context" tabindex="-1"><a class="header-anchor" href="#persistent-context">#&nbsp;</a> Persistent Context</h2>
+<p>For FlowForge Premium licensees the File Server component also provides a Persistent Context Store.</p>
+<p>For both Docker and Kubernetes come with a the context store configured with default values, uploading
+a license for the FlowForge application will enable it, but existing projects will require suspending
+and restarting to pick up the change.</p>
+<p>The default quota is 1KB per project which can be overridden as follows:</p>
+<ul>
+<li>on Docker edit the <code>etc/flowforge-storage.yml</code> file.</li>
+<li>on Kubernetes set the <code>forge.fileStore.context.quota</code> value in bytes when passing helm.</li>
+</ul>
 <h2 id="working-with-flowforge-devices" tabindex="-1"><a class="header-anchor" href="#working-with-flowforge-devices">#&nbsp;</a> Working with FlowForge Devices</h2>
 <p>Because the FlowForge File nodes are a direct replacement for the
 Node-RED core file nodes you can use them to build flows
@@ -187,7 +204,7 @@ will be loaded.</p>
             <h3 class="font-medium border-b pb-1 mb-4">On this page</h3>
             <ul id="toc" class="text-sm border-b mb-4"></ul>
             <div class="text-sm pb-1 text-right mb-4"><a href="https://github.com/flowforge/flowforge/edit/main/docs/install/file-storage/README.md">Edit this page</a></div>
-            <div class="text-xs pb-1 text-right mb-4 italic">Updated: 2022-12-15 12:11:25 +0000</div>
+            <div class="text-xs pb-1 text-right mb-4 italic">Updated: 2022-12-22 19:14:44 +0700</div>
         </div>
     </div>
 </div>

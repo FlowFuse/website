@@ -78,7 +78,7 @@
     <div class="w-full mx-auto ff-bg-light">
         <div class="font-medium border-b pb-1">
             
-            v1.1.2
+            v1.2.0
             
             /<a class="mx-2" href="/docs">docs</a>/<a class="mx-2" href="/docs/install">install</a>/<a class="mx-2" href="/docs/install/email_providers">email_providers</a>
         </div>
@@ -88,17 +88,18 @@
             <div class="mt-6 mb-4 prose prose-blue main-content">
                 <h2 id="example-configuration-for-common-email-platforms" tabindex="-1"><a class="header-anchor" href="#example-configuration-for-common-email-platforms">#&nbsp;</a> Example configuration for common email platforms</h2>
 <h3 id="gmail" tabindex="-1"><a class="header-anchor" href="#gmail">#&nbsp;</a> GMail</h3>
-<pre><code>email:
-  enabled: true
-  debug: false
-  smtp:
-    host: smtp.gmail.com
-    port: 465
-    secure: true
-    auth:
-        user: [USER]@gmail.com
-        pass: [PASSWORD]
-</code></pre>
+
+<div style="position: relative">
+  <pre class="language-yaml"><code id="code-6"class="language-yaml"><span class="token key atrule">email</span><span class="token punctuation">:</span><br>  <span class="token key atrule">enabled</span><span class="token punctuation">:</span> <span class="token boolean important">true</span><br>  <span class="token key atrule">debug</span><span class="token punctuation">:</span> <span class="token boolean important">false</span><br>  <span class="token key atrule">smtp</span><span class="token punctuation">:</span><br>    <span class="token key atrule">host</span><span class="token punctuation">:</span> smtp.gmail.com<br>    <span class="token key atrule">port</span><span class="token punctuation">:</span> <span class="token number">465</span><br>    <span class="token key atrule">secure</span><span class="token punctuation">:</span> <span class="token boolean important">true</span><br>    <span class="token key atrule">auth</span><span class="token punctuation">:</span><br>        <span class="token key atrule">user</span><span class="token punctuation">:</span> <span class="token punctuation">[</span>USER<span class="token punctuation">]</span>@gmail.com<br>        <span class="token key atrule">pass</span><span class="token punctuation">:</span> <span class="token punctuation">[</span>PASSWORD<span class="token punctuation">]</span></code></pre>
+
+  <button class="code-copy "
+    data-clipboard-target="#code-6"
+    style="position: absolute; top: 7.5px; right: 6px; cursor: pointer; outline: none; opacity: 0.8;" title="Copy">
+    <span>
+      <span style="font-size: 15px; opacity: 0.8;" class="mdi mdi-content-copy"></span>
+    </span>
+  </button>
+</div>
 <p>Note: Gmail may require an app specific password to be created if you are using 2FA on the account you can set that up <a href="https://security.google.com/settings/security/apppasswords">here</a></p>
 
             </div>
@@ -107,7 +108,7 @@
             <h3 class="font-medium border-b pb-1 mb-4">On this page</h3>
             <ul id="toc" class="text-sm border-b mb-4"></ul>
             <div class="text-sm pb-1 text-right mb-4"><a href="https://github.com/flowforge/flowforge/edit/main/docs/install/email_providers.md">Edit this page</a></div>
-            <div class="text-xs pb-1 text-right mb-4 italic">Updated: 2022-12-15 12:11:25 +0000</div>
+            <div class="text-xs pb-1 text-right mb-4 italic">Updated: 2022-12-22 19:14:44 +0700</div>
         </div>
     </div>
 </div>

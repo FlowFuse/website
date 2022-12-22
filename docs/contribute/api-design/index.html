@@ -78,7 +78,7 @@
     <div class="w-full mx-auto ff-bg-light">
         <div class="font-medium border-b pb-1">
             
-            v1.1.2
+            v1.2.0
             
             /<a class="mx-2" href="/docs">docs</a>/<a class="mx-2" href="/docs/contribute">contribute</a>/<a class="mx-2" href="/docs/contribute/api-design">api-design</a>
         </div>
@@ -98,22 +98,61 @@ of the <code>id</code> property. This property should be used on the API but ali
 <code>id</code> property.</p>
 <p>Each database model has a pair of helper functions to encode and decode hashids
 to/from the true <code>id</code> value:</p>
-<pre><code>const encodedHashid = app.db.models.User.encodeHashid(123);
-const objectId = app.db.models.User.decodeHashid(&quot;edjEbo2K1w&quot;)
-</code></pre>
+
+<div style="position: relative">
+  <pre class="language-js"><code id="code-18"class="language-js"><span class="token keyword">const</span> encodedHashid <span class="token operator">=</span> app<span class="token punctuation">.</span>db<span class="token punctuation">.</span>models<span class="token punctuation">.</span>User<span class="token punctuation">.</span><span class="token function">encodeHashid</span><span class="token punctuation">(</span><span class="token number">123</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br><span class="token keyword">const</span> objectId <span class="token operator">=</span> app<span class="token punctuation">.</span>db<span class="token punctuation">.</span>models<span class="token punctuation">.</span>User<span class="token punctuation">.</span><span class="token function">decodeHashid</span><span class="token punctuation">(</span><span class="token string">"edjEbo2K1w"</span><span class="token punctuation">)</span></code></pre>
+
+  <button class="code-copy "
+    data-clipboard-target="#code-18"
+    style="position: absolute; top: 7.5px; right: 6px; cursor: pointer; outline: none; opacity: 0.8;" title="Copy">
+    <span>
+      <span style="font-size: 15px; opacity: 0.8;" class="mdi mdi-content-copy"></span>
+    </span>
+  </button>
+</div>
 <h2 id="api-path-design" tabindex="-1"><a class="header-anchor" href="#api-path-design">#&nbsp;</a> API Path design</h2>
 <h3 id="admin-routes" tabindex="-1"><a class="header-anchor" href="#admin-routes">#&nbsp;</a> Admin routes</h3>
 <p>All admin-only routes exist under:</p>
-<pre><code>/api/v1/admin/...
-</code></pre>
+
+<div style="position: relative">
+  <pre class="language-txt"><code id="code-28"class="language-txt">/api/v1/admin/...</code></pre>
+
+  <button class="code-copy "
+    data-clipboard-target="#code-28"
+    style="position: absolute; top: 7.5px; right: 6px; cursor: pointer; outline: none; opacity: 0.8;" title="Copy">
+    <span>
+      <span style="font-size: 15px; opacity: 0.8;" class="mdi mdi-content-copy"></span>
+    </span>
+  </button>
+</div>
 <h3 id="logged-in-user-routes" tabindex="-1"><a class="header-anchor" href="#logged-in-user-routes">#&nbsp;</a> Logged-in user routes</h3>
 <p>All routes relating to the logged-in user exist under:</p>
-<pre><code>/api/v1/user/...
-</code></pre>
+
+<div style="position: relative">
+  <pre class="language-txt"><code id="code-35"class="language-txt">/api/v1/user/...</code></pre>
+
+  <button class="code-copy "
+    data-clipboard-target="#code-35"
+    style="position: absolute; top: 7.5px; right: 6px; cursor: pointer; outline: none; opacity: 0.8;" title="Copy">
+    <span>
+      <span style="font-size: 15px; opacity: 0.8;" class="mdi mdi-content-copy"></span>
+    </span>
+  </button>
+</div>
 <h3 id="object-collection-routes" tabindex="-1"><a class="header-anchor" href="#object-collection-routes">#&nbsp;</a> Object collection routes</h3>
 <p>API routes that related to objects in collections follow the pattern:</p>
-<pre><code>/api/v1/&lt;plural-noun&gt;/&lt;instance-id&gt;/...
-</code></pre>
+
+<div style="position: relative">
+  <pre class="language-txt"><code id="code-42"class="language-txt">/api/v1/&lt;plural-noun>/&lt;instance-id>/...</code></pre>
+
+  <button class="code-copy "
+    data-clipboard-target="#code-42"
+    style="position: absolute; top: 7.5px; right: 6px; cursor: pointer; outline: none; opacity: 0.8;" title="Copy">
+    <span>
+      <span style="font-size: 15px; opacity: 0.8;" class="mdi mdi-content-copy"></span>
+    </span>
+  </button>
+</div>
 <h2 id="implementing-routes" tabindex="-1"><a class="header-anchor" href="#implementing-routes">#&nbsp;</a> Implementing routes</h2>
 <p>All API routes exist under <code>forge/routes/api</code> in the repository, grouped into
 files based on the entity/functionality the api is related to.</p>
@@ -123,10 +162,18 @@ a valid session for a logged in user, or an access token.</p>
 <h3 id="opening-a-route-to-anonymous-users" tabindex="-1"><a class="header-anchor" href="#opening-a-route-to-anonymous-users">#&nbsp;</a> Opening a route to anonymous users</h3>
 <p>In rare cases, a route needs to be accessible to anonymous users. To by-pass
 the built-in preHandler, you can set <code>allowAnonymous</code> on the routes <code>config</code> object:</p>
-<pre><code>app.get('/', { config: { allowAnonymous: true } }, async (request, reply) =&gt; {
-     ...
-})
-</code></pre>
+
+<div style="position: relative">
+  <pre class="language-js"><code id="code-61"class="language-js">app<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">'/'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> <span class="token literal-property property">config</span><span class="token operator">:</span> <span class="token punctuation">{</span> <span class="token literal-property property">allowAnonymous</span><span class="token operator">:</span> <span class="token boolean">true</span> <span class="token punctuation">}</span> <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token keyword">async</span> <span class="token punctuation">(</span><span class="token parameter">request<span class="token punctuation">,</span> reply</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span><br>     <span class="token operator">...</span><br><span class="token punctuation">}</span><span class="token punctuation">)</span></code></pre>
+
+  <button class="code-copy "
+    data-clipboard-target="#code-61"
+    style="position: absolute; top: 7.5px; right: 6px; cursor: pointer; outline: none; opacity: 0.8;" title="Copy">
+    <span>
+      <span style="font-size: 15px; opacity: 0.8;" class="mdi mdi-content-copy"></span>
+    </span>
+  </button>
+</div>
 <h3 id="team-routes" tabindex="-1"><a class="header-anchor" href="#team-routes">#&nbsp;</a> Team routes</h3>
 <p>Routes under <code>forge/routes/api/team.js</code> that relate to a specific team,
 must use <code>:teamId</code> as the placeholder in the route. A request preHandler will
@@ -153,20 +200,32 @@ generate a preHandler function that will ensure any requesting user has that
 permission.</p>
 <p>For example, to add a user to a team, the requesting user needs to have
 <code>&quot;team:user:add&quot;</code>:</p>
-<pre><code>app.post('/', { preHandler: app.needsPermission(&quot;team:user:add&quot;) }, async (request, reply) =&gt; {
-    // This is defined under forge/routes/api/teamMembers.js - and is mounted
-    // under the path `/api/v1/teams/:teamId/members/`
-    // Due to the team route preHandler, this means `request.teamMembership`
-    // will be defined and will be used by the `needsPermission` handler
-});
-</code></pre>
+
+<div style="position: relative">
+  <pre class="language-js"><code id="code-119"class="language-js">app<span class="token punctuation">.</span><span class="token function">post</span><span class="token punctuation">(</span><span class="token string">'/'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> <span class="token literal-property property">preHandler</span><span class="token operator">:</span> app<span class="token punctuation">.</span><span class="token function">needsPermission</span><span class="token punctuation">(</span><span class="token string">"team:user:add"</span><span class="token punctuation">)</span> <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token keyword">async</span> <span class="token punctuation">(</span><span class="token parameter">request<span class="token punctuation">,</span> reply</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span><br>    <span class="token comment">// This is defined under forge/routes/api/teamMembers.js - and is mounted</span><br>    <span class="token comment">// under the path `/api/v1/teams/:teamId/members/`</span><br>    <span class="token comment">// Due to the team route preHandler, this means `request.teamMembership`</span><br>    <span class="token comment">// will be defined and will be used by the `needsPermission` handler</span><br><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+
+  <button class="code-copy "
+    data-clipboard-target="#code-119"
+    style="position: absolute; top: 7.5px; right: 6px; cursor: pointer; outline: none; opacity: 0.8;" title="Copy">
+    <span>
+      <span style="font-size: 15px; opacity: 0.8;" class="mdi mdi-content-copy"></span>
+    </span>
+  </button>
+</div>
 <h2 id="error-formats" tabindex="-1"><a class="header-anchor" href="#error-formats">#&nbsp;</a> Error formats</h2>
 <p>If a route needs to return an error it should respond with a payload in the format:</p>
-<pre><code>{
-    code: 'error_code',
-    error: 'Human-readable message'
-}
-</code></pre>
+
+<div style="position: relative">
+  <pre class="language-js"><code id="code-126"class="language-js"><span class="token punctuation">{</span><br>    <span class="token literal-property property">code</span><span class="token operator">:</span> <span class="token string">'error_code'</span><span class="token punctuation">,</span><br>    <span class="token literal-property property">error</span><span class="token operator">:</span> <span class="token string">'Human-readable message'</span><br><span class="token punctuation">}</span></code></pre>
+
+  <button class="code-copy "
+    data-clipboard-target="#code-126"
+    style="position: absolute; top: 7.5px; right: 6px; cursor: pointer; outline: none; opacity: 0.8;" title="Copy">
+    <span>
+      <span style="font-size: 15px; opacity: 0.8;" class="mdi mdi-content-copy"></span>
+    </span>
+  </button>
+</div>
 <p>The <code>code</code> property should be a well-defined string that can be used to programmatically
 identify the error without relying on the human-readable message.</p>
 <p>There are a set of predefined codes that should be used where appropriate:</p>
@@ -195,14 +254,18 @@ the <code>/api/v1/projects/:id/logs</code> for example.</li>
 <li>Each end-point should have a sensible default for the <code>limit</code> parameter</li>
 </ul>
 <p>The response object for paginated end-points should have the format:</p>
-<pre><code>{
-    &quot;meta&quot;: {
-        &quot;next_cursor&quot;: &quot;16416724188790000&quot;,
-    },
-    &quot;&lt;object-type&gt;&quot;: [ ]
-    &quot;count&quot;: 123
-}
-</code></pre>
+
+<div style="position: relative">
+  <pre class="language-js"><code id="code-195"class="language-js"><span class="token punctuation">{</span><br>    <span class="token string-property property">"meta"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>        <span class="token string-property property">"next_cursor"</span><span class="token operator">:</span> <span class="token string">"16416724188790000"</span><span class="token punctuation">,</span><br>    <span class="token punctuation">}</span><span class="token punctuation">,</span><br>    <span class="token string-property property">"&lt;object-type>"</span><span class="token operator">:</span> <span class="token punctuation">[</span> <span class="token punctuation">]</span><span class="token punctuation">,</span><br>    <span class="token string-property property">"count"</span><span class="token operator">:</span> <span class="token number">123</span><br><span class="token punctuation">}</span></code></pre>
+
+  <button class="code-copy "
+    data-clipboard-target="#code-195"
+    style="position: absolute; top: 7.5px; right: 6px; cursor: pointer; outline: none; opacity: 0.8;" title="Copy">
+    <span>
+      <span style="font-size: 15px; opacity: 0.8;" class="mdi mdi-content-copy"></span>
+    </span>
+  </button>
+</div>
 <p>The <code>meta</code> property contains information to help the client navigate the collection.</p>
 <ul>
 <li><code>next_cursor</code> - if set, provides the cursor to use to get the next page of results</li>
@@ -233,50 +296,33 @@ may need a more comprehensive approach in the future.</p>
 <p>Within a route handler for a paginated end-point, the following helper function
 can be used to get the pagination options from the request, as well as specifying
 default options:</p>
-<pre><code>const paginationOptions = app.getPaginationOptions(request, {limit: 30})
 
-// paginationOptions.limit = how many results to return
-// paginationOptions.cursor = starting cursor
-// paginationOptions.query = search string to use
+<div style="position: relative">
+  <pre class="language-js"><code id="code-241"class="language-js"><span class="token keyword">const</span> paginationOptions <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">getPaginationOptions</span><span class="token punctuation">(</span>request<span class="token punctuation">,</span> <span class="token punctuation">{</span><span class="token literal-property property">limit</span><span class="token operator">:</span> <span class="token number">1000</span><span class="token punctuation">}</span><span class="token punctuation">)</span><br><br><span class="token comment">// paginationOptions.limit = how many results to return</span><br><span class="token comment">// paginationOptions.cursor = starting cursor</span><br><span class="token comment">// paginationOptions.query = search string to use</span><br></code></pre>
 
-</code></pre>
+  <button class="code-copy "
+    data-clipboard-target="#code-241"
+    style="position: absolute; top: 7.5px; right: 6px; cursor: pointer; outline: none; opacity: 0.8;" title="Copy">
+    <span>
+      <span style="font-size: 15px; opacity: 0.8;" class="mdi mdi-content-copy"></span>
+    </span>
+  </button>
+</div>
 <p>Typically these properties will be passed to the appropriate database model's <code>getAll</code>
 function.</p>
 <p>For example, the imaginary <code>Thing</code> model:</p>
-<pre><code>const { buildPaginationSearchClause } = require('../utils')
 
-...
+<div style="position: relative">
+  <pre class="language-js"><code id="code-248"class="language-js"><span class="token keyword">const</span> <span class="token punctuation">{</span> buildPaginationSearchClause <span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'../utils'</span><span class="token punctuation">)</span><br><br><span class="token operator">...</span><br><br><span class="token function-variable function">getAll</span><span class="token operator">:</span> <span class="token keyword">async</span> <span class="token punctuation">(</span><span class="token parameter">pagination <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span> where <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span></span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span><br>    <span class="token comment">// Ensure a sensible default limit for this particular type of thing</span><br>    <span class="token keyword">const</span> limit <span class="token operator">=</span> <span class="token function">parseInt</span><span class="token punctuation">(</span>pagination<span class="token punctuation">.</span>limit<span class="token punctuation">)</span> <span class="token operator">||</span> <span class="token number">1000</span><br><br>    <span class="token comment">// Decode the cursor from hashid to database id</span><br>    <span class="token keyword">if</span> <span class="token punctuation">(</span>pagination<span class="token punctuation">.</span>cursor<span class="token punctuation">)</span> <span class="token punctuation">{</span><br>        pagination<span class="token punctuation">.</span>cursor <span class="token operator">=</span> <span class="token constant">M</span><span class="token punctuation">.</span>Thing<span class="token punctuation">.</span><span class="token function">decodeHashid</span><span class="token punctuation">(</span>pagination<span class="token punctuation">.</span>cursor<span class="token punctuation">)</span><br>    <span class="token punctuation">}</span><br><br>    <span class="token comment">// Build the full where query using the buildPaginationSearchClause utility.</span><br>    <span class="token comment">// We pass in the list of columns that should be searched against</span><br>    where <span class="token operator">=</span> <span class="token function">buildPaginationSearchClause</span><span class="token punctuation">(</span>pagination<span class="token punctuation">,</span> where<span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token string">'Thing.name'</span><span class="token punctuation">]</span><span class="token punctuation">)</span><br><br>    <span class="token comment">// Run the query</span><br>    <span class="token keyword">const</span> <span class="token punctuation">{</span> count<span class="token punctuation">,</span> rows <span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token keyword">await</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">findAndCountAll</span><span class="token punctuation">(</span><span class="token punctuation">{</span><br>        where<span class="token punctuation">,</span><br>        <span class="token literal-property property">order</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token string">'id'</span><span class="token punctuation">,</span> <span class="token string">'ASC'</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">,</span><br>        limit<br>    <span class="token punctuation">}</span><span class="token punctuation">)</span><br><br>    <span class="token comment">// Return the results with the additional metadata</span><br>    <span class="token keyword">return</span> <span class="token punctuation">{</span><br>        <span class="token literal-property property">meta</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>            <span class="token literal-property property">next_cursor</span><span class="token operator">:</span> rows<span class="token punctuation">.</span>length <span class="token operator">===</span> limit <span class="token operator">?</span> rows<span class="token punctuation">[</span>rows<span class="token punctuation">.</span>length <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">.</span>hashid <span class="token operator">:</span> <span class="token keyword">undefined</span><br>        <span class="token punctuation">}</span><span class="token punctuation">,</span><br>        count<span class="token punctuation">,</span><br>        <span class="token literal-property property">things</span><span class="token operator">:</span> rows<br>    <span class="token punctuation">}</span><br><span class="token punctuation">}</span></code></pre>
 
-getAll: async (pagination = {}, where = {}) =&gt; {
-    // Ensure a sensible default limit for this particular type of thing
-    const limit = parseInt(pagination.limit) || 30
-
-    // Decode the cursor from hashid to database id
-    if (pagination.cursor) {
-        pagination.cursor = M.Thing.decodeHashid(pagination.cursor)
-    }
-
-    // Build the full where query using the buildPaginationSearchClause utility.
-    // We pass in the list of columns that should be searched against
-    where = buildPaginationSearchClause(pagination, where, ['Thing.name'])
-
-    // Run the query
-    const { count, rows } = await this.findAndCountAll({
-        where,
-        order: [['id', 'ASC']],
-        limit
-    })
-
-    // Return the results with the additional metadata
-    return {
-        meta: {
-            next_cursor: rows.length === limit ? rows[rows.length - 1].hashid : undefined
-        },
-        count,
-        things: rows
-    }
-}
-</code></pre>
+  <button class="code-copy "
+    data-clipboard-target="#code-248"
+    style="position: absolute; top: 7.5px; right: 6px; cursor: pointer; outline: none; opacity: 0.8;" title="Copy">
+    <span>
+      <span style="font-size: 15px; opacity: 0.8;" class="mdi mdi-content-copy"></span>
+    </span>
+  </button>
+</div>
 
             </div>
         </div>
@@ -284,7 +330,7 @@ getAll: async (pagination = {}, where = {}) =&gt; {
             <h3 class="font-medium border-b pb-1 mb-4">On this page</h3>
             <ul id="toc" class="text-sm border-b mb-4"></ul>
             <div class="text-sm pb-1 text-right mb-4"><a href="https://github.com/flowforge/flowforge/edit/main/docs/contribute/api-design.md">Edit this page</a></div>
-            <div class="text-xs pb-1 text-right mb-4 italic">Updated: 2022-12-15 12:11:25 +0000</div>
+            <div class="text-xs pb-1 text-right mb-4 italic">Updated: 2022-12-22 19:14:44 +0700</div>
         </div>
     </div>
 </div>

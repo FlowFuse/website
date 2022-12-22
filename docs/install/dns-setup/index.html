@@ -78,7 +78,7 @@
     <div class="w-full mx-auto ff-bg-light">
         <div class="font-medium border-b pb-1">
             
-            v1.1.2
+            v1.2.0
             
             /<a class="mx-2" href="/docs">docs</a>/<a class="mx-2" href="/docs/install">install</a>/<a class="mx-2" href="/docs/install/dns-setup">dns-setup</a>
         </div>
@@ -111,72 +111,157 @@
 <p>The following headings cover how to do this on a number of different operating systems</p>
 <h4 id="ubuntu" tabindex="-1"><a class="header-anchor" href="#ubuntu">#&nbsp;</a> Ubuntu</h4>
 <p>For Docker on Linux you can use <code>172.17.0.1</code> as the address for the domain which is the IP address assigned to the <code>docker0</code> interface.</p>
-<pre><code>sudo apt-get install dnsmasq
-sudo echo &quot;bind-interfaces&quot; &gt;&gt; /etc/dnsmasq.conf
-sudo echo &quot;no-resolv&quot; &gt;&gt; /etc/dnsmasq.conf
-sudo echo &quot;conf-dir=/etc/dnsmasq.d&quot; &gt;&gt; /etc/dnsmasq.conf
-sudo echo &quot;address=/example.com/172.17.0.1&quot; &gt; /etc/dnsmasq.d/02-flowforge.conf
-sudo service dnsmasq restart
-sudo echo &quot;DNS=127.0.0.1&quot; &gt;&gt; /etc/systemd/resolved.conf
-sudo echo &quot;DOMAINS=~example.com&quot; &gt;&gt; /etc/systemd/resolved.conf
-sudo service systemd-resolved restart
-</code></pre>
+
+<div style="position: relative">
+  <pre class="language-bash"><code id="code-75"class="language-bash"><span class="token function">sudo</span> <span class="token function">apt-get</span> <span class="token function">install</span> dnsmasq<br><span class="token function">sudo</span> <span class="token builtin class-name">echo</span> <span class="token string">"bind-interfaces"</span> <span class="token operator">>></span> /etc/dnsmasq.conf<br><span class="token function">sudo</span> <span class="token builtin class-name">echo</span> <span class="token string">"no-resolv"</span> <span class="token operator">>></span> /etc/dnsmasq.conf<br><span class="token function">sudo</span> <span class="token builtin class-name">echo</span> <span class="token string">"conf-dir=/etc/dnsmasq.d"</span> <span class="token operator">>></span> /etc/dnsmasq.conf<br><span class="token function">sudo</span> <span class="token builtin class-name">echo</span> <span class="token string">"address=/example.com/172.17.0.1"</span> <span class="token operator">></span> /etc/dnsmasq.d/02-flowforge.conf<br><span class="token function">sudo</span> <span class="token function">service</span> dnsmasq restart<br><span class="token function">sudo</span> <span class="token builtin class-name">echo</span> <span class="token string">"DNS=127.0.0.1"</span> <span class="token operator">>></span> /etc/systemd/resolved.conf<br><span class="token function">sudo</span> <span class="token builtin class-name">echo</span> <span class="token string">"DOMAINS=~example.com"</span> <span class="token operator">>></span> /etc/systemd/resolved.conf<br><span class="token function">sudo</span> <span class="token function">service</span> systemd-resolved restart</code></pre>
+
+  <button class="code-copy "
+    data-clipboard-target="#code-75"
+    style="position: absolute; top: 7.5px; right: 6px; cursor: pointer; outline: none; opacity: 0.8;" title="Copy">
+    <span>
+      <span style="font-size: 15px; opacity: 0.8;" class="mdi mdi-content-copy"></span>
+    </span>
+  </button>
+</div>
 <h4 id="fedora" tabindex="-1"><a class="header-anchor" href="#fedora">#&nbsp;</a> Fedora</h4>
 <p>For Docker on Linux you can use <code>172.17.0.1</code> as the address for the domain which is the IP address assigned to the <code>docker0</code> interface.</p>
-<pre><code>sudo dnf install dnsmasq
-sudo echo &quot;bind-interfaces&quot; &gt;&gt; /etc/dnsmasq.conf
-sudo echo &quot;no-resolv&quot; &gt;&gt; /etc/dnsmasq.conf
-sudo echo &quot;conf-dir=/etc/dnsmasq.d&quot; &gt;&gt; /etc/dnsmasq.conf
-sudo echo &quot;address=/example.com/172.17.0.1&quot; &gt; /etc/dnsmasq.d/02-flowforge.conf
-sudo systemctl enable dnsmasq.service
-sudo service dnsmasq restart
-sudo echo &quot;DNS=127.0.0.1&quot; &gt;&gt; /etc/systemd/resolved.conf
-sudo echo &quot;DOMAINS=~example.com&quot; &gt;&gt; /etc/systemd/resolved.conf
-sudo service systemd-resolved restart
-</code></pre>
+
+<div style="position: relative">
+  <pre class="language-bash"><code id="code-82"class="language-bash"><span class="token function">sudo</span> dnf <span class="token function">install</span> dnsmasq<br><span class="token function">sudo</span> <span class="token builtin class-name">echo</span> <span class="token string">"bind-interfaces"</span> <span class="token operator">>></span> /etc/dnsmasq.conf<br><span class="token function">sudo</span> <span class="token builtin class-name">echo</span> <span class="token string">"no-resolv"</span> <span class="token operator">>></span> /etc/dnsmasq.conf<br><span class="token function">sudo</span> <span class="token builtin class-name">echo</span> <span class="token string">"conf-dir=/etc/dnsmasq.d"</span> <span class="token operator">>></span> /etc/dnsmasq.conf<br><span class="token function">sudo</span> <span class="token builtin class-name">echo</span> <span class="token string">"address=/example.com/172.17.0.1"</span> <span class="token operator">></span> /etc/dnsmasq.d/02-flowforge.conf<br><span class="token function">sudo</span> systemctl <span class="token builtin class-name">enable</span> dnsmasq.service<br><span class="token function">sudo</span> <span class="token function">service</span> dnsmasq restart<br><span class="token function">sudo</span> <span class="token builtin class-name">echo</span> <span class="token string">"DNS=127.0.0.1"</span> <span class="token operator">>></span> /etc/systemd/resolved.conf<br><span class="token function">sudo</span> <span class="token builtin class-name">echo</span> <span class="token string">"DOMAINS=~example.com"</span> <span class="token operator">>></span> /etc/systemd/resolved.conf<br><span class="token function">sudo</span> <span class="token function">service</span> systemd-resolved restart</code></pre>
+
+  <button class="code-copy "
+    data-clipboard-target="#code-82"
+    style="position: absolute; top: 7.5px; right: 6px; cursor: pointer; outline: none; opacity: 0.8;" title="Copy">
+    <span>
+      <span style="font-size: 15px; opacity: 0.8;" class="mdi mdi-content-copy"></span>
+    </span>
+  </button>
+</div>
 <h4 id="windows" tabindex="-1"><a class="header-anchor" href="#windows">#&nbsp;</a> Windows</h4>
 <p>Unfortunately dnsmasq will not run on Windows and I have not found something similar yet.</p>
 <h4 id="macos" tabindex="-1"><a class="header-anchor" href="#macos">#&nbsp;</a> MacOS</h4>
 <p>On MacOS you can alias a private IP address to the loop back interface e.g. <code>10.128.0.1</code> with</p>
-<pre><code>sudo ifconfig lo0 alias 10.128.0.1`
-</code></pre>
+
+<div style="position: relative">
+  <pre class="language-bash"><code id="code-95"class="language-bash"><span class="token function">sudo</span> <span class="token function">ifconfig</span> lo0 <span class="token builtin class-name">alias</span> <span class="token number">10.128</span>.0.1</code></pre>
+
+  <button class="code-copy "
+    data-clipboard-target="#code-95"
+    style="position: absolute; top: 7.5px; right: 6px; cursor: pointer; outline: none; opacity: 0.8;" title="Copy">
+    <span>
+      <span style="font-size: 15px; opacity: 0.8;" class="mdi mdi-content-copy"></span>
+    </span>
+  </button>
+</div>
 <p>You will need install dnsmasq using <a href="https://docs.brew.sh/Installation">homebrew</a></p>
-<pre><code>brew install dnsmasq
-</code></pre>
+
+<div style="position: relative">
+  <pre class="language-bash"><code id="code-99"class="language-bash">brew <span class="token function">install</span> dnsmasq</code></pre>
+
+  <button class="code-copy "
+    data-clipboard-target="#code-99"
+    style="position: absolute; top: 7.5px; right: 6px; cursor: pointer; outline: none; opacity: 0.8;" title="Copy">
+    <span>
+      <span style="font-size: 15px; opacity: 0.8;" class="mdi mdi-content-copy"></span>
+    </span>
+  </button>
+</div>
 <p>It appears that the install location differs based on the Apple Hardware. For Intel hardware Macs it's in <code>/usr/local</code> and for M1 hardware it's <code>/opt/homebrew</code>. Please check where it installed things when the previous command has completed.</p>
 <p>Then edit a configuration file</p>
 <p>M1 mac</p>
-<pre><code>echo &quot;conf-dir=/opt/homebrew/etc/dnsmasq.d&quot; &gt;&gt; /opt/homebrew/etc/dnsmasq.conf
-echo &quot;address=/example.com/10.128.0.1&quot; &gt; /opt/homebrew/etc/dnsmasq.d/ff.conf
-</code></pre>
+
+<div style="position: relative">
+  <pre class="language-bash"><code id="code-109"class="language-bash"><span class="token builtin class-name">echo</span> <span class="token string">"conf-dir=/opt/homebrew/etc/dnsmasq.d"</span> <span class="token operator">>></span> /opt/homebrew/etc/dnsmasq.conf<br><span class="token builtin class-name">echo</span> <span class="token string">"address=/example.com/10.128.0.1"</span> <span class="token operator">></span> /opt/homebrew/etc/dnsmasq.d/ff.conf</code></pre>
+
+  <button class="code-copy "
+    data-clipboard-target="#code-109"
+    style="position: absolute; top: 7.5px; right: 6px; cursor: pointer; outline: none; opacity: 0.8;" title="Copy">
+    <span>
+      <span style="font-size: 15px; opacity: 0.8;" class="mdi mdi-content-copy"></span>
+    </span>
+  </button>
+</div>
 <p>Intel mac</p>
-<pre><code>echo &quot;conf-dir=/usr/local/etc/dnsmasq.d&quot; &gt;&gt; /usr/local/etc/dnsmasq.conf
-echo &quot;address=/example.com/10.128.0.1&quot; &gt; /usr/local/etc/dnsmasq.d/ff.conf
-</code></pre>
+
+<div style="position: relative">
+  <pre class="language-bash"><code id="code-113"class="language-bash"><span class="token builtin class-name">echo</span> <span class="token string">"conf-dir=/usr/local/etc/dnsmasq.d"</span> <span class="token operator">>></span> /usr/local/etc/dnsmasq.conf<br><span class="token builtin class-name">echo</span> <span class="token string">"address=/example.com/10.128.0.1"</span> <span class="token operator">></span> /usr/local/etc/dnsmasq.d/ff.conf</code></pre>
+
+  <button class="code-copy "
+    data-clipboard-target="#code-113"
+    style="position: absolute; top: 7.5px; right: 6px; cursor: pointer; outline: none; opacity: 0.8;" title="Copy">
+    <span>
+      <span style="font-size: 15px; opacity: 0.8;" class="mdi mdi-content-copy"></span>
+    </span>
+  </button>
+</div>
 <p>Set dnsmasq to run as a service</p>
-<pre><code>brew services start dnsmasq
-dscacheutil -flushcache
-</code></pre>
+
+<div style="position: relative">
+  <pre class="language-bash"><code id="code-117"class="language-bash"><span class="token function">sudo</span> brew services start dnsmasq<br><span class="token function">sudo</span> dscacheutil <span class="token parameter variable">-flushcache</span></code></pre>
+
+  <button class="code-copy "
+    data-clipboard-target="#code-117"
+    style="position: absolute; top: 7.5px; right: 6px; cursor: pointer; outline: none; opacity: 0.8;" title="Copy">
+    <span>
+      <span style="font-size: 15px; opacity: 0.8;" class="mdi mdi-content-copy"></span>
+    </span>
+  </button>
+</div>
 <p>Tell MacOS to use dnsmasq for our test domain</p>
-<pre><code>sudo mkdir -p /etc/resolver
-sudo tee /etc/resolver/example.com &gt; /dev/null &lt;&lt;EOF
-nameserver 127.0.0.1
-domain example.com
-search_order 1
-EOF
-</code></pre>
+
+<div style="position: relative">
+  <pre class="language-bash"><code id="code-121"class="language-bash"><span class="token function">sudo</span> <span class="token function">mkdir</span> <span class="token parameter variable">-p</span> /etc/resolver<br><span class="token function">sudo</span> <span class="token function">tee</span> /etc/resolver/example.com <span class="token operator">></span> /dev/null <span class="token operator">&lt;&lt;</span><span class="token string">EOF<br>nameserver 127.0.0.1<br>domain example.com<br>search_order 1<br>EOF</span></code></pre>
+
+  <button class="code-copy "
+    data-clipboard-target="#code-121"
+    style="position: absolute; top: 7.5px; right: 6px; cursor: pointer; outline: none; opacity: 0.8;" title="Copy">
+    <span>
+      <span style="font-size: 15px; opacity: 0.8;" class="mdi mdi-content-copy"></span>
+    </span>
+  </button>
+</div>
 <p>And finally kick the MacOS resolver so it sees the updates</p>
-<pre><code>sudo killall -HUP mDNSResponder
-</code></pre>
+
+<div style="position: relative">
+  <pre class="language-bash"><code id="code-125"class="language-bash"><span class="token function">sudo</span> <span class="token function">killall</span> <span class="token parameter variable">-HUP</span> mDNSResponder</code></pre>
+
+  <button class="code-copy "
+    data-clipboard-target="#code-125"
+    style="position: absolute; top: 7.5px; right: 6px; cursor: pointer; outline: none; opacity: 0.8;" title="Copy">
+    <span>
+      <span style="font-size: 15px; opacity: 0.8;" class="mdi mdi-content-copy"></span>
+    </span>
+  </button>
+</div>
 <h3 id="pi-hole" tabindex="-1"><a class="header-anchor" href="#pi-hole">#&nbsp;</a> Pi Hole</h3>
 <p>Pi Hole is a package that bundles dnsmasq as an image to run on a Raspberry Pi (or in Docker container e.g. on your NAS). Its main use is to block advertisements embedded in web pages. But since in its normal configuration it is already handling all the local DNS traffic, making us work with FlowForge is possible and means you do not need to change any settings on your development/test machine.</p>
 <p>Create the following file in <code>/etc/dnsmasq.d</code> called <code>02-flowforge.conf</code></p>
-<pre><code>address=/example.com/192.168.0.22
-</code></pre>
+
+<div style="position: relative">
+  <pre class="language-bash"><code id="code-135"class="language-bash"><span class="token assign-left variable">address</span><span class="token operator">=</span>/example.com/192.168.0.22</code></pre>
+
+  <button class="code-copy "
+    data-clipboard-target="#code-135"
+    style="position: absolute; top: 7.5px; right: 6px; cursor: pointer; outline: none; opacity: 0.8;" title="Copy">
+    <span>
+      <span style="font-size: 15px; opacity: 0.8;" class="mdi mdi-content-copy"></span>
+    </span>
+  </button>
+</div>
 <p>Where 192.168.0.22 is the ipv4 address of the Docker host machine or a Kubernetes node. And <code>example.com</code> is the domain to use.</p>
 <p>After making the change you will probably need to restart things with:</p>
-<pre><code>sudo pihole restartdns
-</code></pre>
+
+<div style="position: relative">
+  <pre class="language-bash"><code id="code-142"class="language-bash"><span class="token function">sudo</span> pihole restartdns</code></pre>
+
+  <button class="code-copy "
+    data-clipboard-target="#code-142"
+    style="position: absolute; top: 7.5px; right: 6px; cursor: pointer; outline: none; opacity: 0.8;" title="Copy">
+    <span>
+      <span style="font-size: 15px; opacity: 0.8;" class="mdi mdi-content-copy"></span>
+    </span>
+  </button>
+</div>
 <p>If running Pi Hole in Docker then you will need to create the file on the host and mount it to the <code>/etc/dnsmasq.d/02-flowforge.conf</code> location.</p>
 <h3 id="no-local-dns-server" tabindex="-1"><a class="header-anchor" href="#no-local-dns-server">#&nbsp;</a> No Local DNS server</h3>
 <p>If you really can't run dnsmasq then there is a possible alternative.</p>
@@ -190,7 +275,7 @@ EOF
             <h3 class="font-medium border-b pb-1 mb-4">On this page</h3>
             <ul id="toc" class="text-sm border-b mb-4"></ul>
             <div class="text-sm pb-1 text-right mb-4"><a href="https://github.com/flowforge/flowforge/edit/main/docs/install/dns-setup.md">Edit this page</a></div>
-            <div class="text-xs pb-1 text-right mb-4 italic">Updated: 2022-12-15 12:11:25 +0000</div>
+            <div class="text-xs pb-1 text-right mb-4 italic">Updated: 2022-12-22 19:14:44 +0700</div>
         </div>
     </div>
 </div>

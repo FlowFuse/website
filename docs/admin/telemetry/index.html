@@ -78,7 +78,7 @@
     <div class="w-full mx-auto ff-bg-light">
         <div class="font-medium border-b pb-1">
             
-            v1.1.2
+            v1.2.0
             
             /<a class="mx-2" href="/docs">docs</a>/<a class="mx-2" href="/docs/admin">admin</a>/<a class="mx-2" href="/docs/admin/telemetry">telemetry</a>
         </div>
@@ -103,27 +103,32 @@ opt-out of sharing information as part of the initial setup, or through the Admi
 Settings section of the platform UI.</p>
 <p>It is also possible to disable in the <code>flowforge.yml</code> configuration file. This
 overrides whatever option is set in the Admin Settings UI.</p>
-<pre><code>telemetry:
-  enabled: false
-</code></pre>
+
+<div style="position: relative">
+  <pre class="language-yaml"><code id="code-36"class="language-yaml"><span class="token key atrule">telemetry</span><span class="token punctuation">:</span><br>  <span class="token key atrule">enabled</span><span class="token punctuation">:</span> <span class="token boolean important">false</span></code></pre>
+
+  <button class="code-copy "
+    data-clipboard-target="#code-36"
+    style="position: absolute; top: 7.5px; right: 6px; cursor: pointer; outline: none; opacity: 0.8;" title="Copy">
+    <span>
+      <span style="font-size: 15px; opacity: 0.8;" class="mdi mdi-content-copy"></span>
+    </span>
+  </button>
+</div>
 <h3 id="collected-data" tabindex="-1"><a class="header-anchor" href="#collected-data">#&nbsp;</a> Collected Data</h3>
 <p>The following pieces of information are included in the telemetry sent back to us:</p>
-<pre><code>{
-  instanceId: '5db51f99-c6fb-4340-9c19-78adce58cc1b',
-  os: { type: 'Darwin', release: '20.5.0', arch: 'x64' },
-  env: { nodejs: 'v16.13.1', flowforge: '0.1.1' },
-  platform: {
-    counts: {
-        users: 0,
-        teams: 0,
-        projects: 0
-    },
-    config: {
-        driver: 'localfs'
-    }
-  }
-}
-</code></pre>
+
+<div style="position: relative">
+  <pre class="language-js"><code id="code-43"class="language-js"><span class="token punctuation">{</span><br>  <span class="token literal-property property">instanceId</span><span class="token operator">:</span> <span class="token string">'5db51f99-c6fb-4340-9c19-78adce58cc1b'</span><span class="token punctuation">,</span><br>  <span class="token literal-property property">os</span><span class="token operator">:</span> <span class="token punctuation">{</span> <span class="token literal-property property">type</span><span class="token operator">:</span> <span class="token string">'Darwin'</span><span class="token punctuation">,</span> <span class="token literal-property property">release</span><span class="token operator">:</span> <span class="token string">'20.5.0'</span><span class="token punctuation">,</span> <span class="token literal-property property">arch</span><span class="token operator">:</span> <span class="token string">'x64'</span> <span class="token punctuation">}</span><span class="token punctuation">,</span><br>  <span class="token literal-property property">env</span><span class="token operator">:</span> <span class="token punctuation">{</span> <span class="token literal-property property">nodejs</span><span class="token operator">:</span> <span class="token string">'v16.13.1'</span><span class="token punctuation">,</span> <span class="token literal-property property">flowforge</span><span class="token operator">:</span> <span class="token string">'0.1.1'</span> <span class="token punctuation">}</span><span class="token punctuation">,</span><br>  <span class="token literal-property property">platform</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token literal-property property">counts</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>        <span class="token literal-property property">users</span><span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span><br>        <span class="token literal-property property">teams</span><span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span><br>        <span class="token literal-property property">projects</span><span class="token operator">:</span> <span class="token number">0</span><br>    <span class="token punctuation">}</span><span class="token punctuation">,</span><br>    <span class="token literal-property property">config</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>        <span class="token literal-property property">driver</span><span class="token operator">:</span> <span class="token string">'localfs'</span><br>    <span class="token punctuation">}</span><br>  <span class="token punctuation">}</span><br><span class="token punctuation">}</span></code></pre>
+
+  <button class="code-copy "
+    data-clipboard-target="#code-43"
+    style="position: absolute; top: 7.5px; right: 6px; cursor: pointer; outline: none; opacity: 0.8;" title="Copy">
+    <span>
+      <span style="font-size: 15px; opacity: 0.8;" class="mdi mdi-content-copy"></span>
+    </span>
+  </button>
+</div>
 <table>
 <thead>
 <tr>
@@ -168,20 +173,31 @@ a <strong>hash</strong> of the sending IP address - we do not store the plain va
 <p>It currently supports using <a href="https://plausible.io/">Plausible Analytics</a> to gather the information.</p>
 <h3 id="configuring-telemetry-1" tabindex="-1"><a class="header-anchor" href="#configuring-telemetry-1">#&nbsp;</a> Configuring Telemetry</h3>
 <p>Further details about how users are navigating around your instance of FlowForge can be enabled via <a href="https://plausible.io/">Plausible</a>. This can be enabled with:</p>
-<pre><code>telemetry:
-  enabled: true
-  frontend:
-    plausible:
-      domain: &lt;data-domain&gt;
-</code></pre>
+
+<div style="position: relative">
+  <pre class="language-yaml"><code id="code-137"class="language-yaml"><span class="token key atrule">telemetry</span><span class="token punctuation">:</span><br>  <span class="token key atrule">enabled</span><span class="token punctuation">:</span> <span class="token boolean important">true</span><br>  <span class="token key atrule">frontend</span><span class="token punctuation">:</span><br>    <span class="token key atrule">plausible</span><span class="token punctuation">:</span><br>      <span class="token key atrule">domain</span><span class="token punctuation">:</span> &lt;data<span class="token punctuation">-</span>domain<span class="token punctuation">></span></code></pre>
+
+  <button class="code-copy "
+    data-clipboard-target="#code-137"
+    style="position: absolute; top: 7.5px; right: 6px; cursor: pointer; outline: none; opacity: 0.8;" title="Copy">
+    <span>
+      <span style="font-size: 15px; opacity: 0.8;" class="mdi mdi-content-copy"></span>
+    </span>
+  </button>
+</div>
 <p>Optionally, you can use a Plausible <code>extension</code> too:</p>
-<pre><code>telemetry:
-  enabled: true
-  frontend:
-    plausible:
-      domain: &lt;data-domain&gt;
-      extension: local
-</code></pre>
+
+<div style="position: relative">
+  <pre class="language-yaml"><code id="code-141"class="language-yaml"><span class="token key atrule">telemetry</span><span class="token punctuation">:</span><br>  <span class="token key atrule">enabled</span><span class="token punctuation">:</span> <span class="token boolean important">true</span><br>  <span class="token key atrule">frontend</span><span class="token punctuation">:</span><br>    <span class="token key atrule">plausible</span><span class="token punctuation">:</span><br>      <span class="token key atrule">domain</span><span class="token punctuation">:</span> &lt;data<span class="token punctuation">-</span>domain<span class="token punctuation">></span><br>      <span class="token key atrule">extension</span><span class="token punctuation">:</span> local</code></pre>
+
+  <button class="code-copy "
+    data-clipboard-target="#code-141"
+    style="position: absolute; top: 7.5px; right: 6px; cursor: pointer; outline: none; opacity: 0.8;" title="Copy">
+    <span>
+      <span style="font-size: 15px; opacity: 0.8;" class="mdi mdi-content-copy"></span>
+    </span>
+  </button>
+</div>
 <h3 id="collected-data-1" tabindex="-1"><a class="header-anchor" href="#collected-data-1">#&nbsp;</a> Collected Data</h3>
 <p>Details on the metrics gathered through Plausible can be found in the <a href="https://plausible.io/docs/metrics-definitions">Plausible Documentation</a></p>
 <h3 id="schedule-1" tabindex="-1"><a class="header-anchor" href="#schedule-1">#&nbsp;</a> Schedule</h3>
@@ -193,7 +209,7 @@ a <strong>hash</strong> of the sending IP address - we do not store the plain va
             <h3 class="font-medium border-b pb-1 mb-4">On this page</h3>
             <ul id="toc" class="text-sm border-b mb-4"></ul>
             <div class="text-sm pb-1 text-right mb-4"><a href="https://github.com/flowforge/flowforge/edit/main/docs/admin/telemetry.md">Edit this page</a></div>
-            <div class="text-xs pb-1 text-right mb-4 italic">Updated: 2022-12-15 12:11:25 +0000</div>
+            <div class="text-xs pb-1 text-right mb-4 italic">Updated: 2022-12-22 19:14:44 +0700</div>
         </div>
     </div>
 </div>

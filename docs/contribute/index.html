@@ -78,7 +78,7 @@
     <div class="w-full mx-auto ff-bg-light">
         <div class="font-medium border-b pb-1">
             
-            v1.1.2
+            v1.2.0
             
             /<a class="mx-2" href="/docs">docs</a>/<a class="mx-2" href="/docs/contribute">contribute</a>
         </div>
@@ -170,58 +170,50 @@ environment manually takes quite a lot of steps to ensure everything is checked
 out and configured properly.</p>
 <p>To make it easier, you can use the <a href="https://github.com/flowforge/flowforge-dev-env">FlowForge Development Environment</a> project to get set up.</p>
 <p>The following steps will get your development environment setup in no time:</p>
-<pre><code>   git clone https://github.com/flowforge/flowforge-dev-env.git
-   cd flowforge-dev-env
-   npm install
-   npm run init
-</code></pre>
+
+<div style="position: relative">
+  <pre class="language-bash"><code id="code-176"class="language-bash"><span class="token function">git</span> clone https://github.com/flowforge/flowforge-dev-env.git<br><span class="token builtin class-name">cd</span> flowforge-dev-env<br><span class="token function">npm</span> <span class="token function">install</span><br><span class="token function">npm</span> run init</code></pre>
+
+  <button class="code-copy "
+    data-clipboard-target="#code-176"
+    style="position: absolute; top: 7.5px; right: 6px; cursor: pointer; outline: none; opacity: 0.8;" title="Copy">
+    <span>
+      <span style="font-size: 15px; opacity: 0.8;" class="mdi mdi-content-copy"></span>
+    </span>
+  </button>
+</div>
 <p>This clones all of the main project repositories, installs their dependencies and builds
 the repositories that need it.</p>
 <p>All of the repositories are cloned under the <code>packages</code> directory:</p>
-<pre><code>flowforge-dev-env
-└── packages
-    ├── flowforge
-    ├── flowforge-driver-localfs
-    ├── flowforge-nr-audit-logger
-    ├── flowforge-nr-auth
-    ├── flowforge-nr-launcher
-    ├── flowforge-nr-storage
-    ├── flowforge-nr-theme
-    └── forge-ui-components
-</code></pre>
+
+<div style="position: relative">
+  <pre class="language-txt"><code id="code-183"class="language-txt">flowforge-dev-env<br>└── packages<br>    ├── flowforge<br>    ├── flowforge-driver-localfs<br>    ├── flowforge-nr-audit-logger<br>    ├── flowforge-nr-auth<br>    ├── flowforge-nr-launcher<br>    ├── flowforge-nr-storage<br>    ├── flowforge-nr-theme<br>    └── forge-ui-components</code></pre>
+
+  <button class="code-copy "
+    data-clipboard-target="#code-183"
+    style="position: absolute; top: 7.5px; right: 6px; cursor: pointer; outline: none; opacity: 0.8;" title="Copy">
+    <span>
+      <span style="font-size: 15px; opacity: 0.8;" class="mdi mdi-content-copy"></span>
+    </span>
+  </button>
+</div>
 <p>More details on using the FlowForge Development Environment are available in its
 <a href="https://github.com/flowforge/flowforge-dev-env">documentation</a>.</p>
 <h3 id="flowforge-code-structure" tabindex="-1"><a class="header-anchor" href="#flowforge-code-structure">#&nbsp;</a> FlowForge Code Structure</h3>
 <p>The <code>flowforge/flowforge</code> repository is the core of the platform and where you'll
 likely want to begin.</p>
-<pre><code>.
-├── bin
-├── config               - build config files
-├── docs
-├── etc                  - FlowForge platform configuration files
-├── forge                - Platform core code
-│   ├── config
-│   ├── containers
-│   ├── db
-│   ├── ee
-│   ├── lib
-│   ├── licensing
-│   ├── monitor
-│   ├── postoffice
-│   ├── routes
-│   └── settings
-├── frontend             - Frontend code
-│   ├── dist             - build output - created by `npm run build`
-│   ├── public           - static assets
-│   └── src              - vue src
-│       ├── api
-│       ├── components
-│       ├── pages
-│       ├── routes
-│       └── store
-├── test                 - tests for FlowForge
-└── var                  - where the database and localfs project directories are created
-</code></pre>
+
+<div style="position: relative">
+  <pre class="language-txt"><code id="code-193"class="language-txt">.<br>├── bin<br>├── config               - build config files<br>├── docs<br>├── etc                  - FlowForge platform configuration files<br>├── forge                - Platform core code<br>│   ├── config<br>│   ├── containers<br>│   ├── db<br>│   ├── ee<br>│   ├── lib<br>│   ├── licensing<br>│   ├── monitor<br>│   ├── postoffice<br>│   ├── routes<br>│   └── settings<br>├── frontend             - Frontend code<br>│   ├── dist             - build output - created by `npm run build`<br>│   ├── public           - static assets<br>│   └── src              - vue src<br>│       ├── api<br>│       ├── components<br>│       ├── pages<br>│       ├── routes<br>│       └── store<br>├── test                 - tests for FlowForge<br>└── var                  - where the database and localfs project directories are created</code></pre>
+
+  <button class="code-copy "
+    data-clipboard-target="#code-193"
+    style="position: absolute; top: 7.5px; right: 6px; cursor: pointer; outline: none; opacity: 0.8;" title="Copy">
+    <span>
+      <span style="font-size: 15px; opacity: 0.8;" class="mdi mdi-content-copy"></span>
+    </span>
+  </button>
+</div>
 <h2 id="development-setup" tabindex="-1"><a class="header-anchor" href="#development-setup">#&nbsp;</a> Development Setup</h2>
 <ol>
 <li><a href="#create-a-stack">Create a Stack</a></li>
@@ -234,14 +226,34 @@ likely want to begin.</p>
 <h3 id="create-a-stack" tabindex="-1"><a class="header-anchor" href="#create-a-stack">#&nbsp;</a> Create a Stack</h3>
 <p>You will need to setup the version(s) of Node-RED you want to use in your stacks.</p>
 <p>From the <code>flowforge</code> directory run</p>
-<pre><code>npm run install-stack --vers=2.2.2
-</code></pre>
+
+<div style="position: relative">
+  <pre class="language-bash"><code id="code-238"class="language-bash"><span class="token function">npm</span> run install-stack <span class="token parameter variable">--vers</span><span class="token operator">=</span><span class="token number">2.2</span>.2</code></pre>
+
+  <button class="code-copy "
+    data-clipboard-target="#code-238"
+    style="position: absolute; top: 7.5px; right: 6px; cursor: pointer; outline: none; opacity: 0.8;" title="Copy">
+    <span>
+      <span style="font-size: 15px; opacity: 0.8;" class="mdi mdi-content-copy"></span>
+    </span>
+  </button>
+</div>
 <p>Where <code>2.2.2</code> is the version of Node-RED you want to use in the stack.</p>
 <h3 id="running-flowforge" tabindex="-1"><a class="header-anchor" href="#running-flowforge">#&nbsp;</a> Running FlowForge</h3>
 <p>A number of <code>npm</code> tasks are defined in the <code>package.json</code> file of this repository.
 To get started from the <code>flowforge</code> directory use:</p>
-<pre><code>npm run serve
-</code></pre>
+
+<div style="position: relative">
+  <pre class="language-bash"><code id="code-248"class="language-bash"><span class="token function">npm</span> run serve</code></pre>
+
+  <button class="code-copy "
+    data-clipboard-target="#code-248"
+    style="position: absolute; top: 7.5px; right: 6px; cursor: pointer; outline: none; opacity: 0.8;" title="Copy">
+    <span>
+      <span style="font-size: 15px; opacity: 0.8;" class="mdi mdi-content-copy"></span>
+    </span>
+  </button>
+</div>
 <p>This does a couple things in parallel:</p>
 <ul>
 <li>Starts the core FlowForge application and watches the source code for any
@@ -270,31 +282,34 @@ to configure the platform with a set of valid Stripe API keys and an EE license.
 <p>The <em>development-only</em> EE licence is provided in <code>forgeforge/forge/licensing/index.js</code>. This
 licence is not valid for production usage.</p>
 <p>For FlowForge Inc. employees the configuration is provided in 1Password as 'Stripe Testing Configuration'.</p>
-<pre><code>license: ***
 
-billing:
-  stripe:
-    key: ***
-    wh_secret: ***
-    team_price: ***
-    team_product: ***
-    project_price: ***
-    project_product: ***
-    device_price: ***
-    device_product: ***
-    deviceCost: 10
-    teams:
-      starter:
-        price: ***
-        product: ***
-        userCost: 0
-</code></pre>
+<div style="position: relative">
+  <pre class="language-yaml"><code id="code-306"class="language-yaml"><span class="token key atrule">license</span><span class="token punctuation">:</span> <span class="token important">***</span><br><br><span class="token key atrule">billing</span><span class="token punctuation">:</span><br>  <span class="token key atrule">stripe</span><span class="token punctuation">:</span><br>    <span class="token key atrule">key</span><span class="token punctuation">:</span> <span class="token important">***</span><br>    <span class="token key atrule">wh_secret</span><span class="token punctuation">:</span> <span class="token important">***</span><br>    <span class="token key atrule">team_price</span><span class="token punctuation">:</span> <span class="token important">***</span><br>    <span class="token key atrule">team_product</span><span class="token punctuation">:</span> <span class="token important">***</span><br>    <span class="token key atrule">project_price</span><span class="token punctuation">:</span> <span class="token important">***</span><br>    <span class="token key atrule">project_product</span><span class="token punctuation">:</span> <span class="token important">***</span><br>    <span class="token key atrule">device_price</span><span class="token punctuation">:</span> <span class="token important">***</span><br>    <span class="token key atrule">device_product</span><span class="token punctuation">:</span> <span class="token important">***</span><br>    <span class="token key atrule">deviceCost</span><span class="token punctuation">:</span> <span class="token number">10</span><br>    <span class="token key atrule">teams</span><span class="token punctuation">:</span><br>      <span class="token key atrule">starter</span><span class="token punctuation">:</span><br>        <span class="token key atrule">price</span><span class="token punctuation">:</span> <span class="token important">***</span><br>        <span class="token key atrule">product</span><span class="token punctuation">:</span> <span class="token important">***</span><br>        <span class="token key atrule">userCost</span><span class="token punctuation">:</span> <span class="token number">0</span></code></pre>
+
+  <button class="code-copy "
+    data-clipboard-target="#code-306"
+    style="position: absolute; top: 7.5px; right: 6px; cursor: pointer; outline: none; opacity: 0.8;" title="Copy">
+    <span>
+      <span style="font-size: 15px; opacity: 0.8;" class="mdi mdi-content-copy"></span>
+    </span>
+  </button>
+</div>
 <p>You will also need to install the <a href="https://stripe.com/docs/cli/">Stripe CLI</a> in order
 to handle webhook callbacks properly. Install the CLI following their documentation, then
 run the following command, with the API key using the value of <code>billing.stripe.key</code> from
 above.</p>
-<pre><code>stripe listen --forward-to localhost:3000/ee/billing/callback --api-key ***
-</code></pre>
+
+<div style="position: relative">
+  <pre class="language-bash"><code id="code-310"class="language-bash">stripe listen --forward-to localhost:3000/ee/billing/callback --api-key ***</code></pre>
+
+  <button class="code-copy "
+    data-clipboard-target="#code-310"
+    style="position: absolute; top: 7.5px; right: 6px; cursor: pointer; outline: none; opacity: 0.8;" title="Copy">
+    <span>
+      <span style="font-size: 15px; opacity: 0.8;" class="mdi mdi-content-copy"></span>
+    </span>
+  </button>
+</div>
 <p>Note that due to the way Stripe works, you will receive events for <em>all</em> activity
 in the configured Stripe account. That means if someone else is actively developing
 with billing enabled on the same account, you will see their events arrive.</p>
@@ -373,7 +388,7 @@ printed to the console and generates a browsable HTML copy under <code>coverage/
 <h4 id="" tabindex="-1"><a class="header-anchor" href="#">#&nbsp;</a> </h4>
 
 <div style="position: relative">
-  <pre class="language-javascript"><code id="code-455"class="language-javascript"><span class="token punctuation">{</span><br>    <span class="token comment">// Use IntelliSense to learn about possible attributes.</span><br>    <span class="token comment">// Hover to view descriptions of existing attributes.</span><br>    <span class="token comment">// For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387</span><br>    <span class="token string-property property">"version"</span><span class="token operator">:</span> <span class="token string">"0.2.0"</span><span class="token punctuation">,</span><br>    <span class="token string-property property">"configurations"</span><span class="token operator">:</span> <span class="token punctuation">[</span><br>        <span class="token punctuation">{</span><br>            <span class="token string-property property">"command"</span><span class="token operator">:</span> <span class="token string">"npm run start-watch"</span><span class="token punctuation">,</span><br>            <span class="token string-property property">"name"</span><span class="token operator">:</span> <span class="token string">"Start-Watch"</span><span class="token punctuation">,</span><br>            <span class="token string-property property">"request"</span><span class="token operator">:</span> <span class="token string">"launch"</span><span class="token punctuation">,</span><br>            <span class="token string-property property">"type"</span><span class="token operator">:</span> <span class="token string">"node-terminal"</span><span class="token punctuation">,</span><br>            <span class="token string-property property">"env"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>                <span class="token string-property property">"NODE_ENV"</span><span class="token operator">:</span> <span class="token string">"development"</span><br>            <span class="token punctuation">}</span><br>        <span class="token punctuation">}</span><span class="token punctuation">,</span><br>        <span class="token punctuation">{</span><br>            <span class="token string-property property">"name"</span><span class="token operator">:</span> <span class="token string">"Attach by Process ID"</span><span class="token punctuation">,</span><br>            <span class="token string-property property">"processId"</span><span class="token operator">:</span> <span class="token string">"${command:PickProcess}"</span><span class="token punctuation">,</span><br>            <span class="token string-property property">"request"</span><span class="token operator">:</span> <span class="token string">"attach"</span><span class="token punctuation">,</span><br>            <span class="token string-property property">"skipFiles"</span><span class="token operator">:</span> <span class="token punctuation">[</span><br>                <span class="token string">"&lt;node_internals>/**"</span><br>            <span class="token punctuation">]</span><span class="token punctuation">,</span><br>            <span class="token string-property property">"type"</span><span class="token operator">:</span> <span class="token string">"node"</span><br>        <span class="token punctuation">}</span><span class="token punctuation">,</span><br>        <span class="token punctuation">{</span><br>            <span class="token string-property property">"type"</span><span class="token operator">:</span> <span class="token string">"node"</span><span class="token punctuation">,</span><br>            <span class="token string-property property">"request"</span><span class="token operator">:</span> <span class="token string">"launch"</span><span class="token punctuation">,</span><br>            <span class="token string-property property">"name"</span><span class="token operator">:</span> <span class="token string">"Debug Current Test"</span><span class="token punctuation">,</span><br>            <span class="token string-property property">"program"</span><span class="token operator">:</span> <span class="token string">"${workspaceFolder}/node_modules/mocha/bin/_mocha"</span><span class="token punctuation">,</span><br>            <span class="token string-property property">"args"</span><span class="token operator">:</span> <span class="token punctuation">[</span><br>              <span class="token string">"--no-warnings"</span><span class="token punctuation">,</span><br>              <span class="token string">"-u"</span><span class="token punctuation">,</span><br>              <span class="token string">"bdd"</span><span class="token punctuation">,</span><span class="token comment">// set to bdd, not tdd</span><br>              <span class="token string">"--timeout"</span><span class="token punctuation">,</span><br>              <span class="token string">"999999"</span><span class="token punctuation">,</span><br>              <span class="token string">"--colors"</span><span class="token punctuation">,</span><br>              <span class="token string">"${file}"</span><br>            <span class="token punctuation">]</span><span class="token punctuation">,</span><br>            <span class="token string-property property">"env"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>                <span class="token string-property property">"NODE_ENV"</span><span class="token operator">:</span> <span class="token string">"development"</span><br>            <span class="token punctuation">}</span><span class="token punctuation">,</span><br>            <span class="token string-property property">"internalConsoleOptions"</span><span class="token operator">:</span> <span class="token string">"openOnSessionStart"</span><br>        <span class="token punctuation">}</span><br>    <span class="token punctuation">]</span><br><span class="token punctuation">}</span></code></pre>
+  <pre class="language-json"><code id="code-455"class="language-json"><span class="token punctuation">{</span><br>    <span class="token comment">// Use IntelliSense to learn about possible attributes.</span><br>    <span class="token comment">// Hover to view descriptions of existing attributes.</span><br>    <span class="token comment">// For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387</span><br>    <span class="token property">"version"</span><span class="token operator">:</span> <span class="token string">"0.2.0"</span><span class="token punctuation">,</span><br>    <span class="token property">"configurations"</span><span class="token operator">:</span> <span class="token punctuation">[</span><br>        <span class="token punctuation">{</span><br>            <span class="token property">"command"</span><span class="token operator">:</span> <span class="token string">"npm run start-watch"</span><span class="token punctuation">,</span><br>            <span class="token property">"name"</span><span class="token operator">:</span> <span class="token string">"Start-Watch"</span><span class="token punctuation">,</span><br>            <span class="token property">"request"</span><span class="token operator">:</span> <span class="token string">"launch"</span><span class="token punctuation">,</span><br>            <span class="token property">"type"</span><span class="token operator">:</span> <span class="token string">"node-terminal"</span><span class="token punctuation">,</span><br>            <span class="token property">"env"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>                <span class="token property">"NODE_ENV"</span><span class="token operator">:</span> <span class="token string">"development"</span><br>            <span class="token punctuation">}</span><br>        <span class="token punctuation">}</span><span class="token punctuation">,</span><br>        <span class="token punctuation">{</span><br>            <span class="token property">"name"</span><span class="token operator">:</span> <span class="token string">"Attach by Process ID"</span><span class="token punctuation">,</span><br>            <span class="token property">"processId"</span><span class="token operator">:</span> <span class="token string">"${command:PickProcess}"</span><span class="token punctuation">,</span><br>            <span class="token property">"request"</span><span class="token operator">:</span> <span class="token string">"attach"</span><span class="token punctuation">,</span><br>            <span class="token property">"skipFiles"</span><span class="token operator">:</span> <span class="token punctuation">[</span><br>                <span class="token string">"&lt;node_internals>/**"</span><br>            <span class="token punctuation">]</span><span class="token punctuation">,</span><br>            <span class="token property">"type"</span><span class="token operator">:</span> <span class="token string">"node"</span><br>        <span class="token punctuation">}</span><span class="token punctuation">,</span><br>        <span class="token punctuation">{</span><br>            <span class="token property">"type"</span><span class="token operator">:</span> <span class="token string">"node"</span><span class="token punctuation">,</span><br>            <span class="token property">"request"</span><span class="token operator">:</span> <span class="token string">"launch"</span><span class="token punctuation">,</span><br>            <span class="token property">"name"</span><span class="token operator">:</span> <span class="token string">"Debug Current Test"</span><span class="token punctuation">,</span><br>            <span class="token property">"program"</span><span class="token operator">:</span> <span class="token string">"${workspaceFolder}/node_modules/mocha/bin/_mocha"</span><span class="token punctuation">,</span><br>            <span class="token property">"args"</span><span class="token operator">:</span> <span class="token punctuation">[</span><br>              <span class="token string">"--no-warnings"</span><span class="token punctuation">,</span><br>              <span class="token string">"-u"</span><span class="token punctuation">,</span><br>              <span class="token string">"bdd"</span><span class="token punctuation">,</span><span class="token comment">// set to bdd, not tdd</span><br>              <span class="token string">"--timeout"</span><span class="token punctuation">,</span><br>              <span class="token string">"999999"</span><span class="token punctuation">,</span><br>              <span class="token string">"--colors"</span><span class="token punctuation">,</span><br>              <span class="token string">"${file}"</span><br>            <span class="token punctuation">]</span><span class="token punctuation">,</span><br>            <span class="token property">"env"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>                <span class="token property">"NODE_ENV"</span><span class="token operator">:</span> <span class="token string">"development"</span><br>            <span class="token punctuation">}</span><span class="token punctuation">,</span><br>            <span class="token property">"internalConsoleOptions"</span><span class="token operator">:</span> <span class="token string">"openOnSessionStart"</span><br>        <span class="token punctuation">}</span><br>    <span class="token punctuation">]</span><br><span class="token punctuation">}</span></code></pre>
 
   <button class="code-copy "
     data-clipboard-target="#code-455"
@@ -397,7 +412,7 @@ printed to the console and generates a browsable HTML copy under <code>coverage/
             <h3 class="font-medium border-b pb-1 mb-4">On this page</h3>
             <ul id="toc" class="text-sm border-b mb-4"></ul>
             <div class="text-sm pb-1 text-right mb-4"><a href="https://github.com/flowforge/flowforge/edit/main/docs/contribute/README.md">Edit this page</a></div>
-            <div class="text-xs pb-1 text-right mb-4 italic">Updated: 2022-12-15 12:11:25 +0000</div>
+            <div class="text-xs pb-1 text-right mb-4 italic">Updated: 2022-12-22 19:14:44 +0700</div>
         </div>
     </div>
 </div>

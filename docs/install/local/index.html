@@ -78,7 +78,7 @@
     <div class="w-full mx-auto ff-bg-light">
         <div class="font-medium border-b pb-1">
             
-            v1.1.2
+            v1.2.0
             
             /<a class="mx-2" href="/docs">docs</a>/<a class="mx-2" href="/docs/install">install</a>/<a class="mx-2" href="/docs/install/local">local</a>
         </div>
@@ -116,8 +116,18 @@ how to do this can be found on the Node.js website here: <a href="https://nodejs
 <ul>
 <li><strong>Windows</strong>: the standard Node.js installer will offer to do that for you.</li>
 <li><strong>MacOS</strong>: you will need the <code>XCode Command Line Tools</code> to be installed.
-This can be done by running the following command:<pre><code>xcode-select --install
-</code></pre>
+This can be done by running the following command:
+<div style="position: relative">
+  <pre class="language-bash"><code id="code-89"class="language-bash">xcode-select <span class="token parameter variable">--install</span></code></pre>
+
+  <button class="code-copy "
+    data-clipboard-target="#code-89"
+    style="position: absolute; top: 7.5px; right: 6px; cursor: pointer; outline: none; opacity: 0.8;" title="Copy">
+    <span>
+      <span style="font-size: 15px; opacity: 0.8;" class="mdi mdi-content-copy"></span>
+    </span>
+  </button>
+</div>
 </li>
 </ul>
 <h2 id="installing-flowforge" tabindex="-1"><a class="header-anchor" href="#installing-flowforge">#&nbsp;</a> Installing FlowForge</h2>
@@ -125,42 +135,95 @@ This can be done by running the following command:<pre><code>xcode-select --inst
 <li>
 <p>Create a directory to be the base of your FlowForge install. For example: <code>/opt/flowforge</code> or <code>c:\flowforge</code></p>
 <p>For Linux/MacOS:</p>
-<pre><code>sudo mkdir /opt/flowforge
-sudo chown $USER /opt/flowforge
-</code></pre>
+
+<div style="position: relative">
+  <pre class="language-bash"><code id="code-103"class="language-bash"><span class="token function">sudo</span> <span class="token function">mkdir</span> /opt/flowforge<br><span class="token function">sudo</span> <span class="token function">chown</span> <span class="token environment constant">$USER</span> /opt/flowforge</code></pre>
+
+  <button class="code-copy "
+    data-clipboard-target="#code-103"
+    style="position: absolute; top: 7.5px; right: 6px; cursor: pointer; outline: none; opacity: 0.8;" title="Copy">
+    <span>
+      <span style="font-size: 15px; opacity: 0.8;" class="mdi mdi-content-copy"></span>
+    </span>
+  </button>
+</div>
 <p>For Windows:</p>
-<pre><code>mkdir c:\flowforge
-</code></pre>
+
+<div style="position: relative">
+  <pre class="language-bash"><code id="code-107"class="language-bash"><span class="token function">mkdir</span> c:<span class="token punctuation">\</span>flowforge</code></pre>
+
+  <button class="code-copy "
+    data-clipboard-target="#code-107"
+    style="position: absolute; top: 7.5px; right: 6px; cursor: pointer; outline: none; opacity: 0.8;" title="Copy">
+    <span>
+      <span style="font-size: 15px; opacity: 0.8;" class="mdi mdi-content-copy"></span>
+    </span>
+  </button>
+</div>
 </li>
 <li>
-<p>Download the latest <a href="https://github.com/flowforge/installer/releases/latest">Installer zip file</a> into a temporary location.</p>
+<p>Download the latest <a href="https://github.com/flowforge/installer/releases/latest/download/flowforge-installer.zip">Installer zip file</a> into a temporary location.</p>
 </li>
 <li>
 <p>Unzip the downloaded zip file and copy its contents to
 the FlowForge directory</p>
 <h3 id="for-linux%2Fmacos%3A" tabindex="-1"><a class="header-anchor" href="#for-linux%2Fmacos%3A">#&nbsp;</a> For Linux/MacOS:</h3>
 <p><em>Assumes <code>/tmp/</code> is the directory where you downloaded <code>flowforge-installer.zip</code></em></p>
-<pre><code>cd /tmp/
-unzip flowforge-installer.zip
-cp -R flowforge-installer/* /opt/flowforge
-</code></pre>
+
+<div style="position: relative">
+  <pre class="language-bash"><code id="code-124"class="language-bash"><span class="token builtin class-name">cd</span> /tmp/<br><span class="token function">unzip</span> flowforge-installer.zip<br><span class="token function">cp</span> <span class="token parameter variable">-R</span> flowforge-installer/* /opt/flowforge</code></pre>
+
+  <button class="code-copy "
+    data-clipboard-target="#code-124"
+    style="position: absolute; top: 7.5px; right: 6px; cursor: pointer; outline: none; opacity: 0.8;" title="Copy">
+    <span>
+      <span style="font-size: 15px; opacity: 0.8;" class="mdi mdi-content-copy"></span>
+    </span>
+  </button>
+</div>
 <h3 id="for-windows%3A" tabindex="-1"><a class="header-anchor" href="#for-windows%3A">#&nbsp;</a> For Windows:</h3>
 <p><em>Assumes <code>c:\temp</code> is the directory where you downloaded <code>flowforge-installer.zip</code></em></p>
-<pre><code>cd c:\temp
-tar -xf flowforge-installer.zip
-xcopy /E /I flowforge-installer c:\flowforge
-</code></pre>
+
+<div style="position: relative">
+  <pre class="language-bash"><code id="code-131"class="language-bash"><span class="token builtin class-name">cd</span> c:<span class="token punctuation">\</span>temp<br><span class="token function">tar</span> <span class="token parameter variable">-xf</span> flowforge-installer.zip<br>xcopy /E /I flowforge-installer c:<span class="token punctuation">\</span>flowforge</code></pre>
+
+  <button class="code-copy "
+    data-clipboard-target="#code-131"
+    style="position: absolute; top: 7.5px; right: 6px; cursor: pointer; outline: none; opacity: 0.8;" title="Copy">
+    <span>
+      <span style="font-size: 15px; opacity: 0.8;" class="mdi mdi-content-copy"></span>
+    </span>
+  </button>
+</div>
 </li>
 <li>
 <p>Run the installer and follow the prompts</p>
 <p>For Linux/MacOS:</p>
-<pre><code>cd /opt/flowforge
-./install.sh
-</code></pre>
+
+<div style="position: relative">
+  <pre class="language-bash"><code id="code-140"class="language-bash"><span class="token builtin class-name">cd</span> /opt/flowforge<br>./install.sh</code></pre>
+
+  <button class="code-copy "
+    data-clipboard-target="#code-140"
+    style="position: absolute; top: 7.5px; right: 6px; cursor: pointer; outline: none; opacity: 0.8;" title="Copy">
+    <span>
+      <span style="font-size: 15px; opacity: 0.8;" class="mdi mdi-content-copy"></span>
+    </span>
+  </button>
+</div>
 <p>For Windows:</p>
-<pre><code>cd c:\flowforge
-install.bat
-</code></pre>
+
+<div style="position: relative">
+  <pre class="language-bash"><code id="code-144"class="language-bash"><span class="token builtin class-name">cd</span> c:<span class="token punctuation">\</span>flowforge<br>install.bat</code></pre>
+
+  <button class="code-copy "
+    data-clipboard-target="#code-144"
+    style="position: absolute; top: 7.5px; right: 6px; cursor: pointer; outline: none; opacity: 0.8;" title="Copy">
+    <span>
+      <span style="font-size: 15px; opacity: 0.8;" class="mdi mdi-content-copy"></span>
+    </span>
+  </button>
+</div>
 </li>
 </ol>
 <h3 id="installing-as-a-service-(optional)" tabindex="-1"><a class="header-anchor" href="#installing-as-a-service-(optional)">#&nbsp;</a> Installing as a service (optional)</h3>
@@ -186,21 +249,51 @@ For more information on all of the options available, see the <a href="../config
 <ul>
 <li>
 <p>Linux/MacOS:</p>
-<pre><code>/opt/flowforge/bin/flowforge.sh
-</code></pre>
+
+<div style="position: relative">
+  <pre class="language-bash"><code id="code-194"class="language-bash">/opt/flowforge/bin/flowforge.sh</code></pre>
+
+  <button class="code-copy "
+    data-clipboard-target="#code-194"
+    style="position: absolute; top: 7.5px; right: 6px; cursor: pointer; outline: none; opacity: 0.8;" title="Copy">
+    <span>
+      <span style="font-size: 15px; opacity: 0.8;" class="mdi mdi-content-copy"></span>
+    </span>
+  </button>
+</div>
 </li>
 <li>
 <p>Windows:</p>
-<pre><code>c:\flowforge\bin\flowforge.bat
-</code></pre>
+
+<div style="position: relative">
+  <pre class="language-bash"><code id="code-200"class="language-bash">c:<span class="token punctuation">\</span>flowforge<span class="token punctuation">\</span>bin<span class="token punctuation">\</span>flowforge.bat</code></pre>
+
+  <button class="code-copy "
+    data-clipboard-target="#code-200"
+    style="position: absolute; top: 7.5px; right: 6px; cursor: pointer; outline: none; opacity: 0.8;" title="Copy">
+    <span>
+      <span style="font-size: 15px; opacity: 0.8;" class="mdi mdi-content-copy"></span>
+    </span>
+  </button>
+</div>
 </li>
 </ul>
 <p>Or to run as a service:</p>
 <ul>
 <li>
 <p>Linux</p>
-<pre><code>service flowforge start
-</code></pre>
+
+<div style="position: relative">
+  <pre class="language-bash"><code id="code-211"class="language-bash"><span class="token function">service</span> flowforge start</code></pre>
+
+  <button class="code-copy "
+    data-clipboard-target="#code-211"
+    style="position: absolute; top: 7.5px; right: 6px; cursor: pointer; outline: none; opacity: 0.8;" title="Copy">
+    <span>
+      <span style="font-size: 15px; opacity: 0.8;" class="mdi mdi-content-copy"></span>
+    </span>
+  </button>
+</div>
 </li>
 </ul>
 <h2 id="first-run-setup" tabindex="-1"><a class="header-anchor" href="#first-run-setup">#&nbsp;</a> First Run Setup</h2>
@@ -223,12 +316,25 @@ plugin from scratch, or make use of the <a href="#docker-install">Docker install
 instructions below due to a limitation of the authentication plugin we use.</p>
 <p>Follow the appropriate <a href="https://mosquitto.org/download/">install instructions</a> for
 your operating system.</p>
-<p>Once installed, you will need to build and install the authentication plugin.</p>
+<p>Once installed, you can download pre-built binaries for Linux platforms from
+<a href="https://github.com/hardillb/mosquitto-go-auth/releases/tag/v0.0.1">here</a> and then jump
+to step 4 below.</p>
+<p>On MacOS you will need to build and install the authentication plugin.</p>
 <ol>
 <li>
 <p>Clone the plugin repository</p>
-<pre><code>git clone https://github.com/iegomez/mosquitto-go-auth.git
-</code></pre>
+
+<div style="position: relative">
+  <pre class="language-bash"><code id="code-261"class="language-bash"><span class="token function">git</span> clone https://github.com/iegomez/mosquitto-go-auth.git</code></pre>
+
+  <button class="code-copy "
+    data-clipboard-target="#code-261"
+    style="position: absolute; top: 7.5px; right: 6px; cursor: pointer; outline: none; opacity: 0.8;" title="Copy">
+    <span>
+      <span style="font-size: 15px; opacity: 0.8;" class="mdi mdi-content-copy"></span>
+    </span>
+  </button>
+</div>
 </li>
 <li>
 <p>Follow the instructions on <a href="https://github.com/iegomez/mosquitto-go-auth#building-the-plugin">building the plugin</a></p>
@@ -237,7 +343,7 @@ your operating system.</p>
 <p>This should result in a file called <code>go-auth.so</code> being generated</p>
 </li>
 <li>
-<p>(<a href="#mosquitto">Optional</a>) Run mosquitto with the configuration file found in the <code>broker</code> directory</p>
+<p>(<a href="#setting-up-mosquitto-optional">Optional</a>) Run mosquitto with the configuration file found in the <code>broker</code> directory</p>
 <p>You will need to customise the values to match your local configuration:</p>
 <ul>
 <li><code>auth_plugin</code> - set to the path of the <code>go-auth.so</code> file built in the previous step</li>
@@ -246,8 +352,18 @@ change these ports to something else.</li>
 <li><code>auth_opt_http_host</code> / <code>auth_opt_http_port</code> - if you plan to run the platform
 on a different port, change these settings to match.</li>
 </ul>
-<pre><code>mosquitto -c broker/mosquitto.conf
-</code></pre>
+
+<div style="position: relative">
+  <pre class="language-bash"><code id="code-297"class="language-bash">mosquitto <span class="token parameter variable">-c</span> broker/mosquitto.conf</code></pre>
+
+  <button class="code-copy "
+    data-clipboard-target="#code-297"
+    style="position: absolute; top: 7.5px; right: 6px; cursor: pointer; outline: none; opacity: 0.8;" title="Copy">
+    <span>
+      <span style="font-size: 15px; opacity: 0.8;" class="mdi mdi-content-copy"></span>
+    </span>
+  </button>
+</div>
 </li>
 </ol>
 <h3 id="docker-install" tabindex="-1"><a class="header-anchor" href="#docker-install">#&nbsp;</a> Docker Install</h3>
@@ -256,11 +372,21 @@ you can use a pre-built docker image that provides everything needed.</p>
 <ol>
 <li>
 <p>First pull the latest version of the pre-built container</p>
-<pre><code>docker pull iegomez/mosquitto-go-auth
-</code></pre>
+
+<div style="position: relative">
+  <pre class="language-bash"><code id="code-311"class="language-bash"><span class="token function">docker</span> pull iegomez/mosquitto-go-auth</code></pre>
+
+  <button class="code-copy "
+    data-clipboard-target="#code-311"
+    style="position: absolute; top: 7.5px; right: 6px; cursor: pointer; outline: none; opacity: 0.8;" title="Copy">
+    <span>
+      <span style="font-size: 15px; opacity: 0.8;" class="mdi mdi-content-copy"></span>
+    </span>
+  </button>
+</div>
 </li>
 <li>
-<p>(<a href="#mosquitto">Optional</a>) A default mosquitto.conf file can be found in the <code>broker</code> directory.</p>
+<p>(<a href="#setting-up-mosquitto-optional">Optional</a>) A default mosquitto.conf file can be found in the <code>broker</code> directory.</p>
 <p>You will need to customise the values to match your local configuration:</p>
 <ul>
 <li><code>auth_opt_http_host</code> value to match the IP address of either the docker0 interface or the external IP address of the machine running the Forge platform</li>
@@ -269,8 +395,18 @@ you can use a pre-built docker image that provides everything needed.</p>
 </li>
 <li>
 <p>Start the container with the following command</p>
-<pre><code>docker run -d -v /full/path/to/mosquitto.conf:/etc/mosquitto/mosquitto.conf -p 1883:1883 -p 1884:1884 --name flowforge-broker iegomez/mosquitto-go-auth
-</code></pre>
+
+<div style="position: relative">
+  <pre class="language-bash"><code id="code-337"class="language-bash"><span class="token function">docker</span> run <span class="token parameter variable">-d</span> <span class="token parameter variable">-v</span> /full/path/to/mosquitto.conf:/etc/mosquitto/mosquitto.conf <span class="token parameter variable">-p</span> <span class="token number">1883</span>:1883 <span class="token parameter variable">-p</span> <span class="token number">1884</span>:1884 <span class="token parameter variable">--name</span> flowforge-broker iegomez/mosquitto-go-auth</code></pre>
+
+  <button class="code-copy "
+    data-clipboard-target="#code-337"
+    style="position: absolute; top: 7.5px; right: 6px; cursor: pointer; outline: none; opacity: 0.8;" title="Copy">
+    <span>
+      <span style="font-size: 15px; opacity: 0.8;" class="mdi mdi-content-copy"></span>
+    </span>
+  </button>
+</div>
 <p>This will map the <code>1883</code>/<code>1884</code> ports to the host machine so they can be accessed outside of the container. If you already have an MQTT broker running on port 1883, then you'll need to modify the <code>-p</code> options to use a different set of ports. For example: <code>-p 9883:1883 -p 9884:1884</code>.</p>
 </li>
 </ol>
@@ -295,7 +431,6 @@ version you are upgrading to.</p>
 <li>Restart FlowForge <code>sudo service flowforge start</code> <sup class="footnote-ref"><a href="#fn2" id="fnref2:1">[2:1]</a></sup></li>
 </ol>
 <p>If you are running as your normal user you can drop the <code>sudo -u flowforge</code> and just run <code>npm install @flowforge/flowforge@x.y.z</code></p>
-<hr>
 <hr class="footnotes-sep">
 <section class="footnotes">
 <ol class="footnotes-list">
@@ -314,7 +449,7 @@ version you are upgrading to.</p>
             <h3 class="font-medium border-b pb-1 mb-4">On this page</h3>
             <ul id="toc" class="text-sm border-b mb-4"></ul>
             <div class="text-sm pb-1 text-right mb-4"><a href="https://github.com/flowforge/flowforge/edit/main/docs/install/local/README.md">Edit this page</a></div>
-            <div class="text-xs pb-1 text-right mb-4 italic">Updated: 2022-12-15 12:11:25 +0000</div>
+            <div class="text-xs pb-1 text-right mb-4 italic">Updated: 2022-12-22 19:14:44 +0700</div>
         </div>
     </div>
 </div>

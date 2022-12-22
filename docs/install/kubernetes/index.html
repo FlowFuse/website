@@ -78,7 +78,7 @@
     <div class="w-full mx-auto ff-bg-light">
         <div class="font-medium border-b pb-1">
             
-            v1.1.2
+            v1.2.0
             
             /<a class="mx-2" href="/docs">docs</a>/<a class="mx-2" href="/docs/install">install</a>/<a class="mx-2" href="/docs/install/kubernetes">kubernetes</a>
         </div>
@@ -89,14 +89,14 @@
                 <h1 id="kubernetes-install" tabindex="-1"><a class="header-anchor" href="#kubernetes-install">#&nbsp;</a> Kubernetes Install</h1>
 <p>This version of the FlowForge platform is intended for running in the Kubernetes (sometimes referred to as K8s)
 Container management system. Typically suited for large on premise deployments or deployment in Cloud infrastructure.</p>
-<h3 id="prerequisites" tabindex="-1"><a class="header-anchor" href="#prerequisites">#&nbsp;</a> Prerequisites</h3>
-<h4 id="kubectl" tabindex="-1"><a class="header-anchor" href="#kubectl">#&nbsp;</a> Kubectl</h4>
+<h2 id="prerequisites" tabindex="-1"><a class="header-anchor" href="#prerequisites">#&nbsp;</a> Prerequisites</h2>
+<h3 id="kubectl" tabindex="-1"><a class="header-anchor" href="#kubectl">#&nbsp;</a> Kubectl</h3>
 <p>To manage a Kubernetes cluster you will need a copy of the <code>kubectl</code> utility. Instructions on
 how to install it can be found <a href="https://kubernetes.io/docs/tasks/tools/">here</a>.</p>
-<h4 id="helm" tabindex="-1"><a class="header-anchor" href="#helm">#&nbsp;</a> Helm</h4>
+<h3 id="helm" tabindex="-1"><a class="header-anchor" href="#helm">#&nbsp;</a> Helm</h3>
 <p>FlowForge uses a Helm Chart to manage deployment. Installation can be done
 through the instructions on <a href="https://helm.sh">their website</a>.</p>
-<h4 id="kubernetes" tabindex="-1"><a class="header-anchor" href="#kubernetes">#&nbsp;</a> Kubernetes</h4>
+<h3 id="kubernetes" tabindex="-1"><a class="header-anchor" href="#kubernetes">#&nbsp;</a> Kubernetes</h3>
 <p>You will need a Kubernetes environment. The deployment has currently been tested on the following environments:</p>
 <ul>
 <li><a href="aws"">AWS EKS</a></li>
@@ -110,31 +110,47 @@ through the instructions on <a href="https://helm.sh">their website</a>.</p>
 <li>One or more used to run the Node-RED Project instances</li>
 </ul>
 <p>You can run a small scale Proof-of-Concept on a single node cluster, details of how to do this can be found in the <a href="#configure-flowforge">Configure FlowForge</a> section below.</p>
-<h4 id="postgresql-database" tabindex="-1"><a class="header-anchor" href="#postgresql-database">#&nbsp;</a> PostgreSQL Database</h4>
-<p>The Helm chart can either install a dedicated PostgreSQL database into the same K8s cluster or can configure the install to use an external instance.</p>
-<h4 id="dns" tabindex="-1"><a class="header-anchor" href="#dns">#&nbsp;</a> DNS</h4>
-<p>A wildcard DNS entry will be needed to point to the domain that is used fro the project instances. This will need to point to the K8s Ingress controller.</p>
+<h3 id="postgresql-database" tabindex="-1"><a class="header-anchor" href="#postgresql-database">#&nbsp;</a> PostgreSQL Database</h3>
+<p>The Helm chart can either install a dedicated PostgreSQL database into the same K8s
+cluster or can configure the install to use an external instance.</p>
+<h3 id="dns" tabindex="-1"><a class="header-anchor" href="#dns">#&nbsp;</a> DNS</h3>
+<p>A wildcard DNS entry will be needed to point to the domain that is used for the
+project instances. This will need to point to the K8s Ingress controller.</p>
+<p>For example if you want projects to be access able as [project-name].example.com
+you will need to ensure that <code>*.example.com</code> is mapped to the IP address used by
+your Kubernetes clusters's Ingress controller.</p>
+<p>By default the FlowForge application will be mapped to <code>forge.example.com</code> assuming
+that you set the domain to <code>example.com</code>.</p>
 <p>Notes on how to setup DNS can be found <a href="../dns-setup"">here</a>.</p>
-<h4 id="email" tabindex="-1"><a class="header-anchor" href="#email">#&nbsp;</a> Email</h4>
+<h3 id="email" tabindex="-1"><a class="header-anchor" href="#email">#&nbsp;</a> Email</h3>
 <p>Some features require the ability to send email to users. This can be currently be provided by:</p>
 <ul>
 <li>SMTP server</li>
 <li>AWS SES</li>
 </ul>
-<h3 id="installing-flowforge" tabindex="-1"><a class="header-anchor" href="#installing-flowforge">#&nbsp;</a> Installing FlowForge</h3>
-<h4 id="download" tabindex="-1"><a class="header-anchor" href="#download">#&nbsp;</a> Download</h4>
-<pre><code>helm repo add flowforge https://flowforge.github.io/helm`
-helm repo update
-</code></pre>
+<h2 id="installing-flowforge" tabindex="-1"><a class="header-anchor" href="#installing-flowforge">#&nbsp;</a> Installing FlowForge</h2>
+<h3 id="download" tabindex="-1"><a class="header-anchor" href="#download">#&nbsp;</a> Download</h3>
+
+<div style="position: relative">
+  <pre class="language-bash"><code id="code-110"class="language-bash">helm repo <span class="token function">add</span> flowforge https://flowforge.github.io/helm`<br>helm repo update</code></pre>
+
+  <button class="code-copy "
+    data-clipboard-target="#code-110"
+    style="position: absolute; top: 7.5px; right: 6px; cursor: pointer; outline: none; opacity: 0.8;" title="Copy">
+    <span>
+      <span style="font-size: 15px; opacity: 0.8;" class="mdi mdi-content-copy"></span>
+    </span>
+  </button>
+</div>
 <h3 id="configure-flowforge" tabindex="-1"><a class="header-anchor" href="#configure-flowforge">#&nbsp;</a> Configure FlowForge</h3>
 <p>All the initial configuration is handled by the Helm chart. This is done by creating a <code>customization.yml</code> file in the <code>helm</code> directory that will be passed to the helm along with the chart.</p>
 <p>This is the minimal configuration</p>
 
 <div style="position: relative">
-  <pre class="language-yaml"><code id="code-114"class="language-yaml"><span class="token key atrule">forge</span><span class="token punctuation">:</span><br>  <span class="token key atrule">entryPoint</span><span class="token punctuation">:</span> forge.example.com<br>  <span class="token key atrule">domain</span><span class="token punctuation">:</span> example.com<br>  <span class="token key atrule">https</span><span class="token punctuation">:</span> <span class="token boolean important">false</span><br>  <span class="token key atrule">localPostgresql</span><span class="token punctuation">:</span> <span class="token boolean important">true</span></code></pre>
+  <pre class="language-yaml"><code id="code-120"class="language-yaml"><span class="token key atrule">forge</span><span class="token punctuation">:</span><br>  <span class="token key atrule">entryPoint</span><span class="token punctuation">:</span> forge.example.com<br>  <span class="token key atrule">domain</span><span class="token punctuation">:</span> example.com<br>  <span class="token key atrule">https</span><span class="token punctuation">:</span> <span class="token boolean important">false</span><br>  <span class="token key atrule">localPostgresql</span><span class="token punctuation">:</span> <span class="token boolean important">true</span></code></pre>
 
   <button class="code-copy "
-    data-clipboard-target="#code-114"
+    data-clipboard-target="#code-120"
     style="position: absolute; top: 7.5px; right: 6px; cursor: pointer; outline: none; opacity: 0.8;" title="Copy">
     <span>
       <span style="font-size: 15px; opacity: 0.8;" class="mdi mdi-content-copy"></span>
@@ -144,10 +160,10 @@ helm repo update
 <p>When running on AWS EKS and using AWS SES for email (The IAMRole needs to have the required permissions to use SES) it would look something like:</p>
 
 <div style="position: relative">
-  <pre class="language-yaml"><code id="code-118"class="language-yaml"><span class="token key atrule">forge</span><span class="token punctuation">:</span><br>  <span class="token key atrule">entryPoint</span><span class="token punctuation">:</span> forge.example.com<br>  <span class="token key atrule">domain</span><span class="token punctuation">:</span> example.com<br>  <span class="token key atrule">cloudProvider</span><span class="token punctuation">:</span> aws<br>  <span class="token key atrule">aws</span><span class="token punctuation">:</span><br>    <span class="token key atrule">IAMRole</span><span class="token punctuation">:</span> arn<span class="token punctuation">:</span>aws<span class="token punctuation">:</span>iam<span class="token punctuation">:</span><span class="token punctuation">:</span>&lt;aws<span class="token punctuation">-</span>account<span class="token punctuation">-</span>id<span class="token punctuation">></span><span class="token punctuation">:</span>role/flowforge_service_account_role<br>  <span class="token key atrule">email</span><span class="token punctuation">:</span><br>    <span class="token key atrule">ses</span><span class="token punctuation">:</span><br>      <span class="token key atrule">region</span><span class="token punctuation">:</span> eu<span class="token punctuation">-</span>west<span class="token punctuation">-</span><span class="token number">1</span></code></pre>
+  <pre class="language-yaml"><code id="code-124"class="language-yaml"><span class="token key atrule">forge</span><span class="token punctuation">:</span><br>  <span class="token key atrule">entryPoint</span><span class="token punctuation">:</span> forge.example.com<br>  <span class="token key atrule">domain</span><span class="token punctuation">:</span> example.com<br>  <span class="token key atrule">cloudProvider</span><span class="token punctuation">:</span> aws<br>  <span class="token key atrule">aws</span><span class="token punctuation">:</span><br>    <span class="token key atrule">IAMRole</span><span class="token punctuation">:</span> arn<span class="token punctuation">:</span>aws<span class="token punctuation">:</span>iam<span class="token punctuation">:</span><span class="token punctuation">:</span>&lt;aws<span class="token punctuation">-</span>account<span class="token punctuation">-</span>id<span class="token punctuation">></span><span class="token punctuation">:</span>role/flowforge_service_account_role<br>  <span class="token key atrule">email</span><span class="token punctuation">:</span><br>    <span class="token key atrule">ses</span><span class="token punctuation">:</span><br>      <span class="token key atrule">region</span><span class="token punctuation">:</span> eu<span class="token punctuation">-</span>west<span class="token punctuation">-</span><span class="token number">1</span></code></pre>
 
   <button class="code-copy "
-    data-clipboard-target="#code-118"
+    data-clipboard-target="#code-124"
     style="position: absolute; top: 7.5px; right: 6px; cursor: pointer; outline: none; opacity: 0.8;" title="Copy">
     <span>
       <span style="font-size: 15px; opacity: 0.8;" class="mdi mdi-content-copy"></span>
@@ -159,22 +175,52 @@ helm repo update
 <p>You will need to label at least one node to run the management application and one to run the Node-RED Projects.</p>
 <p>You can do this with the <code>kubectl</code> utility. The following command lists
 all the nodes in the cluster</p>
-<pre><code>kubectl get nodes
-</code></pre>
+
+<div style="position: relative">
+  <pre class="language-bash"><code id="code-137"class="language-bash">kubectl get nodes</code></pre>
+
+  <button class="code-copy "
+    data-clipboard-target="#code-137"
+    style="position: absolute; top: 7.5px; right: 6px; cursor: pointer; outline: none; opacity: 0.8;" title="Copy">
+    <span>
+      <span style="font-size: 15px; opacity: 0.8;" class="mdi mdi-content-copy"></span>
+    </span>
+  </button>
+</div>
 <p>You can then use <code>kubectl label node</code> to add the required labels:</p>
 <p>FlowForge management node(s)</p>
-<pre><code>kubectl label node &lt;management node name&gt; role=management
-</code></pre>
+
+<div style="position: relative">
+  <pre class="language-bash"><code id="code-144"class="language-bash">kubectl label <span class="token function">node</span> <span class="token operator">&lt;</span>management <span class="token function">node</span> name<span class="token operator">></span> <span class="token assign-left variable">role</span><span class="token operator">=</span>management</code></pre>
+
+  <button class="code-copy "
+    data-clipboard-target="#code-144"
+    style="position: absolute; top: 7.5px; right: 6px; cursor: pointer; outline: none; opacity: 0.8;" title="Copy">
+    <span>
+      <span style="font-size: 15px; opacity: 0.8;" class="mdi mdi-content-copy"></span>
+    </span>
+  </button>
+</div>
 <p>Node-RED projects node(s)</p>
-<pre><code>kubectl label node &lt;projects node name&gt; role=projects
-</code></pre>
+
+<div style="position: relative">
+  <pre class="language-bash"><code id="code-148"class="language-bash">kubectl label <span class="token function">node</span> <span class="token operator">&lt;</span>projects <span class="token function">node</span> name<span class="token operator">></span> <span class="token assign-left variable">role</span><span class="token operator">=</span>projects</code></pre>
+
+  <button class="code-copy "
+    data-clipboard-target="#code-148"
+    style="position: absolute; top: 7.5px; right: 6px; cursor: pointer; outline: none; opacity: 0.8;" title="Copy">
+    <span>
+      <span style="font-size: 15px; opacity: 0.8;" class="mdi mdi-content-copy"></span>
+    </span>
+  </button>
+</div>
 <p>To override this you can remove the node selectors with the following which will mean that all pods can run on any nodes.</p>
 
 <div style="position: relative">
-  <pre class="language-yaml"><code id="code-146"class="language-yaml"><span class="token key atrule">forge</span><span class="token punctuation">:</span><br>  <span class="token key atrule">projectSelector</span><span class="token punctuation">:</span><br>  <span class="token key atrule">managementSelector</span><span class="token punctuation">:</span></code></pre>
+  <pre class="language-yaml"><code id="code-152"class="language-yaml"><span class="token key atrule">forge</span><span class="token punctuation">:</span><br>  <span class="token key atrule">projectSelector</span><span class="token punctuation">:</span><br>  <span class="token key atrule">managementSelector</span><span class="token punctuation">:</span></code></pre>
 
   <button class="code-copy "
-    data-clipboard-target="#code-146"
+    data-clipboard-target="#code-152"
     style="position: absolute; top: 7.5px; right: 6px; cursor: pointer; outline: none; opacity: 0.8;" title="Copy">
     <span>
       <span style="font-size: 15px; opacity: 0.8;" class="mdi mdi-content-copy"></span>
@@ -183,30 +229,66 @@ all the nodes in the cluster</p>
 </div>
 <p>A full list of all the configurable values can be found in the <a href="https://github.com/flowforge/helm/blob/main/helm/flowforge/README.md">Helm Chart README</a>.</p>
 <p>The install can then be started with the following command:</p>
-<pre><code>helm upgrade --atomic --install flowforge flowforge/flowforge -f customization.yml
-</code></pre>
-<h4 id="enabling-the-mqtt-broker" tabindex="-1"><a class="header-anchor" href="#enabling-the-mqtt-broker">#&nbsp;</a> Enabling the MQTT broker</h4>
+
+<div style="position: relative">
+  <pre class="language-bash"><code id="code-159"class="language-bash">helm upgrade <span class="token parameter variable">--atomic</span> <span class="token parameter variable">--install</span> flowforge flowforge/flowforge <span class="token parameter variable">-f</span> customization.yml</code></pre>
+
+  <button class="code-copy "
+    data-clipboard-target="#code-159"
+    style="position: absolute; top: 7.5px; right: 6px; cursor: pointer; outline: none; opacity: 0.8;" title="Copy">
+    <span>
+      <span style="font-size: 15px; opacity: 0.8;" class="mdi mdi-content-copy"></span>
+    </span>
+  </button>
+</div>
+<h3 id="enabling-the-mqtt-broker" tabindex="-1"><a class="header-anchor" href="#enabling-the-mqtt-broker">#&nbsp;</a> Enabling the MQTT broker</h3>
 <p>To enable the MQTT broker with Kubernetes install you need to add the following to the <code>customization.yml</code> file</p>
-<pre><code>forge:
-  broker:
-    url: mqtt://forge:1883
-</code></pre>
+
+<div style="position: relative">
+  <pre class="language-yaml"><code id="code-166"class="language-yaml"><span class="token key atrule">forge</span><span class="token punctuation">:</span><br>  <span class="token key atrule">broker</span><span class="token punctuation">:</span><br>    <span class="token key atrule">enabled</span><span class="token punctuation">:</span> <span class="token boolean important">true</span><br>    <span class="token key atrule">url</span><span class="token punctuation">:</span> mqtt<span class="token punctuation">:</span>//forge<span class="token punctuation">:</span><span class="token number">1883</span></code></pre>
+
+  <button class="code-copy "
+    data-clipboard-target="#code-166"
+    style="position: absolute; top: 7.5px; right: 6px; cursor: pointer; outline: none; opacity: 0.8;" title="Copy">
+    <span>
+      <span style="font-size: 15px; opacity: 0.8;" class="mdi mdi-content-copy"></span>
+    </span>
+  </button>
+</div>
 <p>The <code>forge.broker.public_url</code> value will be generated by prepending <code>ws://mqtt</code> to the supplied <code>forge.domain</code> value.</p>
-<h3 id="first-run-setup" tabindex="-1"><a class="header-anchor" href="#first-run-setup">#&nbsp;</a> First Run Setup</h3>
+<h2 id="first-run-setup" tabindex="-1"><a class="header-anchor" href="#first-run-setup">#&nbsp;</a> First Run Setup</h2>
 <p>The first time you access the platform in your browser, it will take you through
 creating an administrator for the platform and other configuration options.</p>
 <p>For more information, follow <a href="../first-run"">this guide</a>.</p>
 <p>Once you have finished setting up the admin user there are some Kubernetes specific items to consider.</p>
-<h4 id="using-flowforge-file-storage" tabindex="-1"><a class="header-anchor" href="#using-flowforge-file-storage">#&nbsp;</a> Using FlowForge File Storage</h4>
-<p>FlowForge projects when running in Kubernetes do not have direct
-access to a persistent file system to store files.</p>
-<p>We recommend disabling the Node-RED core file nodes in the FlowForge
-Template.</p>
+<h3 id="using-flowforge-file-storage" tabindex="-1"><a class="header-anchor" href="#using-flowforge-file-storage">#&nbsp;</a> Using FlowForge File Storage</h3>
+<p>FlowForge projects running in Kubernetes do not have direct access to a persistent
+file system to store files or use for storing context data.</p>
+<p>FlowForge includes a File Storage service that can be enabled to provide persistent
+storage.</p>
+<h4 id="disabling-the-default-file-nodes" tabindex="-1"><a class="header-anchor" href="#disabling-the-default-file-nodes">#&nbsp;</a> Disabling the default File nodes</h4>
+<p>To remove the default Node-RED file nodes from the palette:</p>
+<ol>
+<li>Edit the Project Template to add <code>10-file.js,23-watch.js</code> to the &quot;Exclude nodes by filename&quot; section</li>
+</ol>
 <img src="../images/file-node-template.png"" width=500 />
-<p>Adding <code>10-file.js,23-watch.js</code> to the list of &quot;Excluded nodes by filename&quot; section will ensure that the core file nodes are not loaded by the project.</p>
-<p>FlowForge File Nodes provide a solution to this for basic read/write.
-More details can be found <a href="../file-storage/"">here</a>.</p>
-<h3 id="upgrade" tabindex="-1"><a class="header-anchor" href="#upgrade">#&nbsp;</a> Upgrade</h3>
+<h4 id="configuring-the-file-storage-service" tabindex="-1"><a class="header-anchor" href="#configuring-the-file-storage-service">#&nbsp;</a> Configuring the File Storage service</h4>
+<p>Full details on configuring the file storage service are available <a href="../file-storage/"">here</a>.</p>
+<h4 id="enabling-the-file-storage-service" tabindex="-1"><a class="header-anchor" href="#enabling-the-file-storage-service">#&nbsp;</a> Enabling the File Storage service</h4>
+<p>To enable the FlowForge File Storage component add the following to the <code>customization.yml</code> file:</p>
+
+<div style="position: relative">
+  <pre class="language-yaml"><code id="code-217"class="language-yaml"><span class="token key atrule">forge</span><span class="token punctuation">:</span><br>  <span class="token key atrule">fileStore</span><span class="token punctuation">:</span><br>    <span class="token key atrule">enabled</span><span class="token punctuation">:</span> <span class="token boolean important">true</span></code></pre>
+
+  <button class="code-copy "
+    data-clipboard-target="#code-217"
+    style="position: absolute; top: 7.5px; right: 6px; cursor: pointer; outline: none; opacity: 0.8;" title="Copy">
+    <span>
+      <span style="font-size: 15px; opacity: 0.8;" class="mdi mdi-content-copy"></span>
+    </span>
+  </button>
+</div>
+<h2 id="upgrade" tabindex="-1"><a class="header-anchor" href="#upgrade">#&nbsp;</a> Upgrade</h2>
 <ul>
 <li>Download and unpack the latest version of the helm chart zip.</li>
 <li>Check the <a href="https://github.com/flowforge/helm/blob/main/helm/flowforge/README.md">README.md</a> for any new options to configure in <code>customization.yml</code></li>
@@ -219,7 +301,7 @@ More details can be found <a href="../file-storage/"">here</a>.</p>
             <h3 class="font-medium border-b pb-1 mb-4">On this page</h3>
             <ul id="toc" class="text-sm border-b mb-4"></ul>
             <div class="text-sm pb-1 text-right mb-4"><a href="https://github.com/flowforge/flowforge/edit/main/docs/install/kubernetes/README.md">Edit this page</a></div>
-            <div class="text-xs pb-1 text-right mb-4 italic">Updated: 2022-12-15 12:11:25 +0000</div>
+            <div class="text-xs pb-1 text-right mb-4 italic">Updated: 2022-12-22 19:14:44 +0700</div>
         </div>
     </div>
 </div>

@@ -78,7 +78,7 @@
     <div class="w-full mx-auto ff-bg-light">
         <div class="font-medium border-b pb-1">
             
-            v1.1.2
+            v1.2.0
             
             /<a class="mx-2" href="/docs">docs</a>/<a class="mx-2" href="/docs/install">install</a>/<a class="mx-2" href="/docs/install/kubernetes">kubernetes</a>/<a class="mx-2" href="/docs/install/kubernetes/aws">aws</a>
         </div>
@@ -116,55 +116,57 @@ need help.</p>
 <p>Record the host name it will look like <code>[aws id].dkr.ecr.[aws region].amazonaws.com</code></p>
 <h2 id="create-eks-cluster" tabindex="-1"><a class="header-anchor" href="#create-eks-cluster">#&nbsp;</a> Create EKS Cluster</h2>
 <p>Edit the <code>cluster.yml</code> file in <code>aws_eks</code> to set your preferred instance type and count along with AWS Region</p>
-<pre><code>eksctl create cluster -f cluster.yml
-</code></pre>
+
+<div style="position: relative">
+  <pre class="language-bash"><code id="code-81"class="language-bash">eksctl create cluster <span class="token parameter variable">-f</span> cluster.yml</code></pre>
+
+  <button class="code-copy "
+    data-clipboard-target="#code-81"
+    style="position: absolute; top: 7.5px; right: 6px; cursor: pointer; outline: none; opacity: 0.8;" title="Copy">
+    <span>
+      <span style="font-size: 15px; opacity: 0.8;" class="mdi mdi-content-copy"></span>
+    </span>
+  </button>
+</div>
 <p>Example cluster.yml (Please visit <a href="https://eksctl.io/usage/creating-and-managing-clusters/#using-config-files">eksctl.io</a> to be sure you understand what this does.)</p>
-<pre><code>apiVersion: eksctl.io/v1alpha5
-kind: ClusterConfig
 
-metadata:
-  name: flowforge
-  region: us-east-1
+<div style="position: relative">
+  <pre class="language-yaml"><code id="code-85"class="language-yaml"><span class="token key atrule">apiVersion</span><span class="token punctuation">:</span> eksctl.io/v1alpha5<br><span class="token key atrule">kind</span><span class="token punctuation">:</span> ClusterConfig<br><br><span class="token key atrule">metadata</span><span class="token punctuation">:</span><br>  <span class="token key atrule">name</span><span class="token punctuation">:</span> flowforge<br>  <span class="token key atrule">region</span><span class="token punctuation">:</span> us<span class="token punctuation">-</span>east<span class="token punctuation">-</span><span class="token number">1</span><br><br><span class="token key atrule">nodeGroups</span><span class="token punctuation">:</span><br>  <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> management<br>    <span class="token key atrule">labels</span><span class="token punctuation">:</span><br>      <span class="token key atrule">role</span><span class="token punctuation">:</span> <span class="token string">"management"</span><br>    <span class="token key atrule">instanceType</span><span class="token punctuation">:</span> t2.small<br>    <span class="token key atrule">desiredCapacity</span><span class="token punctuation">:</span> <span class="token number">1</span><br>    <span class="token key atrule">volumeSize</span><span class="token punctuation">:</span> <span class="token number">20</span><br>    <span class="token key atrule">ssh</span><span class="token punctuation">:</span><br>      <span class="token key atrule">allow</span><span class="token punctuation">:</span> <span class="token boolean important">false</span><br>    <span class="token key atrule">iam</span><span class="token punctuation">:</span><br>      <span class="token key atrule">withAddonPolicies</span><span class="token punctuation">:</span><br>        <span class="token key atrule">efs</span><span class="token punctuation">:</span> <span class="token boolean important">true</span><br>  <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> instance<br>    <span class="token key atrule">labels</span><span class="token punctuation">:</span> <br>      <span class="token key atrule">role</span><span class="token punctuation">:</span> <span class="token string">"projects"</span><br>    <span class="token key atrule">tags</span><span class="token punctuation">:</span><br>      <span class="token key atrule">k8s.io/cluster-autoscaler/enabled</span><span class="token punctuation">:</span> <span class="token string">"true"</span><br>      <span class="token key atrule">k8s.io/cluster-autoscaler/flowforge</span><span class="token punctuation">:</span> <span class="token string">"owned"</span><br>    <span class="token key atrule">instanceType</span><span class="token punctuation">:</span> t2.small<br>    <span class="token key atrule">desiredCapacity</span><span class="token punctuation">:</span> <span class="token number">2</span><br>    <span class="token key atrule">volumeSize</span><span class="token punctuation">:</span><br>    <span class="token key atrule">ssh</span><span class="token punctuation">:</span><br>      <span class="token key atrule">allow</span><span class="token punctuation">:</span> <span class="token boolean important">false</span></code></pre>
 
-nodeGroups:
-  - name: management
-    labels:
-      role: &quot;management&quot;
-    instanceType: t2.small
-    desiredCapacity: 1
-    volumeSize: 20
-    ssh:
-      allow: false
-    iam:
-      withAddonPolicies:
-        efs: true
-  - name: instance
-    labels: 
-      role: &quot;projects&quot;
-    tags:
-      k8s.io/cluster-autoscaler/enabled: &quot;true&quot;
-      k8s.io/cluster-autoscaler/flowforge: &quot;owned&quot;
-    instanceType: t2.small
-    desiredCapacity: 2
-    volumeSize:
-    ssh:
-      allow: false
-</code></pre>
+  <button class="code-copy "
+    data-clipboard-target="#code-85"
+    style="position: absolute; top: 7.5px; right: 6px; cursor: pointer; outline: none; opacity: 0.8;" title="Copy">
+    <span>
+      <span style="font-size: 15px; opacity: 0.8;" class="mdi mdi-content-copy"></span>
+    </span>
+  </button>
+</div>
 <p>Add oidc provider for Loadbalance and IAM roles</p>
-<pre><code>eksctl utils associate-iam-oidc-provider --cluster flowforge-test --approve
-</code></pre>
+
+<div style="position: relative">
+  <pre class="language-bash"><code id="code-89"class="language-bash">eksctl utils associate-iam-oidc-provider <span class="token parameter variable">--cluster</span> flowforge-test <span class="token parameter variable">--approve</span></code></pre>
+
+  <button class="code-copy "
+    data-clipboard-target="#code-89"
+    style="position: absolute; top: 7.5px; right: 6px; cursor: pointer; outline: none; opacity: 0.8;" title="Copy">
+    <span>
+      <span style="font-size: 15px; opacity: 0.8;" class="mdi mdi-content-copy"></span>
+    </span>
+  </button>
+</div>
 <p>Add AWS Load balancer (remember to update <code>[aws id]</code>)</p>
-<pre><code>curl -o iam_policy.json https://raw.githubusercontent.com/kubernetes-sigs/aws-load-balancer-controller/v2.2.0/docs/install/iam_policy.json
 
-aws iam create-policy --policy-name AWSLoadBalancerControllerIAMPolicy --policy-document file://iam_policy.json
-eksctl create iamserviceaccount --cluster=flowforge-test --namespace=kube-system --name=aws-load-balancer-controller --attach-policy-arn=arn:aws:iam::[aws id]:policy/AWSLoadBalancerControllerIAMPolicy --override-existing-serviceaccounts --approve
+<div style="position: relative">
+  <pre class="language-bash"><code id="code-93"class="language-bash"><span class="token function">curl</span> <span class="token parameter variable">-o</span> iam_policy.json https://raw.githubusercontent.com/kubernetes-sigs/aws-load-balancer-controller/v2.2.0/docs/install/iam_policy.json<br><br>aws iam create-policy --policy-name AWSLoadBalancerControllerIAMPolicy --policy-document file://iam_policy.json<br>eksctl create iamserviceaccount <span class="token parameter variable">--cluster</span><span class="token operator">=</span>flowforge-test <span class="token parameter variable">--namespace</span><span class="token operator">=</span>kube-system <span class="token parameter variable">--name</span><span class="token operator">=</span>aws-load-balancer-controller --attach-policy-arn<span class="token operator">=</span>arn:aws:iam::<span class="token punctuation">[</span>aws id<span class="token punctuation">]</span>:policy/AWSLoadBalancerControllerIAMPolicy --override-existing-serviceaccounts <span class="token parameter variable">--approve</span><br><br>helm repo <span class="token function">add</span> eks https://aws.github.io/eks-charts<br>kubectl apply <span class="token parameter variable">-k</span> <span class="token string">"github.com/aws/eks-charts/stable/aws-load-balancer-controller//crds?ref=master"</span><br><br><span class="token assign-left variable">K8S_VPC_ID</span><span class="token operator">=</span><span class="token variable"><span class="token variable">$(</span>aws ec2 describe-vpcs <span class="token parameter variable">--filters</span> <span class="token string">"Name=tag:eksctl.cluster.k8s.io/v1alpha1/cluster-name,Values=flowforge-test"</span> <span class="token operator">|</span> jq <span class="token parameter variable">-r</span> <span class="token string">'.Vpcs[].VpcId'</span><span class="token variable">)</span></span><br>helm <span class="token function">install</span> aws-load-balancer-controller eks/aws-load-balancer-controller <span class="token parameter variable">--set</span> <span class="token assign-left variable">clusterName</span><span class="token operator">=</span>flowforge-test <span class="token parameter variable">--set</span> <span class="token assign-left variable">serviceAccount.create</span><span class="token operator">=</span>false <span class="token parameter variable">--set</span> <span class="token assign-left variable">region</span><span class="token operator">=</span>eu-west-1 <span class="token parameter variable">--set</span> <span class="token assign-left variable">vpcId</span><span class="token operator">=</span><span class="token variable">$K8S_VPC_ID</span> <span class="token parameter variable">--set</span> <span class="token assign-left variable">serviceAccount.name</span><span class="token operator">=</span>aws-load-balancer-controller <span class="token parameter variable">-n</span> kube-system</code></pre>
 
-helm repo add eks https://aws.github.io/eks-charts
-kubectl apply -k &quot;github.com/aws/eks-charts/stable/aws-load-balancer-controller//crds?ref=master&quot;
-
-K8S_VPC_ID=$(aws ec2 describe-vpcs --filters &quot;Name=tag:eksctl.cluster.k8s.io/v1alpha1/cluster-name,Values=flowforge-test&quot; | jq -r '.Vpcs[].VpcId')
-helm install aws-load-balancer-controller eks/aws-load-balancer-controller --set clusterName=flowforge-test --set serviceAccount.create=false --set region=eu-west-1 --set vpcId=$K8S_VPC_ID --set serviceAccount.name=aws-load-balancer-controller -n kube-system
-</code></pre>
+  <button class="code-copy "
+    data-clipboard-target="#code-93"
+    style="position: absolute; top: 7.5px; right: 6px; cursor: pointer; outline: none; opacity: 0.8;" title="Copy">
+    <span>
+      <span style="font-size: 15px; opacity: 0.8;" class="mdi mdi-content-copy"></span>
+    </span>
+  </button>
+</div>
 <h3 id="references" tabindex="-1"><a class="header-anchor" href="#references">#&nbsp;</a> References</h3>
 <p>https://aws.amazon.com/premiumsupport/knowledge-center/eks-alb-ingress-controller-fargate/</p>
 <h2 id="setup-aws-ses-for-email" tabindex="-1"><a class="header-anchor" href="#setup-aws-ses-for-email">#&nbsp;</a> Setup AWS SES for email</h2>
@@ -173,52 +175,30 @@ helm install aws-load-balancer-controller eks/aws-load-balancer-controller --set
 Setup email identity to send test emails to
 Request move to production from sandbox (need to include examples of emails being sent and why/when those emails will be sent should only need this for prod)</p>
 <p><code>ses_policy.json</code> (with suitable aws id, aws region and domain modifications):</p>
-<pre><code>{
-    &quot;Version&quot;: &quot;2012-10-17&quot;,
-    &quot;Statement&quot;: [
-        {
-            &quot;Sid&quot;: &quot;VisualEditor0&quot;,
-            &quot;Effect&quot;: &quot;Allow&quot;,
-            &quot;Action&quot;: [
-                &quot;ses:SendEmail&quot;,
-                &quot;ses:SendTemplatedEmail&quot;,
-                &quot;ses:SendRawEmail&quot;
-            ],
-            &quot;Resource&quot;: &quot;arn:aws:ses:[aws region]:[aws id]:identity/[domain name]&quot;
-        }
-    ]
-}
-</code></pre>
-<pre><code>IAM_POLICY_ARN=$(aws iam create-policy --policy-name FlowForgeSendEmail --policy-document file://ses_policy.json | jq -r .Policy.Arn)
-ACCOUNT_ID=$(aws sts get-caller-identity --query &quot;Account&quot; --output text)
-OIDC_PROVIDER=$(aws eks describe-cluster --name flowforge --query &quot;cluster.identity.oidc.issuer&quot; --output text | sed -e &quot;s/^https:\/\///&quot;)
 
+<div style="position: relative">
+  <pre class="language-json"><code id="code-112"class="language-json"><span class="token punctuation">{</span><br>    <span class="token property">"Version"</span><span class="token operator">:</span> <span class="token string">"2012-10-17"</span><span class="token punctuation">,</span><br>    <span class="token property">"Statement"</span><span class="token operator">:</span> <span class="token punctuation">[</span><br>        <span class="token punctuation">{</span><br>            <span class="token property">"Sid"</span><span class="token operator">:</span> <span class="token string">"VisualEditor0"</span><span class="token punctuation">,</span><br>            <span class="token property">"Effect"</span><span class="token operator">:</span> <span class="token string">"Allow"</span><span class="token punctuation">,</span><br>            <span class="token property">"Action"</span><span class="token operator">:</span> <span class="token punctuation">[</span><br>                <span class="token string">"ses:SendEmail"</span><span class="token punctuation">,</span><br>                <span class="token string">"ses:SendTemplatedEmail"</span><span class="token punctuation">,</span><br>                <span class="token string">"ses:SendRawEmail"</span><br>            <span class="token punctuation">]</span><span class="token punctuation">,</span><br>            <span class="token property">"Resource"</span><span class="token operator">:</span> <span class="token string">"arn:aws:ses:[aws region]:[aws id]:identity/[domain name]"</span><br>        <span class="token punctuation">}</span><br>    <span class="token punctuation">]</span><br><span class="token punctuation">}</span></code></pre>
 
-read -r -d '' TRUST_RELATIONSHIP &lt;&lt;EOF
-{
-  &quot;Version&quot;: &quot;2012-10-17&quot;,
-  &quot;Statement&quot;: [
-    {
-      &quot;Effect&quot;: &quot;Allow&quot;,
-      &quot;Principal&quot;: {
-        &quot;Federated&quot;: &quot;arn:aws:iam::${ACCOUNT_ID}:oidc-provider/${OIDC_PROVIDER}&quot;
-      },
-      &quot;Action&quot;: &quot;sts:AssumeRoleWithWebIdentity&quot;,
-      &quot;Condition&quot;: {
-        &quot;StringEquals&quot;: {
-          &quot;${OIDC_PROVIDER}:sub&quot;: &quot;system:serviceaccount:default:flowforge&quot;
-        }
-      }
-    }
-  ]
-}
-EOF
-echo &quot;${TRUST_RELATIONSHIP}&quot; &gt; trust.json
+  <button class="code-copy "
+    data-clipboard-target="#code-112"
+    style="position: absolute; top: 7.5px; right: 6px; cursor: pointer; outline: none; opacity: 0.8;" title="Copy">
+    <span>
+      <span style="font-size: 15px; opacity: 0.8;" class="mdi mdi-content-copy"></span>
+    </span>
+  </button>
+</div>
 
-aws iam create-role --role-name flowforge_service_account_role --assume-role-policy-document file://trust.json --description &quot;Role to bind to flowforge service account&quot;
+<div style="position: relative">
+  <pre class="language-bash"><code id="code-113"class="language-bash"><span class="token assign-left variable">IAM_POLICY_ARN</span><span class="token operator">=</span><span class="token variable"><span class="token variable">$(</span>aws iam create-policy --policy-name FlowForgeSendEmail --policy-document file://ses_policy.json <span class="token operator">|</span> jq <span class="token parameter variable">-r</span> .Policy.Arn<span class="token variable">)</span></span><br><span class="token assign-left variable">ACCOUNT_ID</span><span class="token operator">=</span><span class="token variable"><span class="token variable">$(</span>aws sts get-caller-identity <span class="token parameter variable">--query</span> <span class="token string">"Account"</span> <span class="token parameter variable">--output</span> text<span class="token variable">)</span></span><br><span class="token assign-left variable">OIDC_PROVIDER</span><span class="token operator">=</span><span class="token variable"><span class="token variable">$(</span>aws eks describe-cluster <span class="token parameter variable">--name</span> flowforge <span class="token parameter variable">--query</span> <span class="token string">"cluster.identity.oidc.issuer"</span> <span class="token parameter variable">--output</span> text <span class="token operator">|</span> <span class="token function">sed</span> <span class="token parameter variable">-e</span> <span class="token string">"s/^https:\/\///"</span><span class="token variable">)</span></span><br><br><br><span class="token builtin class-name">read</span> <span class="token parameter variable">-r</span> <span class="token parameter variable">-d</span> <span class="token string">''</span> TRUST_RELATIONSHIP <span class="token operator">&lt;&lt;</span><span class="token string">EOF<br>{<br>  "Version": "2012-10-17",<br>  "Statement": [<br>    {<br>      "Effect": "Allow",<br>      "Principal": {<br>        "Federated": "arn:aws:iam::<span class="token variable">${ACCOUNT_ID}</span>:oidc-provider/<span class="token variable">${OIDC_PROVIDER}</span>"<br>      },<br>      "Action": "sts:AssumeRoleWithWebIdentity",<br>      "Condition": {<br>        "StringEquals": {<br>          "<span class="token variable">${OIDC_PROVIDER}</span>:sub": "system:serviceaccount:default:flowforge"<br>        }<br>      }<br>    }<br>  ]<br>}<br>EOF</span><br><span class="token builtin class-name">echo</span> <span class="token string">"<span class="token variable">${TRUST_RELATIONSHIP}</span>"</span> <span class="token operator">></span> trust.json<br><br>aws iam create-role --role-name flowforge_service_account_role --assume-role-policy-document file://trust.json <span class="token parameter variable">--description</span> <span class="token string">"Role to bind to flowforge service account"</span><br><br>aws iam attach-role-policy --role-name flowforge_service_account_role --policy-arn<span class="token operator">=</span><span class="token variable">$IAM_POLICY_ARN</span></code></pre>
 
-aws iam attach-role-policy --role-name flowforge_service_account_role --policy-arn=$IAM_POLICY_ARN
-</code></pre>
+  <button class="code-copy "
+    data-clipboard-target="#code-113"
+    style="position: absolute; top: 7.5px; right: 6px; cursor: pointer; outline: none; opacity: 0.8;" title="Copy">
+    <span>
+      <span style="font-size: 15px; opacity: 0.8;" class="mdi mdi-content-copy"></span>
+    </span>
+  </button>
+</div>
 <p>Make a note of the  ARN for the IAM Role (flowforge_service_account_role) is needed in the helm chart values yaml file.
 <code>aws iam get-role --role-name flowforge_service_account_role</code></p>
 <h3 id="references-1" tabindex="-1"><a class="header-anchor" href="#references-1">#&nbsp;</a> References</h3>
@@ -231,11 +211,31 @@ it from inside the cluster (and not the Node-RED Projects).</p>
 <p>Please read it carfully before running it to ensure you understand it.</p>
 <p>A copy of this file can be found <a href="../setup-rds.sh"">here</a></p>
 <p>Run the following command</p>
-<pre><code>./setup-rds.sh
-</code></pre>
+
+<div style="position: relative">
+  <pre class="language-bash"><code id="code-141"class="language-bash">./setup-rds.sh</code></pre>
+
+  <button class="code-copy "
+    data-clipboard-target="#code-141"
+    style="position: absolute; top: 7.5px; right: 6px; cursor: pointer; outline: none; opacity: 0.8;" title="Copy">
+    <span>
+      <span style="font-size: 15px; opacity: 0.8;" class="mdi mdi-content-copy"></span>
+    </span>
+  </button>
+</div>
 <p>Make a note of the postgress hostname</p>
-<pre><code>aws rds describe-db-instances | jq .DBInstances[].Endpoint.Address
-</code></pre>
+
+<div style="position: relative">
+  <pre class="language-bash"><code id="code-145"class="language-bash">aws rds describe-db-instances <span class="token operator">|</span> jq .DBInstances<span class="token punctuation">[</span><span class="token punctuation">]</span>.Endpoint.Address</code></pre>
+
+  <button class="code-copy "
+    data-clipboard-target="#code-145"
+    style="position: absolute; top: 7.5px; right: 6px; cursor: pointer; outline: none; opacity: 0.8;" title="Copy">
+    <span>
+      <span style="font-size: 15px; opacity: 0.8;" class="mdi mdi-content-copy"></span>
+    </span>
+  </button>
+</div>
 <h3 id="references-2" tabindex="-1"><a class="header-anchor" href="#references-2">#&nbsp;</a> References</h3>
 <p>https://dev.to/bensooraj/accessing-amazon-rds-from-aws-eks-2pc3</p>
 
@@ -245,7 +245,7 @@ it from inside the cluster (and not the Node-RED Projects).</p>
             <h3 class="font-medium border-b pb-1 mb-4">On this page</h3>
             <ul id="toc" class="text-sm border-b mb-4"></ul>
             <div class="text-sm pb-1 text-right mb-4"><a href="https://github.com/flowforge/flowforge/edit/main/docs/install/kubernetes/aws.md">Edit this page</a></div>
-            <div class="text-xs pb-1 text-right mb-4 italic">Updated: 2022-12-15 12:11:25 +0000</div>
+            <div class="text-xs pb-1 text-right mb-4 italic">Updated: 2022-12-22 19:14:44 +0700</div>
         </div>
     </div>
 </div>

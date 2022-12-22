@@ -22,7 +22,7 @@
     <meta name="twitter:description" content="FlowForge is an open-source, low-code platform for integration and automation. Helping you run Node-RED at production scales in a secure, scalable and team-based environment." />
     <meta name="twitter:site" content="@flowforgeinc" />
     <meta name="twitter:image" content="/images/og-social-tile.jpg" />
-    <meta property="og:url" content="https://flowforge.com/docs/install/upgrading/" />
+    <meta property="og:url" content="https://flowforge.com/docs/user/filenodes/" />
     <meta property="og:title" content="" />
     <meta property="og:description" content="FlowForge is an open-source, low-code platform for integration and automation. Helping you run Node-RED at production scales in a secure, scalable and team-based environment." />
     <meta property="og:image" content="/images/og-social-tile.jpg" />
@@ -78,92 +78,48 @@
     <div class="w-full mx-auto ff-bg-light">
         <div class="font-medium border-b pb-1">
             
-            v1.1.2
+            v1.2.0
             
-            /<a class="mx-2" href="/docs">docs</a>/<a class="mx-2" href="/docs/install">install</a>/<a class="mx-2" href="/docs/install/upgrading">upgrading</a>
+            /<a class="mx-2" href="/docs">docs</a>/<a class="mx-2" href="/docs/user">user</a>/<a class="mx-2" href="/docs/user/filenodes">filenodes</a>
         </div>
     </div>
     <div class="w-full mx-auto ff-bg-light flex flex-col md:flex-row">
         <div class="flex-grow order-last md:order-first">
             <div class="mt-6 mb-4 prose prose-blue main-content">
-                <h1 id="upgrading-flowforge" tabindex="-1"><a class="header-anchor" href="#upgrading-flowforge">#&nbsp;</a> Upgrading FlowForge</h1>
-<p>If you are upgrading an existing FlowForge installation, this page will list any
-particular requirements needed to upgrade to a given level.</p>
-<p>Note that we do not support downgrading FlowForge to previous levels once an upgrade
-has been performed.</p>
-<h3 id="upgrading-to-1.1" tabindex="-1"><a class="header-anchor" href="#upgrading-to-1.1">#&nbsp;</a> Upgrading to 1.1</h3>
-<p>Details of how to upgrade can be found for:</p>
+                <h1 id="flowforge-file-nodes" tabindex="-1"><a class="header-anchor" href="#flowforge-file-nodes">#&nbsp;</a> FlowForge File Nodes</h1>
+<p>Projects running within FlowForge include a set of nodes that make it possible
+to store files safely regardless of the environment.
+Cloud based projects can read and write to persistent storage using these nodes.
+Edge devices will store files on its local filesystem.</p>
+<h2 id="enabling-persistent-file-storage" tabindex="-1"><a class="header-anchor" href="#enabling-persistent-file-storage">#&nbsp;</a> Enabling Persistent File Storage</h2>
+<p>FlowForge file nodes replace the core Node-RED file nodes. To make use of these
+nodes, the FlowForge platform Administrator must ensure the core file nodes are
+not loaded.</p>
+<p>This is done by adding <code>10-file-js</code> in the <strong>Exclude nodes by filename</strong>
+section of your FlowForge projects settings under  the <strong>Palette</strong> section.</p>
+<p>This setting is modifiable only by a project owner and only if it has not been
+locked in the <a href="../concepts#project-template"">project template</a> by the platform Administrator.</p>
+<p>These nodes are enabled by default on the FlowForge cloud platform.</p>
+<h2 id="nodes" tabindex="-1"><a class="header-anchor" href="#nodes">#&nbsp;</a> Nodes</h2>
+<p>There are two nodes in the File Node collection:</p>
 <ul>
-<li>LocalFS <a href=".././local/#upgrade"">here</a>.</li>
-<li>Docker <a href=".././docker/#upgrade"">here</a>.</li>
-<li>Kubernetes <a href=".././kubernetes/#upgrade"">here</a>.</li>
+<li><code>file</code> - A file node for writing to persistent storage</li>
+<li><code>file in</code> - A file node for reading from persistent storage</li>
 </ul>
-<h4 id="file-server-added" tabindex="-1"><a class="header-anchor" href="#file-server-added">#&nbsp;</a> File Server added</h4>
-<p>This release introduces a system for supporting persitant file storage when running on
-Docker or Kubernetes (it will also work with LocalFS, but is not required as projects
-have access to the hosts filesystem).</p>
-<p>Details of how to configure this can be found for:</p>
-<ul>
-<li>LocalFS <a href=".././file-storage/#localfs"">here</a>.</li>
-<li>Docker <a href=".././file-storage/#docker-compose"">here</a>.</li>
-<li>Kubernetes <a href=".././file-storage/#kubernetes-helm"">here</a>.</li>
-</ul>
-<h3 id="upgrading-to-0.8" tabindex="-1"><a class="header-anchor" href="#upgrading-to-0.8">#&nbsp;</a> Upgrading to 0.8</h3>
-<h4 id="mqtt-broker-added" tabindex="-1"><a class="header-anchor" href="#mqtt-broker-added">#&nbsp;</a> MQTT Broker added</h4>
-<p>This release introduces an MQTT Broker into the FlowForge platform used to communicate
-between devices and the core platform.</p>
-<p>For LocalFS users, they will need to manually setup the broker and ensure it is
-properly configured. The documentation for this is available <a href=".././local/#mosquitto"">here</a></p>
-<h4 id="localfs-users" tabindex="-1"><a class="header-anchor" href="#localfs-users">#&nbsp;</a> LocalFS Users</h4>
-<p>With the 0.8 release we have updated the version of the SQLite3 module used by the localfs
-container driver. We are moving from v5.0.2 to v5.0.8.</p>
-<p>There appears to be a clash with the bcrypt module when doing an inplace upgrade of the
-SQLite3 module that gives an error similar to the following:</p>
-<pre><code>npm ERR! path /opt/share/projects/flowforge/sqlite-test/node_modules/sqlite3
-npm ERR! command failed
-npm ERR! command sh -c node-pre-gyp install --fallback-to-build
-npm ERR! sh: line 1: node-pre-gyp: command not found
-</code></pre>
-<p>If you see this then the simplest fix is to remove the <code>node_modules</code> directory and reinstall
-the modules.</p>
-<h4 id="project-nodes" tabindex="-1"><a class="header-anchor" href="#project-nodes">#&nbsp;</a> Project Nodes</h4>
-<p>This release adds support for the new Project Link nodes that can be used to send
-messages between projects seamlessly.</p>
-<p>These nodes require the MQTT Broker to be properly configured.</p>
-<p>To deploy flows using these nodes to a Device will require the Device to be running
-the latest 0.2.0 release. They will also need to have their credentials regenerated
-once the MQTT Broker has been added.</p>
-<h3 id="upgrading-to-0.7" tabindex="-1"><a class="header-anchor" href="#upgrading-to-0.7">#&nbsp;</a> Upgrading to 0.7</h3>
-<p>The 0.7 release introduces the <a href="../../user/concepts#project-type"">ProjectType concept</a>.</p>
-<p>After upgrading to 0.7, an administrator must perform the following tasks before
-users will be able to create new projects:</p>
-<ol>
-<li>Create a Project Type.
-<ol>
-<li>On the Administrator Settings -&gt; Project Types page, click 'Create project type'.</li>
-<li>Provide a name and description. If you have billing enabled, copy in the default
-Stripe Product/Price IDs from your runtime settings file.</li>
-<li>Click 'create'</li>
-</ol>
-</li>
-<li>Assign your existing stacks to that type
-<ol>
-<li>On the Administrator Settings -&gt; Stacks page, edit each existing stack via
-the drop-down menu in the table.</li>
-<li>As a one-time action, set its Project Type to the one just created.</li>
-<li>Click 'save'. This will update the stack <em>and</em> all existing projects to
-be associated with the new Project Type</li>
-</ol>
-</li>
-</ol>
+<h2 id="usage" tabindex="-1"><a class="header-anchor" href="#usage">#&nbsp;</a> Usage</h2>
+<p>Simply drop the file nodes into your flows as you would with the regular file nodes in Node-RED.
+There are some helpful built-in examples on the <strong>Import Examples</strong> dialog in Node-RED.</p>
+<h2 id="deployment-considerations" tabindex="-1"><a class="header-anchor" href="#deployment-considerations">#&nbsp;</a> Deployment Considerations</h2>
+<p>When a project is deployed to a device, the original Node-RED file be used and storage will be
+made against the devices local filesystem.</p>
 
             </div>
         </div>
         <div class="w-full md:w-64 md:ml-8 mt-4 md:mt-6 px-2">
             <h3 class="font-medium border-b pb-1 mb-4">On this page</h3>
             <ul id="toc" class="text-sm border-b mb-4"></ul>
-            <div class="text-sm pb-1 text-right mb-4"><a href="https://github.com/flowforge/flowforge/edit/main/docs/install/upgrading.md">Edit this page</a></div>
-            <div class="text-xs pb-1 text-right mb-4 italic">Updated: 2022-12-15 12:11:25 +0000</div>
+            <div class="text-sm pb-1 text-right mb-4"><a href="https://github.com/flowforge/flowforge/edit/main/docs/user/filenodes.md">Edit this page</a></div>
+            <div class="text-xs pb-1 text-right mb-4 italic">Updated: 2022-12-22 19:14:44 +0700</div>
         </div>
     </div>
 </div>

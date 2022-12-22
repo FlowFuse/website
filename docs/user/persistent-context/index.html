@@ -22,7 +22,7 @@
     <meta name="twitter:description" content="FlowForge is an open-source, low-code platform for integration and automation. Helping you run Node-RED at production scales in a secure, scalable and team-based environment." />
     <meta name="twitter:site" content="@flowforgeinc" />
     <meta name="twitter:image" content="/images/og-social-tile.jpg" />
-    <meta property="og:url" content="https://flowforge.com/docs/user/changestack/" />
+    <meta property="og:url" content="https://flowforge.com/docs/user/persistent-context/" />
     <meta property="og:title" content="" />
     <meta property="og:description" content="FlowForge is an open-source, low-code platform for integration and automation. Helping you run Node-RED at production scales in a secure, scalable and team-based environment." />
     <meta property="og:image" content="/images/og-social-tile.jpg" />
@@ -80,39 +80,58 @@
             
             v1.2.0
             
-            /<a class="mx-2" href="/docs">docs</a>/<a class="mx-2" href="/docs/user">user</a>/<a class="mx-2" href="/docs/user/changestack">changestack</a>
+            /<a class="mx-2" href="/docs">docs</a>/<a class="mx-2" href="/docs/user">user</a>/<a class="mx-2" href="/docs/user/persistent-context">persistent-context</a>
         </div>
     </div>
     <div class="w-full mx-auto ff-bg-light flex flex-col md:flex-row">
         <div class="flex-grow order-last md:order-first">
             <div class="mt-6 mb-4 prose prose-blue main-content">
-                <h1 id="changing-the-stack" tabindex="-1"><a class="header-anchor" href="#changing-the-stack">#&nbsp;</a> Changing the Stack</h1>
-<p><a href="../concepts#project-stack"">Project Stacks</a> define various aspects of how the project is run - including the version of Node-RED being used.</p>
-<p>FlowForge allows you to change the stack a project is using - providing a way
-to upgrade Node-RED.</p>
-<p><strong>Note:</strong> Stacks are created by Administrators and made available to the teams
-and users of the platform.</p>
-<p>When an Administrator creates a new version
-of a Stack your project is using, the platform will notify you that there is a
-new version available.</p>
-<p>To change a project's stack:</p>
-<ol>
-<li>Go to the project's page and select <strong>Settings</strong> in the sidebar.</li>
-<li>Select the <strong>Danger</strong> section in the side menu</li>
-<li>Click the <strong>Change Project Stack</strong> button</li>
-<li>You will be prompted to select the new stack for the project.</li>
-<li>Click <strong>Change Stack</strong></li>
-</ol>
-<p>Your project will now be restart on the new stack.</p>
-<p><strong>Note:</strong> Changing the stack causes the project to be stopped and restarted. This
-will require a short downtime of the project flows.</p>
+                <h1 id="flowforge-persistent-context" tabindex="-1"><a class="header-anchor" href="#flowforge-persistent-context">#&nbsp;</a> FlowForge Persistent Context</h1>
+<p>Some Node-RED flows need a way to persist context values between restarts and FlowForge stack
+updates but context data is ephemeral by default. With FlowForge Premium, persistent context
+storage is possible and it survives restarts, upgrades and more.</p>
+<h2 id="usage" tabindex="-1"><a class="header-anchor" href="#usage">#&nbsp;</a> Usage</h2>
+<p>In your Node-RED, you will now have the option to store values in 2 context stores:</p>
+<ul>
+<li><strong>Memory</strong>: This is for ephemeral context where you do not want it to be persisted.</li>
+<li><strong>Persistent</strong>: This is for persistent context where you want values to persist restarts and upgrades.</li>
+</ul>
+<p>For more information on Context, head over to the <a href="https://nodered.org/docs/user-guide/context">Node-RED Working with context</a> guide.</p>
+<h2 id="limitations" tabindex="-1"><a class="header-anchor" href="#limitations">#&nbsp;</a> Limitations</h2>
+<p>Currently, only async versions of context <code>get</code> and context <code>set</code> functions are supported.</p>
+<h3 id="supported%3A" tabindex="-1"><a class="header-anchor" href="#supported%3A">#&nbsp;</a> Supported:</h3>
+
+<div style="position: relative">
+  <pre class="language-js"><code id="code-36"class="language-js">global<span class="token punctuation">.</span><span class="token function">set</span><span class="token punctuation">(</span><span class="token string">'var1'</span><span class="token punctuation">,</span> <span class="token string">'persistent'</span><span class="token punctuation">,</span> <span class="token string">'i am the value'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span>err<span class="token punctuation">)</span> <span class="token punctuation">{</span><br>    <span class="token comment">//do something</span><br><span class="token punctuation">}</span><span class="token punctuation">)</span><br>global<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">'var1'</span><span class="token punctuation">,</span> <span class="token string">'persistent'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter">err<span class="token punctuation">,</span> val</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span><br>    <span class="token comment">//do something with val</span><br><span class="token punctuation">}</span><span class="token punctuation">)</span></code></pre>
+
+  <button class="code-copy "
+    data-clipboard-target="#code-36"
+    style="position: absolute; top: 7.5px; right: 6px; cursor: pointer; outline: none; opacity: 0.8;" title="Copy">
+    <span>
+      <span style="font-size: 15px; opacity: 0.8;" class="mdi mdi-content-copy"></span>
+    </span>
+  </button>
+</div>
+<h3 id="unsupported%3A" tabindex="-1"><a class="header-anchor" href="#unsupported%3A">#&nbsp;</a> Unsupported:</h3>
+
+<div style="position: relative">
+  <pre class="language-js"><code id="code-40"class="language-js"><span class="token comment">// global.set('var1', 'persistent', 'i am the value')</span><br><span class="token comment">// const value = global.get('var1', 'persistent')</span></code></pre>
+
+  <button class="code-copy "
+    data-clipboard-target="#code-40"
+    style="position: absolute; top: 7.5px; right: 6px; cursor: pointer; outline: none; opacity: 0.8;" title="Copy">
+    <span>
+      <span style="font-size: 15px; opacity: 0.8;" class="mdi mdi-content-copy"></span>
+    </span>
+  </button>
+</div>
 
             </div>
         </div>
         <div class="w-full md:w-64 md:ml-8 mt-4 md:mt-6 px-2">
             <h3 class="font-medium border-b pb-1 mb-4">On this page</h3>
             <ul id="toc" class="text-sm border-b mb-4"></ul>
-            <div class="text-sm pb-1 text-right mb-4"><a href="https://github.com/flowforge/flowforge/edit/main/docs/user/changestack.md">Edit this page</a></div>
+            <div class="text-sm pb-1 text-right mb-4"><a href="https://github.com/flowforge/flowforge/edit/main/docs/user/persistent-context.md">Edit this page</a></div>
             <div class="text-xs pb-1 text-right mb-4 italic">Updated: 2022-12-22 19:14:44 +0700</div>
         </div>
     </div>

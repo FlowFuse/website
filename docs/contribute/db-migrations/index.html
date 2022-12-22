@@ -78,7 +78,7 @@
     <div class="w-full mx-auto ff-bg-light">
         <div class="font-medium border-b pb-1">
             
-            v1.1.2
+            v1.2.0
             
             /<a class="mx-2" href="/docs">docs</a>/<a class="mx-2" href="/docs/contribute">contribute</a>/<a class="mx-2" href="/docs/contribute/db-migrations">db-migrations</a>
         </div>
@@ -108,15 +108,18 @@ the name allows multiple migrations to be added on the same day, but kept in the
 right order.</p>
 <h3 id="structure" tabindex="-1"><a class="header-anchor" href="#structure">#&nbsp;</a> Structure</h3>
 <p>The migration code should use the following layout:</p>
-<pre><code>module.exports = {
-    up: async (context) =&gt; {
-        // Apply the migration
-    },
-    down: async (context) =&gt; {
-        // Remove the migration
-    }
-}
-</code></pre>
+
+<div style="position: relative">
+  <pre class="language-js"><code id="code-48"class="language-js">module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span><br>    <span class="token function-variable function">up</span><span class="token operator">:</span> <span class="token keyword">async</span> <span class="token punctuation">(</span><span class="token parameter">context</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span><br>        <span class="token comment">// Apply the migration</span><br>    <span class="token punctuation">}</span><span class="token punctuation">,</span><br>    <span class="token function-variable function">down</span><span class="token operator">:</span> <span class="token keyword">async</span> <span class="token punctuation">(</span><span class="token parameter">context</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span><br>        <span class="token comment">// Remove the migration</span><br>    <span class="token punctuation">}</span><br><span class="token punctuation">}</span></code></pre>
+
+  <button class="code-copy "
+    data-clipboard-target="#code-48"
+    style="position: absolute; top: 7.5px; right: 6px; cursor: pointer; outline: none; opacity: 0.8;" title="Copy">
+    <span>
+      <span style="font-size: 15px; opacity: 0.8;" class="mdi mdi-content-copy"></span>
+    </span>
+  </button>
+</div>
 <p>The <code>up</code> function applies the migration. This can be to create new tables, add columns
 to existing ones - whatever is needed.</p>
 <p>The <code>down</code> function reverses the migration. It should restore the database back to
@@ -149,7 +152,7 @@ involve dropping the whole table and triggering any cascade triggers.</p>
             <h3 class="font-medium border-b pb-1 mb-4">On this page</h3>
             <ul id="toc" class="text-sm border-b mb-4"></ul>
             <div class="text-sm pb-1 text-right mb-4"><a href="https://github.com/flowforge/flowforge/edit/main/docs/contribute/db-migrations.md">Edit this page</a></div>
-            <div class="text-xs pb-1 text-right mb-4 italic">Updated: 2022-12-15 12:11:25 +0000</div>
+            <div class="text-xs pb-1 text-right mb-4 italic">Updated: 2022-12-22 19:14:44 +0700</div>
         </div>
     </div>
 </div>
