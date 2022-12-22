@@ -43,7 +43,7 @@ We've fixed the following bugs in this release.
 
 - Unable to edit 'Prevent Install of External nodes' template option [#1376](https://github.com/flowforge/flowforge/issues/1376)
 
-- Email features do not pick up if email server is offline when FF launches [#1159](https://github.com/flowforge/flowforge/issues/1159)
+- Self-managed FlowForge needs an external email server to deliver email to users. FlowForge should be able deal with the email server being offline and gracefully recover once it is back online. [#1159](https://github.com/flowforge/flowforge/issues/1159)
 
 - Duplicate Activity Log for Project whose state is in flight [#1461](https://github.com/flowforge/flowforge/issues/1461)
 
