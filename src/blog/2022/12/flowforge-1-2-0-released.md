@@ -21,7 +21,7 @@ Keep reading for the details of what's in this release or you can watch our 1 mi
 
 - [Single Sign-On](https://github.com/flowforge/flowforge/issues/226) Single sign-on (SSO) is a method of authentication that allows a user to access multiple applications or systems with a single set of login credentials, improving security, productivity, and user experience, and reducing IT overhead. We've implemented SSO using the Security Assertion Markup Language [(SAML)](https://en.wikipedia.org/wiki/Security_Assertion_Markup_Language) framework. This allows users of FlowForge Cloud, Enterprise and Community Edition to easily access their FlowForge projects.
 
-- [Persistent Context](https://github.com/flowforge/flowforge/issues/212) Node-RED provides a way to store information that can be shared between different nodes without using the messages that pass through a flow. This is called ‘context’. You can now select if context should be stored in memory or in persistent storage. Persistent storage allows the stored values to be recalled after a restart of your project.
+[Persistent Context](https://github.com/flowforge/flowforge/issues/212) Node-RED provides a way to store information that can be shared between different nodes and flow executions without using the messages that pass through a flow. This is called ‘context’. You can now select if context should be stored in memory or in persistent storage. Persistent storage allows the stored values to be recalled after a restart of your project.
 
 ## Improvements
 
