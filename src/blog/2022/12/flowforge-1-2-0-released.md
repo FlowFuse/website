@@ -1,5 +1,5 @@
 ---
-title: FlowForge 1.2 is now available with support for single sign on and persistant context storage
+title: FlowForge 1.2 is now available with single sign on and persistent context storage
 subtitle: Our final release for 2022 with some great new features to try out
 description: 
 date: 2022-12-22 18:00:00.0
