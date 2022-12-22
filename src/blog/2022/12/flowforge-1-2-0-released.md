@@ -33,7 +33,7 @@ Keep reading for the details of what's in this release or you can watch our 1 mi
 
 - We are now pushing our Docker builds to Docker Hub, this saves users from having to build the Docker images when installing or updating. We've [updated our documentation](https://github.com/flowforge/flowforge/commit/c9363c8d422569df8c0a25767f9e4a647ca032ee) to reflect this improvement.
 
-- We've improved the documentation around configuration of [MQTT](https://github.com/flowforge/flowforge/issues/1397).
+Setting up MQTT for inter-project communication and communication with devices has been simplified. Please read the improved the documentation around configuration of [MQTT](https://github.com/flowforge/flowforge/issues/1397).
 
 ## Bug Fixes
 
