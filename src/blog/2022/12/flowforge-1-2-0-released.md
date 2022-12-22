@@ -31,7 +31,9 @@ Configuring DNS for FlowForge has historically been challenging as for most Flow
 
 - We've updated our documentation to always link to the latest build (older builds are still available).
 
-- We are now pushing our Docker builds to Docker Hub, this saves users from having to build the Docker images when installing or updating. We've [updated our documentation](https://github.com/flowforge/flowforge/commit/c9363c8d422569df8c0a25767f9e4a647ca032ee) to reflect this improvement.
+Previously customers were asked to build their own containers for the main FlowForge applications, as well as the Node-RED ones. For the Node-RED containers this allows customers to pre-install packages in the container they intent to use. For FlowForge Cloud these containers are build by FlowForge. These containers are now published to the [Docker Hub](https://hub.docker.com/u/flowforge). This makes it much easier to get up and running with your first containers.
+
+We are now pushing our Docker builds to Docker Hub, this saves users from having to build the Docker images when installing or updating. These containers are used by default by `docker-compose`.
 
 Setting up MQTT for inter-project communication and communication with devices has been simplified. Please read the improved the documentation around configuration of [MQTT](https://github.com/flowforge/flowforge/issues/1397).
 
