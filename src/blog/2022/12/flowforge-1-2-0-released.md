@@ -26,16 +26,17 @@ Keep reading for the details of what's in this release or you can watch our 1 mi
 ## Improvements
 
 - In FlowForge 1.1 we added logging of user actions. In 1.2 we’ve [improved the audit log interface](https://github.com/flowforge/flowforge/issues/517) to help you read the recorded user actions.
+![An image of the new audit log interface](../images/audit-log.png)
 
-Configuring DNS for FlowForge has historically been challenging as for most FlowForge installs you'll need two entries. One for the FlowForge application, and one for the Node-RED projects. There's been updates to the documentation to make it much easier to set this up, and much faster. Please checkout the new [documentation](<TODO link to docs>).
+- Configuring DNS for FlowForge has historically been challenging as for most FlowForge installs you'll need two entries. One for the FlowForge application, and one for the Node-RED projects. There's been updates to the documentation to make it much easier to set this up, and much faster. Please checkout the new [documentation](<TODO link to docs>).
 
 - We've updated our documentation to always link to the latest build (older builds are still available).
 
-Previously customers were asked to build their own containers for the main FlowForge applications, as well as the Node-RED ones. For the Node-RED containers this allows customers to pre-install packages in the container they intent to use. For FlowForge Cloud these containers are build by FlowForge. These containers are now published to the [Docker Hub](https://hub.docker.com/u/flowforge). This makes it much easier to get up and running with your first containers.
+- Previously customers were asked to build their own containers for the main FlowForge applications, as well as the Node-RED ones. For the Node-RED containers this allows customers to pre-install packages in the container they intent to use. For FlowForge Cloud these containers are build by FlowForge. These containers are now published to the [Docker Hub](https://hub.docker.com/u/flowforge). This makes it much easier to get up and running with your first containers.
 
-We are now pushing our Docker builds to Docker Hub, this saves users from having to build the Docker images when installing or updating. These containers are used by default by `docker-compose`.
+- We are now pushing our Docker builds to Docker Hub, this saves users from having to build the Docker images when installing or updating. These containers are used by default by `docker-compose`.
 
-Setting up MQTT for inter-project communication and communication with devices has been simplified. Please read the improved the documentation around configuration of [MQTT](https://github.com/flowforge/flowforge/issues/1397).
+- Setting up MQTT for inter-project communication and communication with devices has been simplified. Please read the improved the documentation around configuration of [MQTT](https://github.com/flowforge/flowforge/issues/1397).
 
 ## Bug Fixes
 
