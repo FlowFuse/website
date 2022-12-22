@@ -57,7 +57,7 @@ If you're interested in contributing, checkout our [guide in the docs](https://f
 ### Try it out
 
 In 1.2 we've continued to improve the experience of running your own self managed FlowForge installation. We're confident you can have self managed FlowForge running locally in under 30 minutes.
-You can install our [local](https://flowforge.com/docs/install/local/), [Docker](https://flowforge.com/docs/install/docker/), or [Kubernetes](https://flowforge.com/docs/install/kubernetes/) builds.
+You can install our [local build](https://flowforge.com/docs/install/local/), through [Docker](https://flowforge.com/docs/install/docker/), or [Kubernetes](https://flowforge.com/docs/install/kubernetes/).
 
 If you'd rather use our hosted offering: [Sign up for FlowForge Cloud](https://app.flowforge.com/account/create?code=FF12)
 with the coupon **FF12** to get your first project free for a month.
