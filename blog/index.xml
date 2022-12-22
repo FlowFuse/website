@@ -3,8 +3,85 @@
     <title>FlowForge</title>
     <link href="https://flowforge.com/blog/index.xml" rel="self"/>
     <link href="https://flowforge.com/blog"/>
-    <updated>2022-12-15T00:00:00Z</updated>
+    <updated>2022-12-22T18:00:00Z</updated>
     <id>https://flowforge.com/blog</id>
+    
+    <entry>
+        <id>https://flowforge.com/blog/2022/12/flowforge-1-2-0-released/</id>
+        <title>FlowForge 1.2 is now available with single sign on and persistent context storage</title>
+        <summary>Our final release for 2022 with some great new features to try out</summary>
+        <updated>2022-12-22T18:00:00Z</updated>
+        <link href="https://flowforge.com/blog/2022/12/flowforge-1-2-0-released/"/>
+        <author><name>Rob Marcer</name></author>
+        <content type="html">&lt;p&gt;Control access to FlowForge using single sign-on and retain context values when restarting projects.&lt;/p&gt;
+&lt;!--more--&gt;
+&lt;p&gt;We&#39;re pleased to announce version 1.2 is now available! The latest release of the FlowForge application contains new features, improvements, better documentation, and bug fixes.&lt;/p&gt;
+&lt;p&gt;We&#39;ve put a great deal of work in this release to make it easier to run your own self-managed instance of FlowForge. That includes significant improvements for FlowForge in &lt;a href=&quot;https://flowforge.com/docs/install/kubernetes/&quot;&gt;Kubernetes&lt;/a&gt; and &lt;a href=&quot;https://flowforge.com/docs/install/docker/&quot;&gt;Docker&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Keep reading for the details of what&#39;s in this release or you can watch our 1 minute roundup video of the new release above.&lt;/p&gt;
+&lt;h2 id=&quot;features&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://flowforge.com/blog/2022/12/flowforge-1-2-0-released/#features&quot;&gt;#&amp;nbsp;&lt;/a&gt; Features&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/flowforge/flowforge/issues/226&quot;&gt;Single Sign-On&lt;/a&gt; Single sign-on (SSO) is a method of authentication that allows a user to access multiple applications or systems with a single set of login credentials, improving security, productivity, and user experience, and reducing IT overhead. We&#39;ve implemented SSO using the Security Assertion Markup Language &lt;a href=&quot;https://en.wikipedia.org/wiki/Security_Assertion_Markup_Language&quot;&gt;(SAML)&lt;/a&gt; framework. This allows users of FlowForge Cloud, Premium and the open source edition to easily access their FlowForge projects.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/flowforge/flowforge/issues/212&quot;&gt;Persistent Context&lt;/a&gt; Node-RED provides a way to store information that can be shared between different nodes and flow executions without using the messages that pass through a flow. This is called ‘context’. You can now select if context should be stored in memory or in persistent storage. Persistent storage allows the stored values to be recalled after a restart of your project. You can see a demonstration of this feature on our &lt;a href=&quot;https://youtu.be/ma2vYrXmssc&quot;&gt;Youtube channel&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&quot;improvements&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://flowforge.com/blog/2022/12/flowforge-1-2-0-released/#improvements&quot;&gt;#&amp;nbsp;&lt;/a&gt; Improvements&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;In FlowForge 1.1 we added logging of user actions. In 1.2 we’ve &lt;a href=&quot;https://github.com/flowforge/flowforge/issues/517&quot;&gt;improved the audit log interface&lt;/a&gt; to help you read the recorded user actions.
+&lt;img src=&quot;https://flowforge.com/blog/2022/12/images/audit-log.png&quot; alt=&quot;An image of the new audit log interface&quot; /&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Configuring DNS for FlowForge has historically been challenging as for most FlowForge installs you&#39;ll need two entries. One for the FlowForge application, and one for the Node-RED projects. There&#39;s been updates to the documentation to make it much easier to set this up, and much faster. Please checkout the new &lt;a href=&quot;https://flowforge.com/docs/install/dns-setup/&quot;&gt;documentation&lt;/a&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;We&#39;ve updated our documentation to always link to the latest build (older builds are still available).&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Previously customers were asked to build their own containers for the main FlowForge applications, as well as the Node-RED ones. For the Node-RED containers this allows customers to pre-install packages in the container they intent to use. For FlowForge Cloud these containers are build by FlowForge. These containers are now published to the &lt;a href=&quot;https://hub.docker.com/u/flowforge&quot;&gt;Docker Hub&lt;/a&gt;. This makes it much easier to get up and running with your first containers.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;We are now pushing our Docker builds to Docker Hub, this saves users from having to build the Docker images when installing or updating. These containers are used by default by &lt;code&gt;docker-compose&lt;/code&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Setting up MQTT for inter-project communication and communication with devices has been simplified. Please read the improved the documentation around configuration of &lt;a href=&quot;https://github.com/flowforge/flowforge/issues/1397&quot;&gt;MQTT&lt;/a&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;bug-fixes&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://flowforge.com/blog/2022/12/flowforge-1-2-0-released/#bug-fixes&quot;&gt;#&amp;nbsp;&lt;/a&gt; Bug Fixes&lt;/h2&gt;
+&lt;p&gt;We&#39;ve fixed the following bugs in this release.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Unable to edit &#39;Prevent Install of External nodes&#39; template option &lt;a href=&quot;https://github.com/flowforge/flowforge/issues/1376&quot;&gt;#1376&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Self-managed FlowForge needs an external email server to deliver email to users. FlowForge should be able deal with the email server being offline and gracefully recover once it is back online. &lt;a href=&quot;https://github.com/flowforge/flowforge/issues/1159&quot;&gt;#1159&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Duplicate Activity Log for Project whose state is in flight &lt;a href=&quot;https://github.com/flowforge/flowforge/issues/1461&quot;&gt;#1461&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;contributors-todo&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://flowforge.com/blog/2022/12/flowforge-1-2-0-released/#contributors-todo&quot;&gt;#&amp;nbsp;&lt;/a&gt; Contributors TODO&lt;/h2&gt;
+&lt;p&gt;We&#39;d like the thank the following for their contributions to this release:&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/flecoufle&quot;&gt;flecoufle&lt;/a&gt; for their work on &lt;a href=&quot;https://github.com/flowforge/docker-compose/pull/59&quot;&gt;#59&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/sumanpaikdev&quot;&gt;sumanpaikdev&lt;/a&gt; for their work on &lt;a href=&quot;https://github.com/flowforge/docker-compose/pull/53&quot;&gt;#53&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/sdirosa&quot;&gt;sdirosa&lt;/a&gt; for their work on &lt;a href=&quot;https://github.com/flowforge/flowforge/pull/1326&quot;&gt;#1326&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;As an open-source project, we welcome community involvement in what we&#39;re building.
+If you&#39;re interested in contributing, checkout our &lt;a href=&quot;https://flowforge.com/docs/contribute/&quot;&gt;guide in the docs&lt;/a&gt;.&lt;/p&gt;
+&lt;h3 id=&quot;try-it-out&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://flowforge.com/blog/2022/12/flowforge-1-2-0-released/#try-it-out&quot;&gt;#&amp;nbsp;&lt;/a&gt; Try it out&lt;/h3&gt;
+&lt;p&gt;In 1.2 we&#39;ve continued to improve the experience of running your own self managed FlowForge installation. We&#39;re confident you can have self managed FlowForge running locally in under 30 minutes.
+You can install our &lt;a href=&quot;https://flowforge.com/docs/install/local/&quot;&gt;local build&lt;/a&gt;, through &lt;a href=&quot;https://flowforge.com/docs/install/docker/&quot;&gt;Docker&lt;/a&gt;, or &lt;a href=&quot;https://flowforge.com/docs/install/kubernetes/&quot;&gt;Kubernetes&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;If you&#39;d rather use our hosted offering: &lt;a href=&quot;https://app.flowforge.com/account/create?code=FF12&quot;&gt;Sign up for FlowForge Cloud&lt;/a&gt;
+with the coupon &lt;strong&gt;FF12&lt;/strong&gt; to get your first project free for a month.&lt;/p&gt;
+&lt;h3 id=&quot;upgrading-flowforge&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://flowforge.com/blog/2022/12/flowforge-1-2-0-released/#upgrading-flowforge&quot;&gt;#&amp;nbsp;&lt;/a&gt; Upgrading FlowForge&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&quot;https://app.flowforge.com/&quot;&gt;FlowForge Cloud&lt;/a&gt; is already running 1.2. To use
+persistent context you&#39;ll need to upgrade your projects stack.&lt;/p&gt;
+&lt;p&gt;If you installed a previous version of FlowForge and want to upgrade, our documentation provides a
+guide for &lt;a href=&quot;https://flowforge.com/docs/install/upgrading/&quot;&gt;upgrading your FlowForge instance&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&quot;getting-help&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://flowforge.com/blog/2022/12/flowforge-1-2-0-released/#getting-help&quot;&gt;#&amp;nbsp;&lt;/a&gt; Getting help&lt;/h3&gt;
+&lt;p&gt;Please check FlowForge&#39;s &lt;a href=&quot;https://flowforge.com/docs/&quot;&gt;documentation&lt;/a&gt; as the answers to many questions are covered there.&lt;/p&gt;
+&lt;p&gt;If you hit any problems with the platform please raise an &lt;a href=&quot;https://github.com/flowforge/flowforge/issues&quot;&gt;issue on GitHub&lt;/a&gt;.
+That also includes if you have any feedback or feature requests.&lt;/p&gt;
+&lt;p&gt;Chat with us on the &lt;code&gt;#flowforge&lt;/code&gt; channel on the &lt;a href=&quot;https://nodered.org/slack&quot;&gt;Node-RED Slack workspace&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;You can raise a support ticket by emailing &lt;a href=&quot;mailto:support@flowforge.com&quot;&gt;support@flowforge.com&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;We&#39;ve also added a live chat widget to our website, you can access it using the icon on the bottom right corner of our website. We&#39;d love to hear from you.&lt;/p&gt;
+</content>
+    </entry>
     
     <entry>
         <id>https://flowforge.com/blog/2022/12/what-flowforge-adds-to-node-red/</id>
