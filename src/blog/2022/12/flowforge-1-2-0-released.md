@@ -57,6 +57,8 @@ We'd like the thank the following for their contributions to this release:
 
 [sumanpaikdev](https://github.com/sumanpaikdev) for their work on [#53](https://github.com/flowforge/docker-compose/pull/53)
 
+[sdirosa](https://github.com/sdirosa) for their work on [#1326](https://github.com/flowforge/flowforge/pull/1326)
+
 As an open-source project, we welcome community involvement in what we're building.
 If you're interested in contributing, checkout our [guide in the docs](https://flowforge.com/docs/contribute/).
 
