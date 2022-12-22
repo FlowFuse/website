@@ -21,14 +21,14 @@ Keep reading for the details of what's in this release or you can watch our 1 mi
 
 [Single Sign-On](https://github.com/flowforge/flowforge/issues/226) Single sign-on (SSO) is a method of authentication that allows a user to access multiple applications or systems with a single set of login credentials, improving security, productivity, and user experience, and reducing IT overhead. We've implemented SSO using the Security Assertion Markup Language [(SAML)](https://en.wikipedia.org/wiki/Security_Assertion_Markup_Language) framework. This allows users of FlowForge Cloud, Premium and the open source edition to easily access their FlowForge projects.
 
-[Persistent Context](https://github.com/flowforge/flowforge/issues/212) Node-RED provides a way to store information that can be shared between different nodes and flow executions without using the messages that pass through a flow. This is called ‘context’. You can now select if context should be stored in memory or in persistent storage. Persistent storage allows the stored values to be recalled after a restart of your project.
+[Persistent Context](https://github.com/flowforge/flowforge/issues/212) Node-RED provides a way to store information that can be shared between different nodes and flow executions without using the messages that pass through a flow. This is called ‘context’. You can now select if context should be stored in memory or in persistent storage. Persistent storage allows the stored values to be recalled after a restart of your project. You can see a demonstration of this feature on our [Youtube channel](https://youtu.be/ma2vYrXmssc).
 
 ## Improvements
 
 - In FlowForge 1.1 we added logging of user actions. In 1.2 we’ve [improved the audit log interface](https://github.com/flowforge/flowforge/issues/517) to help you read the recorded user actions.
 ![An image of the new audit log interface](../images/audit-log.png)
 
-- Configuring DNS for FlowForge has historically been challenging as for most FlowForge installs you'll need two entries. One for the FlowForge application, and one for the Node-RED projects. There's been updates to the documentation to make it much easier to set this up, and much faster. Please checkout the new [documentation](<TODO link to docs>).
+- Configuring DNS for FlowForge has historically been challenging as for most FlowForge installs you'll need two entries. One for the FlowForge application, and one for the Node-RED projects. There's been updates to the documentation to make it much easier to set this up, and much faster. Please checkout the new [documentation](https://flowforge.com/docs/install/dns-setup/).
 
 - We've updated our documentation to always link to the latest build (older builds are still available).
 
@@ -52,7 +52,10 @@ We've fixed the following bugs in this release.
 
 We'd like the thank the following for their contributions to this release:
 
-[mikermcneil](https://github.com/mikermcneil) for their work on [#1301](https://github.com/flowforge/flowforge/pull/1301)
+[flecoufle](https://github.com/flecoufle) for their work on [#59](https://github.com/flowforge/docker-compose/pull/59)
+
+
+[sumanpaikdev](https://github.com/sumanpaikdev) for their work on [#53](https://github.com/flowforge/docker-compose/pull/53)
 
 As an open-source project, we welcome community involvement in what we're building.
 If you're interested in contributing, checkout our [guide in the docs](https://flowforge.com/docs/contribute/).
