@@ -7,7 +7,7 @@ authors: ["rob-marcer"]
 video: u7TjqUAub1g
 ---
 
-Control access to FlowForge using single sign-on and retain context values when restarting projects
+Control access to FlowForge using single sign-on and retain context values when restarting projects.
 
 <!--more-->
 
