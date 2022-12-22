@@ -27,7 +27,7 @@ Keep reading for the details of what's in this release or you can watch our 1 mi
 
 - In FlowForge 1.1 we added logging of user actions. In 1.2 we’ve [improved the audit log interface](https://github.com/flowforge/flowforge/issues/517) to help you read the recorded user actions.
 
-- We've added documentation explaining how to deal with [DNS records in Docker and Kubernetes](https://github.com/orgs/flowforge/projects/1/views/33).
+Configuring DNS for FlowForge has historically been challenging as for most FlowForge installs you'll need two entries. One for the FlowForge application, and one for the Node-RED projects. There's been updates to the documentation to make it much easier to set this up, and much faster. Please checkout the new [documentation](<TODO link to docs>).
 
 - We've updated our documentation to always link to the latest build (older builds are still available).
 
