@@ -72,7 +72,7 @@ with the coupon &lt;strong&gt;FF12&lt;/strong&gt; to get your first project free
 &lt;p&gt;&lt;a href=&quot;https://app.flowforge.com/&quot;&gt;FlowForge Cloud&lt;/a&gt; is already running 1.2. To use
 persistent context you&#39;ll need to upgrade your projects stack.&lt;/p&gt;
 &lt;p&gt;If you installed a previous version of FlowForge and want to upgrade, our documentation provides a
-guide for &lt;a href=&quot;https://flowforge.com/docs/install/upgrading/&quot;&gt;upgrading your FlowForge instance&lt;/a&gt;&lt;/p&gt;
+guide for &lt;a href=&quot;https://flowforge.com/docs/upgrade/&quot;&gt;upgrading your FlowForge instance&lt;/a&gt;.&lt;/p&gt;
 &lt;h3 id=&quot;getting-help&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://flowforge.com/blog/2022/12/flowforge-1-2-0-released/#getting-help&quot;&gt;#&amp;nbsp;&lt;/a&gt; Getting help&lt;/h3&gt;
 &lt;p&gt;Please check FlowForge&#39;s &lt;a href=&quot;https://flowforge.com/docs/&quot;&gt;documentation&lt;/a&gt; as the answers to many questions are covered there.&lt;/p&gt;
 &lt;p&gt;If you hit any problems with the platform please raise an &lt;a href=&quot;https://github.com/flowforge/flowforge/issues&quot;&gt;issue on GitHub&lt;/a&gt;.
