@@ -11,6 +11,7 @@ releases.
  - Create a Release checklist issue using the [Release Checklist template](https://github.com/flowforge/admin/issues/new?assignees=&labels=&template=release.md&title=Release%3A)
  - Assign the issue to the Release Manager
  - Ensure you have the following installed on your machine:
+    - git command-line tools.
     - [GitHub client](https://github.com/cli/cli)
     - [jq](https://stedolan.github.io/jq/download/)
     - [yq](https://mikefarah.gitbook.io/yq/#install)
