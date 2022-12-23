@@ -76,7 +76,7 @@ with the coupon **FF12** to get your first project free for a month.
 persistent context you'll need to upgrade your projects stack.
 
 If you installed a previous version of FlowForge and want to upgrade, our documentation provides a
-guide for [upgrading your FlowForge instance](https://flowforge.com/docs/install/upgrading/)
+guide for [upgrading your FlowForge instance](https://flowforge.com/docs/upgrade/).
 
 ### Getting help
 
