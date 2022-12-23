@@ -15,6 +15,7 @@ releases.
     - [jq](https://stedolan.github.io/jq/download/)
     - [yq](https://mikefarah.gitbook.io/yq/#install)
  - Ensure you're machine is authenticated with the GitHub client: `gh auth login`
+ - Ensure you are able to access the FlowForge repositories using the git cli without being prompted for a password: `ssh -T git@github.com`
  - When we are ready to start the release process the Release Manager should start a Slack Huddle in #dev and keep that open until the release is completed.
 
 ### Unmanaged Repositories
