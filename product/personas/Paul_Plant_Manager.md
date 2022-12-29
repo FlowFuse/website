@@ -40,7 +40,7 @@ Job Level: Executive
 
 - Final decision-maker for large investments
 
-- > 50.000$
+- 50.000$
 
 ### Biggest Challenges:
 
