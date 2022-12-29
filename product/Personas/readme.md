@@ -11,16 +11,12 @@ Personas are fictional characters that represent the different users we expect t
 - [Isabella IIoT Project Lead](Isabella_IIoT_Project_Lead.md)
 
 - [Peter PLC Engineer](Peter_PLC_Engineer.md)
-
-- ...
   
   ##### Startup Inc.
 
 - [Sahib Startup CTO](Sahib_Startup_CTO.md)
 
 - [Danielle Developer](Danielle_Developer.md)
-
-- ...
   
   ##### Others
 
