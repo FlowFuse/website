@@ -1,4 +1,6 @@
-# Paul Plant Manager<img title="" src="https://lh5.googleusercontent.com/jhv-mN9_QydGhvjcppogQ_13ntjWe-eh5OQ4MS5CG180eaxUHP3z44Uqega6TEboOWySEkaGAi_TsNdhyGZRQE-GOllIqponrX2H_HsxcHi7YPZet6dp4y9Kk8cTw1ukrzgDOo54T-SMCqODRECCiafsRQlX0rVeFhGugaD23GYfdMfkP6aCOttwXM376Q" alt="" width="195" data-align="left">
+# Paul Plant Manager
+
+<img title="" src="https://lh5.googleusercontent.com/jhv-mN9_QydGhvjcppogQ_13ntjWe-eh5OQ4MS5CG180eaxUHP3z44Uqega6TEboOWySEkaGAi_TsNdhyGZRQE-GOllIqponrX2H_HsxcHi7YPZet6dp4y9Kk8cTw1ukrzgDOo54T-SMCqODRECCiafsRQlX0rVeFhGugaD23GYfdMfkP6aCOttwXM376Q" alt="" width="195" data-align="left">
 
 Age: 52
 
@@ -47,5 +49,3 @@ Job Level: Executive
 - improve the economic situation
 
 ### Additional information:
-
-

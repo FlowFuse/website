@@ -1,4 +1,6 @@
-# Sahib Startup CTO<img title="" src="https://lh3.googleusercontent.com/D06YyLStGeVt-BuI0M1ZtA4i6uACYZP1rtpEdJnxUOuKtDpcG7_lF8gE7NHADv521fdCob7zkLAwmJ8qReWHKUrO7u3NXaSZEnhnzXN3Sos7xwnaSYOYIXAietoYwErdS10xw6CAHM9JBWHdNpanDDurk0PttCYJbrjsNPlZNjRXhaAl9ayiuueg2Zt0Sg" alt="" width="178" data-align="left">
+# Sahib Startup CTO
+
+<img title="" src="https://lh3.googleusercontent.com/D06YyLStGeVt-BuI0M1ZtA4i6uACYZP1rtpEdJnxUOuKtDpcG7_lF8gE7NHADv521fdCob7zkLAwmJ8qReWHKUrO7u3NXaSZEnhnzXN3Sos7xwnaSYOYIXAietoYwErdS10xw6CAHM9JBWHdNpanDDurk0PttCYJbrjsNPlZNjRXhaAl9ayiuueg2Zt0Sg" alt="" width="178" data-align="left">
 
 Age: 33
 

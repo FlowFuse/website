@@ -6,25 +6,25 @@ Personas are fictional characters that represent the different users we expect t
 
 ##### Manufacturing Inc.
 
-- [Paul Plant Manager]()
+- [Paul Plant Manager](Paul_Plant_Manager.md)
 
-- [Isabella IIoT Project Lead](./Isabella IIoT Project Lead.md)
+- [Isabella IIoT Project Lead](Isabella_IIoT_Project_Lead.md)
 
-- [Peter PLC Engineer](./Peter PLC Engineer.md)
+- [Peter PLC Engineer](Peter_PLC_Engineer.md)
 
 - ...
   
   ##### Startup Inc.
 
-- [Sahib Startup CTO](./Sahib Startup CTO.md)
+- [Sahib Startup CTO](Sahib_Startup_CTO.md)
 
-- [Danielle Developer](./Danielle Developer.md)
+- [Danielle Developer](Danielle_Developer.md)
 
 - ...
   
   ##### Others
 
-- [Harry Hobbyist](./Harry Hobbyist.md)
+- [Harry Hobbyist](Harry_Hobbyist.md)
 
 ## Persona Template
 

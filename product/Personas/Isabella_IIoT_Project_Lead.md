@@ -1,4 +1,6 @@
-# **Isabella IIoT Project Lead**<img title="" src="https://lh6.googleusercontent.com/9AMV8Q2fpbwITjKakiyy0hL8EcYVXZmVHVN0jEEfo-CAKdF1oVT2y4_6JwFWmxyLBhyyaejCGehyNagAk7_GrcLPsca1p8T-l5Rljk9a6y6C55qARV35O775IIO-JxCo9mI6fqELeWPplL6GqiqIJ-YaPfcL39K1kDii9fVJCnwnN1h3Wk9I-KGECq4I6A" alt="" width="187" data-align="left">
+# **Isabella IIoT Project Lead**
+
+<img title="" src="https://lh6.googleusercontent.com/9AMV8Q2fpbwITjKakiyy0hL8EcYVXZmVHVN0jEEfo-CAKdF1oVT2y4_6JwFWmxyLBhyyaejCGehyNagAk7_GrcLPsca1p8T-l5Rljk9a6y6C55qARV35O775IIO-JxCo9mI6fqELeWPplL6GqiqIJ-YaPfcL39K1kDii9fVJCnwnN1h3Wk9I-KGECq4I6A" alt="" width="187" data-align="left">
 
 Age: 32
 
