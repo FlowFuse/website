@@ -16,7 +16,9 @@ At FlowForge, we practice Design Thinking when considering our UI design and wid
 
 As designers and developers, empathising with our users will lead to a better product. When proposing new feature ideas, concepts and changes to existing UX, arguments should always be considered from the perspective of our users. 
 
-Whilst most of the output from our Design Thinking workshops and sessions can be found within [FigJam](#figjam-(more-info)), we have also written up some of our [Design Thinking Findings here](./design-thinking).
+Output from our Design Thinking workshops and sessions can be found within [FigJam](#figjam-(more-info)), however, we also write-up some content more formally here, in our Handbook:
+
+- [User Personas](../product/personas/)
 
 ## Branding Guidelines
 

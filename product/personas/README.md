@@ -1,6 +1,8 @@
 # Personas
 
-Personas are fictional characters that represent the different users we expect to interact with FlowForge as a brand and/or platform. Personas are a generalized way of talking about the ideal target we are aiming to communicate with and design for. They help us not only define our messaging and marketing delivery, but also our product. Keeping personas in mind allows us to use the correct language and make the best decisions to address their specific problems and pain points. At FlowForge, we have many personas that will evolve over time. 
+Personas are fictional characters that represent the different users we expect to interact with FlowForge as a brand and/or platform. Personas are a generalized way of talking about the ideal target we are aiming to communicate with and design for. 
+
+Personas help us not only define our messaging and marketing delivery, but also our product. Keeping personas in mind allows us to use the correct language and make the best decisions to address their specific problems and pain points. At FlowForge, we have many personas that will evolve over time. 
 
 ## List of Personas
 
@@ -12,13 +14,13 @@ Personas are fictional characters that represent the different users we expect t
 
 - [Peter PLC Engineer](Peter_PLC_Engineer.md)
   
-  ##### Startup Inc.
+##### Startup Inc.
 
 - [Sahib Startup CTO](Sahib_Startup_CTO.md)
 
 - [Danielle Developer](Danielle_Developer.md)
   
-  ##### Others
+##### Others
 
 - [Harry Hobbyist](Harry_Hobbyist.md)
 
