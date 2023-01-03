@@ -297,625 +297,625 @@
     
         <url>
             <loc>/404.html</loc>
-            <lastmod>2022-12-26T10:23:36.702Z</lastmod>
+            <lastmod>2023-01-03T14:09:35.149Z</lastmod>
             <priority>0.6</priority>
         </url>
     
         <url>
             <loc>/about/</loc>
-            <lastmod>2022-12-26T10:23:36.702Z</lastmod>
+            <lastmod>2023-01-03T14:09:35.153Z</lastmod>
             <priority>0.7</priority>
         </url>
     
         <url>
             <loc>/blog/</loc>
-            <lastmod>2022-12-26T10:23:36.702Z</lastmod>
+            <lastmod>2023-01-03T14:09:35.153Z</lastmod>
             <priority>0.9</priority>
         </url>
     
         <url>
             <loc>/careers/</loc>
-            <lastmod>2022-12-26T10:23:36.734Z</lastmod>
+            <lastmod>2023-01-03T14:09:35.181Z</lastmod>
             <priority>0.8</priority>
         </url>
     
         <url>
             <loc>/contact-us/</loc>
-            <lastmod>2022-12-26T10:23:36.734Z</lastmod>
+            <lastmod>2023-01-03T14:09:35.181Z</lastmod>
             <priority>0.8</priority>
         </url>
     
         <url>
             <loc>/features/</loc>
-            <lastmod>2022-12-26T10:23:36.734Z</lastmod>
+            <lastmod>2023-01-03T14:09:35.185Z</lastmod>
             <priority>0.9</priority>
         </url>
     
         <url>
             <loc>/</loc>
-            <lastmod>2022-12-26T10:23:36.758Z</lastmod>
+            <lastmod>2023-01-03T14:09:35.209Z</lastmod>
             <priority>1</priority>
         </url>
     
         <url>
             <loc>/node-red/</loc>
-            <lastmod>2022-12-26T10:23:36.758Z</lastmod>
+            <lastmod>2023-01-03T14:09:35.209Z</lastmod>
             <priority>0.8</priority>
         </url>
     
         <url>
             <loc>/pricing/</loc>
-            <lastmod>2022-12-26T10:23:36.758Z</lastmod>
+            <lastmod>2023-01-03T14:09:35.209Z</lastmod>
             <priority>0.9</priority>
         </url>
     
         <url>
             <loc>/privacy-policy/</loc>
-            <lastmod>2022-12-26T10:23:36.758Z</lastmod>
+            <lastmod>2023-01-03T14:09:35.209Z</lastmod>
             <priority>0.7</priority>
         </url>
     
         <url>
             <loc>/product/</loc>
-            <lastmod>2022-12-26T10:23:36.758Z</lastmod>
+            <lastmod>2023-01-03T14:09:35.209Z</lastmod>
             <priority>0.6</priority>
         </url>
     
         <url>
             <loc>/product/security/</loc>
-            <lastmod>2022-12-26T10:23:36.758Z</lastmod>
+            <lastmod>2023-01-03T14:09:35.209Z</lastmod>
             <priority>0.6</priority>
         </url>
     
         <url>
             <loc>/blog/first-deploy/</loc>
-            <lastmod>2022-12-26T10:23:36.758Z</lastmod>
+            <lastmod>2023-01-03T14:09:35.209Z</lastmod>
             <priority>0.6</priority>
         </url>
     
         <url>
             <loc>/team/</loc>
-            <lastmod>2022-12-26T10:23:36.758Z</lastmod>
+            <lastmod>2023-01-03T14:09:35.209Z</lastmod>
             <priority>0.6</priority>
         </url>
     
         <url>
             <loc>/terms/</loc>
-            <lastmod>2022-12-26T10:23:36.758Z</lastmod>
+            <lastmod>2023-01-03T14:09:35.209Z</lastmod>
             <priority>0.6</priority>
         </url>
     
         <url>
             <loc>/handbook/marketing/</loc>
-            <lastmod>2022-12-26T10:23:57.246Z</lastmod>
+            <lastmod>2023-01-03T14:09:59.241Z</lastmod>
             <priority>0.6</priority>
         </url>
     
         <url>
             <loc>/handbook/peopleops/hiring/</loc>
-            <lastmod>2022-12-26T10:23:57.250Z</lastmod>
+            <lastmod>2023-01-03T14:09:59.249Z</lastmod>
             <priority>0.6</priority>
         </url>
     
         <url>
             <loc>/handbook/peopleops/compensation/</loc>
-            <lastmod>2022-12-26T10:23:57.258Z</lastmod>
+            <lastmod>2023-01-03T14:09:59.253Z</lastmod>
             <priority>0.6</priority>
         </url>
     
         <url>
             <loc>/handbook/peopleops/</loc>
-            <lastmod>2022-12-26T10:23:57.262Z</lastmod>
+            <lastmod>2023-01-03T14:09:59.261Z</lastmod>
             <priority>0.6</priority>
         </url>
     
         <url>
             <loc>/handbook/</loc>
-            <lastmod>2022-12-26T10:23:57.270Z</lastmod>
+            <lastmod>2023-01-03T14:09:59.265Z</lastmod>
             <priority>0.6</priority>
         </url>
     
         <url>
             <loc>/handbook/development/frontend/services/</loc>
-            <lastmod>2022-12-26T10:23:57.342Z</lastmod>
+            <lastmod>2023-01-03T14:09:59.353Z</lastmod>
             <priority>0.6</priority>
         </url>
     
         <url>
             <loc>/handbook/development/frontend/data-attributes/</loc>
-            <lastmod>2022-12-26T10:23:57.346Z</lastmod>
+            <lastmod>2023-01-03T14:09:59.361Z</lastmod>
             <priority>0.6</priority>
         </url>
     
         <url>
             <loc>/handbook/development/frontend/testing/</loc>
-            <lastmod>2022-12-26T10:23:57.350Z</lastmod>
+            <lastmod>2023-01-03T14:09:59.369Z</lastmod>
             <priority>0.6</priority>
         </url>
     
         <url>
             <loc>/handbook/development/frontend/</loc>
-            <lastmod>2022-12-26T10:23:57.358Z</lastmod>
+            <lastmod>2023-01-03T14:09:59.373Z</lastmod>
             <priority>0.6</priority>
         </url>
     
         <url>
             <loc>/handbook/development/security/</loc>
-            <lastmod>2022-12-26T10:23:57.362Z</lastmod>
+            <lastmod>2023-01-03T14:09:59.381Z</lastmod>
             <priority>0.6</priority>
         </url>
     
         <url>
             <loc>/handbook/development/contributing/</loc>
-            <lastmod>2022-12-26T10:23:57.370Z</lastmod>
+            <lastmod>2023-01-03T14:09:59.385Z</lastmod>
             <priority>0.6</priority>
         </url>
     
         <url>
             <loc>/handbook/development/packaging/</loc>
-            <lastmod>2022-12-26T10:23:57.374Z</lastmod>
+            <lastmod>2023-01-03T14:09:59.393Z</lastmod>
             <priority>0.6</priority>
         </url>
     
         <url>
             <loc>/handbook/development/release/</loc>
-            <lastmod>2022-12-26T10:23:57.378Z</lastmod>
+            <lastmod>2023-01-03T14:09:59.401Z</lastmod>
             <priority>0.6</priority>
         </url>
     
         <url>
             <loc>/handbook/development/</loc>
-            <lastmod>2022-12-26T10:23:57.386Z</lastmod>
+            <lastmod>2023-01-03T14:09:59.405Z</lastmod>
             <priority>0.6</priority>
         </url>
     
         <url>
             <loc>/handbook/development/staging/</loc>
-            <lastmod>2022-12-26T10:23:57.390Z</lastmod>
+            <lastmod>2023-01-03T14:09:59.413Z</lastmod>
             <priority>0.6</priority>
         </url>
     
         <url>
             <loc>/handbook/sales/</loc>
-            <lastmod>2022-12-26T10:23:57.398Z</lastmod>
+            <lastmod>2023-01-03T14:09:59.417Z</lastmod>
             <priority>0.6</priority>
         </url>
     
         <url>
             <loc>/handbook/sales/demo/</loc>
-            <lastmod>2022-12-26T10:23:57.402Z</lastmod>
+            <lastmod>2023-01-03T14:09:59.425Z</lastmod>
             <priority>0.6</priority>
         </url>
     
         <url>
             <loc>/handbook/operations/change/</loc>
-            <lastmod>2022-12-26T10:23:57.454Z</lastmod>
+            <lastmod>2023-01-03T14:09:59.481Z</lastmod>
             <priority>0.6</priority>
         </url>
     
         <url>
             <loc>/handbook/operations/accounts/</loc>
-            <lastmod>2022-12-26T10:23:57.458Z</lastmod>
+            <lastmod>2023-01-03T14:09:59.489Z</lastmod>
             <priority>0.6</priority>
         </url>
     
         <url>
             <loc>/handbook/operations/vendors/</loc>
-            <lastmod>2022-12-26T10:23:57.462Z</lastmod>
+            <lastmod>2023-01-03T14:09:59.493Z</lastmod>
             <priority>0.6</priority>
         </url>
     
         <url>
             <loc>/handbook/operations/</loc>
-            <lastmod>2022-12-26T10:23:57.470Z</lastmod>
+            <lastmod>2023-01-03T14:09:59.501Z</lastmod>
             <priority>0.6</priority>
         </url>
     
         <url>
             <loc>/handbook/operations/billing/</loc>
-            <lastmod>2022-12-26T10:23:57.474Z</lastmod>
+            <lastmod>2023-01-03T14:09:59.509Z</lastmod>
             <priority>0.6</priority>
         </url>
     
         <url>
             <loc>/handbook/operations/support/</loc>
-            <lastmod>2022-12-26T10:23:57.482Z</lastmod>
+            <lastmod>2023-01-03T14:09:59.513Z</lastmod>
             <priority>0.6</priority>
         </url>
     
         <url>
             <loc>/handbook/media/</loc>
-            <lastmod>2022-12-26T10:23:57.486Z</lastmod>
+            <lastmod>2023-01-03T14:09:59.521Z</lastmod>
             <priority>0.6</priority>
         </url>
     
         <url>
             <loc>/handbook/company/security/</loc>
-            <lastmod>2022-12-26T10:23:57.490Z</lastmod>
+            <lastmod>2023-01-03T14:09:59.529Z</lastmod>
             <priority>0.6</priority>
         </url>
     
         <url>
             <loc>/handbook/company/strategy/</loc>
-            <lastmod>2022-12-26T10:23:57.498Z</lastmod>
+            <lastmod>2023-01-03T14:09:59.533Z</lastmod>
             <priority>0.6</priority>
         </url>
     
         <url>
             <loc>/handbook/company/communication/</loc>
-            <lastmod>2022-12-26T10:23:57.502Z</lastmod>
+            <lastmod>2023-01-03T14:09:59.541Z</lastmod>
             <priority>0.6</priority>
         </url>
     
         <url>
             <loc>/handbook/company/board/</loc>
-            <lastmod>2022-12-26T10:23:57.510Z</lastmod>
+            <lastmod>2023-01-03T14:09:59.549Z</lastmod>
             <priority>0.6</priority>
         </url>
     
         <url>
             <loc>/handbook/company/</loc>
-            <lastmod>2022-12-26T10:23:57.514Z</lastmod>
+            <lastmod>2023-01-03T14:09:59.553Z</lastmod>
             <priority>0.6</priority>
         </url>
     
         <url>
             <loc>/handbook/company/remote/</loc>
-            <lastmod>2022-12-26T10:23:57.518Z</lastmod>
+            <lastmod>2023-01-03T14:09:59.561Z</lastmod>
             <priority>0.6</priority>
         </url>
     
         <url>
             <loc>/handbook/product/pricing/</loc>
-            <lastmod>2022-12-26T10:23:57.526Z</lastmod>
+            <lastmod>2023-01-03T14:09:59.569Z</lastmod>
             <priority>0.6</priority>
         </url>
     
         <url>
             <loc>/handbook/product/versioning/</loc>
-            <lastmod>2022-12-26T10:23:57.530Z</lastmod>
+            <lastmod>2023-01-03T14:09:59.577Z</lastmod>
             <priority>0.6</priority>
         </url>
     
         <url>
             <loc>/handbook/product/verticals/</loc>
-            <lastmod>2022-12-26T10:23:57.538Z</lastmod>
+            <lastmod>2023-01-03T14:09:59.581Z</lastmod>
             <priority>0.6</priority>
         </url>
     
         <url>
             <loc>/handbook/product/</loc>
-            <lastmod>2022-12-26T10:23:57.542Z</lastmod>
+            <lastmod>2023-01-03T14:09:59.589Z</lastmod>
             <priority>0.6</priority>
         </url>
     
         <url>
             <loc>/handbook/product/plan/</loc>
-            <lastmod>2022-12-26T10:23:57.546Z</lastmod>
+            <lastmod>2023-01-03T14:09:59.597Z</lastmod>
             <priority>0.6</priority>
         </url>
     
         <url>
             <loc>/handbook/design/design-thinking/</loc>
-            <lastmod>2022-12-26T10:23:57.554Z</lastmod>
+            <lastmod>2023-01-03T14:09:59.605Z</lastmod>
             <priority>0.6</priority>
         </url>
     
         <url>
             <loc>/handbook/design/branding/</loc>
-            <lastmod>2022-12-26T10:23:57.558Z</lastmod>
+            <lastmod>2023-01-03T14:09:59.609Z</lastmod>
             <priority>0.6</priority>
         </url>
     
         <url>
             <loc>/handbook/design/</loc>
-            <lastmod>2022-12-26T10:23:57.566Z</lastmod>
+            <lastmod>2023-01-03T14:09:59.617Z</lastmod>
             <priority>0.6</priority>
         </url>
     
         <url>
             <loc>/docs/admin/telemetry/</loc>
-            <lastmod>2022-12-26T10:23:57.798Z</lastmod>
+            <lastmod>2023-01-03T14:09:59.897Z</lastmod>
             <priority>0.6</priority>
         </url>
     
         <url>
             <loc>/docs/admin/</loc>
-            <lastmod>2022-12-26T10:23:57.826Z</lastmod>
+            <lastmod>2023-01-03T14:09:59.933Z</lastmod>
             <priority>0.6</priority>
         </url>
     
         <url>
             <loc>/docs/admin/user_management/</loc>
-            <lastmod>2022-12-26T10:23:57.886Z</lastmod>
+            <lastmod>2023-01-03T14:10:00.009Z</lastmod>
             <priority>0.6</priority>
         </url>
     
         <url>
             <loc>/docs/admin/sso/</loc>
-            <lastmod>2022-12-26T10:23:57.914Z</lastmod>
+            <lastmod>2023-01-03T14:10:00.045Z</lastmod>
             <priority>0.6</priority>
         </url>
     
         <url>
             <loc>/docs/user/logs/</loc>
-            <lastmod>2022-12-26T10:23:58.006Z</lastmod>
+            <lastmod>2023-01-03T14:10:00.169Z</lastmod>
             <priority>0.6</priority>
         </url>
     
         <url>
             <loc>/docs/user/node-red-tools/</loc>
-            <lastmod>2022-12-26T10:23:58.034Z</lastmod>
+            <lastmod>2023-01-03T14:10:00.209Z</lastmod>
             <priority>0.6</priority>
         </url>
     
         <url>
             <loc>/docs/user/team/</loc>
-            <lastmod>2022-12-26T10:23:58.062Z</lastmod>
+            <lastmod>2023-01-03T14:10:00.245Z</lastmod>
             <priority>0.6</priority>
         </url>
     
         <url>
             <loc>/docs/user/migration/</loc>
-            <lastmod>2022-12-26T10:23:58.094Z</lastmod>
+            <lastmod>2023-01-03T14:10:00.282Z</lastmod>
             <priority>0.6</priority>
         </url>
     
         <url>
             <loc>/docs/user/</loc>
-            <lastmod>2022-12-26T10:23:58.122Z</lastmod>
+            <lastmod>2023-01-03T14:10:00.322Z</lastmod>
             <priority>0.6</priority>
         </url>
     
         <url>
             <loc>/docs/user/snapshots/</loc>
-            <lastmod>2022-12-26T10:23:58.418Z</lastmod>
+            <lastmod>2023-01-03T14:10:00.686Z</lastmod>
             <priority>0.6</priority>
         </url>
     
         <url>
             <loc>/docs/user/filenodes/</loc>
-            <lastmod>2022-12-26T10:23:58.446Z</lastmod>
+            <lastmod>2023-01-03T14:10:00.730Z</lastmod>
             <priority>0.6</priority>
         </url>
     
         <url>
             <loc>/docs/user/concepts/</loc>
-            <lastmod>2022-12-26T10:23:58.478Z</lastmod>
+            <lastmod>2023-01-03T14:10:00.770Z</lastmod>
             <priority>0.6</priority>
         </url>
     
         <url>
             <loc>/docs/user/devices/</loc>
-            <lastmod>2022-12-26T10:23:58.506Z</lastmod>
+            <lastmod>2023-01-03T14:10:00.806Z</lastmod>
             <priority>0.6</priority>
         </url>
     
         <url>
             <loc>/docs/user/projectnodes/</loc>
-            <lastmod>2022-12-26T10:23:58.534Z</lastmod>
+            <lastmod>2023-01-03T14:10:00.842Z</lastmod>
             <priority>0.6</priority>
         </url>
     
         <url>
             <loc>/docs/user/persistent-context/</loc>
-            <lastmod>2022-12-26T10:23:58.566Z</lastmod>
+            <lastmod>2023-01-03T14:10:00.882Z</lastmod>
             <priority>0.6</priority>
         </url>
     
         <url>
             <loc>/docs/user/changestack/</loc>
-            <lastmod>2022-12-26T10:23:58.594Z</lastmod>
+            <lastmod>2023-01-03T14:10:00.918Z</lastmod>
             <priority>0.6</priority>
         </url>
     
         <url>
             <loc>/docs/user/project-settings/</loc>
-            <lastmod>2022-12-26T10:23:58.622Z</lastmod>
+            <lastmod>2023-01-03T14:10:00.954Z</lastmod>
             <priority>0.6</priority>
         </url>
     
         <url>
             <loc>/docs/user/envvar/</loc>
-            <lastmod>2022-12-26T10:23:58.654Z</lastmod>
+            <lastmod>2023-01-03T14:10:00.990Z</lastmod>
             <priority>0.6</priority>
         </url>
     
         <url>
             <loc>/docs/</loc>
-            <lastmod>2022-12-26T10:23:58.682Z</lastmod>
+            <lastmod>2023-01-03T14:10:01.030Z</lastmod>
             <priority>0.6</priority>
         </url>
     
         <url>
             <loc>/docs/cloud/</loc>
-            <lastmod>2022-12-26T10:23:58.710Z</lastmod>
+            <lastmod>2023-01-03T14:10:01.066Z</lastmod>
             <priority>0.6</priority>
         </url>
     
         <url>
             <loc>/docs/cloud/billing/</loc>
-            <lastmod>2022-12-26T10:23:58.742Z</lastmod>
+            <lastmod>2023-01-03T14:10:01.106Z</lastmod>
             <priority>0.6</priority>
         </url>
     
         <url>
             <loc>/docs/api/</loc>
-            <lastmod>2022-12-26T10:23:58.770Z</lastmod>
+            <lastmod>2023-01-03T14:10:01.146Z</lastmod>
             <priority>0.6</priority>
         </url>
     
         <url>
             <loc>/docs/contribute/</loc>
-            <lastmod>2022-12-26T10:23:58.802Z</lastmod>
+            <lastmod>2023-01-03T14:10:01.186Z</lastmod>
             <priority>0.6</priority>
         </url>
     
         <url>
             <loc>/docs/contribute/api-design/</loc>
-            <lastmod>2022-12-26T10:23:58.978Z</lastmod>
+            <lastmod>2023-01-03T14:10:01.410Z</lastmod>
             <priority>0.6</priority>
         </url>
     
         <url>
             <loc>/docs/contribute/db-migrations/</loc>
-            <lastmod>2022-12-26T10:23:59.010Z</lastmod>
+            <lastmod>2023-01-03T14:10:01.442Z</lastmod>
             <priority>0.6</priority>
         </url>
     
         <url>
             <loc>/docs/contribute/architecture/</loc>
-            <lastmod>2022-12-26T10:23:59.038Z</lastmod>
+            <lastmod>2023-01-03T14:10:01.482Z</lastmod>
             <priority>0.6</priority>
         </url>
     
         <url>
             <loc>/docs/contribute/workflows/invite-external-user/</loc>
-            <lastmod>2022-12-26T10:23:59.070Z</lastmod>
+            <lastmod>2023-01-03T14:10:01.522Z</lastmod>
             <priority>0.6</priority>
         </url>
     
         <url>
             <loc>/docs/contribute/workflows/team-create/</loc>
-            <lastmod>2022-12-26T10:23:59.098Z</lastmod>
+            <lastmod>2023-01-03T14:10:01.558Z</lastmod>
             <priority>0.6</priority>
         </url>
     
         <url>
             <loc>/docs/contribute/workflows/</loc>
-            <lastmod>2022-12-26T10:23:59.126Z</lastmod>
+            <lastmod>2023-01-03T14:10:01.598Z</lastmod>
             <priority>0.6</priority>
         </url>
     
         <url>
             <loc>/docs/contribute/workflows/signup/</loc>
-            <lastmod>2022-12-26T10:23:59.158Z</lastmod>
+            <lastmod>2023-01-03T14:10:01.634Z</lastmod>
             <priority>0.6</priority>
         </url>
     
         <url>
             <loc>/docs/contribute/workflows/project-states/</loc>
-            <lastmod>2022-12-26T10:23:59.186Z</lastmod>
+            <lastmod>2023-01-03T14:10:01.674Z</lastmod>
             <priority>0.6</priority>
         </url>
     
         <url>
             <loc>/docs/contribute/workflows/login/</loc>
-            <lastmod>2022-12-26T10:23:59.218Z</lastmod>
+            <lastmod>2023-01-03T14:10:01.710Z</lastmod>
             <priority>0.6</priority>
         </url>
     
         <url>
             <loc>/docs/contribute/workflows/project-create/</loc>
-            <lastmod>2022-12-26T10:23:59.246Z</lastmod>
+            <lastmod>2023-01-03T14:10:01.750Z</lastmod>
             <priority>0.6</priority>
         </url>
     
         <url>
             <loc>/docs/contribute/workflows/password-reset/</loc>
-            <lastmod>2022-12-26T10:23:59.278Z</lastmod>
+            <lastmod>2023-01-03T14:10:01.786Z</lastmod>
             <priority>0.6</priority>
         </url>
     
         <url>
             <loc>/docs/contribute/adding-template-settings/</loc>
-            <lastmod>2022-12-26T10:23:59.306Z</lastmod>
+            <lastmod>2023-01-03T14:10:01.822Z</lastmod>
             <priority>0.6</priority>
         </url>
     
         <url>
             <loc>/docs/upgrade/</loc>
-            <lastmod>2022-12-26T10:23:59.338Z</lastmod>
+            <lastmod>2023-01-03T14:10:01.862Z</lastmod>
             <priority>0.6</priority>
         </url>
     
         <url>
             <loc>/docs/upgrade/open-source-to-premium/</loc>
-            <lastmod>2022-12-26T10:23:59.366Z</lastmod>
+            <lastmod>2023-01-03T14:10:01.898Z</lastmod>
             <priority>0.6</priority>
         </url>
     
         <url>
             <loc>/docs/install/email_providers/</loc>
-            <lastmod>2022-12-26T10:23:59.394Z</lastmod>
+            <lastmod>2023-01-03T14:10:01.934Z</lastmod>
             <priority>0.6</priority>
         </url>
     
         <url>
             <loc>/docs/install/</loc>
-            <lastmod>2022-12-26T10:23:59.426Z</lastmod>
+            <lastmod>2023-01-03T14:10:01.970Z</lastmod>
             <priority>0.6</priority>
         </url>
     
         <url>
             <loc>/docs/install/local/</loc>
-            <lastmod>2022-12-26T10:23:59.602Z</lastmod>
+            <lastmod>2023-01-03T14:10:02.198Z</lastmod>
             <priority>0.6</priority>
         </url>
     
         <url>
             <loc>/docs/install/local/stacks/</loc>
-            <lastmod>2022-12-26T10:23:59.630Z</lastmod>
+            <lastmod>2023-01-03T14:10:02.234Z</lastmod>
             <priority>0.6</priority>
         </url>
     
         <url>
             <loc>/docs/install/file-storage/</loc>
-            <lastmod>2022-12-26T10:23:59.662Z</lastmod>
+            <lastmod>2023-01-03T14:10:02.270Z</lastmod>
             <priority>0.6</priority>
         </url>
     
         <url>
             <loc>/docs/install/configuration/</loc>
-            <lastmod>2022-12-26T10:23:59.690Z</lastmod>
+            <lastmod>2023-01-03T14:10:02.306Z</lastmod>
             <priority>0.6</priority>
         </url>
     
         <url>
             <loc>/docs/install/first-run/</loc>
-            <lastmod>2022-12-26T10:23:59.722Z</lastmod>
+            <lastmod>2023-01-03T14:10:02.342Z</lastmod>
             <priority>0.6</priority>
         </url>
     
         <url>
             <loc>/docs/install/kubernetes/</loc>
-            <lastmod>2022-12-26T10:23:59.750Z</lastmod>
+            <lastmod>2023-01-03T14:10:02.386Z</lastmod>
             <priority>0.6</priority>
         </url>
     
         <url>
             <loc>/docs/install/kubernetes/aws/</loc>
-            <lastmod>2022-12-26T10:23:59.782Z</lastmod>
+            <lastmod>2023-01-03T14:10:02.422Z</lastmod>
             <priority>0.6</priority>
         </url>
     
         <url>
             <loc>/docs/install/kubernetes/digital-ocean/</loc>
-            <lastmod>2022-12-26T10:23:59.810Z</lastmod>
+            <lastmod>2023-01-03T14:10:02.458Z</lastmod>
             <priority>0.6</priority>
         </url>
     
         <url>
             <loc>/docs/install/kubernetes/stacks/</loc>
-            <lastmod>2022-12-26T10:23:59.838Z</lastmod>
+            <lastmod>2023-01-03T14:10:02.498Z</lastmod>
             <priority>0.6</priority>
         </url>
     
         <url>
             <loc>/docs/install/dns-setup/</loc>
-            <lastmod>2022-12-26T10:23:59.902Z</lastmod>
+            <lastmod>2023-01-03T14:10:02.574Z</lastmod>
             <priority>0.6</priority>
         </url>
     
         <url>
             <loc>/docs/install/docker/</loc>
-            <lastmod>2022-12-26T10:23:59.934Z</lastmod>
+            <lastmod>2023-01-03T14:10:02.614Z</lastmod>
             <priority>0.6</priority>
         </url>
     
         <url>
             <loc>/docs/install/docker/stacks/</loc>
-            <lastmod>2022-12-26T10:23:59.962Z</lastmod>
+            <lastmod>2023-01-03T14:10:02.650Z</lastmod>
             <priority>0.6</priority>
         </url>
     
