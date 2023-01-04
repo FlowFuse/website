@@ -1,12 +1,12 @@
-# Paul Plant Manager
+# Paul, Plant Manager
 
 <img title="" src="https://lh5.googleusercontent.com/jhv-mN9_QydGhvjcppogQ_13ntjWe-eh5OQ4MS5CG180eaxUHP3z44Uqega6TEboOWySEkaGAi_TsNdhyGZRQE-GOllIqponrX2H_HsxcHi7YPZet6dp4y9Kk8cTw1ukrzgDOo54T-SMCqODRECCiafsRQlX0rVeFhGugaD23GYfdMfkP6aCOttwXM376Q" alt="" width="195" data-align="left">
 
-Age: 52
+**Age:** 52
 
-Job Level: Executive
+**Job Level:** Executive
 
-### Job To Be Done:
+#### Job To Be Done:
 
 - Plant Manager in **Manufacturing Inc.**
 
@@ -20,7 +20,7 @@ Job Level: Executive
 
 - Prepares meaningful KPIs together with the production planner
 
-### Motivated by:
+#### Motivated by:
 
 - Wants the factory to run smoothly
 
@@ -28,7 +28,7 @@ Job Level: Executive
 
 - Data and facts
 
-### Gains Information by:
+#### Gains Information by:
 
 - Conferences
 
@@ -36,16 +36,16 @@ Job Level: Executive
 
 - Network
 
-### Purchasing Roles:
+#### Purchasing Roles:
 
 - Final decision-maker for large investments
 
 - 50.000$
 
-### Biggest Challenges:
+#### Biggest Challenges:
 
 - Create an innovative factory
 
 - improve the economic situation
 
-### Additional information:
+#### Additional information:
