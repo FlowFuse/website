@@ -51,7 +51,6 @@ which in turn can aid in deciding the next minimal viable iteration. Further,
 iteration naturally splits big problems into small steps, creates positive
 momentum, and allows to capture value quicker.
 
-
 #### Be Trusting
 
 To move with high velocity, trust needs to be given before one has had the
