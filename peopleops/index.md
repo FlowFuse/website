@@ -1,5 +1,5 @@
 ---
-navTitle: Peple Ops
+navTitle: People Ops
 navGroup: Internal Operations
 ---
 
