@@ -5,6 +5,7 @@
     .handbook {
         display: grid;
         grid-template-columns: 265px 1fr auto;
+        margin-top: -3rem;
     }
 
     .handbook-nav {
@@ -17,6 +18,8 @@
         --nav-pl: 1rem;
         background-color: theme(colors.gray.50);
         padding-left: 0.5rem;
+        padding-top: 1.5rem;
+        @apply sticky top-0;
     }
 
     .handbook-nav-nested {

@@ -22,35 +22,18 @@ tags: handbook
 
 <div class="handbook ff-prose text-left pb-24" data-handbook>
     <!-- Navigation -->
-    <ul class="handbook-nav border-r" data-el="navigation">
-        <li class="{% if "/handbook/" === page.url %}active{% endif %}">
-            <a href="/handbook">Handbook</a>
-        </li>
-        {# {{ collections.nav.handbook.children | console | safe }} #}
-        {% for entry in collections.nav.handbook.children %}
-        <li class="{% if entry.url === page.url %}active{% endif %}">
-            <a href="{{entry.url}}">
-                {{ entry.name }}
-            </a>
-            {% if entry.children %}
-            <button onclick="toggleNavList(this)">
-                <span class="ff-icon icon-expand">
-                    {% include "components/icons/chevron-down.svg" %}
-                </span>
-                <span class="ff-icon icon-minimise">
-                    {% include "components/icons/chevron-up.svg" %}
-                </span>
-            </button>
-            {% endif %}
-        </li>
-        {% if entry.children %}
-        <ul class="handbook-nav-nested">
-            {% for child in entry.children %}
-            <li class="{% if child.url === page.url %}active{% endif %}">
-                <a href="{{child.url}}">
-                    {{ child.name }}
+    <div>
+        <ul class="handbook-nav border-r" data-el="navigation">
+            <li class="{% if "/handbook/" === page.url %}active{% endif %}">
+                <a href="/handbook">Handbook</a>
+            </li>
+            {# {{ collections.nav.handbook.children | console | safe }} #}
+            {% for entry in collections.nav.handbook.children %}
+            <li class="{% if entry.url === page.url %}active{% endif %}">
+                <a href="{{entry.url}}">
+                    {{ entry.name }}
                 </a>
-                {% if child.children %}
+                {% if entry.children %}
                 <button onclick="toggleNavList(this)">
                     <span class="ff-icon icon-expand">
                         {% include "components/icons/chevron-down.svg" %}
@@ -61,23 +44,42 @@ tags: handbook
                 </button>
                 {% endif %}
             </li>
-            {% if child.children %}
-            <ul class="handbook-nav-nested-2">
-                {% for grandchild in child.children %}
-                <li class="{% if grandchild.url === page.url %}active{% endif %}">
-                    <a href="{{grandchild.url}}">
-                        {{ grandchild.name }}
+            {% if entry.children %}
+            <ul class="handbook-nav-nested">
+                {% for child in entry.children %}
+                <li class="{% if child.url === page.url %}active{% endif %}">
+                    <a href="{{child.url}}">
+                        {{ child.name }}
                     </a>
+                    {% if child.children %}
+                    <button onclick="toggleNavList(this)">
+                        <span class="ff-icon icon-expand">
+                            {% include "components/icons/chevron-down.svg" %}
+                        </span>
+                        <span class="ff-icon icon-minimise">
+                            {% include "components/icons/chevron-up.svg" %}
+                        </span>
+                    </button>
+                    {% endif %}
                 </li>
+                {% if child.children %}
+                <ul class="handbook-nav-nested-2">
+                    {% for grandchild in child.children %}
+                    <li class="{% if grandchild.url === page.url %}active{% endif %}">
+                        <a href="{{grandchild.url}}">
+                            {{ grandchild.name }}
+                        </a>
+                    </li>
+                    {% endfor %}
+                </ul>
+                {% endif %}
                 {% endfor %}
             </ul>
             {% endif %}
             {% endfor %}
         </ul>
-        {% endif %}
-        {% endfor %}
-    </ul>
-    <div class="max-w-screen-lg mx-auto px-8">
+    </div>
+    <div class="max-w-screen-lg mx-auto px-8 pt-8">
         <!-- Breadcrumbs -->
         <div class="w-full mx-auto ff-bg-light">
             <div class="font-medium border-b pb-1">
@@ -98,7 +100,7 @@ tags: handbook
     </div>
     <div class="border-l">
         <!-- on this page -->
-        <div class="w-full md:w-64 mt-4 md:mt-6 px-8">
+        <div class="sticky top-6 w-full md:w-64 mt-4 md:mt-6 px-8">
             <h3 class="font-medium border-b pb-1 mb-4">On this page</h3>
             <ul id="toc" class="text-sm border-b mb-4"></ul>
             <div class="text-sm pb-1 text-right mb-4"><a href="{{ page | handbookEditLink(originalPath) }}">Edit this page</a></div>

@@ -72,9 +72,15 @@ module.exports = function(eleventyConfig) {
         collection.getAll().filter((page) => {
             return page.data.tags?.includes('handbook')
             // url.indexOf('/handbook') === 0
+        }).sort((a, b) => {
+            // sort by depth, so we catch all the correct index.md routes
+            const hierarchyA = a.url.split('/').filter(n => n)
+            const hierarchyB = b.url.split('/').filter(n => n)
+            return hierarchyA.length - hierarchyB.length
         }).map((page) => {
             // work out ToC Hierarchy
             const hierarchy = page.url.split('/').filter(n => n)
+            console.log(hierarchy)
             const map = hierarchy.reduce((accumulator, currentValue) => {
                 if (!accumulator[currentValue]) {
                     accumulator[currentValue] = {
