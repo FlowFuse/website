@@ -80,7 +80,7 @@ module.exports = function(eleventyConfig) {
         }).map((page) => {
             // work out ToC Hierarchy
             const hierarchy = page.url.split('/').filter(n => n)
-            const map = hierarchy.reduce((accumulator, currentValue) => {
+            const map = hierarchy.reduce((accumulator, currentValue, i) => {
                 if (!accumulator[currentValue]) {
                     accumulator[currentValue] = {
                         'name': currentValue,
@@ -88,12 +88,15 @@ module.exports = function(eleventyConfig) {
                         'children': {}
                     }
                 }
-                // defines a nice-to-read title for the navigation option
-                if (page.data.navTitle) {
-                    accumulator[currentValue].name = page.data.navTitle
-                }
-                if (page.data.navGroup) {
-                    accumulator[currentValue].group = page.data.navGroup
+                // only look at meta when we are at the end of the hierarchy, i.e. the page var aligns with the hierarchy tier
+                if (i === hierarchy.length - 1) {
+                    // defines a nice-to-read title for the navigation option
+                    if (page.data.navTitle) {
+                        accumulator[currentValue].name = page.data.navTitle
+                    }
+                    if (page.data.navGroup) {
+                        accumulator[currentValue].group = page.data.navGroup
+                    }
                 }
                 return accumulator[currentValue].children
             }, nav)
