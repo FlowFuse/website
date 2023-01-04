@@ -31,7 +31,7 @@ tags: handbook
             {% for entry in collections.nav.handbook.children %}
             <li class="{% if entry.url === page.url %}active{% endif %}">
                 <a href="{{entry.url}}">
-                    {{ entry.name }} {{ entry.group }}
+                    {{ entry.name }}
                 </a>
                 {% if entry.children %}
                 <button onclick="toggleNavList(this)">

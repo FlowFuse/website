@@ -80,7 +80,6 @@ module.exports = function(eleventyConfig) {
         }).map((page) => {
             // work out ToC Hierarchy
             const hierarchy = page.url.split('/').filter(n => n)
-            console.log(hierarchy)
             const map = hierarchy.reduce((accumulator, currentValue) => {
                 if (!accumulator[currentValue]) {
                     accumulator[currentValue] = {
@@ -118,7 +117,25 @@ module.exports = function(eleventyConfig) {
             
         }        
         nestedChildrenToArray(nav)
-        console.log(nav)
+
+        // add functionality to group to-level items for better navigation.
+        // TODO: Not currently shown in UI, but here for future use as will improve nav
+        let groups = {}
+        for (child of nav.handbook.children) {
+            if (child.group) {
+                const group = child.group
+                if (!groups[group]) {
+                    groups[group] = []
+                }
+                groups[group].push(child)
+            }
+        }
+
+        // sort top--level nav to ensure consistent nav ordering
+        nav.handbook.children.sort((a, b) => {
+            return a.name.localeCompare(b.name)
+        })
+
         return nav;
     });
 
