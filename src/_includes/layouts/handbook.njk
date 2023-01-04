@@ -63,7 +63,7 @@ tags: handbook
             </li>
             {% if child.children %}
             <ul class="handbook-nav-nested-2">
-                {% for grandchild in entry.children %}
+                {% for grandchild in child.children %}
                 <li class="{% if grandchild.url === page.url %}active{% endif %}">
                     <a href="{{grandchild.url}}">
                         {{ grandchild.name }}
