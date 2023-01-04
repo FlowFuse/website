@@ -93,6 +93,9 @@ module.exports = function(eleventyConfig) {
                 if (page.data.navTitle) {
                     accumulator[currentValue].name = page.data.navTitle
                 }
+                if (page.data.navGroup) {
+                    accumulator[currentValue].group = page.data.navGroup
+                }
                 return accumulator[currentValue].children
             }, nav)
             
@@ -113,9 +116,9 @@ module.exports = function(eleventyConfig) {
                 }
             }
             
-        }
-        
+        }        
         nestedChildrenToArray(nav)
+        console.log(nav)
         return nav;
     });
 

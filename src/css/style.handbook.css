@@ -3,9 +3,9 @@
 
 @layer components {
     .handbook {
-        display: grid;
         grid-template-columns: 265px 1fr auto;
         margin-top: -3rem;
+        @apply flex flex-col-reverse md:grid
     }
 
     .handbook-nav {

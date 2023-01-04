@@ -31,7 +31,7 @@ tags: handbook
             {% for entry in collections.nav.handbook.children %}
             <li class="{% if entry.url === page.url %}active{% endif %}">
                 <a href="{{entry.url}}">
-                    {{ entry.name }}
+                    {{ entry.name }} {{ entry.group }}
                 </a>
                 {% if entry.children %}
                 <button onclick="toggleNavList(this)">
@@ -80,8 +80,8 @@ tags: handbook
         </ul>
     </div>
     <div class="max-w-screen-lg mx-auto px-8 pt-8">
-        <!-- Breadcrumbs -->
-        <div class="w-full mx-auto ff-bg-light">
+        <!-- Breadcrumbs - Desktop -->
+        <div class="hidden w-full mx-auto ff-bg-light md:block">
             <div class="font-medium border-b pb-1">
                 {% if version %}
                 v{{ version }}
@@ -99,9 +99,18 @@ tags: handbook
         </div>
     </div>
     <div class="border-l">
+        <!-- Breadcrumbs - Mobile -->
+        <div class="block px-8 pt-4 w-full mx-auto ff-bg-light md:hidden">
+            <div class="font-medium border-b pb-1">
+                {% if version %}
+                v{{ version }}
+                {% endif %}
+                {{ page.filePathStem | handbookBreadcrumbs |safe }}
+            </div>
+        </div>
         <!-- on this page -->
         <div class="sticky top-6 w-full md:w-64 mt-4 md:mt-6 px-8">
-            <h3 class="font-medium border-b pb-1 mb-4">On this page</h3>
+            <h3 class="font-medium border-b pb-1 mb-4">on this page</h3>
             <ul id="toc" class="text-sm border-b mb-4"></ul>
             <div class="text-sm pb-1 text-right mb-4"><a href="{{ page | handbookEditLink(originalPath) }}">Edit this page</a></div>
             <div class="text-xs pb-1 text-right mb-4 italic">Updated: {{ updated }}</div>
