@@ -1,3 +1,7 @@
+---
+navTitle: Handbook
+---
+
 ## Introduction
 
 This handbook contains all the information about how FlowForge Inc. is run.
