@@ -79,8 +79,11 @@ module.exports = function(eleventyConfig) {
             return hierarchyA.length - hierarchyB.length
         }).map((page) => {
             // work out ToC Hierarchy
+            // split the folder URI/URL, as this defines our TOC Hierarchy
             const hierarchy = page.url.split('/').filter(n => n)
+            // recursively parse hte folder hierarchy and created our collection object
             const map = hierarchy.reduce((accumulator, currentValue, i) => {
+                // create a nested object detailing hte full handbook hierarchy
                 if (!accumulator[currentValue]) {
                     accumulator[currentValue] = {
                         'name': currentValue,
@@ -94,6 +97,7 @@ module.exports = function(eleventyConfig) {
                     if (page.data.navTitle) {
                         accumulator[currentValue].name = page.data.navTitle
                     }
+                    // TODO: navGroup will be used in the rendering of the ToC at a later stage
                     if (page.data.navGroup) {
                         accumulator[currentValue].group = page.data.navGroup
                     }
@@ -118,7 +122,8 @@ module.exports = function(eleventyConfig) {
                 }
             }
             
-        }        
+        }
+        // convert our objects to arrays so we can render in nunjucks
         nestedChildrenToArray(nav)
 
         // add functionality to group to-level items for better navigation.
@@ -134,7 +139,7 @@ module.exports = function(eleventyConfig) {
             }
         }
 
-        // sort top--level nav to ensure consistent nav ordering
+        // sort top-level nav to ensure consistent nav ordering
         nav.handbook.children.sort((a, b) => {
             return a.name.localeCompare(b.name)
         })
