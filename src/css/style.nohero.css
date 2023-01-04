@@ -56,34 +56,34 @@
     content: '' !important;
 }
 
-.handbook .prose h2 {
+.ff-prose .prose h2 {
     font-size: 1.75rem;
 }
 
-.handbook .prose h3 {
+.ff-prose .prose h3 {
     font-size: 1.5rem;
 }
 
-.handbook .prose h4 {
+.ff-prose .prose h4 {
     font-size: 1.25rem;
 }
 
-.handbook .prose h5 {
+.ff-prose .prose h5 {
     font-size: 1rem;
 }
 
-.handbook .prose p {
+.ff-prose .prose p {
     margin-top: 0;
     margin-bottom: 1rem;
 }
 
 /* Reset Tailwind CSS to enable more custom uses of images, e.g. User Personas */
-.handbook .prose img {
+.ff-prose .prose img {
     margin-top: initial;
     margin-bottom: initial;
 }
 
-.handbook .prose > img {
+.ff-prose .prose > img {
     margin-top: 2em;
     margin-bottom: 2em;
 }

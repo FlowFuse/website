@@ -7,6 +7,8 @@ const heroGen = require("./lib/post-hero-gen.js");
 const countryFlag = require("./lib/country-flag-emoji");
 const pluginMermaid = require("@kevingimbel/eleventy-plugin-mermaid");
 const { stringify } = require("postcss");
+const util = require('util')
+const fg = require('fast-glob');
 
 module.exports = function(eleventyConfig) {
     eleventyConfig.setWatchThrottleWaitTime(200); // in milliseconds
@@ -39,6 +41,11 @@ module.exports = function(eleventyConfig) {
         return array.slice(0, n);
     });
 
+    eleventyConfig.addFilter('console', function(value) {
+        const str = util.inspect(value, {showHidden: false, depth: null});
+        return `<div style="white-space: pre-wrap;">${unescape(str)}</div>;`
+    });
+
     eleventyConfig.addFilter('shortDate', dateObj => {
         return spacetime(dateObj).format('{date} {month-short}, {year}')
     });
@@ -57,9 +64,55 @@ module.exports = function(eleventyConfig) {
         return heroGen(""+id)
     })
 
-    eleventyConfig.addFilter("countryFlag", function(country) {
-        return countryFlag(country)
-    })
+    // Create a collection for sidebar navigation
+    eleventyConfig.addCollection('nav', function(collection) {
+
+        let nav = {}
+        
+        collection.getAll().filter((page) => {
+            return page.data.tags?.includes('handbook')
+            // url.indexOf('/handbook') === 0
+        }).map((page) => {
+            // work out ToC Hierarchy
+            const hierarchy = page.url.split('/').filter(n => n)
+            const map = hierarchy.reduce((accumulator, currentValue) => {
+                if (!accumulator[currentValue]) {
+                    accumulator[currentValue] = {
+                        'name': currentValue,
+                        'url': page.url,
+                        'children': {}
+                    }
+                }
+                // defines a nice-to-read title for the navigation option
+                if (page.data.navTitle) {
+                    accumulator[currentValue].name = page.data.navTitle
+                }
+                return accumulator[currentValue].children
+            }, nav)
+            
+            return map
+        })
+
+        // recursive functions to format our nav map to arrays
+        function childrenToArray (children) {
+            return Object.values(children)
+        }
+        function nestedChildrenToArray (value) {
+            for (const [key, entry] of Object.entries(value)) {
+                if (entry.children && Object.keys(entry.children).length > 0) {
+                    nestedChildrenToArray(entry.children)
+                    entry.children = childrenToArray(entry.children)
+                } else {
+                    delete entry.children
+                }
+            }
+            
+        }
+        
+        nestedChildrenToArray(nav)
+        return nav;
+    });
+
     eleventyConfig.addFilter("handbookBreadcrumbs", (str) => {
         const parts = str.split("/");
         parts.shift();
