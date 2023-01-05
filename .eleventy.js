@@ -109,7 +109,11 @@ module.exports = function(eleventyConfig) {
         function nestedChildrenToArray (value) {
             for (const [key, entry] of Object.entries(value)) {
                 if (entry.children && Object.keys(entry.children).length > 0) {
+                    // ensure our grandchildren are all converted to arrays before
+                    // we convert the higher level object to an array
                     nestedChildrenToArray(entry.children)
+                    // now we have converted all grandchildren,
+                    // we can convert our children to an array
                     entry.children = childrenToArray(entry.children)
                 } else {
                     delete entry.children
