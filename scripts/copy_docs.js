@@ -6,16 +6,13 @@ const exec = util.promisify(require('child_process').exec)
 async function copyFiles (src, dest, version) {
     const files = await fs.readdir(src, {withFileTypes: true})
     for (const file of files) {
-        console.log(file.name)
         if (!file.name.startsWith('.')) {
             if (file.isDirectory()) {
-                // console.log(`dir ${file.name}`)
                 const newSrc = path.join(src,file.name)
                 const newDest = path.join(dest, file.name)
                 fs.mkdir(newDest, {recursive: true})
                 await copyFiles(newSrc, newDest, version)
             } else {
-                // console.log(`file ${file.name}`)
                 const srcFile = path.join(src, file.name)
                 const destFile = path.join(dest, file.name)
                 if (!file.name.endsWith('.md')) {
