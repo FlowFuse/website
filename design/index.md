@@ -1,3 +1,8 @@
+---
+navTitle: Design
+navGroup: Development & Design Practices
+---
+
 ## Process
 
 ### Scheduling

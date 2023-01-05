@@ -1,3 +1,8 @@
+---
+navTitle: People Ops
+navGroup: Internal Operations
+---
+
 - [Compensation](../peopleops/compensation.md)
 - [Hiring](./hiring.md)
 

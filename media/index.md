@@ -1,3 +1,8 @@
+---
+navTitle: Media
+navGroup: Sales & Marketing
+---
+
 ## FlowForge Videos
 
 This section of our handbook is dedicated to guidance on how to create video/media assets for FlowForge. Here you can find information on what types of videos we produce at FlowForge and the templating and formatting we recommend for each. 

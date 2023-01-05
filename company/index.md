@@ -1,3 +1,8 @@
+---
+navTitle: Company
+navGroup: Company
+---
+
 # Company
 
 FlowForge is an open core company creating a low-code programming platform based
