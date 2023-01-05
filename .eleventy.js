@@ -76,12 +76,13 @@ module.exports = function(eleventyConfig) {
             const hierarchyA = a.url.split('/').filter(n => n)
             const hierarchyB = b.url.split('/').filter(n => n)
             return hierarchyA.length - hierarchyB.length
-        }).map((page) => {
+        }).forEach((page) => {
             // work out ToC Hierarchy
             // split the folder URI/URL, as this defines our TOC Hierarchy
             const hierarchy = page.url.split('/').filter(n => n)
-            // recursively parse hte folder hierarchy and created our collection object
-            const map = hierarchy.reduce((accumulator, currentValue, i) => {
+            // recursively parse the folder hierarchy and created our collection object
+            // pass nav = {} as the first accumulator - build up hierarchy map of TOC
+            hierarchy.reduce((accumulator, currentValue, i) => {
                 // create a nested object detailing hte full handbook hierarchy
                 if (!accumulator[currentValue]) {
                     accumulator[currentValue] = {
@@ -89,10 +90,6 @@ module.exports = function(eleventyConfig) {
                         'url': page.url,
                         'children': {}
                     }
-                }
-                // only look at meta when we are at the end of the hierarchy, i.e. the page var aligns with the hierarchy tier
-                if (i === hierarchy.length - 1) {
-                    // defines a nice-to-read title for the navigation option
                     if (page.data.navTitle) {
                         accumulator[currentValue].name = page.data.navTitle
                     }
@@ -103,8 +100,6 @@ module.exports = function(eleventyConfig) {
                 }
                 return accumulator[currentValue].children
             }, nav)
-            
-            return map
         })
 
         // recursive functions to format our nav map to arrays
