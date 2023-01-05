@@ -4,9 +4,10 @@ const markdownItFootnote = require("markdown-it-footnote")
 const codeClipboard = require("eleventy-plugin-code-clipboard");
 const spacetime = require("spacetime");
 const heroGen = require("./lib/post-hero-gen.js");
-const countryFlag = require("./lib/country-flag-emoji");
 const pluginMermaid = require("@kevingimbel/eleventy-plugin-mermaid");
 const { stringify } = require("postcss");
+const util = require('util')
+const fg = require('fast-glob');
 
 module.exports = function(eleventyConfig) {
     eleventyConfig.setWatchThrottleWaitTime(200); // in milliseconds
@@ -39,6 +40,11 @@ module.exports = function(eleventyConfig) {
         return array.slice(0, n);
     });
 
+    eleventyConfig.addFilter('console', function(value) {
+        const str = util.inspect(value, {showHidden: false, depth: null});
+        return `<div style="white-space: pre-wrap;">${unescape(str)}</div>;`
+    });
+
     eleventyConfig.addFilter('shortDate', dateObj => {
         return spacetime(dateObj).format('{date} {month-short}, {year}')
     });
@@ -57,9 +63,90 @@ module.exports = function(eleventyConfig) {
         return heroGen(""+id)
     })
 
-    eleventyConfig.addFilter("countryFlag", function(country) {
-        return countryFlag(country)
-    })
+    // Create a collection for sidebar navigation
+    eleventyConfig.addCollection('nav', function(collection) {
+
+        let nav = {}
+        
+        collection.getAll().filter((page) => {
+            return page.data.tags?.includes('handbook')
+            // url.indexOf('/handbook') === 0
+        }).sort((a, b) => {
+            // sort by depth, so we catch all the correct index.md routes
+            const hierarchyA = a.url.split('/').filter(n => n)
+            const hierarchyB = b.url.split('/').filter(n => n)
+            return hierarchyA.length - hierarchyB.length
+        }).forEach((page) => {
+            // work out ToC Hierarchy
+            // split the folder URI/URL, as this defines our TOC Hierarchy
+            const hierarchy = page.url.split('/').filter(n => n)
+            // recursively parse the folder hierarchy and created our collection object
+            // pass nav = {} as the first accumulator - build up hierarchy map of TOC
+            hierarchy.reduce((accumulator, currentValue, i) => {
+                // create a nested object detailing hte full handbook hierarchy
+                if (!accumulator[currentValue]) {
+                    accumulator[currentValue] = {
+                        'name': currentValue,
+                        'url': page.url,
+                        'children': {}
+                    }
+                    if (page.data.navTitle) {
+                        accumulator[currentValue].name = page.data.navTitle
+                    }
+                    // TODO: navGroup will be used in the rendering of the ToC at a later stage
+                    if (page.data.navGroup) {
+                        accumulator[currentValue].group = page.data.navGroup
+                    }
+                }
+                return accumulator[currentValue].children
+            }, nav)
+        })
+
+        // recursive functions to format our nav map to arrays
+        function childrenToArray (children) {
+            return Object.values(children)
+        }
+        function nestedChildrenToArray (value) {
+            for (const [key, entry] of Object.entries(value)) {
+                if (entry.children && Object.keys(entry.children).length > 0) {
+                    // ensure our grandchildren are all converted to arrays before
+                    // we convert the higher level object to an array
+                    nestedChildrenToArray(entry.children)
+                    // now we have converted all grandchildren,
+                    // we can convert our children to an array
+                    entry.children = childrenToArray(entry.children)
+                } else {
+                    delete entry.children
+                }
+            }
+            
+        }
+        // convert our objects to arrays so we can render in nunjucks
+        nestedChildrenToArray(nav)
+
+        // add functionality to group to-level items for better navigation.
+        // TODO: Not currently shown in UI, but here for future use as will improve nav
+        let groups = {}
+        if (nav.handbook) {
+            for (child of nav.handbook.children) {
+                if (child.group) {
+                    const group = child.group
+                    if (!groups[group]) {
+                        groups[group] = []
+                    }
+                    groups[group].push(child)
+                }
+            }
+
+            // sort top-level nav to ensure consistent nav ordering
+            nav.handbook.children.sort((a, b) => {
+                return a.name.localeCompare(b.name)
+            })
+        }
+
+        return nav;
+    });
+
     eleventyConfig.addFilter("handbookBreadcrumbs", (str) => {
         const parts = str.split("/");
         parts.shift();
