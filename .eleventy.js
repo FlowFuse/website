@@ -127,20 +127,22 @@ module.exports = function(eleventyConfig) {
         // add functionality to group to-level items for better navigation.
         // TODO: Not currently shown in UI, but here for future use as will improve nav
         let groups = {}
-        for (child of nav.handbook.children) {
-            if (child.group) {
-                const group = child.group
-                if (!groups[group]) {
-                    groups[group] = []
+        if (nav.handbook) {
+            for (child of nav.handbook.children) {
+                if (child.group) {
+                    const group = child.group
+                    if (!groups[group]) {
+                        groups[group] = []
+                    }
+                    groups[group].push(child)
                 }
-                groups[group].push(child)
             }
-        }
 
-        // sort top-level nav to ensure consistent nav ordering
-        nav.handbook.children.sort((a, b) => {
-            return a.name.localeCompare(b.name)
-        })
+            // sort top-level nav to ensure consistent nav ordering
+            nav.handbook.children.sort((a, b) => {
+                return a.name.localeCompare(b.name)
+            })
+        }
 
         return nav;
     });
