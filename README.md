@@ -41,6 +41,20 @@ This will start a server on http://localhost:8080 that will live reload whenever
 any content is changed. **Note:** if you modify `src/css/style.css` you will need
 to run `npm run tailwind` to rebuild the CSS content.
 
+### Running FlowForge Docs
+
+### Running FlowForge Handbook
+
+Our Handbook is stored and maintained in a [separate repository](https://github.com/flowforge/handbook). In order to run the Handbook locally, you do so via the Website. To do this, you'll need to clone a copy of the Handbook alongside your Website repository, e.g.:
+
+```
+/<parent_directory>
+    /website
+    /handbook
+```
+
+Once this is the case, you can run the ["Building the site locally"](#building-the-site-locally) instructions above as normal, and the handbook will then be available at http://localhost:8080/handbook
+
 ## How to add blog posts
 
 Add a new markdown file to `src/blog/` with the following metadata in the top:
