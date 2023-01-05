@@ -74,7 +74,8 @@
     
     <div class="content">
         <div class="nohero w-full pt-12 ff-bg-light">
-    <div class="handbook container m-auto text-left max-w-4xl pb-24" data-handbook>
+    <div class="ff-prose container m-auto text-left max-w-4xl pb-24" data-handbook>
+    <!-- Breadcrumbs -->
     <div class="w-full mx-auto ff-bg-light">
         <div class="font-medium border-b pb-1">
             
@@ -84,6 +85,7 @@
         </div>
     </div>
     <div class="w-full mx-auto ff-bg-light flex flex-col md:flex-row">
+        <!-- Main Content -->
         <div class="flex-grow order-last md:order-first">
             <div class="mt-6 mb-4 prose prose-blue main-content">
                 <h1 id="user-sign-up-flow" tabindex="-1"><a class="header-anchor" href="#user-sign-up-flow">#&nbsp;</a> User Sign Up Flow</h1>
@@ -91,6 +93,7 @@
 
             </div>
         </div>
+        <!-- on this page -->
         <div class="w-full md:w-64 md:ml-8 mt-4 md:mt-6 px-2">
             <h3 class="font-medium border-b pb-1 mb-4">On this page</h3>
             <ul id="toc" class="text-sm border-b mb-4"></ul>
@@ -100,7 +103,7 @@
     </div>
 </div>
 <script>
-    // Generate TOC
+    // Generate "On this page"
     let toc = document.getElementById("toc")
 
     let currentTag = "";
