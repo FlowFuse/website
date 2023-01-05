@@ -118,11 +118,6 @@ tags: handbook
     </div>
 </div>
 <script>
-    // Generate "Handbook Navigation"
-
-
-
-
     // Generate "On this page"
     let toc = document.getElementById("toc")
 
@@ -138,35 +133,7 @@ tags: handbook
         const level = parseInt(n.nodeName[1])
         const prevLevel = currentTag.length > 1 ? parseInt(currentTag[1]) : 0
 
-        // add numbering to our headers for easier navigation
-        if (prevLevel === 0) {
-            activeTier = 0
-        } else if (prevLevel > level) {
-            activeTier -= (prevLevel - level)
-            depth[activeTier] += 1
-        } else if (prevLevel < level) {
-            activeTier += 1
-            depth[activeTier] = 1
-        } else {
-            depth[activeTier] += 1
-        }
-        const hText = n.childNodes[n.childNodes.length - 1] // get the text only from our header
-        let number = ''
-        for (var nH = 0; nH <= activeTier; nH++) {
-            if (nH > 0) {
-                number += '.'
-            }
-            number += `${depth[nH]}`
-        }
-        // style top level header as '1. Header'
-        {# if (activeTier === 0) {
-            hText.textContent = `${number}. ${hText.textContent}`
-        } else {
-            // then style children as '1.1 - Header'
-            hText.textContent = `${number} - ${hText.textContent}`
-        } #}
-
-    // Render Table of Contents
+        // Render Table of Contents
         if (prevLevel > 0 && level - prevLevel < 0) {
             // we are moving left with our indent
             currentToc = toc;
