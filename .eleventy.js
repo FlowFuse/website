@@ -4,7 +4,6 @@ const markdownItFootnote = require("markdown-it-footnote")
 const codeClipboard = require("eleventy-plugin-code-clipboard");
 const spacetime = require("spacetime");
 const heroGen = require("./lib/post-hero-gen.js");
-const countryFlag = require("./lib/country-flag-emoji");
 const pluginMermaid = require("@kevingimbel/eleventy-plugin-mermaid");
 const { stringify } = require("postcss");
 const util = require('util')
