@@ -17,6 +17,7 @@
         "@11ty/eleventy-plugin-syntaxhighlight": "^4.0.0",
         "@tailwindcss/typography": "^0.4.1",
         "cross-env": "^7.0.3",
+        "del-cli": "^5.0.0",
         "markdown-it-anchor": "^8.4.1",
         "markdown-it-footnote": "^3.0.3",
         "nodemon": "^2.0.15",
@@ -30,7 +31,7 @@
         "vanilla-cookieconsent": "^2.6.1"
     },
     "scripts": {
-        "clean": "rm -rf _site && npx mkdirp _site/js",
+        "clean": "npx del-cli _site && npx mkdirp _site/js",
         "start": "npm-run-all clean build:js --parallel dev:*",
         "build": "cross-env NODE_ENV=production npm-run-all clean build:js handbook docs --parallel prod:*",
         "build:js": "terser -c -m -o _site/js/cc.min.js node_modules/vanilla-cookieconsent/dist/cookieconsent.js src/js/cookies.js",
