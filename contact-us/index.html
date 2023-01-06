@@ -82,63 +82,19 @@
     
     <div class="content">
         <div class="nohero w-full pt-12 ff-bg-light">
-    <div class="container m-auto text-left max-w-4xl pb-24">
+    
+<div class="container m-auto text-left max-w-4xl pb-24">
   <div class="flex justify-between items-center mb-4 md:px-4 md:-mb-0 md:px-0 md:block">
     <div class="ff-bg-light product px-4 pb-24 pt-4 md:pt-12 md:p-12 md:grid grid-cols-2">
       <img class="hidden md:w-72 md:m-auto md:block md:mt-0" src="../images/pictograms/browser_red.png" alt="Graphic of a globe, depicting 'Connectivity'."/>
-
-      <script src="https://www.google.com/recaptcha/api.js"></script>
+      <script charset="utf-8" type="text/javascript" src="//js-eu1.hsforms.net/forms/embed/v2.js"></script>
       <script>
-        function timestamp() {
-          var response = document.getElementById("g-recaptcha-response");
-          if (response == null || response.value.trim() == "") {
-            var elems = JSON.parse(document.getElementsByName("captcha_settings")[0].value);
-            elems["ts"] = JSON.stringify(new Date().getTime());
-            document.getElementsByName("captcha_settings")[0].value = JSON.stringify(elems);
-          }
-        }
-        setInterval(timestamp, 500); 
-        function toggleType(){
-          switch (document.getElementById("type").value){
-            case 'sales':
-              document.getElementById("contact-form").action = "https://webto.salesforce.com/servlet/servlet.WebToCase?encoding=UTF-8"
-              document.getElementsByName('submit')[0].style.display = 'block'
-              break;
-            case 'support':
-              document.getElementById("contact-form").action = "https://fftools.flowforge.cloud/contact-support"
-              document.getElementsByName('submit')[0].style.display = 'block'
-              break;
-          }
-        }
-      </script>
-
-      <form id="contact-form" action="" method="POST">
-        <input type=hidden name='captcha_settings' value='{"keyname":"googlerecaptchav2","fallback":"true","orgId":"00D8a0000028InL","ts":""}'>
-        <input type=hidden name="orgid" value="00D8a0000028InL">
-        <input type=hidden name="retURL" value="https://flowforge.com/contact-us?submit=true">
-
-        <label for="description" class="font-medium">Topic</label>
-        <select class="ff-input ff-select ff-text-input font-medium" id="type" onchange="toggleType()">
-          <option value="" disabled selected>Select topic</option>
-          <option value="sales">Sales Enquiry</option>
-          <option value="support">Support Request</option>
-        </select></br></br>
-
-        <label for="name" class="font-medium">Name</label><input class="ff-input ff-text-input mb-4" id="name" maxlength="80" name="name" size="20" type="text" /><br>
-
-        <label for="email" class="font-medium">Email</label><input class="ff-input ff-text-input mb-4" id="email" maxlength="80" name="email" size="20" type="text" /><br>
-
-        <label for="phone" class="font-medium">Phone</label><input class="ff-input ff-text-input mb-4" id="phone" maxlength="40" name="phone" size="20" type="text" /><br>
-
-        <label for="subject" class="font-medium">Subject</label><input class="ff-input ff-text-input mb-4" id="subject" maxlength="80" name="subject" size="20" type="text" /><br>
-
-        <label for="description" class="font-medium">Description</label>
-        <textarea name="description" class="h-32 w-full border border-grey-300 px-2 py-1 mb-4"></textarea><br>
-                
-        <div class="w-full g-recaptcha" data-sitekey="6LdMxjcgAAAAAI2YRWs1lf7DnXfxxaZdUSlI0AUO"></div><br>
-    
-        <input type="submit" name="submit" class="ff-btn ff-btn--primary w-full mt-0" style = "display:none">
-      </form>
+        hbspt.forms.create({
+         region: "eu1",
+         portalId: "26586079",
+         formId: "734455e5-4cda-4329-97da-07e40cda791c"
+        });
+     </script>
     </div>
   </div>
 </div>
@@ -178,6 +134,7 @@
                     <ul class="grid grid-cols-2 justify-center text-base sm:block sm:space-y-2">
                         <li class="inline mr-3 mb-3 md:m-0 md:block"><a href="/about">About</a></li>
                         <li class="inline mr-3 mb-3 md:m-0 md:block"><a href="/contact-us">Contact Us</a></li>
+                        <li class="inline mr-3 mb-3 md:m-0 md:block"><a href="/support">Request Support</a></li>
                         <li class="inline mr-3 mb-3 md:m-0 md:block"><a href="/team">Team</a></li>
                         <li class="inline mr-3 mb-3 md:m-0 md:block"><a href="https://boards.greenhouse.io/flowforge">Jobs</a></li>
                         <li class="inline mr-3 mb-3 md:m-0 md:block"><a href="/handbook">Handbook</a></li>
