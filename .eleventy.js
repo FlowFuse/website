@@ -123,7 +123,6 @@ module.exports = function(eleventyConfig) {
         nestedChildrenToArray(nav)
 
         // add functionality to group to-level items for better navigation.
-        // TODO: Not currently shown in UI, but here for future use as will improve nav
         let groups = {
             'Other': {
                 name: 'Other',
