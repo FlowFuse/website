@@ -1,23 +1,123 @@
 ---
 layout: nohero
+tags: handbook
 ---
-<div class="handbook container m-auto text-left max-w-4xl pb-24" data-handbook>
-    <div class="w-full mx-auto ff-bg-light">
-        <div class="font-medium border-b pb-1">
-            {% if version %}
-            v{{ version }}
+<script>
+    function toggleNavList (el) {
+        const li = el.parentElement
+        li.classList.toggle('open')
+        const ul = li.nextElementSibling
+        ul.classList.toggle('open')
+        if (ul.style.maxHeight) {
+            ul.style.maxHeight = null;
+        } else {
+            if (ul.parentElement.tagName === "UL" && !ul.parentElement.classList.contains('handbook-nav')) {
+                ul.parentElement.style.maxHeight = "initial"
+            }
+            ul.style.maxHeight = ul.scrollHeight + "px";
+        } 
+    }
+</script>
+
+<div class="handbook ff-prose text-left pb-24" data-handbook>
+    <!-- Navigation -->
+    <div>
+        <ul class="handbook-nav border-r" data-el="navigation">
+            <li class="{% if "/handbook/" === page.url %}active{% endif %}">
+                <a href="/handbook">Handbook</a>
+            </li>
+            {# {{ collections.nav.handbook.children | console | safe }} #}
+            {% for group in collections.nav.handbook.groups %}
+            {% if group.children.length > 0 %}
+            <li class="handbook-nav-group">{{ group.name }}</li>
+                {% for entry in group.children %}
+                <li class="{% if entry.url === page.url %}active{% endif %}">
+                    <a href="{{entry.url}}">
+                        {{ entry.name }}
+                    </a>
+                    {% if entry.children %}
+                    <button onclick="toggleNavList(this)">
+                        <span class="ff-icon icon-expand">
+                            {% include "components/icons/chevron-down.svg" %}
+                        </span>
+                        <span class="ff-icon icon-minimise">
+                            {% include "components/icons/chevron-up.svg" %}
+                        </span>
+                    </button>
+                    {% endif %}
+                </li>
+                {% if entry.children %}
+                <ul class="handbook-nav-nested">
+                    {% for child in entry.children %}
+                    <li class="{% if child.url === page.url %}active{% endif %}">
+                        <a href="{{child.url}}">
+                            {{ child.name }}
+                        </a>
+                        {% if child.children %}
+                        <button onclick="toggleNavList(this)">
+                            <span class="ff-icon icon-expand">
+                                {% include "components/icons/chevron-down.svg" %}
+                            </span>
+                            <span class="ff-icon icon-minimise">
+                                {% include "components/icons/chevron-up.svg" %}
+                            </span>
+                        </button>
+                        {% endif %}
+                    </li>
+                    {% if child.children %}
+                    <ul class="handbook-nav-nested-2">
+                        {% for grandchild in child.children %}
+                        <li class="{% if grandchild.url === page.url %}active{% endif %}">
+                            <a href="{{grandchild.url}}">
+                                {{ grandchild.name }}
+                            </a>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                    {% endif %}
+                    {% endfor %}
+                </ul>
+                {% endif %}
+                {% endfor %}
             {% endif %}
-            {{ page.filePathStem | handbookBreadcrumbs |safe }}
-        </div>
+            {% endfor %}
+
+
+            
+        </ul>
     </div>
-    <div class="w-full mx-auto ff-bg-light flex flex-col md:flex-row">
-        <div class="flex-grow order-last md:order-first">
-            <div class="mt-6 mb-4 prose prose-blue main-content">
-                {{ content | rewriteHandbookLinks(page) | safe }}
+    <div class="max-w-screen-lg mx-auto px-8 pt-8">
+        <!-- Breadcrumbs - Desktop -->
+        <div class="hidden w-full mx-auto ff-bg-light md:block">
+            <div class="font-medium border-b pb-1">
+                {% if version %}
+                v{{ version }}
+                {% endif %}
+                {{ page.filePathStem | handbookBreadcrumbs |safe }}
             </div>
         </div>
-        <div class="w-full md:w-64 md:ml-8 mt-4 md:mt-6 px-2">
-            <h3 class="font-medium border-b pb-1 mb-4">On this page</h3>
+        <div class="w-full mx-auto ff-bg-light flex flex-col md:flex-row">
+            <!-- Main Content -->
+            <div class="flex-grow order-last md:order-first">
+                <div class="mt-6 mb-4 prose prose-blue main-content">
+                    {{ content | rewriteHandbookLinks(page) | safe }}
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="border-l">
+        <!-- Breadcrumbs - Mobile -->
+        <div class="block px-8 pt-4 w-full mx-auto ff-bg-light md:hidden">
+            <div class="font-medium border-b pb-1">
+                {% if version %}
+                v{{ version }}
+                {% endif %}
+                {{ page.filePathStem | handbookBreadcrumbs |safe }}
+            </div>
+        </div>
+        <!-- on this page -->
+        <div class="sticky top-6 w-full md:w-64 mt-4 md:mt-6 px-8">
+            <h3 class="font-medium border-b pb-1 mb-4">on this page</h3>
             <ul id="toc" class="text-sm border-b mb-4"></ul>
             <div class="text-sm pb-1 text-right mb-4"><a href="{{ page | handbookEditLink(originalPath) }}">Edit this page</a></div>
             <div class="text-xs pb-1 text-right mb-4 italic">Updated: {{ updated }}</div>
@@ -25,7 +125,7 @@ layout: nohero
     </div>
 </div>
 <script>
-    // Generate TOC
+    // Generate "On this page"
     let toc = document.getElementById("toc")
 
     let currentTag = "";
@@ -40,35 +140,7 @@ layout: nohero
         const level = parseInt(n.nodeName[1])
         const prevLevel = currentTag.length > 1 ? parseInt(currentTag[1]) : 0
 
-        // add numbering to our headers for easier navigation
-        if (prevLevel === 0) {
-            activeTier = 0
-        } else if (prevLevel > level) {
-            activeTier -= (prevLevel - level)
-            depth[activeTier] += 1
-        } else if (prevLevel < level) {
-            activeTier += 1
-            depth[activeTier] = 1
-        } else {
-            depth[activeTier] += 1
-        }
-        const hText = n.childNodes[n.childNodes.length - 1] // get the text only from our header
-        let number = ''
-        for (var nH = 0; nH <= activeTier; nH++) {
-            if (nH > 0) {
-                number += '.'
-            }
-            number += `${depth[nH]}`
-        }
-        // style top level header as '1. Header'
-        if (activeTier === 0) {
-            hText.textContent = `${number}. ${hText.textContent}`
-        } else {
-            // then style children as '1.1 - Header'
-            hText.textContent = `${number} - ${hText.textContent}`
-        }
-
-    // Render Table of Contents
+        // Render Table of Contents
         if (prevLevel > 0 && level - prevLevel < 0) {
             // we are moving left with our indent
             currentToc = toc;

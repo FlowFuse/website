@@ -13,10 +13,8 @@ managed and FlowForge managed instances.
 
 ### User sessions
 
-Users are identified by an unique combination of username and password. There's
-currently no support for SSO/SAML in FlowForge, it is
-[being investigated](https://github.com/flowforge/flowforge/issues/226) as part
-of our roadmap.
+Users are identified by an unique combination of username and password, or by a
+SAML compliant server for SSO. 
 
 User provisioning is on a per user basis.
 

@@ -29,6 +29,9 @@ do
             echo "updated: $lastUpdate" >> $destFile
             echo "---" >> $destFile
             cat $file >> $destFile
+            # account for .md files with --- data defined
+            # remove ---\n--- with '': https://stackoverflow.com/a/1252191/193376
+            sed -i "" -e ':a' -e 'N' -e '$!ba' -e 's/---\n---\n//g' $destFile
          ;;
          *)
             cp $file $destFile

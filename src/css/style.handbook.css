@@ -1,0 +1,114 @@
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+    .handbook {
+        grid-template-columns: 265px 1fr auto;
+        margin-top: -3rem;
+        @apply flex flex-col-reverse md:grid
+    }
+
+    .handbook-nav {
+        border-right: 1px solid right;
+        text-transform: capitalize;
+        --nav-weight: 600;
+        /* --nav-color: white; */
+        --nav-color: black;
+        --nav-bg: theme(colors.gray.50);
+        --nav-pl: 1rem;
+        background-color: theme(colors.gray.50);
+        padding-left: 0.5rem;
+        padding-top: 1.5rem;
+        @apply sticky top-0;
+    }
+
+    .handbook-nav-nested {
+        --nav-bg: theme(colors.gray.50);
+        --nav-color: black;
+        --nav-weight: 300;
+        --nav-pl: 1.25rem;
+        margin-left: 1.25rem;
+    }
+
+    .handbook-nav-nested-2 {
+        margin-left: 1.25rem;
+    }
+
+    .handbook-nav li {
+        @apply flex justify-between items-stretch my-1;
+        font-weight: var(--nav-weight);
+        background-color: var(--nav-bg);
+        border-left: 4px solid;
+        border-color: var(--nav-bg);
+    }
+
+    .handbook-nav li a,
+    .handbook-nav li.handbook-nav-group {
+        flex-grow: 1;
+        @apply py-1.5 px-4;
+    }
+
+    .handbook-nav li.handbook-nav-group {
+        color: theme(colors.red.700);
+        padding-left: 0;
+    }
+
+    .handbook-nav li a {
+        color: var(--nav-color) !important;
+        padding-left: var(--nav-pl);
+    }
+
+    .handbook li .ff-icon {
+        padding-right: 1rem;
+    }
+
+    .handbook-nav li button {
+        @apply px-2;
+    }
+
+    .handbook-nav li button:hover .ff-icon svg path {
+        stroke: theme(colors.blue.600);
+    }
+    
+    .handbook-nav li.active {
+        background-color: theme(colors.gray.100);
+        border-color: theme(colors.red.600);
+    }
+
+    .handbook-nav li a:hover {
+        background-color: theme(colors.gray.200);
+    }
+
+
+    .handbook li .icon-expand {
+        display: block;
+        color: black;
+    }
+
+    .handbook li .icon-minimise {
+        display: none;
+    }
+
+    .handbook li.open {
+        background-color: theme(colors.gray.100);
+    }
+
+    .handbook li.open .icon-expand {
+        display: none;
+    }
+
+    .handbook li.open .icon-minimise {
+        display: block;
+    }
+
+    /* Define animation transitions for all child UL elements */
+    .handbook-nav ul {
+        max-height: 0;
+        overflow-y: hidden;
+        transition: 0.3s;
+    }
+
+    .handbook-nav ul:has(li.active) {
+        max-height: initial;
+    }
+}
