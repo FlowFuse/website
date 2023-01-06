@@ -81,10 +81,12 @@ Furthermore, we will continue our involvement with the Node-RED community.
 ### Key metrics
 
 At FlowForge we're engaged in many initiatives to grow our offering and assess
-product market fit. Currently we're measuring 2 key metrics which serve as
+product market fit. Currently we're measuring 1 key metric which serves as
 heuristic for company wide success.
 
 #### Installed Platforms
+
+[Dashboard](https://datastudio.google.com/reporting/90315614-39bf-4eac-ba3d-45b4c635940e/page/P1V6C)
 
 FlowForge is the key product we're verifying in the market currently. Each
 platform installed and running shows value is delivered to customers. Through
