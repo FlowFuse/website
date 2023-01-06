@@ -1,3 +1,7 @@
+---
+navTitle: Remote Work
+---
+
 FlowForge is fully remote and our team spans multiple countries and timezones.
 Working remotely can require some changes.
 
