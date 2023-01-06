@@ -14,20 +14,26 @@ async function copyFiles (src, dest, version) {
                 await copyFiles(newSrc, newDest, version)
             } else {
                 const srcFile = path.join(src, file.name)
-                const destFile = path.join(dest, file.name)
+                const destFile = path.join(dest, file.name.replace(/README/,"index"))
                 if (!file.name.endsWith('.md')) {
                     await fs.copyFile(srcFile, destFile)
                 } else {
-                const { stdout } = await exec(`git log -1 --pretty=format:%ci ${file.name}`, {
-                    cwd: src 
-                })
-                const header = '---\n' +
-                `originPath: ${path.join(src, file.name)}\n` +
-                `updated: ${stdout}\n` +
-                `version: ${version}\n` +
-                '---\n'
-                const content = await fs.readFile(srcFile)
-                await fs.writeFile(destFile, header + content)
+                    const { stdout } = await exec(`git log -1 --pretty=format:%ci ${file.name}`, {
+                        cwd: src 
+                    })
+                    const header = '---\n' +
+                        `originalPath: ${path.join(src, file.name).replace(/^..\/flowforge\/docs\//,'')}\n` +
+                        `updated: ${stdout}\n` +
+                        `version: ${version}\n` +
+                        '---\n'
+                    const content = await fs.readFile(srcFile, 'utf-8')
+                    let body = header + content
+                    if (/^---/.test(content)) {
+                        // The original file starts with yaml front-matter, so
+                        // remove the double-delimter we've just introduced
+                        body = body.replace('---\n---\n', '')
+                    }
+                    await fs.writeFile(destFile, body)
                 }
             }
         }

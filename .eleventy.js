@@ -214,6 +214,10 @@ module.exports = function(eleventyConfig) {
         return str;
     })
     eleventyConfig.addFilter("handbookEditLink", (page, originalPath) => {
+        if (!originalPath) {
+            console.log(`WARNING: no "originalPath" property on ${page.filePathStem}`)
+            return
+        }
         let baseUrl
         let filePath = page.filePathStem
         if (/^\/docs/.test(page.url)) {
