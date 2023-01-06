@@ -11,7 +11,7 @@ FlowForge. Later we'll likely add data from Stripe and Hubspot.
 
 For now the data is imported manually into Big Query. In big query materialized
 views are created - read; we're processing the data for more, derived, data.
-As the data is than in the Google realm, it is available as data source in Google
+As the data is then in the Google realm, it is available as a data source in Google
 Sheets and [Data Studio](https://datastudio.google.com/).
 
 ### Source to sink
