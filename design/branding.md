@@ -1,5 +1,6 @@
 # FlowForge Branding Guidelines
 
+For FlowForge Assets (e.g. logos, pictograms, and raw design files), please look in the [`/design/Media`](https://drive.google.com/drive/u/1/folders/1guBnBUrIiRXuK6vsik_NIXIhtE1cZRRa) folder on Google Drive.
 ## Fonts
 
 In both the FlowForge application and on our website, we use [Tailwind CSS](https://tailwindcss.com/). With Tailwind, comes the `font-sans` class, which we use across FlowForge.
