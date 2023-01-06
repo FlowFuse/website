@@ -1,3 +1,7 @@
+---
+navGroup: Sales & Marketing
+---
+
 # Sales
 
 FlowForge has two commercial offerings; self-managed and FlowForge Cloud. How we
