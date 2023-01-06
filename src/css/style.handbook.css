@@ -42,15 +42,32 @@
         border-color: var(--nav-bg);
     }
 
-    .handbook-nav li a {
-        color: var(--nav-color) !important;
+    .handbook-nav li a,
+    .handbook-nav li.handbook-nav-group {
         flex-grow: 1;
         @apply py-1.5 px-4;
+    }
+
+    .handbook-nav li.handbook-nav-group {
+        color: theme(colors.red.700);
+        padding-left: 0;
+    }
+
+    .handbook-nav li a {
+        color: var(--nav-color) !important;
         padding-left: var(--nav-pl);
+    }
+
+    .handbook li .ff-icon {
+        padding-right: 1rem;
     }
 
     .handbook-nav li button {
         @apply px-2;
+    }
+
+    .handbook-nav li button:hover .ff-icon svg path {
+        stroke: theme(colors.blue.600);
     }
     
     .handbook-nav li.active {
@@ -58,16 +75,14 @@
         border-color: theme(colors.red.600);
     }
 
-    .handbook-nav li:hover {
+    .handbook-nav li a:hover {
         background-color: theme(colors.gray.200);
     }
 
-    .handbook li .ff-icon {
-        padding-right: 1rem;
-    }
 
     .handbook li .icon-expand {
         display: block;
+        color: black;
     }
 
     .handbook li .icon-minimise {

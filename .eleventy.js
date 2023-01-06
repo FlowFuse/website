@@ -5,9 +5,7 @@ const codeClipboard = require("eleventy-plugin-code-clipboard");
 const spacetime = require("spacetime");
 const heroGen = require("./lib/post-hero-gen.js");
 const pluginMermaid = require("@kevingimbel/eleventy-plugin-mermaid");
-const { stringify } = require("postcss");
 const util = require('util')
-const fg = require('fast-glob');
 
 module.exports = function(eleventyConfig) {
     eleventyConfig.setWatchThrottleWaitTime(200); // in milliseconds
@@ -125,22 +123,48 @@ module.exports = function(eleventyConfig) {
         nestedChildrenToArray(nav)
 
         // add functionality to group to-level items for better navigation.
-        // TODO: Not currently shown in UI, but here for future use as will improve nav
-        let groups = {}
+        let groups = {
+            'Other': {
+                name: 'Other',
+                order: -1,    // always render last
+                children: []
+            }
+        }
+        // not req'd to have handbook in Website build, so this may be empty
         if (nav.handbook) {
             for (child of nav.handbook.children) {
                 if (child.group) {
                     const group = child.group
                     if (!groups[group]) {
-                        groups[group] = []
+                        groups[group] = {
+                            name: group,
+                            order: 0,
+                            children: []
+                        }
                     }
-                    groups[group].push(child)
+                    groups[group].children.push(child)
+                } else {
+                    // capture & flag top-level handbook docs, that haven't had a group assigned
+                    groups['Other'].children.push(child)
                 }
             }
 
-            // sort top-level nav to ensure consistent nav ordering
-            nav.handbook.children.sort((a, b) => {
-                return a.name.localeCompare(b.name)
+            function sortChildren (a, b) {
+                // sort children by 'order', then alphabetical
+                return b.order - a.order || a.name.localeCompare(b.name)
+            }
+
+            nav.handbook.groups = Object.values(groups).sort(sortChildren)
+            
+            nav.handbook.groups.forEach((group) => {
+                if (group.children) {
+                    group.children.forEach((child) => {
+                        if (child.children) {
+                            child.children.sort(sortChildren)
+                        }
+                    })
+                    group.children.sort(sortChildren)
+                }
             })
         }
 
