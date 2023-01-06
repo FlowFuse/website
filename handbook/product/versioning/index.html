@@ -87,7 +87,6 @@
                 ul.parentElement.style.maxHeight = "initial"
             }
             ul.style.maxHeight = ul.scrollHeight + "px";
-            console.log(ul.parentElement.classList.contains('handbook-nav'))
         } 
     }
 </script>
@@ -101,183 +100,12 @@
             </li>
             
             
-            <li class="">
-                <a href="/handbook/company/">
-                    Company
-                </a>
-                
-                <button onclick="toggleNavList(this)">
-                    <span class="ff-icon icon-expand">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-  <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
-</svg>
-
-                    </span>
-                    <span class="ff-icon icon-minimise">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-  <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5" />
-</svg>
-
-                    </span>
-                </button>
-                
-            </li>
             
-            <ul class="handbook-nav-nested">
+            <li class="handbook-nav-group">Company</li>
                 
                 <li class="">
-                    <a href="/handbook/company/board/">
-                        board
-                    </a>
-                    
-                </li>
-                
-                
-                <li class="">
-                    <a href="/handbook/company/communication/">
-                        communication
-                    </a>
-                    
-                </li>
-                
-                
-                <li class="">
-                    <a href="/handbook/company/remote/">
-                        remote
-                    </a>
-                    
-                </li>
-                
-                
-                <li class="">
-                    <a href="/handbook/company/security/">
-                        security
-                    </a>
-                    
-                </li>
-                
-                
-                <li class="">
-                    <a href="/handbook/company/strategy/">
-                        strategy
-                    </a>
-                    
-                </li>
-                
-                
-            </ul>
-            
-            
-            <li class="">
-                <a href="/handbook/design/">
-                    Design
-                </a>
-                
-                <button onclick="toggleNavList(this)">
-                    <span class="ff-icon icon-expand">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-  <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
-</svg>
-
-                    </span>
-                    <span class="ff-icon icon-minimise">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-  <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5" />
-</svg>
-
-                    </span>
-                </button>
-                
-            </li>
-            
-            <ul class="handbook-nav-nested">
-                
-                <li class="">
-                    <a href="/handbook/design/branding/">
-                        branding
-                    </a>
-                    
-                </li>
-                
-                
-                <li class="">
-                    <a href="/handbook/design/design-thinking/">
-                        design-thinking
-                    </a>
-                    
-                </li>
-                
-                
-            </ul>
-            
-            
-            <li class="">
-                <a href="/handbook/development/">
-                    Development
-                </a>
-                
-                <button onclick="toggleNavList(this)">
-                    <span class="ff-icon icon-expand">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-  <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
-</svg>
-
-                    </span>
-                    <span class="ff-icon icon-minimise">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-  <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5" />
-</svg>
-
-                    </span>
-                </button>
-                
-            </li>
-            
-            <ul class="handbook-nav-nested">
-                
-                <li class="">
-                    <a href="/handbook/development/contributing/">
-                        contributing
-                    </a>
-                    
-                </li>
-                
-                
-                <li class="">
-                    <a href="/handbook/development/packaging/">
-                        packaging
-                    </a>
-                    
-                </li>
-                
-                
-                <li class="">
-                    <a href="/handbook/development/release/">
-                        release
-                    </a>
-                    
-                </li>
-                
-                
-                <li class="">
-                    <a href="/handbook/development/security/">
-                        security
-                    </a>
-                    
-                </li>
-                
-                
-                <li class="">
-                    <a href="/handbook/development/staging/">
-                        staging
-                    </a>
-                    
-                </li>
-                
-                
-                <li class="">
-                    <a href="/handbook/development/frontend/">
-                        frontend
+                    <a href="/handbook/company/">
+                        Company
                     </a>
                     
                     <button onclick="toggleNavList(this)">
@@ -297,251 +125,450 @@
                     
                 </li>
                 
-                <ul class="handbook-nav-nested-2">
+                <ul class="handbook-nav-nested">
                     
                     <li class="">
-                        <a href="/handbook/development/frontend/data-attributes/">
-                            data-attributes
+                        <a href="/handbook/company/board/">
+                            board
                         </a>
+                        
                     </li>
                     
-                    <li class="">
-                        <a href="/handbook/development/frontend/services/">
-                            services
-                        </a>
-                    </li>
                     
                     <li class="">
-                        <a href="/handbook/development/frontend/testing/">
-                            testing
+                        <a href="/handbook/company/communication/">
+                            communication
                         </a>
+                        
                     </li>
+                    
+                    
+                    <li class="">
+                        <a href="/handbook/company/remote/">
+                            remote
+                        </a>
+                        
+                    </li>
+                    
+                    
+                    <li class="">
+                        <a href="/handbook/company/security/">
+                            security
+                        </a>
+                        
+                    </li>
+                    
+                    
+                    <li class="">
+                        <a href="/handbook/company/strategy/">
+                            strategy
+                        </a>
+                        
+                    </li>
+                    
                     
                 </ul>
                 
                 
-            </ul>
-            
-            
-            <li class="">
-                <a href="/handbook/marketing/">
-                    Marketing &amp; Communication
-                </a>
-                
-            </li>
-            
-            
-            <li class="">
-                <a href="/handbook/media/">
-                    Media
-                </a>
-                
-            </li>
-            
-            
-            <li class="">
-                <a href="/handbook/operations/">
-                    Operations
-                </a>
-                
-                <button onclick="toggleNavList(this)">
-                    <span class="ff-icon icon-expand">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                <li class="">
+                    <a href="/handbook/operations/">
+                        Operations
+                    </a>
+                    
+                    <button onclick="toggleNavList(this)">
+                        <span class="ff-icon icon-expand">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
   <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
 </svg>
 
-                    </span>
-                    <span class="ff-icon icon-minimise">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                        </span>
+                        <span class="ff-icon icon-minimise">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
   <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5" />
 </svg>
 
-                    </span>
-                </button>
-                
-            </li>
-            
-            <ul class="handbook-nav-nested">
-                
-                <li class="">
-                    <a href="/handbook/operations/accounts/">
-                        accounts
-                    </a>
+                        </span>
+                    </button>
                     
                 </li>
                 
+                <ul class="handbook-nav-nested">
+                    
+                    <li class="">
+                        <a href="/handbook/operations/accounts/">
+                            accounts
+                        </a>
+                        
+                    </li>
+                    
+                    
+                    <li class="">
+                        <a href="/handbook/operations/billing/">
+                            billing
+                        </a>
+                        
+                    </li>
+                    
+                    
+                    <li class="">
+                        <a href="/handbook/operations/change/">
+                            change
+                        </a>
+                        
+                    </li>
+                    
+                    
+                    <li class="">
+                        <a href="/handbook/operations/support/">
+                            support
+                        </a>
+                        
+                    </li>
+                    
+                    
+                    <li class="">
+                        <a href="/handbook/operations/vendors/">
+                            vendors
+                        </a>
+                        
+                    </li>
+                    
+                    
+                </ul>
+                
                 
                 <li class="">
-                    <a href="/handbook/operations/billing/">
-                        billing
+                    <a href="/handbook/product/">
+                        Product
                     </a>
                     
-                </li>
-                
-                
-                <li class="">
-                    <a href="/handbook/operations/change/">
-                        change
-                    </a>
-                    
-                </li>
-                
-                
-                <li class="">
-                    <a href="/handbook/operations/support/">
-                        support
-                    </a>
-                    
-                </li>
-                
-                
-                <li class="">
-                    <a href="/handbook/operations/vendors/">
-                        vendors
-                    </a>
-                    
-                </li>
-                
-                
-            </ul>
-            
-            
-            <li class="">
-                <a href="/handbook/peopleops/">
-                    People Ops
-                </a>
-                
-                <button onclick="toggleNavList(this)">
-                    <span class="ff-icon icon-expand">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                    <button onclick="toggleNavList(this)">
+                        <span class="ff-icon icon-expand">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
   <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
 </svg>
 
-                    </span>
-                    <span class="ff-icon icon-minimise">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                        </span>
+                        <span class="ff-icon icon-minimise">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
   <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5" />
 </svg>
 
-                    </span>
-                </button>
-                
-            </li>
-            
-            <ul class="handbook-nav-nested">
-                
-                <li class="">
-                    <a href="/handbook/peopleops/compensation/">
-                        compensation
-                    </a>
+                        </span>
+                    </button>
                     
                 </li>
                 
+                <ul class="handbook-nav-nested">
+                    
+                    <li class="">
+                        <a href="/handbook/product/plan/">
+                            plan
+                        </a>
+                        
+                    </li>
+                    
+                    
+                    <li class="">
+                        <a href="/handbook/product/pricing/">
+                            pricing
+                        </a>
+                        
+                    </li>
+                    
+                    
+                    <li class="active">
+                        <a href="/handbook/product/versioning/">
+                            versioning
+                        </a>
+                        
+                    </li>
+                    
+                    
+                    <li class="">
+                        <a href="/handbook/product/verticals/">
+                            verticals
+                        </a>
+                        
+                    </li>
+                    
+                    
+                </ul>
+                
+                
+            
+            
+            
+            <li class="handbook-nav-group">Development &amp; Design Practices</li>
                 
                 <li class="">
-                    <a href="/handbook/peopleops/hiring/">
-                        hiring
+                    <a href="/handbook/design/">
+                        Design
                     </a>
                     
-                </li>
-                
-                
-            </ul>
-            
-            
-            <li class="">
-                <a href="/handbook/product/">
-                    Product
-                </a>
-                
-                <button onclick="toggleNavList(this)">
-                    <span class="ff-icon icon-expand">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                    <button onclick="toggleNavList(this)">
+                        <span class="ff-icon icon-expand">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
   <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
 </svg>
 
-                    </span>
-                    <span class="ff-icon icon-minimise">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                        </span>
+                        <span class="ff-icon icon-minimise">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
   <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5" />
 </svg>
 
-                    </span>
-                </button>
-                
-            </li>
-            
-            <ul class="handbook-nav-nested">
-                
-                <li class="">
-                    <a href="/handbook/product/plan/">
-                        plan
-                    </a>
+                        </span>
+                    </button>
                     
                 </li>
                 
-                
-                <li class="">
-                    <a href="/handbook/product/pricing/">
-                        pricing
-                    </a>
+                <ul class="handbook-nav-nested">
                     
-                </li>
-                
-                
-                <li class="active">
-                    <a href="/handbook/product/versioning/">
-                        versioning
-                    </a>
+                    <li class="">
+                        <a href="/handbook/design/branding/">
+                            branding
+                        </a>
+                        
+                    </li>
                     
-                </li>
+                    
+                    <li class="">
+                        <a href="/handbook/design/design-thinking/">
+                            design-thinking
+                        </a>
+                        
+                    </li>
+                    
+                    
+                </ul>
                 
                 
                 <li class="">
-                    <a href="/handbook/product/verticals/">
-                        verticals
+                    <a href="/handbook/development/">
+                        Development
                     </a>
                     
-                </li>
-                
-                
-            </ul>
-            
-            
-            <li class="">
-                <a href="/handbook/sales/">
-                    sales
-                </a>
-                
-                <button onclick="toggleNavList(this)">
-                    <span class="ff-icon icon-expand">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                    <button onclick="toggleNavList(this)">
+                        <span class="ff-icon icon-expand">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
   <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
 </svg>
 
-                    </span>
-                    <span class="ff-icon icon-minimise">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                        </span>
+                        <span class="ff-icon icon-minimise">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
   <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5" />
 </svg>
 
-                    </span>
-                </button>
+                        </span>
+                    </button>
+                    
+                </li>
                 
-            </li>
+                <ul class="handbook-nav-nested">
+                    
+                    <li class="">
+                        <a href="/handbook/development/contributing/">
+                            contributing
+                        </a>
+                        
+                    </li>
+                    
+                    
+                    <li class="">
+                        <a href="/handbook/development/frontend/">
+                            frontend
+                        </a>
+                        
+                        <button onclick="toggleNavList(this)">
+                            <span class="ff-icon icon-expand">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+  <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+</svg>
+
+                            </span>
+                            <span class="ff-icon icon-minimise">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+  <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5" />
+</svg>
+
+                            </span>
+                        </button>
+                        
+                    </li>
+                    
+                    <ul class="handbook-nav-nested-2">
+                        
+                        <li class="">
+                            <a href="/handbook/development/frontend/data-attributes/">
+                                data-attributes
+                            </a>
+                        </li>
+                        
+                        <li class="">
+                            <a href="/handbook/development/frontend/services/">
+                                services
+                            </a>
+                        </li>
+                        
+                        <li class="">
+                            <a href="/handbook/development/frontend/testing/">
+                                testing
+                            </a>
+                        </li>
+                        
+                    </ul>
+                    
+                    
+                    <li class="">
+                        <a href="/handbook/development/packaging/">
+                            packaging
+                        </a>
+                        
+                    </li>
+                    
+                    
+                    <li class="">
+                        <a href="/handbook/development/release/">
+                            release
+                        </a>
+                        
+                    </li>
+                    
+                    
+                    <li class="">
+                        <a href="/handbook/development/security/">
+                            security
+                        </a>
+                        
+                    </li>
+                    
+                    
+                    <li class="">
+                        <a href="/handbook/development/staging/">
+                            staging
+                        </a>
+                        
+                    </li>
+                    
+                    
+                </ul>
+                
+                
             
-            <ul class="handbook-nav-nested">
+            
+            
+            <li class="handbook-nav-group">Internal Operations</li>
                 
                 <li class="">
-                    <a href="/handbook/sales/demo/">
-                        demo
+                    <a href="/handbook/peopleops/">
+                        People Ops
+                    </a>
+                    
+                    <button onclick="toggleNavList(this)">
+                        <span class="ff-icon icon-expand">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+  <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+</svg>
+
+                        </span>
+                        <span class="ff-icon icon-minimise">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+  <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5" />
+</svg>
+
+                        </span>
+                    </button>
+                    
+                </li>
+                
+                <ul class="handbook-nav-nested">
+                    
+                    <li class="">
+                        <a href="/handbook/peopleops/compensation/">
+                            compensation
+                        </a>
+                        
+                    </li>
+                    
+                    
+                    <li class="">
+                        <a href="/handbook/peopleops/hiring/">
+                            hiring
+                        </a>
+                        
+                    </li>
+                    
+                    
+                </ul>
+                
+                
+            
+            
+            
+            <li class="handbook-nav-group">Sales &amp; Marketing</li>
+                
+                <li class="">
+                    <a href="/handbook/marketing/">
+                        Marketing &amp; Communication
                     </a>
                     
                 </li>
                 
                 
-            </ul>
+                <li class="">
+                    <a href="/handbook/media/">
+                        Media
+                    </a>
+                    
+                </li>
+                
+                
             
+            
+            
+            <li class="handbook-nav-group">Other</li>
+                
+                <li class="">
+                    <a href="/handbook/sales/">
+                        sales
+                    </a>
+                    
+                    <button onclick="toggleNavList(this)">
+                        <span class="ff-icon icon-expand">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+  <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+</svg>
+
+                        </span>
+                        <span class="ff-icon icon-minimise">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+  <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5" />
+</svg>
+
+                        </span>
+                    </button>
+                    
+                </li>
+                
+                <ul class="handbook-nav-nested">
+                    
+                    <li class="">
+                        <a href="/handbook/sales/demo/">
+                            demo
+                        </a>
+                        
+                    </li>
+                    
+                    
+                </ul>
+                
+                
+            
+            
+
+
             
         </ul>
     </div>
