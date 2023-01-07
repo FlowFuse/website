@@ -208,4 +208,4 @@ If you wish to create your own Pictograms, you can use this Adobe Illustrator fi
 Sizings:
 
 - **128 x 128px**: Used when showing multiple pictograms in the same section of the website or application.
-- **250 x 250 px:** Used as aprt of page headers, inline with the page title and page description.
+- **250 x 250 px:** Used as part of page headers, inline with the page title and page description.
