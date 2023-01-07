@@ -22,7 +22,7 @@
     <meta name="twitter:description" content="FlowForge is an open-source, low-code platform for integration and automation. Helping you run Node-RED at production scales in a secure, scalable and team-based environment." />
     <meta name="twitter:site" content="@flowforgeinc" />
     <meta name="twitter:image" content="/images/og-social-tile.jpg" />
-    <meta property="og:url" content="https://flowforge.com/handbook/operations/billing/" />
+    <meta property="og:url" content="https://flowforge.com/handbook/peopleops/expenses/" />
     <meta property="og:title" content="" />
     <meta property="og:description" content="FlowForge is an open-source, low-code platform for integration and automation. Helping you run Node-RED at production scales in a secure, scalable and team-based environment." />
     <meta property="og:image" content="/images/og-social-tile.jpg" />
@@ -218,7 +218,7 @@
                     </li>
                     
                     
-                    <li class="active">
+                    <li class="">
                         <a href="/handbook/operations/billing/">
                             billing
                         </a>
@@ -533,7 +533,7 @@
                     </li>
                     
                     
-                    <li class="">
+                    <li class="active">
                         <a href="/handbook/peopleops/expenses/">
                             expenses
                         </a>
@@ -638,25 +638,78 @@
         <div class="hidden w-full mx-auto ff-bg-light md:block">
             <div class="font-medium border-b pb-1">
                 
-                /<a class="mx-2" href="/handbook">handbook</a>/<a class="mx-2" href="/handbook/operations">operations</a>/<a class="mx-2" href="/handbook/operations/billing">billing</a>
+                /<a class="mx-2" href="/handbook">handbook</a>/<a class="mx-2" href="/handbook/peopleops">peopleops</a>/<a class="mx-2" href="/handbook/peopleops/expenses">expenses</a>
             </div>
         </div>
         <div class="w-full mx-auto ff-bg-light flex flex-col md:flex-row">
             <!-- Main Content -->
             <div class="flex-grow order-last md:order-first">
                 <div class="mt-6 mb-4 prose prose-blue main-content">
-                    <h1 id="billing" tabindex="-1"><a class="header-anchor" href="#billing">#&nbsp;</a> Billing</h1>
-<h2 id="platform" tabindex="-1"><a class="header-anchor" href="#platform">#&nbsp;</a> Platform</h2>
-<p>We use Stripe to bill our customers and to manage subscriptions for FlowForge.</p>
-<p>Team members will be given a login to the  Stripe dashboard as required for their role with an appropriate level of access.</p>
-<h2 id="support" tabindex="-1"><a class="header-anchor" href="#support">#&nbsp;</a> Support</h2>
-<p>The main use of the Stripe dashboard will be to answer queries on a customers subscription, this should only be in relation to a ticket raised by the customer and we <em>must</em> confirm that the customer team in question on the support ticket is the same one you are looking at it Stripe. Remember that the email address in Stripe may not match that of the FlowForge user as this is a &quot;billing email&quot; You should use the team ID numbers in the metadata field to confirm.</p>
-<h2 id="coupons" tabindex="-1"><a class="header-anchor" href="#coupons">#&nbsp;</a> Coupons</h2>
-<p>From time to time we may wish to provide a user with some free access to
-the managed FlowForge platform. In this situation we will create a coupon code
-in Stripe which can be shared with the users.</p>
-<h2 id="credit" tabindex="-1"><a class="header-anchor" href="#credit">#&nbsp;</a> Credit</h2>
-<p>Occasionally we may need to apply a credit to a customers account as a goodwill gesture to cover an issue they have experienced, this should be the exception and must be approved by either CTO or CEO. We will also check to see if the customer has received any previous credits on their account.</p>
+                    <h2 id="expenses" tabindex="-1"><a class="header-anchor" href="#expenses">#&nbsp;</a> Expenses</h2>
+<p>The company will cover any reasonable work-related expense, including ensuring you
+have the equipment (laptop/monitor/accessories) you need to do the job. As an
+all-remote company, we meet via Zoom. As such, we will cover the cost of a good
+webcam/microphone/lighting arrangement.</p>
+<p>The general rule is: treat it like your own money - seek good value and use
+common sense. If you do require any equipment, talk to your manager to discuss options.</p>
+<p>There are two ways of spending company money - either using a company credit card,
+or through reimbursement.</p>
+<h3 id="company-credit-card" tabindex="-1"><a class="header-anchor" href="#company-credit-card">#&nbsp;</a> Company Credit Card</h3>
+<p>We use <a href="https://www.brex.com/">Brex</a> to provide cards to the team. They are, by
+default, virtual Mastercards, although there is an option to get a physical
+card sent out.</p>
+<p>All expenses on Brex require a memo to be submitted with details on what the expense is for.
+All expenses for $25 or more require a receipt to be uploaded. Attaching
+a receipt to an expense can be done through their web UI, forwarding receipts
+through email, or through Slack. For a full explanation, please <a href="https://www.brex.com/support/how-do-i-attach-receipts-to-brex-transactions/">read their docs</a>.</p>
+<h3 id="reimbursement" tabindex="-1"><a class="header-anchor" href="#reimbursement">#&nbsp;</a> Reimbursement</h3>
+<p>If you use your own means to purchase something that ought to be covered by the
+company, you can claim back the money through <a href="https://work.pilot.co/expenses">work.pilot.co/expenses</a>.</p>
+<ul>
+<li>Create a new expense by clicking <kbd>Add new expense</kbd></li>
+<li>Enter a description, category, price and attach an invoice, then click <kbd>Add new expense</kbd>
+<ul>
+<li>This expense will now appear in your &quot;Unreported expenses&quot; list</li>
+</ul>
+</li>
+<li>Apply a check against the expense in your &quot;Unreported expenses&quot; list then click <kbd>Create expense report</kbd></li>
+<li>Fill out the description fields then click <kbd>Send expense report</kbd></li>
+</ul>
+<h3 id="asset-purchases-over-%24500" tabindex="-1"><a class="header-anchor" href="#asset-purchases-over-%24500">#&nbsp;</a> Asset purchases over $500</h3>
+<p>Any asset purchase over $500 (laptops, devices etc) needs to be centrally recorded.
+This is done in a Google Sheet kept in a drive shared with the Finance team that
+is not generally accessible. Send details of the purchase to the CEO or CTO so
+it can be recorded.</p>
+<h3 id="education-%26-conferences" tabindex="-1"><a class="header-anchor" href="#education-%26-conferences">#&nbsp;</a> Education &amp; Conferences</h3>
+<p>Continual professional development is very important, and FlowForge will support
+you in any activities you wish to undertake. Speak to your manager if you have
+particular material you would like to study, or an event you would like to
+attend. FlowForge will help cover reasonable costs associated with the activity</p>
+<ul>
+<li>such as travel and ticket fees.</li>
+</ul>
+<h3 id="software-licenses" tabindex="-1"><a class="header-anchor" href="#software-licenses">#&nbsp;</a> Software Licenses</h3>
+<p>Licenses and software assets can be purchased for third-party software will be useful for particular tasks, efforts and processes at FlowForge.</p>
+<p>If you are seeking a license of software that we do not currently use, put together a short summary as to the costs associated with the licenses and describe the value that the software would provide. If it would modify the way in which the company operates, then the best place to present this is as a PR to the Handbook. With approval from the CEO and CTO you can proceed with the acquisition of the licenses.</p>
+<p>When seeking an additional license for existing software we pay for, file an issue in the <a href="https://github.com/flowforge/admin">flowforge/admin</a> project to request it to be provisioned with a justification on the expenditure. Assign this issue to the CEO or CTO.</p>
+<h4 id="zoom" tabindex="-1"><a class="header-anchor" href="#zoom">#&nbsp;</a> Zoom</h4>
+<p>When your role at FlowForge requires you to have calls with external parties, a
+Zoom pro license can be requested by opening an issue to provision you one
+in the <a href="https://github.com/flowforge/admin">flowforge/admin</a> GitHub project. Assign this issue to the CTO
+or CEO, who will provision it for you.</p>
+<h3 id="workspace-%26-location" tabindex="-1"><a class="header-anchor" href="#workspace-%26-location">#&nbsp;</a> Workspace &amp; Location</h3>
+<p>As an all remote company we don't have offices. It is envisaged that most people will work from their home the majority of the time. Equipment &amp; Furniture required for a home workspace should be discussed with your manager as part of the hiring process.
+The company covering certain costs, such as broadband can have tax implications depending on your local legislation. You should consult an independent advisor in your location for your particular situation.</p>
+<h4 id="coworking-space-allowance" tabindex="-1"><a class="header-anchor" href="#coworking-space-allowance">#&nbsp;</a> Coworking space allowance</h4>
+<p>If you want to occasionally use a separate workspace to your home, the company will cover up to $150 a month in charges for renting a desk in a co-working space.</p>
+<h4 id="mileage" tabindex="-1"><a class="header-anchor" href="#mileage">#&nbsp;</a> Mileage</h4>
+<p>Use of a personal vehicle for business purposes, other than commuting to a permanent workplace, is covered according to the employees local laws.</p>
+<p>For example:</p>
+<ul>
+<li><a href="https://www.gov.uk/government/publications/rates-and-allowances-travel-mileage-and-fuel-allowances/travel-mileage-and-fuel-rates-and-allowances">UK</a> -  45p per Mile</li>
+<li><a href="https://www.belastingdienst.nl/wps/wcm/connect/bldcontentnl/belastingdienst/zakelijk/auto_en_vervoer/auto_van_de_onderneming/autokosten/u_rijdt_in_uw_eigen_auto">Netherlands</a> - €0.19 per Km</li>
+</ul>
+<p>A screenshot of the route and the total distance travelled should be included with any expense claim.</p>
 
                 </div>
             </div>
@@ -667,14 +720,14 @@ in Stripe which can be shared with the users.</p>
         <div class="block px-8 pt-4 w-full mx-auto ff-bg-light md:hidden">
             <div class="font-medium border-b pb-1">
                 
-                /<a class="mx-2" href="/handbook">handbook</a>/<a class="mx-2" href="/handbook/operations">operations</a>/<a class="mx-2" href="/handbook/operations/billing">billing</a>
+                /<a class="mx-2" href="/handbook">handbook</a>/<a class="mx-2" href="/handbook/peopleops">peopleops</a>/<a class="mx-2" href="/handbook/peopleops/expenses">expenses</a>
             </div>
         </div>
         <!-- on this page -->
         <div class="sticky top-6 w-full md:w-64 mt-4 md:mt-6 px-8">
             <h3 class="font-medium border-b pb-1 mb-4">on this page</h3>
             <ul id="toc" class="text-sm border-b mb-4"></ul>
-            <div class="text-sm pb-1 text-right mb-4"><a href="https://github.com/flowforge/handbook/edit/main/operations/billing.md">Edit this page</a></div>
+            <div class="text-sm pb-1 text-right mb-4"><a href="https://github.com/flowforge/handbook/edit/main/peopleops/expenses.md">Edit this page</a></div>
             <div class="text-xs pb-1 text-right mb-4 italic">Updated: 2023-01-07 12:46:34 +0100</div>
         </div>
     </div>
