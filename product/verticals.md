@@ -1,3 +1,7 @@
+---
+navTitle: Market Verticals
+---
+
 # Product Verticals
 
 ## Background
