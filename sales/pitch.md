@@ -1,3 +1,6 @@
+---
+navTitle: Sales Pitch
+---
 
 ## Pitch
 
