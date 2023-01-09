@@ -2,7 +2,7 @@
 title: Community News December 2022 #10
 subtitle: News from the FlowForge and Node-RED communities
 description: News from the FlowForge and Node-RED communities
-date: 2022-01-06
+date: 2023-01-09
 authors: ["rob-marcer"]
 ---
 
@@ -13,21 +13,21 @@ If you've got something that you think we should share on our newsletters please
 [**Node-RED Nears 3.1 Release**](https://github.com/node-red/node-red/milestone/19)
 As we mentioned last month, the release of Node-RED 3.1 is expected very soon. 3.1 includes lots of great new features such as support for [locking flows in the editor](https://github.com/node-red/node-red/pull/3938) and [improving the user experience around hiding flows](https://github.com/node-red/node-red/pull/3930). As an open source project the development of Node-RED is entirely dependent on individuals and companies giving their time to work towards each new release. If you'd like to know how you can get involved you can read more on the [Node-RED web site](https://nodered.org/about/contribute/).
 
-[**FlowForge 1.1 Released**](http://flowforge.com/blog/2022/11/flowforge-1-1-released/)   
-Version 1.1 of FlowForge was released on 24th November. Our latest release included some great new features such as [Persistent file storage](https://github.com/flowforge/flowforge/issues/998), the ability to [import Node-RED snapshots](https://flowforge.com/docs/user/node-red-tools/) from outside of FlowForge and a much improved interface to [deploy projects to your devices](https://github.com/flowforge/flowforge/issues/1046). We're now working towards our final release of 2022 which is due just before Christmas. You can see what we are planning to deliver in that release and beyond on [FlowForge's project board](https://github.com/orgs/flowforge/projects/5). 
+[**FlowForge 1.2 Released**](http://localhost:8080/blog/2022/12/flowforge-1-2-0-released/)   
+Version 1.2 of FlowForge was released on 23rd December. Our last release of the year included some great new features such as [Sign Sign-On](https://github.com/flowforge/flowforge/issues/226) to make it easier for your team to access your projects and [Persistent Context](https://github.com/flowforge/flowforge/issues/212) which allows you to retain context values even when restarting projects. We're now working towards our first release of 2023 which is due on 19th January. You can see what we are planning to deliver in that release and beyond on [FlowForge's project board](https://github.com/orgs/flowforge/projects/5). 
 
-If you’d like to learn more about what else was included in 1.1 you can do so on our [blog post](http://flowforge.com/blog/2022/11/flowforge-1-1-released), [GitHub release page](https://github.com/flowforge/flowforge/releases/tag/v1.1.0), and [Youtube channel](https://www.youtube.com/watch?v=134iljE_urI).
+If you’d like to learn more about what else was included in 1.2 you can do so on our [blog post](http://flowforge.com/blog/2022/12/flowforge-1-2-0-released/), [GitHub release page](https://github.com/flowforge/flowforge/releases/tag/v1.2.0), and [Youtube channel](https://www.youtube.com/watch?v=u7TjqUAub1g).
 
-[**Node-Redscape - 100% Free, Open-Source Escape Room Control Software**](https://github.com/playfultechnology/node-redscape)  
-As we'll come to later in this newsletter, FlowForge visited an Escape Room in Winchester as part of our team meet-up. Co-incidentally, a great Node-RED project came up a few days after our visit which we thought was worth sharing. In their own words [Node-Redscape](https://github.com/playfultechnology/node-redscape) 'provides a set of templates, flows, and examples that turn Node-RED into a complete Escape Room automation system'. Very topical for us and also seems like a great project. You can learn more about the project on [Youtube](https://www.youtube.com/watch?v=f9yYDxqK_2E) as well as on [Github](https://github.com/playfultechnology/node-redscape).
+[**5 IoT Sensor Technologies to Watch**](https://iot-analytics.com/5-iot-sensor-technologies/)  
+The rise of the Internet of Things in recent years has gone hand-in-hand with the rise of sensors. On average, four new sensors are connected with every new IoT device that comes online. With approximately 14 billion current IoT connections, this means more than 50 billion connected sensors have been deployed. IoT sensor technology plays a crucial role in the IoT tech stack because these sensors collect data from the physical world and convert it into digital signals.
 
-**FlowForge team meetup** 
-FlowForge is a fully remote team, we currently have a strong skew towards western Europe but we are in the process of adding team members in each of the continents. On that point, any great Product Managers who live in Antarctica are encouraged to [apply for a job with us](https://boards.greenhouse.io/flowforge/jobs/4717778004)! Remote work is great but it's also valuable to get everyone together in the real world from time to time. FlowForge had such a meet up last month in Winchester, UK. We came from near and far and took the opportunity to have productive round-table discussions about some features we are working towards in 1.2 and beyond.  We also dropped into [Clue Capers](https://cluecapers.co.uk/), a great Escape Room in the center of Winchester who provided the photo below to mark the occasion. 
-
-![The FlowForge team pictured during our visit to Clue Capers](../images/clue-capers.jpg)
+**Custom Node Spotlight - node-red-contrib-string** 
+String manipulation comes up in so many programming scenarios. Node-RED has a lot of tools to help you edit your strings including support for [JSONata](https://jsonata.org/) and using the trusty function node but for those of us who prefer to keep things 'no-code' [node-red-contrib-string](https://flows.nodered.org/node/node-red-contrib-string) allows you to stack string manipulations together quickly and easily. It has a huge library of ready to use functions.
 
 [**FlowForge Team News**](https://flowforge.com/team/)    
-We are currently recruiting a [Product Manager](https://boards.greenhouse.io/flowforge/jobs/4717778004), and a [Senior Community Manager](https://boards.greenhouse.io/flowforge/jobs/4700809004). You can view any of the roles we currently have open and apply on our [Jobs page](https://boards.greenhouse.io/flowforge).
+We’d like to welcome two new members to the FlowForge team. [Ian Skerrett](https://twitter.com/ianskerrett) has joined as our Head of Marketing and Tracy has joined as our HR Manager.
+
+We are currently recruiting NodeJS Developers to join our team. You can view any of the roles we currently have open and apply on our [Jobs page](https://boards.greenhouse.io/flowforge). 
     
-[**Try FlowForge for Free**](https://app.flowforge.com/account/create?code=RELEASE11)  
-As a thank you for reading our newsletters we’d like to offer you a free, small project for one month on our managed FlowForge platform when you create a new team. To get this discount please follow [this link](https://app.flowforge.com/account/create?code=RELEASE11) or use the code RELEASE11 when on the payment page after creating a new team. As an open source project you can also use [FlowForge](https://flowforge.com/docs/install/) for free, forever.
+[**Try FlowForge for Free**](https://app.flowforge.com/account/create?code=FF12)  
+As a thank you for reading our newsletters we’d like to offer you a free, small project for one month on our managed FlowForge platform when you create a new team. To get this discount please follow [this link](https://app.flowforge.com/account/create?code=FF12) or use the code FF12 when on the payment page after creating a new team. As an open source project you can also use [FlowForge](https://flowforge.com/docs/install/) for free, forever.
