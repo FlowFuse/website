@@ -10,7 +10,7 @@ We have included a [Glossary](#glossary) at the end of this guide which hopefull
 
 ## How to make changes to the Live version of a Project
 
-### 1. Create a Branch
+### Create a Branch
 
 The first step to editing content is to create a [Branch](#branch) of that content. A [Branch](#branch) is a complete copy of the [Project](#project). Creating a [Branch](#branch) allows you to edit the content without those edits changing the [Live](#live) copy of a [Project](#project).
 
@@ -26,7 +26,7 @@ You should now notice that where the drop down said ‘main’ before it now say
 
 You can now start the process of actually creating or editing content, any changes you make will not yet be added to the [Published](#publish) version of the [Live](#live) [Project](#project) so don't worry if you make mistakes or are not yet happy with the finished product.
 
-### 2. Create a new file (document)
+### Create a new file (document)
 
 In this example I am going to create a new document in the [Handbook](#handbook) which will help non-technical FlowForge team members use [Git](#git).
 
@@ -38,7 +38,7 @@ The file type is .md (Markdown). A [Markdown](#markdown) file is similar to a .d
 
 In the video above I pressed ‘[Commit](#commit) changes’ which is the same as saving your document.
 
-### 3. Editing your document
+### Editing your document
 
 I can now start the process of writing my document, first I will reopen it in the editor, then I will add the content.
 
@@ -46,9 +46,9 @@ I can now start the process of writing my document, first I will reopen it in th
 
 I will work on the file until I think it's ready for a colleague to review the changes I have made. Once I am happy with the content I will [Commit](#commit) the changes as I did before.
 
-## How to get those changes Published
+## How to get those changes published
 
-### 1. Creating a Pull Request
+### Creating a Pull Request
 
 I am now ready to request a [Review](#review) of my work from a colleague. To do this I need to create a [Pull Request](#pull-request). Once you create the [Pull Request](#pull-request) an alert will be sent to your colleagues asking them for feedback on your work.
 
@@ -62,15 +62,15 @@ Once you press the 'Create pull request' button an alert will be sent to one of 
 
 ![Request a review from a specific colleague](../images/git-how-to/nominate-a-reviewer-1.gif)
 
-### 2. Requesting a review of your work
+### Requesting a review of your work
 
 Once a colleague has [reviewed](#review) your work you will receive an email alert. They can provide feedback on your work in three ways, sometimes a [review](#review) will include more than one type of feedback.
 
-#### * Approval of your Branch to go live
+#### Approval of your Branch to go live
 
 This is the easiest to deal with, the [Reviewer](#reviewer) doesn't think anything needs to be changed. Proceed to the next section to get the changes in your [Branch](#branch) [Published](#publish) to [Live](#live).
 
-#### * Comments on your Branch asking you to make edits.
+#### Comments on your Branch asking you to make edits.
 
 The [Reviewer](#reviewer) has given feedback on your [Branch](#branch), you will need to consider making edits and provide feedback to the [Reviewer](#reviewer) to explain what you changed (or didn't) and why.
 
@@ -78,13 +78,13 @@ Once you are happy that your edits address the Reviewer's feedback points [Commi
 
 The [Reviewer](#reviewer) will now read your comments and edits and based on their actions you may need to respond to further comments or edits.
 
-#### * Suggested edits to your Branch.
+#### Suggested edits to your Branch.
 
 The [Reviewer](#reviewer) has editing your [Branch](#branch) themselves, you can read through their edits and approve them if you think they improve the content.
 
 TO DO - How does the user actually deal with this?
 
-### 3. Publishing to live
+### Publishing to live
 
 TO DO - Write up the process to publish to live.
 

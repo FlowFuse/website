@@ -157,3 +157,7 @@ Keep it short, Reddit posts should be factual, informal and have a call to actio
 #### Node-RED Slack (FlowForge section)
 
 Keep it short, Slack messages should be factual, informal and have a call to action (a link) where a user can read more.
+
+### Using Github to edit the Website and Handbook
+
+We have created a [guide which explains to workflow to edit our website and handbook](./git-how-to). This guide was created to help people with limited or no experience of using Git like systems contribute to our projects.
