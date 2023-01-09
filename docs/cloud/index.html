@@ -120,6 +120,8 @@ the data.</p>
 <p>Projects expose an HTTPS interface on port 443 with each project having its own hostname (example.flowforge.cloud), Plain HTTP requests to port 80 will receive a redirect to HTTPS on port 443.
 You MUST connect using the hostname not the IP address to reach your project.
 Websocket connections over SSL (wss:) are also supported.</p>
+<p>The payload size per request is limited to 5MB, which is the Node-RED default.
+When a request exceeds this limit, the whole request is rejected with a <code>413 Payload Too Large</code> error.</p>
 <h3 id="tcp-and-udp" tabindex="-1"><a class="header-anchor" href="#tcp-and-udp">#&nbsp;</a> TCP and UDP</h3>
 <p>Incoming TCP or UDP connections will not work, the TCP and UDP Nodes have therefore been removed</p>
 <h3 id="mqtt" tabindex="-1"><a class="header-anchor" href="#mqtt">#&nbsp;</a> MQTT</h3>
@@ -148,7 +150,7 @@ can evaluate what will be required to enable it.</p>
             <h3 class="font-medium border-b pb-1 mb-4">On this page</h3>
             <ul id="toc" class="text-sm border-b mb-4"></ul>
             <div class="text-sm pb-1 text-right mb-4"><a href="https://github.com/flowforge/flowforge/edit/main/docs/cloud/README.md">Edit this page</a></div>
-            <div class="text-xs pb-1 text-right mb-4 italic">Updated: 2023-01-05 13:08:53 +0100</div>
+            <div class="text-xs pb-1 text-right mb-4 italic">Updated: 2023-01-09 09:37:02 +0000</div>
         </div>
     </div>
 </div>
