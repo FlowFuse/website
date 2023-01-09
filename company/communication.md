@@ -1,6 +1,6 @@
 As a distributed company we should be mindful of how we communicate.
 
-## Timezones
+## Date and time
 
 ### Use UTC for times
 
@@ -14,6 +14,12 @@ physical locations, the timezone of that location will be assumed as default.
 
 A 24 hour clock is assumed in time notations like `10:00`, when referencing a
 time in the afternoon either use e.g. `15:00` or explicitly `3 PM`.
+
+### Formatting dates
+
+As there's varying standard on how to format dates, please be explicit and use
+`YYYY-MM-DD` by default. This format is unambigious, and standardized with ISO
+8601, meaning it can be used in tools like Google Sheets too.
 
 ## Meetings
 
@@ -53,6 +59,15 @@ Note that knowledge in Slack is ephemeral, it's not a great storage of informati
 As such knowledge on a decision made in Slack, or elsewhere, should always be recorded
 in the GitHub issue or Google Doc on that topic to keep a log that also works
 for asynchronous communication.
+
+#### Recommended channels
+
+Not all channels are joined by default when you join Slack. We've added a bunch
+below so you get to decide if you want more channels or not.
+
+- `#metrics` will output sales and engagement metrics
+- `#social-twitter` is a stream of engagement with @FlowForgeInc
+- `#virtual-coffee` to schedule coffee calls with other team members!
 
 ### Standup meetings
 

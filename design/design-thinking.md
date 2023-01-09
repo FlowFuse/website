@@ -1,5 +1,14 @@
 ## Design Thinking
 
+At FlowForge, we practice Design Thinking when considering our UI design and wider decisions influencing the overall user experience of FlowForge.
+
+> Design Thinking is a non-linear, iterative process that teams use to understand users, challenge assumptions, redefine problems and create innovative solutions to prototype and test.
+>
+> -- <cite>[_Design Thinking, Interaction Design Foundation_](https://www.interaction-design.org/literature/topics/design-thinking)</cite>
+
+As designers and developers, empathising with our users will lead to a better product. When proposing new feature ideas, concepts and changes to existing UX, arguments should always be considered from the perspective of our users. 
+
+Whilst most of the output from our Design Thinking workshops and sessions can be found within [FigJam](#figjam-(more-info)), we have also written up some of our Design Thinking Findings below:
 ### User Personas
 
 Personas are fictional characters that represent the different users we expect to interact with FlowForge as a brand and/or platform. You can find samples of the user personas we have at FlowForge in our [Design Thinking Output](./design-thinking).

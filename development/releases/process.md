@@ -1,3 +1,6 @@
+---
+navTitle: Release Process
+---
 # Release Process
 
 There are two processes, one for major/minor point releases. The second for patch
@@ -11,11 +14,13 @@ releases.
  - Create a Release checklist issue using the [Release Checklist template](https://github.com/flowforge/admin/issues/new?assignees=&labels=&template=release.md&title=Release%3A)
  - Assign the issue to the Release Manager
  - Ensure you have the following installed on your machine:
+    - git command-line tools.
     - [GitHub client](https://github.com/cli/cli)
     - [jq](https://stedolan.github.io/jq/download/)
     - [yq](https://mikefarah.gitbook.io/yq/#install)
  - Ensure you're machine is authenticated with the GitHub client: `gh auth login`
-
+ - Ensure you are able to access the FlowForge repositories using the git cli without being prompted for a password: `ssh -T git@github.com`
+ - When we are ready to start the release process the Release Manager should start a Slack Huddle in #dev and keep that open until the release is completed.
 
 ### Unmanaged Repositories
 
@@ -31,6 +36,7 @@ have been published as needed.
  - [`flowforge/flowforge-device-agent`](https://github.com/flowforge/flowforge-device-agent)
  - [`flowforge/flowforge-nr-theme`](https://github.com/flowforge/flowforge-nr-theme)
  - [`flowforge/flowforge-nr-project-nodes`](https://github.com/flowforge/flowforge-nr-project-nodes)
+ - [`flowforge/flowforge-nr-persistent-context`](https://github.com/flowforge/flowforge-nr-persistent-context)
 
 Refer to the section [Unmanaged Releases](#unmanaged-releases) for releasing these.
 

@@ -1,3 +1,7 @@
+---
+navTitle: Handbook
+---
+
 ## Introduction
 
 This handbook contains all the information about how FlowForge Inc. is run.
@@ -24,6 +28,7 @@ and strongly encouraged.
 ### Sales and Marketing
 
  - [Sales](./sales)
+ - [Marketing & Communication](./marketing)
 
 ### Internal Operations
 

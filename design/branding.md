@@ -1,5 +1,6 @@
 # FlowForge Branding Guidelines
 
+For FlowForge Assets (e.g. logos, pictograms, and raw design files), please look in the [`/design/Media`](https://drive.google.com/drive/u/1/folders/1guBnBUrIiRXuK6vsik_NIXIhtE1cZRRa) folder on Google Drive.
 ## Fonts
 
 In both the FlowForge application and on our website, we use [Tailwind CSS](https://tailwindcss.com/). With Tailwind, comes the `font-sans` class, which we use across FlowForge.
@@ -207,4 +208,4 @@ If you wish to create your own Pictograms, you can use this Adobe Illustrator fi
 Sizings:
 
 - **128 x 128px**: Used when showing multiple pictograms in the same section of the website or application.
-- **250 x 250 px:** Used as aprt of page headers, inline with the page title and page description.
+- **250 x 250 px:** Used as part of page headers, inline with the page title and page description.

@@ -9,23 +9,26 @@ The level of support provided to a customer will depend on the tier of our produ
 
 ## Support Tickets
 
-### Freshdesk
-We use FreshDesk to manage our customer support tickets for the managed FlowForge platform. We can give each FlowForge team member access to FreshDesk by assigning them as either a full time or occasional Agent. An explanation of the Agent types can be [read here](https://support.freshdesk.com/en/support/solutions/articles/37602-understanding-full-time-vs-occasional-agents#:~:text=Agents%20in%20Freshdesk%20can%20be,CEO%20or%20your%20field%20staff.).
+### HubSpot
+We use HubSpot to manage our customer support tickets for the managed FlowForge platform. We can give each FlowForge team member access to HubSpot by assigning them a seat. 
 
-If you wish to be granted access to FreshDesk please post in the FlowForge support-tickets Slack channel.
+If you wish to be granted access to HubSpot please post in the FlowForge support-tickets Slack channel.
 
 Whenever a customer raises a new ticket or replies with an update a message is posted into slack #support-tickets.
 This will allow the whole team visibility of customer issues, comments on the
 Slack thread will be added to the ticket as notes.
 
+When the customer has used the support widget you can communicate with that customer in real-time using the support-tickets Slack channel.
+
 When replying to the ticket one should have the intent to always reply with links
 to FlowForge articles or documentation. If these resources are missing, please
 start or update where applicable.
 
-When you reply to a customer via the FreshDesk UI the ticket will be automatically marked as resolved. If the customer responds back the ticket will be marked as open again. If you don't need to respond to the customer and you feel the ticket is resolved please manually set the ticket status to be resolved in the Freshdesk UI.
+HubSpot uses notes and responses within the thread, notes are internal and not sent to the customer, responses are sent to the customer.
 
-Freshdesk uses notes and responses within the thread, notes are internal and not sent to the customer, responses are sent to the customer.
+We monitor the time since a ticket on HubSpot was last updated and send alerts to slack #support-tickets where those tickets have not been updated for longer than:
 
+ - 1 day for customer created support tickets.
 
 ### Scope of Support
 
