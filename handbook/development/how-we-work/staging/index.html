@@ -22,7 +22,7 @@
     <meta name="twitter:description" content="FlowForge is an open-source, low-code platform for integration and automation. Helping you run Node-RED at production scales in a secure, scalable and team-based environment." />
     <meta name="twitter:site" content="@flowforgeinc" />
     <meta name="twitter:image" content="/images/og-social-tile.jpg" />
-    <meta property="og:url" content="https://flowforge.com/handbook/development/security/" />
+    <meta property="og:url" content="https://flowforge.com/handbook/development/how-we-work/staging/" />
     <meta property="og:title" content="" />
     <meta property="og:description" content="FlowForge is an open-source, low-code platform for integration and automation. Helping you run Node-RED at production scales in a secure, scalable and team-based environment." />
     <meta property="og:image" content="/images/og-social-tile.jpg" />
@@ -409,14 +409,6 @@
                 <ul class="handbook-nav-nested">
                     
                     <li class="">
-                        <a href="/handbook/development/contributing/">
-                            contributing
-                        </a>
-                        
-                    </li>
-                    
-                    
-                    <li class="">
                         <a href="/handbook/development/frontend/">
                             frontend
                         </a>
@@ -462,35 +454,93 @@
                     
                     
                     <li class="">
-                        <a href="/handbook/development/packaging/">
-                            packaging
+                        <a href="/handbook/development/how-we-work/">
+                            How We Work
                         </a>
                         
+                        <button onclick="toggleNavList(this)">
+                            <span class="ff-icon icon-expand">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+  <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+</svg>
+
+                            </span>
+                            <span class="ff-icon icon-minimise">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+  <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5" />
+</svg>
+
+                            </span>
+                        </button>
+                        
                     </li>
+                    
+                    <ul class="handbook-nav-nested-2">
+                        
+                        <li class="">
+                            <a href="/handbook/development/how-we-work/contributing/">
+                                contributing
+                            </a>
+                        </li>
+                        
+                        <li class="">
+                            <a href="/handbook/development/how-we-work/packaging/">
+                                packaging
+                            </a>
+                        </li>
+                        
+                        <li class="">
+                            <a href="/handbook/development/how-we-work/security/">
+                                Security Policy
+                            </a>
+                        </li>
+                        
+                        <li class="active">
+                            <a href="/handbook/development/how-we-work/staging/">
+                                Staging Enviornment
+                            </a>
+                        </li>
+                        
+                    </ul>
                     
                     
                     <li class="">
-                        <a href="/handbook/development/release/">
-                            release
+                        <a href="/handbook/development/releases/">
+                            releases
                         </a>
+                        
+                        <button onclick="toggleNavList(this)">
+                            <span class="ff-icon icon-expand">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+  <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+</svg>
+
+                            </span>
+                            <span class="ff-icon icon-minimise">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+  <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5" />
+</svg>
+
+                            </span>
+                        </button>
                         
                     </li>
                     
-                    
-                    <li class="active">
-                        <a href="/handbook/development/security/">
-                            security
-                        </a>
+                    <ul class="handbook-nav-nested-2">
                         
-                    </li>
-                    
-                    
-                    <li class="">
-                        <a href="/handbook/development/staging/">
-                            staging
-                        </a>
+                        <li class="">
+                            <a href="/handbook/development/releases/planning/">
+                                planning
+                            </a>
+                        </li>
                         
-                    </li>
+                        <li class="">
+                            <a href="/handbook/development/releases/process/">
+                                Release Process
+                            </a>
+                        </li>
+                        
+                    </ul>
                     
                     
                 </ul>
@@ -638,67 +688,53 @@
         <div class="hidden w-full mx-auto ff-bg-light md:block">
             <div class="font-medium border-b pb-1">
                 
-                /<a class="mx-2" href="/handbook">handbook</a>/<a class="mx-2" href="/handbook/development">development</a>/<a class="mx-2" href="/handbook/development/security">security</a>
+                /<a class="mx-2" href="/handbook">handbook</a>/<a class="mx-2" href="/handbook/development">development</a>/<a class="mx-2" href="/handbook/development/how-we-work">how-we-work</a>/<a class="mx-2" href="/handbook/development/how-we-work/staging">staging</a>
             </div>
         </div>
         <div class="w-full mx-auto ff-bg-light flex flex-col md:flex-row">
             <!-- Main Content -->
             <div class="flex-grow order-last md:order-first">
                 <div class="mt-6 mb-4 prose prose-blue main-content">
-                    <p># Security Policy</p>
-<h2 id="reporting-a-vulnerability" tabindex="-1"><a class="header-anchor" href="#reporting-a-vulnerability">#&nbsp;</a> Reporting a Vulnerability</h2>
-<p>Please report any vulnerabilities discovered in FlowForge products to security@flowforge.com.</p>
-<p>We will endeavour to acknowledge and fix any reported vulnerabilities ASAP based
-on its severity and assessed impact to our users.</p>
-<h2 id="bug-bounties" tabindex="-1"><a class="header-anchor" href="#bug-bounties">#&nbsp;</a> Bug Bounties</h2>
-<p>At our sole discretion, we offer rewards for responsibly disclosed issues according
-to their severity.</p>
-<p>Please note the following are general guidelines and any reward decisions are up
-to the discretion of FlowForge. We keep these reward levels under review to ensure
-they provide a fair reflection of the issues being reported.</p>
-<table>
-<thead>
-<tr>
-<th>Low</th>
-<th>Medium</th>
-<th>High</th>
-<th>Critical</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>$128</td>
-<td>$256</td>
-<td>$512</td>
-<td>$1024</td>
-</tr>
-</tbody>
-</table>
-<p>Multiple reports of the same issue manifesting in different ways will be treated
-as a single report.</p>
-<p>The quality of bug report will also impact any ultimate reward decision.</p>
-<h3 id="sample-criteria" tabindex="-1"><a class="header-anchor" href="#sample-criteria">#&nbsp;</a> Sample criteria</h3>
-<p>The following are examples of the types of bug for each severity. It is not
-definitive and each reported bug will be considered on its own merits.</p>
-<p><em>Critical Severity Bugs</em></p>
-<ul>
-<li>SQL Injection</li>
-<li>Remote Code Execution</li>
-<li>Privilege Escalation</li>
-</ul>
-<p><em>High Severity Bugs</em></p>
-<ul>
-<li>Cross-Site Request Forgery</li>
-<li>Information leaks of user data</li>
-</ul>
-<p><em>Medium Severity Bugs</em></p>
-<ul>
-<li>Information leaks of non-user data</li>
-</ul>
-<p><em>Low Severity Bugs</em></p>
-<ul>
-<li>Exposure of any integer resource IDs (primary keys in our database)</li>
-</ul>
+                    <h2 id="staging-environment" tabindex="-1"><a class="header-anchor" href="#staging-environment">#&nbsp;</a> Staging Environment</h2>
+<p>We have a staging environment running on AWS which is a scaled down replica of
+our managed FlowForge offering, with a separate domain. Staging URL and sign in
+details can be found in the Developer Vault in 1Password.</p>
+<h3 id="aws-account" tabindex="-1"><a class="header-anchor" href="#aws-account">#&nbsp;</a> AWS Account</h3>
+<p>It uses a separate AWS account ending in ..9937</p>
+<p>Ben or ZJ can provision a user account for this account.</p>
+<p>The services are running in EU-West-1.</p>
+<h3 id="nodes" tabindex="-1"><a class="header-anchor" href="#nodes">#&nbsp;</a> Nodes</h3>
+<p>The staging environment uses one node running on a t2.small for the management
+app and a pair of t2.small nodes for the projects cluster. t2.small is the
+smallest instance that can be used with EKS.</p>
+<h3 id="email" tabindex="-1"><a class="header-anchor" href="#email">#&nbsp;</a> Email</h3>
+<p>Amazon SES is setup on staging however it is still running in sandbox mode which means only verified address &amp; domains can RECEIVE emails from it, this is currently limited to flowforge.com email addresses.</p>
+<p>There is no intention to move this from sandbox as this helps to limit access to staging.</p>
+<p>If you need to use another email address with staging then you should verify the address through SES in the AWS Console.</p>
+<h3 id="deployment" tabindex="-1"><a class="header-anchor" href="#deployment">#&nbsp;</a> Deployment</h3>
+<p>Currently there is no auto deployment to staging, this should be rectified in the future so that staging is running the code in the main branches  of the respective repos.</p>
+<h3 id="using-staging" tabindex="-1"><a class="header-anchor" href="#using-staging">#&nbsp;</a> Using staging</h3>
+<p>When setting up a team you'll need to enter billing details. For credit card
+details, use <a href="https://stripe.com/docs/testing#testing-interactively">the Stripe mock data</a>.</p>
+<h3 id="using-the-flowforge-device-agent-with-staging" tabindex="-1"><a class="header-anchor" href="#using-the-flowforge-device-agent-with-staging">#&nbsp;</a> Using the FlowForge Device Agent with staging</h3>
+<p>Staging uses pre-release npm packages stored in a GitHub npm repository. To be able to use these packages you will need to authenticate with the repository.</p>
+<p>You will need to create a GH Personal token</p>
+<ol>
+<li>Go to your <a href="https://github.com/settings/tokens">classic personal access tokens</a></li>
+<li>Click Generate New Token (and again pick the classic option)</li>
+<li>You will probably be prompted for 2FA now</li>
+<li>Give the token a meaningful name</li>
+<li>Pick an expiration. I went with no expiration so I don't have to do this again and I'm going to limit the scope</li>
+<li>Tick the box next to <code>read:packages</code></li>
+<li>Click generate token button at bottom of page</li>
+</ol>
+<p>Store the token in your private 1Password vault</p>
+<p>Create the following .npmrc file:</p>
+<pre><code>//npm.pkg.github.com/:_authToken=ghp_xxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+@flowforge:registry=https://npm.pkg.github.com/
+</code></pre>
+<p>where <code>ghp_xxxxxxxxxxxxxxxxxxxxxxxxxxxxx</code> is the token you just generated.</p>
+<p>You need to place this in the project directory, e.g. <code>/opt/flowforge-device/project</code> or if you are running it in the dev env <code>flowforge-device-agent/var/project</code> (assume starting with <code>node index -d ./var -c ./var/device.yml</code>)</p>
 
                 </div>
             </div>
@@ -709,15 +745,15 @@ definitive and each reported bug will be considered on its own merits.</p>
         <div class="block px-8 pt-4 w-full mx-auto ff-bg-light md:hidden">
             <div class="font-medium border-b pb-1">
                 
-                /<a class="mx-2" href="/handbook">handbook</a>/<a class="mx-2" href="/handbook/development">development</a>/<a class="mx-2" href="/handbook/development/security">security</a>
+                /<a class="mx-2" href="/handbook">handbook</a>/<a class="mx-2" href="/handbook/development">development</a>/<a class="mx-2" href="/handbook/development/how-we-work">how-we-work</a>/<a class="mx-2" href="/handbook/development/how-we-work/staging">staging</a>
             </div>
         </div>
         <!-- on this page -->
         <div class="sticky top-6 w-full md:w-64 mt-4 md:mt-6 px-8">
             <h3 class="font-medium border-b pb-1 mb-4">on this page</h3>
             <ul id="toc" class="text-sm border-b mb-4"></ul>
-            <div class="text-sm pb-1 text-right mb-4"><a href="https://github.com/flowforge/handbook/edit/main/development/security.md">Edit this page</a></div>
-            <div class="text-xs pb-1 text-right mb-4 italic">Updated: 2023-01-07 16:53:43 +0100</div>
+            <div class="text-sm pb-1 text-right mb-4"><a href="https://github.com/flowforge/handbook/edit/main/development/how-we-work/staging.md">Edit this page</a></div>
+            <div class="text-xs pb-1 text-right mb-4 italic">Updated: 2023-01-09 08:03:38 +0100</div>
         </div>
     </div>
 </div>

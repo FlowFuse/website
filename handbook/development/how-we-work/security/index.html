@@ -22,7 +22,7 @@
     <meta name="twitter:description" content="FlowForge is an open-source, low-code platform for integration and automation. Helping you run Node-RED at production scales in a secure, scalable and team-based environment." />
     <meta name="twitter:site" content="@flowforgeinc" />
     <meta name="twitter:image" content="/images/og-social-tile.jpg" />
-    <meta property="og:url" content="https://flowforge.com/handbook/development/frontend/" />
+    <meta property="og:url" content="https://flowforge.com/handbook/development/how-we-work/security/" />
     <meta property="og:title" content="" />
     <meta property="og:description" content="FlowForge is an open-source, low-code platform for integration and automation. Helping you run Node-RED at production scales in a secure, scalable and team-based environment." />
     <meta property="og:image" content="/images/og-social-tile.jpg" />
@@ -408,7 +408,7 @@
                 
                 <ul class="handbook-nav-nested">
                     
-                    <li class="active">
+                    <li class="">
                         <a href="/handbook/development/frontend/">
                             frontend
                         </a>
@@ -489,7 +489,7 @@
                             </a>
                         </li>
                         
-                        <li class="">
+                        <li class="active">
                             <a href="/handbook/development/how-we-work/security/">
                                 Security Policy
                             </a>
@@ -688,19 +688,66 @@
         <div class="hidden w-full mx-auto ff-bg-light md:block">
             <div class="font-medium border-b pb-1">
                 
-                /<a class="mx-2" href="/handbook">handbook</a>/<a class="mx-2" href="/handbook/development">development</a>/<a class="mx-2" href="/handbook/development/frontend">frontend</a>
+                /<a class="mx-2" href="/handbook">handbook</a>/<a class="mx-2" href="/handbook/development">development</a>/<a class="mx-2" href="/handbook/development/how-we-work">how-we-work</a>/<a class="mx-2" href="/handbook/development/how-we-work/security">security</a>
             </div>
         </div>
         <div class="w-full mx-auto ff-bg-light flex flex-col md:flex-row">
             <!-- Main Content -->
             <div class="flex-grow order-last md:order-first">
                 <div class="mt-6 mb-4 prose prose-blue main-content">
-                    <h3 id="front-end" tabindex="-1"><a class="header-anchor" href="#front-end">#&nbsp;</a> Front-End</h3>
-<p>A collection of how-to's and best practice guides for FlowForge's front-end development.</p>
+                    <h1 id="security-policy" tabindex="-1"><a class="header-anchor" href="#security-policy">#&nbsp;</a> Security Policy</h1>
+<h2 id="reporting-a-vulnerability" tabindex="-1"><a class="header-anchor" href="#reporting-a-vulnerability">#&nbsp;</a> Reporting a Vulnerability</h2>
+<p>Please report any vulnerabilities discovered in FlowForge products to security@flowforge.com.</p>
+<p>We will endeavour to acknowledge and fix any reported vulnerabilities ASAP based
+on its severity and assessed impact to our users.</p>
+<h2 id="bug-bounties" tabindex="-1"><a class="header-anchor" href="#bug-bounties">#&nbsp;</a> Bug Bounties</h2>
+<p>At our sole discretion, we offer rewards for responsibly disclosed issues according
+to their severity.</p>
+<p>Please note the following are general guidelines and any reward decisions are up
+to the discretion of FlowForge. We keep these reward levels under review to ensure
+they provide a fair reflection of the issues being reported.</p>
+<table>
+<thead>
+<tr>
+<th>Low</th>
+<th>Medium</th>
+<th>High</th>
+<th>Critical</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>$128</td>
+<td>$256</td>
+<td>$512</td>
+<td>$1024</td>
+</tr>
+</tbody>
+</table>
+<p>Multiple reports of the same issue manifesting in different ways will be treated
+as a single report.</p>
+<p>The quality of bug report will also impact any ultimate reward decision.</p>
+<h3 id="sample-criteria" tabindex="-1"><a class="header-anchor" href="#sample-criteria">#&nbsp;</a> Sample criteria</h3>
+<p>The following are examples of the types of bug for each severity. It is not
+definitive and each reported bug will be considered on its own merits.</p>
+<p><em>Critical Severity Bugs</em></p>
 <ul>
-<li><a href="./data-attributes"">Data Attributes</a></li>
-<li><a href="./services"">Services</a></li>
-<li><a href="./testing"">Testing</a></li>
+<li>SQL Injection</li>
+<li>Remote Code Execution</li>
+<li>Privilege Escalation</li>
+</ul>
+<p><em>High Severity Bugs</em></p>
+<ul>
+<li>Cross-Site Request Forgery</li>
+<li>Information leaks of user data</li>
+</ul>
+<p><em>Medium Severity Bugs</em></p>
+<ul>
+<li>Information leaks of non-user data</li>
+</ul>
+<p><em>Low Severity Bugs</em></p>
+<ul>
+<li>Exposure of any integer resource IDs (primary keys in our database)</li>
 </ul>
 
                 </div>
@@ -712,14 +759,14 @@
         <div class="block px-8 pt-4 w-full mx-auto ff-bg-light md:hidden">
             <div class="font-medium border-b pb-1">
                 
-                /<a class="mx-2" href="/handbook">handbook</a>/<a class="mx-2" href="/handbook/development">development</a>/<a class="mx-2" href="/handbook/development/frontend">frontend</a>
+                /<a class="mx-2" href="/handbook">handbook</a>/<a class="mx-2" href="/handbook/development">development</a>/<a class="mx-2" href="/handbook/development/how-we-work">how-we-work</a>/<a class="mx-2" href="/handbook/development/how-we-work/security">security</a>
             </div>
         </div>
         <!-- on this page -->
         <div class="sticky top-6 w-full md:w-64 mt-4 md:mt-6 px-8">
             <h3 class="font-medium border-b pb-1 mb-4">on this page</h3>
             <ul id="toc" class="text-sm border-b mb-4"></ul>
-            <div class="text-sm pb-1 text-right mb-4"><a href="https://github.com/flowforge/handbook/edit/main/development/frontend/index.md">Edit this page</a></div>
+            <div class="text-sm pb-1 text-right mb-4"><a href="https://github.com/flowforge/handbook/edit/main/development/how-we-work/security.md">Edit this page</a></div>
             <div class="text-xs pb-1 text-right mb-4 italic">Updated: 2023-01-09 08:03:38 +0100</div>
         </div>
     </div>

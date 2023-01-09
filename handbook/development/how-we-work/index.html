@@ -22,7 +22,7 @@
     <meta name="twitter:description" content="FlowForge is an open-source, low-code platform for integration and automation. Helping you run Node-RED at production scales in a secure, scalable and team-based environment." />
     <meta name="twitter:site" content="@flowforgeinc" />
     <meta name="twitter:image" content="/images/og-social-tile.jpg" />
-    <meta property="og:url" content="https://flowforge.com/handbook/development/packaging/" />
+    <meta property="og:url" content="https://flowforge.com/handbook/development/how-we-work/" />
     <meta property="og:title" content="" />
     <meta property="og:description" content="FlowForge is an open-source, low-code platform for integration and automation. Helping you run Node-RED at production scales in a secure, scalable and team-based environment." />
     <meta property="og:image" content="/images/og-social-tile.jpg" />
@@ -409,14 +409,6 @@
                 <ul class="handbook-nav-nested">
                     
                     <li class="">
-                        <a href="/handbook/development/contributing/">
-                            contributing
-                        </a>
-                        
-                    </li>
-                    
-                    
-                    <li class="">
                         <a href="/handbook/development/frontend/">
                             frontend
                         </a>
@@ -462,35 +454,93 @@
                     
                     
                     <li class="active">
-                        <a href="/handbook/development/packaging/">
-                            packaging
+                        <a href="/handbook/development/how-we-work/">
+                            How We Work
                         </a>
                         
+                        <button onclick="toggleNavList(this)">
+                            <span class="ff-icon icon-expand">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+  <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+</svg>
+
+                            </span>
+                            <span class="ff-icon icon-minimise">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+  <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5" />
+</svg>
+
+                            </span>
+                        </button>
+                        
                     </li>
+                    
+                    <ul class="handbook-nav-nested-2">
+                        
+                        <li class="">
+                            <a href="/handbook/development/how-we-work/contributing/">
+                                contributing
+                            </a>
+                        </li>
+                        
+                        <li class="">
+                            <a href="/handbook/development/how-we-work/packaging/">
+                                packaging
+                            </a>
+                        </li>
+                        
+                        <li class="">
+                            <a href="/handbook/development/how-we-work/security/">
+                                Security Policy
+                            </a>
+                        </li>
+                        
+                        <li class="">
+                            <a href="/handbook/development/how-we-work/staging/">
+                                Staging Enviornment
+                            </a>
+                        </li>
+                        
+                    </ul>
                     
                     
                     <li class="">
-                        <a href="/handbook/development/release/">
-                            release
+                        <a href="/handbook/development/releases/">
+                            releases
                         </a>
+                        
+                        <button onclick="toggleNavList(this)">
+                            <span class="ff-icon icon-expand">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+  <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+</svg>
+
+                            </span>
+                            <span class="ff-icon icon-minimise">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+  <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5" />
+</svg>
+
+                            </span>
+                        </button>
                         
                     </li>
                     
-                    
-                    <li class="">
-                        <a href="/handbook/development/security/">
-                            security
-                        </a>
+                    <ul class="handbook-nav-nested-2">
                         
-                    </li>
-                    
-                    
-                    <li class="">
-                        <a href="/handbook/development/staging/">
-                            staging
-                        </a>
+                        <li class="">
+                            <a href="/handbook/development/releases/planning/">
+                                planning
+                            </a>
+                        </li>
                         
-                    </li>
+                        <li class="">
+                            <a href="/handbook/development/releases/process/">
+                                Release Process
+                            </a>
+                        </li>
+                        
+                    </ul>
                     
                     
                 </ul>
@@ -638,156 +688,22 @@
         <div class="hidden w-full mx-auto ff-bg-light md:block">
             <div class="font-medium border-b pb-1">
                 
-                /<a class="mx-2" href="/handbook">handbook</a>/<a class="mx-2" href="/handbook/development">development</a>/<a class="mx-2" href="/handbook/development/packaging">packaging</a>
+                /<a class="mx-2" href="/handbook">handbook</a>/<a class="mx-2" href="/handbook/development">development</a>/<a class="mx-2" href="/handbook/development/how-we-work">how-we-work</a>
             </div>
         </div>
         <div class="w-full mx-auto ff-bg-light flex flex-col md:flex-row">
             <!-- Main Content -->
             <div class="flex-grow order-last md:order-first">
                 <div class="mt-6 mb-4 prose prose-blue main-content">
-                    <h1 id="flowforge-packaging-guidelines" tabindex="-1"><a class="header-anchor" href="#flowforge-packaging-guidelines">#&nbsp;</a> FlowForge Packaging Guidelines</h1>
-<p>This section describes the requirements we have for all GitHub repositories,
-and npm modules we maintain.</p>
-<p>To help ensure all of the requirements are met, an issue should be raised in
-<a href="https://github.com/flowforge/admin/issues/new/choose"><code>flowforge/admin</code></a> using
-the <code>New Repository Checklist</code> and then worked through.</p>
-<h2 id="github-projects" tabindex="-1"><a class="header-anchor" href="#github-projects">#&nbsp;</a> Github projects</h2>
-<h3 id="naming" tabindex="-1"><a class="header-anchor" href="#naming">#&nbsp;</a> Naming</h3>
+                    <p>This section is useful to read if you are going to be contributing to FlowForge. It contains
+details on our development best practices, security practices and how to navigate and understand
+our GitHub processes.</p>
 <ul>
-<li>Flow Forge Components should start with <code>flowforge-</code></li>
-<li>If a Node-RED plugin/node should start with <code>flowforge-nr-</code></li>
-<li>Installers or Orchestration projects are named without the leading <code>flowforge-</code> e.g. <code>installer</code> or <code>helm</code></li>
+<li><a href="./contributing"">Contributing</a></li>
+<li><a href="./packaging"">Packaging</a></li>
+<li><a href="./security"">Security</a></li>
+<li><a href="./staging"">Staging</a></li>
 </ul>
-<h3 id="settings" tabindex="-1"><a class="header-anchor" href="#settings">#&nbsp;</a> Settings</h3>
-<ul>
-<li>A rule should be added under the projects <code>settings/branches</code> to prevent pushing directly to the <code>main</code> branch</li>
-</ul>
-<h3 id="content" tabindex="-1"><a class="header-anchor" href="#content">#&nbsp;</a> Content</h3>
-<p>All Git Repositories must contain the following files:</p>
-<ul>
-<li><code>README.md</code></li>
-<li><code>LICENSE</code></li>
-</ul>
-<h3 id="linting" tabindex="-1"><a class="header-anchor" href="#linting">#&nbsp;</a> Linting</h3>
-<p>All code repositories should adopt our standard linting rules by copying the
-<code>.eslintrc</code> from the <a href="https://github.com/flowforge/.github/blob/main/.eslintrc">flowforge/.github repository</a>.</p>
-<p>If a repository has any additional requirements for linting, such as handling Vue
-code, then additional plugins can be added.</p>
-<p>We use <a href="https://standardjs.com/">StandardJS</a>, with one exception - 4 spaces not 2.</p>
-<h3 id="notifications" tabindex="-1"><a class="header-anchor" href="#notifications">#&nbsp;</a> Notifications</h3>
-<p>Repositories should be added to the appropriate Slack channel. For core code repositories,
-this would be in the <code>#gh-flowforge</code> channel.</p>
-<p>To create a subscription, go to that channel and type the message:</p>
-<pre><code>/github subscribe flowforge/NAME-OF-REPO comments reviews
-</code></pre>
-<p>This will subscribe to any notifications covering: <code>issues</code>, <code>pulls</code>, <code>commits</code>, <code>releases</code>, <code>deployments</code>, <code>comments</code> and <code>reviews</code>.</p>
-<h3 id="workflows" tabindex="-1"><a class="header-anchor" href="#workflows">#&nbsp;</a> Workflows</h3>
-<h4 id="project-automation" tabindex="-1"><a class="header-anchor" href="#project-automation">#&nbsp;</a> Project Automation</h4>
-<p>All code repositories must have the Project Automation workflow added. This is done
-by adding <a href="https://github.com/flowforge/flowforge/blob/main/.github/workflows/project-automation.yml"><code>.github/workflows/project-automation.yml</code></a>.
-This workflow will ensure any opened issues are automatically added to the <a href="https://github.com/orgs/flowforge/projects/3">Product board</a> where it can be triaged and prioritised.</p>
-<h4 id="release-publish" tabindex="-1"><a class="header-anchor" href="#release-publish">#&nbsp;</a> Release Publish</h4>
-<p>For any repositories that contain modules to be published to npm, they should also
-have a copy of <a href="https://github.com/flowforge/flowforge/blob/main/.github/workflows/release-publish.yml"><code>.github/workflows/release-publish.yml</code></a>.</p>
-<p>This workflow will publish to npm whenever the repository is tagged with a <code>vX.Y.Z</code> format
-tag.</p>
-<p>Note that each repository may have slightly different pre-publish requirements - for
-example if there is a build step or not. You may need to customise the workflow
-to match what is needed.</p>
-<h4 id="private-repositories" tabindex="-1"><a class="header-anchor" href="#private-repositories">#&nbsp;</a> Private Repositories</h4>
-<p>For <em>private</em> repositories, you will also need to add a Repository Secret as
-they cannot access the organisation-wide secret we have in place.</p>
-<ol>
-<li>
-<p>Generate a <a href="https://github.com/settings/tokens">Personal Access Token</a> with
-<code>repo, write:org</code> scope.</p>
-</li>
-<li>
-<p>Add it as a Repository Secret to the Private Repo (https://github.com/flowforge/<repo-name>/settings/secrets/actions)
-with the name <code>PROJECT_ACCESS_TOKEN</code></p>
-</li>
-</ol>
-<h3 id="labels" tabindex="-1"><a class="header-anchor" href="#labels">#&nbsp;</a> Labels</h3>
-<p>We have a standard set of labels that should be applied to all repositories. This
-ensures we have a consistent approach to planning and tracking of work.</p>
-<ul>
-<li>Type: <code>epic</code>, <code>story</code>, <code>task</code>, <code>bug</code></li>
-<li>Sizing: <code>1</code>, <code>2</code>, <code>3</code>, <code>5</code>, <code>8</code>, <code>13</code></li>
-<li>Area: <code>area:docs</code>, <code>area:db</code>, <code>area:migration</code>, <code>area:frontend</code>, <code>area:api</code>, <code>area:device</code></li>
-<li>Priority: <code>priority:high</code>, <code>priority:medium</code>, <code>priority:low</code></li>
-<li>Status: <code>blocked</code></li>
-<li>Product Scope: <code>scope:devices</code>, <code>scope:enterprise</code>, <code>scope:node-red</code>, <code>scope:collaboration</code></li>
-<li>Other: <code>good first issue</code>, <code>upstream</code>, <code>needs-triage</code></li>
-</ul>
-<p>The labels are synchronized across the repositories via a GitHub Action in the <a href="https://github.com/flowforge/.github"><code>.github</code></a>
-repository.</p>
-<p>New repositories must be added to the list in <a href="https://github.com/flowforge/.github/blob/main/flowforge-repositories.yml"><code>flowforge-repositories.yml</code></a>,
-and then the <a href="https://github.com/flowforge/.github/actions/workflows/sync-labels.yml">Synchronize Labels</a> action manually run.</p>
-<h2 id="npm-packages" tabindex="-1"><a class="header-anchor" href="#npm-packages">#&nbsp;</a> NPM packages</h2>
-<h3 id="naming-1" tabindex="-1"><a class="header-anchor" href="#naming-1">#&nbsp;</a> Naming</h3>
-<ul>
-<li>All packages should be scoped to <code>@flowforge</code></li>
-</ul>
-<p>Node-RED plugins should start with <code>nr-</code> e.g.</p>
-<ul>
-<li>@flowforge/nr-storage</li>
-<li>@flowforge/nr-auth</li>
-</ul>
-<p>Flow Forge plugins should start with <code>forge-</code> e.g.</p>
-<ul>
-<li>@flowforge/forge-driver-localfs</li>
-<li>@flowforge/forge-driver-docker</li>
-<li>@flowforge/forge-driver-k8s</li>
-</ul>
-<h3 id="content-1" tabindex="-1"><a class="header-anchor" href="#content-1">#&nbsp;</a> Content</h3>
-<p>The <code>package.json</code> must contain the following keys</p>
-<ul>
-<li>description</li>
-<li>repository<pre><code>&quot;repository&quot;: {
-   &quot;type&quot;: &quot;git&quot;,
-   &quot;url&quot;: &quot;git+https://github.com/flowforge/flowforge.git&quot;
-},
-</code></pre>
-</li>
-<li>homepage<pre><code>&quot;homepage&quot;: &quot;https://github.com/flowforge/flowforge#readme&quot;,
-</code></pre>
-</li>
-<li>bugs<pre><code>&quot;bugs&quot;: {
-    &quot;url&quot;: &quot;https://github.com/flowforge/flowforge/issues&quot;
-},
-</code></pre>
-</li>
-<li>license
-<ul>
-<li>Apache-2.0</li>
-<li>SEE LICENSE IN ./LICENSE</li>
-</ul>
-</li>
-<li>author<pre><code>&quot;author&quot;: {
-    &quot;name&quot;: &quot;FlowFlow Inc.&quot;
-},
-</code></pre>
-</li>
-<li>engines<pre><code>&quot;engines&quot;: {
-  &quot;node&quot;: &quot;&gt;=16.x&quot;
-}
-</code></pre>
-</li>
-</ul>
-<h3 id="package-version-numbering" tabindex="-1"><a class="header-anchor" href="#package-version-numbering">#&nbsp;</a> Package Version Numbering</h3>
-<p>Package numbers should follow the Semantic Versioning Scheme as laid out on <a href="https://semver.org/">semver.org</a>.</p>
-<p>Each component will stay in step with the core flowforge/flowforge release numbering for <code>major.minor</code> but will increment their own <code>fix</code> values as needed. e.g. On release of v0.2.0 all components will tag and release v0.2.0, but can independently release v0.2.1 as needed.</p>
-<p>Major and minor releases will follow the schedule laid out in the <a href="../index#cadence"">Cadence</a> section of the handbook.</p>
-<p>A Fix release can be made at any time, depending on the best judgement of the engineer making the fix but requires a review by another team member.</p>
-<p>The process for making a release is documented <a href=".././release"">here</a>.</p>
-<h3 id="adding-npm-packages-to-stacks" tabindex="-1"><a class="header-anchor" href="#adding-npm-packages-to-stacks">#&nbsp;</a> Adding NPM packages to Stacks</h3>
-<p>As we build more FlowForge specific nodes we will need to add these to the Stacks</p>
-<h4 id="localfs" tabindex="-1"><a class="header-anchor" href="#localfs">#&nbsp;</a> Localfs</h4>
-<p>Currently bundled packages for the localfs driver need to be added to the <a href="https://github.com/flowforge/flowforge-nr-launcher">flowforge-nr-launcher</a> <code>package.json</code>  and the path to the node needs to be added to the <code>nodesDir</code> array in the <code>lib/lancher.js</code> file (around line 70). This will be updated in the next release to be controlled by the <a href="https://github.com/flowforge/flowforge-driver-localfs">flowforge-driver-localfs</a> project</p>
-<h4 id="docker" tabindex="-1"><a class="header-anchor" href="#docker">#&nbsp;</a> Docker</h4>
-<p>Any nodes or themes should be added to the <code>package.json</code> in <code>node-red-container/</code> directory of the <a href="https://github.com/flowforge/docker-compose">docker-compose</a> project</p>
-<h4 id="k8s" tabindex="-1"><a class="header-anchor" href="#k8s">#&nbsp;</a> K8s</h4>
-<p>Any nodes or themes should be added to the <code>package.json</code> in <code>node-red-container/</code> directory of the <a href="https://github.com/flowforge/helm">helm</a> project</p>
 
                 </div>
             </div>
@@ -798,15 +714,15 @@ and then the <a href="https://github.com/flowforge/.github/actions/workflows/syn
         <div class="block px-8 pt-4 w-full mx-auto ff-bg-light md:hidden">
             <div class="font-medium border-b pb-1">
                 
-                /<a class="mx-2" href="/handbook">handbook</a>/<a class="mx-2" href="/handbook/development">development</a>/<a class="mx-2" href="/handbook/development/packaging">packaging</a>
+                /<a class="mx-2" href="/handbook">handbook</a>/<a class="mx-2" href="/handbook/development">development</a>/<a class="mx-2" href="/handbook/development/how-we-work">how-we-work</a>
             </div>
         </div>
         <!-- on this page -->
         <div class="sticky top-6 w-full md:w-64 mt-4 md:mt-6 px-8">
             <h3 class="font-medium border-b pb-1 mb-4">on this page</h3>
             <ul id="toc" class="text-sm border-b mb-4"></ul>
-            <div class="text-sm pb-1 text-right mb-4"><a href="https://github.com/flowforge/handbook/edit/main/development/packaging.md">Edit this page</a></div>
-            <div class="text-xs pb-1 text-right mb-4 italic">Updated: 2023-01-07 16:53:43 +0100</div>
+            <div class="text-sm pb-1 text-right mb-4"><a href="https://github.com/flowforge/handbook/edit/main/development/how-we-work/index.md">Edit this page</a></div>
+            <div class="text-xs pb-1 text-right mb-4 italic">Updated: 2023-01-09 08:03:38 +0100</div>
         </div>
     </div>
 </div>

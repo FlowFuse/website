@@ -22,7 +22,7 @@
     <meta name="twitter:description" content="FlowForge is an open-source, low-code platform for integration and automation. Helping you run Node-RED at production scales in a secure, scalable and team-based environment." />
     <meta name="twitter:site" content="@flowforgeinc" />
     <meta name="twitter:image" content="/images/og-social-tile.jpg" />
-    <meta property="og:url" content="https://flowforge.com/handbook/development/release/" />
+    <meta property="og:url" content="https://flowforge.com/handbook/development/releases/planning/" />
     <meta property="og:title" content="" />
     <meta property="og:description" content="FlowForge is an open-source, low-code platform for integration and automation. Helping you run Node-RED at production scales in a secure, scalable and team-based environment." />
     <meta property="og:image" content="/images/og-social-tile.jpg" />
@@ -409,14 +409,6 @@
                 <ul class="handbook-nav-nested">
                     
                     <li class="">
-                        <a href="/handbook/development/contributing/">
-                            contributing
-                        </a>
-                        
-                    </li>
-                    
-                    
-                    <li class="">
                         <a href="/handbook/development/frontend/">
                             frontend
                         </a>
@@ -462,35 +454,93 @@
                     
                     
                     <li class="">
-                        <a href="/handbook/development/packaging/">
-                            packaging
+                        <a href="/handbook/development/how-we-work/">
+                            How We Work
                         </a>
+                        
+                        <button onclick="toggleNavList(this)">
+                            <span class="ff-icon icon-expand">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+  <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+</svg>
+
+                            </span>
+                            <span class="ff-icon icon-minimise">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+  <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5" />
+</svg>
+
+                            </span>
+                        </button>
                         
                     </li>
                     
-                    
-                    <li class="active">
-                        <a href="/handbook/development/release/">
-                            release
-                        </a>
+                    <ul class="handbook-nav-nested-2">
                         
-                    </li>
+                        <li class="">
+                            <a href="/handbook/development/how-we-work/contributing/">
+                                contributing
+                            </a>
+                        </li>
+                        
+                        <li class="">
+                            <a href="/handbook/development/how-we-work/packaging/">
+                                packaging
+                            </a>
+                        </li>
+                        
+                        <li class="">
+                            <a href="/handbook/development/how-we-work/security/">
+                                Security Policy
+                            </a>
+                        </li>
+                        
+                        <li class="">
+                            <a href="/handbook/development/how-we-work/staging/">
+                                Staging Enviornment
+                            </a>
+                        </li>
+                        
+                    </ul>
                     
                     
                     <li class="">
-                        <a href="/handbook/development/security/">
-                            security
+                        <a href="/handbook/development/releases/">
+                            releases
                         </a>
+                        
+                        <button onclick="toggleNavList(this)">
+                            <span class="ff-icon icon-expand">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+  <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+</svg>
+
+                            </span>
+                            <span class="ff-icon icon-minimise">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+  <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5" />
+</svg>
+
+                            </span>
+                        </button>
                         
                     </li>
                     
-                    
-                    <li class="">
-                        <a href="/handbook/development/staging/">
-                            staging
-                        </a>
+                    <ul class="handbook-nav-nested-2">
                         
-                    </li>
+                        <li class="active">
+                            <a href="/handbook/development/releases/planning/">
+                                planning
+                            </a>
+                        </li>
+                        
+                        <li class="">
+                            <a href="/handbook/development/releases/process/">
+                                Release Process
+                            </a>
+                        </li>
+                        
+                    </ul>
                     
                     
                 </ul>
@@ -638,138 +688,161 @@
         <div class="hidden w-full mx-auto ff-bg-light md:block">
             <div class="font-medium border-b pb-1">
                 
-                /<a class="mx-2" href="/handbook">handbook</a>/<a class="mx-2" href="/handbook/development">development</a>/<a class="mx-2" href="/handbook/development/release">release</a>
+                /<a class="mx-2" href="/handbook">handbook</a>/<a class="mx-2" href="/handbook/development">development</a>/<a class="mx-2" href="/handbook/development/releases">releases</a>/<a class="mx-2" href="/handbook/development/releases/planning">planning</a>
             </div>
         </div>
         <div class="w-full mx-auto ff-bg-light flex flex-col md:flex-row">
             <!-- Main Content -->
             <div class="flex-grow order-last md:order-first">
                 <div class="mt-6 mb-4 prose prose-blue main-content">
-                    <h1 id="release-process" tabindex="-1"><a class="header-anchor" href="#release-process">#&nbsp;</a> Release Process</h1>
-<p>There are two processes, one for major/minor point releases. The second for patch
-releases.</p>
-<h2 id="major%2Fminor-point-releases" tabindex="-1"><a class="header-anchor" href="#major%2Fminor-point-releases">#&nbsp;</a> Major/minor point releases</h2>
-<h3 id="setup" tabindex="-1"><a class="header-anchor" href="#setup">#&nbsp;</a> Setup</h3>
+                    <h2 id="planning" tabindex="-1"><a class="header-anchor" href="#planning">#&nbsp;</a> Planning</h2>
+<p>Instructions for creating a release are <a href=".././process"">here</a>.</p>
+<p>FlowForge is released every four weeks, on a Thursday. There are 13 releases each
+year. The initial release was published on 2022-01-20. This implies releases
+will be scheduled on the following dates.</p>
 <ul>
-<li>Decide who will be Release Manager for this release. For Major/Minor releases this should be shared across the whole team to prevent it becoming a single point of failure. For Fix releases it can be the developer committing the fix.</li>
-<li>Create a Release checklist issue using the <a href="https://github.com/flowforge/admin/issues/new?assignees=&amp;labels=&amp;template=release.md&amp;title=Release%3A">Release Checklist template</a></li>
-<li>Assign the issue to the Release Manager</li>
-<li>Ensure you have the following installed on your machine:
-<ul>
-<li>git command-line tools.</li>
-<li><a href="https://github.com/cli/cli">GitHub client</a></li>
-<li><a href="https://stedolan.github.io/jq/download/">jq</a></li>
-<li><a href="https://mikefarah.gitbook.io/yq/#install">yq</a></li>
+<li>2022/07/07 (0.7)</li>
+<li>2022/08/04 (0.8)</li>
+<li>2022/09/01 (0.9)</li>
+<li>2022/09/29 (0.10)</li>
+<li>2022/10/27 (1.0)</li>
+<li>2022/11/24 (1.1)</li>
+<li>2022/12/22 (1.2)</li>
 </ul>
-</li>
-<li>Ensure you're machine is authenticated with the GitHub client: <code>gh auth login</code></li>
-<li>Ensure you are able to access the FlowForge repositories using the git cli without being prompted for a password: <code>ssh -T git@github.com</code></li>
-<li>When we are ready to start the release process the Release Manager should start a Slack Huddle in #dev and keep that open until the release is completed.</li>
-</ul>
-<h3 id="unmanaged-repositories" tabindex="-1"><a class="header-anchor" href="#unmanaged-repositories">#&nbsp;</a> Unmanaged Repositories</h3>
-<p>Not all repositories are covered by the release automation and must be published
-separately. This is typically done by the development team in the build up to the
-full release.</p>
-<p>The Release Manager should verify the following repositories are up to date and
-have been published as needed.</p>
-<ul>
-<li><a href="https://github.com/flowforge/usage-ping-collector"><code>flowforge/usage-ping-collector</code></a></li>
-<li><a href="https://github.com/flowforge/forge-ui-components"><code>flowforge/forge-ui-components</code></a></li>
-<li><a href="https://github.com/flowforge/flowforge-device-agent"><code>flowforge/flowforge-device-agent</code></a></li>
-<li><a href="https://github.com/flowforge/flowforge-nr-theme"><code>flowforge/flowforge-nr-theme</code></a></li>
-<li><a href="https://github.com/flowforge/flowforge-nr-project-nodes"><code>flowforge/flowforge-nr-project-nodes</code></a></li>
-<li><a href="https://github.com/flowforge/flowforge-nr-persistent-context"><code>flowforge/flowforge-nr-persistent-context</code></a></li>
-</ul>
-<p>Refer to the section <a href="#unmanaged-releases">Unmanaged Releases</a> for releasing these.</p>
-<h3 id="steps" tabindex="-1"><a class="header-anchor" href="#steps">#&nbsp;</a> Steps</h3>
+<p>Our planning process is continually evolving as we find the right way to accommodate
+both a growing team and a growing set of requirements on both how and what we deliver.</p>
+<p>The following reflects both where we are at today and where we want to get to.</p>
+<p>We use GitHub issues for planning the work in a release. A Milestone should exist
+for the current release (N) and the next one (N+1). We do not schedule work beyond
+that as priorities can change through a release.</p>
+<p>There are three types of issue used for planning work:</p>
 <ul>
 <li>
-<p>Checkout the <code>flowforge/admin</code> repository if you do not already have it.</p>
+<p><strong>Epic</strong>: a significant feature or piece of work that doesn't easily fit into
+a single release. It will typically have a number of Stories
+and/or Tasks associated with it that can be delivered iteratively.</p>
+</li>
+<li>
+<p><strong>Story</strong>: a <em>user-oriented</em> description of a feature. It should describe what
+a user should be able to do and identify the value that brings to the user.
+A story should be deliverable in a single release.</p>
+</li>
+<li>
+<p><strong>Task</strong>: a piece of work that isn't necessarily tied to a specific Epic or Story.
+For example, items related to technical debt or house-keeping chores.</p>
+</li>
+</ul>
+<p>Whenever an issue is raised, it will be reviewed by the Product Owner/CTO and added
+to the Product Board for prioritization and planning. The exception to this are
+tasks/bugs related to work already in progress and that need to be addressed in
+the current milestone. They should be added to the Development Board and current
+milestone directly.</p>
+<h3 id="project-boards" tabindex="-1"><a class="header-anchor" href="#project-boards">#&nbsp;</a> Project Boards</h3>
+<p>We use three project boards to plan and track our work.</p>
 <ul>
-<li>Ensure you have the latest with a <code>git pull</code>.</li>
+<li><a href="https://github.com/orgs/flowforge/projects/5">Roadmap Board</a></li>
+<li><a href="https://github.com/orgs/flowforge/projects/3/views/1">Product Board</a></li>
+<li><a href="https://github.com/orgs/flowforge/projects/1/views/1">Development Board</a></li>
 </ul>
-</li>
-<li>
-<p>In the <em>parent</em> directory to where you have the <code>admin</code> checked out, run:</p>
-<pre><code> ./admin/checkout-release 0.x.y
-</code></pre>
-<p>This will create a directory called <code>release-0.x.y</code> and checkout all of the releasable
-repositories under it.</p>
-<p>NOTE: If you do not have a global git configuration, you will need to set <code>user.name</code> and <code>user.email</code>
-in each of those repositories.</p>
-</li>
-<li>
-<p>Within the release directory run:</p>
-<pre><code> cd release-0.x.y
- ../admin/prepare-release 0.x.y
-</code></pre>
-<p>This will check all of the repositories are ready to be released, update
-their <code>package.json</code> files to reflect the new version (including cross-package
-dependencies) and update the CHANGELOG files.</p>
-<p>It will then raise PRs against each repository with these changes in.</p>
-</li>
-<li>
-<p>Do not panic when you see &quot;All jobs have failed&quot; for the <code>flowforge/flowforge</code> Release PR.
-This is due to the repo pointing to newer versions of other packages which have not yet been published to npm.</p>
-</li>
-<li>
-<p>Follow through the current release checklist in <a href="https://github.com/flowforge/admin/issues"><code>flowforge/admin</code></a> in the order they are listed.
-Each PR will need to be reviewed, merged and tagged taking care to verify each one has been published before moving to the next.
-Some steps will also require you to pause and re-run tests before continuing.
-Updated packages will be automatically published to npm by our GitHub actions.  You can check the publish status of these as follows:</p>
+<h4 id="roadmap-board" tabindex="-1"><a class="header-anchor" href="#roadmap-board">#&nbsp;</a> Roadmap Board</h4>
+<p>This is a high-level view of our product roadmap over the coming releases. It
+identifies the themes and priorities for the releases.</p>
+<h4 id="product-backlog-board" tabindex="-1"><a class="header-anchor" href="#product-backlog-board">#&nbsp;</a> Product Backlog Board</h4>
+<p><a href="https://github.com/orgs/flowforge/projects/3/views/1">This board</a> is maintained
+by the Product Owner (PO) and CTO. It is the main entry point for all epics and
+stories.</p>
+<p>Items on this board are put into one of the following states to indicate their priority in the backlog, they can move up or down the priority depending on business needs.</p>
 <ul>
-<li>Track the &quot;Release Published&quot; action on the GH repository</li>
-<li>Keep an eye on npmjs.org page for each package</li>
-<li>Watch for bot notifications in the <a href="https://flowforgeworkspace.slack.com/archives/C02UR3MBA1J">#gh-flowforge</a> Slack channel (NOTE: the notifications can take quite a while to appear in the channel)</li>
+<li>'No Status' This is where all new items initially land so that they can be appropriately triaged and assigned by the PO and CTO</li>
+<li>'Long' This is the long term horizon, items that we know we will want to do one day but at the moment are long term goals, typically this could be 12 months away or more.</li>
+<li>'Medium' These are items that are in the 6-12 month time frame.</li>
+<li>'Short' These are items in the 3-6 month time frame, Often these items will get pulled into a milestone from this point depending on capacity.</li>
+<li>'Next' These are items which we should be targeting for the next milestone to be planned, We plan milestones 2-3 iterations ahead so this timeframe will typically be 2-3 months.</li>
+<li>'Ready' This is for items which could be developed today but for various reasons have not been added to a milestone, often this will be items which have been descoped from a previous milestone but could be picked up if there is spare development capacity.</li>
 </ul>
-</li>
-<li>
-<p>Once all the node module components have been built and published to npm the <code>installer</code>, <code>helm</code> and <code>docker-compose</code> components can be updated and tagged.</p>
-</li>
-<li>
-<p>Run <a href="https://github.com/flowforge/CloudProject/actions/workflows/build-kube.yml">staging CI pipeline publish</a>, to ensure staging is running the latest release.</p>
-</li>
-</ul>
-<h3 id="next-steps" tabindex="-1"><a class="header-anchor" href="#next-steps">#&nbsp;</a> Next Steps</h3>
+<p>As items move up the list and get closer to Next we should have a greater understanding of what the detail and demand is for that feature. This is an iterative approach and as we gain understanding on an item we will use that information to aid in reviewing its position on the board.
+Once an Item is assigned to a milestone it will be removed from the Product Board and added to the Development board, with appropriate iterations allocated for design and development.
+Largely the position within the individual column is irrelevant, it may be used to aid in reviews or groupings but does not indicate any priority.</p>
+<p>A weekly review is held to keep the backlog in order - triaging new items that
+have been raised and not yet added to the backlog, reflecting on changing priorities
+and requirements.</p>
+<h4 id="development-board" tabindex="-1"><a class="header-anchor" href="#development-board">#&nbsp;</a> Development Board</h4>
+<p>The <a href="https://github.com/orgs/flowforge/projects/1/views/1">Development Board</a> is
+used to plan and track the work within the current milestone release.</p>
+<p>Within the board we use:</p>
 <ul>
-<li>As much as possible of the previous steps should be converted into a CI Pipeline making use of GitHub Actions.</li>
+<li>Milestones to indicate what release an item is planned to be released in</li>
+<li>Iterations to indicate when an item is being worked on</li>
 </ul>
-<h2 id="patch-releases" tabindex="-1"><a class="header-anchor" href="#patch-releases">#&nbsp;</a> Patch releases</h2>
-<p>Patch releases are done as needed and have a much lighter process to allow
-fixes to be released quickly.</p>
-<p>The core <code>flowforge</code> repository has some automation in place to help with this process.
-Until that is rolled out across the other repositories, some of the backporting work
-must be done manually.</p>
+<p>By separating these two out, we can have a single view of everything the team
+is working on at a particular time (iteration) without it being part of the current
+release (milestone).</p>
+<p>For example, Design work needed for a future milestone can be assigned to an Iteration
+for when that work needs to happen.</p>
+<p>The board has the following states:</p>
 <ul>
-<li>Changes must first be PR'd to the <code>main</code> branch and reviewed in the normal manner.</li>
-<li>Before merging, the PR should have the label <code>backport</code> added.</li>
-<li>If in <code>flowforge/flowforge</code>, when the PR is merged, an automation will run to create a new PR that backports
-the change to the maintenance branch. Otherwise, the backport PR must be manually created.</li>
-<li>The backport PR must be reviewed and merged in the normal manner.</li>
-<li>Once all of the required backport PRs are merged, raise a PR on the <code>maintenance</code> branch
-to update the version and <code>CHANGELOG.md</code> file with suitable details.</li>
-<li>Create the GitHub release with the appropriate <code>vX.Y.Z</code> tag.</li>
+<li><code>ToDo</code> - items assigned to the milestone or iteration but not yet started</li>
+<li><code>In Design</code> - items being designed</li>
+<li><code>In Progress</code> - items being developed</li>
+<li><code>Review</code> - items that are ready to be reviewed (PR open)</li>
+<li><code>Verify</code> - items that have been merged and can be verified once deployed to the Staging environment</li>
+<li><code>Done</code> - items that are <a href="#defining-done">Done</a></li>
 </ul>
-<p>Finally, create two change request issues in the admin repo, one for staging and
-one for production to upgrade to the latest version.</p>
-<h3 id="unmanaged-releases" tabindex="-1"><a class="header-anchor" href="#unmanaged-releases">#&nbsp;</a> Unmanaged Releases</h3>
-<p>The unmanaged repositories listed above have a simpler release process.</p>
+<h3 id="retrospective%2Fkick-off" tabindex="-1"><a class="header-anchor" href="#retrospective%2Fkick-off">#&nbsp;</a> Retrospective/Kick-Off</h3>
+<p>The day after each FlowForge release, always a Friday, a meeting is scheduled
+by the CTO. This meeting includes 2 parts:</p>
 <ol>
-<li>Make announcement in #dev so team is aware</li>
-<li>Check that all changes have been merged to main</li>
-<li>Update package.json version number</li>
-<li>Run the <code>generate-changelog</code> script from <code>flowforge/admin</code> repository. This
-generates a list of the PRs merged since the last tagged release. Note: this
-script require the <code>gh</code> cli to be installed and logged in.
-Update CHANGELOG.md with the output of the script.</li>
-<li>Open a new PR to merge the package.json and CHANGELOG.md changes - get it merged</li>
-<li>Tag new release in GitHub with the appropriate version number eg <code>v0.1.1</code>. Copy the CHANGELOG update into the description.</li>
-<li>Once the release is created, the GitHub Action will take care of publishing to NPM. Check the action to ensure it completes.</li>
+<li>A retrospective on the last release. This should capture feedback on what
+went well and what could be improved and generate action items to act on the
+feedback.</li>
+<li>Kicking off the next release. The involves:
+<ol>
+<li>The Product Owner describing the themes, goals and priorities of the new release</li>
+<li>Reviewing the <a href="https://github.com/orgs/flowforge/projects/1/views/1">Development Board</a>
+for the new milestone.
+High-priority items are assigned owners so that everyone has something to
+get started on.</li>
+<li>Identifying the release manager - the person who will co-ordinate things
+on release day.
+<ul>
+<li>Once identified, they take the action to create the next release issue
+using the <a href="https://github.com/flowforge/admin/issues/new?assignees=&amp;labels=&amp;template=release.md&amp;title=Release%3A">Release Template</a>
+in the <code>flowforge/admin</code> repo.</li>
+</ul>
+</li>
 </ol>
-<h2 id="launch-lunch" tabindex="-1"><a class="header-anchor" href="#launch-lunch">#&nbsp;</a> Launch Lunch</h2>
-<p>To celebrate the launch of a new version of FlowForge, we organize a lunch on
-the release day. Each team member is encouraged to order a lunch (Expensable up
-to 25$ per launch) and join a social lunch zoom call.</p>
+</li>
+</ol>
+<h3 id="what-to-work-on" tabindex="-1"><a class="header-anchor" href="#what-to-work-on">#&nbsp;</a> What to work on</h3>
+<p>Work comes from two places:</p>
+<ul>
+<li>Items assigned for Design/Estimation on the Product Board</li>
+<li>Items from the ToDo status on the Development Board</li>
+</ul>
+<p>It is important we make progress on both sides to ensure a steady velocity across
+milestones.</p>
+<p>Naturally there will be items that crop up unexpectedly and have to be dealt with
+pragmatically. For example, we may realise an item is needed for the current release
+that needs to be expedited through the process. We should remain flexible in how
+we work.</p>
+<p>When picking up an unassigned item assign it to yourself and move it to the
+<strong>In Progress</strong> state (for Development items) or the appropriate Product board state.</p>
+<h4 id="milestones-are-overscheduled" tabindex="-1"><a class="header-anchor" href="#milestones-are-overscheduled">#&nbsp;</a> Milestones are overscheduled</h4>
+<p>As stories and tasks are assigned to milestones, it's unlikely there's not
+enough work to be done. On the flipside, this means that not all scheduled epics
+or stories will be completed.</p>
+<p>The Product Owner/CTO have overall responsibility to ensure any 'must-have' items
+are making progress in a release.</p>
+<h3 id="defining-done" tabindex="-1"><a class="header-anchor" href="#defining-done">#&nbsp;</a> Defining Done</h3>
+<p>An item should only be marked as 'Done' on the Development board when the following
+criteria are met:</p>
+<ul>
+<li>All related code changes have been merged</li>
+<li>Suitable unit/system level tests have been added</li>
+<li>Documentation has been updated</li>
+<li>Acceptance criteria identified in the Story have been met</li>
+<li>Product Owner accepts the story is complete</li>
+</ul>
 
                 </div>
             </div>
@@ -780,15 +853,15 @@ to 25$ per launch) and join a social lunch zoom call.</p>
         <div class="block px-8 pt-4 w-full mx-auto ff-bg-light md:hidden">
             <div class="font-medium border-b pb-1">
                 
-                /<a class="mx-2" href="/handbook">handbook</a>/<a class="mx-2" href="/handbook/development">development</a>/<a class="mx-2" href="/handbook/development/release">release</a>
+                /<a class="mx-2" href="/handbook">handbook</a>/<a class="mx-2" href="/handbook/development">development</a>/<a class="mx-2" href="/handbook/development/releases">releases</a>/<a class="mx-2" href="/handbook/development/releases/planning">planning</a>
             </div>
         </div>
         <!-- on this page -->
         <div class="sticky top-6 w-full md:w-64 mt-4 md:mt-6 px-8">
             <h3 class="font-medium border-b pb-1 mb-4">on this page</h3>
             <ul id="toc" class="text-sm border-b mb-4"></ul>
-            <div class="text-sm pb-1 text-right mb-4"><a href="https://github.com/flowforge/handbook/edit/main/development/release.md">Edit this page</a></div>
-            <div class="text-xs pb-1 text-right mb-4 italic">Updated: 2023-01-07 16:53:43 +0100</div>
+            <div class="text-sm pb-1 text-right mb-4"><a href="https://github.com/flowforge/handbook/edit/main/development/releases/planning.md">Edit this page</a></div>
+            <div class="text-xs pb-1 text-right mb-4 italic">Updated: 2023-01-09 08:03:38 +0100</div>
         </div>
     </div>
 </div>
