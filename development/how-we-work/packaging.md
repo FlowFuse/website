@@ -1,4 +1,4 @@
-# FlowForge Packaging Guidelines
+# Packaging Guidelines
 
 This section describes the requirements we have for all GitHub repositories,
 and npm modules we maintain.
