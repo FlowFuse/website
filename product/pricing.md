@@ -1,3 +1,7 @@
+---
+navTitle: Pricing Principles
+---
+
 # Pricing Principles
 
 This page sets out the concepts that we sell and how those are measured across both SaaS and Licensed Editions of the platform.
