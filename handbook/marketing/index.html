@@ -639,18 +639,69 @@
                 
                 <li class="active">
                     <a href="/handbook/marketing/">
-                        Marketing &amp; Communication
+                        Marketing
                     </a>
+                    
+                    <button onclick="toggleNavList(this)">
+                        <span class="ff-icon icon-expand">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+  <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+</svg>
+
+                        </span>
+                        <span class="ff-icon icon-minimise">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+  <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5" />
+</svg>
+
+                        </span>
+                    </button>
                     
                 </li>
                 
-                
-                <li class="">
-                    <a href="/handbook/media/">
-                        Media
-                    </a>
+                <ul class="handbook-nav-nested">
                     
-                </li>
+                    <li class="">
+                        <a href="/handbook/marketing/blog/">
+                            blog
+                        </a>
+                        
+                    </li>
+                    
+                    
+                    <li class="">
+                        <a href="/handbook/marketing/channels/">
+                            channels
+                        </a>
+                        
+                    </li>
+                    
+                    
+                    <li class="">
+                        <a href="/handbook/marketing/types/">
+                            types
+                        </a>
+                        
+                    </li>
+                    
+                    
+                    <li class="">
+                        <a href="/handbook/marketing/videos/">
+                            Video
+                        </a>
+                        
+                    </li>
+                    
+                    
+                    <li class="">
+                        <a href="/handbook/marketing/website/">
+                            website
+                        </a>
+                        
+                    </li>
+                    
+                    
+                </ul>
                 
                 
                 <li class="">
@@ -725,193 +776,16 @@
             <!-- Main Content -->
             <div class="flex-grow order-last md:order-first">
                 <div class="mt-6 mb-4 prose prose-blue main-content">
-                    <h2 id="marketing-%26-communication" tabindex="-1"><a class="header-anchor" href="#marketing-%26-communication">#&nbsp;</a> Marketing &amp; Communication</h2>
-<h3 id="websites" tabindex="-1"><a class="header-anchor" href="#websites">#&nbsp;</a> Websites</h3>
+                    <h2 id="content" tabindex="-1"><a class="header-anchor" href="#content">#&nbsp;</a> Content</h2>
+<p>Find details on here on how we communicate at FlowForge, what type of content we produce and where we post it.
+If you're looking to contribute content to FlowForge, this is the best place to start.</p>
 <ul>
-<li>All written content should be in UK English.</li>
-<li>All page titles should summarise the content, keep the URL length as short as practical and use <a href="https://en.wiktionary.org/wiki/kebab_case">Kebab Case</a>.</li>
-<li>All images should use informative <a href="https://www.w3.org/WAI/tutorials/images/tips/">alt tags</a> which clearly describe the point of an image rather than all the details. Alt tags should be no longer than 60 characters.</li>
-<li>When mentioning <a href="https://flowforge.com/docs/user/concepts/">FlowForge Concepts</a> (terminology) where possible we should link to an explanation of that concept.</li>
-<li>All written content should use the <a href="https://en.wikipedia.org/wiki/Serial_comma">Oxford Comma</a>. We believe the Oxford Comma reduces the ambiguity of written technical content.</li>
+<li><a href="./blog"">Blog</a></li>
+<li><a href="./channels"">Channels</a></li>
+<li><a href="./types"">Types</a></li>
+<li><a href="./videos"">Videos</a></li>
+<li><a href="./website"">Website</a></li>
 </ul>
-<h3 id="blogging-process" tabindex="-1"><a class="header-anchor" href="#blogging-process">#&nbsp;</a> Blogging Process</h3>
-<p>When adding content to our blog we follow a similar process as when making changes to our other codebases, with a few minor changes. The process is as follows:</p>
-<ol>
-<li>Raise an issue for the content in our private <a href="https://github.com/flowforge/content">Github repository</a>.</li>
-<li>If the content is date specific create an 'all day' event on the Google Calendar <a href="https://calendar.google.com/calendar/u/0?cid=Y18yMGFjMmM5MmMwYmE0YTYwNDg4NDE1MjBmMGU2YWE0MGFhZGUxNTlkNThjZGY0ZGMwMjA0NTI4ZjFjMTcxZmQ0QGdyb3VwLmNhbGVuZGFyLmdvb2dsZS5jb20">FlowForge Publishing Schedule</a>, include a link to the issue in the event description. If you don't have the permission to create events please ask our Google Workspace admin to give you access.</li>
-<li>If you want to work on the content immediately please triage the issue into our <a href="https://github.com/orgs/flowforge/projects/1/views/33">development board</a>.</li>
-<li>Create a new branch of the website repository and then follow our standard <a href="https://flowforge.com/handbook/development/#development-board">development processes</a>.</li>
-<li>It is OK for you to merge your own PR to main without review where the content is urgent or has been reviewed outside of Git but where it is practical to follow the <a href="https://flowforge.com/handbook/development/#development-board">standard process</a> we encourage you to do so.</li>
-</ol>
-<h3 id="social-media%2C-marketing-%26-public-relations" tabindex="-1"><a class="header-anchor" href="#social-media%2C-marketing-%26-public-relations">#&nbsp;</a> Social Media, Marketing &amp; Public Relations</h3>
-<p>It's important we understand what we communicate, to whom, how, and when. This sets out our principles for social media, marketing, and PR communications.</p>
-<h3 id="content-types" tabindex="-1"><a class="header-anchor" href="#content-types">#&nbsp;</a> Content Types</h3>
-<p>Content should be published to the appropriate channels, the types of published content we currently produce are as follows.</p>
-<h4 id="release" tabindex="-1"><a class="header-anchor" href="#release">#&nbsp;</a> Release</h4>
-<p>Major releases of FlowForge, the timing of these releases are governed by our <a href="https://flowforge.com/handbook/development/#cadence">development cadence</a>.</p>
-<h4 id="patch" tabindex="-1"><a class="header-anchor" href="#patch">#&nbsp;</a> Patch</h4>
-<p>Patch between releases, these will happen as needed and may be at short notice.</p>
-<h4 id="planned-downtime" tabindex="-1"><a class="header-anchor" href="#planned-downtime">#&nbsp;</a> Planned Downtime</h4>
-<p>As soon as we are aware of planned downtime we should publish the information, that should be at least one week before the downtime.</p>
-<h4 id="outage" tabindex="-1"><a class="header-anchor" href="#outage">#&nbsp;</a> Outage</h4>
-<p>If we experience unplanned downtime we should communicate in near real time to keep our users and stakeholders up to date with the situation.</p>
-<h4 id="corporate-comms" tabindex="-1"><a class="header-anchor" href="#corporate-comms">#&nbsp;</a> Corporate Comms</h4>
-<p>Major company news such as investment rounds should be communicated at the time agreed with the relevant parties involved. We strive to make this information public as soon as practical and effective.</p>
-<h4 id="newsletter" tabindex="-1"><a class="header-anchor" href="#newsletter">#&nbsp;</a> Newsletter</h4>
-<p>Monthly newsletter published at the start of each calendar month covering news from the prior month.</p>
-<h4 id="how-to" tabindex="-1"><a class="header-anchor" href="#how-to">#&nbsp;</a> How To</h4>
-<p>Technical guides, published once per week.</p>
-<h3 id="content-channels" tabindex="-1"><a class="header-anchor" href="#content-channels">#&nbsp;</a> Content Channels</h3>
-<p>Each content type has channels which are appropriate, this table sets out which content should be posted on each channel.</p>
-<table>
-<thead>
-<tr>
-<th>Content</th>
-<th>Blog</th>
-<th>Mailing List</th>
-<th>Twitter</th>
-<th>Youtube</th>
-<th>LinkedIn</th>
-<th>Reddit</th>
-<th>Node-RED Slack</th>
-<th>Node-RED Discorse</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Release</td>
-<td>*</td>
-<td></td>
-<td>*</td>
-<td>*</td>
-<td>*</td>
-<td>*</td>
-<td>*</td>
-<td>*</td>
-</tr>
-<tr>
-<td>Patch</td>
-<td>*</td>
-<td></td>
-<td>*</td>
-<td></td>
-<td></td>
-<td>*</td>
-<td>*</td>
-<td></td>
-</tr>
-<tr>
-<td>Planned Downtime</td>
-<td>*</td>
-<td></td>
-<td>*</td>
-<td></td>
-<td>*</td>
-<td>*</td>
-<td>*</td>
-<td></td>
-</tr>
-<tr>
-<td>Outage</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>Corporate Comms</td>
-<td>*</td>
-<td></td>
-<td>*</td>
-<td></td>
-<td>*</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>Newsletter</td>
-<td>*</td>
-<td>*</td>
-<td>*</td>
-<td></td>
-<td>*</td>
-<td>*</td>
-<td>*</td>
-<td>*</td>
-</tr>
-<tr>
-<td>How To</td>
-<td>*</td>
-<td></td>
-<td>*</td>
-<td></td>
-<td>*</td>
-<td>*</td>
-<td>*</td>
-<td>*</td>
-</tr>
-</tbody>
-</table>
-<h3 id="channel-content-guidance" tabindex="-1"><a class="header-anchor" href="#channel-content-guidance">#&nbsp;</a> Channel Content Guidance</h3>
-<h4 id="blog" tabindex="-1"><a class="header-anchor" href="#blog">#&nbsp;</a> Blog</h4>
-<p>Content should be eloquent and an appropriate length to communicate the message.</p>
-<h4 id="mailing-list" tabindex="-1"><a class="header-anchor" href="#mailing-list">#&nbsp;</a> Mailing List</h4>
-<p>Content should be eloquent and an appropriate length to communicate the message.</p>
-<h4 id="twitter" tabindex="-1"><a class="header-anchor" href="#twitter">#&nbsp;</a> Twitter</h4>
-<p>Keep it short, Tweets should be factual, informal and have a call to action (a link) where a user can read more.</p>
-<h4 id="youtube" tabindex="-1"><a class="header-anchor" href="#youtube">#&nbsp;</a> Youtube</h4>
-<p>Videos should:</p>
-<ul>
-<li>Include opening and closing idents.</li>
-<li>Be clear in what they are communicating.</li>
-<li>Have an appropriate thumbnail.</li>
-<li>Have a call to action in the description.</li>
-<li>Be publicly listed.</li>
-</ul>
-<h4 id="linkedin" tabindex="-1"><a class="header-anchor" href="#linkedin">#&nbsp;</a> LinkedIn</h4>
-<p>Posts should be framed in the context of FlowForge as an organisation and a team, don't get too technical. A relevant photo or image should be included in every post. Where the post is primarily of a video it should be embedded from Youtube. Where possible include the content in the post rather than linking out to external content.</p>
-<h4 id="reddit" tabindex="-1"><a class="header-anchor" href="#reddit">#&nbsp;</a> Reddit</h4>
-<p>Keep it short, Reddit posts should be factual, informal and have a call to action (a link) where a user can read more. If the content is a video we should post that directly on Reddit as that should result in greater interaction.</p>
-<h4 id="node-red-slack-(flowforge-section)" tabindex="-1"><a class="header-anchor" href="#node-red-slack-(flowforge-section)">#&nbsp;</a> Node-RED Slack (FlowForge section)</h4>
-<p>Keep it short, Slack messages should be factual, informal and have a call to action (a link) where a user can read more.</p>
-<h4 id="discourse-(node-red-forums)" tabindex="-1"><a class="header-anchor" href="#discourse-(node-red-forums)">#&nbsp;</a> Discourse (Node-RED Forums)</h4>
-<p>Keep content short, posts to the Node-RED discord should be factual, informal and have a call to action (a link) where a user can read more.</p>
-<h3 id="blog-cms" tabindex="-1"><a class="header-anchor" href="#blog-cms">#&nbsp;</a> Blog CMS</h3>
-<p>When creating a blog post there are several headers which are used by the CMS to populate the blog article as well as the blog index page. The headers are as follows:</p>
-<h4 id="title" tabindex="-1"><a class="header-anchor" href="#title">#&nbsp;</a> Title</h4>
-<p>The title of the page can be seen on both the blog index and the articles.</p>
-<h4 id="subtitle" tabindex="-1"><a class="header-anchor" href="#subtitle">#&nbsp;</a> Subtitle</h4>
-<p>The subtitle is only shown on the articles.</p>
-<h4 id="description" tabindex="-1"><a class="header-anchor" href="#description">#&nbsp;</a> Description</h4>
-<p>The description is unused currently</p>
-<h4 id="date" tabindex="-1"><a class="header-anchor" href="#date">#&nbsp;</a> Date</h4>
-<p>The data can be seen on both the blog index and the articles.</p>
-<h4 id="authors" tabindex="-1"><a class="header-anchor" href="#authors">#&nbsp;</a> Authors</h4>
-<p>The author can be seen on both the blog index and the articles.</p>
-<h4 id="more-tag" tabindex="-1"><a class="header-anchor" href="#more-tag">#&nbsp;</a> More tag</h4>
-<p>The '&lt;!--more--&gt;' tag is used to define the text shown in the blog index from each article.</p>
-<h4 id="example-header-content" tabindex="-1"><a class="header-anchor" href="#example-header-content">#&nbsp;</a> Example header content</h4>
-<pre><code>---
-title: The title
-subtitle: The subtitle
-description: The description
-date: 2022-12-20
-authors: [&quot;rob-marcer&quot;]
----
-
-above more
-&lt;!--more--&gt;
-below more
-</code></pre>
-<h4 id="example-blog-index-item-based-on-the-header-above" tabindex="-1"><a class="header-anchor" href="#example-blog-index-item-based-on-the-header-above">#&nbsp;</a> Example blog index item based on the header above</h4>
-<p><img src="../images/blog-index.png"" alt="Example of how the headers are shown on the blog index"></p>
-<h4 id="example-blog-article-based-on-the-header-above" tabindex="-1"><a class="header-anchor" href="#example-blog-article-based-on-the-header-above">#&nbsp;</a> Example blog article based on the header above</h4>
-<p><img src="../images/blog-article.png"" alt="Example of how the headers are shown on blog articles"></p>
 
                 </div>
             </div>
@@ -930,7 +804,7 @@ below more
             <h3 class="font-medium border-b pb-1 mb-4">on this page</h3>
             <ul id="toc" class="text-sm border-b mb-4"></ul>
             <div class="text-sm pb-1 text-right mb-4"><a href="https://github.com/flowforge/handbook/edit/main/marketing/index.md">Edit this page</a></div>
-            <div class="text-xs pb-1 text-right mb-4 italic">Updated: 2023-01-10 10:28:46 +0100</div>
+            <div class="text-xs pb-1 text-right mb-4 italic">Updated: 2023-01-10 12:10:05 +0100</div>
         </div>
     </div>
 </div>
