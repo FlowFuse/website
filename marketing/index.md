@@ -1,5 +1,5 @@
 ---
-navTitle: Content
+navTitle: Marketing
 navGroup: Sales & Marketing
 ---
 
