@@ -1,5 +1,5 @@
 ---
-navTitle: Media
+navTitle: Video
 navGroup: Sales & Marketing
 ---
 
