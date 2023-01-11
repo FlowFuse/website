@@ -1,3 +1,6 @@
+---
+navTitle: Using Git
+---
 # How to use Git (for non-developer team members)
 
 ## Background
