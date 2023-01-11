@@ -3,8 +3,35 @@
     <title>FlowForge</title>
     <link href="https://flowforge.com/blog/index.xml" rel="self"/>
     <link href="https://flowforge.com/blog"/>
-    <updated>2022-12-22T18:00:00Z</updated>
+    <updated>2023-01-12T00:00:00Z</updated>
     <id>https://flowforge.com/blog</id>
+    
+    <entry>
+        <id>https://flowforge.com/blog/2023/01/community-news-12/</id>
+        <title>Community News December 2022</title>
+        <summary>News from the FlowForge and Node-RED communities</summary>
+        <updated>2023-01-12T00:00:00Z</updated>
+        <link href="https://flowforge.com/blog/2023/01/community-news-12/"/>
+        <author><name>Rob Marcer</name></author>
+        <content type="html">&lt;p&gt;Welcome to the FlowForge newsletter for December 2022, a monthly roundup of what’s been happening with both FlowForge and the wider Node-RED community. 2022 was a really exciting year for the development of both Node-RED and FlowForge. Node-RED released version 3, another major milestone for the project. FlowForge hit version 1, leaving the beta development stage. We are excited to see what the community can achieve in 2023!&lt;/p&gt;
+&lt;!--more--&gt;
+&lt;p&gt;If you&#39;ve got something that you think we should share on our newsletters please &lt;a href=&quot;mailto:contact@flowforge.com&quot;&gt;get it touch&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/node-red/node-red/milestone/19&quot;&gt;&lt;strong&gt;Node-RED Nears 3.1 Release&lt;/strong&gt;&lt;/a&gt;
+The release of Node-RED 3.1 is expected very soon. 3.1 includes lots of great new features such as support for &lt;a href=&quot;https://github.com/node-red/node-red/pull/3938&quot;&gt;locking flows in the editor&lt;/a&gt; and &lt;a href=&quot;https://github.com/node-red/node-red/pull/3930&quot;&gt;improving the user experience around hiding flows&lt;/a&gt;. As an open source project the development of Node-RED is entirely dependent on individuals and companies giving their time to work towards each new release. If you&#39;d like to know how you can get involved you can read more on the &lt;a href=&quot;https://nodered.org/about/contribute/&quot;&gt;Node-RED web site&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://flowforge.com/blog/2022/12/flowforge-1-2-0-released/&quot;&gt;&lt;strong&gt;FlowForge 1.2 Released&lt;/strong&gt;&lt;/a&gt;&lt;br /&gt;
+Version 1.2 of FlowForge was released on 23rd December. Our last release of the year included some great new features such as &lt;a href=&quot;https://flowforge.com/docs/cloud/#single-sign-on&quot;&gt;Sign Sign-On&lt;/a&gt; to make it easier for your team to access your projects and &lt;a href=&quot;https://flowforge.com/docs/cloud/#node-red-context&quot;&gt;Persistent Context&lt;/a&gt; which allows you to retain context values even when restarting projects. We&#39;re now working towards our first release of 2023 which is due on 19th January. You can see what we are planning to deliver in that release and beyond on &lt;a href=&quot;https://github.com/orgs/flowforge/projects/5&quot;&gt;FlowForge&#39;s project board&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;If you’d like to learn more about what else was included in 1.2 you can do so on our &lt;a href=&quot;http://flowforge.com/blog/2022/12/flowforge-1-2-0-released/&quot;&gt;blog post&lt;/a&gt;, &lt;a href=&quot;https://github.com/flowforge/flowforge/releases/tag/v1.2.0&quot;&gt;GitHub release page&lt;/a&gt;, and &lt;a href=&quot;https://www.youtube.com/watch?v=u7TjqUAub1g&quot;&gt;Youtube channel&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://iot-analytics.com/5-iot-sensor-technologies/&quot;&gt;&lt;strong&gt;5 IoT Sensor Technologies to Watch&lt;/strong&gt;&lt;/a&gt;&lt;br /&gt;
+According to this detailed article from iot-analytics.com, on average, four new sensors are connected with every new IoT device that comes online. With approximately 14 billion current IoT connections, this means more than 50 billion connected sensors have been deployed. IoT sensor technology plays a crucial role in the IoT tech stack because these sensors collect data from the physical world and convert it into digital signals. We think &lt;a href=&quot;https://iot-analytics.com/5-iot-sensor-technologies/&quot;&gt;their article&lt;/a&gt; is worth a read.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://flows.nodered.org/node/node-red-contrib-string&quot;&gt;&lt;strong&gt;Custom Node Spotlight - node-red-contrib-string&lt;/strong&gt;&lt;/a&gt;
+String manipulation is the bread and butter of so many programming tasks. Node-RED has a lot of tools to help you edit your strings including support for &lt;a href=&quot;https://jsonata.org/&quot;&gt;JSONata&lt;/a&gt; and using the trusty function node. For those of us who prefer to keep things &#39;no-code&#39; &lt;a href=&quot;https://flows.nodered.org/node/node-red-contrib-string&quot;&gt;node-red-contrib-string&lt;/a&gt; allows you to stack string manipulations together quickly and easily. It has a huge library of ready to use functions.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://flowforge.com/team/&quot;&gt;&lt;strong&gt;FlowForge Team News&lt;/strong&gt;&lt;/a&gt;&lt;br /&gt;
+We’d like to welcome two new members to the FlowForge team. &lt;a href=&quot;https://twitter.com/ianskerrett&quot;&gt;Ian Skerrett&lt;/a&gt; has joined as our Head of Marketing and &lt;a href=&quot;https://www.linkedin.com/in/tracyanthonyfernandez/&quot;&gt;Tracy Anthony&lt;/a&gt; has joined as our HR Manager. FlowForge continues to grow and we are becoming a truly global team.&lt;/p&gt;
+&lt;p&gt;Would you like to work for FlowForge? We are currently recruiting &lt;a href=&quot;https://boards.greenhouse.io/flowforge/jobs/4463977004&quot;&gt;NodeJS Developers&lt;/a&gt; to join our team. You can view any of the roles we currently have open and apply on our &lt;a href=&quot;https://boards.greenhouse.io/flowforge&quot;&gt;Jobs page&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://app.flowforge.com/account/create?code=FF12&quot;&gt;&lt;strong&gt;Try FlowForge for Free&lt;/strong&gt;&lt;/a&gt;&lt;br /&gt;
+As a thank you for reading our newsletters we’d like to offer you a free, small project for one month on our managed FlowForge platform when you create a new team. To get this discount please follow &lt;a href=&quot;https://app.flowforge.com/account/create?code=FF12&quot;&gt;this link&lt;/a&gt; or use the code FF12 when on the payment page after creating a new team. As an open source project you can also use &lt;a href=&quot;https://flowforge.com/docs/install/&quot;&gt;FlowForge&lt;/a&gt; for free, forever.&lt;/p&gt;
+</content>
+    </entry>
     
     <entry>
         <id>https://flowforge.com/blog/2022/12/flowforge-1-2-0-released/</id>
