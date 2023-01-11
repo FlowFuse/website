@@ -6,15 +6,15 @@ sitemapPriority: 1.0
 <div class="w-full px-6 pb-24 mt-12 md:px-0">
     <div class="container m-auto text-center max-w-2xl">
         <h1 class="text-gray-50 max-w-lg m-auto">
-            Node-RED for the <span class="text-teal-500">Enterprise</span>.
+            Run Node-RED in <span class="text-teal-500">Production</span>.
         </h1>
-        <p class="mt-8 text-gray-400 text-lg font-normal">
-            Integrate your IT and OT in a secure and team-based environment
-        </p>
+        <h3 class="mt-8 text-gray-400 text-lg font-normal">
+            FlowForge is a centralized platform to manage all of your Node-RED instances. Providing version control, remote deployment to edge devices, and much more.
+        </h3>
         <div class="flex flex-col">
           <div class="m-auto mt-6 flex flex-col gap-4 sm:flex-row items-center justify-center">
-            <a class="ff-btn ff-btn--secondary" href="./docs/install">Install on your own infrastructure</a>
-            <a class="ff-btn ff-btn--primary" href="https://app.flowforge.com/account/create">Join FlowForge Cloud</a>
+            <a class="ff-btn ff-btn--secondary" href="./docs/install" onclick="capture('cta-install', {'position': 'primary'})">Install on your own infrastructure</a>
+            <a class="ff-btn ff-btn--primary" href="https://app.flowforge.com/account/create" onclick="capture('cta-join', {'position': 'primary'})">Join FlowForge Cloud</a>
           </div>
         </div>
     </div>
@@ -34,14 +34,14 @@ sitemapPriority: 1.0
 <div class="w-full ff-bg-light px-6 pt-12 pb-48 sm:pt-32 sm:px-0">
     <div class="container m-auto text-center max-w-4xl">
         <div class="m-auto mt-36 mb-12 sm:mt-64 sm:mb-16 w-full text-center">
-            <h2>What FlowForge brings to Node-RED</h2>
-            <a class="font-bold" href="/node-red">What is Node-RED?</a>
+            <h2>Why use FlowForge for Node-RED</h2>
+            <h5><a href="/node-red">What is Node-RED?</a></h5>
         </div>
         <div class="flex flex-col-reverse justify-between sm:flex-row gap-3 sm:gap-12">
             <div class="text-center sm:text-left pt-4">
                 <h3>Easy Instance Management</h3>
-                <p>FlowForge's intuitive UI lets you manage your Node-RED instances all in one place.</p>
-                <p>Spin up instances of Node-RED in seconds, monitor project health and tear down or suspend projects as required.<p>
+                <p>FlowForge's intuitive UI lets you manage your Node-RED projects all in one place, wherever they are running.</p>
+                <p>Spin up instances of Node-RED in seconds, monitor the health of your flows, and use FlowForge's tooling to control access to your wider team.<p>
             </div>
             <img class="w-96 mx-auto" src="images/screen-pseudo-overview.png" alt="A pseudo-screenshot of FlowForge's UI that lets users manage their multiple Node-RED instances.">
         </div>
@@ -50,9 +50,9 @@ sitemapPriority: 1.0
         </div>
         <div class="flex flex-col-reverse sm:flex-row-reverse justify-between gap-3 sm:gap-12">
             <div class="text-center sm:text-left pt-4">
-                <h3>Device Deployment at Scale</h3>
+                <h3>Remote Device Deployments</h3>
                 <p>One-click deploy to thousands of devices.</p>
-                <p>FlowForge provides a clear picture of your device health, with project snapshots and rollbacks enabling seamless version control.</p>
+                <p>Build and manage your flows centrally in FlowForge, then effortlessly upgrade flows remotely on your edge devices and get an overview of device health and connectivity.</p>
             </div>
             <img class="w-96 mx-auto" src="images/screen-pseudo-devices.png" alt="A pseudo-screenshot of FlowForge's UI that lets users manage their fleet of devices and remote Node-RED deployments">
         </div>
@@ -62,7 +62,7 @@ sitemapPriority: 1.0
         <div class="flex flex-col-reverse sm:flex-row justify-between gap-3 sm:gap-12">
             <div class="text-center sm:text-left pt-4">
                 <h3>Reduced Operational Overheads</h3>
-                <p>Backed by consistent security across the platform, FlowForge makes hosting, deployment and management easy.</p>
+                <p>Backed by consistent security across the platform, FlowForge makes hosting, deployment and management of Node-RED easy.</p>
                 <p>FlowForge provides centralised audit logging too, so you can see all activity in one place - bringing you peace of mind and compliance in your production environment</p>
             </div>
             <img class="w-96 mx-auto" src="images/screen-pseudo-audit.png" alt="A pseudo-screenshot of FlowForge's UI that shows how users can view an audit of all activiity in their team and Node-RED projects.">
@@ -84,13 +84,13 @@ sitemapPriority: 1.0
                 <img class="w-40 m-auto mb-4" src="./images/pictograms/opensource.png" alt="Graphics depicting the Open-Source logo."/>
                 <h5 class="flex justify-center">Open Source</h5>
                 <label class="font-light mt-2 block">Try for free with deployment options including Docker and Kubernetes.</label>
-                <a class="mt-4 ff-btn ff-btn--secondary inline-block" href="./docs/install">Install</a>
+                <a class="mt-4 ff-btn ff-btn--secondary inline-block" href="./docs/install" onclick="capture('cta-install', {'position': 'secondary'})">Install</a>
             </div>
             <div class="w-full px-3 mt-4 sm:w-72 md:mt-0">
                 <img class="w-40 m-auto mb-4" src="./images/pictograms/enterprise.png" alt="Graphic image representing 'Infrastructure'."/>
                 <h5 class="flex justify-center">FlowForge Cloud</h5>
                 <label class="font-light mt-2 block">Get started in less than a minute, fully managed, fully secure.</label>
-                <a class="mt-4 ff-btn ff-btn--primary inline-block" href="https://app.flowforge.com/account/create">Join Now</a>
+                <a class="mt-4 ff-btn ff-btn--primary inline-block" href="https://app.flowforge.com/account/create" onclick="capture('cta-join', {'position': 'secondary'})">Join Now</a>
             </div>
         </div>
     </div>
