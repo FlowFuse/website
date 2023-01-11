@@ -46,7 +46,10 @@ sitemapPriority: 0.9
   hbspt.forms.create({
     region: "eu1",
     portalId: "26586079",
-    formId: "159c173d-dd95-49bd-922b-ff3ef243e90c"
+    formId: "159c173d-dd95-49bd-922b-ff3ef243e90c",
+    onFormSubmit: function($form) {
+        capture('cta-blog-subscribe', {'position': 'primary'})
+    }
   });
 </script>
         </div>
