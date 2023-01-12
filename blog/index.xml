@@ -3,8 +3,32 @@
     <title>FlowForge</title>
     <link href="https://flowforge.com/blog/index.xml" rel="self"/>
     <link href="https://flowforge.com/blog"/>
-    <updated>2023-01-12T00:00:00Z</updated>
+    <updated>2023-01-12T12:00:00Z</updated>
     <id>https://flowforge.com/blog</id>
+    
+    <entry>
+        <id>https://flowforge.com/blog/2023/01/flowforge-1.2.1-released/</id>
+        <title>FlowForge 1.2.1 released</title>
+        <summary>Release includes fix for emailing new user</summary>
+        <updated>2023-01-12T12:00:00Z</updated>
+        <link href="https://flowforge.com/blog/2023/01/flowforge-1.2.1-released/"/>
+        <author><name>Ben Hardill</name></author>
+        <content type="html">&lt;p&gt;We&#39;ve published a maintenance release containing a fix for new users.&lt;/p&gt;
+&lt;!--more--&gt;
+&lt;p&gt;This release fixes an &lt;a href=&quot;https://github.com/flowforge/flowforge/issues/1537&quot;&gt;issue&lt;/a&gt; introduced in FlowForge 1.2 where users were not being sent their welcome email when they first sign up to the platform. As the sign-up page asks them to click on the link in that email, it left them waiting for an email that wasn&#39;t going to arrive.&lt;/p&gt;
+&lt;p&gt;The same fix also addresses an &lt;a href=&quot;https://github.com/flowforge/flowforge/issues/1514&quot;&gt;issue&lt;/a&gt; where users could not sign up using an email with a &lt;code&gt;+&lt;/code&gt; in it. This is a restriction we apply to users signing up with Single Sign-On enabled email domains - but the check was being applied to everyone.&lt;/p&gt;
+&lt;h3 id=&quot;upgrading-flowforge&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://flowforge.com/blog/2023/01/flowforge-1.2.1-released/#upgrading-flowforge&quot;&gt;#&amp;nbsp;&lt;/a&gt; Upgrading FlowForge&lt;/h3&gt;
+&lt;p&gt;This release has already been rolled out to &lt;a href=&quot;https://app.flowforge.com/&quot;&gt;FlowForge Cloud&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;If you installed a previous version of FlowForge and want to upgrade, our documentation provides a
+guide for &lt;a href=&quot;https://flowforge.com/docs/install/upgrading/&quot;&gt;upgrading your FlowForge instance&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&quot;getting-help&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://flowforge.com/blog/2023/01/flowforge-1.2.1-released/#getting-help&quot;&gt;#&amp;nbsp;&lt;/a&gt; Getting help&lt;/h3&gt;
+&lt;p&gt;Please check FlowForge&#39;s &lt;a href=&quot;https://flowforge.com/docs/&quot;&gt;documentation&lt;/a&gt; as the answers to many questions are covered there.&lt;/p&gt;
+&lt;p&gt;If you hit any problems with the platform, please raise an &lt;a href=&quot;https://github.com/flowforge/flowforge/issues&quot;&gt;issue on GitHub&lt;/a&gt;.
+That also includes if you have any feedback or feature requests.&lt;/p&gt;
+&lt;p&gt;Chat with us on the &lt;code&gt;#flowforge&lt;/code&gt; channel on the &lt;a href=&quot;https://nodered.org/slack&quot;&gt;Node-RED Slack workspace&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;You can also raise a support ticket by emailing &lt;a href=&quot;mailto:support@flowforge.com&quot;&gt;support@flowforge.com&lt;/a&gt;&lt;/p&gt;
+</content>
+    </entry>
     
     <entry>
         <id>https://flowforge.com/blog/2023/01/community-news-12/</id>
