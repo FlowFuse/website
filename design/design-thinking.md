@@ -11,7 +11,7 @@ As designers and developers, empathising with our users will lead to a better pr
 Whilst most of the output from our Design Thinking workshops and sessions can be found within [FigJam](#figjam-(more-info)), we have also written up some of our Design Thinking Findings below:
 ### User Personas
 
-Personas are fictional characters that represent the different users we expect to interact with FlowForge as a brand and/or platform. You can find samples of the user personas we have at FlowForge in our [Design Thinking Output](./design-thinking).
+Personas are fictional characters that represent the different users we expect to interact with FlowForge as a brand and/or platform. You can find samples of the user personas below.
 
 At FlowForge, we have many personas that will evolve over time. To give you an insight into what we are working with currently, here is a sample of our 5 MVPs (Most Valuable Personas) to-date:
 

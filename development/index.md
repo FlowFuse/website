@@ -6,10 +6,10 @@ navGroup: Development & Design Practices
 
 ### How we work
 
-- [Packaging](../development/packaging.md)
-- [Contributing](../development/contributing.md)
-- [Security Policy](../development/security.md)
-- [Staging Environment](../development/staging.md)
+- [Packaging](../development/how-we-work/packaging.md)
+- [Contributing](../development/how-we-work/contributing.md)
+- [Security Policy](../development/how-we-work/security.md)
+- [Staging Environment](../development/how-we-work/staging.md)
 
 ### Releases
 

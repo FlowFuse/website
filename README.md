@@ -23,7 +23,7 @@ and strongly encouraged.
 
  - [Design](./design)
  - [Development](./development)
- - [Videos](./media)
+ - [Videos](./marketing/videos.md)
 
 ### Sales and Marketing
 
