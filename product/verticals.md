@@ -31,4 +31,4 @@ Some of the companies that are in this market include:
 
 ### Market size
 
-The marketsize has been reported to be [at least $1.4b in 2021](https://www.marketwatch.com/press-release/ipaas-market-size-2022-in-depth-players-analysis-industry-trends-share-estimation-global-growth-regional-forecast-till-2030-2022-08-08). Potentially growing to [$12.3b in 2027](https://www.vynzresearch.com/ict-media/global-ipaas-market).
+The marketsize has been reported to be at least $1.4b in 2021. Potentially growing to [$12.3b in 2027](https://www.vynzresearch.com/ict-media/global-ipaas-market).

@@ -78,4 +78,4 @@ In our "FlowForge Templates" Adobe Premiere Pro library we have three "UI Previe
 
 #### Marketing Videos
 
-Much more creative license and freedom in terms of content and approach. If we are using iconography and pictograms, then they should be stylized and animated as per our [branding guidelines](../design/branding).
+Much more creative license and freedom in terms of content and approach. If we are using iconography and pictograms, then they should be stylized and animated as per our [branding guidelines](../design/branding.md).
