@@ -18,7 +18,16 @@ const RESET = '\x1b[0m'
 
 // URLs we expect to be invalid, and that's okay
 const exceptions = [
-    'forge.example.com'
+    'forge.example.com',
+    'github.com/flowforge/admin',
+    'github.com/flowforge/docker-compose',
+    'github.com/flowforge/nodered.snap',
+    'github.com/flowforge/flowforge-data',
+    'github.com/flowforge/ctrlx-node-red-example',
+    'github.com/flowforge/CloudProject',
+    'github.com/flowforge/content',
+    'github.com/flowforge/security',
+    'github.com/orgs/flowforge/projects'
 ]
 
 const isUrlException = function (link) {
@@ -50,6 +59,7 @@ const getAllMdFiles = function(dirPath, arrayOfFiles) {
 
 var linkCount = 0
 
+// track details of any errors found for nicer reporting at the end
 var errorRecords = {
     'internal': [],
     'external': []
@@ -89,13 +99,15 @@ async function testLinks (fileUri) {
         if (!linkData.protocol) {
             // internal links - validate via file system
             promises.push(new Promise((resolve, reject) => {
+                const localDir = fileUri.substr(0, fileUri.lastIndexOf('/'))
+                var uri = ''
                 if (link.startsWith('/')) {
                     // absolute path from /src
+                    uri = path.join(__dirname, '../src/', link)
                 } else {
-
+                    // link defined as relative to fileUri
+                    uri = path.join(__dirname, '../', localDir, link)
                 }
-                const localDir = fileUri.substr(0, fileUri.lastIndexOf('/'))
-                const uri = path.join(__dirname, '../', localDir, link)
                 access(uri, F_OK, (err) => {
                     if (err) {
                         console.error(`${RED} X Invalid Link: ${link}`)
@@ -120,16 +132,19 @@ async function testLinks (fileUri) {
                 })
                 .catch(err => {
                     if (err.response) {
-                        console.error(`${RED} X Invalid Link: ${err.response.status} ${link}`)
-                        errorRecords['external'].push({
-                            source: fileUri,
-                            target: link,
-                            reason: err.response.status
-                        })
-                        errors += 1
+                        const status = err.response.status
+                        if ([404, 410].includes(status)) {
+                            console.error(`${RED} X Invalid Link: ${err.response.status} ${link}`)
+                            errorRecords['external'].push({
+                                source: fileUri,
+                                target: link,
+                                reason: err.response.status
+                            })
+                            errors += 1
+                        }
                     } else {
-                        console.log(link)
-                        console.log(isUrlException(link))
+                        // not an error triggered by the HTTP response
+                        console.error(`Error Retrieving: ${link}`)
                         throw Error(err)
                     }
                 })
@@ -157,9 +172,9 @@ async function parseDirectory(dir) {
 async function runReport (dir) {
     await parseDirectory(dir)
     const errorCount = errorRecords.internal.length + errorRecords.external.length
-    console.log(`\n\n${YELLOW}------ INTERNAL ERRORS ------`)
+    console.log(`\n\n${RED}------ INTERNAL ERRORS ------${RESET}`)
     console.log(errorRecords.internal)
-    console.log(`\n${YELLOW}------ EXTERNAL ERRORS ------`)
+    console.log(`\n${RED}------ EXTERNAL ERRORS ------${RESET}`)
     console.log(errorRecords.external)
     console.log(`\n${YELLOW}------ FINAL REPORT ------`)
     console.log(`${YELLOW} TESTED:` + `${linkCount}`.padStart(20))
