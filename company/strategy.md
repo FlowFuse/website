@@ -92,7 +92,7 @@ FlowForge is the key product we're verifying in the market currently. Each
 customer electing to use FlowForge to help them in their Node-RED journey is a
 signal we're providing value.
 
-An instance is either a remote Node-RED running the [FlowForge Device Agent](...),
+An instance is either a remote Node-RED running the [FlowForge Device Agent](https://flowforge.com/docs/user/devices/),
 a hosted Node-RED in the FlowForge Cluster, or an otherwise FlowForge licensed 
 and supported Node-RED instance.
 
