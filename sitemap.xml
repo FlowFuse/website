@@ -309,751 +309,463 @@
     
         <url>
             <loc>https://flowforge.com/404.html</loc>
-            <lastmod>2023-01-13T11:30:01.624Z</lastmod>
+            <lastmod>2023-01-13T20:53:04.614Z</lastmod>
             <priority>0.6</priority>
         </url>
     
         <url>
             <loc>https://flowforge.com/about/</loc>
-            <lastmod>2023-01-13T11:30:01.624Z</lastmod>
+            <lastmod>2023-01-13T20:53:04.618Z</lastmod>
             <priority>0.7</priority>
         </url>
     
         <url>
             <loc>https://flowforge.com/blog/</loc>
-            <lastmod>2023-01-13T11:30:01.624Z</lastmod>
+            <lastmod>2023-01-13T20:53:04.618Z</lastmod>
             <priority>0.9</priority>
         </url>
     
         <url>
             <loc>https://flowforge.com/careers/</loc>
-            <lastmod>2023-01-13T11:30:01.656Z</lastmod>
+            <lastmod>2023-01-13T20:53:04.646Z</lastmod>
             <priority>0.8</priority>
         </url>
     
         <url>
             <loc>https://flowforge.com/contact-us/</loc>
-            <lastmod>2023-01-13T11:30:01.656Z</lastmod>
+            <lastmod>2023-01-13T20:53:04.646Z</lastmod>
             <priority>0.8</priority>
         </url>
     
         <url>
             <loc>https://flowforge.com/features/</loc>
-            <lastmod>2023-01-13T11:30:01.656Z</lastmod>
+            <lastmod>2023-01-13T20:53:04.646Z</lastmod>
             <priority>0.9</priority>
         </url>
     
         <url>
             <loc>https://flowforge.com/</loc>
-            <lastmod>2023-01-13T11:30:01.680Z</lastmod>
+            <lastmod>2023-01-13T20:53:04.670Z</lastmod>
             <priority>1</priority>
         </url>
     
         <url>
             <loc>https://flowforge.com/node-red/</loc>
-            <lastmod>2023-01-13T11:30:01.680Z</lastmod>
+            <lastmod>2023-01-13T20:53:04.670Z</lastmod>
             <priority>0.8</priority>
         </url>
     
         <url>
             <loc>https://flowforge.com/pricing/</loc>
-            <lastmod>2023-01-13T11:30:01.680Z</lastmod>
+            <lastmod>2023-01-13T20:53:04.670Z</lastmod>
             <priority>0.9</priority>
         </url>
     
         <url>
             <loc>https://flowforge.com/privacy-policy/</loc>
-            <lastmod>2023-01-13T11:30:01.680Z</lastmod>
+            <lastmod>2023-01-13T20:53:04.674Z</lastmod>
             <priority>0.7</priority>
         </url>
     
         <url>
             <loc>https://flowforge.com/product/</loc>
-            <lastmod>2023-01-13T11:30:01.680Z</lastmod>
+            <lastmod>2023-01-13T20:53:04.674Z</lastmod>
             <priority>0.6</priority>
         </url>
     
         <url>
             <loc>https://flowforge.com/product/security/</loc>
-            <lastmod>2023-01-13T11:30:01.680Z</lastmod>
+            <lastmod>2023-01-13T20:53:04.674Z</lastmod>
             <priority>0.6</priority>
         </url>
     
         <url>
             <loc>https://flowforge.com/blog/first-deploy/</loc>
-            <lastmod>2023-01-13T11:30:01.680Z</lastmod>
+            <lastmod>2023-01-13T20:53:04.674Z</lastmod>
             <priority>0.6</priority>
         </url>
     
         <url>
             <loc>https://flowforge.com/support/</loc>
-            <lastmod>2023-01-13T11:30:01.680Z</lastmod>
+            <lastmod>2023-01-13T20:53:04.674Z</lastmod>
             <priority>0.8</priority>
         </url>
     
         <url>
             <loc>https://flowforge.com/team/</loc>
-            <lastmod>2023-01-13T11:30:01.680Z</lastmod>
+            <lastmod>2023-01-13T20:53:04.674Z</lastmod>
             <priority>0.6</priority>
         </url>
     
         <url>
             <loc>https://flowforge.com/terms/</loc>
-            <lastmod>2023-01-13T11:30:01.680Z</lastmod>
+            <lastmod>2023-01-13T20:53:04.674Z</lastmod>
             <priority>0.6</priority>
         </url>
     
         <url>
             <loc>https://flowforge.com/handbook/</loc>
-            <lastmod>2023-01-13T11:30:26.468Z</lastmod>
+            <lastmod>2023-01-13T20:53:26.270Z</lastmod>
             <priority>0.6</priority>
         </url>
     
         <url>
             <loc>https://flowforge.com/handbook/company/board/</loc>
-            <lastmod>2023-01-13T11:30:26.472Z</lastmod>
+            <lastmod>2023-01-13T20:53:26.278Z</lastmod>
             <priority>0.6</priority>
         </url>
     
         <url>
             <loc>https://flowforge.com/handbook/company/communication/</loc>
-            <lastmod>2023-01-13T11:30:26.480Z</lastmod>
+            <lastmod>2023-01-13T20:53:26.282Z</lastmod>
             <priority>0.6</priority>
         </url>
     
         <url>
             <loc>https://flowforge.com/handbook/company/</loc>
-            <lastmod>2023-01-13T11:30:26.484Z</lastmod>
+            <lastmod>2023-01-13T20:53:26.286Z</lastmod>
             <priority>0.6</priority>
         </url>
     
         <url>
             <loc>https://flowforge.com/handbook/company/principles/</loc>
-            <lastmod>2023-01-13T11:30:26.488Z</lastmod>
+            <lastmod>2023-01-13T20:53:26.290Z</lastmod>
             <priority>0.6</priority>
         </url>
     
         <url>
             <loc>https://flowforge.com/handbook/company/remote/</loc>
-            <lastmod>2023-01-13T11:30:26.492Z</lastmod>
+            <lastmod>2023-01-13T20:53:26.294Z</lastmod>
             <priority>0.6</priority>
         </url>
     
         <url>
             <loc>https://flowforge.com/handbook/company/security/</loc>
-            <lastmod>2023-01-13T11:30:26.496Z</lastmod>
+            <lastmod>2023-01-13T20:53:26.302Z</lastmod>
             <priority>0.6</priority>
         </url>
     
         <url>
             <loc>https://flowforge.com/handbook/company/strategy/</loc>
-            <lastmod>2023-01-13T11:30:26.504Z</lastmod>
+            <lastmod>2023-01-13T20:53:26.306Z</lastmod>
             <priority>0.6</priority>
         </url>
     
         <url>
             <loc>https://flowforge.com/handbook/company/values/</loc>
-            <lastmod>2023-01-13T11:30:26.508Z</lastmod>
+            <lastmod>2023-01-13T20:53:26.310Z</lastmod>
             <priority>0.6</priority>
         </url>
     
         <url>
             <loc>https://flowforge.com/handbook/design/branding/</loc>
-            <lastmod>2023-01-13T11:30:26.512Z</lastmod>
+            <lastmod>2023-01-13T20:53:26.314Z</lastmod>
             <priority>0.6</priority>
         </url>
     
         <url>
             <loc>https://flowforge.com/handbook/design/design-thinking/</loc>
-            <lastmod>2023-01-13T11:30:26.516Z</lastmod>
+            <lastmod>2023-01-13T20:53:26.318Z</lastmod>
             <priority>0.6</priority>
         </url>
     
         <url>
             <loc>https://flowforge.com/handbook/design/</loc>
-            <lastmod>2023-01-13T11:30:26.520Z</lastmod>
+            <lastmod>2023-01-13T20:53:26.322Z</lastmod>
             <priority>0.6</priority>
         </url>
     
         <url>
             <loc>https://flowforge.com/handbook/design/process/</loc>
-            <lastmod>2023-01-13T11:30:26.524Z</lastmod>
+            <lastmod>2023-01-13T20:53:26.326Z</lastmod>
             <priority>0.6</priority>
         </url>
     
         <url>
             <loc>https://flowforge.com/handbook/design/tools/</loc>
-            <lastmod>2023-01-13T11:30:26.528Z</lastmod>
+            <lastmod>2023-01-13T20:53:26.330Z</lastmod>
             <priority>0.6</priority>
         </url>
     
         <url>
             <loc>https://flowforge.com/handbook/development/frontend/data-attributes/</loc>
-            <lastmod>2023-01-13T11:30:26.532Z</lastmod>
+            <lastmod>2023-01-13T20:53:26.338Z</lastmod>
             <priority>0.6</priority>
         </url>
     
         <url>
             <loc>https://flowforge.com/handbook/development/frontend/</loc>
-            <lastmod>2023-01-13T11:30:26.540Z</lastmod>
+            <lastmod>2023-01-13T20:53:26.342Z</lastmod>
             <priority>0.6</priority>
         </url>
     
         <url>
             <loc>https://flowforge.com/handbook/development/frontend/services/</loc>
-            <lastmod>2023-01-13T11:30:26.544Z</lastmod>
+            <lastmod>2023-01-13T20:53:26.346Z</lastmod>
             <priority>0.6</priority>
         </url>
     
         <url>
             <loc>https://flowforge.com/handbook/development/frontend/testing/</loc>
-            <lastmod>2023-01-13T11:30:26.548Z</lastmod>
+            <lastmod>2023-01-13T20:53:26.350Z</lastmod>
             <priority>0.6</priority>
         </url>
     
         <url>
             <loc>https://flowforge.com/handbook/development/git-how-to/</loc>
-            <lastmod>2023-01-13T11:30:26.552Z</lastmod>
+            <lastmod>2023-01-13T20:53:26.354Z</lastmod>
             <priority>0.6</priority>
         </url>
     
         <url>
             <loc>https://flowforge.com/handbook/development/how-we-work/contributing/</loc>
-            <lastmod>2023-01-13T11:30:26.556Z</lastmod>
+            <lastmod>2023-01-13T20:53:26.358Z</lastmod>
             <priority>0.6</priority>
         </url>
     
         <url>
             <loc>https://flowforge.com/handbook/development/how-we-work/</loc>
-            <lastmod>2023-01-13T11:30:26.560Z</lastmod>
+            <lastmod>2023-01-13T20:53:26.366Z</lastmod>
             <priority>0.6</priority>
         </url>
     
         <url>
             <loc>https://flowforge.com/handbook/development/how-we-work/packaging/</loc>
-            <lastmod>2023-01-13T11:30:26.568Z</lastmod>
+            <lastmod>2023-01-13T20:53:26.370Z</lastmod>
             <priority>0.6</priority>
         </url>
     
         <url>
             <loc>https://flowforge.com/handbook/development/how-we-work/security/</loc>
-            <lastmod>2023-01-13T11:30:26.572Z</lastmod>
+            <lastmod>2023-01-13T20:53:26.374Z</lastmod>
             <priority>0.6</priority>
         </url>
     
         <url>
             <loc>https://flowforge.com/handbook/development/how-we-work/staging/</loc>
-            <lastmod>2023-01-13T11:30:26.576Z</lastmod>
+            <lastmod>2023-01-13T20:53:26.378Z</lastmod>
             <priority>0.6</priority>
         </url>
     
         <url>
             <loc>https://flowforge.com/handbook/development/</loc>
-            <lastmod>2023-01-13T11:30:26.580Z</lastmod>
+            <lastmod>2023-01-13T20:53:26.382Z</lastmod>
             <priority>0.6</priority>
         </url>
     
         <url>
             <loc>https://flowforge.com/handbook/development/releases/</loc>
-            <lastmod>2023-01-13T11:30:26.592Z</lastmod>
+            <lastmod>2023-01-13T20:53:26.394Z</lastmod>
             <priority>0.6</priority>
         </url>
     
         <url>
             <loc>https://flowforge.com/handbook/development/releases/planning/</loc>
-            <lastmod>2023-01-13T11:30:26.600Z</lastmod>
+            <lastmod>2023-01-13T20:53:26.398Z</lastmod>
             <priority>0.6</priority>
         </url>
     
         <url>
             <loc>https://flowforge.com/handbook/development/releases/process/</loc>
-            <lastmod>2023-01-13T11:30:26.604Z</lastmod>
+            <lastmod>2023-01-13T20:53:26.402Z</lastmod>
             <priority>0.6</priority>
         </url>
     
         <url>
             <loc>https://flowforge.com/handbook/marketing/blog/</loc>
-            <lastmod>2023-01-13T11:30:26.636Z</lastmod>
+            <lastmod>2023-01-13T20:53:26.430Z</lastmod>
             <priority>0.6</priority>
         </url>
     
         <url>
             <loc>https://flowforge.com/handbook/marketing/channels/</loc>
-            <lastmod>2023-01-13T11:30:26.640Z</lastmod>
+            <lastmod>2023-01-13T20:53:26.438Z</lastmod>
             <priority>0.6</priority>
         </url>
     
         <url>
             <loc>https://flowforge.com/handbook/marketing/</loc>
-            <lastmod>2023-01-13T11:30:26.644Z</lastmod>
+            <lastmod>2023-01-13T20:53:26.442Z</lastmod>
             <priority>0.6</priority>
         </url>
     
         <url>
             <loc>https://flowforge.com/handbook/marketing/types/</loc>
-            <lastmod>2023-01-13T11:30:26.648Z</lastmod>
+            <lastmod>2023-01-13T20:53:26.446Z</lastmod>
             <priority>0.6</priority>
         </url>
     
         <url>
             <loc>https://flowforge.com/handbook/marketing/videos/</loc>
-            <lastmod>2023-01-13T11:30:26.652Z</lastmod>
+            <lastmod>2023-01-13T20:53:26.450Z</lastmod>
             <priority>0.6</priority>
         </url>
     
         <url>
             <loc>https://flowforge.com/handbook/marketing/website/</loc>
-            <lastmod>2023-01-13T11:30:26.660Z</lastmod>
+            <lastmod>2023-01-13T20:53:26.454Z</lastmod>
             <priority>0.6</priority>
         </url>
     
         <url>
             <loc>https://flowforge.com/handbook/operations/accounts/</loc>
-            <lastmod>2023-01-13T11:30:26.664Z</lastmod>
+            <lastmod>2023-01-13T20:53:26.458Z</lastmod>
             <priority>0.6</priority>
         </url>
     
         <url>
             <loc>https://flowforge.com/handbook/operations/billing/</loc>
-            <lastmod>2023-01-13T11:30:26.668Z</lastmod>
+            <lastmod>2023-01-13T20:53:26.462Z</lastmod>
             <priority>0.6</priority>
         </url>
     
         <url>
             <loc>https://flowforge.com/handbook/operations/change/</loc>
-            <lastmod>2023-01-13T11:30:26.672Z</lastmod>
+            <lastmod>2023-01-13T20:53:26.466Z</lastmod>
             <priority>0.6</priority>
         </url>
     
         <url>
             <loc>https://flowforge.com/handbook/operations/data/</loc>
-            <lastmod>2023-01-13T11:30:26.676Z</lastmod>
+            <lastmod>2023-01-13T20:53:26.474Z</lastmod>
             <priority>0.6</priority>
         </url>
     
         <url>
             <loc>https://flowforge.com/handbook/operations/</loc>
-            <lastmod>2023-01-13T11:30:26.680Z</lastmod>
+            <lastmod>2023-01-13T20:53:26.478Z</lastmod>
             <priority>0.6</priority>
         </url>
     
         <url>
             <loc>https://flowforge.com/handbook/operations/support/</loc>
-            <lastmod>2023-01-13T11:30:26.688Z</lastmod>
+            <lastmod>2023-01-13T20:53:26.482Z</lastmod>
             <priority>0.6</priority>
         </url>
     
         <url>
             <loc>https://flowforge.com/handbook/operations/vendors/</loc>
-            <lastmod>2023-01-13T11:30:26.692Z</lastmod>
+            <lastmod>2023-01-13T20:53:26.486Z</lastmod>
             <priority>0.6</priority>
         </url>
     
         <url>
             <loc>https://flowforge.com/handbook/peopleops/compensation/</loc>
-            <lastmod>2023-01-13T11:30:26.696Z</lastmod>
+            <lastmod>2023-01-13T20:53:26.490Z</lastmod>
             <priority>0.6</priority>
         </url>
     
         <url>
             <loc>https://flowforge.com/handbook/peopleops/expenses/</loc>
-            <lastmod>2023-01-13T11:30:26.700Z</lastmod>
+            <lastmod>2023-01-13T20:53:26.494Z</lastmod>
             <priority>0.6</priority>
         </url>
     
         <url>
             <loc>https://flowforge.com/handbook/peopleops/hiring/</loc>
-            <lastmod>2023-01-13T11:30:26.704Z</lastmod>
+            <lastmod>2023-01-13T20:53:26.498Z</lastmod>
             <priority>0.6</priority>
         </url>
     
         <url>
             <loc>https://flowforge.com/handbook/peopleops/</loc>
-            <lastmod>2023-01-13T11:30:26.708Z</lastmod>
+            <lastmod>2023-01-13T20:53:26.502Z</lastmod>
             <priority>0.6</priority>
         </url>
     
         <url>
             <loc>https://flowforge.com/handbook/peopleops/leave/</loc>
-            <lastmod>2023-01-13T11:30:26.712Z</lastmod>
+            <lastmod>2023-01-13T20:53:26.510Z</lastmod>
             <priority>0.6</priority>
         </url>
     
         <url>
             <loc>https://flowforge.com/handbook/peopleops/organization/</loc>
-            <lastmod>2023-01-13T11:30:26.716Z</lastmod>
+            <lastmod>2023-01-13T20:53:26.514Z</lastmod>
             <priority>0.6</priority>
         </url>
     
         <url>
             <loc>https://flowforge.com/handbook/product/customer-calls/</loc>
-            <lastmod>2023-01-13T11:30:26.720Z</lastmod>
+            <lastmod>2023-01-13T20:53:26.518Z</lastmod>
             <priority>0.6</priority>
         </url>
     
         <url>
             <loc>https://flowforge.com/handbook/product/demos/</loc>
-            <lastmod>2023-01-13T11:30:26.728Z</lastmod>
+            <lastmod>2023-01-13T20:53:26.522Z</lastmod>
             <priority>0.6</priority>
         </url>
     
         <url>
             <loc>https://flowforge.com/handbook/product/</loc>
-            <lastmod>2023-01-13T11:30:26.732Z</lastmod>
+            <lastmod>2023-01-13T20:53:26.526Z</lastmod>
             <priority>0.6</priority>
         </url>
     
         <url>
             <loc>https://flowforge.com/handbook/product/plan/</loc>
-            <lastmod>2023-01-13T11:30:26.736Z</lastmod>
+            <lastmod>2023-01-13T20:53:26.530Z</lastmod>
             <priority>0.6</priority>
         </url>
     
         <url>
             <loc>https://flowforge.com/handbook/product/pricing/</loc>
-            <lastmod>2023-01-13T11:30:26.740Z</lastmod>
+            <lastmod>2023-01-13T20:53:26.534Z</lastmod>
             <priority>0.6</priority>
         </url>
     
         <url>
             <loc>https://flowforge.com/handbook/product/versioning/</loc>
-            <lastmod>2023-01-13T11:30:26.744Z</lastmod>
+            <lastmod>2023-01-13T20:53:26.538Z</lastmod>
             <priority>0.6</priority>
         </url>
     
         <url>
             <loc>https://flowforge.com/handbook/product/verticals/</loc>
-            <lastmod>2023-01-13T11:30:26.748Z</lastmod>
+            <lastmod>2023-01-13T20:53:26.546Z</lastmod>
             <priority>0.6</priority>
         </url>
     
         <url>
             <loc>https://flowforge.com/handbook/sales/demo/</loc>
-            <lastmod>2023-01-13T11:30:26.752Z</lastmod>
+            <lastmod>2023-01-13T20:53:26.550Z</lastmod>
             <priority>0.6</priority>
         </url>
     
         <url>
             <loc>https://flowforge.com/handbook/sales/</loc>
-            <lastmod>2023-01-13T11:30:26.756Z</lastmod>
+            <lastmod>2023-01-13T20:53:26.554Z</lastmod>
             <priority>0.6</priority>
         </url>
     
         <url>
             <loc>https://flowforge.com/handbook/sales/pitch/</loc>
-            <lastmod>2023-01-13T11:30:26.764Z</lastmod>
+            <lastmod>2023-01-13T20:53:26.558Z</lastmod>
             <priority>0.6</priority>
         </url>
     
         <url>
             <loc>https://flowforge.com/handbook/sales/pricing/</loc>
-            <lastmod>2023-01-13T11:30:26.768Z</lastmod>
+            <lastmod>2023-01-13T20:53:26.562Z</lastmod>
             <priority>0.6</priority>
         </url>
     
         <url>
             <loc>https://flowforge.com/docs/</loc>
-            <lastmod>2023-01-13T11:30:27.028Z</lastmod>
+            <lastmod>2023-01-13T20:53:26.830Z</lastmod>
             <priority>0.6</priority>
         </url>
     
         <url>
             <loc>https://flowforge.com/docs/admin/</loc>
-            <lastmod>2023-01-13T11:30:27.032Z</lastmod>
+            <lastmod>2023-01-13T20:53:26.838Z</lastmod>
             <priority>0.6</priority>
         </url>
     
         <url>
             <loc>https://flowforge.com/docs/admin/sso/</loc>
-            <lastmod>2023-01-13T11:30:27.040Z</lastmod>
-            <priority>0.6</priority>
-        </url>
-    
-        <url>
-            <loc>https://flowforge.com/docs/admin/telemetry/</loc>
-            <lastmod>2023-01-13T11:30:27.044Z</lastmod>
-            <priority>0.6</priority>
-        </url>
-    
-        <url>
-            <loc>https://flowforge.com/docs/admin/user_management/</loc>
-            <lastmod>2023-01-13T11:30:27.048Z</lastmod>
-            <priority>0.6</priority>
-        </url>
-    
-        <url>
-            <loc>https://flowforge.com/docs/api/</loc>
-            <lastmod>2023-01-13T11:30:27.052Z</lastmod>
-            <priority>0.6</priority>
-        </url>
-    
-        <url>
-            <loc>https://flowforge.com/docs/cloud/</loc>
-            <lastmod>2023-01-13T11:30:27.056Z</lastmod>
-            <priority>0.6</priority>
-        </url>
-    
-        <url>
-            <loc>https://flowforge.com/docs/cloud/billing/</loc>
-            <lastmod>2023-01-13T11:30:27.064Z</lastmod>
-            <priority>0.6</priority>
-        </url>
-    
-        <url>
-            <loc>https://flowforge.com/docs/contribute/</loc>
-            <lastmod>2023-01-13T11:30:27.068Z</lastmod>
-            <priority>0.6</priority>
-        </url>
-    
-        <url>
-            <loc>https://flowforge.com/docs/contribute/adding-template-settings/</loc>
-            <lastmod>2023-01-13T11:30:27.072Z</lastmod>
-            <priority>0.6</priority>
-        </url>
-    
-        <url>
-            <loc>https://flowforge.com/docs/contribute/api-design/</loc>
-            <lastmod>2023-01-13T11:30:27.076Z</lastmod>
-            <priority>0.6</priority>
-        </url>
-    
-        <url>
-            <loc>https://flowforge.com/docs/contribute/architecture/</loc>
-            <lastmod>2023-01-13T11:30:27.080Z</lastmod>
-            <priority>0.6</priority>
-        </url>
-    
-        <url>
-            <loc>https://flowforge.com/docs/contribute/db-migrations/</loc>
-            <lastmod>2023-01-13T11:30:27.084Z</lastmod>
-            <priority>0.6</priority>
-        </url>
-    
-        <url>
-            <loc>https://flowforge.com/docs/contribute/workflows/</loc>
-            <lastmod>2023-01-13T11:30:27.092Z</lastmod>
-            <priority>0.6</priority>
-        </url>
-    
-        <url>
-            <loc>https://flowforge.com/docs/contribute/workflows/invite-external-user/</loc>
-            <lastmod>2023-01-13T11:30:27.096Z</lastmod>
-            <priority>0.6</priority>
-        </url>
-    
-        <url>
-            <loc>https://flowforge.com/docs/contribute/workflows/login/</loc>
-            <lastmod>2023-01-13T11:30:27.100Z</lastmod>
-            <priority>0.6</priority>
-        </url>
-    
-        <url>
-            <loc>https://flowforge.com/docs/contribute/workflows/password-reset/</loc>
-            <lastmod>2023-01-13T11:30:27.104Z</lastmod>
-            <priority>0.6</priority>
-        </url>
-    
-        <url>
-            <loc>https://flowforge.com/docs/contribute/workflows/project-create/</loc>
-            <lastmod>2023-01-13T11:30:27.108Z</lastmod>
-            <priority>0.6</priority>
-        </url>
-    
-        <url>
-            <loc>https://flowforge.com/docs/contribute/workflows/project-states/</loc>
-            <lastmod>2023-01-13T11:30:27.112Z</lastmod>
-            <priority>0.6</priority>
-        </url>
-    
-        <url>
-            <loc>https://flowforge.com/docs/contribute/workflows/signup/</loc>
-            <lastmod>2023-01-13T11:30:27.120Z</lastmod>
-            <priority>0.6</priority>
-        </url>
-    
-        <url>
-            <loc>https://flowforge.com/docs/contribute/workflows/team-create/</loc>
-            <lastmod>2023-01-13T11:30:27.124Z</lastmod>
-            <priority>0.6</priority>
-        </url>
-    
-        <url>
-            <loc>https://flowforge.com/docs/install/</loc>
-            <lastmod>2023-01-13T11:30:27.128Z</lastmod>
-            <priority>0.6</priority>
-        </url>
-    
-        <url>
-            <loc>https://flowforge.com/docs/install/configuration/</loc>
-            <lastmod>2023-01-13T11:30:27.132Z</lastmod>
-            <priority>0.6</priority>
-        </url>
-    
-        <url>
-            <loc>https://flowforge.com/docs/install/dns-setup/</loc>
-            <lastmod>2023-01-13T11:30:27.136Z</lastmod>
-            <priority>0.6</priority>
-        </url>
-    
-        <url>
-            <loc>https://flowforge.com/docs/install/docker/</loc>
-            <lastmod>2023-01-13T11:30:27.140Z</lastmod>
-            <priority>0.6</priority>
-        </url>
-    
-        <url>
-            <loc>https://flowforge.com/docs/install/docker/stacks/</loc>
-            <lastmod>2023-01-13T11:30:27.152Z</lastmod>
-            <priority>0.6</priority>
-        </url>
-    
-        <url>
-            <loc>https://flowforge.com/docs/install/email_providers/</loc>
-            <lastmod>2023-01-13T11:30:27.160Z</lastmod>
-            <priority>0.6</priority>
-        </url>
-    
-        <url>
-            <loc>https://flowforge.com/docs/install/file-storage/</loc>
-            <lastmod>2023-01-13T11:30:27.164Z</lastmod>
-            <priority>0.6</priority>
-        </url>
-    
-        <url>
-            <loc>https://flowforge.com/docs/install/first-run/</loc>
-            <lastmod>2023-01-13T11:30:27.168Z</lastmod>
-            <priority>0.6</priority>
-        </url>
-    
-        <url>
-            <loc>https://flowforge.com/docs/install/kubernetes/</loc>
-            <lastmod>2023-01-13T11:30:27.176Z</lastmod>
-            <priority>0.6</priority>
-        </url>
-    
-        <url>
-            <loc>https://flowforge.com/docs/install/kubernetes/aws/</loc>
-            <lastmod>2023-01-13T11:30:27.180Z</lastmod>
-            <priority>0.6</priority>
-        </url>
-    
-        <url>
-            <loc>https://flowforge.com/docs/install/kubernetes/digital-ocean/</loc>
-            <lastmod>2023-01-13T11:30:27.184Z</lastmod>
-            <priority>0.6</priority>
-        </url>
-    
-        <url>
-            <loc>https://flowforge.com/docs/install/kubernetes/stacks/</loc>
-            <lastmod>2023-01-13T11:30:27.192Z</lastmod>
-            <priority>0.6</priority>
-        </url>
-    
-        <url>
-            <loc>https://flowforge.com/docs/install/local/</loc>
-            <lastmod>2023-01-13T11:30:27.196Z</lastmod>
-            <priority>0.6</priority>
-        </url>
-    
-        <url>
-            <loc>https://flowforge.com/docs/install/local/stacks/</loc>
-            <lastmod>2023-01-13T11:30:27.200Z</lastmod>
-            <priority>0.6</priority>
-        </url>
-    
-        <url>
-            <loc>https://flowforge.com/docs/upgrade/</loc>
-            <lastmod>2023-01-13T11:30:27.204Z</lastmod>
-            <priority>0.6</priority>
-        </url>
-    
-        <url>
-            <loc>https://flowforge.com/docs/upgrade/open-source-to-premium/</loc>
-            <lastmod>2023-01-13T11:30:27.208Z</lastmod>
-            <priority>0.6</priority>
-        </url>
-    
-        <url>
-            <loc>https://flowforge.com/docs/user/</loc>
-            <lastmod>2023-01-13T11:30:27.212Z</lastmod>
-            <priority>0.6</priority>
-        </url>
-    
-        <url>
-            <loc>https://flowforge.com/docs/user/changestack/</loc>
-            <lastmod>2023-01-13T11:30:27.216Z</lastmod>
-            <priority>0.6</priority>
-        </url>
-    
-        <url>
-            <loc>https://flowforge.com/docs/user/concepts/</loc>
-            <lastmod>2023-01-13T11:30:27.220Z</lastmod>
-            <priority>0.6</priority>
-        </url>
-    
-        <url>
-            <loc>https://flowforge.com/docs/user/devices/</loc>
-            <lastmod>2023-01-13T11:30:27.228Z</lastmod>
-            <priority>0.6</priority>
-        </url>
-    
-        <url>
-            <loc>https://flowforge.com/docs/user/envvar/</loc>
-            <lastmod>2023-01-13T11:30:27.232Z</lastmod>
-            <priority>0.6</priority>
-        </url>
-    
-        <url>
-            <loc>https://flowforge.com/docs/user/filenodes/</loc>
-            <lastmod>2023-01-13T11:30:27.236Z</lastmod>
-            <priority>0.6</priority>
-        </url>
-    
-        <url>
-            <loc>https://flowforge.com/docs/user/logs/</loc>
-            <lastmod>2023-01-13T11:30:27.240Z</lastmod>
-            <priority>0.6</priority>
-        </url>
-    
-        <url>
-            <loc>https://flowforge.com/docs/user/migration/</loc>
-            <lastmod>2023-01-13T11:30:27.244Z</lastmod>
-            <priority>0.6</priority>
-        </url>
-    
-        <url>
-            <loc>https://flowforge.com/docs/user/node-red-tools/</loc>
-            <lastmod>2023-01-13T11:30:27.252Z</lastmod>
-            <priority>0.6</priority>
-        </url>
-    
-        <url>
-            <loc>https://flowforge.com/docs/user/persistent-context/</loc>
-            <lastmod>2023-01-13T11:30:27.256Z</lastmod>
-            <priority>0.6</priority>
-        </url>
-    
-        <url>
-            <loc>https://flowforge.com/docs/user/project-settings/</loc>
-            <lastmod>2023-01-13T11:30:27.260Z</lastmod>
-            <priority>0.6</priority>
-        </url>
-    
-        <url>
-            <loc>https://flowforge.com/docs/user/projectnodes/</loc>
-            <lastmod>2023-01-13T11:30:27.264Z</lastmod>
-            <priority>0.6</priority>
-        </url>
-    
-        <url>
-            <loc>https://flowforge.com/docs/user/snapshots/</loc>
-            <lastmod>2023-01-13T11:30:27.268Z</lastmod>
-            <priority>0.6</priority>
-        </url>
-    
-        <url>
-            <loc>https://flowforge.com/docs/user/team/</loc>
-            <lastmod>2023-01-13T11:30:27.272Z</lastmod>
+            <lastmod>2023-01-13T20:53:26.842Z</lastmod>
             <priority>0.6</priority>
         </url>
     
