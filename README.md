@@ -14,7 +14,7 @@ and strongly encouraged.
 
 ### Company
 
- - [Values](./company)
+ - [Values](./company/values.md)
  - [Strategy](./company/strategy.md)
  - [Operations](./operations)
  - [Product](./product)
