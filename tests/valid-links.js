@@ -178,6 +178,11 @@ async function runReport (dir) {
     console.log(`${YELLOW} TESTED:` + `${linkCount}`.padStart(20))
     console.log(`${GREEN}  VALID:` + `${linkCount - errorCount}`.padStart(20))
     console.log(`${RED} ERRORS:` + `${errorCount}`.padStart(20))
+
+    if (errorCount > 1) {
+        // ensure process fails for reporting in GH Action
+        process.exitCode = 1
+    }
 }
 
 // take file directory as argument
