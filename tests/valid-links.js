@@ -5,8 +5,6 @@ const url = require("url");
 const axios = require('axios');
 const path = require('path');
 
-const file = 'src/handbook/index.md'
-
 marked.setOptions({
     mangle: false, // don't escape autolinked email address with HTML character references.
 });
