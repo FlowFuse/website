@@ -14,6 +14,7 @@ jobs:
       # Install NPM dependencies
       - name: Install Dependencies
         run: npm install
+        working-directory: '.github/scripts'
       # Run Tests
       - run: npm test
-        working-directory: 'handbook'
+        working-directory: '.github/scripts'
