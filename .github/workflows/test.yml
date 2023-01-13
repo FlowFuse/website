@@ -1,0 +1,19 @@
+name: Test Handbook Links
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+jobs:
+  test:
+    if: ${{ github.repository == 'flowforge/handbook' }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/setup-node@v2
+        with:
+          node-version: '14'
+      # Install NPM dependencies
+      - name: Install Dependencies
+        run: npm install
+      # Run Tests
+      - run: npm test
+        working-directory: 'handbook'
