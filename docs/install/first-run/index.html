@@ -22,8 +22,8 @@
     <meta name="twitter:description" content="FlowForge is an open-source, low-code platform for integration and automation. Helping you run Node-RED at production scales in a secure, scalable and team-based environment." />
     <meta name="twitter:site" content="@flowforgeinc" />
     <meta name="twitter:image" content="/images/og-social-tile.jpg" />
-    <meta property="og:url" content="https://flowforge.com/node-red/" />
-    <meta property="og:title" content="What is Node-RED?" />
+    <meta property="og:url" content="https://flowforge.com/docs/install/first-run/" />
+    <meta property="og:title" content="" />
     <meta property="og:description" content="FlowForge is an open-source, low-code platform for integration and automation. Helping you run Node-RED at production scales in a secure, scalable and team-based environment." />
     <meta property="og:image" content="/images/og-social-tile.jpg" />
     
@@ -78,175 +78,150 @@
                 <!--Hero Content-->
 <div class="w-full page">
     
-        
-        <div class="hero hero-lg  container m-auto text-center flex flex-wrap mt-6 py-6 px-12 mb-32 md:flex-nowrap md:max-w-screen-lg md:mt-12">
-            <div class="text-left md:pr-20">
-                <h1>What is Node-RED?</h1>
-                
-                
-                <div><p>Node-RED is a programming tool for wiring together hardware devices, APIs and online services in new and interesting ways.</p> <p>It’s browser-based editor makes it easy to wire together flows using the extensive collection of nodes available, and deploy to its runtime with a single-click.</p> <p>FlowForge makes it easy to run Node-RED in production, on your own hardware or in the cloud.</p></div>
-                
-            </div>
-            
-            <img class="hidden md:block" src="/images/node-red-hexagon.png"/>
-            
-                    
-        </div>
-    
     <div class="content">
-        
-<div class="ff-divider">
-    <svg xmlns="http://www.w3.org/2000/svg" width="1440" height="461" fill="none" viewBox="0 0 1440 461" preserveAspectRatio="none">
-    <path fill="url(#paint0_linear_190_762)" fill-rule="evenodd" d="M733 218.595C263 218.595 0 0 0 0v374.941s324.5 47.903 709.5-16.519S1440 154 1440 154v-.933s-237 65.528-707 65.528z" clip-rule="evenodd"/>
-    <path fill="#BC3838" d="M1440 460.5V153s-139 52.5-329 110.5S762 349 762 349s122-20.5 360 26 318 85.5 318 85.5z"/>
-    <defs>
-        <linearGradient id="paint0_linear_190_762" x1="778" x2="835.049" y1="84.537" y2="594.754" gradientUnits="userSpaceOnUse">
-        <stop stop-color="#374151"/>
-        <stop offset=".723" stop-color="#4B5563"/>
-        </linearGradient>
-    </defs>
-    </svg>
-</div>
-
-<!-- Secondary Content -->
-<div class="w-full ff-bg-light px-6 pt-12 pb-48 md:pt-32 md:px-0">
-    <div class="container m-auto text-center max-w-4xl">
-        <div class="m-auto mt-16 w-full text-center">
-            <h1>4,000+ Integrations Available</h1>
-            <h5>
-                <a class="flex justify-center gap-1" href="https://flows.nodered.org/search?type=node" target="_blank">
-                    See full list of integrations
-                    <i class="w-4"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-full">
-  <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
-</svg>
-</i>
-                </a>
-            </h5>
+        <div class="nohero w-full pt-12 ff-bg-light">
+    <div class="ff-prose container m-auto text-left max-w-4xl pb-24" data-handbook>
+    <!-- Breadcrumbs -->
+    <div class="w-full mx-auto ff-bg-light">
+        <div class="font-medium border-b pb-1">
+            
+            v1.2.1
+            
+            /<a class="mx-2" href="/docs">docs</a>/<a class="mx-2" href="/docs/install">install</a>/<a class="mx-2" href="/docs/install/first-run">first-run</a>
         </div>
-        <div class="sm:mt-10 md:mt-16 w-full max-w-4xl text-center flex flex-wrap gap-2 justify-around">
-            <div class="w-full px-3 mt-4 sm:w-72 md:mt-0 css-full">
-                <img class="w-40 m-auto" src="/images/pictograms/community_red.png"/>
-                <h5 class="flex justify-center mb-2">SOCIAL & COMMS</h5>
-                <label class="font-light">Twitter, Twilio, Telegram, Slack, WhatsApp, Discord, etc.</label>
+    </div>
+    <div class="w-full mx-auto ff-bg-light flex flex-col md:flex-row">
+        <!-- Main Content -->
+        <div class="flex-grow order-last md:order-first">
+            <div class="mt-6 mb-4 prose prose-blue main-content">
+                <h1 id="first-run-setup" tabindex="-1"><a class="header-anchor" href="#first-run-setup">#&nbsp;</a> First-run Setup</h1>
+<p>Following a successful install, you will be able to access the platform to go
+through the initial setup.</p>
+<h2 id="1.-start-setup" tabindex="-1"><a class="header-anchor" href="#1.-start-setup">#&nbsp;</a> 1. Start setup</h2>
+<h3 id="--localfs" tabindex="-1"><a class="header-anchor" href="#--localfs">#&nbsp;</a> - LocalFS</h3>
+<p>Open FlowForge in your browser <a href="http://localhost:3000">http://localhost:3000</a>.</p>
+<h3 id="--docker-or-kubernetes" tabindex="-1"><a class="header-anchor" href="#--docker-or-kubernetes">#&nbsp;</a> - Docker or Kubernetes</h3>
+<p>Open FlowForge in your browser <a href="http://forge.example.com">http://forge.example.com</a> (Change <code>.example.com</code> to match the domain you set up in DNS)</p>
+<p>Click the <strong>START SETUP</strong> button</p>
+<img src="../images/setup-01.png"" width=500 />
+<h2 id="2.-create-an-administrator" tabindex="-1"><a class="header-anchor" href="#2.-create-an-administrator">#&nbsp;</a> 2. Create an Administrator</h2>
+<p>The first user you create will be an Administrator. They will have full access
+to the platform, be able to set platform-wide configuration and manage users and teams.</p>
+<p><strong>Note</strong>: with the 0.3 release, it is possible to reset your password <em>if</em> you have email
+configured and enabled the <code>user:reset-password</code> option in Admin settings. Otherwise,
+make sure you make a note of the password you set. We will provide tools to manage passwords
+outside of the platform in a future release.</p>
+<img src="../images/setup-02-user.png"" width=500 />
+<h2 id="3.-upload-a-license" tabindex="-1"><a class="header-anchor" href="#3.-upload-a-license">#&nbsp;</a> 3. Upload a license</h2>
+<p>FlowForge Community Edition is Open Source and can be used freely without a license.</p>
+<p>If you have a FlowForge Enterprise Edition license you can upload it here.</p>
+<img src="../images/setup-03-license.png"" width=500 />
+<h2 id="4.-platform-options" tabindex="-1"><a class="header-anchor" href="#4.-platform-options">#&nbsp;</a> 4. Platform Options</h2>
+<p>There are some runtime configuration options that can be configured at this stage.</p>
+<img src="../images/setup-04-options.png"" width=500 />
+<h3 id="anonymous-usage-statistics" tabindex="-1"><a class="header-anchor" href="#anonymous-usage-statistics">#&nbsp;</a> Anonymous usage statistics</h3>
+<p>To help us understand how the project is being used, we gather high level
+anonymous usage information from running instances.</p>
+<p>The Administrator can opt-out of this feature.</p>
+<h2 id="5.-finish-setup" tabindex="-1"><a class="header-anchor" href="#5.-finish-setup">#&nbsp;</a> 5. Finish setup</h2>
+<p>Once you complete the setup, you will be able to log in as the Administrator
+user you created and start using the platform. You can setup your Team and
+create your first Node-RED project.</p>
+<p>More information about using the FlowForge platform is available in the
+main <a href="../../user/"">user guide</a>.</p>
+
             </div>
-            <div class="w-full px-3 mt-4 sm:w-72 md:mt-0">
-                <img class="w-40 m-auto" src="/images/pictograms/edge_red.png"/>
-                <h5 class="flex justify-center mb-2">HARDWARE</h5>
-                <label class="font-light">Servers, PLCs, Network Switches & Routers, Edge Devices, etc.</label>
-            </div>
-            <div class="w-full px-3 mt-4 sm:w-72 md:mt-0">
-                <img class="w-40 m-auto" src="/images/pictograms/candor_red.png"/>
-                <h5 class="flex justify-center mb-2">PROTOCOLS</h5>
-                <label class="font-light">WebSockets, HTTP, MQTT, AMQP, SNMP, RSS, FTP, etc.</label>
-            </div>
-            <div class="w-full px-3 mt-4 sm:w-72 lg:mt-10">
-                <img class="w-40 m-auto" src="/images/pictograms/cloud_red.png"/>
-                <h5 class="flex justify-center mb-2">CLOUD</h5>
-                <label class="font-light">AWS, Azure, S3, Google Cloud Platform, IBM Cloud, etc.</label>
-            </div>
-            <div class="w-full px-3 mt-4 sm:w-72 lg:mt-10">
-                <img class="w-40 m-auto" src="/images/pictograms/scalable_red.png"/>
-                <h5 class="flex justify-center mb-2">A.I.</h5>
-                <label class="font-light">TensorFlow, IBM Watson, Azure Cognitive Services, etc.</label>
-            </div>
-            <div class="w-full px-3 mt-4 sm:w-72 lg:mt-10">
-                <img class="w-40 m-auto" src="/images/pictograms/storage_red.png"/>
-                <h5 class="flex justify-center mb-2">STORAGE</h5>
-                <label class="font-light">MongoDB, MySQL, PostgreSQL, SQL Server, Redis, DB2, etc.</label>
-            </div>
+        </div>
+        <!-- on this page -->
+        <div class="w-full md:w-64 md:ml-8 mt-4 md:mt-6 px-2">
+            <h3 class="font-medium border-b pb-1 mb-4">On this page</h3>
+            <ul id="toc" class="text-sm border-b mb-4"></ul>
+            <div class="text-sm pb-1 text-right mb-4"><a href="https://github.com/flowforge/flowforge/edit/main/docs/install/first-run.md">Edit this page</a></div>
+            <div class="text-xs pb-1 text-right mb-4 italic">Updated: 2023-01-12 10:49:38 +0000</div>
         </div>
     </div>
 </div>
+<script>
+    // Generate "On this page"
+    let toc = document.getElementById("toc")
 
-<div class="ff-divider ff-divider--shallow">
-    <svg xmlns="http://www.w3.org/2000/svg" width="1442" height="172" fill="none" viewBox="0 0 1442 172" preserveAspectRatio="none">
-        <path fill="#BC3838" d="M0 172h414.325c147.535-40.967 259.941-58.893 262.567-59.31-2.726.428-124.054 18.996-359.155-27.05C79.934 39.062 0 0 0 0v172z"/>
-        <path fill="#1F2937" d="M726.395 105.629C484.848 138.752 242.394 172 0 172h1442V40c-237.01 0-475.86 32.753-715.605 65.629z"/>
-    </svg>
+    let currentTag = "";
+    let currentToc = toc;
+    let currentItem;
+
+    let activeTier = 0 // which index to read from the depth
+    let depth = [1, 1, 1, 1] // tracks the active number to render at each depth
+
+    document.querySelectorAll(".main-content > h2, .main-content > h3, .main-content > h4").forEach(function(n) {
+        // which level of "H_" are we working with, and which one did we see most recently
+        const level = parseInt(n.nodeName[1])
+        const prevLevel = currentTag.length > 1 ? parseInt(currentTag[1]) : 0
+
+        // add numbering to our headers for easier navigation
+        if (prevLevel === 0) {
+            activeTier = 0
+        } else if (prevLevel > level) {
+            activeTier -= (prevLevel - level)
+            depth[activeTier] += 1
+        } else if (prevLevel < level) {
+            activeTier += 1
+            depth[activeTier] = 1
+        } else {
+            depth[activeTier] += 1
+        }
+        const hText = n.childNodes[n.childNodes.length - 1] // get the text only from our header
+        let number = ''
+        for (var nH = 0; nH <= activeTier; nH++) {
+            if (nH > 0) {
+                number += '.'
+            }
+            number += `${depth[nH]}`
+        }
+        // style top level header as '1. Header'
+        if (activeTier === 0) {
+            hText.textContent = `${number}. ${hText.textContent}`
+        } else {
+            // then style children as '1.1 - Header'
+            hText.textContent = `${number} - ${hText.textContent}`
+        }
+
+    // Render Table of Contents
+        if (prevLevel > 0 && level - prevLevel < 0) {
+            // we are moving left with our indent
+            currentToc = toc;
+        } else if (prevLevel > 0 && level - prevLevel > 0) {
+            // we are creating a new, nested `<ul>`
+            currentToc = document.createElement("ul");
+            currentToc.classList.add("ml-4")
+            currentToc.classList.add("mt-2")
+            currentToc.classList.add("mb-4")
+            currentItem.append(currentToc);
+        }
+        currentTag = n.nodeName;
+        currentItem = document.createElement("li");
+        currentItem.classList.add("mb-2")
+        let currentLink = document.createElement("a");
+        currentItem.append(currentLink);
+        let link = n.getElementsByTagName('a')
+        currentLink.href = link[0].href;
+        currentLink.textContent = n.textContent.replace(/#\s+/g,"");
+        currentToc.append(currentItem);
+    })
+
+    // All external links open in new page
+    document.querySelectorAll("[data-handbook] a").forEach((link) => {
+        try {
+            if (!link.target && window.location.host !== new URL(link.href).host) {
+                link.target = "_blank";
+            }
+        } catch {
+            // Swallow errors
+        }
+    })
+</script>
+<script async src="https://unpkg.com/mermaid/dist/mermaid.min.js">mermaid.initialize({ startOnLoad: true });</script>
+
 </div>
-
-<div class="w-full ff-bg-dark px-6 pt-12 pb-48 md:pt-32 md:px-0">
-    <div class="container m-auto text-center max-w-4xl">
-        <div class="m-auto mt-0 mb-16 w-full text-center">
-            <h1>What FlowForge brings to Node-RED</h1>
-        </div>
-        <div class="flex flex-col-reverse justify-between sm:flex-row gap-3 sm:gap-12">
-            <div class="text-center sm:text-left pt-4">
-                <h3>Easy Instance Management</h3>
-                <p>FlowForge's intuitive UI lets you manage your Node-RED instances all in one place.</p>
-                <p>Spin up instances of Node-RED in seconds, monitor project health and tear down or suspend projects as required.<p>
-            </div>
-            <img class="w-96" src="/images/screen-pseudo-overview--dark.png">
-        </div>
-        <div class="my-8 sm:my-16 w-full">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 982 70">
-  <path stroke="#374151" stroke-width="4" d="M0 35h982m-773 0c115 0 88-27 188-27m99 27c115 0 88-27 188-27"/>
-  <rect width="12" height="12" x="391" y="2" fill="#1F2937" stroke="#374151" stroke-width="4" rx="2"/>
-  <rect width="12" height="12" x="678" y="2" fill="#1F2937" stroke="#374151" stroke-width="4" rx="2"/>
-  <path stroke="#374151" stroke-width="4" d="M377 35c115 0 88 27 188 27"/>
-  <rect width="12" height="12" x="2" y="-2" fill="#1F2937" stroke="#374151" stroke-width="4" rx="2" transform="matrix(1 0 0 -1 557 66)"/>
-</svg>
-
-        </div>
-        <div class="flex flex-col-reverse sm:flex-row-reverse justify-between gap-3 sm:gap-12">
-            <div class="text-center sm:text-left pt-4">
-                <h3>Device Deployment at Scale</h3>
-                <p>One-click deploy to thousands of devices.</p>
-                <p>FlowForge provides a clear picture of your device health, with project snapshots and rollbacks enabling seamless version control.</p>
-            </div>
-            <img class="w-96" src="/images/screen-pseudo-devices--dark.png">
-        </div>
-        <div class="my-8 sm:my-16">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 982 70">
-  <path stroke="#374151" stroke-width="4" d="M982 35H0m773 0c-115 0-88 27-188 27m-99-27c-115 0-88 27-188 27"/>
-  <rect width="12" height="12" x="591" y="68" fill="#1F2937" stroke="#374151" stroke-width="4" rx="2" transform="rotate(180 591 68)"/>
-  <rect width="12" height="12" x="304" y="68" fill="#1F2937" stroke="#374151" stroke-width="4" rx="2" transform="rotate(180 304 68)"/>
-  <path stroke="#374151" stroke-width="4" d="M605 35C490 35 517 8 417 8"/>
-  <rect width="12" height="12" x="-2" y="2" fill="#1F2937" stroke="#374151" stroke-width="4" rx="2" transform="matrix(-1 0 0 1 421 0)"/>
-</svg>
-
-        </div>
-        <div class="flex flex-col-reverse sm:flex-row justify-between gap-3 sm:gap-12">
-            <div class="text-center sm:text-left pt-4">
-                <h3>Reduced Operational Overheads</h3>
-                <p>Backed by consistent security across the platform, FlowForge makes hosting, deployment and management easy.</p>
-                <p>FlowForge provides centralised audit logging too, so you can see all activity in one place - bringing you peace of mind and compliance in your production environment</p>
-            </div>
-            <img class="w-96" src="/images/screen-pseudo-audit--dark.png">
-        </div>
-    </div>
-</div>
-
-<div class="ff-divider ff-divider--shallow">
-    <svg xmlns="http://www.w3.org/2000/svg" width="1442" height="144" fill="none" viewBox="0 0 1442 144" preserveAspectRatio="none">
-    <path fill="#374151" d="M0 0c498.518 0 866 144 1442 144H0V0z"/>
-    </svg>
-</div>
-
-<!-- Deployment Options -->
-<div class="w-full ff-bg-mid px-6 pt-0 pb-32 md:pt-0 md:px-0">
-    <div class="container m-auto text-center max-w-4xl">
-        <div class="m-auto pt-16 w-full text-center">
-            <h1>Start using FlowForge</h1>
-            <span class="text-white font-light">For a full feature comparison, please visit our <a href="/pricing">Pricing</a> page.</span>
-        </div>
-        <div class="sm:mt-10 md:mt-10 w-full max-w-4xl text-center flex flex-wrap gap-2 justify-around">
-            <div class="w-full px-3 mt-4 sm:w-72 md:mt-0 css-full">
-                <img class="w-40 m-auto mb-4" src="/images/pictograms/opensource.png"/>
-                <h5 class="flex justify-center">Open Source</h5>
-                <label class="text-white mt-2 block">Try for free with deployment options including Docker and Kubernetes.</label>
-                <a class="mt-4 ff-btn ff-btn--secondary inline-block" href="./docs/install">Install</a>
-            </div>
-            <div class="w-full px-3 mt-4 sm:w-72 md:mt-0">
-                <img class="w-40 m-auto mb-4" src="/images/pictograms/enterprise.png"/>
-                <h5 class="flex justify-center">FlowForge Cloud</h5>
-                <label class="text-white mt-2 block">Get started in less than a minute, fully managed, fully secure.</label>
-                <a class="mt-4 ff-btn ff-btn--primary inline-block" href="https://app.flowforge.com/account/create">Join Now</a>
-            </div>
-        </div>
-    </div>
-</div>
-
 
     </div>
 </div>
