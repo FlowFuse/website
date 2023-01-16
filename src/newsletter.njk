@@ -1,0 +1,13 @@
+---
+layout: nohero
+sitemapPriority: 0.9
+---
+
+<h1>Newsletters</h1>
+
+<ol>
+{% set newsletters = collections.newsletter %}
+{% for nl in newsletters | reverse %}
+  <li><a href="{{ nl.url }}">{{ nl.data.title }}</a></li>
+{% endfor %}
+</ol>
