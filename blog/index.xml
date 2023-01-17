@@ -31,33 +31,6 @@ That also includes if you have any feedback or feature requests.&lt;/p&gt;
     </entry>
     
     <entry>
-        <id>https://flowforge.com/blog/2023/01/community-news-12/</id>
-        <title>Community News December 2022</title>
-        <summary>News from the FlowForge and Node-RED communities</summary>
-        <updated>2023-01-12T00:00:00Z</updated>
-        <link href="https://flowforge.com/blog/2023/01/community-news-12/"/>
-        <author><name>Rob Marcer</name></author>
-        <content type="html">&lt;p&gt;Welcome to the FlowForge newsletter for December 2022, a monthly roundup of what’s been happening with both FlowForge and the wider Node-RED community. 2022 was a really exciting year for the development of both Node-RED and FlowForge. Node-RED released version 3, another major milestone for the project. FlowForge hit version 1, leaving the beta development stage. We are excited to see what the community can achieve in 2023!&lt;/p&gt;
-&lt;!--more--&gt;
-&lt;p&gt;If you&#39;ve got something that you think we should share on our newsletters please &lt;a href=&quot;mailto:contact@flowforge.com&quot;&gt;get it touch&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://github.com/node-red/node-red/milestone/19&quot;&gt;&lt;strong&gt;Node-RED Nears 3.1 Release&lt;/strong&gt;&lt;/a&gt;
-The release of Node-RED 3.1 is expected very soon. 3.1 includes lots of great new features such as support for &lt;a href=&quot;https://github.com/node-red/node-red/pull/3938&quot;&gt;locking flows in the editor&lt;/a&gt; and &lt;a href=&quot;https://github.com/node-red/node-red/pull/3930&quot;&gt;improving the user experience around hiding flows&lt;/a&gt;. As an open source project the development of Node-RED is entirely dependent on individuals and companies giving their time to work towards each new release. If you&#39;d like to know how you can get involved you can read more on the &lt;a href=&quot;https://nodered.org/about/contribute/&quot;&gt;Node-RED web site&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;http://flowforge.com/blog/2022/12/flowforge-1-2-0-released/&quot;&gt;&lt;strong&gt;FlowForge 1.2 Released&lt;/strong&gt;&lt;/a&gt;&lt;br /&gt;
-Version 1.2 of FlowForge was released on 23rd December. Our last release of the year included some great new features such as &lt;a href=&quot;https://flowforge.com/docs/cloud/#single-sign-on&quot;&gt;Single Sign-On&lt;/a&gt; to make it easier for your team to access your projects and &lt;a href=&quot;https://flowforge.com/docs/cloud/#node-red-context&quot;&gt;Persistent Context&lt;/a&gt; which allows you to retain context values even when restarting projects. We&#39;re now working towards our first release of 2023 which is due on 19th January. You can see what we are planning to deliver in that release and beyond on &lt;a href=&quot;https://github.com/orgs/flowforge/projects/5&quot;&gt;FlowForge&#39;s project board&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;If you’d like to learn more about what else was included in 1.2 you can do so on our &lt;a href=&quot;http://flowforge.com/blog/2022/12/flowforge-1-2-0-released/&quot;&gt;blog post&lt;/a&gt;, &lt;a href=&quot;https://github.com/flowforge/flowforge/releases/tag/v1.2.0&quot;&gt;GitHub release page&lt;/a&gt;, and &lt;a href=&quot;https://www.youtube.com/watch?v=u7TjqUAub1g&quot;&gt;Youtube channel&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://iot-analytics.com/5-iot-sensor-technologies/&quot;&gt;&lt;strong&gt;5 IoT Sensor Technologies to Watch&lt;/strong&gt;&lt;/a&gt;&lt;br /&gt;
-According to this detailed article from iot-analytics.com, on average, four new sensors are connected with every new IoT device that comes online. With approximately 14 billion current IoT connections, this means more than 50 billion connected sensors have been deployed. IoT sensor technology plays a crucial role in the IoT tech stack because these sensors collect data from the physical world and convert it into digital signals. We think &lt;a href=&quot;https://iot-analytics.com/5-iot-sensor-technologies/&quot;&gt;their article&lt;/a&gt; is worth a read.&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://flows.nodered.org/node/node-red-contrib-string&quot;&gt;&lt;strong&gt;Custom Node Spotlight - node-red-contrib-string&lt;/strong&gt;&lt;/a&gt;
-String manipulation is the bread and butter of so many programming tasks. Node-RED has a lot of tools to help you edit your strings including support for &lt;a href=&quot;https://jsonata.org/&quot;&gt;JSONata&lt;/a&gt; and using the trusty function node. For those of us who prefer to keep things &#39;no-code&#39; &lt;a href=&quot;https://flows.nodered.org/node/node-red-contrib-string&quot;&gt;node-red-contrib-string&lt;/a&gt; allows you to stack string manipulations together quickly and easily. It has a huge library of ready to use functions.&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://flowforge.com/team/&quot;&gt;&lt;strong&gt;FlowForge Team News&lt;/strong&gt;&lt;/a&gt;&lt;br /&gt;
-We’d like to welcome two new members to the FlowForge team. &lt;a href=&quot;https://twitter.com/ianskerrett&quot;&gt;Ian Skerrett&lt;/a&gt; has joined as our Head of Marketing and &lt;a href=&quot;https://www.linkedin.com/in/tracyanthonyfernandez/&quot;&gt;Tracy Anthony&lt;/a&gt; has joined as our HR Manager. FlowForge continues to grow and we are becoming a truly global team.&lt;/p&gt;
-&lt;p&gt;Would you like to work for FlowForge? We are currently recruiting &lt;a href=&quot;https://boards.greenhouse.io/flowforge/jobs/4463977004&quot;&gt;NodeJS Developers&lt;/a&gt; to join our team. You can view any of the roles we currently have open and apply on our &lt;a href=&quot;https://boards.greenhouse.io/flowforge&quot;&gt;Jobs page&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://app.flowforge.com/account/create?code=FF12&quot;&gt;&lt;strong&gt;Try FlowForge for Free&lt;/strong&gt;&lt;/a&gt;&lt;br /&gt;
-As a thank you for reading our newsletters we’d like to offer you a free, small project for one month on our managed FlowForge platform when you create a new team. To get this discount please follow &lt;a href=&quot;https://app.flowforge.com/account/create?code=FF12&quot;&gt;this link&lt;/a&gt; or use the code FF12 when on the payment page after creating a new team. As an open source project you can also use &lt;a href=&quot;https://flowforge.com/docs/install/&quot;&gt;FlowForge&lt;/a&gt; for free, forever.&lt;/p&gt;
-</content>
-    </entry>
-    
-    <entry>
         <id>https://flowforge.com/blog/2022/12/flowforge-1-2-0-released/</id>
         <title>FlowForge 1.2 is now available with single sign on and persistent context storage</title>
         <summary>Our final release for 2022 with some great new features to try out</summary>
@@ -483,33 +456,6 @@ That also includes if you have any feedback or feature requests.&lt;/p&gt;
     </entry>
     
     <entry>
-        <id>https://flowforge.com/blog/2022/12/community-news-11/</id>
-        <title>Community News November 2022</title>
-        <summary>News from the FlowForge and Node-RED communities</summary>
-        <updated>2022-12-02T00:00:00Z</updated>
-        <link href="https://flowforge.com/blog/2022/12/community-news-11/"/>
-        <author><name>Rob Marcer</name></author>
-        <content type="html">&lt;p&gt;Welcome to the FlowForge newsletter for November 2022, a monthly roundup of what’s been happening with both FlowForge and the wider Node-RED community.&lt;/p&gt;
-&lt;!--more--&gt;
-&lt;p&gt;If you&#39;ve got something that you think we should share on our newsletters please &lt;a href=&quot;mailto:contact@flowforge.com&quot;&gt;get it touch&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://github.com/node-red/node-red/milestone/19&quot;&gt;&lt;strong&gt;Node-RED Nears 3.1 Release&lt;/strong&gt;&lt;/a&gt;
-As we mentioned last month, the release of Node-RED 3.1 is expected very soon. 3.1 includes lots of great new features such as support for &lt;a href=&quot;https://github.com/node-red/node-red/pull/3938&quot;&gt;locking flows in the editor&lt;/a&gt; and &lt;a href=&quot;https://github.com/node-red/node-red/pull/3930&quot;&gt;improving the user experience around hiding flows&lt;/a&gt;. As an open source project the development of Node-RED is entirely dependent on individuals and companies giving their time to work towards each new release. If you&#39;d like to know how you can get involved you can read more on the &lt;a href=&quot;https://nodered.org/about/contribute/&quot;&gt;Node-RED web site&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;http://flowforge.com/blog/2022/11/flowforge-1-1-released/&quot;&gt;&lt;strong&gt;FlowForge 1.1 Released&lt;/strong&gt;&lt;/a&gt;&lt;br /&gt;
-Version 1.1 of FlowForge was released on 24th November. Our latest release included some great new features such as &lt;a href=&quot;https://github.com/flowforge/flowforge/issues/998&quot;&gt;Persistent file storage&lt;/a&gt;, the ability to &lt;a href=&quot;https://flowforge.com/docs/user/node-red-tools/&quot;&gt;import Node-RED snapshots&lt;/a&gt; from outside of FlowForge and a much improved interface to &lt;a href=&quot;https://github.com/flowforge/flowforge/issues/1046&quot;&gt;deploy projects to your devices&lt;/a&gt;. We&#39;re now working towards our final release of 2022 which is due just before Christmas. You can see what we are planning to deliver in that release and beyond on &lt;a href=&quot;https://github.com/orgs/flowforge/projects/5&quot;&gt;FlowForge&#39;s project board&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;If you’d like to learn more about what else was included in 1.1 you can do so on our &lt;a href=&quot;http://flowforge.com/blog/2022/11/flowforge-1-1-released&quot;&gt;blog post&lt;/a&gt;, &lt;a href=&quot;https://github.com/flowforge/flowforge/releases/tag/v1.1.0&quot;&gt;GitHub release page&lt;/a&gt;, and &lt;a href=&quot;https://www.youtube.com/watch?v=134iljE_urI&quot;&gt;Youtube channel&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://github.com/playfultechnology/node-redscape&quot;&gt;&lt;strong&gt;Node-Redscape - 100% Free, Open-Source Escape Room Control Software&lt;/strong&gt;&lt;/a&gt;&lt;br /&gt;
-As we&#39;ll come to later in this newsletter, FlowForge visited an Escape Room in Winchester as part of our team meet-up. Co-incidentally, a great Node-RED project came up a few days after our visit which we thought was worth sharing. In their own words &lt;a href=&quot;https://github.com/playfultechnology/node-redscape&quot;&gt;Node-Redscape&lt;/a&gt; &#39;provides a set of templates, flows, and examples that turn Node-RED into a complete Escape Room automation system&#39;. Very topical for us and also seems like a great project. You can learn more about the project on &lt;a href=&quot;https://www.youtube.com/watch?v=f9yYDxqK_2E&quot;&gt;Youtube&lt;/a&gt; as well as on &lt;a href=&quot;https://github.com/playfultechnology/node-redscape&quot;&gt;Github&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;FlowForge team meetup&lt;/strong&gt;
-FlowForge is a fully remote team, we currently have a strong skew towards western Europe but we are in the process of adding team members in each of the continents. On that point, any great Product Managers who live in Antarctica are encouraged to &lt;a href=&quot;https://boards.greenhouse.io/flowforge/jobs/4717778004&quot;&gt;apply for a job with us&lt;/a&gt;! Remote work is great but it&#39;s also valuable to get everyone together in the real world from time to time. FlowForge had such a meet up last month in Winchester, UK. We came from near and far and took the opportunity to have productive round-table discussions about some features we are working towards in 1.2 and beyond.  We also dropped into &lt;a href=&quot;https://cluecapers.co.uk/&quot;&gt;Clue Capers&lt;/a&gt;, a great Escape Room in the center of Winchester who provided the photo below to mark the occasion.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://flowforge.com/blog/2022/12/images/clue-capers.jpg&quot; alt=&quot;The FlowForge team pictured during our visit to Clue Capers&quot; /&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://flowforge.com/team/&quot;&gt;&lt;strong&gt;FlowForge Team News&lt;/strong&gt;&lt;/a&gt;&lt;br /&gt;
-We are currently recruiting a &lt;a href=&quot;https://boards.greenhouse.io/flowforge/jobs/4717778004&quot;&gt;Product Manager&lt;/a&gt;, and a &lt;a href=&quot;https://boards.greenhouse.io/flowforge/jobs/4700809004&quot;&gt;Senior Community Manager&lt;/a&gt;. You can view any of the roles we currently have open and apply on our &lt;a href=&quot;https://boards.greenhouse.io/flowforge&quot;&gt;Jobs page&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://app.flowforge.com/account/create?code=RELEASE11&quot;&gt;&lt;strong&gt;Try FlowForge for Free&lt;/strong&gt;&lt;/a&gt;&lt;br /&gt;
-As a thank you for reading our newsletters we’d like to offer you a free, small project for one month on our managed FlowForge platform when you create a new team. To get this discount please follow &lt;a href=&quot;https://app.flowforge.com/account/create?code=RELEASE11&quot;&gt;this link&lt;/a&gt; or use the code RELEASE11 when on the payment page after creating a new team. As an open source project you can also use &lt;a href=&quot;https://flowforge.com/docs/install/&quot;&gt;FlowForge&lt;/a&gt; for free, forever.&lt;/p&gt;
-</content>
-    </entry>
-    
-    <entry>
         <id>https://flowforge.com/blog/2022/11/scaling-node-red-with-diy-tooling/</id>
         <title>Challenges scaling Node-RED with DIY tooling</title>
         <summary>Node-RED is very easy to get up and running for your first instance but what about your 100th?</summary>
@@ -687,33 +633,6 @@ guide for &lt;a href=&quot;https://flowforge.com/docs/install/upgrading/&quot;&g
 That also includes if you have any feedback or feature requests.&lt;/p&gt;
 &lt;p&gt;Chat with us on the &lt;code&gt;#flowforge&lt;/code&gt; channel on the &lt;a href=&quot;https://nodered.org/slack&quot;&gt;Node-RED Slack workspace&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;You can also raise a support ticket by emailing &lt;a href=&quot;mailto:support@flowforge.com&quot;&gt;support@flowforge.com&lt;/a&gt;&lt;/p&gt;
-</content>
-    </entry>
-    
-    <entry>
-        <id>https://flowforge.com/blog/2022/11/community-news-10/</id>
-        <title>Community News October 2022</title>
-        <summary>News from the FlowForge and Node-RED communities</summary>
-        <updated>2022-11-04T00:00:00Z</updated>
-        <link href="https://flowforge.com/blog/2022/11/community-news-10/"/>
-        <author><name>Rob Marcer</name></author>
-        <content type="html">&lt;p&gt;Welcome to the FlowForge newsletter for October 2022, a monthly roundup of what’s happening with both FlowForge and the wider Node-RED community.&lt;/p&gt;
-&lt;!--more--&gt;
-&lt;p&gt;If you&#39;ve got something that you&#39;d like us to share please email &lt;a href=&quot;mailto:contact@flowforge.com&quot;&gt;contact@flowforge.com&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;http://flowforge.com/blog/2022/10/flowforge-1-released/&quot;&gt;&lt;strong&gt;FlowForge 1.0 Released&lt;/strong&gt;&lt;/a&gt;&lt;br /&gt;
-Version 1.0 was released on 27th October. Our latest release represents our vision of the base set of features needed for you to get great value from using FlowForge in a production environment. That&#39;s not to say we are done, we will continue to add features, improve our interfaces and fix bugs with the same enthusiasm as we&#39;ve worked towards 1.0. We&#39;d like to hear your feedback on what we will be including in &lt;a href=&quot;https://github.com/orgs/flowforge/projects/5&quot;&gt;1.1 and beyond&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;If you’d like to learn more about what else was included in 1.0 you can do so on our &lt;a href=&quot;http://flowforge.com/blog/2022/10/flowforge-1-released&quot;&gt;blog post&lt;/a&gt;, on our &lt;a href=&quot;https://github.com/flowforge/flowforge/releases/tag/v1.0.0&quot;&gt;GitHub release page&lt;/a&gt; and on our &lt;a href=&quot;https://www.youtube.com/watch?v=5TLT7CQR7iI&quot;&gt;Youtube channel&lt;/a&gt;. We’d also love for more of you to get involved in the development of FlowForge, &lt;a href=&quot;https://github.com/flowforge/flowforge/blob/main/CONTRIBUTING.md&quot;&gt;contributions to the code&lt;/a&gt; and &lt;a href=&quot;https://github.com/flowforge/flowforge/issues&quot;&gt;bug reports&lt;/a&gt; are really appreciated.&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://github.com/node-red/node-red/milestone/19&quot;&gt;&lt;strong&gt;Node-RED Nears 3.1 Release&lt;/strong&gt;&lt;/a&gt;
-The next release of Node-RED has some great new features including support for &lt;a href=&quot;https://github.com/node-red/node-red/pull/3938&quot;&gt;locking flows in the editor&lt;/a&gt; and &lt;a href=&quot;https://github.com/node-red/node-red/pull/3930&quot;&gt;improving the user experience around hiding flows&lt;/a&gt;. We&#39;d expect the first 3.1 beta to be available in November with a full release following shortly afterwards.&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://flowforge.com/blog/2022/10/seed-round-bring-node-red-to-enterprise/&quot;&gt;&lt;strong&gt;FlowForge raises $7.25M to bring Node-RED to the Enterprise&lt;/strong&gt;&lt;/a&gt;&lt;br /&gt;
-Earlier this week, we announced a $7.25M seed round led by &lt;a href=&quot;https://www.cotacapital.com/knowledgecapital/flowforge-closes-the-gap-between-it-and-ot&quot;&gt;Cota Capital&lt;/a&gt;, joined by Westwave Capital, Uncorrelated Ventures, and Open Core Ventures. This brings a huge amount of extensive knowledge and experience in IoT, open source, enterprise-ready software solutions. You can read more about what this investment means for FlowForge in this &lt;a href=&quot;https://techcrunch.com/2022/11/03/flowforge-nabs-7-2m-to-help-companies-integrate-iot-using-node-red&quot;&gt;TechCrunch article&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://stevesnoderedguide.com/node-red-dashboard&quot;&gt;&lt;strong&gt;Node-Red Dashboard - Beginners Guide&lt;/strong&gt;&lt;/a&gt;&lt;br /&gt;
-It&#39;s great to see members of the Node-RED community taking their personal time to help us all build better projects. This write up takes you through the basics of creating your first Dashboard through to more advanced techniques to help your interfaces look professional and provide great user experiences.&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://flowforge.com/team/&quot;&gt;&lt;strong&gt;FlowForge Team News&lt;/strong&gt;&lt;/a&gt;&lt;br /&gt;
-We are currently recruiting &lt;a href=&quot;https://boards.greenhouse.io/flowforge/jobs/4463977004&quot;&gt;NodeJS Developers&lt;/a&gt;, a &lt;a href=&quot;https://boards.greenhouse.io/flowforge/jobs/4717778004&quot;&gt;Product Manager&lt;/a&gt;, a &lt;a href=&quot;https://boards.greenhouse.io/flowforge/jobs/4687876004&quot;&gt;Recruiter / PeopleOps Manager&lt;/a&gt; and a &lt;a href=&quot;https://boards.greenhouse.io/flowforge/jobs/4700809004&quot;&gt;Senior Community Manager&lt;/a&gt;. You can view any of the roles we currently have open and apply on our &lt;a href=&quot;https://boards.greenhouse.io/flowforge&quot;&gt;Jobs page&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;We&#39;d also like to welcome &lt;a href=&quot;https://github.com/Pezmc&quot;&gt;Pez Cuckow&lt;/a&gt; who joined FlowForge as a Senior Software Engineer in October.&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://app.flowforge.com/account/create?code=RELEASE1&quot;&gt;&lt;strong&gt;Try FlowForge for Free&lt;/strong&gt;&lt;/a&gt;&lt;br /&gt;
-As a thank you for reading our newsletters we’d like to offer you a free, small project for one month on our managed FlowForge platform when you create a new team. To get this discount please follow &lt;a href=&quot;https://app.flowforge.com/account/create?code=RELEASE010&quot;&gt;this link&lt;/a&gt; or use the code RELEASE1 when on the payment page after creating a new team. As an open source project you can also use &lt;a href=&quot;https://flowforge.com/docs/install/&quot;&gt;FlowForge&lt;/a&gt; for free, forever.&lt;/p&gt;
 </content>
     </entry>
     
@@ -949,31 +868,6 @@ That also includes if you have any feedback or feature requests.&lt;/p&gt;
     </entry>
     
     <entry>
-        <id>https://flowforge.com/blog/2022/10/community-news-09/</id>
-        <title>Community News</title>
-        <summary>News from the FlowForge and Node-RED communities</summary>
-        <updated>2022-10-07T00:00:00Z</updated>
-        <link href="https://flowforge.com/blog/2022/10/community-news-09/"/>
-        <author><name>Rob Marcer</name></author>
-        <content type="html">&lt;p&gt;Welcome to the FlowForge newsletter, a regular roundup of what’s happening with both FlowForge and the wider Node-RED community.&lt;/p&gt;
-&lt;!--more--&gt;
-&lt;p&gt;If you&#39;ve got something that you&#39;d like us to share please email &lt;a href=&quot;mailto:contact@flowforge.com&quot;&gt;contact@flowforge.com&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://flowforge.com/blog/2022/09/flowforge-010-released/&quot;&gt;&lt;strong&gt;FlowForge 0.10&lt;/strong&gt;&lt;/a&gt;&lt;br /&gt;
-Version 0.10 was released on 30th September. Our latest release includes some great new features, quality of life improvements and bug fixes. Notable additions included the ability to &lt;a href=&quot;https://github.com/flowforge/flowforge/pull/893&quot;&gt;Secure your HTTP endpoints&lt;/a&gt;, &lt;a href=&quot;https://github.com/flowforge/flowforge/issues/657&quot;&gt;Add read-only users to your projects&lt;/a&gt; and &lt;a href=&quot;https://github.com/flowforge/CloudProject/issues/59&quot;&gt;use our static IP address for outbound connections&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;If you’d like to learn more about what else was included in 0.10 you can do so on our &lt;a href=&quot;https://flowforge.com/blog/2022/09/flowforge-010-released/&quot;&gt;blog post&lt;/a&gt;, on our &lt;a href=&quot;https://github.com/flowforge/flowforge/releases/tag/v0.10.0&quot;&gt;GitHub release page&lt;/a&gt; and on our &lt;a href=&quot;https://youtube.com/watch?v=mjR1iiEFiBg&quot;&gt;Youtube channel&lt;/a&gt;. We’d also love for more of you to get involved in the development of FlowForge, &lt;a href=&quot;https://github.com/flowforge/flowforge/blob/main/CONTRIBUTING.md&quot;&gt;contributions to the code&lt;/a&gt; and &lt;a href=&quot;https://github.com/flowforge/flowforge/issues&quot;&gt;bug reports&lt;/a&gt; are really appreciated.&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://nrcon.nodered.org/&quot;&gt;&lt;strong&gt;Node-RED Con 2022&lt;/strong&gt;&lt;/a&gt;&lt;br /&gt;
-We are happy to again be involved in Node-RED con. The event is being held online on 7th October, with content for both English and Japanese speakers including our colleagues Nick O&#39;Leary and Sam Machin. You can find out more on the &lt;a href=&quot;https://nrcon.nodered.org/&quot;&gt;Node-RED Con website&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://flowforge.com/team/&quot;&gt;&lt;strong&gt;FlowForge Team News&lt;/strong&gt;&lt;/a&gt;&lt;br /&gt;
-We are currently recruiting &lt;a href=&quot;https://boards.greenhouse.io/flowforge/jobs/4463977004&quot;&gt;NodeJS Developers&lt;/a&gt;, if you’re interested in joining our team please &lt;a href=&quot;https://boards.greenhouse.io/flowforge/jobs/4463977004#app&quot;&gt;apply here&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;We are also looking for a &lt;a href=&quot;https://boards.greenhouse.io/flowforge/jobs/4687876004&quot;&gt;PeopleOps Manager&lt;/a&gt; to help us grow our team. You can &lt;a href=&quot;https://boards.greenhouse.io/flowforge/jobs/4687876004#app&quot;&gt;apply here&lt;/a&gt; for that position.&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://hackster.io/user102774/fight-fire-wild-fire-prediction-using-tinyml-df7572&quot;&gt;&lt;strong&gt;Forest Fire Alerts Using ML, IOT and Node-RED&lt;/strong&gt;&lt;/a&gt;&lt;br /&gt;
-This fascinating project came up a few days ago and we wanted to share it with you all. The concept is to use a mesh network of IoT devices to monitor various indicators of potential and current wildfires and report data back to the relevant authorities. The system will use ML to predict wildfire risk levels and hopefully send warnings before a fire actually starts. The two developers &lt;a href=&quot;https://linkedin.com/in/zainmfd/&quot;&gt;Muhammed&lt;/a&gt; and &lt;a href=&quot;https://linkedin.com/in/salmanfarisvp/&quot;&gt;Salman&lt;/a&gt; are planning to use Node-RED to manage the reporting of fires to the authorities.&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://app.flowforge.com/account/create?code=RELEASE010&quot;&gt;&lt;strong&gt;Try FlowForge for Free&lt;/strong&gt;&lt;/a&gt;&lt;br /&gt;
-As a thank you for reading our newsletters we’d like to offer you a free, small project for one month on FlowForge when you create a new team. To get this discount please follow &lt;a href=&quot;https://app.flowforge.com/account/create?code=RELEASE010&quot;&gt;this link&lt;/a&gt; or use the code RELEASE010 when on the payment page after creating a new team.&lt;/p&gt;
-</content>
-    </entry>
-    
-    <entry>
         <id>https://flowforge.com/blog/2022/09/flowforge-010-released/</id>
         <title>FlowForge 0.10 released</title>
         <summary>Secure HTTP end points, Read-only users and Static outbound IPs</summary>
@@ -1047,33 +941,6 @@ That also includes if you have any feedback or feature requests.&lt;/p&gt;
 &lt;p&gt;Any inbound traffic should still use the hostname assigned to each of your projects, you cannot use our IP address to route http traffic to your projects.&lt;/p&gt;
 &lt;p&gt;You can view our IP address in the &lt;a href=&quot;https://github.com/flowforge/flowforge/tree/main/docs/cloud#ip-addresses&quot;&gt;Docs&lt;/a&gt; section of our website.&lt;/p&gt;
 &lt;p&gt;If you’d like to stay up to date with our latest releases you can do so on &lt;a href=&quot;https://flowforge.com/blog&quot;&gt;our blog&lt;/a&gt;.&lt;/p&gt;
-</content>
-    </entry>
-    
-    <entry>
-        <id>https://flowforge.com/blog/2022/09/community-news-08/</id>
-        <title>Community News</title>
-        <summary>News from the FlowForge and Node-RED communities</summary>
-        <updated>2022-09-16T00:00:00Z</updated>
-        <link href="https://flowforge.com/blog/2022/09/community-news-08/"/>
-        <author><name>Rob Marcer</name></author>
-        <content type="html">&lt;p&gt;Welcome to the FlowForge newsletter, a regular roundup of what’s happening with both FlowForge and the wider Node-RED community.&lt;/p&gt;
-&lt;!--more--&gt;
-&lt;p&gt;If you&#39;ve got something that you&#39;d like us to share please email &lt;a href=&quot;mailto:contact@flowforge.com&quot;&gt;contact@flowforge.com&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://flowforge.com/blog/2022/09/flowforge-09-released/&quot;&gt;&lt;strong&gt;FlowForge 0.9&lt;/strong&gt;&lt;/a&gt;&lt;br /&gt;
-Version 0.9 was released on 1st September. Our latest release includes some great new features, quality of life improvements and bug fixes. Notable additions included the ability to &lt;a href=&quot;https://github.com/flowforge/flowforge/pull/893&quot;&gt;suspend your projects&lt;/a&gt;, &lt;a href=&quot;https://github.com/flowforge/flowforge/pull/856&quot;&gt;login with your email&lt;/a&gt; and &lt;a href=&quot;https://github.com/flowforge/flowforge/issues/774&quot;&gt;define custom paths for your dashboards&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;If you’d like to learn more about what else was included in 0.9 you can do so on our &lt;a href=&quot;https://flowforge.com/blog/2022/09/flowforge-09-released/&quot;&gt;blog post&lt;/a&gt;, on our &lt;a href=&quot;https://github.com/flowforge/flowforge/releases/tag/v0.9.0&quot;&gt;GitHub release page&lt;/a&gt; and on our &lt;a href=&quot;https://www.youtube.com/watch?v=d23Pmyc0k7I&quot;&gt;Youtube channel&lt;/a&gt;. We’d also love for more of you to get involved in the development of FlowForge, &lt;a href=&quot;https://github.com/flowforge/flowforge/blob/main/CONTRIBUTING.md&quot;&gt;contributions to the code&lt;/a&gt; and &lt;a href=&quot;https://github.com/flowforge/flowforge/issues&quot;&gt;bug reports&lt;/a&gt; are really appreciated.&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://nrcon.nodered.org/&quot;&gt;&lt;strong&gt;Node-RED Con 2022&lt;/strong&gt;&lt;/a&gt;&lt;br /&gt;
-We are happy to again be involved in Node-RED con. The event is being held online on 7th October, with content for both English and Japanese speakers. You can find out more on the &lt;a href=&quot;https://nrcon.nodered.org/&quot;&gt;Node-RED Con website&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://flowforge.com/team/&quot;&gt;&lt;strong&gt;FlowForge Team News&lt;/strong&gt;&lt;/a&gt;&lt;br /&gt;
-We’d like to welcome Rob Marcer to the FlowForge team. Rob has joined as our Developer Educator, he&#39;s going to work to help you get the best value from FlowForge by developing our documentation and community support.&lt;/p&gt;
-&lt;p&gt;We are also recruiting for &lt;a href=&quot;https://boards.greenhouse.io/flowforge/jobs/4463977004&quot;&gt;NodeJS Developers&lt;/a&gt;, if you’re interested in joining our team please &lt;a href=&quot;https://boards.greenhouse.io/flowforge/jobs/4463977004#app&quot;&gt;apply here&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://twitter.com/Docker/status/1559919666721693699?t=QBzGGzY2kJ12Z5aoi1QPTA&quot;&gt;&lt;strong&gt;Official Node-RED Docker Image Passes Milestone&lt;/strong&gt;&lt;/a&gt;&lt;br /&gt;
-Docker has &lt;a href=&quot;https://twitter.com/Docker/status/1559919666721693699?t=QBzGGzY2kJ12Z5aoi1QPTA&quot;&gt;announced&lt;/a&gt; that the Node-RED Docker image has now been downloaded over 100 million times. They have also created a &lt;a href=&quot;https://www.docker.com/blog/build-retail-store-items-detection-system-no-code-ai/?utm_campaign=2022-08-17-brnd-nocode&amp;amp;utm_medium=social&amp;amp;utm_source=twitter&quot;&gt;guide to using Node-RED&lt;/a&gt; to Build and Deploy a Retail Store Items Detection System Using No-Code AI Vision at the Edge. We think it’s worth a read.&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://wokwi.com/&quot;&gt;&lt;strong&gt;Simulating IOT Projects in Your Browser&lt;/strong&gt;&lt;/a&gt;&lt;br /&gt;
-While not directly related to FlowForge we’ve enjoyed wasting a little too much time looking at the simulated IOT projects on &lt;a href=&quot;https://wokwi.com/&quot;&gt;Wokwi&lt;/a&gt;. The &lt;a href=&quot;https://wokwi.com/projects/328451800839488084&quot;&gt;Simon Game with Score&lt;/a&gt; project is a little too addictive.&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://app.flowforge.com/account/create&quot;&gt;&lt;strong&gt;Try FlowForge for Free&lt;/strong&gt;&lt;/a&gt;&lt;br /&gt;
-As a thank you for reading our newsletters we’d like to offer you a free, small project for one month on FlowForge when you create a new team. To get this discount please use the code RELEASE09 when on the payment page after creating a new team.&lt;/p&gt;
 </content>
     </entry>
     
@@ -1248,27 +1115,6 @@ That also includes if you have any feedback or feature requests.&lt;/p&gt;
     </entry>
     
     <entry>
-        <id>https://flowforge.com/blog/2022/07/community-news-06/</id>
-        <title>Community News</title>
-        <summary>News from the FlowForge and Node-RED communities</summary>
-        <updated>2022-07-19T00:00:00Z</updated>
-        <link href="https://flowforge.com/blog/2022/07/community-news-06/"/>
-        <author><name></name></author>
-        <content type="html">&lt;p&gt;Welcome to the FlowForge newsletter, a regular roundup of what`s happening with both FlowForge and the wider Node-RED community.&lt;/p&gt;
-&lt;!--more--&gt;
-&lt;p&gt;If you&#39;ve got something that you&#39;d like us to share please email &lt;a href=&quot;mailto:contact@flowforge.com&quot;&gt;contact@flowforge.com&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://flowforge.com/blog/2022/07/flowforge-07-released&quot;&gt;FlowForge 0.7 &lt;/a&gt;&lt;br /&gt;
-We&#39;ve shipped the next version of FlowForge, features in this release include the ability to Rollback a project to a previous snapshot, setting environment variables for a specific device and we&#39;ve begun to unify the experience between the Forge app and the Node-RED editor with our own Node-RED theme.&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://nodered.org/blog/2022/07/14/version-3-0-released&quot;&gt;Node-RED 3.0 Released &lt;/a&gt;&lt;br /&gt;
-Node-RED 3.0 Has been officially released, there are a lot of improvements in the user experience of the editor, with new menus and junctions. There&#39;s also the ability to stop your flows while you can continue to edit and deploy. Take a look at the blog post for all the details. This is now the default stack on FlowForge Cloud.&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://discourse.nodered.org/t/node-red-flows-on-esp8266-and-esp32/64345&quot;&gt;Node-RED for Microcontrollers&lt;/a&gt;&lt;br /&gt;
-&lt;a href=&quot;https://twitter.com/phoddie&quot;&gt;Peter Hoddie&lt;/a&gt; of &lt;a href=&quot;https://moddable.com/&quot;&gt;Moddable&lt;/a&gt; Has released some early &lt;a href=&quot;https://github.com/phoddie/node-red-mcu&quot;&gt;work&lt;/a&gt; on getting the Node-RED runtime to execute a flow on a microcontroller like the ESP32. It&#39;s still very early days so don&#39;t expect to be building flows directly on the MCU, and the number of nodes that are supported is limited, but this is an interesting development for Node-RED in the IoT space.&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://www.papercall.io/nrcon2022&quot;&gt;Node-RED Con CFP&lt;/a&gt;&lt;br /&gt;
-A reminder about Node-RED Con and the call for papers, submissions close at the end of July so get your proposals in now.&lt;/p&gt;
-</content>
-    </entry>
-    
-    <entry>
         <id>https://flowforge.com/blog/2022/07/flowforge-07-released/</id>
         <title>FlowForge 0.7 released</title>
         <summary>Rollbacks, Device Environment Variables and a FlowForge Theme</summary>
@@ -1381,35 +1227,6 @@ guide for &lt;a href=&quot;http://flowforge.com/docs/install#upgrade&quot;&gt;up
 raise an &lt;a href=&quot;https://github.com/flowforge/flowforge/issues&quot;&gt;issue on GitHub&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;That also includes if you have any feedback or feature requests.&lt;/p&gt;
 &lt;p&gt;We also have a &lt;code&gt;#flowforge&lt;/code&gt; channel on the &lt;a href=&quot;https://nodered.org/slack&quot;&gt;Node-RED Slack workspace&lt;/a&gt;.&lt;/p&gt;
-</content>
-    </entry>
-    
-    <entry>
-        <id>https://flowforge.com/blog/2022/06/community-news-05/</id>
-        <title>Community News</title>
-        <summary>News from the FlowForge and Node-RED communities</summary>
-        <updated>2022-06-17T00:00:00Z</updated>
-        <link href="https://flowforge.com/blog/2022/06/community-news-05/"/>
-        <author><name></name></author>
-        <content type="html">&lt;p&gt;Welcome to the FlowForge newsletter, a regular roundup of what`s happening with both FlowForge and the wider Node-RED community.&lt;/p&gt;
-&lt;!--more--&gt;
-&lt;p&gt;If you&#39;ve got something that you&#39;d like us to share please email &lt;a href=&quot;mailto:contact@flowforge.com&quot;&gt;contact@flowforge.com&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://flowforge.com/blog/2022/06/flowforge-06-released/&quot;&gt;FlowForge 0.5 AND 0.6&lt;/a&gt;&lt;br /&gt;
-We&#39;ve had two releases since our last newsletter, there are a lot of related features between them.
-We introduced a new design for the forge application which aligns with the branding on our website.
-We&#39;ve added &lt;a href=&quot;https://flowforge.com/docs/user/concepts/#device&quot;&gt;Devices&lt;/a&gt;, allowing you to run and manage your node-red projects on your own hardware, this is ideal for applications that need to connect to either sensor data or specialist hardware deployed outside the cloud.
-We added a new concept as part of this work, &lt;a href=&quot;https://flowforge.com/docs/user/concepts/#project-snapshot&quot;&gt;Snapshots&lt;/a&gt; allow you to take a point in time copy of your project, today that can then be deployed to one or more devices but we have plans to expand this concept for things like &lt;a href=&quot;https://github.com/flowforge/flowforge/issues/587&quot;&gt;rolling back&lt;/a&gt; a project to a previous point in time.
-&lt;a href=&quot;https://flowforge.com/blog/2022/05/flowforge-05-released/&quot;&gt;0.5&lt;/a&gt; Introduced the capabilities of copying a project or certain parts of it, allowing for scenarios like having multiple environments for Development and Production.&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://discourse.nodered.org/t/node-red-3-0-0-beta-3-released/64027&quot;&gt;Node-RED 3.0.0-beta-3&lt;/a&gt;&lt;br /&gt;
-The Node-RED 3.0 beta releases continue as the project is getting very close to the full release in the coming weeks, We&#39;ll be making it availble on FlowForge cloud very soon.&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://kazuhitoyokoi.medium.com/creating-custom-node-from-subflow-in-node-red-ce52cc42bbba&quot;&gt;Creating custom node from subflow in Node-RED&lt;/a&gt;&lt;br /&gt;
-One of the contributors to Node-RED, Kazuhito Yokoi wrote a nice tutorial on how to turn a subflow into a custom node.&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://www.youtube.com/channel/UCbBzP8NZbv3WDtlt4UouA-g&quot;&gt;YouTube Channel&lt;/a&gt;&lt;br /&gt;
-Joe has been busy creating short videos to present FlowForge and our key concepts, these will start to appear on our YouTube channel, so please like and subscribe!&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://www.42flows.tech/blog/why-have-we-decided-to-implement-visa-direct-api-for-node-red/&quot;&gt;Visa Direct in Node-RED&lt;/a&gt;&lt;br /&gt;
-The folks over at 42flows use Node-RED in a financial and banking context, they&#39;ve published an article about integrating with the Visa payments APIs&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://www.papercall.io/nrcon2022&quot;&gt;Node-RED Con CFP&lt;/a&gt;&lt;br /&gt;
-A reminder about Node-RED Con and the call for papers, submissions close at the end of July but don&#39;t wait until the last minute to submit your proposal.&lt;/p&gt;
 </content>
     </entry>
     
@@ -1536,29 +1353,6 @@ raise an &lt;a href=&quot;https://github.com/flowforge/flowforge/issues&quot;&gt
     </entry>
     
     <entry>
-        <id>https://flowforge.com/blog/2022/05/community-news-04/</id>
-        <title>Community News</title>
-        <summary>News from the FlowForge and Node-RED communities</summary>
-        <updated>2022-05-06T00:00:00Z</updated>
-        <link href="https://flowforge.com/blog/2022/05/community-news-04/"/>
-        <author><name></name></author>
-        <content type="html">&lt;p&gt;Welcome to the FlowForge newsletter, a regular roundup of what`s happening with both FlowForge and the wider Node-RED community.&lt;/p&gt;
-&lt;!--more--&gt;
-&lt;p&gt;If you&#39;ve got something that you&#39;d like us to share please email &lt;a href=&quot;mailto:contact@flowforge.com&quot;&gt;contact@flowforge.com&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://flowforge.com/blog/2022/04/flowforge-04-released/&quot;&gt;FlowForge 0.4&lt;/a&gt;&lt;br /&gt;
-The next release has enabled us to offer multiple versions of Node-RED along with adding more features to help you configure your Node-RED projects.&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://discourse.nodered.org/t/node-red-3-0-0-beta-1-released/62124&quot;&gt;Node-RED 3.0.0-beta-1&lt;/a&gt;&lt;br /&gt;
-The first beta for Node-RED 3.0.0 has been published, there&#39;s some exciting improvements on UI in the editor to make designing your flows even easier.&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://flowforge.com/blog/2022/05/node-red-3-beta-stack/&quot;&gt;Node-RED Beta on FlowForge&lt;/a&gt;&lt;br /&gt;
-As promised in out 0.4 announcement, we&#39;ve made the beta available to our users on FlowForge as a separate stack, this is just one way that we&#39;re able to demonstrate the flexibility you get from running Node-RED on FlowForge.&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://developer.cisco.com/meraki/build/exploring-meraki-and-spark-apis-with-node-red/&quot;&gt;Cisco &amp;amp; Node-RED&lt;/a&gt;&lt;br /&gt;
-The team at Cisco DevNet published some great guides on using Node-RED to manage both your Meraki Access points and to integrate with WebEx Teams, they&#39;ve also produced a handy &lt;a href=&quot;https://blogs.cisco.com/developer/helloworldlowcodenodered01&quot;&gt;starter guide&lt;/a&gt; for those that are new to Node-RED&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://nrcon.nodered.org/&quot;&gt;Node-RED Con 2022&lt;/a&gt;&lt;br /&gt;
-Our friends in the Node-RED Japan User Group have run a number of successful Node-RED conferences over the last few years. This year, we&#39;re joining forces with them to bring the event to a wider audience. The &lt;a href=&quot;https://www.papercall.io/nrcon2022&quot;&gt;Call for Papers&lt;/a&gt; is open now and we&#39;d love to see your submissions.&lt;/p&gt;
-</content>
-    </entry>
-    
-    <entry>
         <id>https://flowforge.com/blog/2022/05/node-red-3-beta-stack/</id>
         <title>Node-RED 3.0 Beta Stack</title>
         <summary>Try out the next major Node-RED release</summary>
@@ -1627,25 +1421,6 @@ We will be building on features in the last few releases around managing your pr
 &lt;p&gt;For more information, check out the &lt;a href=&quot;https://flowforge.com/blog/announcing-flowforge-cloud/&quot;&gt;announcement blog post&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;You can also sign up to our general mailing list below if you want to hear more
 about the work we&#39;re doing.&lt;/p&gt;
-</content>
-    </entry>
-    
-    <entry>
-        <id>https://flowforge.com/blog/2022/04/community-news-03/</id>
-        <title>Community News</title>
-        <summary>News from the FlowForge and Node-RED communities</summary>
-        <updated>2022-04-05T00:00:00Z</updated>
-        <link href="https://flowforge.com/blog/2022/04/community-news-03/"/>
-        <author><name></name></author>
-        <content type="html">&lt;p&gt;Welcome to the FlowForge newsletter, a regular roundup of what`s happening with both FlowForge and the wider Node-RED community.&lt;/p&gt;
-&lt;!--more--&gt;
-&lt;p&gt;If you&#39;ve got something that you&#39;d like us to share please email &lt;a href=&quot;mailto:contact@flowforge.com&quot;&gt;contact@flowforge.com&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://flowforge.com/&quot;&gt;New Website&lt;/a&gt;&lt;br /&gt;
-Some of you may have noticed the new design on our website, this is the first step in our more refined corporate identity, the same look will be coming to the FlowForge application &lt;a href=&quot;https://github.com/flowforge/flowforge/issues/430&quot;&gt;soon.&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://flowforge.com/blog/2022/03/flowforge-03-released/&quot;&gt;FlowForge 0.3&lt;/a&gt;&lt;br /&gt;
-The latest release introduced 2 new concepts, Templates and Stacks, with these we are starting to show the value of the FlowForge platform allowing you to easily manage the Node-RED settings and versions used by your projects.&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://www.opto22.com/support/resources-tools/videos/video-introduction-to-json-for-node-red/&quot;&gt;Intro to JSON for Node-RED&lt;/a&gt;&lt;br /&gt;
-Our friends over at Opto 22 published a handy guide to JSON and how it works in Node-RED, great introduction for new builders and a good refresher for seasoned pros.&lt;/p&gt;
 </content>
     </entry>
     
@@ -1755,29 +1530,6 @@ people from the waiting list to sign-up to FlowForge Cloud.&lt;/p&gt;
 &lt;p&gt;For more information, check out the &lt;a href=&quot;https://flowforge.com/blog/announcing-flowforge-cloud/&quot;&gt;annoucement blog post&lt;/a&gt;.
 You can also sign up to our general mailing list below if you want to hear more
 about the work we&#39;re doing.&lt;/p&gt;
-</content>
-    </entry>
-    
-    <entry>
-        <id>https://flowforge.com/blog/2022/03/community-news-02/</id>
-        <title>Community News</title>
-        <summary>News from the FlowForge and Node-RED communities</summary>
-        <updated>2022-03-02T00:00:00Z</updated>
-        <link href="https://flowforge.com/blog/2022/03/community-news-02/"/>
-        <author><name></name></author>
-        <content type="html">&lt;p&gt;Welcome to the FlowForge newsletter, a regular roundup of what`s happening with both FlowForge and the wider Node-RED community.&lt;/p&gt;
-&lt;!--more--&gt;
-&lt;p&gt;If you&#39;ve got something that you&#39;d like us to share please email &lt;a href=&quot;mailto:contact@flowforge.com&quot;&gt;contact@flowforge.com&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://flowforge.com/blog/announcing-flowforge-cloud/&quot;&gt;Announcing FlowForge Cloud&lt;/a&gt;&lt;br /&gt;
-We are excited to announce FlowForge Cloud, a hosted Node-RED as a service offering and today we are opening the waitlist.&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://flowforge.com/blog/flowforge-02-released/&quot;&gt;FlowForge 0.2&lt;/a&gt;&lt;br /&gt;
-We continue to iterate with our 4 weekly releases of the FlowForge platform.&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://discourse.nodered.org/t/node-red-2-2-2-released/58606&quot;&gt;Node-RED 2.2.2&lt;/a&gt;&lt;br /&gt;
-The 2.2 release of Node-RED (last month) has received 2 maintenance releases to fix bugs with  duplicate wires in the editor and MQTT.&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://flowforge.com/blog/welcome-joe/&quot;&gt;New Team Members&lt;/a&gt;&lt;br /&gt;
-FlowForge is now up to 6 people, Joe Pavitt has joined the team&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://boards.greenhouse.io/flowforge/jobs/4312861004&quot;&gt;We still are Hiring&lt;/a&gt;&lt;br /&gt;
-We&#39;re looking for the next member of our team, If you&#39;re a Node.JS developer and want to work with us take a look at the link.&lt;/p&gt;
 </content>
     </entry>
     
@@ -1923,31 +1675,6 @@ Research teams.&lt;/p&gt;
 can do. I was super pleased when he agreed to join us and I look forward to
 seeing the real impact he&#39;ll have on what we&#39;re building.&lt;/p&gt;
 &lt;p&gt;Welcome aboard Joe!&lt;/p&gt;
-</content>
-    </entry>
-    
-    <entry>
-        <id>https://flowforge.com/blog/2022/01/community-news-01/</id>
-        <title>Community News</title>
-        <summary>News from the FlowForge and Node-RED communities</summary>
-        <updated>2022-01-28T00:00:00Z</updated>
-        <link href="https://flowforge.com/blog/2022/01/community-news-01/"/>
-        <author><name></name></author>
-        <content type="html">&lt;p&gt;Welcome to the first FlowForge newsletter, we’re going to publish this as a regular roundup of what`s happening with both FlowForge and the wider Node-RED community, if you want to receive it via email, sign up for updates at the bottom of the page.&lt;/p&gt;
-&lt;!--more--&gt;
-&lt;p&gt;If you’ve got something that you’d like us to share please email &lt;a href=&quot;mailto:contact@flowforge.com&quot;&gt;contact@flowforge.com&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://flowforge.com/blog/flowforge-01-released&quot;&gt;FlowForge 0.1 Released&lt;/a&gt;&lt;br /&gt;
-First up we are really pleased to ship the first version of our platform, this is a very early release but hopefully will give you an idea of the direction we’re going in.&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://nodered.org/blog/2022/01/27/version-2-2-released&quot;&gt;Node-RED 2.2&lt;/a&gt;&lt;br /&gt;
-The next version of Node-RED has been released with new editor features, predefined environment variables and improvements to some of the core nodes. Checkout the blog post and change log for more details.&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://blog.golioth.io/building-iot-dashboards-with-golioth-grafana-and-node-red&quot;&gt;Make your IoT data beautiful&lt;/a&gt;&lt;br /&gt;
-Ben Mawby wrote a guide on connecting Golioth&#39;s WebSocket endpoints to Grafana using Node-RED and InfluxDB&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://www.sammachin.com/posts/alexaweb-reborn&quot;&gt;Alexa Voice Service on Node-RED&lt;/a&gt;&lt;br /&gt;
-Sam Machin rebuilt an app on Node-RED allowing you to talk to Alexa through the browser. And he has published a new &lt;a href=&quot;https://flows.nodered.org/node/@sammachin/node-red-alexa-voice-service&quot;&gt;node&lt;/a&gt; to use the Alexa Voice Service within your own flows.&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://flowforge.com/blog&quot;&gt;New Team Members&lt;/a&gt;&lt;br /&gt;
-We welcomed 2 new members of the FlowForge team this month &lt;a href=&quot;https://flowforge.com/blog/welcome-zj&quot;&gt;ZJ&lt;/a&gt; joins as our CEO and &lt;a href=&quot;https://flowforge.com/blog/welcome-steve&quot;&gt;Steve&lt;/a&gt; has come onboard to work on the Node-RED project&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://boards.greenhouse.io/flowforge/jobs/4312861004&quot;&gt;We are Hiring&lt;/a&gt;&lt;br /&gt;
-We&#39;re looking for the next member of our team, If you&#39;re a Node.JS developer and want to work with us take a look at the link.&lt;/p&gt;
 </content>
     </entry>
     
