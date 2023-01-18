@@ -57,18 +57,19 @@
                     <a class="no-underline hover:no-underline font-bold h-8 w-40 flex flex-row"  href="/" style="font-family:'Baloo 2', sans-serif">
                         {% include "components/flowforge-wordmark.njk" %}
                     </a>
-                    <div class="block sm:hidden">
+                    <div class="block md:hidden">
                         <button id="nav-toggle" class="flex items-center px-3 py-2 text-red-hero">
                             <svg class="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Menu</title><path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/></svg>
                         </button>
                     </div>
 
-                    <ul id="nav-content" class="hidden absolute top-8 right-0 border shadow-sm sm:inline sm:shadow-none w-36 z-10 sm:border-0 bg-white sm:bg-transparent sm:w-auto rounded sm:static sm:float-none sm:flex sm:flex-row flex-col items-center justify-between font-medium text no-underline">
+                    <ul id="nav-content" class="hidden absolute top-8 right-0 border shadow-sm md:inline md:shadow-none w-36 z-10 md:border-0 bg-white md:bg-transparent md:w-auto rounded md:static md:float-none md:flex md:flex-row flex-col items-center justify-between font-medium text no-underline">
                         <li class="flex"><a href="/features">features</a></li>
                         <li class="flex"><a href="/pricing">pricing</a></li>
                         <li class="flex"><a href="/blog">news</a></li>
                         <li class="flex"><a href="/docs">docs</a></li>
 			            <li class="flex"><a href="https://app.flowforge.com">sign in</a></li>
+                        <a class="ml-2 mr-2 ff-btn ff-btn--primary uppercase text-sm" href="https://app.flowforge.com/account/create" onclick="capture('cta-join', {'position': 'header'})">Free Trial</a>
                         <li class="flex"><a href="https://github.com/flowforge" target="_blank">{% include "components/github.njk" %}</a></li>
                     </ul>
                 </nav>
