@@ -24,7 +24,11 @@
     <meta property="og:url" content="{{ site.baseURL }}{{ page.url }}" />
     <meta property="og:title" content="{{title}}" />
     <meta property="og:description" content="{{description}}" />
+    {% if image %}
+    <meta property="og:image" content="{{ site.baseURL }}{{image}}" />
+    {% else %}
     <meta property="og:image" content="{{ site.baseURL }}/images/og-social-tile.jpg" />
+    {% endif %}
     {% else %}
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:description" content="FlowForge is an open-source, low-code platform for integration and automation. Helping you run Node-RED at production scales in a secure, scalable and team-based environment." />
@@ -33,8 +37,11 @@
     <meta property="og:url" content="{{ site.baseURL }}{{ page.url }}" />
     <meta property="og:title" content="{{title}}" />
     <meta property="og:description" content="FlowForge is an open-source, low-code platform for integration and automation. Helping you run Node-RED at production scales in a secure, scalable and team-based environment." />
-    <meta property="og:image" content="/images/og-social-tile.jpg" />
-    {% endif %}
+    {% if image %}
+    <meta property="og:image" content="{{ site.baseURL }}{{image}}" />
+    {% else %}
+    <meta property="og:image" content="{{ site.baseURL }}/images/og-social-tile.jpg" />
+    {% endif %}    {% endif %}
 
     <script defer data-domain="flowforge.com" src="https://plausible.io/js/plausible.js"></script>
     <script>
