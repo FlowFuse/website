@@ -4,33 +4,38 @@ subtitle: Our first release of 2023 with some great new features to try out, hap
 description: 
 date: 2023-01-19 18:00:00.0
 authors: ["rob-marcer"]
-video: TODO
+video: ey3xv5j5x7k
 ---
 
-Share your flows via team libraries, control access to your Node-RED dashboards using FlowForge credentials, and install FlowForge Node-RED instances on devices which cannot access npm.
+Share your flows via team libraries, control access to your Node-RED dashboards using FlowForge credentials, and filter your audit logs by users and actions.
 
 <!--more-->
 
-We're pleased to announce version 1.3.0 is now available! Due to the recent holiday season, most of our team have been away from their desks but we still have some great new features to share. Keep reading for the details of what's in this release or you can watch our 1 minute roundup video of the new release above.
+We're pleased to announce version 1.3 is now available! Due to the recent holiday season, most of our team have been away from their desks but we still have some great new features to share. Keep reading for the details of what's in this release or you can watch our 1 minute roundup video of the new release above.
 
 To make it easy for everyone to experience FlowForge, we are introducing a new [free 30-day trial](https://app.flowforge.com/account/create). With this trial, you can experience the power of using FlowForge to quickly deliver Node-RED applications in a reliable, repeatable, collaborative, and secure manner. To get your trial simply [sign up for a new FlowForge team](https://app.flowforge.com/account/create).
 
 ## Features
 
 [Share your flows via team libraries](https://github.com/flowforge/flowforge/issues/237)
-FlowForge has now added the ability for you to share your flows via the import and export features in Node-RED. Once you export a flow everyone else in your FlowForge team will be able to import your work into their projects. You can see a demonstration of this new feature in [the video]() below.
+FlowForge has now added the ability for you to share your flows via the import and export features in Node-RED. Once you export a flow everyone else in your FlowForge team will be able to import your work into their projects. You can see a demonstration of this new feature in [the video](https://youtu.be/B7XK3TUklUU) below.
 
-<div><iframe width="560" height="315" src="https://www.youtube.com/embed/TODO" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<div><iframe width="560" height="315" src="https://www.youtube.com/embed/B7XK3TUklUU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 [Control access to your Node-RED dashboards using FlowForge credentials](https://github.com/flowforge/flowforge/issues/1325)
-In FlowForge 0.10.0 we added the ability to secure endpoints created within your FlowForge projects. This allows you to create dashboards or APIs and limit who can access them. In 1.3.0 we've added the ability for you to limit access to those same resources based on the visitor having a user account on your FlowForge team. You can see a demonstration of this new feature in [the video]() below.
+In FlowForge 0.10 we added the ability to secure endpoints created within your FlowForge projects. This allows you to create dashboards or APIs and limit who can access them. In 1.3 we've added the ability for you to limit access to those same resources based on the visitor having a user account on your FlowForge team. You can see a demonstration of this new feature in [the video](https://youtu.be/JRk-Cf7eNIo) below.
 
-<div><iframe width="560" height="315" src="https://www.youtube.com/embed/TODO" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<div><iframe width="560" height="315" src="https://www.youtube.com/embed/JRk-Cf7eNIo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-[Install FlowForge Node-RED instances on devices which cannot access npm](https://github.com/flowforge/flowforge-device-agent/issues/45)
-We've had feedback from customers that in some cases they want to use FlowForge devices on hardware which cannot access [Node Package Manager](https://www.npmjs.com/) (npm). In a standard configuration of Node-RED access to npm is mandatory to run your flows. In FlowForge 1.3.0 we've added the ability for you to import all the data usually installed from npm without your devices having access to the npm service. You can see a demonstration of this new feature in [the video]() below.
+[Filter your audit logs for easier reading](https://github.com/flowforge/flowforge/issues/1448)
+In FlowForge 1.3 we’ve added the ability to filter your admin logs by user or action type. We think this is a great new feature which will help admins have confidence that they will be able to review the audit logs quickly when needed. You can see a demonstration of this new feature in [the video](https://youtu.be/p0Vuy5x42Go) below.
 
-<div><iframe width="560" height="315" src="https://www.youtube.com/embed/TODO" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<div><iframe width="560" height="315" src="https://www.youtube.com/embed/p0Vuy5x42Go" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+## Improvements
+
+[Allow installation of FlowForge on devices which can't access npm](https://github.com/flowforge/flowforge-device-agent/issues/45)
+We've had feedback from customers that in some cases they want to use FlowForge devices on hardware which cannot access [Node Package Manager](https://www.npmjs.com/) (npm). In a standard configuration of Node-RED, access to npm is mandatory to run your flows. In FlowForge 1.3.0 we've added the ability for you to import all the data usually installed from npm without your devices having access to the npm service.
 
 ## Bug Fixes
 
@@ -44,11 +49,11 @@ We've fixed the following bugs in this release.
 
 - SSO users not redirected to editor when signing in [#1481](https://github.com/flowforge/flowforge/issues/1481)
 
-## Contributors TO DO!
+## Contributors
 
-We'd like the thank the following for their contributions to this release:
+We'd like to thank the following for their contributions to this release:
 
-[flecoufle](https://github.com/flecoufle) for their work on [#59](https://github.com/flowforge/docker-compose/pull/59)
+[flecoufle](https://github.com/flecoufle) for their work on [#89](https://github.com/flowforge/helm/pull/89)
 
 As an open-source project, we welcome community involvement in what we're building.
 If you're interested in contributing, checkout our [guide in the docs](https://flowforge.com/docs/contribute/).
@@ -62,7 +67,7 @@ If you'd rather use our hosted offering: [Sign up for FlowForge Cloud](https://a
 
 ### Upgrading FlowForge
 
-[FlowForge Cloud](https://app.flowforge.com) is already running 1.3.0.
+[FlowForge Cloud](https://app.flowforge.com) is already running 1.3.
 
 If you installed a previous version of FlowForge and want to upgrade, our documentation provides a
 guide for [upgrading your FlowForge instance](https://flowforge.com/docs/upgrade/).
