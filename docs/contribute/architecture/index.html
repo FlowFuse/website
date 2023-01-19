@@ -85,7 +85,7 @@
     <div class="w-full mx-auto ff-bg-light">
         <div class="font-medium border-b pb-1">
             
-            v1.2.1
+            v1.3.0
             
             /<a class="mx-2" href="/docs">docs</a>/<a class="mx-2" href="/docs/contribute">contribute</a>/<a class="mx-2" href="/docs/contribute/architecture">architecture</a>
         </div>
@@ -158,6 +158,8 @@
 <h4 id="nr-audit-logger" tabindex="-1"><a class="header-anchor" href="#nr-audit-logger">#&nbsp;</a> nr-audit-logger</h4>
 <p>This plugin sends Node-RED Audit events (e.g. user log in and flow deployment events) back to the to the FlowForge Management Application to allow a reliable audit of what actions have taken place in the project.</p>
 <p>This plugin uses the Node-RED <a href="https://nodered.org/docs/user-guide/runtime/logging">Logging API</a></p>
+<h2 id="component-overview" tabindex="-1"><a class="header-anchor" href="#component-overview">#&nbsp;</a> Component overview</h2>
+<pre class="language-mermaid"><code class="language-mermaid"><span class="token keyword">erDiagram</span><br>    USER <span class="token arrow operator">||--o{</span> NGINX <span class="token operator">:</span> Requests<br>    NGINX <span class="token punctuation">{</span><br>        Protocol HTTP-TLS<br>        Port default-443<br>    <span class="token punctuation">}</span><br>    FORGE-APP <span class="token punctuation">{</span><br>        Protocol HTTP-TLS<br>        Port default-3000<br>    <span class="token punctuation">}</span><br>    POSTGRESQL <span class="token punctuation">{</span><br>        Protocol tcp-tls<br>        Port default-5432<br>    <span class="token punctuation">}</span><br>    MOSQUITTO <span class="token punctuation">{</span><br>        Protocol HTTP-TLS-WSS-MQTT<br>        Port default-1883<br>        Port websocket-1884<br>    <span class="token punctuation">}</span><br>    FLOWFORGE-FILE-SERVER <span class="token punctuation">{</span><br>        Protocol HTTP-TLS<br>        Port default-3001<br>    <span class="token punctuation">}</span><br>    NGINX <span class="token arrow operator">}o--o|</span> NODE-RED <span class="token operator">:</span> routes<br>    NGINX <span class="token arrow operator">}o--o{</span> FORGE-APP<span class="token operator">:</span> routes<br>    NGINX <span class="token arrow operator">||--||</span> MOSQUITTO<span class="token operator">:</span> mqtt-ws<br>    FORGE-APP <span class="token arrow operator">||--|{</span> POSTGRESQL<span class="token operator">:</span> query<br>    FORGE-APP <span class="token arrow operator">||--||</span> NODE-RED<span class="token operator">:</span> <span class="token string">"flow update"</span><br>    NODE-RED <span class="token arrow operator">}o--o{</span> FLOWFORGE-FILE-SERVER<span class="token operator">:</span> <span class="token string">"Blob store"</span><br>    FLOWFORGE-FILE-SERVER <span class="token arrow operator">||--||</span> FORGE-APP<span class="token operator">:</span> <span class="token string">"Authenticate"</span><br>    NODE-RED <span class="token punctuation">{</span><br>        Protocol HTTP-TLS<br>        Port default-1880<br>    <span class="token punctuation">}</span><br>    NODE-RED <span class="token arrow operator">}o--||</span> MOSQUITTO<span class="token operator">:</span> mqtt<br>    FORGE-APP <span class="token arrow operator">}o--||</span> MOSQUITTO<span class="token operator">:</span> mqtt<br>    NODE-RED-DEVICES <span class="token punctuation">{</span><br>        Port default-1880<br>        Protocol User-Defined<br>    <span class="token punctuation">}</span><br>    NODE-RED-DEVICES <span class="token arrow operator">}o--||</span> NGINX<span class="token operator">:</span> mqtt-ws<br>    USER <span class="token arrow operator">||--||</span> NODE-RED-DEVICES<span class="token operator">:</span> Requests</code></pre>
 
             </div>
         </div>
@@ -166,7 +168,7 @@
             <h3 class="font-medium border-b pb-1 mb-4">On this page</h3>
             <ul id="toc" class="text-sm border-b mb-4"></ul>
             <div class="text-sm pb-1 text-right mb-4"><a href="https://github.com/flowforge/flowforge/edit/main/docs/contribute/architecture.md">Edit this page</a></div>
-            <div class="text-xs pb-1 text-right mb-4 italic">Updated: 2023-01-12 10:49:38 +0000</div>
+            <div class="text-xs pb-1 text-right mb-4 italic">Updated: 2023-01-19 11:00:37 +0000</div>
         </div>
     </div>
 </div>

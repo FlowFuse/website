@@ -85,7 +85,7 @@
     <div class="w-full mx-auto ff-bg-light">
         <div class="font-medium border-b pb-1">
             
-            v1.2.1
+            v1.3.0
             
             /<a class="mx-2" href="/docs">docs</a>/<a class="mx-2" href="/docs/user">user</a>/<a class="mx-2" href="/docs/user/devices">devices</a>
         </div>
@@ -250,6 +250,27 @@ credentials to copy or download.</p>
 </ol>
 <p>The next time the device calls home it will find it is no longer authorised and
 will stop and delete its local copy of the project it was running.</p>
+<h2 id="running-with-no-access-to-npmjs.org" tabindex="-1"><a class="header-anchor" href="#running-with-no-access-to-npmjs.org">#&nbsp;</a> Running with no access to npmjs.org</h2>
+<p>By default the Device Agent will try and download the correct version of Node-RED and
+any nodes required to run the Project Snapshot that is assigned to run on the device.</p>
+<p>If the device is being run on an offline network or security policies prevent the
+Device Agent from connecting to npmjs.org then it can be configured to use a pre-cached
+set of modules.</p>
+<p>You can enable this mode by adding <code>-m</code> to the command line adding <code>moduleCache: true</code>
+to the <code>device.yml</code> file. This will cause the Device Agent to load the modules from the
+<code>module_cache</code> directory in the Device Agents Configuration directory as described above.
+By default this will be <code>/opt/flowforge-device/module_cache</code>.</p>
+<h3 id="creating-a-module-cache" tabindex="-1"><a class="header-anchor" href="#creating-a-module-cache">#&nbsp;</a> Creating a module cache</h3>
+<p>To create a suitable module cache, you will need to install the modules on a local device with
+access to npmjs.org, ensuring you use the same OS and Architecture as your target
+device, and then copy the modules on to your device.</p>
+<ol>
+<li>From the Project Snapshot page, select the snapshot you want to deploy and select the option to download its <code>package.json</code> file.</li>
+<li>Place this file in an empty directory on your local device.</li>
+<li>Run <code>npm install</code> to install the modules. This will create a <code>node_modules</code> directory.</li>
+<li>On your target device, create a directory called <code>module_cache</code> inside the Device Agent Configuration directory.</li>
+<li>Copy the <code>node_modules</code> directory from your local device to the target device so that it is under the <code>module_cache</code> directory.</li>
+</ol>
 
             </div>
         </div>
@@ -258,7 +279,7 @@ will stop and delete its local copy of the project it was running.</p>
             <h3 class="font-medium border-b pb-1 mb-4">On this page</h3>
             <ul id="toc" class="text-sm border-b mb-4"></ul>
             <div class="text-sm pb-1 text-right mb-4"><a href="https://github.com/flowforge/flowforge/edit/main/docs/user/devices.md">Edit this page</a></div>
-            <div class="text-xs pb-1 text-right mb-4 italic">Updated: 2023-01-12 10:49:38 +0000</div>
+            <div class="text-xs pb-1 text-right mb-4 italic">Updated: 2023-01-19 11:00:37 +0000</div>
         </div>
     </div>
 </div>

@@ -18,14 +18,13 @@
     <meta name="keywords" content="Node-RED, Deployment, Production, Enterprise, IoT, IIoT, Low-Code, Open-Source, Kubernetes, Docker, Cloud, Hosting">
 
     
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:description" content="FlowForge is an open-source, low-code platform for integration and automation. Helping you run Node-RED at production scales in a secure, scalable and team-based environment." />
+    <meta name="twitter:card" content="summary" />
     <meta name="twitter:site" content="@flowforgeinc" />
-    <meta name="twitter:image" content="/images/og-social-tile.jpg" />
-    <meta property="og:url" content="https://flowforge.com/docs/user/persistent-context/" />
-    <meta property="og:title" content="" />
-    <meta property="og:description" content="FlowForge is an open-source, low-code platform for integration and automation. Helping you run Node-RED at production scales in a secure, scalable and team-based environment." />
-    <meta property="og:image" content="/images/og-social-tile.jpg" />
+    <meta name="twitter:creator" content="@" />
+    <meta property="og:url" content="https://flowforge.com/blog/2023/01/flowforge-1-3-0-released/" />
+    <meta property="og:title" content="FlowForge 1.3 is now available, share your flows through our new team libraries and much more" />
+    <meta property="og:description" content="FlowForge 1.3 is now available, share your flows through our new team libraries and much more" />
+    <meta property="og:image" content="https://flowforge.com/images/og-social-tile.jpg" />
     
 
     <script defer data-domain="flowforge.com" src="https://plausible.io/js/plausible.js"></script>
@@ -75,160 +74,99 @@
             </header>
             <!-- Main Content -->
             <main class="flex flex-col mx-auto items-center justify-center">
-                <!--Hero Content-->
+                
 <div class="w-full page">
     
-    <div class="content">
-        <div class="nohero w-full pt-12 ff-bg-light">
-    <div class="ff-prose container m-auto text-left max-w-4xl pb-24" data-handbook>
-    <!-- Breadcrumbs -->
-    <div class="w-full mx-auto ff-bg-light">
-        <div class="font-medium border-b pb-1">
-            
-            v1.3.0
-            
-            /<a class="mx-2" href="/docs">docs</a>/<a class="mx-2" href="/docs/user">user</a>/<a class="mx-2" href="/docs/user/persistent-context">persistent-context</a>
-        </div>
-    </div>
-    <div class="w-full mx-auto ff-bg-light flex flex-col md:flex-row">
-        <!-- Main Content -->
-        <div class="flex-grow order-last md:order-first">
-            <div class="mt-6 mb-4 prose prose-blue main-content">
-                <h1 id="flowforge-persistent-context" tabindex="-1"><a class="header-anchor" href="#flowforge-persistent-context">#&nbsp;</a> FlowForge Persistent Context</h1>
-<p>Some Node-RED flows need a way to persist context values between restarts and FlowForge stack
-updates but context data is ephemeral by default. With FlowForge Premium, persistent context
-storage is possible and it survives restarts, upgrades and more.</p>
-<h2 id="usage" tabindex="-1"><a class="header-anchor" href="#usage">#&nbsp;</a> Usage</h2>
-<p>In your Node-RED, you will now have the option to store values in 2 context stores:</p>
-<ul>
-<li><strong>Memory</strong>: This is for ephemeral context where you do not want it to be persisted.</li>
-<li><strong>Persistent</strong>: This is for persistent context where you want values to persist restarts and upgrades.</li>
-</ul>
-<p>For more information on Context, head over to the <a href="https://nodered.org/docs/user-guide/context">Node-RED Working with context</a> guide.</p>
-<h2 id="limitations" tabindex="-1"><a class="header-anchor" href="#limitations">#&nbsp;</a> Limitations</h2>
-<p>Currently, only async versions of context <code>get</code> and context <code>set</code> functions are supported.</p>
-<h3 id="supported%3A" tabindex="-1"><a class="header-anchor" href="#supported%3A">#&nbsp;</a> Supported:</h3>
-
-<div style="position: relative">
-  <pre class="language-js"><code id="code-36"class="language-js">global<span class="token punctuation">.</span><span class="token function">set</span><span class="token punctuation">(</span><span class="token string">'var1'</span><span class="token punctuation">,</span> <span class="token string">'persistent'</span><span class="token punctuation">,</span> <span class="token string">'i am the value'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span>err<span class="token punctuation">)</span> <span class="token punctuation">{</span><br>    <span class="token comment">//do something</span><br><span class="token punctuation">}</span><span class="token punctuation">)</span><br>global<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">'var1'</span><span class="token punctuation">,</span> <span class="token string">'persistent'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter">err<span class="token punctuation">,</span> val</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span><br>    <span class="token comment">//do something with val</span><br><span class="token punctuation">}</span><span class="token punctuation">)</span></code></pre>
-
-  <button class="code-copy "
-    data-clipboard-target="#code-36"
-    style="position: absolute; top: 7.5px; right: 6px; cursor: pointer; outline: none; opacity: 0.8;" title="Copy">
-    <span>
-      <span style="font-size: 15px; opacity: 0.8;" class="mdi mdi-content-copy"></span>
-    </span>
-  </button>
-</div>
-<h3 id="unsupported%3A" tabindex="-1"><a class="header-anchor" href="#unsupported%3A">#&nbsp;</a> Unsupported:</h3>
-
-<div style="position: relative">
-  <pre class="language-js"><code id="code-40"class="language-js"><span class="token comment">// global.set('var1', 'persistent', 'i am the value')</span><br><span class="token comment">// const value = global.get('var1', 'persistent')</span></code></pre>
-
-  <button class="code-copy "
-    data-clipboard-target="#code-40"
-    style="position: absolute; top: 7.5px; right: 6px; cursor: pointer; outline: none; opacity: 0.8;" title="Copy">
-    <span>
-      <span style="font-size: 15px; opacity: 0.8;" class="mdi mdi-content-copy"></span>
-    </span>
-  </button>
-</div>
-
+        <div class="container m-auto text-center px-6 flex mt-6 mb-6 md:max-w-screen-lg md:mt-12">
+            <div class="text-left md:pr-32">
+                <h1>FlowForge 1.3 is now available, share your flows through our new team libraries and much more</h1>
+                
+                <h4>Our first release of 2023 with some great new features to try out, happy new year from everyone at FlowForge!</h4>
+                
+                <p class="author">
+                    <time value="">19 Jan, 2023</time>
+                    |
+                    
+                     Rob Marcer
+                </p>
             </div>
         </div>
-        <!-- on this page -->
-        <div class="w-full md:w-64 md:ml-8 mt-4 md:mt-6 px-2">
-            <h3 class="font-medium border-b pb-1 mb-4">On this page</h3>
-            <ul id="toc" class="text-sm border-b mb-4"></ul>
-            <div class="text-sm pb-1 text-right mb-4"><a href="https://github.com/flowforge/flowforge/edit/main/docs/user/persistent-context.md">Edit this page</a></div>
-            <div class="text-xs pb-1 text-right mb-4 italic">Updated: 2023-01-19 11:00:37 +0000</div>
+    
+    <div class="blog nohero w-full pt-6 pb-24 ff-bg-light">
+        <div class="container m-auto text-left px-6 md:max-w-screen-lg">
+            <a class="block mb-4" href="/blog">&lt; Back to Blog Posts</a>
+            <div class="prose">
+                <div><iframe width="560" height="315" src="https://www.youtube.com/embed/ey3xv5j5x7k" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                     
+                </div>
+                <p>Share your flows via team libraries, control access to your Node-RED dashboards using FlowForge credentials, and filter your audit logs by users and actions.</p>
+<!--more-->
+<p>We're pleased to announce version 1.3 is now available! Due to the recent holiday season, most of our team have been away from their desks but we still have some great new features to share. Keep reading for the details of what's in this release or you can watch our 1 minute roundup video of the new release above.</p>
+<p>To make it easy for everyone to experience FlowForge, we are introducing a new <a href="https://app.flowforge.com/account/create">free 30-day trial</a>. With this trial, you can experience the power of using FlowForge to quickly deliver Node-RED applications in a reliable, repeatable, collaborative, and secure manner. To get your trial simply <a href="https://app.flowforge.com/account/create">sign up for a new FlowForge team</a>.</p>
+<h2 id="features" tabindex="-1"><a class="header-anchor" href="#features">#&nbsp;</a> Features</h2>
+<p><a href="https://github.com/flowforge/flowforge/issues/237">Share your flows via team libraries</a> <br>
+FlowForge has now added the ability for you to share your flows via the import and export features in Node-RED. Once you export a flow everyone else in your FlowForge team will be able to import your work into their projects. You can see a demonstration of this new feature in <a href="https://youtu.be/B7XK3TUklUU">the video</a> below.</p>
+<div><iframe width="560" height="315" src="https://www.youtube.com/embed/B7XK3TUklUU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<p><a href="https://github.com/flowforge/flowforge/issues/1325">Control access to your Node-RED dashboards using FlowForge credentials</a> <br>
+In FlowForge 0.10 we added the ability to secure endpoints created within your FlowForge projects. This allows you to create dashboards or APIs and limit who can access them. In 1.3 we've added the ability for you to limit access to those same resources based on the visitor having a user account on your FlowForge team. You can see a demonstration of this new feature in <a href="https://youtu.be/JRk-Cf7eNIo">the video</a> below.</p>
+<div><iframe width="560" height="315" src="https://www.youtube.com/embed/JRk-Cf7eNIo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<p><a href="https://github.com/flowforge/flowforge/issues/1448">Filter your audit logs for easier reading</a> <br>
+In FlowForge 1.3 we’ve added the ability to filter your admin logs by user or action type. We think this is a great new feature which will help admins have confidence that they will be able to review the audit logs quickly when needed. You can see a demonstration of this new feature in <a href="https://youtu.be/p0Vuy5x42Go">the video</a> below.</p>
+<div><iframe width="560" height="315" src="https://www.youtube.com/embed/p0Vuy5x42Go" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<h2 id="improvements" tabindex="-1"><a class="header-anchor" href="#improvements">#&nbsp;</a> Improvements</h2>
+<p><a href="https://github.com/flowforge/flowforge-device-agent/issues/45">Allow installation of FlowForge on devices which can't access npm</a> <br>
+We've had feedback from customers that in some cases they want to use FlowForge devices on hardware which cannot access <a href="https://www.npmjs.com/">Node Package Manager</a> (npm). In a standard configuration of Node-RED, access to npm is mandatory to run your flows. In FlowForge 1.3.0 we've added the ability for you to import all the data usually installed from npm without your devices having access to the npm service.</p>
+<h2 id="bug-fixes" tabindex="-1"><a class="header-anchor" href="#bug-fixes">#&nbsp;</a> Bug Fixes</h2>
+<p>We've fixed the following bugs in this release.</p>
+<ul>
+<li>Project status UI sometimes getting stuck when restarting <a href="https://github.com/flowforge/flowforge/issues/1232">#1232</a></li>
+<li>SSO users asked to click link in email to verify <a href="https://github.com/flowforge/flowforge/issues/1543">#1543</a></li>
+<li>SSO users unable to edit settings <a href="https://github.com/flowforge/flowforge/issues/1542">#1542</a></li>
+<li>SSO users not redirected to editor when signing in <a href="https://github.com/flowforge/flowforge/issues/1481">#1481</a></li>
+</ul>
+<h2 id="contributors" tabindex="-1"><a class="header-anchor" href="#contributors">#&nbsp;</a> Contributors</h2>
+<p>We'd like to thank the following for their contributions to this release:</p>
+<p><a href="https://github.com/flecoufle">flecoufle</a> for their work on <a href="https://github.com/flowforge/helm/pull/89">#89</a></p>
+<p>As an open-source project, we welcome community involvement in what we're building.
+If you're interested in contributing, checkout our <a href="https://flowforge.com/docs/contribute/">guide in the docs</a>.</p>
+<h2 id="try-it-out" tabindex="-1"><a class="header-anchor" href="#try-it-out">#&nbsp;</a> Try it out</h2>
+<p>We're confident you can have self managed FlowForge running locally in under 30 minutes.
+You can install our <a href="https://flowforge.com/docs/install/local/">local build</a>, use <a href="https://flowforge.com/docs/install/docker/">Docker</a>, or <a href="https://flowforge.com/docs/install/kubernetes/">Kubernetes</a>.</p>
+<p>If you'd rather use our hosted offering: <a href="https://app.flowforge.com/account/create">Get started for free</a> on FlowForge Cloud.</p>
+<h2 id="upgrading-flowforge" tabindex="-1"><a class="header-anchor" href="#upgrading-flowforge">#&nbsp;</a> Upgrading FlowForge</h2>
+<p><a href="https://app.flowforge.com">FlowForge Cloud</a> is already running 1.3.</p>
+<p>If you installed a previous version of FlowForge and want to upgrade, our documentation provides a
+guide for <a href="https://flowforge.com/docs/upgrade/">upgrading your FlowForge instance</a>.</p>
+<h2 id="getting-help" tabindex="-1"><a class="header-anchor" href="#getting-help">#&nbsp;</a> Getting help</h2>
+<p>Please check FlowForge's <a href="https://flowforge.com/docs/">documentation</a> as the answers to many questions are covered there.</p>
+<p>If you hit any problems with the platform please raise an <a href="https://github.com/flowforge/flowforge/issues">issue on GitHub</a>.
+That's also a great place to send us any feedback or feature requests.</p>
+<p>You can also get help on <a href="https://discourse.nodered.org/">the Node-RED forums</a></p>
+<p>AS well as in the <a href="https://github.com/flowforge/flowforge/discussions">forum within our Github project</a></p>
+<p>Chat with us on the <code>#flowforge</code> channel on the <a href="https://nodered.org/slack">Node-RED Slack workspace</a></p>
+<p>You can raise a support ticket by emailing <a href="mailto:support@flowforge.com">support@flowforge.com</a></p>
+<p>We've also added a live chat widget to our website, you can access it using the icon on the bottom right corner of our website. We'd love to hear from you.</p>
+
+            </div>
+            <div class="mt-12 pt-12 flex flex-col border-t-2">
+                <h3 class="mb-6">Sign up for updates</h3>
+                <form
+                    action="https://buttondown.email/api/emails/embed-subscribe/flowforge"
+                    method="post"
+                    target="popupwindow"
+                    onsubmit="window.open('https://buttondown.email/flowforge', 'popupwindow')"
+                    class="embeddable-buttondown-form my-1 ">
+                    <div class="flex flex-col sm:flex-row">
+                        <input type="email" name="email" id="bd-email" placeholder="Enter your email" class="ff-input ff-text-input lg:w-80 md:w-60" />
+                        <input type="hidden" value="1" name="embed" />
+                        <input type="submit" value="Subscribe" class="ff-btn ff-btn--primary w-full mt-3 sm:w-auto sm:mt-0 sm:ml-3"/>
+                    </div>
+                </form>
+            </div>
         </div>
     </div>
 </div>
-<script>
-    // Generate "On this page"
-    let toc = document.getElementById("toc")
 
-    let currentTag = "";
-    let currentToc = toc;
-    let currentItem;
-
-    let activeTier = 0 // which index to read from the depth
-    let depth = [1, 1, 1, 1] // tracks the active number to render at each depth
-
-    document.querySelectorAll(".main-content > h2, .main-content > h3, .main-content > h4").forEach(function(n) {
-        // which level of "H_" are we working with, and which one did we see most recently
-        const level = parseInt(n.nodeName[1])
-        const prevLevel = currentTag.length > 1 ? parseInt(currentTag[1]) : 0
-
-        // add numbering to our headers for easier navigation
-        if (prevLevel === 0) {
-            activeTier = 0
-        } else if (prevLevel > level) {
-            activeTier -= (prevLevel - level)
-            depth[activeTier] += 1
-        } else if (prevLevel < level) {
-            activeTier += 1
-            depth[activeTier] = 1
-        } else {
-            depth[activeTier] += 1
-        }
-        const hText = n.childNodes[n.childNodes.length - 1] // get the text only from our header
-        let number = ''
-        for (var nH = 0; nH <= activeTier; nH++) {
-            if (nH > 0) {
-                number += '.'
-            }
-            number += `${depth[nH]}`
-        }
-        // style top level header as '1. Header'
-        if (activeTier === 0) {
-            hText.textContent = `${number}. ${hText.textContent}`
-        } else {
-            // then style children as '1.1 - Header'
-            hText.textContent = `${number} - ${hText.textContent}`
-        }
-
-    // Render Table of Contents
-        if (prevLevel > 0 && level - prevLevel < 0) {
-            // we are moving left with our indent
-            currentToc = toc;
-        } else if (prevLevel > 0 && level - prevLevel > 0) {
-            // we are creating a new, nested `<ul>`
-            currentToc = document.createElement("ul");
-            currentToc.classList.add("ml-4")
-            currentToc.classList.add("mt-2")
-            currentToc.classList.add("mb-4")
-            currentItem.append(currentToc);
-        }
-        currentTag = n.nodeName;
-        currentItem = document.createElement("li");
-        currentItem.classList.add("mb-2")
-        let currentLink = document.createElement("a");
-        currentItem.append(currentLink);
-        let link = n.getElementsByTagName('a')
-        currentLink.href = link[0].href;
-        currentLink.textContent = n.textContent.replace(/#\s+/g,"");
-        currentToc.append(currentItem);
-    })
-
-    // All external links open in new page
-    document.querySelectorAll("[data-handbook] a").forEach((link) => {
-        try {
-            if (!link.target && window.location.host !== new URL(link.href).host) {
-                link.target = "_blank";
-            }
-        } catch {
-            // Swallow errors
-        }
-    })
-</script>
-<script async src="https://unpkg.com/mermaid/dist/mermaid.min.js">mermaid.initialize({ startOnLoad: true });</script>
-
-</div>
-
-    </div>
-</div>
             </main>
         </div>
     </div>

@@ -3,8 +3,65 @@
     <title>FlowForge</title>
     <link href="https://flowforge.com/blog/index.xml" rel="self"/>
     <link href="https://flowforge.com/blog"/>
-    <updated>2023-01-12T12:00:00Z</updated>
+    <updated>2023-01-19T18:00:00Z</updated>
     <id>https://flowforge.com/blog</id>
+    
+    <entry>
+        <id>https://flowforge.com/blog/2023/01/flowforge-1-3-0-released/</id>
+        <title>FlowForge 1.3 is now available, share your flows through our new team libraries and much more</title>
+        <summary>Our first release of 2023 with some great new features to try out, happy new year from everyone at FlowForge!</summary>
+        <updated>2023-01-19T18:00:00Z</updated>
+        <link href="https://flowforge.com/blog/2023/01/flowforge-1-3-0-released/"/>
+        <author><name>Rob Marcer</name></author>
+        <content type="html">&lt;p&gt;Share your flows via team libraries, control access to your Node-RED dashboards using FlowForge credentials, and filter your audit logs by users and actions.&lt;/p&gt;
+&lt;!--more--&gt;
+&lt;p&gt;We&#39;re pleased to announce version 1.3 is now available! Due to the recent holiday season, most of our team have been away from their desks but we still have some great new features to share. Keep reading for the details of what&#39;s in this release or you can watch our 1 minute roundup video of the new release above.&lt;/p&gt;
+&lt;p&gt;To make it easy for everyone to experience FlowForge, we are introducing a new &lt;a href=&quot;https://app.flowforge.com/account/create&quot;&gt;free 30-day trial&lt;/a&gt;. With this trial, you can experience the power of using FlowForge to quickly deliver Node-RED applications in a reliable, repeatable, collaborative, and secure manner. To get your trial simply &lt;a href=&quot;https://app.flowforge.com/account/create&quot;&gt;sign up for a new FlowForge team&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&quot;features&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://flowforge.com/blog/2023/01/flowforge-1-3-0-released/#features&quot;&gt;#&amp;nbsp;&lt;/a&gt; Features&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/flowforge/flowforge/issues/237&quot;&gt;Share your flows via team libraries&lt;/a&gt; &lt;br /&gt;
+FlowForge has now added the ability for you to share your flows via the import and export features in Node-RED. Once you export a flow everyone else in your FlowForge team will be able to import your work into their projects. You can see a demonstration of this new feature in &lt;a href=&quot;https://youtu.be/B7XK3TUklUU&quot;&gt;the video&lt;/a&gt; below.&lt;/p&gt;
+&lt;div&gt;&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/B7XK3TUklUU&quot; title=&quot;YouTube video player&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/flowforge/flowforge/issues/1325&quot;&gt;Control access to your Node-RED dashboards using FlowForge credentials&lt;/a&gt; &lt;br /&gt;
+In FlowForge 0.10 we added the ability to secure endpoints created within your FlowForge projects. This allows you to create dashboards or APIs and limit who can access them. In 1.3 we&#39;ve added the ability for you to limit access to those same resources based on the visitor having a user account on your FlowForge team. You can see a demonstration of this new feature in &lt;a href=&quot;https://youtu.be/JRk-Cf7eNIo&quot;&gt;the video&lt;/a&gt; below.&lt;/p&gt;
+&lt;div&gt;&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/JRk-Cf7eNIo&quot; title=&quot;YouTube video player&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/flowforge/flowforge/issues/1448&quot;&gt;Filter your audit logs for easier reading&lt;/a&gt; &lt;br /&gt;
+In FlowForge 1.3 we’ve added the ability to filter your admin logs by user or action type. We think this is a great new feature which will help admins have confidence that they will be able to review the audit logs quickly when needed. You can see a demonstration of this new feature in &lt;a href=&quot;https://youtu.be/p0Vuy5x42Go&quot;&gt;the video&lt;/a&gt; below.&lt;/p&gt;
+&lt;div&gt;&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/p0Vuy5x42Go&quot; title=&quot;YouTube video player&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
+&lt;h2 id=&quot;improvements&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://flowforge.com/blog/2023/01/flowforge-1-3-0-released/#improvements&quot;&gt;#&amp;nbsp;&lt;/a&gt; Improvements&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/flowforge/flowforge-device-agent/issues/45&quot;&gt;Allow installation of FlowForge on devices which can&#39;t access npm&lt;/a&gt; &lt;br /&gt;
+We&#39;ve had feedback from customers that in some cases they want to use FlowForge devices on hardware which cannot access &lt;a href=&quot;https://www.npmjs.com/&quot;&gt;Node Package Manager&lt;/a&gt; (npm). In a standard configuration of Node-RED, access to npm is mandatory to run your flows. In FlowForge 1.3.0 we&#39;ve added the ability for you to import all the data usually installed from npm without your devices having access to the npm service.&lt;/p&gt;
+&lt;h2 id=&quot;bug-fixes&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://flowforge.com/blog/2023/01/flowforge-1-3-0-released/#bug-fixes&quot;&gt;#&amp;nbsp;&lt;/a&gt; Bug Fixes&lt;/h2&gt;
+&lt;p&gt;We&#39;ve fixed the following bugs in this release.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Project status UI sometimes getting stuck when restarting &lt;a href=&quot;https://github.com/flowforge/flowforge/issues/1232&quot;&gt;#1232&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;SSO users asked to click link in email to verify &lt;a href=&quot;https://github.com/flowforge/flowforge/issues/1543&quot;&gt;#1543&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;SSO users unable to edit settings &lt;a href=&quot;https://github.com/flowforge/flowforge/issues/1542&quot;&gt;#1542&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;SSO users not redirected to editor when signing in &lt;a href=&quot;https://github.com/flowforge/flowforge/issues/1481&quot;&gt;#1481&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;contributors&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://flowforge.com/blog/2023/01/flowforge-1-3-0-released/#contributors&quot;&gt;#&amp;nbsp;&lt;/a&gt; Contributors&lt;/h2&gt;
+&lt;p&gt;We&#39;d like to thank the following for their contributions to this release:&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/flecoufle&quot;&gt;flecoufle&lt;/a&gt; for their work on &lt;a href=&quot;https://github.com/flowforge/helm/pull/89&quot;&gt;#89&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;As an open-source project, we welcome community involvement in what we&#39;re building.
+If you&#39;re interested in contributing, checkout our &lt;a href=&quot;https://flowforge.com/docs/contribute/&quot;&gt;guide in the docs&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&quot;try-it-out&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://flowforge.com/blog/2023/01/flowforge-1-3-0-released/#try-it-out&quot;&gt;#&amp;nbsp;&lt;/a&gt; Try it out&lt;/h2&gt;
+&lt;p&gt;We&#39;re confident you can have self managed FlowForge running locally in under 30 minutes.
+You can install our &lt;a href=&quot;https://flowforge.com/docs/install/local/&quot;&gt;local build&lt;/a&gt;, use &lt;a href=&quot;https://flowforge.com/docs/install/docker/&quot;&gt;Docker&lt;/a&gt;, or &lt;a href=&quot;https://flowforge.com/docs/install/kubernetes/&quot;&gt;Kubernetes&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;If you&#39;d rather use our hosted offering: &lt;a href=&quot;https://app.flowforge.com/account/create&quot;&gt;Get started for free&lt;/a&gt; on FlowForge Cloud.&lt;/p&gt;
+&lt;h2 id=&quot;upgrading-flowforge&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://flowforge.com/blog/2023/01/flowforge-1-3-0-released/#upgrading-flowforge&quot;&gt;#&amp;nbsp;&lt;/a&gt; Upgrading FlowForge&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&quot;https://app.flowforge.com/&quot;&gt;FlowForge Cloud&lt;/a&gt; is already running 1.3.&lt;/p&gt;
+&lt;p&gt;If you installed a previous version of FlowForge and want to upgrade, our documentation provides a
+guide for &lt;a href=&quot;https://flowforge.com/docs/upgrade/&quot;&gt;upgrading your FlowForge instance&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&quot;getting-help&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://flowforge.com/blog/2023/01/flowforge-1-3-0-released/#getting-help&quot;&gt;#&amp;nbsp;&lt;/a&gt; Getting help&lt;/h2&gt;
+&lt;p&gt;Please check FlowForge&#39;s &lt;a href=&quot;https://flowforge.com/docs/&quot;&gt;documentation&lt;/a&gt; as the answers to many questions are covered there.&lt;/p&gt;
+&lt;p&gt;If you hit any problems with the platform please raise an &lt;a href=&quot;https://github.com/flowforge/flowforge/issues&quot;&gt;issue on GitHub&lt;/a&gt;.
+That&#39;s also a great place to send us any feedback or feature requests.&lt;/p&gt;
+&lt;p&gt;You can also get help on &lt;a href=&quot;https://discourse.nodered.org/&quot;&gt;the Node-RED forums&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;AS well as in the &lt;a href=&quot;https://github.com/flowforge/flowforge/discussions&quot;&gt;forum within our Github project&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Chat with us on the &lt;code&gt;#flowforge&lt;/code&gt; channel on the &lt;a href=&quot;https://nodered.org/slack&quot;&gt;Node-RED Slack workspace&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;You can raise a support ticket by emailing &lt;a href=&quot;mailto:support@flowforge.com&quot;&gt;support@flowforge.com&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;We&#39;ve also added a live chat widget to our website, you can access it using the icon on the bottom right corner of our website. We&#39;d love to hear from you.&lt;/p&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</content>
+    </entry>
     
     <entry>
         <id>https://flowforge.com/blog/2023/01/flowforge-1.2.1-released/</id>

@@ -85,7 +85,7 @@
     <div class="w-full mx-auto ff-bg-light">
         <div class="font-medium border-b pb-1">
             
-            v1.2.1
+            v1.3.0
             
             /<a class="mx-2" href="/docs">docs</a>/<a class="mx-2" href="/docs/install">install</a>/<a class="mx-2" href="/docs/install/kubernetes">kubernetes</a>/<a class="mx-2" href="/docs/install/kubernetes/stacks">stacks</a>
         </div>
@@ -107,13 +107,14 @@ applied to each project when created.</p>
 <p>There is an example <code>Dockerfile</code> and <code>package.json</code> in the <a href="https://github.com/flowforge/helm/tree/main/node-red-container">node-red-container</a>
 directory of the <a href="https://github.com/flowforge/helm">helm</a> project. This will start with <code>nodered/node-red:latest</code>
 as it's base and then add the required FlowForge components.</p>
+<p>Builds of this container for amd64, arm64 and armv7 are built for every release and published to Docker hub as <a href="https://hub.docker.com/r/flowforge/node-red">flowforge/node-red</a>. These can be used as a base to build custom stacks.</p>
 <p>If you wanted to pin at Node-RED v3.0.2 you would change the first line to:</p>
 
 <div style="position: relative">
-  <pre class="language-docker"><code id="code-35"class="language-docker"><span class="token instruction"><span class="token keyword">FROM</span> nodered/node-red:3.0.2</span><br><br><span class="token instruction"><span class="token keyword">ARG</span> REGISTRY</span><br><span class="token instruction"><span class="token keyword">RUN</span> if [[ ! -z <span class="token string">"$REGISTRY"</span> ]] ; then npm config set @flowforge:registry <span class="token string">"$REGISTRY"</span>; fi</span><br><br><span class="token instruction"><span class="token keyword">COPY</span> package.json /data</span><br>...</code></pre>
+  <pre class="language-docker"><code id="code-38"class="language-docker"><span class="token instruction"><span class="token keyword">FROM</span> nodered/node-red:3.0.2</span><br><br><span class="token instruction"><span class="token keyword">ARG</span> REGISTRY</span><br><span class="token instruction"><span class="token keyword">RUN</span> if [[ ! -z <span class="token string">"$REGISTRY"</span> ]] ; then npm config set @flowforge:registry <span class="token string">"$REGISTRY"</span>; fi</span><br><br><span class="token instruction"><span class="token keyword">COPY</span> package.json /data</span><br>...</code></pre>
 
   <button class="code-copy "
-    data-clipboard-target="#code-35"
+    data-clipboard-target="#code-38"
     style="position: absolute; top: 7.5px; right: 6px; cursor: pointer; outline: none; opacity: 0.8;" title="Copy">
     <span>
       <span style="font-size: 15px; opacity: 0.8;" class="mdi mdi-content-copy"></span>
@@ -124,10 +125,10 @@ as it's base and then add the required FlowForge components.</p>
 side the FlowForge plugins</p>
 
 <div style="position: relative">
-  <pre class="language-json"><code id="code-39"class="language-json"><span class="token punctuation">{</span><br>    <span class="token property">"name"</span><span class="token operator">:</span> <span class="token string">"node-red-project"</span><span class="token punctuation">,</span><br>    <span class="token property">"description"</span><span class="token operator">:</span> <span class="token string">"A Node-RED Project"</span><span class="token punctuation">,</span><br>    <span class="token property">"version"</span><span class="token operator">:</span> <span class="token string">"0.10.0"</span><span class="token punctuation">,</span><br>    <span class="token property">"private"</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span><br>    <span class="token property">"dependencies"</span><span class="token operator">:</span><span class="token punctuation">{</span><br>        <span class="token property">"@flowforge/nr-storage"</span><span class="token operator">:</span> <span class="token string">"^0.10.0"</span><span class="token punctuation">,</span><br>        <span class="token property">"@flowforge/nr-auth"</span><span class="token operator">:</span> <span class="token string">"^0.10.0"</span><span class="token punctuation">,</span><br>        <span class="token property">"@flowforge/nr-audit-logger"</span><span class="token operator">:</span> <span class="token string">"^0.10.0"</span><span class="token punctuation">,</span><br>        <span class="token property">"node-red-dashboard"</span><span class="token operator">:</span> <span class="token string">"^3.1.6"</span><br>    <span class="token punctuation">}</span><br><span class="token punctuation">}</span></code></pre>
+  <pre class="language-json"><code id="code-42"class="language-json"><span class="token punctuation">{</span><br>    <span class="token property">"name"</span><span class="token operator">:</span> <span class="token string">"node-red-project"</span><span class="token punctuation">,</span><br>    <span class="token property">"description"</span><span class="token operator">:</span> <span class="token string">"A Node-RED Project"</span><span class="token punctuation">,</span><br>    <span class="token property">"version"</span><span class="token operator">:</span> <span class="token string">"0.10.0"</span><span class="token punctuation">,</span><br>    <span class="token property">"private"</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span><br>    <span class="token property">"dependencies"</span><span class="token operator">:</span><span class="token punctuation">{</span><br>        <span class="token property">"@flowforge/nr-storage"</span><span class="token operator">:</span> <span class="token string">"^0.10.0"</span><span class="token punctuation">,</span><br>        <span class="token property">"@flowforge/nr-auth"</span><span class="token operator">:</span> <span class="token string">"^0.10.0"</span><span class="token punctuation">,</span><br>        <span class="token property">"@flowforge/nr-audit-logger"</span><span class="token operator">:</span> <span class="token string">"^0.10.0"</span><span class="token punctuation">,</span><br>        <span class="token property">"node-red-dashboard"</span><span class="token operator">:</span> <span class="token string">"^3.1.6"</span><br>    <span class="token punctuation">}</span><br><span class="token punctuation">}</span></code></pre>
 
   <button class="code-copy "
-    data-clipboard-target="#code-39"
+    data-clipboard-target="#code-42"
     style="position: absolute; top: 7.5px; right: 6px; cursor: pointer; outline: none; opacity: 0.8;" title="Copy">
     <span>
       <span style="font-size: 15px; opacity: 0.8;" class="mdi mdi-content-copy"></span>
@@ -137,10 +138,10 @@ side the FlowForge plugins</p>
 <p>To build the container run the following:</p>
 
 <div style="position: relative">
-  <pre class="language-shell"><code id="code-43"class="language-shell"><span class="token function">docker</span> build node-red-container <span class="token parameter variable">-t</span> <span class="token punctuation">[</span>your.container.registry<span class="token punctuation">]</span>/flowforge/node-red-dashboard:3.0.2<br><span class="token function">docker</span> push <span class="token punctuation">[</span>your.container.registry<span class="token punctuation">]</span>/flowforge/node-red-dashboard:3.0.2</code></pre>
+  <pre class="language-shell"><code id="code-46"class="language-shell"><span class="token function">docker</span> build node-red-container <span class="token parameter variable">-t</span> <span class="token punctuation">[</span>your.container.registry<span class="token punctuation">]</span>/flowforge/node-red-dashboard:3.0.2<br><span class="token function">docker</span> push <span class="token punctuation">[</span>your.container.registry<span class="token punctuation">]</span>/flowforge/node-red-dashboard:3.0.2</code></pre>
 
   <button class="code-copy "
-    data-clipboard-target="#code-43"
+    data-clipboard-target="#code-46"
     style="position: absolute; top: 7.5px; right: 6px; cursor: pointer; outline: none; opacity: 0.8;" title="Copy">
     <span>
       <span style="font-size: 15px; opacity: 0.8;" class="mdi mdi-content-copy"></span>
@@ -159,7 +160,7 @@ of the Stack configuration.</p>
             <h3 class="font-medium border-b pb-1 mb-4">On this page</h3>
             <ul id="toc" class="text-sm border-b mb-4"></ul>
             <div class="text-sm pb-1 text-right mb-4"><a href="https://github.com/flowforge/flowforge/edit/main/docs/install/kubernetes/stacks.md">Edit this page</a></div>
-            <div class="text-xs pb-1 text-right mb-4 italic">Updated: 2023-01-12 10:49:38 +0000</div>
+            <div class="text-xs pb-1 text-right mb-4 italic">Updated: 2023-01-19 11:00:37 +0000</div>
         </div>
     </div>
 </div>

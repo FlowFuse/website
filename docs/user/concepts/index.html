@@ -85,7 +85,7 @@
     <div class="w-full mx-auto ff-bg-light">
         <div class="font-medium border-b pb-1">
             
-            v1.2.1
+            v1.3.0
             
             /<a class="mx-2" href="/docs">docs</a>/<a class="mx-2" href="/docs/user">user</a>/<a class="mx-2" href="/docs/user/concepts">concepts</a>
         </div>
@@ -104,6 +104,7 @@ are a few concepts the platform introduces to help organise things.</p>
 <li><a href="#project-stack">Stack</a></li>
 <li><a href="#project-template">Template</a></li>
 <li><a href="#project-snapshot">Snapshot</a></li>
+<li><a href="#project-deployment">Deployment</a></li>
 </ul>
 </li>
 <li><a href="#team">Team</a></li>
@@ -143,7 +144,7 @@ with the chosen Project Type.</p>
 settings a user familiar with Node-RED would be used to modifying in their settings
 file. But it can also be used to customise the palette of nodes that are pre-installed,
 provide a set of default flows and change the look and feel of the editor.</p>
-<p>A template can also specify <a href="../envvar"">Environment Variables</a> which can then have
+<p>A template can also specify <a href=".././envvar"">Environment Variables</a> which can then have
 their values as editable for each project or locked. It is not possible to disable
 the use of environment variables in a project.</p>
 <p><em>Note:</em> not all of these features are available today.</p>
@@ -156,6 +157,17 @@ and runtime settings.</p>
 <p>Snapshots can be created (and deleted) on the FlowForge dashboard, or using the
 <a href=".././node-red-tools"">FlowForge Node-RED Tools plugin</a>.</p>
 <p>The dashboard also allows you to roll a project back to a previous snapshot.</p>
+<h4 id="project-deployment" tabindex="-1"><a class="header-anchor" href="#project-deployment">#&nbsp;</a> Project Deployment</h4>
+<p>Each FlowForge project comes with a deployment of Node-RED, hosted by FlowForge, at the same
+domain. For a given FlowForge Project, there are two type of Deployments:</p>
+<ul>
+<li><strong>FlowForge Hosted:</strong> Currently, this just includes the single instance of Node-RED
+hosted at the same domain as FlowForge and configured through the settings of the Project.</li>
+<li><strong>Remote Deployments:</strong> These can be created and managed using the <a href="https://github.com/flowforge/flowforge-device-agent">FlowForge Device Agent</a>.
+You can bind existing <a href="/docs/user/devices"">Devices</a> to your Project, and then set a
+<a href="/docs/user/snapshots/#setting-a-device-target-snapshot"">Target Snapshot</a> for those devices.
+FlowForge will automatically deploy that snapshot out to any devices bound to the Project.</li>
+</ul>
 <h3 id="team" tabindex="-1"><a class="header-anchor" href="#team">#&nbsp;</a> Team</h3>
 <p>Each project is owned by a Team. Only members of that team have access to the
 Node-RED editor for the project. Members have different roles assigned to them
@@ -176,7 +188,7 @@ all of the devices assigned to the project.</p>
             <h3 class="font-medium border-b pb-1 mb-4">On this page</h3>
             <ul id="toc" class="text-sm border-b mb-4"></ul>
             <div class="text-sm pb-1 text-right mb-4"><a href="https://github.com/flowforge/flowforge/edit/main/docs/user/concepts.md">Edit this page</a></div>
-            <div class="text-xs pb-1 text-right mb-4 italic">Updated: 2023-01-12 10:49:38 +0000</div>
+            <div class="text-xs pb-1 text-right mb-4 italic">Updated: 2023-01-19 11:00:37 +0000</div>
         </div>
     </div>
 </div>

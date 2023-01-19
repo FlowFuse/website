@@ -85,7 +85,7 @@
     <div class="w-full mx-auto ff-bg-light">
         <div class="font-medium border-b pb-1">
             
-            v1.2.1
+            v1.3.0
             
             /<a class="mx-2" href="/docs">docs</a>/<a class="mx-2" href="/docs/upgrade">upgrade</a>
         </div>
@@ -101,6 +101,15 @@ particular requirements needed to upgrade to a given level.</p>
 for each version you are upgrading across.</p>
 <p>Note that we do not support downgrading FlowForge to previous levels once an upgrade
 has been performed.</p>
+<h3 id="upgrading-to-1.3" tabindex="-1"><a class="header-anchor" href="#upgrading-to-1.3">#&nbsp;</a> Upgrading to 1.3</h3>
+<p>Details of how to upgrade can be found for each deployment model:</p>
+<ul>
+<li><a href="../install/local/#upgrade"">LocalFS</a></li>
+<li><a href="../install/docker/#upgrade"">Docker</a></li>
+<li><a href="../install/kubernetes/#upgrade"">Kubernetes</a></li>
+</ul>
+<p>To enable the Team Library and FlowForge-based Authentication of HTTP routes each
+project will need to be updated to the <a href="../user/changestack"">latest Stack</a>.</p>
 <h3 id="upgrading-to-1.2" tabindex="-1"><a class="header-anchor" href="#upgrading-to-1.2">#&nbsp;</a> Upgrading to 1.2</h3>
 <p>Details of how to upgrade can be found for each deployment model:</p>
 <ul>
@@ -143,10 +152,10 @@ container driver. We are moving from v5.0.2 to v5.0.8.</p>
 SQLite3 module that gives an error similar to the following:</p>
 
 <div style="position: relative">
-  <pre class="language-bash"><code id="code-114"class="language-bash"><span class="token function">npm</span> ERR<span class="token operator">!</span> path /opt/share/projects/flowforge/sqlite-test/node_modules/sqlite3<br><span class="token function">npm</span> ERR<span class="token operator">!</span> <span class="token builtin class-name">command</span> failed<br><span class="token function">npm</span> ERR<span class="token operator">!</span> <span class="token builtin class-name">command</span> <span class="token function">sh</span> <span class="token parameter variable">-c</span> node-pre-gyp <span class="token function">install</span> --fallback-to-build<br><span class="token function">npm</span> ERR<span class="token operator">!</span> sh: line <span class="token number">1</span>: node-pre-gyp: <span class="token builtin class-name">command</span> not found</code></pre>
+  <pre class="language-bash"><code id="code-140"class="language-bash"><span class="token function">npm</span> ERR<span class="token operator">!</span> path /opt/share/projects/flowforge/sqlite-test/node_modules/sqlite3<br><span class="token function">npm</span> ERR<span class="token operator">!</span> <span class="token builtin class-name">command</span> failed<br><span class="token function">npm</span> ERR<span class="token operator">!</span> <span class="token builtin class-name">command</span> <span class="token function">sh</span> <span class="token parameter variable">-c</span> node-pre-gyp <span class="token function">install</span> --fallback-to-build<br><span class="token function">npm</span> ERR<span class="token operator">!</span> sh: line <span class="token number">1</span>: node-pre-gyp: <span class="token builtin class-name">command</span> not found</code></pre>
 
   <button class="code-copy "
-    data-clipboard-target="#code-114"
+    data-clipboard-target="#code-140"
     style="position: absolute; top: 7.5px; right: 6px; cursor: pointer; outline: none; opacity: 0.8;" title="Copy">
     <span>
       <span style="font-size: 15px; opacity: 0.8;" class="mdi mdi-content-copy"></span>
@@ -193,7 +202,7 @@ be associated with the new Project Type</li>
             <h3 class="font-medium border-b pb-1 mb-4">On this page</h3>
             <ul id="toc" class="text-sm border-b mb-4"></ul>
             <div class="text-sm pb-1 text-right mb-4"><a href="https://github.com/flowforge/flowforge/edit/main/docs/upgrade/README.md">Edit this page</a></div>
-            <div class="text-xs pb-1 text-right mb-4 italic">Updated: 2023-01-12 10:49:38 +0000</div>
+            <div class="text-xs pb-1 text-right mb-4 italic">Updated: 2023-01-19 11:00:37 +0000</div>
         </div>
     </div>
 </div>

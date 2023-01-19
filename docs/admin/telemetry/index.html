@@ -85,7 +85,7 @@
     <div class="w-full mx-auto ff-bg-light">
         <div class="font-medium border-b pb-1">
             
-            v1.2.1
+            v1.3.0
             
             /<a class="mx-2" href="/docs">docs</a>/<a class="mx-2" href="/docs/admin">admin</a>/<a class="mx-2" href="/docs/admin/telemetry">telemetry</a>
         </div>
@@ -178,38 +178,47 @@ a <strong>hash</strong> of the sending IP address - we do not store the plain va
 <p>The data is sent via an HTTP Post to <code>https://ping.flowforge.com</code>.</p>
 <h2 id="frontend-telemetry" tabindex="-1"><a class="header-anchor" href="#frontend-telemetry">#&nbsp;</a> Frontend Telemetry</h2>
 <p>The FlowForge UI can be configured to track usage to help understand how users are navigating the pages.</p>
-<p>It currently supports using <a href="https://plausible.io/">Plausible Analytics</a> to gather the information.</p>
+<p>It supports integration with two different services:</p>
+<ul>
+<li><a href="https://posthog.com/">PostHog</a> <em>(recommended)</em>: You will require your own API key to pass into the <code>yml</code>, which will begin the logging of user interactions.</li>
+<li><a href="https://plausible.io/">Plausible</a>: <em>(deprecated since 0.9 and will be removed in the future)</em>: You can setup your own account, and pass the relevant domain to the <code>yml</code> in the telemetry configuration. As this
+option is deprecated, details of how to configure are no longer provided.</li>
+</ul>
 <h3 id="configuring-telemetry-1" tabindex="-1"><a class="header-anchor" href="#configuring-telemetry-1">#&nbsp;</a> Configuring Telemetry</h3>
-<p>Further details about how users are navigating around your instance of FlowForge can be enabled via <a href="https://plausible.io/">Plausible</a>. This can be enabled with:</p>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>telemetry.enabled</code></td>
+<td>Enables the anonymous usage telemetry of the platform. Default: <code>true</code></td>
+</tr>
+<tr>
+<td><code>telemetry.frontend.posthog.apikey</code></td>
+<td>The API key provided to you from your own PostHog account. Default: <code>null</code></td>
+</tr>
+<tr>
+<td><code>telemetry.frontend.posthog.capture_pageview</code></td>
+<td>FlowForge is designed as to provide custom posthog <code>$pageview</code> events that provide more detail on navigation than the default, and suit a single page application better. As such, we recommend setting this to false in order to prevent duplicate <code>pageleave</code>/<code>pageview</code> events firing. Default: <code>true</code></td>
+</tr>
+</tbody>
+</table>
 
 <div style="position: relative">
-  <pre class="language-yaml"><code id="code-137"class="language-yaml"><span class="token key atrule">telemetry</span><span class="token punctuation">:</span><br>  <span class="token key atrule">enabled</span><span class="token punctuation">:</span> <span class="token boolean important">true</span><br>  <span class="token key atrule">frontend</span><span class="token punctuation">:</span><br>    <span class="token key atrule">plausible</span><span class="token punctuation">:</span><br>      <span class="token key atrule">domain</span><span class="token punctuation">:</span> &lt;data<span class="token punctuation">-</span>domain<span class="token punctuation">></span></code></pre>
+  <pre class="language-yaml"><code id="code-184"class="language-yaml"><span class="token key atrule">telemetry</span><span class="token punctuation">:</span><br>  <span class="token key atrule">enabled</span><span class="token punctuation">:</span> <span class="token boolean important">true</span><br>  <span class="token key atrule">frontend</span><span class="token punctuation">:</span><br>    <span class="token key atrule">posthog</span><span class="token punctuation">:</span><br>      <span class="token key atrule">apikey</span><span class="token punctuation">:</span> &lt;api<span class="token punctuation">-</span>key<span class="token punctuation">></span><br>      <span class="token key atrule">capture_pageview</span><span class="token punctuation">:</span> <span class="token boolean important">false</span></code></pre>
 
   <button class="code-copy "
-    data-clipboard-target="#code-137"
+    data-clipboard-target="#code-184"
     style="position: absolute; top: 7.5px; right: 6px; cursor: pointer; outline: none; opacity: 0.8;" title="Copy">
     <span>
       <span style="font-size: 15px; opacity: 0.8;" class="mdi mdi-content-copy"></span>
     </span>
   </button>
 </div>
-<p>Optionally, you can use a Plausible <code>extension</code> too:</p>
-
-<div style="position: relative">
-  <pre class="language-yaml"><code id="code-141"class="language-yaml"><span class="token key atrule">telemetry</span><span class="token punctuation">:</span><br>  <span class="token key atrule">enabled</span><span class="token punctuation">:</span> <span class="token boolean important">true</span><br>  <span class="token key atrule">frontend</span><span class="token punctuation">:</span><br>    <span class="token key atrule">plausible</span><span class="token punctuation">:</span><br>      <span class="token key atrule">domain</span><span class="token punctuation">:</span> &lt;data<span class="token punctuation">-</span>domain<span class="token punctuation">></span><br>      <span class="token key atrule">extension</span><span class="token punctuation">:</span> local</code></pre>
-
-  <button class="code-copy "
-    data-clipboard-target="#code-141"
-    style="position: absolute; top: 7.5px; right: 6px; cursor: pointer; outline: none; opacity: 0.8;" title="Copy">
-    <span>
-      <span style="font-size: 15px; opacity: 0.8;" class="mdi mdi-content-copy"></span>
-    </span>
-  </button>
-</div>
-<h3 id="collected-data-1" tabindex="-1"><a class="header-anchor" href="#collected-data-1">#&nbsp;</a> Collected Data</h3>
-<p>Details on the metrics gathered through Plausible can be found in the <a href="https://plausible.io/docs/metrics-definitions">Plausible Documentation</a></p>
-<h3 id="schedule-1" tabindex="-1"><a class="header-anchor" href="#schedule-1">#&nbsp;</a> Schedule</h3>
-<p>Plausible tracking is sent as the relevant events are triggered, e.g. as a user navigates between two pages, or as they load the platform.</p>
 
             </div>
         </div>
@@ -218,7 +227,7 @@ a <strong>hash</strong> of the sending IP address - we do not store the plain va
             <h3 class="font-medium border-b pb-1 mb-4">On this page</h3>
             <ul id="toc" class="text-sm border-b mb-4"></ul>
             <div class="text-sm pb-1 text-right mb-4"><a href="https://github.com/flowforge/flowforge/edit/main/docs/admin/telemetry.md">Edit this page</a></div>
-            <div class="text-xs pb-1 text-right mb-4 italic">Updated: 2023-01-12 10:49:38 +0000</div>
+            <div class="text-xs pb-1 text-right mb-4 italic">Updated: 2023-01-19 11:00:37 +0000</div>
         </div>
     </div>
 </div>
