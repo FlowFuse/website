@@ -1,7 +1,7 @@
 ---
 title: FlowForge 1.3 is now available, share your flows through our new team libraries and much more
 subtitle: Our first release of 2023 with some great new features to try out, happy new year from everyone at FlowForge!
-description: 
+description: FlowForge 1.3 is now available, share your flows through our new team libraries and much more
 date: 2023-01-19 18:00:00.0
 authors: ["rob-marcer"]
 video: ey3xv5j5x7k
@@ -17,36 +17,32 @@ To make it easy for everyone to experience FlowForge, we are introducing a new [
 
 ## Features
 
-[Share your flows via team libraries](https://github.com/flowforge/flowforge/issues/237)
+[Share your flows via team libraries](https://github.com/flowforge/flowforge/issues/237) \
 FlowForge has now added the ability for you to share your flows via the import and export features in Node-RED. Once you export a flow everyone else in your FlowForge team will be able to import your work into their projects. You can see a demonstration of this new feature in [the video](https://youtu.be/B7XK3TUklUU) below.
 
 <div><iframe width="560" height="315" src="https://www.youtube.com/embed/B7XK3TUklUU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-[Control access to your Node-RED dashboards using FlowForge credentials](https://github.com/flowforge/flowforge/issues/1325)
+[Control access to your Node-RED dashboards using FlowForge credentials](https://github.com/flowforge/flowforge/issues/1325) \
 In FlowForge 0.10 we added the ability to secure endpoints created within your FlowForge projects. This allows you to create dashboards or APIs and limit who can access them. In 1.3 we've added the ability for you to limit access to those same resources based on the visitor having a user account on your FlowForge team. You can see a demonstration of this new feature in [the video](https://youtu.be/JRk-Cf7eNIo) below.
 
 <div><iframe width="560" height="315" src="https://www.youtube.com/embed/JRk-Cf7eNIo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-[Filter your audit logs for easier reading](https://github.com/flowforge/flowforge/issues/1448)
+[Filter your audit logs for easier reading](https://github.com/flowforge/flowforge/issues/1448) \
 In FlowForge 1.3 we’ve added the ability to filter your admin logs by user or action type. We think this is a great new feature which will help admins have confidence that they will be able to review the audit logs quickly when needed. You can see a demonstration of this new feature in [the video](https://youtu.be/p0Vuy5x42Go) below.
 
 <div><iframe width="560" height="315" src="https://www.youtube.com/embed/p0Vuy5x42Go" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ## Improvements
 
-[Allow installation of FlowForge on devices which can't access npm](https://github.com/flowforge/flowforge-device-agent/issues/45)
+[Allow installation of FlowForge on devices which can't access npm](https://github.com/flowforge/flowforge-device-agent/issues/45) \
 We've had feedback from customers that in some cases they want to use FlowForge devices on hardware which cannot access [Node Package Manager](https://www.npmjs.com/) (npm). In a standard configuration of Node-RED, access to npm is mandatory to run your flows. In FlowForge 1.3.0 we've added the ability for you to import all the data usually installed from npm without your devices having access to the npm service.
 
 ## Bug Fixes
 
 We've fixed the following bugs in this release.
-
 - Project status UI sometimes getting stuck when restarting [#1232](https://github.com/flowforge/flowforge/issues/1232)
-
 - SSO users asked to click link in email to verify [#1543](https://github.com/flowforge/flowforge/issues/1543)
-
 - SSO users unable to edit settings [#1542](https://github.com/flowforge/flowforge/issues/1542)
-
 - SSO users not redirected to editor when signing in [#1481](https://github.com/flowforge/flowforge/issues/1481)
 
 ## Contributors
@@ -79,8 +75,12 @@ Please check FlowForge's [documentation](https://flowforge.com/docs/) as the ans
 If you hit any problems with the platform please raise an [issue on GitHub](https://github.com/flowforge/flowforge/issues).
 That's also a great place to send us any feedback or feature requests.
 
-Chat with us on the `#flowforge` channel on the [Node-RED Slack workspace](https://nodered.org/slack).
+You can also get help on [the Node-RED forums](https://discourse.nodered.org/)
 
-You can raise a support ticket by emailing [support@flowforge.com](mailto:support@flowforge.com).
+AS well as in the [forum within our Github project](https://github.com/flowforge/flowforge/discussions)
+
+Chat with us on the `#flowforge` channel on the [Node-RED Slack workspace](https://nodered.org/slack)
+
+You can raise a support ticket by emailing [support@flowforge.com](mailto:support@flowforge.com)
 
 We've also added a live chat widget to our website, you can access it using the icon on the bottom right corner of our website. We'd love to hear from you.
