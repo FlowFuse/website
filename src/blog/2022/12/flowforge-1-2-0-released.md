@@ -1,7 +1,7 @@
 ---
 title: FlowForge 1.2 is now available with single sign on and persistent context storage
 subtitle: Our final release for 2022 with some great new features to try out
-description: 
+description: Our final release for 2022 with some great new features to try out
 date: 2022-12-22 18:00:00.0
 authors: ["rob-marcer"]
 video: u7TjqUAub1g
@@ -48,7 +48,7 @@ We've fixed the following bugs in this release.
 
 - Duplicate Activity Log for Project whose state is in flight [#1461](https://github.com/flowforge/flowforge/issues/1461)
 
-## Contributors TODO
+## Contributors
 
 We'd like the thank the following for their contributions to this release:
 
