@@ -3,7 +3,6 @@
 @tailwind utilities;
 
 .page h1 {
-    color: theme(colors.teal.400);
     font-size: 2.5rem;
 }
 
@@ -14,7 +13,7 @@
 }
 
 .page .ff-bg-dark h2 {
-    color: theme(colors.teal.400);
+    color: theme(colors.teal.300);
 }
 .page .ff-bg-mid h2 {
     color: theme(colors.white);
@@ -171,7 +170,7 @@
         font-weight: bold;
         margin: 0;
         margin-bottom: 12px;
-        color: theme(colors.teal.400)
+        color: theme(colors.teal.300)
 ;        @apply text-left md:text-center;
     }
     .pricing-tile h2 {
