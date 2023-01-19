@@ -5,6 +5,7 @@ description: FlowForge 1.3 is now available, share your flows through our new te
 date: 2023-01-19 18:00:00.0
 authors: ["rob-marcer"]
 video: ey3xv5j5x7k
+image: /blog/2023/01/images/flowforge-130-hero.png
 ---
 
 Share your flows via team libraries, control access to your Node-RED dashboards using FlowForge credentials, and filter your audit logs by users and actions.
