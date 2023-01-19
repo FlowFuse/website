@@ -54,21 +54,21 @@ We'd like to thank the following for their contributions to this release:
 As an open-source project, we welcome community involvement in what we're building.
 If you're interested in contributing, checkout our [guide in the docs](https://flowforge.com/docs/contribute/).
 
-### Try it out
+## Try it out
 
 We're confident you can have self managed FlowForge running locally in under 30 minutes.
 You can install our [local build](https://flowforge.com/docs/install/local/), use [Docker](https://flowforge.com/docs/install/docker/), or [Kubernetes](https://flowforge.com/docs/install/kubernetes/).
 
 If you'd rather use our hosted offering: [Get started for free](https://app.flowforge.com/account/create) on FlowForge Cloud.
 
-### Upgrading FlowForge
+## Upgrading FlowForge
 
 [FlowForge Cloud](https://app.flowforge.com) is already running 1.3.
 
 If you installed a previous version of FlowForge and want to upgrade, our documentation provides a
 guide for [upgrading your FlowForge instance](https://flowforge.com/docs/upgrade/).
 
-### Getting help
+## Getting help
 
 Please check FlowForge's [documentation](https://flowforge.com/docs/) as the answers to many questions are covered there.
 
