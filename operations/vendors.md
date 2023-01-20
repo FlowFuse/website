@@ -12,3 +12,9 @@ The invoice should include:
 - Vendor contact details
 - Details of services rendered
 - Amount of dollars due
+
+#### Fraud prevention
+
+Urgency required for payments do not warrant urgent enough to diverge from the
+set process. Within the company there's _never_ a request through email or text
+message.

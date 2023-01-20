@@ -15,3 +15,11 @@ Passwords should be randomly generated using the Password Vault to ensure streng
 ### 2FA
 
 For all services that support it, 2FA authentication should be enabled and if possible enforced by policy. Where possible the 2FA seed keys should be added to the entry in the Password Vault.
+
+## Executive Fraud
+
+The CEO, CTO, and other executives at FlowForge will never email anyone to wire
+money, request you to buy gift cards, or request any other type of monitairy
+transaction. Transactions are started through [a set process](../operations/vendors.md)
+only. When in doubt, reach out through Slack and request a call with the executive
+to validate.
