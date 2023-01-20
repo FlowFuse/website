@@ -116,11 +116,12 @@
 %}
 
 <script>
-    function openInfo(row) {
-        document.getElementById("ff-dialog--feature--"+row).classList.add('active')
+    function openInfo(label, id) {
+        capture('info-feature', { feature: id})
+        document.getElementById("ff-dialog--feature--" + label).classList.add('active')
     }
-    function closeInfo(row) {
-        document.getElementById("ff-dialog--feature--"+row).classList.remove('active')
+    function closeInfo(label) {
+        document.getElementById("ff-dialog--feature--" + label).classList.remove('active')
     }
 </script>
 
@@ -145,7 +146,7 @@
             <label>
                 {{ row.label }}
                 {% if row.info %}
-                <i id="ff-info--{{ row.id }}" class="ff-icon" onclick="openInfo('{{ row.label }}')">{% include "components/icons/info.svg" %}</i>
+                <i id="ff-info--{{ row.id }}" class="ff-icon" onclick="openInfo('{{ row.label }}', '{{ row.id }}')">{% include "components/icons/info.svg" %}</i>
                 {% endif %}
             </label>
             {% for value in row.values %}
