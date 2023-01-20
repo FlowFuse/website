@@ -15,6 +15,6 @@ The invoice should include:
 
 #### Fraud prevention
 
-Urgency required for payments do not warrant urgent enough to diverge from the
-set process. Within the company there's _never_ a request through email or text
-message.
+We do not diverge from this process regardless of the urgency of the payment. We will _never_ make a payment request through direct email or text messages.
+
+If in any doubt, reach out through Slack and request a call to validate.
