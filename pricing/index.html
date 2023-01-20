@@ -161,11 +161,12 @@
     
 
 <script>
-    function openInfo(row) {
-        document.getElementById("ff-dialog--feature--"+row).classList.add('active')
+    function openInfo(label, id) {
+        capture('info-feature', { feature: id})
+        document.getElementById("ff-dialog--feature--" + label).classList.add('active')
     }
-    function closeInfo(row) {
-        document.getElementById("ff-dialog--feature--"+row).classList.remove('active')
+    function closeInfo(label) {
+        document.getElementById("ff-dialog--feature--" + label).classList.remove('active')
     }
 </script>
 
@@ -188,7 +189,7 @@
             <label>
                 Hosting
                 
-                <i id="ff-info--hosting" class="ff-icon" onclick="openInfo('Hosting')"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
+                <i id="ff-info--hosting" class="ff-icon" onclick="openInfo('Hosting', 'hosting')"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
   <path strokeLinecap="round" strokeLinejoin="round" d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z" />
 </svg>
 </i>
@@ -213,7 +214,7 @@
             <label>
                 Multiple Projects
                 
-                <i id="ff-info--multiple-projects" class="ff-icon" onclick="openInfo('Multiple Projects')"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
+                <i id="ff-info--multiple-projects" class="ff-icon" onclick="openInfo('Multiple Projects', 'multiple-projects')"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
   <path strokeLinecap="round" strokeLinejoin="round" d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z" />
 </svg>
 </i>
@@ -242,7 +243,7 @@
             <label>
                 Easy Node-RED Upgrades
                 
-                <i id="ff-info--node-red-upgrades" class="ff-icon" onclick="openInfo('Easy Node-RED Upgrades')"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
+                <i id="ff-info--node-red-upgrades" class="ff-icon" onclick="openInfo('Easy Node-RED Upgrades', 'node-red-upgrades')"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
   <path strokeLinecap="round" strokeLinejoin="round" d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z" />
 </svg>
 </i>
@@ -271,7 +272,7 @@
             <label>
                 Project Templates
                 
-                <i id="ff-info--project-templates" class="ff-icon" onclick="openInfo('Project Templates')"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
+                <i id="ff-info--project-templates" class="ff-icon" onclick="openInfo('Project Templates', 'project-templates')"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
   <path strokeLinecap="round" strokeLinejoin="round" d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z" />
 </svg>
 </i>
@@ -300,7 +301,7 @@
             <label>
                 Individual Project Configuration
                 
-                <i id="ff-info--project-config" class="ff-icon" onclick="openInfo('Individual Project Configuration')"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
+                <i id="ff-info--project-config" class="ff-icon" onclick="openInfo('Individual Project Configuration', 'project-config')"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
   <path strokeLinecap="round" strokeLinejoin="round" d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z" />
 </svg>
 </i>
@@ -329,7 +330,7 @@
             <label>
                 Audit Log
                 
-                <i id="ff-info--audit-log" class="ff-icon" onclick="openInfo('Audit Log')"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
+                <i id="ff-info--audit-log" class="ff-icon" onclick="openInfo('Audit Log', 'audit-log')"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
   <path strokeLinecap="round" strokeLinejoin="round" d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z" />
 </svg>
 </i>
@@ -358,7 +359,7 @@
             <label>
                 Team-Based Configuration
                 
-                <i id="ff-info--team-config" class="ff-icon" onclick="openInfo('Team-Based Configuration')"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
+                <i id="ff-info--team-config" class="ff-icon" onclick="openInfo('Team-Based Configuration', 'team-config')"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
   <path strokeLinecap="round" strokeLinejoin="round" d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z" />
 </svg>
 </i>
@@ -387,7 +388,7 @@
             <label>
                 Role-Based Access Control
                 
-                <i id="ff-info--rbac" class="ff-icon" onclick="openInfo('Role-Based Access Control')"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
+                <i id="ff-info--rbac" class="ff-icon" onclick="openInfo('Role-Based Access Control', 'rbac')"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
   <path strokeLinecap="round" strokeLinejoin="round" d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z" />
 </svg>
 </i>
@@ -416,7 +417,7 @@
             <label>
                 Edge Device Management
                 
-                <i id="ff-info--device-mgmt" class="ff-icon" onclick="openInfo('Edge Device Management')"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
+                <i id="ff-info--device-mgmt" class="ff-icon" onclick="openInfo('Edge Device Management', 'device-mgmt')"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
   <path strokeLinecap="round" strokeLinejoin="round" d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z" />
 </svg>
 </i>
@@ -445,7 +446,7 @@
             <label>
                 Version History
                 
-                <i id="ff-info--version-history" class="ff-icon" onclick="openInfo('Version History')"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
+                <i id="ff-info--version-history" class="ff-icon" onclick="openInfo('Version History', 'version-history')"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
   <path strokeLinecap="round" strokeLinejoin="round" d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z" />
 </svg>
 </i>
@@ -474,7 +475,7 @@
             <label>
                 Persistent File Storage
                 
-                <i id="ff-info--persistent-file" class="ff-icon" onclick="openInfo('Persistent File Storage')"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
+                <i id="ff-info--persistent-file" class="ff-icon" onclick="openInfo('Persistent File Storage', 'persistent-file')"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
   <path strokeLinecap="round" strokeLinejoin="round" d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z" />
 </svg>
 </i>
@@ -503,7 +504,7 @@
             <label>
                 Single Sign-On (SSO)
                 
-                <i id="ff-info--sso" class="ff-icon" onclick="openInfo('Single Sign-On (SSO)')"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
+                <i id="ff-info--sso" class="ff-icon" onclick="openInfo('Single Sign-On (SSO)', 'sso')"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
   <path strokeLinecap="round" strokeLinejoin="round" d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z" />
 </svg>
 </i>
@@ -530,7 +531,7 @@
             <label>
                 Inter Project Communication
                 
-                <i id="ff-info--project-nodes" class="ff-icon" onclick="openInfo('Inter Project Communication')"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
+                <i id="ff-info--project-nodes" class="ff-icon" onclick="openInfo('Inter Project Communication', 'project-nodes')"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
   <path strokeLinecap="round" strokeLinejoin="round" d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z" />
 </svg>
 </i>
@@ -557,7 +558,7 @@
             <label>
                 Persistent Context Storage
                 
-                <i id="ff-info--persistent-context" class="ff-icon" onclick="openInfo('Persistent Context Storage')"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
+                <i id="ff-info--persistent-context" class="ff-icon" onclick="openInfo('Persistent Context Storage', 'persistent-context')"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
   <path strokeLinecap="round" strokeLinejoin="round" d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z" />
 </svg>
 </i>
