@@ -1,7 +1,7 @@
 ---
 title: Getting Started with Node-RED
 subtitle: Node-RED is one of the easiest ways to program ever created but everyone needs a little help
-description: In this article we are going to explain the first things we think you need to know to get started with Node-RED
+description: In this article we are going to explain the first things you need to know to get started with Node-RED.
 date: 2023-01-23
 authors: ["rob-marcer"]
 ---
