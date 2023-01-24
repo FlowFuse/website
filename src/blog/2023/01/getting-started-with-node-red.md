@@ -22,7 +22,7 @@ Once Node-RED is installed, you can start it by running the following command:
 node-red
 ```
 
-This will start the Node-RED server and open up the editor in your web browser. You can also specify a different port or a settings file if you need to.
+This will start the Node-RED server and open up the [editor in your web browser](http://localhost:1880). You can also specify a different port or a settings file if you need to.
 
 ### First Flow
 
