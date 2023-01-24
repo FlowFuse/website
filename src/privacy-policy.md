@@ -1,6 +1,8 @@
 ---
 layout: nohero
 sitemapPriority: 0.7
+meta:
+    title: Privacy Policy
 ---
 
 <div class="prose prose-blue container m-auto max-w-4xl">

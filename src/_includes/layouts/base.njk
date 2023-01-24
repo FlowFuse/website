@@ -13,35 +13,63 @@
     <link href="https://unpkg.com/prismjs@1.20.0/themes/prism-tomorrow.css" rel="stylesheet">
     <meta name="msapplication-TileColor" content="#00aba9">
     <meta name="theme-color" content="#ffffff">
-    <title>FlowForge | Run Node-RED in Production</title>
-    <meta name="description" content="Scale your Node-RED deployments in production. Open-Source and available on Docker, Kubernetes or Cloud">
     <meta name="keywords" content="Node-RED, Deployment, Production, Enterprise, IoT, IIoT, Low-Code, Open-Source, Kubernetes, Docker, Cloud, Hosting">
 
-    {% if tags and 'posts' in tags %}
-    <meta name="twitter:card" content="summary" />
-    <meta name="twitter:site" content="@flowforgeinc" />
-    <meta name="twitter:creator" content="@{{ team[authors|first].twitter }}" />
+    <!-- Browser Title -->
+    {% if meta and meta.title %}
+    <title>{{ meta.title }} &#x2022; FlowForge</title>
+    {% elif title %}
+    <title>{{ title }} &#x2022; FlowForge</title>
+    {% else %}
+    <title>FlowForge &#x2022; Run Node-RED in Production</title>
+    {% endif %}
+
+    <!-- Browser Description -->
+    {% if meta and meta.description %}
+    <meta name="description" content="{{ meta.description }}">
+    {% else %}
+    <meta name="description" content="Scale your Node-RED deployments in production. Open-Source and available on Docker, Kubernetes or Cloud">
+    {% endif %}
+
+    <!-- Open Graph Title -->
+    {% if meta and meta.title %}
+    <meta property="og:title" content="{{ meta.title }} &#x2022; FlowForge" />
+    {% elif title %}
+    <meta property="og:title" content="{{ title }} &#x2022; FlowForge" />
+    {% else %}
+    <meta property="og:title" content="FlowForge &#x2022; Run Node-RED in Production" />
+    {% endif %}
+
+    <!-- Open Graph Description -->
+    {% if meta and meta.description %}
+    <meta property="og:description" content="{{ meta.description }}" />
+    {% elif description %}
+    <meta property="og:description" content="{{ description }}" />
+    {% else %}
+    <meta property="og:description" content="FlowForge is an open-source, low-code platform for integration and automation. Helping you run Node-RED at production scales in a secure, scalable and team-based environment." />
+    {% endif %}
+
+    <!-- Open Graph URL -->
     <meta property="og:url" content="{{ site.baseURL }}{{ page.url }}" />
-    <meta property="og:title" content="{{title}}" />
-    <meta property="og:description" content="{{description}}" />
+    <!-- Open Graph Image -->
     {% if image %}
     <meta property="og:image" content="{{ site.baseURL }}{{image}}" />
     {% else %}
     <meta property="og:image" content="{{ site.baseURL }}/images/og-social-tile.jpg" />
     {% endif %}
+
+    {% if tags and 'posts' in tags %}
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@flowforgeinc" />
+    <meta name="twitter:creator" content="@{{ team[authors|first].twitter }}" />
     {% else %}
+    <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:description" content="FlowForge is an open-source, low-code platform for integration and automation. Helping you run Node-RED at production scales in a secure, scalable and team-based environment." />
+    <meta name="twitter:description" content="" />
     <meta name="twitter:site" content="@flowforgeinc" />
     <meta name="twitter:image" content="/images/og-social-tile.jpg" />
-    <meta property="og:url" content="{{ site.baseURL }}{{ page.url }}" />
-    <meta property="og:title" content="{{title}}" />
-    <meta property="og:description" content="FlowForge is an open-source, low-code platform for integration and automation. Helping you run Node-RED at production scales in a secure, scalable and team-based environment." />
-    {% if image %}
-    <meta property="og:image" content="{{ site.baseURL }}{{image}}" />
-    {% else %}
-    <meta property="og:image" content="{{ site.baseURL }}/images/og-social-tile.jpg" />
-    {% endif %}    {% endif %}
+    {% endif %}    
 
     <script>
         !function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.async=!0,p.src=s.api_host+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="capture identify alias people.set people.set_once set_config register register_once unregister opt_out_capturing has_opted_out_capturing opt_in_capturing reset isFeatureEnabled onFeatureFlags".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
