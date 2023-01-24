@@ -24,6 +24,9 @@ through email, or through Slack. For a full explanation, please [read their docs
 
 [brex-receipts]: https://www.brex.com/support/how-do-i-attach-receipts-to-brex-transactions/
 
+Brex can also be used to create vendor cards that allow for reoccuring payment for a montly subscription with a vendor.
+Contact the HR manager if you require a vendor card.
+
 ### Reimbursement
 
 If you use your own means to purchase something that ought to be covered by the
