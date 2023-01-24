@@ -1,5 +1,5 @@
 ---
-title: Community News #9
+title: Community News September 2022
 subtitle: News from the FlowForge and Node-RED communities
 description: News from the FlowForge and Node-RED communities
 date: 2022-10-07

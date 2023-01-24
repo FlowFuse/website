@@ -1,5 +1,5 @@
 ---
-title: Community News #5
+title: Community News May 2022
 subtitle: News from the FlowForge and Node-RED communities
 description: News from the FlowForge and Node-RED communities
 date: 2022-06-17
