@@ -14,9 +14,9 @@ In this blog post, we'll take a look at how to get started with Node-RED and cre
 ### Installing Node-RED
 
 First, you'll need to install Node-RED on your machine. The easiest way to do this is by using npm (Node Package Manager), which comes with Node.js. To install Node-RED, open up your terminal and type the following command:
-```
+
+```bash
 npm install -g node-red
-```
 Once Node-RED is installed, you can start it by running the following command:
 ```
 node-red
