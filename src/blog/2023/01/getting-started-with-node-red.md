@@ -13,16 +13,31 @@ In this blog post, we'll take a look at how to get started with Node-RED and cre
 
 ### Installing Node-RED
 
-First, you'll need to install Node-RED on your machine. The easiest way to do this is by using npm (Node Package Manager), which comes with Node.js. To install Node-RED, open up your terminal and type the following command:
+First, you'll need to get an installation of Node-RED up and running. There are several ways to do this, we would suggest you use FlowForge as it's very easy to get Node-RED running. You can also install Node-RED locally using npm (Node Package Manager), which comes with Node.js.
+
+#### FlowForge
+
+To get Node-RED running on FlowForge visit our [web site and create a new user](https://app.flowforge.com/account/create). We've got an offer at the moment which gives you a Node-RED instance for free for one month.
+
+Once you have created a user you next need to create a new team, as part of that process you will be asked to provide bank card details. 
+
+You now need to create a project, each project includes an instance of Node-RED. Once that instance has booted up you access Node-RED by pressing "Open Editor".
+
+#### npm
+
+
+To install Node-RED locally using npm, open up your terminal and type the following command:
 
 ```bash
 npm install -g node-red
-Once Node-RED is installed, you can start it by running the following command:
 ```
+Once Node-RED is installed, you can start it by running the following command:
+
+```bash
 node-red
 ```
 
-This will start the Node-RED server and open up the [editor in your web browser](http://localhost:1880). You can also specify a different port or a settings file if you need to.
+This will start the Node-RED server and open up the [editor in your web browser](http://localhost:1880). You can also specify a different port or a settings file if you want to.
 
 ### First Flow
 
@@ -46,7 +61,7 @@ You can read more about http response codes in [this article](https://en.wikiped
 
 ### Testing Your Flow
 
-Now that we have our flow set up, we can deploy it by clicking the "Deploy" button in the top right corner of the editor. Once the flow is deployed, you can test it by opening up a web browser and navigating to "http://localhost:1880/hello". You should see "Hello World!" displayed in the browser.
+Now that we have our flow set up, we can deploy it by clicking the "Deploy" button in the top right corner of the editor. Once the flow is deployed, you can test it by opening up a web browser, if you installed Node-RED using npm navigate to "http://localhost:1880/hello". If you are working on FlowForge take the URL of your project and add "/hello" to the end, it should looks something like this "https://your-project.flowforge.cloud/hello". You should see "Hello World!" displayed in the browser.
 
 ### Debug Output
 
