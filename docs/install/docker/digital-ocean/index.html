@@ -22,7 +22,7 @@
     <meta name="twitter:description" content="FlowForge is an open-source, low-code platform for integration and automation. Helping you run Node-RED at production scales in a secure, scalable and team-based environment." />
     <meta name="twitter:site" content="@flowforgeinc" />
     <meta name="twitter:image" content="/images/og-social-tile.jpg" />
-    <meta property="og:url" content="https://flowforge.com/docs/user/projectnodes/" />
+    <meta property="og:url" content="https://flowforge.com/docs/install/docker/digital-ocean/" />
     <meta property="og:title" content="" />
     <meta property="og:description" content="FlowForge is an open-source, low-code platform for integration and automation. Helping you run Node-RED at production scales in a secure, scalable and team-based environment." />
     
@@ -97,47 +97,43 @@
             
             v1.3.0
             
-            /<a class="mx-2" href="/docs">docs</a>/<a class="mx-2" href="/docs/user">user</a>/<a class="mx-2" href="/docs/user/projectnodes">projectnodes</a>
+            /<a class="mx-2" href="/docs">docs</a>/<a class="mx-2" href="/docs/install">install</a>/<a class="mx-2" href="/docs/install/docker">docker</a>/<a class="mx-2" href="/docs/install/docker/digital-ocean">digital-ocean</a>
         </div>
     </div>
     <div class="w-full mx-auto ff-bg-light flex flex-col md:flex-row">
         <!-- Main Content -->
         <div class="flex-grow order-last md:order-first">
             <div class="mt-6 mb-4 prose prose-blue main-content">
-                <h1 id="flowforge-project-nodes" tabindex="-1"><a class="header-anchor" href="#flowforge-project-nodes">#&nbsp;</a> FlowForge Project Nodes</h1>
-<p>Projects running within FlowForge include a set of nodes that make it very
-quick and easy to securely send and receive messages between different projects
-in a team.</p>
-<p>The Project Nodes act in a similar way to the Node-RED Link nodes, but by allowing
-the links to extended between different projects, they open up a wide range of
-possibilities.</p>
-<p>For example, a single Project may contain a set of utility flows that you want
-to reuse in other projects. Rather than copy the flows into each project, the Project
-Nodes allow you to easily call those flows and get the result back.</p>
-<h3 id="nodes" tabindex="-1"><a class="header-anchor" href="#nodes">#&nbsp;</a> Nodes</h3>
-<p>There are three nodes in the Project Node collection:</p>
-<ul>
-<li><code>Project In</code> - listens for messages being broadcast by other projects, or for
-messages being sent just to this project</li>
-<li><code>Project Out</code> - sends messages to other projects</li>
-<li><code>Project Call</code> - sends messages to other projects and waits for a response</li>
-</ul>
-<p>The nodes send the whole <code>msg</code> object between projects. Due to the way the nodes
-encode messages, there are some data types that do not get sent. For example,
-the <code>msg.req</code>/<code>msg.res</code> properties used by the core HTTP nodes will not be sent.</p>
-<p>Each node is configured with a topic on which it either sends or receives messages
-on. This is similar in concept to MQTT topics - although the nodes do not currently
-support using MQTT wildcards in their topics.</p>
-<p>The Project Out nodes can either broadcast messages on a topic to anyone listening,
-or they can send messages on a topic to a specific other project.</p>
-<p>The Project In nodes do the opposite - they can either listen for messages being
-broadcast, or for messages sent directly to them.</p>
-<p>The Project Call node can be used to send a message to another Project In node
-and then wait for a response, with a built-in timeout if it doesn't arrive.
-The response is sent back using a Project Out node configured to respond to the call
-node.</p>
-<h3 id="github" tabindex="-1"><a class="header-anchor" href="#github">#&nbsp;</a> GitHub</h3>
-<p>The nodes are published under an Apache-2.0 license and available on <a href="https://github.com/flowforge/flowforge-nr-project-nodes">GitHub</a>.</p>
+                <h1 id="1-click-digital-ocean-droplet-install" tabindex="-1"><a class="header-anchor" href="#1-click-digital-ocean-droplet-install">#&nbsp;</a> 1-Click Digital Ocean Droplet Install</h1>
+<p>We have packaged the Docker Compose build of FlowForge as a Digital Ocean Droplet. It can be found in the Digital Ocean Market Place <a href="https://marketplace.digitalocean.com/apps/flowforge?refcode=fb23e438a477">here</a></p>
+<p>You can just straight to the deployment wizard <a href="https://marketplace.digitalocean.com/apps/flowforge?refcode=fb23e438a477&amp;action=deploy">here</a></p>
+<h2 id="prerequisites" tabindex="-1"><a class="header-anchor" href="#prerequisites">#&nbsp;</a> Prerequisites</h2>
+<h3 id="dns" tabindex="-1"><a class="header-anchor" href="#dns">#&nbsp;</a> DNS</h3>
+<p>To make use of this Droplet you will need a DNS Domain to host both the FlowForge application and the Projects you create.</p>
+<p>For example if you use <code>ff.example.com</code> then the FlowForge application will run on <code>https://forge.ff.example.com</code> and a project would be on <code>https://[project-name].ff.example.com</code>.</p>
+<p>You will need to set up a wildcard DNS entry that points the whole domain to the Public IP address of the Droplet.</p>
+<pre><code>*.ff.example.com 3600 A xxx.xxx.xxx.xxx
+</code></pre>
+<p>The Public IP address of the Droplet will be listed in the UI when it has been created</p>
+<p><img src="../../images/do-public-ip.png"" alt="Digital Ocean Droplet IP address "></p>
+<h2 id="setup" tabindex="-1"><a class="header-anchor" href="#setup">#&nbsp;</a> Setup</h2>
+<p>After the Droplet has been created and you have set up the DNS entry you will need to connect to the droplet to and enter the domain name</p>
+<p>You can do this in 2 ways</p>
+<ol>
+<li>With SSH, either using keys or password depending on what Authentication mechanism you picked at creation time<pre><code>ssh -i digtial-ocean-ssh.key root@xxx.xxx.xxx.xxx
+</code></pre>
+</li>
+<li>Opening a Console from the Web Interface
+<img src="../../images/do-droplet-console.png"" alt="Digital Ocean Console"></li>
+</ol>
+<p>Once logged in you will be presented with a wizard to set the domain and confirm by entering <code>1</code> or <code>2</code> to enter the domain again.</p>
+<p><img src="../../images/do-wizard.png"" alt="Digial Ocean Wizard"></p>
+<p>The wizard will then update the configuration files and start FlowForge</p>
+<p><img src="../../images/do-direct-to-setup.png"" alt="Digial Ocean Direct to Setsup"></p>
+<p>It will then present a link to complete setup in the browser. You can now close the console connection to the droplet.</p>
+<p>Details of how to complete this steps are <a href="../../first-run"">here</a></p>
+<h2 id="upgrade" tabindex="-1"><a class="header-anchor" href="#upgrade">#&nbsp;</a> Upgrade</h2>
+<p>You can follow the normal FlowForge Docker <a href=".././#upgrade"">upgrade instructions</a>, the install directory is <code>/opt/flowforge</code></p>
 
             </div>
         </div>
@@ -145,7 +141,7 @@ node.</p>
         <div class="w-full md:w-64 md:ml-8 mt-4 md:mt-6 px-2">
             <h3 class="font-medium border-b pb-1 mb-4">On this page</h3>
             <ul id="toc" class="text-sm border-b mb-4"></ul>
-            <div class="text-sm pb-1 text-right mb-4"><a href="https://github.com/flowforge/flowforge/edit/main/docs/user/projectnodes.md">Edit this page</a></div>
+            <div class="text-sm pb-1 text-right mb-4"><a href="https://github.com/flowforge/flowforge/edit/main/docs/install/docker/digital-ocean.md">Edit this page</a></div>
             <div class="text-xs pb-1 text-right mb-4 italic">Updated: 2023-01-24 11:59:32 +0000</div>
         </div>
     </div>

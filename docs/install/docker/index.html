@@ -109,19 +109,21 @@
 <h2 id="prerequisites" tabindex="-1"><a class="header-anchor" href="#prerequisites">#&nbsp;</a> Prerequisites</h2>
 <h3 id="platform" tabindex="-1"><a class="header-anchor" href="#platform">#&nbsp;</a> Platform</h3>
 <p>The following instructions assume you are running Docker on a Linux or MacOS host system.</p>
-<p>If you are using Digital Ocean Docker Droplet to host FlowForge you will need to ensure that port 80 &amp; 443 are opened in the UFW firewall before starting.</p>
+<h4 id="digital-ocean" tabindex="-1"><a class="header-anchor" href="#digital-ocean">#&nbsp;</a> Digital Ocean</h4>
+<p>If you are using the Digital Ocean Docker Droplet to host FlowForge you will need to ensure that port 80 &amp; 443 are opened in the UFW firewall before starting.</p>
 
 <div style="position: relative">
-  <pre class="language-bash"><code id="code-18"class="language-bash"><span class="token function">sudo</span> ufw apply http<br><span class="token function">sudo</span> ufw apply https</code></pre>
+  <pre class="language-bash"><code id="code-21"class="language-bash"><span class="token function">sudo</span> ufw apply http<br><span class="token function">sudo</span> ufw apply https</code></pre>
 
   <button class="code-copy "
-    data-clipboard-target="#code-18"
+    data-clipboard-target="#code-21"
     style="position: absolute; top: 7.5px; right: 6px; cursor: pointer; outline: none; opacity: 0.8;" title="Copy">
     <span>
       <span style="font-size: 15px; opacity: 0.8;" class="mdi mdi-content-copy"></span>
     </span>
   </button>
 </div>
+<p>We have a 1-Click Digital Ocean Droplet that will install and configure FlowForge for you. Details can be found <a href="./digital-ocean"">here</a></p>
 <h3 id="docker-compose" tabindex="-1"><a class="header-anchor" href="#docker-compose">#&nbsp;</a> Docker Compose</h3>
 <p>FlowForge uses Docker Compose to install and manage the required components. Instructions on how to install Docker Compose on your system can be found here:</p>
 <p><a href="https://docs.docker.com/compose/install/">https://docs.docker.com/compose/install/</a></p>
@@ -138,10 +140,10 @@
 <p>Unpack this and cd into the created directory.</p>
 
 <div style="position: relative">
-  <pre class="language-bash"><code id="code-61"class="language-bash"><span class="token function">tar</span> zxf v1.x.y.tar.gz<br><span class="token builtin class-name">cd</span> docker-compose-1.x.y</code></pre>
+  <pre class="language-bash"><code id="code-67"class="language-bash"><span class="token function">tar</span> zxf v1.x.y.tar.gz<br><span class="token builtin class-name">cd</span> docker-compose-1.x.y</code></pre>
 
   <button class="code-copy "
-    data-clipboard-target="#code-61"
+    data-clipboard-target="#code-67"
     style="position: absolute; top: 7.5px; right: 6px; cursor: pointer; outline: none; opacity: 0.8;" title="Copy">
     <span>
       <span style="font-size: 15px; opacity: 0.8;" class="mdi mdi-content-copy"></span>
@@ -167,44 +169,7 @@
 <p>In the <code>docker-compose.yml</code> file, uncomment the following lines</p>
 
 <div style="position: relative">
-  <pre class="language-yaml"><code id="code-115"class="language-yaml"><span class="token punctuation">-</span> <span class="token string">"./certs:/etc/nginx/certs"</span></code></pre>
-
-  <button class="code-copy "
-    data-clipboard-target="#code-115"
-    style="position: absolute; top: 7.5px; right: 6px; cursor: pointer; outline: none; opacity: 0.8;" title="Copy">
-    <span>
-      <span style="font-size: 15px; opacity: 0.8;" class="mdi mdi-content-copy"></span>
-    </span>
-  </button>
-</div>
-
-<div style="position: relative">
-  <pre class="language-yaml"><code id="code-116"class="language-yaml"><span class="token punctuation">-</span> <span class="token string">"443:443"</span></code></pre>
-
-  <button class="code-copy "
-    data-clipboard-target="#code-116"
-    style="position: absolute; top: 7.5px; right: 6px; cursor: pointer; outline: none; opacity: 0.8;" title="Copy">
-    <span>
-      <span style="font-size: 15px; opacity: 0.8;" class="mdi mdi-content-copy"></span>
-    </span>
-  </button>
-</div>
-
-<div style="position: relative">
-  <pre class="language-yaml"><code id="code-117"class="language-yaml">  <span class="token key atrule">acme</span><span class="token punctuation">:</span><br>    <span class="token key atrule">image</span><span class="token punctuation">:</span> nginxproxy/acme<span class="token punctuation">-</span>companion<br>    <span class="token key atrule">volumes</span><span class="token punctuation">:</span><br>      <span class="token punctuation">-</span> <span class="token string">"/var/run/docker.sock:/var/run/docker.sock:ro"</span><br>      <span class="token punctuation">-</span> <span class="token string">"./acme:/etc/acme.sh"</span><br>    <span class="token key atrule">volumes_from</span><span class="token punctuation">:</span><br>      <span class="token punctuation">-</span> nginx<span class="token punctuation">:</span>rw<br>    <span class="token key atrule">environment</span><span class="token punctuation">:</span><br>      <span class="token punctuation">-</span> <span class="token string">"DEFAULT_EMAIL=mail@example.com"</span><br>    <span class="token key atrule">depends_on</span><span class="token punctuation">:</span><br>      <span class="token punctuation">-</span> <span class="token string">"nginx"</span></code></pre>
-
-  <button class="code-copy "
-    data-clipboard-target="#code-117"
-    style="position: absolute; top: 7.5px; right: 6px; cursor: pointer; outline: none; opacity: 0.8;" title="Copy">
-    <span>
-      <span style="font-size: 15px; opacity: 0.8;" class="mdi mdi-content-copy"></span>
-    </span>
-  </button>
-</div>
-<p>If you wish to redirect all traffic to use HTTPS then add the following section to the nginx service on docker-compose.yml</p>
-
-<div style="position: relative">
-  <pre class="language-yaml"><code id="code-121"class="language-yaml"><span class="token key atrule">environment</span><span class="token punctuation">:</span><br>      <span class="token punctuation">-</span> <span class="token string">"HTTPS_METHOD=redirect"</span></code></pre>
+  <pre class="language-yaml"><code id="code-121"class="language-yaml"><span class="token punctuation">-</span> <span class="token string">"./certs:/etc/nginx/certs"</span></code></pre>
 
   <button class="code-copy "
     data-clipboard-target="#code-121"
@@ -214,13 +179,12 @@
     </span>
   </button>
 </div>
-<p>Then, in the <code>docker-compose.yml</code> file, edit the following lines added your domain and email address</p>
 
 <div style="position: relative">
-  <pre class="language-yaml"><code id="code-125"class="language-yaml"><span class="token punctuation">-</span> <span class="token string">"DEFAULT_EMAIL=mail@example.com"</span></code></pre>
+  <pre class="language-yaml"><code id="code-122"class="language-yaml"><span class="token punctuation">-</span> <span class="token string">"443:443"</span></code></pre>
 
   <button class="code-copy "
-    data-clipboard-target="#code-125"
+    data-clipboard-target="#code-122"
     style="position: absolute; top: 7.5px; right: 6px; cursor: pointer; outline: none; opacity: 0.8;" title="Copy">
     <span>
       <span style="font-size: 15px; opacity: 0.8;" class="mdi mdi-content-copy"></span>
@@ -229,22 +193,60 @@
 </div>
 
 <div style="position: relative">
-  <pre class="language-yaml"><code id="code-126"class="language-yaml"><span class="token punctuation">-</span> <span class="token string">"LETSENCRYPT_HOST=mqtt.example.com"</span></code></pre>
+  <pre class="language-yaml"><code id="code-123"class="language-yaml">  <span class="token key atrule">acme</span><span class="token punctuation">:</span><br>    <span class="token key atrule">image</span><span class="token punctuation">:</span> nginxproxy/acme<span class="token punctuation">-</span>companion<br>    <span class="token key atrule">volumes</span><span class="token punctuation">:</span><br>      <span class="token punctuation">-</span> <span class="token string">"/var/run/docker.sock:/var/run/docker.sock:ro"</span><br>      <span class="token punctuation">-</span> <span class="token string">"./acme:/etc/acme.sh"</span><br>    <span class="token key atrule">volumes_from</span><span class="token punctuation">:</span><br>      <span class="token punctuation">-</span> nginx<span class="token punctuation">:</span>rw<br>    <span class="token key atrule">environment</span><span class="token punctuation">:</span><br>      <span class="token punctuation">-</span> <span class="token string">"DEFAULT_EMAIL=mail@example.com"</span><br>    <span class="token key atrule">depends_on</span><span class="token punctuation">:</span><br>      <span class="token punctuation">-</span> <span class="token string">"nginx"</span></code></pre>
 
   <button class="code-copy "
-    data-clipboard-target="#code-126"
+    data-clipboard-target="#code-123"
     style="position: absolute; top: 7.5px; right: 6px; cursor: pointer; outline: none; opacity: 0.8;" title="Copy">
     <span>
       <span style="font-size: 15px; opacity: 0.8;" class="mdi mdi-content-copy"></span>
     </span>
   </button>
 </div>
+<p>If you wish to redirect all traffic to use HTTPS then add the following section to the nginx service on docker-compose.yml</p>
 
 <div style="position: relative">
-  <pre class="language-yaml"><code id="code-127"class="language-yaml"><span class="token punctuation">-</span> <span class="token string">"LETSENCRYPT_HOST=forge.example.com"</span></code></pre>
+  <pre class="language-yaml"><code id="code-127"class="language-yaml"><span class="token key atrule">environment</span><span class="token punctuation">:</span><br>      <span class="token punctuation">-</span> <span class="token string">"HTTPS_METHOD=redirect"</span></code></pre>
 
   <button class="code-copy "
     data-clipboard-target="#code-127"
+    style="position: absolute; top: 7.5px; right: 6px; cursor: pointer; outline: none; opacity: 0.8;" title="Copy">
+    <span>
+      <span style="font-size: 15px; opacity: 0.8;" class="mdi mdi-content-copy"></span>
+    </span>
+  </button>
+</div>
+<p>Then, in the <code>docker-compose.yml</code> file, edit the following lines added your domain and email address</p>
+
+<div style="position: relative">
+  <pre class="language-yaml"><code id="code-131"class="language-yaml"><span class="token punctuation">-</span> <span class="token string">"DEFAULT_EMAIL=mail@example.com"</span></code></pre>
+
+  <button class="code-copy "
+    data-clipboard-target="#code-131"
+    style="position: absolute; top: 7.5px; right: 6px; cursor: pointer; outline: none; opacity: 0.8;" title="Copy">
+    <span>
+      <span style="font-size: 15px; opacity: 0.8;" class="mdi mdi-content-copy"></span>
+    </span>
+  </button>
+</div>
+
+<div style="position: relative">
+  <pre class="language-yaml"><code id="code-132"class="language-yaml"><span class="token punctuation">-</span> <span class="token string">"LETSENCRYPT_HOST=mqtt.example.com"</span></code></pre>
+
+  <button class="code-copy "
+    data-clipboard-target="#code-132"
+    style="position: absolute; top: 7.5px; right: 6px; cursor: pointer; outline: none; opacity: 0.8;" title="Copy">
+    <span>
+      <span style="font-size: 15px; opacity: 0.8;" class="mdi mdi-content-copy"></span>
+    </span>
+  </button>
+</div>
+
+<div style="position: relative">
+  <pre class="language-yaml"><code id="code-133"class="language-yaml"><span class="token punctuation">-</span> <span class="token string">"LETSENCRYPT_HOST=forge.example.com"</span></code></pre>
+
+  <button class="code-copy "
+    data-clipboard-target="#code-133"
     style="position: absolute; top: 7.5px; right: 6px; cursor: pointer; outline: none; opacity: 0.8;" title="Copy">
     <span>
       <span style="font-size: 15px; opacity: 0.8;" class="mdi mdi-content-copy"></span>
@@ -261,10 +263,10 @@ You  also need to create a copy of the .crt and .key files named <code>default.c
 </ul>
 
 <div style="position: relative">
-  <pre class="language-yaml"><code id="code-147"class="language-yaml"><span class="token punctuation">-</span>   <span class="token string">"443:443"</span></code></pre>
+  <pre class="language-yaml"><code id="code-153"class="language-yaml"><span class="token punctuation">-</span>   <span class="token string">"443:443"</span></code></pre>
 
   <button class="code-copy "
-    data-clipboard-target="#code-147"
+    data-clipboard-target="#code-153"
     style="position: absolute; top: 7.5px; right: 6px; cursor: pointer; outline: none; opacity: 0.8;" title="Copy">
     <span>
       <span style="font-size: 15px; opacity: 0.8;" class="mdi mdi-content-copy"></span>
@@ -276,10 +278,10 @@ You  also need to create a copy of the .crt and .key files named <code>default.c
 </ul>
 
 <div style="position: relative">
-  <pre class="language-yaml"><code id="code-155"class="language-yaml"><span class="token punctuation">-</span> <span class="token string">"./certs:/etc/nginx/certs"</span></code></pre>
+  <pre class="language-yaml"><code id="code-161"class="language-yaml"><span class="token punctuation">-</span> <span class="token string">"./certs:/etc/nginx/certs"</span></code></pre>
 
   <button class="code-copy "
-    data-clipboard-target="#code-155"
+    data-clipboard-target="#code-161"
     style="position: absolute; top: 7.5px; right: 6px; cursor: pointer; outline: none; opacity: 0.8;" title="Copy">
     <span>
       <span style="font-size: 15px; opacity: 0.8;" class="mdi mdi-content-copy"></span>
@@ -289,10 +291,10 @@ You  also need to create a copy of the .crt and .key files named <code>default.c
 <p>If you wish to redirect all traffic to use HTTPS then add the following section to the nginx service on docker-compose.yml</p>
 
 <div style="position: relative">
-  <pre class="language-yaml"><code id="code-159"class="language-yaml"><span class="token key atrule">environment</span><span class="token punctuation">:</span><br>      <span class="token punctuation">-</span> <span class="token string">"HTTPS_METHOD=redirect"</span></code></pre>
+  <pre class="language-yaml"><code id="code-165"class="language-yaml"><span class="token key atrule">environment</span><span class="token punctuation">:</span><br>      <span class="token punctuation">-</span> <span class="token string">"HTTPS_METHOD=redirect"</span></code></pre>
 
   <button class="code-copy "
-    data-clipboard-target="#code-159"
+    data-clipboard-target="#code-165"
     style="position: absolute; top: 7.5px; right: 6px; cursor: pointer; outline: none; opacity: 0.8;" title="Copy">
     <span>
       <span style="font-size: 15px; opacity: 0.8;" class="mdi mdi-content-copy"></span>
@@ -305,10 +307,10 @@ You  also need to create a copy of the .crt and .key files named <code>default.c
 <p>This is done with this command:</p>
 
 <div style="position: relative">
-  <pre class="language-bash"><code id="code-172"class="language-bash"><span class="token function">docker</span> pull flowforge/node-red</code></pre>
+  <pre class="language-bash"><code id="code-178"class="language-bash"><span class="token function">docker</span> pull flowforge/node-red</code></pre>
 
   <button class="code-copy "
-    data-clipboard-target="#code-172"
+    data-clipboard-target="#code-178"
     style="position: absolute; top: 7.5px; right: 6px; cursor: pointer; outline: none; opacity: 0.8;" title="Copy">
     <span>
       <span style="font-size: 15px; opacity: 0.8;" class="mdi mdi-content-copy"></span>
@@ -319,10 +321,10 @@ You  also need to create a copy of the .crt and .key files named <code>default.c
 <p>Using the docker compose plugin</p>
 
 <div style="position: relative">
-  <pre class="language-bash"><code id="code-179"class="language-bash"><span class="token function">docker</span> compose <span class="token parameter variable">-p</span> flowforge up <span class="token parameter variable">-d</span></code></pre>
+  <pre class="language-bash"><code id="code-185"class="language-bash"><span class="token function">docker</span> compose <span class="token parameter variable">-p</span> flowforge up <span class="token parameter variable">-d</span></code></pre>
 
   <button class="code-copy "
-    data-clipboard-target="#code-179"
+    data-clipboard-target="#code-185"
     style="position: absolute; top: 7.5px; right: 6px; cursor: pointer; outline: none; opacity: 0.8;" title="Copy">
     <span>
       <span style="font-size: 15px; opacity: 0.8;" class="mdi mdi-content-copy"></span>
@@ -332,10 +334,10 @@ You  also need to create a copy of the .crt and .key files named <code>default.c
 <p>Or using the docker-compose command</p>
 
 <div style="position: relative">
-  <pre class="language-bash"><code id="code-183"class="language-bash"><span class="token function">docker-compose</span> <span class="token parameter variable">-p</span> flowforge up <span class="token parameter variable">-d</span></code></pre>
+  <pre class="language-bash"><code id="code-189"class="language-bash"><span class="token function">docker-compose</span> <span class="token parameter variable">-p</span> flowforge up <span class="token parameter variable">-d</span></code></pre>
 
   <button class="code-copy "
-    data-clipboard-target="#code-183"
+    data-clipboard-target="#code-189"
     style="position: absolute; top: 7.5px; right: 6px; cursor: pointer; outline: none; opacity: 0.8;" title="Copy">
     <span>
       <span style="font-size: 15px; opacity: 0.8;" class="mdi mdi-content-copy"></span>
@@ -365,10 +367,10 @@ storage.</p>
 <p>To enable the FlowForge File Storage component add the following to the <code>etc/flowforge.yml</code> file:</p>
 
 <div style="position: relative">
-  <pre class="language-yaml"><code id="code-234"class="language-yaml"><span class="token key atrule">fileStore</span><span class="token punctuation">:</span><br>  <span class="token key atrule">enabled</span><span class="token punctuation">:</span> <span class="token boolean important">true</span></code></pre>
+  <pre class="language-yaml"><code id="code-240"class="language-yaml"><span class="token key atrule">fileStore</span><span class="token punctuation">:</span><br>  <span class="token key atrule">enabled</span><span class="token punctuation">:</span> <span class="token boolean important">true</span></code></pre>
 
   <button class="code-copy "
-    data-clipboard-target="#code-234"
+    data-clipboard-target="#code-240"
     style="position: absolute; top: 7.5px; right: 6px; cursor: pointer; outline: none; opacity: 0.8;" title="Copy">
     <span>
       <span style="font-size: 15px; opacity: 0.8;" class="mdi mdi-content-copy"></span>
@@ -379,10 +381,10 @@ storage.</p>
 <ul>
 <li>Stop the existing instance with
 <div style="position: relative">
-  <pre class="language-bash"><code id="code-243"class="language-bash"><span class="token function">docker-compose</span> <span class="token parameter variable">-p</span> flowforge down</code></pre>
+  <pre class="language-bash"><code id="code-249"class="language-bash"><span class="token function">docker-compose</span> <span class="token parameter variable">-p</span> flowforge down</code></pre>
 
   <button class="code-copy "
-    data-clipboard-target="#code-243"
+    data-clipboard-target="#code-249"
     style="position: absolute; top: 7.5px; right: 6px; cursor: pointer; outline: none; opacity: 0.8;" title="Copy">
     <span>
       <span style="font-size: 15px; opacity: 0.8;" class="mdi mdi-content-copy"></span>
@@ -401,10 +403,10 @@ storage.</p>
 </li>
 <li>Copy the <code>db</code> directory from the old version directory to the new (this will probably require root due to file ownership)
 <div style="position: relative">
-  <pre class="language-bash"><code id="code-281"class="language-bash"><span class="token function">sudo</span> <span class="token function">cp</span> <span class="token parameter variable">-r</span> docker-compose-x.x.x/db docker-compose-y.y.y/db</code></pre>
+  <pre class="language-bash"><code id="code-287"class="language-bash"><span class="token function">sudo</span> <span class="token function">cp</span> <span class="token parameter variable">-r</span> docker-compose-x.x.x/db docker-compose-y.y.y/db</code></pre>
 
   <button class="code-copy "
-    data-clipboard-target="#code-281"
+    data-clipboard-target="#code-287"
     style="position: absolute; top: 7.5px; right: 6px; cursor: pointer; outline: none; opacity: 0.8;" title="Copy">
     <span>
       <span style="font-size: 15px; opacity: 0.8;" class="mdi mdi-content-copy"></span>
@@ -422,7 +424,7 @@ storage.</p>
             <h3 class="font-medium border-b pb-1 mb-4">On this page</h3>
             <ul id="toc" class="text-sm border-b mb-4"></ul>
             <div class="text-sm pb-1 text-right mb-4"><a href="https://github.com/flowforge/flowforge/edit/main/docs/install/docker/README.md">Edit this page</a></div>
-            <div class="text-xs pb-1 text-right mb-4 italic">Updated: 2023-01-20 11:30:15 +0000</div>
+            <div class="text-xs pb-1 text-right mb-4 italic">Updated: 2023-01-24 11:59:32 +0000</div>
         </div>
     </div>
 </div>
