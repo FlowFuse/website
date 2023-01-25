@@ -214,11 +214,15 @@ h4:hover .header-anchor {
     }
 
     .ff-website header .ff-icon--gh:hover path {
-        fill: white;
+        @apply sm:bg-white;
+    }
+
+    .ff-website header a .ff-icon--down path {
+        @apply sm:text-red-400;
     }
 
     .ff-website header a:hover .ff-icon--down path {
-        stroke: white;
+        @apply sm:text-white;
     }
     
     .ff-website header a {
@@ -236,16 +240,15 @@ h4:hover .header-anchor {
     }
 
     .ff-website header ul a:hover {
-        color: white;
+        @apply sm:text-white;
     }
 
     .ff-website header .ff-nav-dropdown ul {
-        position: absolute;
-        display: none;
         top: 100%;
         right: 0;
         min-width: 100%;
         margin-right: 1rem;
+        @apply hidden sm:absolute sm:shadow-md;
     }
 
     .ff-website header .ff-nav-dropdown a {
@@ -257,31 +260,26 @@ h4:hover .header-anchor {
     }
 
     .ff-website header .ff-nav-dropdown ul li {
-        background-color: theme(colors.gray.700);
-        text-align: right;
-        border-bottom: 1px solid theme(colors.gray.600);
+        @apply border-b bg-gray-50 text-left sm:bg-gray-700 sm:text-right sm:border-gray-600
     }
 
     .ff-website header .ff-nav-dropdown ul li:first-child {
-        border-top-left-radius: 6px;
-        border-top-right-radius: 6px;
+        @apply rounded-t-md;
     }
 
     .ff-website header .ff-nav-dropdown ul li:last-child {
-        border-bottom-left-radius: 6px;
-        border-bottom-right-radius: 6px;
+        @apply rounded-b-md;
         border-bottom: 0;
     }
 
     .ff-website header .ff-nav-dropdown ul li a {
         display: block;
-        color: white;
-        padding: 6px 24px 6px 6px;
         cursor: pointer;
+        @apply pl-6 md:pl-1.5 md:pr-6 md:text-white;
     }
 
     .ff-website header .ff-nav-dropdown:hover a {
-        color: white;
+        @apply md:text-white;
     }
 
     .ff-website header .ff-nav-dropdown li:hover a {
