@@ -1,0 +1,37 @@
+.team-card--sm {
+    --img-size: 48px;
+    display: flex;
+    margin-bottom: 1rem;
+}
+
+.team-card--sm img {
+    width: var(--img-size);
+    height: var(--img-size);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position-x: 50%;
+    border-radius: 50%;
+    border: 2px solid black;
+}
+
+.team-card-info {
+    display: flex;
+    flex-direction: column;
+    margin-left: 0.75rem;
+}
+
+.team-card--sm label {
+    font-weight: bold;
+}
+
+
+
+.team-card--sm:nth-child(3n+2) img {
+    background-color: theme(colors.red.700);
+}
+.team-card--sm:nth-child(3n) img {
+    background-color: theme(colors.teal.600);
+}
+.team-card--sm:nth-child(3n+1) img {
+    background-color: theme(colors.gray.600);
+}

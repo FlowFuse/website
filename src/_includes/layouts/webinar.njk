@@ -1,0 +1,58 @@
+---
+layout: layouts/base.njk
+---
+
+<div class="w-full page webinar">
+    {% if title %}
+        <div class="webinar-title container m-auto text-center px-6 flex mt-6 mb-6 md:max-w-screen-lg md:mt-12">
+            <div class="text-left md:pr-32">
+                <label >Webinar</label>
+                <h1>{{ title }}</h1>
+                {% if subtitle %}
+                <h4>{{ subtitle | safe }}</h4>
+                {% endif %}
+                <div class="mt-8 text-white">
+                    <time value="{{ date }}">{{ date | shortDate }}</time>
+                    <time value="{{ time }}">{{ time }}</time>
+                    <time value="{{ duration }}">{{ duration | duration }}</time>
+                </div>
+            </div>
+        </div>
+    {% endif %}
+    <div class="blog nohero w-full pt-6 pb-24 ff-bg-light">
+        <div class="container flex m-auto text-left px-6 md:max-w-screen-lg gap-8">
+            <div>
+                <a class="mb-4 flex align-center gap-1" href="/webinars">
+                    {% include "components/icons/chevron-left.svg" %}
+                    Back to Webinars
+                </a>
+                <div class="prose">
+                    {{ content | safe }}
+                </div>
+            </div>
+            <div class="w-96">
+                <div>{% if video %}<iframe width="560" height="315" src="https://www.youtube.com/embed/{{video}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                     {% elif image %}<img class="w-full h-auto" src="{{image}}" />
+                     {% else %}{{ page.url | generatePostSVG |safe}}{% endif %}
+                </div>
+                <div class="mt-6 flex flex-col">
+                    <h3 class="mb-3">Register Here:</h3>
+                    <script charset="utf-8" type="text/javascript" src="//js-eu1.hsforms.net/forms/embed/v2.js"></script>
+                    <script> hbspt.forms.create({ region: "eu1", portalId: "26586079", formId: "b4ec9aa1-8648-47b3-b908-ec8597e8735d" }); </script>
+                </div>
+                <div class="mt-6 flex flex-col">
+                    <h3 class="mb-3">Presented By:</h3>
+                    {% for host in hosts %}
+                    <div class="team-card--sm">
+                        <img style="background-image: url(/images/team/headshot-{{ team[host].headshot }})">
+                        <div class="team-card-info">
+                            <label>{{ team[host].name }}</label>
+                            <span>{{ team[host].title }}</span>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

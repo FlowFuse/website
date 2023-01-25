@@ -341,3 +341,87 @@
 .team .socials span a {
     color: theme(colors.teal.200);
 }
+
+/*
+    POSTS & WEBINARS
+*/
+
+@layer components {
+    .post-title h1,
+    .webinar-title h1 {
+        color: white;
+        font-family: HelveticaNeue;
+        @apply mb-2;
+    }
+    .webinar-title h4,
+    .post-title h4 {
+        color: theme(colors.gray.400);
+        font-family: HelveticaNeue;
+        font-weight: 400;
+        font-size: 1.25rem;
+        margin-bottom: 2rem;
+    }
+    .webinar-title label,
+    .post-title label {
+        @apply text-teal-300 text-xs uppercase font-bold;
+    }
+}
+
+/*
+    WEBINAR
+*/
+
+@layer components {
+    .webinar-tile {
+        @apply w-full mt-2 pr-2 pb-4;
+    }
+    .webinar-tile a {
+        overflow: hidden;
+        @apply cursor-pointer;
+    }
+
+    .webinar-tile a img, 
+    .webinar-tile a svg {
+        transition: transform 0.3s;
+        min-height: 250px;
+    }
+
+    .webinar-tile a:hover img,
+    .webinar-tile a:hover svg {
+        transform: scale(1.05);
+    }
+    .webinar-tile svg {
+        @apply rounded-lg;
+    }
+    .webinar-tile .webinar-tile-shade {
+        background-color: rgba(0, 0, 0, 0.4);
+        @apply w-full h-full rounded-lg absolute top-0 left-0;
+    }
+    .webinar-tile .webinar-tile-datetime {
+        display: flex;
+    }
+    .webinar-tile label {
+        text-shadow: 0 0 10px black;
+        @apply absolute left-3 bottom-3 w-full text-white;
+    }
+    .webinar-tile label h4 {
+        font-size: 1.5rem;
+        font-weight: 500;
+        margin-bottom: 0.5rem;
+        @apply text-white;
+    }
+    .webinar-tile label time {
+        font-size: 1rem;
+        font-weight: 500;
+        @apply text-white;
+    }
+    .webinar time:not(:first-child),
+    .webinar-tile label time:not(:first-child) {
+        border-left: 2px solid theme(colors.gray.500);
+        margin-left: 0.5rem;
+        padding-left: 0.5rem;
+    }
+    .webinar-tile p:first-child {
+        @apply mt-0;
+    }
+}

@@ -47,6 +47,16 @@ module.exports = function(eleventyConfig) {
         return spacetime(dateObj).format('{date} {month-short}, {year}')
     });
 
+    eleventyConfig.addFilter('duration', mins => {
+        if (mins > 60) {
+            const hrs = Math.floor(mins/60)
+            return `${hrs}h ${mins%60}m`
+        }
+         else {
+            return `${mins} mins`
+         }
+    });
+
     eleventyConfig.addFilter("excerpt", function(str) {
         const content = new String(str);
         return content.split("\n<!--more-->\n")[0]

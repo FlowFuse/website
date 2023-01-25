@@ -2,10 +2,11 @@
 layout: layouts/base.njk
 ---
 
-<div class="w-full page">
+<div class="w-full page post">
     {% if title %}
-        <div class="container m-auto text-center px-6 flex mt-6 mb-6 md:max-w-screen-lg md:mt-12">
+        <div class="post-title container m-auto text-center px-6 flex mt-6 mb-6 md:max-w-screen-lg md:mt-12">
             <div class="text-left md:pr-32">
+                <label>Article</label>
                 <h1>{{ title }}</h1>
                 {% if subtitle %}
                 <h4>{{ subtitle | safe }}</h4>
@@ -23,7 +24,10 @@ layout: layouts/base.njk
     {% endif %}
     <div class="blog nohero w-full pt-6 pb-24 ff-bg-light">
         <div class="container m-auto text-left px-6 md:max-w-screen-lg">
-            <a class="block mb-4" href="/blog">&lt; Back to Blog Posts</a>
+            <a class="block mb-4 flex align-center gap-1" href="/blog">
+                {% include "components/icons/chevron-left.svg" %}
+                Back to Blog Posts
+            </a>
             <div class="prose">
                 <div>{% if video %}<iframe width="560" height="315" src="https://www.youtube.com/embed/{{video}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                      {% elif image %}<img class="w-full h-auto" src="{{image}}" />
