@@ -16,8 +16,8 @@ html, body {
 }
 
 * {
-    transition: 0.3s background-color, 0.3s color, 0.3s fill;
-    -webkit-transition: 0.3s background-color, 0.3s color, 0.3s fill;
+    transition: 0.3s background-color, 0.3s color, 0.3s fill, 0.3s stroke;
+    -webkit-transition: 0.3s background-color, 0.3s color, 0.3s fill, 0.3s stroke;
 }
 
 /*
@@ -209,10 +209,18 @@ h4:hover .header-anchor {
     Header
 */
 @layer components {
-    .ff-website header path {
+    .ff-website header .ff-icon--gh path {
         fill: theme(colors.red.400);
     }
 
+    .ff-website header .ff-icon--gh:hover path {
+        fill: white;
+    }
+
+    .ff-website header a:hover .ff-icon--down path {
+        stroke: white;
+    }
+    
     .ff-website header a {
         color: theme(colors.red.400);
     }
@@ -231,8 +239,53 @@ h4:hover .header-anchor {
         color: white;
     }
 
-    .ff-website header a:hover path {
-        fill: white;
+    .ff-website header .ff-nav-dropdown ul {
+        position: absolute;
+        display: none;
+        top: 100%;
+        right: 0;
+        min-width: 100%;
+        margin-right: 1rem;
+    }
+
+    .ff-website header .ff-nav-dropdown a {
+        cursor: default;
+    }
+
+    .ff-website header .ff-nav-dropdown:hover ul {
+        display: block;
+    }
+
+    .ff-website header .ff-nav-dropdown ul li {
+        background-color: theme(colors.gray.700);
+        text-align: right;
+        border-bottom: 1px solid theme(colors.gray.600);
+    }
+
+    .ff-website header .ff-nav-dropdown ul li:first-child {
+        border-top-left-radius: 6px;
+        border-top-right-radius: 6px;
+    }
+
+    .ff-website header .ff-nav-dropdown ul li:last-child {
+        border-bottom-left-radius: 6px;
+        border-bottom-right-radius: 6px;
+        border-bottom: 0;
+    }
+
+    .ff-website header .ff-nav-dropdown ul li a {
+        display: block;
+        color: white;
+        padding: 6px 24px 6px 6px;
+        cursor: pointer;
+    }
+
+    .ff-website header .ff-nav-dropdown:hover a {
+        color: white;
+    }
+
+    .ff-website header .ff-nav-dropdown li:hover a {
+        color: theme(colors.teal.300);
     }
 }
 
