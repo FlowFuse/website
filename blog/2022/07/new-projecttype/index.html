@@ -139,20 +139,19 @@
 <p>We don't currently support directly upgrading a project between types, but that is in the <a href="https://github.com/flowforge/flowforge/issues/595">plan for the future</a>. In the meantime, you can use the 'Export Project' feature on a project's settings tab to copy it over into a new Medium type project.</p>
 
             </div>
-            <div class="mt-12 pt-12 flex flex-col border-t-2">
+            <div class="mt-12 pt-6 flex flex-col border-t-2">
                 <h3 class="mb-6">Sign up for updates</h3>
-                <form
-                    action="https://buttondown.email/api/emails/embed-subscribe/flowforge"
-                    method="post"
-                    target="popupwindow"
-                    onsubmit="window.open('https://buttondown.email/flowforge', 'popupwindow')"
-                    class="embeddable-buttondown-form my-1 ">
-                    <div class="flex flex-col sm:flex-row">
-                        <input type="email" name="email" id="bd-email" placeholder="Enter your email" class="ff-input ff-text-input lg:w-80 md:w-60" />
-                        <input type="hidden" value="1" name="embed" />
-                        <input type="submit" value="Subscribe" class="ff-btn ff-btn--primary w-full mt-3 sm:w-auto sm:mt-0 sm:ml-3"/>
-                    </div>
-                </form>
+                <script charset="utf-8" type="text/javascript" src="//js-eu1.hsforms.net/forms/embed/v2.js"></script>
+                <script>
+                    hbspt.forms.create({
+                        region: "eu1",
+                        portalId: "26586079",
+                        formId: "159c173d-dd95-49bd-922b-ff3ef243e90c",
+                        onFormSubmit: function($form) {
+                            capture('cta-blog-subscribe', {'position': 'article'})
+                        }
+                    });
+                </script>
             </div>
         </div>
     </div>
