@@ -4,6 +4,9 @@ subtitle: News from the FlowForge and Node-RED communities
 description: News from the FlowForge and Node-RED communities
 date: 2022-09-16
 authors: ["rob-marcer"]
+tags:
+    - posts
+    - newsletter
 ---
 
 Welcome to the FlowForge newsletter, a regular roundup of what’s happening with both FlowForge and the wider Node-RED community.
