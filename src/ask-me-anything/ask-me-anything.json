@@ -1,0 +1,6 @@
+{
+    "tags": [
+        "ama"
+    ],
+    "layout": "layouts/webinar.njk"
+}

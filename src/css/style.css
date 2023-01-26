@@ -209,6 +209,7 @@ h4:hover .header-anchor {
     Header
 */
 @layer components {
+    .ff-website header .ff-wordmark path,
     .ff-website header .ff-icon--gh path {
         fill: theme(colors.red.400);
     }
