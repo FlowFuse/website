@@ -55,8 +55,20 @@ layout: layouts/base.njk
                 {% if date | dateInFuture %}
                 <div class="mt-6 flex flex-col">
                     <h3 class="mb-3">Register Here:</h3>
-                    <script charset="utf-8" type="text/javascript" src="//js-eu1.hsforms.net/forms/embed/v2.js"></script>
-                    <script> hbspt.forms.create({ region: "eu1", portalId: "26586079", formId: "b4ec9aa1-8648-47b3-b908-ec8597e8735d" }); </script>
+                    <script>
+                    hbspt.forms.create({
+                        region: "eu1",
+                        portalId: "26586079",
+                        formId: "b4ec9aa1-8648-47b3-b908-ec8597e8735d",
+                        onFormSubmit: function($form) {
+                            const article_title = "{{ title }}"
+                            console.log(article_title)
+                            capture('cta-webinar-register', {
+                                'webinar-name': article_title
+                            })
+                        }
+                    });
+                    </script>
                 </div>
                 {% endif %}
             </div>
