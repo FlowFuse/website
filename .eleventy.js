@@ -73,6 +73,12 @@ module.exports = function(eleventyConfig) {
         })
     });
 
+    eleventyConfig.addFilter('dateInFuture', (date) => {
+        // return true is the provided date is in the past, otherwise, return false
+        const postDate = spacetime(date)
+        return postDate.isAfter(spacetime.today()) || postDate.isSame(spacetime.today())
+    });
+
     eleventyConfig.addFilter("excerpt", function(str) {
         const content = new String(str);
         return content.split("\n<!--more-->\n")[0]

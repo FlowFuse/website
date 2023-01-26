@@ -52,11 +52,13 @@ layout: layouts/base.njk
                     </div>
                     {% endfor %}
                 </div>
+                {% if date | dateInFuture %}
                 <div class="mt-6 flex flex-col">
                     <h3 class="mb-3">Register Here:</h3>
                     <script charset="utf-8" type="text/javascript" src="//js-eu1.hsforms.net/forms/embed/v2.js"></script>
                     <script> hbspt.forms.create({ region: "eu1", portalId: "26586079", formId: "b4ec9aa1-8648-47b3-b908-ec8597e8735d" }); </script>
                 </div>
+                {% endif %}
             </div>
         </div>
     </div>
