@@ -8,10 +8,10 @@ meta:
     <h1>Webinars</h1>
     {% include "components/divider-grey-wires-right.njk" %}
     {% if collections.webinar.length > 0 %}
-    <ul class="flex flex-wrap">
-        {%- for item in collections.webinar | reverse -%}
-        {% if loop.first %}
-        <h2>Upcoming</h2>
+    {%- for item in collections.webinar | inFuture | reverse -%}
+    {% if loop.first %}
+    <h2 class="w-full">Upcoming Webinar</h2>
+    <ul>
         <li class="webinar-tile">
             <div class="flex flex-col md:flex-row">
                 <a href="{{ item.url }}" onclick="capture('cta-webinar-register')" class="relative flex md:w-1/2 mr-2 rounded">
@@ -35,15 +35,23 @@ meta:
                     <div>
                         {{ item.templateContent | excerpt | striptags(true)| restoreParagraphs | safe }}
                     </div>
-                    <a class="ff-btn ff-btn--primary text-sm" href="{{ item.url }}" onclick="capture('cta-webinar-register')">Register</a>
+                    <a class="ff-btn ff-btn--primary text-sm" href="{{ item.url }}" onclick="capture('cta-webinar-register')">More Info</a>
                 </div>
             </div>
         </li>
-        <div class="mt-2 w-full">
-            {% include "components/divider-grey-wires-left.njk" %}
-        </div>
-        {% else %}
-        <li class="w-full md:w-1/3 my-2 px-2 pb-6 border-b">
+    </ul>
+    {% endif %}
+    {% endfor %}
+    {% if (collections.webinar | inFuture | length) > 0 %}
+    <div class="mt-2 w-full">
+        {% include "components/divider-grey-wires-left.njk" %}
+    </div>
+    {% endif %}
+    {% if (collections.webinar | inPast | length) > 0 %}
+    <h2 class="w-full">Past Webinars</h2>
+    <ul class="grid grid-cols-3 gap-4">
+        {%- for item in collections.webinar | inPast | reverse -%}
+        <li class="w-full my-2 pb-6 border-b">
             <a href="{{ item.url }}" class="w-full flex flex-col group hover:no-underline">
                 <div class="">
                     <time class="block text-xs mb-2" value="{{ item.date }}" class="text-gray-400">{{ item.date | shortDate }}</time>
@@ -53,18 +61,10 @@ meta:
                 <div class="text-sm prose prose-blue md:prose-md py-1">
                     {{ item.data.description | excerpt | safe }}
                 </div>
-                <div class="italic text-xs mb-3">
-                    <div class="author">
-                        {% set comma = joiner() %}
-                        {%- for author in item.data.authors %}
-                        {{ comma() }} {{ team[author].name }}
-                        {%- endfor %}
-                    </div>
-                </div>
             </a>
         </li>
-        {% endif %}
-    {%- endfor -%}
+        {%- endfor -%}
     </ul>
+    {% endif %}
     {% endif %}
 </div>

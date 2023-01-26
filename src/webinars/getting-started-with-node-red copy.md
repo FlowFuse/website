@@ -1,8 +1,8 @@
 ---
-title: Getting Started with Node-RED
+title: Getting Started with Node-RED - Part 2
 subtitle: Lorem ipsum dolor sit amet consectetur. Feugiat nulla porta aliquet tortor scelerisque accumsan
 description: Lorem ipsum dolor sit amet consectetur. Feugiat nulla porta aliquet tortor scelerisque accumsan
-date: 2023-04-06
+date: 2022-04-06
 time: 17:00 GMT
 duration: 60
 hosts: ["rob-marcer", "joe-pavitt", "ben-hardill"]

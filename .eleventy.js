@@ -57,6 +57,22 @@ module.exports = function(eleventyConfig) {
          }
     });
 
+    eleventyConfig.addFilter('inFuture', (posts) => {
+        // filter posts/webinars that only occured in the past
+        return posts.filter((post) => {
+            const postDate = spacetime(post.data.date)
+            return postDate.isAfter(spacetime.today()) || postDate.isSame(spacetime.today())
+        })
+    });
+
+    eleventyConfig.addFilter('inPast', (posts) => {
+        // filter posts/webinars that only occured in the past
+        return posts.filter((post) => {
+            const postDate = spacetime(post.data.date)
+            return postDate.isBefore(spacetime.today())
+        })
+    });
+
     eleventyConfig.addFilter("excerpt", function(str) {
         const content = new String(str);
         return content.split("\n<!--more-->\n")[0]
