@@ -5,6 +5,8 @@ date: 2023-02-09
 time: 16:00 GMT (11:00 ET) 
 duration: 60
 hosts: ["nick-oleary", "rob-marcer"]
+hubspot:
+    formId: a9e45181-2490-44a9-9d94-62f2f19a6102
 ---
 
 **Do you have a questions about Node-RED or need some advice on a tricky issue using Node-RED? Here is your opportunity to get help from the experts.**

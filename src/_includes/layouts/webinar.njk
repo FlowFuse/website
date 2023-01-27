@@ -56,18 +56,20 @@ layout: layouts/base.njk
                 <div class="mt-6 flex flex-col">
                     <h3 class="mb-3">Register Here:</h3>
                     <script>
-                    hbspt.forms.create({
-                        region: "eu1",
-                        portalId: "26586079",
-                        formId: "b4ec9aa1-8648-47b3-b908-ec8597e8735d",
-                        onFormSubmit: function($form) {
-                            const article_title = "{{ title }}"
-                            console.log(article_title)
-                            capture('cta-webinar-register', {
-                                'webinar-name': article_title
-                            })
+                        if (hbspt) {
+                            const formId = "{{ hubspot.formId }}"
+                            hbspt.forms.create({
+                                region: "eu1",
+                                portalId: "26586079",
+                                formId: formId,
+                                onFormSubmit: function($form) {
+                                    const article_title = "{{ title }}"
+                                    capture('cta-webinar-register', {
+                                        'webinar-name': article_title
+                                    })
+                                }
+                            });
                         }
-                    });
                     </script>
                 </div>
                 {% endif %}
