@@ -1,10 +1,12 @@
 ---
-title: Community News #4
+title: Community News April 2022
 subtitle: News from the FlowForge and Node-RED communities
 description: News from the FlowForge and Node-RED communities
 date: 2022-05-06
 authors: ["sam-machin"]
-tags: newsletter
+tags:
+    - posts
+    - newsletter
 ---
 
 Welcome to the FlowForge newsletter, a regular roundup of what\`s happening with both FlowForge and the wider Node-RED community. 
