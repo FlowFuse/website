@@ -40,18 +40,6 @@ layout: layouts/base.njk
                     {% elif image %}<img class="w-full h-auto" src="{{image}}" />
                     {% else %}{{ page.url | generatePostSVG |safe}}{% endif %}
                 </div>
-                <div class="mt-6 flex flex-col">
-                    <h3 class="mb-3">Hosted By:</h3>
-                    {% for host in hosts %}
-                    <div class="team-card--sm">
-                        <div class="ff-headshot" style="background-image: url(/images/team/headshot-{{ team[host].headshot }})"></div>
-                        <div class="team-card-info">
-                            <label>{{ team[host].name }}</label>
-                            <span>{{ team[host].title }}</span>
-                        </div>
-                    </div>
-                    {% endfor %}
-                </div>
                 {% if date | dateInFuture %}
                 <div class="mt-6 flex flex-col">
                     <h3 class="mb-3">Register Here:</h3>
@@ -73,6 +61,18 @@ layout: layouts/base.njk
                     </script>
                 </div>
                 {% endif %}
+                <div class="mt-6 flex flex-col">
+                    <h3 class="mb-3">Hosted By:</h3>
+                    {% for host in hosts %}
+                    <div class="team-card--sm">
+                        <div class="ff-headshot" style="background-image: url(/images/team/headshot-{{ team[host].headshot }})"></div>
+                        <div class="team-card-info">
+                            <label>{{ team[host].name }}</label>
+                            <span>{{ team[host].title }}</span>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
             </div>
         </div>
     </div>
