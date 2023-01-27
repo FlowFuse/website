@@ -3,8 +3,31 @@
     <title>FlowForge</title>
     <link href="https://flowforge.com/blog/index.xml" rel="self"/>
     <link href="https://flowforge.com/blog"/>
-    <updated>2023-01-23T00:00:00Z</updated>
+    <updated>2023-01-27T16:11:47Z</updated>
     <id>https://flowforge.com/blog</id>
+    
+    <entry>
+        <id>https://flowforge.com/blog/2023/01/environment-variables-in-node-red/</id>
+        <title>Using Environment Variables in Node-RED</title>
+        <summary>Predefined data to be used in your Node-RED instance</summary>
+        <updated>2023-01-27T16:11:47Z</updated>
+        <link href="https://flowforge.com/blog/2023/01/environment-variables-in-node-red/"/>
+        <author><name>ZJ van de Weg</name></author>
+        <content type="html">&lt;p&gt;Programs, written with Node-RED or otherwise, need to sometimes retrieve information that wasn’t decided on during the creation of the program.&lt;/p&gt;
+&lt;!--more--&gt;
+&lt;p&gt;Contextual data like configuration, which user is executing the code, differentiate based on what device is executing a flow, or sometimes secrets which shouldn’t be exposed in the code. This is usually done through environment variables. These are pairs of strings, a key with an attached value, which are accessed by their key. Say you want to access an API endpoint with a key, you’d save the key as &lt;code&gt;API_KEY&lt;/code&gt; with the value set to &lt;code&gt;yoursupersecretkey&lt;/code&gt;. FlowForge allows setting environment variables. Let’s start using them to understand how they work.&lt;/p&gt;
+&lt;p&gt;One of the options for the &lt;code&gt;inject&lt;/code&gt; node is to inject a &lt;code&gt;env variable&lt;/code&gt;, short for; you guessed it: Environment Variable. In this case we’re going to one that’s pre-defined by Node-RED: &lt;code&gt;NR_FLOW_NAME&lt;/code&gt;. The name of each variable is in all caps by convention. When connecting this inject to a debug it prints “Flow 1” for me.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://flowforge.com/blog/2023/01/images/node-red-use-env-var.png&quot; alt=&quot;Using an environment variable in Node-RED&quot; title=&quot;Using an environment variable in Node-RED&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;Leveraging environment variables can also be done with other nodes, like for example &lt;code&gt;change&lt;/code&gt;, &lt;code&gt;switch&lt;/code&gt;. Note however; you can set the &lt;code&gt;inject&lt;/code&gt; node to output the value for &lt;code&gt;FOO&lt;/code&gt; even when it doesn’t exist, but it doesn’t allow you to check in the switch node for example if &lt;code&gt;FOO&lt;/code&gt; exists.&lt;/p&gt;
+&lt;p&gt;Node-RED allows you to set environment variables, but not to change them when executing flows. If you want to update data during execution, look into using &lt;a href=&quot;https://flowforge.com/docs/user/persistent-context/&quot;&gt;persistent context&lt;/a&gt;. Node-RED doesn’t support Environment Variables like other programming environments do. When the flow is deployed the environment variables are replaced with the known values at that time. This is the biggest gotcha for most developers.&lt;/p&gt;
+&lt;h3 id=&quot;predefined-variables&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://flowforge.com/blog/2023/01/environment-variables-in-node-red/#predefined-variables&quot;&gt;#&amp;nbsp;&lt;/a&gt; Predefined variables&lt;/h3&gt;
+&lt;p&gt;Our first example was using a predefined variable, exposed by Node-RED. As of 3.0 it exposes a few environment variables among which &lt;code&gt;NR_NODE_NAME&lt;/code&gt;, &lt;code&gt;NR_GROUP_NAME&lt;/code&gt;, and &lt;code&gt;NR_FLOW_NAME&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;FlowForge extends this list with for example a &lt;code&gt;FF_PROJECT_ID&lt;/code&gt; allowing you to for example understand what group of instances sent a certain message, but also sets them for each &lt;a href=&quot;https://flowforge.com/docs/user/devices/&quot;&gt;device agent&lt;/a&gt;. This allows users to pinpoint which device sent a message, for example to update a dashboard accordingly.&lt;/p&gt;
+&lt;h3 id=&quot;managing-environments-variables&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://flowforge.com/blog/2023/01/environment-variables-in-node-red/#managing-environments-variables&quot;&gt;#&amp;nbsp;&lt;/a&gt; Managing environments variables&lt;/h3&gt;
+&lt;p&gt;In FlowForge it’s easy to manage variables set for instances. Under settings in the environment tab it’s a form to set them. You’ll have to restart your instances to make them available in the cloud, and update the target snapshot for devices. When done, these are available.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://flowforge.com/blog/2023/01/images/flowforge-set-env-var.png&quot; alt=&quot;Setting a environment variable in FlowForge&quot; title=&quot;set env var using FlowForge&quot; /&gt;&lt;/p&gt;
+</content>
+    </entry>
     
     <entry>
         <id>https://flowforge.com/blog/2023/01/getting-started-with-node-red/</id>
