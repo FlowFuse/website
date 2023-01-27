@@ -13,8 +13,8 @@ hubspot:
 
 <!--more-->
 
-Nick O'Leary, co-founder of Node-RED & CTO of FlowForge, and Rob Marcer, Node-RED community member & Developer Advocate @ FlowForge, will be hosting an interactive Ask Me Anything session. Thisis a great opportunity to ask questions of the Node-RED experts.
+Nick O'Leary, co-founder of Node-RED & CTO of FlowForge, and Rob Marcer, Node-RED community member & Developer Advocate @ FlowForge, will be hosting an interactive Ask Me Anything session. This is a great opportunity to ask questions of the Node-RED experts.
 
-Attendees will be able to ask questions live during this session. However, we also encourage you to ask questions in advance. To ask an advance questions .
+Attendees will be able to ask questions live during this session. However, we also encourage you to ask questions in advance. To ask an advance questions complete this [form](https://docs.google.com/forms/d/e/1FAIpQLSdfPq4lAQjdvqhTpoYtKiMNgP8vcMhZsAf_AG0MHuVMRK83_Q/viewform?usp=sf_link).
 
 To attend the Ask Me Anything session please register in advance.
