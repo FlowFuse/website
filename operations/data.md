@@ -19,3 +19,8 @@ Sheets and [Data Studio](https://datastudio.google.com/).
 We've adopted Meltano to obtain and transfer the data. See also the
 [FlowForge-Data](https://github.com/flowforge/flowforge-data) (Internal project)
 on how we transfer the data. It's manually triggered for now.
+
+### Noteable dashboards
+
+- [KPI Dashboard](https://datastudio.google.com/reporting/90315614-39bf-4eac-ba3d-45b4c635940e/page/P1V6C)
+- [Google Search Dashboard](https://datastudio.google.com/reporting/d22a6f9f-cd1c-419b-821f-872e8aee013d/page/6zXD)
