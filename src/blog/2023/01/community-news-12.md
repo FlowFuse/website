@@ -1,10 +1,12 @@
 ---
-title: Community News December 2022 #10
+title: Community News December 2022
 subtitle: News from the FlowForge and Node-RED communities
 description: News from the FlowForge and Node-RED communities
 date: 2023-01-12
 authors: ["rob-marcer"]
-tags: newsletter
+tags:
+    - posts
+    - newsletter
 ---
 
 Welcome to the FlowForge newsletter for December 2022, a monthly roundup of what’s been happening with both FlowForge and the wider Node-RED community. 2022 was a really exciting year for the development of both Node-RED and FlowForge. Node-RED released version 3, another major milestone for the project. FlowForge hit version 1, leaving the beta development stage. We are excited to see what the community can achieve in 2023!
