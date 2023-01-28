@@ -6,6 +6,7 @@ const spacetime = require("spacetime");
 const heroGen = require("./lib/post-hero-gen.js");
 const pluginMermaid = require("@kevingimbel/eleventy-plugin-mermaid");
 const util = require('util')
+const site = require('./src/_data/site');
 
 module.exports = function(eleventyConfig) {
     eleventyConfig.setWatchThrottleWaitTime(200); // in milliseconds
@@ -61,9 +62,12 @@ module.exports = function(eleventyConfig) {
         return heroGen(""+id)
     })
 
+    eleventyConfig.addFilter("toAbsoluteUrl", function(url) {
+        return new URL(url, site.baseURL).href;
+    })
+
     // Create a collection for sidebar navigation
     eleventyConfig.addCollection('nav', function(collection) {
-
         let nav = {}
         
         collection.getAll().filter((page) => {
@@ -81,7 +85,7 @@ module.exports = function(eleventyConfig) {
             // recursively parse the folder hierarchy and created our collection object
             // pass nav = {} as the first accumulator - build up hierarchy map of TOC
             hierarchy.reduce((accumulator, currentValue, i) => {
-                // create a nested object detailing hte full handbook hierarchy
+                // create a nested object detailing the full handbook hierarchy
                 if (!accumulator[currentValue]) {
                     accumulator[currentValue] = {
                         'name': currentValue,
