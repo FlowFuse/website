@@ -50,12 +50,12 @@
     {% endif %}
 
     <!-- Open Graph URL -->
-    <meta property="og:url" content="{{ site.baseURL }}{{ page.url }}" />
+    <meta property="og:url" content="{{ page.url | toAbsoluteUrl }}" />
     <!-- Open Graph Image -->
     {% if image %}
-    <meta property="og:image" content="{{ site.baseURL }}{{image}}" />
+    <meta property="og:image" content="{{ image | toAbsoluteUrl }}" />
     {% else %}
-    <meta property="og:image" content="{{ site.baseURL }}/images/og-social-tile.jpg" />
+    <meta property="og:image" content="{{ 'images/og-social-tile.jpg' | toAbsoluteUrl }}" />
     {% endif %}
 
     {% if tags and 'posts' in tags %}
