@@ -48,7 +48,7 @@ remote edge locations.
 
 Above all, we’ll be building a company that is open, sustainable, and fun to
 work at. We already have some job openings available - check out our 
-[jobs board](https://flowforge.com/careers) if you’re interested in joining our
+[jobs board]({{ site.jobBoard }}) if you’re interested in joining our
 team.
 
 If you’re interested in learning more about what we’re doing, or have any

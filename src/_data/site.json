@@ -1,4 +1,5 @@
 {
     "title": "FlowForge",
-    "baseURL": "https://flowforge.com"
+    "baseURL": "https://flowforge.com",
+    "jobBoard": "https://boards.greenhouse.io/flowforge"
 }
