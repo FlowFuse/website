@@ -50,12 +50,12 @@
     {% endif %}
 
     <!-- Open Graph URL -->
-    <meta property="og:url" content="{{ site.baseURL }}{{ page.url }}" />
+    <meta property="og:url" content="{{ page.url | toAbsoluteUrl }}" />
     <!-- Open Graph Image -->
     {% if image %}
-    <meta property="og:image" content="{{ site.baseURL }}{{image}}" />
+    <meta property="og:image" content="{{ image | toAbsoluteUrl }}" />
     {% else %}
-    <meta property="og:image" content="{{ site.baseURL }}/images/og-social-tile.jpg" />
+    <meta property="og:image" content="{{ 'images/og-social-tile.jpg' | toAbsoluteUrl }}" />
     {% endif %}
 
     {% if tags and 'posts' in tags %}
@@ -153,7 +153,7 @@
                         <li class="inline mr-3 mb-3 md:m-0 md:block"><a href="/contact-us">Contact Us</a></li>
                         <li class="inline mr-3 mb-3 md:m-0 md:block"><a href="/support">Request Support</a></li>
                         <li class="inline mr-3 mb-3 md:m-0 md:block"><a href="/team">Team</a></li>
-                        <li class="inline mr-3 mb-3 md:m-0 md:block"><a href="https://boards.greenhouse.io/flowforge">Jobs</a></li>
+			 <li class="inline mr-3 mb-3 md:m-0 md:block"><a href="{{ site.jobBoard }}">Jobs</a></li>
                         <li class="inline mr-3 mb-3 md:m-0 md:block"><a href="/handbook">Handbook</a></li>
                         <li class="inline mr-3 mb-3 md:m-0 md:block"><a href="/blog">News</a></li>
                         <li class="inline mr-3 mb-3 md:m-0 md:block"><a href="/privacy-policy">Privacy</a></li>
