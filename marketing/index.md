@@ -12,4 +12,4 @@ If you're looking to contribute content to FlowForge, this is the best place to 
 - [Types](./types.md)
 - [Videos](./videos.md)
 - [Website](./website.md)
-- [Webinars][./webinars.md]
+- [Webinars](./webinars.md)
