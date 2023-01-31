@@ -81,6 +81,8 @@
             }
         }
     </script>
+    <!-- Load HubSpot JS Library -->
+    <script charset="utf-8" type="text/javascript" src="//js-eu1.hsforms.net/forms/embed/v2.js"></script>
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-2ZH9W82QL8"></script>
     <script>
@@ -97,7 +99,7 @@
             <!-- Navigation Header -->
             <header class="ff-header w-full container mx-auto p-6 md:max-w-screen-lg">
                 <nav class="relative w-full flex items-center justify-between">
-                    <a class="no-underline hover:no-underline font-bold h-8 w-40 flex flex-row"  href="/" style="font-family:'Baloo 2', sans-serif">
+                    <a class="ff-wordmark no-underline hover:no-underline font-bold h-8 w-40 flex flex-row"  href="/" style="font-family:'Baloo 2', sans-serif">
                         {% include "components/flowforge-wordmark.njk" %}
                     </a>
                     <div class="block md:hidden">
@@ -109,11 +111,17 @@
                     <ul id="nav-content" class="hidden absolute top-8 right-0 border shadow-sm md:inline md:shadow-none w-36 z-10 md:border-0 bg-white md:bg-transparent md:w-auto rounded md:static md:float-none md:flex md:flex-row flex-col items-center justify-between font-medium text no-underline">
                         <li class="flex"><a href="/features">features</a></li>
                         <li class="flex"><a href="/pricing">pricing</a></li>
-                        <li class="flex"><a href="/blog">blog</a></li>
+                        <li class="ff-nav-dropdown relative">
+                            <a class="flex items-center gap-2">resources {% include "components/icons/chevron-down.svg" %}</a>
+                            <ul>
+                                <li><a href="/blog">blog</a></li>
+                                <li><a href="/webinars">webinars</a></li>
+                            </ul>
+                        </li>
                         <li class="flex"><a href="/docs">docs</a></li>
 			            <li class="flex"><a href="https://app.flowforge.com">sign in</a></li>
                         <a class="ml-2 mr-2 ff-btn ff-btn--primary uppercase text-sm" href="https://app.flowforge.com/account/create" onclick="capture('cta-join', {'position': 'header'})">Free Trial</a>
-                        <li class="flex"><a href="https://github.com/flowforge" target="_blank">{% include "components/github.njk" %}</a></li>
+                        <li class="flex"><a class="ff-icon--gh" href="https://github.com/flowforge" target="_blank">{% include "components/github.njk" %}</a></li>
                     </ul>
                 </nav>
             </header>

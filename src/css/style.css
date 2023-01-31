@@ -2,6 +2,7 @@
 @import "./style.page.css";
 @import "./style.nohero.css";
 @import "./style.handbook.css";
+@import "./style.components.css";
 @import url("https://cdn.jsdelivr.net/npm/@mdi/font@6.5.95/css/materialdesignicons.min.css");
 @import url("https://cdnjs.cloudflare.com/ajax/libs/Primer/19.1.1/tooltips.min.css");
 @import "../../node_modules/@flowforge/forge-ui-components/dist/forge-ui-components.css";
@@ -15,8 +16,8 @@ html, body {
 }
 
 * {
-    transition: 0.3s background-color, 0.3s color, 0.3s fill;
-    -webkit-transition: 0.3s background-color, 0.3s color, 0.3s fill;
+    transition: 0.3s background-color, 0.3s color, 0.3s fill, 0.3s stroke;
+    -webkit-transition: 0.3s background-color, 0.3s color, 0.3s fill, 0.3s stroke;
 }
 
 /*
@@ -208,10 +209,23 @@ h4:hover .header-anchor {
     Header
 */
 @layer components {
-    .ff-website header path {
+    .ff-website header .ff-wordmark path,
+    .ff-website header .ff-icon--gh path {
         fill: theme(colors.red.400);
     }
 
+    .ff-website header .ff-icon--gh:hover path {
+        @apply sm:bg-white;
+    }
+
+    .ff-website header a .ff-icon--down path {
+        @apply sm:text-red-400;
+    }
+
+    .ff-website header a:hover .ff-icon--down path {
+        @apply sm:text-white;
+    }
+    
     .ff-website header a {
         color: theme(colors.red.400);
     }
@@ -227,11 +241,50 @@ h4:hover .header-anchor {
     }
 
     .ff-website header ul a:hover {
-        color: white;
+        @apply sm:text-white;
     }
 
-    .ff-website header a:hover path {
-        fill: white;
+    .ff-website header .ff-nav-dropdown ul {
+        top: 100%;
+        right: 0;
+        min-width: 100%;
+        margin-right: 1rem;
+        @apply hidden sm:absolute sm:shadow-md;
+    }
+
+    .ff-website header .ff-nav-dropdown a {
+        cursor: default;
+    }
+
+    .ff-website header .ff-nav-dropdown:hover ul {
+        display: block;
+    }
+
+    .ff-website header .ff-nav-dropdown ul li {
+        @apply border-b bg-gray-50 text-left sm:bg-gray-700 sm:text-right sm:border-gray-600
+    }
+
+    .ff-website header .ff-nav-dropdown ul li:first-child {
+        @apply rounded-t-md;
+    }
+
+    .ff-website header .ff-nav-dropdown ul li:last-child {
+        @apply rounded-b-md;
+        border-bottom: 0;
+    }
+
+    .ff-website header .ff-nav-dropdown ul li a {
+        display: block;
+        cursor: pointer;
+        @apply pl-6 md:pl-1.5 md:pr-6 md:text-white;
+    }
+
+    .ff-website header .ff-nav-dropdown:hover a {
+        @apply md:text-white;
+    }
+
+    .ff-website header .ff-nav-dropdown li:hover a {
+        color: theme(colors.teal.300);
     }
 }
 

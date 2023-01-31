@@ -48,6 +48,42 @@ module.exports = function(eleventyConfig) {
         return spacetime(dateObj).format('{date} {month-short}, {year}')
     });
 
+    eleventyConfig.addFilter('duration', mins => {
+        if (mins > 60) {
+            const hrs = Math.floor(mins/60)
+            return `${hrs}h ${mins%60}m`
+        }
+         else {
+            return `${mins} mins`
+         }
+    });
+
+    eleventyConfig.addFilter('inFuture', (posts) => {
+        // filter posts/webinars that only occured in the past
+        if (posts) {
+            return posts.filter((post) => {
+                const postDate = spacetime(post.data.date)
+                return postDate.isAfter(spacetime.today()) || postDate.isSame(spacetime.today())
+            })
+        } else {
+            return null
+        }
+    });
+
+    eleventyConfig.addFilter('inPast', (posts) => {
+        // filter posts/webinars that only occured in the past
+        return posts.filter((post) => {
+            const postDate = spacetime(post.data.date)
+            return postDate.isBefore(spacetime.today())
+        })
+    });
+
+    eleventyConfig.addFilter('dateInFuture', (date) => {
+        // return true is the provided date is in the past, otherwise, return false
+        const postDate = spacetime(date)
+        return postDate.isAfter(spacetime.today()) || postDate.isSame(spacetime.today())
+    });
+
     eleventyConfig.addFilter("excerpt", function(str) {
         const content = new String(str);
         return content.split("\n<!--more-->\n")[0]

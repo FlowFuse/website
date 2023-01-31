@@ -1,0 +1,125 @@
+---
+layout: nohero
+sitemapPriority: 0.9
+meta:
+    title: Webinars
+---
+<div class="container m-auto text-left max-w-4xl pb-24 w-full px-2">
+    <h1>Webinars</h1>
+    {% include "components/divider-grey-wires-right.njk" %}
+    {% if collections.webinar and collections.webinar.length > 0 %}
+        {%- for item in collections.webinar | inFuture -%}
+            {% if loop.first %}
+            <h2 class="w-full">Upcoming Webinar:</h2>
+            <ul>
+                <li class="webinar-tile">
+                    <div class="flex flex-col md:flex-row">
+                        <a href="{{ item.url }}" onclick="capture('cta-webinar-register')" class="webinar-tile-img relative mb-4 md:mb-0 flex md:w-1/2 mr-2 rounded">
+                            {% if item.data.image %}
+                                <img class="w-full h-auto rounded" src="{{item.data.image}}" />
+                            {% else %}
+                                {{ item.url | generatePostSVG | safe }}
+                            {% endif %}
+                            <div class="webinar-tile-shade">
+                                <label>
+                                    <h4 class="text-white">{{ item.data.title }}</h4>
+                                    <div class="webinar-tile-datetime">
+                                        <time value="{{ item.time }}" class="text-gray-400">{{ item.data.time }}</time>
+                                        <time value="{{ item.date }}" class="text-gray-400">{{ item.data.date | shortDate }}</time>
+                                        <time value="{{ item.duration }}" class="text-gray-400">{{ item.data.duration | duration }}</time>
+                                    </div>
+                                </label>
+                            </div>
+                        </a>
+                        <div class="flex flex-col justify-between md:w-1/2 md:px-2">
+                            <div class="grow">
+                                {{ item.templateContent | excerpt | striptags(true)| restoreParagraphs | safe }}
+                            </div>
+                            <div>
+                                <a class="inline-flex ff-btn ff-btn--primary text-sm" href="{{ item.url }}" onclick="capture('cta-webinar-info')">
+                                    More Info
+                                    <span class="ml-2">
+                                        {% include "components/icons/chevron-right.svg" %}
+                                    </span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+            {% endif %}
+        {% endfor %}
+    {% endif %}
+    {% if collections.ama and collections.ama.length > 0 %}
+        {%- for item in collections.ama | inFuture -%}
+        {% if loop.first %}
+            <h2 class="w-full mt-6">Upcoming "Ask Me Anything" Session:</h2>
+            <ul>
+                <li class="webinar-tile">
+                    <div class="flex flex-col md:flex-row">
+                        <a href="{{ item.url }}" onclick="capture('cta-webinar-register')" class="webinar-tile-img relative mb-4 md:mb-0 flex md:w-1/2 mr-2 rounded-lg">
+                            {% if item.data.image %}
+                                <img class="w-full h-auto rounded-lg" src="{{item.data.image}}" />
+                            {% else %}
+                                {{ item.url | generatePostSVG | safe }}
+                            {% endif %}
+                            {% if item.data.image %}
+                            <div class="webinar-tile-radialshade">
+                            </div>
+                            {% else %}
+                            <div class="webinar-tile-shade">
+                                <label>
+                                    <h4 class="text-white">{{ item.data.title }}</h4>
+                                    <div class="webinar-tile-datetime">
+                                        <time value="{{ item.time }}" class="text-gray-400">{{ item.data.time }}</time>
+                                        <time value="{{ item.date }}" class="text-gray-400">{{ item.data.date | shortDate }}</time>
+                                        <time value="{{ item.duration }}" class="text-gray-400">{{ item.data.duration | duration }}</time>
+                                    </div>
+                                </label>
+                            </div>
+                            {% endif %}
+                        </a>
+                        <div class="flex flex-col justify-between md:w-1/2 md:px-2">
+                            <div class="grow">
+                                {{ item.templateContent | excerpt | striptags(true)| restoreParagraphs | safe }}
+                            </div>
+                            <div>
+                                <a class="inline-flex ff-btn ff-btn--secondary text-sm" href="{{ item.url }}" onclick="capture('cta-ama-info')">
+                                    More Info
+                                    <span class="ml-2">
+                                        {% include "components/icons/chevron-right.svg" %}
+                                    </span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+            {% endif %}
+        {% endfor %}
+    {% endif %}
+    {% if (collections.webinar and (collections.webinar | inFuture | length) > 0) or (collections.ama and (collections.ama | inFuture | length) > 0) %}
+    <div class="mt-4 w-full">
+        {% include "components/divider-grey-wires-left.njk" %}
+    </div>
+    {% endif %}
+    {% if collections.webinar and (collections.webinar | inPast | length) > 0 %}
+        <h2 class="w-full">Past Webinars</h2>
+        <ul class="grid md:grid-cols-3 gap-4">
+            {%- for item in collections.webinar | inPast | reverse -%}
+                <li class="w-full my-2 pb-6 border-b">
+                    <a href="{{ item.url }}" class="w-full flex flex-col group hover:no-underline">
+                        <div class="">
+                            <time class="block text-xs mb-2" value="{{ item.date }}" class="text-gray-400">{{ item.date | shortDate }}</time>
+                            <div>{% if item.image %}<img class="w-full h-auto" src="{{item.image}}" />{% else %}{{ item.url | generatePostSVG |safe}}{% endif %}</div>
+                            <h3 class="mt-1 mb-0 font-medium group-hover:underline">{{ item.data.title }}</h3>
+                        </div>
+                        <div class="text-sm prose prose-blue md:prose-md py-1">
+                            {{ item.data.description | excerpt | safe }}
+                        </div>
+                    </a>
+                </li>
+            {%- endfor -%}
+        </ul>
+    {% endif %}
+</div>
