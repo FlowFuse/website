@@ -59,10 +59,14 @@ module.exports = function(eleventyConfig) {
 
     eleventyConfig.addFilter('inFuture', (posts) => {
         // filter posts/webinars that only occured in the past
-        return posts.filter((post) => {
-            const postDate = spacetime(post.data.date)
-            return postDate.isAfter(spacetime.today()) || postDate.isSame(spacetime.today())
-        })
+        if (posts) {
+            return posts.filter((post) => {
+                const postDate = spacetime(post.data.date)
+                return postDate.isAfter(spacetime.today()) || postDate.isSame(spacetime.today())
+            })
+        } else {
+            return null
+        }
     });
 
     eleventyConfig.addFilter('inPast', (posts) => {

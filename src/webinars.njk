@@ -7,7 +7,7 @@ meta:
 <div class="container m-auto text-left max-w-4xl pb-24 w-full px-2">
     <h1>Webinars</h1>
     {% include "components/divider-grey-wires-right.njk" %}
-    {% if collections.webinar.length > 0 %}
+    {% if collections.webinar and collections.webinar.length > 0 %}
         {%- for item in collections.webinar | inFuture -%}
             {% if loop.first %}
             <h2 class="w-full">Upcoming Webinar:</h2>
@@ -50,7 +50,7 @@ meta:
             {% endif %}
         {% endfor %}
     {% endif %}
-    {% if collections.ama.length > 0 %}
+    {% if collections.ama and collections.ama.length > 0 %}
         {%- for item in collections.ama | inFuture -%}
         {% if loop.first %}
             <h2 class="w-full mt-6">Upcoming "Ask Me Anything" Session:</h2>
@@ -93,12 +93,12 @@ meta:
             {% endif %}
         {% endfor %}
     {% endif %}
-    {% if ((collections.webinar | inFuture | length) > 0) %}
-    <div class="mt-2 w-full">
+    {% if (collections.webinar and (collections.webinar | inFuture | length) > 0) or (collections.ama and (collections.ama | inFuture | length) > 0) %}
+    <div class="mt-4 w-full">
         {% include "components/divider-grey-wires-left.njk" %}
     </div>
     {% endif %}
-    {% if (collections.webinar | inPast | length) > 0 %}
+    {% if collections.webinar and (collections.webinar | inPast | length) > 0 %}
         <h2 class="w-full">Past Webinars</h2>
         <ul class="grid md:grid-cols-3 gap-4">
             {%- for item in collections.webinar | inPast | reverse -%}
