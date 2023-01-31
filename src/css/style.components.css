@@ -73,6 +73,10 @@
         background-color: rgba(0, 0, 0, 0.4);
         @apply w-full h-full rounded-lg absolute top-0 left-0;
     }
+    .webinar-tile .webinar-tile-radialshade {
+        background-image: radial-gradient(at 50% 25%, transparent, transparent 30%, #0000007a 100%);
+        @apply w-full h-full rounded-lg absolute top-0 left-0;
+    }
     .webinar-tile .webinar-tile-datetime {
         display: flex;
     }

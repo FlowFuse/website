@@ -35,11 +35,6 @@ layout: layouts/base.njk
                 </div>
             </div>
             <div class="w-96 max-w-full">
-                <div class="hidden md:block">
-                    {% if video %}<iframe width="560" height="315" src="https://www.youtube.com/embed/{{video}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                    {% elif image %}<img class="w-full h-auto" src="{{image}}" />
-                    {% else %}{{ page.url | generatePostSVG |safe}}{% endif %}
-                </div>
                 {% if date | dateInFuture %}
                 <div class="mt-6 flex flex-col">
                     <h3 class="mb-3">Register Here:</h3>
