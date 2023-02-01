@@ -1,3 +1,8 @@
+---
+meta:
+    title: Company Strategy
+---
+
 ### Strategy
 
 > We will only be successful if the whole Node-RED community is successful.

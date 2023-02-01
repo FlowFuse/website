@@ -1,3 +1,7 @@
+---
+navTitle: Packaging Guidelines
+---
+
 # Packaging Guidelines
 
 This section describes the requirements we have for all GitHub repositories,

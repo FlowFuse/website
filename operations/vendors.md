@@ -1,3 +1,7 @@
+---
+navTitle: Vendors
+---
+
 # Vendors
 
 ### Process

@@ -1,3 +1,6 @@
+---
+navTitle: Compensation
+---
 # Compensation
 
 Total compensation consists of 3 elements, salary, equity, and benefits.

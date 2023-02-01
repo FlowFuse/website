@@ -1,3 +1,7 @@
+---
+navTitle: Front End
+---
+
 ### Front-End
 
 A collection of how-to's and best practice guides for FlowForge's front-end development.

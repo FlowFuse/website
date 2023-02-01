@@ -1,3 +1,7 @@
+---
+navTitle: Expenses
+---
+
 ## Expenses
 
 The company will cover any reasonable work-related expense, including ensuring you

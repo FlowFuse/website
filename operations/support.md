@@ -1,3 +1,7 @@
+---
+navTitle: Support
+---
+
 # Support
 
 ## Customer type

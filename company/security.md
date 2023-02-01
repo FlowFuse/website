@@ -1,3 +1,7 @@
+---
+navTitle: Security
+---
+
 # Security
 
 ## Credentials

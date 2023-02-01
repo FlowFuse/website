@@ -1,3 +1,6 @@
+---
+navTitle: Content Channels
+---
 
 ## Content Channels
 

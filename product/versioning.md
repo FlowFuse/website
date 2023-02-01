@@ -1,3 +1,7 @@
+---
+navTitle: Versioning
+---
+
 # Versioning
 
 ## 1.0

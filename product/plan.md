@@ -1,3 +1,6 @@
+---
+navTitle: Plan
+---
 # Product Plan
 
 ## Background
