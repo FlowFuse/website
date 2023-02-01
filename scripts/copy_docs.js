@@ -31,7 +31,7 @@ async function copyFiles (src, dest, version) {
                     if (/^---/.test(content)) {
                         // The original file starts with yaml front-matter, so
                         // remove the double-delimter we've just introduced
-                        body = body.replace('---\n---\n', '')
+                        body = body.replace(/---\r?\n---\r?\n/s, '')
                     }
                     await fs.writeFile(destFile, body)
                 }
