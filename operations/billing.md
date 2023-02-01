@@ -1,3 +1,7 @@
+---
+navTitle: Billing
+---
+
 # Billing
 
 ## Platform

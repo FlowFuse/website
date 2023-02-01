@@ -1,3 +1,8 @@
+---
+meta:
+    title: Marketing - Blog
+---
+
 ## Blog
 
 ### Blogging Process

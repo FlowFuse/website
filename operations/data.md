@@ -1,3 +1,7 @@
+---
+navTitle: Data at FlowForge
+---
+
 # Data at FlowForge
 
 At FlowForge we're trying to leverage data obtained to make better decisions.

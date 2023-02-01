@@ -1,3 +1,8 @@
+---
+meta:
+  title: Front-End Services
+---
+
 ## Services
 The frontend contains two helper services that can be called anywhere in the UI. Each of the services control components built into the main `Platform.vue`.
 

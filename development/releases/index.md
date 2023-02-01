@@ -1,3 +1,7 @@
+---
+navTitle: Releases
+---
+
 ### Releases
 
 Instructions for creating a release are found in the Release Process [here](./process.md).

@@ -9,6 +9,10 @@ At FlowForge, we practice Design Thinking when considering our UI design and wid
 As designers and developers, empathising with our users will lead to a better product. When proposing new feature ideas, concepts and changes to existing UX, arguments should always be considered from the perspective of our users. 
 
 Whilst most of the output from our Design Thinking workshops and sessions can be found within [FigJam](#figjam-(more-info)), we have also written up some of our Design Thinking Findings below:
+
+<iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="800" height="450" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2FJxQe6yIm6lSIYvVi1FYCtl%2FUser-Journey---Onboarding%3Fnode-id%3D0%253A1%26t%3DsqwjX18jUzm00GWk-1" allowfullscreen></iframe>
+
+
 ### User Personas
 
 Personas are fictional characters that represent the different users we expect to interact with FlowForge as a brand and/or platform. You can find samples of the user personas below.

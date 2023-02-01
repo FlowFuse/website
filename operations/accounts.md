@@ -1,3 +1,7 @@
+---
+navTitle: Accounts
+---
+
 # Accounts
 
 These are the principles of how we setup and use accounts on the FlowForge.cloud platform.

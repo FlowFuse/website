@@ -1,3 +1,7 @@
+---
+navTitle: Change Control
+---
+
 # Change Control
 
 To keep track of what changes where made, why these were made, and if the changes

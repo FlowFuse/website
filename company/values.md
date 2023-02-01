@@ -1,3 +1,7 @@
+---
+meta:
+    title: Company Values
+---
 ## Values
 
 ### Be Effective

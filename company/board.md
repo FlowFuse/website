@@ -1,3 +1,6 @@
+---
+navTitle: Board
+---
 # Board of Directors
 
 ## Board meetings

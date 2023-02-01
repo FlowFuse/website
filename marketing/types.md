@@ -1,3 +1,7 @@
+---
+navTitle: Content Types
+---
+
 ## Content Types
 
 Content should be published to the appropriate channels, the types of published content we currently produce are as follows.

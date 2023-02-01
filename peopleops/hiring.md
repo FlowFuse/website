@@ -1,3 +1,7 @@
+---
+navTitle: Hiring
+---
+
 ## Hiring
 
 ### Interviews

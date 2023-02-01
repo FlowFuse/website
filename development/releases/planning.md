@@ -1,3 +1,7 @@
+---
+navTitle: Planning
+---
+
 ## Planning
 
 Instructions for creating a release are [here](./process.md).
