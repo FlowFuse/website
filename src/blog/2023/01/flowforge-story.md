@@ -2,11 +2,12 @@
 title: Telling the FlowForge Story
 subtitle: FlowForge helps organizations reliably deliver Node-RED applications
 description: In this article we are going to discuss how we see FlowForge helping Node-RED developers deliver applications more reliably.
-date: 2023-01-31
+date: 2023-02-01
 authors: ["ian-skerrett"]
 ---
 
 During my first month at FlowForge, I have been helping to refine the FlowForge story. Trying to answer the questions: What is the value FlowForge brings to our customers and what features does FlowForge want to offer the Node-RED community?
+<!--more--> 
 
 People love Node-RED because it makes it trivial to connect different types of services and data, create flows of the data, and store/forward data to the cloud or a database. The Node-RED [library of nodes and flows](https://flows.nodered.org/) enables connections to almost anything. The speed and ease of use of Node-RED allows non-traditional programmers to accelerate their innovation and exploration of what is possible.
 
