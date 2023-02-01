@@ -173,6 +173,13 @@ that connects back to the platform to receive updates.</p>
 <li><a href="filenodes"">Working with Files</a></li>
 <li><a href="persistent-context"">Working with Context</a></li>
 </ul>
+<h2 id="debugging-and-fixing-node-red-issues" tabindex="-1"><a class="header-anchor" href="#debugging-and-fixing-node-red-issues">#&nbsp;</a> Debugging and fixing Node-RED issues</h2>
+<h3 id="node-red-safe-mode" tabindex="-1"><a class="header-anchor" href="#node-red-safe-mode">#&nbsp;</a> Node-RED Safe Mode</h3>
+<p>When a Node-RED instance is unresponsive, for example due to an infinate loop,
+it can be put into Safe Mode. This is done by updating the <a href="envvar"">Enivronment Variables</a>
+for a project. Set <code>NODE_RED_ENABLE_SAFE_MODE</code> as variable name to the value
+<code>true</code>, then suspend and restart the project. This will load the editor but not
+start the flow which will let you log in and recover. The flows will be started on the next Deploy from the editor.</p>
 
             </div>
         </div>
@@ -181,7 +188,7 @@ that connects back to the platform to receive updates.</p>
             <h3 class="font-medium border-b pb-1 mb-4">On this page</h3>
             <ul id="toc" class="text-sm border-b mb-4"></ul>
             <div class="text-sm pb-1 text-right mb-4"><a href="https://github.com/flowforge/flowforge/edit/main/docs/user/README.md">Edit this page</a></div>
-            <div class="text-xs pb-1 text-right mb-4 italic">Updated: 2023-01-26 11:43:40 +0000</div>
+            <div class="text-xs pb-1 text-right mb-4 italic">Updated: 2023-02-01 17:22:47 +0000</div>
         </div>
     </div>
 </div>
