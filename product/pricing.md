@@ -5,16 +5,16 @@ navTitle: Pricing Principles
 # Pricing Principles
 
 This page sets out the concepts that we sell and how those are measured across both SaaS and Licensed Editions of the platform.
-This does not define specific dollar amounts for any items those are commercial decisions outside the scope of this document.
+This does not define specific dollar amounts for any items, those are commercial decisions outside the scope of this document.
 
 ## Teams
-Teams are the basic unit within FlowForge and the entity to which bills are charged. Teams own zero or more projects. Teams can be on different tiers of plan, the main differentiation being the value added features provided by the FlowForge platform. There will be a free tier which provides core functionality and enables the user to create projects, the free tier limits the size of the team to a small number (3) of members.
-A paid tier offers access to the collaboration functionality.
-The paid tier is priced at $X per member of the team with an upper limit at which point the customer is managed onto a higher enterprise tier. 
-The value the customer is paying for here is the additional functionality of the flowforge platform above that of just running standard node-red.
-The EE license will be for a defined number of teams and users, 
-The CE License will be restricted to only the features of the basic team, and the number of members in a team will be limited to the same number(3) as the basic team on 
-the FlowForge managed instance.
+
+Teams are the basic unit within FlowForge and the entity to which bills are charged.
+A teams can own zero or more projects, and 1 ore more user can be members. Subject
+to access controls, some users can create projects, add devices (agents), and invite
+other members.
+
+The number of teams for the open source offering of FlowForge is limited to 50.
 
 ## Projects
 
