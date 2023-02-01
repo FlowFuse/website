@@ -45,7 +45,12 @@ layout: layouts/base.njk
                                 region: "eu1",
                                 portalId: "26586079",
                                 formId: formId,
-                                onFormSubmit: function($form) {
+                                onFormSubmit: function($form, data) {
+                                    // identify user 
+                                    const formData = new Map(data.map((obj) => [obj.name, obj.value]));
+                                    const name = formData.firstname + " " + formData.lastname
+                                    identify(name, formData.email, formData.company)
+                                    // capture registration event
                                     const article_title = "{{ title }}"
                                     capture('cta-webinar-register', {
                                         'webinar-name': article_title
