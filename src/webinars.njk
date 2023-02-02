@@ -5,8 +5,12 @@ meta:
     title: Webinars
 ---
 <div class="container m-auto text-left max-w-4xl pb-24 w-full px-2">
-    <h1>Webinars</h1>
-    {% include "components/divider-grey-wires-right.njk" %}
+    <div class="px-2">
+        <h1>Webinars</h1>
+        <div class="md:-mt-6">
+            {% include "components/divider-grey-wires-right.njk" %}
+        </div>
+    </div>
     {% if collections.webinar and collections.webinar.length > 0 %}
         {%- for item in collections.webinar | inFuture -%}
             {% if loop.first %}
