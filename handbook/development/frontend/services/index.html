@@ -555,14 +555,14 @@
                         </li>
                         
                         <li class="">
-                            <a href="/handbook/development/how-we-work/staging/">
-                                Staging Enviornment
+                            <a href="/handbook/development/how-we-work/security/">
+                                Security Policy
                             </a>
                         </li>
                         
                         <li class="">
-                            <a href="/handbook/development/how-we-work/security/">
-                                Security Policy
+                            <a href="/handbook/development/how-we-work/staging/">
+                                Staging Enviornment
                             </a>
                         </li>
                         
@@ -869,7 +869,7 @@ Here we see an example of a `Dialog` being used to confirmed deletion of a snaps
 <p>The Dialog service should be used when user confirmation is required, after an action has been taken. For example, if a user attempts to delete a resource, a confirmation Dialog should be shown to ensure this was not an accidental action.</p>
 
 <div style="position: relative">
-  <pre class="language-js"><code id="code-26"class="language-js"><span class="token keyword">import</span> Dialog <span class="token keyword">from</span> <span class="token string">'@services/dialog'</span><br><br><span class="token comment">/*<br> * msg      - {<br> *               header: '&lt;header title>',<br> *               kind: 'danger` | `primary` | `secondary` | `tertiary',  (default = 'primary') <br> *               text: 'show this message in the dialog',<br> *               html: 'instead of "text", you can provide html for more custom appearance and content',<br> *               confirmLabel: '&lt;confirm-label>'<br> *            }<br> * callback - function to run when the user confirms the dialog<br> */</span><br>Dialog<span class="token punctuation">.</span><span class="token function">show</span><span class="token punctuation">(</span>msg<span class="token punctuation">,</span> callback<span class="token punctuation">)</span></code></pre>
+  <pre class="language-js"><code id="code-26"class="language-js"><span class="token keyword">import</span> Dialog <span class="token keyword">from</span> <span class="token string">'@/services/dialog'</span><br><br><span class="token comment">/*<br> * msg      - {<br> *               header: '&lt;header title>',<br> *               kind: 'danger` | `primary` | `secondary` | `tertiary',  (default = 'primary') <br> *               text: 'show this message in the dialog',<br> *               html: 'instead of "text", you can provide html for more custom appearance and content',<br> *               confirmLabel: '&lt;confirm-label>'<br> *            }<br> * callback - function to run when the user confirms the dialog<br> */</span><br>Dialog<span class="token punctuation">.</span><span class="token function">show</span><span class="token punctuation">(</span>msg<span class="token punctuation">,</span> callback<span class="token punctuation">)</span></code></pre>
 
   <button class="code-copy "
     data-clipboard-target="#code-26"
@@ -899,7 +899,7 @@ Here we see an example of a `Dialog` being used to confirmed deletion of a snaps
             <h3 class="font-medium border-b pb-1 mb-4">on this page</h3>
             <ul id="toc" class="text-sm border-b mb-4"></ul>
             <div class="text-sm pb-1 text-right mb-4"><a href="https://github.com/flowforge/handbook/edit/main/development/frontend/services.md">Edit this page</a></div>
-            <div class="text-xs pb-1 text-right mb-4 italic">Updated: 2023-02-01 13:44:54 +0000</div>
+            <div class="text-xs pb-1 text-right mb-4 italic">Updated: 2023-02-02 23:27:21 +0100</div>
         </div>
     </div>
 </div>
