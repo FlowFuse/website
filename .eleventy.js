@@ -23,7 +23,6 @@ module.exports = function(eleventyConfig) {
     eleventyConfig.addLayoutAlias('page', 'layouts/page.njk');
     eleventyConfig.addLayoutAlias('nohero', 'layouts/nohero.njk');
     eleventyConfig.addLayoutAlias('redirect', 'layouts/redirect.njk');
-    eleventyConfig.addPassthroughCopy("src/images");
     // eleventyConfig.addPassthroughCopy("src/js");
     eleventyConfig.addPassthroughCopy("src/CNAME");
     eleventyConfig.addPassthroughCopy({"src/favicon/*":"/"});
