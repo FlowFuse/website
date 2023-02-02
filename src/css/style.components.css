@@ -59,7 +59,6 @@
     .webinar-tile a.webinar-tile-img img, 
     .webinar-tile a.webinar-tile-img svg {
         transition: transform 0.3s;
-        min-height: 250px;
     }
 
     .webinar-tile a.webinar-tile-img:hover img,

@@ -4,8 +4,13 @@ sitemapPriority: 0.9
 ---
 
 <div class="container m-auto text-left max-w-4xl pb-24 w-full">
+    <div class="px-2">
+        <h1>Newsletter</h1>
+        <div class="md:-mt-6">
+            {% include "components/divider-grey-wires-right.njk" %}
+        </div>
+    </div>
     <ul class="flex flex-wrap">
-
         {% set newsletters = collections.newsletter %}
         {% for item in newsletters | reverse %}
         {% if loop.first %}

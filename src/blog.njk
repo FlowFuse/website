@@ -5,6 +5,12 @@ meta:
     title: Blog
 ---
 <div class="container m-auto text-left max-w-4xl pb-24 w-full">
+    <div class="px-2">
+        <h1>Blog</h1>
+        <div class="md:-mt-6">
+            {% include "components/divider-grey-wires-right.njk" %}
+        </div>
+    </div>
     {% if collections.posts.length > 0 %}
     <ul class="flex flex-wrap">
         {%- for item in collections.posts | reverse -%}
