@@ -15,15 +15,12 @@ module.exports = function(eleventyConfig) {
     // Put robots.txt in root
     eleventyConfig.addPassthroughCopy({ 'src/robots.txt': '/robots.txt' });
 
-    // TODO: when we move to 11ty v1.0, use the following
-    // rather than ignoring git ignore
-    //eleventyConfig.ignores.delete("src/handbook");
+    eleventyConfig.ignores.delete("src/handbook");
 
     eleventyConfig.addLayoutAlias('default', 'layouts/base.njk');
     eleventyConfig.addLayoutAlias('page', 'layouts/page.njk');
     eleventyConfig.addLayoutAlias('nohero', 'layouts/nohero.njk');
     eleventyConfig.addLayoutAlias('redirect', 'layouts/redirect.njk');
-    eleventyConfig.addPassthroughCopy("src/images");
     // eleventyConfig.addPassthroughCopy("src/js");
     eleventyConfig.addPassthroughCopy("src/CNAME");
     eleventyConfig.addPassthroughCopy({"src/favicon/*":"/"});
