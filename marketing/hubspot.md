@@ -9,7 +9,7 @@ It enables the creation of customer contacts, and then logging of emails/notes a
 
 ### Creating Contacts
 
-Given that we have multiple client-facing roles within the Company, it is important to document those that
+Given that we have multiple client-facing roles within FlowForge, it's important to document those that
 we talk to to ensure no crossover in sales and conversations.
 
 It is best practice to ensure a HubSpot contact is created prior to meeting with them, as soon as a
