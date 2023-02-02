@@ -2,7 +2,7 @@
 title: Telling the FlowForge Story
 subtitle: FlowForge helps organizations reliably deliver Node-RED applications
 description: In this article we are going to discuss how we see FlowForge helping Node-RED developers deliver applications more reliably.
-date: 2023-02-01
+date: 2023-02-02
 authors: ["ian-skerrett"]
 ---
 
