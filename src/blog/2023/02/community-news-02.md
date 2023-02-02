@@ -15,7 +15,7 @@ Welcome to the FlowForge newsletter for February 2023, a monthly roundup of what
 
 If you've got something that you think we should share on our newsletters please [get in touch](mailto:contact@flowforge.com).
 
-## FlowForge News
+## News
 
 ### [Node-RED Ask Me Anything](https://flowforge.com/ask-me-anything/ama-nodered/)
 [![AMA Session with Nick O'Leary and Rob Marcer](https://flowforge.com/images/webinars/ama-node-red.png)](https://flowforge.com/ask-me-anything/ama-nodered/)
