@@ -847,144 +847,39 @@
                 <div class="mt-6 mb-4 prose prose-blue main-content">
                     <h1 id="pricing-principles" tabindex="-1"><a class="header-anchor" href="#pricing-principles">#&nbsp;</a> Pricing Principles</h1>
 <p>This page sets out the concepts that we sell and how those are measured across both SaaS and Licensed Editions of the platform.
-This does not define specific dollar amounts for any items those are commercial decisions outside the scope of this document.</p>
+This does not define specific dollar amounts for any items, those are commercial decisions outside the scope of this document.</p>
 <h2 id="teams" tabindex="-1"><a class="header-anchor" href="#teams">#&nbsp;</a> Teams</h2>
-<p>Teams are the basic unit within FlowForge and the entity to which bills are charged. Teams own zero or more projects. Teams can be on different tiers of plan, the main differentiation being the value added features provided by the FlowForge platform. There will be a free tier which provides core functionality and enables the user to create projects, the free tier limits the size of the team to a small number (3) of members.
-A paid tier offers access to the collaboration functionality.
-The paid tier is priced at $X per member of the team with an upper limit at which point the customer is managed onto a higher enterprise tier.
-The value the customer is paying for here is the additional functionality of the flowforge platform above that of just running standard node-red.
-The EE license will be for a defined number of teams and users,
-The CE License will be restricted to only the features of the basic team, and the number of members in a team will be limited to the same number(3) as the basic team on
-the FlowForge managed instance.</p>
+<p>Teams are the basic unit within FlowForge and the entity to which bills are charged.
+A teams can own zero or more projects, and 1 or more user can be members. Subject
+to access controls, some users can create projects, add devices (agents), and invite
+other members.</p>
+<p>The number of teams for the open source offering of FlowForge is limited to 50.</p>
 <h2 id="projects" tabindex="-1"><a class="header-anchor" href="#projects">#&nbsp;</a> Projects</h2>
-<p>These are the primary units which customers pay for. On the FlowForge managed instances,
-different levels of pricing can be offered based on the resources that the project has available (CPU/Mem).
-The price point is defined by the Project Type which allows for an abstraction of stacks and billing.
-Additional features may also be defined by the project type such as Custom Domains or Persistent Context.
-The EE License will be for a defined number of Projects but will not place any restrictions on the resources that can be assigned to a project.
-The CE License will allow 50 projects however certain project features like persistent context or custom domains will not be available to CE projects.</p>
+<p>A project has one or more Node-RED instance associated with it. The team is billed
+based on the number of Node-RED instances consuming resources.</p>
+<p>On the FlowForge Cloud, different levels of pricing is offered based on the
+resources that the instance has available (CPU/Mem). The price point is defined
+by the instance type which allows for an abstraction of stacks and billing. Additional
+features may also be defined by the instance type, for example: Custom Domains support.</p>
+<p>Self-managed FlowForge installs are licensed based on the number of Node-RED instances, regardless of
+available resources for each. Open source installs are limited to 50 projects per
+instance, and some features for a project aren't available, for example Persistent Context.</p>
 <h2 id="devices" tabindex="-1"><a class="header-anchor" href="#devices">#&nbsp;</a> Devices</h2>
-<p>Devices are owned by the team and are charged for when they are created regardless of if they are assigned to a project or their connection state.
-The team is billed per device at the same rate regardless of tier or number of devices.
-A team plan may include a number of free devices.
-The EE License will be for a defined number of devices on the platform regardless of teams.
-The CE license will allow 50 devices.</p>
+<p>Devices are owned by the team and are charged for when they are created
+regardless of if they are assigned to a project or their connection state.
+The team is billed per device at the same rate regardless of tier or number of devices.</p>
+<p>Devices are part of the licensed instances. The limit in the open source edition is 50 devices.</p>
 <h2 id="add-ons" tabindex="-1"><a class="header-anchor" href="#add-ons">#&nbsp;</a> Add-Ons</h2>
-<p>Add-ons are services that could potentially be obtained outside the FlowForge platform from another provider but the customer gets value from buying it as part of FlowForge due to the nature of a single bill and ease of integration for things like credentials.
-They are billed against the team and the resource can then be made available to either the whole team or a single project. Some add-ons may have a quantity of more than 1.
-Where possible add-ons should be avoided in favor of additional features on teams or projects.</p>
+<p>There's currently no plan for add-ons. Add-ons might be used in the future to
+allow overage on resource comsumption, for example when storing files.
+Where possible add-ons should be avoided in favor of additional features.</p>
 <h2 id="licenses" tabindex="-1"><a class="header-anchor" href="#licenses">#&nbsp;</a> Licenses</h2>
-<p>From the perspective of licensing CE/EE are just different tiers of the same
-product, the CE edition is simply an install that does not have a license key
-provided and as such gets a basic set of features and quantity of projects(50),
-users(150), teams(50) and devices(50). When a license is purchased it provides
-all of the functionality of the higher team plans. It's then licensed for a
-number of projects, teams, users and devices on an annual basis.
-If a customer attempts to exceed their licensed amounts they are prevented from creating the resource until the license is upgraded.
-There may be features in the licensed versions that are not offered on FlowForge Managed services.</p>
-<h2 id="summary-table" tabindex="-1"><a class="header-anchor" href="#summary-table">#&nbsp;</a> Summary Table</h2>
-<p><em>this feature list is not exhaustive</em></p>
-<table>
-<thead>
-<tr>
-<th>Feature</th>
-<th>FlowForge Managed</th>
-<th>Licensed</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Projects</td>
-<td>Tiered Project types<br>Charged per project</td>
-<td>CE - 50<br>EE - Total on platform</td>
-</tr>
-<tr>
-<td>Teams</td>
-<td>Tiered Team Plans,<br>Charged per member</td>
-<td>CE - 50 (3 members per team)<br>EE - Total on platform</td>
-</tr>
-<tr>
-<td>Devices</td>
-<td>Charged per device created</td>
-<td>CE - 50<br>EE - Total on platform</td>
-</tr>
-<tr>
-<td>Users</td>
-<td>N/A</td>
-<td>CE - 150<br>EE - Total on platform</td>
-</tr>
-<tr>
-<td>System Templates</td>
-<td>Included</td>
-<td>Included</td>
-</tr>
-<tr>
-<td>Personal Access Tokens</td>
-<td>Included</td>
-<td>Included</td>
-</tr>
-<tr>
-<td>Duplicate Projects</td>
-<td>Included</td>
-<td>Included</td>
-</tr>
-<tr>
-<td>Custom Node Catalog</td>
-<td>Included</td>
-<td>EE</td>
-</tr>
-<tr>
-<td>Team Templates</td>
-<td>Depending on Team Plan</td>
-<td>EE</td>
-</tr>
-<tr>
-<td>Team Libraries</td>
-<td>Depending on Team Plan</td>
-<td>EE</td>
-</tr>
-<tr>
-<td>Version Control of Flows</td>
-<td>Depending on Team Plan</td>
-<td>EE</td>
-</tr>
-<tr>
-<td>Concurrent Editing</td>
-<td>Depending on Team Plan</td>
-<td>EE</td>
-</tr>
-<tr>
-<td>Persistent Context</td>
-<td>Depending on Project Type</td>
-<td>EE</td>
-</tr>
-<tr>
-<td>Custom project domain</td>
-<td>Depending on Project Type</td>
-<td>EE</td>
-</tr>
-<tr>
-<td>Persistent Storage</td>
-<td>Project Type/Add On</td>
-<td>EE (BYO Storage)</td>
-</tr>
-<tr>
-<td>MQTT User data</td>
-<td>Team Plan/Add On</td>
-<td>EE</td>
-</tr>
-<tr>
-<td>Billing</td>
-<td>N/A</td>
-<td>EE</td>
-</tr>
-<tr>
-<td>Enterprise SSO</td>
-<td>N/A</td>
-<td>EE</td>
-</tr>
-</tbody>
-</table>
+<p>From the perspective of licensing the open source and FlowForge Premium are
+different tiers of the same product. The open source edition doesn't require a
+license key to be uploaded. Without a valid license a basic set of features and
+quantity of projects(50), users(150), teams(50), and devices(50) are available.
+When a license is purchased it provides all of the functionality of the higher
+plans. It's then licensed for a number of Node-RED instances on an annual basis.</p>
 
                 </div>
             </div>
@@ -1003,7 +898,7 @@ There may be features in the licensed versions that are not offered on FlowForge
             <h3 class="font-medium border-b pb-1 mb-4">on this page</h3>
             <ul id="toc" class="text-sm border-b mb-4"></ul>
             <div class="text-sm pb-1 text-right mb-4"><a href="https://github.com/flowforge/handbook/edit/main/product/pricing.md">Edit this page</a></div>
-            <div class="text-xs pb-1 text-right mb-4 italic">Updated: 2023-02-02 23:27:21 +0100</div>
+            <div class="text-xs pb-1 text-right mb-4 italic">Updated: 2023-02-03 14:11:28 +0000</div>
         </div>
     </div>
 </div>
