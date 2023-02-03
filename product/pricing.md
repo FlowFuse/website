@@ -10,7 +10,7 @@ This does not define specific dollar amounts for any items, those are commercial
 ## Teams
 
 Teams are the basic unit within FlowForge and the entity to which bills are charged.
-A teams can own zero or more projects, and 1 ore more user can be members. Subject
+A teams can own zero or more projects, and 1 or more user can be members. Subject
 to access controls, some users can create projects, add devices (agents), and invite
 other members.
 
