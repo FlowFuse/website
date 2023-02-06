@@ -1,6 +1,6 @@
 ---
 title: "Introduction to Node-RED: 5 minutes to your first program"
-subtitle: Join Rob Marcer, Developer Educator at FlowForge and Rob Marcer, for a webinar on getting started with Node-RED
+subtitle: Join Rob Marcer, Developer Educator at FlowForge, for a webinar on getting started with Node-RED
 date: 2023-02-23
 time: 16:00 GMT (11:00 ET) 
 duration: 60
