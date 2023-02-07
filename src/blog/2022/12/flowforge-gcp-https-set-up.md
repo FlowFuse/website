@@ -24,7 +24,7 @@ Now we've covered our goals and the tools we are going to use let's configure ou
 
 ### Prerequisites 
 
-As mentioned above, you will need to be running FlowForge version 1.0 or higher to follow this guide. If you are using an older version you can upgrade now using the [instructions here](https://flowforge.com/docs/install/upgrading/).
+As mentioned above, you will need to be running FlowForge version 1.0 or higher to follow this guide. If you are using an older version you can upgrade now using the [instructions here](https://flowforge.com/docs/upgrade/).
 
 ### Update Docker Compose
 

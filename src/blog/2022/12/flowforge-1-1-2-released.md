@@ -48,7 +48,7 @@ If you're interested in contributing, checkout our [guide in the docs](https://f
 This release has already been rolled out to [FlowForge Cloud](https://app.flowforge.com).
 
 If you installed a previous version of FlowForge and want to upgrade, our documentation provides a
-guide for [upgrading your FlowForge instance](https://flowforge.com/docs/install/upgrading/)
+guide for [upgrading your FlowForge instance](https://flowforge.com/docs/upgrade/)
 
 ### Getting help
 

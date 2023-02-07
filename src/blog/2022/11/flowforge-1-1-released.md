@@ -96,7 +96,7 @@ persisted files you'll need to upgrade your projects stack. You'll be prompted
 to do so on the project page.
 
 If you installed a previous version of FlowForge and want to upgrade, our documentation provides a
-guide for [upgrading your FlowForge instance](https://flowforge.com/docs/install/upgrading/)
+guide for [upgrading your FlowForge instance](https://flowforge.com/docs/upgrade/)
 
 ### Getting help
 
