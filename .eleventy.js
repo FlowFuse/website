@@ -84,7 +84,8 @@ module.exports = function(eleventyConfig) {
     eleventyConfig.addFilter('countDays', (date) => {
         // return true is the provided date is in the past, otherwise, return false
         const postDate = spacetime(date)
-        const days = spacetime.now().diff(postDate, 'days')
+        const now = spacetime.now()
+        const days = now.diff(postDate, 'day') + 1
         if (days === 0) {
             return { value: 0, text: 'Today'}
         } else if (days === 1) {
