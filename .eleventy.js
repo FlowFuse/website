@@ -81,6 +81,19 @@ module.exports = function(eleventyConfig) {
         return postDate.isAfter(spacetime.today()) || postDate.isSame(spacetime.today())
     });
 
+    eleventyConfig.addFilter('countDays', (date) => {
+        // return true is the provided date is in the past, otherwise, return false
+        const postDate = spacetime(date)
+        const days = spacetime.now().diff(postDate, 'days')
+        if (days === 0) {
+            return { value: 0, text: 'Today'}
+        } else if (days === 1) {
+            return { value: 1, text: 'Tomorrow'}
+        } else {
+            return { value: days, text: `${days} Days Away`}
+        }
+    });
+
     eleventyConfig.addFilter("excerpt", function(str) {
         const content = new String(str);
         return content.split("\n<!--more-->\n")[0]
