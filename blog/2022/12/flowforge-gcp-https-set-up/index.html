@@ -160,7 +160,7 @@
 <p>We are also utilising a Docker image called <a href="https://github.com/nginx-proxy/acme-companion">acme-companion</a> which makes the configuration of Let's Encrypt a breeze. To quote the project's own Github page &quot;acme-companion is a lightweight companion container for nginx-proxy. It handles the automated creation, renewal and use of SSL certificates for proxied Docker containers through the ACME protocol&quot;. It's a great project and credit to the team over there for making it a lot easier to secure the internet.</p>
 <p>Now we've covered our goals and the tools we are going to use let's configure our existing GCP VM to secure all web traffic.</p>
 <h3 id="prerequisites" tabindex="-1"><a class="header-anchor" href="#prerequisites">#&nbsp;</a> Prerequisites</h3>
-<p>As mentioned above, you will need to be running FlowForge version 1.0 or higher to follow this guide. If you are using an older version you can upgrade now using the <a href="https://flowforge.com/docs/install/upgrading/">instructions here</a>.</p>
+<p>As mentioned above, you will need to be running FlowForge version 1.0 or higher to follow this guide. If you are using an older version you can upgrade now using the <a href="https://flowforge.com/docs/upgrade/">instructions here</a>.</p>
 <h3 id="update-docker-compose" tabindex="-1"><a class="header-anchor" href="#update-docker-compose">#&nbsp;</a> Update Docker Compose</h3>
 <p>The first step is to edit our Docker compose file. We're using Nano again to edit files so we will run this command:</p>
 <pre><code>sudo nano /opt/flowforge/docker-compose-1.1.1/docker-compose.yml

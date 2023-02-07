@@ -233,7 +233,7 @@ That&#39;s also a great place to send us any feedback or feature requests.&lt;/p
 &lt;h3 id=&quot;upgrading-flowforge&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://flowforge.com/blog/2023/01/flowforge-1.2.1-released/#upgrading-flowforge&quot;&gt;#&amp;nbsp;&lt;/a&gt; Upgrading FlowForge&lt;/h3&gt;
 &lt;p&gt;This release has already been rolled out to &lt;a href=&quot;https://app.flowforge.com/&quot;&gt;FlowForge Cloud&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;If you installed a previous version of FlowForge and want to upgrade, our documentation provides a
-guide for &lt;a href=&quot;https://flowforge.com/docs/install/upgrading/&quot;&gt;upgrading your FlowForge instance&lt;/a&gt;&lt;/p&gt;
+guide for &lt;a href=&quot;https://flowforge.com/docs/upgrade/&quot;&gt;upgrading your FlowForge instance&lt;/a&gt;&lt;/p&gt;
 &lt;h3 id=&quot;getting-help&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://flowforge.com/blog/2023/01/flowforge-1.2.1-released/#getting-help&quot;&gt;#&amp;nbsp;&lt;/a&gt; Getting help&lt;/h3&gt;
 &lt;p&gt;Please check FlowForge&#39;s &lt;a href=&quot;https://flowforge.com/docs/&quot;&gt;documentation&lt;/a&gt; as the answers to many questions are covered there.&lt;/p&gt;
 &lt;p&gt;If you hit any problems with the platform, please raise an &lt;a href=&quot;https://github.com/flowforge/flowforge/issues&quot;&gt;issue on GitHub&lt;/a&gt;.
@@ -472,7 +472,7 @@ If you&#39;re interested in contributing, checkout our &lt;a href=&quot;https://
 &lt;h3 id=&quot;upgrading-flowforge&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://flowforge.com/blog/2022/12/flowforge-1-1-2-released/#upgrading-flowforge&quot;&gt;#&amp;nbsp;&lt;/a&gt; Upgrading FlowForge&lt;/h3&gt;
 &lt;p&gt;This release has already been rolled out to &lt;a href=&quot;https://app.flowforge.com/&quot;&gt;FlowForge Cloud&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;If you installed a previous version of FlowForge and want to upgrade, our documentation provides a
-guide for &lt;a href=&quot;https://flowforge.com/docs/install/upgrading/&quot;&gt;upgrading your FlowForge instance&lt;/a&gt;&lt;/p&gt;
+guide for &lt;a href=&quot;https://flowforge.com/docs/upgrade/&quot;&gt;upgrading your FlowForge instance&lt;/a&gt;&lt;/p&gt;
 &lt;h3 id=&quot;getting-help&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://flowforge.com/blog/2022/12/flowforge-1-1-2-released/#getting-help&quot;&gt;#&amp;nbsp;&lt;/a&gt; Getting help&lt;/h3&gt;
 &lt;p&gt;Please check FlowForge&#39;s &lt;a href=&quot;https://flowforge.com/docs/&quot;&gt;documentation&lt;/a&gt; as the answers to many questions are covered there.&lt;/p&gt;
 &lt;p&gt;If you hit any problems with the platform, please raise an &lt;a href=&quot;https://github.com/flowforge/flowforge/issues&quot;&gt;issue on GitHub&lt;/a&gt;.
@@ -498,7 +498,7 @@ That also includes if you have any feedback or feature requests.&lt;/p&gt;
 &lt;p&gt;We are also utilising a Docker image called &lt;a href=&quot;https://github.com/nginx-proxy/acme-companion&quot;&gt;acme-companion&lt;/a&gt; which makes the configuration of Let&#39;s Encrypt a breeze. To quote the project&#39;s own Github page &amp;quot;acme-companion is a lightweight companion container for nginx-proxy. It handles the automated creation, renewal and use of SSL certificates for proxied Docker containers through the ACME protocol&amp;quot;. It&#39;s a great project and credit to the team over there for making it a lot easier to secure the internet.&lt;/p&gt;
 &lt;p&gt;Now we&#39;ve covered our goals and the tools we are going to use let&#39;s configure our existing GCP VM to secure all web traffic.&lt;/p&gt;
 &lt;h3 id=&quot;prerequisites&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://flowforge.com/blog/2022/12/flowforge-gcp-https-set-up/#prerequisites&quot;&gt;#&amp;nbsp;&lt;/a&gt; Prerequisites&lt;/h3&gt;
-&lt;p&gt;As mentioned above, you will need to be running FlowForge version 1.0 or higher to follow this guide. If you are using an older version you can upgrade now using the &lt;a href=&quot;https://flowforge.com/docs/install/upgrading/&quot;&gt;instructions here&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;As mentioned above, you will need to be running FlowForge version 1.0 or higher to follow this guide. If you are using an older version you can upgrade now using the &lt;a href=&quot;https://flowforge.com/docs/upgrade/&quot;&gt;instructions here&lt;/a&gt;.&lt;/p&gt;
 &lt;h3 id=&quot;update-docker-compose&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://flowforge.com/blog/2022/12/flowforge-gcp-https-set-up/#update-docker-compose&quot;&gt;#&amp;nbsp;&lt;/a&gt; Update Docker Compose&lt;/h3&gt;
 &lt;p&gt;The first step is to edit our Docker compose file. We&#39;re using Nano again to edit files so we will run this command:&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;sudo nano /opt/flowforge/docker-compose-1.1.1/docker-compose.yml
@@ -893,7 +893,7 @@ with the coupon &lt;strong&gt;RELEASE11&lt;/strong&gt; to get your first project
 persisted files you&#39;ll need to upgrade your projects stack. You&#39;ll be prompted
 to do so on the project page.&lt;/p&gt;
 &lt;p&gt;If you installed a previous version of FlowForge and want to upgrade, our documentation provides a
-guide for &lt;a href=&quot;https://flowforge.com/docs/install/upgrading/&quot;&gt;upgrading your FlowForge instance&lt;/a&gt;&lt;/p&gt;
+guide for &lt;a href=&quot;https://flowforge.com/docs/upgrade/&quot;&gt;upgrading your FlowForge instance&lt;/a&gt;&lt;/p&gt;
 &lt;h3 id=&quot;getting-help&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://flowforge.com/blog/2022/11/flowforge-1-1-released/#getting-help&quot;&gt;#&amp;nbsp;&lt;/a&gt; Getting help&lt;/h3&gt;
 &lt;p&gt;Please check FlowForge&#39;s &lt;a href=&quot;https://flowforge.com/docs/&quot;&gt;documentation&lt;/a&gt; as the answers to many questions are covered there.&lt;/p&gt;
 &lt;p&gt;If you hit any problems with the platform please raise an &lt;a href=&quot;https://github.com/flowforge/flowforge/issues&quot;&gt;issue on GitHub&lt;/a&gt;.
