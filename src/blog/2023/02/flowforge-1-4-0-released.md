@@ -1,7 +1,7 @@
 ---
 title: FlowForge 1.4 is now available, FEATURE and much more
 subtitle: Our second release of 2023 with some great new features to try out.
-description: FlowForge 143 is now available, FEATURE
+description: FlowForge v1.4 is now available, FEATURE
 date: 2023-02-16 18:00:00.0
 authors: ["rob-marcer"]
 video: ey3xv5j5x7k
@@ -35,8 +35,13 @@ In FlowForge 1.3 we’ve added the ability to filter your admin logs by user or 
 
 ## Improvements
 
-[Allow installation of FlowForge on devices which can't access npm](https://github.com/flowforge/flowforge-device-agent/issues/45) \
-We've had feedback from customers that in some cases they want to use FlowForge devices on hardware which cannot access [Node Package Manager](https://www.npmjs.com/) (npm). In a standard configuration of Node-RED, access to npm is mandatory to run your flows. In FlowForge 1.3.0 we've added the ability for you to import all the data usually installed from npm without your devices having access to the npm service.
+With FlowForge v1.4 some changes were made under the hood to speed up the recovery
+of Node-RED instances. On terminal failures of an instance it will now be
+automatically be redeployed with the correct flows. This uses Kubernetes features
+and is also available if you've installed through [kubernetes](https://flowforge.com/docs/install/kubernetes/).
+To migrate the old style of deployments to this system a restart or stack upgrade is needed.
+
+
 
 ## Bug Fixes
 
