@@ -28,7 +28,6 @@ module.exports = function(eleventyConfig) {
     eleventyConfig.addPassthroughCopy("src/**/images/**/*");
     eleventyConfig.addPassthroughCopy("src/**/videos/**/*");
 
-
     eleventyConfig.addFilter("head", (array, n) => {
         if( n < 0 ) {
             return array.slice(n);
@@ -84,7 +83,7 @@ module.exports = function(eleventyConfig) {
     eleventyConfig.addFilter('countDays', (date) => {
         // return true is the provided date is in the past, otherwise, return false
         const postDate = spacetime(date)
-        const now = spacetime.now()
+        const now = spacetime.now().startOf('day')
         const days = now.diff(postDate, 'day') + 1
         if (days === 0) {
             return { value: 0, text: 'Today'}
