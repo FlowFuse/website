@@ -1,8 +1,9 @@
 ---
 layout: nohero
 tags: docs
-meta:
-    title: Docs
+eleventyComputed:
+  meta:
+    title: "{{ page.fileSlug }}"
 ---
 <div class="ff-prose container m-auto text-left max-w-4xl px-4 pb-24" data-handbook>
     <!-- Breadcrumbs -->
@@ -11,7 +12,7 @@ meta:
             {% if version %}
             v{{ version }}
             {% endif %}
-            {{ page.filePathStem | handbookBreadcrumbs |safe }}
+            {{ page.filePathStem | handbookBreadcrumbs | safe }}
         </div>
     </div>
     <div class="w-full mx-auto ff-bg-light flex flex-col md:flex-row">
