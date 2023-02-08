@@ -4,6 +4,7 @@ subtitle: How mission critical use-cases can be supported through FlowForge soon
 description: Often requested features for Node-RED include HA or Highly Available
 date: 2023-02-08
 authors: ["zeger-jan-van-de-weg"]
+image: roadmap-unsplash.jpg
 ---
 
 Over the past months we've done a lot of product discovery calls, and a topic
