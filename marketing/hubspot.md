@@ -12,14 +12,6 @@ It enables the creation of customer contacts, and then logging of emails/notes a
 Given that we have multiple client-facing roles within FlowForge, it's important to document those that
 we talk to to ensure no crossover in sales and conversations.
 
-It is best practice to ensure a HubSpot contact is created prior to meeting with them, as soon as a
-call/conversation is scheduled.
-
-This minimises the chances of another FlowForge colleague arranging a
-conversation with that same contact, and will make it clear to others in the team, whom you're planning to
-talk to. In some cases, we may have had interactions with potential FlowForge customers in the past, and
-other colleagues can contribute useful information upfront of any new introductions.
-
 #### Lifecycle Stage
 
 When defining a new contact in HubSpot, an option exists to define the "Lifecycle Stage", this section
