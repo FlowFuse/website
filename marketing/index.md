@@ -10,6 +10,7 @@ If you're looking to contribute content to FlowForge, this is the best place to 
 - [Blog](./blog.md)
 - [Channels](./channels.md)
 - [Types](./types.md)
+- [Hubspot](./hubspot.md) - How we use our CRM
 - [Videos](./videos.md)
 - [Website](./website.md)
 - [Webinars](./webinars.md)
