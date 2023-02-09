@@ -59,7 +59,7 @@ module.exports = function(eleventyConfig) {
         if (posts) {
             return posts.filter((post) => {
                 const postDate = spacetime(post.data.date)
-                return postDate.isAfter(spacetime.today()) || postDate.isSame(spacetime.today())
+                return postDate.isAfter(spacetime.today()) || postDate.isSame(spacetime.today(), 'day')
             })
         } else {
             return null
