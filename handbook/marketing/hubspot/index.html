@@ -17,7 +17,7 @@
 
     <!-- Browser Title -->
     
-    <title>Security &#x2022; FlowForge Handbook</title>
+    <title>HubSpot &#x2022; FlowForge Handbook</title>
     
 
     <!-- Browser Description -->
@@ -29,7 +29,7 @@
 
     <!-- Open Graph Title -->
     
-    <meta property="og:title" content="Security &#x2022; FlowForge Handbook" />
+    <meta property="og:title" content="HubSpot &#x2022; FlowForge Handbook" />
     
 
     <!-- Open Graph Description -->
@@ -38,7 +38,7 @@
     
 
     <!-- Open Graph URL -->
-    <meta property="og:url" content="https://flowforge.com/handbook/company/security/" />
+    <meta property="og:url" content="https://flowforge.com/handbook/marketing/hubspot/" />
     <!-- Open Graph Image -->
     
     <meta property="og:image" content="https://flowforge.com/images/og-social-tile.jpg" />
@@ -210,7 +210,7 @@
                     </li>
                     
                     
-                    <li class="active">
+                    <li class="">
                         <a href="/handbook/company/security/">
                             Security
                         </a>
@@ -746,7 +746,7 @@
                     </li>
                     
                     
-                    <li class="">
+                    <li class="active">
                         <a href="/handbook/marketing/hubspot/">
                             HubSpot
                         </a>
@@ -846,28 +846,102 @@
         <div class="hidden w-full mx-auto ff-bg-light md:block">
             <div class="font-medium border-b pb-1">
                 
-                /<a class="mx-2" href="/handbook">handbook</a>/<a class="mx-2" href="/handbook/company">company</a>/<a class="mx-2" href="/handbook/company/security">security</a>
+                /<a class="mx-2" href="/handbook">handbook</a>/<a class="mx-2" href="/handbook/marketing">marketing</a>/<a class="mx-2" href="/handbook/marketing/hubspot">hubspot</a>
             </div>
         </div>
         <div class="w-full mx-auto ff-bg-light flex flex-col md:flex-row">
             <!-- Main Content -->
             <div class="flex-grow order-last md:order-first">
                 <div class="mt-6 mb-4 prose prose-blue main-content">
-                    <h1 id="security" tabindex="-1"><a class="header-anchor" href="#security">#&nbsp;</a> Security</h1>
-<h2 id="credentials" tabindex="-1"><a class="header-anchor" href="#credentials">#&nbsp;</a> Credentials</h2>
-<h3 id="password-vault" tabindex="-1"><a class="header-anchor" href="#password-vault">#&nbsp;</a> Password vault</h3>
-<p>The company provides a Password Vault account to all employees, this should be used for both individual user accounts and shared accounts (e.g. flowforge npmjs account).</p>
-<p>Any shared accounts should be in an appropriate vault shared with those that need it only, but always more than just one person.</p>
-<h3 id="strong-passwords" tabindex="-1"><a class="header-anchor" href="#strong-passwords">#&nbsp;</a> Strong passwords</h3>
-<p>Passwords should be randomly generated using the Password Vault to ensure strength and that they are not reused across services</p>
-<h3 id="2fa" tabindex="-1"><a class="header-anchor" href="#2fa">#&nbsp;</a> 2FA</h3>
-<p>For all services that support it, 2FA authentication should be enabled and if possible enforced by policy. Where possible the 2FA seed keys should be added to the entry in the Password Vault.</p>
-<h2 id="executive-fraud" tabindex="-1"><a class="header-anchor" href="#executive-fraud">#&nbsp;</a> Executive Fraud</h2>
-<p>The CEO, CTO, and other executives at FlowForge will never email anyone to wire
-money, request you to buy gift cards, or request any other type of monitairy
-transaction. Transactions are started through <a href="../../operations/vendors"">a set process</a>
-only. When in doubt, reach out through Slack and request a call with the executive
-to validate.</p>
+                    <h2 id="hubspot" tabindex="-1"><a class="header-anchor" href="#hubspot">#&nbsp;</a> HubSpot</h2>
+<p>We use <a href="https://www.hubspot.com/">HubSpot</a> to track and manage all of our customer interactions.
+It enables the creation of customer contacts, and then logging of emails/notes associated to that customer.</p>
+<h3 id="creating-contacts" tabindex="-1"><a class="header-anchor" href="#creating-contacts">#&nbsp;</a> Creating Contacts</h3>
+<p>Given that we have multiple client-facing roles within FlowForge, it's important to document those that
+we talk to to ensure no crossover in sales and conversations.</p>
+<h4 id="lifecycle-stage" tabindex="-1"><a class="header-anchor" href="#lifecycle-stage">#&nbsp;</a> Lifecycle Stage</h4>
+<p>When defining a new contact in HubSpot, an option exists to define the &quot;Lifecycle Stage&quot;, this section
+details your options here, and when to use the respective value:</p>
+<table>
+<thead>
+<tr>
+<th>Lifecycle Stage</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Subscriber</td>
+<td>Contact has signed up to hear more information, when it is available, about FlowForge, e.g. newsletter subscriber</td>
+</tr>
+<tr>
+<td>Lead</td>
+<td>Contact that has converted on our website, or through some other interaction, with our organisation beyond a subscription sign up, e.g. installed FlowForge locally, or signed up for a free trial</td>
+</tr>
+<tr>
+<td>Marketing Qualified Lead</td>
+<td>Contact that the Marketing Team has qualified as being ready for a Sales Engagement.</td>
+</tr>
+<tr>
+<td>Sales Qualified Lead</td>
+<td>Contact that the Sales team has qualified as a potential customer. This stage is then further qualified in the <a href="#lead-status">Lead Status</a> property</td>
+</tr>
+<tr>
+<td>Opportunity</td>
+<td>Contact with which a member of FlowForge is actively negotiating a deal.</td>
+</tr>
+<tr>
+<td>Customer</td>
+<td>An active, paying, user of FlowForge.</td>
+</tr>
+<tr>
+<td>Evangelist</td>
+<td>Someone that speaks on behalf of FlowForge, or advocates for its usage in their respective contacts ecosystems.</td>
+</tr>
+<tr>
+<td>Other</td>
+<td>Does not fit into any of the other descriptions, likely someone we are talking to about FlowForge, but will never be a paying customer, .e.g. Partners</td>
+</tr>
+</tbody>
+</table>
+<h4 id="lead-status" tabindex="-1"><a class="header-anchor" href="#lead-status">#&nbsp;</a> Lead Status</h4>
+<p>When defining a new contact in HubSpot, an option exists to define the &quot;Lead Status&quot;, this section
+details your options here, and when to use the respective value:</p>
+<table>
+<thead>
+<tr>
+<th>Lead Status</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>None</td>
+<td>-</td>
+</tr>
+<tr>
+<td>Attempted to Contact</td>
+<td>A member of FlowForge has reached out to this contact, but is yet to receive a response.</td>
+</tr>
+<tr>
+<td>Connected</td>
+<td>Two-way conversation has undertaken, but not yet qualified as a Lead. A lead with this status may still be waiting on a booked meeting with a decision-maker on their team or may still be working to establish a budget.</td>
+</tr>
+<tr>
+<td>Open Deal</td>
+<td>Contact has expressed interest in buying FlowForge, and negotiations are actively open.</td>
+</tr>
+<tr>
+<td>Unqualified</td>
+<td>Contact is no longer interested in FlowForge.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="recommended-apps" tabindex="-1"><a class="header-anchor" href="#recommended-apps">#&nbsp;</a> Recommended Apps</h3>
+<p>We have several extension applications for HubSpot, these are a few that can be beneficial if you're interacting with customers:</p>
+<ul>
+<li><strong>G-Mail Extension (<a href="https://app-eu1.hubspot.com/ecosystem/26586079/marketplace/apps/sales/sales-enablement/gmail">link</a>)</strong> - Automatically creates contacts when you e-mail them for the first time, and logs e-mail activity against that contact in HubSpot.</li>
+</ul>
 
                 </div>
             </div>
@@ -878,14 +952,14 @@ to validate.</p>
         <div class="block px-8 pt-4 w-full mx-auto ff-bg-light md:hidden">
             <div class="font-medium border-b pb-1">
                 
-                /<a class="mx-2" href="/handbook">handbook</a>/<a class="mx-2" href="/handbook/company">company</a>/<a class="mx-2" href="/handbook/company/security">security</a>
+                /<a class="mx-2" href="/handbook">handbook</a>/<a class="mx-2" href="/handbook/marketing">marketing</a>/<a class="mx-2" href="/handbook/marketing/hubspot">hubspot</a>
             </div>
         </div>
         <!-- on this page -->
         <div class="sticky top-6 w-full md:w-64 mt-4 md:mt-6 px-8">
             <h3 class="font-medium border-b pb-1 mb-4">on this page</h3>
             <ul id="toc" class="text-sm border-b mb-4"></ul>
-            <div class="text-sm pb-1 text-right mb-4"><a href="https://github.com/flowforge/handbook/edit/main/company/security.md">Edit this page</a></div>
+            <div class="text-sm pb-1 text-right mb-4"><a href="https://github.com/flowforge/handbook/edit/main/marketing/hubspot.md">Edit this page</a></div>
             <div class="text-xs pb-1 text-right mb-4 italic">Updated: 2023-02-09 08:42:30 +0100</div>
         </div>
     </div>
