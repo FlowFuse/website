@@ -1,7 +1,5 @@
 ---
-title: Outage Report for January 27th, 2023
-subtitle: 
-description: 
+title: Service Disruption Report for January 27th, 2023
 date: 2023-02-10
 authors: ["nick-oleary"]
 ---
@@ -20,12 +18,17 @@ exposed to the internet within our FlowForge Cloud deployment. The result of thi
 was that users could create a new Node-RED project, but they would not be able
 to access the editor.
 
-Our initial mitigation was to ask AWS to increase that limit, which they duly did.
+We freed up capacity on the platform to allow user projects to be created without
+hitting the limit, whilst also asking AWS to increase the limit in question which
+they duly did.
 
-However, we later discovered a second limit that was also being applied that is not
-one AWS permits us to change.
+However, we later discovered a second limit that was also being applied. That limit
+was not one AWS permits us to change.
 
-In total, this lead to approximately 2 hours of outage on January 27th 2023 and again
+We successfully completely deployment of a change to our platform architecture
+today that removes these limits from our environment.
+
+In total, this lead to approximately 2 hours of disruptions on January 27th 2023 and again
 on February 8th 2023 during which newly created Node-RED projects were not accessible.
 
 Our logs show that two users were impacted during these times.
@@ -87,13 +90,22 @@ Following a successful run through in our testing/staging environment, we decide
 to move ahead updating the production environment.
 
 This change was applied today, whilst we closely monitored the system to ensure
-no further disruption occurred.
+no further disruption occurred. We have validated that new projects can be
+created without issue and everything is working as it should.
 
-_**TODO conclusion once we know how it went**_
+## Next Steps
 
+With FlowForge Cloud updated to use the new load balancer, we'll be closely monitoring
+it over the next few days to ensure it operates normally.
 
+We will also be taking on some follow-up activities to minimise the risk of this
+type of issue happening again:
 
-
+1. Review all AWS limits within our architecture. Identify any that pose a potential
+   issue in the future. Ensure they are documented and a plan put in place to mitigate
+   the impact based on our expected platform growth.
+2. Add additional external monitoring for project liveness.
+3. Review all logging around k8s apis
 
 ## Timeline
 
@@ -113,12 +125,12 @@ _**TODO conclusion once we know how it went**_
 
 ...
 
-**2023-02-08 14:05** : Another customer reports seeing a newly created project returning a 404 error. We examine the ALB configuration and it appears the original limit is still being applied despite it reporting the limit had changed to 200. We start identifing more suspended projects we can delete the rules for to free up capacity.
+**2023-02-08 14:05** : Another customer reports seeing a newly created project returning a 404 error. We examine the ALB configuration and whilst it reports the new limit has been changed to 200, it appears to still be limiting at 100. We start identifing more suspended projects we can delete the rules for to free up capacity.
 
 **2023-02-08 14:20** : Sufficient capacity is freed to enable the customer's projects to be accessible.
 
 **2023-02-08 15:00** : We identify we've hit the ALB Target Group limit. This is a hard limit that AWS does not allow you to change. We begin researching options.
 
-**2023-02-09** : Commited to plan to replace ALB with nginx. Successful migration of the staging environment.
+**2023-02-09** : Commited to plan to replace ALB with nginx. Successful migration of our staging environment.
 
-**2023-02-10** : Change applied to production and FlowForge 1.3.3 deployed.
+**2023-02-10** : Change applied to production, FlowForge 1.3.3 deployed and DNS updated to use the new load balancer.
