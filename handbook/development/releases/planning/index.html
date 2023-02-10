@@ -855,18 +855,8 @@
                 <div class="mt-6 mb-4 prose prose-blue main-content">
                     <h2 id="planning" tabindex="-1"><a class="header-anchor" href="#planning">#&nbsp;</a> Planning</h2>
 <p>Instructions for creating a release are <a href=".././process"">here</a>.</p>
-<p>FlowForge is released every four weeks, on a Thursday. There are 13 releases each
-year. The initial release was published on 2022-01-20. This implies releases
-will be scheduled on the following dates.</p>
-<ul>
-<li>2022/07/07 (0.7)</li>
-<li>2022/08/04 (0.8)</li>
-<li>2022/09/01 (0.9)</li>
-<li>2022/09/29 (0.10)</li>
-<li>2022/10/27 (1.0)</li>
-<li>2022/11/24 (1.1)</li>
-<li>2022/12/22 (1.2)</li>
-</ul>
+<p>FlowForge is released every four weeks, on a Thursday. We track releases using
+GitHub Milestones. The current schedule of releases can be seen <a href="https://github.com/flowforge/flowforge/milestones">here</a>.</p>
 <p>Our planning process is continually evolving as we find the right way to accommodate
 both a growing team and a growing set of requirements on both how and what we deliver.</p>
 <p>The following reflects both where we are at today and where we want to get to.</p>
@@ -895,6 +885,8 @@ to the Product Board for prioritization and planning. The exception to this are
 tasks/bugs related to work already in progress and that need to be addressed in
 the current milestone. They should be added to the Development Board and current
 milestone directly.</p>
+<p>We label some items as <code>headline</code>. These are items we want to highlight in the release
+announcement material and should clearly describe the value they bring to our users.</p>
 <h3 id="project-boards" tabindex="-1"><a class="header-anchor" href="#project-boards">#&nbsp;</a> Project Boards</h3>
 <p>We use three project boards to plan and track our work.</p>
 <ul>
@@ -972,19 +964,15 @@ in the <code>flowforge/admin</code> repo.</li>
 </li>
 </ol>
 <h3 id="what-to-work-on" tabindex="-1"><a class="header-anchor" href="#what-to-work-on">#&nbsp;</a> What to work on</h3>
-<p>Work comes from two places:</p>
-<ul>
-<li>Items assigned for Design/Estimation on the Product Board</li>
-<li>Items from the ToDo status on the Development Board</li>
-</ul>
-<p>It is important we make progress on both sides to ensure a steady velocity across
-milestones.</p>
+<p>Work comes the ToDo column of the <a href="https://github.com/orgs/flowforge/projects/1/views/1">Development Board</a>.</p>
+<p>We use a set of labels to identify the high/medium/low priority of an item. We tend to
+flag the more important stuff and treat an unlabelled item is implicitly low priority.</p>
 <p>Naturally there will be items that crop up unexpectedly and have to be dealt with
 pragmatically. For example, we may realise an item is needed for the current release
 that needs to be expedited through the process. We should remain flexible in how
 we work.</p>
 <p>When picking up an unassigned item assign it to yourself and move it to the
-<strong>In Progress</strong> state (for Development items) or the appropriate Product board state.</p>
+<strong>In Progress</strong> state.</p>
 <h4 id="milestones-are-overscheduled" tabindex="-1"><a class="header-anchor" href="#milestones-are-overscheduled">#&nbsp;</a> Milestones are overscheduled</h4>
 <p>As stories and tasks are assigned to milestones, it's unlikely there's not
 enough work to be done. On the flipside, this means that not all scheduled epics
@@ -1001,6 +989,22 @@ criteria are met:</p>
 <li>Acceptance criteria identified in the Story have been met</li>
 <li>Product Owner accepts the story is complete</li>
 </ul>
+<h4 id="feature-demos" tabindex="-1"><a class="header-anchor" href="#feature-demos">#&nbsp;</a> Feature Demos</h4>
+<p>Part of finishing an item is being able to demonstrate it in action. This allows others
+to see it in action, generate material for the release announcement and help identify
+any gaps or places for improvement.</p>
+<p>All <code>headline</code> item or significant piece of functionality should be demoed.</p>
+<p>Demos must be done in good time within the release cycle to allow for any follow-up
+action. It is better to demo something 90% complete and get feedback on it, than it
+is to rush a demo without time to do anything with it.</p>
+<p>Demos should consist of:</p>
+<ul>
+<li>A short (&lt; 5 minute where possible) screen capture walk through of the feature with commentary.</li>
+<li>It should cover the feature from a users perspective - what value do they get from it.</li>
+<li>The video should be uploaded to, or linked to, in the relevant issue.</li>
+<li>A link should be posted to the <code>#feature-demos</code> channel in slack. This will allow the whole team to be notified of the demo without having to subscribe to every issue comment.</li>
+</ul>
+<p>For some features, it may be necessary to create multiple demos of different aspects.</p>
 
                 </div>
             </div>
@@ -1019,7 +1023,7 @@ criteria are met:</p>
             <h3 class="font-medium border-b pb-1 mb-4">on this page</h3>
             <ul id="toc" class="text-sm border-b mb-4"></ul>
             <div class="text-sm pb-1 text-right mb-4"><a href="https://github.com/flowforge/handbook/edit/main/development/releases/planning.md">Edit this page</a></div>
-            <div class="text-xs pb-1 text-right mb-4 italic">Updated: 2023-02-09 08:42:30 +0100</div>
+            <div class="text-xs pb-1 text-right mb-4 italic">Updated: 2023-02-10 11:19:55 +0000</div>
         </div>
     </div>
 </div>
