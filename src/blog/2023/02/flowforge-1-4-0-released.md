@@ -3,59 +3,56 @@ title: FlowForge 1.4 is now available, FEATURE and much more
 subtitle: Our second release of 2023 with some great new features to try out.
 description: FlowForge v1.4 is now available, FEATURE
 date: 2023-02-16 18:00:00.0
-authors: ["rob-marcer"]
-video: ey3xv5j5x7k
+authors: ["ian-skerrett"]
+video: 
 image: /blog/2023/01/images/flowforge-130-hero.png
 ---
 
-Share your flows via team libraries, control access to your Node-RED dashboards using FlowForge credentials, and filter your audit logs by users and actions.
+New features include automatic device provisioning and support for staged development.
 
 <!--more-->
 
-We're pleased to announce version 1.3 is now available! Due to the recent holiday season, most of our team have been away from their desks but we still have some great new features to share. Keep reading for the details of what's in this release or you can watch our 1 minute roundup video of the new release above.
+We're pleased to announce version 1.4 is now available!  Keep reading for the details of what's in this release or you can watch our 1 minute roundup video of the new release above.
 
-To make it easy for everyone to experience FlowForge, we are introducing a new [free 30-day trial](https://app.flowforge.com/account/create). With this trial, you can experience the power of using FlowForge to quickly deliver Node-RED applications in a reliable, repeatable, collaborative, and secure manner. To get your trial simply [sign up for a new FlowForge team](https://app.flowforge.com/account/create).
+To make it easy for everyone to experience FlowForge, we are introducing a new free 30-day trial. You can now experience the power of using FlowForge to quickly deliver Node-RED applications in a reliable, repeatable, collaborative, and secure manner. To get your free trial simply [sign up for FlowForge Cloud;](https://app.flowforge.com/account/create) no credit card is required!.
 
-## Features
+## New User Features
 
-[Share your flows via team libraries](https://github.com/flowforge/flowforge/issues/237) \
-FlowForge has now added the ability for you to share your flows via the import and export features in Node-RED. Once you export a flow everyone else in your FlowForge team will be able to import your work into their projects. You can see a demonstration of this new feature in [the video](https://youtu.be/B7XK3TUklUU) below.
+
+**Automative Device Provisioning**
+
+FlowForge 1.4 now includes automatic device onboarding for fleets of devices. Simply download a FlowForge device provisioning credential to a new device or fleet of devices. On device restart, the FlowForge agent and the Node-RED snapshot will automatically be provisioned to the device. [Issue #1212](https://github.com/flowforge/flowforge/issues/1212)
+
 
 <div><iframe width="560" height="315" src="https://www.youtube.com/embed/B7XK3TUklUU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-[Control access to your Node-RED dashboards using FlowForge credentials](https://github.com/flowforge/flowforge/issues/1325) \
-In FlowForge 0.10 we added the ability to secure endpoints created within your FlowForge projects. This allows you to create dashboards or APIs and limit who can access them. In 1.3 we've added the ability for you to limit access to those same resources based on the visitor having a user account on your FlowForge team. You can see a demonstration of this new feature in [the video](https://youtu.be/JRk-Cf7eNIo) below.
+**Support for Staged Development**
+
+A new feature of 1.4 is the ability to setup staged deployments. This makes it possible to simply move a project between a Development > Test > Production for your Node-RED application delivery.  [Issue #1580](https://github.com/flowforge/flowforge/issues/1580)
+
 
 <div><iframe width="560" height="315" src="https://www.youtube.com/embed/JRk-Cf7eNIo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-[Filter your audit logs for easier reading](https://github.com/flowforge/flowforge/issues/1448) \
-In FlowForge 1.3 we’ve added the ability to filter your admin logs by user or action type. We think this is a great new feature which will help admins have confidence that they will be able to review the audit logs quickly when needed. You can see a demonstration of this new feature in [the video](https://youtu.be/p0Vuy5x42Go) below.
-
-<div><iframe width="560" height="315" src="https://www.youtube.com/embed/p0Vuy5x42Go" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ## Improvements
 
-With FlowForge v1.4 some changes were made under the hood to speed up the recovery
-of Node-RED instances. On terminal failures of an instance it will now be
-automatically be redeployed with the correct flows. This uses Kubernetes features
-and is also available if you've installed through [kubernetes](https://flowforge.com/docs/install/kubernetes/).
-To migrate the old style of deployments to this system a restart or stack upgrade is needed.
+- It is now possible to change the project type. This includes changing the version of Node-RED being used for the project and the small/medium/large.  [#595](https://github.com/flowforge/flowforge/issues/595)
 
-
+- Show a preview of Team Library entries on click. [#1657](https://github.com/flowforge/flowforge/issues/1657)
 
 ## Bug Fixes
 
 We've fixed the following bugs in this release.
-- Project status UI sometimes getting stuck when restarting [#1232](https://github.com/flowforge/flowforge/issues/1232)
-- SSO users asked to click link in email to verify [#1543](https://github.com/flowforge/flowforge/issues/1543)
-- SSO users unable to edit settings [#1542](https://github.com/flowforge/flowforge/issues/1542)
-- SSO users not redirected to editor when signing in [#1481](https://github.com/flowforge/flowforge/issues/1481)
+- Deleting your only team, doesn't exit from the team UI. [#1630](https://github.com/flowforge/flowforge/issues/1630)
+- Async Team Slug Check  [#1609](https://github.com/flowforge/flowforge/issues/1609)
+- Improve communication of Device Last Seen and Status [#1599](https://github.com/flowforge/flowforge/issues/1599)
+
 
 ## Contributors
 
 We'd like to thank the following for their contributions to this release:
 
-[flecoufle](https://github.com/flecoufle) for their work on [#89](https://github.com/flowforge/helm/pull/89)
+
 
 As an open-source project, we welcome community involvement in what we're building.
 If you're interested in contributing, checkout our [guide in the docs](https://flowforge.com/docs/contribute/).
@@ -69,7 +66,7 @@ If you'd rather use our hosted offering: [Get started for free](https://app.flow
 
 ## Upgrading FlowForge
 
-[FlowForge Cloud](https://app.flowforge.com) is already running 1.3.
+[FlowForge Cloud](https://app.flowforge.com) is already running 1.4.
 
 If you installed a previous version of FlowForge and want to upgrade, our documentation provides a
 guide for [upgrading your FlowForge instance](https://flowforge.com/docs/upgrade/).
