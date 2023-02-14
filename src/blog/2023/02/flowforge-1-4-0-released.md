@@ -40,6 +40,12 @@ A new feature of 1.4 is the ability to setup staged deployments. This makes it p
 
 - Show a preview of Team Library entries on click. [#1657](https://github.com/flowforge/flowforge/issues/1657)
 
+- Add a synchronous mode for the FlowForge context store. [#17](https://github.com/flowforge/flowforge-nr-persistent-context/issues/17)
+
+- Add a Last Seen status for devices connecting to FlowForge. [#1599](https://github.com/flowforge/flowforge/issues/1599)
+
+- Added a check to ensure the team slug is unique. [#1609](https://github.com/flowforge/flowforge/issues/1609)
+
 ## Bug Fixes
 
 We've fixed the following bugs in this release.
