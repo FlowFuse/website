@@ -53,19 +53,19 @@ sitemapPriority: 0.8
 <div class="flex justify-center z-20 relative w-full px-8">
     <div class="absolute -mt-48">
         <video id="nodered-demo" width="800" frameborder="0"
-            class="border-2 rounded-md max-w-sm sm:max-w-xl"
+            class="border-2 rounded-md max-w-sm sm:max-w-xl md:max-w-3xl"
             style="border-color: black; box-shadow: 0px 4px 16px #1f2937e6;"
             allow="fullscreen;">
             <source src="/videos/ISS Tracker.mp4" type="video/mp4">
         </video>
-        <div id="video-play-btn" class="group absolute max-w-sm sm:max-w-xl w-full h-full top-0 left-0 bg-black flex item-center justify-center cursor-pointer bg-opacity-10" onclick="playPause()">
+        <div id="video-play-btn" class="group absolute max-w-sm sm:max-w-xl md:max-w-3xl w-full h-full top-0 left-0 bg-black flex item-center justify-center cursor-pointer bg-opacity-10" onclick="playPause()">
             <button type="button" class="w-24 text-black group-hover:text-blue-800 duration-100">{% include "components/icons/play.svg" %}</button>
         </div>
         <label onclick="openFullscreen()" class="absolute left-0 block mt-3 text-blue-600 font-medium cursor-pointer w-full text-center">Show Full Screen</label>
     </div>
 </div>
 
-<div class="w-full ff-bg-light px-6 pt-32 sm:pt-64 px-0 ff-prose">
+<div class="w-full ff-bg-light px-6 pt-32 sm:pt-64 md:pt-96 px-0 ff-prose">
     <div class="container m-auto max-w-4xl pt-9 prose">
         <div class="flex gap-12">
             <div class="hidden sm:block w-48 flex-shrink-0">
