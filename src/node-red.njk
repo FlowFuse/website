@@ -37,9 +37,9 @@ sitemapPriority: 0.8
 </script>
 
 <!--Hero Content-->
-<div class="w-full px-6 pb-60 mt-12 md:px-0">
+<div class="w-full px-6 pb-56 md:pb-60 mt-12 md:px-0">
     <div class="container m-auto text-center max-w-2xl">
-        <h1 class="text-gray-50 max-w-lg m-auto">
+        <h1 class="px-12 md:px-0 text-gray-50 max-w-lg m-auto">
             Introduction to <span class="text-teal-300">Node-RED</span>
         </h1>
         <h3 class="mt-6 text-gray-400 text-lg font-normal">
@@ -50,77 +50,28 @@ sitemapPriority: 0.8
 
 {% include "components/divider-flow--default.njk" %}
 
-<div class="flex justify-center z-20 relative">
+<div class="flex justify-center z-20 relative w-full px-8">
     <div class="absolute -mt-48">
         <video id="nodered-demo" width="800" frameborder="0"
-            class="max-h-48 border-2 rounded-md sm:max-w-none sm:max-h-full"
+            class="border-2 rounded-md max-w-sm sm:max-w-xl"
             style="border-color: black; box-shadow: 0px 4px 16px #1f2937e6;"
             allow="fullscreen;">
             <source src="/videos/ISS Tracker.mp4" type="video/mp4">
         </video>
-        <div id="video-play-btn" class="group absolute w-full h-full top-0 left-0 bg-black flex item-center justify-center cursor-pointer bg-opacity-10" onclick="playPause()">
+        <div id="video-play-btn" class="group absolute max-w-sm sm:max-w-xl w-full h-full top-0 left-0 bg-black flex item-center justify-center cursor-pointer bg-opacity-10" onclick="playPause()">
             <button type="button" class="w-24 text-black group-hover:text-blue-800 duration-100">{% include "components/icons/play.svg" %}</button>
         </div>
-        <label onclick="openFullscreen()" class="absolute block mt-3 text-blue-600 font-medium cursor-pointer w-full text-center">Show Full Screen</label>
+        <label onclick="openFullscreen()" class="absolute left-0 block mt-3 text-blue-600 font-medium cursor-pointer w-full text-center">Show Full Screen</label>
     </div>
 </div>
 
-
-
-<!-- Secondary Content -->
-{# <div class="w-full ff-bg-light px-6 pt-12 pb-64 sm:pt-48 sm:px-0">
-    <div class="container m-auto text-center max-w-4xl">
-        <div class="m-auto mt-24 w-full text-center">
-            <h2>4,000+ Integrations Available</h2>
-            <h5>
-                <a class="flex justify-center gap-1" href="https://flows.nodered.org/search?type=node" target="_blank">
-                    See full list of integrations
-                    <i class="w-4">{% include "components/external.njk" %}</i>
-                </a>
-            </h5>
-        </div>
-        <div class="sm:mt-10 md:mt-16 w-full max-w-4xl text-center flex flex-wrap gap-2 justify-around">
-            <div class="w-full px-3 mt-4 sm:w-72 md:mt-0 css-full">
-                <img class="w-40 m-auto" src="/images/pictograms/community_red.png"/>
-                <h5 class="flex justify-center mb-2">SOCIAL & COMMS</h5>
-                <label class="font-light">Twitter, Twilio, Telegram, Slack, WhatsApp, Discord, etc.</label>
-            </div>
-            <div class="w-full px-3 mt-4 sm:w-72 md:mt-0">
-                <img class="w-40 m-auto" src="/images/pictograms/edge_red.png"/>
-                <h5 class="flex justify-center mb-2">HARDWARE</h5>
-                <label class="font-light">Servers, PLCs, Network Switches & Routers, Edge Devices, etc.</label>
-            </div>
-            <div class="w-full px-3 mt-4 sm:w-72 md:mt-0">
-                <img class="w-40 m-auto" src="/images/pictograms/candor_red.png"/>
-                <h5 class="flex justify-center mb-2">PROTOCOLS</h5>
-                <label class="font-light">WebSockets, HTTP, MQTT, AMQP, SNMP, RSS, FTP, etc.</label>
-            </div>
-            <div class="w-full px-3 mt-4 sm:w-72 lg:mt-10">
-                <img class="w-40 m-auto" src="/images/pictograms/cloud_red.png"/>
-                <h5 class="flex justify-center mb-2">CLOUD</h5>
-                <label class="font-light">AWS, Azure, S3, Google Cloud Platform, IBM Cloud, etc.</label>
-            </div>
-            <div class="w-full px-3 mt-4 sm:w-72 lg:mt-10">
-                <img class="w-40 m-auto" src="/images/pictograms/scalable_red.png"/>
-                <h5 class="flex justify-center mb-2">A.I.</h5>
-                <label class="font-light">TensorFlow, IBM Watson, Azure Cognitive Services, etc.</label>
-            </div>
-            <div class="w-full px-3 mt-4 sm:w-72 lg:mt-10">
-                <img class="w-40 m-auto" src="/images/pictograms/storage_red.png"/>
-                <h5 class="flex justify-center mb-2">STORAGE</h5>
-                <label class="font-light">MongoDB, MySQL, PostgreSQL, SQL Server, Redis, DB2, etc.</label>
-            </div>
-        </div>
-    </div>
-</div> #}
-
-<div class="w-full ff-bg-light px-6 pt-12 sm:pt-96 sm:px-0 ff-prose">
+<div class="w-full ff-bg-light px-6 pt-32 sm:pt-64 px-0 ff-prose">
     <div class="container m-auto max-w-4xl pt-9 prose">
         <div class="flex gap-12">
-            <div class="w-48 flex-shrink-0">
+            <div class="hidden sm:block w-48 flex-shrink-0">
                 <img class="w-full" src="/images/node-red-hexagon.png" alt="Node-RED Icon">
             </div>  
-            <div class="-mt-16">
+            <div class="-mt-16 px-6 sm:px-0">
                 <h3>Reasons why Node-RED is so popular:</h3>
                 <ul>
                     {% for reason in content['node-red'].reasons %}
