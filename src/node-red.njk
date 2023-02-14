@@ -10,6 +10,32 @@ heroLg: true
 sitemapPriority: 0.8
 ---
 
+<script>
+    function playPause () {
+        const video = document.getElementById('nodered-demo')
+        const button = document.getElementById('video-play-btn')
+        if (video.paused) {
+            {# video.setAttribute("controls","controls") #}
+            button.style.opacity = 0
+            video.play()
+        } else {
+            video.pause()
+            button.style.opacity = 1
+        }
+    }
+
+    function openFullscreen() {
+        const video = document.getElementById('nodered-demo')
+        if (video.requestFullscreen) {
+            video.requestFullscreen();
+        } else if (video.webkitRequestFullscreen) { /* Safari */
+            video.webkitRequestFullscreen();
+        } else if (video.msRequestFullscreen) { /* IE11 */
+            video.msRequestFullscreen();
+        }
+    }
+</script>
+
 <!--Hero Content-->
 <div class="w-full px-6 pb-60 mt-12 md:px-0">
     <div class="container m-auto text-center max-w-2xl">
@@ -24,12 +50,19 @@ sitemapPriority: 0.8
 
 {% include "components/divider-flow--default.njk" %}
 
-<div class="flex justify-center">
-    <iframe width="620" height="360" frameborder="0"
-        class="absolute -mt-48 max-w-xs max-h-48 border-4 rounded-md sm:max-w-none sm:max-h-full"
-        style="border-color: black; box-shadow: 0px 4px 16px #1f2937e6;"
-        src="https://www.youtube.com/embed/K4xw09DbSdI?modestbranding=1&autohide=1&rel=0" allow="fullscreen;">
-    </iframe>
+<div class="flex justify-center z-20 relative">
+    <div class="absolute -mt-48">
+        <video id="nodered-demo" width="800" frameborder="0"
+            class="max-h-48 border-2 rounded-md sm:max-w-none sm:max-h-full"
+            style="border-color: black; box-shadow: 0px 4px 16px #1f2937e6;"
+            allow="fullscreen;">
+            <source src="/videos/ISS Tracker.mp4" type="video/mp4">
+        </video>
+        <div id="video-play-btn" class="group absolute w-full h-full top-0 left-0 bg-black flex item-center justify-center cursor-pointer bg-opacity-10" onclick="playPause()">
+            <button type="button" class="w-24 text-black group-hover:text-blue-800 duration-100">{% include "components/icons/play.svg" %}</button>
+        </div>
+        <label onclick="openFullscreen()" class="absolute block mt-3 text-blue-600 font-medium cursor-pointer w-full text-center">Show Full Screen</label>
+    </div>
 </div>
 
 
@@ -81,8 +114,8 @@ sitemapPriority: 0.8
     </div>
 </div> #}
 
-<div class="w-full ff-bg-light px-6 pt-12 sm:pt-64 sm:px-0 ff-prose">
-    <div class="container m-auto max-w-4xl prose">
+<div class="w-full ff-bg-light px-6 pt-12 sm:pt-96 sm:px-0 ff-prose">
+    <div class="container m-auto max-w-4xl pt-9 prose">
         <div class="flex gap-12">
             <div class="w-48 flex-shrink-0">
                 <img class="w-full" src="/images/node-red-hexagon.png" alt="Node-RED Icon">
