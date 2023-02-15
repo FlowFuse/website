@@ -28,7 +28,7 @@ FlowForge 1.4 now includes automatic device onboarding for fleets of devices. Si
 
 **Support for Staged Development**
 
-A new feature of 1.4 is the ability to setup staged deployments. This makes it possible to simply move a project between a Development > Test > Production for your Node-RED application delivery.  [Issue #1580](https://github.com/flowforge/flowforge/issues/1580)
+A new feature of 1.4 is the ability to setup staged deployments. This makes it possible to simply move a project between a Development > Test > Production for your Node-RED application delivery. [Issue #1580](https://github.com/flowforge/flowforge/issues/1580)
 
 
 <div><iframe width="560" height="315" src="https://www.youtube.com/embed/JRk-Cf7eNIo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
