@@ -3,8 +3,79 @@
     <title>FlowForge</title>
     <link href="https://flowforge.com/blog/index.xml" rel="self"/>
     <link href="https://flowforge.com/blog"/>
-    <updated>2023-02-10T00:00:00Z</updated>
+    <updated>2023-02-15T00:00:00Z</updated>
     <id>https://flowforge.com/blog</id>
+    
+    <entry>
+        <id>https://flowforge.com/blog/2023/02/highly-available-node-red/</id>
+        <title>Toward Highly Available Node-RED&quot;</title>
+        <summary>How mission critical use-cases can be supported through FlowForge soon</summary>
+        <updated>2023-02-15T00:00:00Z</updated>
+        <link href="https://flowforge.com/blog/2023/02/highly-available-node-red/"/>
+        <author><name>ZJ van de Weg</name></author>
+        <content type="html">&lt;p&gt;Over the past few months we&#39;ve held a lot of product discovery sessions and a topic
+which keeps coming up is &amp;quot;HA Node-RED&amp;quot;. All software will have failures, with
+HA (high availability) the intent is to allow the workload to be processed
+regardless. There&#39;s quite a few considerations which are often not covered
+during product discovery calls, I&#39;m going to discuss some of those points in this article.&lt;/p&gt;
+&lt;!--more--&gt;
+&lt;p&gt;When my job title was software engineer I was fortunate to design and
+implement a HA system. It&#39;s an incredibly challenging and rewarding task for
+any software engineer. As a topic, it&#39;s studied when obtaining a Computer Science
+Bachelors degree, masters and even PhD. When tasked
+to make a HA system, it took me a good month to define what our goals
+were, and what we were willing to exchange for the properties sought. This
+might be extra hardware, engineering hours, as well as organisational challenges.
+For now, let&#39;s focus on the first two.&lt;/p&gt;
+&lt;p&gt;Let&#39;s start with defining the goal; reduce the impact of a Node-RED instance
+being unresponsive for an arbitrary reason. In many use-cases the MTTR (Mean Time To
+Recovery) is what&#39;s measured. When for example a hardware failure takes down the instance and the time to
+detection is zero, it will likely still take a few hours to recover. Most of
+the recovery work is also manual, and knowledge on how to recover is usually
+&lt;a href=&quot;https://en.wikipedia.org/wiki/Tribal_knowledge&quot;&gt;tribal knowledge&lt;/a&gt;. If the right
+person is on-site, the right hardware is available, you kept great backups,
+and are able to deploy the new hardware right away without support from other
+functions you might just achieve an MTTR of 120 minutes!&lt;/p&gt;
+&lt;h3 id=&quot;5-10-minute-mean-time-to-recovery&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://flowforge.com/blog/2023/02/highly-available-node-red/#5-10-minute-mean-time-to-recovery&quot;&gt;#&amp;nbsp;&lt;/a&gt; 5-10 minute Mean Time to Recovery&lt;/h3&gt;
+&lt;p&gt;What&#39;s needed to bring this back to say 10 minutes? First, adopting FlowForge will
+help massively here. FlowForge can be installed on-premise, or you can use our
+managed Cloud offering. The software is the same, provided the on-premise
+install uses our &lt;a href=&quot;https://flowforge.com/docs/install/kubernetes/&quot;&gt;Kubernetes install&lt;/a&gt; method.&lt;/p&gt;
+&lt;p&gt;The key of the installation is the fact that the hardware layer is generalized
+as a fleet. Detecting failures is included in the install, and very fast. Comparing
+that to most alerting systems currently, it&#39;s usually a difference between night
+and day. Furthermore, to decrease the recovery time significantly
+there&#39;s a requirement to make software responsible for the whole procedure. Human intervention is much too slow.&lt;/p&gt;
+&lt;p&gt;To get the MTTR down to 5 minutes there&#39;s a requirement to either make hardware
+automatically available to the fleet, or to over-provision (more hardware is
+available than is needed at any given moment). When a hardware failure occurs
+FlowForge is configured to ensure all Node-RED instances that are KIA are
+replaced. Bringing down the time to recovery to about 5 minutes.
+For many use-cases a MTTR of 5 minutes is &lt;em&gt;good enough&lt;/em&gt;.&lt;/p&gt;
+&lt;h3 id=&quot;sub-minute-mttr&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://flowforge.com/blog/2023/02/highly-available-node-red/#sub-minute-mttr&quot;&gt;#&amp;nbsp;&lt;/a&gt; Sub minute MTTR&lt;/h3&gt;
+&lt;p&gt;To go below the minute, or dare I say go below 10 seconds, we&#39;ll need to increase
+the number of running Node-RED instances. Let&#39;s start with a hot-spare. Meaning
+there&#39;s a running Node-RED instance with the flows exactly the same as another,
+ready to pick up the work when the first has some failure. Note this isn&#39;t like
+a relay race, there&#39;s no baton being passed from one Node-RED to the other. While
+some data and messages might be lost, it&#39;s possible to redirect all workload from
+the plagued Node-RED to the hot-spare in a matter of seconds. Hot-spares taking
+over are usually only observed by humans a good few minutes after they replace a failed instance.&lt;/p&gt;
+&lt;h3 id=&quot;sub-second!&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://flowforge.com/blog/2023/02/highly-available-node-red/#sub-second!&quot;&gt;#&amp;nbsp;&lt;/a&gt; Sub second!&lt;/h3&gt;
+&lt;p&gt;Before this post turns into a theoretical exercise we&#39;d really need to understand
+which trade-offs are acceptable to you. There&#39;s the &lt;a href=&quot;https://en.wikipedia.org/wiki/CAP_theorem&quot;&gt;CAP Theorem&lt;/a&gt;
+which states 3 guarantees are wanted: Consistency, Availability, and Partition Tolerance. You get to pick
+only two. In manufacturing the line must never be stopped due to a software failure where possible,
+so Availability is the most important. The question is, what comes next? Is it Consistency meaning
+all 3 instances have the same view of the global state? Or maybe Partition Tolerance where it&#39;s vital for each instance need to be able to predict the intended action even if it can&#39;t communicate to the others?&lt;/p&gt;
+&lt;p&gt;Whichever 2 you choose will dictate engineering choices in the pursuit of a great HA solution.&lt;/p&gt;
+&lt;h3 id=&quot;the-roadmap&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://flowforge.com/blog/2023/02/highly-available-node-red/#the-roadmap&quot;&gt;#&amp;nbsp;&lt;/a&gt; The roadmap&lt;/h3&gt;
+&lt;p&gt;With FlowForge v1.4, released February 2023, a 5 minute mean time to recovery is
+achieved for all flows running locally, that is: in the cluster. Going beyond this
+milestone requires your input! I&#39;d love to chat about your challenges, please
+&lt;a href=&quot;https://meetings-eu1.hubspot.com/zeger-jan&quot;&gt;pick a timeslot to discuss your requirements&lt;/a&gt;!&lt;/p&gt;
+</content>
+    </entry>
     
     <entry>
         <id>https://flowforge.com/blog/2023/02/service-disruption-report-2023-01-27/</id>
