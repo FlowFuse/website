@@ -1,8 +1,8 @@
 ---
-title: "Roadmap item: toward Highly Available Node-RED"
+title: Toward Highly Available Node-RED"
 subtitle: How mission critical use-cases can be supported through FlowForge soon
 description: Often requested features for Node-RED include HA or Highly Available
-date: 2023-02-08
+date: 2023-02-15
 authors: ["zeger-jan-van-de-weg"]
 image: roadmap-unsplash.jpg
 ---
