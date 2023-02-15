@@ -30,7 +30,7 @@ layout: layouts/base.njk
             </a>
             <div class="prose">
                 <div>{% if video %}<iframe width="560" height="315" src="https://www.youtube.com/embed/{{video}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                     {% elif image %}<img class="w-full h-auto" src="{{image}}" />
+                     {% elif image %}<img class="w-full h-auto" src="../images/{{image}}" />
                      {% else %}{{ page.url | generatePostSVG |safe}}{% endif %}
                 </div>
                 {{ content | safe }}
