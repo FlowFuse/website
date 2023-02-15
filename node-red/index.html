@@ -120,26 +120,45 @@
             </header>
             <!-- Main Content -->
             <main class="flex flex-col mx-auto items-center justify-center">
-                <!--Hero Content-->
-<div class="w-full page">
-    
-        
-        <div class="hero hero-lg  container m-auto text-center flex flex-wrap mt-6 py-6 px-12 mb-32 md:flex-nowrap md:max-w-screen-lg md:mt-12">
-            <div class="text-left md:pr-20">
-                <h1 class="text-teal-300">What is Node-RED?</h1>
                 
-                
-                <div><p>Node-RED is a programming tool for wiring together hardware devices, APIs and online services in new and interesting ways.</p> <p>It’s browser-based editor makes it easy to wire together flows using the extensive collection of nodes available, and deploy to its runtime with a single-click.</p> <p>FlowForge makes it easy to run Node-RED in production, on your own hardware or in the cloud.</p></div>
-                
-            </div>
+<script>
+    function playPause () {
+        const video = document.getElementById('nodered-demo')
+        const button = document.getElementById('video-play-btn')
+        if (video.paused) {
             
-            <img class="hidden md:block" src="/images/node-red-hexagon.png"/>
-            
-                    
-        </div>
-    
-    <div class="content">
-        
+            button.style.opacity = 0
+            video.play()
+        } else {
+            video.pause()
+            button.style.opacity = 1
+        }
+    }
+
+    function openFullscreen() {
+        const video = document.getElementById('nodered-demo')
+        if (video.requestFullscreen) {
+            video.requestFullscreen();
+        } else if (video.webkitRequestFullscreen) { /* Safari */
+            video.webkitRequestFullscreen();
+        } else if (video.msRequestFullscreen) { /* IE11 */
+            video.msRequestFullscreen();
+        }
+    }
+</script>
+
+<!--Hero Content-->
+<div class="w-full px-6 pb-56 md:pb-60 mt-12 md:px-0">
+    <div class="container m-auto text-center max-w-2xl">
+        <h1 class="px-12 md:px-0 text-gray-50 max-w-lg m-auto">
+            Introduction to <span class="text-teal-300">Node-RED</span>
+        </h1>
+        <h3 class="mt-6 text-gray-400 text-lg font-normal">
+            Node-RED is a very popular, low-code programming tool, that makes it easy to connect different services using a visual programming environment.
+        </h3>
+    </div>
+</div>
+
 <div class="ff-divider">
     <svg xmlns="http://www.w3.org/2000/svg" width="1440" height="461" fill="none" viewBox="0 0 1440 461" preserveAspectRatio="none">
     <path fill="url(#paint0_linear_190_762)" fill-rule="evenodd" d="M733 218.595C263 218.595 0 0 0 0v374.941s324.5 47.903 709.5-16.519S1440 154 1440 154v-.933s-237 65.528-707 65.528z" clip-rule="evenodd"/>
@@ -153,146 +172,121 @@
     </svg>
 </div>
 
-<!-- Secondary Content -->
-<div class="w-full ff-bg-light px-6 pt-12 pb-48 md:pt-32 md:px-0">
-    <div class="container m-auto text-center max-w-4xl">
-        <div class="m-auto mt-16 w-full text-center">
-            <h1>4,000+ Integrations Available</h1>
-            <h5>
-                <a class="flex justify-center gap-1" href="https://flows.nodered.org/search?type=node" target="_blank">
-                    See full list of integrations
-                    <i class="w-4"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-full">
-  <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
+<div class="flex justify-center z-20 relative w-full px-8">
+    <div class="absolute -mt-48">
+        <video id="nodered-demo" width="800" frameborder="0"
+            class="border-2 rounded-md max-w-sm sm:max-w-xl md:max-w-3xl"
+            style="border-color: black; box-shadow: 0px 4px 16px #1f2937e6;"
+            allow="fullscreen;">
+            <source src="https://website-data.s3.eu-west-1.amazonaws.com/iss-tracker.mp4" type="video/mp4">
+        </video>
+        <div id="video-play-btn" class="group absolute max-w-sm sm:max-w-xl md:max-w-3xl w-full h-full top-0 left-0 hover:bg-black flex item-center justify-center cursor-pointer hover:bg-opacity-10" onclick="playPause()">
+            <button type="button" class="w-24 text-black group-hover:text-blue-800 duration-100"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+  <path fill-rule="evenodd" d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12zm14.024-.983a1.125 1.125 0 010 1.966l-5.603 3.113A1.125 1.125 0 019 15.113V8.887c0-.857.921-1.4 1.671-.983l5.603 3.113z" clip-rule="evenodd" />
 </svg>
-</i>
-                </a>
-            </h5>
+</button>
         </div>
-        <div class="sm:mt-10 md:mt-16 w-full max-w-4xl text-center flex flex-wrap gap-2 justify-around">
-            <div class="w-full px-3 mt-4 sm:w-72 md:mt-0 css-full">
-                <img class="w-40 m-auto" src="/images/pictograms/community_red.png"/>
-                <h5 class="flex justify-center mb-2">SOCIAL & COMMS</h5>
-                <label class="font-light">Twitter, Twilio, Telegram, Slack, WhatsApp, Discord, etc.</label>
-            </div>
-            <div class="w-full px-3 mt-4 sm:w-72 md:mt-0">
-                <img class="w-40 m-auto" src="/images/pictograms/edge_red.png"/>
-                <h5 class="flex justify-center mb-2">HARDWARE</h5>
-                <label class="font-light">Servers, PLCs, Network Switches & Routers, Edge Devices, etc.</label>
-            </div>
-            <div class="w-full px-3 mt-4 sm:w-72 md:mt-0">
-                <img class="w-40 m-auto" src="/images/pictograms/candor_red.png"/>
-                <h5 class="flex justify-center mb-2">PROTOCOLS</h5>
-                <label class="font-light">WebSockets, HTTP, MQTT, AMQP, SNMP, RSS, FTP, etc.</label>
-            </div>
-            <div class="w-full px-3 mt-4 sm:w-72 lg:mt-10">
-                <img class="w-40 m-auto" src="/images/pictograms/cloud_red.png"/>
-                <h5 class="flex justify-center mb-2">CLOUD</h5>
-                <label class="font-light">AWS, Azure, S3, Google Cloud Platform, IBM Cloud, etc.</label>
-            </div>
-            <div class="w-full px-3 mt-4 sm:w-72 lg:mt-10">
-                <img class="w-40 m-auto" src="/images/pictograms/scalable_red.png"/>
-                <h5 class="flex justify-center mb-2">A.I.</h5>
-                <label class="font-light">TensorFlow, IBM Watson, Azure Cognitive Services, etc.</label>
-            </div>
-            <div class="w-full px-3 mt-4 sm:w-72 lg:mt-10">
-                <img class="w-40 m-auto" src="/images/pictograms/storage_red.png"/>
-                <h5 class="flex justify-center mb-2">STORAGE</h5>
-                <label class="font-light">MongoDB, MySQL, PostgreSQL, SQL Server, Redis, DB2, etc.</label>
+        <label onclick="openFullscreen()" class="absolute left-0 block mt-3 text-blue-600 font-medium cursor-pointer w-full text-center">Show Full Screen</label>
+    </div>
+</div>
+
+<div class="w-full ff-bg-light px-6 pt-32 sm:pt-64 md:pt-96 px-0 ff-prose">
+    <div class="container m-auto max-w-4xl pt-9 prose">
+        <div class="flex gap-12">
+            <div class="hidden sm:block w-48 flex-shrink-0">
+                <img class="w-full" src="/images/node-red-hexagon.png" alt="Node-RED Icon">
+            </div>  
+            <div class="-mt-16 px-6 sm:px-0">
+                <h3>Reasons why Node-RED is so popular:</h3>
+                <ul>
+                    
+                    <li>Node-RED’s <strong>visual programming</strong> makes it possible for non-developers to build real applications.</li>
+                    
+                    <li>A <strong>large library of nodes and flows</strong> make it trivial to connect different types of analog and digital services, including industrial protocols (OPC-UA, Modbus, Siemens S7), databases, weather services, etc.</li>
+                    
+                    <li>Node-RED dashboard makes it <strong>easy to visualize data in dashboards</strong>. Unlike other dashboards, Node-RED dashboards can include action and events that respond to the data</li>
+                    
+                </ul>
             </div>
         </div>
     </div>
 </div>
 
-<div class="ff-divider ff-divider--shallow">
-    <svg xmlns="http://www.w3.org/2000/svg" width="1442" height="172" fill="none" viewBox="0 0 1442 172" preserveAspectRatio="none">
-        <path fill="#BC3838" d="M0 172h414.325c147.535-40.967 259.941-58.893 262.567-59.31-2.726.428-124.054 18.996-359.155-27.05C79.934 39.062 0 0 0 0v172z"/>
-        <path fill="#1F2937" d="M726.395 105.629C484.848 138.752 242.394 172 0 172h1442V40c-237.01 0-475.86 32.753-715.605 65.629z"/>
-    </svg>
-</div>
-
-<div class="w-full ff-bg-dark px-6 pt-12 pb-48 md:pt-32 md:px-0">
-    <div class="container m-auto text-center max-w-4xl">
-        <div class="m-auto mt-0 mb-16 w-full text-center">
-            <h1>What FlowForge brings to Node-RED</h1>
-        </div>
-        <div class="flex flex-col-reverse justify-between sm:flex-row gap-3 sm:gap-12">
-            <div class="text-center sm:text-left pt-4">
-                <h3>Easy Instance Management</h3>
-                <p>FlowForge's intuitive UI lets you manage your Node-RED instances all in one place.</p>
-                <p>Spin up instances of Node-RED in seconds, monitor project health and tear down or suspend projects as required.<p>
+<div class="w-full ff-bg-light px-6 pb-32 sm:px-0 ff-prose">
+    <div class="container m-auto max-w-4xl prose">
+        <div class="m-auto w-full">
+            
+            <div>
+                <h3 class="flex items-center w-full m-0 gap-6">
+                    <span>What is Node-RED and how does it work?</span>
+                    <hr class="flex-grow m-0"/>
+                </h3>
+                <div class="px-6">
+                    <p><p>Node-RED is a low-code programming environment that allows developers to connect a wide variety of endpoints, such as industrial PLCs, APIs, databases, enterprise applications and online services.</p><p>Users of Node-RED visually drag ‘nodes’ from a palette that represent the end points and then connect them together into flows to accomplish the desired task. Node-RED applications are accessible via a web browser.</p></p>
+                </div>
             </div>
-            <img class="w-96" src="/images/screen-pseudo-overview--dark.png">
-        </div>
-        <div class="my-8 sm:my-16 w-full">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 982 70">
-  <path stroke="#374151" stroke-width="4" d="M0 35h982m-773 0c115 0 88-27 188-27m99 27c115 0 88-27 188-27"/>
-  <rect width="12" height="12" x="391" y="2" fill="#1F2937" stroke="#374151" stroke-width="4" rx="2"/>
-  <rect width="12" height="12" x="678" y="2" fill="#1F2937" stroke="#374151" stroke-width="4" rx="2"/>
-  <path stroke="#374151" stroke-width="4" d="M377 35c115 0 88 27 188 27"/>
-  <rect width="12" height="12" x="2" y="-2" fill="#1F2937" stroke="#374151" stroke-width="4" rx="2" transform="matrix(1 0 0 -1 557 66)"/>
-</svg>
-
-        </div>
-        <div class="flex flex-col-reverse sm:flex-row-reverse justify-between gap-3 sm:gap-12">
-            <div class="text-center sm:text-left pt-4">
-                <h3>Device Deployment at Scale</h3>
-                <p>One-click deploy to thousands of devices.</p>
-                <p>FlowForge provides a clear picture of your device health, with project snapshots and rollbacks enabling seamless version control.</p>
+            
+            <div>
+                <h3 class="flex items-center w-full m-0 gap-6">
+                    <span>What is Node-RED used for?</span>
+                    <hr class="flex-grow m-0"/>
+                </h3>
+                <div class="px-6">
+                    <p><p>Node-RED can be used for a wide variety of use cases, including:</p><ul><li>IoT uses cases, such as collecting data from different pieces of factory equipment.</li><li>Creating dashboards that visualize data and allow for event triggers to occur based on the data.</li><li>Developing chatbot platforms that can collect interactions of a wide variety of social media platforms.</li><li>Extract, transform and integrate data from many different sources in the enterprise.</li><li>Lots of hobbyists use Node-RED for home automation.</li><li>Integrating data with machine learning models</li></ul></p>
+                </div>
             </div>
-            <img class="w-96" src="/images/screen-pseudo-devices--dark.png">
-        </div>
-        <div class="my-8 sm:my-16">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 982 70">
-  <path stroke="#374151" stroke-width="4" d="M982 35H0m773 0c-115 0-88 27-188 27m-99-27c-115 0-88 27-188 27"/>
-  <rect width="12" height="12" x="591" y="68" fill="#1F2937" stroke="#374151" stroke-width="4" rx="2" transform="rotate(180 591 68)"/>
-  <rect width="12" height="12" x="304" y="68" fill="#1F2937" stroke="#374151" stroke-width="4" rx="2" transform="rotate(180 304 68)"/>
-  <path stroke="#374151" stroke-width="4" d="M605 35C490 35 517 8 417 8"/>
-  <rect width="12" height="12" x="-2" y="2" fill="#1F2937" stroke="#374151" stroke-width="4" rx="2" transform="matrix(-1 0 0 1 421 0)"/>
-</svg>
-
-        </div>
-        <div class="flex flex-col-reverse sm:flex-row justify-between gap-3 sm:gap-12">
-            <div class="text-center sm:text-left pt-4">
-                <h3>Reduced Operational Overheads</h3>
-                <p>Backed by consistent security across the platform, FlowForge makes hosting, deployment and management easy.</p>
-                <p>FlowForge provides centralised audit logging too, so you can see all activity in one place - bringing you peace of mind and compliance in your production environment</p>
+            
+            <div>
+                <h3 class="flex items-center w-full m-0 gap-6">
+                    <span>How much does Node-RED cost?</span>
+                    <hr class="flex-grow m-0"/>
+                </h3>
+                <div class="px-6">
+                    <p>Node-RED is an open source project hosted at the OpenJS Foundation. It is made available under the Apache Software License so individuals can use Node-RED free of charge. Participation in the open source project is encouraged to help support the Node-RED community.</p>
+                </div>
             </div>
-            <img class="w-96" src="/images/screen-pseudo-audit--dark.png">
-        </div>
-    </div>
-</div>
-
-<div class="ff-divider ff-divider--shallow">
-    <svg xmlns="http://www.w3.org/2000/svg" width="1442" height="144" fill="none" viewBox="0 0 1442 144" preserveAspectRatio="none">
-    <path fill="#374151" d="M0 0c498.518 0 866 144 1442 144H0V0z"/>
-    </svg>
-</div>
-
-<!-- Deployment Options -->
-<div class="w-full ff-bg-mid px-6 pt-0 pb-32 md:pt-0 md:px-0">
-    <div class="container m-auto text-center max-w-4xl">
-        <div class="m-auto pt-16 w-full text-center">
-            <h1>Start using FlowForge</h1>
-            <span class="text-white font-light">For a full feature comparison, please visit our <a href="/pricing">Pricing</a> page.</span>
-        </div>
-        <div class="sm:mt-10 md:mt-10 w-full max-w-4xl text-center flex flex-wrap gap-2 justify-around">
-            <div class="w-full px-3 mt-4 sm:w-72 md:mt-0 css-full">
-                <img class="w-40 m-auto mb-4" src="/images/pictograms/opensource.png"/>
-                <h5 class="flex justify-center">Open Source</h5>
-                <label class="text-white mt-2 block">Try for free with deployment options including Docker and Kubernetes.</label>
-                <a class="mt-4 ff-btn ff-btn--secondary inline-block" href="../docs/install">Install</a>
+            
+            <div>
+                <h3 class="flex items-center w-full m-0 gap-6">
+                    <span>What language is Node-RED?</span>
+                    <hr class="flex-grow m-0"/>
+                </h3>
+                <div class="px-6">
+                    <p>Node-RED is a visual programming environment that allows you to do a lot without writing a single line of code. An important benefit of Node-RED is that it also allows for developers to write JavaScript and use the NodeJS API to extend the functionality of a node or flow.</p>
+                </div>
             </div>
-            <div class="w-full px-3 mt-4 sm:w-72 md:mt-0">
-                <img class="w-40 m-auto mb-4" src="/images/pictograms/enterprise.png"/>
-                <h5 class="flex justify-center">FlowForge Cloud</h5>
-                <label class="text-white mt-2 block">Get started in less than a minute, fully managed, fully secure.</label>
-                <a class="mt-4 ff-btn ff-btn--primary inline-block" href="https://app.flowforge.com/account/create">Join Now</a>
+            
+            <div>
+                <h3 class="flex items-center w-full m-0 gap-6">
+                    <span>How can I get started using Node-RED?</span>
+                    <hr class="flex-grow m-0"/>
+                </h3>
+                <div class="px-6">
+                    <p><p><a href="https://app.flowforge.com" target="_blank">FlowForge Cloud</a> offers the easiest way to get started with Node-RED. After signing into FlowForge Cloud users have immediate access to a Node-RED instance.</p><p>For those who prefer to install Node-RED themselves, there are many tutorials that help people to get started with Node-RED. A recommended starting point is the Getting Started found on <a href="https://nodered.org" target="_blank">nodered.org</a>. Other tutorials from the community include <a href="http://stevesnoderedguide.com/installing-node-red" target="_blank">Steve’s Node-RED Guide</a> and <a href="https://projects.raspberrypi.org/en/projects/getting-started-with-node-red" target="_blank">Raspberry Pi Getting Started with Node-RED.</a></p></p>
+                </div>
             </div>
+            
+            <div>
+                <h3 class="flex items-center w-full m-0 gap-6">
+                    <span>How can I secure a Node-RED installation?</span>
+                    <hr class="flex-grow m-0"/>
+                </h3>
+                <div class="px-6">
+                    <p><p>There are three aspects of Node-RED that need to be secured.</p><ol><li>Node-RED is a web application so you need to enable HTTPS access to the Node-RED runtime. The default Node-RED settings include a commented out section that can be used for local certificates.</li><li>The Node-RED editor and administration requires authentication to access it. Node-RED supports username/password and OAuth/OpenID authentication. The adminAuth property in the setting file is used to specify the authentication credentials.</li><li>Securing the HTTP Node can be done using basic authentication. This can be set using the httpNodeAuth property in the settings file.</li></ol><p>More details about Node-RED security can be found on <a href="https://nodered.org" target="_blank">nodered.org</a></p>
+                </div>
+            </div>
+            
+            <div>
+                <h3 class="flex items-center w-full m-0 gap-6">
+                    <span>How is Node-RED used in IoT?</span>
+                    <hr class="flex-grow m-0"/>
+                </h3>
+                <div class="px-6">
+                    <p><p>Node-RED is very popular in the manufacturing and industrial automation industries (IIoT) as an edge computing solution. Often deployed on PLCs and IoT gateways, Node-RED supports collecting data from legacy and proprietary systems (SIemens S7, Modbus, OPC-UA, etc), integrating the industrial data with other data sources (weather data, enterprise data), filtering data on the edge, and then sending the data to the cloud. FlowForge offers remote device deployment to IIoT edge devices.</p><p>Node-RED is also very popular with DIY home automation enthusiasts, in particular the <a href="https://community.home-assistant.io/t/home-assistant-community-add-on-node-red/55023" target="_blank">Home Assistant</a> community.</p>
+                </div>
+            </div>
+            
         </div>
-    </div>
-</div>
-
-
     </div>
 </div>
             </main>
