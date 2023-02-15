@@ -1,5 +1,7 @@
 ---
 layout: nohero
+meta:
+    title: Terms and Conditions
 ---
 <div class="prose prose-blue container m-auto max-w-4xl">
 
