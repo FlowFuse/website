@@ -1,5 +1,5 @@
 ---
-title: Toward Highly Available Node-RED"
+title: Toward Highly Available Node-RED
 subtitle: How mission critical use-cases can be supported through FlowForge soon
 description: Often requested features for Node-RED include HA or Highly Available
 date: 2023-02-15
