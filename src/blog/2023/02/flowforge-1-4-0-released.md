@@ -19,7 +19,7 @@ To make it easy for everyone to experience FlowForge, we are introducing a new f
 ## New User Features
 
 
-**Automative Device Provisioning**
+**Automatic Device Provisioning**
 
 FlowForge 1.4 now includes automatic device onboarding for fleets of devices. Simply download a FlowForge device provisioning credential to a new device or fleet of devices. On device restart, the FlowForge agent and the Node-RED snapshot will automatically be provisioned to the device. [Issue #1212](https://github.com/flowforge/flowforge/issues/1212)
 
@@ -46,6 +46,14 @@ A new feature of 1.4 is the ability to setup staged deployments. This makes it p
 
 - Added a check to ensure the team slug is unique. [#1609](https://github.com/flowforge/flowforge/issues/1609)
 
+- Optionally set snapshot as target at creation [#1527](https://github.com/flowforge/flowforge/issues/1527)
+
+- With FlowForge v1.4 some changes were made under the hood to speed up the recovery
+of Node-RED instances. On terminal failures of an instance it will now be
+automatically be redeployed with the correct flows. This uses Kubernetes features
+and is also available if you've installed through [kubernetes](https://flowforge.com/docs/install/kubernetes/).
+To migrate the old style of deployments to this system a restart or stack upgrade is needed.
+
 ## Bug Fixes
 
 We've fixed the following bugs in this release.
@@ -55,10 +63,6 @@ We've fixed the following bugs in this release.
 
 
 ## Contributors
-
-We'd like to thank the following for their contributions to this release:
-
-
 
 As an open-source project, we welcome community involvement in what we're building.
 If you're interested in contributing, checkout our [guide in the docs](https://flowforge.com/docs/contribute/).
