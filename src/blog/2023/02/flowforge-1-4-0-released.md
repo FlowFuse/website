@@ -93,7 +93,7 @@ That's also a great place to send us any feedback or feature requests.
 
 You can also get help on [the Node-RED forums](https://discourse.nodered.org/)
 
-AS well as in the [forum within our Github project](https://github.com/flowforge/flowforge/discussions)
+As well as in the [forum within our Github project](https://github.com/flowforge/flowforge/discussions)
 
 Chat with us on the `#flowforge` channel on the [Node-RED Slack workspace](https://nodered.org/slack)
 
