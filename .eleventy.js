@@ -28,7 +28,6 @@ module.exports = function(eleventyConfig) {
     eleventyConfig.addPassthroughCopy("src/**/images/**/*");
     eleventyConfig.addPassthroughCopy("src/**/videos/**/*");
 
-
     eleventyConfig.addFilter("head", (array, n) => {
         if( n < 0 ) {
             return array.slice(n);
@@ -60,7 +59,7 @@ module.exports = function(eleventyConfig) {
         if (posts) {
             return posts.filter((post) => {
                 const postDate = spacetime(post.data.date)
-                return postDate.isAfter(spacetime.today()) || postDate.isSame(spacetime.today())
+                return postDate.isAfter(spacetime.today()) || postDate.isSame(spacetime.today(), 'day')
             })
         } else {
             return null
@@ -79,6 +78,20 @@ module.exports = function(eleventyConfig) {
         // return true is the provided date is in the past, otherwise, return false
         const postDate = spacetime(date)
         return postDate.isAfter(spacetime.today()) || postDate.isSame(spacetime.today())
+    });
+
+    eleventyConfig.addFilter('countDays', (date) => {
+        // return true is the provided date is in the past, otherwise, return false
+        const postDate = spacetime(date)
+        const now = spacetime.now().startOf('day')
+        const days = now.diff(postDate, 'day') + 1
+        if (days === 0) {
+            return { value: 0, text: 'Today'}
+        } else if (days === 1) {
+            return { value: 1, text: 'Tomorrow'}
+        } else {
+            return { value: days, text: `${days} Days Away`}
+        }
     });
 
     eleventyConfig.addFilter("excerpt", function(str) {

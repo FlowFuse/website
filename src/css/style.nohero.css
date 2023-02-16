@@ -77,6 +77,16 @@
     margin-bottom: 1rem;
 }
 
+.ff-prose .prose p,
+.ff-prose .prose li {
+    font-weight: 300;
+}
+
+.ff-prose .prose hr {
+    border-color: theme(colors.gray.400);
+    margin: 0;
+}
+
 /* Reset Tailwind CSS to enable more custom uses of images, e.g. User Personas */
 .ff-prose .prose img {
     margin-top: initial;

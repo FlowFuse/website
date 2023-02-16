@@ -11,97 +11,112 @@ meta:
             {% include "components/divider-grey-wires-right.njk" %}
         </div>
     </div>
-    {% if collections.webinar and collections.webinar.length > 0 %}
-        {%- for item in collections.webinar | inFuture -%}
+    {% if (collections.webinar and collections.webinar.length > 0 and collections.ama and collections.ama.length > 0) and ((collections.ama[0].date | countDays).value < (collections.webinar[0].date | countDays).value) %}
+    <div class="flex flex-col-reverse gap-6">
+    {% else %}
+    <div class="flex flex-col gap-6">
+    {% endif %}
+        {% if collections.webinar and collections.webinar.length > 0 %}
+            {%- for item in collections.webinar | inFuture -%}
+                {% if loop.first %}
+                <div>
+                    <h2 class="w-full">Upcoming Webinar: <span class="text-red-600 italic text-lg ml-2">{{ item.date.toLocaleDateString(undefined, { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' }) }}</span></h2>
+                    <ul>
+                        <li class="webinar-tile">
+                            <div class="flex flex-col md:flex-row">
+                                <a href="{{ item.url }}" onclick="capture('cta-webinar-info')" class="webinar-tile-img relative mb-4 md:mb-0 flex md:w-1/2 mr-2 rounded-lg">
+                                    {% if item.data.image %}
+                                        <img class="w-full h-auto rounded" src="{{item.data.image}}" />
+                                    {% else %}
+                                        {{ item.url | generatePostSVG | safe }}
+                                    {% endif %}
+                                    {% if item.data.image %}
+                                    <div class="webinar-tile-radialshade">
+                                    </div>
+                                    {% else %}
+                                    <div class="webinar-tile-shade">
+                                        <label>
+                                            <h4 class="text-white">{{ item.data.title }}</h4>
+                                            <div class="webinar-tile-datetime">
+                                                <time value="{{ item.time }}" class="text-gray-400">{{ item.data.time }}</time>
+                                                <time value="{{ item.date }}" class="text-gray-400">{{ item.data.date | shortDate }}</time>
+                                                <time value="{{ item.duration }}" class="text-gray-400">{{ item.data.duration | duration }}</time>
+                                            </div>
+                                        </label>
+                                    </div>
+                                    {% endif %}
+                                </a>
+                                <div class="flex flex-col justify-between md:w-1/2 md:px-2">
+                                    <div class="grow">
+                                        {{ item.templateContent | excerpt | striptags(true)| restoreParagraphs | safe }}
+                                    </div>
+                                    <div>
+                                        <a class="inline-flex ff-btn ff-btn--primary text-sm" href="{{ item.url }}" onclick="capture('cta-webinar-info')">
+                                            More Info
+                                            <span class="ml-2">
+                                                {% include "components/icons/chevron-right.svg" %}
+                                            </span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                {% endif %}
+            {% endfor %}
+        {% endif %}
+        {% if collections.ama and collections.ama.length > 0 %}
+            {%- for item in collections.ama | inFuture -%}
             {% if loop.first %}
-            <h2 class="w-full">Upcoming Webinar:</h2>
-            <ul>
-                <li class="webinar-tile">
-                    <div class="flex flex-col md:flex-row">
-                        <a href="{{ item.url }}" onclick="capture('cta-webinar-info')" class="webinar-tile-img relative mb-4 md:mb-0 flex md:w-1/2 mr-2 rounded">
-                            {% if item.data.image %}
-                                <img class="w-full h-auto rounded" src="{{item.data.image}}" />
-                            {% else %}
-                                {{ item.url | generatePostSVG | safe }}
-                            {% endif %}
-                            <div class="webinar-tile-shade">
-                                <label>
-                                    <h4 class="text-white">{{ item.data.title }}</h4>
-                                    <div class="webinar-tile-datetime">
-                                        <time value="{{ item.time }}" class="text-gray-400">{{ item.data.time }}</time>
-                                        <time value="{{ item.date }}" class="text-gray-400">{{ item.data.date | shortDate }}</time>
-                                        <time value="{{ item.duration }}" class="text-gray-400">{{ item.data.duration | duration }}</time>
+                <div>
+                    <h2 class="w-full">Upcoming "Ask Me Anything" Session: <span class="text-red-600 italic text-lg ml-2">{{ item.date.toLocaleDateString(undefined, { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' }) }}</span></h2>
+                    <ul>
+                        <li class="webinar-tile">
+                            <div class="flex flex-col md:flex-row">
+                                <a href="{{ item.url }}" onclick="capture('cta-webinar-register')" class="webinar-tile-img relative mb-4 md:mb-0 flex md:w-1/2 mr-2 rounded-lg">
+                                    {% if item.data.image %}
+                                        <img class="w-full h-auto rounded-lg" src="{{item.data.image}}" />
+                                    {% else %}
+                                        {{ item.url | generatePostSVG | safe }}
+                                    {% endif %}
+                                    {% if item.data.image %}
+                                    <div class="webinar-tile-radialshade">
                                     </div>
-                                </label>
-                            </div>
-                        </a>
-                        <div class="flex flex-col justify-between md:w-1/2 md:px-2">
-                            <div class="grow">
-                                {{ item.templateContent | excerpt | striptags(true)| restoreParagraphs | safe }}
-                            </div>
-                            <div>
-                                <a class="inline-flex ff-btn ff-btn--primary text-sm" href="{{ item.url }}" onclick="capture('cta-webinar-info')">
-                                    More Info
-                                    <span class="ml-2">
-                                        {% include "components/icons/chevron-right.svg" %}
-                                    </span>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </li>
-            </ul>
-            {% endif %}
-        {% endfor %}
-    {% endif %}
-    {% if collections.ama and collections.ama.length > 0 %}
-        {%- for item in collections.ama | inFuture -%}
-        {% if loop.first %}
-            <h2 class="w-full mt-6">Upcoming "Ask Me Anything" Session:</h2>
-            <ul>
-                <li class="webinar-tile">
-                    <div class="flex flex-col md:flex-row">
-                        <a href="{{ item.url }}" onclick="capture('cta-webinar-register')" class="webinar-tile-img relative mb-4 md:mb-0 flex md:w-1/2 mr-2 rounded-lg">
-                            {% if item.data.image %}
-                                <img class="w-full h-auto rounded-lg" src="{{item.data.image}}" />
-                            {% else %}
-                                {{ item.url | generatePostSVG | safe }}
-                            {% endif %}
-                            {% if item.data.image %}
-                            <div class="webinar-tile-radialshade">
-                            </div>
-                            {% else %}
-                            <div class="webinar-tile-shade">
-                                <label>
-                                    <h4 class="text-white">{{ item.data.title }}</h4>
-                                    <div class="webinar-tile-datetime">
-                                        <time value="{{ item.time }}" class="text-gray-400">{{ item.data.time }}</time>
-                                        <time value="{{ item.date }}" class="text-gray-400">{{ item.data.date | shortDate }}</time>
-                                        <time value="{{ item.duration }}" class="text-gray-400">{{ item.data.duration | duration }}</time>
+                                    {% else %}
+                                    <div class="webinar-tile-shade">
+                                        <label>
+                                            <h4 class="text-white">{{ item.data.title }}</h4>
+                                            <div class="webinar-tile-datetime">
+                                                <time value="{{ item.time }}" class="text-gray-400">{{ item.data.time }}</time>
+                                                <time value="{{ item.date }}" class="text-gray-400">{{ item.data.date | shortDate }}</time>
+                                                <time value="{{ item.duration }}" class="text-gray-400">{{ item.data.duration | duration }}</time>
+                                            </div>
+                                        </label>
                                     </div>
-                                </label>
-                            </div>
-                            {% endif %}
-                        </a>
-                        <div class="flex flex-col justify-between md:w-1/2 md:px-2">
-                            <div class="grow">
-                                {{ item.templateContent | excerpt | striptags(true)| restoreParagraphs | safe }}
-                            </div>
-                            <div>
-                                <a class="inline-flex ff-btn ff-btn--secondary text-sm" href="{{ item.url }}" onclick="capture('cta-ama-info')">
-                                    More Info
-                                    <span class="ml-2">
-                                        {% include "components/icons/chevron-right.svg" %}
-                                    </span>
+                                    {% endif %}
                                 </a>
+                                <div class="flex flex-col justify-between md:w-1/2 md:px-2">
+                                    <div class="grow">
+                                        {{ item.templateContent | excerpt | striptags(true)| restoreParagraphs | safe }}
+                                    </div>
+                                    <div>
+                                        <a class="inline-flex ff-btn ff-btn--secondary text-sm" href="{{ item.url }}" onclick="capture('cta-ama-info')">
+                                            More Info
+                                            <span class="ml-2">
+                                                {% include "components/icons/chevron-right.svg" %}
+                                            </span>
+                                        </a>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </li>
-            </ul>
-            {% endif %}
-        {% endfor %}
-    {% endif %}
+                        </li>
+                    </ul>
+                </div>
+                {% endif %}
+            {% endfor %}
+        {% endif %}
+    </div>
     {% if (collections.webinar and (collections.webinar | inFuture | length) > 0) or (collections.ama and (collections.ama | inFuture | length) > 0) %}
     <div class="mt-4 w-full">
         {% include "components/divider-grey-wires-left.njk" %}

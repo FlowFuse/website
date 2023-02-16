@@ -1,7 +1,7 @@
 ---
 title: Meet the Experts - Ask Me Anything about Node-RED
 subtitle: Join Nick O'Leary, co-creator of Node-RED & CTO at FlowForge and Rob Marcer, Developer Educator at FlowForge, for an AMA on Node-RED
-image: /images/webinars/ama-node-red.png
+image: /images/webinars/ama-node-red.jpg
 date: 2023-02-09
 time: 16:00 GMT (11:00 ET) 
 duration: 60

@@ -19,5 +19,5 @@ Self-hosted installations are unaffected by this change.
 
 The migration will be on 26 October 2022 at 22:00 UTC and is expected to take under 2 hours. The platform will be available as soon as the migration is complete.
 
-We will post updates during the migration period to our Twitter account [https://twitter.com/flowforgeinc](@FlowForgeInc).
+We will post updates during the migration period to our Twitter account [@FlowForgeInc](https://twitter.com/flowforgeinc).
 
