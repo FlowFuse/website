@@ -21,7 +21,7 @@ To make it easy for everyone to experience FlowForge, we are introducing a new f
 
 **Automatic Device Provisioning**
 
-FlowForge 1.4 now includes automatic device onboarding for fleets of devices. Simply download a FlowForge device provisioning credential to a new device or fleet of devices. On device restart, the FlowForge agent and the Node-RED snapshot will automatically be provisioned to the device. [Issue #1212](https://github.com/flowforge/flowforge/issues/1212)
+Most prominently, FlowForge 1.4 features automatic device onboarding for fleets. Simply download a FlowForge device provisioning credential to allow quick roll-out to a whole fleet, without the need to have device specific configuration. When the agent starts, the FlowForge agent and the Node-RED snapshot will automatically be provisioned to the device and start operations. [Issue #1212](https://github.com/flowforge/flowforge/issues/1212)
 
 
 <div><iframe width="560" height="315" src="https://www.youtube.com/embed/XTVw4O4-Crg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
