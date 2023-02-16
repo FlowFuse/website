@@ -58,7 +58,7 @@ To migrate the old style of deployments to this system a restart or stack upgrad
 
 We've fixed the following bugs in this release.
 - Deleting your only team, doesn't exit from the team UI. [#1630](https://github.com/flowforge/flowforge/issues/1630)
-- Async Team Slug Check  [#1609](https://github.com/flowforge/flowforge/issues/1609)
+- Async Team Slug Check. [#1609](https://github.com/flowforge/flowforge/issues/1609)
 - Improve communication of Device Last Seen and Status [#1599](https://github.com/flowforge/flowforge/issues/1599)
 
 
