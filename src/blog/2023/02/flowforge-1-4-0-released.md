@@ -8,7 +8,7 @@ video:
 image: /blog/2023/01/images/flowforge-130-hero.png
 ---
 
-New features include automatic device provisioning and support for staged development.
+Deploy Node-RED to many devices quickly, and allow a staged development process with the latest release of FlowForge v1.4.
 
 <!--more-->
 
