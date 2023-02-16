@@ -37,7 +37,7 @@ A new feature of 1.4 is the ability to setup staged deployments. This makes it p
 
 - It's now much easier to change the resources available to your Node-RED instance. With a few clicks a resource intensive workload can be processed faster by changing between small, medium, or large instance types. [#595](https://github.com/flowforge/flowforge/issues/595)
 
-- Show a preview of Team Library entries on click. [#1657](https://github.com/flowforge/flowforge/issues/1657)
+- Last release allows users to capture flows in a shared library to reuse in another flow, now it's possible to preview the stored flows. [#1657](https://github.com/flowforge/flowforge/issues/1657)
 
 - Add a synchronous mode for the FlowForge context store. [#17](https://github.com/flowforge/flowforge-nr-persistent-context/issues/17)
 
