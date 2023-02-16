@@ -45,7 +45,7 @@ A new feature of 1.4 is the ability to setup staged deployments. This makes it p
 
 - Added a check to ensure the team slug is unique. [#1609](https://github.com/flowforge/flowforge/issues/1609)
 
-- Optionally set snapshot as target at creation [#1527](https://github.com/flowforge/flowforge/issues/1527)
+- Optionally set snapshot as target at creation, to quickly roll out changes to remote deployments [#1527](https://github.com/flowforge/flowforge/issues/1527)
 
 - With FlowForge v1.4 some changes were made under the hood to speed up the recovery
 of Node-RED instances. On terminal failures of an instance it will now be
