@@ -33,7 +33,6 @@ A new feature of 1.4 is the ability to setup staged deployments. This makes it p
 
 <div><iframe width="560" height="315" src="https://www.youtube.com/embed/JRk-Cf7eNIo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-
 ## Improvements
 
 - It is now possible to change the project type. This includes changing the version of Node-RED being used for the project and the small/medium/large.  [#595](https://github.com/flowforge/flowforge/issues/595)
