@@ -14,7 +14,7 @@ Deploy Node-RED to many devices quickly, and allow a staged development process 
 
 We're pleased to announce version 1.4 is now available!  Keep reading for the details of what's in this release or you can watch our 1 minute roundup video of the new release above.
 
-To make it easy for everyone to experience FlowForge, we are introducing a new free 30-day trial. You can now experience the power of using FlowForge to quickly deliver Node-RED applications in a reliable, repeatable, collaborative, and secure manner. To get your free trial simply [sign up for FlowForge Cloud;](https://app.flowforge.com/account/create) no credit card is required!.
+To make it easy for everyone to experience FlowForge, we are introducing a new free 30-day trial. You can now experience the power of using FlowForge to quickly deliver Node-RED applications in a reliable, repeatable, collaborative, and secure manner. To get your free trial simply [sign up for FlowForge Cloud;](https://app.flowforge.com/account/create) no credit card is required!
 
 ## New User Features
 
