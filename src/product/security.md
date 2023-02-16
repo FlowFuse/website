@@ -75,6 +75,6 @@ corporate website is hosted at [flowforge.com](https://flowforge.com). The
 application is served at [app.flowforge.com](https://app.flowforge.com), while
 the Node-RED instances are served from \*.flowforge.cloud.
 
-MQTT traffic is served from mqtt.flowforge.cloud.
+MQTT traffic is served from mqtt.flowforge.cloud as MQTT over WebSockets.
 
 </div>
