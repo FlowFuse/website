@@ -1,8 +1,5 @@
 ---
 layout: nohero
-tags: handbook
-meta:
-    title: Handbook
 ---
 <script>
     function toggleNavList (el) {
@@ -21,15 +18,15 @@ meta:
     }
 </script>
 
-<div class="handbook ff-prose text-left pb-24" data-handbook>
+<div class="handbook ff-prose text-left pb-24" data-{{nav}}>
     <!-- Navigation -->
-    <div>
-        <ul class="handbook-nav border-r" data-el="navigation">
-            <li class="{% if "/handbook/" === page.url %}active{% endif %}">
-                <a href="/handbook">Handbook</a>
+    <div class="border-r">
+        <ul class="handbook-nav" data-el="navigation">
+            <li class="{% if "/{{ nav }}/" === page.url %}active{% endif %}">
+                <a href="/{{ nav }}">{{ nav }}</a>
             </li>
             {# {{ collections.nav.handbook.children | console | safe }} #}
-            {% for group in collections.nav.handbook.groups %}
+            {% for group in collections.nav[nav].groups %}
             {% if group.children.length > 0 %}
             <li class="handbook-nav-group">{{ group.name }}</li>
                 {% for entry in group.children %}
@@ -83,9 +80,6 @@ meta:
                 {% endfor %}
             {% endif %}
             {% endfor %}
-
-
-            
         </ul>
     </div>
     <div class="max-w-screen-lg mx-auto px-8 pt-8">
@@ -166,7 +160,7 @@ meta:
     })
 
     // All external links open in new page
-    document.querySelectorAll("[data-handbook] a").forEach((link) => {
+    document.querySelectorAll("[data-{{nav}}] a").forEach((link) => {
         try {
             if (!link.target && window.location.host !== new URL(link.href).host) {
                 link.target = "_blank";
