@@ -35,7 +35,7 @@ A new feature of 1.4 is the ability to setup staged deployments. This makes it p
 
 ## Improvements
 
-- It is now possible to change the project type. This includes changing the version of Node-RED being used for the project and the small/medium/large.  [#595](https://github.com/flowforge/flowforge/issues/595)
+- It's now much easier to change the resources available to your Node-RED instance. With a few clicks a resource intensive workload can be processed faster by changing between small, medium, or large instance types. [#595](https://github.com/flowforge/flowforge/issues/595)
 
 - Show a preview of Team Library entries on click. [#1657](https://github.com/flowforge/flowforge/issues/1657)
 
