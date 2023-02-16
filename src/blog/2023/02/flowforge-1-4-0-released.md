@@ -5,7 +5,7 @@ description: Deploy Node-RED to many devices quickly, and allow a staged develop
 date: 2023-02-16 14:00:00.0
 authors: ["ian-skerrett"]
 video: vbg4zTmUYjQ
-image: ff-r14-image.png
+image: /blog/2023/02/images/ff-r14-image.png
 ---
 
 Deploy Node-RED to many devices quickly, and allow a staged development process with the latest release of FlowForge v1.4.
