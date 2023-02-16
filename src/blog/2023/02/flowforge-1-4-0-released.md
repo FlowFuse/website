@@ -4,8 +4,8 @@ subtitle: Our second release of 2023 with some great new features to try out.
 description: Deploy Node-RED to many devices quickly, and allow a staged development process with the latest release of FlowForge v1.4.
 date: 2023-02-16 18:00:00.0
 authors: ["ian-skerrett"]
-video: 
-image: /blog/2023/01/images/flowforge-130-hero.png
+video: vbg4zTmUYjQ
+image: /blog/2023/0102/images/ff-r14-image.png
 ---
 
 Deploy Node-RED to many devices quickly, and allow a staged development process with the latest release of FlowForge v1.4.
@@ -24,14 +24,14 @@ To make it easy for everyone to experience FlowForge, we are introducing a new f
 FlowForge 1.4 now includes automatic device onboarding for fleets of devices. Simply download a FlowForge device provisioning credential to a new device or fleet of devices. On device restart, the FlowForge agent and the Node-RED snapshot will automatically be provisioned to the device. [Issue #1212](https://github.com/flowforge/flowforge/issues/1212)
 
 
-<div><iframe width="560" height="315" src="https://www.youtube.com/embed/B7XK3TUklUU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<div><iframe width="560" height="315" src="https://www.youtube.com/embed/XTVw4O4-Crg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 **Support for Staged Development**
 
 A new feature of 1.4 is the ability to setup staged deployments. This makes it possible to simply move a project between a Development > Test > Production for your Node-RED application delivery. [Issue #1580](https://github.com/flowforge/flowforge/issues/1580)
 
 
-<div><iframe width="560" height="315" src="https://www.youtube.com/embed/JRk-Cf7eNIo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<div><iframe width="560" height="315" src="https://www.youtube.com/embed/6QOmotlrwWw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ## Improvements
 
@@ -63,6 +63,9 @@ We've fixed the following bugs in this release.
 
 
 ## Contributors
+
+We'd like the thank the following for their contributions to this release:
+- [UlisesGascon](https://github.com/UlisesGascon) for their work on [#74](https://github.com/flowforge/installer/pull/74)
 
 As an open-source project, we welcome community involvement in what we're building.
 If you're interested in contributing, checkout our [guide in the docs](https://flowforge.com/docs/contribute/).
