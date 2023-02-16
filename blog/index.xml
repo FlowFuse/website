@@ -3,8 +3,91 @@
     <title>FlowForge</title>
     <link href="https://flowforge.com/blog/index.xml" rel="self"/>
     <link href="https://flowforge.com/blog"/>
-    <updated>2023-02-15T00:00:00Z</updated>
+    <updated>2023-02-16T14:00:00Z</updated>
     <id>https://flowforge.com/blog</id>
+    
+    <entry>
+        <id>https://flowforge.com/blog/2023/02/flowforge-1-4-0-released/</id>
+        <title>FlowForge v1.4 with device provisioning in bulk and staged development process</title>
+        <summary>Our second release of 2023 with some great new features to try out.</summary>
+        <updated>2023-02-16T14:00:00Z</updated>
+        <link href="https://flowforge.com/blog/2023/02/flowforge-1-4-0-released/"/>
+        <author><name>Ian Skerrett</name></author>
+        <content type="html">&lt;p&gt;Deploy Node-RED to many devices quickly, and allow a staged development process with the latest release of FlowForge v1.4.&lt;/p&gt;
+&lt;!--more--&gt;
+&lt;p&gt;Keep reading for the details of what&#39;s in this release or you can watch our 1 minute roundup video of the new release above.&lt;/p&gt;
+&lt;p&gt;To make it easy for everyone to experience FlowForge, we are introducing a new free 30-day trial. You can now experience the power of using FlowForge to quickly deliver Node-RED applications in a reliable, repeatable, collaborative, and secure manner. To get your free trial simply &lt;a href=&quot;https://app.flowforge.com/account/create&quot;&gt;sign up for FlowForge Cloud;&lt;/a&gt; no credit card is required!&lt;/p&gt;
+&lt;h2 id=&quot;new-user-features&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://flowforge.com/blog/2023/02/flowforge-1-4-0-released/#new-user-features&quot;&gt;#&amp;nbsp;&lt;/a&gt; New User Features&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;Automatic Device Provisioning&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Most prominently, FlowForge 1.4 features automatic device onboarding for fleets. Simply download a FlowForge device provisioning credential to allow quick roll-out to a whole fleet, without the need to have device specific configuration. When the agent starts, the FlowForge agent and the Node-RED snapshot will automatically be provisioned to the device and start operations. &lt;a href=&quot;https://github.com/flowforge/flowforge/issues/1212&quot;&gt;Issue #1212&lt;/a&gt;&lt;/p&gt;
+&lt;div&gt;&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/XTVw4O4-Crg&quot; title=&quot;YouTube video player&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
+&lt;p&gt;&lt;strong&gt;Support for Staged Development&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;A new feature of 1.4 is the ability to setup staged deployments. This makes it possible to simply move a project between a Development &amp;gt; Test &amp;gt; Production for your Node-RED application delivery. &lt;a href=&quot;https://github.com/flowforge/flowforge/issues/1580&quot;&gt;Issue #1580&lt;/a&gt;&lt;/p&gt;
+&lt;div&gt;&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/6QOmotlrwWw&quot; title=&quot;YouTube video player&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
+&lt;h2 id=&quot;improvements&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://flowforge.com/blog/2023/02/flowforge-1-4-0-released/#improvements&quot;&gt;#&amp;nbsp;&lt;/a&gt; Improvements&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;It&#39;s now much easier to change the resources available to your Node-RED instance. With a few clicks a resource intensive workload can be processed faster by changing between small, medium, or large instance types. &lt;a href=&quot;https://github.com/flowforge/flowforge/issues/595&quot;&gt;#595&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Last release allows users to capture flows in a shared library to reuse in another flow, now it&#39;s possible to preview the stored flows. &lt;a href=&quot;https://github.com/flowforge/flowforge/issues/1657&quot;&gt;#1657&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Add a synchronous mode for the FlowForge persisted context store, next to the asynchronous mode already available. &lt;a href=&quot;https://github.com/flowforge/flowforge-nr-persistent-context/issues/17&quot;&gt;#17&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Add a Last Seen status for devices connecting to FlowForge. &lt;a href=&quot;https://github.com/flowforge/flowforge/issues/1599&quot;&gt;#1599&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Added a check to ensure the team slug is unique. &lt;a href=&quot;https://github.com/flowforge/flowforge/issues/1609&quot;&gt;#1609&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Optionally set snapshot as target at creation, to quickly roll out changes to remote deployments &lt;a href=&quot;https://github.com/flowforge/flowforge/issues/1527&quot;&gt;#1527&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Agents are more rugged when starting up if they&#39;re unable to connect to FlowForge, and will retry to connect.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;With FlowForge v1.4 some changes were made under the hood to speed up the recovery
+of Node-RED instances. On terminal failures of an instance it will now be
+automatically be redeployed with the correct flows. This uses Kubernetes features
+and is also available if you&#39;ve installed through &lt;a href=&quot;https://flowforge.com/docs/install/kubernetes/&quot;&gt;kubernetes&lt;/a&gt;.
+To migrate the old style of deployments to this system a restart or stack upgrade is needed.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;bug-fixes&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://flowforge.com/blog/2023/02/flowforge-1-4-0-released/#bug-fixes&quot;&gt;#&amp;nbsp;&lt;/a&gt; Bug Fixes&lt;/h2&gt;
+&lt;p&gt;We&#39;ve fixed the following bugs in this release.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Deleting your only team, doesn&#39;t exit from the team UI. &lt;a href=&quot;https://github.com/flowforge/flowforge/issues/1630&quot;&gt;#1630&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Async Team Slug Check. &lt;a href=&quot;https://github.com/flowforge/flowforge/issues/1609&quot;&gt;#1609&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Improve communication of Device Last Seen and Status &lt;a href=&quot;https://github.com/flowforge/flowforge/issues/1599&quot;&gt;#1599&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;contributors&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://flowforge.com/blog/2023/02/flowforge-1-4-0-released/#contributors&quot;&gt;#&amp;nbsp;&lt;/a&gt; Contributors&lt;/h2&gt;
+&lt;p&gt;We&#39;d like the thank the following for their contributions to this release:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/UlisesGascon&quot;&gt;UlisesGascon&lt;/a&gt; for their work on &lt;a href=&quot;https://github.com/flowforge/installer/pull/74&quot;&gt;#74&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;As an open-source project, we welcome community involvement in what we&#39;re building.
+If you&#39;re interested in contributing, checkout our &lt;a href=&quot;https://flowforge.com/docs/contribute/&quot;&gt;guide in the docs&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&quot;try-it-out&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://flowforge.com/blog/2023/02/flowforge-1-4-0-released/#try-it-out&quot;&gt;#&amp;nbsp;&lt;/a&gt; Try it out&lt;/h2&gt;
+&lt;p&gt;We&#39;re confident you can have self managed FlowForge running locally in under 30 minutes.
+You can install our &lt;a href=&quot;https://flowforge.com/docs/install/local/&quot;&gt;local build&lt;/a&gt;, use &lt;a href=&quot;https://flowforge.com/docs/install/docker/&quot;&gt;Docker&lt;/a&gt;, or &lt;a href=&quot;https://flowforge.com/docs/install/kubernetes/&quot;&gt;Kubernetes&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;If you&#39;d rather use our hosted offering: &lt;a href=&quot;https://app.flowforge.com/account/create&quot;&gt;Get started for free&lt;/a&gt; on FlowForge Cloud.&lt;/p&gt;
+&lt;h2 id=&quot;upgrading-flowforge&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://flowforge.com/blog/2023/02/flowforge-1-4-0-released/#upgrading-flowforge&quot;&gt;#&amp;nbsp;&lt;/a&gt; Upgrading FlowForge&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&quot;https://app.flowforge.com/&quot;&gt;FlowForge Cloud&lt;/a&gt; is already running 1.4.&lt;/p&gt;
+&lt;p&gt;If you installed a previous version of FlowForge and want to upgrade, our documentation provides a
+guide for &lt;a href=&quot;https://flowforge.com/docs/upgrade/&quot;&gt;upgrading your FlowForge instance&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&quot;getting-help&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://flowforge.com/blog/2023/02/flowforge-1-4-0-released/#getting-help&quot;&gt;#&amp;nbsp;&lt;/a&gt; Getting help&lt;/h2&gt;
+&lt;p&gt;Please check FlowForge&#39;s &lt;a href=&quot;https://flowforge.com/docs/&quot;&gt;documentation&lt;/a&gt; as the answers to many questions are covered there.&lt;/p&gt;
+&lt;p&gt;If you hit any problems with the platform please raise an &lt;a href=&quot;https://github.com/flowforge/flowforge/issues&quot;&gt;issue on GitHub&lt;/a&gt;.
+That&#39;s also a great place to send us any feedback or feature requests.&lt;/p&gt;
+&lt;p&gt;You can also get help on &lt;a href=&quot;https://discourse.nodered.org/&quot;&gt;the Node-RED forums&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;As well as in the &lt;a href=&quot;https://github.com/flowforge/flowforge/discussions&quot;&gt;forum within our Github project&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Chat with us on the &lt;code&gt;#flowforge&lt;/code&gt; channel on the &lt;a href=&quot;https://nodered.org/slack&quot;&gt;Node-RED Slack workspace&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;You can raise a support ticket by emailing &lt;a href=&quot;mailto:support@flowforge.com&quot;&gt;support@flowforge.com&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;We&#39;ve also added a live chat widget to our website, you can access it using the icon on the bottom right corner of our website. We&#39;d love to hear from you.&lt;/p&gt;
+&lt;/div&gt;&lt;/div&gt;</content>
+    </entry>
     
     <entry>
         <id>https://flowforge.com/blog/2023/02/highly-available-node-red/</id>
