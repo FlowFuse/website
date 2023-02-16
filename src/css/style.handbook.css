@@ -19,6 +19,8 @@
         background-color: theme(colors.gray.50);
         padding-left: 0.5rem;
         padding-top: 1.5rem;
+        max-height: calc(100vh - 1.5rem);
+        overflow-y: auto;
         @apply sticky top-0;
     }
 

@@ -20,8 +20,8 @@ layout: nohero
 
 <div class="handbook ff-prose text-left pb-24" data-{{nav}}>
     <!-- Navigation -->
-    <div>
-        <ul class="handbook-nav border-r" data-el="navigation">
+    <div class="border-r">
+        <ul class="handbook-nav" data-el="navigation">
             <li class="{% if "/{{ nav }}/" === page.url %}active{% endif %}">
                 <a href="/{{ nav }}">{{ nav }}</a>
             </li>
@@ -80,9 +80,6 @@ layout: nohero
                 {% endfor %}
             {% endif %}
             {% endfor %}
-
-
-            
         </ul>
     </div>
     <div class="max-w-screen-lg mx-auto px-8 pt-8">
