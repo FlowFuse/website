@@ -17,7 +17,7 @@
 
     <!-- Browser Title -->
     
-    <title>First-run &#x2022; FlowForge Docs</title>
+    <title>Docs &#x2022; FlowForge Docs</title>
     
 
     <!-- Browser Description -->
@@ -29,7 +29,7 @@
 
     <!-- Open Graph Title -->
     
-    <meta property="og:title" content="First-run &#x2022; FlowForge" />
+    <meta property="og:title" content="Docs &#x2022; FlowForge" />
     
 
     <!-- Open Graph Description -->
@@ -125,21 +125,649 @@
     
     <div class="content">
         <div class="nohero w-full pt-8 md:pt-12 ff-bg-light">
-    <div class="ff-prose container m-auto text-left max-w-4xl px-4 pb-24" data-handbook>
-    <!-- Breadcrumbs -->
-    <div class="w-full mx-auto ff-bg-light">
-        <div class="font-medium border-b pb-1">
+    <script>
+    function toggleNavList (el) {
+        const li = el.parentElement
+        li.classList.toggle('open')
+        const ul = li.nextElementSibling
+        ul.classList.toggle('open')
+        if (ul.style.maxHeight) {
+            ul.style.maxHeight = null;
+        } else {
+            if (ul.parentElement.tagName === "UL" && !ul.parentElement.classList.contains('handbook-nav')) {
+                ul.parentElement.style.maxHeight = "initial"
+            }
+            ul.style.maxHeight = ul.scrollHeight + "px";
+        } 
+    }
+</script>
+
+<div class="handbook ff-prose text-left pb-24" data-docs>
+    <!-- Navigation -->
+    <div class="border-r">
+        <ul class="handbook-nav" data-el="navigation">
+            <li class="">
+                <a href="/docs">docs</a>
+            </li>
             
-            v1.4.0
             
-            /<a class="mx-2" href="/docs">docs</a>/<a class="mx-2" href="/docs/install">install</a>/<a class="mx-2" href="/docs/install/first-run">first-run</a>
-        </div>
+            
+            <li class="handbook-nav-group">Overview</li>
+                
+                <li class="">
+                    <a href="/docs/admin/">
+                        Administering FlowForge
+                    </a>
+                    
+                    <button onclick="toggleNavList(this)">
+                        <span class="ff-icon icon-expand">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 ff-icon--down">
+  <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+</svg>
+
+                        </span>
+                        <span class="ff-icon icon-minimise">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+  <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5" />
+</svg>
+
+                        </span>
+                    </button>
+                    
+                </li>
+                
+                <ul class="handbook-nav-nested">
+                    
+                    <li class="">
+                        <a href="/docs/admin/sso/">
+                            sso
+                        </a>
+                        
+                    </li>
+                    
+                    
+                    <li class="">
+                        <a href="/docs/admin/telemetry/">
+                            telemetry
+                        </a>
+                        
+                    </li>
+                    
+                    
+                    <li class="">
+                        <a href="/docs/admin/user_management/">
+                            user_management
+                        </a>
+                        
+                    </li>
+                    
+                    
+                </ul>
+                
+                
+                <li class="">
+                    <a href="/docs/contribute/">
+                        Contributing to FlowForge
+                    </a>
+                    
+                    <button onclick="toggleNavList(this)">
+                        <span class="ff-icon icon-expand">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 ff-icon--down">
+  <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+</svg>
+
+                        </span>
+                        <span class="ff-icon icon-minimise">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+  <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5" />
+</svg>
+
+                        </span>
+                    </button>
+                    
+                </li>
+                
+                <ul class="handbook-nav-nested">
+                    
+                    <li class="">
+                        <a href="/docs/contribute/adding-template-settings/">
+                            adding-template-settings
+                        </a>
+                        
+                    </li>
+                    
+                    
+                    <li class="">
+                        <a href="/docs/contribute/api-design/">
+                            api-design
+                        </a>
+                        
+                    </li>
+                    
+                    
+                    <li class="">
+                        <a href="/docs/contribute/architecture/">
+                            architecture
+                        </a>
+                        
+                    </li>
+                    
+                    
+                    <li class="">
+                        <a href="/docs/contribute/db-migrations/">
+                            db-migrations
+                        </a>
+                        
+                    </li>
+                    
+                    
+                    <li class="">
+                        <a href="/docs/contribute/workflows/">
+                            workflows
+                        </a>
+                        
+                        <button onclick="toggleNavList(this)">
+                            <span class="ff-icon icon-expand">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 ff-icon--down">
+  <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+</svg>
+
+                            </span>
+                            <span class="ff-icon icon-minimise">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+  <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5" />
+</svg>
+
+                            </span>
+                        </button>
+                        
+                    </li>
+                    
+                    <ul class="handbook-nav-nested-2">
+                        
+                        <li class="">
+                            <a href="/docs/contribute/workflows/invite-external-user/">
+                                invite-external-user
+                            </a>
+                        </li>
+                        
+                        <li class="">
+                            <a href="/docs/contribute/workflows/login/">
+                                login
+                            </a>
+                        </li>
+                        
+                        <li class="">
+                            <a href="/docs/contribute/workflows/password-reset/">
+                                password-reset
+                            </a>
+                        </li>
+                        
+                        <li class="">
+                            <a href="/docs/contribute/workflows/project-create/">
+                                project-create
+                            </a>
+                        </li>
+                        
+                        <li class="">
+                            <a href="/docs/contribute/workflows/project-states/">
+                                project-states
+                            </a>
+                        </li>
+                        
+                        <li class="">
+                            <a href="/docs/contribute/workflows/signup/">
+                                signup
+                            </a>
+                        </li>
+                        
+                        <li class="">
+                            <a href="/docs/contribute/workflows/team-create/">
+                                team-create
+                            </a>
+                        </li>
+                        
+                    </ul>
+                    
+                    
+                </ul>
+                
+                
+                <li class="">
+                    <a href="/docs/api/">
+                        FlowForge API
+                    </a>
+                    
+                </li>
+                
+                
+                <li class="">
+                    <a href="/docs/cloud/">
+                        FlowForge Cloud
+                    </a>
+                    
+                    <button onclick="toggleNavList(this)">
+                        <span class="ff-icon icon-expand">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 ff-icon--down">
+  <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+</svg>
+
+                        </span>
+                        <span class="ff-icon icon-minimise">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+  <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5" />
+</svg>
+
+                        </span>
+                    </button>
+                    
+                </li>
+                
+                <ul class="handbook-nav-nested">
+                    
+                    <li class="">
+                        <a href="/docs/cloud/billing/">
+                            billing
+                        </a>
+                        
+                    </li>
+                    
+                    
+                </ul>
+                
+                
+                <li class="">
+                    <a href="/docs/user/">
+                        Using FlowForge
+                    </a>
+                    
+                    <button onclick="toggleNavList(this)">
+                        <span class="ff-icon icon-expand">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 ff-icon--down">
+  <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+</svg>
+
+                        </span>
+                        <span class="ff-icon icon-minimise">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+  <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5" />
+</svg>
+
+                        </span>
+                    </button>
+                    
+                </li>
+                
+                <ul class="handbook-nav-nested">
+                    
+                    <li class="">
+                        <a href="/docs/user/changestack/">
+                            changestack
+                        </a>
+                        
+                    </li>
+                    
+                    
+                    <li class="">
+                        <a href="/docs/user/concepts/">
+                            concepts
+                        </a>
+                        
+                    </li>
+                    
+                    
+                    <li class="">
+                        <a href="/docs/user/devices/">
+                            devices
+                        </a>
+                        
+                    </li>
+                    
+                    
+                    <li class="">
+                        <a href="/docs/user/envvar/">
+                            envvar
+                        </a>
+                        
+                    </li>
+                    
+                    
+                    <li class="">
+                        <a href="/docs/user/filenodes/">
+                            filenodes
+                        </a>
+                        
+                    </li>
+                    
+                    
+                    <li class="">
+                        <a href="/docs/user/logs/">
+                            logs
+                        </a>
+                        
+                    </li>
+                    
+                    
+                    <li class="">
+                        <a href="/docs/user/migration/">
+                            migration
+                        </a>
+                        
+                    </li>
+                    
+                    
+                    <li class="">
+                        <a href="/docs/user/node-red-tools/">
+                            node-red-tools
+                        </a>
+                        
+                    </li>
+                    
+                    
+                    <li class="">
+                        <a href="/docs/user/persistent-context/">
+                            persistent-context
+                        </a>
+                        
+                    </li>
+                    
+                    
+                    <li class="">
+                        <a href="/docs/user/project-settings/">
+                            project-settings
+                        </a>
+                        
+                    </li>
+                    
+                    
+                    <li class="">
+                        <a href="/docs/user/project-stages/">
+                            project-stages
+                        </a>
+                        
+                    </li>
+                    
+                    
+                    <li class="">
+                        <a href="/docs/user/projectnodes/">
+                            projectnodes
+                        </a>
+                        
+                    </li>
+                    
+                    
+                    <li class="">
+                        <a href="/docs/user/shared-library/">
+                            shared-library
+                        </a>
+                        
+                    </li>
+                    
+                    
+                    <li class="">
+                        <a href="/docs/user/snapshots/">
+                            snapshots
+                        </a>
+                        
+                    </li>
+                    
+                    
+                    <li class="">
+                        <a href="/docs/user/team/">
+                            team
+                        </a>
+                        
+                    </li>
+                    
+                    
+                </ul>
+                
+                
+            
+            
+            
+            <li class="handbook-nav-group">Running FlowForge</li>
+                
+                <li class="">
+                    <a href="/docs/install/">
+                        Installing FlowForge
+                    </a>
+                    
+                    <button onclick="toggleNavList(this)">
+                        <span class="ff-icon icon-expand">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 ff-icon--down">
+  <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+</svg>
+
+                        </span>
+                        <span class="ff-icon icon-minimise">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+  <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5" />
+</svg>
+
+                        </span>
+                    </button>
+                    
+                </li>
+                
+                <ul class="handbook-nav-nested">
+                    
+                    <li class="">
+                        <a href="/docs/install/configuration/">
+                            configuration
+                        </a>
+                        
+                    </li>
+                    
+                    
+                    <li class="">
+                        <a href="/docs/install/dns-setup/">
+                            dns-setup
+                        </a>
+                        
+                    </li>
+                    
+                    
+                    <li class="">
+                        <a href="/docs/install/docker/">
+                            docker
+                        </a>
+                        
+                        <button onclick="toggleNavList(this)">
+                            <span class="ff-icon icon-expand">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 ff-icon--down">
+  <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+</svg>
+
+                            </span>
+                            <span class="ff-icon icon-minimise">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+  <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5" />
+</svg>
+
+                            </span>
+                        </button>
+                        
+                    </li>
+                    
+                    <ul class="handbook-nav-nested-2">
+                        
+                        <li class="">
+                            <a href="/docs/install/docker/digital-ocean/">
+                                digital-ocean
+                            </a>
+                        </li>
+                        
+                        <li class="">
+                            <a href="/docs/install/docker/stacks/">
+                                stacks
+                            </a>
+                        </li>
+                        
+                    </ul>
+                    
+                    
+                    <li class="">
+                        <a href="/docs/install/email_providers/">
+                            email_providers
+                        </a>
+                        
+                    </li>
+                    
+                    
+                    <li class="">
+                        <a href="/docs/install/file-storage/">
+                            file-storage
+                        </a>
+                        
+                    </li>
+                    
+                    
+                    <li class="active">
+                        <a href="/docs/install/first-run/">
+                            first-run
+                        </a>
+                        
+                    </li>
+                    
+                    
+                    <li class="">
+                        <a href="/docs/install/kubernetes/">
+                            kubernetes
+                        </a>
+                        
+                        <button onclick="toggleNavList(this)">
+                            <span class="ff-icon icon-expand">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 ff-icon--down">
+  <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+</svg>
+
+                            </span>
+                            <span class="ff-icon icon-minimise">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+  <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5" />
+</svg>
+
+                            </span>
+                        </button>
+                        
+                    </li>
+                    
+                    <ul class="handbook-nav-nested-2">
+                        
+                        <li class="">
+                            <a href="/docs/install/kubernetes/aws/">
+                                aws
+                            </a>
+                        </li>
+                        
+                        <li class="">
+                            <a href="/docs/install/kubernetes/digital-ocean/">
+                                digital-ocean
+                            </a>
+                        </li>
+                        
+                        <li class="">
+                            <a href="/docs/install/kubernetes/stacks/">
+                                stacks
+                            </a>
+                        </li>
+                        
+                    </ul>
+                    
+                    
+                    <li class="">
+                        <a href="/docs/install/local/">
+                            local
+                        </a>
+                        
+                        <button onclick="toggleNavList(this)">
+                            <span class="ff-icon icon-expand">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 ff-icon--down">
+  <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+</svg>
+
+                            </span>
+                            <span class="ff-icon icon-minimise">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+  <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5" />
+</svg>
+
+                            </span>
+                        </button>
+                        
+                    </li>
+                    
+                    <ul class="handbook-nav-nested-2">
+                        
+                        <li class="">
+                            <a href="/docs/install/local/stacks/">
+                                stacks
+                            </a>
+                        </li>
+                        
+                    </ul>
+                    
+                    
+                </ul>
+                
+                
+                <li class="">
+                    <a href="/docs/upgrade/">
+                        Upgrading FlowForge
+                    </a>
+                    
+                    <button onclick="toggleNavList(this)">
+                        <span class="ff-icon icon-expand">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 ff-icon--down">
+  <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+</svg>
+
+                        </span>
+                        <span class="ff-icon icon-minimise">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+  <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5" />
+</svg>
+
+                        </span>
+                    </button>
+                    
+                </li>
+                
+                <ul class="handbook-nav-nested">
+                    
+                    <li class="">
+                        <a href="/docs/upgrade/open-source-to-premium/">
+                            open-source-to-premium
+                        </a>
+                        
+                    </li>
+                    
+                    
+                </ul>
+                
+                
+            
+            
+            
+            
+        </ul>
     </div>
-    <div class="w-full mx-auto ff-bg-light flex flex-col md:flex-row">
-        <!-- Main Content -->
-        <div class="flex-grow order-last md:order-first">
-            <div class="mt-6 mb-4 prose prose-blue main-content">
-                <h1 id="first-run-setup" tabindex="-1"><a class="header-anchor" href="#first-run-setup">#&nbsp;</a> First-run Setup</h1>
+    <div class="max-w-screen-lg mx-auto px-8 pt-8">
+        <!-- Breadcrumbs - Desktop -->
+        <div class="hidden w-full mx-auto ff-bg-light md:block">
+            <div class="font-medium border-b pb-1">
+                
+                v1.4.0
+                
+                /<a class="mx-2" href="/docs">docs</a>/<a class="mx-2" href="/docs/install">install</a>/<a class="mx-2" href="/docs/install/first-run">first-run</a>
+            </div>
+        </div>
+        <div class="w-full mx-auto ff-bg-light flex flex-col md:flex-row">
+            <!-- Main Content -->
+            <div class="flex-grow order-last md:order-first">
+                <div class="mt-6 mb-4 prose prose-blue main-content">
+                    <h1 id="first-run-setup" tabindex="-1"><a class="header-anchor" href="#first-run-setup">#&nbsp;</a> First-run Setup</h1>
 <p>Following a successful install, you will be able to access the platform to go
 through the initial setup.</p>
 <h2 id="1.-start-setup" tabindex="-1"><a class="header-anchor" href="#1.-start-setup">#&nbsp;</a> 1. Start setup</h2>
@@ -175,11 +803,23 @@ create your first Node-RED project.</p>
 <p>More information about using the FlowForge platform is available in the
 main <a href="../../user/"">user guide</a>.</p>
 
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="border-l">
+        <!-- Breadcrumbs - Mobile -->
+        <div class="block px-8 pt-4 w-full mx-auto ff-bg-light md:hidden">
+            <div class="font-medium border-b pb-1">
+                
+                v1.4.0
+                
+                /<a class="mx-2" href="/docs">docs</a>/<a class="mx-2" href="/docs/install">install</a>/<a class="mx-2" href="/docs/install/first-run">first-run</a>
             </div>
         </div>
         <!-- on this page -->
-        <div class="w-full md:w-64 md:ml-8 mt-4 md:mt-6 px-2">
-            <h3 class="font-medium border-b pb-1 mb-4">On this page</h3>
+        <div class="sticky top-6 w-full md:w-64 mt-4 md:mt-6 px-8">
+            <h3 class="font-medium border-b pb-1 mb-4">on this page</h3>
             <ul id="toc" class="text-sm border-b mb-4"></ul>
             <div class="text-sm pb-1 text-right mb-4"><a href="https://github.com/flowforge/flowforge/edit/main/docs/install/first-run.md">Edit this page</a></div>
             <div class="text-xs pb-1 text-right mb-4 italic">Updated: 2023-02-16 10:18:30 +0000</div>
@@ -202,35 +842,7 @@ main <a href="../../user/"">user guide</a>.</p>
         const level = parseInt(n.nodeName[1])
         const prevLevel = currentTag.length > 1 ? parseInt(currentTag[1]) : 0
 
-        // add numbering to our headers for easier navigation
-        if (prevLevel === 0) {
-            activeTier = 0
-        } else if (prevLevel > level) {
-            activeTier -= (prevLevel - level)
-            depth[activeTier] += 1
-        } else if (prevLevel < level) {
-            activeTier += 1
-            depth[activeTier] = 1
-        } else {
-            depth[activeTier] += 1
-        }
-        const hText = n.childNodes[n.childNodes.length - 1] // get the text only from our header
-        let number = ''
-        for (var nH = 0; nH <= activeTier; nH++) {
-            if (nH > 0) {
-                number += '.'
-            }
-            number += `${depth[nH]}`
-        }
-        // style top level header as '1. Header'
-        if (activeTier === 0) {
-            hText.textContent = `${number}. ${hText.textContent}`
-        } else {
-            // then style children as '1.1 - Header'
-            hText.textContent = `${number} - ${hText.textContent}`
-        }
-
-    // Render Table of Contents
+        // Render Table of Contents
         if (prevLevel > 0 && level - prevLevel < 0) {
             // we are moving left with our indent
             currentToc = toc;
@@ -254,7 +866,7 @@ main <a href="../../user/"">user guide</a>.</p>
     })
 
     // All external links open in new page
-    document.querySelectorAll("[data-handbook] a").forEach((link) => {
+    document.querySelectorAll("[data-docs] a").forEach((link) => {
         try {
             if (!link.target && window.location.host !== new URL(link.href).host) {
                 link.target = "_blank";
