@@ -109,8 +109,6 @@ module.exports = function(eleventyConfig) {
     })
 
     eleventyConfig.addFilter("toAbsoluteUrl", function(url) {
-        console.log(url)
-        console.log(new URL(url, site.baseURL).href)
         return new URL(url, site.baseURL).href;
     })
 
@@ -131,7 +129,6 @@ module.exports = function(eleventyConfig) {
                 const hierarchyB = b.url.split('/').filter(n => n)
                 return hierarchyA.length - hierarchyB.length
             }).forEach((page) => {
-                console.log(page.url)
                 // work out ToC Hierarchy
                 // split the folder URI/URL, as this defines our TOC Hierarchy
                 const hierarchy = page.url.split('/').filter(n => n)
