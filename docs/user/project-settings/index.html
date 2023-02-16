@@ -130,7 +130,7 @@
     <div class="w-full mx-auto ff-bg-light">
         <div class="font-medium border-b pb-1">
             
-            v1.3.2
+            v1.4.0
             
             /<a class="mx-2" href="/docs">docs</a>/<a class="mx-2" href="/docs/user">user</a>/<a class="mx-2" href="/docs/user/project-settings">project-settings</a>
         </div>
@@ -143,12 +143,32 @@
 <p>The Project Settings allow you to customize many aspects of your Node-RED runtime.</p>
 <p>Project Settings are split into a number of sections:</p>
 <ul>
+<li><a href="#general">General</a></li>
 <li><a href="#environment">Environment</a></li>
 <li><a href="#editor">Editor</a></li>
 <li><a href="#security">Security</a></li>
 <li><a href="#palette">Palette</a></li>
-<li><a href="#danger">Danger</a></li>
 </ul>
+<h2 id="general" tabindex="-1"><a class="header-anchor" href="#general">#&nbsp;</a> General</h2>
+<p>This section includes a number of actions you can take on the project:</p>
+<h3 id="change-stack" tabindex="-1"><a class="header-anchor" href="#change-stack">#&nbsp;</a> Change Stack</h3>
+<p>The Project Stack determines the version of Node-RED being used. If a new stack
+is available, you can use this option to updated your project.</p>
+<h3 id="copy-project" tabindex="-1"><a class="header-anchor" href="#copy-project">#&nbsp;</a> Copy Project</h3>
+<p>This allows you to create a copy of the project in your team. Alternatively, you
+can use it to export certain parts of your project into an existing project.</p>
+<p>For example, you may want to have separate 'Development' and 'Production' projects
+using different Environment Variables to point the flows at different external
+resources. You can then use the 'Export into existing project' to copy over just the
+flows when you want to update your Production instance.</p>
+<h3 id="import-project" tabindex="-1"><a class="header-anchor" href="#import-project">#&nbsp;</a> Import Project</h3>
+<p>This allows you to take existing Node-RED flow and credential files and import them
+into your project.</p>
+<p>### Suspend Project</p>
+<p>This stops the project entirely.</p>
+<p>### Delete Project</p>
+<p>If you're really sure you don't want the project anymore, this allows you to delete
+it. You cannot undo deleting a project.</p>
 <h2 id="environment" tabindex="-1"><a class="header-anchor" href="#environment">#&nbsp;</a> Environment</h2>
 <p>This allows you to manage the project's environment variables. More information
 on working with environment variables is available <a href=".././envvar"">here</a>.</p>
@@ -171,26 +191,6 @@ FlowForge.</p>
 <h2 id="palette" tabindex="-1"><a class="header-anchor" href="#palette">#&nbsp;</a> Palette</h2>
 <p>This allows you to manage what extra nodes are installed inside Node-RED, as well
 as any restrictions you want to apply to the Palette Manager within Node-RED.</p>
-<h2 id="danger" tabindex="-1"><a class="header-anchor" href="#danger">#&nbsp;</a> Danger</h2>
-<p>This section includes a number of actions you can take on the project:</p>
-<h3 id="change-stack" tabindex="-1"><a class="header-anchor" href="#change-stack">#&nbsp;</a> Change Stack</h3>
-<p>The Project Stack determines the version of Node-RED being used. If a new stack
-is available, you can use this option to updated your project.</p>
-<h3 id="copy-project" tabindex="-1"><a class="header-anchor" href="#copy-project">#&nbsp;</a> Copy Project</h3>
-<p>This allows you to create a copy of the project in your team. Alternatively, you
-can use it to export certain parts of your project into an existing project.</p>
-<p>For example, you may want to have separate 'Development' and 'Production' projects
-using different Environment Variables to point the flows at different external
-resources. You can then use the 'Export into existing project' to copy over just the
-flows when you want to update your Production instance.</p>
-<h3 id="import-project" tabindex="-1"><a class="header-anchor" href="#import-project">#&nbsp;</a> Import Project</h3>
-<p>This allows you to take existing Node-RED flow and credential files and import them
-into your project.</p>
-<p>### Suspend Project</p>
-<p>This stops the project entirely.</p>
-<p>### Delete Project</p>
-<p>If you're really sure you don't want the project anymore, this allows you to delete
-it. You cannot undo deleting a project.</p>
 
             </div>
         </div>
@@ -199,7 +199,7 @@ it. You cannot undo deleting a project.</p>
             <h3 class="font-medium border-b pb-1 mb-4">On this page</h3>
             <ul id="toc" class="text-sm border-b mb-4"></ul>
             <div class="text-sm pb-1 text-right mb-4"><a href="https://github.com/flowforge/flowforge/edit/main/docs/user/project-settings.md">Edit this page</a></div>
-            <div class="text-xs pb-1 text-right mb-4 italic">Updated: 2023-02-13 13:35:10 +0000</div>
+            <div class="text-xs pb-1 text-right mb-4 italic">Updated: 2023-02-16 10:18:30 +0000</div>
         </div>
     </div>
 </div>

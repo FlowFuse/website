@@ -17,7 +17,7 @@
 
     <!-- Browser Title -->
     
-    <title>User_management &#x2022; FlowForge Docs</title>
+    <title>Project-stages &#x2022; FlowForge Docs</title>
     
 
     <!-- Browser Description -->
@@ -29,7 +29,7 @@
 
     <!-- Open Graph Title -->
     
-    <meta property="og:title" content="User_management &#x2022; FlowForge" />
+    <meta property="og:title" content="Project-stages &#x2022; FlowForge" />
     
 
     <!-- Open Graph Description -->
@@ -38,7 +38,7 @@
     
 
     <!-- Open Graph URL -->
-    <meta property="og:url" content="https://flowforge.com/docs/admin/user_management/" />
+    <meta property="og:url" content="https://flowforge.com/docs/user/project-stages/" />
     <!-- Open Graph Image -->
     
     <meta property="og:image" content="https://flowforge.com/images/og-social-tile.jpg" />
@@ -132,28 +132,34 @@
             
             v1.4.0
             
-            /<a class="mx-2" href="/docs">docs</a>/<a class="mx-2" href="/docs/admin">admin</a>/<a class="mx-2" href="/docs/admin/user_management">user_management</a>
+            /<a class="mx-2" href="/docs">docs</a>/<a class="mx-2" href="/docs/user">user</a>/<a class="mx-2" href="/docs/user/project-stages">project-stages</a>
         </div>
     </div>
     <div class="w-full mx-auto ff-bg-light flex flex-col md:flex-row">
         <!-- Main Content -->
         <div class="flex-grow order-last md:order-first">
             <div class="mt-6 mb-4 prose prose-blue main-content">
-                <h1 id="user-management" tabindex="-1"><a class="header-anchor" href="#user-management">#&nbsp;</a> User management</h1>
-<h2 id="user-registration" tabindex="-1"><a class="header-anchor" href="#user-registration">#&nbsp;</a> User registration</h2>
-<p>Depending on where FlowForge is installed, users should or should not be allowed
-to sign up to the service. User registration can be configured in the admin panel.
-Go to &quot;Admin Settings&quot; &gt; &quot;Settings&quot; and select or deselect &quot;Allow new users to register on the login screen&quot;.</p>
-<h2 id="creating-new-users" tabindex="-1"><a class="header-anchor" href="#creating-new-users">#&nbsp;</a> Creating new users</h2>
-<p>To add new users to the platform go to &quot;Admin Settings&quot; &gt; &quot;Users&quot; and click the
-&quot;New User&quot; button. Fill out the form, and provide the new user with their password.</p>
-<p>To require users to change their password the next time they log in, use the &quot;Expire Password&quot; option
-on the &quot;Edit User&quot; dialog.</p>
-<h2 id="deleting-a-user" tabindex="-1"><a class="header-anchor" href="#deleting-a-user">#&nbsp;</a> Deleting a user</h2>
-<p>Users can only be removed if they don't own any teams and projects. As such the
-user should delete any projects and ensure their teams have alternative owners. They
-can either do this themselves or an Admin user can do it for them.</p>
-<p>Once all teams and projects are removed, the user can be removed using the option in the &quot;Edit User&quot; dialog.</p>
+                <h1 id="project-staged-deployments" tabindex="-1"><a class="header-anchor" href="#project-staged-deployments">#&nbsp;</a> Project Staged Deployments</h1>
+<p>In FlowForge it is possible to configure a DevOps pipeline for your Projects,
+these are done by configuring &quot;Stages&quot; in the Settings of a given Project.</p>
+<ol>
+<li>Navigate to your Project and click on the &quot;Settings&quot; option.</li>
+<li>Select the &quot;Stages&quot; tab</li>
+<li>Select the relevant project from the &quot;Target Project&quot; dropdown that is the next stage in your pipeline.
+For example, if your current project is &quot;My Project - Dev&quot;, your target project could be
+&quot;My Project - Staging&quot; or &quot;My Project - Production&quot;</li>
+<li>Click the &quot;Push to Stage&quot; button, and confirm that you are happy to push over the relevant contents
+to your target project</li>
+<li>You should see a confirmation alert to say this push has been successful.</li>
+<li>From here, you can click the &quot;View Target Project&quot; button, to navigate straight to the Project
+Overview of your Target Project.</li>
+<li>The Target Project will be in an &quot;importing&quot; state for a short while, and will then automatically
+restart itself with the relevant updates applied</li>
+</ol>
+<p><strong>Environment Variables</strong> - A point should be made, that when pushing to a next stage, only your environment variable keys
+will be copied over. Values must be set on your Target Project explicitely.</p>
+<p><strong>Project Settings</strong> - None of your Project Settings will be moved over (e.g. Editor, Palette or Security Setings).
+This ensures a split between your staging environments.</p>
 
             </div>
         </div>
@@ -161,7 +167,7 @@ can either do this themselves or an Admin user can do it for them.</p>
         <div class="w-full md:w-64 md:ml-8 mt-4 md:mt-6 px-2">
             <h3 class="font-medium border-b pb-1 mb-4">On this page</h3>
             <ul id="toc" class="text-sm border-b mb-4"></ul>
-            <div class="text-sm pb-1 text-right mb-4"><a href="https://github.com/flowforge/flowforge/edit/main/docs/admin/user_management.md">Edit this page</a></div>
+            <div class="text-sm pb-1 text-right mb-4"><a href="https://github.com/flowforge/flowforge/edit/main/docs/user/project-stages.md">Edit this page</a></div>
             <div class="text-xs pb-1 text-right mb-4 italic">Updated: 2023-02-16 10:18:30 +0000</div>
         </div>
     </div>
