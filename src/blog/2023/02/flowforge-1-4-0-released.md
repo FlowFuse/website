@@ -39,7 +39,7 @@ A new feature of 1.4 is the ability to setup staged deployments. This makes it p
 
 - Last release allows users to capture flows in a shared library to reuse in another flow, now it's possible to preview the stored flows. [#1657](https://github.com/flowforge/flowforge/issues/1657)
 
-- Add a synchronous mode for the FlowForge context store. [#17](https://github.com/flowforge/flowforge-nr-persistent-context/issues/17)
+- Add a synchronous mode for the FlowForge persisted context store, next to the asynchronous mode already available. [#17](https://github.com/flowforge/flowforge-nr-persistent-context/issues/17)
 
 - Add a Last Seen status for devices connecting to FlowForge. [#1599](https://github.com/flowforge/flowforge/issues/1599)
 
