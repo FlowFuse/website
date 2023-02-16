@@ -28,8 +28,8 @@ through email, or through Slack. For a full explanation, please [read their docs
 
 [brex-receipts]: https://www.brex.com/support/how-do-i-attach-receipts-to-brex-transactions/
 
-Brex can also be used to create vendor cards that allow for reoccurring payment for a monthly subscription with a vendor.
-Contact the HR manager if you require a vendor card.
+Brex can also be used to create vendor cards that allow for reoccuring payment for a montly subscription with a vendor.
+Contact the peopleops manager if you require a vendor card.
 
 ### Reimbursement
 
@@ -79,10 +79,9 @@ The company covering certain costs, such as broadband can have tax implications 
 
 #### Coworking space allowance
 
-If you want to occasionally use a separate workspace to your home, the company will cover up to $150 a month in charges for renting a desk in a co-working space. 
-
-[gh-admin]: https://github.com/flowforge/admin
-
+If you want to occasionally use a separate workspace to your home, the company
+will cover up to $150 a month in charges for renting a desk in a co-working space
+after manager approval.
 
 #### Mileage
 
@@ -94,3 +93,5 @@ For example:
  - [Netherlands](https://www.belastingdienst.nl/wps/wcm/connect/bldcontentnl/belastingdienst/zakelijk/auto_en_vervoer/auto_van_de_onderneming/autokosten/u_rijdt_in_uw_eigen_auto) - €0.19 per Km
 
 A screenshot of the route and the total distance travelled should be included with any expense claim.
+
+[gh-admin]: https://github.com/flowforge/admin

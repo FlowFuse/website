@@ -34,7 +34,8 @@ you will be required to claim statutory Parental Leave pay (if you are eligible)
 Any employee can take up to 6-weeks if they wish without requiring manager
 approval. We recommend a minimum of 4 weeks, but recognise it's a personal
 choice to make. Further leave can be requested, but should be discussed with
-your manager.
+your manager. Inform your manager of the expected new family member at least 16
+weeks before the due date to qualify to the extended parental leave.
 
 If you live in a country that offers statutory leave longer than this, then
 FlowForge will abide by this.
