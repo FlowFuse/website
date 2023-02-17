@@ -140,3 +140,14 @@ When struggling to fill the agenda you might want to think about:
 
 Further, the document should include an "Action Items" list to track what needs
 doing, and when.
+
+## Skip level meetings
+
+Meetings between levels of the organisation happen in regular 1:1s, usually held
+weekly between the manager and report. The report however might want to
+also communicate with the managers manager to keep in touch with the strategy and
+communicate feedback on what they observe directly.
+
+The adviced cadance to have these meetings depends on the wants of the report,
+but generally advised once every 6-8 weeks. As FlowForge scales, the number of
+weeks between these meetings is likely increasing.
