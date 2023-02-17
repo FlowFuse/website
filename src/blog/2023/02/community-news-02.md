@@ -18,7 +18,7 @@ If you've got something that you think we should share on our newsletters please
 ## News
 
 ### [Node-RED Ask Me Anything](https://flowforge.com/ask-me-anything/ama-nodered/)
-[![AMA Session with Nick O'Leary and Rob Marcer](https://flowforge.com/images/webinars/ama-node-red.png)](https://flowforge.com/ask-me-anything/ama-nodered/)
+[![AMA Session with Nick O'Leary and Rob Marcer](https://flowforge.com/images/webinars/ama-node-red.jpg)](https://flowforge.com/ask-me-anything/ama-nodered/)
 
 Do you have any questions about Node-RED or need some advice on a tricky issue using Node-RED? Here is your opportunity to get help from the experts.
 
