@@ -41,7 +41,7 @@ Devices are part of the licensed instances. The limit in the open source edition
 ## Add-Ons
 
 There's currently no plan for add-ons. Add-ons might be used in the future to
-allow overage on resource comsumption, for example when storing files.
+allow overage on resource consumption, for example when storing files.
 Where possible add-ons should be avoided in favor of additional features.
 
 ## Licenses

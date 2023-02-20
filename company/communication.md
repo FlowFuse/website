@@ -22,7 +22,7 @@ time in the afternoon either use e.g. `15:00` or explicitly `3 PM`.
 ### Formatting dates
 
 As there's varying standard on how to format dates, please be explicit and use
-`YYYY-MM-DD` by default. This format is unambigious, and standardized with ISO
+`YYYY-MM-DD` by default. This format is unambiguous, and standardized with ISO
 8601, meaning it can be used in tools like Google Sheets too.
 
 ## Meetings
@@ -75,7 +75,7 @@ below so you get to decide if you want more channels or not.
 
 ### Standup meetings
 
-Standup meetings are hard to scale across multiple timezones. To make standups
+Standup meetings are hard to scale across multiple timezones. To make stand-ups
 async, we're using [Geekbot](https://geekbot.com/). Geekbot will trigger each
 workday morning at 9:00 local time, when online in Slack. Everyone who's a
 member of the #standup channel in Slack will be prompted.

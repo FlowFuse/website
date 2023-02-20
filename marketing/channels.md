@@ -6,7 +6,7 @@ navTitle: Content Channels
 
 Each content type has channels which are appropriate, this table sets out which content should be posted on each channel.
 
-|Content          |Blog  |Mailing List |Twitter  |Youtube  |LinkedIn |Reddit |Node-RED Slack|Node-RED Discorse |
+|Content          |Blog  |Mailing List |Twitter  |Youtube  |LinkedIn |Reddit |Node-RED Slack|Node-RED Discourse  |
 |---              |---   |---          |---      |---      |---      |---    |---           |---               |
 |Release          |*     |             |*        |*        |*        |*      |*             |*                 |
 |Patch            |*     |             |*        |         |         |*      |*             |                  | 

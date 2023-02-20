@@ -11,7 +11,7 @@ Not everyone wants to sit at home during work, it's recommended to work at least
 one day a week outside of home. To accommodate this, you can
 [expense a coworking space](../peopleops#coworking-space-allowance).
 
-### Seperating work from private life
+### Separating work from private life
 
 Its advised to separate work and private life as much as possible. Now there's
 less of a physical barrier, it's more important to create this barrier on the

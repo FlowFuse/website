@@ -15,7 +15,7 @@ The email address for this account should be their normal @flowforge.com address
 
 ## Admin
 
-Where their role requires it they should have a separate admin account on flowforge.cloud in the format `username-admin` This account should not be a member of any teams and should only be used to adminstrate the service.
+Where their role requires it they should have a separate admin account on flowforge.cloud in the format `username-admin` This account should not be a member of any teams and should only be used to administrate the service.
 
 Because you can only have one account per email address on the platform admin accounts should have +admin added to the name eg `bob+admin@flowforge.com` Google will then automatically forward those emails to the `bob@flowforge.com` account.
 
