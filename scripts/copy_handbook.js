@@ -40,6 +40,10 @@ async function copyFiles (src, dest) {
 }
 
 (async () => {
+	  if(process.env.MANUAL_HANDBOOK_COPY) {
+			return
+		}
+
     try {
         await fs.access('../handbook')
     } catch (err) {
