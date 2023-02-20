@@ -66,7 +66,7 @@ Items on this board are put into one of the following states to indicate their p
  - 'Long' This is the long term horizon, items that we know we will want to do one day but at the moment are long term goals, typically this could be 12 months away or more.
  - 'Medium' These are items that are in the 6-12 month time frame. 
  - 'Short' These are items in the 3-6 month time frame, Often these items will get pulled into a milestone from this point depending on capacity.
- - 'Next' These are items which we should be targeting for the next milestone to be planned, We plan milestones 2-3 iterations ahead so this timeframe will typically be 2-3 months. 
+ - 'Next' These are items which we should be targeting for the next milestone to be planned, We plan milestones 2-3 iterations ahead so this time frame will typically be 2-3 months. 
  - 'Ready' This is for items which could be developed today but for various reasons have not been added to a milestone, often this will be items which have been descoped from a previous milestone but could be picked up if there is spare development capacity.
 
 As items move up the list and get closer to Next we should have a greater understanding of what the detail and demand is for that feature. This is an iterative approach and as we gain understanding on an item we will use that information to aid in reviewing its position on the board.
@@ -141,7 +141,7 @@ When picking up an unassigned item assign it to yourself and move it to the
 #### Milestones are overscheduled
 
 As stories and tasks are assigned to milestones, it's unlikely there's not
-enough work to be done. On the flipside, this means that not all scheduled epics
+enough work to be done. On the flip side, this means that not all scheduled epics
 or stories will be completed.
 
 The Product Owner/CTO have overall responsibility to ensure any 'must-have' items

@@ -91,7 +91,7 @@ We offer a number of ways that users can run the FlowForge product, we will
 always offer an open source version that has the core features. Features that
 offer higher business value or permit users to share across larger groups will
 be offered as part of our paid enterprise proposition. Our managed FlowForge
-offering is public and will generally include all features that are availble
+offering is public and will generally include all features that are available
 but may not offer certain features such as SSO where integration is required
 between the platform and an enterprise. We will offer customers the ability to
 have a dedicated managed instance if thats is a deployment model they require.

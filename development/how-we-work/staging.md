@@ -1,5 +1,5 @@
 ---
-navTitle: Staging Enviornment
+navTitle: Staging Environment
 ---
 ## Staging Environment
 
@@ -23,7 +23,7 @@ smallest instance that can be used with EKS.
 
 ### Email
 
-Amazon SES is setup on staging however it is still running in sandbox mode which means only verified address & domains can RECEIVE emails from it, this is currently limited to flowforge.com email addresses and a small set of preapproved disposable emails.
+Amazon SES is setup on staging however it is still running in sandbox mode which means only verified address & domains can RECEIVE emails from it, this is currently limited to flowforge.com email addresses and a small set of pre-approved disposable emails.
 
 There is no intention to move this from sandbox as this helps to limit access to staging.
 

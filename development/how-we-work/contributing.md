@@ -8,7 +8,7 @@ All code repositories adopt our standard linting rules found in the [flowforge/.
 
 We use [StandardJS](https://standardjs.com/), with one exception - 4 spaces not 2.
 
-If you're using VSCode, then we recommend using the [ESLint extenstion](https://github.com/Microsoft/vscode-eslint) and setting `all` for the `Eslint › Code Actions On Save: Mode` setting:
+If you're using VSCode, then we recommend using the [ESLint extension](https://github.com/Microsoft/vscode-eslint) and setting `all` for the `Eslint › Code Actions On Save: Mode` setting:
 
 <img width="429" alt="ESLint - Action on Save" src="../../images/eslint_actiononsave.png">
 
