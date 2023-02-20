@@ -14,5 +14,5 @@ information on how we run FlowForge.
  - [Principles](./principles.md)
  - [Remote work](./remote.md)
  - [Security](./security.md)
- - [Strategy](./strategy.md)
+ - [Vision](./vision.md)
  - [Values](./values.md)
