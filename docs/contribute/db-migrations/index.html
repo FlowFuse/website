@@ -820,10 +820,10 @@ happening.</p>
 <p>If a migration is adding a new constraint to an existing table, you need to consider
 very carefully what impact that could have on an existing system with real data.</p>
 <p>For example, adding a new 'unique' constraint where you cannot guarantee that
-constaint hasn't already been broken. What strategy will you use to guard against
+constraint hasn't already been broken. What strategy will you use to guard against
 that or to help recover from it? What additional testing is needed of the migration
 to verify its behaviour in those situations.</p>
-<p>The prefered method to add a new unique constraint is by adding a new index to the
+<p>The preferred method to add a new unique constraint is by adding a new index to the
 database. This is because sqlite doesn't provide a way to alter columns that doesn't
 involve dropping the whole table and triggering any cascade triggers.</p>
 
@@ -846,7 +846,7 @@ involve dropping the whole table and triggering any cascade triggers.</p>
             <h3 class="font-medium border-b pb-1 mb-4">on this page</h3>
             <ul id="toc" class="text-sm border-b mb-4"></ul>
             <div class="text-sm pb-1 text-right mb-4"><a href="https://github.com/flowforge/flowforge/edit/main/docs/contribute/db-migrations.md">Edit this page</a></div>
-            <div class="text-xs pb-1 text-right mb-4 italic">Updated: 2023-02-16 13:55:17 +0000</div>
+            <div class="text-xs pb-1 text-right mb-4 italic">Updated: 2023-02-20 15:31:24 +0100</div>
         </div>
     </div>
 </div>
