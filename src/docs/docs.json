@@ -1,8 +1,5 @@
 {
     "layout": "layouts/handbook.njk",
-    "meta": {
-        "title": "Docs"
-    },
     "nav": "docs",
     "tags": [
         "docs"
