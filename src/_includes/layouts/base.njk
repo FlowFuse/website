@@ -80,25 +80,25 @@
     {% endif %}    
 
     <script>
-        !function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.async=!0,p.src=s.api_host+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="capture identify alias people.set people.set_once set_config register register_once unregister opt_out_capturing has_opted_out_capturing opt_in_capturing reset isFeatureEnabled onFeatureFlags".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
-        posthog.init('phc_Mc5OLqVXTkLPp5ZIaxcANIvsAt9bWAsfLZ4mVzAgNHi',{api_host:'https://eu.posthog.com'})
+        // Intercept all injected script tags and set them to defer
+        const observer = new MutationObserver(mutations => {
+            mutations.forEach(({ addedNodes }) => {
+                addedNodes.forEach(node => {
+                    if(node.nodeType === 1 && node.tagName === 'SCRIPT' && node.src !== "") {
+                        node.setAttribute('defer', 'defer');
+                    }
+                })
+            })
+        })
 
-        function capture (eventName, props) {
-            if (posthog) {
-                posthog.capture(eventName, props);
-            }
-        }
-    </script>
-    <!-- Load HubSpot JS Library -->
-    <script charset="utf-8" type="text/javascript" src="//js-eu1.hsforms.net/forms/embed/v2.js"></script>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2ZH9W82QL8"></script>
-    <script>
-	window.dataLayer = window.dataLayer || [];
-	function gtag(){dataLayer.push(arguments);}
-	gtag('js', new Date());
+        observer.observe(document.documentElement, {
+            childList: true,
+            subtree: true
+        })
 
-	gtag('config', 'G-2ZH9W82QL8');
+        window.addEventListener('load', (event) => {
+            observer.disconnect()
+        })
     </script>
 </head>
 <body class="ff-website leading-normal tracking-normal gradient text-gray-500 min-h-screen flex flex-col" style="">
@@ -179,14 +179,42 @@
             </div>
         </div>
     </footer>
-    {% initClipboardJS %}
 </body>
-<script src="/js/cc.min.js"></script>
 <script>
 document.getElementById('nav-toggle').onclick = function(){
     let classes = document.getElementById("nav-content").classList;
     classes.toggle("hidden");
 }
 </script>
-<script type="text/javascript" id="hs-script-loader" async defer src="//js-eu1.hs-scripts.com/26586079.js"></script>
+
+{% initClipboardJS %}
+
+<!-- Cookie banner -->
+<script async type="text/javascript" src="/js/cc.min.js"></script>
+
+<!-- PostHog -->
+<script>
+    !function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.async=!0,p.src=s.api_host+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="capture identify alias people.set people.set_once set_config register register_once unregister opt_out_capturing has_opted_out_capturing opt_in_capturing reset isFeatureEnabled onFeatureFlags".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
+    posthog.init('phc_Mc5OLqVXTkLPp5ZIaxcANIvsAt9bWAsfLZ4mVzAgNHi',{api_host:'https://eu.posthog.com'})
+
+    function capture (eventName, props) {
+        if (posthog) {
+            posthog.capture(eventName, props);
+        }
+    }
+</script>
+
+<!-- HubSpot -->
+<script async type="text/javascript" id="hs-script-loader" src="//js-eu1.hs-scripts.com/26586079.js"></script>
+<script async type="text/javascript" charset="utf-8" src="//js-eu1.hsforms.net/forms/embed/v2.js"></script>
+
+<!-- Google tag (gtag.js) -->
+<script async type="text/javascript" src="https://www.googletagmanager.com/gtag/js?id=G-2ZH9W82QL8"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+
+gtag('config', 'G-2ZH9W82QL8');
+</script>
 </html>
