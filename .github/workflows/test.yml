@@ -4,6 +4,7 @@ on: push
 
 env:
   MANUAL_HANDBOOK_COPY: true
+  MANUAL_DOCS_COPY: true
 
 jobs:
   test-website:
@@ -14,6 +15,15 @@ jobs:
         with:
           repository: flowforge/handbook
           path: './src/handbook'
+      - uses: actions/checkout@v3
+        with:
+          repository: flowforge/flowforge
+          path: './src/docs'
+      - name: Move docs to the right location
+        run: |
+          mv src/docs/docs ./docs_temp
+          rm -rf src/docs/*
+          mv docs_temp src/docs
       - uses: actions/setup-node@v3
       - name: Install Dependencies
         run: npm install
