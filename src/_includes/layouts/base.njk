@@ -75,10 +75,7 @@
     <meta name="twitter:description" content="" />
     <meta name="twitter:site" content="@flowforgeinc" />
     <meta name="twitter:image" content="/images/og-social-tile.jpg" />
-    {% endif %}
-
-    <!-- Syntax Highlighting CSS - lazy loaded -->
-    <link rel="preload" href="https://unpkg.com/prismjs@1.20.0/themes/prism-tomorrow.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    {% endif %}    
 
     <script>
         // Intercept all injected script tags and set them to defer
@@ -190,9 +187,12 @@ document.getElementById('nav-toggle').onclick = function(){
 
 <!-- Youtube Facade -->
 <script async src="https://cdn.jsdelivr.net/npm/lite-youtube-embed@0.2.0/src/lite-yt-embed.min.js"></script>
-<link rel="preload" href="https://cdn.jsdelivr.net/npm/lite-youtube-embed@0.2.0/src/lite-yt-embed.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/lite-youtube-embed@0.2.0/src/lite-yt-embed.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
 {% initClipboardJS %}
+
+<!-- Syntax Highlighting CSS -->
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism-tomorrow.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
 <!-- Cookie banner -->
 <script async type="text/javascript" src="/js/cc.min.js"></script>
