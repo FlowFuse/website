@@ -4,11 +4,8 @@ subtitle: A technology stack for IoT
 description: MING technology stack includes key componets in all IoT solutions M - Mosquitto/MQTT, I-InfluxDB, N-Node-RED, G-Granfana
 date: 2023-02-22
 authors: ["ian-skerrett"]
-image: /blog/2023/02/images/ming-logos.png
+image: /blog/2023/02/images/tile-ming.jpg
 ---
-
-
-
 
 The folks at Balena have created a bundle they call the [MING stack](https://hub.balena.io/organizations/marc6/apps/MING), (Mosquitto/MQTT, InfluxDB, Node-RED and Grafana) which first appeared back in [2019](https://forums.balena.io/t/ming-an-iot-sensor-stack-mosquitto-influxdb-nodered-grafana/36540). It is an interesting way to look at the IoT tech stack and a pattern I have seen used many times. 
 
