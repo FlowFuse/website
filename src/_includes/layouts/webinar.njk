@@ -39,12 +39,11 @@ layout: layouts/base.njk
                 <div class="mt-6 flex flex-col">
                     <h3 class="mb-3">Register Here:</h3>
                     <script>
-                        if (hbspt) {
-                            const formId = "{{ hubspot.formId }}"
+                        function displayHubSpotForm() {
                             hbspt.forms.create({
                                 region: "eu1",
                                 portalId: "26586079",
-                                formId: formId,
+                                formId: "{{ hubspot.formId }}",
                                 onFormSubmit: function($form) {
                                     const article_title = "{{ title }}"
                                     capture('cta-webinar-register', {
@@ -54,6 +53,7 @@ layout: layouts/base.njk
                             });
                         }
                     </script>
+                    <script async type="text/javascript" charset="utf-8" src="//js-eu1.hsforms.net/forms/embed/v2.js" onload="displayHubSpotForm()"></script>
                 </div>
                 {% endif %}
                 <div class="mt-6 flex flex-col">
