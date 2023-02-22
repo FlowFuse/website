@@ -60,8 +60,10 @@
     <!-- Open Graph Image -->
     {% if image %}
     <meta property="og:image" content="{{ image | toAbsoluteUrl }}" />
+    <meta name="twitter:image" content="{{ image | toAbsoluteUrl }}" />
     {% else %}
     <meta property="og:image" content="{{ 'images/og-social-tile.jpg' | toAbsoluteUrl }}" />
+    <meta name="twitter:image" content="{{ 'images/og-social-tile.jpg' | toAbsoluteUrl }}" />
     {% endif %}
 
     {% if tags and 'posts' in tags %}
@@ -74,7 +76,6 @@
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:description" content="" />
     <meta name="twitter:site" content="@flowforgeinc" />
-    <meta name="twitter:image" content="/images/og-social-tile.jpg" />
     {% endif %}    
 
     <script>
