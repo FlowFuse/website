@@ -286,7 +286,9 @@ module.exports = function(eleventyConfig) {
         return baseUrl+originalPath.replace(/^.\//,'')
     })
     eleventyConfig.addPlugin(require("@11ty/eleventy-plugin-rss"))
-    eleventyConfig.addPlugin(pluginMermaid);
+    eleventyConfig.addPlugin(pluginMermaid, {
+        mermaid_js_src: 'https://cdn.jsdelivr.net/npm/mermaid@9.4.0/dist/mermaid.min.js',
+    });
 
     const markdownItOptions = {
         html: true,
