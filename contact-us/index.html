@@ -48,11 +48,7 @@
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:description" content="" />
     <meta name="twitter:site" content="@flowforgeinc" />
-        
-
-    <!-- HubSpot -->
-    <script type="text/javascript" charset="utf-8" src="//js-eu1.hsforms.net/forms/embed/v2.js"></script>
-    <script type="text/javascript" id="hs-script-loader" src="//js-eu1.hs-scripts.com/26586079.js"></script>
+    
 
     <script>
         // Intercept all injected script tags and set them to defer
@@ -139,15 +135,17 @@
 <div class="container m-auto text-left max-w-4xl pb-24">
   <div class="flex justify-between items-center mb-4 md:px-4 md:-mb-0 md:px-0 md:block">
     <div class="ff-bg-light product px-4 pb-24 pt-4 md:pt-12 md:p-12 md:grid grid-cols-2">
-      <img class="hidden md:w-72 md:m-auto md:block md:mt-0" src="../images/pictograms/browser_red.png" alt="Graphic of a globe, depicting 'Connectivity'."/>
-      <script charset="utf-8" type="text/javascript" src="//js-eu1.hsforms.net/forms/embed/v2.js"></script>
+      <img class="hidden md:w-72 md:m-auto md:block md:mt-0" src="../images/pictograms/browser_red.png" alt="Graphic of a globe, depicting 'Connectivity'."/>     
       <script>
-        hbspt.forms.create({
-         region: "eu1",
-         portalId: "26586079",
-         formId: "734455e5-4cda-4329-97da-07e40cda791c"
-        });
-     </script>
+        function displayHubSpotForm() {
+          hbspt.forms.create({
+            region: "eu1",
+            portalId: "26586079",
+            formId: "734455e5-4cda-4329-97da-07e40cda791c"
+          });
+        }
+      </script>
+      <script async type="text/javascript" charset="utf-8" src="//js-eu1.hsforms.net/forms/embed/v2.js" onload="displayHubSpotForm()"></script>
     </div>
   </div>
 </div>
@@ -217,6 +215,9 @@ document.getElementById('nav-toggle').onclick = function(){
 
 <!-- Syntax Highlighting CSS -->
 <link rel="preload" href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism-tomorrow.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+<!-- HubSpot Tracking -->
+<script async type="text/javascript" id="hs-script-loader" src="//js-eu1.hs-scripts.com/26586079.js"></script>
 
 <!-- Cookie banner -->
 <script async type="text/javascript" src="/js/cc.min.js"></script>

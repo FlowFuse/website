@@ -48,11 +48,7 @@
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:site" content="@flowforgeinc" />
     <meta name="twitter:creator" content="@knolleary" />
-        
-
-    <!-- HubSpot -->
-    <script type="text/javascript" charset="utf-8" src="//js-eu1.hsforms.net/forms/embed/v2.js"></script>
-    <script type="text/javascript" id="hs-script-loader" src="//js-eu1.hs-scripts.com/26586079.js"></script>
+    
 
     <script>
         // Intercept all injected script tags and set them to defer
@@ -208,17 +204,19 @@ raise an <a href="https://github.com/flowforge/flowforge/issues">issue on GitHub
             </div>
             <div class="mt-12 pt-6 flex flex-col border-t-2">
                 <h3 class="mb-6">Sign up for updates</h3>
-                <script charset="utf-8" type="text/javascript" src="//js-eu1.hsforms.net/forms/embed/v2.js"></script>
                 <script>
-                    hbspt.forms.create({
-                        region: "eu1",
-                        portalId: "26586079",
-                        formId: "159c173d-dd95-49bd-922b-ff3ef243e90c",
-                        onFormSubmit: function($form) {
-                            capture('cta-blog-subscribe', {'position': 'article'})
-                        }
-                    });
+                    function displayHubSpotForm() {
+                        hbspt.forms.create({
+                            region: "eu1",
+                            portalId: "26586079",
+                            formId: "159c173d-dd95-49bd-922b-ff3ef243e90c",
+                            onFormSubmit: function($form) {
+                                capture('cta-blog-subscribe', {'position': 'article'})
+                            }
+                        });
+                    }
                 </script>
+                <script async type="text/javascript" charset="utf-8" src="//js-eu1.hsforms.net/forms/embed/v2.js" onload="displayHubSpotForm()"></script>
             </div>
         </div>
     </div>
@@ -285,6 +283,9 @@ document.getElementById('nav-toggle').onclick = function(){
 
 <!-- Syntax Highlighting CSS -->
 <link rel="preload" href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism-tomorrow.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+<!-- HubSpot Tracking -->
+<script async type="text/javascript" id="hs-script-loader" src="//js-eu1.hs-scripts.com/26586079.js"></script>
 
 <!-- Cookie banner -->
 <script async type="text/javascript" src="/js/cc.min.js"></script>
