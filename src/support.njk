@@ -10,14 +10,16 @@ sitemapPriority: 0.8
       <img class="hidden md:w-72 md:m-auto md:block md:mt-0" src="../images/pictograms/ticket_red.png" alt="Graphic of a globe, depicting 'Connectivity'."/>
 
       <script src="https://www.google.com/recaptcha/api.js"></script>
-      <script charset="utf-8" type="text/javascript" src="//js-eu1.hsforms.net/forms/embed/v2.js"></script>
       <script>
-        hbspt.forms.create({
-          region: "eu1",
-          portalId: "26586079",
-          formId: "74ffcab1-a984-459a-871f-5751b8d69ac2"
-        });
+        function displayHubSpotForm() {
+          hbspt.forms.create({
+            region: "eu1",
+            portalId: "26586079",
+            formId: "74ffcab1-a984-459a-871f-5751b8d69ac2"
+          });
+        }
       </script>
+      <script async type="text/javascript" charset="utf-8" src="//js-eu1.hsforms.net/forms/embed/v2.js" onload="displayHubSpotForm()"></script>
     </div>
   </div>
 </div>
