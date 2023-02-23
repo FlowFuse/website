@@ -21,10 +21,20 @@ comprehensive guides, we recommend looking at:
 
 ## Paragraph
 
-Hello There, this is a paragraph
+Hello There, this is a paragraph that is split over
+multiple lines in the source, but displays as a single
+formatted paragraph.
+
+To start a new paragraph, we separate it with a blank line
+from the previous paragraph.
 
 ```md
-Hello There, this is a paragraph
+Hello There, this is a paragraph that is split over
+multiple lines in the source, but displays as a single
+formatted paragraph.
+
+To start a new paragraph, we separate it with a blank line
+from the previous paragraph.
 ```
 
 ## List - Bullet Points
