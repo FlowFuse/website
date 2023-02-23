@@ -1,5 +1,5 @@
 ---
-title: "Introduction to FlowForge: DevOps for Node-RED"
+title: "DevOps for Node-RED: An Introduction to FlowForge"
 subtitle: Join FlowForge's CTO Nick O'Leary for an introduction to FlowForge and how it provides DevOps for Node-RED.
 image: 
 date: 2023-03-30
