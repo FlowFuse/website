@@ -15,7 +15,7 @@
 
     <!-- Browser Title -->
     
-    <title>Handbook &#x2022; FlowForge</title>
+    <title>Markdown How-To &#x2022; FlowForge Handbook</title>
     
 
     <!-- Browser Description -->
@@ -27,7 +27,7 @@
 
     <!-- Open Graph Title -->
     
-    <meta property="og:title" content="Handbook &#x2022; FlowForge" />
+    <meta property="og:title" content="Markdown How-To &#x2022; FlowForge Handbook" />
     
 
     <!-- Open Graph Description -->
@@ -36,7 +36,7 @@
     
 
     <!-- Open Graph URL -->
-    <meta property="og:url" content="https://flowforge.com/handbook/" />
+    <meta property="og:url" content="https://flowforge.com/handbook/development/markdown-how-to/" />
     <!-- Open Graph Image -->
     
     <meta property="og:image" content="https://flowforge.com/images/og-social-tile.jpg" />
@@ -569,7 +569,7 @@
                     </ul>
                     
                     
-                    <li class="">
+                    <li class="active">
                         <a href="/handbook/development/markdown-how-to/">
                             Markdown How-To
                         </a>
@@ -849,75 +849,154 @@
         <div class="hidden w-full mx-auto ff-bg-light md:block">
             <div class="font-medium border-b pb-1">
                 
-                /<a class="mx-2" href="/handbook">handbook</a>
+                /<a class="mx-2" href="/handbook">handbook</a>/<a class="mx-2" href="/handbook/development">development</a>/<a class="mx-2" href="/handbook/development/markdown-how-to">markdown-how-to</a>
             </div>
         </div>
         <div class="w-full mx-auto ff-bg-light flex flex-col md:flex-row">
             <!-- Main Content -->
             <div class="flex-grow order-last md:order-first">
                 <div class="mt-6 mb-4 prose prose-blue main-content">
-                    <h2 id="introduction" tabindex="-1"><a class="header-anchor" href="#introduction">#&nbsp;</a> Introduction</h2>
-<p>This handbook contains all the information about how FlowForge Inc. is run.</p>
-<p>It's a living set of documents - they will evolve with time and expand as we learn
-and discover new things.</p>
-<p>The handbook is here for the whole company to help maintain. Pull-requests are welcome
-and strongly encouraged.</p>
-<h3 id="company" tabindex="-1"><a class="header-anchor" href="#company">#&nbsp;</a> Company</h3>
+                    <h1 id="markdown-how-to" tabindex="-1"><a class="header-anchor" href="#markdown-how-to">#&nbsp;</a> Markdown How-To</h1>
+<p>This is a very short reference guide for those trying to write Markdown. For more
+comprehensive guides, we recommend looking at:</p>
 <ul>
-<li><a href="./company/values"">Values</a></li>
-<li><a href="./company/strategy"">Strategy</a></li>
-<li><a href="./operations"">Operations</a></li>
-<li><a href="./product"">Product</a></li>
+<li><a href="https://www.markdownguide.org/cheat-sheet/">Markdown Guide's Cheat Sheet</a></li>
+<li><a href="https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax">GitHub's Getting Started with Markdown Guide</a></li>
 </ul>
-<h3 id="development-%26-design-practices" tabindex="-1"><a class="header-anchor" href="#development-%26-design-practices">#&nbsp;</a> Development &amp; Design Practices</h3>
-<ul>
-<li><a href="./design"">Design</a></li>
-<li><a href="./development"">Development</a></li>
-<li><a href="./marketing/videos"">Videos</a></li>
-</ul>
-<h3 id="sales-and-marketing" tabindex="-1"><a class="header-anchor" href="#sales-and-marketing">#&nbsp;</a> Sales and Marketing</h3>
-<ul>
-<li><a href="./sales"">Sales</a></li>
-<li><a href="./marketing"">Marketing &amp; Communication</a></li>
-</ul>
-<h3 id="internal-operations" tabindex="-1"><a class="header-anchor" href="#internal-operations">#&nbsp;</a> Internal Operations</h3>
-<ul>
-<li><a href="./company/communication"">Communication</a></li>
-<li><a href="./peopleops"">PeopleOps</a></li>
-<li><a href="./company/security"">Security</a></li>
-</ul>
-<h3 id="about-the-handbook" tabindex="-1"><a class="header-anchor" href="#about-the-handbook">#&nbsp;</a> About the Handbook</h3>
-<p>The FlowForge handbook is inspired by the <a href="https://about.gitlab.com/handbook/about/">GitLab handbook</a>.
-As an all-remote company, we share <a href="https://about.gitlab.com/handbook/about/#advantages">their rationale</a> for having a handbook.</p>
-<p>The aim is to avoid institutional knowledge building up inside our heads without
-also being written down for others to share. We could do that all on the internal
-Google Drive, but by publishing in the handbook it allows for an open and honest
-conversation about what we do.</p>
-<h4 id="contributing" tabindex="-1"><a class="header-anchor" href="#contributing">#&nbsp;</a> Contributing</h4>
-<p>The handbook is maintained on <a href="https://github.com/flowforge/handbook">GitHub</a> and contributions can be made through pull-requests.</p>
-<p>All changes merged to the <code>main</code> branch will be automatically deployed to the handbook on the
-<a href="https://flowforge.com/handbook">FlowForge website</a>.</p>
-<h4 id="private-information" tabindex="-1"><a class="header-anchor" href="#private-information">#&nbsp;</a> Private information</h4>
-<p>Whilst instinctively we want to be open in all we do, there will inevitably by content that is not appropriate
-to make public. That content should be shared on the FlowForge Google Drive.</p>
-<h2 id="building-the-site-locally" tabindex="-1"><a class="header-anchor" href="#building-the-site-locally">#&nbsp;</a> Building the site locally</h2>
-<p>To run a local copy of the handbook you first need to clone the website and the handbook into side by side directories.</p>
-<p>Once you have them both cloned, open a <strong>bash</strong> terminal in the website root directory and install the project dependencies. Then, run the website's eleventy server:</p>
-<p>From the website directory:</p>
+<h2 id="header" tabindex="-1"><a class="header-anchor" href="#header">#&nbsp;</a> Header</h2>
 
 <div style="position: relative">
-  <pre class="language-bash"><code id="code-128"class="language-bash"><span class="token function">npm</span> <span class="token function">install</span><br><br><span class="token function">npm</span> start</code></pre>
+  <pre class="language-md"><code id="code-21"class="language-md"><span class="token title important"><span class="token punctuation">#</span> First-Tier Header</span><br><span class="token title important"><span class="token punctuation">##</span> Second-Tier Header</span><br><span class="token title important"><span class="token punctuation">###</span> Third-Tier Header</span><br><span class="token title important"><span class="token punctuation">####</span> Fourth-Tier Header</span></code></pre>
 
   <button class="code-copy "
-    data-clipboard-target="#code-128"
+    data-clipboard-target="#code-21"
     style="position: absolute; top: 7.5px; right: 6px; cursor: pointer; outline: none; opacity: 0.8;" title="Copy">
     <span>
       <span style="font-size: 15px; opacity: 0.8;" class="mdi mdi-content-copy"></span>
     </span>
   </button>
 </div>
-<p>This will run the website on http://localhost:8080, and then you can access the Handbook at http://localhost:8080/handbook. This will automatically reload whenever any content is changed.</p>
-<p><strong>Note:</strong> if you modify any of the Handbook's CSS, it may take a while for the website to recognise the changes. As a shortcut, you can run <code>npm run tailwind</code> to rebuild the CSS content.</p>
+<h2 id="paragraph" tabindex="-1"><a class="header-anchor" href="#paragraph">#&nbsp;</a> Paragraph</h2>
+<p>Hello There, this is a paragraph</p>
+
+<div style="position: relative">
+  <pre class="language-md"><code id="code-28"class="language-md">Hello There, this is a paragraph</code></pre>
+
+  <button class="code-copy "
+    data-clipboard-target="#code-28"
+    style="position: absolute; top: 7.5px; right: 6px; cursor: pointer; outline: none; opacity: 0.8;" title="Copy">
+    <span>
+      <span style="font-size: 15px; opacity: 0.8;" class="mdi mdi-content-copy"></span>
+    </span>
+  </button>
+</div>
+<h2 id="list---bullet-points" tabindex="-1"><a class="header-anchor" href="#list---bullet-points">#&nbsp;</a> List - Bullet Points</h2>
+<ul>
+<li>this is a bullet point list</li>
+<li>this is another item in the list</li>
+</ul>
+
+<div style="position: relative">
+  <pre class="language-md"><code id="code-44"class="language-md"><span class="token list punctuation">-</span> this is a bullet point list<br><span class="token list punctuation">-</span> this is another item in the list</code></pre>
+
+  <button class="code-copy "
+    data-clipboard-target="#code-44"
+    style="position: absolute; top: 7.5px; right: 6px; cursor: pointer; outline: none; opacity: 0.8;" title="Copy">
+    <span>
+      <span style="font-size: 15px; opacity: 0.8;" class="mdi mdi-content-copy"></span>
+    </span>
+  </button>
+</div>
+<h2 id="list---numbered" tabindex="-1"><a class="header-anchor" href="#list---numbered">#&nbsp;</a> List - Numbered</h2>
+<ol>
+<li>this is a numbered list</li>
+<li>this is another item in the list</li>
+</ol>
+
+<div style="position: relative">
+  <pre class="language-md"><code id="code-60"class="language-md"><span class="token list punctuation">1.</span> this is a numbered list<br><span class="token list punctuation">2.</span> this is another item in the list</code></pre>
+
+  <button class="code-copy "
+    data-clipboard-target="#code-60"
+    style="position: absolute; top: 7.5px; right: 6px; cursor: pointer; outline: none; opacity: 0.8;" title="Copy">
+    <span>
+      <span style="font-size: 15px; opacity: 0.8;" class="mdi mdi-content-copy"></span>
+    </span>
+  </button>
+</div>
+<h2 id="text-format---italic" tabindex="-1"><a class="header-anchor" href="#text-format---italic">#&nbsp;</a> Text Format - Italic</h2>
+<p><em>this will be italic</em></p>
+
+<div style="position: relative">
+  <pre class="language-md"><code id="code-67"class="language-md"><span class="token italic"><span class="token punctuation">*</span><span class="token content">this will be italic</span><span class="token punctuation">*</span></span></code></pre>
+
+  <button class="code-copy "
+    data-clipboard-target="#code-67"
+    style="position: absolute; top: 7.5px; right: 6px; cursor: pointer; outline: none; opacity: 0.8;" title="Copy">
+    <span>
+      <span style="font-size: 15px; opacity: 0.8;" class="mdi mdi-content-copy"></span>
+    </span>
+  </button>
+</div>
+<h2 id="text-format---italic-1" tabindex="-1"><a class="header-anchor" href="#text-format---italic-1">#&nbsp;</a> Text Format - Italic</h2>
+<p><strong>this will be bold</strong></p>
+
+<div style="position: relative">
+  <pre class="language-md"><code id="code-74"class="language-md"><span class="token bold"><span class="token punctuation">**</span><span class="token content">this will be bold</span><span class="token punctuation">**</span></span></code></pre>
+
+  <button class="code-copy "
+    data-clipboard-target="#code-74"
+    style="position: absolute; top: 7.5px; right: 6px; cursor: pointer; outline: none; opacity: 0.8;" title="Copy">
+    <span>
+      <span style="font-size: 15px; opacity: 0.8;" class="mdi mdi-content-copy"></span>
+    </span>
+  </button>
+</div>
+<h2 id="links" tabindex="-1"><a class="header-anchor" href="#links">#&nbsp;</a> Links</h2>
+<p><a href="http://localhost:8080/blog/2023/02/flowforge-1-4-0-released/">this will be a link</a></p>
+
+<div style="position: relative">
+  <pre class="language-md"><code id="code-81"class="language-md"><span class="token url">[<span class="token content">this will be a link</span>](<span class="token url">http://localhost:8080/blog/2023/02/flowforge-1-4-0-released/</span>)</span></code></pre>
+
+  <button class="code-copy "
+    data-clipboard-target="#code-81"
+    style="position: absolute; top: 7.5px; right: 6px; cursor: pointer; outline: none; opacity: 0.8;" title="Copy">
+    <span>
+      <span style="font-size: 15px; opacity: 0.8;" class="mdi mdi-content-copy"></span>
+    </span>
+  </button>
+</div>
+<h2 id="quoting" tabindex="-1"><a class="header-anchor" href="#quoting">#&nbsp;</a> Quoting</h2>
+<blockquote>
+<p>this will quote some text</p>
+</blockquote>
+
+<div style="position: relative">
+  <pre class="language-md"><code id="code-90"class="language-md"><span class="token blockquote punctuation">></span> this will quote some text</code></pre>
+
+  <button class="code-copy "
+    data-clipboard-target="#code-90"
+    style="position: absolute; top: 7.5px; right: 6px; cursor: pointer; outline: none; opacity: 0.8;" title="Copy">
+    <span>
+      <span style="font-size: 15px; opacity: 0.8;" class="mdi mdi-content-copy"></span>
+    </span>
+  </button>
+</div>
+<h2 id="code-example" tabindex="-1"><a class="header-anchor" href="#code-example">#&nbsp;</a> Code Example</h2>
+<pre><code>this will write the content as if it is code
+</code></pre>
+
+<div style="position: relative">
+  <pre class="language-md"><code id="code-95"class="language-md"><span class="token code"><span class="token punctuation">```</span><br><span class="token code-block">this will write the content as if it is code</span><br><span class="token punctuation">```</span></span></code></pre>
+
+  <button class="code-copy "
+    data-clipboard-target="#code-95"
+    style="position: absolute; top: 7.5px; right: 6px; cursor: pointer; outline: none; opacity: 0.8;" title="Copy">
+    <span>
+      <span style="font-size: 15px; opacity: 0.8;" class="mdi mdi-content-copy"></span>
+    </span>
+  </button>
+</div>
 
                 </div>
             </div>
@@ -928,14 +1007,14 @@ to make public. That content should be shared on the FlowForge Google Drive.</p>
         <div class="block px-8 pt-4 w-full mx-auto ff-bg-light md:hidden">
             <div class="font-medium border-b pb-1">
                 
-                /<a class="mx-2" href="/handbook">handbook</a>
+                /<a class="mx-2" href="/handbook">handbook</a>/<a class="mx-2" href="/handbook/development">development</a>/<a class="mx-2" href="/handbook/development/markdown-how-to">markdown-how-to</a>
             </div>
         </div>
         <!-- on this page -->
         <div class="sticky top-6 w-full md:w-64 mt-4 md:mt-6 px-8">
             <h3 class="font-medium border-b pb-1 mb-4">on this page</h3>
             <ul id="toc" class="text-sm border-b mb-4"></ul>
-            <div class="text-sm pb-1 text-right mb-4"><a href="https://github.com/flowforge/handbook/edit/main/README.md">Edit this page</a></div>
+            <div class="text-sm pb-1 text-right mb-4"><a href="https://github.com/flowforge/handbook/edit/main/development/markdown-how-to.md">Edit this page</a></div>
             <div class="text-xs pb-1 text-right mb-4 italic">Updated: 2023-02-23 11:06:26 +0000</div>
         </div>
     </div>
