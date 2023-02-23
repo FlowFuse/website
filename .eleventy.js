@@ -8,6 +8,7 @@ const markdownIt = require("markdown-it");
 const markdownItAnchor = require("markdown-it-anchor");
 const markdownItFootnote = require("markdown-it-footnote");
 const spacetime = require("spacetime");
+const { minify } = require("terser");
 
 const heroGen = require("./lib/post-hero-gen.js");
 const site = require("./src/_data/site");
@@ -175,6 +176,18 @@ module.exports = function(eleventyConfig) {
         }
         return baseUrl+originalPath.replace(/^.\//,'')
     })
+
+    // Custom async filters
+    eleventyConfig.addNunjucksAsyncFilter("jsmin", async function (code, callback) {
+        try {
+            const minified = await minify(code);
+            callback(null, minified.code);
+        } catch (err) {
+            console.error("Terser error: ", err);
+            // Fail gracefully.
+            callback(null, code);
+        }
+    });
 
     // Create a collection for sidebar navigation
     eleventyConfig.addCollection('nav', function(collection) {

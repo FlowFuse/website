@@ -78,27 +78,8 @@
     <meta name="twitter:site" content="@flowforgeinc" />
     {% endif %}
 
-    <script>
-        // Intercept all injected script tags and set them to defer
-        const observer = new MutationObserver(mutations => {
-            mutations.forEach(({ addedNodes }) => {
-                addedNodes.forEach(node => {
-                    if(node.nodeType === 1 && node.tagName === 'SCRIPT' && node.src !== "") {
-                        node.setAttribute('defer', 'defer');
-                    }
-                })
-            })
-        })
-
-        observer.observe(document.documentElement, {
-            childList: true,
-            subtree: true
-        })
-
-        window.addEventListener('load', (event) => {
-            observer.disconnect()
-        })
-    </script>
+    {% set js %}{% include "base.js" %}{% endset %}
+    <script>{{ js | jsmin | safe }}</script>
 </head>
 <body class="ff-website leading-normal tracking-normal gradient text-gray-500 min-h-screen flex flex-col" style="">
     <div class="flex-grow base">
