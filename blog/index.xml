@@ -321,24 +321,24 @@ the impact based on our expected platform growth.&lt;/li&gt;
     </entry>
     
     <entry>
-        <id>https://flowforge.com/blog/2023/01/3-quick-node-red-tips-1/</id>
+        <id>https://flowforge.com/blog/2023/02/3-quick-node-red-tips-1/</id>
         <title>3 Quick Tips for Using Node-RED</title>
         <summary>Save yourself time when working on Node-RED with these three tips.</summary>
         <updated>2023-02-07T18:00:00Z</updated>
-        <link href="https://flowforge.com/blog/2023/01/3-quick-node-red-tips-1/"/>
+        <link href="https://flowforge.com/blog/2023/02/3-quick-node-red-tips-1/"/>
         <author><name>Rob Marcer</name></author>
         <content type="html">&lt;p&gt;There is usually more than one way to complete a given task in software and Node-RED is no exception. In this blog post we are going to share three useful tips to save yourself time when working on your flows.&lt;/p&gt;
 &lt;!--more--&gt;
-&lt;h3 id=&quot;1.-use-control%2Bleft-click-to-search-your-nodes&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://flowforge.com/blog/2023/01/3-quick-node-red-tips-1/#1.-use-control%2Bleft-click-to-search-your-nodes&quot;&gt;#&amp;nbsp;&lt;/a&gt; 1. Use control+left-click to search your nodes&lt;/h3&gt;
+&lt;h3 id=&quot;1.-use-control%2Bleft-click-to-search-your-nodes&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://flowforge.com/blog/2023/02/3-quick-node-red-tips-1/#1.-use-control%2Bleft-click-to-search-your-nodes&quot;&gt;#&amp;nbsp;&lt;/a&gt; 1. Use control+left-click to search your nodes&lt;/h3&gt;
 &lt;p&gt;Sometimes it&#39;s quicker to search for a node using its name rather than scrolling through the palette. Simply hold control then left-click to bring up a searchable list.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://flowforge.com/blog/2023/01/images/load-node.gif&quot; alt=&quot;Select a node without having to use the palette&quot; title=&quot;Select a node without having to use the palette&quot; /&gt;&lt;/p&gt;
-&lt;h3 id=&quot;2.-split-sections-of-your-code-using-the-link-nodes&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://flowforge.com/blog/2023/01/3-quick-node-red-tips-1/#2.-split-sections-of-your-code-using-the-link-nodes&quot;&gt;#&amp;nbsp;&lt;/a&gt; 2. Split sections of your code using the link nodes&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&quot;https://flowforge.com/blog/2023/02/images/load-node.gif&quot; alt=&quot;Select a node without having to use the palette&quot; title=&quot;Select a node without having to use the palette&quot; /&gt;&lt;/p&gt;
+&lt;h3 id=&quot;2.-split-sections-of-your-code-using-the-link-nodes&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://flowforge.com/blog/2023/02/3-quick-node-red-tips-1/#2.-split-sections-of-your-code-using-the-link-nodes&quot;&gt;#&amp;nbsp;&lt;/a&gt; 2. Split sections of your code using the link nodes&lt;/h3&gt;
 &lt;p&gt;If you want to separate your flow into two distinct sections, link nodes are a great way to format your work. As we covered in our blog on &lt;a href=&quot;https://flowforge.com/blog/2022/12/node-red-flow-best-practice&quot;&gt;Node-RED best practices&lt;/a&gt;, the combination of link nodes and grouped flows is very powerful.&lt;/p&gt;
 &lt;p&gt;To split your flow select the input and output nodes then right click, select &#39;Show Action List&#39; and then type &#39;split&#39;. Select &#39;Split wire with link nodes&#39;.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://flowforge.com/blog/2023/01/images/split-with-link.gif&quot; alt=&quot;Split your nodes with link nodes&quot; title=&quot;Split your nodes with link nodes&quot; /&gt;&lt;/p&gt;
-&lt;h3 id=&quot;3.-link-multiple-inputs-and-outputs-in-one-command&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://flowforge.com/blog/2023/01/3-quick-node-red-tips-1/#3.-link-multiple-inputs-and-outputs-in-one-command&quot;&gt;#&amp;nbsp;&lt;/a&gt; 3. Link multiple inputs and outputs in one command&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&quot;https://flowforge.com/blog/2023/02/images/split-with-link.gif&quot; alt=&quot;Split your nodes with link nodes&quot; title=&quot;Split your nodes with link nodes&quot; /&gt;&lt;/p&gt;
+&lt;h3 id=&quot;3.-link-multiple-inputs-and-outputs-in-one-command&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://flowforge.com/blog/2023/02/3-quick-node-red-tips-1/#3.-link-multiple-inputs-and-outputs-in-one-command&quot;&gt;#&amp;nbsp;&lt;/a&gt; 3. Link multiple inputs and outputs in one command&lt;/h3&gt;
 &lt;p&gt;Once a switch node has several outputs it can be slow to manually wire each to the new node. Using the action menu (right click), select &#39;Show Action List&#39; then &#39;Wire Node to Multiple&#39; this option will join everything up in one step.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://flowforge.com/blog/2023/01/images/join-wires.gif&quot; alt=&quot;Link multiple inputs and outputs in one command&quot; title=&quot;Quickly link multiple nodes in Node-RED&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://flowforge.com/blog/2023/02/images/join-wires.gif&quot; alt=&quot;Link multiple inputs and outputs in one command&quot; title=&quot;Quickly link multiple nodes in Node-RED&quot; /&gt;&lt;/p&gt;
 &lt;p&gt;We hope you found these tips useful, if you&#39;d like to suggest some of your own tips which you think we should share in our future blog posts please &lt;a href=&quot;mailto:contact@flowforge.com&quot;&gt;get in touch&lt;/a&gt;.&lt;/p&gt;
 </content>
     </entry>
