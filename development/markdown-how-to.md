@@ -2,10 +2,21 @@
 navTitle: Markdown How-To
 ---
 
-## Markdown Cheatlist
+# Markdown How-To
+
+This is a very short reference guide for those trying to write Markdown. For more
+comprehensive guides, we recommend looking at:
+
+ - [Markdown Guide's Cheat Sheet](https://www.markdownguide.org/cheat-sheet/)
+ - [GitHub's Getting Started with Markdown Guide](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax)
+
+## Header
 
 ```md
-## Markdown Cheatlist
+# First-Tier Header
+## Second-Tier Header
+### Third-Tier Header
+#### Fourth-Tier Header
 ```
 
 ## Paragraph
