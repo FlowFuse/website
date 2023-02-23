@@ -10,7 +10,7 @@ hubspot:
     formId: b4ec9aa1-8648-47b3-b908-ec8597e8735d
 ---
 
-**Join Nick O'Leary, CTO of FlowForge and co-creator of Node-RED, as he presents an in-depth webinar showcasing how FlowForge delivers reliable and secure Node-RED applications in a continuous, collaborative manner.npm start**
+**Join Nick O'Leary, CTO of FlowForge and co-creator of Node-RED, as he presents an in-depth webinar showcasing how FlowForge delivers reliable and secure Node-RED applications in a continuous, collaborative manner.**
 
 <!--more-->
 
