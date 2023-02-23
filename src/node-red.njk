@@ -72,7 +72,7 @@ sitemapPriority: 0.8
             <div class="-mt-16 px-6 sm:px-0">
                 <h3>Reasons why Node-RED is so popular:</h3>
                 <ul>
-                    {% for reason in content['node-red'].reasons %}
+                    {% for reason in nodeRed.reasons %}
                     <li>{{ reason | safe }}</li>
                     {% endfor %}
                 </ul>
@@ -84,7 +84,7 @@ sitemapPriority: 0.8
 <div class="w-full ff-bg-light px-6 pb-32 sm:px-0 ff-prose">
     <div class="container m-auto max-w-4xl prose">
         <div class="m-auto w-full">
-            {% for faq in content['node-red'].faqs %}
+            {% for faq in nodeRed.faqs %}
             <div>
                 <h3 class="flex items-center w-full m-0 gap-6">
                     <span>{{ faq.question }}</span>
