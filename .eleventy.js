@@ -18,18 +18,21 @@ module.exports = function(eleventyConfig) {
 
     eleventyConfig.ignores.delete("src/handbook");
 
+    // Layout aliases
     eleventyConfig.addLayoutAlias('default', 'layouts/base.njk');
     eleventyConfig.addLayoutAlias('page', 'layouts/page.njk');
     eleventyConfig.addLayoutAlias('nohero', 'layouts/nohero.njk');
     eleventyConfig.addLayoutAlias('redirect', 'layouts/redirect.njk');
     
-    eleventyConfig.addPassthroughCopy("src/CNAME");
-    eleventyConfig.addPassthroughCopy({"src/favicon/*":"/"});
-    eleventyConfig.addPassthroughCopy("src/.well-known")
     eleventyConfig.addPassthroughCopy("src/**/images/**/*");
     eleventyConfig.addPassthroughCopy("src/**/videos/**/*");
+	// Copy the contents of the `public` folder to the output folder
+	eleventyConfig.addPassthroughCopy({
+		"src/public/": "/",
+	});
 
-    eleventyConfig.addPassthroughCopy({ 'src/robots.txt': '/robots.txt' }); // Put robots.txt in root
+    // Watch content images for the image pipeline
+	eleventyConfig.addWatchTarget("src/**/*.{svg,webp,png,jpeg}");
 
     // Custom filters
     eleventyConfig.addFilter("head", (array, n) => {
