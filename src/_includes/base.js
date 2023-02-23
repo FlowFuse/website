@@ -1,3 +1,8 @@
+/**
+ * Base.js, included on all pages
+ * Blocks some third party scripts and sets all dynamically added scripts to use defer
+ */
+
 // Third party injected scripts that are not wanted
 const blockedScripts = [
     /hs-banner.com/ // HubSpot cookie banner that's loaded even if not used
@@ -6,30 +11,6 @@ const blockedScripts = [
 function needsToBeBlocked(src) {
     return blockedScripts.some((blockedScript) => blockedScript.test(src)) 
 }
-
-// Intercept all injected script tags, set them to defer, remove blocked scripts
-const observer = new MutationObserver(mutations => {
-    mutations.forEach(({ addedNodes }) => {
-        addedNodes.forEach(node => {
-            if(node.nodeType === 1 && node.tagName === 'SCRIPT' && node.src !== "") {
-                if (needsToBeBlocked(node.src)) {
-                    node.remove() // Doesn't catch dynamically added scripts (handled below)
-                } else {
-                    node.setAttribute('defer', 'defer');
-                }
-            }
-        })
-    })
-})
-
-observer.observe(document.documentElement, {
-    childList: true,
-    subtree: true
-})
-
-window.addEventListener('load', (event) => {
-    observer.disconnect()
-})
 
 // Patch document.createElement to allow blocking of unwanted scripts injected externally
 const createElementBackup = document.createElement
@@ -43,6 +24,9 @@ document.createElement = function(...args) {
     const scriptElt = createElementBackup.bind(document)(...args)
 
     const originalSetAttribute = scriptElt.setAttribute.bind(scriptElt)
+
+    // Always set the defer flag
+    originalSetAttribute('defer', 'defer')
 
     // Define getters / setters to ensure that the script type is properly set
     Object.defineProperties(scriptElt, {
