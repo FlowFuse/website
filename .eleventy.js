@@ -13,10 +13,7 @@ const heroGen = require("./lib/post-hero-gen.js");
 const site = require("./src/_data/site");
 
 module.exports = function(eleventyConfig) {
-    eleventyConfig.setWatchThrottleWaitTime(200); // in milliseconds
-    eleventyConfig.setUseGitIgnore(false);
-
-    eleventyConfig.ignores.delete("src/handbook");
+    eleventyConfig.setUseGitIgnore(true); // otherwise docs and handbook are ignored
 
     // Layout aliases
     eleventyConfig.addLayoutAlias('default', 'layouts/base.njk');
