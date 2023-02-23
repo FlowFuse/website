@@ -899,7 +899,11 @@ of the Stack configuration.</p>
     })
 </script>
 
-<script async src="https://cdn.jsdelivr.net/npm/mermaid@9.4.0/dist/mermaid.min.js">mermaid.initialize({ startOnLoad: true });</script>
+<!-- MermaidJS -->
+<script type="module">
+    import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@10.0.0/dist/mermaid.esm.mjs";
+    mermaid.initialize({startOnLoad:true});
+</script>
 
 <!-- Clipboard -->
 <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/19.1.1/tooltips.min.css"  as="style" onload="this.onload=null;this.rel='stylesheet'" crossorigin="anonymous" referrerpolicy="no-referrer" />

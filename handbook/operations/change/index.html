@@ -866,7 +866,7 @@ on the <a href="https://github.com/flowforge/admin/issues/new/choose">admin repo
 <li>This is a 2 person process, someone to implement and someone to review</li>
 <li>All changes are recorded</li>
 </ul>
-<pre class="language-mermaid"><code class="language-mermaid"><span class="token keyword">flowchart</span> TD<br>    A<span class="token text string">[Create issue in cloud project detailing the changes]</span> <span class="token arrow operator">--></span>  <br>    B<span class="token text string">[Issue assigned to implementer]</span> <span class="token arrow operator">--></span> <br>    C<span class="token text string">[Second person adds approval comment]</span> <span class="token arrow operator">--></span> <br>    D<span class="token text string">[Change made on Staging]</span> <span class="token arrow operator">--></span> <br>    E<span class="token text string">[Second Person reviews staging and approves]</span> <span class="token arrow operator">--></span> <br>    F<span class="token text string">[Change Made on Production]</span> <span class="token arrow operator">--></span> <br>    G<span class="token text string">[Second Person reviews Prod and closes issue]</span></code></pre>
+<pre class="mermaid">flowchart TD&#10;    A[Create issue in cloud project detailing the changes] --&gt;  &#10;    B[Issue assigned to implementer] --&gt; &#10;    C[Second person adds approval comment] --&gt; &#10;    D[Change made on Staging] --&gt; &#10;    E[Second Person reviews staging and approves] --&gt; &#10;    F[Change Made on Production] --&gt; &#10;    G[Second Person reviews Prod and closes issue]&#10;</pre>
 
                 </div>
             </div>
@@ -940,7 +940,11 @@ on the <a href="https://github.com/flowforge/admin/issues/new/choose">admin repo
     })
 </script>
 
-<script async src="https://cdn.jsdelivr.net/npm/mermaid@9.4.0/dist/mermaid.min.js">mermaid.initialize({ startOnLoad: true });</script>
+<!-- MermaidJS -->
+<script type="module">
+    import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@10.0.0/dist/mermaid.esm.mjs";
+    mermaid.initialize({startOnLoad:true});
+</script>
 
 <!-- Clipboard -->
 <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/19.1.1/tooltips.min.css"  as="style" onload="this.onload=null;this.rel='stylesheet'" crossorigin="anonymous" referrerpolicy="no-referrer" />
