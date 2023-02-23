@@ -161,26 +161,6 @@
             <div class="w-96 max-w-full">
                 
                 <div class="mt-6 flex flex-col">
-                    <h3 class="mb-3">Register Here:</h3>
-                    <script>
-                        function displayHubSpotForm() {
-                            hbspt.forms.create({
-                                region: "eu1",
-                                portalId: "26586079",
-                                formId: "b4ec9aa1-8648-47b3-b908-ec8597e8735d",
-                                onFormSubmit: function($form) {
-                                    const article_title = "Introduction to Node-RED: 5 minutes to your first program"
-                                    capture('cta-webinar-register', {
-                                        'webinar-name': article_title
-                                    })
-                                }
-                            });
-                        }
-                    </script>
-                    <script async type="text/javascript" charset="utf-8" src="//js-eu1.hsforms.net/forms/embed/v2.js" onload="displayHubSpotForm()"></script>
-                </div>
-                
-                <div class="mt-6 flex flex-col">
                     <h3 class="mb-3">Hosted By:</h3>
                     
                     <div class="team-card--sm">
@@ -250,14 +230,6 @@ document.getElementById('nav-toggle').onclick = function(){
 <!-- Youtube Facade -->
 <script async src="https://cdn.jsdelivr.net/npm/lite-youtube-embed@0.2.0/src/lite-yt-embed.min.js"></script>
 <link rel="preload" href="https://cdn.jsdelivr.net/npm/lite-youtube-embed@0.2.0/src/lite-yt-embed.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
-<!-- Clipboard -->
-<link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/19.1.1/tooltips.min.css"  as="style" onload="this.onload=null;this.rel='stylesheet'" crossorigin="anonymous" referrerpolicy="no-referrer" />
-<script>function showTooltip(o,e){o.trigger.className.includes("tooltipped")||(o.trigger.children[0].className="tooltipped tooltipped-s",o.trigger.children[0].ariaLabel=e)}window.addEventListener("load",()=>{var o=new ClipboardJS(".code-copy");o.on("success",o=>showTooltip(o,"Copied!")),o.on("error",o=>showTooltip(o,"Failed..."))});</script>
-<script async src="https://cdn.jsdelivr.net/npm/clipboard@2.0.8/dist/clipboard.js"></script>
-
-<!-- Syntax Highlighting CSS -->
-<link rel="preload" href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism-tomorrow.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
 <!-- HubSpot Tracking -->
 <script async type="text/javascript" id="hs-script-loader" src="//js-eu1.hs-scripts.com/26586079.js"></script>
