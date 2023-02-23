@@ -1,5 +1,7 @@
+const path = require("path");
 const util = require("util");
 
+const eleventyImage = require("@11ty/eleventy-img");
 const pluginRSS = require("@11ty/eleventy-plugin-rss");
 const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 const pluginMermaid = require("@kevingimbel/eleventy-plugin-mermaid");
@@ -21,8 +23,6 @@ module.exports = function(eleventyConfig) {
     eleventyConfig.addLayoutAlias('nohero', 'layouts/nohero.njk');
     eleventyConfig.addLayoutAlias('redirect', 'layouts/redirect.njk');
     
-    eleventyConfig.addPassthroughCopy("src/**/images/**/*");
-    eleventyConfig.addPassthroughCopy("src/**/videos/**/*");
 	// Copy the contents of the `public` folder to the output folder
 	eleventyConfig.addPassthroughCopy({
 		"src/public/": "/",
@@ -175,6 +175,42 @@ module.exports = function(eleventyConfig) {
         }
         return baseUrl+originalPath.replace(/^.\//,'')
     })
+
+    // Custom Shortcodes
+	function relativeToInputPath(inputPath, relativeFilePath) {
+		let split = inputPath.split("/");
+		split.pop();
+
+		return path.resolve(split.join(path.sep), relativeFilePath);
+	}
+
+	// Eleventy Image shortcode
+	// https://www.11ty.dev/docs/plugins/image/
+	eleventyConfig.addAsyncShortcode("image", async function imageShortcode(src, alt, widths, sizes) {
+		// Full list of formats here: https://www.11ty.dev/docs/plugins/image/#output-formats
+		// Warning: Avif can be resource-intensive so take care!
+		let formats = ["avif", "webp", "auto"];
+		let file = relativeToInputPath(this.page.inputPath, src);
+		let metadata = await eleventyImage(file, {
+			widths: widths || ["auto"],
+			formats,
+			outputDir: path.join(eleventyConfig.dir.output, "img"), // Advanced usage note: `eleventyConfig.dir` works here because we’re using addPlugin.
+            filenameFormat: function (hash, src, width, format, options) {
+                const { name } = path.parse(src);
+                return `${name}-${hash}-${width}.${format}`;
+            }
+		});
+
+		// TODO loading=eager and fetchpriority=high
+		let imageAttributes = {
+			alt,
+			sizes,
+			loading: "lazy",
+			decoding: "async",
+		};
+
+		return eleventyImage.generateHTML(metadata, imageAttributes);
+	});
 
     // Create a collection for sidebar navigation
     eleventyConfig.addCollection('nav', function(collection) {
