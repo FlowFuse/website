@@ -2,7 +2,7 @@
 title: MING Stack for IoT
 subtitle: A technology stack for IoT
 description: MING technology stack includes key componets in all IoT solutions M - Mosquitto/MQTT, I-InfluxDB, N-Node-RED, G-Granfana
-date: 2023-02-22
+date: 2023-02-23
 authors: ["ian-skerrett"]
 image: /blog/2023/02/images/tile-ming.jpg
 ---
