@@ -29,6 +29,9 @@ module.exports = function(eleventyConfig) {
         "src/public/": "/",
     });
 
+    // Naive copy of images for backwards compatibility of non short-code image handling (use of <img or in CSS)
+    eleventyConfig.addPassthroughCopy("src/**/images/**/*");
+
     // Watch content images for the image pipeline
     eleventyConfig.addWatchTarget("src/**/*.{svg,webp,png,jpeg,gif}");
 
