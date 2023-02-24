@@ -23,7 +23,7 @@ layout: layouts/base.njk
             {% if heroimg %}
                 <div class="hidden md:block flex-shrink-0">
                     {% set imageDescription = ["Hero Image for ", title] | join %}
-                    {% image heroimg, imageDescription %}
+                    {% image heroimg, imageDescription, [586] %}
                 </div>
             {% endif %}
         {% else %}
