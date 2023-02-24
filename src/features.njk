@@ -27,7 +27,7 @@ meta:
                     <div class="flex-shrink-0">
                         {% set imageSrc = ["./images/pictograms/", f.icon] | join %}
                         {% set imageDescription = ["Icon depicting", description] | join %}
-                        {% image imageSrc, imageDescription, [128] %}
+                        {% image imageSrc, imageDescription, [64] %}
                     </div>
                     <h4>{{ f.title }}</h4>
                 </div>
@@ -48,27 +48,27 @@ meta:
         </div>
         <div class="mt-20 flex flex-wrap justify-center">
             <div class="company-value">
-                {% image "./images/pictograms/time.png", "Graphic of a clock, depicting 'Time'.", [256] %}
+                {% image "./images/pictograms/time.png", "Graphic of a clock, depicting 'Time'.", [128] %}
                 <h5>One-Minute Setup</h5>
             </div>
             <div class="company-value">
-                {% image "./images/pictograms/security.png", "Graphic of a padlock, depicting 'Security'.", [256] %}
+                {% image "./images/pictograms/security.png", "Graphic of a padlock, depicting 'Security'.", [128] %}
                 <h5>Enterprise Ready</h5>
             </div>
             <div class="company-value">
-                {% image "./images/pictograms/ticket.png", "Graphic of a ticket, depicting 'Ticket-Based Support'.", [256] %}
+                {% image "./images/pictograms/ticket.png", "Graphic of a ticket, depicting 'Ticket-Based Support'.", [128] %}
                 <h5>Ticket-Based Support</h5>
             </div>
             <div class="company-value">
-                {% image "./images/pictograms/community.png", "Graphic depicting 'Flexibility'.", [256] %}
+                {% image "./images/pictograms/community.png", "Graphic depicting 'Flexibility'.", [128] %}
                 <h5>Flexible Deployment</h5>
             </div>
             <div class="company-value">
-                {% image "./images/pictograms/node_catalog.png", "Graphic of nodes & wires, depicting 'Node-RED'.", [256] %}
+                {% image "./images/pictograms/node_catalog.png", "Graphic of nodes & wires, depicting 'Node-RED'.", [128] %}
                 <h5>Node-RED, Managed<br>For You</h5>
             </div>
             <div class="company-value">
-                {% image "./images/pictograms/browser.png", "Graphic of a globe, depicting FlowForge being full browser-based.", [256] %}
+                {% image "./images/pictograms/browser.png", "Graphic of a globe, depicting FlowForge being full browser-based.", [128] %}
                 <h5>Full Browser-Based</h5>
             </div>
         </div>

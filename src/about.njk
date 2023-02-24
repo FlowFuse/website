@@ -17,12 +17,12 @@ meta:
         <div class="grid grid-cols-1 md:grid-cols-2 pt-12 md:flex-row md:pt-24">
             <div class="highlight-feature pb-6 md:pb-0">
                 <h3>Node-RED</h3>
-                <img src="../images/node-red-hexagon.png" />
+                {% image "./images/node-red-hexagon.png", "Node-RED Logo", [150] %}
                 <p>Node-RED is an industry leading low-code platform that makes it easy to build applications that integrate events, data and devices. It provides the core of what we're building at FlowForge.</p>
             </div>
             <div class="highlight-feature">
                 <h3>Open Source</h3>
-                <img src="../images/pictograms/opensource_red.png" />
+                {% image "./images/pictograms/opensource_red.png", "Open Source Logo", [150] %}
                 <p>We believe strongly that Open Source lives at the heart of everything we do - both in our work to push the Node-RED project forward as well as our own FlowForge platform.</p><p>We strive to be good Open Source citizens and want to empower the community to get involved.</p>
             </div>
         </div>
@@ -38,32 +38,7 @@ meta:
             <h1 class="mb-4">Company Values</h1>
             <p>We are full open about our company values, you can read more about them in our <a href="/handbook">Handbook.</a></p>
         </div>
-        <div class="flex flex-wrap justify-center mt-12 md:mt-20">
-            <div class="company-value">
-                <img src="../images/pictograms/community.png" />
-                <h5>Community-First</h5>
-            </div>
-            <div class="company-value">
-                <img src="../images/pictograms/optimism.png" />
-                <h5>Apply Optimism</h5>
-            </div>
-            <div class="company-value">
-                <img src="../images/pictograms/candor.png" />
-                <h5>Use Candor</h5>
-            </div>
-            <div class="company-value">
-                <img src="../images/pictograms/results.png" />
-                <h5>Results, Not Hours</h5>
-            </div>
-            <div class="company-value">
-                <img src="../images/pictograms/bias_for_action.png" />
-                <h5>Bias for Action</h5>
-            </div>
-            <div class="company-value">
-                <img src="../images/pictograms/trusting.png" />
-                <h5>Be Trusting</h5>
-            </div>
-        </div>
+        {% include "values.njk" %}
     </div>
 </div>
 
@@ -76,27 +51,6 @@ meta:
             <h1 class="mb-4">Employee Benefits</h1>
             <p>Here are just some of the benefits enjoyed by our employees. We are always looking to improve and expand these too. You can read more about them in our <a href="/handbook">Handbook.</a></p>
         </div>
-        <div class="flex flex-wrap justify-center mt-12 md:mt-20">
-            <div class="company-value">
-                <img src="../images/pictograms/remote.png" />
-                <h5>Fully Remote</h5>
-            </div>
-            <div class="company-value">
-                <img src="../images/pictograms/vacation.png" />
-                <h5>Unlimited Vacation</h5>
-            </div>
-            <div class="company-value">
-                <img src="../images/pictograms/time.png" />
-                <h5>Flexible Hours</h3>
-            </div>
-            <div class="company-value">
-                <img src="../images/pictograms/equipment.png" />
-                <h5>Equipment</h5>
-            </div>
-            <div class="company-value">
-                <img src="../images/pictograms/parental_leave.png" />
-                <h5>Paid Parental Leave</h5>
-            </div>
-        </div>
+        {% include "benefits.njk" %}
     </div>
 </div>
