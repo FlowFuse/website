@@ -24,13 +24,13 @@ module.exports = function(eleventyConfig) {
     eleventyConfig.addLayoutAlias('nohero', 'layouts/nohero.njk');
     eleventyConfig.addLayoutAlias('redirect', 'layouts/redirect.njk');
     
-	// Copy the contents of the `public` folder to the output folder
-	eleventyConfig.addPassthroughCopy({
-		"src/public/": "/",
-	});
+    // Copy the contents of the `public` folder to the output folder
+    eleventyConfig.addPassthroughCopy({
+        "src/public/": "/",
+    });
 
     // Watch content images for the image pipeline
-	eleventyConfig.addWatchTarget("src/**/*.{svg,webp,png,jpeg}");
+    eleventyConfig.addWatchTarget("src/**/*.{svg,webp,png,jpeg}");
 
     // Custom filters
     eleventyConfig.addFilter("head", (array, n) => {
@@ -201,35 +201,35 @@ module.exports = function(eleventyConfig) {
         return relativeFilePath
     }
 
-	// Eleventy Image shortcode
-	// https://www.11ty.dev/docs/plugins/image/
-	eleventyConfig.addAsyncShortcode("image", async function imageShortcode(src, alt, widths, sizes) {
-		// Full list of formats here: https://www.11ty.dev/docs/plugins/image/#output-formats
-		// Warning: Avif can be resource-intensive so take care!
-		let formats = ["avif", "webp", "auto"];
-		let file = resolvedImagePath(this.page.inputPath, src);
-		let metadata = await eleventyImage(file, {
-			widths: widths ? widths.concat(widths.map((w) => w * 2)) : ["auto"],
-			formats,
-			outputDir: path.join(eleventyConfig.dir.output, "img"), // Advanced usage note: `eleventyConfig.dir` works here because we’re using addPlugin.
+    // Eleventy Image shortcode
+    // https://www.11ty.dev/docs/plugins/image/
+    eleventyConfig.addAsyncShortcode("image", async function imageShortcode(src, alt, widths, sizes) {
+        // Full list of formats here: https://www.11ty.dev/docs/plugins/image/#output-formats
+        // Warning: Avif can be resource-intensive so take care!
+        let formats = ["avif", "webp", "auto"];
+        let file = resolvedImagePath(this.page.inputPath, src);
+        let metadata = await eleventyImage(file, {
+            widths: widths ? widths.concat(widths.map((w) => w * 2)) : ["auto"],
+            formats,
+            outputDir: path.join(eleventyConfig.dir.output, "img"), // Advanced usage note: `eleventyConfig.dir` works here because we’re using addPlugin.
             filenameFormat: function (hash, src, width, format, options) {
                 const { name } = path.parse(src);
                 return `${name}-${hash}-${width}.${format}`;
             },
             svgShortCircuit: true,
-		});
+        });
         
         sizes = sizes || widths ? widths.map((width) => `(min-device-pixel-ratio: 1.25) ${width * 2}px, (min-resolution: 120dpi) ${width * 2}px, ${width}px`).join(', ') : null
 
-		let imageAttributes = {
-			alt,
-			sizes,
-			loading: "lazy",
-			decoding: "async",
-		};
+        let imageAttributes = {
+            alt,
+            sizes,
+            loading: "lazy",
+            decoding: "async",
+        };
 
-		return eleventyImage.generateHTML(metadata, imageAttributes);
-	});
+        return eleventyImage.generateHTML(metadata, imageAttributes);
+    });
 
     // Create a collection for sidebar navigation
     eleventyConfig.addCollection('nav', function(collection) {
