@@ -19,7 +19,7 @@ If you've got something that you think we should share on our newsletters please
 
 ### [Node-RED Ask Me Anything](/ask-me-anything/ama-nodered/)
 
-[![AMA Session with Nick O'Leary and Rob Marcer](/images/webinars/ama-node-red.jpg)](/ask-me-anything/ama-nodered/)
+[![AMA Session with Nick O'Leary and Rob Marcer](./images/webinars/ama-node-red.jpg)](/ask-me-anything/ama-nodered/)
 
 Do you have any questions about Node-RED or need some advice on a tricky issue using Node-RED? Here is your opportunity to get help from the experts.
 
@@ -41,12 +41,12 @@ We are currently recruiting [NodeJS Developers](https://boards.greenhouse.io/flo
 ## Node-RED in the Community
 
 ### [Twitch Streamer beats Elden Ring boss using mind control (and a little Node-RED)](https://www.vice.com/en/article/bvmqmm/watch-an-elden-ring-streamer-beat-a-boss-using-her-thoughts)
-[![Twitch Streamer beats Elden Ring boss using mind control (and a little Node-RED)](../images/twitch.webp)](https://www.vice.com/en/article/bvmqmm/watch-an-elden-ring-streamer-beat-a-boss-using-her-thoughts)
+[![Twitch Streamer beats Elden Ring boss using mind control (and a little Node-RED)](./images/twitch.webp)](https://www.vice.com/en/article/bvmqmm/watch-an-elden-ring-streamer-beat-a-boss-using-her-thoughts)
 Streamer [Perrikaryal](https://www.twitch.tv/videos/1717013810) used an electroencephalography (EEG) headset to read her brain activity which in turn sends commands via Node-RED to her gaming computer. She then proceeded to use that control method to beat one of the harder bosses in Elden Ring, a notoriously difficult game to start with. The end result is a great example of how Node-RED can link disparate tech together easily. You can [watch the full stream on Twitch](https://www.twitch.tv/videos/1722048787).
 
 ### [Run Node-RED in a web browser, client side!](https://www.linkedin.com/posts/kazuhitoyokoi_nodered-webassembly-activity-7015696090112958464-F3MA/?utm_source=share&utm_medium=member_android)
 [Kazuhito Yokoi](https://www.linkedin.com/in/kazuhitoyokoi/) has implemented an early prototype of Node-RED runtime for WebAssembly. As a demonstration, he built a simple flow which shows the current location of the International Space Station (ISS). This proof-of-concept shows that an entire Node-RED flow can be executed in a browser. We think this could be a very useful option for running Node-RED in places where it wasn’t previously practical. You can view his work on this [GitHub project](https://github.com/kazuhitoyokoi/node-red-wasm).
 
 ### [Custom Node Spotlight - Moment](https://flows.nodered.org/node/node-red-contrib-moment)
-[![Moment converting a timestamp to ISO standard date and time](../images/moment.png)](https://flows.nodered.org/node/node-red-contrib-moment)
+[![Moment converting a timestamp to ISO standard date and time](./images/moment.png)](https://flows.nodered.org/node/node-red-contrib-moment)
 Being able to easily switch dates and times from one format to another is a huge timesaver, node-red-contrib-moment makes those tasks a breeze. The package actually includes two custom nodes, the first ‘Moment’ produces a nicely formatted Date/Time string using the Moment.JS library. The second custom node ‘Humanizer’ converts time durations (time spans) into textual descriptions (e.g. 2 minutes). We recommend you keep it in mind for any flows working with time conversions.
