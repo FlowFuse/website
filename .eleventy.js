@@ -30,7 +30,7 @@ module.exports = function(eleventyConfig) {
     });
 
     // Watch content images for the image pipeline
-    eleventyConfig.addWatchTarget("src/**/*.{svg,webp,png,jpeg}");
+    eleventyConfig.addWatchTarget("src/**/*.{svg,webp,png,jpeg,gif}");
 
     // Custom filters
     eleventyConfig.addFilter("head", (array, n) => {
