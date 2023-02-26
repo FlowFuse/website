@@ -1,19 +1,20 @@
-const markdownIt = require("markdown-it")
-const markdownItAnchor = require("markdown-it-anchor")
-const markdownItFootnote = require("markdown-it-footnote")
-const codeClipboard = require("eleventy-plugin-code-clipboard");
-const spacetime = require("spacetime");
-const heroGen = require("./lib/post-hero-gen.js");
+const util = require("util");
+
+const pluginRSS = require("@11ty/eleventy-plugin-rss");
+const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 const pluginMermaid = require("@kevingimbel/eleventy-plugin-mermaid");
-const util = require('util')
-const site = require('./src/_data/site');
+const codeClipboard = require("eleventy-plugin-code-clipboard");
+const markdownIt = require("markdown-it");
+const markdownItAnchor = require("markdown-it-anchor");
+const markdownItFootnote = require("markdown-it-footnote");
+const spacetime = require("spacetime");
+
+const heroGen = require("./lib/post-hero-gen.js");
+const site = require("./src/_data/site");
 
 module.exports = function(eleventyConfig) {
     eleventyConfig.setWatchThrottleWaitTime(200); // in milliseconds
     eleventyConfig.setUseGitIgnore(false);
-
-    // Put robots.txt in root
-    eleventyConfig.addPassthroughCopy({ 'src/robots.txt': '/robots.txt' });
 
     eleventyConfig.ignores.delete("src/handbook");
 
@@ -21,13 +22,16 @@ module.exports = function(eleventyConfig) {
     eleventyConfig.addLayoutAlias('page', 'layouts/page.njk');
     eleventyConfig.addLayoutAlias('nohero', 'layouts/nohero.njk');
     eleventyConfig.addLayoutAlias('redirect', 'layouts/redirect.njk');
-    // eleventyConfig.addPassthroughCopy("src/js");
+    
     eleventyConfig.addPassthroughCopy("src/CNAME");
     eleventyConfig.addPassthroughCopy({"src/favicon/*":"/"});
     eleventyConfig.addPassthroughCopy("src/.well-known")
     eleventyConfig.addPassthroughCopy("src/**/images/**/*");
     eleventyConfig.addPassthroughCopy("src/**/videos/**/*");
 
+    eleventyConfig.addPassthroughCopy({ 'src/robots.txt': '/robots.txt' }); // Put robots.txt in root
+
+    // Custom filters
     eleventyConfig.addFilter("head", (array, n) => {
         if( n < 0 ) {
             return array.slice(n);
@@ -49,13 +53,13 @@ module.exports = function(eleventyConfig) {
             const hrs = Math.floor(mins/60)
             return `${hrs}h ${mins%60}m`
         }
-         else {
+        else {
             return `${mins} mins`
-         }
+        }
     });
 
     eleventyConfig.addFilter('inFuture', (posts) => {
-        // filter posts/webinars that only occured in the past
+        // filter posts/webinars that only occurred in the past
         if (posts) {
             return posts.filter((post) => {
                 const postDate = spacetime(post.data.date)
@@ -110,6 +114,66 @@ module.exports = function(eleventyConfig) {
 
     eleventyConfig.addFilter("toAbsoluteUrl", function(url) {
         return new URL(url, site.baseURL).href;
+    })
+
+    eleventyConfig.addFilter("handbookBreadcrumbs", (str) => {
+        const parts = str.split("/");
+        parts.shift();
+        if (parts[parts.length-1] === "index") {
+            parts.pop();
+        }
+        let path = "";
+        return "/"+parts.map(p => {
+            let url = `${path}/${p}`;
+            path = url;
+            return `<a class="mx-2" href="${url}">${p}</a>`
+        }).join("/")
+    });
+
+    eleventyConfig.addFilter("rewriteHandbookLinks", (str, page) => {
+        // If page.inputPath looks like: ./src/handbook/abc/def.md
+        // then the url of the page will be `/handbook/abc/def/`
+        // links of the form `./` or `[^/]` must be prepended with `../`
+        // to ensure it links to the right place
+
+        const isIndexPage = /(README.md|index.md)$/i.test(page.inputPath)
+
+        const matcher = /((href|src)="([^"]*))"/g
+        let match
+        while ((match = matcher.exec(str)) !== null) {
+            let url = match[3]
+            if (/^(http|#|mailto:)/.test(url)) {
+                // Do not rewrite absolute urls, in-page anchors or emails
+                continue
+            }
+            // */abc.md#anchor => */abc/#anchor
+            url = url.replace(/.md(#.*)?$/, '$1')
+            // */README#anchor => */#anchor
+            url = url.replace(/README(#.*)?$/, '$1')
+            if (url[0] !== '/' && !isIndexPage) {
+                url = '../'+url
+            }
+            // console.log(" rewrite link:", match[3],'=>',url)
+            str = str.substring(0, match.index) + `${match[2]}="${url}"` + str.substring(match.index+match[1].length)
+        }
+        return str;
+    })
+
+    eleventyConfig.addFilter("handbookEditLink", (page, originalPath) => {
+        if (!originalPath) {
+            console.log(`WARNING: no "originalPath" property on ${page.filePathStem}`)
+            return
+        }
+        let baseUrl
+        let filePath = page.filePathStem
+        if (/^\/docs/.test(page.url)) {
+            baseUrl = 'https://github.com/flowforge/flowforge/edit/main/docs/'
+        } else if (/^\/handbook/.test(page.url)) {
+            baseUrl = 'https://github.com/flowforge/handbook/edit/main/'
+            // Handbook files are at the root of their repo - so strip the prefix
+            filePath = filePath.substring('/handbook'.length)
+        }
+        return baseUrl+originalPath.replace(/^.\//,'')
     })
 
     // Create a collection for sidebar navigation
@@ -227,72 +291,16 @@ module.exports = function(eleventyConfig) {
         return nav;
     });
 
-    eleventyConfig.addFilter("handbookBreadcrumbs", (str) => {
-        const parts = str.split("/");
-        parts.shift();
-        if (parts[parts.length-1] === "index") {
-            parts.pop();
-        }
-        let path = "";
-        return "/"+parts.map(p => {
-            let url = `${path}/${p}`;
-            path = url;
-            return `<a class="mx-2" href="${url}">${p}</a>`
-        }).join("/")
-    });
-
-    eleventyConfig.addFilter("rewriteHandbookLinks", (str, page) => {
-        // If page.inputPath looks like: ./src/handbook/abc/def.md
-        // then the url of the page will be `/handbook/abc/def/`
-        // links of the form `./` or `[^/]` must be prepended with `../`
-        // to ensure it links to the right place
-
-        const isIndexPage = /(README.md|index.md)$/i.test(page.inputPath)
-
-        const matcher = /((href|src)="([^"]*))"/g
-        let match
-        while ((match = matcher.exec(str)) !== null) {
-            let url = match[3]
-            if (/^(http|#|mailto:)/.test(url)) {
-                // Do not rewrite absolute urls, in-page anchors or emails
-                continue
-            }
-            // */abc.md#anchor => */abc/#anchor
-            url = url.replace(/.md(#.*)?$/, '$1')
-            // */README#anchor => */#anchor
-            url = url.replace(/README(#.*)?$/, '$1')
-            if (url[0] !== '/' && !isIndexPage) {
-                url = '../'+url
-            }
-            // console.log(" rewrite link:", match[3],'=>',url)
-            str = str.substring(0, match.index) + `${match[2]}="${url}"` + str.substring(match.index+match[1].length)
-        }
-        return str;
-    })
-    eleventyConfig.addFilter("handbookEditLink", (page, originalPath) => {
-        if (!originalPath) {
-            console.log(`WARNING: no "originalPath" property on ${page.filePathStem}`)
-            return
-        }
-        let baseUrl
-        let filePath = page.filePathStem
-        if (/^\/docs/.test(page.url)) {
-            baseUrl = 'https://github.com/flowforge/flowforge/edit/main/docs/'
-        } else if (/^\/handbook/.test(page.url)) {
-            baseUrl = 'https://github.com/flowforge/handbook/edit/main/'
-            // Handbook files are at the root of their repo - so strip the prefix
-            filePath = filePath.substring('/handbook'.length)
-        }
-        return baseUrl+originalPath.replace(/^.\//,'')
-    })
-    eleventyConfig.addPlugin(require("@11ty/eleventy-plugin-rss"))
-    eleventyConfig.addPlugin(pluginMermaid);
-
+    // Plugins
+    eleventyConfig.addPlugin(pluginRSS)
+    eleventyConfig.addPlugin(syntaxHighlight)
+    eleventyConfig.addPlugin(codeClipboard)
+    eleventyConfig.addPlugin(pluginMermaid)
+        
     const markdownItOptions = {
         html: true,
     }
 
-    // Options for the `markdown-it-anchor` library
     const markdownItAnchorOptions = {
         permalink: markdownItAnchor.permalink.linkInsideHeader({
             symbol: `#&nbsp;`,
@@ -300,14 +308,10 @@ module.exports = function(eleventyConfig) {
         })
     }
 
-    const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
-    eleventyConfig.addPlugin(syntaxHighlight)
-	eleventyConfig.addPlugin(codeClipboard)
-
     const markdownLib = markdownIt(markdownItOptions)
         .use(markdownItAnchor, markdownItAnchorOptions)
         .use(markdownItFootnote)
-		.use(codeClipboard.markdownItCopyButton)
+        .use(codeClipboard.markdownItCopyButton)
 
     eleventyConfig.setLibrary("md", markdownLib)
 

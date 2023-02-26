@@ -37,18 +37,27 @@ layout: layouts/base.njk
             </div>
             <div class="mt-12 pt-6 flex flex-col border-t-2">
                 <h3 class="mb-6">Sign up for updates</h3>
-                <script charset="utf-8" type="text/javascript" src="//js-eu1.hsforms.net/forms/embed/v2.js"></script>
                 <script>
-                    hbspt.forms.create({
-                        region: "eu1",
-                        portalId: "26586079",
-                        formId: "159c173d-dd95-49bd-922b-ff3ef243e90c",
-                        onFormSubmit: function($form) {
-                            capture('cta-blog-subscribe', {'position': 'article'})
-                        }
-                    });
+                    function displayHubSpotForm() {
+                        hbspt.forms.create({
+                            region: "eu1",
+                            portalId: "26586079",
+                            formId: "159c173d-dd95-49bd-922b-ff3ef243e90c",
+                            onFormSubmit: function($form) {
+                                capture('cta-blog-subscribe', {'position': 'article'})
+                            }
+                        });
+                    }
                 </script>
+                <script async type="text/javascript" charset="utf-8" src="//js-eu1.hsforms.net/forms/embed/v2.js" onload="displayHubSpotForm()"></script>
             </div>
         </div>
     </div>
 </div>
+
+<!-- Clipboard -->
+<link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/19.1.1/tooltips.min.css"  as="style" onload="this.onload=null;this.rel='stylesheet'" crossorigin="anonymous" referrerpolicy="no-referrer" />
+{% initClipboardJS %}
+
+<!-- Syntax Highlighting CSS -->
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism-tomorrow.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'" crossorigin="anonymous" referrerpolicy="no-referrer" />
