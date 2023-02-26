@@ -18,7 +18,8 @@
         "dev:postcss": "cross-env TAILWIND_MODE=watch npx postcss ./src/css/style.css -o ./_site/css/style.css --config ./postcss.config.js -w",
         "prod:postcss": "postcss ./src/css/style.css -o ./_site/css/style.css --config ./postcss.config.js",
         "dev:eleventy": "cross-env NODE_ENV=development ELEVENTY_ENV=development npx @11ty/eleventy --serve --quiet",
-        "prod:eleventy": "npx @11ty/eleventy"
+        "prod:eleventy": "npx @11ty/eleventy",
+        "test": "mocha"
     },
     "dependencies": {},
     "devDependencies": {
@@ -34,6 +35,7 @@
         "eleventy-plugin-code-clipboard": "^0.0.9",
         "markdown-it-anchor": "^8.4.1",
         "markdown-it-footnote": "^3.0.3",
+        "mocha": "^10.2.0",
         "nodemon": "^2.0.20",
         "npm-run-all": "^4.1.5",
         "postcss": "^8.3.11",
@@ -41,9 +43,12 @@
         "postcss-import": "^14.0.2",
         "postcss-minify": "^1.1.0",
         "seedrandom": "^3.0.5",
+        "should": "^13.2.3",
         "spacetime": "^6.16.3",
         "tailwindcss": "^2.2.17",
         "terser": "^5.9.0",
-        "vanilla-cookieconsent": "^2.6.1"
+        "vanilla-cookieconsent": "^2.6.1",
+        "xmldom": "^0.6.0",
+        "xpath": "^0.0.32"
     }
 }
