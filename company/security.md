@@ -8,13 +8,14 @@ navTitle: Security
 
 ### Password vault
 
-The company provides a Password Vault account to all employees, this should be used for both individual user accounts and shared accounts (e.g. flowforge npmjs account).
+The company provides a 1Password Vault account to all employees. When available,
+sign in with your Google Workspace account. When this option is not available,
+you must not reuse the same password between different application, but you must
+generate a new one per application. Passwords are stored in 1Password for both
+individual user accounts and shared accounts (e.g. FlowForge npmjs account).
 
-Any shared accounts should be in an appropriate vault shared with those that need it only, but always more than just one person.
-
-### Strong passwords
-
-Passwords should be randomly generated using the Password Vault to ensure strength and that they are not reused across services
+Any shared accounts should be in an appropriate vault shared with those that
+need it only, but always more than just one person.
 
 ### 2FA
 
