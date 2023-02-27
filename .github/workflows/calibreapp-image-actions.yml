@@ -24,6 +24,7 @@ on:
   workflow_dispatch:
   schedule:
     - cron: '15 23 * * 0' # once a week on Sunday at 23:15
+
 jobs:
   build:
     name: calibreapp/image-actions
