@@ -34,7 +34,7 @@ The "Node-RED Library" offers a unique added value to many Node-RED and FlowForg
 
 The logical consequence of FlowForge’s journey is to also include “custom nodes” as one element of the product. Therefore, FlowForge will offer official support for certain popular nodes and in addition enable the community to offer commercial “nodes” via FlowForge. Nevertheless, an open-source core is always required and wanted. However, premium extensions and commercial support allow the community to participate in the success of FlowForge.
 
-### IIoT use case library
+### IIoT Solutions
 
 Today, a whole range of use cases can be implemented with Node-RED. From KPI calculations to intralogistics solutions, incredible use cases are already being realized in Node-RED. 
 
