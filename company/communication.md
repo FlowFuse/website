@@ -145,9 +145,9 @@ doing, and when.
 
 Meetings between levels of the organisation happen in regular 1:1s, usually held
 weekly between the manager and report. The report however might want to
-also communicate with the managers manager to keep in touch with the strategy and
+also communicate with the manager's manager to keep in touch with the strategy and
 communicate feedback on what they observe directly.
 
-The adviced cadance to have these meetings depends on the wants of the report,
+The advised cadance to have these meetings depends on the wants of the report,
 but generally advised once every 6-8 weeks. As FlowForge scales, the number of
 weeks between these meetings is likely increasing.
