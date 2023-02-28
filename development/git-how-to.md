@@ -35,7 +35,7 @@ In this example I am going to create a new document in the [Handbook](#handbook)
 
 Firstly I will create a new document called git-how-to.md in the design folder.
 
-![Create a new file](../images/git-how-to/new-file-1.gif)
+![Create a new file](../images/git-how-to/new-file-1.gif "@skip")
 
 The file type is .md (Markdown). A [Markdown](#markdown) file is similar to a .docx or .txt. It allows you to lay out content in a document including text, images, titles, headers and tables. You can read more about [Markdown](#markdown) here.
 
