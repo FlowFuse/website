@@ -156,7 +156,7 @@
 <!--more-->
 <p>Contextual data like configuration, which user is executing the code, differentiate based on what device is executing a flow, or sometimes secrets which shouldn’t be exposed in the code. This is usually done through environment variables. These are pairs of strings, a key with an attached value, which are accessed by their key. Say you want to access an API endpoint with a key, you’d save the key as <code>API_KEY</code> with the value set to <code>yoursupersecretkey</code>. FlowForge allows setting environment variables. Let’s start using them to understand how they work.</p>
 <p>One of the options for the <code>inject</code> node is to inject a <code>env variable</code>, short for; you guessed it: Environment Variable. In this case we’re going to one that’s pre-defined by Node-RED: <code>NR_FLOW_NAME</code>. The name of each variable is in all caps by convention. When connecting this inject to a debug it prints “Flow 1” for me.</p>
-<p><img src="../images/node-red-use-env-var.png" alt="Using an environment variable in Node-RED" title="Using an environment variable in Node-RED"></p>
+<p><picture><source type="image/avif" srcset="/img/node-red-use-env-var-fERj44Lykc-650.avif 650w" sizes="(min-device-pixel-ratio: 1.25) 1300px, (min-resolution: 120dpi) 1300px, 650px"><source type="image/webp" srcset="/img/node-red-use-env-var-fERj44Lykc-650.webp 650w" sizes="(min-device-pixel-ratio: 1.25) 1300px, (min-resolution: 120dpi) 1300px, 650px"><img title="Using an environment variable in Node-RED" alt="Using an environment variable in Node-RED" loading="lazy" decoding="async" src="/img/node-red-use-env-var-fERj44Lykc-650.jpeg" width="650" height="551"></picture></p>
 <p>Leveraging environment variables can also be done with other nodes, like for example <code>change</code>, <code>switch</code>. Note however; you can set the <code>inject</code> node to output the value for <code>FOO</code> even when it doesn’t exist, but it doesn’t allow you to check in the switch node for example if <code>FOO</code> exists.</p>
 <p>Node-RED allows you to set environment variables, but not to change them when executing flows. If you want to update data during execution, look into using <a href="https://flowforge.com/docs/user/persistent-context/">persistent context</a>. Node-RED doesn’t support Environment Variables like other programming environments do. When the flow is deployed the environment variables are replaced with the known values at that time. This is the biggest gotcha for most developers.</p>
 <h3 id="predefined-variables" tabindex="-1"><a class="header-anchor" href="#predefined-variables">#&nbsp;</a> Predefined variables</h3>
@@ -164,7 +164,7 @@
 <p>FlowForge extends this list with for example a <code>FF_PROJECT_ID</code> allowing you to for example understand what group of instances sent a certain message, but also sets them for each <a href="https://flowforge.com/docs/user/devices/">device agent</a>. This allows users to pinpoint which device sent a message, for example to update a dashboard accordingly.</p>
 <h3 id="managing-environments-variables" tabindex="-1"><a class="header-anchor" href="#managing-environments-variables">#&nbsp;</a> Managing environments variables</h3>
 <p>In FlowForge it’s easy to manage variables set for instances. Under settings in the environment tab it’s a form to set them. You’ll have to restart your instances to make them available in the cloud, and update the target snapshot for devices. When done, these are available.</p>
-<p><img src="../images/flowforge-set-env-var.png" alt="Setting a environment variable in FlowForge" title="set env var using FlowForge"></p>
+<p><picture><source type="image/avif" srcset="/img/flowforge-set-env-var-v5VkUf4WCd-650.avif 650w, /img/flowforge-set-env-var-v5VkUf4WCd-1300.avif 1300w" sizes="(min-device-pixel-ratio: 1.25) 1300px, (min-resolution: 120dpi) 1300px, 650px"><source type="image/webp" srcset="/img/flowforge-set-env-var-v5VkUf4WCd-650.webp 650w, /img/flowforge-set-env-var-v5VkUf4WCd-1300.webp 1300w" sizes="(min-device-pixel-ratio: 1.25) 1300px, (min-resolution: 120dpi) 1300px, 650px"><source type="image/jpeg" srcset="/img/flowforge-set-env-var-v5VkUf4WCd-650.jpeg 650w, /img/flowforge-set-env-var-v5VkUf4WCd-1300.jpeg 1300w" sizes="(min-device-pixel-ratio: 1.25) 1300px, (min-resolution: 120dpi) 1300px, 650px"><img title="set env var using FlowForge" alt="Setting a environment variable in FlowForge" loading="lazy" decoding="async" src="/img/flowforge-set-env-var-v5VkUf4WCd-650.jpeg" width="1300" height="393"></picture></p>
 
             </div>
             <div class="mt-12 pt-6 flex flex-col border-t-2">
@@ -203,7 +203,7 @@
         <div class="py-2 pb-8 px-10 text-white md:py-8 md:max-w-screen-xl xl:mx-auto lg:mx-24">
             <div class="ff-footer-columns md:flex-row justify-center md:space-x-8">
                 <div class="">
-                    <img src="/images/flowforge-logo-wordmark-white.svg" />
+                    <img alt="FlowForge Logo in White" loading="lazy" decoding="async" src="/img/flowforge-logo-wordmark-white-TyGc-f_HSw-146.svg" width="146" height="29">
                     <div class="copyright-statement">
                         <div>Copyright 2023 FlowForge Inc.</div>
                         <div>All Rights Reserved</div>

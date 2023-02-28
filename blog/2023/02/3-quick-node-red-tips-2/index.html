@@ -150,7 +150,12 @@
                 Back to Blog Posts
             </a>
             <div class="prose">
-                <div><img class="w-full h-auto" src="/images/blog/nr-quicktips.jpg" />
+                <div>
+                        <div class="w-full h-auto">
+                            
+                            
+                            <picture><source type="image/avif" srcset="/img/nr-quicktips-78sB71PZbl-560.avif 560w, /img/nr-quicktips-78sB71PZbl-1120.avif 1120w" sizes="(min-device-pixel-ratio: 1.25) 1120px, (min-resolution: 120dpi) 1120px, 560px"><source type="image/webp" srcset="/img/nr-quicktips-78sB71PZbl-560.webp 560w, /img/nr-quicktips-78sB71PZbl-1120.webp 1120w" sizes="(min-device-pixel-ratio: 1.25) 1120px, (min-resolution: 120dpi) 1120px, 560px"><source type="image/jpeg" srcset="/img/nr-quicktips-78sB71PZbl-560.jpeg 560w, /img/nr-quicktips-78sB71PZbl-1120.jpeg 1120w" sizes="(min-device-pixel-ratio: 1.25) 1120px, (min-resolution: 120dpi) 1120px, 560px"><img alt="Image representing 3 Quick Tips for Using Node-RED, Part 2" loading="lazy" decoding="async" src="/img/nr-quicktips-78sB71PZbl-560.jpeg" width="1120" height="636"></picture>
+                        </div>
                      
                 </div>
                 <p>There is usually more than one way to complete a given task in software, and Node-RED is no exception. In each of this series of blog posts, we are going to share three useful tips to save yourself time when working on your flows.</p>
@@ -158,15 +163,15 @@
 <h3 id="1.-deploy-just-what-you've-changed" tabindex="-1"><a class="header-anchor" href="#1.-deploy-just-what-you've-changed">#&nbsp;</a> 1. Deploy just what you've changed</h3>
 <p>When deploying your changes, the default option is deploy everything which also restarts all your flows. You can also select to deploy just the nodes you edited or just the flows in which any changes were made.</p>
 <p>This allows you to update part of your flow without restarting other sections. This can be really handy when you have different flows spread across your workspace or tabs but you don't want to reload them all each time you deploy.</p>
-<p><img src="../images/deploy.gif" alt="Deploying only the changed nodes" title="Deploying only the changed nodes"></p>
+<p><picture><source type="image/gif" srcset="/img/deploy-it-aKv_j8N-650.gif 650w" sizes="(min-device-pixel-ratio: 1.25) 1300px, (min-resolution: 120dpi) 1300px, 650px"><img title="Deploying only the changed nodes" alt="Deploying only the changed nodes" loading="lazy" decoding="async" src="/img/deploy-it-aKv_j8N-650.webp" width="650" height="233"></picture></p>
 <h3 id="2.-find-which-debug-node-generated-an-entry-in-the-log" tabindex="-1"><a class="header-anchor" href="#2.-find-which-debug-node-generated-an-entry-in-the-log">#&nbsp;</a> 2. Find which debug node generated an entry in the log</h3>
 <p>Once your flow has a few debug nodes it can become challenging to see which particular node generated an entry in the log. To quickly track an entry back to its source, click the text 'node: debug' and you will be whisked back to the specific debug node, even it it's elsewhere on you workspace or even on a different tab.</p>
-<p><img src="../images/debug-jump.gif" alt="Find the debug node which generated the log line" title="Find the debug node which generated the log line"></p>
+<p><picture><source type="image/gif" srcset="/img/debug-jump-ODO68_EOTD-650.gif 650w" sizes="(min-device-pixel-ratio: 1.25) 1300px, (min-resolution: 120dpi) 1300px, 650px"><img title="Find the debug node which generated the log line" alt="Find the debug node which generated the log line" loading="lazy" decoding="async" src="/img/debug-jump-ODO68_EOTD-650.webp" width="650" height="186"></picture></p>
 <h3 id="3.-the-delay-node-can-be-used-as-a-rate-limiter" tabindex="-1"><a class="header-anchor" href="#3.-the-delay-node-can-be-used-as-a-rate-limiter">#&nbsp;</a> 3. The delay node can be used as a rate limiter</h3>
 <p>Sometimes it's useful to be able to limit messages to only allow one every so many minutes. You may for example send alerts when a temperature sensor goes above a particular threshold but you don't want your email or instant messaging inbox being swamped with repeated alerts for the same issue.</p>
 <p>You can use the delay node to limit how many messages can pass through in a given period of time.</p>
 <p>Open the delay node settings, select Rate Limit then select 1 message per 15 minutes, then select 'Drop intermediate messages'. This flow will now output a maximum of one message every quarter of an hour, all others will be deleted.</p>
-<p><img src="../images/rate-limit.gif" alt="Limit how many alerts are sent" title="Limit how many alerts are sent"></p>
+<p><picture><source type="image/gif" srcset="/img/rate-limit-tc3VX9YcRb-650.gif 650w" sizes="(min-device-pixel-ratio: 1.25) 1300px, (min-resolution: 120dpi) 1300px, 650px"><img title="Limit how many alerts are sent" alt="Limit how many alerts are sent" loading="lazy" decoding="async" src="/img/rate-limit-tc3VX9YcRb-650.webp" width="650" height="253"></picture></p>
 <p>We hope you found these tips useful, if you'd like to suggest some of your own tips which you think we should share in our future blog posts please <a href="mailto:contact@flowforge.com">get in touch</a>.</p>
 
             </div>
@@ -206,7 +211,7 @@
         <div class="py-2 pb-8 px-10 text-white md:py-8 md:max-w-screen-xl xl:mx-auto lg:mx-24">
             <div class="ff-footer-columns md:flex-row justify-center md:space-x-8">
                 <div class="">
-                    <img src="/images/flowforge-logo-wordmark-white.svg" />
+                    <img alt="FlowForge Logo in White" loading="lazy" decoding="async" src="/img/flowforge-logo-wordmark-white-TyGc-f_HSw-146.svg" width="146" height="29">
                     <div class="copyright-statement">
                         <div>Copyright 2023 FlowForge Inc.</div>
                         <div>All Rights Reserved</div>
