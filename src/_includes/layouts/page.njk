@@ -21,7 +21,10 @@ layout: layouts/base.njk
                 {% endif %}
             </div>
             {% if heroimg %}
-            <img class="hidden md:block" src="{{heroimg}}"/>
+                <div class="hidden md:block flex-shrink-0">
+                    {% set imageDescription = ["Hero Image for ", title] | join %}
+                    {% image heroimg, imageDescription, [586] %}
+                </div>
             {% endif %}
         {% else %}
         <div class="hero {{ 'hero-lg' if heroLg else ''}} container m-auto text-center flex flex-wrap mt-6 p-6 mb-32 md:flex-nowrap md:max-w-4xl md:mt-12">

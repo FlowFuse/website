@@ -17,7 +17,7 @@ When you start a project on FlowForge, remember the project name. For this how-t
 
 First off; let’s set the HTTP in node properties:
 
-![Shows the UI to edit the node's properties](../images/edit-http-node.png)
+![Shows the UI to edit the node's properties](./images/edit-http-node.png)
 
 You can import this flow into your own project if you’d like:
 

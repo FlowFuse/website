@@ -26,24 +26,26 @@ meta:
                             <div class="flex flex-col md:flex-row">
                                 <a href="{{ item.url }}" onclick="capture('cta-webinar-info')" class="webinar-tile-img relative mb-4 md:mb-0 flex md:w-1/2 mr-2 rounded-lg">
                                     {% if item.data.image %}
-                                        <img class="w-full h-auto rounded" src="{{item.data.image}}" />
+                                        <div class="w-full h-auto">
+                                            {% set imageSrc = ["./", item.data.image ] | join %}
+                                            {% set imageDescription = ["Image representing ", item.data.title] | join %}
+                                            {% image imageSrc, imageDescription, [432] %}
+                                            <div class="webinar-tile-radialshade"></div>
+                                        </div>  
                                     {% else %}
                                         {{ item.url | generatePostSVG | safe }}
                                     {% endif %}
-                                    {% if item.data.image %}
-                                    <div class="webinar-tile-radialshade">
-                                    </div>
-                                    {% else %}
-                                    <div class="webinar-tile-shade">
-                                        <label>
-                                            <h4 class="text-white">{{ item.data.title }}</h4>
-                                            <div class="webinar-tile-datetime">
-                                                <time value="{{ item.time }}" class="text-gray-400">{{ item.data.time }}</time>
-                                                <time value="{{ item.date }}" class="text-gray-400">{{ item.data.date | shortDate }}</time>
-                                                <time value="{{ item.duration }}" class="text-gray-400">{{ item.data.duration | duration }}</time>
-                                            </div>
-                                        </label>
-                                    </div>
+                                    {% if not item.data.image %}
+                                        <div class="webinar-tile-shade">
+                                            <label>
+                                                <h4 class="text-white">{{ item.data.title }}</h4>
+                                                <div class="webinar-tile-datetime">
+                                                    <time value="{{ item.time }}" class="text-gray-400">{{ item.data.time }}</time>
+                                                    <time value="{{ item.date }}" class="text-gray-400">{{ item.data.date | shortDate }}</time>
+                                                    <time value="{{ item.duration }}" class="text-gray-400">{{ item.data.duration | duration }}</time>
+                                                </div>
+                                            </label>
+                                        </div>
                                     {% endif %}
                                 </a>
                                 <div class="flex flex-col justify-between md:w-1/2 md:px-2">
@@ -76,24 +78,26 @@ meta:
                             <div class="flex flex-col md:flex-row">
                                 <a href="{{ item.url }}" onclick="capture('cta-webinar-register')" class="webinar-tile-img relative mb-4 md:mb-0 flex md:w-1/2 mr-2 rounded-lg">
                                     {% if item.data.image %}
-                                        <img class="w-full h-auto rounded-lg" src="{{item.data.image}}" />
+                                        <div class="w-full h-auto rounded-lg">
+                                            {% set imageSrc = ["./", item.data.image ] | join %}
+                                            {% set imageDescription = ["Image representing ", item.data.title] | join %}
+                                            {% image imageSrc, imageDescription, [285] %}
+                                            <div class="webinar-tile-radialshade"></div>
+                                        </div>
                                     {% else %}
                                         {{ item.url | generatePostSVG | safe }}
                                     {% endif %}
-                                    {% if item.data.image %}
-                                    <div class="webinar-tile-radialshade">
-                                    </div>
-                                    {% else %}
-                                    <div class="webinar-tile-shade">
-                                        <label>
-                                            <h4 class="text-white">{{ item.data.title }}</h4>
-                                            <div class="webinar-tile-datetime">
-                                                <time value="{{ item.time }}" class="text-gray-400">{{ item.data.time }}</time>
-                                                <time value="{{ item.date }}" class="text-gray-400">{{ item.data.date | shortDate }}</time>
-                                                <time value="{{ item.duration }}" class="text-gray-400">{{ item.data.duration | duration }}</time>
-                                            </div>
-                                        </label>
-                                    </div>
+                                    {% if not item.data.image %}
+                                        <div class="webinar-tile-shade">
+                                            <label>
+                                                <h4 class="text-white">{{ item.data.title }}</h4>
+                                                <div class="webinar-tile-datetime">
+                                                    <time value="{{ item.time }}" class="text-gray-400">{{ item.data.time }}</time>
+                                                    <time value="{{ item.date }}" class="text-gray-400">{{ item.data.date | shortDate }}</time>
+                                                    <time value="{{ item.duration }}" class="text-gray-400">{{ item.data.duration | duration }}</time>
+                                                </div>
+                                            </label>
+                                        </div>
                                     {% endif %}
                                 </a>
                                 <div class="flex flex-col justify-between md:w-1/2 md:px-2">
@@ -130,11 +134,23 @@ meta:
                     <a href="{{ item.url }}" class="w-full flex flex-col group hover:no-underline">
                         <div class="">
                             <time class="block text-xs mb-2" value="{{ item.date }}" class="text-gray-400">{{ item.date | shortDate }}</time>
-                            <div>{% if item.image %}<img class="w-full h-auto" src="{{item.image}}" />{% else %}{{ item.url | generatePostSVG |safe}}{% endif %}</div>
+                            <div>
+                                {% if item.data.image %}
+                                    <div class="w-full h-auto shadow rounded">
+                                        {% set imageSrc = ["./", item.data.image ] | join %}
+                                        {% set imageDescription = ["Image representing ", item.data.title] | join %}
+                                        {% image imageSrc, imageDescription, [285] %}
+                                    </div>
+                                {% else %}
+                                    {{ item.url | generatePostSVG | safe }}
+                                {% endif %}
+                            </div>
                             <h3 class="mt-1 mb-0 font-medium group-hover:underline">{{ item.data.title }}</h3>
                         </div>
                         <div class="text-sm prose prose-blue md:prose-md py-1">
-                            {{ item.data.description | excerpt | safe }}
+                            {% if item.data.description %}
+                            {{ (item.data.description | excerpt | safe) }}
+                            {% endif %}
                         </div>
                     </a>
                 </li>

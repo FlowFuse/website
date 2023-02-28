@@ -13,7 +13,7 @@ Contextual data like configuration, which user is executing the code, differenti
 
 One of the options for the `inject` node is to inject a `env variable`, short for; you guessed it: Environment Variable. In this case we’re going to one that’s pre-defined by Node-RED: `NR_FLOW_NAME`. The name of each variable is in all caps by convention. When connecting this inject to a debug it prints “Flow 1” for me.
 
-![Using an environment variable in Node-RED](../images/node-red-use-env-var.png "Using an environment variable in Node-RED")
+![Using an environment variable in Node-RED](./images/node-red-use-env-var.png "Using an environment variable in Node-RED")
 
 Leveraging environment variables can also be done with other nodes, like for example `change`, `switch`. Note however; you can set the `inject` node to output the value for `FOO` even when it doesn’t exist, but it doesn’t allow you to check in the switch node for example if `FOO` exists.
 
@@ -29,5 +29,5 @@ FlowForge extends this list with for example a `FF_PROJECT_ID` allowing you to f
 
 In FlowForge it’s easy to manage variables set for instances. Under settings in the environment tab it’s a form to set them. You’ll have to restart your instances to make them available in the cloud, and update the target snapshot for devices. When done, these are available.
 
-![Setting a environment variable in FlowForge](../images/flowforge-set-env-var.png "set env var using FlowForge")
+![Setting a environment variable in FlowForge](./images/flowforge-set-env-var.png "set env var using FlowForge")
 

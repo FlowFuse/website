@@ -7,7 +7,9 @@ layout: default
 skipIndex: true
 ---
 <div class="px-6 pb-24 md:max-w-lg mx-auto text-center">
-    <img class="w-full mx-auto" src="/images/pictograms/404.png">
+    <div class="w-full mx-auto">
+        {% image "./images/pictograms/404.png", "404", [465] %}
+    </div>
     <h1 class="text-white mb-0">Ooops!</h1>
     <h5 class="text-white">Page not found</h5>
     <a href="/" class="ff-btn ff-btn--secondary mt-4">Return to homepage</a>
