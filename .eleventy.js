@@ -410,8 +410,10 @@ module.exports = function(eleventyConfig) {
         }
 
         const imagePath = resolvedImagePath(env.page.inputPath, imgSrc)
-
-        eleventyImage(imagePath, imgOpts)
+        eleventyImage(imagePath, imgOpts).catch((error) => {
+            console.error(`Image generation error while handling: ${imgSrc} in ${env.page.inputPath} - ${error}, consider using @skip`)
+            throw error
+        })
         const metadata = eleventyImage.statsSync(imagePath, imgOpts)
     
         const generated = eleventyImage.generateHTML(metadata, {
