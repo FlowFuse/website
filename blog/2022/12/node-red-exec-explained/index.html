@@ -163,7 +163,7 @@ command as if you're on the command line. The exec node has one input, and three
 outputs. Let's create a basic example and work from there. Let's connect the
 inject to the <code>exec</code> input, and connect the three dots to debug nodes. I've set
 the command in the exec node to <code>date</code>.</p>
-<p><picture><source type="image/avif" srcset="/img/wired-up-exec-node-EG-g8zaTjL-650.avif 650w" sizes="(min-device-pixel-ratio: 1.25) 1300px, (min-resolution: 120dpi) 1300px, 650px"><source type="image/webp" srcset="/img/wired-up-exec-node-EG-g8zaTjL-650.webp 650w" sizes="(min-device-pixel-ratio: 1.25) 1300px, (min-resolution: 120dpi) 1300px, 650px"><img title="null" alt="&quot;Wired up exec node&quot;" loading="lazy" decoding="async" src="/img/wired-up-exec-node-EG-g8zaTjL-650.jpeg" width="650" height="178"></picture></p>
+<p><picture><source type="image/avif" srcset="/img/wired-up-exec-node-EG-g8zaTjL-650.avif 650w" sizes="(min-device-pixel-ratio: 1.25) 1300px, (min-resolution: 120dpi) 1300px, 650px"><source type="image/webp" srcset="/img/wired-up-exec-node-EG-g8zaTjL-650.webp 650w" sizes="(min-device-pixel-ratio: 1.25) 1300px, (min-resolution: 120dpi) 1300px, 650px"><img title="" alt="&quot;Wired up exec node&quot;" loading="lazy" decoding="async" src="/img/wired-up-exec-node-EG-g8zaTjL-650.jpeg" width="650" height="178"></picture></p>
 <p>When triggered, you'll see two outputs in the debug pane. One from <code>Standard out</code>;
 the date and timestamp of the execution and the <code>Exit code</code> will output too.
 <code>Standard error</code> didn't output anything.</p>
@@ -181,7 +181,7 @@ second and won't complete until there's a failure in the command. Not what you'd
 want.</p>
 <p>When there's continous output you'll need to select <code>spawn</code> mode in the settings
 windown of the <code>exec</code> node:</p>
-<p><picture><source type="image/avif" srcset="/img/spawn-mode-exec-w7KqlE8leF-650.avif 650w" sizes="(min-device-pixel-ratio: 1.25) 1300px, (min-resolution: 120dpi) 1300px, 650px"><source type="image/webp" srcset="/img/spawn-mode-exec-w7KqlE8leF-650.webp 650w" sizes="(min-device-pixel-ratio: 1.25) 1300px, (min-resolution: 120dpi) 1300px, 650px"><img title="null" alt="spawn mode for exec in Node-RED" loading="lazy" decoding="async" src="/img/spawn-mode-exec-w7KqlE8leF-650.jpeg" width="650" height="348"></picture></p>
+<p><picture><source type="image/avif" srcset="/img/spawn-mode-exec-w7KqlE8leF-650.avif 650w" sizes="(min-device-pixel-ratio: 1.25) 1300px, (min-resolution: 120dpi) 1300px, 650px"><source type="image/webp" srcset="/img/spawn-mode-exec-w7KqlE8leF-650.webp 650w" sizes="(min-device-pixel-ratio: 1.25) 1300px, (min-resolution: 120dpi) 1300px, 650px"><img title="" alt="spawn mode for exec in Node-RED" loading="lazy" decoding="async" src="/img/spawn-mode-exec-w7KqlE8leF-650.jpeg" width="650" height="348"></picture></p>
 <p>This will produce a message per line to the standard out output for further
 processing.</p>
 <h3 id="flowforge" tabindex="-1"><a class="header-anchor" href="#flowforge">#&nbsp;</a> FlowForge</h3>

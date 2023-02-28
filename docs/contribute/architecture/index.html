@@ -656,6 +656,12 @@
                     <ul class="handbook-nav-nested-2">
                         
                         <li class="">
+                            <a href="/docs/install/kubernetes/aws/">
+                                aws
+                            </a>
+                        </li>
+                        
+                        <li class="">
                             <a href="/docs/install/kubernetes/digital-ocean/">
                                 digital-ocean
                             </a>
@@ -664,12 +670,6 @@
                         <li class="">
                             <a href="/docs/install/kubernetes/stacks/">
                                 stacks
-                            </a>
-                        </li>
-                        
-                        <li class="">
-                            <a href="/docs/install/kubernetes/aws/">
-                                aws
                             </a>
                         </li>
                         
@@ -777,11 +777,11 @@
 <ul>
 <li>
 <p>On a single machine</p>
-<p><picture><source type="image/avif" srcset="/img/ff-localfs-q8mS_dOpzp-650.avif 650w" sizes="(min-device-pixel-ratio: 1.25) 1300px, (min-resolution: 120dpi) 1300px, 650px"><source type="image/webp" srcset="/img/ff-localfs-q8mS_dOpzp-650.webp 650w" sizes="(min-device-pixel-ratio: 1.25) 1300px, (min-resolution: 120dpi) 1300px, 650px"><img title="null" alt="LocalFS Architecture" loading="lazy" decoding="async" src="/img/ff-localfs-q8mS_dOpzp-650.jpeg"" width="650" height="268"></picture></p>
+<p><picture><source type="image/avif" srcset="/img/ff-localfs-q8mS_dOpzp-650.avif 650w" sizes="(min-device-pixel-ratio: 1.25) 1300px, (min-resolution: 120dpi) 1300px, 650px"><source type="image/webp" srcset="/img/ff-localfs-q8mS_dOpzp-650.webp 650w" sizes="(min-device-pixel-ratio: 1.25) 1300px, (min-resolution: 120dpi) 1300px, 650px"><img title="" alt="LocalFS Architecture" loading="lazy" decoding="async" src="/img/ff-localfs-q8mS_dOpzp-650.jpeg"" width="650" height="268"></picture></p>
 </li>
 <li>
 <p>Using a Container Orchestration platform (Kubernetes/Docker Compose)</p>
-<p><picture><source type="image/avif" srcset="/img/ff-containers-B0xh8a13HB-650.avif 650w" sizes="(min-device-pixel-ratio: 1.25) 1300px, (min-resolution: 120dpi) 1300px, 650px"><source type="image/webp" srcset="/img/ff-containers-B0xh8a13HB-650.webp 650w" sizes="(min-device-pixel-ratio: 1.25) 1300px, (min-resolution: 120dpi) 1300px, 650px"><img title="null" alt="Container Architecture" loading="lazy" decoding="async" src="/img/ff-containers-B0xh8a13HB-650.jpeg"" width="650" height="331"></picture></p>
+<p><picture><source type="image/avif" srcset="/img/ff-containers-B0xh8a13HB-650.avif 650w" sizes="(min-device-pixel-ratio: 1.25) 1300px, (min-resolution: 120dpi) 1300px, 650px"><source type="image/webp" srcset="/img/ff-containers-B0xh8a13HB-650.webp 650w" sizes="(min-device-pixel-ratio: 1.25) 1300px, (min-resolution: 120dpi) 1300px, 650px"><img title="" alt="Container Architecture" loading="lazy" decoding="async" src="/img/ff-containers-B0xh8a13HB-650.jpeg"" width="650" height="331"></picture></p>
 </li>
 </ul>
 <h2 id="flowforge-management-application" tabindex="-1"><a class="header-anchor" href="#flowforge-management-application">#&nbsp;</a> FlowForge Management Application</h2>
@@ -810,7 +810,7 @@
 <li>The FlowForge Launcher</li>
 <li>A Node-RED instance</li>
 </ul>
-<p><picture><source type="image/avif" srcset="/img/ff-project-arch-GwYRhTcpnZ-571.avif 571w" sizes="(min-device-pixel-ratio: 1.25) 1300px, (min-resolution: 120dpi) 1300px, 650px"><source type="image/webp" srcset="/img/ff-project-arch-GwYRhTcpnZ-571.webp 571w" sizes="(min-device-pixel-ratio: 1.25) 1300px, (min-resolution: 120dpi) 1300px, 650px"><img title="null" alt="Project Architecture" loading="lazy" decoding="async" src="/img/ff-project-arch-GwYRhTcpnZ-571.jpeg"" width="571" height="421"></picture></p>
+<p><picture><source type="image/avif" srcset="/img/ff-project-arch-GwYRhTcpnZ-571.avif 571w" sizes="(min-device-pixel-ratio: 1.25) 1300px, (min-resolution: 120dpi) 1300px, 650px"><source type="image/webp" srcset="/img/ff-project-arch-GwYRhTcpnZ-571.webp 571w" sizes="(min-device-pixel-ratio: 1.25) 1300px, (min-resolution: 120dpi) 1300px, 650px"><img title="" alt="Project Architecture" loading="lazy" decoding="async" src="/img/ff-project-arch-GwYRhTcpnZ-571.jpeg"" width="571" height="421"></picture></p>
 <h3 id="flowforge-launcher" tabindex="-1"><a class="header-anchor" href="#flowforge-launcher">#&nbsp;</a> FlowForge Launcher</h3>
 <p>This is a small application that handles downloading the Project specific settings, building a <code>settings.js</code> from those settings and then starting the Node-RED instance.</p>
 <p>The launcher presents a HTTP API (it defaults to the Node-RED port + 1000) that allows the FlowForge Management Application to start/stop/restart the Node-RED instance as well as query it's current state and retrieve the console logs.</p>
