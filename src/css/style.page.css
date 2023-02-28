@@ -72,6 +72,7 @@
 
 .highlight-feature img {
     height: 172px;
+    width: auto;
     margin: 12px auto;
 }
 
@@ -98,7 +99,6 @@
     .product-left img,
     .product-right img {
         width: 150px;
-        height: 150px;
     }
     .product-right {
         @apply sm:flex-row-reverse;

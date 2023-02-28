@@ -24,7 +24,7 @@ As we'll come to later in this newsletter, FlowForge visited an Escape Room in W
 **FlowForge team meetup** 
 FlowForge is a fully remote team, we currently have a strong skew towards western Europe but we are in the process of adding team members in each of the continents. On that point, any great Product Managers who live in Antarctica are encouraged to [apply for a job with us](https://boards.greenhouse.io/flowforge/jobs/4717778004)! Remote work is great but it's also valuable to get everyone together in the real world from time to time. FlowForge had such a meet up last month in Winchester, UK. We came from near and far and took the opportunity to have productive round-table discussions about some features we are working towards in 1.2 and beyond.  We also dropped into [Clue Capers](https://cluecapers.co.uk/), a great Escape Room in the center of Winchester who provided the photo below to mark the occasion. 
 
-![The FlowForge team pictured during our visit to Clue Capers](../images/clue-capers.jpg)
+![The FlowForge team pictured during our visit to Clue Capers](./images/clue-capers.jpg)
 
 [**FlowForge Team News**](https://flowforge.com/team/)    
 We are currently recruiting a [Product Manager](https://boards.greenhouse.io/flowforge/jobs/4717778004), and a [Senior Community Manager](https://boards.greenhouse.io/flowforge/jobs/4700809004). You can view any of the roles we currently have open and apply on our [Jobs page](https://boards.greenhouse.io/flowforge).

@@ -18,7 +18,7 @@ to the platform itself.
 There's more to be done on the individual pages of the platform, but this
 gives us a solid framework to build on.
 
-![](../images/ff-05-dashboard.png)
+![](./images/ff-05-dashboard.png)
 
  - [Epic #430 - Rebrand Forage App](https://github.com/flowforge/flowforge/issues/430)
 

@@ -40,6 +40,9 @@ npm start
 This will start a server on http://localhost:8080 that will automatically reload whenever
 any content is changed. 
 
+Note, the first time running this, may take a little while as it needs to parse all
+images in the `/docs` and `/handbook` folders.
+
 **Note:** if you modify `src/css/style.css` you will need
 to run `npm run tailwind` to rebuild the CSS content.
 
