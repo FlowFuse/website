@@ -16,7 +16,7 @@ const heroGen = require("./lib/post-hero-gen.js");
 const site = require("./src/_data/site");
 
 module.exports = function(eleventyConfig) {
-    eleventyConfig.setUseGitIgnore(true); // otherwise docs and handbook are ignored
+    eleventyConfig.setUseGitIgnore(false); // Otherwise docs and handbook are ignored
 
     // Layout aliases
     eleventyConfig.addLayoutAlias('default', 'layouts/base.njk');
@@ -376,12 +376,22 @@ module.exports = function(eleventyConfig) {
         const imgSrc = token.attrGet('src')
         const imgAlt = token.content
         const imgTitle = token.attrGet('title')
-    
+   
+        const parsedTitle = (imgTitle || '').match(
+            /^(?<skip>@skip ?)?(?<title>.*)/
+        ).groups
+
         const htmlOpts = {
-            title: imgTitle,
+            title: parsedTitle.title,
             alt: imgAlt,
             loading: 'lazy',
             decoding: 'async'
+        }
+          
+        if (parsedTitle.skip || imgSrc.startsWith('http')) {
+            const options = { ...htmlOpts }
+            const metadata = { img: [{ url: imgSrc }] }
+            return eleventyImage.generateHTML(metadata, options)
         }
 
         let formats = ['avif', 'webp', 'jpeg']
@@ -410,8 +420,10 @@ module.exports = function(eleventyConfig) {
         }
 
         const imagePath = resolvedImagePath(env.page.inputPath, imgSrc)
-
-        eleventyImage(imagePath, imgOpts)
+        eleventyImage(imagePath, imgOpts).catch((error) => {
+            console.error(`Image generation error while handling: ${imgSrc} in ${env.page.inputPath} - ${error}, consider using @skip`)
+            throw error
+        })
         const metadata = eleventyImage.statsSync(imagePath, imgOpts)
     
         const generated = eleventyImage.generateHTML(metadata, {
