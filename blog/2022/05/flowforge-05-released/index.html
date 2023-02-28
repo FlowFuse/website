@@ -52,27 +52,8 @@
     <meta name="twitter:creator" content="@knolleary" />
     
 
-    <script>
-        // Intercept all injected script tags and set them to defer
-        const observer = new MutationObserver(mutations => {
-            mutations.forEach(({ addedNodes }) => {
-                addedNodes.forEach(node => {
-                    if(node.nodeType === 1 && node.tagName === 'SCRIPT' && node.src !== "") {
-                        node.setAttribute('defer', 'defer');
-                    }
-                })
-            })
-        })
-
-        observer.observe(document.documentElement, {
-            childList: true,
-            subtree: true
-        })
-
-        window.addEventListener('load', (event) => {
-            observer.disconnect()
-        })
-    </script>
+    
+    <script>const blockedScripts=[/hs-banner.com/];function needsToBeBlocked(e){return blockedScripts.some((t=>t.test(e)))}const createElementBackup=document.createElement;document.createElement=function(...e){if("script"!==e[0].toLowerCase())return createElementBackup.bind(document)(...e);const t=createElementBackup.bind(document)(...e),c=t.setAttribute.bind(t);return c("defer","defer"),Object.defineProperties(t,{src:{get:()=>t.getAttribute("src"),set:e=>(needsToBeBlocked(e,t.type)&&c("type","javascript/blocked"),c("src",e),!0)},type:{set(e){const r=needsToBeBlocked(t.src,t.type)?"javascript/blocked":e;return c("type",r),!0}}}),t.setAttribute=function(e,c){"type"===e||"src"===e?t[e]=c:HTMLScriptElement.prototype.setAttribute.call(t,e,c)},t};</script>
 </head>
 <body class="ff-website leading-normal tracking-normal gradient text-gray-500 min-h-screen flex flex-col" style="">
     <div class="flex-grow base">
