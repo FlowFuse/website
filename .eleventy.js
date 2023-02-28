@@ -376,12 +376,22 @@ module.exports = function(eleventyConfig) {
         const imgSrc = token.attrGet('src')
         const imgAlt = token.content
         const imgTitle = token.attrGet('title')
-    
+   
+        const parsedTitle = (imgTitle || '').match(
+            /^(?<skip>@skip ?)?(?<title>.*)/
+        ).groups
+
         const htmlOpts = {
-            title: imgTitle,
+            title: parsedTitle.title,
             alt: imgAlt,
             loading: 'lazy',
             decoding: 'async'
+        }
+          
+        if (parsedTitle.skip || imgSrc.startsWith('http')) {
+            const options = { ...htmlOpts }
+            const metadata = { img: [{ url: imgSrc }] }
+            return eleventyImage.generateHTML(metadata, options)
         }
 
         let formats = ['avif', 'webp', 'jpeg']
