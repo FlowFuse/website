@@ -45,7 +45,7 @@ In the video above I pressed ‘[Commit](#commit) changes’ which is the same a
 
 I can now start the process of writing my document, first I will reopen it in the editor, then I will add the content.
 
-![Edit the new file](../images/git-how-to/edit-file-1.gif)
+![Edit the new file](../images/git-how-to/edit-file-1.gif "@skip")
 
 I will work on the file until I think it's ready for a colleague to review the changes I have made. Once I am happy with the content I will [Commit](#commit) the changes as I did before.
 
@@ -57,13 +57,13 @@ I am now ready to request a [Review](#review) of my work from a colleague. To do
 
 [Github](#github) gives you an easy to find button to create a [Pull Request](#pull-request) for your current work. 
 
-![Create a Pull Request](../images/git-how-to/create-a-pr-1.gif)
+![Create a Pull Request](../images/git-how-to/create-a-pr-1.gif "@skip")
 
 It's a good idea to provide your colleagues descriptive comments explaining the goals of the changes you have made as well as anything else you think would help them [review](#review) your work.
 
 Once you press the 'Create pull request' button an alert will be sent to one of FlowForge's Slack channels letting everyone know you'd like your work reviewed. You can also request a [review](#review) from a specific colleague using the [Reviewers](#reviewer) section of your [Pull Request](#pull-request) Click on [Reviewers](#reviewer) then select the colleague you think would be best placed to [review](#review) your work.
 
-![Request a review from a specific colleague](../images/git-how-to/nominate-a-reviewer-1.gif)
+![Request a review from a specific colleague](../images/git-how-to/nominate-a-reviewer-1.gif "@skip")
 
 ### Requesting a review of your work
 
