@@ -7,6 +7,7 @@ const pluginRSS = require("@11ty/eleventy-plugin-rss");
 const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 const pluginMermaid = require("@kevingimbel/eleventy-plugin-mermaid");
 const codeClipboard = require("eleventy-plugin-code-clipboard");
+const htmlmin = require("html-minifier");
 const markdownIt = require("markdown-it");
 const markdownItAnchor = require("markdown-it-anchor");
 const markdownItFootnote = require("markdown-it-footnote");
