@@ -175,16 +175,30 @@ document.getElementById('nav-toggle').onclick = function(){
 
 <!-- HubSpot Tracking -->
 {% set hubspotJS %}
-// Set HubSpot Chat to wait a bit so it does not block page load
-window.hsConversationsSettings = {
-    loadImmediately: false,
-};
+// Set HubSpot Chat to wait a bit so it does not block page load if user has never started a conversation
+if (
+    window.sessionStorage?.getItem("chatInProgress") === null &&
+    window.location.hash !== "#hs-chat-open"
+) {
+    window.hsConversationsSettings = {
+        loadImmediately: false,
+    };
 
-window.addEventListener("load", (event) => {
-    setTimeout(function() {
-        window.HubSpotConversations?.widget?.load();
-    }, 1000);
-});
+    window.addEventListener("load", (event) => {
+        setTimeout(function () {
+            window.HubSpotConversations?.widget?.load();
+        }, 1500);
+    });
+}
+
+window.hsConversationsOnReady = [
+    () => {
+        window.HubSpotConversations.on("conversationStarted", () => {
+            window.sessionStorage?.setItem("chatInProgress", "true");
+        });
+    },
+];
+
 {% endset %}
 <script>{{ hubspotJS | jsmin | safe }}</script>
 <script async type="text/javascript" id="hs-script-loader" src="//js-eu1.hs-scripts.com/26586079.js"></script>
