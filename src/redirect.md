@@ -27,5 +27,6 @@ permalink: "{{ redirect.from }}"
 # The "redirect" layout just has a small html header with the meta tags that do redirection.
 layout: redirect
 skipIndex: true
+title: "You're being redirected"
 ---
 (the content can be left blank; it's entirely the frontmatter doing the work here.)
