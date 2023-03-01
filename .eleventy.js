@@ -17,6 +17,8 @@ const { minify } = require("terser");
 const heroGen = require("./lib/post-hero-gen.js");
 const site = require("./src/_data/site");
 
+const DEV_MODE = process.env.ELEVENTY_RUN_MODE !== "build" // i.e. serve/watch
+
 module.exports = function(eleventyConfig) {
     eleventyConfig.setUseGitIgnore(false); // Otherwise docs and handbook are ignored
 
@@ -450,29 +452,27 @@ module.exports = function(eleventyConfig) {
 
     eleventyConfig.setLibrary("md", markdownLib)
 
-    eleventyConfig.addTransform("htmlmin", function (content) {
-        // Skip for serve, watch, i.e. local development
-        if (process.env.ELEVENTY_RUN_MODE !== "build") {
-            return content
-        }
-    
-        if (this.page.outputPath && this.page.outputPath.endsWith(".html")) {
-            let minified = htmlmin.minify(content, {
-                collapseBooleanAttributes: true,
-                collapseWhitespace: true,
-                conservativeCollapse: true,
-                preserveLineBreaks: true,
-                removeComments: true,
-                removeEmptyAttributes: true,
-                removeRedundantAttributes: true,
-                useShortDoctype: true,
-            })
+    if (!DEV_MODE) {
+        console.info(`[11ty] Output HTML will be minified, expect a short wait`)
+        eleventyConfig.addTransform("htmlmin", function (content) {
+            if (this.page.outputPath && this.page.outputPath.endsWith(".html")) {
+                let minified = htmlmin.minify(content, {
+                    collapseBooleanAttributes: true,
+                    collapseWhitespace: true,
+                    conservativeCollapse: true,
+                    preserveLineBreaks: true,
+                    removeComments: true,
+                    removeEmptyAttributes: true,
+                    removeRedundantAttributes: true,
+                    useShortDoctype: true,
+                })
 
-            return minified
-        }
-    
-        return content
-    })
+                return minified
+            }
+        
+            return content
+        })
+    }
         
     return {
         dir: {
