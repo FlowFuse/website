@@ -55,8 +55,11 @@ p {
 }
 
 h1, h2, h3, h4, h5, p {
-    color: theme(colors.teal.300);
+    color: theme(colors.teal.200);
 }
+
+picture img {
+width: 100%;}
 
 .container {
     position: relative;
@@ -79,7 +82,7 @@ h1, h2, h3, h4, h5, p {
 .ff-bg-dark h3, .ff-bg-mid h3,
 .ff-bg-dark h4, .ff-bg-mid h4,
 .ff-bg-dark h5, .ff-bg-mid h5 {
-    color: theme(colors.teal.300);
+    color: theme(colors.teal.200);
 }
 .ff-bg-dark p, .ff-bg-mid p {
     color: theme(colors.white);
