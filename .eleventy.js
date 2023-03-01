@@ -16,6 +16,8 @@ const { minify } = require("terser");
 const heroGen = require("./lib/post-hero-gen.js");
 const site = require("./src/_data/site");
 
+const DEV_MODE = process.env.ELEVENTY_RUN_MODE !== "build" // Serve or watching
+
 module.exports = function(eleventyConfig) {
     eleventyConfig.setUseGitIgnore(false); // Otherwise docs and handbook are ignored
 
@@ -219,13 +221,14 @@ module.exports = function(eleventyConfig) {
 
     // Eleventy Image shortcode
     // https://www.11ty.dev/docs/plugins/image/
+    console.info(`[11ty] Image pipeline is enabled in ${DEV_MODE ? 'dev mode' : 'prod mode'} expect a wait for first build`)
     eleventyConfig.addAsyncShortcode("image", async function imageShortcode(src, alt, widths, sizes) {
         // Full list of formats here: https://www.11ty.dev/docs/plugins/image/#output-formats
         // Warning: Avif can be resource-intensive so take care!
         let formats = ["avif", "webp", "auto"];
 
-        // Skip slow formats for serve, watch, i.e. local development
-        if (process.env.ELEVENTY_RUN_MODE !== "build") {
+        // Skip slow formats for local development
+        if (DEV_MODE) {
             formats = formats.filter((format) => !['avif', 'webp'].includes(format))
         }
 
@@ -424,8 +427,8 @@ module.exports = function(eleventyConfig) {
             }
         }
 
-        // Skip slow formats for serve, watch, i.e. local development
-        if (process.env.ELEVENTY_RUN_MODE !== "build") {
+        // Skip slow formats for local development
+        if (DEV_MODE) {
             formats = formats.filter((format) => !['avif', 'webp'].includes(format))
         }
         
