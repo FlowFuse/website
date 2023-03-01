@@ -16,7 +16,7 @@ const { minify } = require("terser");
 const heroGen = require("./lib/post-hero-gen.js");
 const site = require("./src/_data/site");
 
-const DEV_MODE = process.env.ELEVENTY_RUN_MODE !== "build" // Serve or watching
+const DEV_MODE = process.env.ELEVENTY_RUN_MODE !== "build" // i.e. serve/watch
 
 module.exports = function(eleventyConfig) {
     eleventyConfig.setUseGitIgnore(false); // Otherwise docs and handbook are ignored
