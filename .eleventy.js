@@ -449,6 +449,30 @@ module.exports = function(eleventyConfig) {
 
     eleventyConfig.setLibrary("md", markdownLib)
 
+    eleventyConfig.addTransform("htmlmin", function (content) {
+        // Skip for serve, watch, i.e. local development
+        if (process.env.ELEVENTY_RUN_MODE !== "build") {
+            return content
+        }
+    
+        if (this.page.outputPath && this.page.outputPath.endsWith(".html")) {
+            let minified = htmlmin.minify(content, {
+                collapseBooleanAttributes: true,
+                collapseWhitespace: true,
+                conservativeCollapse: true,
+                preserveLineBreaks: true,
+                removeComments: true,
+                removeEmptyAttributes: true,
+                removeRedundantAttributes: true,
+                useShortDoctype: true,
+            })
+
+            return minified
+        }
+    
+        return content
+    })
+        
     return {
         dir: {
             input: "src"
