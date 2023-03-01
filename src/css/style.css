@@ -229,6 +229,11 @@ h4:hover .header-anchor {
         fill: theme(colors.red.400);
     }
 
+    .ff-website header nav {
+        @apply flex justify-between lg:grid lg:grid-cols-header;
+    }
+
+
     .ff-website header .ff-icon--gh:hover path {
         @apply sm:bg-white;
     }
@@ -236,35 +241,33 @@ h4:hover .header-anchor {
     .ff-website header a .ff-icon--down path {
         @apply sm:text-red-400;
     }
-
-    .ff-website header a:hover .ff-icon--down path {
-        @apply sm:text-white;
-    }
     
     .ff-website header a {
         color: theme(colors.red.400);
     }
 
     .ff-website header ul a {
-        flex-grow: 1;
         border-color: theme(colors.gray.200);
-        @apply border-b py-3 px-4 text-base sm:border-b-0 sm:text-lg;
+        @apply border-b py-3 px-4 text-base sm:border-b-0 sm:text-lg text-center;
     }
 
     .ff-website header ul a.ff-btn {
         @apply text-sm;
     }
 
+    .ff-website header a:hover .ff-icon--down path,
     .ff-website header ul a:hover {
-        @apply sm:text-white;
+        @apply text-teal-600 md:text-white;
     }
 
     .ff-website header .ff-nav-dropdown ul {
         top: 100%;
+        z-index: 10;
         right: 0;
         min-width: 100%;
         margin-right: 1rem;
-        @apply hidden sm:absolute sm:shadow-md;
+        white-space: nowrap;
+        @apply hidden sm:absolute md:rounded-b-md sm:shadow-nav;
     }
 
     .ff-website header .ff-nav-dropdown a {
@@ -291,7 +294,7 @@ h4:hover .header-anchor {
     .ff-website header .ff-nav-dropdown ul li a {
         display: block;
         cursor: pointer;
-        @apply pl-6 md:pl-1.5 md:pr-6 md:text-white;
+        @apply text-left pl-6 md:pl-16 md:text-right md:pr-6 sm:text-white;
     }
 
     .ff-website header .ff-nav-dropdown:hover a {
