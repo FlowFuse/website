@@ -223,6 +223,12 @@ module.exports = function(eleventyConfig) {
         // Full list of formats here: https://www.11ty.dev/docs/plugins/image/#output-formats
         // Warning: Avif can be resource-intensive so take care!
         let formats = ["avif", "webp", "auto"];
+
+        // Skip slow formats for serve, watch, i.e. local development
+        if (process.env.ELEVENTY_RUN_MODE !== "build") {
+            formats = formats.filter((format) => !['avif', 'webp'].includes(format))
+        }
+
         let file = resolvedImagePath(this.page.inputPath, src);
         let metadata = await eleventyImage(file, {
             widths: widths ? widths.concat(widths.map((w) => w * 2)) : ["auto"],
@@ -417,7 +423,12 @@ module.exports = function(eleventyConfig) {
                 },
             }
         }
-       
+
+        // Skip slow formats for serve, watch, i.e. local development
+        if (process.env.ELEVENTY_RUN_MODE !== "build") {
+            formats = formats.filter((format) => !['avif', 'webp'].includes(format))
+        }
+        
         // Handle both relative to post and root
         const widths = [650] // width of blog prose
         const imgOpts = {
