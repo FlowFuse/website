@@ -10,7 +10,7 @@ FlowForge helps Node-RED developers deliver applications in a more reliable, col
 ### About FlowForge - 150 Words
 FlowForge is an open-core company investing in Node-RED. Nick O’Leary, co-creator of Node-RED is FlowForge co-founder and CTO. 
 
-Node-RED is an open-source low-code programming tool, allowing developers to quickly and easily connect IoT devices, APIs, and online services by creating flow-based applications. It uses a drag-and-drop interface to wire together nodes, which can represent devices, APIs, or functions, to process data and create powerful automations. 
+Node-RED is an open-source low-code programming tool, allowing developers to quickly and easily connect IoT devices, APIs, and online services by creating flow-based applications. It uses a drag-and-drop interface to wire together nodes, which can represent devices, APIs, or functions, to process data, and create powerful automations. 
 
 Node-RED is very popular in the manufacturing industry for collecting factory data at the edge and transmitting it to a database or the cloud. Its visual programming environment makes it easy for non-traditional software developers to create data applications that accelerate innovation on the factory floor.
 
