@@ -4,7 +4,8 @@ navGroup: Sales & Marketing
 ---
 
 ### About FlowForge - 50 Words
-FlowForge helps Node-RED developers deliver applications in a more reliable, collaborative and secure manner. Node-RED’s intuitive, low-code development environment is great for connecting together hardware devices, APIs and online services. FlowForge adds to Node-RED, collaborative development, management of remote deployments, support for DevOps deliver pipelines and the ability to host Node-RED applications on FlowForge Cloud. FlowForge is the devops platform for Node-RED application development and delivery.
+
+FlowForge helps Node-RED developers deliver applications in a more reliable, collaborative, and secure manner. Node-RED’s intuitive, low-code development environment is great for connecting together hardware devices, APIs, and online services. FlowForge adds to Node-RED; collaborative development, management of remote deployments, support for DevOps deliver pipelines, and the ability to host Node-RED applications on FlowForge Cloud. FlowForge is the DevOps platform for Node-RED application development and delivery.
 
 ### About FlowForge - 150 Words
 FlowForge is an open-core company investing in Node-RED. Nick O’Leary, co-creator of Node-RED is FlowForge co-founder and CTO. 
