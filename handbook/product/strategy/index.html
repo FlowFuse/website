@@ -15,10 +15,10 @@
 
     <!-- Browser Title -->
     
-    <title>Vendors &#x2022; FlowForge Handbook</title>
+    <title>Strategy &#x2022; FlowForge Handbook</title>
     
 
-    <meta rel="canonical" href="https://flowforge.com/handbook/operations/vendors/">
+    <meta rel="canonical" href="https://flowforge.com/handbook/product/strategy/">
 
     <!-- Browser Description -->
     
@@ -29,7 +29,7 @@
 
     <!-- Open Graph Title -->
     
-    <meta property="og:title" content="Vendors &#x2022; FlowForge Handbook" />
+    <meta property="og:title" content="Strategy &#x2022; FlowForge Handbook" />
     
 
     <!-- Open Graph Description -->
@@ -38,7 +38,7 @@
     
 
     <!-- Open Graph URL -->
-    <meta property="og:url" content="https://flowforge.com/handbook/operations/vendors/" />
+    <meta property="og:url" content="https://flowforge.com/handbook/product/strategy/" />
     <!-- Open Graph Image -->
     
     <meta property="og:image" content="https://flowforge.com/images/og-social-tile.jpg" />
@@ -282,7 +282,7 @@
                     </li>
                     
                     
-                    <li class="active">
+                    <li class="">
                         <a href="/handbook/operations/vendors/">
                             Vendors
                         </a>
@@ -357,7 +357,7 @@
                     </li>
                     
                     
-                    <li class="">
+                    <li class="active">
                         <a href="/handbook/product/strategy/">
                             Strategy
                         </a>
@@ -848,29 +848,111 @@
         <div class="hidden w-full mx-auto ff-bg-light md:block">
             <div class="font-medium border-b pb-1">
                 
-                /<a class="mx-2" href="/handbook">handbook</a>/<a class="mx-2" href="/handbook/operations">operations</a>/<a class="mx-2" href="/handbook/operations/vendors">vendors</a>
+                /<a class="mx-2" href="/handbook">handbook</a>/<a class="mx-2" href="/handbook/product">product</a>/<a class="mx-2" href="/handbook/product/strategy">strategy</a>
             </div>
         </div>
         <div class="w-full mx-auto ff-bg-light flex flex-col md:flex-row">
             <!-- Main Content -->
             <div class="flex-grow order-last md:order-first">
                 <div class="mt-6 mb-4 prose prose-blue main-content">
-                    <h1 id="vendors" tabindex="-1"><a class="header-anchor" href="#vendors">#&nbsp;</a> Vendors</h1>
-<h3 id="process" tabindex="-1"><a class="header-anchor" href="#process">#&nbsp;</a> Process</h3>
-<p>To start to process of approval and paying of invoices a PDF of the invoice should
-be mailed to billing@flowforge.com. FlowForge pays invoices 30 days after filing
-unless specifically agreed otherwise prior to filing the invoice.</p>
-<p>The invoice should include:</p>
-<ul>
-<li>Vendor Invoice ID</li>
-<li>Vendor address</li>
-<li>Vendor contact details</li>
-<li>Details of services rendered</li>
-<li>Amount of dollars due</li>
-</ul>
-<h4 id="fraud-prevention" tabindex="-1"><a class="header-anchor" href="#fraud-prevention">#&nbsp;</a> Fraud prevention</h4>
-<p>We do not diverge from this process regardless of the urgency of the payment. We will <em>never</em> make a payment request through direct email or text messages.</p>
-<p>If in any doubt, reach out through Slack and request a call to validate.</p>
+                    <h1 id="product-strategy" tabindex="-1"><a class="header-anchor" href="#product-strategy">#&nbsp;</a> Product Strategy</h1>
+<p>Our strategy is an indication and statement of intent for the next 2 years, and reflects FlowForge’s vision. It’s a draft, as everything in the handbook is a draft, so we will revisit regularly and iterate when there is a reason to do so. FlowForge is a 100 percent agile company, so our product is; timing is everything. Have a look at our roadmap for what we're pursuing in the upcoming releases.</p>
+<h3 id="flowforge-for-enterprise" tabindex="-1"><a class="header-anchor" href="#flowforge-for-enterprise">#&nbsp;</a> FlowForge for enterprise</h3>
+<p>The cornerstone of FlowForge is to make Node-RED more accessible to enterprises. Therefore, we are constantly implementing requirements that support the easy use of Node-RED in production environments. We will focus on:</p>
+<ol>
+<li>
+<p>High availability &amp; Scalability</p>
+</li>
+<li>
+<p>State-of-the-art built-in security e.g. VPN support</p>
+</li>
+<li>
+<p>DevOps</p>
+<ol>
+<li>
+<p>Change control</p>
+</li>
+<li>
+<p>Collaborative Development</p>
+</li>
+<li>
+<p>Pipelines (e.g. staging)</p>
+</li>
+</ol>
+</li>
+</ol>
+<h3 id="node-red-at-edge" tabindex="-1"><a class="header-anchor" href="#node-red-at-edge">#&nbsp;</a> Node-RED at edge</h3>
+<p>Many organizations position Node-RED instances on remote servers, edge or industrial devices, to meet network, infrastructure, or use case requirements. Therefore, management of remote instances is crucial for the overall success of closing the gap between IT and OT.</p>
+<p>FlowForge already supports this process by creating snapshots on Node-RED instances that can be deployed to multiple remote targets. We will continue to expand the functionalities to allow users to manage existing Node-RED instances, improve their development practices to accelerate development and ensure a reliable and repeatable process, providing more flexible remote deployment options and offering the best support for devices in closed and segmented networks as we are facing it in production environments.</p>
+<h3 id="certified-nodes-marketplace" tabindex="-1"><a class="header-anchor" href="#certified-nodes-marketplace">#&nbsp;</a> Certified nodes marketplace</h3>
+<p>The &quot;Node-RED Library&quot; offers a unique added value to many Node-RED and FlowForge users. It is already possible today to easily create technical implementations out of the box for several OT and IT protocols, thanks to the community and Node-RED library.</p>
+<p>The logical consequence of FlowForge’s journey is to also include “custom nodes” as one element of the product. Therefore, FlowForge will offer official support for certain popular nodes and in addition enable the community to offer commercial “nodes” via FlowForge. Nevertheless, an open-source core is always required and wanted. However, premium extensions and commercial support allow the community to participate in the success of FlowForge.</p>
+<h3 id="iiot-solutions" tabindex="-1"><a class="header-anchor" href="#iiot-solutions">#&nbsp;</a> IIoT Solutions</h3>
+<p>Today, a whole range of use cases can be implemented with Node-RED. From KPI calculations to intralogistics solutions, incredible use cases are already being realized in Node-RED.</p>
+<p>To make it easy for FlowForge users in particular to get started and address their specific need, a use case library is to be created (based on the &quot;Node-RED Library&quot;), which offers standard templates for specific IT and OT related use cases. This way, we as FlowForge address direct added values in production, for example:</p>
+<ol>
+<li>
+<p>Condition Monitoring</p>
+</li>
+<li>
+<p>Overall Equipment Effectiveness (OEE) calculation and visualization</p>
+</li>
+<li>
+<p>ANDON for Node-RED</p>
+</li>
+<li>
+<p>Process monitoring for e.g. tightening equipment</p>
+</li>
+<li>
+<p>Predictive maintenance analysis</p>
+</li>
+<li>
+<p>Reliable feedback loops between IT and OT</p>
+</li>
+</ol>
+<p>.......</p>
+<h2 id="principles" tabindex="-1"><a class="header-anchor" href="#principles">#&nbsp;</a> Principles</h2>
+<h4 id="convention-over-configuration" tabindex="-1"><a class="header-anchor" href="#convention-over-configuration">#&nbsp;</a> Convention over configuration</h4>
+<p>We want the default configuration of FlowForge to be the best user experience for
+the majority of users.</p>
+<p>Every new option we add to the platform, whether for an administrator or end-user,
+represents another choice they have to deal with. This increases the cognitive burden
+of using the platform and can have a negative impact on user experience. It also
+increases the engineering cost to develop and test features where there are many
+possible combinations to consider.</p>
+<p>For every feature we add that has some scope for configuration, our starting point
+in the design is to <strong>identify the right configuration and hard-code it in</strong>.</p>
+<p>This removes the choice from users' hands and minds. It does not prevent us from
+choosing to make it more configurable in the future if user-feedback/business-needs
+requires it.</p>
+<p>Where there is a strong case to expose an option to the end user, it should still
+be provided with a sensible default value where possible that removes the need
+for the user to set it themselves. This gives users the ability to customise
+the option if/when they are ready to. But the default value should be the right
+answer for most users.</p>
+<p>Some configuration options cannot be defaulted - the user has to do make a choice.
+For example, setting up email on the platform. The UX around these options must
+be carefully considered to help the user get to the right choice with a minimum
+of effort.</p>
+<p>Node-RED provides a lot of configuration options. We should not assume they are all
+candidates to be exposed to FlowForge users. For example, options to customise the
+editor appearance should be reserved options that we determine the right values for
+to ensure a consistent user experience across FlowForge instances.</p>
+<p>Options that have an impact on the behaviour of flows will need to be considered
+on a case-by-case basis. But the starting point should always be to pick the right
+default and only expose to the user if absolutely necessary.</p>
+<p>See also: <a href="https://en.wikipedia.org/wiki/Convention_over_configuration">Convention over Configuration on Wikipedia</a>.</p>
+<h2 id="open-source-%26-enterprise" tabindex="-1"><a class="header-anchor" href="#open-source-%26-enterprise">#&nbsp;</a> Open Source &amp; Enterprise</h2>
+<p>We offer a number of ways that users can run the FlowForge product, we will
+always offer an open source version that has the core features. Features that
+offer higher business value or permit users to share across larger groups will
+be offered as part of our paid enterprise proposition. Our managed FlowForge
+offering is public and will generally include all features that are availble
+but may not offer certain features such as SSO where integration is required
+between the platform and an enterprise. We will offer customers the ability to
+have a dedicated managed instance if thats is a deployment model they require.
+A more detailed breakdown of the pricing and split between our Open Source and
+Enterprise Editions is on the <a href="../pricing"">pricing principles</a> page.</p>
 
                 </div>
             </div>
@@ -881,14 +963,14 @@ unless specifically agreed otherwise prior to filing the invoice.</p>
         <div class="block px-8 pt-4 w-full mx-auto ff-bg-light md:hidden">
             <div class="font-medium border-b pb-1">
                 
-                /<a class="mx-2" href="/handbook">handbook</a>/<a class="mx-2" href="/handbook/operations">operations</a>/<a class="mx-2" href="/handbook/operations/vendors">vendors</a>
+                /<a class="mx-2" href="/handbook">handbook</a>/<a class="mx-2" href="/handbook/product">product</a>/<a class="mx-2" href="/handbook/product/strategy">strategy</a>
             </div>
         </div>
         <!-- on this page -->
         <div class="sticky top-6 w-full md:w-64 mt-4 md:mt-6 px-8">
             <h3 class="font-medium border-b pb-1 mb-4">on this page</h3>
             <ul id="toc" class="text-sm border-b mb-4"></ul>
-            <div class="text-sm pb-1 text-right mb-4"><a href="https://github.com/flowforge/handbook/edit/main/operations/vendors.md">Edit this page</a></div>
+            <div class="text-sm pb-1 text-right mb-4"><a href="https://github.com/flowforge/handbook/edit/main/product/strategy.md">Edit this page</a></div>
             <div class="text-xs pb-1 text-right mb-4 italic">Updated: 2023-03-02 11:01:24 +0100</div>
         </div>
     </div>
