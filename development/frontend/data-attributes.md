@@ -1,3 +1,7 @@
+---
+navTitle: Data Attributes
+---
+
 ## Data Attributes
 
 It is recommended in the [Cypress Best Practices](https://docs.cypress.io/guides/references/best-practices#Selecting-Elements) to utilise `data-` attributes on HTML elements in order to ensure safe selection of objects that won't evolve/change over time.

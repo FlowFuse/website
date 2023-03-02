@@ -1,3 +1,8 @@
+---
+meta:
+    title: Front-End Testing
+---
+
 ## Front-End Testing
 
 For our front-end we test on two fronts:

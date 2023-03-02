@@ -1,3 +1,8 @@
+---
+meta:
+  title: Front-End Services
+---
+
 ## Services
 The frontend contains two helper services that can be called anywhere in the UI. Each of the services control components built into the main `Platform.vue`.
 
@@ -29,7 +34,7 @@ The service is built from the [ff-notification-toast](https://flowforge.github.i
 The Dialog service should be used when user confirmation is required, after an action has been taken. For example, if a user attempts to delete a resource, a confirmation Dialog should be shown to ensure this was not an accidental action.
 
 ```js
-import Dialog from '@services/dialog'
+import Dialog from '@/services/dialog'
 
 /*
  * msg      - {

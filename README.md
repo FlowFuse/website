@@ -1,3 +1,7 @@
+---
+navTitle: Handbook
+---
+
 ## Introduction
 
 This handbook contains all the information about how FlowForge Inc. is run.
@@ -10,8 +14,8 @@ and strongly encouraged.
 
 ### Company
 
- - [Values](./company)
- - [Strategy](./company/strategy.md)
+ - [Values](./company/values.md)
+ - [Vision](./company/vision.md)
  - [Operations](./operations)
  - [Product](./product)
 
@@ -19,7 +23,7 @@ and strongly encouraged.
 
  - [Design](./design)
  - [Development](./development)
- - [Videos](./media)
+ - [Videos](./marketing/videos.md)
 
 ### Sales and Marketing
 
