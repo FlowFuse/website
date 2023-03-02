@@ -26,7 +26,7 @@ The cornerstone of FlowForge is to make Node-RED more accessible to enterprises.
 
 Many organizations position Node-RED instances on remote servers, edge or industrial devices, to meet network, infrastructure, or use case requirements. Therefore, management of remote instances is crucial for the overall success of closing the gap between IT and OT. 
 
-FlowForge already supports this process by creating snapshots on Node-RED instances that can be deployed to multiple remote targets. We will continue to expand the functionalities to allow users to manage existing Node-RED instances, improve their development practices to accelerate development and ensure a reliable and repeatable process, providing more flexible remote deployment options and offering the best support for devices in closed and segmented networks as we are facing it in productive environments.
+FlowForge already supports this process by creating snapshots on Node-RED instances that can be deployed to multiple remote targets. We will continue to expand the functionalities to allow users to manage existing Node-RED instances, improve their development practices to accelerate development and ensure a reliable and repeatable process, providing more flexible remote deployment options and offering the best support for devices in closed and segmented networks as we are facing it in production environments.
 
 ### Certified nodes marketplace
 
@@ -40,15 +40,17 @@ Today, a whole range of use cases can be implemented with Node-RED. From KPI cal
 
 To make it easy for FlowForge users in particular to get started and address their specific need, a use case library is to be created (based on the "Node-RED Library"), which offers standard templates for specific IT and OT related use cases. This way, we as FlowForge address direct added values in production, for example:
 
-1. Overall Equipment Effectiveness (OEE) calculation and visualization
+1. Condition Monitoring
 
-2. ANDON for Node-RED
+2. Overall Equipment Effectiveness (OEE) calculation and visualization
 
-3. Process monitoring for tightening equipment
+3. ANDON for Node-RED
 
-4. Predictive maintenance analysis
+4. Process monitoring for e.g. tightening equipment
 
-5. Reliable feedback loops between IT and OT
+5. Predictive maintenance analysis
+
+6. Reliable feedback loops between IT and OT
 
 .......
 
