@@ -6,17 +6,8 @@ navTitle: Planning
 
 Instructions for creating a release are [here](./process.md).
 
-FlowForge is released every four weeks, on a Thursday. There are 13 releases each
-year. The initial release was published on 2022-01-20. This implies releases
-will be scheduled on the following dates.
-
- -  2022/07/07 (0.7)
- -  2022/08/04 (0.8)
- -  2022/09/01 (0.9)
- -  2022/09/29 (0.10)
- -  2022/10/27 (1.0)
- -  2022/11/24 (1.1)
- -  2022/12/22 (1.2)
+FlowForge is released every four weeks, on a Thursday. We track releases using
+GitHub Milestones. The current schedule of releases can be seen [here](https://github.com/flowforge/flowforge/milestones).
 
 Our planning process is continually evolving as we find the right way to accommodate
 both a growing team and a growing set of requirements on both how and what we deliver.
@@ -47,6 +38,9 @@ tasks/bugs related to work already in progress and that need to be addressed in
 the current milestone. They should be added to the Development Board and current
 milestone directly.
 
+We label some items as `headline`. These are items we want to highlight in the release
+announcement material and should clearly describe the value they bring to our users.
+
 ### Project Boards
 
 We use three project boards to plan and track our work.
@@ -72,7 +66,7 @@ Items on this board are put into one of the following states to indicate their p
  - 'Long' This is the long term horizon, items that we know we will want to do one day but at the moment are long term goals, typically this could be 12 months away or more.
  - 'Medium' These are items that are in the 6-12 month time frame. 
  - 'Short' These are items in the 3-6 month time frame, Often these items will get pulled into a milestone from this point depending on capacity.
- - 'Next' These are items which we should be targeting for the next milestone to be planned, We plan milestones 2-3 iterations ahead so this timeframe will typically be 2-3 months. 
+ - 'Next' These are items which we should be targeting for the next milestone to be planned, We plan milestones 2-3 iterations ahead so this time frame will typically be 2-3 months. 
  - 'Ready' This is for items which could be developed today but for various reasons have not been added to a milestone, often this will be items which have been descoped from a previous milestone but could be picked up if there is spare development capacity.
 
 As items move up the list and get closer to Next we should have a greater understanding of what the detail and demand is for that feature. This is an iterative approach and as we gain understanding on an item we will use that information to aid in reviewing its position on the board.
@@ -131,13 +125,10 @@ by the CTO. This meeting includes 2 parts:
 
 ### What to work on
 
-Work comes from two places:
+Work comes the ToDo column of the [Development Board](https://github.com/orgs/flowforge/projects/1/views/1).
 
- - Items assigned for Design/Estimation on the Product Board
- - Items from the ToDo status on the Development Board
-
-It is important we make progress on both sides to ensure a steady velocity across
-milestones.
+We use a set of labels to identify the high/medium/low priority of an item. We tend to
+flag the more important stuff and treat an unlabelled item is implicitly low priority.
 
 Naturally there will be items that crop up unexpectedly and have to be dealt with
 pragmatically. For example, we may realise an item is needed for the current release
@@ -145,12 +136,12 @@ that needs to be expedited through the process. We should remain flexible in how
 we work.
 
 When picking up an unassigned item assign it to yourself and move it to the
-**In Progress** state (for Development items) or the appropriate Product board state.
+**In Progress** state.
 
 #### Milestones are overscheduled
 
 As stories and tasks are assigned to milestones, it's unlikely there's not
-enough work to be done. On the flipside, this means that not all scheduled epics
+enough work to be done. On the flip side, this means that not all scheduled epics
 or stories will be completed.
 
 The Product Owner/CTO have overall responsibility to ensure any 'must-have' items
@@ -167,3 +158,23 @@ criteria are met:
  - Acceptance criteria identified in the Story have been met
  - Product Owner accepts the story is complete
 
+#### Feature Demos
+
+Part of finishing an item is being able to demonstrate it in action. This allows others
+to see it in action, generate material for the release announcement and help identify
+any gaps or places for improvement.
+
+All `headline` item or significant piece of functionality should be demoed.
+
+Demos must be done in good time within the release cycle to allow for any follow-up
+action. It is better to demo something 90% complete and get feedback on it, than it
+is to rush a demo without time to do anything with it.
+
+Demos should consist of:
+
+ - A short (< 5 minute where possible) screen capture walk through of the feature with commentary.
+ - It should cover the feature from a users perspective - what value do they get from it.
+ - The video should be uploaded to, or linked to, in the relevant issue.
+ - A link should be posted to the `#feature-demos` channel in slack. This will allow the whole team to be notified of the demo without having to subscribe to every issue comment.
+
+For some features, it may be necessary to create multiple demos of different aspects.

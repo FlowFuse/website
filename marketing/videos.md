@@ -53,7 +53,7 @@ If you require a license to one of the following tools (where applicable), then 
 
 #### Image Editing
 
-- **Illustrator** provides tooling to create templates that can ingested into After Effects. It's often easier to layout complex content in Illustrtor, [then export to After Effects for animation](https://www.schoolofmotion.com/blog/import-adobe-illustrator-files-into-after-effects).
+- **Illustrator** provides tooling to create templates that can ingested into After Effects. It's often easier to layout complex content in Illustrator, [then export to After Effects for animation](https://www.schoolofmotion.com/blog/import-adobe-illustrator-files-into-after-effects).
 
 - **Photoshop** can be used for raster image and photo-editing.
 

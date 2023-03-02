@@ -22,7 +22,7 @@ time in the afternoon either use e.g. `15:00` or explicitly `3 PM`.
 ### Formatting dates
 
 As there's varying standard on how to format dates, please be explicit and use
-`YYYY-MM-DD` by default. This format is unambigious, and standardized with ISO
+`YYYY-MM-DD` by default. This format is unambiguous, and standardized with ISO
 8601, meaning it can be used in tools like Google Sheets too.
 
 ## Meetings
@@ -75,7 +75,7 @@ below so you get to decide if you want more channels or not.
 
 ### Standup meetings
 
-Standup meetings are hard to scale across multiple timezones. To make standups
+Standup meetings are hard to scale across multiple timezones. To make stand-ups
 async, we're using [Geekbot](https://geekbot.com/). Geekbot will trigger each
 workday morning at 9:00 local time, when online in Slack. Everyone who's a
 member of the #standup channel in Slack will be prompted.
@@ -91,15 +91,15 @@ Pro-tips:
 Weekly a meeting is held to announce company wide updates, get to know each
 other, and share things you want to share both professionally and personally.
 
-The meeting starts with announcements and reporting on [key metrics](../company/strategy.md#key-metrics)
-These should be written down in the agenda as participation is not required.
-Reading the agenda the day after the meeting should be enough to stay in the
-loop on company updates. Announcements and work related topics are timeboxed to
-the first 15 minutes of the meeting to allow plenty time to talk about other
-topics.
-
 Personal updates don't have to be documented in the agenda, but please do keep a
 list of names in the agenda so everyone gets the opportunity to share.
+
+### Bi-weekly KPI meeting
+
+This 25-minute meeting is held to report on [key metrics](../company/strategy.md#key-metrics).
+Every department gets 5 minutes to explain what initiatives have been implemented
+over the past 2 weeks, what initiatives or milestones are scheduled for the next
+two weeks, and what results are expected to the company wide KPI.
 
 ## Node-RED community interactions.
 
@@ -140,3 +140,14 @@ When struggling to fill the agenda you might want to think about:
 
 Further, the document should include an "Action Items" list to track what needs
 doing, and when.
+
+## Skip level meetings
+
+Meetings between levels of the organisation happen in regular 1:1s, usually held
+weekly between the manager and report. The report however might want to
+also communicate with the manager's manager to keep in touch with the strategy and
+communicate feedback on what they observe directly.
+
+The advised cadance to have these meetings depends on the wants of the report,
+but generally advised once every 6-8 weeks. As FlowForge scales, the number of
+weeks between these meetings is likely increasing.

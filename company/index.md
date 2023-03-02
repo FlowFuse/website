@@ -5,9 +5,8 @@ navGroup: Company
 
 # Company
 
-FlowForge is an open core company creating a low-code programming platform based
-on the [OpenJS Foundation Node-RED project](https://nodered.org). Here you can find
-information on how we run FlowForge.
+FlowForge allows organizations to reliably deliver Node-RED applications in a
+continuous, collaborative, and secure manner.
 
  - [Board meetings](./board.md)
  - [Communication](./communication.md)

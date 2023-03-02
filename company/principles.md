@@ -8,7 +8,7 @@ meta:
 ## All Remote
 
 We are a fully remote company that puts a strong emphasis on trust and respect
-for its employees, customers, partners and communities. We are able to hire the
+for its employees, customers, partners, and communities. We are able to hire the
 right people from wherever they are in the world. We work openly with one
 another and value clear communication and decision making without being sat in
 the same room.
