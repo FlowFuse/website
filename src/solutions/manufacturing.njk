@@ -83,9 +83,10 @@ description:
 
 {% include "components/divider-flow--top-red--dark.njk" %}
 
-<div class="w-full ff-bg-dark px-6 pt-0 pb-32 md:pt-0 md:px-0">
-    <div class="page container pt-12 px-3 md:px-12 md:max-w-screen-lg m-auto text-center max-w-screen-lg">
+<div class="w-full ff-bg-dark px-6 pt-0 pb-32 md:pt-12 md:px-0">
+    <div class="page container pt-12 pb-6 px-3 md:px-12 md:max-w-screen-lg m-auto text-center max-w-screen-lg">
         <div class="hero">
+            <h1 style="color: white" class="mb-6 m-auto">FlowForge Adds DevOps<br>to Node-RED for Manufacturing</h1>
             <p class="mt-0">
                 FlowForge helps companies to reliably deliver Node-RED applications in a continuous,
                 collaborative and secure manner. We introduce to Node-RED many of the devops concepts
@@ -93,10 +94,12 @@ description:
             </p>
         </div>
     </div>
-
-    <div class="page mt-12 content max-w-screen-lg m-auto">
-        <div class="hero grid grid-cols-2 gap-16 mb-16">
-            <div class="text-left self-start">
+    <div class="page mt-6 content max-w-screen-md m-auto">
+        <div class="text-left self-start flex gap-8 items-center mb-12">
+            <div class="w-48 flex-shrink-0">
+                {% image "./images/pictograms/edge.png", "", [128] %}
+            </div>
+            <div>
                 <h3>Managed Remote Instances for Efficient Fleet Monitoring</h3>
                 <div>
                     <p>
@@ -110,7 +113,12 @@ description:
                     </p>
                 </div>
             </div>
-            <div class="text-left self-start">
+        </div>
+        <div class="text-left self-start flex flex-row-reverse gap-8 items-center mb-12">
+            <div class="w-48 flex-shrink-0">
+                {% image "./images/pictograms/community.png", "", [128] %}
+            </div>
+            <div>
                 <h3>Collaborative Node-RED Development</h3>
                 <div>
                     <p>
@@ -120,7 +128,12 @@ description:
                     </p>
                 </div>
             </div>
-            <div class="text-left self-start">
+        </div>
+        <div class="text-left self-start flex flex-row gap-8 items-center mb-12">
+            <div class="w-48 flex-shrink-0">
+                {% image "./images/pictograms/bias_for_action.png", "", [128] %}
+            </div>
+            <div>
                 <h3>Streamlined Application Delivery</h3>
                 <div>
                     <p>
@@ -130,7 +143,12 @@ description:
                     </p>
                 </div>
             </div>
-            <div class="text-left self-start">
+        </div>
+        <div class="text-left self-start flex flex-row-reverse gap-8 items-center mb-12">
+            <div class="w-48 flex-shrink-0">
+                {% image "./images/pictograms/ticket.png", "", [128] %}
+            </div>
+            <div>
                 <h3>Professional Support for Node-RED</h3>
                 <div>
                     <p>

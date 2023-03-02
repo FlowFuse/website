@@ -4,6 +4,7 @@
 
 .page h1 {
     font-size: 2.5rem;
+    line-height: 4rem;
 }
 
 .page h2 {
@@ -35,7 +36,7 @@
 
 .page p {
     color: theme(colors.white);
-    line-height: 1.5rem;
+    line-height: 1.75rem;
     font-size: 16px;
     font-weight: 300;
     margin-bottom: 1rem;

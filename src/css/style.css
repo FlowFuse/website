@@ -49,13 +49,13 @@ h5 {
 
 p {
     font-size: 1rem;
-    line-height: 1.5rem;
+    line-height: 1.75rem;
     margin-top: 1rem;
     margin-bottom: 1rem;
 }
 
 h1, h2, h3, h4, h5, p {
-    color: theme(colors.teal.200);
+    color: theme(colors.teal.300);
 }
 
 picture img {
@@ -82,7 +82,7 @@ width: 100%;}
 .ff-bg-dark h3, .ff-bg-mid h3,
 .ff-bg-dark h4, .ff-bg-mid h4,
 .ff-bg-dark h5, .ff-bg-mid h5 {
-    color: theme(colors.teal.200);
+    color: theme(colors.teal.300);
 }
 .ff-bg-dark p, .ff-bg-mid p {
     color: theme(colors.white);
