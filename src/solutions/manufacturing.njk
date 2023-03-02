@@ -11,7 +11,7 @@ description:
 
 <div class="container m-auto text-center">
     <div class="mt-12 content max-w-screen-lg m-auto">
-        <div class="grid grid-cols-2 gap-16 mb-16">
+        <div class="grid px-6 grid-cols-1 md:grid-cols-2 gap-8 sm:gap-16 mb-16">
             <div class="text-left self-start">
                 <h3><span class="text-red-600">Connect</span> Hardware & Sensors</h3>
                 <div>
@@ -84,7 +84,7 @@ description:
 {% include "components/divider-flow--top-red--dark.njk" %}
 
 <div class="w-full ff-bg-dark px-6 pt-0 pb-32 md:pt-12 md:px-0">
-    <div class="page container pt-12 pb-6 px-3 md:px-12 md:max-w-screen-lg m-auto text-center max-w-screen-lg">
+    <div class="page container pt-6 pd-6 sm:pb-12 px-3 md:px-12 md:max-w-screen-lg m-auto text-center max-w-screen-lg">
         <div class="hero">
             <h1 style="color: white" class="mb-6 m-auto">FlowForge Adds DevOps<br>to Node-RED for Manufacturing</h1>
             <p class="mt-0">
@@ -94,70 +94,79 @@ description:
             </p>
         </div>
     </div>
-    <div class="page mt-6 content max-w-screen-md m-auto">
+    <div class="page mt-6 content max-w-screen-lg m-auto">
         <div class="text-left self-start flex gap-8 items-center mb-12">
-            <div class="w-48 flex-shrink-0">
-                {% image "./images/pictograms/edge.png", "", [128] %}
-            </div>
-            <div>
-                <h3>Managed Remote Instances for Efficient Fleet Monitoring</h3>
+            <div class="flex flex-col sm:flex-row gap-8 max-w-screen-lg sm:pr-24 md:pr-48">
+                <div class="w-32 sm:w-48 flex-shrink-0">
+                    {% image "./images/pictograms/edge.png", "", [128] %}
+                </div>
                 <div>
-                    <p>
-                        Many manufacturing companies will use Node-RED to monitor equipment in their
-                        factory or fleets of devices in remote locations.
-                    </p>
-                    <p>
-                        FlowForge automates the process
-                        of remote deployment of a Node-RED instance. It can automatically deploy a new
-                        version of a Node-RED flow or even roll-back to a previous snapshot.
-                    </p>
+                    <h4>Efficient Fleet Management & Monitoring</h4>
+                    <div>
+                        <p>
+                            Many manufacturing companies will use Node-RED to monitor equipment in their
+                            factory or fleets of devices in remote locations.
+                        </p>
+                        <p>
+                            FlowForge automates the process
+                            of remote deployment of a Node-RED instance. It can automatically deploy a new
+                            version of a Node-RED flow or even roll-back to a previous snapshot.
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="text-left self-start flex flex-row-reverse gap-8 items-center mb-12">
-            <div class="w-48 flex-shrink-0">
-                {% image "./images/pictograms/community.png", "", [128] %}
-            </div>
-            <div>
-                <h3>Collaborative Node-RED Development</h3>
+        <div class="text-left sm:text-right self-start flex flex-row-reverse gap-8 items-center mb-12">
+            <div class="flex flex-col sm:flex-row-reverse gap-8 max-w-screen-lg sm:pl-24 md:pl-48">
+                <div class="w-32 sm:w-48 flex-shrink-0">
+                    {% image "./images/pictograms/community.png", "", [128] %}
+                </div>
                 <div>
-                    <p>
-                        FlowForge makes it possible for teams to collaborate on the same Node-RED flows.
-                        Team members can now share the same Node-RED instances to make for quicker and
-                        more efficient development of your Node-RED application.
-                    </p>
+                    <h4>Collaborative Node-RED Development</h4>
+                    <div>
+                        <p>
+                            FlowForge makes it possible for teams to collaborate on the same Node-RED flows.
+                            Team members can now share the same Node-RED instances to make for quicker and
+                            more efficient development of your Node-RED application.
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="text-left self-start flex flex-row gap-8 items-center mb-12">
-            <div class="w-48 flex-shrink-0">
-                {% image "./images/pictograms/bias_for_action.png", "", [128] %}
-            </div>
-            <div>
-                <h3>Streamlined Application Delivery</h3>
+        <div class="text-left self-start flex gap-8 items-center mb-12">
+            <div class="flex flex-col sm:flex-row gap-8 max-w-screen-lg sm:pr-24 md:pr-48">
+                <div class="w-32 sm:w-48 flex-shrink-0">
+                    {% image "./images/pictograms/bias_for_action.png", "", [128] %}
+                </div>
                 <div>
-                    <p>
-                        With FlowForge, you can not set up devops delivery pipelines to support
-                        development, test and production environments. A key to ensuring your Node-RED
-                        application delivery is reliable, secure and high quality.
-                    </p>
+                    <h4>Streamlined Application Delivery</h4>
+                    <div>
+                        <p>
+                            With FlowForge, you can not set up devops delivery pipelines to support
+                            development, test and production environments. A key to ensuring your Node-RED
+                            application delivery is reliable, secure and high quality.
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="text-left self-start flex flex-row-reverse gap-8 items-center mb-12">
-            <div class="w-48 flex-shrink-0">
-                {% image "./images/pictograms/ticket.png", "", [128] %}
-            </div>
-            <div>
-                <h3>Professional Support for Node-RED</h3>
+        <div class="text-left sm:text-right self-start flex flex-row-reverse gap-8 items-center mb-12">
+            <div class="flex flex-col sm:flex-row-reverse gap-8 max-w-screen-lg sm:pl-24 md:pl-48">
+                <div class="w-32 sm:w-48 flex-shrink-0">
+                    {% image "./images/pictograms/ticket.png", "", [128] %}
+                </div>
                 <div>
-                    <p>
-                        FlowForge offers professional support for Node-RED deployments. Our Node-RED
-                        experts are available to support your Node-RED and FlowForge deployments.</p>
-                    <p>
-                        The FlowForge platform keeps your systems up-to-date with the latest versions of
-                        Node-RED and security updates, ensuring the continuity of your operations.
-                    </p>
+                    <h4>Professional Support for Node-RED</h4>
+                    <div>
+                        <p>
+                            FlowForge offers professional support for Node-RED deployments. Our experts are
+                            available to support your Node-RED and FlowForge deployments.
+                        </p>
+                        <p>
+                            The FlowForge platform keeps your systems up-to-date with the latest versions of
+                            Node-RED and security updates, ensuring the continuity of your operations.
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>
