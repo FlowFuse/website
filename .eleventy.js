@@ -7,6 +7,7 @@ const pluginRSS = require("@11ty/eleventy-plugin-rss");
 const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 const pluginMermaid = require("@kevingimbel/eleventy-plugin-mermaid");
 const codeClipboard = require("eleventy-plugin-code-clipboard");
+const htmlmin = require("html-minifier");
 const markdownIt = require("markdown-it");
 const markdownItAnchor = require("markdown-it-anchor");
 const markdownItFootnote = require("markdown-it-footnote");
@@ -463,6 +464,28 @@ module.exports = function(eleventyConfig) {
 
     eleventyConfig.setLibrary("md", markdownLib)
 
+    if (!DEV_MODE) {
+        console.info(`[11ty] Output HTML will be minified, expect a short wait`)
+        eleventyConfig.addTransform("htmlmin", function (content) {
+            if (this.page.outputPath && this.page.outputPath.endsWith(".html")) {
+                let minified = htmlmin.minify(content, {
+                    collapseBooleanAttributes: true,
+                    collapseWhitespace: true,
+                    conservativeCollapse: true,
+                    preserveLineBreaks: true,
+                    removeComments: true,
+                    removeEmptyAttributes: true,
+                    removeRedundantAttributes: true,
+                    useShortDoctype: true,
+                })
+
+                return minified
+            }
+        
+            return content
+        })
+    }
+        
     return {
         dir: {
             input: "src"
