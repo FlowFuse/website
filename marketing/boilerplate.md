@@ -5,7 +5,7 @@ navGroup: Sales & Marketing
 
 ### About FlowForge - 50 Words
 
-FlowForge helps Node-RED developers deliver applications in a more reliable, collaborative, and secure manner. Node-RED’s intuitive, low-code development environment is great for connecting together hardware devices, APIs, and online services. FlowForge adds to Node-RED; collaborative development, management of remote deployments, support for DevOps deliver pipelines, and the ability to host Node-RED applications on FlowForge Cloud. FlowForge is the DevOps platform for Node-RED application development and delivery.
+FlowForge helps Node-RED developers delivery applications in a more reliable, collaborative, and secure manner. Node-RED’s intuitive, low-code development environment is great for connecting together hardware devices, APIs, and online services. FlowForge adds to Node-RED; collaborative development, management of remote deployments, support for DevOps deliver pipelines, and the ability to host Node-RED applications on FlowForge Cloud. FlowForge is the DevOps platform for Node-RED application development and delivery.
 
 ### About FlowForge - 150 Words
 
@@ -15,5 +15,5 @@ Node-RED is an open-source low-code programming tool, allowing developers to qui
 
 Node-RED is very popular in the manufacturing industry for collecting factory data at the edge and transmitting it to a database or the cloud. Its visual programming environment makes it easy for non-traditional software developers to create data applications that accelerate innovation on the factory floor.
 
-FlowForge adds to Node-RED collaborative development, management of remote deployments, support for DevOps deliver pipelines and the ability to host Node-RED applications on FlowForge Cloud. FlowForge is the devops platform for Node-RED application development and delivery.
+FlowForge adds to Node-RED collaborative development, management of remote deployments, support for DevOps delivery pipelines and the ability to host Node-RED applications on FlowForge Cloud. FlowForge is the devops platform for Node-RED application development and delivery.
 
