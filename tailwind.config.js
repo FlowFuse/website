@@ -4,6 +4,12 @@ module.exports = {
     darkMode: false, // or 'media' or 'class'
     theme: {
         extend: {
+            boxShadow: {
+                nav: '3px 3px 6px 0px #000000e0;'
+            },
+            gridTemplateColumns: {
+                header: '1fr auto 1fr'
+            },
             colors: { // https://coolors.co/aa4444-2d2d2a-779fa1-efd09e-fafac6
                 black: "#000",
                 white: "#FFF",
