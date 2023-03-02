@@ -13,5 +13,5 @@ continuous, collaborative, and secure manner.
  - [Principles](./principles.md)
  - [Remote work](./remote.md)
  - [Security](./security.md)
- - [Strategy](./strategy.md)
+ - [Vision](./vision.md)
  - [Values](./values.md)
