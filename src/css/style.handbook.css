@@ -113,4 +113,20 @@
     .handbook-nav ul:has(li.active) {
         max-height: initial;
     }
+
+    .handbook .persona-card label {
+        @apply font-bold;
+    }
+
+    .handbook .persona-card ul {
+        margin-top: 0;
+        margin-bottom: 0;
+        @apply text-white;
+    }
+
+    .handbook .persona-card li {
+        margin-top: 0.125rem;
+        margin-bottom: 0.125rem;
+        padding-left: 1.25rem;
+    }
 }
