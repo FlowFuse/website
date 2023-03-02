@@ -222,10 +222,17 @@ module.exports = function(eleventyConfig) {
 
     // Eleventy Image shortcode
     // https://www.11ty.dev/docs/plugins/image/
+    console.info(`[11ty] Image pipeline is enabled in ${DEV_MODE ? 'dev mode' : 'prod mode'} expect a wait for first build`)
     eleventyConfig.addAsyncShortcode("image", async function imageShortcode(src, alt, widths, sizes) {
         // Full list of formats here: https://www.11ty.dev/docs/plugins/image/#output-formats
         // Warning: Avif can be resource-intensive so take care!
         let formats = ["avif", "webp", "auto"];
+
+        // Skip slow formats for local development
+        if (DEV_MODE) {
+            formats = formats.filter((format) => !['avif', 'webp'].includes(format))
+        }
+
         let file = resolvedImagePath(this.page.inputPath, src);
         let metadata = await eleventyImage(file, {
             widths: widths ? widths.concat(widths.map((w) => w * 2)) : ["auto"],
@@ -420,7 +427,12 @@ module.exports = function(eleventyConfig) {
                 },
             }
         }
-       
+
+        // Skip slow formats for local development
+        if (DEV_MODE) {
+            formats = formats.filter((format) => !['avif', 'webp'].includes(format))
+        }
+        
         // Handle both relative to post and root
         const widths = [650] // width of blog prose
         const imgOpts = {
