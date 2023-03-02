@@ -5,7 +5,7 @@ navTitle: Plan
 
 ## Background
 
-Our [Company Strategy](../company/strategy.md) sets out 4 pillars that our product work is focussed around
+Our [Company Vision](../company/vision.md) sets out 4 pillars that our product work is focussed around
 
 ## Principles
 
