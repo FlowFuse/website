@@ -16,11 +16,11 @@ Personas help us not only define our messaging and marketing delivery, but also 
 
 - [Sahib Startup CTO](#sahib%2C-startup-cto)
 
-- [Danielle Developer](Danielle_Developer.md)
+- [Danielle Developer](#danielle%2C-developer)
   
 ##### Others
 
-- [Harry Hobbyist](Harry_Hobbyist.md)
+- [Harry Hobbyist](#harry%2C-hobbyist)
 
 
 ## Persona Template
