@@ -15,7 +15,7 @@ Hi Irvin, thanks for the question. I suspect you might be better using a custom 
 
 I've come across [Flogger](https://flows.nodered.org/node/node-red-contrib-flogger) which seems to do a good job of logging, including support for multiple log files, and built in support for log rotation.
 
-![Capturing debug to a log file using Flogger](../images/flogger.gif "Capturing debug to a log file using Flogger")
+![Capturing debug to a log file using Flogger](./images/flogger.gif "Capturing debug to a log file using Flogger")
 
 If you really wanted to log to a database rather than a log file you could create your own logging subflow. Once that's in place you can drop it into your flow as needed to capture your debug data for later consumption.
 
@@ -29,7 +29,7 @@ Assuming you want an easy way to package up and distribute the functionality you
 
 Hi John, interesting question, thanks for sending it in. For the sake of any readers who were not an the webinar here is what you are describing.
 
-![Flow where the random number generator sends a message to 4 nodes at the same time](../images/chart-flow.png "Flow where the random number generator sends a message to 4 nodes at the same time")
+![Flow where the random number generator sends a message to 4 nodes at the same time](./images/chart-flow.png "Flow where the random number generator sends a message to 4 nodes at the same time")
 
 All downstream nodes linked to the same prior node will be triggered at practically the same time.
 
@@ -39,6 +39,6 @@ You could use a delay node if you want to ensure a particular node is triggered 
 
 Thanks Abdelhamid, that's actually really easy to do. Double click the subflow you want to delete, then select 'delete subflow' from the top of your workspace.
 
-![How to delete a subflow](../images/delete-subflow.png "How to delete a subflow")
+![How to delete a subflow](./images/delete-subflow.png "How to delete a subflow")
 
 Thanks again to everyone who attended and participated in our first webinar. We have lots of other useful live content coming up soon, you can view and register for future events on our website's [webinars page](https://flowforge.com/webinars/).
