@@ -15,10 +15,10 @@
 
     <!-- Browser Title -->
     
-    <title>Staging Environment &#x2022; FlowForge Handbook</title>
+    <title>Boiler Plate Descriptions &#x2022; FlowForge Handbook</title>
     
 
-    <meta rel="canonical" href="https://flowforge.com/handbook/development/how-we-work/staging/">
+    <meta rel="canonical" href="https://flowforge.com/handbook/marketing/boilerplate/">
 
     <!-- Browser Description -->
     
@@ -29,7 +29,7 @@
 
     <!-- Open Graph Title -->
     
-    <meta property="og:title" content="Staging Environment &#x2022; FlowForge Handbook" />
+    <meta property="og:title" content="Boiler Plate Descriptions &#x2022; FlowForge Handbook" />
     
 
     <!-- Open Graph Description -->
@@ -38,7 +38,7 @@
     
 
     <!-- Open Graph URL -->
-    <meta property="og:url" content="https://flowforge.com/handbook/development/how-we-work/staging/" />
+    <meta property="og:url" content="https://flowforge.com/handbook/marketing/boilerplate/" />
     <!-- Open Graph Image -->
     
     <meta property="og:image" content="https://flowforge.com/images/og-social-tile.jpg" />
@@ -551,7 +551,7 @@
                             </a>
                         </li>
                         
-                        <li class="active">
+                        <li class="">
                             <a href="/handbook/development/how-we-work/staging/">
                                 Staging Environment
                             </a>
@@ -735,7 +735,7 @@
                     </li>
                     
                     
-                    <li class="">
+                    <li class="active">
                         <a href="/handbook/marketing/boilerplate/">
                             Boiler Plate Descriptions
                         </a>
@@ -856,58 +856,20 @@
         <div class="hidden w-full mx-auto ff-bg-light md:block">
             <div class="font-medium border-b pb-1">
                 
-                /<a class="mx-2" href="/handbook">handbook</a>/<a class="mx-2" href="/handbook/development">development</a>/<a class="mx-2" href="/handbook/development/how-we-work">how-we-work</a>/<a class="mx-2" href="/handbook/development/how-we-work/staging">staging</a>
+                /<a class="mx-2" href="/handbook">handbook</a>/<a class="mx-2" href="/handbook/marketing">marketing</a>/<a class="mx-2" href="/handbook/marketing/boilerplate">boilerplate</a>
             </div>
         </div>
         <div class="w-full mx-auto ff-bg-light flex flex-col md:flex-row">
             <!-- Main Content -->
             <div class="flex-grow order-last md:order-first">
                 <div class="mt-6 mb-4 prose prose-blue main-content">
-                    <h2 id="staging-environment" tabindex="-1"><a class="header-anchor" href="#staging-environment">#&nbsp;</a> Staging Environment</h2>
-<p>We have a staging environment running on AWS which is a scaled down replica of
-our managed FlowForge offering, with a separate domain. Staging URL and sign in
-details can be found in the Developer Vault in 1Password.</p>
-<h3 id="aws-account" tabindex="-1"><a class="header-anchor" href="#aws-account">#&nbsp;</a> AWS Account</h3>
-<p>It uses a separate AWS account ending in ..9937</p>
-<p>Ben or ZJ can provision a user account for this account.</p>
-<p>The services are running in EU-West-1.</p>
-<h3 id="nodes" tabindex="-1"><a class="header-anchor" href="#nodes">#&nbsp;</a> Nodes</h3>
-<p>The staging environment uses one node running on a t2.small for the management
-app and a pair of t2.small nodes for the projects cluster. t2.small is the
-smallest instance that can be used with EKS.</p>
-<h3 id="email" tabindex="-1"><a class="header-anchor" href="#email">#&nbsp;</a> Email</h3>
-<p>Amazon SES is setup on staging however it is still running in sandbox mode which means only verified address &amp; domains can RECEIVE emails from it, this is currently limited to flowforge.com email addresses and a small set of pre-approved disposable emails.</p>
-<p>There is no intention to move this from sandbox as this helps to limit access to staging.</p>
-<p>If you need to use another email address with staging then you should verify the address through SES in the AWS Console.</p>
-<h4 id="test-email-accounts" tabindex="-1"><a class="header-anchor" href="#test-email-accounts">#&nbsp;</a> Test Email accounts</h4>
-<p>We have enabled a small list of mailinator.com based email addresses for the purposes
-of short-lived testing of sign-up and user management.</p>
-<p>The inboxes for these email addresses are publicly accessible if known, so the list
-is available on this private issue: https://github.com/flowforge/CloudProject/issues/135</p>
-<h3 id="deployment" tabindex="-1"><a class="header-anchor" href="#deployment">#&nbsp;</a> Deployment</h3>
-<p>Currently there is no auto deployment to staging, this should be rectified in the future so that staging is running the code in the main branches  of the respective repos.</p>
-<h3 id="using-staging" tabindex="-1"><a class="header-anchor" href="#using-staging">#&nbsp;</a> Using staging</h3>
-<p>When setting up a team you'll need to enter billing details. For credit card
-details, use <a href="https://stripe.com/docs/testing#testing-interactively">the Stripe mock data</a>.</p>
-<h3 id="using-the-flowforge-device-agent-with-staging" tabindex="-1"><a class="header-anchor" href="#using-the-flowforge-device-agent-with-staging">#&nbsp;</a> Using the FlowForge Device Agent with staging</h3>
-<p>Staging uses pre-release npm packages stored in a GitHub npm repository. To be able to use these packages you will need to authenticate with the repository.</p>
-<p>You will need to create a GH Personal token</p>
-<ol>
-<li>Go to your <a href="https://github.com/settings/tokens">classic personal access tokens</a></li>
-<li>Click Generate New Token (and again pick the classic option)</li>
-<li>You will probably be prompted for 2FA now</li>
-<li>Give the token a meaningful name</li>
-<li>Pick an expiration. I went with no expiration so I don't have to do this again and I'm going to limit the scope</li>
-<li>Tick the box next to <code>read:packages</code></li>
-<li>Click generate token button at bottom of page</li>
-</ol>
-<p>Store the token in your private 1Password vault</p>
-<p>Create the following .npmrc file:</p>
-<pre><code>//npm.pkg.github.com/:_authToken=ghp_xxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-@flowforge:registry=https://npm.pkg.github.com/
-</code></pre>
-<p>where <code>ghp_xxxxxxxxxxxxxxxxxxxxxxxxxxxxx</code> is the token you just generated.</p>
-<p>You need to place this in the project directory, e.g. <code>/opt/flowforge-device/project</code> or if you are running it in the dev env <code>flowforge-device-agent/var/project</code> (assume starting with <code>node index -d ./var -c ./var/device.yml</code>)</p>
+                    <h3 id="about-flowforge---50-words" tabindex="-1"><a class="header-anchor" href="#about-flowforge---50-words">#&nbsp;</a> About FlowForge - 50 Words</h3>
+<p>FlowForge helps Node-RED developers deliver applications in a more reliable, collaborative, and secure manner. Node-RED’s intuitive, low-code development environment is great for connecting together hardware devices, APIs, and online services. FlowForge adds to Node-RED; collaborative development, management of remote deployments, support for DevOps deliver pipelines, and the ability to host Node-RED applications on FlowForge Cloud. FlowForge is the DevOps platform for Node-RED application development and delivery.</p>
+<h3 id="about-flowforge---150-words" tabindex="-1"><a class="header-anchor" href="#about-flowforge---150-words">#&nbsp;</a> About FlowForge - 150 Words</h3>
+<p>FlowForge is an open-core company investing in Node-RED. Nick O’Leary, co-creator of Node-RED is FlowForge co-founder and CTO.</p>
+<p>Node-RED is an open-source low-code programming tool, allowing developers to quickly and easily connect IoT devices, APIs, and online services by creating flow-based applications. It uses a drag-and-drop interface to wire together nodes, which can represent devices, APIs, or functions, to process data, and create powerful automations.</p>
+<p>Node-RED is very popular in the manufacturing industry for collecting factory data at the edge and transmitting it to a database or the cloud. Its visual programming environment makes it easy for non-traditional software developers to create data applications that accelerate innovation on the factory floor.</p>
+<p>FlowForge adds to Node-RED collaborative development, management of remote deployments, support for DevOps deliver pipelines and the ability to host Node-RED applications on FlowForge Cloud. FlowForge is the devops platform for Node-RED application development and delivery.</p>
 
                 </div>
             </div>
@@ -918,14 +880,14 @@ details, use <a href="https://stripe.com/docs/testing#testing-interactively">the
         <div class="block px-8 pt-4 w-full mx-auto ff-bg-light md:hidden">
             <div class="font-medium border-b pb-1">
                 
-                /<a class="mx-2" href="/handbook">handbook</a>/<a class="mx-2" href="/handbook/development">development</a>/<a class="mx-2" href="/handbook/development/how-we-work">how-we-work</a>/<a class="mx-2" href="/handbook/development/how-we-work/staging">staging</a>
+                /<a class="mx-2" href="/handbook">handbook</a>/<a class="mx-2" href="/handbook/marketing">marketing</a>/<a class="mx-2" href="/handbook/marketing/boilerplate">boilerplate</a>
             </div>
         </div>
         <!-- on this page -->
         <div class="sticky top-6 w-full md:w-64 mt-4 md:mt-6 px-8">
             <h3 class="font-medium border-b pb-1 mb-4">on this page</h3>
             <ul id="toc" class="text-sm border-b mb-4"></ul>
-            <div class="text-sm pb-1 text-right mb-4"><a href="https://github.com/flowforge/handbook/edit/main/development/how-we-work/staging.md">Edit this page</a></div>
+            <div class="text-sm pb-1 text-right mb-4"><a href="https://github.com/flowforge/handbook/edit/main/marketing/boilerplate.md">Edit this page</a></div>
             <div class="text-xs pb-1 text-right mb-4 italic">Updated: 2023-03-02 14:50:01 +0100</div>
         </div>
     </div>
