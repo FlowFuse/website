@@ -13,7 +13,9 @@ if (
             console.log(event)
             if (loaded) return
             loaded = true
-            window.HubSpotConversations?.widget?.load()
+            setTimeout(() => {
+                window.HubSpotConversations?.widget?.load()
+            }, 1)
         }
 
         window.addEventListener("mousemove", loadHubSpotChat, { once: true })
