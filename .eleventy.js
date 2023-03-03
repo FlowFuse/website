@@ -39,6 +39,11 @@ module.exports = function(eleventyConfig) {
     // Watch content images for the image pipeline
     eleventyConfig.addWatchTarget("src/**/*.{svg,webp,png,jpeg,gif}");
 
+    eleventyConfig.setServerOptions({
+        // Additional files to watch that will trigger server updates
+        watch: ["_site/**/*.css", "_site/**/*.js"],
+    })
+
     // Custom filters
     eleventyConfig.addFilter("head", (array, n) => {
         if( n < 0 ) {
