@@ -1607,7 +1607,7 @@ As a thank you for reading our newsletters we’d like to offer you a free, smal
 We&#39;ve added the ability for you to secure your HTTP endpoints. You can now control who can access Dashboards or API endpoints you create in FlowForge.&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://github.com/flowforge/flowforge/issues/657&quot;&gt;Read-only Users&lt;/a&gt;
 We&#39;ve added a new user role for Read-only access. This will allow users to login to your FlowForge project and view the Node-RED flows without them being able to edit anything.&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://github.com/flowforge/CloudProject/issues/59&quot;&gt;Static Outbound IP Addresses&lt;/a&gt;
+&lt;p&gt;&lt;a href=&quot;https://flowforge.com/docs/cloud/#ip-addresses&quot;&gt;Static Outbound IP Addresses&lt;/a&gt;
 We&#39;ve updated FlowForge Cloud so that all outbound traffic from your projects now comes from a single IP address. When trying to access a remote resource such as a database it is often a requirement for the IP address the traffic comes from to be fixed.&lt;/p&gt;
 &lt;h2 id=&quot;improvements&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://flowforge.com/blog/2022/09/flowforge-010-released/#improvements&quot;&gt;#&amp;nbsp;&lt;/a&gt; Improvements&lt;/h2&gt;
 &lt;p&gt;We&#39;ve made a number of improvements to the overall experience of running FlowForge.&lt;/p&gt;
