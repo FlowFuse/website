@@ -680,7 +680,6 @@ document.getElementById('nav-toggle').onclick = function(){
         "user_agent_string": window.navigator.userAgent
     }
     posthog.register(phUA)
-    posthog.people.set(phUA)
 
     function capture (eventName, props) {
         if (posthog) {
