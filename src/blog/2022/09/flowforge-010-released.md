@@ -22,7 +22,7 @@ We've added the ability for you to secure your HTTP endpoints. You can now contr
 [Read-only Users](https://github.com/flowforge/flowforge/issues/657)
 We've added a new user role for Read-only access. This will allow users to login to your FlowForge project and view the Node-RED flows without them being able to edit anything.
 
-[Static Outbound IP Addresses](https://github.com/flowforge/CloudProject/issues/59)
+[Static Outbound IP Addresses](https://flowforge.com/docs/cloud/#ip-addresses)
 We've updated FlowForge Cloud so that all outbound traffic from your projects now comes from a single IP address. When trying to access a remote resource such as a database it is often a requirement for the IP address the traffic comes from to be fixed. 
 
 ## Improvements
