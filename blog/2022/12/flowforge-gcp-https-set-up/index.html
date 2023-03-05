@@ -282,7 +282,7 @@ document.getElementById('nav-toggle').onclick = function(){
 </script>
 <script async src="https://cdn.jsdelivr.net/npm/lite-youtube-embed@0.2.0/src/lite-yt-embed.min.js"></script>
 <link rel="preload" href="https://cdn.jsdelivr.net/npm/lite-youtube-embed@0.2.0/src/lite-yt-embed.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'" crossorigin="anonymous" referrerpolicy="no-referrer">
-<script>null===window.sessionStorage?.getItem("chatInProgress")&&"#hs-chat-open"!==window.location.hash&&(window.hsConversationsSettings={loadImmediately:!1},window.addEventListener("load",(o=>{setTimeout((function(){window.HubSpotConversations?.widget?.load()}),1500)}))),window.hsConversationsOnReady=[()=>{window.HubSpotConversations.on("conversationStarted",(()=>{window.sessionStorage?.setItem("chatInProgress","true")}))}];</script>
+<script>null===window.sessionStorage?.getItem("chatInProgress")&&"#hs-chat-open"!==window.location.hash&&(window.hsConversationsSettings={loadImmediately:!1},window.addEventListener("load",(o=>{let n=!1;function e(o){console.log(o),n||(n=!0,setTimeout((()=>{window.HubSpotConversations?.widget?.load()}),1))}window.addEventListener("mousemove",e,{once:!0}),window.addEventListener("scroll",e,{once:!0})}))),window.hsConversationsOnReady=[()=>{window.HubSpotConversations.on("conversationStarted",(()=>{window.sessionStorage?.setItem("chatInProgress","true")}))}];</script>
 <script async type="text/javascript" id="hs-script-loader" src="//js-eu1.hs-scripts.com/26586079.js"></script>
 <script async type="text/javascript" src="/js/cc.min.js"></script>
 <script>
