@@ -3,8 +3,60 @@
     <title>FlowForge</title>
     <link href="https://flowforge.com/blog/index.xml" rel="self"/>
     <link href="https://flowforge.com/blog"/>
-    <updated>2023-03-02T00:00:00Z</updated>
+    <updated>2023-03-06T00:00:00Z</updated>
     <id>https://flowforge.com/blog</id>
+    
+    <entry>
+        <id>https://flowforge.com/blog/2023/03/integration-platform-for-edge-computing/</id>
+        <title>Node-RED: The Integration Platform for IIoT Edge Computing &amp; PLCs</title>
+        <summary></summary>
+        <updated>2023-03-06T00:00:00Z</updated>
+        <link href="https://flowforge.com/blog/2023/03/integration-platform-for-edge-computing/"/>
+        <author><name>Ian Skerrett</name></author>
+        <content type="html">&lt;p&gt;Node-RED has become a widely adopted integration platform for IoT edge computing and PLCs. Discover why!&lt;/p&gt;
+&lt;!--more--&gt;
+&lt;h2 id=&quot;the-integration-platform-for-iiot-edge-computing-%26-plcs&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://flowforge.com/blog/2023/03/integration-platform-for-edge-computing/#the-integration-platform-for-iiot-edge-computing-%26-plcs&quot;&gt;#&amp;nbsp;&lt;/a&gt; The Integration Platform for IIoT Edge Computing &amp;amp; PLCs&lt;/h2&gt;
+&lt;p&gt;Node-RED is a widely adopted open-source low-code development tool that makes it easy to connect and integrate different sources of data. With a visual programming interface and drag-and-drop functionality, &lt;a href=&quot;https://flowforge.com/node-red/&quot;&gt;Node-RED&lt;/a&gt; makes it possible for software developers and non-professional software developers to create sophisticated applications.&lt;/p&gt;
+&lt;p&gt;In the manufacturing and industrial automation industry, the focus of the Industrial Internet of Things (IIoT) has been on integrating industrial processes and equipment to enable real-time monitoring, control, and analysis of data. For many use cases, instead of sending all the data to the cloud, the best practice for processing industrial data is to deploy the application to the edge of the network, referred to as edge computing. By processing the data closer to the data source, edge computing has many benefits, including reduced latency, limited downtime, conserving bandwidth, and increased privacy, and security.&lt;/p&gt;
+&lt;h2 id=&quot;how-node-red-fits-into-iiot-edge-computing&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://flowforge.com/blog/2023/03/integration-platform-for-edge-computing/#how-node-red-fits-into-iiot-edge-computing&quot;&gt;#&amp;nbsp;&lt;/a&gt; How Node-RED fits into IIoT Edge Computing&lt;/h2&gt;
+&lt;p&gt;A key challenge for IIoT edge computing is the wide variety of different hardware platforms, protocols and sources of data and processes. Over the years, the Node-RED community has built &lt;a href=&quot;https://flows.nodered.org/&quot;&gt;thousands of nodes and flow&lt;/a&gt;s to support a wider range of these sources of data, including support for &lt;a href=&quot;https://flows.nodered.org/node/node-red-contrib-modbus&quot;&gt;Modbus&lt;/a&gt;, &lt;a href=&quot;https://flows.nodered.org/node/node-red-contrib-opcua&quot;&gt;OPC-UA&lt;/a&gt;, &lt;a href=&quot;https://flows.nodered.org/node/node-red-contrib-s7&quot;&gt;S7&lt;/a&gt;, &lt;a href=&quot;https://cookbook.nodered.org/mqtt/&quot;&gt;MQTT&lt;/a&gt;, etc. Node-RED also has nodes for graphics and dashboards to make it trivial to visualize industrial data.&lt;/p&gt;
+&lt;p&gt;Node-RED’s visual programming environment makes it accessible to non-developers. Manufacturing, mechanical, and electrical engineers in the factories are typically the domain experts in understanding the existing systems and often lead IIoT initiatives. Node-RED enables these engineers to quickly innovate and create real value for their organizations. This makes it a popular choice for engineers looking to create edge computing solutions.&lt;/p&gt;
+&lt;h2 id=&quot;plc-and-iot-gateway-vendors-embrace-node-red&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://flowforge.com/blog/2023/03/integration-platform-for-edge-computing/#plc-and-iot-gateway-vendors-embrace-node-red&quot;&gt;#&amp;nbsp;&lt;/a&gt; PLC and IoT Gateway Vendors Embrace Node-RED&lt;/h2&gt;
+&lt;p&gt;PLC and IoT Gateway vendors are at the forefront of promoting edge computing. They see edge computing as a way to modernize hardware in the factory and for remote asset management. PLC and IoT gateways often sit in front of old legacy systems that don’t have the connectivity or compute platform to enable IIoT applications.&lt;/p&gt;
+&lt;p&gt;Many of these hardware vendors realized they need an application delivery platform for their devices. Traditional OT hardware vendors often implement proprietary software stacks that are often difficult to use and closed to integrating with other hardware and software. Forward thinking hardware vendors realized having an open platform is the future of their industry and customers have begun to demand more open platforms. Node-RED’s ease of use, open community and open source license provided the solution many of these hardware vendors were looking for.&lt;/p&gt;
+&lt;h2 id=&quot;the-standard-for-edge-computing-and-plcs&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://flowforge.com/blog/2023/03/integration-platform-for-edge-computing/#the-standard-for-edge-computing-and-plcs&quot;&gt;#&amp;nbsp;&lt;/a&gt; The Standard for Edge Computing and PLCs&lt;/h2&gt;
+&lt;p&gt;Today, Node-RED has been adopted by some of the leading PLC and IoT Gateway vendors. The hardware vendor community appears to have standardized on Node-RED as being the edge computing platform for IIoT.&lt;/p&gt;
+&lt;p&gt;Below is a sample of the vendors offering a Node-RED solution:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.advantech.com/en-eu/products/node-red-gateways/sub_fb7246cc-cc10-486f-806b-30bb50a90f28&quot;&gt;Advantech&lt;/a&gt; Node-RED Field Gateway&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://infosys.beckhoff.com/english.php?content=../content/1033/tf6720_tc3_iot_data_agent/3260672139.html&amp;amp;id=&quot;&gt;Bechhoff&lt;/a&gt; TwinCAT&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.bivocom.com/products/iot-gateways/edge-iot-gateway-tg452&quot;&gt;Bicocom&lt;/a&gt; TG452 IoT Edge Gateway&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.bliiot.com/edge-computing-gateway-p00359p1.html&quot;&gt;BLIIOT Edge Computing Gateway&lt;/a&gt; EdgeCom BL302&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.broadsens.com/wireless-gateway/&quot;&gt;Broadsens&lt;/a&gt; GU200 &amp;amp; GU 200S&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.emerson.com/documents/automation/product-datasheet-pacedge-software-computing-devices-pacsystems-en-7205588.pdf&quot;&gt;Emerson&lt;/a&gt; PACEdge&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/HilscherAutomation/netPI-nodered&quot;&gt;Hilscher Automation&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://developer.opto22.com/nodered/general/&quot;&gt;Opto22&lt;/a&gt; groov RIO &amp;amp; EPIC&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.parallaxav.com/controlsystem/&quot;&gt;Parallax AV&lt;/a&gt; Control System&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://docs.particle.io/reference/cloud-apis/node-red/&quot;&gt;Particle.io&lt;/a&gt; Particle&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.pepperl-fuchs.com/usa/en/classid_199.htm?view=productdetails&amp;amp;prodid=93839&quot;&gt;Pepperl+Fuchs&lt;/a&gt; AS-Interface gateway&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://projects.raspberrypi.org/en/projects/getting-started-with-node-red&quot;&gt;Raspberry Pi&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.renesas.com/us/en/products/programmable-mixed-signal-asic-ip-products/mixed-signal-asics/communication-asics/ftclick-mikrobus-compatible-interface-module&quot;&gt;Renesas&lt;/a&gt; FT Click&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://revolutionpi.com/revpi-connect/&quot;&gt;Revolution Pi&lt;/a&gt; RevPi Connect&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/SIMATICmeetsLinux/IOT2050-NodeRed-OPCUA-Server&quot;&gt;Siemens&lt;/a&gt; S7 PLC&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://support.tulip.co/docs/using-node-red-with-edge-mc&quot;&gt;Tulip&lt;/a&gt; Edge MC&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.wago.com/us/edge-devices&quot;&gt;Wago&lt;/a&gt; Edge Controller &amp;amp; Computer&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://catalog.weidmueller.com/procat/Group.jsp;jsessionid=C885C404E7B4B798B23B8A9BB2200513?groupId=(%22group14048963834797%22)&amp;amp;page=Group&quot;&gt;Weidmueller&lt;/a&gt; control web&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;There are several key reason Node-RED is so popular for IIoT edge computing, including:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Easy User-friendly interface that makes it accessible to manufacturing engineers that might not have a lot of programming experience.&lt;/li&gt;
+&lt;li&gt;Large community of open source nodes that integrate with many different OT hardware and protocols.&lt;/li&gt;
+&lt;li&gt;Open source community and license making it vendor neutral so competing hardware vendors feel comfortable embracing the platform.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;conclusion&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://flowforge.com/blog/2023/03/integration-platform-for-edge-computing/#conclusion&quot;&gt;#&amp;nbsp;&lt;/a&gt; Conclusion&lt;/h2&gt;
+&lt;p&gt;IIoT and edge computing is making software more critical to the manufacturing industry. The flexibility to integrate data from different sources to create innovative data centric solutions is primarily software driven. In partnership with OT hardware vendors, Node-RED’s flexible and easy to use environment provides the platform for manufacturing companies to embrace software to develop IIoT solutions.&lt;/p&gt;
+</content>
+    </entry>
     
     <entry>
         <id>https://flowforge.com/blog/2023/03/community-news-03/</id>
