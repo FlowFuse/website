@@ -38,9 +38,6 @@ Many of these hardware vendors realized they need an application delivery platfo
 Today, Node-RED has been adopted by some of the leading PLC and IoT Gateways vendors. The hardware vendor community appears to have standardized on Node-RED as being the edge computing platform for IIoT.
 
 Below is a sample of the vendors offering a Node-RED solution:
-
-
-
 1. [Advantech](https://www.advantech.com/en-eu/products/node-red-gateways/sub_fb7246cc-cc10-486f-806b-30bb50a90f28) Node-RED Field Gateway
 2. [Bechhoff](https://infosys.beckhoff.com/english.php?content=../content/1033/tf6720_tc3_iot_data_agent/3260672139.html&id=) TwinCAT
 3. [Bicocom](https://www.bivocom.com/products/iot-gateways/edge-iot-gateway-tg452) TG452 IoT Edge Gateway
