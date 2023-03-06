@@ -61,9 +61,6 @@ Below is a sample of the vendors offering a Node-RED solution:
 18. [Weidmueller](https://catalog.weidmueller.com/procat/Group.jsp;jsessionid=C885C404E7B4B798B23B8A9BB2200513?groupId=(%22group14048963834797%22)&page=Group) control web
 
 There are several key reason Node-RED is so popular for IIoT edge computing, including:
-
-
-
 * Easy User-friendly interface that makes it accessible to manufacturing engineers that might not have a lot of programming experience.
 * Large community of open source nodes that integrate with many different OT hardware and protocols.
 * Open source community and license making it vendor neutral so competing hardware vendors feel comfortable embracing the platform.
