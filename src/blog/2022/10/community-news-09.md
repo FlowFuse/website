@@ -13,8 +13,8 @@ Welcome to the FlowForge newsletter, a regular roundup of what’s happening wit
 <!--more-->
 If you've got something that you'd like us to share please email [contact@flowforge.com](mailto:contact@flowforge.com).
 
-[**FlowForge 0.10**](https://flowforge.com/blog/2022/09/flowforge-010-released/)   
-Version 0.10 was released on 30th September. Our latest release includes some great new features, quality of life improvements and bug fixes. Notable additions included the ability to [Secure your HTTP endpoints](https://github.com/flowforge/flowforge/pull/893), [Add read-only users to your projects](https://github.com/flowforge/flowforge/issues/657) and [use our static IP address for outbound connections](https://github.com/flowforge/CloudProject/issues/59).  
+[**FlowForge 0.10**](https://flowforge.com/blog/2022/09/flowforge-010-released/)
+Version 0.10 was released on 30th September. Our latest release includes some great new features, quality of life improvements and bug fixes. Notable additions included the ability to [Secure your HTTP endpoints](https://github.com/flowforge/flowforge/pull/893), [Add read-only users to your projects](https://github.com/flowforge/flowforge/issues/657) and [use our static IP address for outbound connections](https://flowforge.com/docs/cloud/#ip-addresses).
 
 If you’d like to learn more about what else was included in 0.10 you can do so on our [blog post](https://flowforge.com/blog/2022/09/flowforge-010-released/), on our [GitHub release page](https://github.com/flowforge/flowforge/releases/tag/v0.10.0) and on our [Youtube channel](https://youtube.com/watch?v=mjR1iiEFiBg). We’d also love for more of you to get involved in the development of FlowForge, [contributions to the code](https://github.com/flowforge/flowforge/blob/main/CONTRIBUTING.md) and [bug reports](https://github.com/flowforge/flowforge/issues) are really appreciated.
     
