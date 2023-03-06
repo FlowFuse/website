@@ -16,7 +16,7 @@ Node-RED has become a widely adopted integration platform for IoT edge computing
 
 Node-RED is a widely adopted open-source low-code development tool that makes it easy to connect and integrate different sources of data. With a visual programming interface and drag-and-drop functionality, [Node-RED](https://flowforge.com/node-red/) makes it possible for software developers and non-professional software developers to create sophisticated applications. 
 
-In the manufacturing and industrial automation industry, the focus of the Industrial Internet of Things (IIoT) has been on integrating industrial processes and equipment to enable real-time monitoring, control, and analysis of data. For many use cases, instead of sending all the data to the cloud, the best practice for processing industrial data is to deploy the application to the edge of the network, referred to as edge computing. By processing the data closer to the data source, edge computing has many benefits, including reduced latency, limited downtown, conserving bandwidth, and increased privacy, and security.
+In the manufacturing and industrial automation industry, the focus of the Industrial Internet of Things (IIoT) has been on integrating industrial processes and equipment to enable real-time monitoring, control, and analysis of data. For many use cases, instead of sending all the data to the cloud, the best practice for processing industrial data is to deploy the application to the edge of the network, referred to as edge computing. By processing the data closer to the data source, edge computing has many benefits, including reduced latency, limited downtime, conserving bandwidth, and increased privacy, and security.
 
 
 ## How Node-RED fits into IIoT Edge Computing
@@ -35,7 +35,7 @@ Many of these hardware vendors realized they need an application delivery platfo
 
 ## The Standard for Edge Computing and PLCs
 
-Today, Node-RED has been adopted by some of the leading PLC and IoT Gateways vendors. The hardware vendor community appears to have standardized on Node-RED as being the edge computing platform for IIoT.
+Today, Node-RED has been adopted by some of the leading PLC and IoT Gateway vendors. The hardware vendor community appears to have standardized on Node-RED as being the edge computing platform for IIoT.
 
 Below is a sample of the vendors offering a Node-RED solution:
 1. [Advantech](https://www.advantech.com/en-eu/products/node-red-gateways/sub_fb7246cc-cc10-486f-806b-30bb50a90f28) Node-RED Field Gateway
