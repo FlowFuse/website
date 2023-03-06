@@ -40,7 +40,7 @@ Today, Node-RED has been adopted by some of the leading PLC and IoT Gateway vend
 Below is a sample of the vendors offering a Node-RED solution:
 1. [Advantech](https://www.advantech.com/en-eu/products/node-red-gateways/sub_fb7246cc-cc10-486f-806b-30bb50a90f28) Node-RED Field Gateway
 2. [Bechhoff](https://infosys.beckhoff.com/english.php?content=../content/1033/tf6720_tc3_iot_data_agent/3260672139.html&id=) TwinCAT
-3. [Bicocom](https://www.bivocom.com/products/iot-gateways/edge-iot-gateway-tg452) TG452 IoT Edge Gateway
+3. [Bivocom](https://www.bivocom.com/products/iot-gateways/edge-iot-gateway-tg452) TG452 IoT Edge Gateway
 4. [BLIIOT Edge Computing Gateway](https://www.bliiot.com/edge-computing-gateway-p00359p1.html) EdgeCom BL302
 5. [Broadsens](https://www.broadsens.com/wireless-gateway/) GU200 & GU 200S
 6. [Emerson](https://www.emerson.com/documents/automation/product-datasheet-pacedge-software-computing-devices-pacsystems-en-7205588.pdf) PACEdge
