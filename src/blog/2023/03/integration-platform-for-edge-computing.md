@@ -7,7 +7,7 @@ authors: ["ian-skerrett"]
 image: /blog/2023/03/images/integration-platform-blog-image.jpg
 ---
 
-Node-RED has become a widely adopted integration platform for IoT edge computing and PLCs. Discover why?
+Node-RED has become a widely adopted integration platform for IoT edge computing and PLCs. Discover why!
 
 <!--more-->
 
