@@ -13,10 +13,6 @@ jobs:
       - uses: actions/checkout@v3
       - uses: actions/checkout@v3
         with:
-          repository: flowforge/handbook
-          path: './src/handbook'
-      - uses: actions/checkout@v3
-        with:
           repository: flowforge/flowforge
           path: './src/docs'
       - name: Move docs to the right location
