@@ -70,7 +70,6 @@ The company's [KPI tracking FlowForge adoption](../company/strategy.md#installed
 sets an aggressive goal for growth. When the growth target is met a $100 bonus is
 awarded to be expensed for a dinner out. The bonus is awarded per release.
 
-### United States
+### Health Care
 
-FlowForge offers a health care package, including dental, for all US-based
-employees.
+FlowForge offers a health care package for all employees in the United states, Canada, and India.
