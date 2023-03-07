@@ -72,4 +72,4 @@ awarded to be expensed for a dinner out. The bonus is awarded per release.
 
 ### Health Care
 
-FlowForge offers a health care package for all employees in the United states, Canada, and India.
+FlowForge offers a health care package for all employees in the United States, Canada, and India.
