@@ -1,7 +1,7 @@
 ---
 title: 'Node-RED: The Integration Platform for IIoT Edge Computing & PLCs'
 subtitle: 
-description: News from the FlowForge and Node-RED communities
+description: Node-RED is widely adopted by leading IoT gateway and PLC to be their standard data integration platform.
 date: 2023-03-06
 authors: ["ian-skerrett"]
 image: /blog/2023/03/images/integration-platform-blog-image.jpg
@@ -42,6 +42,7 @@ Below is a sample of the vendors offering a Node-RED solution:
 2. [Bechhoff](https://infosys.beckhoff.com/english.php?content=../content/1033/tf6720_tc3_iot_data_agent/3260672139.html&id=) TwinCAT
 3. [Bivocom](https://www.bivocom.com/products/iot-gateways/edge-iot-gateway-tg452) TG452 IoT Edge Gateway
 4. [BLIIOT Edge Computing Gateway](https://www.bliiot.com/edge-computing-gateway-p00359p1.html) EdgeCom BL302
+5. [Bosch CtrlX Core](https://developer.community.boschrexroth.com/t5/Store-and-How-to/ctrlX-CORE-Node-RED-App/ba-p/22366)
 5. [Broadsens](https://www.broadsens.com/wireless-gateway/) GU200 & GU 200S
 6. [Emerson](https://www.emerson.com/documents/automation/product-datasheet-pacedge-software-computing-devices-pacsystems-en-7205588.pdf) PACEdge
 7. [Hilscher Automation](https://github.com/HilscherAutomation/netPI-nodered)
