@@ -2,7 +2,7 @@
 title: 3 Quick Tips for Using Node-RED, Part 3
 subtitle: Save yourself time when working on Node-RED with these three tips.
 description: Save yourself time when working on Node-RED with these three tips.
-date: 2023-03-01 18:00:00
+date: 2023-03-07 12:00:00
 authors: ["rob-marcer"]
 image: /images/blog/nr-quicktips.jpg
 ---
