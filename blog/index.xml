@@ -69,8 +69,9 @@
 &lt;li&gt;&lt;a href=&quot;https://projects.raspberrypi.org/en/projects/getting-started-with-node-red&quot;&gt;Raspberry Pi&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;https://www.renesas.com/us/en/products/programmable-mixed-signal-asic-ip-products/mixed-signal-asics/communication-asics/ftclick-mikrobus-compatible-interface-module&quot;&gt;Renesas&lt;/a&gt; FT Click&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;https://revolutionpi.com/revpi-connect/&quot;&gt;Revolution Pi&lt;/a&gt; RevPi Connect&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://shop.exchange.se.com/en-US/apps/59823/ecostruxure-plant-data-expert/features&quot;&gt;Schneider Electric&lt;/a&gt; ExoStructure Plant Data Expert&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;https://github.com/SIMATICmeetsLinux/IOT2050-NodeRed-OPCUA-Server&quot;&gt;Siemens&lt;/a&gt; S7 PLC&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://support.tulip.co/docs/using-node-red-with-edge-mc&quot;&gt;Tulip&lt;/a&gt; Edge MC&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://support.tulip.co/docs/using-node-red-with-edge-mc&quot;&gt;Tulip&lt;/a&gt; Edge MC &amp;amp; Edge IO&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;https://www.wago.com/us/edge-devices&quot;&gt;Wago&lt;/a&gt; Edge Controller &amp;amp; Computer&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;https://catalog.weidmueller.com/procat/Group.jsp;jsessionid=C885C404E7B4B798B23B8A9BB2200513?groupId=(%22group14048963834797%22)&amp;amp;page=Group&quot;&gt;Weidmueller&lt;/a&gt; control web&lt;/li&gt;
 &lt;/ol&gt;
