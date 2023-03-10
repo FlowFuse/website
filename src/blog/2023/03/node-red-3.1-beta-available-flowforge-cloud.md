@@ -4,6 +4,8 @@ subtitle: Test drive the next version of Node-RED
 description: To allow testing of the next version of Node-RED, FlowForge Cloud made the 3.1-beta-2 release available.
 date: 2022-03-10
 authors: ["zeger-jan-van-de-weg"]
+tags:
+    - posts
 ---
 
 We are excited to announce that Node-RED 3.1 Beta 2 is now available on
