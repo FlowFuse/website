@@ -60,7 +60,7 @@ When [searching on DuckDuckGo for 'node red flexdash'](https://duckduckgo.com/?q
 
 Credit to the developers for adding in this helpful text but I suspect most users will start off by installing FlexDash then later discover that was not the correct way to proceed. It would be great if the custom node which needs to be installed was the one called 'FlexDash' in my opinion.
 
-This problem is compounded by their being no help file at all for 'FlexDash' showing up on the Node-RED web site. I suspect that may be a deliberate attempt to get users to reconsider if they are looking at the right custom node but it was still a confusing start for me and I suspect many users will have a similar experience.
+This problem is compounded by there being no help file at all for 'FlexDash' showing up on the Node-RED web site. That may well be a deliberate attempt to help users get the right custom node installed, but it was still a confusing start for me and I suspect other users will have a similar experience.
 
 When setting up FlexDash, one thing that wasn't immediately obvious was that I needed to restart Node-RED before the custom node showed in the palette. This step is [covered in the docs](https://flexdash.github.io/docs/quick-start/#installing-flexdash-in-node-red) but I suspect a lot of users will get stuck working out why the palette manager says the custom node is installed but nothing new has been added to the palette.
 
