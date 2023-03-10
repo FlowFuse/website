@@ -176,4 +176,4 @@ If you already use Dashboard, in a non-commercial setting you should probably co
 
 FlexDash is probably the best low-code solution for building dashboards in Node-RED. If you don't get blocked by the confusing install process I believe it's the one to pick up at the time of writing due to it's ongoing support and low-code interface.
 
-uibuilder is currently not really a low-code solution to creating dashboards but it's quickly moving in that direction. It's got some amazing features and has a good chance of ending up as the most popular solution to build dashboards in Node-RED in the long term. That being said, as of time of writing unless you are a 'coder' you will probably struggle to build useful dashboards using it.
+uibuilder is currently not what I would consider a truly low-code option for creating dashboards but it is moving in that direction. It has some great features and is extremely flexible so it has a good chance of ending up as the most popular solution to build dashboards in Node-RED in the long term. That being said, as of time of writing unless you are a 'coder' you will may struggle to build a dashboard using it.
