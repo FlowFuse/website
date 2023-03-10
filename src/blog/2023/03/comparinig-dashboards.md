@@ -146,7 +146,7 @@ In practice, this means that sooner or later using Dashboard might become a sign
 
 ### uibuilder - joint firstplace
 
-During the writing of this article, uibuilder released a new version with some significant new features. In the words of the project lead when talking about version 1.6, '*It feels like uibuilder really is growing up. No more apologising for not being a direct Node-RED Dashboard replacement, uibuilder has its own path*.
+During the writing of this article, uibuilder released a new version with some significant new features. In the words of the project lead when talking about version 6.1.0, '*It feels like uibuilder really is growing up. No more apologising for not being a direct Node-RED Dashboard replacement, uibuilder has its own path*.
 
 *You can now create and update visible web page elements direct from Node-RED data without needing to understand all of the intricacies and inconsistencies of HTML. You can create your own utility tools either in Node-RED or in front-end code that leverages the low-code UI features of uibuilder*'.
 
