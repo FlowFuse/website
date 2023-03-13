@@ -3,40 +3,14 @@
     <title>FlowForge</title>
     <link href="https://flowforge.com/blog/index.xml" rel="self"/>
     <link href="https://flowforge.com/blog"/>
-    <updated>2023-03-07T12:00:00Z</updated>
+    <updated>2023-03-13T00:00:00Z</updated>
     <id>https://flowforge.com/blog</id>
-    
-    <entry>
-        <id>https://flowforge.com/blog/2023/03/3-quick-node-red-tips-3/</id>
-        <title>3 Quick Tips for Using Node-RED, Part 3</title>
-        <summary>Save yourself time when working on Node-RED with these three tips.</summary>
-        <updated>2023-03-07T12:00:00Z</updated>
-        <link href="https://flowforge.com/blog/2023/03/3-quick-node-red-tips-3/"/>
-        <author><name>Rob Marcer</name></author>
-        <content type="html">&lt;p&gt;There is usually more than one way to complete a given task in software, and Node-RED is no exception. In each of this series of blog posts, we are going to share three useful tips to save yourself time when working on your flows.&lt;/p&gt;
-&lt;!--more--&gt;
-&lt;h3 id=&quot;1.-the-exec-node-allows-you-to-interact-with-bash-from-node-red&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://flowforge.com/blog/2023/03/3-quick-node-red-tips-3/#1.-the-exec-node-allows-you-to-interact-with-bash-from-node-red&quot;&gt;#&amp;nbsp;&lt;/a&gt; 1. The Exec node allows you to interact with BASH from Node-RED&lt;/h3&gt;
-&lt;p&gt;Exec allows you to run Shell commands and receive the value back into your flow. This opens up almost any command which can be run on the host devices CLI to your Node-RED flows.&lt;/p&gt;
-&lt;p&gt;&lt;picture&gt;&lt;source type=&quot;image/gif&quot; srcset=&quot;https://flowforge.com/img/exec-example-5pbWo9JfQR-650.gif 650w&quot; sizes=&quot;(min-device-pixel-ratio: 1.25) 1300px, (min-resolution: 120dpi) 1300px, 650px&quot; /&gt;&lt;img title=&quot;Example of using the Exec node&quot; alt=&quot;Example of using the Exec node&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot; src=&quot;https://flowforge.com/img/exec-example-5pbWo9JfQR-650.webp&quot; width=&quot;650&quot; height=&quot;176&quot; /&gt;&lt;/picture&gt;&lt;/p&gt;
-&lt;h3 id=&quot;2.-the-filter-node-helps-you-discard-duplicate-messages&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://flowforge.com/blog/2023/03/3-quick-node-red-tips-3/#2.-the-filter-node-helps-you-discard-duplicate-messages&quot;&gt;#&amp;nbsp;&lt;/a&gt; 2. The Filter node helps you discard duplicate messages&lt;/h3&gt;
-&lt;p&gt;It can be useful to only allow messages to proceed through a flow where their value is unique. Filter makes that task simple, no need to store the past values and check each new message against a list.&lt;/p&gt;
-&lt;p&gt;&lt;picture&gt;&lt;source type=&quot;image/avif&quot; srcset=&quot;https://flowforge.com/img/filter-config-_EWqcnEIqK-497.avif 497w&quot; sizes=&quot;(min-device-pixel-ratio: 1.25) 1300px, (min-resolution: 120dpi) 1300px, 650px&quot; /&gt;&lt;source type=&quot;image/webp&quot; srcset=&quot;https://flowforge.com/img/filter-config-_EWqcnEIqK-497.webp 497w&quot; sizes=&quot;(min-device-pixel-ratio: 1.25) 1300px, (min-resolution: 120dpi) 1300px, 650px&quot; /&gt;&lt;img title=&quot;Configure the Filter node to only allow unique payloads through&quot; alt=&quot;Configure the Filter node to only allow unique payloads through&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot; src=&quot;https://flowforge.com/img/filter-config-_EWqcnEIqK-497.jpeg&quot; width=&quot;497&quot; height=&quot;264&quot; /&gt;&lt;/picture&gt;&lt;/p&gt;
-&lt;p&gt;Once your filter is configured as shown above, try sending different payloads through to see the outcome.&lt;/p&gt;
-&lt;p&gt;&lt;picture&gt;&lt;source type=&quot;image/gif&quot; srcset=&quot;https://flowforge.com/img/filter-example-QS3dkKM_7o-650.gif 650w&quot; sizes=&quot;(min-device-pixel-ratio: 1.25) 1300px, (min-resolution: 120dpi) 1300px, 650px&quot; /&gt;&lt;img title=&quot;Demonstration showing the Filter node&quot; alt=&quot;Demonstration showing the Filter node&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot; src=&quot;https://flowforge.com/img/filter-example-QS3dkKM_7o-650.webp&quot; width=&quot;650&quot; height=&quot;157&quot; /&gt;&lt;/picture&gt;&lt;/p&gt;
-&lt;h3 id=&quot;3.-counting-the-amount-of-messages-sent-to-a-debug-node&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://flowforge.com/blog/2023/03/3-quick-node-red-tips-3/#3.-counting-the-amount-of-messages-sent-to-a-debug-node&quot;&gt;#&amp;nbsp;&lt;/a&gt; 3. Counting the amount of messages sent to a Debug node&lt;/h3&gt;
-&lt;p&gt;The Debug node has a lot of great features that we don&#39;t see used that often. One example is the ability to show a count of how many messages have been sent to that Debug node since the last deploy.&lt;/p&gt;
-&lt;p&gt;&lt;picture&gt;&lt;source type=&quot;image/avif&quot; srcset=&quot;https://flowforge.com/img/setup-counting-debug-xcQQh_oXTp-650.avif 650w&quot; sizes=&quot;(min-device-pixel-ratio: 1.25) 1300px, (min-resolution: 120dpi) 1300px, 650px&quot; /&gt;&lt;source type=&quot;image/webp&quot; srcset=&quot;https://flowforge.com/img/setup-counting-debug-xcQQh_oXTp-650.webp 650w&quot; sizes=&quot;(min-device-pixel-ratio: 1.25) 1300px, (min-resolution: 120dpi) 1300px, 650px&quot; /&gt;&lt;img title=&quot;Setting up the debug to count messages&quot; alt=&quot;Setting up the debug to count messages&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot; src=&quot;https://flowforge.com/img/setup-counting-debug-xcQQh_oXTp-650.jpeg&quot; width=&quot;650&quot; height=&quot;379&quot; /&gt;&lt;/picture&gt;&lt;/p&gt;
-&lt;p&gt;Once you&#39;ve setup the node as shown above, you will see a counter under the debug.&lt;/p&gt;
-&lt;p&gt;&lt;picture&gt;&lt;source type=&quot;image/gif&quot; srcset=&quot;https://flowforge.com/img/counting-debug-e_XQ5fi2Il-650.gif 650w&quot; sizes=&quot;(min-device-pixel-ratio: 1.25) 1300px, (min-resolution: 120dpi) 1300px, 650px&quot; /&gt;&lt;img title=&quot;Each message sent to the debug node is counted&quot; alt=&quot;Each message sent to the debug node is counted&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot; src=&quot;https://flowforge.com/img/counting-debug-e_XQ5fi2Il-650.webp&quot; width=&quot;650&quot; height=&quot;269&quot; /&gt;&lt;/picture&gt;&lt;/p&gt;
-&lt;p&gt;We hope you found these tips useful, if you&#39;d like to suggest some of your own tips which you think we should share in our future blog posts please &lt;a href=&quot;mailto:contact@flowforge.com&quot;&gt;get in touch&lt;/a&gt;.&lt;/p&gt;
-</content>
-    </entry>
     
     <entry>
         <id>https://flowforge.com/blog/2023/03/comparinig-dashboards/</id>
         <title>Comparing Node-RED Dashboards Solutions</title>
         <summary>One of the most common features Node-RED users add to their flows is a dashboard, we compaure the 3 most popular options.</summary>
-        <updated>2023-03-07T00:00:00Z</updated>
+        <updated>2023-03-13T00:00:00Z</updated>
         <link href="https://flowforge.com/blog/2023/03/comparinig-dashboards/"/>
         <author><name>Rob Marcer</name></author>
         <content type="html">&lt;p&gt;Dashboards are a great feature of Node-RED, allowing you to easily expose data visualisations and interactive elements of your flows to users via a web browser. I often see discussions in the community about which dashboard option is best for any given scenario, I wanted to compare the most popular options as they stand in early 2023.&lt;/p&gt;
@@ -140,6 +114,32 @@
 &lt;p&gt;If you already use Dashboard, in a non-commercial setting you should probably continue to do so, you might find that its development slows down to a near stall due to the underlying framework now being abandoned but for at least as of right now it&#39;s a great solution to build your Node-RED dashboards in.&lt;/p&gt;
 &lt;p&gt;FlexDash is probably the best low-code solution for building dashboards in Node-RED. If you don&#39;t get blocked by the confusing install process I believe it&#39;s the one to pick up at the time of writing due to it&#39;s ongoing support and low-code interface.&lt;/p&gt;
 &lt;p&gt;uibuilder is currently not what I would consider a truly low-code option for creating dashboards but it is moving in that direction. It has some great features and is extremely flexible so it has a good chance of ending up as the most popular solution to build dashboards in Node-RED in the long term. That being said, as of time of writing unless you are a &#39;coder&#39; you will may struggle to build a dashboard using it.&lt;/p&gt;
+</content>
+    </entry>
+    
+    <entry>
+        <id>https://flowforge.com/blog/2023/03/3-quick-node-red-tips-3/</id>
+        <title>3 Quick Tips for Using Node-RED, Part 3</title>
+        <summary>Save yourself time when working on Node-RED with these three tips.</summary>
+        <updated>2023-03-07T12:00:00Z</updated>
+        <link href="https://flowforge.com/blog/2023/03/3-quick-node-red-tips-3/"/>
+        <author><name>Rob Marcer</name></author>
+        <content type="html">&lt;p&gt;There is usually more than one way to complete a given task in software, and Node-RED is no exception. In each of this series of blog posts, we are going to share three useful tips to save yourself time when working on your flows.&lt;/p&gt;
+&lt;!--more--&gt;
+&lt;h3 id=&quot;1.-the-exec-node-allows-you-to-interact-with-bash-from-node-red&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://flowforge.com/blog/2023/03/3-quick-node-red-tips-3/#1.-the-exec-node-allows-you-to-interact-with-bash-from-node-red&quot;&gt;#&amp;nbsp;&lt;/a&gt; 1. The Exec node allows you to interact with BASH from Node-RED&lt;/h3&gt;
+&lt;p&gt;Exec allows you to run Shell commands and receive the value back into your flow. This opens up almost any command which can be run on the host devices CLI to your Node-RED flows.&lt;/p&gt;
+&lt;p&gt;&lt;picture&gt;&lt;source type=&quot;image/gif&quot; srcset=&quot;https://flowforge.com/img/exec-example-5pbWo9JfQR-650.gif 650w&quot; sizes=&quot;(min-device-pixel-ratio: 1.25) 1300px, (min-resolution: 120dpi) 1300px, 650px&quot; /&gt;&lt;img title=&quot;Example of using the Exec node&quot; alt=&quot;Example of using the Exec node&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot; src=&quot;https://flowforge.com/img/exec-example-5pbWo9JfQR-650.webp&quot; width=&quot;650&quot; height=&quot;176&quot; /&gt;&lt;/picture&gt;&lt;/p&gt;
+&lt;h3 id=&quot;2.-the-filter-node-helps-you-discard-duplicate-messages&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://flowforge.com/blog/2023/03/3-quick-node-red-tips-3/#2.-the-filter-node-helps-you-discard-duplicate-messages&quot;&gt;#&amp;nbsp;&lt;/a&gt; 2. The Filter node helps you discard duplicate messages&lt;/h3&gt;
+&lt;p&gt;It can be useful to only allow messages to proceed through a flow where their value is unique. Filter makes that task simple, no need to store the past values and check each new message against a list.&lt;/p&gt;
+&lt;p&gt;&lt;picture&gt;&lt;source type=&quot;image/avif&quot; srcset=&quot;https://flowforge.com/img/filter-config-_EWqcnEIqK-497.avif 497w&quot; sizes=&quot;(min-device-pixel-ratio: 1.25) 1300px, (min-resolution: 120dpi) 1300px, 650px&quot; /&gt;&lt;source type=&quot;image/webp&quot; srcset=&quot;https://flowforge.com/img/filter-config-_EWqcnEIqK-497.webp 497w&quot; sizes=&quot;(min-device-pixel-ratio: 1.25) 1300px, (min-resolution: 120dpi) 1300px, 650px&quot; /&gt;&lt;img title=&quot;Configure the Filter node to only allow unique payloads through&quot; alt=&quot;Configure the Filter node to only allow unique payloads through&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot; src=&quot;https://flowforge.com/img/filter-config-_EWqcnEIqK-497.jpeg&quot; width=&quot;497&quot; height=&quot;264&quot; /&gt;&lt;/picture&gt;&lt;/p&gt;
+&lt;p&gt;Once your filter is configured as shown above, try sending different payloads through to see the outcome.&lt;/p&gt;
+&lt;p&gt;&lt;picture&gt;&lt;source type=&quot;image/gif&quot; srcset=&quot;https://flowforge.com/img/filter-example-QS3dkKM_7o-650.gif 650w&quot; sizes=&quot;(min-device-pixel-ratio: 1.25) 1300px, (min-resolution: 120dpi) 1300px, 650px&quot; /&gt;&lt;img title=&quot;Demonstration showing the Filter node&quot; alt=&quot;Demonstration showing the Filter node&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot; src=&quot;https://flowforge.com/img/filter-example-QS3dkKM_7o-650.webp&quot; width=&quot;650&quot; height=&quot;157&quot; /&gt;&lt;/picture&gt;&lt;/p&gt;
+&lt;h3 id=&quot;3.-counting-the-amount-of-messages-sent-to-a-debug-node&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://flowforge.com/blog/2023/03/3-quick-node-red-tips-3/#3.-counting-the-amount-of-messages-sent-to-a-debug-node&quot;&gt;#&amp;nbsp;&lt;/a&gt; 3. Counting the amount of messages sent to a Debug node&lt;/h3&gt;
+&lt;p&gt;The Debug node has a lot of great features that we don&#39;t see used that often. One example is the ability to show a count of how many messages have been sent to that Debug node since the last deploy.&lt;/p&gt;
+&lt;p&gt;&lt;picture&gt;&lt;source type=&quot;image/avif&quot; srcset=&quot;https://flowforge.com/img/setup-counting-debug-xcQQh_oXTp-650.avif 650w&quot; sizes=&quot;(min-device-pixel-ratio: 1.25) 1300px, (min-resolution: 120dpi) 1300px, 650px&quot; /&gt;&lt;source type=&quot;image/webp&quot; srcset=&quot;https://flowforge.com/img/setup-counting-debug-xcQQh_oXTp-650.webp 650w&quot; sizes=&quot;(min-device-pixel-ratio: 1.25) 1300px, (min-resolution: 120dpi) 1300px, 650px&quot; /&gt;&lt;img title=&quot;Setting up the debug to count messages&quot; alt=&quot;Setting up the debug to count messages&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot; src=&quot;https://flowforge.com/img/setup-counting-debug-xcQQh_oXTp-650.jpeg&quot; width=&quot;650&quot; height=&quot;379&quot; /&gt;&lt;/picture&gt;&lt;/p&gt;
+&lt;p&gt;Once you&#39;ve setup the node as shown above, you will see a counter under the debug.&lt;/p&gt;
+&lt;p&gt;&lt;picture&gt;&lt;source type=&quot;image/gif&quot; srcset=&quot;https://flowforge.com/img/counting-debug-e_XQ5fi2Il-650.gif 650w&quot; sizes=&quot;(min-device-pixel-ratio: 1.25) 1300px, (min-resolution: 120dpi) 1300px, 650px&quot; /&gt;&lt;img title=&quot;Each message sent to the debug node is counted&quot; alt=&quot;Each message sent to the debug node is counted&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot; src=&quot;https://flowforge.com/img/counting-debug-e_XQ5fi2Il-650.webp&quot; width=&quot;650&quot; height=&quot;269&quot; /&gt;&lt;/picture&gt;&lt;/p&gt;
+&lt;p&gt;We hope you found these tips useful, if you&#39;d like to suggest some of your own tips which you think we should share in our future blog posts please &lt;a href=&quot;mailto:contact@flowforge.com&quot;&gt;get in touch&lt;/a&gt;.&lt;/p&gt;
 </content>
     </entry>
     
