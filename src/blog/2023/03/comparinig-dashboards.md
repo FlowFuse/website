@@ -40,23 +40,21 @@ To compare these dashboards, I am going to consider each of them based on the fo
 
 I am assuming the user is a low-code developer. They may have limited experience with coding and are most comfortable working in visual interfaces.
 
-I am also assuming that the user has been recommended to search for each of these dashboards by name. It's a little unfair to say that Dashboard is inherently better because its name is an obvious search term for 'dashboards'.
-
 So, that's the methodology, let's get on with looking at the strengths of each project.
 
 ## How easy is it to install?
 
 ### uibuilder - 1st place
 
-A search on [DuckDuckGo for the term 'node red ui builder'](https://duckduckgo.com/?q=node+red+ui+builder&t=h_&ia=web) returns the correct custom node. When searching for the custom node in the palette manager there is only one result, this is great as users are very likely to install what they were searching for. Once you've found the correct custom node, the installation takes just a few moments using the palette manager.
+A search on Google for uibuilder returns the correct custom node. When searching for the custom node in the palette manager there is only one result, this is great as users are very likely to install what they were searching for. Once you've found the correct custom node, the installation takes just a few moments using the palette manager.
 
 ### Dashboard - 2nd place
 
-As Dashboard is currently the most popular solution to build dashboards in Node-RED, it's very easy to find both in search engines and in the Node-RED interface. A [DuckDuckGo search for 'node red dashboard'](https://duckduckgo.com/?q=node+red+dashboard&t=h_&ia=web) brings up the correct custom node. Finding this custom node in Node-RED's palette manager is not quite as easy, at the time of writing it's the third from top result for the search term 'dashboard'. Some users might not select the intended item from the palette manager on first attempt. However, once you have found the correct custom node, installation is easy and takes just a few moments.
+As Dashboard is currently the most popular solution to build dashboards in Node-RED, it's very easy to find both in search engines and in the Node-RED interface. A Google search brings up the correct custom node. Finding this custom node in Node-RED's palette manager is not quite as easy, at the time of writing it's the third from top result for the search term 'dashboard'. Some users might not select the intended item from the palette manager on first attempt. However, once you have found the correct custom node, installation is easy and takes just a few moments.
 
 ### FlexDash - 3rd place
 
-When [searching on DuckDuckGo for 'node red flexdash'](https://duckduckgo.com/?q=node+red+flexdash&t=h_&ia=web) the top result is the Node-RED website for the custom node. The issue with this, and this is also a problem when searching in the palette manager, is the project 'FlexDash' is apparently not what we actually need to install. When reading the readme for the project on Github it says *'You most likely do not want to explicitly install this package, you want to install the [core widgets](https://github.com/flexdash/node-red-fd-corewidgets), which will bring in this package and more and will provide a usable whole'.*
+When searching for 'FlexDash node red' on Google, the top result is the Node-RED website for the custom node. The issue with this, and this is also a problem when searching in the palette manager, is the project 'FlexDash' is apparently not what we actually need to install. When reading the readme for the project on Github it says *'You most likely do not want to explicitly install this package, you want to install the [core widgets](https://github.com/flexdash/node-red-fd-corewidgets), which will bring in this package and more and will provide a usable whole'.*
 
 Credit to the developers for adding in this helpful text but I suspect most users will start off by installing FlexDash then later discover that was not the correct way to proceed. It would be great if the custom node which needs to be installed was the one called 'FlexDash' in my opinion.
 
