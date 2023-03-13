@@ -13,7 +13,7 @@ There is usually more than one way to complete a given task in software, and Nod
 
 ### 1. Use the Smooth node to get the minimum and maximum values of your payloads
 
-When taking data in from sensors sometimes a spurious value can be sent into your flow. This can result in oddities in a graph or even misfiring of actions such as turning on a heating system. the Smooth custom node allows you to store the min and max of a payload for the last few messages received.
+When taking data in from sensors sometimes a spurious value can be sent into your flow. This can result in oddities in a graph or even misfiring of actions such as turning on a heating system. The Smooth custom node allows you to store the min and max of a payload for the last few messages received.
 
 ![Using the Smooth node to return highest value from the last 100 payloads](./images/smooth.png "Using the Smooth node to return highest value from the last 100 payloads")
 
