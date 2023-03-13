@@ -38,7 +38,7 @@ To compare these dashboards, I am going to consider each of them based on the fo
 
 - [What are the future development plans?](#what-are-the-future-development-plans%3F)
 
-I am assuming the user is a low-code developer. They may have limited experience with coding but they are most comfortable working in visual interfaces.
+I am assuming the user is a low-code developer. They may have limited experience with coding and are most comfortable working in visual interfaces.
 
 I am also assuming that the user has been recommended to search for each of these dashboards by name. It's a little unfair to say that Dashboard is inherently better because its name is an obvious search term for 'dashboards'.
 
