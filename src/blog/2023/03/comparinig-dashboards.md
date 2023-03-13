@@ -64,6 +64,8 @@ This problem is compounded by there being no help file at all for 'FlexDash' sho
 
 When setting up FlexDash, one thing that wasn't immediately obvious was that I needed to restart Node-RED before the custom node showed in the palette. This step is [covered in the docs](https://flexdash.github.io/docs/quick-start/#installing-flexdash-in-node-red) but I suspect a lot of users will get stuck working out why the palette manager says the custom node is installed but nothing new has been added to the palette.
 
+There is also an [ongoing discussion](https://github.com/node-red/node-red/issues/569) about a way to resolve issue by changing how Node-RED deals with dependencies which sounds promising.
+
 I believe a few improvements to the install process could make FlexDash a much more popular custom node.
 
 ## How easy is it to get your first demo dashboard running?
@@ -114,7 +116,7 @@ Dashboard stores all configuration data within the Node-RED instance. When deplo
 
 ### FlexDash - 2nd place 
 
-As with Dashboard, everything required to define each dashboard is stored within Node-RED. This makes redeployment trivial. Unfortunately, as the Node-RED instance currently needs to be restarted before FlexDash works, it's just missed out on joint first place. It would be great to see that issue resolved in future versions.
+As with Dashboard, everything required to define each dashboard is stored within Node-RED. This makes redeployment trivial. Unfortunately, as the Node-RED instance currently needs to be restarted before FlexDash works, it just missed out on joint first place. It would be great to see that issue resolved in future versions. There is also an [ongoing discussion](https://github.com/node-red/node-red/issues/569) about a way to resolve issue by changing how Node-RED deals with dependencies. 
 
 ### uibuilder - 3rd place
 
