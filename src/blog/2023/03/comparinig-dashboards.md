@@ -14,7 +14,7 @@ Dashboards are a great feature of Node-RED, allowing you to easily expose data v
 
 ## Which dashboards am I going to consider?
 
-At this time I believe there are 3 main dashboards worth considering based on their downloads per week and active development. In no particular order, they are [Dashboard](https://flows.nodered.org/node/node-red-dashboard), [uibuilder](https://flows.nodered.org/node/node-red-contrib-uibuilder), and [FlexDash](https://flows.nodered.org/node/@flexdash/node-red-fd-corewidgets).
+ Based on their downloads per week and active development, I believe there are 3 main dashboards worth considering. In no particular order, they are [Dashboard](https://flows.nodered.org/node/node-red-dashboard), [uibuilder](https://flows.nodered.org/node/node-red-contrib-uibuilder), and [FlexDash](https://flows.nodered.org/node/@flexdash/node-red-fd-corewidgets).
 
 It's not to say that there are not other options, I am focusing on the dashboards I believe you are most likely to use day to day.
 
