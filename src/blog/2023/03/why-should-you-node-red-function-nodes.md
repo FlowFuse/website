@@ -1,10 +1,9 @@
 ---
-title: Why should you use function nodes in your Node-RED projects?
+title: The benefits and drawbacks of using Node-RED function nodes
 subtitle: In this blog post, I will discuss some of the benefits and drawbacks of using Function nodes in your next Node-RED project.
 description: In this blog post, I will discuss some of the benefits and drawbacks of using Function nodes in your next Node-RED project.
-date: 2023-03-17
+date: 2023-03-16
 authors: ["rob-marcer"]
-image: /images/blog/db-comparison.jpg
 tags:
     - posts
 ---
