@@ -1,6 +1,6 @@
 ---
 title: FlowForge v1.5 Now Available
-subtitle: Updates to UI and architecture to allow for future features
+subtitle: Updates to UI and architecture to allow for future features and Node-RED 3.1.0 Beta Available!
 description: For FlowForge 1.5 we have been busy making a lot of UX changes and upgrading our underlying architecture to enable future innovations on the FlowForge platform.
 date: 2023-03-16 15:00:00.0
 authors: ["ian-skerrett"]
