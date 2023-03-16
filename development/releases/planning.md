@@ -31,7 +31,6 @@ There are three types of issue used for planning work:
  - **Task**: a piece of work that isn't necessarily tied to a specific Epic or Story.
    For example, items related to technical debt or house-keeping chores.
 
-
 Whenever an issue is raised, it will be reviewed by the Product Owner/CTO and added
 to the Product Board for prioritization and planning. The exception to this are
 tasks/bugs related to work already in progress and that need to be addressed in
@@ -102,6 +101,15 @@ The board has the following states:
  - `Review` - items that are ready to be reviewed (PR open)
  - `Verify` - items that have been merged and can be verified once deployed to the Staging environment
  - `Done` - items that are [Done](#defining-done)
+
+##### 'In Design' deliverables
+
+Both UX/UI work and engnieering work can be in design. For both instances there
+should still be defined deliverables. For UI/UX work these might be work in Figma
+and the components library. For engineering the questions needing answers should
+be formulated up front, and answered as deliverable. Questions around what
+technology to use, how to scope down the feature set, and how to deliver the results
+are thus required before the design sprint start.
 
 ### Retrospective/Kick-Off
 
