@@ -102,13 +102,14 @@ The board has the following states:
  - `Verify` - items that have been merged and can be verified once deployed to the Staging environment
  - `Done` - items that are [Done](#defining-done)
 
-##### 'In Design' deliverables
+#### 'In Design' Deliverables
 
-Both UX/UI work and engnieering work can be in design. For both instances there
-should still be defined deliverables. For UI/UX work these might be work in Figma
-and the components library. For engineering the questions needing answers should
-be formulated up front, and answered as deliverable. Questions around what
-technology to use, how to scope down the feature set, and how to deliver the results
+Both UX/UI work and engineering work can be "In Design". For both instances there should still be defined deliverables. 
+
+It is important to use Design as a tool for conversation, verification, or to ensure engineers and the wider team are on the same page, but it should rarely be a blocker given our [Bias for Action](../../) value.
+
+- **UI/UX Work:** This is generally work in Figma for product, website or the components library. Deliverables should be well-defined as an MVP prototype, or at least enough for engineering to get started, on which we can iterate.
+- **Engineering:**  Questions that need answers should be formulated up front, and answered as the deliverable. Questions around what technology to use, how to scope down the feature set, and how to deliver the results
 are thus required before the design sprint start.
 
 ### Retrospective/Kick-Off
