@@ -6,46 +6,55 @@ authors: ["ian-skerrett"]
 image: 
 ---
 
-The focus of the new FlowForge 1.5 release is mainly on UI and architectural changes that will allow for future innovations of the FlowForge platform.
+For FlowForge 1.5 we have been busy making a lot of UX changes and upgrading our underlying architecture to enable future innovations on the FlowForge platform.
 
 <!--more-->
 
-The UI changes deal with how things are named in FlowForge. We are updating some key terms to allow us to expand the overall functionality of the FlowForge platform. Below is a summary of these changes.
+With our recently announced [Terminology Changes](/blog/2023/03/terminology-changes/), we have introduced some new concepts into FlowForge.
 
-![New FlowForge Concepts](./images/Flowforge-Concepts.png "New FlowForge Concepts")
-
-### New ‘Application’ Concept
-
-In FlowForge 1.5, we have introduced a new concept called **Application**. An Application allows you to organize Node-RED instances into managed groups. In the 1.5 release, an Application can have only a single Node-RED instance but in future releases Applications will allow for multiple Node-RED instances. In the future this will allow us to implement capabilities such as ‘deliver pipelines’ and high availability.
+- **Application**: A group of Node-RED Instances Each instance can run locally (in FlowForge) or remotely (on Devices)
+- **Instances**: We renamed "Projects" to "Instances" to be more inline with the terminology used in the Node-RED community
 
 
-### Project renamed to Instance
+As such, our User Experience has been updated to reflect these changes, and allow for further functionality to be introduced with our plans for [Multiple Instances per Application](https://github.com/flowforge/flowforge/issues/1689).
 
-The term ‘project’ is being removed from FlowForge and is replaced with the term **Instance**. An Instance is a customized version of Node-RED that includes various FlowForge plugins to integrate it with the FlowForge platform.
+### "Applications" View
 
-An Instance can store the environment variables used in your Node-RED flows. In future releases, environment variables will also be able to be stored at the Application level.
+At the top-level in FlowForge, you can now see a list of your "Appications". In FlowForge 1.5, as we still have a 1:1 relationship of Applications to Local Instances, this will be the same as the list of "Projects" that you're used to seeing.
 
-By default, an Instance will run on the FlowForge Platform. For example, FlowForge Cloud hosts running Node-RED instances. 
+![Screenshot to show the new "Applications" view](./images/screenshot-applications.png)
+<figcaption class="-mt-6 text-center"><b>"Applications" view in FlowForge, listing all available Applications</b></figcaption>
+
+For 1.5, all of your settings, environment variables, etc. are all now at the "Instance" level. Applications will gain a lot more functionality in future releases.
+### "Instances" View
+
+When clicking on one of your Applications, you will see a list of Node-RED instances bound to that Application.
+
+![Screenshot to show the new "Instances" view](./images/screenshot-instances.png)
+<figcaption class="-mt-6 text-center"><b>A list of Instances contained within a single Application.</b></figcaption>
+
+Clicking on this Instance, will open up the "Instance" view, this is an exact replica of the "Project" view you'll be used to seeing in FlowForge, and contains all of the same functionality:
+
+![Screenshot to show the new "Instances" view](./images/screenshot-instance.png)
+<figcaption class="-mt-6 text-center"><b>FlowForge 1.5's "Instance" view. This contains all of the functionality previously found in the "Project" view.</b></figcaption>
+
+### Devices & Managing Remote Instances
+
+Devices are now bound to "Instances", you'll see these in the "Devices" view, and can be managed and deployed to in exactly the same way as before. Devices will run whatever you've selected as your "Target Snapshot" for this Instance.
 
 
-### Device
-
-FlowForge can also be used to manage Node-RED instances running on remote devices. This is typically useful when you have a number of remote devices that are required to run the same Node-RED instance.
-
-To accomplish this remote management capability, the Node-RED device agent needs to be installed on each device. Devices are registered with a Team, and then the appropriate device(s) are assigned to a Node-RED instance that should be deployed to the device(s). When the Node-RED instance is ready for deployment, a user creates a snapshot of the instance and marks it as a target snapshot for the device.
-
-We hope these changes will simplify the FlowForge terminology for our users and allow us to grow the FlowForge platform.
-
+![Screenshot to show an Instance's "Devices" view](./images/screenshot-devices.png)
 
 ## Other Improvements
 
-Update to audit logs to improve usability  [[#1800](https://github.com/flowforge/flowforge/issues/1800)] [[#1785](https://github.com/flowforge/flowforge/issues/1785)]
+- Update to audit logs to improve usability  [[#1800](https://github.com/flowforge/flowforge/issues/1800)] [[#1785](https://github.com/flowforge/flowforge/issues/1785)]
+- Improve how licensing works with overages, for easier scaling of FlowForge and your Node-RED Instances [[#1639](https://github.com/flowforge/flowforge/issues/1639)] [[#1739](https://github.com/flowforge/flowforge/issues/1739)]
 
 
 ## Bug Fixes
 
-Device "Last Seen" status shows "never" even though it has previously been seen [[#1723](https://github.com/flowforge/flowforge/issues/1723)]
-
+- Device "Last Seen" status shows "never" even though it has previously been seen [[#1723](https://github.com/flowforge/flowforge/issues/1723)]
+- Improved Safe Mode launch for small projects [[#1579](https://github.com/flowforge/flowforge/issues/1579)]
 
 
 ## Try it out
