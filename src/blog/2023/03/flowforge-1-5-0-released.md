@@ -1,9 +1,10 @@
 ---
 title: FlowForge v1.5 Now Available
 subtitle: Updates to UI and architecture to allow for future features
-date: 2023-03-16 14:00:00.0
+description: For FlowForge 1.5 we have been busy making a lot of UX changes and upgrading our underlying architecture to enable future innovations on the FlowForge platform.
+date: 2023-03-16 15:00:00.0
 authors: ["ian-skerrett"]
-image: 
+image: /blog/2023/03/images/release-150.jpg
 ---
 
 For FlowForge 1.5 we have been busy making a lot of UX changes and upgrading our underlying architecture to enable future innovations on the FlowForge platform.
@@ -14,7 +15,6 @@ With our recently announced [Terminology Changes](/blog/2023/03/terminology-chan
 
 - **Application**: A group of Node-RED Instances Each instance can run locally (in FlowForge) or remotely (on Devices)
 - **Instances**: We renamed "Projects" to "Instances" to be more inline with the terminology used in the Node-RED community
-
 
 As such, our User Experience has been updated to reflect these changes, and allow for further functionality to be introduced with our plans for [Multiple Instances per Application](https://github.com/flowforge/flowforge/issues/1689).
 
@@ -44,6 +44,12 @@ Devices are now bound to "Instances", you'll see these in the "Devices" view, an
 
 
 ![Screenshot to show an Instance's "Devices" view](./images/screenshot-devices.png)
+<figcaption class="-mt-6 text-center"><b>FlowForge 1.5's "Instance" view. This contains all of the functionality previously found in the "Project" view.</b></figcaption>
+
+
+## Node-RED 3.1 Beta Available
+
+FlowForge Cloud is a great place to try out the new Node-RED features, with FlowForge Cloud now including the [Node-RED 3.1.0-beta.2](https://discourse.nodered.org/t/node-red-3-1-0-beta-2-released/76192).
 
 ## Other Improvements
 
