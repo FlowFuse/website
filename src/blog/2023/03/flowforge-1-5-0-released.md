@@ -49,11 +49,11 @@ Devices are now bound to "Instances", you'll see these in the "Devices" view, an
 
 ## Node-RED 3.1 Beta Available
 
-FlowForge Cloud is a great place to try out the new Node-RED features, with FlowForge Cloud now including the [Node-RED 3.1.0-beta.2](https://discourse.nodered.org/t/node-red-3-1-0-beta-2-released/76192).
+FlowForge Cloud is a great place to try out the new Node-RED features, with FlowForge Cloud now including the [Node-RED 3.1.0-beta.2](https://discourse.nodered.org/t/node-red-3-1-0-beta-2-released/76192). If you want to try this version you can [duplicate your application](https://flowforge.com/docs/user/project-settings/#copy-project) or [upgrade your stack](https://flowforge.com/docs/user/changestack/).
 
 ## Other Improvements
 
-- Update to audit logs to improve usability  [[#1800](https://github.com/flowforge/flowforge/issues/1800)] [[#1785](https://github.com/flowforge/flowforge/issues/1785)]
+- Update to audit logs to improve usability [[#1800](https://github.com/flowforge/flowforge/issues/1800)] [[#1785](https://github.com/flowforge/flowforge/issues/1785)]
 - Improve how licensing works with overages, for easier scaling of FlowForge and your Node-RED Instances [[#1639](https://github.com/flowforge/flowforge/issues/1639)] [[#1739](https://github.com/flowforge/flowforge/issues/1739)]
 
 
