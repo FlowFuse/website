@@ -44,7 +44,7 @@ Devices are now bound to "Instances", you'll see these in the "Devices" view, an
 
 
 ![Screenshot to show an Instance's "Devices" view](./images/screenshot-devices.png)
-<figcaption class="-mt-6 text-center"><b>FlowForge 1.5's "Instance" view. This contains all of the functionality previously found in the "Project" view.</b></figcaption>
+<figcaption class="-mt-6 text-center"><b>"Devices" view, available for a given Node-RED Instance. This lists all of the connected devices to a given instance, that will automatically update when a new Target Snapshot is set.</b></figcaption>
 
 
 ## Node-RED 3.1 Beta Available
