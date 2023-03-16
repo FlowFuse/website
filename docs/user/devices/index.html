@@ -316,6 +316,11 @@ filenodes
 </a>
 </li>
 <li>
+<a href="/docs/user/instance-settings/">
+instance-settings
+</a>
+</li>
+<li>
 <a href="/docs/user/logs/">
 logs
 </a>
@@ -336,16 +341,6 @@ persistent-context
 </a>
 </li>
 <li>
-<a href="/docs/user/project-settings/">
-project-settings
-</a>
-</li>
-<li>
-<a href="/docs/user/project-stages/">
-project-stages
-</a>
-</li>
-<li>
 <a href="/docs/user/projectnodes/">
 projectnodes
 </a>
@@ -358,6 +353,11 @@ shared-library
 <li>
 <a href="/docs/user/snapshots/">
 snapshots
+</a>
+</li>
+<li>
+<a href="/docs/user/staged-deployments/">
+staged-deployments
 </a>
 </li>
 <li>
@@ -527,14 +527,14 @@ open-source-to-premium
 <div class="max-w-screen-lg mx-auto px-8 pt-8">
 <div class="hidden w-full mx-auto ff-bg-light md:block">
 <div class="font-medium border-b pb-1">
-v1.4.1 /<a class="mx-2" href="/docs">docs</a>/<a class="mx-2" href="/docs/user">user</a>/<a class="mx-2" href="/docs/user/devices">devices</a>
+v1.5.0 /<a class="mx-2" href="/docs">docs</a>/<a class="mx-2" href="/docs/user">user</a>/<a class="mx-2" href="/docs/user/devices">devices</a>
 </div>
 </div>
 <div class="w-full mx-auto ff-bg-light flex flex-col md:flex-row">
 <div class="flex-grow order-last md:order-first">
 <div class="mt-6 mb-4 prose prose-blue main-content">
 <h1 id="devices" tabindex="-1"><a class="header-anchor" href="#devices">#&nbsp;</a> Devices</h1>
-<p>The FlowForge platform can be used to manage projects running on remote Devices. A Device runs a software agent that connects back to the platform to receive updates.</p>
+<p>The FlowForge platform can be used to manage Node-RED instances running on remote Devices. A Device runs a software agent that connects back to the platform to receive updates.</p>
 <p>This guide explains how to get starting with the Devices feature.</p>
 <h2 id="installing-the-device-agent" tabindex="-1"><a class="header-anchor" href="#installing-the-device-agent">#&nbsp;</a> Installing the Device Agent</h2>
 <p>The Device Agent is published to the public npm repository as <a href="https://www.npmjs.com/package/@flowforge/flowforge-device-agent">@flowforge/flowforge-device-agent</a>.</p>
@@ -602,7 +602,7 @@ dialog. This is the only time the platform will show you this information withou
 <li>Go to your teams's <strong>Settings</strong> page.</li>
 <li>Open the <strong>Device</strong> tab.</li>
 <li>Click the <strong>Create Provisioning Token</strong> tab.</li>
-<li>You will be prompted to give the token a <strong>name</strong> and optionally, chose an auto assigned <strong>project</strong>. Setting the &quot;Auto assign project&quot; will automatically assign the project for any devices that subsequently auto register using this token.</li>
+<li>You will be prompted to give the token a <strong>name</strong> and to chose what <strong>instance</strong>, if any, the device should be assigned to.</li>
 <li>Click <strong>Create</strong></li>
 </ol>
 <p>Once the Provisioning Token has been created, you will be shown the
@@ -632,49 +632,48 @@ dialog. This is the only time the platform will show you this information withou
 </button>
 </div>
 <p>You will see the device start and perform a 'call-home' where it connects back to the platform to auto register itself in the team devices. If successful, the real <strong>Device Credentials</strong> are generated and downloaded to the device. The original <strong>Provisioning Credentials</strong> will be overwritten meaning subsequent runs will not need to perform the auto registration again.</p>
-<h2 id="assign-the-device-to-a-project" tabindex="-1"><a class="header-anchor" href="#assign-the-device-to-a-project">#&nbsp;</a> Assign the device to a project</h2>
-<p>The next step is to assign the device to a project.</p>
+<h2 id="assign-the-device-to-a-node-red-instance" tabindex="-1"><a class="header-anchor" href="#assign-the-device-to-a-node-red-instance">#&nbsp;</a> Assign the device to a Node-RED instance</h2>
+<p>The next step is to assign the device to a Node-RED instance.</p>
 <ol>
 <li>Go to your teams's <strong>Devices</strong> page.</li>
-<li>Open the dropdown menu to the right of the device you want to assign and select the <strong>Add to project</strong> option.</li>
-<li>Select the project to add the project to in the dialog - click <strong>Add</strong> to continue.</li>
+<li>Open the dropdown menu to the right of the device you want to assign and select the <strong>Add to Application Instance</strong> option.</li>
+<li>Select the instance in the dialog and click <strong>Add</strong> to continue.</li>
 </ol>
-<p>NOTE: Auto registered devices may already be assigned to a project.</p>
-<h2 id="deploying-a-project-to-the-device" tabindex="-1"><a class="header-anchor" href="#deploying-a-project-to-the-device">#&nbsp;</a> Deploying a project to the device</h2>
-<p>To deploy a project to the device:</p>
+<h2 id="deploying-a-node-red-instance-to-the-device" tabindex="-1"><a class="header-anchor" href="#deploying-a-node-red-instance-to-the-device">#&nbsp;</a> Deploying a Node-RED instance to the device</h2>
+<p>To deploy a Node-RED instance to the device:</p>
 <ol>
-<li><a href="../snapshots#create-a-snapshot">Create a snapshot</a> - a point-in-time backup of the project</li>
+<li><a href="../snapshots#create-a-snapshot">Create a snapshot</a> - a point-in-time backup of the Node-RED flows and configuration.</li>
 <li><a href="../snapshots#setting-a-device-target-snapshot">Mark that snapshot</a> as the <strong>Device Target</strong> snapshot.</li>
 </ol>
-<p>This model allows you to develop your project in FlowForge and only push it out to the registered devices when you're happy with what you've created.</p>
-<h2 id="remove-a-device-from-a-project" tabindex="-1"><a class="header-anchor" href="#remove-a-device-from-a-project">#&nbsp;</a> Remove a device from a project</h2>
-<p>To remove the device from the project:</p>
+<p>This model allows you to develop your flows in FlowForge and only push it out to the registered devices when you're happy with what you've created.</p>
+<h2 id="remove-a-device-from-a-node-red-instance" tabindex="-1"><a class="header-anchor" href="#remove-a-device-from-a-node-red-instance">#&nbsp;</a> Remove a device from a Node-RED instance</h2>
+<p>To remove the device from a Node-RED instance:</p>
 <ol>
 <li>Go to your teams's <strong>Devices</strong> page.</li>
-<li>Open the dropdown menu to the right of the device you want to remove and select the <strong>Remove from project</strong> option.</li>
+<li>Open the dropdown menu to the right of the device you want to remove and select the <strong>Remove from application instance</strong> option.</li>
 <li>Confirm the action by clicking the <strong>Remove</strong> option.</li>
 </ol>
-<p>The device will stop running the current project and wait to be added back to a project.</p>
+<p>The device will stop running the current Node-RED flows. It will then wait until it is assigned to another instance.</p>
 <h2 id="regenerating-credentials" tabindex="-1"><a class="header-anchor" href="#regenerating-credentials">#&nbsp;</a> Regenerating credentials</h2>
 <p>To regenerate device credentials:</p>
 <ol>
-<li>Go to your teams or project's <strong>Devices</strong> page.</li>
+<li>Go to your team's or instance's <strong>Devices</strong> page.</li>
 <li>Open the dropdown menu to the right of the device and select the
 <strong>Regenerate credentials</strong> option.</li>
-<li>You will need to confirm this action as the existing credentials will be immediately revoked. If the device tries to use the old credentials it will fail to connect and will delete its local copy of the project snapshot it was running. Click <strong>Regenerate credentials</strong> to continue.</li>
+<li>You will need to confirm this action as the existing credentials will be immediately revoked. If the device tries to use the old credentials it will fail to connect and will delete its local copy of the snapshot it was running. Click <strong>Regenerate credentials</strong> to continue.</li>
 </ol>
 <p>You will then be shown the <strong>Device Credentials</strong> dialog again with a new set of credentials to copy or download.</p>
 <h2 id="deleting-a-device" tabindex="-1"><a class="header-anchor" href="#deleting-a-device">#&nbsp;</a> Deleting a device</h2>
 <p>To delete a device:</p>
 <ol>
-<li>Go to your teams or project's <strong>Devices</strong> page.</li>
+<li>Go to your team's or instance's <strong>Devices</strong> page.</li>
 <li>Open the dropdown menu to the right of the device and select the
 <strong>Delete device</strong> option.</li>
 <li>Confirm the action by clicking the <strong>Delete</strong> option.</li>
 </ol>
-<p>The next time the device calls home it will find it is no longer authorised and will stop and delete its local copy of the project it was running.</p>
+<p>The next time the device attempts to connect to the platform it will find it is no longer authorised and will stop and delete its local copy of the flows it was running.</p>
 <h2 id="running-with-no-access-to-npmjs.org" tabindex="-1"><a class="header-anchor" href="#running-with-no-access-to-npmjs.org">#&nbsp;</a> Running with no access to npmjs.org</h2>
-<p>By default the Device Agent will try and download the correct version of Node-RED and any nodes required to run the Project Snapshot that is assigned to run on the device.</p>
+<p>By default the Device Agent will try and download the correct version of Node-RED and any nodes required to run the Snapshot that is assigned to run on the device.</p>
 <p>If the device is being run on an offline network or security policies prevent the Device Agent from connecting to npmjs.org then it can be configured to use a pre-cached set of modules.</p>
 <p>You can enable this mode by adding <code>-m</code> to the command line adding <code>moduleCache: true</code>
 to the <code>device.yml</code> file. This will cause the Device Agent to load the modules from the
@@ -682,7 +681,7 @@ to the <code>device.yml</code> file. This will cause the Device Agent to load th
 <h3 id="creating-a-module-cache" tabindex="-1"><a class="header-anchor" href="#creating-a-module-cache">#&nbsp;</a> Creating a module cache</h3>
 <p>To create a suitable module cache, you will need to install the modules on a local device with access to npmjs.org, ensuring you use the same OS and Architecture as your target device, and then copy the modules on to your device.</p>
 <ol>
-<li>From the Project Snapshot page, select the snapshot you want to deploy and select the option to download its <code>package.json</code> file.</li>
+<li>From the Snapshot page, select the snapshot you want to deploy and select the option to download its <code>package.json</code> file.</li>
 <li>Place this file in an empty directory on your local device.</li>
 <li>Run <code>npm install</code> to install the modules. This will create a <code>node_modules</code> directory.</li>
 <li>On your target device, create a directory called <code>module_cache</code> inside the Device Agent Configuration directory.</li>
@@ -703,14 +702,14 @@ to the <code>device.yml</code> file. This will cause the Device Agent to load th
 <div class="border-l">
 <div class="block px-8 pt-4 w-full mx-auto ff-bg-light md:hidden">
 <div class="font-medium border-b pb-1">
-v1.4.1 /<a class="mx-2" href="/docs">docs</a>/<a class="mx-2" href="/docs/user">user</a>/<a class="mx-2" href="/docs/user/devices">devices</a>
+v1.5.0 /<a class="mx-2" href="/docs">docs</a>/<a class="mx-2" href="/docs/user">user</a>/<a class="mx-2" href="/docs/user/devices">devices</a>
 </div>
 </div>
 <div class="sticky top-6 w-full md:w-64 mt-4 md:mt-6 px-8">
 <h3 class="font-medium border-b pb-1 mb-4">on this page</h3>
 <ul id="toc" class="text-sm border-b mb-4"></ul>
 <div class="text-sm pb-1 text-right mb-4"><a href="https://github.com/flowforge/flowforge/edit/main/docs/user/devices.md">Edit this page</a></div>
-<div class="text-xs pb-1 text-right mb-4 italic">Updated: 2023-03-13 11:25:24 +0000</div>
+<div class="text-xs pb-1 text-right mb-4 italic">Updated: 2023-03-16 10:55:00 +0000</div>
 </div>
 </div>
 </div>

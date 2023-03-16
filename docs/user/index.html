@@ -316,6 +316,11 @@ filenodes
 </a>
 </li>
 <li>
+<a href="/docs/user/instance-settings/">
+instance-settings
+</a>
+</li>
+<li>
 <a href="/docs/user/logs/">
 logs
 </a>
@@ -336,16 +341,6 @@ persistent-context
 </a>
 </li>
 <li>
-<a href="/docs/user/project-settings/">
-project-settings
-</a>
-</li>
-<li>
-<a href="/docs/user/project-stages/">
-project-stages
-</a>
-</li>
-<li>
 <a href="/docs/user/projectnodes/">
 projectnodes
 </a>
@@ -358,6 +353,11 @@ shared-library
 <li>
 <a href="/docs/user/snapshots/">
 snapshots
+</a>
+</li>
+<li>
+<a href="/docs/user/staged-deployments/">
+staged-deployments
 </a>
 </li>
 <li>
@@ -527,29 +527,30 @@ open-source-to-premium
 <div class="max-w-screen-lg mx-auto px-8 pt-8">
 <div class="hidden w-full mx-auto ff-bg-light md:block">
 <div class="font-medium border-b pb-1">
-v1.4.1 /<a class="mx-2" href="/docs">docs</a>/<a class="mx-2" href="/docs/user">user</a>
+v1.5.0 /<a class="mx-2" href="/docs">docs</a>/<a class="mx-2" href="/docs/user">user</a>
 </div>
 </div>
 <div class="w-full mx-auto ff-bg-light flex flex-col md:flex-row">
 <div class="flex-grow order-last md:order-first">
 <div class="mt-6 mb-4 prose prose-blue main-content">
 <h1 id="using-flowforge" tabindex="-1"><a class="header-anchor" href="#using-flowforge">#&nbsp;</a> Using FlowForge</h1>
-<p>This guide will help you learn how to use the FlowForge platform to quickly create new Node-RED projects.</p>
+<p>This guide will help you learn how to use the FlowForge platform to quickly create new Node-RED applications.</p>
 <h2 id="concepts" tabindex="-1"><a class="header-anchor" href="#concepts">#&nbsp;</a> Concepts</h2>
-<p>Within FlowForge, each Node-RED instance is called a <em>Project</em>. The Project is owned by a <em>Team</em> that provides all the necessary access control.</p>
-<p>The Project is created from a <em>Template</em> that provides its default settings and runs on a <em>Stack</em> that determines the Node-RED version, memory, and CPU usage.</p>
+<p>Within FlowForge, users are members of <em>Teams</em>. Each team can create <em>Applications</em>
+that are collections of one or more <em>Node-RED instances</em>. Each instance is created from a <em>Template</em> to provide its default settings and runs on a <em>Stack</em> that deterines the Node-RED version, memory and CPU usage.</p>
+<p><em>Devices</em> can be assigned to an instance and have flows automatically deployed to them when <em>snapshots</em> are created of the instance.</p>
 <p>For more details on these and other core concepts, you can learn about them <a href="concepts">here</a>.</p>
-<h2 id="working-with-projects" tabindex="-1"><a class="header-anchor" href="#working-with-projects">#&nbsp;</a> Working with Projects</h2>
+<h2 id="working-with-instances" tabindex="-1"><a class="header-anchor" href="#working-with-instances">#&nbsp;</a> Working with Instances</h2>
 <ul>
-<li><a href="snapshots">Snapshots</a> - Create point-in-time backups of your project.</li>
-<li><a href="envvar">Environment Variables</a> - How to manage Environment Variables in your projects.</li>
-<li><a href="changestack">Change Project Stack</a> - How to change a projects stack, for example to upgrade Node-RED.</li>
+<li><a href="snapshots">Snapshots</a> - Create point-in-time backups of your Node-RED instances.</li>
+<li><a href="envvar">Environment Variables</a> - How to manage Environment Variables in your Node-RED instances.</li>
+<li><a href="changestack">Change Project Stack</a> - How to change an instance stack, for example to upgrade Node-RED.</li>
 <li><a href="logs">Logs</a> - The Logs available in the FlowForge application.</li>
-<li><a href="projectnodes">Project Link Nodes</a> - Custom nodes for sending messages between projects and devices.</li>
-<li><a href="project-stages">Staged Deployments</a> - Instruction on how to use FlowForge projects to deploy to the next stage in a DevOps pipeline.</li>
-<li><a href="project-settings">Project Settings</a> - Settings available for projects.</li>
-<li><a href="shared-library">Shared Team Library</a> - Share flows easily between different projects in your team.</li>
-<li><a href="node-red-tools">Node-RED Tools Plugin</a> - A plugin for Node-RED that lets you work with your projects outside of FlowForge.</li>
+<li><a href="projectnodes">Project Link Nodes</a> - Custom nodes for sending messages between Node-RED instances and devices.</li>
+<li><a href="staged-deployments">Staged Deployments</a> - How to create DevOps pipelines between Node-RED instances</li>
+<li><a href="instance-settings">Instance Settings</a> - Settings available for Node-RED instances.</li>
+<li><a href="shared-library">Shared Team Library</a> - Share flows easily between different Node-RED instances in your team.</li>
+<li><a href="node-red-tools">Node-RED Tools Plugin</a> - A plugin for Node-RED that lets you work with your flows outside of FlowForge.</li>
 </ul>
 <h2 id="working-with-teams" tabindex="-1"><a class="header-anchor" href="#working-with-teams">#&nbsp;</a> Working with Teams</h2>
 <ul>
@@ -569,9 +570,14 @@ v1.4.1 /<a class="mx-2" href="/docs">docs</a>/<a class="mx-2" href="/docs/user">
 </ul>
 <h2 id="debugging-and-fixing-node-red-issues" tabindex="-1"><a class="header-anchor" href="#debugging-and-fixing-node-red-issues">#&nbsp;</a> Debugging and fixing Node-RED issues</h2>
 <h3 id="node-red-safe-mode" tabindex="-1"><a class="header-anchor" href="#node-red-safe-mode">#&nbsp;</a> Node-RED Safe Mode</h3>
-<p>When a Node-RED instance is unresponsive, for example due to an infinite loop, it can be put into Safe Mode. This is done by updating the <a href="envvar">Environment Variables</a>
-for a project. Set <code>NODE_RED_ENABLE_SAFE_MODE</code> as variable name to the value
-<code>true</code>, then suspend and restart the project. This will load the editor but not start the flow which will let you log in and recover. The flows will be started on the next Deploy from the editor.</p>
+<p>When a Node-RED instance is unresponsive, for example due to an infinite loop, it can be put into Safe Mode.</p>
+<ol>
+<li>Edit the instance's <a href="envvar">Environment Variables</a></li>
+<li>Add a variable called <code>NODE_RED_ENABLE_SAFE_MODE</code> to <code>true</code>.</li>
+<li>Save the changes then suspend/restart the instance.</li>
+</ol>
+<p>When starting up in Safe Mode, Node-RED will provide access to the editor without starting the flows. You can log in to the editor, make any necessary changes and then deploy to restart the flows.</p>
+<p>Once recovered you should delete the <code>NODE_RED_ENABLE_SAFE_MODE</code> environment variable to prevent it entering Safe Mode the next time it is restarted.</p>
 </div>
 </div>
 </div>
@@ -579,14 +585,14 @@ for a project. Set <code>NODE_RED_ENABLE_SAFE_MODE</code> as variable name to th
 <div class="border-l">
 <div class="block px-8 pt-4 w-full mx-auto ff-bg-light md:hidden">
 <div class="font-medium border-b pb-1">
-v1.4.1 /<a class="mx-2" href="/docs">docs</a>/<a class="mx-2" href="/docs/user">user</a>
+v1.5.0 /<a class="mx-2" href="/docs">docs</a>/<a class="mx-2" href="/docs/user">user</a>
 </div>
 </div>
 <div class="sticky top-6 w-full md:w-64 mt-4 md:mt-6 px-8">
 <h3 class="font-medium border-b pb-1 mb-4">on this page</h3>
 <ul id="toc" class="text-sm border-b mb-4"></ul>
 <div class="text-sm pb-1 text-right mb-4"><a href="https://github.com/flowforge/flowforge/edit/main/docs/user/README.md">Edit this page</a></div>
-<div class="text-xs pb-1 text-right mb-4 italic">Updated: 2023-03-13 11:25:24 +0000</div>
+<div class="text-xs pb-1 text-right mb-4 italic">Updated: 2023-03-16 10:55:00 +0000</div>
 </div>
 </div>
 </div>

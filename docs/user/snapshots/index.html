@@ -316,6 +316,11 @@ filenodes
 </a>
 </li>
 <li>
+<a href="/docs/user/instance-settings/">
+instance-settings
+</a>
+</li>
+<li>
 <a href="/docs/user/logs/">
 logs
 </a>
@@ -336,16 +341,6 @@ persistent-context
 </a>
 </li>
 <li>
-<a href="/docs/user/project-settings/">
-project-settings
-</a>
-</li>
-<li>
-<a href="/docs/user/project-stages/">
-project-stages
-</a>
-</li>
-<li>
 <a href="/docs/user/projectnodes/">
 projectnodes
 </a>
@@ -358,6 +353,11 @@ shared-library
 <li class="active">
 <a href="/docs/user/snapshots/">
 snapshots
+</a>
+</li>
+<li>
+<a href="/docs/user/staged-deployments/">
+staged-deployments
 </a>
 </li>
 <li>
@@ -527,43 +527,43 @@ open-source-to-premium
 <div class="max-w-screen-lg mx-auto px-8 pt-8">
 <div class="hidden w-full mx-auto ff-bg-light md:block">
 <div class="font-medium border-b pb-1">
-v1.4.1 /<a class="mx-2" href="/docs">docs</a>/<a class="mx-2" href="/docs/user">user</a>/<a class="mx-2" href="/docs/user/snapshots">snapshots</a>
+v1.5.0 /<a class="mx-2" href="/docs">docs</a>/<a class="mx-2" href="/docs/user">user</a>/<a class="mx-2" href="/docs/user/snapshots">snapshots</a>
 </div>
 </div>
 <div class="w-full mx-auto ff-bg-light flex flex-col md:flex-row">
 <div class="flex-grow order-last md:order-first">
 <div class="mt-6 mb-4 prose prose-blue main-content">
 <h1 id="snapshots" tabindex="-1"><a class="header-anchor" href="#snapshots">#&nbsp;</a> Snapshots</h1>
-<p>A Project Snapshot is a point-in-time backup of a project. It captures the flows, credentials and runtime settings.</p>
-<p>In the current release, snapshots can be created and deleted. They can also be pushed to devices connected to the Project.</p>
+<p>A Snapshot is a point-in-time backup of a Node-RED instance. It captures the flows, credentials and runtime settings.</p>
+<p>They can also be pushed to devices connected to the instance.</p>
 <h2 id="create-a-snapshot" tabindex="-1"><a class="header-anchor" href="#create-a-snapshot">#&nbsp;</a> Create a snapshot</h2>
-<p>To create a project snapshot:</p>
+<p>To create a snapshot:</p>
 <ol>
-<li>Go to the project's page and select <strong>Snapshots</strong> in the sidebar.</li>
+<li>Go to the instance's page and select <strong>Snapshots</strong> in the sidebar.</li>
 <li>Click the <strong>Create Snapshot</strong> button.</li>
 <li>You will be prompted to give the snapshot a <strong>name</strong> and optional <strong>description</strong>.</li>
 <li>Click <strong>Create</strong></li>
 </ol>
 <p>The list of snapshots will update with the newly created entry at the top.</p>
 <h2 id="delete-a-snapshot" tabindex="-1"><a class="header-anchor" href="#delete-a-snapshot">#&nbsp;</a> Delete a snapshot</h2>
-<p>To delete a project snapshot:</p>
+<p>To delete a snapshot:</p>
 <ol>
-<li>Go to the project's page and select <strong>Snapshots</strong> in the sidebar.</li>
+<li>Go to the instance's page and select <strong>Snapshots</strong> in the sidebar.</li>
 <li>Open the dropdown menu to the right of the snapshot you want to delete and select the <strong>Delete snapshot</strong> option.</li>
 <li>You will be asked to confirm - click <strong>Delete</strong> to continue.</li>
 </ol>
 <p><em>Note:</em> If the snapshot is the current <strong>Device Target</strong> snapshot, this will cause any connected devices to stop running the snapshot when they next check in.</p>
 <h2 id="setting-a-device-target-snapshot" tabindex="-1"><a class="header-anchor" href="#setting-a-device-target-snapshot">#&nbsp;</a> Setting a Device Target snapshot</h2>
-<p>Snapshots are used to identify a version of the project that should be pushed out to any connected devices. This allows you to develop you project in FlowForge and only push out to the devices when it is ready.</p>
+<p>Snapshots are used to identify a version of the Node-RED instance that should be pushed out to any connected devices. This allows you to develop you flows in FlowForge and only push out to the devices when it is ready.</p>
 <p>To set the <strong>Device Target</strong>:</p>
 <ol>
-<li>Go to the project's page and select <strong>Snapshots</strong> in the sidebar.</li>
+<li>Go to the instance's page and select <strong>Snapshots</strong> in the sidebar.</li>
 <li>Open the dropdown menu to the right of the snapshot you want to set as the device target and select the <strong>Set as Device Target</strong> option.</li>
 <li>You will be asked to confirm - click <strong>Set Target</strong> to continue.</li>
 </ol>
 <p>This will cause the snapshot to be pushed out to any connected devices the next time they check in.</p>
 <p>## Creating a Snapshot locally</p>
-<p>Using the <a href=".././node-red-tools">Node-RED Tools Plugin</a> it is also possible to create Project Snapshots in a local copy of Node-RED and push them into your FlowForge Project.</p>
+<p>Using the <a href=".././node-red-tools">Node-RED Tools Plugin</a> it is also possible to create Snapshots in a local copy of Node-RED and push them back into your FlowForge managed Node-RED instances.</p>
 <p>For more information, see the <a href=".././node-red-tools">Node-RED Tools Plugin guide</a>.</p>
 </div>
 </div>
@@ -572,14 +572,14 @@ v1.4.1 /<a class="mx-2" href="/docs">docs</a>/<a class="mx-2" href="/docs/user">
 <div class="border-l">
 <div class="block px-8 pt-4 w-full mx-auto ff-bg-light md:hidden">
 <div class="font-medium border-b pb-1">
-v1.4.1 /<a class="mx-2" href="/docs">docs</a>/<a class="mx-2" href="/docs/user">user</a>/<a class="mx-2" href="/docs/user/snapshots">snapshots</a>
+v1.5.0 /<a class="mx-2" href="/docs">docs</a>/<a class="mx-2" href="/docs/user">user</a>/<a class="mx-2" href="/docs/user/snapshots">snapshots</a>
 </div>
 </div>
 <div class="sticky top-6 w-full md:w-64 mt-4 md:mt-6 px-8">
 <h3 class="font-medium border-b pb-1 mb-4">on this page</h3>
 <ul id="toc" class="text-sm border-b mb-4"></ul>
 <div class="text-sm pb-1 text-right mb-4"><a href="https://github.com/flowforge/flowforge/edit/main/docs/user/snapshots.md">Edit this page</a></div>
-<div class="text-xs pb-1 text-right mb-4 italic">Updated: 2023-03-13 11:25:24 +0000</div>
+<div class="text-xs pb-1 text-right mb-4 italic">Updated: 2023-03-16 10:55:00 +0000</div>
 </div>
 </div>
 </div>

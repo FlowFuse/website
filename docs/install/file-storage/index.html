@@ -316,6 +316,11 @@ filenodes
 </a>
 </li>
 <li>
+<a href="/docs/user/instance-settings/">
+instance-settings
+</a>
+</li>
+<li>
 <a href="/docs/user/logs/">
 logs
 </a>
@@ -336,16 +341,6 @@ persistent-context
 </a>
 </li>
 <li>
-<a href="/docs/user/project-settings/">
-project-settings
-</a>
-</li>
-<li>
-<a href="/docs/user/project-stages/">
-project-stages
-</a>
-</li>
-<li>
 <a href="/docs/user/projectnodes/">
 projectnodes
 </a>
@@ -358,6 +353,11 @@ shared-library
 <li>
 <a href="/docs/user/snapshots/">
 snapshots
+</a>
+</li>
+<li>
+<a href="/docs/user/staged-deployments/">
+staged-deployments
 </a>
 </li>
 <li>
@@ -527,21 +527,21 @@ open-source-to-premium
 <div class="max-w-screen-lg mx-auto px-8 pt-8">
 <div class="hidden w-full mx-auto ff-bg-light md:block">
 <div class="font-medium border-b pb-1">
-v1.4.1 /<a class="mx-2" href="/docs">docs</a>/<a class="mx-2" href="/docs/install">install</a>/<a class="mx-2" href="/docs/install/file-storage">file-storage</a>
+v1.5.0 /<a class="mx-2" href="/docs">docs</a>/<a class="mx-2" href="/docs/install">install</a>/<a class="mx-2" href="/docs/install/file-storage">file-storage</a>
 </div>
 </div>
 <div class="w-full mx-auto ff-bg-light flex flex-col md:flex-row">
 <div class="flex-grow order-last md:order-first">
 <div class="mt-6 mb-4 prose prose-blue main-content">
 <h1 id="flowforge-file-storage" tabindex="-1"><a class="header-anchor" href="#flowforge-file-storage">#&nbsp;</a> FlowForge File Storage</h1>
-<p>When running in container-based environments, such as Docker or Kubernetes, the FlowForge Projects do not have access to a persistent filesystem.</p>
-<p>This means any files written to the container will be lost if the project is restarted.</p>
-<p>The FlowForge platform includes a File Storage service that can be used to provide persistent storage to projects in two different ways:</p>
+<p>When running in container-based environments, such as Docker or Kubernetes, the Node-RED instances do not have access to a persistent filesystem.</p>
+<p>This means any files written to the container will be lost if the instance is restarted.</p>
+<p>The FlowForge platform includes a File Storage service that can be used to provide persistent storage to Node-RED in two different ways:</p>
 <ul>
 <li>A set of custom File nodes that behave the same way as the standard Node-RED File nodes</li>
 <li>An optional Persistent Context store for storing context data within flows. This feature is only available for platforms running with a premium license.</li>
 </ul>
-<p><em>Note:</em> the File Storage service is only required in Docker or Kubernetes environments. If you are running using the LocalFS platform driver, the projects have direct access to the local filesystem already.</p>
+<p><em>Note:</em> the File Storage service is only required in Docker or Kubernetes environments. If you are running using the LocalFS platform driver, Node-RED will have direct access to the local filesystem already.</p>
 <h2 id="configuring" tabindex="-1"><a class="header-anchor" href="#configuring">#&nbsp;</a> Configuring</h2>
 <p>The File Storage server has its own configuration file: <code>etc/flowforge-storage.yml</code>.</p>
 <ul>
@@ -596,11 +596,11 @@ v1.4.1 /<a class="mx-2" href="/docs">docs</a>/<a class="mx-2" href="/docs/instal
 </tr>
 <tr>
 <td><code>driver.quota</code></td>
-<td>A per-project quota for how much data will be stored - in bytes. If this is not set, no limit will be applied</td>
+<td>A per-instance quota for how much data will be stored - in bytes. If this is not set, no limit will be applied</td>
 </tr>
 <tr>
 <td><code>driver.options.root</code></td>
-<td>The root path under which project data should be stored.</td>
+<td>The root path under which Node-RED instance data should be stored.</td>
 </tr>
 </tbody>
 </table>
@@ -629,7 +629,7 @@ v1.4.1 /<a class="mx-2" href="/docs">docs</a>/<a class="mx-2" href="/docs/instal
 </tr>
 <tr>
 <td><code>driver.quota</code></td>
-<td>A per-project quota for how much data will be stored - in bytes. If this is not set, no limit will be applied</td>
+<td>A per-instance quota for how much data will be stored - in bytes. If this is not set, no limit will be applied</td>
 </tr>
 <tr>
 <td><code>driver.options.bucket</code></td>
@@ -668,11 +668,11 @@ v1.4.1 /<a class="mx-2" href="/docs">docs</a>/<a class="mx-2" href="/docs/instal
 </button>
 </div>
 <h4 id="enabling-the-flowforge-file-nodes" tabindex="-1"><a class="header-anchor" href="#enabling-the-flowforge-file-nodes">#&nbsp;</a> Enabling the FlowForge File Nodes</h4>
-<p>The FlowForge File nodes have been written to be direct replacements for the Node-RED core file-in and file-out nodes. This means that only one version of these nodes can be active in a project at a time.</p>
+<p>The FlowForge File nodes have been written to be direct replacements for the Node-RED core file-in and file-out nodes. This means that only one version of these nodes can be active in Node-RED at a time.</p>
 <p>The FlowForge File nodes will automatically disable themselves if the core nodes are present. This means to enable the nodes you need to exclude the code nodes.</p>
 <p>This can be done in the FlowForge Template.</p>
 <img src="../images/file-node-template.png" width="500">
-<p>Adding <code>10-file.js</code> to the list of &quot;Excluded nodes by filename&quot; section will ensure that the core file nodes are not loaded by the project.</p>
+<p>Adding <code>10-file.js</code> to the list of &quot;Excluded nodes by filename&quot; section will ensure that the core file nodes are not loaded by Node-RED.</p>
 <h3 id="persistent-context-configuration" tabindex="-1"><a class="header-anchor" href="#persistent-context-configuration">#&nbsp;</a> Persistent Context configuration</h3>
 <p>The Context Storage configuration determines where Node-RED Context data is stored.</p>
 <p>This feature is only available when running with a FlowForge Premium license.</p>
@@ -692,7 +692,7 @@ v1.4.1 /<a class="mx-2" href="/docs">docs</a>/<a class="mx-2" href="/docs/instal
 </tr>
 <tr>
 <td><code>context.quote</code></td>
-<td>A per-project quota for how much data will be stored - in bytes. If this is not set, no limit will be applied</td>
+<td>A per-instance quota for how much data will be stored - in bytes. If this is not set, no limit will be applied</td>
 </tr>
 <tr>
 <td><code>context.options.type</code></td>
@@ -728,7 +728,7 @@ v1.4.1 /<a class="mx-2" href="/docs">docs</a>/<a class="mx-2" href="/docs/instal
 </tr>
 <tr>
 <td><code>context.quote</code></td>
-<td>A per-project quota for how much data will be stored - in bytes. If this is not set, no limit will be applied</td>
+<td>A per-instance quota for how much data will be stored - in bytes. If this is not set, no limit will be applied</td>
 </tr>
 <tr>
 <td><code>context.options.type</code></td>
@@ -774,14 +774,14 @@ v1.4.1 /<a class="mx-2" href="/docs">docs</a>/<a class="mx-2" href="/docs/instal
 <div class="border-l">
 <div class="block px-8 pt-4 w-full mx-auto ff-bg-light md:hidden">
 <div class="font-medium border-b pb-1">
-v1.4.1 /<a class="mx-2" href="/docs">docs</a>/<a class="mx-2" href="/docs/install">install</a>/<a class="mx-2" href="/docs/install/file-storage">file-storage</a>
+v1.5.0 /<a class="mx-2" href="/docs">docs</a>/<a class="mx-2" href="/docs/install">install</a>/<a class="mx-2" href="/docs/install/file-storage">file-storage</a>
 </div>
 </div>
 <div class="sticky top-6 w-full md:w-64 mt-4 md:mt-6 px-8">
 <h3 class="font-medium border-b pb-1 mb-4">on this page</h3>
 <ul id="toc" class="text-sm border-b mb-4"></ul>
 <div class="text-sm pb-1 text-right mb-4"><a href="https://github.com/flowforge/flowforge/edit/main/docs/install/file-storage/README.md">Edit this page</a></div>
-<div class="text-xs pb-1 text-right mb-4 italic">Updated: 2023-03-13 11:25:24 +0000</div>
+<div class="text-xs pb-1 text-right mb-4 italic">Updated: 2023-03-16 10:55:00 +0000</div>
 </div>
 </div>
 </div>

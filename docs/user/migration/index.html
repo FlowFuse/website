@@ -316,6 +316,11 @@ filenodes
 </a>
 </li>
 <li>
+<a href="/docs/user/instance-settings/">
+instance-settings
+</a>
+</li>
+<li>
 <a href="/docs/user/logs/">
 logs
 </a>
@@ -336,16 +341,6 @@ persistent-context
 </a>
 </li>
 <li>
-<a href="/docs/user/project-settings/">
-project-settings
-</a>
-</li>
-<li>
-<a href="/docs/user/project-stages/">
-project-stages
-</a>
-</li>
-<li>
 <a href="/docs/user/projectnodes/">
 projectnodes
 </a>
@@ -358,6 +353,11 @@ shared-library
 <li>
 <a href="/docs/user/snapshots/">
 snapshots
+</a>
+</li>
+<li>
+<a href="/docs/user/staged-deployments/">
+staged-deployments
 </a>
 </li>
 <li>
@@ -527,21 +527,22 @@ open-source-to-premium
 <div class="max-w-screen-lg mx-auto px-8 pt-8">
 <div class="hidden w-full mx-auto ff-bg-light md:block">
 <div class="font-medium border-b pb-1">
-v1.4.1 /<a class="mx-2" href="/docs">docs</a>/<a class="mx-2" href="/docs/user">user</a>/<a class="mx-2" href="/docs/user/migration">migration</a>
+v1.5.0 /<a class="mx-2" href="/docs">docs</a>/<a class="mx-2" href="/docs/user">user</a>/<a class="mx-2" href="/docs/user/migration">migration</a>
 </div>
 </div>
 <div class="w-full mx-auto ff-bg-light flex flex-col md:flex-row">
 <div class="flex-grow order-last md:order-first">
 <div class="mt-6 mb-4 prose prose-blue main-content">
-<h1 id="migrating-a-node-red-project-to-flowforge" tabindex="-1"><a class="header-anchor" href="#migrating-a-node-red-project-to-flowforge">#&nbsp;</a> Migrating a Node-RED project to FlowForge</h1>
-<p>This guide will help you to move your project from a generic Node-RED host onto FlowForge. When migrating from your Node-RED to a FlowForge managed instance you'll export the flows, credentials, and environment variables.</p>
-<p>Before you start ensure you can login to FlowForge Cloud or your own FlowForge server and have created the target project.</p>
+<h1 id="migrating-a-node-red-application-to-flowforge" tabindex="-1"><a class="header-anchor" href="#migrating-a-node-red-application-to-flowforge">#&nbsp;</a> Migrating a Node-RED application to FlowForge</h1>
+<p>This guide will help you to move an existing set of flows from Node-RED into one managed by the FlowForge platform.</p>
+<p>When migrating from your Node-RED to a FlowForge managed instance you'll export the flows, credentials, and environment variables.</p>
+<p>Before you start ensure you can log in to FlowForge Cloud or your own FlowForge server and have created the target Node-RED instance.</p>
 <h2 id="migrating-the-flows-and-credentials" tabindex="-1"><a class="header-anchor" href="#migrating-the-flows-and-credentials">#&nbsp;</a> Migrating the flows and credentials</h2>
 <p>Install the Node-RED tools plugin as explained
-<a href=".././node-red-tools">in the documentation</a>. After you created a snapshot for the target project you'll have copied over the flows and credentials.</p>
+<a href=".././node-red-tools">in the documentation</a>. After you created a snapshot for the target instance you'll have copied over the flows and credentials.</p>
 <h2 id="migrating-environment-variables" tabindex="-1"><a class="header-anchor" href="#migrating-environment-variables">#&nbsp;</a> Migrating Environment Variables</h2>
 <p>You can use <a href="https://flows.nodered.org/flow/8ebfe9ae218aa5105e7da13db14ac272">this flow</a>
-to dump a list of your environment variables into the debug window. For each variable needed for the flow should be added on FlowForge under Project &gt; Settings &gt; Environment tabs.</p>
+to dump a list of your environment variables into the debug window. For each variable needed for the flow should be added on FlowForge under Instance &gt; Settings &gt; Environment tabs.</p>
 <h2 id="starting-the-snapshot" tabindex="-1"><a class="header-anchor" href="#starting-the-snapshot">#&nbsp;</a> Starting the snapshot</h2>
 <p>Under the snapshots tab, click 'Rollback' in the kebab menu. The migrated flows will now be started with the modules installed.</p>
 <h2 id="limitations" tabindex="-1"><a class="header-anchor" href="#limitations">#&nbsp;</a> Limitations</h2>
@@ -554,14 +555,14 @@ to dump a list of your environment variables into the debug window. For each var
 <div class="border-l">
 <div class="block px-8 pt-4 w-full mx-auto ff-bg-light md:hidden">
 <div class="font-medium border-b pb-1">
-v1.4.1 /<a class="mx-2" href="/docs">docs</a>/<a class="mx-2" href="/docs/user">user</a>/<a class="mx-2" href="/docs/user/migration">migration</a>
+v1.5.0 /<a class="mx-2" href="/docs">docs</a>/<a class="mx-2" href="/docs/user">user</a>/<a class="mx-2" href="/docs/user/migration">migration</a>
 </div>
 </div>
 <div class="sticky top-6 w-full md:w-64 mt-4 md:mt-6 px-8">
 <h3 class="font-medium border-b pb-1 mb-4">on this page</h3>
 <ul id="toc" class="text-sm border-b mb-4"></ul>
 <div class="text-sm pb-1 text-right mb-4"><a href="https://github.com/flowforge/flowforge/edit/main/docs/user/migration.md">Edit this page</a></div>
-<div class="text-xs pb-1 text-right mb-4 italic">Updated: 2023-03-13 11:25:24 +0000</div>
+<div class="text-xs pb-1 text-right mb-4 italic">Updated: 2023-03-16 10:55:00 +0000</div>
 </div>
 </div>
 </div>

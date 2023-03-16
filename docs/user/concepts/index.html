@@ -316,6 +316,11 @@ filenodes
 </a>
 </li>
 <li>
+<a href="/docs/user/instance-settings/">
+instance-settings
+</a>
+</li>
+<li>
 <a href="/docs/user/logs/">
 logs
 </a>
@@ -336,16 +341,6 @@ persistent-context
 </a>
 </li>
 <li>
-<a href="/docs/user/project-settings/">
-project-settings
-</a>
-</li>
-<li>
-<a href="/docs/user/project-stages/">
-project-stages
-</a>
-</li>
-<li>
 <a href="/docs/user/projectnodes/">
 projectnodes
 </a>
@@ -358,6 +353,11 @@ shared-library
 <li>
 <a href="/docs/user/snapshots/">
 snapshots
+</a>
+</li>
+<li>
+<a href="/docs/user/staged-deployments/">
+staged-deployments
 </a>
 </li>
 <li>
@@ -527,7 +527,7 @@ open-source-to-premium
 <div class="max-w-screen-lg mx-auto px-8 pt-8">
 <div class="hidden w-full mx-auto ff-bg-light md:block">
 <div class="font-medium border-b pb-1">
-v1.4.1 /<a class="mx-2" href="/docs">docs</a>/<a class="mx-2" href="/docs/user">user</a>/<a class="mx-2" href="/docs/user/concepts">concepts</a>
+v1.5.0 /<a class="mx-2" href="/docs">docs</a>/<a class="mx-2" href="/docs/user">user</a>/<a class="mx-2" href="/docs/user/concepts">concepts</a>
 </div>
 </div>
 <div class="w-full mx-auto ff-bg-light flex flex-col md:flex-row">
@@ -536,55 +536,57 @@ v1.4.1 /<a class="mx-2" href="/docs">docs</a>/<a class="mx-2" href="/docs/user">
 <h1 id="flowforge-concepts" tabindex="-1"><a class="header-anchor" href="#flowforge-concepts">#&nbsp;</a> FlowForge Concepts</h1>
 <p>FlowForge makes it easy to create and manage Node-RED instances. To do that, there are a few concepts the platform introduces to help organise things.</p>
 <ul>
-<li><a href="#project">Project</a>
+<li><a href="#team">Team</a></li>
+<li><a href="#application">Application</a></li>
+<li><a href="#instance">Instance</a>
 <ul>
-<li><a href="#project-type">Type</a></li>
-<li><a href="#project-stack">Stack</a></li>
-<li><a href="#project-template">Template</a></li>
-<li><a href="#project-snapshot">Snapshot</a></li>
-<li><a href="#project-deployment">Deployment</a></li>
+<li><a href="#type">Type</a></li>
+<li><a href="#stack">Stack</a></li>
+<li><a href="#template">Template</a></li>
+<li><a href="#snapshot">Snapshot</a></li>
 </ul>
 </li>
-<li><a href="#team">Team</a></li>
 <li><a href="#device">Device</a></li>
 </ul>
-<h3 id="project" tabindex="-1"><a class="header-anchor" href="#project">#&nbsp;</a> Project</h3>
-<p>The platform refers to each Node-RED instance as a Project.</p>
-<p>Within the FlowForge application, you can create/start/stop projects and view its logs.</p>
-<p>At present, the projects are fairly plain instances of Node-RED - with some custom settings to integrate them into the platform properly. There are a number of settings that can be modified for a project based on what has been configured and allowed in the <a href="#project-template">Project Template</a>. These can be access from the Settings page of the project and there is a description of each one in the settings.</p>
-<p>On Docker and Kubernetes based FlowForge instances project names are used as the hostname to access the project. This means that the name must be DNS safe (made up of a-z, 0-9 and -), it must also not start with a number.</p>
-<h4 id="project-type" tabindex="-1"><a class="header-anchor" href="#project-type">#&nbsp;</a> Project Type</h4>
-<p>When you create a project, you can pick its type from the list the platform Administrator has made available. For example, each type could provide a different amount of memory or CPU allocation. In the future, they will also enable different feature sets.</p>
+<h3 id="team" tabindex="-1"><a class="header-anchor" href="#team">#&nbsp;</a> Team</h3>
+<p>Teams are how FlowForge organises the user on the platform. Each team can have multiple members, and each user can be a member of multiple teams.</p>
+<p>The users in a team can have different roles that determine what they are
+<a href=".././team/#role-based-access-control">able to do</a>.</p>
+<p>In FlowForge Cloud, each team has its own billing plan, managed via Stripe.</p>
+<h3 id="application" tabindex="-1"><a class="header-anchor" href="#application">#&nbsp;</a> Application</h3>
+<p><strong>This is a new concept introduced in FlowForge 1.5</strong></p>
+<p>To organise your Node-RED instances, they are grouped with Applications.</p>
+<p>With the 1.5 release, each Application has a single Node-RED instance. But later releases will introduce the ability to have multiple Node-RED instances within the application.</p>
+<p>In the future, this will enable you to create dev-ops pipelines between those instances; making it easy to have separate development and production instances within the application.</p>
+<h3 id="instance" tabindex="-1"><a class="header-anchor" href="#instance">#&nbsp;</a> Instance</h3>
+<p><strong>This was called a Project before FlowForge 1.5</strong></p>
+<p>Within your Application you can have one or more (coming soon) Instances of Node-RED.</p>
+<p>The Instance is a customised version of Node-RED that includes various FlowForge plugins to integrate it with the platform.</p>
+<p>A number of the standard Node-RED settings are exposed for customisation, and they can be preset by applying a Template when creating the Instance.</p>
+<p>When running in Docker or Kubernetes (such as FlowForge Cloud), the instance names are used as the hostname to access the instance. This means that the names must be DNS safe (made up of a-z, 0-9 and -) and not start with a number. Currently it is not possible to change an instance name after it has been created.</p>
+<p>Within the instance there are some further concepts to learn about.</p>
+<h4 id="instance-type" tabindex="-1"><a class="header-anchor" href="#instance-type">#&nbsp;</a> Instance Type</h4>
+<p>When you create a Node-RED instance, you can pick its type from the list the platform Administrator has made available. For example, each type could provide a different amount of memory or CPU allocation.</p>
 <p>If the platform has billing enabled, each type may have a different monthly price associated with it.</p>
-<h4 id="project-stack" tabindex="-1"><a class="header-anchor" href="#project-stack">#&nbsp;</a> Project Stack</h4>
-<p>A Project Stack describes properties of the Project runtime. This can include the version of Node-RED, memory and CPU allocation. The specific details will depend on how and where FlowForge is running.</p>
-<p>Project Stacks are created and owned by the platform Administrator. When a User comes to create a new project, they chose from the available stacks associated with the chosen Project Type.</p>
+<h4 id="stack" tabindex="-1"><a class="header-anchor" href="#stack">#&nbsp;</a> Stack</h4>
+<p>A Stack describes properties of the Node-RED runtime. This can include the version of Node-RED, memory and CPU allocation. The specific details will depend on how and where FlowForge is running.</p>
+<p>Stacks are created and owned by the platform Administrator. When a User comes to create a new Node-RED instance, they chose from the available stacks associated with the chosen Instance Type.</p>
 <p>For details on how to administer and manage Stacks, please see the
 <a href="../../admin/#managing-stacks">Administering FlowForge</a> docs.</p>
-<h4 id="project-template" tabindex="-1"><a class="header-anchor" href="#project-template">#&nbsp;</a> Project Template</h4>
-<p>A Project Template describes properties of Node-RED itself. It is how many of the settings a user familiar with Node-RED would be used to modifying in their settings file. But it can also be used to customise the palette of nodes that are pre-installed, provide a set of default flows and change the look and feel of the editor.</p>
-<p>A template can also specify <a href=".././envvar">Environment Variables</a> which can then have their values as editable for each project or locked. It is not possible to disable the use of environment variables in a project.</p>
-<p><em>Note:</em> not all of these features are available today.</p>
-<p>In the current release of FlowForge, Project Templates are created by the Administrator. As well as define the values, they also get to choose whether projects are able to override any of the settings for themselves.</p>
-<h4 id="project-snapshot" tabindex="-1"><a class="header-anchor" href="#project-snapshot">#&nbsp;</a> Project Snapshot</h4>
-<p>A snapshot is a point-in-time backup of a project. It captures the flows, credentials and runtime settings.</p>
+<h4 id="template" tabindex="-1"><a class="header-anchor" href="#template">#&nbsp;</a> Template</h4>
+<p>A Template describes properties of Node-RED itself. It is how many of the settings a user familiar with Node-RED would be used to modifying in their settings file. But it can also be used to customise the palette of nodes that are pre-installed, provide a set of default flows and change the look and feel of the editor.</p>
+<p>A template can also specify <a href=".././envvar">Environment Variables</a> which can then have their values customised for each Node-RED instance, or have their values locked to prevent any changes.</p>
+<p>In the current release of FlowForge, Templates are created by the Administrator. As well as define the values, they also get to choose whether instances are able to override any of the settings for themselves.</p>
+<h4 id="instance-snapshot" tabindex="-1"><a class="header-anchor" href="#instance-snapshot">#&nbsp;</a> Instance Snapshot</h4>
+<p>A snapshot is a point-in-time backup of a Node-RED instance. It captures the flows, credentials and runtime settings.</p>
 <p>Snapshots can be created (and deleted) on the FlowForge dashboard, or using the
 <a href=".././node-red-tools">FlowForge Node-RED Tools plugin</a>.</p>
-<p>The dashboard also allows you to roll a project back to a previous snapshot.</p>
-<h4 id="project-deployment" tabindex="-1"><a class="header-anchor" href="#project-deployment">#&nbsp;</a> Project Deployment</h4>
-<p>Each FlowForge project comes with a deployment of Node-RED, hosted by FlowForge, at the same domain. For a given FlowForge Project, there are two type of Deployments:</p>
-<ul>
-<li><strong>FlowForge Hosted:</strong> Currently, this just includes the single instance of Node-RED hosted at the same domain as FlowForge and configured through the settings of the Project.</li>
-<li><strong>Remote Deployments:</strong> These can be created and managed using the <a href="https://github.com/flowforge/flowforge-device-agent">FlowForge Device Agent</a>. You can bind existing <a href="/docs/user/devices">Devices</a> to your Project, and then set a
-<a href="/docs/user/snapshots/#setting-a-device-target-snapshot">Target Snapshot</a> for those devices. FlowForge will automatically deploy that snapshot out to any devices bound to the Project.</li>
-</ul>
-<h3 id="team" tabindex="-1"><a class="header-anchor" href="#team">#&nbsp;</a> Team</h3>
-<p>Each project is owned by a Team. Only members of that team have access to the Node-RED editor for the project. Members have different roles assigned to them and their <a href=".././team/#role-based-access-control">roles determine their authorization level</a>.</p>
+<p>The dashboard also allows you to roll an instance back to a previous snapshot.</p>
 <h3 id="device" tabindex="-1"><a class="header-anchor" href="#device">#&nbsp;</a> Device</h3>
-<p>The FlowForge platform can be used to manage projects running on remote devices. A Device runs a software agent that connects back to the platform to receive updates. Users must <a href=".././devices">install the agent</a> on the devices.</p>
-<p>Devices are registered to a Team, and then assigned to a Project within that team. A user can create a <a href="#project-snapshot">project snapshot</a> and then mark it as the
-<em>target</em> snapshot for devices. The platform will then deploy that snapshot to all of the devices assigned to the project.</p>
-<p>To further simplify device registration, Provisioning Tokens can be created to allow devices to automatically connect to a team without having to manually register them first. The token can also be configured to assign a device directly to a project within the team.</p>
+<p>The FlowForge platform can be used to manage Node-RED applications running on remote devices. A Device runs a software agent that connects back to the platform to receive updates. Users must <a href=".././devices">install the agent</a> on the devices.</p>
+<p>Devices are registered to a Team, and then assigned to an individual Node-RED instance within that team. A user can create a <a href="#snapshot">snapshot</a> and then mark it as the
+<em>target</em> snapshot for devices. The platform will then deploy that snapshot to all of the devices assigned to the instance.</p>
+<p>To further simplify device registration, Provisioning Tokens can be created to allow devices to automatically connect to a team without having to manually register them first. The token can also be configured to assign a device directly to a Node-RED instance within the team.</p>
 </div>
 </div>
 </div>
@@ -592,14 +594,14 @@ v1.4.1 /<a class="mx-2" href="/docs">docs</a>/<a class="mx-2" href="/docs/user">
 <div class="border-l">
 <div class="block px-8 pt-4 w-full mx-auto ff-bg-light md:hidden">
 <div class="font-medium border-b pb-1">
-v1.4.1 /<a class="mx-2" href="/docs">docs</a>/<a class="mx-2" href="/docs/user">user</a>/<a class="mx-2" href="/docs/user/concepts">concepts</a>
+v1.5.0 /<a class="mx-2" href="/docs">docs</a>/<a class="mx-2" href="/docs/user">user</a>/<a class="mx-2" href="/docs/user/concepts">concepts</a>
 </div>
 </div>
 <div class="sticky top-6 w-full md:w-64 mt-4 md:mt-6 px-8">
 <h3 class="font-medium border-b pb-1 mb-4">on this page</h3>
 <ul id="toc" class="text-sm border-b mb-4"></ul>
 <div class="text-sm pb-1 text-right mb-4"><a href="https://github.com/flowforge/flowforge/edit/main/docs/user/concepts.md">Edit this page</a></div>
-<div class="text-xs pb-1 text-right mb-4 italic">Updated: 2023-03-13 11:25:24 +0000</div>
+<div class="text-xs pb-1 text-right mb-4 italic">Updated: 2023-03-16 10:55:00 +0000</div>
 </div>
 </div>
 </div>

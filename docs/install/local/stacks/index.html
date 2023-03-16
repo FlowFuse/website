@@ -316,6 +316,11 @@ filenodes
 </a>
 </li>
 <li>
+<a href="/docs/user/instance-settings/">
+instance-settings
+</a>
+</li>
+<li>
 <a href="/docs/user/logs/">
 logs
 </a>
@@ -336,16 +341,6 @@ persistent-context
 </a>
 </li>
 <li>
-<a href="/docs/user/project-settings/">
-project-settings
-</a>
-</li>
-<li>
-<a href="/docs/user/project-stages/">
-project-stages
-</a>
-</li>
-<li>
 <a href="/docs/user/projectnodes/">
 projectnodes
 </a>
@@ -358,6 +353,11 @@ shared-library
 <li>
 <a href="/docs/user/snapshots/">
 snapshots
+</a>
+</li>
+<li>
+<a href="/docs/user/staged-deployments/">
+staged-deployments
 </a>
 </li>
 <li>
@@ -527,17 +527,17 @@ open-source-to-premium
 <div class="max-w-screen-lg mx-auto px-8 pt-8">
 <div class="hidden w-full mx-auto ff-bg-light md:block">
 <div class="font-medium border-b pb-1">
-v1.4.1 /<a class="mx-2" href="/docs">docs</a>/<a class="mx-2" href="/docs/install">install</a>/<a class="mx-2" href="/docs/install/local">local</a>/<a class="mx-2" href="/docs/install/local/stacks">stacks</a>
+v1.5.0 /<a class="mx-2" href="/docs">docs</a>/<a class="mx-2" href="/docs/install">install</a>/<a class="mx-2" href="/docs/install/local">local</a>/<a class="mx-2" href="/docs/install/local/stacks">stacks</a>
 </div>
 </div>
 <div class="w-full mx-auto ff-bg-light flex flex-col md:flex-row">
 <div class="flex-grow order-last md:order-first">
 <div class="mt-6 mb-4 prose prose-blue main-content">
-<h1 id="local-project-stacks" tabindex="-1"><a class="header-anchor" href="#local-project-stacks">#&nbsp;</a> Local Project Stacks</h1>
-<p>A Project Stack defines a set of platform configuration options that will get applied to each project when it is created.</p>
+<h1 id="local-stacks" tabindex="-1"><a class="header-anchor" href="#local-stacks">#&nbsp;</a> Local Stacks</h1>
+<p>A Stack defines a set of platform configuration options that will get applied to each Node-RED instance when it is created.</p>
 <p>For the Local deployment model, this covers two things:</p>
 <ul>
-<li><code>memory</code> - the value to apply (in MB) to the Node.js <code>max-old-space-size</code> option. This defines the point where Node.js will start freeing unused memory. It is not a hard limit - the project's memory usage will not be capped - but this is useful when running on a memory constrained device such as a Raspberry Pi. Recommended minimum <code>256</code>.</li>
+<li><code>memory</code> - the value to apply (in MB) to the Node.js <code>max-old-space-size</code> option. This defines the point where Node.js will start freeing unused memory. It is not a hard limit - Node-RED's memory usage will not be capped - but this is useful when running on a memory constrained device such as a Raspberry Pi. Recommended minimum <code>256</code>.</li>
 <li><code>nodered</code> - the version number of Node-RED to use. This should match the value used in the steps following.</li>
 </ul>
 <p>The FlowForge installer will create a default stack using the latest stable release of Node-RED.</p>
@@ -571,13 +571,13 @@ v1.4.1 /<a class="mx-2" href="/docs">docs</a>/<a class="mx-2" href="/docs/instal
 <li>
 <p>Creating the Stack</p>
 <p>Log into the FlowForge platform as an administrator. Navigate to the Admin Settings -&gt; Stacks section.</p>
-<p>If this new stack should be offered as a direct upgrade of an existing stack, select the 'Create new version' option from the dropdown menu of the stack you want to replace. Projects that use the old stack will offer the new stack as a one-click upgrade option.</p>
+<p>If this new stack should be offered as a direct upgrade of an existing stack, select the 'Create new version' option from the dropdown menu of the stack you want to replace. Node-RED instances that use the old stack will offer the new stack as a one-click upgrade option.</p>
 <p>Alternatively, click 'Create stack' to create an entirely new stack.</p>
 <p>When prompted for the Node-RED version, provide the exact version that was installed. For example, if you ran the script with <code>latest</code> and it resulted in <code>3.0.2</code> being installed, you should enter <code>3.0.2</code>. This must match the directory name created in your <code>stacks</code> directory.</p>
 </li>
 </ol>
 <h3 id="development-only" tabindex="-1"><a class="header-anchor" href="#development-only">#&nbsp;</a> Development Only</h3>
-<p>If you are developing FlowForge having checked it out from GitHub then you can run the following command in the project root to install a stack:</p>
+<p>If you are developing FlowForge having checked it out from GitHub then you can run the following command in the repository root to install a stack:</p>
 <div style="position: relative">
 <pre class="language-bash"><code id="code-77" class="language-bash"><span class="token function">npm</span> run install-stack <span class="token parameter variable">--vers</span><span class="token operator">=</span><span class="token number">3.0</span>.2</code></pre>
 <button class="code-copy" data-clipboard-target="#code-77" style="position: absolute; top: 7.5px; right: 6px; cursor: pointer; outline: none; opacity: 0.8;" title="Copy">
@@ -593,14 +593,14 @@ v1.4.1 /<a class="mx-2" href="/docs">docs</a>/<a class="mx-2" href="/docs/instal
 <div class="border-l">
 <div class="block px-8 pt-4 w-full mx-auto ff-bg-light md:hidden">
 <div class="font-medium border-b pb-1">
-v1.4.1 /<a class="mx-2" href="/docs">docs</a>/<a class="mx-2" href="/docs/install">install</a>/<a class="mx-2" href="/docs/install/local">local</a>/<a class="mx-2" href="/docs/install/local/stacks">stacks</a>
+v1.5.0 /<a class="mx-2" href="/docs">docs</a>/<a class="mx-2" href="/docs/install">install</a>/<a class="mx-2" href="/docs/install/local">local</a>/<a class="mx-2" href="/docs/install/local/stacks">stacks</a>
 </div>
 </div>
 <div class="sticky top-6 w-full md:w-64 mt-4 md:mt-6 px-8">
 <h3 class="font-medium border-b pb-1 mb-4">on this page</h3>
 <ul id="toc" class="text-sm border-b mb-4"></ul>
 <div class="text-sm pb-1 text-right mb-4"><a href="https://github.com/flowforge/flowforge/edit/main/docs/install/local/stacks.md">Edit this page</a></div>
-<div class="text-xs pb-1 text-right mb-4 italic">Updated: 2023-03-13 11:25:24 +0000</div>
+<div class="text-xs pb-1 text-right mb-4 italic">Updated: 2023-03-16 10:55:00 +0000</div>
 </div>
 </div>
 </div>

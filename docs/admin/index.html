@@ -316,6 +316,11 @@ filenodes
 </a>
 </li>
 <li>
+<a href="/docs/user/instance-settings/">
+instance-settings
+</a>
+</li>
+<li>
 <a href="/docs/user/logs/">
 logs
 </a>
@@ -336,16 +341,6 @@ persistent-context
 </a>
 </li>
 <li>
-<a href="/docs/user/project-settings/">
-project-settings
-</a>
-</li>
-<li>
-<a href="/docs/user/project-stages/">
-project-stages
-</a>
-</li>
-<li>
 <a href="/docs/user/projectnodes/">
 projectnodes
 </a>
@@ -358,6 +353,11 @@ shared-library
 <li>
 <a href="/docs/user/snapshots/">
 snapshots
+</a>
+</li>
+<li>
+<a href="/docs/user/staged-deployments/">
+staged-deployments
 </a>
 </li>
 <li>
@@ -527,7 +527,7 @@ open-source-to-premium
 <div class="max-w-screen-lg mx-auto px-8 pt-8">
 <div class="hidden w-full mx-auto ff-bg-light md:block">
 <div class="font-medium border-b pb-1">
-v1.4.1 /<a class="mx-2" href="/docs">docs</a>/<a class="mx-2" href="/docs/admin">admin</a>
+v1.5.0 /<a class="mx-2" href="/docs">docs</a>/<a class="mx-2" href="/docs/admin">admin</a>
 </div>
 </div>
 <div class="w-full mx-auto ff-bg-light flex flex-col md:flex-row">
@@ -559,7 +559,7 @@ v1.4.1 /<a class="mx-2" href="/docs">docs</a>/<a class="mx-2" href="/docs/admin"
 </li>
 <li>
 <p><strong>Create a personal team for users when they register</strong> (default: <code>false</code>)</p>
-<p>With this option enabled, the platform will automatically create a Team for the user. This allows them to start creating projects straight-away.</p>
+<p>With this option enabled, the platform will automatically create a Team for the user. This allows them to start creating Node-RED instances straight-away.</p>
 <p>By default, this doesn't happen, which means the user must either manually create the Team (if that option is enabled), or be invited to an existing Team.</p>
 </li>
 <li>
@@ -595,15 +595,15 @@ v1.4.1 /<a class="mx-2" href="/docs">docs</a>/<a class="mx-2" href="/docs/admin"
 <h3 id="managing-teams" tabindex="-1"><a class="header-anchor" href="#managing-teams">#&nbsp;</a> Managing Teams</h3>
 <p>With the 0.1.0 release, the Teams page just lists the teams on the platform.</p>
 <p>Further team management options will come in later releases.</p>
-<h3 id="managing-project-types" tabindex="-1"><a class="header-anchor" href="#managing-project-types">#&nbsp;</a> Managing Project Types</h3>
-<p>The Project Types page can be used to manage the Project Types on the platform.</p>
-<p>When billing is enabled, a project type can be associated with a particular Stripe Product/Price - allowing each type to have a different monthly price associated with it.</p>
-<p>The Project Types page shows what types are current active, how many stacks each type has assigned to it, and how many projects have been created of that type.</p>
+<h3 id="managing-instance-types" tabindex="-1"><a class="header-anchor" href="#managing-instance-types">#&nbsp;</a> Managing Instance Types</h3>
+<p>The Instance Types page can be used to manage the Instance Types on the platform.</p>
+<p>When billing is enabled, an instance type can be associated with a particular Stripe Product/Price - allowing each type to have a different monthly price associated with it.</p>
+<p>The Instance Types page shows what types are current active, how many stacks each type has assigned to it, and how many instances have been created of that type.</p>
 <h3 id="managing-stacks" tabindex="-1"><a class="header-anchor" href="#managing-stacks">#&nbsp;</a> Managing Stacks</h3>
-<p>The Stacks page can be used to manage the Project Stacks on the platform.</p>
+<p>The Stacks page can be used to manage the Stacks on the platform.</p>
 <p>It can be used to create and edit the stacks on the platform.</p>
-<p>You can create a new version of an existing stack via the drop-down menu in the stack table. This allows the platform to notify users that an update is available for their project, allowing them to upgrade the stack at their convenience.</p>
-<p>It is <em>not</em> possible to edit a stack that is being used by Projects.</p>
+<p>You can create a new version of an existing stack via the drop-down menu in the stack table. This allows the platform to notify users that an update is available for their instance, allowing them to upgrade the stack at their convenience.</p>
+<p>It is <em>not</em> possible to edit a stack that is being used by Instances.</p>
 <p>For Deployment specific information about working with stacks, refer to the documentation of your chosen deployment model:</p>
 <ul>
 <li><a href="../install/local/stacks">Local Stacks</a></li>
@@ -611,9 +611,8 @@ v1.4.1 /<a class="mx-2" href="/docs">docs</a>/<a class="mx-2" href="/docs/admin"
 <li>Kubernetes Stacks - <em>coming soon</em></li>
 </ul>
 <h3 id="managing-templates" tabindex="-1"><a class="header-anchor" href="#managing-templates">#&nbsp;</a> Managing Templates</h3>
-<p>The Templates page can be used to manage the Project Templates on the platform.</p>
-<p>It can be used to create and edit the templates on the platform.</p>
-<p>If you edit a template that is being used by a Project, those changes will get applied the next time the project is restarted.</p>
+<p>The Templates page can be used to create and edit the template on the platform.</p>
+<p>If you edit a template that is being used by an Application Instance, those changes will get applied the next time the instance is restarted.</p>
 </div>
 </div>
 </div>
@@ -621,14 +620,14 @@ v1.4.1 /<a class="mx-2" href="/docs">docs</a>/<a class="mx-2" href="/docs/admin"
 <div class="border-l">
 <div class="block px-8 pt-4 w-full mx-auto ff-bg-light md:hidden">
 <div class="font-medium border-b pb-1">
-v1.4.1 /<a class="mx-2" href="/docs">docs</a>/<a class="mx-2" href="/docs/admin">admin</a>
+v1.5.0 /<a class="mx-2" href="/docs">docs</a>/<a class="mx-2" href="/docs/admin">admin</a>
 </div>
 </div>
 <div class="sticky top-6 w-full md:w-64 mt-4 md:mt-6 px-8">
 <h3 class="font-medium border-b pb-1 mb-4">on this page</h3>
 <ul id="toc" class="text-sm border-b mb-4"></ul>
 <div class="text-sm pb-1 text-right mb-4"><a href="https://github.com/flowforge/flowforge/edit/main/docs/admin/README.md">Edit this page</a></div>
-<div class="text-xs pb-1 text-right mb-4 italic">Updated: 2023-03-13 11:25:24 +0000</div>
+<div class="text-xs pb-1 text-right mb-4 italic">Updated: 2023-03-16 10:55:00 +0000</div>
 </div>
 </div>
 </div>

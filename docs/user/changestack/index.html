@@ -316,6 +316,11 @@ filenodes
 </a>
 </li>
 <li>
+<a href="/docs/user/instance-settings/">
+instance-settings
+</a>
+</li>
+<li>
 <a href="/docs/user/logs/">
 logs
 </a>
@@ -336,16 +341,6 @@ persistent-context
 </a>
 </li>
 <li>
-<a href="/docs/user/project-settings/">
-project-settings
-</a>
-</li>
-<li>
-<a href="/docs/user/project-stages/">
-project-stages
-</a>
-</li>
-<li>
 <a href="/docs/user/projectnodes/">
 projectnodes
 </a>
@@ -358,6 +353,11 @@ shared-library
 <li>
 <a href="/docs/user/snapshots/">
 snapshots
+</a>
+</li>
+<li>
+<a href="/docs/user/staged-deployments/">
+staged-deployments
 </a>
 </li>
 <li>
@@ -527,26 +527,26 @@ open-source-to-premium
 <div class="max-w-screen-lg mx-auto px-8 pt-8">
 <div class="hidden w-full mx-auto ff-bg-light md:block">
 <div class="font-medium border-b pb-1">
-v1.4.1 /<a class="mx-2" href="/docs">docs</a>/<a class="mx-2" href="/docs/user">user</a>/<a class="mx-2" href="/docs/user/changestack">changestack</a>
+v1.5.0 /<a class="mx-2" href="/docs">docs</a>/<a class="mx-2" href="/docs/user">user</a>/<a class="mx-2" href="/docs/user/changestack">changestack</a>
 </div>
 </div>
 <div class="w-full mx-auto ff-bg-light flex flex-col md:flex-row">
 <div class="flex-grow order-last md:order-first">
 <div class="mt-6 mb-4 prose prose-blue main-content">
 <h1 id="changing-the-stack" tabindex="-1"><a class="header-anchor" href="#changing-the-stack">#&nbsp;</a> Changing the Stack</h1>
-<p><a href="../concepts#project-stack">Project Stacks</a> define various aspects of how the project is run - including the version of Node-RED being used.</p>
-<p>FlowForge allows you to change the stack a project is using - providing a way to upgrade Node-RED.</p>
+<p><a href="../concepts#stack">Stacks</a> define various aspects of how Node-RED instances run - including the version of Node-RED being used.</p>
+<p>FlowForge allows you to change the stack an instance is using - providing a way to upgrade Node-RED.</p>
 <p><strong>Note:</strong> Stacks are created by Administrators and made available to the teams and users of the platform.</p>
-<p>When an Administrator creates a new version of a Stack your project is using, the platform will notify you that there is a new version available.</p>
-<p>To change a project's stack:</p>
+<p>When an Administrator creates a new version of a Stack your instance is using, the platform will notify you that there is a new version available.</p>
+<p>To change an instance's stack:</p>
 <ol>
-<li>Go to the project's page and select <strong>Settings</strong> in the sidebar.</li>
-<li>Click the <strong>Change Project Stack</strong> button</li>
-<li>You will be prompted to select the new stack for the project.</li>
+<li>Go to the instance's page and select <strong>Settings</strong> in the sidebar.</li>
+<li>Click the <strong>Change Instance Stack</strong> button</li>
+<li>You will be prompted to select the new stack.</li>
 <li>Click <strong>Change Stack</strong></li>
 </ol>
-<p>Your project will now be restart on the new stack.</p>
-<p><strong>Note:</strong> Changing the stack causes the project to be stopped and restarted. This will require a short downtime of the project flows.</p>
+<p>Your instance will now be restarted on the new stack.</p>
+<p><strong>Note:</strong> Changing the stack causes Node-RED to be stopped and restarted. This will require a short downtime of the flows.</p>
 </div>
 </div>
 </div>
@@ -554,14 +554,14 @@ v1.4.1 /<a class="mx-2" href="/docs">docs</a>/<a class="mx-2" href="/docs/user">
 <div class="border-l">
 <div class="block px-8 pt-4 w-full mx-auto ff-bg-light md:hidden">
 <div class="font-medium border-b pb-1">
-v1.4.1 /<a class="mx-2" href="/docs">docs</a>/<a class="mx-2" href="/docs/user">user</a>/<a class="mx-2" href="/docs/user/changestack">changestack</a>
+v1.5.0 /<a class="mx-2" href="/docs">docs</a>/<a class="mx-2" href="/docs/user">user</a>/<a class="mx-2" href="/docs/user/changestack">changestack</a>
 </div>
 </div>
 <div class="sticky top-6 w-full md:w-64 mt-4 md:mt-6 px-8">
 <h3 class="font-medium border-b pb-1 mb-4">on this page</h3>
 <ul id="toc" class="text-sm border-b mb-4"></ul>
 <div class="text-sm pb-1 text-right mb-4"><a href="https://github.com/flowforge/flowforge/edit/main/docs/user/changestack.md">Edit this page</a></div>
-<div class="text-xs pb-1 text-right mb-4 italic">Updated: 2023-03-13 11:25:24 +0000</div>
+<div class="text-xs pb-1 text-right mb-4 italic">Updated: 2023-03-16 10:55:00 +0000</div>
 </div>
 </div>
 </div>

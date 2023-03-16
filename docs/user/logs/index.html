@@ -315,6 +315,11 @@ envvar
 filenodes
 </a>
 </li>
+<li>
+<a href="/docs/user/instance-settings/">
+instance-settings
+</a>
+</li>
 <li class="active">
 <a href="/docs/user/logs/">
 logs
@@ -336,16 +341,6 @@ persistent-context
 </a>
 </li>
 <li>
-<a href="/docs/user/project-settings/">
-project-settings
-</a>
-</li>
-<li>
-<a href="/docs/user/project-stages/">
-project-stages
-</a>
-</li>
-<li>
 <a href="/docs/user/projectnodes/">
 projectnodes
 </a>
@@ -358,6 +353,11 @@ shared-library
 <li>
 <a href="/docs/user/snapshots/">
 snapshots
+</a>
+</li>
+<li>
+<a href="/docs/user/staged-deployments/">
+staged-deployments
 </a>
 </li>
 <li>
@@ -527,7 +527,7 @@ open-source-to-premium
 <div class="max-w-screen-lg mx-auto px-8 pt-8">
 <div class="hidden w-full mx-auto ff-bg-light md:block">
 <div class="font-medium border-b pb-1">
-v1.4.1 /<a class="mx-2" href="/docs">docs</a>/<a class="mx-2" href="/docs/user">user</a>/<a class="mx-2" href="/docs/user/logs">logs</a>
+v1.5.0 /<a class="mx-2" href="/docs">docs</a>/<a class="mx-2" href="/docs/user">user</a>/<a class="mx-2" href="/docs/user/logs">logs</a>
 </div>
 </div>
 <div class="w-full mx-auto ff-bg-light flex flex-col md:flex-row">
@@ -535,17 +535,30 @@ v1.4.1 /<a class="mx-2" href="/docs">docs</a>/<a class="mx-2" href="/docs/user">
 <div class="mt-6 mb-4 prose prose-blue main-content">
 <h1 id="logs" tabindex="-1"><a class="header-anchor" href="#logs">#&nbsp;</a> Logs</h1>
 <p>FlowForge presents log information in several different places depending on what you are interested in.</p>
-<h2 id="project-logs" tabindex="-1"><a class="header-anchor" href="#project-logs">#&nbsp;</a> Project Logs</h2>
-<p>Within the project view the logs tab displays the Node-RED log. This will contain information such as nodes being added and errors relating to your flows.</p>
-<p>The log information is kept back to the last time the container was restarted, you can view older information on the <code>Load earlier...</code> link at the top of the log.</p>
+<h2 id="node-red-logs" tabindex="-1"><a class="header-anchor" href="#node-red-logs">#&nbsp;</a> Node-RED Logs</h2>
+<p>The Node-RED logs are available for all instances running within the platform.</p>
+<p>They will contain information such as nodes being added and errors relating to your flows.</p>
+<p>The log information is kept back to the last time the instance container was restarted, you can view older information on the <code>Load earlier...</code> link at the top of the log.</p>
 <img src="../images/projectlog.png" width="500">
-<h2 id="project-activity" tabindex="-1"><a class="header-anchor" href="#project-activity">#&nbsp;</a> Project Activity</h2>
-<p>The activity tab on the project view shows key actions relating to the project, specifically when a user logs in to the editor, when they update the flows, when nodes are installed, and also when the project is restarted.</p>
-<p>This log will contain all data since the project was created, you can view older data using the <code>Load More...</code> link at the bottom of the log.</p>
+<h2 id="audit-log" tabindex="-1"><a class="header-anchor" href="#audit-log">#&nbsp;</a> Audit Log</h2>
+<p>The Audit Log tab on the application and instance views shows key events that have happened.</p>
+<p>The events include:</p>
+<ul>
+<li>User logging into the editor</li>
+<li>Flows being updated</li>
+<li>Nodes installed</li>
+<li>Snapshots being created</li>
+</ul>
+<p>This log contains all events since the instance was created. You can view older data using the <code>Load More...</code> link at the bottom of the log.</p>
 <img src="../images/projectactivity.png" width="500">
 <h2 id="team-audit-log" tabindex="-1"><a class="header-anchor" href="#team-audit-log">#&nbsp;</a> Team Audit Log</h2>
-<p>From the Team page the Audit Log shows events relating to the management of the team and projects being created or deleted. Users being invited to the team, accepting the invite, along with user's being given owner level access.</p>
-<p>This log will contain all data since the team was created, you can view older data using the <code>Load More...</code> link at the bottom of the log.</p>
+<p>From the Team page the Audit Log shows events relating to the management of the team.</p>
+<p>This includes:</p>
+<ul>
+<li>Applications/Instances being created or deleted</li>
+<li>Users being added/removed from the team</li>
+</ul>
+<p>This log contains all events since the team was created. Tou can view older data using the <code>Load More...</code> link at the bottom of the log.</p>
 <img src="../images/teamauditlog.png" width="500">
 </div>
 </div>
@@ -554,14 +567,14 @@ v1.4.1 /<a class="mx-2" href="/docs">docs</a>/<a class="mx-2" href="/docs/user">
 <div class="border-l">
 <div class="block px-8 pt-4 w-full mx-auto ff-bg-light md:hidden">
 <div class="font-medium border-b pb-1">
-v1.4.1 /<a class="mx-2" href="/docs">docs</a>/<a class="mx-2" href="/docs/user">user</a>/<a class="mx-2" href="/docs/user/logs">logs</a>
+v1.5.0 /<a class="mx-2" href="/docs">docs</a>/<a class="mx-2" href="/docs/user">user</a>/<a class="mx-2" href="/docs/user/logs">logs</a>
 </div>
 </div>
 <div class="sticky top-6 w-full md:w-64 mt-4 md:mt-6 px-8">
 <h3 class="font-medium border-b pb-1 mb-4">on this page</h3>
 <ul id="toc" class="text-sm border-b mb-4"></ul>
 <div class="text-sm pb-1 text-right mb-4"><a href="https://github.com/flowforge/flowforge/edit/main/docs/user/logs.md">Edit this page</a></div>
-<div class="text-xs pb-1 text-right mb-4 italic">Updated: 2023-03-13 11:25:24 +0000</div>
+<div class="text-xs pb-1 text-right mb-4 italic">Updated: 2023-03-16 10:55:00 +0000</div>
 </div>
 </div>
 </div>

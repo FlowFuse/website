@@ -316,6 +316,11 @@ filenodes
 </a>
 </li>
 <li>
+<a href="/docs/user/instance-settings/">
+instance-settings
+</a>
+</li>
+<li>
 <a href="/docs/user/logs/">
 logs
 </a>
@@ -336,16 +341,6 @@ persistent-context
 </a>
 </li>
 <li>
-<a href="/docs/user/project-settings/">
-project-settings
-</a>
-</li>
-<li>
-<a href="/docs/user/project-stages/">
-project-stages
-</a>
-</li>
-<li>
 <a href="/docs/user/projectnodes/">
 projectnodes
 </a>
@@ -358,6 +353,11 @@ shared-library
 <li>
 <a href="/docs/user/snapshots/">
 snapshots
+</a>
+</li>
+<li>
+<a href="/docs/user/staged-deployments/">
+staged-deployments
 </a>
 </li>
 <li>
@@ -527,47 +527,50 @@ open-source-to-premium
 <div class="max-w-screen-lg mx-auto px-8 pt-8">
 <div class="hidden w-full mx-auto ff-bg-light md:block">
 <div class="font-medium border-b pb-1">
-v1.4.1 /<a class="mx-2" href="/docs">docs</a>/<a class="mx-2" href="/docs/cloud">cloud</a>
+v1.5.0 /<a class="mx-2" href="/docs">docs</a>/<a class="mx-2" href="/docs/cloud">cloud</a>
 </div>
 </div>
 <div class="w-full mx-auto ff-bg-light flex flex-col md:flex-row">
 <div class="flex-grow order-last md:order-first">
 <div class="mt-6 mb-4 prose prose-blue main-content">
 <h1 id="flowforge-cloud" tabindex="-1"><a class="header-anchor" href="#flowforge-cloud">#&nbsp;</a> FlowForge Cloud</h1>
-<p>FlowForge Cloud is a hosted service allowing users to sign-up and start creating teams and projects without having to install and manage their own instance of FlowForge. The <a href="../user/concepts">Concepts</a> remain the same, however FlowForge Inc. is the administrator of the platform.</p>
+<p>FlowForge Cloud is a hosted service allowing users to sign-up and start creating Node-RED instances without having to install and manage their own instance of FlowForge. The <a href="../user/concepts">Concepts</a> remain the same, but we run the platform for you.</p>
 <h2 id="30-day-free-trial" tabindex="-1"><a class="header-anchor" href="#30-day-free-trial">#&nbsp;</a> 30-day Free Trial</h2>
-<p>When users sign-up to FlowForge Cloud then get a 30-day free trial of the platform. During that trial they are able to create one Small Node-RED Project. This is a great way to start using FlowForge and discover a lot of the value it provides.</p>
-<p>Users can setup their billing details at any time during the trial - for example if they want to create additional projects. Those projects will get charged for, but the trial project will remain free until the end of the trial period.</p>
-<p>At the end of the 30-day trial period, if billing has not been setup on the team, the trial project will be suspended. This means it will no longer be running and the editor will not be accessible. Once billing has been setup on the team, the project can be resumed by the team owner.</p>
-<p>If billing has been setup with the trial period ends, the trial project will be added to the team's monthly subscription.</p>
+<p>When users sign-up to FlowForge Cloud then get a 30-day free trial of the platform. During that trial they are able to create one Small Node-RED Instance. This is a great way to start using FlowForge and discover a lot of the value it provides.</p>
+<p>Users can setup their billing details at any time during the trial - for example if they want to create additional Node-RED instances. Those instances will get charged for, but the trial instance will remain free until the end of the trial period.</p>
+<p>At the end of the 30-day trial period, if billing has not been setup on the team, the trial instance will be suspended. This means it will no longer be running and the editor will not be accessible. Once billing has been setup on the team, the instance can be resumed by the team owner.</p>
+<p>If billing has been setup with the trial period ends, the trial instance will be added to the team's monthly subscription.</p>
 <p>The platform will email users about their trial when it is nearing the end to ensure they know what is happening and whether they still need to setup billing.</p>
 <h2 id="billing" tabindex="-1"><a class="header-anchor" href="#billing">#&nbsp;</a> Billing</h2>
-<p>Customers are billed at the team level for each project they create. This is a recurring monthly charge. See the <a href="./billing">Billing</a> page for more detailed answers about billing.</p>
+<p>Customers are billed at the team level for each Node-RED instance they create. This is a recurring monthly charge. See the <a href="./billing">Billing</a> page for more detailed answers about billing.</p>
 <h2 id="support" tabindex="-1"><a class="header-anchor" href="#support">#&nbsp;</a> Support</h2>
 <p>Customers can get support by emailing support@flowforge.com, we presently only offer support for the flowforge application and your account, any issues relating to Node-RED such as your flows or a 3rd party node should be raised in the appropriate community forum, for example https://discourse.nodered.org/ or the GitHub project of the third party node.</p>
 <h3 id="requesting-a-new-verification-email" tabindex="-1"><a class="header-anchor" href="#requesting-a-new-verification-email">#&nbsp;</a> Requesting a new verification email</h3>
-<p>When a user signs up for FlowForge Cloud an email will be send to verify it. If this email doesn't get delivered one can be resend by signin in to FlowForge and click the button to resend it.</p>
+<p>When a user signs up for FlowForge Cloud an email will be send to verify it. If this email doesn't get delivered one can be resend by signing in to FlowForge and click the button to resend it.</p>
 <h2 id="node-red-on-flowforge-cloud" tabindex="-1"><a class="header-anchor" href="#node-red-on-flowforge-cloud">#&nbsp;</a> Node-RED on FlowForge Cloud</h2>
-<p>FlowForge currently offers Node-RED 2.2 and 3.0 to customers. When creating a new project a <a href="../user/concepts#project-stack">Stack</a> is chosen, which later can be <a href="../user/changestack">upgraded to a later version</a>.</p>
+<p>FlowForge currently offers Node-RED 2.2 and 3.0 to customers. When creating a new instance a <a href="../user/concepts#stack">Stack</a> is chosen, which later can be <a href="../user/changestack">upgraded to a later version</a>.</p>
 <p>Each Node-RED can install custom modules as advertised in the <a href="https://flows.nodered.org">Flow Library</a>.</p>
 <h2 id="use-of-the-file-system" tabindex="-1"><a class="header-anchor" href="#use-of-the-file-system">#&nbsp;</a> Use of the File System</h2>
-<p>FlowForge Cloud provides support for using the standard File nodes in flows with some limits. The standard filesystem is not persisted between project restarts, so a custom set of nodes are used to store the files in persistent storage.</p>
-<p>Each Project has a quota of <code>100MB</code> of file storage. A single write operation is limited to <code>10MB</code> in size.</p>
+<p>FlowForge Cloud provides support for using the standard File nodes in flows with some limits. The standard filesystem is not persisted between Node-RED restarts, so a custom set of nodes are used to store the files in persistent storage.</p>
+<p>Each Node-RED instance has a quota of <code>100MB</code> of file storage. A single write operation is limited to <code>10MB</code> in size.</p>
 <p>Some 3rd party nodes try to access the filesystem directly. This can lead to unpredictable results if the data is not persisted between restarts.</p>
 <h2 id="node-red-context" tabindex="-1"><a class="header-anchor" href="#node-red-context">#&nbsp;</a> Node-RED context</h2>
-<p>Node-RED Context can be used to store small pieces of project state within the runtime. By default this is stored in memory only.</p>
+<p>Node-RED Context can be used to store small pieces of application state within the runtime. By default this is stored in memory only.</p>
 <p>FlowForge Cloud provides an optional context store that can be used to persist the data.</p>
-<p>Persistent context has a quota limit set at <code>1MB</code> per project.</p>
+<p>Persistent context has a quota limit set at <code>1MB</code> per instance.</p>
 <h2 id="network-connections" tabindex="-1"><a class="header-anchor" href="#network-connections">#&nbsp;</a> Network Connections</h2>
 <h3 id="http(s)-%26-websockets" tabindex="-1"><a class="header-anchor" href="#http(s)-%26-websockets">#&nbsp;</a> HTTP(S) &amp; Websockets</h3>
-<p>Projects expose an HTTPS interface on port 443 with each project having its own hostname (example.flowforge.cloud), Plain HTTP requests to port 80 will receive a redirect to HTTPS on port 443. You MUST connect using the hostname not the IP address to reach your project. Websocket connections over SSL (wss:) are also supported.</p>
+<p>Node-RED expose an HTTPS interface on port 443 with each instance having its own hostname (example.flowforge.cloud). Plain HTTP requests to port 80 will receive a redirect to HTTPS on port 443. You MUST connect using the hostname not the IP address to reach your Node-RED instance. Websocket connections over SSL (wss:) are also supported.</p>
 <p>The payload size per request is limited to 5MB, which is the Node-RED default. When a request exceeds this limit, the whole request is rejected with a <code>413 Payload Too Large</code> error.</p>
 <h3 id="tcp-and-udp" tabindex="-1"><a class="header-anchor" href="#tcp-and-udp">#&nbsp;</a> TCP and UDP</h3>
-<p>Incoming TCP or UDP connections will not work, the TCP and UDP Nodes have therefore been removed</p>
+<p>The default TCP and UDP nodes have been removed from the Node-RED palette. This is because it is not possible to route these sorts of connections to the container running Node-RED inside the FlowForge Cloud platform.</p>
 <h3 id="mqtt" tabindex="-1"><a class="header-anchor" href="#mqtt">#&nbsp;</a> MQTT</h3>
 <p>MQTT Connections to an external broker using the standard MQTT nodes will work fine as the connection is initiated by Node-RED.</p>
+<p>FlowForge does not provide an MQTT broker for general use by Node-RED instances. However the Project Nodes can be used to easily pass messages between Node-RED instances running in the platform.</p>
 <h3 id="ip-addresses" tabindex="-1"><a class="header-anchor" href="#ip-addresses">#&nbsp;</a> IP Addresses</h3>
-<p>Outbound connections from FlowForge will always come from the IP address <code>63.33.85.112</code>. This can make access to a remote database or corporate network possible where those systems are protected by IP address filtering firewalls. As mentioned in HTTP above, incoming connections MUST be to the hostname not the IP address.</p>
+<p>Outbound connections from FlowForge will always come from the IP address <code>63.33.85.112</code>.</p>
+<p>This can make access to a remote database or corporate network possible where those systems are protected by IP address filtering firewalls.</p>
+<p>All incoming connections MUST use the hostname and not IP address.</p>
 <h2 id="single-sign-on" tabindex="-1"><a class="header-anchor" href="#single-sign-on">#&nbsp;</a> Single-Sign On</h2>
 <p>FlowForge supports configuring SAML-based Single Sign-On for particular email domains.</p>
 <p>This can be configured on request for FlowForge Cloud by submitted a support request via our <a href="https://flowforge.com/contact-us/">Contact Us</a> page.</p>
@@ -578,6 +581,9 @@ v1.4.1 /<a class="mx-2" href="/docs">docs</a>/<a class="mx-2" href="/docs/cloud"
 <li>OneLogin</li>
 </ul>
 <p>If you are using a different Identity Provider, please still get in touch and we can evaluate what will be required to enable it.</p>
+<h2 id="removing-your-account" tabindex="-1"><a class="header-anchor" href="#removing-your-account">#&nbsp;</a> Removing your account</h2>
+<p>Before you can delete your account, teams you own must either be deleted or have at least 1 other owner Once this is done, you can remove your account by going to the &quot;User Settings&quot; page and clicking the &quot;Delete Account&quot; button.</p>
+<p>See also: <a href="./billing#cancelling-your-subscription">cancelling your subscription</a>.</p>
 </div>
 </div>
 </div>
@@ -585,14 +591,14 @@ v1.4.1 /<a class="mx-2" href="/docs">docs</a>/<a class="mx-2" href="/docs/cloud"
 <div class="border-l">
 <div class="block px-8 pt-4 w-full mx-auto ff-bg-light md:hidden">
 <div class="font-medium border-b pb-1">
-v1.4.1 /<a class="mx-2" href="/docs">docs</a>/<a class="mx-2" href="/docs/cloud">cloud</a>
+v1.5.0 /<a class="mx-2" href="/docs">docs</a>/<a class="mx-2" href="/docs/cloud">cloud</a>
 </div>
 </div>
 <div class="sticky top-6 w-full md:w-64 mt-4 md:mt-6 px-8">
 <h3 class="font-medium border-b pb-1 mb-4">on this page</h3>
 <ul id="toc" class="text-sm border-b mb-4"></ul>
 <div class="text-sm pb-1 text-right mb-4"><a href="https://github.com/flowforge/flowforge/edit/main/docs/cloud/README.md">Edit this page</a></div>
-<div class="text-xs pb-1 text-right mb-4 italic">Updated: 2023-03-13 11:25:24 +0000</div>
+<div class="text-xs pb-1 text-right mb-4 italic">Updated: 2023-03-16 10:55:00 +0000</div>
 </div>
 </div>
 </div>

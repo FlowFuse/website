@@ -316,6 +316,11 @@ filenodes
 </a>
 </li>
 <li>
+<a href="/docs/user/instance-settings/">
+instance-settings
+</a>
+</li>
+<li>
 <a href="/docs/user/logs/">
 logs
 </a>
@@ -336,16 +341,6 @@ persistent-context
 </a>
 </li>
 <li>
-<a href="/docs/user/project-settings/">
-project-settings
-</a>
-</li>
-<li>
-<a href="/docs/user/project-stages/">
-project-stages
-</a>
-</li>
-<li>
 <a href="/docs/user/projectnodes/">
 projectnodes
 </a>
@@ -358,6 +353,11 @@ shared-library
 <li>
 <a href="/docs/user/snapshots/">
 snapshots
+</a>
+</li>
+<li>
+<a href="/docs/user/staged-deployments/">
+staged-deployments
 </a>
 </li>
 <li>
@@ -527,20 +527,20 @@ open-source-to-premium
 <div class="max-w-screen-lg mx-auto px-8 pt-8">
 <div class="hidden w-full mx-auto ff-bg-light md:block">
 <div class="font-medium border-b pb-1">
-v1.4.1 /<a class="mx-2" href="/docs">docs</a>/<a class="mx-2" href="/docs/user">user</a>/<a class="mx-2" href="/docs/user/filenodes">filenodes</a>
+v1.5.0 /<a class="mx-2" href="/docs">docs</a>/<a class="mx-2" href="/docs/user">user</a>/<a class="mx-2" href="/docs/user/filenodes">filenodes</a>
 </div>
 </div>
 <div class="w-full mx-auto ff-bg-light flex flex-col md:flex-row">
 <div class="flex-grow order-last md:order-first">
 <div class="mt-6 mb-4 prose prose-blue main-content">
 <h1 id="flowforge-file-nodes" tabindex="-1"><a class="header-anchor" href="#flowforge-file-nodes">#&nbsp;</a> FlowForge File Nodes</h1>
-<p>Projects running within FlowForge include a set of nodes that make it possible to store files safely regardless of the environment. Cloud based projects can read and write to persistent storage using these nodes. Edge devices will store files on its local filesystem.</p>
+<p>Node-RED instances running within FlowForge include a set of nodes that make it possible to store files safely regardless of the environment. Cloud based instances can read and write to persistent storage using these nodes. Edge devices will store files on its local filesystem.</p>
 <h2 id="enabling-persistent-file-storage" tabindex="-1"><a class="header-anchor" href="#enabling-persistent-file-storage">#&nbsp;</a> Enabling Persistent File Storage</h2>
 <p>These nodes are enabled by default on the FlowForge Cloud platform. If you're running a self-hosted environment you should follow the next steps.</p>
 <p>FlowForge file nodes replace the core Node-RED file nodes. To make use of these nodes, the FlowForge platform Administrator must ensure the core file nodes are not loaded.</p>
 <p>This is done by adding <code>10-file-js</code> in the <strong>Exclude nodes by filename</strong>
-section of your FlowForge projects settings under the <strong>Palette</strong> section.</p>
-<p>This setting is modifiable only by a project owner and only if it has not been locked in the <a href="../concepts#project-template">project template</a> by the platform Administrator.</p>
+section of your instance settings under the <strong>Palette</strong> section.</p>
+<p>This setting is modifiable only by a Team owner and only if it has not been locked in the <a href="../concepts#template">template</a> by the platform Administrator.</p>
 <h2 id="nodes" tabindex="-1"><a class="header-anchor" href="#nodes">#&nbsp;</a> Nodes</h2>
 <p>There are two nodes in the File Node collection:</p>
 <ul>
@@ -550,7 +550,7 @@ section of your FlowForge projects settings under the <strong>Palette</strong> s
 <h2 id="usage" tabindex="-1"><a class="header-anchor" href="#usage">#&nbsp;</a> Usage</h2>
 <p>Simply drop the file nodes into your flows as you would with the regular file nodes in Node-RED. There are some helpful built-in examples on the <strong>Import Examples</strong> dialog in Node-RED.</p>
 <h2 id="deployment-considerations" tabindex="-1"><a class="header-anchor" href="#deployment-considerations">#&nbsp;</a> Deployment Considerations</h2>
-<p>When a project is deployed to a device, the original Node-RED file be used and storage will be made against the devices local filesystem.</p>
+<p>When a snapshot is deployed to a device, the original Node-RED file nodes are used and any files will be stored on the device's local filesystem.</p>
 </div>
 </div>
 </div>
@@ -558,14 +558,14 @@ section of your FlowForge projects settings under the <strong>Palette</strong> s
 <div class="border-l">
 <div class="block px-8 pt-4 w-full mx-auto ff-bg-light md:hidden">
 <div class="font-medium border-b pb-1">
-v1.4.1 /<a class="mx-2" href="/docs">docs</a>/<a class="mx-2" href="/docs/user">user</a>/<a class="mx-2" href="/docs/user/filenodes">filenodes</a>
+v1.5.0 /<a class="mx-2" href="/docs">docs</a>/<a class="mx-2" href="/docs/user">user</a>/<a class="mx-2" href="/docs/user/filenodes">filenodes</a>
 </div>
 </div>
 <div class="sticky top-6 w-full md:w-64 mt-4 md:mt-6 px-8">
 <h3 class="font-medium border-b pb-1 mb-4">on this page</h3>
 <ul id="toc" class="text-sm border-b mb-4"></ul>
 <div class="text-sm pb-1 text-right mb-4"><a href="https://github.com/flowforge/flowforge/edit/main/docs/user/filenodes.md">Edit this page</a></div>
-<div class="text-xs pb-1 text-right mb-4 italic">Updated: 2023-03-13 11:25:24 +0000</div>
+<div class="text-xs pb-1 text-right mb-4 italic">Updated: 2023-03-16 10:55:00 +0000</div>
 </div>
 </div>
 </div>

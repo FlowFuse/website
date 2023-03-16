@@ -316,6 +316,11 @@ filenodes
 </a>
 </li>
 <li>
+<a href="/docs/user/instance-settings/">
+instance-settings
+</a>
+</li>
+<li>
 <a href="/docs/user/logs/">
 logs
 </a>
@@ -336,16 +341,6 @@ persistent-context
 </a>
 </li>
 <li>
-<a href="/docs/user/project-settings/">
-project-settings
-</a>
-</li>
-<li>
-<a href="/docs/user/project-stages/">
-project-stages
-</a>
-</li>
-<li>
 <a href="/docs/user/projectnodes/">
 projectnodes
 </a>
@@ -358,6 +353,11 @@ shared-library
 <li>
 <a href="/docs/user/snapshots/">
 snapshots
+</a>
+</li>
+<li>
+<a href="/docs/user/staged-deployments/">
+staged-deployments
 </a>
 </li>
 <li>
@@ -527,7 +527,7 @@ open-source-to-premium
 <div class="max-w-screen-lg mx-auto px-8 pt-8">
 <div class="hidden w-full mx-auto ff-bg-light md:block">
 <div class="font-medium border-b pb-1">
-v1.4.1 /<a class="mx-2" href="/docs">docs</a>/<a class="mx-2" href="/docs/install">install</a>/<a class="mx-2" href="/docs/install/dns-setup">dns-setup</a>
+v1.5.0 /<a class="mx-2" href="/docs">docs</a>/<a class="mx-2" href="/docs/install">install</a>/<a class="mx-2" href="/docs/install/dns-setup">dns-setup</a>
 </div>
 </div>
 <div class="w-full mx-auto ff-bg-light flex flex-col md:flex-row">
@@ -535,9 +535,9 @@ v1.4.1 /<a class="mx-2" href="/docs">docs</a>/<a class="mx-2" href="/docs/instal
 <div class="mt-6 mb-4 prose prose-blue main-content">
 <h1 id="dns-setup" tabindex="-1"><a class="header-anchor" href="#dns-setup">#&nbsp;</a> DNS Setup</h1>
 <p>When running FlowForge on Docker or Kubernetes you will need to be able to setup an entry in a DNS server.</p>
-<p>This is because FlowForge uses hostname based routing to know which project you want to access.</p>
-<p>By default the project name is used in combination with a supplied domain. In this document I will use <code>example.com</code> as the domain. (It doesn't need to be a &quot;whole&quot; domain, it could also be a sub domain of one you already own. e.g. <code>ff.example.com</code>).</p>
-<p>If you are running Docker/Kubernetes on the same machine as the DNS server and Web Browser do not use <code>127.0.0.1</code> as the IP address to point the wild card domain at. This is because the host names will be looked up by the Web Browser, the Forge Application, and the Project Node-RED instances. The last 2 are running in containers and <code>127.0.0.1</code> will resolve to the container, not the entry point.</p>
+<p>This is because FlowForge uses hostname based routing to know which Node-RED instance you want to access.</p>
+<p>By default the instance name is used in combination with a supplied domain. In this document we will use <code>example.com</code> as the domain. (It doesn't need to be a &quot;whole&quot; domain, it could also be a sub domain of one you already own. e.g. <code>ff.example.com</code>).</p>
+<p>If you are running Docker/Kubernetes on the same machine as the DNS server and Web Browser do not use <code>127.0.0.1</code> as the IP address to point the wild card domain at. This is because the host names will be looked up by the Web Browser, the Forge Application, and the Node-RED instances. The last 2 are running in containers and <code>127.0.0.1</code> will resolve to the container, not the entry point.</p>
 <h2 id="production" tabindex="-1"><a class="header-anchor" href="#production">#&nbsp;</a> Production</h2>
 <p>For a production deployment you will need to have access to modify DNS, if you are not sure how to set up DNS records talk to whoever manages your DNS.</p>
 <p>As mentioned earlier you will need them to create a wild card entry that points to either the Docker host machine or the Kubernetes Nodes which are running the Ingress Controller.</p>
@@ -678,14 +678,14 @@ v1.4.1 /<a class="mx-2" href="/docs">docs</a>/<a class="mx-2" href="/docs/instal
 <div class="border-l">
 <div class="block px-8 pt-4 w-full mx-auto ff-bg-light md:hidden">
 <div class="font-medium border-b pb-1">
-v1.4.1 /<a class="mx-2" href="/docs">docs</a>/<a class="mx-2" href="/docs/install">install</a>/<a class="mx-2" href="/docs/install/dns-setup">dns-setup</a>
+v1.5.0 /<a class="mx-2" href="/docs">docs</a>/<a class="mx-2" href="/docs/install">install</a>/<a class="mx-2" href="/docs/install/dns-setup">dns-setup</a>
 </div>
 </div>
 <div class="sticky top-6 w-full md:w-64 mt-4 md:mt-6 px-8">
 <h3 class="font-medium border-b pb-1 mb-4">on this page</h3>
 <ul id="toc" class="text-sm border-b mb-4"></ul>
 <div class="text-sm pb-1 text-right mb-4"><a href="https://github.com/flowforge/flowforge/edit/main/docs/install/dns-setup.md">Edit this page</a></div>
-<div class="text-xs pb-1 text-right mb-4 italic">Updated: 2023-03-13 11:25:24 +0000</div>
+<div class="text-xs pb-1 text-right mb-4 italic">Updated: 2023-03-16 10:55:00 +0000</div>
 </div>
 </div>
 </div>

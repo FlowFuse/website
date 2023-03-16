@@ -316,6 +316,11 @@ filenodes
 </a>
 </li>
 <li>
+<a href="/docs/user/instance-settings/">
+instance-settings
+</a>
+</li>
+<li>
 <a href="/docs/user/logs/">
 logs
 </a>
@@ -336,16 +341,6 @@ persistent-context
 </a>
 </li>
 <li>
-<a href="/docs/user/project-settings/">
-project-settings
-</a>
-</li>
-<li>
-<a href="/docs/user/project-stages/">
-project-stages
-</a>
-</li>
-<li>
 <a href="/docs/user/projectnodes/">
 projectnodes
 </a>
@@ -358,6 +353,11 @@ shared-library
 <li>
 <a href="/docs/user/snapshots/">
 snapshots
+</a>
+</li>
+<li>
+<a href="/docs/user/staged-deployments/">
+staged-deployments
 </a>
 </li>
 <li>
@@ -527,16 +527,16 @@ open-source-to-premium
 <div class="max-w-screen-lg mx-auto px-8 pt-8">
 <div class="hidden w-full mx-auto ff-bg-light md:block">
 <div class="font-medium border-b pb-1">
-v1.4.1 /<a class="mx-2" href="/docs">docs</a>/<a class="mx-2" href="/docs/user">user</a>/<a class="mx-2" href="/docs/user/node-red-tools">node-red-tools</a>
+v1.5.0 /<a class="mx-2" href="/docs">docs</a>/<a class="mx-2" href="/docs/user">user</a>/<a class="mx-2" href="/docs/user/node-red-tools">node-red-tools</a>
 </div>
 </div>
 <div class="w-full mx-auto ff-bg-light flex flex-col md:flex-row">
 <div class="flex-grow order-last md:order-first">
 <div class="mt-6 mb-4 prose prose-blue main-content">
 <h1 id="flowforge-node-red-tools-plugin" tabindex="-1"><a class="header-anchor" href="#flowforge-node-red-tools-plugin">#&nbsp;</a> FlowForge Node-RED Tools plugin</h1>
-<p>The Node-RED Tools Plugin is a module you can install into any Node-RED instance running outside of FlowForge, that gives you the ability to work on your projects locally.</p>
-<p>The current version of the plugin allows you to create a new Project Snapshot using the flows you have locally and push them into a project on FlowForge.</p>
-<p>This can make it easier to develop hardware-specific flows locally, that can then be pushed out to your Project's devices through FlowForge.</p>
+<p>The Node-RED Tools Plugin is a module you can install into any Node-RED instance running outside of FlowForge, that gives you the ability to work on your flows locally.</p>
+<p>The current version of the plugin allows you to create a new Instance Snapshot using the flows you have locally and push them into an instance on FlowForge.</p>
+<p>This can make it easier to develop hardware-specific flows locally, that can then be pushed out to your devices through FlowForge.</p>
 <h2 id="install" tabindex="-1"><a class="header-anchor" href="#install">#&nbsp;</a> Install</h2>
 <p>This plugin can be installed through the Manage Palette option by searching for
 <code>@flowforge/nr-tools-plugin</code> in the Node-RED editor, or on the command-line:</p>
@@ -550,7 +550,7 @@ v1.4.1 /<a class="mx-2" href="/docs">docs</a>/<a class="mx-2" href="/docs/user">
 </div>
 <p>This assumes the default location of the Node-RED user directory. If you are not sure where that is, check the log output when Node-RED starts as it will log the full path to the <code>User directory</code>.</p>
 <h2 id="usage" tabindex="-1"><a class="header-anchor" href="#usage">#&nbsp;</a> Usage</h2>
-<p>This initial version of the plugin allows you to create a snapshot of your locally developed flows and push them into one of your projects running inside FlowForge.</p>
+<p>This initial version of the plugin allows you to create a snapshot of your locally developed flows and push them into one of your instances running inside FlowForge.</p>
 <h3 id="connecting-to-flowforge" tabindex="-1"><a class="header-anchor" href="#connecting-to-flowforge">#&nbsp;</a> Connecting to FlowForge</h3>
 <p>Before you can do anything, you need to connect the plugin to a FlowForge platform.</p>
 <ol>
@@ -568,8 +568,8 @@ v1.4.1 /<a class="mx-2" href="/docs">docs</a>/<a class="mx-2" href="/docs/user">
 </li>
 </ol>
 <h3 id="working-with-snapshots" tabindex="-1"><a class="header-anchor" href="#working-with-snapshots">#&nbsp;</a> Working with Snapshots</h3>
-<p>The FlowForge Tools sidebar allows you to browse the teams you are a member of and their projects.</p>
-<p>When you select a project, the sidebar lists its snapshots.</p>
+<p>The FlowForge Tools sidebar allows you to browse the teams you are a member of and their instances.</p>
+<p>When you select an instance, the sidebar lists its snapshots.</p>
 <p>You can then create a new snapshot using the flows you have running locally.</p>
 <h3 id="create-a-snapshot" tabindex="-1"><a class="header-anchor" href="#create-a-snapshot">#&nbsp;</a> Create a Snapshot</h3>
 <ol>
@@ -580,20 +580,20 @@ v1.4.1 /<a class="mx-2" href="/docs">docs</a>/<a class="mx-2" href="/docs/user">
 <p>In the dialog, enter a name for the snapshot and an optional description.</p>
 </li>
 <li>
-<p>The dialog lists the modules your flows are using, along with the version number. This information is included in the snapshot when sent up to the FlowForge project. Check the notes below on how this is handled within FlowForge.</p>
+<p>The dialog lists the modules your flows are using, along with the version number. This information is included in the snapshot when sent back to the FlowForge instance. Check the notes below on how this is handled within FlowForge.</p>
 </li>
 <li>
 <p>Click 'Create Snapshot'</p>
 </li>
 </ol>
-<p>At this point, a new snapshot will be created in FlowForge. You can then switch to the FlowForge platform and from the Snapshot view either select the rollback option to deploy that snapshot to your project, or set it as the Device Target to deploy it to your project's devices.</p>
+<p>At this point, a new snapshot will be created in FlowForge. You can then switch to the FlowForge platform and from the Snapshot view either select the rollback option to deploy that snapshot, or set it as the Device Target to deploy it to your devices.</p>
 <p>We'll be working on improving this workflow in future releases of the plugin - to allow you to manage more from within the Node-RED plugin.</p>
 <h4 id="adding-modules-to-a-snapshot" tabindex="-1"><a class="header-anchor" href="#adding-modules-to-a-snapshot">#&nbsp;</a> Adding modules to a snapshot</h4>
-<p>The snapshot created by the sidebar includes a list of the modules used by the flows. If there are any modules included that have not already been added to your project, you will need to manually add them via the <code>Project Settings -&gt; Palette -&gt; Installed Modules</code>
+<p>The snapshot created by the sidebar includes a list of the modules used by the flows. If there are any modules included that have not already been added to your instance you will need to manually add them via the <code>Instance Settings -&gt; Palette -&gt; Installed Modules</code>
 view in the platform.</p>
 <h4 id="defining-environment-variables" tabindex="-1"><a class="header-anchor" href="#defining-environment-variables">#&nbsp;</a> Defining Environment Variables</h4>
-<p>We do not currently support defining environment variables for the project from within the Node-RED Plugin. This means that when you create a snapshot from the plugin, the platform will automatically merge in the currently defined project environment variables.</p>
-<p>To manage your Project's environment variables, use the <code>Project Settings -&gt; Environment</code>
+<p>We do not currently support defining environment variables for the flows from within the Node-RED Plugin. This means that when you create a snapshot from the plugin, the platform will automatically merge in the currently defined environment variables for that instance.</p>
+<p>To manage your instance's environment variables, use the <code>Instance Settings -&gt; Environment</code>
 view in the platform.</p>
 </div>
 </div>
@@ -602,14 +602,14 @@ view in the platform.</p>
 <div class="border-l">
 <div class="block px-8 pt-4 w-full mx-auto ff-bg-light md:hidden">
 <div class="font-medium border-b pb-1">
-v1.4.1 /<a class="mx-2" href="/docs">docs</a>/<a class="mx-2" href="/docs/user">user</a>/<a class="mx-2" href="/docs/user/node-red-tools">node-red-tools</a>
+v1.5.0 /<a class="mx-2" href="/docs">docs</a>/<a class="mx-2" href="/docs/user">user</a>/<a class="mx-2" href="/docs/user/node-red-tools">node-red-tools</a>
 </div>
 </div>
 <div class="sticky top-6 w-full md:w-64 mt-4 md:mt-6 px-8">
 <h3 class="font-medium border-b pb-1 mb-4">on this page</h3>
 <ul id="toc" class="text-sm border-b mb-4"></ul>
 <div class="text-sm pb-1 text-right mb-4"><a href="https://github.com/flowforge/flowforge/edit/main/docs/user/node-red-tools.md">Edit this page</a></div>
-<div class="text-xs pb-1 text-right mb-4 italic">Updated: 2023-03-13 11:25:24 +0000</div>
+<div class="text-xs pb-1 text-right mb-4 italic">Updated: 2023-03-16 10:55:00 +0000</div>
 </div>
 </div>
 </div>

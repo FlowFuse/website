@@ -316,6 +316,11 @@ filenodes
 </a>
 </li>
 <li>
+<a href="/docs/user/instance-settings/">
+instance-settings
+</a>
+</li>
+<li>
 <a href="/docs/user/logs/">
 logs
 </a>
@@ -336,16 +341,6 @@ persistent-context
 </a>
 </li>
 <li>
-<a href="/docs/user/project-settings/">
-project-settings
-</a>
-</li>
-<li>
-<a href="/docs/user/project-stages/">
-project-stages
-</a>
-</li>
-<li>
 <a href="/docs/user/projectnodes/">
 projectnodes
 </a>
@@ -358,6 +353,11 @@ shared-library
 <li>
 <a href="/docs/user/snapshots/">
 snapshots
+</a>
+</li>
+<li>
+<a href="/docs/user/staged-deployments/">
+staged-deployments
 </a>
 </li>
 <li>
@@ -527,7 +527,7 @@ open-source-to-premium
 <div class="max-w-screen-lg mx-auto px-8 pt-8">
 <div class="hidden w-full mx-auto ff-bg-light md:block">
 <div class="font-medium border-b pb-1">
-v1.4.1 /<a class="mx-2" href="/docs">docs</a>/<a class="mx-2" href="/docs/upgrade">upgrade</a>
+v1.5.0 /<a class="mx-2" href="/docs">docs</a>/<a class="mx-2" href="/docs/upgrade">upgrade</a>
 </div>
 </div>
 <div class="w-full mx-auto ff-bg-light flex flex-col md:flex-row">
@@ -537,6 +537,16 @@ v1.4.1 /<a class="mx-2" href="/docs">docs</a>/<a class="mx-2" href="/docs/upgrad
 <p>If you are upgrading an existing FlowForge installation, this page will list any particular requirements needed to upgrade to a given level.</p>
 <p>If you are upgrading across multiple versions, make sure you check the requirements for each version you are upgrading across.</p>
 <p>Note that we do not support downgrading FlowForge to previous levels once an upgrade has been performed.</p>
+<h3 id="upgrading-to-1.5" tabindex="-1"><a class="header-anchor" href="#upgrading-to-1.5">#&nbsp;</a> Upgrading to 1.5</h3>
+<p>The main change in this release was a change in our terminology around the individual Node-RED instances. We have introduced the <a href="../user/concepts#application">Application concept</a>
+as a way to group individual <a href="../user/concepts#instance">Node-RED instances</a> (what we previously called Projects).</p>
+<p>The term 'Project' is being phased out. You may still see it crop up, such as in some of the external APIs, but we're working our way through removing it.</p>
+<p>Details of how to upgrade can be found for each deployment model:</p>
+<ul>
+<li><a href="../install/local/#upgrade">LocalFS</a></li>
+<li><a href="../install/docker/#upgrade">Docker</a></li>
+<li><a href="../install/kubernetes/#upgrade">Kubernetes</a></li>
+</ul>
 <h3 id="upgrading-to-1.4" tabindex="-1"><a class="header-anchor" href="#upgrading-to-1.4">#&nbsp;</a> Upgrading to 1.4</h3>
 <p>Details of how to upgrade can be found for each deployment model:</p>
 <ul>
@@ -551,7 +561,7 @@ v1.4.1 /<a class="mx-2" href="/docs">docs</a>/<a class="mx-2" href="/docs/upgrad
 <li><a href="../install/docker/#upgrade">Docker</a></li>
 <li><a href="../install/kubernetes/#upgrade">Kubernetes</a></li>
 </ul>
-<p>To enable the Team Library and FlowForge-based Authentication of HTTP routes each project will need to be updated to the <a href="../user/changestack">latest Stack</a>.</p>
+<p>To enable the Team Library and FlowForge-based Authentication of HTTP routes each Node-RED instance will need to be updated to the <a href="../user/changestack">latest Stack</a>.</p>
 <h3 id="upgrading-to-1.2" tabindex="-1"><a class="header-anchor" href="#upgrading-to-1.2">#&nbsp;</a> Upgrading to 1.2</h3>
 <p>Details of how to upgrade can be found for each deployment model:</p>
 <ul>
@@ -586,8 +596,8 @@ v1.4.1 /<a class="mx-2" href="/docs">docs</a>/<a class="mx-2" href="/docs/upgrad
 <p>With the 0.8 release we have updated the version of the SQLite3 module used by the localfs container driver. We are moving from v5.0.2 to v5.0.8.</p>
 <p>There appears to be a clash with the bcrypt module when doing an in place upgrade of the SQLite3 module that gives an error similar to the following:</p>
 <div style="position: relative">
-<pre class="language-bash"><code id="code-163" class="language-bash"><span class="token function">npm</span> ERR<span class="token operator">!</span> path /opt/share/projects/flowforge/sqlite-test/node_modules/sqlite3<br><span class="token function">npm</span> ERR<span class="token operator">!</span> <span class="token builtin class-name">command</span> failed<br><span class="token function">npm</span> ERR<span class="token operator">!</span> <span class="token builtin class-name">command</span> <span class="token function">sh</span> <span class="token parameter variable">-c</span> node-pre-gyp <span class="token function">install</span> --fallback-to-build<br><span class="token function">npm</span> ERR<span class="token operator">!</span> sh: line <span class="token number">1</span>: node-pre-gyp: <span class="token builtin class-name">command</span> not found</code></pre>
-<button class="code-copy" data-clipboard-target="#code-163" style="position: absolute; top: 7.5px; right: 6px; cursor: pointer; outline: none; opacity: 0.8;" title="Copy">
+<pre class="language-bash"><code id="code-192" class="language-bash"><span class="token function">npm</span> ERR<span class="token operator">!</span> path /opt/share/projects/flowforge/sqlite-test/node_modules/sqlite3<br><span class="token function">npm</span> ERR<span class="token operator">!</span> <span class="token builtin class-name">command</span> failed<br><span class="token function">npm</span> ERR<span class="token operator">!</span> <span class="token builtin class-name">command</span> <span class="token function">sh</span> <span class="token parameter variable">-c</span> node-pre-gyp <span class="token function">install</span> --fallback-to-build<br><span class="token function">npm</span> ERR<span class="token operator">!</span> sh: line <span class="token number">1</span>: node-pre-gyp: <span class="token builtin class-name">command</span> not found</code></pre>
+<button class="code-copy" data-clipboard-target="#code-192" style="position: absolute; top: 7.5px; right: 6px; cursor: pointer; outline: none; opacity: 0.8;" title="Copy">
 <span>
 <span style="font-size: 15px; opacity: 0.8;" class="mdi mdi-content-copy"></span>
 </span>
@@ -599,7 +609,7 @@ v1.4.1 /<a class="mx-2" href="/docs">docs</a>/<a class="mx-2" href="/docs/upgrad
 <p>These nodes require the MQTT Broker to be properly configured.</p>
 <p>To deploy flows using these nodes to a Device will require the Device to be running the latest 0.2.0 release. They will also need to have their credentials regenerated once the MQTT Broker has been added.</p>
 <h3 id="upgrading-to-0.7" tabindex="-1"><a class="header-anchor" href="#upgrading-to-0.7">#&nbsp;</a> Upgrading to 0.7</h3>
-<p>The 0.7 release introduces the <a href="../user/concepts#project-type">ProjectType concept</a>.</p>
+<p>The 0.7 release introduces the <a href="../user/concepts#instance-type">ProjectType concept</a>.</p>
 <p>After upgrading to 0.7, an administrator must perform the following tasks before users will be able to create new projects:</p>
 <ol>
 <li>Create a Project Type.
@@ -624,14 +634,14 @@ v1.4.1 /<a class="mx-2" href="/docs">docs</a>/<a class="mx-2" href="/docs/upgrad
 <div class="border-l">
 <div class="block px-8 pt-4 w-full mx-auto ff-bg-light md:hidden">
 <div class="font-medium border-b pb-1">
-v1.4.1 /<a class="mx-2" href="/docs">docs</a>/<a class="mx-2" href="/docs/upgrade">upgrade</a>
+v1.5.0 /<a class="mx-2" href="/docs">docs</a>/<a class="mx-2" href="/docs/upgrade">upgrade</a>
 </div>
 </div>
 <div class="sticky top-6 w-full md:w-64 mt-4 md:mt-6 px-8">
 <h3 class="font-medium border-b pb-1 mb-4">on this page</h3>
 <ul id="toc" class="text-sm border-b mb-4"></ul>
 <div class="text-sm pb-1 text-right mb-4"><a href="https://github.com/flowforge/flowforge/edit/main/docs/upgrade/README.md">Edit this page</a></div>
-<div class="text-xs pb-1 text-right mb-4 italic">Updated: 2023-03-13 11:25:24 +0000</div>
+<div class="text-xs pb-1 text-right mb-4 italic">Updated: 2023-03-16 10:55:00 +0000</div>
 </div>
 </div>
 </div>

@@ -12,17 +12,17 @@
 <meta name="msapplication-TileColor" content="#00aba9">
 <meta name="theme-color" content="#ffffff">
 <meta name="keywords" content="Node-RED, Deployment, Production, Enterprise, IoT, IIoT, Low-Code, Open-Source, Kubernetes, Docker, Cloud, Hosting">
-<title>Project-settings &#x2022; FlowForge Docs</title>
-<meta rel="canonical" href="https://flowforge.com/docs/user/project-settings/">
+<title>FlowForge v1.5 Now Available &#x2022; FlowForge</title>
+<meta rel="canonical" href="https://flowforge.com/blog/2023/03/flowforge-1-5-0-released/">
 <meta name="description" content="Scale your Node-RED deployments in production. Open-Source and available on Docker, Kubernetes or Cloud">
-<meta property="og:title" content="Project-settings &#x2022; FlowForge">
-<meta property="og:description" content="FlowForge is an open-source, low-code platform for integration and automation. Helping you run Node-RED at production scales in a secure, scalable and team-based environment.">
-<meta property="og:url" content="https://flowforge.com/docs/user/project-settings/">
-<meta property="og:image" content="https://flowforge.com/images/og-social-tile.jpg">
-<meta name="twitter:image" content="https://flowforge.com/images/og-social-tile.jpg">
+<meta property="og:title" content="FlowForge v1.5 Now Available &#x2022; FlowForge">
+<meta property="og:description" content="For FlowForge 1.5 we have been busy making a lot of UX changes and upgrading our underlying architecture to enable future innovations on the FlowForge platform.">
+<meta property="og:url" content="https://flowforge.com/blog/2023/03/flowforge-1-5-0-released/">
+<meta property="og:image" content="https://flowforge.com/blog/2023/03/images/release-150.jpg">
+<meta name="twitter:image" content="https://flowforge.com/blog/2023/03/images/release-150.jpg">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:description" content="">
 <meta name="twitter:site" content="@flowforgeinc">
+<meta name="twitter:creator" content="@joepavitt3d">
 <script>const blockedScripts=[/hs-banner.com/];function needsToBeBlocked(e){return blockedScripts.some((t=>t.test(e)))}const createElementBackup=document.createElement;document.createElement=function(...e){if("script"!==e[0].toLowerCase())return createElementBackup.bind(document)(...e);const t=createElementBackup.bind(document)(...e),c=t.setAttribute.bind(t);return c("defer","defer"),Object.defineProperties(t,{src:{get:()=>t.getAttribute("src"),set:e=>(needsToBeBlocked(e,t.type)&&c("type","javascript/blocked"),c("src",e),!0)},type:{set(e){const r=needsToBeBlocked(t.src,t.type)?"javascript/blocked":e;return c("type",r),!0}}}),t.setAttribute=function(e,c){"type"===e||"src"===e?t[e]=c:HTMLScriptElement.prototype.setAttribute.call(t,e,c)},t};</script>
 </head>
 <body class="ff-website leading-normal tracking-normal gradient text-gray-500 min-h-screen flex flex-col">
@@ -90,567 +90,105 @@
 </nav>
 </header>
 <main class="flex flex-col mx-auto items-center justify-center">
-<div class="w-full page">
-<div class="content">
-<div class="nohero w-full pt-8 md:pt-12 ff-bg-light">
-<script>
-function toggleNavList (el) {
-        const li = el.parentElement
-        li.classList.toggle('open')
-        const ul = li.nextElementSibling
-        ul.classList.toggle('open')
-        if (ul.style.maxHeight) {
-            ul.style.maxHeight = null;
-        } else {
-            if (ul.parentElement.tagName === "UL" && !ul.parentElement.classList.contains('handbook-nav')) {
-                ul.parentElement.style.maxHeight = "initial"
-            }
-            ul.style.maxHeight = ul.scrollHeight + "px";
-        } 
-    }
-</script>
-<div class="handbook ff-prose text-left pb-24" data-docs>
-<div class="border-r">
-<ul class="handbook-nav" data-el="navigation">
-<li>
-<a href="/docs">docs</a>
-</li>
-<li class="handbook-nav-group">Overview</li>
-<li>
-<a href="/docs/admin/">
-Administering FlowForge
-</a>
-<button onclick="toggleNavList(this)">
-<span class="ff-icon icon-expand">
-<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 ff-icon--down">
-<path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5"/>
-</svg>
-</span>
-<span class="ff-icon icon-minimise">
-<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-<path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5"/>
-</svg>
-</span>
-</button>
-</li>
-<ul class="handbook-nav-nested">
-<li>
-<a href="/docs/admin/sso/">
-sso
-</a>
-</li>
-<li>
-<a href="/docs/admin/telemetry/">
-telemetry
-</a>
-</li>
-<li>
-<a href="/docs/admin/user_management/">
-user_management
-</a>
-</li>
-</ul>
-<li>
-<a href="/docs/contribute/">
-Contributing to FlowForge
-</a>
-<button onclick="toggleNavList(this)">
-<span class="ff-icon icon-expand">
-<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 ff-icon--down">
-<path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5"/>
-</svg>
-</span>
-<span class="ff-icon icon-minimise">
-<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-<path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5"/>
-</svg>
-</span>
-</button>
-</li>
-<ul class="handbook-nav-nested">
-<li>
-<a href="/docs/contribute/adding-template-settings/">
-adding-template-settings
-</a>
-</li>
-<li>
-<a href="/docs/contribute/api-design/">
-api-design
-</a>
-</li>
-<li>
-<a href="/docs/contribute/architecture/">
-architecture
-</a>
-</li>
-<li>
-<a href="/docs/contribute/db-migrations/">
-db-migrations
-</a>
-</li>
-<li>
-<a href="/docs/contribute/workflows/">
-workflows
-</a>
-<button onclick="toggleNavList(this)">
-<span class="ff-icon icon-expand">
-<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 ff-icon--down">
-<path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5"/>
-</svg>
-</span>
-<span class="ff-icon icon-minimise">
-<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-<path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5"/>
-</svg>
-</span>
-</button>
-</li>
-<ul class="handbook-nav-nested-2">
-<li>
-<a href="/docs/contribute/workflows/invite-external-user/">
-invite-external-user
-</a>
-</li>
-<li>
-<a href="/docs/contribute/workflows/login/">
-login
-</a>
-</li>
-<li>
-<a href="/docs/contribute/workflows/password-reset/">
-password-reset
-</a>
-</li>
-<li>
-<a href="/docs/contribute/workflows/project-create/">
-project-create
-</a>
-</li>
-<li>
-<a href="/docs/contribute/workflows/project-states/">
-project-states
-</a>
-</li>
-<li>
-<a href="/docs/contribute/workflows/signup/">
-signup
-</a>
-</li>
-<li>
-<a href="/docs/contribute/workflows/team-create/">
-team-create
-</a>
-</li>
-</ul>
-</ul>
-<li>
-<a href="/docs/api/">
-FlowForge API
-</a>
-</li>
-<li>
-<a href="/docs/cloud/">
-FlowForge Cloud
-</a>
-<button onclick="toggleNavList(this)">
-<span class="ff-icon icon-expand">
-<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 ff-icon--down">
-<path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5"/>
-</svg>
-</span>
-<span class="ff-icon icon-minimise">
-<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-<path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5"/>
-</svg>
-</span>
-</button>
-</li>
-<ul class="handbook-nav-nested">
-<li>
-<a href="/docs/cloud/billing/">
-billing
-</a>
-</li>
-</ul>
-<li>
-<a href="/docs/user/">
-Using FlowForge
-</a>
-<button onclick="toggleNavList(this)">
-<span class="ff-icon icon-expand">
-<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 ff-icon--down">
-<path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5"/>
-</svg>
-</span>
-<span class="ff-icon icon-minimise">
-<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-<path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5"/>
-</svg>
-</span>
-</button>
-</li>
-<ul class="handbook-nav-nested">
-<li>
-<a href="/docs/user/changestack/">
-changestack
-</a>
-</li>
-<li>
-<a href="/docs/user/concepts/">
-concepts
-</a>
-</li>
-<li>
-<a href="/docs/user/devices/">
-devices
-</a>
-</li>
-<li>
-<a href="/docs/user/envvar/">
-envvar
-</a>
-</li>
-<li>
-<a href="/docs/user/filenodes/">
-filenodes
-</a>
-</li>
-<li>
-<a href="/docs/user/logs/">
-logs
-</a>
-</li>
-<li>
-<a href="/docs/user/migration/">
-migration
-</a>
-</li>
-<li>
-<a href="/docs/user/node-red-tools/">
-node-red-tools
-</a>
-</li>
-<li>
-<a href="/docs/user/persistent-context/">
-persistent-context
-</a>
-</li>
-<li class="active">
-<a href="/docs/user/project-settings/">
-project-settings
-</a>
-</li>
-<li>
-<a href="/docs/user/project-stages/">
-project-stages
-</a>
-</li>
-<li>
-<a href="/docs/user/projectnodes/">
-projectnodes
-</a>
-</li>
-<li>
-<a href="/docs/user/shared-library/">
-shared-library
-</a>
-</li>
-<li>
-<a href="/docs/user/snapshots/">
-snapshots
-</a>
-</li>
-<li>
-<a href="/docs/user/team/">
-team
-</a>
-</li>
-</ul>
-<li class="handbook-nav-group">Running FlowForge</li>
-<li>
-<a href="/docs/install/">
-Installing FlowForge
-</a>
-<button onclick="toggleNavList(this)">
-<span class="ff-icon icon-expand">
-<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 ff-icon--down">
-<path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5"/>
-</svg>
-</span>
-<span class="ff-icon icon-minimise">
-<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-<path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5"/>
-</svg>
-</span>
-</button>
-</li>
-<ul class="handbook-nav-nested">
-<li>
-<a href="/docs/install/configuration/">
-configuration
-</a>
-</li>
-<li>
-<a href="/docs/install/dns-setup/">
-dns-setup
-</a>
-</li>
-<li>
-<a href="/docs/install/docker/">
-docker
-</a>
-<button onclick="toggleNavList(this)">
-<span class="ff-icon icon-expand">
-<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 ff-icon--down">
-<path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5"/>
-</svg>
-</span>
-<span class="ff-icon icon-minimise">
-<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-<path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5"/>
-</svg>
-</span>
-</button>
-</li>
-<ul class="handbook-nav-nested-2">
-<li>
-<a href="/docs/install/docker/digital-ocean/">
-digital-ocean
-</a>
-</li>
-<li>
-<a href="/docs/install/docker/stacks/">
-stacks
-</a>
-</li>
-</ul>
-<li>
-<a href="/docs/install/email_providers/">
-email_providers
-</a>
-</li>
-<li>
-<a href="/docs/install/file-storage/">
-file-storage
-</a>
-</li>
-<li>
-<a href="/docs/install/first-run/">
-first-run
-</a>
-</li>
-<li>
-<a href="/docs/install/kubernetes/">
-kubernetes
-</a>
-<button onclick="toggleNavList(this)">
-<span class="ff-icon icon-expand">
-<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 ff-icon--down">
-<path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5"/>
-</svg>
-</span>
-<span class="ff-icon icon-minimise">
-<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-<path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5"/>
-</svg>
-</span>
-</button>
-</li>
-<ul class="handbook-nav-nested-2">
-<li>
-<a href="/docs/install/kubernetes/aws/">
-aws
-</a>
-</li>
-<li>
-<a href="/docs/install/kubernetes/digital-ocean/">
-digital-ocean
-</a>
-</li>
-<li>
-<a href="/docs/install/kubernetes/stacks/">
-stacks
-</a>
-</li>
-</ul>
-<li>
-<a href="/docs/install/local/">
-local
-</a>
-<button onclick="toggleNavList(this)">
-<span class="ff-icon icon-expand">
-<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 ff-icon--down">
-<path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5"/>
-</svg>
-</span>
-<span class="ff-icon icon-minimise">
-<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-<path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5"/>
-</svg>
-</span>
-</button>
-</li>
-<ul class="handbook-nav-nested-2">
-<li>
-<a href="/docs/install/local/stacks/">
-stacks
-</a>
-</li>
-</ul>
-</ul>
-<li>
-<a href="/docs/upgrade/">
-Upgrading FlowForge
-</a>
-<button onclick="toggleNavList(this)">
-<span class="ff-icon icon-expand">
-<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 ff-icon--down">
-<path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5"/>
-</svg>
-</span>
-<span class="ff-icon icon-minimise">
-<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-<path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5"/>
-</svg>
-</span>
-</button>
-</li>
-<ul class="handbook-nav-nested">
-<li>
-<a href="/docs/upgrade/open-source-to-premium/">
-open-source-to-premium
-</a>
-</li>
-</ul>
-</ul>
-</div>
-<div class="max-w-screen-lg mx-auto px-8 pt-8">
-<div class="hidden w-full mx-auto ff-bg-light md:block">
-<div class="font-medium border-b pb-1">
-v1.4.1 /<a class="mx-2" href="/docs">docs</a>/<a class="mx-2" href="/docs/user">user</a>/<a class="mx-2" href="/docs/user/project-settings">project-settings</a>
+<div class="w-full page post">
+<div class="post-title container m-auto text-center px-6 flex mt-6 mb-6 md:max-w-screen-lg md:mt-12">
+<div class="text-left md:pr-32">
+<label>Article</label>
+<h1>FlowForge v1.5 Now Available</h1>
+<h4>Updates to UI and architecture to allow for future features and Node-RED 3.1.0 Beta Available!</h4>
+<p class="author">
+<time value="">16 Mar, 2023</time>
+| Joe Pavitt
+</p>
 </div>
 </div>
-<div class="w-full mx-auto ff-bg-light flex flex-col md:flex-row">
-<div class="flex-grow order-last md:order-first">
-<div class="mt-6 mb-4 prose prose-blue main-content">
-<h1 id="project-settings" tabindex="-1"><a class="header-anchor" href="#project-settings">#&nbsp;</a> Project Settings</h1>
-<p>The Project Settings allow you to customize many aspects of your Node-RED runtime.</p>
-<p>Project Settings are split into a number of sections:</p>
+<div class="blog nohero w-full pt-6 pb-24 ff-bg-light">
+<div class="container m-auto text-left px-6 md:max-w-screen-lg">
+<a class="block mb-4 flex align-center gap-1" href="/blog">
+<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+<path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5"/>
+</svg>
+Back to Blog Posts
+</a>
+<div class="prose">
+<div>
+<div class="w-full h-auto">
+<picture><source type="image/avif" srcset="/img/release-150-8CtBbXVZpD-560.avif 560w, /img/release-150-8CtBbXVZpD-1120.avif 1120w" sizes="(min-device-pixel-ratio: 1.25) 1120px, (min-resolution: 120dpi) 1120px, 560px"><source type="image/webp" srcset="/img/release-150-8CtBbXVZpD-560.webp 560w, /img/release-150-8CtBbXVZpD-1120.webp 1120w" sizes="(min-device-pixel-ratio: 1.25) 1120px, (min-resolution: 120dpi) 1120px, 560px"><source type="image/jpeg" srcset="/img/release-150-8CtBbXVZpD-560.jpeg 560w, /img/release-150-8CtBbXVZpD-1120.jpeg 1120w" sizes="(min-device-pixel-ratio: 1.25) 1120px, (min-resolution: 120dpi) 1120px, 560px"><img alt="Image representing FlowForge v1.5 Now Available" loading="lazy" decoding="async" src="/img/release-150-8CtBbXVZpD-560.jpeg" width="1120" height="630"></picture>
+</div>
+</div>
+<p>For FlowForge 1.5 we have been busy making a lot of UX changes and upgrading our underlying architecture to enable future innovations on the FlowForge platform.</p>
+<p>With our recently announced <a href="/blog/2023/03/terminology-changes/">Terminology Changes</a>, we have introduced some new concepts into FlowForge.</p>
 <ul>
-<li><a href="#general">General</a></li>
-<li><a href="#environment">Environment</a></li>
-<li><a href="#editor">Editor</a></li>
-<li><a href="#security">Security</a></li>
-<li><a href="#palette">Palette</a></li>
+<li><strong>Application</strong>: A group of Node-RED Instances Each instance can run locally (in FlowForge) or remotely (on Devices)</li>
+<li><strong>Instances</strong>: We renamed &quot;Projects&quot; to &quot;Instances&quot; to be more inline with the terminology used in the Node-RED community</li>
 </ul>
-<h2 id="general" tabindex="-1"><a class="header-anchor" href="#general">#&nbsp;</a> General</h2>
-<p>This section includes a number of actions you can take on the project:</p>
-<h3 id="change-stack" tabindex="-1"><a class="header-anchor" href="#change-stack">#&nbsp;</a> Change Stack</h3>
-<p>The Project Stack determines the version of Node-RED being used. If a new stack is available, you can use this option to updated your project.</p>
-<h3 id="copy-project" tabindex="-1"><a class="header-anchor" href="#copy-project">#&nbsp;</a> Copy Project</h3>
-<p>This allows you to create a copy of the project in your team. Alternatively, you can use it to export certain parts of your project into an existing project.</p>
-<p>For example, you may want to have separate 'Development' and 'Production' projects using different Environment Variables to point the flows at different external resources. You can then use the 'Export into existing project' to copy over just the flows when you want to update your Production instance.</p>
-<h3 id="import-project" tabindex="-1"><a class="header-anchor" href="#import-project">#&nbsp;</a> Import Project</h3>
-<p>This allows you to take existing Node-RED flow and credential files and import them into your project.</p>
-<p>### Suspend Project</p>
-<p>This stops the project entirely.</p>
-<p>### Delete Project</p>
-<p>If you're really sure you don't want the project anymore, this allows you to delete it. You cannot undo deleting a project.</p>
-<h2 id="environment" tabindex="-1"><a class="header-anchor" href="#environment">#&nbsp;</a> Environment</h2>
-<p>This allows you to manage the project's environment variables. More information on working with environment variables is available <a href=".././envvar">here</a>.</p>
-<h2 id="editor" tabindex="-1"><a class="header-anchor" href="#editor">#&nbsp;</a> Editor</h2>
-<p>This covers a number of options to customize the Node-RED editor. This includes:</p>
+<p>As such, our User Experience has been updated to reflect these changes, and allow for further functionality to be introduced with our plans for <a href="https://github.com/flowforge/flowforge/issues/1689">Multiple Instances per Application</a>.</p>
+<h3 id="%22applications%22-view" tabindex="-1"><a class="header-anchor" href="#%22applications%22-view">#&nbsp;</a> &quot;Applications&quot; View</h3>
+<p>At the top-level in FlowForge, you can now see a list of your &quot;Appications&quot;. In FlowForge 1.5, as we still have a 1:1 relationship of Applications to Local Instances, this will be the same as the list of &quot;Projects&quot; that you're used to seeing.</p>
+<p><picture><source type="image/avif" srcset="/img/screenshot-applications-AkytJToK22-650.avif 650w, /img/screenshot-applications-AkytJToK22-1300.avif 1300w" sizes="(min-device-pixel-ratio: 1.25) 1300px, (min-resolution: 120dpi) 1300px, 650px"><source type="image/webp" srcset="/img/screenshot-applications-AkytJToK22-650.webp 650w, /img/screenshot-applications-AkytJToK22-1300.webp 1300w" sizes="(min-device-pixel-ratio: 1.25) 1300px, (min-resolution: 120dpi) 1300px, 650px"><source type="image/jpeg" srcset="/img/screenshot-applications-AkytJToK22-650.jpeg 650w, /img/screenshot-applications-AkytJToK22-1300.jpeg 1300w" sizes="(min-device-pixel-ratio: 1.25) 1300px, (min-resolution: 120dpi) 1300px, 650px"><img alt="Screenshot to show the new &quot;Applications&quot; view" loading="lazy" decoding="async" src="/img/screenshot-applications-AkytJToK22-650.jpeg" width="1300" height="752"></picture></p>
+<figcaption class="-mt-6 text-center"><b>"Applications" view in FlowForge, listing all available Applications</b></figcaption>
+<p>For 1.5, all of your settings, environment variables, etc. are all now at the &quot;Instance&quot; level. Applications will gain a lot more functionality in future releases.</p>
+<h3 id="%22instances%22-view" tabindex="-1"><a class="header-anchor" href="#%22instances%22-view">#&nbsp;</a> &quot;Instances&quot; View</h3>
+<p>When clicking on one of your Applications, you will see a list of Node-RED instances bound to that Application.</p>
+<p><picture><source type="image/avif" srcset="/img/screenshot-instances-x_OJho_xY6-650.avif 650w, /img/screenshot-instances-x_OJho_xY6-1300.avif 1300w" sizes="(min-device-pixel-ratio: 1.25) 1300px, (min-resolution: 120dpi) 1300px, 650px"><source type="image/webp" srcset="/img/screenshot-instances-x_OJho_xY6-650.webp 650w, /img/screenshot-instances-x_OJho_xY6-1300.webp 1300w" sizes="(min-device-pixel-ratio: 1.25) 1300px, (min-resolution: 120dpi) 1300px, 650px"><source type="image/jpeg" srcset="/img/screenshot-instances-x_OJho_xY6-650.jpeg 650w, /img/screenshot-instances-x_OJho_xY6-1300.jpeg 1300w" sizes="(min-device-pixel-ratio: 1.25) 1300px, (min-resolution: 120dpi) 1300px, 650px"><img alt="Screenshot to show the new &quot;Instances&quot; view" loading="lazy" decoding="async" src="/img/screenshot-instances-x_OJho_xY6-650.jpeg" width="1300" height="753"></picture></p>
+<figcaption class="-mt-6 text-center"><b>A list of Instances contained within a single Application.</b></figcaption>
+<p>Clicking on this Instance, will open up the &quot;Instance&quot; view, this is an exact replica of the &quot;Project&quot; view you'll be used to seeing in FlowForge, and contains all of the same functionality:</p>
+<p><picture><source type="image/avif" srcset="/img/screenshot-instance-TsRol4jZpH-650.avif 650w, /img/screenshot-instance-TsRol4jZpH-1300.avif 1300w" sizes="(min-device-pixel-ratio: 1.25) 1300px, (min-resolution: 120dpi) 1300px, 650px"><source type="image/webp" srcset="/img/screenshot-instance-TsRol4jZpH-650.webp 650w, /img/screenshot-instance-TsRol4jZpH-1300.webp 1300w" sizes="(min-device-pixel-ratio: 1.25) 1300px, (min-resolution: 120dpi) 1300px, 650px"><source type="image/jpeg" srcset="/img/screenshot-instance-TsRol4jZpH-650.jpeg 650w, /img/screenshot-instance-TsRol4jZpH-1300.jpeg 1300w" sizes="(min-device-pixel-ratio: 1.25) 1300px, (min-resolution: 120dpi) 1300px, 650px"><img alt="Screenshot to show the new &quot;Instances&quot; view" loading="lazy" decoding="async" src="/img/screenshot-instance-TsRol4jZpH-650.jpeg" width="1300" height="752"></picture></p>
+<figcaption class="-mt-6 text-center"><b>FlowForge 1.5's "Instance" view. This contains all of the functionality previously found in the "Project" view.</b></figcaption>
+<h3 id="devices-%26-managing-remote-instances" tabindex="-1"><a class="header-anchor" href="#devices-%26-managing-remote-instances">#&nbsp;</a> Devices &amp; Managing Remote Instances</h3>
+<p>Devices are now bound to &quot;Instances&quot;, you'll see these in the &quot;Devices&quot; view, and can be managed and deployed to in exactly the same way as before. Devices will run whatever you've selected as your &quot;Target Snapshot&quot; for this Instance.</p>
+<p><picture><source type="image/avif" srcset="/img/screenshot-devices-HJNIpmkq4C-650.avif 650w, /img/screenshot-devices-HJNIpmkq4C-1300.avif 1300w" sizes="(min-device-pixel-ratio: 1.25) 1300px, (min-resolution: 120dpi) 1300px, 650px"><source type="image/webp" srcset="/img/screenshot-devices-HJNIpmkq4C-650.webp 650w, /img/screenshot-devices-HJNIpmkq4C-1300.webp 1300w" sizes="(min-device-pixel-ratio: 1.25) 1300px, (min-resolution: 120dpi) 1300px, 650px"><source type="image/jpeg" srcset="/img/screenshot-devices-HJNIpmkq4C-650.jpeg 650w, /img/screenshot-devices-HJNIpmkq4C-1300.jpeg 1300w" sizes="(min-device-pixel-ratio: 1.25) 1300px, (min-resolution: 120dpi) 1300px, 650px"><img alt="Screenshot to show an Instance's &quot;Devices&quot; view" loading="lazy" decoding="async" src="/img/screenshot-devices-HJNIpmkq4C-650.jpeg" width="1300" height="752"></picture></p>
+<figcaption class="-mt-6 text-center"><b>"Devices" view, available for a given Node-RED Instance. This lists all of the connected devices to a given instance, that will automatically update when a new Target Snapshot is set.</b></figcaption>
+<h2 id="node-red-3.1-beta-available" tabindex="-1"><a class="header-anchor" href="#node-red-3.1-beta-available">#&nbsp;</a> Node-RED 3.1 Beta Available</h2>
+<p>FlowForge Cloud is a great place to try out the new Node-RED features, with FlowForge Cloud now including the <a href="https://discourse.nodered.org/t/node-red-3-1-0-beta-2-released/76192">Node-RED 3.1.0-beta.2</a>. If you want to try this version you can <a href="https://flowforge.com/docs/user/project-settings/#copy-project">duplicate your application</a> or <a href="https://flowforge.com/docs/user/changestack/">upgrade your stack</a>.</p>
+<h2 id="other-improvements" tabindex="-1"><a class="header-anchor" href="#other-improvements">#&nbsp;</a> Other Improvements</h2>
 <ul>
-<li>Disabling the editor entirely</li>
-<li>Modifying the paths the editor and dashboard are served on</li>
-<li>Controlling the runtime timezone</li>
+<li>Update to audit logs to improve usability [<a href="https://github.com/flowforge/flowforge/issues/1800">#1800</a>] [<a href="https://github.com/flowforge/flowforge/issues/1785">#1785</a>]</li>
+<li>Improve how licensing works with overages, for easier scaling of FlowForge and your Node-RED Instances [<a href="https://github.com/flowforge/flowforge/issues/1639">#1639</a>] [<a href="https://github.com/flowforge/flowforge/issues/1739">#1739</a>]</li>
 </ul>
-<h2 id="security" tabindex="-1"><a class="header-anchor" href="#security">#&nbsp;</a> Security</h2>
-<p>This allows you to modify the security settings of the runtime. In particular this covers the security applied to any HTTP routes served by the runtime.</p>
-<p>The default option is not to apply any security - so any HTTP In nodes, or Node-RED Dashboard can be accessed by anyone.</p>
-<p>You can optionally enabled Basic Authentication, with a single hardcoded username and password.</p>
-<p>Alternatively you can require anyone accessing those routes to be logged into FlowForge.</p>
-<h2 id="palette" tabindex="-1"><a class="header-anchor" href="#palette">#&nbsp;</a> Palette</h2>
-<p>This allows you to manage what extra nodes are installed inside Node-RED, as well as any restrictions you want to apply to the Palette Manager within Node-RED.</p>
+<h2 id="bug-fixes" tabindex="-1"><a class="header-anchor" href="#bug-fixes">#&nbsp;</a> Bug Fixes</h2>
+<ul>
+<li>Device &quot;Last Seen&quot; status shows &quot;never&quot; even though it has previously been seen [<a href="https://github.com/flowforge/flowforge/issues/1723">#1723</a>]</li>
+<li>Improved Safe Mode launch for small projects [<a href="https://github.com/flowforge/flowforge/issues/1579">#1579</a>]</li>
+</ul>
+<h2 id="try-it-out" tabindex="-1"><a class="header-anchor" href="#try-it-out">#&nbsp;</a> Try it out</h2>
+<p>We're confident you can have self managed FlowForge running locally in under 30 minutes. You can install our <a href="https://flowforge.com/docs/install/local/">local build</a>, use <a href="https://flowforge.com/docs/install/docker/">Docker</a>, or <a href="https://flowforge.com/docs/install/kubernetes/">Kubernetes</a>.</p>
+<p>If you'd rather use our hosted offering: <a href="https://app.flowforge.com/account/create">Get started for free</a> on FlowForge Cloud.</p>
+<h2 id="upgrading-flowforge" tabindex="-1"><a class="header-anchor" href="#upgrading-flowforge">#&nbsp;</a> Upgrading FlowForge</h2>
+<p><a href="https://app.flowforge.com">FlowForge Cloud</a> is already running 1.5.</p>
+<p>If you installed a previous version of FlowForge and want to upgrade, our documentation provides a guide for <a href="https://flowforge.com/docs/upgrade/">upgrading your FlowForge instance</a>.</p>
+<h2 id="getting-help" tabindex="-1"><a class="header-anchor" href="#getting-help">#&nbsp;</a> Getting help</h2>
+<p>Please check FlowForge's <a href="https://flowforge.com/docs/">documentation</a> as the answers to many questions are covered there.</p>
+<p>If you hit any problems with the platform please raise an <a href="https://github.com/flowforge/flowforge/issues">issue on GitHub</a>. That's also a great place to send us any feedback or feature requests.</p>
+<p>You can also get help on <a href="https://discourse.nodered.org/">the Node-RED forums</a></p>
+<p>As well as in the <a href="https://github.com/flowforge/flowforge/discussions">forum within our Github project</a></p>
+<p>Chat with us on the <code>#flowforge</code> channel on the <a href="https://nodered.org/slack">Node-RED Slack workspace</a></p>
+<p>You can raise a support ticket by emailing <a href="mailto:support@flowforge.com">support@flowforge.com</a></p>
+<p>We've also added a live chat widget to our website, you can access it using the icon on the bottom right corner of our website. We'd love to hear from you.</p>
 </div>
-</div>
-</div>
-</div>
-<div class="border-l">
-<div class="block px-8 pt-4 w-full mx-auto ff-bg-light md:hidden">
-<div class="font-medium border-b pb-1">
-v1.4.1 /<a class="mx-2" href="/docs">docs</a>/<a class="mx-2" href="/docs/user">user</a>/<a class="mx-2" href="/docs/user/project-settings">project-settings</a>
-</div>
-</div>
-<div class="sticky top-6 w-full md:w-64 mt-4 md:mt-6 px-8">
-<h3 class="font-medium border-b pb-1 mb-4">on this page</h3>
-<ul id="toc" class="text-sm border-b mb-4"></ul>
-<div class="text-sm pb-1 text-right mb-4"><a href="https://github.com/flowforge/flowforge/edit/main/docs/user/project-settings.md">Edit this page</a></div>
-<div class="text-xs pb-1 text-right mb-4 italic">Updated: 2023-03-13 11:25:24 +0000</div>
-</div>
-</div>
-</div>
+<div class="mt-12 pt-6 flex flex-col border-t-2">
+<h3 class="mb-6">Sign up for updates</h3>
 <script>
-// Generate "On this page"
-    let toc = document.getElementById("toc")
-
-    let currentTag = "";
-    let currentToc = toc;
-    let currentItem;
-
-    let activeTier = 0 // which index to read from the depth
-    let depth = [1, 1, 1, 1] // tracks the active number to render at each depth
-
-    document.querySelectorAll(".main-content > h2, .main-content > h3, .main-content > h4").forEach(function(n) {
-        // which level of "H_" are we working with, and which one did we see most recently
-        const level = parseInt(n.nodeName[1])
-        const prevLevel = currentTag.length > 1 ? parseInt(currentTag[1]) : 0
-
-        // Render Table of Contents
-        if (prevLevel > 0 && level - prevLevel < 0) {
-            // we are moving left with our indent
-            currentToc = toc;
-        } else if (prevLevel > 0 && level - prevLevel > 0) {
-            // we are creating a new, nested `<ul>`
-            currentToc = document.createElement("ul");
-            currentToc.classList.add("ml-4")
-            currentToc.classList.add("mt-2")
-            currentToc.classList.add("mb-4")
-            currentItem.append(currentToc);
-        }
-        currentTag = n.nodeName;
-        currentItem = document.createElement("li");
-        currentItem.classList.add("mb-2")
-        let currentLink = document.createElement("a");
-        currentItem.append(currentLink);
-        let link = n.getElementsByTagName('a')
-        currentLink.href = link[0].href;
-        currentLink.textContent = n.textContent.replace(/#\s+/g,"");
-        currentToc.append(currentItem);
-    })
-
-    // All external links open in new page
-    document.querySelectorAll("[data-docs] a").forEach((link) => {
-        try {
-            if (!link.target && window.location.host !== new URL(link.href).host) {
-                link.target = "_blank";
-            }
-        } catch {
-            // Swallow errors
-        }
-    })
+function displayHubSpotForm() {
+                        hbspt.forms.create({
+                            region: "eu1",
+                            portalId: "26586079",
+                            formId: "159c173d-dd95-49bd-922b-ff3ef243e90c",
+                            onFormSubmit: function($form) {
+                                capture('cta-blog-subscribe', {'position': 'article'})
+                            }
+                        });
+                    }
 </script>
-<script type="module">
-import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@10.0.0/dist/mermaid.esm.mjs";
-    mermaid.initialize({startOnLoad:true});
-</script>
+<script async type="text/javascript" charset="utf-8" src="//js-eu1.hsforms.net/forms/embed/v2.js" onload="displayHubSpotForm()"></script>
+</div>
+</div>
+</div>
+</div>
 <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/19.1.1/tooltips.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'" crossorigin="anonymous" referrerpolicy="no-referrer">
 <script>function showTooltip(o,e){o.trigger.className.includes("tooltipped")||(o.trigger.children[0].className="tooltipped tooltipped-s",o.trigger.children[0].ariaLabel=e)}window.addEventListener("load",()=>{var o=new ClipboardJS(".code-copy");o.on("success",o=>showTooltip(o,"Copied!")),o.on("error",o=>showTooltip(o,"Failed..."))});</script>
 <script async src="https://cdn.jsdelivr.net/npm/clipboard@2.0.8/dist/clipboard.js"></script>
 <link rel="preload" href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism-tomorrow.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'" crossorigin="anonymous" referrerpolicy="no-referrer">
-</div>
-</div>
-</div>
 </main>
 </div>
 </div>

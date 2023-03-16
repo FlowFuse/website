@@ -316,6 +316,11 @@ filenodes
 </a>
 </li>
 <li>
+<a href="/docs/user/instance-settings/">
+instance-settings
+</a>
+</li>
+<li>
 <a href="/docs/user/logs/">
 logs
 </a>
@@ -336,16 +341,6 @@ persistent-context
 </a>
 </li>
 <li>
-<a href="/docs/user/project-settings/">
-project-settings
-</a>
-</li>
-<li>
-<a href="/docs/user/project-stages/">
-project-stages
-</a>
-</li>
-<li>
 <a href="/docs/user/projectnodes/">
 projectnodes
 </a>
@@ -358,6 +353,11 @@ shared-library
 <li>
 <a href="/docs/user/snapshots/">
 snapshots
+</a>
+</li>
+<li>
+<a href="/docs/user/staged-deployments/">
+staged-deployments
 </a>
 </li>
 <li>
@@ -527,7 +527,7 @@ open-source-to-premium
 <div class="max-w-screen-lg mx-auto px-8 pt-8">
 <div class="hidden w-full mx-auto ff-bg-light md:block">
 <div class="font-medium border-b pb-1">
-v1.4.1 /<a class="mx-2" href="/docs">docs</a>/<a class="mx-2" href="/docs/admin">admin</a>/<a class="mx-2" href="/docs/admin/telemetry">telemetry</a>
+v1.5.0 /<a class="mx-2" href="/docs">docs</a>/<a class="mx-2" href="/docs/admin">admin</a>/<a class="mx-2" href="/docs/admin/telemetry">telemetry</a>
 </div>
 </div>
 <div class="w-full mx-auto ff-bg-light flex flex-col md:flex-row">
@@ -545,9 +545,10 @@ v1.4.1 /<a class="mx-2" href="/docs">docs</a>/<a class="mx-2" href="/docs/admin"
 <h3 id="configuring-telemetry" tabindex="-1"><a class="header-anchor" href="#configuring-telemetry">#&nbsp;</a> Configuring Telemetry</h3>
 <p>By default, usage telemetry is enabled on the platform. The administrator can opt-out of sharing information as part of the initial setup, or through the Admin Settings section of the platform UI.</p>
 <p>It is also possible to disable in the <code>flowforge.yml</code> configuration file. This overrides whatever option is set in the Admin Settings UI.</p>
+<p><strong>IMPORTANT: Licensed installations cannot disable telemetry</strong></p>
 <div style="position: relative">
-<pre class="language-yaml"><code id="code-36" class="language-yaml"><span class="token key atrule">telemetry</span><span class="token punctuation">:</span><br>  <span class="token key atrule">enabled</span><span class="token punctuation">:</span> <span class="token boolean important">false</span></code></pre>
-<button class="code-copy" data-clipboard-target="#code-36" style="position: absolute; top: 7.5px; right: 6px; cursor: pointer; outline: none; opacity: 0.8;" title="Copy">
+<pre class="language-yaml"><code id="code-39" class="language-yaml"><span class="token key atrule">telemetry</span><span class="token punctuation">:</span><br>  <span class="token key atrule">enabled</span><span class="token punctuation">:</span> <span class="token boolean important">false</span></code></pre>
+<button class="code-copy" data-clipboard-target="#code-39" style="position: absolute; top: 7.5px; right: 6px; cursor: pointer; outline: none; opacity: 0.8;" title="Copy">
 <span>
 <span style="font-size: 15px; opacity: 0.8;" class="mdi mdi-content-copy"></span>
 </span>
@@ -556,8 +557,8 @@ v1.4.1 /<a class="mx-2" href="/docs">docs</a>/<a class="mx-2" href="/docs/admin"
 <h3 id="collected-data" tabindex="-1"><a class="header-anchor" href="#collected-data">#&nbsp;</a> Collected Data</h3>
 <p>The following pieces of information are included in the telemetry sent back to us:</p>
 <div style="position: relative">
-<pre class="language-js"><code id="code-43" class="language-js"><span class="token punctuation">{</span><br>  <span class="token literal-property property">instanceId</span><span class="token operator">:</span> <span class="token string">'5db51f99-c6fb-4340-9c19-78adce58cc1b'</span><span class="token punctuation">,</span><br>  <span class="token literal-property property">os</span><span class="token operator">:</span> <span class="token punctuation">{</span> <span class="token literal-property property">type</span><span class="token operator">:</span> <span class="token string">'Darwin'</span><span class="token punctuation">,</span> <span class="token literal-property property">release</span><span class="token operator">:</span> <span class="token string">'20.5.0'</span><span class="token punctuation">,</span> <span class="token literal-property property">arch</span><span class="token operator">:</span> <span class="token string">'x64'</span> <span class="token punctuation">}</span><span class="token punctuation">,</span><br>  <span class="token literal-property property">env</span><span class="token operator">:</span> <span class="token punctuation">{</span> <span class="token literal-property property">nodejs</span><span class="token operator">:</span> <span class="token string">'v16.13.1'</span><span class="token punctuation">,</span> <span class="token literal-property property">flowforge</span><span class="token operator">:</span> <span class="token string">'0.1.1'</span> <span class="token punctuation">}</span><span class="token punctuation">,</span><br>  <span class="token literal-property property">platform</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token literal-property property">counts</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>        <span class="token literal-property property">users</span><span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span><br>        <span class="token literal-property property">teams</span><span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span><br>        <span class="token literal-property property">projects</span><span class="token operator">:</span> <span class="token number">0</span><br>    <span class="token punctuation">}</span><span class="token punctuation">,</span><br>    <span class="token literal-property property">config</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>        <span class="token literal-property property">driver</span><span class="token operator">:</span> <span class="token string">'localfs'</span><br>    <span class="token punctuation">}</span><br>  <span class="token punctuation">}</span><br><span class="token punctuation">}</span></code></pre>
-<button class="code-copy" data-clipboard-target="#code-43" style="position: absolute; top: 7.5px; right: 6px; cursor: pointer; outline: none; opacity: 0.8;" title="Copy">
+<pre class="language-json"><code id="code-46" class="language-json"><span class="token punctuation">{</span><br>  <span class="token property">"instanceId"</span><span class="token operator">:</span> <span class="token string">"5db51f99-c6fb-4340-9c19-78adce58cc1b"</span><span class="token punctuation">,</span><br>  <span class="token property">"os"</span><span class="token operator">:</span> <span class="token punctuation">{</span> <span class="token property">"type"</span><span class="token operator">:</span> <span class="token string">"Darwin"</span><span class="token punctuation">,</span> <span class="token property">"release"</span><span class="token operator">:</span> <span class="token string">"20.5.0"</span><span class="token punctuation">,</span> <span class="token property">"arch"</span><span class="token operator">:</span> <span class="token string">"x64"</span> <span class="token punctuation">}</span><span class="token punctuation">,</span><br>  <span class="token property">"env"</span><span class="token operator">:</span> <span class="token punctuation">{</span> <span class="token property">"nodejs"</span><span class="token operator">:</span> <span class="token string">"v16.19.1"</span><span class="token punctuation">,</span> <span class="token property">"flowforge"</span><span class="token operator">:</span> <span class="token string">"1.0.0"</span> <span class="token punctuation">}</span><span class="token punctuation">,</span><br>  <span class="token property">"platform"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token property">"counts"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>      <span class="token property">"users"</span><span class="token operator">:</span> <span class="token number">6</span><span class="token punctuation">,</span><br>      <span class="token property">"teams"</span><span class="token operator">:</span> <span class="token number">5</span><span class="token punctuation">,</span><br>      <span class="token property">"projects"</span><span class="token operator">:</span> <span class="token number">4</span><span class="token punctuation">,</span><br>      <span class="token property">"devices"</span><span class="token operator">:</span> <span class="token number">9</span><span class="token punctuation">,</span><br>      <span class="token property">"projectSnapshots"</span><span class="token operator">:</span> <span class="token number">16</span><span class="token punctuation">,</span><br>      <span class="token property">"projectTemplates"</span><span class="token operator">:</span> <span class="token number">7</span><span class="token punctuation">,</span><br>      <span class="token property">"projectStacks"</span><span class="token operator">:</span> <span class="token number">2</span><span class="token punctuation">,</span><br>      <span class="token property">"libraryEntries"</span><span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span><br>      <span class="token property">"sharedLibraryEntries"</span><span class="token operator">:</span> <span class="token number">2</span><br>    <span class="token punctuation">}</span><span class="token punctuation">,</span><br>    <span class="token property">"config"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>      <span class="token property">"driver"</span><span class="token operator">:</span> <span class="token string">"localfs"</span><span class="token punctuation">,</span><br>      <span class="token property">"broker"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>        <span class="token property">"enabled"</span><span class="token operator">:</span> <span class="token boolean">true</span><br>      <span class="token punctuation">}</span><span class="token punctuation">,</span><br>      <span class="token property">"fileStore"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>        <span class="token property">"enabled"</span><span class="token operator">:</span> <span class="token boolean">true</span><br>      <span class="token punctuation">}</span><span class="token punctuation">,</span><br>      <span class="token property">"email"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>        <span class="token property">"enabled"</span><span class="token operator">:</span> <span class="token boolean">false</span><br>      <span class="token punctuation">}</span><br>    <span class="token punctuation">}</span><span class="token punctuation">,</span><br>    <span class="token property">"license"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>      <span class="token property">"id"</span><span class="token operator">:</span> <span class="token string">"4c105579-782b-4d53-af62-cf7fa69f6b43"</span><span class="token punctuation">,</span><br>      <span class="token property">"type"</span><span class="token operator">:</span> <span class="token string">"DEV"</span><br>    <span class="token punctuation">}</span><br>  <span class="token punctuation">}</span><br><span class="token punctuation">}</span></code></pre>
+<button class="code-copy" data-clipboard-target="#code-46" style="position: absolute; top: 7.5px; right: 6px; cursor: pointer; outline: none; opacity: 0.8;" title="Copy">
 <span>
 <span style="font-size: 15px; opacity: 0.8;" class="mdi mdi-content-copy"></span>
 </span>
@@ -585,11 +586,31 @@ v1.4.1 /<a class="mx-2" href="/docs">docs</a>/<a class="mx-2" href="/docs/admin"
 </tr>
 <tr>
 <td><code>platform.counts</code></td>
-<td>A snap-shot of the number of users, teams and projects on the platform.</td>
+<td>A snapshot of the number of users, teams, projects (instances), etc, in use on the platform.</td>
 </tr>
 <tr>
 <td><code>platform.config.driver</code></td>
 <td>Which backend driver is being used</td>
+</tr>
+<tr>
+<td><code>platform.config.broker.enabled</code></td>
+<td>A flag indicating whether the the internal comms broker is enabled</td>
+</tr>
+<tr>
+<td><code>platform.config.fileStore.enabled</code></td>
+<td>A flag indicating whether the file store is enabled</td>
+</tr>
+<tr>
+<td><code>platform.config.email.enabled</code></td>
+<td>A flag indicating whether email is enabled</td>
+</tr>
+<tr>
+<td><code>platform.license.id</code></td>
+<td>The ID of the license loaded</td>
+</tr>
+<tr>
+<td><code>platform.license.type</code></td>
+<td>The type of the license</td>
 </tr>
 </tbody>
 </table>
@@ -632,8 +653,8 @@ v1.4.1 /<a class="mx-2" href="/docs">docs</a>/<a class="mx-2" href="/docs/admin"
 </tbody>
 </table>
 <div style="position: relative">
-<pre class="language-yaml"><code id="code-184" class="language-yaml"><span class="token key atrule">telemetry</span><span class="token punctuation">:</span><br>  <span class="token key atrule">enabled</span><span class="token punctuation">:</span> <span class="token boolean important">true</span><br>  <span class="token key atrule">frontend</span><span class="token punctuation">:</span><br>    <span class="token key atrule">posthog</span><span class="token punctuation">:</span><br>      <span class="token key atrule">apikey</span><span class="token punctuation">:</span> &lt;api<span class="token punctuation">-</span>key<span class="token punctuation">></span><br>      <span class="token key atrule">capture_pageview</span><span class="token punctuation">:</span> <span class="token boolean important">false</span></code></pre>
-<button class="code-copy" data-clipboard-target="#code-184" style="position: absolute; top: 7.5px; right: 6px; cursor: pointer; outline: none; opacity: 0.8;" title="Copy">
+<pre class="language-yaml"><code id="code-227" class="language-yaml"><span class="token key atrule">telemetry</span><span class="token punctuation">:</span><br>  <span class="token key atrule">enabled</span><span class="token punctuation">:</span> <span class="token boolean important">true</span><br>  <span class="token key atrule">frontend</span><span class="token punctuation">:</span><br>    <span class="token key atrule">posthog</span><span class="token punctuation">:</span><br>      <span class="token key atrule">apikey</span><span class="token punctuation">:</span> &lt;api<span class="token punctuation">-</span>key<span class="token punctuation">></span><br>      <span class="token key atrule">capture_pageview</span><span class="token punctuation">:</span> <span class="token boolean important">false</span></code></pre>
+<button class="code-copy" data-clipboard-target="#code-227" style="position: absolute; top: 7.5px; right: 6px; cursor: pointer; outline: none; opacity: 0.8;" title="Copy">
 <span>
 <span style="font-size: 15px; opacity: 0.8;" class="mdi mdi-content-copy"></span>
 </span>
@@ -646,14 +667,14 @@ v1.4.1 /<a class="mx-2" href="/docs">docs</a>/<a class="mx-2" href="/docs/admin"
 <div class="border-l">
 <div class="block px-8 pt-4 w-full mx-auto ff-bg-light md:hidden">
 <div class="font-medium border-b pb-1">
-v1.4.1 /<a class="mx-2" href="/docs">docs</a>/<a class="mx-2" href="/docs/admin">admin</a>/<a class="mx-2" href="/docs/admin/telemetry">telemetry</a>
+v1.5.0 /<a class="mx-2" href="/docs">docs</a>/<a class="mx-2" href="/docs/admin">admin</a>/<a class="mx-2" href="/docs/admin/telemetry">telemetry</a>
 </div>
 </div>
 <div class="sticky top-6 w-full md:w-64 mt-4 md:mt-6 px-8">
 <h3 class="font-medium border-b pb-1 mb-4">on this page</h3>
 <ul id="toc" class="text-sm border-b mb-4"></ul>
 <div class="text-sm pb-1 text-right mb-4"><a href="https://github.com/flowforge/flowforge/edit/main/docs/admin/telemetry.md">Edit this page</a></div>
-<div class="text-xs pb-1 text-right mb-4 italic">Updated: 2023-03-13 11:25:24 +0000</div>
+<div class="text-xs pb-1 text-right mb-4 italic">Updated: 2023-03-16 10:55:00 +0000</div>
 </div>
 </div>
 </div>

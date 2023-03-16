@@ -316,6 +316,11 @@ filenodes
 </a>
 </li>
 <li>
+<a href="/docs/user/instance-settings/">
+instance-settings
+</a>
+</li>
+<li>
 <a href="/docs/user/logs/">
 logs
 </a>
@@ -336,16 +341,6 @@ persistent-context
 </a>
 </li>
 <li>
-<a href="/docs/user/project-settings/">
-project-settings
-</a>
-</li>
-<li>
-<a href="/docs/user/project-stages/">
-project-stages
-</a>
-</li>
-<li>
 <a href="/docs/user/projectnodes/">
 projectnodes
 </a>
@@ -358,6 +353,11 @@ shared-library
 <li>
 <a href="/docs/user/snapshots/">
 snapshots
+</a>
+</li>
+<li>
+<a href="/docs/user/staged-deployments/">
+staged-deployments
 </a>
 </li>
 <li>
@@ -527,7 +527,7 @@ open-source-to-premium
 <div class="max-w-screen-lg mx-auto px-8 pt-8">
 <div class="hidden w-full mx-auto ff-bg-light md:block">
 <div class="font-medium border-b pb-1">
-v1.4.1 /<a class="mx-2" href="/docs">docs</a>/<a class="mx-2" href="/docs/contribute">contribute</a>/<a class="mx-2" href="/docs/contribute/api-design">api-design</a>
+v1.5.0 /<a class="mx-2" href="/docs">docs</a>/<a class="mx-2" href="/docs/contribute">contribute</a>/<a class="mx-2" href="/docs/contribute/api-design">api-design</a>
 </div>
 </div>
 <div class="w-full mx-auto ff-bg-light flex flex-col md:flex-row">
@@ -594,13 +594,14 @@ v1.4.1 /<a class="mx-2" href="/docs">docs</a>/<a class="mx-2" href="/docs/contri
 </button>
 </div>
 <h3 id="team-routes" tabindex="-1"><a class="header-anchor" href="#team-routes">#&nbsp;</a> Team routes</h3>
-<p>Routes under <code>forge/routes/api/team.js</code> that relate to a specific team, must use <code>:teamId</code> as the placeholder in the route. A request preHandler will use that to ensure the requesting user has permission to access the project.</p>
+<p>Routes under <code>forge/routes/api/team.js</code> that relate to a specific team, must use <code>:teamId</code> as the placeholder in the route. A request preHandler will use that to ensure the requesting user has permission to access the instance.</p>
 <p>The following properties will then be available on the <code>request</code>:</p>
 <ul>
 <li><code>request.team</code> - the team</li>
 <li><code>request.teamMembership</code> - the requesting user's role on the team</li>
 </ul>
 <h3 id="project-routes" tabindex="-1"><a class="header-anchor" href="#project-routes">#&nbsp;</a> Project routes</h3>
+<p><strong>Note:</strong> In FlowForge 1.5 we started to replace the Project concept with that of Application and Instance. No changes have been made to the underlying APIs - that will be evaluated as part of 1.6.</p>
 <p>Routes under <code>forge/routes/api/project.js</code> that relate to a specific project, must use <code>:projectId</code> as the placeholder in the route. A request preHandler will use that to ensure the requesting user has permission to access the project.</p>
 <p>The following properties will then be available on the <code>request</code>:</p>
 <ul>
@@ -614,8 +615,8 @@ v1.4.1 /<a class="mx-2" href="/docs">docs</a>/<a class="mx-2" href="/docs/contri
 <p>For example, to add a user to a team, the requesting user needs to have
 <code>&quot;team:user:add&quot;</code>:</p>
 <div style="position: relative">
-<pre class="language-js"><code id="code-119" class="language-js">app<span class="token punctuation">.</span><span class="token function">post</span><span class="token punctuation">(</span><span class="token string">'/'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> <span class="token literal-property property">preHandler</span><span class="token operator">:</span> app<span class="token punctuation">.</span><span class="token function">needsPermission</span><span class="token punctuation">(</span><span class="token string">"team:user:add"</span><span class="token punctuation">)</span> <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token keyword">async</span> <span class="token punctuation">(</span><span class="token parameter">request<span class="token punctuation">,</span> reply</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span><br>    <span class="token comment">// This is defined under forge/routes/api/teamMembers.js - and is mounted</span><br>    <span class="token comment">// under the path `/api/v1/teams/:teamId/members/`</span><br>    <span class="token comment">// Due to the team route preHandler, this means `request.teamMembership`</span><br>    <span class="token comment">// will be defined and will be used by the `needsPermission` handler</span><br><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
-<button class="code-copy" data-clipboard-target="#code-119" style="position: absolute; top: 7.5px; right: 6px; cursor: pointer; outline: none; opacity: 0.8;" title="Copy">
+<pre class="language-js"><code id="code-122" class="language-js">app<span class="token punctuation">.</span><span class="token function">post</span><span class="token punctuation">(</span><span class="token string">'/'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> <span class="token literal-property property">preHandler</span><span class="token operator">:</span> app<span class="token punctuation">.</span><span class="token function">needsPermission</span><span class="token punctuation">(</span><span class="token string">"team:user:add"</span><span class="token punctuation">)</span> <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token keyword">async</span> <span class="token punctuation">(</span><span class="token parameter">request<span class="token punctuation">,</span> reply</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span><br>    <span class="token comment">// This is defined under forge/routes/api/teamMembers.js - and is mounted</span><br>    <span class="token comment">// under the path `/api/v1/teams/:teamId/members/`</span><br>    <span class="token comment">// Due to the team route preHandler, this means `request.teamMembership`</span><br>    <span class="token comment">// will be defined and will be used by the `needsPermission` handler</span><br><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<button class="code-copy" data-clipboard-target="#code-122" style="position: absolute; top: 7.5px; right: 6px; cursor: pointer; outline: none; opacity: 0.8;" title="Copy">
 <span>
 <span style="font-size: 15px; opacity: 0.8;" class="mdi mdi-content-copy"></span>
 </span>
@@ -624,8 +625,8 @@ v1.4.1 /<a class="mx-2" href="/docs">docs</a>/<a class="mx-2" href="/docs/contri
 <h2 id="error-formats" tabindex="-1"><a class="header-anchor" href="#error-formats">#&nbsp;</a> Error formats</h2>
 <p>If a route needs to return an error it should respond with a payload in the format:</p>
 <div style="position: relative">
-<pre class="language-js"><code id="code-126" class="language-js"><span class="token punctuation">{</span><br>    <span class="token literal-property property">code</span><span class="token operator">:</span> <span class="token string">'error_code'</span><span class="token punctuation">,</span><br>    <span class="token literal-property property">error</span><span class="token operator">:</span> <span class="token string">'Human-readable message'</span><br><span class="token punctuation">}</span></code></pre>
-<button class="code-copy" data-clipboard-target="#code-126" style="position: absolute; top: 7.5px; right: 6px; cursor: pointer; outline: none; opacity: 0.8;" title="Copy">
+<pre class="language-js"><code id="code-129" class="language-js"><span class="token punctuation">{</span><br>    <span class="token literal-property property">code</span><span class="token operator">:</span> <span class="token string">'error_code'</span><span class="token punctuation">,</span><br>    <span class="token literal-property property">error</span><span class="token operator">:</span> <span class="token string">'Human-readable message'</span><br><span class="token punctuation">}</span></code></pre>
+<button class="code-copy" data-clipboard-target="#code-129" style="position: absolute; top: 7.5px; right: 6px; cursor: pointer; outline: none; opacity: 0.8;" title="Copy">
 <span>
 <span style="font-size: 15px; opacity: 0.8;" class="mdi mdi-content-copy"></span>
 </span>
@@ -654,8 +655,8 @@ v1.4.1 /<a class="mx-2" href="/docs">docs</a>/<a class="mx-2" href="/docs/contri
 </ul>
 <p>The response object for paginated end-points should have the format:</p>
 <div style="position: relative">
-<pre class="language-js"><code id="code-195" class="language-js"><span class="token punctuation">{</span><br>    <span class="token string-property property">"meta"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>        <span class="token string-property property">"next_cursor"</span><span class="token operator">:</span> <span class="token string">"16416724188790000"</span><span class="token punctuation">,</span><br>    <span class="token punctuation">}</span><span class="token punctuation">,</span><br>    <span class="token string-property property">"&lt;object-type>"</span><span class="token operator">:</span> <span class="token punctuation">[</span> <span class="token punctuation">]</span><span class="token punctuation">,</span><br>    <span class="token string-property property">"count"</span><span class="token operator">:</span> <span class="token number">123</span><br><span class="token punctuation">}</span></code></pre>
-<button class="code-copy" data-clipboard-target="#code-195" style="position: absolute; top: 7.5px; right: 6px; cursor: pointer; outline: none; opacity: 0.8;" title="Copy">
+<pre class="language-js"><code id="code-198" class="language-js"><span class="token punctuation">{</span><br>    <span class="token string-property property">"meta"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>        <span class="token string-property property">"next_cursor"</span><span class="token operator">:</span> <span class="token string">"16416724188790000"</span><span class="token punctuation">,</span><br>    <span class="token punctuation">}</span><span class="token punctuation">,</span><br>    <span class="token string-property property">"&lt;object-type>"</span><span class="token operator">:</span> <span class="token punctuation">[</span> <span class="token punctuation">]</span><span class="token punctuation">,</span><br>    <span class="token string-property property">"count"</span><span class="token operator">:</span> <span class="token number">123</span><br><span class="token punctuation">}</span></code></pre>
+<button class="code-copy" data-clipboard-target="#code-198" style="position: absolute; top: 7.5px; right: 6px; cursor: pointer; outline: none; opacity: 0.8;" title="Copy">
 <span>
 <span style="font-size: 15px; opacity: 0.8;" class="mdi mdi-content-copy"></span>
 </span>
@@ -688,8 +689,8 @@ returned by end-points used to query logs etc as the total count is a constantly
 <h4 id="app.getpaginationoptions" tabindex="-1"><a class="header-anchor" href="#app.getpaginationoptions">#&nbsp;</a> <code>app.getPaginationOptions</code></h4>
 <p>This returns an object of pagination options for a given request, with any default values automatically applied:</p>
 <div style="position: relative">
-<pre class="language-js"><code id="code-258" class="language-js"><span class="token keyword">const</span> paginationOptions <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">getPaginationOptions</span><span class="token punctuation">(</span>request<span class="token punctuation">,</span> <span class="token punctuation">{</span><span class="token literal-property property">limit</span><span class="token operator">:</span> <span class="token number">1000</span><span class="token punctuation">}</span><span class="token punctuation">)</span><br><br><span class="token comment">// paginationOptions.limit = how many results to return</span><br><span class="token comment">// paginationOptions.cursor = starting cursor</span><br><span class="token comment">// paginationOptions.query = search string to use</span><br><span class="token comment">// paginationOptions.* = any remaining query parameters</span></code></pre>
-<button class="code-copy" data-clipboard-target="#code-258" style="position: absolute; top: 7.5px; right: 6px; cursor: pointer; outline: none; opacity: 0.8;" title="Copy">
+<pre class="language-js"><code id="code-261" class="language-js"><span class="token keyword">const</span> paginationOptions <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">getPaginationOptions</span><span class="token punctuation">(</span>request<span class="token punctuation">,</span> <span class="token punctuation">{</span><span class="token literal-property property">limit</span><span class="token operator">:</span> <span class="token number">1000</span><span class="token punctuation">}</span><span class="token punctuation">)</span><br><br><span class="token comment">// paginationOptions.limit = how many results to return</span><br><span class="token comment">// paginationOptions.cursor = starting cursor</span><br><span class="token comment">// paginationOptions.query = search string to use</span><br><span class="token comment">// paginationOptions.* = any remaining query parameters</span></code></pre>
+<button class="code-copy" data-clipboard-target="#code-261" style="position: absolute; top: 7.5px; right: 6px; cursor: pointer; outline: none; opacity: 0.8;" title="Copy">
 <span>
 <span style="font-size: 15px; opacity: 0.8;" class="mdi mdi-content-copy"></span>
 </span>
@@ -713,8 +714,8 @@ function.</p>
 <li>any <code>type=&lt;abc&gt;</code> parameter will filter on the <code>type</code> column.</li>
 </ul>
 <div style="position: relative">
-<pre class="language-js"><code id="code-306" class="language-js"><span class="token keyword">const</span> <span class="token punctuation">{</span> buildPaginationSearchClause <span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'../utils'</span><span class="token punctuation">)</span><br><br><span class="token operator">...</span><br><br><span class="token function-variable function">getAll</span><span class="token operator">:</span> <span class="token keyword">async</span> <span class="token punctuation">(</span><span class="token parameter">pagination <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span> where <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span></span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span><br>    <span class="token comment">// Ensure a sensible default limit for this particular type of thing</span><br>    <span class="token keyword">const</span> limit <span class="token operator">=</span> <span class="token function">parseInt</span><span class="token punctuation">(</span>pagination<span class="token punctuation">.</span>limit<span class="token punctuation">)</span> <span class="token operator">||</span> <span class="token number">1000</span><br><br>    <span class="token comment">// Decode the cursor from hashid to database id</span><br>    <span class="token keyword">if</span> <span class="token punctuation">(</span>pagination<span class="token punctuation">.</span>cursor<span class="token punctuation">)</span> <span class="token punctuation">{</span><br>        pagination<span class="token punctuation">.</span>cursor <span class="token operator">=</span> <span class="token constant">M</span><span class="token punctuation">.</span>Thing<span class="token punctuation">.</span><span class="token function">decodeHashid</span><span class="token punctuation">(</span>pagination<span class="token punctuation">.</span>cursor<span class="token punctuation">)</span><br>    <span class="token punctuation">}</span><br><br>    <span class="token comment">// Build the full where query using the buildPaginationSearchClause utility.</span><br>    <span class="token comment">// We pass in the list of columns that should be searched against</span><br>    where <span class="token operator">=</span> <span class="token function">buildPaginationSearchClause</span><span class="token punctuation">(</span><br>        pagination<span class="token punctuation">,</span><br>        where<span class="token punctuation">,</span><br>        <span class="token punctuation">[</span><span class="token string">'Thing.name'</span><span class="token punctuation">,</span> <span class="token string">'Thing.description'</span><span class="token punctuation">]</span><span class="token punctuation">,</span><br>        <span class="token punctuation">{</span><br>            <span class="token literal-property property">type</span><span class="token operator">:</span> <span class="token string">'Thing.type'</span><br>        <span class="token punctuation">}</span><br>    <span class="token punctuation">)</span><br><br>    <span class="token comment">// Run the query</span><br>    <span class="token keyword">const</span> <span class="token punctuation">{</span> count<span class="token punctuation">,</span> rows <span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token keyword">await</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">findAndCountAll</span><span class="token punctuation">(</span><span class="token punctuation">{</span><br>        where<span class="token punctuation">,</span><br>        <span class="token literal-property property">order</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token string">'id'</span><span class="token punctuation">,</span> <span class="token string">'ASC'</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">,</span><br>        limit<br>    <span class="token punctuation">}</span><span class="token punctuation">)</span><br><br>    <span class="token comment">// Return the results with the additional metadata</span><br>    <span class="token keyword">return</span> <span class="token punctuation">{</span><br>        <span class="token literal-property property">meta</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>            <span class="token literal-property property">next_cursor</span><span class="token operator">:</span> rows<span class="token punctuation">.</span>length <span class="token operator">===</span> limit <span class="token operator">?</span> rows<span class="token punctuation">[</span>rows<span class="token punctuation">.</span>length <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">.</span>hashid <span class="token operator">:</span> <span class="token keyword">undefined</span><br>        <span class="token punctuation">}</span><span class="token punctuation">,</span><br>        count<span class="token punctuation">,</span><br>        <span class="token literal-property property">things</span><span class="token operator">:</span> rows<br>    <span class="token punctuation">}</span><br><span class="token punctuation">}</span></code></pre>
-<button class="code-copy" data-clipboard-target="#code-306" style="position: absolute; top: 7.5px; right: 6px; cursor: pointer; outline: none; opacity: 0.8;" title="Copy">
+<pre class="language-js"><code id="code-309" class="language-js"><span class="token keyword">const</span> <span class="token punctuation">{</span> buildPaginationSearchClause <span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'../utils'</span><span class="token punctuation">)</span><br><br><span class="token operator">...</span><br><br><span class="token function-variable function">getAll</span><span class="token operator">:</span> <span class="token keyword">async</span> <span class="token punctuation">(</span><span class="token parameter">pagination <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span> where <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span></span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span><br>    <span class="token comment">// Ensure a sensible default limit for this particular type of thing</span><br>    <span class="token keyword">const</span> limit <span class="token operator">=</span> <span class="token function">parseInt</span><span class="token punctuation">(</span>pagination<span class="token punctuation">.</span>limit<span class="token punctuation">)</span> <span class="token operator">||</span> <span class="token number">1000</span><br><br>    <span class="token comment">// Decode the cursor from hashid to database id</span><br>    <span class="token keyword">if</span> <span class="token punctuation">(</span>pagination<span class="token punctuation">.</span>cursor<span class="token punctuation">)</span> <span class="token punctuation">{</span><br>        pagination<span class="token punctuation">.</span>cursor <span class="token operator">=</span> <span class="token constant">M</span><span class="token punctuation">.</span>Thing<span class="token punctuation">.</span><span class="token function">decodeHashid</span><span class="token punctuation">(</span>pagination<span class="token punctuation">.</span>cursor<span class="token punctuation">)</span><br>    <span class="token punctuation">}</span><br><br>    <span class="token comment">// Build the full where query using the buildPaginationSearchClause utility.</span><br>    <span class="token comment">// We pass in the list of columns that should be searched against</span><br>    where <span class="token operator">=</span> <span class="token function">buildPaginationSearchClause</span><span class="token punctuation">(</span><br>        pagination<span class="token punctuation">,</span><br>        where<span class="token punctuation">,</span><br>        <span class="token punctuation">[</span><span class="token string">'Thing.name'</span><span class="token punctuation">,</span> <span class="token string">'Thing.description'</span><span class="token punctuation">]</span><span class="token punctuation">,</span><br>        <span class="token punctuation">{</span><br>            <span class="token literal-property property">type</span><span class="token operator">:</span> <span class="token string">'Thing.type'</span><br>        <span class="token punctuation">}</span><br>    <span class="token punctuation">)</span><br><br>    <span class="token comment">// Run the query</span><br>    <span class="token keyword">const</span> <span class="token punctuation">{</span> count<span class="token punctuation">,</span> rows <span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token keyword">await</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">findAndCountAll</span><span class="token punctuation">(</span><span class="token punctuation">{</span><br>        where<span class="token punctuation">,</span><br>        <span class="token literal-property property">order</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token string">'id'</span><span class="token punctuation">,</span> <span class="token string">'ASC'</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">,</span><br>        limit<br>    <span class="token punctuation">}</span><span class="token punctuation">)</span><br><br>    <span class="token comment">// Return the results with the additional metadata</span><br>    <span class="token keyword">return</span> <span class="token punctuation">{</span><br>        <span class="token literal-property property">meta</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>            <span class="token literal-property property">next_cursor</span><span class="token operator">:</span> rows<span class="token punctuation">.</span>length <span class="token operator">===</span> limit <span class="token operator">?</span> rows<span class="token punctuation">[</span>rows<span class="token punctuation">.</span>length <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">.</span>hashid <span class="token operator">:</span> <span class="token keyword">undefined</span><br>        <span class="token punctuation">}</span><span class="token punctuation">,</span><br>        count<span class="token punctuation">,</span><br>        <span class="token literal-property property">things</span><span class="token operator">:</span> rows<br>    <span class="token punctuation">}</span><br><span class="token punctuation">}</span></code></pre>
+<button class="code-copy" data-clipboard-target="#code-309" style="position: absolute; top: 7.5px; right: 6px; cursor: pointer; outline: none; opacity: 0.8;" title="Copy">
 <span>
 <span style="font-size: 15px; opacity: 0.8;" class="mdi mdi-content-copy"></span>
 </span>
@@ -727,14 +728,14 @@ function.</p>
 <div class="border-l">
 <div class="block px-8 pt-4 w-full mx-auto ff-bg-light md:hidden">
 <div class="font-medium border-b pb-1">
-v1.4.1 /<a class="mx-2" href="/docs">docs</a>/<a class="mx-2" href="/docs/contribute">contribute</a>/<a class="mx-2" href="/docs/contribute/api-design">api-design</a>
+v1.5.0 /<a class="mx-2" href="/docs">docs</a>/<a class="mx-2" href="/docs/contribute">contribute</a>/<a class="mx-2" href="/docs/contribute/api-design">api-design</a>
 </div>
 </div>
 <div class="sticky top-6 w-full md:w-64 mt-4 md:mt-6 px-8">
 <h3 class="font-medium border-b pb-1 mb-4">on this page</h3>
 <ul id="toc" class="text-sm border-b mb-4"></ul>
 <div class="text-sm pb-1 text-right mb-4"><a href="https://github.com/flowforge/flowforge/edit/main/docs/contribute/api-design.md">Edit this page</a></div>
-<div class="text-xs pb-1 text-right mb-4 italic">Updated: 2023-03-13 11:25:24 +0000</div>
+<div class="text-xs pb-1 text-right mb-4 italic">Updated: 2023-03-16 10:55:00 +0000</div>
 </div>
 </div>
 </div>

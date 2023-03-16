@@ -316,6 +316,11 @@ filenodes
 </a>
 </li>
 <li>
+<a href="/docs/user/instance-settings/">
+instance-settings
+</a>
+</li>
+<li>
 <a href="/docs/user/logs/">
 logs
 </a>
@@ -335,16 +340,6 @@ node-red-tools
 persistent-context
 </a>
 </li>
-<li>
-<a href="/docs/user/project-settings/">
-project-settings
-</a>
-</li>
-<li>
-<a href="/docs/user/project-stages/">
-project-stages
-</a>
-</li>
 <li class="active">
 <a href="/docs/user/projectnodes/">
 projectnodes
@@ -358,6 +353,11 @@ shared-library
 <li>
 <a href="/docs/user/snapshots/">
 snapshots
+</a>
+</li>
+<li>
+<a href="/docs/user/staged-deployments/">
+staged-deployments
 </a>
 </li>
 <li>
@@ -527,26 +527,26 @@ open-source-to-premium
 <div class="max-w-screen-lg mx-auto px-8 pt-8">
 <div class="hidden w-full mx-auto ff-bg-light md:block">
 <div class="font-medium border-b pb-1">
-v1.4.1 /<a class="mx-2" href="/docs">docs</a>/<a class="mx-2" href="/docs/user">user</a>/<a class="mx-2" href="/docs/user/projectnodes">projectnodes</a>
+v1.5.0 /<a class="mx-2" href="/docs">docs</a>/<a class="mx-2" href="/docs/user">user</a>/<a class="mx-2" href="/docs/user/projectnodes">projectnodes</a>
 </div>
 </div>
 <div class="w-full mx-auto ff-bg-light flex flex-col md:flex-row">
 <div class="flex-grow order-last md:order-first">
 <div class="mt-6 mb-4 prose prose-blue main-content">
 <h1 id="flowforge-project-nodes" tabindex="-1"><a class="header-anchor" href="#flowforge-project-nodes">#&nbsp;</a> FlowForge Project Nodes</h1>
-<p>Projects running within FlowForge include a set of nodes that make it very quick and easy to securely send and receive messages between different projects in a team.</p>
-<p>The Project Nodes act in a similar way to the Node-RED Link nodes, but by allowing the links to extended between different projects, they open up a wide range of possibilities.</p>
-<p>For example, a single Project may contain a set of utility flows that you want to reuse in other projects. Rather than copy the flows into each project, the Project Nodes allow you to easily call those flows and get the result back.</p>
+<p>Node-RED instances running within FlowForge include a set of nodes that make it very quick and easy to securely send and receive messages between different instances in a team.</p>
+<p>The nodes act in a similar way to the Node-RED Link nodes, but by allowing the links to extended between different instances, they open up a wide range of possibilities.</p>
+<p>For example, a single Node-RED instance may contain a set of utility flows that you want to reuse in other instances. Rather than copy the flows around, the Project Nodes allow you to easily call those flows and get the result back.</p>
 <h3 id="nodes" tabindex="-1"><a class="header-anchor" href="#nodes">#&nbsp;</a> Nodes</h3>
 <p>There are three nodes in the Project Node collection:</p>
 <ul>
-<li><code>Project In</code> - listens for messages being broadcast by other projects, or for messages being sent just to this project</li>
-<li><code>Project Out</code> - sends messages to other projects</li>
-<li><code>Project Call</code> - sends messages to other projects and waits for a response</li>
+<li><code>Project In</code> - listens for messages being broadcast by other Node-RED instances, or for messages being sent just to this instance</li>
+<li><code>Project Out</code> - sends messages to other Node-RED instances</li>
+<li><code>Project Call</code> - sends messages to other instances and waits for a response</li>
 </ul>
-<p>The nodes send the whole <code>msg</code> object between projects. Due to the way the nodes encode messages, there are some data types that do not get sent. For example, the <code>msg.req</code>/<code>msg.res</code> properties used by the core HTTP nodes will not be sent.</p>
+<p>The nodes send the whole <code>msg</code> object. Due to the way the nodes encode messages, there are some data types that do not get sent. For example, the <code>msg.req</code>/<code>msg.res</code> properties used by the core HTTP nodes will not be sent.</p>
 <p>Each node is configured with a topic on which it either sends or receives messages on. This is similar in concept to MQTT topics - although the nodes do not currently support using MQTT wildcards in their topics.</p>
-<p>The Project Out nodes can either broadcast messages on a topic to anyone listening, or they can send messages on a topic to a specific other project.</p>
+<p>The Project Out nodes can either broadcast messages on a topic to anyone listening, or they can send messages on a topic to a specific other instance.</p>
 <p>The Project In nodes do the opposite - they can either listen for messages being broadcast, or for messages sent directly to them.</p>
 <p>The Project Call node can be used to send a message to another Project In node and then wait for a response, with a built-in timeout if it doesn't arrive. The response is sent back using a Project Out node configured to respond to the call node.</p>
 <h3 id="github" tabindex="-1"><a class="header-anchor" href="#github">#&nbsp;</a> GitHub</h3>
@@ -558,14 +558,14 @@ v1.4.1 /<a class="mx-2" href="/docs">docs</a>/<a class="mx-2" href="/docs/user">
 <div class="border-l">
 <div class="block px-8 pt-4 w-full mx-auto ff-bg-light md:hidden">
 <div class="font-medium border-b pb-1">
-v1.4.1 /<a class="mx-2" href="/docs">docs</a>/<a class="mx-2" href="/docs/user">user</a>/<a class="mx-2" href="/docs/user/projectnodes">projectnodes</a>
+v1.5.0 /<a class="mx-2" href="/docs">docs</a>/<a class="mx-2" href="/docs/user">user</a>/<a class="mx-2" href="/docs/user/projectnodes">projectnodes</a>
 </div>
 </div>
 <div class="sticky top-6 w-full md:w-64 mt-4 md:mt-6 px-8">
 <h3 class="font-medium border-b pb-1 mb-4">on this page</h3>
 <ul id="toc" class="text-sm border-b mb-4"></ul>
 <div class="text-sm pb-1 text-right mb-4"><a href="https://github.com/flowforge/flowforge/edit/main/docs/user/projectnodes.md">Edit this page</a></div>
-<div class="text-xs pb-1 text-right mb-4 italic">Updated: 2023-03-13 11:25:24 +0000</div>
+<div class="text-xs pb-1 text-right mb-4 italic">Updated: 2023-03-16 10:55:00 +0000</div>
 </div>
 </div>
 </div>

@@ -316,6 +316,11 @@ filenodes
 </a>
 </li>
 <li>
+<a href="/docs/user/instance-settings/">
+instance-settings
+</a>
+</li>
+<li>
 <a href="/docs/user/logs/">
 logs
 </a>
@@ -336,16 +341,6 @@ persistent-context
 </a>
 </li>
 <li>
-<a href="/docs/user/project-settings/">
-project-settings
-</a>
-</li>
-<li>
-<a href="/docs/user/project-stages/">
-project-stages
-</a>
-</li>
-<li>
 <a href="/docs/user/projectnodes/">
 projectnodes
 </a>
@@ -358,6 +353,11 @@ shared-library
 <li>
 <a href="/docs/user/snapshots/">
 snapshots
+</a>
+</li>
+<li>
+<a href="/docs/user/staged-deployments/">
+staged-deployments
 </a>
 </li>
 <li>
@@ -527,7 +527,7 @@ open-source-to-premium
 <div class="max-w-screen-lg mx-auto px-8 pt-8">
 <div class="hidden w-full mx-auto ff-bg-light md:block">
 <div class="font-medium border-b pb-1">
-v1.4.1 /<a class="mx-2" href="/docs">docs</a>/<a class="mx-2" href="/docs/install">install</a>/<a class="mx-2" href="/docs/install/configuration">configuration</a>
+v1.5.0 /<a class="mx-2" href="/docs">docs</a>/<a class="mx-2" href="/docs/install">install</a>/<a class="mx-2" href="/docs/install/configuration">configuration</a>
 </div>
 </div>
 <div class="w-full mx-auto ff-bg-light flex flex-col md:flex-row">
@@ -548,7 +548,7 @@ v1.4.1 /<a class="mx-2" href="/docs">docs</a>/<a class="mx-2" href="/docs/instal
 <tbody>
 <tr>
 <td><code>host</code></td>
-<td>The address to serve the web ui on. This defaults to <code>localhost</code> which means the ui will only be available when browsing from the same server that is running the platform. To make it accessible to other devices on the network, set it to <code>0.0.0.0</code>. <br>NOTE: If <code>host</code> is changed, please also update <code>base_url</code> to match e.g. <code>http://[ip-address-of-host]:3000</code><br>NOTE: We do not support changing the host value once you have created a project.</td>
+<td>The address to serve the web ui on. This defaults to <code>localhost</code> which means the ui will only be available when browsing from the same server that is running the platform. To make it accessible to other devices on the network, set it to <code>0.0.0.0</code>. <br>NOTE: If <code>host</code> is changed, please also update <code>base_url</code> to match e.g. <code>http://[ip-address-of-host]:3000</code><br>NOTE: We do not support changing the host value once you have created a Node-RED instance.</td>
 </tr>
 <tr>
 <td><code>port</code></td>
@@ -556,7 +556,7 @@ v1.4.1 /<a class="mx-2" href="/docs">docs</a>/<a class="mx-2" href="/docs/instal
 </tr>
 <tr>
 <td><code>base_url</code></td>
-<td>The url to access the platform. This defaults to <code>http://localhost:3000</code> which means a number of internally generated URLs will only work when browsing on the same device as is running the platform. To be able to access the platform remotely, replace <code>localhost</code> with the ip address of the device running FlowForge. IMPORTANT: This should not be changed after starting projects as it is used by the projects to find the core platform.</td>
+<td>The url to access the platform. This defaults to <code>http://localhost:3000</code> which means a number of internally generated URLs will only work when browsing on the same device as is running the platform. To be able to access the platform remotely, replace <code>localhost</code> with the ip address of the device running FlowForge. IMPORTANT: This should not be changed after starting Node-RED instances as it is used by the instances to find the core platform.</td>
 </tr>
 <tr>
 <td><code>support_contact</code></td>
@@ -622,7 +622,7 @@ v1.4.1 /<a class="mx-2" href="/docs">docs</a>/<a class="mx-2" href="/docs/instal
 </tr>
 </tbody>
 </table>
-<h2 id="project-driver-configuration" tabindex="-1"><a class="header-anchor" href="#project-driver-configuration">#&nbsp;</a> Project Driver configuration</h2>
+<h2 id="node-red-driver-configuration" tabindex="-1"><a class="header-anchor" href="#node-red-driver-configuration">#&nbsp;</a> Node-RED Driver configuration</h2>
 <p>This configures how Node-RED instances are run by the platform.</p>
 <table>
 <thead>
@@ -649,7 +649,7 @@ v1.4.1 /<a class="mx-2" href="/docs">docs</a>/<a class="mx-2" href="/docs/instal
 <tbody>
 <tr>
 <td><code>driver.options.start_port</code></td>
-<td>The port number to start assigning to projects as they are created. Default: <code>12080</code></td>
+<td>The port number to start assigning to Node-RED instances as they are created. Default: <code>12080</code></td>
 </tr>
 <tr>
 <td><code>driver.options.node_path</code></td>
@@ -683,7 +683,7 @@ v1.4.1 /<a class="mx-2" href="/docs">docs</a>/<a class="mx-2" href="/docs/instal
 <tbody>
 <tr>
 <td><code>driver.options.namespace</code></td>
-<td>The namespace to run projects in. Default: <code>flowforge</code></td>
+<td>The namespace to run Node-RED instances in. Default: <code>flowforge</code></td>
 </tr>
 <tr>
 <td><code>driver.options.cloudProvider</code></td>
@@ -691,7 +691,7 @@ v1.4.1 /<a class="mx-2" href="/docs">docs</a>/<a class="mx-2" href="/docs/instal
 </tr>
 <tr>
 <td><code>driver.options.projectSelector</code></td>
-<td>A YAML object containing node annotations to use to filter which nodes projects run on. Default: <code>role: projects</code></td>
+<td>A YAML object containing node annotations to use to filter which nodes Node-RED instances run on. Default: <code>role: projects</code></td>
 </tr>
 </tbody>
 </table>
@@ -758,7 +758,8 @@ v1.4.1 /<a class="mx-2" href="/docs">docs</a>/<a class="mx-2" href="/docs/instal
 </table>
 <p>See <a href=".././email_providers">here</a> for example configuration with common email providers.</p>
 <h2 id="telemetry-configuration" tabindex="-1"><a class="header-anchor" href="#telemetry-configuration">#&nbsp;</a> Telemetry configuration</h2>
-<p>By default, the platform will send anonymous usage information back to us at FlowForge Inc. This can be disabled via the Admin Settings in the UI, or turned off in the configuration file with the <code>telemetry.enabled</code> option.</p>
+<p>By default, the platform will send anonymous usage information back to us at FlowForge Inc. This can be disabled via the Admin Settings in the UI, or turned off in the configuration file with the <code>telemetry.enabled</code> option.
+<strong>IMPORTANT: Licensed installations cannot disable telemetry</strong></p>
 <p>Additionally, you can configure your own instance of FlowForge to report back to you on how users are using your instance of FlowForge. FlowForge supports integration with two different services:</p>
 <ul>
 <li><a href="https://posthog.com/">PostHog</a> <em>(recommended)</em>: You will require your own API key to pass into the <code>yml</code>, which will begin the logging of user interactions.</li>
@@ -824,7 +825,7 @@ v1.4.1 /<a class="mx-2" href="/docs">docs</a>/<a class="mx-2" href="/docs/instal
 <tbody>
 <tr>
 <td><code>broker.url</code></td>
-<td>The full url to the platform broker. This is used by the platform and project launchers to connect to the broker. For example: <code>mqtt://localhost:1883</code>.</td>
+<td>The full url to the platform broker. This is used by the platform and Node-RED instances to connect to the broker. For example: <code>mqtt://localhost:1883</code>.</td>
 </tr>
 <tr>
 <td><code>broker.public_url</code></td>
@@ -854,7 +855,7 @@ v1.4.1 /<a class="mx-2" href="/docs">docs</a>/<a class="mx-2" href="/docs/instal
 </table>
 <p>Setting <code>logging.http</code> to <code>info</code> will log every HTTP request and response details.</p>
 <h2 id="file-storage" tabindex="-1"><a class="header-anchor" href="#file-storage">#&nbsp;</a> File storage</h2>
-<p>FlowForge includes a service that can be used by projects to read and write files in their flows as well as providing persistent storage for flow context information.</p>
+<p>FlowForge includes a service that can be used by Node-RED instances to read and write files in their flows as well as providing persistent storage for flow context information.</p>
 <p>Details of configuring the File Storage service are available <a href=".././file-storage/">here</a>.</p>
 <p>The main <code>flowforge.yml</code> file needs to contain the following properties so it can access the File server.</p>
 <table>
@@ -878,14 +879,14 @@ v1.4.1 /<a class="mx-2" href="/docs">docs</a>/<a class="mx-2" href="/docs/instal
 <div class="border-l">
 <div class="block px-8 pt-4 w-full mx-auto ff-bg-light md:hidden">
 <div class="font-medium border-b pb-1">
-v1.4.1 /<a class="mx-2" href="/docs">docs</a>/<a class="mx-2" href="/docs/install">install</a>/<a class="mx-2" href="/docs/install/configuration">configuration</a>
+v1.5.0 /<a class="mx-2" href="/docs">docs</a>/<a class="mx-2" href="/docs/install">install</a>/<a class="mx-2" href="/docs/install/configuration">configuration</a>
 </div>
 </div>
 <div class="sticky top-6 w-full md:w-64 mt-4 md:mt-6 px-8">
 <h3 class="font-medium border-b pb-1 mb-4">on this page</h3>
 <ul id="toc" class="text-sm border-b mb-4"></ul>
 <div class="text-sm pb-1 text-right mb-4"><a href="https://github.com/flowforge/flowforge/edit/main/docs/install/configuration.md">Edit this page</a></div>
-<div class="text-xs pb-1 text-right mb-4 italic">Updated: 2023-03-13 11:25:24 +0000</div>
+<div class="text-xs pb-1 text-right mb-4 italic">Updated: 2023-03-16 10:55:00 +0000</div>
 </div>
 </div>
 </div>

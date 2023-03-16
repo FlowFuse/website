@@ -12,17 +12,17 @@
 <meta name="msapplication-TileColor" content="#00aba9">
 <meta name="theme-color" content="#ffffff">
 <meta name="keywords" content="Node-RED, Deployment, Production, Enterprise, IoT, IIoT, Low-Code, Open-Source, Kubernetes, Docker, Cloud, Hosting">
-<title>Project-stages &#x2022; FlowForge Docs</title>
-<meta rel="canonical" href="https://flowforge.com/docs/user/project-stages/">
+<title>Terminology Changes &#x2022; FlowForge</title>
+<meta rel="canonical" href="https://flowforge.com/blog/2023/03/terminology-changes/">
 <meta name="description" content="Scale your Node-RED deployments in production. Open-Source and available on Docker, Kubernetes or Cloud">
-<meta property="og:title" content="Project-stages &#x2022; FlowForge">
-<meta property="og:description" content="FlowForge is an open-source, low-code platform for integration and automation. Helping you run Node-RED at production scales in a secure, scalable and team-based environment.">
-<meta property="og:url" content="https://flowforge.com/docs/user/project-stages/">
-<meta property="og:image" content="https://flowforge.com/images/og-social-tile.jpg">
-<meta name="twitter:image" content="https://flowforge.com/images/og-social-tile.jpg">
+<meta property="og:title" content="Terminology Changes &#x2022; FlowForge">
+<meta property="og:description" content="Applications, Instances &amp; Devices - the new way forward for FlowForge">
+<meta property="og:url" content="https://flowforge.com/blog/2023/03/terminology-changes/">
+<meta property="og:image" content="https://flowforge.com/blog/2023/03/images/concept-changes.png">
+<meta name="twitter:image" content="https://flowforge.com/blog/2023/03/images/concept-changes.png">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:description" content="">
 <meta name="twitter:site" content="@flowforgeinc">
+<meta name="twitter:creator" content="@joepavitt3d">
 <script>const blockedScripts=[/hs-banner.com/];function needsToBeBlocked(e){return blockedScripts.some((t=>t.test(e)))}const createElementBackup=document.createElement;document.createElement=function(...e){if("script"!==e[0].toLowerCase())return createElementBackup.bind(document)(...e);const t=createElementBackup.bind(document)(...e),c=t.setAttribute.bind(t);return c("defer","defer"),Object.defineProperties(t,{src:{get:()=>t.getAttribute("src"),set:e=>(needsToBeBlocked(e,t.type)&&c("type","javascript/blocked"),c("src",e),!0)},type:{set(e){const r=needsToBeBlocked(t.src,t.type)?"javascript/blocked":e;return c("type",r),!0}}}),t.setAttribute=function(e,c){"type"===e||"src"===e?t[e]=c:HTMLScriptElement.prototype.setAttribute.call(t,e,c)},t};</script>
 </head>
 <body class="ff-website leading-normal tracking-normal gradient text-gray-500 min-h-screen flex flex-col">
@@ -90,541 +90,77 @@
 </nav>
 </header>
 <main class="flex flex-col mx-auto items-center justify-center">
-<div class="w-full page">
-<div class="content">
-<div class="nohero w-full pt-8 md:pt-12 ff-bg-light">
+<div class="w-full page post">
+<div class="post-title container m-auto text-center px-6 flex mt-6 mb-6 md:max-w-screen-lg md:mt-12">
+<div class="text-left md:pr-32">
+<label>Article</label>
+<h1>Terminology Changes</h1>
+<h4>Applications, Instances & Devices - the new way forward for FlowForge</h4>
+<p class="author">
+<time value="">16 Mar, 2023</time>
+| Joe Pavitt
+</p>
+</div>
+</div>
+<div class="blog nohero w-full pt-6 pb-24 ff-bg-light">
+<div class="container m-auto text-left px-6 md:max-w-screen-lg">
+<a class="block mb-4 flex align-center gap-1" href="/blog">
+<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+<path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5"/>
+</svg>
+Back to Blog Posts
+</a>
+<div class="prose">
+<div>
+<div class="w-full h-auto">
+<picture><source type="image/avif" srcset="/img/concept-changes-bt2RRNSOZN-560.avif 560w, /img/concept-changes-bt2RRNSOZN-1120.avif 1120w" sizes="(min-device-pixel-ratio: 1.25) 1120px, (min-resolution: 120dpi) 1120px, 560px"><source type="image/webp" srcset="/img/concept-changes-bt2RRNSOZN-560.webp 560w, /img/concept-changes-bt2RRNSOZN-1120.webp 1120w" sizes="(min-device-pixel-ratio: 1.25) 1120px, (min-resolution: 120dpi) 1120px, 560px"><source type="image/png" srcset="/img/concept-changes-bt2RRNSOZN-560.png 560w, /img/concept-changes-bt2RRNSOZN-1120.png 1120w" sizes="(min-device-pixel-ratio: 1.25) 1120px, (min-resolution: 120dpi) 1120px, 560px"><img alt="Image representing Terminology Changes" loading="lazy" decoding="async" src="/img/concept-changes-bt2RRNSOZN-560.png" width="1120" height="562"></picture>
+</div>
+</div>
+<p>As a new product in the market, we constantly have to make choices on how to name things. Naming things is hard! As you name a thing, say &quot;Project&quot;, it might be suitable now, but the product evolves, and may outgrow the name such that it doesn’t fit anymore.</p>
+<p>We are at this point with FlowForge, and want to walk you through what we have planned, and why we are changing a couple of things.</p>
+<h3 id="enter-the-%22application%22" tabindex="-1"><a class="header-anchor" href="#enter-the-%22application%22">#&nbsp;</a> Enter the &quot;Application&quot;</h3>
+<p>In <a href="/blog/2023/03/flowforge-1-5-0-released/">FlowForge 1.5</a>, we have introduced a new concept called an <strong>Application</strong>.</p>
+<p>An Application will allow you to organize multiple Node-RED instances into a single managed group.</p>
+<p>As of the 1.5 release, an Application can still only have a single Node-RED instance, but in future releases, Applications will allow for multiple Node-RED instances and will allow us to implement capabilities such as <strong>DevOps Pipelines</strong> and <strong>High Availability</strong>.</p>
+<h3 id="%22projects%22-to-%22instances%22" tabindex="-1"><a class="header-anchor" href="#%22projects%22-to-%22instances%22">#&nbsp;</a> &quot;Projects&quot; to &quot;Instances&quot;</h3>
+<p>Until now, 'Project' encapsulated both the Node-RED instance that was running in FlowForge, and the associated devices (remote instances), settings and environment variables. It was an overloaded term, and it caused confusion with our users.</p>
+<p>To simplify things, and to adhere more to the terminology familiar with the Node-RED community, we are renaming Projects to <strong>Instances</strong>.</p>
+<p>An <strong>Instance</strong> is a customized version of Node-RED that includes various FlowForge plugins to integrate it with the FlowForge platform. It can also be used to manage the environment variables used in your Node-RED flows.</p>
+<p>Instances can either be:</p>
+<ul>
+<li><strong>Local</strong> - An instance of Node-RED running in FlowForge.</li>
+<li><strong>Remote</strong> - An instance of Node-RED, managed by FlowForge, running on a Device.</li>
+</ul>
+<p>In future releases, environment variables will also be able to be stored at the Application level, and shared across multiple Node-RED Instances.</p>
+<h3 id="devices" tabindex="-1"><a class="header-anchor" href="#devices">#&nbsp;</a> Devices</h3>
+<p>FlowForge can also be used to manage remote Node-RED instances. This is typically useful when you have a number of remote devices that are required to run the same Node-RED instance, and may have variation in configuration or environment variables for example.</p>
+<p>Devices are registered to an Instance, and can be configured to run <a href="https://flowforge.com/docs/user/concepts/#instance-snapshot">Snapshots</a> of the Instance running in FlowForge.</p>
+<p>To accomplish this remote management capability, the <a href="https://github.com/flowforge/flowforge-device-agent">FlowForge Device Agent</a> needs to be installed on each device. Devices are registered with a Team, and then the appropriate device(s) are assigned to a Node-RED instance that should be deployed to the device(s). When the Node-RED instance is ready for deployment, a user creates a snapshot of the instance and marks it as a target snapshot for the device.</p>
+<p>We hope these changes will simplify the FlowForge terminology for our users and allow us to grow the FlowForge platform. If you have any feedback or thoughts, please do reach out to us.</p>
+</div>
+<div class="mt-12 pt-6 flex flex-col border-t-2">
+<h3 class="mb-6">Sign up for updates</h3>
 <script>
-function toggleNavList (el) {
-        const li = el.parentElement
-        li.classList.toggle('open')
-        const ul = li.nextElementSibling
-        ul.classList.toggle('open')
-        if (ul.style.maxHeight) {
-            ul.style.maxHeight = null;
-        } else {
-            if (ul.parentElement.tagName === "UL" && !ul.parentElement.classList.contains('handbook-nav')) {
-                ul.parentElement.style.maxHeight = "initial"
-            }
-            ul.style.maxHeight = ul.scrollHeight + "px";
-        } 
-    }
+function displayHubSpotForm() {
+                        hbspt.forms.create({
+                            region: "eu1",
+                            portalId: "26586079",
+                            formId: "159c173d-dd95-49bd-922b-ff3ef243e90c",
+                            onFormSubmit: function($form) {
+                                capture('cta-blog-subscribe', {'position': 'article'})
+                            }
+                        });
+                    }
 </script>
-<div class="handbook ff-prose text-left pb-24" data-docs>
-<div class="border-r">
-<ul class="handbook-nav" data-el="navigation">
-<li>
-<a href="/docs">docs</a>
-</li>
-<li class="handbook-nav-group">Overview</li>
-<li>
-<a href="/docs/admin/">
-Administering FlowForge
-</a>
-<button onclick="toggleNavList(this)">
-<span class="ff-icon icon-expand">
-<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 ff-icon--down">
-<path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5"/>
-</svg>
-</span>
-<span class="ff-icon icon-minimise">
-<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-<path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5"/>
-</svg>
-</span>
-</button>
-</li>
-<ul class="handbook-nav-nested">
-<li>
-<a href="/docs/admin/sso/">
-sso
-</a>
-</li>
-<li>
-<a href="/docs/admin/telemetry/">
-telemetry
-</a>
-</li>
-<li>
-<a href="/docs/admin/user_management/">
-user_management
-</a>
-</li>
-</ul>
-<li>
-<a href="/docs/contribute/">
-Contributing to FlowForge
-</a>
-<button onclick="toggleNavList(this)">
-<span class="ff-icon icon-expand">
-<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 ff-icon--down">
-<path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5"/>
-</svg>
-</span>
-<span class="ff-icon icon-minimise">
-<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-<path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5"/>
-</svg>
-</span>
-</button>
-</li>
-<ul class="handbook-nav-nested">
-<li>
-<a href="/docs/contribute/adding-template-settings/">
-adding-template-settings
-</a>
-</li>
-<li>
-<a href="/docs/contribute/api-design/">
-api-design
-</a>
-</li>
-<li>
-<a href="/docs/contribute/architecture/">
-architecture
-</a>
-</li>
-<li>
-<a href="/docs/contribute/db-migrations/">
-db-migrations
-</a>
-</li>
-<li>
-<a href="/docs/contribute/workflows/">
-workflows
-</a>
-<button onclick="toggleNavList(this)">
-<span class="ff-icon icon-expand">
-<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 ff-icon--down">
-<path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5"/>
-</svg>
-</span>
-<span class="ff-icon icon-minimise">
-<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-<path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5"/>
-</svg>
-</span>
-</button>
-</li>
-<ul class="handbook-nav-nested-2">
-<li>
-<a href="/docs/contribute/workflows/invite-external-user/">
-invite-external-user
-</a>
-</li>
-<li>
-<a href="/docs/contribute/workflows/login/">
-login
-</a>
-</li>
-<li>
-<a href="/docs/contribute/workflows/password-reset/">
-password-reset
-</a>
-</li>
-<li>
-<a href="/docs/contribute/workflows/project-create/">
-project-create
-</a>
-</li>
-<li>
-<a href="/docs/contribute/workflows/project-states/">
-project-states
-</a>
-</li>
-<li>
-<a href="/docs/contribute/workflows/signup/">
-signup
-</a>
-</li>
-<li>
-<a href="/docs/contribute/workflows/team-create/">
-team-create
-</a>
-</li>
-</ul>
-</ul>
-<li>
-<a href="/docs/api/">
-FlowForge API
-</a>
-</li>
-<li>
-<a href="/docs/cloud/">
-FlowForge Cloud
-</a>
-<button onclick="toggleNavList(this)">
-<span class="ff-icon icon-expand">
-<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 ff-icon--down">
-<path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5"/>
-</svg>
-</span>
-<span class="ff-icon icon-minimise">
-<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-<path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5"/>
-</svg>
-</span>
-</button>
-</li>
-<ul class="handbook-nav-nested">
-<li>
-<a href="/docs/cloud/billing/">
-billing
-</a>
-</li>
-</ul>
-<li>
-<a href="/docs/user/">
-Using FlowForge
-</a>
-<button onclick="toggleNavList(this)">
-<span class="ff-icon icon-expand">
-<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 ff-icon--down">
-<path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5"/>
-</svg>
-</span>
-<span class="ff-icon icon-minimise">
-<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-<path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5"/>
-</svg>
-</span>
-</button>
-</li>
-<ul class="handbook-nav-nested">
-<li>
-<a href="/docs/user/changestack/">
-changestack
-</a>
-</li>
-<li>
-<a href="/docs/user/concepts/">
-concepts
-</a>
-</li>
-<li>
-<a href="/docs/user/devices/">
-devices
-</a>
-</li>
-<li>
-<a href="/docs/user/envvar/">
-envvar
-</a>
-</li>
-<li>
-<a href="/docs/user/filenodes/">
-filenodes
-</a>
-</li>
-<li>
-<a href="/docs/user/logs/">
-logs
-</a>
-</li>
-<li>
-<a href="/docs/user/migration/">
-migration
-</a>
-</li>
-<li>
-<a href="/docs/user/node-red-tools/">
-node-red-tools
-</a>
-</li>
-<li>
-<a href="/docs/user/persistent-context/">
-persistent-context
-</a>
-</li>
-<li>
-<a href="/docs/user/project-settings/">
-project-settings
-</a>
-</li>
-<li class="active">
-<a href="/docs/user/project-stages/">
-project-stages
-</a>
-</li>
-<li>
-<a href="/docs/user/projectnodes/">
-projectnodes
-</a>
-</li>
-<li>
-<a href="/docs/user/shared-library/">
-shared-library
-</a>
-</li>
-<li>
-<a href="/docs/user/snapshots/">
-snapshots
-</a>
-</li>
-<li>
-<a href="/docs/user/team/">
-team
-</a>
-</li>
-</ul>
-<li class="handbook-nav-group">Running FlowForge</li>
-<li>
-<a href="/docs/install/">
-Installing FlowForge
-</a>
-<button onclick="toggleNavList(this)">
-<span class="ff-icon icon-expand">
-<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 ff-icon--down">
-<path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5"/>
-</svg>
-</span>
-<span class="ff-icon icon-minimise">
-<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-<path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5"/>
-</svg>
-</span>
-</button>
-</li>
-<ul class="handbook-nav-nested">
-<li>
-<a href="/docs/install/configuration/">
-configuration
-</a>
-</li>
-<li>
-<a href="/docs/install/dns-setup/">
-dns-setup
-</a>
-</li>
-<li>
-<a href="/docs/install/docker/">
-docker
-</a>
-<button onclick="toggleNavList(this)">
-<span class="ff-icon icon-expand">
-<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 ff-icon--down">
-<path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5"/>
-</svg>
-</span>
-<span class="ff-icon icon-minimise">
-<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-<path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5"/>
-</svg>
-</span>
-</button>
-</li>
-<ul class="handbook-nav-nested-2">
-<li>
-<a href="/docs/install/docker/digital-ocean/">
-digital-ocean
-</a>
-</li>
-<li>
-<a href="/docs/install/docker/stacks/">
-stacks
-</a>
-</li>
-</ul>
-<li>
-<a href="/docs/install/email_providers/">
-email_providers
-</a>
-</li>
-<li>
-<a href="/docs/install/file-storage/">
-file-storage
-</a>
-</li>
-<li>
-<a href="/docs/install/first-run/">
-first-run
-</a>
-</li>
-<li>
-<a href="/docs/install/kubernetes/">
-kubernetes
-</a>
-<button onclick="toggleNavList(this)">
-<span class="ff-icon icon-expand">
-<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 ff-icon--down">
-<path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5"/>
-</svg>
-</span>
-<span class="ff-icon icon-minimise">
-<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-<path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5"/>
-</svg>
-</span>
-</button>
-</li>
-<ul class="handbook-nav-nested-2">
-<li>
-<a href="/docs/install/kubernetes/aws/">
-aws
-</a>
-</li>
-<li>
-<a href="/docs/install/kubernetes/digital-ocean/">
-digital-ocean
-</a>
-</li>
-<li>
-<a href="/docs/install/kubernetes/stacks/">
-stacks
-</a>
-</li>
-</ul>
-<li>
-<a href="/docs/install/local/">
-local
-</a>
-<button onclick="toggleNavList(this)">
-<span class="ff-icon icon-expand">
-<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 ff-icon--down">
-<path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5"/>
-</svg>
-</span>
-<span class="ff-icon icon-minimise">
-<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-<path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5"/>
-</svg>
-</span>
-</button>
-</li>
-<ul class="handbook-nav-nested-2">
-<li>
-<a href="/docs/install/local/stacks/">
-stacks
-</a>
-</li>
-</ul>
-</ul>
-<li>
-<a href="/docs/upgrade/">
-Upgrading FlowForge
-</a>
-<button onclick="toggleNavList(this)">
-<span class="ff-icon icon-expand">
-<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 ff-icon--down">
-<path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5"/>
-</svg>
-</span>
-<span class="ff-icon icon-minimise">
-<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-<path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5"/>
-</svg>
-</span>
-</button>
-</li>
-<ul class="handbook-nav-nested">
-<li>
-<a href="/docs/upgrade/open-source-to-premium/">
-open-source-to-premium
-</a>
-</li>
-</ul>
-</ul>
-</div>
-<div class="max-w-screen-lg mx-auto px-8 pt-8">
-<div class="hidden w-full mx-auto ff-bg-light md:block">
-<div class="font-medium border-b pb-1">
-v1.4.1 /<a class="mx-2" href="/docs">docs</a>/<a class="mx-2" href="/docs/user">user</a>/<a class="mx-2" href="/docs/user/project-stages">project-stages</a>
-</div>
-</div>
-<div class="w-full mx-auto ff-bg-light flex flex-col md:flex-row">
-<div class="flex-grow order-last md:order-first">
-<div class="mt-6 mb-4 prose prose-blue main-content">
-<h1 id="project-staged-deployments" tabindex="-1"><a class="header-anchor" href="#project-staged-deployments">#&nbsp;</a> Project Staged Deployments</h1>
-<p>In FlowForge it is possible to configure a DevOps pipeline for your Projects, these are done by configuring &quot;Stages&quot; in the Settings of a given Project.</p>
-<ol>
-<li>Navigate to your Project and click on the &quot;Settings&quot; option.</li>
-<li>Select the &quot;Stages&quot; tab</li>
-<li>Select the relevant project from the &quot;Target Project&quot; dropdown that is the next stage in your pipeline. For example, if your current project is &quot;My Project - Dev&quot;, your target project could be &quot;My Project - Staging&quot; or &quot;My Project - Production&quot;</li>
-<li>Click the &quot;Push to Stage&quot; button, and confirm that you are happy to push over the relevant contents to your target project</li>
-<li>You should see a confirmation alert to say this push has been successful.</li>
-<li>From here, you can click the &quot;View Target Project&quot; button, to navigate straight to the Project Overview of your Target Project.</li>
-<li>The Target Project will be in an &quot;importing&quot; state for a short while, and will then automatically restart itself with the relevant updates applied</li>
-</ol>
-<p><strong>Environment Variables</strong> - A point should be made, that when pushing to a next stage, only your environment variable keys will be copied over. Values must be set on your Target Project explicitly.</p>
-<p><strong>Project Settings</strong> - None of your Project Settings will be moved over (e.g. Editor, Palette or Security Settings). This ensures a split between your staging environments.</p>
+<script async type="text/javascript" charset="utf-8" src="//js-eu1.hsforms.net/forms/embed/v2.js" onload="displayHubSpotForm()"></script>
 </div>
 </div>
 </div>
 </div>
-<div class="border-l">
-<div class="block px-8 pt-4 w-full mx-auto ff-bg-light md:hidden">
-<div class="font-medium border-b pb-1">
-v1.4.1 /<a class="mx-2" href="/docs">docs</a>/<a class="mx-2" href="/docs/user">user</a>/<a class="mx-2" href="/docs/user/project-stages">project-stages</a>
-</div>
-</div>
-<div class="sticky top-6 w-full md:w-64 mt-4 md:mt-6 px-8">
-<h3 class="font-medium border-b pb-1 mb-4">on this page</h3>
-<ul id="toc" class="text-sm border-b mb-4"></ul>
-<div class="text-sm pb-1 text-right mb-4"><a href="https://github.com/flowforge/flowforge/edit/main/docs/user/project-stages.md">Edit this page</a></div>
-<div class="text-xs pb-1 text-right mb-4 italic">Updated: 2023-03-13 11:25:24 +0000</div>
-</div>
-</div>
-</div>
-<script>
-// Generate "On this page"
-    let toc = document.getElementById("toc")
-
-    let currentTag = "";
-    let currentToc = toc;
-    let currentItem;
-
-    let activeTier = 0 // which index to read from the depth
-    let depth = [1, 1, 1, 1] // tracks the active number to render at each depth
-
-    document.querySelectorAll(".main-content > h2, .main-content > h3, .main-content > h4").forEach(function(n) {
-        // which level of "H_" are we working with, and which one did we see most recently
-        const level = parseInt(n.nodeName[1])
-        const prevLevel = currentTag.length > 1 ? parseInt(currentTag[1]) : 0
-
-        // Render Table of Contents
-        if (prevLevel > 0 && level - prevLevel < 0) {
-            // we are moving left with our indent
-            currentToc = toc;
-        } else if (prevLevel > 0 && level - prevLevel > 0) {
-            // we are creating a new, nested `<ul>`
-            currentToc = document.createElement("ul");
-            currentToc.classList.add("ml-4")
-            currentToc.classList.add("mt-2")
-            currentToc.classList.add("mb-4")
-            currentItem.append(currentToc);
-        }
-        currentTag = n.nodeName;
-        currentItem = document.createElement("li");
-        currentItem.classList.add("mb-2")
-        let currentLink = document.createElement("a");
-        currentItem.append(currentLink);
-        let link = n.getElementsByTagName('a')
-        currentLink.href = link[0].href;
-        currentLink.textContent = n.textContent.replace(/#\s+/g,"");
-        currentToc.append(currentItem);
-    })
-
-    // All external links open in new page
-    document.querySelectorAll("[data-docs] a").forEach((link) => {
-        try {
-            if (!link.target && window.location.host !== new URL(link.href).host) {
-                link.target = "_blank";
-            }
-        } catch {
-            // Swallow errors
-        }
-    })
-</script>
-<script type="module">
-import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@10.0.0/dist/mermaid.esm.mjs";
-    mermaid.initialize({startOnLoad:true});
-</script>
 <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/19.1.1/tooltips.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'" crossorigin="anonymous" referrerpolicy="no-referrer">
 <script>function showTooltip(o,e){o.trigger.className.includes("tooltipped")||(o.trigger.children[0].className="tooltipped tooltipped-s",o.trigger.children[0].ariaLabel=e)}window.addEventListener("load",()=>{var o=new ClipboardJS(".code-copy");o.on("success",o=>showTooltip(o,"Copied!")),o.on("error",o=>showTooltip(o,"Failed..."))});</script>
 <script async src="https://cdn.jsdelivr.net/npm/clipboard@2.0.8/dist/clipboard.js"></script>
 <link rel="preload" href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism-tomorrow.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'" crossorigin="anonymous" referrerpolicy="no-referrer">
-</div>
-</div>
-</div>
 </main>
 </div>
 </div>

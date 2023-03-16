@@ -316,6 +316,11 @@ filenodes
 </a>
 </li>
 <li>
+<a href="/docs/user/instance-settings/">
+instance-settings
+</a>
+</li>
+<li>
 <a href="/docs/user/logs/">
 logs
 </a>
@@ -336,16 +341,6 @@ persistent-context
 </a>
 </li>
 <li>
-<a href="/docs/user/project-settings/">
-project-settings
-</a>
-</li>
-<li>
-<a href="/docs/user/project-stages/">
-project-stages
-</a>
-</li>
-<li>
 <a href="/docs/user/projectnodes/">
 projectnodes
 </a>
@@ -358,6 +353,11 @@ shared-library
 <li>
 <a href="/docs/user/snapshots/">
 snapshots
+</a>
+</li>
+<li>
+<a href="/docs/user/staged-deployments/">
+staged-deployments
 </a>
 </li>
 <li>
@@ -527,7 +527,7 @@ open-source-to-premium
 <div class="max-w-screen-lg mx-auto px-8 pt-8">
 <div class="hidden w-full mx-auto ff-bg-light md:block">
 <div class="font-medium border-b pb-1">
-v1.4.1 /<a class="mx-2" href="/docs">docs</a>/<a class="mx-2" href="/docs/install">install</a>/<a class="mx-2" href="/docs/install/docker">docker</a>
+v1.5.0 /<a class="mx-2" href="/docs">docs</a>/<a class="mx-2" href="/docs/install">install</a>/<a class="mx-2" href="/docs/install/docker">docker</a>
 </div>
 </div>
 <div class="w-full mx-auto ff-bg-light flex flex-col md:flex-row">
@@ -553,10 +553,10 @@ v1.4.1 /<a class="mx-2" href="/docs">docs</a>/<a class="mx-2" href="/docs/instal
 <p>FlowForge uses Docker Compose to install and manage the required components. Instructions on how to install Docker Compose on your system can be found here:</p>
 <p><a href="https://docs.docker.com/compose/install/">https://docs.docker.com/compose/install/</a></p>
 <h3 id="dns" tabindex="-1"><a class="header-anchor" href="#dns">#&nbsp;</a> DNS</h3>
-<p>The orchestration uses an instance of Nginx to route requests to each Node-RED Project. To do this it needs each instance to have a unique hostname, to generate this the project name is prepended to a supplied domain.</p>
+<p>The orchestration uses an instance of Nginx to route requests to each Node-RED instance. To do this it needs each instance to have a unique hostname, to generate this the instance name is prepended to a supplied domain.</p>
 <p>To make this work you will need to configure a DNS server to map a wildcard domain entry to the IP address of the host running Docker. e.g <code>*.example.com</code>.</p>
 <p>The FlowForge Application will be hosted on <code>http://forge.example.com</code></p>
-<p><strong>Note</strong> When testing locally you can add entries for each project to your <code>/etc/hosts</code> file but you must use the external IP address of the host machine, not the loopback address (<code>127.0.0.1</code>).</p>
+<p><strong>Note</strong> When testing locally you can add entries for each Node-RED instance to your <code>/etc/hosts</code> file but you must use the external IP address of the host machine, not the loopback address (<code>127.0.0.1</code>).</p>
 <p>Notes on how to setup DNS can be found <a href="../dns-setup">here</a>.</p>
 <h2 id="installing-flowforge" tabindex="-1"><a class="header-anchor" href="#installing-flowforge">#&nbsp;</a> Installing FlowForge</h2>
 <h3 id="download" tabindex="-1"><a class="header-anchor" href="#download">#&nbsp;</a> Download</h3>
@@ -580,11 +580,11 @@ v1.4.1 /<a class="mx-2" href="/docs">docs</a>/<a class="mx-2" href="/docs/instal
 <li><code>broker.public_url</code></li>
 </ul>
 <p>These will need to be updated to replace <code>.example.com</code> with the domain you chose earlier.</p>
-<p>Please note that once set, the <code>domain</code> and <code>base_url</code> values should not be changed as these values are used as part of the configuration stored in the database of each project. The ability to migrate <code>domains</code> is on the feature backlog.</p>
+<p>Please note that once set, the <code>domain</code> and <code>base_url</code> values should not be changed as these values are used as part of the configuration stored in the database of each Node-RED instance. The ability to migrate <code>domains</code> is on the feature backlog.</p>
 <p>You also need to update all the <code>VIRTUAL_HOST</code> entries in the <code>docker-compose.yml</code> file to replace <code>.example.com</code> with the same domain.</p>
 <p>For more details on the options available, see the <a href="../configuration">configuration guide</a>.</p>
 <h3 id="https-(optional)" tabindex="-1"><a class="header-anchor" href="#https-(optional)">#&nbsp;</a> HTTPS (optional)</h3>
-<p>If you want to serve the forge app and projects via SSL you will need to obtain a wildcard TLS certificate for the domain you are using eg <code>*.example.com</code>. If you are running on an Internet facing machine you can use the LetsEncrypt acme-companion.</p>
+<p>If you want to serve the forge app and Node-RED via SSL you will need to obtain a wildcard TLS certificate for the domain you are using eg <code>*.example.com</code>. If you are running on an Internet facing machine you can use the LetsEncrypt acme-companion.</p>
 <p>Otherwise you will need to contact a SSL Certificate vendor and configure Nginx manually.</p>
 <h4 id="let's-encrypt" tabindex="-1"><a class="header-anchor" href="#let's-encrypt">#&nbsp;</a> Let's Encrypt</h4>
 <p>In the <code>docker-compose.yml</code> file, uncomment the following lines</p>
@@ -713,18 +713,18 @@ You also need to create a copy of the .crt and .key files named <code>default.cr
 </span>
 </button>
 </div>
-<p>This will also create a directory called <code>db</code> to hold the database files used to store project instance and user information.</p>
+<p>This will also create a directory called <code>db</code> to hold the database files used to store Node-RED instance and user information.</p>
 <h2 id="first-run-setup" tabindex="-1"><a class="header-anchor" href="#first-run-setup">#&nbsp;</a> First Run Setup</h2>
 <p>The first time you access the platform in your browser, it will take you through creating an administrator for the platform and other configuration options.</p>
 <p>For more information, follow <a href="../first-run">this guide</a>.</p>
 <p>Once you have finished setting up the admin user there are some Docker specific items to consider.</p>
 <h3 id="using-flowforge-file-storage" tabindex="-1"><a class="header-anchor" href="#using-flowforge-file-storage">#&nbsp;</a> Using FlowForge File Storage</h3>
-<p>FlowForge projects running in Docker do not have direct access to a persistent file system to store files or use for storing context data.</p>
+<p>Node-RED instances running in Docker do not have direct access to a persistent file system to store files or use for storing context data.</p>
 <p>FlowForge includes a File Storage service that can be enabled to provide persistent storage.</p>
 <h4 id="disabling-the-default-file-nodes" tabindex="-1"><a class="header-anchor" href="#disabling-the-default-file-nodes">#&nbsp;</a> Disabling the default File nodes</h4>
 <p>To remove the default Node-RED file nodes from the palette:</p>
 <ol>
-<li>Edit the Project Template to add <code>10-file.js,23-watch.js</code> to the &quot;Exclude nodes by filename&quot; section</li>
+<li>Edit the Template to add <code>10-file.js,23-watch.js</code> to the &quot;Exclude nodes by filename&quot; section</li>
 </ol>
 <img src="../images/file-node-template.png" width="500">
 <h4 id="configuring-the-file-storage-service" tabindex="-1"><a class="header-anchor" href="#configuring-the-file-storage-service">#&nbsp;</a> Configuring the File Storage service</h4>
@@ -779,14 +779,14 @@ You also need to create a copy of the .crt and .key files named <code>default.cr
 <div class="border-l">
 <div class="block px-8 pt-4 w-full mx-auto ff-bg-light md:hidden">
 <div class="font-medium border-b pb-1">
-v1.4.1 /<a class="mx-2" href="/docs">docs</a>/<a class="mx-2" href="/docs/install">install</a>/<a class="mx-2" href="/docs/install/docker">docker</a>
+v1.5.0 /<a class="mx-2" href="/docs">docs</a>/<a class="mx-2" href="/docs/install">install</a>/<a class="mx-2" href="/docs/install/docker">docker</a>
 </div>
 </div>
 <div class="sticky top-6 w-full md:w-64 mt-4 md:mt-6 px-8">
 <h3 class="font-medium border-b pb-1 mb-4">on this page</h3>
 <ul id="toc" class="text-sm border-b mb-4"></ul>
 <div class="text-sm pb-1 text-right mb-4"><a href="https://github.com/flowforge/flowforge/edit/main/docs/install/docker/README.md">Edit this page</a></div>
-<div class="text-xs pb-1 text-right mb-4 italic">Updated: 2023-03-13 11:25:24 +0000</div>
+<div class="text-xs pb-1 text-right mb-4 italic">Updated: 2023-03-16 10:55:00 +0000</div>
 </div>
 </div>
 </div>

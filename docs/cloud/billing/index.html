@@ -316,6 +316,11 @@ filenodes
 </a>
 </li>
 <li>
+<a href="/docs/user/instance-settings/">
+instance-settings
+</a>
+</li>
+<li>
 <a href="/docs/user/logs/">
 logs
 </a>
@@ -336,16 +341,6 @@ persistent-context
 </a>
 </li>
 <li>
-<a href="/docs/user/project-settings/">
-project-settings
-</a>
-</li>
-<li>
-<a href="/docs/user/project-stages/">
-project-stages
-</a>
-</li>
-<li>
 <a href="/docs/user/projectnodes/">
 projectnodes
 </a>
@@ -358,6 +353,11 @@ shared-library
 <li>
 <a href="/docs/user/snapshots/">
 snapshots
+</a>
+</li>
+<li>
+<a href="/docs/user/staged-deployments/">
+staged-deployments
 </a>
 </li>
 <li>
@@ -527,7 +527,7 @@ open-source-to-premium
 <div class="max-w-screen-lg mx-auto px-8 pt-8">
 <div class="hidden w-full mx-auto ff-bg-light md:block">
 <div class="font-medium border-b pb-1">
-v1.4.1 /<a class="mx-2" href="/docs">docs</a>/<a class="mx-2" href="/docs/cloud">cloud</a>/<a class="mx-2" href="/docs/cloud/billing">billing</a>
+v1.5.0 /<a class="mx-2" href="/docs">docs</a>/<a class="mx-2" href="/docs/cloud">cloud</a>/<a class="mx-2" href="/docs/cloud/billing">billing</a>
 </div>
 </div>
 <div class="w-full mx-auto ff-bg-light flex flex-col md:flex-row">
@@ -537,19 +537,19 @@ v1.4.1 /<a class="mx-2" href="/docs">docs</a>/<a class="mx-2" href="/docs/cloud"
 <h2 id="payment-methods" tabindex="-1"><a class="header-anchor" href="#payment-methods">#&nbsp;</a> Payment Methods</h2>
 <p>We will accept payments via credit or debit card only using Stripe as our payment provider. All payments are processed in US Dollars.</p>
 <h2 id="team-billing" tabindex="-1"><a class="header-anchor" href="#team-billing">#&nbsp;</a> Team Billing</h2>
-<p>Each team has a separate billing account and a free subscription for the team. Each project under the team is added to that subscription. For each team you will need to setup the billing details for each time, though you can use the same card.</p>
+<p>Each team has a separate billing account and a free subscription for the team. Each Node-RED instance under the team is added to that subscription. For each team you will need to setup the billing details for each time, though you can use the same card.</p>
 <h2 id="billing-cycle" tabindex="-1"><a class="header-anchor" href="#billing-cycle">#&nbsp;</a> Billing Cycle</h2>
-<p>Teams are billed monthly on the anniversary of the team creation. You will receive one bill for each team. Projects are billed in advance for the coming month. If a project is added during the billing cycle then a new charge is made for a full month and a pro-rated credit is then applied to the invoice on the next cycle for the unused time.</p>
-<h2 id="removing-projects" tabindex="-1"><a class="header-anchor" href="#removing-projects">#&nbsp;</a> Removing Projects</h2>
-<p>When a project is deleted you will receive a pro-rated credit for the number of seconds remaining in the billing cycle, which is used against a future invoice.</p>
-<h2 id="suspended-projects" tabindex="-1"><a class="header-anchor" href="#suspended-projects">#&nbsp;</a> Suspended Projects</h2>
-<p>Suspended projects have no running editor, nor a runtime. You are not charged for suspended projects. When a project is suspended your account will receive a credit for the number of seconds remaining in the billing cycle. When a project is started up again then you will be billed for the remaining seconds in the teams billing cycle, any credit on the account from the project being suspended will be used towards this charge first.</p>
+<p>Teams are billed monthly on the anniversary of the team creation. You will receive one bill for each team. Node-RED instances are billed in advance for the coming month. If an instance is added during the billing cycle then a new charge is made for a full month and a pro-rated credit is then applied to the invoice on the next cycle for the unused time.</p>
+<h2 id="removing-instances" tabindex="-1"><a class="header-anchor" href="#removing-instances">#&nbsp;</a> Removing Instances</h2>
+<p>When a Node-RED instance is deleted you will receive a pro-rated credit for the time remaining in the billing cycle, which is used against a future invoice.</p>
+<h2 id="suspended-instances" tabindex="-1"><a class="header-anchor" href="#suspended-instances">#&nbsp;</a> Suspended Instances</h2>
+<p>Suspended Node-RED instances have no running editor, nor a runtime. You are not charged for suspended instances. When an instance is suspended your account will receive a credit for the time remaining in the billing cycle. When an instance is started up again then you will be billed for the remaining seconds in the teams billing cycle, any credit on the account from the instance being suspended will be used towards this charge first.</p>
 <h2 id="managing-billing-details" tabindex="-1"><a class="header-anchor" href="#managing-billing-details">#&nbsp;</a> Managing Billing Details</h2>
 <p>The settings tab of your Team page has a link to billing, on here you can see a summary of the teams current subscription. There is also a link to the Stripe Customer Portal where you can change the payment card in use or the billing email address.</p>
 <h2 id="failed-payments" tabindex="-1"><a class="header-anchor" href="#failed-payments">#&nbsp;</a> Failed Payments</h2>
-<p>If your payment fails for any reason you will receive a notification to the billing email address, you may need to login and update the card on file. Stripe will retry the payment several times over a number of days. If the card repeatedly fails your projects will be suspended and a banner will be displayed at the top of the page for all users. An admin will need to update your card details to be able create new projects or restart them.</p>
+<p>If your payment fails for any reason you will receive a notification to the billing email address, you may need to login and update the card on file. Stripe will retry the payment several times over a number of days. If the card repeatedly fails your Node-RED instances will be suspended and a banner will be displayed at the top of the page for all users. An admin will need to update your card details to be able create new instances or restart them.</p>
 <h2 id="cancelling-your-subscription" tabindex="-1"><a class="header-anchor" href="#cancelling-your-subscription">#&nbsp;</a> Cancelling your subscription</h2>
-<p>If you want to cancel your subscription with FlowForge Cloud you will need to remove all projects and then delete all teams from your account. If you have outstanding credit you can request a refund via a <a href="https://flowforge.com/contact-us/">support ticket</a>.</p>
+<p>If you want to cancel your subscription with FlowForge Cloud you will need to remove all Node-RED instances and then delete all teams from your account. If you have outstanding credit you can request a refund via a <a href="https://flowforge.com/contact-us/">support ticket</a>.</p>
 </div>
 </div>
 </div>
@@ -557,14 +557,14 @@ v1.4.1 /<a class="mx-2" href="/docs">docs</a>/<a class="mx-2" href="/docs/cloud"
 <div class="border-l">
 <div class="block px-8 pt-4 w-full mx-auto ff-bg-light md:hidden">
 <div class="font-medium border-b pb-1">
-v1.4.1 /<a class="mx-2" href="/docs">docs</a>/<a class="mx-2" href="/docs/cloud">cloud</a>/<a class="mx-2" href="/docs/cloud/billing">billing</a>
+v1.5.0 /<a class="mx-2" href="/docs">docs</a>/<a class="mx-2" href="/docs/cloud">cloud</a>/<a class="mx-2" href="/docs/cloud/billing">billing</a>
 </div>
 </div>
 <div class="sticky top-6 w-full md:w-64 mt-4 md:mt-6 px-8">
 <h3 class="font-medium border-b pb-1 mb-4">on this page</h3>
 <ul id="toc" class="text-sm border-b mb-4"></ul>
 <div class="text-sm pb-1 text-right mb-4"><a href="https://github.com/flowforge/flowforge/edit/main/docs/cloud/billing.md">Edit this page</a></div>
-<div class="text-xs pb-1 text-right mb-4 italic">Updated: 2023-03-13 11:25:24 +0000</div>
+<div class="text-xs pb-1 text-right mb-4 italic">Updated: 2023-03-16 10:55:00 +0000</div>
 </div>
 </div>
 </div>

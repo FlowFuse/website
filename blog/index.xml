@@ -3,8 +3,103 @@
     <title>FlowForge</title>
     <link href="https://flowforge.com/blog/index.xml" rel="self"/>
     <link href="https://flowforge.com/blog"/>
-    <updated>2023-03-13T12:00:00Z</updated>
+    <updated>2023-03-16T15:00:00Z</updated>
     <id>https://flowforge.com/blog</id>
+    
+    <entry>
+        <id>https://flowforge.com/blog/2023/03/flowforge-1-5-0-released/</id>
+        <title>FlowForge v1.5 Now Available</title>
+        <summary>Updates to UI and architecture to allow for future features and Node-RED 3.1.0 Beta Available!</summary>
+        <updated>2023-03-16T15:00:00Z</updated>
+        <link href="https://flowforge.com/blog/2023/03/flowforge-1-5-0-released/"/>
+        <author><name>Joe Pavitt</name></author>
+        <content type="html">&lt;p&gt;For FlowForge 1.5 we have been busy making a lot of UX changes and upgrading our underlying architecture to enable future innovations on the FlowForge platform.&lt;/p&gt;
+&lt;!--more--&gt;
+&lt;p&gt;With our recently announced &lt;a href=&quot;https://flowforge.com/blog/2023/03/terminology-changes/&quot;&gt;Terminology Changes&lt;/a&gt;, we have introduced some new concepts into FlowForge.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Application&lt;/strong&gt;: A group of Node-RED Instances Each instance can run locally (in FlowForge) or remotely (on Devices)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Instances&lt;/strong&gt;: We renamed &amp;quot;Projects&amp;quot; to &amp;quot;Instances&amp;quot; to be more inline with the terminology used in the Node-RED community&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;As such, our User Experience has been updated to reflect these changes, and allow for further functionality to be introduced with our plans for &lt;a href=&quot;https://github.com/flowforge/flowforge/issues/1689&quot;&gt;Multiple Instances per Application&lt;/a&gt;.&lt;/p&gt;
+&lt;h3 id=&quot;%22applications%22-view&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://flowforge.com/blog/2023/03/flowforge-1-5-0-released/#%22applications%22-view&quot;&gt;#&amp;nbsp;&lt;/a&gt; &amp;quot;Applications&amp;quot; View&lt;/h3&gt;
+&lt;p&gt;At the top-level in FlowForge, you can now see a list of your &amp;quot;Appications&amp;quot;. In FlowForge 1.5, as we still have a 1:1 relationship of Applications to Local Instances, this will be the same as the list of &amp;quot;Projects&amp;quot; that you&#39;re used to seeing.&lt;/p&gt;
+&lt;p&gt;&lt;picture&gt;&lt;source type=&quot;image/avif&quot; srcset=&quot;https://flowforge.com/img/screenshot-applications-AkytJToK22-650.avif 650w, https://flowforge.com/img/screenshot-applications-AkytJToK22-1300.avif 1300w&quot; sizes=&quot;(min-device-pixel-ratio: 1.25) 1300px, (min-resolution: 120dpi) 1300px, 650px&quot; /&gt;&lt;source type=&quot;image/webp&quot; srcset=&quot;https://flowforge.com/img/screenshot-applications-AkytJToK22-650.webp 650w, https://flowforge.com/img/screenshot-applications-AkytJToK22-1300.webp 1300w&quot; sizes=&quot;(min-device-pixel-ratio: 1.25) 1300px, (min-resolution: 120dpi) 1300px, 650px&quot; /&gt;&lt;source type=&quot;image/jpeg&quot; srcset=&quot;https://flowforge.com/img/screenshot-applications-AkytJToK22-650.jpeg 650w, https://flowforge.com/img/screenshot-applications-AkytJToK22-1300.jpeg 1300w&quot; sizes=&quot;(min-device-pixel-ratio: 1.25) 1300px, (min-resolution: 120dpi) 1300px, 650px&quot; /&gt;&lt;img title=&quot;&quot; alt=&quot;Screenshot to show the new &amp;quot;Applications&amp;quot; view&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot; src=&quot;https://flowforge.com/img/screenshot-applications-AkytJToK22-650.jpeg&quot; width=&quot;1300&quot; height=&quot;752&quot; /&gt;&lt;/picture&gt;&lt;/p&gt;
+&lt;figcaption class=&quot;-mt-6 text-center&quot;&gt;&lt;b&gt;&quot;Applications&quot; view in FlowForge, listing all available Applications&lt;/b&gt;&lt;/figcaption&gt;
+&lt;p&gt;For 1.5, all of your settings, environment variables, etc. are all now at the &amp;quot;Instance&amp;quot; level. Applications will gain a lot more functionality in future releases.&lt;/p&gt;
+&lt;h3 id=&quot;%22instances%22-view&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://flowforge.com/blog/2023/03/flowforge-1-5-0-released/#%22instances%22-view&quot;&gt;#&amp;nbsp;&lt;/a&gt; &amp;quot;Instances&amp;quot; View&lt;/h3&gt;
+&lt;p&gt;When clicking on one of your Applications, you will see a list of Node-RED instances bound to that Application.&lt;/p&gt;
+&lt;p&gt;&lt;picture&gt;&lt;source type=&quot;image/avif&quot; srcset=&quot;https://flowforge.com/img/screenshot-instances-x_OJho_xY6-650.avif 650w, https://flowforge.com/img/screenshot-instances-x_OJho_xY6-1300.avif 1300w&quot; sizes=&quot;(min-device-pixel-ratio: 1.25) 1300px, (min-resolution: 120dpi) 1300px, 650px&quot; /&gt;&lt;source type=&quot;image/webp&quot; srcset=&quot;https://flowforge.com/img/screenshot-instances-x_OJho_xY6-650.webp 650w, https://flowforge.com/img/screenshot-instances-x_OJho_xY6-1300.webp 1300w&quot; sizes=&quot;(min-device-pixel-ratio: 1.25) 1300px, (min-resolution: 120dpi) 1300px, 650px&quot; /&gt;&lt;source type=&quot;image/jpeg&quot; srcset=&quot;https://flowforge.com/img/screenshot-instances-x_OJho_xY6-650.jpeg 650w, https://flowforge.com/img/screenshot-instances-x_OJho_xY6-1300.jpeg 1300w&quot; sizes=&quot;(min-device-pixel-ratio: 1.25) 1300px, (min-resolution: 120dpi) 1300px, 650px&quot; /&gt;&lt;img title=&quot;&quot; alt=&quot;Screenshot to show the new &amp;quot;Instances&amp;quot; view&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot; src=&quot;https://flowforge.com/img/screenshot-instances-x_OJho_xY6-650.jpeg&quot; width=&quot;1300&quot; height=&quot;753&quot; /&gt;&lt;/picture&gt;&lt;/p&gt;
+&lt;figcaption class=&quot;-mt-6 text-center&quot;&gt;&lt;b&gt;A list of Instances contained within a single Application.&lt;/b&gt;&lt;/figcaption&gt;
+&lt;p&gt;Clicking on this Instance, will open up the &amp;quot;Instance&amp;quot; view, this is an exact replica of the &amp;quot;Project&amp;quot; view you&#39;ll be used to seeing in FlowForge, and contains all of the same functionality:&lt;/p&gt;
+&lt;p&gt;&lt;picture&gt;&lt;source type=&quot;image/avif&quot; srcset=&quot;https://flowforge.com/img/screenshot-instance-TsRol4jZpH-650.avif 650w, https://flowforge.com/img/screenshot-instance-TsRol4jZpH-1300.avif 1300w&quot; sizes=&quot;(min-device-pixel-ratio: 1.25) 1300px, (min-resolution: 120dpi) 1300px, 650px&quot; /&gt;&lt;source type=&quot;image/webp&quot; srcset=&quot;https://flowforge.com/img/screenshot-instance-TsRol4jZpH-650.webp 650w, https://flowforge.com/img/screenshot-instance-TsRol4jZpH-1300.webp 1300w&quot; sizes=&quot;(min-device-pixel-ratio: 1.25) 1300px, (min-resolution: 120dpi) 1300px, 650px&quot; /&gt;&lt;source type=&quot;image/jpeg&quot; srcset=&quot;https://flowforge.com/img/screenshot-instance-TsRol4jZpH-650.jpeg 650w, https://flowforge.com/img/screenshot-instance-TsRol4jZpH-1300.jpeg 1300w&quot; sizes=&quot;(min-device-pixel-ratio: 1.25) 1300px, (min-resolution: 120dpi) 1300px, 650px&quot; /&gt;&lt;img title=&quot;&quot; alt=&quot;Screenshot to show the new &amp;quot;Instances&amp;quot; view&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot; src=&quot;https://flowforge.com/img/screenshot-instance-TsRol4jZpH-650.jpeg&quot; width=&quot;1300&quot; height=&quot;752&quot; /&gt;&lt;/picture&gt;&lt;/p&gt;
+&lt;figcaption class=&quot;-mt-6 text-center&quot;&gt;&lt;b&gt;FlowForge 1.5&#39;s &quot;Instance&quot; view. This contains all of the functionality previously found in the &quot;Project&quot; view.&lt;/b&gt;&lt;/figcaption&gt;
+&lt;h3 id=&quot;devices-%26-managing-remote-instances&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://flowforge.com/blog/2023/03/flowforge-1-5-0-released/#devices-%26-managing-remote-instances&quot;&gt;#&amp;nbsp;&lt;/a&gt; Devices &amp;amp; Managing Remote Instances&lt;/h3&gt;
+&lt;p&gt;Devices are now bound to &amp;quot;Instances&amp;quot;, you&#39;ll see these in the &amp;quot;Devices&amp;quot; view, and can be managed and deployed to in exactly the same way as before. Devices will run whatever you&#39;ve selected as your &amp;quot;Target Snapshot&amp;quot; for this Instance.&lt;/p&gt;
+&lt;p&gt;&lt;picture&gt;&lt;source type=&quot;image/avif&quot; srcset=&quot;https://flowforge.com/img/screenshot-devices-HJNIpmkq4C-650.avif 650w, https://flowforge.com/img/screenshot-devices-HJNIpmkq4C-1300.avif 1300w&quot; sizes=&quot;(min-device-pixel-ratio: 1.25) 1300px, (min-resolution: 120dpi) 1300px, 650px&quot; /&gt;&lt;source type=&quot;image/webp&quot; srcset=&quot;https://flowforge.com/img/screenshot-devices-HJNIpmkq4C-650.webp 650w, https://flowforge.com/img/screenshot-devices-HJNIpmkq4C-1300.webp 1300w&quot; sizes=&quot;(min-device-pixel-ratio: 1.25) 1300px, (min-resolution: 120dpi) 1300px, 650px&quot; /&gt;&lt;source type=&quot;image/jpeg&quot; srcset=&quot;https://flowforge.com/img/screenshot-devices-HJNIpmkq4C-650.jpeg 650w, https://flowforge.com/img/screenshot-devices-HJNIpmkq4C-1300.jpeg 1300w&quot; sizes=&quot;(min-device-pixel-ratio: 1.25) 1300px, (min-resolution: 120dpi) 1300px, 650px&quot; /&gt;&lt;img title=&quot;&quot; alt=&quot;Screenshot to show an Instance&#39;s &amp;quot;Devices&amp;quot; view&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot; src=&quot;https://flowforge.com/img/screenshot-devices-HJNIpmkq4C-650.jpeg&quot; width=&quot;1300&quot; height=&quot;752&quot; /&gt;&lt;/picture&gt;&lt;/p&gt;
+&lt;figcaption class=&quot;-mt-6 text-center&quot;&gt;&lt;b&gt;&quot;Devices&quot; view, available for a given Node-RED Instance. This lists all of the connected devices to a given instance, that will automatically update when a new Target Snapshot is set.&lt;/b&gt;&lt;/figcaption&gt;
+&lt;h2 id=&quot;node-red-3.1-beta-available&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://flowforge.com/blog/2023/03/flowforge-1-5-0-released/#node-red-3.1-beta-available&quot;&gt;#&amp;nbsp;&lt;/a&gt; Node-RED 3.1 Beta Available&lt;/h2&gt;
+&lt;p&gt;FlowForge Cloud is a great place to try out the new Node-RED features, with FlowForge Cloud now including the &lt;a href=&quot;https://discourse.nodered.org/t/node-red-3-1-0-beta-2-released/76192&quot;&gt;Node-RED 3.1.0-beta.2&lt;/a&gt;. If you want to try this version you can &lt;a href=&quot;https://flowforge.com/docs/user/project-settings/#copy-project&quot;&gt;duplicate your application&lt;/a&gt; or &lt;a href=&quot;https://flowforge.com/docs/user/changestack/&quot;&gt;upgrade your stack&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&quot;other-improvements&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://flowforge.com/blog/2023/03/flowforge-1-5-0-released/#other-improvements&quot;&gt;#&amp;nbsp;&lt;/a&gt; Other Improvements&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Update to audit logs to improve usability [&lt;a href=&quot;https://github.com/flowforge/flowforge/issues/1800&quot;&gt;#1800&lt;/a&gt;] [&lt;a href=&quot;https://github.com/flowforge/flowforge/issues/1785&quot;&gt;#1785&lt;/a&gt;]&lt;/li&gt;
+&lt;li&gt;Improve how licensing works with overages, for easier scaling of FlowForge and your Node-RED Instances [&lt;a href=&quot;https://github.com/flowforge/flowforge/issues/1639&quot;&gt;#1639&lt;/a&gt;] [&lt;a href=&quot;https://github.com/flowforge/flowforge/issues/1739&quot;&gt;#1739&lt;/a&gt;]&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;bug-fixes&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://flowforge.com/blog/2023/03/flowforge-1-5-0-released/#bug-fixes&quot;&gt;#&amp;nbsp;&lt;/a&gt; Bug Fixes&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Device &amp;quot;Last Seen&amp;quot; status shows &amp;quot;never&amp;quot; even though it has previously been seen [&lt;a href=&quot;https://github.com/flowforge/flowforge/issues/1723&quot;&gt;#1723&lt;/a&gt;]&lt;/li&gt;
+&lt;li&gt;Improved Safe Mode launch for small projects [&lt;a href=&quot;https://github.com/flowforge/flowforge/issues/1579&quot;&gt;#1579&lt;/a&gt;]&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;try-it-out&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://flowforge.com/blog/2023/03/flowforge-1-5-0-released/#try-it-out&quot;&gt;#&amp;nbsp;&lt;/a&gt; Try it out&lt;/h2&gt;
+&lt;p&gt;We&#39;re confident you can have self managed FlowForge running locally in under 30 minutes.
+You can install our &lt;a href=&quot;https://flowforge.com/docs/install/local/&quot;&gt;local build&lt;/a&gt;, use &lt;a href=&quot;https://flowforge.com/docs/install/docker/&quot;&gt;Docker&lt;/a&gt;, or &lt;a href=&quot;https://flowforge.com/docs/install/kubernetes/&quot;&gt;Kubernetes&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;If you&#39;d rather use our hosted offering: &lt;a href=&quot;https://app.flowforge.com/account/create&quot;&gt;Get started for free&lt;/a&gt; on FlowForge Cloud.&lt;/p&gt;
+&lt;h2 id=&quot;upgrading-flowforge&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://flowforge.com/blog/2023/03/flowforge-1-5-0-released/#upgrading-flowforge&quot;&gt;#&amp;nbsp;&lt;/a&gt; Upgrading FlowForge&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&quot;https://app.flowforge.com/&quot;&gt;FlowForge Cloud&lt;/a&gt; is already running 1.5.&lt;/p&gt;
+&lt;p&gt;If you installed a previous version of FlowForge and want to upgrade, our documentation provides a
+guide for &lt;a href=&quot;https://flowforge.com/docs/upgrade/&quot;&gt;upgrading your FlowForge instance&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&quot;getting-help&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://flowforge.com/blog/2023/03/flowforge-1-5-0-released/#getting-help&quot;&gt;#&amp;nbsp;&lt;/a&gt; Getting help&lt;/h2&gt;
+&lt;p&gt;Please check FlowForge&#39;s &lt;a href=&quot;https://flowforge.com/docs/&quot;&gt;documentation&lt;/a&gt; as the answers to many questions are covered there.&lt;/p&gt;
+&lt;p&gt;If you hit any problems with the platform please raise an &lt;a href=&quot;https://github.com/flowforge/flowforge/issues&quot;&gt;issue on GitHub&lt;/a&gt;.
+That&#39;s also a great place to send us any feedback or feature requests.&lt;/p&gt;
+&lt;p&gt;You can also get help on &lt;a href=&quot;https://discourse.nodered.org/&quot;&gt;the Node-RED forums&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;As well as in the &lt;a href=&quot;https://github.com/flowforge/flowforge/discussions&quot;&gt;forum within our Github project&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Chat with us on the &lt;code&gt;#flowforge&lt;/code&gt; channel on the &lt;a href=&quot;https://nodered.org/slack&quot;&gt;Node-RED Slack workspace&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;You can raise a support ticket by emailing &lt;a href=&quot;mailto:support@flowforge.com&quot;&gt;support@flowforge.com&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;We&#39;ve also added a live chat widget to our website, you can access it using the icon on the bottom right corner of our website. We&#39;d love to hear from you.&lt;/p&gt;
+</content>
+    </entry>
+    
+    <entry>
+        <id>https://flowforge.com/blog/2023/03/terminology-changes/</id>
+        <title>Terminology Changes</title>
+        <summary>Applications, Instances &amp; Devices - the new way forward for FlowForge</summary>
+        <updated>2023-03-16T14:00:00Z</updated>
+        <link href="https://flowforge.com/blog/2023/03/terminology-changes/"/>
+        <author><name>Joe Pavitt</name></author>
+        <content type="html">&lt;p&gt;As a new product in the market, we constantly have to make choices on how to name things. Naming things is hard! As you name a thing, say &amp;quot;Project&amp;quot;, it might be suitable now, but the product evolves, and may outgrow the name such that it doesn’t fit anymore.&lt;/p&gt;
+&lt;!--more--&gt;
+&lt;p&gt;We are at this point with FlowForge, and want to walk you through what we have planned, and why we are changing a couple of things.&lt;/p&gt;
+&lt;h3 id=&quot;enter-the-%22application%22&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://flowforge.com/blog/2023/03/terminology-changes/#enter-the-%22application%22&quot;&gt;#&amp;nbsp;&lt;/a&gt; Enter the &amp;quot;Application&amp;quot;&lt;/h3&gt;
+&lt;p&gt;In &lt;a href=&quot;https://flowforge.com/blog/2023/03/flowforge-1-5-0-released/&quot;&gt;FlowForge 1.5&lt;/a&gt;, we have introduced a new concept called an &lt;strong&gt;Application&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;An Application will allow you to organize multiple Node-RED instances into a single managed group.&lt;/p&gt;
+&lt;p&gt;As of the 1.5 release, an Application can still only have a single Node-RED instance, but in future releases, Applications will allow for multiple Node-RED instances and will allow us to implement capabilities such as &lt;strong&gt;DevOps Pipelines&lt;/strong&gt; and &lt;strong&gt;High Availability&lt;/strong&gt;.&lt;/p&gt;
+&lt;h3 id=&quot;%22projects%22-to-%22instances%22&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://flowforge.com/blog/2023/03/terminology-changes/#%22projects%22-to-%22instances%22&quot;&gt;#&amp;nbsp;&lt;/a&gt; &amp;quot;Projects&amp;quot; to &amp;quot;Instances&amp;quot;&lt;/h3&gt;
+&lt;p&gt;Until now, &#39;Project&#39; encapsulated both the Node-RED instance that was running in FlowForge, and the associated devices (remote instances), settings and environment variables. It was an overloaded term, and it caused confusion with our users.&lt;/p&gt;
+&lt;p&gt;To simplify things, and to adhere more to the terminology familiar with the Node-RED community, we are renaming Projects to &lt;strong&gt;Instances&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;An &lt;strong&gt;Instance&lt;/strong&gt; is a customized version of Node-RED that includes various FlowForge plugins to integrate it with the FlowForge platform. It can also be used to manage the environment variables used in your Node-RED flows.&lt;/p&gt;
+&lt;p&gt;Instances can either be:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Local&lt;/strong&gt; - An instance of Node-RED running in FlowForge.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Remote&lt;/strong&gt; - An instance of Node-RED, managed by FlowForge, running on a Device.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;In future releases, environment variables will also be able to be stored at the Application level, and shared across multiple Node-RED Instances.&lt;/p&gt;
+&lt;h3 id=&quot;devices&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://flowforge.com/blog/2023/03/terminology-changes/#devices&quot;&gt;#&amp;nbsp;&lt;/a&gt; Devices&lt;/h3&gt;
+&lt;p&gt;FlowForge can also be used to manage remote Node-RED instances. This is typically useful when you have a number of remote devices that are required to run the same Node-RED instance, and may have variation in configuration or environment variables for example.&lt;/p&gt;
+&lt;p&gt;Devices are registered to an Instance, and can be configured to run &lt;a href=&quot;https://flowforge.com/docs/user/concepts/#instance-snapshot&quot;&gt;Snapshots&lt;/a&gt; of the Instance running in FlowForge.&lt;/p&gt;
+&lt;p&gt;To accomplish this remote management capability, the &lt;a href=&quot;https://github.com/flowforge/flowforge-device-agent&quot;&gt;FlowForge Device Agent&lt;/a&gt; needs to be installed on each device. Devices are registered with a Team, and then the appropriate device(s) are assigned to a Node-RED instance that should be deployed to the device(s). When the Node-RED instance is ready for deployment, a user creates a snapshot of the instance and marks it as a target snapshot for the device.&lt;/p&gt;
+&lt;p&gt;We hope these changes will simplify the FlowForge terminology for our users and allow us to grow the FlowForge platform. If you have any feedback or thoughts, please do reach out to us.&lt;/p&gt;
+</content>
+    </entry>
     
     <entry>
         <id>https://flowforge.com/blog/2023/03/3-quick-node-red-tips-4/</id>

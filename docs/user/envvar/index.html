@@ -316,6 +316,11 @@ filenodes
 </a>
 </li>
 <li>
+<a href="/docs/user/instance-settings/">
+instance-settings
+</a>
+</li>
+<li>
 <a href="/docs/user/logs/">
 logs
 </a>
@@ -336,16 +341,6 @@ persistent-context
 </a>
 </li>
 <li>
-<a href="/docs/user/project-settings/">
-project-settings
-</a>
-</li>
-<li>
-<a href="/docs/user/project-stages/">
-project-stages
-</a>
-</li>
-<li>
 <a href="/docs/user/projectnodes/">
 projectnodes
 </a>
@@ -358,6 +353,11 @@ shared-library
 <li>
 <a href="/docs/user/snapshots/">
 snapshots
+</a>
+</li>
+<li>
+<a href="/docs/user/staged-deployments/">
+staged-deployments
 </a>
 </li>
 <li>
@@ -527,7 +527,7 @@ open-source-to-premium
 <div class="max-w-screen-lg mx-auto px-8 pt-8">
 <div class="hidden w-full mx-auto ff-bg-light md:block">
 <div class="font-medium border-b pb-1">
-v1.4.1 /<a class="mx-2" href="/docs">docs</a>/<a class="mx-2" href="/docs/user">user</a>/<a class="mx-2" href="/docs/user/envvar">envvar</a>
+v1.5.0 /<a class="mx-2" href="/docs">docs</a>/<a class="mx-2" href="/docs/user">user</a>/<a class="mx-2" href="/docs/user/envvar">envvar</a>
 </div>
 </div>
 <div class="w-full mx-auto ff-bg-light flex flex-col md:flex-row">
@@ -537,29 +537,29 @@ v1.4.1 /<a class="mx-2" href="/docs">docs</a>/<a class="mx-2" href="/docs/user">
 <p>Environment Variables allow you to manage variables used in your Node-RED flows from the FlowForge application, you can read more on how to access environment variables inside Node-RED <a href="https://nodered.org/docs/user-guide/environment-variables">in the Node-RED Docs</a>.</p>
 <p>An Environment Variable consists of a name and a value.</p>
 <h2 id="editing" tabindex="-1"><a class="header-anchor" href="#editing">#&nbsp;</a> Editing</h2>
-<p>You can edit the environment variables for a project from the <code>Settings</code> tab of a project, select the <code>Environment</code> option from the side menu.</p>
-<p>Changes will only take effect when the project is restarted.</p>
+<p>You can edit the environment variables from the <code>Settings</code> tab of an instance, select the <code>Environment</code> option from the side menu.</p>
+<p>Changes will only take effect when the Node-RED instance is restarted.</p>
 <h2 id="template-provided-variables" tabindex="-1"><a class="header-anchor" href="#template-provided-variables">#&nbsp;</a> Template provided variables</h2>
-<p>The <a href="../concepts#project-template">Template</a> may include some predefined environment variables that are automatically applied to the project. The template may lock some of those variables to prevent a Project from changing them.</p>
+<p>The <a href="../concepts#template">Template</a> may include some predefined environment variables that are automatically applied. The template may lock some of those ariables to prevent an individual instance from changing them.</p>
 <p>Variables provided by the template cannot be deleted, however if they are editable, their value can be set to blank.</p>
-<h2 id="project" tabindex="-1"><a class="header-anchor" href="#project">#&nbsp;</a> Project</h2>
-<p>You can create additional variables for a single project by entering the name and value in the boxes at the bottom of the list and clicking the <code>+</code> button.</p>
-<p>You can delete a project variable using the trash can icon.</p>
-<p>The image below shows a project with 3 environment variables.</p>
+<h2 id="node-red-instance-variables" tabindex="-1"><a class="header-anchor" href="#node-red-instance-variables">#&nbsp;</a> Node-RED instance variables</h2>
+<p>You can create additional variables for an individual Node-RED instance by entering the name and value in the boxes at the bottom of the list and clicking the <code>+</code> button.</p>
+<p>You can delete a variable using the trash can icon.</p>
+<p>The image below shows an instance with 3 environment variables.</p>
 <p>The first one <code>foo</code> is set by the template but the value <code>bar</code> is editable</p>
 <p>The second one <code>locked</code> is set by the template and the value is set to <code>true</code> is not editable</p>
-<p>The third one <code>user</code> is set for the project, the value can be edited or the variable deleted</p>
+<p>The third one <code>user</code> is set for the instance, the value can be edited or the variable deleted</p>
 <img src="../images/project-envvar.png" width="500">
 <h2 id="standard-environment-variables" tabindex="-1"><a class="header-anchor" href="#standard-environment-variables">#&nbsp;</a> Standard environment variables</h2>
-<p>Projects running on FlowForge are assigned a standard set environment variables as follows.</p>
+<p>Instances running on FlowForge are assigned a standard set environment variables as follows.</p>
 <ul>
-<li>FF_PROJECT_ID</li>
-<li>FF_PROJECT_NAME</li>
-<li>FF_DEVICE_ID</li>
-<li>FF_DEVICE_NAME</li>
+<li><code>FF_PROJECT_ID</code></li>
+<li><code>FF_PROJECT_NAME</code></li>
+<li><code>FF_DEVICE_ID</code> (devices only)</li>
+<li><code>FF_DEVICE_NAME</code> (devices only)</li>
 </ul>
-<p><code>FF_PROJECT_ID</code> and <code>FF_PROJECT_NAME</code> are assigned to the Project running on the FlowForge server as well as all associated Devices. In all Node-RED instances within a Project these variables will be the same.</p>
-<p>Unique values for <code>FF_DEVICE_ID</code> and <code>FF_DEVICE_NAME</code> are assigned to each instance of Node-RED running on a Device within a Project however these variables are not assigned to the instance running on the FlowForge server.</p>
+<p><code>FF_PROJECT_ID</code> and <code>FF_PROJECT_NAME</code> are assigned to the Node-RED instance running on the FlowForge server as well as all associated Devices.</p>
+<p>Devices also have <code>FF_DEVICE_ID</code> and <code>FF_DEVICE_NAME</code> set so that flows can know where they are running.</p>
 </div>
 </div>
 </div>
@@ -567,14 +567,14 @@ v1.4.1 /<a class="mx-2" href="/docs">docs</a>/<a class="mx-2" href="/docs/user">
 <div class="border-l">
 <div class="block px-8 pt-4 w-full mx-auto ff-bg-light md:hidden">
 <div class="font-medium border-b pb-1">
-v1.4.1 /<a class="mx-2" href="/docs">docs</a>/<a class="mx-2" href="/docs/user">user</a>/<a class="mx-2" href="/docs/user/envvar">envvar</a>
+v1.5.0 /<a class="mx-2" href="/docs">docs</a>/<a class="mx-2" href="/docs/user">user</a>/<a class="mx-2" href="/docs/user/envvar">envvar</a>
 </div>
 </div>
 <div class="sticky top-6 w-full md:w-64 mt-4 md:mt-6 px-8">
 <h3 class="font-medium border-b pb-1 mb-4">on this page</h3>
 <ul id="toc" class="text-sm border-b mb-4"></ul>
 <div class="text-sm pb-1 text-right mb-4"><a href="https://github.com/flowforge/flowforge/edit/main/docs/user/envvar.md">Edit this page</a></div>
-<div class="text-xs pb-1 text-right mb-4 italic">Updated: 2023-03-13 11:25:24 +0000</div>
+<div class="text-xs pb-1 text-right mb-4 italic">Updated: 2023-03-16 10:55:00 +0000</div>
 </div>
 </div>
 </div>
