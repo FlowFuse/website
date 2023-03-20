@@ -12,9 +12,9 @@ Function nodes are an essential part of Node-RED. They allow you to write custom
 
 <!--more-->
 
- 5 Benefits of using Function Nodes:
+ ## 5 Benefits of using Function Nodes: ##
 
-1. Customisation: Function nodes allow you to write custom JavaScript functions that can be tailored to your specific needs. You can create complex functions that perform a variety of tasks, the only limit is your programming skills.
+1. **Customisation:** Function nodes allow you to write custom JavaScript functions that can be tailored to your specific needs. You can create complex functions that perform a variety of tasks, the only limit is your programming skills.
 
 2. Reusability: Function nodes can be reused in multiple flows, saving you time and effort. You can create a library of custom functions that can be easily accessed and reused in different flows.
 
@@ -24,9 +24,9 @@ Function nodes are an essential part of Node-RED. They allow you to write custom
 
 5. Flexibility: Function nodes provide a high degree of flexibility. You can use them to perform tasks that are not possible using a single, standard Node-RED node, such as complex data manipulation.
 
-5 Benefits of avoiding Function Nodes:
+## 5 Benefits of avoiding Function Nodes:
 
-1. Simplicity: Not using function nodes can make your flows simpler and easier to understand. By using standard Node-RED nodes, you can create flows that are easy to follow and maintain for both you and your team.
+1. **Simplicity:** Not using function nodes can make your flows simpler and easier to understand. By using standard Node-RED nodes, you can create flows that are easy to follow and maintain for both you and your team.
 
 2. Ease of Use: Standard Node-RED nodes are easy to use and require no programming knowledge. This makes it easier for non-technical users to create and maintain flows.
 
@@ -36,7 +36,7 @@ Function nodes are an essential part of Node-RED. They allow you to write custom
 
 5. Compatibility: Standard Node-RED nodes are usually compatible with all versions of Node-RED, making it easier to migrate flows between different environments.
 
-Conclusion:
+## Conclusion:
 
 Function nodes are particularly useful for users with programming experience who need to perform complex tasks in their flows. They offer a wide range of possibilities, from data manipulation to integration with external APIs. Additionally, function nodes can be more performant than using multiple nodes to achieve the same result, which can be beneficial for users who need to optimise their flows for speed.
 
