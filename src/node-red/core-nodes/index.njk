@@ -1,0 +1,25 @@
+---
+maintainers: node-red
+---
+
+{%- for post in collections.node-red -%}
+  {{ post | log }}
+  <li>{{ post.data }}</li>
+{%- endfor -%}
+
+In Node-RED, the core nodes are the set of nodes that are included with the
+Node-RED runtime by default without the node install procedure. These nodes are
+maintained and supported by the Node-RED development team and are intended to
+provide the basic building blocks for creating Node-RED flows.
+
+Core nodes include nodes for basic functionality like input/output, processing,
+and control flow. They are the foundation upon which more complex workflows can
+be built, and they are essential to the operation of Node-RED.
+
+The nodes are grouped in a few sections in the nodes sidebar:
+1. common - miscellaneous nodes
+2. funtion - Control flow, blocking or sending additional messages
+3. network - Receive and send messages over the network on different protocols
+4. sequence - Working with collections of messages, or creating them
+5. parser - transforming data from one format to another
+6. storage - for reading or writing files

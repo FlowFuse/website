@@ -265,6 +265,7 @@ module.exports = function(eleventyConfig) {
 
         createNav('handbook')
         createNav('docs')
+        createNav('nodes')
 
         function createNav (tag) {
             collection.getAll().filter((page) => {
