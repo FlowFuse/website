@@ -20,7 +20,7 @@ const site = require("./src/_data/site");
 const DEV_MODE = process.env.ELEVENTY_RUN_MODE !== "build" // i.e. serve/watch
 
 module.exports = function(eleventyConfig) {
-    eleventyConfig.setUseGitIgnore(false); // Otherwise docs and handbook are ignored
+    eleventyConfig.setUseGitIgnore(false); // Otherwise docs are ignored
 
     // Layout aliases
     eleventyConfig.addLayoutAlias('default', 'layouts/base.njk');
@@ -167,27 +167,22 @@ module.exports = function(eleventyConfig) {
             if (url[0] !== '/' && !isIndexPage) {
                 url = '../'+url
             }
-            // console.log(" rewrite link:", match[3],'=>',url)
+
             str = str.substring(0, match.index) + `${match[2]}="${url}"` + str.substring(match.index+match[1].length)
         }
         return str;
     })
 
-    eleventyConfig.addFilter("handbookEditLink", (page, originalPath) => {
-        if (!originalPath) {
-            console.log(`WARNING: no "originalPath" property on ${page.filePathStem}`)
-            return
-        }
+    eleventyConfig.addFilter("handbookEditLink", (page) => {
         let baseUrl
-        let filePath = page.filePathStem
+        let filePath = page.inputPath
         if (/^\/docs/.test(page.url)) {
             baseUrl = 'https://github.com/flowforge/flowforge/edit/main/docs/'
         } else if (/^\/handbook/.test(page.url)) {
-            baseUrl = 'https://github.com/flowforge/handbook/edit/main/'
-            // Handbook files are at the root of their repo - so strip the prefix
-            filePath = filePath.substring('/handbook'.length)
+            baseUrl = 'https://github.com/flowforge/website/edit/main/'
         }
-        return baseUrl+originalPath.replace(/^.\//,'')
+
+        return baseUrl+filePath.replace(/^.\//,'')
     })
     
     // Custom async filters
