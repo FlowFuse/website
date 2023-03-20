@@ -2,6 +2,14 @@
 navTitle: Boiler Plate Descriptions
 navGroup: Sales & Marketing
 ---
+### Tagline
+
+DevOps for Node-RED
+
+### One sentence description
+
+FlowForge allows organizations to reliably deliver Node-RED applications in a continuous, collaborative, and secure manner.
+
 
 ### About FlowForge - 50 Words
 
