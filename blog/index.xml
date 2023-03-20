@@ -102,6 +102,60 @@ That&#39;s also a great place to send us any feedback or feature requests.&lt;/p
     </entry>
     
     <entry>
+        <id>https://flowforge.com/blog/2023/03/why-should-you-use-node-red-function-nodes/</id>
+        <title>The benefits and drawbacks of using Node-RED function nodes</title>
+        <summary>In this blog post, I will discuss some of the benefits and drawbacks of using Function nodes in your next Node-RED project.</summary>
+        <updated>2023-03-16T00:00:00Z</updated>
+        <link href="https://flowforge.com/blog/2023/03/why-should-you-use-node-red-function-nodes/"/>
+        <author><name>Rob Marcer</name></author>
+        <content type="html">&lt;p&gt;Function nodes are an essential part of Node-RED. They allow you to write custom JavaScript functions that can be used in your Node-RED flows. In this blog post, I will discuss some of the benefits and drawbacks of using Function nodes in your next project.&lt;/p&gt;
+&lt;!--more--&gt;
+&lt;h2 id=&quot;5-benefits-of-using-function-nodes%3A&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://flowforge.com/blog/2023/03/why-should-you-use-node-red-function-nodes/#5-benefits-of-using-function-nodes%3A&quot;&gt;#&amp;nbsp;&lt;/a&gt; 5 Benefits of using Function Nodes:&lt;/h2&gt;
+&lt;p&gt;&lt;picture&gt;&lt;source type=&quot;image/gif&quot; srcset=&quot;https://flowforge.com/img/function-example-tZCIvjb9EH-642.gif 642w&quot; sizes=&quot;(min-device-pixel-ratio: 1.25) 1300px, (min-resolution: 120dpi) 1300px, 650px&quot; /&gt;&lt;img title=&quot;Example of using a function node&quot; alt=&quot;Example of using a function node&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot; src=&quot;https://flowforge.com/img/function-example-tZCIvjb9EH-642.webp&quot; width=&quot;642&quot; height=&quot;394&quot; /&gt;&lt;/picture&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Customisation:&lt;/strong&gt; Function nodes allow you to write custom JavaScript functions that can be tailored to your specific needs. You can create complex functions that perform a variety of tasks, the only limit is your programming skills.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Reusability:&lt;/strong&gt; Function nodes can be reused in multiple flows, saving you time and effort. You can create a library of custom functions that can be easily accessed and reused in different flows.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Debugging:&lt;/strong&gt; Function nodes provide an easy way to debug your code. You can use console.log statements to output debug information to the Node-RED debug panel, making it easier to identify and fix issues.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Performance:&lt;/strong&gt; Function nodes can be more performant than using multiple nodes to achieve the same result. By combining multiple tasks into a single function, you can improve performance, assuming your code is efficient.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Flexibility:&lt;/strong&gt; Function nodes provide a high degree of flexibility. You can use them to perform tasks that are not possible using a single, standard Node-RED node, such as complex data manipulation.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&quot;5-benefits-of-avoiding-function-nodes%3A&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://flowforge.com/blog/2023/03/why-should-you-use-node-red-function-nodes/#5-benefits-of-avoiding-function-nodes%3A&quot;&gt;#&amp;nbsp;&lt;/a&gt; 5 Benefits of avoiding Function Nodes:&lt;/h2&gt;
+&lt;p&gt;&lt;picture&gt;&lt;source type=&quot;image/gif&quot; srcset=&quot;https://flowforge.com/img/no-function-example-gfSsZvsE0E-642.gif 642w&quot; sizes=&quot;(min-device-pixel-ratio: 1.25) 1300px, (min-resolution: 120dpi) 1300px, 650px&quot; /&gt;&lt;img title=&quot;Example of not using a function node&quot; alt=&quot;Example of not using a function node&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot; src=&quot;https://flowforge.com/img/no-function-example-gfSsZvsE0E-642.webp&quot; width=&quot;642&quot; height=&quot;394&quot; /&gt;&lt;/picture&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Simplicity:&lt;/strong&gt; Not using function nodes can make your flows simpler and easier to understand. By using standard Node-RED nodes, you can create flows that are easy to follow and maintain for both you and your team.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Ease of Use:&lt;/strong&gt; Standard Node-RED nodes are easy to use and require no programming knowledge. This makes it easier for non-technical users to create and maintain flows.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Modularity:&lt;/strong&gt; By using standard Node-RED nodes, you can create modular flows that can be easily modified and extended. This makes it easier to add new functionality to your flows as your needs change.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Community Support:&lt;/strong&gt; Standard Node-RED nodes have a large and active community, providing support and resources for users. This can make it easier to find solutions to common problems and share knowledge with others.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Compatibility:&lt;/strong&gt; Standard Node-RED nodes are usually compatible with all versions of Node-RED, making it easier to migrate flows between different environments.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&quot;conclusion%3A&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://flowforge.com/blog/2023/03/why-should-you-use-node-red-function-nodes/#conclusion%3A&quot;&gt;#&amp;nbsp;&lt;/a&gt; Conclusion:&lt;/h2&gt;
+&lt;p&gt;Function nodes are particularly useful for users with programming experience who need to perform complex tasks in their flows. They offer a wide range of possibilities, from data manipulation to integration with external APIs. Additionally, function nodes can be more performant than using multiple nodes to achieve the same result, which can be beneficial for users who need to optimise their flows for speed.&lt;/p&gt;
+&lt;p&gt;On the other hand, standard Node-RED nodes offer a simpler and more accessible approach to flow creation. They are easy to use and require no programming knowledge, making them ideal for non-technical users. Standard nodes also provide modularity, allowing users to create modular flows that can be easily modified and extended. Additionally, standard nodes have a large and active community, providing support and resources for users.&lt;/p&gt;
+&lt;p&gt;Ultimately, the decision to use function nodes or not will depend on your specific needs and preferences. If you require a high degree of customisation and flexibility, function nodes may be the best choice for you. However, if you prefer simplicity and ease of use, standard Node-RED nodes may be a better fit.&lt;/p&gt;
+</content>
+    </entry>
+    
+    <entry>
         <id>https://flowforge.com/blog/2023/03/3-quick-node-red-tips-4/</id>
         <title>3 Quick Tips for Using Node-RED, Part 4</title>
         <summary>Save yourself time when working on Node-RED with these three tips.</summary>
