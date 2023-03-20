@@ -82,7 +82,7 @@ everyone.
 
 We strongly encourage the sharing of thanks and feedback within FlowForge. This
 can be done formally through our `@Feedback` Slackbot. You can read more in
-[Communications](../communication#feedback-%26-thanks)
+[Communications](./communication#feedback-and-thanks)
 
 #### Be Optimistic
 

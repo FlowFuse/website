@@ -8,7 +8,7 @@ Content should be published to the appropriate channels, the types of published 
 
 #### Release
 
-Major releases of FlowForge, the timing of these releases are governed by our [development cadence](https://flowforge.com/handbook/development/#cadence).
+Major releases of FlowForge, the timing of these releases are governed by our [development cadence](../development/releases/planning#cadence).
 
 #### Patch
 

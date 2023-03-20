@@ -11,7 +11,8 @@ Videos should be produced at 1920 x 1080 resolution.
 
 Any text included in the videos will use the ["DIN Alternate Bold"](https://fontsgeek.com/fonts/DIN-Alternate-Bold) font. The FlowForge logo is made with ["Baloo Da 2"](https://fonts.google.com/specimen/Baloo+Da+2).
 
-We have a collection of [assets](./#assets) that will make video editing and creation a lot simpler, particularly in Adobe Premiere Pro.
+We have a collection of [assets](#assets) that will make video editing and creation a lot simpler, particularly in Adobe Premiere Pro.
+
 ## Assets
 
 If you have an Adobe Creative Cloud account, and are a member of the FlowForge team, then you will have access to the "FlowForge Templates" library in Premiere Pro. This contains a collection of [Essential Graphics templates](https://helpx.adobe.com/uk/premiere-pro/using/essential-graphics-panel.html), videos and audio files that can be used across any FlowForge videos.
@@ -41,7 +42,7 @@ Re-usable `.mp4` files that may be used across FlowForge videos. These are also 
 
 ## Tools
 
-If you require a license to one of the following tools (where applicable), then please read our [licensing](../peopleops#software-licenses) section in order to attain one.
+If you require a license to one of the following tools (where applicable), then please read our [licensing](../peopleops/expenses#software-licenses) section in order to attain one.
 
 ### Adobe Creative Cloud ([more info](https://www.adobe.com/uk/creativecloud.html))
 
