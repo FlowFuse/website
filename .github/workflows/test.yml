@@ -3,7 +3,6 @@ name: Tests
 on: push
 
 env:
-  MANUAL_HANDBOOK_COPY: true
   MANUAL_DOCS_COPY: true
 
 jobs:
@@ -27,3 +26,6 @@ jobs:
         run: npm run build
       - name: Test the website
         run: npm run test
+      - uses: untitaker/hyperlink@0.1.27
+        with:
+          args: _site/ --sources src/
