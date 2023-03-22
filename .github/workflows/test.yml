@@ -2,9 +2,6 @@ name: Tests
 
 on: push
 
-env:
-  MANUAL_DOCS_COPY: true
-
 jobs:
   test-website:
     runs-on: ubuntu-latest
@@ -14,9 +11,9 @@ jobs:
         with:
           repository: flowforge/flowforge
           path: 'flowforge'
-      - name: Move docs to the right location
+      - name: Move docs to parent dir
         run: |
-          mv flowforge/docs/* src/docs/
+          mv flowforge ../flowforge
       - uses: actions/setup-node@v3
       - name: Install Dependencies
         run: npm install
@@ -26,4 +23,4 @@ jobs:
         run: npm run test
       - uses: untitaker/hyperlink@0.1.27
         with:
-          args: _site/ --sources src/
+          args: _site/ --check-anchors

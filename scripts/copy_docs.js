@@ -41,10 +41,6 @@ async function copyFiles (src, dest, version) {
 }
 
 (async () => {
-    if(process.env.MANUAL_DOCS_COPY) {
-        return
-    }
-
     try {
         await fs.access('../flowforge/docs')
     } catch (err) {
