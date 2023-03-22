@@ -389,13 +389,8 @@ How We Work
 </li>
 <ul class="handbook-nav-nested-2">
 <li>
-<a href="/handbook/development/how-we-work/security/">
-Security Policy
-</a>
-</li>
-<li>
-<a href="/handbook/development/how-we-work/staging/">
-Staging Environment
+<a href="/handbook/development/how-we-work/contributing/">
+contributing
 </a>
 </li>
 <li>
@@ -404,8 +399,13 @@ Packaging Guidelines
 </a>
 </li>
 <li>
-<a href="/handbook/development/how-we-work/contributing/">
-contributing
+<a href="/handbook/development/how-we-work/security/">
+Security Policy
+</a>
+</li>
+<li>
+<a href="/handbook/development/how-we-work/staging/">
+Staging Environment
 </a>
 </li>
 </ul>
@@ -432,14 +432,14 @@ Releases
 </button>
 </li>
 <ul class="handbook-nav-nested-2">
-<li>
-<a href="/handbook/development/releases/planning/">
-Planning
-</a>
-</li>
 <li class="active">
 <a href="/handbook/development/releases/process/">
 Release Process
+</a>
+</li>
+<li>
+<a href="/handbook/development/releases/planning/">
+Planning
 </a>
 </li>
 </ul>
@@ -610,7 +610,7 @@ Sales Pitch
 <h3 id="setup" tabindex="-1"><a class="header-anchor" href="#setup">#&nbsp;</a> Setup</h3>
 <ul>
 <li>Decide who will be Release Manager for this release. For Major/Minor releases this should be shared across the whole team to prevent it becoming a single point of failure. For Fix releases it can be the developer committing the fix.</li>
-<li>Create a Release checklist issue using the <a href="https://github.com/flowforge/admin/issues/new?assignees=&amp;labels=&amp;template=release.md&amp;title=Release%3A">Release Checklist template</a></li>
+<li>Create a Release checklist issue using the <a href="https://github.com/flowforge/admin/issues/new?assignees=&amp;labels=&amp;template=release.md&amp;title=Release%3A" rel="nofollow">Release Checklist template</a></li>
 <li>Assign the issue to the Release Manager</li>
 <li>Ensure you have the following installed on your machine:
 <ul>
@@ -661,7 +661,7 @@ in each of those repositories.</p>
 <p>Do not panic when you see &quot;All jobs have failed&quot; for the <code>flowforge/flowforge</code> Release PR. This is due to the repo pointing to newer versions of other packages which have not yet been published to npm.</p>
 </li>
 <li>
-<p>Follow through the current release checklist in <a href="https://github.com/flowforge/admin/issues"><code>flowforge/admin</code></a> in the order they are listed. Each PR will need to be reviewed, merged and tagged taking care to verify each one has been published before moving to the next. Some steps will also require you to pause and re-run tests before continuing. Updated packages will be automatically published to npm by our GitHub actions. You can check the publish status of these as follows:</p>
+<p>Follow through the current release checklist in <a href="https://github.com/flowforge/admin/issues" rel="nofollow"><code>flowforge/admin</code></a> in the order they are listed. Each PR will need to be reviewed, merged and tagged taking care to verify each one has been published before moving to the next. Some steps will also require you to pause and re-run tests before continuing. Updated packages will be automatically published to npm by our GitHub actions. You can check the publish status of these as follows:</p>
 <ul>
 <li>Track the &quot;Release Published&quot; action on the GH repository</li>
 <li>Keep an eye on npmjs.org page for each package</li>
@@ -718,7 +718,7 @@ in each of those repositories.</p>
 <h3 class="font-medium border-b pb-1 mb-4">On this page</h3>
 <ul id="toc" class="text-sm border-b mb-4"></ul>
 <div class="text-sm pb-1 text-right mb-4"><a href="https://github.com/flowforge/website/edit/main/src/handbook/development/releases/process.md">Edit this page</a></div>
-<div class="text-xs pb-1 text-right mb-4 italic">Updated: Wed Mar 22 2023 08:45:33 GMT+0000 (Coordinated Universal Time)</div>
+<div class="text-xs pb-1 text-right mb-4 italic">Updated: Wed Mar 22 2023 08:50:04 GMT+0000 (Coordinated Universal Time)</div>
 </div>
 </div>
 </div>
