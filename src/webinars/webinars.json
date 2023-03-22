@@ -1,6 +1,6 @@
 {
     "tags": [
-        "webinar"
+        "webinar", "event"
     ],
     "layout": "layouts/webinar.njk"
 }

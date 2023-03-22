@@ -129,7 +129,7 @@ meta:
     {% if collections.webinar and (collections.webinar | inPast | length) > 0 %}
         <h2 class="w-full">Past Webinars</h2>
         <ul class="grid md:grid-cols-3 gap-4">
-            {%- for item in collections.webinar | inPast | reverse -%}
+            {%- for item in collections.event | inPast | reverse -%}
                 <li class="w-full my-2 pb-6 border-b">
                     <a href="{{ item.url }}" class="w-full flex flex-col group hover:no-underline">
                         <div class="">
