@@ -17,7 +17,7 @@ Likely places this will be required are:
 
 ### Creating an Art Request
 
-You can create an issue on any of the [FlowForge Repositories]() that best suits the asset required, e.g:
+You can create an issue on any of the FlowForge Repositories that best suits the asset required, e.g:
 
 - [flowforge/flowforge](https://github.com/flowforge/flowforge): In-Product Visuals (e.g. icons, diagrams, pictograms)
 - [flowforge/website](https://github.com/flowforge/website): Markitechture Diagrams, Blog Tiles, Webinar & AMA Tiles
