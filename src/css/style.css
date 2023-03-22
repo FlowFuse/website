@@ -127,6 +127,13 @@ pre code {
 }
 
 /*
+    prevent top margin on first/hero img of a blog post
+*/
+.prose .hero-img img {
+    margin-top: 0;
+}
+
+/*
     Eleventy Code Clipboard Plugin
 */
 .code-copy {
