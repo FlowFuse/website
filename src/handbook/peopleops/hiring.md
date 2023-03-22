@@ -8,7 +8,7 @@ navTitle: Hiring
 
 When a candidate applied they'll have at least two interviews with two different
 interviewers before an offer is extended to them. One interview will investigate
-the [fit on values](../company#values). The second will be a competency based
+the [fit on values](../company/values). The second will be a competency based
 interview.
 
 When interviewing to hire new team members, optimize for value-fit over
@@ -42,7 +42,7 @@ date for a new employee should be at least 3 to 4 weeks out. When a
 [conditional offer](#extending-an-offer) has been accepted you should immediately:
 
 1. [Create an onboarding issue](https://github.com/flowforge/admin/issues/new/choose){rel="nofollow"} on the admin GitHub project
-1. Update the [internal team overview spreadsheet](./internal-team-overview)
+1. Update the [internal team overview spreadsheet](./organization#internal-team-overview)
 1. Add their stock options to the stock option request spreadsheets
    * Copy or create a new monthly request sheet from [this template](https://docs.google.com/spreadsheets/d/1AG75qONjObto3g2oJH_SC4gjgRsYJmKUI3fjrZuktm0/edit#gid=1970623412){rel="nofollow"}
 
@@ -130,7 +130,7 @@ Again, a scoresheet will be filled out.
 
 #### Offer stage
 
-First, read about [extending offers](#extending-offers).
+First, read about [extending offers](#extending-an-offer).
 
 At the offer stage all scorecards will be re-evaluated to understand what the candidate strengths and challenges are.
 Before the peopleops team extends an offer, explicit approval is required from:
@@ -141,7 +141,7 @@ Before the peopleops team extends an offer, explicit approval is required from:
 1. The new manager of the candidate
 1. CEO
 
-When a candidate accepted an offer, proceed to [onboard them](#after-accepting-an-offer).
+When a candidate accepted an offer, proceed to [onboard them](#after-an-offer-is-accepted).
 
 ### Closing a job
 

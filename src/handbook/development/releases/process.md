@@ -120,5 +120,4 @@ The unmanaged repositories listed above have a simpler release process.
 ## Launch Lunch
 
 To celebrate the launch of a new version of FlowForge, we organize a lunch on
-the release day. Each team member is encouraged to order a lunch (Expensable up
-to 25$ per launch) and join a social lunch zoom call.
+the release day. See also the [peopleops section](../../peopleops/compensation#launch-lunch).

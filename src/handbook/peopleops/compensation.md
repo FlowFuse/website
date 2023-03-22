@@ -49,9 +49,9 @@ members, or other reasons.
 
 ### For everyone
 
-- [Unlimited PTO](./index.md#vacation-policy)
-- [Launch Lunch](../development/releases.md#launch-lunch)
-- [Dinner Bonus](../development/releases.md#dinner-bonus)
+- [Unlimited PTO](./leave#vacation-policy)
+- [Launch Lunch](../development/releases/process#launch-lunch)
+- [Dinner Bonus](#dinner-bonus)
 
 #### 1Password Family
 
@@ -61,12 +61,12 @@ account. You'll need to link your family, see also [their docs](https://support.
 #### Launch Lunch
 
 Each release is celebrated with a lunch. Team members that join a social Zoom
-call are encouraged to order a lunch. Lunch can be [expensed](./index.md#expenses)
+call are encouraged to order a lunch. Lunch can be [expensed](./expenses)
 up to $25.
 
 #### Dinner Bonus
 
-The company's [KPI tracking FlowForge adoption](../company/strategy.md#installed-platforms)
+The company's [KPI tracking FlowForge adoption](../company/vision#managed-node-red-instances)
 sets an aggressive goal for growth. When the growth target is met a $100 bonus is
 awarded to be expensed for a dinner out. The bonus is awarded per release.
 
