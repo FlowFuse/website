@@ -11,7 +11,7 @@ releases.
 ### Setup
 
  - Decide who will be Release Manager for this release. For Major/Minor releases this should be shared across the whole team to prevent it becoming a single point of failure. For Fix releases it can be the developer committing the fix.
- - Create a Release checklist issue using the [Release Checklist template](https://github.com/flowforge/admin/issues/new?assignees=&labels=&template=release.md&title=Release%3A)
+ - Create a Release checklist issue using the [Release Checklist template](https://github.com/flowforge/admin/issues/new?assignees=&labels=&template=release.md&title=Release%3A){rel="nofollow"}
  - Assign the issue to the Release Manager
  - Ensure you have the following installed on your machine:
     - git command-line tools.
@@ -67,7 +67,7 @@ Refer to the section [Unmanaged Releases](#unmanaged-releases) for releasing the
 - Do not panic when you see "All jobs have failed" for the `flowforge/flowforge` Release PR. 
       This is due to the repo pointing to newer versions of other packages which have not yet been published to npm.
 
- - Follow through the current release checklist in [`flowforge/admin`](https://github.com/flowforge/admin/issues) in the order they are listed.
+ - Follow through the current release checklist in [`flowforge/admin`](https://github.com/flowforge/admin/issues){rel="nofollow"} in the order they are listed.
    Each PR will need to be reviewed, merged and tagged taking care to verify each one has been published before moving to the next.
    Some steps will also require you to pause and re-run tests before continuing.
    Updated packages will be automatically published to npm by our GitHub actions.  You can check the publish status of these as follows:

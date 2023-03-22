@@ -11,6 +11,7 @@ const htmlmin = require("html-minifier");
 const markdownIt = require("markdown-it");
 const markdownItAnchor = require("markdown-it-anchor");
 const markdownItFootnote = require("markdown-it-footnote");
+const markdownItAttrs = require('markdown-it-attrs');
 const spacetime = require("spacetime");
 const { minify } = require("terser");
 
@@ -393,6 +394,7 @@ module.exports = function(eleventyConfig) {
     const markdownLib = markdownIt(markdownItOptions)
         .use(markdownItAnchor, markdownItAnchorOptions)
         .use(markdownItFootnote)
+        .use(markdownItAttrs)
         .use(codeClipboard.markdownItCopyButton)
 
     markdownLib.renderer.rules.image = function (tokens, idx, options, env, self) {
