@@ -370,13 +370,13 @@ Data Attributes
 </a>
 </li>
 <li>
-<a href="/handbook/development/frontend/services/">
-services
+<a href="/handbook/development/frontend/testing/">
+testing
 </a>
 </li>
 <li>
-<a href="/handbook/development/frontend/testing/">
-testing
+<a href="/handbook/development/frontend/services/">
+services
 </a>
 </li>
 </ul>
@@ -399,8 +399,8 @@ How We Work
 </li>
 <ul class="handbook-nav-nested-2">
 <li>
-<a href="/handbook/development/how-we-work/packaging/">
-Packaging Guidelines
+<a href="/handbook/development/how-we-work/contributing/">
+contributing
 </a>
 </li>
 <li>
@@ -409,13 +409,13 @@ Security Policy
 </a>
 </li>
 <li>
-<a href="/handbook/development/how-we-work/staging/">
-Staging Environment
+<a href="/handbook/development/how-we-work/packaging/">
+Packaging Guidelines
 </a>
 </li>
 <li>
-<a href="/handbook/development/how-we-work/contributing/">
-contributing
+<a href="/handbook/development/how-we-work/staging/">
+Staging Environment
 </a>
 </li>
 </ul>
@@ -656,7 +656,7 @@ Sales Pitch
 <li>Create a webinar page for the website</li>
 </ol>
 <ul>
-<li>Follow the templates from previous months.</li>
+<li>Follow the templates from previous months - more details can be found <a href="#creating-a-webinar-page">below</a>.</li>
 </ul>
 <ol start="4">
 <li>Create a graphic to promote the webinar</li>
@@ -681,6 +681,64 @@ Sales Pitch
 <li>Node-RED forums</li>
 <li>FlowForge website</li>
 </ul>
+<h3 id="creating-a-webinar-page" tabindex="-1"><a class="header-anchor" href="#creating-a-webinar-page">#&nbsp;</a> Creating a Webinar Page</h3>
+<p>Webinar pages follow a fixed structure, you can see plenty of examples <a href="https://github.com/flowforge/website/tree/main/src/webinars">here</a> in our website repository. Importantly, they must define the following properties at the top of the <code>.md</code> file:</p>
+<h4 id="properties" tabindex="-1"><a class="header-anchor" href="#properties">#&nbsp;</a> Properties</h4>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>title</code></td>
+<td>The title of the webinar, this will also be what shows as the &quot;title&quot; when shared on socials</td>
+</tr>
+<tr>
+<td><code>subtitle</code></td>
+<td>More context on what the webinar will involve</td>
+</tr>
+<tr>
+<td><code>video</code></td>
+<td>Once you have an available video recording of the session, you can include the videos' YouTube id here to include the recording in the webinar's page</td>
+</tr>
+<tr>
+<td><code>image</code></td>
+<td>Absolute file path to the image to show for the Webinar's tile</td>
+</tr>
+<tr>
+<td><code>date</code></td>
+<td>The date that the webinar will take place</td>
+</tr>
+<tr>
+<td><code>time</code></td>
+<td>The time that the webinar will take place, in both GMT &amp; ET</td>
+</tr>
+<tr>
+<td><code>duration</code></td>
+<td>How long, in minutes with the webinar last for</td>
+</tr>
+<tr>
+<td><code>hosts</code></td>
+<td>A list of the webinar hosts, the names need to be formatted inline with the file names found <a href="https://github.com/flowforge/website/tree/main/src/_data/team">here</a></td>
+</tr>
+<tr>
+<td><code>hubspot.formId</code></td>
+<td>The formId from HubSpot to handle the event registration</td>
+</tr>
+</tbody>
+</table>
+<h4 id="example" tabindex="-1"><a class="header-anchor" href="#example">#&nbsp;</a> Example</h4>
+<div style="position: relative">
+<pre class="language-yml"><code id="code-229" class="language-yml"><span class="token punctuation">---</span><br><span class="token key atrule">title</span><span class="token punctuation">:</span> <span class="token string">"DevOps for Node-RED: An Introduction to FlowForge"</span><br><span class="token key atrule">subtitle</span><span class="token punctuation">:</span> Join FlowForge's CTO Nick O'Leary for an introduction to FlowForge and how it provides DevOps for Node<span class="token punctuation">-</span>RED.<br><span class="token key atrule">video</span><span class="token punctuation">:</span> 47EvfmJji<span class="token punctuation">-</span>k<br><span class="token key atrule">image</span><span class="token punctuation">:</span> /images/webinars/webinar<span class="token punctuation">-</span>nr<span class="token punctuation">-</span>5mins.jpg<br><span class="token key atrule">date</span><span class="token punctuation">:</span> YYYY<span class="token punctuation">-</span>MM<span class="token punctuation">-</span>DD<br><span class="token key atrule">time</span><span class="token punctuation">:</span> HH<span class="token punctuation">:</span>MM GMT (HH<span class="token punctuation">:</span>MM ET) <br><span class="token key atrule">duration</span><span class="token punctuation">:</span> MM<br><span class="token key atrule">hosts</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">"rob-marcer"</span><span class="token punctuation">]</span><br><span class="token key atrule">hubspot</span><span class="token punctuation">:</span><br>    <span class="token key atrule">formId</span><span class="token punctuation">:</span> &lt;form<span class="token punctuation">-</span>id<span class="token punctuation">></span><br><span class="token punctuation">---</span></code></pre>
+<button class="code-copy" data-clipboard-target="#code-229" style="position: absolute; top: 7.5px; right: 6px; cursor: pointer; outline: none; opacity: 0.8;" title="Copy">
+<span>
+<span style="font-size: 15px; opacity: 0.8;" class="mdi mdi-content-copy"></span>
+</span>
+</button>
+</div>
 </div>
 </div>
 </div>
@@ -695,7 +753,7 @@ Sales Pitch
 <h3 class="font-medium border-b pb-1 mb-4">On this page</h3>
 <ul id="toc" class="text-sm border-b mb-4"></ul>
 <div class="text-sm pb-1 text-right mb-4"><a href="https://github.com/flowforge/website/edit/main/src/handbook/marketing/webinars.md">Edit this page</a></div>
-<div class="text-xs pb-1 text-right mb-4 italic">Updated: Wed Mar 22 2023 09:27:36 GMT+0000 (Coordinated Universal Time)</div>
+<div class="text-xs pb-1 text-right mb-4 italic">Updated: Wed Mar 22 2023 11:20:42 GMT+0000 (Coordinated Universal Time)</div>
 </div>
 </div>
 </div>
