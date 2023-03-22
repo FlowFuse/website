@@ -2,6 +2,7 @@ const path = require("path");
 const util = require("util");
 const fs = require("fs");
 
+const { EleventyEdgePlugin } = require("@11ty/eleventy");
 const eleventyImage = require("@11ty/eleventy-img");
 const pluginRSS = require("@11ty/eleventy-plugin-rss");
 const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
@@ -15,7 +16,7 @@ const markdownItAttrs = require('markdown-it-attrs');
 const spacetime = require("spacetime");
 const { minify } = require("terser");
 
-const { PostHog } = require('posthog-node')
+// const { PostHog } = require('posthog-node')
 // const axios = require('axios');
 
 const heroGen = require("./lib/post-hero-gen.js");
@@ -24,6 +25,8 @@ const site = require("./src/_data/site");
 const DEV_MODE = process.env.ELEVENTY_RUN_MODE !== "build" // i.e. serve/watch
 
 module.exports = function(eleventyConfig) {
+    eleventyConfig.addPlugin(EleventyEdgePlugin);
+    
     eleventyConfig.setUseGitIgnore(false); // Otherwise docs are ignored
 
     // Layout aliases
@@ -193,21 +196,22 @@ module.exports = function(eleventyConfig) {
         A/B Testing
     */
 
-    const posthog = new PostHog('phc_yVWfmiJ3eiVd2iuLYJIQROuHUN65z3hkhkGvAjjaTL7', { host: 'https://eu.posthog.com' })
+    // const posthog = new PostHog('phc_yVWfmiJ3eiVd2iuLYJIQROuHUN65z3hkhkGvAjjaTL7', { host: 'https://eu.posthog.com' })
 
-    eleventyConfig.addPairedShortcode("abtesting", async function (content, flag, value) {
-        // return `${flag}: ${value}`
-        // const response = await axios.get('https://news.bbc.co.uk')
-        // console.log(response)
-        // const fFlag = 'testA'
-        const fFlag = await posthog.getFeatureFlag('test-flag', 'joepavitt@flowforge.com')
-        console.log(fFlag)
-        if (fFlag === value) {
-            return `${content}`
-        } else {
-            return ''
-        }
-    })
+    // eleventyConfig.addPairedShortcode("abtesting", async function (content, flag, value) {
+    //     // return `${flag}: ${value}`
+    //     // const response = await axios.get('https://news.bbc.co.uk')
+    //     // console.log(response)
+    //     // const fFlag = 'testA'
+    //     // const fFlag = await posthog.getFeatureFlag('test-flag', 'joepavitt@flowforge.com')
+    //     // console.log(fFlag)
+    //     // if (fFlag === value) {
+    //     //     return `${content}`
+    //     // } else {
+    //     //     return ''
+    //     // }
+    //     return ''
+    // })
     
     // Custom async filters
     eleventyConfig.addNunjucksAsyncFilter("jsmin", async function (code, callback) {
