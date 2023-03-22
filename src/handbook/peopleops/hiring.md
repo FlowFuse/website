@@ -22,7 +22,7 @@ candidates will be interviewed to describe their experiences in the past.
 Through their actions we hope to be able to predict their performance in the
 future.
 
-For the interviewer a template is available with the [STAR questions](https://docs.google.com/document/d/1v6C1Tf6B-hDOlA9GhR44Y2ftDgiwx4x_twnuo_N4pZE)
+For the interviewer a template is available with the [STAR questions](https://docs.google.com/document/d/1v6C1Tf6B-hDOlA9GhR44Y2ftDgiwx4x_twnuo_N4pZE){rel="nofollow"}
 to make a copy of.
 
 ## Extending an offer
@@ -33,7 +33,7 @@ conditional on background checks. If the offer includes an equity component,
 this part is conditional on board approval of such a grant. Be sure to be
 explicit about these conditions.
 
-Please use [this template](https://docs.google.com/document/d/1rY0gLLpkOPBVGlMy7PVhnVjmRF53MhkeDET4TkfPJIs) to stage an email.
+Please use [this template](https://docs.google.com/document/d/1rY0gLLpkOPBVGlMy7PVhnVjmRF53MhkeDET4TkfPJIs){rel="nofollow"} to stage an email.
 
 ## After an offer is accepted
 
@@ -41,10 +41,10 @@ Onboarding on our EOR provider, Pilot, takes at least 3 to 4 weeks. The start
 date for a new employee should be at least 3 to 4 weeks out. When a
 [conditional offer](#extending-an-offer) has been accepted you should immediately:
 
-1. [Create an onboarding issue](https://github.com/flowforge/admin/issues/new/choose) on the admin GitHub project
+1. [Create an onboarding issue](https://github.com/flowforge/admin/issues/new/choose){rel="nofollow"} on the admin GitHub project
 1. Update the [internal team overview spreadsheet](./organization#internal-team-overview)
 1. Add their stock options to the stock option request spreadsheets
-   * Copy or create a new monthly request sheet from [this template](https://docs.google.com/spreadsheets/d/1AG75qONjObto3g2oJH_SC4gjgRsYJmKUI3fjrZuktm0/edit#gid=1970623412)
+   * Copy or create a new monthly request sheet from [this template](https://docs.google.com/spreadsheets/d/1AG75qONjObto3g2oJH_SC4gjgRsYJmKUI3fjrZuktm0/edit#gid=1970623412){rel="nofollow"}
 
 ## Onboarding
 

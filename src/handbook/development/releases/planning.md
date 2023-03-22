@@ -131,7 +131,7 @@ by the CTO. This meeting includes 2 parts:
     3. Identifying the release manager - the person who will co-ordinate things
        on release day.
          - Once identified, they take the action to create the next release issue
-           using the [Release Template](https://github.com/flowforge/admin/issues/new?assignees=&labels=&template=release.md&title=Release%3A)
+           using the [Release Template](https://github.com/flowforge/admin/issues/new?assignees=&labels=&template=release.md&title=Release%3A){rel="nofollow"}
            in the `flowforge/admin` repo.
 
 ### What to work on

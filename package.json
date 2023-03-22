@@ -50,5 +50,8 @@
         "vanilla-cookieconsent": "^2.6.1",
         "xmldom": "^0.6.0",
         "xpath": "^0.0.32"
+    },
+    "dependencies": {
+        "markdown-it-attrs": "^4.1.6"
     }
 }

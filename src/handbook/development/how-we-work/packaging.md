@@ -8,8 +8,8 @@ This section describes the requirements we have for all GitHub repositories,
 and npm modules we maintain.
 
 To help ensure all of the requirements are met, an issue should be raised in
-[`flowforge/admin`](https://github.com/flowforge/admin/issues/new/choose) using
-the `New Repository Checklist` and then worked through.
+[`flowforge/admin`](https://github.com/flowforge/admin/issues/new/choose){rel="nofollow"}
+using the `New Repository Checklist` and then worked through.
 
 ## Github projects
 
