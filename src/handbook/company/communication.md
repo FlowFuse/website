@@ -96,7 +96,7 @@ list of names in the agenda so everyone gets the opportunity to share.
 
 ### Bi-weekly KPI meeting
 
-This 25-minute meeting is held to report on [key metrics](../company/strategy.md#key-metrics).
+This 25-minute meeting is held to report on [key metrics](../company/vision.md#key-metrics).
 Every department gets 5 minutes to explain what initiatives have been implemented
 over the past 2 weeks, what initiatives or milestones are scheduled for the next
 two weeks, and what results are expected to the company wide KPI.
@@ -110,7 +110,7 @@ be achieved using Node-RED.  If a native Node-RED solution is not possible or th
 user would benefit from the advantages that FlowForge offers, then, like any other 
 person or company, we can offer FlowForge as a potential solution.
 
-## Feedback & Thanks
+## Feedback and Thanks
 
 In FlowForge, we strongly encourage the sharing of feedback and thank you's. We have
 a custom-built SlackBot (built in Node-RED and hosted in FlowForge of course), that 

@@ -9,7 +9,7 @@ Working remotely can require some changes.
 
 Not everyone wants to sit at home during work, it's recommended to work at least
 one day a week outside of home. To accommodate this, you can
-[expense a coworking space](../peopleops#coworking-space-allowance).
+[expense a coworking space](../peopleops/expenses#coworking-space-allowance).
 
 ### Separating work from private life
 

@@ -6,6 +6,8 @@ navTitle: Planning
 
 Instructions for creating a release are [here](./process.md).
 
+### Cadence
+
 FlowForge is released every four weeks, on a Thursday. We track releases using
 GitHub Milestones. The current schedule of releases can be seen [here](https://github.com/flowforge/flowforge/milestones).
 

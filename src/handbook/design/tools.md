@@ -1,6 +1,6 @@
 ## Tools
 
-If you ever require a license to one of the following tools (where applicable), then please read our [licensing](../peopleops#software-licenses) section in order to attain one.
+If you ever require a license to one of the following tools (where applicable), then please read our [licensing](../peopleops/expenses#software-licenses) section in order to attain one.
 
 ### Figma ([more info](https://www.figma.com/))
 
