@@ -1,7 +1,7 @@
 .DS_Store
 _site
 node_modules
-src/handbook
+src/handbook/media
 src/docs/*
 !src/docs/docs.json
 
