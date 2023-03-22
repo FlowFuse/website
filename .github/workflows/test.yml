@@ -13,12 +13,10 @@ jobs:
       - uses: actions/checkout@v3
         with:
           repository: flowforge/flowforge
-          path: './src/docs'
+          path: 'flowforge'
       - name: Move docs to the right location
         run: |
-          mv src/docs/docs ./docs_temp
-          rm -rf src/docs/*
-          mv docs_temp src/docs
+          mv flowforge/docs/* src/docs/
       - uses: actions/setup-node@v3
       - name: Install Dependencies
         run: npm install
