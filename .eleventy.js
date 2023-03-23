@@ -16,7 +16,6 @@ const markdownItAttrs = require('markdown-it-attrs');
 const spacetime = require("spacetime");
 const { minify } = require("terser");
 
-const { PostHog } = require('posthog-node')
 // const axios = require('axios');
 
 const heroGen = require("./lib/post-hero-gen.js");
@@ -189,26 +188,6 @@ module.exports = function(eleventyConfig) {
         }
 
         return baseUrl+filePath.replace(/^.\//,'')
-    })
-
-    /*
-        A/B Testing
-    */
-
-    const posthog = new PostHog('phc_yVWfmiJ3eiVd2iuLYJIQROuHUN65z3hkhkGvAjjaTL7', { host: 'https://eu.posthog.com' })
-
-    eleventyConfig.addPairedShortcode("abtesting", async function (content, flag, value) {
-        // return `${flag}: ${value}`
-        // const response = await axios.get('https://news.bbc.co.uk')
-        // console.log(response)
-        // const fFlag = 'testA'
-        const fFlag = await posthog.getFeatureFlag('test-flag', 'joepavitt@flowforge.com')
-        console.log(fFlag)
-        if (fFlag === value) {
-            return `${content}`
-        } else {
-            return ''
-        }
     })
     
     // Custom async filters

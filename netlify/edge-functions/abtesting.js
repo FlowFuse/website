@@ -10,6 +10,8 @@ function setCookie(context, name, value) {
 }
 
 export default async (request, context) => {    
-    setCookie(context, "feat", "optionA");    
+    const flag = {"flagA": "optionB"}
+    const strFlag = encodeURIComponent(JSON.stringify(flag))
+    setCookie(context, "feats", strFlag, 1);    
     return context.next();
 };
