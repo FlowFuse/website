@@ -11,14 +11,6 @@ layout: layouts/base.njk
                 {% if subtitle %}
                 <h4>{{ subtitle | safe }}</h4>
                 {% endif %}
-                <p class="author">
-                    <time value="{{ item.date }}">{{ date  | shortDate }}</time>
-                    |
-                    {% set comma = joiner() %}
-                    {%- for author in authors %}
-                    {{ comma() }} {{ team[author].name }}
-                    {%- endfor %}
-                </p>
             </div>
         </div>
     {% endif %}
@@ -58,6 +50,7 @@ layout: layouts/base.njk
                         </div>
                     </div>
                     {% endfor %}
+                    <p>Published on: <time value="{{ item.date }}">{{ date  | shortDate }}</time></p>
                     <h3 class="mb-3 pt-6 border-t-2">Recommended Articles:</h3>
                     <ul class="ml-6 list-disc">
                     {% for post in collections.posts | reverse | limit(4) %}
