@@ -46,6 +46,11 @@ module.exports = function(eleventyConfig) {
         watch: ["_site/**/*.css", "_site/**/*.js"],
     })
 
+    // Custom Tooltip "Component"
+    eleventyConfig.addPairedShortcode("tooltip", function (content, text) {
+        return `<span class="ff-tooltip" data-tooltip="${text}">${content}</span><span></span>`
+    });
+
     // Custom filters
     eleventyConfig.addFilter("head", (array, n) => {
         if( n < 0 ) {
