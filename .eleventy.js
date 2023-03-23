@@ -24,6 +24,8 @@ const site = require("./src/_data/site");
 const DEV_MODE = process.env.ELEVENTY_RUN_MODE !== "build" // i.e. serve/watch
 
 module.exports = function(eleventyConfig) {
+
+    console.log("SERVER RELOAD")
     eleventyConfig.setUseGitIgnore(false); // Otherwise docs are ignored
 
     eleventyConfig.addPlugin(EleventyEdgePlugin);
