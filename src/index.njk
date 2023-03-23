@@ -8,6 +8,9 @@ sitemapPriority: 1.0
             {% edge "njk" %}
                 Hello World
                 {{ eleventy | json }}
+                {% if eleventy.edge.cookies.feat == 'optionA' %}
+                    Hello Shortcode
+                {% endif %}
             {% endedge %}
             Hello World
             {% abtesting "flag", "control"%}

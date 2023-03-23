@@ -9,3 +9,7 @@ publish = "_site"
 [[edge_functions]]
 function = "eleventy-edge"
 path = "/*"
+
+[[edge_functions]]
+function = "abtesting"
+path = "/*"

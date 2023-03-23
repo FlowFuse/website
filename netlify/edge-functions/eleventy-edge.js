@@ -11,7 +11,7 @@ export default async (request, context) => {
       precompiled: precompiledAppData,
 
       // default is [], add more keys to opt-in e.g. ["appearance", "username"]
-      cookies: [],
+      cookies: ['feat'],
     });
 
     edge.config((eleventyConfig) => {
@@ -21,6 +21,11 @@ export default async (request, context) => {
       eleventyConfig.addFilter("json", (content) => {
         return JSON.stringify(content)
       });
+
+      eleventyConfig.addPairedShortcode("shortcodetest", async function (content) {
+        return `${content} - shortcode at edge`
+      })
+
     });
 
     return await edge.handleResponse();
