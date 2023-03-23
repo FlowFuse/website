@@ -371,8 +371,8 @@ Front End
 </li>
 <ul class="handbook-nav-nested-2">
 <li>
-<a href="/handbook/development/frontend/data-attributes/">
-Data Attributes
+<a href="/handbook/development/frontend/testing/">
+testing
 </a>
 </li>
 <li>
@@ -381,8 +381,8 @@ services
 </a>
 </li>
 <li>
-<a href="/handbook/development/frontend/testing/">
-testing
+<a href="/handbook/development/frontend/data-attributes/">
+Data Attributes
 </a>
 </li>
 </ul>
@@ -647,37 +647,34 @@ Sales Pitch
 <p>Hubspot will be used to collect attendee registrations.</p>
 <h3 id="steps-to-schedule-a-webinar" tabindex="-1"><a class="header-anchor" href="#steps-to-schedule-a-webinar">#&nbsp;</a> Steps to Schedule a Webinar</h3>
 <ol>
-<li>Select a topic and speaker</li>
-</ol>
+<li>Select a topic and speaker
 <ul>
 <li>Create a title and abstract for the webinar and speaker bio</li>
 </ul>
-<ol start="2">
-<li>Schedule webinar in Zoom</li>
-</ol>
+</li>
+<li>Schedule webinar in Zoom
 <ul>
 <li>Zoom will automatically send a confirmation email and a two reminder emails to all registrants.</li>
 </ul>
-<ol start="3">
-<li>Create a webinar page for the website</li>
-</ol>
+</li>
+<li>Create a webinar page for the website
 <ul>
 <li>Follow the templates from previous months - more details can be found <a href="#creating-a-webinar-page">below</a>.</li>
 </ul>
-<ol start="4">
-<li>Create a graphic to promote the webinar</li>
-</ol>
+</li>
+<li>Create a graphic to promote the webinar
 <ul>
 <li>Follow the templates from previous months.</li>
 </ul>
-<ol start="5">
-<li>Setup Hubspot for Webinar</li>
-</ol>
+</li>
+<li>Setup Hubspot for Webinar
 <ul>
 <li>Create a static list to track the registrations</li>
 <li>Change the webinar workflow to point to the new static list</li>
 <li>Change the webinar workflow to point to the new Zoom Webinar ID. The ID can be found in the Zoom webinar page. NOTE: you need to use hyphens to replace the spaces in the ID number.</li>
 </ul>
+</li>
+</ol>
 <h3 id="promoting-webinars" tabindex="-1"><a class="header-anchor" href="#promoting-webinars">#&nbsp;</a> Promoting Webinars</h3>
 <p>Each webinar should be available for promotion 2-4 weeks before the live date. Channels for promotion include:</p>
 <ul>
@@ -738,8 +735,8 @@ Sales Pitch
 </table>
 <h4 id="example" tabindex="-1"><a class="header-anchor" href="#example">#&nbsp;</a> Example</h4>
 <div style="position: relative">
-<pre class="language-yml"><code id="code-229" class="language-yml"><span class="token punctuation">---</span><br><span class="token key atrule">title</span><span class="token punctuation">:</span> <span class="token string">"DevOps for Node-RED: An Introduction to FlowForge"</span><br><span class="token key atrule">subtitle</span><span class="token punctuation">:</span> Join FlowForge's CTO Nick O'Leary for an introduction to FlowForge and how it provides DevOps for Node<span class="token punctuation">-</span>RED.<br><span class="token key atrule">video</span><span class="token punctuation">:</span> 47EvfmJji<span class="token punctuation">-</span>k<br><span class="token key atrule">image</span><span class="token punctuation">:</span> /images/webinars/webinar<span class="token punctuation">-</span>nr<span class="token punctuation">-</span>5mins.jpg<br><span class="token key atrule">date</span><span class="token punctuation">:</span> YYYY<span class="token punctuation">-</span>MM<span class="token punctuation">-</span>DD<br><span class="token key atrule">time</span><span class="token punctuation">:</span> HH<span class="token punctuation">:</span>MM GMT (HH<span class="token punctuation">:</span>MM ET) <br><span class="token key atrule">duration</span><span class="token punctuation">:</span> MM<br><span class="token key atrule">hosts</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">"rob-marcer"</span><span class="token punctuation">]</span><br><span class="token key atrule">hubspot</span><span class="token punctuation">:</span><br>    <span class="token key atrule">formId</span><span class="token punctuation">:</span> &lt;form<span class="token punctuation">-</span>id<span class="token punctuation">></span><br><span class="token punctuation">---</span></code></pre>
-<button class="code-copy" data-clipboard-target="#code-229" style="position: absolute; top: 7.5px; right: 6px; cursor: pointer; outline: none; opacity: 0.8;" title="Copy">
+<pre class="language-yml"><code id="code-221" class="language-yml"><span class="token punctuation">---</span><br><span class="token key atrule">title</span><span class="token punctuation">:</span> <span class="token string">"DevOps for Node-RED: An Introduction to FlowForge"</span><br><span class="token key atrule">subtitle</span><span class="token punctuation">:</span> Join FlowForge's CTO Nick O'Leary for an introduction to FlowForge and how it provides DevOps for Node<span class="token punctuation">-</span>RED.<br><span class="token key atrule">video</span><span class="token punctuation">:</span> 47EvfmJji<span class="token punctuation">-</span>k<br><span class="token key atrule">image</span><span class="token punctuation">:</span> /images/webinars/webinar<span class="token punctuation">-</span>nr<span class="token punctuation">-</span>5mins.jpg<br><span class="token key atrule">date</span><span class="token punctuation">:</span> YYYY<span class="token punctuation">-</span>MM<span class="token punctuation">-</span>DD<br><span class="token key atrule">time</span><span class="token punctuation">:</span> HH<span class="token punctuation">:</span>MM GMT (HH<span class="token punctuation">:</span>MM ET) <br><span class="token key atrule">duration</span><span class="token punctuation">:</span> MM<br><span class="token key atrule">hosts</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">"rob-marcer"</span><span class="token punctuation">]</span><br><span class="token key atrule">hubspot</span><span class="token punctuation">:</span><br>    <span class="token key atrule">formId</span><span class="token punctuation">:</span> &lt;form<span class="token punctuation">-</span>id<span class="token punctuation">></span><br><span class="token punctuation">---</span></code></pre>
+<button class="code-copy" data-clipboard-target="#code-221" style="position: absolute; top: 7.5px; right: 6px; cursor: pointer; outline: none; opacity: 0.8;" title="Copy">
 <span>
 <span style="font-size: 15px; opacity: 0.8;" class="mdi mdi-content-copy"></span>
 </span>
@@ -759,7 +756,7 @@ Sales Pitch
 <h3 class="font-medium border-b pb-1 mb-4">On this page</h3>
 <ul id="toc" class="text-sm border-b mb-4"></ul>
 <div class="text-sm pb-1 text-right mb-4"><a href="https://github.com/flowforge/website/edit/main/src/handbook/marketing/webinars.md">Edit this page</a></div>
-<div class="text-xs pb-1 text-right mb-4 italic">Updated: Thu Mar 23 2023 11:19:55 GMT+0000 (Coordinated Universal Time)</div>
+<div class="text-xs pb-1 text-right mb-4 italic">Updated: Thu Mar 23 2023 12:03:40 GMT+0000 (Coordinated Universal Time)</div>
 </div>
 </div>
 </div>
