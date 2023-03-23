@@ -223,6 +223,53 @@ h4:hover .header-anchor {
     background-color: white;
 }
 
+.ff-tooltip {
+    position: relative;
+}
+
+.ff-tooltip:after,
+.ff-tooltip:before {
+    content: '';
+    opacity: 0;
+    transition: opacity 0.15s;
+}
+
+.ff-tooltip:hover:after {
+    content: attr(data-tooltip);
+    background: theme(colors.gray.800);
+    padding: 3px;
+    border-radius: 6px; 
+    display: inline-block;
+    position: absolute;
+    transform: translate(-50%, -100%); 
+    margin: 0 auto;
+    color: #FFF;
+    min-width: 100px;
+    min-width: 150px;
+    top: -5px;
+    left: 50%;
+    text-align:center;
+    font-size: 12pt;
+    opacity: 1;
+}
+
+.ff-tooltip:hover:before {
+    top: -5px;
+    left: 50%;
+    border: solid transparent;
+    content: " ";
+    height: 0;
+    width: 0;
+    opacity: 1;
+    position: absolute;
+    pointer-events: none;
+    border-color: rgba(0, 0, 0, 0);
+    border-top-color: #000;
+    border-width: 5px;
+    margin-left: -5px;
+    transform: translate(0,0px); 
+}
+
 /*
     Header
 */
@@ -364,7 +411,7 @@ h4:hover .header-anchor {
         height: 24px;
         display: inline-flex;
         stroke-width: 2px;
-        color: theme(colors.red.600);
+        /* color: theme(colors.red.600); */
     }
 
     .ff-select {
