@@ -54,6 +54,7 @@
 </a>
 <ul>
 <li><a href="/solutions/manufacturing">manufacturing</a></li>
+<li><a href="/solutions/device-management">device management</a></li>
 </ul>
 </li>
 <li class="ff-nav-dropdown relative">
@@ -458,8 +459,8 @@ kubernetes
 </li>
 <ul class="handbook-nav-nested-2">
 <li>
-<a href="/docs/install/kubernetes/aws/">
-aws
+<a href="/docs/install/kubernetes/stacks/">
+stacks
 </a>
 </li>
 <li>
@@ -468,8 +469,8 @@ digital-ocean
 </a>
 </li>
 <li>
-<a href="/docs/install/kubernetes/stacks/">
-stacks
+<a href="/docs/install/kubernetes/aws/">
+aws
 </a>
 </li>
 </ul>
@@ -549,7 +550,7 @@ v1.5.0 /<a class="mx-2" href="/docs">docs</a>/<a class="mx-2" href="/docs/user">
 </div>
 <p>Or you can chose to run the Docker container. When you do, you'll need to mount the <code>device.yaml</code> obtained when <a href="#register-the-device">Registering the device</a>:</p>
 <div style="position: relative">
-<pre class="language-bash"><code id="code-22" class="language-bash"><span class="token function">docker</span> run <span class="token parameter variable">--mount</span> /path/to/device.yml:/opt/flowforge/device.yaml <span class="token parameter variable">-p</span> <span class="token number">1880</span>:1880 flowforge/device-agent:latest</code></pre>
+<pre class="language-bash"><code id="code-22" class="language-bash"><span class="token function">docker</span> run <span class="token parameter variable">--mount</span> /path/to/device.yml:/opt/flowforge/device.yml <span class="token parameter variable">-p</span> <span class="token number">1880</span>:1880 flowforge/device-agent:latest</code></pre>
 <button class="code-copy" data-clipboard-target="#code-22" style="position: absolute; top: 7.5px; right: 6px; cursor: pointer; outline: none; opacity: 0.8;" title="Copy">
 <span>
 <span style="font-size: 15px; opacity: 0.8;" class="mdi mdi-content-copy"></span>
@@ -709,7 +710,7 @@ v1.5.0 /<a class="mx-2" href="/docs">docs</a>/<a class="mx-2" href="/docs/user">
 <h3 class="font-medium border-b pb-1 mb-4">On this page</h3>
 <ul id="toc" class="text-sm border-b mb-4"></ul>
 <div class="text-sm pb-1 text-right mb-4"><a href="https://github.com/flowforge/flowforge/edit/main/docs/src/docs/user/devices.md">Edit this page</a></div>
-<div class="text-xs pb-1 text-right mb-4 italic">Updated: Thu Mar 23 2023 09:11:50 GMT+0000 (Coordinated Universal Time)</div>
+<div class="text-xs pb-1 text-right mb-4 italic">Updated: Thu Mar 23 2023 11:20:42 GMT+0000 (Coordinated Universal Time)</div>
 </div>
 </div>
 </div>
