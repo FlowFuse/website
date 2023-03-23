@@ -104,15 +104,16 @@
 </div>
 </div>
 <div class="blog nohero w-full pt-6 pb-24 ff-bg-light">
-<div class="container m-auto text-left px-6 md:max-w-screen-lg">
-<a class="block mb-4 flex align-center gap-1" href="/blog">
+<div class="container flex flex-col md:flex-row m-auto text-left px-6 md:max-w-screen-lg gap-8 items-stretch">
+<div>
+<a class="inline-flex align-center gap-1 mb-4" href="/blog">
 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
 <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5"/>
 </svg>
 Back to Blog Posts
 </a>
 <div class="prose">
-<div>
+<div class="mb-4 hero-img">
 <div class="w-full h-auto">
 <picture><source type="image/avif" srcset="/img/function-nodes-y5Ewds-C61-560.avif 560w, /img/function-nodes-y5Ewds-C61-1120.avif 1120w" sizes="(min-device-pixel-ratio: 1.25) 1120px, (min-resolution: 120dpi) 1120px, 560px"><source type="image/webp" srcset="/img/function-nodes-y5Ewds-C61-560.webp 560w, /img/function-nodes-y5Ewds-C61-1120.webp 1120w" sizes="(min-device-pixel-ratio: 1.25) 1120px, (min-resolution: 120dpi) 1120px, 560px"><source type="image/png" srcset="/img/function-nodes-y5Ewds-C61-560.png 560w, /img/function-nodes-y5Ewds-C61-1120.png 1120w" sizes="(min-device-pixel-ratio: 1.25) 1120px, (min-resolution: 120dpi) 1120px, 560px"><img alt="Image representing The benefits and drawbacks of using Node-RED function nodes" loading="lazy" decoding="async" src="/img/function-nodes-y5Ewds-C61-560.png" width="1120" height="626"></picture>
 </div>
@@ -161,21 +162,49 @@ Back to Blog Posts
 <p>On the other hand, standard Node-RED nodes offer a simpler and more accessible approach to flow creation. They are easy to use and require no programming knowledge, making them ideal for non-technical users. Standard nodes also provide modularity, allowing users to create modular flows that can be easily modified and extended. Additionally, standard nodes have a large and active community, providing support and resources for users.</p>
 <p>Ultimately, the decision to use function nodes or not will depend on your specific needs and preferences. If you require a high degree of customisation and flexibility, function nodes may be the best choice for you. However, if you prefer simplicity and ease of use, standard Node-RED nodes may be a better fit.</p>
 </div>
-<div class="mt-12 pt-6 flex flex-col border-t-2">
-<h3 class="mb-6">Sign up for updates</h3>
+</div>
+<div class="w-72 max-w-full flex-shrink-0">
+<div class="sticky top-4 mt-6 flex flex-col">
+<h3 class="mb-3">Written By:</h3>
+<div class="team-card--sm">
+<div class="ff-headshot" style="background-image: url(/images/team/headshot-rob.png)"></div>
+<div class="team-card-info">
+<label>Rob Marcer</label>
+<span>Developer Educator</span>
+</div>
+</div>
+<h3 class="mb-3 pt-6 border-t-2">Recommended Articles:</h3>
+<ul class="ml-6 list-disc">
+<li class="mb-3"><a href="">
+FlowForge v1.5 Now Available
+</a></li>
+<li class="mb-3"><a href="">
+Terminology Changes
+</a></li>
+<li class="mb-3"><a href="">
+3 Quick Tips for Using Node-RED, Part 4
+</a></li>
+<li class="mb-3"><a href="">
+Comparing Node-RED Dashboards Solutions
+</a></li>
+</ul>
+<div class="mt-3 pt-6 flex flex-col border-t-2">
+<h3>Sign up for updates</h3>
 <script>
 function displayHubSpotForm() {
-                        hbspt.forms.create({
-                            region: "eu1",
-                            portalId: "26586079",
-                            formId: "159c173d-dd95-49bd-922b-ff3ef243e90c",
-                            onFormSubmit: function($form) {
-                                capture('cta-blog-subscribe', {'position': 'article'})
+                                hbspt.forms.create({
+                                    region: "eu1",
+                                    portalId: "26586079",
+                                    formId: "159c173d-dd95-49bd-922b-ff3ef243e90c",
+                                    onFormSubmit: function($form) {
+                                        capture('cta-blog-subscribe', {'position': 'article'})
+                                    }
+                                });
                             }
-                        });
-                    }
 </script>
 <script async type="text/javascript" charset="utf-8" src="//js-eu1.hsforms.net/forms/embed/v2.js" onload="displayHubSpotForm()"></script>
+</div>
+</div>
 </div>
 </div>
 </div>
