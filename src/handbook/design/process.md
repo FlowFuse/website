@@ -1,5 +1,9 @@
 ## Process
 
+### Art Requests
+
+If you want something designed or drawn, then please follow the details in [Art Requests](./art-requests.md) in order to have your request be picked up by an available designer.
+
 ### Scheduling
 
 The Design process is bound by the [Development Cadence](../development/releases/planning#cadence),
