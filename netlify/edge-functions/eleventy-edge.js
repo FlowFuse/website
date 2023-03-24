@@ -3,6 +3,13 @@ import {
   precompiledAppData,
 } from "./_generated/eleventy-edge-app.js";
 
+function generateUUID() {
+  function genSubString () {
+    return Math.random().toString(36).slice(2)
+  }
+  return `${genSubString()}-${genSubString()}-${genSubString()}`
+}
+
 function getCookie(context, cookie) {
   return context.cookies.get(cookie);
 }
@@ -32,7 +39,7 @@ function getDistinctId (context) {
   if (phCookie) {
       return decodeJsonCookie(phCookie)
   } else {
-      return "5678"
+      return generateUUID()
   }
 }
 
@@ -48,6 +55,30 @@ async function getPHFeatureFlags (distinctId) {
           return response.json()
       }).then((data) => {
           resolve(data.featureFlags)
+      })
+  })
+}
+
+async function featureFlagCalled (distinctId, feature, value) {
+  return new Promise ((resolve, reject) => {
+      fetch('https://eu.posthog.com/capture', {
+          method: 'POST',
+          body: JSON.stringify({
+              "api_key": "phc_yVWfmiJ3eiVd2iuLYJIQROuHUN65z3hkhkGvAjjaTL7",
+              "distinct_id": distinctId,
+              "event": "$feature_flag_called",
+              "properties": {
+                "$feature_flag": feature,
+                "$feature_flag_response": value
+              }
+          })
+      }).then((response) => {
+          return response.json()
+      }).then((data) => {
+        console.log(data)
+          resolve(data)
+      }).catch((err) => {
+          console.error(err)
       })
   })
 }
@@ -99,6 +130,8 @@ export default async (request, context) => {
         setCookie(context, "ff-feats", strFlag, 1);
         
         if (flags[flag] === value) {
+          // inform PostHog we have used a Feature Flag to track in our experiment
+          featureFlagCalled(distinctId, flag, value)
           return `${content}`
         } else {
           return ''
