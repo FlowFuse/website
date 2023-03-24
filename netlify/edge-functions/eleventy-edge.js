@@ -50,6 +50,7 @@ function getDistinctId (context) {
 
 async function getPHFeatureFlags (distinctId) {
   return new Promise ((resolve, reject) => {
+      console.log('get feature flag for: ' + distinctId)
       fetch('https://eu.posthog.com/decide?v=2', {
           method: 'POST',
           body: JSON.stringify({
@@ -99,10 +100,8 @@ export default async (request, context) => {
       context,
       precompiled: precompiledAppData,
       // default is [], add more keys to opt-in e.g. ["appearance", "username"]
-      cookies: ['ff-feats', 'ff-distinctid', `ph_${POSTHOG_APIKEY}_posthog`],
+      cookies: ['ff-feats', 'ff-distinctid', `ph_${POSTHOG_APIKEY}_posthog`, 'ff-test'],
     });
-
-    console.log('inside try')
 
     function decodeJsonCookie (cookie) {
       const decoded = decodeURIComponent(cookie)
@@ -111,7 +110,6 @@ export default async (request, context) => {
 
     edge.config((eleventyConfig) => {
 
-      console.log('setting up eleventy config')
       console.log(`ph_${POSTHOG_APIKEY}_posthog`)
 
       // Add some custom Edge-specific configuration
@@ -126,16 +124,23 @@ export default async (request, context) => {
         return `${content} - shortcode at edge`
       })
 
+      eleventyConfig.addGlobalData('distinctId', async function () {
+        const distinctId = getDistinctId(context);
+        return distinctId
+      })
+
       /*
           A/B Testing
       */
+     // TODO: Using this means we get two event ids every time we see a new Person
 
-      eleventyConfig.addPairedShortcode("abtesting", async function (content, flag, value) {
+      eleventyConfig.addPairedAsyncShortcode("abtesting", async function (content, flag, value) {
         console.log('A/B Testing : ' + flag + " " + value)
         if (POSTHOG_APIKEY) {
-          const distinctId = getDistinctId(context)
+          const distinctId = this.ctx.environments.distinctId
           // call PostHog /decide API   
           const flags = await getPHFeatureFlags(distinctId)
+          console.log(flags)
           const strFlag = encodeURIComponent(JSON.stringify(flags))
           // set cookies to pass data to client PostHog for bootstrapping
           setCookie(context, "ff-distinctid", distinctId, 1);    
@@ -143,7 +148,7 @@ export default async (request, context) => {
           
           if (flags[flag] && flags[flag] === value) {
             // inform PostHog we have used a Feature Flag to track in our experiment
-            featureFlagCalled(distinctId, flag, value)
+            await featureFlagCalled(distinctId, flag, value)
             return `${content}`
           } else if (!flags[flag] && value === 'control') {
             // this is not a valid feature flag - fall back to the "control" content
@@ -152,13 +157,15 @@ export default async (request, context) => {
             return ''
           }
         } else if (value === 'control') {
+          console.log('no posthog API key')
           // fallback to control if we have no PostHog API key
           return `${content}`
         }
       })
-
     });
-
+    const distinctId = getDistinctId(context)
+    setCookie(context, "ff-distinctid", distinctId, 1);   
+    console.log('handle response')
     return await edge.handleResponse();
   } catch (e) {
     console.log("ERROR", { e });
