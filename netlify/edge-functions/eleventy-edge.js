@@ -38,8 +38,11 @@ function decodeJsonCookie (cookie) {
 */
 function getDistinctId (context) {
   const phCookie = getCookie(context, `ph_${POSTHOG_APIKEY}_posthog`)
+  const ffDistinctId = getCookie(context, `ff-distinctid`)
   if (phCookie) {
       return decodeJsonCookie(phCookie)
+  } else if (ffId) {
+      return ffDistinctId
   } else {
       return generateUUID()
   }
