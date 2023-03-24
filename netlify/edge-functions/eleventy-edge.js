@@ -3,7 +3,7 @@ import {
   precompiledAppData,
 } from "./_generated/eleventy-edge-app.js";
 
-const POSTHOG_APIKEY = Deno.env.get("POSTHOG_APIKEY");
+const POSTHOG_APIKEY = 'phc_yVWfmiJ3eiVd2iuLYJIQROuHUN65z3hkhkGvAjjaTL7'; //Deno.env.get("POSTHOG_APIKEY");
 
 function generateUUID() {
   function genSubString () {
