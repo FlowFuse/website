@@ -86,6 +86,8 @@ async function featureFlagCalled (distinctId, feature, value) {
 
 export default async (request, context) => {
 
+  console.log('edge function')
+
   // const POSTHOG_APIKEY = process.env.POSTHOG_APIKEY
   
   try {
@@ -120,6 +122,7 @@ export default async (request, context) => {
       */
 
       eleventyConfig.addPairedShortcode("abtesting", async function (content, flag, value) {
+        console.log('A/B Testing : ' + flag + " " + value)
         if (POSTHOG_APIKEY) {
           const distinctId = getDistinctId(context)
           // call PostHog /decide API   
