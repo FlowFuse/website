@@ -4,7 +4,7 @@ framework = "#static"
 command = "npx @11ty/eleventy --quiet --watch"
 
 [build]
-command = "npx run build"
+command = "npm run build"
 publish = "_site"
 
 [[edge_functions]]
