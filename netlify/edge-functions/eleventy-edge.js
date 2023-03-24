@@ -129,9 +129,12 @@ export default async (request, context) => {
         setCookie(context, "ff-distinctid", distinctId, 1);    
         setCookie(context, "ff-feats", strFlag, 1);
         
-        if (flags[flag] === value) {
+        if (flags[flag] && flags[flag] === value) {
           // inform PostHog we have used a Feature Flag to track in our experiment
           featureFlagCalled(distinctId, flag, value)
+          return `${content}`
+        } else if (!flags[flag] && value === 'control') {
+          // this is not a valid feature flag - fall back to the "control" content
           return `${content}`
         } else {
           return ''
