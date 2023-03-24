@@ -764,13 +764,14 @@ instructions below due to a limitation of the authentication plugin we use.</p>
 <ul>
 <li><code>auth_opt_http_host</code> value to match the IP address of either the docker0 interface or the external IP address of the machine running the Forge platform</li>
 <li><code>auth_opt_http_port</code> if you have changed the port the Forge platform is running on</li>
+<li><code>auth_plugin</code> should be changed to <code>auth_plugin /mosquitto/go-auth.so</code></li>
 </ul>
 </li>
 <li>
 <p>Start the container with the following command</p>
 <div style="position: relative">
-<pre class="language-bash"><code id="code-334" class="language-bash"><span class="token function">docker</span> run <span class="token parameter variable">-d</span> <span class="token parameter variable">-v</span> /opt/flowforge/broker/mosquitto.conf:/etc/mosquitto/mosquitto.conf <span class="token parameter variable">-p</span> <span class="token number">1883</span>:1883 <span class="token parameter variable">-p</span> <span class="token number">1884</span>:1884 <span class="token parameter variable">--name</span> flowforge-broker iegomez/mosquitto-go-auth</code></pre>
-<button class="code-copy" data-clipboard-target="#code-334" style="position: absolute; top: 7.5px; right: 6px; cursor: pointer; outline: none; opacity: 0.8;" title="Copy">
+<pre class="language-bash"><code id="code-339" class="language-bash"><span class="token function">docker</span> run <span class="token parameter variable">-d</span> <span class="token parameter variable">-v</span> /opt/flowforge/broker/mosquitto.conf:/etc/mosquitto/mosquitto.conf <span class="token parameter variable">-p</span> <span class="token number">1883</span>:1883 <span class="token parameter variable">-p</span> <span class="token number">1884</span>:1884 <span class="token parameter variable">--name</span> flowforge-broker iegomez/mosquitto-go-auth</code></pre>
+<button class="code-copy" data-clipboard-target="#code-339" style="position: absolute; top: 7.5px; right: 6px; cursor: pointer; outline: none; opacity: 0.8;" title="Copy">
 <span>
 <span style="font-size: 15px; opacity: 0.8;" class="mdi mdi-content-copy"></span>
 </span>
@@ -824,7 +825,7 @@ v1.5.0 /<a class="mx-2" href="/docs">docs</a>/<a class="mx-2" href="/docs/instal
 <h3 class="font-medium border-b pb-1 mb-4">On this page</h3>
 <ul id="toc" class="text-sm border-b mb-4"></ul>
 <div class="text-sm pb-1 text-right mb-4"><a href="https://github.com/flowforge/flowforge/edit/main/docs/src/docs/install/local/index.md">Edit this page</a></div>
-<div class="text-xs pb-1 text-right mb-4 italic">Updated: Thu Mar 23 2023 17:57:31 GMT+0000 (Coordinated Universal Time)</div>
+<div class="text-xs pb-1 text-right mb-4 italic">Updated: Fri Mar 24 2023 19:38:40 GMT+0000 (Coordinated Universal Time)</div>
 </div>
 </div>
 </div>
