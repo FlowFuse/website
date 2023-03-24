@@ -5,6 +5,9 @@ sitemapPriority: 1.0
 <!--Hero Content-->
 <div class="w-full px-6 pb-24 mt-12 md:px-0">
     <div class="container m-auto text-center max-w-2xl">
+        {% edge %}
+            Hello World
+        {% endedge %}
         {% edge "liquid" %}
             {{ eleventy | json }}
             {% abtesting "test-flag", "control" %}
