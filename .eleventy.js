@@ -53,6 +53,8 @@ module.exports = function(eleventyConfig) {
         watch: ["_site/**/*.css", "_site/**/*.js"],
     })
 
+    eleventyConfig.addGlobalData('POSTHOG_APIKEY', () => process.env.POSTHOG_APIKEY || '' )
+
     // Custom filters
     eleventyConfig.addFilter("json", (content) => {
         return JSON.stringify(content)
