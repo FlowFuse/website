@@ -5,18 +5,19 @@ sitemapPriority: 1.0
 <!--Hero Content-->
 <div class="w-full px-6 pb-24 mt-12 md:px-0">
     <div class="container m-auto text-center max-w-2xl">
-            {% edge "liquid" %}
-                {% abtesting "test-flag", "control" %}
-                    <h1 class="text-gray-50 max-w-lg m-auto">
-                        DevOps for Node-RED
-                    </h1>
-                {% endabtesting %}
-                {% abtesting "test-flag", "test" %}
-                    <h1 class="text-gray-50 max-w-lg m-auto">
-                        Run Node-RED in Production
-                    </h1>
-                {% endabtesting %}
-            {% endedge %}
+        {% edge "liquid" %}
+            {{ eleventy | json }}
+            {% abtesting "test-flag", "control" %}
+                <h1 class="text-gray-50 max-w-lg m-auto">
+                    DevOps for Node-RED
+                </h1>
+            {% endabtesting %}
+            {% abtesting "test-flag", "test" %}
+                <h1 class="text-gray-50 max-w-lg m-auto">
+                    Run Node-RED in Production
+                </h1>
+            {% endabtesting %}
+        {% endedge %}
         <h3 class="mt-6 text-gray-400 text-lg font-normal">
             FlowForge allows organizations to reliably deliver Node-RED applications in a continuous, collaborative, and secure manner.
         </h3>
