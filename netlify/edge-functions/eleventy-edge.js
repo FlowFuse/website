@@ -109,6 +109,7 @@ export default async (request, context) => {
     edge.config((eleventyConfig) => {
 
       console.log('setting up eleventy config')
+      console.log(`ph_${POSTHOG_APIKEY}_posthog`)
 
       // Add some custom Edge-specific configuration
       // e.g. Fancier json output

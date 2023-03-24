@@ -1,5 +1,4 @@
 [dev]
-port = 8080
 framework = "#static"
 command = "npx @11ty/eleventy --quiet --watch"
 
