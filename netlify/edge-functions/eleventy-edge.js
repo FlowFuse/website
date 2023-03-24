@@ -41,7 +41,7 @@ function getDistinctId (context) {
   const ffDistinctId = getCookie(context, `ff-distinctid`)
   if (phCookie) {
       return decodeJsonCookie(phCookie)
-  } else if (ffId) {
+  } else if (ffDistinctId) {
       return ffDistinctId
   } else {
       return generateUUID()
