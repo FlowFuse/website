@@ -52,8 +52,13 @@ module.exports = function(eleventyConfig) {
         // Additional files to watch that will trigger server updates
         watch: ["_site/**/*.css", "_site/**/*.js"],
     })
-
+    
     eleventyConfig.addGlobalData('POSTHOG_APIKEY', () => process.env.POSTHOG_APIKEY || '' )
+
+    // Custom Tooltip "Component"
+    eleventyConfig.addPairedShortcode("tooltip", function (content, text) {
+        return `<span class="ff-tooltip" data-tooltip="${text}">${content}</span><span></span>`
+    });
 
     // Custom filters
     eleventyConfig.addFilter("json", (content) => {
