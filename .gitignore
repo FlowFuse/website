@@ -6,3 +6,9 @@ src/docs/*
 !src/docs/docs.json
 
 package-lock.json
+
+# Netlify generated stuff
+.netlify/
+
+# Eleventy Edge Build Data files
+netlify/edge-functions/_generated

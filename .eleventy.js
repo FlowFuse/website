@@ -2,6 +2,7 @@ const path = require("path");
 const util = require("util");
 const fs = require("fs");
 
+const { EleventyEdgePlugin } = require("@11ty/eleventy");
 const eleventyImage = require("@11ty/eleventy-img");
 const pluginRSS = require("@11ty/eleventy-plugin-rss");
 const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
@@ -15,13 +16,19 @@ const markdownItAttrs = require('markdown-it-attrs');
 const spacetime = require("spacetime");
 const { minify } = require("terser");
 
+// const axios = require('axios');
+
 const heroGen = require("./lib/post-hero-gen.js");
 const site = require("./src/_data/site");
 
 const DEV_MODE = process.env.ELEVENTY_RUN_MODE !== "build" // i.e. serve/watch
 
 module.exports = function(eleventyConfig) {
+
+    console.log("SERVER RELOAD")
     eleventyConfig.setUseGitIgnore(false); // Otherwise docs are ignored
+
+    eleventyConfig.addPlugin(EleventyEdgePlugin);
 
     // Layout aliases
     eleventyConfig.addLayoutAlias('default', 'layouts/base.njk');
@@ -45,6 +52,8 @@ module.exports = function(eleventyConfig) {
         // Additional files to watch that will trigger server updates
         watch: ["_site/**/*.css", "_site/**/*.js"],
     })
+    
+    eleventyConfig.addGlobalData('POSTHOG_APIKEY', () => process.env.POSTHOG_APIKEY || '' )
 
     // Custom Tooltip "Component"
     eleventyConfig.addPairedShortcode("tooltip", function (content, text) {
@@ -52,16 +61,15 @@ module.exports = function(eleventyConfig) {
     });
 
     // Custom filters
+    eleventyConfig.addFilter("json", (content) => {
+        return JSON.stringify(content)
+    });
+
     eleventyConfig.addFilter("head", (array, n) => {
         if( n < 0 ) {
             return array.slice(n);
         }
         return array.slice(0, n);
-    });
-
-    eleventyConfig.addFilter('console', function(value) {
-        const str = util.inspect(value, {showHidden: false, depth: null});
-        return `<div style="white-space: pre-wrap;">${unescape(str)}</div>;`
     });
 
     eleventyConfig.addFilter('shortDate', dateObj => {

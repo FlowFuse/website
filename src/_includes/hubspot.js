@@ -10,7 +10,6 @@ if (
     window.addEventListener("load", (event) => {
         let loaded = false
         function loadHubSpotChat(event) {
-            console.log(event)
             if (loaded) return
             loaded = true
             setTimeout(() => {
