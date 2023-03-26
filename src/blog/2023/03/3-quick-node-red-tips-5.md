@@ -71,7 +71,7 @@ You can read our previous Node-RED tips here.
 
 [Node-RED Tips - Smooth, Catch, and Math](/blog/2023/03/3-quick-node-red-tips-4/)\
 [Node-RED Tips - Exec, Filter, and Debug](/blog/2023/03/3-quick-node-red-tips-3/)\
-[Node-RED Tips - Deploying, Debugging, and Delaying](/blog/2023/03/3-quick-node-red-tips-2/)\
+[Node-RED Tips - Deploying, Debugging, and Delaying](/blog/2023/02/3-quick-node-red-tips-2/)\
 [Node-RED Tips - Wiring Shortcuts
-](/blog/2023/03/3-quick-node-red-tips-1/)
+](/blog/2023/02/3-quick-node-red-tips-1/)
 
