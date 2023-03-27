@@ -3,8 +3,74 @@
     <title>FlowForge</title>
     <link href="https://flowforge.com/blog/index.xml" rel="self"/>
     <link href="https://flowforge.com/blog"/>
-    <updated>2023-03-20T00:00:00Z</updated>
+    <updated>2023-03-27T12:00:00Z</updated>
     <id>https://flowforge.com/blog</id>
+    
+    <entry>
+        <id>https://flowforge.com/blog/2023/03/3-quick-node-red-tips-5/</id>
+        <title>3 Quick Tips for Using Node-RED, Part 5</title>
+        <summary>Save yourself time when working on Node-RED with these three tips.</summary>
+        <updated>2023-03-27T12:00:00Z</updated>
+        <link href="https://flowforge.com/blog/2023/03/3-quick-node-red-tips-5/"/>
+        <author><name>Rob Marcer</name></author>
+        <content type="html">&lt;p&gt;There is usually more than one way to complete a given task in software, and Node-RED is no exception. In each of this series of blog posts, we are going to share three useful tips to save yourself time when working on your flows.&lt;/p&gt;
+&lt;!--more--&gt;
+&lt;h3 id=&quot;1.-copy-and-share-your-flows-using-export-and-import&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://flowforge.com/blog/2023/03/3-quick-node-red-tips-5/#1.-copy-and-share-your-flows-using-export-and-import&quot;&gt;#&amp;nbsp;&lt;/a&gt; 1. Copy and share your flows using Export and Import&lt;/h3&gt;
+&lt;p&gt;Node-RED provides both import and export features that allow you to save your flows and settings as compressed JSON files. You can use these features to easily move your flows between multiple Node-RED instances or to back up your work.&lt;/p&gt;
+&lt;p&gt;To import a flow, follow these steps:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Click on the three horizontal lines in the upper right corner of the Node-RED editor and click on &amp;quot;Import&amp;quot;.&lt;/li&gt;
+&lt;li&gt;Select the JSON file that contains the flow you want to import.&lt;/li&gt;
+&lt;li&gt;Click on &amp;quot;Import&amp;quot; and the flow will be imported into the current instance of Node-RED.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;To export a flow, follow these steps:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Click on the three horizontal lines in the upper right corner of the Node-RED editor and click on &amp;quot;Export&amp;quot;.&lt;/li&gt;
+&lt;li&gt;Select the type of export you want to perform - this can be either the &amp;quot;Clipboard&amp;quot; or &amp;quot;File&amp;quot;.&lt;/li&gt;
+&lt;li&gt;If you chose &amp;quot;File&amp;quot; you will be prompted to save a compressed JSON file to your computer; if you chose &amp;quot;Clipboard&amp;quot; the flow JSON will be copied to your clipboard.&lt;/li&gt;
+&lt;li&gt;Use the exported file or clipboard content to import into a different instance of Node-RED.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;picture&gt;&lt;source type=&quot;image/gif&quot; srcset=&quot;https://flowforge.com/img/import-export-HPcgwixE2Q-650.gif 650w&quot; sizes=&quot;(min-device-pixel-ratio: 1.25) 1300px, (min-resolution: 120dpi) 1300px, 650px&quot; /&gt;&lt;img title=&quot;Import and export your flows&quot; alt=&quot;Import and export your flows&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot; src=&quot;https://flowforge.com/img/import-export-HPcgwixE2Q-650.webp&quot; width=&quot;650&quot; height=&quot;315&quot; /&gt;&lt;/picture&gt;&lt;/p&gt;
+&lt;p&gt;Keep in mind that some nodes or flows may require additional setup or node installation on the Node-RED instance you import your flow to.&lt;/p&gt;
+&lt;h3 id=&quot;2.-import-helpful-example-flows-provided-with-custom-nodes&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://flowforge.com/blog/2023/03/3-quick-node-red-tips-5/#2.-import-helpful-example-flows-provided-with-custom-nodes&quot;&gt;#&amp;nbsp;&lt;/a&gt; 2. Import helpful example flows provided with custom nodes&lt;/h3&gt;
+&lt;p&gt;In Node-RED, custom nodes can include examples that provide users with a starting point for using the node. These examples can help users understand how a node works and how it can be integrated into their flows.&lt;/p&gt;
+&lt;p&gt;To use example flows in custom nodes, follow these steps:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Open the Node-RED editor and drag the custom node you want to use into your flow.&lt;/li&gt;
+&lt;li&gt;Double-click on the node to open its configuration panel.&lt;/li&gt;
+&lt;li&gt;Look for an &amp;quot;Examples&amp;quot; menu or button within the node configuration panel. The name and location of the Examples button can vary depending on the node.&lt;/li&gt;
+&lt;li&gt;Click on the &amp;quot;Examples&amp;quot; button to bring up a list of example flows included with the node.&lt;/li&gt;
+&lt;li&gt;Select the example flow you want to use and click on &amp;quot;Import&amp;quot; to add the example flow to your Node-RED workspace.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Once the example flow has been added to your workspace, you can modify it to fit your specific needs.&lt;/p&gt;
+&lt;p&gt;&lt;picture&gt;&lt;source type=&quot;image/gif&quot; srcset=&quot;https://flowforge.com/img/example-l_FeMbrQEa-650.gif 650w&quot; sizes=&quot;(min-device-pixel-ratio: 1.25) 1300px, (min-resolution: 120dpi) 1300px, 650px&quot; /&gt;&lt;img title=&quot;Using the example flow included in the moment node&quot; alt=&quot;Using the example flow included in the moment node&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot; src=&quot;https://flowforge.com/img/example-l_FeMbrQEa-650.webp&quot; width=&quot;650&quot; height=&quot;315&quot; /&gt;&lt;/picture&gt;&lt;/p&gt;
+&lt;p&gt;It&#39;s important to note that while custom node examples can be a useful starting point, they may not always work seamlessly with your other flows or nodes. Be sure to thoroughly test any custom node examples before incorporating them into a production environment.&lt;/p&gt;
+&lt;h3 id=&quot;3.-group-nodes-together-to-make-your-flows-easier-to-read&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://flowforge.com/blog/2023/03/3-quick-node-red-tips-5/#3.-group-nodes-together-to-make-your-flows-easier-to-read&quot;&gt;#&amp;nbsp;&lt;/a&gt; 3. Group nodes together to make your flows easier to read&lt;/h3&gt;
+&lt;p&gt;The group feature in Node-RED allows users to visually group nodes together within the workspace. This feature offers several benefits:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Improved organisation: The group feature allows you to group related nodes visually, which can make your flow easier to understand and navigate. This can be particularly helpful for larger, more complex flows.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Simplified editing: When you group nodes together, you can edit or move them as a single unit, rather than individually. This can save time and reduce the chance of errors.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Easier sharing: When you share your flow with others, the group feature allows you to package related nodes together, making it easier for others to understand and use your flow.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Reduced clutter: Grouping nodes can help reduce the visual clutter in your workspace, making it easier to focus on key aspects of your flow.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;picture&gt;&lt;source type=&quot;image/gif&quot; srcset=&quot;https://flowforge.com/img/groups-xFxNZBMxVR-650.gif 650w&quot; sizes=&quot;(min-device-pixel-ratio: 1.25) 1300px, (min-resolution: 120dpi) 1300px, 650px&quot; /&gt;&lt;img title=&quot;Grouping your nodes to make them easier to read&quot; alt=&quot;Grouping your nodes to make them easier to read&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot; src=&quot;https://flowforge.com/img/groups-xFxNZBMxVR-650.webp&quot; width=&quot;650&quot; height=&quot;315&quot; /&gt;&lt;/picture&gt;&lt;/p&gt;
+&lt;p&gt;Overall, the group feature in Node-RED is a valuable tool that can help users better organise, edit, and share their flows.&lt;/p&gt;
+&lt;p&gt;We hope you found these tips useful, if you&#39;d like to suggest some of your own tips which you think we should share in our future blog posts please &lt;a href=&quot;mailto:contact@flowforge.com&quot;&gt;get in touch&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;You can read our previous Node-RED tips here.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://flowforge.com/blog/2023/03/3-quick-node-red-tips-4/&quot;&gt;3 Quick Tips for Using Node-RED, Part 4&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&quot;https://flowforge.com/blog/2023/03/3-quick-node-red-tips-3/&quot;&gt;3 Quick Tips for Using Node-RED, Part 3&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&quot;https://flowforge.com/blog/2023/03/3-quick-node-red-tips-2/&quot;&gt;3 Quick Tips for Using Node-RED, Part 2&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&quot;https://flowforge.com/blog/2023/03/3-quick-node-red-tips-1/&quot;&gt;3 Quick Tips for Using Node-RED, Part 1&lt;/a&gt;&lt;/p&gt;
+</content>
+    </entry>
     
     <entry>
         <id>https://flowforge.com/blog/2023/03/why-should-you-use-node-red-function-nodes/</id>
