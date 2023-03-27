@@ -1,7 +1,7 @@
 ---
-navTitle: KPI
+navTitle: KPIs and OKRs
 meta:
-    title: KPI
+    title: KPIs and OKRs
 ---
 
 # Achieving Success at FlowForge
