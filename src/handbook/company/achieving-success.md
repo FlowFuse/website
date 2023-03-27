@@ -56,7 +56,7 @@ measured. Further, the goal and plan to achieve it should align with the
 
 Before the OKR period, the CEO sets company wide OKRs. Each of the CEO, CTO,
 Head of Marketing, Head of UX, and product manager are expected to read the OKRs
-and create 3 OKRs of their own to help to achieve the company wide goal.
+and create 2 OKRs of their own to help to achieve the company wide goal.
 
 ### Current OKRs
 
