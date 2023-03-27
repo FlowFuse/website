@@ -1,6 +1,6 @@
 Contact: mailto:security@flowforge.com
 Expires: 2023-08-11T23:00:00.000Z
 Preferred-Languages: en
-Canonical: https://flowforge.com/security.txt
+Canonical: https://flowforge.com/.well-known/security.txt
 Policy: https://github.com/flowforge/flowforge/blob/main/SECURITY.md
 
