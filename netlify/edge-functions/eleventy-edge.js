@@ -4,6 +4,7 @@ import {
 } from "./_generated/eleventy-edge-app.js";
 
 const POSTHOG_APIKEY = 'phc_yVWfmiJ3eiVd2iuLYJIQROuHUN65z3hkhkGvAjjaTL7'; //Deno.env.get("POSTHOG_APIKEY");
+// const POSTHOG_APIKEY = Deno.env.get("POSTHOG_APIKEY");
 
 function generateUUID() {
   function genSubString () {
@@ -29,7 +30,7 @@ function setCookie(context, name, value) {
 
 function decodeJsonCookie (cookie) {
   const decoded = decodeURIComponent(cookie)
-  return JSON.parse(decoded).distinct_id;
+  return JSON.parse(decoded);
 }
 
 /*
@@ -40,7 +41,7 @@ function getDistinctId (context) {
   const phCookie = getCookie(context, `ph_${POSTHOG_APIKEY}_posthog`)
   const ffDistinctId = getCookie(context, `ff-distinctid`)
   if (phCookie) {
-      return decodeJsonCookie(phCookie)
+      return decodeJsonCookie(phCookie).distinct_id
   } else if (ffDistinctId) {
       return ffDistinctId
   } else {
@@ -48,9 +49,25 @@ function getDistinctId (context) {
   }
 }
 
+function getExistingFeatureFlags (context) {
+  const phCookie = getCookie(context, `ff-feats`)
+  if (phCookie) {
+    return decodeJsonCookie(phCookie)
+  } else {
+    return null
+  }
+}
+
+/*
+  Are we missing a value for this feat?
+*/
+function isNewFlag (context, flag) {
+  const flags = getExistingFeatureFlags(context)
+  return !flags || !!!(flags[flag])
+}
+
 async function getPHFeatureFlags (distinctId) {
   return new Promise ((resolve, reject) => {
-      console.log('get feature flag for: ' + distinctId)
       fetch('https://eu.posthog.com/decide?v=2', {
           method: 'POST',
           body: JSON.stringify({
@@ -88,12 +105,7 @@ async function featureFlagCalled (distinctId, feature, value) {
   })
 }
 
-export default async (request, context) => {
-
-  console.log('edge function')
-
-  // const POSTHOG_APIKEY = process.env.POSTHOG_APIKEY
-  
+export default async (request, context) => { 
   try {
     let edge = new EleventyEdge("edge", {
       request,
@@ -135,23 +147,29 @@ export default async (request, context) => {
      // TODO: Using this means we get two event ids every time we see a new Person
 
       eleventyConfig.addPairedAsyncShortcode("abtesting", async function (content, flag, value) {
-        console.log('A/B Testing : ' + flag + " " + value)
         if (POSTHOG_APIKEY) {
           const distinctId = this.ctx.environments.distinctId
-          // call PostHog /decide API   
-          const flags = await getPHFeatureFlags(distinctId)
-          console.log(flags)
-          const strFlag = encodeURIComponent(JSON.stringify(flags))
+          setCookie(context, "ff-distinctid", distinctId, 1);
+          const requireFlagsRefresh = isNewFlag(context, flag)
+          var flags
+          if (requireFlagsRefresh) {
+            // call PostHog /decide API - not billed $$$ for this
+            flags = await getPHFeatureFlags(distinctId)
+          } else {
+            flags = getExistingFeatureFlags(context)
+          }
           // set cookies to pass data to client PostHog for bootstrapping
-          setCookie(context, "ff-distinctid", distinctId, 1);    
-          setCookie(context, "ff-feats", strFlag, 1);
-          
           if (flags[flag] && flags[flag] === value) {
-            // inform PostHog we have used a Feature Flag to track in our experiment
-            await featureFlagCalled(distinctId, flag, value)
+            if (requireFlagsRefresh) {
+              const strFlag = encodeURIComponent(JSON.stringify(flags))
+              setCookie(context, "ff-feats", strFlag, 1);
+              // inform PostHog we have used a Feature Flag to track in our experiment - we are $$$ for this
+              await featureFlagCalled(distinctId, flag, value)
+            }
             return `${content}`
           } else if (!flags[flag] && value === 'control') {
             // this is not a valid feature flag - fall back to the "control" content
+            console.warn(`WARN: Could not find feature flag: '${flag}'. Falling back to "control" content`)
             return `${content}`
           } else {
             return ''
@@ -164,11 +182,10 @@ export default async (request, context) => {
       })
     });
     const distinctId = getDistinctId(context)
-    setCookie(context, "ff-distinctid", distinctId, 1);   
-    console.log('handle response')
+    setCookie(context, "ff-distinctid", distinctId, 1);
     return await edge.handleResponse();
   } catch (e) {
-    console.log("ERROR", { e });
+    console.error("ERROR", { e });
     return context.next(e);
   }
 };
