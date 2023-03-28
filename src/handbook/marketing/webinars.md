@@ -15,20 +15,17 @@ Hubspot will be used to collect attendee registrations.
 ### Steps to Schedule a Webinar
 
 1. Select a topic and speaker
-* Create a title and abstract for the webinar and speaker bio
-
+   * Create a title and abstract for the webinar and speaker bio
 2. Schedule webinar in Zoom
-* Zoom will automatically send a confirmation email and a two reminder emails to all registrants.
-
+   * Zoom will automatically send a confirmation email and a two reminder emails to all registrants.
 3. Create a webinar page for the website
-* Follow the templates from previous months - more details can be found [below](#creating-a-webinar-page).
+   * Follow the templates from previous months - more details can be found [below](#creating-a-webinar-page).
 4. Create a graphic to promote the webinar
-* Follow the templates from previous months.
-
+   * Follow the templates from previous months.
 5. Setup Hubspot for Webinar
-* Create a static list to track the registrations
-* Change the webinar workflow to point to the new static list
-* Change the webinar workflow to point to the new Zoom Webinar ID.  The ID can be found in the Zoom webinar page. NOTE: you need to use hyphens to replace the spaces in the ID number.
+   * Create a static list to track the registrations
+   * Change the webinar workflow to point to the new static list
+   * Change the webinar workflow to point to the new Zoom Webinar ID.  The ID can be found in the Zoom webinar page. NOTE: you need to use hyphens to replace the spaces in the ID number.
 
 ### Promoting Webinars
 

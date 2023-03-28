@@ -72,6 +72,13 @@ module.exports = function(eleventyConfig) {
         return array.slice(0, n);
     });
 
+    eleventyConfig.addFilter("limit", (arr, limit) => arr.slice(0, limit + 1));
+
+    eleventyConfig.addFilter('console', function(value) {
+        const str = util.inspect(value, {showHidden: false, depth: null});
+        return `<div style="white-space: pre-wrap;">${unescape(str)}</div>;`
+    });
+
     eleventyConfig.addFilter('shortDate', dateObj => {
         return spacetime(dateObj).format('{date} {month-short}, {year}')
     });

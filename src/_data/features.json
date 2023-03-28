@@ -4,7 +4,7 @@
     "description": "<p>Easy instance management, easily suspend and tear down projects. FlowForge makes keeping track of multiple Node-RED projects a breeze.</p><p>FlowForge also provides Single-Sign On to ensure that increased scale, also comes with trusted security.</p>"
 }, {
     "icon": "edge_red.png",
-    "title": "Fleet Management & Remote Deployment",
+    "title": "Device Management & Remote Deployment",
     "description": "<p>One-click deploy to thousands of devices.</p><p>Effortlessly upgrade flows remotely to your edge devices and get an overview of device health and connectivity.</p>"
 }, {
     "icon": "collaboration_red.png",
