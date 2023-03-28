@@ -9,6 +9,7 @@ package-lock.json
 
 # Netlify generated stuff
 .netlify/
+.vscode/
 
 # Eleventy Edge Build Data files
 netlify/edge-functions/_generated
