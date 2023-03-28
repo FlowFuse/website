@@ -579,8 +579,7 @@ as a way to group individual <a href="../user/concepts#instance">Node-RED instan
 <p>Details of how to configure this can be found at the following links:</p>
 <ul>
 <li><a href="../install/file-storage/#localfs">LocalFS</a></li>
-<li><a href="../install/file-storage/#docker-compose">Docker</a></li>
-<li><a href="../install/file-storage/#kubernetes-helm">Kubernetes</a></li>
+<li><a href="../install/file-storage/#configuring">Docker and Kubernetes</a></li>
 </ul>
 <h3 id="upgrading-to-1.1" tabindex="-1"><a class="header-anchor" href="#upgrading-to-1.1">#&nbsp;</a> Upgrading to 1.1</h3>
 <h4 id="file-server-added" tabindex="-1"><a class="header-anchor" href="#file-server-added">#&nbsp;</a> File Server added</h4>
@@ -594,13 +593,13 @@ as a way to group individual <a href="../user/concepts#instance">Node-RED instan
 <h3 id="upgrading-to-0.8" tabindex="-1"><a class="header-anchor" href="#upgrading-to-0.8">#&nbsp;</a> Upgrading to 0.8</h3>
 <h4 id="mqtt-broker-added" tabindex="-1"><a class="header-anchor" href="#mqtt-broker-added">#&nbsp;</a> MQTT Broker added</h4>
 <p>This release introduces an MQTT Broker into the FlowForge platform used to communicate between devices and the core platform.</p>
-<p>For LocalFS users, they will need to manually setup the broker and ensure it is properly configured. The documentation for this is available <a href="../install/local/#mosquitto">here</a></p>
+<p>For LocalFS users, they will need to manually setup the broker and ensure it is properly configured. The documentation for this is available <a href="../install/local/#setting-up-mosquitto-(optional)">here</a></p>
 <h4 id="localfs-users" tabindex="-1"><a class="header-anchor" href="#localfs-users">#&nbsp;</a> LocalFS Users</h4>
 <p>With the 0.8 release we have updated the version of the SQLite3 module used by the localfs container driver. We are moving from v5.0.2 to v5.0.8.</p>
 <p>There appears to be a clash with the bcrypt module when doing an in place upgrade of the SQLite3 module that gives an error similar to the following:</p>
 <div style="position: relative">
-<pre class="language-bash"><code id="code-192" class="language-bash"><span class="token function">npm</span> ERR<span class="token operator">!</span> path /opt/share/projects/flowforge/sqlite-test/node_modules/sqlite3<br><span class="token function">npm</span> ERR<span class="token operator">!</span> <span class="token builtin class-name">command</span> failed<br><span class="token function">npm</span> ERR<span class="token operator">!</span> <span class="token builtin class-name">command</span> <span class="token function">sh</span> <span class="token parameter variable">-c</span> node-pre-gyp <span class="token function">install</span> --fallback-to-build<br><span class="token function">npm</span> ERR<span class="token operator">!</span> sh: line <span class="token number">1</span>: node-pre-gyp: <span class="token builtin class-name">command</span> not found</code></pre>
-<button class="code-copy" data-clipboard-target="#code-192" style="position: absolute; top: 7.5px; right: 6px; cursor: pointer; outline: none; opacity: 0.8;" title="Copy">
+<pre class="language-bash"><code id="code-187" class="language-bash"><span class="token function">npm</span> ERR<span class="token operator">!</span> path /opt/share/projects/flowforge/sqlite-test/node_modules/sqlite3<br><span class="token function">npm</span> ERR<span class="token operator">!</span> <span class="token builtin class-name">command</span> failed<br><span class="token function">npm</span> ERR<span class="token operator">!</span> <span class="token builtin class-name">command</span> <span class="token function">sh</span> <span class="token parameter variable">-c</span> node-pre-gyp <span class="token function">install</span> --fallback-to-build<br><span class="token function">npm</span> ERR<span class="token operator">!</span> sh: line <span class="token number">1</span>: node-pre-gyp: <span class="token builtin class-name">command</span> not found</code></pre>
+<button class="code-copy" data-clipboard-target="#code-187" style="position: absolute; top: 7.5px; right: 6px; cursor: pointer; outline: none; opacity: 0.8;" title="Copy">
 <span>
 <span style="font-size: 15px; opacity: 0.8;" class="mdi mdi-content-copy"></span>
 </span>
@@ -644,7 +643,7 @@ v1.5.0 /<a class="mx-2" href="/docs">docs</a>/<a class="mx-2" href="/docs/upgrad
 <h3 class="font-medium border-b pb-1 mb-4">On this page</h3>
 <ul id="toc" class="text-sm border-b mb-4"></ul>
 <div class="text-sm pb-1 text-right mb-4"><a href="https://github.com/flowforge/flowforge/edit/main/docs/src/docs/upgrade/index.md">Edit this page</a></div>
-<div class="text-xs pb-1 text-right mb-4 italic">Updated: Mon Mar 27 2023 11:20:48 GMT+0000 (Coordinated Universal Time)</div>
+<div class="text-xs pb-1 text-right mb-4 italic">Updated: Tue Mar 28 2023 18:29:56 GMT+0000 (Coordinated Universal Time)</div>
 </div>
 </div>
 </div>

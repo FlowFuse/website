@@ -12,12 +12,12 @@
 <meta name="msapplication-TileColor" content="#00aba9">
 <meta name="theme-color" content="#ffffff">
 <meta name="keywords" content="Node-RED, Deployment, Production, Enterprise, IoT, IIoT, Low-Code, Open-Source, Kubernetes, Docker, Cloud, Hosting">
-<title>First-run &#x2022; FlowForge Docs</title>
-<meta rel="canonical" href="https://flowforge.com/docs/install/first-run/">
+<title>KPIs and OKRs &#x2022; FlowForge Handbook</title>
+<meta rel="canonical" href="https://flowforge.com/handbook/company/achieving-success/">
 <meta name="description" content="Scale your Node-RED deployments in production. Open-Source and available on Docker, Kubernetes or Cloud">
-<meta property="og:title" content="First-run &#x2022; FlowForge">
+<meta property="og:title" content="KPIs and OKRs &#x2022; FlowForge Handbook">
 <meta property="og:description" content="FlowForge is an open-source, low-code platform for integration and automation. Helping you run Node-RED at production scales in a secure, scalable and team-based environment.">
-<meta property="og:url" content="https://flowforge.com/docs/install/first-run/">
+<meta property="og:url" content="https://flowforge.com/handbook/company/achieving-success/">
 <meta property="og:image" content="https://flowforge.com/images/og-social-tile.jpg">
 <meta name="twitter:image" content="https://flowforge.com/images/og-social-tile.jpg">
 <meta name="twitter:card" content="summary_large_image">
@@ -112,16 +112,16 @@ function toggleNavList (el) {
         } 
     }
 </script>
-<div class="handbook ff-prose text-left pb-24" data-docs>
+<div class="handbook ff-prose text-left pb-24" data-handbook>
 <div class="border-r">
 <ul class="handbook-nav" data-el="navigation">
 <li>
-<a href="/docs">docs</a>
+<a href="/handbook">handbook</a>
 </li>
-<li class="handbook-nav-group">Overview</li>
+<li class="handbook-nav-group">Company</li>
 <li>
-<a href="/docs/admin/">
-Administering FlowForge
+<a href="/handbook/company/">
+Company
 </a>
 <button onclick="toggleNavList(this)">
 <span class="ff-icon icon-expand">
@@ -138,372 +138,54 @@ Administering FlowForge
 </li>
 <ul class="handbook-nav-nested">
 <li>
-<a href="/docs/admin/sso/">
-sso
+<a href="/handbook/company/board/">
+Board
 </a>
 </li>
 <li>
-<a href="/docs/admin/telemetry/">
-telemetry
-</a>
-</li>
-<li>
-<a href="/docs/admin/user_management/">
-user_management
-</a>
-</li>
-</ul>
-<li>
-<a href="/docs/contribute/">
-Contributing to FlowForge
-</a>
-<button onclick="toggleNavList(this)">
-<span class="ff-icon icon-expand">
-<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 ff-icon--down">
-<path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5"/>
-</svg>
-</span>
-<span class="ff-icon icon-minimise">
-<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-<path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5"/>
-</svg>
-</span>
-</button>
-</li>
-<ul class="handbook-nav-nested">
-<li>
-<a href="/docs/contribute/adding-template-settings/">
-adding-template-settings
-</a>
-</li>
-<li>
-<a href="/docs/contribute/api-design/">
-api-design
-</a>
-</li>
-<li>
-<a href="/docs/contribute/architecture/">
-architecture
-</a>
-</li>
-<li>
-<a href="/docs/contribute/db-migrations/">
-db-migrations
-</a>
-</li>
-<li>
-<a href="/docs/contribute/workflows/">
-workflows
-</a>
-<button onclick="toggleNavList(this)">
-<span class="ff-icon icon-expand">
-<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 ff-icon--down">
-<path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5"/>
-</svg>
-</span>
-<span class="ff-icon icon-minimise">
-<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-<path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5"/>
-</svg>
-</span>
-</button>
-</li>
-<ul class="handbook-nav-nested-2">
-<li>
-<a href="/docs/contribute/workflows/invite-external-user/">
-invite-external-user
-</a>
-</li>
-<li>
-<a href="/docs/contribute/workflows/login/">
-login
-</a>
-</li>
-<li>
-<a href="/docs/contribute/workflows/password-reset/">
-password-reset
-</a>
-</li>
-<li>
-<a href="/docs/contribute/workflows/project-create/">
-project-create
-</a>
-</li>
-<li>
-<a href="/docs/contribute/workflows/project-states/">
-project-states
-</a>
-</li>
-<li>
-<a href="/docs/contribute/workflows/signup/">
-signup
-</a>
-</li>
-<li>
-<a href="/docs/contribute/workflows/team-create/">
-team-create
-</a>
-</li>
-</ul>
-</ul>
-<li>
-<a href="/docs/api/">
-FlowForge API
-</a>
-</li>
-<li>
-<a href="/docs/cloud/">
-FlowForge Cloud
-</a>
-<button onclick="toggleNavList(this)">
-<span class="ff-icon icon-expand">
-<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 ff-icon--down">
-<path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5"/>
-</svg>
-</span>
-<span class="ff-icon icon-minimise">
-<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-<path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5"/>
-</svg>
-</span>
-</button>
-</li>
-<ul class="handbook-nav-nested">
-<li>
-<a href="/docs/cloud/billing/">
-billing
-</a>
-</li>
-</ul>
-<li>
-<a href="/docs/user/">
-Using FlowForge
-</a>
-<button onclick="toggleNavList(this)">
-<span class="ff-icon icon-expand">
-<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 ff-icon--down">
-<path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5"/>
-</svg>
-</span>
-<span class="ff-icon icon-minimise">
-<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-<path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5"/>
-</svg>
-</span>
-</button>
-</li>
-<ul class="handbook-nav-nested">
-<li>
-<a href="/docs/user/changestack/">
-changestack
-</a>
-</li>
-<li>
-<a href="/docs/user/concepts/">
-concepts
-</a>
-</li>
-<li>
-<a href="/docs/user/devices/">
-devices
-</a>
-</li>
-<li>
-<a href="/docs/user/envvar/">
-envvar
-</a>
-</li>
-<li>
-<a href="/docs/user/filenodes/">
-filenodes
-</a>
-</li>
-<li>
-<a href="/docs/user/instance-settings/">
-instance-settings
-</a>
-</li>
-<li>
-<a href="/docs/user/logs/">
-logs
-</a>
-</li>
-<li>
-<a href="/docs/user/migration/">
-migration
-</a>
-</li>
-<li>
-<a href="/docs/user/node-red-tools/">
-node-red-tools
-</a>
-</li>
-<li>
-<a href="/docs/user/persistent-context/">
-persistent-context
-</a>
-</li>
-<li>
-<a href="/docs/user/projectnodes/">
-projectnodes
-</a>
-</li>
-<li>
-<a href="/docs/user/shared-library/">
-shared-library
-</a>
-</li>
-<li>
-<a href="/docs/user/snapshots/">
-snapshots
-</a>
-</li>
-<li>
-<a href="/docs/user/staged-deployments/">
-staged-deployments
-</a>
-</li>
-<li>
-<a href="/docs/user/team/">
-team
-</a>
-</li>
-</ul>
-<li class="handbook-nav-group">Running FlowForge</li>
-<li>
-<a href="/docs/install/">
-Installing FlowForge
-</a>
-<button onclick="toggleNavList(this)">
-<span class="ff-icon icon-expand">
-<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 ff-icon--down">
-<path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5"/>
-</svg>
-</span>
-<span class="ff-icon icon-minimise">
-<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-<path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5"/>
-</svg>
-</span>
-</button>
-</li>
-<ul class="handbook-nav-nested">
-<li>
-<a href="/docs/install/configuration/">
-configuration
-</a>
-</li>
-<li>
-<a href="/docs/install/dns-setup/">
-dns-setup
-</a>
-</li>
-<li>
-<a href="/docs/install/docker/">
-docker
-</a>
-<button onclick="toggleNavList(this)">
-<span class="ff-icon icon-expand">
-<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 ff-icon--down">
-<path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5"/>
-</svg>
-</span>
-<span class="ff-icon icon-minimise">
-<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-<path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5"/>
-</svg>
-</span>
-</button>
-</li>
-<ul class="handbook-nav-nested-2">
-<li>
-<a href="/docs/install/docker/digital-ocean/">
-digital-ocean
-</a>
-</li>
-<li>
-<a href="/docs/install/docker/stacks/">
-stacks
-</a>
-</li>
-</ul>
-<li>
-<a href="/docs/install/email_providers/">
-email_providers
-</a>
-</li>
-<li>
-<a href="/docs/install/file-storage/">
-file-storage
+<a href="/handbook/company/communication/">
+Communications
 </a>
 </li>
 <li class="active">
-<a href="/docs/install/first-run/">
-first-run
+<a href="/handbook/company/achieving-success/">
+KPIs and OKRs
 </a>
 </li>
 <li>
-<a href="/docs/install/kubernetes/">
-kubernetes
-</a>
-<button onclick="toggleNavList(this)">
-<span class="ff-icon icon-expand">
-<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 ff-icon--down">
-<path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5"/>
-</svg>
-</span>
-<span class="ff-icon icon-minimise">
-<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-<path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5"/>
-</svg>
-</span>
-</button>
-</li>
-<ul class="handbook-nav-nested-2">
-<li>
-<a href="/docs/install/kubernetes/stacks/">
-stacks
+<a href="/handbook/company/principles/">
+principles
 </a>
 </li>
 <li>
-<a href="/docs/install/kubernetes/digital-ocean/">
-digital-ocean
+<a href="/handbook/company/remote/">
+Remote Work
 </a>
 </li>
 <li>
-<a href="/docs/install/kubernetes/aws/">
-aws
+<a href="/handbook/company/security/">
+Security
+</a>
+</li>
+<li>
+<a href="/handbook/company/strategy/">
+strategy
+</a>
+</li>
+<li>
+<a href="/handbook/company/values/">
+values
+</a>
+</li>
+<li>
+<a href="/handbook/company/vision/">
+vision
 </a>
 </li>
 </ul>
 <li>
-<a href="/docs/install/local/">
-local
-</a>
-<button onclick="toggleNavList(this)">
-<span class="ff-icon icon-expand">
-<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 ff-icon--down">
-<path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5"/>
-</svg>
-</span>
-<span class="ff-icon icon-minimise">
-<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-<path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5"/>
-</svg>
-</span>
-</button>
-</li>
-<ul class="handbook-nav-nested-2">
-<li>
-<a href="/docs/install/local/stacks/">
-stacks
-</a>
-</li>
-</ul>
-</ul>
-<li>
-<a href="/docs/upgrade/">
-Upgrading FlowForge
+<a href="/handbook/operations/">
+Operations
 </a>
 <button onclick="toggleNavList(this)">
 <span class="ff-icon icon-expand">
@@ -520,8 +202,437 @@ Upgrading FlowForge
 </li>
 <ul class="handbook-nav-nested">
 <li>
-<a href="/docs/upgrade/open-source-to-premium/">
-open-source-to-premium
+<a href="/handbook/operations/accounts/">
+Accounts
+</a>
+</li>
+<li>
+<a href="/handbook/operations/billing/">
+Billing
+</a>
+</li>
+<li>
+<a href="/handbook/operations/change/">
+Change Control
+</a>
+</li>
+<li>
+<a href="/handbook/operations/data/">
+Data at FlowForge
+</a>
+</li>
+<li>
+<a href="/handbook/operations/support/">
+Support
+</a>
+</li>
+<li>
+<a href="/handbook/operations/vendors/">
+Vendors
+</a>
+</li>
+</ul>
+<li>
+<a href="/handbook/product/">
+Product
+</a>
+<button onclick="toggleNavList(this)">
+<span class="ff-icon icon-expand">
+<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 ff-icon--down">
+<path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5"/>
+</svg>
+</span>
+<span class="ff-icon icon-minimise">
+<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+<path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5"/>
+</svg>
+</span>
+</button>
+</li>
+<ul class="handbook-nav-nested">
+<li>
+<a href="/handbook/product/customer-calls/">
+Customer Calls
+</a>
+</li>
+<li>
+<a href="/handbook/product/verticals/">
+Market Verticals
+</a>
+</li>
+<li>
+<a href="/handbook/product/personas/">
+personas
+</a>
+</li>
+<li>
+<a href="/handbook/product/plan/">
+Plan
+</a>
+</li>
+<li>
+<a href="/handbook/product/pricing/">
+Pricing Principles
+</a>
+</li>
+<li>
+<a href="/handbook/product/demos/">
+Product Demos
+</a>
+</li>
+<li>
+<a href="/handbook/product/strategy/">
+Strategy
+</a>
+</li>
+<li>
+<a href="/handbook/product/versioning/">
+Versioning
+</a>
+</li>
+</ul>
+<li class="handbook-nav-group">Development &amp; Design Practices</li>
+<li>
+<a href="/handbook/design/">
+Design
+</a>
+<button onclick="toggleNavList(this)">
+<span class="ff-icon icon-expand">
+<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 ff-icon--down">
+<path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5"/>
+</svg>
+</span>
+<span class="ff-icon icon-minimise">
+<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+<path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5"/>
+</svg>
+</span>
+</button>
+</li>
+<ul class="handbook-nav-nested">
+<li>
+<a href="/handbook/design/art-requests/">
+Art Requests
+</a>
+</li>
+<li>
+<a href="/handbook/design/branding/">
+branding
+</a>
+</li>
+<li>
+<a href="/handbook/design/design-thinking/">
+Design Thinking
+</a>
+</li>
+<li>
+<a href="/handbook/design/process/">
+process
+</a>
+</li>
+<li>
+<a href="/handbook/design/tools/">
+tools
+</a>
+</li>
+</ul>
+<li>
+<a href="/handbook/development/">
+Development
+</a>
+<button onclick="toggleNavList(this)">
+<span class="ff-icon icon-expand">
+<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 ff-icon--down">
+<path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5"/>
+</svg>
+</span>
+<span class="ff-icon icon-minimise">
+<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+<path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5"/>
+</svg>
+</span>
+</button>
+</li>
+<ul class="handbook-nav-nested">
+<li>
+<a href="/handbook/development/contributing/">
+contributing
+</a>
+</li>
+<li>
+<a href="/handbook/development/frontend/">
+Front End
+</a>
+<button onclick="toggleNavList(this)">
+<span class="ff-icon icon-expand">
+<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 ff-icon--down">
+<path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5"/>
+</svg>
+</span>
+<span class="ff-icon icon-minimise">
+<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+<path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5"/>
+</svg>
+</span>
+</button>
+</li>
+<ul class="handbook-nav-nested-2">
+<li>
+<a href="/handbook/development/frontend/data-attributes/">
+Data Attributes
+</a>
+</li>
+<li>
+<a href="/handbook/development/frontend/services/">
+services
+</a>
+</li>
+<li>
+<a href="/handbook/development/frontend/testing/">
+testing
+</a>
+</li>
+</ul>
+<li>
+<a href="/handbook/development/how-we-work/">
+How We Work
+</a>
+<button onclick="toggleNavList(this)">
+<span class="ff-icon icon-expand">
+<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 ff-icon--down">
+<path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5"/>
+</svg>
+</span>
+<span class="ff-icon icon-minimise">
+<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+<path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5"/>
+</svg>
+</span>
+</button>
+</li>
+<ul class="handbook-nav-nested-2">
+<li>
+<a href="/handbook/development/how-we-work/contributing/">
+contributing
+</a>
+</li>
+<li>
+<a href="/handbook/development/how-we-work/packaging/">
+Packaging Guidelines
+</a>
+</li>
+<li>
+<a href="/handbook/development/how-we-work/staging/">
+Staging Environment
+</a>
+</li>
+<li>
+<a href="/handbook/development/how-we-work/security/">
+Security Policy
+</a>
+</li>
+</ul>
+<li>
+<a href="/handbook/development/markdown-how-to/">
+Markdown How-To
+</a>
+</li>
+<li>
+<a href="/handbook/development/packaging/">
+packaging
+</a>
+</li>
+<li>
+<a href="/handbook/development/release/">
+release
+</a>
+</li>
+<li>
+<a href="/handbook/development/releases/">
+Releases
+</a>
+<button onclick="toggleNavList(this)">
+<span class="ff-icon icon-expand">
+<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 ff-icon--down">
+<path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5"/>
+</svg>
+</span>
+<span class="ff-icon icon-minimise">
+<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+<path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5"/>
+</svg>
+</span>
+</button>
+</li>
+<ul class="handbook-nav-nested-2">
+<li>
+<a href="/handbook/development/releases/planning/">
+Planning
+</a>
+</li>
+<li>
+<a href="/handbook/development/releases/process/">
+Release Process
+</a>
+</li>
+</ul>
+<li>
+<a href="/handbook/development/security/">
+security
+</a>
+</li>
+<li>
+<a href="/handbook/development/staging/">
+staging
+</a>
+</li>
+<li>
+<a href="/handbook/development/git-how-to/">
+Using Git
+</a>
+</li>
+</ul>
+<li class="handbook-nav-group">Internal Operations</li>
+<li>
+<a href="/handbook/peopleops/">
+People Ops
+</a>
+<button onclick="toggleNavList(this)">
+<span class="ff-icon icon-expand">
+<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 ff-icon--down">
+<path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5"/>
+</svg>
+</span>
+<span class="ff-icon icon-minimise">
+<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+<path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5"/>
+</svg>
+</span>
+</button>
+</li>
+<ul class="handbook-nav-nested">
+<li>
+<a href="/handbook/peopleops/compensation/">
+Compensation
+</a>
+</li>
+<li>
+<a href="/handbook/peopleops/expenses/">
+Expenses
+</a>
+</li>
+<li>
+<a href="/handbook/peopleops/hiring/">
+Hiring
+</a>
+</li>
+<li>
+<a href="/handbook/peopleops/organization/">
+Organization
+</a>
+</li>
+<li>
+<a href="/handbook/peopleops/performance-review/">
+Performance review
+</a>
+</li>
+<li>
+<a href="/handbook/peopleops/leave/">
+Vacation &amp; Leave
+</a>
+</li>
+</ul>
+<li class="handbook-nav-group">Sales &amp; Marketing</li>
+<li>
+<a href="/handbook/marketing/">
+Marketing
+</a>
+<button onclick="toggleNavList(this)">
+<span class="ff-icon icon-expand">
+<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 ff-icon--down">
+<path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5"/>
+</svg>
+</span>
+<span class="ff-icon icon-minimise">
+<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+<path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5"/>
+</svg>
+</span>
+</button>
+</li>
+<ul class="handbook-nav-nested">
+<li>
+<a href="/handbook/marketing/blog/">
+blog
+</a>
+</li>
+<li>
+<a href="/handbook/marketing/boilerplate/">
+Boiler Plate Descriptions
+</a>
+</li>
+<li>
+<a href="/handbook/marketing/channels/">
+Content Channels
+</a>
+</li>
+<li>
+<a href="/handbook/marketing/types/">
+Content Types
+</a>
+</li>
+<li>
+<a href="/handbook/marketing/hubspot/">
+HubSpot
+</a>
+</li>
+<li>
+<a href="/handbook/marketing/videos/">
+Video
+</a>
+</li>
+<li>
+<a href="/handbook/marketing/webinars/">
+Webinars
+</a>
+</li>
+<li>
+<a href="/handbook/marketing/website/">
+website
+</a>
+</li>
+</ul>
+<li>
+<a href="/handbook/sales/">
+sales
+</a>
+<button onclick="toggleNavList(this)">
+<span class="ff-icon icon-expand">
+<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 ff-icon--down">
+<path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5"/>
+</svg>
+</span>
+<span class="ff-icon icon-minimise">
+<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+<path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5"/>
+</svg>
+</span>
+</button>
+</li>
+<ul class="handbook-nav-nested">
+<li>
+<a href="/handbook/sales/demo/">
+demo
+</a>
+</li>
+<li>
+<a href="/handbook/sales/pricing/">
+Engagements &amp; Pricing
+</a>
+</li>
+<li>
+<a href="/handbook/sales/pitch/">
+Sales Pitch
 </a>
 </li>
 </ul>
@@ -530,38 +641,35 @@ open-source-to-premium
 <div class="max-w-screen-lg mx-auto px-8 pt-8">
 <div class="hidden w-full mx-auto ff-bg-light md:block">
 <div class="font-medium border-b pb-1">
-v1.5.0 /<a class="mx-2" href="/docs">docs</a>/<a class="mx-2" href="/docs/install">install</a>/<a class="mx-2" href="/docs/install/first-run">first-run</a>
+/<a class="mx-2" href="/handbook">handbook</a>/<a class="mx-2" href="/handbook/company">company</a>/<a class="mx-2" href="/handbook/company/achieving-success">achieving-success</a>
 </div>
 </div>
 <div class="w-full mx-auto ff-bg-light flex flex-col md:flex-row">
 <div class="flex-grow order-last md:order-first">
 <div class="mt-6 mb-4 prose prose-blue main-content">
-<h1 id="first-run-setup" tabindex="-1"><a class="header-anchor" href="#first-run-setup">#&nbsp;</a> First-run Setup</h1>
-<p>Following a successful install, you will be able to access the platform to go through the initial setup.</p>
-<h2 id="1.-start-setup" tabindex="-1"><a class="header-anchor" href="#1.-start-setup">#&nbsp;</a> 1. Start setup</h2>
-<h3 id="--localfs" tabindex="-1"><a class="header-anchor" href="#--localfs">#&nbsp;</a> - LocalFS</h3>
-<p>Open FlowForge in your browser <a href="http://localhost:3000">http://localhost:3000</a>.</p>
-<h3 id="--docker-or-kubernetes" tabindex="-1"><a class="header-anchor" href="#--docker-or-kubernetes">#&nbsp;</a> - Docker or Kubernetes</h3>
-<p>Open FlowForge in your browser <a href="http://forge.example.com">http://forge.example.com</a> (Change <code>.example.com</code> to match the domain you set up in DNS)</p>
-<p>Click the <strong>START SETUP</strong> button</p>
-<img src="../images/setup-01.png" width="500">
-<h2 id="2.-create-an-administrator" tabindex="-1"><a class="header-anchor" href="#2.-create-an-administrator">#&nbsp;</a> 2. Create an Administrator</h2>
-<p>The first user you create will be an Administrator. They will have full access to the platform, be able to set platform-wide configuration and manage users and teams.</p>
-<p><strong>Note</strong>: with the 0.3 release, it is possible to reset your password <em>if</em> you have email configured and enabled the <code>user:reset-password</code> option in Admin settings. Otherwise, make sure you make a note of the password you set. We will provide tools to manage passwords outside of the platform in a future release.</p>
-<img src="../images/setup-02-user.png" width="500">
-<h2 id="3.-upload-a-license" tabindex="-1"><a class="header-anchor" href="#3.-upload-a-license">#&nbsp;</a> 3. Upload a license</h2>
-<p>FlowForge Community Edition is Open Source and can be used freely without a license.</p>
-<p>If you have a FlowForge Enterprise Edition license you can upload it here.</p>
-<img src="../images/setup-03-license.png" width="500">
-<h2 id="4.-platform-options" tabindex="-1"><a class="header-anchor" href="#4.-platform-options">#&nbsp;</a> 4. Platform Options</h2>
-<p>There are some runtime configuration options that can be configured at this stage.</p>
-<img src="../images/setup-04-options.png" width="500">
-<h3 id="anonymous-usage-statistics" tabindex="-1"><a class="header-anchor" href="#anonymous-usage-statistics">#&nbsp;</a> Anonymous usage statistics</h3>
-<p>To help us understand how the project is being used, we gather high level anonymous usage information from running instances.</p>
-<p>The Administrator can opt-out of this feature.</p>
-<h2 id="5.-finish-setup" tabindex="-1"><a class="header-anchor" href="#5.-finish-setup">#&nbsp;</a> 5. Finish setup</h2>
-<p>Once you complete the setup, you will be able to log in as the Administrator user you created and start using the platform. You can setup your Team and create your first Node-RED instance.</p>
-<p>More information about using the FlowForge platform is available in the main <a href="../../user/">user guide</a>.</p>
+<h1 id="achieving-success-at-flowforge" tabindex="-1"><a class="header-anchor" href="#achieving-success-at-flowforge">#&nbsp;</a> Achieving Success at FlowForge</h1>
+<p>There's multiple ways to align a company around business goals, and at FlowForge we've identified two ways to help us shape this. The core metric are captured in the <a href="#kpi">KPI</a>. A KPI is a tool to identify problems and areas for improvement.</p>
+<p>The second tool employed at FlowForge to improve on the identfied problems are <a href="#okr">OKR</a>s.</p>
+<h2 id="kpi" tabindex="-1"><a class="header-anchor" href="#kpi">#&nbsp;</a> KPI</h2>
+<p>A KPI, or Key Point Indicator, is used as a heuristic metric for company wide success. At FlowForge we're engaged in many initiatives to grow our offering and assess product market fit. At this time there's one KPI to track progress.</p>
+<h3 id="managed-node-red-instances" tabindex="-1"><a class="header-anchor" href="#managed-node-red-instances">#&nbsp;</a> Managed Node-RED instances</h3>
+<p><a href="https://datastudio.google.com/reporting/90315614-39bf-4eac-ba3d-45b4c635940e/page/P1V6C">Dashboard</a></p>
+<p>FlowForge is the key product we're verifying in the market currently. Each customer electing to use FlowForge to help them in their Node-RED journey is a signal we're providing value.</p>
+<p>An instance is either a remote Node-RED running the <a href="https://flowforge.com/docs/user/devices/">FlowForge Device Agent</a>, a hosted Node-RED in the FlowForge Cluster, or an otherwise FlowForge licensed and supported Node-RED instance.</p>
+<p>Telemetry collection is opt-in, and dependant on an internet connection. As such it's anticipated to under report the true number of FlowForge managed instances.</p>
+<p>Target growth for this metric is 10% week over week.</p>
+<h2 id="okrs" tabindex="-1"><a class="header-anchor" href="#okrs">#&nbsp;</a> OKRs</h2>
+<p>OKRs, Objectives and Key Results, are action oriented goals that have a <em>measureable</em>
+impact on the company. OKRs are intended to be bold goals, where the bar is set high enough that one still takes a leap.</p>
+<p>Given goals are intended to be bold and aggressive, performance on the OKRs has no influence on compensation or any other performance indicator of a department or individual.</p>
+<h3 id="anatomy-of-an-okr" tabindex="-1"><a class="header-anchor" href="#anatomy-of-an-okr">#&nbsp;</a> Anatomy of an OKR</h3>
+<p>Per timeboxed period a couple of OKRs are created. Each of them should describe clearly what the objective is, the key results that will be used to measure the success. measured. Further, the goal and plan to achieve it should align with the
+<a href=".././values/">values</a>.</p>
+<h3 id="the-process" tabindex="-1"><a class="header-anchor" href="#the-process">#&nbsp;</a> The process</h3>
+<p>Before the OKR period, the CEO sets company wide OKRs. Each of the CEO, CTO, Head of Marketing, Head of UX, and product manager are expected to read the OKRs and work with their teams to develop at least 2 OKRs their team will implement to help achieve the company goal.</p>
+<p>At the start of the OKR period, each team will present their OKRs during a company meeting. Bi-weekly meetings will be held where each team will present a quick update on the status of their OKR and current work being done to achieve the key result. At the end of the OKR period, a company wide retrospective will he held to share lessons learned from the OKR.</p>
+<h3 id="current-okrs" tabindex="-1"><a class="header-anchor" href="#current-okrs">#&nbsp;</a> Current OKRs</h3>
+<p><a href="https://docs.google.com/document/d/12zOCFxot0rlRY-_hNwCmuv7_U1STqjzoaXh8EkIWtZI" rel="nofollow">OKRs are tracked here</a>. Every two weeks updates are shared in the <a href=".././communication/#bi-weekly-kpi-meeting">Bi-weekly KPI meeting</a>.</p>
 </div>
 </div>
 </div>
@@ -569,14 +677,14 @@ v1.5.0 /<a class="mx-2" href="/docs">docs</a>/<a class="mx-2" href="/docs/instal
 <div class="border-l">
 <div class="block px-8 pt-4 w-full mx-auto ff-bg-light md:hidden">
 <div class="font-medium border-b pb-1">
-v1.5.0 /<a class="mx-2" href="/docs">docs</a>/<a class="mx-2" href="/docs/install">install</a>/<a class="mx-2" href="/docs/install/first-run">first-run</a>
+/<a class="mx-2" href="/handbook">handbook</a>/<a class="mx-2" href="/handbook/company">company</a>/<a class="mx-2" href="/handbook/company/achieving-success">achieving-success</a>
 </div>
 </div>
 <div class="sticky top-6 w-full md:w-64 mt-4 md:mt-6 px-8">
 <h3 class="font-medium border-b pb-1 mb-4">On this page</h3>
 <ul id="toc" class="text-sm border-b mb-4"></ul>
-<div class="text-sm pb-1 text-right mb-4"><a href="https://github.com/flowforge/flowforge/edit/main/docs/src/docs/install/first-run.md">Edit this page</a></div>
-<div class="text-xs pb-1 text-right mb-4 italic">Updated: Tue Mar 28 2023 18:29:56 GMT+0000 (Coordinated Universal Time)</div>
+<div class="text-sm pb-1 text-right mb-4"><a href="https://github.com/flowforge/website/edit/main/src/handbook/company/achieving-success.md">Edit this page</a></div>
+<div class="text-xs pb-1 text-right mb-4 italic">Updated: Tue Mar 28 2023 18:29:15 GMT+0000 (Coordinated Universal Time)</div>
 </div>
 </div>
 </div>
@@ -620,7 +728,7 @@ v1.5.0 /<a class="mx-2" href="/docs">docs</a>/<a class="mx-2" href="/docs/instal
     })
 
     // All external links open in new page
-    document.querySelectorAll("[data-docs] a").forEach((link) => {
+    document.querySelectorAll("[data-handbook] a").forEach((link) => {
         try {
             if (!link.target && window.location.host !== new URL(link.href).host) {
                 link.target = "_blank";
