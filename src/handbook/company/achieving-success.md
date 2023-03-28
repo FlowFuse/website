@@ -48,7 +48,7 @@ or individual.
 ### Anatomy of an OKR
 
 Per timeboxed period a couple of OKRs are created. Each of them should describe
-clearly what the objective is, the plan to achieve that goal, and how success is
+clearly what the objective is, the key results that will be used to measure the success.
 measured. Further, the goal and plan to achieve it should align with the
 [values](./values/).
 
@@ -56,7 +56,9 @@ measured. Further, the goal and plan to achieve it should align with the
 
 Before the OKR period, the CEO sets company wide OKRs. Each of the CEO, CTO,
 Head of Marketing, Head of UX, and product manager are expected to read the OKRs
-and create 2 OKRs of their own to help to achieve the company wide goal.
+and work with their teams to develop at least 2 OKRs their team will implement to help achieve the company goal.
+
+At the start of the OKR period, each team will present their OKRs during a company meeting. Bi-weekly meetings will be held where each team will present a quick update on the status of their OKR and current work being done to achieve the key result. At the end of the OKR period, a company wide retrospective will he held to share lessons learned from the OKR.
 
 ### Current OKRs
 
