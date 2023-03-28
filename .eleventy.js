@@ -16,8 +16,6 @@ const markdownItAttrs = require('markdown-it-attrs');
 const spacetime = require("spacetime");
 const { minify } = require("terser");
 
-// const axios = require('axios');
-
 const heroGen = require("./lib/post-hero-gen.js");
 const site = require("./src/_data/site");
 
@@ -25,7 +23,6 @@ const DEV_MODE = process.env.ELEVENTY_RUN_MODE !== "build" // i.e. serve/watch
 
 module.exports = function(eleventyConfig) {
 
-    console.log("SERVER RELOAD")
     eleventyConfig.setUseGitIgnore(false); // Otherwise docs are ignored
 
     eleventyConfig.addPlugin(EleventyEdgePlugin);
@@ -53,6 +50,7 @@ module.exports = function(eleventyConfig) {
         watch: ["_site/**/*.css", "_site/**/*.js"],
     })
     
+    // make global accessible in src/_includes/layouts/base.njk for loading of PH scripts
     eleventyConfig.addGlobalData('POSTHOG_APIKEY', () => process.env.POSTHOG_APIKEY || '' )
 
     // Custom Tooltip "Component"
