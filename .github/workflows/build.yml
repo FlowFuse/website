@@ -28,9 +28,14 @@ jobs:
         working-directory: 'website'
       - run: npm run build
         working-directory: 'website'
-      - name: Deploy
-        uses: peaceiris/actions-gh-pages@v3.7.3
+      - name: Deploy to Netlify
+        uses: nwtgck/actions-netlify@v2.0
         with:
-          publish_dir: website/_site
-          publish_branch: gh-pages
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish-dir: './_site'
+          production-branch: main
+          deploy-message: "Deploy from GitHub Actions"
+          enable-pull-request-comment: false
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+        timeout-minutes: 5

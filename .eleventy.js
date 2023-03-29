@@ -2,6 +2,7 @@ const path = require("path");
 const util = require("util");
 const fs = require("fs");
 
+const { EleventyEdgePlugin } = require("@11ty/eleventy");
 const eleventyImage = require("@11ty/eleventy-img");
 const pluginRSS = require("@11ty/eleventy-plugin-rss");
 const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
@@ -21,7 +22,10 @@ const site = require("./src/_data/site");
 const DEV_MODE = process.env.ELEVENTY_RUN_MODE !== "build" // i.e. serve/watch
 
 module.exports = function(eleventyConfig) {
+
     eleventyConfig.setUseGitIgnore(false); // Otherwise docs are ignored
+
+    eleventyConfig.addPlugin(EleventyEdgePlugin);
 
     // Layout aliases
     eleventyConfig.addLayoutAlias('default', 'layouts/base.njk');
@@ -45,6 +49,9 @@ module.exports = function(eleventyConfig) {
         // Additional files to watch that will trigger server updates
         watch: ["_site/**/*.css", "_site/**/*.js"],
     })
+    
+    // make global accessible in src/_includes/layouts/base.njk for loading of PH scripts
+    eleventyConfig.addGlobalData('POSTHOG_APIKEY', () => process.env.POSTHOG_APIKEY || '' )
 
     // Custom Tooltip "Component"
     eleventyConfig.addPairedShortcode("tooltip", function (content, text) {
@@ -52,6 +59,10 @@ module.exports = function(eleventyConfig) {
     });
 
     // Custom filters
+    eleventyConfig.addFilter("json", (content) => {
+        return JSON.stringify(content)
+    });
+
     eleventyConfig.addFilter("head", (array, n) => {
         if( n < 0 ) {
             return array.slice(n);
