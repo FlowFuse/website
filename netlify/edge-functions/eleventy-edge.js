@@ -132,8 +132,6 @@ export default async (request, context) => {
 
     edge.config((eleventyConfig) => {
 
-      console.log(`ph_${POSTHOG_APIKEY}_posthog`)
-
       // Add some custom Edge-specific configuration
       // e.g. Fancier json output
       // eleventyConfig.addFilter("json", obj => JSON.stringify(obj, null, 2));
@@ -185,7 +183,7 @@ export default async (request, context) => {
             return ''
           }
         } else if (value === 'control') {
-          console.log('no posthog API key')
+          console.warn('WARN: No PostHog API Key - Falling back to A/B "control" content across the website')
           // fallback to control if we have no PostHog API key
           return `${content}`
         }
