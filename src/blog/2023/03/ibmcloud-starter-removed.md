@@ -2,7 +2,7 @@
 title: IBM Cloud removes Node-RED starter application
 subtitle: Get up and running with a Starter Application for Node-RED with FlowForge 
 description: IBM Cloud has recently announced that they will no longer be providing their Cloud App Service Starter Kits, including the Node-RED Starter Application. Don't worry though, FlowForge has you covered.
-date: git created
+date: 2023-03-29 12:00:00
 authors: ["joe-pavitt"]
 image: /images/blog/tile-ibm-cloud-starter-removed.png
 tags:
