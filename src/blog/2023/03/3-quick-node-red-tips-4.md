@@ -1,5 +1,5 @@
 ---
-title: 3 Quick Tips for Using Node-RED, Part 4
+title: Node-RED Tips - Smooth and Catch, and Math
 subtitle: Save yourself time when working on Node-RED with these three tips.
 description: Save yourself time when working on Node-RED with these three tips.
 date: 2023-03-13 12:00:00
