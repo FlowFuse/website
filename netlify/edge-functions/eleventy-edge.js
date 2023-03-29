@@ -6,9 +6,11 @@ import {
 import { configAsync } from 'https://deno.land/x/dotenv/mod.ts';
 
 try {
+  // when running locally, we need to call this
+  // it'll eerror in Netlify prod, but that's okay
   await configAsync({export: true});
 } catch (err) {
-  // ignore the error
+  // ignore the error on netlify Prod
 }
 
 // const POSTHOG_APIKEY = 'phc_yVWfmiJ3eiVd2iuLYJIQROuHUN65z3hkhkGvAjjaTL7'; //Deno.env.get("POSTHOG_APIKEY");
