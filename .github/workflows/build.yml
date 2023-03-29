@@ -32,9 +32,10 @@ jobs:
         uses: nwtgck/actions-netlify@v2.0
         with:
           publish-dir: 'website/_site'
-          production-branch: main
+          production-branch: abtesting-workflow
           deploy-message: "Deploy from GitHub Actions"
           enable-pull-request-comment: false
+          netlify-config-path: './netlify.toml'
         env:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
