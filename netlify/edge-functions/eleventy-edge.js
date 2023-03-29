@@ -3,8 +3,8 @@ import {
   precompiledAppData,
 } from "./_generated/eleventy-edge-app.js";
 
-import { config } from 'https://deno.land/x/dotenv/mod.ts';
-await config({export: true});
+import { configAsync } from 'https://deno.land/x/dotenv/mod.ts';
+await configAsync({export: true});
 
 // const POSTHOG_APIKEY = 'phc_yVWfmiJ3eiVd2iuLYJIQROuHUN65z3hkhkGvAjjaTL7'; //Deno.env.get("POSTHOG_APIKEY");
 const POSTHOG_APIKEY = Deno.env.get("POSTHOG_APIKEY");
