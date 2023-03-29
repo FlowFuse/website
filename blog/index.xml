@@ -3,8 +3,59 @@
     <title>FlowForge</title>
     <link href="https://flowforge.com/blog/index.xml" rel="self"/>
     <link href="https://flowforge.com/blog"/>
-    <updated>2023-03-27T12:00:00Z</updated>
+    <updated>2023-03-29T12:00:00Z</updated>
     <id>https://flowforge.com/blog</id>
+    
+    <entry>
+        <id>https://flowforge.com/blog/2023/03/ibmcloud-starter-removed/</id>
+        <title>IBM Cloud removes Node-RED starter application</title>
+        <summary>Get up and running with a Starter Application for Node-RED with FlowForge or migrate your existing flows from IBM Cloud</summary>
+        <updated>2023-03-29T12:00:00Z</updated>
+        <link href="https://flowforge.com/blog/2023/03/ibmcloud-starter-removed/"/>
+        <author><name>Joe Pavitt</name></author>
+        <content type="html">&lt;p&gt;IBM Cloud has &lt;a href=&quot;https://www.ibm.com/cloud/blog/announcements/deprecation-of-ibm-cloud-starter-kits&quot;&gt;recently announced&lt;/a&gt; that they will no longer be providing their Cloud App Service Starter Kits, including the &lt;a href=&quot;https://developer.ibm.com/tutorials/how-to-create-a-node-red-starter-application/&quot;&gt;Node-RED Starter Application&lt;/a&gt;.&lt;/p&gt;
+&lt;!--more--&gt;
+&lt;h2 id=&quot;node-red-starter-application&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://flowforge.com/blog/2023/03/ibmcloud-starter-removed/#node-red-starter-application&quot;&gt;#&amp;nbsp;&lt;/a&gt; Node-RED Starter Application&lt;/h2&gt;
+&lt;p&gt;If you&#39;re looking for an alternative place to get started with Node-RED then FlowForge, founded by Node-RED co-creator Nick O&#39;Leary, are here to help you with Cloud-hosted Node-RED as well as infrastructure and tooling to scale your Node-RED instances in production.&lt;/p&gt;
+&lt;p&gt;As an ex-IBM Employee myself, over the years, I&#39;ve been very dependant upon the Node-RED Starter Application in IBM Cloud. I&#39;d used it dozens of times with clients to showcase the value of Node-RED and how easy it is to spin up integrations between hardware devices, APIs and online services.&lt;/p&gt;
+&lt;p&gt;If you&#39;re now looking for somewhere to rely on in order to easily spin up new instance of Node-RED, then FlowForge is the obvious answer. If you&#39;re completely new for Node-RED too, we can also help you there with our &lt;a href=&quot;https://flowforge.com/blog/2023/01/getting-started-with-node-red/&quot;&gt;Getting Started&lt;/a&gt; guide.&lt;/p&gt;
+&lt;p&gt;You can sign up for a &lt;a href=&quot;https://app.flowforge.com/account/create&quot;&gt;free FlowForge Cloud Account&lt;/a&gt; where you&#39;ll be given one small Node-RED instance for free, for your first month.&lt;/p&gt;
+&lt;h2 id=&quot;integrations&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://flowforge.com/blog/2023/03/ibmcloud-starter-removed/#integrations&quot;&gt;#&amp;nbsp;&lt;/a&gt; Integrations&lt;/h2&gt;
+&lt;p&gt;If you&#39;ve seen the excellent &lt;a href=&quot;https://developer.ibm.com/tutorials/how-to-create-a-node-red-starter-application/&quot;&gt;&amp;quot;Create a Node-RED starter application&amp;quot;&lt;/a&gt; article on IBM Developer, you&#39;ll probably be looking to connect up to a Cloudant Instance, or other IBM Cloud Services. Don&#39;t worry. All of that is still available through Node-RED on FlowForge.&lt;/p&gt;
+&lt;p&gt;You can install the relevant nodes in one of two places:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;Node-RED Palette Manager:&lt;/strong&gt; Click &amp;quot;Menu &amp;gt; Manage Palette &amp;gt; Install&amp;quot;. The menu is available via the icon in the top-right of your running Node-RED Instance)&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;picture&gt;&lt;source type=&quot;image/avif&quot; srcset=&quot;https://flowforge.com/img/nr-manage-palette-cloudant-mnCA34z8PP-650.avif 650w, https://flowforge.com/img/nr-manage-palette-cloudant-mnCA34z8PP-1300.avif 1300w&quot; sizes=&quot;(min-device-pixel-ratio: 1.25) 1300px, (min-resolution: 120dpi) 1300px, 650px&quot; /&gt;&lt;source type=&quot;image/webp&quot; srcset=&quot;https://flowforge.com/img/nr-manage-palette-cloudant-mnCA34z8PP-650.webp 650w, https://flowforge.com/img/nr-manage-palette-cloudant-mnCA34z8PP-1300.webp 1300w&quot; sizes=&quot;(min-device-pixel-ratio: 1.25) 1300px, (min-resolution: 120dpi) 1300px, 650px&quot; /&gt;&lt;source type=&quot;image/jpeg&quot; srcset=&quot;https://flowforge.com/img/nr-manage-palette-cloudant-mnCA34z8PP-650.jpeg 650w, https://flowforge.com/img/nr-manage-palette-cloudant-mnCA34z8PP-1300.jpeg 1300w&quot; sizes=&quot;(min-device-pixel-ratio: 1.25) 1300px, (min-resolution: 120dpi) 1300px, 650px&quot; /&gt;&lt;img title=&quot;Screenshot of Node-RED&#39;s Manage Palette menu&quot; alt=&quot;Screenshot of Node-RED&#39;s Manage Palette menu&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot; src=&quot;https://flowforge.com/img/nr-manage-palette-cloudant-mnCA34z8PP-650.jpeg&quot; width=&quot;1300&quot; height=&quot;753&quot; /&gt;&lt;/picture&gt;&lt;/p&gt;
+&lt;ol start=&quot;2&quot;&gt;
+&lt;li&gt;&lt;strong&gt;FlowForge Instance Settings:&lt;/strong&gt; For a given Instance in FlowForge, click &amp;quot;Settings &amp;gt; Palette&amp;quot;. You can then define the npm module name and versions explicitely in the &amp;quot;Installed Modules&amp;quot; section&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;picture&gt;&lt;source type=&quot;image/avif&quot; srcset=&quot;https://flowforge.com/img/ff-installed-modules-MoJnuqQLbF-650.avif 650w, https://flowforge.com/img/ff-installed-modules-MoJnuqQLbF-1300.avif 1300w&quot; sizes=&quot;(min-device-pixel-ratio: 1.25) 1300px, (min-resolution: 120dpi) 1300px, 650px&quot; /&gt;&lt;source type=&quot;image/webp&quot; srcset=&quot;https://flowforge.com/img/ff-installed-modules-MoJnuqQLbF-650.webp 650w, https://flowforge.com/img/ff-installed-modules-MoJnuqQLbF-1300.webp 1300w&quot; sizes=&quot;(min-device-pixel-ratio: 1.25) 1300px, (min-resolution: 120dpi) 1300px, 650px&quot; /&gt;&lt;source type=&quot;image/jpeg&quot; srcset=&quot;https://flowforge.com/img/ff-installed-modules-MoJnuqQLbF-650.jpeg 650w, https://flowforge.com/img/ff-installed-modules-MoJnuqQLbF-1300.jpeg 1300w&quot; sizes=&quot;(min-device-pixel-ratio: 1.25) 1300px, (min-resolution: 120dpi) 1300px, 650px&quot; /&gt;&lt;img title=&quot;Screenshot of FlowForge&#39;s &#39;Installed Modules&#39; option in Instance &gt; Settings &gt; Palette&quot; alt=&quot;Screenshot of FlowForge&#39;s &amp;quot;Installed Modules&amp;quot; option in Instance &gt; Settings &gt; Palette&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot; src=&quot;https://flowforge.com/img/ff-installed-modules-MoJnuqQLbF-650.jpeg&quot; width=&quot;1300&quot; height=&quot;753&quot; /&gt;&lt;/picture&gt;&lt;/p&gt;
+&lt;p&gt;It&#39;s also easy to setup &lt;a href=&quot;https://flowforge.com/blog/2023/01/environment-variables-in-node-red/&quot;&gt;Environment Variables&lt;/a&gt; for Node-RED in FlowForge for when you integrate with external services like APIs too.&lt;/p&gt;
+&lt;h2 id=&quot;security&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://flowforge.com/blog/2023/03/ibmcloud-starter-removed/#security&quot;&gt;#&amp;nbsp;&lt;/a&gt; Security&lt;/h2&gt;
+&lt;p&gt;As with IBM Cloud, FlowForge makes it very easy to secure your Node-RED Applications. &lt;a href=&quot;https://flowforge.com/docs/user/instance-settings/#security&quot;&gt;FlowForge offers three tiers of security&lt;/a&gt; options on your Node-RED Instances to secure any exposed HTTP routes on your Node-RED instance, e.g. REST API endpoints or Node-RED Dashboard.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;None&lt;/strong&gt;: Anyone will be able to access the exposed routes.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Basic Auth&lt;/strong&gt;: Setup a single, dedicated username and password combination that is required in order to access the routes.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;FlowForge Credentials&lt;/strong&gt;: Visitors can use their FlowForge username/password in order to access the endpoints. This also includes SSO if you have that configured for your FlowFoerge Team.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;migrating-existing-instances&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://flowforge.com/blog/2023/03/ibmcloud-starter-removed/#migrating-existing-instances&quot;&gt;#&amp;nbsp;&lt;/a&gt; Migrating Existing Instances&lt;/h2&gt;
+&lt;p&gt;If you&#39;re looking to move your Node-RED applications from IBM Cloud, then you can do so through one of two options:&lt;/p&gt;
+&lt;h3 id=&quot;node-red-tools-plugin&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://flowforge.com/blog/2023/03/ibmcloud-starter-removed/#node-red-tools-plugin&quot;&gt;#&amp;nbsp;&lt;/a&gt; Node-RED Tools Plugin&lt;/h3&gt;
+&lt;p&gt;You can use our Node-RED Tools plugin to migrate your flows and credentials over to FlowForge. You can read the details in our &lt;a href=&quot;https://flowforge.com/docs/user/migration/&quot;&gt;Migration Guide&lt;/a&gt;, which also includes instructions on how to export your environment variables too.&lt;/p&gt;
+&lt;h3 id=&quot;manual-import&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://flowforge.com/blog/2023/03/ibmcloud-starter-removed/#manual-import&quot;&gt;#&amp;nbsp;&lt;/a&gt; Manual Import&lt;/h3&gt;
+&lt;p&gt;This will only enable you to import your Flows, not the associated credentials.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Export your existing &lt;code&gt;flows.json&lt;/code&gt; from your IBM Cloud-hosted Node-RED instance by choosing &amp;quot;Export &amp;gt; All Flows &amp;gt; Download&amp;quot; within Node-RED&lt;/li&gt;
+&lt;li&gt;Create a new Application on FlowForge&lt;/li&gt;
+&lt;li&gt;Once created, click the Node-RED instance that has been generated within your Application&lt;/li&gt;
+&lt;li&gt;Click &amp;quot;Settings&amp;quot;&lt;/li&gt;
+&lt;li&gt;Scroll down and select the &amp;quot;Import Instance&amp;quot; option&lt;/li&gt;
+&lt;li&gt;Choose your &lt;code&gt;flows.json&lt;/code&gt; file that you downloaded earlier.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;em&gt;If you have any questions about the above, or more generally about Node-RED or FlowForge, then please do reach out and &lt;a href=&quot;https://flowforge.com/contact-us&quot;&gt;get in touch&lt;/a&gt;.&lt;/em&gt;&lt;/p&gt;
+</content>
+    </entry>
     
     <entry>
         <id>https://flowforge.com/blog/2023/03/3-quick-node-red-tips-5/</id>
