@@ -41,7 +41,7 @@ It's also easy to setup [Environment Variables](/blog/2023/01/environment-variab
 
 ## Security
 
-As with IBM Cloud, FlowForge makes it very easy to secure your Node-RED Applications. FlowForge offers three tiers of security options on your Node-RED Instances to secure any exposed HTTP routes on your Node-RED instance, e.g. REST API endpoints or Node-RED Dashboard.
+As with IBM Cloud, FlowForge makes it very easy to secure your Node-RED Applications. [FlowForge offers three tiers of security](https://flowforge.com/docs/user/instance-settings/#security) options on your Node-RED Instances to secure any exposed HTTP routes on your Node-RED instance, e.g. REST API endpoints or Node-RED Dashboard.
 
 - **None**: Anyone will be able to access the exposed routes.
 - **Basic Auth**: Setup a single, dedicated username and password combination that is required in order to access the routes.
