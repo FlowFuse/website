@@ -182,12 +182,18 @@ module.exports = function(eleventyConfig) {
     })
 
     eleventyConfig.addFilter("handbookEditLink", (page) => {
-        let baseUrl
+        let baseUrl = 'https://github.com/flowforge/website/edit/main/'
         let filePath = page.inputPath
+
         if (/^\/docs/.test(page.url)) {
-            baseUrl = 'https://github.com/flowforge/flowforge/edit/main/docs/'
-        } else if (/^\/handbook/.test(page.url)) {
-            baseUrl = 'https://github.com/flowforge/website/edit/main/'
+            pathElements = page.inputPath.split(path.sep)
+
+            if (pathElements[pathElements.length - 1] === "index.md") {
+                pathElements[pathElements.length - 1] = "README.md"
+            }
+
+            filePath = path.join(...pathElements.slice(2))
+            baseUrl = 'https://github.com/flowforge/flowforge/edit/main/'
         }
 
         return baseUrl+filePath.replace(/^.\//,'')
