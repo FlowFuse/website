@@ -4,7 +4,12 @@ import {
 } from "./_generated/eleventy-edge-app.js";
 
 import { configAsync } from 'https://deno.land/x/dotenv/mod.ts';
-await configAsync({export: true});
+
+try {
+  await configAsync({export: true});
+} catch (err) {
+  // ignore the error
+}
 
 // const POSTHOG_APIKEY = 'phc_yVWfmiJ3eiVd2iuLYJIQROuHUN65z3hkhkGvAjjaTL7'; //Deno.env.get("POSTHOG_APIKEY");
 const POSTHOG_APIKEY = Deno.env.get("POSTHOG_APIKEY");
