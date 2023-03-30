@@ -24,8 +24,6 @@ jobs:
       - uses: actions/setup-node@v2
         with:
           node-version: '14'
-      - run: npm install
-        working-directory: 'website'
       - run: npm run docs
         working-directory: 'website'
       - name: Push to 'netlify-prod' branch
@@ -33,3 +31,4 @@ jobs:
         with:
           directory: './website'
           branch: netlify-prod
+          force: true
