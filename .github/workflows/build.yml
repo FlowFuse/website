@@ -30,7 +30,7 @@ jobs:
         uses: South-Paw/action-netlify-cli@1.0.1
         id: netlify
         with:
-          build --dir "./website"
+          args: 'build --dir "./website"'
         env:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
