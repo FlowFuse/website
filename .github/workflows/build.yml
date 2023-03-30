@@ -26,11 +26,11 @@ jobs:
           node-version: '14'
       - run: npm install
         working-directory: 'website'
-      - name: Publish to Netlify
-        uses: netlify/actions/build@master
+      - name: Netlify Build
+        uses: South-Paw/action-netlify-cli@1.0.1
+        id: netlify
+        with:
+          build --dir "./website"
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
-          NETLIFY_CMD: npm run build
-          NETLIFY_BASE: website
-          NETLIFY_DIR: website/_site
