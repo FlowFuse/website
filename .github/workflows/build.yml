@@ -26,17 +26,11 @@ jobs:
           node-version: '14'
       - run: npm install
         working-directory: 'website'
-      - run: npm run build
-        working-directory: 'website'
-      - name: Deploy to Netlify
-        uses: nwtgck/actions-netlify@v2.0
-        with:
-          publish-dir: 'website/_site'
-          production-branch: abtesting-workflow
-          deploy-message: "Deploy from GitHub Actions"
-          enable-pull-request-comment: false
-          netlify-config-path: 'website/netlify.toml'
+      - name: Publish to Netlify
+        uses: netlify/actions/build@master
         env:
-          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
-        timeout-minutes: 5
+          NETLIFY_CMD: npm run build
+          NETLIFY_BASE: website
+          NETLIFY_DIR: website/_site
