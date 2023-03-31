@@ -10,7 +10,7 @@ If you're a customer and looking to create a support ticket, the level of suppor
 
 - **FlowForge Cloud Customers**: E-Mail `support@flowforge.com` or raise a support request [here](/support).
 - **Self Managed - Community Edition:** users should raise a GitHub issue in the main [FlowForge repository](https://github.com/flowforge/flowforge) 
-- **Enterprise Customers**: It is likely you will have your own arrangements setu with FlowForge, but you can also raise a ticket [here](/support) or use the chat widget provided on our Website.
+- **Enterprise Customers**: It is likely you will have your own arrangements setup with FlowForge, but you can also raise a ticket [here](/support) or use the chat widget provided on our Website.
 
 ## Support Tickets
 
