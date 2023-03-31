@@ -37,7 +37,14 @@ npm install
 npm start
 ```
 
-If running from within VS Code, you may be prompted with the following:
+This will start a server on http://localhost:8080 that will automatically reload whenever
+any content is changed. 
+
+**Note**: the first time running this, it may take a little while as it
+needs to parse all images in the `/docs` and `/handbook` folders. ou will
+see a `404` at `localhost:8080` during this time.
+
+**Note**: If running from within VS Code, you may be prompted with the following:
 
 ```
 Would you like to configure VS Code to use Edge Functions? (Y/n) 
@@ -46,15 +53,6 @@ A new VS Code settings file will be created at /Users/joepavitt/Documents/flowfo
 
 It is recommended to response `y` to both of these questions.
 
-This will start a server on http://localhost:8080 that will automatically reload whenever
-any content is changed. 
-
-**Note**: the first time running this, it may take a little while as it
-needs to parse all images in the `/docs` and `/handbook` folders. ou will
-see a `404` at `localhost:8080` during this time.
-
-**Note:** if you modify `src/css/style.css` you will need
-to run `npm run tailwind` to rebuild the CSS content.
 
 ### Running FlowForge Documentation
 
