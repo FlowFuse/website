@@ -69,8 +69,9 @@ We hope you found these tips useful, if you'd like to suggest some of your own t
 
 You can read our previous Node-RED tips here.
 
-[3 Quick Tips for Using Node-RED, Part 4](https://flowforge.com/blog/2023/03/3-quick-node-red-tips-4/)\
-[3 Quick Tips for Using Node-RED, Part 3](https://flowforge.com/blog/2023/03/3-quick-node-red-tips-3/)\
-[3 Quick Tips for Using Node-RED, Part 2](https://flowforge.com/blog/2023/03/3-quick-node-red-tips-2/)\
-[3 Quick Tips for Using Node-RED, Part 1](https://flowforge.com/blog/2023/03/3-quick-node-red-tips-1/)
+[Node-RED Tips - Smooth, Catch, and Math](/blog/2023/03/3-quick-node-red-tips-4/)\
+[Node-RED Tips - Exec, Filter, and Debug](/blog/2023/03/3-quick-node-red-tips-3/)\
+[Node-RED Tips - Deploying, Debugging, and Delaying](/blog/2023/03/3-quick-node-red-tips-2/)\
+[Node-RED Tips - Wiring Shortcuts
+](/blog/2023/03/3-quick-node-red-tips-1/)
 
