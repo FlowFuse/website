@@ -116,10 +116,11 @@
 &lt;p&gt;Overall, the group feature in Node-RED is a valuable tool that can help users better organise, edit, and share their flows.&lt;/p&gt;
 &lt;p&gt;We hope you found these tips useful, if you&#39;d like to suggest some of your own tips which you think we should share in our future blog posts please &lt;a href=&quot;mailto:contact@flowforge.com&quot;&gt;get in touch&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;You can read our previous Node-RED tips here.&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://flowforge.com/blog/2023/03/3-quick-node-red-tips-4/&quot;&gt;3 Quick Tips for Using Node-RED, Part 4&lt;/a&gt;&lt;br /&gt;
-&lt;a href=&quot;https://flowforge.com/blog/2023/03/3-quick-node-red-tips-3/&quot;&gt;3 Quick Tips for Using Node-RED, Part 3&lt;/a&gt;&lt;br /&gt;
-&lt;a href=&quot;https://flowforge.com/blog/2023/03/3-quick-node-red-tips-2/&quot;&gt;3 Quick Tips for Using Node-RED, Part 2&lt;/a&gt;&lt;br /&gt;
-&lt;a href=&quot;https://flowforge.com/blog/2023/03/3-quick-node-red-tips-1/&quot;&gt;3 Quick Tips for Using Node-RED, Part 1&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://flowforge.com/blog/2023/03/3-quick-node-red-tips-4/&quot;&gt;Node-RED Tips - Smooth, Catch, and Math&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&quot;https://flowforge.com/blog/2023/03/3-quick-node-red-tips-3/&quot;&gt;Node-RED Tips - Exec, Filter, and Debug&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&quot;https://flowforge.com/blog/2023/03/3-quick-node-red-tips-2/&quot;&gt;Node-RED Tips - Deploying, Debugging, and Delaying&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&quot;https://flowforge.com/blog/2023/03/3-quick-node-red-tips-1/&quot;&gt;Node-RED Tips - Wiring Shortcuts
+&lt;/a&gt;&lt;/p&gt;
 </content>
     </entry>
     
@@ -274,7 +275,7 @@ That&#39;s also a great place to send us any feedback or feature requests.&lt;/p
     
     <entry>
         <id>https://flowforge.com/blog/2023/03/3-quick-node-red-tips-4/</id>
-        <title>Node-RED Tips - Smooth and Catch, and Math</title>
+        <title>Node-RED Tips - Smooth, Catch, and Math</title>
         <summary>Save yourself time when working on Node-RED with these three tips.</summary>
         <updated>2023-03-13T12:00:00Z</updated>
         <link href="https://flowforge.com/blog/2023/03/3-quick-node-red-tips-4/"/>
