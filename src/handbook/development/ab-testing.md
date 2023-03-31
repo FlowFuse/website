@@ -30,7 +30,7 @@ We run our A/B Testing via [PostHog Experiments](https://posthog.com/docs/experi
 
 #### Trend
 
-If you are purely interested in the raw number of a partcular event taking place, then you'll want a Trend Experiment, e.g:
+If you are purely interested in the raw number of a particular event taking place, then you'll want a Trend Experiment, e.g:
 
 ![Screenshot from PostHog showing a "Trend" Experiment](../images/screenshots/ph-experiment-trend.png "Title")
 
@@ -48,7 +48,7 @@ To conduct a new Experiment:
 2. Define the criteria for which users you'd like involved, and the split across the variants
 ![Screenshot from PostHog showing a "Trend" Experiment](../images/screenshots/ph-experiment-funnel.png "Title")
 3. Make note of the relevant Feature Flag created, and variants (e.g. `control`, `testA`, `testB`)
-4. Wherever you want to implement the varints, includes the following (equiavlanet) code:
+4. Wherever you want to implement the variants, includes the following (equivalanet) code:
 
 {% raw %}
 ```liquid
