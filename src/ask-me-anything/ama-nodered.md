@@ -1,5 +1,5 @@
 ---
-title: Ask Me Anything about Node-RED (April Edition)
+title: Ask Me Anything about Node-RED (March Edition)
 subtitle: Join Nick O'Leary, co-creator of Node-RED & CTO at FlowForge and Rob Marcer, Developer Educator at FlowForge, for an AMA on Node-RED
 video: P0ZfQXh-mqM
 image: /images/webinars/ama-march.jpg
