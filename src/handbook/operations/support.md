@@ -4,12 +4,13 @@ navTitle: Support
 
 # Support
 
-## Customer type
-The level of support provided to a customer will depend on the tier of our product they are using:
+## Raising Support Tickets
 
-- *FlowForge Managed* customers can raise a support ticket by emailing support@flowforge.com
-- *Self Managed - Community Edition* users should be directed to raise a GitHub issue in the main flowforge repository (https://github.com/flowforge/flowforge) 
-- *Enterprise* customers will have their own custom arrangements, TBC
+If you're a customer and looking to create a support ticket, the level of support will depend on what tier of FlowForge you're using:
+
+- **FlowForge Cloud Customers**: E-Mail `support@flowforge.com` or raise a support request [here](/support).
+- **Self Managed - Community Edition:** users should raise a GitHub issue in the main [FlowForge repository](https://github.com/flowforge/flowforge) 
+- **Enterprise Customers**: It is likely you will have your own arrangements setu with FlowForge, but you can also raise a ticket [here](/support) or use the chat widget provided on our Website.
 
 ## Support Tickets
 
