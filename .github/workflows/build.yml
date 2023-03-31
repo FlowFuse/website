@@ -24,13 +24,18 @@ jobs:
       - uses: actions/setup-node@v2
         with:
           node-version: '14'
-      - run: npm install
+      - run: npm run docs
         working-directory: 'website'
-      - run: npm run build
-        working-directory: 'website'
-      - name: Deploy
-        uses: peaceiris/actions-gh-pages@v3.7.3
+      - name: Commit Latest Docs
+        run: |
+          cd ./website
+          git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add src/docs/* -A -f
+          git commit -a -m "Bot: update docs"
+      - name: Push to 'live' branch
+        uses: ad-m/github-push-action@master
         with:
-          publish_dir: website/_site
-          publish_branch: gh-pages
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          directory: './website'
+          branch: live
+          force: true
