@@ -1,0 +1,206 @@
+---
+layout: layouts/page.njk
+title: Roadmap
+description: "<p>Stay up-to-date with our progress and plans on the FlowForge Roadmap.</p><p>Here you can find information about features, improvements, and other changes we're working on.</p>"
+heroimg: "./images/pictograms/anvil1.png"
+sitemapPriority: 0.8
+meta:
+    title: Roadmap
+---
+
+<style>
+    .roadmap-section {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    .roadmap-item {
+        display: flex;
+        align-items: center;
+        background-color: #f3f4f6;
+        border-radius: 8px;
+        padding: 12px 20px;
+        margin-bottom: 12px;
+    }
+    .roadmap-item a {
+        text-decoration: none;
+        color: #1f2937;
+        flex-grow: 1;
+    }
+    .roadmap-item .issue-number {
+        font-size: 0.9em;
+        color: #9ca3af;
+        margin-right: 12px;
+    }
+    .vote-btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #f3f4f6;
+        padding: 8px 16px;
+        border-radius: 8px;
+        text-decoration: none;
+        color: #1f2937;
+        font-weight: bold;
+        transition: 0.3s;
+    }
+    .vote-btn:hover {
+        background-color: #e5e7eb;
+    }
+    .reaction-count {
+        display: flex;
+        align-items: center;
+        margin-left: 8px;
+    }
+    .reaction-count span {
+        margin-left: 4px;
+        color: #9ca3af;
+    }
+</style>
+{% include "components/divider-flow--default.njk" %}
+<!-- Roadmap Content -->
+<div class="roadmap w-full ff-bg-light pt-12 pb-24 md:pb-48 md:pt-32">
+    <div class="container m-auto text-center max-w-4xl">
+        <div class="grid grid-cols-1 md:grid-cols-3 pt-12 md:flex-row md:pt-24 gap-x-8">
+            <div class="roadmap-section in-progress pb-6 md:pb-0">
+                <h3>In Progress</h3>
+                <!-- The list will be populated by JavaScript -->
+            </div>
+            <div class="roadmap-section upcoming pb-6 md:pb-0">
+                <h3>Upcoming</h3>
+                <!-- The list will be populated by JavaScript -->
+            </div>
+            <div class="roadmap-section completed">
+                <h3>Completed</h3>
+                <!-- The list will be populated by JavaScript -->
+            </div>
+        </div>
+    </div>
+</div>
+{% include "components/divider-flow--top-red--dark.njk" %}
+<!-- Roadmap Feedback -->
+<div class="roadmap-feedback w-full ff-bg-dark px-6 pt-12 pb-24 md:pt-20 md:px-0 md:pb-48">
+    <div class="container m-auto text-center max-w-4xl">
+        <div>
+            <h1 class="mb-4">We value your feedback</h1>
+            <p>We appreciate feedback and suggestions from our users to help shape the future of FlowForge. Feel free to share your
+                thoughts and ideas with us through our community channels or by contacting our team.</p>
+            <a href="/contact" class="btn btn-red mt-4">Contact Us</a>
+        </div>
+    </div>
+</div>
+{% include "components/divider-flow--top-grey.njk" %}
+<!-- Roadmap Updates -->
+<div class="roadmap-updates w-full ff-bg-mid px-6 pt-12 pb-20 md:px-0 md:pt-20">
+    <div class="container m-auto text-center max-w-4xl">
+        <div>
+            <h1 class="mb-4">Stay Updated</h1>
+            <p>Subscribe to our newsletter to receive regular updates about FlowForge, including new features, improvements, and
+                other important announcements.</p>
+            <form class="newsletter-form">
+                <input type="email" placeholder="Your email address" class="newsletter-input">
+                    <button type="submit" class="btn btn-red">Subscribe</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- Inline JavaScript code -->
+    <script>
+        async function sendGraphQLRequest(query) {
+            const url = "https://api.github.com/graphql";
+            const options = {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                    "User-Agent": "FlowForge-Website",
+                    "Authorization": "Bearer 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" // Replace
+                },
+                body: JSON.stringify({query})
+            };
+            try {
+                const response = await fetch(url, options);
+                const data = await response.json();
+                return data
+                    .data
+                    .repository
+                    .issues
+                    .nodes;
+            } catch (error) {
+                console.error("Error fetching GitHub issues:", error);
+                return null;
+            }
+        }
+        async function fetchGitHubIssues(label) {
+            const query = `
+query {
+  repository(owner: "flowforge", name: "flowforge") {
+    issues(first: 100, states: OPEN, filterBy: { labels: "${label}"}) {
+      nodes {
+        title
+        number
+        url
+        reactions(content: THUMBS_UP) {
+          totalCount
+        }
+      }
+    }
+  }
+}
+`;
+            const data = await sendGraphQLRequest(query);
+            return data;
+        }
+        async function updateRoadmap() {
+            const inProgressItems = await fetchGitHubIssues("epic");
+            const upcomingItems = await fetchGitHubIssues("story");
+            const completedItems = await fetchGitHubIssues("feature-request");
+            updateRoadmapSection(document.querySelector(".in-progress"), inProgressItems);
+            updateRoadmapSection(document.querySelector(".upcoming"), upcomingItems);
+            updateRoadmapSection(document.querySelector(".completed"), completedItems);
+        }
+        function updateRoadmapSection(element, items) {
+            const list = document.createElement("ul");
+            for (const item of items) {
+                const listItem = document.createElement("li");
+                listItem.classList.add("roadmap-item");
+                const link = document.createElement("a");
+                link.href = item.url;
+                link.target = "_blank";
+                link.textContent = item.title;
+                const issueNumber = document.createElement("span");
+                issueNumber.classList.add("issue-number");
+                issueNumber.textContent = `#${
+                    item.number
+                }`;
+                listItem.appendChild(link);
+                listItem.appendChild(issueNumber);
+                const reactions = item.reactions;
+                if (reactions) {
+                    for (const reactionType in reactions) {
+                        if (reactions[reactionType] > 0) {
+                            const reactionCount = document.createElement("span");
+                            reactionCount.classList.add("reaction-count");
+                            reactionCount.innerHTML = `${reactionType} <span>${
+                                reactions[reactionType]
+                            }</span>`;
+                            listItem.appendChild(reactionCount);
+                        }
+                    }
+                }
+                const voteBtn = document.createElement("a");
+                voteBtn.href = item.url;
+                voteBtn.target = "_blank";
+                voteBtn.classList.add("vote-btn");
+                voteBtn.innerHTML = 'Vote on GitHub';
+                listItem.appendChild(voteBtn);
+                list.appendChild(listItem);
+            }
+            // Clear the previous content and append the new list
+            element.innerHTML = "";
+            element.appendChild(list);
+        }
+        // Fetch and display data on page load
+        updateRoadmap();
+        // Optionally, fetch and display data every X milliseconds
+        setInterval(updateRoadmap, 5 * 60 * 1000);
+    </script>
