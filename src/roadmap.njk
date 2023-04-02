@@ -59,20 +59,45 @@ meta:
 </style>
 {% include "components/divider-flow--default.njk" %}
 <!-- Roadmap Content -->
-<div class="roadmap w-full ff-bg-light pt-12 pb-24 md:pb-48 md:pt-32">
-    <div class="container m-auto text-center max-w-4xl">
-        <div class="grid grid-cols-1 md:grid-cols-3 pt-12 md:flex-row md:pt-24 gap-x-8">
-            <div class="roadmap-section in-progress pb-6 md:pb-0">
-                <h3>In Progress</h3>
-                <!-- The list will be populated by JavaScript -->
+<div class="container m-auto max-w-4xl">
+    <div class="grid grid-cols-1 md:grid-cols-3 pt-12 md:flex-row md:pt-24 gap-x-8">
+        <div class="roadmap-section consideration pb-6 md:pb-0 text-center">
+            <<h3>Consideration</h3>
+            <!-- The list will be populated by JavaScript -->
+        </div>
+        <div class="roadmap-section progress pb-6 md:pb-0 text-center">
+            <h3>In Progress</h3>
+            <!-- The list will be populated by JavaScript -->
+        </div>
+        <div class="roadmap-section completed text-center">
+            <h3>Newly released</h3>
+            <!-- beautify necessary -->
+            <div class="roadmap-item">
+                <a href="https://www.flowforge.com/blog/" target="_blank">
+                    Check out product updates on our blog to see the latest features and improvements.
+                </a>
             </div>
-            <div class="roadmap-section upcoming pb-6 md:pb-0">
-                <h3>Upcoming</h3>
-                <!-- The list will be populated by JavaScript -->
-            </div>
-            <div class="roadmap-section completed">
-                <h3>Completed</h3>
-                <!-- The list will be populated by JavaScript -->
+            <div class="w-full px-2 pt-2 pb-2 mb-2 flex flex-col border-t-2 border-b-2">
+                <a id="sign-up"></a>
+                <h5 class="mb-0">Sign up for our monthly email updates:</h5>
+                <script>
+                    function displayHubSpotForm() {
+                        hbspt.forms.create({
+                            region: "eu1",
+                            portalId: "26586079",
+                            formId: "159c173d-dd95-49bd-922b-ff3ef243e90c",
+                            onFormSubmit: function ($form) {
+                                capture('cta-blog-subscribe', {'position': 'primary'})
+                            }
+                        });
+                    }
+                </script>
+                <script
+                    async="async"
+                    type="text/javascript"
+                    charset="utf-8"
+                    src="//js-eu1.hsforms.net/forms/embed/v2.js"
+                    onload="displayHubSpotForm()"></script>
             </div>
         </div>
     </div>
@@ -90,48 +115,30 @@ meta:
     </div>
 </div>
 {% include "components/divider-flow--top-grey.njk" %}
-<!-- Roadmap Updates -->
-<div class="roadmap-updates w-full ff-bg-mid px-6 pt-12 pb-20 md:px-0 md:pt-20">
-    <div class="container m-auto text-center max-w-4xl">
-        <div>
-            <h1 class="mb-4">Stay Updated</h1>
-            <p>Subscribe to our newsletter to receive regular updates about FlowForge, including new features, improvements, and
-                other important announcements.</p>
-            <form class="newsletter-form">
-                <input type="email" placeholder="Your email address" class="newsletter-input">
-                    <button type="submit" class="btn btn-red">Subscribe</button>
-                </form>
-            </div>
-        </div>
-    </div>
-    <!-- Inline JavaScript code -->
-    <script>
-        async function sendGraphQLRequest(query) {
-            const url = "https://api.github.com/graphql";
-            const options = {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                    "User-Agent": "FlowForge-Website",
-                    "Authorization": "Bearer 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" // Replace
-                },
-                body: JSON.stringify({query})
-            };
-            try {
-                const response = await fetch(url, options);
-                const data = await response.json();
-                return data
-                    .data
-                    .repository
-                    .issues
-                    .nodes;
-            } catch (error) {
-                console.error("Error fetching GitHub issues:", error);
-                return null;
-            }
+<!-- Inline JavaScript code -->
+<script>
+    async function sendGraphQLRequest(query) {
+        const url = "https://api.github.com/graphql";
+        const options = {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                "User-Agent": "FlowForge-Website",
+                "Authorization": "Bearer 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" // Replace
+            },
+            body: JSON.stringify({query})
+        };
+        try {
+            const response = await fetch(url, options);
+            const data = await response.json();
+            return data;
+        } catch (error) {
+            console.error("Error fetching GitHub issues:", error);
+            return null;
         }
-        async function fetchGitHubIssues(label) {
-            const query = `
+    }
+    async function fetchGitHubIssues(label) {
+        const query1 = `
 query {
   repository(owner: "flowforge", name: "flowforge") {
     issues(first: 100, states: OPEN, filterBy: { labels: "${label}"}) {
@@ -147,60 +154,94 @@ query {
   }
 }
 `;
-            const data = await sendGraphQLRequest(query);
-            return data;
-        }
-        async function updateRoadmap() {
-            const inProgressItems = await fetchGitHubIssues("epic");
-            const upcomingItems = await fetchGitHubIssues("story");
-            const completedItems = await fetchGitHubIssues("feature-request");
-            updateRoadmapSection(document.querySelector(".in-progress"), inProgressItems);
-            updateRoadmapSection(document.querySelector(".upcoming"), upcomingItems);
-            updateRoadmapSection(document.querySelector(".completed"), completedItems);
-        }
-        function updateRoadmapSection(element, items) {
-            const list = document.createElement("ul");
-            for (const item of items) {
-                const listItem = document.createElement("li");
-                listItem.classList.add("roadmap-item");
-                const link = document.createElement("a");
-                link.href = item.url;
-                link.target = "_blank";
-                link.textContent = item.title;
-                const issueNumber = document.createElement("span");
-                issueNumber.classList.add("issue-number");
-                issueNumber.textContent = `#${
-                    item.number
-                }`;
-                listItem.appendChild(link);
-                listItem.appendChild(issueNumber);
-                const reactions = item.reactions;
-                if (reactions) {
-                    for (const reactionType in reactions) {
-                        if (reactions[reactionType] > 0) {
-                            const reactionCount = document.createElement("span");
-                            reactionCount.classList.add("reaction-count");
-                            reactionCount.innerHTML = `${reactionType} <span>${
-                                reactions[reactionType]
-                            }</span>`;
-                            listItem.appendChild(reactionCount);
-                        }
-                    }
-                }
-                const voteBtn = document.createElement("a");
-                voteBtn.href = item.url;
-                voteBtn.target = "_blank";
-                voteBtn.classList.add("vote-btn");
-                voteBtn.innerHTML = 'Vote on GitHub';
-                listItem.appendChild(voteBtn);
-                list.appendChild(listItem);
+        const data = await sendGraphQLRequest(query1);
+        return data
+            .data
+            .repository
+            .issues
+            .nodes;
+    }
+    async function fetchDevIssues() {
+        const query2 = `       
+query {
+  repository(owner: "flowforge", name: "flowforge") {
+    milestones(states: OPEN, first: 10) {
+      nodes {
+        title
+        url
+        issues(labels: "epic", states: OPEN, first: 100) {
+          nodes {
+            title
+            number
+            url
             }
-            // Clear the previous content and append the new list
-            element.innerHTML = "";
-            element.appendChild(list);
+          }
         }
-        // Fetch and display data on page load
-        updateRoadmap();
-        // Optionally, fetch and display data every X milliseconds
-        setInterval(updateRoadmap, 5 * 60 * 1000);
-    </script>
+      }
+    }
+  }
+`;
+        const data = await sendGraphQLRequest(query2);
+        const result = await extractIssues(data.data);
+        return result;
+    }
+    async function extractIssues(data) {
+        let issues = [];
+        for (const milestone of data
+            .repository
+            .milestones
+            .nodes) {
+            for (const issue of milestone.issues.nodes) {
+                issues.push({title: issue.title, number: issue.number, url: issue.url});
+            }
+        }
+        return issues;
+    }
+    async function updateRoadmap() {
+        const inConsiderationItems = await fetchGitHubIssues("consideration");
+        const progressItems = await fetchDevIssues();
+        updateRoadmapSection(document.querySelector(".consideration"), inConsiderationItems);
+        updateRoadmapSection(document.querySelector(".progress"), progressItems, false);
+    }
+    function updateRoadmapSection(element, items, showReactions = true) {
+        const list = document.createElement("ul");
+        for (const item of items) {
+            const listItem = document.createElement("li");
+            listItem.classList.add("roadmap-item");
+            const link = document.createElement("a");
+            link.href = item.url;
+            link.target = "_blank";
+            link.textContent = item.title;
+            const issueNumber = document.createElement("span");
+            issueNumber.classList.add("issue-number");
+            issueNumber.textContent = `#${
+                item.number
+            }`;
+            listItem.appendChild(link);
+            listItem.appendChild(issueNumber);
+            if (showReactions) {
+                const reactions = item.reactions.totalCount;
+                if (reactions > 0) {
+                    const reactionCount = document.createElement("span");
+                    reactionCount.classList.add("reaction-count");
+                    reactionCount.innerHTML = `👍 <span>${reactions}</span>`;
+                    listItem.appendChild(reactionCount);
+                }
+            }
+            const voteBtn = document.createElement("a");
+            voteBtn.href = item.url;
+            voteBtn.target = "_blank";
+            voteBtn.classList.add("vote-btn");
+            voteBtn.innerHTML = 'Vote on GitHub';
+            listItem.appendChild(voteBtn);
+            list.appendChild(listItem);
+        }
+        // Clear the previous content and append the new list
+        element.innerHTML = "";
+        element.appendChild(list);
+    }
+    // Fetch and display data on page load
+    updateRoadmap();
+    // fetch and display data every X milliseconds
+    setInterval(updateRoadmap, 5 * 60 * 1000);
+</script>
