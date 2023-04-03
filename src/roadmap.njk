@@ -18,19 +18,22 @@ meta:
     .roadmap-item {
         display: flex;
         flex-direction: column;
-        align-items: center;
+        align-items: flex-start;
         background-color: #f3f4f6;
         border-radius: 8px;
         padding: 12px 20px;
         margin-bottom: 12px;
     }
-    .roadmap-item-title {
-        margin-bottom: 4px;
+    .roadmap-item-title-container {
+        display: flex;
+        align-items: center;
     }
     .roadmap-item-text {
         display: block;
-        color: #1f2937;
+        color: #bc3738;
+        font-weight: bold;
         flex-grow: 1;
+        text-align: left;
     }
     .roadmap-item a {
         text-decoration: none;
@@ -46,7 +49,7 @@ meta:
     .vote-btn {
         display: flex;
         align-items: center;
-        justify-content: center;
+        justify-content: space-between; /* Added to make space between text and image */
         background-color: #f3f4f6;
         padding: 8px 16px;
         border-radius: 8px;
@@ -55,13 +58,23 @@ meta:
         font-weight: bold;
         transition: 0.3s;
     }
-    .vote-btn:hover {
-        background-color: #e5e7eb;
+    .vote-btn a {
+        color: #000;
+    }
+    .vote-btn,
+    .vote-btn span {
+        color: #000;
     }
     .vote-btn img {
         width: 16px;
         height: 16px;
         margin-right: 4px;
+    }
+    .vote-btn span {
+        margin-right: 4px; /* Added to make space between text and image */
+    }
+    .vote-btn:hover {
+        background-color: #e5e7eb;
     }
     .reaction-count {
         display: flex;
@@ -72,23 +85,31 @@ meta:
         margin-left: 4px;
         color: #9ca3af;
     }
+    .issue-number {
+        color: #7F7F7F;
+    }
+    .title-number-container {
+        display: flex;
+        align-items: center;
+        margin-bottom: 8px;
+    }
 </style>
 {% include "components/divider-flow--default.njk" %}
 <!-- Roadmap Content -->
 <div class="about w-full ff-bg-light pt-12 pb-24 md:pb-48 md:pt-32">
     <div class="container m-auto max-w-4xl">
         <div class="grid grid-cols-1 md:grid-cols-3 pt-12 md:pt-24 gap-x-8" style="align-items: flex-start;">
-            <div class="roadmap-section consideration pb-6 md:pb-0 text-center">
+            <div class="roadmap-section consideration pb-6 md:pb-0">
                 <h3>Consideration</h3>
                 <div class="roadmap-item-container"></div>
                 <!-- Add this container -->
             </div>
-            <div class="roadmap-section progress pb-6 md:pb-0 text-center">
+            <div class="roadmap-section progress pb-6 md:pb-0">
                 <h3>In Progress</h3>
                 <div class="roadmap-item-container"></div>
                 <!-- Add this container -->
             </div>
-            <div class="roadmap-section completed text-center">
+            <div class="roadmap-section completed">
                 <h3>Newly released</h3>
                 <!-- beautify necessary -->
                 <div class="roadmap-item">
@@ -237,38 +258,33 @@ function updateRoadmapSection(element, items, showReactions = true) {
     for (const item of items) {
         const listItem = document.createElement("li");
         listItem.classList.add("roadmap-item");
-        const titleContainer = document.createElement("div");
-        titleContainer.classList.add("roadmap-item-title");
-        // Use a span or div element instead of an anchor tag for the issue name
+        // Create a container for title and number
+        const titleNumberContainer = document.createElement("div");
+        titleNumberContainer.classList.add("title-number-container");
         const issueName = document.createElement("span");
         issueName.classList.add("roadmap-item-text");
-        issueName.textContent = item.title;
-        const issueNumber = document.createElement("span");
-        issueNumber.classList.add("issue-number");
-        issueNumber.textContent = `#${
-            item.number
-        }`;
-        titleContainer.appendChild(issueName);
-        titleContainer.appendChild(issueNumber);
-        listItem.appendChild(titleContainer);
+        issueName.textContent = `${
+            item.title
+        }`; 
+        //#${item.number} would be possible to add. From design perspective, I like the version without number more
+        // Append title and number to the container
+        titleNumberContainer.appendChild(issueName);
+        listItem.appendChild(titleNumberContainer);
+        const voteBtn = document.createElement("a");
+        voteBtn.href = item.url;
+        voteBtn.target = "_blank";
+        voteBtn.classList.add("vote-btn", "text-center");
         if (showReactions) {
             const reactions = item.reactions.totalCount;
             const reactionCount = document.createElement("span");
             reactionCount.classList.add("reaction-count");
             reactionCount.innerHTML = `👍 <span>${reactions}</span>`;
-            listItem.appendChild(reactionCount);
-        }
-        const voteBtn = document.createElement("a");
-        voteBtn.href = item.url;
-        voteBtn.target = "_blank";
-        voteBtn.classList.add("vote-btn");
-        if (showReactions) {
-        voteBtn.innerHTML = '<img src="../images/github-mark.png" alt="GitHub Logo">Vote on GitHub';
-        }
-        if (!showReactions) {
-        voteBtn.innerHTML = '<img src="../images/github-mark.png" alt="GitHub Logo">See status';
-        }
-        listItem.appendChild(voteBtn);
+            voteBtn.innerHTML = `${
+                reactionCount.outerHTML
+            }<span>Vote on GitHub</span><img src="../images/github-mark.png" alt="GitHub Logo">`;
+        } else {
+            voteBtn.innerHTML = '<span>See status</span><img src="../images/github-mark.png" alt="GitHub Logo">';
+        } listItem.appendChild(voteBtn);
         list.appendChild(listItem);
     }
     // Clear the previous content and append the new list
