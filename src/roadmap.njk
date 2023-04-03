@@ -101,22 +101,24 @@ meta:
         <div class="grid grid-cols-1 md:grid-cols-3 pt-12 md:pt-24 gap-x-8" style="align-items: flex-start;">
             <div class="roadmap-section consideration pb-6 md:pb-0">
                 <h3>Consideration</h3>
+                <p>We would appreciate your feedback on the potential new features that we are considering for development.</p>
                 <div class="roadmap-item-container"></div>
                 <!-- Add this container -->
             </div>
             <div class="roadmap-section progress pb-6 md:pb-0">
                 <h3>In Progress</h3>
+                <p>We are currently working on the following topics and would appreciate any feedback you may have.</p>
                 <div class="roadmap-item-container"></div>
                 <!-- Add this container -->
             </div>
             <div class="roadmap-section completed">
                 <h3>Newly released</h3>
                 <!-- beautify necessary -->
-                <div class="roadmap-item">
+                <p>
                     <a href="https://www.flowforge.com/blog/" target="_blank">
                         Check out product updates on our blog to see the latest features and improvements.
                     </a>
-                </div>
+                </p>
                 <div class="w-full px-2 pt-2 pb-2 mb-2 flex flex-col border-t-2 border-b-2">
                     <a id="sign-up"></a>
                     <h5 class="mb-0">Sign up for our monthly email updates:</h5>
@@ -156,10 +158,8 @@ meta:
     </div>
 </div>
 {% include "components/divider-flow--top-grey.njk" %}
-<!-- Just for env handling <script src="https://cdn.jsdelivr.net/npm/dotenv@16.0.3/lib/main.min.js"></script> -->
 <!-- Inline JavaScript code -->
     <script>
-// dotenv.config();
 async function sendGraphQLRequest(query) {
     const url = "https://api.github.com/graphql";
     const options = {
@@ -167,7 +167,7 @@ async function sendGraphQLRequest(query) {
         headers: {
             "Content-Type": "application/json",
             "User-Agent": "FlowForge-Website",
-            "Authorization": `Bearer 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` // Replace ${process.env.GitHub_Access_Token}
+            "Authorization": "Bearer {{ GitHub_Token }}" // Thanks to eleventy edge plugin
         },
         body: JSON.stringify({query})
     };
@@ -265,15 +265,15 @@ function updateRoadmapSection(element, items, showReactions = true) {
         issueName.classList.add("roadmap-item-text");
         issueName.textContent = `${
             item.title
-        }`; 
-        //#${item.number} would be possible to add. From design perspective, I like the version without number more
-        // Append title and number to the container
+        }`;
+        // #${item.number} would be possible to add. From design perspective, I like the version without number more Append
+        // title and number to the container
         titleNumberContainer.appendChild(issueName);
         listItem.appendChild(titleNumberContainer);
         const voteBtn = document.createElement("a");
         voteBtn.href = item.url;
         voteBtn.target = "_blank";
-        voteBtn.classList.add("vote-btn", "text-center");
+        voteBtn.classList.add("vote-btn");
         if (showReactions) {
             const reactions = item.reactions.totalCount;
             const reactionCount = document.createElement("span");
