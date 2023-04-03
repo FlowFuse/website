@@ -262,7 +262,12 @@ function updateRoadmapSection(element, items, showReactions = true) {
         voteBtn.href = item.url;
         voteBtn.target = "_blank";
         voteBtn.classList.add("vote-btn");
-        voteBtn.innerHTML = '<img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="GitHub Logo">Vote on GitHub';
+        if (showReactions) {
+        voteBtn.innerHTML = '<img src="../images/github-mark.png" alt="GitHub Logo">Vote on GitHub';
+        }
+        if (!showReactions) {
+        voteBtn.innerHTML = '<img src="../images/github-mark.png" alt="GitHub Logo">See status';
+        }
         listItem.appendChild(voteBtn);
         list.appendChild(listItem);
     }
