@@ -23,30 +23,32 @@ Back by popular demand, FlowForge is hosting a monthly Node-RED Ask Me Anything 
 Join Steve McLaughlin, FlowForge [Register today]().
 
 ## From our Blog
+[Comparing Node-RED Dashboards Solutions](https://flowforge.com/blog/2023/03/comparing-node-red-dashboards/) - A popular article comparing Node-RED Dashboard, uibuilder and FlexDash.
+
 [IBM Cloud removes Node-RED starter application](https://flowforge.com/blog/2023/03/ibmcloud-starter-removed/) - IBM has discontinued their Node-RED Starter Application, discover how to migrate to FlowForge.
 
 [The benefits and drawbacks of using Node-RED function nodes](https://flowforge.com/blog/2023/03/why-should-you-use-node-red-function-nodes/) - MING technology stack include M (Mosquitto/MQTT), InfluxDB, Node-RED and Grafana. Ian Skerrett, FlowForge Head of Marketing discusses how this tech stack is used for IoT.
 
-[Introduction to Node-RED](https://www.youtube.com/watch?v=47EvfmJji-k) - An in-depth webinar recording on key Node-RED concepts and demonstration on how to get started with Node-RED.
+[FlowForge 15. Now Available](https://flowforge.com/blog/2023/03/flowforge-1-5-0-released/) - FlowForge 1.5 included updates to the UI and architecutre to allow for future features.
 
 Node-RED Quick Tips - Rob Marcer, FlowForge Developer Educator has a weekly series of Node-RED hints and tips
-* [Tips #1](https://flowforge.com/blog/2023/02/3-quick-node-red-tips-1/)
-* [Tips #2](https://flowforge.com/blog/2023/02/3-quick-node-red-tips-2/)
+* [Node-RED Tips - Importing, Exporting, and Grouping Flows](https://flowforge.com/blog/2023/03/3-quick-node-red-tips-5/)
+* [Node-RED Tips - Smooth, Catch, and Math](https://flowforge.com/blog/2023/03/3-quick-node-red-tips-4/)
 
 ## From the Community
 
-### Node-RED Community Survey
-The Node-RED open source project is running an Node-RED Community Survey. Give your [feedback on how you are using Node-RED](https://nodered.org/blog/2023/02/23/community-survey).
+### Quantum for Node-RED
+Discover how you can incorporate [quantum technologies](https://theailaboratory.wordpress.com/2023/03/24/quantum-for-everyone/) into your Node-RED flows.  
 
-### Good alternatives to Pis for your next project
-Raspberry Pis continue to be difficult to purchase. Eben Upton of the Raspberry Pi Foundation has said that [supply should improve this year](https://www.raspberrypi.com/news/supply-chain-update-its-good-news/) but in the mean-time there are some good alternatives you could consider. The Youtube channel [ExplainingComputers](https://www.youtube.com/@ExplainingComputers) has shared a [great video covering some of the most popular SBCs](https://www.youtube.com/watch?v=k8clrUclPIs) you could use for your next project, it’s worth a watch.
+### Image recognition within Node-RED
+Kazuhito Yokoi, a researcher at Hitachi, has published an [interesting article](https://kazuhitoyokoi.medium.com/sharing-node-red-flow-of-image-recognition-application-on-github-4d667cdea9f7) detailing how to incorporate TensorFlow into a Node-RED application to do image recognition.
 
-### Custom Node Spotlight - node-red-contrib-os
-[OS](https://flows.nodered.org/node/node-red-contrib-os) is a great custom node which allows you to monitor the performance of the device you are running Node-RED on. It can check RAM usage, disk space, CPU load, and a lot more. It’s really easy to use, we recommend you [take a look](https://flows.nodered.org/node/node-red-contrib-os).
+### Custom Node Spotlight - node-red-contrib-web-worldmap
+If you would like to include a map in your next project Worldmap is a really good place to start. You can pass coordinates in to set the map to a location or you can use the built in search tool to find a location. As a user manipulates the map a stream of updated coordinates can be passed back to your flows to trigger additional actions. It's a really useful tool, take a [look here](https://flows.nodered.org/node/node-red-contrib-web-worldmap).
 
 ## Join Our Team
 FlowForge is expanding our team. We have two openings right now:
 
 * **[Developer Advocate - Manufacturing & Industrial Automation](https://boards.greenhouse.io/flowforge/jobs/4798023004)**
-* **[DevOps Engineer](https://boards.greenhouse.io/flowforge/jobs/4796271004)**
+
 
