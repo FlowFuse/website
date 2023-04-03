@@ -1,14 +1,29 @@
 ---
-layout: layouts/page.njk
+layout: layouts/solution.njk
 title: Roadmap
-description: "<p>Stay up-to-date with our progress and plans on the FlowForge Roadmap.</p><p>Here you can find information about features, improvements, and other changes we're working on.</p>"
-heroimg: "./images/pictograms/anvil1.png"
-sitemapPriority: 0.8
-meta:
-    title: Roadmap
+subtitle: Stay up-to-date with our progress
+heroImg: "./images/pictograms/anvil1.png"
+description: 
+    <p>Stay up-to-date with our progress and plans on the FlowForge Roadmap. This is your go-to resource for staying informed about the latest developments and future direction of our platform.</p>
+    <p>Here you can find information about upcoming features, enhancements, and other changes we're actively working on to make FlowForge an even more powerful and versatile tool for your business needs.</p>
 ---
 
+<div>
+    <div class="-mt-28 text-center">
+        <a href="https://github.com/orgs/flowforge/projects/5" class="inline-block ff-btn ff-btn--secondary shadow">
+            <img src="../images/github-mark.png" alt="GitHub Logo" class="github-logo">
+            <span>
+                See our entire Roadmap on GitHub</span>
+        </a>
+    </div>
+</div>
 <style>
+    .github-logo {
+        width: 20px;
+        height: 20px;
+        vertical-align: middle;
+        display: inline;
+    }
     .roadmap-section {
         display: flex;
         flex-direction: column;
@@ -23,6 +38,11 @@ meta:
         border-radius: 8px;
         padding: 12px 20px;
         margin-bottom: 12px;
+    }
+    .center {
+        display: flex;
+        justify-content: center;
+        width: 100%;
     }
     .roadmap-item-title-container {
         display: flex;
@@ -49,8 +69,8 @@ meta:
     .vote-btn {
         display: flex;
         align-items: center;
-        justify-content: space-between; /* Added to make space between text and image */
-        background-color: #f3f4f6;
+        justify-content: center;
+        background-color: #E4E7E0;
         padding: 8px 16px;
         border-radius: 8px;
         text-decoration: none;
@@ -64,22 +84,26 @@ meta:
     .vote-btn,
     .vote-btn span {
         color: #000;
+        margin-right: 4px;
     }
     .vote-btn img {
         width: 16px;
         height: 16px;
         margin-right: 4px;
     }
-    .vote-btn span {
-        margin-right: 4px; /* Added to make space between text and image */
-    }
     .vote-btn:hover {
-        background-color: #e5e7eb;
+        background-color: #c9ccc6;
+        text-decoration: none;
+    }
+    .vote-btn a:hover {
+        text-decoration: none;
+        color: inherit;
     }
     .reaction-count {
         display: flex;
         align-items: center;
         margin-left: 8px;
+        margin-right: 8px;
     }
     .reaction-count span {
         margin-left: 4px;
@@ -93,31 +117,36 @@ meta:
         align-items: center;
         margin-bottom: 8px;
     }
+    .centered-headline {
+        text-align: center;
+        width: 100%;
+    }
 </style>
-{% include "components/divider-flow--default.njk" %}
 <!-- Roadmap Content -->
 <div class="about w-full ff-bg-light pt-12 pb-24 md:pb-48 md:pt-32">
     <div class="container m-auto max-w-4xl">
         <div class="grid grid-cols-1 md:grid-cols-3 pt-12 md:pt-24 gap-x-8" style="align-items: flex-start;">
             <div class="roadmap-section consideration pb-6 md:pb-0">
-                <h3>Consideration</h3>
+                <h3 class="centered-headline">👀 Consideration</h3>
                 <p>We would appreciate your feedback on the potential new features that we are considering for development.</p>
                 <div class="roadmap-item-container"></div>
                 <!-- Add this container -->
             </div>
             <div class="roadmap-section progress pb-6 md:pb-0">
-                <h3>In Progress</h3>
+                <h3 class="centered-headline">🛠 In Progress</h3>
                 <p>We are currently working on the following topics and would appreciate any feedback you may have.</p>
                 <div class="roadmap-item-container"></div>
                 <!-- Add this container -->
             </div>
             <div class="roadmap-section completed">
-                <h3>Newly released</h3>
+                <h3 class="centered-headline">🏁 Newly released</h3>
                 <!-- beautify necessary -->
                 <p>
+                    Check out product updates on
                     <a href="https://www.flowforge.com/blog/" target="_blank">
-                        Check out product updates on our blog to see the latest features and improvements.
+                        our blog
                     </a>
+                    to see the latest features and improvements.
                 </p>
                 <div class="w-full px-2 pt-2 pb-2 mb-2 flex flex-col border-t-2 border-b-2">
                     <a id="sign-up"></a>
@@ -152,136 +181,133 @@ meta:
         <div>
             <h1 class="mb-4">We value your feedback</h1>
             <p>We appreciate feedback and suggestions from our users to help shape the future of FlowForge. Feel free to share your
-                thoughts and ideas with us through our community channels or by contacting our team.</p>
-            <a href="/contact" class="btn btn-red mt-4">Contact Us</a>
+                thoughts and ideas with us through our community channels or by contacting us.</p>
+            <a href="/contact-us" class="inline-block ff-btn ff-btn--secondary shadow">Contact us</a>
         </div>
     </div>
 </div>
 {% include "components/divider-flow--top-grey.njk" %}
 <!-- Inline JavaScript code -->
-    <script>
-async function sendRESTRequest(endpoint) {
-    const url = `https://api.github.com${endpoint}`;
-    const options = {
-        method: "GET",
-        headers: {
-            "Content-Type": "application/json",
-            "User-Agent": "FlowForge-Website"
+<script>
+    async function sendRESTRequest(endpoint) {
+        const url = `https://api.github.com${endpoint}`;
+        const options = {
+            method: "GET",
+            headers: {
+                "Content-Type": "application/json",
+                "User-Agent": "FlowForge-Website"
+            }
+        };
+        try {
+            const response = await fetch(url, options);
+            const data = await response.json();
+            return data;
+        } catch (error) {
+            console.error("Error fetching GitHub issues:", error);
+            return null;
         }
-    };
-    try {
-        const response = await fetch(url, options);
-        const data = await response.json();
+    }
+    async function fetchGitHubIssues(label) {
+        const endpoint = `/repos/flowforge/flowforge/issues?state=open&labels=${
+            encodeURIComponent(label)
+        }&per_page=100`;
+        const data = await sendRESTRequest(endpoint);
+        return data.map(issue => ({
+            title: issue.title,
+            number: issue.number,
+            url: issue.html_url,
+            reactions: {
+                totalCount: issue.reactions
+                    ? issue.reactions["+1"]
+                    : 0
+            }
+        }));
+    }
+    async function fetchMilestones() {
+        const endpoint = '/repos/flowforge/flowforge/milestones?state=open&per_page=10';
+        const data = await sendRESTRequest(endpoint);
         return data;
-    } catch (error) {
-        console.error("Error fetching GitHub issues:", error);
-        return null;
     }
-}
-async function fetchGitHubIssues(label) {
-    const endpoint = `/repos/flowforge/flowforge/issues?state=open&labels=${encodeURIComponent(label)}&per_page=100`;
-    const data = await sendRESTRequest(endpoint);
-
-    return data.map(issue => ({
-        title: issue.title,
-        number: issue.number,
-        url: issue.html_url,
-        reactions: {
-            totalCount: issue.reactions ? issue.reactions["+1"] : 0
+    async function fetchEpicIssuesByMilestone(milestoneNumber) {
+        const endpoint = `/repos/flowforge/flowforge/issues?state=open&labels=epic&milestone=${milestoneNumber}&per_page=100`;
+        const data = await sendRESTRequest(endpoint);
+        return data.map(issue => ({title: issue.title, number: issue.number, url: issue.html_url}));
+    }
+    async function fetchDevIssues() {
+        const milestones = await fetchMilestones();
+        let issues = [];
+        for (const milestone of milestones) {
+            const epicIssues = await fetchEpicIssuesByMilestone(milestone.number);
+            issues = issues.concat(epicIssues);
         }
-    }));
-}
-async function fetchMilestones() {
-    const endpoint = '/repos/flowforge/flowforge/milestones?state=open&per_page=10';
-    const data = await sendRESTRequest(endpoint);
-    return data;
-}
-
-async function fetchEpicIssuesByMilestone(milestoneNumber) {
-    const endpoint = `/repos/flowforge/flowforge/issues?state=open&labels=epic&milestone=${milestoneNumber}&per_page=100`;
-    const data = await sendRESTRequest(endpoint);
-
-    return data.map(issue => ({
-        title: issue.title,
-        number: issue.number,
-        url: issue.html_url
-    }));
-}
-
-async function fetchDevIssues() {
-    const milestones = await fetchMilestones();
-
-    let issues = [];
-    for (const milestone of milestones) {
-        const epicIssues = await fetchEpicIssuesByMilestone(milestone.number);
-        issues = issues.concat(epicIssues);
+        return issues;
     }
-
-    return issues;
-}
-
-async function extractIssues(data) {
-    let issues = [];
-    for (const milestone of data) {
-        for (const issue of milestone.issues) {
-            issues.push({title: issue.title, number: issue.number, url: issue.url});
+    async function extractIssues(data) {
+        let issues = [];
+        for (const milestone of data) {
+            for (const issue of milestone.issues) {
+                issues.push({title: issue.title, number: issue.number, url: issue.url});
+            }
         }
+        return issues;
     }
-    return issues;
-}
-
-async function updateRoadmap() {
-    const inConsiderationItems = await fetchGitHubIssues("consideration");
-    const progressItems = await fetchDevIssues();
-    updateRoadmapSection(document.querySelector(".consideration"), inConsiderationItems);
-    updateRoadmapSection(document.querySelector(".progress"), progressItems, false);
-}
-function updateRoadmapSection(element, items, showReactions = true) {
-    // Create a container for the list of items
-    let listContainer = element.querySelector(".roadmap-item-container");
-    if (! listContainer) {
-        listContainer = document.createElement("div");
-        listContainer.classList.add("roadmap-item-container");
-        element.appendChild(listContainer);
+    async function updateRoadmap() {
+        const inConsiderationItems = await fetchGitHubIssues("consideration");
+        const progressItems = await fetchDevIssues();
+        updateRoadmapSection(document.querySelector(".consideration"), inConsiderationItems);
+        updateRoadmapSection(document.querySelector(".progress"), progressItems, false);
     }
-    const list = document.createElement("ul");
-    for (const item of items) {
-        const listItem = document.createElement("li");
-        listItem.classList.add("roadmap-item");
-        // Create a container for title and number
-        const titleNumberContainer = document.createElement("div");
-        titleNumberContainer.classList.add("title-number-container");
-        const issueName = document.createElement("span");
-        issueName.classList.add("roadmap-item-text");
-        issueName.textContent = `${
-            item.title
-        }`;
-        // #${item.number} would be possible to add. From design perspective, I like the version without number more Append
-        // title and number to the container
-        titleNumberContainer.appendChild(issueName);
-        listItem.appendChild(titleNumberContainer);
-        const voteBtn = document.createElement("a");
-        voteBtn.href = item.url;
-        voteBtn.target = "_blank";
-        voteBtn.classList.add("vote-btn");
-        if (showReactions) {
-            const reactions = item.reactions.totalCount;
-            const reactionCount = document.createElement("span");
-            reactionCount.classList.add("reaction-count");
-            reactionCount.innerHTML = `👍 <span>${reactions}</span>`;
-            voteBtn.innerHTML = `${
-                reactionCount.outerHTML
-            }<span>Vote on GitHub</span><img src="../images/github-mark.png" alt="GitHub Logo">`;
-        } else {
-            voteBtn.innerHTML = '<span>See status</span><img src="../images/github-mark.png" alt="GitHub Logo">';
-        } listItem.appendChild(voteBtn);
-        list.appendChild(listItem);
+    function updateRoadmapSection(element, items, showReactions = true) { // Create a container for the list of items
+        let listContainer = element.querySelector(".roadmap-item-container");
+        if (! listContainer) {
+            listContainer = document.createElement("div");
+            listContainer.classList.add("roadmap-item-container");
+            element.appendChild(listContainer);
+        }
+        const list = document.createElement("ul");
+        for (const item of items) {
+            const listItem = document.createElement("li");
+            listItem.classList.add("roadmap-item");
+            // Create a container for title and number
+            const titleNumberContainer = document.createElement("div");
+            titleNumberContainer.classList.add("title-number-container");
+            const issueName = document.createElement("span");
+            issueName.classList.add("roadmap-item-text");
+            issueName.textContent = `${
+                item.title
+            }`;
+            // title and number to the container
+            titleNumberContainer.appendChild(issueName);
+            listItem.appendChild(titleNumberContainer);
+            // Add centerWrapper for the voteBtn
+            const centerWrapper = document.createElement("div");
+            centerWrapper.classList.add("center");
+            const voteBtn = document.createElement("a");
+            voteBtn.href = item.url;
+            voteBtn.target = "_blank";
+            voteBtn.classList.add("vote-btn");
+            if (showReactions) {
+                const reactions = item.reactions.totalCount;
+                const reactionCount = document.createElement("span");
+                reactionCount.classList.add("reaction-count");
+                reactionCount.innerHTML = `👍 <span>${reactions}</span>`;
+                voteBtn.innerHTML = `${
+                    reactionCount.outerHTML
+                }<span>Vote on GitHub</span><img src="../images/github-mark.png" alt="GitHub Logo">`;
+            } else {
+                voteBtn.innerHTML = '<span>See status</span><img src="../images/github-mark.png" alt="GitHub Logo">';
+            }
+            // Append the voteBtn to the centerWrapper and then append centerWrapper to the listItem
+            centerWrapper.appendChild(voteBtn);
+            listItem.appendChild(centerWrapper);
+            list.appendChild(listItem);
+        }
+        // Clear the previous content and append the new list
+        listContainer.innerHTML = "";
+        listContainer.appendChild(list);
     }
-    // Clear the previous content and append the new list
-    listContainer.innerHTML = "";
-    listContainer.appendChild(list);
-}
-// Fetch and display data on page load
-updateRoadmap();
-// fetch and display data every X milliseconds
-setInterval(updateRoadmap, 5 * 60 * 1000);</script>
+    // Fetch and display data on page load
+    updateRoadmap();
+    // fetch and display data every X milliseconds
+    setInterval(updateRoadmap, 5 * 60 * 1000);
+</script>
