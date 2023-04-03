@@ -2,7 +2,6 @@
 title: "Connect, Integrate, Visual Industrial Production Metrics with Node-RED"
 subtitle: Join FlowForge's Steve McLaughlin as he showcases how easy it is to use Node-RED to visualize popular productin metrics using Node-RED.
 image: /images/webinars/webinar-intro-ff.jpg
-
 date: 2023-04-27
 time: 17:00 CEST (11:00 ET) 
 duration: 60
@@ -16,12 +15,12 @@ hubspot:
 <!--more-->
 
 In this webinar, attendees will learn how to create a Node-RED flow to:
-Connect to an existing PLC using Modbus
-Integrate data from an external source
-Create a dashboard to visualize common production metrics
-Filter the data to report by exception and store this data in a [InfluxDB] database.
+- Connect to an existing PLC using Modbus
+- Integrate data from an external source
+- Create a dashboard to visualize common production metrics
+- Filter the data to report by exception and store this data in a [InfluxDB] database.
 
-This webinar will be a live demonstration of how to set up Node-RED to accomplish the tasks listed above. A general understanding of Node-RED will be expected.
+This webinar will include a live demonstration of how to set up Node-RED to accomplish the tasks listed above. Attendees are expected to have a general understanding of Node-RED.
 
 
 **About Steve:**
