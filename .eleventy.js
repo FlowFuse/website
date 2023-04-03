@@ -53,9 +53,6 @@ module.exports = function(eleventyConfig) {
     // make global accessible in src/_includes/layouts/base.njk for loading of PH scripts
     eleventyConfig.addGlobalData('POSTHOG_APIKEY', () => process.env.POSTHOG_APIKEY || '' )
 
-    //make GitHub Token for query read only available
-    eleventyConfig.addGlobalData('GitHub_Token', () => process.env.GitHub_Token || '' )
-
     // Custom Tooltip "Component"
     eleventyConfig.addPairedShortcode("tooltip", function (content, text) {
         return `<span class="ff-tooltip" data-tooltip="${text}">${content}</span><span></span>`
