@@ -13,14 +13,24 @@ meta:
         display: flex;
         flex-direction: column;
         justify-content: space-between;
+        align-items: flex-start;
     }
     .roadmap-item {
         display: flex;
+        flex-direction: column;
         align-items: center;
         background-color: #f3f4f6;
         border-radius: 8px;
         padding: 12px 20px;
         margin-bottom: 12px;
+    }
+    .roadmap-item-title {
+        margin-bottom: 4px;
+    }
+    .roadmap-item-text {
+        display: block;
+        color: #1f2937;
+        flex-grow: 1;
     }
     .roadmap-item a {
         text-decoration: none;
@@ -28,6 +38,7 @@ meta:
         flex-grow: 1;
     }
     .roadmap-item .issue-number {
+        display: block;
         font-size: 0.9em;
         color: #9ca3af;
         margin-right: 12px;
@@ -40,12 +51,17 @@ meta:
         padding: 8px 16px;
         border-radius: 8px;
         text-decoration: none;
-        color: #1f2937;
+        color: #000;
         font-weight: bold;
         transition: 0.3s;
     }
     .vote-btn:hover {
         background-color: #e5e7eb;
+    }
+    .vote-btn img {
+        width: 16px;
+        height: 16px;
+        margin-right: 4px;
     }
     .reaction-count {
         display: flex;
@@ -59,45 +75,49 @@ meta:
 </style>
 {% include "components/divider-flow--default.njk" %}
 <!-- Roadmap Content -->
-<div class="container m-auto max-w-4xl">
-    <div class="grid grid-cols-1 md:grid-cols-3 pt-12 md:flex-row md:pt-24 gap-x-8">
-        <div class="roadmap-section consideration pb-6 md:pb-0 text-center">
-            <<h3>Consideration</h3>
-            <!-- The list will be populated by JavaScript -->
-        </div>
-        <div class="roadmap-section progress pb-6 md:pb-0 text-center">
-            <h3>In Progress</h3>
-            <!-- The list will be populated by JavaScript -->
-        </div>
-        <div class="roadmap-section completed text-center">
-            <h3>Newly released</h3>
-            <!-- beautify necessary -->
-            <div class="roadmap-item">
-                <a href="https://www.flowforge.com/blog/" target="_blank">
-                    Check out product updates on our blog to see the latest features and improvements.
-                </a>
+<div class="about w-full ff-bg-light pt-12 pb-24 md:pb-48 md:pt-32">
+    <div class="container m-auto max-w-4xl">
+        <div class="grid grid-cols-1 md:grid-cols-3 pt-12 md:pt-24 gap-x-8" style="align-items: flex-start;">
+            <div class="roadmap-section consideration pb-6 md:pb-0 text-center">
+                <h3>Consideration</h3>
+                <div class="roadmap-item-container"></div>
+                <!-- Add this container -->
             </div>
-            <div class="w-full px-2 pt-2 pb-2 mb-2 flex flex-col border-t-2 border-b-2">
-                <a id="sign-up"></a>
-                <h5 class="mb-0">Sign up for our monthly email updates:</h5>
-                <script>
-                    function displayHubSpotForm() {
-                        hbspt.forms.create({
-                            region: "eu1",
-                            portalId: "26586079",
-                            formId: "159c173d-dd95-49bd-922b-ff3ef243e90c",
-                            onFormSubmit: function ($form) {
-                                capture('cta-blog-subscribe', {'position': 'primary'})
-                            }
-                        });
-                    }
-                </script>
-                <script
-                    async="async"
-                    type="text/javascript"
-                    charset="utf-8"
-                    src="//js-eu1.hsforms.net/forms/embed/v2.js"
-                    onload="displayHubSpotForm()"></script>
+            <div class="roadmap-section progress pb-6 md:pb-0 text-center">
+                <h3>In Progress</h3>
+                <div class="roadmap-item-container"></div>
+                <!-- Add this container -->
+            </div>
+            <div class="roadmap-section completed text-center">
+                <h3>Newly released</h3>
+                <!-- beautify necessary -->
+                <div class="roadmap-item">
+                    <a href="https://www.flowforge.com/blog/" target="_blank">
+                        Check out product updates on our blog to see the latest features and improvements.
+                    </a>
+                </div>
+                <div class="w-full px-2 pt-2 pb-2 mb-2 flex flex-col border-t-2 border-b-2">
+                    <a id="sign-up"></a>
+                    <h5 class="mb-0">Sign up for our monthly email updates:</h5>
+                    <script>
+                        function displayHubSpotForm() {
+                            hbspt.forms.create({
+                                region: "eu1",
+                                portalId: "26586079",
+                                formId: "159c173d-dd95-49bd-922b-ff3ef243e90c",
+                                onFormSubmit: function ($form) {
+                                    capture('cta-blog-subscribe', {'position': 'primary'})
+                                }
+                            });
+                        }
+                    </script>
+                    <script
+                        async="async"
+                        type="text/javascript"
+                        charset="utf-8"
+                        src="//js-eu1.hsforms.net/forms/embed/v2.js"
+                        onload="displayHubSpotForm()"></script>
+                </div>
             </div>
         </div>
     </div>
@@ -115,30 +135,32 @@ meta:
     </div>
 </div>
 {% include "components/divider-flow--top-grey.njk" %}
+<!-- Just for env handling <script src="https://cdn.jsdelivr.net/npm/dotenv@16.0.3/lib/main.min.js"></script> -->
 <!-- Inline JavaScript code -->
-<script>
-    async function sendGraphQLRequest(query) {
-        const url = "https://api.github.com/graphql";
-        const options = {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-                "User-Agent": "FlowForge-Website",
-                "Authorization": "Bearer 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" // Replace
-            },
-            body: JSON.stringify({query})
-        };
-        try {
-            const response = await fetch(url, options);
-            const data = await response.json();
-            return data;
-        } catch (error) {
-            console.error("Error fetching GitHub issues:", error);
-            return null;
-        }
+    <script>
+// dotenv.config();
+async function sendGraphQLRequest(query) {
+    const url = "https://api.github.com/graphql";
+    const options = {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+            "User-Agent": "FlowForge-Website",
+            "Authorization": `Bearer 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` // Replace ${process.env.GitHub_Access_Token}
+        },
+        body: JSON.stringify({query})
+    };
+    try {
+        const response = await fetch(url, options);
+        const data = await response.json();
+        return data;
+    } catch (error) {
+        console.error("Error fetching GitHub issues:", error);
+        return null;
     }
-    async function fetchGitHubIssues(label) {
-        const query1 = `
+}
+async function fetchGitHubIssues(label) {
+    const query1 = `
 query {
   repository(owner: "flowforge", name: "flowforge") {
     issues(first: 100, states: OPEN, filterBy: { labels: "${label}"}) {
@@ -154,15 +176,15 @@ query {
   }
 }
 `;
-        const data = await sendGraphQLRequest(query1);
-        return data
-            .data
-            .repository
-            .issues
-            .nodes;
-    }
-    async function fetchDevIssues() {
-        const query2 = `       
+    const data = await sendGraphQLRequest(query1);
+    return data
+        .data
+        .repository
+        .issues
+        .nodes;
+}
+async function fetchDevIssues() {
+    const query2 = `       
 query {
   repository(owner: "flowforge", name: "flowforge") {
     milestones(states: OPEN, first: 10) {
@@ -181,67 +203,74 @@ query {
     }
   }
 `;
-        const data = await sendGraphQLRequest(query2);
-        const result = await extractIssues(data.data);
-        return result;
-    }
-    async function extractIssues(data) {
-        let issues = [];
-        for (const milestone of data
-            .repository
-            .milestones
-            .nodes) {
-            for (const issue of milestone.issues.nodes) {
-                issues.push({title: issue.title, number: issue.number, url: issue.url});
-            }
+    const data = await sendGraphQLRequest(query2);
+    const result = await extractIssues(data.data);
+    return result;
+}
+async function extractIssues(data) {
+    let issues = [];
+    for (const milestone of data
+        .repository
+        .milestones
+        .nodes) {
+        for (const issue of milestone.issues.nodes) {
+            issues.push({title: issue.title, number: issue.number, url: issue.url});
         }
-        return issues;
     }
-    async function updateRoadmap() {
-        const inConsiderationItems = await fetchGitHubIssues("consideration");
-        const progressItems = await fetchDevIssues();
-        updateRoadmapSection(document.querySelector(".consideration"), inConsiderationItems);
-        updateRoadmapSection(document.querySelector(".progress"), progressItems, false);
+    return issues;
+}
+async function updateRoadmap() {
+    const inConsiderationItems = await fetchGitHubIssues("consideration");
+    const progressItems = await fetchDevIssues();
+    updateRoadmapSection(document.querySelector(".consideration"), inConsiderationItems);
+    updateRoadmapSection(document.querySelector(".progress"), progressItems, false);
+}
+function updateRoadmapSection(element, items, showReactions = true) {
+    // Create a container for the list of items
+    let listContainer = element.querySelector(".roadmap-item-container");
+    if (! listContainer) {
+        listContainer = document.createElement("div");
+        listContainer.classList.add("roadmap-item-container");
+        element.appendChild(listContainer);
     }
-    function updateRoadmapSection(element, items, showReactions = true) {
-        const list = document.createElement("ul");
-        for (const item of items) {
-            const listItem = document.createElement("li");
-            listItem.classList.add("roadmap-item");
-            const link = document.createElement("a");
-            link.href = item.url;
-            link.target = "_blank";
-            link.textContent = item.title;
-            const issueNumber = document.createElement("span");
-            issueNumber.classList.add("issue-number");
-            issueNumber.textContent = `#${
-                item.number
-            }`;
-            listItem.appendChild(link);
-            listItem.appendChild(issueNumber);
-            if (showReactions) {
-                const reactions = item.reactions.totalCount;
-                if (reactions > 0) {
-                    const reactionCount = document.createElement("span");
-                    reactionCount.classList.add("reaction-count");
-                    reactionCount.innerHTML = `👍 <span>${reactions}</span>`;
-                    listItem.appendChild(reactionCount);
-                }
-            }
-            const voteBtn = document.createElement("a");
-            voteBtn.href = item.url;
-            voteBtn.target = "_blank";
-            voteBtn.classList.add("vote-btn");
-            voteBtn.innerHTML = 'Vote on GitHub';
-            listItem.appendChild(voteBtn);
-            list.appendChild(listItem);
+    const list = document.createElement("ul");
+    for (const item of items) {
+        const listItem = document.createElement("li");
+        listItem.classList.add("roadmap-item");
+        const titleContainer = document.createElement("div");
+        titleContainer.classList.add("roadmap-item-title");
+        // Use a span or div element instead of an anchor tag for the issue name
+        const issueName = document.createElement("span");
+        issueName.classList.add("roadmap-item-text");
+        issueName.textContent = item.title;
+        const issueNumber = document.createElement("span");
+        issueNumber.classList.add("issue-number");
+        issueNumber.textContent = `#${
+            item.number
+        }`;
+        titleContainer.appendChild(issueName);
+        titleContainer.appendChild(issueNumber);
+        listItem.appendChild(titleContainer);
+        if (showReactions) {
+            const reactions = item.reactions.totalCount;
+            const reactionCount = document.createElement("span");
+            reactionCount.classList.add("reaction-count");
+            reactionCount.innerHTML = `👍 <span>${reactions}</span>`;
+            listItem.appendChild(reactionCount);
         }
-        // Clear the previous content and append the new list
-        element.innerHTML = "";
-        element.appendChild(list);
+        const voteBtn = document.createElement("a");
+        voteBtn.href = item.url;
+        voteBtn.target = "_blank";
+        voteBtn.classList.add("vote-btn");
+        voteBtn.innerHTML = '<img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="GitHub Logo">Vote on GitHub';
+        listItem.appendChild(voteBtn);
+        list.appendChild(listItem);
     }
-    // Fetch and display data on page load
-    updateRoadmap();
-    // fetch and display data every X milliseconds
-    setInterval(updateRoadmap, 5 * 60 * 1000);
-</script>
+    // Clear the previous content and append the new list
+    listContainer.innerHTML = "";
+    listContainer.appendChild(list);
+}
+// Fetch and display data on page load
+updateRoadmap();
+// fetch and display data every X milliseconds
+setInterval(updateRoadmap, 5 * 60 * 1000);</script>
