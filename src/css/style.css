@@ -15,8 +15,9 @@ html, body {
 }
 
 * {
-    transition: 0.3s background-color, 0.3s color, 0.3s fill, 0.3s stroke;
-    -webkit-transition: 0.3s background-color, 0.3s color, 0.3s fill, 0.3s stroke;
+    --transition-speed: 0.15s;
+    transition: var(--transition-speed) background-color, var(--transition-speed) color, var(--transition-speed) fill, var(--transition-speed) stroke;
+    -webkit-transition: var(--transition-speed) background-color, var(--transition-speed) color, var(--transition-speed) fill, var(--transition-speed) stroke;
 }
 
 /*
@@ -339,7 +340,7 @@ h4:hover .header-anchor {
     .ff-website header .ff-nav-dropdown ul li {
         @apply border-b bg-gray-50 text-left sm:bg-gray-700 sm:text-right sm:border-gray-600
     }
-
+    
     .ff-website header .ff-nav-dropdown ul li:first-child {
         @apply rounded-t-md;
     }
@@ -349,10 +350,15 @@ h4:hover .header-anchor {
         border-bottom: 0;
     }
 
+    .ff-website header .ff-nav-dropdown ul li label {
+        display: block;
+        @apply text-gray-500 py-2 text-left text-base sm:text-lg pl-3 md:pl-16 md:text-right md:pr-6;
+    }
+
     .ff-website header .ff-nav-dropdown ul li a {
         display: block;
         cursor: pointer;
-        @apply text-left pl-6 md:pl-16 md:text-right md:pr-6 sm:text-white;
+        @apply text-left pl-6 py-2 md:pl-16 md:text-right md:pr-6 sm:text-white;
     }
 
     .ff-website header .ff-nav-dropdown:hover a {
