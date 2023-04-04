@@ -1,0 +1,126 @@
+.about {
+    width: 100%;
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.centered-headline {
+    text-align: center;
+    width: 100%;
+}
+
+.ff-bg-dark {
+    background-color: #1f2937;
+}
+
+.ff-bg-light {
+    background-color: #f3f4f6;
+}
+
+.github-logo {
+    display: inline;
+    height: 20px;
+    vertical-align: middle;
+    width: 20px;
+}
+
+.issue-number {
+    color: #7F7F7F;
+}
+
+.mt-28 {
+    margin-top: -112px;
+}
+
+.reaction-count {
+    align-items: center;
+    color: #9ca3af;
+    display: flex;
+    margin-left: 8px;
+    margin-right: 8px;
+}
+
+.roadmap-feedback {
+    padding-bottom: 48px;
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 20px;
+    width: 100%;
+}
+
+.roadmap-item {
+    align-items: flex-start;
+    background-color: #f3f4f6;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 12px;
+    padding: 12px 20px;
+}
+
+.roadmap-item-container {
+    display: flex;
+    flex-grow: 1;
+}
+
+.roadmap-item-text {
+    color: #bc3738;
+    flex-grow: 1;
+    font-weight: bold;
+    text-align: left;
+}
+
+.roadmap-item-title-container {
+    align-items: center;
+    display: flex;
+}
+
+.roadmap-section {
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.title-number-container {
+    align-items: center;
+    display: flex;
+    margin-bottom: 8px;
+}
+
+.vote-btn {
+    align-items: center;
+    background-color: #E4E7E0;
+    border-radius: 8px;
+    color: #000;
+    display: flex;
+    font-weight: bold;
+    justify-content: center;
+    padding: 8px 16px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.vote-btn a {
+    color: #000;
+}
+
+.vote-btn:hover {
+    background-color: #c9ccc6;
+    text-decoration: none;
+}
+
+.vote-btn img {
+    height: 16px;
+    margin-right: 4px;
+    width: 16px;
+}
+
+.vote-btn span {
+    color: #000;
+    margin-right: 4px;
+}
