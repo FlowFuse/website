@@ -34,7 +34,7 @@ Contact the peopleops manager if you require a vendor card.
 ### Reimbursement
 
 If you use your own means to purchase something that ought to be covered by the
-company, you can claim back the money through [work.pilot.co/expenses](https://work.pilot.co/expenses).
+company, you can claim back the money through [Deel](https://help.letsdeel.com/hc/en-gb/articles/4405497402257-How-Do-I-Add-An-Expense-Or-Allowance-To-My-Pay-).
 
 * Create a new expense by clicking <kbd>Add item on the Payment Items tab on your Deel homepage</kbd>
 * Enter the type of adjustment and select the Expense Category
