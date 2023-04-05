@@ -18,7 +18,8 @@ In this webinar, attendees will learn how to create a Node-RED flow to:
 - Connect to an existing PLC using an industrial protocol
 - Integrate data from an external MQTT broker
 - Create a dashboard to visualize common production metrics
-- Filter the data to report by exception and store this data in a database.
+- Sanitize data for recording in a database.
+- Generate a report from recorded data
 
 This webinar will include a live demonstration of how to set up Node-RED to accomplish the tasks listed above. Attendees are expected to have a general understanding of Node-RED.
 
