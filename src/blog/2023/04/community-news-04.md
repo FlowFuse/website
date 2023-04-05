@@ -27,7 +27,7 @@ Join Steve McLaughlin, FlowForge as he showcases how easy it is to use Node-RED 
 
 [IBM Cloud removes Node-RED starter application](https://flowforge.com/blog/2023/03/ibmcloud-starter-removed/) - IBM has discontinued their Node-RED Starter Application, discover how to migrate to FlowForge.
 
-[The benefits and drawbacks of using Node-RED function nodes](https://flowforge.com/blog/2023/03/why-should-you-use-node-red-function-nodes/) - MING technology stack include M (Mosquitto/MQTT), InfluxDB, Node-RED and Grafana. Ian Skerrett, FlowForge Head of Marketing discusses how this tech stack is used for IoT.
+[The benefits and drawbacks of using Node-RED function nodes](https://flowforge.com/blog/2023/03/why-should-you-use-node-red-function-nodes/) - Node-RED function nodes provide a great deal of flexibility in Node-RED. Discover the benefits and drawbacks of using them.
 
 [FlowForge 15. Now Available](https://flowforge.com/blog/2023/03/flowforge-1-5-0-released/) - FlowForge 1.5 included updates to the UI and architecutre to allow for future features.
 
@@ -47,7 +47,7 @@ Kazuhito Yokoi, a researcher at Hitachi, has published an [interesting article](
 If you would like to include a map in your next project Worldmap is a really good place to start. You can pass coordinates in to set the map to a location or you can use the built in search tool to find a location. As a user manipulates the map a stream of updated coordinates can be passed back to your flows to trigger additional actions. It's a really useful tool, take a [look here](https://flows.nodered.org/node/node-red-contrib-web-worldmap).
 
 ## Join Our Team
-FlowForge is expanding our team. We have two openings right now:
+FlowForge is expanding our team. Check out the current openings:
 
 * **[Developer Advocate - Manufacturing & Industrial Automation](https://boards.greenhouse.io/flowforge/jobs/4798023004)**
 
