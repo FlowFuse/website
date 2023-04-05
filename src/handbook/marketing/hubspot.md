@@ -14,7 +14,7 @@ we talk to to ensure no crossover in sales and conversations.
 
 #### Lifecycle Stage
 
-All contacts in Hubspot need to have a defined lifecycle. It is required the all contacts pass through each lifeycle stage at the appropriate time based on their interaction with FlowFOrge marketing and sales. Contacts should not skip a stage. If is up to the contact owner to ensure their contacts have the appropriate lifecycle stage set.
+All contacts in HubSpot need to have a defined lifecycle. It is required that all contacts pass through each lifecycle stage at the appropriate time based on their interaction with FlowForge marketing and sales. Contacts should not skip a stage. It is up to the contact owner to ensure their contacts have the appropriate lifecycle stage set.
 
 The folowing is a description of each stage. 
 
