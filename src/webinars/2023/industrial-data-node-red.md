@@ -1,7 +1,7 @@
 ---
 title: "Connect, Integrate, Visual Industrial Production Metrics with Node-RED"
 subtitle: Join FlowForge's Steve McLaughlin as he showcases how easy it is to use Node-RED to visualize popular production metrics using Node-RED.
-image: /images/webinars/webinar-intro-ff.jpg
+image: /images/webinars/webinar-april.jpg
 date: 2023-04-27
 time: 17:00 CEST (11:00 ET) 
 duration: 60
