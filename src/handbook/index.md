@@ -1,5 +1,6 @@
 ---
 navTitle: Handbook
+maintainer: zeger-jan-van-de-weg
 ---
 
 ## Introduction
