@@ -15,7 +15,7 @@ hubspot:
 <!--more-->
 
 In this webinar, attendees will learn how to create a Node-RED flow to:
-- Connect to an existing PLC using Modbus
+- Connect to an existing PLC using Industrial Protocols
 - Integrate data from an external source
 - Create a dashboard to visualize common production metrics
 - Filter the data to report by exception and store this data in a [InfluxDB] database.
