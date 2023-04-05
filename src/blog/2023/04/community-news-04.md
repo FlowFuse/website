@@ -20,7 +20,7 @@ Back by popular demand, FlowForge is hosting a monthly Node-RED Ask Me Anything 
 
 ### Connect, Integrate, Visual Industrial Production Metrics with Node-RED
 
-Join Steve McLaughlin, FlowForge [Register today]().
+Join Steve McLaughlin, FlowForge as he showcases how easy it is to use Node-RED to visualize popular production metrics using Node-RED. [Register today](https://flowforge.com/webinars/2023/industrial-data-node-red/).
 
 ## From our Blog
 [Comparing Node-RED Dashboards Solutions](https://flowforge.com/blog/2023/03/comparing-node-red-dashboards/) - A popular article comparing Node-RED Dashboard, uibuilder and FlexDash.
