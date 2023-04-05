@@ -5,7 +5,7 @@ image: /images/webinars/webinar-april.jpg
 date: 2023-04-27
 time: 17:00 CEST (11:00 ET) 
 duration: 60
-hosts: ["stephe-mclaughlin"]
+hosts: ["stephen-mclaughlin"]
 hubspot:
     formId: b4ec9aa1-8648-47b3-b908-ec8597e8735d
 ---
