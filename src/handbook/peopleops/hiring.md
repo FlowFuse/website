@@ -37,7 +37,7 @@ Please use [this template](https://docs.google.com/document/d/1rY0gLLpkOPBVGlMy7
 
 ## After an offer is accepted
 
-Onboarding on our EOR provider, Pilot, takes at least 3 to 4 weeks. The start
+Onboarding on our EOR provider, Deel, takes at least 3 to 4 weeks. The start
 date for a new employee should be at least 3 to 4 weeks out. When a
 [conditional offer](#extending-an-offer) has been accepted you should immediately:
 
@@ -45,6 +45,9 @@ date for a new employee should be at least 3 to 4 weeks out. When a
 1. Update the [internal team overview spreadsheet](./organization#internal-team-overview)
 1. Add their stock options to the stock option request spreadsheets
    * Copy or create a new monthly request sheet from [this template](https://docs.google.com/spreadsheets/d/1AG75qONjObto3g2oJH_SC4gjgRsYJmKUI3fjrZuktm0/edit#gid=1970623412){rel="nofollow"}
+
+### Tax Residency
+During the onboarding process on our EOR provider platform, candidates must either be citizens of the country where they will be working or possess a valid visa. Any requests for changes in tax residency should be communicated to the HR department and CEO at least 2 months in advance.
 
 ## Onboarding
 
