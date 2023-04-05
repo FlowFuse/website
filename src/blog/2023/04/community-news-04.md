@@ -20,7 +20,7 @@ Back by popular demand, FlowForge is hosting a monthly Node-RED Ask Me Anything 
 
 ### Connect, Integrate, Visual Industrial Production Metrics with Node-RED
 
-Join Steve McLaughlin, FlowForge as he showcases how easy it is to use Node-RED to visualize popular production metrics using Node-RED. [Register today](https://flowforge.com/webinars/2023/industrial-data-node-red/).
+Join Steve McLaughlin from FlowForge as he showcases how easy it is to use Node-RED to visualize popular production metrics using Node-RED. [Register today](https://flowforge.com/webinars/2023/industrial-data-node-red/).
 
 ## From our Blog
 [Comparing Node-RED Dashboards Solutions](https://flowforge.com/blog/2023/03/comparing-node-red-dashboards/) - A popular article comparing Node-RED Dashboard, uibuilder and FlexDash.
@@ -29,7 +29,7 @@ Join Steve McLaughlin, FlowForge as he showcases how easy it is to use Node-RED 
 
 [The benefits and drawbacks of using Node-RED function nodes](https://flowforge.com/blog/2023/03/why-should-you-use-node-red-function-nodes/) - Node-RED function nodes provide a great deal of flexibility in Node-RED. Discover the benefits and drawbacks of using them.
 
-[FlowForge 15. Now Available](https://flowforge.com/blog/2023/03/flowforge-1-5-0-released/) - FlowForge 1.5 included updates to the UI and architecutre to allow for future features.
+[FlowForge 15. Now Available](https://flowforge.com/blog/2023/03/flowforge-1-5-0-released/) - FlowForge 1.5 included updates to the UI and architecture to allow for future features.
 
 Node-RED Quick Tips - Rob Marcer, FlowForge Developer Educator has a weekly series of Node-RED hints and tips
 * [Node-RED Tips - Importing, Exporting, and Grouping Flows](https://flowforge.com/blog/2023/03/3-quick-node-red-tips-5/)
