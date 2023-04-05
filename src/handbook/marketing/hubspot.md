@@ -23,7 +23,7 @@ The folowing is a description of each stage.
 | Subscriber | Contact has signed up to hear more information, when it is available, about FlowForge, e.g. newsletter subscriber |
 | Lead | Contact that has converted on our website, or through some other interaction, with our organisation beyond a subscription sign up. For example, registered for a webinar, signed up for a free trial, etc.|
 | Marketing Qualified Lead | The contact has requested to talk to someone directly at FlowForge about the product/services of FlowForge, either through book a demo, contact us, or direct outreach to a FlowForge employee. Support requests are not considered MQL. |
-| Sales Qualified Lead | After the initial discussion with an MQL, the sales team will qualify if the contact is a potential customer by changing the lifecyle stage to SQL.  This status of this stage is then further qualified in the [Lead Status](#lead-status) property |
+| Sales Qualified Lead | After the initial discussion with an MQL, the sales team will qualify if the contact is a potential customer by changing the lifecycle stage to SQL. This status of this stage is then further qualified in the [Lead Status](#lead-status) property. |
 | Opportunity | A contact becomes an Opportunity once a Deal has been opened. A deal is opened once the sales qualification questions have been answered.  |
 | Customer | An active, paying, user of FlowForge. |
 | Evangelist | FlowForge will not actively use Evangelist lifecycle stage. |
