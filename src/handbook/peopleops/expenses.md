@@ -36,17 +36,17 @@ Contact the peopleops manager if you require a vendor card.
 If you use your own means to purchase something that ought to be covered by the
 company, you can claim back the money through [work.pilot.co/expenses](https://work.pilot.co/expenses).
 
-* Create a new expense by clicking <kbd>Add new expense</kbd>
-* Enter a description, category, price and attach an invoice, then click <kbd>Add new expense</kbd>
-  * This expense will now appear in your "Unreported expenses" list
-* Apply a check against the expense in your "Unreported expenses" list then click <kbd>Create expense report</kbd>
-* Fill out the description fields then click <kbd>Send expense report</kbd>
+* Create a new expense by clicking <kbd>Add item on the Payment Items tab on your Deel homepage</kbd>
+* Enter the type of adjustment and select the Expense Category
+* Enter a description, expense name, price and attach an invoice, then click <kbd>Submit</kbd>
+* This expense will now appear in your "Pending" list
+* Adjustments approved before the payroll cut-off date will be processed in the current month's payroll. Any adjustment approved after the payroll cut-off date will be processed in the next month's payroll
 
 ### Asset purchases over $500
 
 Any asset purchase over $500 (laptops, devices etc) needs to be centrally recorded.
 This is done in a Google Sheet kept in a drive shared with the Finance team that
-is not generally accessible. Send details of the purchase to the CEO or CTO so 
+is not generally accessible. Send details of the purchase to the HR Manager so 
 it can be recorded.
 
 ### Education & Conferences
