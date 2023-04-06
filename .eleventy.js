@@ -146,6 +146,9 @@ module.exports = function(eleventyConfig) {
     })
 
     eleventyConfig.addFilter("toAbsoluteUrl", function(url) {
+        if (DEV_MODE) {
+            return url
+        }
         return new URL(url, site.baseURL).href;
     })
 
