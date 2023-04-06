@@ -18,7 +18,7 @@ We have included a [Glossary](#glossary) at the end of this guide which hopefull
 If you've been asked to do a new piece of work, this is the quick bullet list of steps to follow:
 
 1. Switch to (`checkout`) to the latest version of the repository's `main` branch
-2. Create a new branch (with a `camel-case-name`)
+2. Create a new branch (with a `kebab-case-name`)
 3. Make the changes you need to do locally on your machine
 4. Add & Commit your changes when they're ready.
 5. Push your changes to the branch
