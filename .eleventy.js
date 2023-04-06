@@ -15,6 +15,7 @@ const markdownItFootnote = require("markdown-it-footnote");
 const markdownItAttrs = require('markdown-it-attrs');
 const spacetime = require("spacetime");
 const { minify } = require("terser");
+const codeowners = require('codeowners');
 
 const heroGen = require("./lib/post-hero-gen.js");
 const site = require("./src/_data/site");
@@ -22,7 +23,6 @@ const site = require("./src/_data/site");
 const DEV_MODE = process.env.ELEVENTY_RUN_MODE !== "build" // i.e. serve/watch
 
 module.exports = function(eleventyConfig) {
-
     eleventyConfig.setUseGitIgnore(false); // Otherwise docs are ignored
 
     eleventyConfig.addPlugin(EleventyEdgePlugin);

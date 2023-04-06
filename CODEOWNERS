@@ -1,0 +1,4 @@
+# If no other rule matches, have a default owner
+*       @ZJvandeWeg
+
+/src/handbook/design/ @joepavitt
