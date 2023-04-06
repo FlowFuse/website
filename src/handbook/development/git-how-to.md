@@ -1,7 +1,7 @@
 ---
 navTitle: Using Git
 ---
-# How to use Git (for non-developer team members)
+# How to use Git
 
 ## Background
 
@@ -10,6 +10,49 @@ navTitle: Using Git
 When making changes to a [Project](#project) at least two people have to agree that the changes should be Published. In most cases those two people would be yourself and a [Reviewer](#reviewer).
 
 We have included a [Glossary](#glossary) at the end of this guide which hopefully will give you a good start with common [Git](#git) terminology.
+
+## Quick Guide
+
+### New Contributions
+
+If you've been asked to do a new piece of work, this is the quick bullet list of steps to follow:
+
+1. Switch to (`checkout`) to the latest version of the repository's `main` branch
+2. Create a new branch (with a `camel-case-name`)
+3. Make the changes you need to do locally on your machine
+4. Add & Commit your changes when they're ready.
+5. Push your changes to the branch
+6. You can do multiple commits and pushes to iterate on your work. It will all be saved to your branch
+7. When ready for review, open a Pull Request
+8. Assign someone else as a reviewer, they may offer feedback
+9. The reviewer, when happy, will aprove and merge the Pull request
+10. Once your PR is merged, be sure to switch back to the `main` branch again
+
+### Modifying an Existing Contribution
+
+If another person has opened a Pull Request or branch already, and asked you to make additions to that, then the steps differ slightly:
+
+1. Switch to their branch on your machine (if request to append to the Pull Request, that will have a branch associated to.)
+2. Make the changes you need to do locally
+3. Add & Commit your changes when they're ready.
+4. Push your changes to the branch. Any pushed changes will automatically update the associated Pull Request.
+5. You can do multiple commits and pushes to iterate on your work. It will all be saved to your branch & PR.
+6. Check with the original PR owner as to whether you're revieing the PR, or if someone else has been assigned
+7. Reviewer submits their feedback, if any.
+8. The reviewer, when happy, will aprove and merge the Pull request
+10. Once you have finished your contirubtions, you can switch back to the `main` branch
+
+### Completing a Pull Request Review
+
+You may be asked to conduct a Pull Request Review. This means that someone else has contributed some work, and would like you to check whether it works, and whether you're happy with the contributions made. These are the steps by which you can do that:
+
+1. Switch to their branch on your machine (if request to append to the Pull Request, that will have a branch associated to.)
+2. Run the code (e.g. website server or FlowForge platform) and ensure their changes work as expected.
+3. "Add your Review" on GitHub, offer comments and recommendatins where required.
+4. Once you're happy, "Approve" the Pull Request
+5. Merge the PR
+6. Ensure you have switched back to the `main` branch locally before continuing any other work.
+
 
 ## How to make changes to the Live version of a Project
 
