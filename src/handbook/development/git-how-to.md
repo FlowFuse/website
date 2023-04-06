@@ -37,7 +37,7 @@ If another person has opened a Pull Request or branch already, and asked you to 
 3. Add & Commit your changes when they're ready.
 4. Push your changes to the branch. Any pushed changes will automatically update the associated Pull Request.
 5. You can do multiple commits and pushes to iterate on your work. It will all be saved to your branch & PR.
-6. Check with the original PR owner as to whether you're revieing the PR, or if someone else has been assigned
+6. Check with the original PR owner as to whether you're reviewing the PR, or if someone else has been assigned
 7. Reviewer submits their feedback, if any.
 8. The reviewer, when happy, will aprove and merge the Pull request
 10. Once you have finished your contirubtions, you can switch back to the `main` branch
