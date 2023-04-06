@@ -34,5 +34,3 @@ Node-RED is installed by lots of people using Docker and NPM. The project averag
 The [Node-RED community forum](https://discourse.nodered.org/) is the go to place to get community support. It is a very popular community with over 900K page views per month. The amazing thing is that a very large percentage of questions receive replies from other community members. A great sign of a healthy community.
 
 Overall, the Node-RED community is large, healthy and engaged.
-
-Overall, the Node-RED community is large, healthy and engaged.
