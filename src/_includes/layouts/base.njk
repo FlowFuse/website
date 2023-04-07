@@ -237,8 +237,43 @@ document.getElementById('nav-toggle').onclick = function(){
     !function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.async=!0,p.src=s.api_host+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="capture identify alias people.set people.set_once set_config register register_once unregister opt_out_capturing has_opted_out_capturing opt_in_capturing reset isFeatureEnabled onFeatureFlags".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
     posthog.init('{{ POSTHOG_APIKEY }}', {
         api_host:'https://eu.posthog.com',
-        bootstrap: phBootstrap
+        bootstrap: phBootstrap,
+        capture_pageleave: false
     })
+
+    /*
+        Custom pageleave handler to track scroll
+    */
+    // when the page first loads, how much content can the visitor see?
+    const NO_SCROLL_HEIGHT = Math.min(1, (window.innerHeight + window.pageYOffset)/document.body.offsetHeight)
+    // what's the maximum amount of content they've seen so far?
+    var MAX_CONTENT_VIEWED = Math.min(1, (window.innerHeight + window.pageYOffset)/document.body.offsetHeight)
+
+    addEventListener("scroll", (event) => {
+        // Math.min here catches an oddity where sometimes this creeps over 1
+        const contentViewed = Math.min(1, (window.innerHeight + window.pageYOffset)/document.body.offsetHeight)
+        // Have they viewed more content than they've seen prior?
+        if (contentViewed > MAX_CONTENT_VIEWED) {
+            MAX_CONTENT_VIEWED = contentViewed
+        }
+    });
+
+    function emitPageLeave () {
+        // scale these value to exist between 0 and 1
+        // 0 -> Didn't scroll, just viewed the page as it loaded
+        // 1 -> Scrolled all the way to the bottom
+        const scrolled = (MAX_CONTENT_VIEWED - NO_SCROLL_HEIGHT) / (1 - NO_SCROLL_HEIGHT)
+        capture('$pageleave', {
+            content_scrolled: scrolled
+        })
+    }
+
+    window.addEventListener &&
+            window.addEventListener('onpagehide' in self ? 'pagehide' : 'unload', emitPageLeave)
+
+    /*
+        Get User Agent String
+    */
     const phUA = {
         "user_agent_string": window.navigator.userAgent
     }
