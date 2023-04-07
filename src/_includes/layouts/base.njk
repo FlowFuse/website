@@ -244,17 +244,24 @@ document.getElementById('nav-toggle').onclick = function(){
     /*
         Custom pageleave handler to track scroll
     */
+    // when the page first loads, how much content can the visitor see?
     const NO_SCROLL_HEIGHT = Math.min(1, (window.innerHeight + window.pageYOffset)/document.body.offsetHeight)
+    // what's the maximum amount of content they've seen so far?
     var MAX_CONTENT_VIEWED = Math.min(1, (window.innerHeight + window.pageYOffset)/document.body.offsetHeight)
 
     addEventListener("scroll", (event) => {
+        // Math.min here catches an oddity where sometimes this creeps over 1
         const contentViewed = Math.min(1, (window.innerHeight + window.pageYOffset)/document.body.offsetHeight)
+        // Have they viewed more content than they've seen prior?
         if (contentViewed > MAX_CONTENT_VIEWED) {
             MAX_CONTENT_VIEWED = contentViewed
         }
     });
 
     function emitPageLeave () {
+        // scale these value to exist between 0 and 1
+        // 0 -> Didn't scroll, just viewed the page as it loaded
+        // 1 -> Scrolled all the way to the bottom
         const scrolled = (MAX_CONTENT_VIEWED - NO_SCROLL_HEIGHT) / (1 - NO_SCROLL_HEIGHT)
         capture('$pageleave', {
             content_scrolled: scrolled
