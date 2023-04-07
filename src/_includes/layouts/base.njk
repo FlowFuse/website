@@ -259,12 +259,33 @@ document.getElementById('nav-toggle').onclick = function(){
     });
 
     function emitPageLeave () {
+        // viewed:
+        // min: the content shown on pageload
+        // max: 1
+        // gives a decimal value from 0 -> 1 of the
+        // amount of content visible to the user within
+        // the pageview before they leave
+        var viewed 
+
+        // scrolled:
         // scale these value to exist between 0 and 1
         // 0 -> Didn't scroll, just viewed the page as it loaded
         // 1 -> Scrolled all the way to the bottom
-        const scrolled = (MAX_CONTENT_VIEWED - NO_SCROLL_HEIGHT) / (1 - NO_SCROLL_HEIGHT)
+
+        var scrolled
+        if (NO_SCROLL_HEIGHT === 1) {
+            // didn't need to scroll, so they've seen everything
+            viewed = 1
+            // couldn't scroll, so set to 0
+            scrolled = 0
+        } else { 
+            viewed = MAX_CONTENT_VIEWED
+            scrolled = (MAX_CONTENT_VIEWED - NO_SCROLL_HEIGHT) / (1 - NO_SCROLL_HEIGHT)
+        }
+        
         capture('$pageleave', {
-            content_scrolled: scrolled
+            content_scrolled: scrolled,
+            content_viewed: viewed
         })
     }
 
