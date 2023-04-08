@@ -1,0 +1,18 @@
+#algolia-search {
+    --aa-search-input-height: 42px;
+    --aa-input-border-color-rgb: none;
+    --aa-spacing: 12px;
+    padding-left: var(--nav-pl);
+    padding-right: var(--nav-pl);
+}
+
+#algolia-search .aa-Input {
+    font-size: 14px;
+    border: 0;
+}
+#algolia-search .aa-Autocomplete {
+    --height: 42px;
+}
+#algolia-search .aa-InputWrapperSuffix {
+    padding: 0 6px;
+}
