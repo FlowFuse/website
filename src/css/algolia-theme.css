@@ -1,7 +1,9 @@
 #algolia-search {
+    @apply sticky top-0;
     --aa-search-input-height: 42px;
     --aa-input-border-color-rgb: none;
     --aa-spacing: 12px;
+    border-color: #dedede;
     padding-left: var(--nav-pl);
     padding-right: var(--nav-pl);
 }
