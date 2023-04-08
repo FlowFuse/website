@@ -4,8 +4,8 @@ User-agent: *
 Allow: /
 
 User-agent: Algolia Crawler
-Disallow: * 
 Allow: /handbook
+Disallow: / 
 
 Host: https://flowforge.com/
 
