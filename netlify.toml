@@ -15,4 +15,3 @@ path = "/*"
 package = "@algolia/netlify-plugin-crawler"
   [plugins.inputs]
   branches = ['main', '555-algolia-search']
-  pathPrefix = "/handbook"

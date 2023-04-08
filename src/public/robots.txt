@@ -3,6 +3,10 @@
 User-agent: *
 Allow: /
 
+User-agent: Algolia Crawler
+Disallow: * 
+Allow: /handbook
+
 Host: https://flowforge.com/
 
 Sitemap: https://flowforge.com/sitemap.xml
