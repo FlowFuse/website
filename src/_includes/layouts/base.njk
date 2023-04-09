@@ -80,6 +80,10 @@
     <meta name="twitter:site" content="@flowforgeinc" />
     {% endif %}
 
+    {% if nav %}
+    <meta property="article:section" content="{{ nav }}" />
+    {% endif %}
+
     {% set js %}{% include "base.js" %}{% endset %}
     <script>{{ js | jsmin | safe }}</script>
 </head>
