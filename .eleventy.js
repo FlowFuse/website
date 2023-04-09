@@ -209,6 +209,26 @@ module.exports = function(eleventyConfig) {
 
         return baseUrl+filePath.replace(/^.\//,'')
     })
+
+    eleventyConfig.addFilter("pageOwners", (page) => {
+        // Eleventy's inputPath is relative, we need to drop the './' in front
+        return new codeowners().getOwner(page.inputPath.substring(2))
+    });
+
+    eleventyConfig.addFilter("ghUsersToTeamMembers", (ghUsers, team) => {
+        let teamMembers = [];
+        for (let i = 0; i < ghUsers.length; i++) {
+            const ghUser = ghUsers[i];
+
+            Object.keys(team).forEach(function (member) {
+                if (team[member].github === ghUser.substring(1)) {
+                    teamMembers.push(team[member])
+                }
+            })
+        }
+
+        return teamMembers
+    });
     
     // Custom async filters
     eleventyConfig.addNunjucksAsyncFilter("jsmin", async function (code, callback) {
