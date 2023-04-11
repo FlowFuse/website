@@ -19,7 +19,7 @@ A popular method for demonstrating popularity of an open source project are GitH
 
 **Node-RED Library**
 
-At the core of the Node-RED community is the library of nodes and flows that have been developed by community members. The current library has over [4200 nodes available](https://flows.nodered.org/search?type=node&sort=downloads), some of the more popular nodes are downloaded more than 10K times per week. The large library of community nodes supports a wide range of protocols, data sources, data stores, and much more. This makes Node-RED more relevant and useful to many more potential users. 
+At the core of the Node-RED community is the library of nodes and flows that have been developed by community members. The current library has over [4200 nodes available](https://flows.nodered.org/search?type=node&sort=downloads), some of the more popular nodes are downloaded more than 25K times per week. The large library of community nodes supports a wide range of protocols, data sources, data stores, and much more. This makes Node-RED more relevant and useful to many more potential users. 
 
 **Node-RED Website Traffic** 
 
@@ -27,7 +27,7 @@ In the last year, Node-RED has had over 1.9 million unique visitors to the [node
 
 **NPM Downloads & Docker Pull Requests**
 
-Node-RED is installed by lots of people using Docker and NPM. The project averages over 500K/month pull request from [Docker Hub](https://hub.docker.com/r/nodered/node-red) and 100K/month pull request on [NPM](https://npm-stat.com/charts.html?package=node-red&from=2017-03-22&to=2023-03-22). 
+Node-RED is installed by lots of people using Docker and NPM. The project averages over 500K/month pull requests from [Docker Hub](https://hub.docker.com/r/nodered/node-red) and 100K/month pull requests on [NPM](https://npm-stat.com/charts.html?package=node-red&from=2017-03-22&to=2023-03-22). 
 
 **Node-RED Forums**
 
