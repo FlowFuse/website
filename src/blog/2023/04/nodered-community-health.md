@@ -19,7 +19,7 @@ A popular method for demonstrating popularity of an open source project are GitH
 
 **Node-RED Library**
 
-At the core of the Node-RED community is the library of nodes and flows that have been developed by community members. The current library has over [4200 nodes available](https://flows.nodered.org/search?type=node&sort=downloads), some of the more popular nodes are downloaded more than 25K times per week. The large library of community nodes supports a wide range of protocols, data sources, data stores, and much more. This makes Node-RED more relevant and useful to many more potential users. 
+At the core of the Node-RED community is the library of nodes and flows that have been developed by community members. The current library has over [4300 nodes available](https://flows.nodered.org/search?type=node&sort=downloads), some of the more popular nodes are downloaded more than 10K times per week. The large library of community nodes supports a wide range of protocols, data sources, data stores, and much more. This makes Node-RED more relevant and useful to many more potential users. 
 
 **Node-RED Website Traffic** 
 
