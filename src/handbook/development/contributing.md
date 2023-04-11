@@ -25,7 +25,7 @@ In the case of working with `vue` or `njk` files (found in the [frontend](https:
 
 The [website repository][website-repo] uses a [`.editorconfig`](https://editorconfig.org)
 to allow editors to automatically pick up the correct style for that repository.
-The best editor, neovim, has this pre-installed. If you're using VSCode, an
+Some editors, like neovim, has this pre-installed. If you're using VSCode, an
 [plugin](https://marketplace.visualstudio.com/items?itemName=EditorConfig.EditorConfig)
 is available.
 
