@@ -229,7 +229,7 @@ module.exports = function(eleventyConfig) {
 
         return teamMembers
     });
-    
+
     // Custom async filters
     eleventyConfig.addNunjucksAsyncFilter("jsmin", async function (code, callback) {
         try {
@@ -265,193 +265,173 @@ module.exports = function(eleventyConfig) {
             return relativeFilePath
         } catch {}
 
-        // Custom async filters
-        eleventyConfig.addNunjucksAsyncFilter("jsmin", async function (code, callback) {
-            try {
-                const minified = await minify(code);
-                callback(null, minified.code);
-            } catch (err) {
-                console.error("Terser error: ", err);
-                // Fail gracefully.
-                callback(null, code);
+        // Handle both relative to current file and relative root
+        try {
+            const resolvedRelativePath = path.resolve(path.dirname(inputPath), relativeFilePath)
+            if (fs.existsSync(resolvedRelativePath)) {
+                return resolvedRelativePath
             }
-        });
 
-        // Custom Shortcodes
-        function resolvedImagePath(inputPath, relativeFilePath) {
-            // Skip URLs
-            try {
-                new URL(string);
-                return relativeFilePath
-            } catch {}
+            const resolvedAbsolutePath = path.resolve(eleventyConfig.dir.input, relativeFilePath)
+            if(fs.existsSync(resolvedAbsolutePath)) {
+                return resolvedAbsolutePath
+            }
+        } catch {}
 
-            // Handle both relative to current file and relative root
-            try {
-                const resolvedRelativePath = path.resolve(path.dirname(inputPath), relativeFilePath)
-                if (fs.existsSync(resolvedRelativePath)) {
-                    return resolvedRelativePath
-                }
+        return relativeFilePath
+    }
 
-                const resolvedAbsolutePath = path.resolve(eleventyConfig.dir.input, relativeFilePath)
-                if(fs.existsSync(resolvedAbsolutePath)) {
-                    return resolvedAbsolutePath
-                }
-            } catch {}
+    // Eleventy Image shortcode
+    // https://www.11ty.dev/docs/plugins/image/
+    console.info(`[11ty] Image pipeline is enabled in ${DEV_MODE ? 'dev mode' : 'prod mode'} expect a wait for first build`)
+    eleventyConfig.addAsyncShortcode("image", async function imageShortcode(src, alt, widths, sizes) {
+        // Full list of formats here: https://www.11ty.dev/docs/plugins/image/#output-formats
+        // Warning: Avif can be resource-intensive so take care!
+        let formats = ["avif", "webp", "auto"];
 
-            return relativeFilePath
+        // Skip slow formats for local development
+        if (DEV_MODE) {
+            formats = formats.filter((format) => !['avif', 'webp'].includes(format))
         }
 
-        // Eleventy Image shortcode
-        // https://www.11ty.dev/docs/plugins/image/
-        console.info(`[11ty] Image pipeline is enabled in ${DEV_MODE ? 'dev mode' : 'prod mode'} expect a wait for first build`)
-        eleventyConfig.addAsyncShortcode("image", async function imageShortcode(src, alt, widths, sizes) {
-            // Full list of formats here: https://www.11ty.dev/docs/plugins/image/#output-formats
-            // Warning: Avif can be resource-intensive so take care!
-            let formats = ["avif", "webp", "auto"];
-
-            // Skip slow formats for local development
-            if (DEV_MODE) {
-                formats = formats.filter((format) => !['avif', 'webp'].includes(format))
-            }
-
-            let file = resolvedImagePath(this.page.inputPath, src);
-            let metadata = await eleventyImage(file, {
-                widths: widths ? widths.concat(widths.map((w) => w * 2)) : ["auto"],
-                formats,
-                outputDir: path.join(eleventyConfig.dir.output, "img"), // Advanced usage note: `eleventyConfig.dir` works here because we’re using addPlugin.
-                filenameFormat: function (hash, src, width, format, options) {
-                    const { name } = path.parse(src);
-                    return `${name}-${hash}-${width}.${format}`;
-                },
-                svgShortCircuit: true,
-            });
-
-            sizes = sizes || widths ? widths.map((width) => `(min-device-pixel-ratio: 1.25) ${width * 2}px, (min-resolution: 120dpi) ${width * 2}px, ${width}px`).join(', ') : null
-
-            let imageAttributes = {
-                alt,
-                sizes,
-                loading: "lazy",
-                decoding: "async",
-            };
-
-            return eleventyImage.generateHTML(metadata, imageAttributes);
+        let file = resolvedImagePath(this.page.inputPath, src);
+        let metadata = await eleventyImage(file, {
+            widths: widths ? widths.concat(widths.map((w) => w * 2)) : ["auto"],
+            formats,
+            outputDir: path.join(eleventyConfig.dir.output, "img"), // Advanced usage note: `eleventyConfig.dir` works here because we’re using addPlugin.
+            filenameFormat: function (hash, src, width, format, options) {
+                const { name } = path.parse(src);
+                return `${name}-${hash}-${width}.${format}`;
+            },
+            svgShortCircuit: true,
         });
 
-        // Create a collection for sidebar navigation
-        eleventyConfig.addCollection('nav', function(collection) {
-            let nav = {}
+        sizes = sizes || widths ? widths.map((width) => `(min-device-pixel-ratio: 1.25) ${width * 2}px, (min-resolution: 120dpi) ${width * 2}px, ${width}px`).join(', ') : null
 
-            createNav('handbook')
-            createNav('docs')
+        let imageAttributes = {
+            alt,
+            sizes,
+            loading: "lazy",
+            decoding: "async",
+        };
 
-            function createNav (tag) {
-                collection.getAll().filter((page) => {
-                    return page.data.tags?.includes(tag) && !page.url.includes('README')
-                    // url.indexOf('/handbook') === 0
-                }).sort((a, b) => {
-                    // sort by depth, so we catch all the correct index.md routes
-                    const hierarchyA = a.url.split('/').filter(n => n)
-                    const hierarchyB = b.url.split('/').filter(n => n)
-                    return hierarchyA.length - hierarchyB.length
-                }).forEach((page) => {
-                    // work out ToC Hierarchy
-                    // split the folder URI/URL, as this defines our TOC Hierarchy
-                    const hierarchy = page.url.split('/').filter(n => n)
-                    // recursively parse the folder hierarchy and created our collection object
-                    // pass nav = {} as the first accumulator - build up hierarchy map of TOC
-                    hierarchy.reduce((accumulator, currentValue, i) => {
-                        // create a nested object detailing the full handbook hierarchy
-                        if (!accumulator[currentValue]) {
-                            accumulator[currentValue] = {
-                                'name': currentValue,
-                                'url': page.url,
-                                'children': {}
-                            }
-                            if (page.data.navTitle) {
-                                accumulator[currentValue].name = page.data.navTitle
-                            }
-                            // TODO: navGroup will be used in the rendering of the ToC at a later stage
-                            if (page.data.navGroup) {
-                                accumulator[currentValue].group = page.data.navGroup
+        return eleventyImage.generateHTML(metadata, imageAttributes);
+    });
+
+    // Create a collection for sidebar navigation
+    eleventyConfig.addCollection('nav', function(collection) {
+        let nav = {}
+
+        createNav('handbook')
+        createNav('docs')
+
+        function createNav (tag) {
+            collection.getAll().filter((page) => {
+                return page.data.tags?.includes(tag) && !page.url.includes('README')
+                // url.indexOf('/handbook') === 0
+            }).sort((a, b) => {
+                // sort by depth, so we catch all the correct index.md routes
+                const hierarchyA = a.url.split('/').filter(n => n)
+                const hierarchyB = b.url.split('/').filter(n => n)
+                return hierarchyA.length - hierarchyB.length
+            }).forEach((page) => {
+                // work out ToC Hierarchy
+                // split the folder URI/URL, as this defines our TOC Hierarchy
+                const hierarchy = page.url.split('/').filter(n => n)
+                // recursively parse the folder hierarchy and created our collection object
+                // pass nav = {} as the first accumulator - build up hierarchy map of TOC
+                hierarchy.reduce((accumulator, currentValue, i) => {
+                    // create a nested object detailing the full handbook hierarchy
+                    if (!accumulator[currentValue]) {
+                        accumulator[currentValue] = {
+                            'name': currentValue,
+                            'url': page.url,
+                            'children': {}
+                        }
+                        if (page.data.navTitle) {
+                            accumulator[currentValue].name = page.data.navTitle
+                        }
+                        // TODO: navGroup will be used in the rendering of the ToC at a later stage
+                        if (page.data.navGroup) {
+                            accumulator[currentValue].group = page.data.navGroup
+                        }
+                    }
+                    return accumulator[currentValue].children
+                }, nav)
+            })
+
+            // recursive functions to format our nav map to arrays
+            function childrenToArray (children) {
+                return Object.values(children)
+            }
+            function nestedChildrenToArray (value) {
+                for (const [key, entry] of Object.entries(value)) {
+                    if (entry.children && Object.keys(entry.children).length > 0) {
+                        // ensure our grandchildren are all converted to arrays before
+                        // we convert the higher level object to an array
+                        nestedChildrenToArray(entry.children)
+                        // now we have converted all grandchildren,
+                        // we can convert our children to an array
+                        entry.children = childrenToArray(entry.children)
+                    } else {
+                        delete entry.children
+                    }
+                }
+
+            }
+            // convert our objects to arrays so we can render in nunjucks
+            nestedChildrenToArray(nav)
+
+            // add functionality to group to-level items for better navigation.
+            let groups = {
+                'Other': {
+                    name: 'Other',
+                    order: -1,    // always render last
+                    children: []
+                }
+            }
+
+            // not req'd to have handbook in Website build, so this may be empty
+            if (nav[tag]) {
+                for (child of nav[tag].children) {
+                    if (child.group) {
+                        const group = child.group
+                        if (!groups[group]) {
+                            groups[group] = {
+                                name: group,
+                                order: 0,
+                                children: []
                             }
                         }
-                        return accumulator[currentValue].children
-                    }, nav)
+                        groups[group].children.push(child)
+                    } else {
+                        // capture & flag top-level handbook docs, that haven't had a group assigned
+                        groups['Other'].children.push(child)
+                    }
+                }
+
+                function sortChildren (a, b) {
+                    // sort children by 'order', then alphabetical
+                    return b.order - a.order || a.name.localeCompare(b.name)
+                }
+
+                nav[tag].groups = Object.values(groups).sort(sortChildren)
+
+                nav[tag].groups.forEach((group) => {
+                    if (group.children) {
+                        group.children.forEach((child) => {
+                            if (child.children) {
+                                child.children.sort(sortChildren)
+                            }
+                        })
+                        group.children.sort(sortChildren)
+                    }
                 })
-
-                // recursive functions to format our nav map to arrays
-                function childrenToArray (children) {
-                    return Object.values(children)
-                }
-                function nestedChildrenToArray (value) {
-                    for (const [key, entry] of Object.entries(value)) {
-                        if (entry.children && Object.keys(entry.children).length > 0) {
-                            // ensure our grandchildren are all converted to arrays before
-                            // we convert the higher level object to an array
-                            nestedChildrenToArray(entry.children)
-                            // now we have converted all grandchildren,
-                            // we can convert our children to an array
-                            entry.children = childrenToArray(entry.children)
-                        } else {
-                            delete entry.children
-                        }
-                    }
-
-                }
-                // convert our objects to arrays so we can render in nunjucks
-                nestedChildrenToArray(nav)
-
-                // add functionality to group to-level items for better navigation.
-                let groups = {
-                    'Other': {
-                        name: 'Other',
-                        order: -1,    // always render last
-                        children: []
-                    }
-                }
-
-                // not req'd to have handbook in Website build, so this may be empty
-                if (nav[tag]) {
-                    for (child of nav[tag].children) {
-                        if (child.group) {
-                            const group = child.group
-                            if (!groups[group]) {
-                                groups[group] = {
-                                    name: group,
-                                    order: 0,
-                                    children: []
-                                }
-                            }
-                            groups[group].children.push(child)
-                        } else {
-                            // capture & flag top-level handbook docs, that haven't had a group assigned
-                            groups['Other'].children.push(child)
-                        }
-                    }
-
-                    function sortChildren (a, b) {
-                        // sort children by 'order', then alphabetical
-                        return b.order - a.order || a.name.localeCompare(b.name)
-                    }
-
-                    nav[tag].groups = Object.values(groups).sort(sortChildren)
-
-                    nav[tag].groups.forEach((group) => {
-                        if (group.children) {
-                            group.children.forEach((child) => {
-                                if (child.children) {
-                                    child.children.sort(sortChildren)
-                                }
-                            })
-                            group.children.sort(sortChildren)
-                        }
-                    })
-                }
             }
+        }
 
-            return nav;
-        });
+        return nav;
+    });
 
     // Plugins
     eleventyConfig.addPlugin(pluginRSS)
