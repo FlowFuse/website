@@ -33,7 +33,7 @@ module.exports = function(eleventyConfig) {
     eleventyConfig.addLayoutAlias('nohero', 'layouts/nohero.njk');
     eleventyConfig.addLayoutAlias('solution', 'layouts/solution.njk');
     eleventyConfig.addLayoutAlias('redirect', 'layouts/redirect.njk');
-    
+
     // Copy the contents of the `public` folder to the output folder
     eleventyConfig.addPassthroughCopy({
         "src/public/": "/",
@@ -49,7 +49,7 @@ module.exports = function(eleventyConfig) {
         // Additional files to watch that will trigger server updates
         watch: ["_site/**/*.css", "_site/**/*.js"],
     })
-    
+
     // make global accessible in src/_includes/layouts/base.njk for loading of PH scripts
     eleventyConfig.addGlobalData('POSTHOG_APIKEY', () => process.env.POSTHOG_APIKEY || '' )
 
@@ -229,7 +229,7 @@ module.exports = function(eleventyConfig) {
 
         return teamMembers
     });
-    
+
     // Custom async filters
     eleventyConfig.addNunjucksAsyncFilter("jsmin", async function (code, callback) {
         try {
@@ -271,7 +271,7 @@ module.exports = function(eleventyConfig) {
             if (fs.existsSync(resolvedRelativePath)) {
                 return resolvedRelativePath
             }
-           
+
             const resolvedAbsolutePath = path.resolve(eleventyConfig.dir.input, relativeFilePath)
             if(fs.existsSync(resolvedAbsolutePath)) {
                 return resolvedAbsolutePath
@@ -305,7 +305,7 @@ module.exports = function(eleventyConfig) {
             },
             svgShortCircuit: true,
         });
-        
+
         sizes = sizes || widths ? widths.map((width) => `(min-device-pixel-ratio: 1.25) ${width * 2}px, (min-resolution: 120dpi) ${width * 2}px, ${width}px`).join(', ') : null
 
         let imageAttributes = {
@@ -359,7 +359,7 @@ module.exports = function(eleventyConfig) {
                     return accumulator[currentValue].children
                 }, nav)
             })
-    
+
             // recursive functions to format our nav map to arrays
             function childrenToArray (children) {
                 return Object.values(children)
@@ -377,11 +377,11 @@ module.exports = function(eleventyConfig) {
                         delete entry.children
                     }
                 }
-                
+
             }
             // convert our objects to arrays so we can render in nunjucks
             nestedChildrenToArray(nav)
-    
+
             // add functionality to group to-level items for better navigation.
             let groups = {
                 'Other': {
@@ -409,14 +409,14 @@ module.exports = function(eleventyConfig) {
                         groups['Other'].children.push(child)
                     }
                 }
-    
+
                 function sortChildren (a, b) {
                     // sort children by 'order', then alphabetical
                     return b.order - a.order || a.name.localeCompare(b.name)
                 }
-    
+
                 nav[tag].groups = Object.values(groups).sort(sortChildren)
-                
+
                 nav[tag].groups.forEach((group) => {
                     if (group.children) {
                         group.children.forEach((child) => {
@@ -438,7 +438,7 @@ module.exports = function(eleventyConfig) {
     eleventyConfig.addPlugin(syntaxHighlight)
     eleventyConfig.addPlugin(codeClipboard)
     eleventyConfig.addPlugin(pluginMermaid)
-        
+
     const markdownItOptions = {
         html: true,
     }
@@ -461,7 +461,7 @@ module.exports = function(eleventyConfig) {
         const imgSrc = token.attrGet('src')
         const imgAlt = token.content
         const imgTitle = token.attrGet('title')
-   
+
         const parsedTitle = (imgTitle || '').match(
             /^(?<skip>@skip ?)?(?<title>.*)/
         ).groups
@@ -472,7 +472,7 @@ module.exports = function(eleventyConfig) {
             loading: 'lazy',
             decoding: 'async'
         }
-          
+
         if (parsedTitle.skip || imgSrc.startsWith('http')) {
             const options = { ...htmlOpts }
             const metadata = { img: [{ url: imgSrc }] }
@@ -494,7 +494,7 @@ module.exports = function(eleventyConfig) {
         if (DEV_MODE) {
             formats = formats.filter((format) => !['avif', 'webp'].includes(format))
         }
-        
+
         // Handle both relative to post and root
         const widths = [650] // width of blog prose
         const imgOpts = {
@@ -515,12 +515,12 @@ module.exports = function(eleventyConfig) {
             throw error
         })
         const metadata = eleventyImage.statsSync(imagePath, imgOpts)
-    
+
         const generated = eleventyImage.generateHTML(metadata, {
             sizes: widths.map((width) => `(min-device-pixel-ratio: 1.25) ${width * 2}px, (min-resolution: 120dpi) ${width * 2}px, ${width}px`).join(', '),
             ...htmlOpts
         })
-    
+
         return generated
     }
 
@@ -543,11 +543,11 @@ module.exports = function(eleventyConfig) {
 
                 return minified
             }
-        
+
             return content
         })
     }
-        
+
     return {
         dir: {
             input: "src"

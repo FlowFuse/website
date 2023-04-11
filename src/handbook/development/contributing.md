@@ -1,7 +1,8 @@
 ---
 originalPath: development/contributing.md
-updated: 2022-10-13 13:05:31 +0200
+updated: git modified
 ---
+
 ## Contributing
 
 ### Coding Best Practices
@@ -16,9 +17,17 @@ If you're using VSCode, then we recommend using the [ESLint extenstion](https://
 
 <img width="429" alt="ESLint - Action on Save" src="../images/eslint_actiononsave.png">
 
-In the case of working with `vue` or `njk` files (found in the [frontend](https://github.com/flowforge/flowforge/tree/main/frontend) and [website](https://github.com/flowforge/website) repositories), then you can add `vue` and `njk` to the `Eslint: Probe` setting in order to enable auto-formatting on save for these file types.
+In the case of working with `vue` or `njk` files (found in the [frontend](https://github.com/flowforge/flowforge/tree/main/frontend) and [website][website-repo] repositories), then you can add `vue` and `njk` to the `Eslint: Probe` setting in order to enable auto-formatting on save for these file types.
 
 <img width="478" alt="ESLint - Probe" src="../images/eslint_probe.png">
+
+#### Editor Config
+
+The [website repository][website-repo] uses a [`.editorconfig`](https://editorconfig.org)
+to allow editors to automatically pick up the correct style for that repository.
+Some editors, like neovim, has this pre-installed. If you're using VSCode, an
+[plugin](https://marketplace.visualstudio.com/items?itemName=EditorConfig.EditorConfig)
+is available.
 
 ### Git Best Practices
 
@@ -51,3 +60,5 @@ PRs, when opened, should have at least one reviewer assigned, and a consequent r
 When merging a PR, you should choose the "Merge pull request" option. There is no need to rebase or squash the PR commits.
 
 When conducting a PR review, if you are the last (or only) reviewer and all reviews (including your own) are approvals, unless there is a comment from the author stating otherwise, you are free to conduct the merge. Otherwise, leave the merge to the author of the PR, or a future reviewer.
+
+[website-repo]: https://github.com/flowforge/website

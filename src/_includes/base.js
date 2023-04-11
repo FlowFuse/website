@@ -45,9 +45,9 @@ document.createElement = function(...args) {
         'type': {
             set(value) {
                 const typeValue =
-                  needsToBeBlocked(scriptElt.src, scriptElt.type) ?
-                      'javascript/blocked' :
-                      value
+                    needsToBeBlocked(scriptElt.src, scriptElt.type) ?
+                    'javascript/blocked' :
+                    value
                 originalSetAttribute('type', typeValue)
                 return true
             }
