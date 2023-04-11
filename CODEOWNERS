@@ -1,6 +1,6 @@
 # Please note the _last matching rule_ is used
-# Start with a catch all
-* @ZJvandeWeg
+# Start with a catch all for the handbook
+/src/handbook/ @ZJvandeWeg
 
 /src/handbook/design @joepavitt
 /src/handbook/development @knolleary
