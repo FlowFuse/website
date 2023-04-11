@@ -73,6 +73,20 @@ below so you get to decide if you want more channels or not.
 - `#social-twitter` is a stream of engagement with @FlowForgeInc
 - `#virtual-coffee` to schedule coffee calls with other team members!
 
+### GitHub
+
+All code at FlowForge is stored in Git, and GitHub hosts our repositories. As
+such all our changes, feature ideas/requests, etc. are stored there. It also
+holds task lists for onboarding, [art requests](../design/art-requests.md), and
+other projects not necessarily code related. It's important to stay in the loop
+on GitHub and it's notifications.
+
+Recommended views to keep track of items requiring your attention:
+- https://github.com/pulls/mentioned
+- https://github.com/issues/mentioned
+
+Please try to respond to mentions, review requests, etc within 2 business days.
+
 ### Standup meetings
 
 Standup meetings are hard to scale across multiple timezones. To make stand-ups
