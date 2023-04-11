@@ -54,6 +54,7 @@
         "xpath": "^0.0.32"
     },
     "dependencies": {
+        "codeowners": "^5.1.1",
         "markdown-it-attrs": "^4.1.6"
     }
 }

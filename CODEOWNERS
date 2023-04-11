@@ -1,0 +1,11 @@
+# Please note the _last matching rule_ is used
+# Start with a catch all
+* @ZJvandeWeg
+
+/src/handbook/design @joepavitt
+/src/handbook/development @knolleary
+/src/handbook/marketing @iskerrett
+/src/handbook/product @MarianRaphael
+
+# Change in values need sign off from both the CEO and CTO
+/src/handbook/company/values.md @knolleary @ZJvandeWeg

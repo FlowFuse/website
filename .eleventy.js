@@ -15,6 +15,7 @@ const markdownItFootnote = require("markdown-it-footnote");
 const markdownItAttrs = require('markdown-it-attrs');
 const spacetime = require("spacetime");
 const { minify } = require("terser");
+const codeowners = require('codeowners');
 
 const heroGen = require("./lib/post-hero-gen.js");
 const site = require("./src/_data/site");
@@ -22,7 +23,6 @@ const site = require("./src/_data/site");
 const DEV_MODE = process.env.ELEVENTY_RUN_MODE !== "build" // i.e. serve/watch
 
 module.exports = function(eleventyConfig) {
-
     eleventyConfig.setUseGitIgnore(false); // Otherwise docs are ignored
 
     eleventyConfig.addPlugin(EleventyEdgePlugin);
@@ -209,6 +209,61 @@ module.exports = function(eleventyConfig) {
 
         return baseUrl+filePath.replace(/^.\//,'')
     })
+
+    eleventyConfig.addFilter("pageOwners", (page) => {
+        // Eleventy's inputPath is relative, we need to drop the './' in front
+        return new codeowners().getOwner(page.inputPath.substring(2))
+    });
+
+    eleventyConfig.addFilter("ghUsersToTeamMembers", (ghUsers, team) => {
+        let teamMembers = [];
+        for (let i = 0; i < ghUsers.length; i++) {
+            const ghUser = ghUsers[i];
+
+            Object.keys(team).forEach(function (member) {
+                if (team[member].github === ghUser.substring(1)) {
+                    teamMembers.push(team[member])
+                }
+            })
+        }
+
+        return teamMembers
+    });
+    
+    // Custom async filters
+    eleventyConfig.addNunjucksAsyncFilter("jsmin", async function (code, callback) {
+        try {
+            const minified = await minify(code);
+            callback(null, minified.code);
+        } catch (err) {
+            console.error("Terser error: ", err);
+            // Fail gracefully.
+            callback(null, code);
+        }
+    });
+
+    eleventyConfig.addShortcode("renderTeamMember", function(teamMember) {
+        // When the author is no longer at FlowForge
+        if (typeof teamMember === "undefined") {
+            return ""
+    }
+
+        return `<div class="team-card--sm">
+                    <div class="ff-headshot" style="background-image: url(/images/team/headshot-${ teamMember.headshot })"></div>
+                        <div class="team-card-info">
+                            <label>${ teamMember.name }</label>
+                            <span>${ teamMember.title }</span>
+                        </div>
+                    </div>`
+    });
+
+    // Custom Shortcodes
+    function resolvedImagePath(inputPath, relativeFilePath) {
+        // Skip URLs
+        try {
+            new URL(string);
+            return relativeFilePath
+        } catch {}
 
         // Custom async filters
         eleventyConfig.addNunjucksAsyncFilter("jsmin", async function (code, callback) {
