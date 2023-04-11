@@ -1,5 +1,6 @@
 ---
 layout: nohero
+skipIndex: true
 meta:
     title: Terms and Conditions
 ---
