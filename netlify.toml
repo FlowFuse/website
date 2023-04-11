@@ -10,3 +10,9 @@ publish = "_site"
 [[edge_functions]]
 function = "eleventy-edge"
 path = "/*"
+
+[[plugins]]
+package = "@algolia/netlify-plugin-crawler"
+  [plugins.inputs]
+  branches = ['main', '555-algolia-search']
+  template = "hierarchical"
