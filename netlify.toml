@@ -14,5 +14,5 @@ path = "/*"
 [[plugins]]
 package = "@algolia/netlify-plugin-crawler"
   [plugins.inputs]
-  branches = ['main', '555-algolia-search']
+  branches = ['main', 'live']
   template = "hierarchical"
