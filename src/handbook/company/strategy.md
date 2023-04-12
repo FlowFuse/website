@@ -63,7 +63,7 @@ There are four pillars of the product we're investing in:
 1. Meet the compliance needs of the enterprise.
 
 The [product plan](../product/plan.md) goes into this in more depth.
-Check out our [roadmap](https://github.com/orgs/flowforge/projects/5) for on what we're pursuing in the next few releases.
+Check out our [roadmap](/product/roadmap/) for on what we're pursuing in the next few releases.
 
 Furthermore, we will continue our involvement with the Node-RED community.
 
