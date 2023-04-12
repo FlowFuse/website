@@ -25,7 +25,7 @@ FlowForge makes it easy to deploy Node-RED out to remote devices. However, once 
 ## Other Improvements
 
 
-Update Email Address verification  [#813](https://github.com/flowforge/flowforge/issues/813)
+Update email address verification  [#813](https://github.com/flowforge/flowforge/issues/813)
 
 Reminder email about trial doesn't include a link to FF Cloud [#1815](https://github.com/flowforge/flowforge/issues/1815)
 
@@ -35,13 +35,12 @@ Deprecate FF_PROJECT_* envvars and add FF_INSTANCE_* equivalents [#1844](https:/
 
 PostHog events & groups first pass [#1922](https://github.com/flowforge/flowforge/pull/1922)
 
-
 Add Algolia Search in Docs  [#620](https://github.com/flowforge/website/pull/620) 
 
 
 ## Bug Fixes
 
-Delelting instances from the instance list fails [#1859](https://github.com/flowforge/flowforge/issues/1859)
+Deleting instances from the instance list fails [#1859](https://github.com/flowforge/flowforge/issues/1859)
 
 Removing old projects with missing subcriptions fails [#1837](https://github.com/flowforge/flowforge/issues/1837)
 
