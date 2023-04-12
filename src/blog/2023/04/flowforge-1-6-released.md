@@ -37,7 +37,7 @@ Deprecate FF_PROJECT_* envvars [#1844](https://github.com/flowforge/flowforge/is
 
 Integrate with PostHog events [#1922](https://github.com/flowforge/flowforge/pull/1922)
 
-Add Algolia Search in Docs  [#620](https://github.com/flowforge/website/pull/620) 
+Introduce search bar to docs/handbook  [#620](https://github.com/flowforge/website/pull/620) 
 
 
 ## Bug Fixes
