@@ -91,6 +91,15 @@ from the previous paragraph.
 ```
 
 ## Code Example
+
+For `inline` quoting, use single backticks:
+
+```md
+For `inline` quoting, use single backticks.
+```
+
+For block quotes, use tripple backticks:
+
 ```
 this will write the content as if it is code
 ```
@@ -100,3 +109,15 @@ this will write the content as if it is code
 this will write the content as if it is code
 ```
 ````
+
+Add syntax highlighting by defining the language, for example:
+
+```js
+console.log("Hello, world!")
+```
+
+```md
+```js
+console.log("Hello, world!")
+```
+```
