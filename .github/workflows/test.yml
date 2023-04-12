@@ -3,24 +3,31 @@ name: Tests
 on: push
 
 jobs:
-  test-website:
+  test_website:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/checkout@v3
+      - name: Check out website repository
+        uses: actions/checkout@v3
         with:
-          repository: flowforge/flowforge
+          path: 'website'
+      - name: Check out flowforge repository (to access the docs)
+        uses: actions/checkout@v3
+        with:
+          repository: 'flowforge/flowforge'
+          ref: maintenance
           path: 'flowforge'
-      - name: Move docs to parent dir
-        run: |
-          mv flowforge ../flowforge
       - uses: actions/setup-node@v3
+      - run: npm run docs
+        working-directory: 'website'
       - name: Install Dependencies
         run: npm install
+        working-directory: 'website'
       - name: Build the forge
         run: npm run build
+        working-directory: 'website'
       - name: Test the website
         run: npm run test
+        working-directory: 'website'
       - uses: untitaker/hyperlink@0.1.27
         with:
-          args: _site/ --check-anchors
+          args: website/_site/ --check-anchors
