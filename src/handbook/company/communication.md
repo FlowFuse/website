@@ -110,7 +110,7 @@ list of names in the agenda so everyone gets the opportunity to share.
 
 ### Bi-weekly KPI meeting
 
-This 25-minute meeting is held to report on [key metrics](../company/vision.md#key-metrics).
+This 25-minute meeting is held to report on [key metrics](../company/achieving-success.md#kpi).
 Every department gets 5 minutes to explain what initiatives have been implemented
 over the past 2 weeks, what initiatives or milestones are scheduled for the next
 two weeks, and what results are expected to the company wide KPI.

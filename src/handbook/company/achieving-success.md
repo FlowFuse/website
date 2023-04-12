@@ -10,7 +10,7 @@ There's multiple ways to align a company around business goals, and at FlowForge
 we've identified two ways to help us shape this. The core metric are captured in
 the [KPI](#kpi). A KPI is a tool to identify problems and areas for improvement.
 
-The second tool employed at FlowForge to improve on the identfied problems are [OKR](#okr)s.
+The second tool employed at FlowForge to improve on the identfied problems are [OKR](#okrs)s.
 
 ## KPI
 

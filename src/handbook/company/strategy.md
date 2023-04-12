@@ -50,7 +50,7 @@ larger deployment scenarios.
 
 As a new company that starts small but aspires to grow, we need to ensure that growth is well managed, sustainable and rewarding.
 
-Our [values](../company#values) help shape the culture we want to build, both inside the company and beyond.
+Our [values](./values) help shape the culture we want to build, both inside the company and beyond.
 
 ### Strategic Initiatives
 

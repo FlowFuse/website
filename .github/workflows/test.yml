@@ -2,28 +2,32 @@ name: Tests
 
 on: push
 
-env:
-  MANUAL_HANDBOOK_COPY: true
-  MANUAL_DOCS_COPY: true
-
 jobs:
-  test-website:
+  test_website:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/checkout@v3
+      - name: Check out website repository
+        uses: actions/checkout@v3
         with:
-          repository: flowforge/flowforge
-          path: './src/docs'
-      - name: Move docs to the right location
-        run: |
-          mv src/docs/docs ./docs_temp
-          rm -rf src/docs/*
-          mv docs_temp src/docs
+          path: 'website'
+      - name: Check out flowforge repository (to access the docs)
+        uses: actions/checkout@v3
+        with:
+          repository: 'flowforge/flowforge'
+          ref: maintenance
+          path: 'flowforge'
       - uses: actions/setup-node@v3
+      - run: npm run docs
+        working-directory: 'website'
       - name: Install Dependencies
         run: npm install
+        working-directory: 'website'
       - name: Build the forge
         run: npm run build
+        working-directory: 'website'
       - name: Test the website
         run: npm run test
+        working-directory: 'website'
+      - uses: untitaker/hyperlink@0.1.27
+        with:
+          args: website/_site/ --check-anchors
