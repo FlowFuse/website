@@ -81,7 +81,7 @@ sitemapPriority: 0.8
     </div>
 </div>
 
-<div class="w-full ff-bg-light px-6 pb-32 sm:px-0 ff-prose">
+<div class="w-full ff-bg-light px-6 pb-12 sm:px-0 ff-prose">
     <div class="container m-auto max-w-4xl prose">
         <div class="m-auto w-full">
             {% for faq in nodeRed.faqs %}
@@ -95,6 +95,49 @@ sitemapPriority: 0.8
                 </div>
             </div>
             {% endfor %}
+        </div>
+    </div>
+</div>
+
+<div class="about w-full ff-bg-light pt-12 pb-24 md:pb-48 md:pt-32">
+     <div class="-mt-28 text-center">
+        <h2>Node-RED</h2>
+    </div>
+    <div class="container m-auto max-w-4xl">
+        <div
+            class="grid grid-cols-1 md:grid-cols-3 pt-12 md:pt-6 gap-x-8" style="align-items: flex-start;">
+            <!-- Node-RED Quick Tips Column -->
+            <div class="roadmap-section consideration pb-6 md:pb-0">
+                <h3 class="centered-headline">Quick Tips</h3>
+                <ul class="list-disc">
+                    <p>
+                        <li><a href="/blog/2023/02/3-quick-node-red-tips-1/">Wiring Shortcuts</a>
+                        <li><a href="/blog/2023/02/3-quick-node-red-tips-2/">Deploying, Debugging, and Delaying</a>
+                        <li><a href="/blog/2023/03/3-quick-node-red-tips-3/">Exec, Filter, and Debug</a>
+                        <li><a href="/blog/2023/03/3-quick-node-red-tips-4/">Smooth, Catch, and Math</a> 
+                        <li><a href="/blog/2023/03/3-quick-node-red-tips-5/">Importing, Exporting, and Grouping Flows</a> 
+                    </p>
+                </ul>
+            </div>
+            <!-- Resources Column -->
+            <div class="roadmap-section progress pb-6 md:pb-0">
+                <h3 class="centered-headline">Resources</h3>
+                <ul class="list-disc">
+                    <p>
+                        <li><a href="https://github.com/node-red" target="_blank">Github</a>
+                        <li><a href="https://discourse.nodered.org/" target="_blank">Support Forums</a>
+                        <li><a href="https://nodered.org/docs/" target="_blank">Documentation</a>
+                        <li><a href="https://flows.nodered.org/" target="_blank">Flows Library</a>
+                    </p>
+                <div class="roadmap-item-container"></div>
+            </div>
+            <!-- Node-RED Concepts Column -->
+            <div class="roadmap-section completed">
+                <h3 class="centered-headline">Key Concepts</h3>
+                <p>
+                    Coming Soon
+                </p>
+             </div>
         </div>
     </div>
 </div>
