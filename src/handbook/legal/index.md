@@ -3,6 +3,10 @@ navTitle: Legal
 navGroup: Internal Operations
 ---
 
+## Subscription agreement
+
+For self-managed licenses FlowForge has a standard [subscription agreement template](https://docs.google.com/document/d/1szqCRC7w-f82I4HL-cOTTCiSMKDhVWju84Md4M07RGk).
+
 ## Non-disclosure agreement (NDA)
 
 FlowForge has templates for standard NDA's:
