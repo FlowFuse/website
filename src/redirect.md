@@ -23,6 +23,7 @@ redirects:
   - { "from": "/blog/community-news-02/", "to": "/blog/2022/03/community-news-02/" }
   - { "from": "/blog/flowforge-03-released/", "to": "/blog/2022/03/flowforge-03-released/" }
   - { "from": "/blog/2023/03/comparinig-dashboards/", "to": "/blog/2023/03/comparing-node-red-dashboards" }
+  - { "from": "/roadmap/", "to": "/product/roadmap/" }
 # The "permalink" attribute determines where the output page will be located.
 permalink: "{{ redirect.from }}"
 # The "redirect" layout just has a small html header with the meta tags that do redirection.
