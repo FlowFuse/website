@@ -4,7 +4,7 @@ subtitle: FlowForge Now Supports Multi-Instance Node-RED for Complex Application
 description: 
 date: 2023-04-13 
 authors: ["ian-skerrett"]
-image: /blog/2023/03/images/release-150.jpg
+image: 
 ---
 
 The new FlowForge 1.6 adds new support for multi-instance Node-RED within a single application and support for logging from remote devices.
@@ -31,9 +31,11 @@ Reminder email about trial doesn't include a link to FF Cloud [#1815](https://gi
 
 Sign-up coupons improvement [#1788](https://github.com/flowforge/flowforge/issues/1788)
 
-Deprecate FF_PROJECT_* envvars and add FF_INSTANCE_* equivalents [#1844](https://github.com/flowforge/flowforge/issues/1844)
+New FF_Instance_* envvars inline with new terminology [#1844](https://github.com/flowforge/flowforge/issues/1844)
 
-PostHog events & groups first pass [#1922](https://github.com/flowforge/flowforge/pull/1922)
+Deprecate FF_PROJECT_* envvars [#1844](https://github.com/flowforge/flowforge/issues/1844)
+
+Integrate with PostHog events [#1922](https://github.com/flowforge/flowforge/pull/1922)
 
 Add Algolia Search in Docs  [#620](https://github.com/flowforge/website/pull/620) 
 
