@@ -15,12 +15,13 @@ The new FlowForge 1.6 adds new support for multi-instance Node-RED within a sing
 
 FlowForge 1.6 expands the scope of applications to now allow for multiple instances of Node-RED. For complex Node-RED applications, it is common to have different flows interacting with other flows or flows deployed to different target environments. The ability to associate all these different flows with a single application makes it easier for the development, test and deployment of these types of complex applications.
 
-
+<iframe width="560" height="315" src="https://www.youtube.com/embed/OHChdWeRI9Q" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ## Access Node-RED logs from remote devices
 
 FlowForge makes it easy to deploy Node-RED out to remote devices. However, once Node-RED has been deployed to the remote device it is often difficult to troubleshoot or debug. Now with FlowForge 1.6, you can get access to the Node-RED logs from remote devices. This makes it much easier to understand and debug the behavior of a remote device.
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/yW1zxwiCmto" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ## Other Improvements
 
@@ -44,7 +45,7 @@ Introduce search bar to docs/handbook  [#620](https://github.com/flowforge/websi
 
 Deleting instances from the instance list fails [#1859](https://github.com/flowforge/flowforge/issues/1859)
 
-Removing old projects with missing subcriptions fails [#1837](https://github.com/flowforge/flowforge/issues/1837)
+Removing old projects with missing subscriptions fails [#1837](https://github.com/flowforge/flowforge/issues/1837)
 
 Changing to a team as a member shows unauthorized error [#1845](https://github.com/flowforge/flowforge/issues/1845)
 
