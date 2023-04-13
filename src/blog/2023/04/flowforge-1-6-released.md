@@ -4,7 +4,7 @@ subtitle: FlowForge Now Supports Multi-Instance Node-RED for Complex Application
 description: 
 date: 2023-04-13 
 authors: ["ian-skerrett"]
-image: 
+image: /blog/2023/04/images/release-1.6.0.png
 ---
 
 The new FlowForge 1.6 adds new support for multi-instance Node-RED within a single application and support for logging from remote devices.
