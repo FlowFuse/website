@@ -15,3 +15,5 @@ FlowForge has templates for standard NDA's:
 
 If you need these for any discussions, please ask the PeopleOps Manager to send
 them to the CEO and the counterparty.
+
+Signed NDA documents should be stored on the [Google Drive](https://drive.google.com/drive/u/1/folders/1BT1KY7B18N4JWlVGEnRsovhwiGnZkm5F){rel="nofollow"} for future reference.
