@@ -43,6 +43,12 @@ details your options here, and when to use the respective value:
 | Unqualified | Contact is no longer interested in FlowForge. |
 
 
+### Importing Contacts Into HubSpot
+
+If you import contacts into HubSpot, it is important that the First Name and Last Name are populated correctly. Currently the FlowForge Cloud database stores first and last name in a single field called Name. If you import this field into HubSpot the default is set to populate the Last Name field. The First Name field will not be populated so any email personalization with First Name will not be effective.  
+
+The ideal process for importing FlowForge Cloud contacts is that you first split the Name field into a First Name and Last Name. Google Sheets has the ability to split a column of text into two columns based on the delimiter of a space. Once that is completed then you can import the list into HubSpot.
+
 ### Recommended Apps
 
 We have several extension applications for HubSpot, these are a few that can be beneficial if you're interacting with customers:
