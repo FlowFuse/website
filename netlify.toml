@@ -7,10 +7,6 @@ command = "npx @11ty/eleventy --quiet --watch"
 command = "npm run build"
 publish = "_site"
 
-[[edge_functions]]
-function = "eleventy-edge"
-path = "/*"
-
 [[plugins]]
 package = "@algolia/netlify-plugin-crawler"
   [plugins.inputs]
