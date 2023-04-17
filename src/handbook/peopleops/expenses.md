@@ -41,6 +41,7 @@ company, you can claim back the money through [Deel](https://help.letsdeel.com/h
 * Enter a description, expense name, price and attach an invoice, then click <kbd>Submit</kbd>
 * This expense will now appear in your "Pending" list
 * Adjustments approved before the payroll cut-off date will be processed in the current month's payroll. Any adjustment approved after the payroll cut-off date will be processed in the next month's payroll
+* The People Ops Manager is authorized to approve expenses that are $50 or less. However, if an expense exceeds $50, both the CEO and the People Ops Manager will need to review and approve it.
 
 ### Asset purchases over $500
 
