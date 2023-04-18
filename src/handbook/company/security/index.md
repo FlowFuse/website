@@ -4,6 +4,15 @@ navTitle: Security
 
 # Security
 
+To ensure the safety and security of our company, employees and customers, FlowForge
+maintains a set of security policies that we all must follow.
+
+It is important that every takes the time to understand their own responsibilities
+in this area, which includes prompt reporting and resolution of any issues identified.
+
+ - [Information Security Policy and Acceptable Use Policy](./information-security.md)
+
+
 ## Credentials
 
 ### Password vault
