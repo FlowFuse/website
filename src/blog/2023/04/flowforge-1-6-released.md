@@ -1,7 +1,7 @@
 ---
 title: FlowForge v1.6 Now Available
 subtitle: FlowForge Now Supports Multi-Instance Node-RED for Complex Application Development
-description: 
+description: FlowForge Now Supports Multi-Instance Node-RED for Complex Application Development
 date: 2023-04-13 
 authors: ["ian-skerrett"]
 image: /blog/2023/04/images/release-1.6.0.png
