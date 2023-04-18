@@ -26,19 +26,19 @@ has a headline, description, and a container for roadmap items. -->
             class="grid grid-cols-1 md:grid-cols-3 pt-12 md:pt-24 gap-x-8" style="align-items: flex-start;">
             <!-- Consideration Column -->
             <div class="roadmap-section consideration pb-6 md:pb-0">
-                <h3 class="centered-headline">👀 Consideration</h3>
+                <h3 class="left-headline">👀 Consideration</h3>
                 <p>We would appreciate your feedback on the potential new features that we are considering for development.</p>
                 <div class="roadmap-item-container"></div>
             </div>
             <!-- In Progress Column -->
             <div class="roadmap-section progress pb-6 md:pb-0">
-                <h3 class="centered-headline">🛠 In Progress</h3>
+                <h3 class="left-headline">🛠 In Progress</h3>
                 <p>We are currently working on the following topics and would appreciate any feedback you may have.</p>
                 <div class="roadmap-item-container"></div>
             </div>
             <!-- Newly Released Column -->
             <div class="roadmap-section completed">
-                <h3 class="centered-headline">🏁 Newly released</h3>
+                <h3 class="left-headline">🏁 Newly released</h3>
                 <p>
                     Check out product updates on
                     <a href="https://www.flowforge.com/blog/" target="_blank">
@@ -47,9 +47,9 @@ has a headline, description, and a container for roadmap items. -->
                     to see the latest features and improvements.
                 </p>
                 <!-- Newsletter sign-up form container -->
-                <div class="w-full px-2 pt-2 pb-2 mb-2 flex flex-col border-t-2 border-b-2">
+                <div class="w-full pt-2 pb-2 mb-2 flex flex-col border-t">
                     <a id="sign-up"></a>
-                    <h5 class="mb-0">Sign up for our monthly email updates:</h5>
+                    <h5 class="mb-8">Sign up for our monthly email updates:</h5>
                     <!-- HubSpot form script for the newsletter sign-up -->
                     <script>
                         function displayHubSpotForm() {
@@ -77,7 +77,7 @@ has a headline, description, and a container for roadmap items. -->
 {% include "components/divider-flow--top-red--dark.njk" %}
 <!-- Roadmap feedback section, containing a header, description, and a contact button for users to provide feedback. -->
 <div class="roadmap-feedback w-full ff-bg-dark px-6 pt-12 pb-24 md:pt-20 md:px-0 md:pb-48">
-    <div class="container m-auto text-center max-w-4xl">
+    <div class="container m-auto text-left max-w-4xl">
         <div>
             <h1 class="mb-4">We value your feedback</h1>
             <p>We appreciate feedback and suggestions from our users to help shape the future of FlowForge. Feel free to share your
@@ -190,9 +190,9 @@ has a headline, description, and a container for roadmap items. -->
             // Add the issue title span to the container.
             titleNumberContainer.appendChild(issueName);
             listItem.appendChild(titleNumberContainer);
-            // Create a centered wrapper for the vote button.
-            const centerWrapper = document.createElement("div");
-            centerWrapper.classList.add("center");
+            // Create a left aligned wrapper for the vote button.
+            const leftWrapper = document.createElement("div");
+            leftWrapper.classList.add("left");
             // Create the vote button element.
             const voteBtn = document.createElement("a");
             voteBtn.href = item.url;
@@ -210,9 +210,9 @@ has a headline, description, and a container for roadmap items. -->
             } else {
                 voteBtn.innerHTML = '<span>See status</span><img src="../../images/github-mark.png" alt="GitHub Logo">';
             }
-            // Append the vote button to the centered wrapper and then append the centered wrapper to the list item.
-            centerWrapper.appendChild(voteBtn);
-            listItem.appendChild(centerWrapper);
+            // Append the vote button to the left aligned wrapper and then append the left aligned wrapper to the list item.
+            leftWrapper.appendChild(voteBtn);
+            listItem.appendChild(leftWrapper);
             // Append the list item to the list.
             list.appendChild(listItem);
         }

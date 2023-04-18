@@ -2,14 +2,14 @@
     width: 100%;
 }
 
-.center {
+.left {
     display: flex;
-    justify-content: center;
+    justify-content: left;
     width: 100%;
 }
 
-.centered-headline {
-    text-align: center;
+.left-headline {
+    text-align: left;
     width: 100%;
 }
 
@@ -54,12 +54,11 @@
 
 .roadmap-item {
     align-items: flex-start;
-    background-color: #f3f4f6;
-    border-radius: 8px;
+    border-top: 1px solid #e5e7ed;
     display: flex;
     flex-direction: column;
-    margin-bottom: 12px;
-    padding: 12px 20px;
+    margin-bottom: 8px;
+    padding: 16px 0;
 }
 
 .roadmap-item-container {
@@ -68,7 +67,7 @@
 }
 
 .roadmap-item-text {
-    color: #bc3738;
+    color: #374151;
     flex-grow: 1;
     font-weight: bold;
     text-align: left;
@@ -89,7 +88,7 @@
 .title-number-container {
     align-items: center;
     display: flex;
-    margin-bottom: 8px;
+    margin-bottom: 16px;
 }
 
 .vote-btn {
