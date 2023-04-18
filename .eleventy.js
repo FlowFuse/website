@@ -77,6 +77,22 @@ module.exports = function(eleventyConfig) {
         return `<div style="white-space: pre-wrap;">${unescape(str)}</div>;`
     });
 
+    eleventyConfig.addFilter('dictsortBy', function(val, reverse, attr) {
+        let array = [];
+        for (let k in val) {
+            array.push(val[k]);
+        }
+
+        array.sort((t1, t2) => {
+            var a = t1[attr];
+            var b = t2[attr];
+        
+            return a > b ? 1 : (a === b ? 0 : -1); // eslint-disable-line no-nested-ternary
+        });
+
+        return array
+    });
+
     eleventyConfig.addFilter('shortDate', dateObj => {
         return spacetime(dateObj).format('{date} {month-short}, {year}')
     });
