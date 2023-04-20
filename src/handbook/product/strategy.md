@@ -10,7 +10,7 @@ Our strategy is an indication and statement of intent for the next 2 years, and 
 
 The cornerstone of FlowForge is to make Node-RED more accessible to enterprises. Therefore, we are constantly implementing requirements that support the easy use of Node-RED in production environments. We will focus on:
 
-1. High availability & Scalability
+1. [High availability & Scalability](https://github.com/flowforge/flowforge/issues/1678)
 
 2. State-of-the-art built-in security e.g. VPN support
 
