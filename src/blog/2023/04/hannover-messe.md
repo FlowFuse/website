@@ -8,7 +8,8 @@ image: /blog/2023/04/images/HMI2023.png
 tags:
     - posts
 ---
-"Do you use Node-RED?" This simple question became our favorite conversation opener as ZJ and I attended Hannover Messe, the world's leading industrial trade fair. 
+"Do you use Node-RED?" This simple question became our favorite conversation opener as ZJ and I attended Hannover Messe, the world's leading industrial trade fair.
+
 <!--more-->
 To our delight, the answer was almost always "Yes." This allowed us to dive into truly fruitful discussions with Node-RED experts, exploring the latest industry trends, connecting with potential partners, and sharing our vision for the future of Node-RED in the manufacturing sector. During our visit, we had the pleasure of engaging with several vendors, including Bosch Rexroth, Siemens, Wago, Weidmüller, RevolutionPi, and more. It was genuinely inspiring to see the widespread adoption and usage of Node-RED across the entire industry. See also our [arcticle](https://flowforge.com/blog/2023/03/integration-platform-for-edge-computing/#the-standard-for-edge-computing-and-plcs) about the adoption of Node-RED for PLCs and Gateways.
 
