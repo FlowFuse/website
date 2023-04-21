@@ -4,7 +4,7 @@ navTitle: Security
 
 # Security
 
-To ensure the safety and security of our company, employees and customers, FlowForge
+To ensure the safety and security of our company, employees, and customers, FlowForge
 maintains a set of security policies that we all must follow.
 
 It is important that every takes the time to understand their own responsibilities
