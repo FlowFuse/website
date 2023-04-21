@@ -32,7 +32,7 @@ each user.
 
 3. All credentials, including user passwords, service accounts, and access
 keys, must meet the length, complexity, age, and rotation requirements defined
-in security standards.
+by industry best practice. Specific requires are described in the [password policy](#password-policy).
 
 4. Use strong password and multi-factor authentication (MFA) whenever possible
 to authenticate to all computing resources.
@@ -103,6 +103,16 @@ view the source code.
 Exceptions will be made for business reasons to keep particular repositories
 private. Access to private repositories on GitHub will be based on business need
 and role.
+
+## Password Policy
+
+All FlowForge system passwords must meet industry standards and best practices.
+Where possible, systems shall be configured to enforce these standards.
+
+ - Minimum length of 8 characters, with a mix of letters, numbers, symbols and case.
+ - Passwords must not be reused between systems
+ - Passwords may only be stored in the company provided password vault, 1Password.
+
 
 --- 
 Policy derived from [JupiterOne/security-policy-templates](https://github.com/JupiterOne/security-policy-templates) ([CC BY-SA 4 license](https://creativecommons.org/licenses/by-sa/4.0/)) and [Vanta](https://vanta.com)
