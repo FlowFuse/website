@@ -11,6 +11,7 @@ If you're looking to contribute content to FlowForge, this is the best place to 
 - [Channels](./channels.md)
 - [Types](./types.md)
 - [Hubspot](./hubspot.md) - How we use our CRM
+- [Trade shows](./tradeshows.md) - How to get the most out of visiting a trade fair
 - [Videos](./videos.md)
 - [Website](./website.md)
 - [Webinars](./webinars.md)
