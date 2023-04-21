@@ -4,6 +4,10 @@ module.exports = {
     darkMode: false, // or 'media' or 'class'
     theme: {
         extend: {
+            fontSize: {
+                'page-h1': ['2.5rem', '3.5rem'],
+                'post-h4': ['1.25rem']
+            },
             boxShadow: {
                 nav: '3px 3px 6px 0px #000000e0;'
             },

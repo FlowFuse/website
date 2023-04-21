@@ -281,7 +281,6 @@ h4:hover .header-anchor {
 */
 @layer components {
     .ff-website .ff-header {
-        z-index: 10;
         @apply sm:bg-gray-800;
     }
     .ff-website header .ff-wordmark path,
@@ -290,7 +289,7 @@ h4:hover .header-anchor {
     }
 
     .ff-website header nav {
-        @apply flex justify-between lg:grid lg:grid-cols-header;
+        @apply z-10 flex justify-between lg:grid lg:grid-cols-header;
     }
 
 
