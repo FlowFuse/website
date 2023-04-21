@@ -40,7 +40,7 @@ to authenticate to all computing resources.
 5. MFA is required to access any critical system or resource, including but not
 limited to resources in production environments.
 
-6. Unused accounts, passwords, access keys must be removed within 30 days
+6. Unused accounts, passwords, access keys must be removed within 30 days.
 
 7. A unique access key or service account must be used for different
 application or user access.
