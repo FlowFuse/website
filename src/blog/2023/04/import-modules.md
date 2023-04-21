@@ -41,6 +41,6 @@ Something we see [a lot on the Node-RED Forums](https://discourse.nodered.org/se
 
 We use <a href="https://posthog.com/" target="_blank">PostHog</a> for our internal Product Analysis. We record live events as they occur on FlowForge Cloud to better understand features that are (and are not) used.
 
-We wanted to investigate whether or not we could add backdated data, which in theory was possible via their <a href="https://posthog.com/docs/libraries/node" target="_blank">posthog-node</a> module. We wanted to populate it with data driven from our own database and API. [Data integration? An ideal use case for Node-RED](solutions/data-integration/).
+We wanted to investigate whether or not we could add backdated data, which in theory was possible via their <a href="https://posthog.com/docs/libraries/node" target="_blank">posthog-node</a> module. We wanted to populate it with data driven from our own database and API. [Data integration? An ideal use case for Node-RED](/solutions/data-integration/).
 
 Within two minutes, we could wire up a node to retrieve data from our API, and then ingest it into `posthog-node` via the import of a function node.
