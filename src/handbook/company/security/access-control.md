@@ -75,7 +75,7 @@ job role changes.
 exception basis.
 
 2. If required by business operations, secrets/credentials must be shared
-securely and stored in the company provided password manager.
+securely and stored in the company provided password manager, 1Password.
 
 3. Usage of a shared secret to access a critical system or resource must be
 supported by a complimenting solution to uniquely identify the user.
