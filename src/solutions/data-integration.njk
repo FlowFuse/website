@@ -18,10 +18,10 @@ description:
 <div class="container m-auto text-center mb-32">
     <div class="mt-32 content max-w-screen-lg m-auto">
         <h2 class="mb-4 m-auto">Challenges of Data Integration</h2>
-        <div class="w-full md:max-w-screen-lg m-auto">
+        <div class="hidden sm:block w-full md:max-w-screen-lg m-auto">
             {% image "./images/solutions/data-integration.png", ".", [1024] %}
         </div>
-        <div class="grid px-6 grid-cols-1 md:grid-cols-3 gap-8 sm:gap-16 sm:gap-y-4 mb-20 text-left">
+        <div class="grid mt-12 px-6 grid-cols-1 md:grid-cols-3 gap-8 sm:mt-0 sm:gap-16 sm:gap-y-4 mb-20 text-left">
             <div>
                 {% ffIconLg "data", true %}
                 <p class="mt-2">
@@ -95,12 +95,13 @@ description:
         <div class="hero">
             <h1 style="color: white" class="mb-6 m-auto">FlowForge Adds DevOps<br>to Node-RED for Data Integration</h1>
         </div>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 sm:gap-8 mt-20 mb-12 text-left">
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 sm:gap-8 mt-20 mb-12 text-left">
             <div>
                 <div class="w-24 sm:w-24 mb-6 flex-shrink-0">
                     {% image "./images/pictograms/community.png", "", [128] %}
                 </div>
-                <h4>Collaborative<br>Development</h4>
+                <h4 class="block sm:hidden">Collaborative Development</h4>
+                <h4 class="hidden sm:block">Collaborative<br>Development</h4>
                 <div>
                     <p>
                         FlowForge makes it possible for teams to collaborate on the same Node-RED flows.
@@ -125,7 +126,8 @@ description:
                 <div class="w-24 sm:w-24 mb-6 flex-shrink-0">
                     {% image "./images/pictograms/bias_for_action.png", "", [128] %}
                 </div>
-                <h4>Software Delivery<br>Pipelines</h4>
+                <h4 class="block sm:hidden">Software Delivery Pipelines</h4>
+                <h4 class="hidden sm:block">Software Delivery<br>Pipelines</h4>
                 <div>
                     <p>
                         FlowForge allows you to create snapshots of Node-RED instances so you can create software delivery pipelines for development > test > production.
@@ -137,7 +139,7 @@ description:
             </div>
         </div>
     </div>
-    <div class="mt-20 content max-w-screen-lg m-auto text-center border-2 rounded-lg py-6 px-20 bg-gray-600 bg-opacity-50 border-gray-500">
+    <div class="mt-20 mx-4 px-4 sm:mx-0 content max-w-screen-lg m-auto text-center border-2 rounded-lg py-6 sm:px-20 bg-gray-600 bg-opacity-50 border-gray-500">
         <p class="text-2xl leading-10 mt-0 mb-9">
             Contact us to discover how FlowForge can help you use Node-RED for your Data Integration requirements.
         </p>
