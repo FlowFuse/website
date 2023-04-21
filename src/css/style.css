@@ -423,6 +423,21 @@ h4:hover .header-anchor {
         /* color: theme(colors.red.600); */
     }
 
+    .ff-icon-lg {
+        height: 48px;
+        width: 48px;
+        stroke-width: 1px;
+    } 
+
+    .ff-bg-light .ff-icon-lg:not(.ff-icon--solid) {
+        stroke: theme(colors.red.600);
+    }
+
+    .ff-bg-dark .ff-icon-lg:not(.ff-icon--solid),
+    .ff-bg-dark .ff-icon-lg:not(.ff-icon--solid) {
+        stroke: theme(colors.teal.200);
+    }
+
     .ff-select {
         background-color: theme(colors.white);
         padding: 3px;

@@ -273,6 +273,24 @@ module.exports = function(eleventyConfig) {
                     </div>`
     });
 
+    function loadSVG (file) {
+        let relativeFilePath = `./src/_includes/components/icons/${file}.svg`;
+        let data = fs.readFileSync(relativeFilePath, function(err, contents) {
+            if (err) return err
+            return contents
+        });     
+        return data.toString('utf8');
+    }
+
+    eleventyConfig.addShortcode("ffIconLg", function(icon, isSolid) {
+        const svg = loadSVG(icon)
+        if (!isSolid) {
+            return `<svg class="ff-icon ff-icon-lg" fill="none" viewbox="0 0 24 24">${svg}</svg>`
+        } else {
+            return `<svg class="ff-icon ff-icon-lg ff-icon--solid" fill="none" viewbox="0 0 24 24">${svg}</svg>`
+        }
+    });
+
     // Custom Shortcodes
     function resolvedImagePath(inputPath, relativeFilePath) {
         // Skip URLs
