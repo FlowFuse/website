@@ -51,16 +51,17 @@ During the onboarding process on our EOR provider platform, candidates must eith
 
 ## Onboarding
 
-Just before the first day working at FlowForge you'll receive an email 
-requesting for GitHub username and preferred company email address. An issue
-will be created at our [internal issue tracker][issue-tracker] with steps for
-the team and you to complete once you started.
+Just before your first day of work at FlowForge, you will receive an email requesting your GitHub username and preferred company email address. An issue
+will be created on our [internal issue tracker][issue-tracker] with steps for you and
+the team to complete once you start.
 
-The day you start an email will send to your personal email address to gain
-access to your FlowForge email address which you can leverage to gain access to
-Slack and other resources. On your first day you should prioritise gaining access
-to Slack, the FlowForge GitHub organisation, and complete your onboarding issue.
-Your manager will also assign work to start on in the first week.
+On the day you start, a message will be sent to your personal email address to grant you access to your FlowForge email address.
+
+After setting up your password, you must [turn on the 2-Step Verification](https://support.google.com/accounts/answer/185839?hl=en&co=GENIE.Platform%3DDesktop). Otherwise, after a few days, you will be locked out of your account and will need an admin's help to log back in.
+
+Once your FlowForge email is set up, you will have access to invitations to other services and platforms, including 1Password. [Set this up](https://support.1password.com/explore/team-member/) as soon as possible to add a security layer to all your FlowForge accounts.
+
+On your first day, after your email and 1Password accounts are set up, you should prioritize gaining access to Slack, the FlowForge GitHub organization, and completing your onboarding issue. Your manager will also assign work for you to start on in the first week.
 
 [issue-tracker]: https://github.com/flowforge/admin/issues
 
