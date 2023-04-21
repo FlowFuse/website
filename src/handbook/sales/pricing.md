@@ -11,6 +11,11 @@ the opportunity.
 Internal documents:
 - [Price list with volume discounts](https://docs.google.com/spreadsheets/d/1q1OEo_5fr20txl__bJDR1cFrzv3qzvLLXcgEVFq6h68)
 
+### Generating a Quote and Order Form
+
+Quotes are generated through HubSpot. Each quote should link to the subsciption
+agreement as well as include "Order Form" in the description.
+
 ### Generating a license
 
 For self-managed installs a license needs to be generated and installed to
