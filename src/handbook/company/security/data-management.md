@@ -97,6 +97,7 @@ outside of FlowForge.
  - FlowForge source code, unless classified otherwise
  - Marketing material
  - Product documentation
+ - The company handbook
 
 ## Data Handling Requirements
 
