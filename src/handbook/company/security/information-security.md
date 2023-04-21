@@ -15,11 +15,7 @@ This Information Security Policy is intended to protect FlowForge’s employees,
 partners and the company from illegal or damaging actions by individuals, either
 knowingly or unknowingly.
 
-Internet-related systems, including but not limited to computer equipment,
-software, operating systems, storage media, network accounts providing electronic
-mail, web browsing, and file transfers, are the property of FlowForge.
-
-These systems are to be used for business purposes in serving the interests of
+FlowForge systems are to be used for business purposes in serving the interests of
 the company, and of our clients and customers in the course of normal operations.
 
 Effective security is a team effort involving the participation and support of
@@ -73,7 +69,8 @@ inappropriate conduct and actions. It is the responsibility of all employees to
 report concerns about violations of our code of ethics or suspected violations
 of law or regulations that govern our operations.
 
-It is contrary to our values for anyone to retaliate against any employee or who
+We value [using candor](./../../company/values.md#use-candor) within the company.
+It is contrary to that value for anyone to retaliate against any employee or who
 in good faith reports an ethics violation, or a suspected violation of law, such
 as a complaint of discrimination, or suspected fraud, or suspected violation of
 any regulation. An employee who retaliates against someone who has reported a
@@ -95,26 +92,26 @@ to secure a device is prohibited.
 3. All end-user, personal (BYOD) or company owned devices used to access FlowForge
 information systems (i.e. email) must adhere to the following rules and requirements:
 
-4. Devices must be secured with a password (or equivalent control such as biometric)
+  1. Devices must be secured with a password (or equivalent control such as biometric)
    protected screensaver or screen lock.
 
-5. Devices must not be left unattended in public.
+  2. Devices must not be left unattended in public.
 
-6. Users must report any suspected misuse or theft of a mobile device immediately
+4. Users must report any suspected misuse or theft of a mobile device immediately
    to security@flowforge.com
 
-7. Avoid sharing credentials. Secrets must be stored safely, using features such
+5. Avoid sharing credentials. Secrets must be stored safely, using features such
    as GitHub Secrets. For accounts and other sensitive data that need to be shared
-   use the company-provided password manager and ensure an appropriate scope of
-   sharing is used.
+   use the company-provided password manager, 1Password, and ensure an appropriate
+   scope of sharing is used.
 
-9. Confidential information must not be stored on portable media such as USB drives
+6. Confidential information must not be stored on portable media such as USB drives
 
-9. Accessing FlowForge systems on public "shared" computers, such as hotel kiosks
+7. Accessing FlowForge systems on public "shared" computers, such as hotel kiosks
    is strictly prohibited
 
-10. Upon termination users agree to return all company owned devices and delete
-    all company information and accounts from any personal devices 
+8. Upon termination users agree to return all company owned devices and delete
+   all company information and accounts from any personal devices 
 
 ## Acceptable Use Policy
 
@@ -185,7 +182,8 @@ external audits.
 ## Exceptions
 
 Requests for an exception to this policy must be submitted to the CTO or CEO for
-approval.
+approval by raising an issue on the [admin repository](https://github.com/flowforge/admin){rel="nofollow"}
+or via email if confidentiality is required.
 
 ## Violations & Enforcement
 
