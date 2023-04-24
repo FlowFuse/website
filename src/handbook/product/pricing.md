@@ -10,16 +10,18 @@ This does not define specific dollar amounts for any items, those are commercial
 ## Teams
 
 Teams are the basic unit within FlowForge and the entity to which bills are charged.
-A teams can own zero or more projects, and 1 or more user can be members. Subject
-to access controls, some users can create projects, add devices (agents), and invite
-other members.
+A teams can create zero or more applications, and 1 or more user can be members.
+Subject to access controls, some users can add cloud instances and remote devices (agents)
+to applications, and invite other members.
 
 The number of teams for the open source offering of FlowForge is limited to 50.
 
-## Projects
+## Applications
 
 A project has one or more Node-RED instance associated with it. The team is billed
-based on the number of Node-RED instances consuming resources.
+based on the number of Node-RED instances consuming resources inside applications.
+
+## Cloud instances
 
 On the FlowForge Cloud, different levels of pricing is offered based on the
 resources that the instance has available (CPU/Mem). The price point is defined
@@ -27,8 +29,8 @@ by the instance type which allows for an abstraction of stacks and billing. Addi
 features may also be defined by the instance type, for example: Custom Domains support.
 
 Self-managed FlowForge installs are licensed based on the number of Node-RED instances, regardless of
-available resources for each. Open source installs are limited to 50 projects per
-instance, and some features for a project aren't available, for example Persistent Context.
+available resources for each. Open source installs are limited to 50 instances per
+FlowForge installation, and some features for instances aren't available, for example Persistent Context.
 
 ## Devices
 
