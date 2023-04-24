@@ -1,6 +1,6 @@
 ---
 layout: nohero
-title: Security Statment - FlowForge
+title: Security Statement - FlowForge
 ---
 
 <div class="prose prose-blue container m-auto max-w-4xl">
