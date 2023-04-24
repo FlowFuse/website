@@ -90,9 +90,11 @@
 <body class="ff-website leading-normal tracking-normal gradient text-gray-500 min-h-screen flex flex-col" style="">
     <div class="flex-grow base">
         <div class="w-full">
+            <!-- Events Banner -->
+            {% include "../components/events-banner.njk" %}
             <!-- Navigation Header -->
-            <header class="ff-header w-full container mx-auto p-6 md:max-w-screen-xl">
-                <nav class="relative w-full flex items-center justify-between">
+            <header class="ff-header w-full px-6 py-2">
+                <nav class="relative w-full flex items-center justify-between mx-auto container md:max-w-screen-xl">
                     <a class="ff-wordmark no-underline hover:no-underline font-bold h-8 w-40 flex flex-row"  href="/" style="font-family:'Baloo 2', sans-serif">
                         {% include "components/flowforge-wordmark.njk" %}
                     </a>

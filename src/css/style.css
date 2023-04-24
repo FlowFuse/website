@@ -100,7 +100,7 @@ width: 100%;}
     background-image: url('/images/ff-cloud_50.svg');
     background-repeat: no-repeat;
     background-position-x: 50%;
-    background-position-y: 100px;
+    background-position-y: 150px;
     background-size: contain;
 }
 main a {
@@ -193,9 +193,6 @@ video, iframe {
 h1,h2,h3,h4 {
     position: relative;
 }
-.ff-header {
-    z-index: 10;
-}
 .header-anchor {
     display: none;
     position:absolute;
@@ -283,13 +280,16 @@ h4:hover .header-anchor {
     Header
 */
 @layer components {
+    .ff-website .ff-header {
+        @apply sm:bg-gray-800;
+    }
     .ff-website header .ff-wordmark path,
     .ff-website header .ff-icon--gh path {
         fill: theme(colors.red.400);
     }
 
     .ff-website header nav {
-        @apply flex justify-between lg:grid lg:grid-cols-header;
+        @apply z-10 flex justify-between lg:grid lg:grid-cols-header;
     }
 
 
