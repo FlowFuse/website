@@ -446,23 +446,20 @@ module.exports = function(eleventyConfig) {
         const imgSrc = token.attrGet('src')
         const imgAlt = token.content
         const imgTitle = token.attrGet('title')
+
+        const folderPath = env.page.inputPath
         
-        const parsedTitle = (imgTitle || '').match(
-            /^(?<skip>@skip ?)?(?<title>.*)/
-        ).groups
-
-        if (parsedTitle.skip || imgSrc.startsWith('http')) {
-            const options = { ...htmlOpts }
-            const metadata = { img: [{ url: imgSrc }] }
-            return eleventyImage.generateHTML(metadata, options)
-        }
-
         const widths = [650] // width of blog prose
         const htmlSizes = null
 
         const async = false // cannot run async inside markdown
 
-        return imageHandler(imgSrc, imgAlt, parsedTitle.title, widths, htmlSizes, folderPath, eleventyConfig, async, DEV_MODE)
+        try {
+            return imageHandler(imgSrc, imgAlt, imgTitle, widths, htmlSizes, folderPath, eleventyConfig, async, DEV_MODE)
+        } catch (error) {
+            console.error(`Image generation error while handling: ${imgSrc} in ${folderPath} - ${error}, consider using @skip`)
+            throw error
+        }
     }
 
     eleventyConfig.setLibrary("md", markdownLib)
