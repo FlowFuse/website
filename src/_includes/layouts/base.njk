@@ -93,56 +93,68 @@
             <!-- Events Banner -->
             {% include "../components/events-banner.njk" %}
             <!-- Navigation Header -->
-            <header class="ff-header w-full px-6 py-2">
+            <header id="ff-header" class="ff-header">
                 <nav class="relative w-full flex items-center justify-between mx-auto container md:max-w-screen-xl">
                     <a class="ff-wordmark no-underline hover:no-underline font-bold h-8 w-40 flex flex-row"  href="/" style="font-family:'Baloo 2', sans-serif">
                         {% include "components/flowforge-wordmark.njk" %}
                     </a>
                     <div class="block md:hidden">
                         <button id="nav-toggle" class="text-white flex items-center px-3 py-2 text-red-hero">
-                            <svg class="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Menu</title><path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/></svg>
+                            <svg class="fill-current h-4 w-4" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Menu</title><path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/></svg>
                         </button>
                     </div>
 
-                    <ul id="nav-content" class="hidden absolute top-8 right-0 border shadow-sm md:inline md:shadow-none w-36 z-10 md:border-0 bg-white md:bg-transparent md:w-auto rounded md:static md:float-none md:flex md:flex-row flex-col items-center justify-between font-medium text no-underline">
-                        <li class="ff-nav-dropdown relative">
-                            <a class="flex items-center gap-2">product {% include "components/icons/chevron-down.svg" %}</a>
+                    <!-- Desktop Nav-->
+                    <ul id="nav-content" class="">
+                        {% navoption "pricing", "/pricing", 0 %}{% endnavoption %}
+                        {% navoption "product", null, 0 %}
                             <ul>
-                                <li><a href="/features/">features</a></li>
-                                <li><a href="/product/roadmap/">roadmap</a></li>
+                                {% navoption "features", "/features", 1, "star" %}{% endnavoption %}
+                                {% navoption "roadmap", "/product/roadmap", 1, "map" %}{% endnavoption %}
                             </ul>
-                        </li>
-                        <li class="flex"><a href="/pricing/">pricing</a></li>
-                        <li class="ff-nav-dropdown relative">
-                            <a class="flex items-center gap-2">solutions {% include "components/icons/chevron-down.svg" %}</a>
+                        {% endnavoption %}
+                        {% navoption "solutions", null, 0 %}
                             <ul>
-                                <li><a href="/solutions/manufacturing/">manufacturing</a></li>
-                                <li><a href="/solutions/device-management/">device management</a></li>
-                                <li><a href="/solutions/data-integration/">data integration</a></li>
+                                {% navoption "manufacturing", "/solutions/manufacturing", 1, "cog" %}{% endnavoption %}
+                                {% navoption "device management", "/solutions/device-management", 1, "chip" %}{% endnavoption %}
+                                {% navoption "data integration", "/solutions/data-integration", 1, "db" %}{% endnavoption %}
                             </ul>
-                        </li>
-                        <li class="ff-nav-dropdown relative">
-                            <a class="flex items-center gap-2">company {% include "components/icons/chevron-down.svg" %}</a>
-                            <ul>
-                                <li><a href="/about/">about</a></li>
-                                <li><a href="/blog/">blog</a></li>
-                                <li><a href="/team/">team</a></li>
-                                <li><a href="https://boards.greenhouse.io/flowforge">jobs</a></li>
-                                <li><a href="/handbook/">handbook</a></li>
-                                <li><a href="/support/">support</a></li>
-                                <li><a href="/contact-us/">contact us</a></li>
-                                <li><a href="/privacy-policy/">privacy</a></li>
+                        {% endnavoption %}
+                        {% navoption "company", null, 0 %}
+                            <ul class="grid grid-cols-2">
+                                {% navoption "about", "/about", 1, "info" %}{% endnavoption %}
+                                {% navoption "blog", "/blog", 1, "newspaper" %}{% endnavoption %}
+                                {% navoption "team", "/team", 1, "users" %}{% endnavoption %}
+                                {% navoption "jobs", "https://boards.greenhouse.io/flowforge", 1, "case" %}{% endnavoption %}
+                                {% navoption "handbook", "/handbook", 1, "star" %}{% endnavoption %}
+                                {% navoption "support", "/support", 1, "chat" %}{% endnavoption %}
+                                {% navoption "contact us", "/contact-us/", 1, "mail" %}{% endnavoption %}
+                                {% navoption "privacy", "/privacy", 1, "privacy" %}{% endnavoption %}
                             </ul>
-                        </li>
-                        <li class="ff-nav-dropdown relative">
-                            <a class="flex items-center gap-2">resources {% include "components/icons/chevron-down.svg" %}</a>
-                            <ul>
-                                <li><a href="/blog/">blog</a></li>
-                                <li><a href="/community/newsletter/">newsletter</a></li>
-                                <li><a href="/webinars/">webinars</a></li>
+                        {% endnavoption %}
+                        {% navoption "resources", null, 0 %}
+                            <ul class="block sm:hidden">
+                                {% navoption "FlowForge", null, 1, "flowforge", true %}
+                                    <ul>
+                                        {% navoption "getting started", "/blog", 2, "clip-list" %}{% endnavoption %}
+                                        {% navoption "github", "https://github.com/flowforge/flowforge", 2, "github", true %}{% endnavoption %}
+                                        {% navoption "docs", "/docs", 2, "document-text" %}{% endnavoption %}
+                                        {% navoption "blog", "/blog", 2, "newspaper" %}{% endnavoption %}
+                                        {% navoption "webinars", "/blog", 2, "screen" %}{% endnavoption %}
+                                        {% navoption "newsletters", "/blog", 2, "mail-open" %}{% endnavoption %}
+                                    </ul>
+                                {% endnavoption %}
+                                {% navoption "Node-RED", null, 1, "nodered" %}
+                                    <ul>
+                                        {% navoption "getting started", "/blog/2023/01/getting-started-with-node-red/", 2, "clip-list" %}{% endnavoption %}
+                                        {% navoption "github", "https://github.com/node-red/node-red", 2, "github", true %}{% endnavoption %}
+                                        {% navoption "docs", "https://nodered.org/docs/", 2, "document-text" %}{% endnavoption %}
+                                        {% navoption "support forums", "https://discourse.nodered.org/", 2, "star" %}{% endnavoption %}
+                                    </ul>
+                                {% endnavoption %}
                             </ul>
-                        </li>
-                        <li class="flex"><a href="/docs/">docs</a></li>
+                        {% endnavoption %}
+                        {% navoption "docs", "/docs", 0, false %}{% endnavoption %}
                     </ul>
 
                     <ul class="hidden top-8 right-0 border shadow-sm md:inline md:shadow-none w-36 z-10 md:border-0 bg-white md:bg-transparent md:w-auto rounded md:static md:float-none md:flex md:flex-row flex-col items-center justify-end font-medium text no-underline">
@@ -151,6 +163,10 @@
                         {# <li class="flex"><a class="ff-icon--gh" rel="noopener" href="https://github.com/flowforge" target="_blank">{% include "components/github.njk" %}</a></li> #}
                     </ul>
                 </nav>
+                <div id="mobile-ctas" class="hidden fixed bottom-0 z-20">
+                    <a href="https://app.flowforge.com" class="ff-btn ff-btn--tertiary">Sign In</a>
+                    <a class="ff-btn ff-btn--primary" href="https://app.flowforge.com/account/create" onclick="capture('cta-join', {'position': 'header'})">Free Trial</a>
+                </div>    
             </header>
             <!-- Main Content -->
             <main class="flex flex-col mx-auto items-center justify-center">
@@ -202,8 +218,8 @@
 </body>
 <script>
 document.getElementById('nav-toggle').onclick = function(){
-    let classes = document.getElementById("nav-content").classList;
-    classes.toggle("hidden");
+    let classes = document.getElementById("ff-header").classList;
+    classes.toggle("mobile-open");
 }
 </script>
 

@@ -291,6 +291,39 @@ module.exports = function(eleventyConfig) {
         }
     });
 
+    eleventyConfig.addPairedShortcode("navoption", function(content, label, link, depth, icon, iconSolid) {
+        var svg, iconSvg = '', classes, chevron
+        if (icon) {
+            svg = loadSVG(icon)
+            if (!iconSolid) {
+                iconSvg = `<svg class="ff-icon ff-icon-sm" fill="none" viewbox="0 0 24 24">${svg}</svg>`
+            } else {
+                iconSvg = `<svg class="ff-icon ff-icon-sm ff-icon--solid" fill="none" viewbox="0 0 24 24">${svg}</svg>`
+            }
+        }
+        const chevronDown = loadSVG('chevron-down')
+        if (content) {
+            classes = "ff-nav-dropdown relative"
+        } else {
+            classes="flex"
+        } 
+        // if (depth === 0) {
+        //     if (content) {
+        //         classes = "ff-nav-dropdown relative"
+        //     } else {
+        //         classes="flex"
+        //     } 
+        // } else {
+        //     classes = ""
+        // }
+
+        if (content) {
+            return `<li class="${classes}"><a class="flex items-center gap-2">${iconSvg}${label}<span>${chevronDown}</span></a>${content}</li>`
+        } else {
+            return `<li class="${classes}"><a class="flex items-center gap-2" href="${link}">${iconSvg}${label}</a></li>`
+        }
+    });
+
     // Custom Shortcodes
     function resolvedImagePath(inputPath, relativeFilePath) {
         // Skip URLs
