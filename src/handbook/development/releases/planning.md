@@ -47,7 +47,7 @@ that as priorities can change through a release.
   - Finalize the planning
 
 ##### Friday
-- [Retrospective/Kick-Off](https://flowforge.com/handbook/development/releases/planning/#retrospective%2Fkick-off)
+- [Retrospective/Kick-Off](planning.md#retrospective%2Fkick-off)
 
 
 ### Issues
