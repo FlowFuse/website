@@ -33,7 +33,7 @@ There are three types of issue used for planning work:
  - **Task**: a piece of work that isn't necessarily tied to a specific Epic or Story.
    For example, items related to technical debt or house-keeping chores.
 
-Whenever an issue is raised, it will be reviewed by the Product Owner/CTO and added
+Whenever an issue is raised, it will be reviewed by the Product Manager/CTO and added
 to the Product Board for prioritization and planning. The exception to this are
 tasks/bugs related to work already in progress and that need to be addressed in
 the current milestone. They should be added to the Development Board and current
@@ -58,12 +58,12 @@ identifies the themes and priorities for the releases.
 #### Product Backlog Board
 
 [This board](https://github.com/orgs/flowforge/projects/3/views/1) is maintained
-by the Product Owner (PO) and CTO. It is the main entry point for all epics and
+by the Product Manager (PM) and CTO. It is the main entry point for all epics and
 stories.
 
 Items on this board are put into one of the following states to indicate their priority in the backlog, they can move up or down the priority depending on business needs.
 
- - 'No Status' This is where all new items initially land so that they can be appropriately triaged and assigned by the PO and CTO
+ - 'No Status' This is where all new items initially land so that they can be appropriately triaged and assigned by the PM and CTO
  - 'Long' This is the long term horizon, items that we know we will want to do one day but at the moment are long term goals, typically this could be 12 months away or more.
  - 'Medium' These are items that are in the 6-12 month time frame. 
  - 'Short' These are items in the 3-6 month time frame, Often these items will get pulled into a milestone from this point depending on capacity.
@@ -123,7 +123,7 @@ by the CTO. This meeting includes 2 parts:
     went well and what could be improved and generate action items to act on the
     feedback.
  2. Kicking off the next release. The involves:
-    1. The Product Owner describing the themes, goals and priorities of the new release
+    1. The Product Manager describing the themes, goals and priorities of the new release
     2. Reviewing the [Development Board](https://github.com/orgs/flowforge/projects/1/views/1)
        for the new milestone.
        High-priority items are assigned owners so that everyone has something to
@@ -155,7 +155,7 @@ As stories and tasks are assigned to milestones, it's unlikely there's not
 enough work to be done. On the flip side, this means that not all scheduled epics
 or stories will be completed.
 
-The Product Owner/CTO have overall responsibility to ensure any 'must-have' items
+The Product Manager/CTO have overall responsibility to ensure any 'must-have' items
 are making progress in a release.
 
 ### Defining Done
@@ -167,7 +167,6 @@ criteria are met:
  - Suitable unit/system level tests have been added
  - Documentation has been updated
  - Acceptance criteria identified in the Story have been met
- - Product Owner accepts the story is complete
 
 #### Feature Demos
 
