@@ -50,7 +50,11 @@ that as priorities can change through a release.
 - [Retrospective/Kick-Off](https://flowforge.com/handbook/development/releases/planning/#retrospective%2Fkick-off)
 
 
-### Issue types
+### Issues
+
+Issues are the building blocks of planning activities, helping the team to manage and prioritize work. 
+
+#### Types
 
  - **Epic**: a significant feature or piece of work that doesn't easily fit into
    a single release. It will typically have a number of Stories
@@ -67,7 +71,6 @@ that as priorities can change through a release.
 
   - **Feature Requests**: suggestions or ideas submitted by users or stakeholders for new functionalities, enhancements, or improvements to the existing software or system. Feature requests should be evaluated, prioritized, and potentially incorporated into the product roadmap, often being transformed into Epics or Stories for implementation in future releases.
 
-
 Whenever an issue is raised, it will be reviewed by the Product Manager/CTO and added
 to the Product Board for prioritization and planning. The exception to this are
 tasks/bugs related to work already in progress and that need to be addressed in
@@ -77,6 +80,18 @@ milestone directly.
 We label some items as `headline`. These are items we want to highlight in the release
 announcement material and should clearly describe the value they bring to our users.
 
+#### Effort Estimation
+To more accurately understand which tasks can be scheduled without overloading our team, everyone conducts an initial, high-level analysis when creating an issue to assign weight estimates. We recognize that these estimates might not be precise. If the person who creates an issue cannot provide an estimate, any FlowForge team member is welcome to contribute one.
+
+If a developer, who is an expert in a field, wants to change an estimation, they are encouraged to do so immediately. There is no blame for "wrong" estimation; we all have to work together to achieve good planning. It is better to have a rough estimation than no estimation at all. The final decision on estimations in general lies with the CTO.
+
+If a larger number of not estimated tasks need to be estimated, e.g. for a complex epic, the CTO and PM can initiate a [Planning Poker](https://en.wikipedia.org/wiki/Planning_poker) session.
+
+There are two crucial elements to consider when determining an issue's weight: the scope of the work and its complexity. The amount of work pertains to the anticipated extent of modifications to the codebase. A minor adjustment might only require a single alteration in a single file, whereas a more extensive modification could necessitate multiple alterations across numerous files and sections of our codebase. Complexity can be divided into two components in practice: the degree to which the problem is understood and the expected level of problem-solving challenges.
+
+See [labels section](https://flowforge.com/handbook/development/packaging/#labels) for sizing options.
+
+Epics do not necessarily need an estimation, as long as all subissues have estimations, Epics are the sum of all subtasks, as a result, it is possible to handle epics larger than XXL.
 
 ### Project Boards
 
