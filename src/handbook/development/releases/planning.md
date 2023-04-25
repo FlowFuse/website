@@ -20,7 +20,37 @@ We use GitHub issues for planning the work in a release. A Milestone should exis
 for the current release (N) and the next one (N+1). We do not schedule work beyond
 that as priorities can change through a release.
 
-There are three types of issue used for planning work:
+---
+
+#### Week 3 - Planning Week
+
+##### Monday
+- Establish capacity
+  - The CTO forecasts the team's capacity for the upcoming iteration by providing the PM with a point estimate, based on historical velocity and any anticipated absences (e.g., holidays).
+
+##### During the Week
+- Preparation of next Iteration and Release
+
+---
+
+#### Week 4 - Release Week
+
+##### Tuesday
+- Product Meeting
+  - The PM presents the planning for the next Release.
+  - Joint discussion and agreement on the Highlights and Objectives.
+
+##### Thursday
+- Release day, details see [here](./process.md).
+- CTO and PM—“finishing touch meeting”
+  - Talk about leftovers from last Iteration
+  - Finalize the planning
+
+##### Friday
+- [Retrospective/Kick-Off](https://flowforge.com/handbook/development/releases/planning/#retrospective%2Fkick-off)
+
+
+### Issue types
 
  - **Epic**: a significant feature or piece of work that doesn't easily fit into
    a single release. It will typically have a number of Stories
@@ -33,6 +63,11 @@ There are three types of issue used for planning work:
  - **Task**: a piece of work that isn't necessarily tied to a specific Epic or Story.
    For example, items related to technical debt or house-keeping chores.
 
+  - **Bugs**: issues that arise from errors, flaws, or unintended behavior in the existing code or system. Bugs negatively impact the user experience or the functionality of the software. They should be addressed and resolved by the development team, prioritized based on their severity, and included in the appropriate release for fixes.
+
+  - **Feature Requests**: suggestions or ideas submitted by users or stakeholders for new functionalities, enhancements, or improvements to the existing software or system. Feature requests should be evaluated, prioritized, and potentially incorporated into the product roadmap, often being transformed into Epics or Stories for implementation in future releases.
+
+
 Whenever an issue is raised, it will be reviewed by the Product Manager/CTO and added
 to the Product Board for prioritization and planning. The exception to this are
 tasks/bugs related to work already in progress and that need to be addressed in
@@ -41,6 +76,7 @@ milestone directly.
 
 We label some items as `headline`. These are items we want to highlight in the release
 announcement material and should clearly describe the value they bring to our users.
+
 
 ### Project Boards
 
