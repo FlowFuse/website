@@ -89,7 +89,7 @@ If a larger number of not estimated tasks need to be estimated, e.g. for a compl
 
 There are two crucial elements to consider when determining an issue's weight: the scope of the work and its complexity. The amount of work pertains to the anticipated extent of modifications to the codebase. A minor adjustment might only require a single alteration in a single file, whereas a more extensive modification could necessitate multiple alterations across numerous files and sections of our codebase. Complexity can be divided into two components in practice: the degree to which the problem is understood and the expected level of problem-solving challenges.
 
-See [labels section](https://flowforge.com/handbook/development/packaging/#labels) for sizing options.
+See [labels section](../packaging.md#labels) for sizing options.
 
 Epics do not necessarily need an estimation, as long as all subissues have estimations, Epics are the sum of all subtasks, as a result, it is possible to handle epics larger than XXL.
 
