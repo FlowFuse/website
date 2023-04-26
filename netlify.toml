@@ -2,7 +2,6 @@
 port = 8080
 framework = "#static"
 command = "npx @11ty/eleventy --quiet --watch"
-autoLaunch = false
 
 [build]
 command = "npm run build"
