@@ -19,6 +19,22 @@ From time to time we may wish to provide a user with some free access to
 the managed FlowForge platform. In this situation we will create a coupon code
 in Stripe which can be shared with the users.
 
+To create a couple on Stripe:
+
+1. Log into Stripe.
+2. Use the top search bar to 'Create a coupon'. 
+3. Give it a name you will remember, ideally descrbing the reason for issuing the coupon.
+4. Select fixed amount discount.
+5. Don't add more credit than you need.
+6. Leave Duration as forever.
+7. Select 'Limit the total number of times this coupon can be redeemed'.
+8. Input 1 time.
+9. Toggle 'Use customer-facing codes'.
+10. Add a code which cannot be easily guessed, ideally a password type format, at least 8 characters with a mix of upper and lower case letters, and numbers.
+11. Press 'Create coupon' which is bottom right of the page.
+
+That coupon code can now be used when you are asked to provide payment card details.
+
 ## Credit
 Occasionally we may need to apply a credit to a customers account as a goodwill gesture to cover an issue they have experienced, this should be the exception and must be approved by either CTO or CEO. We will also check to see if the customer has received any previous credits on their account.
 
