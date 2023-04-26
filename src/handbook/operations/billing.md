@@ -26,7 +26,7 @@ To create a couple on Stripe:
 3. Give it a name you will remember, ideally descrbing the reason for issuing the coupon.
 4. Select fixed amount discount.
 5. Don't add more credit than you need.
-6. Leave Duration as forever.
+6. Set the Duration as the shortest amount of time this coupon is needed.
 7. Select 'Limit the total number of times this coupon can be redeemed'.
 8. Input 1 time.
 9. Toggle 'Use customer-facing codes'.
