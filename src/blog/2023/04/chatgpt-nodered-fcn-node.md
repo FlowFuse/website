@@ -42,7 +42,7 @@ Breaking this prompt down:
 - ***"Always respond with content for a Node-RED function node"***: Ensured no surrounding `function () {}` definition and set expectations that the function would deal with a `msg` and likely `msg.payload` object.
 - ***"Don't add any commentary"***: ChatGPT likes to, well, chat. It would always return raw text justifying decisions, etc. Here, we just wanted the code.
 - ***"Always use const or let instead of var"***: This was Steve being picky.
-- ***"Always return msg, unless told otherwise"***: We found this wasn't mostly required, but occassitional it would try to return a different variable, and we'd lose context of `msg.payload`, or other data stored in `msg`. So this just made sure we had the consistency.
+- ***"Always return msg, unless told otherwise"***: We found this wasn't mostly required, but occasionally it would try to return a different variable, and we'd lose context of `msg.payload`, or other data stored in `msg`. So this just made sure we had the consistency.
 
 The response form this API call is then populated into the contents of the active tab in the function node:
 
@@ -61,4 +61,8 @@ to have the code insert wherever the cursor last was in order to add to existing
 - **Retain Conversation History:** Each time a new prompt is provided by the Node-RED user, we send a fresh conversation to OpenAI,
 meaning that knowledge of previously asked questions are not retained.
 
-- **Clientside ChatGPT Config:** Currently, when you add a new "function-gpt" node you need to click "Deploy", then ask the question, then "deploy" again in order to see that functionality in action. Our ChatGPT interaction lives server-side, so Node-RED needs that deploy in order to get the relevant details from the front-end confgiuration provided by the user. Ideally, we'd be smarter here and pass client-side creds with the call such that we can configure a the time of the call.
+- **Client side ChatGPT Config:** Currently, when you add a new "function-gpt" node you need to select the ChatGTP
+Config node and click "Deploy" before you can ask it a question. Our ChatGPT interaction operates server-side (to
+protect your API key), so Node-RED needs that in the runtime first, before a call to ChatGPT can be made. Ideally,
+we'd be smarter here and pass client-side creds along with the call such that we can use any changes made by the
+user at the time of the call.
