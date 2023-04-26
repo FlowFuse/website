@@ -282,7 +282,7 @@ h4:hover .header-anchor {
 */
 @layer components {
     .ff-website .ff-header {
-        @apply bg-gray-800 w-full px-6 py-4 sm:py-0 top-0 z-10 relative;
+        @apply bg-gray-800 w-full px-6 py-4 sm:py-6 md:py-0 top-0 z-10 relative;
     }
     .ff-website header .ff-wordmark path,
     .ff-website header .ff-icon--gh path {
@@ -294,13 +294,13 @@ h4:hover .header-anchor {
     }
 
     .ff-website header nav .ff-nav-chevron {
-        @apply block sm:hidden;
+        @apply block md:hidden;
     }
 
     .ff-website header #nav-content {
         height: calc(100% - 64px - 64px);
-        @apply transition-height fixed mt-8 w-full overflow-hidden border-none max-h-0 top-8 right-0 border-t shadow-sm z-10 bg-gray-800 flex-col items-center justify-between font-medium no-underline;
-        @apply sm:transition-opacity sm:mt-0 sm:h-auto sm:overflow-visible sm:max-h-20 sm:relative md:inline md:shadow-none md:border-0 md:bg-transparent md:w-auto md:static md:float-none md:flex md:flex-row;
+        @apply top-0 transition-height fixed mt-8 w-full overflow-hidden border-none max-h-0 right-0 border-t shadow-sm z-10 bg-gray-800 flex-col items-center justify-between font-medium no-underline;
+        @apply md:mt-0 md:h-auto md:overflow-visible md:max-h-20 md:relative md:shadow-none md:border-0 md:bg-transparent md:w-auto lg:static md:float-none md:flex md:flex-row;
     }
 
     .ff-website header #nav-toggle {
@@ -372,7 +372,7 @@ h4:hover .header-anchor {
         width: max-content;
         max-height: 0;
         overflow: hidden;
-        @apply sm:mt-2 sm:absolute md:rounded-lg sm:shadow-nav sm:rounded sm:bg-gray-700;
+        @apply md:mt-2 md:absolute md:rounded-lg md:shadow-nav md:bg-gray-700;
         @apply transition-navdropdown;
     }
 
@@ -381,7 +381,7 @@ h4:hover .header-anchor {
         position: absolute;
         top: -18px;
         right: 3rem;
-        @apply hidden sm:block;
+        @apply hidden md:block;
     }
 
     .ff-website header .ff-nav-dropdown a {

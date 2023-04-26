@@ -95,8 +95,11 @@
             <!-- Navigation Header -->
             <header id="ff-header" class="ff-header">
                 <nav class="relative w-full flex items-center justify-between mx-auto container md:max-w-screen-xl">
-                    <a class="ff-wordmark no-underline hover:no-underline font-bold h-8 w-40 flex flex-row"  href="/" style="font-family:'Baloo 2', sans-serif">
+                    <a class="flex md:hidden lg:flex ff-wordmark no-underline hover:no-underline font-bold h-8 w-40 flex-row"  href="/" style="font-family:'Baloo 2', sans-serif">
                         {% include "components/flowforge-wordmark.njk" %}
+                    </a>
+                    <a class="w-8 h-8 hidden md:block lg:hidden" href="/" style="font-family:'Baloo 2', sans-serif">
+                        {% include "components/flowforge-square.svg" %}
                     </a>
                     <div class="block md:hidden">
                         <button id="nav-toggle" class="text-white flex items-center text-red-hero">
@@ -105,7 +108,7 @@
                         </button>
                     </div>
 
-                    <!-- Desktop Nav-->
+                    <!-- Nav -->
                     <ul id="nav-content" class="">
                         {% navoption "pricing", "/pricing", 0 %}{% endnavoption %}
                         {% navoption "product", null, 0 %}
