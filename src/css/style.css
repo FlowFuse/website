@@ -16,8 +16,9 @@ html, body {
 }
 
 * {
-    transition: 0.3s background-color, 0.3s color, 0.3s fill, 0.3s stroke;
-    -webkit-transition: 0.3s background-color, 0.3s color, 0.3s fill, 0.3s stroke;
+    --tdur: 0.15s;
+    transition: var(--tdur) background-color, var(--tdur) color, var(--tdur) fill, var(--tdur) stroke;
+    -webkit-transition: var(--tdur) background-color, var(--tdur) color, var(--tdur) fill, var(--tdur) stroke;
 }
 
 /*
@@ -281,7 +282,7 @@ h4:hover .header-anchor {
 */
 @layer components {
     .ff-website .ff-header {
-        @apply bg-gray-800 w-full px-6 py-4 sm:py-2 top-0 z-10 relative;
+        @apply bg-gray-800 w-full px-6 py-4 sm:py-0 top-0 z-10 relative;
     }
     .ff-website header .ff-wordmark path,
     .ff-website header .ff-icon--gh path {
@@ -292,17 +293,44 @@ h4:hover .header-anchor {
         @apply z-10 flex justify-between lg:grid lg:grid-cols-header;
     }
 
+    .ff-website header nav .ff-nav-chevron {
+        @apply block sm:hidden;
+    }
+
     .ff-website header #nav-content {
         height: calc(100% - 64px - 64px);
-        transition: 0.3s max-height;
-        overflow: hidden;
-        @apply fixed mt-8 w-full border-none max-h-0 top-8 right-0 border-t shadow-sm z-10 bg-gray-800 flex-col items-center justify-between font-medium no-underline;
-        @apply sm:relative md:inline md:shadow-none md:border-0 md:bg-transparent md:w-auto md:static md:float-none md:flex md:flex-row;
+        @apply transition-height fixed mt-8 w-full overflow-hidden border-none max-h-0 top-8 right-0 border-t shadow-sm z-10 bg-gray-800 flex-col items-center justify-between font-medium no-underline;
+        @apply sm:transition-opacity sm:mt-0 sm:h-auto sm:overflow-visible sm:max-h-20 sm:relative md:inline md:shadow-none md:border-0 md:bg-transparent md:w-auto md:static md:float-none md:flex md:flex-row;
+    }
+
+    .ff-website header #nav-toggle {
+        @apply py-2 px-3 ;
+    }
+
+    .ff-website header #nav-toggle.mobile-open {
+        @apply py-1 px-2;
+    }
+
+    .ff-website header #nav-toggle.mobile-open .close,
+    .ff-website header #nav-toggle .burger {
+        @apply block;
+    }
+
+    .ff-website header #nav-toggle.mobile-open .burger,
+    .ff-website header #nav-toggle .close {
+        @apply hidden;
     }
 
     .ff-website header #mobile-ctas {
         transition: 0.3s bottom;
         @apply -bottom-20 fixed w-full flex left-0 pl-4 right-0 pr-4 bg-gray-900 py-4 gap-4;
+    }
+    .ff-website header #mobile-ctas button,
+    .ff-website header #mobile-ctas a {
+        @apply uppercase flex-grow;
+    }
+    .ff-website header #mobile-ctas a.ff-btn--tertiary {
+        @apply text-red-400 border-red-400 border border-solid;
     }
 
     .ff-website header #nav-content li {
@@ -323,7 +351,7 @@ h4:hover .header-anchor {
 
     .ff-website header ul a {
         border-color: theme(colors.gray.200);
-        @apply py-3 px-4 text-base sm:border-b-0 sm:text-lg text-center;
+        @apply py-3 sm:py-4 px-4 text-base sm:border-b-0 sm:text-lg text-center;
     }
 
     .ff-website header ul a.ff-btn {
@@ -340,28 +368,36 @@ h4:hover .header-anchor {
         z-index: 10;
         right: 0;
         min-width: 100%;
-        margin-right: 1rem;
         white-space: nowrap;
         width: max-content;
         max-height: 0;
         overflow: hidden;
-        @apply sm:absolute md:rounded-b-md sm:shadow-nav;
-        transition: max-height 0.25s;
+        @apply sm:mt-2 sm:absolute md:rounded-lg sm:shadow-nav sm:rounded sm:bg-gray-700;
+        @apply transition-navdropdown;
+    }
+
+    .ff-website header .ff-nav-dropdown > ul:before {
+        content: url("/images/nav-arrow.svg");
+        position: absolute;
+        top: -18px;
+        right: 3rem;
+        @apply hidden sm:block;
     }
 
     .ff-website header .ff-nav-dropdown a {
         cursor: default;
-        @apply w-full sm:w-auto;
+        @apply w-full sm:w-auto py-3;
     }
 
     /* nested list */
-    .ff-website header .ff-nav-dropdown:hover > ul,
-    .ff-website header .ff-nav-dropdown:focus-within > ul {
+    .ff-website header .ff-nav-dropdown:hover > ul:not(.ff-nav-nested-cols),
+    .ff-website header .ff-nav-dropdown:focus-within > ul:not(.ff-nav-nested-cols) {
         max-height: 400px;
+        @apply sm:py-2 sm:overflow-visible;
     }
 
     .ff-website header .ff-nav-dropdown ul li {
-        @apply border-b text-left sm:bg-gray-700 sm:text-right sm:border-gray-600
+        @apply border-b text-left sm:bg-gray-700 sm:text-right sm:border-gray-600 font-normal;
     }
 
     .ff-website header .ff-nav-dropdown >ul li a {
@@ -373,6 +409,11 @@ h4:hover .header-anchor {
         fill: white;
     }
 
+    /* double nested */
+    .ff-website header .ff-nav-dropdown .ff-nav-dropdown >ul {
+        @apply sm:max-h-full sm:overflow-visible;
+    }
+
     .ff-website header .ff-nav-dropdown .ff-nav-dropdown >ul li a {
         @apply pl-12;
     }
@@ -381,7 +422,8 @@ h4:hover .header-anchor {
         @apply md:text-white;
     }
 
-    .ff-website header .ff-nav-dropdown >ul li:hover > a {
+    .ff-website header .ff-nav-dropdown >ul li:hover > a,
+    .ff-website header .ff-nav-dropdown >ul li:hover > a svg {
         color: theme(colors.teal.300);
     }
 
@@ -401,12 +443,44 @@ h4:hover .header-anchor {
     .ff-website header.mobile-open #mobile-ctas {
         @apply bottom-0;
     }
-    .ff-website header.mobile-open #mobile-ctas button,
-    .ff-website header.mobile-open #mobile-ctas a {
-        @apply uppercase flex-grow;
+
+    /* Nested Cols - Resources */
+
+    .ff-website header .ff-nav-dropdown .ff-nav-nested-cols {
+        @apply py-0 rounded-lg overflow-hidden bg-gray-600;
     }
-    .ff-website header.mobile-open #mobile-ctas a.ff-btn--tertiary {
-        @apply text-red-400 border-red-400 border border-solid;
+
+    .ff-website header .ff-nav-dropdown:focus-within .ff-nav-nested-cols,
+    .ff-website header .ff-nav-dropdown:hover .ff-nav-nested-cols {
+        max-height: 400px;
+        @apply overflow-visible;
+    }
+
+    .ff-website header .ff-nav-dropdown .ff-nav-nested-cols ul {
+        @apply my-4;
+    }
+
+    .ff-website header .ff-nav-dropdown .ff-nav-nested-cols >div:first-child > li {
+        @apply py-3 rounded-tl-lg;
+    }
+    .ff-website header .ff-nav-dropdown .ff-nav-nested-cols >div:last-child > li {
+        @apply rounded-tr-lg;
+    }
+
+    .ff-website header .ff-nav-dropdown .ff-nav-nested-cols >div:first-child > li > a {
+        @apply py-0 border-r border-gray-500 border-solid;
+    }
+
+    .ff-website header .ff-nav-dropdown .ff-nav-nested-cols >div:first-child ul {
+        @apply border-r border-gray-500 border-solid;
+    }
+
+    .ff-website header .ff-nav-dropdown .ff-nav-nested-cols ul li {
+        @apply bg-gray-600;
+    }
+
+    .ff-website header .ff-nav-dropdown .ff-nav-nested-cols >div >li {
+        @apply font-medium;
     }
 }
 

@@ -99,8 +99,9 @@
                         {% include "components/flowforge-wordmark.njk" %}
                     </a>
                     <div class="block md:hidden">
-                        <button id="nav-toggle" class="text-white flex items-center px-3 py-2 text-red-hero">
-                            <svg class="fill-current h-4 w-4" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Menu</title><path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/></svg>
+                        <button id="nav-toggle" class="text-white flex items-center text-red-hero">
+                            <svg class="burger fill-current h-4 w-4" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Menu</title><path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/></svg>
+                            <svg class="close fill-current h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" /></svg>
                         </button>
                     </div>
 
@@ -121,21 +122,22 @@
                             </ul>
                         {% endnavoption %}
                         {% navoption "company", null, 0 %}
-                            <ul class="grid grid-cols-2">
+                            <ul class="grid grid-cols-2 sm:grid-rows-4 sm:grid-flow-col">
                                 {% navoption "about", "/about", 1, "info" %}{% endnavoption %}
                                 {% navoption "blog", "/blog", 1, "newspaper" %}{% endnavoption %}
                                 {% navoption "team", "/team", 1, "users" %}{% endnavoption %}
-                                {% navoption "jobs", "https://boards.greenhouse.io/flowforge", 1, "case" %}{% endnavoption %}
                                 {% navoption "handbook", "/handbook", 1, "star" %}{% endnavoption %}
+                                {% navoption "jobs", "https://boards.greenhouse.io/flowforge", 1, "case" %}{% endnavoption %}
                                 {% navoption "support", "/support", 1, "chat" %}{% endnavoption %}
                                 {% navoption "contact us", "/contact-us/", 1, "mail" %}{% endnavoption %}
                                 {% navoption "privacy", "/privacy", 1, "privacy" %}{% endnavoption %}
                             </ul>
                         {% endnavoption %}
                         {% navoption "resources", null, 0 %}
+                            <!-- Mobile -->
                             <ul class="block sm:hidden">
-                                {% navoption "FlowForge", null, 1, "flowforge", true %}
-                                    <ul>
+                                {% navoption "FlowForge", null, 1, "flowforge", true, "col-span-2" %}
+                                    <ul class="sm:grid sm:grid-flow-col sm:grid-cols-2 sm:grid-rows-4">
                                         {% navoption "getting started", "/blog", 2, "clip-list" %}{% endnavoption %}
                                         {% navoption "github", "https://github.com/flowforge/flowforge", 2, "github", true %}{% endnavoption %}
                                         {% navoption "docs", "/docs", 2, "document-text" %}{% endnavoption %}
@@ -152,6 +154,29 @@
                                         {% navoption "support forums", "https://discourse.nodered.org/", 2, "star" %}{% endnavoption %}
                                     </ul>
                                 {% endnavoption %}
+                            </ul>
+                            <!-- Desktop -->
+                            <ul class="ff-nav-nested-cols hidden bg-gray-600 sm:flex">
+                                <div class="flex-grow">
+                                    {% navoption "Node-RED", null, 1, "nodered", false, "bg-gray-700 pointer-events-none" %}{% endnavoption %}
+                                    <ul>
+                                        {% navoption "getting started", "/blog/2023/01/getting-started-with-node-red/", 2, "clip-list" %}{% endnavoption %}
+                                        {% navoption "github", "https://github.com/node-red/node-red", 2, "github", true %}{% endnavoption %}
+                                        {% navoption "docs", "https://nodered.org/docs/", 2, "document-text" %}{% endnavoption %}
+                                        {% navoption "support forums", "https://discourse.nodered.org/", 2, "star" %}{% endnavoption %}
+                                    </ul>
+                                </div>
+                                <div class="flex-grow-[2]">
+                                    {% navoption "FlowForge", null, 1, "flowforge", true, "bg-gray-700 border-r border-gray-600" %}{% endnavoption %}
+                                    <ul class="sm:grid sm:grid-flow-col sm:grid-rows-4 sm:grid-cols-2">
+                                        {% navoption "getting started", "/blog", 2, "clip-list" %}{% endnavoption %}
+                                        {% navoption "github", "https://github.com/flowforge/flowforge", 2, "github", true %}{% endnavoption %}
+                                        {% navoption "docs", "/docs", 2, "document-text" %}{% endnavoption %}
+                                        {% navoption "blog", "/blog", 2, "newspaper" %}{% endnavoption %}
+                                        {% navoption "webinars", "/blog", 2, "screen" %}{% endnavoption %}
+                                        {% navoption "newsletters", "/blog", 2, "mail-open" %}{% endnavoption %}
+                                    </ul>
+                                </div>
                             </ul>
                         {% endnavoption %}
                         {% navoption "docs", "/docs", 0, false %}{% endnavoption %}
@@ -218,6 +243,9 @@
 </body>
 <script>
 document.getElementById('nav-toggle').onclick = function(){
+    // self
+    document.getElementById("nav-toggle").classList.toggle("mobile-open");
+
     let classes = document.getElementById("ff-header").classList;
     classes.toggle("mobile-open");
 }
