@@ -363,6 +363,14 @@ h4:hover .header-anchor {
         @apply text-teal-300 md:text-white;
     }
 
+    .ff-website header a > span {
+        transform: scale(0.75);
+    }
+
+    .ff-website header a:hover > span {
+        transform: scale(0.75)rotate(180deg);
+    }
+
     .ff-website header .ff-nav-dropdown > ul {
         top: 100%;
         z-index: 10;
