@@ -42,7 +42,7 @@ Breaking this prompt down:
 - ***"Always respond with content for a Node-RED function node"***: Ensured no surrounding `function () {}` definition and set expectations that the function would deal with a `msg` and likely `msg.payload` object.
 - ***"Don't add any commentary"***: ChatGPT likes to, well, chat. It would always return raw text justifying decisions, etc. Here, we just wanted the code.
 - ***"Always use const or let instead of var"***: This was Steve being picky.
-- ***"Always return msg, unless told otherwise"***: We found this wasn't mostly required, but occassitional it would try to return a different variable, and we'd lose context of `zmsg.payload`, etc. So this just made sure we had the consistency.
+- ***"Always return msg, unless told otherwise"***: We found this wasn't mostly required, but occassitional it would try to return a different variable, and we'd lose context of `msg.payload`, or other data stored in `msg`. So this just made sure we had the consistency.
 
 The response form this API call is then populated into the contents of the active tab in the function node:
 
@@ -52,8 +52,8 @@ In order to use it yourself, you will need a [valid API Key from OpenAI](https:/
 
 ## Additional Features
 
-This was built in about a day by Steve and I, and we had plenty of ideas on what we'd like to add to it. We've
-open sourced it, and will add these as issues to the repo, but if anyone want so take a stab at contiributing - that'd be most welcome!
+This was built in about a day by Steve and Joe, and we had plenty of ideas on what we'd like to add to it. We've
+[open-sourced](https://github.com/flowforge/node-red-function-gpt) it, and will add these as issues to the repo, but if anyone want so take a stab at contributing - that'd be most welcome!
 
 - **Insert at Cursor:** Currently, the Ask GPT call will replace _all_ of the content of that tab. Would be great
 to have the code insert wherever the cursor last was in order to add to existing code.
