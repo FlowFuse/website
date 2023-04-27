@@ -54,7 +54,7 @@ definitive and each reported bug will be considered on its own merits.
 
  - Exposure of any integer resource IDs (primary keys in our database)
 
-## FlowForge Update Process
+## FlowForge critical issue resolution and update process
 
 This guideline outlines the process for updating FlowForge, FlowForge Cloud, and Device Agent within 3 business days to mitigate potential damage to prospect systems. A critical issue is any problem that may result in significant damage to prospect systems. When such an issue is identified in our code or dependencies, the following actions must be taken:
 
