@@ -292,7 +292,7 @@ module.exports = function(eleventyConfig) {
     });
 
     eleventyConfig.addPairedShortcode("navoption", function(content, label, link, depth, icon, iconSolid, addClasses) {
-        var svg, iconSvg = '', classes, chevron
+        let svg, iconSvg = '', classes, chevron
         if (icon) {
             svg = loadSVG(icon)
             if (!iconSolid) {
