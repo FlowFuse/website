@@ -53,3 +53,19 @@ definitive and each reported bug will be considered on its own merits.
 *Low Severity Bugs*
 
  - Exposure of any integer resource IDs (primary keys in our database)
+
+## FlowForge Update Process
+
+This guideline outlines the process for updating FlowForge, FlowForge Cloud, and Device Agent within 3 business days to mitigate potential damage to prospect systems. A critical issue is any problem that may result in significant damage to prospect systems. When such an issue is identified in our code or dependencies, the following actions must be taken:
+
+1. Identifying Critical Issues - Label the issue as 'priority:critical' on GitHub. Notify the entire Development team immediately. Only the PM, CTO, or CEO can label issues as critical.
+2. Handling Critical Issues - Stop any ongoing tasks. Assess the issue and its potential impact on prospect systems. Develop a plan for resolving the issue, considering both short-term fixes and long-term improvements. Assign tasks and deadlines to relevant team members.
+3. Updating FlowForge, FlowForge Cloud and Device Agent - To update the software within the 3-business-day window, the team must implement the necessary code changes or dependency updates. Thoroughly test the changes to ensure the issue is resolved and no new problems are introduced. Deploy the updated version of FlowForge and Device Agent to prospect systems.
+
+By adhering to these guidelines and maintaining a robust security posture, FlowForge will uphold its commitment to providing customers with software that is free from harmful components and malicious code. This will not only protect the interests of our customers but also contribute to the overall security and integrity of the digital ecosystem.
+
+### Upstream components 
+Upstream components are excluded from our obligations. In case of a critical issue related to upstream components:
+1. Collaborate with the upstream component maintainer(s) to understand the issue and potential fixes.
+2. Keep track of upstream fixes and implement them in FlowForge and Device Agent when they become available.
+3. Communicate the issue and its resolution to relevant stakeholders.
