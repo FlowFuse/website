@@ -25,9 +25,7 @@ body:
     label: Environment
     description: Please tell us about your environment. Include any relevant information on how you are running Node-RED.
     value: |
-        - FlowForge version:
-        - Node.js version:
-        - npm version:
+        - Date:
         - Platform/OS:
         - Browser:
   validations:

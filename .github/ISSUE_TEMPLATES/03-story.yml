@@ -23,18 +23,6 @@ body:
 
       **So that:**
 
-- type: dropdown
-  id: pricing
-  attributes:
-    label: Which customers would this be availble to 
-    description: Based on our [pricing principles](https://flowforge.com/handbook/product/pricing/) features should be aligned between Cloud and CE/EE
-    multiple: false
-    options:
-      - All Users, (CE)
-      - Licensed Edition (EE)
-      - Other (See comments)
-
-
 - type: textarea
   attributes:
     label: Acceptance Criteria
