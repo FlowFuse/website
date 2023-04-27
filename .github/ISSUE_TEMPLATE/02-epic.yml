@@ -1,0 +1,18 @@
+name: 📚 Epic
+description: Create an epic
+labels: [epic]
+body:
+- type: markdown
+  attributes:
+    value: |
+      An Epic is a significant feature or piece of work that doesn't
+      easily fit into a single release. It will typically have a number of Stories
+      and/or Tasks associated with it that can be delivered iteratively.
+- type: textarea
+  attributes:
+    label: Description
+    description: Describe the epic
+- type: markdown
+  attributes:
+    value: |
+      Hint: Please remember to provide an effort estimate, if possible, as outlined in our handbook.

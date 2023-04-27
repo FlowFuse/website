@@ -18,6 +18,7 @@ const { minify } = require("terser");
 const codeowners = require('codeowners');
 
 const heroGen = require("./lib/post-hero-gen.js");
+const imageHandler = require('./lib/image-handler.js')
 const site = require("./src/_data/site");
 
 const DEV_MODE = process.env.ELEVENTY_RUN_MODE !== "build" // i.e. serve/watch
@@ -291,65 +292,14 @@ module.exports = function(eleventyConfig) {
         }
     });
 
-    // Custom Shortcodes
-    function resolvedImagePath(inputPath, relativeFilePath) {
-        // Skip URLs
-        try {
-            new URL(string);
-            return relativeFilePath
-        } catch {}
-
-        // Handle both relative to current file and relative root
-        try {
-            const resolvedRelativePath = path.resolve(path.dirname(inputPath), relativeFilePath)
-            if (fs.existsSync(resolvedRelativePath)) {
-                return resolvedRelativePath
-            }
-
-            const resolvedAbsolutePath = path.resolve(eleventyConfig.dir.input, relativeFilePath)
-            if(fs.existsSync(resolvedAbsolutePath)) {
-                return resolvedAbsolutePath
-            }
-        } catch {}
-
-        return relativeFilePath
-    }
-
     // Eleventy Image shortcode
     // https://www.11ty.dev/docs/plugins/image/
     console.info(`[11ty] Image pipeline is enabled in ${DEV_MODE ? 'dev mode' : 'prod mode'} expect a wait for first build`)
     eleventyConfig.addAsyncShortcode("image", async function imageShortcode(src, alt, widths, sizes) {
-        // Full list of formats here: https://www.11ty.dev/docs/plugins/image/#output-formats
-        // Warning: Avif can be resource-intensive so take care!
-        let formats = ["avif", "webp", "auto"];
+        const title = null
+        const currentWorkingFilePath = this.page.inputPath
 
-        // Skip slow formats for local development
-        if (DEV_MODE) {
-            formats = formats.filter((format) => !['avif', 'webp'].includes(format))
-        }
-
-        let file = resolvedImagePath(this.page.inputPath, src);
-        let metadata = await eleventyImage(file, {
-            widths: widths ? widths.concat(widths.map((w) => w * 2)) : ["auto"],
-            formats,
-            outputDir: path.join(eleventyConfig.dir.output, "img"), // Advanced usage note: `eleventyConfig.dir` works here because we’re using addPlugin.
-            filenameFormat: function (hash, src, width, format, options) {
-                const { name } = path.parse(src);
-                return `${name}-${hash}-${width}.${format}`;
-            },
-            svgShortCircuit: true,
-        });
-
-        sizes = sizes || widths ? widths.map((width) => `(min-device-pixel-ratio: 1.25) ${width * 2}px, (min-resolution: 120dpi) ${width * 2}px, ${width}px`).join(', ') : null
-
-        let imageAttributes = {
-            alt,
-            sizes,
-            loading: "lazy",
-            decoding: "async",
-        };
-
-        return eleventyImage.generateHTML(metadata, imageAttributes);
+        return await imageHandler(src, alt, title, widths, sizes, currentWorkingFilePath, eleventyConfig, DEV_MODE)
     });
 
     // Create a collection for sidebar navigation
@@ -492,70 +442,24 @@ module.exports = function(eleventyConfig) {
 
     markdownLib.renderer.rules.image = function (tokens, idx, options, env, self) {
         const token = tokens[idx]
+
         const imgSrc = token.attrGet('src')
         const imgAlt = token.content
         const imgTitle = token.attrGet('title')
 
-        const parsedTitle = (imgTitle || '').match(
-            /^(?<skip>@skip ?)?(?<title>.*)/
-        ).groups
-
-        const htmlOpts = {
-            title: parsedTitle.title,
-            alt: imgAlt,
-            loading: 'lazy',
-            decoding: 'async'
-        }
-
-        if (parsedTitle.skip || imgSrc.startsWith('http')) {
-            const options = { ...htmlOpts }
-            const metadata = { img: [{ url: imgSrc }] }
-            return eleventyImage.generateHTML(metadata, options)
-        }
-
-        let formats = ['avif', 'webp', 'jpeg']
-        let extraOpts = {}
-        if (imgSrc.includes('.gif')) {
-            formats = ['webp', 'gif']
-            extraOpts = {
-                sharpOptions: {
-                    animated: true
-                },
-            }
-        }
-
-        // Skip slow formats for local development
-        if (DEV_MODE) {
-            formats = formats.filter((format) => !['avif', 'webp'].includes(format))
-        }
-
-        // Handle both relative to post and root
+        const folderPath = env.page.inputPath
+        
         const widths = [650] // width of blog prose
-        const imgOpts = {
-            widths: widths.concat(widths.map((w) => w * 2)), // generate 2x sizes (retina)
-            formats,
-            outputDir: path.join(eleventyConfig.dir.output, "img"), // Advanced usage note: `eleventyConfig.dir` works here because we’re using addPlugin.
-            filenameFormat: function (hash, src, width, format, options) {
-                const { name } = path.parse(src);
-                return `${name}-${hash}-${width}.${format}`;
-            },
-            svgShortCircuit: true,
-            ...extraOpts
-        }
+        const htmlSizes = null
 
-        const imagePath = resolvedImagePath(env.page.inputPath, imgSrc)
-        eleventyImage(imagePath, imgOpts).catch((error) => {
-            console.error(`Image generation error while handling: ${imgSrc} in ${env.page.inputPath} - ${error}, consider using @skip`)
+        const async = false // cannot run async inside markdown
+
+        try {
+            return imageHandler(imgSrc, imgAlt, imgTitle, widths, htmlSizes, folderPath, eleventyConfig, async, DEV_MODE)
+        } catch (error) {
+            console.error(`Image generation error while handling: ${imgSrc} in ${folderPath} - ${error}, consider using @skip`)
             throw error
-        })
-        const metadata = eleventyImage.statsSync(imagePath, imgOpts)
-
-        const generated = eleventyImage.generateHTML(metadata, {
-            sizes: widths.map((width) => `(min-device-pixel-ratio: 1.25) ${width * 2}px, (min-resolution: 120dpi) ${width * 2}px, ${width}px`).join(', '),
-            ...htmlOpts
-        })
-
-        return generated
+        }
     }
 
     eleventyConfig.setLibrary("md", markdownLib)
