@@ -14,7 +14,7 @@ hubspot:
 
 <!--more-->
 
-In this webinar, Rob Marcer will take you through the steps of how to get started with the Node-RED dashboard.
+In this webinar, Rob Marcer will take you through the steps of how to get started with the Node-RED Dashboard.
 
 Attendees of the webinar will learn the basic concepts and the steps to getting started to creating a live interactive dashboard. The webinar will feature live demonstrations and sample code that can be used by all attendees.
 
