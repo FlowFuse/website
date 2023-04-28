@@ -7,6 +7,11 @@ navGroup: Internal Operations
 
 For self-managed licenses FlowForge has a standard [subscription agreement template](https://docs.google.com/document/d/1szqCRC7w-f82I4HL-cOTTCiSMKDhVWju84Md4M07RGk).
 
+## Cloud Partnership agreement
+
+For partners that will refer FlowForge Cloud customers a [the standard referral agreement](https://docs.google.com/document/d/1Efh4TAqv4Ib2V-cTYM7yEqtDn86iCwW2/)
+is used. The terms of the contract are set by the CEO prior to sending the first draft to each partner.
+
 ## Non-disclosure agreement (NDA)
 
 FlowForge has templates for standard NDA's:
