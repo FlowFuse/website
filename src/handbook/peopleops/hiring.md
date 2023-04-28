@@ -194,9 +194,7 @@ The People Ops manager will create a new off boarding issue for each instance of
 
 ### Final Pay
 
-Final pay for employees leaving FlowForge will be determined based on their length of service and the reason for leaving. If the offboarding is voluntary, the employee will be paid up until their last day and any unused vacation pay will be paid out based on assuming the employee would have taken 25 days of vacation (as we offer unlimited PTO).
-
-If offboarding is involuntary due to performance or business changes, severance pay will be provided at the sole discretion of FlowForge management.
+Final pay consists of the statutory minimal payment dictated by our payroll provider Deel, and an optional extra severance package. Such a package might be dependent on on business requirements, standing of the employee, among other factors.
 
 ## Share options vested
 
