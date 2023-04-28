@@ -180,7 +180,6 @@ When a team member voluntarily departs, we may ask if they would like to share t
 We will send an email to the departing employee covering the following points:
 
 1. Final payment
-1. Vested share options
 1. Return of company property
 1. Reimbursement of business expenses
 
