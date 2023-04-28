@@ -173,9 +173,7 @@ When a team member is being let go, it is usually due to either performance issu
 
 ### Communicating Departures
 
-When a team member voluntarily departs, we may ask if they would like to share their plans with the team. If the departure is involuntary, we will strive to maintain transparency regarding the reasons for the departure, while still respecting the individual's privacy.
-
-Please note that in some instances, FlowForge may be unable to provide additional context surrounding an employee's departure.
+When a team member voluntarily departs, we may ask if they would like to share their plans with the team. If the departure is involuntary,  reasons of the departure will be at the sole discretion of the FlowForge management.
 
 ## Offboarding process
 
@@ -195,10 +193,6 @@ The People Ops manager will create a new off boarding issue for each instance of
 ### Final Pay
 
 Final pay consists of the statutory minimal payment dictated by our payroll provider Deel, and an optional extra severance package. Such a package might be dependent on on business requirements, standing of the employee, among other factors.
-
-## Share options vested
-
-We will confirm the number of vested share options and provide information on how to exercise them, if applicable.
 
 ## Business expense
 
