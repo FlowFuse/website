@@ -190,7 +190,7 @@ At FlowForge, we conduct Exit Interviews for employees who choose to leave the c
 
 ### Offboarding Issue
 
-The People Ops manager will create a new offboarding Issue for each leaver using the template maintained on GitHub, which can be viewed https://github.com/flowforge/admin/issues/166
+The People Ops manager will create a new off boarding issue for each instance of a team member leaving. The template maintained on GitHub, create a new issue though [this link](https://github.com/flowforge/admin/issues/new/choose).
 
 ### Final Pay
 
