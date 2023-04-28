@@ -169,7 +169,7 @@ Once you have discussed your concerns with your manager and the People Ops team 
 
 ### Involuntary Resignation
 
-When a team member is being let go, it is usually due to either performance issues or a change in the company's needs that no longer justifies their role. If the decision is due to performance issues, we will have already provided feedback and given the team member an opportunity to improve. Unfortunately, if the issues cannot be resolved, termination of employment may be necessary.In most cases, we will ask the team member to stop working immediately. The final payment will be made according to the terms of their employment contract.
+When a team member is being let go, it is usually due to either performance issues or a change in the company's needs that no longer justifies their role. If the decision is due to performance issues, we will have already provided feedback and given the team member an opportunity to improve. Unfortunately, if the issues cannot be resolved, termination of employment may be necessary. In most cases, we will ask the team member to stop working immediately. The final payment will be made according to the terms of their employment contract.
 
 ### Communicating Departures
 
