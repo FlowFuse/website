@@ -181,10 +181,10 @@ Please note that in some instances, FlowForge may be unable to provide additiona
 
 We will send an email to the departing employee covering the following points:
 
-Final payment
-Vested share options
-Return of company property
-Reimbursement of business expenses
+1. Final payment
+1. Vested share options
+1. Return of company property
+1. Reimbursement of business expenses
 
 At FlowForge, we conduct Exit Interviews for employees who choose to leave the company voluntarily. This provides us with valuable feedback on their experience, reasons for leaving, and areas for improvement. The People Ops manager schedules these interviews during the employee's last week to ensure they have an opportunity to share their insights. Our aim is to use this feedback to enhance our workplace culture and practices.
 
