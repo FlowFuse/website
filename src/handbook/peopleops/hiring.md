@@ -161,7 +161,7 @@ When a team member or contractor decides to leave FlowForge, they will receive a
 
 ### Voluntary Resignation
 
-If a team member decides to leave FlowForge, we request them to provide a 30-day notice period by default, unless specified otherwise in their employment contract on Deel. During this period, we expect the team member to continue working to facilitate a smooth handover and enable us to find a suitable replacement. Please note that we generally expect the team member to work for the entire notice period.
+If a team member decides to leave FlowForge they're expected to continue working to facilitate a smooth handover and enable us to find a suitable replacement. Please note that we generally expect the team member to work for the entire notice period.
 
 If you are considering resigning from your position at FlowForge, we highly recommend discussing your reasons with your manager or the People Ops manager. We are always open to improving and making changes that benefit our team members. While we understand that sometimes leaving is the best option, we encourage you to explore all possible solutions before making a final decision.
 
