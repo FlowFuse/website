@@ -4,9 +4,9 @@ layout: layouts/base.njk
 
 <div class="w-full page post">
     {% if title %}
-        <div class="w-full py-6 bg-cover bg-center md:py-12" style="background-image: linear-gradient(to left, #0040ff69, black), url({{ image }})">
+        <div class="w-full py-6 bg-cover bg-center md:py-9" style="background-image: linear-gradient(to right, #1F2937, #1F293700), url({{ image }})">
             <div class="post-title container m-auto text-center px-6 flex md:max-w-screen-lg">
-                <div class="text-left md:pr-32">
+                <div class="text-left max-w-screen-md md:pr-32">
                     <label>Customer Story</label>
                     <h1>{{ title }}</h1>
                     {% if subtitle %}
@@ -17,30 +17,39 @@ layout: layouts/base.njk
         </div>
     {% endif %}
     <div class="blog nohero w-full pt-6 pb-24 ff-bg-light">
-        <div class="container flex flex-col md:flex-row m-auto text-left px-6 md:max-w-screen-lg gap-8 items-stretch">
-            <div class="flex-grow">
-                <a class="inline-flex align-center gap-1 mb-4" href="/customer-stories">
-                    {% include "components/icons/chevron-left.svg" %}
-                    Back to Customer Stories
-                </a>
-                <div class="prose">
-                    {{ content | safe }}
+        <div class="container flex flex-col m-auto text-left px-6 md:max-w-screen-lg items-stretch">
+            <a class="inline-flex align-center gap-1 mb-5 md:mb-4" href="/customer-stories">
+                {% include "components/icons/chevron-left.svg" %}
+                Back to Customer Stories
+            </a>
+            <div class="flex flex-col-reverse md:flex-row md:gap-8">
+                <div class="flex-grow">
+                    <div class="prose">
+                        <q class="pt-6 md:pt-3 px-6 italic font-medium w-full block">{{ story.quote }}</q>
+                        {{ content | safe }}
+                    </div>
                 </div>
-            </div>
-            <div class="w-72 max-w-full flex-shrink-0">
-                <div class="sticky top-4 mt-6 flex flex-col">
-                    <h3 class="mb-3">Challenge:</h3>
-                    <p>{{ story.challenge }}</p>
-                    <h3 class="mb-3">Solution:</h3>
-                    <p>{{ story.solution }}</p>
-                    <h3 class="mb-3">Results:</h3>
-                    <ul>
-                        {% for result in story.results %}
-                            <li class="mb-3 text-base">
-                                {{ result }}
-                            </li>                      
-                        {% endfor %}
-                    </ul>
+                <div class="w-96 max-w-full flex-shrink-0">
+                    <div class="sticky top-4 flex flex-col border rounded-lg py-4 px-4">
+                        <div class="border-b pb-2">
+                            <h3 class="text-base">Challenge:</h3>
+                            <p class="mt-2">{{ story.challenge }}</p>
+                        </div>
+                        <div class="border-b pt-2 pb-2">
+                            <h3 class="text-base">Solution:</h3>
+                            <p class="mt-2">{{ story.solution }}</p>
+                        </div>
+                        <div class="border-b pt-2 pb-2">
+                            <h3 class="text-base">Results:</h3>
+                            <ul class="list-disc pl-6">
+                                {% for result in story.results %}
+                                    <li class="mb-3 text-base">
+                                        {{ result }}
+                                    </li>                      
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
