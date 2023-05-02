@@ -46,8 +46,8 @@ company, you can claim back the money through [Deel](https://help.letsdeel.com/h
 ### Asset purchases over $500
 
 Any asset purchase over $500 (laptops, devices etc) needs to be centrally recorded.
-This is done in a Google Sheet kept in a drive shared with the Finance team that
-is not generally accessible. Send details of the purchase to the PeopleOps Manager so 
+This is done in [this Google Sheet](https://docs.google.com/spreadsheets/d/1sHJmUGG-m7y9TGrFrtqiZ6ubioLf1ySSam_cL-cmiRo/edit#gid=0)
+and shared with the Finance team. Send details of the purchase to the PeopleOps Manager so 
 it can be recorded.
 
 ### Education & Conferences
