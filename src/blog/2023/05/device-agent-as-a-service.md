@@ -1,5 +1,5 @@
 ---
-title: Using the FlowForge device agent as a service on a Raspberry Pi
+title: Running the FlowForge Device Agent as a service on a Raspberry Pi
 subtitle: Step by step guide to run the device agent as a service
 description: Step by step guide to run the device agent as a service
 date: 2023-05-02
