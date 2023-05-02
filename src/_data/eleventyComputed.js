@@ -8,5 +8,8 @@ module.exports = {
                 return title
             }
         }
+    },
+    people: (data) => {
+        return {...data.team, ...data.guests}
     }
 }
