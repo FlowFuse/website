@@ -4,6 +4,7 @@ subtitle: Step by step guide to run the device agent as a service
 description: Step by step guide to run the device agent as a service
 date: 2023-05-02
 authors: ["rob-marcer"]
+image: /blog/2023/05/images/agent-on-pi.png
 tags:
     - posts
 ---
@@ -24,9 +25,7 @@ The standard process for running FlowForge's device agent is to start it on the 
 
 The first step is creating the systemd unit file for your service. You can start by creating a new file in the /etc/systemd/system directory with a .service file extension:
 
-```
-sudo nano /etc/systemd/system/flowforge-device-agent.service
-```
+```sudo nano /etc/systemd/system/flowforge-device-agent.service```
 
 ### Define the Service
 
