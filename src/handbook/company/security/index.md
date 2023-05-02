@@ -4,6 +4,15 @@ navTitle: Security
 
 # Security
 
+To ensure the safety and security of our company, employees, and customers, FlowForge
+maintains a set of security policies that we all must follow.
+
+It is important that every takes the time to understand their own responsibilities
+in this area, which includes prompt reporting and resolution of any issues identified.
+
+ - [Information Security Policy and Acceptable Use Policy](./information-security.md)
+
+
 ## Credentials
 
 ### Password vault
@@ -25,6 +34,6 @@ For all services that support it, 2FA authentication should be enabled and if po
 
 The CEO, CTO, and other executives at FlowForge will never email anyone to wire
 money, request you to buy gift cards, or request any other type of monitory
-transaction. Transactions are started through [a set process](../operations/vendors.md)
+transaction. Transactions are started through [a set process](../../operations/vendors.md)
 only. When in doubt, reach out through Slack and request a call with the executive
 to validate.

@@ -7,5 +7,8 @@
 /src/handbook/marketing @iskerrett
 /src/handbook/product @MarianRaphael
 
+# Security Polices
+/src/handbook/company/security/information-security.md @ZJvandeWeg
+
 # Change in values need sign off from both the CEO and CTO
 /src/handbook/company/values.md @knolleary @ZJvandeWeg
