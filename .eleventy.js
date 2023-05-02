@@ -292,6 +292,32 @@ module.exports = function(eleventyConfig) {
         }
     });
 
+    eleventyConfig.addPairedShortcode("navoption", function(content, label, link, depth, icon, iconSolid, addClasses) {
+        let svg, iconSvg = '', classes, chevron
+        if (icon) {
+            svg = loadSVG(icon)
+            if (!iconSolid) {
+                iconSvg = `<svg class="ff-icon ff-icon-sm" fill="none" viewbox="0 0 24 24">${svg}</svg>`
+            } else {
+                iconSvg = `<svg class="ff-icon ff-icon-sm ff-icon--solid" fill="none" viewbox="0 0 24 24">${svg}</svg>`
+            }
+        }
+        if (content) {
+            classes = "ff-nav-dropdown relative " + (addClasses || '')
+        } else {
+            classes= (addClasses || '')
+        }
+
+        if (content) {
+            const chevronDown = loadSVG('chevron-down')
+            return `<li class="${classes}"><a class="flex items-center gap-1">${iconSvg}${label}<span class="ff-nav-chevron">${chevronDown}</span></a>${content}</li>`
+        } else if (link) {
+            return `<li class="${classes}"><a class="flex items-center gap-2" href="${link}">${iconSvg}${label}</a></li>`
+        } else {
+            return `<li class="${classes}"><a class="flex items-center gap-2">${iconSvg}${label}</a></li>`
+        }
+    });
+    
     // Eleventy Image shortcode
     // https://www.11ty.dev/docs/plugins/image/
     console.info(`[11ty] Image pipeline is enabled in ${DEV_MODE ? 'dev mode' : 'prod mode'} expect a wait for first build`)

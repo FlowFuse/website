@@ -9,10 +9,15 @@ module.exports = {
                 'post-h4': ['1.25rem']
             },
             boxShadow: {
-                nav: '3px 3px 6px 0px #000000e0;'
+                nav: '0px 10px 20px #11182766;'
             },
             gridTemplateColumns: {
                 header: '1fr auto 1fr'
+            },
+            transitionProperty: {
+                'height': 'max-height',
+                'spacing': 'margin, padding',
+                'navdropdown': 'max-height, margin, padding'
             },
             colors: { // https://coolors.co/aa4444-2d2d2a-779fa1-efd09e-fafac6
                 black: "#000",
