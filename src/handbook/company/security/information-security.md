@@ -61,6 +61,9 @@ reported immediately or as soon as possible by sending an email to security@flow
 In your email please describe the incident or observation along with any relevant
 details.
 
+Any security issue related to vulnerabilities in the product should be reported
+via our [disclosure policy](../../development/security.md).
+
 ## Whistleblower Reporting
 
 Our Whistleblower Policy is intended to encourage and enable employees and
