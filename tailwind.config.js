@@ -1,3 +1,5 @@
+const plugin = require('tailwindcss/plugin')
+
 module.exports = {
     mode: 'jit',
     purge: ['src/**/*.html','src/**/*.njk','src/**/*.md','src/**/*.svg','.eleventy.js'],
@@ -7,6 +9,9 @@ module.exports = {
             fontSize: {
                 'page-h1': ['2.5rem', '3.5rem'],
                 'post-h4': ['1.25rem']
+            },
+            textShadow: {
+                header: '1px 1px 0.25rem black'
             },
             boxShadow: {
                 nav: '0px 10px 20px #11182766;'
@@ -67,6 +72,16 @@ module.exports = {
     },
     plugins: [
         // require('postcss-import'),
-        require('@tailwindcss/typography')
+        require('@tailwindcss/typography'),
+        plugin(function ({ matchUtilities, theme }) {
+            matchUtilities(
+              {
+                'text-shadow': (value) => ({
+                  textShadow: value,
+                }),
+              },
+              { values: theme('textShadow') }
+            )
+          }),
     ]
 }

@@ -7,9 +7,6 @@ meta:
 <div class="container m-auto text-left max-w-4xl pb-24 w-full">
     <div class="px-2">
         <h1>Customer Stories</h1>
-        <div class="md:-mt-6">
-            {% include "components/divider-grey-wires-right.njk" %}
-        </div>
     </div>
     {% if collections.posts.length > 0 %}
     <ul class="flex flex-wrap">
@@ -17,17 +14,8 @@ meta:
         {% if loop.first %}
         <li class="w-full mt-2 px-2 pb-4">
             <a href="{{ item.url }}" class="w-full flex flex-col group hover:no-underline">
-                <div class="md:w-3/4 pr-2">
-                    <time class="block text-xs" value="{{ item.date }}" class="text-gray-400">{{ item.date | shortDate }}</time>
+                <div class="pr-2">
                     <h3 class="mb-0 font-medium group-hover:underline">{{ item.data.title }}</h3>
-                    <div class="italic text-xs mb-3">
-                        <div class="author">
-                            {% set comma = joiner() %}
-                            {%- for author in item.data.authors %}
-                            {{ comma() }} {{ team[author].name }}
-                            {%- endfor %}
-                        </div>
-                    </div>
                 </div>
                 <div class="flex flex-col md:flex-row">
                     <div class="pr-2 md:w-1/3">
