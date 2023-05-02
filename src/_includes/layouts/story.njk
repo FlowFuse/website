@@ -34,11 +34,12 @@ layout: layouts/base.njk
                     <h3 class="mb-3">Solution:</h3>
                     <p>{{ story.solution }}</p>
                     <h3 class="mb-3">Results:</h3>
-                    {% for result in story.results %}
-                        <li class="mb-3 text-base">
-                            {{ result }}
-                        </li>                      
-                    {% endfor %}
+                    <ul>
+                        {% for result in story.results %}
+                            <li class="mb-3 text-base">
+                                {{ result }}
+                            </li>                      
+                        {% endfor %}
                     </ul>
                 </div>
             </div>
