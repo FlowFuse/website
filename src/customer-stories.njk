@@ -12,29 +12,25 @@ meta:
     <ul class="flex flex-wrap">
         {%- for item in collections.stories | reverse -%}
         {% if loop.first %}
-        <li class="w-full mt-2 px-2 pb-4">
+        <li class="w-full md:w-2/3 mt-2 px-2 pb-4">
             <a href="{{ item.url }}" class="w-full flex flex-col group hover:no-underline">
                 <div class="pr-2">
-                    <h3 class="mb-0 font-medium group-hover:underline">{{ item.data.title }}</h3>
-                </div>
-                <div class="flex flex-col md:flex-row">
-                    <div class="pr-2 md:w-1/3">
-                        {% if item.data.image %}
-                            <div class="w-full h-auto">
-                                {% set imageSrc = ["./", item.data.image ] | join %}
-                                {% set imageDescription = ["Image representing ", item.data.title] | join %}
-                                {% image imageSrc, imageDescription, [285] %}
-                            </div>
-                        {% else %}
-                            {{ item.url | generatePostSVG |safe}}
-                        {% endif %}
-                    </div>
-                    <div class="flex flex-col justify-between md:w-2/3 md:px-2">
-                        <div>
-                            {{ item.templateContent | excerpt | striptags(true)| restoreParagraphs | safe }}
+                    {% if item.data.image %}
+                        <div class="w-full h-auto">
+                            {% set imageSrc = ["./", item.data.image ] | join %}
+                            {% set imageDescription = ["Image representing ", item.data.title] | join %}
+                            {% image imageSrc, imageDescription, [1000] %}
                         </div>
-                        <div class="group-hover:underline">read more...</div>
+                    {% else %}
+                        {{ item.url | generatePostSVG |safe}}
+                    {% endif %}
+                </div>
+                <h3 class="font-medium group-hover:underline">{{ item.data.title }}</h3>
+                <div class="flex flex-col justify-between">
+                    <div class="-mt-4 md:mt-0">
+                        {{ item.templateContent | excerpt | striptags(true)| restoreParagraphs | safe }}
                     </div>
+                    <div class="group-hover:underline">read more...</div>
                 </div>
             </a>
         </li>
