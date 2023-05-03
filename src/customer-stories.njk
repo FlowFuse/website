@@ -16,10 +16,10 @@ meta:
             <a href="{{ item.url }}" class="w-full flex flex-col group hover:no-underline">
                 <div class="pr-2">
                     {% if item.data.image %}
-                        <div class="w-full h-60 md:h-72">
-                            {% set imageSrc = [item.data.image ] | join %}
+                        <div class="w-full h-60 md:h-72 ff-image-cover">
+                            {% set imageSrc = ["./", item.data.image ] | join %}
                             {% set imageDescription = ["Image representing ", item.data.title] | join %}
-                            <img src="{{ imageSrc }}" alt="{{ imageDescription }}" class="object-cover w-full h-full" />
+                            {% image imageSrc, imageDescription, [768] %}
                         </div>
                     {% else %}
                         {{ item.url | generatePostSVG |safe}}
