@@ -15,15 +15,9 @@ meta:
         <li class="w-full md:w-2/3 mt-2 px-2 pb-4">
             <a href="{{ item.url }}" class="w-full flex flex-col group hover:no-underline">
                 <div class="pr-2">
-                    {# {% if item.data.image %}
-                        <div class="w-full h-auto">
-                            {% set imageSrc = ["./", item.data.image ] | join %}
-                            {% set imageDescription = ["Image representing ", item.data.title] | join %}
-                            {% image imageSrc, imageDescription, [1000] %}
-                        </div> #}
-                        {% if item.data.image %}
+                    {% if item.data.image %}
                         <div class="w-full h-60 md:h-72">
-                            {% set imageSrc = ["./", item.data.image ] | join %}
+                            {% set imageSrc = [item.data.image ] | join %}
                             {% set imageDescription = ["Image representing ", item.data.title] | join %}
                             <img src="{{ imageSrc }}" alt="{{ imageDescription }}" class="object-cover w-full h-full" />
                         </div>
@@ -33,7 +27,7 @@ meta:
                 </div>
                 <h3 class="font-medium group-hover:underline pt-5" style="line-height: 1.75rem">{{ item.data.title }}</h3>
                 <div class="flex flex-col justify-between">
-                    <div class="-mt-4 md:mt-0">
+                    <div class="-mt-3">
                         {{ item.templateContent | excerpt | striptags(true)| restoreParagraphs | safe }}
                     </div>
                     <div class="group-hover:underline">read more...</div>

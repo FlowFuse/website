@@ -10,9 +10,11 @@ story:
         - Using FlowForge delivery pipelines and collaboration tools to improve the reliability and efficiency of their development processes.
 ---
 
-A **large US based manufacturing company is using Node-RED** to enable the digital transformation of their entire manufacturing operations. The company has a global footprint with dozens of different locations and over ten thousand employees. They began their digital transformation and Node-RED journey in 2018. Today **they have thousands of Node-RED instances deployed** across their manufacturing sites that are enabling applications that have transformed the manufacturing operations.
+A **large US based manufacturing company is using Node-RED** to enable the digital transformation of their entire manufacturing operations. The company has a global footprint with dozens of different locations and over ten thousand employees.
 
 <!--more-->
+
+They began their digital transformation and Node-RED journey in 2018. Today **they have thousands of Node-RED instances deployed** across their manufacturing sites that are enabling applications that have transformed the manufacturing operations.
 
 Before they began their digital transformation, the company’s manufacturing data was recorded on paper or not accessible from the manufacturing machinery. It was very difficult to provide a holistic visibility of the operations, predict future maintenance requirements or proactively react to events on the shop floor. The company's MES system was focused on what to build and how to build it but not measuring, understanding or improving the processes.
 

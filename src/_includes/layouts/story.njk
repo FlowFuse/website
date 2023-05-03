@@ -22,15 +22,15 @@ layout: layouts/base.njk
                 {% include "components/icons/chevron-left.svg" %}
                 Back to Customer Stories
             </a>
-            <div class="flex flex-col-reverse md:flex-row md:gap-8">
+            <div class="ff-prose flex flex-col-reverse md:flex-row md:gap-8">
                 <div class="flex-grow">
                     <div class="prose">
-                        <q class="pt-6 md:pt-3 px-6 text-xl text-[#4B5563] italic font-bold w-full block">{{ story.quote }}</q>
+                        <q class="py-6 md:pt-3 px-6 text-xl text-gray-600 italic font-bold w-full block">{{ story.quote }}</q>
                         {{ content | safe }}
                     </div>
                 </div>
                 <div class="w-80 max-w-full flex-shrink-0">
-                    <div class="sticky top-4 flex flex-col border rounded-lg py-6 px-6" style="F9FAFB; box-shadow: 4px 4px 6px rgba(75,85,99,0.05)">
+                    <div class="sticky top-4 flex flex-col border rounded-lg py-6 px-6" style="box-shadow: 4px 4px 6px rgba(75,85,99,0.05)">
                         <div class="border-b pb-3">
                             <h3 class="text-base">Challenge</h3>
                             <p class="mt-2">{{ story.challenge }}</p>
