@@ -37,7 +37,7 @@ How can you use Node-RED to create dashboards and interactive graphs of your dat
 
 ## From the Community
 
-Jsonata is a very useful and often underutilised tool built into Node-RED. Steve over at [Steve's Node-RED Guide](stevesnoderedguide.com) has published a great beginners guide. If you are new to Jsonata and want to learn more we recommend you [take a look](https://stevesnoderedguide.com/node-red-and-jsonata-for-beginners).
+Jsonata is a very useful and often underutilised tool built into Node-RED. Steve over at [Steve's Node-RED Guide](https://stevesnoderedguide.com) has published a great beginners guide. If you are new to Jsonata and want to learn more we recommend you [take a look](https://stevesnoderedguide.com/node-red-and-jsonata-for-beginners).
 
 ### Custom Node Spotlight - node-red-contrib-queue-gate
 
