@@ -284,6 +284,13 @@ h4:hover .header-anchor {
     transform: translate(0,0px); 
 }
 
+.ff-image-cover img,
+.ff-image-cover picture {
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+}
+
 /*
     Header
 */
