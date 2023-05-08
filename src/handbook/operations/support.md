@@ -8,13 +8,14 @@ navTitle: Support
 
 If you're a customer and looking to create a support ticket, the level of support will depend on what tier of FlowForge you're using:
 
-- **FlowForge Cloud Customers**: E-Mail `support@flowforge.com` or raise a support request [here](/support).
-- **Self Managed - Community Edition:** users should raise a GitHub issue in the main [FlowForge repository](https://github.com/flowforge/flowforge) 
-- **Enterprise Customers**: It is likely you will have your own arrangements setup with FlowForge, but you can also raise a ticket [here](/support) or use the chat widget provided on our Website.
+- **FlowForge Cloud Customers**: Raise a [support ticket](/support). Tickets will be replied to within one business day.
+- **Enterprise Customers**: Raise a [support ticket](/support). Tickets will be replied to within the negotiated SLA.
+- **Community Support**: Users should raise a GitHub issue in the main [FlowForge repository](https://github.com/flowforge/flowforge) 
 
 ## Support Tickets
 
 ### HubSpot
+
 We use HubSpot to manage our customer support tickets for the managed FlowForge platform. We can give each FlowForge team member access to HubSpot by assigning them a seat. 
 
 If you wish to be granted access to HubSpot please post in the FlowForge support-tickets Slack channel.
@@ -37,15 +38,22 @@ We monitor the time since a ticket on HubSpot was last updated and send alerts t
 
 ### Scope of Support
 
-Initially FlowForge customers will only get support for issues relating to the
-FlowForge application or their account & billing. Any questions around Node-RED
+FlowForge customers will only get support for issues relating to the FlowForge
+application or their account & billing. Any questions around Node-RED
 itself or their flows should be redirected to the usual Node-RED community
-channels, eg Discourse, Slack etc. It is reasonable to also point a customer 
-direct to a repo for a 3rd party node question.
+channels, e.g. [Discourse](https://discourse.nodered.org/) or
+[Slack](https://nodered.org/about/community/slack/).
+
+3rd party nodes are not supported at this time. It is reasonable to point a
+customer direct to a repo for a 3rd party node question.
 
 ### SLA
 
-Support will be available between 0900-1700 UK Time Monday to Friday, with anything outside of those times on a 'best effort' basis. We aim to provide an initial response or acknowledgement to a customer's ticket within 4 hours during those times. No further commitments are made in terms of resolution times at this stage.
+Support will be available between during business hours (Berlin time zones)
+Monday to Friday, with anything outside of those hours on a 'best effort' basis
+unless the customer and FlowForge agreed otherwise. Our aim is to provide an
+initial response or acknowledgement to a customer's ticket within 4 hours during
+those times.
 
 ### Escalation
 
