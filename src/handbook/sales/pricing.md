@@ -14,7 +14,8 @@ Internal documents:
 ### Generating a Quote and Order Form
 
 Quotes are generated through HubSpot. Each quote should link to the subsciption
-agreement as well as include "Order Form" in the description.
+agreement as well as include "Order Form" in the description. Link the latest
+version of the document with the [subscription agreement](../legal/index.md#subscription-agreement).
 
 ### Generating a license
 
