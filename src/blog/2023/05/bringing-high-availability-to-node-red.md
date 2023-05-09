@@ -8,7 +8,7 @@ authors: ["nick-oleary"]
 ---
 
 Many companies look to deploy Node-RED into use cases that require the application
-to have a high degree of availability, reliability and scalability. Following up
+to have a high degree of availability, reliability, and scalability. Following up
 our [previous post on the subject](../02/highly-available-node-red.md), in this
 post I’m going to look at some of the technical details of achieving HA, the
 approaches available and what that means for the work we’re doing at FlowForge
@@ -42,7 +42,7 @@ state in Context or use an external database service. Within FlowForge we provid
 two types of context - the default in-memory context store and a database-backed 
 persistent store. Currently the database-backed store includes a memory-caching
 layer to provide better performance and interoperability. That gets tricky when
-you want to have multiple instances sharing the same store. The context api
+you want to have multiple instances sharing the same store. The context API
 doesn’t provide a way to atomically update values - so you can get into classic
 concurrency issues around two applications trying to update the same value.
 
@@ -118,7 +118,7 @@ instance, then it isn’t much of an improvement.
 The key here is that Node-RED allows you to start the runtime without the flows
 running. That gets everything loaded and the runtime ready ahead of time. It can
 then start the flows at a moment's notice with a simple call to the runtime admin
-api.
+API.
 
 
 ### Detecting failure
@@ -144,7 +144,7 @@ continue our journey towards HA.
 Within the Node-RED architecture, each instance also serves up its own editor.
 This is what you get when you point your web browser at it.
 
-In an HA world, once you have multiple instances running behind an HTTP load
+In a HA world, once you have multiple instances running behind an HTTP load
 balancer, there is a tricky question of how you edit the flows. If each request
 hits a different instance, just loading the editor will result in different bits
 coming from different instances. That can typically be solved at the load balancer
@@ -153,7 +153,7 @@ routed to a consistent instance. That solves part of the issue, but the next
 challenge is what to do when the Deploy button is pressed. That is how new flows
 are passed from the editor to the runtime. When you have multiple instances, we
 need to make sure that they all get updated. That is quite a tricky problem to
-solve with the current Node-RED APIs - and something we’ll be working both in
+solve with the current Node-RED APIs - and something we’ll be working on both in
 FlowForge and in the upstream Node-RED project to resolve.
 
 That said, a more immediate solution could well be to take advantage of separate 
