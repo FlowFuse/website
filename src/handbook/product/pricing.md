@@ -4,8 +4,17 @@ navTitle: Pricing Principles
 
 # Pricing Principles
 
-This page sets out the concepts that we sell and how those are measured across both SaaS and Licensed Editions of the platform.
-This does not define specific dollar amounts for any items, those are commercial decisions outside the scope of this document.
+This page sets out the concepts that we sell and how those are measured across both SaaS and Licensed Editions of the platform. This does not define specific dollar amounts for any items, those are commercial decisions outside the scope of this document.
+
+We have three primary tiers: Open-Source (Starter), Premium, and Enterprise. The value and features provided within each tier correspond to the specific [persona](./personas/index.md), acknowledging that a higher placement in the organizational chart typically implies diffrent requirements.
+
+## Tiers
+
+| Tier       | Objective                                             | Problem it Solves                                                | Persona                                            |
+| ---------- | ----------------------------------------------------- | ---------------------------------------------------------------- | -------------------------------------------------- |
+| Starter    | Introduce Node-RED                                    | Hosting Node-RED, TLS/SSL, Subdomain, Backups (snapshots)        | Individual contributor, PLC engineer, Line worker |
+| Premium    | Scale the roll-out of Node-RED                        | Managing more than 5 Node-RED instances, Effective collaboration | IIoT manager, Plant manager                        |
+| Enterprise | Compliance, auditability, and solutions with Node-RED | Auditability, Security, Enterprise intergration                  | Central IT departments, Plant manager                |
 
 ## Teams
 
@@ -40,17 +49,10 @@ The team is billed per device at the same rate regardless of tier or number of d
 
 Devices are part of the licensed instances. The limit in the open source edition is 50 devices.
 
-## Add-Ons
-
-There's currently no plan for add-ons. Add-ons might be used in the future to
-allow overage on resource consumption, for example when storing files.
-Where possible add-ons should be avoided in favor of additional features.
-
 ## Licenses
 
-From the perspective of licensing the open source and FlowForge Premium are
-different tiers of the same product. The open source edition doesn't require a
-license key to be uploaded. Without a valid license a basic set of features and
+From the perspective of licensing the open source and FlowForge Premium, and FlowForge Enterprise are different tiers of the same product.
+The open source edition doesn't require a license key to be uploaded. Without a valid license a basic set of features and
 quantity of projects(50), users(150), teams(50), and devices(50) are available.
 When a license is purchased it provides all of the functionality of the higher
 plans. It's then licensed for a number of Node-RED instances on an annual basis.
