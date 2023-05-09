@@ -8,7 +8,7 @@ This page sets out the concepts that we sell and how those are measured across b
 
 We have three primary tiers: Open-Source (Starter), Premium, and Enterprise. The value and features provided within each tier correspond to the specific [persona](./personas/index.md), acknowledging that a higher placement in the organizational chart typically implies diffrent requirements.
 
-## Tiers
+## Layers
 
 | Tier                  | Objective                                         | Problem it Solves                                               | Persona                                        |
 | --------------------- | ------------------------------------------------- | --------------------------------------------------------------- | ---------------------------------------------- |
