@@ -9,7 +9,7 @@ authors: ["nick-oleary"]
 
 Many companies look to deploy Node-RED into use cases that require the application
 to have a high degree of availability, reliability, and scalability. Following up
-our [previous post on the subject](../02/highly-available-node-red.md), in this
+our [previous post on the subject](/blog/02/highly-available-node-red), in this
 post I’m going to look at some of the technical details of achieving HA, the
 approaches available and what that means for the work we’re doing at FlowForge
 and upstream in Node-RED.
