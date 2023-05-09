@@ -6,7 +6,7 @@ navTitle: Pricing Principles
 
 This page sets out the concepts that we sell and how those are measured across both SaaS and Licensed Editions of the platform. This does not define specific dollar amounts for any items, those are commercial decisions outside the scope of this document.
 
-We have three primary tiers: Open-Source (Starter), Premium, and Enterprise. The value and features provided within each tier correspond to the specific [persona](./personas/index.md), acknowledging that a higher placement in the organizational chart typically implies diffrent requirements.
+We have three primary tiers: Starter (Open-Source when self-managed), Premium, and Enterprise. The value and features provided within each tier correspond to the specific [persona](./personas/index.md), acknowledging that a higher placement in the organisational chart typically implies different requirements.
 
 ## Layers
 
