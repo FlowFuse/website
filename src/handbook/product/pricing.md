@@ -20,7 +20,7 @@ We have three primary tiers: Starter (Open-Source when self-managed), Premium, a
 ## Teams
 
 Teams are the basic unit within FlowForge Cloud and the entity to which bills are charged.
-A teams can create zero or more applications, and 1 or more user can be members.
+A teams can create zero or more applications, and one or more user can be members.
 Subject to access controls, some users can add cloud instances and remote devices (agents)
 to applications, and invite other members.
 
