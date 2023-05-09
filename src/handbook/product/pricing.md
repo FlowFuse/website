@@ -10,15 +10,16 @@ We have three primary tiers: Open-Source (Starter), Premium, and Enterprise. The
 
 ## Tiers
 
-| Tier       | Objective                                             | Problem it Solves                                                | Persona                                            |
-| ---------- | ----------------------------------------------------- | ---------------------------------------------------------------- | -------------------------------------------------- |
-| Starter    | Introduce Node-RED                                    | Hosting Node-RED, TLS/SSL, Subdomain, Backups (snapshots)        | Individual contributor, PLC engineer, Line worker |
-| Premium    | Scale the roll-out of Node-RED                        | Managing more than 5 Node-RED instances, Effective collaboration | IIoT manager, Plant manager                        |
-| Enterprise | Compliance, auditability, and solutions with Node-RED | Auditability, Security, Enterprise intergration                  | Central IT departments, Plant manager                |
+| Tier                  | Objective                                         | Problem it Solves                                               | Persona                                        |
+| --------------------- | ------------------------------------------------- | --------------------------------------------------------------- | ---------------------------------------------- |
+| Open-Source (Starter) | Introduce Node-RED                                | - Hosting Node-RED<br> - TLS/SSL<br> - Subdomain<br> - Backups (snapshots) | - Individual contributor<br> - PLC engineer<br> - Line worker |
+| Premium               | Scale the roll-out of Node-RED                    | - Managing more than 5 Node-RED instances<br> - Security<br> - Effective collaboration  | - IIoT manager<br> - Plant manager            |
+| Enterprise            | Node-RED as a company standrad                    | - Auditability<br> - Enterprise intergration                | - Central IT departments<br> - (Plant manager) |
+
 
 ## Teams
 
-Teams are the basic unit within FlowForge and the entity to which bills are charged.
+Teams are the basic unit within FlowForge Cloud and the entity to which bills are charged.
 A teams can create zero or more applications, and 1 or more user can be members.
 Subject to access controls, some users can add cloud instances and remote devices (agents)
 to applications, and invite other members.
