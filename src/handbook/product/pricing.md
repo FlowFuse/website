@@ -4,13 +4,23 @@ navTitle: Pricing Principles
 
 # Pricing Principles
 
-This page sets out the concepts that we sell and how those are measured across both SaaS and Licensed Editions of the platform.
-This does not define specific dollar amounts for any items, those are commercial decisions outside the scope of this document.
+This page sets out the concepts that we license and what units are measured across both FlowForge Cloud  and Self-managed. Commercial decisions outside the scope of this document.
+
+We have three primary tiers: Starter (Open-Source when self-managed), Premium, and Enterprise. The value and features provided within each tier correspond to the specific [persona](./personas/), acknowledging that a higher placement in the organisational chart typically implies different requirements.
+
+## Layers
+
+| Tier                  | Objective                                         | Problem it Solves                                               | Persona                                        |
+| --------------------- | ------------------------------------------------- | --------------------------------------------------------------- | ---------------------------------------------- |
+| Starter (Open-source) | Introduce Node-RED                                | - Hosting Node-RED<br> - TLS/SSL<br> - Subdomain<br> - Backups (snapshots) | - Individual contributor<br> - PLC engineer<br> - Line worker |
+| Premium               | Scale the roll-out of Node-RED                    | - Managing more than 5 Node-RED instances<br> - Security<br> - Effective collaboration  | - IIoT manager<br> - Plant manager            |
+| Enterprise            | Node-RED as a company standrad                    | - Auditability<br> - Enterprise intergration                | - Central IT departments<br> - (Plant manager) |
+
 
 ## Teams
 
-Teams are the basic unit within FlowForge and the entity to which bills are charged.
-A teams can create zero or more applications, and 1 or more user can be members.
+Teams are the basic unit within FlowForge Cloud and the entity to which bills are charged.
+A teams can create zero or more applications, and one or more user can be members.
 Subject to access controls, some users can add cloud instances and remote devices (agents)
 to applications, and invite other members.
 
@@ -40,17 +50,10 @@ The team is billed per device at the same rate regardless of tier or number of d
 
 Devices are part of the licensed instances. The limit in the open source edition is 50 devices.
 
-## Add-Ons
-
-There's currently no plan for add-ons. Add-ons might be used in the future to
-allow overage on resource consumption, for example when storing files.
-Where possible add-ons should be avoided in favor of additional features.
-
 ## Licenses
 
-From the perspective of licensing the open source and FlowForge Premium are
-different tiers of the same product. The open source edition doesn't require a
-license key to be uploaded. Without a valid license a basic set of features and
-quantity of projects(50), users(150), teams(50), and devices(50) are available.
+From the perspective of licensing the there's an unlicensed edition: open-source. This version is always self-managed. There's also a licensed version of FlowForge, this can be self-managed or FlowForge Managed. For FlowForge managed properties there's 3 tiers; Starter, Premium, and Enterprise.
+The open source edition doesn't require a license key to be uploaded. Without a valid license a basic set of features and
+quantity of instances(50), users(150), teams(50), and devices(50) are available.
 When a license is purchased it provides all of the functionality of the higher
 plans. It's then licensed for a number of Node-RED instances on an annual basis.
