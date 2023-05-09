@@ -50,7 +50,7 @@ The other type of state is that which is implicitly maintained in a flow - even
 if the user hasn’t explicitly configured it. For example, the Smooth node can be
 used to calculate a running average value of messages passing through it. The
 node does that by keeping in memory the recent values so it can recalculate the 
-verage with each update. If you have multiple instances, then the node will be
+average with each update. If you have multiple instances, then the node will be
 calculating the average for just the message its instances sees.
 
 Another example of implicit state is the Batch node that can be used to group
@@ -192,7 +192,7 @@ as we do with our hosted FlowForge Cloud platform. Kubernetes provides lots of
 the building blocks for creating a scalable and highly available solution, but
 it certainly doesn’t do all of the work for you.
 
-We've indentified our initial set of tasks and changes to how we'll run Node-RED
+We've identified our initial set of tasks and changes to how we'll run Node-RED
 instance with the k8s environment. You can follow our progress with this
 [issue](https://github.com/flowforge/flowforge/issues/1920) on our backlog.
 
