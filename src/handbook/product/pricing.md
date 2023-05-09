@@ -54,6 +54,6 @@ Devices are part of the licensed instances. The limit in the open source edition
 
 From the perspective of licensing the open source and FlowForge Premium, and FlowForge Enterprise are different tiers of the same product.
 The open source edition doesn't require a license key to be uploaded. Without a valid license a basic set of features and
-quantity of projects(50), users(150), teams(50), and devices(50) are available.
+quantity of instances(50), users(150), teams(50), and devices(50) are available.
 When a license is purchased it provides all of the functionality of the higher
 plans. It's then licensed for a number of Node-RED instances on an annual basis.
