@@ -52,7 +52,7 @@ Devices are part of the licensed instances. The limit in the open source edition
 
 ## Licenses
 
-From the perspective of licensing the open source and FlowForge Premium, and FlowForge Enterprise are different tiers of the same product.
+From the perspective of licensing the there's an unlicensed edition: open-source. This version is always self-managed. There's also a licensed version of FlowForge, this can be self-managed or FlowForge Managed. For FlowForge managed properties there's 3 tiers; Starter, Premium, and Enterprise.
 The open source edition doesn't require a license key to be uploaded. Without a valid license a basic set of features and
 quantity of instances(50), users(150), teams(50), and devices(50) are available.
 When a license is purchased it provides all of the functionality of the higher
