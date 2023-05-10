@@ -51,16 +51,17 @@ During the onboarding process on our EOR provider platform, candidates must eith
 
 ## Onboarding
 
-Just before the first day working at FlowForge you'll receive an email 
-requesting for GitHub username and preferred company email address. An issue
-will be created at our [internal issue tracker][issue-tracker] with steps for
-the team and you to complete once you started.
+Just before your first day of work at FlowForge, you will receive an email requesting your GitHub username and preferred company email address. An issue
+will be created on our [internal issue tracker][issue-tracker] with steps for you and
+the team to complete once you start.
 
-The day you start an email will send to your personal email address to gain
-access to your FlowForge email address which you can leverage to gain access to
-Slack and other resources. On your first day you should prioritise gaining access
-to Slack, the FlowForge GitHub organisation, and complete your onboarding issue.
-Your manager will also assign work to start on in the first week.
+On the day you start, a message will be sent to your personal email address to grant you access to your FlowForge email address.
+
+After setting up your password, you must [turn on the 2-Step Verification](https://support.google.com/accounts/answer/185839?hl=en&co=GENIE.Platform%3DDesktop). Otherwise, after a few days, you will be locked out of your account and will need an admin's help to log back in.
+
+Once your FlowForge email is set up, you will have access to invitations to other services and platforms, including 1Password. [Set this up](https://support.1password.com/explore/team-member/) as soon as possible to add a security layer to all your FlowForge accounts.
+
+On your first day, after your email and 1Password accounts are set up, you should prioritize gaining access to Slack, the FlowForge GitHub organization, and completing your onboarding issue. Your manager will also assign work for you to start on in the first week.
 
 [issue-tracker]: https://github.com/flowforge/admin/issues
 
@@ -152,4 +153,47 @@ As soon as there's a pipeline that would support at least three strong candidate
 for the open position, take the job posting offline. Candidates applying for a job
 that's no longer available is a waste of their time and a bad experience with
 FlowForge and hurts our reputation.
+
+## Offboarding
+The purpose of the offboarding section in the handbook is to provide a clear and structured framework for employees at FlowForge to follow during the offboarding process. The offboarding process is managed by the People Ops Manager in close collaboration with the CEO, Reporting Managers, and Deel for Payroll at FlowForge.
+
+When a team member or contractor decides to leave FlowForge, they will receive a detailed email before their final date of employment. The email will include information regarding the impact on benefits coverage, stocks, final pay, and the process for returning any company assets.
+
+### Voluntary Resignation
+
+If a team member decides to leave FlowForge they're expected to continue working to facilitate a smooth handover and enable us to find a suitable replacement. Please note that we generally expect the team member to work for the entire notice period.
+
+If you are considering resigning from your position at FlowForge, we highly recommend discussing your reasons with your manager or the People Ops manager. We are always open to improving and making changes that benefit our team members. While we understand that sometimes leaving is the best option, we encourage you to explore all possible solutions before making a final decision.
+
+Once you have discussed your concerns with your manager and the People Ops team and determined that resigning from FlowForge is the only option, please notify both your manager and the People Ops team of your intention to resign via email. Afterward, we will commence a discussion to establish the steps required to ensure a seamless handover.
+
+### Involuntary Resignation
+
+When a team member is being let go, it is usually due to either performance issues or a change in the company's needs that no longer justifies their role. If the decision is due to performance issues, we will have already provided feedback and given the team member an opportunity to improve. Unfortunately, if the issues cannot be resolved, termination of employment may be necessary. In most cases, we will ask the team member to stop working immediately. The final payment will be made according to the terms of their employment contract.
+
+### Communicating Departures
+
+When a team member voluntarily departs, we may ask if they would like to share their plans with the team. If the departure is involuntary,  reasons of the departure will be at the sole discretion of the FlowForge management.
+
+## Offboarding process
+
+We will send an email to the departing employee covering the following points:
+
+1. Final payment
+1. Return of company property
+1. Reimbursement of business expenses
+
+At FlowForge, we conduct Exit Interviews for employees who choose to leave the company voluntarily. This provides us with valuable feedback on their experience, reasons for leaving, and areas for improvement. The People Ops manager schedules these interviews during the employee's last week to ensure they have an opportunity to share their insights. Our aim is to use this feedback to enhance our workplace culture and practices.
+
+### Offboarding Issue
+
+The People Ops manager will create a new off boarding issue for each instance of a team member leaving. The template maintained on GitHub, create a new issue though [this link](https://github.com/flowforge/admin/issues/new/choose).
+
+### Final Pay
+
+Final pay consists of the statutory minimal payment dictated by our payroll provider Deel, and an optional extra severance package. Such a package might be dependent on on business requirements, standing of the employee, among other factors.
+
+## Business expense
+
+We will reimburse any outstanding expenses that comply with our handbook's reimbursement section.
 

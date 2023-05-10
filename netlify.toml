@@ -2,6 +2,7 @@
 port = 8080
 framework = "#static"
 command = "npx @11ty/eleventy --quiet --watch"
+autoLaunch = false
 
 [build]
 command = "npm run build"
@@ -12,3 +13,7 @@ package = "@algolia/netlify-plugin-crawler"
   [plugins.inputs]
   branches = ['main', 'live']
   template = "hierarchical"
+  
+[[edge_functions]]
+function = "eleventy-edge"
+path = "/*"

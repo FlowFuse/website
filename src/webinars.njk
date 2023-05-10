@@ -60,7 +60,7 @@ meta:
                                 </div>
                                 <div>
                                     {%- if item.data.tags.includes('ama') -%}
-                                    <a class="inline-flex ff-btn ff-btn--secondary text-sm" href="{{ item.url }}" onclick="capture('cta-ama-info')">
+                                    <a class="inline-flex ff-btn ff-btn--primary text-sm" href="{{ item.url }}" onclick="capture('cta-ama-info')">
                                     {% else %}
                                     <a class="inline-flex ff-btn ff-btn--primary text-sm" href="{{ item.url }}" onclick="capture('cta-webinar-info')">
                                     {% endif %}

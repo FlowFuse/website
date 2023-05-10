@@ -1,0 +1,6 @@
+{
+    "tags": [
+        "stories"
+    ],
+    "layout": "layouts/story.njk"
+}

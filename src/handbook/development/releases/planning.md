@@ -20,7 +20,41 @@ We use GitHub issues for planning the work in a release. A Milestone should exis
 for the current release (N) and the next one (N+1). We do not schedule work beyond
 that as priorities can change through a release.
 
-There are three types of issue used for planning work:
+---
+
+#### Week 3 - Planning Week
+
+##### Monday
+- Establish capacity
+  - The CTO forecasts the team's capacity for the upcoming iteration by providing the PM with a point estimate, based on historical velocity and any anticipated absences (e.g., holidays).
+
+##### During the Week
+- Preparation of next Iteration and Release
+
+---
+
+#### Week 4 - Release Week
+
+##### Tuesday
+- Product Meeting
+  - The PM presents the planning for the next Release.
+  - Joint discussion and agreement on the Highlights and Objectives.
+
+##### Thursday
+- Release day, details see [here](./process.md).
+- CTO and PM—“finishing touch meeting”
+  - Talk about leftovers from last Iteration
+  - Finalize the planning
+
+##### Friday
+- [Retrospective/Kick-Off](planning.md#retrospective%2Fkick-off)
+
+
+### Issues
+
+Issues are the building blocks of planning activities, helping the team to manage and prioritize work. 
+
+#### Types
 
  - **Epic**: a significant feature or piece of work that doesn't easily fit into
    a single release. It will typically have a number of Stories
@@ -33,7 +67,11 @@ There are three types of issue used for planning work:
  - **Task**: a piece of work that isn't necessarily tied to a specific Epic or Story.
    For example, items related to technical debt or house-keeping chores.
 
-Whenever an issue is raised, it will be reviewed by the Product Owner/CTO and added
+  - **Bugs**: issues that arise from errors, flaws, or unintended behavior in the existing code or system. Bugs negatively impact the user experience or the functionality of the software. They should be addressed and resolved by the development team, prioritized based on their severity, and included in the appropriate release for fixes.
+
+  - **Feature Requests**: suggestions or ideas submitted by users or stakeholders for new functionalities, enhancements, or improvements to the existing software or system. Feature requests should be evaluated, prioritized, and potentially incorporated into the product roadmap, often being transformed into Epics or Stories for implementation in future releases.
+
+Whenever an issue is raised, it will be reviewed by the Product Manager/CTO and added
 to the Product Board for prioritization and planning. The exception to this are
 tasks/bugs related to work already in progress and that need to be addressed in
 the current milestone. They should be added to the Development Board and current
@@ -41,6 +79,19 @@ milestone directly.
 
 We label some items as `headline`. These are items we want to highlight in the release
 announcement material and should clearly describe the value they bring to our users.
+
+#### Effort Estimation
+To more accurately understand which tasks can be scheduled without overloading our team, everyone conducts an initial, high-level analysis when creating an issue to assign weight estimates. We recognize that these estimates might not be precise. If the person who creates an issue cannot provide an estimate, any FlowForge team member is welcome to contribute one.
+
+If a developer, who is an expert in a field, wants to change an estimation, they are encouraged to do so immediately. There is no blame for "wrong" estimation; we all have to work together to achieve good planning. It is better to have a rough estimation than no estimation at all. The final decision on estimations in general lies with the CTO.
+
+If a larger number of not estimated tasks need to be estimated, e.g. for a complex epic, the CTO and PM can initiate a [Planning Poker](https://en.wikipedia.org/wiki/Planning_poker) session.
+
+There are two crucial elements to consider when determining an issue's weight: the scope of the work and its complexity. The amount of work pertains to the anticipated extent of modifications to the codebase. A minor adjustment might only require a single alteration in a single file, whereas a more extensive modification could necessitate multiple alterations across numerous files and sections of our codebase. Complexity can be divided into two components in practice: the degree to which the problem is understood and the expected level of problem-solving challenges.
+
+See [labels section](../packaging.md#labels) for sizing options.
+
+Epics do not necessarily need an estimation, as long as all subissues have estimations, Epics are the sum of all subtasks, as a result, it is possible to handle epics larger than XXL.
 
 ### Project Boards
 
@@ -58,12 +109,12 @@ identifies the themes and priorities for the releases.
 #### Product Backlog Board
 
 [This board](https://github.com/orgs/flowforge/projects/3/views/1) is maintained
-by the Product Owner (PO) and CTO. It is the main entry point for all epics and
+by the Product Manager (PM) and CTO. It is the main entry point for all epics and
 stories.
 
 Items on this board are put into one of the following states to indicate their priority in the backlog, they can move up or down the priority depending on business needs.
 
- - 'No Status' This is where all new items initially land so that they can be appropriately triaged and assigned by the PO and CTO
+ - 'No Status' This is where all new items initially land so that they can be appropriately triaged and assigned by the PM and CTO
  - 'Long' This is the long term horizon, items that we know we will want to do one day but at the moment are long term goals, typically this could be 12 months away or more.
  - 'Medium' These are items that are in the 6-12 month time frame. 
  - 'Short' These are items in the 3-6 month time frame, Often these items will get pulled into a milestone from this point depending on capacity.
@@ -123,7 +174,7 @@ by the CTO. This meeting includes 2 parts:
     went well and what could be improved and generate action items to act on the
     feedback.
  2. Kicking off the next release. The involves:
-    1. The Product Owner describing the themes, goals and priorities of the new release
+    1. The Product Manager describing the themes, goals and priorities of the new release
     2. Reviewing the [Development Board](https://github.com/orgs/flowforge/projects/1/views/1)
        for the new milestone.
        High-priority items are assigned owners so that everyone has something to
@@ -155,7 +206,7 @@ As stories and tasks are assigned to milestones, it's unlikely there's not
 enough work to be done. On the flip side, this means that not all scheduled epics
 or stories will be completed.
 
-The Product Owner/CTO have overall responsibility to ensure any 'must-have' items
+The Product Manager/CTO have overall responsibility to ensure any 'must-have' items
 are making progress in a release.
 
 ### Defining Done
@@ -167,7 +218,6 @@ criteria are met:
  - Suitable unit/system level tests have been added
  - Documentation has been updated
  - Acceptance criteria identified in the Story have been met
- - Product Owner accepts the story is complete
 
 #### Feature Demos
 

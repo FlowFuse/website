@@ -1,0 +1,64 @@
+---
+layout: layouts/base.njk
+---
+
+<div class="w-full page post">
+    {% if title %}
+        <div class="w-full py-6 bg-cover bg-center md:py-9" style="background-image: linear-gradient(to right, #1F2937, #1F293700), url({{ image }})">
+            <div class="post-title container m-auto text-center px-6 flex md:max-w-screen-lg">
+                <div class="text-left max-w-screen-md md:pr-32">
+                    <label>Customer Story</label>
+                    <h1 class="text-shadow-header">{{ title }}</h1>
+                    {% if subtitle %}
+                    <h4>{{ subtitle | safe }}</h4>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    {% endif %}
+    <div class="blog nohero w-full pt-6 pb-24 ff-bg-light">
+        <div class="container flex flex-col m-auto text-left px-6 md:max-w-screen-lg items-stretch">
+            <a class="inline-flex align-center gap-1 mb-5 md:mb-4" href="/customer-stories">
+                {% include "components/icons/chevron-left.svg" %}
+                Back to Customer Stories
+            </a>
+            <div class="ff-prose flex flex-col-reverse md:flex-row md:gap-8">
+                <div class="flex-grow">
+                    <div class="prose">
+                        <q class="py-6 md:pt-3 px-6 text-xl text-gray-600 italic font-bold w-full block">{{ story.quote }}</q>
+                        {{ content | safe }}
+                    </div>
+                </div>
+                <div class="w-80 max-w-full flex-shrink-0">
+                    <div class="sticky top-4 flex flex-col border rounded-lg py-6 px-6" style="box-shadow: 4px 4px 6px rgba(75,85,99,0.05)">
+                        <div class="border-b pb-3">
+                            <h3 class="text-base">Challenge</h3>
+                            <p class="mt-2">{{ story.challenge }}</p>
+                        </div>
+                        <div class="border-b pt-3 pb-3">
+                            <h3 class="text-base">Solution</h3>
+                            <p class="mt-2">{{ story.solution }}</p>
+                        </div>
+                        <div class="pt-3 pb-3">
+                            <h3 class="text-base">Results</h3>
+                            <ul class="list-disc pl-6">
+                                {% for result in story.results %}
+                                    <li class="mb-3 text-base">
+                                        {{ result }}
+                                    </li>                      
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Clipboard -->
+<link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/19.1.1/tooltips.min.css"  as="style" onload="this.onload=null;this.rel='stylesheet'" crossorigin="anonymous" referrerpolicy="no-referrer" />
+{% initClipboardJS %}
+
+<!-- Syntax Highlighting CSS -->
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism-tomorrow.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'" crossorigin="anonymous" referrerpolicy="no-referrer" />
