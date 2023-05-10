@@ -1,5 +1,9 @@
 {
     "title": "FlowForge",
     "baseURL": "https://flowforge.com",
-    "jobBoard": "https://boards.greenhouse.io/flowforge"
+    "jobBoard": "https://boards.greenhouse.io/flowforge",
+    "openings": {
+        "sales": "https://boards.greenhouse.io/flowforge/jobs/4843566004",
+        "devadvocate": "https://boards.greenhouse.io/flowforge/jobs/4843566004"
+    }
 }
