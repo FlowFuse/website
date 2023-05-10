@@ -69,7 +69,7 @@ Error deleting instance with missing subscription [#2080](https://github.com/flo
 
 Snapshot Rollback no longer working [#2026](https://github.com/flowforge/flowforge/issues/2026)
 
-Users receiving an unauthorized error when attempting to switch to a team in which they are a membe [#1845](https://github.com/flowforge/flowforge/issues/1845)
+Users receiving an unauthorized error when attempting to switch to a team in which they are a member [#1845](https://github.com/flowforge/flowforge/issues/1845)
 
 Cannot select "Member" option when inviting a team member [#2084](https://github.com/flowforge/flowforge/issues/2084)
 
