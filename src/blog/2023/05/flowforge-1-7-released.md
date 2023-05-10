@@ -33,7 +33,7 @@ This enhancement ensures a more robust and reliable experience when working with
 
 ### High Availibility
 
-We're pleased to share our progress on enhancing High Availability in FlowForge. Based on customer feedback, our focus is implementing a hot-spare approach for Node-RED applications, providing automatic failover between instances for improved reliability and availibility. We've identified our initial set of tasks and changes to how we'll run Node-RED instance with the k8s environment to create a more robust system. For a detailed update about High Availibility you should definitely checkout our newest [Article](./....) about High Availibility.
+We're pleased to share our progress on enhancing High Availability in FlowForge. Based on customer feedback, our focus is implementing a hot-spare approach for Node-RED applications, providing automatic failover between instances for improved reliability and availability. We've identified our initial set of tasks and changes to how we'll run Node-RED instances with the k8s environment to create a more robust system. For a detailed update about High Availability you should definitely checkout our newest [Article](./....) about High Availability.
 
 ### SOC2 Certification
 
