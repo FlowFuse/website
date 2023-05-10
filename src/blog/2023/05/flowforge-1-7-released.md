@@ -19,7 +19,7 @@ We are excited to introduce a new feature that will simplify the process of debu
 
 ## Device Status Visualisation
 
-This upgrade simplifies device monitoring, making it even easier to manage your devices effectively. This new feature offers an intuitive, user-friendly method for users to keep an eye on their devices' status and evaluate the health of their team's devices overall. 
+This upgrade simplifies device monitoring, making it even easier to manage your devices effectively. This new feature offers an intuitive, user-friendly method for users to keep an eye on their devices' status and evaluate the health of their team's devices overall. Creating an overview of your fleets health however large your fleet might be.
 
 <iframe width="560" height="315" src="https://youtu.be/dQw4w9WgXcQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
