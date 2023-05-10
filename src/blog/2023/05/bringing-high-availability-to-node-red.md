@@ -4,7 +4,7 @@ subtitle: How we are tackling the hard problems of HA in FlowForge
 description: How we are tackling the hard problems of HA in FlowForge
 date: 2023-05-08 12:00:00
 authors: ["nick-oleary"]
-# image: /images/blog/tile-chatgpt-fcn-node.jpg
+image: /images/blog/tile-ha-nr.jpg
 ---
 
 Many companies look to deploy Node-RED into use cases that require the application
