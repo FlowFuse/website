@@ -7,7 +7,7 @@ authors: ["marian-demme"]
 # image: /blog/2023/04/images/release-1.6.0.png
 ---
 
-The new FlowForge 1.7 adds new support for accesing the Node-RED Editor on Devices via FlowForge
+FlowForge 1.7 adds new support for accessing the Node-RED Editor on Devices via FlowForge
 
 <!--more-->
 
