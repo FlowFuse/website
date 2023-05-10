@@ -61,10 +61,6 @@ h1, h2, h3, h4, h5, p {
     color: theme(colors.teal.300);
 }
 
-picture img {
-    width: 100%;
-}
-
 .container {
     position: relative;
     z-index: 2;
