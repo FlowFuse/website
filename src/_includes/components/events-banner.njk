@@ -1,9 +1,9 @@
 {% edge "liquid" %}
-    {% abtesting "event-banner-color" "test" %}
+    {% abtesting "event-banner-color" "control" %}
         <a data-action="event-banner" href="/ask-me-anything/ama-nodered-may/"
             class="hidden md:flex text-center w-full py-1 pb-2 sm:py-4 bg-gray-900 text-white text-sm px-2 gap-1 sm:gap-2 flex-col sm:flex-row items-center justify-center hover:bg-blue-900">
     {% endabtesting "event-banner-color" "control" %}
-    {% abtesting "event-banner-color" "control" %}
+    {% abtesting "event-banner-color" "test" %}
         <a data-action="event-banner" href="/ask-me-anything/ama-nodered-may/"
             class="hidden md:flex text-center w-full py-1 pb-2 sm:py-4 bg-blue-900 text-white text-sm px-2 gap-1 sm:gap-2 flex-col sm:flex-row items-center justify-center hover:bg-gray-900">
     {% endabtesting "event-banner-color" "control" %}
