@@ -14,7 +14,7 @@ We have three primary tiers: Starter (Open-Source when self-managed), Premium, a
 | --------------------- | ------------------------------------------------- | --------------------------------------------------------------- | ---------------------------------------------- |
 | Starter (Open-source) | Introduce Node-RED                                | - Hosting Node-RED<br> - TLS/SSL<br> - Subdomain<br> - Backups (snapshots) | - Individual contributor<br> - PLC engineer<br> - Line worker |
 | Premium               | Scale the roll-out of Node-RED                    | - Managing more than 5 Node-RED instances<br> - Security<br> - Effective collaboration  | - IIoT manager<br> - Plant manager            |
-| Enterprise            | Node-RED as a company standrad                    | - Auditability<br> - Enterprise intergration                | - Central IT departments<br> - (Plant manager) |
+| Enterprise            | Node-RED as a company standard                    | - Auditability<br> - Enterprise intergration                | - Central IT departments<br> - (Plant manager) |
 
 
 ## Teams
