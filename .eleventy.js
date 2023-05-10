@@ -475,7 +475,7 @@ module.exports = function(eleventyConfig) {
 
         const folderPath = env.page.inputPath
         
-        const widths = [450] // width of blog prose
+        const widths = [650] // maximum width an image can be displayed at as part of blog prose
         const htmlSizes = null
 
         const async = false // cannot run async inside markdown
