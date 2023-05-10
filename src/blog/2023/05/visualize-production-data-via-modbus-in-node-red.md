@@ -20,15 +20,15 @@ Node-RED, along with Modbus and Dashboard modules, can easily create a web-based
 Modbus is a serial protocol that is often found in the industrial world to allow devices to communicate. Originally developed by Schneider Electric, it is an open protocol and has been adopted by brands across the industry.  [Simply Modbus](https://www.simplymodbus.ca/) is a terrific resource to learn more about how the communication is structured. The beauty of Node-RED’s low-code environment is that a user only has to understand Modbus at the highest level to be able to implement it.  
 
 
-The transport layer for Modbus can be either TCP over the Internet or RTU over RS-485/422/232.  There is a client-server relationship among devices where the clients read and write data which is stored by server using a numerical address.  There are four types of these addresses, 1) Output Coil and 2) Discrete Input addresses, which hold 1-bit data, and 3) Input Register and 4) Holding Register addresses, which hold 16-bit data.  Typically a PLC will be the Server and a HMI will be the client, reading and writing to the memory in the PLC, in order to give an operator control over machinery.  
+The transport layer for Modbus can be either TCP over the Internet or RTU over RS-485/422/232.  There is a client-server relationship among devices where the clients read and write data which is stored by server using a numerical address.  There are four types of these addresses, 1) Output Coil and 2) Discrete Input addresses, which hold 1-bit data, and 3) Input Register and 4) Holding Register addresses, which hold 16-bit data.  Typically a PLC will be the Server and an HMI will be the client, reading and writing to the memory in the PLC, in order to give an operator control over machinery.  
 
-## What is a HMI
+## What is an HMI
 
-A HMI, or human machine interface, is a piece of software that allows an operator to use a machine.  A HMI development environment typically allows programmers to choose among an array of digital assets to visualize the machine on the screen and create an intuitive interface to control the machine.  The HMI software may also offload some of the high-level logic from the PLC, however, the time-critical lower-level logic should stay on the PLC.  Node-RED can take this a step further, you may use it to create a simple HMI, but its real strength comes from its internet based heritage, and its ability to help share data from the PLC to the cloud.
+An HMI, or human machine interface, is a piece of software that allows an operator to use a machine.  An HMI development environment typically allows programmers to choose among an array of digital assets to visualize the machine on the screen and create an intuitive interface to control the machine.  The HMI software may also offload some of the high-level logic from the PLC, however, the time-critical lower-level logic should stay on the PLC.  Node-RED can take this a step further, you may use it to create a simple HMI, but its real strength comes from its internet based heritage, and its ability to help share data from the PLC to the cloud.
 
 
 Let’s look at the details of how you would use Node-RED for HMI and Modbus to
-build a HMI with Node-RED to connect Modbus data to a dashboard accessible from any web browser.
+build an HMI with Node-RED to connect Modbus data to a dashboard accessible from any web browser.
 
 ## Installation of the Modbus package
 
