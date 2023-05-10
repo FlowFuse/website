@@ -3,17 +3,6 @@ import {
     precompiledAppData,
 } from "./_generated/eleventy-edge-app.js";
 
-import { configAsync } from 'https://deno.land/x/dotenv/mod.ts';
-
-try {
-    // when running locally, we need to call this
-    // it'll eerror in Netlify prod, but that's okay
-    await configAsync({export: true});
-} catch (err) {
-    // ignore the error on netlify Prod
-}
-
-// const POSTHOG_APIKEY = 'phc_yVWfmiJ3eiVd2iuLYJIQROuHUN65z3hkhkGvAjjaTL7'; //Deno.env.get("POSTHOG_APIKEY");
 const POSTHOG_APIKEY = Deno.env.get("POSTHOG_APIKEY");
 
 function generateUUID() {
@@ -150,8 +139,8 @@ export default async (request, context) => {
             })
 
             /*
-          A/B Testing
-          */
+                A/B Testing
+            */
             // TODO: Using this means we get two event ids every time we see a new Person
 
             eleventyConfig.addPairedAsyncShortcode("abtesting", async function (content, flag, value) {
@@ -167,7 +156,7 @@ export default async (request, context) => {
                         flags = getExistingFeatureFlags(context)
                     }
                     // set cookies to pass data to client PostHog for bootstrapping
-                    if (flags[flag] && flags[flag] === value) {
+                    if (flags && flags[flag] && flags[flag] === value) {
                         if (requireFlagsRefresh) {
                             const strFlag = encodeURIComponent(JSON.stringify(flags))
                             setCookie(context, "ff-feats", strFlag, 1);
