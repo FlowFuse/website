@@ -82,7 +82,7 @@ If you'd rather use our hosted offering: [Get started for free](https://app.flow
 
 ## Upgrading FlowForge
 
-[FlowForge Cloud](https://app.flowforge.com) is already running 1.6.
+[FlowForge Cloud](https://app.flowforge.com) is already running 1.7.
 
 If you installed a previous version of FlowForge and want to upgrade, our documentation provides a
 guide for [upgrading your FlowForge instance](https://flowforge.com/docs/upgrade/).
