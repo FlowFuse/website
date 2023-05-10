@@ -23,7 +23,7 @@ This upgrade simplifies device monitoring, making it even easier to manage your 
 
 <iframe width="560" height="315" src="https://youtu.be/dQw4w9WgXcQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-## Boosts Node-RED Instance Reliability
+## Auto Restart for Hung Node-RED Instances
 
 This enhancement ensures a more robust and reliable experience when working with Node-RED flows. The launcher now actively monitors the Node-RED process to detect if it has become unresponsive or hung, in addition to the existing checks for start-up and unexpected process exits. This advancement takes us one step further in enhancing the availability of our Node-RED instances.
 
