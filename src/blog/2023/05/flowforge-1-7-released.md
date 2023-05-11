@@ -18,7 +18,7 @@ We are excited to introduce a new feature that will simplify the process of debu
 This update is a part of our ongoing commitment to making FlowForge the best possible solution for developing your Node-RED flows, no matter where they're running. In fact, as part of our last release 1.6, we already introduced the feature: ["Access Node-RED logs from remote devices"](../../04/flowforge-1-6-released/#access-node-red-logs-from-remote-devices). This feature made it easy for users to troubleshoot and debug. Building on that, we've taken the next step, and it's now possible to access the Device Editor.
 
 
-<iframe width="560" height="315" src="https://youtu.be/dQw4w9WgXcQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://youtu.be/zS6P3RR86vE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ## Device Status Visualisation
 
