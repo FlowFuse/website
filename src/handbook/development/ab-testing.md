@@ -8,6 +8,8 @@ A/B Testing is a very useful exercise by which we can distribution variants of a
 
 ## Defining a Test
 
+A/B Tests can be proposed via the "A/B Testing" issue template on the [FlowForge Website repository](https://github.com/flowforge/website/issues/new/choose). These issues are used to track findings. Results will be shared here from PostHog, and will provide a searchable source in the future if we want to reference historical A/B tests when proposiing new ideas that we may have already tried.
+
 ### What are your variants?
 
 - **Control:** You must always define a `control` (A). This is generally whatever the state of the content/UI looks like now.
