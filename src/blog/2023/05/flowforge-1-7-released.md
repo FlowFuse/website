@@ -24,7 +24,7 @@ This update is a part of our ongoing commitment to making FlowForge the best pos
 
 This FlowForge version upgrades device monitoring. It's made easier to manage your devices effectively, especially when there's many of them. Now we offer an intuitive, user-friendly method for users to keep an eye on their devices' status and evaluate the health of their team's devices overall. Creating an overview of your fleets health however large your fleet might be.
 
-<iframe width="560" height="315" src="https://youtu.be/dQw4w9WgXcQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://youtu.be/S--viuPhrS8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ## Auto Restart for Hung Node-RED Instances
 
