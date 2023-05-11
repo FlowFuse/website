@@ -24,8 +24,8 @@ Guidelines for including images:
 - Downsize the image to at maximum two times the width it will be displayed (1300px for blog prose)
 - Ideally use JPEG for lossy ok images, and PNG for others (they will be converted to AVIF and WebP regardless)
 - Wherever possible use:
-  - The markdown image include tag `![Name of Image](../relative-path-to-image.jpeg)` in blog prose
-    - You can use the `@skip` tag to disable the image pipeline for this image `![Name of Image](../relative-path-to-image.jpeg "@skip")`
-  - The NJK shortcode `{% image "./relative-path-to-image.png", "Image alt tag for screen readers", [150] %}` in website body
+  - The markdown image include tag in blog prose: `![Name of Image](../relative-path-to-image.jpeg)` 
+    - You can use the `@skip` tag to disable the image pipeline entirely for an image `![Name of Image](../relative-path-to-image.jpeg "@skip")`
+  - The NJK shortcode in website body: {% raw %} `{% image "./relative-path-to-image.png", "Image alt tag for screen readers", [150] %}`{% endraw %}
     - Where 150 is the maximum width the image will be displayed on the page (source image should be two times this width)
 - GIFs can grow incredibly large, consider using a video in a modern format if the animation is longer than a few seconds
