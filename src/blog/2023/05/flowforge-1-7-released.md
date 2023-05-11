@@ -11,7 +11,7 @@ FlowForge 1.7 adds new support for accessing the Node-RED Editor on Devices via 
 
 <!--more-->
 
-## Presenting Remote Node-RED Editor Access for Devices
+## Further improving fleet management and maintenance of remote Node-RED instances
 
 We are excited to introduce a new feature that will simplify the process of debugging and developing flows for devices. Our latest feature, "Editing Flows on Devices" allows users to access the editor directly on their device without the need for complex network configurations or firewalls. This feature will significantly improve the user experience, making it easier and more efficient to work with devices.
 
@@ -47,6 +47,14 @@ Dedicated to upholding the highest levels of security and privacy, our company a
 We are excited to provide an update on our ongoing task of onboarding Node-RED instances to AWS Marketplace via FlowForge Cloud, which we have started in this Iteration. By offering Node-RED instances through AWS Marketplace, we aim to simplify the deployment process for our customers.
 
 One of the significant challenges we are currently addressing is handling our current payment system in parallel with a new method. This will ensure a seamless billing experience for our customers, as they will be able to manage their Node-RED instance subscriptions through their existing AWS accounts.
+
+## Contributors
+We'd like the thank the following for their contributions to this release:
+
+- [@andreikop](https://github.com/andreikop) for their work on the [flowforge-driver-k8s #80](https://github.com/flowforge/flowforge-driver-k8s/pull/80) and [flowforge/helm #125](https://github.com/flowforge/helm/pull/125)
+- [@elenaviter](https://github.com/elenaviter) for their work on [flowforge/helm #126](https://github.com/flowforge/helm/pull/126)
+
+As an open-source project, we welcome community involvement in what we're building. If you're interested in contributing, checkout our [guide in the docs](https://flowforge.com/docs/contribute/).
 
 ## What's next?
 
