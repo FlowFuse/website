@@ -37,6 +37,6 @@ For all services that support it, 2FA authentication should be enabled and if po
 
 The CEO, CTO, and other executives at FlowForge will never email anyone to wire
 money, request you to buy gift cards, or request any other type of monitory
-transaction. Transactions are started through [a set process](../operations/vendors.md)
+transaction. Transactions are started through [a set process](../../operations/vendors.md)
 only. When in doubt, reach out through Slack and request a call with the executive
 to validate.

@@ -104,7 +104,7 @@ Exceptions will be made for business reasons to keep particular repositories
 private. Access to private repositories on GitHub will be based on business need
 and role.
 
-## Password Policy
+## Password Policy
 
 All FlowForge system passwords must meet industry standards and best practices.
 Where possible, systems shall be configured to enforce these standards.
