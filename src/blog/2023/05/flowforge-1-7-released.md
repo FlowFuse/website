@@ -30,8 +30,6 @@ This FlowForge version upgrades device monitoring. It's made easier to manage yo
 
 This enhancement ensures a more robust and reliable experience when working with Node-RED flows. The launcher now actively monitors the Node-RED process to detect if it has become unresponsive or hung, in addition to the existing checks for start-up and unexpected process exits. This advancement takes us one step further in enhancing the availability of our Node-RED instances.
 
-[See details on GitHub](https://github.com/flowforge/flowforge-nr-launcher/issues/110)
-
 ## Ongoing Topics
 
 ### High Availability
