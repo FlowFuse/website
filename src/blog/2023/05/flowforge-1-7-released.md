@@ -1,6 +1,6 @@
 ---
 title: FlowForge 1.7 Now Available
-subtitle: FlowForge now supports access to the Node-RED Editor on devices
+subtitle: Further improving fleet management and maintenance of remote Node-RED instances
 description: FlowForge now supports access to the Node-RED Editor on devices
 date: 2023-05-11 
 authors: ["marian-demme"]
