@@ -13,7 +13,7 @@ navTitle: Marketing - Website
 
 #### Images
 
-All images on the website, whether part of the blog or otherwise, are run though an [image pipeline](https://github.com/flowforge/website/blob/main/lib/image-handler.js), that compressed, resizes and converts the images to reduce file size and improve page loading speed.
+All images on the website, whether part of the blog or otherwise, are run though an [image pipeline](https://github.com/flowforge/website/blob/main/lib/image-handler.js), that compresses, resizes and converts the images to reduce file size and improve page loading speed.
 
 That pipeline also generates x2 versions of images for high DPI screens if the provided image is large enough.
 
