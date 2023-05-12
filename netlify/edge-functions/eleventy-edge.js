@@ -77,6 +77,8 @@ async function getPHFeatureFlags (distinctId) {
             return response.json()
         }).then((data) => {
             resolve(data.featureFlags)
+        }).catch((err) => {
+            reject(err)
         })
     })
 }
@@ -144,10 +146,12 @@ export default async (request, context) => {
             // TODO: Using this means we get two event ids every time we see a new Person
 
             eleventyConfig.addPairedAsyncShortcode("abtesting", async function (content, flag, value) {
+                console.log('ab testing shortcode')
                 if (POSTHOG_APIKEY) {
                     const distinctId = this.ctx.environments.distinctId
                     setCookie(context, "ff-distinctid", distinctId, 1);
                     const requireFlagsRefresh = isNewFlag(context, flag)
+                    console.log('is new flag:', requireFlagsRefresh)
                     var flags
                     if (requireFlagsRefresh) {
                         // call PostHog /decide API - not billed $$$ for this
@@ -155,6 +159,8 @@ export default async (request, context) => {
                     } else {
                         flags = getExistingFeatureFlags(context)
                     }
+                    console.log('flags')
+                    console.log(flags)
                     // set cookies to pass data to client PostHog for bootstrapping
                     if (flags && flags[flag] && flags[flag] === value) {
                         if (requireFlagsRefresh) {
