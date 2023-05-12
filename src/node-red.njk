@@ -1,6 +1,7 @@
 ---
-title: Introduction to Node-RED
-layout: default
+layout: nohero
+meta:
+    title: Introduction to Node-RED
 description:
     Node-RED is a programming tool for wiring together hardware devices, APIs and online services in new and interesting ways.
     It’s browser-based editor makes it easy to wire together flows using the extensive collection of nodes available, and deploy to its runtime with a single-click.
@@ -35,18 +36,24 @@ sitemapPriority: 0.8
 </script>
 
 <!--Hero Content-->
-<div class="w-full px-6 pb-56 md:pb-60 mt-12 md:px-0">
-    <div class="container m-auto text-center max-w-2xl">
-        <h1 class="px-12 md:px-0 text-gray-50 max-w-lg m-auto">
-            Introduction to <span class="text-teal-300">Node-RED</span>
+<div class="w-full px-6 pb-56 md:pb-60 mt-6 md:px-0">
+    <div class="container m-auto text-center max-w-3xl">
+        <span class="ff-animation-text-carousel px-12 md:px-0 max-w-lg m-auto text-gray-800 h-7 text-xl font-bold">
+            Low-Code
+            <ul class="inline-block text-red-600">
+                <li>Programming</li>
+                <li>Integration</li>
+                <li>Visualisation</li>
+            </ul>
+        </span>
+        <h1 class="mt-0 px-12 md:px-0 m-auto">
+            Introduction to <span class="">Node-RED</span>
         </h1>
         <h3 class="mt-6 text-gray-400 text-lg font-normal">
-            Node-RED is a popular, low-code programming tool, that makes it easy to connect digital services and hardware using a visual programming environment.
+            Node-RED is a popular, low-code programming environment, that makes it easy to connect digital services and hardware using a visual programming environment.
         </h3>
     </div>
 </div>
-
-{% include "components/divider-flow--default.njk" %}
 
 <div class="flex justify-center z-20 relative w-full px-8">
     <div class="absolute -mt-48">
@@ -59,29 +66,112 @@ sitemapPriority: 0.8
         <div id="video-play-btn" class="group absolute max-w-sm sm:max-w-xl md:max-w-3xl w-full h-full top-0 left-0 hover:bg-black flex item-center justify-center cursor-pointer hover:bg-opacity-10" onclick="playPause()">
             <button type="button" class="w-24 text-black group-hover:text-blue-800 duration-100">{% include "components/icons/play.svg" %}</button>
         </div>
-        <label onclick="openFullscreen()" class="absolute left-0 block mt-3 text-blue-600 font-medium cursor-pointer w-full text-center">Show Full Screen</label>
+        
+        <label class="absolute -bottom-16 left-0 block mt-3 text-italic w-full text-center">
+            A quick demonstration of how to pull data from an API, transform the data format, and visualise the results on a worldmap. <label onclick="openFullscreen()" class="text-blue-600 font-medium cursor-pointer">Show Full Screen</label>
+        </label>
     </div>
 </div>
 
-<div class="w-full ff-bg-light px-6 pt-32 sm:pt-64 md:pt-96 px-0 ff-prose">
-    <div class="container m-auto max-w-4xl pt-9 prose">
-        <div class="flex gap-12">
-            <div class="hidden sm:block w-48 flex-shrink-0">
-                {% image "./images/node-red-hexagon.png", "Node-RED Icon", [192] %}
-            </div>  
-            <div class="-mt-16 px-6 sm:px-0">
-                <h3>Reasons why Node-RED is so popular:</h3>
-                <ul>
-                    {% for reason in nodeRed.reasons %}
-                    <li>{{ reason | safe }}</li>
-                    {% endfor %}
-                </ul>
+<div class="w-full ff-bg-light pt-32 sm:pt-64 md:pt-96 px-0 pb-16 ff-prose">
+    <div class="container m-auto max-w-screen-lg pt-12 prose">
+        <div class="grid px-6 grid-cols-1 md:grid-cols-3 gap-6 sm:gap-x-8 sm:gap-y-0 mb-16">
+            <div class="text-left self-start">
+                <h3 class="flex items-center gap-4">
+                    <img class="h-16" src="./images/pictograms/node_catalog_red.png">
+                    <div class="flex flex-col leading-8">
+                        Low-Code
+                        <span class="text-red-600">Programming</span>
+                    </div>
+                </h3>
+                <p class="mb-0">
+                    Node-RED’s visual programming makes it easy for non-developers to build robust applications.
+                </p>
+            </div>
+            <div class="text-left self-start">
+                <h3 class="flex items-center gap-4">
+                    <img class="h-16" src="./images/pictograms/node_catalog_red.png">
+                    <div class="flex flex-col leading-8">
+                        Low-Code
+                        <span class="text-red-600">Integration</span>
+                    </div>
+                </h3>
+                <p class="mb-0">
+                    A large library of nodes and flows make it trivial to connect a multitude of digital services, such as protocols (OPC-UA, Modbus, Siemens S7), databases, APIs, hardware, etc.
+                </p>
+            </div>
+            <div class="text-left self-start">
+                <h3 class="flex items-center gap-4">
+                    <img class="h-16" src="./images/pictograms/node_catalog_red.png">
+                    <div class="flex flex-col leading-8">
+                        Low-Code
+                        <span class="text-red-600">Visualization</span>
+                    </div>
+                </h3>
+                <p class="mb-0">
+                    Node-RED Dashboard makes it easy to visualize your data in charts that integrate directly with actions and events that respond to the data.
+                </p>
+            </div><div class="text-left self-start">
+                <h3 class="flex items-center gap-4">
+                    <img class="h-16" src="./images/pictograms/opensource_red.png">
+                    <div class="flex flex-col leading-8">
+                        Open Source
+                    </div>
+                </h3>
+                <p class="mb-0">
+                    Node-RED is an open source project hosted at the OpenJS Foundation. Participation in the project is encouraged to help support the Node-RED community.
+                </p>
+            </div>
+            <div class="text-left self-start">
+                <h3 class="flex items-center gap-4">
+                    <img class="h-16" src="./images/pictograms/community_red.png">
+                    <div class="flex flex-col leading-8">
+                        Free-to-Use
+                    </div>
+                </h3>
+                <p class="mb-0">
+                    Node-RED is made available under the Apache Software License so individuals can use Node-RED free of charge.
+                </p>
+            </div>
+            <div class="text-left self-start">
+                <h3 class="flex items-center gap-4">
+                    <img class="h-16" src="./images/pictograms/node_catalog_red.png">
+                    <div class="flex flex-col leading-8">
+                        Low-Code
+                        <span class="text-red-600">Visualization</span>
+                    </div>
+                </h3>
+                <p class="mb-0">
+                    Node-RED Dashboard makes it easy to visualize your data in charts that integrate directly with actions and events that respond to the data.
+                </p>
             </div>
         </div>
     </div>
 </div>
 
-<div class="w-full ff-bg-light px-6 pb-12 sm:px-0 ff-prose">
+{% include "components/dividers/light-grey-curve.svg" %}
+
+<div class="w-full bg-gray-100 px-6 pb-20 pt-12 sm:px-0 ff-prose">
+    <div class="container m-auto max-w-4xl prose">
+        <h3 class="m-auto text-center">Node-RED IIoT Hardware Partners</h3>
+        <div class="ff-hardware-partners">
+            {% include "./images/hardware-partners/opto22.svg" %}
+            {% include "./images/hardware-partners/tulip.svg" %}
+            {% include "./images/hardware-partners/siemens.svg" %}
+            {% include "./images/hardware-partners/multitech.svg" %}
+            {% include "./images/hardware-partners/raspberry-pi.svg" %}
+            {% include "./images/hardware-partners/siemens.svg" %}
+            {% include "./images/hardware-partners/multitech.svg" %}
+            {% include "./images/hardware-partners/opto22.svg" %}
+            {% include "./images/hardware-partners/siemens.svg" %}
+            {% include "./images/hardware-partners/multitech.svg" %}
+            {% include "./images/hardware-partners/raspberry-pi.svg" %}
+            
+        </div>
+    </div>
+</div>
+
+<div class="w-full ff-bg-light px-6 pb-16 sm:px-0 ff-prose">
     <div class="container m-auto max-w-4xl prose">
         <div class="m-auto w-full">
             {% for faq in nodeRed.faqs %}
