@@ -31,7 +31,8 @@ iteration:
     - [jq](https://stedolan.github.io/jq/download/)
     - [yq](https://mikefarah.gitbook.io/yq/#install)
 
-On release day, the Release Manager takes the lead in running the release process, following the steps in the checklist.
+On release day, the Release Manager takes the lead in running the release process,
+following the steps in the checklist.
 
 The release is split into four phases:
 
@@ -40,11 +41,19 @@ The release is split into four phases:
 3. Phase Three: Steps to deploy the release to Staging/Production environments.
 4. Phase Four: Publicise the release.
 
+The Release Manager chooses when to start the release process. We usually aim to
+start the release process at 10am/11am (UK/CET) as that gets to the end of Phase
+Two before the team [Launch Lunch](#launch-lunch).
+
 A huddle should be started in the `#dev` channel at the start of the process to
 enable others to contribute where needed.
 
 It is also useful for the wider team if the Release Manager posts status updates
 to `#dev` throughout the process.
+
+If at any point a team member identifies a problem that needs checking before the
+release can continue, they should post a message to `#dev` and join the huddle
+to ensure the Release Manage is aware.
 
 ### Phase One
 
@@ -53,6 +62,10 @@ to `#dev` throughout the process.
 Check the [Development Board](https://github.com/orgs/flowforge/projects/1/views/33)
 for any items still in the 'Verify' column. Check what actions need to be completed
 to resolve them.
+
+**Note:** Items should have already been verified by the engineering team before
+release day. Leaving verification to release day leaves no time to resolve any
+newly discovered issues.
 
 #### Check Usage Ping Collector is up to date
 
