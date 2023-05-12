@@ -108,6 +108,7 @@ async function featureFlagCalled (distinctId, feature, value) {
 
 export default async (request, context) => { 
     try {
+        console.log('edge function')
         let edge = new EleventyEdge("edge", {
             request,
             context,
