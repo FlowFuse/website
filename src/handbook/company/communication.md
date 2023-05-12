@@ -73,6 +73,15 @@ below so you get to decide if you want more channels or not.
 - `#social-twitter` is a stream of engagement with @FlowForgeInc
 - `#virtual-coffee` to schedule coffee calls with other team members!
 
+#### Channel name structure
+
+When a channel is created for projects; work that's scoped to a certain topic
+that's going to be completed at some time in the future, it might be valuable to
+collect all internal communications into one Slack channel. Please prefix the
+channel name with `proj-` to make grouping easier.
+
+All team members are advised to put `proj-` channels into [their own section](https://slack.com/help/articles/360043207674-Organize-your-sidebar-with-custom-sections).
+
 ### GitHub
 
 All code at FlowForge is stored in Git, and GitHub hosts our repositories. As
