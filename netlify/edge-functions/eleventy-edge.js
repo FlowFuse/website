@@ -38,6 +38,7 @@ function decodeJsonCookie (cookie) {
   */
 function getDistinctId (context) {
     console.log('get distinct id')
+    console.log(POSTHOG_APIKEY)
     const phCookie = getCookie(context, `ph_${POSTHOG_APIKEY}_posthog`)
     const ffDistinctId = getCookie(context, `ff-distinctid`)
     console.log(phCookie)
