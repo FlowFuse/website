@@ -5,13 +5,12 @@ navTitle: Release Process
 
 We do two types or releases:
 
- - Scheduled releases at a regular [monthly cadence](./planning.md#cadence). This
-   encompasses the entire set of product repositories.
- - Fix releases of individual repositories as needed
+ - [Scheduled Releases](#scheduled-releases) - _for the planned release of the entire set of product repositories._
+ - [Fix Releases](#fix-releases) - _for ad-hoc release of individual repositories._
 
 ## Scheduled Releases
 
-We publish a new release of FlowForge [every four weeks](./planning.md#cadence). Each
+We publish a new release of FlowForge in line with our [release plan](./planning.md#cadence). Each
 release has a Release Manager who oversees the process. This role rotates around
 the team to ensure everyone is able to do it and that we don't have any single
 points of failure in the process.
@@ -32,15 +31,14 @@ iteration:
     - [jq](https://stedolan.github.io/jq/download/)
     - [yq](https://mikefarah.gitbook.io/yq/#install)
 
-On release day the Release Manager takes the lead on running the release process,
-following the steps in the checklist.
+On release day, the Release Manager takes the lead in running the release process, following the steps in the checklist.
 
 The release is split into four phases:
 
 1. Phase One: Check parts not covered by the automation are up to date.
-2. Phase Two: Run the release automation and verifiy each stage completes properly
-3. Phase Three: Steps to deploy the release to Staging/Production environments
-4. Phase Four: Publicise the release
+2. Phase Two: Run the release automation and verify each stage completes properly.
+3. Phase Three: Steps to deploy the release to Staging/Production environments.
+4. Phase Four: Publicise the release.
 
 A huddle should be started in the `#dev` channel at the start of the process to
 enable others to contribute where needed.
@@ -92,7 +90,7 @@ There are three scripts used run the release
 
 Follow these steps to run the scripts:
 
-1. Checkout the `flowforge/admin` repository if you do not already have it.
+1. Clone the [`flowforge/admin`](https://github.com/flowforge/admin) repository if you do not already have it.
    Ensure you have the latest with a `git pull`.
 2. In the *parent* directory to where you have the `admin` checked out, run the
    following command, replace `1.x.y` with the proper release version.
@@ -142,7 +140,7 @@ Follow these steps to run the scripts:
 
 Once everything has been published, the Release Manager should:
 
-1. Run [staging CI pipeline publish](https://github.com/flowforge/CloudProject/actions/workflows/build-kube.yml), to ensure staging is running the latest release.
+1. Run the staging CI pipeline [Build for Kube](https://github.com/flowforge/CloudProject/actions/workflows/build-kube.yml) against the main branch, to ensure staging is running the latest release.
   - Once that completes, verify it has deployed cleanly on Staging
 2. Raise a "FlowForge Cloud Change Requests" Issue in [CloudProject Project](https://github.com/flowforge/CloudProject/issues/new/choose) to request Production to be updated to the new version.
 3. Notify the CTO/Senior Engineer that the release is ready to publish to production.
