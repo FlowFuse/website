@@ -117,12 +117,16 @@ export default async (request, context) => {
             cookies: ['ff-feats', 'ff-distinctid', `ph_${POSTHOG_APIKEY}_posthog`, 'ff-test'],
         });
 
+        console.log(edge)
+
         function decodeJsonCookie (cookie) {
             const decoded = decodeURIComponent(cookie)
             return JSON.parse(decoded)
         }
 
         edge.config((eleventyConfig) => {
+
+            console.log('eleventy config')
 
             // Add some custom Edge-specific configuration
             // e.g. Fancier json output
