@@ -74,7 +74,8 @@ Refer to the section [Unmanaged Releases](#unmanaged-releases) for releasing the
     - Track the "Release Published" action on the GH repository
     - Keep an eye on npmjs.org page for each package
     - Watch for bot notifications in the [#gh-flowforge](https://flowforgeworkspace.slack.com/archives/C02UR3MBA1J) Slack channel (NOTE: the notifications can take quite a while to appear in the channel)
- - Once all the node module components have been built and published to npm the `installer`, `helm` and `docker-compose` components can be updated and tagged.
+ - Once all the node module components have been built and published to npm the `installer`, `helm`, `docker-compose` and `digital-ocean` components can be updated and tagged.
+ - Once the Digital Ocean Droplet GH Action has completed, follow [these](./digital-ocean.md) steps to have the new image reviewed and published
  - Run [staging CI pipeline publish](https://github.com/flowforge/CloudProject/actions/workflows/build-kube.yml), to ensure staging is running the latest release.
 
 ### Next Steps
