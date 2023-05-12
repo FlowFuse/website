@@ -140,7 +140,7 @@ export default async (request, context) => {
                 return `${content} - shortcode at edge`
             })
 
-            eleventyConfig.addGlobalData('distinctId', async function () {
+            eleventyConfig.addGlobalData('distinctId', function () {
                 const distinctId = getDistinctId(context);
                 return distinctId
             })
@@ -188,6 +188,8 @@ export default async (request, context) => {
                     return `${content}`
                 }
             })
+
+            console.log('eleventy config end')
         });
         const distinctId = getDistinctId(context)
         setCookie(context, "ff-distinctid", distinctId, 1);
