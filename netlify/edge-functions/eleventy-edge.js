@@ -37,8 +37,11 @@ function decodeJsonCookie (cookie) {
   If not, we need to geenrate a random identifier for them
   */
 function getDistinctId (context) {
+    console.log('get distinct id')
     const phCookie = getCookie(context, `ph_${POSTHOG_APIKEY}_posthog`)
     const ffDistinctId = getCookie(context, `ff-distinctid`)
+    console.log(phCookie)
+    console.log(ffDistinctId)
     if (phCookie) {
         return decodeJsonCookie(phCookie).distinct_id
     } else if (ffDistinctId) {
@@ -131,6 +134,7 @@ export default async (request, context) => {
             // eleventyConfig.addFilter("json", obj => JSON.stringify(obj, null, 2));
 
             eleventyConfig.addFilter("json", (content) => {
+                console.log('json edge filter')
                 return JSON.stringify(content, null, 2)
             });
 
@@ -194,6 +198,7 @@ export default async (request, context) => {
 
             console.log('eleventy config end')
         });
+        console.log('after eleventy config')
         const distinctId = getDistinctId(context)
         setCookie(context, "ff-distinctid", distinctId, 1);
         return await edge.handleResponse();
