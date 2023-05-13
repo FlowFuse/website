@@ -877,7 +877,7 @@ h4:hover .header-anchor {
     }
 
     .ff-hardware-partners {
-        @apply flex gap-x-16 gap-y-8 flex-wrap items-center pt-10 justify-center;
+        @apply flex gap-x-16 gap-y-8 flex-wrap items-center pt-8 justify-center;
     }
     .ff-hardware-partners svg{
         @apply flex-shrink-0 text-gray-500 opacity-60;
