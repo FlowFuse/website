@@ -16,7 +16,7 @@ html, body {
     font-size: 16px;
 }
 
-* {
+*{
     --tdur: 0.15s;
     transition: var(--tdur) background-color, var(--tdur) color, var(--tdur) fill, var(--tdur) stroke;
     -webkit-transition: var(--tdur) background-color, var(--tdur) color, var(--tdur) fill, var(--tdur) stroke;
@@ -846,6 +846,47 @@ h4:hover .header-anchor {
 
     .ff-features-key label {
         margin-left: 12px;
+    }
+
+    /*
+        Used for nicely formatting links
+    */
+
+    .ff-website .ff-nodered-resources {
+        @apply space-y-4;
+    }
+
+    .ff-website .ff-nodered-resources a {
+        @apply block border rounded-xl text-black hover:text-blue-600 hover:no-underline hover:cursor-pointer;
+    }
+
+    .ff-website .ff-nodered-resources--icon {
+        @apply border-r p-2 bg-gray-50 text-red-600 rounded-tl-xl rounded-bl-xl transition-colors;
+    }
+
+    .ff-website .ff-nodered-resources--icon svg {
+        stroke-width: 1.5px;
+    }
+
+    .ff-website .ff-nodered-resources--icon svg,
+    .ff-website .ff-nodered-resources--icon path {
+        @apply transition-none;
+    }
+
+    .ff-website .ff-nodered-resources a:hover .ff-nodered-resources--icon {
+        @apply bg-blue-600 text-white;
+    }
+
+    .ff-website .ff-nodered-resources a:hover .ff-nodered-resources--icon {
+        @apply bg-blue-600;
+    }
+
+    .ff-website .ff-nodered-resources li {
+        @apply text-base flex items-center gap-2 bg-white rounded-xl;
+    }
+
+    .ff-website .ff-nodered-resources li label {
+        @apply p-2 pointer-events-none;
     }
 
     /*
