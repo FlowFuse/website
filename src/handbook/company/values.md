@@ -4,31 +4,18 @@ meta:
 ---
 ## Values
 
-### Be Effective
+FlowForge has a few core values. Values we aspire to live by in everything we do
+at FlowForge. With a shared set of values, norms that are created every day will
+align with what company we want to be, and how we conduct business. Our values
+are as follows:
 
-> [effective][effective-oxford] - producing the result that is wanted or intended; producing a successful result
+### 📈 Results
 
-[effective-oxford]: https://www.oxfordlearnersdictionaries.com/definition/english/effective
-
-Being effective is split up in two parts; producing ***results*** and ***communication***
-about what our goals are.
-
-### Results
-
-#### Results not Hours
-
-We care about what you achieve: the code you shipped, the user you made happy,
-and the team member you helped. We value results over measuring hours spent
-working. We do not dictate how someone should schedule their day - we trust
-individuals to do what is right. Everyone should feel empowered to do the work
-needed to achieve our goals.
-
-There may be times when more is needed to meet a goal, deadline or customer
-situation. We take the responsibility to ensure they are the exceptions rather
-than the rule.
-
-We don't try to compete over the hours we work - everyone does what is right for them.
-We focus on what gets done and take pride in seeing each other succeed.
+1. We value results over the hours you spend working. We appreciate the effort, but value the results. Make users happy, care about the team member you helped. You schedule your day to make the most out of it for you. Don’t brag about hours worked, take pride in your achievements.
+1. <a name="doitnow">Do it now</a>: Growth is exponential; Ship today, observe first results tomorrow, observe compounding effects in just 2 days.
+1. Ownership: Take initiative, keep stakeholders in the loop, find and resolve bottlenecks. Collaborate with others. There’s one individual responsible for your achievements; You!
+1. Disagree and commit: Discussion is healthy, but decisions do not need full consensus. Disagree with a point-of-view, make your case, but accept other solutions are valid too. Once a choice is made, commit as a team to follow it. Allow others to prove themselves. Reaching consensus for every decision does not scale.
+1. Keep it short and simple: Don’t over-engineer your solution or let the scope creep beyond what makes sense for an iteration. Fast progress requires fast understanding. Boring solutions are good. Allow everyone to understand your solution. There will always be another iteration.
 
 #### Bias for Action
 
