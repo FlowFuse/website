@@ -8,20 +8,20 @@ description: Find out how much it costs to use FlowForge.
 ---
 
 <div class="px-6 pricing-tiles flex flex-col mb-16 md:max-w-screen-lg">
-    <div class="flex px-6 mb-20 m-auto md:-mt-16 text-gray-400 md:mb-20 md:max-w-screen-lg md:block">
+    <div class="flex px-6 -mb-6 -mt-32 mx-auto text-gray-400 md:max-w-screen-lg md:-mt-40 md:mb-1 md:block">
         <p class="lead-p max-w-screen-lg m-auto text-center md:max-w-xl md:px-4">
             Plans for every project. Whether you're an individual contributor, an IIoT manager, or an IT department, you'll find a suitable option to take your Node-RED applications to the next level.
         </p>
     </div>
-    <div class="px-6 pricing-tiles flex flex-col mb-16 md:grid md:flex-row md:max-w-screen-lg">
-        <div class="pricing-tile pt-8 pb-6 px-8 md:h-full">
+    <div class="pricing-tiles flex flex-col mb-16 md:grid md:flex-row md:max-w-screen-lg">
+        <div class="pricing-tile pt-8 pb-6 md:h-full">
             <div class="flex flex-col justify-between items-center text-center mb-4 sm:px-4 md:flex-row md:-mb-0 md:px-0 md:block md:text-left md:i md:items-left">
                 <h4 class="mt-2 pt-4" style="display:inline-block;">Starter </h4> <h5 style="display:inline-block;">(Open Source)</h5>
                 <label class="label">Self-managed</label>
                 <div class="mt-6 items-center md:text-left md:items-left">
                     <h2>Free</h2>
                 </div>
-                <p class="mt-6 pb-2">Open-Source version of the platform, with deployment options including Docker and Kubernetes.</p>
+                <p class="mt-6 pb-2"><span class="inline font-normal">Open-Source</span> version of the platform, with deployment options including Docker and Kubernetes.</p>
                 </div>
                 <div class="flex flex-col items-center">
                 <a class="ff-btn ff-btn--secondary-outlined uppercase align-baseline w-full" href="/docs/install" onclick="capture('cta-install', {'position': 'primary'})">Install now</a>  
@@ -40,48 +40,55 @@ description: Find out how much it costs to use FlowForge.
             </div>
         </div>
 
-            <div class="pricing-tile pb-6 px-8 md:h-full middle">
-                <div class="h-8 flex items-center justify-center text-center text-xs font-semibold text-white bg-gray-600 w-auto -mx-8 rounded-t-lg">  
+            <div class="pricing-tile pb-6 md:h-full middle">
+                <div class="h-8 flex items-center justify-center text-center text-xs font-semibold text-white bg-gray-600 w-auto -mx-7 rounded-t-lg">  
                     Production ready
                 </div>
-            <div class="flex flex-col justify-between items-center text-center mb-4 sm:px-4 md:flex-row md:-mb-0 md:px-0 md:block md:text-left md:i md:items-left">
-                <h4 class="pt-4" style="display: inline-block;">Premium </h4>
-                <label class="label">FlowForge Cloud</label>
-                <div class="flex mt-6 items-center justify-start md:text-left md:items-left">
-                    <div>
-                        <h2>$15</h2>
+                <div class="flex flex-col justify-between items-center text-center mb-4 sm:px-4 md:flex-row md:-mb-0 md:px-0 md:block md:text-left md:i md:items-left">
+                    <div class="flex flex-col items-center md:flex-row md:items-end md:justify-between">
+                        <div class="md:w-3/5">
+                            <h4 class="pt-4" style="display: inline-block;">Premium </h4>
+                            <label class="label">FlowForge Cloud</label>
+                        </div>
+                        <div class="annual-text h-full p-1 mt-1 md:w-2/5 md:ml-2">
+                            <a class="text" href='/book-demo'>Contact us for annual billing discounts</a>
+                        </div>
                     </div>
-                    <div class= "pl-2 text-sm leading-4 -pt:2 text-left">
-                        <note class="note text-teal-100">per Node-RED</br>instance/month</note>    
+                    <div class="flex mt-6 items-center justify-start md:text-left md:items-left">
+                        <div>
+                            <h2>$15</h2>
+                        </div>
+                        <div class= "pl-2 text-sm leading-4 -pt:2 text-left">
+                            <note class="note text-teal-100">per Node-RED</br>instance/month</note>    
+                        </div>
                     </div>
+                    <p class="mt-6 pb-2"><span class="inline font-normal">All of the FlowForge Premium features</span> included and <span class="inline font-normal">managed by us</span> to reduce your operational overheads.</p>
+                    </div>
+                    <div class="flex flex-col items-center md:items-left">
+                    <a class="ff-btn ff-btn--primary uppercase align-baseline w-full" href="https://app.flowforge.com/account/create" onclick="capture('cta-join', {'position': 'primary'})">TRY FOR FREE</a>  
                 </div>
-                <p class="mt-6 pb-2">All of the FlowForge Premium features included and managed by us to reduce your operational overheads.</p>
+                <div class="flex flex-col items-left pb-6 mt-2 border-b border-gray-700 text-red-400 text-sm ">
+                    <note class="note" style="display: inline-block;">Set up time < 1 min</note>
                 </div>
-                <div class="flex flex-col items-center md:items-left">
-                <a class="ff-btn ff-btn--primary uppercase align-baseline w-full" href="https://app.flowforge.com/account/create" onclick="capture('cta-join', {'position': 'primary'})">TRY FOR FREE</a>  
-            </div>
-            <div class="flex flex-col items-left pb-6 mt-2 border-b border-gray-700 text-red-400 text-sm ">
-                <note class="note" style="display: inline-block;">Set up time < 1 min</note>
-            </div>
-            <div class="features text-sm font-bold mt-6">
-                <note class="font-bold text-teal-100" style="display: inline-block;">All of Free features, plus:</note>
-                <ul class="ff-checklist font-light text-white leading-7 mt-2">
-                    <li class="leading-5">Managing more than 5 Node-RED instances</li>
-                    <li>Security</li>
-                    <li>Support</li>
-                    <li>Effective collaboration</li>
-                </ul>
-            </div>
+                <div class="features text-sm font-bold mt-6">
+                    <note class="font-bold text-teal-100" style="display: inline-block;">All of Free features, plus:</note>
+                    <ul class="ff-checklist font-light text-white leading-7 mt-2">
+                        <li class="leading-5">Managing more than 5 Node-RED instances</li>
+                        <li>Security</li>
+                        <li>Support</li>
+                        <li>Effective collaboration</li>
+                    </ul>
+                </div>
         </div>
 
-                <div class="pricing-tile pt-8 pb-6 px-8 md:h-full">
+                <div class="pricing-tile pt-8 pb-6 md:h-full">
             <div class="flex flex-col justify-between items-center text-center mb-4 sm:px-4 md:flex-row md:-mb-0 md:px-0 md:block md:text-left md:i md:items-left">
                 <h4 class="mt-2 pt-4" style="display: inline-block;">Enterprise</h4>
                 <label class="label">Self-managed</label>
                 <div class="mt-6 items-center md:text-left md:items-left">
                     <h2>Custom</h2>
                 </div>
-                <p class="mt-6 pb-2">Open-Source version of the platform, with deployment options including Docker and Kubernetes.</p>
+                <p class="mt-6 pb-2"><span class="inline font-normal">Premium features,</span> on your own dedicated instance, and <span class="inline font-normal">quicker support response.</span></p>
                 </div>
                 <div class="flex flex-col items-center md:items-left">
                 <a class="ff-btn ff-btn--secondary-outlined uppercase align-baseline w-full" href='/book-demo'>Book a demo</a>  
