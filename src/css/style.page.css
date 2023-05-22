@@ -1,4 +1,3 @@
-
 @tailwind components;
 @tailwind utilities;
 
@@ -16,9 +15,11 @@
 .page .ff-bg-dark h2 {
     color: theme(colors.teal.300);
 }
+
 .page .ff-bg-mid h2 {
     color: theme(colors.white);
 }
+
 .page .ff-bg-mid h5 {
     color: theme(colors.teal.400);
 }
@@ -86,21 +87,26 @@
     PRODUCT
 */
 @layer components {
+
     .product-left,
     .product-right {
         padding-bottom: 48px;
         @apply text-center sm:text-left flex items-center flex-col-reverse sm:flex-row;
     }
-    .product-left > div {
+
+    .product-left>div {
         @apply sm:pr-12;
     }
-    .product-right > div {
+
+    .product-right>div {
         @apply sm:pl-12 sm:text-right;
     }
+
     .product-left img,
     .product-right img {
         width: 150px;
     }
+
     .product-right {
         @apply sm:flex-row-reverse;
     }
@@ -117,20 +123,24 @@
         @apply grid-cols-1 md:grid-cols-2;
         gap: 48px;
     }
+
     .feature-tile {
         background-color: white;
         border: 1px solid theme(colors.gray.200);
         border-radius: 24px;
         padding: 24px;
     }
+
     .feature-tile--title {
         display: flex;
         align-items: center;
     }
+
     .feature-tile img {
         width: 64px;
         height: 64px
     }
+
     .feature-tile h4 {
         flex-grow: 1;
         text-align: left;
@@ -138,6 +148,7 @@
         margin-left: 16px;
         padding-right: 32px;
     }
+
     .feature-tile p {
         text-align: left;
         margin: 0;
@@ -151,52 +162,112 @@
 @layer components {
     .pricing-tiles {
         position: relative;
-        grid-template-columns: 1fr 2fr;
+        grid-template-columns: 1fr 1fr 1fr;
         gap: 48px;
         z-index: 2;
         margin: auto;
         @apply -mt-32 md:-mt-24;
     }
+
     .pricing-tile {
         position: relative;
-        text-align: center;
         border-radius: 12px;
-        border: 4px solid theme(colors.gray.400);
-        background-color: #37415194;
+        background: linear-gradient(0deg, theme(colors.gray.800), #252F3E, theme(colors.gray.800));
         display: flex;
         flex-direction: column;
-        box-shadow: 0px 4px 12px rgb(0 0 0 / 25%)
     }
+
+    .middle {
+        border: 2px solid theme(colors.gray.600);
+        background: linear-gradient(0deg, theme(colors.gray.800), theme(colors.gray.700));
+        /* border-image: linear-gradient(to bottom, theme(colors.gray.600), theme(colors.gray.800)) 1;     */
+    }
+
+    .pricing-tiles p.lead-p {
+        @apply text-gray-400;
+    }
+
+    .pricing-tile h5 {
+        font-weight: 500;
+        line-height: 1;
+        margin-block-end: 0;
+    }
+
     .pricing-tile h4 {
+        font-size: 24px;
         font-weight: bold;
         margin: 0;
-        margin-bottom: 12px;
-        color: theme(colors.teal.300)
-;        @apply text-left md:text-center;
+        margin-bottom: 0;
+        color: theme(colors.teal.300);
+        @apply text-left;
     }
+
     .pricing-tile h2 {
-        font-size: 48px;
-        color: theme(colors.white);
-        @apply mt-0
+        font-size: 35px;
+        font-weight: 500;
+        color: theme(colors.teal.100);
+        @apply mt-0;
     }
+
     .pricing-tile label {
-        font-weight: 200;
-        color: theme(colors.gray.300);
-        font-size: 0.875rem;
+        font-weight: 300;
+        display: block;
+        color: theme(colors.white);
+        font-size: 16px;
+        margin-top: -4px;
+        @apply text-left;
     }
+
     .pricing-tile p {
         font-size: 0.875rem;
         line-height: 1.5rem;
         font-weight: 200;
-        margin-bottom: 0.5rem;
     }
-    .pricing-tile a.ff-btn {
+
+    .pricing-tile a.ff-btn .ff-btn--secondary-oulined {
         display: inline-block;
         margin-top: 0.875rem;
+        @apply text-center;
     }
+
     .pricing-tile .lets-talk {
         font-weight: 300;
         font-size: 24px;
+    }
+
+    /* .pricing-tile::after {
+        content: '';
+        display: block;
+        position: absolute;
+        width: calc(100% + 4px);
+        height: calc(100% + 4px);
+        top: 0;
+        left: -2px;
+        background: linear-gradient(#1f293700 70%, #1f2937);
+        border-radius: 10px;
+    } */
+
+    .note {
+        font-weight: 300;
+        margin: 0;
+        margin-bottom: 0;
+        @apply text-left;
+    }
+
+    .ff-checklist li {
+        font-weight: 100;
+        @apply flex items-center gap-2;
+    }
+
+    .ff-checklist li::before {
+        content: url("/images/icons/check.svg");
+        width: 16px;
+        height: 16px;
+        flex-shrink: 0;
+    }
+
+    .features .note {
+        font-weight: 600;
     }
 }
 
@@ -210,11 +281,11 @@
         justify-content: center;
         @apply w-1/2 md:w-1/3;
     }
-    
+
     .company-value img {
         width: 128px;
     }
-    
+
     .company-value h5 {
         color: theme(colors.teal.500);
         font-weight: bold;
@@ -348,11 +419,13 @@
 */
 
 @layer components {
+
     .post-title h1,
     .webinar-title h1 {
         color: white;
         @apply mb-2 text-2xl sm:text-page-h1;
     }
+
     .webinar-title h4,
     .post-title h4 {
         color: theme(colors.gray.400);
@@ -360,6 +433,7 @@
         margin-bottom: 2rem;
         @apply text-lg sm:text-post-h4;
     }
+
     .webinar-title label,
     .post-title label {
         @apply text-teal-300 text-xs uppercase font-bold;

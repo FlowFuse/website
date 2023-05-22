@@ -692,6 +692,18 @@ h4:hover .header-anchor {
         background-color: theme(colors.teal.800);
         color: white;
     }
+
+    .ff-website .ff-btn.ff-btn--secondary-outlined {
+        background-color: transparent;
+        color: theme(colors.teal.300);
+        border: 1px solid theme(colors.teal.300);
+    }
+    
+    .ff-website .ff-btn.ff-btn--secondary-outlined:hover {
+        background-color: transparent;
+        color: theme(colors.teal.800);
+        border: 1px solid theme(colors.teal.800);
+    }
     
     .ff-website .ff-text-input {
         background-color: theme(colors.gray.700);
