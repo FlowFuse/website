@@ -6,7 +6,7 @@ navGroup: Company
 
 This covers how we run our business and deliver service to our customers.
 
-- [Customer Calls](./customer-calls.md)
+- [Feedback](./feedback.md)
 - [Market Verticals](./verticals.md)
 - [Strategy](./strategy.md)
 - [Pricing Principles](./pricing.md)
