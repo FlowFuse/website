@@ -17,19 +17,17 @@ are as follows:
 1. Disagree and commit: Discussion is healthy, but decisions do not need full consensus. Disagree with a point-of-view, make your case, but accept other solutions are valid too. Once a choice is made, commit as a team to follow it. Allow others to prove themselves. Reaching consensus for every decision does not scale.
 1. Keep it short and simple: Don’t over-engineer your solution or let the scope creep beyond what makes sense for an iteration. Fast progress requires fast understanding. Boring solutions are good. Allow everyone to understand your solution. There will always be another iteration.
 
-#### Bias for Action
 
-We value getting things done and continually moving forward. It is better to 
-iterate rapidly rather than get stuck over-thinking a problem. We move with an
-urgency and a focus to achieve our best.
+### 🔁 Iterative Improvement
 
-When you disagree with a solution to a problem, provide a concrete alternate
-solution to allow momentum to be maintained or even gained.
-
-Ship the minimum viable change possible. Small changes allow fast feedback loops
-which in turn can aid in deciding the next minimal viable iteration. Further,
-iteration naturally splits big problems into small steps, creates positive
-momentum, and allows to capture value quicker.
+1. Small Steps: Every mountain can be climbed with small steps. Make a change,
+reassess your direction, repeat. Scope down your work item, reflect, and scope
+it down again. Get the minimal amount of work down, but no less, find the [golden mean](https://en.wikipedia.org/wiki/Golden_mean_%28philosophy%29).
+1. Bias for Action: Don’t overthink, do what is the most natural in this moment. [Do it now](#doitnow).
+1. Accepting Change: Be eager to accept change: Is it better than yesterday, and can we improve on it tomorrow?
+1. Everything is a Draft: Today won’t be perfect, tomorrow will be better. Perfection is the death of progress.
+1. Decide where good is good enough; understand where excellence is our company's
+edge. Apply the [pareto principle](https://en.wikipedia.org/wiki/Pareto_principle).
 
 #### Be Trusting
 
