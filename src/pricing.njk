@@ -8,7 +8,7 @@ description: Find out how much it costs to use FlowForge.
 ---
 
 <div class="px-6 pricing-tiles flex flex-col mb-16 md:max-w-screen-lg">
-    <div class="flex px-6 mb-16 m-auto md:-mt-16 mb-40 text-gray-400 md:mb-20 md:max-w-screen-lg md:block">
+    <div class="flex px-6 mb-20 m-auto md:-mt-16 text-gray-400 md:mb-20 md:max-w-screen-lg md:block">
         <p class="lead-p max-w-screen-lg m-auto text-center md:max-w-xl md:px-4">
             Plans for every project. Whether you're an individual contributor, an IIoT manager, or an IT department, you'll find a suitable option to take your Node-RED applications to the next level.
         </p>
@@ -16,17 +16,17 @@ description: Find out how much it costs to use FlowForge.
     <div class="px-6 pricing-tiles flex flex-col mb-16 md:grid md:flex-row md:max-w-screen-lg">
         <div class="pricing-tile pt-8 pb-6 px-8 md:h-full">
             <div class="flex flex-col justify-between items-center text-center mb-4 sm:px-4 md:flex-row md:-mb-0 md:px-0 md:block md:text-left md:i md:items-left">
-                <h4 class="mt-2 pt-4" style="display: inline-block;">Starter </h4> <h5 style="display: inline-block;">(Open Source)</h5>
+                <h4 class="mt-2 pt-4" style="display:inline-block;">Starter </h4> <h5 style="display:inline-block;">(Open Source)</h5>
                 <label class="label">Self-managed</label>
                 <div class="mt-6 items-center md:text-left md:items-left">
                     <h2>Free</h2>
                 </div>
                 <p class="mt-6 pb-2">Open-Source version of the platform, with deployment options including Docker and Kubernetes.</p>
                 </div>
-                <div class="flex flex-col items-center md:items-left">
+                <div class="flex flex-col items-center">
                 <a class="ff-btn ff-btn--secondary-outlined uppercase align-baseline w-full" href="/docs/install" onclick="capture('cta-install', {'position': 'primary'})">Install now</a>  
             </div>
-            <div class="flex flex-col items-left pb-6 mt-2 border-b border-gray-700 text-teal-300 text-sm">
+            <div class="flex flex-col pb-6 mt-2 border-b border-gray-700 text-teal-300 text-sm">
                 <note class="note" style="display: inline-block;">Set up time < 30 min</note>
             </div>
             <div class="flex flex-col content-start features text-sm font-bold mt-6">
@@ -47,8 +47,13 @@ description: Find out how much it costs to use FlowForge.
             <div class="flex flex-col justify-between items-center text-center mb-4 sm:px-4 md:flex-row md:-mb-0 md:px-0 md:block md:text-left md:i md:items-left">
                 <h4 class="pt-4" style="display: inline-block;">Premium </h4>
                 <label class="label">FlowForge Cloud</label>
-                <div class="mt-6 items-center md:text-left md:items-left">
-                    <h2>$15</h2>
+                <div class="flex mt-6 items-center justify-start md:text-left md:items-left">
+                    <div>
+                        <h2>$15</h2>
+                    </div>
+                    <div class= "pl-2 text-sm leading-4 -pt:2 text-left">
+                        <note class="note text-teal-100">per Node-RED</br>instance/month</note>    
+                    </div>
                 </div>
                 <p class="mt-6 pb-2">All of the FlowForge Premium features included and managed by us to reduce your operational overheads.</p>
                 </div>

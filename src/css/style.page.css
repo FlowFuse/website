@@ -205,6 +205,7 @@
     .pricing-tile h2 {
         font-size: 35px;
         font-weight: 500;
+        margin-bottom: 0;
         color: theme(colors.teal.100);
         @apply mt-0;
     }
@@ -214,8 +215,8 @@
         display: block;
         color: theme(colors.white);
         font-size: 16px;
-        margin-top: -4px;
-        @apply text-left;
+        /* margin-top: -3px; */
+        @apply text-left leading-6 md:leading-5;
     }
 
     .pricing-tile p {
@@ -251,12 +252,12 @@
         font-weight: 300;
         margin: 0;
         margin-bottom: 0;
-        @apply text-left;
+        @apply text-center md:text-left;
     }
 
     .ff-checklist li {
         font-weight: 100;
-        @apply flex items-center gap-2;
+        @apply flex gap-2;
     }
 
     .ff-checklist li::before {
@@ -264,6 +265,7 @@
         width: 16px;
         height: 16px;
         flex-shrink: 0;
+        padding-top: 2px;
     }
 
     .features .note {
