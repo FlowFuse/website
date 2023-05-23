@@ -36,7 +36,7 @@ value empathy, courtesy, and respect for each other.
 1. [Information wants to be free](https://en.wikipedia.org/wiki/Information_wants_to_be_free):
 Store information in public places by default: our Handbook and GitHub issues.
 Allow others to understand you and your decisions.
-1. Write things down; information stuck in calls or private conversations is lost.
+1. Write things down: information stuck in calls or private conversations is lost.
 Allow progress being made by anyone. Keep an agenda for meetings, write down decisions.
 1. Think big picture: It’s not “your” issue/bug, the whole community can have
 opinions and provide suggestions.
