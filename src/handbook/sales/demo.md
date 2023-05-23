@@ -31,27 +31,12 @@ In this demo we're going to focus on the key features of FlowForge, there is a l
 
 #### Key Concepts
 
-To start, let’s cover some key concepts: which are Teams, Applications, Instances, Devices and Snapshots.
-
-##### Teams
-
-A team is a group of developers who are working together on a Node-RED application. Once a user is invited to a team they can have either read only or full access to all the applications in that team.
-
-##### Applications
-
-An application is one or more Node-RED instances working together to deliver an overall feature or goal.
-
-##### Instances
-
-An instance is one instance of Node-RED running either on FlowForge or a device.
-
-##### Devices
-
-Devices allow you to deploy flow from FlowForge directly to hardware in your premises. Devices are often used with PLCs where an application needs direct access to hardware sensors or needs to be able to show data on a HMI on a shop floor.
-
-##### Snapshots
-
-Snapshots allow you to keep a history of your instances and applications and easily deploy or revert to a given snapshot.
+To start, let’s cover some [key concepts](/docs/user/concepts/) which are:
+1. [Teams](/docs/user/concepts/#team)
+1. [Applications](/docs/user/concepts/#application)
+1. [Instances](/docs/user/concepts/#instance)
+1. [Devices](/docs/user/concepts/#device)
+1. [Snapshots](/docs/user/concepts/#instance-snapshot)
 
 #### Live Demo
 
