@@ -1,0 +1,22 @@
+name: 🧪 A/B Testing Proposal
+title: "[A/B]: "
+description: Creates an issue to detail an A/B Testing Proposal and store reference to any results and findings. 
+labels: [ab-testing]
+body:
+- type: textarea
+  attributes:
+    label: What are your variants?
+    description: You must define at least a control and test variant. If you want multiple test variants, please provide appropriate labels for each.
+    value: |
+      control: Detail what the "control" state looks like here
+      test: Detail what the "test" state looks like here
+- type: textarea
+  attributes:
+    label: What does success look like?
+    description: |
+      You must have a trackable metric that the variants can compete over.
+    value: |
+     Example success metrics could be:
+      - "Clicks of a certain button"
+      - "$pageview events of a certain URL"
+      - Number of Instances spun up on FlowForge

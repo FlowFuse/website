@@ -4,45 +4,30 @@ meta:
 ---
 ## Values
 
-### Be Effective
+FlowForge has a few core values. Values we aspire to live by in everything we do
+at FlowForge. With a shared set of values, norms that are created every day will
+align with what company we want to be, and how we conduct business. Our values
+are as follows:
 
-> [effective][effective-oxford] - producing the result that is wanted or intended; producing a successful result
+### 📈 Results
 
-[effective-oxford]: https://www.oxfordlearnersdictionaries.com/definition/english/effective
+1. We value results over the hours you spend working. We appreciate the effort, but value the results. Make users happy, care about the team member you helped. You schedule your day to make the most out of it for you. Don’t brag about hours worked, take pride in your achievements.
+1. <a name="doitnow">Do it now</a>: Growth is exponential; Ship today, observe first results tomorrow, observe compounding effects in just 2 days.
+1. Ownership: Take initiative, keep stakeholders in the loop, find and resolve bottlenecks. Collaborate with others. There’s one individual responsible for your achievements; You!
+1. Disagree and commit: Discussion is healthy, but decisions do not need full consensus. Disagree with a point-of-view, make your case, but accept other solutions are valid too. Once a choice is made, commit as a team to follow it. Allow others to prove themselves. Reaching consensus for every decision does not scale.
+1. Keep it short and simple: Don’t over-engineer your solution or let the scope creep beyond what makes sense for an iteration. Fast progress requires fast understanding. Boring solutions are good. Allow everyone to understand your solution. There will always be another iteration.
 
-Being effective is split up in two parts; producing ***results*** and ***communication***
-about what our goals are.
 
-### Results
+### 🔁 Iterative Improvement
 
-#### Results not Hours
-
-We care about what you achieve: the code you shipped, the user you made happy,
-and the team member you helped. We value results over measuring hours spent
-working. We do not dictate how someone should schedule their day - we trust
-individuals to do what is right. Everyone should feel empowered to do the work
-needed to achieve our goals.
-
-There may be times when more is needed to meet a goal, deadline or customer
-situation. We take the responsibility to ensure they are the exceptions rather
-than the rule.
-
-We don't try to compete over the hours we work - everyone does what is right for them.
-We focus on what gets done and take pride in seeing each other succeed.
-
-#### Bias for Action
-
-We value getting things done and continually moving forward. It is better to 
-iterate rapidly rather than get stuck over-thinking a problem. We move with an
-urgency and a focus to achieve our best.
-
-When you disagree with a solution to a problem, provide a concrete alternate
-solution to allow momentum to be maintained or even gained.
-
-Ship the minimum viable change possible. Small changes allow fast feedback loops
-which in turn can aid in deciding the next minimal viable iteration. Further,
-iteration naturally splits big problems into small steps, creates positive
-momentum, and allows to capture value quicker.
+1. Small Steps: Every mountain can be climbed with small steps. Make a change,
+reassess your direction, repeat. Scope down your work item, reflect, and scope
+it down again. Get the minimal amount of work down, but no less, find the [golden mean](https://en.wikipedia.org/wiki/Golden_mean_%28philosophy%29).
+1. Bias for Action: Don’t overthink, do what is the most natural in this moment. [Do it now](#doitnow).
+1. Accepting Change: Be eager to accept change: Is it better than yesterday, and can we improve on it tomorrow?
+1. Everything is a Draft: Today won’t be perfect, tomorrow will be better. Perfection is the death of progress.
+1. Decide where good is good enough; understand where excellence is our company's
+edge. Apply the [pareto principle](https://en.wikipedia.org/wiki/Pareto_principle).
 
 #### Be Trusting
 
