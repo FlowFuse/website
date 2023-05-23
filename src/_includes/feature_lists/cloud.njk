@@ -55,7 +55,7 @@
             id: "persistent-file",
             label: "Persistent File Storage",
             values: ['check', 'check', 'check'],
-            info: "<p>Read & write to files in your flows. These will persist beyond container and instance restarts and upgrades.</p>"
+            info: "<p>Read & write to files in your flows. These will persist beyond container and instance restarts and upgrades. In FlowForge Cloud, each Node-RED instance has a quota of 100MB of file storage. A single write operation is limited to 10MB in size.</p>"
         }, {
             id: "sso",
             label: "Single Sign-On (SSO)",
@@ -70,7 +70,7 @@
             id: "persistent-context",
             label: "Persistent Context Storage",
             values: [null, 'check', 'check'],
-            info: "In-memory values defined in a Node-RED flow will persist across project restarts and upgrades."
+            info: "<p>In-memory values defined in a Node-RED flow will persist across project restarts and upgrades. In FlowForge Cloud, persistent context has a quota limit set at 1MB per instance.</p>"
         }, {
             label: "Shared Team Library",
             values: [null, 'check', 'check']
