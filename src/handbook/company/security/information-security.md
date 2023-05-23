@@ -151,7 +151,7 @@ Business Continuity & Disaster Recovery Plan | To prepare FlowForge in the event
 [Data Management Policy](./data-management.md) | To ensure that information is classified and protected in accordance with its importance to the organization.
 Human Resources Policy | To ensure that employees and contractors meet security requirements, understand their responsibilities, and are suitable for their roles.
 Incident Response Plan | Policy and procedures for suspected or confirmed information security incidents.
-Operations Security Policy | To ensure the correct and secure operation of information processing systems and facilities.
+[Operations Security Policy](./operations-security.md) | To ensure the correct and secure operation of information processing systems and facilities.
 Physical Security Policy | To prevent unauthorized physical access or damage to the organization’s information and information processing facilities.
 Risk Management Policy | To define the process for assessing and managing FlowForge's information security risks in order to achieve the company’s business and information security objectives.
 [Secure Development Policy](./secure-development.md) | To ensure that information security is designed and implemented within the development lifecycle for applications and information systems.
