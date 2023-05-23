@@ -13,7 +13,7 @@ description: Find out how much it costs to use FlowForge.
             Plans for every project. Whether you're an individual contributor, an IIoT manager, or an IT department, you'll find a suitable option to take your Node-RED applications to the next level.
         </p>
     </div>
-    <div class="pricing-tiles flex flex-col md:grid md:flex-row md:max-w-screen-lg md:mb-10">
+    <div class="pricing-tiles flex flex-col md:grid md:flex-row md:max-w-screen-lg">
         <div class="pricing-tile pt-8 pb-6 md:h-full">
             <div class="flex flex-col justify-between items-center text-center mb-4 sm:px-4 md:flex-row md:-mb-0 md:px-0 md:block md:text-left md:i md:items-left">
                 <h4 class="mt-2 pt-4" style="display:inline-block;">Starter </h4> <h5 style="display:inline-block;">(Open Source)</h5>
@@ -106,9 +106,9 @@ description: Find out how much it costs to use FlowForge.
             </div>
         </div>
     </div>
-    <!-- <div class="flex flex-col items-center text-teal-300 mb-12 -mt-4">
-        {% include "components/icons/chevron-down.svg" %}
-    </div> -->
+    <div class="flex flex-col items-center text-teal-300 mb-12 -mt-4">
+        <a href="#feature-comparison">{% include "components/icons/chevron-down.svg" %}</a>
+    </div>
 </div>
 
 {% include "components/divider-flow--top-red--light.njk" %}
@@ -121,7 +121,7 @@ description: Find out how much it costs to use FlowForge.
 {% endset -%}
 
 <!-- Feature Comparison -->
-<div class="product w-full ff-bg-light px-6 pt-20 pb-20 md:px-0 md:pt-6 md:pb-42">
+<div id="feature-comparison" class="product w-full ff-bg-light px-6 pt-20 pb-20 md:px-0 md:pt-6 md:pb-42">
     <div class="container m-auto text-center">
         <div class="mt-9 mb-20">
             <h1 id="feature-comparison">Feature Comparison</h1>
