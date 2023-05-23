@@ -107,8 +107,20 @@ description: Find out how much it costs to use FlowForge.
         </div>
     </div>
     <div class="flex flex-col items-center text-teal-300 mb-12 -mt-4">
-        <a href="#feature-comparison">{% include "components/icons/chevron-down.svg" %}</a>
-    </div>
+        <a href="#feature-comparison" onclick="scrollToAnchor(event, 'feature-comparison')">
+            {% include "components/icons/chevron-down.svg" %}
+          </a>
+        </div>
+        
+        <script>
+        function scrollToAnchor(event, anchorId) {
+          event.preventDefault();
+          const anchor = document.getElementById(anchorId);
+          if (anchor) {
+            anchor.scrollIntoView({ behavior: 'smooth' });
+          }
+        }
+        </script>
 </div>
 
 {% include "components/divider-flow--top-red--light.njk" %}
@@ -123,7 +135,7 @@ description: Find out how much it costs to use FlowForge.
 <!-- Feature Comparison -->
 <div id="feature-comparison" class="product w-full ff-bg-light px-6 pt-20 pb-20 md:px-0 md:pt-6 md:pb-42">
     <div class="container m-auto text-center">
-        <div class="mt-9 mb-20">
+        <div class="md:mt-9 mb-20">
             <h1 id="feature-comparison">Feature Comparison</h1>
         </div>
         <!-- Feature List -->

@@ -215,7 +215,6 @@
         display: block;
         color: theme(colors.white);
         font-size: 16px;
-        /* margin-top: -3px; */
         @apply text-left leading-6 md:leading-5;
     }
 
