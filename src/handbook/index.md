@@ -27,7 +27,7 @@ and strongly encouraged.
 
 ### Sales and Marketing
 
- - [Sales](./sales)
+ - [Sales](./sales/)
  - [Marketing & Communication](./marketing)
 
 ### Internal Operations
