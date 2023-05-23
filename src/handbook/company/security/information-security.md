@@ -147,7 +147,7 @@ Role | Purpose
 [Access Control Policy](./access-control.md) | To limit access to information and information processing systems to authorized parties in accordance with business objectives.
 Asset Management Policy | To identify organizational assets and define appropriate protection responsibilities. 
 Business Continuity & Disaster Recovery Plan | To prepare FlowForge in the event of extended service outages caused by factors beyond our control (e.g., natural disasters, man-made events), and to restore services to the widest extent possible in a minimum time frame.
-Cryptography Policy | To ensure proper and effective use of cryptography to protect the confidentiality, authenticity and/or integrity of information.
+[Cryptography Policy](./cryptography.md) | To ensure proper and effective use of cryptography to protect the confidentiality, authenticity and/or integrity of information.
 [Data Management Policy](./data-management.md) | To ensure that information is classified and protected in accordance with its importance to the organization.
 Human Resources Policy | To ensure that employees and contractors meet security requirements, understand their responsibilities, and are suitable for their roles.
 Incident Response Plan | Policy and procedures for suspected or confirmed information security incidents.
