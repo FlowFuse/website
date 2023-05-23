@@ -29,6 +29,18 @@ it down again. Get the minimal amount of work down, but no less, find the [golde
 1. Decide where good is good enough; understand where excellence is our company's
 edge. Apply the [pareto principle](https://en.wikipedia.org/wiki/Pareto_principle).
 
+### 👥 Collaborative Community
+
+1. Be inclusive: in a community everyone is different; allow them to be. We
+value empathy, courtesy, and respect for each other.
+1. [Information wants to be free](https://en.wikipedia.org/wiki/Information_wants_to_be_free):
+Store information in public places by default: our Handbook and GitHub issues.
+Allow others to understand you and your decisions.
+1. Write things down: information stuck in calls or private conversations is lost.
+Allow progress being made by anyone. Keep an agenda for meetings, write down decisions.
+1. Think big picture: It’s not “your” issue/bug, the whole community can have
+opinions and provide suggestions.
+
 #### Be Trusting
 
 To move with high velocity, trust needs to be given before one has had the
@@ -37,24 +49,6 @@ challenging tasks and project, and are then allowed to go their own route. When
 challenged, ask for feedback and support, not for permission or approval.
 
 ### Communication
-
-#### Community-First
-
-As an open core company our community spans our employees, the open source
-contributors and our users. We strive to build a healthy, positive community
-through our values and actions. We celebrate the diversity of others, we listen
-to each other, we support each other.
-
-We are inclusive of all and are mindful of how our words and actions can impact
-others. We welcome discussion and debate, but take care to ensure it is not at
-the expense or exclusion of others. We value empathy, courtesy and respect for
-each other.
-
-##### Transparency
-
-A community can better aid with the success of FlowForge when they're trusted
-with the same information. This openness builds trust with our community and helps
-in collaboration. Further, it allows for knowledge sharing and builds understanding.
 
 #### Use Candor
 

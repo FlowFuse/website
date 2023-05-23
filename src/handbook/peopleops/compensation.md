@@ -1,6 +1,7 @@
 ---
 navTitle: Compensation
 ---
+
 # Compensation
 
 Total compensation consists of 3 elements, salary, equity, and benefits.
@@ -66,7 +67,7 @@ up to $25.
 
 #### Dinner Bonus
 
-The company's [KPI tracking FlowForge adoption](../company/achieving-success#managed-node-red-instances)
+The company's [KPI tracking FlowForge ARR](../company/achieving-success.md#kpi)
 sets an aggressive goal for growth. When the growth target is met a $100 bonus is
 awarded to be expensed for a dinner out. The bonus is awarded per release.
 
