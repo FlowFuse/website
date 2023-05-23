@@ -13,7 +13,7 @@ description: Find out how much it costs to use FlowForge.
             Plans for every project. Whether you're an individual contributor, an IIoT manager, or an IT department, you'll find a suitable option to take your Node-RED applications to the next level.
         </p>
     </div>
-    <div class="pricing-tiles flex flex-col mb-16 md:grid md:flex-row md:max-w-screen-lg">
+    <div class="pricing-tiles flex flex-col md:grid md:flex-row md:max-w-screen-lg">
         <div class="pricing-tile pt-8 pb-6 md:h-full">
             <div class="flex flex-col justify-between items-center text-center mb-4 sm:px-4 md:flex-row md:-mb-0 md:px-0 md:block md:text-left md:i md:items-left">
                 <h4 class="mt-2 pt-4" style="display:inline-block;">Starter </h4> <h5 style="display:inline-block;">(Open Source)</h5>
@@ -105,60 +105,13 @@ description: Find out how much it costs to use FlowForge.
                 </ul>
             </div>
         </div>
-            
-        {# <div class="pricing-tile pt-4 pb-6 px-8 justify-between middle md:h-full">
-            <div class="flex flex-col justify-between items-center mb-4 sm:px-4 md:flex-row md:-mb-0 md:px-0 md:block">
-                <h4>Open-Source</h4>
-                <div class="mt-4">
-                    <h2>$0</h2>
-                    <label class="sub-label">Apache 2.0 Licensed<label>
-                </div>
-                <p class="mt-4">We are an open-core company, use FlowForge for free, always, with deployment options including Docker and Kubernetes.</p>
-                </div>
-                <div>
-                <a class="ff-btn ff-btn--secondary uppercase align-baseline" href="/docs/install" onclick="capture('cta-install', {'position': 'primary'})">Install now</a>
-            </div>
-        </div>
-
-            <div class="pricing-tile pt-4 pb-6 px-8 justify-between md:h-full">
-            <div class="flex flex-col justify-between items-center mb-4 sm:px-4 md:flex-row md:-mb-0 md:px-0 md:block">
-                <h4>Open-Source</h4>
-                <div class="mt-4">
-                    <h2>$0</h2>
-                    <label class="sub-label">Apache 2.0 Licensed<label>
-                </div>
-                <p class="mt-4">We are an open-core company, use FlowForge for free, always, with deployment options including Docker and Kubernetes.</p>
-                </div>
-                <div>
-                <a class="ff-btn ff-btn--secondary uppercase align-baseline text-red-400 border-red-400 border border-solid" href="/docs/install" onclick="capture('cta-install', {'position': 'primary'})">Install now</a>
-            </div>
-        </div> #}
-        {# <div class="pricing-tile pt-4 pb-6 px-8">
-            <div class="flex flex-col justify-between items-center mb-4 sm:px-4 md:flex-row md:-mb-0 md:px-0 md:block">
-                <h4>Premium</h4>
-                <div>
-                    <h2>$15</h2>
-                    <label class="sub-label">per Node-RED instance/month</label>
-                </div>
-            </div>
-            <div class="flex flex-col sm:flex-row items-center gap-4 mt-4">
-                <div class="sm:w-6/12">
-                    <h5>FlowForge Cloud</h5>
-                    <p class="mt-2">Get started in less than a minute, fully managed, fully secure.</p>
-                    <a class="ff-btn ff-btn--primary uppercase" href="https://app.flowforge.com/account/create" onclick="capture('cta-join', {'position': 'primary'})">Free Trial</a>
-                </div>
-                <span style="width: 2px; background-color: gray; height: 75%"></span>
-                <div class="sm:w-6/12">
-                    <h5>Self-Managed</h5>
-                    <p class="mt-2">Premium features, on your own dedicated instance.</p>
-                    <a class='ff-btn ff-btn--secondary uppercase' href='/book-demo'>Book a Demo</a>
-                </div>
-            </div>
-        </div> #}
+    </div>
+    <div class="flex flex-col items-center text-teal-300 mb-12 -mt-4">
+        {% include "components/icons/chevron-down.svg" %}
     </div>
 </div>
 
-{% include "components/divider-flow--default.njk" %}
+{% include "components/divider-flow--top-red--light.njk" %}
 
 <!-- Feature List -->
 {% set featuresHtml %}
@@ -168,10 +121,10 @@ description: Find out how much it costs to use FlowForge.
 {% endset -%}
 
 <!-- Feature Comparison -->
-<div class="product w-full ff-bg-light px-6 pt-20 pb-20 md:px-0 md:pt-32 md:pb-42">
+<div class="product w-full ff-bg-light px-6 pt-20 pb-20 md:px-0 md:pt-6 md:pb-42">
     <div class="container m-auto text-center">
-        <div class="mt-9">
-            <h1 id="feature-comparison" class="mb-4">Feature Comparison</h1>
+        <div class="mt-9 mb-20">
+            <h1 id="feature-comparison">Feature Comparison</h1>
         </div>
         <!-- Feature List -->
         <div>{{ featuresHtml | safe }}</div>

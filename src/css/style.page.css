@@ -258,7 +258,7 @@
         text-decoration: none;
     }
 
-    /* .pricing-tile::after {
+    .pricing-tile::after {
         content: '';
         display: block;
         position: absolute;
@@ -268,7 +268,8 @@
         left: -2px;
         background: linear-gradient(#1f293700 70%, #1f2937);
         border-radius: 10px;
-    } */
+        pointer-events: none;
+    }
 
     .note {
         font-weight: 300;
