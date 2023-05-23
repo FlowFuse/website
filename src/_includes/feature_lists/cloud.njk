@@ -4,117 +4,117 @@
         rows: [{
             id: 'hosting',
             label: "Hosting",
-            values: ['Self-Managed', 'FlowForge or Self-Managed'],
+            values: ['Self-Managed', 'FlowForge or Self-Managed', 'FlowForge or Self-Managed'],
             info: "<p>FlowForge can be deployed using Docker, Kubernetes or run the core FlowForge platform on your local machine directly.</p><p>FlowForge Cloud provides you with a browser-based, secure and cloud-based platform, with all of the FlowForge Premium features included and managed by us to reduce your operational overheads.</p>"
         }, {
             id: 'multiple-projects',
             label: "Multiple Applications",
-            values: ['check', 'check'],
+            values: ['check', 'check', 'check'],
             info: "<p>Scale your Node-RED infrastructure with as many Node-RED instances as you need.</p><p>In FlowForge, a Project manages your instance of Node-RED, attached devices, context, environment variables, and version history.</p>"
         }, {
             id: 'node-red-upgrades',
             label: "Easy Node-RED Upgrades",
-            values: ['check', 'check'],
+            values: ['check', 'check', 'check'],
             info: "<p>Enable users to upgrade their Node-RED with a few clicks as new versions are released.</p><p>Our intuitive UI makes it clear when projects are running out-of-date stacks, so you have piece of mind over your flows running the latest and greatest versions.</p>"
         }, {
             id: "project-templates",
             label: "Application Templates",
-            values: ['check', 'check'],
+            values: ['check', 'check', 'check'],
             info: "<p>Spin up instances of Node-RED with all the relevant settings and Node-RED nodes already installed, customised to your own development environments.</p>"
         }, {
             id: "project-config",
             label: "Individual Application Configuration",
-            values: ['check', 'check'],
+            values: ['check', 'check', 'check'],
             info: "<p>Control all Node-RED settings on a application-by-application basis, set Environment Variables for deployment and precise configuration of how your Node-RED instances run.</p>"
         }, {
             id: "audit-log",
             label: "Audit Log",
-            values: ['check', 'check'],
+            values: ['check', 'check', 'check'],
             info: "<p>Keep track of everything going on in your Node-RED instances and FlowForge.</p><p>Audit Logs provide details on what actions have taken place, when they happened, and who did them.</p>"
         }, {
             id: "team-config",
             label: "Team-Based Configuration",
-            values: ['check', 'check'],
+            values: ['check', 'check', 'check'],
             info: "<p>Manage all of your Node-RED applications in FlowForge Teams, control access and Team-level settings in a central place to reduce operational overhead.</p>"
         }, {
             id: "rbac",
             label: "Role-Based Access Control",
-            values: ['check', 'check'],
+            values: ['check', 'check', 'check'],
             info: "<p>FlowForge's intuitive team management tooling makes it easy for you to control whom has access to what.</p>"
-        }, {
-            id: "device-mgmt",
-            label: "Edge Device Management",
-            values: [null, 'check'],
-            info: "<p>Connect to edge devices to quickly assess and update logic. Debug one device and roll out improvements to your fleet in minutes. All securely without requiring full device access for your whole organisation.</p>"
         }, {
             id: "device-debug",
             label: "Edge Device Debugging",
-            values: ['check', 'check'],
+            values: ['check', 'check', 'check'],
             info: "<p>Manage and control thousands of devices in FlowForge. Define your flow in one central place, then one-click deploy remotely to the edge, all from within FlowForge.</p>"
         }, {
             id: "version-history",
             label: "Version History",
-            values: ['check', 'check'],
+            values: ['check', 'check', 'check'],
             info: "<p>FlowForge Snapshots provide capability to save backups of your flows. Revert back to past versions, and use those Snapshots to deploy out to remote devices.</p>"
         }, {
             id: "persistent-file",
             label: "Persistent File Storage",
-            values: ['check', 'check'],
+            values: ['check', 'check', 'check'],
             info: "<p>Read & write to files in your flows. These will persist beyond container and instance restarts and upgrades. In FlowForge Cloud, each Node-RED instance has a quota of 100MB of file storage. A single write operation is limited to 10MB in size.</p>"
+        }, {
+            id: "device-mgmt",
+            label: "Edge Device Management",
+            values: [null, 'check', 'check'],
+            info: "<p>Connect to edge devices to quickly assess and update logic. Debug one device and roll out improvements to your fleet in minutes. All securely without requiring full device access for your whole organisation.</p>"
         }, {
             id: "sso",
             label: "Single Sign-On (SSO)",
-            values: [null, 'check'],
+            values: [null, 'check', 'check'],
             info: "<p>FlowForge can be configured to run with your own Single Sign-On (SSO) provider. Allow users to access FlowForge with a single set of login credentials, improving security, user experience, and save them time.</p>"
         }, {
             id: "project-nodes",
             label: "Inter Project Communication",
-            values: [null, 'check'],
+            values: [null, 'check', 'check'],
             info: "<p><a href=\"https://github.com/flowforge/flowforge-nr-project-nodes\" target=\"blank\">FlowForge Project Nodes</a> enable the passing of data and messages between your Node-RED projects, included with all FlowForge Projects by default.</p>"
         }, {
             id: "persistent-context",
             label: "Persistent Context Storage",
-            values: [null, 'check'],
+            values: [null, 'check', 'check'],
             info: "<p>In-memory values defined in a Node-RED flow will persist across project restarts and upgrades. In FlowForge Cloud, persistent context has a quota limit set at 1MB per instance.</p>"
         }, {
             label: "Shared Team Library",
-            values: [null, 'check']
+            values: [null, 'check', 'check']
         }, {
             label: "Maximum Teams",
-            values: [50, "Unlimited"]
+            values: [50, "Unlimited", "Unlimited"]
         }, {
             label: "Maximum Local Instances",
-            values: [50, "Unlimited"]
+            values: [50, "Unlimited", "Unlimited"]
         }, {
             label: "Maximum Remote Instances",
-            values: [50, "Unlimited"]
+            values: [50, "Unlimited", "Unlimited"]
         }, {
             label: "Custom Node Catalog",
-            values: [null, 'time']
+            values: [null, 'time', 'time']
         }, {
             label: "Private npm Repo Support",
-            values: [null, 'time']
+            values: [null, 'time', 'time']
         }, {
             label: "Git Integration",
-            values: [null, 'time']
+            values: [null, 'time', 'time']
         }, {
             label: "Devops Workflow",
-            values: [null, 'time']
+            values: [null, 'time', 'time']
         }, {
             label: "Usage Reporting",
-            values: [null, 'time']
+            values: [null, 'time', 'time']
 	}]
     }, {
         label: "Support",
         rows: [{
             label: "Community Support",
-            values: ['check', 'check']
+            values: ['check', 'check', 'check']
         }, {
             label: "Ticket-Based Support",
-            values: [null, 'SLA: Next Business Day']
+            values: [null, 'SLA: Next Business Day', 'SLA: 4 hours']
         }, {
             label: "Long-Term Support",
-            values: [null, 'check']
+            values: [null, 'check', 'check']
         }]
     }]
 %}
@@ -139,10 +139,11 @@
     <ul class="ff-feature-table-section">
         <li class="ff-feature--column-header">
             <span></span>
-            <label>Open-Source</label>
+            <label>Starter (Open-Source)</label>
             <label>Premium</label>
+            <label>Enterprise</label>
         </li>
-        <li class="ff-feature--header">
+        <li class="ff-feature--header rounded-t-lg">
             {{ section.label }}
         </li>
         {% for row in section.rows %}
