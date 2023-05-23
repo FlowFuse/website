@@ -12,12 +12,12 @@ Make sure you are already logged into your flowforge account (@flowforge.com ema
 
 Create a new team for this demo, you need to do this before the demo so that you don’t have to show your credit card details on screen. Use the coupon to assign your new team the $50 credit.
 
-Create one instance called ‘central’, leave the rest to be created in the demo.
+Create one instance called ‘central-<demo-customer-name>’, leave the rest to be created in the demo.
 
 Make sure you have an example device ready, [install the latest device agent](https://flowforge.com/docs/user/devices/).
 
 
-Make sure the device agent is running before you start the demo.
+Make sure the device agent is running before you start the demo and connected to the team you've just created.
 
 The script should not be followed word for word, it's more a suggestion of what to say which fits with what will be displayed. Be natural, use your own words.
 
