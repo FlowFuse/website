@@ -782,7 +782,7 @@ h4:hover .header-anchor {
     
     .ff-feature-table-section {
         position: relative;
-        margin-bottom: 32px;
+        /* margin-bottom: 32px; */
         text-align: left;
     }
     

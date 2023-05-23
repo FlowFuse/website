@@ -181,7 +181,6 @@
     .middle {
         border: 2px solid theme(colors.gray.600);
         background: linear-gradient(0deg, theme(colors.gray.800), theme(colors.gray.700));
-        /* border-image: linear-gradient(to bottom, theme(colors.gray.600), theme(colors.gray.800)) 1;     */
     }
 
     .pricing-tiles p.lead-p {
