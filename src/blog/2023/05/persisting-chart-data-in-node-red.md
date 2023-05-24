@@ -1,6 +1,6 @@
 ---
 title: Persisting chart data in Node-RED Dashboards
-subtitle: Keep your historic chart data safe
+subtitle: Keep your historic chart data safe and available
 description: Node-RED can store chart data, make sure that data is backed up
 date: 2023-05-25
 authors: ["rob-marcer"]
