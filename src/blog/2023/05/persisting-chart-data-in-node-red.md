@@ -1,7 +1,7 @@
 ---
 title: Persisting chart data in Node-RED Dashboards
 subtitle: Keep your historic chart data safe and available
-description: Node-RED can store chart data, make sure that data is backed up
+description: Chart data in Node-RED can be stored directly in your flows but it's a good idea to also store data eleswhere. In this article we are looking at some easy ways to persist your historic chart data.
 date: 2023-05-25
 authors: ["rob-marcer"]
 image: /blog/2023/05/images/agent-on-pi.png
