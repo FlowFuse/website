@@ -41,30 +41,21 @@ Allow progress being made by anyone. Keep an agenda for meetings, write down dec
 1. Think big picture: It’s not “your” issue/bug, the whole community can have
 opinions and provide suggestions.
 
+### ⛑️ Constructive Candor
+
+1. Feedback aids growth: Tell others what they can improve.  
+1. Share feedback directly; with candor and consideration how it will be received.
+Don’t be arrogant while sharing what others have to improve; it’s about them, not you.
+1. Assume positive intent when receiving feedback. When you feel defensive it’s OK to
+ respond later.
+1. Be optimistic, treat situations as if a positive outcome is always possible.
+1. Be open and honest about your own mistakes, take ownership of them and their resolve.
+1. Appreciate another. Say thanks often, preferably in public.
+
+
 #### Be Trusting
 
 To move with high velocity, trust needs to be given before one has had the
 opportunity to earn it. People can only grow when they're able to take up
 challenging tasks and project, and are then allowed to go their own route. When
 challenged, ask for feedback and support, not for permission or approval.
-
-### Communication
-
-#### Use Candor
-
-We use truth as a superpower, even when inconvenient to ourselves. We use it
-with care and consideration of others. We won’t get everything right all of the
-time. The only way we can improve is by being honest with ourselves and each
-other. It can be difficult to achieve and it can feel awkward. When done right, 
-with respect and a shared understanding, it can lead to a better outcome for
-everyone.
-
-We strongly encourage the sharing of thanks and feedback within FlowForge. This
-can be done formally through our `@Feedback` Slackbot. You can read more in
-[Communications](./communication#feedback-and-thanks)
-
-#### Be Optimistic
-
-We will treat all situations with an optimism that a positive result is
-possible. We don’t let that get in the way of planning for all outcomes and
-making the hard choices when they are needed.
