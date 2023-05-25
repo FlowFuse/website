@@ -131,7 +131,7 @@ module.exports = function(eleventyConfig) {
     eleventyConfig.addFilter('dateInFuture', (date) => {
         // return true is the provided date is in the past, otherwise, return false
         const postDate = spacetime(date)
-        return postDate.isAfter(spacetime.today()) || postDate.isSame(spacetime.today())
+        return postDate.isAfter(spacetime.today()) || postDate.isSame(spacetime.today(), 'day')
     });
 
     eleventyConfig.addFilter('countDays', (date) => {
