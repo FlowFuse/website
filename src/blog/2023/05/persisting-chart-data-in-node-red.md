@@ -4,7 +4,7 @@ subtitle: Keep your historic chart data safe and available
 description: Chart data in Node-RED can be stored directly in your flows but it's a good idea to also store data eleswhere. In this article we are looking at some easy ways to persist your historic chart data.
 date: 2023-05-25
 authors: ["rob-marcer"]
-image: /blog/2023/05/images/agent-on-pi.png
+image: /blog/2023/05/images/persisting-data-header.jpeg
 tags:
     - posts
 ---
@@ -17,7 +17,7 @@ One of the most useful features of Dashboard is the ability to store historic da
 
 ### The Importance of Persisting Chart Data
 
-Storing the data in the chart node is fine to show prototypes of HMIs but where it's vital the correct data is always shown we are going to need a backup. Data can easily be lost when you move your flow to a new device, restart your instance, or simply when upgrading Node-RED.
+Storing the data in the chart node is fine to show prototypes of HMIs, but where it's vital the correct data is always shown we are going to need a backup. Data can easily be lost when you move your flow to a new device, restart your instance, or simply when upgrading Node-RED.
 
 How can we store our chart data so we can be confident it will be there each time a user views your HMI?
 
@@ -27,7 +27,7 @@ In this example, we are passing in a random number between one and 10 each secon
 
 ![Charting the random numbers](./images/chart.png "Charting the random numbers")
 
-You can copy and past the JSON below into your Node-RED import feature if you'd like to see and edit the flows I've created.
+If you'd like to see and edit the flows I've created, you can copy and paste the JSON below into your Node-RED import feature.
 
 ```json
 [{"id":"c6825b1001216b89","type":"inject","z":"668c56888fd0f960","name":"","props":[],"repeat":"1","crontab":"","once":false,"onceDelay":0.1,"topic":"","x":110,"y":220,"wires":[["6b609d978540fb2a"]]},{"id":"6b609d978540fb2a","type":"Number","z":"668c56888fd0f960","name":"Random Number","minimum":"1","maximum":"10","roundTo":"0","Floor":true,"x":270,"y":220,"wires":[["794846db6dc8cef8"]]},{"id":"794846db6dc8cef8","type":"ui_chart","z":"668c56888fd0f960","name":"","group":"af1535b39b74f94a","order":0,"width":0,"height":0,"label":"chart","chartType":"line","legend":"false","xformat":"HH:mm:ss","interpolate":"linear","nodata":"","dot":false,"ymin":"","ymax":"","removeOlder":1,"removeOlderPoints":"","removeOlderUnit":"3600","cutout":0,"useOneColor":false,"useUTC":false,"colors":["#1f77b4","#aec7e8","#ff7f0e","#2ca02c","#98df8a","#d62728","#ff9896","#9467bd","#c5b0d5"],"outputs":1,"useDifferentColor":false,"className":"","x":430,"y":220,"wires":[["ad53848ee4b0d91e"]]},{"id":"ad53848ee4b0d91e","type":"debug","z":"668c56888fd0f960","name":"debug","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"payload","targetType":"msg","statusVal":"","statusType":"auto","x":550,"y":220,"wires":[]},{"id":"af1535b39b74f94a","type":"ui_group","name":"Example","tab":"14f1442eb7525190","order":1,"disp":true,"width":"6","collapse":false,"className":""},{"id":"14f1442eb7525190","type":"ui_tab","name":"Home","icon":"dashboard","disabled":false,"hidden":false}]
@@ -35,13 +35,13 @@ You can copy and past the JSON below into your Node-RED import feature if you'd 
 
 ### How can we store and recall the chart data?
 
-The chart node has a really useful feature which allows us to access all the data currently shown in the chart. Each time the chart receives new data it's added to the existing values then the whole data set is sent out the outbound port of the chart node.
+The chart node has a really useful feature which allows us to access all the data currently shown in the chart. Each time the chart receives new data, it's added to the existing values then the whole data set is sent out the outbound port of the chart node.
 
-Now that we have a way to easily access the chart data in a single payload we next need to store that data somewhere safer. I'm going to explain 3 potential solutions which I use on a regular basis.
+Now that we have a way to easily access the chart data in a single payload, we next need to store that data somewhere safer. I'm going to explain 3 potential solutions, which I use on a regular basis.
 
 #### 1. Node-RED file-out and file-in nodes
 
-Node-RED can read and write data to a local filesystem. Being that we already have the chart data in a single payload we just need to write that payload to a file for later use which we can do using the file-out node.
+Node-RED can read and write data to a local filesystem. Being that we already have the chart data in a single payload, we just need to write that payload to a file for later use, which we can do using the file-out node.
 
 This example flow shows how to use the file-out node to write the chart data to your local filesystem.
 
@@ -65,7 +65,7 @@ When you press the 'import data' trigger node, the data is loaded in from the fi
 
 ![Import data on deploy](./images/inject-on-deploy.png "Import data on deploy")
 
-Bear in mind that your data is stored in your filesystem, if your storage drive fails you will lose your data so you might want to consider taking backups and storing elsewhere for emergencies.
+Bear in mind that your data is stored in your filesystem, if your storage drive fails you will lose your data, you might want to consider taking backups and storing elsewhere for emergencies.
 
 #### 2. FlowForge's persistent context
 
@@ -79,7 +79,7 @@ This flow shows chart data being sent to persistent context so we can access it 
 [{"id":"c6825b1001216b89","type":"inject","z":"4767c2f7095bee53","name":"","props":[],"repeat":"1","crontab":"","once":false,"onceDelay":0.1,"topic":"","x":170,"y":100,"wires":[["6b609d978540fb2a"]]},{"id":"794846db6dc8cef8","type":"ui_chart","z":"4767c2f7095bee53","name":"","group":"af1535b39b74f94a","order":0,"width":0,"height":0,"label":"chart","chartType":"line","legend":"false","xformat":"HH:mm:ss","interpolate":"linear","nodata":"","dot":false,"ymin":"","ymax":"","removeOlder":1,"removeOlderPoints":"","removeOlderUnit":"3600","cutout":0,"useOneColor":false,"useUTC":false,"colors":["#1f77b4","#aec7e8","#ff7f0e","#2ca02c","#98df8a","#d62728","#ff9896","#9467bd","#c5b0d5"],"outputs":1,"useDifferentColor":false,"className":"","x":490,"y":100,"wires":[["ad53848ee4b0d91e","938c7d878545e623"]]},{"id":"ad53848ee4b0d91e","type":"debug","z":"4767c2f7095bee53","name":"debug","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"payload","targetType":"msg","statusVal":"","statusType":"auto","x":610,"y":100,"wires":[]},{"id":"6b609d978540fb2a","type":"Number","z":"4767c2f7095bee53","name":"Random Number","minimum":"1","maximum":"10","roundTo":"0","Floor":true,"x":330,"y":100,"wires":[["794846db6dc8cef8"]]},{"id":"938c7d878545e623","type":"change","z":"4767c2f7095bee53","name":"","rules":[{"t":"set","p":"#:(persistent)::chart-data","pt":"global","to":"payload","tot":"msg"}],"action":"","property":"","from":"","to":"","reg":false,"x":660,"y":140,"wires":[["3792cc96a748e75a"]]},{"id":"3792cc96a748e75a","type":"debug","z":"4767c2f7095bee53","name":"debug 1","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"false","statusVal":"","statusType":"auto","x":840,"y":140,"wires":[]},{"id":"af1535b39b74f94a","type":"ui_group","name":"Example","tab":"14f1442eb7525190","order":1,"disp":true,"width":"6","collapse":false,"className":""},{"id":"14f1442eb7525190","type":"ui_tab","name":"Home","icon":"dashboard","disabled":false,"hidden":false}]
 ```
 
-We now need to have a method to load the data back into our chart. We will again use a manual 'import data' trigger to load the full set of data from the persistent context and push it back into the chart.
+We now need to have a method to load the data back into our chart. We will again use a manual 'import data' trigger to load the full set of data from the persistent context, and then push it back into the chart.
 
 ![Importing the chart data from context](./images/context-with-import.png "Importing the chart data from context")
 
@@ -103,7 +103,7 @@ We can now access the data by simply visiting the URL of the API.
 
 ![The chart data accessed via the API in a web browser](./images/data-in-browser.png "The chart data accessed via the API in a web browser")
 
-Bear in mind that you should secure the API as appropriate for the data. If you don't put security around the API anyone on the same network as your Node-RED instance can access your chart data. Potentially that could give access to our data to the whole internet so where needed take steps to keep your data safe. You can read more about securing Node-RED in our [blog post here](https://flowforge.com/blog/2023/04/securing-node-red-in-production/).
+Bear in mind that you should secure the API as appropriate for the data. If you don't put security around the API, anyone on the same network as your Node-RED instance can access your chart data. Potentially that could give access to our data to the whole internet, so where needed take steps to keep your data safe. You can read more about securing Node-RED in our [blog post here](https://flowforge.com/blog/2023/04/securing-node-red-in-production/).
 
 We now need to get that data back into a Node-RED instance. We can do that by editing a node and pasting in the data we got from the API. The flow below shows where you can paste in your data, you will then need to deploy and manually trigger 'import data'.
 
@@ -113,9 +113,9 @@ We now need to get that data back into a Node-RED instance. We can do that by ed
 [{"id":"6523e86042252710","type":"inject","z":"4767c2f7095bee53","name":"","props":[],"repeat":"1","crontab":"","once":false,"onceDelay":0.1,"topic":"","x":150,"y":540,"wires":[["d51aba5f9a808592"]]},{"id":"427c60f2c4f523b7","type":"ui_chart","z":"4767c2f7095bee53","name":"","group":"af1535b39b74f94a","order":0,"width":0,"height":0,"label":"chart","chartType":"line","legend":"false","xformat":"HH:mm:ss","interpolate":"linear","nodata":"","dot":false,"ymin":"","ymax":"","removeOlder":1,"removeOlderPoints":"","removeOlderUnit":"3600","cutout":0,"useOneColor":false,"useUTC":false,"colors":["#1f77b4","#aec7e8","#ff7f0e","#2ca02c","#98df8a","#d62728","#ff9896","#9467bd","#c5b0d5"],"outputs":1,"useDifferentColor":false,"className":"","x":470,"y":540,"wires":[["ba84cd1820120139","d9087436f4769691"]]},{"id":"ba84cd1820120139","type":"debug","z":"4767c2f7095bee53","name":"debug","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"payload","targetType":"msg","statusVal":"","statusType":"auto","x":590,"y":540,"wires":[]},{"id":"d51aba5f9a808592","type":"Number","z":"4767c2f7095bee53","name":"Random Number","minimum":"1","maximum":"10","roundTo":"0","Floor":true,"x":310,"y":540,"wires":[["427c60f2c4f523b7"]]},{"id":"d9087436f4769691","type":"change","z":"4767c2f7095bee53","name":"","rules":[{"t":"set","p":"chart-data","pt":"flow","to":"payload","tot":"msg"}],"action":"","property":"","from":"","to":"","reg":false,"x":630,"y":580,"wires":[[]]},{"id":"4dd97b29430ad2ba","type":"http in","z":"4767c2f7095bee53","name":"","url":"/data","method":"get","upload":false,"swaggerDoc":"","x":200,"y":660,"wires":[["b4f0eb085cc91834"]]},{"id":"7ca49e5465699355","type":"http response","z":"4767c2f7095bee53","name":"","statusCode":"","headers":{},"x":670,"y":660,"wires":[]},{"id":"b4f0eb085cc91834","type":"change","z":"4767c2f7095bee53","name":"Get the chart data from flow.chart-data","rules":[{"t":"set","p":"payload","pt":"msg","to":"chart-data","tot":"flow"}],"action":"","property":"","from":"","to":"","reg":false,"x":440,"y":660,"wires":[["7ca49e5465699355"]]},{"id":"d13d16b33ec638b2","type":"inject","z":"4767c2f7095bee53","name":"import data","props":[{"p":"payload"}],"repeat":"","crontab":"","once":true,"onceDelay":0.1,"topic":"","payload":"[{\"series\":[\"\"],\"data\":[[{\"x\":1684841975036,\"y\":8},{\"x\":1684841976037,\"y\":6},{\"x\":1684841977038,\"y\":7},{\"x\":1684841978037,\"y\":7}]],\"labels\":[\"\"]}]","payloadType":"json","x":170,"y":600,"wires":[["427c60f2c4f523b7"]]},{"id":"af1535b39b74f94a","type":"ui_group","name":"Example","tab":"14f1442eb7525190","order":1,"disp":true,"width":"6","collapse":false,"className":""},{"id":"14f1442eb7525190","type":"ui_tab","name":"Home","icon":"dashboard","disabled":false,"hidden":false}]
 ```
 
-Each of these solutions has strengths and weaknesses and there are many other ways to persist your chart data. You should consider which approach is the best fit for your needs. To be as confident as possible that you data is safe you may decide to push your data to dedicate external storage such as a database or backup solution. 
+Each of these solutions has strengths and weaknesses but there are many other ways to persist your chart data. You should consider which approach is the best fit for your needs. To be as confident as possible that you data is safe, you may decide to push your data to dedicate external storage such as a database or backup solution. 
 
 ### Conclusion
 
-Node-RED Dashboard allows you to easily make informative HMIs but it's important to make sure the chart data you are showing is stored safely. The approaches we have discussed above should give you a good start in ensuring your charts are populated with the correct data even if your Node-RED instance crashes or you need to move it to a new hosting location.
+Node-RED Dashboard allows you to easily make informative HMIs, but it's important to make sure the chart data you are showing is stored safely. The approaches we have discussed above should give you a good start in ensuring your charts are populated with the correct data, even if your Node-RED instance crashes or you need to move it to a new hosting location.
 
