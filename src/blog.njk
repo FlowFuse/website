@@ -1,6 +1,11 @@
 ---
 layout: nohero
 sitemapPriority: 0.9
+pagination:
+  data: collections.posts
+  size: 19 # creates a nice matrix (1 header, 18 left: 3 on 6 rows)
+  alias: posts
+  reverse: true
 meta:
     title: Blog
 ---
@@ -11,9 +16,8 @@ meta:
             {% include "components/divider-grey-wires-right.njk" %}
         </div>
     </div>
-    {% if collections.posts.length > 0 %}
     <ul class="flex flex-wrap">
-        {%- for item in collections.posts | reverse -%}
+        {%- for item in posts -%}
         {% if loop.first %}
         <li class="w-full mt-2 px-2 pb-4">
             <a href="{{ item.url }}" class="w-full flex flex-col group hover:no-underline">
@@ -101,10 +105,15 @@ meta:
         {% endif %}
     {%- endfor -%}
     </ul>
-    {% else %}
-        <div class="mx-auto">
-            <div class="text-3xl md:text-5xl text-blue-hero font-medium pb-3">Ooops!</div>
-            <div class="text-lg text-black-hero-body">No-one has written anything yet. Come back soon!</div>
-        </div>
-    {% endif %}
+
+    <nav aria-labelledby="pagination">
+      <h2 id="my-pagination">This is my Pagination</h2>
+        <ol>
+          <li>{% if pagination.href.previous %}<a href="{{ pagination.href.previous }}">Previous</a>{% else %}Previous{% endif %}</li>
+        {%- for pageEntry in pagination.pages %}
+          <li><a href="{{ pagination.hrefs[ loop.index0 ] }}"{% if page.url == pagination.hrefs[ loop.index0 ] %} aria-current="page"{% endif %}>Page {{ loop.index }}</a></li>
+        {%- endfor %}
+         <li>{% if pagination.href.next %}<a href="{{ pagination.href.next }}">Next</a>{% else %}Next{% endif %}</li>
+       </ol>
+    </nav>
 </div>
