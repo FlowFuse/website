@@ -16,7 +16,7 @@ layout: layouts/base.njk
     {% endif %}
     <div class="blog nohero w-full pt-6 pb-24 ff-bg-light">
         <div class="container flex flex-col md:flex-row m-auto text-left px-6 md:max-w-screen-lg gap-8 items-stretch">
-            <div>
+            <div class="ff-prose">
                 <a class="inline-flex align-center gap-1 mb-4" href="/blog">
                     {% include "components/icons/chevron-left.svg" %}
                     Back to Blog Posts
@@ -51,7 +51,7 @@ layout: layouts/base.njk
                     <ul class="ml-6 list-disc">
                     {% for post in collections.posts | reverse | limit(4) %}
                         {% if post.data.title != title %}
-                            <li class="mb-3"><a href="{{ item.url }}">
+                            <li class="mb-3"><a href="{{ post.url }}">
                                 {{ post.data.title }}
                             </a></li>
                         {% endif %}                        

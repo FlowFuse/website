@@ -131,7 +131,7 @@ module.exports = function(eleventyConfig) {
     eleventyConfig.addFilter('dateInFuture', (date) => {
         // return true is the provided date is in the past, otherwise, return false
         const postDate = spacetime(date)
-        return postDate.isAfter(spacetime.today()) || postDate.isSame(spacetime.today())
+        return postDate.isAfter(spacetime.today()) || postDate.isSame(spacetime.today(), 'day')
     });
 
     eleventyConfig.addFilter('countDays', (date) => {
@@ -475,7 +475,7 @@ module.exports = function(eleventyConfig) {
 
         const folderPath = env.page.inputPath
         
-        const widths = [650] // width of blog prose
+        const widths = [650] // maximum width an image can be displayed at as part of blog prose
         const htmlSizes = null
 
         const async = false // cannot run async inside markdown

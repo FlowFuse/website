@@ -4,45 +4,42 @@ meta:
 ---
 ## Values
 
-### Be Effective
+FlowForge has a few core values. Values we aspire to live by in everything we do
+at FlowForge. With a shared set of values, norms that are created every day will
+align with what company we want to be, and how we conduct business. Our values
+are as follows:
 
-> [effective][effective-oxford] - producing the result that is wanted or intended; producing a successful result
+### 📈 Results
 
-[effective-oxford]: https://www.oxfordlearnersdictionaries.com/definition/english/effective
+1. We value results over the hours you spend working. We appreciate the effort, but value the results. Make users happy, care about the team member you helped. You schedule your day to make the most out of it for you. Don’t brag about hours worked, take pride in your achievements.
+1. <a name="doitnow">Do it now</a>: Growth is exponential; Ship today, observe first results tomorrow, observe compounding effects in just 2 days.
+1. Ownership: Take initiative, keep stakeholders in the loop, find and resolve bottlenecks. Collaborate with others. There’s one individual responsible for your achievements; You!
+1. Disagree and commit: Discussion is healthy, but decisions do not need full consensus. Disagree with a point-of-view, make your case, but accept other solutions are valid too. Once a choice is made, commit as a team to follow it. Allow others to prove themselves. Reaching consensus for every decision does not scale.
+1. Keep it short and simple: Don’t over-engineer your solution or let the scope creep beyond what makes sense for an iteration. Fast progress requires fast understanding. Boring solutions are good. Allow everyone to understand your solution. There will always be another iteration.
 
-Being effective is split up in two parts; producing ***results*** and ***communication***
-about what our goals are.
 
-### Results
+### 🔁 Iterative Improvement
 
-#### Results not Hours
+1. Small Steps: Every mountain can be climbed with small steps. Make a change,
+reassess your direction, repeat. Scope down your work item, reflect, and scope
+it down again. Get the minimal amount of work down, but no less, find the [golden mean](https://en.wikipedia.org/wiki/Golden_mean_%28philosophy%29).
+1. Bias for Action: Don’t overthink, do what is the most natural in this moment. [Do it now](#doitnow).
+1. Accepting Change: Be eager to accept change: Is it better than yesterday, and can we improve on it tomorrow?
+1. Everything is a Draft: Today won’t be perfect, tomorrow will be better. Perfection is the death of progress.
+1. Decide where good is good enough; understand where excellence is our company's
+edge. Apply the [pareto principle](https://en.wikipedia.org/wiki/Pareto_principle).
 
-We care about what you achieve: the code you shipped, the user you made happy,
-and the team member you helped. We value results over measuring hours spent
-working. We do not dictate how someone should schedule their day - we trust
-individuals to do what is right. Everyone should feel empowered to do the work
-needed to achieve our goals.
+### 👥 Collaborative Community
 
-There may be times when more is needed to meet a goal, deadline or customer
-situation. We take the responsibility to ensure they are the exceptions rather
-than the rule.
-
-We don't try to compete over the hours we work - everyone does what is right for them.
-We focus on what gets done and take pride in seeing each other succeed.
-
-#### Bias for Action
-
-We value getting things done and continually moving forward. It is better to 
-iterate rapidly rather than get stuck over-thinking a problem. We move with an
-urgency and a focus to achieve our best.
-
-When you disagree with a solution to a problem, provide a concrete alternate
-solution to allow momentum to be maintained or even gained.
-
-Ship the minimum viable change possible. Small changes allow fast feedback loops
-which in turn can aid in deciding the next minimal viable iteration. Further,
-iteration naturally splits big problems into small steps, creates positive
-momentum, and allows to capture value quicker.
+1. Be inclusive: in a community everyone is different; allow them to be. We
+value empathy, courtesy, and respect for each other.
+1. [Information wants to be free](https://en.wikipedia.org/wiki/Information_wants_to_be_free):
+Store information in public places by default: our Handbook and GitHub issues.
+Allow others to understand you and your decisions.
+1. Write things down: information stuck in calls or private conversations is lost.
+Allow progress being made by anyone. Keep an agenda for meetings, write down decisions.
+1. Think big picture: It’s not “your” issue/bug, the whole community can have
+opinions and provide suggestions.
 
 #### Be Trusting
 
@@ -52,24 +49,6 @@ challenging tasks and project, and are then allowed to go their own route. When
 challenged, ask for feedback and support, not for permission or approval.
 
 ### Communication
-
-#### Community-First
-
-As an open core company our community spans our employees, the open source
-contributors and our users. We strive to build a healthy, positive community
-through our values and actions. We celebrate the diversity of others, we listen
-to each other, we support each other.
-
-We are inclusive of all and are mindful of how our words and actions can impact
-others. We welcome discussion and debate, but take care to ensure it is not at
-the expense or exclusion of others. We value empathy, courtesy and respect for
-each other.
-
-##### Transparency
-
-A community can better aid with the success of FlowForge when they're trusted
-with the same information. This openness builds trust with our community and helps
-in collaboration. Further, it allows for knowledge sharing and builds understanding.
 
 #### Use Candor
 
