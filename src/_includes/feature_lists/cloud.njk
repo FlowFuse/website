@@ -139,13 +139,16 @@
     <ul class="ff-feature-table-section">
         <li class="ff-feature--column-header">
             <span></span>
-            <label>Starter (Open-Source)</label>
-            <label>Premium</label>
-            <label>Enterprise</label>
+            <label class="border-2 mr-2">Starter (Open-Source)</label>
+            <label class="border-2 border-red-500">Premium</label>
+            <label class="border-2 ml-2">Enterprise</label>
         </li>
-        <li class="ff-feature--header rounded-t-lg">
-            {{ section.label }}
-        </li>
+        <!-- <li class="ff-feature--header">
+            <span class="py-3 pl-4">{{ section.label }}</span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </li> -->
         {% for row in section.rows %}
         <li class="ff-feature-row">
             <label>
@@ -173,6 +176,12 @@
             {% endfor %}
         </li>
         {% endfor %}
+        <li class="ff-feature--column-buttons">
+            <span></span>
+            <label class="mr-2"><a class="ff-btn ff-btn--secondary-outlined uppercase align-baseline w-full" href="/docs/install" onclick="capture('cta-install', {'position': 'primary'})">Install now</a></label>
+            <label><a class="ff-btn ff-btn--primary uppercase align-baseline w-full" href="https://app.flowforge.com/account/create" onclick="capture('cta-join', {'position': 'primary'})">TRY FOR FREE</a></label>
+            <label class="ml-2"><a class="ff-btn ff-btn--secondary-outlined uppercase align-baseline w-full" href='/book-demo'>Book a demo</a></label>
+        </li>
     </ul>
     {% endfor %}
     <ul class="ff-features-key">
