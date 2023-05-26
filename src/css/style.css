@@ -134,6 +134,35 @@ pre code {
 }
 
 /*
+    Blog
+*/
+.pagination a{
+    color: theme(colors.gray.500) !important;
+}
+
+.pagination a:hover{
+    color: theme(colors.gray.500) !important;
+}
+
+.ff-nav-blog-p::before{
+    content: url('/images/icons/chevron-left.svg');
+    width: 16px;
+    height: 16px;
+    flex-shrink: 0;
+    padding-top: 2px;
+    margin-right: 0.5rem;
+}
+
+.ff-nav-blog-n::after{
+    content: url('/images/icons/chevron-right.svg');
+    width: 16px;
+    height: 16px;
+    flex-shrink: 0;
+    padding-top: 2px;
+    margin-left: 0.5rem;
+}
+
+/*
     prevent top margin on first/hero img of a blog post
 */
 .prose .hero-img img {
@@ -769,7 +798,8 @@ h4:hover .header-anchor {
         color: theme(colors.gray.800);
         border-radius: 12px;
         min-width: 768px;
-        padding: 36px 36px;
+        padding-bottom: 36px;
+        padding-top: 12px;
     }
 
     .ff-feature-table li .ff-icon {
@@ -784,24 +814,48 @@ h4:hover .header-anchor {
     }
     
     .ff-feature-table-section li {
-        padding: 12px 24px;
+    
         display: grid;
-        grid-template-columns: 240px 1fr 1fr 1fr;
+        grid-template-columns: 270px 1fr 1fr 1fr;
         align-items: center;
+        /* background-color: theme(colors.gray.100); */
+        @apply bg-gray-200/60;
     }
 
     .ff-feature-table-section li.ff-feature-row:nth-child(odd) {
         background-color: theme(colors.gray.100);
     }
 
+    .ff-feature-table-section li.ff-feature-row label {
+        padding: 12px ;
+    }
+
+    .ff-feature-table-section li.ff-feature-row span:nth-child(3) {
+        border-left: 2px solid theme(colors.red.500);
+        border-right: 2px solid theme(colors.red.500);
+    }
+
+    .ff-feature-table-section li.ff-feature--header span:nth-child(3) {
+        border-left: 2px solid theme(colors.red.500);
+        border-right: 2px solid theme(colors.red.500);
+    }
+
     .ff-feature-table-section li.ff-feature--column-header {
         background-color: theme(colors.gray.50);
+        padding: 0;
+        margin-top: 20px;
     }
 
     .ff-feature-table-section li.ff-feature--column-header label {
         text-align: center;
         font-weight: 600;
         font-size: 1.25rem;
+        line-height: 1.5rem;
+        padding: 12px 6px;
+        height: 100%;   
+        border-bottom: 0;
+        border-radius: 12px 12px 0 0;
+        @apply flex items-center justify-center;
     }
 
     .ff-feature-table-section li:not(.ff-feature--column-header) label {
@@ -825,7 +879,8 @@ h4:hover .header-anchor {
 
     .ff-feature-table-section li span {
         text-align: center;
-        @apply px-1 md:px-6
+        height: 100%;
+        @apply px-1 md:px-6 flex items-center justify-center;
     }
 
     .ff-feature-table-section li button {
@@ -833,14 +888,20 @@ h4:hover .header-anchor {
     }
 
     .ff-feature--header {
-        background-color: theme(colors.gray.700);
+        background-color: theme(colors.gray.700) !important;
         color: white;
-        padding: 12px 24px;
         width: 100%;
         text-align: left;
         font-weight: bold;
     }
 
+    li.ff-feature--header span {
+        text-align: left;
+        height: 100%;
+        display: flex;
+        justify-content: left !important;
+        @apply px-1 md:px-6;
+    }
     .ff-features-key {
         display: flex;
         justify-content: center;
