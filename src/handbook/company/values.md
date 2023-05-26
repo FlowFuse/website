@@ -43,15 +43,14 @@ opinions and provide suggestions.
 
 ### ⛑️ Constructive Candor
 
-1. Feedback aids growth: Tell others what they can improve.  
-1. Share feedback directly; with candor and consideration how it will be received.
-Don’t be arrogant while sharing what others have to improve; it’s about them, not you.
+1. Feedback aids growth: it reinforces what is good and helps drive improvement where needed.
+1. Be considerate: feedback is about helping others to improve, not scoring points. Use care and consideration of how it will be received.
+1. Provide timely feedback: it is better to address things when they are fresh in our minds and quicker to remedy.
 1. Assume positive intent when receiving feedback. When you feel defensive it’s OK to
  respond later.
 1. Be optimistic, treat situations as if a positive outcome is always possible.
 1. Be open and honest about your own mistakes, take ownership of them and their resolve.
-1. Appreciate another. Say thanks often, preferably in public.
-
+1. Appreciate each other. Say thanks often, preferably in public.
 
 #### Be Trusting
 
