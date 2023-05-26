@@ -148,6 +148,8 @@ Follow these steps to run the scripts:
       appropriate and take note of any first-time contributors to provide to the
       release blog post author.
     - The script will then publish the release and move onto the next repository.
+5. Digital Ocean Droplet requires a manual step once the GitHub Action has finished, 
+   follow [these](./digital-ocean.md) steps to have the new image reviewed and published
 
 ### Phase Three
 
