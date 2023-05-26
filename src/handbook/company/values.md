@@ -2,6 +2,7 @@
 meta:
     title: Company Values
 ---
+
 ## Values
 
 FlowForge has a few core values. Values we aspire to live by in everything we do
@@ -51,10 +52,3 @@ opinions and provide suggestions.
 1. Be optimistic, treat situations as if a positive outcome is always possible.
 1. Be open and honest about your own mistakes, take ownership of them and their resolve.
 1. Appreciate each other. Say thanks often, preferably in public.
-
-#### Be Trusting
-
-To move with high velocity, trust needs to be given before one has had the
-opportunity to earn it. People can only grow when they're able to take up
-challenging tasks and project, and are then allowed to go their own route. When
-challenged, ask for feedback and support, not for permission or approval.
