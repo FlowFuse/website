@@ -1,6 +1,7 @@
 ---
 navTitle: Feedback
 ---
+
 # Product Feedback
 
 Product feedback provides invaluable insight into our product's strengths and areas for improvement. It forms the basis of our strategic product planning and the actions we undertake to refine our product. It's the voice of our customers, colleagues, and stakeholders, which serves as a guiding light to drive our innovation and adaptation. Feedback helps us ensure that we stay in tune with the evolving needs of our customers and the changing dynamics of the market, ultimately driving our product towards excellence and our company towards success.
