@@ -49,6 +49,14 @@ opinions and provide suggestions.
 1. Provide timely feedback: it is better to address things when they are fresh in our minds and quicker to remedy.
 1. Assume positive intent when receiving feedback. When you feel defensive it’s OK to
  respond later.
-1. Be optimistic, treat situations as if a positive outcome is always possible.
+1. <a id="optimism">Be optimistic</a>, treat situations as if a positive outcome is always possible.
 1. Be open and honest about your own mistakes, take ownership of them and their resolve.
 1. Appreciate each other. Say thanks often, preferably in public.
+
+### 🤝 Customer Empathy
+
+1. Be curious: Understanding starts with asking questions. Aim to get a deep understanding of their desires.
+1. It’s about the customer: pay attention to competitors, obsess over customers.
+1. We listen to their feedback and respond quickly and respectfully. Customers can be frustrated, or potentially seem unreasonable. [Apply optimism](#optimism), and be friendly.
+1. We show empathy, and our solutions aim to solve their problems effectively and efficiently.
+
