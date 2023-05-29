@@ -1,12 +1,12 @@
 ---
 title: "Building Node-RED Applications for Scalability and High Availability"
 subtitle: Join Marian Demme, FlowForge Product Manger, to learn how to build Node-RED applications that can scale and be highly available.
-image: /images/webinars/webinar-may.jpg
+image: /images/webinars/webinar-june.jpg
 video: 
 date: 2023-06-29
 time: 17:00 CEST (11:00 ET) 
 duration: 60
-hosts: ["marion-demme"]
+hosts: ["marian-demme"]
 hubspot:
     formId: b4ec9aa1-8648-47b3-b908-ec8597e8735d
 ---
