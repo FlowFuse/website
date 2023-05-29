@@ -791,6 +791,9 @@ h4:hover .header-anchor {
         display: block;
     }
 
+/*
+    Pricing / features table
+*/
     .ff-feature-table {
         @apply max-w-screen-lg w-full;
         margin-top: 3rem;
@@ -817,12 +820,6 @@ h4:hover .header-anchor {
         position: relative;
         text-align: left;
     }
-    
-/* Border radius for table feature header */
-
-    /* .ff-feature--header:nth-of-type(1) {
-        border-top-left-radius: 0.5rem;
-    }   */
 
     .ff-feature-table-section li {
         display: grid;

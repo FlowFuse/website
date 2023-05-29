@@ -135,7 +135,7 @@
         <h4>{{ col.product | safe }}</h4>
         {% endfor %}
     </div>
-    <ul class="ff-feature-table-section">
+    <ul class="ff-feature-table-section ml-16">
         <li class="ff-feature--column-header">
             <span></span>
             <label class="border-2 mr-2">
@@ -147,51 +147,58 @@
         </li>
     </ul>
     {% for section in sections %}
-    <ul class="ff-feature-table-section">
-
-        <li class="ff-feature--header">
-            <span class="py-3 pl-4">{{ section.label }}</span>
-            <span></span>
-            <span></span>
-            <span></span>
-        </li>
-        {% for row in section.rows %}
-        <li class="ff-feature-row">
-            <label>
-                {{ row.label }}
-                {% if row.info %}
-                <i id="ff-info--{{ row.id }}" class="ff-icon" onclick="openInfo('{{ row.label }}', '{{ row.id }}')">{% include "components/icons/info.svg" %}</i>
-                {% endif %}
-            </label>
-            {% for value in row.values %}
-            <span>
-                {% if value === "check" %}
-                {% include "components/feature-check.svg" %}
-                {% elif value === "time" %}
-                {% include "components/feature-time.svg" %}
-                {% elif value === "optional" %}
-                {% include "components/feature-optional.svg" %}
-                {% elif value === "addon" %}
-                {% include "components/feature-addon.svg" %}
-                {% elif value === null %}
+    <div class="flex">
+        <ul>
+            <li class="w-16 bg-gray-200 h-full rounded-l-lg flex content-center justify-center">
+                <span class="rotate-180 text-center text-gray-700 font-semibold" style="writing-mode: vertical-rl;">{{ section.label }}</span>
+            </li>
+        </ul>
+        <ul class="ff-feature-table-section w-full">
+            <!-- <li class="ff-feature--header">
+                <span class="py-3 pl-4">{{ section.label }}</span>
                 <span></span>
-                {% else %}
-                {{ value }}
-                {% endif %}
-            </span>
+                <span></span>
+                <span></span>
+            </li> -->
+            {% for row in section.rows %}
+            <li class="ff-feature-row">
+                <label>
+                    {{ row.label }}
+                    {% if row.info %}
+                    <i id="ff-info--{{ row.id }}" class="ff-icon" onclick="openInfo('{{ row.label }}', '{{ row.id }}')">{% include "components/icons/info.svg" %}</i>
+                    {% endif %}
+                </label>
+                {% for value in row.values %}
+                <span>
+                    {% if value === "check" %}
+                    {% include "components/feature-check.svg" %}
+                    {% elif value === "time" %}
+                    {% include "components/feature-time.svg" %}
+                    {% elif value === "optional" %}
+                    {% include "components/feature-optional.svg" %}
+                    {% elif value === "addon" %}
+                    {% include "components/feature-addon.svg" %}
+                    {% elif value === null %}
+                    <span></span>
+                    {% else %}
+                    {{ value }}
+                    {% endif %}
+                </span>
+                {% endfor %}
+            </li>
             {% endfor %}
-        </li>
-        {% endfor %}
-    </ul>
+        </ul>
+    </div>
+    
     {% endfor %}
     <ul class="ff-feature-table-section">
-        <li class="ff-feature--column-header">
+        <li class="ff-feature--column-header ml-16">
             <span></span>
             <span></span>
             <label class="border-2 border-red-500 ff-blank"></label>
             <span></span>
         </li>
-        <li class="ff-feature--column-buttons -mt-1 h-12">
+        <li class="ff-feature--column-buttons ml-16 -mt-1 h-12">
             <span></span>
             <label class="mr-2"><a class="ff-btn ff-btn--secondary-outlined uppercase align-baseline w-full" href="/docs/install" onclick="capture('cta-install', {'position': 'primary'})">Install now</a></label>
             <label><a class="ff-btn ff-btn--primary uppercase align-baseline w-full" href="https://app.flowforge.com/account/create" onclick="capture('cta-join', {'position': 'primary'})">TRY FOR FREE</a></label>
