@@ -130,25 +130,31 @@
 </script>
 
 <div class="ff-feature-table m-auto">
-    <div class="ff-feature-table-section">
+    <div>
         {% for col in columns %}
         <h4>{{ col.product | safe }}</h4>
         {% endfor %}
     </div>
-    {% for section in sections %}
     <ul class="ff-feature-table-section">
         <li class="ff-feature--column-header">
             <span></span>
-            <label class="border-2 mr-2">Starter (Open-Source)</label>
+            <label class="border-2 mr-2">
+                <div>Starter</div>
+                <div class="text-base font-medium">(Open-Source)</div>
+            </label>
             <label class="border-2 border-red-500">Premium</label>
             <label class="border-2 ml-2">Enterprise</label>
         </li>
-        <!-- <li class="ff-feature--header">
+    </ul>
+    {% for section in sections %}
+    <ul class="ff-feature-table-section">
+
+        <li class="ff-feature--header">
             <span class="py-3 pl-4">{{ section.label }}</span>
             <span></span>
             <span></span>
             <span></span>
-        </li> -->
+        </li>
         {% for row in section.rows %}
         <li class="ff-feature-row">
             <label>
@@ -176,14 +182,22 @@
             {% endfor %}
         </li>
         {% endfor %}
-        <li class="ff-feature--column-buttons">
+    </ul>
+    {% endfor %}
+    <ul class="ff-feature-table-section">
+        <li class="ff-feature--column-header">
+            <span></span>
+            <span></span>
+            <label class="border-2 border-red-500 ff-blank"></label>
+            <span></span>
+        </li>
+        <li class="ff-feature--column-buttons -mt-1 h-12">
             <span></span>
             <label class="mr-2"><a class="ff-btn ff-btn--secondary-outlined uppercase align-baseline w-full" href="/docs/install" onclick="capture('cta-install', {'position': 'primary'})">Install now</a></label>
             <label><a class="ff-btn ff-btn--primary uppercase align-baseline w-full" href="https://app.flowforge.com/account/create" onclick="capture('cta-join', {'position': 'primary'})">TRY FOR FREE</a></label>
-            <label class="ml-2"><a class="ff-btn ff-btn--secondary-outlined uppercase align-baseline w-full" href='/book-demo'>Book a demo</a></label>
+            <label class="ml-2"><a class="ff-btn ff-btn--secondary-outlined uppercase align-baseline w-full " href='/book-demo'>Book a demo</a></label>
         </li>
     </ul>
-    {% endfor %}
     <ul class="ff-features-key">
         <li>
             {% include "components/feature-check.svg" %}

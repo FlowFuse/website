@@ -721,8 +721,8 @@ h4:hover .header-anchor {
 
     .ff-website .ff-btn.ff-btn--secondary-outlined {
         background-color: transparent;
-        color: theme(colors.teal.300);
-        border: 1px solid theme(colors.teal.300);
+        color: theme(colors.teal.500);
+        border: 1px solid theme(colors.teal.500);
     }
     
     .ff-website .ff-btn.ff-btn--secondary-outlined:hover {
@@ -790,7 +790,7 @@ h4:hover .header-anchor {
     .ff-tab-content.ff--active {
         display: block;
     }
-    
+
     .ff-feature-table {
         @apply max-w-screen-lg w-full;
         margin-top: 3rem;
@@ -802,23 +802,32 @@ h4:hover .header-anchor {
         padding-top: 12px;
     }
 
-ff    .ff-feature-table li .ff-icon {
+    .ff-feature-table li .ff-icon {
         width: 32px;
         height: 32px;
         stroke: theme(colors.gray.800);
     }
     
+    .ff-feature-table .ff-feature-table-section li.ff-feature--column-buttons .ff-btn{
+        padding: 0px;
+        height: 100%;
+    }
+
     .ff-feature-table-section {
         position: relative;
         text-align: left;
     }
     
+/* Border radius for table feature header */
+
+    /* .ff-feature--header:nth-of-type(1) {
+        border-top-left-radius: 0.5rem;
+    }   */
+
     .ff-feature-table-section li {
-    
         display: grid;
         grid-template-columns: 270px 1fr 1fr 1fr;
         align-items: center;
-        /* background-color: theme(colors.gray.100); */
         @apply bg-gray-200/60;
     }
 
@@ -855,7 +864,16 @@ ff    .ff-feature-table li .ff-icon {
         height: 100%;   
         border-bottom: 0;
         border-radius: 12px 12px 0 0;
-        @apply flex items-center justify-center;
+        @apply flex items-center justify-center flex-col;
+    }
+
+    .ff-feature-table-section li.ff-feature--column-header label.ff-blank {
+        height: 100%;   
+        border-top: 0;
+        border-bottom: 0;
+        border-radius: 0;
+        margin-top: -20px;
+        @apply flex items-center justify-center flex-col;
     }
 
     .ff-feature-table-section li.ff-feature--column-buttons {
@@ -904,7 +922,7 @@ ff    .ff-feature-table li .ff-icon {
     }
 
     .ff-feature--header {
-        background-color: theme(colors.gray.700) !important;
+        background-color: theme(colors.gray.400) !important;
         color: white;
         width: 100%;
         text-align: left;
