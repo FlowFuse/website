@@ -87,7 +87,6 @@ Some of the companies that are in this market include:
 - Mulesoft Anypoint
 - Integromat
 - UiPath
-- HubSpot
 
 ### Positioning
 
