@@ -27,6 +27,9 @@ The primary customer base in the IIoT sector includes manufacturing, energy, tra
 - FrameworX and FactoryStudio
 - Siemens Mindsphere (Digital Industry Software)
 - Microsoft IoT Hub & Edge
+- AWS IoT Hub & Edge (e.g. Greengras)
+- PTC
+- Hitachi
 
 ### Positioning
 
