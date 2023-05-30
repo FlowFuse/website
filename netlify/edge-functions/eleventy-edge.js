@@ -121,7 +121,6 @@ export default async (request, context) => {
             cookies: ['ff-feats', 'ff-distinctid', `ph_${POSTHOG_APIKEY}_posthog`, 'ff-test'],
         });
 
-        console.log(edge)
 
         function decodeJsonCookie (cookie) {
             const decoded = decodeURIComponent(cookie)
@@ -141,9 +140,9 @@ export default async (request, context) => {
                 return JSON.stringify(content, null, 2)
             });
 
-            // eleventyConfig.addPairedShortcode("shortcodetest", async function (content) {
-            //     return `${content} - shortcode at edge`
-            // })
+            eleventyConfig.addPairedShortcode("shortcodetest", async function (content) {
+                return `${content} - shortcode at edge`
+            })
 
             eleventyConfig.addGlobalData('distinctId', function () {
                 const distinctId = getDistinctId(context);
@@ -197,6 +196,10 @@ export default async (request, context) => {
             //         console.error("ERROR", { err });
             //     }
             // })
+
+            console.log('edge.renderManager')
+            console.log(edge.renderManager)
+            console.log(edge.renderManager.templateConfig.userConfig.liquidPairedShortcodes)
 
             console.log('eleventy config end')
         });
