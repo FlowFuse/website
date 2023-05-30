@@ -1,8 +1,8 @@
 ---
-navTitle: Market Verticals
+navTitle: Product Categories
 ---
 
-# Product Verticals
+# Product Categories
 
 Product verticals refer to specific, identifiable categories within an industry or market that have distinct characteristics and needs. By understanding the verticals, we can align our [product strategy](./strategy.md) to meet those specific needs. For this overview, we will focus on three distinct product verticals: Industrial IoT Platforms, Low-Code Tools, and Data Integration Tools.
 
