@@ -4,7 +4,7 @@ subtitle: Discover the trends and insights into the Node-RED community
 description: The Node-RED community recently published the results of their 2023 Community Survey. A number of interesting trends were identified from the survey results.
 date: 2023-05-30
 authors: ["ian-skerrett"]
-image: 
+image: /blog/2023/05/images/nr-community-survey.jpg
 tags:
     - posts
 ---
