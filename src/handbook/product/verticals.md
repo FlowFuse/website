@@ -1,3 +1,7 @@
+---
+navTitle: Market Verticals
+---
+
 # Product Verticals
 
 Product verticals refer to specific, identifiable categories within an industry or market that have distinct characteristics and needs. By understanding the verticals, we can align our [product strategy](./strategy.md) to meet those specific needs. For this overview, we will focus on three distinct product verticals: Industrial IoT Platforms, Low-Code Tools, and Data Integration Tools.
@@ -8,7 +12,7 @@ An IIoT platform is a solution that solves specific problems and concrete use ca
 
 However, a potential downside is that it may currently be perceived as too general-purpose and not specialized enough for specific IIoT tasks compared to other, more narrowly focused IIoT platforms.
 
-### Market Size
+### [Market Size](https://www.imarcgroup.com/industrial-iot-market)
 
 The Industrial IoT market is expected to reach a value of $516.6 Billion by 2028 ($221.7 Billion in 2022), with a compound annual growth rate (CAGR) of 15.49% from 2023 to 2028. About $66.5 Billion of this was in software alone in 2022.
 
@@ -34,7 +38,7 @@ Low-code platforms enable rapid application development with minimal hand-coding
 
 However, the potential disadvantage is that low-code tools can sometimes be viewed as less powerful or flexible than full-code platforms, and the target customers are challenging to define.
 
-### Market Size
+### [Market Size](https://www.gartner.com/en/newsroom/press-releases/2022-12-13-gartner-forecasts-worldwide-low-code-development-technologies-market-to-grow-20-percent-in-2023)
 
 The worldwide market for low-code development technologies is projected to total $26.9 billion in 2023, with growth of 19.6% from 2022 (Low-Code Tools totaled $22.462 Billion in 2022; Low-Code Application Platforms (LCAP) only $7.968 Billion in 2022).
 
@@ -59,7 +63,7 @@ Also known as IPaaS (Integration Platform as a Service), this market serves busi
 
 While this is an essential function of Node-RED, it doesn't encompass all the capabilities and the broader aim of FlowForge.
 
-### Market Size
+### [Market Size](https://www.vynzresearch.com/ict-media/global-ipaas-market)
 
 The market size for IPaaS has been reported to be at least $1.4 billion in 2021, potentially growing to $12.3 billion in 2027.
 
