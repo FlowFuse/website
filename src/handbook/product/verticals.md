@@ -36,7 +36,7 @@ FlowForge needs to leverage its enterprise features and also focus on providing 
 
 Low-code platforms enable rapid application development with minimal hand-coding, which aligns well with Node-RED's offering of a visual, drag-and-drop interface for creating flow-based applications. Node-RED allows users with limited programming knowledge to create complex IoT applications, which fits well with FlowForge's focus on collaborative development and management of Node-RED applications.
 
-However, the potential disadvantage is that low-code tools can sometimes be viewed as less powerful or flexible than full-code platforms, and the target customers are challenging to define.
+However, the potential disadvantage is that low-code tools can sometimes be viewed as less powerful or flexible than high-code platforms, and the target customers are challenging to define.
 
 ### [Market Size](https://www.gartner.com/en/newsroom/press-releases/2022-12-13-gartner-forecasts-worldwide-low-code-development-technologies-market-to-grow-20-percent-in-2023)
 
