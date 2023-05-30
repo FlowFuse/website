@@ -139,9 +139,9 @@ export default async (request, context) => {
                 return JSON.stringify(content, null, 2)
             });
 
-            eleventyConfig.addPairedShortcode("shortcodetest", async function (content) {
-                return `${content} - shortcode at edge`
-            })
+            // eleventyConfig.addPairedShortcode("shortcodetest", async function (content) {
+            //     return `${content} - shortcode at edge`
+            // })
 
             eleventyConfig.addGlobalData('distinctId', function () {
                 const distinctId = getDistinctId(context);
@@ -153,49 +153,48 @@ export default async (request, context) => {
             */
             // TODO: Using this means we get two event ids every time we see a new Person
 
-            eleventyConfig.addPairedAsyncShortcode("abtesting", async function (content, flag, value) {
-                console.log('ab testing shortcode')
-                try {
-                    if (POSTHOG_APIKEY) {
-                        const distinctId = this.ctx.environments.distinctId
-                        setCookie(context, "ff-distinctid", distinctId, 1);
-                        const requireFlagsRefresh = isNewFlag(context, flag)
-                        console.log('is new flag:', requireFlagsRefresh)
-                        var flags
-                        if (requireFlagsRefresh) {
-                            // call PostHog /decide API - not billed $$$ for this
-                            flags = await getPHFeatureFlags(distinctId)
-                        } else {
-                            flags = getExistingFeatureFlags(context)
-                        }
-                        console.log('flags')
-                        console.log(flags)
-                        // set cookies to pass data to client PostHog for bootstrapping
-                        if (flags && flags[flag] && flags[flag] === value) {
-                            if (requireFlagsRefresh) {
-                                const strFlag = encodeURIComponent(JSON.stringify(flags))
-                                setCookie(context, "ff-feats", strFlag, 1);
-                                // inform PostHog we have used a Feature Flag to track in our experiment - we are $$$ for this
-                                await featureFlagCalled(distinctId, flag, value)
-                            }
-                            return `${content}`
-                        } else if (!flags[flag] && value === 'control') {
-                            // this is not a valid feature flag - fall back to the "control" content
-                            console.warn(`WARN: Could not find feature flag: '${flag}'. Falling back to "control" content`)
-                            return `${content}`
-                        } else {
-                            return ''
-                        }
-                    } else if (value === 'control') {
-                        console.warn('WARN: No PostHog API Key - Falling back to A/B "control" content across the website')
-                        // fallback to control if we have no PostHog API key
-                        return `${content}`
-                    }
-                } catch (err) {
-                    console.error("ERROR", { err });
-                }
-                
-            })
+            // eleventyConfig.addPairedAsyncShortcode("abtesting", async function (content, flag, value) {
+            //     console.log('ab testing shortcode')
+            //     try {
+            //         if (POSTHOG_APIKEY) {
+            //             const distinctId = this.ctx.environments.distinctId
+            //             setCookie(context, "ff-distinctid", distinctId, 1);
+            //             const requireFlagsRefresh = isNewFlag(context, flag)
+            //             console.log('is new flag:', requireFlagsRefresh)
+            //             var flags
+            //             if (requireFlagsRefresh) {
+            //                 // call PostHog /decide API - not billed $$$ for this
+            //                 flags = await getPHFeatureFlags(distinctId)
+            //             } else {
+            //                 flags = getExistingFeatureFlags(context)
+            //             }
+            //             console.log('flags')
+            //             console.log(flags)
+            //             // set cookies to pass data to client PostHog for bootstrapping
+            //             if (flags && flags[flag] && flags[flag] === value) {
+            //                 if (requireFlagsRefresh) {
+            //                     const strFlag = encodeURIComponent(JSON.stringify(flags))
+            //                     setCookie(context, "ff-feats", strFlag, 1);
+            //                     // inform PostHog we have used a Feature Flag to track in our experiment - we are $$$ for this
+            //                     await featureFlagCalled(distinctId, flag, value)
+            //                 }
+            //                 return `${content}`
+            //             } else if (!flags[flag] && value === 'control') {
+            //                 // this is not a valid feature flag - fall back to the "control" content
+            //                 console.warn(`WARN: Could not find feature flag: '${flag}'. Falling back to "control" content`)
+            //                 return `${content}`
+            //             } else {
+            //                 return ''
+            //             }
+            //         } else if (value === 'control') {
+            //             console.warn('WARN: No PostHog API Key - Falling back to A/B "control" content across the website')
+            //             // fallback to control if we have no PostHog API key
+            //             return `${content}`
+            //         }
+            //     } catch (err) {
+            //         console.error("ERROR", { err });
+            //     }
+            // })
 
             console.log('eleventy config end')
         });
