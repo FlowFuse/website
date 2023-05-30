@@ -4,17 +4,25 @@
 
 ## Industrial IoT Platforms
 
-Node-RED's ability to connect and process data from IoT devices and close the gap between IT and OT aligns perfectly with this category. It is especially relevant in the manufacturing sector, where such data is vital for operational efficiency and innovation. FlowForge, by adding Enterprise features, aids in managing remote deployments and delivery pipelines, enhancing the overall capabilities of Node-RED as an Industrial IoT (IIoT) platform.
+An IIoT platform is a solution that solves specific problems and concrete use cases, as well as allows integration with an ecosystem of other technologies. Node-RED's ability to connect and process data from IIoT devices and close the gap between IT and OT aligns with this category. It is especially relevant in the manufacturing sector, where such data is vital for operational efficiency and innovation. FlowForge, by adding Enterprise features, aids in managing remote deployments and delivery pipelines, enhancing the overall capabilities of Node-RED as an IIoT platform.
 
 However, a potential downside is that it may currently be perceived as too general-purpose and not specialized enough for specific IIoT tasks compared to other, more narrowly focused IIoT platforms.
 
 ### Market Size
 
-The Industrial IoT market is expected to reach a value of USD 516.6 Billion by 2028 (USD 221.7 Billion in 2022), with a compound annual growth rate (CAGR) of 15.49% from 2023 to 2028. About USD 66.5 Billion of this was in software alone in 2022.
+The Industrial IoT market is expected to reach a value of $516.6 Billion by 2028 ($221.7 Billion in 2022), with a compound annual growth rate (CAGR) of 15.49% from 2023 to 2028. About $66.5 Billion of this was in software alone in 2022.
 
 ### Key Customers
 
 The primary customer base in the IIoT sector includes manufacturing, energy, transportation, and utilities companies. These businesses prioritize operational efficiency, equipment monitoring, predictive maintenance, and often operate on a global scale. They require a system capable of handling large data volumes and enabling swift, insightful decision-making.
+
+### Participants in the market
+
+- Ignition
+- Tulip
+- FrameworX and FactoryStudio
+- Siemens Mindsphere (Digital Industry Software)
+- Microsoft IoT Hub & Edge
 
 ### Positioning
 
@@ -28,7 +36,14 @@ However, the potential disadvantage is that low-code tools can sometimes be view
 
 ### Market Size
 
-The worldwide market for low-code development technologies is projected to total $26.9 billion in 2023, with growth of 19.6% from 2022 (Low-Code Tools totaled USD 22.462 Billion in 2022; Low-Code Application Platforms (LCAP) only USD 7.968 Billion in 2022).
+The worldwide market for low-code development technologies is projected to total $26.9 billion in 2023, with growth of 19.6% from 2022 (Low-Code Tools totaled $22.462 Billion in 2022; Low-Code Application Platforms (LCAP) only $7.968 Billion in 2022).
+
+### Participants in the market
+
+- Mendix
+- Microsoft Power Apps
+- OutSystems
+- Zoho Creator
 
 ### Key Customers
 
@@ -52,7 +67,7 @@ The market size for IPaaS has been reported to be at least $1.4 billion in 2021,
 
 This category encompasses businesses in various sectors that deal with large data volumes, including e-commerce, financial services, healthcare, and supply chain management. They require a system that can consolidate data from multiple sources and make it accessible for analysis and decision-making.
 
-### Competitors
+### Participants in the market
 
 Some of the companies that are in this market include:
 - n8n.io
