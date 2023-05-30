@@ -21,4 +21,4 @@ Key topics to be covered:
 * Designing scalable architectures using Node-RED flows and modules.
 * Leveraging FlowForge for scaling and load balancing Node-RED applications.
 
-Whether you are a seasoned Node-RED developer or just starting your journey, this webinar will equip you with the essential knowledge and techniques needed to build robust, scalable, and highly available applications using Node-RED. Join us to discover how FlowForge helps you to unlock the full potential of Node-RED in your next project and ensure your applications can handle the demands of today's connected world.
+Whether you are a seasoned Node-RED developer or just beginning your journey, this webinar is designed to equip you with the essential understanding of principles related to scalability and high availability in applications using Node-RED. Join us to discover how FlowForge helps you to unlock the full potential of Node-RED in your next project and ensure your applications can handle the demands of today's connected world.
