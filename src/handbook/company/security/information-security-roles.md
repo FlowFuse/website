@@ -29,7 +29,7 @@ related equipment from unauthorized use.
  - Approves Capital Expenditures for Information Security and Privacy programs and initiatives
  - Oversight over the execution of the information security and Privacy risk management program and risk treatments
  - Communication Path to the Board of Directors
- - Aligns Information Security and Privacy Policy and Posture based on FlowForge's mission, strategic objectives and risk appetite
+ - Aligns [Information Security](./information-security.md) and [Privacy Policy](/privacy-policy/#privacy-policy) based on FlowForge's mission, strategic objectives and risk appetite
 
 ### CTO
 
