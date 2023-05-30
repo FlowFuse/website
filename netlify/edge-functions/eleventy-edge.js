@@ -121,6 +121,8 @@ export default async (request, context) => {
             cookies: ['ff-feats', 'ff-distinctid', `ph_${POSTHOG_APIKEY}_posthog`, 'ff-test'],
         });
 
+        console.log(edge)
+
         function decodeJsonCookie (cookie) {
             const decoded = decodeURIComponent(cookie)
             return JSON.parse(decoded)
