@@ -499,15 +499,13 @@ module.exports = function(eleventyConfig) {
                     collapseWhitespace: true,
                     conservativeCollapse: true,
                     preserveLineBreaks: true,
-                    removeComments: true,
+                    removeComments: false,
                     removeEmptyAttributes: true,
                     removeRedundantAttributes: true,
                     useShortDoctype: true,
                 })
-
                 return minified
             }
-
             return content
         })
     }
