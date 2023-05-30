@@ -20,7 +20,7 @@ and/or process, store, or transmit company data.
 ## Operations Security
 
 Both technical and administrative operating procedures shall be documented as
-needed and made available to all users who need them via the [handbook](https://flowforge.com/handbook).
+needed and made available to all users who need them via the [handbook](/handbook).
 
 ### Change Management
 

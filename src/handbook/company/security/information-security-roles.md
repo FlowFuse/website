@@ -18,21 +18,20 @@ related equipment from unauthorized use.
 
 ## Roles and Responsibilities
 
-
-**Board of directors**
+### Board of directors
 
  - Oversight over risk and internal control for information security, privacy, and compliance.
  - Consults with executive leadership to understand FlowForge's security mission and risks and provides guidance to bring them into alignment
 
 
-**Executive Leadership**
+### Executive Leadership
 
  - Approves Capital Expenditures for Information Security and Privacy programs and initiatives
  - Oversight over the execution of the information security and Privacy risk management program and risk treatments
  - Communication Path to the Board of Directors
  - Aligns Information Security and Privacy Policy and Posture based on FlowForge's mission, strategic objectives and risk appetite
 
-**CTO**
+### CTO
 
  - Oversight over information security in the software development process
  - Responsible for the design, development, implementation, operation, maintenance
@@ -40,7 +39,7 @@ related equipment from unauthorized use.
  - Responsible for oversight over policy development
  - Responsible for implementing risk management in the development process
 
-**Systems Owners**
+### Systems Owners
 
  - Maintain the confidentiality, integrity and availability of the information
    systems for which they are responsible in compliance with FlowForge's policies
@@ -48,7 +47,7 @@ related equipment from unauthorized use.
  - Approval of technical access and change requests for non-standard access to
    systems under their control
 
-**Employees, contractors, temporary workers, etc.**
+### Employees, contractors, temporary workers, etc.
 
  - Acting at all times in a manner that does not place at risk the security of
    themselves, colleagues, and the information and resources they have use of
@@ -56,7 +55,7 @@ related equipment from unauthorized use.
  - Adhering to company policies and standards of conduct Reporting incidents and
    observed anomalies or weaknesses
 
-**Head of HR**
+### Peopleops Manager
  - Ensuring employees and contractors are qualified and competent for their roles
  - Ensuring appropriate testing and background checks are completed
  - Ensuring that employees and relevant contractors are presented with company policies and the Code of Conduct (CoC)
@@ -66,5 +65,3 @@ related equipment from unauthorized use.
 
 ---
 Policy derived from [Vanta](https://vanta.com)
-
-
