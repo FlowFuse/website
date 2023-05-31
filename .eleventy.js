@@ -501,7 +501,7 @@ module.exports = function(eleventyConfig) {
                     preserveLineBreaks: true,
                     removeComments: true,
                     ignoreCustomComments: [
-                        /^\s+ELEVENTYEDGE/
+                        /ELEVENTYEDGE.*/
                     ],
                     removeEmptyAttributes: true,
                     removeRedundantAttributes: true,
