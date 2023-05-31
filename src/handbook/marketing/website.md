@@ -1,4 +1,3 @@
-
 ---
 navTitle: Marketing - Website
 ---
@@ -10,6 +9,17 @@ navTitle: Marketing - Website
 - All images should use informative [alt tags](https://www.w3.org/WAI/tutorials/images/tips/) which clearly describe the point of an image rather than all the details. Alt tags should be no longer than 60 characters.
 - When mentioning [FlowForge Concepts](https://flowforge.com/docs/user/concepts/) (terminology) where possible we should link to an explanation of that concept.
 - All written content should use the [Oxford Comma](https://en.wikipedia.org/wiki/Serial_comma). We believe the Oxford Comma reduces the ambiguity of written technical content.
+
+#### Events Banner
+
+To update the event banner that appears at the top of the Website, you will need two pieces of information:
+
+- The title of the Webinar
+- URL that the Webinar Registration is hosted at
+
+Once you have those, you can update the [following file]((https://github.com/flowforge/website/blob/main/src/_includes/components/events-banner.njk)):
+
+Update the `href=""` value of the `<a>` tag to update the Event URL, and change the title inside the middle `<span>`
 
 #### Images
 
