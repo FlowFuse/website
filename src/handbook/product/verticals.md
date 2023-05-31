@@ -14,7 +14,7 @@ However, a potential downside is that it may currently be perceived as too gener
 
 ### [Market Size](https://www.imarcgroup.com/industrial-iot-market)
 
-The Industrial IoT market is expected to reach a value of $516.6 Billion by 2028 ($221.7 Billion in 2022), with a compound annual growth rate (CAGR) of 15.49% from 2023 to 2028. About $66.5 Billion of this was in software alone in 2022.
+The Industrial IoT market is expected to reach a value of $516.6 Billion by 2028 ($221.7 Billion in 2022), with a compound annual growth rate (CAGR) of 15.49% from 2023 to 2028. About 30%, $66.5 Billion of this was in software alone in 2022.
 
 ### Key Customers
 
