@@ -979,6 +979,12 @@ div.content section.footnotes ol li p {
     line-height: 0.8rem;
 }
 
+.nodered-pillar-bg {
+    background-image: url('../images/bg-nodered-editor.png');
+    background-size: cover;
+    background-position-y: bottom;
+}
+
 /*
     Overwrite HubSpot Z Index
 */
