@@ -500,6 +500,9 @@ module.exports = function(eleventyConfig) {
                     conservativeCollapse: true,
                     preserveLineBreaks: true,
                     removeComments: true,
+                    ignoreCustomComments: [
+                        /^\s+ELEVENTYEDGE/
+                      ]
                     removeEmptyAttributes: true,
                     removeRedundantAttributes: true,
                     useShortDoctype: true,
