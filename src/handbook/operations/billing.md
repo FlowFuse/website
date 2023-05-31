@@ -20,7 +20,7 @@ and charge customers based on their payment method filed with Stripe.
 For annual subscriptions, which could also be self-managed, invoices are created
 in Stripe. These invoices are created manually *after* the customer has agreed
 on the [quote](../sales/pricing.md#generating-a-quote-and-order-form) and
-[terms](../legal/index.md#subscription-agreement).
+[terms](../legal/#subscription-agreement).
 
 ### Creating an invoice
 
