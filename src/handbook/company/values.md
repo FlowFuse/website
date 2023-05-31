@@ -55,8 +55,8 @@ opinions and provide suggestions.
 
 ### 🤝 Customer Empathy
 
-1. Be curious: Understanding starts with asking questions. Aim to get a deep understanding of their desires.
-1. It’s about the customer: pay attention to competitors, obsess over customers.
-1. We listen to their feedback and respond quickly and respectfully. Customers can be frustrated, or potentially seem unreasonable. [Apply optimism](#optimism), and be friendly.
-1. We show empathy, and our solutions aim to solve their problems effectively and efficiently.
+1. Focus on the customer: We want them to be successful. Pay attention to competition, but put the customer first.
+1. Be curious, not judgemental: Understanding starts with asking questions. Aim to get a deep understanding of their desires and motivations.
+1. Listen to feedback and respond quickly and respectfully. Customers may be frustrated or potentially seem unreasonable - we are here to listen and help them move forward.  [Apply optimism](#optimism), and be friendly.
+1. Show empathy in all interactions and choices. Our solutions aim to solve customer problems effectively and efficiently.
 
