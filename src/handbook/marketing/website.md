@@ -17,7 +17,7 @@ To update the event banner that appears at the top of the Website, you will need
 - The title of the Webinar
 - URL that the Webinar Registration is hosted at
 
-Once you have those, you can update the [following file]((https://github.com/flowforge/website/blob/main/src/_includes/components/events-banner.njk)):
+Once you have those, you can update the [following file](https://github.com/flowforge/website/blob/main/src/_includes/components/events-banner.njk):
 
 Update the `href=""` value of the `<a>` tag to update the Event URL, and change the title inside the middle `<span>`
 
