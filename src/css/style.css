@@ -510,7 +510,7 @@ h4:hover .header-anchor {
     }
 
     .ff-website header .ff-nav-dropdown .ff-nav-nested-cols >div > li {
-        @apply pt-3 pb-2;
+        @apply pt-3 pb-2 pointer-events-none;
     }
     .ff-website header .ff-nav-dropdown .ff-nav-nested-cols >div:first-child > li {
         @apply rounded-tl-lg;
@@ -520,7 +520,7 @@ h4:hover .header-anchor {
     }
 
     .ff-website header .ff-nav-dropdown .ff-nav-nested-cols >div > li > a {
-        @apply py-0;
+        @apply py-0 pointer-events-none;
     }
 
     .ff-website header .ff-nav-dropdown .ff-nav-nested-cols >div:first-child > li > a {
