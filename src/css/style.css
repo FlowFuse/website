@@ -506,14 +506,21 @@ h4:hover .header-anchor {
     }
 
     .ff-website header .ff-nav-dropdown .ff-nav-nested-cols ul {
-        @apply my-4;
+        @apply my-3;
     }
 
+    .ff-website header .ff-nav-dropdown .ff-nav-nested-cols >div > li {
+        @apply pt-3 pb-2;
+    }
     .ff-website header .ff-nav-dropdown .ff-nav-nested-cols >div:first-child > li {
-        @apply py-3 rounded-tl-lg;
+        @apply rounded-tl-lg;
     }
     .ff-website header .ff-nav-dropdown .ff-nav-nested-cols >div:last-child > li {
         @apply rounded-tr-lg;
+    }
+
+    .ff-website header .ff-nav-dropdown .ff-nav-nested-cols >div > li > a {
+        @apply py-0;
     }
 
     .ff-website header .ff-nav-dropdown .ff-nav-nested-cols >div:first-child > li > a {
