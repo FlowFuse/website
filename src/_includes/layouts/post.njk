@@ -9,7 +9,7 @@ layout: layouts/base.njk
                 <label>Article</label>
                 <h1>{{ title }}</h1>
                 {% if subtitle %}
-                    <h4>{{ subtitle | safe }}</h4>
+                <h4>{{ subtitle | safe }}</h4>
                 {% endif %}
             </div>
         </div>
@@ -27,11 +27,9 @@ layout: layouts/base.njk
                             <iframe width="560" height="315" src="https://www.youtube.com/embed/{{video}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                         {% elif image %}
                             <div class="w-full h-auto">
-                                {% set imageSrc = ["./", image] | join %}
+                                {% set imageSrc = ["./", image ] | join %}
                                 {% set imageDescription = ["Image representing ", title] | join %}
-                                {% image imageSrc,
-                                imageDescription,
-                                [560] %}
+                                {% image imageSrc, imageDescription, [560] %}
                             </div>
                         {% else %}
                             {{ page.url | generatePostSVG | safe }}
@@ -39,27 +37,6 @@ layout: layouts/base.njk
                     </div>
                     {{ content | safe }}
                 </div>
-                {% edge "liquid" %}
-                    {% abtesting "blog-comments", false %}
-                    {% endabtesting \%}
-                    {% abtesting "blog-comments", true %}
-                        <div id='discourse-comments'></div>
-
-                        <script type="text/javascript">
-                            window.DiscourseEmbed = {
-                                discourseUrl: 'https://community.flowforge.com/',
-                                discourseEmbedUrl: '{{ site.baseURL }}{{ page.url }}/'
-                            };
-                            (function () {
-                                var d = document.createElement('script');
-                                d.type = 'text/javascript';
-                                d.async = true;
-                                d.src = window.DiscourseEmbed.discourseUrl + 'javascripts/embed.js';
-                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(d);
-                            })();
-                        </script>
-                    {% endabtesting %}
-                {% endedge %}
             </div>
             <div class="w-72 max-w-full flex-shrink-0">
                 <div class="sticky top-4 mt-6 flex flex-col">
@@ -69,34 +46,29 @@ layout: layouts/base.njk
                             {% renderTeamMember people[author] %}
                         {% endif %}
                     {% endfor %}
-                    <p>Published on: <time value="{{ item.date }}">{{ date  | shortDate }}</time>
-                    </p>
+                    <p>Published on: <time value="{{ item.date }}">{{ date  | shortDate }}</time></p>
                     <h3 class="mb-3 pt-6 border-t-2">Recommended Articles:</h3>
                     <ul class="ml-6 list-disc">
-                        {% for post in collections.posts | reverse | limit(4) %}
-                            {% if post.data.title != title %}
-                                <li class="mb-3">
-                                    <a href="{{ post.url }}">
-                                        {{ post.data.title }}
-                                    </a>
-                                </li>
-                            {% endif %}
-                        {% endfor %}
+                    {% for post in collections.posts | reverse | limit(4) %}
+                        {% if post.data.title != title %}
+                            <li class="mb-3"><a href="{{ post.url }}">
+                                {{ post.data.title }}
+                            </a></li>
+                        {% endif %}                        
+                    {% endfor %}
                     </ul>
                     <div class="mt-3 pt-6 flex flex-col border-t-2">
                         <h3 class="">Sign up for updates</h3>
                         <script>
                             function displayHubSpotForm() {
-                                hbspt
-                                    .forms
-                                    .create({
-                                        region: "eu1",
-                                        portalId: "26586079",
-                                        formId: "159c173d-dd95-49bd-922b-ff3ef243e90c",
-                                        onFormSubmit: function ($form) {
-                                            capture('cta-blog-subscribe', {'position': 'article'})
-                                        }
-                                    });
+                                hbspt.forms.create({
+                                    region: "eu1",
+                                    portalId: "26586079",
+                                    formId: "159c173d-dd95-49bd-922b-ff3ef243e90c",
+                                    onFormSubmit: function($form) {
+                                        capture('cta-blog-subscribe', {'position': 'article'})
+                                    }
+                                });
                             }
                         </script>
                         <script async type="text/javascript" charset="utf-8" src="//js-eu1.hsforms.net/forms/embed/v2.js" onload="displayHubSpotForm()"></script>
@@ -108,8 +80,8 @@ layout: layouts/base.njk
 </div>
 
 <!-- Clipboard -->
-<link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/19.1.1/tooltips.min.css"  as="style" onload="this.onload=null;this.rel='stylesheet'" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+<link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/19.1.1/tooltips.min.css"  as="style" onload="this.onload=null;this.rel='stylesheet'" crossorigin="anonymous" referrerpolicy="no-referrer" />
 {% initClipboardJS %}
 
 <!-- Syntax Highlighting CSS -->
-<link rel="preload" href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism-tomorrow.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism-tomorrow.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'" crossorigin="anonymous" referrerpolicy="no-referrer" />
