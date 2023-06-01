@@ -156,12 +156,10 @@ export default async (request, context) => {
                         flags = getExistingFeatureFlags(context)
                     }
                     // set cookies to pass data to client PostHog for bootstrapping
-                    if (flags) {
-                        const strFlag = encodeURIComponent(JSON.stringify(flags))
-                        setCookie(context, "ff-feats", strFlag, 1)
-                    }
                     if (flags && flags[flag] && flags[flag] === value) {
                         if (requireFlagsRefresh) {
+                            const strFlag = encodeURIComponent(JSON.stringify(flags))
+                            setCookie(context, "ff-feats", strFlag, 1);
                             // inform PostHog we have used a Feature Flag to track in our experiment - we are $$$ for this
                             await featureFlagCalled(distinctId, flag, value)
                         }
