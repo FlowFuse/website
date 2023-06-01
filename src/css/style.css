@@ -924,7 +924,8 @@ h4:hover .header-anchor {
         transition: none;
     }
 
-    .ff-feature-table-section li:not(.ff-feature--column-header) label .ff-icon:hover {
+    .ff-feature-table-section li:not(.ff-feature--column-header) label:hover,
+    .ff-feature-table-section li:not(.ff-feature--column-header) label:hover .ff-icon {
         cursor: pointer;
         color: theme(colors.blue.600);
     }

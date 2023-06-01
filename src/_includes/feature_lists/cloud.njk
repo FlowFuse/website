@@ -152,10 +152,10 @@
         </li>
         {% for row in section.rows %}
         <li class="ff-feature-row">
-            <label>
+            <label onclick="openInfo('{{ row.label }}', '{{ row.id }}')">
                 {{ row.label }}
                 {% if row.info %}
-                <i id="ff-info--{{ row.id }}" class="ff-icon" onclick="openInfo('{{ row.label }}', '{{ row.id }}')">{% include "components/icons/info.svg" %}</i>
+                <i id="ff-info--{{ row.id }}" class="ff-icon ">{% include "components/icons/info.svg" %}</i>
                 {% endif %}
             </label>
             {% for value in row.values %}
