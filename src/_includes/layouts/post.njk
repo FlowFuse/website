@@ -46,7 +46,7 @@ layout: layouts/base.njk
                         <script type="text/javascript">
                             window.DiscourseEmbed = {
                                 discourseUrl: 'https://community.flowforge.com/',
-                                discourseEmbedUrl: '{{ site.baseURL }}{{ page.url }}'
+                                discourseEmbedUrl: window.location.href
                             };
                             (function () {
                                 var d = document.createElement('script');
