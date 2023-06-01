@@ -29,6 +29,8 @@
     <!-- Browser Description -->
     {% if meta and meta.description %}
     <meta name="description" content="{{ meta.description }}">
+    {% elif description %}
+    <meta name="description" content="{{ description }}">
     {% else %}
     <meta name="description" content="Scale your Node-RED deployments in production. Open-Source and available on Docker, Kubernetes or Cloud">
     {% endif %}
