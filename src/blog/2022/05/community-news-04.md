@@ -4,6 +4,7 @@ subtitle: News from the FlowForge and Node-RED communities
 description: News from the FlowForge and Node-RED communities
 date: 2022-05-06
 authors: ["sam-machin"]
+image: "/images/blog/community-news.jpeg"
 tags:
     - posts
     - newsletter

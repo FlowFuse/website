@@ -12,6 +12,6 @@ package-lock.json
 .vscode/
 
 # Eleventy Edge Build Data files
-netlify/edge-functions/_generated
+netlify/edge-functions/_generated/
 
 .env

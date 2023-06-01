@@ -1,0 +1,36 @@
+@tailwind components;
+
+@layer components {
+
+    .ff-animation-text-carousel {
+        @apply overflow-hidden flex justify-center gap-2;
+    }
+
+    .ff-animation-text-carousel ul {
+        animation-name: change;
+        animation-duration: 6s;
+        animation-iteration-count: infinite;
+    }  
+
+    .ff-animation-text-carousel li {
+       @apply text-left;
+    } 
+}
+
+@keyframes change {
+    0%, 17.5% {
+        transform:translate3d(0,0,0);
+    }
+    22.5%, 40% {
+        transform:translate3d(0,-100%,0);
+    }
+    47.5%, 65% {
+        transform:translate3d(0,-200%,0);
+    }
+    72.55%, 90% {
+        transform:translate3d(0,-100%,0);
+    }
+    97.5% {
+        transform:translate3d(0,0,0);
+    }
+}

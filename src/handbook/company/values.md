@@ -2,6 +2,7 @@
 meta:
     title: Company Values
 ---
+
 ## Values
 
 FlowForge has a few core values. Values we aspire to live by in everything we do
@@ -41,30 +42,21 @@ Allow progress being made by anyone. Keep an agenda for meetings, write down dec
 1. Think big picture: It’s not “your” issue/bug, the whole community can have
 opinions and provide suggestions.
 
-#### Be Trusting
+### ⛑️ Constructive Candor
 
-To move with high velocity, trust needs to be given before one has had the
-opportunity to earn it. People can only grow when they're able to take up
-challenging tasks and project, and are then allowed to go their own route. When
-challenged, ask for feedback and support, not for permission or approval.
+1. Feedback aids growth: it reinforces what is good and helps drive improvement where needed.
+1. Be considerate: feedback is about helping others to improve, not scoring points. Use care and consideration of how it will be received.
+1. Provide timely feedback: it is better to address things when they are fresh in our minds and quicker to remedy.
+1. Assume positive intent when receiving feedback. When you feel defensive it’s OK to
+ respond later.
+1. <a id="optimism">Be optimistic</a>, treat situations as if a positive outcome is always possible.
+1. Be open and honest about your own mistakes, take ownership of them and their resolve.
+1. Appreciate each other. Say thanks often, preferably in public.
 
-### Communication
+### 🤝 Customer Empathy
 
-#### Use Candor
+1. Focus on the customer: We want them to be successful. Pay attention to competition, but put the customer first.
+1. Be curious, not judgemental: Understanding starts with asking questions. Aim to get a deep understanding of their desires and motivations.
+1. Listen to feedback and respond quickly and respectfully. Customers may be frustrated or potentially seem unreasonable - we are here to listen and help them move forward.  [Apply optimism](#optimism), and be friendly.
+1. Show empathy in all interactions and choices. Our solutions aim to solve customer problems effectively and efficiently.
 
-We use truth as a superpower, even when inconvenient to ourselves. We use it
-with care and consideration of others. We won’t get everything right all of the
-time. The only way we can improve is by being honest with ourselves and each
-other. It can be difficult to achieve and it can feel awkward. When done right, 
-with respect and a shared understanding, it can lead to a better outcome for
-everyone.
-
-We strongly encourage the sharing of thanks and feedback within FlowForge. This
-can be done formally through our `@Feedback` Slackbot. You can read more in
-[Communications](./communication#feedback-and-thanks)
-
-#### Be Optimistic
-
-We will treat all situations with an optimism that a positive result is
-possible. We don’t let that get in the way of planning for all outcomes and
-making the hard choices when they are needed.
