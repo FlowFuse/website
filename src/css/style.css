@@ -541,6 +541,17 @@ h4:hover .header-anchor {
 }
 
 /*
+    Specific Page Styling
+*/
+@layer components {
+    .ff-blog-tile img,
+    .ff-blog-tile svg {
+        object-fit: cover;
+        aspect-ratio: 1.78
+    }
+}
+
+/*
     Footer
 */
 @layer components {
