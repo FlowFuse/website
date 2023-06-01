@@ -2,8 +2,8 @@
 title: Use any npm module in Node-RED
 subtitle: See how you can easily import any npm module, for use in a Node-RED function node.
 description: Node-RED has an incredibly rich resource of integrations available, but sometimes you need that little extra. This shows you how.
-date: 2023-05-10
-authors: ["joe-pavitt"]
+date: 2023-06-01
+authors: ["joe-pavitt", "stephen-mclaughlin"]
 image: /images/blog/tile-import-npm-modules.jpeg
 tags:
     - posts
@@ -27,31 +27,33 @@ All you need is the name of the module you want to import, then:
 1. Enter the name of the module you want to use in the newly created row, and (optionally) modify the `variable` that this module will be imported in as.
 2. Switch back to the "On Message" tab and write your function. Your new module will be available via the `variable` you defined in the "Setup" tab.
 
-## Example: Easy CRC
-
-Something we see [a lot on the Node-RED Forums](https://discourse.nodered.org/search?q=crc%20order%3Alatest) are questions on how to conduct CRC calculations. There is a popular node module `easy-crc` that can be imported and used in the function nodes, e.g:
-
+## Example: Moment.js
 
 <video width="560" height="315" controls>
-  <source src="video.mov" type="video/mp4">
+  <source src="https://website-data.s3.eu-west-1.amazonaws.com/MomentJS+Demo.mp4" type="video/mp4">
 </video>
-
-## Example: Moment.js
 
 Recently we wanted to use [moment](https://www.npmjs.com/package/moment) for some custom date calculations. Whilst there was set of [Moment Node-RED nodes](https://flows.nodered.org/node/node-red-contrib-moment) already available, it didn't have all of the functionality we needed.
 
 So, all we needed to do was import the module into a function node, and define our comparison there instead, here's a working example:
 
+## Example: Easy CRC
+
 <video width="560" height="315" controls>
-  <source src="https://website-data.s3.eu-west-1.amazonaws.com/package+import+-+moment.mp4" type="video/mp4">
+  <source src="https://website-data.s3.eu-west-1.amazonaws.com/Easy+CRC+Demo.mp4" type="video/mp4">
 </video>
+
+Something we see [a lot on the Node-RED Forums](https://discourse.nodered.org/search?q=crc%20order%3Alatest) are questions on how to conduct CRC calculations. There is a popular node module `easy-crc` that can be imported and used in the function nodes, e.g:
 
 ## Example: PostHog
 
-We use <a href="https://posthog.com/" target="_blank">PostHog</a> for our internal Product Analysis. We record live events as they occur on FlowForge Cloud to better understand features that are (and are not) used.
+<video width="560" height="315" controls>
+  <source src="https://website-data.s3.eu-west-1.amazonaws.com/PostHog+Node+Demo.mp4" type="video/mp4">
+</video>
+
+Node-RED is great for [data integration](/solutions/data-integration/). We use <a href="https://posthog.com/" target="_blank">PostHog</a> for our internal Product Analysis. We record live events as they occur on FlowForge Cloud to better understand features that are (and are not) used.
 
 We wanted to investigate whether or not we could add backdated data, which in theory was possible via their <a href="https://posthog.com/docs/libraries/node" target="_blank">posthog-node</a> module. We wanted to populate it with data driven from our own database and API. 
 
 Within two minutes, we could wire up a node to retrieve data from our API, and then ingest it into `posthog-node` via the import of a function node.
 
-Node-RED is great for [data integration](/solutions/data-integration/).
