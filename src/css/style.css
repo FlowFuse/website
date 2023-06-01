@@ -729,7 +729,7 @@ h4:hover .header-anchor {
 
     .ff-website .ff-btn.ff-btn--secondary-outlined {
         background-color: transparent;
-        color: theme(colors.teal.500);
+        color: theme(colors.teal.600);
         border: 1px solid theme(colors.teal.500);
     }
     
@@ -847,13 +847,13 @@ h4:hover .header-anchor {
     }
 
     .ff-feature-table-section li.ff-feature-row span:nth-child(3) {
-        border-left: 2px solid theme(colors.red.500);
-        border-right: 2px solid theme(colors.red.500);
+        border-left: 2px solid theme(colors.red.400);
+        border-right: 2px solid theme(colors.red.400);
     }
 
     .ff-feature-table-section li.ff-feature--header span:nth-child(3) {
-        border-left: 2px solid theme(colors.red.500);
-        border-right: 2px solid theme(colors.red.500);
+        /* border-left: 2px solid theme(colors.red.400);
+        border-right: 2px solid theme(colors.red.400); */
     }
 
     .ff-feature-table-section li.ff-feature--column-header {
@@ -929,7 +929,7 @@ h4:hover .header-anchor {
     }
 
     .ff-feature--header {
-        background-color: theme(colors.gray.400) !important;
+        background-color: theme(colors.gray.700) !important;
         color: white;
         /* padding: 12px 24px; */
         width: 100%;
