@@ -740,8 +740,8 @@ h4:hover .header-anchor {
 
     .ff-website .ff-btn.ff-btn--secondary-outlined {
         background-color: transparent;
-        color: theme(colors.teal.300);
-        border: 1px solid theme(colors.teal.300);
+        color: theme(colors.teal.600);
+        border: 1px solid theme(colors.teal.500);
     }
     
     .ff-website .ff-btn.ff-btn--secondary-outlined:hover {
@@ -809,7 +809,7 @@ h4:hover .header-anchor {
     .ff-tab-content.ff--active {
         display: block;
     }
-    
+
     .ff-feature-table {
         @apply max-w-screen-lg w-full;
         margin-top: 3rem;
@@ -826,30 +826,88 @@ h4:hover .header-anchor {
         stroke: theme(colors.gray.800);
     }
     
+    .ff-feature-table .ff-feature-table-section li.ff-feature--column-buttons .ff-btn{
+        padding: 0px;
+        height: 100%;
+    }
+
     .ff-feature-table-section {
         position: relative;
         text-align: left;
     }
     
+/* Border radius for table feature header */
+
+    /* .ff-feature--header:nth-of-type(1) {
+        border-top-left-radius: 0.5rem;
+    }   */
+
     .ff-feature-table-section li {
-        padding: 12px 24px;
         display: grid;
-        grid-template-columns: 240px 1fr 1fr 1fr;
+        grid-template-columns: 270px 1fr 1fr 1fr;
         align-items: center;
+        @apply bg-gray-200/60;
     }
 
     .ff-feature-table-section li.ff-feature-row:nth-child(odd) {
         background-color: theme(colors.gray.100);
     }
 
+    .ff-feature-table-section li.ff-feature-row label {
+        padding: 12px ;
+    }
+
+    .ff-feature-table-section li.ff-feature-row span:nth-child(3) {
+        border-left: 2px solid theme(colors.red.400);
+        border-right: 2px solid theme(colors.red.400);
+    }
+
+    .ff-feature-table-section li.ff-feature--header span:nth-child(3) {
+        /* border-left: 2px solid theme(colors.red.400);
+        border-right: 2px solid theme(colors.red.400); */
+    }
+
     .ff-feature-table-section li.ff-feature--column-header {
         background-color: theme(colors.gray.50);
+        padding: 0;
+        margin-top: 20px;
     }
 
     .ff-feature-table-section li.ff-feature--column-header label {
         text-align: center;
         font-weight: 600;
         font-size: 1.25rem;
+        line-height: 1.5rem;
+        padding: 12px 6px;
+        height: 100%;   
+        border-bottom: 0;
+        border-radius: 12px 12px 0 0;
+        @apply flex items-center justify-center flex-col;
+    }
+
+    .ff-feature-table-section li.ff-feature--column-header label.ff-blank {
+        height: 100%;   
+        border-top: 0;
+        border-bottom: 0;
+        border-radius: 0;
+        margin-top: -20px;
+        @apply flex items-center justify-center flex-col;
+    }
+
+    .ff-feature-table-section li.ff-feature--column-buttons {
+        background-color: theme(colors.gray.50);
+        padding: 0;
+    }
+    .ff-feature-table-section li.ff-feature--column-buttons label {
+        text-align: center;
+        font-weight: 600;
+        font-size: 1.25rem;
+        line-height: 1.5rem;
+        padding: 0;
+        height: 100%;   
+        border-bottom: 0;
+        border-radius: 12px 12px 0 0;
+        @apply flex items-center justify-center;
     }
 
     .ff-feature-table-section li:not(.ff-feature--column-header) label {
@@ -873,7 +931,8 @@ h4:hover .header-anchor {
 
     .ff-feature-table-section li span {
         text-align: center;
-        @apply px-1 md:px-6
+        height: 100%;
+        @apply px-1 flex items-center justify-center;
     }
 
     .ff-feature-table-section li button {
@@ -881,12 +940,28 @@ h4:hover .header-anchor {
     }
 
     .ff-feature--header {
-        background-color: theme(colors.gray.700);
+        background-color: theme(colors.gray.700) !important;
         color: white;
-        padding: 12px 24px;
+        /* padding: 12px 24px; */
         width: 100%;
         text-align: left;
         font-weight: bold;
+    }
+    
+    li.ff-feature--header span {
+        text-align: left;
+        height: 100%;
+        display: flex;
+        justify-content: left !important;
+        @apply px-1 md:px-6;
+    }
+
+    .ff-feature-table-section:nth-child(2) .ff-feature--header {
+        @apply rounded-tl-lg;
+    }
+
+    .ff-feature-table-section:nth-child(3) li:last-child {
+        @apply rounded-bl-lg;
     }
 
     .ff-features-key {
