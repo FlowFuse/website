@@ -946,6 +946,7 @@ h4:hover .header-anchor {
         width: 100%;
         text-align: left;
         font-weight: bold;
+        z-index: 1;
     }
     
     li.ff-feature--header span {
