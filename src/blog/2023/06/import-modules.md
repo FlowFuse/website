@@ -43,7 +43,7 @@ Recently we wanted to use [moment](https://www.npmjs.com/package/moment) for som
 So, all we needed to do was import the module into a function node, and define our comparison there instead, here's a working example:
 
 <video width="560" height="315" controls>
-  <source src="video.mov" type="video/mp4">
+  <source src="https://website-data.s3.eu-west-1.amazonaws.com/package+import+-+moment.mp4" type="video/mp4">
 </video>
 
 ## Example: PostHog
