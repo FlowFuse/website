@@ -1,6 +1,11 @@
 ---
 layout: nohero
 sitemapPriority: 0.9
+pagination:
+  data: collections.posts
+  size: 19 # creates a nice matrix (1 header, 18 left: 3 on 6 rows)
+  alias: posts
+  reverse: true
 meta:
     title: Blog
 ---
@@ -11,9 +16,8 @@ meta:
             {% include "components/divider-grey-wires-right.njk" %}
         </div>
     </div>
-    {% if collections.posts.length > 0 %}
     <ul class="flex flex-wrap">
-        {%- for item in collections.posts | reverse -%}
+        {%- for item in posts -%}
         {% if loop.first %}
         <li class="w-full mt-2 px-2 pb-4">
             <a href="{{ item.url }}" class="w-full flex flex-col group hover:no-underline">
@@ -101,10 +105,14 @@ meta:
         {% endif %}
     {%- endfor -%}
     </ul>
-    {% else %}
-        <div class="mx-auto">
-            <div class="text-3xl md:text-5xl text-blue-hero font-medium pb-3">Ooops!</div>
-            <div class="text-lg text-black-hero-body">No-one has written anything yet. Come back soon!</div>
-        </div>
-    {% endif %}
+
+    <nav aria-labelledby="pagination" class="pagination mt-4">
+        <ol class="flex flex-row w-full justify-between text-gray-600">
+            <li class="flex md:flex-initial w-40 justify-start pl-2 ff-nav-blog-p"{% if not pagination.href.previous %} style="opacity: 0; pointer-events: none;"{% endif %}><a href="{{ pagination.href.previous }}">Previous</a></li>
+            <li>
+                <span>{{ pagination.pageNumber + 1 }} of {{ pagination.pages.length }}</span>
+            </li>
+            <li class="flex md:flex-initial w-40 justify-end pr-2 ff-nav-blog-n"{% if not pagination.href.next %} style="opacity: 0; pointer-events: none;;"{% endif %}><a href="{{ pagination.href.next }}">Next</a></li>
+        </ol>
+    </nav>
 </div>

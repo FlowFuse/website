@@ -18,20 +18,15 @@ A KPI, or Key Point Indicator, is used as a heuristic metric for company wide
 success. At FlowForge we're engaged in many initiatives to grow our offering and
 assess product market fit. At this time there's one KPI to track progress.
 
-### Managed Node-RED instances
+### Annual Recurring Revenue (ARR)
 
-[Dashboard](https://datastudio.google.com/reporting/90315614-39bf-4eac-ba3d-45b4c635940e/page/P1V6C)
+Now FlowForge has a stable and maturing product, we're trying to verify product
+market fit. The market verification requires sales, and ARR is a good metric to
+track this.
 
-FlowForge is the key product we're verifying in the market currently. Each
-customer electing to use FlowForge to help them in their Node-RED journey is a
-signal we're providing value.
-
-An instance is either a remote Node-RED running the [FlowForge Device Agent](https://flowforge.com/docs/user/devices/),
-a hosted Node-RED in the FlowForge Cluster, or an otherwise FlowForge licensed 
-and supported Node-RED instance.
-
-Telemetry collection is opt-in, and dependant on an internet connection. As such
-it's anticipated to under report the true number of FlowForge managed instances.
+Incidental revenue, that's not recurring, doesn't factor into this metric as it's
+hard to build a business with products with unpredictable revenue streams. Furthermore,
+it's usually harder to scale.
 
 Target growth for this metric is 10% week over week.
 

@@ -11,7 +11,12 @@ It is important that every takes the time to understand their own responsibiliti
 in this area, which includes prompt reporting and resolution of any issues identified.
 
  - [Information Security Policy and Acceptable Use Policy](./information-security.md)
-
+ - [Information Security Roles and Responsibilities](./information-security-roles.md)
+ - [Access Control Policy](./access-control.md)
+ - [Data Management Policy](./data-management.md)
+ - [Secure Development Policy](./secure-development.md)
+ - [Operations Security Policy](./operations-security.md)
+ - [Cryptography Policy](./cryptography.md)
 
 ## Credentials
 

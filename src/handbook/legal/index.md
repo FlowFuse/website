@@ -9,7 +9,8 @@ For self-managed licenses FlowForge has a standard [subscription agreement templ
 
 ## Cloud Partnership agreement
 
-For partners that will refer FlowForge Cloud customers a [the standard referral agreement](https://docs.google.com/document/d/1Efh4TAqv4Ib2V-cTYM7yEqtDn86iCwW2/)
+For partners that will refer FlowForge customer to FlowForge, FlowForge Cloud or otherwise, a 
+[standard referral agreement](https://docs.google.com/document/d/1BVls7LEC1CBQ6wlrb8GeWSYr2vj9fMqgdsWiWLoQZOY)
 is used. The terms of the contract are set by the CEO prior to sending the first draft to each partner.
 
 ## Non-disclosure agreement (NDA)

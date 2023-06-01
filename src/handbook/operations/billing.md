@@ -4,17 +4,41 @@ navTitle: Billing
 
 # Billing
 
-## Platform
-
 We use Stripe to bill our customers and to manage subscriptions for FlowForge.
+Team members will be given a login to the  Stripe dashboard as required for
+their role with an appropriate level of access.
 
-Team members will be given a login to the  Stripe dashboard as required for their role with an appropriate level of access.
+## Providing support
 
-## Support
+The main use of the Stripe dashboard will be to answer queries on a customers subscription, this should only be in relation to a ticket raised by the customer and we *must* confirm that the customer team in question on the support ticket is the same one you are looking at it Stripe. Remember that the email address in Stripe may not match that of the FlowForge user as this is a "billing email". You should use the team ID numbers in the metadata field to confirm.
 
-The main use of the Stripe dashboard will be to answer queries on a customers subscription, this should only be in relation to a ticket raised by the customer and we *must* confirm that the customer team in question on the support ticket is the same one you are looking at it Stripe. Remember that the email address in Stripe may not match that of the FlowForge user as this is a "billing email" You should use the team ID numbers in the metadata field to confirm.
+## Invoices
+
+For all monthly recurring invoices Stripe will automatically generate an invoice
+and charge customers based on their payment method filed with Stripe.
+
+For annual subscriptions, which could also be self-managed, invoices are created
+in Stripe. These invoices are created manually *after* the customer has agreed
+on the [quote](../sales/pricing.md#generating-a-quote-and-order-form) and
+[terms](../legal/#subscription-agreement).
+
+### Creating an invoice
+
+1. Log into Stripe
+1. Click `Billing` in the nav bar, followed by going to the invoices tab
+1. Click the `Create invoice` button
+1. Select the customer the invoice is for, or create one.
+1. Add the line items with the right pricing
+1. Ensure customers can pay with ACH and Credit card
+1. Mention the accepted quote in the memo
+1. Review the invoice and send it to the customer for payment
+
+When the invoice is generated and send to the customer you can go ahead with
+providing them they [license for self-managed](../sales/pricing.md#generating-a-license),
+or [create a coupon](#coupons) and apply that to the FlowForge Cloud team.
 
 ## Coupons
+
 From time to time we may wish to provide a user with some free access to 
 the managed FlowForge platform. In this situation we will create a coupon code
 in Stripe which can be shared with the users.
@@ -36,6 +60,5 @@ To create a couple on Stripe:
 That coupon code can now be used when you are asked to provide payment card details.
 
 ## Credit
+
 Occasionally we may need to apply a credit to a customers account as a goodwill gesture to cover an issue they have experienced, this should be the exception and must be approved by either CTO or CEO. We will also check to see if the customer has received any previous credits on their account.
-
-

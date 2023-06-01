@@ -3,6 +3,7 @@
 @import "./style.nohero.css";
 @import "./style.handbook.css";
 @import "./style.components.css";
+@import "./style.animations.css";
 @import "./algolia-theme.css";
 @import "./roadmap.css";
 @import "../../node_modules/@flowforge/forge-ui-components/dist/forge-ui-components.css";
@@ -15,7 +16,7 @@ html, body {
     font-size: 16px;
 }
 
-* {
+*{
     --tdur: 0.15s;
     transition: var(--tdur) background-color, var(--tdur) color, var(--tdur) fill, var(--tdur) stroke;
     -webkit-transition: var(--tdur) background-color, var(--tdur) color, var(--tdur) fill, var(--tdur) stroke;
@@ -61,9 +62,6 @@ h1, h2, h3, h4, h5, p {
     color: theme(colors.teal.300);
 }
 
-picture img {
-width: 100%;}
-
 .container {
     position: relative;
     z-index: 2;
@@ -74,7 +72,7 @@ width: 100%;}
 .ff-bg-light h3,
 .ff-bg-light h4,
 .ff-bg-light h5 {
-    color: theme(colors.gray.700);
+    color: theme(colors.gray.800);
 }
 .ff-bg-light p {
     color: theme(colors.gray.800);
@@ -134,6 +132,35 @@ pre code {
     color: theme(colors.red.600);
     padding-left: 0.25rem;
     padding-right: 0.25rem;
+}
+
+/*
+    Blog
+*/
+.pagination a{
+    color: theme(colors.gray.500) !important;
+}
+
+.pagination a:hover{
+    color: theme(colors.gray.500) !important;
+}
+
+.ff-nav-blog-p::before{
+    content: url('/images/icons/chevron-left.svg');
+    width: 16px;
+    height: 16px;
+    flex-shrink: 0;
+    padding-top: 2px;
+    margin-right: 0.5rem;
+}
+
+.ff-nav-blog-n::after{
+    content: url('/images/icons/chevron-right.svg');
+    width: 16px;
+    height: 16px;
+    flex-shrink: 0;
+    padding-top: 2px;
+    margin-left: 0.5rem;
 }
 
 /*
@@ -479,14 +506,21 @@ h4:hover .header-anchor {
     }
 
     .ff-website header .ff-nav-dropdown .ff-nav-nested-cols ul {
-        @apply my-4;
+        @apply my-3;
     }
 
+    .ff-website header .ff-nav-dropdown .ff-nav-nested-cols >div > li {
+        @apply pt-3 pb-2 pointer-events-none;
+    }
     .ff-website header .ff-nav-dropdown .ff-nav-nested-cols >div:first-child > li {
-        @apply py-3 rounded-tl-lg;
+        @apply rounded-tl-lg;
     }
     .ff-website header .ff-nav-dropdown .ff-nav-nested-cols >div:last-child > li {
         @apply rounded-tr-lg;
+    }
+
+    .ff-website header .ff-nav-dropdown .ff-nav-nested-cols >div > li > a {
+        @apply py-0 pointer-events-none;
     }
 
     .ff-website header .ff-nav-dropdown .ff-nav-nested-cols >div:first-child > li > a {
@@ -692,6 +726,18 @@ h4:hover .header-anchor {
         background-color: theme(colors.teal.800);
         color: white;
     }
+
+    .ff-website .ff-btn.ff-btn--secondary-outlined {
+        background-color: transparent;
+        color: theme(colors.teal.300);
+        border: 1px solid theme(colors.teal.300);
+    }
+    
+    .ff-website .ff-btn.ff-btn--secondary-outlined:hover {
+        background-color: transparent;
+        color: theme(colors.teal.800);
+        border: 1px solid theme(colors.teal.800);
+    }
     
     .ff-website .ff-text-input {
         background-color: theme(colors.gray.700);
@@ -758,11 +804,9 @@ h4:hover .header-anchor {
         margin-top: 3rem;
         position: relative;
         color: theme(colors.gray.800);
-        border: 4px solid theme(colors.gray.600);
         border-radius: 12px;
         min-width: 768px;
         padding: 36px 36px;
-        box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.25);
     }
 
     .ff-feature-table li .ff-icon {
@@ -773,14 +817,13 @@ h4:hover .header-anchor {
     
     .ff-feature-table-section {
         position: relative;
-        margin-bottom: 32px;
         text-align: left;
     }
     
     .ff-feature-table-section li {
         padding: 12px 24px;
         display: grid;
-        grid-template-columns: 250px 1fr 1fr;
+        grid-template-columns: 240px 1fr 1fr 1fr;
         align-items: center;
     }
 
@@ -848,6 +891,47 @@ h4:hover .header-anchor {
     }
 
     /*
+        Used for nicely formatting links
+    */
+
+    .ff-website .ff-nodered-resources {
+        @apply space-y-4;
+    }
+
+    .ff-website .ff-nodered-resources a {
+        @apply block border rounded-xl text-black hover:text-blue-600 hover:no-underline hover:cursor-pointer;
+    }
+
+    .ff-website .ff-nodered-resources--icon {
+        @apply border-r p-2 bg-gray-50 text-red-600 rounded-tl-xl rounded-bl-xl transition-colors;
+    }
+
+    .ff-website .ff-nodered-resources--icon svg {
+        stroke-width: 1.5px;
+    }
+
+    .ff-website .ff-nodered-resources--icon svg,
+    .ff-website .ff-nodered-resources--icon path {
+        @apply transition-none;
+    }
+
+    .ff-website .ff-nodered-resources a:hover .ff-nodered-resources--icon {
+        @apply bg-blue-600 text-white;
+    }
+
+    .ff-website .ff-nodered-resources a:hover .ff-nodered-resources--icon {
+        @apply bg-blue-600;
+    }
+
+    .ff-website .ff-nodered-resources li {
+        @apply text-base flex items-center gap-2 bg-white rounded-xl;
+    }
+
+    .ff-website .ff-nodered-resources li label {
+        @apply p-2 pointer-events-none;
+    }
+
+    /*
         SVG Dividers
     */
     .ff-divider {
@@ -874,6 +958,13 @@ h4:hover .header-anchor {
         /* @apply mt-20; */
         @apply h-20 -mt-20 md:h-28 md:-mt-28;
     }
+
+    .ff-hardware-partners {
+        @apply flex gap-x-16 gap-y-8 flex-wrap items-center pt-6 pb-10 justify-center;
+    }
+    .ff-hardware-partners svg{
+        @apply flex-shrink-0 text-gray-500 opacity-60;
+    }
 }
 pre.mermaid {
     background-color: #ffffff
@@ -893,6 +984,12 @@ div.content section.footnotes ol li p {
     color: theme(colors.gray.400);
     font-size: 0.8rem;
     line-height: 0.8rem;
+}
+
+.nodered-pillar-bg {
+    background-image: url('../images/bg-nodered-editor.png');
+    background-size: cover;
+    background-position-y: bottom;
 }
 
 /*

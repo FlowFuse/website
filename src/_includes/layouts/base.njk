@@ -151,7 +151,8 @@
                                     </ul>
                                 {% endnavoption %}
                                 {% navoption "Node-RED", null, 1, "nodered" %}
-                                    <ul>
+                                    <ul class="sm:grid sm:grid-flow-col sm:grid-cols-2 sm:grid-rows-4">
+                                        {% navoption "about", "/node-red/", 2, "info" %}{% endnavoption %}
                                         {% navoption "getting started", "/blog/2023/01/getting-started-with-node-red/", 2, "clip-list" %}{% endnavoption %}
                                         {% navoption "github", "https://github.com/node-red/node-red", 2, "github", true %}{% endnavoption %}
                                         {% navoption "docs", "https://nodered.org/docs/", 2, "document-text" %}{% endnavoption %}
@@ -162,8 +163,9 @@
                             <!-- Desktop -->
                             <ul class="ff-nav-nested-cols hidden bg-gray-600 sm:flex">
                                 <div class="flex-grow">
-                                    {% navoption "Node-RED", null, 1, "nodered", false, "bg-gray-700 pointer-events-none" %}{% endnavoption %}
-                                    <ul>
+                                    {% navoption "Node-RED", null, 1, "nodered", false, "bg-gray-700" %}{% endnavoption %}
+                                    <ul class="sm:grid sm:grid-flow-col sm:grid-rows-5 sm:grid-cols-1 sm:pr-6">
+                                        {% navoption "about", "/node-red/", 2, "info" %}{% endnavoption %}
                                         {% navoption "getting started", "/blog/2023/01/getting-started-with-node-red/", 2, "clip-list" %}{% endnavoption %}
                                         {% navoption "github", "https://github.com/node-red/node-red", 2, "github", true %}{% endnavoption %}
                                         {% navoption "docs", "https://nodered.org/docs/", 2, "document-text" %}{% endnavoption %}
@@ -172,7 +174,7 @@
                                 </div>
                                 <div class="flex-grow-[2]">
                                     {% navoption "FlowForge", null, 1, "flowforge", true, "bg-gray-700 border-r border-gray-600" %}{% endnavoption %}
-                                    <ul class="sm:grid sm:grid-flow-col sm:grid-rows-4 sm:grid-cols-2">
+                                    <ul class="sm:grid sm:grid-flow-col sm:grid-rows-5 sm:grid-cols-1 sm:pr-9">
                                         {# {% navoption "getting started", "/blog", 2, "clip-list" %}{% endnavoption %} #}
                                         {% navoption "github", "https://github.com/flowforge/flowforge", 2, "github", true %}{% endnavoption %}
                                         {% navoption "docs", "/docs", 2, "document-text" %}{% endnavoption %}

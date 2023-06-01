@@ -69,7 +69,7 @@ via our [disclosure policy](../../development/security.md).
 All end-user devices (e.g., mobile phones, tablets, laptops, desktops) must
 comply with this policy.
 
-1. System level and user level passwords must comply with the [Access Control Policy]().
+1. System level and user level passwords must comply with the [Access Control Policy](./access-control.md).
 
 2. Providing access to another individual, either deliberately or through failure
 to secure a device is prohibited.
@@ -105,7 +105,7 @@ devices, whether owned or leased by FlowForge, the employee or a third party,
 remains the sole property of FlowForge for the purposes of this policy.
 
 Employees and contractors must ensure through legal or technical means that
-proprietary information is protected in accordance with the [Data Management Policy]().
+proprietary information is protected in accordance with the [Data Management Policy](./data-management.md).
 
 Google Drive should be used to store and share files within the company, ensuring
 proper access controls are applied.
@@ -144,17 +144,17 @@ get added to the handbook and adopted.
 
 Role | Purpose
 ---|---
-Access Control Policy | To limit access to information and information processing systems, networks, and facilities to authorized parties in accordance with business objectives.
+[Access Control Policy](./access-control.md) | To limit access to information and information processing systems to authorized parties in accordance with business objectives.
 Asset Management Policy | To identify organizational assets and define appropriate protection responsibilities. 
 Business Continuity & Disaster Recovery Plan | To prepare FlowForge in the event of extended service outages caused by factors beyond our control (e.g., natural disasters, man-made events), and to restore services to the widest extent possible in a minimum time frame.
-Cryptography Policy | To ensure proper and effective use of cryptography to protect the confidentiality, authenticity and/or integrity of information.
-Data Management Policy | To ensure that information is classified and protected in accordance with its importance to the organization.
+[Cryptography Policy](./cryptography.md) | To ensure proper and effective use of cryptography to protect the confidentiality, authenticity and/or integrity of information.
+[Data Management Policy](./data-management.md) | To ensure that information is classified and protected in accordance with its importance to the organization.
 Human Resources Policy | To ensure that employees and contractors meet security requirements, understand their responsibilities, and are suitable for their roles.
 Incident Response Plan | Policy and procedures for suspected or confirmed information security incidents.
-Operations Security Policy | To ensure the correct and secure operation of information processing systems and facilities.
+[Operations Security Policy](./operations-security.md) | To ensure the correct and secure operation of information processing systems and facilities.
 Physical Security Policy | To prevent unauthorized physical access or damage to the organization’s information and information processing facilities.
 Risk Management Policy | To define the process for assessing and managing FlowForge's information security risks in order to achieve the company’s business and information security objectives.
-Secure Development Policy | To ensure that information security is designed and implemented within the development lifecycle for applications and information systems.
+[Secure Development Policy](./secure-development.md) | To ensure that information security is designed and implemented within the development lifecycle for applications and information systems.
 Third-Party Management Policy | To ensure protection of the organization's data and assets that are shared with, accessible to, or managed by suppliers, including external parties or third-party organizations such as service providers, vendors, and customers, and to maintain an agreed level of information security and service delivery in line with supplier agreements.
 
 
@@ -176,3 +176,6 @@ Any known violations of this policy should be reported to the CTO or CEO.
 Violations of this policy can result in immediate withdrawal or suspension of
 system and network privileges and/or disciplinary action in accordance with
 company procedures up to and including termination of employment.
+
+---
+Policy derived from [JupiterOne/security-policy-templates](https://github.com/JupiterOne/security-policy-templates) ([CC BY-SA 4 license](https://creativecommons.org/licenses/by-sa/4.0/)) and [Vanta](https://vanta.com)

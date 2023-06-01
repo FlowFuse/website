@@ -131,7 +131,7 @@ module.exports = function(eleventyConfig) {
     eleventyConfig.addFilter('dateInFuture', (date) => {
         // return true is the provided date is in the past, otherwise, return false
         const postDate = spacetime(date)
-        return postDate.isAfter(spacetime.today()) || postDate.isSame(spacetime.today())
+        return postDate.isAfter(spacetime.today()) || postDate.isSame(spacetime.today(), 'day')
     });
 
     eleventyConfig.addFilter('countDays', (date) => {
@@ -320,12 +320,16 @@ module.exports = function(eleventyConfig) {
     
     // Eleventy Image shortcode
     // https://www.11ty.dev/docs/plugins/image/
-    console.info(`[11ty] Image pipeline is enabled in ${DEV_MODE ? 'dev mode' : 'prod mode'} expect a wait for first build`)
+    if (DEV_MODE) {
+        console.info(`[11ty] Image pipeline is enabled in dev mode, copying images without any conversion or resizing`)
+    } else {
+        console.info(`[11ty] Image pipeline is enabled in prod mode, expect a wait for first build while images are converted and resized`)
+    }
     eleventyConfig.addAsyncShortcode("image", async function imageShortcode(src, alt, widths, sizes) {
         const title = null
         const currentWorkingFilePath = this.page.inputPath
 
-        return await imageHandler(src, alt, title, widths, sizes, currentWorkingFilePath, eleventyConfig, DEV_MODE)
+        return await imageHandler(src, alt, title, widths, sizes, currentWorkingFilePath, eleventyConfig, async=true, DEV_MODE)
     });
 
     // Create a collection for sidebar navigation
@@ -475,7 +479,7 @@ module.exports = function(eleventyConfig) {
 
         const folderPath = env.page.inputPath
         
-        const widths = [650] // width of blog prose
+        const widths = [650] // maximum width an image can be displayed at as part of blog prose
         const htmlSizes = null
 
         const async = false // cannot run async inside markdown
@@ -500,6 +504,9 @@ module.exports = function(eleventyConfig) {
                     conservativeCollapse: true,
                     preserveLineBreaks: true,
                     removeComments: true,
+                    ignoreCustomComments: [
+                        /ELEVENTYEDGE.*/
+                    ],
                     removeEmptyAttributes: true,
                     removeRedundantAttributes: true,
                     useShortDoctype: true,
