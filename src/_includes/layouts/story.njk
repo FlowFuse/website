@@ -31,7 +31,7 @@ layout: layouts/base.njk
                 </div>
                 <div class="w-80 max-w-full flex-shrink-0">
                     <div class="sticky top-4 flex flex-col border rounded-lg py-6 px-6" style="box-shadow: 4px 4px 6px rgba(75,85,99,0.05)">
-                        {% if story.brand %}
+                        {% if story.brand and logo %}
                         <div class="pb-3">
                             <a href="{{ story.url }}" class="text-xl font-bold">
                                 {{ story.brand }}
