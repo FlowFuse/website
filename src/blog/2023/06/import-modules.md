@@ -2,9 +2,9 @@
 title: Use any npm module in Node-RED
 subtitle: See how you can easily import any npm module, for use in a Node-RED function node.
 description: Node-RED has an incredibly rich resource of integrations available, but sometimes you need that little extra. This shows you how.
-date: 2023-06-01
+date: 2023-06-02
 authors: ["joe-pavitt", "stephen-mclaughlin"]
-image: /images/blog/tile-import-npm-modules.jpeg
+image: /images/blog/tile-import-npm.jpeg
 tags:
     - posts
 ---
