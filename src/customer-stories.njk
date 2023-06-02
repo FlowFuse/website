@@ -10,17 +10,26 @@ meta:
     </div>
     {% if collections.posts.length > 0 %}
     <ul class="flex flex-wrap">
-        {%- for item in collections.stories | reverse -%}
+        {%- for item in collections.stories | sort(attribute='item.date') | reverse -%}
         {% if loop.first %}
         <li class="w-full md:w-2/3 my-2 px-2 pb-4 border-b">
             <a href="{{ item.url }}" class="w-full flex flex-col group hover:no-underline">
                 <div class="pr-2">
                     {% if item.data.image %}
+                    <div class="relative">    
                         <div class="w-full h-40 md:h-80 ff-image-cover">
                             {% set imageSrc = ["./", item.data.image ] | join %}
                             {% set imageDescription = ["Image representing ", item.data.title] | join %}
                             {% image imageSrc, imageDescription, [768] %}
                         </div>
+                        {% if item.data.logo %}
+                        <div class="w-1/2 h-full md:w-[144px] md:h-[144px] absolute left-0 top-0 bg-white flex items-center justify-center object-contain">
+                            {% set imageSrc = ["./", item.data.logo ] | join %}
+                            {% set imageDescription = ["Image representing ", item.data.story.brand, " logo"] | join %}
+                            {% image imageSrc, imageDescription, [285] %}
+                        </div>
+                        {% endif %}                        
+                    </div>
                     {% else %}
                         {{ item.url | generatePostSVG |safe}}
                     {% endif %}
@@ -40,11 +49,20 @@ meta:
                 <div class="">
                     <div>
                         {% if item.data.image %}
+                        <div class="relative">
                             <div class="w-full h-40 ff-image-cover">
                                 {% set imageSrc = ["./", item.data.image ] | join %}
                                 {% set imageDescription = ["Image representing ", item.data.title] | join %}
                                 {% image imageSrc, imageDescription, [285] %}
                             </div>
+                            {% if item.data.logo %}
+                                <div class="w-1/2 h-full absolute left-0 top-0 bg-white flex items-center justify-center object-contain">
+                                    {% set imageSrc = ["./", item.data.logo ] | join %}
+                                    {% set imageDescription = ["Image representing ", item.data.story.brand, " logo"] | join %}
+                                    {% image imageSrc, imageDescription, [285] %}
+                                </div>
+                                {% endif %}
+                        </div>    
                         {% else %}
                             {{ item.url | generatePostSVG |safe}}
                         {% endif %}
