@@ -37,6 +37,20 @@ layout: layouts/base.njk
                     </div>
                     {{ content | safe }}
                 </div>
+                <div id='discourse-comments'></div>
+                <script type="text/javascript">
+                    window.DiscourseEmbed = {
+                        discourseUrl: 'https://community.flowforge.com/',
+                        discourseEmbedUrl: "{{ site.baseURL}}{{ page.url }}"
+                    };
+                    (function () {
+                        var d = document.createElement('script');
+                        d.type = 'text/javascript';
+                        d.async = true;
+                        d.src = window.DiscourseEmbed.discourseUrl + 'javascripts/embed.js';
+                        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(d);
+                    })();
+                </script>
             </div>
             <div class="w-72 max-w-full flex-shrink-0">
                 <div class="sticky top-4 mt-6 flex flex-col">
