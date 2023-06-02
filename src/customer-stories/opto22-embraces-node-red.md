@@ -2,7 +2,7 @@
 title: Opto 22 Embraces Node-RED to Drive Customer Innovation
 image: /images/stories/AdobeStock_362577635.jpeg
 date: 2023-06-01
-logo: /images/stories/logos/logo_test-copy.jpg
+logo: /images/stories/logos/logo_test.jpg
 story:
     brand: test
     url:
