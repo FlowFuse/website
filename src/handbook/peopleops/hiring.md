@@ -4,6 +4,26 @@ navTitle: Hiring
 
 # Hiring
 
+## Advertising a Role
+
+When advertising for a role on Social Media, engagement is improved (and therefore,
+we reach a higher audience) with custom social tiles.
+
+We can add URLs to our site that provide a nice tile, whilst then redirecting to
+the job advert on Greenhouse. This was introduced [here](https://github.com/flowforge/website/pull/728).
+
+### Adding a new role to the website
+
+1. Add the job as a redirect in `src/_data/site.json` under "openings"
+1. Add a new `<job-short-title>.njk` file to the `/src/jobs` directory (use an existing job as a template)
+1. Update the redirect URL in the `njk` file to match that added in Step 1.
+1. Open an [Art Request](/handbook/design/art-requests/) to have a new Social Tile designed & attach it to the relevant page
+
+### Sharing an Existing Role
+
+The URLs for the existing roles we have on the website are any files found in [here](https://github.com/flowforge/website/tree/main/src/jobs).
+The URL will be structured accordingly: `https://flowforge.com/jobs/<job-short-title>`
+
 ## Interviews
 
 When a candidate applied they'll have at least two interviews with two different
