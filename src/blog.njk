@@ -22,95 +22,10 @@ meta:
         {% endfor %}
     </div>
     <ul class="flex flex-wrap">
-        {%- for item in posts -%}
-        {% if loop.first %}
-        <li class="w-full mt-2 px-2 pb-4">
-            <a href="{{ item.url }}" class="w-full flex flex-col group hover:no-underline">
-                <div class="md:w-3/4 pr-2">
-                    <time class="block text-xs" value="{{ item.date }}" class="text-gray-400">{{ item.date | shortDate }}</time>
-                    <h3 class="mb-0 font-medium group-hover:underline">{{ item.data.title }}</h3>
-                    <div class="italic text-xs mb-3">
-                        <div class="author">
-                            {% set comma = joiner() %}
-                            {%- for author in item.data.authors %}
-                            {{ comma() }} {{ team[author].name }}
-                            {%- endfor %}
-                        </div>
-                    </div>
-                </div>
-                <div class="flex flex-col md:flex-row">
-                    <div class="ff-blog-tile pr-2 md:w-1/3">
-                        {% if item.data.image %}
-                            <div class="w-full h-auto">
-                                {% set imageSrc = ["./", item.data.image ] | join %}
-                                {% set imageDescription = ["Image representing ", item.data.title] | join %}
-                                {% image imageSrc, imageDescription, [285] %}
-                            </div>
-                        {% else %}
-                            {# {{ item.url | generatePostSVG | safe }} #}
-                        {% endif %}
-                    </div>
-                    <div class="flex flex-col justify-between md:w-2/3 md:px-2">
-                        <div>
-                            {{ item.templateContent | excerpt | striptags(true)| restoreParagraphs | safe }}
-                        </div>
-                        <div class="group-hover:underline">read more...</div>
-                    </div>
-                </div>
-            </a>
-        </li>
-        <div class="w-full px-2 pt-2 pb-2 mb-2 flex flex-col border-t-2 border-b-2">
-            <a id="sign-up"></a>
-            <h5 class="mb-0">Sign up for our monthly email updates:</h5>
-            <script>
-                function displayHubSpotForm() {
-                    hbspt.forms.create({
-                        region: "eu1",
-                        portalId: "26586079",
-                        formId: "159c173d-dd95-49bd-922b-ff3ef243e90c",
-                        onFormSubmit: function($form) {
-                            capture('cta-blog-subscribe', {'position': 'primary'})
-                        }
-                    });
-                }
-            </script>
-            <script async type="text/javascript" charset="utf-8" src="//js-eu1.hsforms.net/forms/embed/v2.js" onload="displayHubSpotForm()"></script>
-        </div>
-        {% else %}
-        <li class="w-full md:w-1/3 my-2 px-2 pb-6 border-b">
-            <a href="{{ item.url }}" class="w-full flex flex-col group hover:no-underline">
-                <div class="">
-                    <time class="block text-xs mb-2" value="{{ item.date }}" class="text-gray-400">{{ item.date | shortDate }}</time>
-                    <div class="ff-blog-tile">
-                        {% if item.data.image %}
-                            <div class="w-full h-auto">
-                                {% set imageSrc = ["./", item.data.image ] | join %}
-                                {% set imageDescription = ["Image representing ", item.data.title] | join %}
-                                {% image imageSrc, imageDescription, [285] %}
-                            </div>
-                        {% else %}
-                            {{ item.url | generatePostSVG |safe}}
-                        {% endif %}
-                    </div>
-                    <h3 class="mt-1 mb-0 font-medium group-hover:underline">{{ item.data.title }}</h3>
-                </div>
-                <div class="text-sm prose prose-blue md:prose-md py-1">
-                    {{ item.data.description | excerpt | safe }}
-                </div>
-                <div class="italic text-xs mb-3">
-                    <div class="author">
-                        {% set comma = joiner() %}
-                        {%- for author in item.data.authors %}
-                        {{ comma() }} {{ team[author].name }}
-                        {%- endfor %}
-                    </div>
-                </div>
-            </a>
-        </li>
-        {% endif %}
+    {%- for item in posts -%}
+        {% include "blog-posts.njk" %}
     {%- endfor -%}
     </ul>
-
     <nav aria-labelledby="pagination" class="pagination mt-4">
         <ol class="flex flex-row w-full justify-between text-gray-600">
             <li class="flex md:flex-initial w-40 justify-start pl-2 ff-nav-blog-p"{% if not pagination.href.previous %} style="opacity: 0; pointer-events: none;"{% endif %}><a href="{{ pagination.href.previous }}">Previous</a></li>
