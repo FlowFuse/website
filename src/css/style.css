@@ -745,8 +745,8 @@ h4:hover .header-anchor {
     }
     
     .ff-website .ff-btn.ff-btn--primary-outlined:hover {
-        background-color: transparent;
-        color: theme(colors.red.800);
+        background-color: theme(colors.red.800);
+        color: theme(colors.white);
         border: 1px solid theme(colors.red.800);
     }
 

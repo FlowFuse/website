@@ -1,0 +1,25 @@
+---
+layout: false
+permalink: netlify/edge-functions/_generated/blog-posts.js
+permalinkBypassOutputDir: true
+eleventyExcludeFromCollections: true
+---
+
+export default {
+	"posts": [
+	{%- for entry in collections.posts %}
+	{%- if not entry.data.excludeFromSearch %}
+		{
+			"url": "{{ entry.url }}",
+			"date": "{{ entry.date }}",
+			"data": {
+				"title": "{{ entry.data.title }}",
+				"authors": "{{ entry.data.authors }}",
+				"image": "{{ entry.data.image }}"
+			},
+			"templateContent": {{ entry.templateContent | striptags(true) | dump | safe }}
+		}{% if loop.revindex0 != 0 %},{% endif %}
+	{%- endif %}
+	{%- endfor %}
+	]
+}

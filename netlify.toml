@@ -17,3 +17,7 @@ package = "@algolia/netlify-plugin-crawler"
 [[edge_functions]]
 function = "eleventy-edge"
 path = "/*"
+
+[[edge_functions]]
+function = "blog"
+path = "/blog"

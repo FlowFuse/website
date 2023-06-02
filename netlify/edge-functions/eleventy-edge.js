@@ -3,6 +3,8 @@ import {
     precompiledAppData,
 } from "./_generated/eleventy-edge-app.js";
 
+import blogPosts from "./_generated/blog-posts.js";
+
 const POSTHOG_APIKEY = Deno.env.get("POSTHOG_APIKEY");
 
 function generateUUID() {
@@ -129,9 +131,25 @@ export default async (request, context) => {
                 return JSON.stringify(content, null, 2)
             });
 
-            eleventyConfig.addPairedShortcode("shortcodetest", async function (content) {
-                return `${content} - shortcode at edge`
-            })
+            // testing global variable
+            eleventyConfig.addGlobalData("blog", blogPosts);
+            let params = new URLSearchParams(edge.url.search.replace('?', ''));
+
+            eleventyConfig.addFilter('shortDate', dateObj => {
+                const date = new Date(dateObj)
+                return date.getMonth()
+            });
+
+            eleventyConfig.addFilter("restoreParagraphs", function(str) {
+                const content = new String(str);
+                return "<p>"+content.split(/\.\n/).join(".</p><p>")+"</p>"
+            });
+
+            eleventyConfig.addFilter("excerpt", function(str) {
+                const content = new String(str);
+                return content.split("\n<!--more-->\n")[0]
+            });
+
 
             eleventyConfig.addGlobalData('distinctId', async function () {
                 const distinctId = getDistinctId(context);

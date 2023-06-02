@@ -10,11 +10,16 @@ meta:
     title: Blog
 ---
 <div class="ff-blog container m-auto text-left max-w-4xl pb-24 w-full">
-    <div class="px-2">
-        <h1>Blog</h1>
-        <div class="md:-mt-6">
+    <div class="px-2 flex items-center gap-12">
+        <h1 class="mb-0">Blog</h1>
+        <div class="flex-grow">
             {% include "components/divider-grey-wires-right.njk" %}
         </div>
+    </div>
+    <div class="px-2 my-4 flex gap-4">
+        {%- for tag in blogTags -%}
+            <button class="ff-btn ff-btn--primary-outlined">{{ tag.label }}</button>
+        {% endfor %}
     </div>
     <ul class="flex flex-wrap">
         {%- for item in posts -%}
@@ -42,7 +47,7 @@ meta:
                                 {% image imageSrc, imageDescription, [285] %}
                             </div>
                         {% else %}
-                            {{ item.url | generatePostSVG |safe}}
+                            {# {{ item.url | generatePostSVG | safe }} #}
                         {% endif %}
                     </div>
                     <div class="flex flex-col justify-between md:w-2/3 md:px-2">
