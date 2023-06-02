@@ -176,9 +176,11 @@ started - minimizing the downtime, although not completely removing it.
 ### Continuing the HA journey at FlowForge
 
 So the question is how are we going to apply all of this to what we’re building
-at FlowForge. This is where we get into the finer details of implementing all of
-this. We cannot do everything at once, so we have to prioritize which scenarios
-we’re going to address first. Consequently, drawing from customer feedback, we have elected to adopt a load balancing strategy to achieve high availability.
+at FlowForge. We cannot do everything at once, so we have to prioritize which
+scenarios we’re going to address first. Consequently, drawing from customer
+feedback, we have chosen to start with the scaling side of high availability - 
+allowing multiple copies of an instance to be run with appropriate load
+balancing put in front of it.
 
 We are building FlowForge as an open platform with the ability to run on top of
 Docker Compose and Kubernetes. As we get into some of these HA features, we will
