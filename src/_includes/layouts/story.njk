@@ -37,8 +37,10 @@ layout: layouts/base.njk
                                 {{ story.brand }}
                             </a>
                         </div>
-                        <div class="mb-6" style="background-image: url({{ logo }}); background-repeat: no-repeat; background-size: contain; background-position: center; height: 158px; background-color: white;">
-                        </div>
+                        <a href="{{ story.url }}">
+                            <div class="mb-6" style="background-image: url({{ logo }}); background-repeat: no-repeat; background-size: contain; background-position: center; height: 158px; background-color: white;">
+                            </div>
+                        </a>
                         <div class="border-t pb-3"></div>
                         {% endif %}
                         <div class="border-b pb-3">

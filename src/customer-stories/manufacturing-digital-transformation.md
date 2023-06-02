@@ -1,10 +1,10 @@
 ---
 title: Node-RED Enables Digital Transformation of a Large US Manufacturing Company
 image: /images/stories/large-us-manufacturing.jpg
-logo: /images/stories/logos/logo_test.jpg
+logo: 
 story:
-    brand: Mercedes Benz
-    url: https://www.mercedes-benz.com/en/
+    brand:
+    url:
     quote: Overall, the project leader sees Node-RED as the future of software development. The low code paradigm makes it possible for companies to decentralize innovation within an organization
     challenge: Maintain and track the thousands of Node-RED developed instances and versions of these instances.
     solution: Using the FlowForge platform to address these challenges.
