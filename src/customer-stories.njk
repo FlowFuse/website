@@ -15,8 +15,11 @@ meta:
         <li class="w-full md:w-2/3 mt-2 px-2 pb-4">
             <a href="{{ item.url }}" class="w-full flex flex-col group hover:no-underline">
                 <div class="pr-2">
+                    <div class="">
+                        <time class="block text-xs mb-2" value="{{ item.date }}" class="text-gray-400">{{ item.date | shortDate }}</time>
+                        <div>
                     {% if item.data.image %}
-                        <div class="w-full h-60 md:h-72 ff-image-cover">
+                        <div class="w-full h-40 md:h-80 ff-image-cover">
                             {% set imageSrc = ["./", item.data.image ] | join %}
                             {% set imageDescription = ["Image representing ", item.data.title] | join %}
                             {% image imageSrc, imageDescription, [768] %}
@@ -41,7 +44,7 @@ meta:
                     <time class="block text-xs mb-2" value="{{ item.date }}" class="text-gray-400">{{ item.date | shortDate }}</time>
                     <div>
                         {% if item.data.image %}
-                            <div class="w-full h-auto">
+                            <div class="w-full h-40 ff-image-cover">
                                 {% set imageSrc = ["./", item.data.image ] | join %}
                                 {% set imageDescription = ["Image representing ", item.data.title] | join %}
                                 {% image imageSrc, imageDescription, [285] %}
@@ -50,18 +53,7 @@ meta:
                             {{ item.url | generatePostSVG |safe}}
                         {% endif %}
                     </div>
-                    <h3 class="mt-1 mb-0 font-medium group-hover:underline">{{ item.data.title }}</h3>
-                </div>
-                <div class="text-sm prose prose-blue md:prose-md py-1">
-                    {{ item.data.description | excerpt | safe }}
-                </div>
-                <div class="italic text-xs mb-3">
-                    <div class="author">
-                        {% set comma = joiner() %}
-                        {%- for author in item.data.authors %}
-                        {{ comma() }} {{ team[author].name }}
-                        {%- endfor %}
-                    </div>
+                    <h3 class="mt-1 mb-0 font-medium group-hover:underline" style="line-height: 1.75rem">{{ item.data.title }}</h3>
                 </div>
             </a>
         </li>
