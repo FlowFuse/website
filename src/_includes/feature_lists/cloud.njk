@@ -163,7 +163,9 @@
                 {% if value === "check" %}
                 {% include "components/feature-check.svg" %}
                 {% elif value === "time" %}
-                {% include "components/feature-time.svg" %}
+                {% tooltip "On the roadmap" %}
+                    {% include "components/feature-time.svg" %}
+                {% endtooltip %}
                 {% elif value === "optional" %}
                 {% include "components/feature-optional.svg" %}
                 {% elif value === "addon" %}
