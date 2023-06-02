@@ -2,14 +2,14 @@
 title: Bringing High Availability to Node-RED
 subtitle: How we are tackling the hard problems of HA in FlowForge
 description: How we are tackling the hard problems of HA in FlowForge
-date: 2023-05-08 12:00:00
+date: 2023-06-02 12:00:00
 authors: ["nick-oleary"]
 image: /images/blog/tile-ha-nr.jpg
 ---
 
 Many companies look to deploy Node-RED into use cases that require the application
 to have a high degree of availability, reliability, and scalability. Following up
-our [previous post on the subject](/blog/02/highly-available-node-red), in this
+our [previous post on the subject](/blog/2023/02/highly-available-node-red/), in this
 post I’m going to look at some of the technical details of achieving HA, the
 approaches available and what that means for the work we’re doing at FlowForge
 and upstream in Node-RED.
