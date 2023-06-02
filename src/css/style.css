@@ -738,6 +738,18 @@ h4:hover .header-anchor {
         color: white;
     }
 
+    .ff-website .ff-btn.ff-btn--primary-outlined {
+        background-color: transparent;
+        color: theme(colors.red.600);
+        border: 1px solid theme(colors.red.600);
+    }
+    
+    .ff-website .ff-btn.ff-btn--primary-outlined:hover {
+        background-color: transparent;
+        color: theme(colors.red.800);
+        border: 1px solid theme(colors.red.800);
+    }
+
     .ff-website .ff-btn.ff-btn--secondary-outlined {
         background-color: transparent;
         color: theme(colors.teal.600);
