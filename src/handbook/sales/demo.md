@@ -4,18 +4,17 @@ This document explains the process of delivering a sales demo of the features of
 
 ### Setup (complete before the demo)
 
-Before we begin a sales demo we need to set up an environment.
+Before we begin a sales demo we need to set up an environment. Make sure you are
+already logged into your flowforge account (@flowforge.com email) on production, not as an administrator.
 
-[Create a coupon](https://flowforge.com/handbook/operations/billing/#coupons) with the value of $50usd, note down the coupon code. 
-
-Make sure you are already logged into your flowforge account (@flowforge.com email) on production, not as an administrator.
-
-Create a new team for this demo, you need to do this before the demo so that you don’t have to show your credit card details on screen. Use the coupon to assign your new team the $50 credit.
+Create a new team for this demo, you need to do this before the demo so that
+you don’t have to show your credit card details on screen. After creating the
+team, apply [this coupon](https://dashboard.stripe.com/coupons/zkNy9DxL) to your
+newly created team. On the stripe team page, click "Actions" > "Apply Coupon".
 
 Create one instance called ‘central-<demo-customer-name>’, leave the rest to be created in the demo.
 
 Make sure you have an example device ready, [install the latest device agent](https://flowforge.com/docs/user/devices/).
-
 
 Make sure the device agent is running before you start the demo and connected to the team you've just created.
 
