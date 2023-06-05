@@ -28,7 +28,7 @@ Have you ever worried about the stability of new updates in your Node-RED produc
 
 ## User interface for Device Agent
 
-In our previous release, we introduced [Editor Access for Devices](../05/flowforge-1-7-released.md). Now, we're taking it a step further. The FlowForge Device Agent now comes with its very own User Interface (UI) for configuration.
+In our previous release, we introduced [Editor Access for Devices](blog/2023/05/flowforge-1-7-released.md). Now, we're taking it a step further. The FlowForge Device Agent now comes with its very own User Interface (UI) for configuration.
 
 Imagine this: Your industrial equipment arrives with the Device Agent preinstalled. In the past, you might have faced challenges in configuring and connecting your device with FlowForge, particularly if you had no direct shell access. But not any more.
 
