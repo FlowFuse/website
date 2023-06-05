@@ -1,5 +1,5 @@
 ---
-title: Enhancing Node-RED with High Availability in FlowForge 1.8
+title: FlowForge now offers High Availability Node-RED
 subtitle: Empowering Node-RED with increased availability and streamlined deployment pipelines
 description: FlowForge now supports High Availibility, DevOps Pipelines and more
 date: 2023-06-08 
