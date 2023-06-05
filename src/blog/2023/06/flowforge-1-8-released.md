@@ -1,6 +1,6 @@
 ---
-title: Enhancing Node-RED with High Availability in FlowForge 1.8
-subtitle: Empowering Node-RED with increased availability and streamlined deployment pipelines
+title: FlowForge now offers High Availability Node-RED
+subtitle: FlowForge 1.8 makes Node-RED applications more reliable and scalable, plus more streamline deployment pipelines.
 description: FlowForge now supports High Availibility, DevOps Pipelines and more
 date: 2023-06-08 
 authors: ["marian-demme"]
@@ -11,7 +11,7 @@ The FlowForge 1.8 update introduces a suite of features designed to optimize you
 
 <!--more-->
 
-## High Availability
+## More reliable and scalable Node-RED applications
 Are you running business-critical processes in Node-RED and need to ensure they're always available and can handle increasing workloads? We heard you! We're excited to introduce High Availability (HA) in FlowForge to support your needs.
 
 Say you're managing a large influx of HTTP requests to your Node-RED instances. With our latest update, FlowForge now ensures that these requests are distributed evenly across your instances. This means your applications are less likely to experience downtime and can handle higher traffic loads​.
@@ -70,17 +70,5 @@ guide for [upgrading your FlowForge instance](https://flowforge.com/docs/upgrade
 
 ## Getting help
 
-Please check FlowForge's [documentation](https://flowforge.com/docs/) as the answers to many questions are covered there.
-
-If you hit any problems with the platform please raise an [issue on GitHub](https://github.com/flowforge/flowforge/issues).
-That's also a great place to send us any feedback or feature requests.
-
-You can also get help on [the Node-RED forums](https://discourse.nodered.org/)
-
-As well as in the [forum within our Github project](https://github.com/flowforge/flowforge/discussions)
-
-Chat with us on the `#flowforge` channel on the [Node-RED Slack workspace](https://nodered.org/slack)
-
-You can raise a support ticket by emailing [support@flowforge.com](mailto:support@flowforge.com)
-
-We've also added a live chat widget to our website, you can access it using the icon on the bottom right corner of our website. We'd love to hear from you.
+Please check FlowForge's [documentation](https://flowforge.com/docs/) as the answers to many questions are covered there. Additionally you can go the the [community forum](https://community.flowforge.com) if you have
+any feedback or feature requests.
