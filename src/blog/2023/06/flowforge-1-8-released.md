@@ -32,7 +32,7 @@ In our previous release, we introduced [Editor Access for Devices](blog/2023/05/
 
 Imagine this: Your industrial equipment arrives with the Device Agent preinstalled. In the past, you might have faced challenges in configuring and connecting your device with FlowForge, particularly if you had no direct shell access. But not any more.
 
-With the newly introduced UI, you can easily set up and connect your device with FlowForge without needing to access the command line interface directly. This simplifies the process significantly and saves you time. For more details, see our [documentation]().
+With the newly introduced UI, you can easily set up and connect your device with FlowForge without needing to access the command line interface directly. This simplifies the process significantly and saves you time. For more details, see our [documentation](https://flowforge.com/docs/user/devices/).
 
 ## Ongoing Topics
 
