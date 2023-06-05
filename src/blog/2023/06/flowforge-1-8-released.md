@@ -12,7 +12,7 @@ The FlowForge 1.8 update introduces a suite of features designed to optimize you
 <!--more-->
 
 ## More reliable and scalable Node-RED applications
-Do you want to run business-critical processes in Node-RED and need to ensure they are always available and can handle increasing workloads? We're excited to introduce High Availability (HA) in FlowForge to support your needs. Suppose you're managing a large influx of HTTP requests to your Node-RED instances. With our latest update, FlowForge now ensures that these requests are evenly distributed across two instances. This means your applications are less likely to experience downtime and can manage higher traffic loads. You can easily activate HA mode during the creation of an instance. For more details, please see our [documentation](...).
+Do you want to run business-critical processes in Node-RED and need to ensure they are always available and can handle increasing workloads? We're excited to introduce High Availability (HA) in FlowForge to support your needs. Suppose you're managing a large influx of HTTP requests to your Node-RED instances. With our latest update, FlowForge now ensures that these requests are evenly distributed across two instances. This means your applications are less likely to experience downtime and can manage higher traffic loads. You can easily activate HA mode during the creation of an instance. For more details, please see our [documentation](https://flowforge.com/docs/user/).
 
 High Availability is our first [preview feature](https://flowforge.com/handbook/product/versioning/#preview-features), and your feedback is crucial. We encourage you to try out HA in your Node-RED instances and share your experiences with us. Your feedback will help us refine this feature and make it even better.
 
@@ -20,17 +20,20 @@ High Availability is our first [preview feature](https://flowforge.com/handbook/
 
 ## DevOps Pipelines
 
-DevOps Pipelines enable you to manage and track multiple deployments of your Node-RED instances, effortlessly progressing through stages such as testing, development, staging, and production. In [FlowForge Version 1.4](blog/2023/02/flowforge-1-4-0-released.md),  we introduced the "Support for Staged Development". Now, we're taking it one step further. Within your applications section, you are now able to create your own DevOps Pipeline and track the progress across each instance in one view.
+DevOps Pipelines enable you to manage and track multiple deployments of your Node-RED instances, effortlessly progressing through stages such as testing, development, staging, and production. In [FlowForge Version 1.4](../../02/flowforge-1-4-0-released),  we introduced the "Support for Staged Development". Now, we're taking it one step further. Within your applications section, you are now able to create your own DevOps Pipeline and track the progress across each instance in one view.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/S--viuPhrS8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ## User interface for Device Agent
 
-In our previous release, we introduced [Editor Access for Devices](blog/2023/05/flowforge-1-7-released.md). Now, we're taking it a step further. The FlowForge Device Agent now comes with its very own User Interface (UI) for configuration.
+In our previous release, we introduced [Editor Access for Devices](../../05/flowforge-1-7-released). Now, we're taking it a step further. The FlowForge Device Agent now comes with its very own User Interface (UI) for configuration.
 
 Imagine this: Your industrial equipment arrives with the Device Agent preinstalled. In the past, you might have faced challenges in configuring and connecting your device with FlowForge, particularly if you had no direct shell access. But not any more.
 
 With the newly introduced UI, you can easily set up and connect your device with FlowForge without needing to access the command line interface directly. This simplifies the process significantly and saves you time. For more details, see our [documentation](https://flowforge.com/docs/user/devices/).
+
+## Node-RED 3.1.0 beta 3 available
+
 
 ## Ongoing Topics
 
