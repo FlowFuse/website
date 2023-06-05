@@ -70,17 +70,5 @@ guide for [upgrading your FlowForge instance](https://flowforge.com/docs/upgrade
 
 ## Getting help
 
-Please check FlowForge's [documentation](https://flowforge.com/docs/) as the answers to many questions are covered there.
-
-If you hit any problems with the platform please raise an [issue on GitHub](https://github.com/flowforge/flowforge/issues).
-That's also a great place to send us any feedback or feature requests.
-
-You can also get help on [the Node-RED forums](https://discourse.nodered.org/)
-
-As well as in the [forum within our Github project](https://github.com/flowforge/flowforge/discussions)
-
-Chat with us on the `#flowforge` channel on the [Node-RED Slack workspace](https://nodered.org/slack)
-
-You can raise a support ticket by emailing [support@flowforge.com](mailto:support@flowforge.com)
-
-We've also added a live chat widget to our website, you can access it using the icon on the bottom right corner of our website. We'd love to hear from you.
+Please check FlowForge's [documentation](https://flowforge.com/docs/) as the answers to many questions are covered there. Additionally you can go the the [community forum](https://community.flowforge.com) if you have
+any feedback or feature requests.
