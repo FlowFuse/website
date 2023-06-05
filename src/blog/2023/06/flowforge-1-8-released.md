@@ -11,7 +11,7 @@ The FlowForge 1.8 update introduces a suite of features designed to optimize you
 
 <!--more-->
 
-## High Availability
+## More reliable and scalable Node-RED applications
 Are you running business-critical processes in Node-RED and need to ensure they're always available and can handle increasing workloads? We heard you! We're excited to introduce High Availability (HA) in FlowForge to support your needs.
 
 Say you're managing a large influx of HTTP requests to your Node-RED instances. With our latest update, FlowForge now ensures that these requests are distributed evenly across your instances. This means your applications are less likely to experience downtime and can handle higher traffic loads​.
