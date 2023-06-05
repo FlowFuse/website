@@ -44,7 +44,7 @@ layout: layouts/base.njk
                 <script type="text/javascript">
                     window.DiscourseEmbed = {
                         discourseUrl: 'https://community.flowforge.com/',
-                        discourseEmbedUrl: "https://deploy-preview-814--flowforge-website.netlify.app{{ page.url }}",
+                        discourseEmbedUrl: "{{ site.baseURL }}{{ page.url }}",
                         className: 'ff-comment-thread'
                     };
                     (function () {
