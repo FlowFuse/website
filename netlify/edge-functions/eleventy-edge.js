@@ -3,8 +3,6 @@ import {
     precompiledAppData,
 } from "./_generated/eleventy-edge-app.js";
 
-import blogPosts from "./_generated/blog-posts.js";
-
 const POSTHOG_APIKEY = Deno.env.get("POSTHOG_APIKEY");
 
 function generateUUID() {
@@ -130,10 +128,6 @@ export default async (request, context) => {
             eleventyConfig.addFilter("json", (content) => {
                 return JSON.stringify(content, null, 2)
             });
-
-            // testing global variable
-            eleventyConfig.addGlobalData("blog", blogPosts);
-            let params = new URLSearchParams(edge.url.search.replace('?', ''));
 
             eleventyConfig.addFilter('shortDate', dateObj => {
                 const date = new Date(dateObj)

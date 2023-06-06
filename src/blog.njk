@@ -1,6 +1,6 @@
 ---
 layout: nohero
-sitemapPriority: 0.9
+sitemapPriority: 0.8
 pagination:
   data: collections.posts
   size: 19 # creates a nice matrix (1 header, 18 left: 3 on 6 rows)
@@ -9,30 +9,6 @@ pagination:
 meta:
     title: Blog
 ---
-<div class="ff-blog container m-auto text-left max-w-4xl pb-24 w-full">
-    <div class="px-2 flex items-center gap-12">
-        <h1 class="mb-0">Blog</h1>
-        <div class="flex-grow">
-            {% include "components/divider-grey-wires-right.njk" %}
-        </div>
-    </div>
-    <div class="px-2 my-4 flex gap-4">
-        {%- for tag in blogTags -%}
-            <button class="ff-btn ff-btn--primary-outlined">{{ tag.label }}</button>
-        {% endfor %}
-    </div>
-    <ul class="flex flex-wrap">
-    {%- for item in posts -%}
-        {% include "blog-posts.njk" %}
-    {%- endfor -%}
-    </ul>
-    <nav aria-labelledby="pagination" class="pagination mt-4">
-        <ol class="flex flex-row w-full justify-between text-gray-600">
-            <li class="flex md:flex-initial w-40 justify-start pl-2 ff-nav-blog-p"{% if not pagination.href.previous %} style="opacity: 0; pointer-events: none;"{% endif %}><a href="{{ pagination.href.previous }}">Previous</a></li>
-            <li>
-                <span>{{ pagination.pageNumber + 1 }} of {{ pagination.pages.length }}</span>
-            </li>
-            <li class="flex md:flex-initial w-40 justify-end pr-2 ff-nav-blog-n"{% if not pagination.href.next %} style="opacity: 0; pointer-events: none;;"{% endif %}><a href="{{ pagination.href.next }}">Next</a></li>
-        </ol>
-    </nav>
-</div>
+
+{% set filter = 'posts' %}
+{% include "blog/template.njk" %}

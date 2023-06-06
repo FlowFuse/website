@@ -1,0 +1,24 @@
+<div class="ff-blog container m-auto text-left max-w-4xl pb-24 w-full">
+    <div class="px-2 flex items-center gap-12">
+        <h1 class="mb-0">Blog</h1>
+        <div class="flex-grow">
+            {% include "components/divider-grey-wires-right.njk" %}
+        </div>
+    </div>
+    <div class="px-2 my-4 flex gap-4">
+        {%- for tag in blogTags -%}
+            {% if tag.value !== "posts" %}
+            <a class="hover:no-underline" href="/blog/{{ tag.value }}"><button class="ff-btn ff-btn--primary{% if not page.url.includes('/' + tag.value + '/')%}-outlined{% endif %}">{{ tag.label }}</button></a>
+            {% else %}
+            <a class="hover:no-underline" href="/blog"><button class="ff-btn ff-btn--primary{% if page.url !== "/blog/"%}-outlined{% endif %}">{{ tag.label }}</button></a>
+            {% endif %}
+        {% endfor %}
+    </div>
+    <ul class="flex flex-wrap">
+        {% set filteredPosts = posts | postType(filter) %}
+        {%- asyncEach item in filteredPosts -%}
+            {% include "blog/blog-posts.njk" %}
+        {%- endeach -%}
+    </ul>
+    {% include "blog/pagination.njk" %}
+</div>
