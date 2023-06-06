@@ -26,7 +26,7 @@ DevOps Pipelines enable you to manage and track multiple deployments of your Nod
 
 ## User interface for Device Agent
 
-In our previous release, we introduced [Editor Access for Devices](../../05/flowforge-1-7-released). Now, we're taking it a step further. The FlowForge Device Agent now comes with its very own User Interface (UI) for configuration.
+In our previous release, we introduced [Editor Access for Devices](../../05/flowforge-1-7-released). Now, the FlowForge Device Agent now comes with its very own User Interface (UI) for configuration.
 
 Imagine this: Your industrial equipment arrives with the Device Agent preinstalled. In the past, you might have faced challenges in configuring and connecting your device with FlowForge, particularly if you had no direct shell access. But not any more.
 
@@ -53,7 +53,13 @@ Together, we can make FlowForge better with each release!
 
 ## Bug Fixes
 
-...
+Accessing the Admin Settings General page resets the Platform Statstics token [#2140](https://github.com/flowforge/flowforge/issues/2140)
+
+Selection of Team and Instance in nr-tools-plugin not possible [#15](https://github.com/flowforge/flowforge-nr-tools-plugin/issues/15)
+
+HOME env var not set within Node-RED process [#117](https://github.com/flowforge/flowforge-nr-launcher/issues/117)
+
+When editing a device in developer mode via the tunnel/proxy connection, a list of team projects are not presented in the "Target" field of the project-link nodes. [#2228](https://github.com/flowforge/flowforge/issues/2228)
 
 ## Try it out
 
