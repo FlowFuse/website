@@ -40,7 +40,7 @@ status bubble under the MQTT node which tells you it's connected and configured 
 ![Connected MQTT node in Node-RED"](./images/connected-mqtt-node.png "Connected MQTT node in Node-RED")
 
 If we than set the Inject node to send a message every say 1 second, the timestamp will be
-send to the broker through MQTT!
+sent to the broker through MQTT!
 
 ## Receiving message from a MQTT broker with Node-RED
 
