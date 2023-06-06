@@ -32,8 +32,9 @@ Imagine this: Your industrial equipment arrives with the Device Agent preinstall
 
 With the newly introduced UI, you can easily set up and connect your device with FlowForge without needing to access the command line interface directly. This simplifies the process significantly and saves you time. For more details, see our [documentation](https://flowforge.com/docs/user/devices/).
 
-## Node-RED 3.1.0 beta 3 available
-...
+## Node-RED 3.1 Beta 3 Available
+
+FlowForge Cloud is a great place to try out the new Node-RED features, with FlowForge Cloud now including the [Node-RED 3.1.0-beta.3](https://discourse.nodered.org/t/node-red-3-1-0-beta-3-released/78716). If you want to try this version you can [duplicate your application](https://flowforge.com/docs/user/project-settings/#copy-project) or [upgrade your stack](https://flowforge.com/docs/user/changestack/).
 
 ## Ongoing Topics
 
