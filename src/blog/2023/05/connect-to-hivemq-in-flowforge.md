@@ -24,7 +24,8 @@ There are several reasons why MQTT has become a preferred choice for IoT and ind
 
 ## Sending messages to a MQTT broker with Node-RED
 
-As broker we'll use the [public MQTT broker](https://www.hivemq.com/public-mqtt-broker/) provided by HiveMQ. We'll use FlowForge to host and manage the Node-RED instance for us. After opening the editor
+As broker we'll use a [Cloud MQTT broker](https://www.hivemq.com/mqtt-cloud-broker/)
+provided by HiveMQ. We'll use FlowForge to host and manage the Node-RED instance for us. After opening the editor
 the MQTT nodes are pre-installed as these are "Core Nodes" in Node-RED.
 
 Drag in the "Inject" node, as well as the "MQTT out" node and connect the Injects output to the MQTT
@@ -43,12 +44,7 @@ send to the broker through MQTT!
 
 ## Receiving message from a MQTT broker with Node-RED
 
-For the sake of this blog post, we're going to receive a message we've just send
-in the same Node-RED. This isn't useful, and sending data from and to a Node-RED
-is much easier achieved with the FlowForge
-[Project Nodes](https://flowforge.com/docs/user/projectnodes/).
-
-That being said, drag in the "mqtt in" node, and connect it to the "Debug" node.
+Drag in the "mqtt in" node, and connect it to the "Debug" node.
 Open the MQTT in node, and select the server configured. Do note that the topic
 this node is listening on must match what was previously selected.
 
@@ -60,3 +56,7 @@ timestamp appear in the sidebar every second!
 ## Conclusion
 
 MQTT has emerged as a lightweight and efficient messaging protocol for IIoT applications. Its low overhead, reliability, and asynchronous communication make it an good choice. By following the steps outlined above, you can easily connect MQTT using HiveMQ with Node-RED and leverage the power of MQTT in your applications.
+
+For the sake of simplicity we've sent messages from one Node-RED to another Node-RED.
+Sending data from and to a Node-RED is much easier achieved with the FlowForge
+[Project Nodes](https://flowforge.com/docs/user/projectnodes/).
