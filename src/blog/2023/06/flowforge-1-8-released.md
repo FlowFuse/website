@@ -4,7 +4,7 @@ subtitle: FlowForge 1.8 makes Node-RED applications more reliable and scalable, 
 description: FlowForge now supports High Availibility, DevOps Pipelines and more
 date: 2023-06-08 
 authors: ["marian-demme"]
-#image: /blog/2023/05/images/release-1.8.0.png
+image: /blog/2023/05/images/release-1.8.0.png
 ---
 
 The FlowForge 1.8 update introduces a suite of features designed to optimize your Node-RED experience. High Availability ensures your business-critical processes stay running under heavy workloads, while DevOps Pipelines allow for smoother, staged deployments. Additionally, the integration of a new User Interface for the Device Agent significantly streamlines the configuration process.
@@ -33,7 +33,7 @@ Imagine this: Your industrial equipment arrives with the Device Agent preinstall
 With the newly introduced UI, you can easily set up and connect your device with FlowForge without needing to access the command line interface directly. This simplifies the process significantly and saves you time. For more details, see our [documentation](https://flowforge.com/docs/user/devices/).
 
 ## Node-RED 3.1.0 beta 3 available
-
+...
 
 ## Ongoing Topics
 
