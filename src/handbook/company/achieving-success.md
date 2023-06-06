@@ -44,8 +44,7 @@ or individual.
 
 Per timeboxed period a couple of OKRs are created. Each of them should describe
 clearly what the objective is, the key results that will be used to measure the success.
-measured. Further, the goal and plan to achieve it should align with the
-[values](./values/).
+Further, the goal and plan to achieve it should align with the [values](./values/).
 
 ### The process
 
