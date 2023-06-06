@@ -11,7 +11,7 @@ or go to the community forum. Where to go when is described below.
 |---|---|
 | Billing | [Support ticket][support-tickets] |
 | FlowForge Application | [Support ticket][support-tickets] |
-| FlowForge Feature Requests | [FlowForge reposity](https://github.com/flowforge/flowforge/issues) |
+| FlowForge Feature Requests | [FlowForge repository](https://github.com/flowforge/flowforge/issues) |
 | Node-RED Application | [Community Forum][support-forum] |
 | Node-RED flows | [Community Forum][support-forum] |
 | Custom nodes | [Community Forum][support-forum] |
