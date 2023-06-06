@@ -20,5 +20,7 @@
             {% include "blog/blog-posts.njk" %}
         {%- endeach -%}
     </ul>
-    {% include "blog/pagination.njk" %}
+    {% if page.url === "/blog/" %}
+        {% include "blog/pagination.njk" %}
+    {% endif %}
 </div>
