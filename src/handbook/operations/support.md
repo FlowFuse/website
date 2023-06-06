@@ -4,7 +4,7 @@ navTitle: Support
 
 # Support
 
-For FlowForge customers, there's two ways to get support, through support tickets
+For FlowForge customers, there are two ways to get support, through support tickets
 or go to the community forum. Where to go when is described below.
 
 | Topic | Support venue |
