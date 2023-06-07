@@ -11,7 +11,7 @@ story:
     url: https://opto22.com/
     quote: ‘We love Node-RED,’ explains Benson Hougland. ‘We continue to win new customers based on our commitment to providing a first-class Node-RED experience. We think it is the right tool for our customers who are transforming their operations to be more digitally connected.’
     challenge: Make it easier to connect Opto 22 hardware with other devices, sensors, and actuators, in addition to connecting with emerging data services in the cloud. 
-    solution: Using Node-RED low-code visualy programming environment.
+    solution: Using Node-RED low-code visual programming environment.
     results:
         - All Opto 22 groov hardware ships with Node-RED
         - 30-40% of Opto 22 customers use Node-RED
