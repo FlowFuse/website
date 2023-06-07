@@ -15,12 +15,9 @@
         {% endfor %}
     </div>
     <ul class="flex flex-wrap">
-        {% set filteredPosts = posts | postType(filter) %}
-        {%- asyncEach item in filteredPosts -%}
+        {%- asyncEach item in posts -%}
             {% include "blog/blog-posts.njk" %}
         {%- endeach -%}
     </ul>
-    {% if page.url === "/blog/" %}
-        {% include "blog/pagination.njk" %}
-    {% endif %}
+    {% include "blog/pagination.njk" %}
 </div>

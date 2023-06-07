@@ -1,10 +1,13 @@
 ---
 layout: nohero
 sitemapPriority: 0.8
+pagination:
+  data: collections.releases
+  size: 19 # creates a nice matrix (1 header, 18 left: 3 on 6 rows)
+  alias: posts
+  reverse: true
 meta:
     title: Releases - Blog
 ---
 
-{% set filter = 'releases' %}
-{% set posts = collections.posts | reverse %}
 {% include "blog/template.njk" %}
