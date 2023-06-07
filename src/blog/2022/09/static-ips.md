@@ -4,6 +4,10 @@ subtitle: Static IP addresses are here for your FlowForge Cloud projects’ outb
 description: Static IP addresses are here for your FlowForge Cloud projects’ outbound connections
 date: 2022-09-27
 authors: ["rob-marcer"]
+tags:
+    - posts
+    - flowforge
+    - news
 ---
 
 On Friday last week we updated FlowForge Cloud to use a static IP address for outbound traffic. This will allow you to predict which IP address your traffic will come from for example when traversing a firewall or accessing a remote database.

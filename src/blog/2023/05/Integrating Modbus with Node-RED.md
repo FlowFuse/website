@@ -7,6 +7,8 @@ authors: ["andrew-lynch"]
 image: /blog/2023/05/images/modbus2.jpg
 tags:
     - posts
+    - node-red
+    - how-to
 ---
 
 The world of industrial automation is slow to adopt new technology. With legacy equipment already working and in place, paralyzing down-time costs, and fears of introducing instability into a plant, technology change has a cautious pace.

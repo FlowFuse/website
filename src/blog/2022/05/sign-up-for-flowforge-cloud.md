@@ -4,6 +4,10 @@ subtitle: Sign up and start a new Node-RED project within a minute!
 description: With the waitlist now phased out users can sign up and start using FlowForge right away and start developing on new projects.
 date: 2022-05-25 09:00:00.0
 authors: ["zeger-jan-van-de-weg"]
+tags:
+    - posts
+    - flowforge
+    - news
 ---
 
 FlowForge wants to enable everyone to build workflows in Node-RED. Since announcing

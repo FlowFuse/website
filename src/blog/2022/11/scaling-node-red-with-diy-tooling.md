@@ -4,6 +4,10 @@ subtitle: Node-RED is very easy to get up and running for your first instance bu
 description: In this post, I'm going to share some of the challenges customers face when scaling Node-RED with Do-It-Yourself tooling
 date: 2022-11-30
 authors: ["zeger-jan-van-de-weg"]
+tags:
+    - posts
+    - node-red
+    - how-to
 ---
 
 

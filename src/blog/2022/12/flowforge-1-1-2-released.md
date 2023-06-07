@@ -4,6 +4,10 @@ subtitle: Release includes a fix for installing additional nodes into Node-RED.
 description: Release includes a fix for installing additional nodes into Node-RED.
 date: 2022-12-09 12:00:00.0
 authors: ["nick-oleary"]
+tags:
+    - posts
+    - flowforge
+    - releases
 ---
 
 We've published a maintenance fix with an important fix for the Palette Manager in Node-RED.

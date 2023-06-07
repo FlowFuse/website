@@ -8,6 +8,7 @@ image: "/images/blog/community-news.jpeg"
 tags:
     - posts
     - newsletter
+    - community
 ---
 
 Welcome to the FlowForge newsletter, a regular roundup of what’s happening with both FlowForge and the wider Node-RED community.

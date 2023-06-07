@@ -2,6 +2,10 @@
 title: Service Disruption Report for January 27th, 2023
 date: 2023-02-10
 authors: ["nick-oleary"]
+tags:
+    - posts 
+    - flowforge
+    - news
 ---
 
 On January 27th, 2023, we were alerted to an issue on FlowForge Cloud where a user

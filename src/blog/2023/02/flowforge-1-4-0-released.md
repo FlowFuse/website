@@ -6,6 +6,10 @@ date: 2023-02-16 14:00:00.0
 authors: ["ian-skerrett"]
 video: vbg4zTmUYjQ
 image: /blog/2023/02/images/ff-r14-image.png
+tags:
+    - posts
+    - flowforge
+    - releases
 ---
 
 Deploy Node-RED to many devices quickly, and allow a staged development process with the latest release of FlowForge v1.4.

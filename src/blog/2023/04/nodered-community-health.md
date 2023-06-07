@@ -7,6 +7,9 @@ authors: ["ian-skerrett"]
 image: /images/blog/tile-node-red-community-metrics.jpg
 tags:
     - posts
+    - node-red
+    - community
+    - news
 ---
 
 It is often a challenge to measure the health of an open source project, like Node-RED. Individuals can download and use Node-RED without any indication or feedback to their ongoing satisfaction or usage. However, it is still interesting to look at a variety of metrics to understand the size of the Node-RED community.

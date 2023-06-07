@@ -4,6 +4,10 @@ subtitle: From any browser or command line you now have the ability to securely 
 description: From any browser or command line you now have the ability to securely trigger your flows
 date: 2022-12-07
 authors: ["rob-marcer"]
+tags:
+    - posts
+    - node-red
+    - how-to
 ---
 
 

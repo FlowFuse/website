@@ -4,6 +4,10 @@ subtitle: Use Let's Encrypt and Acme Companion to quickly set up FlowForge to en
 description: Use Let's Encrypt and Acme Companion to quickly set up FlowForge to encrypt all traffic
 date: 2022-12-09
 authors: ["rob-marcer"]
+tags:
+    - posts
+    - flowforge
+    - how-to
 ---
 
 Following on from our [previous article](https://flowforge.com/blog/2022/10/ff-docker-gcp/) in which we covered how to run FlowForge in Docker on Google’s Cloud Platform, today we are going to look at how to secure HTTP traffic to your FlowForge server.

@@ -5,6 +5,10 @@ description: For FlowForge 1.5 we have been busy making a lot of UX changes and 
 date: 2023-03-16 15:00:00.0
 authors: ["joe-pavitt"]
 image: /blog/2023/03/images/release-150.jpg
+tags:
+    - posts
+    - flowforge
+    - releases
 ---
 
 For FlowForge 1.5 we have been busy making a lot of UX changes and upgrading our underlying architecture to enable future innovations on the FlowForge platform.

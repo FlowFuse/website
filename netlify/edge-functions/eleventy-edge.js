@@ -129,10 +129,6 @@ export default async (request, context) => {
                 return JSON.stringify(content, null, 2)
             });
 
-            eleventyConfig.addPairedShortcode("shortcodetest", async function (content) {
-                return `${content} - shortcode at edge`
-            })
-
             eleventyConfig.addGlobalData('distinctId', async function () {
                 const distinctId = getDistinctId(context);
                 return distinctId

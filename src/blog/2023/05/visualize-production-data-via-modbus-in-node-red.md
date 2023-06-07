@@ -7,6 +7,8 @@ authors: ["andrew-lynch"]
 image: /blog/2023/05/images/modbus-1.jpg
 tags:
     - posts
+    - node-red
+    - how-to
 ---
 
 In manufacturing companies there is often a small set of production data, currently only available to an equipment operator through the HMI, which would be enormously valuable to a greater audience if there were some way to easily display and share it.

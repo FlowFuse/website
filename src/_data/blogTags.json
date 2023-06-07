@@ -1,0 +1,25 @@
+[{
+    "label": "All",
+    "value": "posts"
+}, {
+    "label": "Node-RED",
+    "value": "node-red"
+},  {
+    "label": "FlowForge",
+    "value": "flowforge"
+}, {
+    "label": "How-To",
+    "value": "how-to"
+}, {
+    "label": "Quick Tips",
+    "value": "tips"
+}, {
+    "label": "Community",
+    "value": "community"
+}, {
+    "label": "Releases",
+    "value": "releases"
+}, {
+    "label": "News",
+    "value": "news"
+}]

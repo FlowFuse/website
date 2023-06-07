@@ -7,6 +7,8 @@ authors: ["joe-pavitt"]
 image: /images/blog/tile-ibm-cloud-starter-removed--text.png
 tags:
     - posts
+    - node-red
+    - news
 ---
 
 IBM Cloud has [recently announced](https://www.ibm.com/cloud/blog/announcements/deprecation-of-ibm-cloud-starter-kits) that they will no longer be providing their Cloud App Service Starter Kits, including the [Node-RED Starter Application](https://developer.ibm.com/tutorials/how-to-create-a-node-red-starter-application/).

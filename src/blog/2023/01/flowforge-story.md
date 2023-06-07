@@ -4,6 +4,9 @@ subtitle: FlowForge helps organizations reliably deliver Node-RED applications
 description: In this article we are going to discuss how we see FlowForge helping Node-RED developers deliver applications more reliably.
 date: 2023-02-02
 authors: ["ian-skerrett"]
+tags:
+    - posts
+    - flowforge
 ---
 
 During my first month at FlowForge, I have been helping to refine the FlowForge story. Trying to answer the questions: What is the value FlowForge brings to our customers and what features does FlowForge want to offer the Node-RED community?

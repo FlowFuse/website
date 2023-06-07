@@ -4,6 +4,10 @@ subtitle: How spb sonne used Node-RED with a renewable energy solution
 description: How spb sonne used Node-RED with a renewable energy solution
 date: 2022-02-09 09:26:00.0
 authors: ["zeger-jan-van-de-weg"]
+tags:
+    - posts
+    - node-red
+    - community
 ---
 
 [Krisnan Ravichandran](https://www.linkedin.com/in/krishnanravichandran/) works

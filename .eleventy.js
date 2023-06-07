@@ -325,6 +325,7 @@ module.exports = function(eleventyConfig) {
     } else {
         console.info(`[11ty] Image pipeline is enabled in prod mode, expect a wait for first build while images are converted and resized`)
     }
+
     eleventyConfig.addAsyncShortcode("image", async function imageShortcode(src, alt, widths, sizes) {
         const title = null
         const currentWorkingFilePath = this.page.inputPath

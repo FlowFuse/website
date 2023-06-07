@@ -4,6 +4,10 @@ subtitle: Release includes fix for emailing new user
 description: Release includes fix for emailing new user
 date: 2023-01-12 12:00:00.0
 authors: ["ben-hardill"]
+tags:
+    - posts
+    - flowforge
+    - releases
 ---
 
 We've published a maintenance release containing a fix for new users.

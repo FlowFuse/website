@@ -4,6 +4,10 @@ subtitle: Step by step instructions to get FlowForge Docker running on Google Cl
 description: Step by step instructions to get FlowForge Docker running on Google Cloud
 date: 2022-10-14
 authors: ["rob-marcer"]
+tags:
+    - posts
+    - flowforge
+    - how-to
 ---
 
 As part of our preparations for FlowForge 1.0 we have been testing various real world scenarios to see where we can add to our documentation and where we might be able to improve our releases to make the install process easier for users. As a benefit of that testing we have been able to hone these installation processes and we wanted to share one of those with you today.

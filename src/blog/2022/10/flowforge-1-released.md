@@ -5,6 +5,10 @@ description: FlowForge is now 1.0!
 date: 2022-10-27 18:00:00.0
 authors: ["rob-marcer"]
 video: 5TLT7CQR7iI
+tags:
+    - posts
+    - flowforge
+    - releases
 ---
 
 Predefined environment variables for your Projects and Devices, manage your Project's modules and import your existing flows (and credentials) into your FlowForge [Projects](https://flowforge.com/docs/user/concepts/#project).

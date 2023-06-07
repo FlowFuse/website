@@ -5,6 +5,10 @@ description: FlowForge now supports access to the Node-RED Editor on devices
 date: 2023-05-11 
 authors: ["marian-demme"]
 image: /blog/2023/05/images/release-1.7.0.png
+tags:
+    - posts
+    - flowforge
+    - releases
 ---
 
 FlowForge 1.7 adds new support for accessing the Node-RED Editor on Devices via FlowForge.

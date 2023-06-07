@@ -5,6 +5,10 @@ description: Rollbacks, Device Environment Variables and a FlowForge Theme
 date: 2022-07-07 12:00:00.0
 authors: ["sam-machin"]
 video: rl_Ln2_uEtg
+tags:
+    - posts
+    - flowforge
+    - releases
 ---
 Rollback projects to a previous snapshot, improvements in using Devices, and more.
 

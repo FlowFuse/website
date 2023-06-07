@@ -5,6 +5,10 @@ description: Inter-Project Communication, Default Teams, and realtime device man
 date: 2022-08-04 12:00:00.0
 authors: ["sam-machin"]
 video: nCe_qs0G6ZQ
+tags:
+    - posts
+    - flowforge
+    - releases
 ---
 
 Easily pass messages between your projects on the cloud or devices, UX improvements, and more.

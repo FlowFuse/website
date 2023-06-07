@@ -4,6 +4,10 @@ subtitle: Making the first release of the platform and transitioning to open dev
 description: Making the first release of the platform and transitioning to open development
 date: 2022-01-20 1:00:00.0
 authors: ["nick-oleary"]
+tags:
+    - posts
+    - flowforge
+    - releases
 ---
 
 For an open core company, we haven't been very open with what we're doing. That all

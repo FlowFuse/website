@@ -7,6 +7,8 @@ authors: ["rob-marcer"]
 image: /blog/2023/05/images/agent-on-pi.png
 tags:
     - posts
+    - flowforge
+    - how-to
 ---
 
 FlowForge's device agent allows you to manage and run your Node-RED instances on

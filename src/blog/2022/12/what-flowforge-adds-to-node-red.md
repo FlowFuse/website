@@ -4,6 +4,10 @@ subtitle: FlowForge makes developer collaboration, flow deployment, and scaling 
 description: FlowForge makes developer collaboration, flow deployment, and scaling of infrastructure easy when working with Node-RED
 date: 2022-12-15
 authors: ["rob-marcer"]
+tags:
+    - posts
+    - flowforge
+    - node-red
 ---
 
 Many organisations face challenges in IT/OT convergence. There are many protocols, disparate devices, and everything is a brownfield project. Furthermore, skilled engineers are hard to find. Many organisations find themselves maintaining systems and integrations, and have little time left to improve continuously.

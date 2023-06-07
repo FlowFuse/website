@@ -7,6 +7,8 @@ authors: ["rob-marcer"]
 image: /images/blog/db-comparison.jpg
 tags:
     - posts
+    - node-red
+    - community
 ---
 
 Dashboards are a great feature of Node-RED, allowing you to easily expose data visualisations and interactive elements of your flows to users via a web browser. I often see discussions in the community about which dashboard option is best for any given scenario, I wanted to compare the most popular options as they stand in early 2023.
