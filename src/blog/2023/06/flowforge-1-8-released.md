@@ -34,7 +34,7 @@ With the newly introduced UI, you can easily set up and connect your device with
 
 ## Node-RED 3.1 Beta 3 Available
 
-FlowForge Cloud is a great place to try out the new Node-RED features, with FlowForge Cloud now including the [Node-RED 3.1.0-beta.3](https://discourse.nodered.org/t/node-red-3-1-0-beta-3-released/78716). If you want to try this version you can [duplicate your application](https://flowforge.com/docs/user/project-settings/#copy-project) or [upgrade your stack](https://flowforge.com/docs/user/changestack/).
+FlowForge Cloud is a great place to try out the new Node-RED features, with FlowForge Cloud now including the [Node-RED 3.1.0-beta.3](https://discourse.nodered.org/t/node-red-3-1-0-beta-3-released/78716). If you want to try this version you can [duplicate your instance](https://flowforge.com/docs/user/instance-settings/) or [upgrade your stack](https://flowforge.com/docs/user/changestack/).
 
 ## Ongoing Topics
 
