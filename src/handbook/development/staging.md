@@ -24,11 +24,12 @@ smallest instance that can be used with EKS.
 
 ## Email
 
-Amazon SES is setup on staging however it is still running in sandbox mode which means only verified address & domains can RECEIVE emails from it, this is currently limited to flowforge.com email addresses.
+The staging environment can only be used with a set of pre-approved email addresses. This currently includes:
 
-There is no intention to move this from sandbox as this helps to limit access to staging.
+ - All `@flowforge.com` addresses - with SSO enabled
+ - A collection of disposable email accounts that can be used to test user sign-up/invitations etc. Details of the available addresses are in [this issue](https://github.com/flowforge/CloudProject/issues/135). If you use one of these addresses for some testing, please delete the user once you are done so it is available for future use.
 
-If you need to use another email address with staging then you should verify the address through SES in the AWS Console.
+The list of valid email addresses is managed via the Amazon SES configuration in the staging acount.
 
 ## Deployment
 
