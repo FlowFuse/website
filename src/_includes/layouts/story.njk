@@ -35,28 +35,13 @@ layout: layouts/base.njk
                 <div class="w-80 max-w-full flex-shrink-0">
                     <div class="sticky top-4 flex flex-col border rounded-lg py-6 px-6"
                         style="box-shadow: 4px 4px 6px rgba(75,85,99,0.05)">
-                        <!-- {% if story.brand %}
-                        <div class="pb-3">
-                            <a href="{{ story.url }}" target="_blank"
-                                class="text-xl font-bold flex justify-between items-center">
-                                {{ story.brand }}
-                                <span class="ml-2">{% include "components/icons/arrow-top-right-on-square.svg" %}</span>
-                            </a>
-                        </div>
-                        {% endif %} -->
+
                         {% if story.logo %}
-                        <!-- <a href="{{ story.url }}">
-                            <div class="mb-6"
-                                style="background-image: url({{ story.logo }}); background-repeat: no-repeat; background-size: contain; background-position: center; height: 158px;">
-                            </div>
-                        </a> -->
-                        <a href="{{ story.url }}">
-                            {% set imageSrc = ["../../", story.logo ] | join %}
+                        <a href="{{ story.url }}" target="_blank">
+                            {% set imageSrc = ["./", story.logo ] | join %}
                             {% set imageDescription = ["Image representing ", story.brand, " logo"] | join %}
                             {% image imageSrc, imageDescription, [285] %}
-                            <img src="../../images/stories/logos/logo_opto22_red.png" alt="">
                         </a>
-
                         <div class="border-t pb-3"></div>
                         {% endif %}
                         <div class="border-b pb-3">
