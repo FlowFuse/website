@@ -2,8 +2,14 @@
     "label": "All",
     "value": "posts"
 }, {
-    "label": "Node-RED Tips",
-    "value": "nr-tips"
+    "label": "Node-RED",
+    "value": "node-red"
+},  {
+    "label": "FlowForge",
+    "value": "flowforge"
+}, {
+    "label": "Quick Tips",
+    "value": "tips"
 }, {
     "label": "Community",
     "value": "newsletter"
@@ -11,12 +17,6 @@
     "label": "Releases",
     "value": "releases"
 }, {
-    "label": "Tutorials",
-    "value": "tutorial"
-}, {
     "label": "News",
     "value": "news"
-}, {
-    "label": "Inside FlowForge",
-    "value": "inside-ff"
 }]
