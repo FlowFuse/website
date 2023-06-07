@@ -129,22 +129,6 @@ export default async (request, context) => {
                 return JSON.stringify(content, null, 2)
             });
 
-            eleventyConfig.addFilter('shortDate', dateObj => {
-                const date = new Date(dateObj)
-                return date.getMonth()
-            });
-
-            eleventyConfig.addFilter("restoreParagraphs", function(str) {
-                const content = new String(str);
-                return "<p>"+content.split(/\.\n/).join(".</p><p>")+"</p>"
-            });
-
-            eleventyConfig.addFilter("excerpt", function(str) {
-                const content = new String(str);
-                return content.split("\n<!--more-->\n")[0]
-            });
-
-
             eleventyConfig.addGlobalData('distinctId', async function () {
                 const distinctId = getDistinctId(context);
                 return distinctId
