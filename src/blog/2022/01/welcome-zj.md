@@ -3,6 +3,10 @@ title: Welcome ZJ
 description: Welcoming Zeger-Jan van de Weg to FlowForge Inc.
 date: 2022-01-03
 authors: ["nick-oleary"]
+tags:
+    - posts
+    - flowforge
+    - news
 ---
 
 This year the FlowForge team will grow further, and I'm excited to announce our

@@ -5,6 +5,10 @@ description: Our final release for 2022 with some great new features to try out
 date: 2022-12-22 18:00:00.0
 authors: ["rob-marcer"]
 video: u7TjqUAub1g
+tags:
+    - posts
+    - flowforge
+    - releases
 ---
 
 Control access to FlowForge using single sign-on and retain context values when restarting projects.

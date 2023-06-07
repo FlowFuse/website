@@ -3,6 +3,10 @@ title: Welcome Steve
 description: Welcoming Steve McLaughlin to FlowForge Inc.
 date: 2022-01-20
 authors: ["nick-oleary"]
+tags:
+    - posts
+    - flowforge
+    - news
 ---
 
 We're continuing to grow the FlowForge team with our latest hire; Steve McLaughlin

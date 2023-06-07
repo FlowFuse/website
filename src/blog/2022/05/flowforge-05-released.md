@@ -4,6 +4,10 @@ subtitle: Bringing a new look to the platform
 description: Bringing a new look to the platform
 date: 2022-05-12 12:00:00.0
 authors: ["nick-oleary"]
+tags:
+    - posts
+    - flowforge
+    - releases
 ---
 
 The cycle continues with our next regularly scheduled release, bringing a fresh

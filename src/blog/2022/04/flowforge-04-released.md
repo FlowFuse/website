@@ -4,6 +4,10 @@ subtitle: Getting ready for Node-RED 3.0
 description: Getting ready for Node-RED 3.0
 date: 2022-04-14 12:00:00.0
 authors: ["sam-machin"]
+tags:
+    - posts
+    - flowforge
+    - releases
 ---
 
 This release of the FlowForge adds a seemingly small, but significant new feature.

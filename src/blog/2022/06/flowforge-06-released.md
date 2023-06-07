@@ -4,6 +4,10 @@ subtitle: Adding Devices to the platform
 description: Adding Devices to the platform
 date: 2022-06-19 12:00:00.0
 authors: ["nick-oleary"]
+tags:
+    - posts
+    - flowforge
+    - releases
 ---
 
 Node-RED is well known for its role in IoT solutions - which often means running

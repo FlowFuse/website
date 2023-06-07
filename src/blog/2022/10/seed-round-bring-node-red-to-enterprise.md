@@ -4,6 +4,10 @@ subtitle: Allowing all developers to integrate IT and OT through low-code
 description: We've raised our $7.25M Seed Round from Cota Capital, Open Core Ventures
 date: 2022-11-03 17:00:00.0
 authors: ["zeger-jan-van-de-weg"]
+tags:
+    - posts
+    - flowforge
+    - news
 ---
 
 Since the [launch of FlowForge][first-deploy] in April 2021 our goal has been to

@@ -4,6 +4,10 @@ subtitle: Adding ability to locally build file-server container
 description: Details FlowForge v1.1.1
 date: 2022-11-25
 authors: ["ben-hardill"]
+tags:
+    - posts
+    - flowforge
+    - news
 ---
 
 After [yesterdays 1.1.0 FlowForge release](https://flowforge.com/blog/2022/11/flowforge-1-1-released/) we noticed a few minor issues with the docker-compose install instructions.

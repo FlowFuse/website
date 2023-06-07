@@ -5,6 +5,10 @@ description: Suspended projects, login with email and Team Types
 date: 2022-09-01 12:00:00.0
 authors: ["sam-machin"]
 video: d23Pmyc0k7I
+tags:
+    - posts
+    - flowforge
+    - releases
 ---
 
 Suspend your projects when you don't need them, login with either your username or email, and introducing Team Types

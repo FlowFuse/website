@@ -5,6 +5,10 @@ description: Secure Node-RED HTTP end points, Read-only users and Static outboun
 date: 2022-09-30 12:00:00.0
 authors: ["rob-marcer"]
 video: mjR1iiEFiBg
+tags:
+    - posts
+    - flowforge
+    - releases
 ---
 
 Secure your HTTP endpoints, create read-only users in your teams and use our static IP address for outbound traffic

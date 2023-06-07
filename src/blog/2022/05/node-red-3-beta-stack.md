@@ -4,6 +4,10 @@ subtitle: Try out the next major Node-RED release
 description: Try out the next major Node-RED release
 date: 2022-05-04
 authors: ["sam-machin"]
+tags:
+    - posts
+    - node-red
+    - news
 ---
 
 

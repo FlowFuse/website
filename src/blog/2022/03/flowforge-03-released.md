@@ -4,6 +4,10 @@ subtitle: Moving towards the launch of FlowForge Cloud
 description: Moving towards the launch of FlowForge Cloud
 date: 2022-03-17 1:00:00.0
 authors: ["nick-oleary"]
+tags:
+    - posts
+    - flowforge
+    - releases
 ---
 
 The FlowForge 0.3 release brings us closer to the launch of FlowForge Cloud.

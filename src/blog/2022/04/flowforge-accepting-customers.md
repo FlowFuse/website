@@ -4,6 +4,10 @@ subtitle: We're starting to onboard users from the waitlist
 description: We're starting to onboard users from the waitlist
 date: 2022-04-04
 authors: ["zeger-jan-van-de-weg"]
+tags:
+    - posts
+    - flowforge
+    - news
 ---
 
 A year ago our CTO, Nick O'Leary, [introduced FlowForge](https://flowforge.com/blog/2021/04/first-deploy/).

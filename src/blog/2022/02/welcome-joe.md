@@ -3,6 +3,10 @@ title: Welcome Joe
 description: Welcoming Joe Pavitt to FlowForge Inc.
 date: 2022-02-08
 authors: ["nick-oleary"]
+tags:
+    - posts
+    - flowforge
+    - news
 ---
 
 Today we welcome Joe Pavitt ([@joepavitt3d](https://twitter.com/joepavitt3d)) as

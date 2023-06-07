@@ -4,6 +4,10 @@ subtitle: Keeping the releases flowing of our open platform for Node-RED
 description: Keeping the releases flowing of our open platform for Node-RED
 date: 2022-02-17 1:00:00.0
 authors: ["nick-oleary"]
+tags:
+    - posts
+    - flowforge
+    - releases
 ---
 
 Four weeks have passed since our initial release of FlowForge, and we're happy

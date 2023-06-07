@@ -4,6 +4,10 @@ subtitle: A bigger project with more resources
 description: A bigger project with more resources
 date: 2022-07-22 12:00:00.0
 authors: ["sam-machin"]
+tags:
+    - posts
+    - flowforge
+    - news
 ---
 We've added a second size of project to FlowForge Cloud. A bigger project type with more resources available to it.
 <!--more-->

@@ -4,6 +4,11 @@ subtitle: Hosting your Node-RED, so you don't have to.
 description: Join the waitlist for our cloud offering.
 date: 2022-02-23 19:44:00.0
 authors: ["zeger-jan-van-de-weg"]
+tags:
+    - posts
+    - flowforge
+    - news
+    - releases
 ---
 
 As an open core company, anyone is free to [download and install][install-docs]

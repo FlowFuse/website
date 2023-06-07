@@ -5,6 +5,10 @@ description: A new set of features to improve FlowForge as the best solution for
 date: 2022-11-24 18:00:00.0
 authors: ["rob-marcer"]
 video: 134iljE_urI
+tags:
+    - posts
+    - flowforge
+    - releases
 ---
 
 Persist files on your FlowForge Projects, publish locally developed flows to dozens of Devices in a few clicks, and use our new interface for managing Project Deployments.

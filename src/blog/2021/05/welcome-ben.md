@@ -3,6 +3,9 @@ title: Welcome Ben
 description: Welcoming Ben Hardill to FlowForge Inc.
 date: 2021-05-10
 authors: ["nick-oleary"]
+tags:
+    - flowforge
+    - news
 ---
 I'm excited to share the news that Ben Hardill ([@hardillb](https://twitter.com/hardillb)) is joining FlowForge as a Senior Engineer.
 
