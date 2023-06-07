@@ -247,13 +247,6 @@ module.exports = function(eleventyConfig) {
         return teamMembers
     });
 
-    eleventyConfig.addAsyncFilter("postType", async function (posts, type) {
-        return posts.filter((p) => {
-            return p.data.tags.includes(type)
-        })
-    });
-
-
     // Custom async filters
     eleventyConfig.addNunjucksAsyncFilter("jsmin", async function (code, callback) {
         try {

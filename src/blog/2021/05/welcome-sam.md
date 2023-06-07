@@ -4,6 +4,7 @@ description: Welcoming Sam Machin to FlowForge Inc.
 date: 2021-05-17
 authors: ["nick-oleary"]
 tags:
+    - posts
     - flowforge
     - news
 ---
