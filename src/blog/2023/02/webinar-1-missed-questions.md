@@ -4,6 +4,9 @@ subtitle: There were some great questions from our first webinar that we didn't 
 description: There were some great questions from our first webinar that we didn't get time to answer, we wanted to share those questions and our answers here.
 date: 2023-02-27 18:00:00
 authors: ["rob-marcer"]
+tags:
+    - node-red
+    - community
 ---
 
 There were some great questions from our [first webinar](https://www.youtube.com/watch?v=47EvfmJji-k) that we didn't get time to answer, we wanted to share those questions and our answers here. 

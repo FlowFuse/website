@@ -7,6 +7,9 @@ authors: ["marian-demme"]
 image: /blog/2023/04/images/HMI2023.png
 tags:
     - posts
+    - flowforge
+    - node-red
+    - community
 ---
 "Do you use Node-RED?" This simple question became our favorite conversation opener as ZJ and I attended Hannover Messe, the world's leading industrial trade fair.
 

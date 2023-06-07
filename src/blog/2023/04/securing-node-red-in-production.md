@@ -7,6 +7,8 @@ authors: ["rob-marcer"]
 image: /blog/2023/04/images/security-header.png
 tags:
     - posts
+    - node-red
+    - how-to
 ---
 
 Node-RED is very easy to get up and running. Whether you run it locally, in Docker, on a Raspberry Pi, or on a service such as FlowForge Cloud you can have a project up and running in minutes.

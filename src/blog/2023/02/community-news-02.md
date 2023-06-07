@@ -7,6 +7,7 @@ authors: ["rob-marcer"]
 image: "/images/blog/community-news.jpeg"
 tags:
     - posts
+    - community
     - newsletter
 ---
 

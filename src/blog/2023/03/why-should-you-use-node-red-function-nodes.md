@@ -7,6 +7,8 @@ authors: ["rob-marcer"]
 image: /blog/2023/03/images/function-nodes.png
 tags:
     - posts
+    - node-red
+    - how-to
 ---
 
 Function nodes are an essential part of Node-RED. They allow you to write custom JavaScript functions that can be used in your Node-RED flows. In this blog post, I will discuss some of the benefits and drawbacks of using Function nodes in your next project.

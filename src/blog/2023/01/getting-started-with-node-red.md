@@ -4,6 +4,10 @@ subtitle: Node-RED is one of the easiest ways to program ever created but everyo
 description: In this article we are going to explain the first things you need to know to get started with Node-RED.
 date: 2023-01-23
 authors: ["rob-marcer"]
+tags:
+    - posts
+    - node-red
+    - how-to
 ---
 
 

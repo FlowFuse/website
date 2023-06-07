@@ -5,6 +5,10 @@ description: Often requested features for Node-RED include HA or Highly Availabl
 date: 2023-02-15
 authors: ["zeger-jan-van-de-weg"]
 image: /blog/2023/02/images/roadmap-unsplash.jpg
+tags:
+    - posts
+    - node-red
+    - flowforge
 ---
 
 Over the past few months we've held a lot of product discovery sessions and a topic

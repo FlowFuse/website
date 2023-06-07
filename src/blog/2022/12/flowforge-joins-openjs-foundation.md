@@ -4,6 +4,10 @@ subtitle: Supporting the foundation that has given Node-RED a great home
 description:  Supporting the foundation that has given Node-RED a great home
 date: 2022-12-13 12:00:00.0
 authors: ["nick-oleary"]
+tags:
+    - posts
+    - flowforge
+    - news
 ---
 
 We're pleased to share the news we've joined the OpenJS Foundation to bolster our

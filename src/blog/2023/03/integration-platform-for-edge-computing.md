@@ -5,6 +5,10 @@ description: Node-RED is widely adopted by leading IoT gateway and PLC to be the
 date: 2023-03-06
 authors: ["ian-skerrett"]
 image: /blog/2023/03/images/integration-platform-blog-image.jpg
+tags:
+    - posts
+    - node-red
+    - community
 ---
 
 Node-RED has become a widely adopted integration platform for IoT edge computing and PLCs. Discover why!

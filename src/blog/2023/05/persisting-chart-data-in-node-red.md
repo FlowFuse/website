@@ -7,6 +7,8 @@ authors: ["rob-marcer"]
 image: /blog/2023/05/images/persisting-data-header.jpeg
 tags:
     - posts
+    - node-red
+    - how-to
 ---
 
 Node-RED makes it easy to create HMI (Human Machine Interfaces) using the [Dashboard set of custom nodes](https://flows.nodered.org/node/node-red-dashboard).

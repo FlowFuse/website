@@ -5,6 +5,11 @@ description: Save yourself time when working on Node-RED with these three tips.
 date: 2023-05-02 12:00:00
 authors: ["joe-pavitt", "stephen-mclaughlin"]
 image: /images/blog/tile-chatgpt-fcn-node.jpg
+tags:
+    - posts
+    - node-red
+    - community
+    - how-to
 ---
 
 Recently we [posted a demo of ChatGPT integration in a Node-RED function node](https://www.linkedin.com/posts/flowforge_chatgpt-with-node-red-function-nodes-activity-7052725869684953088-2yOA?utm_source=share&utm_medium=member_desktop) 

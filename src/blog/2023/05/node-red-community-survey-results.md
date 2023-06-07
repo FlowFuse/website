@@ -7,6 +7,8 @@ authors: ["ian-skerrett"]
 image: /blog/2023/05/images/nr-community-survey.jpg
 tags:
     - posts
+    - node-red
+    - community
 ---
 
 The Node-RED community recently published the results of their [2023 Community Survey](https://nodered.org/about/community/survey/2023/), building upon their [2019 survey](https://nodered.org/about/community/survey/2019/). The findings reveal some interesting trends within the Node-RED community that are worth highlighting.

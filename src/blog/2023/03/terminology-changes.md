@@ -5,6 +5,10 @@ description: Applications, Instances & Devices - the new way forward for FlowFor
 date: 2023-03-16 14:00:00.0
 authors: ["joe-pavitt"]
 image: /blog/2023/03/images/concept-changes.png
+tags:
+    - posts
+    - flowforge
+    - news
 ---
 
 As a new product in the market, we constantly have to make choices on how to name things. Naming things is hard! As you name a thing, say "Project", it might be suitable now, but the product evolves, and may outgrow the name such that it doesn’t fit anymore.

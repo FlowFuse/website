@@ -8,6 +8,7 @@ image: "/images/blog/community-news.jpeg"
 tags:
     - posts
     - newsletter
+    - community
 ---
 
 Welcome to the FlowForge newsletter for March 2023, a monthly roundup of what’s been happening with both FlowForge and the wider Node-RED community. 
