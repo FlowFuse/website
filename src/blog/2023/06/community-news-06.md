@@ -18,6 +18,7 @@ Welcome to the FlowForge newsletter for June 2023, a monthly roundup of what’s
 
 Today we released <add link> FlowForge 1.8, featuring high availability for Node-RED and DevOps software delivery pipelines. Both these features were in high demand from our community and will make it easier to reliably deliver Node-RED for business critical applications.
 
+ Read about the details of FlowForge 1.8 in our release announcement. 
 
 ## Upcoming events
 
@@ -29,7 +30,7 @@ Our June webinar will focus on the new FlowForge 1.8 of running high availabilit
 
 ### Build an Edge-to-Cloud Solution with the MING Stack
 
-On June 27, FlowForge is doing a webinar with our friends at InfluxDB. A great opportunity to see how easy it is to use Node-RED and InfluxDB to send data from the edge to the cloud.  [Sign-up Today](https://www.influxdata.com/resources/build-an-edge-to-cloud-solution-with-the-ming-stack/?utm_source=partner&utm_medium=referral&utm_campaign=2023-06-27_Webinar_FlowForge-NodeRED&utm_term=speaker).
+On June 27, FlowForge is doing a webinar with our friends at InfluxDB. A great opportunity to see how easy it is to use Node-RED and InfluxDB to send data from the edge to the cloud.  [Sign-up today](https://www.influxdata.com/resources/build-an-edge-to-cloud-solution-with-the-ming-stack/?utm_source=partner&utm_medium=referral&utm_campaign=2023-06-27_Webinar_FlowForge-NodeRED&utm_term=speaker).
 
 ## From our Blog
 
@@ -53,7 +54,6 @@ On June 27, FlowForge is doing a webinar with our friends at InfluxDB. A great o
 
 Gerrit Riessen has published a list of [Pros and Cons for using Node-RED](https://gorenje.medium.com/fourteen-for-fourteen-against-why-i-love-hate-and-connect-with-node-23797f9466ec). It is a pretty comprehensive list so check it out. FlowForge is working to address some of the cons in Gerrit's list, specifically software delivery pipelines and the ability to deploy out to many end points.
 
-### Custom Node Spotlight 
 
 
 ## Join Our Team
