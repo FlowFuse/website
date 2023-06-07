@@ -1,7 +1,11 @@
 ---
 title: Node-RED Enables Digital Transformation of a Large US Manufacturing Company
 image: /images/stories/large-us-manufacturing.jpg
+date: 2023-05-04
+logo:
 story:
+    brand:
+    url:
     quote: Overall, the project leader sees Node-RED as the future of software development. The low code paradigm makes it possible for companies to decentralize innovation within an organization
     challenge: Maintain and track the thousands of Node-RED developed instances and versions of these instances.
     solution: Using the FlowForge platform to address these challenges.

@@ -10,17 +10,26 @@ meta:
     </div>
     {% if collections.posts.length > 0 %}
     <ul class="flex flex-wrap">
-        {%- for item in collections.stories | reverse -%}
+        {%- for item in collections.stories | sort(attribute='item.date') | reverse -%}
         {% if loop.first %}
-        <li class="w-full md:w-2/3 mt-2 px-2 pb-4">
+        <li class="w-full md:w-2/3 my-2 px-2 pb-4 border-b">
             <a href="{{ item.url }}" class="w-full flex flex-col group hover:no-underline">
                 <div class="pr-2">
                     {% if item.data.image %}
-                        <div class="w-full h-60 md:h-72 ff-image-cover">
+                    <div class="relative">    
+                        <div class="w-full h-40 md:h-80 ff-image-cover">
                             {% set imageSrc = ["./", item.data.image ] | join %}
                             {% set imageDescription = ["Image representing ", item.data.title] | join %}
                             {% image imageSrc, imageDescription, [768] %}
                         </div>
+                        {% if item.data.logo %}
+                        <div class="w-1/2 h-full md:w-40 md:h-40 absolute left-0 top-0 bg-white flex items-center justify-center object-contain">
+                            {% set imageSrc = ["./", item.data.logo ] | join %}
+                            {% set imageDescription = ["Image representing ", item.data.story.brand, " logo"] | join %}
+                            {% image imageSrc, imageDescription, [285] %}
+                        </div>
+                        {% endif %}                        
+                    </div>
                     {% else %}
                         {{ item.url | generatePostSVG |safe}}
                     {% endif %}
@@ -38,30 +47,27 @@ meta:
         <li class="w-full md:w-1/3 my-2 px-2 pb-6 border-b">
             <a href="{{ item.url }}" class="w-full flex flex-col group hover:no-underline">
                 <div class="">
-                    <time class="block text-xs mb-2" value="{{ item.date }}" class="text-gray-400">{{ item.date | shortDate }}</time>
                     <div>
                         {% if item.data.image %}
-                            <div class="w-full h-auto">
+                        <div class="relative">
+                            <div class="w-full h-40 ff-image-cover">
                                 {% set imageSrc = ["./", item.data.image ] | join %}
                                 {% set imageDescription = ["Image representing ", item.data.title] | join %}
                                 {% image imageSrc, imageDescription, [285] %}
                             </div>
+                            {% if item.data.logo %}
+                                <div class="w-1/2 h-full absolute left-0 top-0 bg-white flex items-center justify-center object-contain">
+                                    {% set imageSrc = ["./", item.data.logo ] | join %}
+                                    {% set imageDescription = ["Image representing ", item.data.story.brand, " logo"] | join %}
+                                    {% image imageSrc, imageDescription, [285] %}
+                                </div>
+                                {% endif %}
+                        </div>    
                         {% else %}
                             {{ item.url | generatePostSVG |safe}}
                         {% endif %}
                     </div>
-                    <h3 class="mt-1 mb-0 font-medium group-hover:underline">{{ item.data.title }}</h3>
-                </div>
-                <div class="text-sm prose prose-blue md:prose-md py-1">
-                    {{ item.data.description | excerpt | safe }}
-                </div>
-                <div class="italic text-xs mb-3">
-                    <div class="author">
-                        {% set comma = joiner() %}
-                        {%- for author in item.data.authors %}
-                        {{ comma() }} {{ team[author].name }}
-                        {%- endfor %}
-                    </div>
+                    <h3 class="mt-1 mb-0 font-medium group-hover:underline" style="line-height: 1.75rem">{{ item.data.title }}</h3>
                 </div>
             </a>
         </li>
