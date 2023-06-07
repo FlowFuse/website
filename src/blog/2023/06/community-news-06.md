@@ -23,9 +23,13 @@ Today we released <add link> FlowForge 1.8, featuring high availability for Node
 
 ### Building Node-RED Applications for Scalability and High Availability
 
-Our June webinar will focus on the new FlowForge 1.8 of running high availability Node-RED applications. FlowForge Product Manager, Marian Demme, will take a deep dive into what it take to develop Node-RED applications that can can effortlessly scale and maintain high availability. Marian Demme, FlowForge Product Manager, will lead this session and share practical insights and best practices to show how FlowForge can unlock the true potential of Node-RED in large-scale deployments. 
+Our June webinar will focus on the new FlowForge 1.8 of running high availability Node-RED applications. Marian Demme, FlowForge Product Manager, will lead this session and share practical insights and best practices to show how FlowForge can unlock the true potential of Node-RED in large-scale deployments. 
 
 [Sign-up today](https://flowforge.com/webinars/2023/building-scalable-ha-node-red/) to join us on June 22. 
+
+### Build an Edge-to-Cloud Solution with the MING Stack
+
+On June 27, FlowForge is doing a webinar with our friends at InfluxDB. A great opportunity to see how easy it is to use Node-RED and InfluxDB to send data from the edge to the cloud.  [Sign-up Today](https://www.influxdata.com/resources/build-an-edge-to-cloud-solution-with-the-ming-stack/?utm_source=partner&utm_medium=referral&utm_campaign=2023-06-27_Webinar_FlowForge-NodeRED&utm_term=speaker).
 
 ## From our Blog
 
@@ -39,7 +43,7 @@ Our June webinar will focus on the new FlowForge 1.8 of running high availabilit
 
 - [Persisting chart data in Node-RED Dashboards](https://flowforge.com/blog/2023/05/persisting-chart-data-in-node-red/)
 
-- [Node-RED Community Survey Results](https://flowforge.com/blog/2023/05/node-red-community-survey-results/) - A quick summary of the Node-RED Commuity Survey results.
+- [Node-RED Community Survey Results](https://flowforge.com/blog/2023/05/node-red-community-survey-results/) - A quick summary of the Node-RED Community Survey results.
 
 - [FlowForge 1.7 Now Available with Remote Node-RED Editor Access](https://flowforge.com/blog/2023/05/flowforge-1-7-released/)
 
@@ -47,7 +51,8 @@ Our June webinar will focus on the new FlowForge 1.8 of running high availabilit
 
 ## From the Community
 
-Gerrit Riessen has published a list of [Pros and Cons for using Node-RED](https://gorenje.medium.com/fourteen-for-fourteen-against-why-i-love-hate-and-connect-with-node-23797f9466ec). It is a pretty comprehensive list so check it out. FlowForge is working to address some of the cons in Gerrit's list, specifically software delivery pipelines and the ability to deploy out to many end points. 
+Gerrit Riessen has published a list of [Pros and Cons for using Node-RED](https://gorenje.medium.com/fourteen-for-fourteen-against-why-i-love-hate-and-connect-with-node-23797f9466ec). It is a pretty comprehensive list so check it out. FlowForge is working to address some of the cons in Gerrit's list, specifically software delivery pipelines and the ability to deploy out to many end points.
+
 ### Custom Node Spotlight 
 
 
