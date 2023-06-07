@@ -20,7 +20,26 @@ Content creation and blogging are an effective way to communicate with our commu
 
 ### Blog CMS
 
-When creating a blog post there are several headers which are used by the CMS to populate the blog article as well as the blog index page. The headers are as follows:
+When creating a blog post there are several headers which are used by the CMS to populate the blog article as well as the blog index page. e.g:
+
+
+```njk
+---
+title: The title
+subtitle: The subtitle
+description: The description
+date: 2022-12-20
+authors: ["rob-marcer"]
+tags:
+    - posts
+    - node-red
+    - how-to
+---
+
+above more
+<!--more-->
+below more
+```
 
 #### Title
 
@@ -42,26 +61,21 @@ The data can be seen on both the blog index and the articles.
 
 The author can be seen on both the blog index and the articles.
 
+#### Tags
+
+Tag your content appropriately from the collection of tags that help us manage our blog content. They are:
+
+- `node-red`
+- `flowforge`
+- `how-to`
+- `tips`
+- `community`
+- `releases`
+- `news`
+
 #### More tag
 
 The '\<\!\-\-more\-\-\>' tag is used to define the text shown in the blog index from each article.
-
-#### Example header content
-
-```
----
-title: The title
-subtitle: The subtitle
-description: The description
-date: 2022-12-20
-authors: ["rob-marcer"]
----
-
-above more
-<!--more-->
-below more
-```
-
 #### Example blog index item based on the header above
 
 ![Example of how the headers are shown on the blog index](../images/blog-index.png)
