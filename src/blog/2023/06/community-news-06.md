@@ -2,7 +2,7 @@
 title: Community News June 2023
 subtitle: Your monthly update for the FlowForge and Node-RED communities
 description: News from the FlowForge and Node-RED communities
-date: 2023-06-08
+date: 2023-06-09
 authors: ["ian-skerrett"]
 image: "/images/blog/community-news.jpeg"
 tags:
