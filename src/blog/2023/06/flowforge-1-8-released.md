@@ -12,7 +12,9 @@ FlowForge 1.8 introduces two key features that allow organizations to reliably d
 <!--more-->
 
 ## More reliable and scalable Node-RED applications
-Do you want to run business-critical processes in Node-RED and need to ensure they are always available and can handle increasing workloads? We're excited to introduce High Availability (HA) in FlowForge to support your needs. Suppose you're managing a large influx of HTTP requests to your Node-RED instances. With our latest update, FlowForge now ensures that these requests are evenly distributed across two instances. This means your applications are less likely to experience downtime and can manage higher traffic loads. You can easily activate HA mode during the creation of an instance. For more details, please see our [documentation](https://flowforge.com/docs/user/).
+FlowForge now makes it possible to deploy business critical applications built in Node-RED that are reliable and scalable. The new 1.8 features allows a Node-RED instance to be deployed in high availability mode, meaning two instances of the same Node-RED flows are available behind a load balancer. This allows for increased traffic to be automatically distributed across the two Node-RED instances. This means your Node-RED applications can handle more traffic and experience less downtime. For more details, please see our [documentation](https://flowforge.com/docs/user/high-availability).
+
+Additionally, we're pleased to offer a 30-day premium trial license for self-managed installs on Kubernetes. To avail of this offer, book a demo at [flowforge.com/book-demo](https://flowforge.com/book-demo).
 
 High Availability is our first [preview feature](https://flowforge.com/handbook/product/versioning/#preview-features), and your feedback is crucial. We encourage you to try out HA in your Node-RED instances and share your experiences with us. Your feedback will help us refine this feature and make it even better.
 
