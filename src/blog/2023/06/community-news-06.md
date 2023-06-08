@@ -18,7 +18,7 @@ Welcome to the FlowForge newsletter for June 2023, a monthly roundup of what’s
 
 Today we released <add link> FlowForge 1.8, featuring high availability for Node-RED and DevOps software delivery pipelines. Both these features were in high demand from our community and will make it easier to reliably deliver Node-RED for business critical applications.
 
- Read about the details of FlowForge 1.8 in our release announcement. 
+ Read about the details of FlowForge 1.8 in our [release announcement](https://flowforge.com/blog/2023/06/flowforge-1-8-released/). 
 
 ## Upcoming events
 
@@ -42,7 +42,7 @@ On June 27, FlowForge is doing a webinar with our friends at InfluxDB. A great o
 
 - [Node-RED Tips - Dashboard Edition](https://flowforge.com/blog/2023/06/3-quick-node-red-tips-7/) - A new set of Node-RED quick tips that are focused on using Node-RED Dashboard.
 
-- [Persisting chart data in Node-RED Dashboards](https://flowforge.com/blog/2023/05/persisting-chart-data-in-node-red/)
+- [Persisting chart data in Node-RED Dashboards](https://flowforge.com/blog/2023/05/persisting-chart-data-in-node-red/) - How to store data from the Node-RED Dasbhaord chart node.
 
 - [Node-RED Community Survey Results](https://flowforge.com/blog/2023/05/node-red-community-survey-results/) - A quick summary of the Node-RED Community Survey results.
 
