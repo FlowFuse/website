@@ -22,7 +22,9 @@ High Availability is our first [preview feature](https://flowforge.com/handbook/
 
 ## DevOps Pipelines
 
-DevOps Pipelines enable you to manage and track multiple deployments of your Node-RED instances, effortlessly progressing through stages such as testing, development, staging, and production. In [FlowForge Version 1.4](../../02/flowforge-1-4-0-released),  we introduced the "Support for Staged Development". Now, we're taking it one step further. Within your applications section, you are now able to create your own DevOps Pipeline and track the progress across each instance in one view.
+FlowForge 1.8 introduces the concept of Pipelines to better organize your Node-RED development. Development team can now set up different staging environments for different steps in the development cycle, ex. test, development and production. Node-RED instances can be pushed along a pipeline as they move along the development process. This allows for a better organized and predictable development process for your team. 
+
+The new Pipelines feature builds upon the Staged Development support that we introduced in[FlowForge Version 1.4](../../02/flowforge-1-4-0-released). We highly recommend that development teams avoid developing their flows directly in production instances. This approach fosters a more reliable and robust development process, reducing the risks associated with production environment modifications. Instead, start your development in a dedicated development or test instance and then deploy your Node-RED instance to production once they have been thoroughly tested and reviewed. 
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/S--viuPhrS8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
