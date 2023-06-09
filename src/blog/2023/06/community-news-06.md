@@ -16,7 +16,7 @@ Welcome to the FlowForge newsletter for June 2023, a monthly roundup of what’s
 
 ## New Release
 
-Today we released <add link> FlowForge 1.8, featuring high availability for Node-RED and DevOps software delivery pipelines. Both these features were in high demand from our community and will make it easier to reliably deliver Node-RED for business critical applications.
+This week we released FlowForge 1.8, featuring high availability for Node-RED and DevOps software delivery pipelines. Both these features were in high demand from our community and will make it easier to reliably deliver Node-RED for business critical applications.
 
  Read about the details of FlowForge 1.8 in our [release announcement](https://flowforge.com/blog/2023/06/flowforge-1-8-released/). 
 
@@ -24,7 +24,7 @@ Today we released <add link> FlowForge 1.8, featuring high availability for Node
 
 ### Building Node-RED Applications for Scalability and High Availability
 
-Our June webinar will focus on the new FlowForge 1.8 of running high availability Node-RED applications. Marian Demme, FlowForge Product Manager, will lead this session and share practical insights and best practices to show how FlowForge can unlock the true potential of Node-RED in large-scale deployments. 
+Our June webinar will focus on the new FlowForge 1.8 feature of running high availability Node-RED applications. Marian Demme, FlowForge Product Manager, will lead this session and share practical insights and best practices to show how FlowForge can unlock the true potential of Node-RED in large-scale deployments. 
 
 [Sign-up today](https://flowforge.com/webinars/2023/building-scalable-ha-node-red/) to join us on June 22. 
 
@@ -61,4 +61,4 @@ FlowForge is expanding our team. Check out the current openings:
 
 * [DevOps Engineer](https://boards.greenhouse.io/flowforge/jobs/4796271004)
 
-
+* [Sales Representative](https://boards.greenhouse.io/flowforge/jobs/4843566004)
