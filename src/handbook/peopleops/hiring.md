@@ -99,6 +99,8 @@ Once these are in place a pipeline needs to be designeed by the PeopleOps manage
 ### Pipeline design
 
 A pipeline needs to be designed, meaning; you'll need to define all stages of the hiring process.
+For each stage of the hiring pipeline scoresheets **must** be filled out. Each scorecard
+**must** include all values, and job requirements.
 
 #### Accepting applications
 
