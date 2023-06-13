@@ -63,6 +63,7 @@ to make public. That content should be shared on the FlowForge Google Drive.
 
 To run the handbook locally, follow the instructions on the [website repository](https://github.com/flowforge/website).
 
-You can access the Handbook at http://localhost:8080/handbook. This will automatically reload whenever any content is changed.
+You can access the Handbook at [http://localhost:8080/handbook](http://localhost:8080/handbook).
+This will automatically reload whenever any content is changed.
 
 **Note:** if you modify any of the Handbook's CSS, it may take a while for the website to recognise the changes. As a shortcut, you can run `npm run tailwind` to rebuild the CSS content.
