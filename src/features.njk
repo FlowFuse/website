@@ -37,3 +37,40 @@ meta:
         </div>
     </div>
 </div>
+
+{% include "components/divider-flow--top-red--dark.njk" %}
+
+<div class="w-full ff-bg-dark px-6 pt-0 pb-32 md:pt-0 md:px-0">
+    <div class="container px-3 md:px-12 md:max-w-screen-lg m-auto text-center max-w-4xl">
+        <div class="m-auto mt-16 w-full text-center">
+            <h1>Benefits of FlowForge</h1>
+            <p class="font-light">Get started with <a href="https://app.flowforge.com/">FlowForge Cloud</a>, or <a href="/docs/install">install FlowForge for free</a> on your own infrastructure.</p>
+        </div>
+        <div class="mt-20 flex flex-wrap justify-center">
+            <div class="company-value">
+                {% image "./images/pictograms/time.png", "Graphic of a clock, depicting 'Time'.", [128] %}
+                <h5>One-Minute Setup</h5>
+            </div>
+            <div class="company-value">
+                {% image "./images/pictograms/security.png", "Graphic of a padlock, depicting 'Security'.", [128] %}
+                <h5>Enterprise Ready</h5>
+            </div>
+            <div class="company-value">
+                {% image "./images/pictograms/ticket.png", "Graphic of a ticket, depicting 'Ticket-Based Support'.", [128] %}
+                <h5>Ticket-Based Support</h5>
+            </div>
+            <div class="company-value">
+                {% image "./images/pictograms/community.png", "Graphic depicting 'Flexibility'.", [128] %}
+                <h5>Flexible Deployment</h5>
+            </div>
+            <div class="company-value">
+                {% image "./images/pictograms/node_catalog.png", "Graphic of nodes & wires, depicting 'Node-RED'.", [128] %}
+                <h5>Node-RED, Managed<br>For You</h5>
+            </div>
+            <div class="company-value">
+                {% image "./images/pictograms/browser.png", "Graphic of a globe, depicting FlowForge being full browser-based.", [128] %}
+                <h5>Full Browser-Based</h5>
+            </div>
+        </div>
+    </div>
+</div>
