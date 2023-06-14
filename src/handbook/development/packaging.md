@@ -100,7 +100,7 @@ ensures we have a consistent approach to planning and tracking of work.
 The labels are synchronized across the repositories via a GitHub Action in the [`.github`](https://github.com/flowforge/.github)
 repository.
 
-The `Customer Request` label is intended solely for issues requested by an importnat enterprise customer, not for leads or individuals like [Harry the Hobbyist](../product/personas/).
+The `Customer Request` label is intended solely for issues requested by an important enterprise customer, not for leads or individuals like [Harry the Hobbyist](../product/personas/).
  
 New repositories must be added to the list in [`flowforge-repositories.yml`](https://github.com/flowforge/.github/blob/main/flowforge-repositories.yml),
 and then the [Synchronize Labels](https://github.com/flowforge/.github/actions/workflows/sync-labels.yml) action manually run.
