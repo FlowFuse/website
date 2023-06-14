@@ -2,7 +2,7 @@
 title: MQTT and its Role in IoT and Industrial IoT
 subtitle: A Guide to Connecting HiveMQ with Node-RED
 description: Node-RED has great support for MQTT, in this guide we'll explain why that's fundamental for IoT and how to connect to a broker
-date: 2023-06-12
+date: 2023-06-13
 authors: ["zeger-jan-van-de-weg"]
 image: blog/2023/06/images/flowforge-nodered-mqtt-hivemq.png
 ---
