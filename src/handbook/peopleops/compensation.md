@@ -73,4 +73,5 @@ awarded to be expensed for a dinner out. The bonus is awarded per release.
 
 FlowForge offers a health care package for all employees in the United States, Canada, and India. 
 
-For employees located in the United States, Deel offers assistance with basic health insurance coverage. However, employees who choose not to participate in the health insurance provided by FlowForge have the option to opt out. This can be done by registering with Zenefits and declining coverage during the enrollment process on the platform. It is important to note that if an employee decides to opt out, they must have alternative qualified coverage to ensure compliance with the ACA (Affordable Care Act).
+For employees located in the United States, Deel offers assistance with basic health insurance coverage which includes dental and vision benefits. However, employees who choose not to participate in the health insurance provided by FlowForge have the option to opt out. This can be done by registering with Zenefits and declining coverage during the enrollment process on the platform. It is important to note that if an employee decides to opt out, they must have alternative qualified coverage to ensure compliance with the ACA (Affordable Care Act).
+
