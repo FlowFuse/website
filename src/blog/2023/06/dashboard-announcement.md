@@ -19,7 +19,7 @@ The original Node-RED Dashboard is based on Angular v1, which is no longer maint
 
 ## The Solution
 
-The successor to the Node-RED Dashboard will be a completely new project, published as a separate package. This new project will take the reins from the old dashboard and guide us into the future. However, the Node-RED community can rest assured that the project will stay under the Apache 2 licence. This ensures that the core principles of open-source and community-driven development will remain intact.
+The successor to the Node-RED Dashboard will be a completely new project, published as a separate package. This new project will take the reins from the old dashboard and guide us into the future. However, the Node-RED community can rest assured that the project will stay under the Apache 2.0 licence. This ensures that the core principles of open-source and community-driven development will remain intact.
 
 In line with our open core approach, we will provide vendors the opportunity to build premium features around the core. This allows businesses to customize and enhance their experience with the new dashboard, while still maintaining the integrity of the open-source project.
 
