@@ -61,9 +61,7 @@ account. You'll need to link your family, see also [their docs](https://support.
 
 #### Launch Lunch
 
-Each release is celebrated with a lunch. Team members that join a social Zoom
-call are encouraged to order a lunch. Lunch can be [expensed](./expenses)
-up to $25.
+A lunch is organized to celebrate every release, and team members participating in a social Zoom call are encouraged to order a meal. You can claim [expensed](./expenses) for the lunch, up to a maximum of $25, and all reimbursements must be processed through Deel.
 
 #### Dinner Bonus
 
@@ -73,4 +71,8 @@ awarded to be expensed for a dinner out. The bonus is awarded per release.
 
 ### Health Care
 
-FlowForge offers a health care package for all employees in the United States, Canada, and India.
+FlowForge offers a health care package for all employees in the United States, Canada, and India. 
+
+For employees located in the United States, FlowForge offer basic health insurance coverage which includes dental and vision benefits through Deel.
+However, employees who choose not to participate in the health insurance provided by FlowForge have the option to opt out. This can be done by registering with Zenefits and declining coverage during the enrollment process on the platform. It is important to note that if an employee decides to opt out, they must have alternative qualified coverage to ensure compliance with the ACA (Affordable Care Act).
+
