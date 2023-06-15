@@ -2,6 +2,9 @@
     "question": "What is Node-RED and how does it work?",
     "answer": "<p>Node-RED is a low-code programming environment that allows developers to connect a wide variety of endpoints, such as industrial PLCs, APIs, databases, enterprise applications and online services.</p><p>Users of Node-RED visually drag ‘nodes’ from a palette that represent the end points and then connect them together into flows to accomplish the desired task. Node-RED applications are accessible via a web browser.</p>"
 },{
+    "question": "How do I deploy Node-RED online or in the Cloud?",
+    "answer": "<a href=\"https://app.flowforge.com/account/create\">FlowForge Cloud</a> is a hosted Node-RED service that developers can use to access Node-RED online. This makes it much quicker to get started using Node-RED since you don't need to install it locally"
+},{
     "question": "What is Node-RED used for?",
     "answer": "<p>Node-RED can be used for a wide variety of use cases, including:</p><ul><li>The <a href=\"https://flowforge.com/solutions/manufacturing\">manufacturing industry</a> uses Node-RED for collecting data from different pieces of factory equipment.</li><li>Creating dashboards that visualize data and allow for event triggers to occur based on the data.</li><li>Developing chatbot platforms that can collect interactions of a wide variety of social media platforms.</li><li>Extract, transform and integrate data from many different sources in the enterprise.</li><li>Lots of hobbyists use Node-RED for home automation.</li><li>Integrating data with machine learning models</li></ul>"
 },{
