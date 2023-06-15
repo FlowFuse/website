@@ -13,8 +13,8 @@ We have three primary tiers: Starter (Open-Source when self-managed), Premium, a
 | Tier | Objective | Problem it Solves | Persona |
 | ---- | --------- | ----------------- | ------- |
 | Starter (Open-source) | Introduce Node-RED | <ul><li>Hosting Node-RED</li><li>TLS/SSL</li><li>Subdomain</li><li>Backups (snapshots)</li><ul> | <ul><li>Individual contributor</li><li>PLC engineer</li><li>Line worker</li></ul> |
-| Premium | Scale the roll-out of Node-RED | <ul><li>Managing more than 5 Node-RED instances</li><li>Security</li><li>Effective collaboration</li></ul> | <ul><li>IIoT manager</li><li>Plant manager</li></ul> |
-| Enterprise | Node-RED as a company standard | <ul><li>Auditability</li><li>Enterprise intergration</li></ul> | <ul><li>Central IT departments</li><li>Plant manager</li></ul> |
+| Premium | Scale the roll-out of Node-RED | <ul><li>Managing more than 5 Node-RED instances</li><li>Edge Device Management</li><li>Security</li><li>Effective collaboration</li></ul> | <ul><li>IIoT manager</li><li>Plant manager</li></ul> |
+| Enterprise | Node-RED as a company standard | <ul><li>High availibilty</li><li>Auditability</li><li>Enterprise intergration</li></ul> | <ul><li>Central IT departments</li><li>Plant manager</li></ul> |
 
 ## Teams
 
