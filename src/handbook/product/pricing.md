@@ -8,14 +8,13 @@ This page sets out the concepts that we license and what units are measured acro
 
 We have three primary tiers: Starter (Open-Source when self-managed), Premium, and Enterprise. The value and features provided within each tier correspond to the specific [persona](./personas/), acknowledging that a higher placement in the organisational chart typically implies different requirements.
 
-## Layers
+## Value Layers
 
-| Tier                  | Objective                                         | Problem it Solves                                               | Persona                                        |
-| --------------------- | ------------------------------------------------- | --------------------------------------------------------------- | ---------------------------------------------- |
-| Starter (Open-source) | Introduce Node-RED                                | - Hosting Node-RED<br> - TLS/SSL<br> - Subdomain<br> - Backups (snapshots) | - Individual contributor<br> - PLC engineer<br> - Line worker |
-| Premium               | Scale the roll-out of Node-RED                    | - Managing more than 5 Node-RED instances<br> - Security<br> - Effective collaboration  | - IIoT manager<br> - Plant manager            |
-| Enterprise            | Node-RED as a company standard                    | - Auditability<br> - Enterprise intergration                | - Central IT departments<br> - (Plant manager) |
-
+| Tier | Objective | Problem it Solves | Persona |
+| ---- | --------- | ----------------- | ------- |
+| Starter (Open-source) | Introduce Node-RED | <ul><li>Hosting Node-RED</li><li>TLS/SSL</li><li>Subdomain</li><li>Backups (snapshots)</li><ul> | <ul><li>Individual contributor</li><li>PLC engineer</li><li>Line worker</li></ul> |
+| Premium | Scale the roll-out of Node-RED | <ul><li>Managing more than 5 Node-RED instances</li><li>Edge Device Management</li><li>Security</li><li>Effective collaboration</li></ul> | <ul><li>IIoT manager</li><li>Plant manager</li></ul> |
+| Enterprise | Node-RED as a company standard | <ul><li>High availibilty</li><li>Auditability</li><li>Enterprise intergration</li></ul> | <ul><li>Central IT departments</li><li>Plant manager</li></ul> |
 
 ## Teams
 
