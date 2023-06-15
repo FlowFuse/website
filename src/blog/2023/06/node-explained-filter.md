@@ -11,10 +11,10 @@ tags:
 ---
 
 The Filter node, previously called "Report by Exception", has two modes of
-operation, called deadband and narrowband.
-It is commonly used in applications where sensors constantly report data and only
-significant changes need to be communicated to the control system. Or in other
-cases the lack of change needs reporting.
+operation, called deadband and narrowband. These modes allow users to limit network
+traffic or write operations to historians. Or limit reporting of values outside
+a range that is worth reporting on. It's very versitile, once you understand the
+node fully.
 
 <!--more-->
 
