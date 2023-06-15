@@ -551,6 +551,17 @@ h4:hover .header-anchor {
     }
 }
 
+.red-gradient {
+    background: linear-gradient(127.44deg, #C63A3A 32.29%, #3A2828 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+}
+
+.features-card{
+    @apply flex flex-wrap flex-col justify-between h-full bg-gray-50 rounded-3xl px-5 pb-5;
+}
 /*
     Footer
 */
@@ -1090,6 +1101,14 @@ div.content section.footnotes ol li p {
     background-image: url('../images/bg-nodered-editor.png');
     background-size: cover;
     background-position-y: bottom;
+}
+
+.features-bg {
+    background-image: url('../images/features/features-bg.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position-y: bottom;
+    background-position-x: center;
 }
 
 /*
