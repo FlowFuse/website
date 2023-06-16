@@ -50,7 +50,7 @@ process or help grant access to FlowForge data.
 
 All employees and third-party users of FlowForge equipment shall return all of
 the organizational assets within their possession upon termination of their
-employment, contract, or agreement.
+employment, contract, or agreement in accordance with the [off-boarding process](../../peopleops/hiring.md#offboarding).
 
 ### Handling of Assets
 
@@ -59,7 +59,9 @@ use reasonable judgment and exercise due care in protecting and maintaining the
 equipment.
 
 Employees are responsible for ensuring that company equipment is secured and
-properly attended to whenever it is transported or stored.
+properly attended to whenever it is transported or stored. Equipment must be
+secured in accordance with the [Access Control](./access-control.md) policy and
+must not be left unattended in public locations.
 
 All mobile devices shall be handled in accordance with the [Information Security Policy](./information-security.md).
 
