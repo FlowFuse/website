@@ -2,7 +2,7 @@
 title: "Nodes explained: Filter"
 subtitle: The filter node is incredibly versatile, let's go over some use-cases
 description: Forwarding or blocking messages based on values, change of them, or lack of change.
-date: 2023-06-15
+date: 2023-06-16
 authors: ["zeger-jan-van-de-weg"]
 image:
 tags:
@@ -12,13 +12,13 @@ tags:
 
 The Filter node, previously called "Report by Exception", has two modes of
 operation, called deadband and narrowband. These modes allow users to limit network
-traffic or write operations to historians. Or limit reporting of values outside
-a range that is worth reporting on. It's very versitile, once you understand the
-node fully.
+traffic, write operations to historians, or limit reporting of values outside
+a range that is worth reporting on. It's very versatile, once you fully understand the
+node.
 
 <!--more-->
 
-The Filter node is part of the core nodes in Node-RED, meaning they're installed
+The Filter node is part of the core nodes in Node-RED, meaning it is installed
 by default.
 
 ### Deadband Mode
