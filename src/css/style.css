@@ -562,6 +562,28 @@ h4:hover .header-anchor {
 .features-card{
     @apply flex flex-wrap flex-col justify-between h-full bg-gray-50 rounded-3xl px-5 pb-5;
 }
+
+.feature-button {
+    background-color: none;
+    color: theme(colors.gray.800);
+    text-transform: uppercase;
+    display: inline-block;
+    padding: 8px 12px;
+    font-weight: 600;
+}
+
+.feature-button.active {
+    background-color: theme(colors.blue.800);
+    color: white;
+}
+
+.feature {
+    display: none;
+  }
+
+  .feature.active {
+    display: block;
+  }
 /*
     Footer
 */
