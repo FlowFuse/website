@@ -31,7 +31,7 @@ through email, or through Slack. For a full explanation, please [read their docs
 Brex can also be used to create vendor cards that allow for reoccurring payment for a monthly subscription with a vendor.
 Contact the peopleops manager if you require a vendor card.
 
-### "Oops! Misused Your Brex Card for Personal Expenses? Here's How to Handle the Situation Like a Pro
+### Oops! Misused Your Brex Card for Personal Expenses? Here's How to Handle the Situation Like a Pro
 
 If you realize that you have used your Brex card for personal purposes by mistake, it is crucial to promptly notify the People Ops Manager. The People Ops Manager is responsible for overseeing employee-related matters, including expenses and reimbursements. They will be able to assist you in addressing the situation appropriately. Contacting the People Ops Manager as soon as possible ensures that they are made aware of the mistake and can guide you on the necessary steps to rectify it, such as initiating reimbursement or repayment processes.
 
