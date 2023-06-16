@@ -21,10 +21,6 @@ The original Node-RED Dashboard is based on Angular v1, which is no longer maint
 
 The successor to the Node-RED Dashboard will be a completely new project, published as a separate package. This new project will take the reins from the old dashboard and guide us into the future. However, the Node-RED community can rest assured that the project will stay under the Apache 2.0 licence. This ensures that the core principles of open-source and community-driven development will remain intact.
 
-In line with our open core approach, we will provide vendors the opportunity to build premium features around the core. This allows businesses to customize and enhance their experience with the new dashboard, while still maintaining the integrity of the open-source project.
-
-At FlowForge, we are not just creating a new dashboard, but also adding an Enterprise Extension with additional functionalities. This extension will provide features and capabilities geared towards the needs of larger organizations and enterprises.
-
 ## Community Involvement and Open Source Contribution
 
 We believe in the power of the community, and we want your feedback. If there are features you'd like to see or improvements you think can be made, we invite you to open a [Github issue](https://github.com/flowforge/flowforge-nr-dashboard/issues/new/choose). Your insights and suggestions will be invaluable in shaping the future of this project. Contributions from the community are not just welcome, but highly encouraged. We believe that the strength of a project is proportional to the strength of its community.
