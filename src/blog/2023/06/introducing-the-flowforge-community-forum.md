@@ -1,7 +1,7 @@
 ---
 title: Introducing the FlowForge Community Forum
 subtitle: A Community Forum for support, inspiration, and knowledge sharing
-description: 
+description: A Community Forum for support, inspiration, and knowledge sharing
 date: 2023-06-12 12:00:00
 authors: ["zeger-jan-van-de-weg"]
 tags:
