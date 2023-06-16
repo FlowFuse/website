@@ -13,7 +13,7 @@
       <div class="flex flex-col md:flex-row justify-center items-center">
         {% if f.imageFolder === './images/pictograms/' %}
         <div class="flex justify-center items-center w-[50%] md:w-[27%]">
-          <div class="mb-6 mt-3 md:mb-0 md:mt-0 md:mr-6 w-full">
+          <div class="mb-10 mt-4 md:mb-0 md:mt-0 md:mr-6 max-w-[250px]">
             {% set imageSrc = [f.imageFolder, f.imageFile] | join %}
             {% set imageDescription = ["Image depicting", f.imageAlt] | join %}
             {% image imageSrc, imageDescription, [250] %}
@@ -40,7 +40,7 @@
         </div>
         {% else %}
         <div class="flex justify-center items-center md:w-[40%]">
-          <div class="md:mb-0 md:mt-0">
+          <div class="mb-6 mt-4 md:mb-0 md:mt-0 max-w-[360px]">
             {% set imageSrc = [f.imageFolder, f.imageFile] | join %}
             {% set imageDescription = ["Image depicting", f.imageAlt] | join %}
             {% image imageSrc, imageDescription, [360] %}
