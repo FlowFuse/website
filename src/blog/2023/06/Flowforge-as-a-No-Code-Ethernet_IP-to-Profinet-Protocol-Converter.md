@@ -159,7 +159,7 @@ Populate the connection properties to match your hardware. The cycle time is upd
 
 On the `Variables` tab, some special formatting is required to point to the absolute reference of the tag DB location in the S7 PLC.
 
-For information on how to format S7 absolute tag references in a way the `s7 endpoint` node is expecting, refer to the node documentation for further information.
+For information on how to format S7 absolute tag references in a way the `s7 endpoint` node is expecting, refer to the [node documentation](https://flows.nodered.org/node/node-red-contrib-s7) for further information.
 
 [https://flows.nodered.org/node/node-red-contrib-s7](https://flows.nodered.org/node/node-red-contrib-s7)
 
