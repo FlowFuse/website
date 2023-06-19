@@ -18,7 +18,7 @@ In this article, we present a mock scenario where FlowForge is used to enable an
 
 # Premise
 
-![1](./images/ethip-to-profinet/e-to-p-1.png)
+![Mock production facility](./images/ethip-to-profinet/e-to-p-1.png "FlowForge Mock production facility")
 
 Figure 1 above shows the layout of a mock production facility. Inside our facility, operations suggested adding stacklights as an extra visual aid for operators to get a quick status of its 4 conveyor lines, avoiding the need to constantly monitor the HMI/SCADA displays.  
 Engineering has suggested adding a siemens S7 1200 PLC with an IO link connection to 4 stacklights, with each line PLC sending basic status information to the stacklight PLC to control the stacklight outputs.  
