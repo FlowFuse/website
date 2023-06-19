@@ -12,7 +12,7 @@ tags:
 
 
 Frequently in industrial automation, there's a need for two devices that use different protocols to communicate with each other, requiring protocol conversion.  
-In this article, we present a mock scenario where flowforge is used to enable an Allen Bradley PLC, which uses ethernet/IP, to communicate with a Siemens PLC, which uses Profinet, using a no-code solution. This example is geared toward beginners and assumes that the end-user knows how to use PLCs, but may be using flowforge/node-red for the first time.
+In this article, we present a mock scenario where FlowForge is used to enable an Allen Bradley PLC, which uses ethernet/IP, to communicate with a Siemens PLC, which uses Profinet, using a no-code solution. This example is geared toward beginners and assumes that the end-user knows how to use PLCs, but may be using FlowForge or Node-RED for the first time.
 
 <!--more-->
 
