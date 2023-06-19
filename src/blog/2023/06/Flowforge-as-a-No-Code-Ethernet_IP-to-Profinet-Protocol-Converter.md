@@ -34,8 +34,6 @@ In addition to our two PLCs, we’ll need access to FlowForge software. You can 
 
 In this example, we will be using a self-hosted FlowForge instance running in [Docker](https://flowforge.com/docs/install/docker/).
 
-[https://github.com/flowforge/flowforge](https://github.com/flowforge/flowforge)
-
 ## Data Treatment on Ethenet/IP PLC
 
 In our Allen Bradley line 4 PLC, we will send some arbitrary tags of various datatypes to the stacklight PLC for illustrative purposes, described in table 1 below -
