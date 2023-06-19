@@ -189,7 +189,7 @@ Depending on how noisy the REAL data is, which is common with unfiltered 4-20mA 
 
 ![23](./images/ethip-to-profinet/e-to-p-23.png)
 
-In the example above, we arbitrarily applied a 3% deadband to the `Robot_Position` value, which means that the value must change by greater than or equal to 3% compared to the last input value, or else the data will be discarded before being sent to the stacklight PLC.
+In the example above, we arbitrarily applied a 3% [deadband](https://flowforge.com/blog/2023/06/node-explained-filter/#deadband-mode) to the `Robot_Position` value, which means that the value must change by greater than or equal to 3% compared to the last input value, or else the data will be discarded before being sent to the stacklight PLC.
 
 You can adjust the deadband to find the right balance for your particular application.
 
