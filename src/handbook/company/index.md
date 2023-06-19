@@ -10,6 +10,7 @@ continuous, collaborative, and secure manner.
 
  - [Board meetings](./board.md)
  - [Communication](./communication.md)
+ - [Decisions](./decisions.md)
  - [Principles](./principles.md)
  - [Remote work](./remote.md)
  - [Security](./security.md)
