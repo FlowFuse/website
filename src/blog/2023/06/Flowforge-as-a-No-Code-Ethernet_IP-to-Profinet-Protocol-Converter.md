@@ -2,7 +2,7 @@
 title: "Flowforge as a No-Code Ethernet/IP to Profinet Protocol Converter"
 subtitle: Beginner tutorial for using Node-RED as free industrial protocol converter
 description: step-by-step guide for using flowforge as an industrial protocol converter
-date: 2023-06-19
+date: 2023-06-20
 authors: ["richard-meyer"]
 image:
 tags:
