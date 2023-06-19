@@ -20,7 +20,7 @@ In this article, we present a mock scenario where FlowForge is used to enable an
 
 ![Mock production facility](./images/ethip-to-profinet/e-to-p-1.png "FlowForge Mock production facility")
 
-Figure 1 above shows the layout of a mock production facility. Inside our facility, operations suggested adding stacklights as an extra visual aid for operators to get a quick status of its 4 conveyor lines, avoiding the need to constantly monitor the HMI/SCADA displays.  
+The figure above shows the layout of a mock production facility. Inside this facility, operations suggested adding stack lights as an extra visual aid for operators to get a quick status of its 4 conveyor lines, avoiding the need to constantly monitor the HMI/SCADA displays.  
 Engineering has suggested adding a siemens S7 1200 PLC with an IO link connection to 4 stacklights, with each line PLC sending basic status information to the stacklight PLC to control the stacklight outputs.  
 Line 1-3 PLCs are Siemens-based, and can communicate with the stacklight PLC natively over Profinet. But line 4 is an Allen Bradley PLC that uses ethernet/IP, and can't communicate with the stacklight PLC without some form of protocol conversion.  
 Traditionally, we'd use protocol gateway hardware, like anybus or red lion, to convert ethernet/IP to profinet.  
