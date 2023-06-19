@@ -1,7 +1,18 @@
+---
+title: "Flowforge as a No-Code Ethernet/IP to Profinet Protocol Converter"
+subtitle: Beginner tutorial for using node-red as free industrial protocol converter
+description: step-by-step guide for using flowforge as an industrial protocol converter
+date: 2023-06-19
+authors: ["richard-meyer"]
+image:
+tags:
+  - posts
+  - how-to
+---
+
+
 Frequently in industrial automation, there's a need for two devices that use different protocols to communicate with each other, requiring protocol conversion.  
 In this article, we present a mock scenario where flowforge is used to enable an Allen Bradley PLC, which uses ethernet/IP, to communicate with a Siemens PLC, which uses Profinet, using a no-code solution. This example is geared toward beginners and assumes that the end-user knows PLCs, but may be using flowforge/node-red for the first time.
-
-/\*<!\[CDATA\[\*/ div.rbtoc1687194926043 {padding: 0px;} div.rbtoc1687194926043 ul {list-style: disc;margin-left: 0px;} div.rbtoc1687194926043 li {margin-left: 0px;padding-left: 0px;} /\*\]\]>\*/
 
 *   [Premise](#FlowforgeasaNo-CodeEthernet/IPtoProfinetProtocolConverter-Premise)
 *   [Pre-Requisites and Set Up](#FlowforgeasaNo-CodeEthernet/IPtoProfinetProtocolConverter-Pre-RequisitesandSetUp)
