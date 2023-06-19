@@ -30,7 +30,7 @@ But for this application, we will instead use FlowForge, a pure software-based a
 
 ## Flowforge
 
-In addition to our two PLCs, we’ll need access to flowforge software. You can either self-host, or have flowforge manage your flowforge instance.
+In addition to our two PLCs, we’ll need access to FlowForge software. You can either self-host, on-premise or in the cloud. Or use the managed service [FlowForge Cloud](https://app.flowforge.com).
 
 In this example, we will be using a self-hosted flowforge instance running in a docker container.
 
