@@ -16,18 +16,6 @@ In this article, we present a mock scenario where flowforge is used to enable an
 
 <!--more-->
 
-*   [Premise](#FlowforgeasaNo-CodeEthernet/IPtoProfinetProtocolConverter-Premise)
-*   [Pre-Requisites and Set Up](#FlowforgeasaNo-CodeEthernet/IPtoProfinetProtocolConverter-Pre-RequisitesandSetUp)
-    *   [Flowforge](#FlowforgeasaNo-CodeEthernet/IPtoProfinetProtocolConverter-Flowforge)
-    *   [Data Treatment on Ethenet/IP PLC](#FlowforgeasaNo-CodeEthernet/IPtoProfinetProtocolConverter-DataTreatmentonEthenet/IPPLC)
-    *   [Data Treatment on Profinet PLC](#FlowforgeasaNo-CodeEthernet/IPtoProfinetProtocolConverter-DataTreatmentonProfinetPLC)
-*   [Create The Flow](#FlowforgeasaNo-CodeEthernet/IPtoProfinetProtocolConverter-CreateTheFlow)
-    *   [Install Custom Nodes](#FlowforgeasaNo-CodeEthernet/IPtoProfinetProtocolConverter-InstallCustomNodes)
-    *   [Set Up Ethernet/IP Data](#FlowforgeasaNo-CodeEthernet/IPtoProfinetProtocolConverter-SetUpEthernet/IPData)
-    *   [Set Up Profinet Data](#FlowforgeasaNo-CodeEthernet/IPtoProfinetProtocolConverter-SetUpProfinetData)
-*   [Test the Conversion](#FlowforgeasaNo-CodeEthernet/IPtoProfinetProtocolConverter-TesttheConversion)
-    *   [Add Filter to REAL data](#FlowforgeasaNo-CodeEthernet/IPtoProfinetProtocolConverter-AddFiltertoREALdata)
-
 # Premise
 
 ![1](./images/ethip-to-profinet/e-to-p-1.png)
