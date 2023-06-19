@@ -185,7 +185,7 @@ We can stop here, but we can improve this flow by adding a `filter` node on our 
 
 ## Add Filter to REAL data
 
-Depending on how noisy the REAL data is (common with unfiltered 4-20mA field transmitters), and how much granularity you need to capture, it is good practice to add a filter on REAL data to reduce fieldbus traffic coming out of our soft protocol converter.
+Depending on how noisy the REAL data is, which is common with unfiltered 4-20mA field transmitters, and how much granularity you need to capture, it is good practice to add a filter on REAL data to reduce FieldBus traffic coming out of our soft protocol converter.
 
 ![23](./images/ethip-to-profinet/e-to-p-23.png)
 
