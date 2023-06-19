@@ -24,7 +24,7 @@ The figure above shows the layout of a mock production facility. Inside this fac
 Engineering has suggested adding a siemens S7 1200 PLC with an IO link connection to 4 stacklights, with each line PLC sending basic status information to the stacklight PLC to control the stack light outputs.  
 Line 1-3 PLCs are Siemens-based, and can communicate with the stacklight PLC natively over Profinet. But line 4 is an Allen Bradley PLC that uses ethernet/IP, and can't communicate with the stacklight PLC without some form of protocol conversion.  
 Traditionally, we'd use protocol gateway hardware, like Anybus or Red Lion, to convert ethernet/IP to Profinet.  
-But for this application, we will instead use flowforge, a pure software-based approach, to convert ethernet/IP to Profinet. Let's walk through the process.
+But for this application, we will instead use FlowForge, a pure software-based approach, to convert ethernet/IP to Profinet. Let's walk through the process.
 
 # Pre-Requisites and Set Up
 
