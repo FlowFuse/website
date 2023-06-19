@@ -25,7 +25,7 @@ The successor to the Node-RED Dashboard will be a completely new project, publis
 
 We believe in the power of the community, and we want your feedback. If there are features you'd like to see or improvements you think can be made, we invite you to open a [Github issue](https://github.com/flowforge/flowforge-nr-dashboard/issues/new/choose). Your insights and suggestions will be invaluable in shaping the future of this project. Contributions from the community are not just welcome, but highly encouraged. We believe that the strength of a project is proportional to the strength of its community.
 
-In our commitment to transparency and collaboration, we will be documenting all major decision-making processes and sharing the details here in our blog as they become available. By working closely with additional Node-RED key figures like Dave Conway Jones, and by making our development process as open and collaborative as possible, we aim to ensure that the successor to the Node-RED Dashboard lives up to the high standards set by the original, while also introducing innovative features and enhancements.
+In our commitment to transparency and collaboration, we will be documenting all major decision-making processes and sharing the details here in our blog as they become available. By working closely with additional Node-RED key figures like Dave Conway-Jones, and by making our development process as open and collaborative as possible, we aim to ensure that the successor to the Node-RED Dashboard lives up to the high standards set by the original, while also introducing innovative features and enhancements.
 
 ## Join the Team
 
