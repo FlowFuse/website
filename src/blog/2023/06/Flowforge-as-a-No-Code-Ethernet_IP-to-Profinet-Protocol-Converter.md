@@ -161,8 +161,6 @@ On the `Variables` tab, some special formatting is required to point to the abso
 
 For information on how to format S7 absolute tag references in a way the `s7 endpoint` node is expecting, refer to the [node documentation](https://flows.nodered.org/node/node-red-contrib-s7) for further information.
 
-[https://flows.nodered.org/node/node-red-contrib-s7](https://flows.nodered.org/node/node-red-contrib-s7)
-
 For reference, here is an example of how we set the tags in our stacklight PLC example and how it looks in our `s7 endpoint`.
 
 ![19](./images/ethip-to-profinet/e-to-p-19.png)
