@@ -1,7 +1,7 @@
 ---
 title: "FlowForge as a No-Code Ethernet/IP to Profinet Protocol Converter"
 subtitle: Beginner tutorial for using Node-RED as free industrial protocol converter
-description: step-by-step guide for using flowforge as an industrial protocol converter
+description: step-by-step guide for using FlowForge as an industrial protocol converter
 date: 2023-06-20
 authors: ["richard-meyer"]
 image:
@@ -12,7 +12,7 @@ tags:
 
 
 Frequently in industrial automation, there's a need for two devices that use different protocols to communicate with each other, requiring protocol conversion.  
-In this article, we present a mock scenario where FlowForge is used to enable an Allen Bradley PLC, which uses ethernet/IP, to communicate with a Siemens PLC, which uses Profinet, using a no-code solution. This example is geared toward beginners and assumes that the end-user knows how to use PLCs, but may be using FlowForge or Node-RED for the first time.
+In this tutorial, we present a mock scenario where FlowForge is used to enable an Allen Bradley PLC, which uses ethernet/IP, to communicate with a Siemens PLC, which uses Profinet, using a no-code solution. This example is geared toward beginners and assumes that the end-user knows how to use PLCs, but may be using FlowForge or Node-RED for the first time.
 
 <!--more-->
 
@@ -51,11 +51,11 @@ Table 1 - Line 4 Tags to be sent to Stacklight PLC
 
 We can send any atomic data type we want, but it must be globally (controller) scoped.
 
-![2](./images/ethip-to-profinet/e-to-p-2.png)
+![AB Controller Tags](./images/ethip-to-profinet/e-to-p-2.png)
 
 Each tag must also have external read/write access enabled.
 
-![3](./images/ethip-to-profinet/e-to-p-3.png)
+![AB Tag Properties](./images/ethip-to-profinet/e-to-p-3.png)
 
 ## Data Treatment on Profinet PLC
 
@@ -65,11 +65,11 @@ In the Siemens PLC, we have a DB for the data from the Line 4 PLC to be written 
     
 *   The tags must be writeable and accessible
     
-*   ![4](./images/ethip-to-profinet/e-to-p-4.png)
+*   ![Siemens Tag DB Properties](./images/ethip-to-profinet/e-to-p-4.png)
     
     “No protection” must be set in the CPU properties
     
-*   ![5](./images/ethip-to-profinet/e-to-p-5.png)
+*   ![Siemens CPU Properties](./images/ethip-to-profinet/e-to-p-5.png)
 
 # Create The Flow
 
@@ -81,32 +81,32 @@ First, we need to add two custom nodes that will give node-red the ability to re
 
 Click the hamburger icon → manage pallette
 
-![6](./images/ethip-to-profinet/e-to-p-6.png)
+![Flowforge Properties](./images/ethip-to-profinet/e-to-p-6.png)
 
 On the `install` tab, search for `s7` and install the `node-red-contrib-s7` node.
 
-![7](./images/ethip-to-profinet/e-to-p-7.png)
+![Install S7 Profinet Node](./images/ethip-to-profinet/e-to-p-7.png)
 
 Next, search for `ethernet` and install the `node-red-contrib-cip-ethernet-ip` node.
 
-![8](./images/ethip-to-profinet/e-to-p-8.png)
+![Install EthernetIP Node](./images/ethip-to-profinet/e-to-p-8.png)
 Go to the `nodes` tab and confirm both custom nodes have been properly installed.
 
-![9](./images/ethip-to-profinet/e-to-p-9.png)
+![Nodes Installed List](./images/ethip-to-profinet/e-to-p-9.png)
 
 ## Set Up Ethernet/IP Data
 
 Let’s start by dragging a `eth-ip in` node onto the pallette. Then add a new endpoint, which will point to our Line4 PLC.
 
-![10](./images/ethip-to-profinet/e-to-p-10.png)
+![eth-ip Setup](./images/ethip-to-profinet/e-to-p-10.png)
 
 In the endpoint `connection` properties, the connection information must match the PLC, so set the IP address and CPU slot number appropriately. Also, the default cycle time is 500ms. Depending on your application, polling the CPU at 500ms may be appropriate. But being that this is a simple stacklight, 500ms is unnecessarily fast. So we will change it to 1000ms, which is a more appropriate polling rate for this type of application.
 
-![11](./images/ethip-to-profinet/e-to-p-11.png)
+![eth-ip Endpoint Connection](./images/ethip-to-profinet/e-to-p-11.png)
 
 On the `Tags` tab, populate the tag information to match our Allen Bradley PLC. Then select `Update` to complete configuration of the `eth-ip endpoint`.
 
-![12](./images/ethip-to-profinet/e-to-p-12.png)
+![eth-ip Endpoint Tags](./images/ethip-to-profinet/e-to-p-12.png)
 
 Now that we have our endpoint, let’s finish configuring the `eth-ip in` node.
 
@@ -117,7 +117,7 @@ Now that we have our endpoint, let’s finish configuring the `eth-ip in` node.
 3.  give the node a descriptive name
     
 
-![13](./images/ethip-to-profinet/e-to-p-13.png)
+![eth-ip in Node Config](./images/ethip-to-profinet/e-to-p-13.png)
 
 Now let’s set up a quick test to confirm our PLC connection is valid by adding a `debug` node to the `eth-ip in` node. Then hit `deploy`.
 
@@ -126,11 +126,11 @@ Now let’s set up a quick test to confirm our PLC connection is valid by adding
 
 The output of the debug console did not report any errors so communication appears to be okay.
 
-![14](./images/ethip-to-profinet/e-to-p-14.png)
+![eth-ip in Debug](./images/ethip-to-profinet/e-to-p-14.png)
 
 But just to confirm, let’s toggle the value and see if comes through.
 
-![15](./images/ethip-to-profinet/e-to-p-15.png)
+![eth-ip in Debug Toggle](./images/ethip-to-profinet/e-to-p-15.png)
 
 So by toggling the value and see the result, here we confirmed 2 things:
 
@@ -145,17 +145,17 @@ Now we can remove the debug node and add the additional `eth-ip in` nodes to rec
 
 Here’s how the the flow should look at this point.
 
-![16](./images/ethip-to-profinet/e-to-p-16.png)
+![Line 4 PLC Nodes](./images/ethip-to-profinet/e-to-p-16.png)
 
 ## Set Up Profinet Data
 
 Now we’ll set up the S7 profinet endpoint, using an `s7 out` node.
 
-![17](./images/ethip-to-profinet/e-to-p-17.png)
+![s7 out Node on Pallette](./images/ethip-to-profinet/e-to-p-17.png)
 
 Populate the connection properties to match your hardware. The cycle time is updated to 1000ms to match the cycle time of our `eth-ip in` nodes. You can adjust this value to match your intended application.
 
-![18](./images/ethip-to-profinet/e-to-p-18.png)
+![S7 endpoint Connection](./images/ethip-to-profinet/e-to-p-18.png)
 
 On the `Variables` tab, some special formatting is required to point to the absolute reference of the tag DB location in the S7 PLC.
 
@@ -163,21 +163,21 @@ For information on how to format S7 absolute tag references in a way the `s7 end
 
 For reference, here is an example of how we set the tags in our stacklight PLC example and how it looks in our `s7 endpoint`.
 
-![19](./images/ethip-to-profinet/e-to-p-19.png)
+![s7 endpoint Variables](./images/ethip-to-profinet/e-to-p-19.png)
 
 Once the tags are populated we can select our configured endpoint from the dropdown list, point to our first variable, `Conveyor_RTS`, and give the node a name.
 
-![20](./images/ethip-to-profinet/e-to-p-20.png)
+![S7 out Config](./images/ethip-to-profinet/e-to-p-20.png)
 
 Repeat this process for the remaining tags.
 
-![21](./images/ethip-to-profinet/e-to-p-21.png)
+![Stacklight PLC Nodes](./images/ethip-to-profinet/e-to-p-21.png)
 
 # Test the Conversion
 
 The only thing remaining is to simply wire the nodes together, and confirm the values pass through.
 
-![22](./images/ethip-to-profinet/e-to-p-22.png)
+![Complete Flow with Live Data](./images/ethip-to-profinet/e-to-p-22.png)
 
 Manipulate the incoming values and confirm the data passes through as expected. Because of the report by exception nature of the `eth-ip in` node, tag changes should be near instantaneous on the receiving PLC.
 
@@ -187,7 +187,7 @@ We can stop here, but we can improve this flow by adding a `filter` node on our 
 
 Depending on how noisy the REAL data is, which is common with unfiltered 4-20mA field transmitters, and how much granularity you need to capture, it is good practice to add a filter on REAL data to reduce FieldBus traffic coming out of our soft protocol converter.
 
-![23](./images/ethip-to-profinet/e-to-p-23.png)
+![Filter node Configuration](./images/ethip-to-profinet/e-to-p-23.png)
 
 In the example above, we arbitrarily applied a 3% [deadband](https://flowforge.com/blog/2023/06/node-explained-filter/#deadband-mode) to the `Robot_Position` value, which means that the value must change by greater than or equal to 3% compared to the last input value, or else the data will be discarded before being sent to the stacklight PLC.
 
@@ -195,10 +195,24 @@ You can adjust the deadband to find the right balance for your particular applic
 
 We can see the effect the deadband filter had by adding debug nodes before and after the filter.
 
-![24](./images/ethip-to-profinet/e-to-p-24.png)
+![Filter Node Debug](./images/ethip-to-profinet/e-to-p-24.png)
 
 As shown above, when `Robot_Position` changed from 15.6 to 15.6999..., the value was captured on the input of the filter, but was discarded on the output.
 
 When the `Robot_Position` went from 15.6999 to 18, the filter allowed it to pass as it exceeded the deadband limit we had set.
 
 Use filters to optimize your fieldbus converter network performance, especially if dealing with noisy signals or large quantities of REAL datatypes.
+
+# Conclusion
+
+In this tutorial, we demonstrated how to use FlowForge as a free Ethernet/IP to Profinet protocol converter using a simple node-code approach.  We showed how to configure PLC tags to be sent remotely using Ethernet/IP, how to configure PLC tags to be received remotely using Profinet, and how to create the flow to use FlowForge to seamlessly convert incoming PLC data between the two protocols using `node-red-contrib-cip-ethernet-ip` and `node-red-contrib-s7` custom nodes.  We also took things one step further and added a `filter` node to optimize FieldBus network traffic by putting a deadband on REAL data being sent to the receiving PLC.
+
+The end result is a simple to set up, free and performant industrial protocol converter that requires minimal PLC configuration, which allows this application to be applied in non-mission critical production systems with minimal, if any downtime.  Additionally, the protocol traffic can be visually observed in real-time for easy trouble-shooting and fault analysis by simply accessing the FlowForge UI. 
+
+In later tutorials, we can show ways this simple flow can be extended to add additional capabilities not normally available in traditional off-the-shelf protocol gateways. If you found this tutorial helpful, or have any questions or comments, please leave us a comment and let us know your thoughts.
+
+JSON source code for the flow used in this tutorial is provided below - 
+```json
+[{"id":"ad7b17411c8e83aa","type":"tab","label":"Line 4 to Stacklight PLC","disabled":false,"info":"","env":[]},{"id":"c97a4c9bd1981757","type":"comment","z":"ad7b17411c8e83aa","name":"AB EIP/CIP - Line 4 PLC","info":"","x":190,"y":140,"wires":[]},{"id":"2cc5227ef6a90814","type":"eth-ip in","z":"ad7b17411c8e83aa","endpoint":"4ab2910b66e16220","mode":"single","variable":"Conveyor_RTS","program":"","name":"Read Conveyor_RTS","x":200,"y":200,"wires":[["fe18ef80f9e18c13"]]},{"id":"9308dcbda17274c7","type":"comment","z":"ad7b17411c8e83aa","name":"S7 Profinet - Stacklight PLC","info":"","x":620,"y":140,"wires":[]},{"id":"fe18ef80f9e18c13","type":"s7 out","z":"ad7b17411c8e83aa","endpoint":"a1bec25858c6f3ef","variable":"Conveyor_RTS","name":"Write Conveyor_RTS","x":620,"y":200,"wires":[]},{"id":"94fe6b73efa1c56b","type":"eth-ip in","z":"ad7b17411c8e83aa","endpoint":"4ab2910b66e16220","mode":"single","variable":"Robot_RTS","program":"","name":"Read Robot_RTS","x":180,"y":280,"wires":[["7774d6ce188c288c"]]},{"id":"7e9564cd59e3d0a2","type":"eth-ip in","z":"ad7b17411c8e83aa","endpoint":"4ab2910b66e16220","mode":"single","variable":"Robot_Position","program":"","name":"Read Robot_Position","x":200,"y":360,"wires":[["832807bfdc4b76f0"]]},{"id":"c0f712b9e355f1f8","type":"eth-ip in","z":"ad7b17411c8e83aa","endpoint":"4ab2910b66e16220","mode":"single","variable":"Conveyor_Running","program":"","name":"Read Conveyor_Running","x":210,"y":440,"wires":[["fbf1b3e38897a9c7"]]},{"id":"db77621e418f1222","type":"eth-ip in","z":"ad7b17411c8e83aa","endpoint":"4ab2910b66e16220","mode":"single","variable":"Line4_State","program":"","name":"Read Line4_State","x":190,"y":520,"wires":[["cdeffd9e52cc4384"]]},{"id":"848af9b76f969dd2","type":"eth-ip in","z":"ad7b17411c8e83aa","endpoint":"4ab2910b66e16220","mode":"single","variable":"Line4_Fault","program":"","name":"Read Line4_Fault","x":190,"y":600,"wires":[["0c595b0ac2550593"]]},{"id":"7774d6ce188c288c","type":"s7 out","z":"ad7b17411c8e83aa","endpoint":"a1bec25858c6f3ef","variable":"Robot_RTS","name":"Write Robot_RTS","x":610,"y":280,"wires":[]},{"id":"f1572463c50bb4cb","type":"s7 out","z":"ad7b17411c8e83aa","endpoint":"a1bec25858c6f3ef","variable":"Robot_Position","name":"Write Robot_Position","x":620,"y":360,"wires":[]},{"id":"fbf1b3e38897a9c7","type":"s7 out","z":"ad7b17411c8e83aa","endpoint":"a1bec25858c6f3ef","variable":"Conveyor_Running","name":"Write Conveyor_Running","x":630,"y":440,"wires":[]},{"id":"cdeffd9e52cc4384","type":"s7 out","z":"ad7b17411c8e83aa","endpoint":"a1bec25858c6f3ef","variable":"Line4_State","name":"Write Line4_State","x":610,"y":520,"wires":[]},{"id":"0c595b0ac2550593","type":"s7 out","z":"ad7b17411c8e83aa","endpoint":"a1bec25858c6f3ef","variable":"Line4_Fault","name":"Write Line4_Fault","x":610,"y":600,"wires":[]},{"id":"832807bfdc4b76f0","type":"rbe","z":"ad7b17411c8e83aa","name":"","func":"deadbandEq","gap":"3%","start":"","inout":"in","septopics":true,"property":"payload","topi":"topic","x":420,"y":360,"wires":[["f1572463c50bb4cb"]]},{"id":"4ab2910b66e16220","type":"eth-ip endpoint","address":"192.168.0.5","slot":"0","cycletime":"1000","name":"Line4","vartable":{"":{"Conveyor_RTS":{"type":"BOOL"},"Robot_RTS":{"type":"BOOL"},"Robot_Position":{"type":"REAL"},"Conveyor_Running":{"type":"BOOL"},"Line4_State":{"type":"DINT"},"Line4_Fault":{"type":"BOOL"}}}},{"id":"a1bec25858c6f3ef","type":"s7 endpoint","transport":"iso-on-tcp","address":"192.168.0.10","port":"102","rack":"0","slot":"1","localtsaphi":"01","localtsaplo":"00","remotetsaphi":"01","remotetsaplo":"00","connmode":"rack-slot","adapter":"","busaddr":"2","cycletime":"1000","timeout":"3000","name":"Stacklight PLC","vartable":[{"addr":"DB1,X0.0","name":"Conveyor_RTS"},{"addr":"DB1,X0.1","name":"Robot_RTS"},{"addr":"DB1,R2","name":"Robot_Position"},{"addr":"DB1,X6.0","name":"Conveyor_Running"},{"addr":"DB1,DI8","name":"Line4_State"},{"addr":"DB1,X12.0","name":"Line4_Fault"}]}]
+```
+
