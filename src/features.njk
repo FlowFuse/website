@@ -1,76 +1,175 @@
 ---
-title: Features
-layout: layouts/page.njk
-description: <p>From device management to running Node-RED at scale, FlowForge reduces operational overheads for running your integration infrastructure.</p><p>FlowForge is an open-source platform for managing IT and OT integration at scale.</p></p>
-heroimg: "./images/features.png"
-heroWide: true
-sitemapPriority: 0.9
+layout: page
+nohero: true
 meta:
-    description: Explore the features available in the FlowForge platform.
+    title: FlowForge Features
+description:
+    FlowForge provides the features companies require to reliably deliver Node-RED applications to devices and cloud in a collaborative, secure manner.
+sitemapPriority: 0.8
 ---
 
-<div class="-mt-24 md:-mt-32">
-    {% include "components/divider-flow--default.njk" %}
-</div>
-
-<div class="product w-full ff-bg-light px-6 pt-20 pb-20 md:px-0 md:pt-32 md:pb-40">
-    <div class="container px-3 md:px-12 md:max-w-screen-lg m-auto text-center">
-        <div class="mt-9">
-            <h1 class="mb-0">Enterprise Ready Node-RED</h1>
-            <p class="text-center">If you're interested in what we are working on, or what may come soon,<br>check out our <a href="https://github.com/orgs/flowforge/projects/1">Development Board</a> and our <a href="https://github.com/orgs/flowforge/projects/5">Product Roadmap.</a></p>
+<div class="nohero w-full ff-bg-light">
+    <!--Hero Content-->
+    <div class="features-bg w-full pt-12 pb-16 md:px-0 border-b-4 border-gray-100">
+        <div class="container m-auto max-w-screen-lg px-6 max-w-4xl">
+            <div class="text-center">
+                <h1 class="mt-0 md:px-12 m-auto">
+                    FlowForge Features
+                </h1>
+                <h3 class="mt-6 text-2xl font-light md:px-24">
+                    FlowForge provides the features companies require to reliably deliver Node-RED applications to devices and cloud in a collaborative, secure manner.
+                </h3>
+            </div>
+            {% include "feature_lists/main-features.njk" %}
         </div>
-        <!-- Feature Tiles -->
-        <div class="feature-tiles mt-12">
-            {%- for f in features -%}
-            <div class="feature-tile">
-                <div class="feature-tile--title">
-                    <div class="flex-shrink-0">
-                        {% set imageSrc = ["./images/pictograms/", f.icon] | join %}
-                        {% set imageDescription = ["Icon depicting", description] | join %}
-                        {% image imageSrc, imageDescription, [64] %}
+    </div>
+
+    {% include "components/divider-flow--top-red--light.njk" %}
+
+    <div class="w-full ff-bg-light pt-8 px-0 pb-12">
+        <div class="container m-auto max-w-screen-lg prose">
+            <div class="flex px-6 flex-col flex-col-reverse md:flex-row gap-6 sm:gap-x-8 sm:gap-y-0 mb-16">
+                <div class="md:w-[480px]">
+                    <h3 class="flex items-center gap-4 text-center md:text-left">
+                        <div class="flex flex-col leading-9 text-3xl mb-4 red-gradient">
+                            Software Delivery Pipelines and Version History
+                        </div>
+                    </h3>
+                    <p class="mb-0">
+                        FlowForge allows software development teams to establish software delivery pipelines that are common for teams that have embraced DevOps practices. 
+                    </p>
+                    <ul>
+                        <li>DevOps pipelines can be set up to stage Node-RED instances that have different development stages, ex. Test, development and production.</li>
+                        <li>Snapshots of Node-RED instances can be taken to create a version history of the development work. Previous snapshot versions can be rolled back at any time.</li>
+                    </ul>
+                </div>                       
+                <div class="flex justify-center items-center w-full px-1 py-2 md:py-3 md:px-2.5 md:w-[461px] bg-contain bg-center bg-no-repeat" style="background-image: url('../images/features/features-video-bg.png');">
+                    <div class="flex justify-center items-center w-[90%] md:w-full">
+                        <lite-youtube videoid="Pbql22f3vqY" class="aspect-video bg-cover bg-top bg-no-repeat border-2 border-black rounded-md drop-shadow-xl" style="background-image: url('../images/features/features-pipelines.png'); width: 442px; aspect-ratio: 16 / 9; background-repeat: no-repeat;"></lite-youtube>
                     </div>
-                    <h4>{{ f.title }}</h4>
                 </div>
-                <div>{{ f.description | safe }}</div>
-            </div>
-            {%- endfor -%}
-        </div>
-    </div>
-</div>
-
-{% include "components/divider-flow--top-red--dark.njk" %}
-
-<div class="w-full ff-bg-dark px-6 pt-0 pb-32 md:pt-0 md:px-0">
-    <div class="container px-3 md:px-12 md:max-w-screen-lg m-auto text-center max-w-4xl">
-        <div class="m-auto mt-16 w-full text-center">
-            <h1>Benefits of FlowForge</h1>
-            <p class="font-light">Get started with <a href="https://app.flowforge.com/">FlowForge Cloud</a>, or <a href="/docs/install">install FlowForge for free</a> on your own infrastructure.</p>
-        </div>
-        <div class="mt-20 flex flex-wrap justify-center">
-            <div class="company-value">
-                {% image "./images/pictograms/time.png", "Graphic of a clock, depicting 'Time'.", [128] %}
-                <h5>One-Minute Setup</h5>
-            </div>
-            <div class="company-value">
-                {% image "./images/pictograms/security.png", "Graphic of a padlock, depicting 'Security'.", [128] %}
-                <h5>Enterprise Ready</h5>
-            </div>
-            <div class="company-value">
-                {% image "./images/pictograms/ticket.png", "Graphic of a ticket, depicting 'Ticket-Based Support'.", [128] %}
-                <h5>Ticket-Based Support</h5>
-            </div>
-            <div class="company-value">
-                {% image "./images/pictograms/community.png", "Graphic depicting 'Flexibility'.", [128] %}
-                <h5>Flexible Deployment</h5>
-            </div>
-            <div class="company-value">
-                {% image "./images/pictograms/node_catalog.png", "Graphic of nodes & wires, depicting 'Node-RED'.", [128] %}
-                <h5>Node-RED, Managed<br>For You</h5>
-            </div>
-            <div class="company-value">
-                {% image "./images/pictograms/browser.png", "Graphic of a globe, depicting FlowForge being full browser-based.", [128] %}
-                <h5>Full Browser-Based</h5>
             </div>
         </div>
     </div>
+
+    <div class="text-white">
+        {% include "components/dividers/light-grey-curve.svg" %}
+    </div>
+
+    <div class="w-full bg-white pt-8 md:pt-12 pb-12">
+        <div class="container m-auto max-w-screen-lg prose">
+            <div class="flex px-6 flex-col flex-col-reverse md:flex-row-reverse mb-16">
+                <div class="md:w-3/5">
+                    <h3 class="flex items-center text-center justify-center md:text-left md:justify-start">
+                        <div class="flex flex-col leading-9 text-3xl mb-4 red-gradient">
+                            Team Development
+                        </div>
+                    </h3>
+                    <p class="mb-0">
+                        Node-RED team development is made possible with FlowForge. Different development team members are able to share and collaborate on the same Node-RED instance. This makes for much easier collaboration between Node-RED developers. 
+                    </p>
+                    <ul>
+                        <li>Team membership and access control is controlled from a central administration console.</li>
+                        <li>Role based access control allows for restrictions on what team members can access and do while using the FlowForge platform.</li>
+                    </ul>
+                </div>                       
+                <div class="flex justify-center items-center md:w-2/5 md:p-5">
+                    <div class="md:w-[250px] -mt-2 -mb-8 md:mb-0 md:mt-0 max-w-[250px]">
+                        {% image "./images/pictograms/collaboration_red.png", "Graphics depicting a team.", [250] %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div>
+        {% include "components/dividers/light-white-curve.svg" %}
+    </div>
+
+    <div class="w-full ff-bg-light px-6 pt-8 md:pt-12 pb-12 sm:px-0">
+        <div class="container m-auto max-w-screen-lg prose">
+            <div class="flex px-6 flex-col flex-col-reverse md:flex-row mb-16">
+                <div class="md:w-3/5">
+                    <h3 class="flex items-center text-center justify-center md:text-left md:justify-start">
+                        <div class="flex flex-col leading-9 text-3xl mb-4 red-gradient">
+                            Security Built-in to your Node-RED instances
+                        </div>
+                    </h3>
+                    <p class="mb-0">
+                        FlowForge has built-in security for your Node-RED instances.  
+                    </p>
+                    <ul>
+                        <li>All Node-RED instances are access using TLS/SSL.</li>
+                        <li>Single Sign-on (SSO) allows for users to sign in to FlowForge using an existing SAML identity provider.</li>
+                        <li>Audit logs are generated.</li>
+                        <li>TLS/SSL.</li>
+                        <li>SSO.</li>
+                        <li>Audit logs keep track of all changes that occur to a Node-RED instance and which user was responsible for the change.</li>
+                    </ul>
+                </div>                       
+                <div class="flex justify-center items-center md:w-2/5 md:p-5">
+                    <div class="md:w-[250px] -mt-2 -mb-8 mt-4 md:mb-0 md:mt-0 max-w-[250px]">
+                        {% image "./images/pictograms/security_red.png", "Graphics depicting a lock.", [250] %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="text-white">
+        {% include "components/dividers/light-grey-curve.svg" %}
+    </div>
+    <div class="w-full bg-white sm:pt-12 md:pt-12 pb-16">
+        <div class="container m-auto max-w-screen-lg">
+            <h3 class="flex items-center text-center justify-center">
+                <div class="flex flex-col leading-9 text-3xl mb-4 red-gradient font-semibold">
+                    Adopt FlowForge Today
+                </div>
+            </h3>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-3 px-6 py-8 mb-10">
+                <div class="features-card">
+                    <div>
+                        <label class="flex items-center text-center justify-center font-medium text-2xl text-gray-800 mt-5">On Premise</label>
+                        <p>
+                            <div class="text-sm leading-6 mb-6 mt-6">
+                                Install FlowForge on your own hardware for increased deployment flexibility. You can use the open source version of FlowForge to install it on-premises and support the deployment yourselves. 
+                            </div>
+                        </p>
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <a class="ff-btn ff-btn--secondary-outlined uppercase align-baseline w-full" href="/docs/install"
+                            onclick="capture('cta-install', {'position': 'primary'})">Install now</a>
+                    </div>
+                </div>
+                <div class="features-card">
+                    <div>
+                        <label class="flex items-center text-center justify-center font-medium text-2xl text-gray-800 mt-5">FlowForge Cloud</label>
+                        <p>
+                            <div class="text-sm leading-6 mb-6 mt-6">
+                                Our managed hosted solution, maintained and supported by the FlowForge team. Experience flexibility, scalability, and expert assistance to drive your business forward.
+                            </div>
+                        </p>
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <a class="ff-btn ff-btn--primary uppercase align-baseline w-full" href="https://app.flowforge.com/account/create" onclick="capture('cta-join', {'position': 'primary'})">TRY FOR FREE</a>
+                    </div>
+                </div>
+                <div class="features-card">
+                    <div>
+                        <label class="flex items-center text-center justify-center font-medium text-2xl text-gray-800 mt-5">Contact Sales</label>
+                        <p>
+                            <div class="text-sm leading-6 mb-6 mt-6">
+                                Do you want to know what adopting FlowForge could mean for your company?
+                                Customers can purchase an enterprise license fo FlowForge to install on premise and obtain support from FlowForge. 
+                            </div>
+                        </p>
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <a class="ff-btn ff-btn--secondary-outlined uppercase align-baseline w-full" href='/book-demo'>Book a demo</a> 
+                    </div>
+                </div>                       
+            </div>
+        </div>
+    </div>
+
 </div>
+
