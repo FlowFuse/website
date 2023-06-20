@@ -1,7 +1,7 @@
 ---
 title: The Next Step in Data Visualization - Announcing the Successor to the Node-RED Dashboard
 subtitle: FlowForge's Journey Towards a New Node-RED Dashboard
-description: This article unveils FlowForge's plans to build the official successor to the Node-RED Dashboard.
+description: This article unveils FlowForge's plans to build the successor to the Node-RED Dashboard.
 date: 2023-06-19
 authors: ["joe-pavitt", "marian-demme"]
 image: /blog/2023/06/images/node-red-dashboard.png
