@@ -17,7 +17,9 @@ in this area, which includes prompt reporting and resolution of any issues ident
  - [Secure Development Policy](./secure-development.md)
  - [Operations Security Policy](./operations-security.md)
  - [Cryptography Policy](./cryptography.md)
-
+ - [Human Resources Policy](./human-resources.md)
+ - [Risk Management Policy](./risk-management.md)
+ 
 ## Credentials
 
 ### Password vault
