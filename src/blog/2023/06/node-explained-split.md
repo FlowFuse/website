@@ -10,12 +10,12 @@ tags:
   - how-to
 ---
 
-Granular data processing is important in IoT use-cases as multiple tags for
-example might be send in one request to a server. Or when a SQL query results in
-many results that need individual processing. In Node-RED flows are message
-based, but a message can be split in multiple messages if needed with the Split
+Granular data processing is important in IoT use-cases as multiple tags, for
+example, might be sent in one request to a server. Or, when a SQL query results in
+many results that need individual processing. In Node-RED, flows are message
+based, but a message can be split in multiple messages if needed using the Split
 node. The split node is one of the core nodes in Node-RED, thus installed by
-default. It's a fundamental building block for powerfull automations.
+default. It's a fundamental building block for powerful automations.
 
 <!--more-->
 
@@ -29,7 +29,7 @@ message for each item.
 
 The easiest way split a message into multiple is when the structure of the input
 message is naturally split into multiple. Arrays are an example of such structures.
-Creating an output message for each element is the default mode by Split. When
+Creating an output message for each element is the default mode for Split. When
 inputting one array with `1, 2, 3, 4` as contents, 4 messages will be printed in
 order:
 
@@ -41,12 +41,10 @@ order:
 
 #### Regrouping elements
 
-When a large number of elements need regrouping, the split node can also group
-on a size more manageble. For example, some API's will only let you update 20
-records at the time. If you have more input, splitting is sub-groups will give
-you messages with at most a certain amount of messages. This is done by setting
-`Fixed lenght of` to the maximum size of the sub-group. Say the payload to split
-is `[1, 2, 3, 4, 5]` with a `Fixed lenght of` set to 2. This will send 3
+When a large number of elements need regrouping, the split node can be used to chunk the data. For example, some API's will only let you update 20
+records at the time. If you have more input, splitting its sub-groups will divide it into multiple messages. This is done by setting
+`Fixed length of` to the maximum size of the sub-group. Say the payload to split
+is `[1, 2, 3, 4, 5]` with a `Fixed length of` set to 2. This will send 3
 messages: `[1, 2]`, `[3, 4]`, and `[5]`.
 
 ![Regroup an Array with Split](./images/split-node-regroup.png)
@@ -58,17 +56,17 @@ messages: `[1, 2]`, `[3, 4]`, and `[5]`.
 ### Splitting Strings
 
 Strings are able to be split in multiple ways, most commonly by line. Though it's
-also possible to split them by a fixed lenght which is useful when data is structured
+also possible to split them by a fixed length, which is useful when data is structured
 predicatably.
 
 Let's start with splitting by line, as this is the default way the node operates.
 Keep the `Split using` set to `\n`, which is the line ending character in Unix
-based systems. In the next example we have a list of 3 cities in Europe, which
+based systems. In our next example, we have a list of 3 cities in Europe, which
 we need individually. 
 
 ![Splitting text by line](./images/split-node-by-line.png "Node-RED flow to split text by line")
 
-Note we use the template node here simply as the "Inject" node does not allow
+Note we use the template node here simply, as the "Inject" node does not allow you
 to create multi-line strings.
 
 ```json
@@ -78,7 +76,7 @@ to create multi-line strings.
 #### Splitting by word
 
 When you've split something by line, you might need to split by word. Simply
-putting in a space in the `Split using` setting. That doesn't show a visible character
+putting a space in the `Split using` setting. That doesn't show a visible character
 in the form, as opposed to the line ending character.
 
 ![Node-RED split by word](./images/split-node-by-word.png "Split text by space in Node-RED")
@@ -89,9 +87,9 @@ in the form, as opposed to the line ending character.
 
 ### Splitting Objects
 
-The remaining data structure of the Node-RED split node are "Objects". Which is
+The remaining data structure of the Node-RED split node is "Objects", which is
 the catch-all category. Node-RED uses hashes, key-value pairs of property names
-and values. JSON is example of these. In the example below we'll split the mapping
+and values. JSON is example of this. In the example below, we'll split the mapping
 of the words "one" and "two" versus the number values.
 
 ![Split an object](./images/split-node-hash.png "Split arbitrary objects")
