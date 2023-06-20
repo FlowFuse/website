@@ -4,7 +4,7 @@ subtitle: Beginner tutorial for using Node-RED as free industrial protocol conve
 description: step-by-step guide for using FlowForge as an industrial protocol converter
 date: 2023-06-20
 authors: ["richard-meyer"]
-image:
+image: blog/2023/06/images/Flowforge-as-a-No-Code-Ethernet_IP-to-Profinet-Protocol-Converter.png
 tags:
   - posts
   - how-to
