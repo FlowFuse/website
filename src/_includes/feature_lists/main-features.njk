@@ -6,7 +6,7 @@
   </button>
   {%- endfor -%}
 </div>
-<div class="flex flex-col flex-wrap content-center justify-center md:h-[450px]">
+<div class="flex flex-col flex-wrap content-center justify-center md:min-h-[450px]">
   {%- for f in mainFeatures -%}
   <div class="feature active md:text-left" id="{{ f.id }}">
     <div class="container m-auto max-w-screen-lg">
@@ -19,7 +19,7 @@
             {% image imageSrc, imageDescription, [250] %}
           </div>
         </div>
-        <div class="flex flex-col flex-wrap content-center justify-center md:pl-12 prose">
+        <div class="flex flex-col flex-wrap content-center justify-center md:w-[73%] md:pl-12 prose">
           <h3 class="flex items-center text-center justify-center md:text-left md:justify-start">
             <div class="flex flex-col leading-9 text-2xl mb-3 red-gradient">
               {{ f.title }}
