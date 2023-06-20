@@ -11,7 +11,7 @@ tags:
 
 For the past several years, the Node-RED Dashboard has been an indispensable tool for many Node-RED users. It has offered a seamless way to create live dashboards, enabling the quick and intuitive creation of user interfaces for Node-RED flows. However, as the saying goes, "all good things must come to an end." 
 <!--more-->
-We at FlowForge have identified a significant need for a modern, interactive data visualization and dashboard solution. In response, we've decided to embark on an exciting journey: the creation of the official successor to the Node-RED Dashboard.
+We at FlowForge have identified a significant need for a modern, interactive data visualization and dashboard solution. Having evaluated a wide range of options, we've decided to embark on an exciting journey: the creation of what we hope becomes the official successor to the Node-RED Dashboard.
 
 ## The Problem at Hand
 
