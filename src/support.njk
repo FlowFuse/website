@@ -15,68 +15,8 @@ sitemapPriority: 0.8
     <div class="text-center md:mt-10 mb-8">
       <h2>Find answers instantly</h2>
     </div>
-    <div class="max-w-lg m-auto px-6 md:px-0">
+    <div class="max-w-lg m-auto px-6 md:px-0 md:mb-10">
       <div id="algolia-search" class="border rounded"></div>
-      <ul class="handbook-nav" data-el="navigation">
-          <li class="{% if "/{{ nav }}/" === page.url %}active{% endif %}">
-              <a href="/{{ nav }}">{{ nav }}</a>
-          </li>
-          {# {{ collections.nav.handbook.children | console | safe }} #}
-          {% for group in collections.nav[nav].groups %}
-          {% if group.children.length > 0 %}
-          <li class="handbook-nav-group">{{ group.name }}</li>
-              {% for entry in group.children %}
-              <li class="{% if entry.url === page.url %}active{% endif %}">
-                  <a href="{{entry.url}}">
-                      {{ entry.name }}
-                  </a>
-                  {% if entry.children %}
-                  <button onclick="toggleNavList(this)">
-                      <span class="ff-icon icon-expand">
-                          {% include "components/icons/chevron-down.svg" %}
-                      </span>
-                      <span class="ff-icon icon-minimise">
-                          {% include "components/icons/chevron-up.svg" %}
-                      </span>
-                  </button>
-                  {% endif %}
-              </li>
-              {% if entry.children %}
-              <ul class="handbook-nav-nested">
-                  {% for child in entry.children %}
-                  <li class="{% if child.url === page.url %}active{% endif %}">
-                      <a href="{{child.url}}">
-                          {{ child.name }}
-                      </a>
-                      {% if child.children %}
-                      <button onclick="toggleNavList(this)">
-                          <span class="ff-icon icon-expand">
-                              {% include "components/icons/chevron-down.svg" %}
-                          </span>
-                          <span class="ff-icon icon-minimise">
-                              {% include "components/icons/chevron-up.svg" %}
-                          </span>
-                      </button>
-                      {% endif %}
-                  </li>
-                  {% if child.children %}
-                  <ul class="handbook-nav-nested-2">
-                      {% for grandchild in child.children %}
-                      <li class="{% if grandchild.url === page.url %}active{% endif %}">
-                          <a href="{{grandchild.url}}">
-                              {{ grandchild.name }}
-                          </a>
-                      </li>
-                      {% endfor %}
-                  </ul>
-                  {% endif %}
-                  {% endfor %}
-              </ul>
-              {% endif %}
-              {% endfor %}
-          {% endif %}
-          {% endfor %}
-      </ul>
   </div>
     <div class="container m-auto max-w-screen-lg ">
       <div class="grid px-6 grid-cols-1 md:grid-cols-2 gap-6 md:gap-x-12 gap-y-12 mb-16">
@@ -119,11 +59,11 @@ sitemapPriority: 0.8
             </p>
           </div>
           <div class="container text-center max-w-4xl flex flex-col md:items-start mt-6">
-            <a class="ff-btn ff-btn--primary flex flex-col" href="/support">
+            <button onclick="window.HubSpotConversations.widget.open()" class="ff-btn ff-btn--primary flex flex-col">
               <span class="text-base uppercase no-underline md:px-4">
                 open chat box
               </span>
-            </a>
+            </button>
           </div>
         </div>
       </div>
@@ -132,7 +72,7 @@ sitemapPriority: 0.8
       <div class="text-gray-50">
         {% include "components/dividers/light-grey-curve-inverted.svg" %}
       </div>
-      <div class="text-center m-auto mt-10 md:mt-12 mb-6 md:max-w-xl">
+      <div class="text-center m-auto mt-10 md:mt-12 mb-6 md:mb-12 md:max-w-xl">
         <h2>Submit a ticket</h2>
         <p>If you need assistance with the FlowForge application, account, or billing, please submit a ticket by filling
           out the form below.</p>
