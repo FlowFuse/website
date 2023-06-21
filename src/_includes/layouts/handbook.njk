@@ -125,7 +125,7 @@ date: git Last Modified
                 {% renderTeamMember maintainer %}
             {%- endfor -%}
             <div class="text-sm pb-1 text-right mb-4"><a href="{{ page | handbookEditLink }}">Edit this page</a></div>
-            <div class="text-xs pb-1 text-right mb-4 italic">Updated: {{ page.date }}</div>
+            <div class="text-xs pb-1 text-right mb-4 italic">Updated: {{ page.date | shortDate }}</div>
         </div>
     </div>
 </div>
