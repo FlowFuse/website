@@ -19,6 +19,10 @@ the job advert on Greenhouse. This was introduced [here](https://github.com/flow
 1. Update the redirect URL in the `njk` file to match that added in Step 1.
 1. Open an [Art Request](/handbook/design/art-requests/) to have a new Social Tile designed & attach it to the relevant page
 
+### Referrals
+
+To participate in FlowForge's employee referral program, kindly send all referral resumes to the People Ops Manager. If your recommended candidate gets hired and successfully completes 3 months, you will receive a $100 reward. Alternatively, you can choose a charitable foundation of your liking, and we will double the referral amount donated to that organization.
+
 ### Sharing an Existing Role
 
 The URLs for the existing roles we have on the website are any files found in [here](https://github.com/flowforge/website/tree/main/src/jobs).
