@@ -1,16 +1,97 @@
 ---
-layout: layouts/nohero.njk
-title: Request Support
+align: center
+layout: layouts/page.njk
+title: We’re here to help!
 sitemapPriority: 0.8
 ---
-
-<div class="container m-auto text-left max-w-4xl pb-24">
-  <div class="flex justify-between items-center mb-4 md:px-4 md:-mb-0 md:px-0 md:block">
-    <div class="ff-bg-light product px-4 pb-24 pt-4 md:pt-12 md:p-12 md:grid grid-cols-2">
-      <div class="hidden md:w-72 md:m-auto md:block md:mt-0">
-        {% image "./images/pictograms/browser_red.png", "Graphic of a globe, depicting 'Connectivity'.", [288] %}
-        <p>For community support, please visit the <a href="https://community.flowforge.com/">community forum</a>.</p>
-      </div> 
+<div class="flex px-6 -mt-32 mx-auto text-gray-400 md:max-w-screen-lg md:-mt-40 md:mb-1 md:mb-16">
+  <p class="lead-p max-w-screen-lg m-auto text-center md:max-w-xl md:px-4">
+    Search through our extensive range of resources, knowledge base, or reach out to our dedicated support team by
+    submitting a ticket.
+  </p>
+</div>
+<div class="text-left max-w-full ff-bg-light">
+  <div class="w-full pt-8 px-0 ff-prose">
+    <div class="text-center md:mt-12 mb-6">
+      <h2>Find answers instantly</h2>
+    </div>
+    <div class="container m-auto max-w-screen-lg ">
+      <div class="grid px-6 grid-cols-1 md:grid-cols-2 gap-6 md:gap-x-12 gap-y-0 mb-16">
+        <div class="text-left self-start md:h-full">
+          <div class="prose">
+            <h3 class="flex items-center gap-4">
+              <div class="w-16 mt-6">
+                {% image "./images/pictograms/community_red.png", "Graphics depicting low-code programming.", [64] %}
+              </div>
+              <div class="flex flex-col leading-8 mt-6">
+                Ask the community
+              </div>
+            </h3>
+            <p class="mb-0">
+              Explore our forum to find answers and solutions. Others may have already shared similar issues, providing
+              valuable insights that could address your concerns.
+            </p>
+          </div>
+          <div class="container m-auto text-center max-w-4xl flex flex-col md:items-start mt-6 md:mt-8">
+            <a class="ff-btn ff-btn--primary flex flex-col" href="https://community.flowforge.com/">
+              <span class="text-base uppercase no-underline md:px-4">
+                COMMUNITY FORUM
+              </span>
+            </a>
+          </div>
+        </div>
+        <div class="text-left self-start md:h-full">
+          <div class="prose">
+            <h3 class="flex items-center gap-4">
+              <div class="w-16 mt-6">
+                {% image "./images/pictograms/speech_red.png", "Graphics depicting low-code programming.", [64] %}
+              </div>
+              <div class="flex flex-col leading-8 mt-6">
+                Reach out via our chat
+              </div>
+            </h3>
+            <p class="mb-0">
+              Get real-time assistance and quick answers. Chat with us for prompt support and solutions to your queries.
+            </p>
+          </div>
+          <div
+            class="container m-auto text-center max-w-4xl flex flex-col md:items-start mt-6 md:mt-8 md:justify-self-end">
+            <a class="ff-btn ff-btn--primary flex flex-col" href="/support">
+              <span class="text-base uppercase no-underline md:px-4">
+                open chat box
+              </span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="w-full bg-white pt-8 px-0 pb-24 ff-prose">
+      <div class="text-center m-auto md:mt-12 mb-6 md:max-w-xl">
+        <h2>Submit a ticket</h2>
+        <p>If you need assistance with the FlowForge application, account, or billing, please submit a ticket by filling
+          out the form below.</p>
+      </div>
+      <div class="container m-auto md:max-w-xl prose">
+        <div class="px-6 mb-16">
+          <script src="https://www.google.com/recaptcha/api.js"></script>
+          <script>
+            function displayHubSpotForm() {
+              hbspt.forms.create({
+                region: "eu1",
+                portalId: "26586079",
+                formId: "74ffcab1-a984-459a-871f-5751b8d69ac2"
+              });
+            }
+          </script>
+          <script async type="text/javascript" charset="utf-8" src="//js-eu1.hsforms.net/forms/embed/v2.js"
+            onload="displayHubSpotForm()"></script>
+        </div>
+      </div>
+      <!-- <div class="product bg-white px-4 pb-24 pt-4 md:pt-12 md:p-12">
+      <div class="md:m-auto md:mt-0">
+        <p>If you need assistance with the FlowForge application, account, or billing, please submit a ticket by filling
+          out the form below.</a>.</p>
+      </div>
       <script src="https://www.google.com/recaptcha/api.js"></script>
       <script>
         function displayHubSpotForm() {
@@ -21,7 +102,8 @@ sitemapPriority: 0.8
           });
         }
       </script>
-      <script async type="text/javascript" charset="utf-8" src="//js-eu1.hsforms.net/forms/embed/v2.js" onload="displayHubSpotForm()"></script>
+      <script async type="text/javascript" charset="utf-8" src="//js-eu1.hsforms.net/forms/embed/v2.js"
+        onload="displayHubSpotForm()"></script>
+    </div> -->
     </div>
   </div>
-</div>
