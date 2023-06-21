@@ -4,32 +4,22 @@ navTitle: Expenses
 
 ## Expenses
 
-The company will cover any reasonable work-related expense, including ensuring you
-have the equipment (laptop/monitor/accessories) you need to do the job. As an
-all-remote company, we meet via Zoom. As such, we will cover the cost of a good
-webcam/microphone/lighting arrangement.
+FlowForge will reimburse you for any work-related expenses that are considered reasonable. This includes providing you with the necessary equipment, such as a laptop, monitor, and accessories, to effectively carry out your job responsibilities. As an all-remote company, our meetings are conducted using either Zoom or Slack. Therefore, we will also cover the expenses associated with obtaining a high-quality webcam, microphone, and lighting setup.
 
-The general rule is: treat it like your own money - seek good value and use 
-common sense. If you do require any equipment, talk to your manager to discuss options.
+The general principle to follow is to treat work-related expenses as if they were your own money. It is important to seek good value for your purchases and use common sense when making decisions. If you find yourself in need of any equipment, it is advisable to have a discussion with your manager to explore the available options.
 
-There are two ways of spending company money - either using a company credit card,
-or through reimbursement.
+There are two methods available for using company funds: utilizing a company credit card or seeking reimbursement. If employees opt to use Brex for purchasing any company-related items or subscriptions, it is essential to upload the receipts and include a memo within three business days. For all reimbursement requests, please ensure to submit the required documentation and proofs through Deel.
 
 ### Company Credit Card
 
-We use [Brex](https://www.brex.com/) to provide cards to the team. They are, by
-default, virtual Mastercards, although there is an option to get a physical
-card sent out.
+We use [Brex](https://www.brex.com/) to provide cards to the team. By default, the cards provided are virtual Mastercards, offering convenience and flexibility for online transactions. However, there is also an option available to request a physical card to be sent out if preferred.
 
-All expenses on Brex require a memo to be submitted with details on what the expense is for.
-All expenses for $25 or more require a receipt to be uploaded. Attaching
-a receipt to an expense can be done through their web UI, forwarding receipts
-through email, or through Slack. For a full explanation, please [read their docs][brex-receipts].
+Expenses on Brex require a memo and receipts. Memos explain the purpose of the expense, while receipts are necessary for expenses of $25 or more. Receipts can be attached via the web UI, email, or Slack. Please [read their docs][brex-receipts].
 
 [brex-receipts]: https://www.brex.com/support/how-do-i-attach-receipts-to-brex-transactions/
 
 Brex can also be used to create vendor cards that allow for reoccurring payment for a monthly subscription with a vendor.
-Contact the peopleops manager if you require a vendor card.
+Contact the People Ops manager if you require a vendor card.
 
 ### Oops! Misused Your Brex Card for Personal Expenses? Here's How to Handle the Situation Like a Pro
 
@@ -56,10 +46,7 @@ it can be recorded.
 
 ### Education & Conferences
 
-Continual professional development is very important, and FlowForge will support
-you in any activities you wish to undertake. Speak to your manager if you have
-particular material you would like to study, or an event you would like to
-attend. FlowForge will help cover reasonable costs associated with the activity - such as travel and ticket fees.
+FlowForge recognizes the significance of continuous professional development, and we are committed to supporting you in your learning endeavors. If you have specific study materials you would like to explore or events you would like to attend, please discuss them with your manager. FlowForge will assist in covering reasonable expenses related to these activities, including travel and ticket fees.
 
 ### Software Licenses
 
@@ -78,8 +65,7 @@ or CEO, who will provision it for you.
 
 ### Workspace & Location
 
-As an all remote company we don't have offices. It is envisaged that most people will work from their home the majority of the time. Equipment & Furniture required for a home workspace should be discussed with your manager as part of the hiring process.
-The company covering certain costs, such as broadband can have tax implications depending on your local legislation. You should consult an independent advisor in your location for your particular situation.
+As an all-remote company without physical offices, the expectation is that most individuals will primarily work from their homes. When it comes to acquiring equipment and furniture for your home workspace, it is recommended to discuss these requirements with your manager during the hiring process. It's important to note that the company's coverage of certain costs, such as broadband expenses, may have tax implications depending on the local legislation in your area. To understand the specific tax implications relevant to your situation, it is advisable to consult an independent advisor familiar with the local tax regulations in your location.
 
 #### Coworking space allowance
 
