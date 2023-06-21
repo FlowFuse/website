@@ -11,10 +11,10 @@ This handbook page provides an overview of the metrics we concentrate on, and ho
 ## Principles
 
 #### Data-driven decision making 
-Aligned with our value of [Results](../../company/values.md#📈-results), we are staunch advocates for data-driven decision-making. Instead of relying on assumptions or rushing decisions, we let data guide our actions to drive results.
+Aligned with our value of [Results](../company/values.md#📈-results), we are staunch advocates for data-driven decision-making. Instead of relying on assumptions or rushing decisions, we let data guide our actions to drive results.
 
 #### Continuous learning and improvement
-Consistent with [Iterative Improvement](../../company/values.md#🔁-iterative-improvement), we believe even the smallest changes can contribute to our growth. We're committed to consistently reassessing, learning, and evolving based on the insights our data provides.
+Consistent with [Iterative Improvement](../company/values.md#🔁-iterative-improvement), we believe even the smallest changes can contribute to our growth. We're committed to consistently reassessing, learning, and evolving based on the insights our data provides.
 
 ## Current Metrics
 
