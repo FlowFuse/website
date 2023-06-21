@@ -36,13 +36,13 @@ and the perceived risk to FlowForge.
 ### Competence & Performance Assessment
 
 The skills and competence of employees and contractors shall be assessed as part
-of the hiring process. Required skills and competencies shall be listed in job
+of the [hiring process](../../peopleops/hiring.md). Required skills and competencies shall be listed in job
 descriptions and requisitions, and/or aligned with the responsibilities outlined
 in the Information Security Roles and Responsibilities Policy. Competency
 evaluations may include reference checks, education and certification verifications,
 technical testing, and interviews.
 
-All FlowForge employees will undergo an annual performance review which will
+All FlowForge employees will undergo an [annual performance review](../../peopleops/performance-review.md) which will
 include an assessment of job performance, competence in the role, adherence to
 company policies and code of conduct, and achievement of role-specific objectives.
 
@@ -59,15 +59,18 @@ security policies.
 
 ### Management Responsibilities
 
-Management shall be responsible for ensuring that information security policies
-and procedures are reviewed annually, distributed and available, and that
+Each policy owner shall be responsible for ensuring that information security policies
+and procedures are reviewed annually, available in the company handbook, and that
 employees and contractors abide by those policies and procedures for the duration
 of their employment or engagement.
 
-Annual policy review shall include a review of any linked or referenced procedures,
+The primary source for the policies is the [company handbook](../security/index.md).
+The review status of each policy is tracked in [Vanta](https://app.vanta.com).
+
+Annual policy reviews shall include a review of any linked or referenced procedures,
 standards or guidelines.
 
-Management shall ensure that information security responsibilities are
+PeopleOps shall ensure that information security responsibilities are
 communicated to individuals, through written job descriptions, policies or some
 other documented method which is accurately updated and maintained.
 
@@ -85,6 +88,8 @@ All FlowForge employees and third-parties with administrative or privileged
 technical access to FlowForge production systems and networks shall complete
 security awareness training at the time of hire and annually thereafter.
 
+This is managed via the [Vanta](https://app.vanta.com) platform.
+
 Management shall monitor training completion and shall take appropriate steps to
 ensure compliance with this policy. Employees and contractors shall be aware of
 relevant information security and data privacy policies and procedures. The
@@ -93,7 +98,7 @@ appropriate to their role and data handling responsibilities.
 
 In order to maintain a robust level of security awareness, the company will
 provide security-related updates and communications to company personnel on an
-on-going basis through multiple communication channels as needed.
+on-going basis through the usual communication channels as needed.
 
 ### Termination Process
 
@@ -101,8 +106,7 @@ Employee and contractor termination and offboarding processes shall ensure that
 physical and logical access is promptly revoked in accordance with company SLAs
 and policies, and that all company issued equipment is returned.
 
-Any security or confidentiality agreements which remain valid after termination
-shall be communicated to the employee or contractor at time of termination.
+The full offboarding process is available [here](../../peopleops/hiring.md#offboarding)
 
 ## Exceptions
 
