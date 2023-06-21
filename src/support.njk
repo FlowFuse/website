@@ -12,9 +12,72 @@ sitemapPriority: 0.8
 </div>
 <div class="text-left max-w-full ff-bg-light">
   <div class="w-full pt-10 md:pt-8 px-0 ff-prose">
-    <div class="text-center md:mt-10 mb-6">
+    <div class="text-center md:mt-10 mb-8">
       <h2>Find answers instantly</h2>
     </div>
+    <div class="max-w-lg m-auto px-6 md:px-0">
+      <div id="algolia-search" class="border rounded"></div>
+      <ul class="handbook-nav" data-el="navigation">
+          <li class="{% if "/{{ nav }}/" === page.url %}active{% endif %}">
+              <a href="/{{ nav }}">{{ nav }}</a>
+          </li>
+          {# {{ collections.nav.handbook.children | console | safe }} #}
+          {% for group in collections.nav[nav].groups %}
+          {% if group.children.length > 0 %}
+          <li class="handbook-nav-group">{{ group.name }}</li>
+              {% for entry in group.children %}
+              <li class="{% if entry.url === page.url %}active{% endif %}">
+                  <a href="{{entry.url}}">
+                      {{ entry.name }}
+                  </a>
+                  {% if entry.children %}
+                  <button onclick="toggleNavList(this)">
+                      <span class="ff-icon icon-expand">
+                          {% include "components/icons/chevron-down.svg" %}
+                      </span>
+                      <span class="ff-icon icon-minimise">
+                          {% include "components/icons/chevron-up.svg" %}
+                      </span>
+                  </button>
+                  {% endif %}
+              </li>
+              {% if entry.children %}
+              <ul class="handbook-nav-nested">
+                  {% for child in entry.children %}
+                  <li class="{% if child.url === page.url %}active{% endif %}">
+                      <a href="{{child.url}}">
+                          {{ child.name }}
+                      </a>
+                      {% if child.children %}
+                      <button onclick="toggleNavList(this)">
+                          <span class="ff-icon icon-expand">
+                              {% include "components/icons/chevron-down.svg" %}
+                          </span>
+                          <span class="ff-icon icon-minimise">
+                              {% include "components/icons/chevron-up.svg" %}
+                          </span>
+                      </button>
+                      {% endif %}
+                  </li>
+                  {% if child.children %}
+                  <ul class="handbook-nav-nested-2">
+                      {% for grandchild in child.children %}
+                      <li class="{% if grandchild.url === page.url %}active{% endif %}">
+                          <a href="{{grandchild.url}}">
+                              {{ grandchild.name }}
+                          </a>
+                      </li>
+                      {% endfor %}
+                  </ul>
+                  {% endif %}
+                  {% endfor %}
+              </ul>
+              {% endif %}
+              {% endfor %}
+          {% endif %}
+          {% endfor %}
+      </ul>
+  </div>
     <div class="container m-auto max-w-screen-lg ">
       <div class="grid px-6 grid-cols-1 md:grid-cols-2 gap-6 md:gap-x-12 gap-y-12 mb-16">
         <div class="md:flex md:flex-col md:justify-between text-left self-start md:h-full">
@@ -92,3 +155,20 @@ sitemapPriority: 0.8
       </div>
     </div>
   </div>
+
+<link rel="preload"href="https://cdn.jsdelivr.net/npm/@algolia/algoliasearch-netlify-frontend@1/dist/algoliasearchNetlify.css" as="style" onload="this.onload=null;this.rel='stylesheet'" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@algolia/autocomplete-theme-classic" as="style" onload="this.onload=null;this.rel='stylesheet'" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+<script async type="text/javascript" src="https://cdn.jsdelivr.net/npm/@algolia/algoliasearch-netlify-frontend@1/dist/algoliasearchNetlify.js" onload="initSearchBar()"></script>
+<script async type="text/javascript">
+  function initSearchBar () {
+    algoliasearchNetlify({
+        appId: 'KWE0727TZS',
+        apiKey: '595ee07f069991380e9c3036cfad8e5e',
+        siteId: '00f8cf60-997f-4c4d-9427-a97924358648',
+        branch: 'live',
+        selector: 'div#algolia-search',
+        detached: false
+    });
+    }
+</script>
