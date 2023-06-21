@@ -2,7 +2,7 @@
 title: "Nodes explained: Split"
 subtitle: Creating many messages from one
 description: Forwarding or blocking messages based on values, change of them, or lack of change.
-date: 2023-06-20
+date: 2023-06-21
 authors: ["zeger-jan-van-de-weg"]
 image:
 tags:
