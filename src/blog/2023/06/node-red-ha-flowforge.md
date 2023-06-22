@@ -4,7 +4,7 @@ subtitle: Exploring the Node-RED High Availability preview feature included in F
 description: Exploring the Node-RED High Availability preview feature included in FlowForge 1.8.
 date: 2023-06-09 16:00:00
 authors: ["rob-marcer"]
-image: /images/blog/nr-quicktips.jpg
+image: /images/blog/ha-test-header.jpg
 tags:
     - posts 
     - node-red
