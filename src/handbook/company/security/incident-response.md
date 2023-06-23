@@ -46,7 +46,7 @@ Current members of the FlowForge SIRT:
  - CTO
  - CEO
  - Customer Success manager
- - Product Owner
+ - Product Manager
 
 ## Incident Reporting & Documentation
 
