@@ -60,7 +60,6 @@ communication channels:
 
 Reports should include specific details about what has been observed or discovered.
 
-
 ### Severity 
 
 The [SIRT](#security-incident-response-team-sirt) shall monitor incident and event
