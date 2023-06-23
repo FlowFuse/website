@@ -25,7 +25,7 @@ that as priorities can change through a release.
 
 ##### Tuesday
 - UX Pre-Planning
-  - This meeting is conducted between the Project Manager (PM) and the Head of User Experience (UX), it is designed to discuss and identify potential UX issues and requirements that need to be addressed in the upcoming iteration. The goal is to be proactive in identifying and resolving UX-related challenges before the start of the development phase.
+  - This meeting is conducted between the Product Manager (PM) and the Head of User Experience (UX), it is designed to discuss and identify potential UX issues and requirements that need to be addressed in the upcoming iteration. The goal is to be proactive in identifying and resolving UX-related challenges before the start of the development phase.
 
 ---
 
