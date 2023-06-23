@@ -63,7 +63,7 @@ be remediated in the next release or within the defined, predetermined timeframe
  10. Any exception to the remediation of a finding must be documented and
 approved by the CTO.
 
-## Secure Development Environment
+## Secure Development Environment
 
 FlowForge uses separate Staging and Production systems. These are logically
 segregated environments in different AWS accounts.

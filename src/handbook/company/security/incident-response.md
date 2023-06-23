@@ -18,6 +18,12 @@ they have discovered, or are responding to, a security incident.
 
 This policy covers all information security or data privacy events or incidents.
 
+## External Vulnerability Disclosures
+
+This policy relates to how we deal with security issues internally. For information
+on how to report potential vulnerabilities in the FlowForge platform and associated
+components from outside the company, please refer to our [Vulnerability Reporting policy](../../development/security.md).
+
 ## Incident and Event Definitions
 
 A **security event** is an observable occurrence relevant to the confidentiality,
@@ -63,7 +69,7 @@ Reports should include specific details about what has been observed or discover
 ### Severity 
 
 The [SIRT](#security-incident-response-team-sirt) shall monitor incident and event
-tickets and shall assign a ticket severity based on the following categories:
+issues and shall assign a severity (via label) based on the following categories:
 
 
  - **P3/P4** - Low and Medium Severity

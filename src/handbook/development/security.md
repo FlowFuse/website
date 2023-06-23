@@ -2,7 +2,13 @@
 originalPath: development/security.md
 updated: 2022-08-04 17:05:04 +0100
 ---
-# Security Policy
+
+# Security Policy
+
+This policy relates to external disclosures of potential vulnerabilities in the
+FlowForge platform and associated components.
+
+Our internal Incident Response plan is documented [here](../company/security/incident-response.md).
 
 ## Reporting a Vulnerability
 
