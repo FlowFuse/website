@@ -22,7 +22,6 @@ date: git Last Modified
 <div class="handbook ff-prose text-left pb-24" data-{{nav}}>
     <!-- Navigation -->
     <div class="border-r">
-        <div id="algolia-search" class="border-b"></div>
         <ul class="handbook-nav" data-el="navigation">
             <li class="{% if "/{{ nav }}/" === page.url %}active{% endif %}">
                 <a href="/{{ nav }}">{{ nav }}</a>
@@ -93,6 +92,9 @@ date: git Last Modified
                 {% endif %}
                 {{ page.filePathStem | handbookBreadcrumbs |safe }}
             </div>
+        </div>
+        <div class="w-full m-auto md:mb-10 md:pt-6">
+            <div id="algolia-search" class="border rounded"></div>
         </div>
         <div class="w-full mx-auto ff-bg-light flex flex-col md:flex-row">
             <!-- Main Content -->
