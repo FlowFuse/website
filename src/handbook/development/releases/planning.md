@@ -21,6 +21,13 @@ for the current release (N) and the next one (N+1). We do not schedule work beyo
 that as priorities can change through a release.
 
 ---
+#### Week 2 - UX Planning
+
+##### Tuesday
+- UX Pre-Planning
+  - This meeting is conducted between the Project Manager (PM) and the Head of User Experience (UX), it is designed to discuss and identify potential UX issues and requirements that need to be addressed in the upcoming iteration. The goal is to be proactive in identifying and resolving UX-related challenges before the start of the development phase.
+
+---
 
 #### Week 3 - Planning Week
 
