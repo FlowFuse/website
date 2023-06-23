@@ -48,7 +48,6 @@ Current members of the FlowForge SIRT:
  - Customer Success manager
  - Product Owner
 
-
 ## Incident Reporting & Documentation
 
 ### Reporting 
