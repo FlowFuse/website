@@ -85,6 +85,28 @@ in the form, as opposed to the line ending character.
 [{"id":"619209d6e3f02473","type":"inject","z":"2862bf5c278ff5bd","name":"","props":[{"p":"payload"}],"repeat":"","crontab":"","once":false,"onceDelay":0.1,"topic":"","payload":"foo bar","payloadType":"str","x":130,"y":280,"wires":[["15b9b3d17a64e2c7"]]},{"id":"15b9b3d17a64e2c7","type":"split","z":"2862bf5c278ff5bd","name":"Split by space","splt":" ","spltType":"str","arraySplt":1,"arraySpltType":"len","stream":false,"addname":"","x":300,"y":280,"wires":[["12607e8708ef58f2"]]},{"id":"12607e8708ef58f2","type":"debug","z":"2862bf5c278ff5bd","name":"Print each word","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"payload","targetType":"msg","statusVal":"","statusType":"auto","x":500,"y":280,"wires":[]}]
 ```
 
+#### Splitting text from multiple messages
+
+Consider the case where you want to split text that arrives in multiple messages,
+for example when the payload might not fit in one HTTP request, or when input is
+generated continously. For Strings and text the setting `Handle as a stream of messages`
+can be toggled. This will split the payload on each occurance. Which means that
+each message as input can generate either 0, 1, or multiple new messages as output.
+
+
+In the next example we'll split the messages "foo bar", "baz qux", and "a" on the
+delimiter `a`. After "foo bar" is injected, "foo b" is the first and only output
+message until the "baz qux" is injected. The node stored the remainer of the first
+inject, the 'r' of 'bar' and adds the b of 'baz' to create a new output message
+containing `rb`. It again stores the remainer `z qux` until a new message arrives
+with an `a`. Note; the leftover part of the last split action is held in the Split
+node until the next message arrives containing the character it's being split on.
+In our we need to inject the `a` message to get it to output `z qux`.
+
+```json
+[{"id":"711ff8314ab19133","type":"inject","z":"2862bf5c278ff5bd","name":"","props":[{"p":"payload"},{"p":"topic","vt":"str"}],"repeat":"","crontab":"","once":false,"onceDelay":0.1,"topic":"","payload":"foo bar","payloadType":"str","x":130,"y":400,"wires":[["b2139cc96af8c91f"]]},{"id":"7b1e98127ae4f245","type":"inject","z":"2862bf5c278ff5bd","name":"","props":[{"p":"payload"}],"repeat":"","crontab":"","once":false,"onceDelay":0.1,"topic":"","payload":"baz qux","payloadType":"str","x":130,"y":460,"wires":[["b2139cc96af8c91f"]]},{"id":"b2139cc96af8c91f","type":"split","z":"2862bf5c278ff5bd","name":"Split stream of messages","splt":"a","spltType":"str","arraySplt":1,"arraySpltType":"len","stream":true,"addname":"","x":350,"y":460,"wires":[["22b34ed64f818093"]]},{"id":"22b34ed64f818093","type":"debug","z":"2862bf5c278ff5bd","name":"Print words without the a","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"payload","targetType":"msg","statusVal":"","statusType":"auto","x":610,"y":460,"wires":[]},{"id":"fefe9416923f0fc1","type":"inject","z":"2862bf5c278ff5bd","name":"","props":[{"p":"payload"}],"repeat":"","crontab":"","once":false,"onceDelay":0.1,"topic":"","payload":"a","payloadType":"str","x":130,"y":520,"wires":[["b2139cc96af8c91f"]]}]
+```
+
 ### Splitting Objects
 
 The remaining data structure of the Node-RED split node is "Objects", which is
