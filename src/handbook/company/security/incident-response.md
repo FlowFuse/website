@@ -2,7 +2,7 @@
 navTitle: Incident Response Plan
 ---
 
-# Data Management Policy
+# Incident Response Plan
 
 | Policy owner   | Effective date |
 | -------------- | -------------- |
