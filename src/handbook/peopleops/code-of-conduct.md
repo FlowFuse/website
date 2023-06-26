@@ -5,20 +5,24 @@ navTitle: Code of Conduct
 ## Code of Conduct
 
 The primary goal of our Code of Conduct is to foster inclusive, collaborative
-and safe working conditions for all FlowForge staff. As such, FlowForge is
-committed to providing a friendly, safe and welcoming environment for all staff,
-regardless of gender, sexual orientation, ability, ethnicity, socioeconomic status,
-or religion (or lack thereof).
+and safe working conditions for all FlowForge staff and community members who
+participate in our open core projects.
 
-This code of conduct outlines our expectations for all FlowForge staff, as well
-as the consequences for unacceptable behavior.
+As such, FlowForge is committed to providing a friendly, safe and welcoming
+environment regardless of gender, sexual orientation, ability, ethnicity,
+socioeconomic status, or religion (or lack thereof).
+
+This code of conduct outlines our expectations for the FlowForge community, as
+well as the consequences for unacceptable behavior.
 
 ### Scope 
 
 The Code of Conduct applies to all FlowForge staff. This includes full-time,
-part-time and contractor staff employed at every seniority level. The Code of
-Conduct is to be upheld during all professional functions and events, including
-but not limited to:
+part-time and contractor staff employed at every seniority level. It also applies
+to contributors who engage with our open core projects.
+
+The Code of Conduct is to be upheld during all professional functions and events,
+including but not limited to:
 
  - Working remotely and communicating on FlowForge resources with other team members.
  - At FlowForge-related extracurricular activities and events.
@@ -32,32 +36,25 @@ This Code of Conduct also applies to unacceptable behavior occurring outside the
 scope of business activities when such behavior has the potential to adversely
 affect the safety and well-being of FlowForge staff and clients.
 
-### Culture and Citizenship
+### Culture and Belonging
 
-A supplemental goal of this Code of Conduct is to increase open citizenship by
+A supplemental goal of this Code of Conduct is to increase open community by
 encouraging participants to recognize the relationships between our actions and
 their effects within FlowForge culture.
 
 At the core are our [company values](../company/values.md). This Code of Conduct
 makes explict how we should behave whilst uphold our values.
 
- - **Be inclusive**. We strive to be a company that welcomes and supports people
-   of all backgrounds and identities. This includes, but is not limited to members
-   of any race, ethnicity, culture, national origin, color, immigration status,
-   social and economic class, educational level, sexual orientation, gender
-   identity and expression, age, size, family status, political belief, religion,
-   and mental and physical ability.
- - **Be considerate**. Your work at FlowForge will be used by other people, and
-   you in turn will depend on the work of others. Any decision you take will
-   affect users and colleagues, and you should take those consequences into account
-   when making decisions.
+ - [**Be inclusive**](../company/values.md#👥-collaborative-community). We strive
+   to be a company that welcomes and supports people of all backgrounds and identities.
+ - [**Be considerate**](../company/values.md#🤝-customer-empathy). Your work at
+   FlowForge will be used by other people, and you in turn will depend on the
+   work of others. Any decision you take will affect users and colleagues, and
+   you should take those consequences into account when making decisions.
  - **Be respectful**. Not all of us will agree all the time, but disagreement is
-   no excuse for poor behavior and poor manners. We might all experience some
-   frustration now and then, but we cannot allow that frustration to turn into a
-   personal attack. It’s important to remember that a company where people feel
-   uncomfortable or threatened is neither productive nor pleasant. FlowForge staff
-   should always be respectful when dealing with other personnel as well as with
-   people outside of FlowForge employment.
+   no excuse for poor behavior and poor manners. We expect everyone to remain polite
+   and to keep conversations healthy and constructive. We do not allow our frustrations
+   to turn in [personal attacks](https://en.wikipedia.org/wiki/Ad_hominem).
 
 ### Acceptable and Expected Behavior
 
