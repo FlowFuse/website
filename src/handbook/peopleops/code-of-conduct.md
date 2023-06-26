@@ -76,8 +76,8 @@ The following behaviors are expected and requested of all FlowForge staff:
 
 The following behaviors are considered harassment and are unacceptable within our community:
 
- - Violence, threats of violence or violent language directed against another person.
- - Sexist, racist, homophobic, transphobic, ableist or otherwise discriminatory jokes and language.
+ - Violence, threats of violence, or violent language directed against another person.
+ - Sexist, racist, homophobic, transphobic, [ableist](https://en.wikipedia.org/wiki/Ableism) or otherwise discriminatory jokes and language.
  - Posting or displaying sexually explicit or violent material.
  - Posting or threatening to post other people’s personally identifying information ("doxing").
  - Personal insults, particularly those related to gender, sexual orientation, race, religion, or disability.
@@ -102,7 +102,7 @@ any action deemed appropriate, up to and including suspension or termination.
 ### Reporting Violations
 
 If you are subject to or witness unacceptable behavior, or have any other concerns,
-please notify an appropriate member of FlowForge leadership as soon as possible.
+please notify an appropriate member of FlowForge leadership (Peopleops manager, CTO, and/or CEO) as soon as possible.
 
 It is a violation of this policy to retaliate against any person making a
 complaint of Unacceptable Behavior or against any person participating in the
@@ -114,7 +114,7 @@ termination.
 
 Employees who violate this policy may face disciplinary consequences in proportion
 to their violation. FlowForge management will determine how serious an employee's
-offense is and take the appropriate action
+offense is and take the appropriate action.
 
 ### Responsibility
 
