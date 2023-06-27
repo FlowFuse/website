@@ -5,6 +5,10 @@ description: FlowForge now supports High Availibility, DevOps Pipelines and more
 date: 2023-06-08 
 authors: ["marian-demme"]
 image: /blog/2023/06/images/release-1.8.0.png
+tags:
+    - posts
+    - flowforge
+    - releases
 ---
 
 FlowForge 1.8 introduces two key features that allow organizations to reliably deploy Node-RED applications into production. In 1.8, it is now possible to run Node-RED applications with high availability so the application is more scalable and more fault tolerant. FlowForge 1.8 also introduces software deliver pipelines, so development teams can now set up dev/test/production environments for their Node-RED applications.

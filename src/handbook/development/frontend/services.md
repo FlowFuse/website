@@ -7,7 +7,7 @@ meta:
 The frontend contains two helper services that can be called anywhere in the UI. Each of the services control components built into the main `Platform.vue`.
 
 <video width="500" controls>
-  <source src="../../videos/ui-services-demo.mp4" type="video/mp4">
+  <source src="https://website-data.s3.eu-west-1.amazonaws.com/ui-services-demo.mp4" type="video/mp4">
 </video>
 Here we see an example of a `Dialog` being used to confirmed deletion of a snapshot, followed by confirmation of the deletion via an `Alert`.
 

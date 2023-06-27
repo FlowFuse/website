@@ -19,7 +19,8 @@ in this area, which includes prompt reporting and resolution of any issues ident
  - [Cryptography Policy](./cryptography.md)
  - [Human Resources Policy](./human-resources.md)
  - [Risk Management Policy](./risk-management.md)
- 
+ - [Business Continuity and Disaster Recover Policy](./business-continuity.md)
+
 ## Credentials
 
 ### Password vault
