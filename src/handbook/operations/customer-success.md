@@ -19,7 +19,7 @@ FlowForge has a diverse customer-base. When devising a strategy to deliver CS it
 |Premium|Team of users, collaboration on applications|
 |Enterprise|Large scale applications, extensive use of FlowForge's features|
 
-You can view our current customer-base and their cohorts in [this report](https://main.flowforge.cloud/ui/#!/1?socketid=rq-XlmWmn83upsPQAAAp).
+You can view our current customer-base and their cohorts in [this report](https://main.flowforge.cloud/ui/#!/1?socketid=rq-XlmWmn83upsPQAAAp){rel="nofollow}.
 
 CS activity is planned to manage each of the cohorts with appropriate support & communications. The support and communications will be in some cases fully automated and in others will involve individual actions by our CS team, such as holding regular review meetings with customers.
 
@@ -42,7 +42,7 @@ To drive CS, we need to utilise data across various platforms to understand what
 
 To deliver automated and manual communication with customers, we use Hubspot CRM. Hubspot allows us to collaborate as a team. This is vital when manually communicating with customers as well as operating automated email campaigns based on a customer's current cohort and interaction with their account.
 
-We have built an integration in Node-RED which can extract data from our platforms then append it to a customer's record in Hubspot. The integration as well as any other CS resources built in Node-RED are hosted on FlowForge Cloud and can be [accessed in this application](https://main.flowforge.cloud/).
+We have built an integration in Node-RED which can extract data from our platforms then append it to a customer's record in Hubspot. The integration as well as any other CS resources built in Node-RED are hosted on FlowForge Cloud and can be [accessed in this application](https://main.flowforge.cloud/){rel="nofollow}.
 
 ## Inbound Support
 
