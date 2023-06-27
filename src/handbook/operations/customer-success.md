@@ -1,8 +1,50 @@
 ---
-navTitle: Support
+navTitle: Customer Success
 ---
 
-# Support
+# Customer Success
+
+Customer Success (CS) helps our customers get value from FlowForge. This should result in them continuing to use, make broader use of, and become advocates of FlowForge.
+
+## Customer Success Methodology
+
+The basic principal of CS is to help customers succeed in their goals by getting value from our services. The assumption is, where customers get value they are likely to consciously recognise that value, be open to gaining more value, and recommending FlowForge to potential customers. This should in turn result in customers remaining with FlowForge for longer, delivering greater revenue, and encouraging more of their professional and personal networks to join FlowForge.
+
+FlowForge has a diverse customer-base. When devising a strategy to deliver CS it is important to recognise the key cohorts within our customers. They are grouped as follows:
+
+|Cohort|Key Traits|
+|-|-|
+|Trial|Not paying for services|
+|Starter|Low number of Node-RED instances|
+|Premium|Team of users, collaboration on applications|
+|Enterprise|Large scale applications, extensive use of FlowForge's features|
+
+You can view our current customer-base and their cohorts in [this report](https://main.flowforge.cloud/ui/#!/1?socketid=rq-XlmWmn83upsPQAAAp){rel="nofollow}.
+
+CS activity is planned to manage each of the cohorts with appropriate support & communications. The support and communications will be in some cases fully automated and in others will involve individual actions by our CS team, such as holding regular review meetings with customers.
+
+The key goal of CS is to migrate customers from the trial status, down the table of cohorts above, and where appropriate onto being an Enterprise customer. It is however important to consider that some customers would not benefit from our broadest offerings of services. Appropriate resources should be put into customers who have found lasting value further up the cohorts table.
+
+## Customer Success Tools
+
+### Data Sources
+
+To drive CS, we need to utilise data across various platforms to understand what our customers need from us to succeed. the main platforms we use are as follows:
+
+|Platform|Key Data|
+|-|-|
+|FlowForge Cloud's Database|Current usage of the platform and uptake of features|
+|Stripe|Expenditure|
+|Hubspot|Interaction with support and marketing content on our website and in emails|
+
+
+### Communication
+
+To deliver automated and manual communication with customers, we use Hubspot CRM. Hubspot allows us to collaborate as a team. This is vital when manually communicating with customers as well as operating automated email campaigns based on a customer's current cohort and interaction with their account.
+
+We have built an integration in Node-RED which can extract data from our platforms then append it to a customer's record in Hubspot. The integration as well as any other CS resources built in Node-RED are hosted on FlowForge Cloud and can be [accessed in this application](https://main.flowforge.cloud/){rel="nofollow}.
+
+## Inbound Support
 
 For FlowForge customers, there are two ways to get support, through support tickets
 or go to the community forum. Where to go when is described below.
@@ -19,9 +61,9 @@ or go to the community forum. Where to go when is described below.
 If you're not a FlowForge customer, or in your trial phase, please go to the
 [community forum][support-forum].
 
-## Support Tickets
+### Support Tickets
 
-### HubSpot
+#### HubSpot
 
 We use HubSpot to manage our customer support tickets for the managed FlowForge platform. We can give each FlowForge team member access to HubSpot by assigning them a seat. 
 
@@ -45,7 +87,7 @@ We monitor the time since a ticket on HubSpot was last updated and send alerts t
 
  - 1 day for customer created support tickets.
 
-### Scope of Support
+#### Scope of Support
 
 FlowForge customers will only get support for issues relating to the FlowForge
 application or their account & billing. Any questions around Node-RED
@@ -55,13 +97,13 @@ itself or their flows should be redirected to the
 3rd party nodes are not supported at this time. It is reasonable to point a
 customer direct to a repo for a 3rd party node question.
 
-### SLA
+#### SLA
 
 Support will be available between during business hours (Berlin time zones)
 Monday to Friday, with anything outside of those hours on a 'best effort' basis
 unless the customer and FlowForge agreed otherwise.
 
-### Escalation
+#### Escalation
 
 Where the issue relates to a bug in the FlowForge application then the person
 dealing with the ticket should aim to reproduce that bug and then raise an
@@ -75,7 +117,7 @@ closed until the bug is resolved.
 As the Node-RED forums are intended to be vendor neutral, FlowForge has a
 [community forum][support-forum] too.
 
-### Scope of Support
+#### Scope of Support
 
 FlowForge customers will only get support for issues relating to the FlowForge
 application or their account & billing. Any questions around Node-RED
