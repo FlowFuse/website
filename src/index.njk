@@ -12,14 +12,14 @@ sitemapPriority: 1.0
             FlowForge allows organizations to reliably deliver Node-RED applications in a continuous, collaborative, and secure manner.
         </p>
         <div class="flex flex-col">
-          <div class="m-auto mt-12 flex flex-col gap-4 items-center justify-center">
-            <a class="ff-btn ff-btn--primary flex flex-col" href="https://app.flowforge.com/account/create" onclick="capture('cta-join', {'position': 'primary'})">
-                <span class="text-base uppercase flex gap-2 items-center">
-                    get started for free
-                    {% include "components/icons/arrow-right.svg" %}
-                </span>
-            </a>
-          </div>
+            <div class="m-auto mt-12 flex flex-col gap-4 items-center justify-center">
+                <a class="ff-btn ff-btn--primary flex flex-col" href="https://app.flowforge.com/account/create" onclick="capture('cta-join', {'position': 'primary'})">
+                    <span class="text-base uppercase flex gap-2 items-center">
+                        get started for free
+                        {% include "components/icons/arrow-right.svg" %}
+                    </span>
+                </a>
+            </div>
         </div>
     </div>
 </div>
@@ -31,11 +31,21 @@ sitemapPriority: 1.0
 </div>
 
 <!-- Secondary Content -->
-<div class="w-full ff-bg-light px-6 pt-12 pb-48 sm:pt-32 sm:px-0">
+<div class="w-full ff-bg-light px-6 pt-12 pb-48 sm:pt-32">
     <div class="container m-auto text-center max-w-4xl">
         <div class="m-auto mt-36 mb-12 sm:mt-64 sm:mb-16 w-full text-center">
             <h2>Why use FlowForge for Node-RED</h2>
             <h5><a href="/node-red">What is Node-RED?</a></h5>
+        </div>
+        <div class="m-auto mb-12 sm:mb-16 w-full text-center flex flex-col md:flex-row">
+            <p class="md:w-1/6 md:text-left opacity-75">Trusted by:</p>
+            <ul class="flex flex-row justify-center md:justify-between flex-wrap sm:flex-nowrap gap-[16%] sm:gap-[6%] md:gap-[8%] w-full items-center -mb-6 md:mb-0">
+                <li class="w-[60px] pb-6 md:pb-0">{% image "./images/home-logos/heatweb-logo.png", "Heatweb logo", [60] %}</li>
+                <li class="w-[80px] pb-6 md:pb-0">{% image "./images/home-logos/airship-logo.png", "Airship logo", [80] %}</li>
+                <li class="w-[100px] pb-6 md:pb-0">{% image "./images/home-logos/bosch-logo.png", "Bosch logo", [100] %}</li>
+                <li class="w-[90px] pb-6 md:pb-0">{% image "./images/home-logos/enexis-logo.png", "Enexis logo", [90] %}</li>
+                <li class="w-[140px] pb-6 md:pb-0">{% image "./images/home-logos/iniationware-logo.png", "Iniationware logo", [140] %}</li>
+            </ul>
         </div>
         <div class="flex flex-col-reverse justify-between sm:flex-row gap-3 sm:gap-12">
             <div class="text-center sm:text-left pt-4">
