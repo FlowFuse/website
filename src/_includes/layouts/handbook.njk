@@ -26,7 +26,6 @@ date: git Last Modified
             <li class="{% if "/{{ nav }}/" === page.url %}active{% endif %}">
                 <a href="/{{ nav }}">{{ nav }}</a>
             </li>
-            {# {{ collections.nav.handbook.children | console | safe }} #}
             {% for group in collections.nav[nav].groups %}
             {% if group.children.length > 0 %}
             <li class="handbook-nav-group">{{ group.name }}</li>

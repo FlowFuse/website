@@ -1,0 +1,13 @@
+---
+pagination:
+    data: coreNodes.parsers
+    size: 1
+    alias: node
+coreNodeCategory: "parsers"
+permalink: "node-red/core-nodes/{{ node | coreNodeName }}/"
+eleventyComputed:
+  meta:
+    title: "{{ node | coreNodeName }}"
+---
+
+{% include "core-node-docs.njk" %}

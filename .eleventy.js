@@ -20,6 +20,7 @@ const codeowners = require('codeowners');
 const heroGen = require("./lib/post-hero-gen.js");
 const imageHandler = require('./lib/image-handler.js')
 const site = require("./src/_data/site");
+const coreNodeDoc = require("./lib/core-node-docs.js");
 
 const DEV_MODE = process.env.ELEVENTY_RUN_MODE !== "build" // i.e. serve/watch
 
@@ -59,6 +60,11 @@ module.exports = function(eleventyConfig) {
         return `<span class="ff-tooltip" data-tooltip="${text}">${content}</span><span></span>`
     });
 
+    eleventyConfig.addFilter("coreNodeName", (name) => { return name.split("-").at(-1) })
+    eleventyConfig.addAsyncShortcode("coreNodeDoc", async function (category, name) {
+        return await coreNodeDoc(category, name)
+    });
+
     // Custom filters
     eleventyConfig.addFilter("json", (content) => {
         return JSON.stringify(content)
@@ -73,10 +79,11 @@ module.exports = function(eleventyConfig) {
 
     eleventyConfig.addFilter("limit", (arr, limit) => arr.slice(0, limit + 1));
 
-    eleventyConfig.addFilter('console', function(value) {
-        const str = util.inspect(value, {showHidden: false, depth: null});
+    eleventyConfig.addFilter('console', function (value) {
+        const str = util.inspect(value, { showHidden: false, depth: null });
         return `<div style="white-space: pre-wrap;">${unescape(str)}</div>;`
     });
+
 
     eleventyConfig.addFilter('dictsortBy', function(val, reverse, attr) {
         let array = [];
@@ -339,10 +346,11 @@ module.exports = function(eleventyConfig) {
 
         createNav('handbook')
         createNav('docs')
+        createNav('core-nodes')
 
-        function createNav (tag) {
-            collection.getAll().filter((page) => {
-                return page.data.tags?.includes(tag) && !page.url.includes('README')
+        function createNav(tag) {
+            collection.getFilteredByTag(tag).filter((page) => {
+                page.url.includes('README')
                 // url.indexOf('/handbook') === 0
             }).sort((a, b) => {
                 // sort by depth, so we catch all the correct index.md routes
