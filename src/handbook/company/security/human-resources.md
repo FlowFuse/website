@@ -64,7 +64,7 @@ and procedures are reviewed annually, available in the company handbook, and tha
 employees and contractors abide by those policies and procedures for the duration
 of their employment or engagement.
 
-The primary source for the policies is the [company handbook](../security/index.md).
+The primary source for the policies is the [company handbook](/handbook/company/security/).
 The review status of each policy is tracked in [Vanta](https://app.vanta.com).
 
 Annual policy reviews shall include a review of any linked or referenced procedures,
