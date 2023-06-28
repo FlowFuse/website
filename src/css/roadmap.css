@@ -82,7 +82,10 @@
     align-items: flex-start;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+}
+
+.roadmap-section h4 {
+    color: white;
 }
 
 .title-number-container {
