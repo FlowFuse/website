@@ -65,7 +65,7 @@ or CEO, who will provision it for you.
 
 ### Workspace & Location
 
-As an all-remote company without physical offices, the expectation is that most individuals will primarily work from their homes. When it comes to acquiring equipment and furniture for your home workspace, it is recommended to discuss these requirements with your manager during the hiring process. It's important to note that the company's coverage of certain costs, such as broadband expenses, may have tax implications depending on the local legislation in your area. To understand the specific tax implications relevant to your situation, it is advisable to consult an independent advisor familiar with the local tax regulations in your location.
+As an all-remote company without physical offices, the expectation is that most individuals will primarily work from their homes. When it comes to acquiring equipment and furniture for your home workspace, it is recommended to discuss these requirements with your manager during the hiring process. It's important to note that the company's coverage of certain costs may have tax implications depending on the local legislation in your area. To understand the specific tax implications relevant to your situation, it is advisable to consult an independent advisor familiar with the local tax regulations in your location.
 
 #### Coworking space allowance
 
