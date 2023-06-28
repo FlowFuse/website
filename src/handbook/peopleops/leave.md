@@ -26,6 +26,11 @@ Sick leave, or having limited availability is not recorded currently. Keep your
 manager updated on your health, and let them know what FlowForge can do for you
 to aid in your recovery.
 
+## Bereavement Leave
+
+At FlowForge, we understand the difficulties that arise when a family member or loved one passes away. Our goal is to provide support to our employees during these challenging moments. Here are the key details of our bereavement leave. Eligible employees who experience the loss of an immediate family member or a significant individual in their life can take bereavement leave. Immediate family members typically include spouses, children, parents, siblings, grandparents, and domestic partners. Employees will be granted 10 days of paid bereavement leave. In certain cases, additional unpaid leave may be considered after a careful assessment. Throughout the approved bereavement leave period, employees will continue to receive their regular salary and applicable benefits. If you require any further assistance during this time, please reach out to the PeopleOps Manager.
+
+
 ## Parental Leave
 
 If you live in a country where a statutory Parental Leave benefit is available,
