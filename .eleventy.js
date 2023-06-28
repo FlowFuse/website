@@ -350,17 +350,21 @@ module.exports = function(eleventyConfig) {
 
         function createNav(tag) {
             collection.getFilteredByTag(tag).filter((page) => {
-                page.url.includes('README')
-                // url.indexOf('/handbook') === 0
+                return !page.url.includes('README')
             }).sort((a, b) => {
                 // sort by depth, so we catch all the correct index.md routes
                 const hierarchyA = a.url.split('/').filter(n => n)
                 const hierarchyB = b.url.split('/').filter(n => n)
                 return hierarchyA.length - hierarchyB.length
             }).forEach((page) => {
+                let url = page.url
+                if (tag == "core-nodes") {
+                    url = page.url.replace("/node-red", "")
+                }
+
                 // work out ToC Hierarchy
                 // split the folder URI/URL, as this defines our TOC Hierarchy
-                const hierarchy = page.url.split('/').filter(n => n)
+                const hierarchy = url.split('/').filter(n => n)
                 // recursively parse the folder hierarchy and created our collection object
                 // pass nav = {} as the first accumulator - build up hierarchy map of TOC
                 hierarchy.reduce((accumulator, currentValue, i) => {

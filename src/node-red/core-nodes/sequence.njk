@@ -3,9 +3,14 @@ pagination:
     data: coreNodes.sequence
     size: 1
     alias: node
+    addAllPagesToCollections: true
 coreNodeCategory: "sequence"
 permalink: "node-red/core-nodes/{{ node | coreNodeName }}/"
-title: "{{ coreNodeCategory }} - {{ node | coreNodeName }}"
+eleventyComputed:
+  meta:
+    title: "{{ node | coreNodeName }}"
+  navTitle: "{{ node | coreNodeName }}"
+  navGroup: "{{ coreNodeCategory }}"
 ---
 
 {% include "core-node-docs.njk" %}
