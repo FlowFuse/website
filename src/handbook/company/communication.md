@@ -79,9 +79,10 @@ To make it easier to find your way around in Slack, we have some rules for namin
 
 |Type | Slack prefix | Purpose |
 |:--- |:--- |:---|
-| Department | `#dept-` | For each company department and ask them questions |
-| Project based work| `#proj-` | Work scoped to a project with an finite horizon |
-| GitHub notications | `#gh-` | For many updates around the website and product development a notifacation is sent the the corresponding channel |
+| Department           | `#dept-` | For each company department and ask them questions |
+| Project based work   | `#proj-` | Work scoped to a project with an finite horizon |
+| GitHub notifications | `#gh-`   | For many updates around the website and product development a notification is sent to the corresponding channel |
+| Ops notifications    | `#ops-`  | Channels receiving notifications from operations-related services |
 
 All team members are advised to put prefix type channels into [their own section](https://slack.com/help/articles/360043207674-Organize-your-sidebar-with-custom-sections).
 
