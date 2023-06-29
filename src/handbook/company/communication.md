@@ -60,9 +60,9 @@ When using Slack, prefer to keep discussions in a thread. This reduces scroll
 back, and focusses channels.
 
 Note that knowledge in Slack is ephemeral, it's not a great storage of information.
-As such knowledge on a decision made in Slack, or elsewhere, should always be recorded
-in the GitHub issue or Google Doc on that topic to keep a log that also works
-for asynchronous communication.
+As such knowledge on a decision made in Slack, or elsewhere, should always be
+recorded on the a corresponding handbook page, a GitHub issue, or Google Doc to
+keep a log that also works for asynchronous communication.
 
 #### Recommended channels
 
@@ -75,12 +75,15 @@ below so you get to decide if you want more channels or not.
 
 #### Channel name structure
 
-When a channel is created for projects; work that's scoped to a certain topic
-that's going to be completed at some time in the future, it might be valuable to
-collect all internal communications into one Slack channel. Please prefix the
-channel name with `proj-` to make grouping easier.
+To make it easier to find your way around in Slack, it's 
 
-All team members are advised to put `proj-` channels into [their own section](https://slack.com/help/articles/360043207674-Organize-your-sidebar-with-custom-sections).
+|Type | Slack prefix | Purpose |
+|:--- |:--- |:---|
+| Department | `#dept-` | For each company department and ask them questions |
+| Project based work| `#proj-` | Work scoped to a project with an finite horizon |
+| GitHub notications | `#gh-` | For many updates around the website and product development a notifacation is sent the the corresponding channel |
+
+All team members are advised to put prefix type channels into [their own section](https://slack.com/help/articles/360043207674-Organize-your-sidebar-with-custom-sections).
 
 ### GitHub
 
