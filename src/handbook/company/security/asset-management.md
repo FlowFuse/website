@@ -67,8 +67,8 @@ All mobile devices shall be handled in accordance with the [Information Security
 
 ## Exceptions
 
-Requests for an exception to this policy must be submitted to the CEO or CTO for
-approval.
+Requests for an exception to this policy must be submitted via email to the
+CEO or CTO for approval.
 
 ## Violations & Enforcement
 
