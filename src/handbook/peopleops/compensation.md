@@ -39,14 +39,9 @@ Equity is subject to board approval.
 
 ## Benefits
 
-Last component of the total compensation are the benefits offered. The intent is
-to keep these as location independent as possible and practical. However, as a
-company we strive to offer everyone a decent standard of living. As such we might
-offer location dependant benefits to ensure standards are met.
+The final component of our total compensation is the benefits package. While our intention is to keep these benefits as location independent as possible and practical, we also strive to provide all employees with a decent standard of living. Therefore, in certain cases, we may offer location-dependent benefits to ensure that appropriate standards are met. 
 
-Benefits might change during your employment based on changing legislation,
-changing costs to offer said benefits, or costs outweighing the benefits for team
-members, or other reasons.
+Please note that the benefits offered may be subject to change during your employment. These changes may occur due to evolving legislation, fluctuations in the costs associated with providing the benefits, situations where the costs outweigh the benefits for team members, or other relevant reasons. We aim to ensure that any adjustments made to the benefits package are made with careful consideration and the best interests of our employees in mind.
 
 ### For everyone
 
@@ -61,9 +56,7 @@ account. You'll need to link your family, see also [their docs](https://support.
 
 #### Launch Lunch
 
-Each release is celebrated with a lunch. Team members that join a social Zoom
-call are encouraged to order a lunch. Lunch can be [expensed](./expenses)
-up to $25.
+A lunch is organized to celebrate every release, and team members participating in a social Zoom call are encouraged to order a meal. You can claim [expensed](./expenses) for the lunch, up to a maximum of $25, and all reimbursements must be processed through Deel.
 
 #### Dinner Bonus
 
@@ -73,4 +66,8 @@ awarded to be expensed for a dinner out. The bonus is awarded per release.
 
 ### Health Care
 
-FlowForge offers a health care package for all employees in the United States, Canada, and India.
+FlowForge offers a health care package for all employees in the United States, Canada, and India. 
+
+For employees located in the United States, FlowForge offer basic health insurance coverage which includes dental and vision benefits through Deel.
+However, employees who choose not to participate in the health insurance provided by FlowForge have the option to opt out. This can be done by registering with Zenefits and declining coverage during the enrollment process on the platform. It is important to note that if an employee decides to opt out, they must have alternative qualified coverage to ensure compliance with the ACA (Affordable Care Act).
+

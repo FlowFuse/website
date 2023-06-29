@@ -93,7 +93,7 @@
     <div class="flex-grow base">
         <div class="w-full">
             <!-- Events Banner -->
-            {% include "../components/events-banner.njk" %}
+            <!-- {% include "../components/events-banner.njk" %} -->
             <!-- Navigation Header -->
             <header id="ff-header" class="ff-header">
                 <nav class="relative w-full flex items-center justify-between mx-auto container md:max-w-screen-xl">
@@ -112,10 +112,30 @@
 
                     <!-- Nav -->
                     <ul id="nav-content" class="">
-                        {% navoption "pricing", "/pricing", 0 %}{% endnavoption %}
+                        {% edge "liquid" %}
+                            {% abtesting "ab-pricing-nested", "control" %}
+                                <li class="flex items-center gap-2">
+                                    <a class="flex items-center gap-2" href="/pricing">
+                                        pricing
+                                    </a>
+                                </li>
+                            {% endabtesting %}
+                        {% endedge %}
                         {% navoption "product", null, 0 %}
                             <ul>
                                 {% navoption "features", "/features", 1, "star" %}{% endnavoption %}
+                                {% edge "liquid" %}
+                                    {% abtesting "ab-pricing-nested", "nested" %}
+                                        <li class="flex items-center gap-2">
+                                            <a class="flex items-center gap-2" href="/pricing">
+                                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v12m-3-2.818l.879.659c1.171.879 3.07.879 4.242 0 1.172-.879 1.172-2.303 0-3.182C13.536 12.219 12.768 12 12 12c-.725 0-1.45-.22-2.003-.659-1.106-.879-1.106-2.303 0-3.182s2.9-.879 4.006 0l.415.33M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                                </svg>
+                                                pricing
+                                            </a>
+                                        </li>
+                                    {% endabtesting %}
+                                {% endedge %}
                                 {% navoption "roadmap", "/product/roadmap", 1, "map" %}{% endnavoption %}
                                 {% navoption "customer stories", "/customer-stories", 1, "presentation" %}{% endnavoption %}
                             </ul>
@@ -220,7 +240,7 @@
                         <div>Copyright 2023 FlowForge Inc.</div>
                         <div>All Rights Reserved</div>
                     </div>
-                    <div class="mt-2 text-xs">This site uses cookies. Click <a href="#" class="underline" onclick="initCookieConsent().showSettings()">here</a> to manage your preferences</a>.</div>
+                    <div class="mt-2 text-xs">This site uses cookies. Click <a class="underline cursor-pointer" type="button" data-cc="c-settings">here</a> to manage your preferences</a>.</div>
                 </div>
                 <div class="w-full">
                     <h4 class=""><span class="text-xl font-bold">Social</h4>

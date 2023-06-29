@@ -23,9 +23,7 @@ First, you'll need to get an installation of Node-RED up and running. There are 
 
 To get Node-RED running on FlowForge visit our [web site and create a new user](https://app.flowforge.com/account/create). We've got an offer at the moment which gives you a Node-RED instance for free for one month.
 
-Once you have created a user you next need to create a new team, as part of that process you will be asked to provide bank card details. 
-
-You now need to create a project, each project includes an instance of Node-RED. Once that instance has booted up you access Node-RED by pressing "Open Editor".
+You now need to create an application, which includes an instance of Node-RED. Once that instance has booted up you access Node-RED by pressing "Open Editor".
 
 #### npm
 

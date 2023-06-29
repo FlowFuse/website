@@ -3,7 +3,7 @@ layout: nohero
 title: Security Statement - FlowForge
 ---
 
-<div class="prose prose-blue container m-auto max-w-4xl">
+<div class="prose prose-blue container m-auto max-w-4xl px-6 pb-24">
 
 Security aspects of FlowForge are divided up into two sections, configuration
 and application level. Application level security aspects apply to both self

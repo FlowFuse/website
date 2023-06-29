@@ -155,7 +155,7 @@ Follow these steps to run the scripts:
 
 Once everything has been published, the Release Manager should:
 
-1. Run the staging CI pipeline [Build for Kube](https://github.com/flowforge/CloudProject/actions/workflows/build-kube.yml) against the main branch, to ensure staging is running the latest release.
+1. Run the staging CI pipeline [Build for Staging](https://github.com/flowforge/CloudProject/actions/workflows/build-kube.yml) against the main branch, to ensure staging is running the latest release.
   - Once that completes, verify it has deployed cleanly on Staging
 2. Raise a "FlowForge Cloud Change Requests" Issue in [CloudProject Project](https://github.com/flowforge/CloudProject/issues/new/choose) to request Production to be updated to the new version.
 3. Notify the CTO/Senior Engineer that the release is ready to publish to production.

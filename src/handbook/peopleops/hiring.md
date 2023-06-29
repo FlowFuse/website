@@ -19,6 +19,10 @@ the job advert on Greenhouse. This was introduced [here](https://github.com/flow
 1. Update the redirect URL in the `njk` file to match that added in Step 1.
 1. Open an [Art Request](/handbook/design/art-requests/) to have a new Social Tile designed & attach it to the relevant page
 
+### Referrals
+
+To participate in FlowForge's employee referral program, kindly send all referral resumes to the People Ops Manager. If your recommended candidate gets hired and successfully completes 3 months, you will receive a $100 reward. Alternatively, you can choose a charitable foundation of your liking, and we will double the referral amount donated to that organization.
+
 ### Sharing an Existing Role
 
 The URLs for the existing roles we have on the website are any files found in [here](https://github.com/flowforge/website/tree/main/src/jobs).
@@ -66,6 +70,10 @@ date for a new employee should be at least 3 to 4 weeks out. When a
 1. Add their stock options to the stock option request spreadsheets
    * Copy or create a new monthly request sheet from [this template](https://docs.google.com/spreadsheets/d/1AG75qONjObto3g2oJH_SC4gjgRsYJmKUI3fjrZuktm0/edit#gid=1970623412){rel="nofollow"}
 
+### Background Screening
+
+FlowForge will utilize Deel to conduct background checks on individuals in the United States. These checks are essential for compliance purposes, particularly for employees located in the US.
+
 ### Tax Residency
 During the onboarding process on our EOR provider platform, candidates must either be citizens of the country where they will be working or possess a valid visa. Any requests for changes in tax residency should be communicated to the HR department and CEO at least 2 months in advance.
 
@@ -99,6 +107,8 @@ Once these are in place a pipeline needs to be designeed by the PeopleOps manage
 ### Pipeline design
 
 A pipeline needs to be designed, meaning; you'll need to define all stages of the hiring process.
+For each stage of the hiring pipeline scoresheets **must** be filled out. Each scorecard
+**must** include all values, and job requirements.
 
 #### Accepting applications
 

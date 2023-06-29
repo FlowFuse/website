@@ -33,12 +33,13 @@ Target growth for this metric is 10% week over week.
 ## OKRs
 
 OKRs, Objectives and Key Results, are action oriented goals that have a _measureable_
-impact on the company. OKRs are intended to be bold goals, where the bar is set
-high enough that one still takes a leap.
+impact on the company. OKRs are intended to be bold and ambitious goals.
 
 Given goals are intended to be bold and aggressive, performance on the OKRs has
 no influence on compensation or any other performance indicator of a department
 or individual.
+
+The current OKRs are documented [in this internal document](https://docs.google.com/document/d/1vtuOidsfSe4NQA9PKTlk898MJDNf8dcP2NPhSSqc84g/edit#){rel="nofollow"}.
 
 ### Anatomy of an OKR
 

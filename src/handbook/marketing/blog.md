@@ -51,7 +51,7 @@ The subtitle is only shown on the articles.
 
 #### Description
 
-The description is unused currently
+Provides the (OpenGraph) description used when sharing a post on social media. Also used on the `/blog` page for past articles.
 
 #### Date
 

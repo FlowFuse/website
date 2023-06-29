@@ -146,14 +146,14 @@ Role | Purpose
 ---|---
 [Access Control Policy](./access-control.md) | To limit access to information and information processing systems to authorized parties in accordance with business objectives.
 [Asset Management Policy](./asset-management.md) | To identify organizational assets and define appropriate protection responsibilities. 
-Business Continuity & Disaster Recovery Plan | To prepare FlowForge in the event of extended service outages caused by factors beyond our control (e.g., natural disasters, man-made events), and to restore services to the widest extent possible in a minimum time frame.
+[Business Continuity & Disaster Recovery Plan](./business-continuity.md) | To prepare FlowForge in the event of extended service outages caused by factors beyond our control (e.g., natural disasters, man-made events), and to restore services to the widest extent possible in a minimum time frame.
 [Cryptography Policy](./cryptography.md) | To ensure proper and effective use of cryptography to protect the confidentiality, authenticity and/or integrity of information.
 [Data Management Policy](./data-management.md) | To ensure that information is classified and protected in accordance with its importance to the organization.
-Human Resources Policy | To ensure that employees and contractors meet security requirements, understand their responsibilities, and are suitable for their roles.
+[Human Resources Policy](./human-resources.md) | To ensure that employees and contractors meet security requirements, understand their responsibilities, and are suitable for their roles.
 Incident Response Plan | Policy and procedures for suspected or confirmed information security incidents.
 [Operations Security Policy](./operations-security.md) | To ensure the correct and secure operation of information processing systems and facilities.
 Physical Security Policy | To prevent unauthorized physical access or damage to the organization’s information and information processing facilities.
-Risk Management Policy | To define the process for assessing and managing FlowForge's information security risks in order to achieve the company’s business and information security objectives.
+[Risk Management Policy](./risk-management.md) | To define the process for assessing and managing FlowForge's information security risks in order to achieve the company’s business and information security objectives.
 [Secure Development Policy](./secure-development.md) | To ensure that information security is designed and implemented within the development lifecycle for applications and information systems.
 [Third Party Risk Management Policy](./third-party-risk-management.md) | To ensure protection of the organization's data and assets that are shared with, accessible to, or managed by suppliers, including external parties or third-party organizations such as service providers, vendors, and customers, and to maintain an agreed level of information security and service delivery in line with supplier agreements.
 
