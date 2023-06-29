@@ -19,69 +19,9 @@ date: git Last Modified
     }
 </script>
 
-<div class="handbook ff-prose text-left pb-24" data-{{nav}}>
-    <!-- Navigation -->
-    <div class="border-r">
-        <ul class="handbook-nav" data-el="navigation">
-            <li class="{% if "/{{ nav }}/" === page.url %}active{% endif %}">
-                <a href="/{{ nav }}">{{ nav }}</a>
-            </li>
-            {% for group in collections.nav[nav].groups %}
-            {% if group.children.length > 0 %}
-            <li class="handbook-nav-group">{{ group.name }}</li>
-                {% for entry in group.children %}
-                <li class="{% if entry.url === page.url %}active{% endif %}">
-                    <a href="{{entry.url}}">
-                        {{ entry.name }}
-                    </a>
-                    {% if entry.children %}
-                    <button onclick="toggleNavList(this)">
-                        <span class="ff-icon icon-expand">
-                            {% include "components/icons/chevron-down.svg" %}
-                        </span>
-                        <span class="ff-icon icon-minimise">
-                            {% include "components/icons/chevron-up.svg" %}
-                        </span>
-                    </button>
-                    {% endif %}
-                </li>
-                {% if entry.children %}
-                <ul class="handbook-nav-nested">
-                    {% for child in entry.children %}
-                    <li class="{% if child.url === page.url %}active{% endif %}">
-                        <a href="{{child.url}}">
-                            {{ child.name }}
-                        </a>
-                        {% if child.children %}
-                        <button onclick="toggleNavList(this)">
-                            <span class="ff-icon icon-expand">
-                                {% include "components/icons/chevron-down.svg" %}
-                            </span>
-                            <span class="ff-icon icon-minimise">
-                                {% include "components/icons/chevron-up.svg" %}
-                            </span>
-                        </button>
-                        {% endif %}
-                    </li>
-                    {% if child.children %}
-                    <ul class="handbook-nav-nested-2">
-                        {% for grandchild in child.children %}
-                        <li class="{% if grandchild.url === page.url %}active{% endif %}">
-                            <a href="{{grandchild.url}}">
-                                {{ grandchild.name }}
-                            </a>
-                        </li>
-                        {% endfor %}
-                    </ul>
-                    {% endif %}
-                    {% endfor %}
-                </ul>
-                {% endif %}
-                {% endfor %}
-            {% endif %}
-            {% endfor %}
-        </ul>
-    </div>
+<div class="handbook ff-prose text-left pb-24">
+    {% include "./left-nav.njk" %}
+
     <div class="max-w-screen-lg mx-auto px-8 pt-8">
         <!-- Breadcrumbs - Desktop -->
         <div class="hidden w-full mx-auto ff-bg-light md:block">
@@ -89,7 +29,7 @@ date: git Last Modified
                 {% if version %}
                 v{{ version }}
                 {% endif %}
-                {{ page.filePathStem | handbookBreadcrumbs |safe }}
+                {{ page.url | handbookBreadcrumbs | safe }}
             </div>
         </div>
         <div class="w-full m-auto md:mb-10 md:pt-6">
@@ -111,7 +51,7 @@ date: git Last Modified
                 {% if version %}
                 v{{ version }}
                 {% endif %}
-                {{ page.filePathStem | handbookBreadcrumbs | safe }}
+                {{ page.url | handbookBreadcrumbs | safe }}
             </div>
         </div>
         <!-- Right side bar -->
@@ -181,33 +121,4 @@ date: git Last Modified
     })
 </script>
 
-<!-- MermaidJS -->
-<script type="module">
-    import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@10.0.0/dist/mermaid.esm.mjs";
-    mermaid.initialize({startOnLoad:true});
-</script>
-
-<!-- Clipboard -->
-<link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/19.1.1/tooltips.min.css"  as="style" onload="this.onload=null;this.rel='stylesheet'" crossorigin="anonymous" referrerpolicy="no-referrer" />
-{% initClipboardJS %}
-
-<!-- Syntax Highlighting CSS -->
-<link rel="preload" href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism-tomorrow.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
-
-<link rel="preload"href="https://cdn.jsdelivr.net/npm/@algolia/algoliasearch-netlify-frontend@1/dist/algoliasearchNetlify.css" as="style" onload="this.onload=null;this.rel='stylesheet'" crossorigin="anonymous" referrerpolicy="no-referrer" />
-<link rel="preload" href="https://cdn.jsdelivr.net/npm/@algolia/autocomplete-theme-classic" as="style" onload="this.onload=null;this.rel='stylesheet'" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
-<script async type="text/javascript" src="https://cdn.jsdelivr.net/npm/@algolia/algoliasearch-netlify-frontend@1/dist/algoliasearchNetlify.js" onload="initSearchBar()"></script>
-<script async type="text/javascript">
-  function initSearchBar () {
-    algoliasearchNetlify({
-        appId: 'KWE0727TZS',
-        apiKey: '595ee07f069991380e9c3036cfad8e5e',
-        siteId: '00f8cf60-997f-4c4d-9427-a97924358648',
-        branch: 'live',
-        selector: 'div#algolia-search',
-        detached: false
-    });
-    }
-</script>
+{% include "./common-js.njk" %}

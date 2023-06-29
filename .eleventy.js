@@ -173,8 +173,8 @@ module.exports = function(eleventyConfig) {
         return new URL(url, site.baseURL).href;
     })
 
-    eleventyConfig.addFilter("handbookBreadcrumbs", (str) => {
-        const parts = str.split("/");
+    eleventyConfig.addFilter("handbookBreadcrumbs", (url) => {
+        const parts = url.split("/");
         parts.shift();
         if (parts[parts.length-1] === "index") {
             parts.pop();
