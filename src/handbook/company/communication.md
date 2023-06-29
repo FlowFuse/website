@@ -75,7 +75,7 @@ below so you get to decide if you want more channels or not.
 
 #### Channel name structure
 
-To make it easier to find your way around in Slack, it's 
+To make it easier to find your way around in Slack, we have some rules for naming channels. This will help give everything some context and implicit sense of purpose.
 
 |Type | Slack prefix | Purpose |
 |:--- |:--- |:---|
