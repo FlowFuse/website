@@ -5,6 +5,7 @@ description: step-by-step guide for using Node-RED as an industrial protocol con
 date: 2023-06-20
 authors: ["richard-meyer"]
 image: blog/2023/06/images/ethip-to-S7/Node-RED-as-a-No-Code-Ethernet_IP-to-S7-Protocol-Converter.png
+video: dteXgcBXUnk
 tags:
   - posts
   - how-to
