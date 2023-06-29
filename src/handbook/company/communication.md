@@ -60,9 +60,9 @@ When using Slack, prefer to keep discussions in a thread. This reduces scroll
 back, and focusses channels.
 
 Note that knowledge in Slack is ephemeral, it's not a great storage of information.
-As such knowledge on a decision made in Slack, or elsewhere, should always be
-recorded on the a corresponding handbook page, a GitHub issue, or Google Doc to
-keep a log that also works for asynchronous communication.
+As such knowledge on a decision made in Slack, or elsewhere, should always be recorded
+in the GitHub issue or Google Doc on that topic to keep a log that also works
+for asynchronous communication.
 
 #### Recommended channels
 
