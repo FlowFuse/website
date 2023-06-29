@@ -4,6 +4,12 @@ navTitle: Vendors
 
 # Vendors
 
+In accordance with our [Third-Party Risk Management policy](../company/security/third-party-risk-management.md)
+all vendors should be reviewed to ensure their suitability for handling FlowForge
+data.
+
+A list of approved vendors is available interally [here](https://docs.google.com/spreadsheets/d/1ro77wy0cRK6gpzVv_iq4vpdmbdMq61X5-tTwI_F3hXM/edit?usp=sharing){rel="nofollow"}.
+
 ### Process
 
 To start to process of approval and paying of invoices a PDF of the invoice should

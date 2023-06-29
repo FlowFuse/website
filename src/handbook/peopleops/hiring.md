@@ -185,6 +185,7 @@ that's no longer available is a waste of their time and a bad experience with
 FlowForge and hurts our reputation.
 
 ## Offboarding
+
 The purpose of the offboarding section in the handbook is to provide a clear and structured framework for employees at FlowForge to follow during the offboarding process. The offboarding process is managed by the People Ops Manager in close collaboration with the CEO, Reporting Managers, and Deel for Payroll at FlowForge.
 
 When a team member or contractor decides to leave FlowForge, they will receive a detailed email before their final date of employment. The email will include information regarding the impact on benefits coverage, stocks, final pay, and the process for returning any company assets.
