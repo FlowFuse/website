@@ -5,7 +5,7 @@ image: /images/product/og-product-roadmap.jpg
 ---
 
 <!-- Roadmap link button section, containing a link to view the entire roadmap on GitHub. -->
-<div class="px-6 -mt-32 mx-auto text-gray-400 text-center md:max-w-screen-lg -mt-40 mb-8 md:mb-40">
+<div class="px-6 -mt-32 mx-auto text-gray-400 text-center md:max-w-screen-lg -mt-40 mb-24 md:mb-44">
     <h4>
         <div class="font-semibold text-white mb-8 -mt-2">Stay up-to-date with our progress</div> 
     </h4>
@@ -17,13 +17,13 @@ image: /images/product/og-product-roadmap.jpg
             <span>FULL GITHUB ROADMAP</span>
         </a>
     </div>
-  </div>
+</div>
 {% include "components/divider-flow--top-red--light.njk" %}
 <!-- Roadmap content section, divided into three columns: Consideration, In Progress, and Newly Released. Each column
 has a headline, description, and a container for roadmap items. -->
-<div class="about w-full bg-gray-50 pb-24 md:pb-48 md:pt-6">
+<div class="about w-full bg-gray-50 pb-24 md:pt-6">
     <div class="container m-auto max-w-5xl">
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-x-4 -mt-32">
+        <div class="grid grid-cols-1 text-center md:grid-cols-3 gap-12 md:gap-4 pt-12 md:pt-0 md:-mt-32 max-w-lg md:max-w-full m-auto px-6 sm:px-4">
             <!-- Consideration Column -->
             <div class="roadmap-section consideration rounded-t-xl rounded-b-lg md:pb-0 bg-white drop-shadow-xl">
                 <div class="p-6 pb-2 rounded-t-lg bg-gray-500 text-white min-h[192px]">
@@ -31,6 +31,9 @@ has a headline, description, and a container for roadmap items. -->
                     <hr class="border-gray-400">
                     <p>We would appreciate your feedback on the potential new features that we are considering for development.</p>
                 </div>
+                <h5 class="flex flex-row justify-center items-center w-full p-1 bg-gray-600 font-semibold text-gray-50 text-center">
+                    <span class="pt-0.5 pr-2 h-[18px]">{% include "components/icons/github.svg" %}</span>Vote on Github<span class="pt-0.5 pl-1">{% include "components/icons/arrow-small-down.svg" %}
+                </h5>
                 <div class="roadmap-item-container p-6 pt-0"></div>
             </div>
             <!-- In Progress Column -->
@@ -40,11 +43,14 @@ has a headline, description, and a container for roadmap items. -->
                     <hr class="border-gray-500">
                     <p>We are currently working on the following topics and would appreciate any feedback you may have.</p>
                 </div>
+                <h5 class="flex flex-row justify-center items-center w-full p-1 bg-gray-700 font-semibold text-gray-50 text-center">
+                    <span class="pt-px pr-2 h-[18px]">{% include "components/icons/github.svg" %}</span>See status on Github<span class="pt-0.5 pl-1">{% include "components/icons/arrow-small-down.svg" %}
+                </h5>
                 <div class="roadmap-item-container p-6 pt-0"></div>
             </div>
             <!-- Newly Released Column -->
             <div class="roadmap-section completed rounded-t-xl rounded-b-lg md:pb-0 bg-white drop-shadow-xl">
-                <div class="p-6 pb-2 rounded-t-lg bg-gray-700 text-white min-h[192px]">
+                <div class="p-6 pb-2 rounded-t-lg bg-gray-700 text-white min-h[192px] w-full">
                     <h4 class="left-headline text-center">Newly released</h4>
                     <hr class="border-gray-600">
                     <p>
@@ -55,10 +61,16 @@ has a headline, description, and a container for roadmap items. -->
                         to see the latest features and improvements.
                     </p>
                 </div>
+                <h5 class="flex flex-row justify-center items-center w-full p-1 bg-gray-800 font-semibold text-gray-50 text-center">
+                    Latest posts<span class="pt-px pl-1">{% include "components/icons/arrow-small-down.svg" %}
+                </h5>
+                <h5 class="flex flex-row justify-center items-center w-full p-1 bg-gray-200 font-semibold text-gray-800 text-center">
+                    Sign up
+                </h5>
                 <!-- Newsletter sign-up form container -->
-                <div class="w-full p-6 pt-3 mb-2 flex flex-col border-t">
+                <div class="w-full p-6 pt-3 mb-2 flex flex-col">
                     <a id="sign-up"></a>
-                    <h5 class="mb-8">Sign up for our monthly email updates:</h5>
+                    <h6 class="text-gray-500 text-left my-4">And get monthly email updates.</h6>
                     <!-- HubSpot form script for the newsletter sign-up -->
                     <script>
                         function displayHubSpotForm() {
@@ -77,24 +89,27 @@ has a headline, description, and a container for roadmap items. -->
                         type="text/javascript"
                         charset="utf-8"
                         src="//js-eu1.hsforms.net/forms/embed/v2.js"
-                        onload="displayHubSpotForm()"></script>
+                        onload="displayHubSpotForm()">
+                    </script>
                 </div>
             </div>
         </div>
     </div>
 </div>
-{% include "components/divider-flow--top-red--dark.njk" %}
+<div class="text-gray-50 bg-white">{% include "components/dividers/light-grey-curve-inverted.svg" %}</div>
+
 <!-- Roadmap feedback section, containing a header, description, and a contact button for users to provide feedback. -->
-<div class="roadmap-feedback w-full ff-bg-dark px-6 pt-12 pb-24 md:pt-20 md:px-0 md:pb-48">
-    <div class="container m-auto text-left max-w-4xl">
-        <div>
-            <h1 class="mb-4">Suggest a new feature</h1>
-            <p>If you haven't found the feature you're looking for, we encourage you to provide your valuable feedback and suggestions. Your input will help us shape the future of FlowForge, ensuring it meets your needs and expectations. Please consider sharing your thoughts and ideas with us by suggesting a new feature. To do so, simply click the button below to open a new feature request on our GitHub repository.</p>
-            <a href="https://github.com/flowforge/flowforge/issues/new?assignees=&labels=needs-triage%2Cfeature-request&template=03-feature.yml" class="inline-block ff-btn ff-btn--secondary shadow">Suggest a new feature</a>
+<div class="w-full ff-bg-light">
+    <div class="roadmap-feedback bg-white px-6 pt-8 pb-24 md:pt-12 md:px-0">
+        <div class="container m-auto text-center max-w-4xl sm:max-w-xl md:px-4">
+            <div>
+                <h2 class="mb-9">Suggest a new feature</h2>
+                <p>Provide your valuable feedback and suggestions. Your input will help us shape the future of FlowForge, ensuring it meets your needs and expectations. To do so, simply click the button below to open a new feature request on our GitHub repository.</p>
+                <a href="https://github.com/flowforge/flowforge/issues/new?assignees=&labels=needs-triage%2Cfeature-request&template=03-feature.yml" class="inline-block ff-btn ff-btn--primary mt-6">SUGGEST NEW FEATURE</a>
+            </div>
         </div>
     </div>
 </div>
-{% include "components/divider-flow--top-grey.njk" %}
 <!-- Inline JavaScript code -->
 <script>
     // Utility function to send REST requests to the GitHub API.

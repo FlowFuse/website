@@ -64,6 +64,11 @@
 .roadmap-item-container {
     display: flex;
     flex-grow: 1;
+    width: 100%;
+}
+
+.roadmap-item-container ul{
+    width: 100%;
 }
 
 .roadmap-item-text {
