@@ -68,12 +68,13 @@
     height: 100%;
     flex-grow: 1;
     font-weight: 400;
+    color: theme(colors.gray.500);
 }
 
 .roadmap-item a:hover {
     text-decoration: none;
     background-color: theme(colors.gray.100);
-    font-weight: 600;
+    color: theme(colors.gray.800);
 }
 
 .roadmap-item-container {
@@ -89,7 +90,6 @@
 }
 
 .roadmap-item-text {
-    color: theme(colors.gray.500);
     flex-grow: 1;
     text-align: left;
 }
