@@ -13,7 +13,7 @@ image: /images/product/og-product-roadmap.jpg
       <span style="color: #D1D5DB;">Here you can find information about upcoming features, enhancements, and other changes we're actively working on to make FlowForge an even more powerful and versatile tool for your business needs.</span>
     </p>
     <div class="text-center mt-10">
-        <a href="https://github.com/orgs/flowforge/projects/5" class="inline-block ff-btn ff-btn--primary uppercase">
+        <a href="https://github.com/orgs/flowforge/projects/5" target="_blank" class="inline-block ff-btn ff-btn--primary uppercase">
             <span>FULL GITHUB ROADMAP</span>
         </a>
     </div>
@@ -68,7 +68,7 @@ has a headline, description, and a container for roadmap items. -->
                 <div class="roadmap-item-container pt-0">
                     <ul>
                         {%- for releases in collections.releases | reverse | limit(2) -%}
-                            <li class="roadmap-item"><a href="{{ releases.url }}" class="roadmap-item-text">{{ releases.data.title }}</a></li>
+                            <li class="roadmap-item"><a href="{{ releases.url }}" target="_blank" class="roadmap-item-text">{{ releases.data.title }}</a></li>
                         {%- endfor -%}
                     </ul>
                 </div>
@@ -155,7 +155,7 @@ has a headline, description, and a container for roadmap items. -->
                 <div class="roadmap-item-container pt-0">
                     <ul>
                         {%- for releases in collections.releases | reverse | limit(2) -%}
-                            <li class="roadmap-item"><a href="{{ releases.url }}" class="roadmap-item-text">{{ releases.data.title }}</a></li>
+                            <li class="roadmap-item"><a href="{{ releases.url }}" target="_blank" class="roadmap-item-text">{{ releases.data.title }}</a></li>
                         {%- endfor -%}
                     </ul>
                 </div>
@@ -201,7 +201,7 @@ has a headline, description, and a container for roadmap items. -->
             <div>
                 <h2 class="mb-9">Suggest a new feature</h2>
                 <p>Provide your valuable feedback and suggestions. Your input will help us shape the future of FlowForge, ensuring it meets your needs and expectations. To do so, simply click the button below to open a new feature request on our GitHub repository.</p>
-                <a href="https://github.com/flowforge/flowforge/issues/new?assignees=&labels=needs-triage%2Cfeature-request&template=03-feature.yml" class="inline-block ff-btn ff-btn--primary mt-6">SUGGEST NEW FEATURE</a>
+                <a href="https://github.com/flowforge/flowforge/issues/new?assignees=&labels=needs-triage%2Cfeature-request&template=03-feature.yml" target="_blank" class="inline-block ff-btn ff-btn--primary mt-6">SUGGEST NEW FEATURE</a>
             </div>
         </div>
     </div>
