@@ -72,7 +72,7 @@
 
 .roadmap-item a:hover {
     text-decoration: none;
-    background-color: theme(colors.gray.200);
+    background-color: theme(colors.gray.100);
     font-weight: 600;
 }
 

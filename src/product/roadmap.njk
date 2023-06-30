@@ -23,7 +23,8 @@ image: /images/product/og-product-roadmap.jpg
 has a headline, description, and a container for roadmap items. -->
 <div class="about w-full bg-gray-50 pb-14 md:pt-6">
     <div class="container m-auto max-w-5xl">
-        <div class="grid grid-cols-1 text-center md:grid-cols-3 gap-12 md:gap-4 pt-12 md:pt-0 md:-mt-32 max-w-lg md:max-w-full m-auto px-6 sm:px-4">
+        <!-- Mobile -->
+        <div class="grid grid-cols-1 text-center gap-12 pt-12 max-w-lg md:max-w-full m-auto px-6 sm:px-4 md:hidden">
             <!-- Consideration Column -->
             <div class="roadmap-section consideration rounded-t-xl rounded-b-lg md:pb-0 bg-white drop-shadow-lg">
                 <div class="p-6 pb-2 rounded-t-lg bg-gray-500 text-white min-h[192px]">
@@ -101,8 +102,96 @@ has a headline, description, and a container for roadmap items. -->
                 </div>
             </div>
         </div>
+        <!-- Desktop -->
+        <div class="hidden text-center md:grid-cols-3 md:gap-x-4 md:pt-0 md:-mt-32 md:max-w-full m-auto px-6 sm:px-4 md:grid">
+            <!-- Consideration Column Header-->
+            <div class="roadmap-section rounded-t-xl rounded-b-lg md:pb-0 bg-white drop-shadow-lg">
+                <div class="p-6 pb-2 rounded-t-lg bg-gray-500 text-white min-h[192px] h-full">
+                    <h4 class="left-headline text-center">Under consideration</h4>
+                    <hr class="border-gray-400">
+                    <p>We would appreciate your feedback on the potential new features that we are considering for development.</p>
+                </div>
+            </div>
+            <!-- In Progress Column Header-->
+            <div class="roadmap-section rounded-t-xl rounded-b-lg md:pb-0 bg-white drop-shadow-lg">
+                <div class="p-6 pb-2 rounded-t-lg bg-gray-600 text-white min-h[192px] h-full">
+                    <h4 class="left-headline text-center">In Progress</h4>
+                    <hr class="border-gray-500">
+                    <p>We are currently working on the following topics and would appreciate any feedback you may have.</p>
+                </div>
+            </div>
+            <!-- Newly Released Column Header-->
+            <div class="roadmap-section rounded-t-xl rounded-b-lg md:pb-0 bg-white drop-shadow-lg">
+                <div class="p-6 pb-2 rounded-t-lg bg-gray-700 text-white min-h[192px] w-full h-full">
+                    <h4 class="left-headline text-center">Newly released</h4>
+                    <hr class="border-gray-600">
+                    <p>Check out product updates on
+                        <a href="https://www.flowforge.com/blog/" target="_blank">
+                            our blog
+                        </a>
+                        to see the latest features and improvements.
+                    </p>
+                </div>
+            </div>
+            <!-- Consideration Column Content-->
+            <div class="roadmap-section consideration rounded-t-xl rounded-b-lg md:pb-0 bg-white drop-shadow-lg">
+                <h5 class="flex flex-row justify-center items-center w-full p-1 bg-gray-600 font-semibold text-gray-50 text-center">
+                    <span class="pt-0.5 pr-2 h-[18px]">{% include "components/icons/github.svg" %}</span>Vote on Github<span class="pt-0.5 pl-1">{% include "components/icons/arrow-small-down.svg" %}
+                </h5>
+                <div class="roadmap-item-container pt-0"></div>
+            </div>
+            <!-- In Progress Column Content-->
+            <div class="roadmap-section progress rounded-t-xl rounded-b-lg md:pb-0 bg-white drop-shadow-lg">
+                <h5 class="flex flex-row justify-center items-center w-full p-1 bg-gray-700 font-semibold text-gray-50 text-center">
+                    <span class="pt-px pr-2 h-[18px]">{% include "components/icons/github.svg" %}</span>See status on Github<span class="pt-0.5 pl-1">{% include "components/icons/arrow-small-down.svg" %}
+                </h5>
+                <div class="roadmap-item-container pt-0"></div>
+            </div>
+            <!-- Newly Released Column Content-->
+            <div class="roadmap-section completed rounded-t-xl rounded-b-lg md:pb-0 bg-white drop-shadow-lg">
+                <h5 class="flex flex-row justify-center items-center w-full p-1 bg-gray-800 font-semibold text-gray-50 text-center">
+                    Latest posts<span class="pt-px pl-1">{% include "components/icons/arrow-small-down.svg" %}
+                </h5>
+                <div class="roadmap-item-container pt-0">
+                    <ul>
+                        {%- for releases in collections.releases | reverse | limit(2) -%}
+                            <li class="roadmap-item"><a href="{{ releases.url }}" class="roadmap-item-text">{{ releases.data.title }}</a></li>
+                        {%- endfor -%}
+                    </ul>
+                </div>
+                <h5 class="flex flex-row justify-center items-center w-full p-1 bg-gray-200 font-semibold text-gray-800 text-center">
+                    Sign up
+                </h5>
+                <!-- Newsletter sign-up form container -->
+                <div class="w-full p-6 pt-3 mb-2 flex flex-col">
+                    <a id="sign-up"></a>
+                    <h6 class="text-gray-500 text-left my-4">And get monthly email updates.</h6>
+                    <!-- HubSpot form script for the newsletter sign-up -->
+                    <script>
+                        function displayHubSpotForm() {
+                            hbspt.forms.create({
+                                region: "eu1",
+                                portalId: "26586079",
+                                formId: "159c173d-dd95-49bd-922b-ff3ef243e90c",
+                                onFormSubmit: function ($form) {
+                                    capture('cta-blog-subscribe', {'position': 'primary'})
+                                }
+                            });
+                        }
+                    </script>
+                    <script
+                        async="async"
+                        type="text/javascript"
+                        charset="utf-8"
+                        src="//js-eu1.hsforms.net/forms/embed/v2.js"
+                        onload="displayHubSpotForm()">
+                    </script>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
+
 <div class="text-gray-50 bg-white">{% include "components/dividers/light-grey-curve-inverted.svg" %}</div>
 
 <!-- Roadmap feedback section, containing a header, description, and a contact button for users to provide feedback. -->
@@ -189,11 +278,20 @@ has a headline, description, and a container for roadmap items. -->
     }
     // Update the roadmap sections with the fetched issues.
     async function updateRoadmap() {
-        const inConsiderationItems = await fetchGitHubIssues("consideration");
-        const progressItems = await fetchDevIssues();
-        updateRoadmapSection(document.querySelector(".consideration"), inConsiderationItems);
-        updateRoadmapSection(document.querySelector(".progress"), progressItems, false);
-    }
+    const inConsiderationItems = await fetchGitHubIssues("consideration");
+    const progressItems = await fetchDevIssues();
+    const considerationElements = document.querySelectorAll(".consideration");
+    const progressElements = document.querySelectorAll(".progress");
+
+    considerationElements.forEach((element) => {
+        updateRoadmapSection(element, inConsiderationItems);
+    });
+
+    progressElements.forEach((element) => {
+        updateRoadmapSection(element, progressItems, false);
+    });
+}
+
     function updateRoadmapSection(element, items, showReactions = true) {
         // Get the container for the list of items.
         let listContainer = element.querySelector(".roadmap-item-container");
