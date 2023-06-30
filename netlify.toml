@@ -13,6 +13,11 @@ package = "@algolia/netlify-plugin-crawler"
   [plugins.inputs]
   branches = ['main', 'live']
   template = "hierarchical"
+
+[[plugins]]
+package = "netlify-plugin-cache"
+  [plugins.inputs]
+  paths = [ ".cache" ]
   
 [[edge_functions]]
 function = "eleventy-edge"
