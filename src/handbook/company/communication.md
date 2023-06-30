@@ -59,9 +59,9 @@ Slack to be matched automatically.
 When using Slack, prefer to keep discussions in a thread. This reduces scroll
 back, and focusses channels.
 
-Note that knowledge in Slack is ephemeral, it's not a great storage of information.
-As such knowledge on a decision made in Slack, or elsewhere, should always be recorded
-in the GitHub issue or Google Doc on that topic to keep a log that also works
+Note that knowledge in Slack is ephemeral, it's not storage for information or knowledge
+sharing. As such knowledge and decision made in Slack should always be recorded
+in the handbook, GitHub issue, or Google Doc on that topic to keep a log that also works
 for asynchronous communication.
 
 #### Recommended channels
