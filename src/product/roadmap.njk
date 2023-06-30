@@ -64,6 +64,13 @@ has a headline, description, and a container for roadmap items. -->
                 <h5 class="flex flex-row justify-center items-center w-full p-1 bg-gray-800 font-semibold text-gray-50 text-center">
                     Latest posts<span class="pt-px pl-1">{% include "components/icons/arrow-small-down.svg" %}
                 </h5>
+                <div class="roadmap-item-container pt-0">
+                    <ul>
+                        {%- for releases in collections.releases | reverse | limit(2) -%}
+                            <li class="roadmap-item"><a href="{{ releases.url }}" class="roadmap-item-text">{{ releases.data.title }}</a></li>
+                        {%- endfor -%}
+                    </ul>
+                </div>
                 <h5 class="flex flex-row justify-center items-center w-full p-1 bg-gray-200 font-semibold text-gray-800 text-center">
                     Sign up
                 </h5>

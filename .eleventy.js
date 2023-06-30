@@ -71,7 +71,7 @@ module.exports = function(eleventyConfig) {
         return array.slice(0, n);
     });
 
-    eleventyConfig.addFilter("limit", (arr, limit) => arr.slice(0, limit + 1));
+    eleventyConfig.addFilter("limit", (arr, limit) => arr.slice(0, limit ));
 
     eleventyConfig.addFilter('console', function(value) {
         const str = util.inspect(value, {showHidden: false, depth: null});
