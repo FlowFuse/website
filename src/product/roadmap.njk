@@ -21,11 +21,11 @@ image: /images/product/og-product-roadmap.jpg
 {% include "components/divider-flow--top-red--light.njk" %}
 <!-- Roadmap content section, divided into three columns: Consideration, In Progress, and Newly Released. Each column
 has a headline, description, and a container for roadmap items. -->
-<div class="about w-full bg-gray-50 pb-24 md:pt-6">
+<div class="about w-full bg-gray-50 pb-14 md:pt-6">
     <div class="container m-auto max-w-5xl">
         <div class="grid grid-cols-1 text-center md:grid-cols-3 gap-12 md:gap-4 pt-12 md:pt-0 md:-mt-32 max-w-lg md:max-w-full m-auto px-6 sm:px-4">
             <!-- Consideration Column -->
-            <div class="roadmap-section consideration rounded-t-xl rounded-b-lg md:pb-0 bg-white drop-shadow-xl">
+            <div class="roadmap-section consideration rounded-t-xl rounded-b-lg md:pb-0 bg-white drop-shadow-lg">
                 <div class="p-6 pb-2 rounded-t-lg bg-gray-500 text-white min-h[192px]">
                     <h4 class="left-headline text-center">Under consideration</h4>
                     <hr class="border-gray-400">
@@ -34,10 +34,10 @@ has a headline, description, and a container for roadmap items. -->
                 <h5 class="flex flex-row justify-center items-center w-full p-1 bg-gray-600 font-semibold text-gray-50 text-center">
                     <span class="pt-0.5 pr-2 h-[18px]">{% include "components/icons/github.svg" %}</span>Vote on Github<span class="pt-0.5 pl-1">{% include "components/icons/arrow-small-down.svg" %}
                 </h5>
-                <div class="roadmap-item-container p-6 pt-0"></div>
+                <div class="roadmap-item-container pt-0"></div>
             </div>
             <!-- In Progress Column -->
-            <div class="roadmap-section progress rounded-t-xl rounded-b-lg md:pb-0 bg-white drop-shadow-xl">
+            <div class="roadmap-section progress rounded-t-xl rounded-b-lg md:pb-0 bg-white drop-shadow-lg">
                 <div class="p-6 pb-2 rounded-t-lg bg-gray-600 text-white min-h[192px]">
                     <h4 class="left-headline text-center">In Progress</h4>
                     <hr class="border-gray-500">
@@ -46,10 +46,10 @@ has a headline, description, and a container for roadmap items. -->
                 <h5 class="flex flex-row justify-center items-center w-full p-1 bg-gray-700 font-semibold text-gray-50 text-center">
                     <span class="pt-px pr-2 h-[18px]">{% include "components/icons/github.svg" %}</span>See status on Github<span class="pt-0.5 pl-1">{% include "components/icons/arrow-small-down.svg" %}
                 </h5>
-                <div class="roadmap-item-container p-6 pt-0"></div>
+                <div class="roadmap-item-container pt-0"></div>
             </div>
             <!-- Newly Released Column -->
-            <div class="roadmap-section completed rounded-t-xl rounded-b-lg md:pb-0 bg-white drop-shadow-xl">
+            <div class="roadmap-section completed rounded-t-xl rounded-b-lg md:pb-0 bg-white drop-shadow-lg">
                 <div class="p-6 pb-2 rounded-t-lg bg-gray-700 text-white min-h[192px] w-full">
                     <h4 class="left-headline text-center">Newly released</h4>
                     <hr class="border-gray-600">
@@ -203,6 +203,10 @@ has a headline, description, and a container for roadmap items. -->
             // Create a list item and add the "roadmap-item" class.
             const listItem = document.createElement("li");
             listItem.classList.add("roadmap-item");
+
+            const anchor = document.createElement("a");
+            anchor.href = item.url;
+            anchor.target = "_blank";
             // Create a container for the issue title and number.
             const titleNumberContainer = document.createElement("div");
             titleNumberContainer.classList.add("title-number-container");
@@ -212,30 +216,27 @@ has a headline, description, and a container for roadmap items. -->
             issueName.textContent = item.title;
             // Add the issue title span to the container.
             titleNumberContainer.appendChild(issueName);
-            listItem.appendChild(titleNumberContainer);
-            // Create a left aligned wrapper for the vote button.
-            const leftWrapper = document.createElement("div");
-            leftWrapper.classList.add("left");
-            // Create the vote button element.
-            const voteBtn = document.createElement("a");
-            voteBtn.href = item.url;
-            voteBtn.target = "_blank";
-            voteBtn.classList.add("vote-btn");
-            // If showReactions is true, display the number of reactions next to the vote button.
+            anchor.appendChild(titleNumberContainer);
+
+            // Check if showReactions is true before creating the vote button.
             if (showReactions) {
+                // Create a left aligned wrapper for the vote button.
+                const leftWrapper = document.createElement("div");
+                leftWrapper.classList.add("left");
+                // Create the vote button element.
+                const voteBtn = document.createElement("span");
+                voteBtn.classList.add("vote-btn");
                 const reactions = item.reactions.totalCount;
                 const reactionCount = document.createElement("span");
                 reactionCount.classList.add("reaction-count");
-                reactionCount.innerHTML = `👍 <span>${reactions}</span>`;
-                voteBtn.innerHTML = `${
-                    reactionCount.outerHTML
-                }<span>Vote on GitHub</span><img src="../../images/github-mark.png" alt="GitHub Logo">`;
-            } else {
-                voteBtn.innerHTML = '<span>See status</span><img src="../../images/github-mark.png" alt="GitHub Logo">';
+                reactionCount.innerHTML = `👍 <span class="ml-1 text-gray-500">${reactions}</span>`;
+                voteBtn.innerHTML = `${reactionCount.outerHTML}`;
+                // Append the vote button to the left aligned wrapper.
+                leftWrapper.appendChild(voteBtn);
+                anchor.appendChild(leftWrapper);
             }
-            // Append the vote button to the left aligned wrapper and then append the left aligned wrapper to the list item.
-            leftWrapper.appendChild(voteBtn);
-            listItem.appendChild(leftWrapper);
+            // Append the anchor to the list item.
+            listItem.appendChild(anchor);
             // Append the list item to the list.
             list.appendChild(listItem);
         }
