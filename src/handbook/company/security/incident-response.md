@@ -6,7 +6,7 @@ navTitle: Incident Response Plan
 
 | Policy owner   | Effective date |
 | -------------- | -------------- |
-| @ZJvandeWeg    | 2023-07-01     |
+| @knolleary | 2023-07-01     |
 
 ## Purpose
 
