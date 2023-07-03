@@ -1,0 +1,7 @@
+{
+    "layout": "layouts/node-docs.njk",
+    "nav": "core-nodes",
+    "tags": [
+        "core-nodes"
+    ]
+}

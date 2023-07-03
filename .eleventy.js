@@ -20,6 +20,7 @@ const codeowners = require('codeowners');
 const heroGen = require("./lib/post-hero-gen.js");
 const imageHandler = require('./lib/image-handler.js')
 const site = require("./src/_data/site");
+const coreNodeDoc = require("./lib/core-node-docs.js");
 
 const DEV_MODE = process.env.ELEVENTY_RUN_MODE !== "build" // i.e. serve/watch
 
@@ -59,6 +60,11 @@ module.exports = function(eleventyConfig) {
         return `<span class="ff-tooltip" data-tooltip="${text}">${content}</span><span></span>`
     });
 
+    eleventyConfig.addFilter("coreNodeName", (name) => { return name.split("-").at(-1) })
+    eleventyConfig.addAsyncShortcode("coreNodeDoc", async function (category, name) {
+        return await coreNodeDoc(category, name)
+    });
+
     // Custom filters
     eleventyConfig.addFilter("json", (content) => {
         return JSON.stringify(content)
@@ -73,10 +79,11 @@ module.exports = function(eleventyConfig) {
 
     eleventyConfig.addFilter("limit", (arr, limit) => arr.slice(0, limit ));
 
-    eleventyConfig.addFilter('console', function(value) {
-        const str = util.inspect(value, {showHidden: false, depth: null});
+    eleventyConfig.addFilter('console', function (value) {
+        const str = util.inspect(value, { showHidden: false, depth: null });
         return `<div style="white-space: pre-wrap;">${unescape(str)}</div>;`
     });
+
 
     eleventyConfig.addFilter('dictsortBy', function(val, reverse, attr) {
         let array = [];
@@ -166,8 +173,8 @@ module.exports = function(eleventyConfig) {
         return new URL(url, site.baseURL).href;
     })
 
-    eleventyConfig.addFilter("handbookBreadcrumbs", (str) => {
-        const parts = str.split("/");
+    eleventyConfig.addFilter("handbookBreadcrumbs", (url) => {
+        const parts = url.split("/");
         parts.shift();
         if (parts[parts.length-1] === "index") {
             parts.pop();
@@ -339,20 +346,25 @@ module.exports = function(eleventyConfig) {
 
         createNav('handbook')
         createNav('docs')
+        createNav('core-nodes')
 
-        function createNav (tag) {
-            collection.getAll().filter((page) => {
-                return page.data.tags?.includes(tag) && !page.url.includes('README')
-                // url.indexOf('/handbook') === 0
+        function createNav(tag) {
+            collection.getFilteredByTag(tag).filter((page) => {
+                return !page.url.includes('README')
             }).sort((a, b) => {
                 // sort by depth, so we catch all the correct index.md routes
                 const hierarchyA = a.url.split('/').filter(n => n)
                 const hierarchyB = b.url.split('/').filter(n => n)
                 return hierarchyA.length - hierarchyB.length
             }).forEach((page) => {
+                let url = page.url
+                if (tag == "core-nodes") {
+                    url = page.url.replace("/node-red", "")
+                }
+
                 // work out ToC Hierarchy
                 // split the folder URI/URL, as this defines our TOC Hierarchy
-                const hierarchy = page.url.split('/').filter(n => n)
+                const hierarchy = url.split('/').filter(n => n)
                 // recursively parse the folder hierarchy and created our collection object
                 // pass nav = {} as the first accumulator - build up hierarchy map of TOC
                 hierarchy.reduce((accumulator, currentValue, i) => {
