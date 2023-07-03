@@ -23,7 +23,7 @@ These can be created in Adobe After Effects and provide an easy-to-use editable 
 
 <div class="video-caption">Using Essential Graphics in Premiere Pro</div>
 <video width="500" controls>
-  <source src="../videos/using-essential-graphics-in-pp.mp4" type="video/mp4">
+  <source src="https://website-data.s3.eu-west-1.amazonaws.com/using-essential-graphics-in-pp.mp4" type="video/mp4">
 </video>
 
 #### Videos
@@ -32,12 +32,12 @@ Re-usable `.mp4` files that may be used across FlowForge videos. These are also 
 
 <div class="video-caption">FlowForge - Intro</div>
 <video width="500" controls>
-  <source src="../videos/ff-intro.mp4" type="video/mp4">
+  <source src="https://website-data.s3.eu-west-1.amazonaws.com/ff-intro.mp4" type="video/mp4">
 </video>
 
 <div class="video-caption">FlowForge - Outro</div>
 <video width="500" controls>
-  <source src="../videos/ff-outro.mp4" type="video/mp4">
+  <source src="https://website-data.s3.eu-west-1.amazonaws.com/ff-outro.mp4" type="video/mp4">
 </video>
 
 ## Tools

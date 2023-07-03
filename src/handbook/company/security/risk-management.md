@@ -6,7 +6,7 @@ navTitle: Risk Management Policy
 
 | Policy owner   | Effective date |
 | -------------- | -------------- |
-| @ZJvandeWeg    | 2023-06-01     |
+| @knolleary     | 2023-06-01     |
 
 ## Purpose
 
@@ -84,7 +84,7 @@ develop a Risk Treatment Plan
 
 The procedure for managing risk will meet the following criteria:
 
- - FlowForge will maintain a [Risk Register]((https://app.vanta.com/risk-management/risk-register)) and Treatment Plan.
+ - FlowForge will maintain a [Risk Register](https://app.vanta.com/risk-management/risk-register) and Treatment Plan.
  - Risks are ranked by "likelihood" and "severity/impact" as critical, high, medium, low, and negligible.
  - Overall risk shall be determined through a combination of likelihood and impact.
  - Risks may be evaluated to estimate potential monetary loss where possible.

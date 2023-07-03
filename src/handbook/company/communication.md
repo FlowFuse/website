@@ -59,9 +59,9 @@ Slack to be matched automatically.
 When using Slack, prefer to keep discussions in a thread. This reduces scroll
 back, and focusses channels.
 
-Note that knowledge in Slack is ephemeral, it's not a great storage of information.
-As such knowledge on a decision made in Slack, or elsewhere, should always be recorded
-in the GitHub issue or Google Doc on that topic to keep a log that also works
+Note that knowledge in Slack is ephemeral, it's not storage for information or knowledge
+sharing. As such knowledge and decision made in Slack should always be recorded
+in the handbook, GitHub issue, or Google Doc on that topic to keep a log that also works
 for asynchronous communication.
 
 #### Recommended channels
@@ -75,12 +75,16 @@ below so you get to decide if you want more channels or not.
 
 #### Channel name structure
 
-When a channel is created for projects; work that's scoped to a certain topic
-that's going to be completed at some time in the future, it might be valuable to
-collect all internal communications into one Slack channel. Please prefix the
-channel name with `proj-` to make grouping easier.
+To make it easier to find your way around in Slack, we have some rules for naming channels. This will help give everything some context and implicit sense of purpose.
 
-All team members are advised to put `proj-` channels into [their own section](https://slack.com/help/articles/360043207674-Organize-your-sidebar-with-custom-sections).
+|Type | Slack prefix | Purpose |
+|:--- |:--- |:---|
+| Department           | `#dept-` | For each company department and ask them questions |
+| Project based work   | `#proj-` | Work scoped to a project with an finite horizon |
+| GitHub notifications | `#gh-`   | For many updates around the website and product development a notification is sent to the corresponding channel |
+| Ops notifications    | `#ops-`  | Channels receiving notifications from operations-related services |
+
+All team members are advised to put prefix type channels into [their own section](https://slack.com/help/articles/360043207674-Organize-your-sidebar-with-custom-sections).
 
 ### GitHub
 
