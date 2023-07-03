@@ -159,8 +159,7 @@ dl.message-properties {
   }
   
   dl.message-properties > dt .property-type {
-    font-family: var(--red-ui-primary-font);
-    color: var(--red-ui-primary-text-color);
+    color: theme(colors.gray.400);
     font-style: italic;
     font-size: 11px;
     float: right;
