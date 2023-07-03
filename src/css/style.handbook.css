@@ -17,7 +17,6 @@
         --nav-bg: theme(colors.gray.50);
         --nav-pl: 1rem;
         background-color: theme(colors.gray.50);
-        padding-left: 0.5rem;
         padding-top: 0.25rem;
         max-height: calc(100vh - 1.5rem);
         overflow-y: auto;

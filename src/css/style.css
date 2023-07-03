@@ -134,6 +134,50 @@ pre code {
     padding-right: 0.25rem;
 }
 
+.prose table {
+    text-align: center;
+}
+
+dl.message-properties {
+    border-radius: 2px;
+    /* margin: 5px auto 10px; */
+  }
+  
+  dl.message-properties > dt {
+    padding: 0px 6px 2px 6px;
+    font-family: ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;
+    font-size: 0.875em;
+    font-weight: 500;
+    margin: 5px 3px 1px;
+    color: theme(colors.red.600);
+    white-space: nowrap;
+    background-color: theme(colors.gray.100); 
+  }
+  
+  dl.message-properties > dt.optional {
+    font-style: italic;
+  }
+  
+  dl.message-properties > dt .property-type {
+    font-family: var(--red-ui-primary-font);
+    color: var(--red-ui-primary-text-color);
+    font-style: italic;
+    font-size: 11px;
+    float: right;
+    padding-top: 4px;
+  }
+  
+  dl.message-properties > dt:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
+  dl.message-properties > dd {
+    margin: 0px 8px 12px 13px;
+    vertical-align: top;
+  }
+  
 /*
     Blog
 */
