@@ -132,7 +132,7 @@ outside of FlowForge.
    classified data is not accidentally included in public data. For example, access
    tokens in source code.
 
-## Data Retention
+## Data Retention
 
 FlowForge shall retain data as long as the company has a need for its use, or to
 meet regulatory or contractual requirements. Once data is no longer needed, it
@@ -142,7 +142,7 @@ legal counsel, may determine retention periods for their data.
 Personally identifiable information (PII) shall be deleted or de-identified as
 soon as it no longer has a business use.
 
-## Data Disposal
+## Data Disposal
 
 Data classified as critical, confidential or internal shall be securely deleted
 when no longer needed.

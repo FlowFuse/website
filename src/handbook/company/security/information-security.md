@@ -150,7 +150,7 @@ Role | Purpose
 [Cryptography Policy](./cryptography.md) | To ensure proper and effective use of cryptography to protect the confidentiality, authenticity and/or integrity of information.
 [Data Management Policy](./data-management.md) | To ensure that information is classified and protected in accordance with its importance to the organization.
 [Human Resources Policy](./human-resources.md) | To ensure that employees and contractors meet security requirements, understand their responsibilities, and are suitable for their roles.
-Incident Response Plan | Policy and procedures for suspected or confirmed information security incidents.
+[Incident Response Plan](./incident-response.md) | Policy and procedures for suspected or confirmed information security incidents.
 [Operations Security Policy](./operations-security.md) | To ensure the correct and secure operation of information processing systems and facilities.
 Physical Security Policy | To prevent unauthorized physical access or damage to the organization’s information and information processing facilities.
 [Risk Management Policy](./risk-management.md) | To define the process for assessing and managing FlowForge's information security risks in order to achieve the company’s business and information security objectives.

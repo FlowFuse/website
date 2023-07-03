@@ -21,6 +21,7 @@ in this area, which includes prompt reporting and resolution of any issues ident
  - [Third Party Risk Management Policy](./third-party-risk-management.md)
   - [Human Resources Policy](./human-resources.md)
  - [Risk Management Policy](./risk-management.md)
+ - [Incident Response Plan](./incident-response.md)
  - [Business Continuity and Disaster Recover Policy](./business-continuity.md)
 
 ## Credentials

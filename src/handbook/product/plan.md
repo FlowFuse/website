@@ -60,7 +60,7 @@ default and only expose to the user if absolutely necessary.
 
 See also: [Convention over Configuration on Wikipedia](https://en.wikipedia.org/wiki/Convention_over_configuration).
 
-## Open Source & Enterprise
+## Open Source & Enterprise
 
 We offer a number of ways that users can run the FlowForge product, we will
 always offer an open source version that has the core features. Features that
