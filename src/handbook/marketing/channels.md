@@ -8,7 +8,7 @@ Each content type has channels which are appropriate, this table sets out which 
 
 |Content          |Blog  |Mailing List |Twitter  |Youtube  |LinkedIn |Reddit |Node-RED Slack|Node-RED Discourse  |
 |---              |---   |---          |---      |---      |---      |---    |---           |---               |
-|Release          |*     |             |*        |*        |*        |*      |*             |*                 |
+|Release          |*     |             |*        |         |*        |*      |*             |*                 |
 |Patch            |*     |             |*        |         |         |*      |*             |                  | 
 |Planned Downtime |*     |             |*        |         |*        |*      |*             |                  |
 |Outage           |      |             |         |         |         |       |              |                  |
