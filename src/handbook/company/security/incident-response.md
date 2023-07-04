@@ -22,7 +22,7 @@ This policy covers all information security or data privacy events or incidents.
 
 This policy relates to how we deal with security issues internally. For information
 on how to report potential vulnerabilities in the FlowForge platform and associated
-components from outside the company, please refer to our [Vulnerability Reporting policy](../../development/security.md).
+components from outside the company, please refer to our [Vulnerability Reporting policy](/handbook/development/security.md).
 
 ## Incident and Event Definitions
 
@@ -33,7 +33,7 @@ A **security incident** is a *security event* which results in loss or damage to
 the confidentiality, availability, integrity, or privacy of company controlled
 data, systems or networks.
 
-## Security Incident Response Team (SIRT)
+## Security Incident Response Team
 
 The Security Incident Response Team (SIRT) is responsible for
 
@@ -67,7 +67,7 @@ Reports should include specific details about what has been observed or discover
 
 ### Severity 
 
-The [SIRT](#security-incident-response-team-sirt) shall monitor incident and event
+The [SIRT](#security-incident-response-team) shall monitor incident and event
 issues and shall assign a severity (via label) based on the following categories:
 
 
@@ -92,7 +92,7 @@ issues and shall assign a severity (via label) based on the following categories
 ### Escalation and Internal Reporting
 
  - **P1** - Critical Severity
-    P1 issues require immediate notification to a member of the [SIRT](#security-incident-response-team-sirt)
+    P1 issues require immediate notification to a member of the [SIRT](#security-incident-response-team)
  - **P2** - High Severity
     An issue should be raised in [`flowforge/security`](https://github.com/flowforge/security){rel="nofollow"}
     and explicit notification in the #security channel
