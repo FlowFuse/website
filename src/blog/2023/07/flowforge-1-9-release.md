@@ -16,7 +16,7 @@ FlowForge 1.9 adds new features to make it easier to adminster FlowForge platfor
 <!--more-->
 
 ## API Documentation
-FlowForge platform API allows developers to progammatically interact with the FlowForge platform. This makes it possible to integrate FlowForge into different infrastrcutre technologies, automate specifc FlowForge tasks with scripts and embedd FlowForge into other applications.  
+FlowForge platform API allows developers to programmatically interact with the FlowForge platform. This makes it possible to integrate FlowForge into different infrastructure technologies, automate specific FlowForge tasks with scripts and embed FlowForge into other applications.  
 
 In our 1.9 release we are now publishing our API documentation with the OpenAPI specification and making it viewable with the Swagger UI. Both these industrial standards will make using the FlowForge API easier to use and understand.
 
