@@ -1,7 +1,7 @@
 ---
 title: FlowForge now offers API Documentation with Swagger UI
 subtitle: FlowForge 1.9 adds new features to make it easier to administer FlowForge
-description: FlowForge 1.9 
+description: The new release of FlowForge 1.9 adds new API Swagger documentation and the ability to customize Node-RED pallettes.
 date: 2023-07-06 
 authors: ["ian-skerrett"]
 image: 
@@ -28,12 +28,26 @@ FlowForge platform adminstrators are now able to create customized Node-RED pale
 Note: this feature is not available for FlowForge cloud users since they do not have adminstrator access. FlowForge Cloud will begin to include the Node-RED debugger and lint node in their default templates. In the future, the ability to create templates will be enabled for teams.
 
 
-## New RBAC Role for Dashboard users
+## New RBAC Role for Dashboard users [#2292](https://github.com/flowforge/flowforge/issues/1924)
+A new FlowForge user role has been created to view Node-RED dashboards. This allows for users to view Nod-RED dashboards without access to the Node-RED editor or requiring seperate login credentials.
 
-##
+## Other New Features
+
+- FlowForge device agent is now supported on Windows [#78](https://github.com/flowforge/flowforge-device-agent/issues/78)
+- Allow local configuration of https/httpStatic on a device [#110](https://github.com/flowforge/flowforge-device-agent/issues/110)
+- Instance settings: Add https.key and https.certs [#2257](https://github.com/flowforge/flowforge/issues/2257)
+- Allow devices to access details of the snapshot running on them [#94](https://github.com/flowforge/flowforge-device-agent/issues/94)
 
 
+## Bug Fixes
 
+- Can not promote NR instance in DevOps Pipeline  [#2363](https://github.com/flowforge/flowforge/issues/2363)
+- Billing team menu item missing on first page load [#2398](https://github.com/flowforge/flowforge/issues/2398)
+- Duplicate labels in Instance Import dialog [#2200](https://github.com/flowforge/flowforge/issues/2200)
+- Broken littie animations [#2354](https://github.com/flowforge/flowforge/issues/2354)
+- Instance Logs page doesn't handle errors well [#1083](https://github.com/flowforge/flowforge/issues/1083)
+- Device continues to run edited flows once taken out of dev mode [#2323](https://github.com/flowforge/flowforge/issues/2323)
+- Device Editor cannot pickup FF theme [#89](https://github.com/flowforge/flowforge-device-agent/issues/89)
 
 ## What's next?
 
@@ -44,11 +58,6 @@ We're always working to enhance your experience with FlowForge. Here's how you c
 - **Feedback**: We're interested in your thoughts about FlowForge. Your feedback is crucial to us, and we'd love to hear about your experiences with the new features and improvements. Please share your thoughts, suggestions, or report any [issues on GitHub](https://github.com/flowforge/flowforge/issues/new/choose). 
 
 Together, we can make FlowForge better with each release!
-
-## Bug Fixes
-
-
-
 
 ## Try it out
 
