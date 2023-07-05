@@ -26,6 +26,7 @@ iteration:
     - git command-line tools
       - Ensure ssh key access is setup so git interactions do not require continual
         password typing - `ssh -T git@github.com`
+      -  Ensure you have git configured with an appropriate `user.name` and `user.email`
     - [GitHub client](https://github.com/cli/cli)
       - Ensure the client is logged in using `gh auth login`
     - [jq](https://stedolan.github.io/jq/download/)
@@ -95,60 +96,43 @@ If any need to be updated, refer to the section [Unmanaged Releases](#unmanaged-
 
 ### Phase Two
 
-There are three scripts used run the release
+This phase is largely automated using the `create-release` script in the `admin` repository.
 
-  - `checkout-release` - ensures a clean copy of all required code is checked out locally
-  - `prepare-release` - publishes a PR against each repository that updates the version number and changelogs as needed
-  - `create-release` - creates the GitHub Releases
-
-Follow these steps to run the scripts:
+Follow these steps to run the script:
 
 1. Clone the [`flowforge/admin`](https://github.com/flowforge/admin) repository if you do not already have it.
    Ensure you have the latest with a `git pull`.
 2. In the *parent* directory to where you have the `admin` checked out, run the
    following command, replace `1.x.y` with the proper release version.
    ```bash
-   ./admin/checkout-release 1.x.y
+   ./admin/create-release 1.x.y
    ```
-   This will create a directory called `release-1.x.y` and checkout all of the releasable
-   repositories under it.
-   **NOTE:** If you do not have a global git configuration, you will need to set `user.name` and `user.email`
-   in each of those repositories.
-3. Within the release directory run:
-   ```bash
-   cd release-1.x.y
-   ../admin/prepare-release 1.x.y
-   ```
-   This will check all of the repositories are ready to be released. This includes
-   listing any open pull-requests. The Release Manager should check nothing has been
-   missed. The script will then update the `package.json` files to reflect the
-   new version (including cross-package dependencies) and update the `CHANGELOG` files.
+   
+   This will create a directory called `release-1.x.y`.
 
-   It will then raise PRs against each repository with these changes in.
-
-   **Note:** Some PRs will fail their tests at this stage because they want to
-   install versions of packages that have not been published yet in the process.
-   This is normal and will be dealt with in the next step.
-4. Run the next script in the process:
-   ```bash
-   ../admin/create-release 1.x.y
-   ```
-   For each repository in the release process it:
-    - Checks all npm dependencies have been published. If any are missing it blocks
-      until the user asks it to check again.
-    - Checks if there are any open PRs in the repository. This will include the
-      Release PR created in the previous step.
-      The Release Manager should get the Release PR (and any others that have been
-      missed at this late state) reviewed and merged before allowing the script to continue.
-      This includes ensuring the tests are passing cleanly.
-      **Note:** This will require a second person to do the review as the RM cannot
-      approve their own PRs.
-    - The script will then create a *draft* GitHub release and provide its URL.
-      The Release Manager should review the draft - check the changelog looks
-      appropriate and take note of any first-time contributors to provide to the
-      release blog post author.
-    - The script will then publish the release and move onto the next repository.
-5. Digital Ocean Droplet requires a manual step once the GitHub Action has finished, 
+   Then, for each managed repository in turn it will:
+ 
+     - Checks if a matching GitHub release already exists, if so it moves on to the next repo.
+     - Checks for any outstanding PRs and waits for confirmation to continue if it finds any.
+     - Checks to see if the repo has already been cloned into the release directory.
+         - if it has been, ensures it is on `main` and pulls from origin
+         - otherwise, clones it
+     - Checks that all @flowforge/* dependencies are on npm at the matching version
+        - If any dependency is missing, it waits for you to ask it to check again.
+     - Creates a clean `release-x.y.z` branch
+     - Updates CHANGELOG, package.json and package-lock.json files and commits changes
+     - Pushes changes back to GitHub
+     - Opens a PR
+        - At this point, the PR should be reviewed to ensure all updates look correct
+          and all tests are passing. Once merged, the process can continue. 
+     - Checks the outstanding PRs again - waits for confirmation to continue
+     - Creates a *draft* GitHub release and provides its url.
+        - The Release Manager should review the draft - check the release notes look appropriate
+          and take note of any first-time contributors from outside the FF team.
+        - The script waits for you to confirm you have reviewed the draft
+     - Publishes the release and moves onto the next repo
+   
+3. Digital Ocean Droplet requires a manual step once the GitHub Action has finished, 
    follow [these](./digital-ocean.md) steps to have the new image reviewed and published
 
 ### Phase Three
