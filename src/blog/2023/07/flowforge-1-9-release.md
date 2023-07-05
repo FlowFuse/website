@@ -18,7 +18,7 @@ FlowForge 1.9 adds new features to make it easier to adminster FlowForge platfor
 ## API Documentation
 FlowForge API allows developers to progammatically interact with the FlowForge platform. This makes it possible to integrate FlowForge into different infrastrcutre technologies, create scripts to automate specifc FlowForge tasks and embedd FlowForge into other applications.  
 
-In the 1.9 release we are now publishing our [API documentation](https://flowforge.com/docs/api/) with the [OpenAPI specification](https://swagger.io/specification/) and making it viewable with the Swagger UI. Both these industrial standards will make using the FlowForge API easier to use and understand.
+In the 1.9 release we are now publishing our [API documentation](https://flowforge.com/docs/api/) using the [OpenAPI specification](https://swagger.io/specification/) and making it viewable with the Swagger UI. Both these industrial standards will make using the FlowForge API easier to use and understand.
 
 
 ## Customize Node-RED Palettes  [#2002](https://github.com/flowforge/flowforge/issues/2002)
