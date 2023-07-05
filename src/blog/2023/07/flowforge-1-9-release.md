@@ -16,16 +16,18 @@ FlowForge 1.9 adds new features to make it easier to adminster FlowForge platfor
 <!--more-->
 
 ## API Documentation
-FlowForge platform API allows developers to progammatically interact with the FlowForge platform. This makes it possible to integrate FlowForge into different infrastrcutre technologies, automate specifc FlowForge tasks with scripts and embedd FlowForge into other applications.  
+FlowForge API allows developers to progammatically interact with the FlowForge platform. This makes it possible to integrate FlowForge into different infrastrcutre technologies, create scripts to automate specifc FlowForge tasks and embedd FlowForge into other applications.  
 
-In our 1.9 release we are now publishing our API documentation with the OpenAPI specification and making it viewable with the Swagger UI. Both these industrial standards will make using the FlowForge API easier to use and understand.
+In the 1.9 release we are now publishing our [API documentation](https://flowforge.com/docs/api/) with the [OpenAPI specification](https://swagger.io/specification/) and making it viewable with the Swagger UI. Both these industrial standards will make using the FlowForge API easier to use and understand.
 
 
-## Customize Node-RED Palettes
+## Customize Node-RED Palettes  [#2002](https://github.com/flowforge/flowforge/issues/2002)
 
-FlowForge platform adminstrators are now able to create customized Node-RED palettes that will be used when an Node-RED instance is created. An adminstator is now able to create a templates that specify the nodes that should be included in the palette. This allows adminstators to make available pre-defined templates to their FlowForge teams making it easier to standardized on Node-RED usage across an organization.
+FlowForge platform adminstrators are now able to create customized Node-RED palettes that will be used when a Node-RED instance is created. An adminstator can create pre-defined templates that specify the nodes that should be included in the palette. This makes it easier for FlowForge teams to standardized on Node-RED usage across an organization.
 
-Note: this feature is not available for FlowForge cloud users since they do not have adminstrator access. FlowForge Cloud will begin to include the Node-RED debugger and lint node in their default templates. In the future, the ability to create templates will be enabled for teams.
+Note: this feature is not available for FlowForge cloud users since they do not have adminstrator access. In the future, the ability to create templates will be enabled for teams and this will allow for customize Node-RED palettes for individual teams.
+
+Starting with the 1.9 release, FlowForge Cloud will begin to include the [Node-RED debugger](https://flows.nodered.org/node/node-red-debugger) and [lint node](https://github.com/node-red/nrlint) in their default templates. 
 
 
 ## New RBAC Role for Dashboard users [#2292](https://github.com/flowforge/flowforge/issues/1924)
@@ -68,7 +70,7 @@ If you'd rather use our hosted offering: [Get started for free](https://app.flow
 
 ## Upgrading FlowForge
 
-[FlowForge Cloud](https://app.flowforge.com) is already running 1.8.
+[FlowForge Cloud](https://app.flowforge.com) is already running 1.9.
 
 If you installed a previous version of FlowForge and want to upgrade, our documentation provides a
 guide for [upgrading your FlowForge instance](https://flowforge.com/docs/upgrade/).
