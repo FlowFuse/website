@@ -23,7 +23,7 @@ In the 1.9 release we are now publishing our [API documentation](https://flowfor
 
 ## Customize Node-RED Palettes  [#2002](https://github.com/flowforge/flowforge/issues/2002)
 
-FlowForge platform adminstrators are now able to create customized Node-RED palettes that will be used when a Node-RED instance is created. An adminstator can create pre-defined templates that specify the nodes that should be included in the palette. This makes it easier for FlowForge teams to standardized on Node-RED usage across an organization.
+FlowForge platform adminstrators are now able to create customized Node-RED palettes that will be used when a Node-RED instance is created. An adminstator can create pre-defined templates to specify the nodes that should be included in the palette. This makes it easier for FlowForge teams to standardized on Node-RED usage across an organization.
 
 Note: this feature is not available for FlowForge cloud users since they do not have adminstrator access. In the future, the ability to create templates will be enabled for teams and this will allow for customize Node-RED palettes for individual teams.
 
