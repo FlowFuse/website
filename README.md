@@ -110,4 +110,4 @@ This setup was inspired by:
 
 ### `This edge function has crashed`
 
-If you see this error, and it is the first ever time you ahve run the website, this [is expected](https://github.com/flowforge/website/pull/577#issuecomment-1491934272). You can stop the web server (`ctrl + c` from the terminal) and restart it. Following which, it should work. 
+If you see this error, and it is the first ever time you have run the website, this [is expected](https://github.com/flowforge/website/pull/577#issuecomment-1491934272). You can stop the web server (`ctrl + c` from the terminal) and restart it. Following which, it should work. 
