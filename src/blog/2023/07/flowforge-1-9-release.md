@@ -38,6 +38,7 @@ A new FlowForge user role has been created to view Node-RED dashboards. This all
 - Implementing custom certificate settings for device configuration [#2257](https://github.com/flowforge/flowforge/issues/2257)
 - Allow devices to access the "Snapshot ID" and the "Snapshot Name" running on them [#94](https://github.com/flowforge/flowforge-device-agent/issues/94)
 - High Availability logging enhanced: Individual Node-RED Instance replica querying and filtering [#2260](https://github.com/flowforge/flowforge/issues/2260)
+- High Availability is now generally available [#2414](https://github.com/flowforge/flowforge/issues/2412)
 
 ## Bug Fixes
 
