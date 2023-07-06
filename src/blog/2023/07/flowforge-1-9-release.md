@@ -27,7 +27,7 @@ FlowForge platform adminstrators are now able to create customized Node-RED pale
 
 Note: this feature is not available for FlowForge cloud users since they do not have administrator access.
 
-Starting with the 1.9 release, FlowForge Cloud will begin to include the [Node-RED debugger](https://flows.nodered.org/node/node-red-debugger) and [lint node](https://github.com/node-red/nrlint) in their default templates. 
+Starting with the 1.9 release, FlowForge Cloud will begin to include the [Node-RED debugger](https://flows.nodered.org/node/node-red-debugger) and [Node-RED Flow Linter](https://github.com/node-red/nrlint) in their default templates. 
 
 
 ## New RBAC Role for Dashboard users [#2292](https://github.com/flowforge/flowforge/issues/1924)
