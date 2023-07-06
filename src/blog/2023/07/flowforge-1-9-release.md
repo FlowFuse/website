@@ -25,7 +25,7 @@ In the 1.9 release we are now publishing our [API documentation](https://flowfor
 
 FlowForge platform adminstrators are now able to create customized Node-RED palettes that will be used when a Node-RED instance is created. An adminstator can create pre-defined templates to specify the nodes that should be included in the palette. This makes it easier for FlowForge teams to standardized on Node-RED usage across an organization.
 
-Note: this feature is not available for FlowForge cloud users since they do not have adminstrator access. In the future, the ability to create templates will be enabled for teams and this will allow for customize Node-RED palettes for individual teams.
+Note: this feature is not available for FlowForge cloud users since they do not have administrator access.
 
 Starting with the 1.9 release, FlowForge Cloud will begin to include the [Node-RED debugger](https://flows.nodered.org/node/node-red-debugger) and [lint node](https://github.com/node-red/nrlint) in their default templates. 
 
