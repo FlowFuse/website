@@ -26,7 +26,6 @@ redirects:
   - { "from": "/roadmap/", "to": "/product/roadmap/" }
   - { "from": "/handbook/development/release/", "to": "/handbook/development/releases/" }
   - { "from": "/blog/2023/06/Flowforge-as-a-No-Code-Ethernet_IP-to-Profinet-Protocol-Converter/", "to": "/blog/2023/06/Node-RED-as-a-No-Code-Ethernet_IP-to-S7-Protocol-Converter/" }
-  - { "from": "/sign-up/", "to": "https://app.flowforge.com/account/create"}
 # The "permalink" attribute determines where the output page will be located.
 permalink: "{{ redirect.from }}"
 # The "redirect" layout just has a small html header with the meta tags that do redirection.
