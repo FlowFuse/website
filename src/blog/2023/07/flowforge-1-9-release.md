@@ -27,8 +27,6 @@ FlowForge platform adminstrators are now able to create customized Node-RED pale
 
 Note: this feature is not available for FlowForge cloud users since they do not have administrator access.
 
-Starting with the 1.9 release, FlowForge Cloud will begin to include the [Node-RED debugger](https://flows.nodered.org/node/node-red-debugger) and [Node-RED Flow Linter](https://github.com/node-red/nrlint) in their default templates. 
-
 
 ## New RBAC Role for Dashboard users [#2292](https://github.com/flowforge/flowforge/issues/1924)
 A new FlowForge user role has been created to view Node-RED dashboards. This allows for users to view Nod-RED dashboards without access to the Node-RED editor or requiring seperate login credentials.
@@ -50,6 +48,13 @@ A new FlowForge user role has been created to view Node-RED dashboards. This all
 - Instance Logs page doesn't handle errors well [#1083](https://github.com/flowforge/flowforge/issues/1083)
 - Device continues to run edited flows once taken out of dev mode [#2323](https://github.com/flowforge/flowforge/issues/2323)
 - Device Editor cannot pickup FF theme [#89](https://github.com/flowforge/flowforge-device-agent/issues/89)
+
+## Community Contributions
+
+Thanks to our community members for their contributions to this release.
+
+- sumitshinde-84 - make Instance and application names in delete popup easily selectable [#2291](https://github.com/flowforge/flowforge/pull/2291)
+- biancode - Fixed typo in doc  [#2327](https://github.com/flowforge/flowforge/pull/2327)
 
 ## What's next?
 
