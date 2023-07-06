@@ -29,7 +29,7 @@ Note: this feature is not available for FlowForge cloud users since they do not 
 
 
 ## New RBAC Role for Dashboard users [#2292](https://github.com/flowforge/flowforge/issues/1924)
-A new FlowForge user role has been created to view Node-RED dashboards. This allows for users to view Nod-RED dashboards without access to the Node-RED editor or requiring seperate login credentials.
+A new FlowForge user role has been created to view Node-RED dashboards. This allows for users to view Nod-RED dashboards without access to the Node-RED editor or requiring separate login credentials.
 
 ## Other New Features
 
