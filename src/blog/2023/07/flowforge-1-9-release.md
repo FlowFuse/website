@@ -4,7 +4,7 @@ subtitle: FlowForge 1.9 adds new features to make it easier to administer FlowFo
 description: The new release of FlowForge 1.9 adds new API Swagger documentation and the ability to customize Node-RED pallettes.
 date: 2023-07-06 
 authors: ["ian-skerrett"]
-image: 
+image: /blog/2023/07/images/release-1.9.0.png
 tags:
     - posts
     - flowforge
