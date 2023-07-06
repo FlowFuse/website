@@ -11,7 +11,7 @@ tags:
     - releases
 ---
 
-FlowForge 1.9 adds new features to make it easier to adminster FlowForge platform deployments, including new API documentation and the ability to create customized Node-RED palettes.
+FlowForge 1.9 adds new features to make it easier to administer FlowForge platform deployments, including new API documentation and the ability to create customized Node-RED palettes.
 
 <!--more-->
 
