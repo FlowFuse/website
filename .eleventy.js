@@ -373,7 +373,7 @@ module.exports = function(eleventyConfig) {
                         accumulator[currentValue] = {
                             'name': currentValue,
                             'url': page.data.redirect || page.url,
-                            'order': page.data.navOrder || 0,
+                            'order': page.data.navOrder || Number.MAX_SAFE_INTEGER,
                             'children': {}
                         }
                         if (page.data.navTitle) {
