@@ -414,7 +414,7 @@ module.exports = function(eleventyConfig) {
             let groups = {
                 'Other': {
                     name: 'Other',
-                    order: -1,    // always render last
+                    order: Number.MAX_SAFE_INTEGER,    // always render last
                     children: []
                 }
             }
