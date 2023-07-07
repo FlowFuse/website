@@ -440,7 +440,7 @@ module.exports = function(eleventyConfig) {
 
                 function sortChildren (a, b) {
                     // sort children by 'order', then alphabetical
-                    return (b.order - a.order) || a.name.localeCompare(b.name)
+                    return (a.order - b.order) || a.name.localeCompare(b.name)
                 }
 
                 nav[tag].groups = Object.values(groups).sort(sortChildren)
