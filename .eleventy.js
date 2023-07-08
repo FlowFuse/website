@@ -372,7 +372,8 @@ module.exports = function(eleventyConfig) {
                     if (!accumulator[currentValue]) {
                         accumulator[currentValue] = {
                             'name': currentValue,
-                            'url': page.url,
+                            'url': page.data.redirect || page.url,
+                            'order': page.data.navOrder || Number.MAX_SAFE_INTEGER,
                             'children': {}
                         }
                         if (page.data.navTitle) {
@@ -413,7 +414,7 @@ module.exports = function(eleventyConfig) {
             let groups = {
                 'Other': {
                     name: 'Other',
-                    order: -1,    // always render last
+                    order: Number.MAX_SAFE_INTEGER,    // always render last
                     children: []
                 }
             }
@@ -439,7 +440,7 @@ module.exports = function(eleventyConfig) {
 
                 function sortChildren (a, b) {
                     // sort children by 'order', then alphabetical
-                    return b.order - a.order || a.name.localeCompare(b.name)
+                    return (a.order - b.order) || a.name.localeCompare(b.name)
                 }
 
                 nav[tag].groups = Object.values(groups).sort(sortChildren)
