@@ -47,7 +47,7 @@ The progress bars presented adjacent to each category are rough estimates, offer
 
 - [Official Support for selected Node-RED nodes](https://github.com/flowforge/flowforge/issues/1901)
 
-- [Support for costum NPM Module registry](https://github.com/flowforge/flowforge/issues/217)
+- [Support for custom NPM Module registry](https://github.com/flowforge/flowforge/issues/217)
 
 - [Visibility of different palette catalogues in Node-RED](https://github.com/node-red/node-red/issues/4057)
 
