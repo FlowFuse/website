@@ -57,7 +57,7 @@ The progress bars presented adjacent to each category are rough estimates, offer
 
 - Version 1.0 of the Node-RED Dashboard successor, with a comparable feature set like [Node-RED Dashboard](https://github.com/node-red/node-red-dashboard).
 
-- FlowForge Dashboard extesnion (Version 1.0) allowing [user specific dashboards](https://github.com/flowforge/flowforge-nr-dashboard/issues/1) and RBAC.
+- FlowForge Dashboard extension (Version 1.0) allowing [user specific dashboards](https://github.com/flowforge/flowforge-nr-dashboard/issues/1) and RBAC.
 
 ### User-Friendly Low-Code Approach 
 ![](https://geps.dev/progress/0)
