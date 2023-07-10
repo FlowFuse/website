@@ -209,3 +209,15 @@ Sizings:
 
 - **128 x 128px**: Used when showing multiple pictograms in the same section of the website or application.
 - **250 x 250 px:** Used as part of page headers, inline with the page title and page description.
+
+## Presentations
+
+There's a **branded theme** for presentations available in the [FlowForge template gallery](https://docs.google.com/presentation/u/0/?tgif=d&ftv=1). To access it, you need to be logged in to your FlowForge account. Look for a theme called "FlowForge Template".
+
+When you click on it, two things will happen:   
+1. A new Google Slides file will be created in your Drive with the theme applied.
+2. The copy of the file will open for editing.
+
+You'll find a fully designed presentation as an example of how to use different layouts. Feel free to edit the content, delete or add slides as needed. Any changes you make will only affect your copy in your Drive.
+
+To explore all the available options, check the [Layout menu](https://support.google.com/docs/answer/1705254?hl=en&ref_topic=19434&sjid=8039782987794605660-EU#zippy=%2Cchange-layout:~:text=your%20theme%20colors-,Change%20layout,-A%20layout%20is).
