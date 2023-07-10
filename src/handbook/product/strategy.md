@@ -32,7 +32,7 @@ FlowForge's commitment to a low-programming approach via Node-RED, complemented 
 
 ### User-Friendly Low-Code Approach
 
-FlowForge is built upon the strength of Node-RED's user-friendly, low-code approach, positioning us well within the IIoT market. We believe Node-RED provides the best foundation, but we're committed to not only utilizing its existing capabilities but also contributing to its upstream improvement. By refining Node-RED and adding enhancements, we aim to create an even more intuitive, powerful, and accessible platform. This will enable end-users to swiftly and intuitively build applications, reducing the dependency on expert programmers and democratizing IIoT application development.
+FlowForge is built upon the strength of Node-RED's user-friendly, low-code approach, positioning us well within the IIoT market. We believe Node-RED provides the best foundation, but we're committed to not only utilizing its existing capabilities but also contributing to its upstream improvement. By refining Node-RED and adding enhancements, we aim to create an even more intuitive, powerful, and accessible platform. This will enable end-users to swiftly and intuitively build applications and reducing the dependency on expert programmers.
 
 ----
 
