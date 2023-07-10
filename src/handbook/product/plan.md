@@ -3,7 +3,7 @@ navTitle: Plan
 ---
 # Product Plan
 
-Our [Product Strategy](./strategy.md) sets out 5 pillars that our product work is focussed around.
+Our [Product Strategy](/handbook/product/strategy.md) sets out 5 pillars that our product work is focussed around.
 
 ## Planning
 
