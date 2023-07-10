@@ -8,7 +8,7 @@ This handbook contains all the information about how FlowForge is run. It's a
 living set of documents - they will evolve with time and expand as we learn
 and discover new things.
 
-Whilst instinctively we want to be open in all we do, there will inevitably by 
+Whilst instinctively we want to be open in all we do, there will inevitably be 
 content that is [not appropriate to make public][data-class]. That content is not
 shared in this handbook.
 
@@ -17,6 +17,8 @@ shared in this handbook.
 The handbook is here for the whole company to help maintain. Pull-requests are welcome and [strongly encouraged](#contributing).
 
 ## How FlowForge is run
+
+To run our company we provide a comprehensive guide outlining policies, procedures, and expectations, fostering consistency, clarity, and effective communication within the organisation.
 
 | | |
 |:----|:----|
