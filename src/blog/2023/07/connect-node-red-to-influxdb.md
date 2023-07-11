@@ -2,7 +2,7 @@
 title: Send data from your Node-RED flows into InfluxDB
 subtitle: A Guide to Connecting InfluxDB with Node-RED
 description: Node-RED has great support for InfluxDB, in this guide we'll explain how to get your data flowing into one of the most popular time-series database.
-date: 2023-07-07
+date: 2023-07-11
 authors: ["rob-marcer"]
 image: blog/2023/07/images/node-red-influxdb.png
 ---
