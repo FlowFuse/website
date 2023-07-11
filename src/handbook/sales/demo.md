@@ -2,7 +2,7 @@
 
 This document explains the process of delivering a sales demo of the features of FlowForge. It is not intended to cover all features but to give potential customers a good understanding of FlowForge's value.
 
-### Setup (complete before the demo)
+### Setup - Before the demo
 
 Before we begin a sales demo we need to set up an environment. Make sure you are
 already logged into your flowforge account (@flowforge.com email) on production, not as an administrator.
@@ -12,11 +12,27 @@ you don’t have to show your credit card details on screen. After creating the
 team, apply [this coupon](https://dashboard.stripe.com/coupons/zkNy9DxL) to your
 newly created team. On the stripe team page, click "Actions" > "Apply Coupon".
 
+Please also make this team your 'default team' under your user settings.
+
 Create one instance called ‘central-<demo-customer-name>’, leave the rest to be created in the demo.
 
 Make sure you have an example device ready, [install the latest device agent](https://flowforge.com/docs/user/devices/).
 
-Make sure the device agent is running before you start the demo and connected to the team you've just created.
+Create a new device in your team, download the `.yml`. Do not yet install the
+agent, that's done during the demo using the web ui.
+
+```
+cd /tmp
+```
+```
+mkdir demo-<company-name>
+```
+```
+cd demo-<company-name>
+```
+```
+flowforge-device-agent -d . --ui --ui-user foo --ui-pass bar
+```
 
 The script should not be followed word for word, it's more a suggestion of what to say which fits with what will be displayed. Be natural, use your own words.
 
@@ -88,6 +104,8 @@ Again, we’ll use the project link nodes to do that. This time we will make the
 Let’s build a simple dashboard to show the data. We’ll use [node-red-dashboard](https://flows.nodered.org/node/node-red-dashboard) so let’s get that installed.
 
 I’m going to output the current RAM usage onto a graph which shows data for the last hour. This graph will auto update. This system will request new data every 10 seconds. Let’s also output the current value in a gauge.
+
+
 
 You can access the HMI yourself now if you want, the URL is…
 
