@@ -1,7 +1,7 @@
 ---
 title: "How to deploy Node-RED to hundreds of PLCs and IoT edge devices"
 subtitle: Discover how to deploy and managed hundreds of devices running Node-RED on PLCs and IoT edge computers.
-image: /images/webinars/webinar-june.jpg
+image: /images/webinars/webinar-july.jpg
 video: 
 date: 2023-07-27
 time: 17:00 CEST (11:00 ET) 
