@@ -91,7 +91,7 @@ ensures we have a consistent approach to planning and tracking of work.
 
  - Type: `epic`, `story`, `task`, `bug`
  - Sizing: `1`, `2`, `3`, `5`, `8`, `13`
- - Area: `area:docs`, `area:db`, `area:migration`, `area:frontend`, `area:api`, `area:device`
+ - Area: `area:docs`, `area:db`, `area:migration`, `area:frontend`, `area:api`, `area:device`, `area:marketing`, `area:customer-success`
  - Priority: `priority:high`, `priority:medium`, `priority:low`, `Customer Request`
  - Status: `blocked`
  - Product Scope: `scope:devices`, `scope:enterprise`, `scope:node-red`, `scope:collaboration`
