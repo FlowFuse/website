@@ -26,7 +26,7 @@ Because of OPC-UA’s wide industry acceptance, it is increasingly becoming nati
 
 ## Fieldbus Model vs OPC-UA Information Model
 
-![OPC-UA Pyramid 2](./images/opc-ua-1/OPC-UA-pyramid-2)
+![OPC-UA Pyramid 2](./images/opc-ua-1/OPC-UA-pyramid-2.webp)
 As of today, industrial ethernet fieldbuses dominate the field/device-level (level 0) and controller/PLC-level (level 1) of the automation pyramid. Fieldbuses such as Profinet, Ethernet/IP, and EtherCAT, employ deterministic, real-time communication, which is essential for mission-critical and safety-oriented automation tasks.  [OPC-UA is most commonly encountered at the SCADA level and above (level 2-4)](https://tipteh.com/opc-ua/).  However, [with the inclusion of Time Sensitive Networking (TSN) into the OPC-UA technology stack](https://www.tttech-industrial.com/resource-library/blog-posts/opc-ua-fx), OPC-UA can be feasibly used for real-time communication all the way down to the device level.  
 
 Traditionally, fieldbus protocols transmit only raw data from field devices (ie, a float to represent a pressure, or a boolean to represent the position of a switch).  The fieldbus data gets pushed up the automation stack layer by layer, where eventually it will be converted to a format suitable for IT systems to consume (such as OPC-UA).
