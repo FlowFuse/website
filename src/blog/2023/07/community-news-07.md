@@ -47,6 +47,8 @@ Our next webinar will be focused on the device management capabilities in the Fl
 
 - [Node-RED & Industry 4.0: The Future is Now](https://youtu.be/1GKkXJOQMhU) - An informative panel discussion led by Walker Reynolds on the role of Node-RED in the future of Industry 4.0.
 
+- [Node-RED Terminology](http://blog.openmindmap.org/blog/node-red-terminology) - An explanation of the different Node-RED terminology.
+
 
 
 ## Join Our Team
