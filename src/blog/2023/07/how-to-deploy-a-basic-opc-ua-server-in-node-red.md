@@ -108,7 +108,7 @@ return msg;
 We can confirm the values are being stored in memory by checking the flow context data and pressing the refresh button.
 
 ![Context Data 1](./images/opc-ua-1/context-data-1.png)
-![Context Data 2](./images/opc-ua-1/image-20230711-203027.png)
+![Context Data 2](./images/opc-ua-1/context-data-2.png)
 Each time we hit refresh, the values change, confirming that the values are randomly changing every second.
 
 The last, and most important part of the flow, is the `Compact-Server` node, which actually stands alone without any incoming or outgoing connections.
