@@ -349,6 +349,14 @@ module.exports = function(eleventyConfig) {
         createNav('core-nodes')
 
         function createNav(tag) {
+            const groupOrder = {
+                docs: [
+                    'Overview',
+                    'Device Agent',
+                    'Running FlowForge'
+                ]
+            }
+
             collection.getFilteredByTag(tag).filter((page) => {
                 return !page.url.includes('README')
             }).sort((a, b) => {
@@ -427,7 +435,7 @@ module.exports = function(eleventyConfig) {
                         if (!groups[group]) {
                             groups[group] = {
                                 name: group,
-                                order: 0,
+                                order: groupOrder[tag] && groupOrder[tag].includes(group) ? groupOrder[tag].indexOf(group) : Number.MAX_SAFE_INTEGER,
                                 children: []
                             }
                         }
