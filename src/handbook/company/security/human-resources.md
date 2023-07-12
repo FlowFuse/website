@@ -2,7 +2,7 @@
 navTitle: Human Resources Security Policy
 ---
 
-# Secure Development Policy
+# Human Resources Security Policy
 
 | Policy owner   | Effective date |
 | -------------- | -------------- |
