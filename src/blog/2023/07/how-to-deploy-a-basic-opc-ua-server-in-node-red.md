@@ -17,7 +17,7 @@ This article is the first part of a series of OPC-UA content.  Here, we will exp
 
 ## What is OPC-UA?
 
-OPC **U**nified **A**rchitecture (OPC UA) is an open, platform independent communication framework frequently utilized in industrial automation, and is considered one of the key protocol standards for Industry 4.0 and Industrial IoT (IIoT).  The standard is developed and maintained by a consortium called the OPC Foundation, with recognizable industry names such as Siemens, Honeywell, Microsoft, Beckhoff, SAP, Yokogawa, ABB, Rockwell, and Schneider Electric.
+OPC Unified Architecture (OPC UA) is an open, platform independent communication framework frequently utilized in industrial automation, and is considered one of the key protocol standards for Industry 4.0 and Industrial IoT (IIoT).  The standard is developed and maintained by a consortium called the OPC Foundation, with recognizable industry names such as Siemens, Honeywell, Microsoft, Beckhoff, SAP, Yokogawa, ABB, Rockwell, and Schneider Electric.
 
 Because of OPC-UA’s wide industry acceptance, it is increasingly becoming natively supported on devices and systems spanning the entirety of the automation pyramid, [including PLCs, HMIs, MES & ERP systems](https://www.motioncontroltips.com/what-is-opc-ua-and-how-does-it-compare-with-industrial-ethernet/).  
 
@@ -51,7 +51,7 @@ The OPC client simply needs to subscribe to the OPC Server endpoint url (ex. opc
 
 ## Deploying an Example OPC-UA Server in Node-RED
 
-With some background on OPC-UA and how information is modeled in mind, we can take a look at the [node-red-contrib-opcua-server](https://flows.nodered.org/node/node-red-contrib-opcua-server) node, which is merely a compact version of the [node-red-contrib-opcua](https://flows.nodered.org/node/node-red-contrib-opcua) node that only focuses on the OPC-UA server and hence requires less dependencies, maintained by [Klaus Landsdorf](https://github.com/biancode).  
+With some background on OPC-UA and how information is modeled in mind, we can take a look at the [node-red-contrib-opcua-server](https://flows.nodered.org/node/node-red-contrib-opcua-server) node, which is merely a compact version of the [node-red-contrib-opcua](https://flows.nodered.org/node/node-red-contrib-opcua) node that only focuses on the OPC-UA server and hence requires less dependencies.  
 
  An [example flow](https://github.com/BiancoRoyal/node-red-contrib-opcua-server/blob/master/examples/server-with-context.json) is provided on github that can serve as a basis for understanding how a OPC-UA server is constructed.  Let’s get the example server up and running.  
 
@@ -70,17 +70,7 @@ flow.set('isoInput6', Math.random() + 16.0)
 flow.set('isoInput7', Math.random() + 17.0)
 flow.set('isoInput8', Math.random() + 18.0)
 
-msg.payload = [
-    flow.get('isoInput1'),
-    flow.get('isoInput2'),
-    flow.get('isoInput3'),
-    flow.get('isoInput4'),
-    flow.get('isoInput5'),
-    flow.get('isoInput6'),
-    flow.get('isoInput7'),
-    flow.get('isoInput8'),
-]
-return msg;
+...
 ```
 - another inject node is triggering the function `set flow context Outputs`, also at a one second interval, which creates another set of 7 randomly generated float values and stores them as flow context variables, `isoOutput2` - `isoOutput8` (isolated inputs).  The values will change to a new random number each time the node is injected.
 
@@ -94,17 +84,7 @@ flow.set('isoOutput6', Math.random() + 6.0)
 flow.set('isoOutput7', Math.random() + 7.0)
 flow.set('isoOutput8', Math.random() + 8.0)
 
-msg.payload = [
-    flow.get('isoOutput1'),
-    flow.get('isoOutput2'),
-    flow.get('isoOutput3'),
-    flow.get('isoOutput4'),
-    flow.get('isoOutput5'),
-    flow.get('isoOutput6'),
-    flow.get('isoOutput7'),
-    flow.get('isoOutput8'),
-]
-return msg;
+...
 ```
 
 We can confirm the values are being stored in memory by checking the flow context data and pressing the refresh button.
@@ -144,8 +124,6 @@ const namespace = addressSpace.getOwnNamespace();
 the data that will be published by the server (which are our random number, flow context variables defined by our function nodes) is defined, 
 
 ```javascript 
-  var flexServerInternals = this;
-
   this.sandboxFlowContext.set("isoInput1", 0);
   this.setInterval(() => {
     flexServerInternals.sandboxFlowContext.set(
@@ -155,27 +133,7 @@ the data that will be published by the server (which are our random number, flow
   }, 500);
   this.sandboxFlowContext.set("isoInput2", 0);
   this.sandboxFlowContext.set("isoInput3", 0);
-  this.sandboxFlowContext.set("isoInput4", 0);
-  this.sandboxFlowContext.set("isoInput5", 0);
-  this.sandboxFlowContext.set("isoInput6", 0);
-  this.sandboxFlowContext.set("isoInput7", 0);
-  this.sandboxFlowContext.set("isoInput8", 0);
-
-  this.sandboxFlowContext.set("isoOutput1", 0);
-  this.setInterval(() => {
-    flexServerInternals.sandboxFlowContext.set(
-      "isoOutput1",
-      Math.random() + 10.0
-    );
-  }, 500);
-
-  this.sandboxFlowContext.set("isoOutput2", 0);
-  this.sandboxFlowContext.set("isoOutput3", 0);
-  this.sandboxFlowContext.set("isoOutput4", 0);
-  this.sandboxFlowContext.set("isoOutput5", 0);
-  this.sandboxFlowContext.set("isoOutput6", 0);
-  this.sandboxFlowContext.set("isoOutput7", 0);
-  this.sandboxFlowContext.set("isoOutput8", 0);
+...
 ```
 
 a folder structure is defined, 
@@ -189,13 +147,7 @@ a folder structure is defined,
   const myDevice = namespace.addFolder(rootFolder.objects, {
     "browseName": "RaspberryPI-Zero-WLAN"
   });
-  const gpioFolder = namespace.addFolder(myDevice, { "browseName": "GPIO" });
-  const isoInputs = namespace.addFolder(gpioFolder, {
-    "browseName": "Inputs"
-  });
-  const isoOutputs = namespace.addFolder(gpioFolder, {
-    "browseName": "Outputs"
-  });
+...
 ```
 
 and a node is added to the namespace for each context variable 
@@ -223,335 +175,7 @@ and a node is added to the namespace for each context variable
     }
   });
 
-  const gpioDI2 = namespace.addVariable({
-    "organizedBy": isoInputs,
-    "browseName": "I2",
-    "nodeId": "ns=1;s=Isolated_Input2",
-    "dataType": "Double",
-    "value": {
-      "get": function() {
-        return new Variant({
-          "dataType": DataType.Double,
-          "value": flexServerInternals.sandboxFlowContext.get("isoInput2")
-        });
-      },
-      "set": function(variant) {
-        flexServerInternals.sandboxFlowContext.set(
-          "isoInput2",
-          parseFloat(variant.value)
-        );
-        return opcua.StatusCodes.Good;
-      }
-    }
-  });
-
-  const gpioDI3 = namespace.addVariable({
-    "organizedBy": isoInputs,
-    "browseName": "I3",
-    "nodeId": "ns=1;s=Isolated_Input3",
-    "dataType": "Double",
-    "value": {
-      "get": function() {
-        return new Variant({
-          "dataType": DataType.Double,
-          "value": flexServerInternals.sandboxFlowContext.get("isoInput3")
-        });
-      },
-      "set": function(variant) {
-        flexServerInternals.sandboxFlowContext.set(
-          "isoInput3",
-          parseFloat(variant.value)
-        );
-        return opcua.StatusCodes.Good;
-      }
-    }
-  });
-
-  const gpioDI4 = namespace.addVariable({
-    "organizedBy": isoInputs,
-    "browseName": "I4",
-    "nodeId": "ns=1;s=Isolated_Input4",
-    "dataType": "Double",
-    "value": {
-      "get": function() {
-        return new Variant({
-          "dataType": DataType.Double,
-          "value": flexServerInternals.sandboxFlowContext.get("isoInput4")
-        });
-      },
-      "set": function(variant) {
-        flexServerInternals.sandboxFlowContext.set(
-          "isoInput4",
-          parseFloat(variant.value)
-        );
-        return opcua.StatusCodes.Good;
-      }
-    }
-  });
-
-  const gpioDI5 = namespace.addVariable({
-    "organizedBy": isoInputs,
-    "browseName": "I5",
-    "nodeId": "ns=1;s=Isolated_Input5",
-    "dataType": "Double",
-    "value": {
-      "get": function() {
-        return new Variant({
-          "dataType": DataType.Double,
-          "value": flexServerInternals.sandboxFlowContext.get("isoInput5")
-        });
-      },
-      "set": function(variant) {
-        flexServerInternals.sandboxFlowContext.set(
-          "isoInput5",
-          parseFloat(variant.value)
-        );
-        return opcua.StatusCodes.Good;
-      }
-    }
-  });
-
-  const gpioDI6 = namespace.addVariable({
-    "organizedBy": isoInputs,
-    "browseName": "I6",
-    "nodeId": "ns=1;s=Isolated_Input6",
-    "dataType": "Double",
-    "value": {
-      "get": function() {
-        return new Variant({
-          "dataType": DataType.Double,
-          "value": flexServerInternals.sandboxFlowContext.get("isoInput6")
-        });
-      },
-      "set": function(variant) {
-        flexServerInternals.sandboxFlowContext.set(
-          "isoInput6",
-          parseFloat(variant.value)
-        );
-        return opcua.StatusCodes.Good;
-      }
-    }
-  });
-
-  const gpioDI7 = namespace.addVariable({
-    "organizedBy": isoInputs,
-    "browseName": "I7",
-    "nodeId": "ns=1;s=Isolated_Input7",
-    "dataType": "Double",
-    "value": {
-      "get": function() {
-        return new Variant({
-          "dataType": DataType.Double,
-          "value": flexServerInternals.sandboxFlowContext.get("isoInput7")
-        });
-      },
-      "set": function(variant) {
-        flexServerInternals.sandboxFlowContext.set(
-          "isoInput7",
-          parseFloat(variant.value)
-        );
-        return opcua.StatusCodes.Good;
-      }
-    }
-  });
-
-  const gpioDI8 = namespace.addVariable({
-    "organizedBy": isoInputs,
-    "browseName": "I8",
-    "nodeId": "ns=1;s=Isolated_Input8",
-    "dataType": "Double",
-    "value": {
-      "get": function() {
-        return new Variant({
-          "dataType": DataType.Double,
-          "value": flexServerInternals.sandboxFlowContext.get("isoInput8")
-        });
-      },
-      "set": function(variant) {
-        flexServerInternals.sandboxFlowContext.set(
-          "isoInput8",
-          parseFloat(variant.value)
-        );
-        return opcua.StatusCodes.Good;
-      }
-    }
-  });
-
-  const gpioDO1 = namespace.addVariable({
-    "organizedBy": isoOutputs,
-    "browseName": "O1",
-    "nodeId": "ns=1;s=Isolated_Output1",
-    "dataType": "Double",
-    "value": {
-      "get": function() {
-        return new Variant({
-          "dataType": DataType.Double,
-          "value": flexServerInternals.sandboxFlowContext.get("isoOutput1")
-        });
-      },
-      "set": function(variant) {
-        flexServerInternals.sandboxFlowContext.set(
-          "isoOutput1",
-          parseFloat(variant.value)
-        );
-        return opcua.StatusCodes.Good;
-      }
-    }
-  });
-
-  const gpioDO2 = namespace.addVariable({
-    "organizedBy": isoOutputs,
-    "browseName": "O2",
-    "nodeId": "ns=1;s=Isolated_Output2",
-    "dataType": "Double",
-    "value": {
-      "get": function() {
-        return new Variant({
-          "dataType": DataType.Double,
-          "value": flexServerInternals.sandboxFlowContext.get("isoOutput2")
-        });
-      },
-      "set": function(variant) {
-        flexServerInternals.sandboxFlowContext.set(
-          "isoOutput2",
-          parseFloat(variant.value)
-        );
-        return opcua.StatusCodes.Good;
-      }
-    }
-  });
-
-  const gpioDO3 = namespace.addVariable({
-    "organizedBy": isoOutputs,
-    "browseName": "O3",
-    "nodeId": "ns=1;s=Isolated_Output3",
-    "dataType": "Double",
-    "value": {
-      "get": function() {
-        return new Variant({
-          "dataType": DataType.Double,
-          "value": flexServerInternals.sandboxFlowContext.get("isoOutput3")
-        });
-      },
-      "set": function(variant) {
-        flexServerInternals.sandboxFlowContext.set(
-          "isoOutput3",
-          parseFloat(variant.value)
-        );
-        return opcua.StatusCodes.Good;
-      }
-    }
-  });
-
-  const gpioDO4 = namespace.addVariable({
-    "organizedBy": isoOutputs,
-    "browseName": "O4",
-    "nodeId": "ns=1;s=Isolated_Output4",
-    "dataType": "Double",
-    "value": {
-      "get": function() {
-        return new Variant({
-          "dataType": DataType.Double,
-          "value": flexServerInternals.sandboxFlowContext.get("isoOutput4")
-        });
-      },
-      "set": function(variant) {
-        flexServerInternals.sandboxFlowContext.set(
-          "isoOutput4",
-          parseFloat(variant.value)
-        );
-        return opcua.StatusCodes.Good;
-      }
-    }
-  });
-
-  const gpioDO5 = namespace.addVariable({
-    "organizedBy": isoOutputs,
-    "browseName": "O5",
-    "nodeId": "ns=1;s=Isolated_Output5",
-    "dataType": "Double",
-    "value": {
-      "get": function() {
-        return new Variant({
-          "dataType": DataType.Double,
-          "value": flexServerInternals.sandboxFlowContext.get("isoOutput5")
-        });
-      },
-      "set": function(variant) {
-        flexServerInternals.sandboxFlowContext.set(
-          "isoOutput5",
-          parseFloat(variant.value)
-        );
-        return opcua.StatusCodes.Good;
-      }
-    }
-  });
-
-  const gpioDO6 = namespace.addVariable({
-    "organizedBy": isoOutputs,
-    "browseName": "O6",
-    "nodeId": "ns=1;s=Isolated_Output6",
-    "dataType": "Double",
-    "value": {
-      "get": function() {
-        return new Variant({
-          "dataType": DataType.Double,
-          "value": flexServerInternals.sandboxFlowContext.get("isoOutput6")
-        });
-      },
-      "set": function(variant) {
-        flexServerInternals.sandboxFlowContext.set(
-          "isoOutput6",
-          parseFloat(variant.value)
-        );
-        return opcua.StatusCodes.Good;
-      }
-    }
-  });
-
-  const gpioDO7 = namespace.addVariable({
-    "organizedBy": isoOutputs,
-    "browseName": "O7",
-    "nodeId": "ns=1;s=Isolated_Output7",
-    "dataType": "Double",
-    "value": {
-      "get": function() {
-        return new Variant({
-          "dataType": DataType.Double,
-          "value": flexServerInternals.sandboxFlowContext.get("isoOutput7")
-        });
-      },
-      "set": function(variant) {
-        flexServerInternals.sandboxFlowContext.set(
-          "isoOutput7",
-          parseFloat(variant.value)
-        );
-        return opcua.StatusCodes.Good;
-      }
-    }
-  });
-
-  const gpioDO8 = namespace.addVariable({
-    "organizedBy": isoOutputs,
-    "browseName": "O8",
-    "nodeId": "ns=1;s=Isolated_Output8",
-    "dataType": "Double",
-    "value": {
-      "get": function() {
-        return new Variant({
-          "dataType": DataType.Double,
-          "value": flexServerInternals.sandboxFlowContext.get("isoOutput8")
-        });
-      },
-      "set": function(variant) {
-        flexServerInternals.sandboxFlowContext.set(
-          "isoOutput8",
-          parseFloat(variant.value)
-        );
-        return opcua.StatusCodes.Good;
-      }
-    }
-  });
+...
 ```
 
 Additionally, views are defined.  View create custom hierarchies our OPC Client can browse as an alternative to the default folder structure.
@@ -572,80 +196,7 @@ Additionally, views are defined.  View create custom hierarchies our OPC Client 
     "nodeId": gpioDI1.nodeId
   });
 
-  viewDI.addReference({
-    "referenceType": "Organizes",
-    "nodeId": gpioDI2.nodeId
-  });
-
-  viewDI.addReference({
-    "referenceType": "Organizes",
-    "nodeId": gpioDI3.nodeId
-  });
-
-  viewDI.addReference({
-    "referenceType": "Organizes",
-    "nodeId": gpioDI4.nodeId
-  });
-
-  viewDI.addReference({
-    "referenceType": "Organizes",
-    "nodeId": gpioDI5.nodeId
-  });
-
-  viewDI.addReference({
-    "referenceType": "Organizes",
-    "nodeId": gpioDI6.nodeId
-  });
-
-  viewDI.addReference({
-    "referenceType": "Organizes",
-    "nodeId": gpioDI7.nodeId
-  });
-
-  viewDI.addReference({
-    "referenceType": "Organizes",
-    "nodeId": gpioDI8.nodeId
-  });
-
-  viewDO.addReference({
-    "referenceType": "Organizes",
-    "nodeId": gpioDO1.nodeId
-  });
-
-  viewDO.addReference({
-    "referenceType": "Organizes",
-    "nodeId": gpioDO2.nodeId
-  });
-
-  viewDO.addReference({
-    "referenceType": "Organizes",
-    "nodeId": gpioDO3.nodeId
-  });
-
-  viewDO.addReference({
-    "referenceType": "Organizes",
-    "nodeId": gpioDO4.nodeId
-  });
-
-  viewDO.addReference({
-    "referenceType": "Organizes",
-    "nodeId": gpioDO5.nodeId
-  });
-
-  viewDO.addReference({
-    "referenceType": "Organizes",
-    "nodeId": gpioDO6.nodeId
-  });
-
-  viewDO.addReference({
-    "referenceType": "Organizes",
-    "nodeId": gpioDO7.nodeId
-  });
-
-  viewDO.addReference({
-    "referenceType": "Organizes",
-    "nodeId": gpioDO8.nodeId
-  });
+...
 
 ```
 
@@ -682,5 +233,3 @@ If we go to `Views`, we can see the custom hierarchy defined in the example serv
 In this article, we compare OPC-UA to traditional fieldbus protocols, explain the importance of the OPC UA Information Model to understand how data is modeled in the address space of an OPC Server, and then walk through and deploy an example compact OPC-UA Server flow.  
 
 In our next article, we will build a custom OPC-UA Server in Node-RED with data pulled from an Allen Bradley PLC over Ethernet/IP, using the PLC data to develop a OPC UA Information Model programmed in the OPC server address space.
-
-
