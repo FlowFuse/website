@@ -19,15 +19,19 @@ This article is the first part of a series of OPC-UA content.  Here, we will exp
 
 OPC Unified Architecture (OPC UA) is an open, platform independent communication framework frequently utilized in industrial automation, and is considered one of the key protocol standards for Industry 4.0 and Industrial IoT (IIoT).  The standard is developed and maintained by a consortium called the OPC Foundation, with recognizable industry names such as Siemens, Honeywell, Microsoft, Beckhoff, SAP, Yokogawa, ABB, Rockwell, and Schneider Electric.
 
-Because of OPC-UA’s wide industry acceptance, it is increasingly becoming natively supported on devices and systems spanning the entirety of the automation pyramid, [including PLCs, HMIs, MES & ERP systems](https://www.motioncontroltips.com/what-is-opc-ua-and-how-does-it-compare-with-industrial-ethernet/).  
+Because of OPC-UA’s wide industry acceptance, it is increasingly becoming natively supported on devices and systems spanning the entirety of the automation pyramid.  
 
 ![Automation Pyramid](./images/opc-ua-1/automation-pyramid.jpg)
+*Image reference - [imagecontroltips.com](https://www.motioncontroltips.com/what-is-opc-ua-and-how-does-it-compare-with-industrial-ethernet/)*
 
 
 ## Fieldbus Model vs OPC-UA Information Model
 
+As of today, industrial ethernet fieldbuses dominate the field/device-level (level 0) and controller/PLC-level (level 1) of the automation pyramid. 
 ![OPC-UA Pyramid](./images/opc-ua-1/OPC-UA-pyramid-2.webp)
-As of today, industrial ethernet fieldbuses dominate the field/device-level (level 0) and controller/PLC-level (level 1) of the automation pyramid. Fieldbuses such as Profinet, Ethernet/IP, and EtherCAT, employ deterministic, real-time communication, which is essential for mission-critical and safety-oriented automation tasks.  [OPC-UA is most commonly encountered at the SCADA level and above (level 2-4)](https://tipteh.com/opc-ua/).  However, with the inclusion of [Time Sensitive Networking (TSN) into the OPC-UA technology stack](https://www.tttech-industrial.com/resource-library/blog-posts/opc-ua-fx), OPC-UA can be feasibly used for real-time communication all the way down to the device level.  
+*Image reference - [tipteh.com](https://tipteh.com/opc-ua/)*
+
+Fieldbuses such as Profinet, Ethernet/IP, and EtherCAT, employ deterministic, real-time communication, which is essential for mission-critical and safety-oriented automation tasks.  OPC-UA is most commonly encountered at the SCADA level and above (level 2-4).  However, with the inclusion of [Time Sensitive Networking (TSN) into the OPC-UA technology stack](https://www.tttech-industrial.com/resource-library/blog-posts/opc-ua-fx), OPC-UA can be feasibly used for real-time communication all the way down to the device level.  
 
 Traditionally, fieldbus protocols transmit only raw data from field devices (ie, a float to represent a pressure, or a boolean to represent the position of a switch).  The fieldbus data gets pushed up the automation stack layer by layer, where eventually it will be converted to a format suitable for IT systems to consume (such as OPC-UA).
 
@@ -47,7 +51,8 @@ This folder structure will be exposed via the OPC Client browser, allowing end-u
 In summary, OPC-UA represents a trade-off between complex information modeling, with the versatility for that data to be consumed by devices and systems all the way up the automation pyramid layers.  The data does not have to pass through subsequent automation layers on the way up, nor does the data need to undergo any conversion along the way.  
 
 ![OPC-UA Distributed Model](./images/opc-ua-1/OPC-UA-distributed-model.jpg)
-The OPC client simply needs to subscribe to the OPC Server endpoint url (ex. opc.tcp://server.address), and the client will be able to browse the structured OPC data as it’s modeled in the server.  Any client will receive the information in the same manner, regardless if it’s a PLC, SCADA, MES, or ERP system.  [This opens the possibility for horizontal and vertical system integration in a standardized manner.](https://ifr.org/post/faster-robot-communication-through-the-opc-robotics-companion-specification)  Additionally, the more information that is exposed about a device, the easier it is to track, and use said data to autonomously reconfigure, or pre-emptively take maintenance actions.  
+*Image reference - [ifr.org](https://ifr.org/post/faster-robot-communication-through-the-opc-robotics-companion-specification)*
+The OPC client simply needs to subscribe to the OPC Server endpoint url (ex. opc.tcp://server.address), and the client will be able to browse the structured OPC data as it’s modeled in the server.  Any client will receive the information in the same manner, regardless if it’s a PLC, SCADA, MES, or ERP system.  This opens the possibility for horizontal and vertical system integration in a standardized manner. Additionally, the more information that is exposed about a device, the easier it is to track, and use said data to autonomously reconfigure, or pre-emptively take maintenance actions.  
 
 ## Deploying an Example OPC-UA Server in Node-RED
 
@@ -109,19 +114,21 @@ For a production system, we will want to enable security, but for test purposes,
 
 `Users & Sets` tab is related to security and permissions.  We can leave this empty for testing.  
 
- The `Address Space` tab is where the information for constructing the OPC Information Model is stored, and consists of a function that is responsible for invoking the OPC-UA server, 
+ The `Address Space` tab is where our server OPC Information Model is constructed, using classes and methods from the [node-opcua sdk](https://node-opcua.github.io/).  
+ 
+ Breaking down the provided example code for further context, it starts with a function that is responsible for invoking the OPC-UA server, 
 
 ```javascript 
   const opcua = coreServer.choreCompact.opcua;
 ```
 
-the namespace is created, 
+and then the namespace is created. 
 
 ```javascript 
 const namespace = addressSpace.getOwnNamespace();
 ```
 
-the data that will be published by the server (which are our random number, flow context variables defined by our function nodes) is defined, 
+Further down, the variables that will be published by the server (which are our `isoInput` & `isoOutput` flow context variables) are initialized, 
 
 ```javascript 
   this.sandboxFlowContext.set("isoInput1", 0);
@@ -136,7 +143,7 @@ the data that will be published by the server (which are our random number, flow
 ...
 ```
 
-a folder structure is defined, 
+and an OPC folder structure is defined. 
 
 ```javascript 
   coreServer.debugLog("init dynamic address space");
@@ -150,7 +157,7 @@ a folder structure is defined,
 ...
 ```
 
-and a node is added to the namespace for each context variable 
+Then, with our variables and folder structere defined, nodes are added to the namespace for each context variable. 
 
 ```javascript 
   const gpioDI1 = namespace.addVariable({
@@ -178,7 +185,7 @@ and a node is added to the namespace for each context variable
 ...
 ```
 
-Additionally, views are defined.  View create custom hierarchies our OPC Client can browse as an alternative to the default folder structure.
+Last, OPC views are defined.  Views create custom hierarchies our OPC Client can browse as an alternative to the default folder structure.
 
 ```javascript 
   const viewDI = namespace.addView({
@@ -200,7 +207,7 @@ Additionally, views are defined.  View create custom hierarchies our OPC Client 
 
 ```
 
-Last, on the `Discovery` tab, we must define an endpoint for an OPC Client to subscribe to.  
+Finally, on the `Discovery` tab, we must define an endpoint for an OPC Client to subscribe to.  
 
 The `Endpoint Url` follows the format `opc.tcp://<address>:port`.  Our port was defined on the `Settings` tab, which by default, is port `54845`. The address will be either the url or ip address of your Node-RED instance.  In my case, it’s 192.168.0.114.  So my Endpoint Url = `opc.tcp://192.168.0.114:54845`
 
@@ -232,4 +239,4 @@ If we go to `Views`, we can see the custom hierarchy defined in the example serv
 
 In this article, we compare OPC-UA to traditional fieldbus protocols, explain the importance of the OPC UA Information Model to understand how data is modeled in the address space of an OPC Server, and then walk through and deploy an example compact OPC-UA Server flow.  
 
-In our next article, we will build a custom OPC-UA Server in Node-RED with data pulled from an Allen Bradley PLC over Ethernet/IP, using the PLC data to develop a OPC UA Information Model programmed in the OPC server address space.
+In our next article, we will build a custom OPC-UA Server in Node-RED with data pulled from an Allen Bradley PLC over Ethernet/IP, using the PLC data to develop a custom OPC UA Information Model programmed in the OPC server address space.
