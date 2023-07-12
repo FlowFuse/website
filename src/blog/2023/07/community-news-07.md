@@ -18,7 +18,7 @@ Welcome to the FlowForge newsletter for July 2023, a monthly roundup of what’s
 
 Last week we released FlowForge 1.9, featuring new API documentation available in the Swagger UI and the ability to customize Node-RED palettes. 
 
- Read about the details of FlowForge 1.8 in our [release announcement](https://flowforge.com/blog/2023/07/flowforge-1-9-release/). 
+ Read about the details of FlowForge 1.9 in our [release announcement](https://flowforge.com/blog/2023/07/flowforge-1-9-release/). 
 
 ## Upcoming events
 
