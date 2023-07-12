@@ -11,7 +11,7 @@ tags:
     - releases
 ---
 
-This article is the first part of a series of OPC-UA content.  Here, we will explain some basic concepts of OPC-UA as they apply to building a server in Node-RED, then walk through and deploy an example OPC-UA Server.  In our next OPC-UA article, we will build on the foundation of this article, and use it to create a custom OPC-UA Server using data derived from a PLC. 
+This article is the first part of a series of OPC-UA content.  Here, we will explain some basic concepts of OPC-UA as they apply to building a server in Node-RED, then walk through and deploy an example OPC-UA Server.  
 
 <!--more-->
 
