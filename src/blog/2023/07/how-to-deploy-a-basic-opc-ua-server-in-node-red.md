@@ -116,7 +116,8 @@ The last, and most important part of the flow, is the `Compact-Server` node, whi
 ![Compact Server Node](./images/opc-ua-1/compact-server-node.png)
 In the `Compact-Server` node properties, the first tab is `Settings`, and the two important properties here are `Port` and `Show Errors`.  As can be seen in the node screenshot above, the node is reporting `active`, which means the server is configured correctly.  
 
-![Invalid file id - dd3668d7-ef9a-40ea-9aa8-64dc32343451](./images/opc-ua-1/Invalid%20file%20id%20-%20dd3668d7-ef9a-40ea-9aa8-64dc32343451)
+![Settings Tab](./images/opc-ua-1/settings-tab.png)
+
 The `Limits` tab specifies some default limits that we can configure if we like, but are not necessary to be modified for test purposes.  
 
 The `Security` tab has one important option, `Allow Anonymous`.  By default, anonymous access is enabled.  
