@@ -13,3 +13,4 @@ This covers how we run our business and deliver service to our customers.
 - [Product Demos](./demos.md)
 - [Versioning](./versioning.md)
 - [Metrics](./metrics.md)
+- [Node-RED Dashboard](./dashboard.md)
