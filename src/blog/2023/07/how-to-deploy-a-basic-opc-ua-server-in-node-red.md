@@ -8,7 +8,7 @@ image: blog/2023/07/images/opc-ua-1/opc-ua-1-title-image.png
 tags:
     - posts
     - flowforge
-    - releases
+    - node-red
 ---
 
 This article is the first part of a series of OPC-UA content.  Here, we will explain some basic concepts of OPC-UA as they apply to building a server in Node-RED, then walk through and deploy an example OPC-UA Server.  
