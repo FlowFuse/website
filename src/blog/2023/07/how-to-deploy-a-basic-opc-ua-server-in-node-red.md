@@ -15,11 +15,11 @@ This article is the first part of a series of OPC-UA content.  Here, we will exp
 
 <!--more-->
 
-# What is OPC-UA?
+## What is OPC-UA?
 
 OPC **U**nified **A**rchitecture (OPC UA) is an open, platform independent communication framework frequently utilized in industrial automation, and is considered one of the key protocol standards for Industry 4.0 and Industrial IoT (IIoT).  The standard is developed and maintained by a consortium called the OPC Foundation, with recognizable industry names such as Siemens, Honeywell, Microsoft, Beckhoff, SAP, Yokogawa, ABB, Rockwell, and Schneider Electric.
 
-Because of OPC-UA’s wide industry acceptance, it is increasingly becoming natively supported on devices and systems [spanning the entirety of the automation pyramid, including PLCs, HMIs, MES & ERP systems](https://www.motioncontroltips.com/what-is-opc-ua-and-how-does-it-compare-with-industrial-ethernet/).  
+Because of OPC-UA’s wide industry acceptance, it is increasingly becoming natively supported on devices and systems spanning the entirety of the automation pyramid, [including PLCs, HMIs, MES & ERP systems](https://www.motioncontroltips.com/what-is-opc-ua-and-how-does-it-compare-with-industrial-ethernet/).  
 
 ![Automation Pyramid](./images/opc-ua-1/automation-pyramid.jpg)
 
@@ -27,17 +27,17 @@ Because of OPC-UA’s wide industry acceptance, it is increasingly becoming nati
 ## Fieldbus Model vs OPC-UA Information Model
 
 ![OPC-UA Pyramid](./images/opc-ua-1/OPC-UA-pyramid-2.webp)
-As of today, industrial ethernet fieldbuses dominate the field/device-level (level 0) and controller/PLC-level (level 1) of the automation pyramid. Fieldbuses such as Profinet, Ethernet/IP, and EtherCAT, employ deterministic, real-time communication, which is essential for mission-critical and safety-oriented automation tasks.  [OPC-UA is most commonly encountered at the SCADA level and above (level 2-4)](https://tipteh.com/opc-ua/).  However, [with the inclusion of Time Sensitive Networking (TSN) into the OPC-UA technology stack](https://www.tttech-industrial.com/resource-library/blog-posts/opc-ua-fx), OPC-UA can be feasibly used for real-time communication all the way down to the device level.  
+As of today, industrial ethernet fieldbuses dominate the field/device-level (level 0) and controller/PLC-level (level 1) of the automation pyramid. Fieldbuses such as Profinet, Ethernet/IP, and EtherCAT, employ deterministic, real-time communication, which is essential for mission-critical and safety-oriented automation tasks.  [OPC-UA is most commonly encountered at the SCADA level and above (level 2-4)](https://tipteh.com/opc-ua/).  However, with the inclusion of [Time Sensitive Networking (TSN) into the OPC-UA technology stack](https://www.tttech-industrial.com/resource-library/blog-posts/opc-ua-fx), OPC-UA can be feasibly used for real-time communication all the way down to the device level.  
 
 Traditionally, fieldbus protocols transmit only raw data from field devices (ie, a float to represent a pressure, or a boolean to represent the position of a switch).  The fieldbus data gets pushed up the automation stack layer by layer, where eventually it will be converted to a format suitable for IT systems to consume (such as OPC-UA).
 
 ![Fieldbus Model.png](./images/opc-ua-1/fieldbus-model.png)
 
 
-In contrast to fieldbus protocols, OPC-UA represents automation data in the form of nodes. The framework for constructing nodes is referred to as the OPC Information Model, and consists of pre-defined classes and methods that are programmed in the OPC Server address space.  
+In contrast to fieldbus protocols, OPC-UA represents automation data in the form of nodes. The framework for constructing nodes is referred to as the [OPC Information model](lhttps://reference.opcfoundation.org/Core/Part5/v104/docs/), and consists of pre-defined classes and methods that are programmed in the OPC Server address space.  
 
 ![OPC Information Model](./images/opc-ua-1/opc-information-model.png)
-Devices can be described as objects with metadata as a collection of information that give a holistic view of the device, beyond simply the raw value.  To construct an object, we can take different individual attributes associated with a device, such as the transmitter raw value, transmitter fault flag, and alarm setpoint, and combine them, similar to how user-defined datatypes (UDTs) are objects used to represent devices in PLCs.  The information model also defines a folder structure, to allow devices information to reside in a structured hierarchy.  Using the example temperature transmitter above, an example folder structure can be constructed as follows:
+Devices can be described as objects that give a holistic view of the device, beyond simply the raw value.  To construct a device object, we can take different individual attributes associated with a device, such as the transmitter raw value, transmitter fault flag, alarm setpoint, and combine them, similar to how user-defined datatypes (UDTs) are objects used to represent devices in PLCs.  The information model also defines a folder structure, to allow devices information to reside in a structured hierarchy.  Using the example temperature transmitter above, an example folder structure can be constructed as follows:
 
 `/Root/Objects/Calcinator 1 PLC/Temperature Transmitters/Tank 1 Temperature/Transmitter Value`
 
@@ -49,9 +49,9 @@ In summary, OPC-UA represents a trade-off between complex information modeling, 
 ![OPC-UA Distributed Model](./images/opc-ua-1/OPC-UA-distributed-model.jpg)
 The OPC client simply needs to subscribe to the OPC Server endpoint url (ex. opc.tcp://server.address), and the client will be able to browse the structured OPC data as it’s modeled in the server.  Any client will receive the information in the same manner, regardless if it’s a PLC, SCADA, MES, or ERP system.  [This opens the possibility for horizontal and vertical system integration in a standardized manner.](https://ifr.org/post/faster-robot-communication-through-the-opc-robotics-companion-specification)  Additionally, the more information that is exposed about a device, the easier it is to track, and use said data to autonomously reconfigure, or pre-emptively take maintenance actions.  
 
-# Deploying an Example OPC-UA Server in Node-RED
+## Deploying an Example OPC-UA Server in Node-RED
 
-With some background on OPC-UA and how information is modeled in mind, we can take a look at the [https://flows.nodered.org/node/node-red-contrib-opcua-server](https://flows.nodered.org/node/node-red-contrib-opcua-server) node, which is merely a compact version of the [https://flows.nodered.org/node/node-red-contrib-opcua](https://flows.nodered.org/node/node-red-contrib-opcua) node that only focuses on the server and hence requires less dependencies, maintained by [Klaus Landsdorf](https://github.com/biancode).  
+With some background on OPC-UA and how information is modeled in mind, we can take a look at the [node-red-contrib-opcua-server](https://flows.nodered.org/node/node-red-contrib-opcua-server) node, which is merely a compact version of the [node-red-contrib-opcua](https://flows.nodered.org/node/node-red-contrib-opcua) node that only focuses on the OPC-UA server and hence requires less dependencies, maintained by [Klaus Landsdorf](https://github.com/biancode).  
 
  An [example flow](https://github.com/BiancoRoyal/node-red-contrib-opcua-server/blob/master/examples/server-with-context.json) is provided on github that can serve as a basis for understanding how a OPC-UA server is constructed.  Let’s get the example server up and running.  
 
@@ -59,7 +59,8 @@ Deploying the example flow yields the following result -
 
 ![Compact Server Flow](./images/opc-ua-1/compact-server-flow.png)
 - an inject node is trigging the function `set flow context Inputs` at a one second interval, which creates 7 randomly generated float values and stores them as flow context variables, `isoInput2` - `isoInput8` (isolated inputs).  The values will change to a new random number each time the node is injected.
-- ```javascript 
+
+```javascript 
 // flow.set('isoInput1', Math.random() + 11.0) interval comes from server
 flow.set('isoInput2', Math.random() + 12.0)
 flow.set('isoInput3', Math.random() + 13.0)
@@ -82,7 +83,8 @@ msg.payload = [
 return msg;
 ```
 - another inject node is triggering the function `set flow context Outputs`, also at a one second interval, which creates another set of 7 randomly generated float values and stores them as flow context variables, `isoOutput2` - `isoOutput8` (isolated inputs).  The values will change to a new random number each time the node is injected.
-- ```javascript 
+
+```javascript 
 // flow.set('isoOutput1', Math.random() + 1.0) interval comes from server
 flow.set('isoOutput2', Math.random() + 2.0)
 flow.set('isoOutput3', Math.random() + 3.0)
@@ -655,7 +657,7 @@ The `Endpoint Url` follows the format `opc.tcp://<address>:port`.  Our port was 
 Once the endpoint url is added, deploy the flow, and confirm the server is reporting “active”.
 
 ![Compact Server Active](./images/opc-ua-1/compact-server-active.png)
-# Connect to Example OPC-Server Using OPC-UA Browser
+## Connect to Example OPC-Server Using OPC-UA Browser
 
 To connect to our OPC endpoint, we need an OPC Client.  Prosys provides a [free OPC-UA Browser ](https://www.prosysopc.com/products/opc-ua-browser/)that supports Windows, Linux, and Mac OS.  To test our Server, the Windows version of Prosys OPC-UA Browser will be utilized.
 
@@ -667,7 +669,7 @@ It will ask for security.  Remember that we allowed anonymous access, so the def
 Once connected, we can browse our OPC Server.
 
 ![OPC Client UI](./images/opc-ua-1/opc-client-ui.png)
-If we navigate to Objects → RaspberryPI-Zero-WLAN → GPIO → Inputs, we can see a list of inputs that correspond to the `isoInput` context variables defined in the example flow, which are randomly generated numbers. 
+If we navigate to `Objects → RaspberryPI-Zero-WLAN → GPIO → Inputs`, we can see a list of inputs that correspond to the `isoInput` context variables defined in the example flow, which are randomly generated numbers. 
 
 Clicking `I1` we can see the value in real-time, along with some additional properties.
 
@@ -675,9 +677,9 @@ Clicking `I1` we can see the value in real-time, along with some additional prop
 If we go to `Views`, we can see the custom hierarchy defined in the example server, which divides the data by Digital-Ins and Digital-Outs.  
 
 ![OPC Client View](./images/opc-ua-1/opc-client-view.png)
-# Summary
+## Summary
 
-In this article we compare OPC-UA to traditional fieldbus protocols, explain the importance of the OPC UA Information Model to understand how data is modeled in the address space of an OPC Server, and then walk through and deploy an example compact OPC-UA Server flow.  
+In this article, we compare OPC-UA to traditional fieldbus protocols, explain the importance of the OPC UA Information Model to understand how data is modeled in the address space of an OPC Server, and then walk through and deploy an example compact OPC-UA Server flow.  
 
 In our next article, we will build a custom OPC-UA Server in Node-RED with data pulled from an Allen Bradley PLC over Ethernet/IP, using the PLC data to develop a OPC UA Information Model programmed in the OPC server address space.
 
