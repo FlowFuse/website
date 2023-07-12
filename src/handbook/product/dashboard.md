@@ -1,7 +1,7 @@
 ---
 navTitle: Node-RED Dashboard
 ---
-# Node-RED Dashboard 2.0
+# Node-RED Dashboard 2.0 - Project
 
 The Node-RED Dashboard, a vital tool for creating live dashboards and user interfaces for Node-RED flows, is to be succeeded due to its reliance on the no-longer-maintained Angular v1. This outdated foundation presents potential security issues that cannot be addressed with mere patches. To counter this, FlowForge has undertaken the development of a new, modern, interactive data visualization and dashboard tool. This new project, set to replace the existing Node-RED Dashboard, will be published as a separate package. It will maintain the core principles of open-source, community-driven development under the Apache 2.0 license, and is designed to safely usher the Node-RED community into the future of data visualization.
 
