@@ -7,6 +7,7 @@ navGroup: Internal Operations
 
 People operations contains information on HR related policies at FlowForge.
 
+- [Code of Conduct](./code-of-conduct.md)
 - [Compensation](./compensation.md)
 - [Expenses](./expenses.md)
 - [Hiring](./hiring.md)
