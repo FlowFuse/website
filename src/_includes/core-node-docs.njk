@@ -1,4 +1,7 @@
-<h1>{{ node | coreNodeName | title }}</h1>
+{% set nodeName = node | coreNodeName %}
+<h1>{{ nodeName | title }}</h1>
+
+{% include "core-nodes/" + nodeName + "-use-case.html" ignore missing %}
 
 <h2>Node Documentation</h2>
 
