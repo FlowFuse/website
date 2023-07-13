@@ -29,7 +29,7 @@ Because of OPC-UA’s wide industry acceptance, it is increasingly becoming nati
 
 As of today, industrial ethernet fieldbuses dominate the field/device-level (level 0) and controller/PLC-level (level 1) of the automation pyramid. 
 ![OPC-UA Pyramid](./images/opc-ua-1/OPC-UA-pyramid-2.webp)
-*Image reference - [tipteh.com](https://tipteh.com/opc-ua/)*
+*Image reference - [mdpi.com](https://www.mdpi.com/1424-8220/21/14/4656)*
 
 Fieldbuses such as Profinet, Ethernet/IP, and EtherCAT, employ deterministic, real-time communication, which is essential for mission-critical and safety-oriented automation tasks.  OPC-UA is most commonly encountered at the SCADA level and above (level 2-4).  However, with the inclusion of [Time Sensitive Networking (TSN) into the OPC-UA technology stack](https://www.tttech-industrial.com/resource-library/blog-posts/opc-ua-fx), OPC-UA can be feasibly used for real-time communication all the way down to the device level.  
 
@@ -66,7 +66,6 @@ Deploying the example flow yields the following result -
 - an inject node is trigging the function `set flow context Inputs` at a one second interval, which creates 7 randomly generated float values and stores them as flow context variables, `isoInput2` - `isoInput8` (isolated inputs).  The values will change to a new random number each time the node is injected.
 
 ```javascript 
-// flow.set('isoInput1', Math.random() + 11.0) interval comes from server
 flow.set('isoInput2', Math.random() + 12.0)
 flow.set('isoInput3', Math.random() + 13.0)
 flow.set('isoInput4', Math.random() + 14.0)
@@ -80,7 +79,6 @@ flow.set('isoInput8', Math.random() + 18.0)
 - another inject node is triggering the function `set flow context Outputs`, also at a one second interval, which creates another set of 7 randomly generated float values and stores them as flow context variables, `isoOutput2` - `isoOutput8` (isolated inputs).  The values will change to a new random number each time the node is injected.
 
 ```javascript 
-// flow.set('isoOutput1', Math.random() + 1.0) interval comes from server
 flow.set('isoOutput2', Math.random() + 2.0)
 flow.set('isoOutput3', Math.random() + 3.0)
 flow.set('isoOutput4', Math.random() + 4.0)
