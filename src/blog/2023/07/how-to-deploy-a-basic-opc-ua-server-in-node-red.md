@@ -52,6 +52,7 @@ In summary, OPC-UA represents a trade-off between complex information modeling, 
 
 ![OPC-UA Distributed Model](./images/opc-ua-1/OPC-UA-distributed-model.jpg)
 *Image reference - [ifr.org](https://ifr.org/post/faster-robot-communication-through-the-opc-robotics-companion-specification)*
+
 The OPC client simply needs to subscribe to the OPC Server endpoint url (ex. opc.tcp://server.address), and the client will be able to browse the structured OPC data as it’s modeled in the server.  Any client will receive the information in the same manner, regardless if it’s a PLC, SCADA, MES, or ERP system.  This opens the possibility for horizontal and vertical system integration in a standardized manner. Additionally, the more information that is exposed about a device, the easier it is to track, and use said data to autonomously reconfigure, or pre-emptively take maintenance actions.  
 
 ## Deploying an Example OPC-UA Server in Node-RED
