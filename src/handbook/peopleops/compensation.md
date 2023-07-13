@@ -18,21 +18,11 @@ your local currency unless explicitly discussed otherwise.
 
 ## Transition to Single-Point Increase Cycle and Inflation Correction
 
-We are making some changes to how we handle salary increases at FlowForge. We're moving away from the current two-point increase cycle and adopting a single-point increase cycle. This will make the process more streamlined and predictable for everyone. Along with this change, we will also be incorporating inflation correction for applicable countries. 
-
-With the single-point increase cycle, salary adjustments will happen once a year, aligning with our annual budgeting and planning process. This will provide a clear timeline for adjustments.
-
-In applicable countries, we will be adjusting salaries to account for inflation rates. This ensures that employees' purchasing power is maintained. The adjustment percentage will be based on reliable inflation data from trusted sources. 
-
-The performance evaluation process will remain consistent, focusing on goal achievement, feedback, and professional development. Managers will consider the inflation correction during salary adjustment discussions in applicable countries. FlowForge will closely monitor the effectiveness and fairness of the single-point increase cycle and inflation correction. If necessary, we will make adjustments to align with our goals and market conditions. 
-
-It's important to note that performance appraisal evaluations and inflation corrections will continue to be handled separately to ensure fairness. Each aspect will receive the necessary attention for equitable compensation decisions. By implementing these changes, we aim to improve operational efficiency, support goal achievement, and ensure fair compensation practices. 
-
-It is important to note that we will always consider current market standards and factors such as inflation, reviews, and market standards when determining your increase.
+FlowForge is transitioning to a single-point increase cycle, making the process more streamlined and predictable. Salary adjustments will occur annually, aligning with the company's budgeting and planning process. Compensation changes at FlowForge are influenced by three factors: performance, inflation, and market standards. These factors are considered simultaneously when making decisions regarding adjustments to employee compensation.
 
 # Performance Review
 
-Performance reviews will be carried out annually, with the specific timeframe set for September. Employees will receive prior notification to ensure they have ample time to prepare and stay informed. Employees will be given advance notice of the exact timeframe, allowing them to adequately prepare and stay well-informed. Any employee or contractor who has completed more than six months of service at FlowForge is eligible to participate in the performance review process. that any employee or contractor who has completed at least six months of service at FlowForge is eligible for a performance review.
+Performance reviews will be carried out annually, with the specific timeframe set for September. Employees will receive prior notification to ensure they have ample time to prepare and stay informed. Any employee or contractor who has completed more than six months of service at FlowForge is eligible to participate in the performance review process.
 
 ### Adjustment
 
