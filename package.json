@@ -8,7 +8,7 @@
     "author": "Nick O'Leary",
     "scripts": {
         "clean": "cross-env npx del-cli '_site/' && cross-env npx mkdirp '_site/js'",
-        "clean:dev": "cross-env npx del-cli '_site/!(img)' && cross-env npx mkdirp '_site/js'",
+        "clean:dev": "cross-env npx del-cli '_site/!(img)' 'src/docs/**/*.md' && cross-env npx mkdirp '_site/js'",
         "start": "npm-run-all clean:dev build:js --parallel dev:*",
         "build": "cross-env NODE_ENV=production npm-run-all clean build:js --parallel prod:*",
         "build:js": "terser -c -m -o _site/js/cc.min.js node_modules/vanilla-cookieconsent/dist/cookieconsent.js src/js/cookies.js",
