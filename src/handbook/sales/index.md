@@ -11,6 +11,24 @@ This section details how to engage with customers at FlowForge and particularly 
  - [Engagements & Pricing](./pricing.md)
  - [Sales playbook (internal)](https://docs.google.com/document/d/1Jrt5sNg46wngQ5UAii8sbN94PTlIAscOWrFcOhSVNPE/edit){rel="nofollow"}
 
+## Lead status
+
+For leads who are [MQLs or SQLs](/handbook/marketing/hubspot.md) the `Lead status`
+field is used to mark what the status is. Eventhough they're beyond being a lead.
+This field is maintained by the primary contact owner, likely the account executive.
+
+At this stage we're using the default set of status's in HubSpot:
+
+| Lead status | When to use |
+| :---------: | :---------- |
+| New | The contact in question has had only _marketing_ contact (E-mails, etc). |
+| Open | In the stage where a contact is assigned to a Account exec, but no official connection has be made. Usually contacts are only in this stage for a short while.|
+| Attempted to contact | From the moment the AE reached out, until there's a reply from them. |
+| Connected | MQLs and SQL that have replied and engaged with FlowForge. |
+| In Progress | Nurturing from the first contact toward an opportunity. |
+| Open Deal | When a deal is on the board, and the opportunity is real, this is the status! |
+| Unqualified | Either this contact specifically cannot lead the sales process, or the account itself has been found unqualified. |
+| Bad timing | FlowForge was, for whatever reason, not a great fit right now. However, it's potentially a good fit later. |
 
 ## From SQL to Opportunity
 
