@@ -12,4 +12,5 @@ People operations contains information on HR related policies at FlowForge.
 - [Hiring](./hiring.md)
 - [Organization](./organization.md)
 - [Vacation & Leave](./leave.md)
+- [Summits](./summit.md)
 
