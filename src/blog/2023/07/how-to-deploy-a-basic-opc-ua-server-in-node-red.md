@@ -1,7 +1,7 @@
 ---
 title: How to Deploy a Basic OPC-UA Server in Node-RED - Part 1
 subtitle: OPC-UA Server Information Modeling in Node-RED
-description: Basic Information on OPC-UA and How to Deploy an Example OPC-UA Server Flow.
+description: Introduction to OPC-UA and how to deploy a Node-RED server flow.
 date: 2023-07-13 
 authors: ["richard-meyer"]
 image: blog/2023/07/images/opc-ua-1/opc-ua-1-title-image.png
