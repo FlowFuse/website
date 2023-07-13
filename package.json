@@ -18,7 +18,6 @@
         "dev:postcss": "cross-env TAILWIND_MODE=watch npx postcss ./src/css/style.css -o ./_site/css/style.css --config ./postcss.config.js -w",
         "docs": "node scripts/copy_docs.js",
         "old_dev:eleventy": "cross-env NODE_ENV=development ELEVENTY_ENV=development npx @11ty/eleventy --serve --quiet",
-        "prod:docs": "node scripts/dirExists src/docs/index.md && echo \"Flowforge docs found ready for build\" || (echo \"Flowforge docs not found - stopping build, ensure src/docs has the docs from flowforge/flowforge/ (npm run docs)...\" && exit 1)",
         "prod:eleventy": "npx @11ty/eleventy",
         "prod:postcss": "postcss ./src/css/style.css -o ./_site/css/style.css --config ./postcss.config.js"
     },
