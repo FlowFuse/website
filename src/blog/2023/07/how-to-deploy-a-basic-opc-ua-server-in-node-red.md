@@ -157,7 +157,7 @@ and an OPC folder structure is defined.
 ...
 ```
 
-Then, with our variables and folder structere defined, nodes are added to the namespace for each context variable. 
+Then, with our variables and folder structure defined, nodes are added to the namespace for each context variable. 
 
 ```javascript 
   const gpioDI1 = namespace.addVariable({
