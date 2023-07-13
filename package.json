@@ -7,7 +7,7 @@
     "license": "Apache-2.0",
     "author": "Nick O'Leary",
     "scripts": {
-        "clean": "cross-env npx del-cli '_site/' 'src/docs/**/*.md' && cross-env npx mkdirp '_site/js'",
+        "clean": "cross-env npx del-cli '_site/' && cross-env npx mkdirp '_site/js'",
         "clean:dev": "cross-env npx del-cli '_site/!(img)' && cross-env npx mkdirp '_site/js'",
         "start": "npm-run-all clean:dev build:js --parallel dev:*",
         "build": "cross-env NODE_ENV=production npm-run-all clean build:js --parallel prod:*",
