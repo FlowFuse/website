@@ -22,13 +22,15 @@ first two weeks of a cycle, alongside development efforts.
 
 In contrast to the platform, changes and updates to the web design can be implemented independently and are not limited to specific release cycles. The timing and order of these changes, as well as the creation of other design assets such as blog images, open graphs, presentations, illustrations, etc., depend on prioritization aligned with the company's interests.
 
-## Reviewing
+## Design Review
 
-During this phase, it is essential, whenever possible, to thoroughly review the proposed content before proceeding with the implementation in code, particularly regarding UX/UI design.
+This phase aims to ensure that the designs not only look visually appealing, but also effectively communicate the intended message to the audience.
 
-This phase aims to ensure that the design not only looks visually appealing but also effectively communicates the intended message to the audience. This includes assessing the organization of information, evaluating the readability and coherence of text, and verifying the alignment with the project's objectives.
+To achieve this, please assess the organization of information, evaluate the readability and coherence of text, and verify the alignment with the project's objectives.
 
-By including a review phase in the design process, we can identify any potential issues or areas for improvement early on. This proactive approach helps streamline the overall design workflow, minimizes the need for extensive revisions at later stages, and ultimately delivers a high-quality design that meets both aesthetic and content-related requirements.
+For UX/UI proposals, the design review concludes with the sign-off of Figma designs by the page owner, who is usually the DRI for the Website but may be another team member. As for the rest of the design assets, it's determined by the person who created the Art Request.
+
+While iterations can be made during the development phase for UX/UI design in terms of content and layout, it is recommended to facilitate feedback loops during the design phase. By getting early feedback, we aim to identify and address any potential issues before entering the development phase. This approach helps streamline the design workflow, allowing for quicker iterations and ultimately saving time.
 
 ## Delivery of Art
 
