@@ -33,10 +33,13 @@ At this stage we're using the default set of status's in HubSpot:
 
 For each sales opportunity a clear answer for the customers needs and wants should be known. It boils down to the following questions:
 
-1. Why change?
-1. Why now?
-1. Why FlowForge?
+| Question | |
+| :------- | :------ |
+| Why change? | What's the trigger to invest in FlowForge and Node-RED? |
+| Why now? | Timeline is everything! |
+| Why FlowForge? | What value does FlowForge offer, what features are of most interest? |
 
-If, and only if, the answers are known, an opportunity is added to the HubSpot deals board.
+If, and only if, the answers are known and added as notes to HubSpot, an
+opportunity is added to the HubSpot deals board.
 
-See also the [stages each contact in HubSpot must go through](../marketing/hubspot.md#lifecycle-stage).
+See also the [stages each contact in HubSpot must go through](/handbook/marketing/hubspot.md#lifecycle-stage).
