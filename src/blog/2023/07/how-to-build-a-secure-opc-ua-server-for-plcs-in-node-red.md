@@ -548,7 +548,7 @@ The node gives us some clues on how we can populate this section.  When `node-re
 
 navigate to `./node-red-contrib-opcua-server/certificates` folder, where the node-red instance has installed the node-red module.  
 
-- I have node-RED installed in the root path of my server, so my full path to the certs folder is `/root/.node-red/node_modules/node-red-contrib-opcua-server/certificates`
+- I have Node-RED installed in the root path of my server, so my full path to the certs folder is `/root/.node-red/node_modules/node-red-contrib-opcua-server/certificates`
 - If you’re having trouble finding the directory, do a search for the file `server_selfsigned_cert_2048.pem`.  
 
 Once you’ve navigated to the correct directory, it should be full of various cert files.
