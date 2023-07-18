@@ -78,7 +78,7 @@ or CEO, who will provision it for you.
 
 ### Workspace & Location
 
-As a company that operates entirely remotely, we do not maintain physical office spaces. Our expectation is that the majority of employees will work from their homes. During the hiring process, it is recommended that individuals discuss the necessary equipment and furniture for their home workspace with their manager. It is ideal for remote workers to have necessary equipment, but if needed, FlowForge will cover the cost of an office chair and desk. However, please be aware that certain expenses, such as broadband costs, covered by FlowForge, might have tax implications based on local legislation. To understand the specific implications for your situation, it's advisable to consult an independent advisor familiar with your local tax laws.
+We're a fully remote company with no physical offices. Most employees are expected to work from home. Employees can work from different countries or cities as long as their tax residency remains the same at the time of hiring. Please inform your manager before making such arrangements. Discuss your home workspace needs with your manager during the hiring process. If necessary, FlowForge can cover the cost of an office chair and desk. Remember that broadband costs may have tax implications, so it's advisable to consult a local tax advisor for specific details.
 
 #### Coworking space allowance
 
