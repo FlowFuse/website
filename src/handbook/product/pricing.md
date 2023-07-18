@@ -8,6 +8,14 @@ This page sets out the concepts that we license and what units are measured acro
 
 We have three primary tiers: Starter (Open-Source when self-managed), Premium, and Enterprise. The value and features provided within each tier correspond to the specific [persona](./personas/), acknowledging that a higher placement in the organisational chart typically implies different requirements.
 
+## Buyer-Based Open Core (BBOC) Principle
+
+The Buyer-Based Open Core (BBOC) principle is a fundamental guideline in our product development and monetization strategy. It's a framework we employ to discern which features should be open source and which should be proprietary. BBOC aligns features into tiers based on their target users or 'buyers' — individual contributors, management, or executives.
+
+Features that are most beneficial to individual contributors, such as PLC engineers and line workers, fall within our Starter (Open-Source) tier. On the other hand, features that have broader organizational relevance, like Edge Device Management or high availability, are offered in our Premium tier or Enterprise tier, targeted towards IIoT managers and plant managers who need to manage multiple Node-RED instances.
+
+This buyer-based approach helps us focus our efforts on the value to the end-user, rather than technical specifications or development effort. It aligns our pricing strategy with the value each tier provides, ensuring that the cost is justified by the capabilities offered and the user persona it serves.
+
 ## Value Layers
 
 | Tier | Objective | Problem it Solves | Persona |
