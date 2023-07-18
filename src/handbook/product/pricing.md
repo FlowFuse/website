@@ -10,7 +10,9 @@ We have three primary tiers: Starter (Open-Source when self-managed), Premium, a
 
 ## Buyer-Based Open Core (BBOC) Principle
 
-The Buyer-Based Open Core (BBOC) principle is a fundamental guideline in our product development and monetization strategy. It's a framework we employ to discern which features should be open source and which should be proprietary. BBOC aligns features into tiers based on their target users or 'buyers' — individual contributors, management, or executives.
+The [Buyer-Based Open Core (BBOC)](https://opencoreventures.com/blog/2023-01-open-core-standard-pricing-model/) principle is a fundamental guideline in our product
+development and monetization strategy. It's a framework we employ to discern which features should be open source and which should be proprietary. 
+BBOC aligns features into tiers based on their target users or 'buyers' — individual contributors, management, or executives.
 
 Features that are most beneficial to individual contributors, such as PLC engineers and line workers, fall within our Starter (Open-Source) tier. On the other hand, features that have broader organizational relevance, like Edge Device Management or high availability, are offered in our Premium tier or Enterprise tier, targeted towards IIoT managers and plant managers who need to manage multiple Node-RED instances.
 
