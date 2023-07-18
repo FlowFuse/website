@@ -125,7 +125,7 @@ Drag an `inject` node and `function` node on to the palette and wire them togeth
 ![function1-palette.png](./images/opc-ua-2/function1-palette.png)
 Open up the function node. We’re going to create a dict called `conveyorData` to store in context memory and initialize it with some values.
 
-``` 
+```javascript 
 var conveyorData = {};
 conveyorData = {
     Conveyor_RTS : false,
