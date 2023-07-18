@@ -580,7 +580,7 @@ Security settings are displayed.
 
 We’re going to select `Sign & Encrypt` and change the security policy to `Aes128Sha256RsaOaep`
 
-![sign&encrypt.png](./images/opc-ua-2/sign%26encrypt.png)
+![sign&encrypt.png](./images/opc-ua-2/sign&encrypt.png)
 When we try to connect, our connection to the server is rejected, because we haven’t pointed the client to our ssl cert files.  Press Okay to acknowledge the error and we can fix that problem.
 
 ![connect-rejected.png](./images/opc-ua-2/connect-rejected.png)
