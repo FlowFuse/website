@@ -4,7 +4,7 @@ subtitle: Detailed instructions on how to create a Node-RED dashboard that shows
 description: 
 date: 2023-07-18
 authors: ["andrew-lynch"]
-image: blog/2023/07/images/node-red-influxdb.png
+image: blog/2023/07/images/historical-data-dashboard.png
 ---
 
 Every new dashboard is met with the fast-following request, “can we save this data and somehow look back on it?”  Yes, you can, and let’s use InfluxDB to make it happen!
