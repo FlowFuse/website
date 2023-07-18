@@ -10,7 +10,7 @@ tags:
     - flowforge
     - node-red
 ---
-This article is the second part of a series of OPC-UA content. In our previous article, we explained some basic concepts of OPC-UA as they apply to building a server in Node-RED, then walked through how to deploy an example OPC-UA Server. In this OPC-UA article, we will build on the foundation of our previous article and create a fully custom OPA-UA Server that creates an information model for data coming from a PLC.
+This article is the second part of a series of OPC-UA content. In our previous article, we explained some basic concepts of OPC-UA as they apply to building a server in Node-RED, then walked through how to deploy an example OPC-UA Server. In this article, we will build on the foundation of our previous article and create a fully custom secure OPC-UA Server that creates an information model based on data coming from a PLC.
 <!--more-->
 # Table of contents
 1. [Introduction](#introduction)
