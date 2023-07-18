@@ -22,7 +22,7 @@ FlowForge is transitioning to a single-point increase cycle, making the process 
 
 # Performance Review
 
-Performance reviews will be carried out annually, with the specific timeframe set for September. Employees will receive prior notification to ensure they have ample time to prepare and stay informed. Any employee or contractor who has completed more than six months of service at FlowForge is eligible to participate in the performance review process.
+Performance reviews will be carried out annually, in September. Any employee or contractor who has completed more than six months of service at FlowForge is eligible to participate in the performance review process.
 
 ### Adjustment
 
