@@ -1,14 +1,4 @@
----
-title: "Nodes explained: Split"
-subtitle: Creating many messages from one
-description: Forwarding or blocking messages based on values, change of them, or lack of change.
-date: 2023-06-21
-authors: ["zeger-jan-van-de-weg"]
-image:
-tags:
-  - posts
-  - how-to
----
+## What's the Split node in Node-RED used for?
 
 Granular data processing is important in IoT use-cases as multiple tags, for
 example, might be sent in one request to a server. Or, when a SQL query results in
@@ -17,13 +7,28 @@ based, but a message can be split in multiple messages if needed using the Split
 node. The split node is one of the core nodes in Node-RED, thus installed by
 default. It's a fundamental building block for powerful automations.
 
-<!--more-->
-
 The Split node is used to divide a single message into multiple messages based
-on defined rules. It enables the extraction of individual data elements from many
-structures of data like an array, object, or string. The Split node operates by
-iterating over the elements of the input message and creating a new output
-message for each item.
+on defined rules.
+
+The Split node in Node-RED is used to split an incoming message object into several different message objects. The incoming object can be a simple string, an array, or an object. The Split node will split the object based on the following criteria:
+- **String:** The Split node will split the string on a delimiter character. The delimiter character can be specified in the node's configuration.
+- **Array:** The Split node will split the array into a series of messages, each containing one element of the array.
+- **Object:** The Split node will split the object on the keys of the object. The keys of the object can be specified in the node's configuration.
+
+The Split node can be used to process data in a variety of ways. For example,
+it can be used to split a string of text into a series of messages, each containing
+one word of the text. It can also be used to split an array of data into a series
+of messages, each containing one element of the array.
+
+The following are some examples of how the Split node can be used:
+1. Splitting a string of text into a series of messages, each containing one word of the text.
+1. Splitting an array of data into a series of messages, each containing one element of the array.
+1. Splitting an object on the keys of the object, to create a series of messages, each containing one key-value pair of the object.
+1. Splitting a message on a delimiter character, to create a series of messages, each containing one part of the message.
+
+The Split node is a powerful tool that can be used to process data in a variety of ways. It is a valuable addition to any Node-RED flow.
+
+## Examples
 
 ### Splitting arrays
 
