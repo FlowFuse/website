@@ -4,7 +4,7 @@ subtitle: OPC-UA Server Information Modeling in Node-RED - part 2
 description: Instructions on Building and Deplying a custom OPC UA Server in Node-RED
 date: 2023-07-19 
 authors: ["richard-meyer"]
-image: blog/2023/07/images/opc-ua-1/opc-ua-1-title-image.png
+image: blog/2023/07/images/opc-ua-2/opc-ua-2-title-image.png
 tags:
     - posts
     - flowforge
