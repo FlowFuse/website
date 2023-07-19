@@ -27,7 +27,7 @@ redirects:
   - { "from": "/handbook/development/release/", "to": "/handbook/development/releases/" }
   - { "from": "/blog/2023/06/Flowforge-as-a-No-Code-Ethernet_IP-to-Profinet-Protocol-Converter/", "to": "/blog/2023/06/Node-RED-as-a-No-Code-Ethernet_IP-to-S7-Protocol-Converter/" }
   - { "from": "/docs/user/devices/", "to": "/docs/device-agent/introduction" }
-  - { "from": "/blog/2023/06/node-explained-split/", "/node-red/core-nodes/split/"}
+  - { "from": "/blog/2023/06/node-explained-split/", "to": "/node-red/core-nodes/split/"}
 # The "permalink" attribute determines where the output page will be located.
 permalink: "{{ redirect.from }}"
 # The "redirect" layout just has a small html header with the meta tags that do redirection.
