@@ -28,6 +28,8 @@ This phase aims to ensure that the designs not only look visually appealing, but
 
 To achieve this, please assess the organization of information, evaluate the readability and coherence of text, and verify the alignment with the project's objectives.
 
+All design proposals, including UX/UI and other design assets, will be presented and signed off in GitHub, ensuring one source of truth and centralizing the process for all design-related work.
+
 For UX/UI proposals, the design review concludes with the sign-off of Figma designs by the page owner, who is usually the DRI for the Website but may be another team member. As for the rest of the design assets, it's determined by the person who created the Art Request.
 
 While iterations can be made during the development phase for UX/UI design in terms of content and layout, it is recommended to facilitate feedback loops during the design phase. By getting early feedback, we aim to identify and address any potential issues before entering the development phase. This approach helps streamline the design workflow, allowing for quicker iterations and ultimately saving time.
