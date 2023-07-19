@@ -36,7 +36,13 @@ While it is not uncommon to find PLCs that have built-in OPC-UA server capabilit
 
 A visual representation of our PLC to OPC-UA Server architecture is shown in the drawing below, consisting of 6 major parts.
 
-![PLC-Information-Model-nums.png](./images/opc-ua-2/PLC-Information-Model-nums.png)
+![PLC-Information-Model-1.png](./images/opc-ua-2/PLC-Information-Model-1.png)
+1. Set up the PLC tags to be sent to the OPC Server
+2. Read the PLC tags into Node-RED
+3. Copy the PLC tags into Node-RED context memory
+4. Program the OPC Server address space
+5. Encrypt the OPC Server with SSL
+6. Set up the OPC Client  
  
 
 The PLC is an Allen Bradley, and an instance of Node-RED running on the same OT network as the PLC will act as the OPC UA Server. In our Allen Bradley PLC, we will re-use an example from a [previous article](https://flowforge.com/blog/2023/06/node-red-as-a-no-code-ethernet_ip-to-s7-protocol-converter/) where the PLC is simulating a conveyor line, called *Line 4 PLC,* depicted as number 1 architecture drawing above. The tags below represent the data to be transferred from the Line 4 PLC to the Node-RED OPC UA server, depicted as number 2 in the architecture drawing.
@@ -63,7 +69,7 @@ Now that we have laid out a concept for our application, let’s build it.
 
 ## Install Custom Nodes <a name="install-custom-nodes"></a>
 
-First, we need to add three custom nodes that will give node-red.
+First, we need to add three custom nodes that will allow Node-RED to read Ethernet/IP data and add OPC UA Server functionality.
 
 Click the hamburger icon → manage palette
 
@@ -113,9 +119,17 @@ Click the `debug` tab and confirm data is flowing in from our PLC.
 ![debug-data.png](./images/opc-ua-2/debug-data.png)
 We can see that all tags are being read from the PLC in one message as a key/value hash table, or dict.
 
-After confirming the PLC data acquisition is working, we can remove the `debug` node and continue building the rest of our flow. Referring back to our architecture drawing, we’ve now taken care of objective 2 of our application.
+After confirming the PLC data acquisition is working, we can remove the `debug` node and continue building the rest of our flow. Referring back to our architecture drawing, we’ve now taken care of the first 2 objectives of our application.
 
-![PLC-Information-Model-2-of-6.png](./images/opc-ua-2/PLC-Information-Model-2-of-6.png)
+![PLC-Information-Model-2-of-6-1.png](./images/opc-ua-2/PLC-Information-Model-2-of-6-1.png)
+
+[x] Set up the PLC tags to be sent to the OPC Server
+[x] Read the PLC tags into Node-RED
+[] Copy the PLC tags into Node-RED context memory
+[] Program the OPC Server address space
+[] Encrypt the OPC Server with SSL
+[] Set up the OPC Client 
+
 Let’s move on to objective 3.
 
 ## Create Object For Storing PLC Data In Flow Context Memory <a name="object-for-storing-plc-data"></a>
@@ -181,8 +195,14 @@ Every time we hit refresh, the values in `conveyorData` change as the value in t
 
 Looking back at the application architecture we laid out, we’ve achieved 3 out of the 6 objectives.
 
-![PLC-Information-Model-3-of-6.png](./images/opc-ua-2/PLC-Information-Model-3-of-6.png)
+![PLC-Information-Model-3-of-6-1.png](./images/opc-ua-2/PLC-Information-Model-3-of-6-1.png)
  
+[x] Set up the PLC tags to be sent to the OPC Server
+[x] Read the PLC tags into Node-RED
+[x] Copy the PLC tags into Node-RED context memory
+[] Program the OPC Server address space
+[] Encrypt the OPC Server with SSL
+[] Set up the OPC Client 
 
 Let’s now tackle the OPC Server address space.
 
@@ -287,6 +307,8 @@ and replace it with the folder structure shown above -
 ### Define OPC UA Nodes <a name="define-opc-nodes"></a>
 
 Now we can construct the nodes for each context variable.
+
+![opc-nodes.png](./images/opc-ua-2/opc-nodes.png)
 
 Delete the section of code defining the nodes for `isoInput1` through `isoOutput8`  - 
 
@@ -533,7 +555,15 @@ If not, go back and check your code for errors.  The Node-RED logfiles will come
 
 This wraps up the 4th objective of our application.
 
-![PLC-Information-Model-4-of-6.png](./images/opc-ua-2/PLC-Information-Model-4-of-6.png)
+![PLC-Information-Model-4-of-6-1.png](./images/opc-ua-2/PLC-Information-Model-4-of-6-1.png)
+
+[x] Set up the PLC tags to be sent to the OPC Server
+[x] Read the PLC tags into Node-RED
+[x] Copy the PLC tags into Node-RED context memory
+[x] Program the OPC Server address space
+[] Encrypt the OPC Server with SSL
+[] Set up the OPC Client 
+
 ## Security (Optional) <a name="security-optional"></a>
 
 At this point, our OPC UA Server will accept a client connection, but it won’t be secure, so we should take the extra step and encrypt our OPC UA traffic.
@@ -569,7 +599,15 @@ We’re not done yet.  The server is happy, but the OPC Client will need access 
 ![copied-certs.png](./images/opc-ua-2/copied-certs.png)
 Now we can move on to OPC Client Configuration.  We’ve achieved 5 out of 6 objectives.
 
-![PLC-Information-Model-5-of-6.png](./images/opc-ua-2/PLC-Information-Model-5-of-6.png)
+![PLC-Information-Model-5-of-6-1.png](./images/opc-ua-2/PLC-Information-Model-5-of-6-1.png)
+
+[x] Set up the PLC tags to be sent to the OPC Server
+[x] Read the PLC tags into Node-RED
+[x] Copy the PLC tags into Node-RED context memory
+[x] Program the OPC Server address space
+[x] Encrypt the OPC Server with SSL
+[] Set up the OPC Client 
+
 ## OPC UA Client Configuration and Testing <a name="opc-ua-client-configuration-and-testing"></a>
 
 
@@ -617,7 +655,15 @@ As can be seen, our OPC Client sees the data from our PLC matching our OPC Infor
 ![image-20230718-164326.png](./images/opc-ua-2/image-20230718-164326.png)
 We’ve now achieved all of our design objectives.
 
-![PLC-Information-Model-6-of-6.png](./images/opc-ua-2/PLC-Information-Model-6-of-6.png)
+![PLC-Information-Model-6-of-6-1.png](./images/opc-ua-2/PLC-Information-Model-6-of-6-1.png)
+
+[x] Set up the PLC tags to be sent to the OPC Server
+[x] Read the PLC tags into Node-RED
+[x] Copy the PLC tags into Node-RED context memory
+[x] Program the OPC Server address space
+[x] Encrypt the OPC Server with SSL
+[x] Set up the OPC Client 
+
 Our custom OPC UA application is complete and production-ready.
 
 Test the application by confirming values changed in the PLC are reflected in the OPC UA Client.
