@@ -4,21 +4,11 @@ navTitle: Compensation
 
 # Compensation
 
-Total compensation consists of 3 elements, salary, equity, and benefits.
-FlowForge aims to provide a total compensation package on par with similar
-companies in terms of: stage of the company, market, role, and level in the role.
-The data to validate our compensation is obtained through OptionImpact/Pave.com.
+FlowForge provides a comprehensive compensation package with salary, equity, and benefits, aiming to be competitive with similar companies. Factors like company stage, market conditions, role, and level influence salary determination during the hiring process. FlowForge typically pays in the local currency, unless there are explicit discussions stating otherwise, taking into account location and company context.
 
-## Salary
+## Introducing the Single-Point Increase Cycle
 
-Salary for each role is determined initially during the hiring process based
-on compensation expectation of the candidate as well as the market rates. Salary
-is based on your location you live in and the company context. FlowForge pays in
-your local currency unless explicitly discussed otherwise.
-
-## Transition to Single-Point Increase Cycle and Inflation Correction
-
-FlowForge is transitioning to a single-point increase cycle, making the process more streamlined and predictable. Salary adjustments will occur annually, aligning with the company's budgeting and planning process. Compensation changes at FlowForge are influenced by three factors: performance, inflation, and market standards. These factors are considered simultaneously when making decisions regarding adjustments to employee compensation.
+FlowForge now follows a simplified single-point increase cycle for salary adjustments. The adjustments take place once a year, aligning with the company's budgeting and planning process. When determining compensation changes, FlowForge considers three factors: performance, inflation, and market standards. These factors are taken into account together to make decisions about adjusting employee compensation.
 
 # Performance Review
 
@@ -27,10 +17,8 @@ Performance reviews will be carried out annually, in September. Any employee or 
 ### Adjustment
 
 FlowForge can choose to increase compensation based on varying situations:
-- Past year performance, as documented in the September performance review
-- To stay between the 50-75th percentile for companies our stage
-- As part of the performance review process, we will also consider salary adjustments. If you're eligible, you may get a raise based on how well you performed in the evaluation.
-
+- Past year performance, as evaluated during the September performance review.
+- Market positioning, aiming to align compensation within the 50-75th percentile range for companies at the same stage.
 
 ## Equity
 
