@@ -161,7 +161,7 @@ Drag another function node onto the palette and wire it to our `eth-ip in` node.
 ![eth-ip-in-function.png](./images/opc-ua-2/eth-ip-in-function.png)
 With this function, we’re going to move the dict coming as a `msg.payload` from the `eth-ip in` node and set those values to the values in our `conveyorData` dict.
 
-``` 
+```javascript
 var conveyorData = flow.get('conveyorData');
 
 conveyorData.Conveyor_RTS = msg.payload.Conveyor_RTS;
