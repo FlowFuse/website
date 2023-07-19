@@ -3,6 +3,8 @@ const util = require("util");
 const fs = require("fs");
 
 const { EleventyEdgePlugin } = require("@11ty/eleventy");
+const { EleventyRenderPlugin } = require("@11ty/eleventy");
+
 const eleventyImage = require("@11ty/eleventy-img");
 const pluginRSS = require("@11ty/eleventy-plugin-rss");
 const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
@@ -290,6 +292,10 @@ module.exports = function(eleventyConfig) {
         return data.toString('utf8');
     }
 
+    eleventyConfig.addFilter("templateExists", function(name){
+        return fs.existsSync(name)
+    })
+
     eleventyConfig.addShortcode("ffIconLg", function(icon, isSolid) {
         const svg = loadSVG(icon)
         if (!isSolid) {
@@ -462,6 +468,7 @@ module.exports = function(eleventyConfig) {
     });
 
     // Plugins
+    eleventyConfig.addPlugin(EleventyRenderPlugin)
     eleventyConfig.addPlugin(pluginRSS)
     eleventyConfig.addPlugin(syntaxHighlight)
     eleventyConfig.addPlugin(codeClipboard)
