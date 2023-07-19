@@ -123,12 +123,8 @@ After confirming the PLC data acquisition is working, we can remove the `debug` 
 
 ![PLC-Information-Model-2-of-6-1.png](./images/opc-ua-2/PLC-Information-Model-2-of-6-1.png)
 
-- [x] Set up the PLC tags to be sent to the OPC Server
-- [x] Read the PLC tags into Node-RED
-- [ ] Copy the PLC tags into Node-RED context memory
-- [ ] Program the OPC Server address space
-- [ ] Encrypt the OPC Server with SSL
-- [ ] Set up the OPC Client 
+:white_check_mark: Set up the PLC tags to be sent to the OPC Server
+:white_check_mark: Read the PLC tags into Node-RED
 
 Let’s move on to objective 3.
 
@@ -197,12 +193,9 @@ Looking back at the application architecture we laid out, we’ve achieved 3 out
 
 ![PLC-Information-Model-3-of-6-1.png](./images/opc-ua-2/PLC-Information-Model-3-of-6-1.png)
  
-- [x] Set up the PLC tags to be sent to the OPC Server
-- [x] Read the PLC tags into Node-RED
-- [x] Copy the PLC tags into Node-RED context memory
-- [ ] Program the OPC Server address space
-- [ ] Encrypt the OPC Server with SSL
-- [ ] Set up the OPC Client
+:white_check_mark: Set up the PLC tags to be sent to the OPC Server
+:white_check_mark: Read the PLC tags into Node-RED
+:white_check_mark: Copy the PLC tags into Node-RED context memory
 
 Let’s now tackle the OPC Server address space.
 
@@ -557,12 +550,10 @@ This wraps up the 4th objective of our application.
 
 ![PLC-Information-Model-4-of-6-1.png](./images/opc-ua-2/PLC-Information-Model-4-of-6-1.png)
 
-- [x] Set up the PLC tags to be sent to the OPC Server
-- [x] Read the PLC tags into Node-RED
-- [x] Copy the PLC tags into Node-RED context memory
-- [x] Program the OPC Server address space
-- [ ] Encrypt the OPC Server with SSL
-- [ ] Set up the OPC Client 
+:white_check_mark: Set up the PLC tags to be sent to the OPC Server
+:white_check_mark: Read the PLC tags into Node-RED
+:white_check_mark: Copy the PLC tags into Node-RED context memory
+:white_check_mark: Program the OPC Server address space
 
 ## Security (Optional) <a name="security-optional"></a>
 
@@ -601,12 +592,11 @@ Now we can move on to OPC Client Configuration.  We’ve achieved 5 out of 6 obj
 
 ![PLC-Information-Model-5-of-6-1.png](./images/opc-ua-2/PLC-Information-Model-5-of-6-1.png)
 
-- [x] Set up the PLC tags to be sent to the OPC Server
-- [x] Read the PLC tags into Node-RED
-- [x] Copy the PLC tags into Node-RED context memory
-- [x] Program the OPC Server address space
-- [x] Encrypt the OPC Server with SSL
-- [ ] Set up the OPC Client
+:white_check_mark: Set up the PLC tags to be sent to the OPC Server
+:white_check_mark: Read the PLC tags into Node-RED
+:white_check_mark: Copy the PLC tags into Node-RED context memory
+:white_check_mark: Program the OPC Server address space
+:white_check_mark: Encrypt the OPC Server with SSL
 
 ## OPC UA Client Configuration and Testing <a name="opc-ua-client-configuration-and-testing"></a>
 
@@ -657,12 +647,12 @@ We’ve now achieved all of our design objectives.
 
 ![PLC-Information-Model-6-of-6-1.png](./images/opc-ua-2/PLC-Information-Model-6-of-6-1.png)
 
-- [x] Set up the PLC tags to be sent to the OPC Server
-- [x] Read the PLC tags into Node-RED
-- [x] Copy the PLC tags into Node-RED context memory
-- [x] Program the OPC Server address space
-- [x] Encrypt the OPC Server with SSL
-- [x] Set up the OPC Client
+:white_check_mark: Set up the PLC tags to be sent to the OPC Server
+:white_check_mark: Read the PLC tags into Node-RED
+:white_check_mark: Copy the PLC tags into Node-RED context memory
+:white_check_mark: Program the OPC Server address space
+:white_check_mark: Encrypt the OPC Server with SSL
+:white_check_mark: Set up the OPC Client
 
 Our custom OPC UA application is complete and production-ready.
 
