@@ -29,7 +29,7 @@ This article is the second part of a series of OPC-UA content. In our previous a
 10. [Summary](#summary)
 
 ## Introduction <a name="introduction"></a>
-While it is not uncommon to find PLCs that have built-in OPC-UA server capabilities, such as Omron and Siemens, this is not an industry-wide practice. One notable exception is Allen Bradley PLCs. For Allen Bradley, you have to buy FactoryTalk Linx Gateway (formally RSLinx Enterprise) for OPC-UA Server capability, or you need to employ a 3rd party OPC-UA Server. This article will guide you through the process of using Node-RED as a 3rd party OPC-UA Server for Allen Bradley, by creating a custom Information Model for the PLC data, publishing it, then securing the server with SSL to make it production-ready.
+While it is typical to find PLCs that have built-in OPC-UA server capabilities, such as Omron and Siemens, this is not an industry-wide practice. One notable exception is Allen Bradley PLCs. For Allen Bradley, you have to buy FactoryTalk Linx Gateway (formally RSLinx Enterprise) for OPC-UA Server capability, or you need to employ a 3rd party OPC-UA Server. This article will guide you through the process of using Node-RED as a 3rd party OPC-UA Server for Allen Bradley, by creating a custom Information Model for the PLC data, publishing it, then securing the server with SSL to make it production-ready.
 
 
 ## PLC to OPC-UA Server Architecture Overview <a name="plc-to-opcua-arch"></a>
