@@ -5,6 +5,7 @@ navTitle: Strategy
 # Product Strategy
 
 Our strategy is an indication and statement of intent for the next 2 years, and reflects FlowForge’s vision, to become the leading "Low-Code IIoT Application Platform".
+FlowForge will allow everyone to build custom applications to achieve their business goals and depend less on off-the-shelf software.
 It’s a draft, as everything in the handbook is a draft, so we will revisit regularly and iterate when there is a reason to do so. FlowForge is a 100 percent agile company, so our product is; timing is everything.
 Have a look at our [roadmap](/product/roadmap/) for what we're pursuing in the upcoming releases.
 
