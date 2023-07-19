@@ -123,8 +123,8 @@ After confirming the PLC data acquisition is working, we can remove the `debug` 
 
 ![PLC-Information-Model-2-of-6-1.png](./images/opc-ua-2/PLC-Information-Model-2-of-6-1.png)
 
-<input type="checkbox" checked> Set up the PLC tags to be sent to the OPC Server
-<input type="checkbox" checked> Read the PLC tags into Node-RED
+- <input type="checkbox" checked> Set up the PLC tags to be sent to the OPC Server
+- <input type="checkbox" checked> Read the PLC tags into Node-RED
 
 Let’s move on to objective 3.
 
@@ -193,9 +193,9 @@ Looking back at the application architecture we laid out, we’ve achieved 3 out
 
 ![PLC-Information-Model-3-of-6-1.png](./images/opc-ua-2/PLC-Information-Model-3-of-6-1.png)
  
-<input type="checkbox" checked> Set up the PLC tags to be sent to the OPC Server
-<input type="checkbox" checked> Read the PLC tags into Node-RED
-<input type="checkbox" checked> Copy the PLC tags into Node-RED context memory
+- <input type="checkbox" checked> Set up the PLC tags to be sent to the OPC Server
+- <input type="checkbox" checked> Read the PLC tags into Node-RED
+- <input type="checkbox" checked> Copy the PLC tags into Node-RED context memory
 
 Let’s now tackle the OPC Server address space.
 
@@ -550,10 +550,10 @@ This wraps up the 4th objective of our application.
 
 ![PLC-Information-Model-4-of-6-1.png](./images/opc-ua-2/PLC-Information-Model-4-of-6-1.png)
 
-<input type="checkbox" checked> Set up the PLC tags to be sent to the OPC Server
-<input type="checkbox" checked> Read the PLC tags into Node-RED
-<input type="checkbox" checked> Copy the PLC tags into Node-RED context memory
-<input type="checkbox" checked> Program the OPC Server address space
+- <input type="checkbox" checked> Set up the PLC tags to be sent to the OPC Server
+- <input type="checkbox" checked> Read the PLC tags into Node-RED
+- <input type="checkbox" checked> Copy the PLC tags into Node-RED context memory
+- <input type="checkbox" checked> Program the OPC Server address space
 
 ## Security (Optional) <a name="security-optional"></a>
 
@@ -592,11 +592,11 @@ Now we can move on to OPC Client Configuration.  We’ve achieved 5 out of 6 obj
 
 ![PLC-Information-Model-5-of-6-1.png](./images/opc-ua-2/PLC-Information-Model-5-of-6-1.png)
 
-<input type="checkbox" checked> Set up the PLC tags to be sent to the OPC Server
-<input type="checkbox" checked> Read the PLC tags into Node-RED
-<input type="checkbox" checked> Copy the PLC tags into Node-RED context memory
-<input type="checkbox" checked> Program the OPC Server address space
-<input type="checkbox" checked> Encrypt the OPC Server with SSL
+- <input type="checkbox" checked> Set up the PLC tags to be sent to the OPC Server
+- <input type="checkbox" checked> Read the PLC tags into Node-RED
+- <input type="checkbox" checked> Copy the PLC tags into Node-RED context memory
+- <input type="checkbox" checked> Program the OPC Server address space
+- <input type="checkbox" checked> Encrypt the OPC Server with SSL
 
 ## OPC UA Client Configuration and Testing <a name="opc-ua-client-configuration-and-testing"></a>
 
@@ -647,12 +647,12 @@ We’ve now achieved all of our design objectives.
 
 ![PLC-Information-Model-6-of-6-1.png](./images/opc-ua-2/PLC-Information-Model-6-of-6-1.png)
 
-<input type="checkbox" checked> Set up the PLC tags to be sent to the OPC Server
-<input type="checkbox" checked> Read the PLC tags into Node-RED
-<input type="checkbox" checked> Copy the PLC tags into Node-RED context memory
-<input type="checkbox" checked> Program the OPC Server address space
-<input type="checkbox" checked> Encrypt the OPC Server with SSL
-<input type="checkbox" checked> Set up the OPC Client
+- <input type="checkbox" checked> Set up the PLC tags to be sent to the OPC Server
+- <input type="checkbox" checked> Read the PLC tags into Node-RED
+- <input type="checkbox" checked> Copy the PLC tags into Node-RED context memory
+- <input type="checkbox" checked> Program the OPC Server address space
+- <input type="checkbox" checked> Encrypt the OPC Server with SSL
+- <input type="checkbox" checked> Set up the OPC Client
 
 Our custom OPC UA application is complete and production-ready.
 
