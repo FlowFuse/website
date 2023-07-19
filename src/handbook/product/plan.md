@@ -19,7 +19,7 @@ The detailed planning process can be found [here](../development/releases/planni
 
 Our high-level strategy implementation plan serves as a broad outline of the key focus areas for each strategy pillar we will be tackling over the course of the next six months. The points mentioned here are just an overview, and for more granular details on each initiative, we recommend referring to our roadmap.
 
-The progress bars presented adjacent to each category are rough estimates, offering an initial glance at the projected level of completion for each category's planned feature set. These are not precise calculations, nor do they represent the current status of each strategy pillar. It's important to note that at the start of every new product plan cycle, these progress bars reset to a lower level, reflecting the onset of new development and implementation stages. For detailed updates on the actual status, please keep an eye on our [release blog posts](https://flowforge.com/blog/releases/).
+The progress bars presented adjacent to each category are rough estimates, offering an initial glance at the projected level of completion for each category's planned feature set. These are not precise calculations, nor do they represent the current status of each strategy pillar. It's important to note that at the start of every new product plan cycle, these progress bars reset to a lower level, reflecting the onset of new development and implementation stages. For detailed updates on the actual status, please keep an eye on our [release blog posts](/blog/releases/).
 
 ### Advancing Enterprise-Readiness 
 ![](https://geps.dev/progress/30)
