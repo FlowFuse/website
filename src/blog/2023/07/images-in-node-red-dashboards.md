@@ -1,5 +1,5 @@
 ---
-title: Add images to dashboards when working in containerised Node-RED
+title: How to add images to Node-RED dashboards when using FlowForge
 subtitle: Import your images into your Node-RED dashboards, wherever you are running your instances
 description: Import your images into your Node-RED dashboards, wherever you are running your instances
 date: 2023-07-20
@@ -49,7 +49,7 @@ The key benefit of pulling the images from URLs this way is, no matter where you
 
 ## File and file-in nodes
 
-I've included the flows as json below so you can try them out yourself. Please note, I'm using FlowForge's own [file and file-in nodes](https://flowforge.com/docs/user/filenodes/) in these examples. If you want to use these flows on hosting other than FlowForge, you will need to replace the nodes with the standard Node-RED file and file-in nodes.
+I've included the flows as json below so you can try them out yourself. Please note, I'm using FlowForge's own [file and file-in nodes](/docs/user/filenodes/) in these examples. If you want to use these flows on hosting other than FlowForge, you will need to replace the nodes with the standard Node-RED file and file-in nodes.
 
 ## The flows
 
