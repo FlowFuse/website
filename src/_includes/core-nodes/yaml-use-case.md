@@ -1,8 +1,6 @@
-
-YAML, or Yet-Another-Markup-Language, is often used as a data markup style for
-with is human readable. In Node-RED, the YAML node is used to convert data between
-YAML format and JavaScript objects (JSON). The YAML node is a core component of Node-RED
-that comes pre-installed.
+YAML, or Yet-Another-Markup-Language, is often used as a data markup style as it
+is human readable. In Node-RED, the YAML node is used to convert data between
+YAML format and JavaScript objects (JSON).
 
 When the input property is JSON the node will produce YAML as output. When the
 input is JSON, YAML is produced as output.
