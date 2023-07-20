@@ -1,22 +1,11 @@
 ---
-navTitle: Product Demos
+navTitle: Feature Demos
 ---
 
-### Product Demos
+### Feature Demos
 
-Product demos are held internally to rapidly assess the state of a feature set
-and allow for synchronous validation of feature sets. Each demo is open to the
-whole company to allow for cross functional learning and development.
+Feature demos are designed to enable rapid, asynchronous evaluation of newly developed features. These demos, which take the form of recorded videos, are open to the entire company. They are posted in the `#feature-demos` Slack channel to foster cross-functional learning and development.
 
-A demo consists of a higher level business goal to achieve and is graded against
-that goal. Once that goal is set, the goal needs to broken down into smaller
-steps to create a script. For each meeting a participant should be marked as
-demo leader, going through the steps and try and achieve a successful demo.
+Each feature demo is recorded by the developer responsible for the feature, detailing its functions and operations. If problems, challenges, or improvement ideas arise during the review of the demo, everyone is encouraged to post a comment under the video within the Slack channel. Additionally, a corresponding GitHub issue should be opened to track and prioritize these points for further discussion and action.
 
-The demo itself is a recorded meeting where the demo leader goes through the
-script. It's anticipated that demos surface friction or fail completely. When
-problems, challenges, and/or improvement-ideas arise another participant should
-document these along with the script. When the demo is completed, these tasks
-are discussed and prioritized.
-
-Afterwards the next demo is scheduled, and the next demo-leader is chosen.
+This dynamic process not only provides a transparent view of our feature development but also allows for an agile response to any potential areas of improvement, keeping our products in a constant state of enhancement and refinement.
