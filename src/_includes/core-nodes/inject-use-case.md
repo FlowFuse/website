@@ -1,4 +1,8 @@
-The Inject node is the beginning of many flows that are triggered manually. The box to the left of the node sends a message to connected nodes. For that reason it's often used for debugging too, to inject values at a point of chosing. The message item can be empty too. The message to send defaults to the timestamp as payload and an empty topic.
+## What's the Inject node in Node-RED used for?
+
+The Inject node is the beginning of many flows that are triggered manually. The box to the left of the node sends a message to connected nodes. For that reason it's often used for debugging too, to inject values at a point of choosing. The message item can be empty too. The message to send defaults to the timestamp as payload and an empty topic.
+
+Message properties can be set to flow, or global variable values, and many other types, including JSONata expressions.
 
 Flows can also be triggered once right after Node-RED starts the flows or with a delay. This is useful to set an initial state from a flow on boot.
 
