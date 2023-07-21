@@ -51,6 +51,17 @@ The key benefit of pulling the images from URLs this way is, no matter where you
 
 I've included the flows as json below so you can try them out yourself. Please note, I'm using FlowForge's own [file and file-in nodes](/docs/user/filenodes/) in these examples. If you want to use these flows on hosting other than FlowForge, you will need to replace the nodes with the standard Node-RED file and file-in nodes.
 
+## Custom nodes used
+
+These flows use a few very useful custom nodes which you will need to add mnually via the palette manager, they are:
+
+- [node-red-contrib-calc](https://flows.nodered.org/node/node-red-contrib-calc) - "A Node-Red node to perform basic mathematical calculations".
+- [node-red-contrib-image-output](https://flows.nodered.org/node/node-red-contrib-image-output) - "Easy way of previewing and examining images in your flows".
+- [node-red-contrib-os](https://flows.nodered.org/node/node-red-contrib-os) - "Node-Red nodes for obtaining cpu system information".
+- [node-red-contrib-string](https://flows.nodered.org/node/node-red-contrib-string) - "Provides a string manipulation node with a chainable UI based on the concise and lightweight stringjs.com".
+- [node-red-dashboard](https://flows.nodered.org/node/node-red-dashboard) - "A set of dashboard nodes for Node-RED".
+- [node-red-node-base64](https://flows.nodered.org/node/node-red-node-base64) - "A Node-RED node to pack and unpack objects to base64 format".
+
 ## The flows
 
 The first flow takes image URLs in an array, each image is downloaded, processed, then saved to the local file storage. Let's take a look at the flow:
