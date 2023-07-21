@@ -2,9 +2,9 @@
 title: How to add images to Node-RED dashboards when using FlowForge
 subtitle: Import your images into your Node-RED dashboards, wherever you are running your instances
 description: Import your images into your Node-RED dashboards, wherever you are running your instances
-date: 2023-07-20
+date: 2023-07-21
 authors: ["rob-marcer"]
-image: blog/2023/07/images/opc-ua-1/opc-ua-1-title-image.png
+image: blog/2023/07/images/add-images-in-node-red-header.png
 tags:
     - posts
     - flowforge
