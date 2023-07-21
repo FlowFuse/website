@@ -53,7 +53,7 @@ I've included the flows as json below so you can try them out yourself. Please n
 
 ## Custom nodes used
 
-These flows use a few very useful custom nodes which you will need to add mnually via the palette manager, they are:
+These flows use a few very useful custom nodes which you will need to add manually via the palette manager, they are:
 
 - [node-red-contrib-calc](https://flows.nodered.org/node/node-red-contrib-calc) - "A Node-Red node to perform basic mathematical calculations".
 - [node-red-contrib-image-output](https://flows.nodered.org/node/node-red-contrib-image-output) - "Easy way of previewing and examining images in your flows".
