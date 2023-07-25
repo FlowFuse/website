@@ -2,7 +2,7 @@
 title: First Pre-Alpha Release of the new Node-RED Dashboard
 subtitle: Introducing version 0.1 – An Initial Glimpse at the Future of Data Visualization
 description: The first release of the successor to the Node-RED Dashboard has arrived, marking the beginning of the pre-alpha phase.
-date: 2023-07-21
+date: 2023-07-26
 authors: ["joe-pavitt", "marian-demme"]
 image: /blog/2023/06/images/node-red-dashboard.png
 tags:
@@ -18,13 +18,32 @@ Just weeks ago, we at FlowForge [announced our plan](../../06/dashboard-announce
 
 <!-- ![](./images/placeholder.png "new Node-RED Dashboard Overview")-->
 
-The version 0.1 of our Node-RED Dashboard successor, available for download as a npm package under the name [@flowforge/nr-dashboard](https://www.npmjs.com/package/@flowforge/nr-dashboard) in your Node-RED palette manager. This pre-alpha version includes the first set of Vue.js-based elements familiar to Node-RED Dashboard users:
+The version 0.0.1 of our Node-RED Dashboard successor, available for download as a npm package under the name [@flowforge/nr-dashboard](https://www.npmjs.com/package/@flowforge/nr-dashboard) in your Node-RED palette manager. This pre-alpha version includes the first set of Vue.js-based elements familiar to Node-RED Dashboard users:
 
 ![](./images/nr-dashboard-nodes.png "new Node-RED Dashboard Elements")
 
 These are but a hint of what's to come. The objective of these pre-alpha releases is to provide early access to the current status. The strength of the project comes from the community. Your insights, suggestions and contributions play a significant role in shaping the future of this dashboard. Keep them coming through our [Github page](https://github.com/flowforge/flowforge-nr-dashboard).
 
-## What's Coming Next
+## Current Status and Next Steps
+
+As of now, we've implemented the following Dashboard Widgets:
+
+- UI Text ([ui-text Widget](https://github.com/flowforge/flowforge-nr-dashboard/issues/38))
+- Text Input ([ui-text-input Widget](https://github.com/flowforge/flowforge-nr-dashboard/issues/39))
+- Range Slider ([ui-slider Widget](https://github.com/flowforge/flowforge-nr-dashboard/issues/47))
+- Dropdown/Select ([ui-dropdown Widget](https://github.com/flowforge/flowforge-nr-dashboard/issues/45))
+- Toggle Switch ([ui-switch Widget](https://github.com/flowforge/flowforge-nr-dashboard/issues/42))
+
+We've also introduced a new widget:
+
+- Markdown ([ui-markdown Widget](https://github.com/flowforge/flowforge-nr-dashboard/issues/62))
+
+Not part of the first Pre-Alpha Release:
+
+- Colour Picker ([ui-color-picker Widget](https://github.com/flowforge/flowforge-nr-dashboard/issues/46))
+- Number Input ([ui-numeric Widget](https://github.com/flowforge/flowforge-nr-dashboard/issues/41))
+- Form ([ui-form Widget](https://github.com/flowforge/flowforge-nr-dashboard/issues/49))
+- Date selector (ui-date-picker)
 
 Our immediate focus is to continue adding the missing elements from the original Node-RED Dashbaord, releasing each as soon as they're fully developed. This will significantly increase the frequency of our releases in the upcoming weeks.
 
