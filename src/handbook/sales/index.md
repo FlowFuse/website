@@ -27,6 +27,7 @@ At this stage we're using the default set of status's in HubSpot:
 | In Progress | After contact has been made, this status captures the nurturing process toward an opportunity. |
 | Open Deal | When a deal is on the board, and the opportunity is real, this is the status! |
 | Unqualified | Either this contact specifically cannot lead the sales process, or the account itself has been found unqualified. |
+| Unresponsive | We have not received a reply in 2 weeks, they are ghosting us. |
 | Bad timing | FlowForge was, for whatever reason, not a great fit right now. However, it's potentially a good fit later. |
 
 ## From SQL to Opportunity
