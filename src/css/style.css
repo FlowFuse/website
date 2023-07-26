@@ -899,13 +899,12 @@ h4:hover .header-anchor {
     }
 
     .ff-feature-table {
-        @apply max-w-screen-lg w-full;
+        @apply max-w-screen-lg w-full md:px-9;
         margin-top: 3rem;
         position: relative;
         color: theme(colors.gray.800);
         border-radius: 12px;
-        min-width: 768px;
-        padding: 36px 36px;
+        min-width: 610px;
     }
 
     .ff-feature-table li .ff-icon {
@@ -929,6 +928,18 @@ h4:hover .header-anchor {
         grid-template-columns: 270px 1fr 1fr 1fr;
         align-items: center;
         @apply bg-gray-200;
+    }
+    
+    @media (max-width: 720px) {
+        .ff-feature-table-section li {
+            grid-template-columns: 220px 1fr 1fr 1fr;
+        }
+    }    
+
+    @media (max-width: 680px) {
+        .ff-feature-table-section li {
+            grid-template-columns: 170px 1fr 1fr 1fr;
+        }
     }
 
     .ff-feature-table-section li.ff-feature-row:nth-child(odd),
@@ -1029,7 +1040,7 @@ h4:hover .header-anchor {
         height: 100%;
         display: flex;
         justify-content: left !important;
-        @apply px-1 md:px-6;
+        @apply px-1 px-4 md:px-6;
     }
 
     .ff-feature-table-section:nth-child(2) .ff-feature--header {

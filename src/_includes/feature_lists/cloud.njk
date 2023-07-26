@@ -134,7 +134,7 @@
 <div class="ff-feature-table m-auto">
     <ul class="ff-feature-table-section sticky top-0 z-10">
         <li class="ff-feature--column-header">
-            <span></span>
+            <span class="bg-gray-50 sticky left-0"></span>
             <label class="mr-2">
                 <div>Starter</div>
             </label>
@@ -146,14 +146,14 @@
     <ul class="ff-feature-table-section">
 
         <li class="ff-feature--header sticky top-[44px]">
-            <span class="py-3 pl-4">{{ section.label }}</span>
+            <span class="py-3 sticky left-0">{{ section.label }}</span>
             <span></span>
             <span></span>
             <span></span>
         </li>
         {% for row in section.rows %}
         <li class="ff-feature-row">
-            <label class="sticky left-0 z-11" onclick="openInfo('{{ row.label }}', '{{ row.id }}')">
+            <label class="sticky left-0" onclick="openInfo('{{ row.label }}', '{{ row.id }}')">
                 {{ row.label }}
                 {% if row.info %}
                 <i id="ff-info--{{ row.id }}" class="ff-icon ">{% include "components/icons/info.svg" %}</i>
@@ -185,10 +185,10 @@
     <ul class="ff-feature-table-section">
 
         <li class="ff-feature--column-buttons mt-6 h-12">
-            <span></span>
+            <span class="bg-gray-50 sticky left-0 z-10"></span>
             <label class="mr-3"><a class="ff-btn ff-btn--primary uppercase align-baseline w-full" href="https://app.flowforge.com/account/create" onclick="capture('cta-join', {'position': 'primary'})">TRY FOR FREE</a></label>
-            <label class="mx-2"><a class="ff-btn ff-btn--primary uppercase align-baseline w-full" href='/book-demo'>CONTACT SALES</a></label>
-            <label class="ml-3"><a class="ff-btn ff-btn--primary uppercase align-baseline w-full" href='/book-demo'>CONTACT SALES</a></label>
+            <label class="mx-2"><a class="ff-btn ff-btn--primary uppercase align-baseline w-full text-center" href='/book-demo'>CONTACT SALES</a></label>
+            <label class="ml-3"><a class="ff-btn ff-btn--primary uppercase align-baseline w-full text-center" href='/book-demo'>CONTACT SALES</a></label>
         </li>
     </ul>
     <ul class="ff-features-key">
