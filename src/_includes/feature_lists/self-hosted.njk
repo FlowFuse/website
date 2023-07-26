@@ -135,17 +135,18 @@
     <ul class="ff-feature-table-section sticky top-0 z-10">
         <li class="ff-feature--column-header">
             <span></span>
-            <label class="mr-2">
+            <label class="border-2 mr-2">
                 <div>Starter</div>
+                <div class="text-base font-medium">(Open-Source)</div>
             </label>
-            <label>Team</label>
-            <label class="ml-2">Enterprise</label>
+            <label class="border-2 border-red-400">Premium</label>
+            <label class="border-2 ml-2">Enterprise</label>
         </li>
     </ul>
     {% for section in sections %}
     <ul class="ff-feature-table-section">
 
-        <li class="ff-feature--header sticky top-[44px]">
+        <li class="ff-feature--header sticky top-[74px]">
             <span class="py-3 pl-4">{{ section.label }}</span>
             <span></span>
             <span></span>
@@ -153,7 +154,7 @@
         </li>
         {% for row in section.rows %}
         <li class="ff-feature-row">
-            <label class="sticky left-0 z-11" onclick="openInfo('{{ row.label }}', '{{ row.id }}')">
+            <label onclick="openInfo('{{ row.label }}', '{{ row.id }}')">
                 {{ row.label }}
                 {% if row.info %}
                 <i id="ff-info--{{ row.id }}" class="ff-icon ">{% include "components/icons/info.svg" %}</i>
@@ -183,12 +184,17 @@
     </ul>
     {% endfor %}
     <ul class="ff-feature-table-section">
-
-        <li class="ff-feature--column-buttons mt-6 h-12">
+        <li class="ff-feature--column-header">
             <span></span>
-            <label class="mr-3"><a class="ff-btn ff-btn--primary uppercase align-baseline w-full" href="https://app.flowforge.com/account/create" onclick="capture('cta-join', {'position': 'primary'})">TRY FOR FREE</a></label>
-            <label class="mx-2"><a class="ff-btn ff-btn--primary uppercase align-baseline w-full" href='/book-demo'>CONTACT SALES</a></label>
-            <label class="ml-3"><a class="ff-btn ff-btn--primary uppercase align-baseline w-full" href='/book-demo'>CONTACT SALES</a></label>
+            <span></span>
+            <label class="border-2 border-red-400 ff-blank"></label>
+            <span></span>
+        </li>
+        <li class="ff-feature--column-buttons -mt-1 h-12">
+            <span></span>
+            <label class="mr-2"><a class="ff-btn ff-btn--secondary-outlined uppercase align-baseline w-full" href="/docs/install" onclick="capture('cta-install', {'position': 'primary'})">Install now</a></label>
+            <label><a class="ff-btn ff-btn--primary uppercase align-baseline w-full rounded-t-none" href="https://app.flowforge.com/account/create" onclick="capture('cta-join', {'position': 'primary'})">TRY FOR FREE</a></label>
+            <label class="ml-2"><a class="ff-btn ff-btn--secondary-outlined uppercase align-baseline w-full " href='/book-demo'>Book a demo</a></label>
         </li>
     </ul>
     <ul class="ff-features-key">

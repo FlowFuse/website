@@ -231,7 +231,7 @@
         display: block;
         color: theme(colors.gray.400);
         font-size: 16px;
-        @apply text-left leading-6 md:leading-5;
+        @apply text-right leading-6 md:leading-5;
     }
     
     .pricing-tile p {

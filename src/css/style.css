@@ -924,35 +924,21 @@ h4:hover .header-anchor {
         text-align: left;
     }
     
-/* Border radius for table feature header */
-
-    /* .ff-feature--header:nth-of-type(1) {
-        border-top-left-radius: 0.5rem;
-    }   */
-
     .ff-feature-table-section li {
         display: grid;
         grid-template-columns: 270px 1fr 1fr 1fr;
         align-items: center;
-        @apply bg-gray-200/60;
+        @apply bg-gray-200;
     }
 
-    .ff-feature-table-section li.ff-feature-row:nth-child(odd) {
+    .ff-feature-table-section li.ff-feature-row:nth-child(odd),
+    .ff-feature-table-section li.ff-feature-row:nth-child(odd) label {
         background-color: theme(colors.gray.100);
     }
 
     .ff-feature-table-section li.ff-feature-row label {
         padding: 12px ;
-    }
-
-    .ff-feature-table-section li.ff-feature-row span:nth-child(3) {
-        border-left: 2px solid theme(colors.red.400);
-        border-right: 2px solid theme(colors.red.400);
-    }
-
-    .ff-feature-table-section li.ff-feature--header span:nth-child(3) {
-        /* border-left: 2px solid theme(colors.red.400);
-        border-right: 2px solid theme(colors.red.400); */
+        @apply bg-gray-200;
     }
 
     .ff-feature-table-section li.ff-feature--column-header {
@@ -966,11 +952,11 @@ h4:hover .header-anchor {
         font-weight: 600;
         font-size: 1.25rem;
         line-height: 1.5rem;
-        padding: 12px 6px;
+        padding: 10px 6px;
         height: 100%;   
         border-bottom: 0;
         border-radius: 12px 12px 0 0;
-        @apply flex items-center justify-center flex-col;
+        @apply flex items-center justify-center flex-col bg-gray-100;
     }
 
     .ff-feature-table-section li.ff-feature--column-header label.ff-blank {
