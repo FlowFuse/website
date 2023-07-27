@@ -190,6 +190,7 @@ When deployed, you can confirm values are being written to from the client to th
 <video width="560" height="315" controls>
   <source src="https://website-data.s3.eu-west-1.amazonaws.com/opc-write.mp4" type="video/mp4">
 </video>
+
 ## Read Alarms & Events from OPC UA Server Using OpcUa-Event and Opc-Ua-Client Nodes
 
 Our last flow we’ll show how to read OPC UA Alarms & Events. 
