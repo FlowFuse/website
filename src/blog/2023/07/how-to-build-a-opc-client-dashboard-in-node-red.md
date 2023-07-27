@@ -4,7 +4,7 @@ subtitle: Interactive OPC UA Client dashboard that communicates with a 3rd party
 description: Building a Dashboard-Driven OPC UA Client to Browse, Read, Write, and Get Events from a 3rd party OPC UA Server
 date: 2023-07-27 
 authors: ["richard-meyer"]
-image: blog/2023/07/images/opc-ua-2/opc-ua-2-title-image.png
+image: blog/2023/07/images/opc-ua-3/opc-ua-3-title-image.png
 tags:
     - posts
     - flowforge
