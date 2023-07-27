@@ -18,7 +18,7 @@ In this article, we show how to build an OPC Client in Node-RED that communicate
 
 This article will requires the [Prosys OPC UA Simulation Server](https://prosysopc.com/products/opc-ua-simulation-server/), an application designed for testing OPC UA client applications and learning the technology.  It’s a free cross-platform application that supports Windows, Linux, and MacOS.  This article will use the Windows version.  
 
-note: full source code for the OPC Client Dashboard is included at the end of the article.
+Note: full source code for the OPC Client Dashboard is included at the end of the article.
 
 ## Custom Nodes Used & Assumptions
 
