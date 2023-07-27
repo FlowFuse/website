@@ -2,7 +2,7 @@
 title: First Pre-Alpha Release of the new Node-RED Dashboard
 subtitle: Introducing v0.0.1 – An Initial Glimpse at the Future of Dashboarding in Node-RED
 description: The first release of the successor to the Node-RED Dashboard has arrived, marking the beginning of the pre-alpha phase.
-date: 2023-07-26
+date: 2023-07-27
 authors: ["joe-pavitt", "marian-demme"]
 image: /blog/2023/07/images/nr-dashboard-tile.png
 tags:
@@ -18,7 +18,7 @@ Just weeks ago, we at FlowForge [announced our plan](../../06/dashboard-announce
 
 <!-- ![](./images/placeholder.png "new Node-RED Dashboard Overview")-->
 
-The version 0.0.1 of our Node-RED Dashboard successor, available for download as a npm package under the name [@flowforge/nr-dashboard](https://www.npmjs.com/package/@flowforge/nr-dashboard) in your Node-RED palette manager.
+The version 0.0.1 of our Node-RED Dashboard successor, available for download as a npm package under the name [@flowforge/node-red-dashboard](https://www.npmjs.com/package/@flowforge/node-red-dashboard) in your Node-RED palette manager.
 
 This pre-alpha version includes the first set of Vue.js-based elements familiar to Node-RED Dashboard users:
 
