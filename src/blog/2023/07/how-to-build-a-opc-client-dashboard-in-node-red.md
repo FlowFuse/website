@@ -83,7 +83,7 @@ The configuration of the endpoint properties includes no security credentials, a
 ![endpoint-configure.png](./images/opc-ua-3/endpoint-configure.png)
 
 
-Using a debug node the output of we get from the OPC UA Browser yield a payload with an array of 5 objects.  
+Using the output of a debug node, we get from the OPC UA Browser yield a payload with an array of 5 objects.  
 
 ![address-debug.png](./images/opc-ua-3/address-debug.png)
 
