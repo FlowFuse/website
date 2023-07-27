@@ -18,7 +18,7 @@ Just weeks ago, we at FlowForge [announced our plan](../../06/dashboard-announce
 
 <!-- ![](./images/placeholder.png "new Node-RED Dashboard Overview")-->
 
-The version 0.0.1 of our Node-RED Dashboard successor, available for download as a npm package under the name [@flowforge/node-red-dashboard](https://www.npmjs.com/package/@flowforge/node-red-dashboard) in your Node-RED palette manager.
+The Node-RED Dashboard successor is now available for install as an npm package under the name [@flowforge/node-red-dashboard](https://www.npmjs.com/package/@flowforge/node-red-dashboard) in your Node-RED palette manager.
 
 This pre-alpha version includes the first set of Vue.js-based elements familiar to Node-RED Dashboard users:
 
