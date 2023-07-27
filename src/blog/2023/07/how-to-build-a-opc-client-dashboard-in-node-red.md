@@ -52,7 +52,7 @@ Now the simulation server is set up and we are ready to start developing the OPC
 
 The goal is not to develop a production-level application, rather, it’s to show a variety of features that one can utilize to demonstrate common OPC UA Client application capabilities in Node-RED, while also demonstrating a variety of methods to visualize the results in a dashboard.  There are 4 main objectives of the Node-RED OPC Client Dashboard application. They are:
 
-1. Browse Hierarchical Server Address Space Structure & Display on Dashboard
+1. Browse hierarchical server address space structure & display on a dashboard
 2. Read OPC UA values from various namespaces, showing a variety of datatypes and different ways they can be visualized
 3. Write OPC UA values back to the OPC UA server directly from the OPC UA Client dashboard
 4. Read Alarms & Events from the OPC UA Server and Display them on the dashboard
