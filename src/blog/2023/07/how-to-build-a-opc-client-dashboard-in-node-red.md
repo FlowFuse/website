@@ -41,7 +41,7 @@ This will give us access to the address space tab, which we will need to develop
 ![expert-mode.png](./images/opc-ua-3/expert-mode.png)
 
 
-When the application is ran, an endpoint url will be displayed on the `status` tab, along with an indication that the server is currently running.
+When the application is run, an endpoint url will be displayed on the `status` tab, along with an indication that the server is currently running.
 
 ![opc-endpoint-url.png](./images/opc-ua-3/opc-endpoint-url.png)
  Copy the connection endpoint, but be warned that you will likely need to replace the computer name (in my case `DESKTOP-0K0483A`, with the actual IP address of the machine running the server.  The IP address of the machine on my local network is `192.168.0.141`, which changes my UA TCP endpoint address to `opc.tcp://192.168.0.141:53530/OPCUA/SimulationServer`. 
