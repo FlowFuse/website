@@ -187,7 +187,7 @@ The process is the same for `MySwitch` and `MyLevel`, the only difference being 
 
 When deployed, you can confirm values are being written to from the client to the server from the dashboard.
 
-![opc-write.gif](./images/opc-ua-3/opc-write.gif)
+![client-node.png](./images/opc-ua-3/client-node.png)
 ## Read Alarms & Events from OPC UA Server Using OpcUa-Event and Opc-Ua-Client Nodes
 
 Our last flow we’ll show how to read OPC UA Alarms & Events. 
