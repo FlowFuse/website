@@ -8,7 +8,7 @@ meta:
 <!-- Primary Content -->
 <div class="about w-full ff-bg-light">
     <div class="w-full pt-12 pb-24 md:pb-10 md:pt-12 flex flex-col items-center">
-        <div class="container text-center max-w-4xl px-6">
+        <div class="container text-center max-w-xl md:max-w-4xl px-6">
             <h1>About FlowForge</h1>
             <div class="flex flex-col md:flex-row gap-8 items-center mt-10">
                 <div class="md:w-1/2 text-left my-auto">
@@ -34,7 +34,7 @@ meta:
     <!-- Secondary Content -->
 
     <div class="about w-full bg-gray-100">
-        <div class="container m-auto max-w-4xl pt-10 pb-20 md:pb-32 px-6">
+        <div class="container m-auto max-w-xl md:max-w-4xl pt-10 pb-20 md:pb-32 px-6">
             <div class="pb-6 md:pb-0 flex flex-col md:flex-row gap-3 md:gap-1">
                 <div class="md:w-[28%] md:mt-4 flex flex-row gap-3">
                     <div class="w-[42px]">
@@ -60,9 +60,10 @@ meta:
     </div>
 </div>
 {% include "components/divider-flow--top-red--dark.njk" %}
+
 <!-- Company Values -->
-<div class="about w-full ff-bg-dark px-6 pt-12 pb-6 md:pt-10 md:pb-6">
-    <div class="container about-values m-auto max-w-4xl">
+<div class="about w-full ff-bg-dark px-6 pt-12 pb-6 md:pt-12 md:pb-6">
+    <div class="container about-values m-auto max-w-xl md:max-w-4xl sm:px-6">
         <div>
             <h2 class="mb-10 text-center">Corporate Values</h2>
             <p class="text-justify">As a remote-only company, FlowForge brings together talented professionals from Europe, North America, and Asia. Our <a href="/handbook/company/values/">corporate values</a> drive our team to focus on achieving results, continuous iterative improvements, fostering a collaborative community, encouraging constructive candor, and prioritizing customer empathy.</p>
@@ -75,11 +76,79 @@ meta:
 </div>
 
 <!-- Investors -->
-<div class="about w-full ff-bg-light px-6 pt-12 pb-20 md:px-0 md:pt-20">
-    <div class="container m-auto text-center max-w-4xl">
+<div class="about w-full ff-bg-light px-6 pt-6 pb-16 md:px-0 -mt-px">
+    <div class="container m-auto text-center max-w-5xl">
         <h2 class="mb-4">Our Investors</h2>
-        <div class="investors">
-            
+        <!-- Mobile -->
+        <div class="investors mt-12 md:hidden">
+            <div class="logos">
+                {% image "./images/about/investors/opencore.png", "Open Core Ventures Logo", [280] %}
+                {% image "./images/about/investors/cota-capital.png", "Cota Capital Logo", [200] %}
+            </div>
+            <div class="logos">
+                {% image "./images/about/investors/westwave.png", "Westwave Capital Logo", [215] %}
+                {% image "./images/about/investors/uncorrelated.png", "Uncorrelated Logo", [190] %}
+            </div>
+        </div>
+        <!-- Desktop -->
+        <div class="investors mt-12 hidden md:block">
+            <div class="logos">
+                {% image "./images/about/investors/opencore.png", "Open Core Ventures Logo", [238] %}
+                {% image "./images/about/investors/cota-capital.png", "Cota Capital Logo", [170] %}
+                {% image "./images/about/investors/westwave.png", "Westwave Capital Logo", [184] %}
+                {% image "./images/about/investors/uncorrelated.png", "Uncorrelated Logo", [152] %}
+            </div>
+        </div>
+    </div>
+</div>
+<div class="text-gray-50 bg-white">
+    {% include "components/dividers/light-grey-curve-inverted.svg" %}
+</div>
+<!-- Working at FlowForge -->
+<div class="about w-full ff-bg-light">
+    <div class="w-full bg-white px-6 pt-6 pb-12 md:px-0">
+        <div class="container m-auto text-center max-w-xl md:max-w-4xl mt-12 md:mt-3">
+            <h2 class="mb-4">Working at FlowForge</h2>
+        </div>
+        <div class="grid px-6 grid-cols-1 md:grid-cols-2 md:gap-3 sm:gap-x-8 gap-y-6 mb-6 max-w-md sm:max-w-xl md:max-w-4xl m-auto mt-8 md:mt-0">
+            <!-- Team -->
+            <div class="w-full text-left m-auto flex flex-row justify-start items-center gap-3">
+                <div class="w-16">
+                    {% image "./images/pictograms/collaboration_red.png", "Graphics depicting a team.", [64] %}
+                </div>
+                <div class="about-team flex flex-col justify-center">
+                    <a href="/team/">
+                        <h4 class="flex leading-8 mt-6">
+                            <span class="font-medium">Team</span>
+                            <div class="w-5 inline self-end mb-1 ml-2">
+                                {% include "components/icons/arrow-top-right-on-square.svg" %}
+                            </div>
+                        </h4>
+                    </a>
+                    <div class="-mt-6">
+                        <p>Meet our growing team of professionals.</p>
+                    </div>
+                </div>    
+            </div>
+            <!-- Careers -->
+            <div class="w-full text-left m-auto flex flex-row justify-start items-center gap-3">
+                <div class="w-16 -mt-4 md:mt-0" style="flex-shrink: 0;">
+                    {% image "./images/pictograms/briefcase_red.png", "Graphics depicting a briefcase.", [64] %}
+                </div>
+                <div class="about-team flex flex-col justify-center">
+                    <a href="/careers/">
+                        <h4 class="flex leading-8 md:mt-14">
+                            <span class="font-medium">Careers</span>
+                            <div class="w-5 inline self-end mb-1 ml-2">
+                                {% include "components/icons/arrow-top-right-on-square.svg" %}
+                            </div>
+                        </h4>
+                    </a>
+                    <div class="-mt-6">
+                        <p>Join our team. Check out current career opportunities.</p>
+                    </div>
+                </div>    
+            </div>
         </div>
     </div>
 </div>
