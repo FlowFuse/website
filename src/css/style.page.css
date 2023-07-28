@@ -370,6 +370,7 @@
         flex-direction: row;
         flex-wrap: nowrap;
         margin-bottom: 10px;
+        align-items: center;
         @apply gap-3 w-full justify-center gap-6 md:gap-0 md:justify-between;
     }
 
