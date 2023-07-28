@@ -274,13 +274,19 @@ meta:
         // Toggle .slides class on buttons
         btns.forEach((item) => item.classList.toggle("slides"));
 
-        // Toggle .hide class on cloud and selfHosted elements
-        cloud.forEach((item) => item.classList.toggle("hide"));
-        selfHosted.forEach((item) => item.classList.toggle("hide"));
+        // // Toggle .hide class on cloud and selfHosted elements
+        cloud.forEach((item) => {
+            setTimeout(() => {
+                item.classList.toggle("hide");
+            }, 300); // Delay
+        });
 
-        // Toggle .show class on cloud and selfHosted elements
-        cloud.forEach((item) => item.classList.toggle("show"));
-        selfHosted.forEach((item) => item.classList.toggle("show"));
+        // // Toggle .show class on cloud and selfHosted elements
+        selfHosted.forEach((item) => {
+            setTimeout(() => {
+                item.classList.toggle("hide");
+             }, 300); // Delay
+            });
   });
 });
 </script>
