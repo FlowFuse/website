@@ -1,56 +1,154 @@
 ---
 layout: layouts/page.njk
-title: About FlowForge
-description: "<p>FlowForge helps Node-RED developers deliver applications in a more reliable, collaborative and secure manner. </p>
-<p>Node-RED’s intuitive, low-code development environment is great for connecting together hardware devices, APIs and online services. FlowForge adds to Node-RED, collaborative development, management of remote deployments, support for DevOps deliver pipelines and the ability to host Node-RED applications on FlowForge Cloud. FlowForge is the devops platform for Node-RED application development and delivery.</p>"
-heroimg: "./images/pictograms/anvil1.png"
-sitemapPriority: 0.7
+nohero: true
 meta:
     title: About
 ---
 
-{% include "components/divider-flow--default.njk" %}
-
-<!-- Secondary Content -->
-<div class="about w-full ff-bg-light pt-12 pb-24 md:pb-48 md:pt-32">
-    <div class="container m-auto text-center max-w-4xl">
-        <div class="grid grid-cols-1 md:grid-cols-2 pt-12 md:flex-row md:pt-24">
-            <div class="highlight-feature pb-6 md:pb-0">
-                <h3>Node-RED</h3>
-                {% image "./images/node-red-hexagon.png", "Node-RED Logo", [150] %}
-                <p>Node-RED is an industry leading low-code platform that makes it easy to build applications that integrate events, data and devices. It provides the core of what we're building at FlowForge.</p>
-            </div>
-            <div class="highlight-feature">
-                <h3>Open Source</h3>
-                {% image "./images/pictograms/opensource_red.png", "Open Source Logo", [150] %}
-                <p>We believe strongly that Open Source lives at the heart of everything we do - both in our work to push the Node-RED project forward as well as our own FlowForge platform.</p><p>We strive to be good Open Source citizens and want to empower the community to get involved.</p>
+<!-- Primary Content -->
+<div class="about w-full ff-bg-light">
+    <div class="w-full pt-12 pb-16 md:pb-10 md:pt-12 flex flex-col items-center">
+        <div class="container text-center max-w-xl md:max-w-4xl px-6">
+            <h1>About FlowForge</h1>
+            <div class="flex flex-col md:flex-row gap-8 items-center mt-10">
+                <div class="md:w-1/2 text-left my-auto">
+                    <p><span class="font-medium">FlowForge</span> was founded in 2021 by <span class="font-medium">Nick
+                            O’Leary, <span class="inline-block">co-creator</span> of Node-RED</span>. The goal of
+                        FlowForge was to create a platform around Node-RED that makes it easier to adopt Node-RED at
+                        scale and <span class="font-medium">integrate into existing enterprise environments</span>.</p>
+                    <p>Today, companies are turning to the FlowForge platform to meet their needs for a <span
+                            class="font-medium">reliable, scalable, and secure environment for deploying Node-RED
+                            applications</span>. Our customers rely on Node-RED in their production environments to
+                        develop innovative applications that revolutionize their corporate operations.</p>
+                </div>
+                <div class="md:w-1/2 m-auto max-w-[370px] md:max-w-none">
+                    {% image "./images/about/about.png", "FlowForge hosting Node-RED connected to many devices", [440] %}
+                </div>
             </div>
         </div>
     </div>
-</div> 
+    <div class="text-gray-100 bg-gray-50">
+        {% include "components/dividers/light-grey-curve.svg" %}
+    </div>
 
+    <!-- Secondary Content -->
+
+    <div class="about w-full bg-gray-100">
+        <div class="container m-auto max-w-xl md:max-w-4xl pt-10 pb-20 md:pb-32 px-6">
+            <div class="pb-6 md:pb-0 flex flex-col md:flex-row gap-3 md:gap-1">
+                <div class="md:w-[28%] md:mt-4 flex flex-row gap-3">
+                    <div class="w-[42px]">
+                        {% image "./images/node-red-hexagon.png", "Node-RED Logo", [42] %}
+                    </div>
+                    <h4 class="mt-3"><span class="inline-block text-red-700">Node-RED</span></h4>
+                </div>
+                <p class="md:w-[72%] text-justify"><span class="font-medium">We are deeply committed to the success of the Node-RED open source project</span>. Our team dedicates significant effort to developing the core technology of the project and fostering the growth of the Node-RED community. As a result, Node-RED has become a widely embraced <span class="font-medium">low-code visual programming environment, particularly for IoT and enterprise applications</span>.</p>
+            </div>
+            <div class="pb-6 md:pb-0 flex flex-col md:flex-row gap-3 md:gap-1 pt-6 md:pt-3">
+                <div class="md:w-[28%] md:mt-4 flex flex-row gap-3">
+                    <div class="w-[42px]">
+                        {% image "./images/pictograms/opensource_red.png", "Open Source Logo", [42] %}
+                    </div>
+                    <h4 class="mt-2"><span class="inline-block text-red-700">Open Source</span></h4>
+                </div>
+                <div class="md:w-[72%] text-justify">
+                    <p>We believe strongly that <span class="font-medium">Open Source lives at the heart of everything we do</span> - both in our work to push the Node-RED project forward as well as our own FlowForge platform.</p>
+                    <p>We strive to be good Open Source citizens and want to empower the community to get involved.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 {% include "components/divider-flow--top-red--dark.njk" %}
 
 <!-- Company Values -->
-<div class="about w-full ff-bg-dark px-6 pt-12 pb-24 md:pt-20 md:px-0 md:pb-48">
-    <div class="container m-auto text-center max-w-4xl">
-        <div class="">
-            <h1 class="mb-4">Company Values</h1>
-            <p>We are fully open about our company values, you can read more about them in our <a href="/handbook">Handbook.</a></p>
+<div class="about w-full ff-bg-dark px-6 pt-12 pb-6 md:pt-12 md:pb-6">
+    <div class="container about-values m-auto max-w-xl md:max-w-4xl sm:px-6">
+        <div>
+            <h2 class="mb-10 text-center">Corporate Values</h2>
+            <p class="text-justify">As a remote-only company, FlowForge brings together talented professionals from Europe, North America, and Asia. Our <a href="/handbook/company/values/">corporate values</a> drive our team to focus on achieving results, continuous iterative improvements, fostering a collaborative community, encouraging constructive candor, and prioritizing customer empathy.</p>
         </div>
         {% include "values.njk" %}
     </div>
 </div>
+<div class="text-gray-50">
+    {% include "components/dividers/divider-flow--top-grey.svg" %}
+</div>
 
-{% include "components/divider-flow--top-grey.njk" %}
-
-<!-- Employee Benefits -->
-<div class="about w-full ff-bg-mid px-6 pt-12 pb-20 md:px-0 md:pt-20">
-    <div class="container m-auto text-center max-w-4xl">
-        <div>
-            <h1 class="mb-4">Employee Benefits</h1>
-            <p>Here are just some of the benefits enjoyed by our employees. We are always looking to improve and expand these too. You can read more about them in our <a href="/handbook">Handbook.</a></p>
+<!-- Investors -->
+<div class="about w-full ff-bg-light px-6 pt-6 pb-16 md:px-0 -mt-px">
+    <div class="container m-auto text-center max-w-5xl">
+        <h2 class="mb-4">Our Investors</h2>
+        <!-- Mobile -->
+        <div class="investors mt-12 md:hidden">
+            <div class="logos">
+                {% image "./images/about/investors/opencore.png", "Open Core Ventures Logo", [280] %}
+                {% image "./images/about/investors/cota-capital.png", "Cota Capital Logo", [200] %}
+            </div>
+            <div class="logos">
+                {% image "./images/about/investors/westwave.png", "Westwave Capital Logo", [215] %}
+                {% image "./images/about/investors/uncorrelated.png", "Uncorrelated Logo", [190] %}
+            </div>
         </div>
-        {% include "benefits.njk" %}
+        <!-- Desktop -->
+        <div class="investors mt-12 hidden md:block">
+            <div class="logos">
+                {% image "./images/about/investors/opencore.png", "Open Core Ventures Logo", [238] %}
+                {% image "./images/about/investors/cota-capital.png", "Cota Capital Logo", [170] %}
+                {% image "./images/about/investors/westwave.png", "Westwave Capital Logo", [184] %}
+                {% image "./images/about/investors/uncorrelated.png", "Uncorrelated Logo", [152] %}
+            </div>
+        </div>
+    </div>
+</div>
+<div class="text-gray-50 bg-white">
+    {% include "components/dividers/light-grey-curve-inverted.svg" %}
+</div>
+<!-- Working at FlowForge -->
+<div class="about w-full ff-bg-light">
+    <div class="w-full bg-white px-6 pt-6 pb-12 md:px-0">
+        <div class="container m-auto text-center max-w-xl md:max-w-4xl mt-12 md:mt-3">
+            <h2 class="mb-4">Working at FlowForge</h2>
+        </div>
+        <div class="grid px-6 grid-cols-1 md:grid-cols-2 md:gap-3 sm:gap-x-8 gap-y-6 mb-6 max-w-md sm:max-w-xl md:max-w-4xl m-auto mt-8 md:mt-0">
+            <!-- Team -->
+            <div class="w-full text-left m-auto flex flex-row justify-start items-center gap-3">
+                <div class="w-16">
+                    {% image "./images/pictograms/collaboration_red.png", "Graphics depicting a team.", [64] %}
+                </div>
+                <div class="about-team flex flex-col justify-center">
+                    <a href="/team/">
+                        <h4 class="flex leading-8 mt-6">
+                            <span class="font-medium">Team</span>
+                            <div class="w-5 inline self-end mb-1 ml-2">
+                                {% include "components/icons/arrow-top-right-on-square.svg" %}
+                            </div>
+                        </h4>
+                    </a>
+                    <div class="-mt-6">
+                        <p>Meet our growing team of professionals.</p>
+                    </div>
+                </div>    
+            </div>
+            <!-- Careers -->
+            <div class="w-full text-left m-auto flex flex-row justify-start items-center gap-3">
+                <div class="w-16 -mt-4 md:mt-0" style="flex-shrink: 0;">
+                    {% image "./images/pictograms/briefcase_red.png", "Graphics depicting a briefcase.", [64] %}
+                </div>
+                <div class="about-team flex flex-col justify-center">
+                    <a href="/careers/">
+                        <h4 class="flex leading-8 md:mt-14">
+                            <span class="font-medium">Careers</span>
+                            <div class="w-5 inline self-end mb-1 ml-2">
+                                {% include "components/icons/arrow-top-right-on-square.svg" %}
+                            </div>
+                        </h4>
+                    </a>
+                    <div class="-mt-6">
+                        <p>Join our team. Check out current career opportunities.</p>
+                    </div>
+                </div>    
+            </div>
+        </div>
     </div>
 </div>
