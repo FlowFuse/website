@@ -1,0 +1,87 @@
+<script>
+    function openInfo(label, id) {
+        capture('info-feature', { feature: id})
+        document.getElementById("ff-dialog--feature--" + label).classList.add('active')
+    }
+    function closeInfo(label) {
+        document.getElementById("ff-dialog--feature--" + label).classList.remove('active')
+    }
+</script>
+
+<div class="ff-feature-table m-auto">
+    <ul class="ff-feature-table-section sticky top-0 z-10">
+        <li class="ff-feature--column-header">
+            <span class="bg-gray-50 sticky left-0"></span>
+            <label class="mr-2">
+                <div>Starter</div>
+            </label>
+            <label>Team</label>
+            <label class="ml-2">Enterprise</label>
+        </li>
+    </ul>
+    {% for section in sections %}
+    <ul class="ff-feature-table-section">
+
+        <li class="ff-feature--header sticky top-[44px]">
+            <span class="py-3 sticky left-0">{{ section.label }}</span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </li>
+        {% for row in section.rows %}
+        <li class="ff-feature-row">
+            <label class="sticky left-0" onclick="openInfo('{{ row.label }}', '{{ row.id }}')">
+                {{ row.label }}
+                {% if row.info %}
+                <i id="ff-info--{{ row.id }}" class="ff-icon ">{% include "components/icons/info.svg" %}</i>
+                {% endif %}
+            </label>
+            {% for value in row.values %}
+            <span>
+                {% if value === "check" %}
+                    {% include "components/feature-check.svg" %}
+                {% elif value === "time" %}
+                    {% tooltip "On the roadmap" %}
+                    {% include "components/feature-time.svg" %}
+                    {% endtooltip %}
+                {% elif value === "optional" %}
+                    {% include "components/feature-optional.svg" %}
+                {% elif value === "addon" %}
+                    {% include "components/feature-addon.svg" %}
+                {% elif value === null %}
+                <span></span>
+                {% else %}
+                {{ value }}
+                {% endif %}
+            </span>
+            {% endfor %}
+        </li>
+        {% endfor %}
+    </ul>
+    {% endfor %}
+    <ul class="ff-feature-table-section">
+        <li class="ff-feature--column-buttons mt-6 h-12 gap-x-3">
+            <span class="bg-gray-50 sticky left-0 z-10"></span>
+            {% for section in sections %}
+            {% if section.buttons %}
+            {% for button in section.buttons %}
+            <label><a class="ff-btn ff-btn--primary uppercase align-baseline w-full text-center" href="{{ button.url }}" {% if button.onclick %} onclick="{{ button.onclick }}" {% endif %}>{{ button.cta }}</a></label>
+            {% endfor %}
+            {% endif %}
+            {% endfor %}
+        </li>
+</div>
+
+<div id="feature-dialogs">
+    {% for section in sections %}
+        {% for row in section.rows %}
+            <div id="ff-dialog--feature--{{ row.label }}" class="ff-dialog-container">
+                <div class="ff-dialog-shadow" onclick="closeInfo('{{ row.label }}')"></div>
+                <div class="ff-dialog-modal">
+                    <div id="ff-dialog--header" class="ff-dialog-header">Feature: {{ row.label }}</div>
+                    <div id="ff-dialog--content" class="ff-dialog-content">{{ row.info | safe }}</div>
+                </div>
+            </div>
+        {% endfor %}
+    {% endfor %}
+</div>
