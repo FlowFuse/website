@@ -11,7 +11,7 @@
 <div class="ff-feature-table m-auto">
     <ul class="ff-feature-table-section sticky top-0 z-10">
         <li class="ff-feature--column-header">
-            <span class="bg-gray-50 sticky left-0"></span>
+            <span class="bg-gray-50 sticky left-0 h-full"></span>
             <label class="mr-2">
                 <div>Starter</div>
             </label>
@@ -23,14 +23,14 @@
     <ul class="ff-feature-table-section">
 
         <li class="ff-feature--header sticky top-[44px]">
-            <span class="py-3 sticky left-0">{{ section.label }}</span>
+            <span class="py-3 sticky left-0 h-full">{{ section.label }}</span>
             <span></span>
             <span></span>
             <span></span>
         </li>
         {% for row in section.rows %}
         <li class="ff-feature-row">
-            <label class="sticky left-0" onclick="openInfo('{{ row.label }}', '{{ row.id }}')">
+            <label class="sticky left-0 h-full" onclick="openInfo('{{ row.label }}', '{{ row.id }}')">
                 {{ row.label }}
                 {% if row.info %}
                 <i id="ff-info--{{ row.id }}" class="ff-icon ">{% include "components/icons/info.svg" %}</i>
@@ -60,8 +60,8 @@
     </ul>
     {% endfor %}
     <ul class="ff-feature-table-section">
-        <li class="ff-feature--column-buttons mt-6 h-12 gap-x-3">
-            <span class="bg-gray-50 sticky left-0 z-10"></span>
+        <li class="ff-feature--column-buttons mt-6 h-10 gap-x-3">
+            <span class="bg-gray-50 sticky left-0 h-full z-10"></span>
             {% for section in sections %}
             {% if section.buttons %}
             {% for button in section.buttons %}
