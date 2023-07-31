@@ -9,7 +9,7 @@
         }, {
             id: "team-members",
             label: "Team Members",
-            values: ['2', '20', '50'],
+            values: ['2', '20', 'Unlimited'],
             info: "<p>Tooltip info here</p>"
         }, {
             id: "cloud-instances",
@@ -37,13 +37,18 @@
             values: ['check', 'check', 'check'],
             info: "<p>Tooltip info here</p>"
         }, {
+            id: "device-mgmt",
+            label: "Device Management",
+            values: ['check', 'check', 'check'],
+            info: "<p>Connect to edge devices to quickly assess and update logic. Debug one device and roll out improvements to your fleet in minutes. All securely without requiring full device access for your whole organisation.</p>"
+        }, {
             id: "audit-log",
             label: "Audit Log",
             values: ['check', 'check', 'check'],
             info: "<p>Keep track of everything going on in your Node-RED instances and FlowForge.</p><p>Audit Logs provide details on what actions have taken place, when they happened, and who did them.</p>"
         }, {
             id: "pipelines",
-            label: "Delivery Pipelines",
+            label: "DevOps Pipelines",
             values: ['check', 'check', 'check'],
             info: "<p>Tooltip info here</p>"
         }, {
@@ -51,33 +56,29 @@
             label: "Endpoint Security",
             values: ['None/HTTP Basic Auth', 'None/HTTP Basic Auth/FF Auth', 'None/HTTP Basic Auth/FF Auth'],
             info: "<p>Tooltip info here</p>"
-        }, {
-            id: "device-mgmt",
-            label: "Device Management",
-            values: ['check', 'check', 'check'],
-            info: "<p>Connect to edge devices to quickly assess and update logic. Debug one device and roll out improvements to your fleet in minutes. All securely without requiring full device access for your whole organisation.</p>"
-        }, {
-            id: "project-nodes",
-            label: "Seamless Data Stream (Project nodes)",
-            values: [null, 'check', 'check'],
-            info: "<p><a href=\"https://github.com/flowforge/flowforge-nr-project-nodes\" target=\"blank\">FlowForge Project Nodes</a> enable the passing of data and messages between your Node-RED projects, included with all FlowForge Projects by default.</p>"
-        }, {
-            label: "Team Library",
-            values: [null, 'check', 'check']
-        }, { 
+         }, { 
             id: "rbac",
             label: "Role-Based Access Control",
             values: ['check', 'check', 'check'],
             info: "<p>FlowForge's intuitive team management tooling makes it easy for you to control whom has access to what.</p>"
+        }, {
+            label: "High Availibility",
+            values: [null, null, 'check'],
+            info: "<p>Leverage horizontal scaling for reliable and scalible processing of your data through Node-RED.</p>"
+        }, {
+            label: "Team Library",
+            values: [null, 'check', 'check'],
+            info: "<p>Tooltip info here</p>"
         }, {
             id: "sso",
             label: "Single Sign-On (SSO)",
             values: [null, null, 'check'],
             info: "<p>FlowForge can be configured to run with your own Single Sign-On (SSO) provider. Allow users to access FlowForge with a single set of login credentials, improving security, user experience, and save them time.</p>"
         }, {
-            label: "High Availibility",
-            values: [null, null, 'check'],
-            info: "<p>Leverage horizontal scaling for reliable and scalible processing of your data through Node-RED.</p>"
+            id: "project-nodes",
+            label: "Seamless Data Stream (Project nodes)",
+            values: [null, 'check', 'check'],
+            info: "<p><a href=\"https://github.com/flowforge/flowforge-nr-project-nodes\" target=\"blank\">FlowForge Project Nodes</a> enable the passing of data and messages between your Node-RED projects, included with all FlowForge Projects by default.</p>"
         }]
     }, {
         label: "Support",
@@ -90,9 +91,6 @@
         }, {
             label: "Node-RED Support",
             values: ['Community Forum', '8 hours (business days)', '4 hours']
-        }, {
-            label: "Minimum License number for Self-Managed",
-            values: ['No License for Self Managed Version (Use Open Source)', '5', '100']
         }]
     }, {
         label: "Subscription",
