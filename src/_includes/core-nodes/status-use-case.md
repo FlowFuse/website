@@ -1,5 +1,5 @@
 ## What's the Status node in Node-RED used for?
-The Status node allows you to monitor the status in individual or all the nodes running in your flow. The status node does not produce a payload but it does report on the node operation. This will allow you to programmatically react to error conditions or use case restrictions in a flow.
+The Status node allows you to monitor the status of individual nodes or all the nodes running in your flow. The status node does not produce a payload but it does report on the operation of the node. This will allow you to programmatically react to error conditions or use case restrictions in a flow.
 
 For example, a delay node that is queuing external messages my want to report an error message after the queue exceeds a specific number. The status node can be used to track the number of messages in the queue.
 
