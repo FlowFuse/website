@@ -25,7 +25,7 @@ However, my primary critique revolves around another issue – the structure and
 
 ### Problem 1: Information Loss and Transaction Costs
 
-The traditional upward flow of data collection (Levels 0 to 4) while planning goes downwards (Level 4 to 0). Information traversing from Level 0 to Level 4 has to pass through at least four stages. Despite theoretical lossless transmission of information, the practical scenario inevitably results in some degree of information loss between levels. The upshot is that original information from Level 0 arrives at Level 4 late, altered, or not at all.
+In the traditional model, data collection flows upward from Levels 0 to 4, while planning goes downward from Level 4 to 0. Information traversing from Level 0 to Level 4 has to pass through at least four stages. Despite theoretical lossless transmission of information, the practical scenario inevitably results in some degree of information loss between levels. The upshot is that original information from Level 0 arrives at Level 4 late, altered, or not at all.
 
 ### Problem 2: The Expense of One-to-One Connections 
 
