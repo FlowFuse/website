@@ -1,0 +1,82 @@
+---
+title: FlowForge now available on  AWS Marketplace
+subtitle: New FlowForge 1.10 also includes improvements to device management and importing environment variable templates.
+description: New FlowForge 1.10 release makes is possible to install the FlowForge platform from the AWS marketplace and improvements to device management.
+date: 2023-08-03 
+authors: ["ian-skerrett"]
+image: /blog/2023/07/images/release-1.9.0.png
+tags:
+    - posts
+    - flowforge
+    - releases
+---
+
+FlowForge 1.10 now makes it possible to install the FlowForge platform from the AWS Marketplace. In addition, the release includes improvements to device management and importing environment variable templates.
+
+<!--more-->
+
+## AWS Marketplace
+It is now possible to install FlowForge on AWS directly from the AWS Marketplace. This makes it a lot easier for developers to install and run FlowForge on the AWS Cloud. 
+
+The FlowForge open source edition is the default version offered from the marketplace, so users can get started free of charge.  Users are able to use the BYOL (Bring Your Own License) feature of AWS Marketplace to upgrade to a commercially licensed version.
+
+
+## Import Environment Variable Templates  [#2372](https://github.com/flowforge/flowforge/issues/2372)
+
+FlowForge 1.10 now allows users to import environment variable templates. This makes it much easier and less error prone to maintain and add new environment variables to Node-RED instances running on FlowForge. 
+
+
+## DevOps Pipelines now can include devices [#2243](https://github.com/flowforge/flowforge/issues/2243)
+DevOps pipelines have proven very popular for creating dev/test/production environments for Node-Red flow development. Now, devices can be associated with a pipeline so when a snapshot is created it can be pushed to all the devices associated with the pipeline.  This will improve the overall quality and reliabiliy of Node-RED development for remote devices.
+
+## Devices can now access the team library [#2294](https://github.com/flowforge/flowforge/issues/2294)
+
+Team libraries allow Node-RED development team to share common flows and nodes through a shared library. Until the 1.10 release, Node-RED running remotely on a device did not have access to the team library. This limitation is now removed so device development can benefit from reusing standard flows.
+
+## Other New Features
+
+- Add description of device type field  [#2428](https://github.com/flowforge/flowforge/issues/2428)
+- Improve reliability of device editor [#2483](https://github.com/flowforge/flowforge/issues/2483)
+- Improve error feedback from device editor tunnel [#2473](https://github.com/flowforge/flowforge/issues/2473)
+
+
+## Bug Fixes
+
+- Improve visualization of Last Seen & Last Known with large amounts of devices. [#2380](https://github.com/flowforge/flowforge/issues/2380)
+- Fix billing information error in FlowForge Cloud [#2416](https://github.com/flowforge/flowforge/issues/2416)
+- Fix T&C checkbox on sign-up page [#2419](https://github.com/flowforge/flowforge/issues/2419)
+
+
+## Community Contributions
+
+Thanks to our community members for their contributions to this release.
+
+
+## What's next?
+
+We're always working to enhance your experience with FlowForge. Here's how you can stay informed and contribute:
+
+- **Roadmap Overview**: Check out our [Product Roadmap Page](https://flowforge.com/product/roadmap/) to see what we're planning for future updates.
+- **Entire Roadmap**: Visit our [Roadmap on GitHub](https://github.com/orgs/flowforge/projects/5) to follow our progress and contribute your ideas.
+- **Feedback**: We're interested in your thoughts about FlowForge. Your feedback is crucial to us, and we'd love to hear about your experiences with the new features and improvements. Please share your thoughts, suggestions, or report any [issues on GitHub](https://github.com/flowforge/flowforge/issues/new/choose). 
+
+Together, we can make FlowForge better with each release!
+
+## Try it out
+
+We're confident you can have self managed FlowForge running locally in under 30 minutes.
+You can install our [local build](https://flowforge.com/docs/install/local/), use [Docker](https://flowforge.com/docs/install/docker/), or [Kubernetes](https://flowforge.com/docs/install/kubernetes/).
+
+If you'd rather use our hosted offering: [Get started for free](https://app.flowforge.com/account/create) on FlowForge Cloud.
+
+## Upgrading FlowForge
+
+[FlowForge Cloud](https://app.flowforge.com) is already running 1.10.
+
+If you installed a previous version of FlowForge and want to upgrade, our documentation provides a
+guide for [upgrading your FlowForge instance](https://flowforge.com/docs/upgrade/).
+
+## Getting help
+
+Please check FlowForge's [documentation](https://flowforge.com/docs/) as the answers to many questions are covered there. Additionally you can go the the [community forum](https://community.flowforge.com) if you have
+any feedback or feature requests.
