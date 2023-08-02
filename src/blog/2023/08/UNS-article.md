@@ -13,11 +13,11 @@ A few years ago, I wrote an article, in German, detailing my understanding of ho
 
 ## The Pyramid’s Dilemma
 
-The Automation Pyramid is grounded in the standard ISA-95, which aligns with IEC 62264 and DIN EN 62264. It delineates the functional hierarchy within a manufacturing enterprise. Over 25 variations of the Automation Pyramid exist in academic literature, all of them fundamentally mapping to the same core concept, tracing back to the Computer-integrated manufacturing (CIM)-Pyramid of the 1970s. Although ISA-95 does not explicitly refer to a pyramid, it introduces five functional hierarchical levels often visualized as a pyramid.
+The Automation Pyramid is grounded in the standard [ISA-95](https://www.isa.org/products/ansi-isa-95-00-01-2010-iec-62264-1-mod-enterprise), which aligns with [IEC 62264](https://www.iso.org/standard/57308.html) and [DIN EN 62264](https://www.beuth.de/en/standard/din-en-62264-1/207270059). It delineates the functional hierarchy within a manufacturing enterprise. Over 25 variations of the Automation Pyramid exist in academic literature, all of them fundamentally mapping to the same core concept, tracing back to the [Computer-integrated manufacturing](https://en.wikipedia.org/wiki/Computer-integrated_manufacturing) (CIM)-Pyramid of the 1970s. Although ISA-95 does not explicitly refer to a pyramid, it introduces five functional hierarchical levels often visualized as a pyramid.
 
 ![Automation Pyramid ISA95](./images/UNS/ISA95.JPG)
 
-A notable critique of ISA-95 is the absence of some operational functions and hierarchical levels commonly seen in manufacturing, leading to a rigidity that limits its applicability. This inflexibility has been acknowledged in the more recent framework, the "Reference Architectural Model Industry 4.0" RAMI 4.0 (IEC PAS 63088). As a result, the authors' introduced a "Smart Grid Architecture Model" (SGAM) with three primary dimensions: Life Cycle & Value Stream (IEC 62890), Hierarchy Levels (IEC 62264 and IEC 61512), and six main layers displaying the functional architecture of the asset and the separation into physical and digital world.
+A notable critique of ISA-95 is the absence of some operational functions and hierarchical levels commonly seen in manufacturing, leading to a rigidity that limits its applicability. This inflexibility has been acknowledged in the more recent framework, the []["Reference Architectural Model Industry 4.0"](https://www.isa.org/intech-home/2019/march-april/features/rami-4-0-reference-architectural-model-for-industr) RAMI 4.0 ([IEC PAS 63088](https://www.beuth.de/en/norm/pd-iec-pas-63088/272832590)). As a result, the authors' introduced a "Smart Grid Architecture Model" (SGAM) with three primary dimensions: Life Cycle & Value Stream ([IEC 62890](https://www.vde-verlag.de/iec-standards/248992/iec-62890-2020.html)), Hierarchy Levels ([IEC 62264](https://www.iso.org/standard/57308.html) and [IEC 61512](https://www.vde-verlag.de/iec-standards/216764/iec-61512-4-2009.html)), and six main layers displaying the functional architecture of the asset and the separation into physical and digital world.
 
 ![RAMI4.0](./images/UNS/RAMI40.jpeg)
 
@@ -49,7 +49,7 @@ The Unified Namespace breaks down the linear and deterministic data structure, w
 
 ### The Organizational Structure 
 
-Unified Namespace organizes data using a semantic hierarchy, similar to a meticulously arranged file share system. It can use the ISA-95 part 2 or the RAMI 4.0 Hierarchy Level standards to structure the hierarchy. This data organization facilitates navigation, management, and decision-making.
+Unified Namespace organizes data using a semantic hierarchy, similar to a meticulously arranged file share system. It can use the [ISA-95 part 2](https://www.isa.org/products/ansi-isa-95-00-02-2018-enterprise-control-system-i) or the RAMI 4.0 Hierarchy Level standards to structure the hierarchy. This data organization facilitates navigation, management, and decision-making.
 
 ### The Pub-Sub Approach
 
