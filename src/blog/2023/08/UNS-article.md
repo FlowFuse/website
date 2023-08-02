@@ -25,15 +25,21 @@ However, my primary critique revolves around another issue – the structure and
 
 ### Problem 1: Information Loss and Transaction Costs
 
-In the traditional model, data collection flows upward from Levels 0 to 4, while planning goes downward from Level 4 to 0. Information traversing from Level 0 to Level 4 has to pass through at least four stages. Despite theoretical lossless transmission of information, the practical scenario inevitably results in some degree of information loss between levels. The upshot is that original information from Level 0 arrives at Level 4 late, altered, or not at all.
+In the traditional model, data collection flows upward from Levels 0 to 4, while planning goes downward from Level 4 to 0. Information traversing from Level 0 to Level 4 has to pass through at least four stages. Despite theoretical lossless transmission of information, the practical scenario inevitably results in some degree of information loss between levels. The result is that the original information from Level 0 arrives at Level 4 late, altered, or not at all.
+
+**Example:** In a manufacturing plant, multiple sensors at Level 0 detect a sudden event. By the time this information passes through intermediary layers (e.g. PLC, SCADA, MES) to reach Level 4 where a planning decision can be made, it is delayed and distorted due to the multiple transitions. The factory might suffer damage before proper actions are taken because the original data didn't arrive on time or not at all. 
 
 ### Problem 2: The Expense of One-to-One Connections 
 
 The Automation Pyramid does not explicitly provide a data management approach. Consequently, one-to-one connections between IT systems become a necessity for data transfer between levels. For example, Level 3 IT systems need at least two connections to the adjacent levels. This can lead to thousands of one-to-one interfaces between IT systems, incurring exorbitant costs for projects and maintenance.
 
+**Example:** In a semiconductor company, the Manufacturing Execution System (MES) serves as a critical intermediary in the Automation Pyramid. It must be integrated both with PLCs at the lower level for real-time control and with the ERP system at a higher level for business planning. This complex integration leads to the creation of numerous one-to-one connections. Furthermore, in implementing Industry 4.0 use cases like analytical applications, the MES data is often required, creating even more connections. The multitude of connections complicates the system, making changes extremely difficult and maintenance intensive. This inflexibility becomes a barrier to adaptability and growth, hindering the efficient digital transformation of the manufacturing process.
+
 ### Problem 3: AI's Dependence on Data 
 
-Artificial intelligence (AI) requires extensive, well-organized data. Given the current architecture, data would have to be manually collected and prepared from individual systems and levels. This would invariably lead to numerous new one-to-one connections, offering no flexibility. Hence, AI and the Automation Pyramid can only collaborate in a significantly restricted manner.
+Artificial intelligence (AI) requires extensive, well-organized data. Given the current architecture, data would have to be  collected and prepared from case to case for each individual system and leves. This would invariably lead to numerous new one-to-one connections, offering no flexibility. Hence, AI and the Automation Pyramid can only collaborate in a significantly restricted manner.
+
+**Example:** A car manufacturing firm aims to leverage a neural network for predictive maintenance. Within the constraints of the existing Automation Pyramid's architecture, the positioning for such an application is non-existent. To train the neural network and subsequently analyse the data, a consolidation of varying hierarchical data is essential, such as sensory input, maintenance records, production scheduling plans, etc. Under the current architecture, the introduction of this application precipitates the creation of a multitude of new one-to-one connections. Consequently, it underscores the pressing need to rethink the structural paradigms.
 
 ## IIoT Circle and Unified Namespace
 
