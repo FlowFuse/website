@@ -8,7 +8,7 @@ authors: ["marian-demme"]
 tags:
     - posts
 ---
-A few years ago, I wrote an article, in German, detailing my understanding of how the Automation Pyramid, a widely adopted reference model for the IT landscape of manufacturing firms, is essentially hindering digital transformation. Now, as conversations around the Unified Namespace (UNS) and particular frameworks continue to evolve, I revisit my earlier notions, review the latest updates to reference frameworks and update my article.
+A few years ago, I wrote an [article](https://www.linkedin.com/pulse/iiot-circle-marian-raphael-demme/), in German, detailing my understanding of how the Automation Pyramid, a widely adopted reference model for the IT landscape of manufacturing firms, is essentially hindering digital transformation. Now, as conversations around the Unified Namespace (UNS) and particular frameworks continue to evolve, I revisit my earlier notions, review the latest updates to reference frameworks and update my article.
 <!--more-->
 
 ## The Pyramid’s Dilemma
