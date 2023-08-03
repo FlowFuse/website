@@ -26,7 +26,7 @@ However, my primary critique revolves around another issue – the structure and
 
 In the traditional model, data collection flows upward from Levels 0 to 4, while planning goes downward from Level 4 to 0. Information traversing from Level 0 to Level 4 has to pass through at least four stages. Despite theoretical lossless transmission of information, the practical scenario inevitably results in some degree of information loss between levels. The result is that the original information from Level 0 arrives at Level 4 late, altered, or not at all.
 
-**Example:** In a manufacturing plant, multiple sensors at Level 0 detect a sudden event. By the time this information passes through intermediary layers (e.g. PLC, SCADA, MES) to reach Level 4 where a planning decision can be made, it is delayed and distorted due to the multiple transitions. The factory might suffer damage before proper actions are taken because the original data didn't arrive on time or not at all. 
+**Example:** In a manufacturing plant, multiple sensors at Level 1 detect a sudden event. By the time this information passes through intermediary layers (e.g. PLC, SCADA, MES) to reach Level 4 where a planning decision can be made, it is delayed and distorted due to the multiple transitions. The factory might suffer damage before proper actions are taken because the original data didn't arrive on time or not at all. 
 
 ### Problem 2: The Expense of One-to-One Connections 
 
