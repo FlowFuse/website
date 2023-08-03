@@ -4,7 +4,7 @@ subtitle: New FlowForge 1.10 also includes improvements to device management and
 description: New FlowForge 1.10 release introduces importing of environment variable templates and improvements to device management.
 date: 2023-08-03 
 authors: ["ian-skerrett"]
-image: /blog/2023/07/images/release-1.9.0.png
+image: /blog/2023/08/images/release-1-10-graphic.png
 tags:
     - posts
     - flowforge
