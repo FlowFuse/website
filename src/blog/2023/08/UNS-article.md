@@ -14,11 +14,16 @@ A few years ago, I wrote an [article](https://www.linkedin.com/pulse/iiot-circle
 
 The Automation Pyramid is grounded in the standard [ISA-95](https://www.isa.org/products/ansi-isa-95-00-01-2010-iec-62264-1-mod-enterprise), which aligns with [IEC 62264](https://www.iso.org/standard/57308.html) and [DIN EN 62264](https://www.beuth.de/en/standard/din-en-62264-1/207270059). It delineates the functional hierarchy within a manufacturing enterprise. Over 25 variations of the Automation Pyramid exist in academic literature, all of them fundamentally mapping to the same core concept, tracing back to the [Computer-integrated manufacturing](https://en.wikipedia.org/wiki/Computer-integrated_manufacturing) (CIM)-Pyramid of the 1970s. Although ISA-95 does not explicitly refer to a pyramid, it introduces five functional hierarchical levels often visualized as a pyramid.
 
-![Automation Pyramid ISA95](./images/UNS/ISA95.svg)
+#### ISA-95 - Visualization
+![ISA95](./images/UNS/ISA95.svg)
+
+#### Automation Pyramid - Visualization
+![Automation Pyramid](./images/UNS/Automation-Pyramid.png)
+Source: Katti, Badarinath. (2020). Ontology-Based Approach to Decentralized Production Control in the Context of Cloud Manufacturing Execution Systems. 10.13140/RG.2.2.11486.46402.
 
 A notable critique of ISA-95 is the absence of some operational functions and hierarchical levels commonly seen in manufacturing, leading to a rigidity that limits its applicability. This inflexibility has been acknowledged in a more recent framework, called the ["Reference Architectural Model Industry 4.0"](https://www.isa.org/intech-home/2019/march-april/features/rami-4-0-reference-architectural-model-for-industr) RAMI 4.0 ([IEC PAS 63088](https://www.beuth.de/en/norm/pd-iec-pas-63088/272832590)). As a result, the authors' introduced a ["Smart Grid Architecture Model"](https://syc-se.iec.ch/wp-content/uploads/2019/10/Reference_Architecture_final.pdf) (SGAM) with three primary dimensions: Life Cycle & Value Stream ([IEC 62890](https://www.vde-verlag.de/iec-standards/248992/iec-62890-2020.html)), Hierarchy Levels ([IEC 62264](https://www.iso.org/standard/57308.html) and [IEC 61512](https://www.vde-verlag.de/iec-standards/216764/iec-61512-4-2009.html)), and six main layers displaying the functional architecture of the asset and the separation into physical and digital world.
 
-![RAMI4.0](./images/UNS/RAMI40.gif){ width="800" height="600" style="display: block; margin: 0 auto" }
+![RAMI4.0](./images/UNS/RAMI40.gif)
 
 However, my primary critique revolves around another issue – the structure and proposed communication methodology. Models based on layers, where each tier represents a functional area and could be covered by one or more applications, almost always lead to three fundamental problems:
 
