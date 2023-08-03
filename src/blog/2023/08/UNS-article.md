@@ -8,7 +8,7 @@ image: blog/2023/08/images/UNS/UNS-Headline.svg
 tags:
     - posts
 ---
-A few years ago, I wrote an [article](https://www.linkedin.com/pulse/iiot-circle-marian-raphael-demme/), in German, detailing my understanding of how the Automation Pyramid, a widely adopted reference model for the IT landscape of manufacturing firms, is essentially hindering digital transformation. Now, as conversations around the Unified Namespace (UNS) and particular frameworks continue to evolve, I revisit my earlier notions, review the latest updates to reference frameworks and update my article.
+A few years ago, I wrote an [article](https://www.linkedin.com/pulse/iiot-circle-marian-raphael-demme/), in German, detailing my understanding of how the Automation Pyramid, a widely adopted reference model for the IT landscape of manufacturing firms, is essentially hindering digital transformation. Now, as conversations around the Unified Namespace (UNS) and particular frameworks continue to evolve, I revisit my earlier notions, review the latest updates to reference frameworks, and update my article.
 <!--more-->
 ## The Pyramid’s Dilemma
 
@@ -24,21 +24,21 @@ However, my primary critique revolves around another issue – the structure and
 
 ### Problem 1: Information Loss and Transaction Costs
 
-In the traditional model, data collection flows upward from Levels 0 to 4, while planning goes downward from Level 4 to 0. Information traversing from Level 0 to Level 4 has to pass through at least four stages. Despite theoretical lossless transmission of information, the practical scenario inevitably results in some degree of information loss between levels. The result is that the original information from Level 0 arrives at Level 4 late, altered, or not at all.
+In the traditional model, data collection flows upward from Levels 0 to 4, while planning goes downward from Level 4 to 0. Information traversing from Level 0 to Level 4 has to pass through at least four stages. Despite the theoretical lossless transmission of information, the practical scenario inevitably results in some degree of information loss between levels. The result is that the original information from Level 0 arrives at Level 4 late, altered, or not at all.
 
-**Example:** In a manufacturing plant, multiple sensors at Level 1 detect a sudden event. By the time this information passes through intermediary layers (e.g. PLC, SCADA, MES) to reach Level 4 where a planning decision can be made, it is delayed and distorted due to the multiple transitions. The factory might suffer damage before proper actions are taken because the original data didn't arrive on time or not at all. 
+**Example:** In a manufacturing plant, multiple sensors at Level 1 detect a sudden event. By the time this information passes through intermediary layers (e.g. PLC, SCADA, MES) to reach Level 4 where a planning decision can be made, it is delayed and distorted due to the multiple transitions. The factory might suffer damage before proper actions are taken because the original data didn't arrive on time or at all. 
 
 ### Problem 2: The Expense of One-to-One Connections 
 
-The Automation Pyramid is based on diffrent layers. Consequently, one-to-one connections between IT systems become a necessity for data transfer between levels. For example, Level 3 IT systems need at least two connections to the adjacent levels. This can lead to thousands of one-to-one interfaces between IT systems, incurring exorbitant costs for projects and maintenance.
+The Automation Pyramid is based on different layers. Consequently, one-to-one connections between IT systems become a necessity for data transfer between levels. For example, Level 3 IT systems need at least two connections to the adjacent levels. This can lead to thousands of one-to-one interfaces between IT systems, incurring exorbitant costs for projects and maintenance.
 
-**Example:** In a semiconductor company, the Manufacturing Execution System (MES) serves as a critical intermediary in the Automation Pyramid. It must be integrated both with PLCs at the lower level for real-time control and with the ERP system at a higher level for business planning. This complex integration leads to the creation of numerous one-to-one connections. Furthermore, in implementing Industry 4.0 use cases like analytical applications, the MES data is often required, creating even more connections. The multitude of connections complicates the system, making changes extremely difficult and maintenance intensive. This inflexibility becomes a barrier to adaptability and growth, hindering the efficient digital transformation of the manufacturing process.
+**Example:** In a semiconductor company, the Manufacturing Execution System (MES) serves as a critical intermediary in the Automation Pyramid. It must be integrated both with PLCs at the lower level for real-time control and with the ERP system at the higher level for business planning. This complex integration leads to the creation of numerous one-to-one connections. Furthermore, in implementing Industry 4.0 use cases like analytical applications, MES data is often required, creating even more connections. The multitude of connections complicates the system, making changes extremely difficult and maintenance intensive. This inflexibility becomes a barrier to adaptability and growth, hindering the efficient digital transformation of the manufacturing process.
 
 ### Problem 3: AI's Dependence on Data 
 
-Artificial intelligence (AI) requires extensive, well-organized data. Given the current architecture, data would have to be  collected and prepared from case to case for each individual system and leves. This would invariably lead to numerous new one-to-one connections, offering no flexibility. Hence, AI and the Automation Pyramid can only collaborate in a significantly restricted manner.
+Artificial intelligence (AI) requires extensive, well-organized data. Given the current architecture, data would have to be  collected and prepared from case to case for each individual system and level. This would invariably lead to numerous new one-to-one connections, offering no flexibility. Hence, AI and the Automation Pyramid can only collaborate in a significantly restricted manner.
 
-**Example:** A car manufacturing firm aims to leverage a neural network for predictive maintenance. Within the constraints of the existing Automation Pyramid's architecture, the positioning for such an application is non-existent. To train the neural network and subsequently analyse the data, a consolidation of varying hierarchical data is essential, such as sensory input, maintenance records, production scheduling plans, etc. Under the current architecture, the introduction of this application precipitates the creation of a multitude of new one-to-one connections. Consequently, it underscores the pressing need to rethink the structural paradigms.
+**Example:** A car manufacturing firm aims to leverage a neural network for predictive maintenance. Within the constraints of the existing Automation Pyramid's architecture, the positioning for such an application is nonexistent. To train the neural network and subsequently analyse the data, a consolidation of varying hierarchical data is essential, such as sensory input, maintenance records, production scheduling plans, etc. Under the current architecture, the introduction of this application precipitates the creation of a multitude of new one-to-one connections. Consequently, it underscores the pressing need to rethink the structural paradigms.
 
 ## IIoT Circle and Unified Namespace
 
@@ -50,7 +50,7 @@ In essence, Unified Namespace serves as the main data exchange hub within an org
 
 ### Single Source of Truth 
 
-The Unified Namespace breaks down the linear and deterministic data structure, which creates data silos restricted to their specific systems. Instead, Unified Namespace centralizes data from across the entire organization. This results in a 'single source of truth' - a consolidated, current, and comprehensive overview of the organization's data.
+The Unified Namespace breaks down the linear and deterministic data structure, which create data silos restricted to their specific systems. Instead, Unified Namespace centralizes data from across the entire organization. This results in a 'single source of truth' - a consolidated, current, and comprehensive overview of the organization's data.
 
 ### The Organizational Structure 
 
@@ -62,7 +62,7 @@ The Publish-Subscribe (Pub-Sub) model facilitates communication that decouples t
 
 ## A Necessity for Open Source
 
-Moreover, in this discourse on the Unified Namespace, we cannot overlook the role of open-source. Owning foundational digital infrastructure, such as the Unified Namespace, is a necessity for any corporation embarking on its digital transformation journey. This ownership provides a solid foundation, allowing companies to chart their destinies. To avoid the constraining bounds of vendor lock-in, which can significantly limit a company's digital capabilities; open-source or self-developed software offers the best recourse. By its nature, open-source promotes transparency, collaboration, and freedom of use. These aspects are fundamental in fostering innovation and continuous improvement. As exemplified by the [MING Stack](https://flowforge.com/blog/2023/02/ming-blog/), open source software can be and should be incorporated into every level of the hierarchy.
+Moreover, in this discourse on the Unified Namespace, we cannot overlook the role of open-source. Owning foundational digital infrastructure, such as the Unified Namespace, is a necessity for any corporation embarking on its digital transformation journey. This ownership provides a solid foundation, allowing companies to chart their destinies. To avoid the constraining bounds of vendor lock-in, which can significantly limit a company's digital capabilities; open-source or self-developed software offers the best recourse. By its nature, open-source promotes transparency, collaboration, and freedom of use. These aspects are fundamental to fostering innovation and continuous improvement. As exemplified by the [MING Stack](https://flowforge.com/blog/2023/02/ming-blog/), open source software can and should be incorporated into every level of the hierarchy.
 
 ## Summary – Advancing Current Standards
 
