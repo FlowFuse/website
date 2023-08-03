@@ -1,7 +1,7 @@
 ---
-title: FlowForge now available on  AWS Marketplace
+title: FlowForge 1.10 Release Now Available
 subtitle: New FlowForge 1.10 also includes improvements to device management and importing environment variable templates.
-description: New FlowForge 1.10 release makes is possible to install the FlowForge platform from the AWS marketplace and improvements to device management.
+description: New FlowForge 1.10 release introduces importing of environment variable templates and improvements to device management.
 date: 2023-08-03 
 authors: ["ian-skerrett"]
 image: /blog/2023/07/images/release-1.9.0.png
@@ -11,16 +11,9 @@ tags:
     - releases
 ---
 
-FlowForge 1.10 now makes it possible to install the FlowForge platform from the AWS Marketplace. In addition, the release includes improvements to device management and importing environment variable templates.
+FlowForge 1.10 release includes improvements to device management and importing environment variable templates.
 
 <!--more-->
-
-## AWS Marketplace
-It is now possible to install FlowForge on AWS directly from the AWS Marketplace. This makes it a lot easier for developers to install and run FlowForge on the AWS Cloud. 
-
-The FlowForge open source edition is the default version offered from the marketplace, so users can get started free of charge.  Users are able to use the BYOL (Bring Your Own License) feature of AWS Marketplace to upgrade to a commercially licensed version.
-
-
 ## Import Environment Variable Templates  [#2372](https://github.com/flowforge/flowforge/issues/2372)
 
 FlowForge 1.10 now allows users to import environment variable templates. This makes it much easier and less error prone to maintain and add new environment variables to Node-RED instances running on FlowForge. 
@@ -50,7 +43,8 @@ Team libraries allow Node-RED development team to share common flows and nodes t
 ## Community Contributions
 
 Thanks to our community members for their contributions to this release.
-
+- [dfulgham](https://github.com/dfulgham) - Added support for annotation substitutions [#95](https://github.com/flowforge/flowforge-driver-k8s/pull/95)
+- [elanaviter](https://github.com/elenaviter) - Editors: allow optional service account linkage [#92](https://github.com/flowforge/flowforge-driver-k8s/pull/92)
 
 ## What's next?
 
