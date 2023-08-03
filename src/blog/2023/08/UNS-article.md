@@ -10,7 +10,6 @@ tags:
 ---
 A few years ago, I wrote an [article](https://www.linkedin.com/pulse/iiot-circle-marian-raphael-demme/), in German, detailing my understanding of how the Automation Pyramid, a widely adopted reference model for the IT landscape of manufacturing firms, is essentially hindering digital transformation. Now, as conversations around the Unified Namespace (UNS) and particular frameworks continue to evolve, I revisit my earlier notions, review the latest updates to reference frameworks and update my article.
 <!--more-->
-
 ## The Pyramid’s Dilemma
 
 The Automation Pyramid is grounded in the standard [ISA-95](https://www.isa.org/products/ansi-isa-95-00-01-2010-iec-62264-1-mod-enterprise), which aligns with [IEC 62264](https://www.iso.org/standard/57308.html) and [DIN EN 62264](https://www.beuth.de/en/standard/din-en-62264-1/207270059). It delineates the functional hierarchy within a manufacturing enterprise. Over 25 variations of the Automation Pyramid exist in academic literature, all of them fundamentally mapping to the same core concept, tracing back to the [Computer-integrated manufacturing](https://en.wikipedia.org/wiki/Computer-integrated_manufacturing) (CIM)-Pyramid of the 1970s. Although ISA-95 does not explicitly refer to a pyramid, it introduces five functional hierarchical levels often visualized as a pyramid.
@@ -72,3 +71,11 @@ The lag of standards behind the latest innovation is an open secret, a problem r
 ISA-95 Part 6 mentions a Messaging Service Model (MSM) and proposes a "publish-subscribe" model as an option for transactions. This is a great step in the right direction. My recommendation for ISA-95 is to further develop Part 6 to clearly delineate the implementation pattern of the Unified Namespace. Additionally, ISA-95 Part 1 should make explicit references to the communication pattern detailed in Part 6 and transition from a layer model to a cycle, with the Unified Namespace as an integral part of the framework. 
 
 RAMI 4.0's Communication Layer is rather skeletal. It suggests the use of OPC-UA for everything in manufacturing, from "Product" to "Work Center". For "Enterprise" and "Connected World", it states "still undecided". My improvement suggestion is to define the "Communication Layer" new and to be more technology-agnostic. Be more explicit about what needs to be done and more flexible about how to do it.
+
+---
+
+#### Article and Video Recommendations about the Unified Namespace
+
+- [Videos from Walker Reynolds about UNS](https://youtu.be/PB_9HIgSCWc) - The term "Unified Namespace" was coined by Walker Reynolds of 4.0 Solutions. You can learn more about it by watching his YouTube videos on the topic.
+- [HiveMQ's UNS Blog Article](https://www.hivemq.com/article/what-is-unified-namespace-uns-iiot-industry-40/)
+- [Integrating the Unified Namespace into Your Enterprise Architecture: An Architect's Guide](https://learn.umh.app/blog/integrating-the-unified-namespace-into-your-enterprise-architecture-an-architects-guide/) - A very concrete implementation guide for UNS by United Manufacturing Hub.
