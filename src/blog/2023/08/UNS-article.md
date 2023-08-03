@@ -4,7 +4,7 @@ subtitle: A Critical Examination of the Automation Pyramid's Obstruction to Digi
 description: This article analyzes the Automation Pyramid's constraints and explains the Unified Namespace, highlighting its potential to evolve digital transformation in manufacturing.
 date: 2023-08-08 
 authors: ["marian-demme"]
-#image: blog/2023/07/images/opc-ua-3/opc-ua-3-title-image.png
+image: blog/2023/08/images/UNS/UNS-Headline.svg
 tags:
     - posts
 ---
