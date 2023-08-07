@@ -21,10 +21,10 @@
         </li>
         {% for row in section.rows %}
         <li class="ff-feature-row">
-            <label {% if row.info %}class="sticky left-0 h-full" onclick="openInfo('{{ row.id }}')"{% else %}class="sticky left-0 h-full pointer-events-none"{% endif %}>
+            <label {% if row.info %}class="sticky left-0 h-full" onclick="openInfo('{{ row.id }}', '{{ section.hosting }}')"{% else %}class="sticky left-0 h-full pointer-events-none"{% endif %}>
                 {{ row.label }}
                 {% if row.info %}
-                <i id="ff-info--{{ row.id }}" class="ff-icon ">{% include "components/icons/info.svg" %}</i>
+                <i id="ff-info--{{ row.id }}-{{ section.hosting }}" class="ff-icon ">{% include "components/icons/info.svg" %}</i>
                 {% endif %}
             </label>
             {% for value in row.values %}
@@ -67,8 +67,8 @@
     {% for section in sections %}
     {% for row in section.rows %}
     {% if row.info %}
-    <div id="ff-dialog--feature--{{ row.id }}" class="ff-dialog-container">
-        <div class="ff-dialog-shadow" onclick="closeInfo('{{ row.id }}')"></div>
+    <div id="ff-dialog--feature--{{ row.id }}-{{ section.hosting }}" class="ff-dialog-container">
+        <div class="ff-dialog-shadow" onclick="closeInfo('{{ row.id }}', '{{ section.hosting }}')"></div>
         <div class="ff-dialog-modal">
             <div id="ff-dialog--header" class="ff-dialog-header">Feature: {{ row.label }}</div>
             <div id="ff-dialog--content" class="ff-dialog-content">{{ row.info | safe }}</div>

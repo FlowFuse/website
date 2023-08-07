@@ -292,12 +292,12 @@ meta:
 </script>
 
 <script>
-    function openInfo(id) {
-        capture('info-feature', { feature: id })
-        document.getElementById("ff-dialog--feature--" + id).classList.add('active')
+    function openInfo(id, hosting) {
+        capture('info-feature', { feature: id }, { hosting: hosting })
+        document.getElementById("ff-dialog--feature--" + id + "-" + hosting).classList.add('active')
     }
-    function closeInfo(id) {
-        document.getElementById("ff-dialog--feature--" + id).classList.remove('active')
+    function closeInfo(id, hosting) {
+        document.getElementById("ff-dialog--feature--" + id + "-" + hosting).classList.remove('active')
     }
 </script>
 
