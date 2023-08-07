@@ -1,13 +1,3 @@
-<script>
-    function openInfo(label, id) {
-        capture('info-feature', { feature: id})
-        document.getElementById("ff-dialog--feature--" + label).classList.add('active')
-    }
-    function closeInfo(label) {
-        document.getElementById("ff-dialog--feature--" + label).classList.remove('active')
-    }
-</script>
-
 <div class="ff-feature-table m-auto">
     <ul class="ff-feature-table-section sticky top-0 z-10">
         <li class="ff-feature--column-header">
@@ -19,6 +9,7 @@
             <label class="ml-2">Enterprise</label>
         </li>
     </ul>
+    
     {% for section in sections %}
     <ul class="ff-feature-table-section">
 
@@ -30,7 +21,7 @@
         </li>
         {% for row in section.rows %}
         <li class="ff-feature-row">
-            <label class="sticky left-0 h-full" onclick="openInfo('{{ row.label }}', '{{ row.id }}')">
+            <label {% if row.info %}class="sticky left-0 h-full" onclick="openInfo('{{ row.id }}')"{% else %}class="sticky left-0 h-full pointer-events-none"{% endif %}>
                 {{ row.label }}
                 {% if row.info %}
                 <i id="ff-info--{{ row.id }}" class="ff-icon ">{% include "components/icons/info.svg" %}</i>
@@ -74,14 +65,16 @@
 
 <div id="feature-dialogs">
     {% for section in sections %}
-        {% for row in section.rows %}
-            <div id="ff-dialog--feature--{{ row.label }}" class="ff-dialog-container">
-                <div class="ff-dialog-shadow" onclick="closeInfo('{{ row.label }}')"></div>
-                <div class="ff-dialog-modal">
-                    <div id="ff-dialog--header" class="ff-dialog-header">Feature: {{ row.label }}</div>
-                    <div id="ff-dialog--content" class="ff-dialog-content">{{ row.info | safe }}</div>
-                </div>
-            </div>
-        {% endfor %}
+    {% for row in section.rows %}
+    {% if row.info %}
+    <div id="ff-dialog--feature--{{ row.id }}" class="ff-dialog-container">
+        <div class="ff-dialog-shadow" onclick="closeInfo('{{ row.id }}')"></div>
+        <div class="ff-dialog-modal">
+            <div id="ff-dialog--header" class="ff-dialog-header">Feature: {{ row.label }}</div>
+            <div id="ff-dialog--content" class="ff-dialog-content">{{ row.info | safe }}</div>
+        </div>
+    </div>
+    {% endif %}
+    {% endfor %}
     {% endfor %}
 </div>

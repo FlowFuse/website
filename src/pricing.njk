@@ -290,3 +290,14 @@ meta:
   });
 });
 </script>
+
+<script>
+    function openInfo(id) {
+        capture('info-feature', { feature: id })
+        document.getElementById("ff-dialog--feature--" + id).classList.add('active')
+    }
+    function closeInfo(id) {
+        document.getElementById("ff-dialog--feature--" + id).classList.remove('active')
+    }
+</script>
+

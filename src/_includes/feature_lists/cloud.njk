@@ -1,87 +1,91 @@
 {%
     set sections = [{
         label: "Features",
+        hosting: "cloud",
         rows: [{
-            id: "hosting",
+            id: "cloud-hosting",
             label: "Hosting",
             values: ['FlowForge Cloud', 'FlowForge Cloud', 'FlowForge Cloud'],
             info: "<p>FlowForge can be deployed using Docker, Kubernetes or run the core FlowForge platform on your local machine directly.</p><p>FlowForge Cloud provides you with a browser-based, secure and cloud-based platform, with all of the FlowForge Premium features included and managed by us to reduce your operational overheads.</p>"
         }, {
-            id: "team-members",
+            id: "cloud-team-members",
             label: "Team Members",
             values: ['2', '20', 'Unlimited'],
             info: "<p>Tooltip info here</p>"
         }, {
-            id: "cloud-instances",
+            id: "cloud-cloud-instances",
             label: "Number of cloud instances",
             values: ['2', 'Licensed amount', 'Licensed amount'],
             info: "<p>Tooltip info here</p>"
         }, {
-            id: "devices",
+            id: "cloud-devices",
             label: "Number of devices",
             values: ['2', 'Licensed amount', 'Licensed amount'],
             info: "<p>Tooltip info here</p>"
         }, {
-            id: "persistent files",
+            id: "cloud-persistent files",
             label: "Persistent files",
             values: ['1 Gb', '10 Gb', '100 Gb'],
             info: "<p>Tooltip info here</p>"
         }, {
-            id: "persistent-context",
+            id: "cloud-persistent-context",
             label: "Persistent Context",
             values: ['10 Mb', '100 Mb', '1 Gb'],
             info: "<p>In-memory values defined in a Node-RED flow will persist across project restarts and upgrades.</p>"
         }, {
-            id: "nr-hosting",
+            id: "cloud-nr-hosting",
             label: "Node-RED Hosting",
             values: ['check', 'check', 'check'],
             info: "<p>Tooltip info here</p>"
         }, {
-            id: "device-mgmt",
+            id: "cloud-device-mgmt",
             label: "Device Management",
             values: ['check', 'check', 'check'],
             info: "<p>Connect to edge devices to quickly assess and update logic. Debug one device and roll out improvements to your fleet in minutes. All securely without requiring full device access for your whole organisation.</p>"
         }, {
-            id: "audit-log",
+            id: "cloud-audit-log",
             label: "Audit Log",
             values: ['check', 'check', 'check'],
             info: "<p>Keep track of everything going on in your Node-RED instances and FlowForge.</p><p>Audit Logs provide details on what actions have taken place, when they happened, and who did them.</p>"
         }, {
-            id: "pipelines",
+            id: "cloud-pipelines",
             label: "DevOps Pipelines",
             values: ['check', 'check', 'check'],
             info: "<p>Tooltip info here</p>"
         }, {
-            id: "security",
+            id: "cloud-security",
             label: "Endpoint Security",
             values: ['None/HTTP Basic Auth', 'None/HTTP Basic Auth/FF Auth', 'None/HTTP Basic Auth/FF Auth'],
             info: "<p>Tooltip info here</p>"
          }, { 
-            id: "rbac",
+            id: "cloud-rbac",
             label: "Role-Based Access Control",
             values: ['check', 'check', 'check'],
             info: "<p>FlowForge's intuitive team management tooling makes it easy for you to control whom has access to what.</p>"
         }, {
+            id: "cloud-ha",
             label: "High Availibility",
             values: [null, null, 'check'],
             info: "<p>Leverage horizontal scaling for reliable and scalible processing of your data through Node-RED.</p>"
         }, {
+            id: "cloud-team-library",
             label: "Team Library",
             values: [null, 'check', 'check'],
             info: "<p>Tooltip info here</p>"
         }, {
-            id: "sso",
+            id: "cloud-sso",
             label: "Single Sign-On (SSO)",
             values: [null, null, 'check'],
             info: "<p>FlowForge can be configured to run with your own Single Sign-On (SSO) provider. Allow users to access FlowForge with a single set of login credentials, improving security, user experience, and save them time.</p>"
         }, {
-            id: "project-nodes",
+            id: "cloud-project-nodes",
             label: "Seamless Data Stream (Project nodes)",
             values: [null, 'check', 'check'],
             info: "<p><a href=\"https://github.com/flowforge/flowforge-nr-project-nodes\" target=\"blank\">FlowForge Project Nodes</a> enable the passing of data and messages between your Node-RED projects, included with all FlowForge Projects by default.</p>"
         }]
     }, {
         label: "Support",
+        hosting: "cloud",
         rows: [{
             label: "Committed SLA",
             values: ['None', '99.5', 'XX.X in normal mode; 99.9 in HA mode']
@@ -94,6 +98,7 @@
         }]
     }, {
         label: "Subscription",
+        hosting: "cloud",
         rows: [{
             label: "Price",
             values: ['$15/month', 'Starting at $25/instance', 'Contact Sales']
