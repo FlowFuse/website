@@ -34,7 +34,7 @@ OPC-UA is a popular communication protocol used to communicate industrial data b
   - Part 2: [How to Build a Secure OPC-UA Server for PLCs in Node-RED](https://flowforge.com/blog/2023/07/how-to-build-a-secure-opc-ua-server-for-plcs-in-node-red/)
   - Part 3: [How to Build an OPC UA Client Dashboard in Node-RED](https://flowforge.com/blog/2023/07/how-to-build-a-opc-client-dashboard-in-node-red/)
 
-<br>
+
 
 - [First Pre-Alpha Release of the new Node-RED Dashboard](https://flowforge.com/blog/2023/07/dashboard-0-1-release/) - update on FlowForge's work to develop the next generation of Node-RED dashboard.
 
