@@ -215,10 +215,10 @@ meta:
 
 <!-- Feature List -->
 {% set featuresHtml %}
-<div class="contentCloud max-w-full overflow-x-scroll sm:overflow-x-visible">
+<div class="contentCloud max-w-full overflow-x-scroll sm:overflow-x-visible h-[60vh] md:h-full sticky top-[60px]">
     {% include "feature_lists/cloud.njk" %}
 </div>
-<div class="contentSelfHosted hide max-w-full overflow-x-scroll sm:overflow-x-visible">
+<div class="contentSelfHosted hide max-w-full overflow-x-scroll sm:overflow-x-visible h-[60vh] md:h-full sticky top-[60px]">
     {% include "feature_lists/self-hosted.njk" %}
 </div>
 {% endset -%}
