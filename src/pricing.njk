@@ -32,7 +32,7 @@ meta:
         </div>
     </div>
     <!-- Plans -->
-    <div class="contentCloud m-auto transition duration-700">
+    <div class="contentCloud m-auto transition duration-1000">
         <div class="pricing-tiles flex flex-col md:grid md:flex-row md:max-w-screen-lg mt-4 md:mt-0">
             <div class="pricing-tile md:h-full">
                 <div class="pricing-tile-background pb-6 grid flex-col">
@@ -122,7 +122,7 @@ meta:
             </div>
         </div>
     </div>
-    <div class="contentSelfHosted hide m-auto transition duration-700">
+    <div class="contentSelfHosted hide m-auto transition duration-1000">
         <div class="pricing-tiles flex flex-col md:grid md:flex-row md:max-w-screen-lg mt-4 md:mt-0">
             <div class="pricing-tile md:h-full">
                 <div class="pricing-tile-background pb-6 grid flex-col">
@@ -214,16 +214,14 @@ meta:
 {% include "components/divider-flow--top-red--light.njk" %}
 
 <!-- Feature List -->
-<div class="sticky">
-    {% set featuresHtml %}
-    <div class="contentCloud transition duration-700 max-w-full overflow-x-scroll sm:overflow-x-visible h-[60vh] md:h-full">
+{% set featuresHtml %}
+    <div class="contentCloud transition duration-1000 max-w-full overflow-x-scroll sm:overflow-x-visible h-[60vh] md:h-full">
         {% include "feature_lists/cloud.njk" %}
     </div>
-    <div class="contentSelfHosted transition duration-700 hide max-w-full overflow-x-scroll sm:overflow-x-visible h-[60vh] md:h-full">
+    <div class="contentSelfHosted hide transition duration-1000 max-w-full overflow-x-scroll sm:overflow-x-visible h-[60vh] md:h-full">
         {% include "feature_lists/self-hosted.njk" %}
     </div>
-    {% endset -%}
-</div>
+{% endset %}
 
 <!-- Feature Comparison -->
 <div id="feature-comparison" class="product w-full ff-bg-light px-6 pt-20 pb-20 md:px-0 md:pt-6 md:pb-42">
@@ -248,7 +246,7 @@ meta:
         </div>
     </div>
         <!-- Feature List -->
-        <div>{{ featuresHtml | safe }}</div>
+        <div class="sticky">{{ featuresHtml | safe }}</div>
     </div>
     <p class="max-w-screen-lg m-auto mt-12 text-center">
         At FlowForge we understand that the security practises of our product
@@ -278,20 +276,11 @@ meta:
 
         // // Toggle .hide class on cloud and selfHosted elements
         cloud.forEach((item) => {
-                item.classList.toggle("hide");
+            item.classList.toggle("hide");
         });
 
         selfHosted.forEach((item) => {
             item.classList.toggle("hide");
-        });
-
-        // // Toggle .show class on cloud and selfHosted elements
-        cloud.forEach((item) => {
-                item.classList.toggle("show");
-        });
-
-        selfHosted.forEach((item) => {
-            item.classList.toggle("show");
         });
   });
 });

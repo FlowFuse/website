@@ -404,7 +404,6 @@
     visibility: hidden;
     position: absolute;
     opacity: 0;
-    top: 100px;
     /* transition: visibility 0s 2s, opacity 2s, position 0s 2s, linear; */
 }
 
