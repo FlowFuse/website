@@ -1,4 +1,4 @@
-## ## What's the Change node in Node-RED used for?
+## What's the Change node in Node-RED used for?
 
 The Change node in Node-RED is used for modifying the content of messages within a flow. It allows you to add, remove, modify, or set message properties and payload values, making it a fundamental node for data transformation and manipulation. The Change node is essential for preparing data for further processing, formatting messages for specific outputs, and adapting data to suit the requirements of downstream nodes in a flow.
 
