@@ -3,11 +3,6 @@
         label: "Features",
         hosting: "self-hosted",
         rows: [{
-            id: "hosting",
-            label: "Hosting",
-            values: ['Self-Hosted', 'Self-Hosted', 'Self-Hosted'],
-            info: "<p>FlowForge can be deployed using Docker, Kubernetes or run the core FlowForge platform on your local machine directly.</p><p>FlowForge Cloud provides you with a browser-based, secure and cloud-based platform, with all of the FlowForge Premium features included and managed by us to reduce your operational overheads.</p>"
-        }, {
             id: "team-members",
             label: "Team Members",
             values: ['2', '20', 'Unlimited'],
@@ -90,12 +85,12 @@
         hosting: "self-hosted",
         rows: [{
             label: "Price",
-            values: ['$15/month', 'Contact Sales', 'Contact Sales']
+            values: ['Free', 'Contact Sales', 'Contact Sales']
         }],
         buttons: [{
-            cta: "TRY FOR FREE",
-            url: "https://app.flowforge.com/account/create",
-            onclick: "capture('cta-join', {'position': 'primary'}, {'plan': 'starter'})"
+            cta: "INSTALL NOW",
+            url: "/docs/install",
+            onclick: "capture('cta-install', {'position': 'secondary'}, {'plan': 'starter'})"
         }, {
             cta: "CONTACT SALES",
             url: "/book-demo"

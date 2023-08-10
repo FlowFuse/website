@@ -3,11 +3,6 @@
         label: "Features",
         hosting: "cloud",
         rows: [{
-            id: "hosting",
-            label: "Hosting",
-            values: ['FlowForge Cloud', 'FlowForge Cloud', 'FlowForge Cloud'],
-            info: "<p>FlowForge can be deployed using Docker, Kubernetes or run the core FlowForge platform on your local machine directly.</p><p>FlowForge Cloud provides you with a browser-based, secure and cloud-based platform, with all of the FlowForge Premium features included and managed by us to reduce your operational overheads.</p>"
-        }, {
             id: "team-members",
             label: "Team Members",
             values: ['2', '20', 'Unlimited'],
@@ -106,11 +101,11 @@
         buttons: [{
             cta: "TRY FOR FREE",
             url: "https://app.flowforge.com/account/create",
-            onclick: "capture('cta-join', {'position': 'primary'}, {'plan': 'starter'})"
+            onclick: "capture('cta-join', {'position': 'secondary'}, {'plan': 'starter'})"
         }, {
             cta: "SIGN-UP NOW",
             url: "https://app.flowforge.com/account/create",
-            onclick: "capture('cta-join', {'position': 'primary'}, {'plan': 'team'})"
+            onclick: "capture('cta-join', {'position': 'secondary'}, {'plan': 'team'})"
         }, {
             cta: "CONTACT SALES",
             url: "/book-demo"
