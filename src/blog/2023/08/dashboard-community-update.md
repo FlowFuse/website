@@ -31,7 +31,7 @@ Steve has been doing some incredible work on the new `ui-template` widget. This 
 
 The Template node also provides access to two built-in functions that can be used to send data back to Node-RED:
 - **send(msg)**: Outputs a message (defined by the input to this function call) from this node in the Node-RED flow.
-- **submit()**: Send a `FormData` object when attached to a `<form>` element. The created object will consnist of the `name` attributes for each form element, corresponding to their respective `value` attributes.
+- **submit()**: Send a `FormData` object when attached to a `<form>` element. The created object will consist of the `name` attributes for each form element, corresponding to their respective `value` attributes.
 
 ### Toggle Switch (<a href="https://flowforge.github.io/flowforge-nr-dashboard/nodes/widgets/ui-switch.html" target="_blank">docs</a>)
 
