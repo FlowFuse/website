@@ -25,7 +25,7 @@ Below you'll find a summary of the changes we've made since our [last community 
 
 ### Template (<a href="https://flowforge.github.io/flowforge-nr-dashboard/nodes/widgets/ui-template.html" target="_blank">docs</a>)
 
-Steve has been doing some increddible work on the new `ui-template` widget. This widget allows you to create your own custom components using raw HTML, but also works with any of the components in the [Vuetify](https://vuetifyjs.com/en/components/all/) component library. It's a powerful tool that will enable users to be creative with their own widgets that are not currently available with the standard set of widgets.
+Steve has been doing some incredible work on the new `ui-template` widget. This widget allows you to create your own custom components using raw HTML, but also works with any of the components in the [Vuetify](https://vuetifyjs.com/en/components/all/) component library. It's a powerful tool that will enable users to be creative with their own widgets that are not currently available with the standard set of widgets.
 
 ![Examples of ui-template](https://flowforge.github.io/flowforge-nr-dashboard/assets/ui-template.9d278589.png)
 
