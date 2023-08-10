@@ -4,10 +4,11 @@ subtitle: Our latest Community Update for Dashboard 2.0, including the latest ne
 description: Our latest Community Update for Dashboard 2.0, including the latest new widgets, fixes and updates on what's next.
 date: 2023-08-10
 authors: ["joe-pavitt"]
-image: "/images/blog/community-news.jpeg"
+image: "/blog/2023/08/images/Dashboard Community Update-Aug23.jpg"
 tags:
     - posts
-    - newsletter
+    - releases
+    - community
 ---
 
 Welcome to the latest Node-RED Dashboard 2.0 update. We've added lots of new widgets, cleaned up compatibility issues alongside Dashboard 1.0 and made strides to improve the events system linking the Node-RED editor with the Dashboard.
