@@ -13,7 +13,7 @@ Besides unit conversion, the range node can be used for:
 **Data Smoothing**: Smooth out data fluctuations by mapping values within a range to a single value.
 
 
-## Examples for the Change node
+## Examples for the Range node
 
 An example of a change node that converts from miles to kilometers.
 
