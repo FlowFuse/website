@@ -403,6 +403,7 @@
 .hide {
     visibility: hidden;
     position: absolute;
+    top: 0px;
     opacity: 0;
     /* transition: visibility 0s 2s, opacity 2s, position 0s 2s, linear; */
 }
