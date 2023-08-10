@@ -43,7 +43,7 @@ Adds a toggle switch to the user interface that can be rendered with a label, an
 
 ### Sidebar
 
-As requested on multiple occassions by the community when we released v0.0.4 of Dashboard 2.0, we've now added a side menu, as per Dashboard 1.0. Currently, this _just_ provides a link to the Dashboard UI, but gives us a canvas on which to expand functionality in the future.
+As requested on multiple occasions by the community when we released v0.0.4 of Dashboard 2.0, we've now added a side menu, as per Dashboard 1.0. Currently, this _just_ provides a link to the Dashboard UI, but gives us a canvas on which to expand functionality in the future.
 
 ### Improved Events System
 
