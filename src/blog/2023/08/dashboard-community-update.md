@@ -57,7 +57,7 @@ We've also made sure that any legacy options that had been transferred over from
 
 ## What's Next?
 
-We have a lot of things to keep us busy, we are documenting them all in GitHub, and have made public our [planning board](https://github.com/orgs/flowforge/projects/15/views/1). You can see what we're working on, what's coming up next, and what we've got planned for the future [here]()
+We have a lot of things to keep us busy, we are documenting them all in GitHub, and have made public our [planning board](https://github.com/orgs/flowforge/projects/15/views/1). You can see what we're working on, what's coming up next, and what we've got planned for the future.
 
 As always, we're open to ideas, feedback & contributions. If you'd like to get involved, please check out our GitHub Repository [here](https://github.com/flowforge/flowforge-nr-dashboard).
 
