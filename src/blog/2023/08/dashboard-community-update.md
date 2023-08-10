@@ -15,7 +15,9 @@ Welcome to the latest Node-RED Dashboard 2.0 update. We've added lots of new wid
 
 <!--more-->
 
-I firstly need to begin with a  "Thank You" to the dozens of pre-alpha users we've had so far. Thanks for being patient whilst we're shipping fast and breaking things. We've had some great feedback, and we're working hard to implement is as best as possible.
+I firstly need to begin with a  _"Thank You"_ to the dozens of pre-alpha users we've had so far. Thanks for being patient whilst we're shipping fast and breaking things. We've had some great feedback, and we're working hard to implement is as best as possible.
+
+With all of the changes we've been making, we've also made the decision to jump to minor version numbers, and so, **0.1.0 is available now**.
 
 Below you'll find a summary of the changes we've made since our [last community update](/blog/2023/07/dashboard-0-1-release).
 
