@@ -101,14 +101,15 @@
         buttons: [{
             cta: "TRY FOR FREE",
             url: "https://app.flowforge.com/account/create",
-            onclick: "capture('cta-join', {'position': 'secondary'}, {'plan': 'starter'})"
+            onclick: "capture('cta-join', {'position': 'secondary'}, {'plan': 'cloud-starter'})"
         }, {
             cta: "SIGN-UP NOW",
             url: "https://app.flowforge.com/account/create",
-            onclick: "capture('cta-join', {'position': 'secondary'}, {'plan': 'team'})"
+            onclick: "capture('cta-join', {'position': 'secondary'}, {'plan': 'cloud-team'})"
         }, {
             cta: "CONTACT SALES",
-            url: "/book-demo"
+            url: "/book-demo",
+            onclick: "capture('cta-contact', {'position': 'secondary'}, {'plan': 'cloud-enterprise'})"
         }] 
     }]
 %}

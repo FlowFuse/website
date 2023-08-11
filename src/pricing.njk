@@ -35,7 +35,7 @@ meta:
     <div class="contentCloud m-auto transition duration-1000">
         <div class="pricing-tiles flex flex-col md:grid md:flex-row md:max-w-screen-lg mt-4 md:mt-0">
             <div class="pricing-tile md:h-full">
-                <div class="pricing-tile-background pb-6 grid flex-col">
+                <div class="pricing-tile-background pb-6 md:grid flex-col">
                     <div class="flex flex-col items-center text-left md:flex-row md:-mb-0 md:px-0 md:block md:i md:items-left">
                         <div class="flex flex-row justify-between mt-4 w-full gap-x-2">
                             <h4 style="display:inline-block;">Starter</h4>
@@ -58,13 +58,13 @@ meta:
                                 <note class="note text-teal-100">/month</note>    
                             </div>
                         </div>
-                        <a class="ff-btn ff-btn--primary uppercase align-baseline w-full" href="https://app.flowforge.com/account/create" onclick="capture('cta-join', {'position': 'primary'})">TRY FOR FREE</a> 
+                        <a class="ff-btn ff-btn--primary uppercase align-baseline w-full" href="https://app.flowforge.com/account/create" onclick="capture('cta-join', {'position': 'primary'}, {'plan': 'cloud-starter'})">TRY FOR FREE</a> 
                     </div>
                 </div>
             </div>
     
             <div class="pricing-tile md:h-full">
-                <div class="pricing-tile-background pb-6 grid flex-col">
+                <div class="pricing-tile-background pb-6 md:grid flex-col">
                     <div class="flex flex-col items-center text-left md:flex-row md:-mb-0 md:px-0 md:block md:i md:items-left">
                         <div class="flex flex-row justify-between mt-4 w-full gap-x-2">
                             <h4 style="display:inline-block;">Team</h4>
@@ -90,13 +90,13 @@ meta:
                                 <note class="note text-teal-100">/Node-RED</br>instance/month</note>    
                             </div>
                         </div>
-                        <a class="ff-btn ff-btn--primary uppercase align-baseline w-full" href="https://app.flowforge.com/account/create" onclick="capture('cta-join', {'position': 'primary'})">Sign-up Now</a> 
+                        <a class="ff-btn ff-btn--primary uppercase align-baseline w-full" href="https://app.flowforge.com/account/create" onclick="capture('cta-join', {'position': 'primary'}, {'plan': 'cloud-team'})">Sign-up Now</a> 
                     </div>
                 </div>
             </div>
     
             <div class="pricing-tile md:h-full">
-                <div class="pricing-tile-background pb-6 grid flex-col">
+                <div class="pricing-tile-background pb-6 md:grid flex-col">
                     <div class="flex flex-col items-center text-left md:flex-row md:-mb-0 md:px-0 md:block md:i md:items-left">
                         <div class="flex flex-row justify-between mt-4 w-full gap-x-2">
                             <h4 style="display:inline-block;">Enterprise</h4>
@@ -116,7 +116,7 @@ meta:
                         <div class="mt-7 md:text-left items-left w-full mb-8 flex flex-row">
                             <div class="self-end">{% include "components/icons/chat-bubble-left-right.svg" %}</div>
                         </div>
-                        <a class="ff-btn ff-btn--primary uppercase align-baseline w-full" href='/book-demo'>CONTACT SALES</a>
+                        <a class="ff-btn ff-btn--primary uppercase align-baseline w-full" href='/book-demo' onclick="capture('cta-contact', {'position': 'primary'}, {'plan': 'cloud-enterprise'})">CONTACT SALES</a>
                     </div>
                 </div>
             </div>
@@ -125,7 +125,7 @@ meta:
     <div class="contentSelfHosted hide m-auto transition duration-1000">
         <div class="pricing-tiles flex flex-col md:grid md:flex-row md:max-w-screen-lg mt-4 md:mt-0">
             <div class="pricing-tile md:h-full">
-                <div class="pricing-tile-background pb-6 grid flex-col">
+                <div class="pricing-tile-background pb-6 md:grid flex-col">
                     <div class="flex flex-col items-center text-left md:flex-row md:-mb-0 md:px-0 md:block md:i md:items-left">
                         <div class="flex flex-row justify-between mt-4 w-full gap-x-2">
                             <h4 style="display:inline-block;">Starter</h4>
@@ -145,13 +145,13 @@ meta:
                         <div class="mt-9 md:text-left items-left w-full mb-11 flex flex-row">
                             <h2 class="self-end">Free</h2>
                         </div>
-                        <a class="ff-btn ff-btn--primary uppercase align-baseline w-full" href="/docs/install" onclick="capture('cta-install', {'position': 'primary'})">Install now</a> 
+                        <a class="ff-btn ff-btn--primary uppercase align-baseline w-full" href="/docs/install" onclick="capture('cta-install', {'position': 'primary'}, {'plan': 'sh-starter'})">Install now</a> 
                     </div>
                 </div>
             </div>
     
             <div class="pricing-tile md:h-full">
-                <div class="pricing-tile-background pb-6 grid flex-col">
+                <div class="pricing-tile-background pb-6 md:grid flex-col">
                     <div class="flex flex-col items-center text-left md:flex-row md:-mb-0 md:px-0 md:block md:i md:items-left">
                         <div class="flex flex-row justify-between mt-4 w-full gap-x-2">
                             <h4 style="display:inline-block;">Team</h4>
@@ -171,13 +171,13 @@ meta:
                         <div class="mt-7 md:text-left items-left w-full mb-8 flex flex-row">
                             <div class="self-end">{% include "components/icons/chat-bubble-left-right.svg" %}</div>
                         </div>
-                        <a class="ff-btn ff-btn--primary uppercase align-baseline w-full" href='/book-demo'>CONTACT SALES</a>
+                        <a class="ff-btn ff-btn--primary uppercase align-baseline w-full" href="/book-demo" onclick="capture('cta-contact', {'position': 'primary'}, {'plan': 'sh-team'})">CONTACT SALES</a>
                     </div>
                 </div>
             </div>
     
             <div class="pricing-tile md:h-full">
-                <div class="pricing-tile-background pb-6 grid flex-col">
+                <div class="pricing-tile-background pb-6 md:grid flex-col">
                     <div class="flex flex-col items-center text-left md:flex-row md:-mb-0 md:px-0 md:block md:i md:items-left">
                         <div class="flex flex-row justify-between mt-4 w-full gap-x-2">
                             <h4 style="display:inline-block;">Enterprise</h4>
@@ -197,7 +197,7 @@ meta:
                         <div class="mt-7 md:text-left items-left w-full mb-8 flex flex-row">
                             <div class="self-end">{% include "components/icons/chat-bubble-left-right.svg" %}</div>
                         </div>
-                        <a class="ff-btn ff-btn--primary uppercase align-baseline w-full" href='/book-demo'>CONTACT SALES</a>
+                        <a class="ff-btn ff-btn--primary uppercase align-baseline w-full" href="/book-demo" onclick="capture('cta-contact', {'position': 'primary'}, {'plan': 'sh-enterprise'})">CONTACT SALES</a>
                     </div>
                 </div>
             </div>

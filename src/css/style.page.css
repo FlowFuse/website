@@ -199,7 +199,6 @@
         left: -1px;
         background: linear-gradient(#1f293700, #1f2937);
         border-radius: 10px;
-        pointer-events: none;
         @apply px-6;
     }
 

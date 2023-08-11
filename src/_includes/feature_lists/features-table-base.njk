@@ -24,7 +24,7 @@
             <label {% if row.info %}class="sticky left-0 h-full" onclick="openInfo('{{ row.id }}', '{{ section.hosting }}')"{% else %}class="sticky left-0 h-full pointer-events-none"{% endif %}>
                 {{ row.label }}
                 {% if row.info %}
-                <i id="ff-info--{{ row.id }}-{{ section.hosting }}" class="ff-icon ">{% include "components/icons/info.svg" %}</i>
+                <i id="ff-info--{{ row.id }}-{{ section.hosting }}" class="ff-icon min-w-[20px]">{% include "components/icons/info.svg" %}</i>
                 {% endif %}
             </label>
             {% for value in row.values %}
