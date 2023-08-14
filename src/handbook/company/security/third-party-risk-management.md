@@ -2,7 +2,7 @@
 navTitle: Third-Party Risk Management Policy
 ---
 
-# Access Control Policy
+# Third-Party Risk Management Policy
 
 | Policy owner   | Effective date |
 | -------------- | -------------- |
