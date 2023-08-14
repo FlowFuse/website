@@ -104,7 +104,7 @@ module.exports = function(eleventyConfig) {
     });
 
     eleventyConfig.addFilter('shortDate', dateObj => {
-        return spacetime(dateObj).format('{date} {month-short}, {year}')
+        return spacetime(new Date(dateObj)).format('{date} {month-short}, {year}')
     });
 
     eleventyConfig.addFilter('duration', mins => {
