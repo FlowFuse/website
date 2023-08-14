@@ -2,7 +2,7 @@
 navTitle: Asset Management Policy
 ---
 
-# Access Control Policy
+# Asset Management Policy
 
 | Policy owner   | Effective date |
 | -------------- | -------------- |
