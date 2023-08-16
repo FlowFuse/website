@@ -30,6 +30,13 @@ At this stage we're using the default set of status's in HubSpot:
 | Unresponsive | We have not received a reply in 2 weeks, they are ghosting us. |
 | Bad timing | FlowForge was, for whatever reason, not a great fit right now. However, it's potentially a good fit later. |
 
+## From MQL to SQL - Qualifying questions
+
+Have you adopted Node-RED? If so, what have you built with Node-RED?
+How many Node Red instances do you have, and how many people are developing on Node-RED?
+Is Node-RED used in production?	
+What are you looking to build in the next year with Node-RED?
+
 ## From SQL to Opportunity
 
 For each sales opportunity a clear answer for the customers needs and wants should be known. It boils down to the following questions:
