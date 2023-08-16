@@ -1,5 +1,5 @@
 ---
-title: FlowForge 0.2 released
+title: FlowFuse 0.2 released
 subtitle: Keeping the releases flowing of our open platform for Node-RED
 description: Keeping the releases flowing of our open platform for Node-RED
 date: 2022-02-17 1:00:00.0
@@ -10,7 +10,7 @@ tags:
     - releases
 ---
 
-Four weeks have passed since our initial release of FlowForge, and we're happy
+Four weeks have passed since our initial release of FlowFuse, and we're happy
 to release v0.2 today as we continue moving forward and evolve the platform.
 
 <!--more-->
@@ -35,19 +35,19 @@ own change-log, we're still thinking about how best to share a single view of th
 updates.
 
 
-### Getting started with FlowForge
+### Getting started with FlowFuse
 
-The documentation provides a guide for [installing FlowForge on a local server](https://github.com/flowforge/flowforge/tree/main/docs).
+The documentation provides a guide for [installing FlowFuse on a local server](https://github.com/flowforge/flowforge/tree/main/docs).
 
-If you haven't played with FlowForge 0.1 yet, here's a more complete walk-through
+If you haven't played with FlowFuse 0.1 yet, here's a more complete walk-through
 of the platform:
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/YYZDx8n17Ys" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-### Upgrading FlowForge
+### Upgrading FlowFuse
 
-If you installed FlowForge 0.1 and want to upgrade, our documentation provides a
-guide for [upgrading FlowForge on a local server](https://github.com/flowforge/flowforge/tree/main/docs/install/local#upgrade).
+If you installed FlowFuse 0.1 and want to upgrade, our documentation provides a
+guide for [upgrading FlowFuse on a local server](https://github.com/flowforge/flowforge/tree/main/docs/install/local#upgrade).
 
 ### Getting help
 
@@ -62,7 +62,7 @@ We also have a `#flowforge` channel on the [Node-RED Slack workspace](https://no
 
 Our regular release cycle puts the next release on Thursday 17th March. We've
 got some key features planned in this release around [Project Templates](https://github.com/flowforge/flowforge/issues/141) and [Stacks](https://github.com/flowforge/flowforge/issues/285) -
-which will underpin how you can customise Node-RED within FlowForge.
+which will underpin how you can customise Node-RED within FlowFuse.
 
 We'll also have some exciting news to share about our own hosted service you'll
 be able to sign-up for.

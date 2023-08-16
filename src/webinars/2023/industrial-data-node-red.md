@@ -1,6 +1,6 @@
 ---
 title: "Connect, Integrate & Visualize Industrial Production Metrics with Node-RED"
-subtitle: Join FlowForge's Steve McLaughlin as he showcases how easy it is to use Node-RED to visualize popular production metrics using Node-RED.
+subtitle: Join FlowFuse's Steve McLaughlin as he showcases how easy it is to use Node-RED to visualize popular production metrics using Node-RED.
 image: /images/webinars/webinar-april.jpg
 video: yx_YduKR5Fs
 date: 2023-04-27
@@ -27,4 +27,4 @@ This webinar will include a live demonstration of how to set up Node-RED to acco
 To attend the webinar please register in advance.
 
 **About Steve:**
-Steve McLaughlin, Node-RED OSS Developer at FlowForge, will be leading this webinar. Steve has over 25 years as an engineer in the automotive sector primarily interfacing field technologies and IS/IT. During his work in the automotive industry, he discovered the power of using Node-RED to connect, integrate and visualize industrial data. Steve is also a long time member of the Node-RED community.
+Steve McLaughlin, Node-RED OSS Developer at FlowFuse, will be leading this webinar. Steve has over 25 years as an engineer in the automotive sector primarily interfacing field technologies and IS/IT. During his work in the automotive industry, he discovered the power of using Node-RED to connect, integrate and visualize industrial data. Steve is also a long time member of the Node-RED community.

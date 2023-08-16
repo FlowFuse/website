@@ -1,6 +1,6 @@
 ---
 title: "Getting Started with Node-RED Dashboard"
-subtitle: Join Rob Marcer, Developer Educator at FlowForge, for a webinar on how to use the Node-RED Dashboard nodes
+subtitle: Join Rob Marcer, Developer Educator at FlowFuse, for a webinar on how to use the Node-RED Dashboard nodes
 image: /images/webinars/webinar-may.jpg
 video: o6Hpvm9T6_I
 date: 2023-05-25

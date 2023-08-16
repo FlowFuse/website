@@ -7,7 +7,7 @@ authors: ["zeger-jan-van-de-weg"]
 image: blog/2023/06/images/flowforge-nodered-mqtt-hivemq.png
 ---
 
-In the world of IIoT (Industrial Internet of Things), effective and efficient communication between devices is crucial. One protocol that has gained significant popularity for its lightweight and scalable nature is MQTT (Message Queuing Telemetry Transport). This post explains what MQTT is, highlight its relevance in IIoT, and walk you through the process of connecting a broker (HiveMQ) with Node-RED in FlowForge.
+In the world of IIoT (Industrial Internet of Things), effective and efficient communication between devices is crucial. One protocol that has gained significant popularity for its lightweight and scalable nature is MQTT (Message Queuing Telemetry Transport). This post explains what MQTT is, highlight its relevance in IIoT, and walk you through the process of connecting a broker (HiveMQ) with Node-RED in FlowFuse.
 
 <!--more-->
 
@@ -25,7 +25,7 @@ There are several reasons why MQTT has become a preferred choice for IoT and ind
 ## Sending messages to a MQTT broker with Node-RED
 
 As broker we'll use a [Cloud MQTT broker](https://www.hivemq.com/mqtt-cloud-broker/)
-provided by HiveMQ. We'll use FlowForge to host and manage the Node-RED instance for us. After opening the editor
+provided by HiveMQ. We'll use FlowFuse to host and manage the Node-RED instance for us. After opening the editor
 the MQTT nodes are pre-installed as these are "Core Nodes" in Node-RED.
 
 Drag in the "Inject" node, as well as the "MQTT out" node and connect the Injects output to the MQTT
@@ -58,5 +58,5 @@ timestamp appear in the sidebar every second!
 MQTT has emerged as a lightweight and efficient messaging protocol for IIoT applications. Its low overhead, reliability, and asynchronous communication make it an good choice. By following the steps outlined above, you can easily connect MQTT using HiveMQ with Node-RED and leverage the power of MQTT in your applications.
 
 For the sake of simplicity we've sent messages from one Node-RED to another Node-RED.
-Sending data from and to a Node-RED is much easier achieved with the FlowForge
+Sending data from and to a Node-RED is much easier achieved with the FlowFuse
 [Project Nodes](https://flowforge.com/docs/user/projectnodes/).

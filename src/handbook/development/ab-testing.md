@@ -8,7 +8,7 @@ A/B Testing is a very useful exercise by which we can distribution variants of a
 
 ## Defining a Test
 
-A/B Tests can be proposed via the "A/B Testing" issue template on the [FlowForge Website repository](https://github.com/flowforge/website/issues/new/choose). These issues are used to track findings. Results will be shared here from PostHog, and will provide a searchable source in the future if we want to reference historical A/B tests when proposiing new ideas that we may have already tried.
+A/B Tests can be proposed via the "A/B Testing" issue template on the [FlowFuse Website repository](https://github.com/flowforge/website/issues/new/choose). These issues are used to track findings. Results will be shared here from PostHog, and will provide a searchable source in the future if we want to reference historical A/B tests when proposiing new ideas that we may have already tried.
 
 ### What are your variants?
 
@@ -22,7 +22,7 @@ You must have a trackable metric that the variants can compete over. Example suc
 
 - Clicks of a certain button, e.g. a primary or secondary CTA
 - $pageview events of a certain URL
-- Number of Instances spun up on FlowForge
+- Number of Instances spun up on FlowFuse
 
 ## How we run A/B Tests
 

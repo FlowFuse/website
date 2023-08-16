@@ -1,7 +1,7 @@
 ---
-title: FlowForge v1.6 Now Available
-subtitle: FlowForge Now Supports Multi-Instance Node-RED for Complex Application Development
-description: FlowForge Now Supports Multi-Instance Node-RED for Complex Application Development
+title: FlowFuse v1.6 Now Available
+subtitle: FlowFuse Now Supports Multi-Instance Node-RED for Complex Application Development
+description: FlowFuse Now Supports Multi-Instance Node-RED for Complex Application Development
 date: 2023-04-13 
 authors: ["ian-skerrett"]
 image: /blog/2023/04/images/release-1.6.0.png
@@ -11,19 +11,19 @@ tags:
     - releases
 ---
 
-The new FlowForge 1.6 adds new support for multi-instance Node-RED within a single application and support for logging from remote devices.
+The new FlowFuse 1.6 adds new support for multi-instance Node-RED within a single application and support for logging from remote devices.
 
 <!--more-->
 
-## FlowForge Applications Can Now Support Multi-Instance Node-RED
+## FlowFuse Applications Can Now Support Multi-Instance Node-RED
 
-FlowForge 1.6 expands the scope of applications to now allow for multiple instances of Node-RED. For complex Node-RED applications, it is common to have different flows interacting with other flows or flows deployed to different target environments. The ability to associate all these different flows with a single application makes it easier for the development, test and deployment of these types of complex applications.
+FlowFuse 1.6 expands the scope of applications to now allow for multiple instances of Node-RED. For complex Node-RED applications, it is common to have different flows interacting with other flows or flows deployed to different target environments. The ability to associate all these different flows with a single application makes it easier for the development, test and deployment of these types of complex applications.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/OHChdWeRI9Q" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ## Access Node-RED logs from remote devices
 
-FlowForge makes it easy to deploy Node-RED out to remote devices. However, once Node-RED has been deployed to the remote device it is often difficult to troubleshoot or debug. Now with FlowForge 1.6, you can get access to the Node-RED logs from remote devices. This makes it much easier to understand and debug the behavior of a remote device.
+FlowFuse makes it easy to deploy Node-RED out to remote devices. However, once Node-RED has been deployed to the remote device it is often difficult to troubleshoot or debug. Now with FlowFuse 1.6, you can get access to the Node-RED logs from remote devices. This makes it much easier to understand and debug the behavior of a remote device.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/yW1zxwiCmto" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
@@ -58,21 +58,21 @@ Application Overview: “Open Editor” shouldn’t show (or should be disabled)
 
 ## Try it out
 
-We're confident you can have self managed FlowForge running locally in under 30 minutes.
+We're confident you can have self managed FlowFuse running locally in under 30 minutes.
 You can install our [local build](https://flowforge.com/docs/install/local/), use [Docker](https://flowforge.com/docs/install/docker/), or [Kubernetes](https://flowforge.com/docs/install/kubernetes/).
 
-If you'd rather use our hosted offering: [Get started for free](https://app.flowforge.com/account/create) on FlowForge Cloud.
+If you'd rather use our hosted offering: [Get started for free](https://app.flowforge.com/account/create) on FlowFuse Cloud.
 
-## Upgrading FlowForge
+## Upgrading FlowFuse
 
-[FlowForge Cloud](https://app.flowforge.com) is already running 1.6.
+[FlowFuse Cloud](https://app.flowforge.com) is already running 1.6.
 
-If you installed a previous version of FlowForge and want to upgrade, our documentation provides a
-guide for [upgrading your FlowForge instance](https://flowforge.com/docs/upgrade/).
+If you installed a previous version of FlowFuse and want to upgrade, our documentation provides a
+guide for [upgrading your FlowFuse instance](https://flowforge.com/docs/upgrade/).
 
 ## Getting help
 
-Please check FlowForge's [documentation](https://flowforge.com/docs/) as the answers to many questions are covered there.
+Please check FlowFuse's [documentation](https://flowforge.com/docs/) as the answers to many questions are covered there.
 
 If you hit any problems with the platform please raise an [issue on GitHub](https://github.com/flowforge/flowforge/issues).
 That's also a great place to send us any feedback or feature requests.

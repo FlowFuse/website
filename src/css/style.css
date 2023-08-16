@@ -23,7 +23,7 @@ html, body {
 }
 
 /*
-    Standard FlowForge Sizings
+    Standard FlowFuse Sizings
 */
 h1 {
     font-size: 2.25rem;
@@ -1146,7 +1146,7 @@ pre.mermaid {
     background-color: #ffffff
 }
 /*
-    FlowForge markdown-it rendered footnote styles
+    FlowFuse markdown-it rendered footnote styles
 */
 div.content hr.footnotes-sep {
     margin-top: 3em;

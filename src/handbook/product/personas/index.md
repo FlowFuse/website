@@ -1,8 +1,8 @@
 # Personas
 
-Personas are fictional characters that represent the different users we expect to interact with FlowForge as a brand and/or platform. Personas are a generalized way of talking about the ideal target we are aiming to communicate with and design for. 
+Personas are fictional characters that represent the different users we expect to interact with FlowFuse as a brand and/or platform. Personas are a generalized way of talking about the ideal target we are aiming to communicate with and design for. 
 
-Personas help us not only define our messaging and marketing delivery, but also our product. Keeping personas in mind allows us to use the correct language and make the best decisions to address their specific problems and pain points. At FlowForge, we have many personas that will evolve over time: 
+Personas help us not only define our messaging and marketing delivery, but also our product. Keeping personas in mind allows us to use the correct language and make the best decisions to address their specific problems and pain points. At FlowFuse, we have many personas that will evolve over time: 
 
 ##### Manufacturing Inc.
 
@@ -36,8 +36,8 @@ Personas help us not only define our messaging and marketing delivery, but also 
 
 - **Occupation**: What is their professional occupation? This doesn't have to correlate directly to why they're a Persona, but can play a very important role defining them.
 - **Purchasing Role**: Where in the hierarchy of a purchasing decision do they sit, and to what scale could we expect such a decision to bring in financially?
-- **Technical Skillset**: This is a FlowForge-specific characteristic we've introduced for our Personas. It's important as a low-code platform to consider technical skillsets, that developers or those in the technical industry such as ourselves may take for granted, and even _how_ they've learned their technical skillset, should they have one.
-- **Node-RED Experience**: Another FlowForge-specific detail. This helps us frame the sales/marketing strategy for this Persona, and will also frame explanations of what FlowForge is and does.
+- **Technical Skillset**: This is a FlowFuse-specific characteristic we've introduced for our Personas. It's important as a low-code platform to consider technical skillsets, that developers or those in the technical industry such as ourselves may take for granted, and even _how_ they've learned their technical skillset, should they have one.
+- **Node-RED Experience**: Another FlowFuse-specific detail. This helps us frame the sales/marketing strategy for this Persona, and will also frame explanations of what FlowFuse is and does.
 - **Additional information**: A catch-all for any other remarks or comments to be made for the persona.
 
 
@@ -54,7 +54,7 @@ Personas help us not only define our messaging and marketing delivery, but also 
 
 ### Goals
 
-What problem does the persona want to solve, or which benefit does the character seek? Why would the persona want to use or buy FlowForge?
+What problem does the persona want to solve, or which benefit does the character seek? Why would the persona want to use or buy FlowFuse?
 
 - **Job To Be Done**: In the context of the persona, what are they trying to achieve?
 - **Challenges**: What are their regular blockers and pain points when trying to work towards their goals?
@@ -351,7 +351,7 @@ What problem does the persona want to solve, or which benefit does the character
                 <li>Self-Service</li>
                 <li>Fast first response time from support, fast turn around times on issues. Direct communications</li>
                 <li>“Just needs to work” out of the box</li>
-                <li>Hands on when first using FlowForge/Node-RED</li>
+                <li>Hands on when first using FlowFuse/Node-RED</li>
             </ul>
         </div>
         <div class="flex flex-col">

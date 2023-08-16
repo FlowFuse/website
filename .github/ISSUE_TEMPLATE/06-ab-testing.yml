@@ -19,4 +19,4 @@ body:
      Example success metrics could be:
       - "Clicks of a certain button"
       - "$pageview events of a certain URL"
-      - Number of Instances spun up on FlowForge
+      - Number of Instances spun up on FlowFuse

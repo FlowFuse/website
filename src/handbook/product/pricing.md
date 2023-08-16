@@ -4,7 +4,7 @@ navTitle: Pricing Principles
 
 # Pricing Principles
 
-This page sets out the concepts that we license and what units are measured across both FlowForge Cloud  and Self-managed. Commercial decisions outside the scope of this document.
+This page sets out the concepts that we license and what units are measured across both FlowFuse Cloud  and Self-managed. Commercial decisions outside the scope of this document.
 
 We have three primary tiers: Starter (Open-Source when self-managed), Premium, and Enterprise. The value and features provided within each tier correspond to the specific [persona](./personas/), acknowledging that a higher placement in the organisational chart typically implies different requirements.
 
@@ -28,12 +28,12 @@ This buyer-based approach helps us focus our efforts on the value to the end-use
 
 ## Teams
 
-Teams are the basic unit within FlowForge Cloud and the entity to which bills are charged.
+Teams are the basic unit within FlowFuse Cloud and the entity to which bills are charged.
 A teams can create zero or more applications, and one or more user can be members.
 Subject to access controls, some users can add cloud instances and remote devices (agents)
 to applications, and invite other members.
 
-The number of teams for the open source offering of FlowForge is limited to 50.
+The number of teams for the open source offering of FlowFuse is limited to 50.
 
 ## Applications
 
@@ -42,14 +42,14 @@ based on the number of Node-RED instances consuming resources inside application
 
 ## Cloud instances
 
-On the FlowForge Cloud, different levels of pricing is offered based on the
+On the FlowFuse Cloud, different levels of pricing is offered based on the
 resources that the instance has available (CPU/Mem). The price point is defined
 by the instance type which allows for an abstraction of stacks and billing. Additional
 features may also be defined by the instance type, for example: Custom Domains support.
 
-Self-managed FlowForge installs are licensed based on the number of Node-RED instances, regardless of
+Self-managed FlowFuse installs are licensed based on the number of Node-RED instances, regardless of
 available resources for each. Open source installs are limited to 50 instances per
-FlowForge installation, and some features for instances aren't available, for example Persistent Context.
+FlowFuse installation, and some features for instances aren't available, for example Persistent Context.
 
 ## Devices
 
@@ -61,7 +61,7 @@ Devices are part of the licensed instances. The limit in the open source edition
 
 ## Licenses
 
-From the perspective of licensing the there's an unlicensed edition: open-source. This version is always self-managed. There's also a licensed version of FlowForge, this can be self-managed or FlowForge Managed. For FlowForge managed properties there's 3 tiers; Starter, Premium, and Enterprise.
+From the perspective of licensing the there's an unlicensed edition: open-source. This version is always self-managed. There's also a licensed version of FlowFuse, this can be self-managed or FlowFuse Managed. For FlowFuse managed properties there's 3 tiers; Starter, Premium, and Enterprise.
 The open source edition doesn't require a license key to be uploaded. Without a valid license a basic set of features and
 quantity of instances(50), users(150), teams(50), and devices(50) are available.
 When a license is purchased it provides all of the functionality of the higher

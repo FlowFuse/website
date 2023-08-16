@@ -1,5 +1,5 @@
 ---
-title: Announcing FlowForge Cloud
+title: Announcing FlowFuse Cloud
 subtitle: Hosting your Node-RED, so you don't have to.
 description: Join the waitlist for our cloud offering.
 date: 2022-02-23 19:44:00.0
@@ -16,7 +16,7 @@ our platform. In many cases this is a great solution, it
 allows for custom setups in your own environment. We know this isn't for everyone
 though, some people just want to start building with Node-RED without having to manage their servers.
 
-We are excited to announce FlowForge Cloud, a hosted
+We are excited to announce FlowFuse Cloud, a hosted
 Node-RED as a service offering and today we are opening the waitlist.
 
 [install-docs]: https://github.com/flowforge/flowforge/tree/9219e81399eaf52fb0ee5573707a52f5520fbfdd/docs/install
