@@ -8,7 +8,7 @@ on:
     - cron: "30 1 * * 5"
 jobs:
   build_deploy:
-    if: ${{ github.repository == 'flowforge/website' }}
+    if: ${{ github.repository == 'flowforge/flowfuse-website' }}
     runs-on: ubuntu-latest
     steps:
       - name: Check out website repository
