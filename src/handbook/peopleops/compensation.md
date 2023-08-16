@@ -8,7 +8,7 @@ FlowForge provides a comprehensive compensation package with salary, equity, and
 
 ## Introducing the Single-Point Increase Cycle
 
-FlowForge now follows a simplified single-point increase cycle for salary adjustments. The adjustments take place once a year, aligning with the company's budgeting and planning process. When determining compensation changes, FlowForge considers three factors: performance, inflation, and market standards. These factors are taken into account together to make decisions about adjusting employee compensation.
+FlowForge now follows a simplified single-point increase cycle for salary adjustments. These adjustments take place once a year, aligning with the company's budgeting and planning process. When determining compensation changes, FlowForge considers three factors: performance, inflation, and market standards. These factors are taken into account together to make decisions about adjusting employee compensation.
 
 # Performance Review
 
