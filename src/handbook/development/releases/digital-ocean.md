@@ -10,7 +10,7 @@ repository a GitHub Action will run and rebuild the image.
 Once complete the Release Manager should post to the #dev slack chanel to ask somebody with
 Digital Ocean access to do the following steps.
 
- 1. Log into the FlowForge team on Digital Ocean
+ 1. Log into the FlowFuse team on Digital Ocean
  2. Navigate to the "Images" section, from the "Manage" options in the left hand menu
  3. Select the new image from the "Droplets" list and click on "More"
     ![Digital Ocean Images view](../../images/releases/do-update-market-place.png)

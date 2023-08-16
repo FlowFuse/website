@@ -5,7 +5,7 @@ navTitle: Security Policy
 
 ## Reporting a Vulnerability
 
-Please report any vulnerabilities discovered in FlowForge products to security@flowforge.com.
+Please report any vulnerabilities discovered in FlowFuse products to security@flowforge.com.
 
 We will endeavour to acknowledge and fix any reported vulnerabilities ASAP based
 on its severity and assessed impact to our users.
@@ -16,7 +16,7 @@ At our sole discretion, we offer rewards for responsibly disclosed issues accord
 to their severity.
 
 Please note the following are general guidelines and any reward decisions are up
-to the discretion of FlowForge. We keep these reward levels under review to ensure
+to the discretion of FlowFuse. We keep these reward levels under review to ensure
 they provide a fair reflection of the issues being reported.
 
 

@@ -5,7 +5,7 @@ updated: 2022-11-24 12:11:19 +0100
 # Staging Environment
 
 We have a staging environment running on AWS which is a scaled down replica of
-our managed FlowForge offering, with a separate domain. Staging URL and sign in
+our managed FlowFuse offering, with a separate domain. Staging URL and sign in
 details can be found in the Developer Vault in 1Password.
 
 ## AWS Account
@@ -40,7 +40,7 @@ Currently there is no auto deployment to staging, this should be rectified in th
 When setting up a team you'll need to enter billing details. For credit card
 details, use [the Stripe mock data](https://stripe.com/docs/testing#testing-interactively).
 
-## Using the FlowForge Device Agent with staging
+## Using the FlowFuse Device Agent with staging
 
 Staging uses pre-release npm packages stored in a GitHub npm repository. To be able to use these packages you will need to authenticate with the repository.
 

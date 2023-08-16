@@ -26,7 +26,7 @@ The Node-RED community recently published the results of their [2023 Community S
 
 4. **Limitations to Node-RED Adoption**. This year's survey also explored factors that might limit the adoption of Node-RED. Approximately 27.9% of respondents stated that they perceived no additional need for Node-RED. However, the next most common responses were related to the perception that Node-RED is only suitable for proof-of-concept (POC) projects (19.9%), the lack of specific Node-RED features (13.3%), and the absence of professional support (10.1%).
 
-    It is important for the Node-RED community to demonstrate the platform's usage in production environments. Although changing the perception of Node-RED as solely a POC tool may take time, FlowForge is committed to helping shift this perspective. Moreover, FlowForge aims to address other identified issues by developing the FlowForge platform, which will provide the necessary features to create reliable, secure, and dependable Node-RED applications. FlowForge will also offer professional support to all its customers, ensuring that users have the assistance they need.
+    It is important for the Node-RED community to demonstrate the platform's usage in production environments. Although changing the perception of Node-RED as solely a POC tool may take time, FlowFuse is committed to helping shift this perspective. Moreover, FlowFuse aims to address other identified issues by developing the FlowFuse platform, which will provide the necessary features to create reliable, secure, and dependable Node-RED applications. FlowFuse will also offer professional support to all its customers, ensuring that users have the assistance they need.
 
 
 

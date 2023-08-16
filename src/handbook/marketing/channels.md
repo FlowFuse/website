@@ -42,13 +42,13 @@ Videos should:
 
 #### LinkedIn
 
-Posts should be framed in the context of FlowForge as an organisation and a team, don't get too technical. A relevant photo or image should be included in every post. Where the post is primarily of a video it should be embedded from Youtube. Where possible include the content in the post rather than linking out to external content.
+Posts should be framed in the context of FlowFuse as an organisation and a team, don't get too technical. A relevant photo or image should be included in every post. Where the post is primarily of a video it should be embedded from Youtube. Where possible include the content in the post rather than linking out to external content.
 
 #### Reddit
 
 Keep it short, Reddit posts should be factual, informal and have a call to action (a link) where a user can read more. If the content is a video we should post that directly on Reddit as that should result in greater interaction.
 
-#### Node-RED Slack (FlowForge section)
+#### Node-RED Slack (FlowFuse section)
 
 Keep it short, Slack messages should be factual, informal and have a call to action (a link) where a user can read more.
 

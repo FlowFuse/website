@@ -13,7 +13,7 @@ particular undertaking.
 When decisions need to be made regarding a DRI's area of responsibility, the DRI
 is the person who has the final say and is empowered to make those decisions.
 This allows for efficient decision-making and prevents decision paralysis or
-ambiguity within FlowForge. The DRI is expected to gather relevant input and
+ambiguity within FlowFuse. The DRI is expected to gather relevant input and
 feedback from other stakeholders but is ultimately responsible for making the
 final call. Other stakeholders might need to
 <a href="./values.md#disagreeandcommit">Disagree and Commit</a>. Regular
@@ -28,7 +28,7 @@ or project successfully.
 
 Note that both the CEO and CTO retain the right to veto decisions. This should very seldomly happen. 
 
-DRI's weren't invented by FlowForge, we stand on the shoulder of giants that
+DRI's weren't invented by FlowFuse, we stand on the shoulder of giants that
 championed the term and iterated before us. Read about the prior art:
 1. [Apple](http://fortune.com/2011/08/25/how-apple-works-inside-the-worlds-biggest-startup/)
 1. [GitLab](https://about.gitlab.com/handbook/people-group/directly-responsible-individuals/)

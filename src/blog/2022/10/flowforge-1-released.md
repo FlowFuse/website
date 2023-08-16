@@ -1,7 +1,7 @@
 ---
-title: FlowForge 1.0 released
-subtitle: FlowForge at 1.0, a huge milestone for us.
-description: FlowForge is now 1.0!
+title: FlowFuse 1.0 released
+subtitle: FlowFuse at 1.0, a huge milestone for us.
+description: FlowFuse is now 1.0!
 date: 2022-10-27 18:00:00.0
 authors: ["rob-marcer"]
 video: 5TLT7CQR7iI
@@ -11,13 +11,13 @@ tags:
     - releases
 ---
 
-Predefined environment variables for your Projects and Devices, manage your Project's modules and import your existing flows (and credentials) into your FlowForge [Projects](https://flowforge.com/docs/user/concepts/#project).
+Predefined environment variables for your Projects and Devices, manage your Project's modules and import your existing flows (and credentials) into your FlowFuse [Projects](https://flowforge.com/docs/user/concepts/#project).
 
 <!--more-->
 
 <!-- Keep reading for the details of what's in this release or you can watch our 1 minute roundup video of the new release above.  -->
 
-We're pleased to announce version 1.0 FlowForge is now available. Keep reading for a promotion code to get your first month free on FlowForge. Version 1.0 represents our vision of the base set of features needed for you to get great value from using FlowForge in a production environment. That's not to say we are done, we will continue to add features, improve our interfaces and fix bugs with the same enthusiasm as we've worked towards 1.0. We'd like to hear your feedback on what we will be including in [1.1 and beyond](https://github.com/orgs/flowforge/projects/5).
+We're pleased to announce version 1.0 FlowFuse is now available. Keep reading for a promotion code to get your first month free on FlowFuse. Version 1.0 represents our vision of the base set of features needed for you to get great value from using FlowFuse in a production environment. That's not to say we are done, we will continue to add features, improve our interfaces and fix bugs with the same enthusiasm as we've worked towards 1.0. We'd like to hear your feedback on what we will be including in [1.1 and beyond](https://github.com/orgs/flowforge/projects/5).
 
 ## Features
 [Standard Environment Variables set for both Projects and Devices](https://github.com/flowforge/flowforge/issues/841)
@@ -25,14 +25,14 @@ We're pleased to announce version 1.0 FlowForge is now available. Keep reading f
 Projects now get a set of predefined environment variables that can be used by their flows. These give your flows access to the projects unique id and name. When the flows are deployed to [devices](https://flowforge.com/docs/user/concepts/#device), they also get the device's id and name. That makes is easier to deploy flows across multiple devices and have each able to identify itself.
 
 [Add additional node modules to your projects](https://github.com/flowforge/flowforge/issues/405)
-This feature allows you to pre-define additional Node-RED nodes and node modules you may want to be installed in your FlowForge project, making it easier to manage.
+This feature allows you to pre-define additional Node-RED nodes and node modules you may want to be installed in your FlowFuse project, making it easier to manage.
 
-[Import existing projects into FlowForge](https://github.com/flowforge/flowforge/issues/835)
+[Import existing projects into FlowFuse](https://github.com/flowforge/flowforge/issues/835)
 
-You can now import your existing flow and credentials files straight into your FlowForge project - making it really easy to move your existing projects into the platform.
+You can now import your existing flow and credentials files straight into your FlowFuse project - making it really easy to move your existing projects into the platform.
 
 ## Improvements
-We've made a number of improvements to the overall experience of running FlowForge.
+We've made a number of improvements to the overall experience of running FlowFuse.
 
 - Editable Stack labels [#915](https://github.com/flowforge/flowforge/issues/915)
 - Check for suitable version of Node on Devices [#37](https://github.com/flowforge/flowforge-device-agent/issues/37)
@@ -64,21 +64,21 @@ As an open-source project, we welcome community involvement in what we're buildi
 
 ### Try it out
 
-[Sign up for FlowForge-Managed Premium](https://app.flowforge.com/account/create?code=RELEASE1) with this link or at the checkout enter the code **RELEASE1** to get your first project free for a month. As an open source project you can also use [FlowForge-Community](https://flowforge.com/docs/install/) for free, forever.
+[Sign up for FlowFuse-Managed Premium](https://app.flowforge.com/account/create?code=RELEASE1) with this link or at the checkout enter the code **RELEASE1** to get your first project free for a month. As an open source project you can also use [FlowFuse-Community](https://flowforge.com/docs/install/) for free, forever.
 
 
-### Upgrading FlowForge
+### Upgrading FlowFuse
 
-Our managed [FlowForge](https://app.flowforge.com) is already running 1.0. Upgrade your project Stacks to the latest version to make sure you get all the latest changes.
+Our managed [FlowFuse](https://app.flowforge.com) is already running 1.0. Upgrade your project Stacks to the latest version to make sure you get all the latest changes.
 
-If you installed a previous version of FlowForge and want to upgrade, our documentation provides a
-guide for [upgrading FlowForge on a local server](http://flowforge.com/docs/install#upgrade).
+If you installed a previous version of FlowFuse and want to upgrade, our documentation provides a
+guide for [upgrading FlowFuse on a local server](http://flowforge.com/docs/install#upgrade).
 
 ### Getting help
 
 If you hit any problems with the platform, or have questions to ask, please raise an [issue on GitHub](https://github.com/flowforge/flowforge/issues).
 That also includes if you have any feedback or feature requests.
 
-Customers of FlowForge Cloud can raise a ticket by emailing support@flowforge.com
+Customers of FlowFuse Cloud can raise a ticket by emailing support@flowforge.com
 
 We also have a `#flowforge` channel on the [Node-RED Slack workspace](https://nodered.org/slack).

@@ -10,7 +10,7 @@ We do two types or releases:
 
 ## Scheduled Releases
 
-We publish a new release of FlowForge in line with our [release plan](./planning.md#cadence). Each
+We publish a new release of FlowFuse in line with our [release plan](./planning.md#cadence). Each
 release has a Release Manager who oversees the process. This role rotates around
 the team to ensure everyone is able to do it and that we don't have any single
 points of failure in the process.
@@ -141,7 +141,7 @@ Once everything has been published, the Release Manager should:
 
 1. Run the staging CI pipeline [Build for Staging](https://github.com/flowforge/CloudProject/actions/workflows/build-kube.yml) against the main branch, to ensure staging is running the latest release.
   - Once that completes, verify it has deployed cleanly on Staging
-2. Raise a "FlowForge Cloud Change Requests" Issue in [CloudProject Project](https://github.com/flowforge/CloudProject/issues/new/choose) to request Production to be updated to the new version.
+2. Raise a "FlowFuse Cloud Change Requests" Issue in [CloudProject Project](https://github.com/flowforge/CloudProject/issues/new/choose) to request Production to be updated to the new version.
 3. Notify the CTO/Senior Engineer that the release is ready to publish to production.
 
 Once Production has been updated and verified, the Release Manager should announce
@@ -196,5 +196,5 @@ All release activity should be highlighted in #dev so the team is aware.
 
 ## Launch Lunch
 
-To celebrate the launch of a new version of FlowForge, we organize a lunch on
+To celebrate the launch of a new version of FlowFuse, we organize a lunch on
 the release day. See also the [peopleops section](../../peopleops/compensation#launch-lunch).

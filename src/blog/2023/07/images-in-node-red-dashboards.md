@@ -1,5 +1,5 @@
 ---
-title: How to add images to Node-RED dashboards when using FlowForge
+title: How to add images to Node-RED dashboards when using FlowFuse
 subtitle: Import your images into your Node-RED dashboards, wherever you are running your instances
 description: Import your images into your Node-RED dashboards, wherever you are running your instances
 date: 2023-07-21
@@ -11,7 +11,7 @@ tags:
     - node-red
 ---
 
-Using images in your Node-RED dashboards can significantly improve your users' experience. The most common method to add images to dashboards, is to store them within the filesystem of an Node-RED instance but sometimes that's not an option. How can you easily use images when working in a containerised environment such as Docker, Kubernetes, or FlowForge?
+Using images in your Node-RED dashboards can significantly improve your users' experience. The most common method to add images to dashboards, is to store them within the filesystem of an Node-RED instance but sometimes that's not an option. How can you easily use images when working in a containerised environment such as Docker, Kubernetes, or FlowFuse?
 
 <!--more-->
 
@@ -31,7 +31,7 @@ How can we include images in dashboards, and be confident that a given build of 
 
 ## Inspiration
 
-There are various solutions to this problem, I wanted to share one I came across when working with a FlowForge customer recently. I've modified the flows to make them more general in design, but the underlying principal is the same. I asked if I was OK to credit the customer but they said there was no need. Thanks for the inspiration, kind customer!
+There are various solutions to this problem, I wanted to share one I came across when working with a FlowFuse customer recently. I've modified the flows to make them more general in design, but the underlying principal is the same. I asked if I was OK to credit the customer but they said there was no need. Thanks for the inspiration, kind customer!
 
 ## Solution explanation
 
@@ -49,7 +49,7 @@ The key benefit of pulling the images from URLs this way is, no matter where you
 
 ## File and file-in nodes
 
-I've included the flows as json below so you can try them out yourself. Please note, I'm using FlowForge's own [file and file-in nodes](/docs/user/filenodes/) in these examples. If you want to use these flows on hosting other than FlowForge, you will need to replace the nodes with the standard Node-RED file and file-in nodes.
+I've included the flows as json below so you can try them out yourself. Please note, I'm using FlowFuse's own [file and file-in nodes](/docs/user/filenodes/) in these examples. If you want to use these flows on hosting other than FlowFuse, you will need to replace the nodes with the standard Node-RED file and file-in nodes.
 
 ## Custom nodes used
 

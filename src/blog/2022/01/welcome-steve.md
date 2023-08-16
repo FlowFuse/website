@@ -1,6 +1,6 @@
 ---
 title: Welcome Steve
-description: Welcoming Steve McLaughlin to FlowForge Inc.
+description: Welcoming Steve McLaughlin to FlowFuse Inc.
 date: 2022-01-20
 authors: ["nick-oleary"]
 tags:
@@ -9,7 +9,7 @@ tags:
     - news
 ---
 
-We're continuing to grow the FlowForge team with our latest hire; Steve McLaughlin
+We're continuing to grow the FlowFuse team with our latest hire; Steve McLaughlin
 who is joining our development team.
 
 <!--more-->
@@ -27,10 +27,10 @@ of the editor.
 
 Steve joins us from a background in Industrial IoT in the automative manufacturing
 space - experience and knowledge that will be invaluable as we look to growing the
-FlowForge platform.
+FlowFuse platform.
 
 Steve will be focussed on the Node-RED side of our activities - helping to continue
 the ongoing development and growth of the open source project at the heart of what
-FlowForge is about.
+FlowFuse is about.
 
 Welcome aboard Steve!

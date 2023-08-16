@@ -13,11 +13,11 @@ tags:
 
 Having an HTTP endpoint trigger your flows is very useful. From any browser or command line you now have the ability to trigger your flows.
 <!--more-->
-Doing so safely with authentication is slightly harder, but not a lot. FlowForge makes it rather easy to accomplish.
+Doing so safely with authentication is slightly harder, but not a lot. FlowFuse makes it rather easy to accomplish.
 
 ### Creating the HTTP flow
 
-When you start a project on FlowForge, remember the project name. For this how-to we’ll use `example`. Open the editor and drag in the HTTP In node as well as the HTTP response node. Connect them, and add a debug node, which is connected to the “HTTP in” node.
+When you start a project on FlowFuse, remember the project name. For this how-to we’ll use `example`. Open the editor and drag in the HTTP In node as well as the HTTP response node. Connect them, and add a debug node, which is connected to the “HTTP in” node.
 
 First off; let’s set the HTTP in node properties:
 
@@ -38,7 +38,7 @@ When there’s no output, that means it’s all good! There should be an empty m
 
 ### Securing the HTTP trigger with a username and password
 
-The problem with our trigger is that anyone with internet access could trigger it. That’s not a great idea. So let’s secure this endpoint with HTTP Basic Authentication. There are various ways to include a secure endpoint in Node-RED, we’ve built authentication directly into FlowForge to make it easier for all users. On the FlowForge project, go to settings and then to ‘Editor’. Under the section HTTP Auth you can set a username and password. You should generate both by a random string generator, and store the credentials somewhere safe.  Restart the project to have the runtime pick up the changes, and the endpoint is secured!
+The problem with our trigger is that anyone with internet access could trigger it. That’s not a great idea. So let’s secure this endpoint with HTTP Basic Authentication. There are various ways to include a secure endpoint in Node-RED, we’ve built authentication directly into FlowFuse to make it easier for all users. On the FlowFuse project, go to settings and then to ‘Editor’. Under the section HTTP Auth you can set a username and password. You should generate both by a random string generator, and store the credentials somewhere safe.  Restart the project to have the runtime pick up the changes, and the endpoint is secured!
 
 Let’s validate the endpoint that worked a minute ago doesn’t anymore:
 

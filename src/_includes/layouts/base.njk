@@ -15,13 +15,13 @@
 
     <!-- Browser Title -->
     {% if navTitle %}
-    <title>{{ navTitle }} &#x2022; FlowForge{% if page.url.match('\/handbook\/.+') %} Handbook{% endif %}{% if page.url.match('\/docs\/.+') %} Docs{% endif %}</title>
+    <title>{{ navTitle }} &#x2022; FlowFuse{% if page.url.match('\/handbook\/.+') %} Handbook{% endif %}{% if page.url.match('\/docs\/.+') %} Docs{% endif %}</title>
     {% elif meta and meta.title %}
-    <title>{{ meta.title }} &#x2022; FlowForge{% if page.url.match('\/handbook\/.+') %} Handbook{% endif %}{% if page.url.match('\/docs\/.+') %} Docs{% endif %}</title>
+    <title>{{ meta.title }} &#x2022; FlowFuse{% if page.url.match('\/handbook\/.+') %} Handbook{% endif %}{% if page.url.match('\/docs\/.+') %} Docs{% endif %}</title>
     {% elif title %}
-    <title>{{ title }} &#x2022; FlowForge{% if page.url.match('\/handbook\/.+') %} Handbook{% endif %}{% if page.url.match('\/docs\/.+') %} Docs{% endif %}</title>
+    <title>{{ title }} &#x2022; FlowFuse{% if page.url.match('\/handbook\/.+') %} Handbook{% endif %}{% if page.url.match('\/docs\/.+') %} Docs{% endif %}</title>
     {% else %}
-    <title>FlowForge &#x2022; DevOps for Node-RED</title>
+    <title>FlowFuse &#x2022; DevOps for Node-RED</title>
     {% endif %}
 
     <meta rel="canonical" href="{{ page.url | toAbsoluteUrl }}">
@@ -41,13 +41,13 @@
 
     <!-- Open Graph Title -->
     {% if navTitle %}
-    <meta property="og:title" content="{{ navTitle }} &#x2022; FlowForge{% if page.url.match('\/handbook\/.+') %} Handbook{% endif %}" />
+    <meta property="og:title" content="{{ navTitle }} &#x2022; FlowFuse{% if page.url.match('\/handbook\/.+') %} Handbook{% endif %}" />
     {% elif meta and meta.title %}
-    <meta property="og:title" content="{{ meta.title }} &#x2022; FlowForge{% if page.url.match('\/handbook\/.+') %} Handbook{% endif %}" />
+    <meta property="og:title" content="{{ meta.title }} &#x2022; FlowFuse{% if page.url.match('\/handbook\/.+') %} Handbook{% endif %}" />
     {% elif title %}
-    <meta property="og:title" content="{{ title }} &#x2022; FlowForge{% if page.url.match('\/handbook\/.+') %} Handbook{% endif %}" />
+    <meta property="og:title" content="{{ title }} &#x2022; FlowFuse{% if page.url.match('\/handbook\/.+') %} Handbook{% endif %}" />
     {% else %}
-    <meta property="og:title" content="FlowForge &#x2022; DevOps for Node-RED" />
+    <meta property="og:title" content="FlowFuse &#x2022; DevOps for Node-RED" />
     {% endif %}
 
     <!-- Open Graph Description -->
@@ -56,7 +56,7 @@
     {% elif description %}
     <meta property="og:description" content="{{ description }}" />
     {% else %}
-    <meta property="og:description" content="FlowForge allows organizations to reliably deliver Node-RED applications in a continuous, collaborative, and secure manner." />
+    <meta property="og:description" content="FlowFuse allows organizations to reliably deliver Node-RED applications in a continuous, collaborative, and secure manner." />
     {% endif %}
 
     <!-- Open Graph URL -->
@@ -142,7 +142,7 @@
                         {% navoption "resources", null, 0 %}
                             <!-- Mobile -->
                             <ul class="block sm:hidden">
-                                {% navoption "FlowForge", null, 1, "flowforge", true, "col-span-2" %}
+                                {% navoption "FlowFuse", null, 1, "flowforge", true, "col-span-2" %}
                                     <ul class="sm:grid sm:grid-flow-col sm:grid-cols-2 sm:grid-rows-4">
                                         {# {% navoption "getting started", "/blog", 2, "clip-list" %}{% endnavoption %} #}
                                         {% navoption "github", "https://github.com/flowforge/flowforge", 2, "github", true %}{% endnavoption %}
@@ -175,7 +175,7 @@
                                     </ul>
                                 </div>
                                 <div class="flex-grow-[2]">
-                                    {% navoption "FlowForge", null, 1, "flowforge", true, "bg-gray-700 border-r border-gray-600" %}{% endnavoption %}
+                                    {% navoption "FlowFuse", null, 1, "flowforge", true, "bg-gray-700 border-r border-gray-600" %}{% endnavoption %}
                                     <ul class="sm:grid sm:grid-flow-col sm:grid-rows-5 sm:grid-cols-1 sm:pr-9">
                                         {# {% navoption "getting started", "/blog", 2, "clip-list" %}{% endnavoption %} #}
                                         {% navoption "github", "https://github.com/flowforge/flowforge", 2, "github", true %}{% endnavoption %}
@@ -214,7 +214,7 @@
             <div class="ff-footer-columns md:flex-row justify-center md:space-x-8">
                 <div class="">
                     <div class="w-52">
-                        {% image "./images/flowforge-logo-wordmark-white.svg", "FlowForge Logo in White", [150] %}
+                        {% image "./images/flowforge-logo-wordmark-white.svg", "FlowFuse Logo in White", [150] %}
                     </div>
                     <div class="copyright-statement">
                         <div>Copyright 2023 FlowForge Inc.</div>
