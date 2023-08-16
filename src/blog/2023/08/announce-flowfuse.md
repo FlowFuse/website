@@ -1,3 +1,4 @@
+---
 title: FlowForge is now FlowFuse: New identity but same vision for industrial data integration
 
 subtitle: New identity but same vision for industrial data integration
