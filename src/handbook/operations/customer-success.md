@@ -42,6 +42,7 @@ To drive CS, we need to utilise data across various platforms to understand what
 - [Team, User, Instances & Devices Growth](https://main.flowforge.cloud/ui/#!/0?socketid=LPUnOyHnjGM_GqrnAAAd)
 - [Customer Cohorts](https://main.flowforge.cloud/ui/#!/1?socketid=LPUnOyHnjGM_GqrnAAAd)
 - [Device Agent Adoption](https://main.flowforge.cloud/ui/#!/2?socketid=LPUnOyHnjGM_GqrnAAAd)
+- [User Audit Interactions](https://main.flowforge.cloud/ui/#!/4?socketid=zuEy1h2ZhTjyhCnuAABB)
 
 ### Communication
 
