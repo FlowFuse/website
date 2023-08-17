@@ -94,14 +94,34 @@ h1, h2, h3, h4, h5, p {
     background-color: theme(colors.gray.800);
 }
 
-.base {
-    background-color: theme(colors.gray.800);
-    background-image: url('/images/ff-cloud_50.svg');
-    background-repeat: no-repeat;
+.ff-bg-flows, .solution-ff-bg-flows {
+    background-image: url('/images/ff-bg-flows.svg');
+    background-repeat: repeat-x;
     background-position-x: 50%;
-    background-position-y: 150px;
+    background-position-y: calc(100% + 70px);
     background-size: contain;
 }
+
+.solution-ff-bg-flows {
+    background-position-y: calc(100% + 50px);
+}
+
+.hero-ff-bg-flows {
+    /* background-position-y: calc(100% + 50px); */
+}
+
+@media (max-width: 1250px) {
+    .ff-bg-flows {
+        background-size: 100%;
+        background-position-y: bottom;
+    }
+}
+
+.gradient-bg {
+    background: radial-gradient(circle 50vw at center 500px,#374151,transparent);
+    background-size: 100vw;
+}
+
 main a {
     color: theme(colors.teal.300);
 }
