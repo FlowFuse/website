@@ -1,5 +1,5 @@
 ---
-title: "FlowForge is now FlowFuse New identity but same vision for industrial data integration"
+title: "FlowForge is now FlowFuse: New identity but same vision for industrial data integration"
 subtitle: New identity but same vision for industrial data integration
 description: FlowForge is being renamed to FlowFuse. Our mission and commitment to our customers stays the same.
 date: 2023-08-17
@@ -21,7 +21,7 @@ Selecting a new name for a company or product is never easy. Some of the require
 
 **What to Expect Next**
 
-Our team is heads down building a platform to allow organizations to reliably deliver Node-RED applications in a continuous, collaborative, and secure manner. We continue to deliver releases of new features and innovation on a regular four week release cadence. Our commitment to our customers is FlowFuse will continue to deliver on this promise.
+Our team is heads down building a platform to allow organizations to reliably deliver Node-RED applications in a continuous, collaborative, and secure manner. We'll continue to release regular updates packed with new features and enhancements that keeps moving us towards this goal.
 
 Today, the new FlowFuse name has been introduced on our [website](https://flowfuse.com/). Over the next number of days and weeks all of our communications channels will be updated to reflect the new name. The product branding will be changed over the next couple of releases, including FlowForge Cloud and FlowForge open source edition. The underlying software will be the as-if you’re running the next FlowForge release, though now called FlowFuse.
 
