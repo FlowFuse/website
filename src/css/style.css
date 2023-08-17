@@ -107,14 +107,6 @@ h1, h2, h3, h4, h5, p {
     background-position-y: calc(100% + 100px);
 }
 
-/* .solution-ff-bg-flows {
-    background-position-y: calc(100% + 70px);
-} */
-
-.hero-ff-bg-flows {
-    /* background-position-y: calc(100% + 50px); */
-}
-
 @media (max-width: 1250px) {
     .ff-bg-flows {
         background-size: 100%;

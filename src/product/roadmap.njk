@@ -1,26 +1,20 @@
 ---
 layout: layouts/page.njk
 title: Roadmap
-image: /images/product/og-product-roadmap.png
----
-
-<!-- Roadmap link button section, containing a link to view the entire roadmap on GitHub. -->
-<div class="w-full ff-bg-flows">
-<div class="px-6 -mt-32 mx-auto text-gray-400 text-center md:max-w-screen-lg -mt-40 pb-20 mb-4 md:pb-36 md:mb-8">
-    <h4>
-        <div class="font-semibold text-white mb-8 -mt-2">Stay up-to-date with our progress</div> 
-    </h4>
-    <p class="lead-p max-w-screen-lg m-auto text-center sm:max-w-xl md:px-4">
-      <span style="color: #D1D5DB;">Here you can find information about upcoming features, enhancements, and other changes we're actively working on to make FlowFuse an even more powerful and versatile tool for your business needs.</span>
-    </p>
-    <div class="text-center mt-10">
+subtitle: <div class="font-semibold text-white mb-8 -mt-2">Stay up-to-date with our progress</div>
+description:
+    <p class="lead-p max-w-screen-lg m-auto text-center sm:max-w-xl md:px-4"><span class="text-gray-200">Here you can find information about upcoming features, enhancements, and other changes we're actively working on to make FlowFuse an even more powerful and versatile tool for your business needs.</span></p>
+    <div class="text-center mt-10 pb-6 md:pb-16">
         <a href="https://github.com/orgs/flowforge/projects/5" target="_blank" class="inline-block ff-btn ff-btn--primary uppercase">
             <span>FULL GITHUB ROADMAP</span>
         </a>
     </div>
+image: /images/product/og-product-roadmap.png
+---
+<div class="-mt-12">
+    {% include "components/divider-flow--top-red--light.njk" %}
 </div>
-</div>
-{% include "components/divider-flow--top-red--light.njk" %}
+
 <!-- Roadmap content section, divided into three columns: Consideration, In Progress, and Newly Released. Each column
 has a headline, description, and a container for roadmap items. -->
 <div class="about w-full bg-gray-50 pb-14 md:pt-6">

@@ -28,9 +28,11 @@ layout: layouts/base.njk
                 </div>
             {% endif %}
         {% else %}
-        <div class="hero {{ 'hero-lg' if heroLg else ''}} container m-auto text-center flex flex-wrap mt-6 p-6 mb-32 md:flex-nowrap md:max-w-4xl md:mt-12">
+        <div class="hero {{ 'hero-lg' if heroLg else ''}} container m-auto text-center flex flex-wrap pt-6 px-6 pb-12 md:flex-nowrap md:max-w-4xl md:pt-12">
             <div class="text-center w-full">
                 <h1 class="text-teal-300">{{ title }}</h1>
+                <h4>{{ subtitle | safe }}</h4>
+                <div class="lead-p max-w-screen-lg m-auto text-center md:max-w-xl md:px-4">{{ description | safe }}</div>
             </div>
         {% endif %}            
         </div>
