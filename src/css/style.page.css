@@ -176,7 +176,6 @@
         position: relative;
         grid-template-columns: 1fr 1fr 1fr;
         gap: 30px;
-        z-index: 2;
         margin-left: auto;
         margin-right: auto;
     }
