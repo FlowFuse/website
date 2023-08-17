@@ -5,8 +5,8 @@
 This repository contains the source of the FlowFuse website.
 
 It is built using [Tailwind CSS](https://tailwindcss.com/) and [Eleventy](https://www.11ty.dev/).
-It is hosted on GitHub Pages and every commit to the `main` branch is automatically
-deployed using GitHub Actions.
+
+It is hosted on Netlify with each commit to the `main` branch being automatically deployed to the live site.
 
 ## Prerequisites 
 
@@ -86,7 +86,7 @@ The `authors` list should correspond to an entry under `src/_data/team`.
 
 ## Updating the FlowFuse Documentation
 
-When the website is built via GitHub Action, it will include the documentation
+When the website is built it will include the documentation
 from the `maintenance` branch of the [flowforge/flowforge](https://github.com/flowforge/flowforge)
 repository.
 
