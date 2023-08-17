@@ -18,7 +18,7 @@ agreements.
 
 ## Scope 
 
-All data and information systems owned or used by FlowForge that are business
+All data and information systems owned or used by FlowFuse that are business
 critical and/or process, store, or transmit data classified as [Confidential or Critical](./data-management.md).
 
 ## Policy
@@ -27,14 +27,14 @@ A list of approved vendors/partners must be maintained and reviewed annually. Th
 list will be linked from the [Vendor section of the handbook](../../operations/vendors.md).
 
 Approval from management must be in place before onboarding any new vendor or
-contractor that impacts FlowForge production systems. Additionally, all changes
+contractor that impacts FlowFuse production systems. Additionally, all changes
 to existing contract agreements must be reviewed and approved before implementation.
 
-For any technology solution that needs to be integrated with FlowForge production
+For any technology solution that needs to be integrated with FlowFuse production
 environment or operations, a review should be held to understand and approve the
 risk. Periodic compliance assessment and SLA review may be required.
 
-FlowForge Customers or Partners should not be allowed access outside of their
+FlowFuse Customers or Partners should not be allowed access outside of their
 own environment, meaning they cannot access, modify, or delete any data belonging
 to other third parties.
 

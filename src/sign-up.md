@@ -14,7 +14,7 @@ redirects:
 permalink: "{{ redirect.from }}"
 # The "redirect" layout just has a small html header with the meta tags that do redirection.
 layout: redirect
-title: "Create an account for FlowForge"
+title: "Create an account for FlowFuse"
 sitemapPriority: 0.9
 ---
 (the content can be left blank; it's entirely the frontmatter doing the work here.)

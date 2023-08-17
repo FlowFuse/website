@@ -1,7 +1,7 @@
 ---
-title: FlowForge v1.5 Now Available
+title: FlowFuse v1.5 Now Available
 subtitle: Updates to UI and architecture to allow for future features and Node-RED 3.1.0 Beta Available!
-description: For FlowForge 1.5 we have been busy making a lot of UX changes and upgrading our underlying architecture to enable future innovations on the FlowForge platform.
+description: For FlowFuse 1.5 we have been busy making a lot of UX changes and upgrading our underlying architecture to enable future innovations on the FlowFuse platform.
 date: 2023-03-16 15:00:00.0
 authors: ["joe-pavitt"]
 image: /blog/2023/03/images/release-150.jpg
@@ -11,23 +11,23 @@ tags:
     - releases
 ---
 
-For FlowForge 1.5 we have been busy making a lot of UX changes and upgrading our underlying architecture to enable future innovations on the FlowForge platform.
+For FlowFuse 1.5 we have been busy making a lot of UX changes and upgrading our underlying architecture to enable future innovations on the FlowFuse platform.
 
 <!--more-->
 
-With our recently announced [Terminology Changes](/blog/2023/03/terminology-changes/), we have introduced some new concepts into FlowForge.
+With our recently announced [Terminology Changes](/blog/2023/03/terminology-changes/), we have introduced some new concepts into FlowFuse.
 
-- **Application**: A group of Node-RED Instances Each instance can run locally (in FlowForge) or remotely (on Devices)
+- **Application**: A group of Node-RED Instances Each instance can run locally (in FlowFuse) or remotely (on Devices)
 - **Instances**: We renamed "Projects" to "Instances" to be more inline with the terminology used in the Node-RED community
 
 As such, our User Experience has been updated to reflect these changes, and allow for further functionality to be introduced with our plans for [Multiple Instances per Application](https://github.com/flowforge/flowforge/issues/1689).
 
 ### "Applications" View
 
-At the top-level in FlowForge, you can now see a list of your "Appications". In FlowForge 1.5, as we still have a 1:1 relationship of Applications to Local Instances, this will be the same as the list of "Projects" that you're used to seeing.
+At the top-level in FlowFuse, you can now see a list of your "Appications". In FlowFuse 1.5, as we still have a 1:1 relationship of Applications to Local Instances, this will be the same as the list of "Projects" that you're used to seeing.
 
 ![Screenshot to show the new "Applications" view](./images/screenshot-applications.png)
-<figcaption class="-mt-6 text-center"><b>"Applications" view in FlowForge, listing all available Applications</b></figcaption>
+<figcaption class="-mt-6 text-center"><b>"Applications" view in FlowFuse, listing all available Applications</b></figcaption>
 
 For 1.5, all of your settings, environment variables, etc. are all now at the "Instance" level. Applications will gain a lot more functionality in future releases.
 ### "Instances" View
@@ -37,10 +37,10 @@ When clicking on one of your Applications, you will see a list of Node-RED insta
 ![Screenshot to show the new "Instances" view](./images/screenshot-instances.png)
 <figcaption class="-mt-6 text-center"><b>A list of Instances contained within a single Application.</b></figcaption>
 
-Clicking on this Instance, will open up the "Instance" view, this is an exact replica of the "Project" view you'll be used to seeing in FlowForge, and contains all of the same functionality:
+Clicking on this Instance, will open up the "Instance" view, this is an exact replica of the "Project" view you'll be used to seeing in FlowFuse, and contains all of the same functionality:
 
 ![Screenshot to show the new "Instances" view](./images/screenshot-instance.png)
-<figcaption class="-mt-6 text-center"><b>FlowForge 1.5's "Instance" view. This contains all of the functionality previously found in the "Project" view.</b></figcaption>
+<figcaption class="-mt-6 text-center"><b>FlowFuse 1.5's "Instance" view. This contains all of the functionality previously found in the "Project" view.</b></figcaption>
 
 ### Devices & Managing Remote Instances
 
@@ -53,12 +53,12 @@ Devices are now bound to "Instances", you'll see these in the "Devices" view, an
 
 ## Node-RED 3.1 Beta Available
 
-FlowForge Cloud is a great place to try out the new Node-RED features, with FlowForge Cloud now including the [Node-RED 3.1.0-beta.2](https://discourse.nodered.org/t/node-red-3-1-0-beta-2-released/76192). If you want to try this version you can [duplicate your application](https://flowforge.com/docs/user/project-settings/#copy-project) or [upgrade your stack](https://flowforge.com/docs/user/changestack/).
+FlowFuse Cloud is a great place to try out the new Node-RED features, with FlowFuse Cloud now including the [Node-RED 3.1.0-beta.2](https://discourse.nodered.org/t/node-red-3-1-0-beta-2-released/76192). If you want to try this version you can [duplicate your application](https://flowforge.com/docs/user/project-settings/#copy-project) or [upgrade your stack](https://flowforge.com/docs/user/changestack/).
 
 ## Other Improvements
 
 - Update to audit logs to improve usability [[#1800](https://github.com/flowforge/flowforge/issues/1800)] [[#1785](https://github.com/flowforge/flowforge/issues/1785)]
-- Improve how licensing works with overages, for easier scaling of FlowForge and your Node-RED Instances [[#1639](https://github.com/flowforge/flowforge/issues/1639)] [[#1739](https://github.com/flowforge/flowforge/issues/1739)]
+- Improve how licensing works with overages, for easier scaling of FlowFuse and your Node-RED Instances [[#1639](https://github.com/flowforge/flowforge/issues/1639)] [[#1739](https://github.com/flowforge/flowforge/issues/1739)]
 
 
 ## Bug Fixes
@@ -69,21 +69,21 @@ FlowForge Cloud is a great place to try out the new Node-RED features, with Flow
 
 ## Try it out
 
-We're confident you can have self managed FlowForge running locally in under 30 minutes.
+We're confident you can have self managed FlowFuse running locally in under 30 minutes.
 You can install our [local build](https://flowforge.com/docs/install/local/), use [Docker](https://flowforge.com/docs/install/docker/), or [Kubernetes](https://flowforge.com/docs/install/kubernetes/).
 
-If you'd rather use our hosted offering: [Get started for free](https://app.flowforge.com/account/create) on FlowForge Cloud.
+If you'd rather use our hosted offering: [Get started for free](https://app.flowforge.com/account/create) on FlowFuse Cloud.
 
-## Upgrading FlowForge
+## Upgrading FlowFuse
 
-[FlowForge Cloud](https://app.flowforge.com) is already running 1.5.
+[FlowFuse Cloud](https://app.flowforge.com) is already running 1.5.
 
-If you installed a previous version of FlowForge and want to upgrade, our documentation provides a
-guide for [upgrading your FlowForge instance](https://flowforge.com/docs/upgrade/).
+If you installed a previous version of FlowFuse and want to upgrade, our documentation provides a
+guide for [upgrading your FlowFuse instance](https://flowforge.com/docs/upgrade/).
 
 ## Getting help
 
-Please check FlowForge's [documentation](https://flowforge.com/docs/) as the answers to many questions are covered there.
+Please check FlowFuse's [documentation](https://flowforge.com/docs/) as the answers to many questions are covered there.
 
 If you hit any problems with the platform please raise an [issue on GitHub](https://github.com/flowforge/flowforge/issues).
 That's also a great place to send us any feedback or feature requests.

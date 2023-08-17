@@ -8,10 +8,10 @@ story:
     url:
     quote: Overall, the project leader sees Node-RED as the future of software development. The low code paradigm makes it possible for companies to decentralize innovation within an organization
     challenge: Maintain and track the thousands of Node-RED developed instances and versions of these instances.
-    solution: Using the FlowForge platform to address these challenges.
+    solution: Using the FlowFuse platform to address these challenges.
     results:
         - Managing the deployment of Node-RED instances out to thousands of remote devices and maintain multiple versions of the instances.
-        - Using FlowForge delivery pipelines and collaboration tools to improve the reliability and efficiency of their development processes.
+        - Using FlowFuse delivery pipelines and collaboration tools to improve the reliability and efficiency of their development processes.
 ---
 
 A **large US based manufacturing company is using Node-RED** to enable the digital transformation of their entire manufacturing operations. The company has a global footprint with dozens of different locations and over ten thousand employees.
@@ -30,6 +30,6 @@ According to the Node-RED project leader **the key benefit of using Node-RED for
 
 Some limitations they have noticed of Node-RED is the ability to orchestrate software delivery pipelines, version control and tools for teams of developers. It has become very difficult to maintain and track the thousands of Node-RED instances and versions of these instances that they have developed.
 
-The company is using the FlowForge platform to address these challenges. **They are using FlowForge to manage the deployment of Node-RED instances out to thousands of remote devices and maintain multiple versions of the instances**. In addition, they use FlowForge delivery pipelines and collaboration tools to improve the reliability and efficiency of their development processes.
+The company is using the FlowFuse platform to address these challenges. **They are using FlowFuse to manage the deployment of Node-RED instances out to thousands of remote devices and maintain multiple versions of the instances**. In addition, they use FlowFuse delivery pipelines and collaboration tools to improve the reliability and efficiency of their development processes.
 
 Overall, **the project leader sees Node-RED as the future of software development**. The low code paradigm makes it possible for companies to decentralize innovation within an organization. Allowing subject matter experts to build digital systems that drive innovation.

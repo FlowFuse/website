@@ -1,7 +1,7 @@
 {
     "name": "flowforge-handbook",
     "version": "1.0.0",
-    "description": "Repository to manage and test all of the content for FlowForge's Company Handbook.",
+    "description": "Repository to manage and test all of the content for FlowFuse's Company Handbook.",
     "private": true,
     "devDependencies": {
         "axios": "^1.2.2",

@@ -2,7 +2,7 @@
 originalPath: development/packaging.md
 updated: 2022-11-24 22:12:28 +0000
 ---
-# FlowForge Packaging Guidelines
+# FlowFuse Packaging Guidelines
 
 This section describes the requirements we have for all GitHub repositories,
 and npm modules we maintain.
@@ -175,7 +175,7 @@ The process for making a release is documented [here](./release.md).
 
 ### Adding NPM packages to Stacks
 
-As we build more FlowForge specific nodes we will need to add these to the Stacks
+As we build more FlowFuse specific nodes we will need to add these to the Stacks
 
 #### Localfs
 

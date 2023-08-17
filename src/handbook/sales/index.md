@@ -2,7 +2,7 @@
 navGroup: Sales & Marketing
 ---
 
-This section details how to engage with customers at FlowForge and particularly how you should communicate with customers about FlowForge, including a recommended demo script for showing how FlowForge works.
+This section details how to engage with customers at FlowFuse and particularly how you should communicate with customers about FlowFuse, including a recommended demo script for showing how FlowFuse works.
 
 # Sales
 
@@ -23,12 +23,12 @@ At this stage we're using the default set of status's in HubSpot:
 | New | The contact in question has had only _marketing_ contact (E-mails, etc). |
 | Open | In the stage where a contact is assigned to a Account exec, but no official connection has be made. Usually contacts are only in this stage for a short while.|
 | Attempted to contact | From the moment the AE reached out, until there's a reply from them. |
-| Connected | MQLs and SQL that have replied and engaged with FlowForge. |
+| Connected | MQLs and SQL that have replied and engaged with FlowFuse. |
 | In Progress | After contact has been made, this status captures the nurturing process toward an opportunity. |
 | Open Deal | When a deal is on the board, and the opportunity is real, this is the status! |
 | Unqualified | Either this contact specifically cannot lead the sales process, or the account itself has been found unqualified. |
 | Unresponsive | We have not received a reply in 2 weeks, they are ghosting us. |
-| Bad timing | FlowForge was, for whatever reason, not a great fit right now. However, it's potentially a good fit later. |
+| Bad timing | FlowFuse was, for whatever reason, not a great fit right now. However, it's potentially a good fit later. |
 
 ## From SQL to Opportunity
 
@@ -36,9 +36,9 @@ For each sales opportunity a clear answer for the customers needs and wants shou
 
 | Question | |
 | :------- | :------ |
-| Why change? | What's the trigger to invest in FlowForge and Node-RED? |
+| Why change? | What's the trigger to invest in FlowFuse and Node-RED? |
 | Why now? | Timeline is everything! |
-| Why FlowForge? | What value does FlowForge offer, what features are of most interest? |
+| Why FlowFuse? | What value does FlowFuse offer, what features are of most interest? |
 
 If, and only if, the answers are known and added as notes to HubSpot, an
 opportunity is added to the HubSpot deals board.

@@ -1,5 +1,5 @@
 ---
-title: FlowForge 0.6 released
+title: FlowFuse 0.6 released
 subtitle: Adding Devices to the platform
 description: Adding Devices to the platform
 date: 2022-06-19 12:00:00.0
@@ -13,22 +13,22 @@ tags:
 Node-RED is well known for its role in IoT solutions - which often means running
 flows on devices.
 
-This was something we always wanted to support in FlowForge and with this release
+This was something we always wanted to support in FlowFuse and with this release
 we're taking the next steps in that direction.
 
 <!--more-->
 
 ### Devices
 
-This release includes the first alpha release of the [FlowForge Device Agent](https://github.com/flowforge/flowforge-device-agent). This is a small piece of node.js software that can be
-installed on a device, such as a Raspberry Pi. It connects back to the FlowForge
+This release includes the first alpha release of the [FlowFuse Device Agent](https://github.com/flowforge/flowforge-device-agent). This is a small piece of node.js software that can be
+installed on a device, such as a Raspberry Pi. It connects back to the FlowFuse
 platform to get the Node-RED flows it should be running.
 
 This builds on the work we added in 0.5 that lets you register the device,
 generate credentials for it and pick which Project in your team it should be assigned
 to.
 
-It makes it super simple to start developing your flows in FlowForge and push them
+It makes it super simple to start developing your flows in FlowFuse and push them
 out to a group of devices with a couple clicks.
 
 There's plenty of work still to come on the Devices feature. Under the covers
@@ -64,13 +64,13 @@ give the UI a more responsive feel.
 When you log out of the platform we now also automatically log you out of any
 Node-RED editor sessions you have open.
 
-### Upgrading FlowForge
+### Upgrading FlowFuse
 
-[FlowForge Cloud](https://app.flowforge.com) is already running 0.6 - ready for
+[FlowFuse Cloud](https://app.flowforge.com) is already running 0.6 - ready for
 you to start creating snapshots and adding devices right now.
 
-If you installed a previous version of FlowForge and want to upgrade, our documentation provides a
-guide for [upgrading FlowForge on a local server](http://flowforge.com/docs/install#upgrade).
+If you installed a previous version of FlowFuse and want to upgrade, our documentation provides a
+guide for [upgrading FlowFuse on a local server](http://flowforge.com/docs/install#upgrade).
 
 ### Getting help
 

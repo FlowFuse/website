@@ -1,5 +1,5 @@
 name: 🐜 Report a bug
-description: File a bug on the FlowForge platform
+description: File a bug on the FlowFuse platform
 labels: [needs-triage]
 body:
 - type: textarea
@@ -38,7 +38,7 @@ body:
     multiple: false
     options:
       - I have provided an initial effort estimate
-      - I am not a FlowForge team member
+      - I am not a FlowFuse team member
       - I can not provide an initial effort estimate
   validations:
       required: true
