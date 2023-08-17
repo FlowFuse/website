@@ -94,17 +94,17 @@ h1, h2, h3, h4, h5, p {
     background-color: theme(colors.gray.800);
 }
 
-.ff-bg-flows, .solution-ff-bg-flows {
+.ff-bg-flows {
     background-image: url('/images/ff-bg-flows.svg');
     background-repeat: repeat-x;
     background-position-x: 50%;
-    background-position-y: calc(100% + 70px);
+    background-position-y: calc(100% + 50px);
     background-size: contain;
 }
 
-.solution-ff-bg-flows {
-    background-position-y: calc(100% + 50px);
-}
+/* .solution-ff-bg-flows {
+    background-position-y: calc(100% + 70px);
+} */
 
 .hero-ff-bg-flows {
     /* background-position-y: calc(100% + 50px); */
