@@ -15,7 +15,7 @@ Welcome to the FlowFuse newsletter for February 2023, a monthly roundup of whatâ
 
 <!--more-->
 
-If you've got something that you think we should share on our newsletters please [get in touch](mailto:contact@flowforge.com).
+If you've got something that you think we should share on our newsletters please [get in touch](mailto:contact@flowfuse.com).
 
 ## News
 

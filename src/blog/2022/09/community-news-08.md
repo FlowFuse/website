@@ -13,7 +13,7 @@ tags:
 
 Welcome to the FlowFuse newsletter, a regular roundup of what’s happening with both FlowFuse and the wider Node-RED community.
 <!--more-->
-If you've got something that you'd like us to share please email [contact@flowforge.com](mailto:contact@flowforge.com).
+If you've got something that you'd like us to share please email [contact@flowfuse.com](mailto:contact@flowfuse.com).
 
 [**FlowFuse 0.9**](https://flowforge.com/blog/2022/09/flowforge-09-released/)   
 Version 0.9 was released on 1st September. Our latest release includes some great new features, quality of life improvements and bug fixes. Notable additions included the ability to [suspend your projects](https://github.com/flowforge/flowforge/pull/893), [login with your email](https://github.com/flowforge/flowforge/pull/856) and [define custom paths for your dashboards](https://github.com/flowforge/flowforge/issues/774).  

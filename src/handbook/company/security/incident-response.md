@@ -58,7 +58,7 @@ unauthorized access, policy violation, security weakness, or suspicious activity
 then they shall immediately report the information using one of the following
 communication channels:
 
- - Email security@flowforge.com with information or reports about the event or
+ - Email security@flowfuse.com with information or reports about the event or
    incident
  - Raise an issue in [`flowforge/security`](https://github.com/flowforge/security){rel="nofollow"}
  - Report it in #security channel in slack

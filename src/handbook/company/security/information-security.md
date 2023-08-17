@@ -56,7 +56,7 @@ FlowFuse.
 
 All users are required to report known or suspected security events or incidents,
 including policy violations and observed security weaknesses. Incidents shall be
-reported immediately or as soon as possible by sending an email to security@flowforge.com.
+reported immediately or as soon as possible by sending an email to security@flowfuse.com.
 
 In your email please describe the incident or observation along with any relevant
 details.
@@ -83,7 +83,7 @@ information systems (i.e. email) must adhere to the following rules and requirem
   2. Devices must not be left unattended in public.
 
 4. Users must report any suspected misuse or theft of a mobile device immediately
-   to security@flowforge.com
+   to security@flowfuse.com
 
 5. Avoid sharing credentials. Secrets must be stored safely, using features such
    as GitHub Secrets. For accounts and other sensitive data that need to be shared

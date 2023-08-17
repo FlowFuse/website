@@ -13,7 +13,7 @@ A list of approved vendors is available interally [here](https://docs.google.com
 ### Process
 
 To start to process of approval and paying of invoices a PDF of the invoice should
-be mailed to billing@flowforge.com. FlowFuse pays invoices 30 days after filing 
+be mailed to billing@flowfuse.com. FlowFuse pays invoices 30 days after filing 
 unless specifically agreed otherwise prior to filing the invoice.
 
 The invoice should include:

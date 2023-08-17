@@ -13,7 +13,7 @@ tags:
 
 Welcome to the FlowFuse newsletter, a regular roundup of what\`s happening with both FlowFuse and the wider Node-RED community. 
 <!--more-->
-If you've got something that you'd like us to share please email [contact@flowforge.com](mailto:contact@flowforge.com).
+If you've got something that you'd like us to share please email [contact@flowfuse.com](mailto:contact@flowfuse.com).
 
 [Announcing FlowFuse Cloud](https://flowforge.com/blog/announcing-flowforge-cloud/)  
 We are excited to announce FlowFuse Cloud, a hosted Node-RED as a service offering and today we are opening the waitlist.

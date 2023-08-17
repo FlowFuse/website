@@ -135,6 +135,6 @@ We reserve the right to modify this Privacy Policy at any time. If we make mater
 
 ## <span name="how-to-contact-us">How to contact us</span>
 
- - **Email:** `contact@flowforge.com`
+ - **Email:** `contact@flowfuse.com`
  - **Mail:** `PO Box 7775 #29439, San Francisco, CA 94120-7775`
 </div>

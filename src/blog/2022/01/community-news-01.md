@@ -13,7 +13,7 @@ tags:
 
 Welcome to the first FlowFuse newsletter, we’re going to publish this as a regular roundup of what\`s happening with both FlowFuse and the wider Node-RED community, if you want to receive it via email, sign up for updates at the bottom of the page.
 <!--more-->
-If you’ve got something that you’d like us to share please email [contact@flowforge.com](mailto:contact@flowforge.com).
+If you’ve got something that you’d like us to share please email [contact@flowfuse.com](mailto:contact@flowfuse.com).
 
 [FlowFuse 0.1 Released](https://flowforge.com/blog/flowforge-01-released)  
 First up we are really pleased to ship the first version of our platform, this is a very early release but hopefully will give you an idea of the direction we’re going in.

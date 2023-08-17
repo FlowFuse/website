@@ -13,7 +13,7 @@ tags:
 
 Welcome to the FlowFuse newsletter for October 2022, a monthly roundup of what’s happening with both FlowFuse and the wider Node-RED community.
 <!--more-->
-If you've got something that you'd like us to share please email [contact@flowforge.com](mailto:contact@flowforge.com).
+If you've got something that you'd like us to share please email [contact@flowfuse.com](mailto:contact@flowfuse.com).
 
 [**FlowFuse 1.0 Released**](http://flowforge.com/blog/2022/10/flowforge-1-released/)   
 Version 1.0 was released on 27th October. Our latest release represents our vision of the base set of features needed for you to get great value from using FlowFuse in a production environment. That's not to say we are done, we will continue to add features, improve our interfaces and fix bugs with the same enthusiasm as we've worked towards 1.0. We'd like to hear your feedback on what we will be including in [1.1 and beyond](https://github.com/orgs/flowforge/projects/5). 
