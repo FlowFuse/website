@@ -102,6 +102,11 @@ h1, h2, h3, h4, h5, p {
     background-size: contain;
 }
 
+.hero .ff-bg-flows {
+    background-size: 100%;
+    background-position-y: calc(100% + 100px);
+}
+
 /* .solution-ff-bg-flows {
     background-position-y: calc(100% + 70px);
 } */
@@ -114,6 +119,10 @@ h1, h2, h3, h4, h5, p {
     .ff-bg-flows {
         background-size: 100%;
         background-position-y: bottom;
+    }
+    .hero .ff-bg-flows {
+        background-size: 100%;
+        background-position-y: calc(100% + 25px);
     }
 }
 
