@@ -34,4 +34,4 @@ That also includes if you have any feedback or feature requests.
 
 Chat with us on the `#flowforge` channel on the [Node-RED Slack workspace](https://nodered.org/slack).
 
-You can also raise a support ticket by emailing [support@flowforge.com](mailto:support@flowforge.com)
+You can also raise a support ticket by emailing [support@flowfuse.com](mailto:support@flowfuse.com)

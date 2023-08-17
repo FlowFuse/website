@@ -85,6 +85,6 @@ If you hit any problems with the platform, or have questions to ask, please do
 raise an [issue on GitHub](https://github.com/flowforge/flowforge/issues).
 That also includes if you have any feedback or feature requests.
 
-Customers of FlowFuse Cloud can raise a ticket by emailing support@flowforge.com
+Customers of FlowFuse Cloud can raise a ticket by emailing support@flowfuse.com
 
 We also have a `#flowforge` channel on the [Node-RED Slack workspace](https://nodered.org/slack).

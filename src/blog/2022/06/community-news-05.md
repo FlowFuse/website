@@ -13,7 +13,7 @@ tags:
 
 Welcome to the FlowFuse newsletter, a regular roundup of what\`s happening with both FlowFuse and the wider Node-RED community. 
 <!--more-->
-If you've got something that you'd like us to share please email [contact@flowforge.com](mailto:contact@flowforge.com).
+If you've got something that you'd like us to share please email [contact@flowfuse.com](mailto:contact@flowfuse.com).
 
 [FlowFuse 0.5 AND 0.6](https://flowforge.com/blog/2022/06/flowforge-06-released/)  
 We've had two releases since our last newsletter, there are a lot of related features between them. 

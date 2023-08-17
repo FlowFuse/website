@@ -13,7 +13,7 @@ tags:
 
 Welcome to the FlowFuse newsletter, a regular roundup of what’s happening with both FlowFuse and the wider Node-RED community.
 <!--more-->
-If you've got something that you'd like us to share please email [contact@flowforge.com](mailto:contact@flowforge.com).
+If you've got something that you'd like us to share please email [contact@flowfuse.com](mailto:contact@flowfuse.com).
 
 [**FlowFuse 0.10**](https://flowforge.com/blog/2022/09/flowforge-010-released/)
 Version 0.10 was released on 30th September. Our latest release includes some great new features, quality of life improvements and bug fixes. Notable additions included the ability to [Secure your HTTP endpoints](https://github.com/flowforge/flowforge/pull/893), [Add read-only users to your projects](https://github.com/flowforge/flowforge/issues/657) and [use our static IP address for outbound connections](https://flowforge.com/docs/cloud/#ip-addresses)

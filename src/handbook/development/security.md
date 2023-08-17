@@ -12,7 +12,7 @@ Our internal Incident Response plan is documented [here](../company/security/inc
 
 ## Reporting a Vulnerability
 
-Please report any vulnerabilities discovered in FlowFuse products to security@flowforge.com.
+Please report any vulnerabilities discovered in FlowFuse products to security@flowfuse.com.
 
 We will endeavour to acknowledge and fix any reported vulnerabilities ASAP based
 on its severity and assessed impact to our users.

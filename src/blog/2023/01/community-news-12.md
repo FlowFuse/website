@@ -13,7 +13,7 @@ tags:
 
 Welcome to the FlowFuse newsletter for December 2022, a monthly roundup of what’s been happening with both FlowFuse and the wider Node-RED community. 2022 was a really exciting year for the development of both Node-RED and FlowFuse. Node-RED released version 3, another major milestone for the project. FlowFuse hit version 1, leaving the beta development stage. We are excited to see what the community can achieve in 2023!
 <!--more-->
-If you've got something that you think we should share on our newsletters please [get it touch](mailto:contact@flowforge.com).
+If you've got something that you think we should share on our newsletters please [get it touch](mailto:contact@flowfuse.com).
 
 [**Node-RED Nears 3.1 Release**](https://github.com/node-red/node-red/milestone/19)
 The release of Node-RED 3.1 is expected very soon. 3.1 includes lots of great new features such as support for [locking flows in the editor](https://github.com/node-red/node-red/pull/3938) and [improving the user experience around hiding flows](https://github.com/node-red/node-red/pull/3930). As an open source project the development of Node-RED is entirely dependent on individuals and companies giving their time to work towards each new release. If you'd like to know how you can get involved you can read more on the [Node-RED web site](https://nodered.org/about/contribute/).

@@ -5,7 +5,7 @@ This document explains the process of delivering a sales demo of the features of
 ### Setup - Before the demo
 
 Before we begin a sales demo we need to set up an environment. Make sure you are
-already logged into your flowforge account (@flowforge.com email) on production, not as an administrator.
+already logged into your flowforge account (@flowfuse.com email) on production, not as an administrator.
 
 Create a new team for this demo, you need to do this before the demo so that
 you don’t have to show your credit card details on screen. After creating the
