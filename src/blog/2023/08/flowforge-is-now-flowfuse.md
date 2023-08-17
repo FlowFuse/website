@@ -1,11 +1,10 @@
 ---
-title: FlowForge is now FlowFuse: New identity but same vision for industrial data integration
-
+title: "FlowForge is now FlowFuse New identity but same vision for industrial data integration"
 subtitle: New identity but same vision for industrial data integration
-description: FlowForge is being renamed to FlowFuse. Our mission and commitment to our customers stays that same.
+description: FlowForge is being renamed to FlowFuse. Our mission and commitment to our customers stays the same.
 date: 2023-08-17
 authors: ["zeger-jan-van-de-weg"]
-image: ""
+image: "/blog/2023/08/images/flowforge-is-now-flowfuse.jpg"
 tags:
     - posts
     - community
@@ -18,7 +17,7 @@ We are happy to announce that FlowForge is changing its name to FlowFuse. Changi
 
 We believe that this new name better reflects our core mission and aspirations. Just as electricity fuses elements to create energy, the FlowFuse platform fuses together data, ideas, processes, and technologies to generate a powerful force of innovation and transformation.
 
-Selecting a new name for a company or product is never easy. Some of the requirements we set for a new name were: 1) it should be reasonably close to FlowForge so it will be easier to transition the brand identity, 2) it should even better reflect our mission, and 3) keeping the FF acronym will help with API prefixes :-). I think we have accomplished all the above and am delighted to move forward as FlowFuse.
+Selecting a new name for a company or product is never easy. Some of the requirements we set for a new name were: 1) it should be reasonably close to FlowForge so it will be easier to transition the brand identity, 2) it should even better reflect our mission, and 3) keeping the FF acronym will help with environment variable prefixes :-). I think we have accomplished all the above and am delighted to move forward as FlowFuse.
 
 **What to Expect Next**
 
