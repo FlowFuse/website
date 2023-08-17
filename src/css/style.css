@@ -119,7 +119,12 @@ h1, h2, h3, h4, h5, p {
 }
 
 .gradient-bg {
-    background: radial-gradient(circle 50vw at center 500px,#374151,transparent);
+    background: radial-gradient(circle 50vw at center 500px,theme(colors.gray.700),transparent);
+    background-size: 100vw;
+}
+
+.pricing .gradient-bg {
+    background: radial-gradient(circle 50vw at center -100px,rgba(55, 65, 81, 0.2),theme(colors.gray.800));
     background-size: 100vw;
 }
 
