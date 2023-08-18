@@ -83,5 +83,5 @@ guide for [upgrading your FlowFuse instance](https://flowforge.com/docs/upgrade/
 
 ## Getting help
 
-Please check FlowFuse's [documentation](https://flowforge.com/docs/) as the answers to many questions are covered there. Additionally you can go the the [community forum](https://community.flowforge.com) if you have
+Please check FlowFuse's [documentation](https://flowforge.com/docs/) as the answers to many questions are covered there. Additionally you can go the the [community forum](https://community.flowfuse.com) if you have
 any feedback or feature requests.
