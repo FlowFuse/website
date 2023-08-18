@@ -22,26 +22,26 @@ companies like us, the open licensed and free to use core is tier, not competiti
 In the traditional sense, the prospective customer is right. By the definition,
 a customer **buys** goods or services by exchanging it for **money**. For 
 FlowFuse’s open-source edition, which is free as in beer and free as in speech,
-no money changes hands. It can be installed an run by anyone. Once the software
-is being installed and used, For FlowFuse we consider we've gained a new customer.
+no money changes hands. It can be installed and run by anyone. Once the software
+is being installed and used, we consider we've gained a new customer.
 There’s an agreement in place, the Apache 2.0 license, and value is obtained by
 the customer. The only missing component compared to an ‘ordinary’ sale is the lack
 of money from the customer to FlowFuse. The fact that no monetary value is exchanged,
 like the situation where a customer picks the competitor, doesn’t make the open
-source tier competition. Just a free tier.
+source tier competition. It is just a free tier.
 
 Another reason it's really a tier is that the core of the product is the same. In
-many open-core products, the path to upgrade from the openly licenced product to
+many open-core products, the path to upgrade from the open source license product to
 the paid tier is much alike customers are used to on SaaS models. In the reals of
 self-managed software that's mostly uploading a license and  at times a few configuration
 steps.
 
 Furthermore, the open tier is a tier as the customer choses to not adopt all
 capabilities. They're leaving value on the table. Either this is because it's not
-quite clear what the value obtained is and if the price for the higher tiers provides
+quite clear what the value is and if  the higher tiers provides
 enough business value to warrant the expense. Or the adoption journey for the
-customer doesn't require the fully featured tiers yet.
-The customer considers what they cannot adopt at the time, or indefinitely. In
+customer doesn't yet require the full featured tiers.
+In
 FlowFuse’s case support is provided through our community forum and features
 like SSO/HA among others aren’t available either. 
 
@@ -58,7 +58,7 @@ one, it's hard to track how many users a software package has, and who these use
 are. For example; FlowFuse has [Telemetry](/docs/admin/telemetry/#usage-telemetry),
 though it can be turned off. Nor do we know who hosts this software.
 
-Another challenge is around product segregation. At FlowFuse and beyond it's
+Another challenge is around product and feature packaging. At FlowFuse and other open core companies it's
 uncommon to move features from the open tier to paid tier only. If this choice has
 been made it's a done deal, even when the product team got it wrong. Usually the
 initial thoughts are therefor to move all features into the paid tiers. However,
