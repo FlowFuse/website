@@ -26,4 +26,4 @@ FlowFuse on the AWS Marketplace is available under the Apache License c2.0 open 
 
 Customers can easily upgrade to the premium or enterprise tier by obtaining a commercial license from FlowFuse.
 
-FlowFuse on AWS Marketplace is available [immediately](https://aws.amazon.com/marketplace/pp/prodview-3ycrknfg67rug?sr=0-1&ref_=beagle&applicationId=AWSMPContessa). Please give it a try and let us know what you think.
+FlowFuse on AWS Marketplace is available [immediately](https://aws.amazon.com/marketplace/pp/prodview-3ycrknfg67rug?sr=0-1&ref_=beagle&applicationId=AWSMPContessa). Please refer to our [documentation](https://flowfuse.com/docs/install/docker/aws-marketpace/) and give it a try and let us know what you think.
