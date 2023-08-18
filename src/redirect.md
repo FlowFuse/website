@@ -11,7 +11,6 @@ pagination:
 redirects:
   - { "from": "/blog/first-deploy/", "to": "/blog/2021/04/first-deploy/"}
   - { "from": "/blog/welcome-ben/", "to": "/blog/2021/05/welcome-ben/" }
-  - { "from": "/blog/welcome-sam/", "to": "/blog/2021/05/welcome-sam/" }
   - { "from": "/blog/welcome-zj/", "to": "/blog/2022/01/welcome-zj/" }
   - { "from": "/blog/welcome-steve/", "to": "/blog/2022/01/welcome-steve/" }
   - { "from": "/blog/flowforge-01-released/", "to": "/blog/2022/01/flowforge-01-released/" }
