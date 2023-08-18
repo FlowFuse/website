@@ -1,7 +1,7 @@
 ---
 title: "Our Open Source offering is a tier, not our competition"
 subtitle: 
-description: Often our customers think we're competing against 
+description: Often our customers think we're competing against ourself, we're not
 date: 2023-08-18
 authors: ["zeger-jan-van-de-weg"]
 image: "/blog/2023/08/images/matt-hardy-waves.jpg"
