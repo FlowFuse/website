@@ -10,7 +10,7 @@ tags:
     - news
 ---
 
-Today, we are excited to announce that FlowFuse is now available from the AWS Marketplace. This makes it very easy for customers to install and run Node-RED and FlowFuse on the AWS Cloud.
+Today, we are excited to announce that FlowFuse is now available from the [AWS Marketplace](https://aws.amazon.com/marketplace/pp/prodview-3ycrknfg67rug?sr=0-1&ref_=beagle&applicationId=AWSMPContessa). This makes it very easy for customers to install and run Node-RED and FlowFuse on the AWS Cloud.
 <!--more-->
 
 FlowFuse allows organizations to reliably deliver Node-RED applications in a continuous, collaborative and secure manner. Customers running FlowFuse on AWS Cloud will benefit from FlowFuse's features, including:
@@ -26,4 +26,4 @@ FlowFuse on the AWS Marketplace is available under the Apache License c2.0 open 
 
 Customers can easily upgrade to the premium or enterprise tier by obtaining a commercial license from FlowFuse.
 
-FlowFuse on AWS Marketplace is available immediately. Please give it a try and let us know what you think.
+FlowFuse on AWS Marketplace is available [immediately](https://aws.amazon.com/marketplace/pp/prodview-3ycrknfg67rug?sr=0-1&ref_=beagle&applicationId=AWSMPContessa). Please give it a try and let us know what you think.
