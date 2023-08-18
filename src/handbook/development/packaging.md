@@ -170,7 +170,7 @@ section of the handbook.
 
 A Fix release can be made at any time, depending on the best judgement of the engineer making the fix but requires a review by another team member.
 
-The process for making a release is documented [here](./release.md).
+The process for making a release is documented [here](./releases/process/).
 
 
 ### Adding NPM packages to Stacks
