@@ -38,12 +38,9 @@ steps.
 
 Furthermore, the open tier is a tier as the customer choses to not adopt all
 capabilities. They're leaving value on the table. Either this is because it's not
-quite clear what the value is and if  the higher tiers provides
+quite clear what the value is or if  the higher tiers provides
 enough business value to warrant the expense. Or the adoption journey for the
 customer doesn't yet require the full featured tiers.
-In
-FlowFuse’s case support is provided through our community forum and features
-like SSO/HA among others aren’t available either. 
 
 What’s unique about open source software, is that customers can exchange value
 towards the company and community building the software in other forms: by
