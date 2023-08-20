@@ -26,7 +26,7 @@ To participate in FlowFuse's employee referral program, kindly send all referral
 ### Sharing an Existing Role
 
 The URLs for the existing roles we have on the website are any files found in [here](https://github.com/flowforge/website/tree/main/src/jobs).
-The URL will be structured accordingly: `https://flowforge.com/jobs/<job-short-title>`
+The URL will be structured accordingly: `/jobs/<job-short-title>`
 
 ## Interviews
 

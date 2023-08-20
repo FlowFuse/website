@@ -44,4 +44,4 @@ Thanks Abdelhamid, that's actually really easy to do. Double click the subflow y
 
 ![How to delete a subflow](./images/delete-subflow.png "How to delete a subflow")
 
-Thanks again to everyone who attended and participated in our first webinar. We have lots of other useful live content coming up soon, you can view and register for future events on our website's [webinars page](https://flowforge.com/webinars/).
+Thanks again to everyone who attended and participated in our first webinar. We have lots of other useful live content coming up soon, you can view and register for future events on our website's [webinars page](/webinars/).

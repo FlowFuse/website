@@ -11,7 +11,7 @@ tags:
     - releases
 ---
 
-Predefined environment variables for your Projects and Devices, manage your Project's modules and import your existing flows (and credentials) into your FlowFuse [Projects](https://flowforge.com/docs/user/concepts/#project).
+Predefined environment variables for your Projects and Devices, manage your Project's modules and import your existing flows (and credentials) into your FlowFuse [Projects](/docs/user/concepts/#project).
 
 <!--more-->
 
@@ -22,7 +22,7 @@ We're pleased to announce version 1.0 FlowFuse is now available. Keep reading fo
 ## Features
 [Standard Environment Variables set for both Projects and Devices](https://github.com/flowforge/flowforge/issues/841)
 
-Projects now get a set of predefined environment variables that can be used by their flows. These give your flows access to the projects unique id and name. When the flows are deployed to [devices](https://flowforge.com/docs/user/concepts/#device), they also get the device's id and name. That makes is easier to deploy flows across multiple devices and have each able to identify itself.
+Projects now get a set of predefined environment variables that can be used by their flows. These give your flows access to the projects unique id and name. When the flows are deployed to [devices](/docs/user/concepts/#device), they also get the device's id and name. That makes is easier to deploy flows across multiple devices and have each able to identify itself.
 
 [Add additional node modules to your projects](https://github.com/flowforge/flowforge/issues/405)
 This feature allows you to pre-define additional Node-RED nodes and node modules you may want to be installed in your FlowFuse project, making it easier to manage.
@@ -60,11 +60,11 @@ We'd like the thank the following for their contributions to this release:
 
 [Jozefik](https://github.com/Jozefik) for their work on [Adding limits to admin panel](https://github.com/flowforge/flowforge/pull/1082).
 
-As an open-source project, we welcome community involvement in what we're building. If you're interested in contributing, checkout our [guide in the docs](https://flowforge.com/docs/contribute/).
+As an open-source project, we welcome community involvement in what we're building. If you're interested in contributing, checkout our [guide in the docs](/docs/contribute/).
 
 ### Try it out
 
-[Sign up for FlowFuse-Managed Premium](https://app.flowforge.com/account/create?code=RELEASE1) with this link or at the checkout enter the code **RELEASE1** to get your first project free for a month. As an open source project you can also use [FlowFuse-Community](https://flowforge.com/docs/install/) for free, forever.
+[Sign up for FlowFuse-Managed Premium](https://app.flowforge.com/account/create?code=RELEASE1) with this link or at the checkout enter the code **RELEASE1** to get your first project free for a month. As an open source project you can also use [FlowFuse-Community](/docs/install/) for free, forever.
 
 
 ### Upgrading FlowFuse

@@ -25,7 +25,7 @@ in Node-RED. In FlowFuse 1.1 flows can now create and persist files within
 your Projects. We know those files are used in many creative ways and we're looking
 forward to seeing how users improve their Projects using this new feature.
 
-[Import Snapshots from Outside FlowFuse](https://flowforge.com/docs/user/node-red-tools/) Developers may wish to
+[Import Snapshots from Outside FlowFuse](/docs/user/node-red-tools/) Developers may wish to
 work on Node-RED in a local environment but want an easy path to share that with their team. You can now link your Node-RED instances running outside of FlowFuse and push Snapshots directly into your FlowFuse Projects to leverage FlowFuse fully.  With this new feature we've made it effortless to push a local build of a project to FlowFuse for deployment to your staging and production FlowFuse instances.
 
 ## Improvements
@@ -80,14 +80,14 @@ We'd like the thank the following for their contributions to this release:
 [mikermcneil](https://github.com/mikermcneil) for their work on [#1301](https://github.com/flowforge/flowforge/pull/1301)
 
 As an open-source project, we welcome community involvement in what we're building.
-If you're interested in contributing, checkout our [guide in the docs](https://flowforge.com/docs/contribute/).
+If you're interested in contributing, checkout our [guide in the docs](/docs/contribute/).
 
 ### Try it out
 
 As said before, a lot of effort went into the local installer. We're confident
 you can have your own FlowFuse running locally in about 30 minutes.
-[Get started right away!](https://flowforge.com/docs/install/local/)
-([Docker](https://flowforge.com/docs/install/docker/) and [Kubernetes](https://flowforge.com/docs/install/kubernetes/)
+[Get started right away!](/docs/install/local/)
+([Docker](/docs/install/docker/) and [Kubernetes](/docs/install/kubernetes/)
 are available too!)
 
 If you'd rather use our hosted offering: [Sign up for FlowFuse Cloud](https://app.flowforge.com/account/create?code=RELEASE11)
@@ -100,11 +100,11 @@ persisted files you'll need to upgrade your projects stack. You'll be prompted
 to do so on the project page.
 
 If you installed a previous version of FlowFuse and want to upgrade, our documentation provides a
-guide for [upgrading your FlowFuse instance](https://flowforge.com/docs/upgrade/)
+guide for [upgrading your FlowFuse instance](/docs/upgrade/)
 
 ### Getting help
 
-Please check FlowFuse's [documentation](https://flowforge.com/docs/) as the answers to many questions are covered there.
+Please check FlowFuse's [documentation](/docs/) as the answers to many questions are covered there.
 
 If you hit any problems with the platform please raise an [issue on GitHub](https://github.com/flowforge/flowforge/issues).
 That also includes if you have any feedback or feature requests.

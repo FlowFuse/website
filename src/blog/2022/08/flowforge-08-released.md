@@ -61,7 +61,7 @@ We'd like the thank the following for their contributions to this release:
  - [HaroldPetersInskipp](https://github.com/HaroldPetersInskipp) helped [updating our documentation](https://github.com/flowforge/flowforge/pull/812)
  - [Steveorevo](https://github.com/Steveorevo) also [updated our documentation](https://github.com/flowforge/flowforge/pull/818)
 
-As an open-source project, we welcome the community involvement in what we're building. If you're interested in contributing, checkout our [guide in the docs](https://flowforge.com/docs/contribute/).
+As an open-source project, we welcome the community involvement in what we're building. If you're interested in contributing, checkout our [guide in the docs](/docs/contribute/).
 
 ### Upgrading FlowFuse
 

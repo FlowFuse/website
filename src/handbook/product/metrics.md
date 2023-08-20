@@ -22,12 +22,12 @@ Each metric we track provides unique insights into different facets of our produ
 
 1. **Applications with Multiple Instances**: Applications were designed to group Node-RED instances for enhanced organization, thus serving as a foundational element for numerous other features.
 
-2. **High Availability Adoption Rate**: This metric quantifies the proportion of active instances with activated [High Availability (HA)](https://flowforge.com/docs/user/high-availability/). It's calculated by dividing the number of HA instances by the total number of active instances.
+2. **High Availability Adoption Rate**: This metric quantifies the proportion of active instances with activated [High Availability (HA)](/docs/user/high-availability/). It's calculated by dividing the number of HA instances by the total number of active instances.
 
-3. **Overall Pipeline Adoption Rate**: This metric illustrates the degree of [pipeline](https://flowforge.com/docs/user/devops-pipelines/) adoption relative to applications, calculated by dividing the total number of pipelines by the total number of applications.
+3. **Overall Pipeline Adoption Rate**: This metric illustrates the degree of [pipeline](/docs/user/devops-pipelines/) adoption relative to applications, calculated by dividing the total number of pipelines by the total number of applications.
 
-4. **Snapshot Adoption Rate**: This rate evaluates the prevalence of active instances using one or more [snapshots](https://flowforge.com/docs/user/snapshots/). It's determined by dividing the number of active instances with one or more snapshots by the total number of active instances.
+4. **Snapshot Adoption Rate**: This rate evaluates the prevalence of active instances using one or more [snapshots](/docs/user/snapshots/). It's determined by dividing the number of active instances with one or more snapshots by the total number of active instances.
 
-5. **Device Adoption Rate**: This metric demonstrates the rate at which teams adopt [devices](https://flowforge.com/docs/user/devices/), determined by dividing the number of teams with one or more devices by the total number of teams.
+5. **Device Adoption Rate**: This metric demonstrates the rate at which teams adopt [devices](/docs/user/devices/), determined by dividing the number of teams with one or more devices by the total number of teams.
 
 6. **Weekly Active Users**: This fundamental metric provides insight into the overall usage and engagement with our product on a weekly basis.

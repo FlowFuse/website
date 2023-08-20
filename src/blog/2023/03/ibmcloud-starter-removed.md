@@ -44,7 +44,7 @@ It's also easy to setup [Environment Variables](/blog/2023/01/environment-variab
 
 ## Security
 
-As with IBM Cloud, FlowFuse makes it very easy to secure your Node-RED Applications. [FlowFuse offers three tiers of security](https://flowforge.com/docs/user/instance-settings/#security) options on your Node-RED Instances to secure any exposed HTTP routes on your Node-RED instance, e.g. REST API endpoints or Node-RED Dashboard.
+As with IBM Cloud, FlowFuse makes it very easy to secure your Node-RED Applications. [FlowFuse offers three tiers of security](/docs/user/instance-settings/#security) options on your Node-RED Instances to secure any exposed HTTP routes on your Node-RED instance, e.g. REST API endpoints or Node-RED Dashboard.
 
 - **None**: Anyone will be able to access the exposed routes.
 - **Basic Auth**: Setup a single, dedicated username and password combination that is required in order to access the routes.
@@ -56,7 +56,7 @@ If you're looking to move your Node-RED applications from IBM Cloud, then you ca
 
 ### Node-RED Tools Plugin
 
-You can use our Node-RED Tools plugin to migrate your flows and credentials over to FlowFuse. You can read the details in our [Migration Guide](https://flowforge.com/docs/user/migration/), which also includes instructions on how to export your environment variables too.
+You can use our Node-RED Tools plugin to migrate your flows and credentials over to FlowFuse. You can read the details in our [Migration Guide](/docs/user/migration/), which also includes instructions on how to export your environment variables too.
 
 
 ### Manual Import

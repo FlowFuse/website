@@ -23,16 +23,16 @@ If you’d like to learn more about what else was included in 1.0 you can do so 
 [**Node-RED Nears 3.1 Release**](https://github.com/node-red/node-red/milestone/19)
 The next release of Node-RED has some great new features including support for [locking flows in the editor](https://github.com/node-red/node-red/pull/3938) and [improving the user experience around hiding flows](https://github.com/node-red/node-red/pull/3930). We'd expect the first 3.1 beta to be available in November with a full release following shortly afterwards.
     
-[**FlowFuse raises $7.25M to bring Node-RED to the Enterprise**](https://flowforge.com/blog/2022/10/seed-round-bring-node-red-to-enterprise/)  
+[**FlowFuse raises $7.25M to bring Node-RED to the Enterprise**](/blog/2022/10/seed-round-bring-node-red-to-enterprise/)  
 Earlier this week, we announced a $7.25M seed round led by [Cota Capital](https://www.cotacapital.com/knowledgecapital/flowforge-closes-the-gap-between-it-and-ot), joined by Westwave Capital, Uncorrelated Ventures, and Open Core Ventures. This brings a huge amount of extensive knowledge and experience in IoT, open source, enterprise-ready software solutions. You can read more about what this investment means for FlowFuse in this [TechCrunch article](https://techcrunch.com/2022/11/03/flowforge-nabs-7-2m-to-help-companies-integrate-iot-using-node-red).
 
 [**Node-Red Dashboard - Beginners Guide**](https://stevesnoderedguide.com/node-red-dashboard)  
 It's great to see members of the Node-RED community taking their personal time to help us all build better projects. This write up takes you through the basics of creating your first Dashboard through to more advanced techniques to help your interfaces look professional and provide great user experiences.
 
-[**FlowFuse Team News**](https://flowforge.com/team/)    
+[**FlowFuse Team News**](/team/)    
 We are currently recruiting [NodeJS Developers](https://boards.greenhouse.io/flowforge/jobs/4463977004), a [Product Manager](https://boards.greenhouse.io/flowforge/jobs/4717778004), a [Recruiter / PeopleOps Manager](https://boards.greenhouse.io/flowforge/jobs/4687876004) and a [Senior Community Manager](https://boards.greenhouse.io/flowforge/jobs/4700809004). You can view any of the roles we currently have open and apply on our [Jobs page](https://boards.greenhouse.io/flowforge).
 
 We'd also like to welcome [Pez Cuckow](https://github.com/Pezmc) who joined FlowFuse as a Senior Software Engineer in October.
     
 [**Try FlowFuse for Free**](https://app.flowforge.com/account/create?code=RELEASE1)  
-As a thank you for reading our newsletters we’d like to offer you a free, small project for one month on our managed FlowFuse platform when you create a new team. To get this discount please follow [this link](https://app.flowforge.com/account/create?code=RELEASE010) or use the code RELEASE1 when on the payment page after creating a new team. As an open source project you can also use [FlowFuse](https://flowforge.com/docs/install/) for free, forever.
+As a thank you for reading our newsletters we’d like to offer you a free, small project for one month on our managed FlowFuse platform when you create a new team. To get this discount please follow [this link](https://app.flowforge.com/account/create?code=RELEASE010) or use the code RELEASE1 when on the payment page after creating a new team. As an open source project you can also use [FlowFuse](/docs/install/) for free, forever.

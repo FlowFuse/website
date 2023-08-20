@@ -158,7 +158,7 @@ FlowFuse's public document explaining how run the company.
 
 ### Live
 
-The current version of each [Project](#project) which anyone can access on the internet, click here to view the live versions of the [website](https://flowforge.com/) and [handbook](https://flowforge.com/handbook/).
+The current version of each [Project](#project) which anyone can access on the internet, click here to view the live versions of the [website](/) and [handbook](/handbook/).
 
 ### Markup
 

@@ -46,7 +46,7 @@ Node-RED community.
 
 We’ll be bringing more collaboration features to the FlowFuse platform to
 enable true collaborative, team-based working. We’ll expand our 
-[Devices offering](https://flowforge.com/docs/user/concepts/#device) to make it
+[Devices offering](/docs/user/concepts/#device) to make it
 far easier to run Node-RED wherever it suits your use-case, from data center to
 remote edge locations.
 
@@ -56,8 +56,8 @@ work at. We already have some job openings available - check out our
 team.
 
 If you’re interested in learning more about what we’re doing, or have any
-questions, please do [get in touch](https://flowforge.com/contact-us/)!
+questions, please do [get in touch](/contact-us/)!
 
-[first-deploy]: https://flowforge.com/blog/2021/04/first-deploy/
-[flowforge-01]: https://flowforge.com/blog/2022/01/flowforge-01-released/
-[flowforge-1]: https://flowforge.com/blog/2022/10/flowforge-1-released/
+[first-deploy]: /blog/2021/04/first-deploy/
+[flowforge-01]: /blog/2022/01/flowforge-01-released/
+[flowforge-1]: /blog/2022/10/flowforge-1-released/

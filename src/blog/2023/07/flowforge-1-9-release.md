@@ -18,7 +18,7 @@ FlowFuse 1.9 adds new features to make it easier to administer FlowFuse platform
 ## API Documentation
 FlowFuse API allows developers to programmatically interact with the FlowFuse platform. This makes it possible to integrate FlowFuse into different infrastructure technologies, create scripts to automate specific FlowFuse tasks and embed FlowFuse into other applications.
 
-In the 1.9 release we are now publishing our [API documentation](https://flowforge.com/docs/api/) using the [OpenAPI specification](https://swagger.io/specification/) and making it viewable with the Swagger UI. Both these industrial standards will make using the FlowFuse API easier to use and understand.
+In the 1.9 release we are now publishing our [API documentation](/docs/api/) using the [OpenAPI specification](https://swagger.io/specification/) and making it viewable with the Swagger UI. Both these industrial standards will make using the FlowFuse API easier to use and understand.
 
 
 ## Customize Node-RED Palettes  [#2002](https://github.com/flowforge/flowforge/issues/2002)
@@ -61,7 +61,7 @@ Thanks to our community members for their contributions to this release.
 
 We're always working to enhance your experience with FlowFuse. Here's how you can stay informed and contribute:
 
-- **Roadmap Overview**: Check out our [Product Roadmap Page](https://flowforge.com/product/roadmap/) to see what we're planning for future updates.
+- **Roadmap Overview**: Check out our [Product Roadmap Page](/product/roadmap/) to see what we're planning for future updates.
 - **Entire Roadmap**: Visit our [Roadmap on GitHub](https://github.com/orgs/flowforge/projects/5) to follow our progress and contribute your ideas.
 - **Feedback**: We're interested in your thoughts about FlowFuse. Your feedback is crucial to us, and we'd love to hear about your experiences with the new features and improvements. Please share your thoughts, suggestions, or report any [issues on GitHub](https://github.com/flowforge/flowforge/issues/new/choose). 
 
@@ -70,7 +70,7 @@ Together, we can make FlowFuse better with each release!
 ## Try it out
 
 We're confident you can have self managed FlowFuse running locally in under 30 minutes.
-You can install our [local build](https://flowforge.com/docs/install/local/), use [Docker](https://flowforge.com/docs/install/docker/), or [Kubernetes](https://flowforge.com/docs/install/kubernetes/).
+You can install our [local build](/docs/install/local/), use [Docker](/docs/install/docker/), or [Kubernetes](/docs/install/kubernetes/).
 
 If you'd rather use our hosted offering: [Get started for free](https://app.flowforge.com/account/create) on FlowFuse Cloud.
 
@@ -79,9 +79,9 @@ If you'd rather use our hosted offering: [Get started for free](https://app.flow
 [FlowFuse Cloud](https://app.flowforge.com) is already running 1.9.
 
 If you installed a previous version of FlowFuse and want to upgrade, our documentation provides a
-guide for [upgrading your FlowFuse instance](https://flowforge.com/docs/upgrade/).
+guide for [upgrading your FlowFuse instance](/docs/upgrade/).
 
 ## Getting help
 
-Please check FlowFuse's [documentation](https://flowforge.com/docs/) as the answers to many questions are covered there. Additionally you can go the the [community forum](https://community.flowfuse.com) if you have
+Please check FlowFuse's [documentation](/docs/) as the answers to many questions are covered there. Additionally you can go the the [community forum](https://community.flowfuse.com) if you have
 any feedback or feature requests.

@@ -33,7 +33,7 @@ But for this application, we will instead use FlowFuse, a pure software-based ap
 
 In addition to our two PLCs, we’ll be using FlowFuse software to serve our Node-RED instance. You can either self-host, on-premise or in the cloud. Or use the managed service [FlowFuse Cloud](https://app.flowforge.com).
 
-In this example, we will be using a self-hosted FlowFuse instance running on [Docker](https://flowforge.com/docs/install/docker/).
+In this example, we will be using a self-hosted FlowFuse instance running on [Docker](/docs/install/docker/).
 
 ## Data Treatment on Ethernet/IP PLC
 
@@ -190,7 +190,7 @@ Depending on how noisy the REAL data is, which is common with unfiltered 4-20mA 
 
 ![Filter node Configuration](./images/ethip-to-S7/e-to-p-23.png)
 
-In the example above, we arbitrarily applied a 3% [deadband](https://flowforge.com/blog/2023/06/node-explained-filter/#deadband-mode) to the `Robot_Position` value, which means that the value must change by greater than or equal to 3% compared to the last input value, or else the data will be discarded before being sent to the stacklight PLC.
+In the example above, we arbitrarily applied a 3% [deadband](/blog/2023/06/node-explained-filter/#deadband-mode) to the `Robot_Position` value, which means that the value must change by greater than or equal to 3% compared to the last input value, or else the data will be discarded before being sent to the stacklight PLC.
 
 You can adjust the deadband to find the right balance for your particular application.
 
