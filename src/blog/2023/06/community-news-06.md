@@ -38,7 +38,7 @@ On June 27, FlowFuse is doing a webinar with our friends at InfluxDB. A great op
 
 - Two articles featuring how to connect Modbus data with Node-RED:
     - [Using Node-RED to Visualize Industrial Production Data via Modbus](/blog/2023/05/visualize-production-data-via-modbus-in-node-red/)
-    - [Best Practices Integrating a Modbus Device With Node-RED](/blog/2023/05/integrating%20modbus%20with%20node-red/)
+    - [Best Practices Integrating a Modbus Device With Node-RED](/blog/2023/05/integrating modbus with node-red/)
 
 - [Node-RED Tips - Dashboard Edition](/blog/2023/06/3-quick-node-red-tips-7/) - A new set of Node-RED quick tips that are focused on using Node-RED Dashboard.
 
@@ -48,13 +48,9 @@ On June 27, FlowFuse is doing a webinar with our friends at InfluxDB. A great op
 
 - [FlowFuse 1.7 Now Available with Remote Node-RED Editor Access](/blog/2023/05/flowforge-1-7-released/)
 
-
-
 ## From the Community
 
 Gerrit Riessen has published a list of [Pros and Cons for using Node-RED](https://gorenje.medium.com/fourteen-for-fourteen-against-why-i-love-hate-and-connect-with-node-23797f9466ec). It is a pretty comprehensive list so check it out. FlowFuse is working to address some of the cons in Gerrit's list, specifically software delivery pipelines and the ability to deploy out to many end points.
-
-
 
 ## Join Our Team
 FlowFuse is expanding our team. Check out the current openings:

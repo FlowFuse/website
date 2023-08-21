@@ -20,7 +20,7 @@ With [Node-RED 3.0 fast approaching](https://nodered.org/about/releases/) we've 
 
 The goal of FlowFuse is to be the best way to run Node-RED at any scale, whether that's many users or many instances. Node-RED is a constantly developing as a platform and therefore part of running Node-RED is also upgrading the version you are running.
 
-With the 0.4 release today we've made that super simple in FlowFuse. Last month we introduced the concept of [Project Stacks](/docs/user/concepts/#project-stack). One of the key elements of a Stack was the version of Node-RED in use. Initially this may have seemed fairly basic, when you create a new project you usually want to use the latest version of Node-RED. However what happens when a new version is released and you have an existing project?
+With the 0.4 release today we've made that super simple in FlowFuse. Last month we introduced the concept of [Project Stacks](/docs/user/concepts/#stack). One of the key elements of a Stack was the version of Node-RED in use. Initially this may have seemed fairly basic, when you create a new project you usually want to use the latest version of Node-RED. However what happens when a new version is released and you have an existing project?
 Now you can change the stack that a project is running on, which in turn will change the version of Node-RED. This is a simple process from the project settings, it only requires a short period of downtime while the project restarts on the new stack, typically around 10-15 seconds.
 
 Our driver to get this feature into the 0.4 release is the approaching release of Node-RED 3.0, now we know that we can be ready to offer our users Node-RED 3.0 as soon as it is released.
@@ -33,7 +33,7 @@ We will also be making available the Beta's of Node-RED 3.0 within FlowFuse Clou
 ### Environment Variables
 
 Another key new feature we are introducing is the ability to set and manage environment variables within your projects.
-Environment Variables are a key tool when building applications as they allow you to to separate the configuration of your system from the logic in the code. Even in Low-Code platforms this is an important design pattern. Environment variables are fully integrated into [Templates](/docs/user/concepts/#project-template) that we introduced last month so they can be set both at the platform level or on an individual project.
+Environment Variables are a key tool when building applications as they allow you to to separate the configuration of your system from the logic in the code. Even in Low-Code platforms this is an important design pattern. Environment variables are fully integrated into [Templates](/docs/user/concepts/#template) that we introduced last month so they can be set both at the platform level or on an individual project.
 Our plans for the next release will make these even more useful as we introduce the ability to [duplicate a project](https://github.com/flowforge/flowforge/issues/271) and then modify those variables for the new project.
 
  - [Story #225 - Project Environment Variables](https://github.com/flowforge/flowforge/issues/225)
@@ -49,7 +49,7 @@ We would like to say a big thank-you to [Fakorede Damilola Idris](https://fakoco
 
 ### Getting started with FlowFuse
 
-The documentation provides a guide for [installing FlowFuse on a local server](http://flowforge.com/docs/install/).
+The documentation provides a guide for [installing FlowFuse on a local server](/docs/install/).
 
 If you haven't played with FlowFuse yet, here's a more complete walk-through
 of the platform:
@@ -59,7 +59,7 @@ of the platform:
 ### Upgrading FlowFuse
 
 If you installed a previous version of FlowFuse  and want to upgrade, our documentation provides a
-guide for [upgrading FlowFuse on a local server](http://flowforge.com/docs/install#upgrade).
+guide for [upgrading FlowFuse on a local server](/docs/install#upgrade).
 
 ### Getting help
 

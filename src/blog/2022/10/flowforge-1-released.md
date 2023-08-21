@@ -11,7 +11,7 @@ tags:
     - releases
 ---
 
-Predefined environment variables for your Projects and Devices, manage your Project's modules and import your existing flows (and credentials) into your FlowFuse [Projects](/docs/user/concepts/#project).
+Predefined environment variables for your Instances and Devices, manage your Project's modules and import your existing flows (and credentials) into your FlowFuse [Projects](/docs/user/concepts/#instance).
 
 <!--more-->
 
@@ -72,7 +72,7 @@ As an open-source project, we welcome community involvement in what we're buildi
 Our managed [FlowFuse](https://app.flowforge.com) is already running 1.0. Upgrade your project Stacks to the latest version to make sure you get all the latest changes.
 
 If you installed a previous version of FlowFuse and want to upgrade, our documentation provides a
-guide for [upgrading FlowFuse on a local server](http://flowforge.com/docs/install#upgrade).
+guide for [upgrading FlowFuse on a local server](/docs/install#upgrade).
 
 ### Getting help
 
