@@ -29,7 +29,7 @@ In our commitment to transparency and collaboration, we will be documenting all 
 
 ## Join the Team
 
-Are you a developer looking for a new challenge? We are searching for a freelancer to help us with the development of the first version of the new dashboard. This is a 2-3 month project that provides an exciting opportunity to contribute to the future of data visualization and Node-RED. If you're interested, [we'd love to hear from you.](https://boards.greenhouse.io/flowforge/jobs/4911532004)
+Are you a developer looking for a new challenge? We are searching for a freelancer to help us with the development of the first version of the new dashboard. This is a 2-3 month project that provides an exciting opportunity to contribute to the future of data visualization and Node-RED. If you're interested, [we'd love to hear from you.](https://boards.greenhouse.io/flowfuse/jobs/4911532004)
 
 ## Charting the Course
 

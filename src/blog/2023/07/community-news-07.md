@@ -54,4 +54,4 @@ Our next webinar will be focused on the device management capabilities in the Fl
 ## Join Our Team
 FlowFuse is expanding our team. Check out the current openings:
 
-- [Contract Front-End Engineer – Node-RED Dashboard](https://boards.greenhouse.io/flowforge/jobs/4911532004)
+- [Contract Front-End Engineer – Node-RED Dashboard](https://boards.greenhouse.io/flowfuse/jobs/4911532004)

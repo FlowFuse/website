@@ -48,8 +48,8 @@ Jsonata is a very useful and often underutilised tool built into Node-RED. Steve
 ## Join Our Team
 FlowFuse is expanding our team. Check out the current openings:
 
-* **[Developer Advocate - Manufacturing & Industrial Automation](https://boards.greenhouse.io/flowforge/jobs/4798023004)**
+* **[Developer Advocate - Manufacturing & Industrial Automation](https://boards.greenhouse.io/flowfuse/jobs/4798023004)**
 
-* **[Sales Representative](https://boards.greenhouse.io/flowforge/jobs/4843566004)**
+* **[Sales Representative](https://boards.greenhouse.io/flowfuse/jobs/4843566004)**
 
 

@@ -59,6 +59,6 @@ Gerrit Riessen has published a list of [Pros and Cons for using Node-RED](https:
 ## Join Our Team
 FlowFuse is expanding our team. Check out the current openings:
 
-* [DevOps Engineer](https://boards.greenhouse.io/flowforge/jobs/4796271004)
+* [DevOps Engineer](https://boards.greenhouse.io/flowfuse/jobs/4796271004)
 
-* [Sales Representative](https://boards.greenhouse.io/flowforge/jobs/4843566004)
+* [Sales Representative](https://boards.greenhouse.io/flowfuse/jobs/4843566004)
