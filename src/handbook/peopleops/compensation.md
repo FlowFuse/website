@@ -11,7 +11,7 @@ determination during the hiring process. FlowFuse typically pays in the local
 currency, unless there are explicit discussions stating otherwise, taking
 into account location and company context.
 
-## Introducing the Single-Point Increase Cycle
+## Compensation Increase Cycle
 
 FlowFuse follows a single-point increase cycle for salary adjustments. These
 adjustments take place once a year, aligning with the company's budgeting
