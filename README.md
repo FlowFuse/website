@@ -8,6 +8,11 @@ It is built using [Tailwind CSS](https://tailwindcss.com/) and [Eleventy](https:
 
 It is hosted on Netlify with each commit to the `main` branch being automatically deployed to the live site.
 
+This works by a GitHub action automatically updating the `live` branch to includes documentation pulled from the `maintenance` branch of the [flowforge/flowforge](https://github.com/flowforge/flowforge)
+repository, when changes are pushed to `main`.
+
+Netlify is then configured to watch the `live` branch for any changes, once detected, it will automatically pull the contents of this branch (docs included) and deploy to our production site.
+
 ## Prerequisites 
 
 ### Linux/MacOS
