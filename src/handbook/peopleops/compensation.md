@@ -4,23 +4,32 @@ navTitle: Compensation
 
 # Compensation
 
-Total compensation consists of 3 elements, salary, equity, and benefits.
-FlowFuse aims to provide a total compensation package on par with similar
-companies in terms of: stage of the company, market, role, and level in the role.
-The data to validate our compensation is obtained through OptionImpact/Pave.com.
+FlowFuse provides a comprehensive compensation package with salary, equity,
+and benefits, aiming to be competitive with similar companies. Factors like
+company stage, market conditions, role, and level influence salary
+determination during the hiring process. FlowFuse typically pays in the local
+currency, unless there are explicit discussions stating otherwise, taking
+into account location and company context.
 
-## Salary
+## Compensation Increase Cycle
 
-Salary for each role is determined initially during the hiring process based
-on compensation expectation of the candidate as well as the market rates. Salary
-is based on your location you live in and the company context. FlowFuse pays in
-your local currency unless explicitly discussed otherwise.
+FlowFuse follows a single-point increase cycle for salary adjustments. These
+adjustments take place once a year, aligning with the company's budgeting
+and planning process. When determining compensation changes, FlowFuse considers
+three factors: performance, inflation, and market standards. These factors are
+taken into account together to make decisions about adjusting employee compensation.
+
+# Performance Review
+
+Performance reviews will be carried out annually, in September. Any employee or
+contractor who has completed more than six months of service at FlowFuse is eligible
+to participate in the performance review process.
 
 ### Adjustment
 
 FlowFuse can choose to increase compensation based on varying situations:
-- Past year performance, as documented in the September performance review
-- To stay between the 50-75th percentile for companies our stage
+- Past year performance, as evaluated during the September performance review.
+- Market positioning, aiming to align compensation within the 50-75th percentile range for companies at the same stage.
 
 ## Equity
 
