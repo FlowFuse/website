@@ -2,7 +2,7 @@
 title: FlowFuse is now available on AWS Marketplace
 subtitle: Making is easier to run Node-RED and FlowFuse on AWS Cloud
 description: This is an announcement that customers can install FlowFuse on AWS Cloud from the AWS Marketplace.
-date: 2023-08-18
+date: 2023-08-21
 authors: ["ian-skerrett"]
 image: blog/2023/08/images/flowfuse-aws.png
 tags:
