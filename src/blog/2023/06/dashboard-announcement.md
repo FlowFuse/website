@@ -1,7 +1,7 @@
 ---
 title: The Next Step in Data Visualization - Announcing the Successor to the Node-RED Dashboard
-subtitle: FlowForge's Journey Towards a New Node-RED Dashboard
-description: This article unveils FlowForge's plans to build the successor to the Node-RED Dashboard.
+subtitle: FlowFuse's Journey Towards a New Node-RED Dashboard
+description: This article unveils FlowFuse's plans to build the successor to the Node-RED Dashboard.
 date: 2023-06-21
 authors: ["joe-pavitt", "marian-demme"]
 image: /blog/2023/06/images/node-red-dashboard.png
@@ -11,7 +11,7 @@ tags:
 
 For the past several years, the Node-RED Dashboard has been an indispensable tool for many Node-RED users. It has offered a seamless way to create live dashboards, enabling the quick and intuitive creation of user interfaces for Node-RED flows. However, as the saying goes, "all good things must come to an end." 
 <!--more-->
-We at FlowForge have identified a significant need for a modern, interactive data visualization and dashboard solution. Having evaluated a wide range of options, we've decided to embark on an exciting journey: the creation of what we hope becomes the official successor to the Node-RED Dashboard.
+We at FlowFuse have identified a significant need for a modern, interactive data visualization and dashboard solution. Having evaluated a wide range of options, we've decided to embark on an exciting journey: the creation of what we hope becomes the official successor to the Node-RED Dashboard.
 
 ## The Problem at Hand
 
@@ -29,7 +29,7 @@ In our commitment to transparency and collaboration, we will be documenting all 
 
 ## Join the Team
 
-Are you a developer looking for a new challenge? We are searching for a freelancer to help us with the development of the first version of the new dashboard. This is a 2-3 month project that provides an exciting opportunity to contribute to the future of data visualization and Node-RED. If you're interested, [we'd love to hear from you.](https://boards.greenhouse.io/flowforge/jobs/4911532004)
+Are you a developer looking for a new challenge? We are searching for a freelancer to help us with the development of the first version of the new dashboard. This is a 2-3 month project that provides an exciting opportunity to contribute to the future of data visualization and Node-RED. If you're interested, [we'd love to hear from you.](https://boards.greenhouse.io/flowfuse/jobs/4911532004)
 
 ## Charting the Course
 

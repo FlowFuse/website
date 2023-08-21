@@ -13,27 +13,27 @@ tags:
 
 
 Frequently in industrial automation, there's a need for two devices that use different protocols to communicate with each other, requiring protocol conversion.  
-In this tutorial, we present a mock scenario where Node-RED is used to enable an Allen Bradley PLC, which uses ethernet/IP, to communicate with a Siemens PLC, which uses S7, using a no-code solution. This example is geared toward beginners and assumes that the end-user knows how to use PLCs, but may be using FlowForge or Node-RED for the first time.
+In this tutorial, we present a mock scenario where Node-RED is used to enable an Allen Bradley PLC, which uses ethernet/IP, to communicate with a Siemens PLC, which uses S7, using a no-code solution. This example is geared toward beginners and assumes that the end-user knows how to use PLCs, but may be using FlowFuse or Node-RED for the first time.
 
 <!--more-->
 
 # Premise
 
-![Mock production facility](./images/ethip-to-S7/e-to-p-1.png "FlowForge Mock production facility")
+![Mock production facility](./images/ethip-to-S7/e-to-p-1.png "FlowFuse Mock production facility")
 
 The figure above shows the layout of a mock production facility. Inside this facility, operations suggested adding stack lights as an extra visual aid for operators to get a quick status of its 4 conveyor lines, avoiding the need to constantly monitor the HMI/SCADA displays.  
 Engineering has suggested adding a siemens S7 1200 PLC with an IO link connection to 4 stacklights, with each line PLC sending basic status information to the stacklight PLC to control the stack light outputs.  
 Line 1-3 PLCs are Siemens-based, and can communicate with the stacklight PLC natively over S7. But line 4 is an Allen Bradley PLC that uses ethernet/IP, and can't communicate with the stacklight PLC without some form of protocol conversion.  
 Traditionally, we'd use protocol gateway hardware, like Anybus or Red Lion, to convert ethernet/IP to S7.  
-But for this application, we will instead use FlowForge, a pure software-based approach, to convert ethernet/IP to S7. Let's walk through the process.
+But for this application, we will instead use FlowFuse, a pure software-based approach, to convert ethernet/IP to S7. Let's walk through the process.
 
 # Pre-Requisites and Set Up
 
 ## Flowforge
 
-In addition to our two PLCs, we’ll be using FlowForge software to serve our Node-RED instance. You can either self-host, on-premise or in the cloud. Or use the managed service [FlowForge Cloud](https://app.flowforge.com).
+In addition to our two PLCs, we’ll be using FlowFuse software to serve our Node-RED instance. You can either self-host, on-premise or in the cloud. Or use the managed service [FlowFuse Cloud](https://app.flowforge.com).
 
-In this example, we will be using a self-hosted FlowForge instance running on [Docker](https://flowforge.com/docs/install/docker/).
+In this example, we will be using a self-hosted FlowFuse instance running on [Docker](https://flowforge.com/docs/install/docker/).
 
 ## Data Treatment on Ethernet/IP PLC
 

@@ -18,6 +18,6 @@ describe("Page titles", async function() {
 
 		var nodes = xpath.select("//title", doc)
 
-		assert.equal(nodes[0].firstChild.data, "FlowForge • DevOps for Node-RED")
+		assert.equal(nodes[0].firstChild.data, "FlowFuse • DevOps for Node-RED")
 	})
 })

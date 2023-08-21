@@ -4,7 +4,7 @@ navTitle: Design Thinking
 
 ## Design Thinking
 
-At FlowForge, we practice Design Thinking when considering our UI design and wider decisions influencing the overall user experience of FlowForge.
+At FlowFuse, we practice Design Thinking when considering our UI design and wider decisions influencing the overall user experience of FlowFuse.
 
 > Design Thinking is a non-linear, iterative process that teams use to understand users, challenge assumptions, redefine problems and create innovative solutions to prototype and test.
 >
@@ -17,7 +17,7 @@ found within [FigJam](./tools#figjam-(more-info)), we have also written up some 
 
 ### User Personas
 
-Personas are fictional characters that represent the different users we expect to interact with FlowForge as a brand and/or platform. At FlowForge, we have many personas that will evolve over time, we have written up some of our Personas [here](../product/personas/).
+Personas are fictional characters that represent the different users we expect to interact with FlowFuse as a brand and/or platform. At FlowFuse, we have many personas that will evolve over time, we have written up some of our Personas [here](../product/personas/).
 
 <div class="grid grid-cols-2 gap-4">
     <div class="rounded-md bg-gray-900 text-white p-4 border-2 border-black">

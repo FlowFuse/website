@@ -4,33 +4,44 @@ navTitle: Compensation
 
 # Compensation
 
-FlowForge provides a comprehensive compensation package with salary, equity, and benefits, aiming to be competitive with similar companies. Factors like company stage, market conditions, role, and level influence salary determination during the hiring process. FlowForge typically pays in the local currency, unless there are explicit discussions stating otherwise, taking into account location and company context.
+FlowFuse provides a comprehensive compensation package with salary, equity,
+and benefits, aiming to be competitive with similar companies. Factors like
+company stage, market conditions, role, and level influence salary
+determination during the hiring process. FlowFuse typically pays in the local
+currency, unless there are explicit discussions stating otherwise, taking
+into account location and company context.
 
 ## Introducing the Single-Point Increase Cycle
 
-FlowForge now follows a simplified single-point increase cycle for salary adjustments. These adjustments take place once a year, aligning with the company's budgeting and planning process. When determining compensation changes, FlowForge considers three factors: performance, inflation, and market standards. These factors are taken into account together to make decisions about adjusting employee compensation.
+FlowFuse follows a single-point increase cycle for salary adjustments. These
+adjustments take place once a year, aligning with the company's budgeting
+and planning process. When determining compensation changes, FlowFuse considers
+three factors: performance, inflation, and market standards. These factors are
+taken into account together to make decisions about adjusting employee compensation.
 
 # Performance Review
 
-Performance reviews will be carried out annually, in September. Any employee or contractor who has completed more than six months of service at FlowForge is eligible to participate in the performance review process.
+Performance reviews will be carried out annually, in September. Any employee or
+contractor who has completed more than six months of service at FlowFuse is eligible
+to participate in the performance review process.
 
 ### Adjustment
 
-FlowForge can choose to increase compensation based on varying situations:
+FlowFuse can choose to increase compensation based on varying situations:
 - Past year performance, as evaluated during the September performance review.
 - Market positioning, aiming to align compensation within the 50-75th percentile range for companies at the same stage.
 
 ## Equity
 
-FlowForge intents to offers equity for most roles. The level of stock compensation
+FlowFuse intents to offers equity for most roles. The level of stock compensation
 can vary based on when an employee joined, their performance, and the variables
 that decide salary. Equity is offered as stock options, which upon
 execution will be transformed in the underlying stock. Stock compensation are
 awarded on a 4 year vesting schedule with a 1 year cliff.
 
 Employees might be taxed personally when accepting or executing stock options.
-FlowForge does not provide any advice on financial decisions for employees. For
-FlowForge employees the Fair Market Value of the underlying stock can be found
+FlowFuse does not provide any advice on financial decisions for employees. For
+FlowFuse employees the Fair Market Value of the underlying stock can be found
 in [this internal document](https://docs.google.com/document/d/1_DmqzQ5rmjYHlBvF5owJpj3JVR_BlJUg_S-pwfRtA5g).
 
 Equity is subject to board approval.
@@ -58,14 +69,14 @@ A lunch is organized to celebrate every release, and team members participating 
 
 #### Dinner Bonus
 
-The company's [KPI tracking FlowForge ARR](../company/achieving-success.md#kpi)
+The company's [KPI tracking FlowFuse ARR](../company/achieving-success.md#kpi)
 sets an aggressive goal for growth. When the growth target is met a $100 bonus is
 awarded to be expensed for a dinner out. The bonus is awarded per release.
 
 ### Health Care
 
-FlowForge offers a health care package for all employees in the United States, Canada, and India. 
+FlowFuse offers a health care package for all employees in the United States, Canada, and India. 
 
-For employees located in the United States, FlowForge offer basic health insurance coverage which includes dental and vision benefits through Deel.
-However, employees who choose not to participate in the health insurance provided by FlowForge have the option to opt out. This can be done by registering with Zenefits and declining coverage during the enrollment process on the platform. It is important to note that if an employee decides to opt out, they must have alternative qualified coverage to ensure compliance with the ACA (Affordable Care Act).
+For employees located in the United States, FlowFuse offer basic health insurance coverage which includes dental and vision benefits through Deel.
+However, employees who choose not to participate in the health insurance provided by FlowFuse have the option to opt out. This can be done by registering with Zenefits and declining coverage during the enrollment process on the platform. It is important to note that if an employee decides to opt out, they must have alternative qualified coverage to ensure compliance with the ACA (Affordable Care Act).
 

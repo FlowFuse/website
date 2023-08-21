@@ -44,7 +44,7 @@ async function copyFiles (src, dest, version) {
     try {
         await fs.access('../flowforge/docs')
     } catch (err) {
-        console.log('FlowForge Docs not found (../flowforge/docs)')
+        console.log('FlowFuse Docs not found (../flowforge/docs)')
         process.exit(-1)
     }
 

@@ -1,27 +1,23 @@
 ---
 layout: layouts/page.njk
 title: Roadmap
-image: /images/product/og-product-roadmap.jpg
----
-
-<!-- Roadmap link button section, containing a link to view the entire roadmap on GitHub. -->
-<div class="px-6 -mt-32 mx-auto text-gray-400 text-center md:max-w-screen-lg -mt-40 mb-24 md:mb-44">
-    <h4>
-        <div class="font-semibold text-white mb-8 -mt-2">Stay up-to-date with our progress</div> 
-    </h4>
-    <p class="lead-p max-w-screen-lg m-auto text-center sm:max-w-xl md:px-4">
-      <span style="color: #D1D5DB;">Here you can find information about upcoming features, enhancements, and other changes we're actively working on to make FlowForge an even more powerful and versatile tool for your business needs.</span>
-    </p>
-    <div class="text-center mt-10">
+subtitle: <div class="font-semibold text-white mb-8 -mt-2">Stay up-to-date with our progress</div>
+description:
+    <p><span class="text-gray-200">Here you can find information about upcoming features, enhancements, and other changes we're actively working on to make FlowFuse an even more powerful and versatile tool for your business needs.</span></p>
+    <div class="text-center mt-10 pb-4 md:pb-10">
         <a href="https://github.com/orgs/flowforge/projects/5" target="_blank" class="inline-block ff-btn ff-btn--primary uppercase">
             <span>FULL GITHUB ROADMAP</span>
         </a>
     </div>
+image: /images/product/og-product-roadmap.png
+---
+<div class="mt-3 md:mt-20">
+    {% include "components/divider-flow--top-red--light.njk" %}
 </div>
-{% include "components/divider-flow--top-red--light.njk" %}
+
 <!-- Roadmap content section, divided into three columns: Consideration, In Progress, and Newly Released. Each column
 has a headline, description, and a container for roadmap items. -->
-<div class="about w-full bg-gray-50 pb-14 md:pt-6">
+<div class="about w-full bg-gray-50 pb-14 md:pt-6 -mt-1">
     <div class="container m-auto max-w-5xl">
         <!-- Mobile -->
         <div class="grid grid-cols-1 text-center gap-12 pt-12 max-w-lg md:max-w-full m-auto px-6 sm:px-4 md:hidden">
@@ -200,7 +196,7 @@ has a headline, description, and a container for roadmap items. -->
         <div class="container m-auto text-center max-w-4xl sm:max-w-xl md:px-4">
             <div>
                 <h2 class="mb-9">Suggest a new feature</h2>
-                <p>Provide your valuable feedback and suggestions. Your input will help us shape the future of FlowForge, ensuring it meets your needs and expectations. To do so, simply click the button below to open a new feature request on our GitHub repository.</p>
+                <p>Provide your valuable feedback and suggestions. Your input will help us shape the future of FlowFuse, ensuring it meets your needs and expectations. To do so, simply click the button below to open a new feature request on our GitHub repository.</p>
                 <a href="https://github.com/flowforge/flowforge/issues/new?assignees=&labels=needs-triage%2Cfeature-request&template=03-feature.yml" target="_blank" class="inline-block ff-btn ff-btn--primary mt-6">SUGGEST NEW FEATURE</a>
             </div>
         </div>
@@ -215,7 +211,7 @@ has a headline, description, and a container for roadmap items. -->
             method: "GET",
             headers: {
                 "Content-Type": "application/json",
-                "User-Agent": "FlowForge-Website"
+                "User-Agent": "FlowFuse-Website"
             }
         };
         try {

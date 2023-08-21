@@ -5,7 +5,7 @@ navGroup: Company
 
 # Company
 
-FlowForge allows organizations to reliably deliver Node-RED applications in a
+FlowFuse allows organizations to reliably deliver Node-RED applications in a
 continuous, collaborative, and secure manner.
 
  - [Board meetings](./board.md)
@@ -30,4 +30,4 @@ Upon request wiring details can be provided by the CEO.
 
 ### Dun & Bradstreet
 
-FlowForge's Dun and Bradstreet ID is: 11-899-4742
+FlowFuse's Dun and Bradstreet ID is: 11-899-4742

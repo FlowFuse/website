@@ -3,9 +3,7 @@ navTitle: Plan
 ---
 # Product Plan
 
-## Background
-
-Our [Product Strategy](./strategy.md) sets out 4 pillars that our product work is focussed around.
+Our [Product Strategy](/handbook/product/strategy.md) sets out 5 pillars that our product work is focussed around.
 
 ## Planning
 
@@ -17,58 +15,53 @@ We use three project boards to plan and track our work.
 
 The detailed planning process can be found [here](../development/releases/planning.md)
 
-## Principles
+## High-Level Strategy Implementation for Q3/Q4 2023
 
-#### Convention over configuration
+Our high-level strategy implementation plan serves as a broad outline of the key focus areas for each strategy pillar we will be tackling over the course of the next six months. The points mentioned here are just an overview, and for more granular details on each initiative, we recommend referring to our roadmap.
 
-We want the default configuration of FlowForge to be the best user experience for
-the majority of users. 
+The progress bars presented adjacent to each category are rough estimates, offering an initial glance at the projected level of completion for each category's planned feature set. These are not precise calculations, nor do they represent the current status of each strategy pillar. It's important to note that at the start of every new product plan cycle, these progress bars reset to a lower level, reflecting the onset of new development and implementation stages. For detailed updates on the actual status, please keep an eye on our [release blog posts](/blog/releases/).
 
-Every new option we add to the platform, whether for an administrator or end-user,
-represents another choice they have to deal with. This increases the cognitive burden
-of using the platform and can have a negative impact on user experience. It also
-increases the engineering cost to develop and test features where there are many
-possible combinations to consider.
+### Advancing Enterprise-Readiness 
+![](https://geps.dev/progress/30)
 
-For every feature we add that has some scope for configuration, our starting point
-in the design is to **identify the right configuration and hard-code it in**.
+- [High availability & Scalability](https://github.com/flowforge/flowforge/issues/1678)
 
-This removes the choice from users' hands and minds. It does not prevent us from
-choosing to make it more configurable in the future if user-feedback/business-needs
-requires it.
+- Improve DevOps Pipelines
 
-Where there is a strong case to expose an option to the end user, it should still
-be provided with a sensible default value where possible that removes the need
-for the user to set it themselves. This gives users the ability to customise
-the option if/when they are ready to. But the default value should be the right
-answer for most users.
+- [VPN support for Instances](https://github.com/flowforge/flowforge/issues/1570)
 
-Some configuration options cannot be defaulted - the user has to do make a choice.
-For example, setting up email on the platform. The UX around these options must
-be carefully considered to help the user get to the right choice with a minimum
-of effort.
+- [Introduce Value Layer Model](https://github.com/flowforge/flowforge/issues/2167)
 
-Node-RED provides a lot of configuration options. We should not assume they are all
-candidates to be exposed to FlowForge users. For example, options to customise the
-editor appearance should be reserved options that we determine the right values for
-to ensure a consistent user experience across FlowForge instances.
-
-Options that have an impact on the behaviour of flows will need to be considered
-on a case-by-case basis. But the starting point should always be to pick the right
-default and only expose to the user if absolutely necessary.
+- [Implement "Organization" as an additional hierarchy level](https://github.com/flowforge/flowforge/issues/2338)
 
 
-See also: [Convention over Configuration on Wikipedia](https://en.wikipedia.org/wiki/Convention_over_configuration).
+### Node-RED Deployments at the Edge (Device Management)
+![](https://geps.dev/progress/0)
 
-## Open Source & Enterprise
+- [Device can be managed independently of Instances on Application level](https://github.com/flowforge/flowforge/issues/2334)
 
-We offer a number of ways that users can run the FlowForge product, we will
-always offer an open source version that has the core features. Features that
-offer higher business value or permit users to share across larger groups will
-be offered as part of our paid enterprise proposition. Our managed FlowForge
-offering is public and will generally include all features that are available
-but may not offer certain features such as SSO where integration is required
-between the platform and an enterprise. We will offer customers the ability to
-have a dedicated managed instance if thats is a deployment model they require.
-A more detailed breakdown of the pricing and split between our Open Source and
-Enterprise Editions is on the [pricing principles](pricing.md) page.
+- [Grouped Device Deployments](https://github.com/flowforge/flowforge/issues/1509)
+
+### Enhanced Integration Capabilities
+![](https://geps.dev/progress/0)
+
+- [Official Support for selected Node-RED nodes](https://github.com/flowforge/flowforge/issues/1901)
+
+- [Support for custom NPM Module registry](https://github.com/flowforge/flowforge/issues/217)
+
+- [Visibility of different palette catalogues in Node-RED](https://github.com/node-red/node-red/issues/4057)
+
+
+### Data Visualization & Analytics
+![](https://geps.dev/progress/5)
+
+- Version 1.0 of the Node-RED Dashboard successor, with a comparable feature set like [Node-RED Dashboard](https://github.com/node-red/node-red-dashboard).
+
+- FlowFuse Dashboard extension (Version 1.0) allowing [user specific dashboards](https://github.com/flowforge/flowforge-nr-dashboard/issues/1) and RBAC.
+
+### User-Friendly Low-Code Approach 
+![](https://geps.dev/progress/0)
+
+- [Immersive Node-RED experience](https://github.com/flowforge/flowforge/issues/2246)
+
+- First out of the box IIoT Solutions template (e.g. ANDON for Node-RED)

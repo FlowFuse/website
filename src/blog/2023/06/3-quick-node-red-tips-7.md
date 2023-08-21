@@ -73,7 +73,7 @@ If you'd like to view this slider and the flow which makes it work on your own N
 
 ```
 
-We hope you found these tips useful, if you'd like to suggest some of your own tips which you think we should share in our future blog posts please [get in touch](mailto:contact@flowforge.com). You can also read some of our previous Node-RED tips using the links below.
+We hope you found these tips useful, if you'd like to suggest some of your own tips which you think we should share in our future blog posts please [get in touch](mailto:contact@flowfuse.com). You can also read some of our previous Node-RED tips using the links below.
 
 [Node-RED Tips - Subflows, Link Nodes, and the Range Node](/blog/2023/04/3-quick-node-red-tips-6/)\
 [Node-RED Tips - Importing, Exporting, and Grouping Flows](/blog/2023/03/3-quick-node-red-tips-5/)\

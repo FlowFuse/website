@@ -8,7 +8,7 @@ tags:
     - news
 ---
 
-On January 27th, 2023, we were alerted to an issue on FlowForge Cloud where a user
+On January 27th, 2023, we were alerted to an issue on FlowFuse Cloud where a user
 was not able to access a newly created Node-RED Project, receiving a 404 error
 instead. This post examines the issue that was hit, the timeline of events and
 what we've done to resolve it.
@@ -18,7 +18,7 @@ what we've done to resolve it.
 ## Summary
 
 We hit a limit in the AWS Load Balancer that capped how many projects could be
-exposed to the internet within our FlowForge Cloud deployment. The result of this
+exposed to the internet within our FlowFuse Cloud deployment. The result of this
 was that users could create a new Node-RED project, but they would not be able
 to access the editor.
 
@@ -39,19 +39,19 @@ Our logs show that two users were impacted during these times.
 
 ## Technical Details
 
-When running FlowForge within a Kubernetes environment, each project creates a
+When running FlowFuse within a Kubernetes environment, each project creates a
 new Ingress Object configuration to tell the platform how to route HTTP traffic
 to that project.
 
-Our FlowForge Cloud deployment runs within Amazon Elastic Kubernetes Service (EKS)
+Our FlowFuse Cloud deployment runs within Amazon Elastic Kubernetes Service (EKS)
 and uses the Application Load Balancer (ALB) service as its ingress controller.
 
-When the FlowForge platform creates the new Ingress Object configuration, EKS passes
+When the FlowFuse platform creates the new Ingress Object configuration, EKS passes
 that to ALB to generate the necessary configuration, which, given the configuration we
 were using, created both a Target Group and Rule object.
 
 With a default of limit of 100 Target Groups and Rules, that meant we had a technical
-limit of 100 Node-RED projects within the FlowForge Cloud environment. Increasing
+limit of 100 Node-RED projects within the FlowFuse Cloud environment. Increasing
 the Rule limit did not solve the problem as the Target Group limit still applied.
 
 Our initial mitigation was to delete any Node-RED projects we had created for
@@ -76,7 +76,7 @@ There were two possible routes we could take to resolve this issue:
 
  - Move away from ALB in favour of nginx to provide our ingress load balancing.
 
-   This was always our long term strategy as it was a prerequisite to FlowForge
+   This was always our long term strategy as it was a prerequisite to FlowFuse
    features we have in the roadmap such as providing custom domains to projects.
    However it was potentially a large piece of work with a complicated migration
    for the existing environment.
@@ -87,7 +87,7 @@ with replacing ALB with nginx.
 After some initial development work and experimentation, we felt comfortable that
 the migration was not as complicated as initially feared. We would have to manually
 copy the existing ALB rules over - something that could be scripted. Once we had
-nginx deployed we could push a small code change to FlowForge to use it rather than
+nginx deployed we could push a small code change to FlowFuse to use it rather than
 ALB, and also switch over the DNS entry to point at nginx.
 
 Following a successful run through in our testing/staging environment, we decided
@@ -99,7 +99,7 @@ created without issue and everything is working as it should.
 
 ## Next Steps
 
-With FlowForge Cloud updated to use the new load balancer, we'll be closely monitoring
+With FlowFuse Cloud updated to use the new load balancer, we'll be closely monitoring
 it over the next few days to ensure it operates normally.
 
 We will also be taking on some follow-up activities to minimise the risk of this
@@ -137,4 +137,4 @@ type of issue happening again:
 
 **2023-02-09** : Commited to plan to replace ALB with nginx. Successful migration of our staging environment.
 
-**2023-02-10** : Change applied to production, FlowForge 1.3.3 deployed and DNS updated to use the new load balancer.
+**2023-02-10** : Change applied to production, FlowFuse 1.3.3 deployed and DNS updated to use the new load balancer.

@@ -3,6 +3,8 @@ const util = require("util");
 const fs = require("fs");
 
 const { EleventyEdgePlugin } = require("@11ty/eleventy");
+const { EleventyRenderPlugin } = require("@11ty/eleventy");
+
 const eleventyImage = require("@11ty/eleventy-img");
 const pluginRSS = require("@11ty/eleventy-plugin-rss");
 const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
@@ -102,7 +104,7 @@ module.exports = function(eleventyConfig) {
     });
 
     eleventyConfig.addFilter('shortDate', dateObj => {
-        return spacetime(dateObj).format('{date} {month-short}, {year}')
+        return spacetime(new Date(dateObj)).format('{date} {month-short}, {year}')
     });
 
     eleventyConfig.addFilter('duration', mins => {
@@ -267,7 +269,7 @@ module.exports = function(eleventyConfig) {
     });
 
     eleventyConfig.addShortcode("renderTeamMember", function(teamMember) {
-        // When the author is no longer at FlowForge
+        // When the author is no longer at FlowFuse
         if (typeof teamMember === "undefined") {
             return ""
     }
@@ -289,6 +291,10 @@ module.exports = function(eleventyConfig) {
         });     
         return data.toString('utf8');
     }
+
+    eleventyConfig.addFilter("templateExists", function(name){
+        return fs.existsSync(name)
+    })
 
     eleventyConfig.addShortcode("ffIconLg", function(icon, isSolid) {
         const svg = loadSVG(icon)
@@ -349,6 +355,14 @@ module.exports = function(eleventyConfig) {
         createNav('core-nodes')
 
         function createNav(tag) {
+            const groupOrder = {
+                docs: [
+                    'Overview',
+                    'Device Agent',
+                    'Running FlowFuse'
+                ]
+            }
+
             collection.getFilteredByTag(tag).filter((page) => {
                 return !page.url.includes('README')
             }).sort((a, b) => {
@@ -427,7 +441,7 @@ module.exports = function(eleventyConfig) {
                         if (!groups[group]) {
                             groups[group] = {
                                 name: group,
-                                order: 0,
+                                order: groupOrder[tag] && groupOrder[tag].includes(group) ? groupOrder[tag].indexOf(group) : Number.MAX_SAFE_INTEGER,
                                 children: []
                             }
                         }
@@ -462,6 +476,7 @@ module.exports = function(eleventyConfig) {
     });
 
     // Plugins
+    eleventyConfig.addPlugin(EleventyRenderPlugin)
     eleventyConfig.addPlugin(pluginRSS)
     eleventyConfig.addPlugin(syntaxHighlight)
     eleventyConfig.addPlugin(codeClipboard)

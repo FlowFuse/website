@@ -56,14 +56,14 @@ it can be recorded.
 
 ### Education & Conferences
 
-Continual professional development is very important, and FlowForge will support
+Continual professional development is very important, and FlowFuse will support
 you in any activities you wish to undertake. Speak to your manager if you have
 particular material you would like to study, or an event you would like to
-attend. FlowForge will help cover reasonable costs associated with the activity - such as travel and ticket fees.
+attend. FlowFuse will help cover reasonable costs associated with the activity - such as travel and ticket fees.
 
 ### Software Licenses
 
-Licenses and software assets can be purchased for third-party software will be useful for particular tasks, efforts and processes at FlowForge.
+Licenses and software assets can be purchased for third-party software will be useful for particular tasks, efforts and processes at FlowFuse.
 
 If you are seeking a license of software that we do not currently use, put together a short summary as to the costs associated with the licenses and describe the value that the software would provide. If it would modify the way in which the company operates, then the best place to present this is as a PR to the Handbook. With approval from the CEO and CTO you can proceed with the acquisition of the licenses.
 
@@ -71,7 +71,7 @@ When seeking an additional license for existing software we pay for, file an iss
 
 #### Zoom
 
-When your role at FlowForge requires you to have calls with external parties, a
+When your role at FlowFuse requires you to have calls with external parties, a
 Zoom pro license can be requested by opening an issue to provision you one
 in the [flowforge/admin][gh-admin]{rel="nofollow"} GitHub project. Assign this issue to the CTO
 or CEO, who will provision it for you.

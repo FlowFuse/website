@@ -69,7 +69,7 @@ The group feature in Node-RED allows users to visually group nodes together with
 
 Overall, the group feature in Node-RED is a valuable tool that can help users better organise, edit, and share their flows.
 
-We hope you found these tips useful, if you'd like to suggest some of your own tips which you think we should share in our future blog posts please [get in touch](mailto:contact@flowforge.com).
+We hope you found these tips useful, if you'd like to suggest some of your own tips which you think we should share in our future blog posts please [get in touch](mailto:contact@flowfuse.com).
 
 You can read our previous Node-RED tips here.
 

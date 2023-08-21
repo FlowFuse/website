@@ -7,7 +7,7 @@ meta:
 
 > We will only be successful if the whole Node-RED community is successful.
 
-Our company vision has four parts and captures what we want FlowForge to evolve
+Our company vision has four parts and captures what we want FlowFuse to evolve
 into in the next 5 years. The vision is inspiration for the [product strategy](../product/strategy.md), which is updated continuously. It’s based on the four pillars. This allows us to adapt to changing market conditions so that we meet customer needs.
 
 - Drive the growth and success of the [Node-RED](https://nodered.org) project
@@ -17,9 +17,9 @@ into in the next 5 years. The vision is inspiration for the [product strategy](.
 
 #### Drive the growth and success of the Node-RED project
 
-Node-RED is at the core of what we do. Node-RED enables tens of thousands to create and maintain workflows and logic of both physical devices and digital services. Ensuring their effectiveness grows, while new users are introduced to Node-RED is vital to the success of FlowForge.
+Node-RED is at the core of what we do. Node-RED enables tens of thousands to create and maintain workflows and logic of both physical devices and digital services. Ensuring their effectiveness grows, while new users are introduced to Node-RED is vital to the success of FlowFuse.
 
-FlowForge will drive the Node-RED project through:
+FlowFuse will drive the Node-RED project through:
 
 - **Deliver features** to the core of Node-RED that are stable and provide value to the community
 - **Actively participate** in the community to establish a positive reputation and level of engagement
@@ -29,18 +29,18 @@ FlowForge will drive the Node-RED project through:
 
 #### Become the standard way of running any Node-RED at any scale - Be DevOps for Node-RED
 
-There's a wide range of deployment scenarios and FlowForge aims to build a
-platform to help each of them to be successful. FlowForge will solve challenges
+There's a wide range of deployment scenarios and FlowFuse aims to build a
+platform to help each of them to be successful. FlowFuse will solve challenges
 unsolved by Node-RED and push Low-Code beyond the capabilities of Node-RED.
 
 Firstly, team collaboration. Allowing Flows to be developed by multiple
 individuals, ensuring quality and correctness. Push the boundaries of Low-Code
 to allow more people to collaborate.
 
-Secondly, Node-RED is deployed in many different environments. FlowForge will allow
+Secondly, Node-RED is deployed in many different environments. FlowFuse will allow
 everyone to achieve the best results whatever the execution context.
 
-We believe these two points will make FlowForge synonymous with Node-RED, and
+We believe these two points will make FlowFuse synonymous with Node-RED, and
 make it attractive to individual users as well as Enterprises. Value offered
 will increase exponentially as the platform scales to teams of developers and
 larger deployment scenarios.

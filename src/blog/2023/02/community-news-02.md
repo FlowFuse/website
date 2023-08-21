@@ -1,7 +1,7 @@
 ---
 title: Community News February 2023
-subtitle: Your monthly update for the FlowForge and Node-RED communities
-description: News from the FlowForge and Node-RED communities
+subtitle: Your monthly update for the FlowFuse and Node-RED communities
+description: News from the FlowFuse and Node-RED communities
 date: 2023-02-02
 authors: ["rob-marcer"]
 image: "/images/blog/community-news.jpeg"
@@ -11,11 +11,11 @@ tags:
     - newsletter
 ---
 
-Welcome to the FlowForge newsletter for February 2023, a monthly roundup of what’s been happening with both FlowForge and the wider Node-RED community. 
+Welcome to the FlowFuse newsletter for February 2023, a monthly roundup of what’s been happening with both FlowFuse and the wider Node-RED community. 
 
 <!--more-->
 
-If you've got something that you think we should share on our newsletters please [get in touch](mailto:contact@flowforge.com).
+If you've got something that you think we should share on our newsletters please [get in touch](mailto:contact@flowfuse.com).
 
 ## News
 
@@ -25,20 +25,20 @@ If you've got something that you think we should share on our newsletters please
 
 Do you have any questions about Node-RED or need some advice on a tricky issue using Node-RED? Here is your opportunity to get help from the experts.
 
-Nick O'Leary, co-founder of Node-RED & CTO of FlowForge, and Rob Marcer, Node-RED community member & Developer Educator at FlowForge, will be hosting an interactive Ask Me Anything session. This is a great opportunity to ask questions of the Node-RED experts. If you have any questions for Nick and Rob you can send them in before the session using [this form](https://docs.google.com/forms/d/e/1FAIpQLSdfPq4lAQjdvqhTpoYtKiMNgP8vcMhZsAf_AG0MHuVMRK83_Q/viewform).
+Nick O'Leary, co-founder of Node-RED & CTO of FlowFuse, and Rob Marcer, Node-RED community member & Developer Educator at FlowFuse, will be hosting an interactive Ask Me Anything session. This is a great opportunity to ask questions of the Node-RED experts. If you have any questions for Nick and Rob you can send them in before the session using [this form](https://docs.google.com/forms/d/e/1FAIpQLSdfPq4lAQjdvqhTpoYtKiMNgP8vcMhZsAf_AG0MHuVMRK83_Q/viewform).
 
-### [Free FlowForge project for 30 days, no catches](https://app.flowforge.com/account/create)
-To make it easy for everyone to experience FlowForge, we are introducing a new [free 30-day trial](https://app.flowforge.com/account/create). With this trial, you can experience the power of using FlowForge to quickly deliver Node-RED applications in a reliable, repeatable, collaborative, and secure manner. To get your trial simply [sign up for a new FlowForge team](https://app.flowforge.com/account/create).
+### [Free FlowFuse project for 30 days, no catches](https://app.flowforge.com/account/create)
+To make it easy for everyone to experience FlowFuse, we are introducing a new [free 30-day trial](https://app.flowforge.com/account/create). With this trial, you can experience the power of using FlowFuse to quickly deliver Node-RED applications in a reliable, repeatable, collaborative, and secure manner. To get your trial simply [sign up for a new FlowFuse team](https://app.flowforge.com/account/create).
 
 ### [1.3 Released](http://flowforge.com/blog/2023/01/flowforge-1-3-0-released)
-Version 1.3 of FlowForge was released on 19th January. Our first release of 2023 included some great new features such as the ability to share flows via a [team library](https://www.youtube.com/watch?v=B7XK3TUklUU), [control access to your Node-RED dashboards](https://www.youtube.com/watch?v=JRk-Cf7eNIo) using FlowForge credentials, and [filtering on your audit logs](https://www.youtube.com/watch?v=p0Vuy5x42Go) for easier reading. We also added the ability to use FlowForge on devices which cannot access npm, we think this will be really valuable to users of networks with limited access to the internet.
+Version 1.3 of FlowFuse was released on 19th January. Our first release of 2023 included some great new features such as the ability to share flows via a [team library](https://www.youtube.com/watch?v=B7XK3TUklUU), [control access to your Node-RED dashboards](https://www.youtube.com/watch?v=JRk-Cf7eNIo) using FlowFuse credentials, and [filtering on your audit logs](https://www.youtube.com/watch?v=p0Vuy5x42Go) for easier reading. We also added the ability to use FlowFuse on devices which cannot access npm, we think this will be really valuable to users of networks with limited access to the internet.
 
-We're now working towards release 1.4 which is due on 16th February. You can see what we are planning to deliver in that release and beyond on [FlowForge's project board](https://github.com/orgs/flowforge/projects/5).
+We're now working towards release 1.4 which is due on 16th February. You can see what we are planning to deliver in that release and beyond on [FlowFuse's project board](https://github.com/orgs/flowforge/projects/5).
 
 If you’d like to learn more about what else was included in 1.3 you can do so on our [blog post](http://flowforge.com/blog/2023/01/flowforge-1-3-0-released/), [GitHub release page](https://github.com/flowforge/flowforge/releases/tag/v1.3.0), and [Youtube channel](https://www.youtube.com/watch?v=ey3xv5j5x7k).
 
 ### [Team News](https://flowforge.com/team)
-We are currently recruiting [NodeJS Developers](https://boards.greenhouse.io/flowforge/jobs/4463977004) as well as a [Graphic Designer](https://boards.greenhouse.io/flowforge/jobs/4785058004) to join our team. You can view any of the roles we currently have open and apply on our [Jobs page](https://boards.greenhouse.io/flowforge).
+We are currently recruiting [NodeJS Developers](https://boards.greenhouse.io/flowfuse/jobs/4463977004) as well as a [Graphic Designer](https://boards.greenhouse.io/flowfuse/jobs/4785058004) to join our team. You can view any of the roles we currently have open and apply on our [Jobs page](https://boards.greenhouse.io/flowfuse).
 
 ## Node-RED in the Community
 

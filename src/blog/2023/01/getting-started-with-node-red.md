@@ -17,11 +17,11 @@ In this blog post, we'll take a look at how to get started with Node-RED and cre
 
 ### Installing Node-RED
 
-First, you'll need to get an installation of Node-RED up and running. There are several ways to do this, we would suggest you use FlowForge as it's very easy to get Node-RED running. You can also install Node-RED locally using npm (Node Package Manager), which comes with Node.js.
+First, you'll need to get an installation of Node-RED up and running. There are several ways to do this, we would suggest you use FlowFuse as it's very easy to get Node-RED running. You can also install Node-RED locally using npm (Node Package Manager), which comes with Node.js.
 
-#### FlowForge
+#### FlowFuse
 
-To get Node-RED running on FlowForge visit our [web site and create a new user](https://app.flowforge.com/account/create). We've got an offer at the moment which gives you a Node-RED instance for free for one month.
+To get Node-RED running on FlowFuse visit our [web site and create a new user](https://app.flowforge.com/account/create). We've got an offer at the moment which gives you a Node-RED instance for free for one month.
 
 You now need to create an application, which includes an instance of Node-RED. Once that instance has booted up you access Node-RED by pressing "Open Editor".
 
@@ -63,7 +63,7 @@ You can read more about http response codes in [this article](https://en.wikiped
 
 ### Testing Your Flow
 
-Now that we have our flow set up, we can deploy it by clicking the "Deploy" button in the top right corner of the editor. Once the flow is deployed, you can test it by opening up a web browser, if you installed Node-RED using npm navigate to "http://localhost:1880/hello". If you are working on FlowForge take the URL of your project and add "/hello" to the end, it should looks something like this "https://your-project.flowforge.cloud/hello". You should see "Hello World!" displayed in the browser.
+Now that we have our flow set up, we can deploy it by clicking the "Deploy" button in the top right corner of the editor. Once the flow is deployed, you can test it by opening up a web browser, if you installed Node-RED using npm navigate to "http://localhost:1880/hello". If you are working on FlowFuse take the URL of your project and add "/hello" to the end, it should looks something like this "https://your-project.flowforge.cloud/hello". You should see "Hello World!" displayed in the browser.
 
 ### Debug Output
 

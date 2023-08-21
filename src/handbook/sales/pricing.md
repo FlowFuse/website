@@ -4,7 +4,7 @@ navTitle: Engagements & Pricing
 
 ## Pricing
 
-FlowForge has two commercial offerings; self-managed and FlowForge Cloud. How we
+FlowFuse has two commercial offerings; self-managed and FlowFuse Cloud. How we
 engage with customers will differentiate based on the install method and size of
 the opportunity.
 

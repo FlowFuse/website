@@ -17,12 +17,12 @@ throughout the entire encryption lifecycle.
 
 ## Scope 
 
-All FlowForge data, information and information systems that handle confidential
+All FlowFuse data, information and information systems that handle confidential
 or critical information.
 
 ## Cryptography Policy
 
-FlowForge requires all team members apply appropriate cryptographic controls in
+FlowFuse requires all team members apply appropriate cryptographic controls in
 handling of data. Where encryption is in use, strong cryptography with associated
 key management processes and procedures shall be implemented. All encryption
 shall be performed in accordance with industry standards, including NIST SP 800-57.
@@ -32,7 +32,7 @@ in accordance with vendor recommendations and industry best practices including
 [NIST when stored or transferred over a public network](https://csrc.nist.gov/projects/cryptographic-standards-and-guidelines). 
 
 
-FlowForge requires all team members to comply with the cryptography policy, such that:
+FlowFuse requires all team members to comply with the cryptography policy, such that:
 
  - All Production Data at rest is stored on encrypted volumes.
 

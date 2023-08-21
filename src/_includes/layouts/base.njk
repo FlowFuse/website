@@ -15,13 +15,13 @@
 
     <!-- Browser Title -->
     {% if navTitle %}
-    <title>{{ navTitle }} &#x2022; FlowForge{% if page.url.match('\/handbook\/.+') %} Handbook{% endif %}{% if page.url.match('\/docs\/.+') %} Docs{% endif %}</title>
+    <title>{{ navTitle }} &#x2022; FlowFuse{% if page.url.match('\/handbook\/.+') %} Handbook{% endif %}{% if page.url.match('\/docs\/.+') %} Docs{% endif %}</title>
     {% elif meta and meta.title %}
-    <title>{{ meta.title }} &#x2022; FlowForge{% if page.url.match('\/handbook\/.+') %} Handbook{% endif %}{% if page.url.match('\/docs\/.+') %} Docs{% endif %}</title>
+    <title>{{ meta.title }} &#x2022; FlowFuse{% if page.url.match('\/handbook\/.+') %} Handbook{% endif %}{% if page.url.match('\/docs\/.+') %} Docs{% endif %}</title>
     {% elif title %}
-    <title>{{ title }} &#x2022; FlowForge{% if page.url.match('\/handbook\/.+') %} Handbook{% endif %}{% if page.url.match('\/docs\/.+') %} Docs{% endif %}</title>
+    <title>{{ title }} &#x2022; FlowFuse{% if page.url.match('\/handbook\/.+') %} Handbook{% endif %}{% if page.url.match('\/docs\/.+') %} Docs{% endif %}</title>
     {% else %}
-    <title>FlowForge &#x2022; DevOps for Node-RED</title>
+    <title>FlowFuse &#x2022; DevOps for Node-RED</title>
     {% endif %}
 
     <meta rel="canonical" href="{{ page.url | toAbsoluteUrl }}">
@@ -41,13 +41,13 @@
 
     <!-- Open Graph Title -->
     {% if navTitle %}
-    <meta property="og:title" content="{{ navTitle }} &#x2022; FlowForge{% if page.url.match('\/handbook\/.+') %} Handbook{% endif %}" />
+    <meta property="og:title" content="{{ navTitle }} &#x2022; FlowFuse{% if page.url.match('\/handbook\/.+') %} Handbook{% endif %}" />
     {% elif meta and meta.title %}
-    <meta property="og:title" content="{{ meta.title }} &#x2022; FlowForge{% if page.url.match('\/handbook\/.+') %} Handbook{% endif %}" />
+    <meta property="og:title" content="{{ meta.title }} &#x2022; FlowFuse{% if page.url.match('\/handbook\/.+') %} Handbook{% endif %}" />
     {% elif title %}
-    <meta property="og:title" content="{{ title }} &#x2022; FlowForge{% if page.url.match('\/handbook\/.+') %} Handbook{% endif %}" />
+    <meta property="og:title" content="{{ title }} &#x2022; FlowFuse{% if page.url.match('\/handbook\/.+') %} Handbook{% endif %}" />
     {% else %}
-    <meta property="og:title" content="FlowForge &#x2022; DevOps for Node-RED" />
+    <meta property="og:title" content="FlowFuse &#x2022; DevOps for Node-RED" />
     {% endif %}
 
     <!-- Open Graph Description -->
@@ -56,7 +56,7 @@
     {% elif description %}
     <meta property="og:description" content="{{ description }}" />
     {% else %}
-    <meta property="og:description" content="FlowForge allows organizations to reliably deliver Node-RED applications in a continuous, collaborative, and secure manner." />
+    <meta property="og:description" content="FlowFuse allows organizations to reliably deliver Node-RED applications in a continuous, collaborative, and secure manner." />
     {% endif %}
 
     <!-- Open Graph URL -->
@@ -93,15 +93,15 @@
     <div class="flex-grow base">
         <div class="w-full">
             <!-- Events Banner -->
-            <!-- {% include "../components/events-banner.njk" %} -->
+            {% include "../components/events-banner.njk" %}
             <!-- Navigation Header -->
             <header id="ff-header" class="ff-header">
                 <nav class="relative w-full flex items-center justify-between mx-auto container md:max-w-screen-xl">
-                    <a class="flex md:hidden lg:flex ff-wordmark no-underline hover:no-underline font-bold h-8 w-40 flex-row"  href="/" style="font-family:'Baloo 2', sans-serif">
-                        {% include "components/flowforge-wordmark.njk" %}
+                    <a class="flex md:hidden lg:flex no-underline hover:no-underline font-bold h-8 w-40 flex-row"  href="/" style="font-family:'Baloo 2', sans-serif">
+                        {% include "components/flowfuse-wordmark.njk" %}
                     </a>
                     <a class="w-8 h-8 hidden md:block lg:hidden" href="/" style="font-family:'Baloo 2', sans-serif">
-                        {% include "components/flowforge-square.svg" %}
+                        {% include "components/flowfuse-square.svg" %}
                     </a>
                     <div class="block md:hidden">
                         <button id="nav-toggle" class="text-white flex items-center text-red-hero">
@@ -133,7 +133,7 @@
                                 {% navoption "blog", "/blog", 1, "newspaper" %}{% endnavoption %}
                                 {% navoption "team", "/team", 1, "users" %}{% endnavoption %}
                                 {% navoption "handbook", "/handbook/", 1, "star" %}{% endnavoption %}
-                                {% navoption "jobs", "https://boards.greenhouse.io/flowforge", 1, "case" %}{% endnavoption %}
+                                {% navoption "jobs", "https://boards.greenhouse.io/flowfuse", 1, "case" %}{% endnavoption %}
                                 {% navoption "support", "/support", 1, "chat" %}{% endnavoption %}
                                 {% navoption "contact us", "/contact-us", 1, "mail" %}{% endnavoption %}
                                 {% navoption "privacy", "/privacy-policy", 1, "privacy" %}{% endnavoption %}
@@ -142,7 +142,7 @@
                         {% navoption "resources", null, 0 %}
                             <!-- Mobile -->
                             <ul class="block sm:hidden">
-                                {% navoption "FlowForge", null, 1, "flowforge", true, "col-span-2" %}
+                                {% navoption "FlowFuse", null, 1, "flowforge", true, "col-span-2" %}
                                     <ul class="sm:grid sm:grid-flow-col sm:grid-cols-2 sm:grid-rows-4">
                                         {# {% navoption "getting started", "/blog", 2, "clip-list" %}{% endnavoption %} #}
                                         {% navoption "github", "https://github.com/flowforge/flowforge", 2, "github", true %}{% endnavoption %}
@@ -175,7 +175,7 @@
                                     </ul>
                                 </div>
                                 <div class="flex-grow-[2]">
-                                    {% navoption "FlowForge", null, 1, "flowforge", true, "bg-gray-700 border-r border-gray-600" %}{% endnavoption %}
+                                    {% navoption "FlowFuse", null, 1, "flowforge", true, "bg-gray-700 border-r border-gray-600" %}{% endnavoption %}
                                     <ul class="sm:grid sm:grid-flow-col sm:grid-rows-5 sm:grid-cols-1 sm:pr-9">
                                         {# {% navoption "getting started", "/blog", 2, "clip-list" %}{% endnavoption %} #}
                                         {% navoption "github", "https://github.com/flowforge/flowforge", 2, "github", true %}{% endnavoption %}
@@ -183,7 +183,7 @@
                                         {% navoption "blog", "/blog", 2, "newspaper" %}{% endnavoption %}
                                         {% navoption "webinars", "/webinars", 2, "screen" %}{% endnavoption %}
                                         {% navoption "newsletters", "/community/newsletter/", 2, "mail-open" %}{% endnavoption %}
-                                        {% navoption "support forums", "https://community.flowforge.com/", 2, "star" %}{% endnavoption %}
+                                        {% navoption "support forums", "https://community.flowfuse.com/", 2, "star" %}{% endnavoption %}
                                     </ul>
                                 </div>
                             </ul>
@@ -193,7 +193,7 @@
 
                     <ul class="hidden top-8 right-0 border shadow-sm md:inline md:shadow-none w-36 z-10 md:border-0 bg-white md:bg-transparent md:w-auto rounded md:static md:float-none md:flex md:flex-row flex-col items-center justify-end font-medium text no-underline">
 			            <li class="flex"><a href="https://app.flowforge.com">sign in</a></li>
-                        <a class="ml-2 ff-btn ff-btn--primary uppercase text-sm inline-flex" href="https://app.flowforge.com/account/create" onclick="capture('cta-join', {'position': 'header'})">Free Trial</a>
+                        <a class="ml-2 ff-btn ff-btn--primary uppercase text-sm inline-flex" href="https://app.flowforge.com/account/create" onclick="capture('cta-join', {'position': 'header'})">Get Started</a>
                         {# <li class="flex"><a class="ff-icon--gh" rel="noopener" href="https://github.com/flowforge" target="_blank">{% include "components/github.njk" %}</a></li> #}
                     </ul>
                 </nav>
@@ -203,7 +203,7 @@
                 </div>    
             </header>
             <!-- Main Content -->
-            <main class="flex flex-col mx-auto items-center justify-center">
+            <main class="flex flex-col mx-auto items-center justify-center gradient-bg">
                 {{ content | safe }}
             </main>
         </div>
@@ -214,7 +214,7 @@
             <div class="ff-footer-columns md:flex-row justify-center md:space-x-8">
                 <div class="">
                     <div class="w-52">
-                        {% image "./images/flowforge-logo-wordmark-white.svg", "FlowForge Logo in White", [150] %}
+                        {% image "./images/flowfuse-logo-wordmark-white.svg", "FlowFuse Logo in White", [150] %}
                     </div>
                     <div class="copyright-statement">
                         <div>Copyright 2023 FlowForge Inc.</div>
@@ -226,9 +226,9 @@
                     <h4 class=""><span class="text-xl font-bold">Social</h4>
                     <ul class="grid grid-cols-2 justify-center text-base sm:block sm:space-y-2">
                         <li class="inline mr-3 mb-3 md:m-0 md:block"><a href="https://github.com/flowforge">GitHub</a></li>
-                        <li class="inline mr-3 mb-3 md:m-0 md:block"><a href="https://twitter.com/flowforgeinc">Twitter</a></li>
+                        <li class="inline mr-3 mb-3 md:m-0 md:block"><a href="https://twitter.com/FlowFuseInc">Twitter</a></li>
                         <li class="inline mr-3 mb-3 md:m-0 md:block"><a href="https://www.youtube.com/channel/UCbBzP8NZbv3WDtlt4UouA-g">YouTube</a></li>
-                        <li class="inline mr-3 mb-3 md:m-0 md:block"><a href="https://www.linkedin.com/company/flowforge-inc">LinkedIn</a></li>
+                        <li class="inline mr-3 mb-3 md:m-0 md:block"><a href="https://www.linkedin.com/company/flowfuse">LinkedIn</a></li>
                         <li class="inline mr-3 mb-3 md:m-0 md:block"><a href="/blog/index.xml">RSS Feed</a></li>
                         <li class="inline mr-3 mb-3 md:m-0 md:block"><a href="/blog/#sign-up" onclick="capture('cta-blog-subscribe', {'position': 'footer'})">Sign Up to Mailing List</a></li>
                     </ul>

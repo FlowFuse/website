@@ -18,9 +18,9 @@ Node-RED is at the core of what we do. It is the reason the company exists. Our
 success is fed by the success of the core project. Node-RED enables tens of
 thousands to create and maintain workflows and logic of both physical devices
 and digital services. Ensure their effectiveness grows, while new users are
-introduced to Node-RED is vital to the success of FlowForge.
+introduced to Node-RED is vital to the success of FlowFuse.
 
-FlowForge will drive the Node-RED project through:
+FlowFuse will drive the Node-RED project through:
 
  - **Deliver features** to the core of Node-RED that are stable and provide value to the community
  - **Actively participate** in the community to establish a positive reputation and level of engagement
@@ -30,18 +30,18 @@ FlowForge will drive the Node-RED project through:
 
 #### Become the standard way of running any Node-RED at any scale
 
-There's a wide range of deployment scenarios and FlowForge aims to build a
-platform to help each of them to be successful. FlowForge will solve challenges
+There's a wide range of deployment scenarios and FlowFuse aims to build a
+platform to help each of them to be successful. FlowFuse will solve challenges
 unsolved by Node-RED and push Low-Code beyond the capabilities of Node-RED.
 
 Firstly, team collaboration. Allowing Flows to be developed by multiple
 individuals, ensuring quality and correctness. Push the boundaries of Low-Code
 to allow more people to collaborate.
 
-Secondly, Node-RED is deployed in many different environments. FlowForge will allow
+Secondly, Node-RED is deployed in many different environments. FlowFuse will allow
 everyone to achieve the best results whatever the execution context.
 
-We believe these two points will make FlowForge synonymous with Node-RED, and
+We believe these two points will make FlowFuse synonymous with Node-RED, and
 make it attractive to individual users as well as Enterprises. Value offered
 will increase exponentially as the platform scales to teams of developers and
 larger deployment scenarios.
@@ -84,21 +84,21 @@ Furthermore, we will continue our involvement with the Node-RED community.
 
 ### Key metrics
 
-At FlowForge we're engaged in many initiatives to grow our offering and assess
+At FlowFuse we're engaged in many initiatives to grow our offering and assess
 product market fit. Currently we're measuring 2 key metrics which serve as
 heuristic for company wide success.
 
 #### Installed Platforms
 
-FlowForge is the key product we're verifying in the market currently. Each
+FlowFuse is the key product we're verifying in the market currently. Each
 platform installed and running shows value is delivered to customers. Through
 telemetry we know the number of instances that reported their unique instance ID.
 
 Other than the number of unique instances reporting on telemetry the last 7 days
-we measure the number of managed instances of Node-RED through FlowForge. This
+we measure the number of managed instances of Node-RED through FlowFuse. This
 is the sum of projects and devices.
 
 Telemetry collection is opt-in, and dependant on an internet connection. As such
-it's anticipated to under report the true number of FlowForge managed instances.
+it's anticipated to under report the true number of FlowFuse managed instances.
 
 Target growth for this metric is 10% week over week.
