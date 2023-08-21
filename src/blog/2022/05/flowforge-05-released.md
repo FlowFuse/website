@@ -81,7 +81,7 @@ on devices.
 ### Upgrading FlowFuse
 
 If you installed a previous version of FlowFuse  and want to upgrade, our documentation provides a
-guide for [upgrading FlowFuse on a local server](http://flowforge.com/docs/install#upgrade).
+guide for [upgrading FlowFuse on a local server](/docs/install#upgrade).
 
 ### Getting help
 
