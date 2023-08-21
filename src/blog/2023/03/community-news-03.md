@@ -48,6 +48,6 @@ Raspberry Pis continue to be difficult to purchase. Eben Upton of the Raspberry 
 ## Join Our Team
 FlowFuse is expanding our team. We have two openings right now:
 
-* **[Developer Advocate - Manufacturing & Industrial Automation](https://boards.greenhouse.io/flowforge/jobs/4798023004)**
-* **[DevOps Engineer](https://boards.greenhouse.io/flowforge/jobs/4796271004)**
+* **[Developer Advocate - Manufacturing & Industrial Automation](https://boards.greenhouse.io/flowfuse/jobs/4798023004)**
+* **[DevOps Engineer](https://boards.greenhouse.io/flowfuse/jobs/4796271004)**
 

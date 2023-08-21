@@ -26,7 +26,7 @@ We are happy to again be involved in Node-RED con. The event is being held onlin
 [**FlowFuse Team News**](/team/)    
 We’d like to welcome Rob Marcer to the FlowFuse team. Rob has joined as our Developer Educator, he's going to work to help you get the best value from FlowFuse by developing our documentation and community support.  
   
-We are also recruiting for [NodeJS Developers](https://boards.greenhouse.io/flowforge/jobs/4463977004), if you’re interested in joining our team please [apply here](https://boards.greenhouse.io/flowforge/jobs/4463977004#app).
+We are also recruiting for [NodeJS Developers](https://boards.greenhouse.io/flowfuse/jobs/4463977004), if you’re interested in joining our team please [apply here](https://boards.greenhouse.io/flowfuse/jobs/4463977004#app).
     
 [**Official Node-RED Docker Image Passes Milestone**](https://twitter.com/Docker/status/1559919666721693699?t=QBzGGzY2kJ12Z5aoi1QPTA)  
 Docker has [announced](https://twitter.com/Docker/status/1559919666721693699?t=QBzGGzY2kJ12Z5aoi1QPTA) that the Node-RED Docker image has now been downloaded over 100 million times. They have also created a [guide to using Node-RED](https://www.docker.com/blog/build-retail-store-items-detection-system-no-code-ai/?utm_campaign=2022-08-17-brnd-nocode&utm_medium=social&utm_source=twitter) to Build and Deploy a Retail Store Items Detection System Using No-Code AI Vision at the Edge. We think it’s worth a read.

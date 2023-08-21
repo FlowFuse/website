@@ -23,10 +23,10 @@ If you’d like to learn more about what else was included in 0.10 you can do so
 [**Node-RED Con 2022**](https://nrcon.nodered.org/)  
 We are happy to again be involved in Node-RED con. The event is being held online on 7th October, with content for both English and Japanese speakers including our colleagues Nick O'Leary and Sam Machin. You can find out more on the [Node-RED Con website](https://nrcon.nodered.org/).  
 
-[**FlowFuse Team News**](/team/)    
-We are currently recruiting [NodeJS Developers](https://boards.greenhouse.io/flowforge/jobs/4463977004), if you’re interested in joining our team please [apply here](https://boards.greenhouse.io/flowforge/jobs/4463977004#app).
+[**FlowFuse Team News**](https://flowforge.com/team/)    
+We are currently recruiting [NodeJS Developers](https://boards.greenhouse.io/flowfuse/jobs/4463977004), if you’re interested in joining our team please [apply here](https://boards.greenhouse.io/flowfuse/jobs/4463977004#app).
 
-We are also looking for a [PeopleOps Manager](https://boards.greenhouse.io/flowforge/jobs/4687876004) to help us grow our team. You can [apply here](https://boards.greenhouse.io/flowforge/jobs/4687876004#app) for that position.
+We are also looking for a [PeopleOps Manager](https://boards.greenhouse.io/flowfuse/jobs/4687876004) to help us grow our team. You can [apply here](https://boards.greenhouse.io/flowfuse/jobs/4687876004#app) for that position.
     
 [**Forest Fire Alerts Using ML, IOT and Node-RED**](https://hackster.io/user102774/fight-fire-wild-fire-prediction-using-tinyml-df7572)  
 This fascinating project came up a few days ago and we wanted to share it with you all. The concept is to use a mesh network of IoT devices to monitor various indicators of potential and current wildfires and report data back to the relevant authorities. The system will use ML to predict wildfire risk levels and hopefully send warnings before a fire actually starts. The two developers [Muhammed](https://linkedin.com/in/zainmfd/) and [Salman](https://linkedin.com/in/salmanfarisvp/) are planning to use Node-RED to manage the reporting of fires to the authorities.

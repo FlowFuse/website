@@ -51,6 +51,6 @@ If you would like to include a map in your next project Worldmap is a really goo
 ## Join Our Team
 FlowFuse is expanding our team. Check out the current openings:
 
-* **[Developer Advocate - Manufacturing & Industrial Automation](https://boards.greenhouse.io/flowforge/jobs/4798023004)**
+* **[Developer Advocate - Manufacturing & Industrial Automation](https://boards.greenhouse.io/flowfuse/jobs/4798023004)**
 
 

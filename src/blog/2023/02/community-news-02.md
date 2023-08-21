@@ -38,7 +38,7 @@ We're now working towards release 1.4 which is due on 16th February. You can see
 If you’d like to learn more about what else was included in 1.3 you can do so on our [blog post](/blog/2023/01/flowforge-1-3-0-released/), [GitHub release page](https://github.com/flowforge/flowforge/releases/tag/v1.3.0), and [Youtube channel](https://www.youtube.com/watch?v=ey3xv5j5x7k).
 
 ### [Team News](/team)
-We are currently recruiting [NodeJS Developers](https://boards.greenhouse.io/flowforge/jobs/4463977004) as well as a [Graphic Designer](https://boards.greenhouse.io/flowforge/jobs/4785058004) to join our team. You can view any of the roles we currently have open and apply on our [Jobs page](https://boards.greenhouse.io/flowforge).
+We are currently recruiting [NodeJS Developers](https://boards.greenhouse.io/flowfuse/jobs/4463977004) as well as a [Graphic Designer](https://boards.greenhouse.io/flowfuse/jobs/4785058004) to join our team. You can view any of the roles we currently have open and apply on our [Jobs page](https://boards.greenhouse.io/flowfuse).
 
 ## Node-RED in the Community
 

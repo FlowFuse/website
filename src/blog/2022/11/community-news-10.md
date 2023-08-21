@@ -30,7 +30,7 @@ Earlier this week, we announced a $7.25M seed round led by [Cota Capital](https:
 It's great to see members of the Node-RED community taking their personal time to help us all build better projects. This write up takes you through the basics of creating your first Dashboard through to more advanced techniques to help your interfaces look professional and provide great user experiences.
 
 [**FlowFuse Team News**](/team/)    
-We are currently recruiting [NodeJS Developers](https://boards.greenhouse.io/flowforge/jobs/4463977004), a [Product Manager](https://boards.greenhouse.io/flowforge/jobs/4717778004), a [Recruiter / PeopleOps Manager](https://boards.greenhouse.io/flowforge/jobs/4687876004) and a [Senior Community Manager](https://boards.greenhouse.io/flowforge/jobs/4700809004). You can view any of the roles we currently have open and apply on our [Jobs page](https://boards.greenhouse.io/flowforge).
+We are currently recruiting [NodeJS Developers](https://boards.greenhouse.io/flowfuse/jobs/4463977004), a [Product Manager](https://boards.greenhouse.io/flowfuse/jobs/4717778004), a [Recruiter / PeopleOps Manager](https://boards.greenhouse.io/flowfuse/jobs/4687876004) and a [Senior Community Manager](https://boards.greenhouse.io/flowfuse/jobs/4700809004). You can view any of the roles we currently have open and apply on our [Jobs page](https://boards.greenhouse.io/flowfuse).
 
 We'd also like to welcome [Pez Cuckow](https://github.com/Pezmc) who joined FlowFuse as a Senior Software Engineer in October.
     
