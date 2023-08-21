@@ -1,15 +1,15 @@
 ---
-navTitle: Data at FlowForge
+navTitle: Data at FlowFuse
 ---
 
-# Data at FlowForge
+# Data at FlowFuse
 
-At FlowForge we're trying to leverage data obtained to make better decisions.
+At FlowFuse we're trying to leverage data obtained to make better decisions.
 
 ### Data sources
 
 Right now we're mostly using the Telemetry data from self-managed installs of
-FlowForge. Later we'll likely add data from Stripe and Hubspot.
+FlowFuse. Later we'll likely add data from Stripe and Hubspot.
 
 ### Data warehouse
 
@@ -21,7 +21,7 @@ Sheets and [Data Studio](https://datastudio.google.com/).
 ### Source to sink
 
 We've adopted Meltano to obtain and transfer the data. See also the
-[FlowForge-Data](https://github.com/flowforge/flowforge-data){rel="nofollow"}
+[FlowFuse-Data](https://github.com/flowforge/flowforge-data){rel="nofollow"}
 (Internal project)
 on how we transfer the data. It's manually triggered for now.
 

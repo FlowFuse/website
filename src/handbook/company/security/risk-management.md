@@ -15,7 +15,7 @@ define a plan for the achievement of information security and privacy objectives
 
 ## Scope 
 
-All FlowForge data, information and information systems.
+All FlowFuse data, information and information systems.
 
 Risks that could affect the medium to long-term goals should be considered as
 well as risks that will be encountered in the day-to-day delivery of services.
@@ -28,10 +28,10 @@ organization.
 
 A thorough risk assessment must be conducted to evaluate potential threats and
 vulnerabilities to the confidentiality, integrity, and availability of sensitive,
-confidential, and proprietary electronic information FlowForge stores, transmits,
+confidential, and proprietary electronic information FlowFuse stores, transmits,
 and/or processes.
 
-Risk assessments must be performed with any major change to FlowForge's business
+Risk assessments must be performed with any major change to FlowFuse's business
 or technical operations and/or supporting infrastructure no less than once per year.
 
 Strategies shall be developed to mitigate or accept the risks identified in the
@@ -59,7 +59,7 @@ privacy of organizational and customer information, personally identifiable
 information (PII), or business information systems.
 
 For all risk inputs such as risk assessments, vulnerability scans, penetration test,
-bug bounty programs, etc., FlowForge management shall reserve the right to modify
+bug bounty programs, etc., FlowFuse management shall reserve the right to modify
 risk rankings based on its assessment of the nature and criticality of the system
 processing, as well as the nature, criticality and exploitability (or other
 relevant factors and considerations) of the identified vulnerability.
@@ -73,10 +73,10 @@ The following responses to risk should be employed:
 
  - **Modify**: take actions or employ strategies to reduce the risk.
  - **Accept**: accept and monitor the risk at the present time. This may be necessary for some risks that arise from external events.
- - **Transfer**: pass the risk on to another party. For example contractual terms may be agreed to ensure that the risk is not borne by FlowForge or insurance may be appropriate for protection against financial loss.
+ - **Transfer**: pass the risk on to another party. For example contractual terms may be agreed to ensure that the risk is not borne by FlowFuse or insurance may be appropriate for protection against financial loss.
  - **Avoid**: cease the activity or to change it in such a way as to end the risk.
 
-Where FlowForge chooses a risk response other than "Accept" or "Avoid" it shall
+Where FlowFuse chooses a risk response other than "Accept" or "Avoid" it shall
 develop a Risk Treatment Plan
 
 
@@ -84,16 +84,16 @@ develop a Risk Treatment Plan
 
 The procedure for managing risk will meet the following criteria:
 
- - FlowForge will maintain a [Risk Register](https://app.vanta.com/risk-management/risk-register) and Treatment Plan.
+ - FlowFuse will maintain a [Risk Register](https://app.vanta.com/risk-management/risk-register) and Treatment Plan.
  - Risks are ranked by "likelihood" and "severity/impact" as critical, high, medium, low, and negligible.
  - Overall risk shall be determined through a combination of likelihood and impact.
  - Risks may be evaluated to estimate potential monetary loss where possible.
 
-FlowForge will respond to risks in a prioritized fashion. Remediation priority
+FlowFuse will respond to risks in a prioritized fashion. Remediation priority
 will consider the risk likelihood and impact, cost, work effort, and availability
 of resources. Multiple remediations may be undertaken simultaneously.
 
-Regular reports will be made to the senior leadership of FlowForge to ensure
+Regular reports will be made to the senior leadership of FlowFuse to ensure
 risks are being mitigated appropriately, and in accordance with business
 priorities and objectives.
 

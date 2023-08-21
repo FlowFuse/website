@@ -104,7 +104,7 @@ module.exports = function(eleventyConfig) {
     });
 
     eleventyConfig.addFilter('shortDate', dateObj => {
-        return spacetime(dateObj).format('{date} {month-short}, {year}')
+        return spacetime(new Date(dateObj)).format('{date} {month-short}, {year}')
     });
 
     eleventyConfig.addFilter('duration', mins => {
@@ -269,7 +269,7 @@ module.exports = function(eleventyConfig) {
     });
 
     eleventyConfig.addShortcode("renderTeamMember", function(teamMember) {
-        // When the author is no longer at FlowForge
+        // When the author is no longer at FlowFuse
         if (typeof teamMember === "undefined") {
             return ""
     }
@@ -359,7 +359,7 @@ module.exports = function(eleventyConfig) {
                 docs: [
                     'Overview',
                     'Device Agent',
-                    'Running FlowForge'
+                    'Running FlowFuse'
                 ]
             }
 

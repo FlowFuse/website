@@ -21,7 +21,7 @@ the job advert on Greenhouse. This was introduced [here](https://github.com/flow
 
 ### Referrals
 
-To participate in FlowForge's employee referral program, kindly send all referral resumes to the People Ops Manager. If your recommended candidate gets hired and successfully completes 3 months, you will receive a $100 reward. Alternatively, you can choose a charitable foundation of your liking, and we will double the referral amount donated to that organization.
+To participate in FlowFuse's employee referral program, kindly send all referral resumes to the People Ops Manager. If your recommended candidate gets hired and successfully completes 3 months, you will receive a $100 reward. Alternatively, you can choose a charitable foundation of your liking, and we will double the referral amount donated to that organization.
 
 ### Sharing an Existing Role
 
@@ -65,23 +65,28 @@ date for a new employee should be at least 2 to 3 weeks out. When a
 
 ### Background Screening
 
-FlowForge will utilize Deel to conduct background checks on individuals in the United States. These checks are essential for compliance purposes, particularly for employees located in the US.
+FlowFuse will utilize Deel to conduct background checks on individuals in the United States. These checks are essential for compliance purposes, particularly for employees located in the US.
 
 ### Tax Residency
 During the onboarding process on our EOR provider platform, candidates must either be citizens of the country where they will be working or possess a valid visa. Any requests for changes in tax residency should be communicated to the HR department and CEO at least 2 months in advance.
 
 ## Onboarding
 
-Just before your first day of work at FlowForge, you will receive an email requesting your GitHub username and preferred company email address. An issue will be created on our [internal issue tracker][issue-tracker] with steps for you and
+Just before your first day of work at FlowFuse, you will receive an email requesting your GitHub username
+and preferred company email address. An issuewill be created on our [internal issue tracker][issue-tracker] with steps for you and
 the team to complete once you start.
 
-On the day of your start, a message will be sent to your personal email address, providing you access to your FlowForge email address. This process ensures that all new joiners receive access either on their first day or up to 24 hours before their official start date.
+On the day you start, a message will be sent to your personal email address to grant you access to your FlowFuse email address.
+This process ensures that all new joiners receive access either on their first day or up to 24 hours before their official start date.
+
 
 Upon setting up your password, it is essential to [turn on the 2-Step Verification](https://support.google.com/accounts/answer/185839?hl=en&co=GENIE.Platform%3DDesktop). Failure to do so may result in being locked out of your account after a few days, requiring assistance from an admin to regain access.
 
-Once your FlowForge email is set up, you will have access to invitations to other services and platforms, including 1Password. [Set this up](https://support.1password.com/explore/team-member/) as soon as possible to add a security layer to all your FlowForge accounts.
+Once your FlowFuse email is set up, you will have access to invitations to other services and platforms, including 1Password. [Set this up](https://support.1password.com/explore/team-member/) as soon as possible to add a security layer to all your FlowFuse accounts.
 
-On your first day, once your email and 1Password accounts are set up, it is important to prioritize gaining access to Slack, the FlowForge GitHub organization, and completing your onboarding issue. Additionally, your manager will assign tasks for you to begin working on during your first week.
+On your first day, once your email and 1Password accounts are set up, it is important to prioritize
+gaining access to Slack, the FlowFuse GitHub organization, and completing your onboarding issue.
+Additionally, your manager will assign tasks for you to begin working on during your first week.
 
 ## Greenhouse
 
@@ -122,8 +127,8 @@ The resume review should reject **over 50%** of all candidates.
 
 #### Screening Call
 
-The initial screening call is intended as an additional filter for FlowForge, but also for the candidate. Screening calls are held on a video call, and the candidate should have plenty of time to ask question and understand if this role is right for them.
-During this call FlowForge should understand:
+The initial screening call is intended as an additional filter for FlowFuse, but also for the candidate. Screening calls are held on a video call, and the candidate should have plenty of time to ask question and understand if this role is right for them.
+During this call FlowFuse should understand:
 1. Alignment to [Values](../company/values.md)
 1. The candidate is enthusiastic about the company and the open role
 1. Compensation range for the candidate
@@ -143,7 +148,7 @@ For example `intermediate` vs `senior` for developers.
 When in doubt, reject the candidate.
 
 #### STAR interview
-After the skills assessment, the last round includes a behaviour interview. STAR interviews are aimed at discussing the candidates past performance in certain situations, and hopefully predict the way they acted is in line with FlowForge expectations.
+After the skills assessment, the last round includes a behaviour interview. STAR interviews are aimed at discussing the candidates past performance in certain situations, and hopefully predict the way they acted is in line with FlowFuse expectations.
 
 Again, a scoresheet will be filled out.
 
@@ -156,7 +161,7 @@ Before the peopleops team extends an offer, explicit approval is required from:
 1. A peopleops manager
    - Check we hire in their location
    - Notice period aligns with internal processes
-   - Total compensation is in FlowForge's range
+   - Total compensation is in FlowFuse's range
 1. The new manager of the candidate
 1. CEO
 
@@ -167,21 +172,21 @@ When a candidate accepted an offer, proceed to [onboard them](#after-an-offer-is
 As soon as there's a pipeline that would support at least three strong candidates
 for the open position, take the job posting offline. Candidates applying for a job
 that's no longer available is a waste of their time and a bad experience with
-FlowForge and hurts our reputation.
+FlowFuse and hurts our reputation.
 
 ## Offboarding
 
-The purpose of the offboarding section in the handbook is to provide a clear and structured framework for employees at FlowForge to follow during the offboarding process. The offboarding process is managed by the People Ops Manager in close collaboration with the CEO, Reporting Managers, and Deel for Payroll at FlowForge.
+The purpose of the offboarding section in the handbook is to provide a clear and structured framework for employees at FlowFuse to follow during the offboarding process. The offboarding process is managed by the People Ops Manager in close collaboration with the CEO, Reporting Managers, and Deel for Payroll at FlowFuse.
 
-When a team member or contractor decides to leave FlowForge, they will receive a detailed email before their final date of employment. The email will include information regarding the impact on benefits coverage, stocks, final pay, and the process for returning any company assets.
+When a team member or contractor decides to leave FlowFuse, they will receive a detailed email before their final date of employment. The email will include information regarding the impact on benefits coverage, stocks, final pay, and the process for returning any company assets.
 
 ### Voluntary Resignation
 
-If a team member decides to leave FlowForge they're expected to continue working to facilitate a smooth handover and enable us to find a suitable replacement. Please note that we generally expect the team member to work for the entire notice period.
+If a team member decides to leave FlowFuse they're expected to continue working to facilitate a smooth handover and enable us to find a suitable replacement. Please note that we generally expect the team member to work for the entire notice period.
 
-If you are considering resigning from your position at FlowForge, we highly recommend discussing your reasons with your manager or the People Ops manager. We are always open to improving and making changes that benefit our team members. While we understand that sometimes leaving is the best option, we encourage you to explore all possible solutions before making a final decision.
+If you are considering resigning from your position at FlowFuse, we highly recommend discussing your reasons with your manager or the People Ops manager. We are always open to improving and making changes that benefit our team members. While we understand that sometimes leaving is the best option, we encourage you to explore all possible solutions before making a final decision.
 
-Once you have discussed your concerns with your manager and the People Ops team and determined that resigning from FlowForge is the only option, please notify both your manager and the People Ops team of your intention to resign via email. Afterward, we will commence a discussion to establish the steps required to ensure a seamless handover.
+Once you have discussed your concerns with your manager and the People Ops team and determined that resigning from FlowFuse is the only option, please notify both your manager and the People Ops team of your intention to resign via email. Afterward, we will commence a discussion to establish the steps required to ensure a seamless handover.
 
 ### Involuntary Resignation
 
@@ -189,7 +194,7 @@ When a team member is being let go, it is usually due to either performance issu
 
 ### Communicating Departures
 
-When a team member voluntarily departs, we may ask if they would like to share their plans with the team. If the departure is involuntary,  reasons of the departure will be at the sole discretion of the FlowForge management.
+When a team member voluntarily departs, we may ask if they would like to share their plans with the team. If the departure is involuntary,  reasons of the departure will be at the sole discretion of the FlowFuse management.
 
 ## Offboarding process
 
@@ -199,7 +204,7 @@ We will send an email to the departing employee covering the following points:
 1. Return of company property
 1. Reimbursement of business expenses
 
-At FlowForge, we conduct Exit Interviews for employees who choose to leave the company voluntarily. This provides us with valuable feedback on their experience, reasons for leaving, and areas for improvement. The People Ops manager schedules these interviews during the employee's last week to ensure they have an opportunity to share their insights. Our aim is to use this feedback to enhance our workplace culture and practices.
+At FlowFuse, we conduct Exit Interviews for employees who choose to leave the company voluntarily. This provides us with valuable feedback on their experience, reasons for leaving, and areas for improvement. The People Ops manager schedules these interviews during the employee's last week to ensure they have an opportunity to share their insights. Our aim is to use this feedback to enhance our workplace culture and practices.
 
 ### Offboarding Issue
 

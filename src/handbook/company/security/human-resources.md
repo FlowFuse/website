@@ -15,23 +15,23 @@ their responsibilities, and are suitable for their roles.
 
 ## Scope 
 
-This policy applies to all employees of FlowForge, consultants, contractors and
-other third-party entities with access to FlowForge production networks and
+This policy applies to all employees of FlowFuse, consultants, contractors and
+other third-party entities with access to FlowFuse production networks and
 system resources.
 
 ## Policy
 
 ### Screening
 
-Background verification checks on FlowForge personnel shall be carried out in
+Background verification checks on FlowFuse personnel shall be carried out in
 accordance with relevant laws, regulations, and shall be proportional to the
 business requirements, the classification of the information to be accessed, and
 the perceived risks.
 
-All third-parties with technical privileged or administrative access to FlowForge
+All third-parties with technical privileged or administrative access to FlowFuse
 production systems or networks are subject to a background check or requirement
 to provide evidence of an acceptable background, based on their level of access
-and the perceived risk to FlowForge.
+and the perceived risk to FlowFuse.
 
 ### Competence & Performance Assessment
 
@@ -42,7 +42,7 @@ in the Information Security Roles and Responsibilities Policy. Competency
 evaluations may include reference checks, education and certification verifications,
 technical testing, and interviews.
 
-All FlowForge employees will undergo an [annual performance review](../../peopleops/performance-review.md) which will
+All FlowFuse employees will undergo an [annual performance review](../../peopleops/performance-review.md) which will
 include an assessment of job performance, competence in the role, adherence to
 company policies and code of conduct, and achievement of role-specific objectives.
 
@@ -54,7 +54,7 @@ communicated to employees and third-parties at the time of hire or engagement,
 and employees and contractors are required to formally acknowledge their
 understanding and acceptance of their security responsibilities.
 
-Employees and relevant third-parties shall follow all FlowForge information
+Employees and relevant third-parties shall follow all FlowFuse information
 security policies.
 
 ### Management Responsibilities
@@ -84,8 +84,8 @@ establishing incentives and segregating roles, responsibilities, and authorities
 
 ### Information Security Awareness, Education & Training
 
-All FlowForge employees and third-parties with administrative or privileged
-technical access to FlowForge production systems and networks shall complete
+All FlowFuse employees and third-parties with administrative or privileged
+technical access to FlowFuse production systems and networks shall complete
 security awareness training at the time of hire and annually thereafter.
 
 This is managed via the [Vanta](https://app.vanta.com) platform.

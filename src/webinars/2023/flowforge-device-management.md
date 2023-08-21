@@ -15,4 +15,4 @@ hubspot:
 
 <!--more-->
 
-FlowForge device management features allow you to deploy Node-RED out to hundreds of PLCs and IoT edge devices. In the webinar, Rob Marcer will do a deep dive into the challenges of managing hundreds of devices running Node-RED, how to securely on-board these devices, how to deploy new versions of Node-RED in an automated manner and how to remotely troubleshoot a device. Attendees will gain a better understanding on how to Node-RED device management for large scale fleets of devices.
+FlowFuse device management features allow you to deploy Node-RED out to hundreds of PLCs and IoT edge devices. In the webinar, Rob Marcer will do a deep dive into the challenges of managing hundreds of devices running Node-RED, how to securely on-board these devices, how to deploy new versions of Node-RED in an automated manner and how to remotely troubleshoot a device. Attendees will gain a better understanding on how to Node-RED device management for large scale fleets of devices.

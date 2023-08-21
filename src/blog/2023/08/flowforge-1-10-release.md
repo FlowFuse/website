@@ -1,7 +1,7 @@
 ---
-title: FlowForge 1.10 Release Now Available
-subtitle: New FlowForge 1.10 also includes improvements to device management and importing environment variable templates.
-description: New FlowForge 1.10 release introduces importing of environment variable templates and improvements to device management.
+title: FlowFuse 1.10 Release Now Available
+subtitle: New FlowFuse 1.10 also includes improvements to device management and importing environment variable templates.
+description: New FlowFuse 1.10 release introduces importing of environment variable templates and improvements to device management.
 date: 2023-08-03 
 authors: ["ian-skerrett"]
 image: /blog/2023/08/images/release-1-10-graphic.png
@@ -11,12 +11,12 @@ tags:
     - releases
 ---
 
-FlowForge 1.10 release includes improvements to device management and importing environment variable templates.
+FlowFuse 1.10 release includes improvements to device management and importing environment variable templates.
 
 <!--more-->
 ## Import Environment Variable Templates  [#2372](https://github.com/flowforge/flowforge/issues/2372)
 
-FlowForge 1.10 now allows users to import environment variable templates. This makes it much easier and less error prone to maintain and add new environment variables to Node-RED instances running on FlowForge. 
+FlowFuse 1.10 now allows users to import environment variable templates. This makes it much easier and less error prone to maintain and add new environment variables to Node-RED instances running on FlowFuse. 
 
 
 ## DevOps Pipelines now can include devices [#2243](https://github.com/flowforge/flowforge/issues/2243)
@@ -36,7 +36,7 @@ Team libraries allow Node-RED development team to share common flows and nodes t
 ## Bug Fixes
 
 - Improve visualization of Last Seen & Last Known with large amounts of devices. [#2380](https://github.com/flowforge/flowforge/issues/2380)
-- Fix billing information error in FlowForge Cloud [#2416](https://github.com/flowforge/flowforge/issues/2416)
+- Fix billing information error in FlowFuse Cloud [#2416](https://github.com/flowforge/flowforge/issues/2416)
 - Fix T&C checkbox on sign-up page [#2419](https://github.com/flowforge/flowforge/issues/2419)
 
 
@@ -48,29 +48,29 @@ Thanks to our community members for their contributions to this release.
 
 ## What's next?
 
-We're always working to enhance your experience with FlowForge. Here's how you can stay informed and contribute:
+We're always working to enhance your experience with FlowFuse. Here's how you can stay informed and contribute:
 
 - **Roadmap Overview**: Check out our [Product Roadmap Page](https://flowforge.com/product/roadmap/) to see what we're planning for future updates.
 - **Entire Roadmap**: Visit our [Roadmap on GitHub](https://github.com/orgs/flowforge/projects/5) to follow our progress and contribute your ideas.
-- **Feedback**: We're interested in your thoughts about FlowForge. Your feedback is crucial to us, and we'd love to hear about your experiences with the new features and improvements. Please share your thoughts, suggestions, or report any [issues on GitHub](https://github.com/flowforge/flowforge/issues/new/choose). 
+- **Feedback**: We're interested in your thoughts about FlowFuse. Your feedback is crucial to us, and we'd love to hear about your experiences with the new features and improvements. Please share your thoughts, suggestions, or report any [issues on GitHub](https://github.com/flowforge/flowforge/issues/new/choose). 
 
-Together, we can make FlowForge better with each release!
+Together, we can make FlowFuse better with each release!
 
 ## Try it out
 
-We're confident you can have self managed FlowForge running locally in under 30 minutes.
+We're confident you can have self managed FlowFuse running locally in under 30 minutes.
 You can install our [local build](https://flowforge.com/docs/install/local/), use [Docker](https://flowforge.com/docs/install/docker/), or [Kubernetes](https://flowforge.com/docs/install/kubernetes/).
 
-If you'd rather use our hosted offering: [Get started for free](https://app.flowforge.com/account/create) on FlowForge Cloud.
+If you'd rather use our hosted offering: [Get started for free](https://app.flowforge.com/account/create) on FlowFuse Cloud.
 
-## Upgrading FlowForge
+## Upgrading FlowFuse
 
-[FlowForge Cloud](https://app.flowforge.com) is already running 1.10.
+[FlowFuse Cloud](https://app.flowforge.com) is already running 1.10.
 
-If you installed a previous version of FlowForge and want to upgrade, our documentation provides a
-guide for [upgrading your FlowForge instance](https://flowforge.com/docs/upgrade/).
+If you installed a previous version of FlowFuse and want to upgrade, our documentation provides a
+guide for [upgrading your FlowFuse instance](https://flowforge.com/docs/upgrade/).
 
 ## Getting help
 
-Please check FlowForge's [documentation](https://flowforge.com/docs/) as the answers to many questions are covered there. Additionally you can go the the [community forum](https://community.flowforge.com) if you have
+Please check FlowFuse's [documentation](https://flowforge.com/docs/) as the answers to many questions are covered there. Additionally you can go the the [community forum](https://community.flowfuse.com) if you have
 any feedback or feature requests.

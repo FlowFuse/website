@@ -11,8 +11,8 @@ navTitle: Information Security Roles and Responsibilities
 
 ## Purpose
 
-FlowForge is committed to conducting business in compliance with all applicable laws,
-regulations, and company policies. FlowForge has adopted this policy to outline
+FlowFuse is committed to conducting business in compliance with all applicable laws,
+regulations, and company policies. FlowFuse has adopted this policy to outline
 the security measures required to protect electronic information systems and
 related equipment from unauthorized use.
 
@@ -21,7 +21,7 @@ related equipment from unauthorized use.
 ### Board of directors
 
  - Oversight over risk and internal control for information security, privacy, and compliance.
- - Consults with executive leadership to understand FlowForge's security mission and risks and provides guidance to bring them into alignment
+ - Consults with executive leadership to understand FlowFuse's security mission and risks and provides guidance to bring them into alignment
 
 
 ### Executive Leadership
@@ -29,7 +29,7 @@ related equipment from unauthorized use.
  - Approves Capital Expenditures for Information Security and Privacy programs and initiatives
  - Oversight over the execution of the information security and Privacy risk management program and risk treatments
  - Communication Path to the Board of Directors
- - Aligns [Information Security](./information-security.md) and [Privacy Policy](/privacy-policy/#privacy-policy) based on FlowForge's mission, strategic objectives and risk appetite
+ - Aligns [Information Security](./information-security.md) and [Privacy Policy](/privacy-policy/#privacy-policy) based on FlowFuse's mission, strategic objectives and risk appetite
 
 ### CTO
 
@@ -42,7 +42,7 @@ related equipment from unauthorized use.
 ### Systems Owners
 
  - Maintain the confidentiality, integrity and availability of the information
-   systems for which they are responsible in compliance with FlowForge's policies
+   systems for which they are responsible in compliance with FlowFuse's policies
    on information security and privacy
  - Approval of technical access and change requests for non-standard access to
    systems under their control

@@ -1,7 +1,7 @@
 ---
 title: Community News August 2023
-subtitle: Your monthly update for the FlowForge and Node-RED communities
-description: News from the FlowForge and Node-RED communities
+subtitle: Your monthly update for the FlowFuse and Node-RED communities
+description: News from the FlowFuse and Node-RED communities
 date: 2023-08-08
 authors: ["ian-skerrett"]
 image: "/images/blog/community-news.jpeg"
@@ -10,13 +10,13 @@ tags:
     - newsletter
 ---
 
-Welcome to the FlowForge newsletter for August 2023, a monthly roundup of what’s been happening with FlowForge and the wider Node-RED community. 
+Welcome to the FlowFuse newsletter for August 2023, a monthly roundup of what’s been happening with FlowFuse and the wider Node-RED community. 
 
 <!--more-->
 
 ## New Release
 
-Last week we released FlowForge 1.10, featuring improvements to our device management solutions and the new ability to import environment variable templates. Read about the details of FlowForge 1.10 in our [release announcement](https://flowforge.com/blog/2023/08/flowforge-1-10-release/). 
+Last week we released FlowFuse 1.10, featuring improvements to our device management solutions and the new ability to import environment variable templates. Read about the details of FlowFuse 1.10 in our [release announcement](https://flowforge.com/blog/2023/08/flowforge-1-10-release/). 
 
 ## Upcoming events
 
@@ -36,9 +36,9 @@ OPC-UA is a popular communication protocol used to communicate industrial data b
 
 
 
-- [First Pre-Alpha Release of the new Node-RED Dashboard](https://flowforge.com/blog/2023/07/dashboard-0-1-release/) - update on FlowForge's work to develop the next generation of Node-RED dashboard.
+- [First Pre-Alpha Release of the new Node-RED Dashboard](https://flowforge.com/blog/2023/07/dashboard-0-1-release/) - update on FlowFuse's work to develop the next generation of Node-RED dashboard.
 
-- [How to add images to Node-RED dashboards when using FlowForge](https://flowforge.com/blog/2023/07/images-in-node-red-dashboards/) - some tips on how to add images to a dashboard when running Node-RED instances in a docker environment, like FlowForge.
+- [How to add images to Node-RED dashboards when using FlowFuse](https://flowforge.com/blog/2023/07/images-in-node-red-dashboards/) - some tips on how to add images to a dashboard when running Node-RED instances in a docker environment, like FlowFuse.
 
 - [Creating a Historical Data Dashboard with InfluxDB and Node-RED](https://flowforge.com/blog/2023/07/influxdb-historical-data/) - an in-depth article on how to store historical data in InfluxDB that can be visualize with Node-RED dashboard.
 
@@ -49,6 +49,6 @@ OPC-UA is a popular communication protocol used to communicate industrial data b
 
 
 ## Join Our Team
-FlowForge is expanding our team. Check out the current openings:
+FlowFuse is expanding our team. Check out the current openings:
 
-- [Contract Front-End Engineer – Node-RED Dashboard](https://boards.greenhouse.io/flowforge/jobs/4911532004)
+- [Contract Front-End Engineer – Node-RED Dashboard](https://boards.greenhouse.io/flowfuse/jobs/4911532004)

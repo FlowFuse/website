@@ -1,7 +1,7 @@
 ---
 title: Bringing High Availability to Node-RED
-subtitle: How we are tackling the hard problems of HA in FlowForge
-description: How we are tackling the hard problems of HA in FlowForge
+subtitle: How we are tackling the hard problems of HA in FlowFuse
+description: How we are tackling the hard problems of HA in FlowFuse
 date: 2023-06-02 12:00:00
 authors: ["nick-oleary"]
 image: /images/blog/tile-ha-nr.jpg
@@ -11,7 +11,7 @@ Many companies look to deploy Node-RED into use cases that require the applicati
 to have a high degree of availability, reliability, and scalability. Following up
 our [previous post on the subject](/blog/2023/02/highly-available-node-red/), in this
 post I’m going to look at some of the technical details of achieving HA, the
-approaches available and what that means for the work we’re doing at FlowForge
+approaches available and what that means for the work we’re doing at FlowFuse
 and upstream in Node-RED.
 
 <!--more-->
@@ -38,7 +38,7 @@ There are two types of state to consider when thinking about a Node-RED flow:
 **explicit** and **implicit** state.
 
 Explicit state is what is programmed into the flow. For example, a flow may store
-state in Context or use an external database service. Within FlowForge we provide
+state in Context or use an external database service. Within FlowFuse we provide
 two types of context - the default in-memory context store and a database-backed 
 persistent store. Currently the database-backed store includes a memory-caching
 layer to provide better performance and interoperability. That gets tricky when
@@ -154,7 +154,7 @@ challenge is what to do when the Deploy button is pressed. That is how new flows
 are passed from the editor to the runtime. When you have multiple instances, we
 need to make sure that they all get updated. That is quite a tricky problem to
 solve with the current Node-RED APIs - and something we’ll be working on both in
-FlowForge and in the upstream Node-RED project to resolve.
+FlowFuse and in the upstream Node-RED project to resolve.
 
 That said, a more immediate solution could well be to take advantage of separate 
 development/production instances. You develop in a single instance and, when happy
@@ -173,22 +173,22 @@ starts new instances of Node-RED alongside the old, but with the flows all stopp
 Then, once everything is ready, the old instances are stopped and the new instances
 started - minimizing the downtime, although not completely removing it.
 
-### Continuing the HA journey at FlowForge
+### Continuing the HA journey at FlowFuse
 
 So the question is how are we going to apply all of this to what we’re building
-at FlowForge. We cannot do everything at once, so we have to prioritize which
+at FlowFuse. We cannot do everything at once, so we have to prioritize which
 scenarios we’re going to address first. Consequently, drawing from customer
 feedback, we have chosen to start with the scaling side of high availability - 
 allowing multiple copies of an instance to be run with appropriate load
 balancing put in front of it.
 
-We are building FlowForge as an open platform with the ability to run on top of
+We are building FlowFuse as an open platform with the ability to run on top of
 Docker Compose and Kubernetes. As we get into some of these HA features, we will
 need to look carefully at where we can lean on these underlying technologies -
 we don’t want to reinvent the wheel here.
 
 Our initial focus is going to be when running in a Kubernetes environment - just
-as we do with our hosted FlowForge Cloud platform. Kubernetes provides lots of
+as we do with our hosted FlowFuse Cloud platform. Kubernetes provides lots of
 the building blocks for creating a scalable and highly available solution, but
 it certainly doesn’t do all of the work for you.
 
@@ -197,7 +197,7 @@ instance with the k8s environment. You can follow our progress with this
 [issue](https://github.com/flowforge/flowforge/issues/2156) on our backlog.
 
 I hope this post has given some useful insight into the problems we’re looking
-to solve at FlowForge. As it's such an important requirement for many users we’ll
+to solve at FlowFuse. As it's such an important requirement for many users we’ll
 keep you updated as we make progress.
 
 

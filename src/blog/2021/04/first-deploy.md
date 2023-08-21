@@ -1,5 +1,5 @@
 ---
-title: Introducing FlowForge Inc.
+title: Introducing FlowFuse Inc.
 subtitle: Building a new low-code development platform around the Node-RED project
 description: Building a new low-code development platform around the Node-RED project
 date: 2021-04-06
@@ -29,9 +29,9 @@ step-change to what the Node-RED project is able to achieve.
 
 <!--more-->
 
-### Introducing FlowForge Inc.
+### Introducing FlowFuse Inc.
 
-So today, I'm launching FlowForge Inc - a new company whose mission is to build a low-coding development
+So today, I'm launching FlowFuse Inc - a new company whose mission is to build a low-coding development
 platform fit for the enterprise with Node-RED at its heart.
 
 Backed by [Sid Sijbrandij](https://www.linkedin.com/in/sijbrandij/), we have funding

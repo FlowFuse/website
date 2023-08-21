@@ -14,7 +14,7 @@ To ensure the correct and secure operation of information processing systems and
 
 ## Scope 
 
-All FlowForge data, information and information systems that are business critical
+All FlowFuse data, information and information systems that are business critical
 and/or process, store, or transmit company data.
 
 ## Operations Security
@@ -73,7 +73,7 @@ periodically tested, not less than annually.
 
 Backups must be stored separately from the production data location.
 
-FlowForge does not regularly backup user devices like laptops. Users are expected to
+FlowFuse does not regularly backup user devices like laptops. Users are expected to
 store critical files and information in the commpany-provided Google Drive with
 appropriate access controls applied.
 

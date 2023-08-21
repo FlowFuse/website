@@ -4,7 +4,7 @@
         {% set path = (["node-red/", nav] | join) if nav == "core-nodes" else nav %}
 
         <li class="{% if "/{{ path }}/" === page.url %}active{% endif %}">
-            <a href="/{{ path }}">{{ nav }}</a>
+            <a href="/{{ path }}/">{{ nav }}</a>
         </li>
         {% for group in collections
             .nav[nav]

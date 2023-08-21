@@ -67,4 +67,4 @@ As always, we're open to ideas, feedback & contributions. If you'd like to get i
 
 If you'd like to be paid to directly contribute to Dashboard 2.0, we are hiring for a 2-3 month position to do just that:
 
-- [Contract Front-End Engineer – Node-RED Dashboard](https://boards.greenhouse.io/flowforge/jobs/4911532004)
+- [Contract Front-End Engineer – Node-RED Dashboard](https://boards.greenhouse.io/flowfuse/jobs/4911532004)

@@ -9,7 +9,7 @@ meta:
 
 # Privacy Policy
 
-This Privacy Policy describes the privacy practices of FlowForge Inc (**“FlowForge”**, **“we”**, **“us”** or **“our”**) and how we handle personal information that we collect through our digital properties that link to this Privacy Policy, including our website, (the **“Service”**), as well as through social media, our marketing activities, our events and other activities described in this policy.
+This Privacy Policy describes the privacy practices of FlowFuse Inc (**“FlowFuse”**, **“we”**, **“us”** or **“our”**) and how we handle personal information that we collect through our digital properties that link to this Privacy Policy, including our website, (the **“Service”**), as well as through social media, our marketing activities, our events and other activities described in this policy.
 
 At the time we collect personal information, we may provide additional or supplemental privacy notices to individuals for specific services and personal information processing activities.
 
@@ -135,6 +135,6 @@ We reserve the right to modify this Privacy Policy at any time. If we make mater
 
 ## <span name="how-to-contact-us">How to contact us</span>
 
- - **Email:** `contact@flowforge.com`
+ - **Email:** `contact@flowfuse.com`
  - **Mail:** `PO Box 7775 #29439, San Francisco, CA 94120-7775`
 </div>

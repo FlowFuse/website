@@ -2,7 +2,7 @@
 navTitle: Asset Management Policy
 ---
 
-# Access Control Policy
+# Asset Management Policy
 
 | Policy owner   | Effective date |
 | -------------- | -------------- |
@@ -18,7 +18,7 @@ modification, removal, or destruction of information stored on media.
 
 ## Scope 
 
-This policy applies to all FlowForge owned or managed information systems.
+This policy applies to all FlowFuse owned or managed information systems.
 
 ## Policy
 
@@ -43,18 +43,18 @@ facilities shall be identified and documented in the [Information Security Polic
 All personnel must immediately report the loss of any information systems,
 including portable or laptop computers, smartphones, PDAs, authentication tokens
 (keyfobs, one-time-password generators, or personally owned smartphones or
-devices with access to FlowForge systems) or other devices that can store and
-process or help grant access to FlowForge data.
+devices with access to FlowFuse systems) or other devices that can store and
+process or help grant access to FlowFuse data.
 
 ### Return of Assets
 
-All employees and third-party users of FlowForge equipment shall return all of
+All employees and third-party users of FlowFuse equipment shall return all of
 the organizational assets within their possession upon termination of their
 employment, contract, or agreement in accordance with the [off-boarding process](../../peopleops/hiring.md#offboarding).
 
 ### Handling of Assets
 
-Employees and users who are issued or handle FlowForge equipment are expected to
+Employees and users who are issued or handle FlowFuse equipment are expected to
 use reasonable judgment and exercise due care in protecting and maintaining the
 equipment.
 
