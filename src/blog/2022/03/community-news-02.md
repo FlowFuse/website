@@ -27,5 +27,5 @@ The 2.2 release of Node-RED (last month) has received 2 maintenance releases to 
 [New Team Members](https://flowforge.com/blog/welcome-joe/)  
 FlowFuse is now up to 6 people, Joe Pavitt has joined the team
 
-[We still are Hiring](https://boards.greenhouse.io/flowforge/jobs/4312861004)  
+[We still are Hiring](https://boards.greenhouse.io/flowfuse/jobs/4312861004)  
 We're looking for the next member of our team, If you're a Node.JS developer and want to work with us take a look at the link.

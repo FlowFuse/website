@@ -1,10 +1,10 @@
 {
     "title": "FlowFuse",
     "baseURL": "https://flowforge.com",
-    "jobBoard": "https://boards.greenhouse.io/flowforge",
+    "jobBoard": "https://boards.greenhouse.io/flowfuse",
     "openings": {
-        "sales": "https://boards.greenhouse.io/flowforge/jobs/4843566004",
-        "devadvocate": "https://boards.greenhouse.io/flowforge/jobs/4843566004",
-        "frontenddash": "https://boards.greenhouse.io/flowforge/jobs/4911532004"
+        "sales": "https://boards.greenhouse.io/flowfuse/jobs/4843566004",
+        "devadvocate": "https://boards.greenhouse.io/flowfuse/jobs/4843566004",
+        "frontenddash": "https://boards.greenhouse.io/flowfuse/jobs/4911532004"
     }
 }

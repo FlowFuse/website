@@ -32,7 +32,7 @@ String manipulation is the bread and butter of so many programming tasks. Node-R
 [**FlowFuse Team News**](https://flowforge.com/team/)    
 We’d like to welcome two new members to the FlowFuse team. [Ian Skerrett](https://twitter.com/ianskerrett) has joined as our Head of Marketing and [Tracy Anthony](https://www.linkedin.com/in/tracyanthonyfernandez/) has joined as our HR Manager. FlowFuse continues to grow and we are becoming a truly global team.
 
-Would you like to work for FlowFuse? We are currently recruiting [NodeJS Developers](https://boards.greenhouse.io/flowforge/jobs/4463977004) to join our team. You can view any of the roles we currently have open and apply on our [Jobs page](https://boards.greenhouse.io/flowforge). 
+Would you like to work for FlowFuse? We are currently recruiting [NodeJS Developers](https://boards.greenhouse.io/flowfuse/jobs/4463977004) to join our team. You can view any of the roles we currently have open and apply on our [Jobs page](https://boards.greenhouse.io/flowfuse). 
     
 [**Try FlowFuse for Free**](https://app.flowforge.com/account/create?code=FF12)  
 As a thank you for reading our newsletters we’d like to offer you a free, small project for one month on our managed FlowFuse platform when you create a new team. To get this discount please follow [this link](https://app.flowforge.com/account/create?code=FF12) or use the code FF12 when on the payment page after creating a new team. As an open source project you can also use [FlowFuse](https://flowforge.com/docs/install/) for free, forever.

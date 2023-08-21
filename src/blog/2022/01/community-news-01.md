@@ -30,5 +30,5 @@ Sam Machin rebuilt an app on Node-RED allowing you to talk to Alexa through the 
 [New Team Members](https://flowforge.com/blog)  
 We welcomed 2 new members of the FlowFuse team this month [ZJ](https://flowforge.com/blog/welcome-zj) joins as our CEO and [Steve](https://flowforge.com/blog/welcome-steve) has come onboard to work on the Node-RED project
 
-[We are Hiring]( https://boards.greenhouse.io/flowforge/jobs/4312861004)  
+[We are Hiring]( https://boards.greenhouse.io/flowfuse/jobs/4312861004)  
 We're looking for the next member of our team, If you're a Node.JS developer and want to work with us take a look at the link.
