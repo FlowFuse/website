@@ -122,19 +122,21 @@ sitemapPriority: 1.0
         <div class="sm:mt-10 md:mt-10 w-full max-w-4xl text-center flex flex-wrap gap-2 justify-around">
             <div class="w-full px-3 mt-4 sm:w-72 md:mt-0 css-full">
                 <div class="w-40 m-auto mb-4">
-                    {% image "./images/pictograms/book-a-demo_red.png", "Icon representing a booked demo.", [160] %}
+                    {% image "./images/pictograms/book-a-demo.png", "Icon representing a booked demo.", [160] %}
                 </div>
                 <h5 class="flex justify-center">Book a Demo</h5>
                 <label class="font-light mt-2 block">Understand how you can develop and roll out bespoke applications with FlowFuse and Node-RED.</label>
                 <a class="mt-4 ff-btn ff-btn--secondary uppercase inline-block" href="/book-demo" onclick="capture('cta-book-demo', {'position': 'secondary'})">Book a Demo</a>
             </div>
-            <div class="w-full px-3 mt-4 sm:w-72 md:mt-0">
-                <div class="w-40 m-auto mb-4">
+            <div class="w-full px-3 mt-4 sm:w-72 md:mt-0 flex flex-col items-center justify-between">
+                <div>
+                <div class="w-40 mb-4">
                     {% image "./images/pictograms/enterprise.png", "Graphic image representing 'Infrastructure'.", [160] %}
                 </div>
                 <h5 class="flex justify-center">FlowFuse Cloud</h5>
+                </div>
                 <label class="font-light mt-2 block">Get started in less than a minute, fully managed, fully secure.</label>
-                <a class="mt-4 ff-btn ff-btn--primary uppercase inline-block" href="https://app.flowforge.com/account/create" onclick="capture('cta-join', {'position': 'secondary'})">Join Now</a>
+                <a class="mt-4 ff-btn ff-btn--primary uppercase inline-block" href="https://app.flowforge.com/account/create" onclick="capture('cta-join', {'position': 'secondary'})">Join Now</a>   
             </div>
         </div>
     </div>
