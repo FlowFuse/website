@@ -12,7 +12,7 @@ tags:
 
 More than once we’ve been in discussion with prospective customers on what tier
 is the right tier for their current Node-RED adoption. The question is likely to
-come up "Why wouldn't we just the open source version of FlowFuse?". The
+come up "Why wouldn't we just use the open source version of FlowFuse?". The
 implicit discussion created is one that is alike the question:
 “Why wouldn’t we go with your competition?”. For FlowFuse, and most other open-core
 companies like us, the open licensed and free to use core is tier, not competition.
