@@ -69,9 +69,9 @@ When you press the 'import data' trigger node, the data is loaded in from the fi
 
 Bear in mind that your data is stored in your filesystem, if your storage drive fails you will lose your data, you might want to consider taking backups and storing elsewhere for emergencies.
 
-#### 2. FlowForge's persistent context
+#### 2. FlowFuse's persistent context
 
-FlowForge Cloud and premium self hosted version provides persistent context storage as part of its Node-RED instances. This allows you to create, read, update, and delete data as needed, even if you have restarted a Node-RED instance.
+FlowFuse Cloud and premium self hosted version provides persistent context storage as part of its Node-RED instances. This allows you to create, read, update, and delete data as needed, even if you have restarted a Node-RED instance.
 
 This flow shows chart data being sent to persistent context so we can access it later. The process is very similar to using the file-out and file-in nodes.
 

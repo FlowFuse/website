@@ -1,5 +1,5 @@
 ---
-title: FlowForge 0.5 released
+title: FlowFuse 0.5 released
 subtitle: Bringing a new look to the platform
 description: Bringing a new look to the platform
 date: 2022-05-12 12:00:00.0
@@ -49,7 +49,7 @@ In both cases, you get to pick what parts of the project should be copied.
 
 ### Improve Billing Information
 
-We've been getting some great feedback from the users of FlowForge Cloud. One of the
+We've been getting some great feedback from the users of FlowFuse Cloud. One of the
 areas we identified as needing some more clarity was around the point users are
 asked to setup their billing information.
 
@@ -70,7 +70,7 @@ This release introduces a bunch of work to the core app and front-end to begin
 introducing the concept of a Device. It includes the basic workflows for registering
 a device on the platform and being able to assign it to a team.
 
-The whole feature is hidden behind a feature flag so users on FlowForge Cloud won't
+The whole feature is hidden behind a feature flag so users on FlowFuse Cloud won't
 see any of this quite yet.
 
 The next release will introduce the Edge Agent piece of this - the bit that runs
@@ -78,10 +78,10 @@ on devices.
 
 - [Epic #446 - Devices](https://github.com/flowforge/flowforge/issues/446)
 
-### Upgrading FlowForge
+### Upgrading FlowFuse
 
-If you installed a previous version of FlowForge  and want to upgrade, our documentation provides a
-guide for [upgrading FlowForge on a local server](http://flowforge.com/docs/install#upgrade).
+If you installed a previous version of FlowFuse  and want to upgrade, our documentation provides a
+guide for [upgrading FlowFuse on a local server](http://flowforge.com/docs/install#upgrade).
 
 ### Getting help
 

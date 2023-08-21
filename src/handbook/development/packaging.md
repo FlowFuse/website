@@ -2,7 +2,7 @@
 originalPath: development/packaging.md
 updated: 2022-11-24 22:12:28 +0000
 ---
-# FlowForge Packaging Guidelines
+# FlowFuse Packaging Guidelines
 
 This section describes the requirements we have for all GitHub repositories,
 and npm modules we maintain.
@@ -91,14 +91,16 @@ ensures we have a consistent approach to planning and tracking of work.
 
  - Type: `epic`, `story`, `task`, `bug`
  - Sizing: `1`, `2`, `3`, `5`, `8`, `13`
- - Area: `area:docs`, `area:db`, `area:migration`, `area:frontend`, `area:api`, `area:device`
- - Priority: `priority:high`, `priority:medium`, `priority:low`
+ - Area: `area:docs`, `area:db`, `area:migration`, `area:frontend`, `area:api`, `area:device`, `area:marketing`, `area:customer-success`
+ - Priority: `priority:high`, `priority:medium`, `priority:low`, `Customer Request`
  - Status: `blocked`
  - Product Scope: `scope:devices`, `scope:enterprise`, `scope:node-red`, `scope:collaboration`
  - Other: `good first issue`, `upstream`, `needs-triage`
 
 The labels are synchronized across the repositories via a GitHub Action in the [`.github`](https://github.com/flowforge/.github)
 repository.
+
+The `Customer Request` label is intended solely for issues requested by an important enterprise customer, not for leads or individuals like [Harry the Hobbyist](../product/personas/).
  
 New repositories must be added to the list in [`flowforge-repositories.yml`](https://github.com/flowforge/.github/blob/main/flowforge-repositories.yml),
 and then the [Synchronize Labels](https://github.com/flowforge/.github/actions/workflows/sync-labels.yml) action manually run.
@@ -168,12 +170,12 @@ section of the handbook.
 
 A Fix release can be made at any time, depending on the best judgement of the engineer making the fix but requires a review by another team member.
 
-The process for making a release is documented [here](./release.md).
+The process for making a release is documented [here](./releases/process/).
 
 
 ### Adding NPM packages to Stacks
 
-As we build more FlowForge specific nodes we will need to add these to the Stacks
+As we build more FlowFuse specific nodes we will need to add these to the Stacks
 
 #### Localfs
 

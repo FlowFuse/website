@@ -1,5 +1,5 @@
 ---
-title: FlowForge 0.9 released
+title: FlowFuse 0.9 released
 subtitle: Suspended projects, login with email and Team Types
 description: Suspended projects, login with email and Team Types
 date: 2022-09-01 12:00:00.0
@@ -16,11 +16,11 @@ Suspend your projects when you don't need them, login with either your username 
 
 Keep reading for the details of what's in this release our you can watch our 1 minute roundup video of the new release above. 
 
-We're pleased to announce version 0.9 is now available. The next release of the FlowForge application containing new features, a number of improvements, and bug fixes. Keep reading for a promotion code to get your first month free on FlowForge Cloud. 
+We're pleased to announce version 0.9 is now available. The next release of the FlowFuse application containing new features, a number of improvements, and bug fixes. Keep reading for a promotion code to get your first month free on FlowFuse Cloud. 
 
 ## Features
 [Suspend Projects](https://github.com/flowforge/flowforge/issues/893)
-Sometimes you want to put a project to one side for a while, maybe your development has stalled or you're waiting on something external to be ready. Perhaps you don't need it to be running all the time. With the 0.9 release we've added the ability to suspend a project. Once suspended, your flows are safely stored in the platform database, but Node-RED isn't running and the project doesn't consume any resources. In FlowForge Cloud we do not charge you for suspended projects - you only pay when the project is running.
+Sometimes you want to put a project to one side for a while, maybe your development has stalled or you're waiting on something external to be ready. Perhaps you don't need it to be running all the time. With the 0.9 release we've added the ability to suspend a project. Once suspended, your flows are safely stored in the platform database, but Node-RED isn't running and the project doesn't consume any resources. In FlowFuse Cloud we do not charge you for suspended projects - you only pay when the project is running.
 Your project will be there ready to start back up when you need it with just one click.
 Remember that any context data or anything written to the filesystem will not persist through a restart or a suspend of a project.
 
@@ -28,24 +28,24 @@ Alongside this change, we've removed the option to 'stop' a project. That option
 You can still restart the Node-RED process from the Forge app as before for example when you have updated a package in your flows.
 
 [Team Types](https://github.com/flowforge/flowforge/issues/733)
-We've introduced another concept into the platform with this release. Team Types will allow us to offer more advanced features to teams on FlowForge Cloud. You won't see much difference in this release but it allows us to build on in future releases.
+We've introduced another concept into the platform with this release. Team Types will allow us to offer more advanced features to teams on FlowFuse Cloud. You won't see much difference in this release but it allows us to build on in future releases.
 
 [PostHog Analytics](https://github.com/flowforge/flowforge/issues/695)
-We've changed the analytics tooling integrated into the platform. With this release, we've deprecated the use of Plausible Analytics as it didn't quite provide the sort of insight we wanted. We now integrate with [PostHog](https://posthog.com/). They share our ethos and approach to open source and self hosting - something you can take advantage of if you're running your own FlowForge platform.
-For FlowForge Cloud, the data is sent to our PostHog account so we can better understand how the platform is being used. If you're running your own instance, the information is only captured if you configure it with your own PostHog instance details - it does not send any data back to us.
+We've changed the analytics tooling integrated into the platform. With this release, we've deprecated the use of Plausible Analytics as it didn't quite provide the sort of insight we wanted. We now integrate with [PostHog](https://posthog.com/). They share our ethos and approach to open source and self hosting - something you can take advantage of if you're running your own FlowFuse platform.
+For FlowFuse Cloud, the data is sent to our PostHog account so we can better understand how the platform is being used. If you're running your own instance, the information is only captured if you configure it with your own PostHog instance details - it does not send any data back to us.
 
 
 [Login with email](https://github.com/flowforge/flowforge/issues/856)
 A common problem that we've seen from users is trying to login with their email address instead of their username. As of 0.9 you can now enter either at the login screen.
 
 [Custom Dashboard Path](https://github.com/flowforge/flowforge/issues/774)
-If you are using the Node-RED Dashboard set of nodes, you can now change the path where the dashboard will be served from. The default is still `/ui` but you can now move that onto `/` or anything else. This is helpful when migrating existing projects over to FlowForge.
+If you are using the Node-RED Dashboard set of nodes, you can now change the path where the dashboard will be served from. The default is still `/ui` but you can now move that onto `/` or anything else. This is helpful when migrating existing projects over to FlowFuse.
 
 
 ## Improvements
-We've made a number of improvements to the overall experience of running FlowForge.
+We've made a number of improvements to the overall experience of running FlowFuse.
 
-- Improvements to the FlowForge Theme [#883](https://github.com/flowforge/flowforge/pull/883). 
+- Improvements to the FlowFuse Theme [#883](https://github.com/flowforge/flowforge/pull/883). 
 - Upper-case characters in Project Names [#546](https://github.com/flowforge/flowforge/issues/546)
 - Password reset requests are logged[#773](https://github.com/flowforge/flowforge/issues/773)
 - Admin can manually verify users email [#902](https://github.com/flowforge/flowforge/issues/692)
@@ -70,14 +70,14 @@ As an open-source project, we welcome the community involvement in what we're bu
 
 ### Try it out
 
-[Sign up for FlowForge Cloud](https://app.flowforge.com/account/create) and at the checkout enter the code **RELEASE09** to get your first project free for a month.
+[Sign up for FlowFuse Cloud](https://app.flowforge.com/account/create) and at the checkout enter the code **RELEASE09** to get your first project free for a month.
 
-### Upgrading FlowForge
+### Upgrading FlowFuse
 
-[FlowForge Cloud](https://app.flowforge.com) is already running 0.9 and the stacks updated. Upgrade your project stacks to the latest version and start using the Project Link nodes now.
+[FlowFuse Cloud](https://app.flowforge.com) is already running 0.9 and the stacks updated. Upgrade your project stacks to the latest version and start using the Project Link nodes now.
 
-If you installed a previous version of FlowForge and want to upgrade, our documentation provides a
-guide for [upgrading FlowForge on a local server](http://flowforge.com/docs/install#upgrade).
+If you installed a previous version of FlowFuse and want to upgrade, our documentation provides a
+guide for [upgrading FlowFuse on a local server](http://flowforge.com/docs/install#upgrade).
 
 ### Getting help
 
@@ -85,6 +85,6 @@ If you hit any problems with the platform, or have questions to ask, please do
 raise an [issue on GitHub](https://github.com/flowforge/flowforge/issues).
 That also includes if you have any feedback or feature requests.
 
-Customers of FlowForge Cloud can raise a ticket by emailing support@flowforge.com
+Customers of FlowFuse Cloud can raise a ticket by emailing support@flowfuse.com
 
 We also have a `#flowforge` channel on the [Node-RED Slack workspace](https://nodered.org/slack).

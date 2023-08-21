@@ -15,16 +15,16 @@ development lifecycle for applications and information systems.
 
 ## Scope 
 
-All FlowForge applications and information systems that are business critical
+All FlowFuse applications and information systems that are business critical
 and/or process, store, or transmit Confidential data. This policy applies to all
-internal and external engineers and developers of FlowForge software and
+internal and external engineers and developers of FlowFuse software and
 infrastructure.
 
 ## Secure Development Policy
 
-FlowForge policy requires that:
+FlowFuse policy requires that:
 
- 1. FlowForge software engineering and product development is required to follow
+ 1. FlowFuse software engineering and product development is required to follow
    security best practices. Product should be "Secure by Design" and "Secure by
    Default".
 
@@ -46,7 +46,7 @@ new product or major changes to an existing product.
  4. Security requirements must be defined, tracked, and implemented.
 
  5. Security analysis must be performed for any open source software and/or
-   third-party components and dependencies included in FlowForge software products.
+   third-party components and dependencies included in FlowFuse software products.
 
  6. Static application security testing (SAST) must be performed throughout
 development and prior to each release.
@@ -63,9 +63,9 @@ be remediated in the next release or within the defined, predetermined timeframe
  10. Any exception to the remediation of a finding must be documented and
 approved by the CTO.
 
-## Secure Development Environment
+## Secure Development Environment
 
-FlowForge uses separate Staging and Production systems. These are logically
+FlowFuse uses separate Staging and Production systems. These are logically
 segregated environments in different AWS accounts.
 
 The Production environment is classified Critical with suitable controls in place

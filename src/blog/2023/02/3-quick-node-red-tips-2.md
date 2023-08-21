@@ -38,4 +38,4 @@ Open the delay node settings, select Rate Limit then select 1 message per 15 min
 
 ![Limit how many alerts are sent](./images/rate-limit.gif "Limit how many alerts are sent")
 
-We hope you found these tips useful, if you'd like to suggest some of your own tips which you think we should share in our future blog posts please [get in touch](mailto:contact@flowforge.com).
+We hope you found these tips useful, if you'd like to suggest some of your own tips which you think we should share in our future blog posts please [get in touch](mailto:contact@flowfuse.com).

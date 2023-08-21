@@ -40,4 +40,4 @@ Once you've setup the node as shown above, you will see a counter under the debu
 
 ![Each message sent to the debug node is counted](./images/counting-debug.gif "Each message sent to the debug node is counted")
 
-We hope you found these tips useful, if you'd like to suggest some of your own tips which you think we should share in our future blog posts please [get in touch](mailto:contact@flowforge.com).
+We hope you found these tips useful, if you'd like to suggest some of your own tips which you think we should share in our future blog posts please [get in touch](mailto:contact@flowfuse.com).

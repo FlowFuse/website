@@ -5,7 +5,6 @@
 .left {
     display: flex;
     justify-content: left;
-    width: 100%;
 }
 
 .left-headline {
@@ -38,10 +37,9 @@
 
 .reaction-count {
     align-items: center;
-    color: #9ca3af;
     display: flex;
     margin-left: 8px;
-    margin-right: 8px;
+    font-weight: bold;
 }
 
 .roadmap-feedback {
@@ -53,23 +51,46 @@
 }
 
 .roadmap-item {
-    align-items: flex-start;
     border-top: 1px solid #e5e7ed;
+    min-height: 88px;
+    align-items: center;
     display: flex;
-    flex-direction: column;
-    margin-bottom: 8px;
-    padding: 16px 0;
+    flex-grow: 1;
+}
+
+.roadmap-item a {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 16px 1.5rem;
+    width: 100%;
+    height: 100%;
+    flex-grow: 1;
+    font-weight: 400;
+    color: theme(colors.gray.500);
+}
+
+.roadmap-item a:hover {
+    text-decoration: none;
+    background-color: theme(colors.gray.100);
+    color: theme(colors.gray.800);
 }
 
 .roadmap-item-container {
     display: flex;
-    flex-grow: 1;
+    /* flex-grow: 1; */
+    width: 100%;
+}
+
+.roadmap-item-container ul {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
 }
 
 .roadmap-item-text {
-    color: #374151;
     flex-grow: 1;
-    font-weight: bold;
     text-align: left;
 }
 
@@ -82,44 +103,28 @@
     align-items: flex-start;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+}
+
+.roadmap-section h4 {
+    color: white;
 }
 
 .title-number-container {
     align-items: center;
     display: flex;
-    margin-bottom: 16px;
 }
 
 .vote-btn {
     align-items: center;
-    background-color: #E4E7E0;
-    border-radius: 8px;
-    color: #000;
     display: flex;
-    font-weight: bold;
     justify-content: center;
-    padding: 8px 16px;
+    padding: 12px 0px 12px 4px;
     text-decoration: none;
     transition: 0.3s;
-}
-
-.vote-btn a {
-    color: #000;
-}
-
-.vote-btn:hover {
-    background-color: #c9ccc6;
-    text-decoration: none;
 }
 
 .vote-btn img {
     height: 16px;
     margin-right: 4px;
     width: 16px;
-}
-
-.vote-btn span {
-    color: #000;
-    margin-right: 4px;
 }

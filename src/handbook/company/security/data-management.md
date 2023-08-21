@@ -15,11 +15,11 @@ disposed of in accordance with its importance to the organization.
 
 ## Scope 
 
-All FlowForge data, information and information systems.
+All FlowFuse data, information and information systems.
 
 ## Data Management Policy
 
-FlowForge classifies data and information systems in accordance with legal
+FlowFuse classifies data and information systems in accordance with legal
 requirements, sensitivity, and business criticality in order to ensure that
 information is given the appropriate level of protection. Data owners are
 responsible for identifying any additional requirements for specific data or
@@ -30,7 +30,7 @@ classification of data that they store or process.
 
 ## Data Classification 
 
-To help FlowForge and its employees easily understand requirements associated
+To help FlowFuse and its employees easily understand requirements associated
 with different kinds of information, the company has created four classes of data.
 
  - Critical
@@ -38,7 +38,7 @@ with different kinds of information, the company has created four classes of dat
  - Internal
  - Public
 
-As FlowForge is an open company by default, most of our data falls into **public**.
+As FlowFuse is an open company by default, most of our data falls into **public**.
 But it is important to recognise when a higher classification is required.
 
 ### Definitions and Examples
@@ -90,11 +90,11 @@ waived on a case-by-case basis.
  - Legal documents
 
 **Public** data is data intended for public consumption and can be freely distributed
-outside of FlowForge.
+outside of FlowFuse.
 
 *Example Public Data* Types include
 
- - FlowForge source code, unless classified otherwise
+ - FlowFuse source code, unless classified otherwise
  - Marketing material
  - Product documentation
  - The company handbook
@@ -132,9 +132,9 @@ outside of FlowForge.
    classified data is not accidentally included in public data. For example, access
    tokens in source code.
 
-## Data Retention
+## Data Retention
 
-FlowForge shall retain data as long as the company has a need for its use, or to
+FlowFuse shall retain data as long as the company has a need for its use, or to
 meet regulatory or contractual requirements. Once data is no longer needed, it
 shall be securely disposed of or archived. Data owners, in consultation with
 legal counsel, may determine retention periods for their data.
@@ -142,12 +142,12 @@ legal counsel, may determine retention periods for their data.
 Personally identifiable information (PII) shall be deleted or de-identified as
 soon as it no longer has a business use.
 
-## Data Disposal
+## Data Disposal
 
 Data classified as critical, confidential or internal shall be securely deleted
 when no longer needed.
 
-FlowForge will ensure any third-party system used in the operations of the company
+FlowFuse will ensure any third-party system used in the operations of the company
 will meet the requires for secure data disposal.
 
 Personally identifiable information (PII) shall be collected, used and retained
@@ -160,13 +160,13 @@ other legal obligation to retain the data.
 
 ## Legal Requirements
 
-Under certain circumstances, FlowForge may become subject to legal proceedings
+Under certain circumstances, FlowFuse may become subject to legal proceedings
 requiring retention of data associated with legal holds, lawsuits, or other
-matters as stipulated by FlowForge legal counsel. Such records and information
+matters as stipulated by FlowFuse legal counsel. Such records and information
 are exempt from any other requirements specified within this Data Management Policy
 and are to be retained in accordance with requirements identified by the Legal
 department. All such holds and special retention requirements are subject to
-annual review with FlowForge's legal counsel to evaluate continuing requirements
+annual review with FlowFuse's legal counsel to evaluate continuing requirements
 and scope.
 
 ## Exceptions

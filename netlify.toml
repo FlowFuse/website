@@ -1,3 +1,27 @@
+[[redirects]]
+from = "http://flowforge.com/*"
+to = "http://flowfuse.com/:splat"
+status = 301
+force = true
+
+[[redirects]]
+from = "https://flowforge.com/*"
+to = "https://flowfuse.com/:splat"
+status = 301
+force = true
+
+[[redirects]]
+from = "http://flowfuze.com/*"
+to = "http://flowfuse.com/:splat"
+status = 301
+force = true
+
+[[redirects]]
+from = "https://flowfuze.com/*"
+to = "https://flowfuse.com/:splat"
+status = 301
+force = true
+
 [dev]
 port = 8080
 framework = "#static"
@@ -13,6 +37,11 @@ package = "@algolia/netlify-plugin-crawler"
   [plugins.inputs]
   branches = ['main', 'live']
   template = "hierarchical"
+
+[[plugins]]
+package = "netlify-plugin-cache"
+  [plugins.inputs]
+  paths = [ ".cache" ]
   
 [[edge_functions]]
 function = "eleventy-edge"

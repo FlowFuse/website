@@ -9,25 +9,25 @@ It enables the creation of customer contacts, and then logging of emails/notes a
 
 ### Creating Contacts
 
-Given that we have multiple client-facing roles within FlowForge, it's important to document those that
+Given that we have multiple client-facing roles within FlowFuse, it's important to document those that
 we talk to to ensure no crossover in sales and conversations.
 
 #### Lifecycle Stage
 
-All contacts in HubSpot need to have a defined lifecycle. It is required that all contacts pass through each lifecycle stage at the appropriate time based on their interaction with FlowForge marketing and sales. Contacts should not skip a stage. It is up to the contact owner to ensure their contacts have the appropriate lifecycle stage set.
+All contacts in HubSpot need to have a defined lifecycle. It is required that all contacts pass through each lifecycle stage at the appropriate time based on their interaction with FlowFuse marketing and sales. Contacts should not skip a stage. It is up to the contact owner to ensure their contacts have the appropriate lifecycle stage set.
 
 The folowing is a description of each stage. 
 
 | Lifecycle Stage|Description
 | - | - |
-| Subscriber | Contact has signed up to hear more information, when it is available, about FlowForge, e.g. newsletter subscriber |
+| Subscriber | Contact has signed up to hear more information, when it is available, about FlowFuse, e.g. newsletter subscriber |
 | Lead | Contact that has converted on our website, or through some other interaction, with our organisation beyond a subscription sign up. For example, registered for a webinar, signed up for a free trial, etc.|
-| Marketing Qualified Lead | The contact has requested to talk to someone directly at FlowForge about the product/services of FlowForge, either through book a demo, contact us, or direct outreach to a FlowForge employee. Support requests are not considered MQL. |
+| Marketing Qualified Lead | The contact has requested to talk to someone directly at FlowFuse about the product/services of FlowFuse, either through book a demo, contact us, or direct outreach to a FlowFuse employee. Support requests are not considered MQL. |
 | Sales Qualified Lead | After the initial discussion with an MQL, the sales team will qualify if the contact is a potential customer by changing the lifecycle stage to SQL. This status of this stage is then further qualified in the [Lead Status](#lead-status) property. |
-| Opportunity | A contact becomes an Opportunity once a Deal has been opened. A deal is opened once the sales qualification questions have been answered.  |
-| Customer | An active, paying, user of FlowForge. |
-| Evangelist | FlowForge will not actively use Evangelist lifecycle stage. |
-| Other | Does not fit into any of the other descriptions, likely someone we are talking to about FlowForge, but will never be a paying customer, .e.g. Partners |
+| Opportunity | A contact becomes an Opportunity once a Deal has been opened. The [3 W's need to be answered before opening a deal](../sales/#from-sql-to-opportunity)  |
+| Customer | An active, paying, user of FlowFuse. |
+| Evangelist | FlowFuse will not actively use Evangelist lifecycle stage. |
+| Other | Does not fit into any of the other descriptions, likely someone we are talking to about FlowFuse, but will never be a paying customer, .e.g. Partners |
 
 #### Lead Status
 
@@ -37,17 +37,17 @@ details your options here, and when to use the respective value:
 | Lead Status | Description |
 | - | - |
 | None | - |
-| Attempted to Contact | A member of FlowForge has reached out to this contact, but is yet to receive a response. |
+| Attempted to Contact | A member of FlowFuse has reached out to this contact, but is yet to receive a response. |
 | Connected | Two-way conversation has undertaken, but not yet qualified as a Lead. A lead with this status may still be waiting on a booked meeting with a decision-maker on their team or may still be working to establish a budget. |
-| Open Deal | Contact has expressed interest in buying FlowForge, and negotiations are actively open. |
-| Unqualified | Contact is no longer interested in FlowForge. |
+| Open Deal | Contact has expressed interest in buying FlowFuse, and negotiations are actively open. |
+| Unqualified | Contact is no longer interested in FlowFuse. |
 
 
 ### Importing Contacts Into HubSpot
 
-If you import contacts into HubSpot, it is important that the First Name and Last Name are populated correctly. Currently the FlowForge Cloud database stores first and last name in a single field called Name. If you import this field into HubSpot the default is set to populate the Last Name field. The First Name field will not be populated so any email personalization with First Name will not be effective.  
+If you import contacts into HubSpot, it is important that the First Name and Last Name are populated correctly. Currently the FlowFuse Cloud database stores first and last name in a single field called Name. If you import this field into HubSpot the default is set to populate the Last Name field. The First Name field will not be populated so any email personalization with First Name will not be effective.  
 
-The ideal process for importing FlowForge Cloud contacts is that you first split the Name field into a First Name and Last Name. Google Sheets has the ability to split a column of text into two columns based on the delimiter of a space. Once that is completed then you can import the list into HubSpot.
+The ideal process for importing FlowFuse Cloud contacts is that you first split the Name field into a First Name and Last Name. Google Sheets has the ability to split a column of text into two columns based on the delimiter of a space. Once that is completed then you can import the list into HubSpot.
 
 ### Recommended Apps
 

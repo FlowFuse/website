@@ -8,7 +8,7 @@ Instructions for creating a release are [here](./process.md).
 
 ### Cadence
 
-FlowForge is released every four weeks, on a Thursday. We track releases using
+FlowFuse is released every four weeks, on a Thursday. We track releases using
 GitHub Milestones. The current schedule of releases can be seen [here](https://github.com/flowforge/flowforge/milestones).
 
 Our planning process is continually evolving as we find the right way to accommodate
@@ -19,6 +19,13 @@ The following reflects both where we are at today and where we want to get to.
 We use GitHub issues for planning the work in a release. A Milestone should exist
 for the current release (N) and the next one (N+1). We do not schedule work beyond
 that as priorities can change through a release.
+
+---
+#### Week 2 - UX Planning
+
+##### Tuesday
+- UX Pre-Planning
+  - This meeting is conducted between the Product Manager (PM) and the Head of User Experience (UX), it is designed to discuss and identify potential UX issues and requirements that need to be addressed in the upcoming iteration. The goal is to be proactive in identifying and resolving UX-related challenges before the start of the development phase.
 
 ---
 
@@ -81,7 +88,7 @@ We label some items as `headline`. These are items we want to highlight in the r
 announcement material and should clearly describe the value they bring to our users.
 
 #### Effort Estimation
-To more accurately understand which tasks can be scheduled without overloading our team, everyone conducts an initial, high-level analysis when creating an issue to assign weight estimates. We recognize that these estimates might not be precise. If the person who creates an issue cannot provide an estimate, any FlowForge team member is welcome to contribute one.
+To more accurately understand which tasks can be scheduled without overloading our team, everyone conducts an initial, high-level analysis when creating an issue to assign weight estimates. We recognize that these estimates might not be precise. If the person who creates an issue cannot provide an estimate, any FlowFuse team member is welcome to contribute one.
 
 If a developer, who is an expert in a field, wants to change an estimation, they are encouraged to do so immediately. There is no blame for "wrong" estimation; we all have to work together to achieve good planning. It is better to have a rough estimation than no estimation at all. The final decision on estimations in general lies with the CTO.
 
@@ -167,7 +174,7 @@ are thus required before the design sprint start.
 
 ### Retrospective/Kick-Off
 
-The day after each FlowForge release, always a Friday, a meeting is scheduled
+The day after each FlowFuse release, always a Friday, a meeting is scheduled
 by the CTO. This meeting includes 2 parts:
 
  1. A retrospective on the last release. This should capture feedback on what

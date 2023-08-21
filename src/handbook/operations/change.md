@@ -1,10 +1,10 @@
 ---
-navTitle: FlowForge Cloud Change Control
+navTitle: FlowFuse Cloud Change Control
 ---
 
-# FlowForge Cloud Change Control
+# FlowFuse Cloud Change Control
 
-We track changes made to either the Staging or Production environments of FlowForge Cloud
+We track changes made to either the Staging or Production environments of FlowFuse Cloud
 through issues on the CloudProject repository.
 
 The issues should record the nature of the change required, which environment it applies to

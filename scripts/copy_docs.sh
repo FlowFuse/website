@@ -2,7 +2,7 @@
 
 if [ ! -e ../flowforge/docs ]
 then
-    echo "FlowForge Docs not found (../flowforge/docs)"
+    echo "FlowFuse Docs not found (../flowforge/docs)"
     exit 0
 fi
 

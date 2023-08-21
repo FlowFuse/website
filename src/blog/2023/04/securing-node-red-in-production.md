@@ -11,7 +11,7 @@ tags:
     - how-to
 ---
 
-Node-RED is very easy to get up and running. Whether you run it locally, in Docker, on a Raspberry Pi, or on a service such as FlowForge Cloud you can have a project up and running in minutes.
+Node-RED is very easy to get up and running. Whether you run it locally, in Docker, on a Raspberry Pi, or on a service such as FlowFuse Cloud you can have a project up and running in minutes.
 
 <!--more-->
 
@@ -89,7 +89,7 @@ Hopefully, we all know the importance of encrypting your connections between dev
 
 There are two obvious options, HTTPS, and a VPN (Virtual Private Network).
 
-We could setup your Node-RED traffic to run over HTTPS, this solution ensures that all traffic to and from your Node-RED is encrypted. The downside to this approach is it's quite complex to set up. We will need to have a domain name, open up ports on our LAN's firewall, use a HTTPS certificate provider and then make sure we remember to renew the certificates as needed. It's doable if you are comfortable with those concepts (I covered how to do this as part of my blog [hosting FlowForge on Google Cloud](/blog/2022/12/flowforge-gcp-https-set-up/)) but there is an easier way to get started, using a VPN.
+We could setup your Node-RED traffic to run over HTTPS, this solution ensures that all traffic to and from your Node-RED is encrypted. The downside to this approach is it's quite complex to set up. We will need to have a domain name, open up ports on our LAN's firewall, use a HTTPS certificate provider and then make sure we remember to renew the certificates as needed. It's doable if you are comfortable with those concepts (I covered how to do this as part of my blog [hosting FlowFuse on Google Cloud](/blog/2022/12/flowforge-gcp-https-set-up/)) but there is an easier way to get started, using a VPN.
 
 A VPN provides a lot of security advantages depending on which you are using and how it is configured. To secure my traffic I'm going to use a great service call [Tailscale](https://tailscale.com/) which is free for personal projects.
 
@@ -137,15 +137,15 @@ I’ve now secured all traffic between my devices and Node-RED project, I can ac
 
 If you follow these steps you should be on the right path to running a more secure Node-RED instance. There is a lot more you can do and I recommend you read the [relevant docs on the Node-RED](https://nodered.org/docs/user-guide/runtime/securing-node-red) website to gain some more ideas.
 
-## What about hosting Node-RED on a cloud solution such as FlowForge?
+## What about hosting Node-RED on a cloud solution such as FlowFuse?
 
-In this article, I've focussed on hosting Node-RED on a Pi on your own LAN but if you use FlowForge Cloud to host Node-RED the solutions discussed above are either ready out of the box or are not needed.
+In this article, I've focussed on hosting Node-RED on a Pi on your own LAN but if you use FlowFuse Cloud to host Node-RED the solutions discussed above are either ready out of the box or are not needed.
 
-By default, the editor for Node-RED is protected using your FlowForge user credentials. You can also use SSO to further protect your user accounts and give access to Node-RED to your team members.
+By default, the editor for Node-RED is protected using your FlowFuse user credentials. You can also use SSO to further protect your user accounts and give access to Node-RED to your team members.
 
-All traffic to FlowForge and your Node-RED instances is protected by HTTPS. FlowForge has set up the domain name and manages the certificates so you can spend time on your flows rather than configuring security.
+All traffic to FlowFuse and your Node-RED instances is protected by HTTPS. FlowFuse has set up the domain name and manages the certificates so you can spend time on your flows rather than configuring security.
 
-FlowForge has a [free trial](https://app.flowforge.com/account/create) if you'd like to see how we've made secure hosting of Node-RED easy.
+FlowFuse has a [free trial](https://app.flowforge.com/account/create) if you'd like to see how we've made secure hosting of Node-RED easy.
 
 ## Conclusion
 

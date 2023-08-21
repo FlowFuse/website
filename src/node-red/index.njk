@@ -1,0 +1,280 @@
+---
+layout: page
+nohero: true
+meta:
+    title: Node-RED Resources
+description:
+    A set of technical resources to answer your questions about getting started with Node-RED including tips, best practices, and FAQs to using Node-RED for 
+    different use cases.
+sitemapPriority: 0.8
+---
+
+<script>
+    function playPause () {
+        const video = document.getElementById('nodered-demo')
+        const button = document.getElementById('video-play-btn')
+        if (video.paused) {
+            {# video.setAttribute("controls","controls") #}
+            button.style.opacity = 0
+            video.play()
+        } else {
+            video.pause()
+            button.style.opacity = 1
+        }
+    }
+
+    function openFullscreen() {
+        const video = document.getElementById('nodered-demo')
+        if (video.requestFullscreen) {
+            video.requestFullscreen();
+        } else if (video.webkitRequestFullscreen) { /* Safari */
+            video.webkitRequestFullscreen();
+        } else if (video.msRequestFullscreen) { /* IE11 */
+            video.msRequestFullscreen();
+        }
+    }
+</script>
+
+
+<div class="nohero w-full ff-bg-light">
+    <!--Hero Content-->
+    <div class="nodered-pillar-bg w-full px-6 pt-12 pb-16 md:px-0 border-b-4 border-gray-100">
+        <div class="container m-auto text-center max-w-3xl">
+            <span class="ff-animation-text-carousel px-12 md:px-0 max-w-lg m-auto text-gray-800 h-7 text-xl font-bold">
+                Low-Code
+                <ul class="inline-block text-red-600">
+                    <li>Programming</li>
+                    <li>Integration</li>
+                    <li>Visualisation</li>
+                </ul>
+            </span>
+            <h1 class="mt-0 px-12 md:px-0 m-auto">
+                <span class="">Node-RED</span> Resources
+            </h1>
+            <h3 class="mt-6 text-gray-400 text-lg font-normal">
+                A collection of technical resources that answer your questions about Node-RED.
+            </h3>
+        </div>
+        <div class="relative mt-12">
+            <div class="relative max-w-sm sm:max-w-xl m-auto">
+                <video id="nodered-demo" width="800" frameborder="0"
+                    class="m-auto border-2 rounded-md"
+                    style="border-color: black; box-shadow: 0px 4px 16px #1f2937e6;"
+                    allow="fullscreen;">
+                    <source src="https://website-data.s3.eu-west-1.amazonaws.com/iss-tracker.mp4" type="video/mp4">
+                </video>
+                <div id="video-play-btn" class="group absolute w-full h-full top-0 left-0 hover:bg-black flex item-center justify-center cursor-pointer hover:bg-opacity-10" onclick="playPause()">
+                    <button type="button" class="w-24 text-black group-hover:text-blue-800 duration-100">{% include "components/icons/play.svg" %}</button>
+                </div>
+            </div>
+            <label class="block relative mt-3 max-w-sm sm:max-w-xl m-auto text-center">
+                A quick demonstration of how to pull data from an API, transform the data format, and visualise the results on a worldmap. <label onclick="openFullscreen()" class="text-blue-600 font-medium cursor-pointer">Show Full Screen</label>
+            </label>
+        </div>
+    </div>
+
+    <div class="w-full ff-bg-light pt-8 px-0 pb-12 ff-prose">
+        <div class="text-center md:mt-12 mb-6">
+            <h2>What is Node-RED?</h2>
+        </div>
+        <div class="container m-auto max-w-screen-lg prose">
+            <div class="grid px-6 grid-cols-1 md:grid-cols-3 gap-6 sm:gap-x-8 sm:gap-y-0 mb-16">
+                <div class="text-left self-start">
+                    <h3 class="flex items-center gap-4">
+                        <div class="w-16">
+                            {% image "./images/pictograms/node_catalog_red.png", "Graphics depicting low-code programming.", [64] %}
+                        </div>
+                        <div class="flex flex-col leading-8">
+                            Low-Code
+                            <span class="text-red-600">Programming</span>
+                        </div>
+                    </h3>
+                    <p class="mb-0">
+                        Node-RED’s visual programming makes it easy for non-developers to build robust applications.
+                    </p>
+                </div>
+                <div class="text-left self-start">
+                    <h3 class="flex items-center gap-4">
+                        <div class="w-16">
+                            {% image "./images/pictograms/edge_red.png", "Graphics depicting connectivity and integration.", [64] %}
+                        </div>
+                        <div class="flex flex-col leading-8">
+                            Low-Code
+                            <span class="text-red-600">Integration</span>
+                        </div>
+                    </h3>
+                    <p class="mb-0">
+                        4,000+ integrations available and a large library of example flows make it trivial to connect a multitude of digital services, such as protocols (OPC-UA, Modbus, Siemens S7), databases, APIs, hardware, etc.
+                    </p>
+                </div>
+                <div class="text-left self-start">
+                    <h3 class="flex items-center gap-4">
+                        <div class="w-16">
+                            {% image "./images/pictograms/scalable_red.png", "Graphics depicting low-code visualisation.", [64] %}
+                        </div>
+                        <div class="flex flex-col leading-8">
+                            Low-Code
+                            <span class="text-red-600">Visualization</span>
+                        </div>
+                    </h3>
+                    <p class="mb-0">
+                        Node-RED Dashboard makes it easy to visualize your data in charts that integrate directly with actions and events that respond to the data.
+                    </p>
+                </div><div class="text-left self-start">
+                    <h3 class="flex items-center gap-4">
+                        <div class="w-16">
+                            {% image "./images/pictograms/opensource_red.png", "Graphics depicting open source.", [64] %}
+                        </div>
+                        <div class="flex flex-col leading-8">
+                            Open Source
+                        </div>
+                    </h3>
+                    <p class="mb-0">
+                        Node-RED is an open source project hosted at the OpenJS Foundation. Participation in the project is encouraged to help support the Node-RED community.
+                    </p>
+                </div>
+                <div class="text-left self-start">
+                    <h3 class="flex items-center gap-4">
+                        <div class="w-16">
+                            {% image "./images/pictograms/browser_red.png", "Graphics depicting the fact that Node-RED is free to use.", [64] %}
+                        </div>
+                        <div class="flex flex-col leading-8">
+                            Free-to-Use
+                        </div>
+                    </h3>
+                    <p class="mb-0">
+                        Node-RED is made available under the Apache Software License so individuals can use Node-RED free of charge.
+                    </p>
+                </div>
+                <div class="text-left self-start">
+                    <h3 class="flex items-center gap-4">
+                        <div class="w-16">
+                            {% image "./images/pictograms/community_red.png", "Graphics depicting the fact that Node-RED has an active community.", [64] %}
+                        </div>
+                        <div class="flex flex-col leading-8">
+                            Active Community
+                        </div>
+                    </h3>
+                    <p class="mb-0">
+                        Node-RED has a very active community of developers providing support through forums, as well as actively contributing to the development of Node-RED itself.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="text-white">
+        {% include "components/dividers/light-grey-curve.svg" %}
+    </div>
+
+    <div class="about w-full bg-white sm:pt-12 md:pt-12 pb-12">
+        <div class="text-center">
+            <h2>Learn Node-RED</h2>
+        </div>
+        <div class="container m-auto max-w-4xl">
+            <div
+                class="grid grid-cols-1 md:grid-cols-2 pt-4 md:pt-6 gap-x-8 items-start">
+                <!-- Node-RED Quick Tips Column -->
+                <div class="px-6 pb-6 md:pb-0">
+                    <h3 class="w-full text-center mb-4">Quick Tips</h3>
+                    <ul class="ff-nodered-resources">
+                        <a href="/blog/2023/02/3-quick-node-red-tips-1">
+                            <li>
+                                <div class="ff-nodered-resources--icon">{% ffIconLg "nodered", true %}</div>
+                                <label>Wiring Shortcuts<label>
+                            </li>
+                        </a>
+                        <a href="/blog/2023/02/3-quick-node-red-tips-2">
+                            <li>
+                                <div class="ff-nodered-resources--icon">{% ffIconLg "bug", true %}</div>
+                                <label>Deploying, Debugging, and Delaying<label>
+                            </li>
+                        </a>
+                        <a href="/blog/2023/03/3-quick-node-red-tips-3">
+                            <li>
+                                <div class="ff-nodered-resources--icon">{% ffIconLg "cmdline", true %}</div>
+                                <label>Exec, Filter, and Debug<label>
+                            </li>
+                        </a>
+                        <a href="/blog/2023/03/3-quick-node-red-tips-4">
+                            <li>
+                                <div class="ff-nodered-resources--icon">{% ffIconLg "smooth", true %}</div>
+                                <label>Smooth, Catch, and Math<label>
+                            </li>
+                        </a>
+                        <a href="/blog/2023/03/3-quick-node-red-tips-5">
+                            <li>
+                                <div class="ff-nodered-resources--icon">{% ffIconLg "upload", true %}</div>
+                                <label>Importing, Exporting, and Grouping Flows<label>
+                            </li>
+                        </a>
+                    </ul>
+                </div>
+                <!-- Node-RED Concepts Column -->
+                <div class="px-6 pb-6 md:pb-0">
+                    <h3 class="w-full text-center mb-4">Key Concepts</h3>
+                    <ul class="ff-nodered-resources">
+                        <a href="/blog/2023/03/comparing-node-red-dashboards/">
+                            <li>
+                                <div class="ff-nodered-resources--icon">{% ffIconLg "chart", true %}</div>
+                                <label>Comparing Node-RED Dashboard Solutions<label>
+                            </li>
+                        </a>
+                        <a href="/blog/2023/04/securing-node-red-in-production/">
+                            <li>
+                                <div class="ff-nodered-resources--icon">{% ffIconLg "lock", true %}</div>
+                                <label>Securing Node-RED<label>
+                            </li>
+                        </a>
+                        <a href="/blog/2023/03/why-should-you-use-node-red-function-nodes/">
+                            <li>
+                                <div class="ff-nodered-resources--icon">{% ffIconLg "codeblock", true %}</div>
+                                <label>The benefits of using Node-RED function nodes<label>
+                            </li>
+                        </a>
+                        <a href="/blog/2023/05/visualize-production-data-via-modbus-in-node-red/">
+                            <li>
+                                <div class="ff-nodered-resources--icon">{% ffIconLg "factory", true %}</div>
+                                <label>How to visualize Industrial data via Modbus<label>
+                            </li>
+                        </a>
+                        <a href="/node-red/core-nodes/">
+                            <li>
+                                <div class="ff-nodered-resources--icon">{% ffIconLg "newspaper", true %}</div>
+                                <label>Node-RED Core Node Documentation<label>
+                            </li>
+                        </a>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="text-white">
+        {% include "components/dividers/light-grey-curve-inverted.svg" %}
+    </div>
+
+    <div class="w-full ff-bg-light px-6 pt-8 md:pt-16 pb-32 sm:px-0">
+        <div class="container m-auto max-w-4xl px-6">
+            <h2 class="text-center">Frequently Asked Questions</h2>
+            <label class="m-auto text-center block max-w-lg md:max-w-none">Have a question that you don't see answered here? Feel free to reach out to us via our <a href="/contact-us">Contact Us</a> page</label>
+            <div class="mt-12 m-auto w-full ff-prose">
+                <div class="prose max-w-none">
+                    {% for faq in nodeRed.faqs %}
+                    <div>
+                        <h3 class="flex items-center w-full m-0 gap-6">
+                            <span>{{ faq.question }}</span>
+                            <hr class="flex-grow m-0"/>
+                        </h3>
+                        <div class="px-6">
+                            <p>{{ faq.answer | safe }}</p>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+

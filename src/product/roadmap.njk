@@ -1,55 +1,80 @@
 ---
-layout: layouts/solution.njk
+layout: layouts/page.njk
 title: Roadmap
-image: /images/product/og-product-roadmap.jpg
-subtitle: Stay up-to-date with our progress
-heroImg: "./images/pictograms/anvil1.png"
-description: 
-    <p>Stay up-to-date with our progress and plans on the FlowForge Roadmap. This is your go-to resource for staying informed about the latest developments and future direction of our platform.</p>
-    <p>Here you can find information about upcoming features, enhancements, and other changes we're actively working on to make FlowForge an even more powerful and versatile tool for your business needs.</p>
----
-
-<!-- Roadmap link button section, containing a link to view the entire roadmap on GitHub. -->
-<div>
-    <div class="-mt-28 text-center">
-        <a href="https://github.com/orgs/flowforge/projects/5" class="inline-block ff-btn ff-btn--secondary shadow">
-            <img src="../../images/github-mark.png" alt="GitHub Logo" class="github-logo">
-            <span>See our entire Roadmap on GitHub</span>
+subtitle: <div class="font-semibold text-white mb-8 -mt-2">Stay up-to-date with our progress</div>
+description:
+    <p><span class="text-gray-200">Here you can find information about upcoming features, enhancements, and other changes we're actively working on to make FlowFuse an even more powerful and versatile tool for your business needs.</span></p>
+    <div class="text-center mt-10 pb-4 md:pb-10">
+        <a href="https://github.com/orgs/flowforge/projects/5" target="_blank" class="inline-block ff-btn ff-btn--primary uppercase">
+            <span>FULL GITHUB ROADMAP</span>
         </a>
     </div>
+image: /images/product/og-product-roadmap.png
+---
+<div class="mt-3 md:mt-20">
+    {% include "components/divider-flow--top-red--light.njk" %}
 </div>
+
 <!-- Roadmap content section, divided into three columns: Consideration, In Progress, and Newly Released. Each column
 has a headline, description, and a container for roadmap items. -->
-<div class="about w-full ff-bg-light pt-12 pb-24 md:pb-48 md:pt-32">
-    <div class="container m-auto max-w-4xl">
-        <div
-            class="grid grid-cols-1 md:grid-cols-3 pt-12 md:pt-24 gap-x-8" style="align-items: flex-start;">
+<div class="about w-full bg-gray-50 pb-14 md:pt-6 -mt-1">
+    <div class="container m-auto max-w-5xl">
+        <!-- Mobile -->
+        <div class="grid grid-cols-1 text-center gap-12 pt-12 max-w-lg md:max-w-full m-auto px-6 sm:px-4 md:hidden">
             <!-- Consideration Column -->
-            <div class="roadmap-section consideration pb-6 md:pb-0">
-                <h3 class="left-headline">👀 Consideration</h3>
-                <p>We would appreciate your feedback on the potential new features that we are considering for development.</p>
-                <div class="roadmap-item-container"></div>
+            <div class="roadmap-section consideration rounded-t-xl rounded-b-lg md:pb-0 bg-white drop-shadow-lg">
+                <div class="p-6 pb-2 rounded-t-lg bg-gray-500 text-white min-h[192px]">
+                    <h4 class="left-headline text-center">Under consideration</h4>
+                    <hr class="border-gray-400">
+                    <p>We would appreciate your feedback on the potential new features that we are considering for development.</p>
+                </div>
+                <h5 class="flex flex-row justify-center items-center w-full p-1 bg-gray-600 font-semibold text-gray-50 text-center">
+                    <span class="pt-0.5 pr-2 h-[18px]">{% include "components/icons/github.svg" %}</span>Vote on Github<span class="pt-0.5 pl-1">{% include "components/icons/arrow-small-down.svg" %}
+                </h5>
+                <div class="roadmap-item-container pt-0"></div>
             </div>
             <!-- In Progress Column -->
-            <div class="roadmap-section progress pb-6 md:pb-0">
-                <h3 class="left-headline">🛠 In Progress</h3>
-                <p>We are currently working on the following topics and would appreciate any feedback you may have.</p>
-                <div class="roadmap-item-container"></div>
+            <div class="roadmap-section progress rounded-t-xl rounded-b-lg md:pb-0 bg-white drop-shadow-lg">
+                <div class="p-6 pb-2 rounded-t-lg bg-gray-600 text-white min-h[192px]">
+                    <h4 class="left-headline text-center">In Progress</h4>
+                    <hr class="border-gray-500">
+                    <p>We are currently working on the following topics and would appreciate any feedback you may have.</p>
+                </div>
+                <h5 class="flex flex-row justify-center items-center w-full p-1 bg-gray-700 font-semibold text-gray-50 text-center">
+                    <span class="pt-px pr-2 h-[18px]">{% include "components/icons/github.svg" %}</span>See status on Github<span class="pt-0.5 pl-1">{% include "components/icons/arrow-small-down.svg" %}
+                </h5>
+                <div class="roadmap-item-container pt-0"></div>
             </div>
             <!-- Newly Released Column -->
-            <div class="roadmap-section completed">
-                <h3 class="left-headline">🏁 Newly released</h3>
-                <p>
-                    Check out product updates on
-                    <a href="https://www.flowforge.com/blog/" target="_blank">
-                        our blog
-                    </a>
-                    to see the latest features and improvements.
-                </p>
+            <div class="roadmap-section completed rounded-t-xl rounded-b-lg md:pb-0 bg-white drop-shadow-lg">
+                <div class="p-6 pb-2 rounded-t-lg bg-gray-700 text-white min-h[192px] w-full">
+                    <h4 class="left-headline text-center">Newly released</h4>
+                    <hr class="border-gray-600">
+                    <p>
+                        Check out product updates on
+                        <a href="https://www.flowforge.com/blog/" target="_blank">
+                            our blog
+                        </a>
+                        to see the latest features and improvements.
+                    </p>
+                </div>
+                <h5 class="flex flex-row justify-center items-center w-full p-1 bg-gray-800 font-semibold text-gray-50 text-center">
+                    Latest posts<span class="pt-px pl-1">{% include "components/icons/arrow-small-down.svg" %}
+                </h5>
+                <div class="roadmap-item-container pt-0">
+                    <ul>
+                        {%- for releases in collections.releases | reverse | limit(2) -%}
+                            <li class="roadmap-item"><a href="{{ releases.url }}" target="_blank" class="roadmap-item-text">{{ releases.data.title }}</a></li>
+                        {%- endfor -%}
+                    </ul>
+                </div>
+                <h5 class="flex flex-row justify-center items-center w-full p-1 bg-gray-200 font-semibold text-gray-800 text-center">
+                    Sign up
+                </h5>
                 <!-- Newsletter sign-up form container -->
-                <div class="w-full pt-2 pb-2 mb-2 flex flex-col border-t">
+                <div class="w-full p-6 pt-3 mb-2 flex flex-col">
                     <a id="sign-up"></a>
-                    <h5 class="mb-8">Sign up for our monthly email updates:</h5>
+                    <h6 class="text-gray-500 text-left my-4">And get monthly email updates.</h6>
                     <!-- HubSpot form script for the newsletter sign-up -->
                     <script>
                         function displayHubSpotForm() {
@@ -68,24 +93,115 @@ has a headline, description, and a container for roadmap items. -->
                         type="text/javascript"
                         charset="utf-8"
                         src="//js-eu1.hsforms.net/forms/embed/v2.js"
-                        onload="displayHubSpotForm()"></script>
+                        onload="displayHubSpotForm()">
+                    </script>
+                </div>
+            </div>
+        </div>
+        <!-- Desktop -->
+        <div class="hidden text-center md:grid-cols-3 md:gap-x-4 md:pt-0 md:-mt-32 md:max-w-full m-auto px-6 sm:px-4 md:grid">
+            <!-- Consideration Column Header-->
+            <div class="roadmap-section rounded-t-xl rounded-b-lg md:pb-0 bg-white drop-shadow-lg">
+                <div class="p-6 pb-2 rounded-t-lg bg-gray-500 text-white min-h[192px] h-full">
+                    <h4 class="left-headline text-center">Under consideration</h4>
+                    <hr class="border-gray-400">
+                    <p>We would appreciate your feedback on the potential new features that we are considering for development.</p>
+                </div>
+            </div>
+            <!-- In Progress Column Header-->
+            <div class="roadmap-section rounded-t-xl rounded-b-lg md:pb-0 bg-white drop-shadow-lg">
+                <div class="p-6 pb-2 rounded-t-lg bg-gray-600 text-white min-h[192px] h-full">
+                    <h4 class="left-headline text-center">In Progress</h4>
+                    <hr class="border-gray-500">
+                    <p>We are currently working on the following topics and would appreciate any feedback you may have.</p>
+                </div>
+            </div>
+            <!-- Newly Released Column Header-->
+            <div class="roadmap-section rounded-t-xl rounded-b-lg md:pb-0 bg-white drop-shadow-lg">
+                <div class="p-6 pb-2 rounded-t-lg bg-gray-700 text-white min-h[192px] w-full h-full">
+                    <h4 class="left-headline text-center">Newly released</h4>
+                    <hr class="border-gray-600">
+                    <p>Check out product updates on
+                        <a href="https://www.flowforge.com/blog/" target="_blank">
+                            our blog
+                        </a>
+                        to see the latest features and improvements.
+                    </p>
+                </div>
+            </div>
+            <!-- Consideration Column Content-->
+            <div class="roadmap-section consideration rounded-t-xl rounded-b-lg md:pb-0 bg-white drop-shadow-lg">
+                <h5 class="flex flex-row justify-center items-center w-full p-1 bg-gray-600 font-semibold text-gray-50 text-center">
+                    <span class="pt-0.5 pr-2 h-[18px]">{% include "components/icons/github.svg" %}</span>Vote on Github<span class="pt-0.5 pl-1">{% include "components/icons/arrow-small-down.svg" %}
+                </h5>
+                <div class="roadmap-item-container pt-0"></div>
+            </div>
+            <!-- In Progress Column Content-->
+            <div class="roadmap-section progress rounded-t-xl rounded-b-lg md:pb-0 bg-white drop-shadow-lg">
+                <h5 class="flex flex-row justify-center items-center w-full p-1 bg-gray-700 font-semibold text-gray-50 text-center">
+                    <span class="pt-px pr-2 h-[18px]">{% include "components/icons/github.svg" %}</span>See status on Github<span class="pt-0.5 pl-1">{% include "components/icons/arrow-small-down.svg" %}
+                </h5>
+                <div class="roadmap-item-container pt-0"></div>
+            </div>
+            <!-- Newly Released Column Content-->
+            <div class="roadmap-section completed rounded-t-xl rounded-b-lg md:pb-0 bg-white drop-shadow-lg">
+                <h5 class="flex flex-row justify-center items-center w-full p-1 bg-gray-800 font-semibold text-gray-50 text-center">
+                    Latest posts<span class="pt-px pl-1">{% include "components/icons/arrow-small-down.svg" %}
+                </h5>
+                <div class="roadmap-item-container pt-0">
+                    <ul>
+                        {%- for releases in collections.releases | reverse | limit(2) -%}
+                            <li class="roadmap-item"><a href="{{ releases.url }}" target="_blank" class="roadmap-item-text">{{ releases.data.title }}</a></li>
+                        {%- endfor -%}
+                    </ul>
+                </div>
+                <h5 class="flex flex-row justify-center items-center w-full p-1 bg-gray-200 font-semibold text-gray-800 text-center">
+                    Sign up
+                </h5>
+                <!-- Newsletter sign-up form container -->
+                <div class="w-full p-6 pt-3 mb-2 flex flex-col">
+                    <a id="sign-up"></a>
+                    <h6 class="text-gray-500 text-left my-4">And get monthly email updates.</h6>
+                    <!-- HubSpot form script for the newsletter sign-up -->
+                    <script>
+                        function displayHubSpotForm() {
+                            hbspt.forms.create({
+                                region: "eu1",
+                                portalId: "26586079",
+                                formId: "159c173d-dd95-49bd-922b-ff3ef243e90c",
+                                onFormSubmit: function ($form) {
+                                    capture('cta-blog-subscribe', {'position': 'primary'})
+                                }
+                            });
+                        }
+                    </script>
+                    <script
+                        async="async"
+                        type="text/javascript"
+                        charset="utf-8"
+                        src="//js-eu1.hsforms.net/forms/embed/v2.js"
+                        onload="displayHubSpotForm()">
+                    </script>
                 </div>
             </div>
         </div>
     </div>
 </div>
-{% include "components/divider-flow--top-red--dark.njk" %}
+
+<div class="text-gray-50 bg-white">{% include "components/dividers/light-grey-curve-inverted.svg" %}</div>
+
 <!-- Roadmap feedback section, containing a header, description, and a contact button for users to provide feedback. -->
-<div class="roadmap-feedback w-full ff-bg-dark px-6 pt-12 pb-24 md:pt-20 md:px-0 md:pb-48">
-    <div class="container m-auto text-left max-w-4xl">
-        <div>
-            <h1 class="mb-4">Suggest a new feature</h1>
-            <p>If you haven't found the feature you're looking for, we encourage you to provide your valuable feedback and suggestions. Your input will help us shape the future of FlowForge, ensuring it meets your needs and expectations. Please consider sharing your thoughts and ideas with us by suggesting a new feature. To do so, simply click the button below to open a new feature request on our GitHub repository.</p>
-            <a href="https://github.com/flowforge/flowforge/issues/new?assignees=&labels=needs-triage%2Cfeature-request&template=03-feature.yml" class="inline-block ff-btn ff-btn--secondary shadow">Suggest a new feature</a>
+<div class="w-full ff-bg-light">
+    <div class="roadmap-feedback bg-white px-6 pt-8 pb-24 md:pt-12 md:px-0">
+        <div class="container m-auto text-center max-w-4xl sm:max-w-xl md:px-4">
+            <div>
+                <h2 class="mb-9">Suggest a new feature</h2>
+                <p>Provide your valuable feedback and suggestions. Your input will help us shape the future of FlowFuse, ensuring it meets your needs and expectations. To do so, simply click the button below to open a new feature request on our GitHub repository.</p>
+                <a href="https://github.com/flowforge/flowforge/issues/new?assignees=&labels=needs-triage%2Cfeature-request&template=03-feature.yml" target="_blank" class="inline-block ff-btn ff-btn--primary mt-6">SUGGEST NEW FEATURE</a>
+            </div>
         </div>
     </div>
 </div>
-{% include "components/divider-flow--top-grey.njk" %}
 <!-- Inline JavaScript code -->
 <script>
     // Utility function to send REST requests to the GitHub API.
@@ -95,7 +211,7 @@ has a headline, description, and a container for roadmap items. -->
             method: "GET",
             headers: {
                 "Content-Type": "application/json",
-                "User-Agent": "FlowForge-Website"
+                "User-Agent": "FlowFuse-Website"
             }
         };
         try {
@@ -158,11 +274,20 @@ has a headline, description, and a container for roadmap items. -->
     }
     // Update the roadmap sections with the fetched issues.
     async function updateRoadmap() {
-        const inConsiderationItems = await fetchGitHubIssues("consideration");
-        const progressItems = await fetchDevIssues();
-        updateRoadmapSection(document.querySelector(".consideration"), inConsiderationItems);
-        updateRoadmapSection(document.querySelector(".progress"), progressItems, false);
-    }
+    const inConsiderationItems = await fetchGitHubIssues("consideration");
+    const progressItems = await fetchDevIssues();
+    const considerationElements = document.querySelectorAll(".consideration");
+    const progressElements = document.querySelectorAll(".progress");
+
+    considerationElements.forEach((element) => {
+        updateRoadmapSection(element, inConsiderationItems);
+    });
+
+    progressElements.forEach((element) => {
+        updateRoadmapSection(element, progressItems, false);
+    });
+}
+
     function updateRoadmapSection(element, items, showReactions = true) {
         // Get the container for the list of items.
         let listContainer = element.querySelector(".roadmap-item-container");
@@ -179,6 +304,10 @@ has a headline, description, and a container for roadmap items. -->
             // Create a list item and add the "roadmap-item" class.
             const listItem = document.createElement("li");
             listItem.classList.add("roadmap-item");
+
+            const anchor = document.createElement("a");
+            anchor.href = item.url;
+            anchor.target = "_blank";
             // Create a container for the issue title and number.
             const titleNumberContainer = document.createElement("div");
             titleNumberContainer.classList.add("title-number-container");
@@ -188,30 +317,27 @@ has a headline, description, and a container for roadmap items. -->
             issueName.textContent = item.title;
             // Add the issue title span to the container.
             titleNumberContainer.appendChild(issueName);
-            listItem.appendChild(titleNumberContainer);
-            // Create a left aligned wrapper for the vote button.
-            const leftWrapper = document.createElement("div");
-            leftWrapper.classList.add("left");
-            // Create the vote button element.
-            const voteBtn = document.createElement("a");
-            voteBtn.href = item.url;
-            voteBtn.target = "_blank";
-            voteBtn.classList.add("vote-btn");
-            // If showReactions is true, display the number of reactions next to the vote button.
+            anchor.appendChild(titleNumberContainer);
+
+            // Check if showReactions is true before creating the vote button.
             if (showReactions) {
+                // Create a left aligned wrapper for the vote button.
+                const leftWrapper = document.createElement("div");
+                leftWrapper.classList.add("left");
+                // Create the vote button element.
+                const voteBtn = document.createElement("span");
+                voteBtn.classList.add("vote-btn");
                 const reactions = item.reactions.totalCount;
                 const reactionCount = document.createElement("span");
                 reactionCount.classList.add("reaction-count");
-                reactionCount.innerHTML = `👍 <span>${reactions}</span>`;
-                voteBtn.innerHTML = `${
-                    reactionCount.outerHTML
-                }<span>Vote on GitHub</span><img src="../../images/github-mark.png" alt="GitHub Logo">`;
-            } else {
-                voteBtn.innerHTML = '<span>See status</span><img src="../../images/github-mark.png" alt="GitHub Logo">';
+                reactionCount.innerHTML = `👍 <span class="ml-1 text-gray-500">${reactions}</span>`;
+                voteBtn.innerHTML = `${reactionCount.outerHTML}`;
+                // Append the vote button to the left aligned wrapper.
+                leftWrapper.appendChild(voteBtn);
+                anchor.appendChild(leftWrapper);
             }
-            // Append the vote button to the left aligned wrapper and then append the left aligned wrapper to the list item.
-            leftWrapper.appendChild(voteBtn);
-            listItem.appendChild(leftWrapper);
+            // Append the anchor to the list item.
+            listItem.appendChild(anchor);
             // Append the list item to the list.
             list.appendChild(listItem);
         }

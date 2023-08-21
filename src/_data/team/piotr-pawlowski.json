@@ -1,0 +1,14 @@
+{
+  "order": 13,
+  "name": "Piotr Pawlowski",
+  "title": "DevOps Engineer",
+  "github": "ppawlowski",
+  "country": "PL",
+  "email": "piotr@flowfuse.com",
+  "headshot": "piotr.png",
+  "facts": [
+    "DevOps/Cloud Engineer with 10+ years of experience and solid background in Linux/Unix administration",
+    "Huge automation enthusiast, automate all the boring stuff around me",
+    "Dog lover, owner of Figa - 4 year old female beagle"
+  ]
+}

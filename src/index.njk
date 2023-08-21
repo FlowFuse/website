@@ -3,23 +3,23 @@ layout: default
 sitemapPriority: 1.0
 ---
 <!--Hero Content-->
-<div class="w-full px-6 pb-24 mt-12 md:px-0">
+<div class="w-full px-6 pb-24 mt-12 md:px-0 ff-bg-flows">
     <div class="container m-auto text-center max-w-2xl">
         <h1 class="text-gray-50 max-w-lg m-auto">
             DevOps for Node-RED
         </h1>
         <p class="mt-6 text-gray-400 text-lg font-normal">
-            FlowForge allows organizations to reliably deliver Node-RED applications in a continuous, collaborative, and secure manner.
+            FlowFuse allows organizations to reliably deliver Node-RED applications in a continuous, collaborative, and secure manner.
         </p>
         <div class="flex flex-col">
-          <div class="m-auto mt-12 flex flex-col gap-4 items-center justify-center">
-            <a class="ff-btn ff-btn--primary flex flex-col" href="https://app.flowforge.com/account/create" onclick="capture('cta-join', {'position': 'primary'})">
-                <span class="text-base uppercase flex gap-2 items-center">
-                    get started for free
-                    {% include "components/icons/arrow-right.svg" %}
-                </span>
-            </a>
-          </div>
+            <div class="m-auto mt-12 flex flex-col gap-4 items-center justify-center">
+                <a class="ff-btn ff-btn--primary flex flex-col" href="https://app.flowforge.com/account/create" onclick="capture('cta-join', {'position': 'primary'})">
+                    <span class="text-base uppercase flex gap-2 items-center">
+                        get started for free
+                        {% include "components/icons/arrow-right.svg" %}
+                    </span>
+                </a>
+            </div>
         </div>
     </div>
 </div>
@@ -27,24 +27,33 @@ sitemapPriority: 1.0
 {% include "components/divider-flow--default.njk" %}
 
 <div class="flex justify-center">
-    <lite-youtube videoid="K4xw09DbSdI" style="background-image: url('https://i.ytimg.com/vi_webp/K4xw09DbSdI/hqdefault.webp'); width: 620px; height: 360px" class="absolute -mt-10 max-w-xs max-h-48 border-4 rounded-md sm:max-w-none sm:max-h-full"></lite-youtube>
+    <lite-youtube videoid="K4xw09DbSdI" style="background-image: url('images/thumbnail-nick-flowfuse.png'); width: 620px; height: 360px" class="absolute -mt-10 max-w-xs max-h-48 border-4 rounded-md sm:max-w-none sm:max-h-full"></lite-youtube>
 </div>
 
 <!-- Secondary Content -->
-<div class="w-full ff-bg-light px-6 pt-12 pb-48 sm:pt-32 sm:px-0">
+<div class="w-full ff-bg-light px-6 pt-12 pb-48 sm:pt-32">
     <div class="container m-auto text-center max-w-4xl">
         <div class="m-auto mt-36 mb-12 sm:mt-64 sm:mb-16 w-full text-center">
-            <h2>Why use FlowForge for Node-RED</h2>
+            <h2>Why use FlowFuse for Node-RED</h2>
             <h5><a href="/node-red">What is Node-RED?</a></h5>
+        </div>
+        <div class="m-auto mb-12 sm:mb-16 w-full text-center flex flex-col md:flex-row">
+            <p class="md:w-1/6 md:text-left opacity-75">Trusted by:</p>
+            <ul class="flex flex-row justify-center md:justify-between flex-wrap sm:flex-nowrap gap-[16%] sm:gap-[6%] md:gap-[8%] w-full items-center -mb-6 md:mb-0">
+                <li class="w-[60px] pb-6 md:pb-0">{% image "./images/home-logos/heatweb-logo.png", "Heatweb logo", [60] %}</li>
+                <li class="w-[80px] pb-6 md:pb-0">{% image "./images/home-logos/airship-logo.png", "Airship logo", [80] %}</li>
+                <li class="w-[90px] pb-6 md:pb-0">{% image "./images/home-logos/enexis-logo.png", "Enexis logo", [90] %}</li>
+                <li class="w-[140px] pb-6 md:pb-0">{% image "./images/home-logos/iniationware-logo.png", "Iniationware logo", [140] %}</li>
+            </ul>
         </div>
         <div class="flex flex-col-reverse justify-between sm:flex-row gap-3 sm:gap-12">
             <div class="text-center sm:text-left pt-4">
                 <h3>Collaborative Development</h3>
-                <p>FlowForge adds team collaboration to Node-RED, allowing multiple developers to work together on a single instance. With FlowForge, developers 
+                <p>FlowFuse adds team collaboration to Node-RED, allowing multiple developers to work together on a single instance. With FlowFuse, developers 
                 can easily share projects, collaborate in real-time and streamline workflow for faster development and deployment.</p>
             </div>
             <div class="w-96 mx-auto flex-shrink-0 max-w-full">
-                {% image "./images/screen-pseudo-overview.png", "A pseudo-screenshot of FlowForge's UI that lets users manage their multiple Node-RED instances.", [384] %}
+                {% image "./images/screen-pseudo-overview.png", "A pseudo-screenshot of FlowFuse's UI that lets users manage their multiple Node-RED instances.", [384] %}
             </div>
         </div>
         <div class="my-8 sm:my-16 w-full">
@@ -53,11 +62,11 @@ sitemapPriority: 1.0
         <div class="flex flex-col-reverse sm:flex-row-reverse justify-between gap-3 sm:gap-12">
             <div class="text-center sm:text-left pt-4">
                 <h3>Manage Remote Deployments</h3>
-                <p>Many organizations deploy Node-RED instances to remote servers or edge devices. FlowForge automates this process by creating snapshots on Node-RED instances that can be 
+                <p>Many organizations deploy Node-RED instances to remote servers or edge devices. FlowFuse automates this process by creating snapshots on Node-RED instances that can be 
                 deployed to multiple remote targets. It also allows for rollback in cases where something might not have gone correctly.</p>
             </div>
             <div class="w-96 mx-auto flex-shrink-0 max-w-full">
-                {% image "./images/screen-pseudo-devices.png", "A pseudo-screenshot of FlowForge's UI that lets users manage their fleet of devices and remote Node-RED deployments.", [384] %}
+                {% image "./images/screen-pseudo-devices.png", "A pseudo-screenshot of FlowFuse's UI that lets users manage their fleet of devices and remote Node-RED deployments.", [384] %}
             </div>
         </div>
         <div class="my-8 sm:my-16">
@@ -66,10 +75,10 @@ sitemapPriority: 1.0
         <div class="flex flex-col-reverse sm:flex-row justify-between gap-3 sm:gap-12">
             <div class="text-center sm:text-left pt-4">
                 <h3>Streamline Application Delivery</h3>
-                <p>FlowForge simplifies the software development lifecycle of Node-RED applications. You can now set up DevOps delivery pipelines to support development, test and production environments for Node-RED application delivery.</p>
+                <p>FlowFuse simplifies the software development lifecycle of Node-RED applications. You can now set up DevOps delivery pipelines to support development, test and production environments for Node-RED application delivery.</p>
             </div>
             <div class="w-96 mx-auto flex-shrink-0 max-w-full">
-                {% image "./images/screen-pseudo-audit.png", "A pseudo-screenshot of FlowForge's UI that shows how users can view an audit of all activity in their team and Node-RED projects.", [384] %}
+                {% image "./images/screen-pseudo-audit.png", "A pseudo-screenshot of FlowFuse's UI that shows how users can view an audit of all activity in their team and Node-RED projects.", [384] %}
             </div>
         </div>
         <div class="my-8 sm:my-16 w-full">
@@ -77,11 +86,11 @@ sitemapPriority: 1.0
         </div>       
         <div class="flex flex-col-reverse sm:flex-row-reverse justify-between gap-3 sm:gap-12">
             <div class="text-center sm:text-left pt-4">
-                <h3>Flexible FlowForge Deployment</h3>
-                <p>We want to make it easy for you to use FlowForge, so we offer FlowForge Cloud, a managed cloud service, or a self-hosted solution. You have the freedom to choose the deployment method that works best for your organization.</p>
+                <h3>Flexible FlowFuse Deployment</h3>
+                <p>We want to make it easy for you to use FlowFuse, so we offer FlowFuse Cloud, a managed cloud service, or a self-hosted solution. You have the freedom to choose the deployment method that works best for your organization.</p>
             </div>
             <div class="w-96 mx-auto flex-shrink-0 max-w-full">
-                {% image "./images/screen-pseudo-devices.png", "A pseudo-screenshot of FlowForge's UI that lets users manage their fleet of devices and remote Node-RED deployments.", [384] %}
+                {% image "./images/screen-pseudo-devices.png", "A pseudo-screenshot of FlowFuse's UI that lets users manage their fleet of devices and remote Node-RED deployments.", [384] %}
             </div>
         </div>
         <div class="my-8 sm:my-16">
@@ -90,12 +99,12 @@ sitemapPriority: 1.0
         <div class="flex flex-col-reverse sm:flex-row justify-between gap-3 sm:gap-12">
             <div class="text-center sm:text-left pt-4">
                 <h3>Professional Support for Node-RED deployments</h3>
-                <p>FlowForge is the trusted partner for providing professional support for business critical applications, built on Node-RED. Our experts can help 
+                <p>FlowFuse is the trusted partner for providing professional support for business critical applications, built on Node-RED. Our experts can help 
                 with any challenge, ensuring that your Node-RED applications are running smoothly and securely. We keep your systems up-to-date with the latest 
                 versions of Node-RED and security updates, ensuring the continuity of your operations.</p>
             </div>
             <div class="w-96 mx-auto flex-shrink-0 max-w-full">
-                {% image "./images/screen-pseudo-audit.png", "A pseudo-screenshot of FlowForge's UI that shows how users can view an audit of all activity in their team and Node-RED projects.", [384] %}
+                {% image "./images/screen-pseudo-audit.png", "A pseudo-screenshot of FlowFuse's UI that shows how users can view an audit of all activity in their team and Node-RED projects.", [384] %}
             </div>
         </div>
     </div>
@@ -104,28 +113,30 @@ sitemapPriority: 1.0
 {% include "components/divider-flow--top-red--dark.njk" %}
 
 <!-- Deployment Options -->
-<div class="w-full ff-bg-dark px-6 pt-0 pb-32 md:pt-0 md:px-0" style="background-image: url('/images/ff-cloud_50.svg');background-position: 50% 50%;background-repeat: no-repeat">
+<div class="w-full ff-bg-dark px-6 pt-0 pb-32 md:pt-0 md:px-0">
     <div class="container m-auto text-center max-w-4xl">
         <div class="m-auto mt-16 w-full text-center">
-            <h2>Start using FlowForge</h2>
+            <h2>Start using FlowFuse</h2>
             <p class="text-white font-light">For a full feature comparison, please visit our <a href="/pricing">Pricing</a> page.</p>
         </div>
         <div class="sm:mt-10 md:mt-10 w-full max-w-4xl text-center flex flex-wrap gap-2 justify-around">
             <div class="w-full px-3 mt-4 sm:w-72 md:mt-0 css-full">
                 <div class="w-40 m-auto mb-4">
-                    {% image "./images/pictograms/opensource.png", "Graphics depicting the Open-Source logo.", [160] %}
+                    {% image "./images/pictograms/book-a-demo.png", "Icon representing a booked demo.", [160] %}
                 </div>
-                <h5 class="flex justify-center">Open Source</h5>
-                <label class="font-light mt-2 block">Try for free with deployment options including Docker and Kubernetes.</label>
-                <a class="mt-4 ff-btn ff-btn--secondary uppercase inline-block" href="./docs/install" onclick="capture('cta-install', {'position': 'secondary'})">Install</a>
+                <h5 class="flex justify-center">Book a Demo</h5>
+                <label class="font-light mt-2 block">Understand how you can develop and roll out bespoke applications with FlowFuse and Node-RED.</label>
+                <a class="mt-4 ff-btn ff-btn--secondary uppercase inline-block" href="/book-demo" onclick="capture('cta-book-demo', {'position': 'secondary'})">Book a Demo</a>
             </div>
-            <div class="w-full px-3 mt-4 sm:w-72 md:mt-0">
-                <div class="w-40 m-auto mb-4">
+            <div class="w-full px-3 mt-4 sm:w-72 md:mt-0 flex flex-col items-center justify-between">
+                <div>
+                <div class="w-40 mb-4">
                     {% image "./images/pictograms/enterprise.png", "Graphic image representing 'Infrastructure'.", [160] %}
                 </div>
-                <h5 class="flex justify-center">FlowForge Cloud</h5>
+                <h5 class="flex justify-center">FlowFuse Cloud</h5>
+                </div>
                 <label class="font-light mt-2 block">Get started in less than a minute, fully managed, fully secure.</label>
-                <a class="mt-4 ff-btn ff-btn--primary uppercase inline-block" href="https://app.flowforge.com/account/create" onclick="capture('cta-join', {'position': 'secondary'})">Join Now</a>
+                <a class="mt-4 ff-btn ff-btn--primary uppercase inline-block" href="https://app.flowforge.com/account/create" onclick="capture('cta-join', {'position': 'secondary'})">Join Now</a>   
             </div>
         </div>
     </div>

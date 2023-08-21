@@ -1,5 +1,5 @@
 ---
-title: Running the FlowForge Device Agent as a service on a Raspberry Pi
+title: Running the FlowFuse Device Agent as a service on a Raspberry Pi
 subtitle: Step by step guide to run the device agent as a service
 description: Step by step guide to run the device agent as a service
 date: 2023-05-02
@@ -11,7 +11,7 @@ tags:
     - how-to
 ---
 
-FlowForge's device agent allows you to manage and run your Node-RED instances on
+FlowFuse's device agent allows you to manage and run your Node-RED instances on
 your own hardware such as a Raspberry Pi. This can be very useful where an
 application you've written needs to run flows with direct access to hardware sensors.
 
@@ -22,7 +22,7 @@ or any other OS that uses systemd.
 
 ## Why run the device agent as a service?
 
-The standard process for running FlowForge's device agent is to start it on the
+The standard process for running FlowFuse's device agent is to start it on the
 command line using the command `flowforge-device-agent`. This works fine for testing
 but for long-term installations it's useful to run the device agent as a service.
 Once running as a service, the device agent will continue to run even if your

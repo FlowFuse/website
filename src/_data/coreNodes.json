@@ -1,0 +1,49 @@
+{
+    "common": [
+        "20-inject",
+        "21-debug",
+        "24-complete",
+        "25-catch",
+        "25-status",
+        "60-link",
+        "90-comment",
+        "98-unknown"
+    ],
+    "function": [
+        "10-function",
+        "10-switch",
+        "15-change",
+        "16-range",
+        "80-template",
+        "89-delay",
+        "89-trigger",
+        "90-exec",
+        "rbe"
+    ],
+    "network": [
+        "05-tls",
+        "06-httpproxy",
+        "10-mqtt",
+        "21-httpin",
+        "21-httprequest",
+        "22-websocket",
+        "31-tcpin",
+        "32-udp"
+    ],
+    "parsers": [
+        "70-CSV",
+        "70-HTML",
+        "70-JSON",
+        "70-XML",
+        "70-YAML"
+    ],
+    "sequence": [
+        "17-split",
+        "18-sort",
+        "19-batch"
+    ],
+    "storage": [
+        "10-file",
+        "23-watch"
+    ]
+}

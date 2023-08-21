@@ -59,9 +59,9 @@ Slack to be matched automatically.
 When using Slack, prefer to keep discussions in a thread. This reduces scroll
 back, and focusses channels.
 
-Note that knowledge in Slack is ephemeral, it's not a great storage of information.
-As such knowledge on a decision made in Slack, or elsewhere, should always be recorded
-in the GitHub issue or Google Doc on that topic to keep a log that also works
+Note that knowledge in Slack is ephemeral, it's not storage for information or knowledge
+sharing. As such knowledge and decision made in Slack should always be recorded
+in the handbook, GitHub issue, or Google Doc on that topic to keep a log that also works
 for asynchronous communication.
 
 #### Recommended channels
@@ -70,21 +70,25 @@ Not all channels are joined by default when you join Slack. We've added a bunch
 below so you get to decide if you want more channels or not.
 
 - `#metrics` will output sales and engagement metrics
-- `#social-twitter` is a stream of engagement with @FlowForgeInc
+- `#social-twitter` is a stream of engagement with @FlowFuseInc
 - `#virtual-coffee` to schedule coffee calls with other team members!
 
 #### Channel name structure
 
-When a channel is created for projects; work that's scoped to a certain topic
-that's going to be completed at some time in the future, it might be valuable to
-collect all internal communications into one Slack channel. Please prefix the
-channel name with `proj-` to make grouping easier.
+To make it easier to find your way around in Slack, we have some rules for naming channels. This will help give everything some context and implicit sense of purpose.
 
-All team members are advised to put `proj-` channels into [their own section](https://slack.com/help/articles/360043207674-Organize-your-sidebar-with-custom-sections).
+|Type | Slack prefix | Purpose |
+|:--- |:--- |:---|
+| Department           | `#dept-` | For each company department and ask them questions |
+| Project based work   | `#proj-` | Work scoped to a project with an finite horizon |
+| GitHub notifications | `#gh-`   | For many updates around the website and product development a notification is sent to the corresponding channel |
+| Ops notifications    | `#ops-`  | Channels receiving notifications from operations-related services |
+
+All team members are advised to put prefix type channels into [their own section](https://slack.com/help/articles/360043207674-Organize-your-sidebar-with-custom-sections).
 
 ### GitHub
 
-All code at FlowForge is stored in Git, and GitHub hosts our repositories. As
+All code at FlowFuse is stored in Git, and GitHub hosts our repositories. As
 such all our changes, feature ideas/requests, etc. are stored there. It also
 holds task lists for onboarding, [art requests](../design/art-requests.md), and
 other projects not necessarily code related. It's important to stay in the loop
@@ -126,17 +130,17 @@ two weeks, and what results are expected to the company wide KPI.
 
 ## Node-RED community interactions.
 
-As an employee of FlowForge, when we interact with the OSS Node-RED community we 
+As an employee of FlowFuse, when we interact with the OSS Node-RED community we 
 must be mindful of our position.  For example, when offering advice on the Node-RED 
 forum or the Node-RED slack, the first answer we offer should be how a solution can 
 be achieved using Node-RED.  If a native Node-RED solution is not possible or the 
-user would benefit from the advantages that FlowForge offers, then, like any other 
-person or company, we can offer FlowForge as a potential solution.
+user would benefit from the advantages that FlowFuse offers, then, like any other 
+person or company, we can offer FlowFuse as a potential solution.
 
 ## Feedback and Thanks
 
-In FlowForge, we strongly encourage the sharing of feedback and thank you's. We have
-a custom-built SlackBot (built in Node-RED and hosted in FlowForge of course), that 
+In FlowFuse, we strongly encourage the sharing of feedback and thank you's. We have
+a custom-built SlackBot (built in Node-RED and hosted in FlowFuse of course), that 
 enables users to message `@Feedback` with:
 
 - `/give-thanks @to_user <message>` - for short thank you messages
@@ -146,7 +150,7 @@ All feedback is then sent directly to the relevant user via the Slack App, meani
 
 ## 1:1 meetings
 
-Each employee at FlowForge will have regular one to one meetings with their
+Each employee at FlowFuse will have regular one to one meetings with their
 manager. The primary goal of this meeting is for the report to set the agenda
 and tone. It's important to understand what's going on in ones life, how they're
 feeling, and what their challenges are.
@@ -172,5 +176,5 @@ also communicate with the manager's manager to keep in touch with the strategy a
 communicate feedback on what they observe directly.
 
 The advised cadance to have these meetings depends on the wants of the report,
-but generally advised once every 6-8 weeks. As FlowForge scales, the number of
+but generally advised once every 6-8 weeks. As FlowFuse scales, the number of
 weeks between these meetings is likely increasing.

@@ -1,15 +1,15 @@
 ---
-title: Pricing
 align: center
 layout: layouts/page.njk
 sitemapPriority: 0.90
 meta:
-description: Find out how much it costs to use FlowForge.
+    description: Find out how much it costs to use FlowFuse.
 ---
-
-<div class="px-6 pricing-tiles flex flex-col mb-16 md:max-w-screen-lg">
-    <div class="flex px-6 -mb-6 -mt-32 mx-auto text-gray-400 md:max-w-screen-lg md:-mt-40 md:mb-1 md:block">
-        <p class="lead-p max-w-screen-lg m-auto text-center md:max-w-xl md:px-4">
+<div class="pricing">
+<div class="px-6 pricing-tiles flex flex-col mb-16 w-full gradient-bg">
+    <div class="m-auto text-center pt-12 md:pb-6 px-12 md:max-w-screen-lg md:pt-12">
+        <h1>Pricing</h1>
+        <p class="lead-p max-w-screen-lg m-auto md:max-w-xl md:px-4">
             Plans for every project. Whether you're an individual contributor, an IIoT manager, or an IT department, you'll find a suitable option to take your Node-RED applications to the next level.
         </p>
     </div>
@@ -48,7 +48,7 @@ description: Find out how much it costs to use FlowForge.
                     <div class="flex flex-col items-center md:flex-row md:items-end md:justify-between">
                         <div class="md:w-3/5">
                             <h4 class="pt-4" style="display: inline-block;">Premium </h4>
-                            <label class="label">FlowForge Cloud or On-Premise</label>
+                            <label class="label">FlowFuse Cloud or On-Premise</label>
                         </div>
                         <div class="annual-text h-full p-1 mt-1 md:w-2/5 md:ml-2">
                             <a class="text" href='/contact-us'>Contact us for annual billing discounts</a>
@@ -62,7 +62,7 @@ description: Find out how much it costs to use FlowForge.
                             <note class="note text-teal-100">per Node-RED</br>instance/month</note>    
                         </div>
                     </div>
-                      <p class="mt-6 pb-2">Install FlowForge yourself or <span class="inline font-normal">we will manage it for you</span>.</p>
+                      <p class="mt-6 pb-2">Install FlowFuse yourself or <span class="inline font-normal">we will manage it for you</span>.</p>
                     </div>
                     <div class="flex flex-col items-center md:items-left">
                     <a class="ff-btn ff-btn--primary uppercase align-baseline w-full" href="https://app.flowforge.com/account/create" onclick="capture('cta-join', {'position': 'primary'})">TRY FOR FREE</a>  
@@ -122,8 +122,12 @@ description: Find out how much it costs to use FlowForge.
         }
         </script>
 </div>
+</div>
 
-{% include "components/divider-flow--top-red--light.njk" %}
+<div class="-mt-6">
+{% include "components/divider-flow--top-red--light.njk" %}    
+</div>
+
 
 <!-- Feature List -->
 {% set featuresHtml %}
@@ -142,7 +146,7 @@ description: Find out how much it costs to use FlowForge.
         <div>{{ featuresHtml | safe }}</div>
     </div>
     <p class="max-w-screen-lg m-auto mt-12 text-center">
-        At FlowForge we understand that the security practises of our product
+        At FlowFuse we understand that the security practises of our product
         are important to your company. We've prepared a <a href="../product/security">security statement</a>
         for you to understand the choices we've made.
     </p>

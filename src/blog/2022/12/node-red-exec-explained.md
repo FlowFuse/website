@@ -1,7 +1,7 @@
 ---
 title: Node-RED Exec nodes explained
-subtitle: Node-RED by default comes with the Exec node. This node allows you to run a command as if you're on the command line. In this article we discuss how that can be useful and why exec is not included in FlowForge.
-description: Node-RED by default comes with the Exec node. This node allows you to run a command as if you're on the command line. In this article we discuss how that can be useful and why exec is not included in FlowForge.
+subtitle: Node-RED by default comes with the Exec node. This node allows you to run a command as if you're on the command line. In this article we discuss how that can be useful and why exec is not included in FlowFuse.
+description: Node-RED by default comes with the Exec node. This node allows you to run a command as if you're on the command line. In this article we discuss how that can be useful and why exec is not included in FlowFuse.
 date: 2022-12-12
 authors: ["zeger-jan-van-de-weg"]
 tags:
@@ -54,7 +54,7 @@ windown of the `exec` node:
 This will produce a message per line to the standard out output for further
 processing.
 
-### FlowForge
+### FlowFuse
 
-On FlowForge Cloud, the Node-RED exec nodes are disabled. The Stacks, that is the
+On FlowFuse Cloud, the Node-RED exec nodes are disabled. The Stacks, that is the
 containers that Node-RED runs in, don't include any accessible executatables so there would be no benefit to running exec commands. All the data is exposed through Javascript and Node.JS already.

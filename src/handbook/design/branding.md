@@ -1,14 +1,14 @@
-# FlowForge Branding Guidelines
+# FlowFuse Branding Guidelines
 
-For FlowForge Assets (e.g. logos, pictograms, and raw design files), please look in the [`/design/Media`](https://drive.google.com/drive/u/1/folders/1guBnBUrIiRXuK6vsik_NIXIhtE1cZRRa) folder on Google Drive.
+For FlowFuse Assets (e.g. logos, pictograms, and raw design files), please look in the [`/design/Media`](https://drive.google.com/drive/u/1/folders/1guBnBUrIiRXuK6vsik_NIXIhtE1cZRRa) folder on Google Drive.
 ## Fonts
 
-In both the FlowForge application and on our website, we use [Tailwind CSS](https://tailwindcss.com/). With Tailwind, comes the `font-sans` class, which we use across FlowForge.
+In both the FlowFuse application and on our website, we use [Tailwind CSS](https://tailwindcss.com/). With Tailwind, comes the `font-sans` class, which we use across FlowFuse.
 
 For branded materials such as videos and images we have two stylized fonts in-use:
 
 - ["DIN Alternate Bold"](https://fontsgeek.com/fonts/DIN-Alternate-Bold): Used in videos & social media content.
-- ["Baloo Da 2"](https://fonts.google.com/specimen/Baloo+Da+2): Used in the FlowForge logo.
+- ["Baloo Da 2"](https://fonts.google.com/specimen/Baloo+Da+2): Used in the FlowFuse logo.
 ## Colour Palette
 
 <div class="space-y-6">
@@ -203,9 +203,23 @@ These larger images are used for stylistic purposes. We use pictograms to commun
 If you wish to create your own Pictograms, you can use this Adobe Illustrator file as a template:
 [pictogram.ai](https://drive.google.com/drive/u/1/folders/1guBnBUrIiRXuK6vsik_NIXIhtE1cZRRa)
 
-<img width="500" alt="An example showing how Pictograms are used in the 'Company Values' section of the FlowForge website" src="../images/pictograms_example.png">
+<img width="500" alt="An example showing how Pictograms are used in the 'Company Values' section of the FlowFuse website" src="../images/pictograms_example.png">
 
 Sizings:
 
 - **128 x 128px**: Used when showing multiple pictograms in the same section of the website or application.
 - **250 x 250 px:** Used as part of page headers, inline with the page title and page description.
+
+## Presentations
+
+There's a **branded theme** for Google Slides presentations available in the [FlowFuse template gallery](https://docs.google.com/presentation/u/0/?tgif=d&ftv=1). To access it, you need to be logged in to your FlowFuse account. Look for a theme called "FlowFuse Template".
+
+When you click on it, two things will happen:   
+1. A new Google Slides file will be created in your Drive with the theme applied.
+2. The copy of the file will open for editing.
+
+You'll find a fully designed presentation as an example of how to use different layouts. To explore all the predefined options available, check the [Layout menu](https://support.google.com/docs/answer/1705254?hl=en&ref_topic=19434&sjid=8039782987794605660-EU#zippy=%2Cchange-layout:~:text=your%20theme%20colors-,Change%20layout,-A%20layout%20is).
+
+Feel free to edit the content, delete or add slides as needed. Any changes you make will only affect your copy in your Drive.
+
+Please note that the theme has predefined typography, margins, and colors. We kindly request that any changes made maintain these design elements as part of the overall composition and design of your presentation.

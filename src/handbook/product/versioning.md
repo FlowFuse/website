@@ -6,7 +6,7 @@ navTitle: Versioning
 
 ## Preview Features
 
-As part of our [continuous improvement](../company/values/#🔁-iterative-improvement) process at FlowForge, we may designate certain functionalities as Preview Features. During this phase, all of our customers are given the unique opportunity to trial and test these features. While we ensure the provision of support services, it's important to understand that standard service-level agreements do not apply to these Preview Features. We highly value [customer feedback](./feedback.md) during this period; it not only contributes to our feature refinement process, but also shapes the future development of our offerings.
+As part of our [continuous improvement](../company/values/#🔁-iterative-improvement) process at FlowFuse, we may designate certain functionalities as Preview Features. During this phase, all of our customers are given the unique opportunity to trial and test these features. While we ensure the provision of support services, it's important to understand that standard service-level agreements do not apply to these Preview Features. We highly value [customer feedback](./feedback.md) during this period; it not only contributes to our feature refinement process, but also shapes the future development of our offerings.
 
 There are no extra charges associated with the utilization of Preview Features. Nevertheless, we want to clarify that as these features transition from their preview status to being generally available, they may become subject to changes in pricing in subsequent releases.
 
@@ -14,7 +14,7 @@ Preview Features exemplify our commitment to expedited innovation and iterative 
 
 ## 1.0
 
-The 1.0 Release of FlowForge represents a significant milestone, we are making a statement to our customers about the product.
+The 1.0 Release of FlowFuse represents a significant milestone, we are making a statement to our customers about the product.
 
 Therefore the following are considerations & requirements in order to be able to stand behind that statement.
 

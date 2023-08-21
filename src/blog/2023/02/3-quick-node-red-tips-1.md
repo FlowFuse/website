@@ -34,4 +34,4 @@ Once a switch node has several outputs it can be slow to manually wire each to t
 
 ![Link multiple inputs and outputs in one command](./images/join-wires.gif "Quickly link multiple nodes in Node-RED")
 
-We hope you found these tips useful, if you'd like to suggest some of your own tips which you think we should share in our future blog posts please [get in touch](mailto:contact@flowforge.com).
+We hope you found these tips useful, if you'd like to suggest some of your own tips which you think we should share in our future blog posts please [get in touch](mailto:contact@flowfuse.com).
