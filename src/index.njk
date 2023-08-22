@@ -2,21 +2,22 @@
 layout: default
 sitemapPriority: 1.0
 ---
+
 <!--Hero Content-->
 <div class="w-full px-6 pb-24 mt-12 md:px-0 ff-bg-flows">
     <div class="container m-auto text-center max-w-2xl">
         <h1 class="text-gray-50 max-w-lg m-auto">
-            DevOps for Node-RED
+            Scale Node-RED. Drive innovation.
         </h1>
         <p class="mt-6 text-gray-400 text-lg font-normal">
-            FlowFuse allows organizations to reliably deliver Node-RED applications in a continuous, collaborative, and secure manner.
+            <!-- this is missing a statement around edge devices / remote assets -->
+            Enable your teams to deliver bespoke Node-RED applications in a continuous, collaborative, and secure manner.
         </p>
         <div class="flex flex-col">
             <div class="m-auto mt-12 flex flex-col gap-4 items-center justify-center">
                 <a class="ff-btn ff-btn--primary flex flex-col" href="https://app.flowforge.com/account/create" onclick="capture('cta-join', {'position': 'primary'})">
                     <span class="text-base uppercase flex gap-2 items-center">
                         get started for free
-                        {% include "components/icons/arrow-right.svg" %}
                     </span>
                 </a>
             </div>
@@ -48,9 +49,9 @@ sitemapPriority: 1.0
         </div>
         <div class="flex flex-col-reverse justify-between sm:flex-row gap-3 sm:gap-12">
             <div class="text-center sm:text-left pt-4">
-                <h3>Collaborative Development</h3>
-                <p>FlowFuse adds team collaboration to Node-RED, allowing multiple developers to work together on a single instance. With FlowFuse, developers 
-                can easily share projects, collaborate in real-time and streamline workflow for faster development and deployment.</p>
+                <h3>Bespoke applications for your use-case</h3>
+                <p>With our unique flow-based programming environment your whole team is able to contribute.
+                FlowFuse enables your whole team to go from idea to implementation without coding.</p>
             </div>
             <div class="w-96 mx-auto flex-shrink-0 max-w-full">
                 {% image "./images/screen-pseudo-overview.png", "A pseudo-screenshot of FlowFuse's UI that lets users manage their multiple Node-RED instances.", [384] %}
@@ -61,9 +62,12 @@ sitemapPriority: 1.0
         </div>
         <div class="flex flex-col-reverse sm:flex-row-reverse justify-between gap-3 sm:gap-12">
             <div class="text-center sm:text-left pt-4">
-                <h3>Manage Remote Deployments</h3>
-                <p>Many organizations deploy Node-RED instances to remote servers or edge devices. FlowFuse automates this process by creating snapshots on Node-RED instances that can be 
-                deployed to multiple remote targets. It also allows for rollback in cases where something might not have gone correctly.</p>
+                <h3>Capture edge data from any protocol</h3>
+                <p>You can deploy Node-RED instances to remote servers. PLCs, or edge devices. Data is accessable, where ever it's generated.
+                FlowFuse automates this process and allows you capture data from hundreds of 
+                
+                by creating snapshots on Node-RED instances that can be deployed to multiple remote targets.
+                It also allows for rollback in cases where something might not have gone correctly.</p>
             </div>
             <div class="w-96 mx-auto flex-shrink-0 max-w-full">
                 {% image "./images/screen-pseudo-devices.png", "A pseudo-screenshot of FlowFuse's UI that lets users manage their fleet of devices and remote Node-RED deployments.", [384] %}
@@ -74,7 +78,7 @@ sitemapPriority: 1.0
         </div>
         <div class="flex flex-col-reverse sm:flex-row justify-between gap-3 sm:gap-12">
             <div class="text-center sm:text-left pt-4">
-                <h3>Streamline Application Delivery</h3>
+                <h3>Reliable Application Delivery</h3>
                 <p>FlowFuse simplifies the software development lifecycle of Node-RED applications. You can now set up DevOps delivery pipelines to support development, test and production environments for Node-RED application delivery.</p>
             </div>
             <div class="w-96 mx-auto flex-shrink-0 max-w-full">
@@ -86,8 +90,8 @@ sitemapPriority: 1.0
         </div>       
         <div class="flex flex-col-reverse sm:flex-row-reverse justify-between gap-3 sm:gap-12">
             <div class="text-center sm:text-left pt-4">
-                <h3>Flexible FlowFuse Deployment</h3>
-                <p>We want to make it easy for you to use FlowFuse, so we offer FlowFuse Cloud, a managed cloud service, or a self-hosted solution. You have the freedom to choose the deployment method that works best for your organization.</p>
+                <h3>Collaborative Development</h3>
+                <p>With Flow-based programming your whole team can contribute. FlowFuse provides a scalable process from your first developer to the last employee.</p>
             </div>
             <div class="w-96 mx-auto flex-shrink-0 max-w-full">
                 {% image "./images/screen-pseudo-devices.png", "A pseudo-screenshot of FlowFuse's UI that lets users manage their fleet of devices and remote Node-RED deployments.", [384] %}
