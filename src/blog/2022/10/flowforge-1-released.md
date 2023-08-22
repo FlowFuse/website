@@ -72,7 +72,7 @@ As an open-source project, we welcome community involvement in what we're buildi
 Our managed [FlowFuse](https://app.flowforge.com) is already running 1.0. Upgrade your project Stacks to the latest version to make sure you get all the latest changes.
 
 If you installed a previous version of FlowFuse and want to upgrade, our documentation provides a
-guide for [upgrading FlowFuse on a local server](/docs/install#upgrade).
+guide for [upgrading FlowFuse on a local server](/docs/upgrade/#upgrading-flowforge).
 
 ### Getting help
 
