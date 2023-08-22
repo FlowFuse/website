@@ -17,7 +17,7 @@ Control access to FlowFuse using single sign-on and retain context values when r
 
 We're pleased to announce version 1.2 is now available! The latest release of the FlowFuse application contains new features, improvements, better documentation, and bug fixes.
 
-We've put a great deal of work in this release to make it easier to run your own self-managed instance of FlowFuse. That includes significant improvements for FlowFuse in [Kubernetes](https://flowforge.com/docs/install/kubernetes/) and [Docker](https://flowforge.com/docs/install/docker/).
+We've put a great deal of work in this release to make it easier to run your own self-managed instance of FlowFuse. That includes significant improvements for FlowFuse in [Kubernetes](/docs/install/kubernetes/) and [Docker](/docs/install/docker/).
 
 Keep reading for the details of what's in this release or you can watch our 1 minute roundup video of the new release above.
 
@@ -32,7 +32,7 @@ Keep reading for the details of what's in this release or you can watch our 1 mi
 - In FlowFuse 1.1 we added logging of user actions. In 1.2 we’ve [improved the audit log interface](https://github.com/flowforge/flowforge/issues/517) to help you read the recorded user actions.
 ![An image of the new audit log interface](./images/audit-log.png)
 
-- Configuring DNS for FlowFuse has historically been challenging as for most FlowFuse installs you'll need two entries. One for the FlowFuse application, and one for the Node-RED projects. There's been updates to the documentation to make it much easier to set this up, and much faster. Please checkout the new [documentation](https://flowforge.com/docs/install/dns-setup/).
+- Configuring DNS for FlowFuse has historically been challenging as for most FlowFuse installs you'll need two entries. One for the FlowFuse application, and one for the Node-RED projects. There's been updates to the documentation to make it much easier to set this up, and much faster. Please checkout the new [documentation](/docs/install/dns-setup/).
 
 - We've updated our documentation to always link to the latest build (older builds are still available).
 
@@ -64,12 +64,12 @@ We'd like the thank the following for their contributions to this release:
 [sdirosa](https://github.com/sdirosa) for their work on [#1326](https://github.com/flowforge/flowforge/pull/1326)
 
 As an open-source project, we welcome community involvement in what we're building.
-If you're interested in contributing, checkout our [guide in the docs](https://flowforge.com/docs/contribute/).
+If you're interested in contributing, checkout our [guide in the docs](/docs/contribute/).
 
 ### Try it out
 
 In 1.2 we've continued to improve the experience of running your own self managed FlowFuse installation. We're confident you can have self managed FlowFuse running locally in under 30 minutes.
-You can install our [local build](https://flowforge.com/docs/install/local/), through [Docker](https://flowforge.com/docs/install/docker/), or [Kubernetes](https://flowforge.com/docs/install/kubernetes/).
+You can install our [local build](/docs/install/local/), through [Docker](/docs/install/docker/), or [Kubernetes](/docs/install/kubernetes/).
 
 If you'd rather use our hosted offering: [Sign up for FlowFuse Cloud](https://app.flowforge.com/account/create?code=FF12)
 with the coupon **FF12** to get your first project free for a month.
@@ -80,11 +80,11 @@ with the coupon **FF12** to get your first project free for a month.
 persistent context you'll need to upgrade your projects stack.
 
 If you installed a previous version of FlowFuse and want to upgrade, our documentation provides a
-guide for [upgrading your FlowFuse instance](https://flowforge.com/docs/upgrade/).
+guide for [upgrading your FlowFuse instance](/docs/upgrade/).
 
 ### Getting help
 
-Please check FlowFuse's [documentation](https://flowforge.com/docs/) as the answers to many questions are covered there.
+Please check FlowFuse's [documentation](/docs/) as the answers to many questions are covered there.
 
 If you hit any problems with the platform please raise an [issue on GitHub](https://github.com/flowforge/flowforge/issues).
 That also includes if you have any feedback or feature requests.

@@ -23,11 +23,11 @@ The same fix also addresses an [issue](https://github.com/flowforge/flowforge/is
 This release has already been rolled out to [FlowFuse Cloud](https://app.flowforge.com).
 
 If you installed a previous version of FlowFuse and want to upgrade, our documentation provides a
-guide for [upgrading your FlowFuse instance](https://flowforge.com/docs/upgrade/)
+guide for [upgrading your FlowFuse instance](/docs/upgrade/)
 
 ### Getting help
 
-Please check FlowFuse's [documentation](https://flowforge.com/docs/) as the answers to many questions are covered there.
+Please check FlowFuse's [documentation](/docs/) as the answers to many questions are covered there.
 
 If you hit any problems with the platform, please raise an [issue on GitHub](https://github.com/flowforge/flowforge/issues).
 That also includes if you have any feedback or feature requests.

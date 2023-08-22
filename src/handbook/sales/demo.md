@@ -16,7 +16,7 @@ Please also make this team your 'default team' under your user settings.
 
 Create one instance called ‘central-<demo-customer-name>’, leave the rest to be created in the demo.
 
-Make sure you have an example device ready, [install the latest device agent](https://flowforge.com/docs/user/devices/).
+Make sure you have an example device ready, [install the latest device agent](/docs/user/devices/).
 
 Create a new device in your team, download the `.yml`. Do not yet install the
 agent, that's done during the demo using the web ui.

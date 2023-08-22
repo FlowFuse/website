@@ -10,7 +10,7 @@ tags:
     - how-to
 ---
 
-Following on from our [previous article](https://flowforge.com/blog/2022/10/ff-docker-gcp/) in which we covered how to run FlowFuse in Docker on Google’s Cloud Platform, today we are going to look at how to secure HTTP traffic to your FlowFuse server.
+Following on from our [previous article](/blog/2022/10/ff-docker-gcp/) in which we covered how to run FlowFuse in Docker on Google’s Cloud Platform, today we are going to look at how to secure HTTP traffic to your FlowFuse server.
 
 <!--more-->
 
@@ -18,7 +18,7 @@ Following on from our [previous article](https://flowforge.com/blog/2022/10/ff-d
 
 When we wrote the first part of this series FlowFuse didn't have an easy path to secure HTTP traffic. Happily, two versions of FlowFuse later and at least partially inspired by these blogs, we have added the configuration you need in Docker to use HTTPS with minimal work.
 
-That addition makes our job of explaining this setup a lot easier, credit to our developers for seeing the value of having an easy implementation of HTTPS in FlowFuse as part of our [1.0 build](https://flowforge.com/blog/2022/10/flowforge-1-released/).
+That addition makes our job of explaining this setup a lot easier, credit to our developers for seeing the value of having an easy implementation of HTTPS in FlowFuse as part of our [1.0 build](/blog/2022/10/flowforge-1-released/).
 
 To achieve secure HTTPS traffic we are employing a great service called [Let's Encrypt](https://letsencrypt.org/). In their own words, "Let’s Encrypt is a free, automated, and open certificate authority (CA), run for the public’s benefit". In practice Let's Encrypt will allow us to easily secure HTTPS traffic.
 
@@ -28,7 +28,7 @@ Now we've covered our goals and the tools we are going to use let's configure ou
 
 ### Prerequisites 
 
-As mentioned above, you will need to be running FlowFuse version 1.0 or higher to follow this guide. If you are using an older version you can upgrade now using the [instructions here](https://flowforge.com/docs/upgrade/).
+As mentioned above, you will need to be running FlowFuse version 1.0 or higher to follow this guide. If you are using an older version you can upgrade now using the [instructions here](/docs/upgrade/).
 
 ### Update Docker Compose
 

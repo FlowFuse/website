@@ -10,7 +10,7 @@ tags:
     - news
 ---
 
-A year ago our CTO, Nick O'Leary, [introduced FlowFuse](https://flowforge.com/blog/2021/04/first-deploy/).
+A year ago our CTO, Nick O'Leary, [introduced FlowFuse](/blog/2021/04/first-deploy/).
 Since then major milestones have been achieved. As we grow as a company, important
 steps are taken. Today we make another very important step; we're accepting our
 first customers.
@@ -18,7 +18,7 @@ first customers.
 <!--more-->
 
 A few weeks ago our product was nearly in a state where it could support customers,
-when that was the case, we [opened up our waitlist](https://flowforge.com/blog/2022/02/announcing-flowforge-cloud/).
+when that was the case, we [opened up our waitlist](/blog/2022/02/announcing-flowforge-cloud/).
 The waitlist has been growing daily and now we're ready to start inviting those
 users onto the platform. The first
 lucky few users are being added today, and each working day for the foreseeable

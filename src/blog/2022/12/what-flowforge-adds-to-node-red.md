@@ -22,4 +22,4 @@ These features make FlowFuse a valuable tool for organisations using Node-RED to
 
 This not only reduces operational costs but it also allows an organisation to be far more agile with their Node-RED projects than was possible without FlowFuse.
 
-We would be happy to talk to you more about how FlowFuse can help you get the most value from Node-RED. Please [contact us](https://flowforge.com/contact-us/) to learn more.
+We would be happy to talk to you more about how FlowFuse can help you get the most value from Node-RED. Please [contact us](/contact-us/) to learn more.

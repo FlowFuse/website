@@ -89,4 +89,4 @@ production environment can require a lot of sys-ops and dev-ops time and we
 think FlowFuse is a great solution to keep that admin and tech debt in check.
 
 If you're running into these challenges we believe we can help, you can adopt
-our [free and open source edition](https://flowforge.com/docs/install/).
+our [free and open source edition](/docs/install/).

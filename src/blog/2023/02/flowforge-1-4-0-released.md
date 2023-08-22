@@ -55,7 +55,7 @@ A new feature of 1.4 is the ability to setup staged deployments. This makes it p
 - With FlowFuse v1.4 some changes were made under the hood to speed up the recovery
 of Node-RED instances. On terminal failures of an instance it will now be
 automatically be redeployed with the correct flows. This uses Kubernetes features
-and is also available if you've installed through [kubernetes](https://flowforge.com/docs/install/kubernetes/).
+and is also available if you've installed through [kubernetes](/docs/install/kubernetes/).
 To migrate the old style of deployments to this system a restart or stack upgrade is needed.
 
 ## Bug Fixes
@@ -72,12 +72,12 @@ We'd like the thank the following for their contributions to this release:
 - [UlisesGascon](https://github.com/UlisesGascon) for their work on [#74](https://github.com/flowforge/installer/pull/74)
 
 As an open-source project, we welcome community involvement in what we're building.
-If you're interested in contributing, checkout our [guide in the docs](https://flowforge.com/docs/contribute/).
+If you're interested in contributing, checkout our [guide in the docs](/docs/contribute/).
 
 ## Try it out
 
 We're confident you can have self managed FlowFuse running locally in under 30 minutes.
-You can install our [local build](https://flowforge.com/docs/install/local/), use [Docker](https://flowforge.com/docs/install/docker/), or [Kubernetes](https://flowforge.com/docs/install/kubernetes/).
+You can install our [local build](/docs/install/local/), use [Docker](/docs/install/docker/), or [Kubernetes](/docs/install/kubernetes/).
 
 If you'd rather use our hosted offering: [Get started for free](https://app.flowforge.com/account/create) on FlowFuse Cloud.
 
@@ -86,11 +86,11 @@ If you'd rather use our hosted offering: [Get started for free](https://app.flow
 [FlowFuse Cloud](https://app.flowforge.com) is already running 1.4.
 
 If you installed a previous version of FlowFuse and want to upgrade, our documentation provides a
-guide for [upgrading your FlowFuse instance](https://flowforge.com/docs/upgrade/).
+guide for [upgrading your FlowFuse instance](/docs/upgrade/).
 
 ## Getting help
 
-Please check FlowFuse's [documentation](https://flowforge.com/docs/) as the answers to many questions are covered there.
+Please check FlowFuse's [documentation](/docs/) as the answers to many questions are covered there.
 
 If you hit any problems with the platform please raise an [issue on GitHub](https://github.com/flowforge/flowforge/issues).
 That's also a great place to send us any feedback or feature requests.

@@ -18,7 +18,7 @@ Node-RED has become a widely adopted integration platform for IoT edge computing
 
 ## The Integration Platform for IIoT Edge Computing & PLCs
 
-Node-RED is a widely adopted open-source low-code development tool that makes it easy to connect and integrate different sources of data. With a visual programming interface and drag-and-drop functionality, [Node-RED](https://flowforge.com/node-red/) makes it possible for software developers and non-professional software developers to create sophisticated applications. 
+Node-RED is a widely adopted open-source low-code development tool that makes it easy to connect and integrate different sources of data. With a visual programming interface and drag-and-drop functionality, [Node-RED](/node-red/) makes it possible for software developers and non-professional software developers to create sophisticated applications. 
 
 In the manufacturing and industrial automation industry, the focus of the Industrial Internet of Things (IIoT) has been on integrating industrial processes and equipment to enable real-time monitoring, control, and analysis of data. For many use cases, instead of sending all the data to the cloud, the best practice for processing industrial data is to deploy the application to the edge of the network, referred to as edge computing. By processing the data closer to the data source, edge computing has many benefits, including reduced latency, limited downtime, conserving bandwidth, and increased privacy, and security.
 

@@ -26,7 +26,7 @@ We've added the ability for you to secure your HTTP endpoints. You can now contr
 [Read-only Users](https://github.com/flowforge/flowforge/issues/657)
 We've added a new user role for Read-only access. This will allow users to login to your FlowFuse project and view the Node-RED flows without them being able to edit anything.
 
-[Static Outbound IP Addresses](https://flowforge.com/docs/cloud/#ip-addresses)
+[Static Outbound IP Addresses](/docs/cloud/#ip-addresses)
 We've updated FlowFuse Cloud so that all outbound traffic from your projects now comes from a single IP address. When trying to access a remote resource such as a database it is often a requirement for the IP address the traffic comes from to be fixed. 
 
 ## Improvements
@@ -58,7 +58,7 @@ We'd like the thank the following for their contributions to this release:
 
 [ArshErgon](https://github.com/ArshErgon) for their work on [Update vue component name for NoVerifiedEmail.vue](https://github.com/flowforge/flowforge/pull/977)
 
-As an open-source project, we welcome the community involvement in what we're building. If you're interested in contributing, checkout our [guide in the docs](https://flowforge.com/docs/contribute/).
+As an open-source project, we welcome the community involvement in what we're building. If you're interested in contributing, checkout our [guide in the docs](/docs/contribute/).
 
 ### Try it out
 
@@ -69,7 +69,7 @@ As an open-source project, we welcome the community involvement in what we're bu
 [FlowFuse Cloud](https://app.flowforge.com) is already running 0.10 and the stacks updated. Upgrade your project stacks to the latest version to make sure you get all the latest changes.
 
 If you installed a previous version of FlowFuse and want to upgrade, our documentation provides a
-guide for [upgrading FlowFuse on a local server](http://flowforge.com/docs/install#upgrade).
+guide for [upgrading FlowFuse on a local server](/docs/upgrade/#upgrading-flowforge).
 
 ### Getting help
 

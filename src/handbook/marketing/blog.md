@@ -15,8 +15,9 @@ Content creation and blogging are an effective way to communicate with our commu
 4. Create the draft blog post in a Google Doc. The document should be stored in the [Marketing -> Content](https://drive.google.com/drive/folders/1sdyVfD29dFE74i7zfmL0Cp9tPmPyK0-8?usp=share_link){rel="nofollow"} folder. Everyone at FlowFuse should be given access to comment on the document.  Add a link to the document in the GitHub issue.
 5. Ask people to review the document draft by sharing it directly with them using the Share button in the document. This will send your reviewers an email notification. 
 6. As a document reviewer, you should leave red-line edits in the document or add comments to the document.
-7. Once the document is finished, create a new branch of the website repository and then follow our standard [development processes](https://flowforge.com/handbook/development/#development-board). Google Docs has an [extension to convert the document to markdown](https://workspace.google.com/marketplace/app/docs_to_markdown/700168918607?hl=en&pann=docs_addon_widget).
-5. It is OK for you to merge your own PR to main without review where the content is urgent or has been reviewed outside of Git but where it is practical to follow the [standard process](https://flowforge.com/handbook/development/#development-board) we encourage you to do so.
+7. Once the document is finished, create a new branch of the website repository and then follow our standard [development processes](/handbook/development/releases/planning/#development-board). Google Docs has an [extension to convert the document to markdown](https://workspace.google.com/marketplace/app/docs_to_markdown/700168918607?hl=en&pann=docs_addon_widget).
+5. It is OK for you to merge your own PR to main without review where the content is urgent or has been reviewed outside of Git but where it is practical to follow the
+[standard process](/handbook/development/releases/planning/#development-board) we encourage you to do so.
 
 ### Blog CMS
 

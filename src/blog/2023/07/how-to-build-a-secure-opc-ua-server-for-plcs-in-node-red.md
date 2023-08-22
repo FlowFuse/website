@@ -44,9 +44,8 @@ A visual representation of our PLC to OPC-UA Server architecture is shown in the
 4. Program the OPC Server address space
 5. Encrypt the OPC Server with SSL
 6. Set up the OPC Client  
- 
 
-The PLC is an Allen Bradley, and an instance of Node-RED running on the same OT network as the PLC will act as the OPC UA Server. In our Allen Bradley PLC, we will re-use an example from a [previous article](https://flowforge.com/blog/2023/06/node-red-as-a-no-code-ethernet_ip-to-s7-protocol-converter/) where the PLC is simulating a conveyor line, called *Line 4 PLC,* depicted as number 1 architecture drawing above. The tags below represent the data to be transferred from the Line 4 PLC to the Node-RED OPC UA server, depicted as number 2 in the architecture drawing.
+The PLC is an Allen Bradley, and an instance of Node-RED running on the same OT network as the PLC will act as the OPC UA Server. In our Allen Bradley PLC, we will re-use an example from a [previous article](/blog/2023/06/Node-RED-as-a-No-Code-Ethernet_IP-to-S7-Protocol-Converter/) where the PLC is simulating a conveyor line, called *Line 4 PLC,* depicted as number 1 architecture drawing above. The tags below represent the data to be transferred from the Line 4 PLC to the Node-RED OPC UA server, depicted as number 2 in the architecture drawing.
 
 | **Tag**          | **Data Type** | **Description**               |
 | ---------------- | ------------- | ----------------------------- |
@@ -89,7 +88,7 @@ Go to the `Nodes` tab and confirm the 3 custom nodes have been properly installe
 
 ## Set Up Ethernet/IP Data <a name="set-up-eth-ip"></a>
 
-Note: this process is largely a recap from the first part of a previous article where [Node-RED is used as an Ethernet/IP to S7 protocol converter](https://flowforge.com/blog/2023/06/node-red-as-a-no-code-ethernet_ip-to-s7-protocol-converter/).
+Note: this process is largely a recap from the first part of a previous article where [Node-RED is used as an Ethernet/IP to S7 protocol converter](/blog/2023/06/Node-RED-as-a-No-Code-Ethernet_IP-to-S7-Protocol-Converter/).
 
 Let’s start by dragging a `eth-ip in` node onto the palette. Then add a new endpoint, which will point to our Line4 PLC.
 
@@ -166,7 +165,7 @@ Let’s now tackle the OPC Server address space.
 
 ## Program the OPC UA Server Address Space <a name="program-opc-addres-space"></a>
 
-To make our lives significantly easier, we’re going to start from a template, the same template used in [part 1 of our OPC UA Series](https://flowforge.com/blog/2023/07/how-to-deploy-a-basic-opc-ua-server-in-node-red/).
+To make our lives significantly easier, we’re going to start from a template, the same template used in [part 1 of our OPC UA Series](/blog/2023/07/how-to-deploy-a-basic-opc-ua-server-in-node-red/).
 
 Copy the content of the [example template](https://github.com/BiancoRoyal/node-red-contrib-opcua-server/blob/master/examples/server-with-context.json), then paste it into Node-RED to import it.
 
@@ -185,7 +184,7 @@ Our custom flow should now look something like this.
 Open up the `Compact-Server` node and jump straight to the address space.  
 
 ![compact-server-node-address-space.png](./images/opc-ua-2/compact-server-node-address-space.png)
-- note - we won’t go into detail on what the address space actually is in this article, or the details of the `Compact-Server` node, as it was covered in [part 1 of this OPC UA series](https://flowforge.com/blog/2023/07/how-to-deploy-a-basic-opc-ua-server-in-node-red/).  Please read that article if you are unfamiliar with it.
+- note - we won’t go into detail on what the address space actually is in this article, or the details of the `Compact-Server` node, as it was covered in [part 1 of this OPC UA series](/blog/2023/07/how-to-deploy-a-basic-opc-ua-server-in-node-red/).  Please read that article if you are unfamiliar with it.
 
 There are 4 key things we’ll modify in the address space template code - 
 

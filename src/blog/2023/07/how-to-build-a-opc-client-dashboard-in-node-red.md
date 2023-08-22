@@ -10,11 +10,9 @@ tags:
     - flowforge
     - node-red
 ---
-This article is the third and final part of our OPC UA content series. In the [first article](https://flowforge.com/blog/2023/07/how-to-deploy-a-basic-opc-ua-server-in-node-red/), we cover some OPC UA fundamentals and walk through an example OPC UA Server flow. In the [second article](https://flowforge.com/blog/2023/07/how-to-build-a-secure-opc-ua-server-for-plcs-in-node-red/), we built a SSL-secured OPC UA server using data from an Allen Bradley PLC as a source. 
+This article is the third and final part of our OPC UA content series. In the [first article](/blog/2023/07/how-to-deploy-a-basic-opc-ua-server-in-node-red/), we cover some OPC UA fundamentals and walk through an example OPC UA Server flow. In the [second article](/blog/2023/07/how-to-build-a-secure-opc-ua-server-for-plcs-in-node-red/), we built a SSL-secured OPC UA server using data from an Allen Bradley PLC as a source. 
 In this article, we show how to build an OPC Client in Node-RED that communicates with a 3rd party OPC UA Server and utilizes an interactive dashboard.
 <!--more-->
-
-
 
 This article will requires the [Prosys OPC UA Simulation Server](https://prosysopc.com/products/opc-ua-simulation-server/), an application designed for testing OPC UA client applications and learning the technology.  It’s a free cross-platform application that supports Windows, Linux, and MacOS.  This article will use the Windows version.  
 
@@ -22,7 +20,7 @@ Note: full source code for the OPC Client Dashboard is included at the end of th
 
 ## Custom Nodes Used & Assumptions
 
-Several custom nodes are required in order to properly deploy this flow.  For more detailed information on how to install a custom node, follow the instructions from an [earlier article](https://flowforge.com/blog/2023/06/node-red-as-a-no-code-ethernet_ip-to-s7-protocol-converter/) where the process on installing custom nodes is explained in detail.
+Several custom nodes are required in order to properly deploy this flow.  For more detailed information on how to install a custom node, follow the instructions from an [earlier article](/blog/2023/06/Node-RED-as-a-No-Code-Ethernet_IP-to-S7-Protocol-Converter/) where the process on installing custom nodes is explained in detail.
 
 - [node-red-dashboard](https://flows.nodered.org/node/node-red-dashboard)
 - [node-red-contrib-opcua](https://flows.nodered.org/node/node-red-contrib-opcua)
@@ -30,7 +28,7 @@ Several custom nodes are required in order to properly deploy this flow.  For mo
 
 As this is not a production application, no security will be utilized, and it is assumed that the OPC UA Server is running on the same network as the Node-RED OPC Client.
 
-Is it also assumed that the end user of this article has familiarization with dashboards.  There are many dashboard basic guides available online, including a [node red quick tips - dashboard edition](https://flowforge.com/blog/2023/06/3-quick-node-red-tips-7/) here on FlowFuse.  You can still deploy the flow and access the dashboard UI at the url [http://localhost:1880/ui](http://localhost:1880/ui) (if the default settings are used), though this article does not delve into the details of dashboard building.  
+Is it also assumed that the end user of this article has familiarization with dashboards.  There are many dashboard basic guides available online, including a [node red quick tips - dashboard edition](/blog/2023/06/3-quick-node-red-tips-7/) here on FlowFuse.  You can still deploy the flow and access the dashboard UI at the url [http://localhost:1880/ui](http://localhost:1880/ui) (if the default settings are used), though this article does not delve into the details of dashboard building.  
 
 ## Install and Deploy the Prosys OPC UA Simulation Server
 

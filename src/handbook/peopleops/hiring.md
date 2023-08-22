@@ -26,25 +26,18 @@ To participate in FlowFuse's employee referral program, kindly send all referral
 ### Sharing an Existing Role
 
 The URLs for the existing roles we have on the website are any files found in [here](https://github.com/flowforge/website/tree/main/src/jobs).
-The URL will be structured accordingly: `https://flowforge.com/jobs/<job-short-title>`
+The URL will be structured accordingly: `/jobs/<job-short-title>`
 
 ## Interviews
 
-When a candidate applied they'll have at least two interviews with two different
-interviewers before an offer is extended to them. One interview will investigate
-the [fit on values](../company/values). The second will be a competency based
-interview.
+When a candidate applies, they will undergo three interviews with three different interviewers before receiving a job offer. The initial stage will involve an interview with the PeopleOps Manager, who will assess the candidate's alignment with our [company values](../company/values). The second interview will focus on competency and technical skills. Lastly, the candidate will participate in a STAR interview for the final round. 
 
-When interviewing to hire new team members, optimize for value-fit over
-culture-fit. Hiring for value-fit allows others to add to culture and thus fosters
-diversity and inclusivity.
+When conducting interviews to hire new team members, prioritize value-fit over culture-fit. Prioritizing value-fit enables individuals to contribute to the company culture, promoting diversity and inclusivity.
 
 ### STAR interviews
 
-Using [the STAR framework](https://www.themuse.com/advice/star-interview-method)
-candidates will be interviewed to describe their experiences in the past.
-Through their actions we hope to be able to predict their performance in the
-future.
+By utilizing [the STAR framework](https://www.themuse.com/advice/star-interview-method)
+andidates will be interviewed to share their past experiences. This approach enables us to assess their actions and achievements, aiming to predict their future performance.
 
 For the interviewer a template is available with the [STAR questions](https://docs.google.com/document/d/1v6C1Tf6B-hDOlA9GhR44Y2ftDgiwx4x_twnuo_N4pZE){rel="nofollow"}
 to make a copy of.
@@ -61,8 +54,8 @@ Please use [this template](https://docs.google.com/document/d/1rY0gLLpkOPBVGlMy7
 
 ## After an offer is accepted
 
-Onboarding on our EOR provider, Deel, takes at least 3 to 4 weeks. The start
-date for a new employee should be at least 3 to 4 weeks out. When a
+Onboarding on our EOR provider, Deel, takes at least 2 to 3 weeks. The start
+date for a new employee should be at least 2 to 3 weeks out. When a
 [conditional offer](#extending-an-offer) has been accepted you should immediately:
 
 1. [Create an onboarding issue](https://github.com/flowforge/admin/issues/new/choose){rel="nofollow"} on the admin GitHub project
@@ -79,30 +72,33 @@ During the onboarding process on our EOR provider platform, candidates must eith
 
 ## Onboarding
 
-Just before your first day of work at FlowFuse, you will receive an email requesting your GitHub username and preferred company email address. An issue
-will be created on our [internal issue tracker][issue-tracker] with steps for you and
+Just before your first day of work at FlowFuse, you will receive an email requesting your GitHub username
+and preferred company email address. An issuewill be created on our [internal issue tracker][issue-tracker] with steps for you and
 the team to complete once you start.
 
 On the day you start, a message will be sent to your personal email address to grant you access to your FlowFuse email address.
+This process ensures that all new joiners receive access either on their first day or up to 24 hours before their official start date.
 
-After setting up your password, you must [turn on the 2-Step Verification](https://support.google.com/accounts/answer/185839?hl=en&co=GENIE.Platform%3DDesktop). Otherwise, after a few days, you will be locked out of your account and will need an admin's help to log back in.
+
+Upon setting up your password, it is essential to [turn on the 2-Step Verification](https://support.google.com/accounts/answer/185839?hl=en&co=GENIE.Platform%3DDesktop). Failure to do so may result in being locked out of your account after a few days, requiring assistance from an admin to regain access.
 
 Once your FlowFuse email is set up, you will have access to invitations to other services and platforms, including 1Password. [Set this up](https://support.1password.com/explore/team-member/) as soon as possible to add a security layer to all your FlowFuse accounts.
 
-On your first day, after your email and 1Password accounts are set up, you should prioritize gaining access to Slack, the FlowFuse GitHub organization, and completing your onboarding issue. Your manager will also assign work for you to start on in the first week.
-
-[issue-tracker]: https://github.com/flowforge/admin/issues
+On your first day, once your email and 1Password accounts are set up, it is important to prioritize
+gaining access to Slack, the FlowFuse GitHub organization, and completing your onboarding issue.
+Additionally, your manager will assign tasks for you to begin working on during your first week.
 
 ## Greenhouse
 
 ### Opening a Job
 
 When opening a job post, you'll need a couple of things:
-1. A draft Job Description
-1. Approved role availability
-1. Support for a PeopleOps Manager to setup the role in Greenhouse
 
-Once these are in place a pipeline needs to be designeed by the PeopleOps manager.
+1. A draft Job Description
+2. Verifying the availability of the approved role.
+3. Set up the role within Greenhouse. The Peopleops manager will provide support in case any custom alterations to the job post are required.
+
+Once these elements are in place, the PeopleOps Manager will proceed to design a pipeline for the hiring process.
 
 ### Pipeline design
 
@@ -112,13 +108,7 @@ For each stage of the hiring pipeline scoresheets **must** be filled out. Each s
 
 #### Accepting applications
 
-Applicants for a job must provide their resume. Optionally a cover letter could
-be supplied. Furthermore, it's recommended to include one or two acceptance
-questions to filter applicants. These questions should be related to the position
-being opened. For example; for a developer you might ask what happens if someone
-types `https://flowforge.com` in their browser, after they press enter. Aim to
-be thought provoking with the question, though the answer shouldn't take over
-a minute or two to think of and type for a skilled candidate.
+Applicants for a job are required to submit their resume, and it is optional for them to include a cover letter. Additionally, it is recommended to include one or two acceptance questions that are relevant to the specific position. These questions should be thought-provoking, yet not overly time-consuming, and they should allow skilled candidates to provide a response within a minute or two. For example, for a developer position, a question could be: "What happens if someone types 'https://flowforge.com' in their browser and presses enter?" The intention is to engage candidates and assess their problem-solving skills.
 
 #### Initial Review
 

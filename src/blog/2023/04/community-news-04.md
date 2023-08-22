@@ -18,24 +18,24 @@ Welcome to the FlowFuse newsletter for April 2023, a monthly roundup of what’s
 ## Upcoming events
 
 ### Node-RED Ask Me Anything
-Back by popular demand, FlowFuse is hosting a monthly Node-RED Ask Me Anything session on April 13th. This is a great opportunity to ask Nick O’Leary, co-creator of Node-RED & FlowFuse CTO, and Rob Marcer, Node-RED FlowFuse Developer Educator your questions about Node-RED. [Sign-up today to participate](https://flowforge.com/ask-me-anything/ama-nodered-april/). 
+Back by popular demand, FlowFuse is hosting a monthly Node-RED Ask Me Anything session on April 13th. This is a great opportunity to ask Nick O’Leary, co-creator of Node-RED & FlowFuse CTO, and Rob Marcer, Node-RED FlowFuse Developer Educator your questions about Node-RED. [Sign-up today to participate](/ask-me-anything/ama-nodered-april/). 
 
 ### Connect, Integrate, Visual Industrial Production Metrics with Node-RED
 
-Join Steve McLaughlin from FlowFuse as he showcases how easy it is to use Node-RED to visualize popular production metrics using Node-RED. [Register today](https://flowforge.com/webinars/2023/industrial-data-node-red/).
+Join Steve McLaughlin from FlowFuse as he showcases how easy it is to use Node-RED to visualize popular production metrics using Node-RED. [Register today](/webinars/2023/industrial-data-node-red/).
 
 ## From our Blog
-[Comparing Node-RED Dashboards Solutions](https://flowforge.com/blog/2023/03/comparing-node-red-dashboards/) - A popular article comparing Node-RED Dashboard, uibuilder and FlexDash.
+[Comparing Node-RED Dashboards Solutions](/blog/2023/03/comparing-node-red-dashboards/) - A popular article comparing Node-RED Dashboard, uibuilder and FlexDash.
 
-[IBM Cloud removes Node-RED starter application](https://flowforge.com/blog/2023/03/ibmcloud-starter-removed/) - IBM has discontinued their Node-RED Starter Application, discover how to migrate to FlowFuse.
+[IBM Cloud removes Node-RED starter application](/blog/2023/03/ibmcloud-starter-removed/) - IBM has discontinued their Node-RED Starter Application, discover how to migrate to FlowFuse.
 
-[The benefits and drawbacks of using Node-RED function nodes](https://flowforge.com/blog/2023/03/why-should-you-use-node-red-function-nodes/) - Node-RED function nodes provide a great deal of flexibility in Node-RED. Discover the benefits and drawbacks of using them.
+[The benefits and drawbacks of using Node-RED function nodes](/blog/2023/03/why-should-you-use-node-red-function-nodes/) - Node-RED function nodes provide a great deal of flexibility in Node-RED. Discover the benefits and drawbacks of using them.
 
-[FlowFuse 15. Now Available](https://flowforge.com/blog/2023/03/flowforge-1-5-0-released/) - FlowFuse 1.5 included updates to the UI and architecture to allow for future features.
+[FlowFuse 15. Now Available](/blog/2023/03/flowforge-1-5-0-released/) - FlowFuse 1.5 included updates to the UI and architecture to allow for future features.
 
 Node-RED Quick Tips - Rob Marcer, FlowFuse Developer Educator has a weekly series of Node-RED hints and tips
-* [Node-RED Tips - Importing, Exporting, and Grouping Flows](https://flowforge.com/blog/2023/03/3-quick-node-red-tips-5/)
-* [Node-RED Tips - Smooth, Catch, and Math](https://flowforge.com/blog/2023/03/3-quick-node-red-tips-4/)
+* [Node-RED Tips - Importing, Exporting, and Grouping Flows](/blog/2023/03/3-quick-node-red-tips-5/)
+* [Node-RED Tips - Smooth, Catch, and Math](/blog/2023/03/3-quick-node-red-tips-4/)
 
 ## From the Community
 
@@ -51,6 +51,6 @@ If you would like to include a map in your next project Worldmap is a really goo
 ## Join Our Team
 FlowFuse is expanding our team. Check out the current openings:
 
-* **[Developer Advocate - Manufacturing & Industrial Automation](https://boards.greenhouse.io/flowforge/jobs/4798023004)**
+* **[Developer Advocate - Manufacturing & Industrial Automation](https://boards.greenhouse.io/flowfuse/jobs/4798023004)**
 
 

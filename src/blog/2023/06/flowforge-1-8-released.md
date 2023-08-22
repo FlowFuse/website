@@ -16,11 +16,11 @@ FlowFuse 1.8 introduces two key features that allow organizations to reliably de
 <!--more-->
 
 ## More reliable and scalable Node-RED applications
-FlowFuse now makes it possible to deploy business critical applications built in Node-RED that are reliable and scalable. The new 1.8 features allows a Node-RED instance to be deployed in high availability mode, meaning two instances of the same Node-RED flows are available behind a load balancer. This allows for increased traffic to be automatically distributed across the two Node-RED instances. This means your Node-RED applications can handle more traffic and experience less downtime. For more details, please see our [documentation](https://flowforge.com/docs/user/high-availability).
+FlowFuse now makes it possible to deploy business critical applications built in Node-RED that are reliable and scalable. The new 1.8 features allows a Node-RED instance to be deployed in high availability mode, meaning two instances of the same Node-RED flows are available behind a load balancer. This allows for increased traffic to be automatically distributed across the two Node-RED instances. This means your Node-RED applications can handle more traffic and experience less downtime. For more details, please see our [documentation](/docs/user/high-availability).
 
-Additionally, we're pleased to offer a 30-day premium trial license for self-managed installs on Kubernetes. To avail of this offer, book a demo at [flowforge.com/book-demo](https://flowforge.com/book-demo).
+Additionally, we're pleased to offer a 30-day premium trial license for self-managed installs on Kubernetes. To avail of this offer, book a demo at [flowforge.com/book-demo](/book-demo).
 
-High Availability is our first [preview feature](https://flowforge.com/handbook/product/versioning/#preview-features), and your feedback is crucial. We encourage you to try out HA in your Node-RED instances and share your experiences with us. Your feedback will help us refine this feature and make it even better.
+High Availability is our first [preview feature](/handbook/product/versioning/#preview-features), and your feedback is crucial. We encourage you to try out HA in your Node-RED instances and share your experiences with us. Your feedback will help us refine this feature and make it even better.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/mbDkjKhVwIw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
@@ -38,11 +38,11 @@ In our previous release, we introduced [Editor Access for Devices](../../05/flow
 
 Imagine this: Your industrial equipment arrives with the Device Agent preinstalled. In the past, you might have faced challenges in configuring and connecting your device with FlowFuse, particularly if you had no direct shell access. But not any more.
 
-With the newly introduced UI, you can easily set up and connect your device with FlowFuse without needing to access the command line interface directly. This simplifies the process significantly and saves you time. For more details, see our [documentation](https://flowforge.com/docs/user/devices/).
+With the newly introduced UI, you can easily set up and connect your device with FlowFuse without needing to access the command line interface directly. This simplifies the process significantly and saves you time. For more details, see our [documentation](/docs/user/devices/).
 
 ## Node-RED 3.1 Beta 3 Available
 
-FlowFuse Cloud is a great place to try out the new Node-RED features, with FlowFuse Cloud now including the [Node-RED 3.1.0-beta.3](https://discourse.nodered.org/t/node-red-3-1-0-beta-3-released/78716). If you want to try this version you can [duplicate your instance](https://flowforge.com/docs/user/instance-settings/) and [upgrade your stack](https://flowforge.com/docs/user/changestack/).
+FlowFuse Cloud is a great place to try out the new Node-RED features, with FlowFuse Cloud now including the [Node-RED 3.1.0-beta.3](https://discourse.nodered.org/t/node-red-3-1-0-beta-3-released/78716). If you want to try this version you can [duplicate your instance](/docs/user/instance-settings/) and [upgrade your stack](/docs/user/changestack/).
 
 ## Ongoing Topics
 
@@ -54,7 +54,7 @@ We're making great strides on our journey towards SOC2 certification, striving t
 
 We're always working to enhance your experience with FlowFuse. Here's how you can stay informed and contribute:
 
-- **Roadmap Overview**: Check out our [Product Roadmap Page](https://flowforge.com/product/roadmap/) to see what we're planning for future updates.
+- **Roadmap Overview**: Check out our [Product Roadmap Page](/product/roadmap/) to see what we're planning for future updates.
 - **Entire Roadmap**: Visit our [Roadmap on GitHub](https://github.com/orgs/flowforge/projects/5) to follow our progress and contribute your ideas.
 - **Feedback**: We're interested in your thoughts about FlowFuse. Your feedback is crucial to us, and we'd love to hear about your experiences with the new features and improvements. Please share your thoughts, suggestions, or report any [issues on GitHub](https://github.com/flowforge/flowforge/issues/new/choose). 
 
@@ -81,7 +81,7 @@ HOME env var not set within Node-RED process [#117](https://github.com/flowforge
 ## Try it out
 
 We're confident you can have self managed FlowFuse running locally in under 30 minutes.
-You can install our [local build](https://flowforge.com/docs/install/local/), use [Docker](https://flowforge.com/docs/install/docker/), or [Kubernetes](https://flowforge.com/docs/install/kubernetes/).
+You can install our [local build](/docs/install/local/), use [Docker](/docs/install/docker/), or [Kubernetes](/docs/install/kubernetes/).
 
 If you'd rather use our hosted offering: [Get started for free](https://app.flowforge.com/account/create) on FlowFuse Cloud.
 
@@ -90,9 +90,9 @@ If you'd rather use our hosted offering: [Get started for free](https://app.flow
 [FlowFuse Cloud](https://app.flowforge.com) is already running 1.8.
 
 If you installed a previous version of FlowFuse and want to upgrade, our documentation provides a
-guide for [upgrading your FlowFuse instance](https://flowforge.com/docs/upgrade/).
+guide for [upgrading your FlowFuse instance](/docs/upgrade/).
 
 ## Getting help
 
-Please check FlowFuse's [documentation](https://flowforge.com/docs/) as the answers to many questions are covered there. Additionally you can go the the [community forum](https://community.flowfuse.com) if you have
+Please check FlowFuse's [documentation](/docs/) as the answers to many questions are covered there. Additionally you can go the the [community forum](https://community.flowfuse.com) if you have
 any feedback or feature requests.

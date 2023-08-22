@@ -15,13 +15,13 @@ Welcome to the FlowFuse newsletter, a regular roundup of what\`s happening with 
 <!--more-->
 If you've got something that you'd like us to share please email [contact@flowfuse.com](mailto:contact@flowfuse.com).
 
-[FlowFuse 0.4](https://flowforge.com/blog/2022/04/flowforge-04-released/)  
+[FlowFuse 0.4](/blog/2022/04/flowforge-04-released/)  
 The next release has enabled us to offer multiple versions of Node-RED along with adding more features to help you configure your Node-RED projects.
 
 [Node-RED 3.0.0-beta-1](https://discourse.nodered.org/t/node-red-3-0-0-beta-1-released/62124)  
 The first beta for Node-RED 3.0.0 has been published, there's some exciting improvements on UI in the editor to make designing your flows even easier.
 
-[Node-RED Beta on FlowFuse](https://flowforge.com/blog/2022/05/node-red-3-beta-stack/)  
+[Node-RED Beta on FlowFuse](/blog/2022/05/node-red-3-beta-stack/)  
 As promised in out 0.4 announcement, we've made the beta available to our users on FlowFuse as a separate stack, this is just one way that we're able to demonstrate the flexibility you get from running Node-RED on FlowFuse.
 
 [Cisco & Node-RED](https://developer.cisco.com/meraki/build/exploring-meraki-and-spark-apis-with-node-red/)  
