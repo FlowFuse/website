@@ -22,7 +22,7 @@ Sometimes it's quicker to search for a node using its name rather than scrolling
 
 ### 2. Split sections of your code using the link nodes
 
-If you want to separate your flow into two distinct sections, link nodes are a great way to format your work. As we covered in our blog on [Node-RED best practices](https://flowforge.com/blog/2022/12/node-red-flow-best-practice), the combination of link nodes and grouped flows is very powerful.
+If you want to separate your flow into two distinct sections, link nodes are a great way to format your work. As we covered in our blog on [Node-RED best practices](/blog/2022/12/node-red-flow-best-practice), the combination of link nodes and grouped flows is very powerful.
 
 To split your flow select the input and output nodes then right click, select 'Show Action List' and then type 'split'. Select 'Split wire with link nodes'.
 

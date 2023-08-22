@@ -36,7 +36,7 @@ it uses an HTTP polling approach to check for updates. That was a pragmatic choi
 to get something working - but it isn't our long term strategy. We'll be working
 towards a more IoT-native MQTT/WebSocket appoach in the coming releases.
 
- - [Devices documentation](https://flowforge.com/docs/user/devices/)
+ - [Devices documentation](/docs/user/devices/)
  - [Epic #446 - Devices](https://github.com/flowforge/flowforge/issues/446)
 
 ### Snapshots
@@ -49,7 +49,7 @@ With this release we support *creating* snapshots and pushing them to devices.
 We don't have the ability to revert a project back to a previous snapshot, but
 that will come soon.
 
- - [Snapshot documentation](https://flowforge.com/docs/user/snapshots/)
+ - [Snapshot documentation](/docs/user/snapshots/)
  - [Story #587 - Snapshot/Rollback](https://github.com/flowforge/flowforge/issues/587)
 
 ### Other updates
@@ -70,7 +70,7 @@ Node-RED editor sessions you have open.
 you to start creating snapshots and adding devices right now.
 
 If you installed a previous version of FlowFuse and want to upgrade, our documentation provides a
-guide for [upgrading FlowFuse on a local server](http://flowforge.com/docs/install#upgrade).
+guide for [upgrading FlowFuse on a local server](/docs/upgrade/#upgrading-flowforge).
 
 ### Getting help
 

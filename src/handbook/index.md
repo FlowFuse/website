@@ -47,7 +47,6 @@ To run our company we provide a comprehensive guide outlining policies, procedur
 | [Sales](/handbook/sales/)<br /><p>Meeting customer demand.</p>|
 | [Customer Success](/handbook/operations/customer-success.md)<br /><p>Happy customers is what makes FlowFuse a sustainable business.</p>
 | |
-
  
 ### About the Handbook
 
@@ -64,7 +63,7 @@ conversation about what we do.
 The handbook is maintained on [GitHub](https://github.com/flowforge/website/tree/main/src/handbook) and contributions can be made through pull-requests.
 
 All changes merged to the `main` branch will be automatically deployed to the handbook on the
-[FlowFuse website](https://flowforge.com/handbook).
+[FlowFuse website](https://flowfuse.com/handbook).
 
 ##### Building the site locally
 

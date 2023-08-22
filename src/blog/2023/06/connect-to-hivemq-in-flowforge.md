@@ -59,4 +59,4 @@ MQTT has emerged as a lightweight and efficient messaging protocol for IIoT appl
 
 For the sake of simplicity we've sent messages from one Node-RED to another Node-RED.
 Sending data from and to a Node-RED is much easier achieved with the FlowFuse
-[Project Nodes](https://flowforge.com/docs/user/projectnodes/).
+[Project Nodes](/docs/user/projectnodes/).

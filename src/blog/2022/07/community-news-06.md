@@ -15,7 +15,7 @@ Welcome to the FlowFuse newsletter, a regular roundup of what\`s happening with 
 <!--more-->
 If you've got something that you'd like us to share please email [contact@flowfuse.com](mailto:contact@flowfuse.com).
 
-[FlowFuse 0.7 ](https://flowforge.com/blog/2022/07/flowforge-07-released)  
+[FlowFuse 0.7 ](/blog/2022/07/flowforge-07-released)  
 We've shipped the next version of FlowFuse, features in this release include the ability to Rollback a project to a previous snapshot, setting environment variables for a specific device and we've begun to unify the experience between the Forge app and the Node-RED editor with our own Node-RED theme.
 
 [Node-RED 3.0 Released ](https://nodered.org/blog/2022/07/14/version-3-0-released)  

@@ -18,24 +18,24 @@ Welcome to the FlowFuse newsletter for May 2023, a monthly roundup of what’s b
 ## Upcoming events
 
 ### Ask Me Anything about Debugging Node-RED
-Our monthly Node-RED AMA session will have a special focus on debugging. Nick and Rob will lead us through some useful debug workflows to show how they approach debugging Node-RED applications. During the live coding sessions there will be opportunities for attendees to ask questions in real-time. Join us to learn from the experts on the tips and tricks for debugging Node-RED flows. [Sign-up today to participate](https://flowforge.com/ask-me-anything/ama-nodered-may/). 
+Our monthly Node-RED AMA session will have a special focus on debugging. Nick and Rob will lead us through some useful debug workflows to show how they approach debugging Node-RED applications. During the live coding sessions there will be opportunities for attendees to ask questions in real-time. Join us to learn from the experts on the tips and tricks for debugging Node-RED flows. [Sign-up today to participate](/ask-me-anything/ama-nodered-may/). 
 
 ### Getting Started with Node-RED Dashboard
-How can you use Node-RED to create dashboards and interactive graphs of your data? The answer is the Node-RED Dashboard node, the most popular node in the Node-RED community. In this webinar, Rob Marcer will take you through the steps of how to get started with the Node-RED Dashboard. [Register today](https://flowforge.com/webinars/2023/getting-started-nodered-dashboard/).
+How can you use Node-RED to create dashboards and interactive graphs of your data? The answer is the Node-RED Dashboard node, the most popular node in the Node-RED community. In this webinar, Rob Marcer will take you through the steps of how to get started with the Node-RED Dashboard. [Register today](/webinars/2023/getting-started-nodered-dashboard/).
 
 ## From our Blog
 
-[Chat GPT in Node-RED Function Nodes](https://flowforge.com/blog/2023/05/chatgpt-nodered-fcn-node/) - Use Chat GPT to write Node-RED functions directly in the Node-RED interface.
+[Chat GPT in Node-RED Function Nodes](/blog/2023/05/chatgpt-nodered-fcn-node/) - Use Chat GPT to write Node-RED functions directly in the Node-RED interface.
 
-[Securing Node-RED](https://flowforge.com/blog/2023/04/securing-node-red-in-production/) - A look at how you can secure Node-RED deployments.
+[Securing Node-RED](/blog/2023/04/securing-node-red-in-production/) - A look at how you can secure Node-RED deployments.
 
-[Node-RED Community Health](https://flowforge.com/blog/2023/04/nodered-community-health/) - Some key community metrics for the Node-RED community.
+[Node-RED Community Health](/blog/2023/04/nodered-community-health/) - Some key community metrics for the Node-RED community.
 
-[FlowFuse's visit to Hannover Messe 2023](https://flowforge.com/blog/2023/04/hannover-messe/) - Our CEO and Product Manager visited Hannover Messe in Germany; one of the largest trade shows for manufacturing.
+[FlowFuse's visit to Hannover Messe 2023](/blog/2023/04/hannover-messe/) - Our CEO and Product Manager visited Hannover Messe in Germany; one of the largest trade shows for manufacturing.
 
-[FlowFuse 1.6 Now Available](https://flowforge.com/blog/2023/04/flowforge-1-6-released/) - FlowFuse 1.6 included support for multi-instance Node-RED within a single application as well as support for logging from remote devices.
+[FlowFuse 1.6 Now Available](/blog/2023/04/flowforge-1-6-released/) - FlowFuse 1.6 included support for multi-instance Node-RED within a single application as well as support for logging from remote devices.
 
-[Node-RED Tips - Subflows, Link Nodes, and the Range Node](https://flowforge.com/blog/2023/04/3-quick-node-red-tips-6/)
+[Node-RED Tips - Subflows, Link Nodes, and the Range Node](/blog/2023/04/3-quick-node-red-tips-6/)
 
 ## From the Community
 

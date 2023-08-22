@@ -253,7 +253,7 @@ Now that the query is coming back from InfluxDB, let’s break down how to trans
 ![alt_text](images/influxdb-historical-data/data-format-27.png "Data Format")
 
 
-Rob Marcer has a great article on working with persistent chart data found here: [https://flowforge.com/blog/2023/05/persisting-chart-data-in-node-red/](https://flowforge.com/blog/2023/05/persisting-chart-data-in-node-red/).
+Rob Marcer has a great article on working with persistent chart data found here: [/blog/2023/05/persisting-chart-data-in-node-red/](/blog/2023/05/persisting-chart-data-in-node-red/).
 
 We can use a series of nodes from the Node-RED core package to transform this data.
 

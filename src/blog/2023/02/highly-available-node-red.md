@@ -43,7 +43,7 @@ functions you might just achieve an MTTR of 120 minutes!
 What's needed to bring this back to say 10 minutes? First, adopting FlowFuse will
 help massively here. FlowFuse can be installed on-premise, or you can use our
 managed Cloud offering. The software is the same, provided the on-premise
-install uses our [Kubernetes install](https://flowforge.com/docs/install/kubernetes/) method.
+install uses our [Kubernetes install](/docs/install/kubernetes/) method.
 
 The key of the installation is the fact that the hardware layer is generalized
 as a fleet. Detecting failures is included in the install, and very fast. Comparing

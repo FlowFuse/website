@@ -15,7 +15,7 @@ support for the Node-RED community.
 
 <!--more-->
 
-One of our [founding principles](https://flowforge.com/handbook/company/#open-source-stewardship) is
+One of our [founding principles](/handbook/company/principles/#open-source-stewardship) is
 the importance of Open Source being at the core of what we do.
 
 Node-RED has been part of the [OpenJS Foundation](https://openjsf.org/) since it was formed in 2019.

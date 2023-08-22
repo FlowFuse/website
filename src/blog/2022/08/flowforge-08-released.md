@@ -61,14 +61,14 @@ We'd like the thank the following for their contributions to this release:
  - [HaroldPetersInskipp](https://github.com/HaroldPetersInskipp) helped [updating our documentation](https://github.com/flowforge/flowforge/pull/812)
  - [Steveorevo](https://github.com/Steveorevo) also [updated our documentation](https://github.com/flowforge/flowforge/pull/818)
 
-As an open-source project, we welcome the community involvement in what we're building. If you're interested in contributing, checkout our [guide in the docs](https://flowforge.com/docs/contribute/).
+As an open-source project, we welcome the community involvement in what we're building. If you're interested in contributing, checkout our [guide in the docs](/docs/contribute/).
 
 ### Upgrading FlowFuse
 
 [FlowFuse Cloud](https://app.flowforge.com) is already running 0.8 and the stacks updated. Upgrade your project stacks to the latest version and start using the Project Link nodes now.
 
 If you installed a previous version of FlowFuse and want to upgrade, our documentation provides a
-guide for [upgrading FlowFuse on a local server](http://flowforge.com/docs/install#upgrade).
+guide for [upgrading FlowFuse on a local server](/docs/upgrade/#upgrading-flowforge).
 
 ### Getting help
 

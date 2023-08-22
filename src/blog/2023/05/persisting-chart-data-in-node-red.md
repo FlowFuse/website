@@ -105,7 +105,7 @@ We can now access the data by simply visiting the URL of the API.
 
 ![The chart data accessed via the API in a web browser](./images/data-in-browser.png "The chart data accessed via the API in a web browser")
 
-Bear in mind that you should secure the API as appropriate for the data. If you don't put security around the API, anyone on the same network as your Node-RED instance can access your chart data. Potentially that could give access to our data to the whole internet, so where needed take steps to keep your data safe. You can read more about securing Node-RED in our [blog post here](https://flowforge.com/blog/2023/04/securing-node-red-in-production/).
+Bear in mind that you should secure the API as appropriate for the data. If you don't put security around the API, anyone on the same network as your Node-RED instance can access your chart data. Potentially that could give access to our data to the whole internet, so where needed take steps to keep your data safe. You can read more about securing Node-RED in our [blog post here](/blog/2023/04/securing-node-red-in-production/).
 
 We now need to get that data back into a Node-RED instance. We can do that by editing a node and pasting in the data we got from the API. The flow below shows where you can paste in your data, you will then need to deploy and manually trigger 'import data'.
 
