@@ -1,6 +1,51 @@
 # FlowFuse Branding Guidelines
 
 For FlowFuse Assets (e.g. logos, pictograms, and raw design files), please look in the [`/design/Media`](https://drive.google.com/drive/u/1/folders/1guBnBUrIiRXuK6vsik_NIXIhtE1cZRRa) folder on Google Drive.
+
+## Logo
+
+### Composition
+
+Our logo is a combination mark, featuring an abstract symbol that represents the flows connecting the nodes, along with a wordmark displaying our name.
+
+### Versions
+
+The horizontal version is the preferred choice. When space and layout constraints make this option an awkward fit, forcing the logo to be too small, the vertical version can be used.
+
+(Image of horizontal, vertical and icon)
+
+### Minimun Sizes
+
+The symbol can stand alone without the wordmark when the size becomes so small that using either combination mark would render the wordmark unreadable.
+
+(Image of minimum sizes)
+
+### Construction and correct usage
+
+The order, distance, and proportion of the elements composing the combination mark must not be altered in any way.
+
+A safety area is defined to ensure proper image usage and readability.
+
+(Image of log construction and safety area)
+
+### Chromatic Versions
+
+Depending on the background against which the logo is presented, there are corresponding versions to be used.
+
+For **dark backgrounds**, search for the file name ending with "dark", such as: *ff-logo--wordmark--dark.png*
+
+(Image of chromatic versions)
+
+For **light backgrounds**, search for the file name ending with "light", like: *ff-logo--wordmark--light.png*
+
+(Image of chromatic versions)
+
+Please note that the dark background version consists of two colors, while the remaining versions consist of a single color. Additionally, the shade of red varies according to the background.
+
+And for **monochromatic** images, when only black or white are allowed, search for the file name ending with "black" or "white". For instance: *ff-logo--wordmark--white.png*
+
+(Image of chromatic versions)
+
 ## Fonts
 
 In both the FlowFuse application and on our website, we use [Tailwind CSS](https://tailwindcss.com/). With Tailwind, comes the `font-sans` class, which we use across FlowFuse.
