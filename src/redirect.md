@@ -28,6 +28,7 @@ redirects:
   - { "from": "/docs/user/devices/", "to": "/docs/device-agent/introduction" }
   - { "from": "/blog/2023/06/node-explained-split/", "to": "/node-red/core-nodes/split/"}
   - { "from": "/blog/2023/07/node-explained-filter/", "to": "/node-red/core-nodes/rbe/"}
+  - { "from": "/blog/2022/12/node-red-exec-explained/", "to": "/node-red/core-nodes/exec/"}
 # The "permalink" attribute determines where the output page will be located.
 permalink: "{{ redirect.from }}"
 # The "redirect" layout just has a small html header with the meta tags that do redirection.
