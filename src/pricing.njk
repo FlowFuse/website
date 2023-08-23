@@ -5,11 +5,12 @@ sitemapPriority: 0.90
 meta:
     description: Find out how much it costs to use FlowFuse.
 ---
-<div class="w-full bg-gray-800">
-<div class="text-center w-full mt-8">
+<div class="pricing">
+<div class="w-full gradient-bg">
+<div class="text-center w-full pt-8">
     <h1 class="text-teal-300">Pricing</h1> 
 </div>
-<div class="px-6 pricing-tiles flex flex-col mb-16 md:max-w-screen-lg">
+<div class="px-6 pricing-tiles flex flex-col pb-16 md:max-w-screen-lg">
     <div class="flex px-6 -mb-6 mx-auto text-gray-400 md:max-w-screen-lg md:mb-1 md:block">
         <p class="lead-p max-w-screen-lg m-auto text-center md:max-w-xl md:px-4">
             Easy to get started and scale to meet your requirements.
@@ -38,8 +39,7 @@ meta:
                 <div class="pricing-tile-background pb-6 md:grid flex-col">
                     <div class="flex flex-col items-center text-left md:flex-row md:-mb-0 md:px-0 md:block md:i md:items-left">
                         <div class="flex flex-row justify-between mt-4 w-full gap-x-2">
-                            <h4 style="display:inline-block;">Starter</h4>
-                            <label class="label self-end">FlowForge Cloud</label>
+                            <h4 style="display:inline-block;">Starter</h4>                            
                         </div>
                         <p class="mt-7"><span class="inline font-normal">Ideal to get started. </span>Quick hosting of Node-RED instances.</p>
                     </div>
@@ -67,8 +67,7 @@ meta:
                 <div class="pricing-tile-background pb-6 md:grid flex-col">
                     <div class="flex flex-col items-center text-left md:flex-row md:-mb-0 md:px-0 md:block md:i md:items-left">
                         <div class="flex flex-row justify-between mt-4 w-full gap-x-2">
-                            <h4 style="display:inline-block;">Team</h4>
-                            <label class="label self-end">FlowForge Cloud</label>
+                            <h4 style="display:inline-block;">Team</h4>                        
                         </div>
                         <p class="mt-7">Allows <span class="inline font-normal">Node-RED developer teams</span> to benefit from the FlowForge platform.</p>
                     </div>
@@ -87,7 +86,7 @@ meta:
                         <div class="md:text-left items-left w-full mb-11 flex flex-row">
                             <h2 class="self-end">$25</h2>
                             <div class= "pl-2 text-sm leading-4 text-left self-end pb-1">
-                                <note class="note text-teal-100">/Node-RED</br>instance/month</note>    
+                                <note class="note text-teal-100">/instance/month</note>    
                             </div>
                         </div>
                         <a class="ff-btn ff-btn--primary uppercase align-baseline w-full" href='/book-demo' onclick="capture('cta-contact', {'position': 'primary'}, {'plan': 'cloud-team'})">BOOK A DEMO</a> 
@@ -99,8 +98,7 @@ meta:
                 <div class="pricing-tile-background pb-6 md:grid flex-col">
                     <div class="flex flex-col items-center text-left md:flex-row md:-mb-0 md:px-0 md:block md:i md:items-left">
                         <div class="flex flex-row justify-between mt-4 w-full gap-x-2">
-                            <h4 style="display:inline-block;">Enterprise</h4>
-                            <label class="label self-end">FlowForge Cloud</label>
+                            <h4 style="display:inline-block;">Enterprise</h4>                            
                         </div>
                         <p class="mt-7">For <span class="inline font-normal">business critical applications</span> that require high availability and enterprise support.</p>
                     </div>
@@ -128,8 +126,7 @@ meta:
                 <div class="pricing-tile-background pb-6 md:grid flex-col">
                     <div class="flex flex-col items-center text-left md:flex-row md:-mb-0 md:px-0 md:block md:i md:items-left">
                         <div class="flex flex-row justify-between mt-4 w-full gap-x-2">
-                            <h4 style="display:inline-block;">Starter</h4>
-                            <label class="label self-end">Self-Hosted</label>
+                            <h4 style="display:inline-block;">Starter</h4>                            
                         </div>
                         <p class="mt-7">Download the <span class="inline font-normal">open source edition</span> of FlowForge platform to get started.</p>
                     </div>
@@ -154,8 +151,7 @@ meta:
                 <div class="pricing-tile-background pb-6 md:grid flex-col">
                     <div class="flex flex-col items-center text-left md:flex-row md:-mb-0 md:px-0 md:block md:i md:items-left">
                         <div class="flex flex-row justify-between mt-4 w-full gap-x-2">
-                            <h4 style="display:inline-block;">Team</h4>
-                            <label class="label self-end">Self-Hosted</label>
+                            <h4 style="display:inline-block;">Team</h4>                            
                         </div>
                         <p class="mt-7">Allows <span class="inline font-normal">Node-RED developer teams</span> to benefit from FlowForge platform.</p>
                     </div>
@@ -180,8 +176,7 @@ meta:
                 <div class="pricing-tile-background pb-6 md:grid flex-col">
                     <div class="flex flex-col items-center text-left md:flex-row md:-mb-0 md:px-0 md:block md:i md:items-left">
                         <div class="flex flex-row justify-between mt-4 w-full gap-x-2">
-                            <h4 style="display:inline-block;">Enterprise</h4>
-                            <label class="label self-end">Self-Hosted</label>
+                            <h4 style="display:inline-block;">Enterprise</h4>                            
                         </div>
                         <p class="mt-7">For <span class="inline font-normal">business critical applications</span> that require high availability and enterprise support.</p>
                     </div>
@@ -209,6 +204,7 @@ meta:
         </a>
     </div>
     </div>
+</div>
 </div>
 
 {% include "components/divider-flow--top-red--light.njk" %}
