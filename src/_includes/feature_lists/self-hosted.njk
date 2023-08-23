@@ -54,7 +54,7 @@
             info: "<p>Tooltip info here</p>"
         }, {
             id: "project-nodes",
-            label: "Seamless Data Stream (Project nodes)",
+            label: "Seamless Data Stream",
             values: [null, 'check', 'check'],
             info: "<p><a href=\"https://github.com/flowforge/flowforge-nr-project-nodes\" target=\"blank\">FlowForge Project Nodes</a> enable the passing of data and messages between your Node-RED projects, included with all FlowForge Projects by default.</p>"
         }, {
@@ -76,14 +76,11 @@
         label: "Support",
         hosting: "self-hosted",
         rows: [{
-            label: "Committed SLA",
-            values: ['None', 'On Request - up to 99.5%', 'On Request - up to 99.9%']
-        }, {
             label: "FlowForge Support",
-            values: ['Community Forum (except billing questions)', '8 hours (business days)', '4 hours']
+            values: ['<a href="https://community.flowfuse.com/">Community Forum</a>', 'Next business day', '4 hours']
         }, {
             label: "Node-RED Support",
-            values: ['Community Forum', '8 hours (business days)', '4 hours']
+            values: ['<a href="https://discourse.nodered.org/">Community Forum</a>', 'Next business day', '4 hours']
          }]
     }, {
         label: "Subscription",
@@ -97,7 +94,7 @@
             url: "/docs/install",
             onclick: "capture('cta-install', {'position': 'secondary'}, {'plan': 'sh-starter'})"
         }, {
-            cta: "CONTACT SALES",
+            cta: "BOOK A DEMO",
             url: "/book-demo",
             onclick: "capture('cta-contact', {'position': 'secondary'}, {'plan': 'sh-team'})"
         }, {

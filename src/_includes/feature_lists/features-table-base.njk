@@ -42,7 +42,7 @@
                 {% elif value === null %}
                 <span></span>
                 {% else %}
-                {{ value }}
+                {{ value | safe }}
                 {% endif %}
             </span>
             {% endfor %}

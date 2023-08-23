@@ -952,6 +952,14 @@ h4:hover .header-anchor {
         @apply bg-gray-200;
     }
 
+    main .ff-bg-light .ff-feature-row a {
+        @apply text-gray-800 no-underline;
+    }
+
+    .ff-feature-row a:hover {
+        @apply no-underline;
+    }
+
     .ff-feature-table-section li.ff-feature--column-header {
         background-color: theme(colors.gray.50);
         padding: 0;

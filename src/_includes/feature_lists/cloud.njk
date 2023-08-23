@@ -74,22 +74,22 @@
             info: "<p>FlowForge can be configured to run with your own Single Sign-On (SSO) provider. Allow users to access FlowForge with a single set of login credentials, improving security, user experience, and save them time.</p>"
         }, {
             id: "project-nodes",
-            label: "Seamless Data Stream (Project nodes)",
+            label: "Seamless Data Stream",
             values: [null, 'check', 'check'],
             info: "<p><a href=\"https://github.com/flowforge/flowforge-nr-project-nodes\" target=\"blank\">FlowForge Project Nodes</a> enable the passing of data and messages between your Node-RED projects, included with all FlowForge Projects by default.</p>"
         }]
     }, {
-        label: "Support",
+        label: "Support & SLA",
         hosting: "cloud",
         rows: [{
             label: "Committed SLA",
             values: ['None', '99.5%', 'Up to 99.9%']
         }, {
             label: "FlowForge Support",
-            values: ['Community Forum (except billing questions)', '8 hours (business days)', '4 hours']
+            values: ['<a href="https://community.flowfuse.com/">Community Forum</a>', 'Next business day', '4 hours']
         }, {
             label: "Node-RED Support",
-            values: ['Community Forum', '8 hours (business days)', '4 hours']
+            values: ['<a href="https://discourse.nodered.org/">Community Forum</a>', 'Next business day', '4 hours']
         }]
     }, {
         label: "Subscription",
@@ -103,9 +103,9 @@
             url: "https://app.flowforge.com/account/create",
             onclick: "capture('cta-join', {'position': 'secondary'}, {'plan': 'cloud-starter'})"
         }, {
-            cta: "SIGN-UP NOW",
+            cta: "BOOK A DEMO",
             url: "https://app.flowforge.com/account/create",
-            onclick: "capture('cta-join', {'position': 'secondary'}, {'plan': 'cloud-team'})"
+            onclick: "capture('cta-contact', {'position': 'primary'}, {'plan': 'cloud-team'})"
         }, {
             cta: "CONTACT SALES",
             url: "/book-demo",
