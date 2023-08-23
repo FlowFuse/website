@@ -3,19 +3,24 @@
         label: "Features",
         hosting: "self-hosted",
         rows: [{
+            id: "teams",
+            label: "Number of Teams",
+            values: ['50', 'Unlimited', 'Unlimited'],
+            info: "<p>FlowForge allows multiple team members to collaborate on the same Node-RED flows.</p>"
+        }, {
             id: "team-members",
             label: "Team Members",
-            values: ['2', '20', 'Unlimited'],
+            values: ['50', 'Unlimited', 'Unlimited'],
             info: "<p>FlowForge allows multiple team members to collaborate on the same Node-RED flows.</p>"
         }, {
             id: "cloud-instances",
             label: "Number of cloud instances",
-            values: ['2', 'Licensed amount', 'Licensed amount'],
+            values: ['50', 'Licensed amount', 'Licensed amount'],
             info: "<p>FlowForge hosts multiple Node-RED instances from a common platform.</p>"
         }, {
             id: "devices",
             label: "Number of devices",
-            values: ['2', 'Licensed amount', 'Licensed amount'],
+            values: ['50', 'Licensed amount', 'Licensed amount'],
             info: "<p>FlowForge allows you to manage Node-RED deployments on remote devices.</p>"
         }, {
             id: "nr-hosting",
@@ -72,7 +77,7 @@
         hosting: "self-hosted",
         rows: [{
             label: "Committed SLA",
-            values: ['None', '99.5', 'XX.X in normal mode; 99.9 in HA mode']
+            values: ['None', 'On Request - up to 99.5%', 'On Request - up to 99.9%']
         }, {
             label: "FlowForge Support",
             values: ['Community Forum (except billing questions)', '8 hours (business days)', '4 hours']
