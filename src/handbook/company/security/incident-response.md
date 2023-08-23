@@ -21,7 +21,7 @@ This policy covers all information security or data privacy events or incidents.
 ## External Vulnerability Disclosures
 
 This policy relates to how we deal with security issues internally. For information
-on how to report potential vulnerabilities in the FlowForge platform and associated
+on how to report potential vulnerabilities in the FlowFuse platform and associated
 components from outside the company, please refer to our [Vulnerability Reporting policy](/handbook/development/security).
 
 ## Incident and Event Definitions
@@ -41,7 +41,7 @@ The Security Incident Response Team (SIRT) is responsible for
  - Performing investigations, creating and executing action plans, and post-incident activities.
  - Collaboration with law enforcement agencies.
 
-Current members of the FlowForge SIRT:
+Current members of the FlowFuse SIRT:
 
  - CTO
  - CEO
@@ -52,13 +52,13 @@ Current members of the FlowForge SIRT:
 
 ### Reporting 
 
-If a FlowForge employee, contractor, user, or customer becomes aware of an
+If a FlowFuse employee, contractor, user, or customer becomes aware of an
 information security event or incident, possible incident, imminent incident,
 unauthorized access, policy violation, security weakness, or suspicious activity,
 then they shall immediately report the information using one of the following
 communication channels:
 
- - Email security@flowforge.com with information or reports about the event or
+ - Email security@flowfuse.com with information or reports about the event or
    incident
  - Raise an issue in [`flowforge/security`](https://github.com/flowforge/security){rel="nofollow"}
  - Report it in #security channel in slack

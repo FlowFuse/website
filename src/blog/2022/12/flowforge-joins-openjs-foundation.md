@@ -1,5 +1,5 @@
 ---
-title: FlowForge Inc. becomes a member of the OpenJS Foundation
+title: FlowFuse Inc. becomes a member of the OpenJS Foundation
 subtitle: Supporting the foundation that has given Node-RED a great home
 description:  Supporting the foundation that has given Node-RED a great home
 date: 2022-12-13 12:00:00.0
@@ -15,7 +15,7 @@ support for the Node-RED community.
 
 <!--more-->
 
-One of our [founding principles](https://flowforge.com/handbook/company/#open-source-stewardship) is
+One of our [founding principles](/handbook/company/principles/#open-source-stewardship) is
 the importance of Open Source being at the core of what we do.
 
 Node-RED has been part of the [OpenJS Foundation](https://openjsf.org/) since it was formed in 2019.
@@ -30,7 +30,7 @@ With my Node-RED Project Lead hat on, I regularly see the impact the foundation 
 of the Node-RED community. These are things that may not always be obvious to our end users, but
 we wouldn't be where we are today with them.
 
-The success of what we're building with FlowForge relies on a strong and healthy Node-RED community.
+The success of what we're building with FlowFuse relies on a strong and healthy Node-RED community.
 Becoming members of the Foundation allows us to provide more yet more support to Node-RED and the wider
 JavaScript communities represented by the foundation.
 

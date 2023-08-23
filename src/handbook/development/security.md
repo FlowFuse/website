@@ -6,13 +6,13 @@ updated: 2022-08-04 17:05:04 +0100
 # Security Policy
 
 This policy relates to external disclosures of potential vulnerabilities in the
-FlowForge platform and associated components.
+FlowFuse platform and associated components.
 
 Our internal Incident Response plan is documented [here](../company/security/incident-response.md).
 
 ## Reporting a Vulnerability
 
-Please report any vulnerabilities discovered in FlowForge products to security@flowforge.com.
+Please report any vulnerabilities discovered in FlowFuse products to security@flowfuse.com.
 
 We will endeavour to acknowledge and fix any reported vulnerabilities ASAP based
 on its severity and assessed impact to our users.
@@ -23,7 +23,7 @@ At our sole discretion, we offer rewards for responsibly disclosed issues accord
 to their severity.
 
 Please note the following are general guidelines and any reward decisions are up
-to the discretion of FlowForge. We keep these reward levels under review to ensure
+to the discretion of FlowFuse. We keep these reward levels under review to ensure
 they provide a fair reflection of the issues being reported.
 
 

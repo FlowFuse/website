@@ -172,7 +172,7 @@ The process for making a release is documented [here](../releases/process.md).
 
 ### Adding NPM packages to Stacks
 
-As we build more FlowForge specific nodes we will need to add these to the Stacks
+As we build more FlowFuse specific nodes we will need to add these to the Stacks
 
 #### Localfs
 

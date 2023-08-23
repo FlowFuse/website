@@ -10,15 +10,15 @@ navTitle: Business Continuity & Disaster Recovery Policy
 
 ## Purpose
 
-The purpose of this business continuity plan is to prepare FlowForge in the
+The purpose of this business continuity plan is to prepare FlowFuse in the
 event of service outages caused by factors beyond our control (e.g., natural
 disasters, man-made events), and to restore services to the widest extent
 possible in a minimum time frame.
 
 ## Scope
 
-This policy applies to the FlowForge Cloud production environment, and any
-individual instances of the platform FlowForge manages on behalf of customers.
+This policy applies to the FlowFuse Cloud production environment, and any
+individual instances of the platform FlowFuse manages on behalf of customers.
 
 It also applies to any systems used in support of the business critical operations
 of the company.
@@ -28,10 +28,10 @@ of the company.
 As an all-remote company, our business-critical systems are provided by third-party
 vendors and we rely on their SLAs in the event of any outage.
 
-## FlowForge Platform General Disaster Recovery Procedures
+## FlowFuse Platform General Disaster Recovery Procedures
 
-In the event of a situation that has material impact to the FlowForge Cloud platform,
-or any equivalent system managed by FlowForge on behalf of our customers, the following
+In the event of a situation that has material impact to the FlowFuse Cloud platform,
+or any equivalent system managed by FlowFuse on behalf of our customers, the following
 procedures apply.
 
 ### Notification Phase

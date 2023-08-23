@@ -1,5 +1,5 @@
 ---
-title: FlowForge 1.1.2 released
+title: FlowFuse 1.1.2 released
 subtitle: Release includes a fix for installing additional nodes into Node-RED.
 description: Release includes a fix for installing additional nodes into Node-RED.
 date: 2022-12-09 12:00:00.0
@@ -27,7 +27,7 @@ Whilst tracking this down, we also spotted a bug ([#1379](https://github.com/flo
 around editing this same setting that made it tricky to work around without this
 release being published.
 
-These issues have now been fixed and FlowForge 1.1.2 published.
+These issues have now been fixed and FlowFuse 1.1.2 published.
 
 ## Bug Fixes
 
@@ -45,22 +45,22 @@ We'd like to thank the following people for their contributions to this release:
 [flecoufle](https://github.com/flecoufle) for their work on [#59](https://github.com/flowforge/docker-compose/pull/59)
 
 As an open-source project, we welcome community involvement in what we're building.
-If you're interested in contributing, checkout our [guide in the docs](https://flowforge.com/docs/contribute/).
+If you're interested in contributing, checkout our [guide in the docs](/docs/contribute/).
 
-### Upgrading FlowForge
+### Upgrading FlowFuse
 
-This release has already been rolled out to [FlowForge Cloud](https://app.flowforge.com).
+This release has already been rolled out to [FlowFuse Cloud](https://app.flowforge.com).
 
-If you installed a previous version of FlowForge and want to upgrade, our documentation provides a
-guide for [upgrading your FlowForge instance](https://flowforge.com/docs/upgrade/)
+If you installed a previous version of FlowFuse and want to upgrade, our documentation provides a
+guide for [upgrading your FlowFuse instance](/docs/upgrade/)
 
 ### Getting help
 
-Please check FlowForge's [documentation](https://flowforge.com/docs/) as the answers to many questions are covered there.
+Please check FlowFuse's [documentation](/docs/) as the answers to many questions are covered there.
 
 If you hit any problems with the platform, please raise an [issue on GitHub](https://github.com/flowforge/flowforge/issues).
 That also includes if you have any feedback or feature requests.
 
 Chat with us on the `#flowforge` channel on the [Node-RED Slack workspace](https://nodered.org/slack).
 
-You can also raise a support ticket by emailing [support@flowforge.com](mailto:support@flowforge.com)
+You can also raise a support ticket by emailing [support@flowfuse.com](mailto:support@flowfuse.com)

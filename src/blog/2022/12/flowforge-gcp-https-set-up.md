@@ -1,7 +1,7 @@
 ---
-title: Configure FlowForge in Docker to secure all traffic
-subtitle: Use Let's Encrypt and Acme Companion to quickly set up FlowForge to encrypt all traffic
-description: Use Let's Encrypt and Acme Companion to quickly set up FlowForge to encrypt all traffic
+title: Configure FlowFuse in Docker to secure all traffic
+subtitle: Use Let's Encrypt and Acme Companion to quickly set up FlowFuse to encrypt all traffic
+description: Use Let's Encrypt and Acme Companion to quickly set up FlowFuse to encrypt all traffic
 date: 2022-12-09
 authors: ["rob-marcer"]
 tags:
@@ -10,15 +10,15 @@ tags:
     - how-to
 ---
 
-Following on from our [previous article](https://flowforge.com/blog/2022/10/ff-docker-gcp/) in which we covered how to run FlowForge in Docker on Google’s Cloud Platform, today we are going to look at how to secure HTTP traffic to your FlowForge server.
+Following on from our [previous article](/blog/2022/10/ff-docker-gcp/) in which we covered how to run FlowFuse in Docker on Google’s Cloud Platform, today we are going to look at how to secure HTTP traffic to your FlowFuse server.
 
 <!--more-->
 
 ### Introduction
 
-When we wrote the first part of this series FlowForge didn't have an easy path to secure HTTP traffic. Happily, two versions of FlowForge later and at least partially inspired by these blogs, we have added the configuration you need in Docker to use HTTPS with minimal work.
+When we wrote the first part of this series FlowFuse didn't have an easy path to secure HTTP traffic. Happily, two versions of FlowFuse later and at least partially inspired by these blogs, we have added the configuration you need in Docker to use HTTPS with minimal work.
 
-That addition makes our job of explaining this setup a lot easier, credit to our developers for seeing the value of having an easy implementation of HTTPS in FlowForge as part of our [1.0 build](https://flowforge.com/blog/2022/10/flowforge-1-released/).
+That addition makes our job of explaining this setup a lot easier, credit to our developers for seeing the value of having an easy implementation of HTTPS in FlowFuse as part of our [1.0 build](/blog/2022/10/flowforge-1-released/).
 
 To achieve secure HTTPS traffic we are employing a great service called [Let's Encrypt](https://letsencrypt.org/). In their own words, "Let’s Encrypt is a free, automated, and open certificate authority (CA), run for the public’s benefit". In practice Let's Encrypt will allow us to easily secure HTTPS traffic.
 
@@ -28,7 +28,7 @@ Now we've covered our goals and the tools we are going to use let's configure ou
 
 ### Prerequisites 
 
-As mentioned above, you will need to be running FlowForge version 1.0 or higher to follow this guide. If you are using an older version you can upgrade now using the [instructions here](https://flowforge.com/docs/upgrade/).
+As mentioned above, you will need to be running FlowFuse version 1.0 or higher to follow this guide. If you are using an older version you can upgrade now using the [instructions here](/docs/upgrade/).
 
 ### Update Docker Compose
 
@@ -69,7 +69,7 @@ Environment:
       - "HTTPS_METHOD=redirect"
 ```
 
-We now need to add the configuration for LetsEncrypt, edit the following lines to include a valid email address and the correct domain for where you are hosting your FlowForge server:
+We now need to add the configuration for LetsEncrypt, edit the following lines to include a valid email address and the correct domain for where you are hosting your FlowFuse server:
 
 ```yaml
 - "DEFAULT_EMAIL=mail@example.com"
@@ -103,10 +103,10 @@ OK, we should be ready to restart the Docker containers, run the command:
 sudo docker compose -p flowforge up -d
 ```
 
-If you reload your FlowForge root directory in a web browser you should now see that your traffic is encrypted using LetsEncypt.
+If you reload your FlowFuse root directory in a web browser you should now see that your traffic is encrypted using LetsEncypt.
 
-![A screenshot from Safari web browser showing that the traffic to FlowForge is encrypted](./images/https-working.png)
+![A screenshot from Safari web browser showing that the traffic to FlowFuse is encrypted](./images/https-working.png)
 
-Nice! That’s it, you can now access your FlowForge installation securely. 
+Nice! That’s it, you can now access your FlowFuse installation securely. 
 
-In the next and final part of this series of articles, we are going to look at how we can actually use FlowForge including how to build flows and deploy and update them on Devices linked to a project.
+In the next and final part of this series of articles, we are going to look at how we can actually use FlowFuse including how to build flows and deploy and update them on Devices linked to a project.

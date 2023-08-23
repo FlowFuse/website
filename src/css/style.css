@@ -23,7 +23,7 @@ html, body {
 }
 
 /*
-    Standard FlowForge Sizings
+    Standard FlowFuse Sizings
 */
 h1 {
     font-size: 2.25rem;
@@ -94,14 +94,40 @@ h1, h2, h3, h4, h5, p {
     background-color: theme(colors.gray.800);
 }
 
-.base {
-    background-color: theme(colors.gray.800);
-    background-image: url('/images/ff-cloud_50.svg');
-    background-repeat: no-repeat;
+.ff-bg-flows {
+    background-image: url('/images/ff-bg-flows.svg');
+    background-repeat: repeat-x;
     background-position-x: 50%;
-    background-position-y: 150px;
+    background-position-y: calc(100% + 50px);
     background-size: contain;
 }
+
+.hero .ff-bg-flows {
+    background-size: 100%;
+    background-position-y: calc(100% + 100px);
+}
+
+@media (max-width: 1250px) {
+    .ff-bg-flows {
+        background-size: 100%;
+        background-position-y: bottom;
+    }
+    .hero .ff-bg-flows {
+        background-size: 100%;
+        background-position-y: calc(100% + 25px);
+    }
+}
+
+.gradient-bg {
+    background: radial-gradient(circle 50vw at center 500px,theme(colors.gray.700),transparent);
+    background-size: 100vw;
+}
+
+.pricing .gradient-bg {
+    background: radial-gradient(circle 50vw at center -100px,rgba(55, 65, 81, 0.2),theme(colors.gray.800));
+    background-size: 100vw;
+}
+
 main a {
     color: theme(colors.teal.300);
 }
@@ -1151,7 +1177,7 @@ pre.mermaid {
     background-color: #ffffff
 }
 /*
-    FlowForge markdown-it rendered footnote styles
+    FlowFuse markdown-it rendered footnote styles
 */
 div.content hr.footnotes-sep {
     margin-top: 3em;

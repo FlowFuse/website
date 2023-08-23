@@ -5,7 +5,7 @@ navTitle: Vendors
 # Vendors
 
 In accordance with our [Third-Party Risk Management policy](../company/security/third-party-risk-management.md)
-all vendors should be reviewed to ensure their suitability for handling FlowForge
+all vendors should be reviewed to ensure their suitability for handling FlowFuse
 data.
 
 A list of approved vendors is available interally [here](https://docs.google.com/spreadsheets/d/1ro77wy0cRK6gpzVv_iq4vpdmbdMq61X5-tTwI_F3hXM/edit?usp=sharing){rel="nofollow"}.
@@ -13,7 +13,7 @@ A list of approved vendors is available interally [here](https://docs.google.com
 ### Process
 
 To start to process of approval and paying of invoices a PDF of the invoice should
-be mailed to billing@flowforge.com. FlowForge pays invoices 30 days after filing 
+be mailed to billing@flowfuse.com. FlowFuse pays invoices 30 days after filing 
 unless specifically agreed otherwise prior to filing the invoice.
 
 The invoice should include:

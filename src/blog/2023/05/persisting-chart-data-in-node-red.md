@@ -69,9 +69,9 @@ When you press the 'import data' trigger node, the data is loaded in from the fi
 
 Bear in mind that your data is stored in your filesystem, if your storage drive fails you will lose your data, you might want to consider taking backups and storing elsewhere for emergencies.
 
-#### 2. FlowForge's persistent context
+#### 2. FlowFuse's persistent context
 
-FlowForge Cloud and premium self hosted version provides persistent context storage as part of its Node-RED instances. This allows you to create, read, update, and delete data as needed, even if you have restarted a Node-RED instance.
+FlowFuse Cloud and premium self hosted version provides persistent context storage as part of its Node-RED instances. This allows you to create, read, update, and delete data as needed, even if you have restarted a Node-RED instance.
 
 This flow shows chart data being sent to persistent context so we can access it later. The process is very similar to using the file-out and file-in nodes.
 
@@ -105,7 +105,7 @@ We can now access the data by simply visiting the URL of the API.
 
 ![The chart data accessed via the API in a web browser](./images/data-in-browser.png "The chart data accessed via the API in a web browser")
 
-Bear in mind that you should secure the API as appropriate for the data. If you don't put security around the API, anyone on the same network as your Node-RED instance can access your chart data. Potentially that could give access to our data to the whole internet, so where needed take steps to keep your data safe. You can read more about securing Node-RED in our [blog post here](https://flowforge.com/blog/2023/04/securing-node-red-in-production/).
+Bear in mind that you should secure the API as appropriate for the data. If you don't put security around the API, anyone on the same network as your Node-RED instance can access your chart data. Potentially that could give access to our data to the whole internet, so where needed take steps to keep your data safe. You can read more about securing Node-RED in our [blog post here](/blog/2023/04/securing-node-red-in-production/).
 
 We now need to get that data back into a Node-RED instance. We can do that by editing a node and pasting in the data we got from the API. The flow below shows where you can paste in your data, you will then need to deploy and manually trigger 'import data'.
 

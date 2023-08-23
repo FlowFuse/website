@@ -15,11 +15,11 @@ with business objectives.
 
 ## Scope 
 
-This policy applies to all FlowForge information systems that process, store, or
-transmit confidential data as defined in the FlowForge [Data Management Policy](./data-management.md).
+This policy applies to all FlowFuse information systems that process, store, or
+transmit confidential data as defined in the FlowFuse [Data Management Policy](./data-management.md).
 
-It applies to all employees of FlowForge and to all external parties with access
-to FlowForge system resources.
+It applies to all employees of FlowFuse and to all external parties with access
+to FlowFuse system resources.
 
 ## Access Control Policy
 
@@ -97,7 +97,7 @@ absolute minimum.
 
 ## Access to Source Code
 
-FlowForge defaults to developing in the open, without restriction on who can
+FlowFuse defaults to developing in the open, without restriction on who can
 view the source code.
 
 Exceptions will be made for business reasons to keep particular repositories
@@ -106,7 +106,7 @@ and role.
 
 ## Password Policy
 
-All FlowForge system passwords must meet industry standards and best practices.
+All FlowFuse system passwords must meet industry standards and best practices.
 Where possible, systems shall be configured to enforce these standards.
 
  - Minimum length of 8 characters, with a mix of letters, numbers, symbols and case.

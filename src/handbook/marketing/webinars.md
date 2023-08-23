@@ -3,12 +3,12 @@ navTitle: Webinars
 navGroup: Sales & Marketing
 ---
 
-## FlowForge Webinars
+## FlowFuse Webinars
 
-FlowForge will organize two types of webinars: 1) Ask Me Anything session that is an ope mic for community members to ask questions of Node-RED and FlowForge experts, and 2) Educational webinars that will educational topics. The current plan is to do an AMA session the second week of each month and an educational webinar the last week of the month.
+FlowFuse will organize two types of webinars: 1) Ask Me Anything session that is an ope mic for community members to ask questions of Node-RED and FlowFuse experts, and 2) Educational webinars that will educational topics. The current plan is to do an AMA session the second week of each month and an educational webinar the last week of the month.
 
 ### Hosting Webinars
-FlowForge will use the Zoom Webinar platform to host each webinar. This platform provides the automated recording, email reminders, calendar entries, Q&A and accommodate up to 500 attendees.
+FlowFuse will use the Zoom Webinar platform to host each webinar. This platform provides the automated recording, email reminders, calendar entries, Q&A and accommodate up to 500 attendees.
 
 Hubspot will be used to collect attendee registrations. 
 
@@ -34,7 +34,7 @@ Each webinar should be available for promotion 2-4 weeks before the live date. C
 * Social media
 * Slack channels
 * Node-RED forums
-* FlowForge website
+* FlowFuse website
 
 ### Creating a Webinar Page
 
@@ -58,8 +58,8 @@ Webinar pages follow a fixed structure, you can see plenty of examples [here](ht
 
 ```yml
 ---
-title: "DevOps for Node-RED: An Introduction to FlowForge"
-subtitle: Join FlowForge's CTO Nick O'Leary for an introduction to FlowForge and how it provides DevOps for Node-RED.
+title: "DevOps for Node-RED: An Introduction to FlowFuse"
+subtitle: Join FlowFuse's CTO Nick O'Leary for an introduction to FlowFuse and how it provides DevOps for Node-RED.
 video: 47EvfmJji-k
 image: /images/webinars/webinar-nr-5mins.jpg
 date: YYYY-MM-DD

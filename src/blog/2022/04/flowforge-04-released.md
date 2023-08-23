@@ -1,5 +1,5 @@
 ---
-title: FlowForge 0.4 released
+title: FlowFuse 0.4 released
 subtitle: Getting ready for Node-RED 3.0
 description: Getting ready for Node-RED 3.0
 date: 2022-04-14 12:00:00.0
@@ -10,7 +10,7 @@ tags:
     - releases
 ---
 
-This release of the FlowForge adds a seemingly small, but significant new feature.
+This release of the FlowFuse adds a seemingly small, but significant new feature.
 
 <!--more-->
 
@@ -18,48 +18,48 @@ With [Node-RED 3.0 fast approaching](https://nodered.org/about/releases/) we've 
 
 ### Upgrading Node-RED
 
-The goal of FlowForge is to be the best way to run Node-RED at any scale, whether that's many users or many instances. Node-RED is a constantly developing as a platform and therefore part of running Node-RED is also upgrading the version you are running.
+The goal of FlowFuse is to be the best way to run Node-RED at any scale, whether that's many users or many instances. Node-RED is a constantly developing as a platform and therefore part of running Node-RED is also upgrading the version you are running.
 
-With the 0.4 release today we've made that super simple in FlowForge. Last month we introduced the concept of [Project Stacks](https://flowforge.com/docs/user/concepts/#project-stack). One of the key elements of a Stack was the version of Node-RED in use. Initially this may have seemed fairly basic, when you create a new project you usually want to use the latest version of Node-RED. However what happens when a new version is released and you have an existing project?
+With the 0.4 release today we've made that super simple in FlowFuse. Last month we introduced the concept of [Project Stacks](/docs/user/concepts/#stack). One of the key elements of a Stack was the version of Node-RED in use. Initially this may have seemed fairly basic, when you create a new project you usually want to use the latest version of Node-RED. However what happens when a new version is released and you have an existing project?
 Now you can change the stack that a project is running on, which in turn will change the version of Node-RED. This is a simple process from the project settings, it only requires a short period of downtime while the project restarts on the new stack, typically around 10-15 seconds.
 
 Our driver to get this feature into the 0.4 release is the approaching release of Node-RED 3.0, now we know that we can be ready to offer our users Node-RED 3.0 as soon as it is released.
 
-We will also be making available the Beta's of Node-RED 3.0 within FlowForge Cloud,  this becomes a great way to test out the new features without having to touch your own environments.
+We will also be making available the Beta's of Node-RED 3.0 within FlowFuse Cloud,  this becomes a great way to test out the new features without having to touch your own environments.
 
  - [Story #288 - Change Stacks](https://github.com/flowforge/flowforge/issues/288)
- - [Docs](https://flowforge.com/docs/user/changestack/)
+ - [Docs](/docs/user/changestack/)
 
 ### Environment Variables
 
 Another key new feature we are introducing is the ability to set and manage environment variables within your projects.
-Environment Variables are a key tool when building applications as they allow you to to separate the configuration of your system from the logic in the code. Even in Low-Code platforms this is an important design pattern. Environment variables are fully integrated into [Templates](https://flowforge.com/docs/user/concepts/#project-template) that we introduced last month so they can be set both at the platform level or on an individual project.
+Environment Variables are a key tool when building applications as they allow you to to separate the configuration of your system from the logic in the code. Even in Low-Code platforms this is an important design pattern. Environment variables are fully integrated into [Templates](/docs/user/concepts/#template) that we introduced last month so they can be set both at the platform level or on an individual project.
 Our plans for the next release will make these even more useful as we introduce the ability to [duplicate a project](https://github.com/flowforge/flowforge/issues/271) and then modify those variables for the new project.
 
  - [Story #225 - Project Environment Variables](https://github.com/flowforge/flowforge/issues/225)
- - [Docs](https://flowforge.com/docs/user/envvar/)
+ - [Docs](/docs/user/envvar/)
 
 ### There's more
 
-There are many more improvements in this release, such as the ability to [Set the timezone](https://github.com/flowforge/flowforge/issues/239) your project is running in, we've also been iterating on our billing experience as we've welcomed the first paying customers to FlowForge Cloud.
+There are many more improvements in this release, such as the ability to [Set the timezone](https://github.com/flowforge/flowforge/issues/239) your project is running in, we've also been iterating on our billing experience as we've welcomed the first paying customers to FlowFuse Cloud.
 
 Finally we're very happy that we've had our first external contribution to the code base, as an Open Core company we believe strongly that Open Source lives at the heart of everything we do. 
 We would like to say a big thank-you to [Fakorede Damilola Idris](https://fakocodes.netlify.app/) for his work on fixing a [bug](https://github.com/flowforge/flowforge/issues/424) in the UI.
 
 
-### Getting started with FlowForge
+### Getting started with FlowFuse
 
-The documentation provides a guide for [installing FlowForge on a local server](http://flowforge.com/docs/install/).
+The documentation provides a guide for [installing FlowFuse on a local server](/docs/install/).
 
-If you haven't played with FlowForge yet, here's a more complete walk-through
+If you haven't played with FlowFuse yet, here's a more complete walk-through
 of the platform:
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/YYZDx8n17Ys" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-### Upgrading FlowForge
+### Upgrading FlowFuse
 
-If you installed a previous version of FlowForge  and want to upgrade, our documentation provides a
-guide for [upgrading FlowForge on a local server](http://flowforge.com/docs/install#upgrade).
+If you installed a previous version of FlowFuse  and want to upgrade, our documentation provides a
+guide for [upgrading FlowFuse on a local server](/docs/upgrade/#upgrading-flowforge).
 
 ### Getting help
 
@@ -75,7 +75,7 @@ We also have a `#flowforge` channel on the [Node-RED Slack workspace](https://no
 Our regular release cycle puts the next release on Thursday 12th May.
 We will be building on features in the last few releases around managing your projects and using templates, we're also  setting the foundations of our work to [manage Node-RED on your own devices running at the Edge](https://github.com/flowforge/flowforge/issues/446).
 
-For more information, check out the [announcement blog post](https://flowforge.com/blog/announcing-flowforge-cloud/).
+For more information, check out the [announcement blog post](/blog/announcing-flowforge-cloud/).
 
 You can also sign up to our general mailing list below if you want to hear more
 about the work we're doing.

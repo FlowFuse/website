@@ -6,7 +6,7 @@ navTitle: Feedback
 
 Product feedback provides invaluable insight into our product's strengths and areas for improvement. It forms the basis of our strategic product planning and the actions we undertake to refine our product. It's the voice of our customers, colleagues, and stakeholders, which serves as a guiding light to drive our innovation and adaptation. Feedback helps us ensure that we stay in tune with the evolving needs of our customers and the changing dynamics of the market, ultimately driving our product towards excellence and our company towards success.
 
-FlowForge is fortunate to have a community the size of the Node-RED community. The product organization should constantly be in touch with the community to understand their challenges, current solutions, and to learn why they have or haven't adopted FlowForge.
+FlowFuse is fortunate to have a community the size of the Node-RED community. The product organization should constantly be in touch with the community to understand their challenges, current solutions, and to learn why they have or haven't adopted FlowFuse.
 
 ## Feedback Gathering
 
@@ -29,11 +29,11 @@ The Product Manager should set up a minimum of one poll every six months, to col
 ### GitHub Voting
 
 By allowing users to vote on issues or proposed epics, we can gain insight into what changes or improvements are most demanded by the users. This democratic approach ensures we prioritize features that resonate most with our user base.
-Our website [Roadmap page](https://flowforge.com/product/roadmap/) provides an overview of Epics that are currently under consideration.
+Our website [Roadmap page](/product/roadmap/) provides an overview of Epics that are currently under consideration.
 
 ### Node-RED Community
 
-We are privileged to be part of a vibrant community such as Node-RED, where our product organization can constantly learn and understand user challenges and solutions, as well as the reasons behind the adoption or non-adoption of FlowForge. This ongoing communication is critical for our growth and improvement.
+We are privileged to be part of a vibrant community such as Node-RED, where our product organization can constantly learn and understand user challenges and solutions, as well as the reasons behind the adoption or non-adoption of FlowFuse. This ongoing communication is critical for our growth and improvement.
 
 There are several ways we interact with the Node-RED community:
 - [Forum](https://discourse.nodered.org/)

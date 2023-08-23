@@ -1,5 +1,5 @@
 ---
-title: FlowForge 0.10 released
+title: FlowFuse 0.10 released
 subtitle: Secure HTTP end points, Read-only users and Static outbound IPs
 description: Secure Node-RED HTTP end points, Read-only users and Static outbound IPs
 date: 2022-09-30 12:00:00.0
@@ -17,20 +17,20 @@ Secure your HTTP endpoints, create read-only users in your teams and use our sta
 
 Keep reading for the details of what's in this release or you can watch our 1 minute roundup video of the new release above. 
 
-We're pleased to announce version 0.10 is now available. The next release of the FlowForge application containing new features, a number of improvements, and bug fixes. Keep reading for a promotion code to get your first month free on FlowForge Cloud. 
+We're pleased to announce version 0.10 is now available. The next release of the FlowFuse application containing new features, a number of improvements, and bug fixes. Keep reading for a promotion code to get your first month free on FlowFuse Cloud. 
 
 ## Features
 [Secure HTTP Endpoints](https://github.com/flowforge/flowforge/issues/578)
-We've added the ability for you to secure your HTTP endpoints. You can now control who can access Dashboards or API endpoints you create in FlowForge.
+We've added the ability for you to secure your HTTP endpoints. You can now control who can access Dashboards or API endpoints you create in FlowFuse.
 
 [Read-only Users](https://github.com/flowforge/flowforge/issues/657)
-We've added a new user role for Read-only access. This will allow users to login to your FlowForge project and view the Node-RED flows without them being able to edit anything.
+We've added a new user role for Read-only access. This will allow users to login to your FlowFuse project and view the Node-RED flows without them being able to edit anything.
 
-[Static Outbound IP Addresses](https://flowforge.com/docs/cloud/#ip-addresses)
-We've updated FlowForge Cloud so that all outbound traffic from your projects now comes from a single IP address. When trying to access a remote resource such as a database it is often a requirement for the IP address the traffic comes from to be fixed. 
+[Static Outbound IP Addresses](/docs/cloud/#ip-addresses)
+We've updated FlowFuse Cloud so that all outbound traffic from your projects now comes from a single IP address. When trying to access a remote resource such as a database it is often a requirement for the IP address the traffic comes from to be fixed. 
 
 ## Improvements
-We've made a number of improvements to the overall experience of running FlowForge.
+We've made a number of improvements to the overall experience of running FlowFuse.
 
 - Allow both key and component in a ff-data-table column definition [#43](https://github.com/flowforge/forge-ui-components/issues/43)
 - Default Stack and Templates [#989](https://github.com/flowforge/flowforge/issues/989)
@@ -42,7 +42,7 @@ We've fixed the following bugs in this release.
 - [User names can be same (but different case)](https://github.com/flowforge/flowforge/issues/983)
 - [User list not refreshing after changing user details](https://github.com/flowforge/flowforge/issues/463)
 - [Navigating directly to a device page gets the wrong team selected](https://github.com/flowforge/flowforge/issues/986)
-- [Node-RED Isn't ready when FlowForge app says it is running following a project restart](https://github.com/flowforge/flowforge/issues/941)
+- [Node-RED Isn't ready when FlowFuse app says it is running following a project restart](https://github.com/flowforge/flowforge/issues/941)
 - [Invitations left for deleted teams](https://github.com/flowforge/flowforge/issues/923)
 - [Following email verification link twice throws error](https://github.com/flowforge/flowforge/issues/1024)
 - [Agent does not log stderr from the Node-RED process](https://github.com/flowforge/flowforge-device-agent/issues/21)
@@ -58,18 +58,18 @@ We'd like the thank the following for their contributions to this release:
 
 [ArshErgon](https://github.com/ArshErgon) for their work on [Update vue component name for NoVerifiedEmail.vue](https://github.com/flowforge/flowforge/pull/977)
 
-As an open-source project, we welcome the community involvement in what we're building. If you're interested in contributing, checkout our [guide in the docs](https://flowforge.com/docs/contribute/).
+As an open-source project, we welcome the community involvement in what we're building. If you're interested in contributing, checkout our [guide in the docs](/docs/contribute/).
 
 ### Try it out
 
-[Sign up for FlowForge Cloud](https://app.flowforge.com/account/create?code=RELEASE010) with this link  or at the checkout enter the code **RELEASE010** to get your first project free for a month.
+[Sign up for FlowFuse Cloud](https://app.flowforge.com/account/create?code=RELEASE010) with this link  or at the checkout enter the code **RELEASE010** to get your first project free for a month.
 
-### Upgrading FlowForge
+### Upgrading FlowFuse
 
-[FlowForge Cloud](https://app.flowforge.com) is already running 0.10 and the stacks updated. Upgrade your project stacks to the latest version to make sure you get all the latest changes.
+[FlowFuse Cloud](https://app.flowforge.com) is already running 0.10 and the stacks updated. Upgrade your project stacks to the latest version to make sure you get all the latest changes.
 
-If you installed a previous version of FlowForge and want to upgrade, our documentation provides a
-guide for [upgrading FlowForge on a local server](http://flowforge.com/docs/install#upgrade).
+If you installed a previous version of FlowFuse and want to upgrade, our documentation provides a
+guide for [upgrading FlowFuse on a local server](/docs/upgrade/#upgrading-flowforge).
 
 ### Getting help
 
@@ -77,6 +77,6 @@ If you hit any problems with the platform, or have questions to ask, please do
 raise an [issue on GitHub](https://github.com/flowforge/flowforge/issues).
 That also includes if you have any feedback or feature requests.
 
-Customers of FlowForge Cloud can raise a ticket by emailing support@flowforge.com
+Customers of FlowFuse Cloud can raise a ticket by emailing support@flowfuse.com
 
 We also have a `#flowforge` channel on the [Node-RED Slack workspace](https://nodered.org/slack).

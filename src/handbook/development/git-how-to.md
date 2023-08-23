@@ -5,7 +5,7 @@ navTitle: Using Git
 
 ## Background
 
-[Git](#git) is a way for a team to create written content, track any changes to that content, and seek approval for any changes to become the [Published](#publish) version of that content on [Live](#live). [Git](#git) can be used in many ways, our developers use it to write the code which makes FlowForge work. In this guide we are focusing on the process of working with documents within our company [Handbook](#handbook) or website. We will use [Git](#git)'s terminology to describe how we are working. This guide also assumes you are using [Github](#github).com to edit the [Handbook](#handbook) and website.
+[Git](#git) is a way for a team to create written content, track any changes to that content, and seek approval for any changes to become the [Published](#publish) version of that content on [Live](#live). [Git](#git) can be used in many ways, our developers use it to write the code which makes FlowFuse work. In this guide we are focusing on the process of working with documents within our company [Handbook](#handbook) or website. We will use [Git](#git)'s terminology to describe how we are working. This guide also assumes you are using [Github](#github).com to edit the [Handbook](#handbook) and website.
 
 When making changes to a [Project](#project) at least two people have to agree that the changes should be Published. In most cases those two people would be yourself and a [Reviewer](#reviewer).
 
@@ -47,7 +47,7 @@ If another person has opened a Pull Request or branch already, and asked you to 
 You may be asked to conduct a Pull Request Review. This means that someone else has contributed some work, and would like you to check whether it works, and whether you're happy with the contributions made. These are the steps by which you can do that:
 
 1. Switch to their branch on your machine (if request to append to the Pull Request, that will have a branch associated to.)
-2. Run the code (e.g. website server or FlowForge platform) and ensure their changes work as expected.
+2. Run the code (e.g. website server or FlowFuse platform) and ensure their changes work as expected.
 3. "Add your Review" on GitHub, offer comments and recommendatins where required.
 4. Once you're happy, "Approve" the Pull Request
 5. Merge the PR
@@ -74,7 +74,7 @@ You can now start the process of actually creating or editing content, any chang
 
 ### Create a new file (document)
 
-In this example I am going to create a new document in the [Handbook](#handbook) which will help non-technical FlowForge team members use [Git](#git).
+In this example I am going to create a new document in the [Handbook](#handbook) which will help non-technical FlowFuse team members use [Git](#git).
 
 Firstly I will create a new document called git-how-to.md in the design folder.
 
@@ -104,7 +104,7 @@ I am now ready to request a [Review](#review) of my work from a colleague. To do
 
 It's a good idea to provide your colleagues descriptive comments explaining the goals of the changes you have made as well as anything else you think would help them [review](#review) your work.
 
-Once you press the 'Create pull request' button an alert will be sent to one of FlowForge's Slack channels letting everyone know you'd like your work reviewed. You can also request a [review](#review) from a specific colleague using the [Reviewers](#reviewer) section of your [Pull Request](#pull-request) Click on [Reviewers](#reviewer) then select the colleague you think would be best placed to [review](#review) your work.
+Once you press the 'Create pull request' button an alert will be sent to one of FlowFuse's Slack channels letting everyone know you'd like your work reviewed. You can also request a [review](#review) from a specific colleague using the [Reviewers](#reviewer) section of your [Pull Request](#pull-request) Click on [Reviewers](#reviewer) then select the colleague you think would be best placed to [review](#review) your work.
 
 ![Request a review from a specific colleague](../images/git-how-to/nominate-a-reviewer-1.gif "@skip")
 
@@ -154,11 +154,11 @@ A website which allows you to manage [Git](#git). Github also allows you to comm
 
 ### Handbook
 
-FlowForge's public document explaining how run the company.
+FlowFuse's public document explaining how run the company.
 
 ### Live
 
-The current version of each [Project](#project) which anyone can access on the internet, click here to view the live versions of the [website](https://flowforge.com/) and [handbook](https://flowforge.com/handbook/).
+The current version of each [Project](#project) which anyone can access on the internet, click here to view the live versions of the [website](/) and [handbook](/handbook/).
 
 ### Markup
 
@@ -166,11 +166,11 @@ A method to add formatting to a document by adding additional characters around 
 
 ### Markdown
 
-A [Markup](#markup) language for formatting content in documents. You can read more in this [guide](https://www.markdownguide.org/). FlowForge uses Markdown to format content for our website and [Handbook](#handbook)
+A [Markup](#markup) language for formatting content in documents. You can read more in this [guide](https://www.markdownguide.org/). FlowFuse uses Markdown to format content for our website and [Handbook](#handbook)
 
 ### Project
 
-A collection of documents and content which usually relate to a specific topic. In this guide we are discussing how to edit two FlowForge Projects, our website and our [Handbook](#handbook).
+A collection of documents and content which usually relate to a specific topic. In this guide we are discussing how to edit two FlowFuse Projects, our website and our [Handbook](#handbook).
 
 ### Publish
 

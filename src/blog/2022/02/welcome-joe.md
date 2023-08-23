@@ -1,6 +1,6 @@
 ---
 title: Welcome Joe
-description: Welcoming Joe Pavitt to FlowForge Inc.
+description: Welcoming Joe Pavitt to FlowFuse Inc.
 date: 2022-02-08
 authors: ["nick-oleary"]
 tags:
@@ -11,7 +11,7 @@ tags:
 
 Today we welcome Joe Pavitt ([@joepavitt3d](https://twitter.com/joepavitt3d)) as
 our new Head of UX & Design. This is a key role that will help deliver the awesome
-user experience of the FlowForge platform.
+user experience of the FlowFuse platform.
 
 <!--more-->
 

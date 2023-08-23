@@ -4,23 +4,23 @@ meta:
     title: KPIs and OKRs
 ---
 
-# Achieving Success at FlowForge
+# Achieving Success at FlowFuse
 
-There's multiple ways to align a company around business goals, and at FlowForge
+There's multiple ways to align a company around business goals, and at FlowFuse
 we've identified two ways to help us shape this. The core metric are captured in
 the [KPI](#kpi). A KPI is a tool to identify problems and areas for improvement.
 
-The second tool employed at FlowForge to improve on the identfied problems are [OKR](#okrs)s.
+The second tool employed at FlowFuse to improve on the identfied problems are [OKR](#okrs)s.
 
 ## KPI
 
 A KPI, or Key Point Indicator, is used as a heuristic metric for company wide
-success. At FlowForge we're engaged in many initiatives to grow our offering and
+success. At FlowFuse we're engaged in many initiatives to grow our offering and
 assess product market fit. At this time there's one KPI to track progress.
 
 ### Annual Recurring Revenue (ARR)
 
-Now FlowForge has a stable and maturing product, we're trying to verify product
+Now FlowFuse has a stable and maturing product, we're trying to verify product
 market fit. The market verification requires sales, and ARR is a good metric to
 track this.
 

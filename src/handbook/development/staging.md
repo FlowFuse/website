@@ -5,7 +5,7 @@ updated: 2022-11-24 12:11:19 +0100
 # Staging Environment
 
 We have a staging environment running on AWS which is a scaled down replica of
-our managed FlowForge offering, with a separate domain. Staging URL and sign in
+our managed FlowFuse offering, with a separate domain. Staging URL and sign in
 details can be found in the Developer Vault in 1Password.
 
 ## AWS Account
@@ -26,7 +26,7 @@ smallest instance that can be used with EKS.
 
 The staging environment can only be used with a set of pre-approved email addresses. This currently includes:
 
- - All `@flowforge.com` addresses - with SSO enabled
+ - All `@flowfuse.com` addresses - with SSO enabled
  - A collection of disposable email accounts that can be used to test user sign-up/invitations etc. Details of the available addresses are in [this issue](https://github.com/flowforge/CloudProject/issues/135). If you use one of these addresses for some testing, please delete the user once you are done so it is available for future use.
 
 The list of valid email addresses is managed via the Amazon SES configuration in the staging acount.
@@ -40,7 +40,7 @@ Currently there is no auto deployment to staging, this should be rectified in th
 When setting up a team you'll need to enter billing details. For credit card
 details, use [the Stripe mock data](https://stripe.com/docs/testing#testing-interactively).
 
-## Using the FlowForge Device Agent with staging
+## Using the FlowFuse Device Agent with staging
 
 Staging uses pre-release npm packages stored in a GitHub npm repository. To be able to use these packages you will need to authenticate with the repository.
 

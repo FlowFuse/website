@@ -51,4 +51,4 @@ Furthermore I found it very versatile.”
 ---
 
 Thanks to Krisnan for sharing his story. If you have a Node-RED story for us
-to share, please get in touch via [contact@flowforge.com](mailto:contact@flowforge.com).
+to share, please get in touch via [contact@flowfuse.com](mailto:contact@flowfuse.com).

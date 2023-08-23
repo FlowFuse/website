@@ -1,12 +1,17 @@
-# FlowForge Website
+# FlowFuse Website
 
 [![Build Site](https://github.com/flowforge/website/actions/workflows/build.yml/badge.svg?branch=main)](https://github.com/flowforge/website/actions/workflows/build.yml)
 
-This repository contains the source of the FlowForge website.
+This repository contains the source of the FlowFuse website.
 
 It is built using [Tailwind CSS](https://tailwindcss.com/) and [Eleventy](https://www.11ty.dev/).
-It is hosted on GitHub Pages and every commit to the `main` branch is automatically
-deployed using GitHub Actions.
+
+It is hosted on Netlify with each commit to the `main` branch being automatically deployed to the live site.
+
+This works by a GitHub action automatically updating the `live` branch to includes documentation pulled from the `maintenance` branch of the [flowforge/flowforge](https://github.com/flowforge/flowforge)
+repository, when changes are pushed to `main`.
+
+Netlify is then configured to watch the `live` branch for any changes, once detected, it will automatically pull the contents of this branch (docs included) and deploy to our production site.
 
 ## Prerequisites 
 
@@ -54,11 +59,11 @@ A new VS Code settings file will be created at /Users/joepavitt/Documents/flowfo
 It is recommended to response `y` to both of these questions.
 
 
-### Running FlowForge Documentation
+### Running FlowFuse Documentation
 
-Much like our Handbook, the documentation for FlowForge are also maintained in a separate repository. Our docs are maintained in the core [FlowForge repo](https://github.com/flowforge/flowforge).
+Much like our Handbook, the documentation for FlowFuse are also maintained in a separate repository. Our docs are maintained in the core [FlowFuse repo](https://github.com/flowforge/flowforge).
 
-If you want to run a local version of the documentation, you'll need to clone the FlowForge repository alongside the website, e.g.:
+If you want to run a local version of the documentation, you'll need to clone the FlowFuse repository alongside the website, e.g.:
 
 ```
 /<parent_directory>
@@ -84,9 +89,9 @@ authors: ["nick-oleary"]
 
 The `authors` list should correspond to an entry under `src/_data/team`.
 
-## Updating the FlowForge Documentation
+## Updating the FlowFuse Documentation
 
-When the website is built via GitHub Action, it will include the documentation
+When the website is built it will include the documentation
 from the `maintenance` branch of the [flowforge/flowforge](https://github.com/flowforge/flowforge)
 repository.
 

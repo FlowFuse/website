@@ -1,6 +1,6 @@
 ---
 title: Toward Highly Available Node-RED
-subtitle: How mission critical use-cases can be supported through FlowForge soon
+subtitle: How mission critical use-cases can be supported through FlowFuse soon
 description: Often requested features for Node-RED include HA or Highly Available
 date: 2023-02-15
 authors: ["zeger-jan-van-de-weg"]
@@ -40,10 +40,10 @@ functions you might just achieve an MTTR of 120 minutes!
 
 ### 5-10 minute Mean Time to Recovery
 
-What's needed to bring this back to say 10 minutes? First, adopting FlowForge will
-help massively here. FlowForge can be installed on-premise, or you can use our
+What's needed to bring this back to say 10 minutes? First, adopting FlowFuse will
+help massively here. FlowFuse can be installed on-premise, or you can use our
 managed Cloud offering. The software is the same, provided the on-premise
-install uses our [Kubernetes install](https://flowforge.com/docs/install/kubernetes/) method.
+install uses our [Kubernetes install](/docs/install/kubernetes/) method.
 
 The key of the installation is the fact that the hardware layer is generalized
 as a fleet. Detecting failures is included in the install, and very fast. Comparing
@@ -54,7 +54,7 @@ there's a requirement to make software responsible for the whole procedure. Huma
 To get the MTTR down to 5 minutes there's a requirement to either make hardware
 automatically available to the fleet, or to over-provision (more hardware is
 available than is needed at any given moment). When a hardware failure occurs
-FlowForge is configured to ensure all Node-RED instances that are KIA are
+FlowFuse is configured to ensure all Node-RED instances that are KIA are
 replaced. Bringing down the time to recovery to about 5 minutes.
 For many use-cases a MTTR of 5 minutes is _good enough_.
 
@@ -82,7 +82,7 @@ Whichever 2 you choose will dictate engineering choices in the pursuit of a grea
 
 ### The roadmap
 
-With FlowForge v1.4, released February 2023, a 5 minute mean time to recovery is
+With FlowFuse v1.4, released February 2023, a 5 minute mean time to recovery is
 achieved for all flows running locally, that is: in the cluster. Going beyond this
 milestone requires your input! I'd love to chat about your challenges, please 
 [pick a timeslot to discuss your requirements](https://meetings-eu1.hubspot.com/zeger-jan)!

@@ -2,9 +2,9 @@
 navTitle: Handbook
 ---
 
-# FlowForge Handbook
+# FlowFuse Handbook
 
-This handbook contains all the information about how FlowForge is run. It's a
+This handbook contains all the information about how FlowFuse is run. It's a
 living set of documents - they will evolve with time and expand as we learn
 and discover new things.
 
@@ -16,14 +16,14 @@ shared in this handbook.
 
 The handbook is here for the whole company to help maintain. Pull-requests are welcome and [strongly encouraged](#contributing).
 
-## How FlowForge is run
+## How FlowFuse is run
 
 To run our company we provide a comprehensive guide outlining policies, procedures, and expectations, fostering consistency, clarity, and effective communication within the organisation.
 
 | | |
 |:----|:----|
 | [Values](/handbook/company/values.md)<br /><p>The core principles guiding and driving the whole company</p>
-| [Vision](/handbook/company/vision.md)<br /><p>Where we're going with FlowForge</p>|
+| [Vision](/handbook/company/vision.md)<br /><p>Where we're going with FlowFuse</p>|
 | [Operations](/handbook/operations/)<br /><p>The day to day operations, tactical bizzops</p>
 | [PeopleOps](/handbook/peopleops/)<br /><p>Humans aren't resources, so people ops</p> |
 | [Communication](/handbook/company/communication.md)<br /><p>Increase signal, decrease noise.</p>
@@ -45,13 +45,12 @@ To run our company we provide a comprehensive guide outlining policies, procedur
 |:----|:----|
 | [Marketing](/handbook/marketing/)<br /><p>Keeping what's private private, and what needs protecting protected.</p>
 | [Sales](/handbook/sales/)<br /><p>Meeting customer demand.</p>|
-| [Customer Success](/handbook/operations/customer-success.md)<br /><p>Happy customers is what makes FlowForge a sustainable business.</p>
+| [Customer Success](/handbook/operations/customer-success.md)<br /><p>Happy customers is what makes FlowFuse a sustainable business.</p>
 | |
-
  
 ### About the Handbook
 
-The FlowForge handbook is inspired by the [GitLab handbook](https://about.gitlab.com/handbook/about/).
+The FlowFuse handbook is inspired by the [GitLab handbook](https://about.gitlab.com/handbook/about/).
 As an all-remote company, we share [their rationale](https://about.gitlab.com/handbook/about/#advantages) for having a handbook.
 
 The aim is to avoid institutional knowledge building up inside our heads without
@@ -64,7 +63,7 @@ conversation about what we do.
 The handbook is maintained on [GitHub](https://github.com/flowforge/website/tree/main/src/handbook) and contributions can be made through pull-requests.
 
 All changes merged to the `main` branch will be automatically deployed to the handbook on the
-[FlowForge website](https://flowforge.com/handbook).
+[FlowFuse website](https://flowfuse.com/handbook).
 
 ##### Building the site locally
 
