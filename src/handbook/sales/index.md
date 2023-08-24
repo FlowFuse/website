@@ -9,6 +9,7 @@ This section details how to engage with customers at FlowFuse and particularly h
  - [Demo](./demo.md)
  - [Engagements & Pricing](./pricing.md)
  - [Sales playbook (internal)](https://docs.google.com/document/d/1Jrt5sNg46wngQ5UAii8sbN94PTlIAscOWrFcOhSVNPE/edit){rel="nofollow"}
+ - [Closing a Deal](/handbook/sales/closing-a-deal/)
 
 ## Lead status
 
