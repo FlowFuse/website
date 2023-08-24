@@ -4,13 +4,10 @@ navTitle: Expenses
 
 ## Expenses
 
-The company will cover any reasonable work-related expense, including ensuring you
-have the equipment (laptop/monitor/accessories) you need to do the job. As an
-all-remote company, we meet via Zoom. As such, we will cover the cost of a good
-webcam/microphone/lighting arrangement.
-
-The general rule is: treat it like your own money - seek good value and use 
-common sense. If you do require any equipment, talk to your manager to discuss options.
+FlowFuse will reimburse you for any work-related expenses that are considered
+reasonable. The general principle to follow is to treat work-related expenses
+**as if they were your own money**. It is important to seek good value for your
+purchases and use common sense when making decisions.
 
 There are two ways of spending company money - either using a company credit card,
 or through reimbursement.
@@ -31,7 +28,7 @@ through email, or through Slack. For a full explanation, please [read their docs
 Brex can also be used to create vendor cards that allow for reoccurring payment for a monthly subscription with a vendor.
 Contact the peopleops manager if you require a vendor card.
 
-### Oops! Misused Your Brex Card for Personal Expenses? Here's How to Handle the Situation Like a Pro
+#### Oops! Misused Your Brex Card for Personal Expenses? Here's How to Handle the Situation Like a Pro
 
 If you realize that you have used your Brex card for personal purposes by mistake, it is crucial to promptly notify the People Ops Manager. The People Ops Manager is responsible for overseeing employee-related matters, including expenses and reimbursements. They will be able to assist you in addressing the situation appropriately. Contacting the People Ops Manager as soon as possible ensures that they are made aware of the mistake and can guide you on the necessary steps to rectify it, such as initiating reimbursement or repayment processes.
 
