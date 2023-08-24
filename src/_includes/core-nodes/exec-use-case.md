@@ -40,6 +40,12 @@ windown of the `exec` node:
 This will produce a message per line to the standard out output for further
 processing.
 
+### Shell Expansions
+
+As the arguments for the exec nodes are executed as is, shell expansions will
+not work. For example when the exec command is `rm -r /path/to/dir/*`, the `*`
+will not be expanded and Node-RED will try to remove the file or directory called `*` in the `/path/to/dir` directory.
+
 ### FlowFuse
 
 On FlowFuse Cloud, the Node-RED exec nodes are disabled. The Stacks, that is the
