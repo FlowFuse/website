@@ -1,11 +1,11 @@
 [{
     "title": "Hosted Node-RED - Easy to get started, easier to maintain",
-    "content": "FlowForge Cloud takes care of running Node-RED for you. No more messing around with Docker containers, upgrading to new releases, keeping your Node-RED running, we take care of it for you.",
+    "content": "FlowFuse Cloud takes care of running Node-RED for you. No more messing around with Docker containers, upgrading to new releases, keeping your Node-RED running, we take care of it for you.",
     "videoid": "K4xw09DbSdI"
   },
   {
     "title": "Multiple Node-RED Instances from one place",
-    "content": "FlowForge Cloud takes care of running Node-RED for you. No more messing around with Docker containers, upgrading to new releases, keeping your Node-RED running, we take care of it for you.",
+    "content": "FlowFuse allows you to create multiple Node-RED instances and manage them in one place. Gone are the days of trying to coordinate Node-RED installations, or multitude of tabs. Finally Node-RED allows for serious application development.",
     "videoid": "K4xw09DbSdI"
   },
   {
