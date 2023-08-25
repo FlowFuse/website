@@ -8,38 +8,24 @@ image:
 <div class="mt-12">
     {% include "components/divider-flow--top-red--light.njk" %}
 </div>
-
-<div class="about w-full ff-bg-light pb-14 md:pt-6 -mt-1">
-    <div class="container m-auto max-w-none sm:max-w-lg md:max-w-5xl flex flex-col gap-y-6">
-        <div class="relative w-full p-6 m-auto">
-            <div class="absolute bottom-4 left-4 bg-red-600 w-48 h-32 rounded-md z-0"></div>
-            <div class="flex flex-col md:flex-row gap-6 items-center z-10 bg-white rounded drop-shadow-md px-8 pt-6 pb-8 md:py-6 md:justify-between">
-                <div class="md:w-1/2 pt-4">
-                    <div class="flex flex-row gap-3 items-center">
-                        <div class="min-w-[60px] h-20 text-7xl bg-red-600 text-gray-50 text-center font-bold px-1 rounded pt-1">1</div>
-                        <h4><div class="font-medium leading-tight pt-1">Hosted Node-RED - Easy to get started, easier to maintain</div></h4>
+<div class="about w-full ff-bg-light pb-14 md:pt-6 -mt-1 pb-20">
+    <div class="container m-auto max-w-none sm:max-w-lg md:max-w-5xl flex flex-col gap-y-8">
+        {% for item in reasons %}
+            <div class="relative w-full p-6 m-auto">
+                <div class="absolute {% if loop.index is odd %}bottom-4 left-4{% else %}top-4 right-4{% endif %} bg-red-600 w-48 h-32 rounded-md z-0"></div>
+                <div class="flex flex-col md:flex-row{% if loop.index is odd %}-reverse{% endif %} gap-6 items-center z-10 bg-white rounded drop-shadow-md px-8 pt-6 pb-8 md:py-6 md:justify-between">
+                    <div class="md:w-1/2 pt-4">
+                        <div class="flex flex-row gap-3 items-center">
+                            <div class="min-w-[60px] h-20 text-7xl bg-red-600 text-gray-50 text-center font-bold px-1 rounded pt-1">{{ loop.index }}</div>
+                            <h4><div class="font-medium leading-tight pt-1">{{ item.title }}</div></h4>
+                        </div>
+                        <p>{{ item.content }}</p>
                     </div>
-                    <p>FlowForge Cloud takes care of running Node-RED for you. No more messing around with Docker containers, upgrading to new releases, keeping your Node-RED running, we take care of it for you.</p>
-                </div>
-                <div class="md:w-1/2 flex justify-center">
-                    <lite-youtube videoid="K4xw09DbSdI" style="background-image: url('images/why-ff/why-ff-1.jpg'); width: 444px;" class="border-2 border-gray-800 rounded-md w-full max-w-sm md:max-w-none sm:max-h-full"></lite-youtube>
+                    <div class="md:w-1/2 flex justify-center">
+                        <lite-youtube videoid="{{ item.videoid }}" style="background-image: url('images/why-ff/why-ff-{{ loop.index }}.jpg'); width: 444px;" class="border-2 border-gray-800 rounded-md w-full max-w-sm md:max-w-none sm:max-h-full"></lite-youtube>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="relative w-full p-6 m-auto">
-            <div class="absolute top-4 right-4 bg-red-600 w-48 h-32 rounded-md z-0"></div>
-            <div class="flex flex-col md:flex-row-reverse gap-6 items-center z-10 bg-white rounded drop-shadow-md px-8 pt-6 pb-8 md:py-6 md:justify-between">
-                <div class="md:w-1/2 pt-4">
-                    <div class="flex flex-row gap-3 items-center">
-                        <div class="min-w-[60px] h-20 text-7xl bg-red-600 text-gray-50 text-center font-bold px-1 rounded pt-1">1</div>
-                        <h4><div class="font-medium leading-tight pt-1">Hosted Node-RED - Easy to get started, easier to maintain</div></h4>
-                    </div>
-                    <p>FlowForge Cloud takes care of running Node-RED for you. No more messing around with Docker containers, upgrading to new releases, keeping your Node-RED running, we take care of it for you.</p>
-                </div>
-                <div class="md:w-1/2 flex justify-center">
-                    <lite-youtube videoid="K4xw09DbSdI" style="background-image: url('images/why-ff/why-ff-1.jpg'); width: 444px;" class="border-2 border-gray-800 rounded-md w-full max-w-sm md:max-w-none sm:max-h-full"></lite-youtube>
-                </div>
-            </div>
-        </div>     
+        {% endfor %}
     </div>
 </div>

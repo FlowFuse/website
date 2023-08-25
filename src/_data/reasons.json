@@ -1,0 +1,20 @@
+[{
+    "title": "Hosted Node-RED - Easy to get started, easier to maintain",
+    "content": "FlowForge Cloud takes care of running Node-RED for you. No more messing around with Docker containers, upgrading to new releases, keeping your Node-RED running, we take care of it for you.",
+    "videoid": "K4xw09DbSdI"
+  },
+  {
+    "title": "Multiple Node-RED Instances from one place",
+    "content": "FlowForge Cloud takes care of running Node-RED for you. No more messing around with Docker containers, upgrading to new releases, keeping your Node-RED running, we take care of it for you.",
+    "videoid": "K4xw09DbSdI"
+  },
+  {
+    "title": "Version control your Node-RED flows",
+    "content": "Who hasn't made changes to a Node-RED flow but regret not exporting the previous version? FlowForge has built in version control. You can create snapshots of your instance that can be rolled back at any time.",
+    "videoid": "K4xw09DbSdI"
+  },
+  {
+    "title": "Team development",
+    "content": "Node-RED is an amazing productivity tool for an individual engineer. However, doing any type of collaborative development with colleagues is very difficult. FlowForge allows for team development on the same Node-RED instances. ",
+    "videoid": "K4xw09DbSdI"
+  }]
