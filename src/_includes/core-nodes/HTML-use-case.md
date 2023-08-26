@@ -2,7 +2,7 @@
 
 For parsing HTML in Node-RED you can use the HTML node. Unlike for example
 the [YAML node](/node-red/core-nodes/YAML), it's a parser only. This node
-does not format as HTML. Use the [format node](/node-red/core-nodes/format)
+does not format as HTML. Use the [template node](/node-red/core-nodes/template/)
 for that use case.
 
 ### Examples
