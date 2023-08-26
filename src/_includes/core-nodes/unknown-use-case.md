@@ -1,0 +1,18 @@
+The `unknown` node is not one users want to add to their flows, and there's no
+way to add them from the node palette. This node will only show up when importing
+a flow with nodes that have not yet been installed.
+
+To understand what nodes need installing when importing the flow, it's advised
+to create a list of nodes _before_ exporting your nodes. Such a list can be obtained
+by going to the manage palette. When a node is unused, it will be be labelled as
+such.
+
+!["List of nodes installed, including unused nodes"](./images/list-nodes-unused.png)
+
+Presently it is not possible to install older versions of a package into Node-RED so your flows will need to run on the latest version of each package, you may want to consider updating before you migrate.
+
+## Migrating your flows to FlowFuse
+
+When migrating your flows from any Node-RED to a FlowFuse managed Node-RED instance
+it's advices to use [the `nr-tools plugin`](/docs/user/migration) created by the FlowFuse team. Migrating this way will copy not only the flow, but also install
+the required packages, and copy over the credentials.
