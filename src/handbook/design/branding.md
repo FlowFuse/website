@@ -10,23 +10,52 @@ Our logo is a combination mark, featuring an abstract symbol that represents the
 
 ### Versions
 
-The horizontal version is the preferred choice. When space and layout constraints make this option an awkward fit, forcing the logo to be too small, the vertical version can be used.
+**The horizontal version is the preferred choice**. When space and layout constraints make this option an awkward fit, forcing the logo to be too small, the vertical version can be used.
 
-(Image of horizontal, vertical and icon)
+#### Horizontal Version
+
+<hr style="margin-bottom:30px; border-color:#E5E7EB;">
+<div class="flex h-full flex-col justify-center items-center md:mt-0 mb-14">
+    <img width="250" min-width="250" alt="Image of the horizontal version of FlowFuse logo" src="../images/logos/ff-logo--wordmark--light.png">
+</div>
+
+#### Vertical Version
+
+<hr style="margin-bottom:30px; border-color:#E5E7EB;">
+<div class="flex h-full flex-col justify-center items-center md:mt-0 mb-14">
+    <img width="180" min-width="180" alt="Image of the vertical version of FlowFuse logo" src="../images/logos/ff-logo--square--light.png">
+</div>
 
 ### Minimun Sizes
 
-The symbol can stand alone without the wordmark when the size becomes so small that using either combination mark would render the wordmark unreadable.
+When the size becomes too small for the combination mark to render the wordmark legibly, the symbol can be used independently without the wordmark.
 
-(Image of minimum sizes)
+#### Symbol
+
+<hr style="margin-bottom:30px; border-color:#E5E7EB;">
+<div class="flex h-full flex-col justify-center items-center md:mt-0 mb-14">
+    <img width="60" min-width="60" alt="Image of the FlowFuse symbol" src="../images/logos/ff-icon--light.png">
+</div>
 
 ### Construction and correct usage
 
 The order, distance, and proportion of the elements composing the combination mark must not be altered in any way.
 
-A safety area is defined to ensure proper image usage and readability.
+A **safety area of 1X** is defined to ensure proper image usage and readability.
 
-(Image of log construction and safety area)
+#### Construction of Horizontal Version
+
+<hr style="margin-bottom:30px; border-color:#E5E7EB;">
+<div class="flex h-full flex-col justify-center items-center md:mt-0 mb-14">
+    <img width="500" alt="Image depicting the construction process of the logo's horizontal version." src="../images/logos/horizontal-construction.png">
+</div>
+
+#### Construction of Vertical Version
+
+<hr style="margin-bottom:30px; border-color:#E5E7EB;">
+<div class="flex h-full flex-col justify-center items-center md:mt-0 mb-14">
+    <img width="357" alt="Image depicting the construction process of the logo's vertical version." src="../images/logos/vertical-construction.png">
+</div>
 
 ### Chromatic Versions
 
