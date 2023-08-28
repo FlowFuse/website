@@ -11,6 +11,11 @@ This section details how to engage with customers at FlowFuse and particularly h
  - [Sales playbook (internal)](https://docs.google.com/document/d/1Jrt5sNg46wngQ5UAii8sbN94PTlIAscOWrFcOhSVNPE/edit){rel="nofollow"}
  - [Closing a Deal](/handbook/sales/closing-a-deal/)
 
+## Sales calls
+
+For internal training purposes all sales calls should be recorded after getting explicit consent
+from the customer. On request of the customer, the recording will be shared.
+
 ## Lead status
 
 For leads who are [MQLs or SQLs](/handbook/marketing/hubspot.md) the `Lead status`
