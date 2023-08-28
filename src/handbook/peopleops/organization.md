@@ -13,7 +13,7 @@ This procedure applies to all employees and full-time contractors regardless of 
 
 Should an employee have a grievance, we encourage them to first attempt an informal resolution by discussing the matter with their immediate manager. This step is intended to achieve a swift and amicable resolution.
 
-**Step 2: Submitting Grievance VIA Email**
+**Step 2: Submitting Grievance via Email**
 
 If the employee is not satisfied with the result of the informal resolution or is hesitant to approach their immediate manager, they can escalate the matter by sending a formal grievance via email to the People Ops Manager. The email should comprehensively outline the problem, include pertinent details, and provide any available evidence that support the grievance.
 
