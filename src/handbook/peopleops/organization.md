@@ -11,7 +11,7 @@ This procedure applies to all employees and full-time contractors regardless of 
 
 **Step 1: Informal Resolution**
 
-Should an employee have a grievance, we encourage them to first attempt an informal resolution by discussing the matter with their immediate manager. This step is intended to achieve a swift and amicable resolution.
+Should an employee have a grievance, we encourage them to first attempt an informal resolution by discussing the matter with their immediate manager. If your manager is not aware or if the matter requires escalation, our People Ops Manager is available to assist. This step is intended to achieve a swift and amicable resolution.
 
 **Step 2: Submitting Grievance via Email**
 
