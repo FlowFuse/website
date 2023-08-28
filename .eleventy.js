@@ -357,7 +357,7 @@ module.exports = function(eleventyConfig) {
         function createNav(tag) {
             const groupOrder = {
                 docs: [
-                    'FlowFuse Manuals',
+                    'FlowFuse User Manuals',
                     'Device Agent',
                     'FlowFuse Cloud',
                     'FlowFuse Self-Hosted',
