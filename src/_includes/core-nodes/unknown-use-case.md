@@ -1,11 +1,10 @@
-The `unknown` node is not one users want to add to their flows, and there's no
-way to add them from the node palette. This node will only show up when importing
-a flow with nodes that have not yet been installed.
+The `unknown` node is not one users can add add to their flows, and there's no
+way to add them from the node palette. This node will only show up when when you
+import a flow with nodes that have not yet been installed.
 
-To understand what nodes need installing when importing the flow, it's advised
-to create a list of nodes _before_ exporting your nodes. Such a list can be obtained
-by going to the manage palette. When a node is unused, it will be be labelled as
-such.
+To understand which nodes need installing when importing a flow, it is advised
+to create a list of installed node packages _before_ exporting your flows. Such a list 
+can be obtained by looking in the palette manager.
 
 !["List of nodes installed, including unused nodes"](./images/list-nodes-unused.png)
 
