@@ -1052,7 +1052,7 @@ h4:hover .header-anchor {
     .ff-feature-table-section li span {
         text-align: center;
         height: 100%;
-        @apply px-1 flex items-center justify-center;
+        @apply px-1 py-2 flex items-center justify-center;
     }
 
     .ff-feature-table-section li button {

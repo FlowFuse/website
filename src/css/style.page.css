@@ -242,6 +242,7 @@
         font-size: 0.875rem;
         line-height: 1.5rem;
         font-weight: 200;
+        margin-bottom: 0;
     }
 
     .pricing-tile a.ff-btn .ff-btn--secondary-oulined {
