@@ -66,7 +66,7 @@ Depending on the background against which the logo is presented, there are corre
 
 Search for the file name ending with "dark", such as: *ff-logo--wordmark--dark.png*
 
-<div class="flex h-full flex-col justify-center items-center md:mt-4 mb-14 bg-gray-800 rounded-md md:w-[60%] m-auto">
+<div class="flex h-full flex-col justify-center items-center md:mt-4 mb-14 bg-gray-800 rounded-md md:w-[60%] min-w-[330px] m-auto">
     <div class="w-[90%] border-b border-gray-400 p-8">
         <img class="m-auto" width="250" min-width="250" alt="Image of the horizontal version of FlowFuse logo for dark backgrounds" src="../images/logos/ff-logo--wordmark--dark.png">
     </div>
@@ -81,7 +81,7 @@ Search for the file name ending with "dark", such as: *ff-logo--wordmark--dark.p
 
 Search for the file name ending with "light", like: *ff-logo--wordmark--light.png*
 
-<div class="flex h-full flex-col justify-center items-center md:mt-4 mb-14 bg-white rounded-md md:w-[60%] m-auto">
+<div class="flex h-full flex-col justify-center items-center md:mt-4 mb-14 bg-white rounded-md md:w-[60%] min-w-[330px] m-auto">
     <div class="w-[90%] border-b border-gray-100 p-8">
         <img class="m-auto" width="250" min-width="250" alt="Image of the horizontal version of FlowFuse logo for light backgrounds" src="../images/logos/ff-logo--wordmark--light.png">
     </div>
@@ -98,7 +98,7 @@ Please note that the dark background version consists of two colors, while the r
 
 When only black or white are allowed, search for the file name ending with "black" or "white". For instance: *ff-logo--wordmark--white.png*
 
-<div class="flex h-full flex-col justify-center items-center md:mt-4 mb-14 bg-white rounded-md md:w-[60%] m-auto">
+<div class="flex h-full flex-col justify-center items-center md:mt-4 mb-14 bg-white rounded-md md:w-[60%] min-w-[330px] m-auto">
     <div class="w-[90%] border-b border-gray-100 p-8">
         <img class="m-auto" width="250" min-width="250" alt="Image of the monochromatic version of FlowFuse logo" src="../images/logos/ff-logo--wordmark--black.png">
     </div>
@@ -106,7 +106,7 @@ When only black or white are allowed, search for the file name ending with "blac
         <img class="m-auto" width="180" min-width="180" alt="Image of the monochromatic version of FlowFuse logo" src="../images/logos/ff-logo--square--black.png">
     </div>
 </div>
-<div class="flex h-full flex-col justify-center items-center md:mt-4 mb-14 bg-black rounded-md md:w-[60%] m-auto">
+<div class="flex h-full flex-col justify-center items-center md:mt-4 mb-14 bg-black rounded-md md:w-[60%] min-w-[330px] m-auto">
     <div class="w-[90%] border-b border-gray-500 p-8">
         <img class="m-auto" width="250" min-width="250" alt="Image of the monochromatic version of FlowFuse logo" src="../images/logos/ff-logo--wordmark--white.png">
     </div>
