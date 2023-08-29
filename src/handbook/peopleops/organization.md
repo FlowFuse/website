@@ -1,6 +1,7 @@
 ---
 navTitle: HR Policies
 ---
+
 All employees at FlowFuse will find HR policies in this section of the handbook. Please note that this section of the handbook will be continuously updated to reflect the evolving needs of our organization. As FlowFuse is actively in the process of developing and incorporating additional policies, we encourage you to check back regularly for the latest updates. Your familiarity with these policies ensures that you stay informed and aligned with our company's values and practices.
 
 ## Grievance Procedure
