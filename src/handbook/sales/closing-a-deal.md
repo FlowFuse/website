@@ -1,3 +1,7 @@
+---
+navTitle: Closing a Deal
+---
+
 ## Closing a deal
 
 Follow the steps below to ensure every new customer is setup for success and quickly as possible following a sale.
