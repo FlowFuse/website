@@ -7,7 +7,7 @@ describe("Page titles", async function() {
 		const data = fs.readFileSync(path.resolve(__dirname, "../_site/index.html"), 'utf8');
 
 		const xpath = require('xpath');
-    const dom = require('xmldom').DOMParser;
+    const dom = require('@xmldom/xmldom').DOMParser;
 
 		const doc = new dom({
         locator: {},
