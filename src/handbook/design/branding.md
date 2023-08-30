@@ -25,7 +25,7 @@ Our logo is a combination mark, featuring an abstract symbol that represents the
     <img width="180" min-width="180" alt="Image of the vertical version of FlowFuse logo" src="../images/logos/ff-logo--square--light.png">
 </div>
 
-### Minimun Sizes
+### Minimum Sizes
 
 Only when the size becomes too small for the combination mark to render the wordmark legibly, the symbol can be used independently without the wordmark.
 
