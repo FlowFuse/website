@@ -1,6 +1,120 @@
 # FlowFuse Branding Guidelines
 
 For FlowFuse Assets (e.g. logos, pictograms, and raw design files), please look in the [`/design/Media`](https://drive.google.com/drive/u/1/folders/1guBnBUrIiRXuK6vsik_NIXIhtE1cZRRa) folder on Google Drive.
+
+## Logo
+### Composition
+
+Our logo is a combination mark, featuring an abstract symbol that represents the flows connecting the nodes, along with a wordmark displaying our name.
+
+### Versions
+
+**The horizontal version is the preferred choice**. When space and layout constraints make this option an awkward fit, forcing the logo to be too small, the vertical version can be used.
+
+#### Horizontal Version
+
+<hr style="margin-bottom:30px; border-color:#E5E7EB;">
+<div class="flex h-full flex-col justify-center items-center md:mt-0 mb-14">
+    <img width="250" min-width="250" alt="Image of the horizontal version of FlowFuse logo" src="../images/logos/ff-logo--wordmark--light.png">
+</div>
+
+#### Vertical Version
+
+<hr style="margin-bottom:30px; border-color:#E5E7EB;">
+<div class="flex h-full flex-col justify-center items-center md:mt-0 mb-14">
+    <img width="180" min-width="180" alt="Image of the vertical version of FlowFuse logo" src="../images/logos/ff-logo--square--light.png">
+</div>
+
+### Minimum Sizes
+
+Only when the size becomes too small for the combination mark to render the wordmark legibly, the symbol can be used independently without the wordmark.
+
+#### Symbol
+
+<hr style="margin-bottom:30px; border-color:#E5E7EB;">
+<div class="flex h-full flex-col justify-center items-center md:mt-0 mb-14">
+    <img width="60" min-width="60" alt="Image of the FlowFuse symbol" src="../images/logos/ff-icon--light.png">
+</div>
+
+### Construction and correct usage
+
+The order, distance, and proportion of the elements composing the combination mark must not be altered in any way.
+
+A **safety area of 2X** is defined to ensure proper image usage and readability.
+
+#### Construction of Horizontal Version
+
+<hr style="margin-bottom:30px; border-color:#E5E7EB;">
+<div class="flex h-full flex-col justify-center items-center md:mt-0 mb-14">
+    <img width="500" alt="Image depicting the construction process of the logo's horizontal version." src="../images/logos/horizontal-construction.png">
+</div>
+
+#### Construction of Vertical Version
+
+<hr style="margin-bottom:30px; border-color:#E5E7EB;">
+<div class="flex h-full flex-col justify-center items-center md:mt-0 mb-14">
+    <img width="357" alt="Image depicting the construction process of the logo's vertical version." src="../images/logos/vertical-construction.png">
+</div>
+
+### Chromatic Versions
+
+Depending on the background against which the logo is presented, there are corresponding versions to be used.
+
+#### Dark Backgrounds
+
+<hr style="margin-bottom:30px; border-color:#E5E7EB;">
+
+Search for the file name ending with "dark", such as: *ff-logo--wordmark--dark.png*
+
+<div class="flex h-full flex-col justify-center items-center md:mt-4 mb-14 bg-gray-800 rounded-md md:w-[60%] min-w-[330px] m-auto">
+    <div class="w-[90%] border-b border-gray-400 p-8">
+        <img class="m-auto" width="250" min-width="250" alt="Image of the horizontal version of FlowFuse logo for dark backgrounds" src="../images/logos/ff-logo--wordmark--dark.png">
+    </div>
+    <div class="p-8">
+        <img width="180" min-width="180" alt="Image of the vertical version of FlowFuse logo for dark backgrounds" src="../images/logos/ff-logo--square--dark.png">
+    </div>
+</div>
+
+#### Light Backgrounds
+
+<hr style="margin-bottom:30px; border-color:#E5E7EB;">
+
+Search for the file name ending with "light", like: *ff-logo--wordmark--light.png*
+
+<div class="flex h-full flex-col justify-center items-center md:mt-4 mb-14 bg-white rounded-md md:w-[60%] min-w-[330px] m-auto">
+    <div class="w-[90%] border-b border-gray-100 p-8">
+        <img class="m-auto" width="250" min-width="250" alt="Image of the horizontal version of FlowFuse logo for light backgrounds" src="../images/logos/ff-logo--wordmark--light.png">
+    </div>
+    <div class="p-8">
+        <img width="180" min-width="180" alt="Image of the horizontal version of FlowFuse logo for light backgrounds" src="../images/logos/ff-logo--square--light.png">
+    </div>
+</div>
+
+Please note that the dark background version consists of two colors, while the remaining versions consist of a single color. Additionally, the shade of red varies according to the background.
+
+#### Monochromatic
+
+<hr style="margin-bottom:30px; border-color:#E5E7EB;">
+
+When only black or white are allowed, search for the file name ending with "black" or "white". For instance: *ff-logo--wordmark--white.png*
+
+<div class="flex h-full flex-col justify-center items-center md:mt-4 mb-14 bg-white rounded-md md:w-[60%] min-w-[330px] m-auto">
+    <div class="w-[90%] border-b border-gray-100 p-8">
+        <img class="m-auto" width="250" min-width="250" alt="Image of the monochromatic version of FlowFuse logo" src="../images/logos/ff-logo--wordmark--black.png">
+    </div>
+    <div class="p-8">
+        <img class="m-auto" width="180" min-width="180" alt="Image of the monochromatic version of FlowFuse logo" src="../images/logos/ff-logo--square--black.png">
+    </div>
+</div>
+<div class="flex h-full flex-col justify-center items-center md:mt-4 mb-14 bg-black rounded-md md:w-[60%] min-w-[330px] m-auto">
+    <div class="w-[90%] border-b border-gray-500 p-8">
+        <img class="m-auto" width="250" min-width="250" alt="Image of the monochromatic version of FlowFuse logo" src="../images/logos/ff-logo--wordmark--white.png">
+    </div>
+    <div class="p-8">
+        <img class="m-auto" width="180" min-width="180" alt="Image of the monochromatic version of FlowFuse logo" src="../images/logos/ff-logo--square--white.png">
+    </div>
+</div>
+
 ## Fonts
 
 In both the FlowFuse application and on our website, we use [Tailwind CSS](https://tailwindcss.com/). With Tailwind, comes the `font-sans` class, which we use across FlowFuse.
