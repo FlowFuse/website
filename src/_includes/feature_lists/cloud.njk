@@ -1,224 +1,117 @@
 {%
     set sections = [{
         label: "Features",
+        hosting: "cloud",
         rows: [{
-            id: 'hosting',
-            label: "Hosting",
-            values: ['Self-Managed', 'FlowFuse or Self-Managed', 'FlowFuse or Self-Managed'],
-            info: "<p>FlowFuse can be deployed using Docker, Kubernetes or run the core FlowFuse platform on your local machine directly.</p><p>FlowFuse Cloud provides you with a browser-based, secure and cloud-based platform, with all of the FlowFuse Premium features included and managed by us to reduce your operational overheads.</p>"
+            id: "team-members",
+            label: "Team Members",
+            values: ['2', '20', 'Unlimited'],
+            info: "<p>FlowForge allows multiple team members to collaborate on the same Node-RED flows.</p>"
         }, {
-            id: 'multiple-projects',
-            label: "Multiple Applications",
-            values: ['check', 'check', 'check'],
-            info: "<p>Scale your Node-RED infrastructure with as many Node-RED instances as you need.</p><p>In FlowFuse, a Project manages your instance of Node-RED, attached devices, context, environment variables, and version history.</p>"
+            id: "cloud-instances",
+            label: "Number of cloud instances",
+            values: ['2', 'Licensed amount', 'Licensed amount'],
+            info: "<p>FlowForge hosts multiple Node-RED instances from a common platform.</p>"
         }, {
-            id: 'node-red-upgrades',
-            label: "Easy Node-RED Upgrades",
-            values: ['check', 'check', 'check'],
-            info: "<p>Enable users to upgrade their Node-RED with a few clicks as new versions are released.</p><p>Our intuitive UI makes it clear when projects are running out-of-date stacks, so you have piece of mind over your flows running the latest and greatest versions.</p>"
+            id: "devices",
+            label: "Number of devices",
+            values: ['2', 'Licensed amount', 'Licensed amount'],
+            info: "<p>FlowForge allows you to manage Node-RED deployments on remote devices.</p>"
         }, {
-            id: "project-templates",
-            label: "Application Templates",
-            values: ['check', 'check', 'check'],
-            info: "<p>Spin up instances of Node-RED with all the relevant settings and Node-RED nodes already installed, customised to your own development environments.</p>"
+            id: "persistent-files",
+            label: "Persistent files",
+            values: ['1 Gb', '10 Gb', '100 Gb'],
+            info: "<p>FlowForge allows Node-RED instances to store files persistently to local file system. This is the space limit for these files.</p>"
         }, {
-            id: "project-config",
-            label: "Individual Application Configuration",
+            id: "persistent-context",
+            label: "Persistent Context",
+            values: ['10 Mb', '100 Mb', '1 Gb'],
+            info: "<p>In-memory values defined in a Node-RED flow will persist across project restarts and upgrades.</p>"
+        }, {
+            id: "nr-hosting",
+            label: "Node-RED Hosting",
             values: ['check', 'check', 'check'],
-            info: "<p>Control all Node-RED settings on a application-by-application basis, set Environment Variables for deployment and precise configuration of how your Node-RED instances run.</p>"
+            info: "<p>FlowForge hosts Node-RED instances.</p>"
+        }, {
+            id: "device-mgmt",
+            label: "Device Management",
+            values: ['check', 'check', 'check'],
+            info: "<p>Connect to edge devices to quickly assess and update logic. Debug one device and roll out improvements to your fleet in minutes. All securely without requiring full device access for your whole organisation.</p>"
         }, {
             id: "audit-log",
             label: "Audit Log",
             values: ['check', 'check', 'check'],
             info: "<p>Keep track of everything going on in your Node-RED instances and FlowFuse.</p><p>Audit Logs provide details on what actions have taken place, when they happened, and who did them.</p>"
         }, {
-            id: "team-config",
-            label: "Team-Based Configuration",
+            id: "pipelines",
+            label: "DevOps Pipelines",
             values: ['check', 'check', 'check'],
-            info: "<p>Manage all of your Node-RED applications in FlowFuse Teams, control access and Team-level settings in a central place to reduce operational overhead.</p>"
+            info: "<p>DevOps pipelines allows for you to setup different environments for development, testing and production Node-RED instances.</p>"
         }, {
+            id: "security",
+            label: "Endpoint Security",
+            values: ['None/HTTP Basic Auth', 'None/HTTP Basic Auth/FF Auth', 'None/HTTP Basic Auth/FF Auth'],
+            info: "<p>Tooltip info here</p>"
+         }, { 
             id: "rbac",
             label: "Role-Based Access Control",
             values: ['check', 'check', 'check'],
             info: "<p>FlowFuse's intuitive team management tooling makes it easy for you to control whom has access to what.</p>"
         }, {
-            id: "device-debug",
-            label: "Edge Device Debugging",
-            values: ['check', 'check', 'check'],
-            info: "<p>Manage and control thousands of devices in FlowFuse. Define your flow in one central place, then one-click deploy remotely to the edge, all from within FlowFuse.</p>"
+            id: "ha",
+            label: "High Availibility",
+            values: [null, null, 'check'],
+            info: "<p>Leverage horizontal scaling for reliable and scalible processing of your data through Node-RED.</p>"
         }, {
-            id: "version-history",
-            label: "Version History",
-            values: ['check', 'check', 'check'],
-            info: "<p>FlowFuse Snapshots provide capability to save backups of your flows. Revert back to past versions, and use those Snapshots to deploy out to remote devices.</p>"
-        }, {
-            id: "persistent-file",
-            label: "Persistent File Storage",
-            values: ['check', 'check', 'check'],
-            info: "<p>Read & write to files in your flows. These will persist beyond container and instance restarts and upgrades. In FlowFuse Cloud, each Node-RED instance has a quota of 100MB of file storage. A single write operation is limited to 10MB in size.</p>"
-        }, {
-            id: "device-mgmt",
-            label: "Edge Device Management",
+            id: "team-library",
+            label: "Team Library",
             values: [null, 'check', 'check'],
-            info: "<p>Connect to edge devices to quickly assess and update logic. Debug one device and roll out improvements to your fleet in minutes. All securely without requiring full device access for your whole organisation.</p>"
-        }, {
-            id: "project-nodes",
-            label: "Inter Project Communication",
-            values: [null, 'check', 'check'],
-            info: "<p><a href=\"https://github.com/flowforge/flowforge-nr-project-nodes\" target=\"blank\">FlowFuse Project Nodes</a> enable the passing of data and messages between your Node-RED projects, included with all FlowFuse Projects by default.</p>"
-        }, {
-            id: "persistent-context",
-            label: "Persistent Context Storage",
-            values: [null, 'check', 'check'],
-            info: "<p>In-memory values defined in a Node-RED flow will persist across project restarts and upgrades. In FlowFuse Cloud, persistent context has a quota limit set at 1MB per instance.</p>"
-        }, {
-            label: "Shared Team Library",
-            values: [null, 'check', 'check']
-        }, {  
-            label: "Devops Workflow",
-            values: [null, 'check', 'check'],
-            info: "<p>Use pipelines to ensure quality is delivered from your development stage, through staging, and your production environment</p>"
+            info: "<p>Setup standard nodes and flows that can be shared with all team members.</p>"
         }, {
             id: "sso",
             label: "Single Sign-On (SSO)",
             values: [null, null, 'check'],
             info: "<p>FlowFuse can be configured to run with your own Single Sign-On (SSO) provider. Allow users to access FlowFuse with a single set of login credentials, improving security, user experience, and save them time.</p>"
         }, {
-            label: "High Availibility",
-            values: [null, null, 'check'],
-            info: "<p>Leverage horizontal scaling for reliable and scalible processing of your data through Node-RED.</p>"
-        }, {
-            label: "Custom Node Catalog",
-            values: [null, 'time', 'time']
-        }, {
-            label: "Private npm Repo Support",
-            values: [null, 'time', 'time']
+            id: "project-nodes",
+            label: "Seamless Data Stream",
+            values: [null, 'check', 'check'],
+            info: "<p><a href=\"https://github.com/flowforge/flowforge-nr-project-nodes\" target=\"blank\">FlowForge Project Nodes</a> enable the passing of data and messages between your Node-RED projects, included with all FlowForge Projects by default.</p>"
         }]
     }, {
-        label: "Limits",
+        label: "Support & SLA",
+        hosting: "cloud",
         rows: [{
-            label: "Maximum Teams",
-            values: [50, "Unlimited", "Unlimited"]
+            label: "Committed SLA",
+            values: ['None', '99.5%', 'Up to 99.9%']
         }, {
-            label: "Maximum Local Instances",
-            values: [50, "Unlimited", "Unlimited"]
+            label: "FlowForge Support",
+            values: ['<a href="https://community.flowfuse.com/">Community Forum</a>', 'Next business day', '4 hours']
         }, {
-            label: "Maximum Remote Instances",
-            values: [50, "Unlimited", "Unlimited"]
-    }]
-    }, {
-        label: "Support",
-        rows: [{
-            label: "Community Support",
-            values: ['check', 'check', 'check']
-        }, {
-            label: "Ticket-Based Support",
-            values: [null, 'SLA: Next Business Day', 'SLA: 4 hours']
-        }, {
-            label: "Long-Term Support",
-            values: [null, 'check', 'check']
+            label: "Node-RED Support",
+            values: ['<a href="https://discourse.nodered.org/">Community Forum</a>', 'Next business day', '4 hours']
         }]
+    }, {
+        label: "Subscription",
+        hosting: "cloud",
+        rows: [{
+            label: "Price",
+            values: ['$15/month', '$25/instance/month<br>$15/device/month', 'Contact Sales']
+        }],
+        buttons: [{
+            cta: "TRY FOR FREE",
+            url: "https://app.flowforge.com/account/create",
+            onclick: "capture('cta-join', {'position': 'secondary'}, {'plan': 'cloud-starter'})"
+        }, {
+            cta: "BOOK A DEMO",
+            url: "https://app.flowforge.com/account/create",
+            onclick: "capture('cta-contact', {'position': 'primary'}, {'plan': 'cloud-team'})"
+        }, {
+            cta: "CONTACT SALES",
+            url: "/book-demo",
+            onclick: "capture('cta-contact', {'position': 'secondary'}, {'plan': 'cloud-enterprise'})"
+        }] 
     }]
 %}
 
-<script>
-    function openInfo(label, id) {
-        capture('info-feature', { feature: id})
-        document.getElementById("ff-dialog--feature--" + label).classList.add('active')
-    }
-    function closeInfo(label) {
-        document.getElementById("ff-dialog--feature--" + label).classList.remove('active')
-    }
-</script>
-
-<div class="ff-feature-table m-auto">
-    <ul class="ff-feature-table-section sticky top-0 z-10">
-        <li class="ff-feature--column-header">
-            <span></span>
-            <label class="border-2 mr-2">
-                <div>Starter</div>
-                <div class="text-base font-medium">(Open-Source)</div>
-            </label>
-            <label class="border-2 border-red-400">Premium</label>
-            <label class="border-2 ml-2">Enterprise</label>
-        </li>
-    </ul>
-    {% for section in sections %}
-    <ul class="ff-feature-table-section">
-
-        <li class="ff-feature--header sticky top-[74px]">
-            <span class="py-3 pl-4">{{ section.label }}</span>
-            <span></span>
-            <span></span>
-            <span></span>
-        </li>
-        {% for row in section.rows %}
-        <li class="ff-feature-row">
-            <label onclick="openInfo('{{ row.label }}', '{{ row.id }}')">
-                {{ row.label }}
-                {% if row.info %}
-                <i id="ff-info--{{ row.id }}" class="ff-icon ">{% include "components/icons/info.svg" %}</i>
-                {% endif %}
-            </label>
-            {% for value in row.values %}
-            <span>
-                {% if value === "check" %}
-                {% include "components/feature-check.svg" %}
-                {% elif value === "time" %}
-                {% tooltip "On the roadmap" %}
-                    {% include "components/feature-time.svg" %}
-                {% endtooltip %}
-                {% elif value === "optional" %}
-                {% include "components/feature-optional.svg" %}
-                {% elif value === "addon" %}
-                {% include "components/feature-addon.svg" %}
-                {% elif value === null %}
-                <span></span>
-                {% else %}
-                {{ value }}
-                {% endif %}
-            </span>
-            {% endfor %}
-        </li>
-        {% endfor %}
-    </ul>
-    {% endfor %}
-    <ul class="ff-feature-table-section">
-        <li class="ff-feature--column-header">
-            <span></span>
-            <span></span>
-            <label class="border-2 border-red-400 ff-blank"></label>
-            <span></span>
-        </li>
-        <li class="ff-feature--column-buttons -mt-1 h-12">
-            <span></span>
-            <label class="mr-2"><a class="ff-btn ff-btn--secondary-outlined uppercase align-baseline w-full" href="/docs/install" onclick="capture('cta-install', {'position': 'primary'})">Install now</a></label>
-            <label><a class="ff-btn ff-btn--primary uppercase align-baseline w-full rounded-t-none" href="https://app.flowforge.com/account/create" onclick="capture('cta-join', {'position': 'primary'})">TRY FOR FREE</a></label>
-            <label class="ml-2"><a class="ff-btn ff-btn--secondary-outlined uppercase align-baseline w-full " href='/book-demo'>Book a demo</a></label>
-        </li>
-    </ul>
-    <ul class="ff-features-key">
-        <li>
-            {% include "components/feature-check.svg" %}
-            <label>Included</label>
-        </li>
-        <li>
-            {% include "components/feature-time.svg" %}
-            <a href="/product/roadmap/"><label>On the Roadmap</label></a>
-        </li>        
-    </ul>
-</div>
-
-<div id="feature-dialogs">
-    {% for section in sections %}
-        {% for row in section.rows %}
-            <div id="ff-dialog--feature--{{ row.label }}" class="ff-dialog-container">
-                <div class="ff-dialog-shadow" onclick="closeInfo('{{ row.label }}')"></div>
-                <div class="ff-dialog-modal">
-                    <div id="ff-dialog--header" class="ff-dialog-header">Feature: {{ row.label }}</div>
-                    <div id="ff-dialog--content" class="ff-dialog-content">{{ row.info | safe }}</div>
-                </div>
-            </div>
-        {% endfor %}
-    {% endfor %}
-</div>
+{% include "feature_lists/features-table-base.njk" %}

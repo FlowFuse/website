@@ -925,13 +925,12 @@ h4:hover .header-anchor {
     }
 
     .ff-feature-table {
-        @apply max-w-screen-lg w-full;
+        @apply max-w-screen-lg w-full md:px-9;
         margin-top: 3rem;
         position: relative;
         color: theme(colors.gray.800);
         border-radius: 12px;
-        min-width: 768px;
-        padding: 36px 36px;
+        min-width: 610px;
     }
 
     .ff-feature-table li .ff-icon {
@@ -950,35 +949,41 @@ h4:hover .header-anchor {
         text-align: left;
     }
     
-/* Border radius for table feature header */
-
-    /* .ff-feature--header:nth-of-type(1) {
-        border-top-left-radius: 0.5rem;
-    }   */
-
     .ff-feature-table-section li {
         display: grid;
         grid-template-columns: 270px 1fr 1fr 1fr;
         align-items: center;
-        @apply bg-gray-200/60;
+        @apply bg-gray-200;
+    }
+    
+    @media (max-width: 720px) {
+        .ff-feature-table-section li {
+            grid-template-columns: 220px 1fr 1fr 1fr;
+        }
+    }    
+
+    @media (max-width: 680px) {
+        .ff-feature-table-section li {
+            grid-template-columns: 170px 1fr 1fr 1fr;
+        }
     }
 
-    .ff-feature-table-section li.ff-feature-row:nth-child(odd) {
+    .ff-feature-table-section li.ff-feature-row:nth-child(odd),
+    .ff-feature-table-section li.ff-feature-row:nth-child(odd) label {
         background-color: theme(colors.gray.100);
     }
 
     .ff-feature-table-section li.ff-feature-row label {
         padding: 12px ;
+        @apply bg-gray-200;
     }
 
-    .ff-feature-table-section li.ff-feature-row span:nth-child(3) {
-        border-left: 2px solid theme(colors.red.400);
-        border-right: 2px solid theme(colors.red.400);
+    main .ff-bg-light .ff-feature-row a {
+        @apply text-gray-800 no-underline;
     }
 
-    .ff-feature-table-section li.ff-feature--header span:nth-child(3) {
-        /* border-left: 2px solid theme(colors.red.400);
-        border-right: 2px solid theme(colors.red.400); */
+    .ff-feature-row a:hover {
+        @apply no-underline;
     }
 
     .ff-feature-table-section li.ff-feature--column-header {
@@ -992,11 +997,11 @@ h4:hover .header-anchor {
         font-weight: 600;
         font-size: 1.25rem;
         line-height: 1.5rem;
-        padding: 12px 6px;
+        padding: 10px 6px;
         height: 100%;   
         border-bottom: 0;
         border-radius: 12px 12px 0 0;
-        @apply flex items-center justify-center flex-col;
+        @apply flex items-center justify-center flex-col bg-gray-100;
     }
 
     .ff-feature-table-section li.ff-feature--column-header label.ff-blank {
@@ -1047,7 +1052,7 @@ h4:hover .header-anchor {
     .ff-feature-table-section li span {
         text-align: center;
         height: 100%;
-        @apply px-1 flex items-center justify-center;
+        @apply px-1 py-2 flex items-center justify-center;
     }
 
     .ff-feature-table-section li button {
@@ -1069,7 +1074,7 @@ h4:hover .header-anchor {
         height: 100%;
         display: flex;
         justify-content: left !important;
-        @apply px-1 md:px-6;
+        @apply px-1 px-4 md:px-6;
     }
 
     .ff-feature-table-section:nth-child(2) .ff-feature--header {

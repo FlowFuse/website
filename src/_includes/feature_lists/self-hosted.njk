@@ -1,0 +1,108 @@
+{%
+    set sections = [{
+        label: "Features",
+        hosting: "self-hosted",
+        rows: [{
+            id: "teams",
+            label: "Number of Teams",
+            values: ['50', 'Unlimited', 'Unlimited'],
+            info: "<p>FlowForge allows multiple team members to collaborate on the same Node-RED flows.</p>"
+        }, {
+            id: "team-members",
+            label: "Team Members",
+            values: ['50', 'Unlimited', 'Unlimited'],
+            info: "<p>FlowForge allows multiple team members to collaborate on the same Node-RED flows.</p>"
+        }, {
+            id: "cloud-instances",
+            label: "Number of cloud instances",
+            values: ['50', 'Licensed amount', 'Licensed amount'],
+            info: "<p>FlowForge hosts multiple Node-RED instances from a common platform.</p>"
+        }, {
+            id: "devices",
+            label: "Number of devices",
+            values: ['50', 'Licensed amount', 'Licensed amount'],
+            info: "<p>FlowForge allows you to manage Node-RED deployments on remote devices.</p>"
+        }, {
+            id: "nr-hosting",
+            label: "Node-RED Hosting",
+            values: ['check', 'check', 'check'],
+            info: "<p>FlowForge hosts Node-RED instances.</p>"
+        }, {
+            id: "audit-log",
+            label: "Audit Log",
+            values: ['check', 'check', 'check'],
+            info: "<p>Keep track of everything going on in your Node-RED instances and FlowForge.</p><p>Audit Logs provide details on what actions have taken place, when they happened, and who did them.</p>"
+        }, {
+            id: "pipelines",
+            label: "DevOps Pipelines",
+            values: ['check', 'check', 'check'],
+            info: "<p>DevOps pipelines allows for you to setup different environments for development, testing and production Node-RED instances.</p>"
+        }, {
+            id: "device-mgmt",
+            label: "Device Management",
+            values: ['check', 'check', 'check'],
+            info: "<p>Connect to edge devices to quickly assess and update logic. Debug one device and roll out improvements to your fleet in minutes. All securely without requiring full device access for your whole organisation.</p>"
+        }, { 
+            id: "rbac",
+            label: "Role-Based Access Control",
+            values: ['check', 'check', 'check'],
+            info: "<p>FlowForge's intuitive team management tooling makes it easy for you to control whom has access to what.</p>"
+        }, {
+            id: "security",
+            label: "Endpoint Security",
+            values: ['None/HTTP Basic Auth/FF Auth', 'None/HTTP Basic Auth/FF Auth', 'None/HTTP Basic Auth/FF Auth'],
+            info: "<p>Tooltip info here</p>"
+        }, {
+            id: "project-nodes",
+            label: "Seamless Data Stream",
+            values: [null, 'check', 'check'],
+            info: "<p><a href=\"https://github.com/flowforge/flowforge-nr-project-nodes\" target=\"blank\">FlowForge Project Nodes</a> enable the passing of data and messages between your Node-RED projects, included with all FlowForge Projects by default.</p>"
+        }, {
+            label: "Team Library",
+            values: [null, 'check', 'check'],
+            info: "<p>Setup standard nodes and flows that can be shared with all team members.</p>"
+        }, {
+            id: "sso",
+            label: "Single Sign-On (SSO)",
+            values: [null, null, 'check'],
+            info: "<p>FlowForge can be configured to run with your own Single Sign-On (SSO) provider. Allow users to access FlowForge with a single set of login credentials, improving security, user experience, and save them time.</p>"
+        }, {
+            id: "high-availibility",
+            label: "High Availibility",
+            values: [null, null, 'check'],
+            info: "<p>Leverage horizontal scaling for reliable and scalible processing of your data through Node-RED.</p>"
+        }]
+    }, {
+        label: "Support",
+        hosting: "self-hosted",
+        rows: [{
+            label: "FlowForge Support",
+            values: ['<a href="https://community.flowfuse.com/">Community Forum</a>', 'Next business day', '4 hours']
+        }, {
+            label: "Node-RED Support",
+            values: ['<a href="https://discourse.nodered.org/">Community Forum</a>', 'Next business day', '4 hours']
+         }]
+    }, {
+        label: "Subscription",
+        hosting: "self-hosted",
+        rows: [{
+            label: "Price",
+            values: ['Free', '$25/instance/month<br>$15/device/month', 'Contact Sales']
+        }],
+        buttons: [{
+            cta: "INSTALL NOW",
+            url: "/docs/install",
+            onclick: "capture('cta-install', {'position': 'secondary'}, {'plan': 'sh-starter'})"
+        }, {
+            cta: "BOOK A DEMO",
+            url: "/book-demo",
+            onclick: "capture('cta-contact', {'position': 'secondary'}, {'plan': 'sh-team'})"
+        }, {
+            cta: "CONTACT SALES",
+            url: "/book-demo",
+            onclick: "capture('cta-contact', {'position': 'secondary'}, {'plan': 'sh-enterprise'})"
+        }] 
+    }]
+%}
+
+{% include "feature_lists/features-table-base.njk" %}

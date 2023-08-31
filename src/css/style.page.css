@@ -175,7 +175,8 @@
     .pricing-tiles {
         position: relative;
         grid-template-columns: 1fr 1fr 1fr;
-        gap: 30px;
+        gap: 20px;
+        z-index: 2;
         margin-left: auto;
         margin-right: auto;
     }
@@ -183,16 +184,24 @@
     .pricing-tile {
         position: relative;
         border-radius: 12px;
-        background: linear-gradient(0deg, theme(colors.gray.800) 10%, #252F3E, theme(colors.gray.800) 90%);
+        border: 1px solid theme(colors.gray.600);
+        background: linear-gradient(0deg, theme(colors.gray.800), theme(colors.gray.700));
         display: flex;
         flex-direction: column;
-        @apply px-7;
+        @apply max-w-sm;
+    }
+    
+    .pricing-tile-background {
+        position: relative;
+        width: calc(100% + 2px);
+        height: calc(100% + 2px);
+        bottom: -1px;
+        left: -1px;
+        background: linear-gradient(#1f293700, #1f2937);
+        border-radius: 10px;
+        @apply px-6;
     }
 
-    .middle {
-        border: 2px solid theme(colors.gray.600);
-        background: linear-gradient(0deg, theme(colors.gray.800), theme(colors.gray.700));
-    }
 
     .pricing-tiles p.lead-p {
         @apply text-gray-400;
@@ -220,19 +229,20 @@
         color: theme(colors.teal.100);
         @apply mt-0;
     }
-
+    
     .pricing-tile label {
         font-weight: 300;
         display: block;
-        color: theme(colors.white);
+        color: theme(colors.gray.400);
         font-size: 16px;
-        @apply text-left leading-6 md:leading-5;
+        @apply text-right leading-6 md:leading-5;
     }
-
+    
     .pricing-tile p {
         font-size: 0.875rem;
         line-height: 1.5rem;
         font-weight: 200;
+        margin-bottom: 0;
     }
 
     .pricing-tile a.ff-btn .ff-btn--secondary-oulined {
@@ -267,18 +277,6 @@
         text-decoration: none;
     }
 
-    .pricing-tile::after {
-        content: '';
-        display: block;
-        position: absolute;
-        width: calc(100% + 4px);
-        height: calc(100% + 4px);
-        top: 0;
-        left: -2px;
-        background: linear-gradient(#1f293700 70%, #1f2937);
-        border-radius: 10px;
-        pointer-events: none;
-    }
 
     .note {
         font-weight: 300;
@@ -303,6 +301,111 @@
     .features .note {
         font-weight: 600;
     }
+}
+
+/* PRICING TOGGLE */
+
+/* changes .selector */
+.slides .selector {
+    left: 39%;
+    width: 60%;
+}
+
+.slides .cloudText {
+    color: white;
+}
+
+.ff-bg-light .slides .cloudText {
+    color: theme(colors.gray.800);
+}
+
+.slides .selfHostedText,
+.ff-bg-light .slides .selfHostedText {
+    color: theme(colors.teal.300);
+}
+
+/* contains switch buttons cloud - self-hosted */
+.mainToggle {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 0.2rem;
+    margin: auto;
+    max-width: fit-content;
+    height: 36px;
+}
+
+/* toggle btn bg */
+.btnToggle {
+    position: absolute;
+    width: 218px;
+    height: 36px;
+    margin: 0rem;
+    border-radius: 18px;
+    border: 1px solid theme(colors.gray.700);
+    z-index: 0;
+    cursor: pointer;
+    padding: 0;
+}
+
+/* switch */
+.selector {
+    position: absolute;
+    width: 40%;
+    height: 88%;
+    top: 2px;
+    left: 2px;
+    border-radius: 16px;
+    transition-duration: 0.5s;
+    --tdur: 0;
+    background-color: theme(colors.gray.700);
+    z-index: -1;
+}
+
+/* contains the container for cloud & self-hosted */
+.hosting {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    margin: 0rem;
+    z-index: 1;
+}
+
+/* container for cloud & self-hosted */
+.divCloud,
+.divSelfHosted {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+/* words cloud and self-hosted */
+.cloudText, .selfHostedText {
+    font-size: 12px;
+    font-weight: 600;
+    transition-duration: 0.5s;
+}
+
+.cloudText {
+    color: theme(colors.teal.300);
+}
+
+.selfHostedText {
+    color: white;
+}
+
+.ff-bg-light .selfHostedText {
+    color: theme(colors.gray.800);
+}
+
+.hide {
+    visibility: hidden;
+    position: absolute;
+    top: 0px;
+    opacity: 0;
+    /* transition: visibility 0s 2s, opacity 2s, position 0s 2s, linear; */
 }
 
 /* COMPANY VALUE */

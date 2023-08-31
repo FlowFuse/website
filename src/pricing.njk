@@ -6,144 +6,261 @@ meta:
     description: Find out how much it costs to use FlowFuse.
 ---
 <div class="pricing">
-<div class="px-6 pricing-tiles flex flex-col mb-16 w-full gradient-bg">
-    <div class="m-auto text-center pt-12 md:pb-6 px-12 md:max-w-screen-lg md:pt-12">
-        <h1>Pricing</h1>
-        <p class="lead-p max-w-screen-lg m-auto md:max-w-xl md:px-4">
-            Plans for every project. Whether you're an individual contributor, an IIoT manager, or an IT department, you'll find a suitable option to take your Node-RED applications to the next level.
+<div class="w-full gradient-bg">
+<div class="text-center w-full pt-8">
+    <h1 class="text-teal-300">Pricing</h1> 
+</div>
+<div class="px-6 pricing-tiles flex flex-col pb-16 md:max-w-screen-lg">
+    <div class="flex px-6 -mb-6 mx-auto text-gray-400 md:max-w-screen-lg md:mb-1 md:block">
+        <p class="lead-p max-w-screen-lg m-auto text-center md:max-w-xl md:px-4">
+            Easy to get started and scale to meet your requirements.
         </p>
     </div>
-    <div class="pricing-tiles flex flex-col md:grid md:flex-row md:max-w-screen-lg">
-        <div class="pricing-tile pt-8 pb-6 md:h-full">
-            <div class="flex flex-col justify-between items-center text-center mb-4 sm:px-4 md:flex-row md:-mb-0 md:px-0 md:block md:text-left md:i md:items-left">
-                <h4 class="mt-2 pt-4" style="display:inline-block;">Starter</h4>
-                <label class="label">Open Source</label>
-                <div class="mt-6 items-center md:text-left md:items-left">
-                    <h2>Free</h2>
+    <!-- Toggle-->
+    <div class="text-center mt-5 md:mt-0 md:mb-8">
+        <div class="mainToggle">
+            <button class="btnToggle">
+                <span class="selector"></span>
+                <div class="hosting">
+                    <div class="divCloud">
+                        </span><span class="cloudText">CLOUD</span>
+                    </div>
+                    <div class="divSelfHosted">
+                        <span class="selfHostedText">SELF HOSTED</span>
+                    </div>
                 </div>
-                <p class="mt-6 pb-2"><span class="inline font-normal">Self-managed</span> version of the platform, with deployment options including Docker and Kubernetes.</p>
+            </button>
+        </div>
+    </div>
+    <!-- Plans -->
+    <!-- Cloud -->
+    <div class="contentCloud m-auto transition duration-1000">
+        <div class="pricing-tiles flex flex-col md:grid md:flex-row md:max-w-screen-lg mt-4 md:mt-0">
+            <div class="pricing-tile md:h-full">
+                <div class="pricing-tile-background pb-6 md:grid flex-col">
+                    <div>
+                        <div class="flex flex-col items-center text-left md:flex-row md:-mb-0 md:px-0 md:block md:min-h-[133px]">
+                        <div class="flex flex-row justify-between mt-4 w-full gap-x-2">
+                            <h4 style="display:inline-block;">Starter</h4>                            
+                        </div>
+                        <p class="mt-7"><span class="inline font-normal">Ideal to get started. </span>Quick hosting of Node-RED instances.</p>
+                        </div>
+                        <div class="flex flex-col content-start features text-sm md:mt-3 mt-6 w-full">
+                            <note class="font-bold text-teal-100" style="display: inline-block;">Includes:</note>
+                            <ul class="ff-checklist font-light text-white leading-7 mt-2">
+                                <li>2 team members</li>
+                                <li>2 Node-RED instances</li>
+                                <li>2 devices</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="mt-9 md:text-left items-left w-full mb-11 flex flex-row">
+                            <h2 class="self-end">$15</h2>
+                            <div class= "pl-1 text-sm leading-4 text-left self-end pb-1">
+                                <note class="note text-teal-100">/month</note>    
+                            </div>
+                    </div>
+                    <a class="md:self-end ff-btn ff-btn--primary uppercase align-baseline w-full" href="https://app.flowforge.com/account/create" onclick="capture('cta-join', {'position': 'primary'}, {'plan': 'cloud-starter'})">TRY FOR FREE</a> 
                 </div>
-                <div class="flex flex-col items-center">
-                <a class="ff-btn ff-btn--secondary-outlined uppercase align-baseline w-full" href="/docs/install" onclick="capture('cta-install', {'position': 'primary'})">Install now</a>  
             </div>
-            <div class="flex flex-col pb-6 mt-2 border-b border-gray-700 text-teal-300 text-sm">
-                <note class="note" style="display: inline-block;">Set up time &lt; 30 min</note>
+    
+            <div class="pricing-tile md:h-full">
+                <div class="pricing-tile-background pb-6 md:grid flex-col">
+                    <div>
+                        <div class="flex flex-col items-center text-left md:flex-row md:-mb-0 md:px-0 md:block md:min-h-[133px]">
+                        <div class="flex flex-row justify-between mt-4 w-full gap-x-2">
+                            <h4 style="display:inline-block;">Team</h4>                        
+                        </div>
+                        <p class="mt-7">Allows <span class="inline font-normal">Node-RED developer teams</span> to benefit from the FlowForge platform.</p>
+                        </div>
+                        <div class="flex flex-col content-start features text-sm md:mt-3 mt-6 w-full">
+                            <note class="font-bold text-teal-100" style="display: inline-block;">Top Features:</note>
+                            <ul class="ff-checklist font-light text-white leading-7 mt-2">
+                                <li>Device management</li>
+                                <li>DevOps Pipelines</li>
+                                <li>Team collaboration</li>
+                            </ul>
+                        </div>
+                    </div>    
+                    <div class="mt-9 mb-11 flex flex-row flex-wrap w-full gap-x-2">
+                            <div class="text-left flex flex-row">
+                            <h2 class="self-end">$25</h2>
+                            <div class= "pl-2 text-sm leading-4 text-left self-end pb-1">
+                                <note class="note text-teal-100">/instance<br>a month</note>    
+                            </div>
+                            </div>
+                            <div class="text-left flex flex-row">
+                            <h2 class="self-end">$15</h2>
+                            <div class= "pl-2 text-sm leading-4 text-left self-end pb-1">
+                                <note class="note text-teal-100 min-w-[52px]">/device<br><span class="block">a month</span></note>    
+                            </div>
+                            </div>
+                    </div>
+                    <a class="md:self-end ff-btn ff-btn--primary uppercase align-baseline w-full" href='/book-demo' onclick="capture('cta-contact', {'position': 'primary'}, {'plan': 'cloud-team'})">BOOK A DEMO</a> 
+                </div>
             </div>
-            <div class="flex flex-col content-start features text-sm font-bold mt-6">
-                <note class="font-bold text-teal-100" style="display: inline-block;">Top features:</note>
-                <ul class="ff-checklist font-light text-white leading-7 mt-2">
-                    <li>Hosting Node-RED</li>
-                    <li>TLS/SSL</li>
-                    <li>Subdomain</li>
-                    <li>Backups (snapshots)</li>
-                </ul>
+    
+            <div class="pricing-tile md:h-full">
+                <div class="pricing-tile-background pb-6 md:grid flex-col">
+                    <div>
+                        <div class="flex flex-col items-center text-left md:flex-row md:-mb-0 md:px-0 md:block md:min-h-[133px]">
+                        <div class="flex flex-row justify-between mt-4 w-full gap-x-2">
+                            <h4 style="display:inline-block;">Enterprise</h4>                            
+                        </div>
+                        <p class="mt-7">For <span class="inline font-normal">business critical applications</span> that require high availability and enterprise support.</p>
+                        </div>
+                        <div class="flex flex-col content-start features text-sm md:mt-3 mt-6 w-full">
+                            <note class="font-bold text-teal-100" style="display: inline-block;">Top Features:</note>
+                            <ul class="ff-checklist font-light text-white leading-7 mt-2">
+                                <li>High availability</li>
+                                <li>Single Sign-in</li>
+                                <li>Enterprise Support</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="mt-7 md:text-left items-left w-full mb-8 flex flex-row">
+                        <div class="self-end">{% include "components/icons/chat-bubble-left-right.svg" %}</div>
+                    </div>
+                    <a class="md:self-end ff-btn ff-btn--primary uppercase align-baseline w-full" href='/book-demo' onclick="capture('cta-contact', {'position': 'primary'}, {'plan': 'cloud-enterprise'})">CONTACT SALES</a>
+                </div>
             </div>
         </div>
-
-            <div class="pricing-tile pb-6 md:h-full middle">
-                <div class="h-8 flex items-center justify-center text-center text-xs font-semibold text-white bg-gray-600 w-auto -mx-7 rounded-t-lg">  
-                    Get started instantly
-                </div>
-                <div class="flex flex-col justify-between items-center text-center mb-4 sm:px-4 md:flex-row md:-mb-0 md:px-0 md:block md:text-left md:i md:items-left">
-                    <div class="flex flex-col items-center md:flex-row md:items-end md:justify-between">
-                        <div class="md:w-3/5">
-                            <h4 class="pt-4" style="display: inline-block;">Premium </h4>
-                            <label class="label">FlowFuse Cloud or On-Premise</label>
+    </div>
+    <!-- Self-Hosted -->
+    <div class="contentSelfHosted hide m-auto transition duration-1000">
+        <div class="pricing-tiles flex flex-col md:grid md:flex-row md:max-w-screen-lg mt-4 md:mt-0">
+            <div class="pricing-tile md:h-full">
+                <div class="pricing-tile-background pb-6 md:grid flex-col">
+                    <div>
+                        <div class="flex flex-col items-center text-left md:flex-row md:-mb-0 md:px-0 md:block md:min-h-[133px]">
+                        <div class="flex flex-row justify-between mt-4 w-full gap-x-2">
+                            <h4 style="display:inline-block;">Starter</h4>                            
                         </div>
-                        <div class="annual-text h-full p-1 mt-1 md:w-2/5 md:ml-2">
-                            <a class="text" href='/contact-us'>Contact us for annual billing discounts</a>
+                        <p class="mt-7">Download the <span class="inline font-normal">open source edition</span> of FlowForge platform to get started.</p>
+                        </div>
+                        <div class="flex flex-col content-start features text-sm md:mt-3 mt-6 w-full">
+                            <note class="font-bold text-teal-100" style="display: inline-block;">Includes:</note>
+                            <ul class="ff-checklist font-light text-white leading-7 mt-2">
+                                <li>2 team members</li>
+                                <li>10 Node-RED instances</li>
+                                <li>10 devices</li>
+                            </ul>
                         </div>
                     </div>
-                    <div class="flex mt-6 items-center justify-start md:text-left md:items-left">
-                        <div>
-                            <h2>$15</h2>
-                        </div>
-                        <div class= "pl-2 text-sm leading-4 -pt:2 text-left">
-                            <note class="note text-teal-100">per Node-RED</br>instance/month</note>    
-                        </div>
+                    <div class="mt-9 md:text-left items-left w-full mb-11 flex flex-row">
+                            <h2 class="self-end">Free</h2>
                     </div>
-                      <p class="mt-6 pb-2">Install FlowFuse yourself or <span class="inline font-normal">we will manage it for you</span>.</p>
-                    </div>
-                    <div class="flex flex-col items-center md:items-left">
-                    <a class="ff-btn ff-btn--primary uppercase align-baseline w-full" href="https://app.flowforge.com/account/create" onclick="capture('cta-join', {'position': 'primary'})">TRY FOR FREE</a>  
+                    <a class="md:self-end ff-btn ff-btn--primary uppercase align-baseline w-full" href="/docs/install" onclick="capture('cta-install', {'position': 'primary'}, {'plan': 'sh-starter'})">Install now</a> 
                 </div>
-                <div class="flex flex-col items-left pb-6 mt-2 border-b border-gray-700 text-red-400 text-sm ">
-                    <note class="note" style="display: inline-block;">Set up time &lt; 1 min</note>
-                </div>
-                <div class="features text-sm font-bold mt-6">
-                    <note class="font-bold text-teal-100" style="display: inline-block;">All of Free features, plus:</note>
-                    <ul class="ff-checklist font-light text-white leading-7 mt-2">
-                        <li class="leading-5">Managing more than 5 Node-RED instances</li>
-                        <li>Security</li>
-                        <li>Support</li>
-                        <li>Effective collaboration</li>
-                    </ul>
-                </div>
-        </div>
-
-                <div class="pricing-tile pt-8 pb-6 md:h-full">
-            <div class="flex flex-col justify-between items-center text-center mb-4 sm:px-4 md:flex-row md:-mb-0 md:px-0 md:block md:text-left md:i md:items-left">
-                <h4 class="mt-2 pt-4" style="display: inline-block;">Enterprise</h4>
-                <label class="label">Self-managed</label>
-                <div class="mt-6 items-center md:text-left md:items-left">
-                    <h2>Custom</h2>
-                </div>
-                <p class="mt-6 pb-2"><span class="inline font-normal">Premium features,</span> on your own dedicated instance, and <span class="inline font-normal">quicker support response.</span></p>
-                </div>
-                <div class="flex flex-col items-center md:items-left">
-                <a class="ff-btn ff-btn--secondary-outlined uppercase align-baseline w-full" href='/book-demo'>Book a demo</a>  
             </div>
-            <div class="flex flex-col items-left pb-6 mt-2 border-b border-gray-700 text-teal-300 text-sm">
-                <note class="note" style="display: inline-block;">Booking &lt; 1 min</note>
+    
+            <div class="pricing-tile md:h-full">
+                <div class="pricing-tile-background pb-6 md:grid flex-col">
+                    <div>
+                        <div class="flex flex-col items-center text-left md:flex-row md:-mb-0 md:px-0 md:block md:min-h-[133px]">
+                        <div class="flex flex-row justify-between mt-4 w-full gap-x-2">
+                            <h4 style="display:inline-block;">Team</h4>                            
+                        </div>
+                        <p class="mt-7">Allows <span class="inline font-normal">Node-RED developer teams</span> to benefit from FlowForge platform.</p>
+                        </div>
+                        <div class="flex flex-col content-start features text-sm md:mt-3 mt-6 w-full">
+                            <note class="font-bold text-teal-100" style="display: inline-block;">Top Features:</note>
+                            <ul class="ff-checklist font-light text-white leading-7 mt-2">
+                                <li>Device management</li>
+                                <li>DevOps Pipelines</li>
+                                <li>Team collaboration</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="mt-9 mb-11 flex flex-row flex-wrap w-full gap-x-2">
+                        <div class="text-left flex flex-row">
+                        <h2 class="self-end">$25</h2>
+                        <div class= "pl-2 text-sm leading-4 text-left self-end pb-1">
+                            <note class="note text-teal-100">/instance<br>a month</note>    
+                        </div>
+                        </div>
+                        <div class="text-left flex flex-row">
+                        <h2 class="self-end">$15</h2>
+                        <div class= "pl-2 text-sm leading-4 text-left self-end pb-1">
+                            <note class="note text-teal-100 min-w-[52px]">/device<br><span class="block">a month</span></note>    
+                        </div>
+                        </div>
+                </div>
+                    <a class="md:self-end ff-btn ff-btn--primary uppercase align-baseline w-full" href="/book-demo" onclick="capture('cta-contact', {'position': 'primary'}, {'plan': 'sh-team'})">BOOK A DEMO</a>
+                </div>
             </div>
-            <div class="flex flex-col content-start features text-sm font-bold mt-6">
-                <note class="font-bold text-teal-100" style="display: inline-block;">All of Premium features, plus:</note>
-                <ul class="ff-checklist font-light text-white leading-7 mt-2">
-                    <li>Auditability</li>
-                    <li>Enterprise integration</li>
-                    <li>Quicker support response</li>
-                </ul>
+    
+            <div class="pricing-tile md:h-full">
+                <div class="pricing-tile-background pb-6 md:grid flex-col">
+                    <div>
+                        <div class="flex flex-col items-center text-left md:flex-row md:-mb-0 md:px-0 md:block md:min-h-[133px]">
+                        <div class="flex flex-row justify-between mt-4 w-full gap-x-2">
+                            <h4 style="display:inline-block;">Enterprise</h4>                            
+                        </div>
+                        <p class="mt-7">For <span class="inline font-normal">business critical applications</span> that require high availability and enterprise support.</p>
+                        </div>
+                        <div class="flex flex-col content-start features text-sm md:mt-3 mt-6 w-full">
+                            <note class="font-bold text-teal-100" style="display: inline-block;">Top Features:</note>
+                            <ul class="ff-checklist font-light text-white leading-7 mt-2">
+                                <li>High availability</li>
+                                <li>Single Sign-in</li>
+                                <li>Enterprise Support</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="mt-7 md:text-left items-left w-full mb-8 flex flex-row">
+                            <div class="self-end">{% include "components/icons/chat-bubble-left-right.svg" %}</div>
+                    </div>
+                    <a class="md:self-end ff-btn ff-btn--primary uppercase align-baseline w-full" href="/book-demo" onclick="capture('cta-contact', {'position': 'primary'}, {'plan': 'sh-enterprise'})">CONTACT SALES</a>
+                </div>
             </div>
         </div>
     </div>
     <div class="flex flex-col items-center text-teal-300 mb-12 -mt-4">
         <a href="#feature-comparison" onclick="scrollToAnchor(event, 'feature-comparison')">
             {% include "components/icons/chevron-down.svg" %}
-          </a>
-        </div>
-        
-        <script>
-        function scrollToAnchor(event, anchorId) {
-          event.preventDefault();
-          const anchor = document.getElementById(anchorId);
-          if (anchor) {
-            anchor.scrollIntoView({ behavior: 'smooth' });
-          }
-        }
-        </script>
+        </a>
+    </div>
+    </div>
 </div>
 </div>
 
-<div class="-mt-6">
-{% include "components/divider-flow--top-red--light.njk" %}    
-</div>
-
+{% include "components/divider-flow--top-red--light.njk" %}
 
 <!-- Feature List -->
 {% set featuresHtml %}
-<div class="max-w-full overflow-x-scroll sm:overflow-x-visible">
-    {% include "feature_lists/cloud.njk" %}
-</div>
-{% endset -%}
+    <div class="contentCloud transition duration-1000 max-w-full overflow-x-scroll sm:overflow-x-visible h-[60vh] sm:h-full">
+        {% include "feature_lists/cloud.njk" %}
+    </div>
+    <div class="contentSelfHosted hide transition duration-1000 max-w-full overflow-x-scroll sm:overflow-x-visible h-[60vh] sm:h-full">
+        {% include "feature_lists/self-hosted.njk" %}
+    </div>
+{% endset %}
 
 <!-- Feature Comparison -->
 <div id="feature-comparison" class="product w-full ff-bg-light px-6 pt-20 pb-20 md:px-0 md:pt-6 md:pb-42">
-    <div class="container m-auto text-center">
-        <div class="md:mt-9">
+    <div class="container max-w-screen-lg m-auto text-center">
+        <div class="md:my-9">
             <h1 id="feature-comparison">Feature Comparison</h1>
         </div>
+            <!-- Toggle-->
+    <div class="text-center my-8 md:mb-12">
+        <div class="mainToggle">
+            <button class="btnToggle">
+                <span class="selector"></span>
+                <div class="hosting">
+                    <div class="divCloud">
+                        </span><span class="cloudText">CLOUD</span>
+                    </div>
+                    <div class="divSelfHosted">
+                        <span class="selfHostedText">SELF HOSTED</span>
+                    </div>
+                </div>
+            </button>
+        </div>
+    </div>
         <!-- Feature List -->
-        <div>{{ featuresHtml | safe }}</div>
+        <div class="sticky">{{ featuresHtml | safe }}</div>
     </div>
     <p class="max-w-screen-lg m-auto mt-12 text-center">
         At FlowFuse we understand that the security practises of our product
@@ -151,3 +268,45 @@ meta:
         for you to understand the choices we've made.
     </p>
 </div>
+
+<script>
+    function scrollToAnchor(event, anchorId) {
+        event.preventDefault();
+        const anchor = document.getElementById(anchorId);
+        if (anchor) {
+            anchor.scrollIntoView({ behavior: 'smooth' });
+        }
+    }
+</script>
+<script>
+    const btns = document.querySelectorAll(".mainToggle");
+    const cloud = document.querySelectorAll(".contentCloud");
+    const selfHosted = document.querySelectorAll(".contentSelfHosted");
+
+    btns.forEach(btn => {
+        btn.addEventListener("click", function() {
+        // Toggle .slides class on buttons
+        btns.forEach((item) => item.classList.toggle("slides"));
+
+        // // Toggle .hide class on cloud and selfHosted elements
+        cloud.forEach((item) => {
+            item.classList.toggle("hide");
+        });
+
+        selfHosted.forEach((item) => {
+            item.classList.toggle("hide");
+        });
+  });
+});
+</script>
+
+<script>
+    function openInfo(id, hosting) {
+        capture('info-feature', { feature: id }, { hosting: hosting })
+        document.getElementById("ff-dialog--feature--" + id + "-" + hosting).classList.add('active')
+    }
+    function closeInfo(id, hosting) {
+        document.getElementById("ff-dialog--feature--" + id + "-" + hosting).classList.remove('active')
+    }
+</script>
+
