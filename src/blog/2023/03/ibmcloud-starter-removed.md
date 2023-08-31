@@ -56,7 +56,7 @@ If you're looking to move your Node-RED applications from IBM Cloud, then you ca
 
 ### Node-RED Tools Plugin
 
-You can use our Node-RED Tools plugin to migrate your flows and credentials over to FlowFuse. You can read the details in our [Migration Guide](/docs/user/migration/), which also includes instructions on how to export your environment variables too.
+You can use our Node-RED Tools plugin to migrate your flows and credentials over to FlowFuse. You can read the details in our [Migration Guide](/docs/migration/introduction/), which also includes instructions on how to export your environment variables too.
 
 
 ### Manual Import
