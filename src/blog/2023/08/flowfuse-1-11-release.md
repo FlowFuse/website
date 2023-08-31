@@ -4,7 +4,7 @@ subtitle: The new FlowFuse 1.11 release includes a new starter tier for FlowFuse
 description: The new FlowFuse 1.11 release includes a new starter tier for FlowFuse Cloud, Personal Access Tokens for API access and improvements to device management.
 date: 2023-08-31 
 authors: ["ian-skerrett"]
-image: /blog/2023/08/images/release-1-10-graphic.png
+image: /blog/2023/08/images/release-1-11-graphic.png
 tags:
     - posts
     - flowfuse
