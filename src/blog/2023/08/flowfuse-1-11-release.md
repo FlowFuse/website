@@ -37,6 +37,7 @@ Earlier in August, [FlowForge announce](https://flowfuse.com/blog/2023/08/flowfo
 - Add ability to add a description to an application and display it in the portal [#2279](https://github.com/flowforge/flowforge/issues/2279)
 - UI Improvements to device management [#2427](https://github.com/flowforge/flowforge/issues/2427)
 - Improve landing page for documentation [#842](https://github.com/flowforge/website/issues/842)
+- Restructure of user interface navigation [#2474](https://github.com/flowforge/flowforge/issues/2474)
 
 
 ## Bug Fixes
