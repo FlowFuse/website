@@ -22,7 +22,7 @@ FlowFuse provides a cloud hosted version of Node-RED so developers don't need to
 
 
 ## FlowFuse API access now possible via personal access tokens [#14](https://github.com/flowforge/flowforge/issues/14)
-FlowFuse APIs are now acceessible via personal access tokens (PAT). This makes it possible to create automation scripts that interact with the FlowFuse platform using the API and authenticate the scripts with the PAT. 
+FlowFuse APIs are now accessible via personal access tokens (PAT). This makes it possible to create automation scripts that interact with the FlowFuse platform using the API and authenticate the scripts with the PAT. 
 
 ## Usability Improvements to Device Management [#2294](https://github.com/flowforge/flowforge/issues/2334)
 
