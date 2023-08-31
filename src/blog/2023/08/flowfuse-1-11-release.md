@@ -45,10 +45,6 @@ Earlier in August, [FlowForge announced](https://flowfuse.com/blog/2023/08/flowf
 
 
 
-## Community Contributions
-
-Thanks to our community members for their contributions to this release.
-
 
 ## What's next?
 
