@@ -17,5 +17,5 @@ Presently it is not possible to install older versions of a package into Node-RE
 ## Migrating your flows to FlowFuse
 
 When migrating your flows from any Node-RED to a FlowFuse managed Node-RED instance
-it is advised to use [the `nr-tools plugin`](/docs/user/migration) created by the FlowFuse team. Migrating this way will not only the copy your flows, it will include any credentials you have set and install
+it is advised to use [the `nr-tools plugin`](/docs/user/migration/introduction) created by the FlowFuse team. Migrating this way will not only the copy your flows, it will include any credentials you have set and install
 the required packages for you.
