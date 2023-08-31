@@ -5,6 +5,7 @@ image: /images/webinars/webinar-august.jpg
 date: 2023-08-30
 time: 17:00 CEST (11:00 ET) 
 duration: 60
+video: 9Kfo79Rkk2w?si=neFMK8gJHTXYZUFM
 hosts: ["ian-skerrett"]
 hubspot:
     formId: b4ec9aa1-8648-47b3-b908-ec8597e8735d
