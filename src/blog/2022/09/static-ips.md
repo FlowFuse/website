@@ -17,6 +17,6 @@ You will need to manually suspend then start each of your projects (a restart wi
 
 Any inbound traffic should still use the hostname assigned to each of your projects, you cannot use our IP address to route http traffic to your projects.
 
-You can view our IP address in the [Docs](/docs/cloudintroduction/#ip-addresses) section of our website.
+You can view our IP address in the [Docs](/docs/cloud/introduction/#ip-addresses) section of our website.
 
 If you’d like to stay up to date with our latest releases you can do so on [our blog](/blog).
