@@ -70,7 +70,7 @@ Node-RED editor sessions you have open.
 you to start creating snapshots and adding devices right now.
 
 If you installed a previous version of FlowFuse and want to upgrade, our documentation provides a
-guide for [upgrading FlowFuse on a local server](/docs/upgrade/#upgrading-flowforge).
+guide for [upgrading FlowFuse on a local server](/docs/upgrade/#upgrading-flowfuse).
 
 ### Getting help
 

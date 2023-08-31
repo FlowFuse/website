@@ -25,7 +25,7 @@ in Node-RED. In FlowFuse 1.1 flows can now create and persist files within
 your Projects. We know those files are used in many creative ways and we're looking
 forward to seeing how users improve their Projects using this new feature.
 
-[Import Snapshots from Outside FlowFuse](/docs/user/node-red-tools/) Developers may wish to
+[Import Snapshots from Outside FlowFuse](/docs/migration/node-red-tools/) Developers may wish to
 work on Node-RED in a local environment but want an easy path to share that with their team. You can now link your Node-RED instances running outside of FlowFuse and push Snapshots directly into your FlowFuse Projects to leverage FlowFuse fully.  With this new feature we've made it effortless to push a local build of a project to FlowFuse for deployment to your staging and production FlowFuse instances.
 
 ## Improvements
