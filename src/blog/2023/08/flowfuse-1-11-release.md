@@ -1,6 +1,6 @@
 ---
 title: FlowFuse 1.11 makes it easier to get started with FlowFuse and Node-RED
-subtitle: The new FlowFuse 1.11 release includes a new starter tier for FlowFuse Cloud, Personal Access Tokens for API access and improvements to device management.
+subtitle: Our latest release includes a new starter tier for FlowFuse Cloud, Personal Access Tokens for API access and improvements to device management.
 description: The new FlowFuse 1.11 release includes a new starter tier for FlowFuse Cloud, Personal Access Tokens for API access and improvements to device management.
 date: 2023-08-31 
 authors: ["ian-skerrett"]
@@ -22,7 +22,7 @@ FlowFuse provides a cloud hosted version of Node-RED so developers don't need to
 
 
 ## FlowFuse API access now possible via personal access tokens [#14](https://github.com/flowforge/flowforge/issues/14)
-FlowFuse APIs are now acceessible via personal access tokens (PAT). This makes it possible to create automation scripts that interact with the FlowFuse platform using the API and authenticate the scripts with the PAT. 
+FlowFuse APIs are now accessible via personal access tokens (PAT). This makes it possible to create automation scripts that interact with the FlowFuse platform using the API and authenticate the scripts with the PAT. 
 
 ## Usability Improvements to Device Management [#2294](https://github.com/flowforge/flowforge/issues/2334)
 
@@ -30,7 +30,7 @@ A number of usability improvements have been added to the FlowFuse device manage
 
 ## FlowFuse Rebranding [#119](https://github.com/orgs/flowforge/projects/1?pane=issue&itemId=34719640)
 
-Earlier in August, [FlowForge announce](https://flowfuse.com/blog/2023/08/flowforge-is-now-flowfuse/) a change to our company and product name to FlowFuse. Work has begun to change the product branding to FlowFuse. Most of the UI has been rebranded and the remaining points will be changed in the next release.
+Earlier in August, [FlowForge announced](https://flowfuse.com/blog/2023/08/flowforge-is-now-flowfuse/) a change to our company and product name to FlowFuse. Work has begun to change the product branding to FlowFuse. The UI has been rebranded and the remaining points will be changed in the next release.
 
 ## Other New Features
 
@@ -45,10 +45,6 @@ Earlier in August, [FlowForge announce](https://flowfuse.com/blog/2023/08/flowfo
 - Device running old snapshot [#132](https://github.com/flowforge/flowforge-device-agent/issues/132)
 
 
-
-## Community Contributions
-
-Thanks to our community members for their contributions to this release.
 
 
 ## What's next?
@@ -77,5 +73,5 @@ guide for [upgrading your FlowFuse instance](/docs/upgrade/).
 
 ## Getting help
 
-Please check FlowFuse's [documentation](/docs/) as the answers to many questions are covered there. Additionally you can go the the [community forum](https://community.flowfuse.com) if you have
+Please check FlowFuse's [documentation](/docs/) as the answers to many questions are covered there. Additionally you can go to the [community forum](https://community.flowfuse.com) if you have
 any feedback or feature requests.
