@@ -36,17 +36,26 @@ To get started, drop on your first widget (in this case, we'll add a `ui-markdow
 
 Let's add the following Markdown to our first widget:
 
-````md
+```md
 # Markdown Content
 
 Here we can render dynamic Markdown content that is
-easily _styled_. We can even add a list of items like 
-
-- this
-- and this
-````
+easily _styled_.
+```
 
 Whilst this shows a basic example of static content, the joy of `ui-markdown` in Dashboard is _dynamic_ content, i.e. content that can be updated by passing in messages to the `ui-markdown` node.
+
+Let's add an `inject` node, set it up to repeat every 1s, and wire it to `ui-markdown`. Now, we can update our Markdown content to show this value, which will update every 1s:
+
+```md
+We can inject `msg.payload`. For example, here is a
+timestamp updating every second: {{ msg.payload }}
+```
+
+Resulting in:
+
+![Dynamic markdown with an updating timestamp every 1 second](./images/md-timestamp.gif)
+
 
 ## Join Our Team
 
