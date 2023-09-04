@@ -31,13 +31,13 @@ sitemapPriority: 1.0
 </div>
 
 <!-- Secondary Content -->
-<div class="w-full ff-bg-light px-6 pt-12 pb-48 sm:pt-32">
+<div class="w-full ff-bg-light px-6 pt-12 sm:pt-32">
     <div class="container m-auto text-center max-w-4xl">
         <div class="m-auto mt-36 mb-12 sm:mt-64 sm:mb-16 w-full text-center">
             <h2>Why use FlowFuse for Node-RED</h2>
             <h5><a href="/node-red">What is Node-RED?</a></h5>
         </div>
-        <div class="m-auto mb-12 sm:mb-16 w-full text-center flex flex-col md:flex-row">
+        <div class="m-auto mb-12 w-full text-center flex flex-col md:flex-row">
             <p class="md:w-1/6 md:text-left opacity-75">Trusted by:</p>
             <ul class="flex flex-row justify-center md:justify-between flex-wrap sm:flex-nowrap gap-[16%] sm:gap-[6%] md:gap-[8%] w-full items-center -mb-6 md:mb-0">
                 <li class="w-[156px] pb-6 md:pb-0">{% image "./images/home-logos/leclanche-logo.png", "Leclanché logo", [156] %}</li>
@@ -47,67 +47,35 @@ sitemapPriority: 1.0
                 <li class="w-[140px] pb-6 md:pb-0">{% image "./images/home-logos/iniationware-logo.png", "Iniationware logo", [140] %}</li>
             </ul>
         </div>
-        <div class="flex flex-col-reverse justify-between sm:flex-row gap-3 sm:gap-12">
-            <div class="text-center sm:text-left pt-4">
-                <h3>Collaborative Development</h3>
-                <p>FlowFuse adds team collaboration to Node-RED, allowing multiple developers to work together on a single instance. With FlowFuse, developers 
-                can easily share projects, collaborate in real-time and streamline workflow for faster development and deployment.</p>
+    </div>
+</div>
+<div class="about w-full ff-bg-light -mt-1 pb-40">
+    <div class="container m-auto max-w-none sm:max-w-lg md:max-w-5xl flex flex-col gap-y-8">
+        {% for item in reasons %}
+            <div class="relative w-full p-6 m-auto">
+                <div class="absolute {% if loop.index is odd %}bottom-4 left-4{% else %}top-4 right-4{% endif %} bg-red-600 w-48 h-32 rounded-md z-0"></div>
+                <div class="flex flex-col md:flex-row{% if loop.index is even %}-reverse{% endif %} gap-6 items-center z-10 bg-white rounded drop-shadow-md px-8 pt-6 pb-8 md:py-6 md:justify-between">
+                    <div class="md:w-1/2 pt-4">
+                        <div class="flex flex-row gap-3 items-center">
+                            <div class="min-w-[60px] h-20 text-7xl bg-red-600 text-gray-50 text-center font-bold px-1 rounded pt-1">{{ loop.index }}</div>
+                            <h4><div class="font-medium leading-tight pt-1">{{ item.title }}</div></h4>
+                        </div>
+                        <p>{{ item.content }}</p>
+                    </div>
+                    <div class="md:w-1/2 flex justify-center">
+                        {% if item.videoid %}
+                        <lite-youtube videoid="{{ item.videoid }}" style="background-image: url('../../images/why-ff/why-ff-{{ loop.index }}.jpg'); width: 444px;" class="border-2 border-gray-800 rounded-md w-full max-w-sm md:max-w-none sm:max-h-full"></lite-youtube>
+                        {% else %}
+                        <div class="border-2 border-gray-800 rounded-md w-full max-w-sm md:max-w-none sm:max-h-full">
+                            {% set imageSrc = ['./images/why-ff/why-ff-', loop.index, '.jpg'] | join %}
+                            {% set imageDescription = ['Image depicting', item.title] | join %}
+                            {% image imageSrc, imageDescription, [444] %}
+                        </div>
+                        {% endif %}                        
+                    </div>
+                </div>
             </div>
-            <div class="w-96 mx-auto flex-shrink-0 max-w-full">
-                {% image "./images/screen-pseudo-overview.png", "A pseudo-screenshot of FlowFuse's UI that lets users manage their multiple Node-RED instances.", [384] %}
-            </div>
-        </div>
-        <div class="my-8 sm:my-16 w-full">
-            {% include "components/divider-grey-wires-right.njk" %}
-        </div>
-        <div class="flex flex-col-reverse sm:flex-row-reverse justify-between gap-3 sm:gap-12">
-            <div class="text-center sm:text-left pt-4">
-                <h3>Manage Remote Deployments</h3>
-                <p>Many organizations deploy Node-RED instances to remote servers or edge devices. FlowFuse automates this process by creating snapshots on Node-RED instances that can be 
-                deployed to multiple remote targets. It also allows for rollback in cases where something might not have gone correctly.</p>
-            </div>
-            <div class="w-96 mx-auto flex-shrink-0 max-w-full">
-                {% image "./images/screen-pseudo-devices.png", "A pseudo-screenshot of FlowFuse's UI that lets users manage their fleet of devices and remote Node-RED deployments.", [384] %}
-            </div>
-        </div>
-        <div class="my-8 sm:my-16">
-            {% include "components/divider-grey-wires-left.njk" %}
-        </div>
-        <div class="flex flex-col-reverse sm:flex-row justify-between gap-3 sm:gap-12">
-            <div class="text-center sm:text-left pt-4">
-                <h3>Streamline Application Delivery</h3>
-                <p>FlowFuse simplifies the software development lifecycle of Node-RED applications. You can now set up DevOps delivery pipelines to support development, test and production environments for Node-RED application delivery.</p>
-            </div>
-            <div class="w-96 mx-auto flex-shrink-0 max-w-full">
-                {% image "./images/screen-pseudo-audit.png", "A pseudo-screenshot of FlowFuse's UI that shows how users can view an audit of all activity in their team and Node-RED projects.", [384] %}
-            </div>
-        </div>
-        <div class="my-8 sm:my-16 w-full">
-            {% include "components/divider-grey-wires-right.njk" %}
-        </div>       
-        <div class="flex flex-col-reverse sm:flex-row-reverse justify-between gap-3 sm:gap-12">
-            <div class="text-center sm:text-left pt-4">
-                <h3>Flexible FlowFuse Deployment</h3>
-                <p>We want to make it easy for you to use FlowFuse, so we offer FlowFuse Cloud, a managed cloud service, or a self-hosted solution. You have the freedom to choose the deployment method that works best for your organization.</p>
-            </div>
-            <div class="w-96 mx-auto flex-shrink-0 max-w-full">
-                {% image "./images/screen-pseudo-devices.png", "A pseudo-screenshot of FlowFuse's UI that lets users manage their fleet of devices and remote Node-RED deployments.", [384] %}
-            </div>
-        </div>
-        <div class="my-8 sm:my-16">
-            {% include "components/divider-grey-wires-left.njk" %}
-        </div>
-        <div class="flex flex-col-reverse sm:flex-row justify-between gap-3 sm:gap-12">
-            <div class="text-center sm:text-left pt-4">
-                <h3>Professional Support for Node-RED deployments</h3>
-                <p>FlowFuse is the trusted partner for providing professional support for business critical applications, built on Node-RED. Our experts can help 
-                with any challenge, ensuring that your Node-RED applications are running smoothly and securely. We keep your systems up-to-date with the latest 
-                versions of Node-RED and security updates, ensuring the continuity of your operations.</p>
-            </div>
-            <div class="w-96 mx-auto flex-shrink-0 max-w-full">
-                {% image "./images/screen-pseudo-audit.png", "A pseudo-screenshot of FlowFuse's UI that shows how users can view an audit of all activity in their team and Node-RED projects.", [384] %}
-            </div>
-        </div>
+        {% endfor %}
     </div>
 </div>
 
