@@ -58,7 +58,7 @@ opportunity is added to the HubSpot deals board.
 
 ## HubSpot Properties
 
-`Outbound` is a custom property that's set to `Yes` when the first meeting with the contact came through outbound
+`Activation Outbound` is a custom property that's set to `Yes` when the first meeting with the contact came through outbound
 drip campaigns or other outbound lead-gen actions. This property will be set to `Yes` when the contact was in HubSpot
 through other marketing activities too, but wasn't nurtured to the point of a meeting yet.
 
