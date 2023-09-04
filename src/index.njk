@@ -33,11 +33,7 @@ sitemapPriority: 1.0
 <!-- Secondary Content -->
 <div class="w-full ff-bg-light px-6 pt-12 sm:pt-32">
     <div class="container m-auto text-center max-w-4xl">
-        <div class="m-auto mt-36 mb-12 sm:mt-64 sm:mb-16 w-full text-center">
-            <h2>Why use FlowFuse for Node-RED</h2>
-            <h5><a href="/node-red">What is Node-RED?</a></h5>
-        </div>
-        <div class="m-auto mb-12 w-full text-center flex flex-col md:flex-row">
+        <div class="m-auto mb-12 w-full text-center flex flex-col md:flex-row mt-32 mb-12 sm:mt-56 sm:mb-16">
             <p class="md:w-1/6 md:text-left opacity-75">Trusted by:</p>
             <ul class="flex flex-row justify-center md:justify-between flex-wrap sm:flex-nowrap gap-[16%] sm:gap-[6%] md:gap-[8%] w-full items-center -mb-6 md:mb-0">
                 <li class="w-[156px] pb-6 md:pb-0">{% image "./images/home-logos/leclanche-logo.png", "Leclanché logo", [156] %}</li>
@@ -47,10 +43,14 @@ sitemapPriority: 1.0
                 <li class="w-[140px] pb-6 md:pb-0">{% image "./images/home-logos/iniationware-logo.png", "Iniationware logo", [140] %}</li>
             </ul>
         </div>
+        <div class="m-auto w-full text-center mb-8">
+            <h2>Why use FlowFuse for Node-RED</h2>
+            <h5><a href="/node-red">What is Node-RED?</a></h5>
+        </div>
     </div>
 </div>
 <div class="about w-full ff-bg-light -mt-1 pb-40">
-    <div class="container m-auto max-w-none sm:max-w-lg md:max-w-5xl flex flex-col gap-y-8">
+    <div class="container m-auto max-w-lg md:max-w-5xl flex flex-col gap-y-8">
         {% for item in reasons %}
             <div class="relative w-full p-6 m-auto">
                 <div class="absolute {% if loop.index is odd %}bottom-4 left-4{% else %}top-4 right-4{% endif %} bg-red-600 w-48 h-32 rounded-md z-0"></div>
@@ -64,9 +64,9 @@ sitemapPriority: 1.0
                     </div>
                     <div class="md:w-1/2 flex justify-center">
                         {% if item.videoid %}
-                        <lite-youtube videoid="{{ item.videoid }}" style="background-image: url('../../images/why-ff/why-ff-{{ loop.index }}.jpg'); width: 444px;" class="border-2 border-gray-800 rounded-md w-full max-w-sm md:max-w-none sm:max-h-full"></lite-youtube>
+                        <lite-youtube videoid="{{ item.videoid }}" style="background-image: url('../../images/why-ff/why-ff-{{ loop.index }}.jpg');" class="w-[274px] sm:w-[444px] border-2 border-gray-800 rounded-md w-full max-w-sm md:max-w-none sm:max-h-full"></lite-youtube>
                         {% else %}
-                        <div class="border-2 border-gray-800 rounded-md w-full max-w-sm md:max-w-none sm:max-h-full">
+                        <div class="w-[274px] sm:w-[444px] border-2 border-gray-800 rounded-md w-full max-w-sm md:max-w-none sm:max-h-full">
                             {% set imageSrc = ['./images/why-ff/why-ff-', loop.index, '.jpg'] | join %}
                             {% set imageDescription = ['Image depicting', item.title] | join %}
                             {% image imageSrc, imageDescription, [444] %}
