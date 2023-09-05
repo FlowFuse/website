@@ -10,7 +10,7 @@ story:
     challenge: Modernize global weather data sharing protocol to be meet higher demand for real-time data
     solution: Using the Node-RED platform to address these challenges.
     results:
-        - Node-RED's MQTT nodes used to implement AntiLoop part of Global Broker
+        - Node-RED's MQTT nodes used to implement AntiLoop part of the Global Broker
         - Pilot system handling 45,000 message / 15 minutes; Production system will handle 30,000/minute 
 ---
 
