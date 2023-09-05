@@ -14,13 +14,14 @@ Before you can take time off you should _always_:
 * Log your time off [in Deel](https://help.letsdeel.com/hc/en-gb/articles/4409044013201-How-do-I-request-time-off-)
 * Add an 'Out of office' appointment in your personal Google Calendar, and decline
    all meetings automatically.
+* Inform fellow team members of your time off, and hand over work that's distributed.
 
 ### Vacation Policy
 
 FlowFuse has a unlimited time off policy. Taking vacation is encouraged for all
 team members. To prevent an undefined number of vacation days to start a race to
 the bottom, we recommend each team member to take a minimum of 25 days a year,
-and at least 5 days a quarter. It's important to note that although we support unlimited paid time of, we greatly appreciate it when employees communicate their planned time off to their team members. This helps ensure efficient workload distribution and collaboration within the team.
+and at least 5 days a quarter.
 
 ### Sick leave
 
