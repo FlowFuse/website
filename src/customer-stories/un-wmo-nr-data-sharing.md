@@ -1,11 +1,12 @@
 ---
 title: World Meteorological Organization(WMO) Uses Node-RED to Modernize Sharing of Earth-System Data
-image: /images/stories/large-us-manufacturing.jpg
+image: /images/stories/un-wmo.jpg
 date: 2023-09-07
-logo:
+logo: /images/stories/logos/logo_wmo.png
 story:
     brand:
     url:
+    logo: /images/stories/logos/logo_wmo.png
     quote: Node-RED was the right platform to use to build the AntiLoop part of the Global Broker... Node-RED has proven to be a very reliable platform.
     challenge: Modernize global weather data sharing protocol to be meet higher demand for real-time data
     solution: Using the Node-RED platform to address these challenges.
