@@ -1,29 +1,31 @@
 ---
-title: Writing Notebooks with Dashboard 2.0
-subtitle: With a new "Notebook" layout available, here we deepdive into how the Markdown, Template & other widgets can be used to build an interactive Notebook
-description: With a new "Notebook" layout available, here we deepdive into how the Markdown, Template & other widgets can be used to build an interactive Notebook
-date: 2023-09-01
+title: Dynamic Markdown, Tables & Notebooks with Dashboard 2.0
+subtitle: A dive into the new features available in 0.4.0 - The "Notebook" Layout and new dynamic Markdown & Table widgets.
+description: A dive into the new features available in 0.4.0 - The "Notebook" Layout and new dynamic Markdown & Table widgets.
+date: 2023-09-06
 authors: ["joe-pavitt"]
-image: "/blog/2023/08/images/Dashboard Community Update-Aug23.jpg"
+image: "/blog/2023/09/images/db-notebook-tile.png"
 tags:
     - posts
     - releases
     - community
 ---
 
-Whilst we're still busy backporting through the existing Dashboard 1.0 features, we did want to highlight something new we've built in Dashboard 2.0. 
+Whilst we're still busy backporting through the existing Dashboard 1.0 features, we did want to highlight some new features we've built in Dashboard 2.0. 
 
-In our v0.3.1 release, we've introduced a new "Notebook" layout. 
+<!--more-->
 
-This layout is designed to allow users to create Dashboards structured like a Notebook (most often seen with the likes of [Jupyter Notebooks](https://jupyter.org/) or [ObservableHQ](https://observablehq.com/)).
+In our v0.4.0 release, we've introduced a new "Notebook" layout, alongside a new Table widget.
 
-Here we will deepdive into the Notebook layout, and show how, alongside our new **Markdown Node** ([docs](https://flowforge.github.io/flowforge-nr-dashboard/nodes/widgets/ui-markdown.html)) and others, it's becoming easier to create dynamic and interactive Dashboards.
+The Notebook layout is designed to allow users to create Dashboards structured like a Notebook (most often seen with the likes of [Jupyter Notebooks](https://jupyter.org/) or [ObservableHQ](https://observablehq.com/)).
+
+Here we will deepdive into the Notebook layout, and show how, alongside our new **Markdown Node** ([docs](https://flowforge.github.io/flowforge-nr-dashboard/nodes/widgets/ui-markdown.html)), **Table Node** ([docs](https://flowforge.github.io/flowforge-nr-dashboard/nodes/widgets/ui-table.html)) and others, it's becoming easier to create dynamic and interactive Dashboards.
 
 _Note: If you're not familiar with Markdown, it's a simple markup language that allows you to format text. You can learn more about it [here](https://www.markdownguide.org/cheat-sheet/)._
 
 ## Dashboard Hierarchy
 
-Each Dashboard is structured accordingly:
+As a quick introductory note ahead of our below guide, each Dashboard is structured accordingly:
 
 - **Widget**: An individual functional block, e.g. button, chart, slider
 - **Group**: A collection of widgets that render together
@@ -32,7 +34,9 @@ Each Dashboard is structured accordingly:
 
 ## Building a Notebook
 
-To get started, drop on your first widget (in this case, we'll add a `ui-markdown`). This in turn will prompt us to create our first Group/Page/Dashboard which we can name & configure accordingly.
+![Example Notebook created in Dashboard](./images/db-notebook-example.png)
+
+To get started, drop your first widget (in this case, we'll add a `ui-markdown`) onto the Node-RED canvas. This in turn will prompt us to create our first Group/Page/Dashboard which we can name & configure accordingly.
 
 Let's add the following Markdown to our first widget:
 
@@ -41,24 +45,44 @@ Let's add the following Markdown to our first widget:
 
 Here we can render dynamic Markdown content that is
 easily _styled_.
-```
 
-Whilst this shows a basic example of static content, the joy of `ui-markdown` in Dashboard is _dynamic_ content, i.e. content that can be updated by passing in messages to the `ui-markdown` node.
-
-Let's add an `inject` node, set it up to repeat every 1s, and wire it to `ui-markdown`. Now, we can update our Markdown content to show this value, which will update every 1s:
-
-```md
+{% raw %}
 We can inject `msg.payload`. For example, here is a
 timestamp updating every second: {{ msg.payload }}
+{% endraw %}
 ```
+
+The joy of `ui-markdown` in Dashboard 2.0 is _dynamic_ content, i.e. content that can be updated by passing messages to the `ui-markdown` node. We can wire an `inject` node, set it up to repeat every 1s, and connect it to `ui-markdown`. Now, our Markdown content will automatically update show this value.
+
+![Screenshot to show how an inject node can drive content of a ui-markdown node](./images/db-notebook-inject.png)
 
 Resulting in:
 
 ![Dynamic markdown with an updating timestamp every 1 second](./images/md-timestamp.gif)
 
+## Adding More Widgets
 
-## Join Our Team
+Because the Notebook is _just_ a layout, we can still wire together any of the available widgets and existing nodes and display them accordingly.
 
-If you'd like to be paid to directly contribute to Dashboard 2.0, we are hiring for a 2-3 month position to do just that:
+Let's wire a ui-button, HTTP Request and ui-table node. When we click the button, it will perform the HTTP request, and then render the response in the table.
 
-- [Contract Front-End Engineer – Node-RED Dashboard](https://boards.greenhouse.io/flowfuse/jobs/4911532004)
+For this, we're going to use the Random Jokes API, and in particular, a call to `https://official-joke-api.appspot.com/jokes/ten` which will return 10 random jokes.
+
+![Screenshot showing a simple Button > HTTP Request > Table flow](./images/generate-jokes-flow.png)
+
+We can also re-order the widgets on the page using the Dashboard 2.0 sidebar (as you could in Dashboard 1.0).
+
+![Screenshot to show how an inject node can drive content of a ui-markdown node](./images/db-notebook-order.png)
+
+The above effort results in the following output in our Notebook:
+
+![Screenshot to show how an inject node can drive content of a ui-markdown node](./images/db-notebook-jokes-table.png)
+
+## What else is new in 0.4.0?
+
+The above demonstrates just a few of the new features in the 0.4.0 Release, but we've also added [other fixes and improvements](https://github.com/flowforge/flowforge-nr-dashboard/releases/tag/v0.4.0). In particular, I want to call out Steve's great work on implementing custom class injection, the first of our new ["Dynamic Properties"](https://flowforge.github.io/flowforge-nr-dashboard/user/dynamic-properties.html), of which there will be more (e.g. visibility, disabled, etc.) to come.
+
+As always, thanks for reading and your interested in Dashboard 2.0. If you have any feature requests, bugs/complaints or general feedback, please do reach out, and raise issues on our relevant [GitHub repository](https://github.com/flowforge/flowforge-nr-dashboard).
+
+- [Dashboard 2.0 Activity Tracker](https://github.com/orgs/flowforge/projects/15/views/1)
+- [Dashboard 2.0 Planning Board](https://github.com/orgs/flowforge/projects/15/views/4)
