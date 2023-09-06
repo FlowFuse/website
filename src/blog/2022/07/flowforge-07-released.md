@@ -7,7 +7,7 @@ authors: ["sam-machin"]
 video: rl_Ln2_uEtg
 tags:
     - posts
-    - flowforge
+    - flowfuse
     - releases
 ---
 Rollback projects to a previous snapshot, improvements in using Devices, and more.

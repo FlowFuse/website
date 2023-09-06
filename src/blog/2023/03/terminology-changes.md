@@ -7,7 +7,7 @@ authors: ["joe-pavitt"]
 image: /blog/2023/03/images/concept-changes.png
 tags:
     - posts
-    - flowforge
+    - flowfuse
     - news
 ---
 

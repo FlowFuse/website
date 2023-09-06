@@ -6,7 +6,7 @@ date: 2022-04-04
 authors: ["zeger-jan-van-de-weg"]
 tags:
     - posts
-    - flowforge
+    - flowfuse
     - news
 ---
 

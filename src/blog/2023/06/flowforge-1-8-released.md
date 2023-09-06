@@ -7,7 +7,7 @@ authors: ["marian-demme"]
 image: /blog/2023/06/images/release-1.8.0.png
 tags:
     - posts
-    - flowforge
+    - flowfuse
     - releases
 ---
 

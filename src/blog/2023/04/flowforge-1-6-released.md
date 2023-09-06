@@ -7,7 +7,7 @@ authors: ["ian-skerrett"]
 image: /blog/2023/04/images/release-1.6.0.png
 tags:
     - posts
-    - flowforge
+    - flowfuse
     - releases
 ---
 

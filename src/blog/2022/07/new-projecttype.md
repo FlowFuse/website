@@ -6,7 +6,7 @@ date: 2022-07-22 12:00:00.0
 authors: ["sam-machin"]
 tags:
     - posts
-    - flowforge
+    - flowfuse
     - news
 ---
 We've added a second size of project to FlowFuse Cloud. A bigger project type with more resources available to it.

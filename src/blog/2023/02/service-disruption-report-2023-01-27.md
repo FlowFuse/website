@@ -4,7 +4,7 @@ date: 2023-02-10
 authors: ["nick-oleary"]
 tags:
     - posts 
-    - flowforge
+    - flowfuse
     - news
 ---
 

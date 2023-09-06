@@ -8,7 +8,7 @@ image: /blog/2023/02/images/roadmap-unsplash.jpg
 tags:
     - posts
     - node-red
-    - flowforge
+    - flowfuse
 ---
 
 Over the past few months we've held a lot of product discovery sessions and a topic

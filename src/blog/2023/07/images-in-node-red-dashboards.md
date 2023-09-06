@@ -7,7 +7,7 @@ authors: ["rob-marcer"]
 image: blog/2023/07/images/add-images-in-node-red-header.png
 tags:
     - posts
-    - flowforge
+    - flowfuse
     - node-red
 ---
 

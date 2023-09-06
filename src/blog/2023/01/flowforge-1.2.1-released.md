@@ -6,7 +6,7 @@ date: 2023-01-12 12:00:00.0
 authors: ["ben-hardill"]
 tags:
     - posts
-    - flowforge
+    - flowfuse
     - releases
 ---
 

@@ -8,7 +8,7 @@ video: ey3xv5j5x7k
 image: /blog/2023/01/images/flowforge-130-hero.png
 tags:
     - posts
-    - flowforge
+    - flowfuse
     - releases
 ---
 

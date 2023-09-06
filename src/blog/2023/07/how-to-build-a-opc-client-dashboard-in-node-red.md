@@ -7,7 +7,7 @@ authors: ["richard-meyer"]
 image: blog/2023/07/images/opc-ua-3/opc-ua-3-title-image.png
 tags:
     - posts
-    - flowforge
+    - flowfuse
     - node-red
 ---
 This article is the third and final part of our OPC UA content series. In the [first article](/blog/2023/07/how-to-deploy-a-basic-opc-ua-server-in-node-red/), we cover some OPC UA fundamentals and walk through an example OPC UA Server flow. In the [second article](/blog/2023/07/how-to-build-a-secure-opc-ua-server-for-plcs-in-node-red/), we built a SSL-secured OPC UA server using data from an Allen Bradley PLC as a source. 

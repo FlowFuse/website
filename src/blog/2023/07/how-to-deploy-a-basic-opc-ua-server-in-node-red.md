@@ -7,7 +7,7 @@ authors: ["richard-meyer"]
 image: blog/2023/07/images/opc-ua-1/opc-ua-1-title-image.png
 tags:
     - posts
-    - flowforge
+    - flowfuse
     - node-red
 ---
 

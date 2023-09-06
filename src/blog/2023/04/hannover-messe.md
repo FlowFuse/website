@@ -7,7 +7,7 @@ authors: ["marian-demme"]
 image: /blog/2023/04/images/HMI2023.png
 tags:
     - posts
-    - flowforge
+    - flowfuse
     - node-red
     - community
 ---

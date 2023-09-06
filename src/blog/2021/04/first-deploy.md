@@ -5,7 +5,7 @@ description: Building a new low-code development platform around the Node-RED pr
 date: 2021-04-06
 authors: ["nick-oleary"]
 tags:
-    - flowforge
+    - flowfuse
     - news
 ---
 When Dave and I first created [Node-RED](https://nodered.org), it was a tool to solve a

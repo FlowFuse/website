@@ -6,7 +6,7 @@ date: 2023-06-12 12:00:00
 authors: ["zeger-jan-van-de-weg"]
 tags:
   - news
-  - flowforge
+  - flowfuse
 image: # /images/blog/tile-needed.jpg
 ---
 

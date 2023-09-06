@@ -6,7 +6,7 @@ date: 2022-04-14 12:00:00.0
 authors: ["sam-machin"]
 tags:
     - posts
-    - flowforge
+    - flowfuse
     - releases
 ---
 

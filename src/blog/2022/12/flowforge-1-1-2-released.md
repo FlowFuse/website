@@ -6,7 +6,7 @@ date: 2022-12-09 12:00:00.0
 authors: ["nick-oleary"]
 tags:
     - posts
-    - flowforge
+    - flowfuse
     - releases
 ---
 
@@ -61,6 +61,6 @@ Please check FlowFuse's [documentation](/docs/) as the answers to many questions
 If you hit any problems with the platform, please raise an [issue on GitHub](https://github.com/flowforge/flowforge/issues).
 That also includes if you have any feedback or feature requests.
 
-Chat with us on the `#flowforge` channel on the [Node-RED Slack workspace](https://nodered.org/slack).
+Chat with us on the `#flowfuse` channel on the [Node-RED Slack workspace](https://nodered.org/slack).
 
 You can also raise a support ticket by emailing [support@flowfuse.com](mailto:support@flowfuse.com)
