@@ -58,7 +58,7 @@ guide for [upgrading your FlowFuse instance](/docs/upgrade/)
 
 Please check FlowFuse's [documentation](/docs/) as the answers to many questions are covered there.
 
-If you hit any problems with the platform, please raise an [issue on GitHub](https://github.com/flowfuse/flowfuse/issues).
+If you hit any problems with the platform, please raise an [issue on GitHub](https://github.com/flowforge/flowforge/issues).
 That also includes if you have any feedback or feature requests.
 
 Chat with us on the `#flowfuse` channel on the [Node-RED Slack workspace](https://nodered.org/slack).
