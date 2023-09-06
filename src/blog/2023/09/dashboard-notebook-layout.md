@@ -64,7 +64,7 @@ Resulting in:
 
 Because the Notebook is _just_ a layout, we can still wire together any of the available widgets and existing nodes and display them accordingly.
 
-Let's wire a ui-button, HTTP Request and ui-table node. When we click the button, it will perform the HTTP request, and then render the response in the table.
+Let's wire a `ui-button`, HTTP Request, and `ui-table` node. When we click the button, it will perform the HTTP request, and then render the response in the table.
 
 For this, we're going to use the Random Jokes API, and in particular, a call to `https://official-joke-api.appspot.com/jokes/ten` which will return 10 random jokes.
 
