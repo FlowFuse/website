@@ -36,7 +36,7 @@ As a quick introductory note ahead of our below guide, each Dashboard is structu
 
 ![Example Notebook created in Dashboard](./images/db-notebook-example.png)
 
-To get started, drop your first widget (in this case, we'll add a `ui-markdown`) onto the Node-RED canvas. This in turn will prompt us to create our first Group/Page/Dashboard which we can name & configure accordingly.
+To get started, drop your first widget (in this case, we'll add a `ui-markdown`) onto the Node-RED canvas. This in turn will prompt us to create our first Group/Page/Dashboard which we can name and configure accordingly.
 
 Let's add the following Markdown to our first widget:
 
