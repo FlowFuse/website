@@ -14,6 +14,7 @@ Before you can take time off you should _always_:
 * Log your time off [in Deel](https://help.letsdeel.com/hc/en-gb/articles/4409044013201-How-do-I-request-time-off-)
 * Add an 'Out of office' appointment in your personal Google Calendar, and decline
    all meetings automatically.
+* Inform fellow team members of your time off, and hand over work that's distributed.
 
 ### Vacation Policy
 
