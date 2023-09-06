@@ -24,5 +24,5 @@ Support for third party nodes of popular industrial protocols including: Modbus,
 
 FlowFuse is the only vendor providing professional technical support for Node-RED on the ctrlX platform.
 
-The package is available today at ctrlX World. Interested customers should contact their Rexroth sales representative for purchasing details. Interested customers can also contact FlowFuse directly at sales@flowfuse.com for additional information about the offering.
+The package is available today at ctrlX World. Interested customers should contact their Rexroth sales representative for purchasing details. Interested customers can also contact FlowFuse directly at [sales@flowfuse.com](mailto:sales@flowfuse.com) for additional information about the offering.
 
