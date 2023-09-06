@@ -7,7 +7,7 @@ authors: ["richard-meyer"]
 image: blog/2023/07/images/opc-ua-2/opc-ua-2-title-image.png
 tags:
     - posts
-    - flowforge
+    - flowfuse
     - node-red
 ---
 This article is the second part of a series of OPC-UA content. In [part one](/blog/2023/07/how-to-deploy-a-basic-opc-ua-server-in-node-red/),

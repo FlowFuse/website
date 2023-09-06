@@ -7,7 +7,7 @@ authors: ["sam-machin"]
 video: d23Pmyc0k7I
 tags:
     - posts
-    - flowforge
+    - flowfuse
     - releases
 ---
 

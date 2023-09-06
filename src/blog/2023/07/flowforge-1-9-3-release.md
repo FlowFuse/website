@@ -6,7 +6,7 @@ date: 2023-07-21
 authors: ["nick-oleary"]
 tags:
     - posts
-    - flowforge
+    - flowfuse
     - releases
 ---
 

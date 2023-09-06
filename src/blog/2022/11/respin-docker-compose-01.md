@@ -6,7 +6,7 @@ date: 2022-11-25
 authors: ["ben-hardill"]
 tags:
     - posts
-    - flowforge
+    - flowfuse
     - news
 ---
 

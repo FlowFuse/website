@@ -6,7 +6,7 @@ date: 2022-09-27
 authors: ["rob-marcer"]
 tags:
     - posts
-    - flowforge
+    - flowfuse
     - news
 ---
 

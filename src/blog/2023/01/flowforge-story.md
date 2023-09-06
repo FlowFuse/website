@@ -6,7 +6,7 @@ date: 2023-02-02
 authors: ["ian-skerrett"]
 tags:
     - posts
-    - flowforge
+    - flowfuse
 ---
 
 During my first month at FlowFuse, I have been helping to refine the FlowFuse story. Trying to answer the questions: What is the value FlowFuse brings to our customers and what features does FlowFuse want to offer the Node-RED community?

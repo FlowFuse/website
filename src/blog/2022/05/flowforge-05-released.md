@@ -6,7 +6,7 @@ date: 2022-05-12 12:00:00.0
 authors: ["nick-oleary"]
 tags:
     - posts
-    - flowforge
+    - flowfuse
     - releases
 ---
 

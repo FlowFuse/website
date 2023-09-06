@@ -7,7 +7,7 @@ authors: ["joe-pavitt"]
 image: /blog/2023/03/images/release-150.jpg
 tags:
     - posts
-    - flowforge
+    - flowfuse
     - releases
 ---
 

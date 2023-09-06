@@ -8,7 +8,7 @@ video: vbg4zTmUYjQ
 image: /blog/2023/02/images/ff-r14-image.png
 tags:
     - posts
-    - flowforge
+    - flowfuse
     - releases
 ---
 

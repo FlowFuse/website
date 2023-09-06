@@ -6,7 +6,7 @@ date: 2022-03-17 1:00:00.0
 authors: ["nick-oleary"]
 tags:
     - posts
-    - flowforge
+    - flowfuse
     - releases
 ---
 
@@ -95,7 +95,7 @@ raise an [issue on GitHub](https://github.com/flowforge/flowforge/issues).
 
 That also includes if you have any feedback or feature requests.
 
-We also have a `#flowforge` channel on the [Node-RED Slack workspace](https://nodered.org/slack).
+We also have a `#flowfuse` channel on the [Node-RED Slack workspace](https://nodered.org/slack).
 
 ### What's next?
 
