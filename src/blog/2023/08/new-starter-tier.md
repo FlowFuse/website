@@ -37,7 +37,7 @@ You can update your existing team to either tier via the ‘Change Team Type’ 
 
 ### How do I migrate my existing team to the newly introduced Starter package or Team tier?
 
-You can update your existing team to either tier via the ‘Change Team Type’ option under Team Settings.
+You can update your existing team to either tier via the ‘Change Team Type’ option under Team Settings on the "Danger" tab.
 
 ### How do I cancel the Starter Package?
 
