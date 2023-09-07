@@ -1,5 +1,3 @@
-## What's the Inject node in Node-RED used for?
-
 The Inject node is the beginning of many flows that are triggered manually. The box to the left of the node sends a message to connected nodes. For that reason it's often used for debugging too, to inject values at a point of choosing. The message item can be empty too. The message to send defaults to the timestamp as payload and an empty topic.
 
 Message properties can be set to flow, or global variable values, and many other types, including JSONata expressions.
@@ -32,4 +30,17 @@ Do set the correct timezone in the [editor settings](/docs/user/instance-setting
 
 ```json
 [{"id":"998e844a7e50e275","type":"inject","z":"80987f27785245a7","name":"","props":[{"p":"payload"}],"repeat":"","crontab":"59 23 * * *","once":false,"onceDelay":"0","topic":"","payload":"","payloadType":"date","x":190,"y":320,"wires":[["1e80f5229516e910"]]},{"id":"1e80f5229516e910","type":"debug","z":"80987f27785245a7","name":"Output daily at night","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"payload","targetType":"msg","statusVal":"","statusType":"auto","x":400,"y":320,"wires":[]}]
+```
+
+### Insert a static string
+
+The Inject node can also set the payload to other input data, for example a
+static string. Note this string cannot have multiple lines.
+
+!["Configure Inject a string for a flow"](./images/inject-config-string.png)
+
+!["Inject string for a flow"](./images/inject-static-string.png)
+
+```json
+[{"id":"c0451e14f6b7eff0","type":"inject","z":"80987f27785245a7","name":"Inject a string","props":[{"p":"payload"}],"repeat":"","crontab":"","once":false,"onceDelay":0.1,"topic":"","payload":"Hello FlowFuse!","payloadType":"str","x":190,"y":280,"wires":[["9fbd8a0a9d21562a"]]},{"id":"9fbd8a0a9d21562a","type":"debug","z":"80987f27785245a7","name":"Output \"Hello FlowFuse\"","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"payload","targetType":"msg","statusVal":"","statusType":"auto","x":410,"y":280,"wires":[]}]
 ```
