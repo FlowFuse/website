@@ -18,9 +18,12 @@ The big news this month is that [FlowForge is now FlowFuse](blog/2023/08/flowfor
 
 <!--more-->
 
-## New Release
+## New Releases
 
-Last week, FlowFuse 1.11 was released. This release included personal access tokens for FlowFuse API and new tiers for FlowFuse Cloud, including a new starter tier.  Check out the details in our [announcement](blog/2023/08/flowfuse-1-11-release/).
+* Node-RED 3.1 has been [released](https://nodered.org/blog/2023/09/06/version-3-1-released). Lots of great improvements have been included.
+
+
+* Last week, FlowFuse 1.11 was released. This release included personal access tokens for FlowFuse API and new tiers for FlowFuse Cloud, including a new starter tier.  Check out the details in our [announcement](blog/2023/08/flowfuse-1-11-release/).
 
 ## Upcoming events
 
@@ -48,7 +51,7 @@ Hard to believe that Node-RED was launched 10 years ago. We want to celebrate th
 
 ## From the Community
 
-
+- A new plugin for the generation of [Matter devices witin Node-RED](https://flows.nodered.org/node/@node-red-matter/node-red-matter) has been published. 
 
 
 ## Join Our Team
