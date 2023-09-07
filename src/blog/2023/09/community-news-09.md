@@ -14,7 +14,7 @@ Welcome to the FlowFuse newsletter for September 2023, a monthly roundup of what
 
 ## New Name
 
-The big news this month is that [FlowForge is now FlowFuse](blog/2023/08/flowforge-is-now-flowfuse/). Yes, we have changed our name but we are still focus on delivering great products for the Node-RED community.
+The big news this month is that [FlowForge is now FlowFuse](/blog/2023/08/flowforge-is-now-flowfuse/). Yes, we have changed our name but we are still focus on delivering great products for the Node-RED community.
 
 <!--more-->
 
@@ -23,7 +23,7 @@ The big news this month is that [FlowForge is now FlowFuse](blog/2023/08/flowfor
 * Node-RED 3.1 has been [released](https://nodered.org/blog/2023/09/06/version-3-1-released). Lots of great improvements have been included.
 
 
-* Last week, FlowFuse 1.11 was released. This release included personal access tokens for FlowFuse API and new tiers for FlowFuse Cloud, including a new starter tier.  Check out the details in our [announcement](blog/2023/08/flowfuse-1-11-release/).
+* Last week, FlowFuse 1.11 was released. This release included personal access tokens for FlowFuse API and new tiers for FlowFuse Cloud, including a new starter tier.  Check out the details in our [announcement](/blog/2023/08/flowfuse-1-11-release/).
 
 ## Upcoming events
 
@@ -31,23 +31,23 @@ The big news this month is that [FlowForge is now FlowFuse](blog/2023/08/flowfor
 
 Hard to believe that Node-RED was launched 10 years ago. We want to celebrate this great accomplishment and also show off the new Node-RED 3.1 release. Join Nick O'Leary for the 10 year celebration and here what is coming next. 
 
-[Sign-up today](webinars/2023/node-red-10-years/) to join us on September 21. 
+[Sign-up today](/webinars/2023/node-red-10-years/) to join us on September 21. 
 
 
 ## From our Blog
 
 - The Node-RED Dashboard 2.0 project is making excellent progress. Two updates were published in the last month. Make sure you check out the latest release and provide feedback. 
-    * [Dynamic Markdown, Tables & Notebooks with Dashboard 2.0](blog/2023/09/dashboard-notebook-layout/)
-    * [Dashboard 2.0 - Community Update](https://flowfuse.com/blog/2023/08/dashboard-community-update/)
+    * [Dynamic Markdown, Tables & Notebooks with Dashboard 2.0](/blog/2023/09/dashboard-notebook-layout/)
+    * [Dashboard 2.0 - Community Update](/blog/2023/08/dashboard-community-update/)
 
 
-- [FlowFuse announces a Node-RED stack for Industry 4.0 applications on Bosch Rexroth ctrlX Automation](blog/2023/09/bosch-rexroth-announce/) - a fully supported Node-RED stack for Bosch customers.
+- [FlowFuse announces a Node-RED stack for Industry 4.0 applications on Bosch Rexroth ctrlX Automation](/blog/2023/09/bosch-rexroth-announce/) - a fully supported Node-RED stack for Bosch customers.
 
-- [FlowFuse is now available on the AWS Marketplace](blog/2023/08/aws-marketplace-announce/) - making it easier to run FlowFuse on the AWS cloud.
+- [FlowFuse is now available on the AWS Marketplace](/blog/2023/08/aws-marketplace-announce/) - making it easier to run FlowFuse on the AWS cloud.
 
-- [Our Open Source offering is a tier, not our competition](blog/2023/08/open-source-is-a-tier-not-competition/) - some insight from our CEO into our open source strategy.
+- [Our Open Source offering is a tier, not our competition](/blog/2023/08/open-source-is-a-tier-not-competition/) - some insight from our CEO into our open source strategy.
 
-- [Why the Automation Pyramid blocks digital transformation - The Role of Unified Namespace](blog/2023/08/uns-article/) - some insight from the FlowFuse product manager into the role of a Unified Namespace.
+- [Why the Automation Pyramid blocks digital transformation - The Role of Unified Namespace](/blog/2023/08/uns-article/) - some insight from the FlowFuse product manager into the role of a Unified Namespace.
 
 ## From the Community
 
