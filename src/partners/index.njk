@@ -1,0 +1,49 @@
+---
+layout: layouts/page.njk
+title: FlowFuse Partners
+description:
+    <p class="pb-6">FlowFuse partners with leading cloud, hardware, technology and consulting companies to provide a complete solution that allows our customers to deliver results using Node-RED and FlowFuse.</p>
+---
+<div class="mt-8 md:mt-10">
+    {% include "components/divider-flow--top-red--light.njk" %}
+</div>
+<div class="ff-bg-light w-full px-6 pt-10 pb-20 md:px-0 flex flex-col gap-10 md:gap-12">
+    <div class="container max-w-screen-md m-auto flex flex-col gap-4">
+        <h3 class="m-auto text-center w-full">Cloud Providers</h3>
+        <div class="flex flex-col md:flex-row md:gap-10 gap-6 md:pb-6">
+            <p class="md:w-[65%] w-full">FlowFuse is available for deployment from the marketplace of the following Cloud providers.</p>
+            <ul class="md:w-[35%] flex flex-row justify-center md:justify-end gap-10 w-full items-center">
+                <li class="w-[84px] pb-6 md:pb-0 hover:transition-opacity hover:opacity-75 transition ease-in duration-300"><a href="https://aws.amazon.com/marketplace/pp/prodview-3ycrknfg67rug" target="_blank">{% image "../images/partners/logo-aws.png", "aws logo", [84] %}</a></li>
+                <li class="w-[92px] pb-6 md:pb-0 hover:transition-opacity hover:opacity-75 transition ease-in duration-300"><a href="https://marketplace.digitalocean.com/apps/flowforge" target="_blank">{% image "../images/partners/logo-digital-o.png", "Digital Ocean logo", [92] %}</a></li>
+            </ul>
+        </div>
+        {% include "components/divider-grey-wires-right.njk" %}
+    </div>
+    <div class="container max-w-screen-md m-auto flex flex-col gap-4">
+        <h3 class="m-auto text-center w-full">Hardware Partners</h3>
+        <div class="flex flex-col md:flex-row md:gap-10 gap-6 md:pb-6">
+            <p class="md:w-[65%] w-full">FlowFuse partners with key industry hardware partners to provide an integrated experience using Node-RED and FlowFuse.</p>
+            <ul class="md:w-[35%] flex flex-row justify-center md:justify-end w-full items-center">
+                <li class="w-[150px] pb-6 md:pb-0 hover:transition-opacity hover:opacity-75 transition ease-in duration-300"><a href="/partners/ctrlx">{% image "../images/partners/logo-rexroth.png", "Rexroth logo", [150] %}</a></li>
+            </ul>
+        </div>
+        {% include "components/divider-grey-wires-left.njk" %}
+    </div>
+    <div class="container max-w-screen-md m-auto flex flex-col gap-4">
+        <h3 class="m-auto text-center w-full">Referral partners</h3>
+        <div class="flex flex-col gap-6">
+            <p class="w-full">FlowFuse partners with different solution providers to encourage them to recommend and support Node-RED and FlowFuse with their customers.</p>
+            <!-- <ul class="flex flex-row justify-center gap-4 md:gap-10 w-full items-center">
+                <li class="w-[142px] pb-6 md:pb-0">{% image "../images/partners/logo-iniationware.png", "Iniationware logo", [142] %}</li>
+                <li class="w-[98px] pb-6 md:pb-0">{% image "../images/partners/logo-idoneo.png", "Idoneo logo", [98] %}</li>
+                <li class="w-[145px] pb-6 md:pb-0">{% image "../images/partners/logo-hexa-ai.png", "Hexa-AI logo", [145] %}</li>
+            </ul> -->
+            <div class="text-center">
+                <a href="/partners/referral-sign-up/" class="inline-block ff-btn ff-btn--primary uppercase w-[218px]">
+                    <span>APPLY NOW</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
