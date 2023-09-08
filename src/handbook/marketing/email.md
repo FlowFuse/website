@@ -5,7 +5,8 @@ meta:
 
 ## Email
 
-Email marketing is an effective way to communicate with community members, potential customers and existing customers. Marketing, sales, customer success and support all have a role in sending emails.  The following guidelines are meant to document the roles and responsiblities of sending emails to ensure we have a consistent and well defined approach.
+Email marketing is an effective way to communicate with community members, potential customers, and existing customers. Marketing, sales, customer success, and support all have a role in sending emails.
+The following guidelines are meant to document the roles and responsibilities of sending emails to ensure we have a consistent and well defined approach.
 
 ## Types of Email
 
