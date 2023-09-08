@@ -6,6 +6,7 @@ meta:
 ## Email
 
 Email marketing is an effective way to communicate with community members, potential customers, and existing customers. Marketing, sales, customer success, and support all have a role in sending emails.
+
 The following guidelines are meant to document the roles and responsibilities of sending emails to ensure we have a consistent and well defined approach.
 
 ## Types of Email
@@ -20,7 +21,8 @@ These types of email should be stored in HubSpot using the HubSpot interface or 
 
 The marketing team is responsible for sending email to all community members, potential customers and customers that provide updates on FlowFuse and events organized by FlowFuse. Examples of these email include monthly newsletter, webinar promotion, product release, major company announcements, etc.
 
-These types of emails should be sent via HubSpot. 
+These types of emails should be sent via HubSpot. To ensure consistency and continuity, the marketing team should be the only team sending community emails via HubSpot. Anyone can request an email to be sent by opening a github issue on the website.
+
 ### FlowFuse Cloud Trial email
 
 The marketing team, in collaboration with the customer success team, is responsible for defining and creating an email campaign to encourage the successful trial of FlowFuse Cloud. 
@@ -28,5 +30,7 @@ The marketing team, in collaboration with the customer success team, is responsi
 These emails will be sent from HubSpot using data based on the user interaction with FlowFuse Cloud. A system has been put in place to query the FF Cloud database to create events that are added to HubSpot. HubSpot workflows will trigger the emails based on these events.
 
 The expectation is that the marketing team will continuously test different types of email, and email content to improve the conversion rate of the trial period.
+
+FlowFuse Cloud Trial emails should only be sent by the marketing team via HubSpot. Anyone can suggestion changes by opening a github issue. 
 
 
