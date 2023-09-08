@@ -21,8 +21,6 @@ These types of email should be stored in HubSpot using the HubSpot interface or 
 The marketing team is responsible for sending email to all community members, potential customers and customers that provide updates on FlowFuse and events organized by FlowFuse. Examples of these email include monthly newsletter, webinar promotion, product release, major company announcements, etc.
 
 These types of emails should be sent via HubSpot. 
-
-
 ### FlowFuse Cloud Trial email
 
 The marketing team, in collaboration with the customer success team, is responsible for defining and creating an email campaign to encourage the successful trial of FlowFuse Cloud. 
