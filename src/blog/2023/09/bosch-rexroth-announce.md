@@ -1,5 +1,5 @@
 ---
-title: FlowFuse announces a Node-RED stack for Industry 4.0 applications on ctrlX
+title: FlowFuse announces a Node-RED stack for Industry 4.0 applications on ctrlX AUTOMATION
 subtitle: Rexroth ctrlX now have fully supported Node-RED stack available for production use
 description: FlowFuse is now offering Node-RED to customers that want to deploy it on the Rexrtoh ctrlX platform.
 authors: ["ian-skerrett"]
@@ -14,7 +14,7 @@ FlowFuse is pleased to announce they are now offering Node-RED plus select third
 
 <!--more-->
 
-FlowFuse is pleased to announce they are now offering Node-RED plus select third party nodes from the [Bosch Rexroth ctrlX World](https://developer.community.boschrexroth.com/t5/Store-and-How-to/FlowFuse-Node-RED/ba-p/82135) marketplace. Rexroth customers building Industry 4.0 applications will now have a trusted vendor, in FlowFuse, to provide support and updates for using open source Node-RED in production. By partnering with FlowFuse, customers can reduce their risk of using Node-RED in production by relying upon FlowFuse Node-RED experts to assist with any development or production issues.
+FlowFuse is pleased to announce they are now offering Node-RED plus select third party nodes from the [Bosch Rexroth ctrlX Store](https://developer.community.boschrexroth.com/t5/Store-and-How-to/FlowFuse-Node-RED/ba-p/82135) marketplace. Rexroth customers building Industry 4.0 applications will now have a trusted vendor, in FlowFuse, to provide support and updates for using open source Node-RED in production. By partnering with FlowFuse, customers can reduce their risk of using Node-RED in production by relying upon FlowFuse Node-RED experts to assist with any development or production issues.
 
 [Node-RED](https://nodered.org/) is a popular open source low-code development environment widely used in industries for collecting and processing industrial data to deliver Industry 4.0 applications. FlowFuse is uniquely positioned to partner with ctrlX customers looking to use Node-RED in production. FlowFuse CTO Nick O’Leary is the co-creator and project leader of Node-RED. FlowFuse employs many Node-RED experts who have years of experience helping customers with successful deployment of Node-RED applications.
 
