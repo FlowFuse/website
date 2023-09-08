@@ -11,7 +11,7 @@ tags:
     - community
 ---
 
-In today's rapidly evolving industrial landscape, the ability to collect, analyze, and act upon data is more critical than ever. The Industrial Internet of Things (IIoT) has ushered in a new era of connectivity and automation, but what about the wealth of data locked away in legacy industrial protocols like ModBus? How can we unlock and make sense of this valuable information in the IIoT era? That's where tools like Node-RED and node-red-contrib-buffer-parser come into play.
+In today's rapidly evolving industrial landscape, the ability to collect, analyse, and act upon data is more critical than ever. The Industrial Internet of Things (IIoT) has ushered in a new era of connectivity and automation, but what about the wealth of data locked away in legacy industrial protocols like ModBus? How can we unlock and make sense of this valuable information in the IIoT era? That's where tools like Node-RED and node-red-contrib-buffer-parser come into play.
 
 <!--more-->
 
@@ -33,7 +33,7 @@ Before we dive into how to make sense of ModBus data, let's take a quick look at
 
 #### 32-bit data
 
-32-bit data, like 16 bit data can mean many things. It could be signed or unsigned, or even a floating point number. For example, the number 12345 is represented as `0x00003039` in hexadecimal or `00000000000000000011000000111001` in binary. Typically, 32-bit data is represented as two 16-bit registers. Therefore, when dealing with 32-bit data, you need to combine two 16-bit registers to get the full value.
+32-bit data, like 16-bit data can mean many things. It could be signed or unsigned, or even a floating point number. For example, the number 12345 is represented as `0x00003039` in hexadecimal or `00000000000000000011000000111001` in binary. Typically, 32-bit data is represented as two 16-bit registers. Therefore, when dealing with 32-bit data, you need to combine two 16-bit registers to get the full value.
 
 #### Endianness
 
@@ -44,7 +44,7 @@ Endianness is a term used to describe the order in which bytes are stored in mem
 
 Node-RED is an open-source flow-based development tool for visual programming. It's particularly well-suited for IIoT applications because of its versatility and extensive library of nodes. One such node, node-red-contrib-buffer-parser, provides a solution to the legacy data conversion challenge.
 
-This powerful Node-RED module allows you to parse a Buffer of bytes or an Array of integer data (which, by no coincidence, the popular module node-red-contrib-modbus outputs), and convert it into various data types. It output pretty much any data type, including byte-swapped data, WORD swapped data, scaled data, and even individual bits.
+This powerful Node-RED module allows you to parse a Buffer of bytes or an Array of integer data (which, by no coincidence, the popular module node-red-contrib-modbus outputs), and convert it into various data types. It can output pretty much any data type, including byte-swapped data, WORD swapped data, masked/shifted/scaled data, and even individual bits.
 
 Here's a quick overview of how it works:
 
@@ -52,7 +52,7 @@ Here's a quick overview of how it works:
 
 1. **Data Conversion**: With the buffer parser, you can easily convert the 16-bit unsigned data into more meaningful formats. Whether you need to translate it into Float, Long, String, or even extract specific bits, this tool makes the process straightforward.
 
-1. **Publishing to MQTT, infuxDB, a dashboard, an IIoT system**: Once your data is in a usable format, Node-RED enables you to publish it to many places. MQTT (Message Queuing Telemetry Transport), a popular protocol for IIoT communication is a perfect example. This makes your data is accessible to other IIoT systems and applications for further analysis and action.
+1. **Publishing to MQTT, influxDB, a dashboard, an IIoT system**: Once your data is in a usable format, Node-RED enables you to publish it to many places. MQTT (Message Queuing Telemetry Transport), a popular protocol for IIoT communication is a perfect example. This makes your data accessible to other IIoT systems and applications for further analysis and action.
 
 ### Unlocking the Potential of Legacy Data
 
@@ -63,9 +63,9 @@ In the era of the Industrial Internet of Things, making sense of your industrial
 ### Learn More
 
 We will be publishing follow-up blog posts with more details, best practices and examples on how to use Node-RED to make sense of your industrial data. In the meantime, you can learn more about these tools by visiting the following links:
-* Node-RED blog posts - https://flowfuse.com/blog/node-red/
-* Node-RED videos - https://www.youtube.com/playlist?list=PLpcyqc7kNgp09XeRx_cae1fEIOloPqM1C
-* Buffer-Parser - https://flows.nodered.org/node/node-red-contrib-buffer-parser 
+* [Node-RED blog posts](https://flowfuse.com/blog/node-red/)
+* [Node-RED videos](https://www.youtube.com/playlist?list=PLpcyqc7kNgp09XeRx_cae1fEIOloPqM1C)
+* [Buffer Parser Node](https://flows.nodered.org/node/node-red-contrib-buffer-parser) 
 
 ### A teaser
 
