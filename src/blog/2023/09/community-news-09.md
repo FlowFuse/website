@@ -20,7 +20,7 @@ The big news this month is that [FlowForge is now FlowFuse](/blog/2023/08/flowfo
 
 ## New Releases
 
-* Node-RED 3.1 has been [released](https://nodered.org/blog/2023/09/06/version-3-1-released). Lots of great improvements have been included.
+* Node-RED 3.1 has been [released](https://nodered.org/blog/2023/09/06/version-3-1-released). Among the changes are Mermaid chart support, locking flows, and much more.
 
 
 * Last week, FlowFuse 1.11 was released. This release included personal access tokens for FlowFuse API and new tiers for FlowFuse Cloud, including a new starter tier.  Check out the details in our [announcement](/blog/2023/08/flowfuse-1-11-release/).
