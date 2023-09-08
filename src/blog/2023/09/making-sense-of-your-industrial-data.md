@@ -4,7 +4,7 @@ subtitle: A look at legacy industrial protocol data and making sense of it in an
 description: A look at legacy industrial protocol data and making sense of it in an IIoT world.
 date: 2023-09-08
 authors: ["stephen-mclaughlin"]
-image: "/blog/2023/09/images/placeholder.png"
+image: "/blog/2023/09/images/industrial-legacy-data-blog-image.png"
 tags:
     - posts
     - node-red
