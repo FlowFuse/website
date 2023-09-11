@@ -77,7 +77,7 @@ Here are 3 quick demonstrations of Node-RED and the buffer parser node in action
 Converting an array of 16-bit unsigned integers to String, Float and a scaled integer and passing them to an MQTT broker in 4 nodes!
 ![Legacy data to MQTT](images/industrial-legacy-data-to-mqtt.gif)
 
-#### Example 2
+#### Example 2: ModBus to InfluxDB
 Converting an array of 16-bit unsigned integers to String, Float and a scaled integer for publishing to influxDB!
 ![Legacy data to influxDB](images/industrial-legacy-data-to-influx.png)
 ![Legacy data to influxDB2](images/industrial-legacy-data-to-influx2.png)
