@@ -29,7 +29,7 @@ The marketing team, in collaboration with the customer success team, is responsi
 
 These emails will be sent from HubSpot using data based on the user interaction with FlowFuse Cloud. A system has been put in place to query the FF Cloud database to create events that are added to HubSpot. HubSpot workflows will trigger the emails based on these events.
 
-The expectation is that the marketing team will continuously test different types of email, and email content to improve the conversion rate of the trial period.
+The expectation is that the marketing and customer success team will continuously test different types of email, and email content to improve the conversion rate of the trial period and adoption of FlowFuse Cloud.
 
 FlowFuse Cloud Trial emails should only be sent by the marketing team via HubSpot. Requesting changes to these emails is done by opening a
 [GitHub issue on the website repository](https://github.com/flowforge/website/issues).
