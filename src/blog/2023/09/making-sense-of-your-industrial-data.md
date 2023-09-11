@@ -73,7 +73,7 @@ We will be publishing follow-up blog posts with more details, best practices and
 
 Here are 3 quick demonstrations of Node-RED and the buffer parser node in action:
 
-#### Example 1
+#### Example 1: ModBus to MQTT
 Converting an array of 16-bit unsigned integers to String, Float and a scaled integer and passing them to an MQTT broker in 4 nodes!
 ![Legacy data to MQTT](images/industrial-legacy-data-to-mqtt.gif)
 
