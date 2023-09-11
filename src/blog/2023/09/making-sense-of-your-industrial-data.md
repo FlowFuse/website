@@ -1,8 +1,8 @@
 ---
-title: Making sense of your industrial data
-subtitle: A look at legacy industrial protocol data and making sense of it in an IIoT world.
-description: A look at legacy industrial protocol data and making sense of it in an IIoT world.
-date: 2023-09-08
+title: Modernize your legacy industrial data
+subtitle: Working with legacy industrial protocol data from the likes of Modbus and older, non IIoT protocols and putting it to work in an IIoT world.
+description: Working with legacy industrial protocol data from the likes of Modbus and older, non IIoT protocols and putting it to work in an IIoT world.
+date: 2023-09-11
 authors: ["stephen-mclaughlin"]
 image: "/blog/2023/09/images/industrial-legacy-data-blog-image.png"
 tags:
