@@ -30,4 +30,4 @@ jobs:
         working-directory: 'website'
       - uses: untitaker/hyperlink@0.1.27
         with:
-          args: website/_site/ --check-anchors
+          args: website/_site/ --check-anchors --sources src
