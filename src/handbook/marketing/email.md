@@ -31,6 +31,7 @@ These emails will be sent from HubSpot using data based on the user interaction 
 
 The expectation is that the marketing team will continuously test different types of email, and email content to improve the conversion rate of the trial period.
 
-FlowFuse Cloud Trial emails should only be sent by the marketing team via HubSpot. Anyone can suggestion changes by opening a github issue. 
+FlowFuse Cloud Trial emails should only be sent by the marketing team via HubSpot. Requesting changes to these emails is done by opening a
+[GitHub issue on the website repository](https://github.com/flowforge/website/issues).
 
 
