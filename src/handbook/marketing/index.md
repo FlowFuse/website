@@ -16,3 +16,4 @@ If you're looking to contribute content to FlowFuse, this is the best place to s
 - [Website](./website.md)
 - [Webinars](./webinars.md)
 - [Boiler Plate](./boilerplate.md)
+- [Emails](./email.md)
