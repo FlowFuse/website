@@ -58,7 +58,7 @@ Here's a quick overview of how it works:
 
 By leveraging Node-RED and buffer parser, you can bridge the gap between legacy industrial protocols and the IIoT world. This means you can extract valuable insights from your existing infrastructure without the need for costly hardware upgrades or replacements.
 
-In the era of the Industrial Internet of Things, making sense of your industrial data is no longer a daunting challenge. With the right tools approach, you can unlock the full potential of your legacy data and drive efficiency, productivity, and innovation in your industrial processes.  Yey!
+In the era of the Industrial Internet of Things, making sense of your industrial data is no longer a daunting challenge. With the right tools approach, you can unlock the full potential of your legacy data and drive efficiency, productivity, and innovation in your industrial processes. Yey!
 
 ### Learn More
 
