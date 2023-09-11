@@ -23,7 +23,7 @@ The marketing team is responsible for sending email to all community members, po
 
 These types of emails should be sent via HubSpot. To ensure consistency and continuity, the marketing team should be the only team sending community emails via HubSpot. Anyone can request an email to be sent by opening a [GitHub issue on the website repository](https://github.com/flowforge/website/issues).
 
-### FlowFuse Cloud Trial email
+### FlowFuse Cloud User emails
 
 The marketing team, in collaboration with the customer success team, is responsible for defining and creating an email campaign to encourage the successful trial of FlowFuse Cloud. 
 
