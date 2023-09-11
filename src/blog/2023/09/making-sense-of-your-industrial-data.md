@@ -82,6 +82,6 @@ Converting an array of 16-bit unsigned integers to String, Float and a scaled in
 ![Legacy data to influxDB](images/industrial-legacy-data-to-influx.png)
 ![Legacy data to influxDB2](images/industrial-legacy-data-to-influx2.png)
 
-#### Example 3
+#### Example 3: ModBus data on a dashboard
 Converting an array of 16-bit unsigned integers to String, Float and a scaled integer for publishing to a dashboard!
 ![Legacy data to dashboard](images/industrial-legacy-data-to-dashboard.png)
