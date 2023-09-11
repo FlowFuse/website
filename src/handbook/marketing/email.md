@@ -25,7 +25,7 @@ These types of emails should be sent via HubSpot. To ensure consistency and cont
 
 ### FlowFuse Cloud User emails
 
-The marketing team, in collaboration with the customer success team, is responsible for defining and creating an email campaign to encourage the successful trial of FlowFuse Cloud. 
+The marketing team, in collaboration with the customer success team, is responsible for defining and creating an email campaign to encourage the successful usage and adoption of FlowFuse Cloud.
 
 These emails will be sent from HubSpot using data based on the user interaction with FlowFuse Cloud. A system has been put in place to query the FF Cloud database to create events that are added to HubSpot. HubSpot workflows will trigger the emails based on these events.
 
