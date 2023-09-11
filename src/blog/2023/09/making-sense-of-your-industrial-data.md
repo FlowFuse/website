@@ -11,7 +11,9 @@ tags:
     - community
 ---
 
-In today's rapidly evolving industrial landscape, the ability to collect, analyse, and act upon data is more critical than ever. The Industrial Internet of Things (IIoT) has ushered in a new era of connectivity and automation, but what about the wealth of data locked away in legacy industrial protocols like ModBus? How can we unlock and make sense of this valuable information in the IIoT era? That's where tools like Node-RED and node-red-contrib-buffer-parser come into play.
+In today's rapidly evolving industrial landscape, the ability to collect, analyse, and act upon data is more critical than ever.
+The Industrial Internet of Things (IIoT) has ushered in a new era of connectivity and automation, but what about the wealth of data locked away in legacy industrial protocols like ModBus?
+How can we unlock and make sense of this valuable information in the IIoT era? That's where tools like Node-RED and `node-red-contrib-buffer-parser` come into play.
 
 <!--more-->
 
