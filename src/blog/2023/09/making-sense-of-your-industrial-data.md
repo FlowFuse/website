@@ -39,7 +39,7 @@ Before we dive into how to make sense of ModBus data, let's take a quick look at
 
 #### Endianness
 
-Endianness is a term used to describe the order in which bytes are stored in memory. There are two types of endianness: big-endian and little-endian. In big-endian, the most significant byte is stored first, while in little-endian, the least significant byte is stored first. For example, the number 12345 is represented as `0x3039` in big-endian and `0x3930` in little-endian.  In other words, the bytes might be stored in reverse order. This further complicates the process of converting ModBus data into more usable formats.
+Endianness, particularly in the context of data communications, refers to the order of bytes and how they are stored or transmitted. There are two types of endianness: big-endian (BE) and little-endian (LE). In big-endian, the most significant byte is first, while in little-endian, the least significant byte is first. For example, the number 12345 is represented as `0x3039` in a big-endian word and `0x3930` in little-endian word.  This can often cause confusion and complicate the process of converting ModBus data into more usable formats.
 
 
 ### Node-RED and node-red-contrib-buffer-parser to the rescue
