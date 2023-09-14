@@ -46,7 +46,8 @@ This Grievance Policy is designed to ensure that employee concerns are treated f
 
 ## Underperformance Policy
 
-We, at FlowFuse are committed to creating an environment where both our company and employees work together to maintain high performance standards. Our goal is to support our team members and managers in achieving these standards through clear and regular communication across all aspects of our organization.
+We're committed to creating an environment where both our company and employees work together to maintain high performance standards.
+Our goal is to support our team members and managers in achieving these standards through clear and regular communication across all aspects of our organisation.
 
 We understand that sometimes there could be underlying factors contributing to performance challenges. We are committed to being flexible in our assessment approach when considering the circumstances. In such instances, our People Ops Manager can provide valuable support by arranging bi-weekly meetings with the relevant manager. This proactive setup encourages open and transparent conversations about any performance concerns, and managers can feel free to reach out to the People Ops Manager as needed.
 
