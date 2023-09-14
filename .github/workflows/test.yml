@@ -28,6 +28,6 @@ jobs:
       - name: Test the website
         run: npm run test
         working-directory: 'website'
-      - uses: untitaker/hyperlink@0.1.27
+      - uses: untitaker/hyperlink@0.1.31
         with:
           args: website/_site/ --check-anchors --sources ../src
