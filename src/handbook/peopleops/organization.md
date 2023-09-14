@@ -46,11 +46,13 @@ This Grievance Policy is designed to ensure that employee concerns are treated f
 
 ## Underperformance Policy
 
-FlowFuse strives to maintain high standards of performance across the entire organization and supports team members and people leaders in meeting those standards. Regular and transparent communication is encouraged across all areas of the business. FlowFuse also recognizes that team members who do not meet sustained performance expectations may be more successful at another company and supports difficult conversations and decisions related to this. It is essential to highlight that during this process, close collaboration with the People Ops manager is crucial.
+We, at FlowFuse are committed to creating an environment where both our company and employees work together to maintain high performance standards. Our goal is to support our team members and managers in achieving these standards through clear and regular communication across all aspects of our organization.
+
+We understand that sometimes there could be underlying factors contributing to performance challenges. We are committed to being flexible in our assessment approach when considering the circumstances. In such instances, our People Ops Manager can provide valuable support by arranging bi-weekly meetings with the relevant manager. This proactive setup encourages open and transparent conversations about any performance concerns, and managers can feel free to reach out to the People Ops Manager as needed.
 
 **Defining Underperformance**
 
-Identifying warning signs or patterns of underperformance in employees is crucial for effective management and timely intervention to address issues. Here are some common indicators to watch for:
+We believe in proactively identifying indicators of potential underperformance in our employees. This approach allows us to provide timely support and intervention when needed. Here are some common signs to be aware of:
 
 Consistently Missed Deadlines
 Decline in Productivity
@@ -65,58 +67,39 @@ Isolation from Team
 
 **Addressing Underperformance**
 
-Managers should first address areas of poor performance or behavioral concerns verbally in one-on-one with team members. These conversations should be documented by managers and shared to the CEO and the People Ops Manager. This allows everyone to keep a record of their discussions and be clear about where improvements need to be made and by when.
+To promote a positive work environment, we encourage managers to address areas of improvement or specific concerns with team members during their weekly one-on-one meetings. These discussions should be documented for transparency and to clarify necessary improvements and timelines. 
 
-When documenting instances of underperformance, reporting managers should meticulously record specific details, including the date, time, location, a description of the incident, impact, and any witnesses. It is crucial for the reporting manager to promptly inform the People Ops manager of these documented cases for further evaluation and support.
-
-Ensure that the employee comprehends your expectations and identifies areas necessitating improvement. Provide comprehensive guidance on the tasks involved and the performance standards expected from them. Maintain documentation outlining the set objectives and instances where the employee falls short to prevent any potential misunderstandings. In essence, specifying precise job requirements aids the employee in maintaining a clear focus on their objectives.
+Managers should also ensure employees understand expectations, provide guidance on tasks and performance standards. This clarity helps employees stay focused on their goals and contributes to a positive working atmosphere.
 
 **Developing an Action Plan**
 
-After engaging in a discussion with the employee regarding the factors contributing to their underperformance, both parties can collaborate to formulate an action plan aimed at resolving the issues. This collaborative effort involves making suggestions to address the problem and motivating the employee to establish goals and generate their own recommendations.
+The action plan will include several key elements:
 
-Depending on the root causes of underperformance, consider exploring opportunities for job redesign or providing retraining and reskilling. If the issues are of a personal nature, proposing the option of taking time off to address them may be appropriate.
+*Assignment of Responsibilities:* We make it clear who is responsible for what, both on the part of the employee and the employer.
 
-The action plan should encompass several key elements:
+*Performance Improvement Timeline:* We set a timeline for achieving the desired performance improvements, emphasizing the importance of addressing serious issues positively and outlining potential consequences.
 
-*Assignment of Responsibilities:* Clearly outline the actions and responsibilities of both the employee and the employer.
-
-*Performance Improvement Timeline:* Establish a timeframe for achieving the desired performance improvements, including potential consequences for addressing serious issues.
-
-*Support and Resources:* Specify the support and resources that will be made available, which could include training, mentoring, adjustments to job duties, or approved time off to address personal matters.
+*Support and Resources:* We outline the available support and resources, which may include training, mentoring, adjustments to job duties, or approved time off to address personal matters. Our aim is to create a supportive and constructive work environment.
 
 **Regular Check-ins and Follow-ups**
 
-Ensure consistent check-ins and follow-up sessions as part of the resolution process. It's likely that addressing underperformance will require multiple conversations, and it's important to allow the employee a reasonable timeframe for improvement. Schedule regular meetings, whether on a daily or weekly basis, to assess the employee's progress with the action plan and to encourage ongoing development. These meetings should offer the employee opportunities to share insights on how their work ethic is evolving and to discuss any persisting challenges.
-
-These check-ins serve the dual purpose of holding the employee accountable for their progress and providing you with a platform to reinforce performance objectives and provide necessary training and support. Additionally, they convey your genuine commitment to helping the employee enhance their performance.
-
-Once the employee's performance attains an acceptable level, acknowledge their achievements and engage in a discussion about how they can sustain this standard of work. 
+Throughout this process, our managers will  carry out regular check-ins to support improvement, schedule regular meetings to assess progress and provide support. These meetings are an opportunity to discuss how work is evolving and address any challenges. They show our commitment to helping you succeed.
 
 **Recognize Progress**
 
-When an employee is improving, it's essential to show appreciation. Tell them you've noticed their progress and praise their efforts. Be specific about what they've done well and how it's making a positive difference. This recognition helps boost their confidence and encourages them to keep getting better. It also shows that you value their strengths and believe in their ability to succeed.
-
-It's important to offer clear and helpful feedback to an employee working on improving their performance. This feedback helps them recognize their progress and identify areas where they can still grow. Also, consider sharing feedback from colleagues who work with the employee, as their insights can shed light on how the employee's performance affects others.
-
-**rRetain thorough documentation**
-
-When handling an underperforming employee, just as with any employee issue, it's crucial to maintain thorough documentation. This record of the situation is a valuable resource, especially if the problem persists, and the employee questions the process. Start by keeping initial records when the issue first arises, and then diligently take detailed notes during subsequent meetings and conversations. Additionally, update the formal action plan as necessary. Following each discussion, send the employee an email summarizing what was discussed and any planned action steps. Ensure you also save any email responses or proposals from the employee. Keep a written record of the employee's progress as well.
+Once your performance reaches the desired level, we'll celebrate your achievements and discuss how to maintain this standard. Your manager will provide specific feedback about what you've done well and how it's making a positive difference.
 
 **If the performance doesn't improve**
 
-When one employee consistently doesn't put in effort, it can harm team spirit and the overall work environment. Allowing underperformance to persist without consequences can lead to frustration and demotivation among hardworking team members.
+In case you find yourself in a situation where your performance is struggling, consider these options:
 
-If the employee's performance doesn't improve despite giving them a fair chance with the action plan, it's time to consider other options. The three most common solutions are reassignment and termination.
+Reassignment: Explore roles within FlowFuse that align better with your skills and interests. This transition can empower you to excel and make a positive impact.
 
-*Reassignment:* This involves finding a different role within the organization that better aligns with the employee's skills and abilities. It's a chance for them to find a role where they can excel and contribute positively.
+Performance Improvement Plan (PIP): Your manager will implement a structured plan aimed at supporting your performance improvement journey towards a positive step. It includes regular check-ins and specific goals.
 
-*Performance Improvement Plan (PIP):* This is a structured approach to help the employee improve their performance. It includes specific goals and timelines, as well as regular check-ins to monitor progress.
+Open Communication: If you encounter any performance-related issues, including concerns about your manager's support, feel free to reach out to the People Ops Manager. We encourage constructive candor, as listed in our values.
 
-*Termination*: When you’ve exhausted all other options, you may have to come to the last resort of letting the employee go. While not the preferred outcome, it might be the most practical solution for everyone concerned. The process of termination is typically unpleasant and can involve complexities, so it's crucial to follow all HR procedures.
-
-Occasionally, there could be underlying factors contributing to their performance struggles. Flexibility in assessment may be extended considering the circumstances. In such instances, the People Ops Manager can provide assistance by initiating bi-weekly meetings with the concerned manager. This arrangement allows for open discussions about any concerns regarding an individual's performance, or managers can proactively reach out to the People Ops Manager if necessary.
-
+FlowFuse understands that team members who may not consistently meet performance expectations may thrive in a different professional environment. We fully support open and respectful discussions and decisions in this regard. It's important to highlight that close collaboration with the People Ops manager is crucial during this process.
 
 
 
