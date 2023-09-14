@@ -2,7 +2,7 @@
 title: Modernize your legacy industrial data
 subtitle: Working with legacy industrial protocol data from the likes of Modbus and older, non IIoT protocols and putting it to work in an IIoT world.
 description: Working with legacy industrial protocol data from the likes of Modbus and older, non IIoT protocols and putting it to work in an IIoT world.
-date: 2023-09-11
+date: 2023-09-14
 authors: ["stephen-mclaughlin"]
 image: "/blog/2023/09/images/industrial-legacy-data-blog-image.png"
 tags:
@@ -13,7 +13,7 @@ tags:
 
 In today's rapidly evolving industrial landscape, the ability to collect, analyse, and act upon data is more critical than ever.
 The Industrial Internet of Things (IIoT) has ushered in a new era of connectivity and automation, but what about the wealth of data locked away in legacy industrial protocols like Modbus?
-How can we unlock and make sense of this valuable information in _any_ data, e.g. serial comms with no protocol, Siemens S7, Omron Fins, Misti MC-Protocol, or Allen Bradley DF1
+How can we unlock and make sense of this valuable information in _any_ data, e.g. serial comms with no protocol, Siemens S7, Omron Fins, Mitsubishi MC-Protocol, or Allen Bradley DF1, etc.
 in the IIoT era? That's where tools like Node-RED and `node-red-contrib-buffer-parser` come into play.
 
 <!--more-->
@@ -45,7 +45,7 @@ Endianness, particularly in the context of data communications, refers to the or
 
 ### Node-RED and node-red-contrib-buffer-parser to the rescue
 
-Node-RED is an open-source flow-based development tool for visual programming. It's particularly well-suited for IIoT applications because of its versatility and extensive library of nodes. One such node, node-red-contrib-buffer-parser, provides a solution to the legacy data conversion challenge.
+Node-RED is an open-source flow-based development tool for visual programming. It's particularly well-suited for IIoT applications because of its versatility and extensive library of nodes. One such node, `node-red-contrib-buffer-parser`, provides a solution to the legacy data conversion challenge.
 
 This powerful Node-RED module allows you to parse a Buffer of bytes or an Array of integer data (which, by no coincidence, the popular module `node-red-contrib-modbus` outputs), and convert it into various data types. It can output pretty much any data type, including byte-swapped data, WORD swapped data, masked/shifted/scaled data, and even individual bits.
 
@@ -65,7 +65,7 @@ In the era of the Industrial Internet of Things, making sense of your industrial
 
 ### 3 quick demos of Node-RED and the buffer parser node in action
 
-Here are 3 quick demonstrations that mearley scratch the surface of possibilities:
+Here are 3 quick demonstrations that barely scratch the surface of possibilities:
 
 #### Example 1: Modbus to MQTT
 Converting an array of 16-bit unsigned integers to String, Float and a scaled integer and passing them to an MQTT broker in 4 nodes!
