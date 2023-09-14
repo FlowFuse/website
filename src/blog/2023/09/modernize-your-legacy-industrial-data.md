@@ -2,7 +2,7 @@
 title: Modernize your legacy industrial data
 subtitle: Working with legacy industrial protocol data from the likes of Modbus and older, non IIoT protocols and putting it to work in an IIoT world.
 description: Working with legacy industrial protocol data from the likes of Modbus and older, non IIoT protocols and putting it to work in an IIoT world.
-date: 2023-09-11
+date: 2023-09-14
 authors: ["stephen-mclaughlin"]
 image: "/blog/2023/09/images/industrial-legacy-data-blog-image.png"
 tags:
