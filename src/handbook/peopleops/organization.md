@@ -101,18 +101,3 @@ Open Communication: If you encounter any performance-related issues, including c
 
 FlowFuse understands that team members who may not consistently meet performance expectations may thrive in a different professional environment. We fully support open and respectful discussions and decisions in this regard. It's important to highlight that close collaboration with the People Ops manager is crucial during this process.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
