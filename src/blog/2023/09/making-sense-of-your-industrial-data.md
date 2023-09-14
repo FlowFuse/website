@@ -63,16 +63,9 @@ By leveraging Node-RED and buffer parser, you can bridge the gap between legacy 
 
 In the era of the Industrial Internet of Things, making sense of your industrial data is no longer a daunting challenge. With the right tools approach, you can unlock the full potential of your legacy data and drive efficiency, productivity, and innovation in your industrial processes. Yey!
 
-### Learn More
+### 3 quick demos of Node-RED and the buffer parser node in action
 
-We will be publishing follow-up blog posts with more details, best practices and examples on how to use Node-RED to make sense of your industrial data. In the meantime, you can learn more about these tools by visiting the following links:
-* [Node-RED blog posts](https://flowfuse.com/blog/node-red/)
-* [Node-RED videos](https://www.youtube.com/playlist?list=PLpcyqc7kNgp09XeRx_cae1fEIOloPqM1C)
-* [Buffer Parser Node](https://flows.nodered.org/node/node-red-contrib-buffer-parser) 
-
-### A teaser
-
-Here are 3 quick demonstrations of Node-RED and the buffer parser node in action:
+Here are 3 quick demonstrations that mearley scratch the surface of possibilities:
 
 #### Example 1: Modbus to MQTT
 Converting an array of 16-bit unsigned integers to String, Float and a scaled integer and passing them to an MQTT broker in 4 nodes!
@@ -86,3 +79,9 @@ Converting an array of 16-bit unsigned integers to String, Float and a scaled in
 #### Example 3: Modbus data on a dashboard
 Converting an array of 16-bit unsigned integers to String, Float and a scaled integer for publishing to a dashboard!
 ![Legacy data to dashboard](images/industrial-legacy-data-to-dashboard.png)
+### Learn More
+
+We will be publishing follow-up blog posts with more details, best practices and examples on how to use Node-RED to make sense of your industrial data. In the meantime, you can learn more about these tools by visiting the following links:
+* [Node-RED blog posts](https://flowfuse.com/blog/node-red/)
+* [Node-RED videos](https://www.youtube.com/playlist?list=PLpcyqc7kNgp09XeRx_cae1fEIOloPqM1C)
+* [Buffer Parser Node](https://flows.nodered.org/node/node-red-contrib-buffer-parser) 
