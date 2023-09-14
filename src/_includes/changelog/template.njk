@@ -1,0 +1,17 @@
+<div class="ff-blog container m-auto text-left max-w-4xl pt-8 pb-24 w-full">
+    <div class="px-2 flex items-center gap-12">
+        <div class="mb-0">
+            <h1 class="mb-0">Changelog</h1>
+            <p class="my-0">Getting all the news on new features we ship</p>
+        </div>
+        <div class="flex-grow">
+            {% include "components/divider-grey-wires-right.njk" %}
+        </div>
+    </div>
+    <ul class="flex flex-wrap border-t">
+        {%- asyncEach item in posts -%}
+            {% include "changelog/changelog-posts.njk" %}
+        {%- endeach -%}
+    </ul>
+    {% include "blog/pagination.njk" %}
+</div>
