@@ -9,8 +9,7 @@ reasonable. The general principle to follow is to treat work-related expenses
 **as if they were your own money**. It is important to seek good value for your
 purchases and use common sense when making decisions.
 
-There are two ways of spending company money - either using a company credit card,
-or through reimbursement.
+There are two methods available for using company funds: utilizing a company credit card or seeking reimbursement. If employees opt to use Brex for purchasing any company-related items or subscriptions, it is essential to upload the receipts and include a memo within three business days. For all reimbursement requests, please ensure to submit the required documentation and proofs through Deel.
 
 ### Company Credit Card
 
@@ -18,15 +17,12 @@ We use [Brex](https://www.brex.com/) to provide cards to the team. They are, by
 default, virtual Mastercards, although there is an option to get a physical
 card sent out.
 
-All expenses on Brex require a memo to be submitted with details on what the expense is for.
-All expenses for $25 or more require a receipt to be uploaded. Attaching
-a receipt to an expense can be done through their web UI, forwarding receipts
-through email, or through Slack. For a full explanation, please [read their docs][brex-receipts].
-
-[brex-receipts]: https://www.brex.com/support/how-do-i-attach-receipts-to-brex-transactions/
+Expenses on Brex require a memo and receipts. Memos explain the purpose of the expense, while receipts are necessary for expenses of $25 or more.
+Receipts can be attached via the web UI, email, or Slack.
+Please [read their docs][brex-receipts](https://www.brex.com/support/how-do-i-attach-receipts-to-brex-transactions/).
 
 Brex can also be used to create vendor cards that allow for reoccurring payment for a monthly subscription with a vendor.
-Contact the peopleops manager if you require a vendor card.
+Contact the People Ops manager if you require a vendor card.
 
 #### Oops! Misused Your Brex Card for Personal Expenses? Here's How to Handle the Situation Like a Pro
 
@@ -96,3 +92,13 @@ For example:
 A screenshot of the route and the total distance travelled should be included with any expense claim.
 
 [gh-admin]: https://github.com/flowforge/admin
+
+### Personal expenses
+
+There's a category of spending that the company expects team members to make
+arrangements without the company supporting in the expense. These expenses are
+not reimbursed either due to personal life choses, or due to significant personal
+benefit from the goods bought. Examples include, but are not limited to:
+1. Coffee at your home office
+1. Passport for travel
+1. Daycare for your children
