@@ -50,7 +50,7 @@ We, at FlowFuse are committed to creating an environment where both our company 
 
 We understand that sometimes there could be underlying factors contributing to performance challenges. We are committed to being flexible in our assessment approach when considering the circumstances. In such instances, our People Ops Manager can provide valuable support by arranging bi-weekly meetings with the relevant manager. This proactive setup encourages open and transparent conversations about any performance concerns, and managers can feel free to reach out to the People Ops Manager as needed.
 
-**Defining Underperformance**
+### Defining Underperformance
 
 We believe in proactively identifying indicators of potential underperformance in our employees. This approach allows us to provide timely support and intervention when needed. Here are some common signs to be aware of:
 
