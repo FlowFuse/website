@@ -54,16 +54,16 @@ We understand that sometimes there could be underlying factors contributing to p
 
 We believe in proactively identifying indicators of potential underperformance in our employees. This approach allows us to provide timely support and intervention when needed. Here are some common signs to be aware of:
 
-Consistently Missed Deadlines
-Decline in Productivity
-Increased Errors and Mistakes
-Lack of Initiative
-Low Engagement and Motivation
-Frequent Absenteeism or Tardiness
-Poor Communication
-Lack of Goal Achievement
-Decreased Innovation and Creativity
-Isolation from Team
+1. Consistently Missed Deadlines
+1. Decline in Productivity
+1. Increased Errors and Mistakes
+1. Lack of Initiative
+1. Low Engagement and Motivation
+1. Frequent Absenteeism or Tardiness
+1. Poor Communication
+1. Lack of Goal Achievement
+1. Decreased Innovation and Creativity
+1. Isolation from Team
 
 **Addressing Underperformance**
 
