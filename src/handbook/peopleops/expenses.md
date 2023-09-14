@@ -71,8 +71,15 @@ or CEO, who will provision it for you.
 
 ### Workspace & Location
 
-As an all remote company we don't have offices. It is envisaged that most people will work from their home the majority of the time. Equipment & Furniture required for a home workspace should be discussed with your manager as part of the hiring process.
-The company covering certain costs, such as broadband can have tax implications depending on your local legislation. You should consult an independent advisor in your location for your particular situation.
+As an all remote company we don't have offices. It is envisaged that most people
+will work from their home the majority of the time. Equipment and furniture
+required for a home workspace should be discussed with your manager as part of the hiring process. The company covering certain costs can have tax implications
+depending on your local legislation. You should consult an independent advisor in
+your location for your particular situation.
+
+Employees can work from different countries or cities as long as their tax
+residency remains the same at the time of hiring. Please inform your manager
+before making such arrangements.
 
 #### Coworking space allowance
 
