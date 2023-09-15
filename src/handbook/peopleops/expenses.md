@@ -102,10 +102,8 @@ A screenshot of the route and the total distance travelled should be included wi
 
 ### Personal expenses
 
-There's a category of spending that the company expects team members to make
-arrangements without the company supporting in the expense. These expenses are
-not reimbursed either due to personal life choses, or due to significant personal
-benefit from the goods bought. Examples include, but are not limited to:
+At FlowFuse we value a culture that encourages team members to take ownership of their personal expenses, without the expectation of reimbursement. This approach is all about acknowledging personal preferences and recognizing the individual benefits that come with these expenses. Here are some examples, but are not limited to
+
 1. Coffee at your home office
 1. Passport for travel
 1. Daycare for your children
