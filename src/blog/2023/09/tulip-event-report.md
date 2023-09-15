@@ -9,7 +9,7 @@ tags:
     - posts
     - flowfuse
 ---
-This week I attended the Tulip event called [Operations Calling](operationscalling) in Boston. Here are some quick observations from the event.
+This week I attended the Tulip event called [Operations Calling](https://www.operationscalling.com/) in Boston. Here are some quick observations from the event.
 
 <!--more-->
 
