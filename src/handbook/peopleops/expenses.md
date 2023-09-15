@@ -102,7 +102,7 @@ A screenshot of the route and the total distance travelled should be included wi
 
 ### Personal expenses
 
-At FlowFuse we value a culture that encourages team members to take ownership of their personal expenses, without the expectation of reimbursement. This approach is all about acknowledging personal preferences and recognizing the individual benefits that come with these expenses. Here are some examples, but are not limited to
+We expect team members to take ownership of their personal expenses without the expectation of reimbursement. This approach is all about acknowledging personal preferences and recognising the individual benefits that come with these expenses. Here are some examples, but are not limited to:
 
 1. Coffee at your home office
 1. Passport for travel
