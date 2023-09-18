@@ -134,4 +134,4 @@ I hope this article has given you some food for thought and some ideas on not on
 
 A parting thought, there are times when the data is not contiguous. There are ways to deal with this too but that is for another day.
 
-PS, I will post the flows used for the examples above in the comments below. If you have any questions or comments, please reach out there too.
+P.S. I will post the flows used for the examples above in the comments below. If you have any questions or comments, please reach out there too.
