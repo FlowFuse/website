@@ -16,8 +16,6 @@ We looked at some of the challenges and how Node-RED with `node-red-contrib-buff
 
 In this article, I will dive a little deeper into the topic and discuss some of the finer details. I hope to demonstrate a smarter approach that can make a huge difference to data accuracy, performance and maintainability while significantly reducing developer time. Not only that, ending with a no-code solution.
 
-See the [previous article](modernize-your-legacy-industrial-data-part2.md) for the introduction and overview.
-
 <!--more-->
 
 ### Obtaining Industrial Data
