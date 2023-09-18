@@ -84,7 +84,7 @@ The most obvious solution is to stop the PLC before reading the data.
 This is of course a terrible idea as it will stop the process.
 The next best thing is for the PLC to sample and store the data in an internal memory buffer, waiting, unchanging, to be collected. Unfortunately, this too is not always possible either due to limited in-house skills, locked down PLCs or simply because the PLC does not have the memory to store the data.
 
-The next best thing to do is to read relative data as quickly as possible and, in one block.
+The next best thing to do is to read relative data as quickly as possible and in one block.
 
 #### A quick side-bar (timing is ... everything)
 
