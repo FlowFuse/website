@@ -11,7 +11,7 @@ tags:
     - community
 ---
 
-In [part 1 of this series](modernize-your-legacy-industrial-data-part2.md) for the introduction and overview.) published recently, I introduced the topic of working with legacy industrial data from the likes of Modbus and older, non IIoT protocols and putting it to work in an IIoT world. 
+In [part 1 of this series](../modernize-your-legacy-industrial-data/) for the introduction and overview. published recently, I introduced the topic of working with legacy industrial data from the likes of Modbus and older, non IIoT protocols and putting it to work in an IIoT world. 
 We looked at some of the challenges and how Node-RED with `node-red-contrib-buffer-parser` node can help. 
 
 In this article, I will dive a little deeper into the topic and discuss some of the finer details. I hope to demonstrate a smarter approach that can make a huge difference to data accuracy, performance and maintainability while significantly reducing developer time. Not only that, ending with a no-code solution.
