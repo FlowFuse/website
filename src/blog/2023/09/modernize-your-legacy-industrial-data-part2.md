@@ -20,7 +20,7 @@ See the [previous article](modernize-your-legacy-industrial-data-part2.md) for t
 
 <!--more-->
 
-### In the beginning...
+### Obtaining Industrial Data
 
 In order to generate IIoT data from legacy systems we first need to _grab_ that data.
 
