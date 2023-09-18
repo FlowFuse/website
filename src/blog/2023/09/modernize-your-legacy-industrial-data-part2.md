@@ -22,7 +22,7 @@ See the [previous article](modernize-your-legacy-industrial-data-part2.md) for t
 
 ### Obtaining Industrial Data
 
-In order to generate IIoT data from legacy systems we first need to _grab_ that data.
+In order to convert the legacy data to a format more suited to IIoT we first need to _grab_ that data.
 
 Node-RED has core nodes that can help you and many more contribution nodes exist that provide access to a wide range of industrial devices. To give you an idea, `node-red-contrib-modbus`, `node-red-contrib-s7comm`, `node-red-contrib-omron-fins`, `node-red-contrib-mcprotocol`, `node-red-contrib-df1` and `node-red-contrib-cip-st-ethernet-ip` are just some of the PLC data access nodes available.
 
@@ -43,7 +43,7 @@ Let's take a look at a simple example. We have a process PLC recording productio
 | 7, 8     | 20    | Run Time (sec)         | UINT32/100 |
 | 9, 10    | 11    | Stoppage Time (sec)    | UINT32/100 |
 
-If the total production time is 30 seconds and the run time is 20 seconds, then the stoppage time should be 10 seconds. But it is not. It is 11 seconds. This is because the data is not consistent.
+In the above data sample, we can see the total production time is 30 seconds and the run time is 20 seconds. The expectation is that the Stoppage Time should be 10 seconds. However, as we can see, Stoppage Time in this sample is 11 seconds. That is because this data is not consistent.
 
 #### Why is the data inconsistent?
 
@@ -81,7 +81,7 @@ Not only that, from a developer or maintainers perspective, it has many problems
 #### How can we make the data consistent?
 
 The most obvious solution is to stop the PLC before reading the data.
-This is of course a terrible idea as it will stop the process.
+However, I am faily certain your boss will not be super pleased with stopping the manufacturing process.
 The next best thing is for the PLC to sample and store the data in an internal memory buffer, waiting, unchanging, to be collected. Unfortunately, this too is not always possible either due to limited in-house skills, locked down PLCs or simply because the PLC does not have the memory to store the data.
 
 The next best thing to do is to read relative data as quickly as possible and in one block.
