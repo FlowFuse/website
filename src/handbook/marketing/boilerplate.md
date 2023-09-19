@@ -4,12 +4,11 @@ navGroup: Sales & Marketing
 ---
 ### Tagline
 
-DevOps for Node-RED
+Accelerate Digital Transformation with FlowFuse and Node-RED
 
 ### One sentence description
 
-FlowFuse allows organizations to reliably deliver Node-RED applications in a continuous, collaborative, and secure manner.
-
+FlowFuse allows organizations to reliably deliver Node-RED applications to accelerate solution development.
 
 ### About FlowFuse - 50 Words
 
