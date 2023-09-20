@@ -21,7 +21,7 @@ This week, we at FlowFuse have contributed a new feature to the site that allows
 
 A huge thank you for this work needs to go Gerrit Riessen's work published on his [Open Mind Map Blog](https://blog.openmindmap.org/). He recently open-sourced some that great work to GitHub ([repo](https://github.com/gorenje/node-red-flowviewer-js)), and with some adaptation and collaboration, we've been able to utilise this as a foundation for the fiunctionality we've added into the flows site.
 
-Adding this 
+Adding this to [flows.nodered.org](https://flows.nodered.org) will make it far easier to learn how others use Node-RED, and to share your own flows with others too. The embedding functionality should also make talking about Node-RED in your own articles & forums much easier too.
 
 ### Example: Simple Flow
 
