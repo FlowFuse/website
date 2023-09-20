@@ -1,0 +1,36 @@
+[{
+    "title": "Access and transform any data, over any protocol",
+    "content": "Getting access to data from your operations is key to the start of a digital transformation. Node-RED makes it easy to access and transform data over any protocol.",
+    "image": "connect_device_red"
+  },
+  {
+    "title": "Build bespoke solutions that fits like a glove",
+    "content": "Off the shelf solutions never work out of the box. Build solutions leveraging the power of Node-RED.",
+    "image": "code_red"
+  },
+  {
+    "title": "Manage and configure Node-RED at scale",
+    "content": "FlowFuse manages the deployment  and configuration of all your Node-RED instances from a common platform. FlowFuse automates the process of creating snapshots of Node-RED instances that can be deployed to multiple target edge devices.",
+    "image": "scalable_red"
+  },
+  {
+    "title": "Allow teams of citizen developers to innovate",
+    "content": "Anyone can be a citizen developer using Node-RED to create innovative solutions to their problems. FlowFuse allows teams of citizen developers to collaborate on the same Node-RED flow.",
+    "image": "collaboration_red"
+  },
+  {
+    "title": "Reliable Node-RED application delivery",
+    "content": "FlowFuse creates a reliable application delivery environment that simplifies the software development lifecycle for Node-RED. Using our DevOps delivery pipelines to support a development, test and production environment to ensure reliable Node-RED application delivery.",
+    "image": "pipeline_red"
+  },
+  {
+    "title": "Security compliance for Node-RED",
+    "content": "FlowFuse provides the role based access control to Node-RED flows that is essential for common security compliance. All developers using FlowFuse require a username and password that grants them access rights to specific Node-RED flows.",
+    "image": "security_red"
+  },
+  {
+    "title": "Professional Support for Node-RED deployments",
+    "content": "FlowFuse is the trusted partner for providing professional support for business critical applications, built on Node-RED. Our experts can help with any challenge, ensuring that your Node-RED applications are running smoothly and securely. We keep your systems up-to-date with the latest versions of Node-RED and security updates, ensuring the continuity of your operations.",
+    "image": "support_red"
+  }
+]
