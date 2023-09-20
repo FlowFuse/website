@@ -8,6 +8,8 @@ We use Stripe to bill our customers and to manage subscriptions for FlowFuse.
 Team members will be given a login to the  Stripe dashboard as required for
 their role with an appropriate level of access.
 
+We also contract with Formation Financial to help assist with business administration and billing support. You can direct any billing related requests to billing@flowfuse.com for their assistance if preferred.
+
 ## Providing support
 
 The main use of the Stripe dashboard will be to answer queries on a customers subscription, this should only be in relation to a ticket raised by the customer and we *must* confirm that the customer team in question on the support ticket is the same one you are looking at it Stripe. Remember that the email address in Stripe may not match that of the FlowFuse user as this is a "billing email". You should use the team ID numbers in the metadata field to confirm.
