@@ -45,7 +45,7 @@ Any flow now has a `Share Flow` option in the `Actions` section on the right sid
     allow="clipboard-read; clipboard-write" style="border: none;"></iframe>
 ```
 
-Which you can paste/embed into any website or blog post. Nick has also [enabled the Node-RED forums to support these embeds too](https://discourse.nodered.org/t/previewing-flows-on-the-flow-library/), and is also how we've embdeed the above flows too.
+Which you can paste/embed into any website or blog post. Nick has also [enabled the Node-RED forums to support these embeds too](https://discourse.nodered.org/t/previewing-flows-on-the-flow-library/), and is also how we've embeded the above flows too.
 
 If you want more control over the sizing of the viewer, you can also include a `?height=` query parameter on the `src` value of the `iframe`. You may also need to hardcode the `height` property of the `iframe` itself to account for this change, depending on where you're embedding it to. For example:
 
