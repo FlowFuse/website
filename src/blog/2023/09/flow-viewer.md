@@ -21,7 +21,7 @@ This week, we at FlowFuse have contributed a new feature to the site that allows
 
 A huge thank you for this work needs to go Gerrit Riessen's work published on his [Open Mind Map Blog](https://blog.openmindmap.org/). He recently open-sourced some great work to GitHub ([repo](https://github.com/gorenje/node-red-flowviewer-js)), and with some adaptation and collaboration, we've been able to utilise this as a foundation for the functionality we've added into the flows site.
 
-Adding this to [flows.nodered.org](https://flows.nodered.org) will make it far easier to learn how others use Node-RED, and to share your own flows with others too. The embedding functionality should also make talking about Node-RED in your own articles & forums much easier too.
+Adding this to [flows.nodered.org](https://flows.nodered.org) will make it far easier to learn how others use Node-RED, and to share your own flows with others too. The embedding functionality should also make talking about Node-RED in your own articles & forums much easier.
 
 ### Example: Simple Flow
 
@@ -31,7 +31,7 @@ Here's a demonstration of a simple `Inject` > `Debug` node:
 
 ### Example: Subflows, Groups, Links & Switches
 
-Here's non-functional flow that just deonstrates how FlowViewer renders the range of node types available in Node-RED:
+Here's a non-functional flow that just demonstrates how FlowViewer renders the range of node types available in Node-RED:
 
 <iframe width="100%" height="500px" src="https://flows.nodered.org/flow/82a8602b615740491d30c083e5292e5f/share" allow="clipboard-read; clipboard-write" style="border: none;"></iframe>
 
