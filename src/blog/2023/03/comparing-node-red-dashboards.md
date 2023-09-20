@@ -15,7 +15,7 @@ Dashboards are a great feature of Node-RED, allowing you to easily expose data v
 
 <!--more-->
 
-**UPDATE:** A new project has been started on the next generation of Node-RED Dashboard. You can get the pre-release code on the [githut repo](https://github.com/flowforge/flowforge-nr-dashboard)
+**UPDATE:** A new project has been started on the next generation of Node-RED Dashboard. You can get the read more about it on the [documentation site](https://dashboard.flowfuse.com)
 
 ## Which dashboards am I going to consider?
 
