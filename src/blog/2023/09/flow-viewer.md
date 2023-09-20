@@ -13,7 +13,7 @@ tags:
 
 For years, Node-RED's website has provided functionality to share flows through [flows.nodered.org](https://flows.nodered.org)
 
-This week, we at FlowFuse have contributed a new feature to the site that allows users to visually preview those flows, and embed/share those flows in articles and on forums posts.
+This week, we at FlowFuse have contributed a new feature to the site that allows users to visually preview those flows, and embed/share those flows in articles and on forum posts.
 
 <!--more-->
 
