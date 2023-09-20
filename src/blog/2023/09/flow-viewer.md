@@ -4,7 +4,7 @@ subtitle: Your monthly update for the FlowFuse and Node-RED communities
 description: News from the FlowFuse and Node-RED communities
 date: 2023-09-20
 authors: ["joe-pavitt"]
-image: "/images/blog/community-news.jpeg"
+image: "/blog/2023/09/images/tile-flowviewer.jpg"
 tags:
     - posts
     - news
