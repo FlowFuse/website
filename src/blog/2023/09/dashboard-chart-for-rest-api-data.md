@@ -1,10 +1,10 @@
 ---
-title: Dashboard REST API data points with Node-RED
+title: Charting REST API Data in a Dashboard
 subtitle: Within a couple of minutes you'll learn how to request data from a REST endpoint and build a chart to display data points
 description: Within a couple of minutes you'll learn how to request data from a REST endpoint and build a chart to display data points
 authors: ["zeger-jan-van-de-weg"]
-image: # TODO
-date: 2023-09-19
+image: blog/2023/09/images/tile-restapi-dashboard.png
+date: 2023-09-20
 tags:
     - posts
     - how-to
@@ -12,9 +12,12 @@ tags:
 ---
 
 There are many different ways to get data for a Node-RED dashboard. One common
-way is to use a REST API. A REST API is a set of web services that allow
-developers to interact with a server and its resources. To get data from a REST
-API, you can use the HTTP nodes in Node-RED to send HTTP requests to the API and receive the data in the response. In this post we'll guide you through the process.
+way is to use a REST API.
+
+A REST API is a set of web services that allow developers to interact with a
+server and its resources. To get data from a REST API, you can use the HTTP
+nodes in Node-RED to send HTTP requests to the API and receive the data in
+the response. In this post we'll guide you through the process.
 
 <!--more-->
 
@@ -29,17 +32,18 @@ Reading the data for a package is done through a `HTTP GET` request, for example
 
 A simple flow to achieve this would be:
 
-!["Simple flow to for a HTTP GET request"](./images/inject-http-simple.png "Simple flow to for a HTTP GET request")
+<iframe width="100%" height="225px" src="https://flows.nodered.org/flow/7c2dd3ccde70746a40ef8f5aa58c591c/share?height=100" allow="clipboard-read; clipboard-write" style="border: none;"></iframe>
 
 Where we paste the URL from above into the settings panel:
 
-!["HTTP GET URL setting"](./images/http-get-npmapi.png "HTTP GET URL setting").
+!["HTTP GET URL setting"](./images/http-get-npmapi.png "HTTP GET URL setting")
 
-When running this flow by clicking the bubble left of the `Inject` node you'll
-see a blob of text in the `Debug` pane. This is a great first start, but a blob
-isn't useful for the rest of the flow. We need to parse the data as JSON. While
-the [JSON node](/node-red/core-nodes/JSON) would work, the HTTP request node can
-do this natively. Let `a parsed JSON object` the `Return` settings of the HTTP request node.
+When running this flow you'll see a blob of text in the `Debug` pane. This is a
+great first start, but a blob isn't useful for the rest of the flow.
+
+We need to parse the data as JSON. While the [JSON node](/node-red/core-nodes/JSON)
+would work, the HTTP request node can do this natively. Let `a parsed JSON object`
+the `Return` settings of the HTTP request node.
 
 So now we got the data, and a little more than we need, so let's change the
 message output to keep only what we're interested in; `payload.downloads`. To
@@ -85,12 +89,14 @@ Connect the change node output to a new chart node, and voila:
 
 While we created a chart and it has some data, there's one more thing to explain.
 How can the data be kept up-to-date? It's straight forward to have the `Inject`
-node [run every night](/node-red/core-nodes/inject/#run-a-flow-daily-at-midnight). But the chart would now have multiple data points
+node [run every night](/node-red/core-nodes/inject/#run-a-flow-daily-at-midnight),
+but the chart would now have multiple data points
 for the same day. This paints multiple lines on top of each other. While that works,
 the hover of the chart will display the duplication and it's wastefull.
 
 So before we update the chart we need to send a message to the chart where the
-[payload is `[]`](https://dashboard.flowfuse.com/nodes/widgets/ui-chart.html#removing-data). That way the chart is empty, and right afterwards it will
+[payload is `[]`](https://dashboard.flowfuse.com/nodes/widgets/ui-chart.html#removing-data).
+That way the chart is emptied first, and right afterwards it will
 receive the new data to write.
 
-!["RESTful data to a chart"](./images/rest-dashboard-final-flow.png)
+<iframe width="100%" height="500px" src="https://flows.nodered.org/flow/47f4cda247f2f2e0172ab61c795308bb/share" allow="clipboard-read; clipboard-write" style="border: none;"></iframe>
