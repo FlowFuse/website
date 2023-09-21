@@ -42,4 +42,7 @@ Guidelines for including images:
 
 #### Reviewing Pull Requests
 
-When creating a PR and requesting a review from a FlowFuse team member, please consider if the content is ready to be released ASAP or if its release should be to a particular schedule. If you don't want the reviewer to merge the content (in effect put it live on the website) mark the PR as a draft in GitHub. If you are reviewing a website PR and it is not marked as draft you can merge it, overwise simply review and where appropriate approve the PR.
+When creating a PR and requesting a review from a FlowFuse team member, please consider if
+the content is ready to be released ASAP or if its release should be to a particular schedule. If you
+don't want the reviewer to merge the content (in effect put it live on the website) mark the PR as a draft in GitHub.
+If you are reviewing a website PR and it is not marked as draft you can merge it, otherwise simply review and where appropriate approve the PR.
