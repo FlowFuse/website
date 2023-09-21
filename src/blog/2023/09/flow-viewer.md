@@ -1,7 +1,7 @@
 ---
 title: Share & Preview Flows on flows.nodered.org
-subtitle: Your monthly update for the FlowFuse and Node-RED communities
-description: News from the FlowFuse and Node-RED communities
+subtitle: FlowFuse has just contributed an interactive "Flow Viewer" to flows.nodered.org, allowing users to preview flows, and embed them in articles & forum posts.
+description: FlowFuse has just contributed an interactive "Flow Viewer" to flows.nodered.org, allowing users to preview flows, and embed them in articles & forum posts.
 date: 2023-09-20
 authors: ["joe-pavitt"]
 image: "/blog/2023/09/images/tile-flowviewer.jpg"
