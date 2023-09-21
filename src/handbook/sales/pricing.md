@@ -13,7 +13,7 @@ Internal documents:
 
 ### Professional Services
 
-FlowFuse may offer support services as part of an annual subscription it it's deemed necessary to onboard the new customer or expand usage for a current customer. Any professional services or engineering resources provided will be subject to business case and CEO approval.
+FlowFuse may offer support services as part of an annual subscription if it's advantageous to onboard the new customer or expand usage for a current customer. Any professional services or engineering resources provided will be subject to business case and CEO approval.
 
 If Professional Services are rendered, it is required to document the learnings in issues, documentation, and blog content so that the information gleaned is available to the rest of the organization and the public.
 
