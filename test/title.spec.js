@@ -23,6 +23,6 @@ describe("Page titles", async function() {
 
 		var nodes = xpath.select("//title", doc)
 
-		assert.equal(nodes[0].firstChild.data, "FlowFuse • Accelerate Digital Transformation with Node-RED")
+		assert.equal(nodes[0].firstChild.data, "FlowFuse • Accelerate Digital Transformation with FlowFuse and Node-RED")
 	})
 })
