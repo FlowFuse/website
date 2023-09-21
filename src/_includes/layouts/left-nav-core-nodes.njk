@@ -3,14 +3,14 @@
     <ul class="handbook-nav" data-el="navigation">
         {% set path = (["node-red/", nav] | join) if nav == "core-nodes" else nav %}
 
-        <li class="{% if " /{{ path }}/"===page.url %}active{% endif %}">
-            <a href="/{{ path }}/">{{ nav }}</a>
+        <li class="core-nodes-nav-group py-1.5 px-0 {% if "/{{ path }}/" === page.url %}active{% endif %}">
+            <a href="/{{ path }}/"><span class="text-red-600 pr-0">{{ nav }}</span></a>
         </li>
         {% for group in collections
         .nav[nav]
         .groups %}
         {% if group.children.length > 0 %}
-        <li class="handbook-nav-group">{{ group.name }}
+        <li class="handbook-nav-nested py-1.5"><span class="font-semibold pl-2">{{ group.name }}</span>
             <button onclick="toggleNavList(this)">
                 <span class="ff-icon icon-expand">
                     {% include "components/icons/chevron-down.svg" %}
@@ -38,7 +38,7 @@
                 {% endif %}
             </li>
             {% if entry.children %}
-            <ul class="handbook-nav-nested">
+            <ul class="handbook-nav-nested-2">
                 {% for child in entry.children %}
                 <li class="{% if child.url === page.url %}active{% endif %}">
                     <a href="{{child.url}}">
