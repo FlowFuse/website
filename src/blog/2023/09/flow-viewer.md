@@ -37,7 +37,7 @@ Here's a non-functional flow that just demonstrates how FlowViewer renders the r
 
 ## Sharing & Embedding Flows
 
-Any flow now has a `Share Flow` option in the `Actions` section on the right side of the flows page. Clicking this will provide you with an iframe like:
+Any flow on [flows.nodered.org](https://flows.nodered.org) now has a `Share Flow` option in the `Actions` section on the right side of the flows page. Clicking this will provide you with an iframe like:
 
 ```html
 <iframe width="100%" height="100%"
