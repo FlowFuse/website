@@ -39,3 +39,7 @@ Guidelines for including images:
   - The NJK shortcode in website body: {% raw %} `{% image "./relative-path-to-image.png", "Image alt tag for screen readers", [150] %}`{% endraw %}
     - Where 150 is the maximum width the image will be displayed on the page (source image should be two times this width)
 - GIFs can grow incredibly large, consider using a video in a modern format if the animation is longer than a few seconds
+
+#### Reviewing Pull Requests
+
+When creating a PR and requesting a review from a FlowFuse team member, please consider if the content is ready to be released ASAP or if its release should be to a particular schedule. If you don't want the reviewer to merge the content (in effect put it live on the website) mark the PR as a draft in GitHub. If you are reviewing a website PR and it is not marked as draft you can merge it, overwise simply review and where appropriate approve the PR.
