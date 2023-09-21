@@ -71,7 +71,7 @@ sitemapPriority: 1.0
             </div>
             {% if not loop.last %}
             <div class="md:p-6 px-6">
-            {% if loop.index is even %}{% include "components/divider-grey-wires-left.njk" %}{% elif loop.index is odd %}{% include "components/divider-grey-wires-right.njk" %}{% endif %} 
+            {% if loop.index is even %}{% include "components/divider-grey-wires-left.njk" %}{% else %}{% include "components/divider-grey-wires-right.njk" %}{% endif %} 
             </div>
             {% endif %}
         {% endfor %}

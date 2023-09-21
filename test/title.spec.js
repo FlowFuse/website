@@ -7,14 +7,19 @@ describe("Page titles", async function() {
 		const data = fs.readFileSync(path.resolve(__dirname, "../_site/index.html"), 'utf8');
 
 		const xpath = require('xpath');
-    const dom = require('@xmldom/xmldom').DOMParser;
+    	const dom = require('@xmldom/xmldom').DOMParser;
 
 		const doc = new dom({
-        locator: {},
-        errorHandler: { warning: function (w) { }, 
-        error: function (e) { }, 
-        fatalError: function (e) { console.error(e) } }
-    }).parseFromString(data);
+			locator: {},
+			errorHandler: {
+				warning: function (w) { }, 
+				error: function (e) { }, 
+				fatalError: function (e) {
+					console.error(e)
+					throw e
+				}
+			}
+		}).parseFromString(data);
 
 		var nodes = xpath.select("//title", doc)
 
