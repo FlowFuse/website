@@ -6,6 +6,7 @@ image: /images/webinars/webinar-september.jpg
 date: 2023-09-21
 time: 17:00 CET (11:00am ET) 
 duration: 60
+video: OxA7EfA5taQ
 hosts: ["nick-oleary"]
 hubspot:
     formId: b4ec9aa1-8648-47b3-b908-ec8597e8735d
