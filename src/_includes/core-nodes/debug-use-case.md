@@ -66,5 +66,5 @@ Lets see it in action!
 
 Here is a demo flow that shows the most common ways the debug node can used to visualise your data and assist your development.
 
-![Debug Nodes](../../images/debug-examples.png)
+![Debug Nodes](./images/debug-examples.png)
 
