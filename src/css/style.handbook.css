@@ -80,6 +80,19 @@
         background-color: theme(colors.gray.200);
     }
 
+    /* .handbook-nav li a:active {
+        background-color: theme(colors.gray.200);
+    } */
+
+    .handbook-nav li.core-nodes-nav-group a:hover,
+    .handbook-nav li.core-nodes-nav-group a {
+        color: theme(colors.red.600);
+        text-decoration: none;
+    }
+
+    /* .handbook-nav li.core-nodes-nav-group.active {
+        background-color: theme(colors.gray.100);
+    } */
 
     .handbook li .icon-expand {
         display: block;
