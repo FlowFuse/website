@@ -4,7 +4,7 @@ subtitle: Language models have made an impact in the Node-RED community
 description: Language models have made an impact in the Node-RED community
 authors: ["zeger-jan-van-de-weg"]
 image: blog/2023/09/images/chatgpt-node-red-dx-tile.png
-date: 2023-09-22
+date: 2023-09-23
 tags:
     - posts
     - node-red
