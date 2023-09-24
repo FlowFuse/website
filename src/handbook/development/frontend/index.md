@@ -2,7 +2,7 @@
 navTitle: Front End
 ---
 
-### Front-End
+# Front-End
 
 A collection of how-to's and best practice guides for FlowFuse's front-end development.
 

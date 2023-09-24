@@ -2,11 +2,11 @@
 navTitle: Planning
 ---
 
-## Planning
+# Planning
 
 Instructions for creating a release are [here](./process.md).
 
-### Cadence
+## Cadence
 
 FlowFuse is released every four weeks, on a Thursday. We track releases using
 GitHub Milestones. The current schedule of releases can be seen [here](https://github.com/flowforge/flowforge/milestones).
@@ -21,47 +21,49 @@ for the current release (N) and the next one (N+1). We do not schedule work beyo
 that as priorities can change through a release.
 
 ---
-#### Week 2 - UX Planning
 
-##### Tuesday
+### Week 2 - UX Planning
+
+#### Tuesday
 - UX Pre-Planning
   - This meeting is conducted between the Product Manager (PM) and the Head of User Experience (UX), it is designed to discuss and identify potential UX issues and requirements that need to be addressed in the upcoming iteration. The goal is to be proactive in identifying and resolving UX-related challenges before the start of the development phase.
 
 ---
 
-#### Week 3 - Planning Week
+### Week 3 - Planning Week
 
-##### Monday
+#### Monday
+
 - Establish capacity
   - The CTO forecasts the team's capacity for the upcoming iteration by providing the PM with a point estimate, based on historical velocity and any anticipated absences (e.g., holidays).
 
-##### During the Week
+#### During the Week
+
 - Preparation of next Iteration and Release
 
 ---
 
-#### Week 4 - Release Week
+### Week 4 - Release Week
 
-##### Tuesday
+#### Tuesday
 - Product Meeting
   - The PM presents the planning for the next Release.
   - Joint discussion and agreement on the Highlights and Objectives.
 
-##### Thursday
+#### Thursday
 - Release day, details see [here](./process.md).
 - CTO and PM—“finishing touch meeting”
   - Talk about leftovers from last Iteration
   - Finalize the planning
 
-##### Friday
+#### Friday
 - [Retrospective/Kick-Off](planning.md#retrospective%2Fkick-off)
 
-
-### Issues
+## Issues
 
 Issues are the building blocks of planning activities, helping the team to manage and prioritize work. 
 
-#### Types
+### Types
 
  - **Epic**: a significant feature or piece of work that doesn't easily fit into
    a single release. It will typically have a number of Stories
@@ -87,7 +89,8 @@ milestone directly.
 We label some items as `headline`. These are items we want to highlight in the release
 announcement material and should clearly describe the value they bring to our users.
 
-#### Effort Estimation
+### Effort Estimation
+
 To more accurately understand which tasks can be scheduled without overloading our team, everyone conducts an initial, high-level analysis when creating an issue to assign weight estimates. We recognize that these estimates might not be precise. If the person who creates an issue cannot provide an estimate, any FlowFuse team member is welcome to contribute one.
 
 If a developer, who is an expert in a field, wants to change an estimation, they are encouraged to do so immediately. There is no blame for "wrong" estimation; we all have to work together to achieve good planning. It is better to have a rough estimation than no estimation at all. The final decision on estimations in general lies with the CTO.
@@ -100,7 +103,7 @@ See [labels section](../packaging.md#labels) for sizing options.
 
 Epics do not necessarily need an estimation, as long as all subissues have estimations, Epics are the sum of all subtasks, as a result, it is possible to handle epics larger than XXL.
 
-### Project Boards
+## Project Boards
 
 We use three project boards to plan and track our work.
 
@@ -108,12 +111,12 @@ We use three project boards to plan and track our work.
  - [Product Board](https://github.com/orgs/flowforge/projects/3/views/1)
  - [Development Board](https://github.com/orgs/flowforge/projects/1/views/1)
 
-#### Roadmap Board
+### Roadmap Board
 
 This is a high-level view of our product roadmap over the coming releases. It 
 identifies the themes and priorities for the releases.
 
-#### Product Backlog Board
+### Product Backlog Board
 
 [This board](https://github.com/orgs/flowforge/projects/3/views/1) is maintained
 by the Product Manager (PM) and CTO. It is the main entry point for all epics and
@@ -136,7 +139,7 @@ A weekly review is held to keep the backlog in order - triaging new items that
 have been raised and not yet added to the backlog, reflecting on changing priorities
 and requirements.
 
-#### Development Board
+### Development Board
 
 The [Development Board](https://github.com/orgs/flowforge/projects/1/views/1) is
 used to plan and track the work within the current milestone release.
@@ -162,7 +165,7 @@ The board has the following states:
  - `Verify` - items that have been merged and can be verified once deployed to the Staging environment
  - `Done` - items that are [Done](#defining-done)
 
-#### 'In Design' Deliverables
+### 'In Design' Deliverables
 
 Both UX/UI work and engineering work can be "In Design". For both instances there should still be defined deliverables. 
 
@@ -172,7 +175,7 @@ It is important to use Design as a tool for conversation, verification, or to en
 - **Engineering:**  Questions that need answers should be formulated up front, and answered as the deliverable. Questions around what technology to use, how to scope down the feature set, and how to deliver the results
 are thus required before the design sprint start.
 
-### Retrospective/Kick-Off
+## Retrospective/Kick-Off
 
 The day after each FlowFuse release, always a Friday, a meeting is scheduled
 by the CTO. This meeting includes 2 parts:
@@ -192,7 +195,7 @@ by the CTO. This meeting includes 2 parts:
            using the [Release Template](https://github.com/flowforge/admin/issues/new?assignees=&labels=&template=release.md&title=Release%3A){rel="nofollow"}
            in the `flowforge/admin` repo.
 
-### What to work on
+## What to work on
 
 Work comes the ToDo column of the [Development Board](https://github.com/orgs/flowforge/projects/1/views/1).
 
@@ -207,7 +210,7 @@ we work.
 When picking up an unassigned item assign it to yourself and move it to the
 **In Progress** state.
 
-#### Milestones are overscheduled
+### Milestones are overscheduled
 
 As stories and tasks are assigned to milestones, it's unlikely there's not
 enough work to be done. On the flip side, this means that not all scheduled epics
@@ -216,7 +219,7 @@ or stories will be completed.
 The Product Manager/CTO have overall responsibility to ensure any 'must-have' items
 are making progress in a release.
 
-### Defining Done
+## Defining Done
 
 An item should only be marked as 'Done' on the Development board when the following
 criteria are met:
@@ -226,7 +229,7 @@ criteria are met:
  - Documentation has been updated
  - Acceptance criteria identified in the Story have been met
 
-#### Feature Demos
+### Feature Demos
 
 Part of finishing an item is being able to demonstrate it in action. This allows
 others to see it in action, generate material for the release announcement and

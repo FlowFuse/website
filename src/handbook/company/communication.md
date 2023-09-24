@@ -2,6 +2,8 @@
 navTitle: Communications
 ---
 
+# Communication
+
 As a distributed company we should be mindful of how we communicate.
 
 ## Date and time

@@ -2,7 +2,7 @@
 navTitle: Art Requests
 ---
 
-## Art Requests
+# Art Requests
 
 Across FlowFuse it will be a common occurence that we need visual content created. These can be part of development tasks (where you're comfortable doing the development work, but less doing the graphic/illustrative design work) or social/marketing materials.  
 
@@ -15,7 +15,7 @@ Likely places this will be required are:
 - YouTube Video Thumbnails
 - Product Illustrations & Graphics
 
-### Creating an Art Request
+## Creating an Art Request
 
 You can create an issue on any of the FlowFuse Repositories that best suits the asset required, e.g:
 
@@ -27,7 +27,7 @@ When creating an issue, you'll be presented with an option to create an "Art Req
 
 ![Screenshot from GitHub to show the option for creating an Art Request](../images/screenshots/gh-artrequest-template.png "Screenshot from GitHub to show the option for creating an Art Request")
 
-#### Details to Include
+### Details to Include
 
 Please be sure to include as much detail as possible, but most importantly:
 
@@ -38,7 +38,7 @@ Please be sure to include as much detail as possible, but most importantly:
 
 ![Screenshot from GitHub to show where to set the deadline for an Art Request](../images/screenshots/gh-artrequest-example.png "Screenshot from GitHub to show where to set the deadline for an Art Request")
 
-### Tracking Art Request Progress
+## Tracking Art Request Progress
 
 All newly created Art Requests will be tagged with `design` and `artwork` - this ensures that the issue is automatically added to our [Art Requests Project Board](https://github.com/orgs/flowforge/projects/10), and alerts a designer in the `#art-requests` channel on Slack.
 

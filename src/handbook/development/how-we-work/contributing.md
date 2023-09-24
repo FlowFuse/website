@@ -1,8 +1,8 @@
-## Contributing
+# Contributing
 
-### Coding Best Practices
+## Coding Best Practices
 
-#### Linting
+### Linting
 
 All code repositories adopt our standard linting rules found in the [flowforge/.github repository](https://github.com/flowforge/.github/blob/main/.eslintrc).
 
@@ -16,7 +16,7 @@ In the case of working with `vue` or `njk` files (found in the [frontend](https:
 
 <img width="478" alt="ESLint - Probe" src="../../images/eslint_probe.png">
 
-### Git Best Practices
+## Git Best Practices
 
 ### Committing
 
@@ -24,7 +24,7 @@ Take care when adding files to a commit. It's easy just to `git add -A` (i.e. ad
 
 Take your time when committing files. Review each file carefully and ensure what you're adding to a commit is relevant and necessary.
 
-#### Git Commit Messages
+### Git Commit Messages
 
 - Capitalise the first letter, no trailing dot, 72 chars or less.
 - First line should be an imperative/present tense, e.g. `Change` (not `Changed` or `Changes`)
@@ -32,7 +32,7 @@ Take your time when committing files. Review each file carefully and ensure what
 - Second line should either be blank, or reference to an issue/PR using one of the GitHub recognised keywords, e.g. `closes #...` `fixes #...` `part of #...`
 - The remainder should be any further narrative that is needed. Wrapped at 72 chars.
 
-#### Branching vs. Forking
+### Branching vs. Forking
 
 Commits should never be pushed directly to `main`. Instead, branch or fork from the relevant branch (most likely `main`) and work from there.
 
@@ -40,7 +40,7 @@ It is preferred that new work be added on a branch (rather than in a forked repo
 
 Once code is merged, please close any related branches in order to keep the repository tidy.
 
-#### Pull Requests
+### Pull Requests
 
 PRs, when opened, should have at least one reviewer assigned, and a consequent review approved, before any merge takes place. If a PR is opened for review/discussion purposes, this PR should be set to `draft` state.
 
