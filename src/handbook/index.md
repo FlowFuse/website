@@ -23,7 +23,7 @@ To run our company we provide a comprehensive guide outlining policies, procedur
 | | |
 |:----|:----|
 | [Values](/handbook/company/values.md)<br /><p>The core principles guiding and driving the whole company</p>
-| [Vision](/handbook/company/vision.md)<br /><p>Where we're going with FlowFuse</p>|
+| [Strategy](/handbook/company/strategy.md)<br /><p>The high level plan for our objectives at FlowFuse</p>|
 | [Operations](/handbook/operations/)<br /><p>The day to day operations, tactical bizzops</p>
 | [PeopleOps](/handbook/peopleops/)<br /><p>Humans aren't resources, so people ops</p> |
 | [Communication](/handbook/company/communication.md)<br /><p>Increase signal, decrease noise.</p>
