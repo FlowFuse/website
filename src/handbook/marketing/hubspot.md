@@ -2,17 +2,17 @@
 navTitle: HubSpot
 ---
 
-## HubSpot
+# HubSpot
 
 We use [HubSpot](https://www.hubspot.com/) to track and manage all of our customer interactions.
 It enables the creation of customer contacts, and then logging of emails/notes associated to that customer.
 
-### Creating Contacts
+## Creating Contacts
 
 Given that we have multiple client-facing roles within FlowFuse, it's important to document those that
 we talk to to ensure no crossover in sales and conversations.
 
-#### Lifecycle Stage
+### Lifecycle Stage
 
 All contacts in HubSpot need to have a defined lifecycle. It is required that all contacts pass through each lifecycle stage at the appropriate time based on their interaction with FlowFuse marketing and sales. Contacts should not skip a stage. It is up to the contact owner to ensure their contacts have the appropriate lifecycle stage set.
 
@@ -29,7 +29,7 @@ The folowing is a description of each stage.
 | Evangelist | FlowFuse will not actively use Evangelist lifecycle stage. |
 | Other | Does not fit into any of the other descriptions, likely someone we are talking to about FlowFuse, but will never be a paying customer, .e.g. Partners |
 
-#### Lead Status
+### Lead Status
 
 When defining a new contact in HubSpot, an option exists to define the "Lead Status", this section
 details your options here, and when to use the respective value:
@@ -42,14 +42,13 @@ details your options here, and when to use the respective value:
 | Open Deal | Contact has expressed interest in buying FlowFuse, and negotiations are actively open. |
 | Unqualified | Contact is no longer interested in FlowFuse. |
 
-
-### Importing Contacts Into HubSpot
+## Importing Contacts Into HubSpot
 
 If you import contacts into HubSpot, it is important that the First Name and Last Name are populated correctly. Currently the FlowFuse Cloud database stores first and last name in a single field called Name. If you import this field into HubSpot the default is set to populate the Last Name field. The First Name field will not be populated so any email personalization with First Name will not be effective.  
 
 The ideal process for importing FlowFuse Cloud contacts is that you first split the Name field into a First Name and Last Name. Google Sheets has the ability to split a column of text into two columns based on the delimiter of a space. Once that is completed then you can import the list into HubSpot.
 
-### Recommended Apps
+## Recommended Apps
 
 We have several extension applications for HubSpot, these are a few that can be beneficial if you're interacting with customers:
 

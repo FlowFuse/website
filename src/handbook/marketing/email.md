@@ -3,7 +3,7 @@ meta:
     title: Marketing - Email
 ---
 
-## Email
+# Marketing Email
 
 Email marketing is an effective way to communicate with community members, potential customers, and existing customers. Marketing, sales, customer success, and support all have a role in sending emails.
 
@@ -33,5 +33,3 @@ The expectation is that the marketing and customer success team will continuousl
 
 FlowFuse Cloud Trial emails should only be sent by the marketing team via HubSpot. Requesting changes to these emails is done by opening a
 [GitHub issue on the website repository](https://github.com/flowforge/website/issues).
-
-

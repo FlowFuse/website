@@ -2,7 +2,7 @@
 navTitle: Code of Conduct
 ---
 
-## Code of Conduct
+# Code of Conduct
 
 The primary goal of our Code of Conduct is to foster inclusive, collaborative
 and safe working conditions for all FlowFuse staff and community members who
@@ -15,7 +15,7 @@ socioeconomic status, or religion (or lack thereof).
 This code of conduct outlines our expectations for the FlowFuse community, as
 well as the consequences for unacceptable behavior.
 
-### Scope 
+## Scope 
 
 The Code of Conduct applies to all FlowFuse staff. This includes full-time,
 part-time and contractor staff employed at every seniority level. It also applies
@@ -36,7 +36,7 @@ This Code of Conduct also applies to unacceptable behavior occurring outside the
 scope of business activities when such behavior has the potential to adversely
 affect the safety and well-being of FlowFuse staff and clients.
 
-### Culture and Belonging
+## Culture and Belonging
 
 A supplemental goal of this Code of Conduct is to increase open community by
 encouraging participants to recognize the relationships between our actions and
@@ -56,7 +56,7 @@ makes explict how we should behave whilst uphold our values.
    and to keep conversations healthy and constructive. We do not allow our frustrations
    to turn in [personal attacks](https://en.wikipedia.org/wiki/Ad_hominem).
 
-### Acceptable and Expected Behavior
+## Acceptable and Expected Behavior
 
 The following behaviors are expected and requested of all FlowFuse staff:
 
@@ -69,7 +69,7 @@ The following behaviors are expected and requested of all FlowFuse staff:
    leaders if you notice a dangerous situation, someone in distress, or violations
    of this Code of Conduct, even if they seem inconsequential.
 
-### Unacceptable Behavior
+## Unacceptable Behavior
 
 The following behaviors are considered harassment and are unacceptable within our community:
 
@@ -86,7 +86,7 @@ The following behaviors are considered harassment and are unacceptable within ou
  - Repeated harassment of others. In general, if someone asks you to stop, then stop.
  - Other conduct which could reasonably be considered inappropriate in a professional setting.
 
-### Consequences of Unacceptable Behavior
+## Consequences of Unacceptable Behavior
 
 Unacceptable behavior from any FlowFuse staff, including those with
 decision-making authority, will not be tolerated.
@@ -96,7 +96,7 @@ Anyone asked to stop unacceptable behavior is expected to comply immediately.
 If a staff member engages in unacceptable behavior, FlowFuse leadership may take
 any action deemed appropriate, up to and including suspension or termination.
 
-### Reporting Violations
+## Reporting Violations
 
 If you are subject to or witness unacceptable behavior, or have any other concerns,
 please notify an appropriate member of FlowFuse leadership (Peopleops manager, CTO, and/or CEO) as soon as possible.
@@ -107,12 +107,12 @@ investigation of (including testifying as a witness to) any such allegation. Any
 retaliation or intimidation may be subject to punitive action up to and including
 termination.
 
-### Disciplinary Action
+## Disciplinary Action
 
 Employees who violate this policy may face disciplinary consequences in proportion
 to their violation. FlowFuse management will determine how serious an employee's
 offense is and take the appropriate action.
 
-### Responsibility
+## Responsibility
 
 Everyone has a responsibility to ensure this policy is followed.

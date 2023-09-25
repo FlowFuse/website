@@ -2,7 +2,7 @@
 navTitle: Marketing - Website
 ---
 
-### Website
+# Marketing Website
 
 - All written content should be in UK English.
 - All page titles should summarise the content, keep the URL length as short as practical and use [Kebab Case](https://en.wiktionary.org/wiki/kebab_case).
@@ -10,7 +10,7 @@ navTitle: Marketing - Website
 - When mentioning [FlowFuse Concepts](/docs/user/concepts/) (terminology) where possible we should link to an explanation of that concept.
 - All written content should use the [Oxford Comma](https://en.wikipedia.org/wiki/Serial_comma). We believe the Oxford Comma reduces the ambiguity of written technical content.
 
-#### Events Banner
+## Events Banner
 
 To update the event banner that appears at the top of the Website, you will need two pieces of information:
 
@@ -21,7 +21,7 @@ Once you have those, you can update the [following file](https://github.com/flow
 
 Update the `href=""` value of the `<a>` tag to update the Event URL, and change the title inside the middle `<span>`
 
-#### Images
+## Images
 
 All images on the website, whether part of the blog or otherwise, are run though an [image pipeline](https://github.com/flowforge/website/blob/main/lib/image-handler.js), that compresses, resizes and converts the images to reduce file size and improve page loading speed.
 
@@ -40,7 +40,7 @@ Guidelines for including images:
     - Where 150 is the maximum width the image will be displayed on the page (source image should be two times this width)
 - GIFs can grow incredibly large, consider using a video in a modern format if the animation is longer than a few seconds
 
-#### Reviewing Pull Requests
+## Reviewing Pull Requests
 
 When creating a PR and requesting a review from a FlowFuse team member, please consider if
 the content is ready to be released ASAP or if its release should be to a particular schedule. If you

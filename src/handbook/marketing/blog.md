@@ -3,9 +3,9 @@ meta:
     title: Marketing - Blog
 ---
 
-## Blog
+# Blog
 
-### Blogging Process
+## Blogging Process
 
 Content creation and blogging are an effective way to communicate with our community. The process for publishing a blog is as follows:
 
@@ -19,7 +19,7 @@ Content creation and blogging are an effective way to communicate with our commu
 5. It is OK for you to merge your own PR to main without review where the content is urgent or has been reviewed outside of Git but where it is practical to follow the
 [standard process](/handbook/development/releases/planning/#development-board) we encourage you to do so.
 
-### Blog CMS
+## Blog CMS
 
 When creating a blog post there are several headers which are used by the CMS to populate the blog article as well as the blog index page. e.g:
 
@@ -42,27 +42,27 @@ above more
 below more
 ```
 
-#### Title
+### Title
 
 The title of the page can be seen on both the blog index and the articles.
 
-#### Subtitle
+### Subtitle
 
 The subtitle is only shown on the articles.
 
-#### Description
+### Description
 
 Provides the (OpenGraph) description used when sharing a post on social media. Also used on the `/blog` page for past articles.
 
-#### Date
+### Date
 
 The data can be seen on both the blog index and the articles.
 
-#### Authors
+### Authors
 
 The author can be seen on both the blog index and the articles.
 
-#### Tags
+### Tags
 
 Tag your content appropriately from the collection of tags that help us manage our blog content. They are:
 
@@ -74,13 +74,14 @@ Tag your content appropriately from the collection of tags that help us manage o
 - `releases`
 - `news`
 
-#### More tag
+### More tag
 
 The '\<\!\-\-more\-\-\>' tag is used to define the text shown in the blog index from each article.
-#### Example blog index item based on the header above
+
+### Example blog index item based on the header above
 
 ![Example of how the headers are shown on the blog index](../images/blog-index.png)
 
-#### Example blog article based on the header above
+### Example blog article based on the header above
 
 ![Example of how the headers are shown on blog articles](../images/blog-article.png)

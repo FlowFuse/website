@@ -2,7 +2,7 @@
 navTitle: Expenses
 ---
 
-## Expenses
+# Expenses
 
 FlowFuse will reimburse you for any work-related expenses that are considered
 reasonable. The general principle to follow is to treat work-related expenses
@@ -11,7 +11,7 @@ purchases and use common sense when making decisions.
 
 There are two methods available for using company funds: utilizing a company credit card or seeking reimbursement. If employees opt to use Brex for purchasing any company-related items or subscriptions, it is essential to upload the receipts and include a memo within three business days. For all reimbursement requests, please ensure to submit the required documentation and proofs through Deel.
 
-### Company Credit Card
+## Company Credit Card
 
 We use [Brex](https://www.brex.com/) to provide cards to the team. They are, by
 default, virtual Mastercards, although there is an option to get a physical
@@ -24,11 +24,11 @@ Please [read their docs][brex-receipts](https://www.brex.com/support/how-do-i-at
 Brex can also be used to create vendor cards that allow for reoccurring payment for a monthly subscription with a vendor.
 Contact the People Ops manager if you require a vendor card.
 
-#### Oops! Misused Your Brex Card for Personal Expenses? Here's How to Handle the Situation Like a Pro
+### Oops! Misused Your Brex Card for Personal Expenses? Here's How to Handle the Situation Like a Pro
 
 If you realize that you have used your Brex card for personal purposes by mistake, it is crucial to promptly notify the People Ops Manager. The People Ops Manager is responsible for overseeing employee-related matters, including expenses and reimbursements. They will be able to assist you in addressing the situation appropriately. Contacting the People Ops Manager as soon as possible ensures that they are made aware of the mistake and can guide you on the necessary steps to rectify it, such as initiating reimbursement or repayment processes.
 
-### Reimbursement
+## Reimbursement
 
 If you use your own means to purchase something that ought to be covered by the
 company, you can claim back the money through [Deel](https://help.letsdeel.com/hc/en-gb/articles/4405497402257-How-Do-I-Add-An-Expense-Or-Allowance-To-My-Pay-).
@@ -40,21 +40,21 @@ company, you can claim back the money through [Deel](https://help.letsdeel.com/h
 * Adjustments approved before the payroll cut-off date will be processed in the current month's payroll. Any adjustment approved after the payroll cut-off date will be processed in the next month's payroll
 * The People Ops Manager is authorized to approve expenses that are $250 or less. However, if an expense exceeds $250, both the CEO and the People Ops Manager will need to review and approve it.
 
-### Asset purchases over $500
+## Asset purchases over $500
 
 Any asset purchase over $500 (laptops, devices etc) needs to be centrally recorded.
 This is done in [this Google Sheet](https://docs.google.com/spreadsheets/d/1sHJmUGG-m7y9TGrFrtqiZ6ubioLf1ySSam_cL-cmiRo/edit#gid=0)
 and shared with the Finance team. Send details of the purchase to the PeopleOps Manager so 
 it can be recorded.
 
-### Education & Conferences
+## Education & Conferences
 
 Continual professional development is very important, and FlowFuse will support
 you in any activities you wish to undertake. Speak to your manager if you have
 particular material you would like to study, or an event you would like to
 attend. FlowFuse will help cover reasonable costs associated with the activity - such as travel and ticket fees.
 
-### Software Licenses
+## Software Licenses
 
 Licenses and software assets can be purchased for third-party software will be useful for particular tasks, efforts and processes at FlowFuse.
 
@@ -62,14 +62,14 @@ If you are seeking a license of software that we do not currently use, put toget
 
 When seeking an additional license for existing software we pay for, file an issue in the [flowforge/admin][gh-admin]{rel="nofollow"} project to request it to be provisioned with a justification on the expenditure. Assign this issue to the CEO or CTO.
 
-#### Zoom
+### Zoom
 
 When your role at FlowFuse requires you to have calls with external parties, a
 Zoom pro license can be requested by opening an issue to provision you one
 in the [flowforge/admin][gh-admin]{rel="nofollow"} GitHub project. Assign this issue to the CTO
 or CEO, who will provision it for you.
 
-### Workspace & Location
+## Workspace & Location
 
 As an all remote company we don't have offices. It is envisaged that most people
 will work from their home the majority of the time. Equipment and furniture
@@ -81,13 +81,13 @@ Employees can work from different countries or cities as long as their tax
 residency remains the same at the time of hiring. Please inform your manager
 before making such arrangements.
 
-#### Coworking space allowance
+### Coworking space allowance
 
 If you want to occasionally use a separate workspace to your home, the company
 will cover up to $150 a month in charges for renting a desk in a co-working space
 after manager approval.
 
-#### Mileage
+### Mileage
 
 Use of a personal vehicle for business purposes, other than commuting to a permanent workplace, is covered according to the employees local laws.
 
@@ -100,7 +100,7 @@ A screenshot of the route and the total distance travelled should be included wi
 
 [gh-admin]: https://github.com/flowforge/admin
 
-### Personal expenses
+## Personal expenses
 
 We expect team members to take ownership of their personal expenses without the expectation of reimbursement. This approach is all about acknowledging personal preferences and recognising the individual benefits that come with these expenses. Here are some examples, but are not limited to:
 

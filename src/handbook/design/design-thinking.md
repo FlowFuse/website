@@ -2,7 +2,7 @@
 navTitle: Design Thinking
 ---
 
-## Design Thinking
+# Design Thinking
 
 At FlowFuse, we practice Design Thinking when considering our UI design and wider decisions influencing the overall user experience of FlowFuse.
 
@@ -15,7 +15,7 @@ As designers and developers, empathising with our users will lead to a better pr
 Whilst most of the output from our Design Thinking workshops and sessions can be
 found within [FigJam](./tools#figjam-(more-info)), we have also written up some of our Design Thinking Findings to the Handbook.
 
-### User Personas
+## User Personas
 
 Personas are fictional characters that represent the different users we expect to interact with FlowFuse as a brand and/or platform. At FlowFuse, we have many personas that will evolve over time, we have written up some of our Personas [here](../product/personas/).
 

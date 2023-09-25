@@ -1,8 +1,8 @@
-## Demo
+# Demo
 
 This document explains the process of delivering a sales demo of the features of FlowFuse. It is not intended to cover all features but to give potential customers a good understanding of FlowFuse's value.
 
-### Setup - Before the demo
+## Setup - Before the demo
 
 Before we begin a sales demo we need to set up an environment. Make sure you are
 already logged into your flowforge account (@flowfuse.com email) on production, not as an administrator.
@@ -36,7 +36,7 @@ flowforge-device-agent -d . --ui --ui-user foo --ui-pass bar
 
 The script should not be followed word for word, it's more a suggestion of what to say which fits with what will be displayed. Be natural, use your own words.
 
-### Script
+## Script
 
 FlowFuse makes it easy for teams of developers to collaborate on creating, maintaining, and improving applications built in Node-RED.
 
@@ -44,7 +44,7 @@ It can manage instances of Node-RED running on FlowFuse Cloud, a version of Flow
 
 In this demo we're going to focus on the key features of FlowFuse, there is a lot that we're not going to cover to keep this suitably brief but we will have some time after the demo for any questions.
 
-#### Key Concepts
+### Key Concepts
 
 To start, let’s cover some [key concepts](/docs/user/concepts/) which are:
 1. [Teams](/docs/user/concepts/#team)
@@ -53,7 +53,7 @@ To start, let’s cover some [key concepts](/docs/user/concepts/) which are:
 1. [Devices](/docs/user/concepts/#device)
 1. [Snapshots](/docs/user/concepts/#instance-snapshot)
 
-#### Live Demo
+### Live Demo
 
 Now we’ve covered off some of the key concepts, let's run through some common tasks on how FlowFuse makes them easier.
 
@@ -105,16 +105,14 @@ Let’s build a simple dashboard to show the data. We’ll use [node-red-dashboa
 
 I’m going to output the current RAM usage onto a graph which shows data for the last hour. This graph will auto update. This system will request new data every 10 seconds. Let’s also output the current value in a gauge.
 
-
-
 You can access the HMI yourself now if you want, the URL is…
 
-### End of Demo
+## End of Demo
 
 Hopefully this demo has given you some good examples of how FlowFuse offers significant value beyond a standard Node-RED installation.
 
 There is a lot I’ve not covered today so we can have a good amount of time for questions. If there are features of FlowFuse I’ve not mentioned that are of interest or if you’d like to ask more about what I have covered today I’d be happy to hear your questions.
 
-### Housekeeping
+## Housekeeping
 
 Once the demo is complete insure you shutdown all devices, delete all instances, and delete all applications within the team you created.

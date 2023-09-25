@@ -2,6 +2,8 @@
 navTitle: Summit
 ---
 
+# Summit
+
 FlowFuse intent to host a bi-annual summit bringing together all employees.
 This summit aims to create an occasion where we can gather in person,
 fostering connections, and facilitating collaborative discussions on a range of

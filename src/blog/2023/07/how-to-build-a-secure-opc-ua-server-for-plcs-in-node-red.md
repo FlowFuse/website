@@ -13,7 +13,9 @@ tags:
 This article is the second part of a series of OPC-UA content. In [part one](/blog/2023/07/how-to-deploy-a-basic-opc-ua-server-in-node-red/),
 we explained some basic concepts of OPC-UA as they apply to building a server in Node-RED, then walked through how to deploy an example OPC-UA Server. In this article, we will build on the foundation of our previous article and create a fully custom secure OPC-UA Server that creates an information model based on data coming from a PLC.
 <!--more-->
-# Table of contents
+
+## Table of contents
+
 1. [Introduction](#introduction)
 2. [PLC to OPC-UA Server Architecture Overview](#plc-to-opcua-arch)
 3. [Install Custom Nodes](#install-custom-nodes)

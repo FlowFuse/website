@@ -3,7 +3,8 @@ navTitle: Marketing
 navGroup: Sales & Marketing
 ---
 
-## Content
+# Marketing at FlowFuse
+
 Find details on here on how we communicate at FlowFuse, what type of content we produce and where we post it.
 If you're looking to contribute content to FlowFuse, this is the best place to start.
 

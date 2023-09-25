@@ -2,16 +2,18 @@
 navTitle: Remote Work
 ---
 
+# Remote Work
+
 FlowFuse is fully remote and our team spans multiple countries and timezones.
 Working remotely can require some changes.
 
-### Working from a Coworking space
+## Working from a Coworking space
 
 Not everyone wants to sit at home during work, it's recommended to work at least
 one day a week outside of home. To accommodate this, you can
 [expense a coworking space](../peopleops/expenses#coworking-space-allowance).
 
-### Separating work from private life
+## Separating work from private life
 
 Its advised to separate work and private life as much as possible. Now there's
 less of a physical barrier, it's more important to create this barrier on the

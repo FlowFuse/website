@@ -3,7 +3,7 @@ navTitle: Design
 navGroup: Development & Design Practices
 ---
 
-## Design
+# Design
 
 This section of our handbook contains all details related to how we design content
 at FlowFuse. From our Branding Guidelines, with logos and color palettes, through
