@@ -7,11 +7,13 @@ meta:
 
 > We will only be successful if the whole Node-RED community is successful.
 
-Our company strategy has three parts:
+Our company vision has four parts and captures what we want FlowFuse to evolve
+into in the next 5 years. The vision is inspiration for the [product strategy](../product/strategy.md), which is updated continuously. It’s based on the four pillars. This allows us to adapt to changing market conditions so that we meet customer needs.
 
- - Drive the growth and success of the [Node-RED](https://nodered.org) project
- - Build a platform that becomes the standard way of running Node-RED at any scale
- - Build an inclusive, high-performance team
+- Drive the growth and success of the [Node-RED](https://nodered.org) project
+- Build a platform that becomes the standard way of running Node-RED at any scale - Be DevOps for Node-RED
+- Drive adoption of Node-RED in manufacturing
+- Build an inclusive, high-performance team
 
 #### Drive the growth and success of the Node-RED project
 

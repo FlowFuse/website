@@ -3,29 +3,6 @@ meta:
     title: Company Vision
 ---
 
-### Vision
-
-> We will only be successful if the whole Node-RED community is successful.
-
-Our company vision has four parts and captures what we want FlowFuse to evolve
-into in the next 5 years. The vision is inspiration for the [product strategy](../product/strategy.md), which is updated continuously. It’s based on the four pillars. This allows us to adapt to changing market conditions so that we meet customer needs.
-
-- Drive the growth and success of the [Node-RED](https://nodered.org) project
-- Build a platform that becomes the standard way of running Node-RED at any scale - Be DevOps for Node-RED
-- Drive adoption of Node-RED in manufacturing
-
-#### Drive the growth and success of the Node-RED project
-
-Node-RED is at the core of what we do. Node-RED enables tens of thousands to create and maintain workflows and logic of both physical devices and digital services. Ensuring their effectiveness grows, while new users are introduced to Node-RED is vital to the success of FlowFuse.
-
-FlowFuse will drive the Node-RED project through:
-
-- **Deliver features** to the core of Node-RED that are stable and provide value to the community
-- **Actively participate** in the community to establish a positive reputation and level of engagement
-- **Be model citizens** for the open governance of the project. Our activities that impact the core are discussed and developed in the open.
-- **Establish close relationships** with other stakeholders of the project - those who have their own commercial interest in the success of the project. Encourage participation and engagement in the core project.
-- **Driving adoption** of Node-RED through our advocacy and our actions.
-
 #### Become the standard way of running any Node-RED at any scale - Be DevOps for Node-RED
 
 There's a wide range of deployment scenarios and FlowFuse aims to build a
