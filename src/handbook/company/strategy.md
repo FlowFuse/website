@@ -49,6 +49,12 @@ make it attractive to individual users as well as Enterprises. Value offered
 will increase exponentially as the platform scales to teams of developers and
 larger deployment scenarios.
 
+### Drive adoption of Node-RED in manufacturing
+
+Node-RED itself is already being used today in many industries to connect OT and IT environments, due to the challenge of heterogeneous protocols and demands. This shift is part of a larger trend: teams of all types are realizing that breaking down silos has compounding effects on productivity. Especially in all kinds of manufacturing and industrial companies, the way of production is changing rapidly and therefore the need to further integrate IT and OT. 
+
+We are positioned to become the Open-Source DevOps for Node-RED solution – a single application for all innovation and transformation to effectively close the gaps that exist between OT and IT.
+
 #### Build an inclusive, high-performance team
 
 As a new company that starts small but aspires to grow, we need to ensure that growth is well managed, sustainable and rewarding.
