@@ -228,9 +228,11 @@ criteria are met:
 
 #### Feature Demos
 
-Part of finishing an item is being able to demonstrate it in action. This allows others
-to see it in action, generate material for the release announcement and help identify
-any gaps or places for improvement.
+Part of finishing an item is being able to demonstrate it in action. This allows
+others to see it in action, generate material for the release announcement and
+help identify any gaps or places for improvement.
+
+Each feature demo is recorded by the developer responsible for the feature, detailing its functions and operations. If problems, challenges, or improvement ideas arise during the review of the demo, everyone is encouraged to post a comment under the video within the Slack channel. Additionally, a corresponding GitHub issue should be opened to track and prioritize these points for further discussion and action.
 
 All `headline` item or significant piece of functionality should be demoed.
 
