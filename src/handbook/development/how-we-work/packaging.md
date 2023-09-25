@@ -11,13 +11,13 @@ To help ensure all of the requirements are met, an issue should be raised in
 [`flowforge/admin`](https://github.com/flowforge/admin/issues/new/choose){rel="nofollow"}
 using the `New Repository Checklist` and then worked through.
 
-## Github projects
+## GitHub projects
 
 ### Naming
 
-- Flow Forge Components should start with `flowforge-`
-- If a Node-RED plugin/node should start with `flowforge-nr-`
-- Installers or Orchestration projects are named without the leading `flowforge-` e.g. `installer` or `helm`
+- FlowFuse Components should start with `flowfuse-`
+- If a Node-RED plugin/node should start with `flowfuse-nr-`
+- Installers or Orchestration projects are named without the leading `flowfuse-` e.g. `installer` or `helm`
 
 ### Settings
 
@@ -113,7 +113,7 @@ Node-RED plugins should start with `nr-` e.g.
  - @flowforge/nr-storage
  - @flowforge/nr-auth
 
-Flow Forge plugins should start with `forge-` e.g.
+FlowFuse plugins should start with `forge-` e.g.
 
  - @flowforge/forge-driver-localfs
  - @flowforge/forge-driver-docker
@@ -168,7 +168,6 @@ Major and minor releases will follow the schedule laid out in the [Cadence](../r
 A Fix release can be made at any time, depending on the best judgement of the engineer making the fix but requires a review by another team member.
 
 The process for making a release is documented [here](../releases/process.md).
-
 
 ### Adding NPM packages to Stacks
 
