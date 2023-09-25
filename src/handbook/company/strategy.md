@@ -1,8 +1,9 @@
 ---
-originalPath: company/strategy.md
-updated: 2022-11-23 17:31:41 +0100
+meta:
+    title: Company Strategy
 ---
-### Strategy
+
+# Strategy
 
 > We will only be successful if the whole Node-RED community is successful.
 

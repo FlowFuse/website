@@ -13,7 +13,6 @@ into in the next 5 years. The vision is inspiration for the [product strategy](.
 - Drive the growth and success of the [Node-RED](https://nodered.org) project
 - Build a platform that becomes the standard way of running Node-RED at any scale - Be DevOps for Node-RED
 - Drive adoption of Node-RED in manufacturing
-- Build an inclusive, high-performance team
 
 #### Drive the growth and success of the Node-RED project
 
@@ -50,9 +49,3 @@ larger deployment scenarios.
 Node-RED itself is already being used today in many industries to connect OT and IT environments, due to the challenge of heterogeneous protocols and demands. This shift is part of a larger trend: teams of all types are realizing that breaking down silos has compounding effects on productivity. Especially in all kinds of manufacturing and industrial companies, the way of production is changing rapidly and therefore the need to further integrate IT and OT. 
 
 We are positioned to become the Open-Source DevOps for Node-RED solution – a single application for all innovation and transformation to effectively close the gaps that exist between OT and IT.
-
-#### Build an inclusive, high-performance team
-
-As a new company that starts small but aspires to grow, we need to ensure that growth is well managed, sustainable and rewarding.
-
-Our [values](./values) help shape the culture we want to build, both inside the company and beyond.
