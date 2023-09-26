@@ -665,8 +665,7 @@ h4:hover .header-anchor {
     }
 
     .ff-footer-columns {
-        grid-template-columns: 1fr 25% 35%;
-        @apply flex flex-col-reverse md:grid;
+        grid-template-columns: 1fr 38% 25%;
     }
 
     .ff-footer-columns > div {
@@ -685,18 +684,18 @@ h4:hover .header-anchor {
     .ff-footer .copyright-statement {
         font-size: 0.75rem;
         margin-top: 0.75rem;
-        color: theme(colors.gray.100);
+        color: theme(colors.gray.300);
         font-weight: 200;
     }
 
     .ff-footer li {
-        color: theme(colors.gray.100);
+        color: theme(colors.gray.200);
         font-weight: 200;
     }
 
     .ff-footer li:hover {
         color: theme(colors.white);
-        font-weight: 500;
+        text-decoration: underline;
     }
 
     /*
