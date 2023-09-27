@@ -1,9 +1,10 @@
 ---
 title: Updating our branding across GitHub, npm and Dockerhub
-subtitle: Completing our rebranding at a technical level
-description: Completing our rebranding at a technical level
+subtitle: Renaming our packages and containers and what it means for our users
+description: Renaming our packages and containers and what it means for our users
 date: 2023-09-27
 authors: ["nick-oleary"]
+image: "/blog/2023/09/images/tile-rebranding.png"
 tags:
     - posts
     - community
