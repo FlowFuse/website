@@ -80,9 +80,9 @@ The above effort results in the following output in our Notebook:
 
 ## What else is new in 0.4.0?
 
-The above demonstrates just a few of the new features in the 0.4.0 Release, but we've also added [other fixes and improvements](https://github.com/flowforge/flowforge-nr-dashboard/releases/tag/v0.4.0). In particular, I want to call out Steve's great work on implementing custom class injection, the first of our new ["Dynamic Properties"](https://flowforge.github.io/flowforge-nr-dashboard/user/dynamic-properties.html), of which there will be more (e.g. visibility, disabled, etc.) to come.
+The above demonstrates just a few of the new features in the 0.4.0 Release, but we've also added [other fixes and improvements](https://github.com/FlowFuse/flowforge-nr-dashboard/releases/tag/v0.4.0). In particular, I want to call out Steve's great work on implementing custom class injection, the first of our new ["Dynamic Properties"](https://flowforge.github.io/flowforge-nr-dashboard/user/dynamic-properties.html), of which there will be more (e.g. visibility, disabled, etc.) to come.
 
-As always, thanks for reading and your interested in Dashboard 2.0. If you have any feature requests, bugs/complaints or general feedback, please do reach out, and raise issues on our relevant [GitHub repository](https://github.com/flowforge/flowforge-nr-dashboard).
+As always, thanks for reading and your interested in Dashboard 2.0. If you have any feature requests, bugs/complaints or general feedback, please do reach out, and raise issues on our relevant [GitHub repository](https://github.com/FlowFuse/flowforge-nr-dashboard).
 
 - [Dashboard 2.0 Activity Tracker](https://github.com/orgs/flowforge/projects/15/views/1)
 - [Dashboard 2.0 Planning Board](https://github.com/orgs/flowforge/projects/15/views/4)

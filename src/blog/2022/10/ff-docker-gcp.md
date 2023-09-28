@@ -107,7 +107,7 @@ The next step is to get the codebase for FlowFuse onto your VM, to do so you wil
 
 Use curl to download the files we need.
 
-`sudo curl -L https://github.com/flowforge/docker-compose/archive/refs/tags/v0.10.1.tar.gz -o v0.10.1.tar.gz`
+`sudo curl -L https://github.com/FlowFuse/docker-compose/archive/refs/tags/v0.10.1.tar.gz -o v0.10.1.tar.gz`
 
 Make the directory where we will store FlowFuse.
 

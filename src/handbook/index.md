@@ -60,14 +60,14 @@ conversation about what we do.
 
 #### Contributing
 
-The handbook is maintained on [GitHub](https://github.com/flowforge/website/tree/main/src/handbook) and contributions can be made through pull-requests.
+The handbook is maintained on [GitHub](https://github.com/FlowFuse/website/tree/main/src/handbook) and contributions can be made through pull-requests.
 
 All changes merged to the `main` branch will be automatically deployed to the handbook on the
 [FlowFuse website](https://flowfuse.com/handbook).
 
 ##### Building the site locally
 
-To run the handbook locally, follow the instructions on the [website repository](https://github.com/flowforge/website).
+To run the handbook locally, follow the instructions on the [website repository](https://github.com/FlowFuse/website).
 
 You can access the Handbook at [http://localhost:8080/handbook](http://localhost:8080/handbook).
 This will automatically reload whenever any content is changed.

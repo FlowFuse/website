@@ -29,7 +29,7 @@ from being a key way to test the platform, it helps validate the work we're doin
 for when others come to run it in that way. It also lays the ground work for our
 own cloud service we'll be sharing more about in the coming days.
 
-The full change-log for the core of the platform is available [on GitHub](https://github.com/flowforge/flowforge/blob/v0.2.0/CHANGELOG.md).
+The full change-log for the core of the platform is available [on GitHub](https://github.com/FlowFuse/flowforge/blob/v0.2.0/CHANGELOG.md).
 But with a further 15 repositories containing different components, each with its
 own change-log, we're still thinking about how best to share a single view of the
 updates.
@@ -37,7 +37,7 @@ updates.
 
 ### Getting started with FlowFuse
 
-The documentation provides a guide for [installing FlowFuse on a local server](https://github.com/flowforge/flowforge/tree/main/docs).
+The documentation provides a guide for [installing FlowFuse on a local server](https://github.com/FlowFuse/flowforge/tree/main/docs).
 
 If you haven't played with FlowFuse 0.1 yet, here's a more complete walk-through
 of the platform:
@@ -47,12 +47,12 @@ of the platform:
 ### Upgrading FlowFuse
 
 If you installed FlowFuse 0.1 and want to upgrade, our documentation provides a
-guide for [upgrading FlowFuse on a local server](https://github.com/flowforge/flowforge/tree/main/docs/install/local#upgrade).
+guide for [upgrading FlowFuse on a local server](https://github.com/FlowFuse/flowforge/tree/main/docs/install/local#upgrade).
 
 ### Getting help
 
 If you hit any problems with the platform, or have questions to ask, please do
-raise an [issue on GitHub](https://github.com/flowforge/flowforge/issues).
+raise an [issue on GitHub](https://github.com/FlowFuse/flowforge/issues).
 
 That also includes if you have any feedback or feature requests.
 
@@ -61,7 +61,7 @@ We also have a `#flowforge` channel on the [Node-RED Slack workspace](https://no
 ### What's next?
 
 Our regular release cycle puts the next release on Thursday 17th March. We've
-got some key features planned in this release around [Project Templates](https://github.com/flowforge/flowforge/issues/141) and [Stacks](https://github.com/flowforge/flowforge/issues/285) -
+got some key features planned in this release around [Project Templates](https://github.com/FlowFuse/flowforge/issues/141) and [Stacks](https://github.com/FlowFuse/flowforge/issues/285) -
 which will underpin how you can customise Node-RED within FlowFuse.
 
 We'll also have some exciting news to share about our own hosted service you'll

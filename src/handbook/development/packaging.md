@@ -8,7 +8,7 @@ This section describes the requirements we have for all GitHub repositories,
 and npm modules we maintain.
 
 To help ensure all of the requirements are met, an issue should be raised in
-[`flowforge/admin`](https://github.com/flowforge/admin/issues/new/choose) using
+[`flowforge/admin`](https://github.com/FlowFuse/admin/issues/new/choose) using
 the `New Repository Checklist` and then worked through.
 
 ## Github projects
@@ -33,7 +33,7 @@ All Git Repositories must contain the following files:
 ### Linting
 
 All code repositories should adopt our standard linting rules by copying the
-`.eslintrc` from the [flowforge/.github repository](https://github.com/flowforge/.github/blob/main/.eslintrc).
+`.eslintrc` from the [flowforge/.github repository](https://github.com/FlowFuse/.github/blob/main/.eslintrc).
 
 If a repository has any additional requirements for linting, such as handling Vue
 code, then additional plugins can be added.
@@ -58,13 +58,13 @@ This will subscribe to any notifications covering: `issues`, `pulls`, `commits`,
 #### Project Automation
 
 All code repositories must have the Project Automation workflow added. This is done
-by adding [`.github/workflows/project-automation.yml`](https://github.com/flowforge/flowforge/blob/main/.github/workflows/project-automation.yml).
+by adding [`.github/workflows/project-automation.yml`](https://github.com/FlowFuse/flowforge/blob/main/.github/workflows/project-automation.yml).
 This workflow will ensure any opened issues are automatically added to the [Product board](https://github.com/orgs/flowforge/projects/3) where it can be triaged and prioritised.
 
 #### Release Publish
 
 For any repositories that contain modules to be published to npm, they should also
-have a copy of [`.github/workflows/release-publish.yml`](https://github.com/flowforge/flowforge/blob/main/.github/workflows/release-publish.yml).
+have a copy of [`.github/workflows/release-publish.yml`](https://github.com/FlowFuse/flowforge/blob/main/.github/workflows/release-publish.yml).
 
 This workflow will publish to npm whenever the repository is tagged with a `vX.Y.Z` format
 tag.
@@ -81,7 +81,7 @@ they cannot access the organisation-wide secret we have in place.
 1. Generate a [Personal Access Token](https://github.com/settings/tokens) with
    `repo, write:org` scope.
 
-2. Add it as a Repository Secret to the Private Repo (https://github.com/flowforge/<repo-name>/settings/secrets/actions)
+2. Add it as a Repository Secret to the Private Repo (https://github.com/FlowFuse/<repo-name>/settings/secrets/actions)
    with the name `PROJECT_ACCESS_TOKEN`
 
 ### Labels
@@ -97,13 +97,13 @@ ensures we have a consistent approach to planning and tracking of work.
  - Product Scope: `scope:devices`, `scope:enterprise`, `scope:node-red`, `scope:collaboration`
  - Other: `good first issue`, `upstream`, `needs-triage`
 
-The labels are synchronized across the repositories via a GitHub Action in the [`.github`](https://github.com/flowforge/.github)
+The labels are synchronized across the repositories via a GitHub Action in the [`.github`](https://github.com/FlowFuse/.github)
 repository.
 
 The `Customer Request` label is intended solely for issues requested by an important enterprise customer, not for leads or individuals like [Harry the Hobbyist](../product/personas/).
  
-New repositories must be added to the list in [`flowforge-repositories.yml`](https://github.com/flowforge/.github/blob/main/flowforge-repositories.yml),
-and then the [Synchronize Labels](https://github.com/flowforge/.github/actions/workflows/sync-labels.yml) action manually run.
+New repositories must be added to the list in [`flowforge-repositories.yml`](https://github.com/FlowFuse/.github/blob/main/flowforge-repositories.yml),
+and then the [Synchronize Labels](https://github.com/FlowFuse/.github/actions/workflows/sync-labels.yml) action manually run.
  
 ## NPM packages
 
@@ -130,17 +130,17 @@ The `package.json` must contain the following keys
      ```
      "repository": {
         "type": "git",
-        "url": "git+https://github.com/flowforge/flowforge.git"
+        "url": "git+https://github.com/FlowFuse/flowforge.git"
     },
     ```
  - homepage
     ```
-    "homepage": "https://github.com/flowforge/flowforge#readme",
+    "homepage": "https://github.com/FlowFuse/flowforge#readme",
     ```
  - bugs
     ```
     "bugs": {
-        "url": "https://github.com/flowforge/flowforge/issues"
+        "url": "https://github.com/FlowFuse/flowforge/issues"
     },
     ```
  - license
@@ -179,12 +179,12 @@ As we build more FlowFuse specific nodes we will need to add these to the Stacks
 
 #### Localfs
 
-Currently bundled packages for the localfs driver need to be added to the [flowforge-nr-launcher](https://github.com/flowforge/flowforge-nr-launcher) `package.json`  and the path to the node needs to be added to the `nodesDir` array in the `lib/lancher.js` file (around line 70). This will be updated in the next release to be controlled by the [flowforge-driver-localfs](https://github.com/flowforge/flowforge-driver-localfs) project
+Currently bundled packages for the localfs driver need to be added to the [flowforge-nr-launcher](https://github.com/FlowFuse/flowforge-nr-launcher) `package.json`  and the path to the node needs to be added to the `nodesDir` array in the `lib/lancher.js` file (around line 70). This will be updated in the next release to be controlled by the [flowforge-driver-localfs](https://github.com/FlowFuse/flowforge-driver-localfs) project
 
 #### Docker
 
-Any nodes or themes should be added to the `package.json` in `node-red-container/` directory of the [docker-compose](https://github.com/flowforge/docker-compose) project
+Any nodes or themes should be added to the `package.json` in `node-red-container/` directory of the [docker-compose](https://github.com/FlowFuse/docker-compose) project
 
 #### K8s
 
-Any nodes or themes should be added to the `package.json` in `node-red-container/` directory of the [helm](https://github.com/flowforge/helm) project
+Any nodes or themes should be added to the `package.json` in `node-red-container/` directory of the [helm](https://github.com/FlowFuse/helm) project

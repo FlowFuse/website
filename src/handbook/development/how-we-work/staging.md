@@ -36,7 +36,7 @@ We have enabled a small list of mailinator.com based email addresses for the pur
 of short-lived testing of sign-up and user management.
 
 The inboxes for these email addresses are publicly accessible if known, so the list
-is available on this private issue: https://github.com/flowforge/CloudProject/issues/135
+is available on this private issue: https://github.com/FlowFuse/CloudProject/issues/135
 
 ## Deployment
 

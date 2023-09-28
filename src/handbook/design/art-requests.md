@@ -19,9 +19,9 @@ Likely places this will be required are:
 
 You can create an issue on any of the FlowFuse Repositories that best suits the asset required, e.g:
 
-- [flowforge/flowforge](https://github.com/flowforge/flowforge): In-Product Visuals (e.g. icons, diagrams, pictograms)
-- [flowforge/website](https://github.com/flowforge/website): Markitechture Diagrams, Blog Tiles, Webinar & AMA Tiles
-- [flowforge/content](https://github.com/flowforge/content): Social Media Assets, YouTube Thumbnails Tiles and anything else that doesn't fit above 
+- [flowforge/flowforge](https://github.com/FlowFuse/flowforge): In-Product Visuals (e.g. icons, diagrams, pictograms)
+- [flowforge/website](https://github.com/FlowFuse/website): Markitechture Diagrams, Blog Tiles, Webinar & AMA Tiles
+- [flowforge/content](https://github.com/FlowFuse/content): Social Media Assets, YouTube Thumbnails Tiles and anything else that doesn't fit above 
 
 When creating an issue, you'll be presented with an option to create an "Art Request" from the Issue Templates:
 

@@ -39,7 +39,7 @@ Each webinar should be available for promotion 2-4 weeks before the live date. C
 
 ## Creating a Webinar Page
 
-Webinar pages follow a fixed structure, you can see plenty of examples [here](https://github.com/flowforge/website/tree/main/src/webinars) in our website repository. Importantly, they must define the following properties at the top of the `.md` file:
+Webinar pages follow a fixed structure, you can see plenty of examples [here](https://github.com/FlowFuse/website/tree/main/src/webinars) in our website repository. Importantly, they must define the following properties at the top of the `.md` file:
 
 ### Properties
 
@@ -52,7 +52,7 @@ Webinar pages follow a fixed structure, you can see plenty of examples [here](ht
 | `date` | The date that the webinar will take place
 | `time` | The time that the webinar will take place, in both GMT & ET
 | `duration` | How long, in minutes with the webinar last for
-| `hosts` | A list of the webinar hosts, the names need to be formatted inline with the file names found [here](https://github.com/flowforge/website/tree/main/src/_data/team)
+| `hosts` | A list of the webinar hosts, the names need to be formatted inline with the file names found [here](https://github.com/FlowFuse/website/tree/main/src/_data/team)
 | `hubspot.formId` | The formId from HubSpot to handle the event registration
 
 ### Example

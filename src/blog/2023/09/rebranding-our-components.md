@@ -42,7 +42,7 @@ As a company everything we do revolves around our GitHub Organization. Our
 source code, release planning, this website, and far more all live there.
 
 Step one of our migration will be renaming the organization to `FlowFuse`, so instead
-of `https://github.com/flowforge` we will now live at `https://github.com/FlowFuse`.
+of `https://github.com/FlowFuse` we will now live at `https://github.com/FlowFuse`.
 
 Renaming organizations on GitHub, whilst not something done lightly, is well catered
 for. All existing urls should get automatically redirected - so any existing

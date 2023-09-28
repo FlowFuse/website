@@ -20,7 +20,7 @@ points of failure in the process.
 The Release Manager should take the following steps at the *start* of the release
 iteration:
 
-  - Create a Release checklist issue using the [Release Checklist template](https://github.com/flowforge/admin/issues/new?assignees=&labels=&template=release.md&title=Release%3A){rel="nofollow"}.
+  - Create a Release checklist issue using the [Release Checklist template](https://github.com/FlowFuse/admin/issues/new?assignees=&labels=&template=release.md&title=Release%3A){rel="nofollow"}.
  - Assign the issue to the Release Manager
  - Ensure the following tools are installed and working:
     - git command-line tools
@@ -70,7 +70,7 @@ newly discovered issues.
 
 #### Check Usage Ping Collector is up to date
 
-Ensure [https://github.com/flowforge/usage-ping-collector]() has been updated. The CTO
+Ensure [https://github.com/FlowFuse/usage-ping-collector]() has been updated. The CTO
 tracks this and will flag if an update is needed.
 
 #### Unmanaged Repositories
@@ -83,11 +83,11 @@ day.
 The Release Manager should verify the following repositories are up to date and
 have been published as needed.
 
- - [`flowforge/forge-ui-components`](https://github.com/flowforge/forge-ui-components)
- - [`flowforge/flowforge-device-agent`](https://github.com/flowforge/flowforge-device-agent)
- - [`flowforge/flowforge-nr-project-nodes`](https://github.com/flowforge/flowforge-nr-project-nodes)
+ - [`flowforge/forge-ui-components`](https://github.com/FlowFuse/forge-ui-components)
+ - [`flowforge/flowforge-device-agent`](https://github.com/FlowFuse/flowforge-device-agent)
+ - [`flowforge/flowforge-nr-project-nodes`](https://github.com/FlowFuse/flowforge-nr-project-nodes)
  - [`flowforge/flowforge-nr-file-nodes`](https://www.github.com//flowforge/flowforge-nr-file-nodes)
- - [`flowforge/flowforge-nr-persistent-context`](https://github.com/flowforge/flowforge-nr-persistent-context)
+ - [`flowforge/flowforge-nr-persistent-context`](https://github.com/FlowFuse/flowforge-nr-persistent-context)
  - [`flowforge/flowforge-nr-tools-plugin`](https://www.github.com//flowforge/flowforge-nr-tools-plugin)
 
 Verify [`flowforge/flowforge-nr-launcher`](https://www.github.com//flowforge/flowforge-nr-launcher) `package.json` has been updated to pull in the latest versions of `file-nodes`/`persistent-context`/`project-nodes`.
@@ -100,7 +100,7 @@ This phase is largely automated using the `create-release` script in the `admin`
 
 Follow these steps to run the script:
 
-1. Clone the [`flowforge/admin`](https://github.com/flowforge/admin) repository if you do not already have it.
+1. Clone the [`flowforge/admin`](https://github.com/FlowFuse/admin) repository if you do not already have it.
    Ensure you have the latest with a `git pull`.
 2. In the *parent* directory to where you have the `admin` checked out, run the
    following command, replace `1.x.y` with the proper release version.
@@ -139,9 +139,9 @@ Follow these steps to run the script:
 
 Once everything has been published, the Release Manager should:
 
-1. Run the staging CI pipeline [Build for Staging](https://github.com/flowforge/CloudProject/actions/workflows/build-kube.yml) against the main branch, to ensure staging is running the latest release.
+1. Run the staging CI pipeline [Build for Staging](https://github.com/FlowFuse/CloudProject/actions/workflows/build-kube.yml) against the main branch, to ensure staging is running the latest release.
   - Once that completes, verify it has deployed cleanly on Staging
-2. Raise a "FlowFuse Cloud Change Requests" Issue in [CloudProject Project](https://github.com/flowforge/CloudProject/issues/new/choose) to request Production to be updated to the new version.
+2. Raise a "FlowFuse Cloud Change Requests" Issue in [CloudProject Project](https://github.com/FlowFuse/CloudProject/issues/new/choose) to request Production to be updated to the new version.
 3. Notify the CTO/Senior Engineer that the release is ready to publish to production.
 
 Once Production has been updated and verified, the Release Manager should announce

@@ -53,7 +53,7 @@ _FlowFuse Cloud_: Data in transit to and from external sources is protected
 with SSL/TLS. Encryption is terminated at the edge, both for HTTP and MQTT
 traffic.
 
-Adding internal SSL/TLS is [being investigated](https://github.com/flowforge/flowforge/issues/910).
+Adding internal SSL/TLS is [being investigated](https://github.com/FlowFuse/flowforge/issues/910).
 
 #### Inter project communication
 

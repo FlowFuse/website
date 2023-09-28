@@ -60,7 +60,7 @@ You may be asked to conduct a Pull Request Review. This means that someone else 
 
 The first step to editing content is to create a [Branch](#branch) of that content. A [Branch](#branch) is a complete copy of the [Project](#project). Creating a [Branch](#branch) allows you to edit the content without those edits changing the [Live](#live) copy of a [Project](#project).
 
-Navigate to the Project within [Github](#github) you want to work on, that would usually be [our website](https://github.com/flowforge/website) or [Handbook](https://github.com/flowforge/handbook).
+Navigate to the Project within [Github](#github) you want to work on, that would usually be [our website](https://github.com/FlowFuse/website) or [Handbook](https://github.com/FlowFuse/handbook).
 
 ![Create a new Branch](../images/git-how-to/new-branch-1.png)
 

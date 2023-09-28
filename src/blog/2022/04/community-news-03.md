@@ -17,7 +17,7 @@ If you've got something that you'd like us to share please email [contact@flowfu
 
 
 [New Website](/)  
-Some of you may have noticed the new design on our website, this is the first step in our more refined corporate identity, the same look will be coming to the FlowFuse application [soon.](https://github.com/flowforge/flowforge/issues/430).
+Some of you may have noticed the new design on our website, this is the first step in our more refined corporate identity, the same look will be coming to the FlowFuse application [soon.](https://github.com/FlowFuse/flowforge/issues/430).
 
 [FlowFuse 0.3](/blog/2022/03/flowforge-03-released/)  
 The latest release introduced 2 new concepts, Templates and Stacks, with these we are starting to show the value of the FlowFuse platform allowing you to easily manage the Node-RED settings and versions used by your projects.

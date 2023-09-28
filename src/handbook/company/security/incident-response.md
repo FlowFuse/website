@@ -60,7 +60,7 @@ communication channels:
 
  - Email security@flowfuse.com with information or reports about the event or
    incident
- - Raise an issue in [`flowforge/security`](https://github.com/flowforge/security){rel="nofollow"}
+ - Raise an issue in [`flowforge/security`](https://github.com/FlowFuse/security){rel="nofollow"}
  - Report it in #security channel in slack
 
 Reports should include specific details about what has been observed or discovered.
@@ -94,10 +94,10 @@ issues and shall assign a severity (via label) based on the following categories
  - **P1** - Critical Severity
     P1 issues require immediate notification to a member of the [SIRT](#security-incident-response-team)
  - **P2** - High Severity
-    An issue should be raised in [`flowforge/security`](https://github.com/flowforge/security){rel="nofollow"}
+    An issue should be raised in [`flowforge/security`](https://github.com/FlowFuse/security){rel="nofollow"}
     and explicit notification in the #security channel
  - **P3/P4** - Medium and Low Severity
-    An issue should be raised in [`flowforge/security`](https://github.com/flowforge/security){rel="nofollow"}
+    An issue should be raised in [`flowforge/security`](https://github.com/FlowFuse/security){rel="nofollow"}
 
 ### Documentation
 
