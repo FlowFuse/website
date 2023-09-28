@@ -1,5 +1,5 @@
 ---
-title: Usability Improvements to Device Management
+title: Usability improvements to Device Management
 date: 2023-09-28 12:00:02.0
 authors: ["marian-demme"]
 tags:
