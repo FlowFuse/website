@@ -3,7 +3,7 @@ navTitle: People Ops
 navGroup: Internal Operations
 ---
 
-## People Operations
+# People Operations
 
 People operations contains information on HR related policies at FlowFuse.
 

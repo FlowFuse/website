@@ -2,9 +2,9 @@
 navTitle: Vacation & Leave
 ---
 
-## Holiday and Leave
+# Holiday and Leave
 
-### Logging time off
+## Logging time off
 
 When taking more than 3 days off consecutively, tell (don't ask) your manager. 
 This ensure scheduling of work and operations continue to run smoothly without
@@ -16,20 +16,20 @@ Before you can take time off you should _always_:
    all meetings automatically.
 * Inform fellow team members of your time off, and hand over work that's distributed.
 
-### Vacation Policy
+## Vacation Policy
 
 FlowFuse has a unlimited time off policy. Taking vacation is encouraged for all
 team members. To prevent an undefined number of vacation days to start a race to
 the bottom, we recommend each team member to take a minimum of 25 days a year,
 and at least 5 days a quarter.
 
-### Sick leave
+## Sick leave
 
 Sick leave, or having limited availability is not recorded currently. Keep your
 manager updated on your health, and let them know what FlowFuse can do for you
 to aid in your recovery.
 
-### Parental Leave
+## Parental Leave
 
 If you live in a country where a statutory Parental Leave benefit is available,
 you will be required to claim statutory Parental Leave pay (if you are eligible).
@@ -43,7 +43,7 @@ weeks before the due date to qualify to the extended parental leave.
 If you live in a country that offers statutory leave longer than this, then
 FlowFuse will abide by this.
 
-### Bereavement Leave
+## Bereavement Leave
 
 Our company understands the profound impact that the loss of a loved one can
 have on an employee, and we are committed to supporting our team members

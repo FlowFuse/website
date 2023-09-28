@@ -3,14 +3,14 @@ meta:
     title: Company Values
 ---
 
-## Values
+# Values
 
 FlowFuse has a few core values. Values we aspire to live by in everything we do
 at FlowFuse. With a shared set of values, norms that are created every day will
 align with what company we want to be, and how we conduct business. Our values
 are as follows:
 
-### 📈 Results
+## 📈 Results
 
 1. We value results over the hours you spend working. We appreciate the effort, but value the results. Make users happy, care about the team member you helped. You schedule your day to make the most out of it for you. Don’t brag about hours worked, take pride in your achievements.
 1. <a name="doitnow">Do it now</a>: Growth is exponential; Ship today, observe first results tomorrow, observe compounding effects in just 2 days.
@@ -18,8 +18,7 @@ are as follows:
 1. <a name="disagreeandcommit">Disagree and commit</a>: Discussion is healthy, but decisions do not need full consensus. Disagree with a point-of-view, make your case, but accept other solutions are valid too. Once a choice is made, commit as a team to follow it. Allow others to prove themselves. Reaching consensus for every decision does not scale.
 1. Keep it short and simple: Don’t over-engineer your solution or let the scope creep beyond what makes sense for an iteration. Fast progress requires fast understanding. Boring solutions are good. Allow everyone to understand your solution. There will always be another iteration.
 
-
-### 🔁 Iterative Improvement
+## 🔁 Iterative Improvement
 
 1. Small Steps: Every mountain can be climbed with small steps. Make a change,
 reassess your direction, repeat. Scope down your work item, reflect, and scope
@@ -30,7 +29,7 @@ it down again. Get the minimal amount of work down, but no less, find the [golde
 1. Decide where good is good enough; understand where excellence is our company's
 edge. Apply the [pareto principle](https://en.wikipedia.org/wiki/Pareto_principle).
 
-### 👥 Collaborative Community
+## 👥 Collaborative Community
 
 1. Be inclusive: in a community everyone is different; allow them to be. We
 value empathy, courtesy, and respect for each other.
@@ -42,7 +41,7 @@ Allow progress being made by anyone. Keep an agenda for meetings, write down dec
 1. Think big picture: It’s not “your” issue/bug, the whole community can have
 opinions and provide suggestions.
 
-### ⛑️ Constructive Candor
+## ⛑️ Constructive Candor
 
 1. Feedback aids growth: it reinforces what is good and helps drive improvement where needed.
 1. Be considerate: feedback is about helping others to improve, not scoring points. Use care and consideration of how it will be received.
@@ -53,10 +52,9 @@ opinions and provide suggestions.
 1. Be open and honest about your own mistakes, take ownership of them and their resolve.
 1. Appreciate each other. Say thanks often, preferably in public.
 
-### 🤝 Customer Empathy
+## 🤝 Customer Empathy
 
 1. Focus on the customer: We want them to be successful. Pay attention to competition, but put the customer first.
 1. Be curious, not judgemental: Understanding starts with asking questions. Aim to get a deep understanding of their desires and motivations.
 1. Listen to feedback and respond quickly and respectfully. Customers may be frustrated or potentially seem unreasonable - we are here to listen and help them move forward.  [Apply optimism](#optimism), and be friendly.
 1. Show empathy in all interactions and choices. Our solutions aim to solve customer problems effectively and efficiently.
-

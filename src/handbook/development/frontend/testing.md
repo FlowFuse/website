@@ -3,7 +3,7 @@ meta:
     title: Front-End Testing
 ---
 
-## Front-End Testing
+# Front-End Testing
 
 For our front-end we test on two fronts:
 
@@ -17,6 +17,7 @@ Not yet written
 ## E2E Integration Tests
 
 ### Foreword
+
 *When running e2e tests locally, the NPM scripts are in the `flowforge` package.*
 *Be sure to `cd` to `flowforge` before attempting to run them*
 
@@ -38,11 +39,9 @@ Once this is up and running, you then have two options:
 npm run cy:run
 ```
 
-
 This will execute all of the front-end E2E tests in the terminal and display the results. 
 Typically, this is the command to run if you simply want to run all of the tests
 When developing/debugging tests, opening the Cypress Application will likely be more useful.
-
 
 #### Run Tests via Cypress Application
 

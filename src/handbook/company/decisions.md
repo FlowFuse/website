@@ -2,6 +2,8 @@
 navTitle: Decision making
 ---
 
+# How we make decisions
+
 ## Directly Responsible Individual
 
 A DRI, also known as Directly Responsible Individual, is a method of assigning

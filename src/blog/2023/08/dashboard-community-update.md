@@ -27,15 +27,15 @@ Below you'll find a summary of the changes we've made since our [last community 
 
 Steve has been doing some incredible work on the new `ui-template` widget. This widget allows you to create your own custom components using raw HTML, but also works with any of the components in the [Vuetify](https://vuetifyjs.com/en/components/all/) component library. It's a powerful tool that will enable users to be creative with their own widgets that are not currently available with the standard set of widgets.
 
-![Examples of ui-template](https://flowforge.github.io/flowforge-nr-dashboard/assets/ui-template.9d278589.png)
+![Examples of ui-template](https://dashboard.flowfuse.com/images/node-examples/ui-template.png)
 
 The Template node also provides access to two built-in functions that can be used to send data back to Node-RED:
 - **send(msg)**: Outputs a message (defined by the input to this function call) from this node in the Node-RED flow.
 - **submit()**: Send a `FormData` object when attached to a `<form>` element. The created object will consist of the `name` attributes for each form element, corresponding to their respective `value` attributes.
 
-### Toggle Switch (<a href="https://flowforge.github.io/flowforge-nr-dashboard/nodes/widgets/ui-switch.html" target="_blank">docs</a>)
+### Toggle Switch (<a href="https://dashboard.flowfuse.com/nodes/widgets/ui-switch.html" target="_blank">docs</a>)
 
-![Examples of ui-switch](https://flowforge.github.io/flowforge-nr-dashboard/assets/ui-switch.fb5583c2.png)
+![Examples of ui-switch](https://dashboard.flowfuse.com/images/node-examples/ui-switch.png)
 
 Adds a toggle switch to the user interface that can be rendered with a label, and traditional toggle switch, or, as in Dashboard 1.0, can be a square element with an icon & colour provided.
 

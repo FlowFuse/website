@@ -21,10 +21,10 @@
     {% elif title %}
     <title>{{ title }} &#x2022; FlowFuse{% if page.url.match('\/handbook\/.+') %} Handbook{% endif %}{% if page.url.match('\/docs\/.+') %} Docs{% endif %}</title>
     {% else %}
-    <title>FlowFuse &#x2022; DevOps for Node-RED</title>
+    <title>FlowFuse &#x2022; Bespoke, flexible, and resilient manufacturing applications</title>
     {% endif %}
 
-    <meta rel="canonical" href="{{ page.url | toAbsoluteUrl }}">
+    <link rel="canonical" href="{{ page.url | toAbsoluteUrl }}">
 
     <!-- Browser Description -->
     {% if meta and meta.description %}
@@ -32,7 +32,7 @@
     {% elif description %}
     <meta name="description" content="{{ description }}">
     {% else %}
-    <meta name="description" content="Scale your Node-RED deployments in production. Open-Source and available on Docker, Kubernetes or Cloud">
+    <meta name="description" content="Bespoke, flexible, and resilient manufacturing applications">
     {% endif %}
 
     {% if skipIndex -%}
@@ -56,7 +56,7 @@
     {% elif description %}
     <meta property="og:description" content="{{ description }}" />
     {% else %}
-    <meta property="og:description" content="FlowFuse allows organizations to reliably deliver Node-RED applications in a continuous, collaborative, and secure manner." />
+    <meta property="og:description" content="FlowFuse and Node-RED allows your engineers to deliver fast, low-cost, low-code manufacturing applications." />
     {% endif %}
 
     <!-- Open Graph URL -->
@@ -93,7 +93,7 @@
     <div class="flex-grow base">
         <div class="w-full">
             <!-- Events Banner -->
-            {% include "../components/events-banner.njk" %}
+            <!-- {% include "../components/events-banner.njk" %} -->
             <!-- Navigation Header -->
             <header id="ff-header" class="ff-header">
                 <nav class="relative w-full flex items-center justify-between mx-auto container md:max-w-screen-xl">
@@ -115,6 +115,7 @@
                         {% navoption "pricing", "/pricing", 0 %}{% endnavoption %}
                         {% navoption "product", null, 0 %}
                             <ul>
+                                {% navoption "why FlowFuse?", "/product/why-flowfuse", 1, "light-bulb" %}{% endnavoption %}
                                 {% navoption "features", "/features", 1, "star" %}{% endnavoption %}
                                 {% navoption "roadmap", "/product/roadmap", 1, "map" %}{% endnavoption %}
                                 {% navoption "customer stories", "/customer-stories", 1, "presentation" %}{% endnavoption %}
@@ -197,8 +198,7 @@
 
                     <ul class="hidden top-8 right-0 border shadow-sm md:inline md:shadow-none w-36 z-10 md:border-0 bg-white md:bg-transparent md:w-auto rounded md:static md:float-none md:flex md:flex-row flex-col items-center justify-end font-medium text no-underline">
 			            <li class="flex"><a href="https://app.flowforge.com">sign in</a></li>
-                        <a class="ml-2 ff-btn ff-btn--primary uppercase text-sm inline-flex" href="https://app.flowforge.com/account/create" onclick="capture('cta-join', {'position': 'header'})">Get Started</a>
-                        {# <li class="flex"><a class="ff-icon--gh" rel="noopener" href="https://github.com/flowforge" target="_blank">{% include "components/github.njk" %}</a></li> #}
+                        <a class="ml-2 ff-btn ff-btn--primary uppercase text-sm inline-flex" href="https://app.flowforge.com/account/create" onclick="capture('cta-join', {'position': 'header'})">Free Trial</a>
                     </ul>
                 </nav>
                 <div id="mobile-ctas" class="hidden fixed bottom-0 z-20">
@@ -214,42 +214,39 @@
     </div>
     <!-- Footer -->
     <footer class="ff-footer bg-red-hero w-full">
-        <div class="py-2 pb-8 px-10 text-white md:py-8 md:max-w-screen-xl xl:mx-auto lg:mx-24">
-            <div class="ff-footer-columns md:flex-row justify-center md:space-x-8">
-                <div class="">
-                    <div class="w-52">
+        <div class="py-2 pb-8 px-10 md:px-6 text-white md:pt-6 md:pb-10 max-w-md sm:max-w-screen-xl xl:mx-auto">
+            <div class="w-full grid gap-y-8 md:gap-y-0 md:grid-rows-2 md:grid-flow-col md:ff-footer-columns md:gap-x-8 md:justify-between">
+                <div class="w-52">
                         {% image "./images/flowfuse-logo-wordmark-white.svg", "FlowFuse Logo in White", [150] %}
-                    </div>
-                    <div class="copyright-statement">
-                        <div>Copyright 2023 FlowForge Inc.</div>
-                        <div>All Rights Reserved</div>
-                    </div>
-                    <div class="mt-2 text-xs">This site uses cookies. Click <a class="underline cursor-pointer" type="button" data-cc="c-settings">here</a> to manage your preferences</a>.</div>
                 </div>
-                <div class="w-full">
-                    <h4 class=""><span class="text-xl font-bold">Social</h4>
-                    <ul class="grid grid-cols-2 justify-center text-base sm:block sm:space-y-2">
-                        <li class="inline mr-3 mb-3 md:m-0 md:block"><a href="https://github.com/flowforge">GitHub</a></li>
-                        <li class="inline mr-3 mb-3 md:m-0 md:block"><a href="https://twitter.com/FlowFuseInc">Twitter</a></li>
-                        <li class="inline mr-3 mb-3 md:m-0 md:block"><a href="https://www.youtube.com/channel/UCbBzP8NZbv3WDtlt4UouA-g">YouTube</a></li>
-                        <li class="inline mr-3 mb-3 md:m-0 md:block"><a href="https://www.linkedin.com/company/flowfuse">LinkedIn</a></li>
-                        <li class="inline mr-3 mb-3 md:m-0 md:block"><a href="/blog/index.xml">RSS Feed</a></li>
-                        <li class="inline mr-3 mb-3 md:m-0 md:block"><a href="/blog/#sign-up" onclick="capture('cta-blog-subscribe', {'position': 'footer'})">Sign Up to Mailing List</a></li>
+                <div class="w-full self-end order-last md:order-none">
+                    <div class="copyright-statement inline">
+                        <div>Copyright 2023 FlowForge Inc. All Rights Reserved.
+                            <br>This site uses cookies. Click <a class="underline cursor-pointer" type="button" data-cc="c-settings">here</a> to manage your preferences.
+                        </div>
+                    </div>
+                </div>
+                <div class="w-full md:row-span-2">
+                    <ul class="w-full md:max-w-[343px] grid grid-flow-col grid-rows-5 sm:grid-rows-4 md:grid-rows-5 sm:justify-between md:m-auto text-base md:gap-y-3 sm:gap-x-6">
+                        <li class="inline mr-2 mb-2 md:m-0"><a href="/about/">About</a></li>
+                        <li class="inline mr-2 mb-2 md:m-0"><a href="/team/">Team</a></li>
+                        <li class="inline mr-2 mb-2 md:m-0"><a href="{{ site.jobBoard }}">Jobs</a></li>
+                        <li class="inline mr-2 mb-2 md:m-0"><a href="/handbook/">Handbook</a></li>
+                        <li class="inline mr-2 mb-2 md:m-0"><a href="/privacy-policy/">Privacy</a></li>
+                        <li class="inline mr-2 mb-2 md:m-0"><a href="/partners/referral-sign-up/">Partnerships</a></li>
+                        <li class="inline mr-2 mb-2 md:m-0"><a href="https://status.flowfuse.com/">Service Status</a></li>
+                        <li class="inline mr-2 mb-2 md:m-0"><a href="/support/">Request Support</a></li>
+                        <li class="inline mr-2 mb-2 md:m-0"><a href="/contact-us/">Contact Us</a></li>
+                        <li class="inline mr-2 mb-2 md:m-0"><a href="/blog/#sign-up" onclick="capture('cta-blog-subscribe', {'position': 'footer'})">Sign Up to Mailing List</a></li>
                     </ul>
                 </div>
-                <div class="w-full">
-                    <h4 class=""><span class="text-xl font-bold">Company</h4>
-                    <ul class="grid grid-cols-2 justify-center text-base sm:block sm:space-y-2">
-                        <li class="inline mr-3 mb-3 md:m-0 md:block"><a href="/about/">About</a></li>
-                        <li class="inline mr-3 mb-3 md:m-0 md:block"><a href="/partners/referral-sign-up/">Partnerships</a></li>
-                        <li class="inline mr-3 mb-3 md:m-0 md:block"><a href="/team/">Team</a></li>
-                        <li class="inline mr-3 mb-3 md:m-0 md:block"><a href="{{ site.jobBoard }}">Jobs</a></li>
-                        <li class="inline mr-3 mb-3 md:m-0 md:block"><a href="/handbook/">Handbook</a></li>
-                        <li class="inline mr-3 mb-3 md:m-0 md:block"><a href="/blog/">News</a></li>
-                        <li class="inline mr-3 mb-3 md:m-0 md:block"><a href="/privacy-policy/">Privacy</a></li>
-                        <li class="inline mr-3 mb-3 md:m-0 md:block"><a href="https://status.flowfuse.com/">Service Status</a></li>
-                        <li class="inline mr-3 mb-3 md:m-0 md:block"><a href="/support/">Request Support</a></li>
-                        <li class="inline mr-3 mb-3 md:m-0 md:block"><a href="/contact-us/">Contact Us</a></li>
+                <div class="w-full md:row-span-2">
+                    <ul class="flex flex-row w-full text-base justify-between sm:justify-start sm:gap-x-6 md:justify-end">
+                        <li class="inline mr-2 mb-2 md:m-0 md:block"><a href="https://github.com/flowforge">{% include "components/github.njk" %}</a></li>
+                        <li class="inline mr-2 mb-2 md:m-0 md:block"><a href="https://twitter.com/FlowFuseInc">{% include "components/twitter.njk" %}</a></li>
+                        <li class="inline mr-2 mb-2 md:m-0 md:block"><a class="m-auto" href="https://www.youtube.com/channel/UCbBzP8NZbv3WDtlt4UouA-g">{% include "components/youtube.njk" %}</a></li>
+                        <li class="inline mr-2 mb-2 md:m-0 md:block"><a href="https://www.linkedin.com/company/flowfuse">{% include "components/linkedin.njk" %}</a></li>
+                        <li class="inline mr-2 mb-2 md:m-0 md:block"><a href="/blog/index.xml">{% include "components/rss.njk" %}</a></li>
                     </ul>
                 </div>
             </div>
@@ -379,7 +376,6 @@ document.getElementById('nav-toggle').onclick = function(){
 window.dataLayer = window.dataLayer || [];
 function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
-
 gtag('config', 'G-2ZH9W82QL8');
 </script>
 </html>

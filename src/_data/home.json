@@ -1,0 +1,43 @@
+[{
+    "title": "Access and <span class=\"text-red-600\">transform any data,<\/span> over any protocol",
+    "content": "Getting access to data from your operations is key to the start of a digital transformation. Node-RED makes it easy to access and transform data over any protocol.",
+    "image": "connect_device_red",
+    "imagealt": "data transformation"
+  },
+  {
+    "title": "Build <span class=\"text-red-600\">bespoke solutions<\/span> that fits like a glove",
+    "content": "Off the shelf solutions never work out of the box. Build solutions leveraging the power of Node-RED.",
+    "image": "code_red",
+    "imagealt": "icon of code"
+  },
+  {
+    "title": "Manage and configure <span class=\"text-red-600\">Node-RED at scale<\/span>",
+    "content": "FlowFuse manages the deployment  and configuration of all your Node-RED instances from a common platform. FlowFuse automates the process of creating snapshots of Node-RED instances that can be deployed to multiple target edge devices.",
+    "image": "scalable_red",
+    "imagealt": "scalability"
+  },
+  {
+    "title": "Allow <span class=\"text-red-600\">teams of citizen developers<\/span> to innovate",
+    "content": "Anyone can be a citizen developer using Node-RED to create innovative solutions to their problems. FlowFuse allows teams of citizen developers to collaborate on the same Node-RED flow.",
+    "image": "collaboration_red",
+    "imagealt": "a team of developers"
+  },
+  {
+    "title": "<span class=\"text-red-600\">Reliable Node-RED<\/span> application delivery",
+    "content": "FlowFuse creates a reliable application delivery environment that simplifies the software development lifecycle for Node-RED. Using our DevOps delivery pipelines to support a development, test and production environment to ensure reliable Node-RED application delivery.",
+    "image": "pipeline_red",
+    "imagealt": "a pipeline of Node-RED instances"
+  },
+  {
+    "title": "<span class=\"text-red-600\">Security compliance<\/span> for Node-RED",
+    "content": "FlowFuse provides the role based access control to Node-RED flows that is essential for common security compliance. All developers using FlowFuse require a username and password that grants them access rights to specific Node-RED flows.",
+    "image": "security_red",
+    "imagealt": "a lock"
+  },
+  {
+    "title": "<span class=\"text-red-600\">Professional Support<\/span> for Node-RED deployments",
+    "content": "FlowFuse is the trusted partner for providing professional support for business critical applications, built on Node-RED. Our experts can help with any challenge, ensuring that your Node-RED applications are running smoothly and securely. We keep your systems up-to-date with the latest versions of Node-RED and security updates, ensuring the continuity of your operations.",
+    "image": "support_red",
+    "imagealt": "support"
+  }
+]

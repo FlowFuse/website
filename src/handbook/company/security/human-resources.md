@@ -6,7 +6,7 @@ navTitle: Human Resources Security Policy
 
 | Policy owner   | Effective date |
 | -------------- | -------------- |
-| @Tracy-Anthony     | 2023-06-01     |
+| @ZJvandeWeg    | 2023-06-01     |
 
 ## Purpose
 

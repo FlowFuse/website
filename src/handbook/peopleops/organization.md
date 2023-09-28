@@ -2,6 +2,8 @@
 navTitle: HR Policies
 ---
 
+# PeopleOps policies
+
 All employees at FlowFuse will find HR policies in this section of the handbook. Please note that this section of the handbook will be continuously updated to reflect the evolving needs of our organization. As FlowFuse is actively in the process of developing and incorporating additional policies, we encourage you to check back regularly for the latest updates. Your familiarity with these policies ensures that you stay informed and aligned with our company's values and practices.
 
 ## Grievance Procedure
@@ -43,8 +45,3 @@ FlowFuse is firmly committed to preserving the confidentiality of all parties in
 FlowFuse strictly prohibits any form of retaliation against employees who raise grievances in good faith. Any acts of retaliation will be treated as distinct violations of company policy.
 
 This Grievance Policy is designed to ensure that employee concerns are treated fairly and promptly. FlowFuse is unwavering in its dedication to fostering an inclusive and respectful workplace and will consistently refine its policies and practices based on feedback and evolving industry standards.
-
-
-
-
-

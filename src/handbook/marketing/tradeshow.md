@@ -3,11 +3,11 @@ navTitle: Marketing
 navGroup: Sales & Marketing
 ---
 
-## Trade show
+# Trade show
 
-### As visitor
+## As visitor
 
-#### Preparation before the fair
+### Preparation before the fair
 
 When visiting a trade show you should prepare your trip. Fairs usually publish a
 list of exhibitioners. Scan that list with names you want to visit, and write
@@ -18,7 +18,7 @@ also [the traveling salesperson problem](https://en.wikipedia.org/wiki/Travellin
 Further, please get yourself a few business cards. While a bit old-skool, they
 serve a purpose and are easy to give out.
 
-#### Stand visits
+### Stand visits
 
 Each conversation you have and stand you visit, try to understand who you want
 to talk to and what your goal is. It's OK to ask someone at the booth if they're
@@ -33,7 +33,7 @@ connection if one side forgets to reach out or loses your business card.
 
 Your phone is kept in your pocket at all times. 
 
-#### Post-visit
+### Post-visit
 
 Go through the business cards you collected and reach out to _each and everyone_
 of them. Thank them for the conversation and ask if there's any questions

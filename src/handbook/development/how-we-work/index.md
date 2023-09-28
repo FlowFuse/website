@@ -2,6 +2,8 @@
 navTitle: How We Work
 ---
 
+# How we Work - Development
+
 This section is useful to read if you are going to be contributing to FlowFuse. It contains
 details on our development best practices, security practices and how to navigate and understand 
 our GitHub processes.
