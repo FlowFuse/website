@@ -19,7 +19,7 @@ We're pleased to announce version 1.1 is now available! The latest release of th
 
 ## Features
 
-[Persistent File Storage](https://github.com/flowforge/flowforge/issues/998) We've had a great deal of feedback
+[Persistent File Storage](https://github.com/FlowFuse/flowforge/issues/998) We've had a great deal of feedback
 from our customers that being able to persist files in a project is a vital feature
 in Node-RED. In FlowFuse 1.1 flows can now create and persist files within
 your Projects. We know those files are used in many creative ways and we're looking
@@ -30,7 +30,7 @@ work on Node-RED in a local environment but want an easy path to share that with
 
 ## Improvements
 
-[Project Deployments UX](https://github.com/flowforge/flowforge/issues/1046)
+[Project Deployments UX](https://github.com/FlowFuse/flowforge/issues/1046)
 We've reworked the interface for managing your FlowFuse Deployments of Node-RED.
 We are seeing FlowFuse users deploying their Projects to edge devices at scale.
 This is another step towards making it easier for users to manage a large quantity
@@ -50,26 +50,26 @@ administrators time when installing FlowFuse.
 
 ## Bug Fixes
 
-The v1.0.1 release included a bug fix where [snapshot rollbacks](https://github.com/flowforge/flowforge/issues/1186)
+The v1.0.1 release included a bug fix where [snapshot rollbacks](https://github.com/FlowFuse/flowforge/issues/1186)
 didn't work, which has also been included in v1.1 onwards.
 
 We've fixed the following bugs in this release.
 
-- When installing the stack during a FlowFuse installation the process would quit on Windows [#62](https://github.com/flowforge/installer/issues/62)
+- When installing the stack during a FlowFuse installation the process would quit on Windows [#62](https://github.com/FlowFuse/installer/issues/62)
 
-- After accepting an invite to join a team, users are no longer seeing a blank page [#1208](https://github.com/flowforge/flowforge/issues/1208)
+- After accepting an invite to join a team, users are no longer seeing a blank page [#1208](https://github.com/FlowFuse/flowforge/issues/1208)
 
-- Pagination on device deployments wasn't showing all devices [#1207](https://github.com/flowforge/flowforge/issues/1207)
+- Pagination on device deployments wasn't showing all devices [#1207](https://github.com/FlowFuse/flowforge/issues/1207)
 
-- Markdown rendering when selecting the project type wasn't quite working, fixed now! [#1171](https://github.com/flowforge/flowforge/issues/1171)
+- Markdown rendering when selecting the project type wasn't quite working, fixed now! [#1171](https://github.com/FlowFuse/flowforge/issues/1171)
 
-- Continuous spinner in UI body when entering a new (short) password [#1280](https://github.com/flowforge/flowforge/issues/1280)
+- Continuous spinner in UI body when entering a new (short) password [#1280](https://github.com/FlowFuse/flowforge/issues/1280)
 
-- Friendly stack name not shown in the Change Project Stack option list [#1169](https://github.com/flowforge/flowforge/issues/1169)
+- Friendly stack name not shown in the Change Project Stack option list [#1169](https://github.com/FlowFuse/flowforge/issues/1169)
 
-- The stacks view in the admin area didn't render properly [#1260](https://github.com/flowforge/flowforge/issues/1260)
+- The stacks view in the admin area didn't render properly [#1260](https://github.com/FlowFuse/flowforge/issues/1260)
 
-- Like the deployments page, pagination for stacks was broken. [#1164](https://github.com/flowforge/flowforge/issues/1164)
+- Like the deployments page, pagination for stacks was broken. [#1164](https://github.com/FlowFuse/flowforge/issues/1164)
 
 - Several UX and UI bugs got polished away!
 
@@ -77,7 +77,7 @@ We've fixed the following bugs in this release.
 
 We'd like the thank the following for their contributions to this release:
 
-[mikermcneil](https://github.com/mikermcneil) for their work on [#1301](https://github.com/flowforge/flowforge/pull/1301)
+[mikermcneil](https://github.com/mikermcneil) for their work on [#1301](https://github.com/FlowFuse/flowforge/pull/1301)
 
 As an open-source project, we welcome community involvement in what we're building.
 If you're interested in contributing, checkout our [guide in the docs](/docs/contribute/).
@@ -106,7 +106,7 @@ guide for [upgrading your FlowFuse instance](/docs/upgrade/)
 
 Please check FlowFuse's [documentation](/docs/) as the answers to many questions are covered there.
 
-If you hit any problems with the platform please raise an [issue on GitHub](https://github.com/flowforge/flowforge/issues).
+If you hit any problems with the platform please raise an [issue on GitHub](https://github.com/FlowFuse/flowforge/issues).
 That also includes if you have any feedback or feature requests.
 
 Chat with us on the `#flowforge` channel on the [Node-RED Slack workspace](https://nodered.org/slack).

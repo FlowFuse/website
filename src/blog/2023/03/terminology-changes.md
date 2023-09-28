@@ -47,6 +47,6 @@ FlowFuse can also be used to manage remote Node-RED instances. This is typically
 
 Devices are registered to an Instance, and can be configured to run [Snapshots](/docs/user/concepts/#instance-snapshot) of the Instance running in FlowFuse.
 
-To accomplish this remote management capability, the [FlowFuse Device Agent](https://github.com/flowforge/flowforge-device-agent) needs to be installed on each device. Devices are registered with a Team, and then the appropriate device(s) are assigned to a Node-RED instance that should be deployed to the device(s). When the Node-RED instance is ready for deployment, a user creates a snapshot of the instance and marks it as a target snapshot for the device.
+To accomplish this remote management capability, the [FlowFuse Device Agent](https://github.com/FlowFuse/flowforge-device-agent) needs to be installed on each device. Devices are registered with a Team, and then the appropriate device(s) are assigned to a Node-RED instance that should be deployed to the device(s). When the Node-RED instance is ready for deployment, a user creates a snapshot of the instance and marks it as a target snapshot for the device.
 
 We hope these changes will simplify the FlowFuse terminology for our users and allow us to grow the FlowFuse platform. If you have any feedback or thoughts, please do reach out to us.

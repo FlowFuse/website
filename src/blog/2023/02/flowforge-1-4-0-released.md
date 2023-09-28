@@ -25,31 +25,31 @@ To make it easy for everyone to experience FlowFuse, we are introducing a new fr
 
 **Automatic Device Provisioning**
 
-Most prominently, FlowFuse 1.4 features automatic device onboarding for fleets. Simply download a FlowFuse device provisioning credential to allow quick roll-out to a whole fleet, without the need to have device specific configuration. When the agent starts, the FlowFuse agent and the Node-RED snapshot will automatically be provisioned to the device and start operations. [Issue #1212](https://github.com/flowforge/flowforge/issues/1212)
+Most prominently, FlowFuse 1.4 features automatic device onboarding for fleets. Simply download a FlowFuse device provisioning credential to allow quick roll-out to a whole fleet, without the need to have device specific configuration. When the agent starts, the FlowFuse agent and the Node-RED snapshot will automatically be provisioned to the device and start operations. [Issue #1212](https://github.com/FlowFuse/flowforge/issues/1212)
 
 
 <div><iframe width="560" height="315" src="https://www.youtube.com/embed/XTVw4O4-Crg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 **Support for Staged Development**
 
-A new feature of 1.4 is the ability to setup staged deployments. This makes it possible to simply move a project between a Development > Test > Production for your Node-RED application delivery. [Issue #1580](https://github.com/flowforge/flowforge/issues/1580)
+A new feature of 1.4 is the ability to setup staged deployments. This makes it possible to simply move a project between a Development > Test > Production for your Node-RED application delivery. [Issue #1580](https://github.com/FlowFuse/flowforge/issues/1580)
 
 
 <div><iframe width="560" height="315" src="https://www.youtube.com/embed/6QOmotlrwWw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ## Improvements
 
-- It's now much easier to change the resources available to your Node-RED instance. With a few clicks a resource intensive workload can be processed faster by changing between small, medium, or large instance types. [#595](https://github.com/flowforge/flowforge/issues/595)
+- It's now much easier to change the resources available to your Node-RED instance. With a few clicks a resource intensive workload can be processed faster by changing between small, medium, or large instance types. [#595](https://github.com/FlowFuse/flowforge/issues/595)
 
-- Last release allows users to capture flows in a shared library to reuse in another flow, now it's possible to preview the stored flows. [#1657](https://github.com/flowforge/flowforge/issues/1657)
+- Last release allows users to capture flows in a shared library to reuse in another flow, now it's possible to preview the stored flows. [#1657](https://github.com/FlowFuse/flowforge/issues/1657)
 
-- Add a synchronous mode for the FlowFuse persisted context store, next to the asynchronous mode already available. [#17](https://github.com/flowforge/flowforge-nr-persistent-context/issues/17)
+- Add a synchronous mode for the FlowFuse persisted context store, next to the asynchronous mode already available. [#17](https://github.com/FlowFuse/flowforge-nr-persistent-context/issues/17)
 
-- Add a Last Seen status for devices connecting to FlowFuse. [#1599](https://github.com/flowforge/flowforge/issues/1599)
+- Add a Last Seen status for devices connecting to FlowFuse. [#1599](https://github.com/FlowFuse/flowforge/issues/1599)
 
-- Added a check to ensure the team slug is unique. [#1609](https://github.com/flowforge/flowforge/issues/1609)
+- Added a check to ensure the team slug is unique. [#1609](https://github.com/FlowFuse/flowforge/issues/1609)
 
-- Optionally set snapshot as target at creation, to quickly roll out changes to remote deployments [#1527](https://github.com/flowforge/flowforge/issues/1527)
+- Optionally set snapshot as target at creation, to quickly roll out changes to remote deployments [#1527](https://github.com/FlowFuse/flowforge/issues/1527)
 - Agents are more rugged when starting up if they're unable to connect to FlowFuse, and will retry to connect.
 
 - With FlowFuse v1.4 some changes were made under the hood to speed up the recovery
@@ -61,15 +61,15 @@ To migrate the old style of deployments to this system a restart or stack upgrad
 ## Bug Fixes
 
 We've fixed the following bugs in this release.
-- Deleting your only team, doesn't exit from the team UI. [#1630](https://github.com/flowforge/flowforge/issues/1630)
-- Async Team Slug Check. [#1609](https://github.com/flowforge/flowforge/issues/1609)
-- Improve communication of Device Last Seen and Status [#1599](https://github.com/flowforge/flowforge/issues/1599)
+- Deleting your only team, doesn't exit from the team UI. [#1630](https://github.com/FlowFuse/flowforge/issues/1630)
+- Async Team Slug Check. [#1609](https://github.com/FlowFuse/flowforge/issues/1609)
+- Improve communication of Device Last Seen and Status [#1599](https://github.com/FlowFuse/flowforge/issues/1599)
 
 
 ## Contributors
 
 We'd like the thank the following for their contributions to this release:
-- [UlisesGascon](https://github.com/UlisesGascon) for their work on [#74](https://github.com/flowforge/installer/pull/74)
+- [UlisesGascon](https://github.com/UlisesGascon) for their work on [#74](https://github.com/FlowFuse/installer/pull/74)
 
 As an open-source project, we welcome community involvement in what we're building.
 If you're interested in contributing, checkout our [guide in the docs](/docs/contribute/).
@@ -92,12 +92,12 @@ guide for [upgrading your FlowFuse instance](/docs/upgrade/).
 
 Please check FlowFuse's [documentation](/docs/) as the answers to many questions are covered there.
 
-If you hit any problems with the platform please raise an [issue on GitHub](https://github.com/flowforge/flowforge/issues).
+If you hit any problems with the platform please raise an [issue on GitHub](https://github.com/FlowFuse/flowforge/issues).
 That's also a great place to send us any feedback or feature requests.
 
 You can also get help on [the Node-RED forums](https://discourse.nodered.org/)
 
-As well as in the [forum within our Github project](https://github.com/flowforge/flowforge/discussions)
+As well as in the [forum within our Github project](https://github.com/FlowFuse/flowforge/discussions)
 
 Chat with us on the `#flowforge` channel on the [Node-RED Slack workspace](https://nodered.org/slack)
 

@@ -24,7 +24,7 @@ gives us a solid framework to build on.
 
 ![](./images/ff-05-dashboard.png)
 
- - [Epic #430 - Rebrand Forage App](https://github.com/flowforge/flowforge/issues/430)
+ - [Epic #430 - Rebrand Forage App](https://github.com/FlowFuse/flowforge/issues/430)
 
 ### Copying Projects
 
@@ -43,9 +43,9 @@ The Project settings page has two new options:
 
 In both cases, you get to pick what parts of the project should be copied.
 
- - [Epic #268 - Export Project](https://github.com/flowforge/flowforge/issues/268)
- - [Story #271 - Duplicate Project](https://github.com/flowforge/flowforge/issues/271)
- - [Story #272 - Export to Existing Project](https://github.com/flowforge/flowforge/issues/272)
+ - [Epic #268 - Export Project](https://github.com/FlowFuse/flowforge/issues/268)
+ - [Story #271 - Duplicate Project](https://github.com/FlowFuse/flowforge/issues/271)
+ - [Story #272 - Export to Existing Project](https://github.com/FlowFuse/flowforge/issues/272)
 
 ### Improve Billing Information
 
@@ -53,7 +53,7 @@ We've been getting some great feedback from the users of FlowFuse Cloud. One of 
 areas we identified as needing some more clarity was around the point users are
 asked to setup their billing information.
 
- - [Story #563 - Improve Information on billing](https://github.com/flowforge/flowforge/issues/563)
+ - [Story #563 - Improve Information on billing](https://github.com/FlowFuse/flowforge/issues/563)
 
 ### Edge Devices
 
@@ -76,7 +76,7 @@ see any of this quite yet.
 The next release will introduce the Edge Agent piece of this - the bit that runs
 on devices.
 
-- [Epic #446 - Devices](https://github.com/flowforge/flowforge/issues/446)
+- [Epic #446 - Devices](https://github.com/FlowFuse/flowforge/issues/446)
 
 ### Upgrading FlowFuse
 
@@ -86,7 +86,7 @@ guide for [upgrading FlowFuse on a local server](/docs/upgrade/#upgrading-flowfu
 ### Getting help
 
 If you hit any problems with the platform, or have questions to ask, please do
-raise an [issue on GitHub](https://github.com/flowforge/flowforge/issues).
+raise an [issue on GitHub](https://github.com/FlowFuse/flowforge/issues).
 
 That also includes if you have any feedback or feature requests.
 

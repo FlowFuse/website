@@ -9,7 +9,7 @@ Instructions for creating a release are [here](./process.md).
 ## Cadence
 
 FlowFuse is released every four weeks, on a Thursday. We track releases using
-GitHub Milestones. The current schedule of releases can be seen [here](https://github.com/flowforge/flowforge/milestones).
+GitHub Milestones. The current schedule of releases can be seen [here](https://github.com/FlowFuse/flowforge/milestones).
 
 Our planning process is continually evolving as we find the right way to accommodate
 both a growing team and a growing set of requirements on both how and what we deliver.
@@ -192,7 +192,7 @@ by the CTO. This meeting includes 2 parts:
     3. Identifying the release manager - the person who will co-ordinate things
        on release day.
          - Once identified, they take the action to create the next release issue
-           using the [Release Template](https://github.com/flowforge/admin/issues/new?assignees=&labels=&template=release.md&title=Release%3A){rel="nofollow"}
+           using the [Release Template](https://github.com/FlowFuse/admin/issues/new?assignees=&labels=&template=release.md&title=Release%3A){rel="nofollow"}
            in the `flowforge/admin` repo.
 
 ## What to work on

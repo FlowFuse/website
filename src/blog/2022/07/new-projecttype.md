@@ -21,7 +21,7 @@ Medium projects have 3 times the resources of the existing Small type, allowing 
 
 Our Medium project is priced at $50 a month and we'll be adding new features to this project type in the coming months to further enhance the value of this new tier.
 
-We don't currently support directly upgrading a project between types, but that is in the [plan for the future](https://github.com/flowforge/flowforge/issues/595). In the meantime, you can use the 'Export Project' feature on a project's settings tab to copy it over into a new Medium type project.
+We don't currently support directly upgrading a project between types, but that is in the [plan for the future](https://github.com/FlowFuse/flowforge/issues/595). In the meantime, you can use the 'Export Project' feature on a project's settings tab to copy it over into a new Medium type project.
 
 
 

@@ -21,7 +21,7 @@ Sheets and [Data Studio](https://datastudio.google.com/).
 ### Source to sink
 
 We've adopted Meltano to obtain and transfer the data. See also the
-[FlowFuse-Data](https://github.com/flowforge/flowforge-data){rel="nofollow"}
+[FlowFuse-Data](https://github.com/FlowFuse/flowforge-data){rel="nofollow"}
 (Internal project)
 on how we transfer the data. It's manually triggered for now.
 

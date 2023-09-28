@@ -24,30 +24,30 @@ The progress bars presented adjacent to each category are rough estimates, offer
 ### Advancing Enterprise-Readiness 
 ![](https://geps.dev/progress/30)
 
-- [High availability & Scalability](https://github.com/flowforge/flowforge/issues/1678)
+- [High availability & Scalability](https://github.com/FlowFuse/flowforge/issues/1678)
 
 - Improve DevOps Pipelines
 
-- [VPN support for Instances](https://github.com/flowforge/flowforge/issues/1570)
+- [VPN support for Instances](https://github.com/FlowFuse/flowforge/issues/1570)
 
-- [Introduce Value Layer Model](https://github.com/flowforge/flowforge/issues/2167)
+- [Introduce Value Layer Model](https://github.com/FlowFuse/flowforge/issues/2167)
 
-- [Implement "Organization" as an additional hierarchy level](https://github.com/flowforge/flowforge/issues/2338)
+- [Implement "Organization" as an additional hierarchy level](https://github.com/FlowFuse/flowforge/issues/2338)
 
 
 ### Node-RED Deployments at the Edge (Device Management)
 ![](https://geps.dev/progress/0)
 
-- [Device can be managed independently of Instances on Application level](https://github.com/flowforge/flowforge/issues/2334)
+- [Device can be managed independently of Instances on Application level](https://github.com/FlowFuse/flowforge/issues/2334)
 
-- [Grouped Device Deployments](https://github.com/flowforge/flowforge/issues/1509)
+- [Grouped Device Deployments](https://github.com/FlowFuse/flowforge/issues/1509)
 
 ### Enhanced Integration Capabilities
 ![](https://geps.dev/progress/0)
 
-- [Official Support for selected Node-RED nodes](https://github.com/flowforge/flowforge/issues/1901)
+- [Official Support for selected Node-RED nodes](https://github.com/FlowFuse/flowforge/issues/1901)
 
-- [Support for custom NPM Module registry](https://github.com/flowforge/flowforge/issues/217)
+- [Support for custom NPM Module registry](https://github.com/FlowFuse/flowforge/issues/217)
 
 - [Visibility of different palette catalogues in Node-RED](https://github.com/node-red/node-red/issues/4057)
 
@@ -57,11 +57,11 @@ The progress bars presented adjacent to each category are rough estimates, offer
 
 - Version 1.0 of the Node-RED Dashboard successor, with a comparable feature set like [Node-RED Dashboard](https://github.com/node-red/node-red-dashboard).
 
-- FlowFuse Dashboard extension (Version 1.0) allowing [user specific dashboards](https://github.com/flowforge/flowforge-nr-dashboard/issues/1) and RBAC.
+- FlowFuse Dashboard extension (Version 1.0) allowing [user specific dashboards](https://github.com/FlowFuse/flowforge-nr-dashboard/issues/1) and RBAC.
 
 ### User-Friendly Low-Code Approach 
 ![](https://geps.dev/progress/0)
 
-- [Immersive Node-RED experience](https://github.com/flowforge/flowforge/issues/2246)
+- [Immersive Node-RED experience](https://github.com/FlowFuse/flowforge/issues/2246)
 
 - First out of the box IIoT Solutions template (e.g. ANDON for Node-RED)

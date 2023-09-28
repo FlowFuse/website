@@ -10,7 +10,7 @@ When advertising for a role on Social Media, engagement is improved (and therefo
 we reach a higher audience) with custom social tiles.
 
 We can add URLs to our site that provide a nice tile, whilst then redirecting to
-the job advert on Greenhouse. This was introduced [here](https://github.com/flowforge/website/pull/728).
+the job advert on Greenhouse. This was introduced [here](https://github.com/FlowFuse/website/pull/728).
 
 ### Adding a new role to the website
 
@@ -25,7 +25,7 @@ To participate in FlowFuse's employee referral program, kindly send all referral
 
 ### Sharing an Existing Role
 
-The URLs for the existing roles we have on the website are any files found in [here](https://github.com/flowforge/website/tree/main/src/jobs).
+The URLs for the existing roles we have on the website are any files found in [here](https://github.com/FlowFuse/website/tree/main/src/jobs).
 The URL will be structured accordingly: `/jobs/<job-short-title>`
 
 ## Interviews
@@ -58,7 +58,7 @@ Onboarding on our EOR provider, Deel, takes at least 2 to 3 weeks. The start
 date for a new employee should be at least 2 to 3 weeks out. When a
 [conditional offer](#extending-an-offer) has been accepted you should immediately:
 
-1. [Create an onboarding issue](https://github.com/flowforge/admin/issues/new/choose){rel="nofollow"} on the admin GitHub project
+1. [Create an onboarding issue](https://github.com/FlowFuse/admin/issues/new/choose){rel="nofollow"} on the admin GitHub project
 1. Invite the prospective employee to join Deel, assign them to their designated department, and deliver their offer letters through the Deel platform.
 1. Add their stock options to the stock option request spreadsheets
    * Copy or create a new monthly request sheet from [this template](https://docs.google.com/spreadsheets/d/1AG75qONjObto3g2oJH_SC4gjgRsYJmKUI3fjrZuktm0/edit#gid=1970623412){rel="nofollow"}
@@ -208,7 +208,7 @@ At FlowFuse, we conduct Exit Interviews for employees who choose to leave the co
 
 ### Offboarding Issue
 
-The People Ops manager will create a new off boarding issue for each instance of a team member leaving. The template maintained on GitHub, create a new issue though [this link](https://github.com/flowforge/admin/issues/new/choose).
+The People Ops manager will create a new off boarding issue for each instance of a team member leaving. The template maintained on GitHub, create a new issue though [this link](https://github.com/FlowFuse/admin/issues/new/choose).
 
 ### Final Pay
 

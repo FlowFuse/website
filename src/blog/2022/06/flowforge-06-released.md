@@ -20,7 +20,7 @@ we're taking the next steps in that direction.
 
 ### Devices
 
-This release includes the first alpha release of the [FlowFuse Device Agent](https://github.com/flowforge/flowforge-device-agent). This is a small piece of node.js software that can be
+This release includes the first alpha release of the [FlowFuse Device Agent](https://github.com/FlowFuse/flowforge-device-agent). This is a small piece of node.js software that can be
 installed on a device, such as a Raspberry Pi. It connects back to the FlowFuse
 platform to get the Node-RED flows it should be running.
 
@@ -37,7 +37,7 @@ to get something working - but it isn't our long term strategy. We'll be working
 towards a more IoT-native MQTT/WebSocket appoach in the coming releases.
 
  - [Devices documentation](/docs/user/devices/)
- - [Epic #446 - Devices](https://github.com/flowforge/flowforge/issues/446)
+ - [Epic #446 - Devices](https://github.com/FlowFuse/flowforge/issues/446)
 
 ### Snapshots
 
@@ -50,7 +50,7 @@ We don't have the ability to revert a project back to a previous snapshot, but
 that will come soon.
 
  - [Snapshot documentation](/docs/user/snapshots/)
- - [Story #587 - Snapshot/Rollback](https://github.com/flowforge/flowforge/issues/587)
+ - [Story #587 - Snapshot/Rollback](https://github.com/FlowFuse/flowforge/issues/587)
 
 ### Other updates
 
@@ -75,7 +75,7 @@ guide for [upgrading FlowFuse on a local server](/docs/upgrade/#upgrading-flowfu
 ### Getting help
 
 If you hit any problems with the platform, or have questions to ask, please do
-raise an [issue on GitHub](https://github.com/flowforge/flowforge/issues).
+raise an [issue on GitHub](https://github.com/FlowFuse/flowforge/issues).
 
 That also includes if you have any feedback or feature requests.
 

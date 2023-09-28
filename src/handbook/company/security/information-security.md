@@ -167,7 +167,7 @@ external audits.
 ## Exceptions
 
 Requests for an exception to this policy must be submitted to the CTO or CEO for
-approval by raising an issue on the [admin repository](https://github.com/flowforge/admin){rel="nofollow"}
+approval by raising an issue on the [admin repository](https://github.com/FlowFuse/admin){rel="nofollow"}
 or via email if confidentiality is required.
 
 ## Violations & Enforcement

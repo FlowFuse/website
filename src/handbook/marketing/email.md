@@ -21,7 +21,7 @@ These types of email should be stored in HubSpot using the HubSpot interface or 
 
 The marketing team is responsible for sending email to all community members, potential customers and customers that provide updates on FlowFuse and events organized by FlowFuse. Examples of these email include monthly newsletter, webinar promotion, product release, major company announcements, etc.
 
-These types of emails should be sent via HubSpot. To ensure consistency and continuity, the marketing team should be the only team sending community emails via HubSpot. Anyone can request an email to be sent by opening a [GitHub issue on the website repository](https://github.com/flowforge/website/issues).
+These types of emails should be sent via HubSpot. To ensure consistency and continuity, the marketing team should be the only team sending community emails via HubSpot. Anyone can request an email to be sent by opening a [GitHub issue on the website repository](https://github.com/FlowFuse/website/issues).
 
 ### FlowFuse Cloud User emails
 
@@ -32,4 +32,4 @@ These emails will be sent from HubSpot using data based on the user interaction 
 The expectation is that the marketing and customer success team will continuously test different types of email, and email content to improve the conversion rate of the trial period and adoption of FlowFuse Cloud.
 
 FlowFuse Cloud Trial emails should only be sent by the marketing team via HubSpot. Requesting changes to these emails is done by opening a
-[GitHub issue on the website repository](https://github.com/flowforge/website/issues).
+[GitHub issue on the website repository](https://github.com/FlowFuse/website/issues).

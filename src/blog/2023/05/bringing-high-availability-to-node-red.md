@@ -194,7 +194,7 @@ it certainly doesn’t do all of the work for you.
 
 We've identified our initial set of tasks and changes to how we'll run Node-RED
 instance with the k8s environment. You can follow our progress with this
-[issue](https://github.com/flowforge/flowforge/issues/2156) on our backlog.
+[issue](https://github.com/FlowFuse/flowforge/issues/2156) on our backlog.
 
 I hope this post has given some useful insight into the problems we’re looking
 to solve at FlowFuse. As it's such an important requirement for many users we’ll

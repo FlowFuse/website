@@ -13,7 +13,7 @@ tags:
 ---
 
 Recently we [posted a demo of ChatGPT integration in a Node-RED function node](https://www.linkedin.com/posts/flowforge_chatgpt-with-node-red-function-nodes-activity-7052725869684953088-2yOA?utm_source=share&utm_medium=member_desktop) 
-onto our social media accounts. We have now <a href="https://github.com/flowforge/node-red-function-gpt" target="_blank">open-sourced</a> this for all to play with, and **welcome any and all contributions**.
+onto our social media accounts. We have now <a href="https://github.com/FlowFuse/node-red-function-gpt" target="_blank">open-sourced</a> this for all to play with, and **welcome any and all contributions**.
 <!--more-->
 
 ## How it Works - Prompt Engineering
@@ -58,15 +58,15 @@ In order to use it yourself, you will need a [valid API Key from OpenAI](https:/
 ## Additional Features
 
 This was built in about a day by Steve and Joe, and we had plenty of ideas on what we'd like to add to it. We've
-[open-sourced](https://github.com/flowforge/node-red-function-gpt) it, and will add these as issues to the repo, but if anyone want so take a stab at contributing - that'd be most welcome!
+[open-sourced](https://github.com/FlowFuse/node-red-function-gpt) it, and will add these as issues to the repo, but if anyone want so take a stab at contributing - that'd be most welcome!
 
-- **Insert at Cursor ([issue](https://github.com/flowforge/node-red-function-gpt/issues/11)):** Currently, the Ask GPT call will replace _all_ of the content of that tab. Would be great
+- **Insert at Cursor ([issue](https://github.com/FlowFuse/node-red-function-gpt/issues/11)):** Currently, the Ask GPT call will replace _all_ of the content of that tab. Would be great
 to have the code insert wherever the cursor last was in order to add to existing code.
 
-- **Retain Conversation History ([issue](https://github.com/flowforge/node-red-function-gpt/issues/12)):** Each time a new prompt is provided by the Node-RED user, we send a fresh conversation to OpenAI,
+- **Retain Conversation History ([issue](https://github.com/FlowFuse/node-red-function-gpt/issues/12)):** Each time a new prompt is provided by the Node-RED user, we send a fresh conversation to OpenAI,
 meaning that knowledge of previously asked questions are not retained.
 
-- **Client side ChatGPT Config ([issue](https://github.com/flowforge/node-red-function-gpt/issues/13)):** Currently, when you add a new "function-gpt" node you need to select the ChatGTP
+- **Client side ChatGPT Config ([issue](https://github.com/FlowFuse/node-red-function-gpt/issues/13)):** Currently, when you add a new "function-gpt" node you need to select the ChatGTP
 Config node and click "Deploy" before you can ask it a question. Our ChatGPT interaction operates server-side (to
 protect your API key), so Node-RED needs that in the runtime first, before a call to ChatGPT can be made. Ideally,
 we'd be smarter here and pass client-side creds along with the call such that we can use any changes made by the

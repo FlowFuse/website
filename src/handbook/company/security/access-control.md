@@ -50,7 +50,7 @@ application or user access.
 
 ### How to Request Access or Permission to a System
 
-If you require access or permissions (e.g., for AWS, GitHub, HubSpot), please [raise a Ticket/Issue](https://github.com/flowforge/admin/issues/new?assignees=ZJvandeWeg%2C+knolleary&labels=&projects=&template=access-request.md) in our admin repository.
+If you require access or permissions (e.g., for AWS, GitHub, HubSpot), please [raise a Ticket/Issue](https://github.com/FlowFuse/admin/issues/new?assignees=ZJvandeWeg%2C+knolleary&labels=&projects=&template=access-request.md) in our admin repository.
 
 ### Access Authorization and Termination
 

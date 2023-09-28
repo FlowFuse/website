@@ -39,7 +39,7 @@ watch this video.
 
 ### Getting started with FlowFuse
 
-The documentation provides a guide for [installing FlowFuse on a local server](https://github.com/flowforge/flowforge/tree/main/docs).
+The documentation provides a guide for [installing FlowFuse on a local server](https://github.com/FlowFuse/flowforge/tree/main/docs).
 
 We also have drivers for deploying to Docker Compose and Kubernetes based environments
 to enable a larger scale of deployment. We'll have more documentation on those options
@@ -48,7 +48,7 @@ in the near future.
 ### Getting help
 
 If you hit any problems with the platform, or have questions to ask, please do
-raise an [issue on GitHub](https://github.com/flowforge/flowforge/issues).
+raise an [issue on GitHub](https://github.com/FlowFuse/flowforge/issues).
 
 That also includes if you have any feedback or feature requests.
 

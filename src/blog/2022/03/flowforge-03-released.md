@@ -50,8 +50,8 @@ more on the underlying Template concept. But it will be the basis for gradually
 exposing more options for customisation in the future.
 
 
- - [Epic #285 - Project Stacks](https://github.com/flowforge/flowforge/issues/285)
- - [Epic #141 - Project Templates](https://github.com/flowforge/flowforge/issues/141)
+ - [Epic #285 - Project Stacks](https://github.com/FlowFuse/flowforge/issues/285)
+ - [Epic #141 - Project Templates](https://github.com/FlowFuse/flowforge/issues/141)
 
 ### Billing Integration
 
@@ -71,12 +71,12 @@ place today.
 We've structured the code in the repository and updated the LICENSE file to make it
 very clear what parts of the code base are *not* covered by the Apache 2 license.
 
- - [Epic #224 - Billing](https://github.com/flowforge/flowforge/issues/224)
+ - [Epic #224 - Billing](https://github.com/FlowFuse/flowforge/issues/224)
 
 
 ### Getting started with FlowFuse
 
-The documentation provides a guide for [installing FlowFuse on a local server](https://github.com/flowforge/flowforge/tree/main/docs).
+The documentation provides a guide for [installing FlowFuse on a local server](https://github.com/FlowFuse/flowforge/tree/main/docs).
 
 If you haven't played with FlowFuse yet, here's a more complete walk-through
 of the platform:
@@ -86,12 +86,12 @@ of the platform:
 ### Upgrading FlowFuse
 
 If you installed FlowFuse 0.1 or 0.2 and want to upgrade, our documentation provides a
-guide for [upgrading FlowFuse on a local server](https://github.com/flowforge/flowforge/tree/main/docs/install/local#upgrade).
+guide for [upgrading FlowFuse on a local server](https://github.com/FlowFuse/flowforge/tree/main/docs/install/local#upgrade).
 
 ### Getting help
 
 If you hit any problems with the platform, or have questions to ask, please do
-raise an [issue on GitHub](https://github.com/flowforge/flowforge/issues).
+raise an [issue on GitHub](https://github.com/FlowFuse/flowforge/issues).
 
 That also includes if you have any feedback or feature requests.
 

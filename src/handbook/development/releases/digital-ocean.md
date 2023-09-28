@@ -4,7 +4,7 @@ navTitle: Release Process - Digital Ocean
 
 # Digital Ocean Release Process
 
-When a release is tagged in the [Digital Ocean](https://github.com/flowforge/digital-ocean) 
+When a release is tagged in the [Digital Ocean](https://github.com/FlowFuse/digital-ocean) 
 repository a GitHub Action will run and rebuild the image.
 
 Once complete the Release Manager should post to the #dev slack chanel to ask somebody with
