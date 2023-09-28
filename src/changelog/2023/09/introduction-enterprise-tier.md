@@ -1,6 +1,6 @@
 ---
 title: Introducing the Enterprise Tier
-date: 2023-09-28 12:00:00.0
+date: 2023-09-28 12:00:00.1
 authors: ["marian-demme"]
 tags:
     - changelog
