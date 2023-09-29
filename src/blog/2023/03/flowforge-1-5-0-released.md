@@ -20,7 +20,7 @@ With our recently announced [Terminology Changes](/blog/2023/03/terminology-chan
 - **Application**: A group of Node-RED Instances Each instance can run locally (in FlowFuse) or remotely (on Devices)
 - **Instances**: We renamed "Projects" to "Instances" to be more inline with the terminology used in the Node-RED community
 
-As such, our User Experience has been updated to reflect these changes, and allow for further functionality to be introduced with our plans for [Multiple Instances per Application](https://github.com/FlowFuse/flowforge/issues/1689).
+As such, our User Experience has been updated to reflect these changes, and allow for further functionality to be introduced with our plans for [Multiple Instances per Application](https://github.com/FlowFuse/flowfuse/issues/1689).
 
 ### "Applications" View
 
@@ -57,14 +57,14 @@ FlowFuse Cloud is a great place to try out the new Node-RED features, with FlowF
 
 ## Other Improvements
 
-- Update to audit logs to improve usability [[#1800](https://github.com/FlowFuse/flowforge/issues/1800)] [[#1785](https://github.com/FlowFuse/flowforge/issues/1785)]
-- Improve how licensing works with overages, for easier scaling of FlowFuse and your Node-RED Instances [[#1639](https://github.com/FlowFuse/flowforge/issues/1639)] [[#1739](https://github.com/FlowFuse/flowforge/issues/1739)]
+- Update to audit logs to improve usability [[#1800](https://github.com/FlowFuse/flowfuse/issues/1800)] [[#1785](https://github.com/FlowFuse/flowfuse/issues/1785)]
+- Improve how licensing works with overages, for easier scaling of FlowFuse and your Node-RED Instances [[#1639](https://github.com/FlowFuse/flowfuse/issues/1639)] [[#1739](https://github.com/FlowFuse/flowfuse/issues/1739)]
 
 
 ## Bug Fixes
 
-- Device "Last Seen" status shows "never" even though it has previously been seen [[#1723](https://github.com/FlowFuse/flowforge/issues/1723)]
-- Improved Safe Mode launch for small projects [[#1579](https://github.com/FlowFuse/flowforge/issues/1579)]
+- Device "Last Seen" status shows "never" even though it has previously been seen [[#1723](https://github.com/FlowFuse/flowfuse/issues/1723)]
+- Improved Safe Mode launch for small projects [[#1579](https://github.com/FlowFuse/flowfuse/issues/1579)]
 
 
 ## Try it out
@@ -85,12 +85,12 @@ guide for [upgrading your FlowFuse instance](/docs/upgrade/).
 
 Please check FlowFuse's [documentation](/docs/) as the answers to many questions are covered there.
 
-If you hit any problems with the platform please raise an [issue on GitHub](https://github.com/FlowFuse/flowforge/issues).
+If you hit any problems with the platform please raise an [issue on GitHub](https://github.com/FlowFuse/flowfuse/issues).
 That's also a great place to send us any feedback or feature requests.
 
 You can also get help on [the Node-RED forums](https://discourse.nodered.org/)
 
-As well as in the [forum within our Github project](https://github.com/FlowFuse/flowforge/discussions)
+As well as in the [forum within our Github project](https://github.com/FlowFuse/flowfuse/discussions)
 
 Chat with us on the `#flowforge` channel on the [Node-RED Slack workspace](https://nodered.org/slack)
 

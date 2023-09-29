@@ -9,7 +9,7 @@ Instructions for creating a release are [here](./process.md).
 ## Cadence
 
 FlowFuse is released every four weeks, on a Thursday. We track releases using
-GitHub Milestones. The current schedule of releases can be seen [here](https://github.com/FlowFuse/flowforge/milestones).
+GitHub Milestones. The current schedule of releases can be seen [here](https://github.com/FlowFuse/flowfuse/milestones).
 
 Our planning process is continually evolving as we find the right way to accommodate
 both a growing team and a growing set of requirements on both how and what we deliver.

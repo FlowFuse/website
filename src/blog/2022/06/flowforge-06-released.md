@@ -37,7 +37,7 @@ to get something working - but it isn't our long term strategy. We'll be working
 towards a more IoT-native MQTT/WebSocket appoach in the coming releases.
 
  - [Devices documentation](/docs/user/devices/)
- - [Epic #446 - Devices](https://github.com/FlowFuse/flowforge/issues/446)
+ - [Epic #446 - Devices](https://github.com/FlowFuse/flowfuse/issues/446)
 
 ### Snapshots
 
@@ -50,7 +50,7 @@ We don't have the ability to revert a project back to a previous snapshot, but
 that will come soon.
 
  - [Snapshot documentation](/docs/user/snapshots/)
- - [Story #587 - Snapshot/Rollback](https://github.com/FlowFuse/flowforge/issues/587)
+ - [Story #587 - Snapshot/Rollback](https://github.com/FlowFuse/flowfuse/issues/587)
 
 ### Other updates
 
@@ -75,7 +75,7 @@ guide for [upgrading FlowFuse on a local server](/docs/upgrade/#upgrading-flowfu
 ### Getting help
 
 If you hit any problems with the platform, or have questions to ask, please do
-raise an [issue on GitHub](https://github.com/FlowFuse/flowforge/issues).
+raise an [issue on GitHub](https://github.com/FlowFuse/flowfuse/issues).
 
 That also includes if you have any feedback or feature requests.
 

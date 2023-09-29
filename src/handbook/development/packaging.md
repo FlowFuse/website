@@ -58,13 +58,13 @@ This will subscribe to any notifications covering: `issues`, `pulls`, `commits`,
 #### Project Automation
 
 All code repositories must have the Project Automation workflow added. This is done
-by adding [`.github/workflows/project-automation.yml`](https://github.com/FlowFuse/flowforge/blob/main/.github/workflows/project-automation.yml).
+by adding [`.github/workflows/project-automation.yml`](https://github.com/FlowFuse/flowfuse/blob/main/.github/workflows/project-automation.yml).
 This workflow will ensure any opened issues are automatically added to the [Product board](https://github.com/orgs/FlowFuse/projects/3) where it can be triaged and prioritised.
 
 #### Release Publish
 
 For any repositories that contain modules to be published to npm, they should also
-have a copy of [`.github/workflows/release-publish.yml`](https://github.com/FlowFuse/flowforge/blob/main/.github/workflows/release-publish.yml).
+have a copy of [`.github/workflows/release-publish.yml`](https://github.com/FlowFuse/flowfuse/blob/main/.github/workflows/release-publish.yml).
 
 This workflow will publish to npm whenever the repository is tagged with a `vX.Y.Z` format
 tag.
@@ -130,17 +130,17 @@ The `package.json` must contain the following keys
      ```
      "repository": {
         "type": "git",
-        "url": "git+https://github.com/FlowFuse/flowforge.git"
+        "url": "git+https://github.com/FlowFuse/flowfuse.git"
     },
     ```
  - homepage
     ```
-    "homepage": "https://github.com/FlowFuse/flowforge#readme",
+    "homepage": "https://github.com/FlowFuse/flowfuse#readme",
     ```
  - bugs
     ```
     "bugs": {
-        "url": "https://github.com/FlowFuse/flowforge/issues"
+        "url": "https://github.com/FlowFuse/flowfuse/issues"
     },
     ```
  - license
@@ -163,7 +163,7 @@ The `package.json` must contain the following keys
 
 Package numbers should follow the Semantic Versioning Scheme as laid out on [semver.org](https://semver.org/).
 
-Each component will stay in step with the core flowforge/flowforge release numbering for `major.minor` but will increment their own `fix` values as needed. e.g. On release of v0.2.0 all components will tag and release v0.2.0, but can independently release v0.2.1 as needed.
+Each component will stay in step with the core FlowFuse/flowfuse release numbering for `major.minor` but will increment their own `fix` values as needed. e.g. On release of v0.2.0 all components will tag and release v0.2.0, but can independently release v0.2.1 as needed.
 
 Major and minor releases will follow the schedule laid out in the [Cadence](./releases/planning#cadence)
 section of the handbook.
@@ -179,7 +179,7 @@ As we build more FlowFuse specific nodes we will need to add these to the Stacks
 
 #### Localfs
 
-Currently bundled packages for the localfs driver need to be added to the [flowforge-nr-launcher](https://github.com/FlowFuse/flowforge-nr-launcher) `package.json`  and the path to the node needs to be added to the `nodesDir` array in the `lib/lancher.js` file (around line 70). This will be updated in the next release to be controlled by the [flowforge-driver-localfs](https://github.com/FlowFuse/flowforge-driver-localfs) project
+Currently bundled packages for the localfs driver need to be added to the [nr-launcher](https://github.com/FlowFuse/nr-launcher) `package.json`  and the path to the node needs to be added to the `nodesDir` array in the `lib/lancher.js` file (around line 70). This will be updated in the next release to be controlled by the [flowforge-driver-localfs](https://github.com/FlowFuse/driver-localfs) project
 
 #### Docker
 

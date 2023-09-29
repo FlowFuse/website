@@ -22,14 +22,14 @@ Some early feedback identified issues with the resilience of the tunnel we conne
 
 With the FlowFuse 1.9.3 release, now running FlowFuse Cloud, along with the latest version of the Device Agent, we have made the tunnel much more resilient. It can now restablish itself without any intervention from the user - making for a much more seamless experience.
 
- - [#2488](https://github.com/FlowFuse/flowforge/pull/2488)
- - [#2507](https://github.com/FlowFuse/flowforge/pull/2507)
+ - [#2488](https://github.com/FlowFuse/flowfuse/pull/2488)
+ - [#2507](https://github.com/FlowFuse/flowfuse/pull/2507)
 
 ## Other New Features and Bug Fixes
 
-- Fixes incorrect 'start-failed' notifications when restarting an instance [#2505](https://github.com/FlowFuse/flowforge/pull/2505) The system log now includes more information about the callingThe FlowFuse device agent is now supported on Windows [#78](https://github.com/FlowFuse/device-agent/issues/78)
-- Ensures the system logging captures the proper source IP address of requests [#2505](https://github.com/FlowFuse/flowforge/pull/2503)
-- A few documentation updates, including a clarfication on how to run the Device Agent under docker [#2498](https://github.com/FlowFuse/flowforge/pull/2498)
+- Fixes incorrect 'start-failed' notifications when restarting an instance [#2505](https://github.com/FlowFuse/flowfuse/pull/2505) The system log now includes more information about the callingThe FlowFuse device agent is now supported on Windows [#78](https://github.com/FlowFuse/device-agent/issues/78)
+- Ensures the system logging captures the proper source IP address of requests [#2505](https://github.com/FlowFuse/flowfuse/pull/2503)
+- A few documentation updates, including a clarfication on how to run the Device Agent under docker [#2498](https://github.com/FlowFuse/flowfuse/pull/2498)
 
 ## What's next?
 
@@ -37,7 +37,7 @@ We're always working to enhance your experience with FlowFuse. Here's how you ca
 
 - **Roadmap Overview**: Check out our [Product Roadmap Page](/product/roadmap/) to see what we're planning for future updates.
 - **Entire Roadmap**: Visit our [Roadmap on GitHub](https://github.com/orgs/FlowFuse/projects/5) to follow our progress and contribute your ideas.
-- **Feedback**: We're interested in your thoughts about FlowFuse. Your feedback is crucial to us, and we'd love to hear about your experiences with the new features and improvements. Please share your thoughts, suggestions, or report any [issues on GitHub](https://github.com/FlowFuse/flowforge/issues/new/choose). 
+- **Feedback**: We're interested in your thoughts about FlowFuse. Your feedback is crucial to us, and we'd love to hear about your experiences with the new features and improvements. Please share your thoughts, suggestions, or report any [issues on GitHub](https://github.com/FlowFuse/flowfuse/issues/new/choose). 
 
 Together, we can make FlowFuse better with each release!
 

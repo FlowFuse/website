@@ -26,7 +26,7 @@ future we'll continue onboarding users. New users will receive an email from our
 team with their login details and can start creating new workflows with Node-RED
 minutes after.
 
-While the source code of FlowFuse is [available](https://github.com/FlowFuse/flowforge),
+While the source code of FlowFuse is [available](https://github.com/FlowFuse/flowfuse),
 there's a chance you're unfamiliar with what has been built around Node-RED.
 With FlowFuse, our intent is to build a platform to aid with colaboration of
 flows in Node-RED. The first steps to our vision include a managed Node-RED 

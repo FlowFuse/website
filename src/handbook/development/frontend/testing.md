@@ -66,7 +66,7 @@ To make Cypress testing easier, we have created a collection of helper functions
 ```js
 cy.login(<username>, <password>)
 ```
-This will log you into FlowFuse as the given user. The test users are defined in the [test environment](https://github.com/FlowFuse/flowforge/blob/main/test/e2e/frontend/environments/standard.js).
+This will log you into FlowFuse as the given user. The test users are defined in the [test environment](https://github.com/FlowFuse/flowfuse/blob/main/test/e2e/frontend/environments/standard.js).
 
 ```js
 cy.home()

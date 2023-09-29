@@ -17,7 +17,7 @@ If you're using VSCode, then we recommend using the [ESLint extenstion](https://
 
 <img width="429" alt="ESLint - Action on Save" src="../images/eslint_actiononsave.png">
 
-In the case of working with `vue` or `njk` files (found in the [frontend](https://github.com/FlowFuse/flowforge/tree/main/frontend) and [website][website-repo] repositories), then you can add `vue` and `njk` to the `Eslint: Probe` setting in order to enable auto-formatting on save for these file types.
+In the case of working with `vue` or `njk` files (found in the [frontend](https://github.com/FlowFuse/flowfuse/tree/main/frontend) and [website][website-repo] repositories), then you can add `vue` and `njk` to the `Eslint: Probe` setting in order to enable auto-formatting on save for these file types.
 
 <img width="478" alt="ESLint - Probe" src="../images/eslint_probe.png">
 
