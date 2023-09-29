@@ -9,9 +9,9 @@ Our [Product Strategy](/handbook/product/strategy.md) sets out 5 pillars that ou
 
 We use three project boards to plan and track our work.
 
- - [Roadmap Board](https://github.com/orgs/flowforge/projects/5)
- - [Product Board](https://github.com/orgs/flowforge/projects/3/views/1)
- - [Development Board](https://github.com/orgs/flowforge/projects/1/views/1)
+ - [Roadmap Board](https://github.com/orgs/FlowFuse/projects/5)
+ - [Product Board](https://github.com/orgs/FlowFuse/projects/3/views/1)
+ - [Development Board](https://github.com/orgs/FlowFuse/projects/1/views/1)
 
 The detailed planning process can be found [here](../development/releases/planning.md)
 

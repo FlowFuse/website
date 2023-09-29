@@ -28,7 +28,7 @@ FlowFuse APIs are now accessible via personal access tokens (PAT). This makes it
 
 A number of usability improvements have been added to the FlowFuse device management solution to make it more flexible and intuitive to use. These improvements include being able to associate devices at the application level allowing for easier editing of Node-RED instances on edge devices.
 
-## FlowFuse Rebranding [#119](https://github.com/orgs/flowforge/projects/1?pane=issue&itemId=34719640)
+## FlowFuse Rebranding [#119](https://github.com/orgs/FlowFuse/projects/1?pane=issue&itemId=34719640)
 
 Earlier in August, [FlowForge announced](https://flowfuse.com/blog/2023/08/flowforge-is-now-flowfuse/) a change to our company and product name to FlowFuse. Work has begun to change the product branding to FlowFuse. The UI has been rebranded and the remaining points will be changed in the next release.
 
@@ -52,7 +52,7 @@ Earlier in August, [FlowForge announced](https://flowfuse.com/blog/2023/08/flowf
 We're always working to enhance your experience with FlowFuse. Here's how you can stay informed and contribute:
 
 - **Roadmap Overview**: Check out our [Product Roadmap Page](/product/roadmap/) to see what we're planning for future updates.
-- **Entire Roadmap**: Visit our [Roadmap on GitHub](https://github.com/orgs/flowforge/projects/5) to follow our progress and contribute your ideas.
+- **Entire Roadmap**: Visit our [Roadmap on GitHub](https://github.com/orgs/FlowFuse/projects/5) to follow our progress and contribute your ideas.
 - **Feedback**: We're interested in your thoughts about FlowFuse. Your feedback is crucial to us, and we'd love to hear about your experiences with the new features and improvements. Please share your thoughts, suggestions, or report any [issues on GitHub](https://github.com/FlowFuse/flowforge/issues/new/choose). 
 
 Together, we can make FlowFuse better with each release!

@@ -85,5 +85,5 @@ The above demonstrates just a few of the new features in the 0.4.0 Release, but 
 
 As always, thanks for reading and your interested in Dashboard 2.0. If you have any feature requests, bugs/complaints or general feedback, please do reach out, and raise issues on our relevant [GitHub repository](https://github.com/FlowFuse/flowforge-nr-dashboard).
 
-- [Dashboard 2.0 Activity Tracker](https://github.com/orgs/flowforge/projects/15/views/1)
-- [Dashboard 2.0 Planning Board](https://github.com/orgs/flowforge/projects/15/views/4)
+- [Dashboard 2.0 Activity Tracker](https://github.com/orgs/FlowFuse/projects/15/views/1)
+- [Dashboard 2.0 Planning Board](https://github.com/orgs/FlowFuse/projects/15/views/4)
