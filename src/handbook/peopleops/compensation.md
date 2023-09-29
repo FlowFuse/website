@@ -54,7 +54,7 @@ Please note that the benefits offered may be subject to change during your emplo
 
 #### For everyone
 
-- [Unlimited PTO](./leave#vacation-policy)
+- [Unlimited PTO](./leave#holiday-policy)
 - [Launch Lunch](../development/releases/process#launch-lunch)
 - [Dinner Bonus](#dinner-bonus)
 

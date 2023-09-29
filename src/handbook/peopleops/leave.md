@@ -1,5 +1,5 @@
 ---
-navTitle: Vacation & Leave
+navTitle: Holiday & Leave
 ---
 
 # Holiday and Leave
@@ -12,11 +12,12 @@ you. When taking over 2 weeks of consecutively seek approval from your manager.
 
 Before you can take time off you should _always_:
 * Log your time off [in Deel](https://help.letsdeel.com/hc/en-gb/articles/4409044013201-How-do-I-request-time-off-)
+  * Deel disallows [overages on the contracted days off](#holiday-policy), if you cannot file the complete length, file up to the allowance.
 * Add an 'Out of office' appointment in your personal Google Calendar, and decline
    all meetings automatically.
 * Inform fellow team members of your time off, and hand over work that's distributed.
 
-## Vacation Policy
+## Holiday Policy
 
 FlowFuse has a unlimited time off policy. Taking vacation is encouraged for all
 team members. To prevent an undefined number of vacation days to start a race to
