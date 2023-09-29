@@ -20,7 +20,7 @@ In our v0.4.0 release, we've introduced a new "Notebook" layout, alongside a new
 
 The Notebook layout is designed to allow users to create Dashboards structured like a Notebook (most often seen with the likes of [Jupyter Notebooks](https://jupyter.org/) or [ObservableHQ](https://observablehq.com/)).
 
-Here we will deepdive into the Notebook layout, and show how, alongside our new **Markdown Node** ([docs](https://dashboard.flowfuse.com/flowforge-nr-dashboard/nodes/widgets/ui-markdown.html)), **Table Node** ([docs](https://dashboard.flowfuse.com/nodes/widgets/ui-table.html)) and others, it's becoming easier to create dynamic and interactive Dashboards.
+Here we will deepdive into the Notebook layout, and show how, alongside our new **Markdown Node** ([docs](https://dashboard.flowfuse.com/nodes/widgets/ui-markdown.html)), **Table Node** ([docs](https://dashboard.flowfuse.com/nodes/widgets/ui-table.html)) and others, it's becoming easier to create dynamic and interactive Dashboards.
 
 _Note: If you're not familiar with Markdown, it's a simple markup language that allows you to format text. You can learn more about it [here](https://www.markdownguide.org/cheat-sheet/)._
 
@@ -81,9 +81,13 @@ The above effort results in the following output in our Notebook:
 
 ## What else is new in 0.4.0?
 
+<<<<<<< HEAD
 The above demonstrates just a few of the new features in the 0.4.0 Release, but we've also added [other fixes and improvements](https://github.com/FlowFuse/flowforge-nr-dashboard/releases/tag/v0.4.0). In particular, I want to call out Steve's great work on implementing custom class injection, the first of our new ["Dynamic Properties"](https://dashboard.flowfuse.com/user/dynamic-properties.html), of which there will be more (e.g. visibility, disabled, etc.) to come.
+=======
+The above demonstrates just a few of the new features in the 0.4.0 Release, but we've also added [other fixes and improvements](https://github.com/FlowFuse/node-red-dashboard/releases/tag/v0.4.0). In particular, I want to call out Steve's great work on implementing custom class injection, the first of our new ["Dynamic Properties"](https://flowforge.github.io/node-red-dashboard/user/dynamic-properties.html), of which there will be more (e.g. visibility, disabled, etc.) to come.
+>>>>>>> b5afbfb42 (Rename repo references)
 
-As always, thanks for reading and your interested in Dashboard 2.0. If you have any feature requests, bugs/complaints or general feedback, please do reach out, and raise issues on our relevant [GitHub repository](https://github.com/FlowFuse/flowforge-nr-dashboard).
+As always, thanks for reading and your interested in Dashboard 2.0. If you have any feature requests, bugs/complaints or general feedback, please do reach out, and raise issues on our relevant [GitHub repository](https://github.com/FlowFuse/node-red-dashboard).
 
 - [Dashboard 2.0 Activity Tracker](https://github.com/orgs/FlowFuse/projects/15/views/1)
 - [Dashboard 2.0 Planning Board](https://github.com/orgs/FlowFuse/projects/15/views/4)

@@ -42,7 +42,7 @@ Earlier in August, [FlowForge announced](https://flowfuse.com/blog/2023/08/flowf
 
 ## Bug Fixes
 
-- Device running old snapshot [#132](https://github.com/FlowFuse/flowforge-device-agent/issues/132)
+- Device running old snapshot [#132](https://github.com/FlowFuse/device-agent/issues/132)
 
 
 

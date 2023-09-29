@@ -35,7 +35,7 @@ You can now import your existing flow and credentials files straight into your F
 We've made a number of improvements to the overall experience of running FlowFuse.
 
 - Editable Stack labels [#915](https://github.com/FlowFuse/flowforge/issues/915)
-- Check for suitable version of Node on Devices [#37](https://github.com/FlowFuse/flowforge-device-agent/issues/37)
+- Check for suitable version of Node on Devices [#37](https://github.com/FlowFuse/device-agent/issues/37)
 - Realtime Project status details in Project overview  [#990](https://github.com/FlowFuse/flowforge/issues/990)
 - Improve Template creation & Edit Project Settings UX [#1041](https://github.com/FlowFuse/flowforge/issues/1041)
 

@@ -20,7 +20,7 @@ we're taking the next steps in that direction.
 
 ### Devices
 
-This release includes the first alpha release of the [FlowFuse Device Agent](https://github.com/FlowFuse/flowforge-device-agent). This is a small piece of node.js software that can be
+This release includes the first alpha release of the [FlowFuse Device Agent](https://github.com/FlowFuse/device-agent). This is a small piece of node.js software that can be
 installed on a device, such as a Raspberry Pi. It connects back to the FlowFuse
 platform to get the Node-RED flows it should be running.
 

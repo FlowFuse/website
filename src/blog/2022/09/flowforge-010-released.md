@@ -45,7 +45,7 @@ We've fixed the following bugs in this release.
 - [Node-RED Isn't ready when FlowFuse app says it is running following a project restart](https://github.com/FlowFuse/flowforge/issues/941)
 - [Invitations left for deleted teams](https://github.com/FlowFuse/flowforge/issues/923)
 - [Following email verification link twice throws error](https://github.com/FlowFuse/flowforge/issues/1024)
-- [Agent does not log stderr from the Node-RED process](https://github.com/FlowFuse/flowforge-device-agent/issues/21)
+- [Agent does not log stderr from the Node-RED process](https://github.com/FlowFuse/device-agent/issues/21)
 - [On Kubernetes project names can not start with a number](https://github.com/FlowFuse/flowforge/issues/948)
 - [When creating projects stack options do not wrap](https://github.com/FlowFuse/flowforge/issues/930)
 - [Save button in admin user-edit dialog doesn't close dialog](https://github.com/FlowFuse/flowforge/issues/979)

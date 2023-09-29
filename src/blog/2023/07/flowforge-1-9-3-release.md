@@ -27,7 +27,7 @@ With the FlowFuse 1.9.3 release, now running FlowFuse Cloud, along with the late
 
 ## Other New Features and Bug Fixes
 
-- Fixes incorrect 'start-failed' notifications when restarting an instance [#2505](https://github.com/FlowFuse/flowforge/pull/2505) The system log now includes more information about the callingThe FlowFuse device agent is now supported on Windows [#78](https://github.com/FlowFuse/flowforge-device-agent/issues/78)
+- Fixes incorrect 'start-failed' notifications when restarting an instance [#2505](https://github.com/FlowFuse/flowforge/pull/2505) The system log now includes more information about the callingThe FlowFuse device agent is now supported on Windows [#78](https://github.com/FlowFuse/device-agent/issues/78)
 - Ensures the system logging captures the proper source IP address of requests [#2505](https://github.com/FlowFuse/flowforge/pull/2503)
 - A few documentation updates, including a clarfication on how to run the Device Agent under docker [#2498](https://github.com/FlowFuse/flowforge/pull/2498)
 

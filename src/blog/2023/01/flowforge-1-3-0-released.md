@@ -39,7 +39,7 @@ In FlowFuse 1.3 we’ve added the ability to filter your admin logs by user or a
 
 ## Improvements
 
-[Allow installation of FlowFuse on devices which can't access npm](https://github.com/FlowFuse/flowforge-device-agent/issues/45) \
+[Allow installation of FlowFuse on devices which can't access npm](https://github.com/FlowFuse/device-agent/issues/45) \
 We've had feedback from customers that in some cases they want to use FlowFuse devices on hardware which cannot access [Node Package Manager](https://www.npmjs.com/) (npm). In a standard configuration of Node-RED, access to npm is mandatory to run your flows. In FlowFuse 1.3.0 we've added the ability for you to import all the data usually installed from npm without your devices having access to the npm service.
 
 ## Bug Fixes

@@ -41,14 +41,14 @@ We've made a number of improvements to the overall experience of running FlowFus
 - The Team Switch menu has been moved to a more prominent position in the interface, this also makes it easier to see how to create a new team. [#616](https://github.com/FlowFuse/flowforge/issues/616)
 - Notifications have had an overhaul, you will now see waiting invites on all pages. [#515](https://github.com/FlowFuse/flowforge/issues/515)
 - If you are running your own copy of FlowFuse you can now see the version details in the admin pages [#655](https://github.com/FlowFuse/flowforge/issues/655)
-- Device polling is no longer an INFO level message  filling the log on your devices [#10](https://github.com/FlowFuse/flowforge-device-agent/issues/10)
+- Device polling is no longer an INFO level message  filling the log on your devices [#10](https://github.com/FlowFuse/device-agent/issues/10)
 
 
 
 ## Bug Fixes
 We've fixed the following bugs in this release.
-- [Devices now listen on all Interfaces allowing you to run local http servers](https://github.com/FlowFuse/flowforge-device-agent/issues/7)<br>
-- [Solved an issue where a device gets an error  unknown device](https://github.com/FlowFuse/flowforge-device-agent/issues/7)<br>
+- [Devices now listen on all Interfaces allowing you to run local http servers](https://github.com/FlowFuse/device-agent/issues/7)<br>
+- [Solved an issue where a device gets an error  unknown device](https://github.com/FlowFuse/device-agent/issues/7)<br>
 - [The Audit Log in the Forge app displays the correct IP when a user logs in to Node-RED](https://github.com/FlowFuse/flowforge/issues/507)<br>
 - [Resolved an issue with devices downloading snaphots from legacy stacks](https://github.com/FlowFuse/flowforge/issues/507)<br>
 - [Fixed an error where objects in the node-red log would hang the log page](https://github.com/FlowFuse/flowforge/issues/735)<br>

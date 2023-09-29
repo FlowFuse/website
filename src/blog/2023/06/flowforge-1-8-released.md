@@ -70,11 +70,11 @@ No warning given if tying to start device editor when NR is not running [#2233](
 
 Stuck on the form Create a new Application & Instance after using an already known instance name [#2221](https://github.com/FlowFuse/flowforge/issues/2221)
 
-If the device agent finds itself in Developer mode, it stops pulling snapshots from the platform [#97](https://github.com/FlowFuse/flowforge-device-agent/issues/97)
+If the device agent finds itself in Developer mode, it stops pulling snapshots from the platform [#97](https://github.com/FlowFuse/device-agent/issues/97)
 
 Accessing the Admin Settings General page resets the Platform Statstics token [#2140](https://github.com/FlowFuse/flowforge/issues/2140)
 
-Selection of Team and Instance in nr-tools-plugin not possible [#15](https://github.com/FlowFuse/flowforge-nr-tools-plugin/issues/15)
+Selection of Team and Instance in nr-tools-plugin not possible [#15](https://github.com/FlowFuse/nr-tools-plugin/issues/15)
 
 HOME env var not set within Node-RED process [#117](https://github.com/FlowFuse/flowforge-nr-launcher/issues/117)
 

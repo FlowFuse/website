@@ -53,11 +53,11 @@ We've made a number of improvements to the overall experience of running FlowFus
 ## Bug Fixes
 We've fixed the following bugs in this release.
 - [Cannot edit template settings](https://github.com/FlowFuse/flowforge/issues/875)<br>
-- [Project Link Nodes Appear in CE Install](https://github.com/FlowFuse/flowforge-nr-project-nodes/issues/10)
-- [Project Link Nodes MQTT Connection](https://github.com/FlowFuse/flowforge-nr-project-nodes/issues/14)
+- [Project Link Nodes Appear in CE Install](https://github.com/FlowFuse/nr-project-nodes/issues/10)
+- [Project Link Nodes MQTT Connection](https://github.com/FlowFuse/nr-project-nodes/issues/14)
 - [Theme shows white characters on white background](https://github.com/FlowFuse/flowforge-nr-theme/issues/19)
-- [Changing Project on device doesn't remove old modules](https://github.com/FlowFuse/flowforge-device-agent/issues/27)
-- [Device Agent and Node-RED use different time in logs](https://github.com/FlowFuse/flowforge-device-agent/issues/30)
+- [Changing Project on device doesn't remove old modules](https://github.com/FlowFuse/device-agent/issues/27)
+- [Device Agent and Node-RED use different time in logs](https://github.com/FlowFuse/device-agent/issues/30)
 
 
 ## Contributors

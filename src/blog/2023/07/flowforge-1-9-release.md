@@ -33,10 +33,10 @@ A new FlowFuse user role has been created to view Node-RED dashboards. This allo
 
 ## Other New Features
 
-- FlowFuse device agent is now supported on Windows [#78](https://github.com/FlowFuse/flowforge-device-agent/issues/78)
-- Allow local configuration of https/httpStatic on a device [#110](https://github.com/FlowFuse/flowforge-device-agent/issues/110)
+- FlowFuse device agent is now supported on Windows [#78](https://github.com/FlowFuse/device-agent/issues/78)
+- Allow local configuration of https/httpStatic on a device [#110](https://github.com/FlowFuse/device-agent/issues/110)
 - Implementing custom certificate settings for device configuration [#2257](https://github.com/FlowFuse/flowforge/issues/2257)
-- Allow devices to access the "Snapshot ID" and the "Snapshot Name" running on them [#94](https://github.com/FlowFuse/flowforge-device-agent/issues/94)
+- Allow devices to access the "Snapshot ID" and the "Snapshot Name" running on them [#94](https://github.com/FlowFuse/device-agent/issues/94)
 - High Availability logging enhanced: Individual Node-RED Instance replica querying and filtering [#2260](https://github.com/FlowFuse/flowforge/issues/2260)
 - High Availability is now generally available [#2414](https://github.com/FlowFuse/flowforge/issues/2412)
 
@@ -48,7 +48,7 @@ A new FlowFuse user role has been created to view Node-RED dashboards. This allo
 - Broken littie animations [#2354](https://github.com/FlowFuse/flowforge/issues/2354)
 - Instance Logs page doesn't handle errors well [#1083](https://github.com/FlowFuse/flowforge/issues/1083)
 - Device continues to run edited flows once taken out of dev mode [#2323](https://github.com/FlowFuse/flowforge/issues/2323)
-- Device Editor cannot pickup FF theme [#89](https://github.com/FlowFuse/flowforge-device-agent/issues/89)
+- Device Editor cannot pickup FF theme [#89](https://github.com/FlowFuse/device-agent/issues/89)
 
 ## Community Contributions
 

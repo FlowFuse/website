@@ -23,7 +23,7 @@ We're pleased to announce version 0.8 is now available. The next release of the 
 [Project Link Nodes](https://github.com/FlowFuse/flowforge/issues/662)
 We've introduced our first custom FlowFuse nodes to the palette of new projects. The Project Link nodes allow you to easily pass data between different projects within the same team. 
 These projects can be running in the cloud or on devices, with the communication powered by our own internal MQTT broker.
-Try these out today on FlowFuse Cloud by creating a new project or updating your existing project's stack. There's more information in the [README](https://github.com/FlowFuse/flowforge-nr-project-nodes/blob/main/README.md) for the nodes.
+Try these out today on FlowFuse Cloud by creating a new project or updating your existing project's stack. There's more information in the [README](https://github.com/FlowFuse/nr-project-nodes/blob/main/README.md) for the nodes.
 For local installs of FlowFuse, the nodes are only available with an Enterprise Edition license.
 ![](./images/ProjectLink.gif)
 
