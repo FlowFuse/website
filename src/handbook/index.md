@@ -5,8 +5,8 @@ navTitle: Handbook
 # FlowFuse Handbook
 
 This handbook contains all the information about how FlowFuse is run. It's a
-living set of documents - they will evolve with time and expand as we learn
-and discover new things.
+living set of documents - collectively we'll [iterate](https://flowfuse.com/handbook/company/values/#%F0%9F%94%81-iterative-improvement)
+on it as we learn and discover new things.
 
 Whilst instinctively we want to be open in all we do, there will inevitably be 
 content that is [not appropriate to make public][data-class]. That content is not
@@ -60,16 +60,6 @@ conversation about what we do.
 
 #### Contributing
 
-The handbook is maintained on [GitHub](https://github.com/FlowFuse/website/tree/main/src/handbook) and contributions can be made through pull-requests.
-
-All changes merged to the `main` branch will be automatically deployed to the handbook on the
-[FlowFuse website](https://flowfuse.com/handbook).
-
-##### Building the site locally
-
-To run the handbook locally, follow the instructions on the [website repository](https://github.com/FlowFuse/website).
-
-You can access the Handbook at [http://localhost:8080/handbook](http://localhost:8080/handbook).
-This will automatically reload whenever any content is changed.
-
-**Note:** if you modify any of the Handbook's CSS, it may take a while for the website to recognise the changes. As a shortcut, you can run `npm run tailwind` to rebuild the CSS content.
+The handbook is maintained on [GitHub](https://github.com/FlowFuse/website/tree/main/src/handbook)
+and contributions can be made through pull-requests. How to contribute
+is capture in a guide there: [https://github.com/FlowFuse/website#flowfuse-website]
