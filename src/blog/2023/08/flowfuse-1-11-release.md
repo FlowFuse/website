@@ -14,17 +14,17 @@ tags:
 FlowFuse 1.11 introduces a new starter tier for FlowFuse Cloud that makes it easier to get started with FlowFuse and Node-RED.
 
 <!--more-->
-## New FlowFuse Cloud Starter Tier  [#2328](https://github.com/FlowFuse/flowforge/issues/2328)
+## New FlowFuse Cloud Starter Tier  [#2328](https://github.com/FlowFuse/flowfuse/issues/2328)
 
 It is now easier for Node-RED developers to get started with FlowFuse and Node-RED. The new starter tier allows developers to use two Node-RED instances and two remote device deployments. Ideal for creating proof of concepts or running a home automation system with Node-RED. 
 
 FlowFuse provides a cloud hosted version of Node-RED so developers don't need to worry about Node-RED installation or operation. This makes it a lot easier to get started with Node-RED and easier to maintain a running instance. 
 
 
-## FlowFuse API access now possible via personal access tokens [#14](https://github.com/FlowFuse/flowforge/issues/14)
+## FlowFuse API access now possible via personal access tokens [#14](https://github.com/FlowFuse/flowfuse/issues/14)
 FlowFuse APIs are now accessible via personal access tokens (PAT). This makes it possible to create automation scripts that interact with the FlowFuse platform using the API and authenticate the scripts with the PAT. 
 
-## Usability Improvements to Device Management [#2294](https://github.com/FlowFuse/flowforge/issues/2334)
+## Usability Improvements to Device Management [#2294](https://github.com/FlowFuse/flowfuse/issues/2334)
 
 A number of usability improvements have been added to the FlowFuse device management solution to make it more flexible and intuitive to use. These improvements include being able to associate devices at the application level allowing for easier editing of Node-RED instances on edge devices.
 
@@ -34,15 +34,15 @@ Earlier in August, [FlowForge announced](https://flowfuse.com/blog/2023/08/flowf
 
 ## Other New Features
 
-- Add ability to add a description to an application and display it in the portal [#2279](https://github.com/FlowFuse/flowforge/issues/2279)
-- UI Improvements to device management [#2427](https://github.com/FlowFuse/flowforge/issues/2427)
+- Add ability to add a description to an application and display it in the portal [#2279](https://github.com/FlowFuse/flowfuse/issues/2279)
+- UI Improvements to device management [#2427](https://github.com/FlowFuse/flowfuse/issues/2427)
 - Improve landing page for documentation [#842](https://github.com/FlowFuse/website/issues/842)
-- Restructure of user interface navigation [#2474](https://github.com/FlowFuse/flowforge/issues/2474)
+- Restructure of user interface navigation [#2474](https://github.com/FlowFuse/flowfuse/issues/2474)
 
 
 ## Bug Fixes
 
-- Device running old snapshot [#132](https://github.com/FlowFuse/flowforge-device-agent/issues/132)
+- Device running old snapshot [#132](https://github.com/FlowFuse/device-agent/issues/132)
 
 
 
@@ -53,7 +53,7 @@ We're always working to enhance your experience with FlowFuse. Here's how you ca
 
 - **Roadmap Overview**: Check out our [Product Roadmap Page](/product/roadmap/) to see what we're planning for future updates.
 - **Entire Roadmap**: Visit our [Roadmap on GitHub](https://github.com/orgs/FlowFuse/projects/5) to follow our progress and contribute your ideas.
-- **Feedback**: We're interested in your thoughts about FlowFuse. Your feedback is crucial to us, and we'd love to hear about your experiences with the new features and improvements. Please share your thoughts, suggestions, or report any [issues on GitHub](https://github.com/FlowFuse/flowforge/issues/new/choose). 
+- **Feedback**: We're interested in your thoughts about FlowFuse. Your feedback is crucial to us, and we'd love to hear about your experiences with the new features and improvements. Please share your thoughts, suggestions, or report any [issues on GitHub](https://github.com/FlowFuse/flowfuse/issues/new/choose). 
 
 Together, we can make FlowFuse better with each release!
 

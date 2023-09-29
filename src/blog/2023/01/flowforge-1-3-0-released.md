@@ -22,33 +22,33 @@ To make it easy for everyone to experience FlowFuse, we are introducing a new [f
 
 ## Features
 
-[Share your flows via team libraries](https://github.com/FlowFuse/flowforge/issues/237) \
+[Share your flows via team libraries](https://github.com/FlowFuse/flowfuse/issues/237) \
 FlowFuse has now added the ability for you to share your flows via the import and export features in Node-RED. Once you export a flow everyone else in your FlowFuse team will be able to import your work into their projects. You can see a demonstration of this new feature in [the video](https://youtu.be/B7XK3TUklUU) below.
 
 <div><iframe width="560" height="315" src="https://www.youtube.com/embed/B7XK3TUklUU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-[Control access to your Node-RED dashboards using FlowFuse credentials](https://github.com/FlowFuse/flowforge/issues/1325) \
+[Control access to your Node-RED dashboards using FlowFuse credentials](https://github.com/FlowFuse/flowfuse/issues/1325) \
 In FlowFuse 0.10 we added the ability to secure endpoints created within your FlowFuse projects. This allows you to create dashboards or APIs and limit who can access them. In 1.3 we've added the ability for you to limit access to those same resources based on the visitor having a user account on your FlowFuse team. You can see a demonstration of this new feature in [the video](https://youtu.be/JRk-Cf7eNIo) below.
 
 <div><iframe width="560" height="315" src="https://www.youtube.com/embed/JRk-Cf7eNIo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-[Filter your audit logs for easier reading](https://github.com/FlowFuse/flowforge/issues/1448) \
+[Filter your audit logs for easier reading](https://github.com/FlowFuse/flowfuse/issues/1448) \
 In FlowFuse 1.3 we’ve added the ability to filter your admin logs by user or action type. We think this is a great new feature which will help admins have confidence that they will be able to review the audit logs quickly when needed. You can see a demonstration of this new feature in [the video](https://youtu.be/p0Vuy5x42Go) below.
 
 <div><iframe width="560" height="315" src="https://www.youtube.com/embed/p0Vuy5x42Go" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ## Improvements
 
-[Allow installation of FlowFuse on devices which can't access npm](https://github.com/FlowFuse/flowforge-device-agent/issues/45) \
+[Allow installation of FlowFuse on devices which can't access npm](https://github.com/FlowFuse/device-agent/issues/45) \
 We've had feedback from customers that in some cases they want to use FlowFuse devices on hardware which cannot access [Node Package Manager](https://www.npmjs.com/) (npm). In a standard configuration of Node-RED, access to npm is mandatory to run your flows. In FlowFuse 1.3.0 we've added the ability for you to import all the data usually installed from npm without your devices having access to the npm service.
 
 ## Bug Fixes
 
 We've fixed the following bugs in this release.
-- Project status UI sometimes getting stuck when restarting [#1232](https://github.com/FlowFuse/flowforge/issues/1232)
-- SSO users asked to click link in email to verify [#1543](https://github.com/FlowFuse/flowforge/issues/1543)
-- SSO users unable to edit settings [#1542](https://github.com/FlowFuse/flowforge/issues/1542)
-- SSO users not redirected to editor when signing in [#1481](https://github.com/FlowFuse/flowforge/issues/1481)
+- Project status UI sometimes getting stuck when restarting [#1232](https://github.com/FlowFuse/flowfuse/issues/1232)
+- SSO users asked to click link in email to verify [#1543](https://github.com/FlowFuse/flowfuse/issues/1543)
+- SSO users unable to edit settings [#1542](https://github.com/FlowFuse/flowfuse/issues/1542)
+- SSO users not redirected to editor when signing in [#1481](https://github.com/FlowFuse/flowfuse/issues/1481)
 
 ## Contributors
 
@@ -77,12 +77,12 @@ guide for [upgrading your FlowFuse instance](/docs/upgrade/).
 
 Please check FlowFuse's [documentation](/docs/) as the answers to many questions are covered there.
 
-If you hit any problems with the platform please raise an [issue on GitHub](https://github.com/FlowFuse/flowforge/issues).
+If you hit any problems with the platform please raise an [issue on GitHub](https://github.com/FlowFuse/flowfuse/issues).
 That's also a great place to send us any feedback or feature requests.
 
 You can also get help on [the Node-RED forums](https://discourse.nodered.org/)
 
-AS well as in the [forum within our Github project](https://github.com/FlowFuse/flowforge/discussions)
+AS well as in the [forum within our Github project](https://github.com/FlowFuse/flowfuse/discussions)
 
 Chat with us on the `#flowforge` channel on the [Node-RED Slack workspace](https://nodered.org/slack)
 

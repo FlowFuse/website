@@ -59,7 +59,7 @@ or go to the community forum. Where to go when is described below.
 |---|---|
 | Billing | [Support ticket][support-tickets] |
 | FlowFuse Application | [Support ticket][support-tickets] |
-| FlowFuse Feature Requests | [FlowFuse repository](https://github.com/FlowFuse/flowforge/issues) |
+| FlowFuse Feature Requests | [FlowFuse repository](https://github.com/FlowFuse/flowfuse/issues) |
 | Node-RED Application | [Community Forum][support-forum] |
 | Node-RED flows | [Community Forum][support-forum] |
 | Custom nodes | [Community Forum][support-forum] |

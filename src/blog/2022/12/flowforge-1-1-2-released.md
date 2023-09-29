@@ -14,7 +14,7 @@ We've published a maintenance fix with an important fix for the Palette Manager 
 
 <!--more-->
 
-A [bug](https://github.com/FlowFuse/flowforge/issues/1367) was reported this week
+A [bug](https://github.com/FlowFuse/flowfuse/issues/1367) was reported this week
 where a user was unable to install additional nodes into their Node-RED project
 using the editor's palette manager.
 
@@ -23,7 +23,7 @@ project template lets you list nodes that should be blocked from being installed
 It was interpreting an empty list to mean _disallow everything_! Not quite the
 intended behaviour.
 
-Whilst tracking this down, we also spotted a bug ([#1379](https://github.com/FlowFuse/flowforge/issues/1379))
+Whilst tracking this down, we also spotted a bug ([#1379](https://github.com/FlowFuse/flowfuse/issues/1379))
 around editing this same setting that made it tricky to work around without this
 release being published.
 
@@ -58,7 +58,7 @@ guide for [upgrading your FlowFuse instance](/docs/upgrade/)
 
 Please check FlowFuse's [documentation](/docs/) as the answers to many questions are covered there.
 
-If you hit any problems with the platform, please raise an [issue on GitHub](https://github.com/FlowFuse/flowforge/issues).
+If you hit any problems with the platform, please raise an [issue on GitHub](https://github.com/FlowFuse/flowfuse/issues).
 That also includes if you have any feedback or feature requests.
 
 Chat with us on the `#flowfuse` channel on the [Node-RED Slack workspace](https://nodered.org/slack).

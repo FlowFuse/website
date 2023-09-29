@@ -63,27 +63,27 @@ We're always working to enhance your experience with FlowFuse. Here's how you ca
 
 - **Roadmap Overview**: Check out our [Product Roadmap Page](/product/roadmap/) to see what we're planning for future updates.
 - **Entire Roadmap**: Visit our [Roadmap on GitHub](https://github.com/orgs/FlowFuse/projects/5) to follow our progress and contribute your ideas.
-- **Feedback**: We're interested in your thoughts about FlowFuse. Your feedback is crucial to us, and we'd love to hear about your experiences with the new features and improvements. Please share your thoughts, suggestions, or report any [issues on GitHub](https://github.com/FlowFuse/flowforge/issues/new/choose). 
+- **Feedback**: We're interested in your thoughts about FlowFuse. Your feedback is crucial to us, and we'd love to hear about your experiences with the new features and improvements. Please share your thoughts, suggestions, or report any [issues on GitHub](https://github.com/FlowFuse/flowfuse/issues/new/choose). 
 
 Together, we can make FlowFuse better with each release!
 
 ## Bug Fixes
 
-Incorrect number of days displayed when adding a new license [#1895](https://github.com/FlowFuse/flowforge/issues/1895)
+Incorrect number of days displayed when adding a new license [#1895](https://github.com/FlowFuse/flowfuse/issues/1895)
 
-Users were unable to upgrade modules in Manage Palette, even after restarting Node-RED. [#2005](https://github.com/FlowFuse/flowforge/issues/2005)
+Users were unable to upgrade modules in Manage Palette, even after restarting Node-RED. [#2005](https://github.com/FlowFuse/flowfuse/issues/2005)
 
-Enable 'Delete Team' Button [#2031](https://github.com/FlowFuse/flowforge/issues/2031)
+Enable 'Delete Team' Button [#2031](https://github.com/FlowFuse/flowfuse/issues/2031)
 
-Triggering a Node-RED restart using the action button resulted in two instances of Node-RED running in the container, causing one instance to crash due to port 1880 being already in use. [#2031](https://github.com/FlowFuse/flowforge/issues/1860)
+Triggering a Node-RED restart using the action button resulted in two instances of Node-RED running in the container, causing one instance to crash due to port 1880 being already in use. [#2031](https://github.com/FlowFuse/flowfuse/issues/1860)
 
-Error deleting instance with missing subscription [#2080](https://github.com/FlowFuse/flowforge/issues/2080)
+Error deleting instance with missing subscription [#2080](https://github.com/FlowFuse/flowfuse/issues/2080)
 
-Snapshot Rollback no longer working [#2026](https://github.com/FlowFuse/flowforge/issues/2026)
+Snapshot Rollback no longer working [#2026](https://github.com/FlowFuse/flowfuse/issues/2026)
 
-Users receiving an unauthorized error when attempting to switch to a team in which they are a member [#1845](https://github.com/FlowFuse/flowforge/issues/1845)
+Users receiving an unauthorized error when attempting to switch to a team in which they are a member [#1845](https://github.com/FlowFuse/flowfuse/issues/1845)
 
-Cannot select "Member" option when inviting a team member [#2084](https://github.com/FlowFuse/flowforge/issues/2084)
+Cannot select "Member" option when inviting a team member [#2084](https://github.com/FlowFuse/flowfuse/issues/2084)
 
 ## Try it out
 
@@ -103,12 +103,12 @@ guide for [upgrading your FlowFuse instance](/docs/upgrade/).
 
 Please check FlowFuse's [documentation](/docs/) as the answers to many questions are covered there.
 
-If you hit any problems with the platform please raise an [issue on GitHub](https://github.com/FlowFuse/flowforge/issues).
+If you hit any problems with the platform please raise an [issue on GitHub](https://github.com/FlowFuse/flowfuse/issues).
 That's also a great place to send us any feedback or feature requests.
 
 You can also get help on [the Node-RED forums](https://discourse.nodered.org/)
 
-As well as in the [forum within our Github project](https://github.com/FlowFuse/flowforge/discussions)
+As well as in the [forum within our Github project](https://github.com/FlowFuse/flowfuse/discussions)
 
 Chat with us on the `#flowforge` channel on the [Node-RED Slack workspace](https://nodered.org/slack)
 

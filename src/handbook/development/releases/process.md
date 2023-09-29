@@ -83,12 +83,11 @@ day.
 The Release Manager should verify the following repositories are up to date and
 have been published as needed.
 
- - [`flowforge/forge-ui-components`](https://github.com/FlowFuse/forge-ui-components)
- - [`flowforge/flowforge-device-agent`](https://github.com/FlowFuse/flowforge-device-agent)
- - [`flowforge/flowforge-nr-project-nodes`](https://github.com/FlowFuse/flowforge-nr-project-nodes)
- - [`flowforge/flowforge-nr-file-nodes`](https://www.github.com//flowforge/flowforge-nr-file-nodes)
- - [`flowforge/flowforge-nr-persistent-context`](https://github.com/FlowFuse/flowforge-nr-persistent-context)
- - [`flowforge/flowforge-nr-tools-plugin`](https://www.github.com//flowforge/flowforge-nr-tools-plugin)
+ - [`flowforge/flowforge-device-agent`](https://github.com/FlowFuse/device-agent)
+ - [`flowforge/nr-project-nodes`](https://github.com/FlowFuse/nr-project-nodes)
+ - [`flowforge/nr-file-nodes`](https://www.github.com/FlowFuse/nr-file-nodes)
+ - [`flowforge/nr-persistent-context`](https://github.com/FlowFuse/nr-persistent-context)
+ - [`flowforge/nr-tools-plugin`](https://www.github.com/FlowFuse/nr-tools-plugin)
 
 Verify [`flowforge/flowforge-nr-launcher`](https://www.github.com//flowforge/flowforge-nr-launcher) `package.json` has been updated to pull in the latest versions of `file-nodes`/`persistent-context`/`project-nodes`.
 
@@ -100,7 +99,7 @@ This phase is largely automated using the `create-release` script in the `admin`
 
 Follow these steps to run the script:
 
-1. Clone the [`flowforge/admin`](https://github.com/FlowFuse/admin) repository if you do not already have it.
+1. Clone the [`FlowFuse/admin`](https://github.com/FlowFuse/admin) repository if you do not already have it.
    Ensure you have the latest with a `git pull`.
 2. In the *parent* directory to where you have the `admin` checked out, run the
    following command, replace `1.x.y` with the proper release version.

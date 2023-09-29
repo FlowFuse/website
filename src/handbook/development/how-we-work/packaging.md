@@ -58,13 +58,13 @@ This will subscribe to any notifications covering: `issues`, `pulls`, `commits`,
 #### Project Automation
 
 All code repositories must have the Project Automation workflow added. This is done
-by adding [`.github/workflows/project-automation.yml`](https://github.com/FlowFuse/flowforge/blob/main/.github/workflows/project-automation.yml).
+by adding [`.github/workflows/project-automation.yml`](https://github.com/FlowFuse/flowfuse/blob/main/.github/workflows/project-automation.yml).
 This workflow will ensure any opened issues are automatically added to the [Product board](https://github.com/orgs/FlowFuse/projects/3) where it can be triaged and prioritised.
 
 #### Release Publish
 
 For any repositories that contain modules to be published to npm, they should also
-have a copy of [`.github/workflows/release-publish.yml`](https://github.com/FlowFuse/flowforge/blob/main/.github/workflows/release-publish.yml).
+have a copy of [`.github/workflows/release-publish.yml`](https://github.com/FlowFuse/flowfuse/blob/main/.github/workflows/release-publish.yml).
 
 This workflow will publish to npm whenever the repository is tagged with a `vX.Y.Z` format
 tag.
@@ -138,7 +138,7 @@ The `package.json` must contain the following keys
  - bugs
     ```
     "bugs": {
-        "url": "https://github.com/FlowFuse/flowforge/issues"
+        "url": "https://github.com/FlowFuse/flowfuse/issues"
     },
     ```
  - license

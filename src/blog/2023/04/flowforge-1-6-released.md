@@ -30,30 +30,30 @@ FlowFuse makes it easy to deploy Node-RED out to remote devices. However, once N
 ## Other Improvements
 
 
-Update email address verification  [#813](https://github.com/FlowFuse/flowforge/issues/813)
+Update email address verification  [#813](https://github.com/FlowFuse/flowfuse/issues/813)
 
-Reminder email about trial doesn't include a link to FF Cloud [#1815](https://github.com/FlowFuse/flowforge/issues/1815)
+Reminder email about trial doesn't include a link to FF Cloud [#1815](https://github.com/FlowFuse/flowfuse/issues/1815)
 
-Sign-up coupons improvement [#1788](https://github.com/FlowFuse/flowforge/issues/1788)
+Sign-up coupons improvement [#1788](https://github.com/FlowFuse/flowfuse/issues/1788)
 
-New FF_Instance_* envvars inline with new terminology [#1844](https://github.com/FlowFuse/flowforge/issues/1844)
+New FF_Instance_* envvars inline with new terminology [#1844](https://github.com/FlowFuse/flowfuse/issues/1844)
 
-Deprecate FF_PROJECT_* envvars [#1844](https://github.com/FlowFuse/flowforge/issues/1844)
+Deprecate FF_PROJECT_* envvars [#1844](https://github.com/FlowFuse/flowfuse/issues/1844)
 
-Integrate with PostHog events [#1922](https://github.com/FlowFuse/flowforge/pull/1922)
+Integrate with PostHog events [#1922](https://github.com/FlowFuse/flowfuse/pull/1922)
 
 Introduce search bar to docs/handbook  [#620](https://github.com/FlowFuse/website/pull/620) 
 
 
 ## Bug Fixes
 
-Deleting instances from the instance list fails [#1859](https://github.com/FlowFuse/flowforge/issues/1859)
+Deleting instances from the instance list fails [#1859](https://github.com/FlowFuse/flowfuse/issues/1859)
 
-Removing old projects with missing subscriptions fails [#1837](https://github.com/FlowFuse/flowforge/issues/1837)
+Removing old projects with missing subscriptions fails [#1837](https://github.com/FlowFuse/flowfuse/issues/1837)
 
-Changing to a team as a member shows unauthorized error [#1845](https://github.com/FlowFuse/flowforge/issues/1845)
+Changing to a team as a member shows unauthorized error [#1845](https://github.com/FlowFuse/flowfuse/issues/1845)
 
-Application Overview: “Open Editor” shouldn’t show (or should be disabled) if in “Starting” state [#1931](https://github.com/FlowFuse/flowforge/issues/1931)
+Application Overview: “Open Editor” shouldn’t show (or should be disabled) if in “Starting” state [#1931](https://github.com/FlowFuse/flowfuse/issues/1931)
 
 
 ## Try it out
@@ -74,12 +74,12 @@ guide for [upgrading your FlowFuse instance](/docs/upgrade/).
 
 Please check FlowFuse's [documentation](/docs/) as the answers to many questions are covered there.
 
-If you hit any problems with the platform please raise an [issue on GitHub](https://github.com/FlowFuse/flowforge/issues).
+If you hit any problems with the platform please raise an [issue on GitHub](https://github.com/FlowFuse/flowfuse/issues).
 That's also a great place to send us any feedback or feature requests.
 
 You can also get help on [the Node-RED forums](https://discourse.nodered.org/)
 
-As well as in the [forum within our Github project](https://github.com/FlowFuse/flowforge/discussions)
+As well as in the [forum within our Github project](https://github.com/FlowFuse/flowfuse/discussions)
 
 Chat with us on the `#flowforge` channel on the [Node-RED Slack workspace](https://nodered.org/slack)
 

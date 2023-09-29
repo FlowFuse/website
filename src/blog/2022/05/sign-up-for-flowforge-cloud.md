@@ -47,7 +47,7 @@ without disrupting their main project.
 Currently we're working towards our 0.6 release. The main feature of this release
 will be support for Devices. This will allow you to send a snapshot of a project
 to a Node-RED instance running outside of the FlowFuse platform and update the flows
-remotely. Remote devices will run our [agent](https://github.com/FlowFuse/flowforge-device-agent)
+remotely. Remote devices will run our [agent](https://github.com/FlowFuse/device-agent)
 to communicate with the FlowFuse Cloud project.
 
 While the first iteration will be considered an Alpha release, by shipping early and often, it lets us get

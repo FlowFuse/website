@@ -56,25 +56,25 @@ We're always working to enhance your experience with FlowFuse. Here's how you ca
 
 - **Roadmap Overview**: Check out our [Product Roadmap Page](/product/roadmap/) to see what we're planning for future updates.
 - **Entire Roadmap**: Visit our [Roadmap on GitHub](https://github.com/orgs/FlowFuse/projects/5) to follow our progress and contribute your ideas.
-- **Feedback**: We're interested in your thoughts about FlowFuse. Your feedback is crucial to us, and we'd love to hear about your experiences with the new features and improvements. Please share your thoughts, suggestions, or report any [issues on GitHub](https://github.com/FlowFuse/flowforge/issues/new/choose). 
+- **Feedback**: We're interested in your thoughts about FlowFuse. Your feedback is crucial to us, and we'd love to hear about your experiences with the new features and improvements. Please share your thoughts, suggestions, or report any [issues on GitHub](https://github.com/FlowFuse/flowfuse/issues/new/choose). 
 
 Together, we can make FlowFuse better with each release!
 
 ## Bug Fixes
 
-When editing a device in developer mode via the tunnel/proxy connection, a list of team projects are not presented in the "Target" field of the project-link nodes. [#2228](https://github.com/FlowFuse/flowforge/issues/2228)
+When editing a device in developer mode via the tunnel/proxy connection, a list of team projects are not presented in the "Target" field of the project-link nodes. [#2228](https://github.com/FlowFuse/flowfuse/issues/2228)
 
-If a user invites an external user to their team with an sso-enable email domain, when that user registers and logs in, they are not added to the team they were invited to and must be re-invited. [#2232](https://github.com/FlowFuse/flowforge/issues/2232)
+If a user invites an external user to their team with an sso-enable email domain, when that user registers and logs in, they are not added to the team they were invited to and must be re-invited. [#2232](https://github.com/FlowFuse/flowfuse/issues/2232)
 
-No warning given if tying to start device editor when NR is not running [#2233](https://github.com/FlowFuse/flowforge/issues/2233)
+No warning given if tying to start device editor when NR is not running [#2233](https://github.com/FlowFuse/flowfuse/issues/2233)
 
-Stuck on the form Create a new Application & Instance after using an already known instance name [#2221](https://github.com/FlowFuse/flowforge/issues/2221)
+Stuck on the form Create a new Application & Instance after using an already known instance name [#2221](https://github.com/FlowFuse/flowfuse/issues/2221)
 
-If the device agent finds itself in Developer mode, it stops pulling snapshots from the platform [#97](https://github.com/FlowFuse/flowforge-device-agent/issues/97)
+If the device agent finds itself in Developer mode, it stops pulling snapshots from the platform [#97](https://github.com/FlowFuse/device-agent/issues/97)
 
-Accessing the Admin Settings General page resets the Platform Statstics token [#2140](https://github.com/FlowFuse/flowforge/issues/2140)
+Accessing the Admin Settings General page resets the Platform Statstics token [#2140](https://github.com/FlowFuse/flowfuse/issues/2140)
 
-Selection of Team and Instance in nr-tools-plugin not possible [#15](https://github.com/FlowFuse/flowforge-nr-tools-plugin/issues/15)
+Selection of Team and Instance in nr-tools-plugin not possible [#15](https://github.com/FlowFuse/nr-tools-plugin/issues/15)
 
 HOME env var not set within Node-RED process [#117](https://github.com/FlowFuse/flowforge-nr-launcher/issues/117)
 
