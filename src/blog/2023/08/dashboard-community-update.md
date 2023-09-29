@@ -23,7 +23,7 @@ Below you'll find a summary of the changes we've made since our [last community 
 
 ## New Widgets
 
-### Template (<a href="https://flowforge.github.io/flowforge-nr-dashboard/nodes/widgets/ui-template.html" target="_blank">docs</a>)
+### Template (<a href="https://dashboard.flowfuse.com/nodes/widgets/ui-template.html" target="_blank">docs</a>)
 
 Steve has been doing some incredible work on the new `ui-template` widget. This widget allows you to create your own custom components using raw HTML, but also works with any of the components in the [Vuetify](https://vuetifyjs.com/en/components/all/) component library. It's a powerful tool that will enable users to be creative with their own widgets that are not currently available with the standard set of widgets.
 
@@ -49,11 +49,11 @@ As requested on multiple occasions by the community when we released v0.0.4 of D
 
 We've re-structured the hierarchy of the events system to make it more streamlined. Now, the `ui-base` manages comms via single channels dedicated to each event type, and the widget's ID is then used as a topic. Previously, we had a separate channel for each `action:id`.
 
-If you're interested in learning more about our events architecture, you can read about it [here](https://flowforge.github.io/flowforge-nr-dashboard/contributing/guides/events.html) in the docs.
+If you're interested in learning more about our events architecture, you can read about it [here](https://dashboard.flowfuse.com/contributing/guides/events.html) in the docs.
 
 ### Documentation Updates
 
-It's not glamorous, but it's important. We've made sure that all documentation and help text inside Node-RED is fully up to date for the Dashboard 2.0 nodes. We've also include rendered examples for all widgets in our [online documentation](https://flowforge.github.io/flowforge-nr-dashboard/) too.
+It's not glamorous, but it's important. We've made sure that all documentation and help text inside Node-RED is fully up to date for the Dashboard 2.0 nodes. We've also include rendered examples for all widgets in our [online documentation](https://dashboard.flowfuse.com/) too.
 
 We've also made sure that any legacy options that had been transferred over from Dashboard 1.0 that haven't been fully implemented yet are temporarily hidden. This means, any options you're seeing, _should_ be working. If they're not - it's a bug.
 
