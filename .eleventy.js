@@ -219,7 +219,7 @@ module.exports = function(eleventyConfig) {
     })
 
     eleventyConfig.addFilter("handbookEditLink", (page) => {
-        let baseUrl = 'https://github.com/flowforge/website/edit/main/'
+        let baseUrl = 'https://github.com/FlowFuse/website/edit/main/'
         let filePath = page.inputPath
 
         if (/^\/docs/.test(page.url)) {
@@ -230,7 +230,7 @@ module.exports = function(eleventyConfig) {
             }
 
             filePath = path.join(...pathElements.slice(2))
-            baseUrl = 'https://github.com/flowforge/flowforge/edit/main/'
+            baseUrl = 'https://github.com/FlowFuse/flowforge/edit/main/'
         }
 
         return baseUrl+filePath.replace(/^.\//,'')

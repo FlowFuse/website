@@ -1,6 +1,6 @@
 # FlowFuse Website
 
-[![Build Site](https://github.com/flowforge/website/actions/workflows/build.yml/badge.svg?branch=main)](https://github.com/flowforge/website/actions/workflows/build.yml)
+[![Build Site](https://github.com/FlowFuse/website/actions/workflows/build.yml/badge.svg?branch=main)](https://github.com/FlowFuse/website/actions/workflows/build.yml)
 
 This repository contains the source of the FlowFuse website.
 
@@ -8,7 +8,7 @@ It is built using [Tailwind CSS](https://tailwindcss.com/) and [Eleventy](https:
 
 It is hosted on Netlify with each commit to the `main` branch being automatically deployed to the live site.
 
-This works by a GitHub action automatically updating the `live` branch to includes documentation pulled from the `maintenance` branch of the [flowforge/flowforge](https://github.com/flowforge/flowforge)
+This works by a GitHub action automatically updating the `live` branch to includes documentation pulled from the `maintenance` branch of the [FlowFuse/flowforge](https://github.com/FlowFuse/flowforge)
 repository, when changes are pushed to `main`.
 
 Netlify is then configured to watch the `live` branch for any changes, once detected, it will automatically pull the contents of this branch (docs included) and deploy to our production site.
@@ -53,7 +53,7 @@ see a `404` at `localhost:8080` during this time.
 
 ```
 Would you like to configure VS Code to use Edge Functions? (Y/n) 
-A new VS Code settings file will be created at /Users/joepavitt/Documents/flowforge/development/flowforge/website/.vscode/settings.json
+A new VS Code settings file will be created at /Users/joepavitt/Documents/FlowFuse/development/FlowFuse/website/.vscode/settings.json
 ```
 
 It is recommended to response `y` to both of these questions.
@@ -61,7 +61,7 @@ It is recommended to response `y` to both of these questions.
 
 ### Running FlowFuse Documentation
 
-Much like our Handbook, the documentation for FlowFuse are also maintained in a separate repository. Our docs are maintained in the core [FlowFuse repo](https://github.com/flowforge/flowforge).
+Much like our Handbook, the documentation for FlowFuse are also maintained in a separate repository. Our docs are maintained in the core [FlowFuse repo](https://github.com/FlowFuse/flowforge).
 
 If you want to run a local version of the documentation, you'll need to clone the FlowFuse repository alongside the website, e.g.:
 
@@ -92,17 +92,17 @@ The `authors` list should correspond to an entry under `src/_data/team`.
 ## Updating the FlowFuse Documentation
 
 When the website is built it will include the documentation
-from the `maintenance` branch of the [flowforge/flowforge](https://github.com/flowforge/flowforge)
+from the `maintenance` branch of the [FlowFuse/flowforge](https://github.com/FlowFuse/flowforge)
 repository.
 
 To make a documentation update *and* make it live on the website:
 
-1. PR the documentation update to the `main` branch of [flowforge/flowforge](https://github.com/flowforge/flowforge)
+1. PR the documentation update to the `main` branch of [FlowFuse/flowforge](https://github.com/FlowFuse/flowforge)
 2. Attach the `backport` label to the PR
 3. Get the PR reviewed and merged in the normal manner.
 4. A new PR will get automatically raised that backports the change to the `maintenance` branch
 5. Review and merge the PR to that branch.
-6. Manually kick-off a website rebuild by clicking 'Run workflow' on [this page](https://github.com/flowforge/website/actions/workflows/build.yml).
+6. Manually kick-off a website rebuild by clicking 'Run workflow' on [this page](https://github.com/FlowFuse/website/actions/workflows/build.yml).
 
 ## Acknowledgements
 
@@ -115,4 +115,4 @@ This setup was inspired by:
 
 ### `This edge function has crashed`
 
-If you see this error, and it is the first ever time you have run the website, this [is expected](https://github.com/flowforge/website/pull/577#issuecomment-1491934272). You can stop the web server (`ctrl + c` from the terminal) and restart it. Following which, it should work. 
+If you see this error, and it is the first ever time you have run the website, this [is expected](https://github.com/FlowFuse/website/pull/577#issuecomment-1491934272). You can stop the web server (`ctrl + c` from the terminal) and restart it. Following which, it should work. 
