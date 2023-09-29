@@ -33,7 +33,7 @@ To make it easy for everyone to experience FlowFuse, we are introducing a new [f
 ### [1.3 Released](/blog/2023/01/flowforge-1-3-0-released)
 Version 1.3 of FlowFuse was released on 19th January. Our first release of 2023 included some great new features such as the ability to share flows via a [team library](https://www.youtube.com/watch?v=B7XK3TUklUU), [control access to your Node-RED dashboards](https://www.youtube.com/watch?v=JRk-Cf7eNIo) using FlowFuse credentials, and [filtering on your audit logs](https://www.youtube.com/watch?v=p0Vuy5x42Go) for easier reading. We also added the ability to use FlowFuse on devices which cannot access npm, we think this will be really valuable to users of networks with limited access to the internet.
 
-We're now working towards release 1.4 which is due on 16th February. You can see what we are planning to deliver in that release and beyond on [FlowFuse's project board](https://github.com/orgs/flowforge/projects/5).
+We're now working towards release 1.4 which is due on 16th February. You can see what we are planning to deliver in that release and beyond on [FlowFuse's project board](https://github.com/orgs/FlowFuse/projects/5).
 
 If you’d like to learn more about what else was included in 1.3 you can do so on our [blog post](/blog/2023/01/flowforge-1-3-0-released/), [GitHub release page](https://github.com/FlowFuse/flowforge/releases/tag/v1.3.0), and [Youtube channel](https://www.youtube.com/watch?v=ey3xv5j5x7k).
 

@@ -60,7 +60,7 @@ to ensure the Release Manage is aware.
 
 #### Check Development Board
 
-Check the [Development Board](https://github.com/orgs/flowforge/projects/1/views/33)
+Check the [Development Board](https://github.com/orgs/FlowFuse/projects/1/views/33)
 for any items still in the 'Verify' column. Check what actions need to be completed
 to resolve them.
 

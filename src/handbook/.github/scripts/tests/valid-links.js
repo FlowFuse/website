@@ -29,7 +29,7 @@ const exceptions = [
     'github.com/flowforge/CloudProject',
     'github.com/flowforge/content',
     'github.com/flowforge/security',
-    'github.com/orgs/flowforge/projects'
+    'github.com/orgs/FlowForge/projects'
 ]
 
 const isUrlException = function (link) {

@@ -59,7 +59,7 @@ This will subscribe to any notifications covering: `issues`, `pulls`, `commits`,
 
 All code repositories must have the Project Automation workflow added. This is done
 by adding [`.github/workflows/project-automation.yml`](https://github.com/FlowFuse/flowforge/blob/main/.github/workflows/project-automation.yml).
-This workflow will ensure any opened issues are automatically added to the [Product board](https://github.com/orgs/flowforge/projects/3) where it can be triaged and prioritised.
+This workflow will ensure any opened issues are automatically added to the [Product board](https://github.com/orgs/FlowFuse/projects/3) where it can be triaged and prioritised.
 
 #### Release Publish
 

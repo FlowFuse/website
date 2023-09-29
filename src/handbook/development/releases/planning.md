@@ -107,9 +107,9 @@ Epics do not necessarily need an estimation, as long as all subissues have estim
 
 We use three project boards to plan and track our work.
 
- - [Roadmap Board](https://github.com/orgs/flowforge/projects/5)
- - [Product Board](https://github.com/orgs/flowforge/projects/3/views/1)
- - [Development Board](https://github.com/orgs/flowforge/projects/1/views/1)
+ - [Roadmap Board](https://github.com/orgs/FlowFuse/projects/5)
+ - [Product Board](https://github.com/orgs/FlowFuse/projects/3/views/1)
+ - [Development Board](https://github.com/orgs/FlowFuse/projects/1/views/1)
 
 ### Roadmap Board
 
@@ -118,7 +118,7 @@ identifies the themes and priorities for the releases.
 
 ### Product Backlog Board
 
-[This board](https://github.com/orgs/flowforge/projects/3/views/1) is maintained
+[This board](https://github.com/orgs/FlowFuse/projects/3/views/1) is maintained
 by the Product Manager (PM) and CTO. It is the main entry point for all epics and
 stories.
 
@@ -141,7 +141,7 @@ and requirements.
 
 ### Development Board
 
-The [Development Board](https://github.com/orgs/flowforge/projects/1/views/1) is
+The [Development Board](https://github.com/orgs/FlowFuse/projects/1/views/1) is
 used to plan and track the work within the current milestone release.
 
 Within the board we use:
@@ -185,7 +185,7 @@ by the CTO. This meeting includes 2 parts:
     feedback.
  2. Kicking off the next release. The involves:
     1. The Product Manager describing the themes, goals and priorities of the new release
-    2. Reviewing the [Development Board](https://github.com/orgs/flowforge/projects/1/views/1)
+    2. Reviewing the [Development Board](https://github.com/orgs/FlowFuse/projects/1/views/1)
        for the new milestone.
        High-priority items are assigned owners so that everyone has something to
        get started on.
@@ -197,7 +197,7 @@ by the CTO. This meeting includes 2 parts:
 
 ## What to work on
 
-Work comes the ToDo column of the [Development Board](https://github.com/orgs/flowforge/projects/1/views/1).
+Work comes the ToDo column of the [Development Board](https://github.com/orgs/FlowFuse/projects/1/views/1).
 
 We use a set of labels to identify the high/medium/low priority of an item. We tend to
 flag the more important stuff and treat an unlabelled item is implicitly low priority.

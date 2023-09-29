@@ -40,6 +40,6 @@ Please be sure to include as much detail as possible, but most importantly:
 
 ## Tracking Art Request Progress
 
-All newly created Art Requests will be tagged with `design` and `artwork` - this ensures that the issue is automatically added to our [Art Requests Project Board](https://github.com/orgs/flowforge/projects/10), and alerts a designer in the `#art-requests` channel on Slack.
+All newly created Art Requests will be tagged with `design` and `artwork` - this ensures that the issue is automatically added to our [Art Requests Project Board](https://github.com/orgs/FlowFuse/projects/10), and alerts a designer in the `#art-requests` channel on Slack.
 
 When a designer assigns themselves to the issue, they should also add the issue to the Development Project Board, and assign the relevant Iteration within which the piece of work is being undertaken, this ensures that it shows on our wider Team view as to what everyone is working on at any given time.
