@@ -97,10 +97,11 @@ other projects not necessarily code related. It's important to stay in the loop
 on GitHub and it's notifications.
 
 Recommended views to keep track of items requiring your attention:
-- https://github.com/pulls/mentioned
-- https://github.com/issues/mentioned
+- [PRs that mention you](https://github.com/pulls/mentioned)
+- [Questions and comments that need your attention](https://github.com/issues/mentioned)
+- [Reviews of PRs](https://github.com/pulls/review-requested)
 
-Please try to respond to mentions, review requests, etc within 2 business days.
+Please respond to mentions, review requests, etc within 2 business days.
 
 ### Standup meetings
 
