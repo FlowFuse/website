@@ -48,6 +48,8 @@ If necesarry you can edit the Verdaccio configuration file, usually found at **~
 
 Refer to the [documentation](https://verdaccio.org/docs/configuration/) for all configuration options.
 
+It is important that if you intend to use a private NPM registry with FlowForge Cloud, the registry will need to be publicly exposed to the internet. Please make sure you understand how to secure it appropriately.
+
 #### Publish your package
 
 1. Create a user
@@ -79,6 +81,16 @@ The container accepts the following environment variables:
 - /update - a POST to this endpoint will trigger a rebuild of the catalogue
 - /catalogue.json - a GET request returns the current catalogue
 
+The `/update` endpoint can be used with the Verdaccio [notification](https://verdaccio.org/docs/notifications) events to trigger the catalogue to automatically when nodes are added or updated.
+
+```yaml
+notify:
+  method: POST
+  headers: [{'Content-Type': 'application/json'}]
+  endpoint: http://localhost:3000/update
+  content: '{"name": "{{name}}", "versions": "{{versions}}", "dist-tags": "{{dist-tags}}"}'
+```
+
 
 ### Option 2 - Node-RED
 You can also use a FlowFuse Node-RED instance and the [`node-red-contrib-catalogue`](https://flows.nodered.org/node/node-red-contrib-catalogue) package to generate and host your `catalogue.json` file.
@@ -93,6 +105,8 @@ Next, you'll need to add all the details to your FlowFuse instance configuration
 1. Add the Catalog: Go to your **Instance** -> **Settings** -> **Palette**. Here, you'll have the option to add a catalogue.json. You'll need to provide the URL from which the catalogue.json can be accessed.
 
 For example: **https://catalogue.nodered.org/catalogue.json**
+
+It is import to remember that this URL must be accessible from the browser running the Node-RED editor and when used with FlowFuse (or any other Node-RED editor accessed via HTTPS) it must be served with HTTPS.
 
 2. Modify the npmrc File: You'll need to configure where to find the packages from the catalog, possibly specifying a scope.
 
