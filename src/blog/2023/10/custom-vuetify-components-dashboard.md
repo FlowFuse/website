@@ -81,7 +81,7 @@ This is mostly a programmers job, but it's not hard, so let's get to it. A butto
 would be great to reset the timer, and for the sake of this post we can hardcode
 the deadline to 1m from the button press.
 
-When draggin in a butten node, connect it to a [change](/node-red/core-nodes/change)
+When dragging in a button node, connect it to a [change](/node-red/core-nodes/change)
 node. In the change node set the flow variable `flow.deadline` to the timestamp. The
 Inject node from earlier needs updating to inject the `flow.deadline`. All that's
 left is calculating how many seconds passed, and normalizing 60 seconds to the
