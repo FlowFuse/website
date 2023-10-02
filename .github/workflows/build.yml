@@ -26,7 +26,7 @@ jobs:
       - uses: actions/setup-node@v2
         with:
           cache: 'npm'
-          node-version: '18'
+          cache-dependency-path: './website/package-lock.json'
       - run: npm run docs
         working-directory: 'website'
       - name: Commit Latest Docs
