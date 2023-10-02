@@ -227,26 +227,51 @@
                     </div>
                 </div>
                 <div class="w-full md:row-span-2">
-                    <ul class="w-full md:max-w-[343px] grid grid-flow-col grid-rows-5 sm:grid-rows-4 md:grid-rows-5 sm:justify-between md:m-auto text-base md:gap-y-3 sm:gap-x-6">
-                        <li class="inline mr-2 mb-2 md:m-0"><a href="/about/">About</a></li>
-                        <li class="inline mr-2 mb-2 md:m-0"><a href="/team/">Team</a></li>
-                        <li class="inline mr-2 mb-2 md:m-0"><a href="{{ site.jobBoard }}">Jobs</a></li>
-                        <li class="inline mr-2 mb-2 md:m-0"><a href="/handbook/">Handbook</a></li>
-                        <li class="inline mr-2 mb-2 md:m-0"><a href="/privacy-policy/">Privacy</a></li>
-                        <li class="inline mr-2 mb-2 md:m-0"><a href="/partners/referral-sign-up/">Partnerships</a></li>
-                        <li class="inline mr-2 mb-2 md:m-0"><a href="https://status.flowfuse.com/">Service Status</a></li>
-                        <li class="inline mr-2 mb-2 md:m-0"><a href="/support/">Request Support</a></li>
-                        <li class="inline mr-2 mb-2 md:m-0"><a href="/contact-us/">Contact Us</a></li>
-                        <li class="inline mr-2 mb-2 md:m-0"><a href="/blog/#sign-up" onclick="capture('cta-blog-subscribe', {'position': 'footer'})">Sign Up to Mailing List</a></li>
+                    <ul class="w-full md:max-w-[343px] grid grid-flow-col grid-rows-5 gap-y-4 sm:grid-rows-4 md:grid-rows-5 sm:justify-between md:m-auto text-base sm:gap-x-6">
+                        <li class="inline mr-2 mb-2 md:m-0"><a href="/about/" class="py-3">About</a></li>
+                        <li class="inline mr-2 mb-2 md:m-0"><a href="/team/" class="py-3">Team</a></li>
+                        <li class="inline mr-2 mb-2 md:m-0"><a href="{{ site.jobBoard }}" class="py-3">Jobs</a></li>
+                        <li class="inline mr-2 mb-2 md:m-0"><a href="/handbook/" class="py-3">Handbook</a></li>
+                        <li class="inline mr-2 mb-2 md:m-0"><a href="/privacy-policy/" class="py-3">Privacy</a></li>
+                        <li class="inline mr-2 mb-2 md:m-0"><a href="/partners/referral-sign-up/" class="py-3">Partnerships</a></li>
+                        <li class="inline mr-2 mb-2 md:m-0"><a href="https://status.flowfuse.com/" class="py-3">Service Status</a></li>
+                        <li class="inline mr-2 mb-2 md:m-0"><a href="/support/" class="py-3">Request Support</a></li>
+                        <li class="inline mr-2 mb-2 md:m-0"><a href="/contact-us/" class="py-3">Contact Us</a></li>
+                        <li class="inline mr-2 mb-2 md:m-0"><a href="/blog/#sign-up" onclick="capture('cta-blog-subscribe', {'position': 'footer'})" class="py-3">Sign Up to Mailing List</a></li>
                     </ul>
                 </div>
                 <div class="w-full md:row-span-2">
-                    <ul class="flex flex-row w-full text-base justify-between sm:justify-start sm:gap-x-6 md:justify-end">
-                        <li class="inline mr-2 mb-2 md:m-0 md:block"><a href="https://github.com/FlowFuse">{% include "components/github.njk" %}</a></li>
-                        <li class="inline mr-2 mb-2 md:m-0 md:block"><a href="https://twitter.com/FlowFuseInc">{% include "components/twitter.njk" %}</a></li>
-                        <li class="inline mr-2 mb-2 md:m-0 md:block"><a class="m-auto" href="https://www.youtube.com/channel/UCbBzP8NZbv3WDtlt4UouA-g">{% include "components/youtube.njk" %}</a></li>
-                        <li class="inline mr-2 mb-2 md:m-0 md:block"><a href="https://www.linkedin.com/company/flowfuse">{% include "components/linkedin.njk" %}</a></li>
-                        <li class="inline mr-2 mb-2 md:m-0 md:block"><a href="/blog/index.xml">{% include "components/rss.njk" %}</a></li>
+                    <ul class="flex flex-row w-full -mx-3 md:mx-0 text-base justify-between sm:justify-start sm:gap-x-6 md:justify-end">
+                        <li class="inline md:m-0 md:block">
+                            <a href="https://github.com/FlowFuse" class="block px-3 py-3 md:p-0">
+                              <span class="sr-only">Visit our GitHub page</span>
+                              {% include "components/github.njk" %}
+                            </a>
+                          </li>      
+                          <li class="inline md:m-0 md:block">
+                            <a href="https://twitter.com/FlowFuseInc" class="block px-3 py-3 md:p-0">
+                              <span class="sr-only">Visit our Twitter page</span>
+                              {% include "components/twitter.njk" %}
+                            </a>
+                          </li>                      
+                          <li class="inline md:m-0 md:block">
+                            <a href="https://www.youtube.com/channel/UCbBzP8NZbv3WDtlt4UouA-g" class="block px-3 py-3 md:p-0">
+                              <span class="sr-only">Visit our YouTube channel</span>
+                              {% include "components/youtube.njk" %}
+                            </a>
+                          </li>                          
+                          <li class="inline md:m-0 md:block">
+                            <a href="https://www.linkedin.com/company/flowfuse" class="block px-3 py-3 md:p-0">
+                              <span class="sr-only">Visit our LinkedIn page</span>
+                              {% include "components/linkedin.njk" %}
+                            </a>
+                          </li>                          
+                          <li class="inline md:m-0 md:block">
+                            <a href="/blog/index.xml" class="block px-3 py-3 md:p-0">
+                              <span class="sr-only">Subscribe to our RSS feed</span>
+                              {% include "components/rss.njk" %}
+                            </a>
+                          </li>                          
                     </ul>
                 </div>
             </div>
