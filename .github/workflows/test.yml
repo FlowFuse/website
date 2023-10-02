@@ -10,12 +10,17 @@ jobs:
         uses: actions/checkout@v3
         with:
           path: 'website'
-      - name: Check out FlowFuse/flowforge repository (to access the docs)
+      - name: Check out FlowFuse/flowfuse repository (to access the docs)
         uses: actions/checkout@v3
         with:
-          repository: 'FlowFuse/flowforge'
+          repository: 'FlowFuse/flowfuse'
           ref: maintenance
-          path: 'flowforge'
+          path: 'flowfuse'
+      - name: Cache image pipeline output
+        uses: actions/cache@v3
+        with:
+          key: img-pipeline-cache
+          path: website/_site/img         
       - uses: actions/setup-node@v3
       - run: npm run docs
         working-directory: 'website'
