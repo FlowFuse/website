@@ -4,7 +4,7 @@ subtitle: Run your own private Node-RED catalogue and npm repository for custom 
 description: Learn how to set up a private Node-RED catalog and npm repository with FlowFuse's latest features, allowing you to manage custom nodes securely and efficiently.
 date: 2023-10-02
 authors: ["marian-demme","ben-hardill"]
-#image: "/images/"
+image: blog/2023/10/images/tile-blog-private-custom-nodes-tile.png
 tags:
     - posts
     - flowfuse
