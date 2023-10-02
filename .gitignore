@@ -5,8 +5,6 @@ src/handbook/media
 src/docs/*
 !src/docs/docs.json
 
-package-lock.json
-
 # Netlify generated stuff
 .netlify/
 .vscode/

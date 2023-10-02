@@ -1,4 +1,6 @@
 const fs = require('fs/promises');
+const { existsSync } = require('fs')
+
 const path = require('path')
 const util = require('util')
 const exec = util.promisify(require('child_process').exec)
@@ -22,7 +24,7 @@ async function copyFiles (src, dest, version) {
                         cwd: src 
                     })
                     const header = '---\n' +
-                        `originalPath: ${path.join(src, file.name).replace(/^..\/flowforge\/docs\//,'')}\n` +
+                        `originalPath: ${path.join(src, file.name).replace(/^..\/(flowforge|flowfuse)\/docs\//,'')}\n` +
                         `updated: ${stdout}\n` +
                         `version: ${version}\n` +
                         '---\n'
@@ -41,23 +43,31 @@ async function copyFiles (src, dest, version) {
 }
 
 (async () => {
-    try {
-        await fs.access('../flowforge/docs')
-    } catch (err) {
-        console.log('FlowFuse Docs not found (../flowforge/docs)')
-        process.exit(-1)
-    }
 
-    try {
-        await fs.access('src')
-    } catch (err) {
+    // Check we are in the root of the website repo
+    if (!existsSync('src')) {
         console.log('Run this from the top of the website repository')
         process.exit(-1)
     }
 
-    const packFile = await fs.readFile('../flowforge/package.json')
+    // Go find the FF docs folder. It could be ../flowforge/docs or ../flowfuse/docs
+    let ffRepo = '../flowfuse'
+    if (!existsSync(ffRepo)) {
+        ffRepo = '../flowforge'
+        if (!existsSync(ffRepo)) {
+            console.log('FlowFuse repository not found (../flowfuse or ../flowforge) - skipping')
+            process.exit(-1)
+        }
+    }
+
+    const docsDir = path.join(ffRepo, 'docs')
+    if (!existsSync(docsDir)) {
+        console.log(`FlowFuse Docs folder not found ${docsDir} - skipping`)
+        process.exit(-1)
+    }
+
+    const packFile = await fs.readFile(path.join(ffRepo, 'package.json'))
     const version = JSON.parse(packFile).version
-    const src = '../flowforge/docs'
     const dest = 'src/docs'
-    await copyFiles(src, dest, version)
+    await copyFiles(docsDir, dest, version)
 })()
