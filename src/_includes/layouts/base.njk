@@ -242,11 +242,36 @@
                 </div>
                 <div class="w-full md:row-span-2">
                     <ul class="flex flex-row w-full text-base justify-between sm:justify-start sm:gap-x-6 md:justify-end">
-                        <li class="inline mr-2 mb-2 md:m-0 md:block"><a href="https://github.com/FlowFuse">{% include "components/github.njk" %}</a></li>
-                        <li class="inline mr-2 mb-2 md:m-0 md:block"><a href="https://twitter.com/FlowFuseInc">{% include "components/twitter.njk" %}</a></li>
-                        <li class="inline mr-2 mb-2 md:m-0 md:block"><a class="m-auto" href="https://www.youtube.com/channel/UCbBzP8NZbv3WDtlt4UouA-g">{% include "components/youtube.njk" %}</a></li>
-                        <li class="inline mr-2 mb-2 md:m-0 md:block"><a href="https://www.linkedin.com/company/flowfuse">{% include "components/linkedin.njk" %}</a></li>
-                        <li class="inline mr-2 mb-2 md:m-0 md:block"><a href="/blog/index.xml">{% include "components/rss.njk" %}</a></li>
+                        <li class="inline mr-2 mb-2 md:m-0 md:block">
+                            <a href="https://github.com/FlowFuse">
+                              <span class="sr-only">Visit our GitHub page</span>
+                              {% include "components/github.njk" %}
+                            </a>
+                          </li>      
+                          <li class="inline mr-2 mb-2 md:m-0 md:block">
+                            <a href="https://twitter.com/FlowFuseInc">
+                              <span class="sr-only">Visit our Twitter page</span>
+                              {% include "components/twitter.njk" %}
+                            </a>
+                          </li>                      
+                          <li class="inline mr-2 mb-2 md:m-0 md:block">
+                            <a href="https://www.youtube.com/channel/UCbBzP8NZbv3WDtlt4UouA-g">
+                              <span class="sr-only">Visit our YouTube channel</span>
+                              {% include "components/youtube.njk" %}
+                            </a>
+                          </li>                          
+                          <li class="inline mr-2 mb-2 md:m-0 md:block">
+                            <a href="https://www.linkedin.com/company/flowfuse">
+                              <span class="sr-only">Visit our LinkedIn page</span>
+                              {% include "components/linkedin.njk" %}
+                            </a>
+                          </li>                          
+                          <li class="inline mr-2 mb-2 md:m-0 md:block">
+                            <a href="/blog/index.xml">
+                              <span class="sr-only">Subscribe to our RSS feed</span>
+                              {% include "components/rss.njk" %}
+                            </a>
+                          </li>                          
                     </ul>
                 </div>
             </div>
