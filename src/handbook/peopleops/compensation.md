@@ -75,7 +75,9 @@ awarded to be expensed for a dinner out. The bonus is awarded per release.
 
 #### Health Care
 
-FlowFuse offers a health care package for all employees in the United States, Canada, and India. 
+FlowFuse offers a health care package for all employees in the United States, Canada, and India. Reach out to the hiring manager if you believe your country should be
+added to the list, especially when you're considering a job offer at FlowFuse.
 
-For employees located in the United States, FlowFuse offer basic health insurance coverage which includes dental and vision benefits through Deel.
-However, employees who choose not to participate in the health insurance provided by FlowFuse have the option to opt out. This can be done by registering with Zenefits and declining coverage during the enrollment process on the platform. It is important to note that if an employee decides to opt out, they must have alternative qualified coverage to ensure compliance with the ACA (Affordable Care Act).
+For employees located in the United States, FlowFuse offer basic health insurance coverage which includes dental and vision with 50% dependents coverage benefits through United Medical.
+
+Employees who choose not to participate in the health insurance provided by FlowFuse have the option to opt out. This can be done by registering with Zenefits and declining coverage during the enrollment process on the platform. It is important to note that if an employee decides to opt out, they must have alternative qualified coverage to ensure compliance with the ACA (Affordable Care Act).
