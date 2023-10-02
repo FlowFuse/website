@@ -29,7 +29,7 @@ One example we'll use in a dashboard in this post is the
 [Progress circular](https://vuetifyjs.com/en/components/progress-circular/) to
 build a count down timer.
 
-The documentation explain what elements one can change, in this case the size and
+The documentation explains which elements one can change, in this case the size and
 width. Having set those to the values you'd want in your dashboard, the HTML is
 generated for you, in my case it's:
 
