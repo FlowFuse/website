@@ -22,6 +22,8 @@ jobs:
           key: img-pipeline-cache
           path: website/_site/img         
       - uses: actions/setup-node@v3
+        with:
+          cache: 'npm'
       - run: npm run docs
         working-directory: 'website'
       - name: Install Dependencies

@@ -25,7 +25,8 @@ jobs:
         run: sudo apt-get -qy install jq
       - uses: actions/setup-node@v2
         with:
-          node-version: '14'
+          cache: 'npm'
+          node-version: '18'
       - run: npm run docs
         working-directory: 'website'
       - name: Commit Latest Docs
