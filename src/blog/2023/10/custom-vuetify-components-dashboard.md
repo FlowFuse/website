@@ -3,7 +3,7 @@ title: Custom Vuetify components for Dashboard 2.0
 subtitle: Expand your dashboard with the full collection of Vuetify components
 description: Expand your dashboard with the full collection of Vuetify components
 authors: ["zeger-jan-van-de-weg"]
-image: # TODO blog/2023/09/images/tile-restapi-dashboard.png
+image: blog/2023/10/images/tile-blog-custom-vuetify-components-for-Dashboard.png
 date: 2023-10-02
 tags:
     - posts
