@@ -3,7 +3,7 @@ navTitle: Video
 navGroup: Sales & Marketing
 ---
 
-# FlowFuse Videos
+# Marketing Videos
 
 This section of our handbook is dedicated to guidance on how to create video/media assets for FlowFuse. Here you can find information on what types of videos we produce at FlowFuse and the templating and formatting we recommend for each. 
 
@@ -60,15 +60,15 @@ If you require a license to one of the following tools (where applicable), then 
 
 ## Video Types
 
-### Release Videos
+### User Journey Videos
 
-<iframe width="500" height="280" src="https://www.youtube.com/embed/nCe_qs0G6ZQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" style="margin-bottom: 12px;" allowfullscreen></iframe>
-
-Our Release Videos follow a very fixed structure [with templates listed]:
+These are product marketing videos explaining what value FlowFuse provides going
+through a user journey. These videos have a very fixed structure [with templates listed]:
 
 1. FlowFuse Intro _[Template: /Bookends/Intro]_
-2. Call out 3-4 Major Features introduced in this particular release (with screen recorded demos) _[Template: /UI Previews]_
-3. "and much more..." to include additional important features & bug fixes _[Templates: Overlays/Corner Stamps/Release &amp; Date, /Feature Bullet]_
+2. Explain the problem a user might be facing before the user journey
+3. Walk, don't run, through the user journey explaining _why_ each step must be taken
+3. Explain what was achieved
 4. FlowFuse Outro Ident _[Template: /Bookends/Outro]_
 
 #### Recording Demos for Release Videos
