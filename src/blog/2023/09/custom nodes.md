@@ -1,8 +1,8 @@
 ---
-title: How to Use Custom Nodes in FlowFuse?
+title: How to Use Private Custom Nodes in FlowFuse?
 subtitle: Run your own private Node-RED catalogue and npm repository for custom nodes
 description: Learn how to set up a private Node-RED catalog and npm repository with FlowFuse's latest features, allowing you to manage custom nodes securely and efficiently.
-date: 2023-09-28
+date: 2023-10-02
 authors: ["marian-demme","ben-hardill"]
 #image: "/images/"
 tags:
