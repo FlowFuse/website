@@ -101,7 +101,7 @@ OK, so finally, let’s look at the HMI instance. We’ll store the latest data 
 
 Again, we’ll use the project link nodes to do that. This time we will make the request from the HMI, grab the data and return it back. This puts the HMI in control of how often it gets new data.
 
-Let’s build a simple dashboard to show the data. We’ll use [node-red-dashboard](https://flows.nodered.org/node/node-red-dashboard) so let’s get that installed.
+Let’s build a simple dashboard to show the data. We’ll use [@flowforge/node-red-dashboard](https://dashboard.flowfuse.com) so let’s get that installed.
 
 I’m going to output the current RAM usage onto a graph which shows data for the last hour. This graph will auto update. This system will request new data every 10 seconds. Let’s also output the current value in a gauge.
 
