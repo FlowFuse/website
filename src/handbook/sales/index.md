@@ -2,7 +2,18 @@
 navGroup: Sales & Marketing
 ---
 
-The Sales department is responsible for new customer acquisition and existing customer expansion. This includes prospecting and outreach for new business, conducting introductory calls to determine use-case and fit, giving customized product demonstrations to potential customers, following up with active business opportunities, providing quotations, working with external procurement teams, navigating subsciption agreement terms, finalizing contracts and billing details, and introducing new customers to their Customer Success Manager. Zack Wasli is the point of contact for these and other repsponsibilites. 
+The Sales department is responsible for new customer acquisition and existing customer expansion. This includes:
+1. prospecting and outreach for new business
+1. conducting introductory calls to determine use-case and fit
+1. giving customized product demonstrations to potential customers
+1. following up with active business opportunities
+1. providing quotations
+1. working with external procurement teams
+1. navigating subsciption agreement terms
+1. finalizing contracts and billing details
+1. introducing new customers to their Customer Success Manager. 
+
+Zack Wasli is the point of contact for these and other responsibilities. 
 
 # Sales
 
