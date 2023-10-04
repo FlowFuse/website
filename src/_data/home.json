@@ -7,19 +7,19 @@
   {
     "title": "Build <span class=\"text-red-600\">bespoke solutions<\/span> that fits like a glove",
     "content": "Off the shelf solutions never work out of the box. Build solutions leveraging the power of Node-RED.",
-    "image": "code_red",
+    "image": "bespoke_red",
     "imagealt": "icon of code"
   },
   {
     "title": "Manage and configure <span class=\"text-red-600\">Node-RED at scale<\/span>",
     "content": "FlowFuse manages the deployment  and configuration of all your Node-RED instances from a common platform. FlowFuse automates the process of creating snapshots of Node-RED instances that can be deployed to multiple target edge devices.",
-    "image": "scalable_red",
+    "image": "scalable_pictogram_red",
     "imagealt": "scalability"
   },
   {
     "title": "Allow <span class=\"text-red-600\">teams of citizen developers<\/span> to innovate",
     "content": "Anyone can be a citizen developer using Node-RED to create innovative solutions to their problems. FlowFuse allows teams of citizen developers to collaborate on the same Node-RED flow.",
-    "image": "collaboration_red",
+    "image": "citizen_dev_red",
     "imagealt": "a team of developers"
   },
   {
@@ -31,13 +31,13 @@
   {
     "title": "<span class=\"text-red-600\">Security compliance<\/span> for Node-RED",
     "content": "FlowFuse provides the role based access control to Node-RED flows that is essential for common security compliance. All developers using FlowFuse require a username and password that grants them access rights to specific Node-RED flows.",
-    "image": "security_red",
+    "image": "security_pictogram_red",
     "imagealt": "a lock"
   },
   {
     "title": "<span class=\"text-red-600\">Professional Support<\/span> for Node-RED deployments",
     "content": "FlowFuse is the trusted partner for providing professional support for business critical applications, built on Node-RED. Our experts can help with any challenge, ensuring that your Node-RED applications are running smoothly and securely. We keep your systems up-to-date with the latest versions of Node-RED and security updates, ensuring the continuity of your operations.",
-    "image": "support_red",
+    "image": "support_pictogram_red",
     "imagealt": "support"
   }
 ]
