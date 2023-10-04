@@ -20,6 +20,6 @@ Joe Pavitt, FlowFuse Head of Design and UX, is leading the development work and 
 
 If you are a current user of Node-RED Dashboard or interested in building your own User Interfaces and Data Visualisations using Node-RED then join us on October 26.
 
-SIgn-up today to participate.
+Sign-up today to participate.
 
 
