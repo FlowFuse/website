@@ -45,56 +45,24 @@ has a headline, description, and a container for roadmap items. -->
                 </h5>
                 <div class="roadmap-item-container pt-0"></div>
             </div>
-            <!-- Newly Released Column -->
+            <!-- Changelog -->
             <div class="roadmap-section completed rounded-t-xl rounded-b-lg md:pb-0 bg-white drop-shadow-lg">
                 <div class="p-6 pb-2 rounded-t-lg bg-gray-700 text-white min-h[192px] w-full">
-                    <h4 class="left-headline text-center">Newly released</h4>
+                    <h4 class="left-headline text-center">Changelog</h4>
                     <hr class="border-gray-600">
                     <p>
-                        Check out product updates on
-                        <a href="https://www.flowforge.com/blog/" target="_blank">
-                            our blog
-                        </a>
-                        to see the latest features and improvements.
+                        Check out <a href="/changelog/">all the new features</a> added to FlowFuse.
                     </p>
                 </div>
                 <h5 class="flex flex-row justify-center items-center w-full p-1 bg-gray-800 font-semibold text-gray-50 text-center">
-                    Latest posts<span class="pt-px pl-1">{% include "components/icons/arrow-small-down.svg" %}
+                    Latest updates<span class="pt-px pl-1">{% include "components/icons/arrow-small-down.svg" %}
                 </h5>
                 <div class="roadmap-item-container pt-0">
                     <ul>
-                        {%- for releases in collections.releases | reverse | limit(2) -%}
-                            <li class="roadmap-item"><a href="{{ releases.url }}" target="_blank" class="roadmap-item-text">{{ releases.data.title }}</a></li>
+                        {%- for changelog in collections.changelog | reverse | limit(5) -%}
+                            <li class="roadmap-item"><a href="{{ changelog.url }}" target="_blank" class="roadmap-item-text">{{ changelog.data.title }}</a></li>
                         {%- endfor -%}
                     </ul>
-                </div>
-                <h5 class="flex flex-row justify-center items-center w-full p-1 bg-gray-200 font-semibold text-gray-800 text-center">
-                    Sign up
-                </h5>
-                <!-- Newsletter sign-up form container -->
-                <div class="w-full p-6 pt-3 mb-2 flex flex-col">
-                    <a id="sign-up"></a>
-                    <h6 class="text-gray-500 text-left my-4">And get monthly email updates.</h6>
-                    <!-- HubSpot form script for the newsletter sign-up -->
-                    <script>
-                        function displayHubSpotForm() {
-                            hbspt.forms.create({
-                                region: "eu1",
-                                portalId: "26586079",
-                                formId: "159c173d-dd95-49bd-922b-ff3ef243e90c",
-                                onFormSubmit: function ($form) {
-                                    capture('cta-blog-subscribe', {'position': 'primary'})
-                                }
-                            });
-                        }
-                    </script>
-                    <script
-                        async="async"
-                        type="text/javascript"
-                        charset="utf-8"
-                        src="//js-eu1.hsforms.net/forms/embed/v2.js"
-                        onload="displayHubSpotForm()">
-                    </script>
                 </div>
             </div>
         </div>
@@ -116,17 +84,12 @@ has a headline, description, and a container for roadmap items. -->
                     <p>We are currently working on the following topics and would appreciate any feedback you may have.</p>
                 </div>
             </div>
-            <!-- Newly Released Column Header-->
+            <!-- Changelog-->
             <div class="roadmap-section rounded-t-xl rounded-b-lg md:pb-0 bg-white drop-shadow-lg">
                 <div class="p-6 pb-2 rounded-t-lg bg-gray-700 text-white min-h[192px] w-full h-full">
-                    <h4 class="left-headline text-center">Newly released</h4>
+                    <h4 class="left-headline text-center">Changelog</h4>
                     <hr class="border-gray-600">
-                    <p>Check out product updates on
-                        <a href="https://www.flowforge.com/blog/" target="_blank">
-                            our blog
-                        </a>
-                        to see the latest features and improvements.
-                    </p>
+                    <p>Check out <a href="/changelog/">all the new features</a> added to FlowFuse.</p>
                 </div>
             </div>
             <!-- Consideration Column Content-->
@@ -146,42 +109,14 @@ has a headline, description, and a container for roadmap items. -->
             <!-- Newly Released Column Content-->
             <div class="roadmap-section completed rounded-t-xl rounded-b-lg md:pb-0 bg-white drop-shadow-lg">
                 <h5 class="flex flex-row justify-center items-center w-full p-1 bg-gray-800 font-semibold text-gray-50 text-center">
-                    Latest posts<span class="pt-px pl-1">{% include "components/icons/arrow-small-down.svg" %}
+                    Latest updates<span class="pt-px pl-1">{% include "components/icons/arrow-small-down.svg" %}
                 </h5>
                 <div class="roadmap-item-container pt-0">
                     <ul>
-                        {%- for releases in collections.releases | reverse | limit(2) -%}
-                            <li class="roadmap-item"><a href="{{ releases.url }}" target="_blank" class="roadmap-item-text">{{ releases.data.title }}</a></li>
+                        {%- for changelog in collections.changelog | reverse | limit(5) -%}
+                            <li class="roadmap-item"><a href="{{ changelog.url }}" target="_blank" class="roadmap-item-text">{{ changelog.data.title }}</a></li>
                         {%- endfor -%}
                     </ul>
-                </div>
-                <h5 class="flex flex-row justify-center items-center w-full p-1 bg-gray-200 font-semibold text-gray-800 text-center">
-                    Sign up
-                </h5>
-                <!-- Newsletter sign-up form container -->
-                <div class="w-full p-6 pt-3 mb-2 flex flex-col">
-                    <a id="sign-up"></a>
-                    <h6 class="text-gray-500 text-left my-4">And get monthly email updates.</h6>
-                    <!-- HubSpot form script for the newsletter sign-up -->
-                    <script>
-                        function displayHubSpotForm() {
-                            hbspt.forms.create({
-                                region: "eu1",
-                                portalId: "26586079",
-                                formId: "159c173d-dd95-49bd-922b-ff3ef243e90c",
-                                onFormSubmit: function ($form) {
-                                    capture('cta-blog-subscribe', {'position': 'primary'})
-                                }
-                            });
-                        }
-                    </script>
-                    <script
-                        async="async"
-                        type="text/javascript"
-                        charset="utf-8"
-                        src="//js-eu1.hsforms.net/forms/embed/v2.js"
-                        onload="displayHubSpotForm()">
-                    </script>
                 </div>
             </div>
         </div>
@@ -227,7 +162,7 @@ has a headline, description, and a container for roadmap items. -->
     async function fetchGitHubIssues(label) {
         const endpoint = `/repos/flowforge/flowforge/issues?state=open&labels=${
             encodeURIComponent(label)
-        }&per_page=100`;
+        }&per_page=5`;
         const data = await sendRESTRequest(endpoint);
         return data.map(issue => ({
             title: issue.title,
