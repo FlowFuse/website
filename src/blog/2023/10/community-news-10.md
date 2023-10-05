@@ -47,7 +47,7 @@ The next generation of the Node-RED dashboard is starting to mature. Development
 
 * [How ChatGPT improves Node-RED Developer Experience](/blog/2023/09/chatgpt-for-node-red-developers/) - lots of interest in ChapGPT in the Node-RED community. A quick review of different integrations.
 
-* [Share & Preview Flows on flows.nodered.org](blog/2023/09/flow-viewer/) - A new way to visualize flows in web pages.
+* [Share & Preview Flows on flows.nodered.org](/blog/2023/09/flow-viewer/) - A new way to visualize flows in web pages.
 
 * [Charting REST API Data in a Dashboard](/blog/2023/09/dashboard-chart-for-rest-api-data/) - A short tutorial on how to gather data from a REST API for a dashboard.
 
