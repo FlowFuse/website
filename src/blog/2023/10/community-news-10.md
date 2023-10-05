@@ -25,7 +25,7 @@ To allow FlowFuse Cloud users to keep up to date on the new changes, we have sta
 
 - [DevOps Pipeline with action selection](/changelog/2023/09/devops-actions/)
 - [Usability improvements to Device Management](/changelog/2023/09/snapshots-devices/)
-- [Introducng the Enterprise tier](/changelog/2023/09/introduction-enterprise-tier/)
+- [Introducing the Enterprise tier](/changelog/2023/09/introduction-enterprise-tier/)
 - [API Endpoints for DevOps Pipeline](/changelog/2023/09/pipeline-api/)
 - [Private Node Support](/blog/2023/10/use-private-custom-nodes-with-flowfuse/)
 
