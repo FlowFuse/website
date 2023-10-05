@@ -12,7 +12,7 @@ async function copyFiles (src, dest, version) {
             if (file.isDirectory()) {
                 const newSrc = path.join(src,file.name)
                 const newDest = path.join(dest, file.name)
-                fs.mkdir(newDest, {recursive: true})
+                await fs.mkdir(newDest, {recursive: true})
                 await copyFiles(newSrc, newDest, version)
             } else {
                 const srcFile = path.join(src, file.name)
