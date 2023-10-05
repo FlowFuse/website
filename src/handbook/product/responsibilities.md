@@ -1,10 +1,10 @@
 ---
-navTitle: Product
-navGroup: Company
+navTitle: Responsibilities
 ---
-# Product
 
-The product department, and Product Managers (PM) by extend are responsible for:
+# Product Manager responsibilities
+
+The Product Manager (PM) at FlowFuse, is primarily responsible for:
 
 1. Understanding and communicating the problem of our users and customers.
 2. Defining requirements for a solution that is loved by our users, customers and the community.
@@ -22,13 +22,9 @@ The product department, and Product Managers (PM) by extend are responsible for:
 | Determine Pricing Tier for Features                            | While the CEO and Sales team handle pricing, the PM is responsible for determining which features belong to specific [tiers](./pricing.md).                                                                                                                       |
 | Product-Related Decisions                                      | The PM is responsible for making strategic decisions that shape the overall direction of the product.                                                                                                                                                                                                         |
 
-## How the product department works
+## What is the Product Manager not responsible for?
 
-- [Feedback](./feedback.md)
-- [Product Categories](./verticals.md)
-- [Strategy](./strategy.md)
-- [Pricing Principles](./pricing.md)
-- [Feature Demos](/handbook/development/releases/planning/#feature-demos)
-- [Versioning](./versioning.md)
-- [Metrics](./metrics.md)
-- [Node-RED Dashboard](./dashboard.md)
+- Technical decisions on how the product is built or architected. 
+- A team of engineers: The PM will take the lead in decisions about the product, but not manage the people implementing it.
+- Shipping in time
+- Effort estimations, the Product Manager provides effort estimation when creating issues, as outlined in the [handbook](../development/releases/planning.md#effort-estimation). However, the DRI for this process is the CTO.
