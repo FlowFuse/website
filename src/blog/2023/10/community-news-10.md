@@ -16,7 +16,7 @@ Welcome to the FlowFuse newsletter for October 2023, a monthly roundup of whatâ€
 
 ## Quicker Releases for FlowFuse Cloud and New Changelog
 
-FlowFuse is committed to delivery new features to our customers and community as fast as possible. We are now rolling out new builds of FlowFuse to FlowFuse Cloud more regularly than the previous monthly release. This will allow FlowFuse Cloud users to benefit from the lastest enhancements as they become available. The self-hosted version of FlowFuse will continue to have monthly releases.
+FlowFuse is committed to delivery new features to our customers and community as fast as possible. We are now rolling out new builds of FlowFuse to FlowFuse Cloud more regularly than the previous monthly release. This will allow FlowFuse Cloud users to benefit from the latest enhancements as they become available. The self-hosted version of FlowFuse will continue to have releases every 4 weeks.
 
 To allow FlowFuse Cloud users to keep up to date on the new changes, we have started a [Changelog](/changelog/) to announce newly deployed features. 
 
