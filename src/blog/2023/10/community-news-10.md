@@ -23,7 +23,7 @@ To allow FlowFuse Cloud users to keep up to date on the new changes, we have sta
 
 ## Recent Changelog Updates
 
-- [Custom Node Support](/changelog/2023/09/custom-node-support/)
+- [Custom Node Support](/blog/2023/10/use-private-custom-nodes-with-flowfuse/)
 - [DevOps Pipeline with action selection](/changelog/2023/09/devops-actions/)
 - [Usability improvements to Device Management](/changelog/2023/09/snapshots-devices/)
 - [Introducng the Enterprise tier](/changelog/2023/09/introduction-enterprise-tier/)
@@ -39,8 +39,6 @@ The next generation of the Node-RED dashboard is starting to mature. Development
 
 
 ## From our Blog
-
-* [How to use private custom nodes in FlowFuse](/blog/2023/10/use-private-custom-nodes-with-flowfuse/) - a new FlowFuse 1.12 feature allows you to use custom nodes.
 
 * [Custom Vuetify components for Dashboard 2.0](/blog/2023/10/custom-vuetify-components-dashboard/) - the new dashboard project allows for custom UI components
 
