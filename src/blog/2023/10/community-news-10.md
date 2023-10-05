@@ -33,7 +33,7 @@ To allow FlowFuse Cloud users to keep up to date on the new changes, we have sta
 
 ### Dashboard 2.0 - Where we are, and what’s next?
 
-The next generation of the Node-RED dashboard is starting to mature. Development work on Dashboard 2.0 started earlier this year and amazing progress has been made already. Join Joe Pavitt, leader of the Dashboard 2.0 project, who will demostrate the new dashboard project and discuss future plans during our October webinar.
+The next generation of the Node-RED dashboard is starting to mature. Development work on Dashboard 2.0 started earlier this year and amazing progress has been made already. Join Joe Pavitt, leader of the Dashboard 2.0 project, who will demonstrate the new dashboard project and discuss future plans during our October webinar.
 
 [Sign-up today](https://flowfuse.com/webinars/2023/dashboard-20/) to join us on October 26. 
 
