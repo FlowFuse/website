@@ -10,7 +10,7 @@ their role with an appropriate level of access.
 
 We also contract with Formation Financial to help assist with business administration and billing support. You can direct any billing related requests to billing@flowfuse.com for their assistance if preferred.
 
-You should first get approval from the CEO or CTO to make any changes to existing subscriptions.
+You should first get approval from the CEO or CTO to make any changes to existing subscriptions. Use coupons as described below when providing customer access to resources subscribed to through pre-paid deals.
 
 ## Providing support
 
