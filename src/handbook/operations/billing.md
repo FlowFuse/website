@@ -10,9 +10,13 @@ their role with an appropriate level of access.
 
 We also contract with Formation Financial to help assist with business administration and billing support. You can direct any billing related requests to billing@flowfuse.com for their assistance if preferred.
 
+You should first get approval from the CEO or CTO to make any changes to existing subscriptions. Use coupons as described below when providing customer access to resources subscribed to through pre-paid deals.
+
 ## Providing support
 
 The main use of the Stripe dashboard will be to answer queries on a customers subscription, this should only be in relation to a ticket raised by the customer and we *must* confirm that the customer team in question on the support ticket is the same one you are looking at it Stripe. Remember that the email address in Stripe may not match that of the FlowFuse user as this is a "billing email". You should use the team ID numbers in the metadata field to confirm.
+
+The customer must first configure their billing details within their FlowFuse account for Stripe to recognize that the customer exists in the system.
 
 ## Invoices
 
@@ -43,7 +47,9 @@ or [create a coupon](#coupons) and apply that to the FlowFuse Cloud team.
 
 From time to time we may wish to provide a user with some free access to 
 the managed FlowFuse platform. In this situation we will create a coupon code
-in Stripe which can be shared with the users.
+in Stripe which can be shared with the users. You should always use list price to calculate coupons.
+
+Please note that only 1 coupon can be applied to an account at a time, so in order to add additional coupons you need to stack their amounts into one large coupon.
 
 To create a couple on Stripe:
 
@@ -61,6 +67,6 @@ To create a couple on Stripe:
 
 That coupon code can now be used when you are asked to provide payment card details.
 
-## Credit
+## Credits
 
 Occasionally we may need to apply a credit to a customers account as a goodwill gesture to cover an issue they have experienced, this should be the exception and must be approved by either CTO or CEO. We will also check to see if the customer has received any previous credits on their account.
