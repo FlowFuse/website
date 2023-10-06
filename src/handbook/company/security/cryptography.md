@@ -65,6 +65,10 @@ TLS endpoints must score at least an "B" on SSLLabs.com.
 Transmission encryption keys are limited to use for one year and then must be
 regenerated.
 
+### Encryption of portable and removable media devices
+
+It is mandatory for all employees and contractors to use full disk encryption on any portable or removable media device that stores, processes, or transfers company-related information. This includes but is not limited to USB drives, external hard drives, and SD cards.
+
 ## Exceptions
 
 Requests for an exception to this policy must be submitted to the CEO or CTO for
