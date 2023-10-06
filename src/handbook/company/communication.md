@@ -66,6 +66,9 @@ sharing. As such knowledge and decision made in Slack should always be recorded
 in the handbook, GitHub issue, or Google Doc on that topic to keep a log that also works
 for asynchronous communication.
 
+Our recommended Slack theme is:
+`#F2F2F2,#FFC806,#779FA1,#FFFFFF,#F0D36C,#111111,#2AB052,#FD0B00,#AA4444,#FFFFFF`
+
 #### Recommended channels
 
 Not all channels are joined by default when you join Slack. We've added a bunch
