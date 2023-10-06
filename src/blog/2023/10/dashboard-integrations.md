@@ -42,7 +42,7 @@ We also have plans to expose more of this new functionality to the `ui-template`
 If you're interested in building integrations, then we've also built a couple of resources to help you get started:
 
 - [Widget Development Guide](https://dashboard.flowfuse.com/contributing/widgets/third-party.html) - A guide for how to structure your own widgets, and 
-- [Dashboard Example Inetrgation](https://github.com/FlowFuse/node-red-dashboard-example-node) - We've open sourced a very simple `ui-example` node that demonstrates how you can build your own widget for Dashboard 2.0, that utilises all of the features highlighted above.
+- [Example Integration (Repo)](https://github.com/FlowFuse/node-red-dashboard-example-node) - We've open sourced a very simple `ui-example` node that demonstrates how you can build your own widget for Dashboard 2.0, that utilises all of the features highlighted above.
 
 ## What else is new in 0.6.0?
 
