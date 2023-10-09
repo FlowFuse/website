@@ -49,6 +49,6 @@ Not yet part of the first Pre-Alpha Release:
 - Form ([ui-form Widget](https://github.com/FlowFuse/node-red-dashboard/issues/49))
 - Date selector ([ui-date-picker](https://github.com/FlowFuse/node-red-dashboard/issues/32))
 
-Our immediate focus is to continue adding the missing elements from the original Node-RED Dashbaord, releasing each as soon as they're fully developed. This will significantly increase the frequency of our releases in the upcoming weeks.
+Our immediate focus is to continue adding the missing elements from the original Node-RED Dashboard, releasing each as soon as they're fully developed. This will significantly increase the frequency of our releases in the upcoming weeks.
 
 In addition to these releases, we plan to publish regular blog posts titled "What's New in Node-RED Dashboard". These posts will keep you informed of all the latest features, updates, and improvements.

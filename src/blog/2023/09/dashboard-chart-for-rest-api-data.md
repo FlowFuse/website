@@ -54,7 +54,7 @@ do this, we'll use the [change node](/node-red/core-nodes/change).
 ## Building the Dashboard
 
 For this article we're going to be using the new dashboard and we'll install
-`@flowforge/node-red-dashbaord`. Please follow the instruction [on the Dashboard website](https://dashboard.flowfuse.com/getting-started.html#installation).
+`@flowforge/node-red-dashboard`. Please follow the instruction [on the Dashboard website](https://dashboard.flowfuse.com/getting-started.html#installation).
 
 Now we drag in the `chart` node that's available after installing the dashboard
 package and make sure it' input comes from the configured `change` node. Before

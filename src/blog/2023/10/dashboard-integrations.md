@@ -46,7 +46,7 @@ If you're interested in building integrations, then we've also built a couple of
 
 ## What else is new in 0.6.0?
 
-Whilst we focussed this article on the third-party integrations, we did also squeeze quite a lot more into the 0.6.0 release too with plenty [other fixes and improvements](https://github.com/FlowFuse/node-red-dashboard/releases/tag/v0.6.0), including the separation of the Dash oard 2.0 nodes into a new "Dashbaord 2" category in the Node-RED palette.
+Whilst we focussed this article on the third-party integrations, we did also squeeze quite a lot more into the 0.6.0 release too with plenty [other fixes and improvements](https://github.com/FlowFuse/node-red-dashboard/releases/tag/v0.6.0), including the separation of the Dash oard 2.0 nodes into a new "Dashboard 2" category in the Node-RED palette.
 
 As always, thanks for reading and your interested in Dashboard 2.0. If you have any feature requests, bugs/complaints or general feedback, please do reach out, and raise issues on our relevant [GitHub repository](https://github.com/FlowFuse/node-red-dashboard).
 
