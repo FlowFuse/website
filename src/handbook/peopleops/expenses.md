@@ -19,7 +19,7 @@ card sent out.
 
 Expenses on Brex require a memo and receipts. Memos explain the purpose of the expense, while receipts are necessary for expenses of $25 or more.
 Receipts can be attached via the web UI, email, or Slack.
-Please [read their docs][brex-receipts](https://www.brex.com/support/how-do-i-attach-receipts-to-brex-transactions/).
+Please [read their docs](https://www.brex.com/support/how-do-i-attach-receipts-to-brex-transactions/).
 
 Brex can also be used to create vendor cards that allow for reoccurring payment for a monthly subscription with a vendor.
 Contact the People Ops manager if you require a vendor card.
