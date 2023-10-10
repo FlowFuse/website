@@ -8,9 +8,9 @@
     <div class="px-2 my-4 flex flex-wrap gap-4">
         {%- for tag in blogTags -%}
             {% if tag.value !== "posts" %}
-            <a class="hover:no-underline" href="/blog/{{ tag.value }}"><button class="ff-btn ff-btn--primary{% if not page.url.includes('/' + tag.value + '/')%}-outlined{% endif %}">{{ tag.label }}</button></a>
+            <a class="hover:no-underline" href="/blog/{{ tag.value }}/"><button class="ff-btn ff-btn--primary{% if not page.url.includes('/' + tag.value + '/')%}-outlined{% endif %}">{{ tag.label }}</button></a>
             {% else %}
-            <a class="hover:no-underline" href="/blog"><button class="ff-btn ff-btn--primary{% if page.url !== "/blog/"%}-outlined{% endif %}">{{ tag.label }}</button></a>
+            <a class="hover:no-underline" href="/blog/"><button class="ff-btn ff-btn--primary{% if page.url !== "/blog/"%}-outlined{% endif %}">{{ tag.label }}</button></a>
             {% endif %}
         {% endfor %}
     </div>

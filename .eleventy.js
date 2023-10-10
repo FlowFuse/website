@@ -185,7 +185,7 @@ module.exports = function(eleventyConfig) {
         return "/"+parts.map(p => {
             let url = `${path}/${p}`;
             path = url;
-            return `<a class="mx-2" href="${url}">${p}</a>`
+            return `<a class="mx-2" href="${url}/">${p}</a>`
         }).join("/")
     });
 

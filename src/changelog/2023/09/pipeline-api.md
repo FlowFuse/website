@@ -6,4 +6,4 @@ tags:
     - changelog
 ---
 
-The execution of DevOps Pipelines is now an official API endpoint. Therefore, automation and integration, for example via Node-RED, are now possible. For more details, see our [API Documentation](https://flowfuse.com/docs/api/).
+The execution of DevOps Pipelines is now an official API endpoint. Therefore, automation and integration, for example via Node-RED, are now possible. For more details, see our [API Documentation](/docs/api/).
