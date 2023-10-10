@@ -56,6 +56,12 @@ Slack to be matched automatically.
 
 ## Asynchronous communication
 
+### Email
+
+Email for internal communication is only used for discussions that need
+a 'paper'-trail. Compensation, underperformance, and other made decisions.
+In _all_ other case; use [Slack](#slack).
+
 ### Slack
 
 When using Slack, prefer to keep discussions in a thread. This reduces scroll
