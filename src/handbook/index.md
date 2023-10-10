@@ -5,7 +5,7 @@ navTitle: Handbook
 # FlowFuse Handbook
 
 This handbook contains all the information about how FlowFuse is run. It's a
-living set of documents - collectively we'll [iterate](https://flowfuse.com/handbook/company/values/#%F0%9F%94%81-iterative-improvement)
+living set of documents - collectively we'll [iterate](/handbook/company/values/#%F0%9F%94%81-iterative-improvement)
 on it as we learn and discover new things.
 
 Whilst instinctively we want to be open in all we do, there will inevitably be 
@@ -22,11 +22,11 @@ To run our company we provide a comprehensive guide outlining policies, procedur
 
 | | |
 |:----|:----|
-| [Values](/handbook/company/values.md)<br /><p>The core principles guiding and driving the whole company</p>
-| [Strategy](/handbook/company/strategy.md)<br /><p>The high level plan for our objectives at FlowFuse</p>|
+| [Values](/handbook/company/values/)<br /><p>The core principles guiding and driving the whole company</p>
+| [Strategy](/handbook/company/strategy/)<br /><p>The high level plan for our objectives at FlowFuse</p>|
 | [Operations](/handbook/operations/)<br /><p>The day to day operations, tactical bizzops</p>
 | [PeopleOps](/handbook/peopleops/)<br /><p>Humans aren't resources, so people ops</p> |
-| [Communication](/handbook/company/communication.md)<br /><p>Increase signal, decrease noise.</p>
+| [Communication](/handbook/company/communication/)<br /><p>Increase signal, decrease noise.</p>
 | <!-- placeholder for now --> |
 
 ### How we build the product
@@ -36,7 +36,7 @@ To run our company we provide a comprehensive guide outlining policies, procedur
 | [Product](/handbook/product/)<br /><p>Planning, scheduling, and where the product will be a year from now</p>
 | [Development](/handbook/development/)<br /><p>How features are delivered with velocity and quality</p>|
 | [Design](/handbook/design/)<br /><p>How information is presented through UX/UI to users, prospects, and internally.</p>
-| [Security](/handbook/company/security.md)<br /><p>Keeping what's private private, and what needs protecting protected.</p>|
+| [Security](/handbook/company/security/)<br /><p>Keeping what's private private, and what needs protecting protected.</p>|
  
 
 ### Bringing the built product to market
@@ -45,7 +45,7 @@ To run our company we provide a comprehensive guide outlining policies, procedur
 |:----|:----|
 | [Marketing](/handbook/marketing/)<br /><p>Keeping what's private private, and what needs protecting protected.</p>
 | [Sales](/handbook/sales/)<br /><p>Meeting customer demand.</p>|
-| [Customer Success](/handbook/operations/customer-success.md)<br /><p>Happy customers is what makes FlowFuse a sustainable business.</p>
+| [Customer Success](/handbook/operations/customer-success/)<br /><p>Happy customers is what makes FlowFuse a sustainable business.</p>
 | |
  
 ### About the Handbook
