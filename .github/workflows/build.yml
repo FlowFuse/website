@@ -23,7 +23,7 @@ jobs:
           path: 'flowfuse'
       - name: Install jq
         run: sudo apt-get -qy install jq
-      - uses: actions/setup-node@v2
+      - uses: actions/setup-node@v3
         with:
           cache: 'npm'
           cache-dependency-path: './website/package-lock.json'
