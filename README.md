@@ -33,8 +33,10 @@ Netlify is then configured to watch the `live` branch for any changes, once dete
 
 ## Building the site locally
 
-After cloning the repository, open a **bash** terminal and install the 
-project dependencies, then run the build and the website (driven by eleventy) server:
+First clone the repository with `git clone https://github.com/FlowFuse/website.git` or
+using a Git client like VS Code. After cloning the repository, open a
+terminal inside the newly cloned `website` directory and install the project dependencies, then run the build and the website
+(driven by eleventy) server:
 
 ```bash
 npm install
