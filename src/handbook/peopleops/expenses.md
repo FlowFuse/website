@@ -9,7 +9,9 @@ reasonable. The general principle to follow is to treat work-related expenses
 **as if they were your own money**. It is important to seek good value for your
 purchases and use common sense when making decisions.
 
-There are two methods available for using company funds: utilizing a company credit card or seeking reimbursement. If employees opt to use Brex for purchasing any company-related items or subscriptions, it is essential to upload the receipts and include a memo within three business days. For all reimbursement requests, please ensure to submit the required documentation and proofs through Deel.
+There are two methods available for using company funds: utilizing a [company credit card](#company-credit-card) or seeking [reimbursement](#reimbursement). If employees opt to use Brex for purchasing any company-related items or subscriptions, it is essential to upload the receipts and include a memo within three business days. For all reimbursement requests, please ensure to submit the required documentation and proofs through Deel.
+
+If neither of the methods previously described is feasible (e.g., when a vendor doesn't accept card payments or you don't have the means to pay from your own funds and seek reimbursement), please refer to the instructions provided in our [vendors section](../operations/vendors/) for guidance.
 
 ## Company Credit Card
 
@@ -23,6 +25,7 @@ Please [read their docs](https://www.brex.com/support/how-do-i-attach-receipts-t
 
 Brex can also be used to create vendor cards that allow for reoccurring payment for a monthly subscription with a vendor.
 Contact the People Ops manager if you require a vendor card.
+
 
 ### Oops! Misused Your Brex Card for Personal Expenses? Here's How to Handle the Situation Like a Pro
 

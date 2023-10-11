@@ -12,9 +12,7 @@ A list of approved vendors is available interally [here](https://docs.google.com
 
 ### Process
 
-To start to process of approval and paying of invoices a PDF of the invoice should
-be mailed to billing@flowfuse.com. FlowFuse pays invoices 30 days after filing 
-unless specifically agreed otherwise prior to filing the invoice.
+To initiate the approval and payment process for invoices, suppliers should send a PDF of the invoice to billing@flowfuse.com from a company email. FlowFuse pays invoices 30 days after filing unless specifically agreed otherwise prior to filing the invoice.
 
 The invoice should include:
 - Vendor Invoice ID
@@ -22,6 +20,8 @@ The invoice should include:
 - Vendor contact details
 - Details of services rendered
 - Amount of dollars due
+
+When verifications are finalised, typically within a couple of business days, the vendor will receive an email with details and next steps.
 
 #### Fraud prevention
 
