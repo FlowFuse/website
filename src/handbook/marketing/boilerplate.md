@@ -7,7 +7,7 @@ navGroup: Sales & Marketing
 
 ## Tagline
 
-Bespoke, flexible, and resilient manufacturing applications
+Build bespoke, flexible, and resilient manufacturing applications
 
 ## One sentence description
 
