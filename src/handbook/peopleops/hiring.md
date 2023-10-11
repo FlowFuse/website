@@ -214,7 +214,11 @@ The People Ops manager will create a new off boarding issue for each instance of
 
 Final pay consists of the statutory minimal payment dictated by our payroll provider Deel, and an optional extra severance package. Such a package might be dependent on on business requirements, standing of the employee, among other factors.
 
-## Business expense
+### Business expense
 
 We will reimburse any outstanding expenses that comply with our handbook's reimbursement section.
 
+## Contractors
+
+All new contractors are to be employed through Deel to standardize contracts and aid with providing a consistent experience for all contractors. Either milestone based payments
+or being paid for month is supported.
