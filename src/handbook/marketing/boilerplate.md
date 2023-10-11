@@ -7,11 +7,12 @@ navGroup: Sales & Marketing
 
 ## Tagline
 
-Accelerate Digital Transformation with FlowFuse and Node-RED
+Build bespoke, flexible, and resilient manufacturing applications
 
 ## One sentence description
 
-FlowFuse allows organizations to reliably deliver Node-RED applications to accelerate solution development.
+FlowFuse empowers manufacturing organisations to build bespoke, flexible,
+and resilient applications.
 
 ## About FlowFuse - 50 Words
 
