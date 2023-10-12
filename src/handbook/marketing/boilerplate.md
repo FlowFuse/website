@@ -26,4 +26,4 @@ Node-RED is an open-source low-code programming tool, allowing developers to qui
 
 Node-RED is very popular in the manufacturing industry for collecting factory data at the edge and transmitting it to a database or the cloud. Its visual programming environment makes it easy for non-traditional software developers to create custom applications that accelerate innovation on the factory floor.
 
-FlowFuse and Node-RED makes it possible for manufacturing companies to build bespoke, flexible, and resilient applications that solve a business problem and drive forward transformation.
+FlowFuse and Node-RED makes it possible for manufacturing companies to build bespoke, flexible, and resilient applications that solve a business problem and accelerate transformation.
