@@ -24,6 +24,4 @@ FlowFuse is an open-core company investing in Node-RED. Nick O’Leary, co-creat
 
 Node-RED is an open-source low-code programming tool, allowing developers to quickly and easily connect IoT devices, APIs, and online services by creating flow-based applications. It uses a drag-and-drop interface to wire together nodes, which can represent devices, APIs, or functions, to process data, and create powerful automations. 
 
-Node-RED is very popular in the manufacturing industry for collecting factory data at the edge and transmitting it to a database or the cloud. Its visual programming environment makes it easy for non-traditional software developers to create custom applications that accelerate innovation on the factory floor.
-
-FlowFuse and Node-RED makes it possible for manufacturing companies to build bespoke, flexible, and resilient applications that solve a business problem and accelerate transformation.
+FlowFuse is the platform that allows manufacturing companies to build custom applications that fit their unique requirements. Off the shelf software doesn't work in the manufacturing industry. Each manufacturing operation is unique so you need a tool platform that allows your engineers to easily build custom applications that fit your unique requirements. FlowFuse and Node-RED combined together is the platform that allows manufacters to build bespoke, flexible and resilient applications that solve their business requirements.
