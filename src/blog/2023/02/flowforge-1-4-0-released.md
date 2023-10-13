@@ -18,7 +18,7 @@ Deploy Node-RED to many devices quickly, and allow a staged development process 
 
 Keep reading for the details of what's in this release or you can watch our 1 minute roundup video of the new release above.
 
-To make it easy for everyone to experience FlowFuse, we are introducing a new free 30-day trial. You can now experience the power of using FlowFuse to quickly deliver Node-RED applications in a reliable, repeatable, collaborative, and secure manner. To get your free trial simply [sign up for FlowFuse Cloud;](https://app.flowforge.com/account/create) no credit card is required!
+To make it easy for everyone to experience FlowFuse, we are introducing a new free 30-day trial. You can now experience the power of using FlowFuse to quickly deliver Node-RED applications in a reliable, repeatable, collaborative, and secure manner. To get your free trial simply [sign up for FlowFuse Cloud;]({{ site.appURL }}/account/create) no credit card is required!
 
 ## New User Features
 
@@ -79,11 +79,11 @@ If you're interested in contributing, checkout our [guide in the docs](/docs/con
 We're confident you can have self managed FlowFuse running locally in under 30 minutes.
 You can install our [local build](/docs/install/local/), use [Docker](/docs/install/docker/), or [Kubernetes](/docs/install/kubernetes/).
 
-If you'd rather use our hosted offering: [Get started for free](https://app.flowforge.com/account/create) on FlowFuse Cloud.
+If you'd rather use our hosted offering: [Get started for free]({{ site.appURL }}/account/create) on FlowFuse Cloud.
 
 ## Upgrading FlowFuse
 
-[FlowFuse Cloud](https://app.flowforge.com) is already running 1.4.
+[FlowFuse Cloud]({{ site.appURL }}) is already running 1.4.
 
 If you installed a previous version of FlowFuse and want to upgrade, our documentation provides a
 guide for [upgrading your FlowFuse instance](/docs/upgrade/).

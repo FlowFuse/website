@@ -13,7 +13,7 @@ sitemapPriority: 1.0
         </p>
         <div class="flex flex-col">
             <div class="m-auto mt-7 flex flex-col gap-4 items-center justify-center">
-                <a class="ff-btn ff-btn--primary flex flex-col" href="https://app.flowforge.com/account/create" onclick="capture('cta-join', {'position': 'primary'})">
+                <a class="ff-btn ff-btn--primary flex flex-col" href="{{ site.appURL }}/account/create" onclick="capture('cta-join', {'position': 'primary'})">
                     <span class="text-base uppercase flex gap-2 items-center">
                         Build your first application
                         {% include "components/icons/arrow-right.svg" %}
@@ -105,7 +105,7 @@ sitemapPriority: 1.0
                 <h5 class="flex justify-center">FlowFuse Cloud</h5>
                 </div>
                 <label class="font-light mt-2 block">Get started in less than a minute, fully managed, fully secure.</label>
-                <a class="mt-4 ff-btn ff-btn--primary uppercase inline-block" href="https://app.flowforge.com/account/create" onclick="capture('cta-join', {'position': 'secondary'})">Join Now</a>   
+                <a class="mt-4 ff-btn ff-btn--primary uppercase inline-block" href="{{ site.appURL }}/account/create" onclick="capture('cta-join', {'position': 'secondary'})">Join Now</a>   
             </div>
         </div>
     </div>

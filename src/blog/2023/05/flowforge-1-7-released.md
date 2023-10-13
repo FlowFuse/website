@@ -90,11 +90,11 @@ Cannot select "Member" option when inviting a team member [#2084](https://github
 We're confident you can have self managed FlowFuse running locally in under 30 minutes.
 You can install our [local build](/docs/install/local/), use [Docker](/docs/install/docker/), or [Kubernetes](/docs/install/kubernetes/).
 
-If you'd rather use our hosted offering: [Get started for free](https://app.flowforge.com/account/create) on FlowFuse Cloud.
+If you'd rather use our hosted offering: [Get started for free]({{ site.appURL }}/account/create) on FlowFuse Cloud.
 
 ## Upgrading FlowFuse
 
-[FlowFuse Cloud](https://app.flowforge.com) is already running 1.7.
+[FlowFuse Cloud]({{ site.appURL }}) is already running 1.7.
 
 If you installed a previous version of FlowFuse and want to upgrade, our documentation provides a
 guide for [upgrading your FlowFuse instance](/docs/upgrade/).

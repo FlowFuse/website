@@ -64,12 +64,12 @@ As an open-source project, we welcome community involvement in what we're buildi
 
 ### Try it out
 
-[Sign up for FlowFuse-Managed Premium](https://app.flowforge.com/account/create?code=RELEASE1) with this link or at the checkout enter the code **RELEASE1** to get your first project free for a month. As an open source project you can also use [FlowFuse-Community](/docs/install/) for free, forever.
+[Sign up for FlowFuse-Managed Premium]({{ site.appURL }}/account/create?code=RELEASE1) with this link or at the checkout enter the code **RELEASE1** to get your first project free for a month. As an open source project you can also use [FlowFuse-Community](/docs/install/) for free, forever.
 
 
 ### Upgrading FlowFuse
 
-Our managed [FlowFuse](https://app.flowforge.com) is already running 1.0. Upgrade your project Stacks to the latest version to make sure you get all the latest changes.
+Our managed [FlowFuse]({{ site.appURL }}) is already running 1.0. Upgrade your project Stacks to the latest version to make sure you get all the latest changes.
 
 If you installed a previous version of FlowFuse and want to upgrade, our documentation provides a
 guide for [upgrading FlowFuse on a local server](/docs/upgrade/#upgrading-flowfuse).

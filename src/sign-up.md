@@ -9,7 +9,7 @@ pagination:
   alias: redirect
 # Add your redirection tuples to this list!
 redirects:
-  - { "from": "/sign-up/", "to": "https://app.flowforge.com/account/create"}
+  - { "from": "/sign-up/", "to": "https://app.flowfuse.com/account/create"}
 # The "permalink" attribute determines where the output page will be located.
 permalink: "{{ redirect.from }}"
 # The "redirect" layout just has a small html header with the meta tags that do redirection.

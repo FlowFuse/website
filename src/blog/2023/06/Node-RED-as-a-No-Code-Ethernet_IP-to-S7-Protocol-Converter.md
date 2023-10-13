@@ -30,7 +30,7 @@ But for this application, we will instead use FlowFuse, a pure software-based ap
 
 ### FlowFuse
 
-In addition to our two PLCs, we’ll be using FlowFuse software to serve our Node-RED instance. You can either self-host, on-premise or in the cloud. Or use the managed service [FlowFuse Cloud](https://app.flowforge.com).
+In addition to our two PLCs, we’ll be using FlowFuse software to serve our Node-RED instance. You can either self-host, on-premise or in the cloud. Or use the managed service [FlowFuse Cloud]({{ site.appURL }}).
 
 In this example, we will be using a self-hosted FlowFuse instance running on [Docker](/docs/install/docker/).
 

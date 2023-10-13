@@ -49,7 +49,7 @@ If you're interested in contributing, checkout our [guide in the docs](/docs/con
 
 ### Upgrading FlowFuse
 
-This release has already been rolled out to [FlowFuse Cloud](https://app.flowforge.com).
+This release has already been rolled out to [FlowFuse Cloud]({{ site.appURL }}).
 
 If you installed a previous version of FlowFuse and want to upgrade, our documentation provides a
 guide for [upgrading your FlowFuse instance](/docs/upgrade/)

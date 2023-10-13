@@ -1,6 +1,7 @@
 {
     "title": "FlowFuse",
     "baseURL": "https://flowfuse.com",
+    "appURL": "https://app.flowfuse.com",
     "jobBoard": "https://boards.greenhouse.io/flowfuse",
     "openings": {
         "sales": "https://boards.greenhouse.io/flowfuse/jobs/4843566004",
