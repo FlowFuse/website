@@ -57,7 +57,7 @@ We've fixed the following bugs in this release.
 
 ### Upgrading FlowFuse
 
-[FlowFuse Cloud](https://app.flowforge.com) is already running 0.7 - ready for
+[FlowFuse Cloud]({{ site.appURL }}) is already running 0.7 - ready for
 you to try out rollbacks and the new theme. 
 
 If you installed a previous version of FlowFuse and want to upgrade, our documentation provides a

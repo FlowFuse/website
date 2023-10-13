@@ -20,7 +20,7 @@ The same fix also addresses an [issue](https://github.com/FlowFuse/flowfuse/issu
 
 ### Upgrading FlowFuse
 
-This release has already been rolled out to [FlowFuse Cloud](https://app.flowforge.com).
+This release has already been rolled out to [FlowFuse Cloud]({{ site.appURL }}).
 
 If you installed a previous version of FlowFuse and want to upgrade, our documentation provides a
 guide for [upgrading your FlowFuse instance](/docs/upgrade/)

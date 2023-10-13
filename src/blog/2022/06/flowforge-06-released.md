@@ -66,7 +66,7 @@ Node-RED editor sessions you have open.
 
 ### Upgrading FlowFuse
 
-[FlowFuse Cloud](https://app.flowforge.com) is already running 0.6 - ready for
+[FlowFuse Cloud]({{ site.appURL }}) is already running 0.6 - ready for
 you to start creating snapshots and adding devices right now.
 
 If you installed a previous version of FlowFuse and want to upgrade, our documentation provides a

@@ -65,7 +65,7 @@ As an open-source project, we welcome the community involvement in what we're bu
 
 ### Upgrading FlowFuse
 
-[FlowFuse Cloud](https://app.flowforge.com) is already running 0.8 and the stacks updated. Upgrade your project stacks to the latest version and start using the Project Link nodes now.
+[FlowFuse Cloud]({{ site.appURL }}) is already running 0.8 and the stacks updated. Upgrade your project stacks to the latest version and start using the Project Link nodes now.
 
 If you installed a previous version of FlowFuse and want to upgrade, our documentation provides a
 guide for [upgrading FlowFuse on a local server](/docs/upgrade/#upgrading-flowfuse).

@@ -71,12 +71,12 @@ If you're interested in contributing, checkout our [guide in the docs](/docs/con
 In 1.2 we've continued to improve the experience of running your own self managed FlowFuse installation. We're confident you can have self managed FlowFuse running locally in under 30 minutes.
 You can install our [local build](/docs/install/local/), through [Docker](/docs/install/docker/), or [Kubernetes](/docs/install/kubernetes/).
 
-If you'd rather use our hosted offering: [Sign up for FlowFuse Cloud](https://app.flowforge.com/account/create?code=FF12)
+If you'd rather use our hosted offering: [Sign up for FlowFuse Cloud]({{ site.appURL }}/account/create?code=FF12)
 with the coupon **FF12** to get your first project free for a month.
 
 ### Upgrading FlowFuse
 
-[FlowFuse Cloud](https://app.flowforge.com) is already running 1.2. To use
+[FlowFuse Cloud]({{ site.appURL }}) is already running 1.2. To use
 persistent context you'll need to upgrade your projects stack.
 
 If you installed a previous version of FlowFuse and want to upgrade, our documentation provides a

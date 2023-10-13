@@ -72,7 +72,7 @@ for, among others, cookies.
 
 _FlowFuse Cloud_: Our SaaS offering has multiple service domains. The
 corporate website is hosted at [flowforge.com](https://flowforge.com). The
-application is served at [app.flowforge.com](https://app.flowforge.com), while
+application is served at [app.flowfuse.com]({{ site.appURL }}), while
 the Node-RED instances are served from \*.flowforge.cloud.
 
 MQTT traffic is served from mqtt.flowforge.cloud as MQTT over WebSockets.

@@ -90,12 +90,12 @@ you can have your own FlowFuse running locally in about 30 minutes.
 ([Docker](/docs/install/docker/) and [Kubernetes](/docs/install/kubernetes/)
 are available too!)
 
-If you'd rather use our hosted offering: [Sign up for FlowFuse Cloud](https://app.flowforge.com/account/create?code=RELEASE11)
+If you'd rather use our hosted offering: [Sign up for FlowFuse Cloud]({{ site.appURL }}/account/create?code=RELEASE11)
 with the coupon **RELEASE11** to get your first project free for a month.
 
 ### Upgrading FlowFuse
 
-[FlowFuse Cloud](https://app.flowforge.com) is already running 1.1. To use
+[FlowFuse Cloud]({{ site.appURL }}) is already running 1.1. To use
 persisted files you'll need to upgrade your projects stack. You'll be prompted
 to do so on the project page.
 

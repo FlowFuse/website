@@ -21,7 +21,7 @@ First, you'll need to get an installation of Node-RED up and running. There are 
 
 #### FlowFuse
 
-To get Node-RED running on FlowFuse visit our [web site and create a new user](https://app.flowforge.com/account/create). We've got an offer at the moment which gives you a Node-RED instance for free for one month.
+To get Node-RED running on FlowFuse visit our [web site and create a new user]({{ site.appURL }}/account/create). We've got an offer at the moment which gives you a Node-RED instance for free for one month.
 
 You now need to create an application, which includes an instance of Node-RED. Once that instance has booted up you access Node-RED by pressing "Open Editor".
 

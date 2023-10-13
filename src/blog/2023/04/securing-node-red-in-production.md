@@ -145,7 +145,7 @@ By default, the editor for Node-RED is protected using your FlowFuse user creden
 
 All traffic to FlowFuse and your Node-RED instances is protected by HTTPS. FlowFuse has set up the domain name and manages the certificates so you can spend time on your flows rather than configuring security.
 
-FlowFuse has a [free trial](https://app.flowforge.com/account/create) if you'd like to see how we've made secure hosting of Node-RED easy.
+FlowFuse has a [free trial]({{ site.appURL }}/account/create) if you'd like to see how we've made secure hosting of Node-RED easy.
 
 ## Conclusion
 
