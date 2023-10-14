@@ -18,11 +18,11 @@ Starting today, FlowFuse Blueprints are available on FlowFuse Cloud. Additionall
 
 ## FlowFuse Blueprints
 
-FlowFuse Blueprints aim to make the Node-RED experience more accessible for newcomers, while also offering a treasure trove of fresh ideas for seasoned Node-RED users. When setting up a new Node-RED instance, you now have the option to choose a Blueprint tailored for specific use cases. For example, our "ANDON Operator Terminal" Blueprint can be selected, and it will automatically configure the Node-RED instance, sparing you the need to start from scratch. While these templates are powerful out-of-the-box, they're also fully customizable, allowing you to tweak them to suit your unique requirements. Ultimately, Blueprints speed up the learning curve for new users and expedite the solution-building process for experienced ones.
+FlowFuse Blueprints aim to make the Node-RED experience more accessible for newcomers, while also offering a treasure trove of fresh ideas for seasoned Node-RED users. When setting up a new Node-RED instance, you now have the option to choose a blueprint tailored for specific use cases. For example, our "ANDON Operator Terminal" blueprint can be selected, and it will automatically configure the Node-RED instance, sparing you the need to start from scratch. While these templates are powerful out-of-the-box, they're also fully customizable, allowing you to tweak them to suit your unique requirements. Ultimately, blueprints speed up the learning curve for new users and expedite the solution-building process for experienced ones.
 
 ## The first three Blueprints
 
-Over the coming weeks, we'll be releasing a multitude of Blueprints tailored for diverse use cases. However, we decided to start with with three foundational manufacturing applications designed with the [Node-RED Dashboard 2.0](https://dashboard.flowfuse.com/).
+In the coming weeks, we'll be releasing a multitude of blueprints tailored for diverse use cases. However, we decided to start with with three foundational manufacturing applications designed with the [Node-RED Dashboard 2.0](https://dashboard.flowfuse.com/).
 
 ### ANDON Operator Terminal
 The Andon Operator Terminal is designed to be at the start of an Andon process, allowing end-users to report any issues with the cell to a supervisor.
