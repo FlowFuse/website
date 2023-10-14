@@ -8,10 +8,11 @@ image: /images/blog/nr-quicktips.jpg
 tags:
     - posts 
     - node-red
-    - tips
+    - how-to
 ---
 
 There is usually more than one way to complete a given task in software, and Node-RED is no exception. In each of this series of blog posts, we are going to share three useful tips to save yourself time when working on your flows.
+
 <!--more-->
 
 ### 1. Subflows
