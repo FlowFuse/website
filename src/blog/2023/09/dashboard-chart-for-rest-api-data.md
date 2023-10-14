@@ -9,6 +9,7 @@ tags:
     - posts
     - how-to
     - node-red
+    - dashboard
 ---
 
 There are many different ways to get data for a Node-RED dashboard. One common

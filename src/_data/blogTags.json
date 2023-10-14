@@ -22,4 +22,7 @@
 }, {
     "label": "News",
     "value": "news"
+}, {
+    "label": "Dashboard",
+    "value": "dashboard"
 }]

@@ -8,6 +8,7 @@ image: /blog/2023/07/images/nr-dashboard-tile.png
 tags:
     - posts
     - releases
+    - dashboard
 ---
 
 Just weeks ago, we at FlowFuse [announced our plan](../../06/dashboard-announcement) to develop a successor to the Node-RED Dashboard. Today, we're excited to reveal the pre-alpha release of this highly anticipated project, bringing us one step closer to a new era of data visualization in Node-RED.

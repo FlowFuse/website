@@ -9,6 +9,7 @@ tags:
     - posts
     - node-red
     - how-to
+    - dashboard
 ---
 
 Node-RED makes it easy to create HMI (Human Machine Interfaces) using the [Dashboard set of custom nodes](https://flows.nodered.org/node/node-red-dashboard).

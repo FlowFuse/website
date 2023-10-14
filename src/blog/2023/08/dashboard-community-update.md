@@ -9,6 +9,7 @@ tags:
     - posts
     - releases
     - community
+    - dashboard
 ---
 
 Welcome to the latest Node-RED Dashboard 2.0 update. We've added lots of new widgets, cleaned up compatibility issues alongside Dashboard 1.0 and made strides to improve the events system linking the Node-RED editor with the Dashboard.

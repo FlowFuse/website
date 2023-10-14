@@ -9,6 +9,7 @@ tags:
     - posts
     - how-to
     - node-red
+    - dashboard
 ---
 
 Vuetify is a library of UI components using Vue. This saves the developers of
