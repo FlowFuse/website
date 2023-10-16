@@ -4,7 +4,7 @@ subtitle: Preconfigured Node-RED Applications
 description: Explore the concept of FlowFuse Blueprints, the pre-built solutions to simplify Node-RED experience, and take a look at the first three Blueprints we've launched for manufacturing applications.
 date: 2023-10-16
 authors: ["marian-demme"]
-#image: "/blog/2023/10/images/ANDON1.png"
+image: "/blog/2023/10/images/blueprints.png"
 tags:
     - posts
     - releases
