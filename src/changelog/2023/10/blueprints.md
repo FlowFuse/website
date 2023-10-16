@@ -1,5 +1,5 @@
 ---
-title: Flow Blueprints
+title: Blueprints
 date: 2023-10-16 10:00:00.0
 authors: ["marian-demme"]
 tags:
