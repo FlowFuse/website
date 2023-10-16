@@ -19,6 +19,10 @@ Starting today, FlowFuse Blueprints are available on FlowFuse Cloud. Additionall
 
 FlowFuse Blueprints aim to make the Node-RED experience more accessible for newcomers, while also offering a treasure trove of fresh ideas for seasoned Node-RED users. When setting up a new Node-RED instance, you now have the option to choose a blueprint tailored for specific use cases. For example, our "ANDON Operator Terminal" blueprint can be selected, and it will automatically configure the Node-RED instance, sparing you the need to start from scratch. While these templates are powerful out-of-the-box, they're also fully customizable, allowing you to tweak them to suit your unique requirements. Ultimately, blueprints speed up the learning curve for new users and expedite the solution-building process for experienced ones.
 
+### How to use Blueprints?
+
+All our FlowFuse Cloud users can select a Blueprint directly while creating a new Node-RED instance. Self-hosted customers can request access to our blueprints via a [support ticket](https://flowfuse.com/support/).
+
 ## The first three Blueprints
 
 In the coming weeks, we'll be releasing a multitude of blueprints tailored for diverse use cases. However, we decided to start with with three foundational manufacturing applications designed with the [Node-RED Dashboard 2.0](https://dashboard.flowfuse.com/).
