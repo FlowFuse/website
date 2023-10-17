@@ -10,6 +10,7 @@ tags:
     - releases
     - community
     - changelog
+    - dashboard
 ---
 
 Whilst we're still busy backporting through the existing Dashboard 1.0 features, we did want to highlight some new features we've built in Dashboard 2.0 released this week.

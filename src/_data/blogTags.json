@@ -11,9 +11,6 @@
     "label": "How-To",
     "value": "how-to"
 }, {
-    "label": "Quick Tips",
-    "value": "tips"
-}, {
     "label": "Community",
     "value": "community"
 }, {
@@ -22,4 +19,7 @@
 }, {
     "label": "News",
     "value": "news"
+}, {
+    "label": "Dashboard",
+    "value": "dashboard"
 }]

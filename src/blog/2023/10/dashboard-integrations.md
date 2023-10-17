@@ -10,6 +10,7 @@ tags:
     - releases
     - community
     - changelog
+    - dashboard
 ---
 
 With a new release, comes new features for Dashboard 2.0, and the focus of this release has been on improving the developer experience for those building third-party widgets for Dashboard 2.0.
