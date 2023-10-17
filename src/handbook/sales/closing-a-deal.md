@@ -4,13 +4,24 @@ navTitle: Closing a Deal
 
 # Closing a deal
 
-Follow the steps below to ensure every new customer is setup for success and quickly as possible following a sale.
+Follow the steps below to ensure every new customer is setup for success and
+quickly as possible following a sale. A deal is considered closed when the
+customer signed the order form or quote. You do not need to wait for 
+countersignature.
 
 ## Steps
 
-1. Once the order form is signed by the customer, you should move the deal to Closed Won in HubSpot. You do not need to wait for countersignature.
+1. Move the deal to `Closed Won` in HubSpots Deal overview.
+1. Provide access to the bought resources
+   * *Cloud*
+      * Ensure a team on FlowFuse Cloud has been set up by the custome including billing.
+      * Apply the discounts on the stripe customer through Coupons
+      * Have a FlowFuse Admin upgrade the customer to the correct tier
+   * *Self-Managed*
+      * Generate a [license key](/handbook/sales/pricing/#generating-a-license)
+      * Send the license key with the onboarding email to the customer
+1. Start invoice procedure
+   * Email the billing (billing@) department with the signed fully
+quote. Also include customer details like their email and if applicable their stripe customer details.
+   * Update the Stripe customer to set `CommittedRevenue` to `true` in the Metadata
 1. Once all parties have signed, download the completed Order Form and Subscription Agreement, and upload them to the Legal folder in Google Drive.
-1. For self-managed customers a [license key needs to be generated](/handbook/sales/pricing/#generating-a-license) to be included in the onboarding email.
-1. If it is a cloud deal, any discounts need to be setup by the CEO in Stripe. Let the CEO know which email to send the invoice to once configured.
-1. For Cloud teams: Upgrade their team to the right tier 
-1. Send the onboarding email with an introduction to their CSM, and the license key (if self-hosted).
