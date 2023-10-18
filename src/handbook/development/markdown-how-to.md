@@ -82,6 +82,15 @@ from the previous paragraph.
 [this will be a link](http://localhost:8080/blog/2023/02/flowforge-1-4-0-released/)
 ```
 
+## Images
+
+A picture speaks a thousand words, to include an image in your content it's like a link
+but with an `!` in front of it.
+
+```md
+![Image Name](image.jpg "alt text when you hover the image")
+```
+
 ## Quoting
 
 > this will quote some text
