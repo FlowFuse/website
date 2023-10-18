@@ -67,6 +67,9 @@ In _all_ other case; use [Slack](#slack).
 When using Slack, prefer to keep discussions in a thread. This reduces scroll
 back, and focusses channels.
 
+To keep everyone on the same page and to allow others to collaborate you should favour
+public channels over DMs. 
+
 Note that knowledge in Slack is ephemeral, it's not storage for information or knowledge
 sharing. As such knowledge and decision made in Slack should always be recorded
 in the handbook, GitHub issue, or Google Doc on that topic to keep a log that also works
