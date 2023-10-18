@@ -1,9 +1,9 @@
 ---
-title: MES: Build vs Buy
-subtitle: With the 0.6.0 Release of Dashboard 2.0, we now support third-party widget integration. Read more in this deep dive.
-description: With the 0.6.0 Release of Dashboard 2.0, we now support third-party widget integration. Read more in this deep dive.
-date: 2023-10-06
-authors: ["joe-pavitt"]
+title: "Embracing Innovation: Build vs Buy in MES"
+subtitle: "Bridging the Gap: Uniting MES Development with Automation System Practices"
+description: "Bridging the Gap: Uniting MES Development with Automation System Practices"
+date: 2023-10-20
+authors: ["grey-dziuba"]
 image: "/blog/2023/10/images/tile-db-integration.png"
 tags:
     - posts
@@ -13,43 +13,34 @@ tags:
     - dashboard
 ---
 
-With a new release, comes new features for Dashboard 2.0, and the focus of this release has been on improving the developer experience for those building third-party widgets for Dashboard 2.0.
+In today's fast-paced manufacturing landscape, the question of whether to build or buy Manufacturing Execution System (MES) solutions is more pertinent than ever. Traditional practices often involve outsourcing MES development to system integration (SI) companies or purchasing a software MES package, leaving manufacturing engineers with limited control and flexibility. However, a shift toward a hybrid approach, combining the strengths of both building and buying, is revolutionizing the way we approach MES systems. This article explores the advantages of using Node-RED in combination with FlowFuse for MES deployment and how it can empower manufacturing companies to achieve new levels of efficiency and adaptability.
 
 <!--more-->
 
-Dashboard 1.0 had a hugely popular ecosystem of third party widgets (e.g. `ui-worldmap`, `ui-svg`) and something we've been keen to support is a platform where these widgets (and more) can be built and used within Dashboard 2.0 too.
+## The Hybrid Approach: A Best of Both Worlds Strategy
 
-Whilst we can't support the existing Dashboard 1.0 extensions directly (given that we're now VueJS-based, rather than AngularJS), we hope that the framework, documentation and this article, will help springboard the community to build new (and transfer over old) widgets for Dashboard 2.0.
+Much like the practice of outsourcing machine installation while specifying detailed requirements, a hybrid approach to MES systems leverages the expertise of SI companies while retaining control over critical aspects of system design. This approach recognizes that automation engineers possess valuable insights into the unique needs of their manufacturing processes. They can specify crucial details such as wire coloring schemes, downtime conventions, Andon board standards, PLC types, and even the code used on PLCs.
 
-## Building from `ui-template`
 
-As with Dashboard 1.0, we've utilised the flexibility of our `ui-template` node here to enable third-party integrations.
+## Node-RED: The MES Code's Best Friend
 
-If you're used the new `ui-template` in Dashboard 2.0 already, you'll know that you can provide raw Vue (HTML) content and it'll render that into your Dashboard. In 0.6.0, we've added _a lot_ of new functionality to the guts of `ui-template`, which we can then extend with our third-party widgets.
+Node-RED emerges as a game-changer in this paradigm. It is an open-source, flow-based development tool renowned for its ability to connect everything, from PLCs to relational databases to firewalls, empowering engineers to create MES system logic visually. Node-RED simplifies the process by enabling engineers to drag and drop nodes and wires to define the logic flow. This visual approach not only streamlines development but also enhances the transparency of the codebase.  
 
-This new functionality includes:
+## The Power of Standardization and Code Clarity
 
-- **Custom Dependencies** - Injection of external widget dependencies (e.g. other JavaScript libraries) via `<head>`.
-- **On Input** - `onInput` defines behaviour of the widget in Dashboard when it receives a message in Node-RED.
-- **On Load** - `onMounted` defines functionality when a widget first loads in Dashboard.
-- **Custom Functions** - Define general functions that can be called from within your widget at any point of your choosing
-- **Extend Built-In Events** - Our built in `send` function can be called within your widget's template, and will send a message back to Node-RED, with any content of your choosing.
-- **Custom SocketIO Event Handlers** - If you want to extend the communication between Dashboard and Node-RED, you can emit your own SocketIO events from Dashboard, and have respective handlers for those events in Node-RED.
+One of the primary reasons behind Node-RED's appeal is its ability to standardize code. Just as Ladder Logic and Function Block Diagrams have long been favored for their clarity, Node-RED fosters a coding environment where engineers can easily understand and build upon each other's work. This standardization ensures that MES systems remain in sync with the rest of the plant, making troubleshooting and maintenance more efficient.
 
-We also have plans to expose more of this new functionality to the `ui-template` interface itself within Node-RED, but for now it's mostly available when developing third-party widgets.
+## FlowFuse: Bridging the Gap to Deployment
 
-## Useful Resources
+When it comes to deploying MES systems, FlowFuse enters the scene as a vital companion to Node-RED. FlowFuse is a deployment platform that seamlessly integrates with Node-RED, allowing for effortless deployment of applications to a customer's environment. Its user-friendly interface makes it easy for automation engineers to manage and scale their MES systems.
 
-If you're interested in building integrations, then we've also built a couple of resources to help you get started:
+## Pioneering the Future: The Strategic Adoption of Node-RED and FlowFuse
 
-- [Widget Development Guide](https://dashboard.flowfuse.com/contributing/widgets/third-party.html) - A guide for how to structure your own widgets, and 
-- [Example Integration (Repo)](https://github.com/FlowFuse/node-red-dashboard-example-node) - We've open sourced a very simple `ui-example` node that demonstrates how you can build your own widget for Dashboard 2.0, that utilises all of the features highlighted above.
+Embracing Node-RED and FlowFuse in MES system development is not just a technical choice; it's a strategic one. By adopting this hybrid approach, manufacturing companies position themselves as thought leaders in the industry. They demonstrate a commitment to innovation, transparency, and adaptability.
 
-## What else is new in 0.6.0?
+## Elevate Your MES Strategy: Embrace Node-RED and FlowFuse Today
 
-Whilst we focussed this article on the third-party integrations, we did also squeeze quite a lot more into the 0.6.0 release too with plenty [other fixes and improvements](https://github.com/FlowFuse/node-red-dashboard/releases/tag/v0.6.0), including the separation of the Dash oard 2.0 nodes into a new "Dashboard 2" category in the Node-RED palette.
+In conclusion, the answer to the build vs. buy dilemma for MES systems is not one or the other—it's both. Node-RED and FlowFuse offer a dynamic partnership that empowers manufacturing companies to craft MES solutions that are tailored to their needs while harnessing the expertise of System Integration companies. The call to action is clear: Embrace Node-RED and FlowFuse as the catalysts for your manufacturing innovation journey.
 
-As always, thanks for reading and your interested in Dashboard 2.0. If you have any feature requests, bugs/complaints or general feedback, please do reach out, and raise issues on our relevant [GitHub repository](https://github.com/FlowFuse/node-red-dashboard).
+For more information about FlowFuse and how it can revolutionize your MES system deployment, visit FlowFuse.com Start building MES systems that are not just efficient but also future-ready, and become a trailblazer in the world of industrial manufacturing.
 
-- [Dashboard 2.0 Activity Tracker](https://github.com/orgs/FlowFuse/projects/15/views/1)
-- [Dashboard 2.0 Planning Board](https://github.com/orgs/FlowFuse/projects/15/views/4)
