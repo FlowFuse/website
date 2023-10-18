@@ -1111,6 +1111,10 @@ h4:hover .header-anchor {
         @apply sm:grid-rows-[36px,minmax(18px,1fr)];
     }
 
+    .ff-certified {
+        @apply sm:grid-cols-[24px,1fr,86px];
+    }
+
     .ff-line-container {
         @apply grid items-stretch my-auto sm:my-0 sm:mx-auto;
     }
