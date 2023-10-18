@@ -11,6 +11,7 @@ navGroup: Development & Design Practices
 - [Contributing](../development/how-we-work/contributing.md)
 - [Security Policy](../development/how-we-work/security.md)
 - [Staging Environment](../development/how-we-work/staging.md)
+- [Observability](../development/observability.md)
 
 ## Releases
 
