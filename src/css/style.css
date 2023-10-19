@@ -1095,6 +1095,37 @@ h4:hover .header-anchor {
     .ff-features-key label {
         margin-left: 12px;
     }
+    /*
+        Certify hardware lists
+    */
+
+    .ff-certify-list {
+        @apply flex flex-col pb-6 gap-y-10 sm:gap-y-0;
+    }
+
+    .ff-certify-list > .ff-item {
+        @apply grid grid-cols-[1fr,50px,1fr] sm:grid-cols-[24px,1fr] sm:grid-flow-col md:px-10 sm:gap-x-6 sm:grid-rows-[minmax(18px,1fr),60px,minmax(18px,1fr)];
+    }
+
+    .ff-certify-list > .ff-item:first-of-type {
+        @apply sm:grid-rows-[36px,minmax(18px,1fr)];
+    }
+
+    .ff-certified {
+        @apply sm:grid-cols-[24px,1fr,86px];
+    }
+
+    .ff-line-container {
+        @apply grid items-stretch my-auto sm:my-0 sm:mx-auto;
+    }
+
+    .ff-line {
+        @apply sm:w-px w-full h-px sm:h-full bg-gray-300 sm:bg-gray-500;
+    }
+
+    .ff-certify-list-icon {
+        @apply m-auto text-gray-500 w-[24px];
+    }
 
     /*
         Used for nicely formatting links
