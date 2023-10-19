@@ -16,7 +16,8 @@ and resilient applications.
 
 ## About FlowFuse - 50 Words
 
-FlowFuse helps Node-RED developers delivery applications in a more reliable, collaborative, and secure manner. Node-RED’s intuitive, low-code development environment is great for connecting together hardware devices, APIs, and online services. FlowFuse adds to Node-RED; collaborative development, management of remote deployments, support for DevOps deliver pipelines, and the ability to host Node-RED applications on FlowFuse Cloud. FlowFuse is the DevOps platform for Node-RED application development and delivery.
+FlowFuse empowers manufacturers to build bespoke, flexible, and resilient applications that drive business value and transformation. FlowFuse and Node-RED provide a low-code platform that allows your engineers to quickly build applications that solve your business problems and also make it easy to adapt these applications in the future.
+
 
 ## About FlowFuse - 150 Words
 
@@ -24,6 +25,4 @@ FlowFuse is an open-core company investing in Node-RED. Nick O’Leary, co-creat
 
 Node-RED is an open-source low-code programming tool, allowing developers to quickly and easily connect IoT devices, APIs, and online services by creating flow-based applications. It uses a drag-and-drop interface to wire together nodes, which can represent devices, APIs, or functions, to process data, and create powerful automations. 
 
-Node-RED is very popular in the manufacturing industry for collecting factory data at the edge and transmitting it to a database or the cloud. Its visual programming environment makes it easy for non-traditional software developers to create data applications that accelerate innovation on the factory floor.
-
-FlowFuse adds to Node-RED collaborative development, management of remote deployments, support for DevOps delivery pipelines and the ability to host Node-RED applications on FlowFuse Cloud. FlowFuse is the devops platform for Node-RED application development and delivery.
+FlowFuse is the platform that empowers manufacturing companies to build custom applications that fit their unique requirements. Off the shelf software doesn't work in the manufacturing industry. Each manufacturing operation is unique so you need a tool platform that allows your engineers to easily build custom applications that fit your unique requirements. FlowFuse and Node-RED combined together is the platform that allows manufactures to build bespoke, flexible and resilient applications that solve their business requirements.
