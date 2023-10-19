@@ -15,7 +15,7 @@ FlowFuse allows organizations to reliably deliver Node-RED applications to accel
 
 ## About FlowFuse - 50 Words
 
-FlowFuse allows manufacturers to build bespoke, flexible, and resilient applications that drive business value and transformation. FlowFuse and Node-RED provide a low-code platform that allows your engineers to quickly build applications that solve your business problems and also make it easy to adapt these applications in the future.
+FlowFuse empowers manufacturers to build bespoke, flexible, and resilient applications that drive business value and transformation. FlowFuse and Node-RED provide a low-code platform that allows your engineers to quickly build applications that solve your business problems and also make it easy to adapt these applications in the future.
 
 
 ## About FlowFuse - 150 Words
