@@ -1,6 +1,6 @@
 ---
 navTitle: Design
-navGroup: Development & Design Practices
+navGroup: Engineering & Design Practices
 ---
 
 # Design

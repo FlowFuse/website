@@ -3,7 +3,7 @@ navTitle: Release Process
 ---
 # Release Process
 
-We do two types or releases:
+We do two types of releases:
 
  - [Scheduled Releases](#scheduled-releases) - _for the planned release of the entire set of product repositories._
  - [Fix Releases](#fix-releases) - _for ad-hoc release of individual repositories._

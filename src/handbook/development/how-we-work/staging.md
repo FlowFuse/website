@@ -8,27 +8,29 @@ We have a staging environment running on AWS which is a scaled down replica of
 our managed FlowFuse offering, with a separate domain. Staging URL and sign in
 details can be found in the Developer Vault in 1Password.
 
+## Deployment
+
+Any change to core product repositories triggers a series of GitHub Actions that results
+in staging being updated with the latest code. This can take up to 30 minutes to complete.
+
+The deploy action can be monitored [here](https://github.com/FlowFuse/helm/actions/workflows/flowforge-container.yml).
+
+
 ## AWS Account
 
-It uses a separate AWS account ending in ..9937
-
-Ben or ZJ can provision a user account for this account.
-
-The services are running in EU-West-1.
-
-## Nodes
-
-The staging environment uses one node running on a t2.small for the management
-app and a pair of t2.small nodes for the projects cluster. t2.small is the
-smallest instance that can be used with EKS.
+It uses a separate AWS account ending in ..9937. The services are running in EU-West-1.
+Access to the AWS account is restricted and not generally available. If you believe
+you have a need to access the AWS account, raise an issue in [CloudProject](https://github.com/FlowFuse/CloudProject)
+and assign to the CTO for review.
 
 ## Email
 
-Amazon SES is setup on staging however it is still running in sandbox mode which means only verified address & domains can RECEIVE emails from it, this is currently limited to flowforge.com email addresses and a small set of pre-approved disposable emails.
+Amazon SES is setup on staging however it is still running in sandbox mode which means only verified address & domains can RECEIVE emails from it, this is currently limited to flowfuse.com email addresses and a small set of pre-approved disposable emails.
 
-There is no intention to move this from sandbox as this helps to limit access to staging.
+If you need to use another email address with staging then you should raise an issue 
+in [CloudProject](https://github.com/FlowFuse/CloudProject) and assign to the CTO for review.
 
-If you need to use another email address with staging then you should verify the address through SES in the AWS Console.
+If approved, the email will need to be added to the SES configuration in the AWS console.
 
 ### Test Email accounts
 
@@ -38,38 +40,10 @@ of short-lived testing of sign-up and user management.
 The inboxes for these email addresses are publicly accessible if known, so the list
 is available on this private issue: https://github.com/FlowFuse/CloudProject/issues/135
 
-## Deployment
-
-Currently there is no auto deployment to staging, this should be rectified in the future so that staging is running the code in the main branches  of the respective repos.
-
 ## Using staging
 
 When setting up a team you'll need to enter billing details. For credit card
 details, use [the Stripe mock data](https://stripe.com/docs/testing#testing-interactively).
 
-## Using the FlowFuse Device Agent with staging
-
-Staging uses pre-release npm packages stored in a GitHub npm repository. To be able to use these packages you will need to authenticate with the repository.
-
-You will need to create a GH Personal token
-
-1. Go to your [classic personal access tokens](https://github.com/settings/tokens)
-1. Click Generate New Token (and again pick the classic option)
-1. You will probably be prompted for 2FA now
-1. Give the token a meaningful name
-1. Pick an expiration. I went with no expiration so I don't have to do this again and I'm going to limit the scope
-1. Tick the box next to `read:packages`
-1. Click generate token button at bottom of page
-
-Store the token in your private 1Password vault
-
-Create the following .npmrc file:
-
-```
-//npm.pkg.github.com/:_authToken=ghp_xxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-@flowforge:registry=https://npm.pkg.github.com/
-```
-
-where `ghp_xxxxxxxxxxxxxxxxxxxxxxxxxxxxx` is the token you just generated.
-
-You need to place this in the project directory, e.g. `/opt/flowforge-device/project` or if you are running it in the dev env `flowforge-device-agent/var/project` (assume starting with `node index -d ./var -c ./var/device.yml`)
+As the staging cluster is purposefully smaller than production, please be mindful of deleting
+resources after use.

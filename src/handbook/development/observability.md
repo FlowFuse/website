@@ -34,3 +34,15 @@ Grafana is a popular open-source platform for creating, sharing, and managing da
 AWS CloudWatch is a monitoring and observability service that provides data and actionable insights for AWS, hybrid, and on-premises applications and infrastructure resources. In our case we use it to monitor infrastructure-related resources in AWS.
 
 [Link](https://eu-west-1.console.aws.amazon.com/cloudwatch/home?region=eu-west-1#home:)
+
+### Uptime Robot
+
+[Uptime Robot](https://uptimerobot.com/) is used to monitor our public facing sites, including FlowFuse Cloud. This polls
+each endpoint at regular intervals and raises an alarm if an error is detected. The alerts are sent to `#ops-uptime-alerts` in slack
+and emailed to the CTO.
+
+## Alerting
+
+Any [alerts](https://grafana.flowforge.com/alerting/list) that have been configured
+in Grafana will post to the `#ops-alerts` channel in slack. The alert, where appropriate,
+will include a link to the relevant section of the [Incident Playbook](https://docs.google.com/document/d/1NMPWEFgHkVNN7RqHXUgijEGdNwZH-SlaAspOQr9Vg9k/edit#heading=h.a7jq4bkz66hv).
