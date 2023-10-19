@@ -167,11 +167,11 @@ Package numbers should follow the Semantic Versioning Scheme as laid out on [sem
 
 Each component will stay in step with the core flowforge/flowforge release numbering for `major.minor` but will increment their own `fix` values as needed. e.g. On release of v0.2.0 all components will tag and release v0.2.0, but can independently release v0.2.1 as needed.
 
-Major and minor releases will follow the schedule laid out in the [Cadence](../releases/planning#cadence) section of the handbook.
+Major and minor releases will follow the schedule laid out in the [Cadence](./releases/planning#cadence) section of the handbook.
 
 A Fix release can be made at any time, depending on the best judgement of the engineer making the fix but requires a review by another team member.
 
-The process for making a release is documented [here](../releases/process.md).
+The process for making a release is documented [here](./releases/process.md).
 
 ### Adding NPM packages to Stacks
 

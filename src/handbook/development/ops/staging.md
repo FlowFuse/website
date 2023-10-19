@@ -18,9 +18,8 @@ The deploy action can be monitored [here](https://github.com/FlowFuse/helm/actio
 
 ## AWS Account
 
-It uses a separate AWS account ending in ..9937. The services are running in EU-West-1.
 Access to the AWS account is restricted and not generally available. If you believe
-you have a need to access the AWS account, raise an issue in [CloudProject](https://github.com/FlowFuse/CloudProject)
+you have a need to access the AWS account, raise an [Access/Permission Request issue](https://github.com/FlowFuse/admin/issues/new/choose)
 and assign to the CTO for review.
 
 ## Email
@@ -38,7 +37,7 @@ We have enabled a small list of mailinator.com based email addresses for the pur
 of short-lived testing of sign-up and user management.
 
 The inboxes for these email addresses are publicly accessible if known, so the list
-is available on this private issue: https://github.com/FlowFuse/CloudProject/issues/135
+is available on [this private issue](https://github.com/FlowFuse/CloudProject/issues/135).
 
 ## Using staging
 

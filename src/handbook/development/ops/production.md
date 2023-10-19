@@ -7,7 +7,7 @@ navTitle: Production Environment
 Our production environment runs in `EU-West-1` in a dedicated AWS account.
 
 Access to the AWS account is restricted and not generally available. If you believe
-you have a need to access the AWS account, raise an issue in [CloudProject](https://github.com/FlowFuse/CloudProject)
+you have a need to access the AWS account, raise an [Access/Permission Request issue](https://github.com/FlowFuse/admin/issues/new/choose)
 and assign to the CTO for review.
 
 ## Using production
