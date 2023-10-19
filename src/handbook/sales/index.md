@@ -42,6 +42,9 @@ For internal training purposes all sales calls should be recorded after getting
 explicit consent from the customer. On request of the customer, the recording
 will be shared.
 
+For each meeting, try to be 2 minutes early. This allows everyone to check their setup
+and sync up what the goals are for the meeting.
+
 ### Lead status
 
 For leads who are [MQLs or SQLs](/handbook/marketing/hubspot.md) the `Lead status`
