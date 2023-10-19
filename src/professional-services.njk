@@ -1,0 +1,85 @@
+---
+align: center
+layout: layouts/page.njk
+title: Professional Services
+description: <p>FlowFuse partner with our customers to ensure their successful deployment of FlowFuse and Node-RED. Discover our professional service offerings.</p>
+---
+<div class="text-left max-w-full ff-bg-light">
+  <div class="w-full pt-10 md:pt-12 px-0 ff-prose">
+    <div class="m-auto max-w-4xl">
+      <div class="flex px-6 flex-col gap-6 md:gap-x-12 gap-y-14">
+        <div class="flex flex-col md:flex-row gap-8 items-center">
+          <div class="sm:max-h-none md:min-w-[40%] max-w-[340px] ff-image-cover ff-image-rounded mx-auto">
+            {% image "./images/services/engineering-and-architecture-services.png", "Image of hands typing on laptop working on Node-RED flows", [357] %}
+          </div>
+          <div class="prose">
+            <h3 class="flex items-center">
+              <div class="flex flex-col leading-8 mt-3 text-center md:text-left w-full">
+                Engineering and Architecture Services
+              </div>
+            </h3>
+            <p class="mb-0">
+              FlowFuse are experts in Node-RED development. We can help your team create Node-RED flows that meet your requirements or we can conduct an architecture review of existing flows to align with Node-RED best practices. Flow engineering is available to Enterprise tier customers of FlowFuse.
+            </p>
+          </div>
+        </div>  
+        <div class="flex flex-col md:flex-row-reverse gap-8 items-center pb-6 md:pb-0">
+          <div class="sm:max-h-none md:min-w-[40%] max-w-[340px] ff-image-cover ff-image-rounded mx-auto">
+            {% image "./images/services/training.png", "Image of two people working together", [357] %}
+          </div>
+          <div class="prose">
+            <h3 class="flex items-center">
+              <div class="flex flex-col leading-8 mt-3 text-center md:text-left w-full">
+                Education and Training
+              </div>
+            </h3>
+            <p class="mb-0">
+              FlowFuse offers Node-RED and FlowFuse in-person and online courses for engineers, architects and managers. Our structured approach to training can be customized to fit your unique requirements.
+            </p>
+          </div>
+        </div>  
+      </div>
+    </div>
+    <div class="text-white">
+      {% include "components/dividers/divider-flow--top-grey.svg" %}
+    </div>
+    <div class="w-full bg-white pt-0 px-0 pb-24 ff-prose">
+      <div class="text-center m-auto pt-10 md:pt-8 mb-6 md:mb-12 md:max-w-xl px-6">
+        <h2>Contact us</h2>
+        <p>Reach out to discuss how FlowFuse experts can help with your FlowFuse and Node-RED projects.</p>
+      </div>
+      <div class="container m-auto md:max-w-xl prose">
+        <div class="px-6 mb-16">
+          <script src="https://www.google.com/recaptcha/api.js"></script>
+          <script>
+            function displayHubSpotForm() {
+              hbspt.forms.create({
+                region: "eu1",
+                portalId: "26586079",
+                formId: "74ffcab1-a984-459a-871f-5751b8d69ac2"
+              });
+            }
+          </script>
+          <script async type="text/javascript" charset="utf-8" src="//js-eu1.hsforms.net/forms/embed/v2.js"
+            onload="displayHubSpotForm()"></script>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<link rel="preload"href="https://cdn.jsdelivr.net/npm/@algolia/algoliasearch-netlify-frontend@1/dist/algoliasearchNetlify.css" as="style" onload="this.onload=null;this.rel='stylesheet'" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@algolia/autocomplete-theme-classic" as="style" onload="this.onload=null;this.rel='stylesheet'" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+<script async type="text/javascript" src="https://cdn.jsdelivr.net/npm/@algolia/algoliasearch-netlify-frontend@1/dist/algoliasearchNetlify.js" onload="initSearchBar()"></script>
+<script async type="text/javascript">
+  function initSearchBar () {
+    algoliasearchNetlify({
+        appId: 'KWE0727TZS',
+        apiKey: '595ee07f069991380e9c3036cfad8e5e',
+        siteId: '00f8cf60-997f-4c4d-9427-a97924358648',
+        branch: 'live',
+        selector: 'div#algolia-search',
+        detached: false
+    });
+    }
+</script>
