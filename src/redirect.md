@@ -30,6 +30,16 @@ redirects:
   - { "from": "/blog/2023/07/node-explained-filter/", "to": "/node-red/core-nodes/rbe/"}
   - { "from": "/blog/2022/12/node-red-exec-explained/", "to": "/node-red/core-nodes/exec/"}
   - { "from": "/blog/2023/05/Integrating Modbus with Node-RED", "to": "/blog/2023/05/integrating-modbus-with-node-red/"}
+  - { "from": "/handbook/development/observability/", "to": "/handbook/development/ops/observability/" }
+  - { "from": "/handbook/development/staging/", "to": "/handbook/development/ops/staging/" }
+  - { "from": "/handbook/development/how-we-work/staging/", "to": "/handbook/development/ops/staging/" }
+  - { "from": "/handbook/development/how-we-work/security/", "to": "/handbook/development/security/" }
+  - { "from": "/handbook/development/how-we-work/packaging/", "to": "/handbook/development/packaging/" }
+  - { "from": "/handbook/development/how-we-work/contributing/", "to": "/handbook/development/contributing/" }
+  - { "from": "/handbook/development/how-we-work/", "to": "/handbook/development/" }
+  - { "from": "/handbook/development/git-how-to/", "to": "/handbook/development/guides/git" }
+  - { "from": "/handbook/development/markdown-how-to/", "to": "/handbook/development/guides/markdown" }
+  
 
 # The "permalink" attribute determines where the output page will be located.
 permalink: "{{ redirect.from }}"

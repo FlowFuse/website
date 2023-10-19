@@ -1,23 +1,23 @@
 ---
-originalPath: development/packaging.md
-updated: 2022-11-24 22:12:28 +0000
+navTitle: Packaging Guidelines
 ---
-# FlowFuse Packaging Guidelines
+
+# Packaging Guidelines
 
 This section describes the requirements we have for all GitHub repositories,
 and npm modules we maintain.
 
 To help ensure all of the requirements are met, an issue should be raised in
-[`flowforge/admin`](https://github.com/FlowFuse/admin/issues/new/choose) using
-the `New Repository Checklist` and then worked through.
+[`FlowFuse/admin`](https://github.com/FlowFuse/admin/issues/new/choose){rel="nofollow"}
+using the `New Repository Checklist` and then worked through.
 
-## Github projects
+## GitHub projects
 
 ### Naming
 
-- Flow Forge Components should start with `flowforge-`
-- If a Node-RED plugin/node should start with `flowforge-nr-`
-- Installers or Orchestration projects are named without the leading `flowforge-` e.g. `installer` or `helm`
+- FlowFuse Components should start with `flowfuse-`
+- If a Node-RED plugin/node should start with `nr-`
+- Installers or Orchestration projects are named without the leading `flowfuse-` e.g. `installer` or `helm`
 
 ### Settings
 
@@ -33,7 +33,7 @@ All Git Repositories must contain the following files:
 ### Linting
 
 All code repositories should adopt our standard linting rules by copying the
-`.eslintrc` from the [flowforge/.github repository](https://github.com/FlowFuse/.github/blob/main/.eslintrc).
+`.eslintrc` from the [FlowFuse/.github repository](https://github.com/FlowFuse/.github/blob/main/.eslintrc).
 
 If a repository has any additional requirements for linting, such as handling Vue
 code, then additional plugins can be added.
@@ -43,12 +43,12 @@ We use [StandardJS](https://standardjs.com/), with one exception - 4 spaces not 
 ### Notifications
 
 Repositories should be added to the appropriate Slack channel. For core code repositories,
-this would be in the `#gh-flowforge` channel.
+this would be in the `#gh-flowfuse` channel.
 
 To create a subscription, go to that channel and type the message:
 
 ```
-/github subscribe flowforge/NAME-OF-REPO comments reviews
+/github subscribe FlowFuse/NAME-OF-REPO comments reviews
 ```
 
 This will subscribe to any notifications covering: `issues`, `pulls`, `commits`, `releases`, `deployments`, `comments` and `reviews`.
@@ -89,19 +89,18 @@ they cannot access the organisation-wide secret we have in place.
 We have a standard set of labels that should be applied to all repositories. This
 ensures we have a consistent approach to planning and tracking of work.
 
- - Type: `epic`, `story`, `task`, `bug`
- - Sizing: `1`, `2`, `3`, `5`, `8`, `13`
- - Area: `area:docs`, `area:db`, `area:migration`, `area:frontend`, `area:api`, `area:device`, `area:marketing`, `area:customer-success`
- - Priority: `priority:high`, `priority:medium`, `priority:low`, `Customer Request`
- - Status: `blocked`
+The definitive list of labels is maintained [here](https://github.com/FlowFuse/.github/blob/main/labels.json)
+and are synchronized across all repositories via GitHub Actions.
+
+ - Type: `epic`, `story`, `task`, `bug`, `artwork`
+ - Sizing: `XS - 1`, `S - 2`, `M - 3`, `L - 5`, `XL - 8`, `XXL - 13`
+ - Area: `area:docs`, `area:db`, `area:migration`, `area:frontend`, `area:api`, `area:device`, `area:billing`, `area:infrastrucutre`, `area:install`, `design`
+ - Priority: `priority:high`, `priority:medium`, `priority:low`
+ - Status: `blocked`, `consideration`
  - Product Scope: `scope:devices`, `scope:enterprise`, `scope:node-red`, `scope:collaboration`
- - Other: `good first issue`, `upstream`, `needs-triage`
+ - Other: `good first issue`, `upstream`, `needs-triage`, `headline`, `backport`, `research`
 
-The labels are synchronized across the repositories via a GitHub Action in the [`.github`](https://github.com/FlowFuse/.github)
-repository.
 
-The `Customer Request` label is intended solely for issues requested by an important enterprise customer, not for leads or individuals like [Harry the Hobbyist](../product/personas/).
- 
 New repositories must be added to the list in [`flowforge-repositories.yml`](https://github.com/FlowFuse/.github/blob/main/flowforge-repositories.yml),
 and then the [Synchronize Labels](https://github.com/FlowFuse/.github/actions/workflows/sync-labels.yml) action manually run.
  
@@ -109,13 +108,16 @@ and then the [Synchronize Labels](https://github.com/FlowFuse/.github/actions/wo
 
 ### Naming
 
+*Note:* we are migrating to the `@flowfuse` scope of packages. See [this issue](https://github.com/FlowFuse/admin/issues/211)
+for details. This section of the handbook will be updated as part of the migration.
+
 - All packages should be scoped to `@flowforge`
 
 Node-RED plugins should start with `nr-` e.g.
  - @flowforge/nr-storage
  - @flowforge/nr-auth
 
-Flow Forge plugins should start with `forge-` e.g.
+FlowFuse plugins should start with `forge-` e.g.
 
  - @flowforge/forge-driver-localfs
  - @flowforge/forge-driver-docker
@@ -130,12 +132,12 @@ The `package.json` must contain the following keys
      ```
      "repository": {
         "type": "git",
-        "url": "git+https://github.com/FlowFuse/flowfuse.git"
+        "url": "git+https://github.com/FlowFuse/flowforge.git"
     },
     ```
  - homepage
     ```
-    "homepage": "https://github.com/FlowFuse/flowfuse#readme",
+    "homepage": "https://github.com/FlowFuse/flowforge#readme",
     ```
  - bugs
     ```
@@ -149,7 +151,7 @@ The `package.json` must contain the following keys
  - author
     ```
     "author": {
-        "name": "FlowFlow Inc."
+        "name": "FlowFuse Inc."
     },
     ```
  - engines
@@ -163,15 +165,13 @@ The `package.json` must contain the following keys
 
 Package numbers should follow the Semantic Versioning Scheme as laid out on [semver.org](https://semver.org/).
 
-Each component will stay in step with the core FlowFuse/flowfuse release numbering for `major.minor` but will increment their own `fix` values as needed. e.g. On release of v0.2.0 all components will tag and release v0.2.0, but can independently release v0.2.1 as needed.
+Each component will stay in step with the core flowforge/flowforge release numbering for `major.minor` but will increment their own `fix` values as needed. e.g. On release of v0.2.0 all components will tag and release v0.2.0, but can independently release v0.2.1 as needed.
 
-Major and minor releases will follow the schedule laid out in the [Cadence](./releases/planning#cadence)
-section of the handbook.
+Major and minor releases will follow the schedule laid out in the [Cadence](./releases/planning#cadence) section of the handbook.
 
 A Fix release can be made at any time, depending on the best judgement of the engineer making the fix but requires a review by another team member.
 
-The process for making a release is documented [here](./releases/process/).
-
+The process for making a release is documented [here](./releases/process.md).
 
 ### Adding NPM packages to Stacks
 
@@ -179,7 +179,7 @@ As we build more FlowFuse specific nodes we will need to add these to the Stacks
 
 #### Localfs
 
-Currently bundled packages for the localfs driver need to be added to the [nr-launcher](https://github.com/FlowFuse/nr-launcher) `package.json`  and the path to the node needs to be added to the `nodesDir` array in the `lib/lancher.js` file (around line 70). This will be updated in the next release to be controlled by the [flowforge-driver-localfs](https://github.com/FlowFuse/driver-localfs) project
+Currently bundled packages for the localfs driver need to be added to the [nr-launcher](https://github.com/FlowFuse/nr-launcher) `package.json`  and the path to the node needs to be added to the `nodesDir` array in the `lib/launcher.js` file (around line 70). This will be updated in the next release to be controlled by the [driver-localfs](https://github.com/FlowFuse/driver-localfs) project
 
 #### Docker
 

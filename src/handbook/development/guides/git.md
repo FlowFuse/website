@@ -62,13 +62,13 @@ The first step to editing content is to create a [Branch](#branch) of that conte
 
 Navigate to the Project within [Github](#github) you want to work on, that would usually be [our website](https://github.com/FlowFuse/website) or [Handbook](https://github.com/FlowFuse/handbook).
 
-![Create a new Branch](../images/git-how-to/new-branch-1.png)
+![Create a new Branch](../../images/git-how-to/new-branch-1.png)
 
 The [Branch](#branch) name should give a brief overview of what you are planning to change in the [Project](#project), for example ‘Add Git guide for non-tech projects & staff’ then click the ‘create branch’ link.
 
 You should now notice that where the drop down said ‘main’ before it now says the name of the [Branch](#branch) you just created.
 
-![Create a new Branch](../images/git-how-to/new-branch-2.png)
+![Create a new Branch](../../images/git-how-to/new-branch-2.png)
 
 You can now start the process of actually creating or editing content, any changes you make will not yet be added to the [Published](#publish) version of the [Live](#live) [Project](#project) so don't worry if you make mistakes or are not yet happy with the finished product.
 
@@ -78,7 +78,7 @@ In this example I am going to create a new document in the [Handbook](#handbook)
 
 Firstly I will create a new document called git-how-to.md in the design folder.
 
-![Create a new file](../images/git-how-to/new-file-1.gif "@skip")
+![Create a new file](../../images/git-how-to/new-file-1.gif "@skip")
 
 The file type is .md (Markdown). A [Markdown](#markdown) file is similar to a .docx or .txt. It allows you to lay out content in a document including text, images, titles, headers and tables. You can read more about [Markdown](#markdown) here.
 
@@ -88,7 +88,7 @@ In the video above I pressed ‘[Commit](#commit) changes’ which is the same a
 
 I can now start the process of writing my document, first I will reopen it in the editor, then I will add the content.
 
-![Edit the new file](../images/git-how-to/edit-file-1.gif "@skip")
+![Edit the new file](../../images/git-how-to/edit-file-1.gif "@skip")
 
 I will work on the file until I think it's ready for a colleague to review the changes I have made. Once I am happy with the content I will [Commit](#commit) the changes as I did before.
 
@@ -100,13 +100,13 @@ I am now ready to request a [Review](#review) of my work from a colleague. To do
 
 [Github](#github) gives you an easy to find button to create a [Pull Request](#pull-request) for your current work. 
 
-![Create a Pull Request](../images/git-how-to/create-a-pr-1.gif "@skip")
+![Create a Pull Request](../../images/git-how-to/create-a-pr-1.gif "@skip")
 
 It's a good idea to provide your colleagues descriptive comments explaining the goals of the changes you have made as well as anything else you think would help them [review](#review) your work.
 
 Once you press the 'Create pull request' button an alert will be sent to one of FlowFuse's Slack channels letting everyone know you'd like your work reviewed. You can also request a [review](#review) from a specific colleague using the [Reviewers](#reviewer) section of your [Pull Request](#pull-request) Click on [Reviewers](#reviewer) then select the colleague you think would be best placed to [review](#review) your work.
 
-![Request a review from a specific colleague](../images/git-how-to/nominate-a-reviewer-1.gif "@skip")
+![Request a review from a specific colleague](../../images/git-how-to/nominate-a-reviewer-1.gif "@skip")
 
 ### Requesting a review of your work
 

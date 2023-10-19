@@ -1,9 +1,8 @@
 ---
-originalPath: development/security.md
-updated: 2022-08-04 17:05:04 +0100
+navTitle: Security Policy
 ---
 
-# Security Policy
+# Security Reporting Policy
 
 This policy relates to external disclosures of potential vulnerabilities in the
 FlowFuse platform and associated components.
