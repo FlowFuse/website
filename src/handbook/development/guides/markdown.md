@@ -1,8 +1,8 @@
 ---
-navTitle: Markdown How-To
+navTitle: Markdown Guide
 ---
 
-# Markdown How-To
+# Markdown Guide
 
 This is a very short reference guide for those trying to write Markdown. For more
 comprehensive guides, we recommend looking at:
@@ -76,10 +76,10 @@ from the previous paragraph.
 
 ## Links
 
-[this will be a link](http://localhost:8080/blog/2023/02/flowforge-1-4-0-released/)
+[this will be a link](http://example.com/)
 
 ```md
-[this will be a link](http://localhost:8080/blog/2023/02/flowforge-1-4-0-released/)
+[this will be a link](http://example.com/)
 ```
 
 ## Images

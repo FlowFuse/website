@@ -16,18 +16,16 @@ This includes, but is not limited to:
  - Providing technical support to our customers and community members
  - Ensuring the ongoing operations of FlowFuse Cloud
 
+## General
 
-## How we work
+- [Security Policy](./security.md)
+- [Packaging](./packaging.md) - how we manage repos and npm packaging
+- [Contributing](./contributing.md) - tips on our development style to help get started contributing
+
+## Releases
 
 - [Planning](./releases/planning.md) - how we plan what we're doing
 - [Release Process](./releases/process.md) - how we ship
-
-
-## Engineering Guides
-
-- [Packaging](../development/how-we-work/packaging.md) - how we manage repos and npm packaging
-- [Contributing](../development/how-we-work/contributing.md) - tips on our development style to help get started contributing
-- [Security Policy](../development/how-we-work/security.md)
 
 ## Front-End
 
@@ -41,6 +39,14 @@ A collection of how-to's and best practice guides for FlowFuse's front-end devel
 
 How we run and manage our FlowFuse Cloud platform
 
-- [Production Environment](../development/how-we-work/production.md)
-- [Staging Environment](../development/how-we-work/staging.md)
-- [Observability](../development/observability.md)
+- [Production Environment](./ops/production.md)
+- [Staging Environment](./ops/staging.md)
+- [Observability](./ops/observability.md)
+
+## Guides
+
+A collection of guides for some of things that are foundational to working at
+FlowFuse
+
+- [Git Intro](./guides/git.md) - get started with Git
+- [Markdown Guide](./guides/markdown.md) - a quick primer for Markdown

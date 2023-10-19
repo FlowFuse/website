@@ -47,7 +47,7 @@ Take your time when committing files. Review each file carefully and ensure what
 
 #### Branching vs. Forking
 
-Commits should never be pushed directly to `main`. Instead, branch or fork from the relevant branch (most likely `main`) and work from there.
+Commits must never be pushed directly to `main`. Instead, branch or fork from the relevant branch (most likely `main`) and work from there.
 
 It is preferred that new work be added on a branch (rather than in a forked repository), although this is not enforced. Branch names should be short, informative, and if directly linked to a single issue number, reference such issue number, e.g. `29-issue-summary`.
 
