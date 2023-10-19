@@ -41,5 +41,6 @@ A collection of how-to's and best practice guides for FlowFuse's front-end devel
 
 How we run and manage our FlowFuse Cloud platform
 
+- [Production Environment](../development/how-we-work/production.md)
 - [Staging Environment](../development/how-we-work/staging.md)
 - [Observability](../development/observability.md)
