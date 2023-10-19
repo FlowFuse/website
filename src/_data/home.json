@@ -29,7 +29,7 @@
   },
   {
     "title": "<span class=\"text-red-600\">Security compliance<\/span> for Node-RED",
-    "content": "FlowFuse provides the role based access control to Node-RED flows that is essential for common security compliance. All developers using FlowFuse require a username and password that grants them access rights to specific Node-RED flows.",
+    "content": "FlowFuse enhances compliance when developing workflows using Node-RED by offering Single Sign-On (SSO) for secure user authentication, an audit log for monitoring, ensuring strict access control through Role-Based Access Control (RBAC), and change control. Thereby bolstering security and traceability in your processes.",
     "image": "security_pictogram_red",
     "imagealt": "a lock"
   },
