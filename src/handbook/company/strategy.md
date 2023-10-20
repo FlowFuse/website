@@ -33,16 +33,21 @@ FlowFuse will drive the Node-RED project through:
 
 ## Become the standard way of running any Node-RED at any scale
 
-There's a wide range of deployment scenarios and FlowFuse aims to build a
-platform to help each of them to be successful. FlowFuse will solve challenges
-unsolved by Node-RED and push Low-Code beyond the capabilities of Node-RED.
+There's a wide range of deployment scenarios for applications built on Node-RED
+and FlowFuse aims to build a platform to help each of them to be successful.
+FlowFuse will solve challenges unsolved by Node-RED and push Low-Code and the
+extensions of Node-RED beyond the current capabilities.
 
-Firstly, team collaboration. Allowing Flows to be developed by multiple
-individuals, ensuring quality and correctness. Push the boundaries of Low-Code
-to allow more people to collaborate.
+FlowFuse streamlines Node-RED for commercial use. On many levels FlowFuse helps
+organisations streamline their deployments with multi-tenancy,
+Role-based access control, audit logging, and enhanced security controls.
 
-Secondly, Node-RED is deployed in many different environments. FlowFuse will allow
-everyone to achieve the best results whatever the execution context.
+Teams are more effective with FlowFuse through our collaboration tooling.
+Allowing Flows to be developed by multiple individuals, ensuring quality and
+correctness. Push the boundaries of Low-Code to allow more people to collaborate.
+
+Furthermore, Node-RED is deployed in many different envirnments. FlowFuse
+empowers everyone to achieve the best results whatever the execution context.
 
 We believe these two points will make FlowFuse synonymous with Node-RED, and
 make it attractive to individual users as well as Enterprises. Value offered
