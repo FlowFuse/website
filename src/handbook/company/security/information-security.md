@@ -177,5 +177,9 @@ Violations of this policy can result in immediate withdrawal or suspension of
 system and network privileges and/or disciplinary action in accordance with
 company procedures up to and including termination of employment.
 
+## Whistleblower Policy
+
+Our Whistleblower Policy is intended to encourage and enable employees and others to raise serious concerns internally so that we can address and correct inappropriate conduct and actions. It is the responsibility of all employees to report concerns about violations of our code of ethics or suspected violations of law or regulations that govern our operations. It is contrary to our values for anyone to retaliate against any employee or who in good faith reports an ethics violation, or a suspected violation of law, such as a complaint of discrimination, or suspected fraud, or suspected violation of any regulation. An employee who retaliates against someone who has reported a violation in good faith is subject to discipline up to and including termination of employment. Anonymous reports may be submitted via FlowFuse’s [Whistleblower Channel](https://forms.gle/mttPj8NXd9yhb31H7).
+
 ---
 Policy derived from [JupiterOne/security-policy-templates](https://github.com/JupiterOne/security-policy-templates) ([CC BY-SA 4 license](https://creativecommons.org/licenses/by-sa/4.0/)) and [Vanta](https://vanta.com)
