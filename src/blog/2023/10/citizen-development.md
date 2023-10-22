@@ -34,7 +34,9 @@ This shift toward embracing citizen development within manufacturing represents 
 
 ## Democratize Application Development with Node-RED
 
-For the past decade, Node-RED has been a pioneer in low-code tools, democratizing application development in manufacturing. It provides powerful data collection, transformation, and visualization capabilities, simplifying the application-building process. As an open-source tool with no associated costs or licensing fees, Node-RED is [increasingly popular](blog/2023/03/integration-platform-for-edge-computing/#the-standard-for-edge-computing-and-plcs) among manufacturers seeking to quickly develop custom applications without extensive coding knowledge or experience. FlowFuse takes things one step further, offering organizations a way to officially incorporate and scale Node-RED, making it compliant, governed, and secure within the existing solution landscape.
+For the past decade, Node-RED has been a pioneer in low-code tools, democratizing application development in manufacturing. It provides powerful data collection, transformation, and visualization capabilities, simplifying the application-building process.
+As an open-source tool with no associated costs or licensing fees, Node-RED is [increasingly popular](/blog/2023/03/integration-platform-for-edge-computing/#the-standard-for-edge-computing-and-plcs) among manufacturers seeking to quickly develop custom applications without extensive coding knowledge or experience.
+FlowFuse takes things one step further, offering organizations a way to officially incorporate and scale Node-RED, making it compliant, governed, and secure within the existing solution landscape.
 
 ## The Strategic Imperative of Citizen Development
 
