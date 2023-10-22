@@ -4,27 +4,35 @@ navTitle: Planning
 
 # Planning
 
-Instructions for creating a release are [here](./process.md).
+This page provides a comprehensive overview of the planning processes and procedures that guide our product development at FlowFuse. As a continuously evolving software, FlowFuse employs a structured planning method to ensure timely releases, both for the FlowFuse Cloud and for our self-hosting users.
 
-## Cadence
-
-FlowFuse is continuously released to FlowFuse Cloud, and every four weeks, on a Thursday, it is packaged for users who are self-hosting FlowFuse. 
-We track packages using GitHub Milestones. We use GitHub issues for planning work in an iteration. Issues are continuously scheduled by the PM.
+Instructions for creating a NPM package release are [here](./process.md).
 
 Our planning process is continuously evolving as we find the best way to accommodate both a growing team and an expanding set of requirements for how and what we deliver.
 
-## Planning & Priorization
+## Cadence
 
+FlowFuse is continuously released to FlowFuse Cloud, and every four weeks, on a Thursday, it is packaged for users who are self-hosting FlowFuse. We track packages using GitHub Milestones. We use GitHub issues for planning work in an iteration. Issues are continuously scheduled by the PM.
+
+## Planning & Prioritization
+
+The planning process is continuous, allowing the engineering team to consistently release new functionalities.
+
+- **Step 1:** Backlog prioritization and refinement. Based on customer feedback, input from the FlowFuse team, and all stakeholders, issues are continuously raised and prioritized [in our Backlog](#product-backlog-board).
+
+- **Step 2:** Assignment to the [Development Board](#development-board) `To-Do` Section. Once an issue is refined, the PM continuously assigns issues to the Development Board's `To-Do` Section. This is the first indication that this particular item is planned and will be the one of the next items for the `Up Next` section. It also signals the engineering and UX team to raise any open design or architectural clarifications if required.
+
+This section should include a maximum of 40 [effort estimation points](#effort-estimation).
+
+- **Step 3:** Assignment to the [Development Board](#development-board) `Up Next` Section. This section is most relevant for the engineering team because it includes the issues which should be picked up next. The issues should generally be ready for pickup.
+
+The `Up Next` should always be filled with enough items for the engineering team to pick up a new item after other issues are [successfully developed](#defining-done) and a maximum of 4 single issues.
 
 ## UX Planning
 
  Every four weeks this meeting is conducted between the Product Manager (PM) and the Head of User Experience (UX), it is designed to discuss and identify potential UX issues and requirements that need to be addressed in the upcoming iteration. The goal is to be proactive in identifying and resolving UX-related challenges before the start of the development phase.
 
  See also ['In Design' Deliverables](#in-design-deliverables)
-
-### Release Day
-
-- Release day, details see [here](./process.md).
 
 ## Issues
 
@@ -85,8 +93,7 @@ This is a high-level view of our product roadmap over the coming releases.
 ### Product Backlog Board
 
 [This board](https://github.com/orgs/FlowFuse/projects/3/views/1) is maintained
-by the Product Manager (PM) and CTO. It is the main entry point for all epics and
-stories.
+by the Product Manager (PM) and CTO. It is the main entry point for all issues.
 
 Items on this board are put into one of the following states to indicate their priority in the backlog, they can move up or down the priority depending on business needs.
 
@@ -114,11 +121,11 @@ Design work should be handled in a sub-task linked to the development issue.
 
 The board has the following states:
 
- - `ToDo` - items already assigned to the iteration but not yet started
+ - `ToDo` - items already be planned but not yet started
  - `Up Next` - items that should be picked up next
  - `In Design` - items being designed
  - `In Progress` - items being developed
- - `Review` - items that are ready to be reviewed (PR open)
+ - `Review` - items that are ready to be reviewed (PR open, [feature demo](#feature-demos) created)
  - `Verify` - items that have been merged and can be verified once deployed to the Staging and Production environment
  - `Done` - items that are [Done](#defining-done)
 
@@ -134,14 +141,14 @@ are thus required before the design sprint start.
 
 ## Retrospective/Kick-Off
 
-The day after each FlowFuse release, always a Friday, a meeting is scheduled
+The day after each FlowFuse NPM release, always a Friday, a meeting is scheduled
 by the CTO. This meeting includes 2 parts:
 
  1. A retrospective on the last release. This should capture feedback on what
     went well and what could be improved and generate action items to act on the
     feedback.
  2. Kicking off the next release. The involves:
-    1. The Product Manager describing the themes, goals and priorities of the new release
+    1. The Product Manager describing the themes, goals and priorities of the upcomming issues
     2. Reviewing the [Development Board](https://github.com/orgs/FlowFuse/projects/1/views/1)
        for the new milestone.
        High-priority items are assigned owners so that everyone has something to
@@ -154,10 +161,7 @@ by the CTO. This meeting includes 2 parts:
 
 ## What to work on
 
-Work comes the ToDo column of the [Development Board](https://github.com/orgs/FlowFuse/projects/1/views/1).
-
-We use a set of labels to identify the high/medium/low priority of an item. We tend to
-flag the more important stuff and treat an unlabelled item is implicitly low priority.
+Work comes the `Up Next` column of the [Development Board](https://github.com/orgs/FlowFuse/projects/1/views/1).
 
 Naturally there will be items that crop up unexpectedly and have to be dealt with
 pragmatically. For example, we may realise an item is needed for the current release
@@ -166,15 +170,6 @@ we work.
 
 When picking up an unassigned item assign it to yourself and move it to the
 **In Progress** state.
-
-### Milestones are overscheduled
-
-As stories and tasks are assigned to milestones, it's unlikely there's not
-enough work to be done. On the flip side, this means that not all scheduled epics
-or stories will be completed.
-
-The Product Manager/CTO have overall responsibility to ensure any 'must-have' items
-are making progress in a release.
 
 ## Defining Done
 
