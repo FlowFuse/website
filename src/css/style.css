@@ -387,6 +387,11 @@ h4:hover .header-anchor {
     width: 100%;
 }
 
+.ff-image-rounded img,
+.ff-image-rounded picture {
+    @apply rounded-lg;
+}
+
 /*
     Header
 */
