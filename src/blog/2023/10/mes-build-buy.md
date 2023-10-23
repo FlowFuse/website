@@ -4,7 +4,7 @@ subtitle: "Bridging the Gap: Uniting MES Development with Automation System Prac
 description: "Bridging the Gap: Uniting MES Development with Automation System Practices"
 date: 2023-10-20
 authors: ["grey-dziuba"]
-image: "/blog/2023/10/images/tile-db-integration.png"
+image: "/blog/2023/10/images/buildvbuy.png"
 tags:
     - posts
     - releases
