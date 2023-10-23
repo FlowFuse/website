@@ -7,10 +7,10 @@ authors: ["grey-dziuba"]
 image: "/blog/2023/10/images/buildvbuy.png"
 tags:
     - posts
-    - releases
+    - node-red
     - community
-    - changelog
-    - dashboard
+    - flowfuse
+
 ---
 
 In today's fast-paced manufacturing landscape, the question of whether to build or buy Manufacturing Execution System (MES) solutions is more pertinent than ever. Traditional practices often involve outsourcing MES development to system integration (SI) companies or purchasing a software MES package, leaving manufacturing engineers with limited control and flexibility. However, a shift toward a hybrid approach, combining the strengths of both building and buying, is revolutionizing the way we approach MES systems. This article explores the advantages of using Node-RED in combination with FlowFuse for MES deployment and how it can empower manufacturing companies to achieve new levels of efficiency and adaptability.
