@@ -129,7 +129,7 @@ The board has the following states:
  - `Verify` - items that have been merged and can be verified once deployed to the Staging and Production environment
  - `Done` - items that are [Done](#defining-done)
 
-### 'In Design' Deliverables
+### In Design Deliverables
 
 Both UX/UI work and engineering work can be "In Design". For both instances there should still be defined deliverables. 
 
