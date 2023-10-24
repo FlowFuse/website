@@ -5,37 +5,56 @@ navGroup: Sales & Marketing
 
 # FlowFuse Webinars
 
-FlowFuse will organize two types of webinars: 1) Ask Me Anything session that is an ope mic for community members to ask questions of Node-RED and FlowFuse experts, and 2) Educational webinars that will educational topics. The current plan is to do an AMA session the second week of each month and an educational webinar the last week of the month.
+FlowFuse organizes monthly webinars on topics about Node-RED, FlowFuse and the general IoT industry. The topics are typically educational and technical in content. The goal is to become the source of great content for learning about these topics.
 
-## Hosting Webinars
+The FlowFuse webinar is typically scheduled during the last week of the month. The webinar typically starts at 17:00CET or 11amET, to allow for European and Pacific coast of North America attendees.  All webinars are recorded and the recording is made available on the FlowFuse Youtube channel.
 
-FlowFuse will use the Zoom Webinar platform to host each webinar. This platform provides the automated recording, email reminders, calendar entries, Q&A and accommodate up to 500 attendees.
+The following are the steps to produce a montly webinar.
 
-Hubspot will be used to collect attendee registrations. 
+## Webinar preparation
 
-## Steps to Schedule a Webinar
+   1. Identify the webinar topic and speaker as close as possible to the previous webinar.
+   2. Create a draft webinar title and abstract that is reviewed and approved by the speaker. 
+   3. Confirm the date with the speaker and send a calendar invite to block calendars
+   4. [Create a webinar page](#creating-a-webinar-page) for the website
+   5. Create a Zoom webinar page
+        * Login to zoom and select the Webinars tab. There is a webinar template that will help getting going.
+        *  Use the same description and topic that was used for the web page. 
+        * Turn on Q&A, Enable Practice Session and Automatically record webinar to the cloud.
+        * Under Invitations, invite the speaker as a Panelist.
+            - Panelist receive a unique url to join the webinar that grants them access before the webinar starts. It is important the speaker knows to use this url.
+        * Under Email Setting ensure the following: Confirmation email sent to panelist, Reminder sent 1 hour and 1 day before.  Turn off email for follow-up since we do that inside Hubspot.
+        * Under Branding, for the banner add the graphic created for the web site.
+        * Under Survey, you can decide if you want to do a survey at the end of the webinar. We ask if someone wants to be contacted by FlowFuse to discuss our services. These become MQLs in Hubspot.
+   6. Setup HubSpot to accept webinar registrations.
+        * Create a new static list called ‘Webinar Registrations [&lt;month> Edition]
+        * NOTE: You can only do the following changes once the previous month webinar has passed. You can not accept registrations for multiple webinars at the same time
+        * Edit Workflow called ‘Webinar Registration Integration with Zoom’. Two changes are required:
+         * Edit ‘Add Contact to Zoom Webinar’ to update the new Webinar ID. Replace the current number with the number from the webinar you just created for this month. You find the Webinar ID on the main page of the Zoom webinar. NOTE: you need to  hyphens to replace the spaces in the ID number.
+        * Edit ‘Add to static list’ to change the list to the new list for this month’s webinar.
+        * Remember to Save the changes.
+   7. Test the web page for the webinar to see if a new registrant gets added to the Hubspot list.
+   8. Page is now ready to be published.
 
-1. Select a topic and speaker
-   * Create a title and abstract for the webinar and speaker bio
-2. Schedule webinar in Zoom
-   * Zoom will automatically send a confirmation email and a two reminder emails to all registrants.
-3. Create a webinar page for the website
-   * Follow the templates from previous months - more details can be found [below](#creating-a-webinar-page).
-4. Create a graphic to promote the webinar
-   * Follow the templates from previous months.
-5. Setup Hubspot for Webinar
-   * Create a static list to track the registrations
-   * Change the webinar workflow to point to the new static list
-   * Change the webinar workflow to point to the new Zoom Webinar ID.  The ID can be found in the Zoom webinar page. NOTE: you need to use hyphens to replace the spaces in the ID number.
+## Webinar Promotion
 
-## Promoting Webinars
+* Week 1: Added to the newsletter
+* Week 2: Social media promotion on all channels:
+    * LinkedIn, Twitter, Facebook, Node-RED Forum Event category, Redit Node-RED, Node-RED slack
+    * Encourage FlowFuse employees to promote their network
+* Week 3 (1 week before webinar): Email to Hubspot list
+    * Typically clone a previous email as the starting point.
+* Week 4: Another social media promotion
 
-Each webinar should be available for promotion 2-4 weeks before the live date. Channels for promotion include:
-* Flowforge newsletter
-* Social media
-* Slack channels
-* Node-RED forums
-* FlowFuse website
+## Post Webinar
+
+* Upload webinar recording to FlowFuse Youtube channel
+    * Trim out the dead air waiting to start the webinar
+* Publish webinar recording
+* Social media post with link to webinar recording
+* In Hubspot send follow-up email to the registration list created in Hubspot that includes a link to the recording on YouTube.
+
+
 
 ## Creating a Webinar Page
 
