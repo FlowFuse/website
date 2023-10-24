@@ -12,21 +12,32 @@ Our planning process is continuously evolving as we find the best way to accommo
 
 ## Cadence
 
-FlowFuse is continuously released to FlowFuse Cloud, and every four weeks, on a Thursday, it is packaged for users who are self-hosting FlowFuse. We track packages using GitHub Milestones. We use GitHub issues for planning work in an iteration. Issues are continuously scheduled by the PM.
+FlowFuse is continuously released to FlowFuse Cloud, and every four weeks, on a Thursday, it is packaged for users who are self-hosting FlowFuse. 
+
+### Milestones
+
+We track packages using GitHub Milestones. We utilize GitHub issues for planning work. Issues are continuously scheduled by the PM. Releases are structured following the [Semantic Versioning](https://semver.org/#semantic-versioning-200).
+
+Milestones indicate the week of the release instead of a Patch version. This leads to a specific structure for Milestones: **MAJORversion.MINORversion.WEEK**. For example, 1.14.2 would represent the second week of the release of 1.14. This method ensures that Milestones can be used as deadlines while allowing continuous planning.
 
 ## Planning & Prioritization
 
 The planning process is continuous, allowing the engineering team to consistently release new functionalities.
 
-- **Step 1:** Backlog prioritization and refinement. Based on customer feedback, input from the FlowFuse team, and all stakeholders, issues are continuously raised and prioritized [in our Backlog](#product-backlog-board).
+### Step 1 - Backlog prioritization and refinement
+Based on customer feedback, input from the FlowFuse team, and all stakeholders, issues are continuously raised and prioritized [in our Backlog](#product-backlog-board).
 
-- **Step 2:** Assignment to the [Development Board](#development-board) `To-Do` Section. Once an issue is refined, the PM continuously assigns issues to the Development Board's `To-Do` Section. This is the first indication that this particular item is planned and will be the one of the next items for the `Up Next` section. It also signals the engineering and UX team to raise any open design or architectural clarifications if required.
+### Step 2 - Assignment to the To-Do section
+Once an issue is refined, the PM continuously assigns issues to the [Development Board's](#development-board) `To-Do` Section. This is the first indication that this particular item is planned and will be the one of the next items for the `Up Next` section. It also signals the engineering and UX team to raise any open design or architectural clarifications if required.
 
 This section should include a maximum of 40 [effort estimation points](#effort-estimation).
 
-- **Step 3:** Assignment to the [Development Board](#development-board) `Up Next` Section. This section is most relevant for the engineering team because it includes the issues which should be picked up next. The issues should generally be ready for pickup.
+### Step 3 - Assignment to the Up Next section
+This section is most relevant for the engineering team because it includes the issues which should be picked up next. The issues should generally be ready for pickup. Both the PM and CTO are responsible for directly assigning the issues in this section to an engineer.
 
-The `Up Next` should always be filled with enough items for the engineering team to pick up a new item after other issues are [successfully developed](#defining-done) and a maximum of 4 single issues.
+**Milestone Assignment:** the CTO and PM are responsible for assigning a milestone to the items in this section based on the [effort estimation](#effort-estimation), indicating the week when this issue is expected to be released to FlowFuse Cloud.
+
+The `Up Next` section should consistently contain sufficient items, ensuring that members of the engineering team can immediately transition to a new task once other issues have been [successfully developed](#defining-done). Every available engineer should have exactly one pre-assigned task, providing clear visibility for everyone on their subsequent responsibility.
 
 ## UX Planning
 
