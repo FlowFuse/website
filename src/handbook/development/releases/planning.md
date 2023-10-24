@@ -23,6 +23,7 @@ Milestones indicate the week of the release instead of a Patch version. This lea
 ## Planning & Prioritization
 
 The planning process is continuous, allowing the engineering team to consistently release new functionalities.
+This process covers the standard planning and prioritization process; bugs or minimal improvements are not part of this description. It is important to stay flexible, so this fast-lane approach for the described issues is possible and necessary.
 
 ### Step 1 - Backlog prioritization and refinement
 Based on customer feedback, input from the FlowFuse team, and all stakeholders, issues are continuously raised and prioritized [in our Backlog](#product-backlog-board).
@@ -51,9 +52,7 @@ Issues are the building blocks of planning activities, helping the team to manag
 
 ### Types
 
- - **Epic**: a significant feature or piece of work that doesn't easily fit into
-   a single release. It will typically have a number of Stories
-   and/or Tasks associated with it that can be delivered iteratively.
+ - **Epic**: a significant feature or piece of work. It will typically have a number of Stories and/or Tasks associated with it that can be delivered iteratively. Typically, an Epic shouldn't be assigned to the "Up Next" section; instead, the subtasks describing the first, second, third iterations can be assigned to this section and should be linked to the Epic.
 
  - **Story**: a *user-oriented* description of a feature. It should describe what
    a user should be able to do and identify the value that brings to the user.
