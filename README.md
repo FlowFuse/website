@@ -48,7 +48,7 @@ This will start a server on http://localhost:8080 that will automatically reload
 any content is changed. 
 
 **Note**: the first time running this, it may take a little while as it
-needs to parse all images in the `/docs` and `/handbook` folders. ou will
+needs to parse all images in the `/docs` and `/handbook` folders. You will
 see a `404` at `localhost:8080` during this time.
 
 **Note**: If running from within VS Code, you may be prompted with the following:
@@ -70,10 +70,10 @@ If you want to run a local version of the documentation, you'll need to clone th
 ```
 /<parent_directory>
     /website
-    /flowforge
+    /flowfuse
 ```
 
-The `npm run start` command that starts the Website server will retrieve the documentation from that folder, and automatically inject them into the website for your viewing. Any changes made to the documentation in the `/flowforge/docs` folder, will automatically refresh the website. The docs will be available at http://localhost:8080/docs.
+The `npm run start` command that starts the Website server will retrieve the documentation from that folder, and automatically inject them into the website for your viewing. Any changes made to the documentation in the `/flowfuse/docs` folder, will automatically refresh the website. The docs will be available at http://localhost:8080/docs.
 
 ## How to add blog posts
 
@@ -94,12 +94,12 @@ The `authors` list should correspond to an entry under `src/_data/team`.
 ## Updating the FlowFuse Documentation
 
 When the website is built it will include the documentation
-from the `maintenance` branch of the [FlowFuse/flowforge](https://github.com/FlowFuse/flowforge)
+from the `maintenance` branch of the [FlowFuse/flowfuse](https://github.com/FlowFuse/flowfuse)
 repository.
 
 To make a documentation update *and* make it live on the website:
 
-1. PR the documentation update to the `main` branch of [FlowFuse/flowforge](https://github.com/FlowFuse/flowforge)
+1. PR the documentation update to the `main` branch of [FlowFuse/flowforge](https://github.com/FlowFuse/flowfuse)
 2. Attach the `backport` label to the PR
 3. Get the PR reviewed and merged in the normal manner.
 4. A new PR will get automatically raised that backports the change to the `maintenance` branch
