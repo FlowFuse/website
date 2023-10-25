@@ -25,7 +25,7 @@ The folowing is a description of each stage.
 | Marketing Qualified Lead | The contact has requested to talk to someone directly at FlowFuse about the product/services of FlowFuse, either through book a demo, contact us, or direct outreach to a FlowFuse employee. Support requests are not considered MQL. |
 | Product Qualified Lead | The Customer success team identifies a contact that they believe is a candidate for an upsell opportunity. Customer success will identify an PQL by monitoring FlowFuse Cloud usage and engaging with these users in a consultative manner. Any contact already identified as an MQL, SQL or Opportunity should not be a candidate for PQL. |
 | Sales Qualified Lead | After the initial discussion with an MQL, the sales team will qualify if the contact is a potential customer by changing the lifecycle stage to SQL. This status of this stage is then further qualified in the [Lead Status](#lead-status) property. |
-| Opportunity | A contact becomes an Opportunity once a Deal has been opened. The [3 W's need to be answered before opening a deal](../sales/#from-sql-to-opportunity)  |
+| Opportunity | A contact becomes an Opportunity once a Deal has been opened. The [3 W's need to be answered before opening a deal](../sales/leads/#from-sql-to-opportunity)  |
 | Customer | An active, paying, user of FlowFuse. |
 | Evangelist | FlowFuse will not actively use Evangelist lifecycle stage. |
 | Other | Does not fit into any of the other descriptions, likely someone we are talking to about FlowFuse, but will never be a paying customer, .e.g. Partners |
