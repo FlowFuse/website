@@ -17,7 +17,7 @@ FlowFuse is continuously released to FlowFuse Cloud, and every four weeks, on a 
 
 We track releases using GitHub Milestones. We utilize GitHub issues for planning work. Issues are continuously scheduled by the PM. Releases are structured following the [Semantic Versioning](https://semver.org/#semantic-versioning-200).
 
-Milestones indicate the week of the release instead of a Patch version. This leads to a specific structure for Milestones: **MAJORversion.MINORversion.WEEK**. For example, 1.14.2 would represent the second week of the release of 1.14. This method ensures that Milestones can be used as deadlines while allowing continuous planning.
+Milestones indicate the week of the release instead of a Patch version. This leads to a specific structure for Milestones: **MAJORversion.MINORversion.WEEK**. For example, 1.14.2 would represent the second week of the release of 1.14. This method ensures that Milestones can be used as targets while allowing continuous planning.
 
 ## Planning & Prioritization
 
