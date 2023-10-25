@@ -40,7 +40,7 @@ on the [quote](../sales/engagements.md##generating-a-quote-and-order-form) and
 1. Review the invoice and send it to the customer for payment
 
 When the invoice is generated and send to the customer you can go ahead with
-providing them they [license for self-managed](../sales/engagements.md#generating-a-license),
+providing them they [license for self-managed](FlowFuse/website/src/handbook/sales/meetings/poc.md#generating-a-license),
 or [create a coupon](#coupons) and apply that to the FlowFuse Cloud team.
 
 ## Coupons

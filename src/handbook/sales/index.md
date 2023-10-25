@@ -31,7 +31,7 @@ Questions can be asked in the [#dept-sales](https://flowforgeworkspace.slack.com
 
 ## How we work
 
- - [Demo](./demo.md)
+ - [Demo](./meetings/demo.md)
  - [Sales Deck](https://docs.google.com/presentation/d/1FYimrzTe-7nExArcDoh0mdRh7wSjhtSCHZEz1f6sd8s/edit#slide=id.g1809c267caa_0_0)
  - [Engagements & Pricing](./engagements.md)
  - [Deal Board](https://app-eu1.hubspot.com/contacts/26586079/objects/0-3/views/all/board)
