@@ -6,7 +6,6 @@ navTitle: Planning
 
 This page provides a comprehensive overview of the planning processes and procedures that guide our product development at FlowFuse. As a continuously evolving software, FlowFuse employs a structured planning method to ensure timely releases, both for the FlowFuse Cloud and for our self-hosting users.
 
-Instructions for creating a NPM package release are [here](./process.md).
 
 Our planning process is continuously evolving as we find the best way to accommodate both a growing team and an expanding set of requirements for how and what we deliver.
 
@@ -16,7 +15,7 @@ FlowFuse is continuously released to FlowFuse Cloud, and every four weeks, on a 
 
 ### Milestones
 
-We track packages using GitHub Milestones. We utilize GitHub issues for planning work. Issues are continuously scheduled by the PM. Releases are structured following the [Semantic Versioning](https://semver.org/#semantic-versioning-200).
+We track releases using GitHub Milestones. We utilize GitHub issues for planning work. Issues are continuously scheduled by the PM. Releases are structured following the [Semantic Versioning](https://semver.org/#semantic-versioning-200).
 
 Milestones indicate the week of the release instead of a Patch version. This leads to a specific structure for Milestones: **MAJORversion.MINORversion.WEEK**. For example, 1.14.2 would represent the second week of the release of 1.14. This method ensures that Milestones can be used as deadlines while allowing continuous planning.
 
@@ -158,7 +157,7 @@ by the CTO. This meeting includes 2 parts:
     went well and what could be improved and generate action items to act on the
     feedback.
  2. Kicking off the next release. The involves:
-    1. The Product Manager describing the themes, goals and priorities of the upcomming issues
+    1. The Product Manager describing the themes, goals and priorities of the upcoming issues
     2. Reviewing the [Development Board](https://github.com/orgs/FlowFuse/projects/1/views/1)
        for the new milestone.
        High-priority items are assigned owners so that everyone has something to
@@ -200,7 +199,7 @@ help identify any gaps or places for improvement.
 
 Each feature demo is recorded by the developer responsible for the feature, detailing its functions and operations. If problems, challenges, or improvement ideas arise during the review of the demo, everyone is encouraged to post a comment under the video within the Slack channel. Additionally, a corresponding GitHub issue should be opened to track and prioritize these points for further discussion and action.
 
-Demos must be done in good time as ealry as possbile to allow for any follow-up action.
+Demos must be done in good time and as early as possible to allow for any follow-up action.
 
 Demos should consist of:
 
