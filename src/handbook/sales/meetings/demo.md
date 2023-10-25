@@ -53,7 +53,6 @@ flowforge-device-agent -d . --ui --ui-user foo --ui-pass bar
 6. Persistent context & storage
 7. Team Management & Library
 
-
 ## Housekeeping
 
 Once the demo is complete ensure you delete all devices, instances, applications and finally the team you created.
