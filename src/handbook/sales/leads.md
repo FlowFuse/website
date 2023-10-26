@@ -1,6 +1,6 @@
 ### Lead status
 
-For leads who are [MQLs or SQLs](/handbook/marketing/hubspot.md) the `Lead status`
+For leads who are [MQLs or SQLs](/handbook/marketing/hubspot/) the `Lead status`
 field is used to mark what the status is. Even though they're beyond being a lead.
 This field is maintained by the primary contact owner, likely the account executive.
 
