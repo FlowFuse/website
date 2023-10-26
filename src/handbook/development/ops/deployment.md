@@ -12,9 +12,18 @@ graph TB
     B ----> X[NodeRed container build]
     B --> D[LocalFS package]
     D --> E[Flowfuse package]
-    E & F[K8s driver] --> Y[Flowfuse container build]
+    E & F[K8s package] --> Y[Flowfuse container build]
     G[File-server package] -----> Z[File-server container build]
-
+    click A href "https://github.com/FlowFuse/nr-file-nodes/blob/main/.github/workflows/publish.yml" "NR-File-Nodes package" _blank
+    click B href "https://github.com/FlowFuse/nr-launcher/blob/main/.github/workflows/publish.yml" "NR-launcher package" _blank
+    click C href "https://github.com/FlowFuse/nr-project-nodes/blob/main/.github/workflows/publish.yml" _blank
+    click D href "https://github.com/FlowFuse/driver-localfs/blob/main/.github/workflows/publish.yml" _blank
+    click E href "https://github.com/FlowFuse/flowfuse/blob/main/.github/workflows/publish.yml" _blank
+    click F href "https://github.com/FlowFuse/driver-k8s/blob/main/.github/workflows/publish.yml" _blank
+    click G href "https://github.com/FlowFuse/file-server/blob/main/.github/workflows/publish.yml" _blank
+    click X href "https://github.com/FlowFuse/helm/blob/main/.github/workflows/nodered-container.yml" _blank
+    click Y href "https://github.com/FlowFuse/helm/blob/main/.github/workflows/flowforge-container.yml" _blank
+    click Z href "https://github.com/FlowFuse/helm/blob/main/.github/workflows/fileserver-container.yml" _blank
 ```
 
 ## How does it work?
