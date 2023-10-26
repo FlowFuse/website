@@ -1,3 +1,7 @@
+---
+navTitle: Lead Status
+---
+
 ### Lead status
 
 For leads who are [MQLs or SQLs](/handbook/marketing/hubspot/) the `Lead status`
