@@ -43,7 +43,7 @@ issue should be created on GitHub in the [marketing issue tracker](https://githu
 | [Blog](./blog.md) | How to write new content for the FlowFuse Blog |
 | [Channels](./channels.md) | How to engage with our audience on different channels |
 | [Types](./types.md) | Different types of content for different audiences |
-| [Hubspot](/handbook/company/resources/hubspot/) | How we use our CRM |
+| [Hubspot](./hubspot.md) | How we use our CRM |
 | [Trade shows](./tradeshow.md) | How to get the most out of visiting a trade fair |
 | [Videos](./videos.md) | To produce quality content in video, follow these guidelines |
 | [Website](./website.md) | How to contribute to the FlowFuse marketing website |
