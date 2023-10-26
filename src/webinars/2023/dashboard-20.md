@@ -6,7 +6,7 @@ image: /images/webinars/webinar-october.jpg
 date: 2023-10-26
 time: 17:00 CET (11:00am ET) 
 duration: 60
-
+video: 7GTHYzRpQ9M
 hosts: ["joe-pavitt"]
 hubspot:
     formId: b4ec9aa1-8648-47b3-b908-ec8597e8735d
