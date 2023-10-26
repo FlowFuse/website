@@ -4,8 +4,6 @@ navTitle: Proof of Concept
 
 ## Proof of Concept
 
-Every POC call should have an engineer present.
-
 ### Cloud trial
 
 If the prospect would like to trial FlowFuse Cloud, they are able to self-service at https://app.flowfuse.com/account/create. If they would like to test with Teams or Enterprise features, you can apply a coupon code to their Stripe account and elevate their Tier, after they create their trial account.
@@ -13,6 +11,8 @@ If the prospect would like to trial FlowFuse Cloud, they are able to self-servic
 ### Self-hosted trial
 
 If a self-hosted trial is desired, you need to generate a license key. See below.
+
+Every self-hosted POC call should have an engineer present.
 
 ### Generating a license
 
