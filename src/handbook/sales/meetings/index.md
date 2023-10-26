@@ -1,5 +1,5 @@
 ---
-navTitle: Meetings
+navTitle: Sales Meetings
 ---
 
 ### External Calls
