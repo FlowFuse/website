@@ -25,7 +25,7 @@ and charge customers based on their payment method filed with Stripe.
 
 For annual subscriptions, which could also be self-managed, invoices are created
 in Stripe. These invoices are created manually *after* the customer has agreed
-on the [quote](../sales/engagements.md##generating-a-quote-and-order-form) and
+on the [quote](../sales/engagements##generating-a-quote-and-order-form) and
 [terms](../legal/#subscription-agreement).
 
 ### Creating an invoice
@@ -40,7 +40,7 @@ on the [quote](../sales/engagements.md##generating-a-quote-and-order-form) and
 1. Review the invoice and send it to the customer for payment
 
 When the invoice is generated and send to the customer you can go ahead with
-providing them they [license for self-managed](FlowFuse/website/src/handbook/sales/meetings/poc.md#generating-a-license),
+providing them they [license for self-managed](FlowFuse/website/src/handbook/sales/meetings/poc#generating-a-license),
 or [create a coupon](#coupons) and apply that to the FlowFuse Cloud team.
 
 ## Coupons
