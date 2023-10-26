@@ -39,7 +39,7 @@ countersignature.
       * Apply the discounts on the stripe customer through Coupons
       * Have a FlowFuse Admin upgrade the customer to the correct tier
    * *Self-Managed*
-      * Generate a [license key](/handbook/sales/meetings/poc.md###generating-a-license)
+      * Generate a [license key](../sales/meetings/poc.md#generating-a-license)
       * Send the license key with the onboarding email to the customer
 1. Start invoice procedure
    * Email the billing (billing@) department with the signed fully
