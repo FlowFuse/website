@@ -11,3 +11,5 @@ Teams Tier customers can now leverage a curated selection of certfied Node-RED n
 - Support: Assistance for certified nodes is provided, aiming for, but not promising, issue resolution.
 
 How? You can find all certified nodes in your Node-RED palette manager.
+
+![Certified Nodes Screenshot](./images/certified-nodes.png)
