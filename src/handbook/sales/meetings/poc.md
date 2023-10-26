@@ -1,4 +1,8 @@
-## POC
+---
+navTitle: Proof of Concept
+---
+
+## Proof of Concept
 
 Every POC call should have an engineer present.
 
