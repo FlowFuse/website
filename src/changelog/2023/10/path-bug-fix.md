@@ -6,5 +6,4 @@ tags:
     - changelog
 ---
 
-Resolved a Device Agent bug preventing the PATH environment variable from being passed to the Node-RED instances, hindering the installation of nodes like node-red-serial-port if there assigned to an application.
-For more deatils see [GitHub Issue](https://github.com/FlowFuse/device-agent/issues/185).
+Resolved a Device Agent bug that prevented the PATH environment variable from being passed to Node-RED instances, hindering the installation of nodes like node-red-serial-port when assigned to an application. For more details, see [GitHub Issue](https://github.com/FlowFuse/device-agent/issues/185).
