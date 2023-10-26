@@ -3,11 +3,6 @@ navTitle: Marketing
 navGroup: Sales & Marketing
 ---
 
----
-navTitle: Marketing
-navGroup: Sales & Marketing
----
-
 # Marketing
 
 ## What we all do
