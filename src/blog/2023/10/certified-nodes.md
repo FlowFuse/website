@@ -42,7 +42,25 @@ Accessing certified nodes is straightforward—they're integrated directly withi
 
 Our initial roll-out includes a curated assortment of certified nodes. We're continuously expanding our library, with upcoming weeks bringing a wider array of options. Should you find a gap in your desired functionalities, we encourage you to reach out. Your feedback drives our journey forward, influencing the nodes we introduce next.
 
-- 
-- 
-- 
+- Linting for Node-RED
+- Debugging for Node-RED
+- FlowFuse Snapshot Plugin
+- Node-RED Dashboard 2.0
+- E-Mail Communication
+- Base64 converter
+- Buffer Parser
+- PostgreSQL
+- InfluxDB
+- Omron PLC
+- MC Protocol (Mitsubishi PLCs)
 
+### What will follow in the coming weeks?
+
+- Siemens PLC
+- Modbus
+- Mssql
+- Rockwell and Allen Bradley
+- OPC-UA
+- MongoDB
+- MySQL
+- WhatsAPP, Telegram, Slack
