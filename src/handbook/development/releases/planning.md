@@ -4,60 +4,46 @@ navTitle: Planning
 
 # Planning
 
-Instructions for creating a release are [here](./process.md).
+This page provides a comprehensive overview of the planning processes and procedures that guide our product development at FlowFuse. As a continuously evolving software, FlowFuse employs a structured planning method to ensure timely releases, both for the FlowFuse Cloud and for our self-hosting users.
+
+
+Our planning process is continuously evolving as we find the best way to accommodate both a growing team and an expanding set of requirements for how and what we deliver.
 
 ## Cadence
 
-FlowFuse is released every four weeks, on a Thursday. We track releases using
-GitHub Milestones. The current schedule of releases can be seen [here](https://github.com/FlowFuse/flowfuse/milestones).
+FlowFuse is continuously released to FlowFuse Cloud, and every four weeks, on a Thursday, it is packaged for users who are self-hosting FlowFuse. 
 
-Our planning process is continually evolving as we find the right way to accommodate
-both a growing team and a growing set of requirements on both how and what we deliver.
+### Milestones
 
-The following reflects both where we are at today and where we want to get to.
+We track releases using GitHub Milestones. We utilize GitHub issues for planning work. Issues are continuously scheduled by the PM. Releases are structured following the [Semantic Versioning](https://semver.org/#semantic-versioning-200).
 
-We use GitHub issues for planning the work in a release. A Milestone should exist
-for the current release (N) and the next one (N+1). We do not schedule work beyond
-that as priorities can change through a release.
+Milestones indicate the week of the release instead of a Patch version. This leads to a specific structure for Milestones: **MAJORversion.MINORversion.WEEK**. For example, 1.14.2 would represent the second week of the release of 1.14. This method ensures that Milestones can be used as targets while allowing continuous planning.
 
----
+## Planning & Prioritization
 
-### Week 2 - UX Planning
+The planning process is continuous, allowing the engineering team to consistently release new functionalities.
+This process covers the standard planning and prioritization process; bugs or minimal improvements are not part of this description. It is important to stay flexible, so this fast-lane approach for the described issues is possible and necessary.
 
-#### Tuesday
-- UX Pre-Planning
-  - This meeting is conducted between the Product Manager (PM) and the Head of User Experience (UX), it is designed to discuss and identify potential UX issues and requirements that need to be addressed in the upcoming iteration. The goal is to be proactive in identifying and resolving UX-related challenges before the start of the development phase.
+### Step 1 - Backlog prioritization and refinement
+Based on customer feedback, input from the FlowFuse team, and all stakeholders, issues are continuously raised and prioritized [in our Backlog](#product-backlog-board).
 
----
+### Step 2 - Assignment to the To-Do section
+Once an issue is refined, the PM continuously assigns issues to the [Development Board's](#development-board) `To-Do` Section. This is the first indication that this particular item is planned and will be the one of the next items for the `Up Next` section. It also signals the engineering and UX team to raise any open design or architectural clarifications if required.
 
-### Week 3 - Planning Week
+This section should include a maximum of 40 [effort estimation points](#effort-estimation).
 
-#### Monday
+### Step 3 - Assignment to the Up Next section
+This section is most relevant for the engineering team because it includes the issues which should be picked up next. The issues should generally be ready for pickup. Both the PM and CTO are responsible for directly assigning the issues in this section to an engineer.
 
-- Establish capacity
-  - The CTO forecasts the team's capacity for the upcoming iteration by providing the PM with a point estimate, based on historical velocity and any anticipated absences (e.g., holidays).
+**Milestone Assignment:** the CTO and PM are responsible for assigning a milestone to the items in this section based on the [effort estimation](#effort-estimation), indicating the week when this issue is expected to be released to FlowFuse Cloud.
 
-#### During the Week
+The `Up Next` section should consistently contain sufficient items, ensuring that members of the engineering team can immediately transition to a new task once other issues have been [successfully developed](#defining-done). Every available engineer should have exactly one pre-assigned task, providing clear visibility for everyone on their subsequent responsibility.
 
-- Preparation of next Iteration and Release
+## UX Planning
 
----
+ Every four weeks this meeting is conducted between the Product Manager (PM) and the Head of User Experience (UX), it is designed to discuss and identify potential UX issues and requirements that need to be addressed in the upcoming iteration. The goal is to be proactive in identifying and resolving UX-related challenges before the start of the development phase.
 
-### Week 4 - Release Week
-
-#### Tuesday
-- Product Meeting
-  - The PM presents the planning for the next Release.
-  - Joint discussion and agreement on the Highlights and Objectives.
-
-#### Thursday
-- Release day, details see [here](./process.md).
-- CTO and PM—“finishing touch meeting”
-  - Talk about leftovers from last Iteration
-  - Finalize the planning
-
-#### Friday
-- [Retrospective/Kick-Off](planning.md#retrospective%2Fkick-off)
+ See also ['In Design' Deliverables](#in-design-deliverables)
 
 ## Issues
 
@@ -65,9 +51,7 @@ Issues are the building blocks of planning activities, helping the team to manag
 
 ### Types
 
- - **Epic**: a significant feature or piece of work that doesn't easily fit into
-   a single release. It will typically have a number of Stories
-   and/or Tasks associated with it that can be delivered iteratively.
+ - **Epic**: a significant feature or piece of work. It will typically have a number of Stories and/or Tasks associated with it that can be delivered iteratively. Typically, an Epic shouldn't be assigned to the "Up Next" section; instead, the subtasks describing the first, second, third iterations can be assigned to this section and should be linked to the Epic.
 
  - **Story**: a *user-oriented* description of a feature. It should describe what
    a user should be able to do and identify the value that brings to the user.
@@ -86,8 +70,8 @@ tasks/bugs related to work already in progress and that need to be addressed in
 the current milestone. They should be added to the Development Board and current
 milestone directly.
 
-We label some items as `headline`. These are items we want to highlight in the release
-announcement material and should clearly describe the value they bring to our users.
+We label some items as `headline`. These are items we want to highlight in the changelog and further
+announcements and should clearly describe the value they bring to our users.
 
 ### Effort Estimation
 
@@ -113,59 +97,48 @@ We use three project boards to plan and track our work.
 
 ### Roadmap Board
 
-This is a high-level view of our product roadmap over the coming releases. It 
-identifies the themes and priorities for the releases.
+This is a high-level view of our product roadmap over the coming releases. 
 
 ### Product Backlog Board
 
 [This board](https://github.com/orgs/FlowFuse/projects/3/views/1) is maintained
-by the Product Manager (PM) and CTO. It is the main entry point for all epics and
-stories.
+by the Product Manager (PM) and CTO. It is the main entry point for all issues.
 
 Items on this board are put into one of the following states to indicate their priority in the backlog, they can move up or down the priority depending on business needs.
 
- - 'No Status' This is where all new items initially land so that they can be appropriately triaged and assigned by the PM and CTO
- - 'Long' This is the long term horizon, items that we know we will want to do one day but at the moment are long term goals, typically this could be 12 months away or more.
- - 'Medium' These are items that are in the 6-12 month time frame. 
- - 'Short' These are items in the 3-6 month time frame, Often these items will get pulled into a milestone from this point depending on capacity.
- - 'Next' These are items which we should be targeting for the next milestone to be planned, We plan milestones 2-3 iterations ahead so this time frame will typically be 2-3 months. 
- - 'Ready' This is for items which could be developed today but for various reasons have not been added to a milestone, often this will be items which have been descoped from a previous milestone but could be picked up if there is spare development capacity.
+ - `No Status` - This is where all new items initially land so that they can be appropriately triaged and assigned by the PM and CTO
+ - `Unplanned`- Not all issues will be planned immediately. Issues can should be assigned to this section if there is no decision yet on the planning.
+ - `Long` - This is the long term horizon, items that we know we will want to do one day but at the moment are long term goals, typically this could be 12 months away or more.
+ - `Medium` - These are items that are in the 6-12 month time frame. 
+ - `Short` - These are items in the 3-6 month time frame, Often these items will get pulled into a milestone from this point depending on capacity.
+ - `Next` - These are items which we should be targeting for the next milestone to be planned, We plan milestones 2-3 iterations ahead so this time frame will typically be 2-3 months. 
+ - `Closed` - All closed items are assigned to this section or beeing removed from th backlog.
+ - `Support & Under Review` - Customers often ask questions via GitHub issues. From these questions, new insightful requirements sometimes arise. Initially, to clarify the situation with the users, issues belong to this category.
 
 As items move up the list and get closer to Next we should have a greater understanding of what the detail and demand is for that feature. This is an iterative approach and as we gain understanding on an item we will use that information to aid in reviewing its position on the board.
-Once an Item is assigned to a milestone it will be removed from the Product Board and added to the Development board, with appropriate iterations allocated for design and development.
-Largely the position within the individual column is irrelevant, it may be used to aid in reviews or groupings but does not indicate any priority.
 
-A weekly review is held to keep the backlog in order - triaging new items that
-have been raised and not yet added to the backlog, reflecting on changing priorities
-and requirements.
+ A continuous review is held by the PM to keep the backlog in order - triaging new items that have been raised and not yet added to the backlog, and reflecting on changing priorities and requirements.
 
 ### Development Board
 
 The [Development Board](https://github.com/orgs/FlowFuse/projects/1/views/1) is
-used to plan and track the work within the current milestone release.
+used to plan and track the work within the current Iteration.
 
-Within the board we use:
+Within the board, we use iterations to indicate when an item is being worked on. The `Up Next` section clearly indicates to everyone which item should be picked up next.
 
- - Milestones to indicate what release an item is planned to be released in
- - Iterations to indicate when an item is being worked on
-
-By separating these two out, we can have a single view of everything the team
-is working on at a particular time (iteration) without it being part of the current
-release (milestone).
-
-For example, Design work needed for a future milestone can be assigned to an Iteration
-for when that work needs to happen.
+Design work should be handled in a sub-task linked to the development issue.
 
 The board has the following states:
 
- - `ToDo` - items assigned to the milestone or iteration but not yet started
+ - `ToDo` - items already be planned but not yet started
+ - `Up Next` - items that should be picked up next
  - `In Design` - items being designed
  - `In Progress` - items being developed
- - `Review` - items that are ready to be reviewed (PR open)
- - `Verify` - items that have been merged and can be verified once deployed to the Staging environment
+ - `Review` - items that are ready to be reviewed (PR open, [feature demo](#feature-demos) created)
+ - `Verify` - items that have been merged and can be verified once deployed to the Staging and Production environment
  - `Done` - items that are [Done](#defining-done)
 
-### 'In Design' Deliverables
+### In Design Deliverables
 
 Both UX/UI work and engineering work can be "In Design". For both instances there should still be defined deliverables. 
 
@@ -177,14 +150,14 @@ are thus required before the design sprint start.
 
 ## Retrospective/Kick-Off
 
-The day after each FlowFuse release, always a Friday, a meeting is scheduled
+The day after each FlowFuse NPM release, always a Friday, a meeting is scheduled
 by the CTO. This meeting includes 2 parts:
 
  1. A retrospective on the last release. This should capture feedback on what
     went well and what could be improved and generate action items to act on the
     feedback.
  2. Kicking off the next release. The involves:
-    1. The Product Manager describing the themes, goals and priorities of the new release
+    1. The Product Manager describing the themes, goals and priorities of the upcoming issues
     2. Reviewing the [Development Board](https://github.com/orgs/FlowFuse/projects/1/views/1)
        for the new milestone.
        High-priority items are assigned owners so that everyone has something to
@@ -197,10 +170,7 @@ by the CTO. This meeting includes 2 parts:
 
 ## What to work on
 
-Work comes the ToDo column of the [Development Board](https://github.com/orgs/FlowFuse/projects/1/views/1).
-
-We use a set of labels to identify the high/medium/low priority of an item. We tend to
-flag the more important stuff and treat an unlabelled item is implicitly low priority.
+Work comes the `Up Next` column of the [Development Board](https://github.com/orgs/FlowFuse/projects/1/views/1).
 
 Naturally there will be items that crop up unexpectedly and have to be dealt with
 pragmatically. For example, we may realise an item is needed for the current release
@@ -209,15 +179,6 @@ we work.
 
 When picking up an unassigned item assign it to yourself and move it to the
 **In Progress** state.
-
-### Milestones are overscheduled
-
-As stories and tasks are assigned to milestones, it's unlikely there's not
-enough work to be done. On the flip side, this means that not all scheduled epics
-or stories will be completed.
-
-The Product Manager/CTO have overall responsibility to ensure any 'must-have' items
-are making progress in a release.
 
 ## Defining Done
 
@@ -228,6 +189,7 @@ criteria are met:
  - Suitable unit/system level tests have been added
  - Documentation has been updated
  - Acceptance criteria identified in the Story have been met
+ - Feature Demo
 
 ### Feature Demos
 
@@ -237,11 +199,7 @@ help identify any gaps or places for improvement.
 
 Each feature demo is recorded by the developer responsible for the feature, detailing its functions and operations. If problems, challenges, or improvement ideas arise during the review of the demo, everyone is encouraged to post a comment under the video within the Slack channel. Additionally, a corresponding GitHub issue should be opened to track and prioritize these points for further discussion and action.
 
-All `headline` item or significant piece of functionality should be demoed.
-
-Demos must be done in good time within the release cycle to allow for any follow-up
-action. It is better to demo something 90% complete and get feedback on it, than it
-is to rush a demo without time to do anything with it.
+Demos must be done in good time and as early as possible to allow for any follow-up action.
 
 Demos should consist of:
 
