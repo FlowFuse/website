@@ -33,7 +33,7 @@ For each sales opportunity a clear answer for the customers needs and wants shou
 | :------- | :------ |
 | Why change? | What's the trigger to invest in FlowFuse and Node-RED? |
 | Why now? | Timeline is everything! |
-| Why FlowFuse? | What value does FlowFuse offer, what features are of most interest? |
+| Why FlowFuse? | What value does FlowFuse offer to the customer, what features are of most interest? |
 
 If, and only if, the answers are known and added as notes to HubSpot, an
 opportunity is added to the HubSpot deals board.
