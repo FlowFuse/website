@@ -9,7 +9,7 @@ tags:
     - releases
     - flowfuse
 ---
-We are thrilled to introduce a new feature for our Teams Tier customers - **Certified Nodes for Node-RED**. This new offering is designed to reinforce your flows's robustness by granting you access to Node-RED nodes that stand up to our rigorous quality and security standards.
+We are thrilled to introduce a new feature for our Teams and Enterprise Tier customers - **Certified Nodes for Node-RED**. This new offering is designed to reinforce your flows's robustness by granting you access to Node-RED nodes that stand up to our rigorous quality and security standards.
 
 <!--more-->
 
