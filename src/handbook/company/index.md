@@ -5,16 +5,18 @@ navGroup: Company
 
 # Company
 
-FlowFuse allows organizations to reliably deliver Node-RED applications in a
-continuous, collaborative, and secure manner.
+The company sections in the handbook describes how the company as a whole works,
+and contains department agnostic details.
 
- - [Board meetings](./board.md)
- - [Communication](./communication.md)
- - [Decisions](./decisions.md)
- - [Principles](./principles.md)
- - [Remote work](./remote.md)
- - [Security](./security.md)
- - [Values](./values.md)
+| | |
+|-|-|
+| [Values](/handbook/company/values/) | The core values that guide the company and how we work |
+| [Communication](/handbook/company/communication/) | How we communicate and keep everyone informed |
+| [Decisions](/handbook/company/decisions/) | Decision making in an async ready fashion is harder than in person, learn how FlowFuse does it |
+| [Board meetings](/handbook/company/board/) | Board meetings, and how they work for us |
+| [Principles](./principles.md) | |
+| [Remote work](./remote.md) | |
+| [Security](/handbook/company/security/) | |
 
 ## Legal details
 
