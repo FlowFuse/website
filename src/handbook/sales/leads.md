@@ -1,5 +1,5 @@
 ---
-navTitle: Lead Status
+navTitle: Leads and Deals
 ---
 
 ### Lead status
@@ -41,3 +41,12 @@ For each sales opportunity a clear answer for the customers needs and wants shou
 
 If, and only if, the answers are known and added as notes to HubSpot, an
 opportunity is added to the HubSpot deals board.
+
+| Deal Stages | |
+| :------- | :------ |
+| Opportunity | 10% - When there is a legitimate opportunity to close the prospect within the next 6 months. This stage is primarily triggered by the timeline or urgency of the need for FlowFuse. |
+| POC Started | 30% - When the prospect enters a POC or has a POC kick-off call scheduled in the near future. |
+| Value Validated | 60% - FlowFuse has been technically proven in a POC. Procurement steps typically follow or are running concurrently: security, legal, budget, DM intro/meeting. |
+| Contract Sent | 90% - Contact is sent with an expiration date that has been communicated to the customer. While quotes may be sent at any time throughout the process, a deal should only enter this stage if it is reasonably guaranteed that a signature is pending based on current knowledge. |
+| Closed Won/Lost | Deals in these stages will remain visible on the deal board to keep them top of mind for learnings and/or follow up. |
+
