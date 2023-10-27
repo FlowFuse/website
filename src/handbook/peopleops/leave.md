@@ -30,6 +30,9 @@ Sick leave, or having limited availability is not recorded currently. Keep your
 manager updated on your health, and let them know what FlowFuse can do for you
 to aid in your recovery.
 
+Please log the days you're out in the team calendar so the rest of the company
+understands you're unavailable.
+
 ## Parental Leave
 
 If you live in a country where a statutory Parental Leave benefit is available,
