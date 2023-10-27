@@ -34,7 +34,7 @@ A certified node is a module from the Node-RED library that undergoes a certific
 
 ## How to use certfied nodes?
 
-Accessing certified nodes is straightforward—they're integrated directly within your Node-RED palette manager, simplifying selection and implementation. All new instances since October 26, 2023, have automatic access to the catalogue. If you want to add Certified Nodes to one of your existing instances, just [contact us](https://flowfuse.com/support/).
+Accessing certified nodes is straightforward—they're integrated directly within your Node-RED palette manager, simplifying selection and implementation. All new instances since October 26, 2023, have automatic access to the catalogue. If you want to add Certified Nodes to one of your existing instances, just [contact us](/support/).
 
 ![Node-RED palette manager](./images/certified-nodes.png)
 
