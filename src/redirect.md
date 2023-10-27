@@ -37,8 +37,12 @@ redirects:
   - { "from": "/handbook/development/how-we-work/packaging/", "to": "/handbook/development/packaging/" }
   - { "from": "/handbook/development/how-we-work/contributing/", "to": "/handbook/development/contributing/" }
   - { "from": "/handbook/development/how-we-work/", "to": "/handbook/development/" }
-  - { "from": "/handbook/development/git-how-to/", "to": "/handbook/development/guides/git" }
-  - { "from": "/handbook/development/markdown-how-to/", "to": "/handbook/development/guides/markdown" }
+  - { "from": "/handbook/development/git-how-to/", "to": "/handbook/company/guides/git/" }
+  - { "from": "/handbook/development/guides/git/", "to": "/handbook/company/guides/git/" }
+  - { "from": "/handbook/development/markdown-how-to/", "to": "/handbook/company/guides/markdown/" }
+  - { "from": "/handbook/development/guides/markdown", "to": "/handbook/company/guides/markdown/" }
+  - { "from": "/handbook/development/guides/", "to": "/handbook/company/guides/" }
+
   
 
 # The "permalink" attribute determines where the output page will be located.
