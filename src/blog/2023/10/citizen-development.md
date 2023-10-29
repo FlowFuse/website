@@ -2,7 +2,7 @@
 title: Innovate from within - Why manufacturing must embrace Citizen Developers
 subtitle: Empower your Operational Technology teams as Citizen Developers
 authors: ["marian-demme"]
-#image: blog/2023/10/images/tile-blog-custom-vuetify-components-for-Dashboard.png
+image: blog/2023/10/images/image-citizen-developers.png
 date: 2023-10-23
 tags:
     - posts
