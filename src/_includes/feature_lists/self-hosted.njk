@@ -43,16 +43,20 @@
             values: ['check', 'check', 'check'],
             info: "<p>FlowFuse's intuitive team management tooling makes it easy for you to control whom has access to what.</p>"
         }, {
-            id: "security",
-            label: "Endpoint Security",
-            values: ['None/HTTP Basic Auth/FF Auth', 'None/HTTP Basic Auth/FF Auth', 'None/HTTP Basic Auth/FF Auth'],
-            info: "<p>Use FlowFuse credentials to secure HTTP endpoints</p>"
-        }, {
             id: "pipelines",
             label: "DevOps Pipelines",
             values: [null, 'check', 'check'],
             info: "<p>DevOps pipelines allows for you to setup different environments for development, testing and production Node-RED instances.</p>"
         }, {
+            id: "security",
+            label: "Endpoint Security",
+            values: [
+                'None<br>HTTP Basic Auth',
+                'None<br>HTTP Basic Auth<br>FlowFuse Authentication',
+                'None<br>HTTP Basic Auth<br>FlowFuse Authentication'
+                ],
+            info: "<p>Use FlowFuse credentials to secure HTTP endpoints</p>"
+         }, { 
             id: "project-nodes",
             label: "Seamless Data Stream",
             values: [null, 'check', 'check'],
