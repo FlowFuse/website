@@ -6,6 +6,7 @@ image: blog/2023/10/images/image-citizen-developers.png
 date: 2023-10-23
 tags:
     - posts
+    - flowfuse
 ---
 In the early days when I was working as a solution architect, I found myself in a peculiar position, observing an intriguing relationship between Operational Technology (OT) and Information Technology (IT) departments. While OT departments struggled to develop digital solutions, the IT departments held an unspoken authority in this domain, leading to a paradoxical dynamic that often seemed to hinder rather than facilitate progress.
 
