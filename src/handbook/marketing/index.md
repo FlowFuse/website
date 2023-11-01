@@ -33,11 +33,6 @@ The ultimate goal for the department is to generate MQLs for the
 
 Questions can be asked in the [#dept-marketing](https://flowforgeworkspace.slack.com/archives/C02TG4WH5PC).
 
-## How we work
-
-For each task you work on that takes more than a couple of hours to complete, an
-issue should be created on GitHub in the [marketing issue tracker](https://github.com/FlowFuse/marketing/issues).
-
 | | |
 |:----|:----|
 | [Blog](./blog.md) | How to write new content for the FlowFuse Blog |

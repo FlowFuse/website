@@ -67,9 +67,9 @@ The author can be seen on both the blog index and the articles.
 Tag your content appropriately from the collection of tags that help us manage our blog content. They are:
 
 - `node-red`
-- `flowforge`
+- `flowfuse`
 - `how-to`
-- `tips`
+- `dashboard`
 - `community`
 - `releases`
 - `news`
@@ -85,3 +85,8 @@ The '\<\!\-\-more\-\-\>' tag is used to define the text shown in the blog index 
 ### Example blog article based on the header above
 
 ![Example of how the headers are shown on blog articles](../images/blog-article.png)
+
+### Writing content
+
+FlowFuse blog posts are written in markdown. To learn how to style content and
+have a nice markup for your content, please read the [markdown guide](/handbook/company/guides/markdown/)

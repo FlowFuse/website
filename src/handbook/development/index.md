@@ -48,5 +48,5 @@ How we run and manage our FlowFuse Cloud platform
 A collection of guides for some of things that are foundational to working at
 FlowFuse
 
-- [Git Intro](./guides/git.md) - get started with Git
-- [Markdown Guide](./guides/markdown.md) - a quick primer for Markdown
+- [Git Intro](/handbook/company/guides/git/) - get started with Git
+- [Markdown Guide](/handbook/company/guides/markdown/) - a quick primer for Markdown
