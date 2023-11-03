@@ -22,7 +22,7 @@ and contains department agnostic details.
 
 ### Mailing address
 
-Please do not use the mail address for any corresponance unless its a legal requirement.
+As a registering company we have to provide our address to customers and suppliers when they specifically request that information. For all day to day communications we should make it clear that by far the most practical way to contact us is via support@flowfuse.com.
 
 FlowFuse
 PO Box 7775 #29439
