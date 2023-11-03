@@ -22,8 +22,11 @@ and contains department agnostic details.
 
 ### Mailing address
 
-We do not publish our mailing address, it will be distributed on request. Team
-members can find it in the "Company Info" shared vault if they have access.
+Please do not use the mail address for any corresponance unless its a legal requirement.
+
+FlowFuse
+PO Box 7775 #29439
+San Francisco, CA 94120-7775 USA.
 
 ### Banking details
 
