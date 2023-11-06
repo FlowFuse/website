@@ -54,7 +54,7 @@ All team members have an annual $500 USD budget available to cover any necessary
 or enhancements to their home office setup. This does not roll-over and cannot be claimed as cash.
 
 The budget is available for essential items needed to perform your role at FlowFuse. This includes
-chair, desk, monitor, headet, exernal microphone, external webcam, keyboard and mouse. Items such
+chair, desk, monitor, set, external microphone, external webcam, keyboard and mouse. Items such
 as additional monitors, laptop stands, lighting and laptop bag/case can also be considered.
 
 Any items outside this will fall under an exception to the policy and require management review
