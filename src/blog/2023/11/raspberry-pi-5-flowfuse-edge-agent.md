@@ -1,10 +1,11 @@
 ---
-title: Install the FlowFuse Edge Agent on the Raspberry Pi 5
-subtitle: Preconfigured Node-RED Applications
-description: Managing your Raspberry Pi 5 with Node-RED through FlowFuse is
-easy to set up.
-date: 2023-11-07
+title: "Install the FlowFuse Edge Agent on the Raspberry Pi 5"
+subtitle: "Managing your Raspberry Pi 5 with Node-RED through FlowFuse is
+easy to set up"
+description: "Managing your Raspberry Pi 5 with Node-RED through FlowFuse is
+easy to set up"
 authors: ["zeger-jan-van-de-weg"]
+date: 2023-11-07
 image: "/blog/2023/10/images/blueprints.png"
 tags:
     - posts
