@@ -15,6 +15,7 @@ on taking the FlowFuse platform to market.
    1. Write content on how to use Node-RED with FlowFuse
 1. Engage with prospective customers to help them adopt FlowFuse
 1. Nurture current customers to be successful with FlowFuse
+1. General business administration; invoices, legal matters, etc.
 
 ## Team
 

@@ -1,6 +1,6 @@
 ---
 navTitle: Legal
-navGroup: Internal Operations
+navGroup: Customer Department
 ---
 
 # Legal
