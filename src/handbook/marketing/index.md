@@ -38,7 +38,7 @@ Questions can be asked in the [#dept-marketing](https://flowforgeworkspace.slack
 | [Blog](./blog.md) | How to write new content for the FlowFuse Blog |
 | [Channels](./channels.md) | How to engage with our audience on different channels |
 | [Types](./types.md) | Different types of content for different audiences |
-| [Hubspot](./hubspot.md) | How we use our CRM |
+| [Hubspot](/handbook/customer/hubspot/) | How we use our CRM |
 | [Trade shows](./tradeshow.md) | How to get the most out of visiting a trade fair |
 | [Videos](./videos.md) | To produce quality content in video, follow these guidelines |
 | [Website](./website.md) | How to contribute to the FlowFuse marketing website |
