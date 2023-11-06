@@ -50,7 +50,7 @@ for a home office environment.
 
 For new hires, $1500 USD is available to help set up their home office in the first year.
 
-All team members have an annual $500 USD budget available to cover any necessary upgrades, replacements
+After the first year an annual budget of $500 USD is available to cover any necessary upgrades, replacements
 or enhancements to their home office setup. This does not roll-over and cannot be claimed as cash.
 
 The budget is available for essential items needed to perform your role at FlowFuse. This includes
