@@ -10,7 +10,7 @@ hubspot:
     formId: b4ec9aa1-8648-47b3-b908-ec8597e8735d
 ---
 
-**Explore building manufacturing applications with FlowFuse Blueprints in our upcoming webinar. Blueprints make it easy to get started building applications with Node-Red.**
+**Explore building manufacturing applications with FlowFuse Blueprints in our upcoming webinar. Blueprints make it easy to get started building applications with Node-RED.**
 
 <!--more-->
 
