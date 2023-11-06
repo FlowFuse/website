@@ -43,7 +43,29 @@ company, you can claim back the money through [Deel](https://help.letsdeel.com/h
 * Adjustments approved before the payroll cut-off date will be processed in the current month's payroll. Any adjustment approved after the payroll cut-off date will be processed in the next month's payroll
 * The People Ops Manager is authorized to approve expenses that are $250 or less. However, if an expense exceeds $250, both the CEO and the People Ops Manager will need to review and approve it.
 
-## Asset purchases over $500
+## Equipment
+
+As an all-remote company, FlowFuse provides a budget to cover the cost of equipment
+for a home office environment.
+
+For new hires, $1500 USD is available to help set up their home office in the first year.
+
+All team members have an annual $500 USD budget available to cover any necessary upgrades, replacements
+or enhancements to their home office setup. This does not roll-over and cannot be claimed as cash.
+
+The budget is available for essential items needed to perform your role at FlowFuse. This includes
+chair, desk, monitor, headet, exernal microphone, external webcam, keyboard and mouse. Items such
+as additional monitors, laptop stands, lighting and laptop bag/case can also be considered.
+
+Any items outside this will fall under an exception to the policy and require management review
+and approval.
+
+The following items are not reimbursable: Phones, watches, smart speakers and tablets.
+
+Laptops are covered separately and are provided as needed when a new hire joins the team.
+Please discuss with your manager if you need to refresh your laptop.
+
+### Asset purchases over $500
 
 Any asset purchase over $500 (laptops, devices etc) needs to be centrally recorded.
 This is done in [this Google Sheet](https://docs.google.com/spreadsheets/d/1sHJmUGG-m7y9TGrFrtqiZ6ubioLf1ySSam_cL-cmiRo/edit#gid=0)
