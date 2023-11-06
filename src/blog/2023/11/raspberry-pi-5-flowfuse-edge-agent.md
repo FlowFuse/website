@@ -59,7 +59,7 @@ sudo apt-get upgrade -y
 
 ## Installing the Agent
 
-The FlowFuse Device Agent is a software agent that runs on a Raspberry Pi manages
+The FlowFuse Device Agent is a software agent that runs on a Raspberry Pi. It manages
 all things about Node-RED that's going to run later on the same device. Think
 about the Node-RED version and upgrades, setup and management of the process,
 access controls, and much more.
