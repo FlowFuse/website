@@ -14,7 +14,7 @@ hubspot:
 
 <!--more-->
 
-The webinar kicks off with a comprehensive introduction to what a Blueprint is and the ideology behind it.  Following this, we'll go through the current roster of Blueprints available, highlighting the core purpose and the functionalities they bring to the table.
+The webinar kicks off with a comprehensive introduction to what a Blueprint is and the ideology behind it. Following this, we'll go through the current roster of Blueprints available, highlighting the core purpose and the functionalities they bring to the table.
 
 From there we’ll closely examine a couple of our existing Blueprints - the OEE Calculator, which builds on the core KPI for many manufacturing environments, and the Andon Terminal, where a user can key in downtime events. An exploratory session around the Performance Dashboard will shed light on how monitoring and improving manufacturing KPIs is streamlined with FlowFuse Blueprints.
 
