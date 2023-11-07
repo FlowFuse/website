@@ -42,6 +42,7 @@ How we run and manage our FlowFuse Cloud platform
 - [Production Environment](./ops/production.md)
 - [Staging Environment](./ops/staging.md)
 - [Observability](./ops/observability.md)
+- [Incident Response](./ops/incident-response.md)
 
 ## Guides
 
