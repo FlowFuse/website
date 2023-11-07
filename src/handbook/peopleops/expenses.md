@@ -72,6 +72,12 @@ This is done in [this Google Sheet](https://docs.google.com/spreadsheets/d/1sHJm
 and shared with the Finance team. Send details of the purchase to the PeopleOps Manager so 
 it can be recorded.
 
+### Return of equipment
+
+When a team member leaves the company, they will be required to return any company
+assets such as laptops. This should be discussed with their manager as part of
+the off-boarding process.
+
 ## Education & Conferences
 
 Continual professional development is very important, and FlowFuse will support
