@@ -54,7 +54,7 @@ After the first year an annual budget of $500 USD is available to cover any nece
 or enhancements to their home office setup. This does not roll-over and cannot be claimed as cash.
 
 The budget is available for essential items needed to perform your role at FlowFuse. This includes
-chair, desk, monitor, set, external microphone, external webcam, keyboard and mouse. Items such
+chair, desk, monitor, headset, external microphone, external webcam, keyboard and mouse. Items such
 as additional monitors, laptop stands, lighting and laptop bag/case can also be considered.
 
 Any items outside this will fall under an exception to the policy and require management review
@@ -63,7 +63,7 @@ and approval.
 The following items are not reimbursable: Phones, watches, smart speakers and tablets.
 
 Laptops are covered separately and are provided as needed when a new hire joins the team.
-Please discuss with your manager if you need to refresh your laptop.
+Unless circumstances require otherwise, laptops will only be considered for a refresh after 3 years. Please discuss with your manager if you need to refresh your laptop.
 
 ### Asset purchases over $500
 
