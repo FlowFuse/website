@@ -3,7 +3,7 @@ title: Beyond Automation - AI Use Cases that are shaping the next manufacturing 
 subtitle: In which AI-powered capabilities should one invest to bring about transformative changes in the manufacturing environment?
 date: 2023-11-07
 authors: ["marian-demme"]
-#image: "/blog/2023/10/images/blueprints.png"
+image: "/blog/2023/11/images/beyond-automation.png"
 tags:
     - posts
 ---
