@@ -15,13 +15,7 @@ Internal documents:
 
 Quotes are generated through HubSpot. Each quote should link to the subsciption
 agreement as well as include "Order Form" in the description. Link the latest
-version of the document with the [subscription agreement](../legal/#subscription-agreement).
-
-## Professional Services
-
-FlowFuse may offer support services as part of an annual subscription if it's advantageous to onboard the new customer or expand usage for a current customer. Any professional services or engineering resources provided will be subject to business case and CEO approval.
-
-If Professional Services are rendered, it is required to document the learnings in issues, documentation, and blog content so that the information gleaned is available to the rest of the organization and the public.
+version of the document with the [subscription agreement](/handbook/customer/legal/#subscription-agreement).
 
 ## Closing a deal
 
