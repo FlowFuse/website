@@ -6,7 +6,7 @@ description: "Managing your Raspberry Pi 5 with Node-RED through FlowFuse is
 easy to set up"
 authors: ["zeger-jan-van-de-weg"]
 date: 2023-11-07
-image: "/blog/2023/10/images/blueprints.png"
+image: "/blog/2023/11/images/raspberry-pi-5-device-agent.png"
 tags:
     - posts
     - how-to
