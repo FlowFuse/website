@@ -35,3 +35,9 @@ Questions can be asked in the [#dept-customer](https://flowforgeworkspace.slack.
 ## How we work
 
 TODO
+
+## Further Reading
+
+| | |
+| --- | --- |
+| [Sales](/handbook/customer/sales/) | How we engage with prospects to make them customers |

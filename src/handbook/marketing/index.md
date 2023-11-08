@@ -17,8 +17,7 @@ of FlowFuse. This includes:
 them in a cost effective way.
 
 The ultimate goal for the department is to generate MQLs for the
-[Sales department](/handbook/sales/) or sign ups for
-[FlowFuse Cloud](https://app.flowfuse.com).
+sales or sign ups for [FlowFuse Cloud](https://app.flowfuse.com).
 
 ## Team
 
