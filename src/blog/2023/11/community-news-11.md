@@ -14,7 +14,21 @@ Welcome to the FlowFuse newsletter for November 2023, a monthly roundup of what�
 
 <!--more-->
 
-## TLDR
+## FlowFuse Team Summit - Barcelona by Grey
+
+The first week of November in Barcelona, the FlowFuse team embraced a blend of culture, collaboration, and creativity at our biannual summit. As a global remote-first company, these gatherings are key to nurturing the camaraderie and clear communication that fuels our work.
+
+My first summit was a vibrant tableau of wit and good-natured sarcasm, a perfect fit for my sense of humor. But it wasn't just about the fun; we delved deep into aligning our strategies to streamline communication with the vast community that recognizes the value of Node-RED.
+
+From segway tours through historic streets to culinary competitions, we bonded and built memories. During the day, we crafted go-to-market strategies, fortified our team dynamics through board games, and honed our sales approaches. The latest dashboard visualizations and product roadmaps were discussed, with our shared vision to simplify the complex for companies worldwide. 
+
+**“The easy things should be easy, and the hard things should be possible.”**
+
+Our goal remains steadfast: to enhance bidirectional communication with you, our valued community, and make Node-RED's power more accessible than ever. 
+
+<img src="/blog/2023/11/images/IMG_6334.png" width=500 />
+
+## Announcments TLDR
 
 We're excited to share some significant enhancements that will elevate your experience with FlowFuse and Node-RED. We've announced that Dashboards 2.0 are in Beta version.  Recent additions to Dashboards 2.0 include integrating Vuetify and Mermaid into Dashboard 2.0 unlocking a suite of custom UI components to enrich your dashboards. Our step-by-step guide will walk you through creating dynamic elements like countdown timers, leveraging the power of VueJS for seamless updates.
 
