@@ -14,9 +14,14 @@ Welcome to the FlowFuse newsletter for November 2023, a monthly roundup of whatâ
 
 <!--more-->
 
+## TLDR
+
+We're excited to share some significant enhancements that will elevate your experience with FlowFuse and Node-RED. We've announced that Dashboards 2.0 are in Beta version.  Recent additions to Dashboards 2.0 include integrating Vuetify and Mermaid into Dashboard 2.0 unlocking a suite of custom UI components to enrich your dashboards. Our step-by-step guide will walk you through creating dynamic elements like countdown timers, leveraging the power of VueJS for seamless updates.
+
+We're also thrilled to introduce FlowFuse Blueprints - a game-changer in building bespoke, flexible, and resilient manufacturing applications. Our initial set of Blueprints, including ANDON Operator Terminal, Performance Overview Dashboard, and OEE Calculator, provide preconfigured Node-RED applications that streamline your development process. Dive into the world of Blueprints and discover how they can accelerate your project's journey from concept to operational reality.  Join the [webinar](/webinars/2023/blueprints/) to find out more.
+
 ## Recent Changelog Updates
 
-<!-- Updated 11 -->
 
 - [Integrate your own widgets with Dashboard 2.0](/blog/2023/10/dashboard-integrations/)
 - [Blueprints](/changelog/2023/10/blueprints/)
@@ -27,7 +32,6 @@ Welcome to the FlowFuse newsletter for November 2023, a monthly roundup of whatâ
 
 ## Upcoming events
 
-<!-- Updated 11 -->
 
 ### FlowFuse Blueprints: Your Pathway to Enhanced Manufacturing
 
@@ -38,7 +42,6 @@ Explore building manufacturing applications with FlowFuse Blueprints in our upco
 
 ## From our Blog
 
-<!-- Updated 11 -->
 
 * [Meet FlowFuse at SPS Nuremberg](/blog/2023/11/meet-us-at-sps-nuremberg/) - Talk about Node-RED and how FlowFuse can help you operationalize your flows!
 
@@ -54,21 +57,6 @@ Explore building manufacturing applications with FlowFuse Blueprints in our upco
 
 * [What are FlowFuse Blueprints?](/blog/2023/10/blueprints/) - Preconfigured Node-RED Applications
 
-
-<!-- * [Custom Vuetify components for Dashboard 2.0](/blog/2023/10/custom-vuetify-components-dashboard/) - the new dashboard project allows for custom UI components
-
-
-* [Updating our branding across GitHub, npm and Dockerhub](/blog/2023/09/rebranding-our-components/) - our GitHub, npm and DockerHub locations are now called FlowFuse, due to the rename from FlowForge.
-
-* [How ChatGPT improves Node-RED Developer Experience](/blog/2023/09/chatgpt-for-node-red-developers/) - lots of interest in ChapGPT in the Node-RED community. A quick review of different integrations.
-
-* [Share & Preview Flows on flows.nodered.org](/blog/2023/09/flow-viewer/) - A new way to visualize flows in web pages.
-
-* [Charting REST API Data in a Dashboard](/blog/2023/09/dashboard-chart-for-rest-api-data/) - A short tutorial on how to gather data from a REST API for a dashboard.
-
-* Modernize your legacy industrial data - Two part series on making sense of your industrial data. 
-    - [Part 1](/blog/2023/09/modernize-your-legacy-industrial-data/)
-    - [Part 2](/blog/2023/09/modernize-your-legacy-industrial-data-part2/) -->
 
 
 ## Join Our Team
