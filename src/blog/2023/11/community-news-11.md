@@ -14,33 +14,48 @@ Welcome to the FlowFuse newsletter for November 2023, a monthly roundup of whatâ
 
 <!--more-->
 
-## Quicker Releases for FlowFuse Cloud and New Changelog
-
-FlowFuse is committed to delivery new features to our customers and community as fast as possible. We are now rolling out new builds of FlowFuse to FlowFuse Cloud more regularly than the previous monthly release. This will allow FlowFuse Cloud users to benefit from the latest enhancements as they become available. The self-hosted version of FlowFuse will continue to have releases every 4 weeks.
-
-To allow FlowFuse Cloud users to keep up to date on the new changes, we have started a [Changelog](/changelog/) to announce newly deployed features. 
-
-
 ## Recent Changelog Updates
 
-- [DevOps Pipeline with action selection](/changelog/2023/09/devops-actions/)
-- [Usability improvements to Device Management](/changelog/2023/09/snapshots-devices/)
-- [Introducing the Enterprise tier](/changelog/2023/09/introduction-enterprise-tier/)
-- [API Endpoints for DevOps Pipeline](/changelog/2023/09/pipeline-api/)
-- [Private Node Support](/blog/2023/10/use-private-custom-nodes-with-flowfuse/)
+<!-- Updated 11 -->
+
+- [Integrate your own widgets with Dashboard 2.0](/blog/2023/10/dashboard-integrations/)
+- [Blueprints](/changelog/2023/10/blueprints/)
+- [Enhanced Snapshot Selection](/changelog/2023/10/device-snapshot-selection/)
+- [Device Agent path bug fix](/changelog/2023/10/path-bug-fix/)
+- [Resource Monitoring in Audit Log](/changelog/2023/10/resource-alerts/)
+- [Certified Nodes](/changelog/2023/10/certified-nodes/)
 
 ## Upcoming events
 
-### Dashboard 2.0 - Where we are, and whatâ€™s next?
+<!-- Updated 11 -->
 
-The next generation of the Node-RED dashboard is starting to mature. Development work on Dashboard 2.0 started earlier this year and amazing progress has been made already. Join Joe Pavitt, leader of the Dashboard 2.0 project, who will demonstrate the new dashboard project and discuss future plans during our October webinar.
+### FlowFuse Blueprints: Your Pathway to Enhanced Manufacturing
 
-[Sign-up today](/webinars/2023/dashboard-20/) to join us on October 26. 
+Explore building manufacturing applications with FlowFuse Blueprints in our upcoming webinar. Blueprints make it easy to get started building applications with Node-RED.
+
+[Sign-up today](/webinars/2023/blueprints/) to join us on November 30th. 
 
 
 ## From our Blog
 
-* [Custom Vuetify components for Dashboard 2.0](/blog/2023/10/custom-vuetify-components-dashboard/) - the new dashboard project allows for custom UI components
+<!-- Updated 11 -->
+
+* [Meet FlowFuse at SPS Nuremberg](/blog/2023/11/meet-us-at-sps-nuremberg/) - Talk about Node-RED and how FlowFuse can help you operationalize your flows!
+
+* [Install the FlowFuse Edge Agent on the Raspberry Pi 5](/blog/2023/11/raspberry-pi-5-flowfuse-edge-agent/) - Managing your Raspberry Pi 5 with Node-RED through FlowFuse is easy to set up
+
+* [Innovate from within - Why manufacturing must embrace Citizen Developers](/blog/2023/10/citizen-development/) - Empower your Operational Technology teams as Citizen Developers
+
+* [Embracing Innovation: Build vs Buy in MES](/blog/2023/10/mes-build-buy/) - Bridging the Gap: Uniting MES Development with Automation System Practices
+
+* [What are FlowFuse Blueprints?](/blog/2023/10/blueprints/) - Preconfigured Node-RED Applications
+
+* [Integrate your own widgets with Dashboard 2.0](/blog/2023/10/dashboard-integrations/) - With the 0.6.0 Release of Dashboard 2.0, we now support third-party widget integration. Read more in this deep dive.
+
+* [What are FlowFuse Blueprints?](/blog/2023/10/blueprints/) - Preconfigured Node-RED Applications
+
+
+<!-- * [Custom Vuetify components for Dashboard 2.0](/blog/2023/10/custom-vuetify-components-dashboard/) - the new dashboard project allows for custom UI components
 
 
 * [Updating our branding across GitHub, npm and Dockerhub](/blog/2023/09/rebranding-our-components/) - our GitHub, npm and DockerHub locations are now called FlowFuse, due to the rename from FlowForge.
@@ -53,7 +68,7 @@ The next generation of the Node-RED dashboard is starting to mature. Development
 
 * Modernize your legacy industrial data - Two part series on making sense of your industrial data. 
     - [Part 1](/blog/2023/09/modernize-your-legacy-industrial-data/)
-    - [Part 2](/blog/2023/09/modernize-your-legacy-industrial-data-part2/)
+    - [Part 2](/blog/2023/09/modernize-your-legacy-industrial-data-part2/) -->
 
 
 ## Join Our Team
