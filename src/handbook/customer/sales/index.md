@@ -18,17 +18,6 @@ customer expansion. This includes:
 1. Finalizing contracts and billing details.
 1. Introducing new customers to their Customer Success Manager.
 
-## Team
-
-| Role | Contributors |
-|------|--------------|
-| CEO  | [ZJ](https://www.linkedin.com/in/zegerjan/) [@ZJvandeWeg](https://github.com/ZJvandeWeg) |
-| Account Executive | [Zack](https://www.linkedin.com/in/zack-wasli/) [@zackwasli](https://github.com/zackwasli) |
-
-## Contact us
-
-Questions can be asked in the [#dept-sales](https://flowforgeworkspace.slack.com/archives/C05GYH95NJZ).
-
 ## How we work
 
  - [Demo](./meetings/demo.md)

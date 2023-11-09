@@ -44,7 +44,6 @@ To run our company we provide a comprehensive guide outlining policies, procedur
 | | |
 |:----|:----|
 | [Marketing](/handbook/marketing/)<br /><p>Keeping what's private private, and what needs protecting protected.</p>
-| [Sales](/handbook/sales/)<br /><p>Meeting customer demand.</p>|
 | [Customer Success](/handbook/operations/customer-success/)<br /><p>Happy customers is what makes FlowFuse a sustainable business.</p>
 | |
  
