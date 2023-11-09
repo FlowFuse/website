@@ -63,7 +63,7 @@ We will also be adding "event" and "dynamic properties" sections to the guide, t
 
 Whilst we aren't quite there yet, this guide offers a comprehensive breakdown on our progress in backporting all of the properties from Dashboard 1.0
 
-#### Automated Script
+### Automated Script
 
 An ambitious plan that we have is to also provide a [Migration Script](https://github.com/FlowFuse/node-red-dashboard/issues/261). Any feedback, ideas or concerns are most welcome as comments on the issue.
 
