@@ -19,9 +19,9 @@ As we continue to add features to the Node-RED Dashboard v2 one feature request 
 
 One of the features we offer on FlowFuse is the ability to protect HTTP endpoints and Dashboards using the same FlowFuse user authentication that protects access to the FlowFuse Application and the Node-RED instances.
 
-We even offer a specific RBAC role that just allows access to these endpoints but not the FlowFuse application.
+We even offer a specific RBAC 'viewer' role that just allows access to these endpoints but not the FlowFuse application.
 
-FlowFuse authentication can be enabled from the Projects Settings page on the Security tab
+FlowFuse authentication can be enabled from the Instance Settings page on the Security tab
 
 This can be used to secure access to a Dashboard hosted in a Node-RED Instance. At the moment the Dashboard while protected by this authentication, it is not aware of which user is accessing it.
 
