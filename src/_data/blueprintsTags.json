@@ -1,0 +1,13 @@
+[{
+    "label": "All",
+    "value": "blueprints",
+    "description": "Explore FlowFuse Blueprints, designed to simplify Node-RED for beginners and inspire pros. Choose tailored templates for quick setups. Perfect for both learning and building solutions fast. Customizable for unique needs. Available for FlowFuse Cloud users and self-hosted customers upon request. Simplify your Node-RED projects with FlowFuse Blueprints!"
+}, {
+    "label": "Manufacturing",
+    "value": "manufacturing",
+    "description":"Optimize manufacturing workflows effortlessly with FlowFuse Manufacturing Blueprints. Tailored for efficiency, these templates streamline processes, ensuring seamless Node-RED setups for your industrial needs. Accelerate your automation journey in manufacturing with ease."
+}, {
+    "label": "Beginner",
+    "value": "beginner",
+    "description":"Beginner."
+}]

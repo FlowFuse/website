@@ -1,0 +1,14 @@
+---
+layout: nohero
+sitemapPriority: 0.9
+pagination:
+  data: collections.blueprints
+  size: 19 # creates a nice matrix (1 header, 18 left: 3 on 6 rows)
+  alias: blueprints
+  reverse: true
+meta:
+    title: Blueprints Library
+---
+
+{% set filter = 'blueprints' %}
+{% include "blueprints/template.njk" %}

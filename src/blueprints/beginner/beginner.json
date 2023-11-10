@@ -1,0 +1,6 @@
+{
+    "tags": [
+        "blueprints"
+    ],
+    "layout": "layouts/blueprint.njk"
+}
