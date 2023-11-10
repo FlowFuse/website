@@ -52,3 +52,4 @@ This will load the image every time the Dashboard page loads and hence trigger t
 ## Linking to SSO Users
 
 With the release of FlowFuse v1.14.0 the session object will also include the users email address which is the shared identifier between FlowFuse and the SSO system. This will allow the logging to use a single unified identifier.
+
