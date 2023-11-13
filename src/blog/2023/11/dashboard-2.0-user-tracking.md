@@ -2,7 +2,7 @@
 title: "Tracking Who Has Opened a Dashboard"
 subtitle: "Using FlowFuse Authentication Audit Dashboard v2 Access"
 description: "Using FlowFuse Authentication Audit Dashboard v2 Access"
-date: 2023-11-09
+date: 2023-11-13
 authors: ["ben-hardill"]
 image: "/blog/2023/11/images/dashboard-user-flow.png"
 tags:
