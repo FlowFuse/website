@@ -7,57 +7,29 @@
     </div>
     <div class="px-2 my-4 flex flex-wrap gap-4">
         {%- for tag in blueprintsCategories -%}
-        {% if tag.value !== "blueprints" %}
-        <a class="hover:no-underline" href="/blueprints/{{ tag.value }}/"><button class="ff-btn ff-btn--primary{% if not page.url.includes('/' + tag.value + '/')%}-outlined{% endif %}">{{ tag.label }}</button></a>
-        {% else %}
-        <a class="hover:no-underline" href="/blueprints/"><button class="ff-btn ff-btn--primary{% if page.url !== "/blueprints/"%}-outlined{% endif %}">{{ tag.label }}</button></a>
-        {% endif %}
-        {% endfor %}
+            {% if tag.value !== "blueprints" %}
+                <a class="hover:no-underline" href="/blueprints/{{ tag.value }}/">
+                    <button class="ff-btn ff-btn--primary{% if not page.url.includes('/' + tag.value + '/')%}-outlined{% endif %}">{{ tag.label }}</button>
+                </a>
+            {% else %}
+                <a class="hover:no-underline" href="/blueprints/">
+                    <button class="ff-btn ff-btn--primary{% if page.url !== "/blueprints/"%}-outlined{% endif %}">{{ tag.label }}</button>
+                </a>
+            {% endif %}
+        {%- endfor %}
     </div>
+
+    <div class="px-2 my-4 flex gap-4">
+        {% if description %}
+            {{ description }}
+        {% else %}    
+            Generic description
+        {% endif %}  
+    </div>
+
     <ul class="flex flex-wrap">
         {%- asyncEach item in blueprints -%}
             {% include "blueprints/blueprints.njk" %}
         {%- endeach -%}
     </ul>
 </div>
-
-
-<!-- <div class="ff-blog container m-auto text-left max-w-4xl pt-8 pb-24 w-full">
-    <div class="px-2 flex items-center gap-12">
-        <h1 class="mb-0">Blueprint Library</h1>
-        <div class="flex-grow">
-            {% include "components/divider-grey-wires-right.njk" %}
-        </div>
-    </div>
-    <div class="px-2 my-4 flex flex-wrap gap-4">
-
-        {%- for tag in blueprintsCategories -%}
-            {% if tag.value !== "blueprints" %}
-                {% set isActive = not page.url.includes('/' + tag.value + '/') %}
-                <a class="hover:no-underline" href="/blueprints/{{ tag.value }}/">
-                    <button class="ff-btn ff-btn--primary{% if isActive %}-outlined{% endif %}">{{ tag.label }}</button>
-                </a>
-                {% if isActive %}
-                    {% set activeDescription = tag.description %}
-                {% endif %}
-            {% else %}
-            {% set isActive = page.url.includes('/' + tag.value + '/') %}
-                <a class="hover:no-underline" href="/blueprints/">
-                    <button class="ff-btn ff-btn--primary{% if page.url !== "/blueprints/"%}-outlined{% endif %}">{{ tag.label }}</button>
-                </a>
-                {% if isActive %}
-                    {% set activeDescription = tag.description %}
-                {% endif %}
-            {% endif %}
-        {%- endfor %}
-    </div>
-    <div class="px-2">
-        <p>{{ activeDescription }}</p>
-    </div>
-    <ul class="flex flex-wrap">
-        {%- asyncEach item in blueprints -%}
-            {% include "blueprints/blueprints.njk" %}
-        {%- endeach -%}
-    </ul>
-</div> -->
-
