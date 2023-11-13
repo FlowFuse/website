@@ -2,7 +2,7 @@
     <a href="{{ item.url }}" class="w-full flex flex-col group hover:no-underline">
         <div>
             <label>
-                {%- for tag in blueprintsTags -%}
+                {%- for tag in blueprintsCategories -%}
                     {% if tag.value !== "blueprints" and tag.value in item.data.tags %}
                         {{ tag.label }}
                     {% endif %}

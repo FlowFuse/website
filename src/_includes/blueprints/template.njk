@@ -6,7 +6,7 @@
         </div>
     </div>
     <div class="px-2 my-4 flex flex-wrap gap-4">
-        {%- for tag in blueprintsTags -%}
+        {%- for tag in blueprintsCategories -%}
         {% if tag.value !== "blueprints" %}
         <a class="hover:no-underline" href="/blueprints/{{ tag.value }}/"><button class="ff-btn ff-btn--primary{% if not page.url.includes('/' + tag.value + '/')%}-outlined{% endif %}">{{ tag.label }}</button></a>
         {% else %}
@@ -31,7 +31,7 @@
     </div>
     <div class="px-2 my-4 flex flex-wrap gap-4">
 
-        {%- for tag in blueprintsTags -%}
+        {%- for tag in blueprintsCategories -%}
             {% if tag.value !== "blueprints" %}
                 {% set isActive = not page.url.includes('/' + tag.value + '/') %}
                 <a class="hover:no-underline" href="/blueprints/{{ tag.value }}/">

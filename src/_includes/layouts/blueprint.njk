@@ -6,7 +6,7 @@ layout: layouts/base.njk
         <div class="post-title container m-auto text-center px-6 flex mt-6 mb-6 md:max-w-screen-lg md:mt-12">
             <div class="text-left md:pr-32">
                 <label>
-                {%- for tag in blueprintsTags -%}
+                {%- for tag in blueprintsCategories -%}
                     {% if tag.value !== "blueprints" and tag.value in page.url %}
                         <label>{{ tag.label }}</label>
                     {% endif %}
