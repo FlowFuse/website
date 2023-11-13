@@ -18,7 +18,7 @@ When ChatGPT was first released, my expectations were quite low. I had grown acc
 <!--more-->
 
 
-On November 6th, OpenAI unveiled a new offering: GPTs. These function as custom ChatGPT environments, allowing the author to provide additional context, giving it a specific and focused purpose. FlowFuse and Node-RED content go hand in hand, making this a perfect application. With new content emerging daily for both platforms, the ability to update and provide essential documentation became increasingly valuable.
+On November 6th, OpenAI unveiled a new offering: GPTs. These function as custom ChatGPT environments, allowing the author to provide additional context, giving it a specific and focused purpose. With new content emerging daily for both Node-RED and FlowFuse, the ability to update and provide essential documentation became increasingly valuable.
 
 ChatGPT is already a fantastic tool for building Node-RED flows, and if you haven't tried it yet, I highly recommend giving it a go. Now, let me introduce you to Node-Red Builder, a preconfigured environment where all the necessary prompts are already set up to ensure your success. Furthermore, the latest knowledge on Node-RED and FlowFuse is readily available within the GPT, allowing you to tap into the most up-to-date documentation for your prompts.
 
