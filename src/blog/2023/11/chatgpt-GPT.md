@@ -4,7 +4,7 @@ subtitle: "Speed Up Flow Creation with Your Personal Assistant"
 description: "Speed Up Flow Creation with Your Personal Assistant"
 date: 2023-11-15
 authors: ["grey-dziuba"]
-image: "/blog/2023/10/images/buildvbuy.png"
+image: "/blog/2023/11/images/chatgpt-GPT.png"
 tags:
     - posts
     - node-red
