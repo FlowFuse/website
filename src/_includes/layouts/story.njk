@@ -37,7 +37,7 @@ layout: layouts/base.njk
                         style="box-shadow: 4px 4px 6px rgba(75,85,99,0.05)">
 
                         {% if story.logo %}
-                        <div class="h-[180px] object-contain flex items-center justify-center bg-white">
+                        <div class="h-[180px] object-contain flex items-center justify-center bg-white p-2">
                             <a href="{{ story.url }}" target="_blank" class="h-full ff-image-cover">
                                 {% set imageSrc = ["./", story.logo ] | join %}
                                 {% set imageDescription = ["Image representing ", story.brand, " logo"] | join %}

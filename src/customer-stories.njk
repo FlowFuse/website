@@ -23,7 +23,7 @@ meta:
                             {% image imageSrc, imageDescription, [768] %}
                         </div>
                         {% if item.data.logo %}
-                        <div class="w-1/2 h-full md:w-40 md:h-40 absolute left-0 top-0 bg-white flex items-center justify-center object-contain border border-gray-200">
+                        <div class="w-1/2 h-full md:w-40 md:h-40 absolute left-0 top-0 bg-white p-2 flex items-center justify-center object-contain border border-gray-200">
                             <div class="h-full ff-image-cover">
                                 {% set imageSrc = ["./", item.data.logo ] | join %}
                                 {% set imageDescription = ["Image representing ", item.data.story.brand, " logo"] | join %}
