@@ -7,4 +7,13 @@
 }, {
     "label": "Database",
     "value": "database"
+}, {
+    "label": "FlowFuse",
+    "value": "flowfuse-node"
+}, {
+    "label": "Formatting",
+    "value": "formatting"    
+}, {
+    "label": "Protocoll",
+    "value": "protocoll"    
 }]

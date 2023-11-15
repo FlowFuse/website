@@ -1,7 +1,7 @@
 {
     "tags": [
         "certified",
-        "communication"
+        "protocoll"
     ],
     "layout": "layouts/certified.njk"
 }

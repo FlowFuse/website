@@ -1,6 +1,7 @@
 {
     "tags": [
-        "certified"
+        "certified",
+        "database"
     ],
     "layout": "layouts/certified.njk"
 }
