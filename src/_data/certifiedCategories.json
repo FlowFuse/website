@@ -1,10 +1,10 @@
 [{
     "label": "All",
     "value": "certified"
+},  {
+    "label": "Communication",
+    "value": "communication"
 }, {
-    "label": "Manufacturing",
-    "value": "manufacturing"
-}, {
-    "label": "Beginner",
-    "value": "beginner"
+    "label": "Database",
+    "value": "database"
 }]
