@@ -3,7 +3,7 @@
         <div>
             <label>
                 {%- for tag in certifiedCategories -%}
-                    {% if tag.value !== "certified-nodes" and tag.value in item.data.tags %}
+                    {% if tag.value !== "certified" and tag.value in item.data.tags %}
                         {{ tag.label }}
                     {% endif %}
                 {%- endfor %}

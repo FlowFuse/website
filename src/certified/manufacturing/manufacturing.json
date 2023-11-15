@@ -1,0 +1,6 @@
+{
+    "tags": [
+        "certified"
+    ],
+    "layout": "layouts/certified.njk"
+}

@@ -1,10 +1,10 @@
 [{
     "label": "All",
-    "value": "certified-nodes"
-},  {
-    "label": "Communication",
-    "value": "communication"
+    "value": "certified"
 }, {
-    "label": "Database",
-    "value": "database"
+    "label": "Manufacturing",
+    "value": "manufacturing"
+}, {
+    "label": "Beginner",
+    "value": "beginner"
 }]
