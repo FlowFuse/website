@@ -1,0 +1,28 @@
+<li class="w-full md:w-1/3 my-2 px-2 pb-6 border-b">
+    <a href="{{ item.url }}" class="w-full flex flex-col group hover:no-underline">
+        <div>
+            <label>
+                {%- for tag in certifiedCategories -%}
+                    {% if tag.value !== "certified-nodes" and tag.value in item.data.tags %}
+                        {{ tag.label }}
+                    {% endif %}
+                {%- endfor %}
+            </label>
+            <div class="ff-blog-tile">
+                {% if item.data.image %}
+                    <div class="w-full h-auto">
+                        {% set imageSrc = ["./", item.data.image ] | join %}
+                        {% set imageDescription = ["Image representing ", item.data.title] | join %}
+                        {% image imageSrc, imageDescription, [285] %}
+                    </div>
+                {% else %}
+                    {{ item.url | generatePostSVG | safe }}
+                {% endif %}
+            </div>
+            <h3 class="mt-1 mb-0 font-medium group-hover:underline">{{ item.data.title }}</h3>
+        </div>
+        <div class="text-sm prose prose-blue md:prose-md py-1">
+            {{ item.data.description | excerpt | safe }}
+        </div>
+    </a>
+</li>

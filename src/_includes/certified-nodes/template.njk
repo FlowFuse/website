@@ -1,0 +1,35 @@
+<div class="ff-blog container m-auto text-left max-w-4xl pt-8 pb-24 w-full">
+    <div class="px-2 flex items-center gap-12">
+        <h1 class="mb-0">Certified Nodes</h1>
+        <div class="flex-grow">
+            {% include "components/divider-grey-wires-right.njk" %}
+        </div>
+    </div>
+    <div class="px-2 my-4 flex flex-wrap gap-4">
+        {%- for tag in certifiedCategories -%}
+            {% if tag.value !== "certified-nodes" %}
+                <a class="hover:no-underline" href="/certified-nodes/{{ tag.value }}/">
+                    <button class="ff-btn ff-btn--primary{% if not page.url.includes('/' + tag.value + '/')%}-outlined{% endif %}">{{ tag.label }}</button>
+                </a>
+            {% else %}
+                <a class="hover:no-underline" href="/certified-nodes/">
+                    <button class="ff-btn ff-btn--primary{% if page.url !== "/certified-nodes/"%}-outlined{% endif %}">{{ tag.label }}</button>
+                </a>
+            {% endif %}
+        {%- endfor %}
+    </div>
+
+    <div class="px-2 my-4 flex gap-4">
+        {% if description %}
+            {{ description }}
+        {% else %}    
+            Generic description
+        {% endif %}  
+    </div>
+
+    <ul class="flex flex-wrap">
+        {%- asyncEach item in certified-nodes -%}
+            {% include "certified-nodes/certified-nodes.njk" %}
+        {%- endeach -%}
+    </ul>
+</div>
