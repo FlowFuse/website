@@ -626,7 +626,7 @@ h4:hover .header-anchor {
 }
 
 .ff-full-bg {
-    min-height: calc(100vh - 360px);
+    min-height: calc(100vh - 310px);
 }
 
 .red-gradient {
