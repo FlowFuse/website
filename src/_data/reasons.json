@@ -25,4 +25,9 @@
   {
     "title": "Remote device management",
     "content": "Many people are using Node-RED to aggregate and analyze data from remote devices. However, Node-RED is really meant for running locally or in the cloud. FlowFuse breaks down the barriers to remote device management by providing a central platform that can manage hundreds of devices running Node-RED. A great way to scale up your use of Node-RED in your organization."
+  }
+  ,
+  {
+    "title": "Certified Nodes for Reliability and Security",
+    "content": "FlowFuse offers a curated collection of certified nodes, ensuring top-notch quality, security, and support. Explore our certified nodes on the <a href='/certified-nodes'>Certified Nodes Page</a> and benefit from a robust ecosystem while maintaining operational reliability."
   }]
