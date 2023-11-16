@@ -36,7 +36,13 @@ Large corporations, in particular, stand to gain significantly from embracing As
 
 Startups, too, can benefit from Assistants. With tools like Node-RED, it's possible to take an idea from concept to reality without the need for a full development team. Node-RED is a tool that makes creating these use cases quicker and easier. It enables the creation of custom AI Assistants that focus on answering the questions that are most relevant at any given time. With Node-RED, more individuals can find answers to their own questions, reducing the need for a dedicated business intelligence team.
 
-Often times, traditional dashboards may not always provide the answers to current problems, making them less valuable over time. Companies should identify enthusiastic engineers who are "Jacks of All Trades" and provide them with tools like Node-RED. This approach can enable these individuals to find solutions fast, fostering a more self-sufficient and efficient work environment. The true value lies in swiftly and accurately answering the immediate questions.
+**AI ChatBot > Dashboards**
+
+Often times, traditional dashboards, although initially valuable, may not always provide the real-time answers to evolving problems. This shortfall raises an important question: Why do dashboards persist in modern industries? They exist primarily as a means for Business Intelligence (BI) teams or engineering groups to relay Key Performance Indicators (KPIs) to the teams who need them. However, this process is cumbersome, largely because it involves multiple groups of people in its development and maintenance. The efficiency of this approach is further hampered when the need for rapid adaptation arises.
+
+In contrast, empower a domain expert with technical chops, citizen developer, with Node-RED and an AI ChatBot that has access to their own data leads to a winning formula. This integration of real-time data with AI technology is a game-changer. Engineers can now interact directly with an AI Assistant that is constantly updated with the latest information from the production environment. They can ask real-time questions about potential issues, receive instant insights, and make decisions rapidly. This direct access to tailored information is a significant advancement over the generalized and not quiet relavent data presented in traditional dashboards. 
+
+*Always check with managment before uploading company data to public services like ChatGPT*
 
 I invite you to try these flows and share your feedback. How can they be improved? More importantly, how do you envision leveraging Assistants in your day-to-day operations or within your industry? Your insights could help shape the future of our industry.
 
