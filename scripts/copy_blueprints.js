@@ -1,5 +1,6 @@
 const fs = require('fs/promises');
 const { existsSync, readdirSync } = require('fs');
+
 const path = require('path');
 const util = require('util');
 const exec = util.promisify(require('child_process').exec);
@@ -39,7 +40,7 @@ async function copyFiles(src, dest, version) {
             }
         }
     }
-}
+};
 
 (async () => {
     // Check we are in the root of the website repo
@@ -56,13 +57,18 @@ async function copyFiles(src, dest, version) {
     }
 
       readdirSync(blueprintsDir, { withFileTypes: true })
-        .filter(dirent => dirent.isDirectory())
+        .filter(dirent => dirent.isDirectory() && !dirent.name.startsWith('.'))
         .map(dirent => path.join (blueprintsDir, dirent.name))
-        .forEach(element => { 
-            console.log(element)})
+        .forEach(async element => {
+            console.log(element);
+            try {
+                const packFile = await fs.readFile('package.json');
+                const version = JSON.parse(packFile).version;
+                const dest = 'src/blueprints';
+                await copyFiles(element, path.join(dest, path.basename(element)), version);
+            } catch (error) {
+                console.error('Error reading or copying files:', error);
+            }
+        });
 
-    const packFile = await fs.readFile('package.json');
-    const version = JSON.parse(packFile).version;
-    const dest = 'src/blueprints';
-    await copyFiles(blueprintsDir, dest, version);
 })();
