@@ -16,6 +16,12 @@ jobs:
           repository: 'FlowFuse/flowfuse'
           ref: maintenance
           path: 'flowfuse'
+      - name: Check out FlowFuse/blueprint-library repository (to access the blueprints)
+          uses: actions/checkout@v3
+          with:
+            repository: 'FlowFuse/blueprint-library'
+            ref: main
+            path: 'blueprints'
       - name: Cache image pipeline output
         uses: actions/cache@v3
         with:
@@ -26,6 +32,8 @@ jobs:
           cache: 'npm'
           cache-dependency-path: './website/package-lock.json'
       - run: npm run docs
+        working-directory: 'website'
+      - run: npm run blueprints
         working-directory: 'website'
       - name: Install Dependencies
         run: npm install

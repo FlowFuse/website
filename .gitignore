@@ -4,6 +4,9 @@ node_modules
 src/handbook/media
 src/docs/*
 !src/docs/docs.json
+src/blueprints/*
+!src/blueprints/blueprints.json
+!src/blueprints/*.njk
 
 # Netlify generated stuff
 .netlify/
