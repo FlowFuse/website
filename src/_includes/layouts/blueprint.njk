@@ -8,7 +8,7 @@ layout: layouts/base.njk
                 <label>
                 {%- for tag in blueprintsCategories -%}
                     {% if tag.value !== "blueprints" and tag.value in page.url %}
-                        <label>{{ tag.label }}</label>
+                        <label>{{ tag.label }} BLUEPRINT</label>
                     {% endif %}
                 {%- endfor %}
                 </label>
