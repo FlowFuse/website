@@ -1,7 +1,0 @@
-{
-    "tags": [
-        "certified",
-        "formatting"
-    ],
-    "layout": "layouts/certified.njk"
-}

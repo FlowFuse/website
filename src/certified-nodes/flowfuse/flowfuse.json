@@ -1,7 +1,0 @@
-{
-    "tags": [
-        "certified",
-        "flowfuse-node"
-    ],
-    "layout": "layouts/certified.njk"
-}

@@ -1,0 +1,9 @@
+<div class="ff-blog container m-auto text-left max-w-4xl pt-8 pb-24 w-full ff-full-bg">
+    {% include "certified/common.njk" %}
+
+    <ul class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 px-2 mt-6">
+        {%- asyncEach node in certifiedNodes -%}
+            {% include "certified/certified.njk" %}
+        {%- endeach -%}
+    </ul>
+</div>
