@@ -62,4 +62,4 @@ $ base64 -w 0 device.yml
 
 You can then use the Balena console to create either a device specific or a fleet wide environment variable called FF_DEVICE_YML.
 
-![balena-env-var](/blog/2023/11/images/balena-env-var.png)
+![balena-env-var](images/balena-env-var.png)
