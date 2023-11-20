@@ -17,11 +17,11 @@ jobs:
           ref: maintenance
           path: 'flowfuse'
       - name: Check out FlowFuse/blueprint-library repository (to access the blueprints)
-          uses: actions/checkout@v3
-          with:
-            repository: 'FlowFuse/blueprint-library'
-            ref: main
-            path: 'blueprints'
+        uses: actions/checkout@v3
+        with:
+          repository: 'FlowFuse/blueprint-library'
+          ref: main
+          path: 'blueprints'
       - name: Cache image pipeline output
         uses: actions/cache@v3
         with:
