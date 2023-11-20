@@ -1,4 +1,4 @@
-<div class="ff-blog container m-auto text-left max-w-4xl pt-8 pb-24 w-full ff-full-bg">
+<div class="ff-blog container m-auto text-left max-w-4xl pt-8 pb-12 w-full ff-full-bg">
     {% include "certified/common.njk" %}
 
     <ul class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 px-2 mt-6">
@@ -6,4 +6,7 @@
             {% include "certified/certified.njk" %}
         {%- endeach -%}
     </ul>
+    <div class="flex w-full justify-center mt-6 border-t">
+        {% include "blog/pagination.njk" %}
+    </div>
 </div>
