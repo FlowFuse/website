@@ -4,7 +4,7 @@ subtitle: "Get start quickly leveraging Flows utilizing ChatGPT Assistant"
 description: "Get start quickly leveraging Flows utilizing ChatGPT Assistant"
 date: 2023-11-20
 authors: ["grey-dziuba"]
-image: "/blog/2023/11/images/chatgpt-GPT.png"
+image: "/blog/2023/11/images/ai-assistant.png"
 tags:
     - posts
     - node-red
@@ -13,40 +13,44 @@ tags:
 
 ---
 
-**Introduction to the World of GPTs and AI Assistants**
+## Introduction to the World of GPTs and AI Assistants
 
-In the ever-evolving landscape of artificial intelligence, Generative Pre-trained Transformers (GPTs) have emerged as groundbreaking tools. These advanced AI models, developed by OpenAI, are capable of understanding and generating human-like text, offering vast possibilities across numerous applications. GPTs learn from a wide array of internet texts, enabling them to respond to queries with human-like understanding.
+In the ever-evolving landscape of artificial intelligence, Generative Pre-trained Transformers (GPTs) have emerged as groundbreaking tools. These advanced AI models, developed by OpenAI, are capable of understanding and generating human-like text, offering vast possibilities across numerous applications. GPTs learn from various internet texts, enabling them to respond to queries with human-like understanding.
 
-Among the most intriguing developments in this field are AI Assistants. These are specialized applications of GPTs, accessible through an API, designed to enhance and streamline various tasks. Unlike traditional GPTs, which primarily focus on generating text, AI Assistants can interact, comprehend, and assist in real-time, making them invaluable in industries ranging from finance to healthcare.
+Among the most intriguing developments in this field are AI Assistants. These are specialized applications of GPTs, accessible through an API, designed to enhance and streamline various tasks. Tasks that include code interpreter, functions, retrieval, and leveraging uploading files to interact with. Unlike traditional GPTs, which primarily focus on generating text, AI Assistants can interact, comprehend, and assist in real-time, making them invaluable in industries ranging from manufacturing to finance to healthcare.
 
 <!--more-->
 
+[TLDR: Give me the Flows](https://flows.nodered.org/flow/073548c276832e804f037f3212014e60)
 
-In healthcare, for instance, AI Assistants can transform the way medical professionals create SOAP notes, improving efficiency and accuracy. In customer service, they revolutionize interactions by providing tailored responses, greatly enhancing the user experience. Moreover, these Assistants can support coding in specific programming languages, making them a vital tool in software development.
+## Node-RED and AI Assistants
 
-As we delve deeper into the capabilities of these AI Assistants, we find that they are not just tools for the present but are paving the way for a more automated and intelligent future in various industries. The applications are as diverse as the sectors they serve, promising a new era of efficiency and innovation.
-
-**Exploring the Applications of AI Assistants**
-
-During my exploration of OpenAI's ChatGPT's GPTs, I discovered the fascinating feature of Assistants, similar to GPTs but accessible via an API. This simple yet powerful tool is set to revolutionize various industries, from finance and news to medical transcription. AI Assistants can revolutionize the way companies operate by creating more versatile chatbots, customizing internal documentation searches, and assisting with coding in specific languages. They can also generate real-time KPIs for data analytics.
-
-However, there are challenges to be faced, such as patient privacy laws. These are hurdles that we, as an industry, can and will overcome. By doing so, we can unlock the full potential of Assistants. 
-
-Large corporations, in particular, stand to gain significantly from embracing Assistants. The ability to streamline operations, improve efficiency, and enhance customer service are just a few of the potential benefits. Those who fail to adapt risk being left behind in an industry that is evolving at an unprecedented pace.
-
-Startups, too, can benefit from Assistants. With tools like Node-RED, it's possible to take an idea from concept to reality without the need for a full development team. Node-RED is a tool that makes creating these use cases quicker and easier. It enables the creation of custom AI Assistants that focus on answering the questions that are most relevant at any given time. With Node-RED, more individuals can find answers to their own questions, reducing the need for a dedicated business intelligence team.
-
-**AI ChatBot > Dashboards**
-
-Often times, traditional dashboards, although initially valuable, may not always provide the real-time answers to evolving problems. This shortfall raises an important question: Why do dashboards persist in modern industries? They exist primarily as a means for Business Intelligence (BI) teams or engineering groups to relay Key Performance Indicators (KPIs) to the teams who need them. However, this process is cumbersome, largely because it involves multiple groups of people in its development and maintenance. The efficiency of this approach is further hampered when the need for rapid adaptation arises.
-
-In contrast, empower a domain expert with technical chops, citizen developer, with Node-RED and an AI ChatBot that has access to their own data leads to a winning formula. This integration of real-time data with AI technology is a game-changer. Engineers can now interact directly with an AI Assistant that is constantly updated with the latest information from the production environment. They can ask real-time questions about potential issues, receive instant insights, and make decisions rapidly. This direct access to tailored information is a significant advancement over the generalized and not quiet relavent data presented in traditional dashboards. 
-
-*Always check with managment before uploading company data to public services like ChatGPT*
-
-I invite you to try these flows and share your feedback. How can they be improved? More importantly, how do you envision leveraging Assistants in your day-to-day operations or within your industry? Your insights could help shape the future of our industry.
+The integration of Node-RED with AI Assistants brings a unique set of advantages. By leveraging Node-RED's user-friendly platform, developers and citizen developers can easily harness the power of AI Assistants. This integration allows for creation of bespoke solutions tailored to specific industry needs, ranging from automated customer service to advanced data analytics. The real-world impact is substantial – imagine a manufacturing line where real-time data is seamlessly integrated with a prescriptive AI-driven decision-making prompt, enhancing efficiency and reducing downtime.  In healthcare, it provides patients with real-time updates to their personal data and provides contextual information, while in retail, it could enhance customer engagement through personalized interactions. The future shaped by these technologies is one where automation and intelligence converge, leading to unprecedented levels of efficiency and innovation in various sectors.
 
 
+## Experience the Integration Firsthand
 
-[Get Started with the Flows Here](https://flows.nodered.org/flow/073548c276832e804f037f3212014e60)
+We invite you to explore the possibilities firsthand. Try out the flows we've created and share your feedback. This is your getting started package. In the provided flows, you can do the following:
+
+![OpenAI Assistant integration on Node-RED](./images/ai-flows.png)
+
+1. **Create Assistant**: This flow creates a new assistant. It starts with an inject node that sets the assistant's name, instructions, tools, and model. The HTTP request node then sends a POST request to the OpenAI API to create the assistant. The assistant's ID is stored in the flow context for later use.
+
+2. **List Assistants**: This flow lists all the assistants that have been created. It starts with an inject node that triggers the flow. The HTTP request node sends a GET request to the OpenAI API to retrieve the list of assistants. The results are then displayed in the debug node.
+
+3. **Delete Assistant**: This flow deletes an assistant. It starts with an inject node that sets the assistant's ID. The template node constructs the URL for the HTTP request node, which sends a DELETE request to the OpenAI API to delete the assistant. The results are then displayed in the debug node.
+
+4. **Adjust Assistant Instructions and Models**: This flow adjusts the instructions and model of an assistant. It starts with an inject node that sets the assistant's ID, new instructions, and new model. The change node prepares the payload for the HTTP request node, which sends a POST request to the OpenAI API to update the assistant. The results are then displayed in the debug node.
+
+5. **Create Thread and Run**: This flow creates a new thread and runs it. It starts with an inject node that sets the assistant's ID and the message to be sent. The subflow node then handles the creation of the thread, sending of the message, and retrieval of the response. The results are then displayed in the debug node.
+
+How do you envision leveraging this integration in your day-to-day operations or within your industry? Your insights are valuable in shaping the future of our industry. Begin your journey [here.](https://flows.nodered.org/flow/073548c276832e804f037f3212014e60)
+
+## Embracing the Future of AI and Automation
+
+Integrating Node-RED with OpenAI's Assistants is a testament to the ever-evolving landscape of technology. It represents a step towards a future where powerful AI tools are within reach of a wider audience, enabling the creation of bespoke, flexible, and resilient applications across industries. By embracing this integration, we open doors to innovation and efficiency previously unimagined.
+
+*Always consult with management before uploading company data to public services like ChatGPT.*
+
+
 
