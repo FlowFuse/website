@@ -4,6 +4,7 @@ const { existsSync, readdirSync } = require('fs');
 const path = require('path');
 const util = require('util');
 const exec = util.promisify(require('child_process').exec);
+const yaml = require('js-yaml');
 
 async function copyFiles(src, dest, version) {
     const files = await fs.readdir(src, { withFileTypes: true });
@@ -17,6 +18,7 @@ async function copyFiles(src, dest, version) {
             } else {
                 const srcFile = path.join(src, file.name);
                 const destFile = path.join(dest, file.name.replace(/README/, 'index'));
+
                 if (!file.name.endsWith('.md')) {
                     await fs.copyFile(srcFile, destFile);
                 } else {
@@ -28,13 +30,30 @@ async function copyFiles(src, dest, version) {
                         `updated: ${stdout}\n` +
                         `version: ${version}\n` +
                         '---\n';
-                    const content = await fs.readFile(srcFile, 'utf-8');
+                    let content = await fs.readFile(srcFile, 'utf-8');
                     let body = header + content;
                     if (/^---/.test(content)) {
                         // The original file starts with yaml front-matter, so
                         // remove the double-delimter we've just introduced
                         body = body.replace(/---\r?\n---\r?\n/s, '');
                     }
+                
+                    // Find the front matter in the body
+                    const frontMatterMatch = body.match(/---\r?\n([\s\S]*?)\r?\n---/);
+                    if (frontMatterMatch) {
+                        // Parse the front matter as YAML
+                        const frontMatter = yaml.safeLoad(frontMatterMatch[1]);
+                
+                        // If the "image" key exists and its value is not empty, modify its value
+                        if (frontMatter.image && frontMatter.image.trim() !== '') {
+                            frontMatter.image = `/${path.join(dest.replace('src/', ''), frontMatter.image)}`;
+                        }
+
+                        // Write the front matter back as a string and replace the original front matter in the body
+                        const frontMatterString = yaml.safeDump(frontMatter, { lineWidth: -1 });
+                        body = body.replace(/---\r?\n[\s\S]*?\r?\n---/, `---\n${frontMatterString}---`);
+                    }
+                
                     await fs.writeFile(destFile, body);
                 }
             }
