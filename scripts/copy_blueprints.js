@@ -4,7 +4,6 @@ const { existsSync, readdirSync } = require('fs');
 const path = require('path');
 const util = require('util');
 const exec = util.promisify(require('child_process').exec);
-const yaml = require('js-yaml');
 
 async function copyFiles(src, dest, version) {
     const files = await fs.readdir(src, { withFileTypes: true });
