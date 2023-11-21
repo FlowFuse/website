@@ -32,7 +32,7 @@ jobs:
         with:
           repository: 'FlowFuse/blueprint-library'
           ref: main
-          path: 'blueprints'
+          path: 'blueprint-library'
           token: ${{ steps.generate_token.outputs.token }}
       - name: Install jq
         run: sudo apt-get -qy install jq
