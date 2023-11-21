@@ -21,12 +21,19 @@ jobs:
           repository: 'FlowFuse/flowfuse'
           ref: maintenance
           path: 'flowfuse'
+      - name: Generate a token
+        id: generate_token
+        uses: tibdex/github-app-token@v1
+        with:
+          app_id: ${{ secrets.GH_BOT_APP_ID }}
+          private_key: ${{ secrets.GH_BOT_APP_KEY }}
       - name: Check out FlowFuse/blueprint-library repository (to access the blueprints)
         uses: actions/checkout@v3
         with:
           repository: 'FlowFuse/blueprint-library'
           ref: main
           path: 'blueprints'
+          token: ${{ steps.generate_token.outputs.token }}
       - name: Install jq
         run: sudo apt-get -qy install jq
       - uses: actions/setup-node@v3
