@@ -5,26 +5,8 @@
             {% include "components/divider-grey-wires-right.njk" %}
         </div>
     </div>
-    <div class="px-2 my-4 flex flex-wrap gap-4">
-        {%- for tag in blueprintsCategories -%}
-            {% if tag.value !== "blueprints" %}
-                <a class="hover:no-underline" href="/blueprints/{{ tag.value }}/">
-                    <button class="ff-btn ff-btn--primary{% if not page.url.includes('/' + tag.value + '/')%}-outlined{% endif %}">{{ tag.label }}</button>
-                </a>
-            {% else %}
-                <a class="hover:no-underline" href="/blueprints/">
-                    <button class="ff-btn ff-btn--primary{% if page.url !== "/blueprints/"%}-outlined{% endif %}">{{ tag.label }}</button>
-                </a>
-            {% endif %}
-        {%- endfor %}
-    </div>
-
-    <div class="px-2 my-4 flex gap-4">
-        {% if description %}
-            {{ description }}
-        {% else %}    
-            Generic description
-        {% endif %}  
+    <div class="px-2 mt-4 flex text-lg">   
+            <p>Explore FlowFuse Blueprints, choose templates for quick setups, perfect for learning and fast solution-building. Customizable for unique needs. Simplify your Node-RED projects with FlowFuse Blueprints!</p> 
     </div>
 
     <ul class="flex flex-wrap">

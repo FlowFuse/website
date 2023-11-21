@@ -4,6 +4,7 @@ const { existsSync, readdirSync } = require('fs');
 const path = require('path');
 const util = require('util');
 const exec = util.promisify(require('child_process').exec);
+const yaml = require('js-yaml');
 
 async function copyFiles(src, dest, version) {
     const files = await fs.readdir(src, { withFileTypes: true });
@@ -41,7 +42,7 @@ async function copyFiles(src, dest, version) {
                     const frontMatterMatch = body.match(/---\r?\n([\s\S]*?)\r?\n---/);
                     if (frontMatterMatch) {
                         // Parse the front matter as YAML
-                        const frontMatter = yaml.safeLoad(frontMatterMatch[1]);
+                        const frontMatter = yaml.load(frontMatterMatch[1]);
                 
                         // If the "image" key exists and its value is not empty, modify its value
                         if (frontMatter.image && frontMatter.image.trim() !== '') {
@@ -49,7 +50,7 @@ async function copyFiles(src, dest, version) {
                         }
 
                         // Write the front matter back as a string and replace the original front matter in the body
-                        const frontMatterString = yaml.safeDump(frontMatter, { lineWidth: -1 });
+                        const frontMatterString = yaml.dump(frontMatter, { lineWidth: -1 });
                         body = body.replace(/---\r?\n[\s\S]*?\r?\n---/, `---\n${frontMatterString}---`);
                     }
                 
