@@ -1,0 +1,33 @@
+---
+layout: layouts/base.njk
+---
+<div class="w-full page post">
+    {% if title %}
+        <div class="post-title container m-auto text-center px-6 flex mt-6 mb-6 md:max-w-screen-lg md:mt-12">
+            <div class="text-left md:pr-32">
+                <label>
+                {%- for tag in certifiedCategories -%}
+                    {% if tag.value !== "certified" and tag.value in page.url %}
+                        <label>{{ tag.label }}</label>
+                    {% endif %}
+                {%- endfor %}
+                </label>
+                <h1>{{ title }}</h1>
+                {% if subtitle %}
+                <h4>{{ subtitle | safe }}</h4>
+                {% endif %}
+            </div>
+        </div>
+    {% endif %}
+    <div class="blog nohero w-full ff-full-bg -mb-96 pt-6 pb-24 ff-bg-light">
+        <div class="container flex flex-col md:flex-row m-auto text-left px-6 md:max-w-screen-lg gap-8 items-stretch">
+            <div class="ff-prose">
+                <a class="inline-flex align-center gap-1 mb-4" href="/certified-nodes">
+                    {% include "components/icons/chevron-left.svg" %}
+                    Back to Certified Nodes
+                </a>
+                {{ content | safe }}
+            </div>
+        </div>
+    </div>
+</div>
