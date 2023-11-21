@@ -2,7 +2,7 @@
 title: "Integrate with ChatGPT Assistants with Node-RED"
 subtitle: "Get start quickly leveraging Flows utilizing ChatGPT Assistant"
 description: "Get start quickly leveraging Flows utilizing ChatGPT Assistant"
-date: 2023-11-20
+date: 2023-11-21
 authors: ["grey-dziuba"]
 image: "/blog/2023/11/images/ai-assistant.png"
 tags:
