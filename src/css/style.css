@@ -625,6 +625,10 @@ h4:hover .header-anchor {
     }
 }
 
+.ff-full-bg {
+    min-height: calc(100vh - 310px);
+}
+
 .red-gradient {
     background: linear-gradient(127.44deg, #C63A3A 32.29%, #3A2828 100%);
     -webkit-background-clip: text;

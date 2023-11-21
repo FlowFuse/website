@@ -19,7 +19,7 @@ image:
                             <div class="min-w-[60px] h-20 text-7xl bg-red-600 text-gray-50 text-center font-bold px-1 rounded pt-1">{{ loop.index }}</div>
                             <h4><div class="font-medium leading-tight pt-1">{{ item.title }}</div></h4>
                         </div>
-                        <p>{{ item.content }}</p>
+                        <p>{{ item.content | safe }}</p>
                     </div>
                     <div class="md:w-1/2 flex justify-center">
                         {% if item.videoid %}

@@ -67,6 +67,14 @@ module.exports = function(eleventyConfig) {
         return await coreNodeDoc(category, name)
     });
 
+    eleventyConfig.addFilter("filterNodeCategory", function(nodes, category) {
+        if (category === "all") {
+          return nodes;
+        } else {
+          return nodes.filter(node => node.tags.includes(category));
+        }
+    });
+
     // Custom filters
     eleventyConfig.addFilter("json", (content) => {
         return JSON.stringify(content)

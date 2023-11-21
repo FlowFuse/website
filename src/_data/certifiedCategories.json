@@ -1,0 +1,19 @@
+[{
+    "label": "All",
+    "value": "certified"
+},  {
+    "label": "Communication",
+    "value": "communication"
+}, {
+    "label": "Database",
+    "value": "database"
+}, {
+    "label": "FlowFuse",
+    "value": "flowfuse-node"
+}, {
+    "label": "Formatting",
+    "value": "formatting"    
+}, {
+    "label": "Protocol",
+    "value": "protocol"    
+}]
