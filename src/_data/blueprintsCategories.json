@@ -4,4 +4,10 @@
 }, {
     "label": "Manufacturing",
     "value": "manufacturing"
+}, {
+    "label": "Getting started",
+    "value": "getting-started"
+}, {
+    "label": "Dashboard",
+    "value": "flowfuse-dashboard"
 }]

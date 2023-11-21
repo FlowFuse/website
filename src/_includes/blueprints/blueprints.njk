@@ -1,13 +1,13 @@
 <li class="w-full md:w-1/3 my-2 px-2 pb-6 border-b">
     <a href="{{ item.url }}" class="w-full flex flex-col group hover:no-underline">
         <div>
-            <label>
+            <div class="mb-1">
                 {%- for tag in blueprintsCategories -%}
                     {% if tag.value !== "blueprints" and tag.value in item.data.tags %}
-                        {{ tag.label }}
+                        <label class="text-gray-400">{{ tag.label }}</label>
                     {% endif %}
                 {%- endfor %}
-            </label>
+            </div>
             <div class="ff-blog-tile">
                 {% if item.data.image %}
                     <div class="w-full h-auto">
