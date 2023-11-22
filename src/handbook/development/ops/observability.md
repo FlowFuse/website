@@ -27,7 +27,7 @@ Grafana is a popular open-source platform for creating, sharing, and managing da
 * Customizable Dashboards: Grafana offers extensive customization options, enabling you to build tailored dashboards that provide the insights you need.
 * Alerting: You can set up alerting rules in Grafana to proactively monitor your systems based on your metrics and logs data.
 
-[Link](https://grafana.flowforge.com)
+[Link](https://grafana.flowfuse.com)
 
 ### AWS CloudWatch
 
@@ -43,6 +43,6 @@ and emailed to the CTO.
 
 ## Alerting
 
-Any [alerts](https://grafana.flowforge.com/alerting/list) that have been configured
+Any [alerts](https://grafana.flowfuse.com/alerting/list) that have been configured
 in Grafana will post to the `#ops-alerts` channel in slack. The alert, where appropriate,
 will include a link to the relevant section of the [Incident Playbook](https://docs.google.com/document/d/1NMPWEFgHkVNN7RqHXUgijEGdNwZH-SlaAspOQr9Vg9k/edit#heading=h.a7jq4bkz66hv).
