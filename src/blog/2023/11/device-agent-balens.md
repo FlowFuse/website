@@ -24,7 +24,7 @@ These Docker container are hosted on Balena's own container registry and are bui
 
 We already build a FlowFuse Device Agent Docker container so it was pretty simple to modify the existing `Dockerfile` for Balena.
 
-```
+```Dockerfile
 FROM balenalib/%%BALENA_MACHINE_NAME%%-alpine-node
 
 RUN mkdir /opt/flowfuse-device
