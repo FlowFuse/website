@@ -9,7 +9,7 @@ layout: layouts/base.njk
                     <label>
                         {% for tag in tags %}
                             {% if tag != 'blueprints' %}
-                                {{ tag | replace('-', ' ') }} - BLUEPRINT
+                            {{ tag | replace('-', ' ') | replace('20', '2.0') }} - BLUEPRINT
                             {% endif %}
                         {% endfor %}
                     </label>

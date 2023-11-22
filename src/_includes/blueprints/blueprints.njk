@@ -4,7 +4,7 @@
             <div class="mb-1">
                 {%- for tag in item.data.tags -%}
                     {% if tag !== "blueprints" %}
-                        <label class="text-gray-400">{{ tag | replace('-', ' ') | title }}</label>
+                        <label class="text-gray-400">{{ tag | replace('-', ' ') | replace('20', '2.0') | title }}</label>
                     {% endif %}
                 {%- endfor %}
             </div>

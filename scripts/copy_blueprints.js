@@ -4,9 +4,8 @@ const { existsSync, readdirSync } = require('fs');
 const path = require('path');
 const util = require('util');
 const exec = util.promisify(require('child_process').exec);
-const yaml = require('js-yaml');
 
-async function copyFiles(src, dest, version) {
+async function copyFiles(src, dest) {
     const files = await fs.readdir(src, { withFileTypes: true });
     for (const file of files) {
         if (!file.name.startsWith('.')) {
@@ -14,7 +13,7 @@ async function copyFiles(src, dest, version) {
                 const newSrc = path.join(src, file.name);
                 const newDest = path.join(dest, file.name);
                 await fs.mkdir(newDest, { recursive: true });
-                await copyFiles(newSrc, newDest, version);
+                await copyFiles(newSrc, newDest);
             } else {
                 const srcFile = path.join(src, file.name);
                 const destFile = path.join(dest, file.name.replace(/README/, 'index'));
@@ -26,9 +25,7 @@ async function copyFiles(src, dest, version) {
                         cwd: src,
                     });
                     const header = '---\n' +
-                        `originalPath: ${path.join(src, file.name).replace(/^.*\/blueprint-library\//, '')}\n` +
                         `updated: ${stdout}\n` +
-                        `version: ${version}\n` +
                         '---\n';
                     let content = await fs.readFile(srcFile, 'utf-8');
                     let body = header + content;
@@ -38,20 +35,13 @@ async function copyFiles(src, dest, version) {
                         body = body.replace(/---\r?\n---\r?\n/s, '');
                     }
                 
-                    // Find the front matter in the body
-                    const frontMatterMatch = body.match(/---\r?\n([\s\S]*?)\r?\n---/);
-                    if (frontMatterMatch) {
-                        // Parse the front matter as YAML
-                        const frontMatter = yaml.load(frontMatterMatch[1]);
-                
-                        // If the "image" key exists and its value is not empty, modify its value
-                        if (frontMatter.image && frontMatter.image.trim() !== '') {
-                            frontMatter.image = `/${path.join(dest.replace('src/', ''), frontMatter.image)}`;
-                        }
+                    // Use a regular expression to find the "image" key in the front matter
+                    // that is not commented out and has a non-space value
+                    const imageRegex = /^image:\s*(\S.+)$/m;
 
-                        // Write the front matter back as a string and replace the original front matter in the body
-                        const frontMatterString = yaml.dump(frontMatter, { lineWidth: -1 });
-                        body = body.replace(/---\r?\n[\s\S]*?\r?\n---/, `---\n${frontMatterString}---`);
+                    // If the "image" key is found, replace its value with the new relative path
+                    if (imageRegex.test(body)) {
+                        body = body.replace(imageRegex, (match, p1) => `image: ${path.join(dest.replace('src/', ''), p1)}`);
                     }
                 
                     await fs.writeFile(destFile, body);
@@ -82,9 +72,8 @@ async function copyFiles(src, dest, version) {
             console.log(element);
             try {
                 const packFile = await fs.readFile('package.json');
-                const version = JSON.parse(packFile).version;
                 const dest = 'src/blueprints';
-                await copyFiles(element, path.join(dest, path.basename(element)), version);
+                await copyFiles(element, path.join(dest, path.basename(element)));
             } catch (error) {
                 console.error('Error reading or copying files:', error);
             }
