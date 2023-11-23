@@ -4,7 +4,7 @@ subtitle: A month or so ago, we released the Third-Party widget support for Dash
 description: A month or so ago, we released the Third-Party widget support for Dashboard 2.0, but having seen the feedback, we missed the beat, so we've built it again!
 date: 2023-11-23
 authors: ["joe-pavitt", "pez-cuckow"]
-image: "/blog/2023/11/images/tile-blog-dashboard-migration.png"
+image: "/blog/2023/11/images/dashboard-0-8-0.png"
 tags:
     - posts
     - releases
