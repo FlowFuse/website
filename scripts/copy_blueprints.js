@@ -41,7 +41,11 @@ async function copyFiles(src, dest) {
 
                     // If the "image" key is found, replace its value with the new relative path
                     if (imageRegex.test(body)) {
-                        body = body.replace(imageRegex, (match, p1) => `image: ${path.join(dest.replace('src/', ''), p1)}`);
+                        body = body.replace(imageRegex, (match, p1) => {
+                            // Remove "./ and the " from the end
+                            p1 = p1.replace(/^"\.\//, '').replace(/"$/, '');
+                            return `image: ${path.join(dest.replace('src/', ''), p1)}`;
+                        });
                     }
                 
                     await fs.writeFile(destFile, body);
