@@ -28,7 +28,7 @@ Our goal remains steadfast: to enhance bidirectional communication with you, our
 
 <img src="/blog/2023/11/images/IMG_6334.png" width=500 />
 
-## Announcments TLDR
+## Announcements TLDR
 
 We're excited to share some significant enhancements that will elevate your experience with FlowFuse and Node-RED. We've announced that Dashboards 2.0 are in Beta version.  Recent additions to Dashboards 2.0 include integrating Vuetify and Mermaid into Dashboard 2.0 unlocking a suite of custom UI components to enrich your dashboards. Our step-by-step guide will walk you through creating dynamic elements like countdown timers, leveraging the power of VueJS for seamless updates.
 

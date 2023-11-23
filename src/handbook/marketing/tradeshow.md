@@ -5,6 +5,15 @@ navGroup: Sales & Marketing
 
 # Trade show
 
+## As exhibitor
+
+### Booth design
+
+The design of the booth is imporant. From the angles that visitors walk past the
+booth it's vital to have the main logo's in sight: FlowFuse and Node-RED. If the
+space is large enough, ensure an interactive element is added to the booth for
+visitors to use and get an idea of what FlowFuse offers.
+
 ## As visitor
 
 ### Preparation before the fair
