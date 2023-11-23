@@ -10,5 +10,5 @@ In our ongoing commitment to strengthen security, we're excited to announce the 
 
 ![Config 2FA](./images/2fa.png)
 
-For more Details see our [Documentation](https://flowfuse.com/docs/user/user-settings/)
+For more Details see our [Documentation](/docs/user/user-settings/)
 2FA is available for all FlowFuse Cloud users and for Enterprise Self-Hosted customers.
