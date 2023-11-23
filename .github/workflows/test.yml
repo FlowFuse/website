@@ -7,15 +7,28 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Check out website repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           path: 'website'
       - name: Check out FlowFuse/flowfuse repository (to access the docs)
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           repository: 'FlowFuse/flowfuse'
           ref: maintenance
           path: 'flowfuse'
+      - name: Generate a token
+        id: generate_token
+        uses: tibdex/github-app-token@v1
+        with:
+          app_id: ${{ secrets.GH_BOT_APP_ID }}
+          private_key: ${{ secrets.GH_BOT_APP_KEY }}
+      - name: Check out FlowFuse/blueprint-library repository (to access the blueprints)
+        uses: actions/checkout@v4
+        with:
+          repository: 'FlowFuse/blueprint-library'
+          ref: main
+          path: 'blueprint-library'
+          token: ${{ steps.generate_token.outputs.token }}
       - name: Cache image pipeline output
         uses: actions/cache@v3
         with:
@@ -26,6 +39,8 @@ jobs:
           cache: 'npm'
           cache-dependency-path: './website/package-lock.json'
       - run: npm run docs
+        working-directory: 'website'
+      - run: npm run blueprints
         working-directory: 'website'
       - name: Install Dependencies
         run: npm install

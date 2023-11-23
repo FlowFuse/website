@@ -21,6 +21,19 @@ jobs:
           repository: 'FlowFuse/flowfuse'
           ref: maintenance
           path: 'flowfuse'
+      - name: Generate a token
+        id: generate_token
+        uses: tibdex/github-app-token@v1
+        with:
+          app_id: ${{ secrets.GH_BOT_APP_ID }}
+          private_key: ${{ secrets.GH_BOT_APP_KEY }}
+      - name: Check out FlowFuse/blueprint-library repository (to access the blueprints)
+        uses: actions/checkout@v3
+        with:
+          repository: 'FlowFuse/blueprint-library'
+          ref: main
+          path: 'blueprint-library'
+          token: ${{ steps.generate_token.outputs.token }}
       - name: Install jq
         run: sudo apt-get -qy install jq
       - uses: actions/setup-node@v3
@@ -29,6 +42,8 @@ jobs:
           cache-dependency-path: './website/package-lock.json'
       - run: npm run docs
         working-directory: 'website'
+      - run: npm run blueprints
+        working-directory: 'website'
       - name: Commit Latest Docs
         run: |
           cd ./website
@@ -36,6 +51,13 @@ jobs:
           git config --local user.name "github-actions[bot]"
           git add src/docs/* -A -f
           git commit -a -m "Bot: update docs"
+      - name: Commit Latest Blueprints
+        run: |
+          cd ./website
+          git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add src/blueprints/* -A -f
+          git commit -a -m "Bot: update blueprints"
       - name: Push to 'live' branch
         uses: ad-m/github-push-action@master
         with:
