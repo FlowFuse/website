@@ -19,7 +19,7 @@ To do this you install the Balena OS on the devices, this is a stripped down Lin
 
 These Docker container are hosted on Balena's own container registry and are built by doing a git push to Balena's git server.
 
-We I have a GitHub repository with all the required files [here](https://github.com/FlowFuse/balena-device-agent), this include a one click deploy button to allow you to quickly try this out.
+A GitHub repository with all the required files [has been published](https://github.com/FlowFuse/balena-device-agent), it includes a one click deploy button to allow you to quickly try this out.
 
 ## Building FlowFuse Device Agent for Balena
 
