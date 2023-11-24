@@ -278,26 +278,57 @@ meta:
         }
     }
 </script>
+
 <script>
     const btns = document.querySelectorAll(".mainToggle");
     const cloud = document.querySelectorAll(".contentCloud");
     const selfHosted = document.querySelectorAll(".contentSelfHosted");
 
+    // Get the hosting parameter from the URL
+    const urlParams = new URLSearchParams(window.location.search);
+    const hosting = urlParams.get('hosting');
+
+    // Check the hosting parameter when the page loads
+    if (hosting === 'self-hosted') {
+        // Show Self-Hosted state
+        btns.forEach((item) => item.classList.add("slides"));
+        cloud.forEach((item) => item.classList.add("hide"));
+        selfHosted.forEach((item) => item.classList.remove("hide"));
+    } else {
+        // Show Cloud state
+        btns.forEach((item) => item.classList.remove("slides"));
+        cloud.forEach((item) => item.classList.remove("hide"));
+        selfHosted.forEach((item) => item.classList.add("hide"));
+    }
+
     btns.forEach(btn => {
         btn.addEventListener("click", function() {
-        // Toggle .slides class on buttons
-        btns.forEach((item) => item.classList.toggle("slides"));
+            // Toggle .slides class on buttons
+            btns.forEach((item) => item.classList.toggle("slides"));
 
-        // // Toggle .hide class on cloud and selfHosted elements
-        cloud.forEach((item) => {
-            item.classList.toggle("hide");
-        });
+            // Toggle .hide class on cloud and selfHosted elements
+            cloud.forEach((item) => {
+                item.classList.toggle("hide");
+            });
 
-        selfHosted.forEach((item) => {
-            item.classList.toggle("hide");
+            selfHosted.forEach((item) => {
+                item.classList.toggle("hide");
+            });
+
+            // Change the hosting parameter based on toggle state
+            if (btn.classList.contains("slides")) {
+                // Change hosting parameter to Self-Hosted state
+                urlParams.set('hosting', 'self-hosted');
+                // Update the URL with the new hosting parameter
+                window.history.replaceState({}, '', `${window.location.pathname}?${urlParams}`);
+            } else {
+                // Remove the hosting parameter for Cloud state
+                urlParams.delete('hosting');
+                // Update the URL without the hosting parameter
+                window.history.replaceState({}, '', window.location.pathname);
+            }
         });
-  });
-});
+    });
 </script>
 
 <script>
