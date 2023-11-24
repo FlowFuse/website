@@ -2,7 +2,7 @@
 title: "Deploying the FlowFuse Device Agent via Balena"
 subtitle: "Using Balena.io to Deploy fleets of devices"
 description: "Using Balena.io to Deploy fleets of devices"
-date: 2023-11-21
+date: 2023-11-24
 authors: ["ben-hardill"]
 image: "/blog/2023/11/images/balena.png"
 tags:
@@ -11,16 +11,17 @@ tags:
     - balena
 ---
 
-Originally posted here
+As part of the FlowFuse Staff Summit this year in Barcelona we met up with Marc Pous from [Balena Io](https://www.balena.io/). Balena is a platform for managing fleets of Edge Devices and it felt like the perfect fit for deploying the FlowFuse Device Agent.
 
-As part of the FlowFuse Staff Summit this year in Barcelona we met up with Marc Pous from [Balena Io](https://www.balena.io/). Balena is a platform for managing fleets of Edge Devices. 
+<!--more-->
 
 To do this you install the Balena OS on the devices, this is a stripped down Linux distribution that includes a client that connects back to Balena's platform and creates a VPN tunnel. As well as the Balena client it includes Docker and users can select containers to push to the devices.
 
-
 These Docker container are hosted on Balena's own container registry and are built by doing a git push to Balena's git server.
 
-##Building FlowFuse Device Agent for Balena
+We I have a GitHub repository with all the required files [here](https://github.com/FlowFuse/balena-device-agent), this include a one click deploy button to allow you to quickly try this out.
+
+## Building FlowFuse Device Agent for Balena
 
 We already build a FlowFuse Device Agent Docker container so it was pretty simple to modify the existing `Dockerfile` for Balena.
 
@@ -37,15 +38,15 @@ ENTRYPOINT ["/usr/src/entrypoint.sh"]
 CMD ["flowfuse-device-agent"]
 ```
 
-There were 2 main changes
+There were 2 main changes from the default Device Agent [`Dockerfile`](https://github.com/FlowFuse/device-agent/blob/main/docker/Dockerfile)
 
- 1. Change the base image to Balena's image, this is because the `Dockerfile` is actually a template that can be used to build images for all Balena's supported hardware platforms (We currently build the FlowFuse Device Agent containers for AMD64, ARMv7 and ARM64)
+ 1. Change the base image to Balena's image, this is because the `Dockerfile` is actually a template that can be used to build images optimized for all Balena's supported hardware platforms (We currently build the FlowFuse Device Agent containers for AMD64, ARMv7 and ARM64)
 
- 2. Adding a custom `entrypoint.sh`. This is to ensure that the hostname seen in the container matches the Balena device name, making it easier to match it up with what is seen in the FlowFuse application.
+ 2. Adding a custom `entrypoint.sh`. This is to ensure that the hostname seen in the container matches the Balena device name, making it easier to match it up with what is seen in the FlowFuse application. It also generates the configuration file from the passed in environment variable (see [below](#configuring-devices))
 
 As well as the `Dockerfile` there is also a `docker-compose.yml` because Balena applications can be made up of multiple services packaged as container. In this case we just need a single container but the compose file contains all the information about what ports to expose and what volumes need creating to persist state.
 
-##Configuring Devices
+## Configuring Devices
 
 The FlowFuse Device agent can be configured in 3 ways and the Balena deployment supports all 3.
 
