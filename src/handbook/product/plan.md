@@ -22,7 +22,7 @@ Our high-level strategy implementation plan serves as a broad outline of the key
 The progress bars presented adjacent to each category are rough estimates, offering an initial glance at the projected level of completion for each category's planned feature set. These are not precise calculations, nor do they represent the current status of each strategy pillar. It's important to note that at the start of every new product plan cycle, these progress bars reset to a lower level, reflecting the onset of new development and implementation stages. For detailed updates on the actual status, please keep an eye on our [release blog posts](/blog/releases/).
 
 ### Advancing Enterprise-Readiness 
-![](https://geps.dev/progress/60)
+![](https://geps.dev/progress/70)
 
 - [High availability & Scalability](https://github.com/FlowFuse/flowfuse/issues/1678)
 
@@ -36,14 +36,14 @@ The progress bars presented adjacent to each category are rough estimates, offer
 
 
 ### Node-RED Deployments at the Edge (Device Management)
-![](https://geps.dev/progress/40)
+![](https://geps.dev/progress/80)
 
 - [Device can be managed independently of Instances on Application level](https://github.com/FlowFuse/flowfuse/issues/2334)
 
 - [Grouped Device Deployments](https://github.com/FlowFuse/flowfuse/issues/1509)
 
 ### Enhanced Integration Capabilities
-![](https://geps.dev/progress/60)
+![](https://geps.dev/progress/95)
 
 - [Official Support for selected Node-RED nodes](https://github.com/FlowFuse/flowfuse/issues/1901)
 
@@ -53,14 +53,14 @@ The progress bars presented adjacent to each category are rough estimates, offer
 
 
 ### Data Visualization & Analytics
-![](https://geps.dev/progress/30)
+![](https://geps.dev/progress/40)
 
 - Version 1.0 of the Node-RED Dashboard successor, with a comparable feature set like [Node-RED Dashboard](https://github.com/node-red/node-red-dashboard).
 
 - FlowFuse Dashboard extension (Version 1.0) allowing [user specific dashboards](https://github.com/FlowFuse/node-red-dashboard/issues/1) and RBAC.
 
 ### User-Friendly Low-Code Approach 
-![](https://geps.dev/progress/5)
+![](https://geps.dev/progress/40)
 
 - [Immersive Node-RED experience](https://github.com/FlowFuse/flowfuse/issues/2246)
 
