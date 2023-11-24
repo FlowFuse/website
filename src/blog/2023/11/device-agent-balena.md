@@ -59,7 +59,9 @@ The FlowFuse Device agent can be configured in 3 ways and the Balena deployment 
 
 Because the file mentioned in options 2 & 3 is multi line it needs to be base64 encoded, you can do this with the following
 
+```bash
 $ base64 -w 0 device.yml
+```
 
 You can then use the Balena console to create either a device specific or a fleet wide environment variable called FF_DEVICE_YML.
 
