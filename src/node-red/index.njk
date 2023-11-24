@@ -2,79 +2,46 @@
 layout: page
 nohero: true
 meta:
-    title: Node-RED Resources
+    title: Start using Node-RED online for free
 description:
-    A set of technical resources to answer your questions about getting started with Node-RED including tips, best practices, and FAQs to using Node-RED for 
+    Node-RED's low-code brilliance hosted on FlowFuse cloud. Answer your questions about getting started with Node-RED including tips, best practices, and FAQs to using Node-RED for 
     different use cases.
 sitemapPriority: 0.8
 ---
-
-<script>
-    function playPause () {
-        const video = document.getElementById('nodered-demo')
-        const button = document.getElementById('video-play-btn')
-        if (video.paused) {
-            {# video.setAttribute("controls","controls") #}
-            button.style.opacity = 0
-            video.play()
-        } else {
-            video.pause()
-            button.style.opacity = 1
-        }
-    }
-
-    function openFullscreen() {
-        const video = document.getElementById('nodered-demo')
-        if (video.requestFullscreen) {
-            video.requestFullscreen();
-        } else if (video.webkitRequestFullscreen) { /* Safari */
-            video.webkitRequestFullscreen();
-        } else if (video.msRequestFullscreen) { /* IE11 */
-            video.msRequestFullscreen();
-        }
-    }
-</script>
-
-
+<!--Hero Content-->
 <div class="nohero w-full ff-bg-light">
-    <!--Hero Content-->
-    <div class="nodered-pillar-bg w-full px-6 pt-12 pb-16 md:px-0 border-b-4 border-gray-100">
-        <div class="container m-auto text-center max-w-3xl">
-            <span class="ff-animation-text-carousel px-12 md:px-0 max-w-lg m-auto text-gray-800 h-7 text-xl font-bold">
+    <div class="nodered-pillar-bg w-full pt-12 pb-20 md:pt-6 md:pb-12 border-b-4 border-gray-100">
+        <div class="flex flex-col px-6 items-center md:flex-row md:items-start container mx-auto text-center md:text-left max-w-screen-lg">
+            <div class="md: my-auto md:py-10">
+                <span class="ff-animation-text-carousel px-12 md:px-0 max-w-lg text-gray-800 h-7 text-xl font-bold mx-auto">
                 Low-Code
                 <ul class="inline-block text-red-600">
                     <li>Programming</li>
                     <li>Integration</li>
                     <li>Visualisation</li>
                 </ul>
-            </span>
-            <h1 class="mt-0 px-12 md:px-0 m-auto">
-                <span class="">Node-RED</span> Resources
-            </h1>
-            <h3 class="mt-6 text-gray-400 text-lg font-normal">
-                A collection of technical resources that answer your questions about Node-RED.
-            </h3>
-        </div>
-        <div class="relative mt-12">
-            <div class="relative max-w-sm sm:max-w-xl m-auto">
-                <video id="nodered-demo" width="800" frameborder="0"
-                    class="m-auto border-2 rounded-md"
-                    style="border-color: black; box-shadow: 0px 4px 16px #1f2937e6;"
-                    allow="fullscreen;">
-                    <source src="https://website-data.s3.eu-west-1.amazonaws.com/iss-tracker.mp4" type="video/mp4">
-                </video>
-                <div id="video-play-btn" class="group absolute w-full h-full top-0 left-0 hover:bg-black flex item-center justify-center cursor-pointer hover:bg-opacity-10" onclick="playPause()">
-                    <button type="button" class="w-24 text-black group-hover:text-blue-800 duration-100">{% include "components/icons/play.svg" %}</button>
-                </div>
+                </span>
+                <h1 class="mt-0 px-12 md:px-0 m-auto">
+                    <span class="leading-3">Start using Node-RED online for free</span>
+                </h1>
+                <h5 class="mt-5 text-gray-400 text-lg font-light md:mb-8">
+                    Node-RED's low-code brilliance hosted on FlowFuse cloud. Simplify integration, elevate visualization, and more.
+                </h5>
+                <a class="ff-btn ff-btn--primary hidden min-h-[40px] md:inline" href="{{ site.appURL }}/account/create" onclick="capture('cta-join', {'position': 'nodered'})">START FOR FREE</a>
             </div>
-            <label class="block relative mt-3 max-w-sm sm:max-w-xl m-auto text-center">
-                A quick demonstration of how to pull data from an API, transform the data format, and visualise the results on a worldmap. <label onclick="openFullscreen()" class="text-blue-600 font-medium cursor-pointer">Show Full Screen</label>
-            </label>
-        </div>
+            <div class="max-w-[500px] text-center md:text-left m-auto">
+                {% image "../images/node-red-in-cloud.png", "FlowFuse hosting Node-RED", [500] %}
+            </div>
+            <a class="ff-btn ff-btn--primary flex flex-col w-full md:hidden" href="{{ site.appURL }}/account/create" onclick="capture('cta-join', {'position': 'nodered'})">START FOR FREE</a>
+        </div>   
+    </div>
+    <div class="text-gray-50 -mt-12">
+        {% include "components/dividers/light-grey-curve.svg" %}
     </div>
 
-    <div class="w-full ff-bg-light pt-8 px-0 pb-12 ff-prose">
-        <div class="text-center md:mt-12 mb-6">
+    <!-- What is Node-RED -->     
+    <div class="w-full ff-bg-light pt-4 px-0 pb-12 ff-prose">
+        <div class="text-center mt-6 md:mt-12 mb-6">
             <h2>What is Node-RED?</h2>
         </div>
         <div class="container m-auto max-w-screen-lg prose">
@@ -162,12 +129,22 @@ sitemapPriority: 0.8
             </div>
         </div>
     </div>
+</div>    
 
-    <div class="text-white">
-        {% include "components/dividers/light-grey-curve.svg" %}
-    </div>
+<!--Customer Stories Banner-->
+<a href="/customer-stories/" class="w-full bg-teal-700 text-center text-teal-50 px-6 py-3 text-lg flex flex-row items-center justify-center gap-1 hover:bg-teal-800 hover:no-underline cursor-pointer flex-wrap">
+    Check out some
+    <span class="font-bold hover:no-underline">Node-RED</span> 
+    <span class="text-white font-bold underline flex items-center">
+        customer stories 
+        <span class="inline">{% include "components/icons/chevron-right-sm.svg" %}</span>
+    </span>
+</a>
 
-    <div class="about w-full bg-white sm:pt-12 md:pt-12 pb-12">
+<!--Rest of sections-->
+<div class="nohero w-full ff-bg-light">       
+    <!-- Learn Node-RED --> 
+    <div class="about w-full bg-white pt-12 md:pt-12 pb-12">
         <div class="text-center">
             <h2>Learn Node-RED</h2>
         </div>
@@ -249,24 +226,26 @@ sitemapPriority: 0.8
             </div>
         </div>
     </div>
-
+    
     <div class="text-white">
         {% include "components/dividers/light-grey-curve-inverted.svg" %}
     </div>
-
-    <div class="w-full ff-bg-light px-6 pt-8 md:pt-16 pb-32 sm:px-0">
+    <!-- Frequently Asked Questions --> 
+    <div class="w-full ff-bg-light px-6 pt-8 pb-24 sm:px-0">
         <div class="container m-auto max-w-4xl px-6">
             <h2 class="text-center">Frequently Asked Questions</h2>
             <label class="m-auto text-center block max-w-lg md:max-w-none">Have a question that you don't see answered here? Feel free to reach out to us via our <a href="/contact-us">Contact Us</a> page</label>
             <div class="mt-12 m-auto w-full ff-prose">
                 <div class="prose max-w-none">
                     {% for faq in nodeRed.faqs %}
-                    <div>
-                        <h3 class="flex items-center w-full m-0 gap-6">
-                            <span>{{ faq.question }}</span>
-                            <hr class="flex-grow m-0"/>
-                        </h3>
-                        <div class="px-6">
+                    <div class="w-full {% if not loop.last %}border-b{% endif %} py-4">
+                        <h5 class="question flex flex-row justify-between items-center w-full m-0 gap-6 cursor-pointer" id="question-{{ loop.index }}">
+                            <span class="">{{ faq.question }}</span> 
+                            <div class="chevron transition-transform ease-in-out duration-300" id="chevron-{{ loop.index }}">
+                                {% include "components/icons/chevron-down.svg" %}
+                            </div>
+                        </h5>
+                        <div class="answer px-6 mt-6 hidden" id="answer-{{ loop.index }}">
                             <p>{{ faq.answer | safe }}</p>
                         </div>
                     </div>
@@ -275,6 +254,24 @@ sitemapPriority: 0.8
             </div>
         </div>
     </div>
-
 </div>
+
+<script>
+    const questions = document.querySelectorAll('.question');
+    questions.forEach((question, index) => {
+        question.addEventListener('click', () => {
+            const answer = document.querySelector(`#answer-${index + 1}`);
+            const chevron = document.querySelector(`#chevron-${index + 1}`);
+            if (answer.classList.contains('hidden')) {
+                // Show the clicked answer and rotate its chevron
+                answer.classList.remove('hidden');
+                chevron.style.transform = 'rotate(180deg)';
+            } else {
+                // Hide the clicked answer and rotate its chevron to original state
+                answer.classList.add('hidden');
+                chevron.style.transform = 'rotate(0deg)';
+            }
+        });
+    });
+</script>
 

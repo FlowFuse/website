@@ -3,7 +3,7 @@
 @layer components {
 
     .ff-animation-text-carousel {
-        @apply overflow-hidden flex justify-center gap-2;
+        @apply overflow-hidden flex justify-center md:justify-start gap-2;
     }
 
     .ff-animation-text-carousel ul {
