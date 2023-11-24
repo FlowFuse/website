@@ -48,18 +48,17 @@ As well as the `Dockerfile` there is also a `docker-compose.yml` because Balena 
 
 ## Configuring Devices
 
-The FlowFuse Device agent can be configured in 3 ways and the Balena deployment supports all 3.
+The FlowFuse Device agent can be configured in 2 ways.
 
- 1. If no configuration file is provided then the Device Agent will start up and launch a simple web application that allows you to upload a configuration file. The web application will shutdown after 10mins from starting to limit others configuring the agent. This is the default behavior for the Balena deployment if no configuration is supplied.
 
- 2. You can provide a configuration file that is provided by the FlowFuse application when you create a new Device. This file contains the unique identifiers for the Device and details of where to find the FlowFuse Application. This file can be provided to a Balena device by adding a device specific environment variable as described [below](#environment-variable).
+ 1. You can provide a configuration file that is provided by the FlowFuse application when you create a new Device. This file contains the unique identifiers for the Device and details of where to find the FlowFuse Application. This file can be provided to a Balena device by adding a device specific environment variable as described [below](#environment-variable).
 
- 3. You can provide a fleet of devices with a configuration file that contains details of where to find the FlowFuse application and a Provisioning token. Multiple Devices can all have the same Provisioning token and this will cause them to connect to the FlowFuse application on first start up and create a new Device bound to an existing team (and optionally an Application or Instance). This file can be passed to Balena devices by way of a Fleet wide environment variable as described [below](#environment-variable). 
+ 2. You can provide a fleet of devices with a configuration file that contains details of where to find the FlowFuse application and a Provisioning token. Multiple Devices can all have the same Provisioning token and this will cause them to connect to the FlowFuse application on first start up and create a new Device bound to an existing team (and optionally an Application or Instance). This file can be passed to Balena devices by way of a Fleet wide environment variable as described [below](#environment-variable). 
  You can create a Provisioning Token file under the Team -> Settings page on the Devices tab.
 
 ### Environment Variable
 
-Because the file mentioned in options 2 & 3 is multi line it needs to be base64 encoded, you can do this with the following
+Because the `device.yml` file is multi line it needs to be base64 encoded, you can do this with the following
 
 ```bash
 $ base64 -w 0 device.yml
