@@ -61,4 +61,4 @@ conversation about what we do.
 
 The handbook is maintained on [GitHub](https://github.com/FlowFuse/website/tree/main/src/handbook)
 and contributions can be made through pull-requests. How to contribute
-is capture in a guide there: [https://github.com/FlowFuse/website#flowfuse-website]
+is capture [in a guide](https://github.com/FlowFuse/website#flowfuse-website).
