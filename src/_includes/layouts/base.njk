@@ -1,3 +1,25 @@
+---
+meta:
+  language: en-US
+  site:
+    name: FlowFuse
+    description: Bespoke, flexible, and resilient manufacturing applications
+    url: https://FlowFuse.com
+    logo:
+      src: https://flowfuse.com/handbook/images/logos/ff-logo--square--dark.png
+      width: 396
+      height: 215
+  author:
+    name: FlowFuse
+  image:
+    src: https://flowfuse.com/handbook/images/logos/ff-logo--square--dark.png
+eleventyComputed:
+  meta:
+    url: "{{ page.url | url | toAbsoluteUrl }}"
+    title: "{{ title }}"
+    description: "{{ description }}"
+    modified: "{{ page.date }}"
+---
 <!doctype html>
 <html lang="en">
 <head>
@@ -88,6 +110,7 @@
 
     {% set js %}{% include "base.js" %}{% endset %}
     <script>{{ js | jsmin | safe }}</script>
+    {% jsonLdScript meta, type, tags %}
 </head>
 <body class="ff-website leading-normal tracking-normal gradient text-gray-500 min-h-screen flex flex-col" style="">
     <div class="flex-grow base">

@@ -18,6 +18,7 @@ const markdownItAttrs = require('markdown-it-attrs');
 const spacetime = require("spacetime");
 const { minify } = require("terser");
 const codeowners = require('codeowners');
+const schema = require("@quasibit/eleventy-plugin-schema");
 
 const heroGen = require("./lib/post-hero-gen.js");
 const imageHandler = require('./lib/image-handler.js')
@@ -492,6 +493,7 @@ module.exports = function(eleventyConfig) {
     eleventyConfig.addPlugin(syntaxHighlight)
     eleventyConfig.addPlugin(codeClipboard)
     eleventyConfig.addPlugin(pluginMermaid)
+    eleventyConfig.addPlugin(schema);
 
     const markdownItOptions = {
         html: true,
