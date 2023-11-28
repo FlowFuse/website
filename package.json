@@ -59,6 +59,7 @@
     },
     "dependencies": {
         "@11ty/eleventy-fetch": "^4.0.0",
+        "@quasibit/eleventy-plugin-schema": "^1.11.0",
         "codeowners": "^5.1.1",
         "markdown-it-attrs": "^4.1.6"
     }
