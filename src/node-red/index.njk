@@ -53,8 +53,7 @@ sitemapPriority: 0.8
                             {% image "./images/pictograms/node_catalog_red.png", "Graphics depicting low-code programming.", [64] %}
                         </div>
                         <div class="flex flex-col leading-8">
-                            Low-Code
-                            <span class="text-red-600">Programming</span>
+                            Flow Based Programming
                         </div>
                     </h3>
                     <p class="mb-0">
@@ -67,12 +66,11 @@ sitemapPriority: 0.8
                             {% image "./images/pictograms/edge_red.png", "Graphics depicting connectivity and integration.", [64] %}
                         </div>
                         <div class="flex flex-col leading-8">
-                            Low-Code
-                            <span class="text-red-600">Integration</span>
+                            Digital Services Integration
                         </div>
                     </h3>
                     <p class="mb-0">
-                        4,000+ integrations available and a large library of example flows make it trivial to connect a multitude of digital services, such as protocols (OPC-UA, Modbus, Siemens S7), databases, APIs, hardware, etc.
+                        Node-RED facilitates seamless integration with a wide array of digital services, including protocols (OPC-UA, Modbus, Siemens S7), databases, APIs, and devices.
                     </p>
                 </div>
                 <div class="text-left self-start">
@@ -81,50 +79,11 @@ sitemapPriority: 0.8
                             {% image "./images/pictograms/scalable_red.png", "Graphics depicting low-code visualisation.", [64] %}
                         </div>
                         <div class="flex flex-col leading-8">
-                            Low-Code
-                            <span class="text-red-600">Visualization</span>
+                            Data Visualization
                         </div>
                     </h3>
                     <p class="mb-0">
-                        Node-RED Dashboard makes it easy to visualize your data in charts that integrate directly with actions and events that respond to the data.
-                    </p>
-                </div><div class="text-left self-start">
-                    <h3 class="flex items-center gap-4">
-                        <div class="w-16">
-                            {% image "./images/pictograms/opensource_red.png", "Graphics depicting open source.", [64] %}
-                        </div>
-                        <div class="flex flex-col leading-8">
-                            Open Source
-                        </div>
-                    </h3>
-                    <p class="mb-0">
-                        Node-RED is an open source project hosted at the OpenJS Foundation. Participation in the project is encouraged to help support the Node-RED community.
-                    </p>
-                </div>
-                <div class="text-left self-start">
-                    <h3 class="flex items-center gap-4">
-                        <div class="w-16">
-                            {% image "./images/pictograms/browser_red.png", "Graphics depicting the fact that Node-RED is free to use.", [64] %}
-                        </div>
-                        <div class="flex flex-col leading-8">
-                            Free-to-Use
-                        </div>
-                    </h3>
-                    <p class="mb-0">
-                        Node-RED is made available under the Apache Software License so individuals can use Node-RED free of charge.
-                    </p>
-                </div>
-                <div class="text-left self-start">
-                    <h3 class="flex items-center gap-4">
-                        <div class="w-16">
-                            {% image "./images/pictograms/community_red.png", "Graphics depicting the fact that Node-RED has an active community.", [64] %}
-                        </div>
-                        <div class="flex flex-col leading-8">
-                            Active Community
-                        </div>
-                    </h3>
-                    <p class="mb-0">
-                        Node-RED has a very active community of developers providing support through forums, as well as actively contributing to the development of Node-RED itself.
+                        <a href="https://dashboard.flowfuse.com/" target="_blank">Node-RED Dashboard</a> makes it easy to visualize your data in charts that integrate directly with actions and events that respond to the data.
                     </p>
                 </div>
             </div>
@@ -133,13 +92,47 @@ sitemapPriority: 0.8
 </div>    
 
 <!--Customer Stories Banner-->
-<a href="/customer-stories/" class="w-full bg-teal-700 text-center text-teal-50 px-6 py-3 text-lg flex flex-row items-center justify-center gap-1 hover:bg-teal-800 hover:no-underline cursor-pointer flex-wrap">
-    Check out some
-    <span class="font-bold hover:no-underline">Node-RED</span> 
-    <span class="text-white font-bold underline flex items-center">
-        customer stories 
-        <span class="inline">{% include "components/icons/chevron-right-sm.svg" %}</span>
-    </span>
+<div class="w-full gradient-bg text-center text-teal-50 px-6 pb-3 pt-8 text-lg flex-col flex-row items-center justify-center gap-1 hover:no-underline flex-wrap">
+    <h2>
+        <span class="hover:no-underline text-gray-200">
+            <span class="font-bold text-teal-100">Node-RED use cases</span>
+            from our customer stories
+        </span>
+    </h2>
+    <ul class="mt-6 grid grid-cols-1 md:grid md:grid-cols-3 gap-y-4 pb-4 max-w-screen-lg m-auto">
+        {%- for item in collections.stories | sort(attribute='item.date') | reverse | limit(3) -%}
+        <li class="w-full my-2 px-2">
+            <a href="{{ item.url }}" class="w-full flex flex-col group hover:no-underline">
+                <div class="">
+                    <div>
+                        {% if item.data.image %}
+                        <div class="relative">
+                            <div class="w-full h-40 ff-image-cover">
+                                {% set imageSrc = ["./", item.data.image ] | join %}
+                                {% set imageDescription = ["Image representing ", item.data.title] | join %}
+                                {% image imageSrc, imageDescription, [285] %}
+                            </div>
+                            {% if item.data.logo %}
+                                <div class="w-1/2 h-full absolute left-0 top-0 bg-white flex items-center justify-center object-contain">
+                                    {% set imageSrc = ["./", item.data.logo ] | join %}
+                                    {% set imageDescription = ["Image representing ", item.data.story.brand, " logo"] | join %}
+                                    {% image imageSrc, imageDescription, [285] %}
+                                </div>
+                                {% endif %}
+                        </div>    
+                        {% else %}
+                            {{ item.url | generatePostSVG |safe}}
+                        {% endif %}
+                    </div>
+                    <h5 class="mt-1 mb-0 font-medium group-hover:underline text-gray-200 font-light text-lg text-left">{{ item.data.title }}</h5>
+                </div>
+            </a>
+        </li>
+        {% endfor %}
+    </ul>
+</div>
+<a href="/customer-stories/" class="w-full text-center text-teal-100 hover:underline py-3 flex flex-row items-center justify-center gap-1 cursor-pointer flex-wrap">
+    See more customer stories {% include "components/icons/chevron-right-sm.svg" %}
 </a>
 
 <!--Rest of sections-->

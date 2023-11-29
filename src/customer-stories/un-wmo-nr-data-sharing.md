@@ -1,5 +1,5 @@
 ---
-title: World Meteorological Organization(WMO) Uses Node-RED to Modernize Sharing of Earth-System Data
+title: World Meteorological Organization (WMO) Uses Node-RED to Modernize Sharing of Earth-System Data
 image: /images/stories/un-wmo.jpg
 date: 2023-09-07
 logo: /images/stories/logos/logo_wmo.png
