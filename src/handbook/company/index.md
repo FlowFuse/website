@@ -38,3 +38,7 @@ Upon request wiring details can be provided by the CEO.
 ### Dun & Bradstreet
 
 FlowFuse's Dun and Bradstreet ID is: 11-899-4742
+
+### NAICS code
+
+54151 - Computer Systems Design and Related Services
