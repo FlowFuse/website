@@ -26,6 +26,12 @@ them to the CEO and the counterparty.
 
 Signed NDA documents should be stored on the [Google Drive](https://drive.google.com/drive/u/1/folders/1BT1KY7B18N4JWlVGEnRsovhwiGnZkm5F){rel="nofollow"} for future reference.
 
+### Signing a non-FlowFuse provided NDA
+
+Clauses we cannot agree to:
+1. Only keeping Confidential Information at our legal offices. We're a fully
+remote company and keep Confidential Information according to our [data classification policies](https://flowfuse.com/handbook/company/security/data-management/#data-classification).
+
 ## Miscellaneous
 
 - [W9 with signature](https://drive.google.com/file/d/12XE_88XlxxfP5guLgQHxBMPnhJRz5KCQ/view?usp=share_link)
