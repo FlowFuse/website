@@ -31,6 +31,8 @@ Signed NDA documents should be stored on the [Google Drive](https://drive.google
 Clauses we cannot agree to:
 1. Only keeping Confidential Information at our legal offices. We're a fully
 remote company and keep Confidential Information according to our [data classification policies](https://flowfuse.com/handbook/company/security/data-management/#data-classification).
+1. Auditability of destruction of Confidential Information. As a remote company
+we will not allow third parties access to homes or offices of employees.
 
 ## Miscellaneous
 
