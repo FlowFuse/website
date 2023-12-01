@@ -123,3 +123,12 @@ a PIP. This ensures that a PIP is a genuine change.
 If an employee's performance does not improve, or if they violate the terms of
 their PIP, they may be terminated. Termination will be based on a documented
 pattern of underperformance or unacceptable behavior.
+
+## CEO underperformance
+
+As with all employees in the company the CEO can underperform. Generally speaking
+the CEO does get performance reviews, though these are provided by the Board of
+Directors.
+
+All employees are free to provide feedback or input to the board of directors
+through email. It's adviced not to include the CEO in such an email.
