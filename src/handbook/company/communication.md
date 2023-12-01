@@ -56,9 +56,9 @@ Slack to be matched automatically.
 
 ## Asynchronous communication
 
-Communication through different timezones or due to differences in availility
+Communication through different timezones or due to differences in availability
 requires knowledge to be persistent in sources that are approachable to others
-and non-emphermeral.
+and non-ephemeral.
 
 Information should thus be stored in:
 1. Handbook
