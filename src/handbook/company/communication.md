@@ -56,6 +56,20 @@ Slack to be matched automatically.
 
 ## Asynchronous communication
 
+Communication through different timezones or due to differences in availility
+requires knowledge to be persistent in sources that are approachable to others
+and non-emphermeral.
+
+Information should thus be stored in:
+1. Handbook
+1. GitHub issues
+1. Git Repositories pushed to GitHub
+1. Google Drive (Docs / Sheets / etc.)
+
+Don't store information in:
+1. Slack
+2. Figma
+
 ### Email
 
 Email for internal communication is only used for discussions that need
@@ -68,12 +82,7 @@ When using Slack, prefer to keep discussions in a thread. This reduces scroll
 back, and focusses channels.
 
 To keep everyone on the same page and to allow others to collaborate you should favour
-public channels over DMs. 
-
-Note that knowledge in Slack is ephemeral, it's not storage for information or knowledge
-sharing. As such knowledge and decision made in Slack should always be recorded
-in the handbook, GitHub issue, or Google Doc on that topic to keep a log that also works
-for asynchronous communication.
+public channels over DMs.
 
 Our recommended Slack (light) theme is:
 `#F2F2F2,#FFC806,#779FA1,#FFFFFF,#F0D36C,#111111,#2AB052,#FD0B00,#AA4444,#FFFFFF`
