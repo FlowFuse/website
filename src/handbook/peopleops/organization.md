@@ -48,3 +48,78 @@ FlowFuse is firmly committed to preserving the confidentiality of all parties in
 FlowFuse strictly prohibits any form of retaliation against employees who raise grievances in good faith. Any acts of retaliation will be treated as distinct violations of company policy.
 
 This Grievance Policy is designed to ensure that employee concerns are treated fairly and promptly. FlowFuse is unwavering in its dedication to fostering an inclusive and respectful workplace and will consistently refine its policies and practices based on feedback and evolving industry standards.
+
+## Underperformance Policy
+
+The purpose of this policy is to establish a clear and consistent process for
+addressing employee underperformance in a timely and effective manner. This
+policy is designed to ensure that all employees are aware of FlowFuse's
+expectations and have the opportunity to improve their performance.
+
+Addressing underperformance effectively and promptly is crucial for building
+a high-performing team and is instrumental to the company's overall success.
+
+### Defining underperformance
+
+Underperformance is defined as failure to meet the company's expectations for performance, conduct, or attendance. It can manifest in various ways, including, but not limited to:
+
+1. Failing to meet job expectations. This encompasses not achieving set goals,
+targets, or objectives, consistently producing substandard work, or lacking the
+necessary skills or expertise to perform assigned tasks effectively.
+1. Inconsistent or unpredictable performance. Fluctuating performance levels,
+demonstrating occasional bursts of good work followed by periods of subpar
+performance, or failing to maintain a consistent level of work quality can
+indicate underperformance.
+1. Negative work attitude or demeanor. A consistently negative attitude,
+displaying disinterest or apathy towards work, exhibiting poor teamwork skills,
+or creating a disruptive work environment can be considered underperformance.
+1. Attendance issues. Excessive absenteeism or tardiness without valid reasons
+can signal underperformance, as it disrupts workflow and impacts productivity.
+1. Non-compliance with company policies. Failure to adhere to company policies,
+procedures, or ethical standards can constitute underperformance, as it
+undermines the company's culture and values.
+
+It's important to note that underperformance is not limited to a single category;
+it can be a combination of factors that hinder an employee's ability to
+contribute effectively to the organization.
+
+### Identification of Underperformance
+
+Either the manager or the employee in questions can identify underperformance.
+Identification is always discussed in the first 1:1 meeting between the manager
+and employee.
+The manager is tasked with with addressing the underperformance, and may
+formulate a plan to remedy the situation. All plans cover at most the next
+four weeks.
+
+When the employee self identified underperformance, the manager must create a
+plan for at least the next two weeks.
+
+All cases of underperformance must be documented by the manager through email to
+the CEO and CTO with the timespan of a potential plan created by the employee's
+manager.
+
+### Performance Improvement Plan (PIP)
+
+After  plan formulated by the manager has not returned the employee to performance
+that is considered on par with the expectations of their role the CEO and manager
+will create a PIP for the employee.
+
+**A PIP is a genuine change from FlowFuse the employee.** While other companies
+use PIPs soley to provide the legal documentation for termination, at FlowFuse a
+PIP is intended to set the bar for both the manager and employee and have transparency
+around expected performance.
+
+The PIP will outline the specific areas of underperformance, the specific steps
+the employee must take to improve, and the timeline for improvement. The employee
+will be required to sign the PIP and agree to its terms.
+
+If an employee has been on a PIP before and for the same reasons enters this stage
+of the underperformance policy again the CEO and manager can opt for not providing
+a PIP. This ensures that a PIP is a genuine change.
+
+### Termination
+
+If an employee's performance does not improve, or if they violate the terms of
+their PIP, they may be terminated. Termination will be based on a documented
+pattern of underperformance or unacceptable behavior.
