@@ -101,12 +101,12 @@ manager.
 
 ### Performance Improvement Plan (PIP)
 
-After  plan formulated by the manager has not returned the employee to performance
+After the plan formulated by the manager has not returned the employee to performance
 that is considered on par with the expectations of their role the CEO and manager
 will create a PIP for the employee.
 
-**A PIP is a genuine change from FlowFuse the employee.** While other companies
-use PIPs soley to provide the legal documentation for termination, at FlowFuse a
+**A PIP is a genuine opportunity from FlowFuse to the employee to get where they need to be.** While other companies
+use PIPs solely to provide the legal documentation for termination, at FlowFuse a
 PIP is intended to set the bar for both the manager and employee and have transparency
 around expected performance.
 
