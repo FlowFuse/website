@@ -131,7 +131,8 @@ the CEO does get performance reviews, though these are provided by the Board of
 Directors.
 
 All employees are free to provide feedback or input to the board of directors
-through email. It's adviced not to include the CEO in such an email.
+through email. This venue is to be used in all cases where you'd usually also go to someone's manager
+to discuss a reports underperformance. It's advised not to include the CEO in such an email.
 
 If the board agrees with the CEO underperforming a seperate process will be followed
 tailored to the sitation and the bylaws of FlowFuse.
