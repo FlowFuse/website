@@ -132,3 +132,6 @@ Directors.
 
 All employees are free to provide feedback or input to the board of directors
 through email. It's adviced not to include the CEO in such an email.
+
+If the board agrees with the CEO underperforming a seperate process will be followed
+tailored to the sitation and the bylaws of FlowFuse.
