@@ -121,8 +121,14 @@ meta:
                     <div class="mt-7 md:text-left items-left w-full mb-8 flex flex-row">
                         <div class="self-end">{% include "components/icons/chat-bubble-left-right.svg" %}</div>
                     </div>
-                    
-                    <a class="md:self-end ff-btn ff-btn--primary uppercase align-baseline w-full" href='/contact-us/' onclick="capture('cta-contact', {'position': 'primary'}, {'plan': 'cloud-enterprise'})">CONTACT SALES</a>
+                    {% edge "liquid" %}
+                        {% abtesting "ab-contact-us-form", "control" %}
+                            <a class="md:self-end ff-btn ff-btn--primary uppercase align-baseline w-full" href='/contact-us/' onclick="capture('cta-contact', {'position': 'primary'}, {'plan': 'cloud-enterprise'})">CONTACT SALES</a>
+                        {% endabtesting %}
+                        {% abtesting "ab-contact-us-form", "form-inside-pricing" %}
+                            <a class="md:self-end ff-btn ff-btn--primary uppercase align-baseline w-full" href='#contact-us' onclick="capture('cta-contact', {'position': 'primary'}, {'plan': 'cloud-enterprise'}); scrollToAnchor(event, 'feature-comparison')">CONTACT SALES</a>
+                        {% endabtesting %}
+                    {% endedge %}
                 </div>
             </div>
         </div>
@@ -212,7 +218,14 @@ meta:
                     <div class="mt-7 md:text-left items-left w-full mb-8 flex flex-row">
                             <div class="self-end">{% include "components/icons/chat-bubble-left-right.svg" %}</div>
                     </div>
-                    <a class="md:self-end ff-btn ff-btn--primary uppercase align-baseline w-full" href="/contact-us/" onclick="capture('cta-contact', {'position': 'primary'}, {'plan': 'sh-enterprise'})">CONTACT SALES</a>
+                    {% edge "liquid" %}
+                    {% abtesting "ab-contact-us-form", "control" %}
+                        <a class="md:self-end ff-btn ff-btn--primary uppercase align-baseline w-full" href='/contact-us/' onclick="capture('cta-contact', {'position': 'primary'}, {'plan': 'sh-enterprise'})">CONTACT SALES</a>
+                    {% endabtesting %}
+                    {% abtesting "ab-contact-us-form", "form-inside-pricing" %}
+                        <a class="md:self-end ff-btn ff-btn--primary uppercase align-baseline w-full" href='#contact-us' onclick="capture('cta-contact', {'position': 'primary'}, {'plan': 'sh-enterprise'}); scrollToAnchor(event, 'feature-comparison')">CONTACT SALES</a>
+                    {% endabtesting %}
+                    {% endedge %}
                 </div>
             </div>
         </div>
@@ -269,33 +282,37 @@ meta:
         for you to understand the choices we've made.
     </p>
 </div>
-<div class="w-full ff-bg-light -mt-4 pt-0">
-    <div class="w-full bg-white pb-20 md:pb-42">
-        <div class="w-full text-gray-50">
-            {% include "components/dividers/light-grey-curve-inverted.svg" %}
-        </div>
-        <div class="container max-w-5xl m-auto grid grid-cols-1 md:grid-cols-2 px-6 pt-16 gap-x-16 gap-y-6">
-            <div>
-                <h4 class="w-full text-center md:text-left">
-                    Contact Sales
-                </h4>
-                <p>
-                    Excited to explore FlowFuse Enterprise together! Share your info, and our sales team will reach out to discuss tailored solutions for your business-critical applications.
-                </p>
+{% edge "liquid" %}
+    {% abtesting "ab-contact-us-form", "form-inside-pricing" %}
+        <div id="contact-us" class="w-full ff-bg-light -mt-4 pt-0">
+            <div class="w-full bg-white pb-20 md:pb-42">
+                <div class="w-full text-gray-50">
+                    {% include "components/dividers/light-grey-curve-inverted.svg" %}
+                </div>
+                <div class="container max-w-5xl m-auto grid grid-cols-1 md:grid-cols-2 px-6 pt-16 gap-x-16 gap-y-6">
+                    <div>
+                        <h4 class="w-full text-center md:text-left">
+                            Contact Sales
+                        </h4>
+                        <p>
+                            Excited to explore FlowFuse Enterprise together! Share your info, and our sales team will reach out to discuss tailored solutions for your business-critical applications.
+                        </p>
+                    </div>
+                    <script>
+                        function displayHubSpotForm() {
+                        hbspt.forms.create({
+                            region: "eu1",
+                            portalId: "26586079",
+                            formId: "734455e5-4cda-4329-97da-07e40cda791c"
+                        });
+                        }
+                    </script>
+                    <script async type="text/javascript" charset="utf-8" src="//js-eu1.hsforms.net/forms/embed/v2.js" onload="displayHubSpotForm()"></script>
+                </div>
             </div>
-            <script>
-                function displayHubSpotForm() {
-                  hbspt.forms.create({
-                    region: "eu1",
-                    portalId: "26586079",
-                    formId: "734455e5-4cda-4329-97da-07e40cda791c"
-                  });
-                }
-              </script>
-              <script async type="text/javascript" charset="utf-8" src="//js-eu1.hsforms.net/forms/embed/v2.js" onload="displayHubSpotForm()"></script>
         </div>
-    </div>
-</div>
+    {% endabtesting %}    
+{% endedge %}
 
 <script>
     function scrollToAnchor(event, anchorId) {

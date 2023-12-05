@@ -134,8 +134,8 @@
             onclick: "capture('cta-contact', {'position': 'secondary'}, {'plan': 'sh-team'})"
         }, {
             cta: "CONTACT SALES",
-            url: "/contact-us/",
-            onclick: "capture('cta-contact', {'position': 'secondary'}, {'plan': 'sh-enterprise'})"
+            url: {% edge "liquid" %}{% abtesting "ab-contact-us-form", "control" %}"/contact-us/"{% endabtesting %}{% abtesting "ab-contact-us-form", "form-inside-pricing" %}"#contact-us"{% endabtesting %}{% endedge %},
+            onclick: "{% edge "liquid" %}{% abtesting "ab-contact-us-form", "control" %}capture('cta-contact', {'position': 'secondary'}, {'plan': 'sh-enterprise'}){% endabtesting %}{% abtesting "ab-contact-us-form", "form-inside-pricing" %}capture('cta-contact', {'position': 'secondary'}, {'plan': 'sh-enterprise'}); scrollToAnchor(event, 'contact-us'){% endabtesting %}{% endedge %}"
         }] 
     }]
 %}
