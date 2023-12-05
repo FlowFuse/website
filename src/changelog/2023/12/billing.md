@@ -1,6 +1,6 @@
 ---
 title: No Credit Card required for billing
-date: 2023-12-01 13:00:00.0
+date: 2023-12-06 13:00:00.0
 authors: ["marian-demme"]
 tags:
     - changelog
