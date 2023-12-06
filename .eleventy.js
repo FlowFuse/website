@@ -185,11 +185,11 @@ module.exports = function(eleventyConfig) {
     })
 
     eleventyConfig.addFilter("handbookBreadcrumbs", (url) => {
-        const parts = url.split("/");
-        parts.shift();
+        let parts = url.split("/").filter(e => e !== '');
         if (parts[parts.length-1] === "index") {
             parts.pop();
         }
+        
         let path = "";
         return "/"+parts.map(p => {
             let url = `${path}/${p}`;
