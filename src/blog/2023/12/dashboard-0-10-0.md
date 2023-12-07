@@ -1,7 +1,7 @@
 ---
 title: Building a Custom Video Player in Dashboard 2.0
-subtitle: We've just release the latest version of Dashboard 2.0, with a fully featured UI Templates node which now allows for full definition of a Vue component, external JS dependencies and CSS.
-description: We've just release the latest version of Dashboard 2.0, with a fully featured UI Templates node which now allows for full definition of a Vue component, external JS dependencies and CSS.
+subtitle: We've just released the latest version of Dashboard 2.0, with a fully featured UI Templates node which now allows for full definition of a Vue component, external JS dependencies and CSS.
+description: We've just released the latest version of Dashboard 2.0, with a fully featured UI Templates node which now allows for full definition of a Vue component, external JS dependencies and CSS.
 date: 2023-12-07
 authors: ["joe-pavitt"]
 image: "/blog/2023/12/images/tile-dashboard-0-10-0.png"
@@ -15,7 +15,7 @@ tags:
 
 Dashboard 2.0 just got _a lot_ more powerful with our new updates to the `ui-template` node. New features added to the node include:
 
-- Support for a full Vue componment to be defined using the VueJS Options API.
+- Support for a full Vue component  to be defined using the VueJS Options API.
 - Running of raw JavaScript within `<script />` tags
 - Loading of external dependencies through `<script />` tags
 
@@ -73,7 +73,7 @@ Some quick gotchas to note:
 
 ### Built-in Extras
 
-In addition to building a component from scratch, we'll also utilise some built-in features of `ui-template` too. These will be:
+In addition to building a component from scratch, we'll also utilize some built-in features of `ui-template` too. These will be:
 
 - **Variables:**
     - `id` - The unique ID for this node in Node-RED
@@ -101,16 +101,16 @@ We're going to start by adding a basic HTML video player:
 
 A few things of importance to note here:
 
-- `ref` is Vue's replace for `document.getElementById()`. This is coped to each instance of the component, meaning we can call `this.$refs['my-video']` to access the video element, and this doesn't reak when duplicating the widget multiple times in Dashboard.
+- `ref` is Vue's replacement for `document.getElementById()`. This is copied to each instance of the component, meaning we can call `this.$refs['my-video']` to access the video element, and this doesn't break when duplicating the widget multiple times in Dashboard.
 - `style=""` is required here to ensure the video fills the group/wrapper that it is contained within.
-- `@play=` is Vue's way of binding onto the standard `onplay` event listerner available on HTML video players. We'll define the `onPlay` method in the next section.
+- `@play=` is Vue's way of binding onto the standard `onplay` event listener available on HTML video players. We'll define the `onPlay` method in the next section.
 - `@pause=` is our event listener for when the video is paused by the user. As with `onPlay`, we'll define this shortly.
 
 With _just_ the above defined, we end up with a standard video player rendered:
 
 ![HTML5 Video Player rendered in Dashboard](./images/dashboard-video-1.png)
 
-### Defining the Behaviours (VueJS)
+### Defining the Behaviors (VueJS)
 
 Now we begin to build our Vue component. Referring back to our earlier set of features, we'll tackle these one at a time.
 
@@ -132,7 +132,7 @@ export default {
 
         // send a msg to Node-RED using built-in "send" fcn
         this.send({
-            // specifiy which action is taking place
+            // specify which action is taking place
             event: eventType,
             // use Vue's $refs to get the video's currentTime
             time: video.currentTime
@@ -149,7 +149,7 @@ export default {
 </script>
 ```
 
-With this functionality in place, we can wire the `ui-template` ndoe to a `debug` node, and see the following when we play/pause the video:
+With this functionality in place, we can wire the `ui-template` node to a `debug` node, and see the following when we play/pause the video:
 
 ![Example debug output when our custom build video player is played/paused](./images/dashboard-video-2.png)
 
@@ -232,7 +232,7 @@ You can also read the more comprehensive release notes for `v0.10.0` release her
 
 - [0.10.0 Release Notes](https://github.com/FlowFuse/node-red-dashboard/releases/tag/v0.10.0)
 
-As always, thanks for reading and your interested in Dashboard 2.0. If you have any feature requests, bugs/complaints or general feedback, please do reach out, and raise issues on our relevant [GitHub repository](https://github.com/FlowFuse/node-red-dashboard).
+As always, thanks for reading and your interest in Dashboard 2.0. If you have any feature requests, bugs/complaints or general feedback, please do reach out, and raise issues on our relevant [GitHub repository](https://github.com/FlowFuse/node-red-dashboard).
 
 - [Dashboard 2.0 Activity Tracker](https://github.com/orgs/FlowFuse/projects/15/views/1)
 - [Dashboard 2.0 Planning Board](https://github.com/orgs/FlowFuse/projects/15/views/4)
