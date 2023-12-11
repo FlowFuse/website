@@ -2,9 +2,9 @@
 title: Running the FlowFuse Device Agent as a service on Windows
 subtitle: Step by step guide to run the device agent as a Windows service
 description: Step by step guide to run the device agent as a Windows service
-date: 2023-05-02
-authors: ["stephen-mclaughlin", "grey-dziuba"]
-image: /blog/2023/05/images/agent-as-windows-service.png
+date: 2023-12-11
+authors: ["stephen-mclaughlin", "rob-marcer"]
+image: /blog/2023/12/images/agent-as-windows-service.png
 tags:
     - posts
     - flowfuse
