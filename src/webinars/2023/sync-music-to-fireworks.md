@@ -1,7 +1,7 @@
 ---
 title: "New Year Celebration - Sync Music with Fireworks or Light Shows"
 subtitle: DIY Guide to Synchronizing Music with Light Shows or Digital Fireworks for New Year's Eve
-image: /images/webinars/webinar-october.jpg
+image: /images/webinars/webinar-december.jpg
 
 date: 2023-12-21
 time: 17:00 CET (11:00am ET) 
