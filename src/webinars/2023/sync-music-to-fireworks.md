@@ -20,4 +20,3 @@ Join our upcoming webinar on "Syncing Music with Fireworks and Light Shows." Thi
 
 Sign-up today to participate.
 
-
