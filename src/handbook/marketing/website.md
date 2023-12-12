@@ -18,7 +18,7 @@ For the creative aspect of the website and its UX, we refer to a few B2B sites f
 2. [GitLab](https://about.gitlab.com)
 3. [Adyen](https://www.adyen.com/)
 4. [FleetDM](https://fleetdm.com/)
-5. [Ionic](https://ionic.io/)
+5. [Mailchimp](https://mailchimp.com/)
 
 ## Events Banner
 
