@@ -13,16 +13,7 @@ meta:
         <div class="text-center mb-10">
           <h3>Talk to sales</h3>
         </div>
-        <script>
-          function displayHubSpotForm() {
-            hbspt.forms.create({
-              region: "eu1",
-              portalId: "26586079",
-              formId: "734455e5-4cda-4329-97da-07e40cda791c"
-            });
-          }
-        </script>
-        <script async type="text/javascript" charset="utf-8" src="//js-eu1.hsforms.net/forms/embed/v2.js" onload="displayHubSpotForm()"></script>
+        {% include "contact-form-js.njk" %}
       </div>
     </div>
     <div class="m-auto w-full text-center px-6  border-t border-gray-200 pt-10">
