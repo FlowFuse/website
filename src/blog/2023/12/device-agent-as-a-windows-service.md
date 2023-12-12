@@ -15,7 +15,7 @@ FlowFuse's device agent allows you to manage and run your Node-RED instances on
 your own hardware such as a Raspberry Pi or Windows computer. This can be very useful where an
 application you've written needs to run flows with direct access to hardware sensors.
 
-In this article I'm going to explain the steps to configure our device agent to run as a service in Windows
+In this article, we're going to explain the steps to configure our device agent to run as a service in Windows
 using the [nssm](https://nssm.cc/) utility.
 
 <!--more-->
@@ -30,11 +30,11 @@ log off or the computer is restarted and no user is logged in.
 
 ## Summary
 
-The aim of this how-to is to install the flowfuse device-agent as a service on a windows computer.
+The aim of this how-to is to install the FlowFuse device-agent as a service on a Windows computer.
 
 There will be two main parts to this:
 1. Install the device-agent
-2. Setup the device-agent to run as a windows service
+2. Setup the device-agent to run as a Windows service
 
 Additionally, two user accounts will be needed for this configuration:
 1. A **user** account that will be used to run the device-agent (typically, non-admin account)
@@ -70,7 +70,7 @@ powershell -Command "Start-Process 'powershell' -Verb runAs
 ### Install Node.js
 The device-agent requires Node.js to be installed. You can download the latest version from https://nodejs.org/en/download/. 
 
-It is recommended to install the LTS version and to [x] check the "Automatically install the necessary tools" option. This is especially important if you intend on using any nodes that require native modules (like serialport).
+It is recommended to install the LTS version and to check the "Automatically install the necessary tools" option. This is especially important if you intend on using any nodes that require native modules (like serialport).
 
 ## Prepare the device-agent files directory
 As the admin user, open an [elevated](#tip-launching-an-elevated-command-prompt-window-eg-as-the-admin-user) command prompt, create the files directory and setup access permissions.
@@ -122,7 +122,7 @@ Remove-Item -Path nssm-2.24 -Recurse
 ```
 
 ### Manual download
-If you prefer, you can download the nssm zip file manually from https://nssm.cc/release/nssm-2.24.zip and extract the files to the `c:\opt` directory. Then copy the 64 bit version to the current directory.
+If you prefer, you can download the nssm zip file manually from [https://nssm.cc/release/nssm-2.24.zip](https://nssm.cc/release/nssm-2.24.zip) and extract the files to the `c:\opt` directory. Then copy the 64 bit version to the current directory.
 
 Ultimately, you should end up with a file named `nssm.exe` in the `c:\opt\` directory.
 
@@ -167,11 +167,11 @@ Below is how to run the device-agent with the UI enabled.  This will allow you t
 flowfuse-device-agent --ui --ui-port 8080 --ui-user admin --ui-pass admin -d c:\opt\flowfuse-device -p 1880
 ```
 
-The device-agent will now be running and you can access the UI at http://127.0.0.1:8080 with the user and password both "admin" (you can change these in the command line if required).
+The device-agent will now be running and you can access the UI at [http://127.0.0.1:8080](http://127.0.0.1:8080) with the user and password both "admin" (you can change these in the command line if required).
 _NOTE: These credentials are temporary and only valid during the device setup_
 
-Proceed to configure the device-agent and link it to your flowfuse team. Full instructions can be found here:
-https://flowfuse.com/docs/device-agent/register/#generating-%22device-configuration%22
+Proceed to configure the device-agent and link it to your flowfuse team. Full instructions can be found [here](
+https://flowfuse.com/docs/device-agent/register/#generating-%22device-configuration%22).
 Once you have linked the device-agent to your team, you can stop it by pressing `ctrl+c` in the command prompt window.
 
 ## Create the device-agent service
