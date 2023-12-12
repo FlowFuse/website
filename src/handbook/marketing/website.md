@@ -12,10 +12,10 @@ navTitle: Marketing - Website
 
 ### Website Inspiration
 
-For the creative aspect of the website and its UX, we use our [Refero](https://refero.design/) account for inspiration. Additionally, we refer to a few B2B sites for various page patterns—whether it's the layout, user flow, or interactions—, and this may extend to other aspects as well. Here's a list of our top 5:
+For the creative aspect of the website and its UX, we refer to a few B2B sites for various page patterns whether it's the layout, user flow, or interactions, and this may extend to other aspects as well. Here's a list:
 
 1. [Asana](https://asana.com/)
-2. [Grammarly](https://www.grammarly.com/business)
+2. [GitLab](https://about.gitlab.com)
 3. [Adyen](https://www.adyen.com/)
 4. [Mailchimp](https://mailchimp.com/)
 5. [Ionic](https://ionic.io/)
