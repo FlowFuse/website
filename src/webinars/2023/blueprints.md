@@ -5,6 +5,7 @@ image: /images/webinars/webinar-november23.jpg
 date: 2023-11-30
 time: 17:00 CET (11:00am ET) 
 duration: 60
+video: gk2DXI7J7cA
 hosts: ["marian-demme"]
 hubspot:
     formId: b4ec9aa1-8648-47b3-b908-ec8597e8735d

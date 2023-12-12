@@ -3,9 +3,56 @@ layout: page
 nohero: true
 meta:
     title: Start using Node-RED online for free
-description:
-    Node-RED's low-code brilliance hosted on FlowFuse cloud. Answer your questions about getting started with Node-RED including tips, best practices, and FAQs to using Node-RED for 
-    different use cases.
+    faq:
+        - question: "What is Node-RED and how does it work?"
+          answer: >
+            Node-RED is a low-code programming environment that allows developers to connect a wide variety of endpoints, such as industrial PLCs, APIs, databases, enterprise applications and online services. Users of Node-RED visually drag ‘nodes’ from a palette that represent the end points and then connect them together into flows to accomplish the desired task. Node-RED applications are accessible via a web browser.
+        - question: "How do I deploy Node-RED online or in the Cloud?"
+          answer: >
+            <a href='https://app.flowfuse.com/account/create/'>FlowFuse Cloud</a> is a hosted Node-RED service that developers can use to access Node-RED online. This makes it much quicker to get started using Node-RED since you don't need to install it locally.
+        - question: "What is Node-RED used for?"
+          answer: >
+            Node-RED can be used for a wide variety of use cases, including:
+            <ul>
+              <li>The <a  href='https://app.flowfuse.com/account/create/'>FlowFuse Cloud</a> is a hosted Node-RED service that developers can use to access Node-RED online. This makes it much quicker to get started using Node-RED since you don't need to install it locally.
+              </li>
+            </ul>
+        - question: "What is Node-RED used for?"
+          answer: >
+            Node-RED can be used for a wide variety of use cases, including:
+            <ul>
+              <li>The <a href='/solutions/manufacturing/'>manufacturing industry</a> uses Node-RED for collecting data from different pieces of factory equipment.</li>
+              <li>Creating dashboards that visualize data and allow for event triggers to occur based on the data.</li>
+              <li>Developing chatbot platforms that can collect interactions of a wide variety of social media platforms.</li>
+              <li>Extract, transform and integrate data from many different sources in the enterprise.</li>
+              <li>Lots of hobbyists use Node-RED for home automation.</li>
+              <li>Integrating data with machine learning models</li>
+            </ul>
+        - question: "How much does Node-RED cost?"
+          answer: >
+            Node-RED is an open source project hosted at the <a href='https://openjsf.org/' target='_blank'>OpenJS Foundation</a>. It is made available under the Apache Software License so individuals can use Node-RED free of charge. Participation in the open source project is encouraged to help support the Node-RED community.
+        - question: "What language is Node-RED?"
+          answer: >
+            Node-RED is a visual programming environment that allows you to do a lot without writing a single line of code. An important benefit of Node-RED is that it also allows for developers to write JavaScript and use the NodeJS API to extend the functionality of a node or flow.
+        - question: "How can I get started using Node-RED?"
+          answer: >
+            FlowFuse Cloud offers the easiest way to get <a href='/blog/2023/01/getting-started-with-node-red/'>started with Node-RED</a>. After signing into FlowFuse Cloud users have immediate access to a Node-RED instance. For those who prefer to install Node-RED themselves, there are many tutorials that help people to get started with Node-RED. A recommended starting point is the Getting Started found on <a href='https://nodered.org/' target='_blank'>nodered.org</a>. Other tutorials from the community include <a href='http://stevesnoderedguide.com/installing-node-red/' target='_blank'>Steve’s Node-RED Guide</a> and <a href='https://projects.raspberrypi.org/en/projects/getting-started-with-node-red/' target="_blank">Raspberry Pi Getting Started with Node-RED.</a>
+        - question: "What port number does Node-RED use?"
+          answer: >
+            Node-RED is accessed via port 1880. You can access the Node-RED editor running locally at http://localhost:1880 or on another computer at http://domain name:1880.
+        - question: "How can I secure a Node-RED installation?"
+          answer: >
+            There are three aspects of Node-RED that need to be secured.
+            <ol>
+              <li>Node-RED is a web application so you need to enable HTTPS access to the Node-RED runtime. The default Node-RED settings include a commented out section that can be used for local certificates.</li>
+              <li>The Node-RED editor and administration require authentication to access it. Node-RED supports username/password and OAuth/OpenID authentication. The adminAuth property in the setting file is used to specify the authentication credentials.</li>
+              <li>Securing the HTTP Node can be done using basic authentication. This can be set using the httpNodeAuth property in the settings file.</li>
+            </ol>
+            You can also follow <a href='/blog/2023/04/securing-node-red-in-production/'>our guide</a> on how to secure Node-RED.
+        - question: "How is Node-RED used in IoT?"
+          answer: >
+            Node-RED is very popular in the manufacturing and industrial automation industries (IIoT) as an edge computing solution. Often deployed on PLCs and IoT gateways, Node-RED supports collecting data from legacy and proprietary systems (Siemens S7, Modbus, OPC-UA, etc), integrating the industrial data with other data sources (weather data, enterprise data), filtering data on the edge, and then sending the data to the cloud. FlowFuse offers remote device deployment to IIoT edge devices. Node-RED is also very popular with DIY home automation enthusiasts, in particular the <a href='https://community.home-assistant.io/t/home-assistant-community-add-on-node-red/55023/' target='_blank'>Home Assistant</a> community. 
+description: Node-RED's low-code brilliance hosted on FlowFuse cloud. Answer your questions about getting started with Node-RED including tips, best practices, and FAQs to using Node-RED for different use cases.
 sitemapPriority: 0.8
 ---
 <!--First two sections-->
@@ -92,7 +139,7 @@ sitemapPriority: 0.8
 </div>    
 
 <!--Customer Stories Banner-->
-<div class="w-full gradient-bg text-center text-teal-50 px-6 pb-3 pt-8 text-lg flex-col flex-row items-center justify-center gap-1 hover:no-underline flex-wrap">
+<div class="w-full bg-gray-800 gradient-bg text-center text-teal-50 px-6 pb-3 pt-8 text-lg flex-col flex-row items-center justify-center gap-1 hover:no-underline flex-wrap">
     <h2>
         <span class="hover:no-underline text-gray-200">
             <span class="font-bold text-teal-100">Node-RED use cases</span>
@@ -285,7 +332,7 @@ sitemapPriority: 0.8
             <label class="m-auto text-center block max-w-lg md:max-w-none">Have a question that you don't see answered here? Feel free to reach out to us via our <a href="/contact-us">Contact Us</a> page</label>
             <div class="mt-12 m-auto w-full ff-prose">
                 <div class="prose max-w-none">
-                    {% for faq in nodeRed.faqs %}
+                    {% for faq in meta.faq %}
                     <div class="w-full {% if not loop.last %}border-b{% endif %} py-4">
                         <h5 class="question flex flex-row justify-between items-center w-full m-0 gap-6 cursor-pointer" id="question-{{ loop.index }}">
                             <span>{{ faq.question }}</span> 

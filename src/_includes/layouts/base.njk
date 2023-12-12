@@ -17,7 +17,6 @@ meta:
 eleventyComputed:
   meta:
     url: "{{ page.url | url | toAbsoluteUrl }}"
-    title: "{{ title }}"
     description: "{{ description }}"
     modified: "{{ page.date }}"
 ---
@@ -116,8 +115,8 @@ eleventyComputed:
 <body class="ff-website leading-normal tracking-normal gradient text-gray-500 min-h-screen flex flex-col" style="">
     <div class="flex-grow base">
         <div class="w-full">
-            <!-- Events Banner -->
-            {% include "../components/events-banner.njk" %}
+            <!-- Events Banner Comment out line below to remove banner-->
+            {# {% include "../components/events-banner.njk" %} #}
             <!-- Navigation Header -->
             <header id="ff-header" class="ff-header">
                 <nav class="relative w-full flex items-center justify-between mx-auto container md:max-w-screen-xl">

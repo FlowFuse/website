@@ -10,6 +10,16 @@ navTitle: Marketing - Website
 - When mentioning [FlowFuse Concepts](/docs/user/concepts/) (terminology) where possible we should link to an explanation of that concept.
 - All written content should use the [Oxford Comma](https://en.wikipedia.org/wiki/Serial_comma). We believe the Oxford Comma reduces the ambiguity of written technical content.
 
+### Website Inspiration
+
+For the creative aspect of the website and its UX, we refer to a few B2B sites for various page patterns whether it's the layout, user flow, or interactions, and this may extend to other aspects as well. Here's a list:
+
+1. [Asana](https://asana.com/)
+2. [GitLab](https://about.gitlab.com)
+3. [Adyen](https://www.adyen.com/)
+4. [FleetDM](https://fleetdm.com/)
+5. [Mailchimp](https://mailchimp.com/)
+
 ## Events Banner
 
 To update the event banner that appears at the top of the Website, you will need two pieces of information:
