@@ -121,7 +121,7 @@ meta:
                     <div class="mt-7 md:text-left items-left w-full mb-8 flex flex-row">
                         <div class="self-end">{% include "components/icons/chat-bubble-left-right.svg" %}</div>
                     </div>
-                    <a class="md:self-end ff-btn ff-btn--primary uppercase align-baseline w-full" href='/contact-us/' onclick="capture('cta-contact', {'position': 'primary'}, {'plan': 'cloud-enterprise'})">CONTACT SALES</a>
+                        <a class="md:self-end ff-btn ff-btn--primary uppercase align-baseline w-full" href='/contact-us/' onclick="capture('cta-contact', {'position': 'primary'}, {'plan': 'cloud-enterprise'})">CONTACT SALES</a>
                 </div>
             </div>
         </div>
@@ -209,9 +209,9 @@ meta:
                         </div>
                     </div>
                     <div class="mt-7 md:text-left items-left w-full mb-8 flex flex-row">
-                            <div class="self-end">{% include "components/icons/chat-bubble-left-right.svg" %}</div>
+                        <div class="self-end">{% include "components/icons/chat-bubble-left-right.svg" %}</div>
                     </div>
-                    <a class="md:self-end ff-btn ff-btn--primary uppercase align-baseline w-full" href="/contact-us/" onclick="capture('cta-contact', {'position': 'primary'}, {'plan': 'sh-enterprise'})">CONTACT SALES</a>
+                    <a class="md:self-end ff-btn ff-btn--primary uppercase align-baseline w-full" href='/contact-us/' onclick="capture('cta-contact', {'position': 'primary'}, {'plan': 'sh-enterprise'})">CONTACT SALES</a>
                 </div>
             </div>
         </div>
@@ -238,7 +238,7 @@ meta:
 {% endset %}
 
 <!-- Feature Comparison -->
-<div id="feature-comparison" class="product w-full ff-bg-light px-6 pt-20 pb-20 md:px-0 md:pt-6 md:pb-42">
+<div id="feature-comparison" class="product w-full ff-bg-light px-6 pt-20 md:px-0 md:pt-6">
     <div class="container max-w-screen-lg m-auto text-center">
         <div class="md:my-9">
             <h2 id="feature-comparison">Feature Comparison</h2>
@@ -267,6 +267,24 @@ meta:
         are important to your company. We've prepared a <a href="../product/security">security statement</a>
         for you to understand the choices we've made.
     </p>
+</div>
+<div id="contact-us" class="w-full ff-bg-light -mt-4 pt-0">
+    <div class="w-full bg-white pb-20 md:pb-42">
+        <div class="w-full text-gray-50">
+            {% include "components/dividers/light-grey-curve-inverted.svg" %}
+        </div>
+        <div class="container max-w-5xl m-auto grid grid-cols-1 md:grid-cols-2 px-6 pt-16 gap-x-16 gap-y-6">
+            <div>
+                <h4 class="w-full text-center md:text-left">
+                    Contact Sales
+                </h4>
+                <p>
+                    Excited to explore FlowFuse Enterprise together! Share your info, and our sales team will reach out to discuss tailored solutions for your business-critical applications.
+                </p>
+            </div>
+            {% include "contact-form-js.njk" %}
+        </div>
+    </div>
 </div>
 
 <script>
