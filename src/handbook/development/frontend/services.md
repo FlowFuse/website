@@ -30,7 +30,7 @@ import Alert from '@/services/alerts'
 Alert.emit(msg, type, countdown)
 ```
 
-The service is built from the [ff-notification-toast](https://flowforge.github.io/forge-ui-components/#ff-notification-toast) forge-ui-component.
+The service is built from the [ff-notification-toast](https://flowfuse.github.io/forge-ui-components/#ff-notification-toast) forge-ui-component.
 
 ## Dialog
 
@@ -52,6 +52,6 @@ import Dialog from '@/services/dialog'
 Dialog.show(msg, callback)
 ```
 
-The service is built from the [ff-dialog](https://flowforge.github.io/forge-ui-components/#ff-dialog) forge-ui-component.
+The service is built from the [ff-dialog](https://flowfuse.github.io/forge-ui-components/#ff-dialog) forge-ui-component.
 
 More complex `ff-dialog` instances, where you can use the component directly, can also be used for forms.
