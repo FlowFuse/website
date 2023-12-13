@@ -2,7 +2,7 @@
 title: Why the Automation Pyramid blocks digital transformation - The Role of Unified Namespace
 subtitle: A Critical Examination of the Automation Pyramid's Obstruction to Digital Transformation
 description: This article analyzes the Automation Pyramid's constraints and explains the Unified Namespace, highlighting its potential to evolve digital transformation in manufacturing.
-date: 2023-08-09 
+date: 2023-08-09
 authors: ["marian-demme"]
 image: blog/2023/08/images/UNS/UNS-Headline.svg
 tags:
