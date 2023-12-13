@@ -45,7 +45,7 @@ Hard to believe that Node-RED was launched 10 years ago. We want to celebrate th
 
 - [Our Open Source offering is a tier, not our competition](/blog/2023/08/open-source-is-a-tier-not-competition/) - some insight from our CEO into our open source strategy.
 
-- [Why the Automation Pyramid blocks digital transformation - The Role of Unified Namespace](/blog/2023/08/UNS-article/) - some insight from the FlowFuse product manager into the role of a Unified Namespace.
+- [Why the Automation Pyramid blocks digital transformation - The Role of Unified Namespace](/blog/2023/08/isa-95-automation-pyramid-to-unified-namespace/) - some insight from the FlowFuse product manager into the role of a Unified Namespace.
 
 ## From the Community
 
