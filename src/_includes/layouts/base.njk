@@ -223,23 +223,12 @@ eleventyComputed:
 
                     <ul class="hidden top-8 right-0 border shadow-sm md:inline md:shadow-none w-36 z-10 md:border-0 bg-white md:bg-transparent md:w-auto rounded md:static md:float-none md:flex md:flex-row flex-col items-center justify-end font-medium text no-underline">
 			            <li class="flex"><a href="{{ site.appURL }}">Sign In</a></li>
-                        {% edge "liquid" %}
-                            {% abtesting "ab-main-nav-button", "control" %}
-                                <a class="ab-main-nav-button ml-2 ff-btn ff-btn--primary uppercase text-sm inline-flex" href="{{ site.appURL }}/account/create" onclick="capture('cta-join', {'position': 'header'})">
-                                    Free Trial
-                                </a>
-                            {% endabtesting %}
-                            {% abtesting "ab-main-nav-button", "talk-to-sales" %}
-                                <a class="ab-main-nav-button ml-2 ff-btn ff-btn--primary uppercase text-sm inline-flex" href="/contact-us" onclick="capture('cta-contact-us', {'position': 'header'})">
-                                    Talk to Sales
-                                </a>
-                            {% endabtesting %}
-                        {% endedge %}
+                        <a class="ab-main-nav-button ml-2 ff-btn ff-btn--primary uppercase text-sm inline-flex" href="/contact-us" onclick="capture('cta-talk-to-sales', {'position': 'header'})">Talk to Sales</a>
                     </ul>
                 </nav>
                 <div id="mobile-ctas" class="hidden fixed bottom-0 z-20">
                     <a href="{{ site.appURL }}" class="ff-btn ff-btn--tertiary">Sign In</a>
-                    <a class="ff-btn ff-btn--primary" href="{{ site.appURL }}/account/create" onclick="capture('cta-join', {'position': 'header'})">Free Trial</a>
+                    <a class="ff-btn ff-btn--primary" href="/contact-us" onclick="capture('cta-talk-to-sales', {'position': 'header'})">Talk to Sales</a>
                 </div>    
             </header>
             <!-- Main Content -->
