@@ -620,3 +620,33 @@
         @apply text-teal-300 text-xs uppercase font-bold;
     }
 }
+
+/* CONTACT US & BOOK A DEMO */
+
+@layer components {
+
+    .form-container {
+        @apply w-full px-4 pt-4 md:pt-12 -mb-24 sm:-mb-6;
+    }
+
+    .social-proof-logos {
+        @apply m-auto max-w-5xl pb-10 text-center px-6 border-t border-gray-200 pt-10;
+    }
+
+    .other-channels {
+        @apply grid px-6 lg:px-0 grid-cols-1 md:grid-cols-2 gap-6 md:gap-x-12 gap-y-12 mb-16 pt-14;
+    }
+
+    .channel {
+        @apply md:flex md:flex-col md:justify-between text-left self-start md:h-full;
+    }
+
+    .channel .title {
+        grid-template-columns: 64px auto;
+        @apply grid items-center gap-4;
+    }
+
+    .channel .button-container {
+        @apply text-center max-w-4xl flex flex-col md:items-start mt-6;
+    }
+}
