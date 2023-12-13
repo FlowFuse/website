@@ -1,69 +1,22 @@
 ---
-layout: layouts/page.njk
+layout: layouts/mql-contact.njk
 title: Contact us
 description: <p>Thank you for your interest in FlowFuse! </br> Share your info, and our sales team will reach out to discuss tailored solutions for your business-critical applications.</p>
 sitemapPriority: 0.8
 meta:
     description: Get in touch with FlowFuse
+hubspotScript: "contact-form-js.njk"
+otherChannels:
+  - title: Are you ready to jump on a call?
+    description: Pick a date and time and we’ll guide you through all the amazing features that FlowFuse has to offer.
+    buttonText: BOOK A DEMO
+    buttonLink: /book-demo
+    image: ./images/pictograms/book-a-demo_red.png
+    imageAlt: "Graphics depicting a video call."
+  - title: Where you looking to solve some technical issue?
+    description: Check out our Help Center for support, you’ll find all the channels available to solve any issues you’re encountering.
+    buttonText: HELP CENTER
+    buttonLink: /support
+    image: ./images/pictograms/support_red.png
+    imageAlt: "Graphics depicting a helping hand."
 ---
-<div class="text-left max-w-full ff-bg-light">
-  <div class="container m-auto text-left max-w-5xl pb-10">
-    <div class="flex flex-col max-w-2xl justify-center items-center md:px-4 md:-mb-0 md:px-0 md:block mx-auto">
-      <div class="ff-bg-light product px-4 pb-6 pt-8 md:pb-9 md:p-12">
-        <div class="text-center mb-10">
-          <h3>Talk to sales</h3>
-        </div>
-        {% include "contact-form-js.njk" %}
-      </div>
-    </div>
-    <div class="m-auto w-full text-center px-6  border-t border-gray-200 pt-10">
-    {% include "social-proof.njk" %}
-    </div>
-  </div>
-  <div class="w-full bg-white pb-10">
-  <div class="container m-auto max-w-lg md:max-w-4xl">
-    <div class="grid px-6 lg:px-0 grid-cols-1 md:grid-cols-2 gap-6 md:gap-x-12 gap-y-12 mb-16 pt-14">
-      <div class="md:flex md:flex-col md:justify-between text-left self-start md:h-full">
-          <h4 class="grid items-center gap-4" style="grid-template-columns: 64px auto;">
-            <div class="w-16">
-              {% image "./images/pictograms/book-a-demo_red.png", "Graphics depicting a video call.", [64] %}
-            </div>
-            <div class="leading-8 w-auto">
-              Are you ready to jump on a call?
-            </div>
-          </h4>
-          <p class="mb-0">
-            Pick a date and time and we’ll guide you through all the amazing features that FlowFuse has to offer.
-          </p>
-        <div class="container text-center max-w-4xl flex flex-col md:items-start mt-6">
-          <a href="/book-demo" class="ff-btn ff-btn--primary-outlined flex flex-col">
-            <span class="text-base uppercase no-underline md:px-4">
-              BOOK A DEMO
-            </span>
-          </a>
-        </div>
-      </div>
-      <div class="md:flex md:flex-col md:justify-between text-left self-start md:h-full">
-          <h4 class="grid items-center gap-4" style="grid-template-columns: 64px auto;">
-            <div class="w-16">
-              {% image "./images/pictograms/support_red.png", "Graphics depicting a video call.", [64] %}
-            </div>
-            <div class="leading-8 w-auto">
-              Where you looking to solve some technical issue?
-            </div>
-          </h4>
-          <p class="mb-0">
-            Check out our Help Center for support, you’ll find all the channels available to solve any issues you’re encountering.
-          </p>
-        <div class="container text-center max-w-4xl flex flex-col md:items-start mt-6">
-          <a href="/support" class="ff-btn ff-btn--primary-outlined flex flex-col">
-            <span class="text-base uppercase no-underline md:px-4">
-              HELP CENTER
-            </span>
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
-  </div>
-</div>

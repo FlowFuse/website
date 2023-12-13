@@ -1,0 +1,46 @@
+---
+layout: layouts/page.njk
+---
+<div class="text-left max-w-full ff-bg-light">
+  <div class="container m-auto text-left max-w-5xl">
+    <div class="flex flex-col justify-center items-center md:block mx-auto">
+      <div class="ff-bg-light product form-container">
+        <!-- Form / Calendar Script -->
+          {% include hubspotScript %}
+      </div>
+    </div>
+    <!-- Social proof logos -->
+    <div class="social-proof-logos">
+      {% include "social-proof.njk" %}
+    </div>
+  </div>
+  <div class="w-full bg-white pb-10">
+    <div class="container m-auto max-w-lg md:max-w-4xl">
+      <!-- Alternative contact channels -->
+      <div class="other-channels">
+        {% for channel in otherChannels %}
+          <div class="channel">
+            <h4 class="title">
+              <div class="w-16">
+                {% image channel.image, channel.imageAlt, [64] %}
+              </div>
+              <div class="leading-8 w-auto">
+                {{ channel.title }}
+              </div>
+            </h4>
+            <p class="mb-0">
+              {{ channel.description }}
+            </p>
+            <div class="container button-container">
+              <a href="{{ channel.buttonLink }}" class="ff-btn ff-btn--primary-outlined flex flex-col">
+                <span class="text-base uppercase no-underline md:px-4">
+                  {{ channel.buttonText }}
+                </span>
+              </a>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</div>
