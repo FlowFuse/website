@@ -626,11 +626,11 @@
 @layer components {
 
     .form-container {
-        @apply w-full px-4 pt-4 md:pt-12 -mb-24 sm:-mb-6;
+        @apply w-full px-4 pt-4 md:pt-12;
     }
 
     .social-proof-logos {
-        @apply m-auto max-w-5xl pb-10 text-center px-6 border-t border-gray-200 pt-10;
+        @apply m-auto max-w-5xl pb-10 text-center px-6 border-t border-gray-200 pt-10 md:mt-6;
     }
 
     .other-channels {
