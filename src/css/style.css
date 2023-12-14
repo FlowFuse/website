@@ -403,7 +403,7 @@ h4:hover .header-anchor {
     .ff-website .ff-header::after {
         content: "";
         position: absolute;
-        bottom: -12px;
+        bottom: -8px;
         left: 0;
         height: 8px;
         width: 100%;

@@ -4,23 +4,25 @@ sitemapPriority: 1.0
 ---
 {% include "snow-js.njk" %}
 <!--Hero Content-->
-<div class="w-full px-6 pb-24 mt-12 md:px-0 ff-bg-flows">
-    <div class="container m-auto text-center max-w-2xl">
-        <h1 class="text-gray-50 max-w-xl m-auto">
-            Build bespoke, flexible, and resilient manufacturing applications
-        </h1>
-        <p class="mt-6 text-gray-400 text-lg font-normal">
-            FlowFuse and Node-RED allows your engineers to deliver<br />custom manufacturing applications that can grow to meet your changing requirements.
-        </p>
-        <div class="flex flex-col">
-            <div class="m-auto mt-7 flex flex-col gap-4 items-center justify-center button-container">
-                <a class="ff-btn ff-btn--primary flex flex-col" href="{{ site.appURL }}/account/create" onclick="capture('cta-join', {'position': 'primary'})">
-                    <span class="text-base uppercase flex gap-2 items-center">
-                        Build your first application
-                        {% include "components/icons/arrow-right.svg" %}
-                    </span>
-                </a>
-                <img class="corner-icon" src="../images/christmas-hat.png" alt="Christmas hat">
+<div id="snow" class="w-full pt-9 mt-3">
+    <div class="w-full px-6 pb-24 md:px-0 ff-bg-flows">
+        <div class="container m-auto text-center max-w-2xl">
+            <h1 class="text-gray-50 max-w-xl m-auto">
+                Build bespoke, flexible, and resilient manufacturing applications
+            </h1>
+            <p class="mt-6 text-gray-400 text-lg font-normal">
+                FlowFuse and Node-RED allows your engineers to deliver<br />custom manufacturing applications that can grow to meet your changing requirements.
+            </p>
+            <div class="flex flex-col">
+                <div class="m-auto mt-7 flex flex-col gap-4 items-center justify-center button-container">
+                    <a class="ff-btn ff-btn--primary flex flex-col" href="{{ site.appURL }}/account/create" onclick="capture('cta-join', {'position': 'primary'})">
+                        <span class="text-base uppercase flex gap-2 items-center">
+                            Build your first application
+                            {% include "components/icons/arrow-right.svg" %}
+                        </span>
+                    </a>
+                    <img class="corner-icon" src="../images/christmas-hat.png" alt="Christmas hat">
+                </div>
             </div>
         </div>
     </div>
@@ -29,7 +31,7 @@ sitemapPriority: 1.0
 {% include "components/divider-flow--default.njk" %}
 
 <div class="flex justify-center">
-    <lite-youtube videoid="eR0P40sxge8" style="background-image: url('images/thumbnail-nick-flowfuse.png'); width: 620px; height: 360px" class="absolute -mt-10 max-w-xs max-h-48 border-4 rounded-md sm:max-w-none sm:max-h-full"></lite-youtube>
+    <lite-youtube videoid="eR0P40sxge8" style="background-image: url('images/thumbnail-nick-flowfuse.png'); width: 620px; height: 360px" class="absolute -mt-10 max-w-xs max-h-48 border-4 rounded-md sm:max-w-none sm:max-h-full z-[9999]"></lite-youtube>
 </div>
 
 <!-- Secondary Content -->
