@@ -399,6 +399,30 @@ h4:hover .header-anchor {
     .ff-website .ff-header {
         @apply bg-gray-800 w-full px-6 py-4 sm:py-6 md:py-0 top-0 z-10 relative;
     }
+    /* Christmas decoration */
+    .ff-website .ff-header::after {
+        content: "";
+        position: absolute;
+        bottom: -12px;
+        left: 0;
+        height: 8px;
+        width: 100%;
+        margin-top: 5px;
+        background-image: url('/images/candy-cane-texture.svg');
+        background-repeat: repeat-x;
+        background-size: contain;
+    }
+
+    @media (min-width: 1400px) {
+        .ff-website .ff-header::after {
+            left: 5%;
+            width: 90%;
+            background: linear-gradient(to right, rgba(31,41,55, 1), rgba(31,41,55, 0) 25%, rgba(31,41,55, 0) 75%, rgba(31,41,55, 1)), url('/images/candy-cane-texture.svg');
+            background-repeat: repeat-x;
+            background-size: contain;
+        }
+    }
+
     .ff-website header .ff-wordmark path,
     .ff-website header .ff-icon--gh path {
         fill: theme(colors.red.400);
@@ -438,7 +462,7 @@ h4:hover .header-anchor {
 
     .ff-website header #mobile-ctas {
         transition: 0.3s bottom;
-        @apply -bottom-20 fixed w-full flex left-0 pl-4 right-0 pr-4 bg-gray-900 py-4 gap-4;
+        @apply -bottom-20 fixed w-full flex left-0 px-6 right-0 bg-gray-900 py-4 gap-4;
     }
     .ff-website header #mobile-ctas button,
     .ff-website header #mobile-ctas a {
@@ -1252,4 +1276,16 @@ div.content section.footnotes ol li p {
 
 #hubspot-messages-iframe-container {
     z-index: 5 !important;
+}
+
+.button-container {
+    position: relative;
+}
+
+.corner-icon {
+    position: absolute;
+    top: -9px;  /* Adjust as needed */
+    right: -19px; /* Adjust as needed */
+    width: 34px; /* Adjust as needed */
+    height: 30px; /* Adjust as needed */
 }
