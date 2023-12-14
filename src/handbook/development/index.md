@@ -21,6 +21,7 @@ This includes, but is not limited to:
 - [Security Policy](./security.md)
 - [Packaging](./packaging.md) - how we manage repos and npm packaging
 - [Contributing](./contributing.md) - tips on our development style to help get started contributing
+- [Tools](./tools.md) - the tools we use
 
 ## Releases
 
