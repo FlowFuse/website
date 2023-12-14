@@ -519,3 +519,32 @@ What problem does the persona want to solve, or which benefit does the character
         </div>
     </div>
 </div>
+
+## Common Use Cases
+
+Based on the Personas, the following section describes the most relevant Use Cases that we identified in exchange with our customers. These Use Cases align with the [Product Strategy](../strategy.md).
+
+1. **Data transformation**
+As a Node-RED User,
+I want to connect, collect, and store data from several sources,
+so that I can analyze my data further and ensure it is accessible in a unified manner.
+
+2. **Generate actionable insights**
+As a Node-RED User,
+I want to visualize and analyze my data,
+so that I can generate actionable insights from my data.
+
+3. **Enterprise Readiness**
+As a FlowFuse User,
+I want a professional partner with seamless enterprise integration, security, and a reliable architecture,
+so that I can use Node-RED in corporate and production environments.
+
+4. **Scale Node-RED**
+As a FlowFuse User,
+I want to orchestrate a fleet of Node-RED instances,
+so that their management is simplified.
+
+5. **Team Collaboration**
+As a FlowFuse User,
+I want to collaborate with my colleagues on Node-RED projects,
+so that we can share ideas and work together effectively.
