@@ -20,7 +20,7 @@
         {%- asyncEach node in certifiedNodes | filterNodeCategory(category)  -%}
         <li class="w-full border bg-white rounded-lg hover:drop-shadow-lg hover:border-red-600 transition ease-in-out duration-300">
             {%- set templateFile = "src/_includes/certified/nodes/" + node.title | slugify + ".md" %}
-            {%- set templateFileUrl = "/certified-nodes/" + node.tags | slugify + "/" + node.title | slugify + "/" %}
+            {%- set templateFileUrl = "/certified-nodes/" + node.title | slugify + "/" %}
             <a href=
               {%- if templateFile | templateExists %}
                 "{{ templateFileUrl }}"

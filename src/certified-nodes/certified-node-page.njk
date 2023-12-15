@@ -1,10 +1,12 @@
 ---
 layout: layouts/certified.njk
 pagination:
-    data: certifiedNodes
-    size: 1
-    alias: node
-permalink: "certified-nodes/{{ node.tags | slugify }}/{{ node.title | slugify }}/"
+  data: certifiedNodes
+  size: 1
+  alias: node
+permalink: "certified-nodes/{{ node.title | slugify }}/"
+eleventyComputed:
+  title: "{{ node.title }}"
 ---
 
 {% set templateFile = "src/_includes/certified/nodes/" + node.title | slugify + ".md" %}
