@@ -34,6 +34,13 @@ jobs:
           ref: main
           path: 'blueprint-library'
           token: ${{ steps.generate_token.outputs.token }}
+      - name: Check out FlowFuse/certified-nr-nodes repository (to access the modules.json)
+        uses: actions/checkout@v3
+        with:
+          repository: 'FlowFuse/certified-nr-nodes'
+          ref: main
+          path: 'certified-nr-nodes'
+          token: ${{ steps.generate_token.outputs.token }}
       - name: Install jq
         run: sudo apt-get -qy install jq
       - uses: actions/setup-node@v3

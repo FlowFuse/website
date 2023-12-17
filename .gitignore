@@ -6,6 +6,7 @@ src/docs/*
 !src/docs/docs.json
 src/blueprints/*
 !src/blueprints/*.njk
+src/_data/certifiedNodes.json
 
 # Netlify generated stuff
 .netlify/

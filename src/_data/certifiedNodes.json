@@ -1,55 +1,116 @@
-[{
-    "title": "Email",
-    "id": "node-red-node-email",
-    "url": "https://flows.nodered.org/node/node-red-node-email",
-    "description": "Send and receive simple emails.",
-    "tags": ["communication"]
-  },{
-    "title": "Influx DB",
-    "id": "node-red-contrib-influxdb",
-    "url": "https://flows.nodered.org/node/node-red-contrib-influxdb",
-    "description": "Save and query data from an influxdb time series database.",
-    "tags": ["database"]
-  },{
-    "title": "PostgreSQL",
-    "id": "node-red-contrib-postgresql",
-    "url": "https://flows.nodered.org/node/node-red-contrib-postgresql",
-    "description": "PostgreSQL, supporting parameters, split, back-pressure.",
-    "tags": ["database"]
-  },{
-    "title": "Node-RED Dashboard 2.0",
-    "id": "@flowforge/node-red-dashboard",
-    "url": "https://flows.nodered.org/node/@flowforge/node-red-dashboard",
-    "description": "Nodes that provide functionality to build your own UI applications (inc. forms, buttons, charts).",
-    "tags": ["flowfuse-node"]
-  },{
-    "title": "Snapshot plugin",
-    "id": "@flowforge/nr-tools-plugin",
-    "url": "https://flows.nodered.org/node/@flowforge/nr-tools-plugin",
-    "description": "Plugin that allows you to interact with the FlowForge platform.",
-    "tags": ["flowfuse-node"]
-  },{
-    "title": "Base64 Formatter",
-    "id": "node-red-node-base64",
-    "url": "https://flows.nodered.org/node/node-red-node-base64",
-    "description": "Node to pack and unpack objects to base64 format",
-    "tags": ["formatting"]
-  },{
-    "title": "Buffer Parser",
-    "id": "node-red-contrib-buffer-parser",
-    "url": "https://flows.nodered.org/node/node-red-contrib-buffer-parser",
-    "description": "Convert values to and from buffer/array. Supports Big/Little Endian, BCD, byte swapping and more.",
-    "tags": ["protocol"]
-  },{
-    "title": "Mitsubishi PLC",
-    "id": "node-red-contrib-mcprotocol",
-    "url": "https://flows.nodered.org/node/node-red-contrib-mcprotocol",
-    "description": "Read from & Write to MITSUBISHI PLC over Ethernet using MC Protocol.",
-    "tags": ["protocol"]
-  },{
-    "title": "OMRON PLC",
+[
+  {
+    "title": "NR TOOLS PLUGIN",
+    "id": "@flowfuse/nr-tools-plugin",
+    "url": "https://flows.nodered.org/node/@flowfuse/nr-tools-plugin",
+    "description": "A Node-RED plugin that adds FlowFuse platform tools to the editor"
+  },
+  {
+    "title": "OMRON FINS",
     "id": "node-red-contrib-omron-fins",
     "url": "https://flows.nodered.org/node/node-red-contrib-omron-fins",
-    "description": "Ethernet protocol functions 'Read' and 'write' for communicating with OMRON PLCs from node-red.",
-    "tags": ["protocol"]
-  }]
+    "description": "OMRON FINS Ethernet protocol functions 'Read' and 'write' for communicating with OMRON PLCs from node-red"
+  },
+  {
+    "title": "MCPROTOCOL",
+    "id": "node-red-contrib-mcprotocol",
+    "url": "https://flows.nodered.org/node/node-red-contrib-mcprotocol",
+    "description": "Mode-red nodes to Read from & Write to MITSUBISHI PLC over Ethernet using MC Protocol"
+  },
+  {
+    "title": "MODBUS",
+    "id": "node-red-contrib-modbus",
+    "url": "https://flows.nodered.org/node/node-red-contrib-modbus",
+    "description": "The all in one Modbus TCP and Serial contribution package for Node-RED."
+  },
+  {
+    "title": "BUFFER PARSER",
+    "id": "node-red-contrib-buffer-parser",
+    "url": "https://flows.nodered.org/node/node-red-contrib-buffer-parser",
+    "description": "Node-red nodes to convert values to and from buffer/array. Supports Big/Little Endian, BCD, byte swapping and much more"
+  },
+  {
+    "title": "S7",
+    "id": "node-red-contrib-s7",
+    "url": "https://flows.nodered.org/node/node-red-contrib-s7",
+    "description": "A Node-RED node to interact with Siemens S7 PLCs"
+  },
+  {
+    "title": "EMAIL",
+    "id": "node-red-node-email",
+    "url": "https://flows.nodered.org/node/node-red-node-email",
+    "description": "Node-RED nodes to send and receive simple emails."
+  },
+  {
+    "title": "NODE RED DASHBOARD",
+    "id": "@flowfuse/node-red-dashboard",
+    "url": "https://flows.nodered.org/node/@flowfuse/node-red-dashboard",
+    "description": "A collection of Node-RED nodes that provide functionality to build your own UI applications (inc. forms, buttons, charts) within Node-RED."
+  },
+  {
+    "title": "INFLUXDB",
+    "id": "node-red-contrib-influxdb",
+    "url": "https://flows.nodered.org/node/node-red-contrib-influxdb",
+    "description": "Node-RED nodes to save and query data from an influxdb time series database"
+  },
+  {
+    "title": "POSTGRESQL",
+    "id": "node-red-contrib-postgresql",
+    "url": "https://flows.nodered.org/node/node-red-contrib-postgresql",
+    "description": "Node-RED node for PostgreSQL, supporting parameters, split, back-pressure"
+  },
+  {
+    "title": "MSSQL PLUS",
+    "id": "node-red-contrib-mssql-plus",
+    "url": "https://flows.nodered.org/node/node-red-contrib-mssql-plus",
+    "description": "A node-red node to execute queries, stored procedures and bulk inserts in Microsoft SQL Server and Azure Databases SQL2000 ~ SQL2022"
+  },
+  {
+    "title": "CHATBOT",
+    "id": "node-red-contrib-chatbot",
+    "url": "https://flows.nodered.org/node/node-red-contrib-chatbot",
+    "description": "REDBot a Chat bot for a full featured chat bot for Telegram, Facebook Messenger and Slack. Almost no coding skills required"
+  },
+  {
+    "title": "CIP ETHERNET IP",
+    "id": "node-red-contrib-cip-ethernet-ip",
+    "url": "https://flows.nodered.org/node/node-red-contrib-cip-ethernet-ip",
+    "description": "A Node-RED node to interact with Allen Bradley / Rockwell PLCs using the EtherNet/IP Protocol"
+  },
+  {
+    "title": "BASE64",
+    "id": "node-red-node-base64",
+    "url": "https://flows.nodered.org/node/node-red-node-base64",
+    "description": "A Node-RED node to pack and unpack objects to base64 format"
+  },
+  {
+    "title": "IIOT OPCUA",
+    "id": "node-red-contrib-iiot-opcua",
+    "url": "https://flows.nodered.org/node/node-red-contrib-iiot-opcua",
+    "description": "An Industrial IoT OPC UA toolbox contribution package for Node-RED based on node-opcua."
+  },
+  {
+    "title": "OPCUA",
+    "id": "node-red-contrib-opcua",
+    "url": "https://flows.nodered.org/node/node-red-contrib-opcua",
+    "description": "A Node-RED node to communicate via OPC UA based on node-opcua library."
+  },
+  {
+    "title": "MONGODB4",
+    "id": "node-red-contrib-mongodb4",
+    "url": "https://flows.nodered.org/node/node-red-contrib-mongodb4",
+    "description": "A MongoDB node for Node-Red without limitations."
+  },
+  {
+    "title": "SQLITE",
+    "id": "node-red-node-sqlite",
+    "url": "https://flows.nodered.org/node/node-red-node-sqlite",
+    "description": "A sqlite node for Node-RED"
+  },
+  {
+    "title": "MYSQL",
+    "id": "node-red-node-mysql",
+    "url": "https://flows.nodered.org/node/node-red-node-mysql",
+    "description": "A Node-RED node to read and write to a MySQL database"
+  }
+]
