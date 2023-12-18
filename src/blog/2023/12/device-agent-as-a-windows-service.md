@@ -45,7 +45,7 @@ _This will be `c:\opt\flowfuse-device`_
 
 To make the device-agent run as a service, we will (in this example), use [nssm](https://nssm.cc/) but you are free to choose an alternative tool to run the device agent as a service.
 
-Finally, we set the service to run under the regular **user** account.
+Finally, we set the service to run under the **service** account.
 
 _NOTE: The instructions in this how to were written on **Windows 11 Pro 22H2**_
 
@@ -86,7 +86,7 @@ mkdir c:\opt\flowfuse-device
 # grant full access to the user account that will run the device-agent
 icacls c:\opt\flowfuse-device /grant "user":F /T
 ```
-_where `"user"` is the regular account (not the admin account)_
+_where `"user"` is the servi account (not the admin account)_
 
 ## Install nssm
 `nssm` can simply be downloaded and executed from any path.
@@ -133,13 +133,13 @@ Ultimately, you should end up with a file named `nssm.exe` in the `c:\opt\` dire
 
 ## Install and configure the device-agent
 
-As the regular **user** account, to do so open a command prompt window and run the following and authenticate:
+As the **service** account, to do so open a command prompt window and run the following and authenticate:
 
 ```bash
 runas /user:{user} cmd
 # e.g. runas /user:winserv cmd
 ```
-_where `{user}` is the regular account (not the admin account)_
+_where `{user}` is the service account (not the admin account)_
 
 ### Check the users npm global path is set in the Users Environment Variables
 
@@ -224,7 +224,7 @@ The most important thing to check is the `Application` tab. This includes the pa
 Select the "Log on" tab, select "This account" and enter the user account name and password that will run the device-agent.
 Click the "Edit Service" button to save the changes.
 
-Now you have a service that will run the device-agent as the regular user account 🎉
+Now you have a service that will run the device-agent as the **service** user account 🎉
 
 
 ### Controlling the service
