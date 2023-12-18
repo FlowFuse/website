@@ -55,13 +55,13 @@ If the account is a domain account, append the domain name to the **user** e.g. 
 
 ### TIP: Launching an elevated command prompt window (e.g. as the admin user)
 
-```
+```bash
 powershell -Command "Start-Process 'cmd' -Verb runAs
 ```
 
 ### TIP: Launching an elevated powershell prompt window (e.g. as the admin user)
 
-```
+```bash
 powershell -Command "Start-Process 'powershell' -Verb runAs
 ```
 
@@ -79,7 +79,7 @@ If you need to create a new **user** account follow these [instructions](https:/
 ## Prepare the device-agent files directory
 As the admin user, open an [elevated](#tip-launching-an-elevated-command-prompt-window-eg-as-the-admin-user) command prompt, create the files directory and setup access permissions.
 
-```
+```bash
 # In an elevated command prompt
 mkdir c:\opt
 mkdir c:\opt\flowfuse-device
@@ -92,8 +92,8 @@ _where `"user"` is the regular account (not the admin account)_
 `nssm` can simply be downloaded and executed from any path.
 We will download it to the `c:\opt` directory, extract the files and copy the 64 bit version to the current directory.
 
-### `cmd` version ([elevated](#tip-launching-an-elevated-command-prompt-window-eg-as-the-admin-user) command prompt)
-```
+### `cmd` version [elevated](#tip-launching-an-elevated-command-prompt-window-eg-as-the-admin-user) command prompt
+```bash
 # starting in the device-agent files directory
 cd c:\opt
 # download the nssm zip file
@@ -108,7 +108,7 @@ rmdir /s /q nssm-2.24
 ```
 
 
-### `powershell` version ([elevated](#tip-launching-an-elevated-powershell-prompt-window-eg-as-the-admin-user) powershell prompt)
+### `powershell` version [elevated](#tip-launching-an-elevated-powershell-prompt-window-eg-as-the-admin-user) powershell prompt
 If you don't have `cURL` installed, then powershell can be used to download the file. Here is how to do it:
 
 ```powershell
@@ -185,7 +185,7 @@ https://flowfuse.com/docs/device-agent/register/#generating-%22device-configurat
 Once you have linked the device-agent to your team, you can stop it by pressing `ctrl+c` in the command prompt window.
 
 ## Create the device-agent service
-As the admin user, open an elevated command prompt (see [TIP](#tip-launching-an-elevated-command-prompt-window-eg-as-the-admin-user) above)
+As the admin user, open an elevated command prompt see [TIP](#tip-launching-an-elevated-command-prompt-window-eg-as-the-admin-user) above
 
 ### Install device-agent as a service
 ```bash
