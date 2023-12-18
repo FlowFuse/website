@@ -55,13 +55,13 @@ If the account is a domain account, append the domain name to the **user** e.g. 
 
 ### TIP: Launching an elevated command prompt window (e.g. as the admin user)
 
-```bash
+```
 powershell -Command "Start-Process 'cmd' -Verb runAs
 ```
 
 ### TIP: Launching an elevated powershell prompt window (e.g. as the admin user)
 
-```bash
+```
 powershell -Command "Start-Process 'powershell' -Verb runAs
 ```
 
@@ -79,7 +79,7 @@ If you need to create a new **user** account follow these [instructions](https:/
 ## Prepare the device-agent files directory
 As the admin user, open an [elevated](#tip-launching-an-elevated-command-prompt-window-eg-as-the-admin-user) command prompt, create the files directory and setup access permissions.
 
-```bash
+```
 # In an elevated command prompt
 mkdir c:\opt
 mkdir c:\opt\flowfuse-device
@@ -93,7 +93,7 @@ _where `"user"` is the regular account (not the admin account)_
 We will download it to the `c:\opt` directory, extract the files and copy the 64 bit version to the current directory.
 
 ### `cmd` version ([elevated](#tip-launching-an-elevated-command-prompt-window-eg-as-the-admin-user) command prompt)
-```bash
+```
 # starting in the device-agent files directory
 cd c:\opt
 # download the nssm zip file
