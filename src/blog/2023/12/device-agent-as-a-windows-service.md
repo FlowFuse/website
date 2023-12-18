@@ -77,7 +77,7 @@ It is recommended to install the LTS version and to check the "Automatically ins
 If you need to create a new **user** account follow these [instructions](https://support.microsoft.com/en-us/windows/create-a-local-user-or-administrator-account-in-windows-20de74e0-ac7f-3502-a866-32915af2a34d#:~:text=Select%20Start%20%3E%20Settings%20%3E%20Accounts%20and,other%20user%2C%20select%20Add%20account.).
 
 ## Prepare the device-agent files directory
-As the admin user, open an [elevated](#tip-launching-an-elevated-command-prompt-window-eg-as-the-admin-user) command prompt, create the files directory and setup access permissions.
+As the admin user, open an [elevated](#tip%3A-launching-an-elevated-command-prompt-window-(e.g.-as-the-admin-user)) command prompt, create the files directory and setup access permissions.
 
 ```bash
 # In an elevated command prompt
@@ -92,7 +92,7 @@ _where `"user"` is the regular account (not the admin account)_
 `nssm` can simply be downloaded and executed from any path.
 We will download it to the `c:\opt` directory, extract the files and copy the 64 bit version to the current directory.
 
-### `cmd` version [elevated](#tip-launching-an-elevated-command-prompt-window-eg-as-the-admin-user) command prompt
+### `cmd` version [elevated](#tip%3A-launching-an-elevated-command-prompt-window-(e.g.-as-the-admin-user)) command prompt
 ```bash
 # starting in the device-agent files directory
 cd c:\opt
@@ -108,7 +108,7 @@ rmdir /s /q nssm-2.24
 ```
 
 
-### `powershell` version [elevated](#tip-launching-an-elevated-powershell-prompt-window-eg-as-the-admin-user) powershell prompt
+### `powershell` version [elevated](#tip%3A-launching-an-elevated-powershell-prompt-window-(e.g.-as-the-admin-user)) powershell prompt
 If you don't have `cURL` installed, then powershell can be used to download the file. Here is how to do it:
 
 ```powershell
@@ -185,7 +185,7 @@ https://flowfuse.com/docs/device-agent/register/#generating-%22device-configurat
 Once you have linked the device-agent to your team, you can stop it by pressing `ctrl+c` in the command prompt window.
 
 ## Create the device-agent service
-As the admin user, open an elevated command prompt see [TIP](#tip-launching-an-elevated-command-prompt-window-eg-as-the-admin-user) above
+As the admin user, open an elevated command prompt see [TIP](#tip%3A-launching-an-elevated-command-prompt-window-(e.g.-as-the-admin-user)) above
 
 ### Install device-agent as a service
 ```bash
