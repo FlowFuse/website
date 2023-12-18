@@ -83,7 +83,7 @@ As the admin user, open an [elevated](#tip%3A-launching-an-elevated-command-prom
 # In an elevated command prompt
 mkdir c:\opt
 mkdir c:\opt\flowfuse-device
-# grant full access to the user account that will run the device-agent
+# grant full access to the service account that will run the device-agent
 icacls c:\opt\flowfuse-device /grant "user":F /T
 ```
 _where `"user"` is the servi account (not the admin account)_
@@ -163,7 +163,7 @@ rundll32 sysdm.cpl,EditEnvironmentVariables
 If you did have to add the npm path to the users `Path` variable, you will need to **restart** the command prompt for the change to take effect and relogin as **user**.
 
 ### Install the device agent
-Note: you may have already installed the device-agent, however, **we strongly recommend** you do this step again to ensure the correct user account is used and you have the latest version.
+Note: you may have already installed the device-agent, however, **we strongly recommend** you do this step again as the service account and ensure that account has the latest version.
 
 ```bash
 npm i -g @flowfuse/device-agent
@@ -221,10 +221,10 @@ nssm edit flowfuse-device-agent
 
 In the UI, you can edit the service name, description, startup type, etc.
 The most important thing to check is the `Application` tab. This includes the path to the flowfuse-device-agent.cmd and its arguments.
-Select the "Log on" tab, select "This account" and enter the user account name and password that will run the device-agent.
+Select the "Log on" tab, select "This account" and enter the service account name and password that will run the device-agent.
 Click the "Edit Service" button to save the changes.
 
-Now you have a service that will run the device-agent as the **service** user account 🎉
+Now you have a service that will run the device-agent as the **service** account 🎉
 
 
 ### Controlling the service
