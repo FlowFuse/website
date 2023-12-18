@@ -136,10 +136,10 @@ Ultimately, you should end up with a file named `nssm.exe` in the `c:\opt\` dire
 As the **service** account, to do so open a command prompt window and run the following and authenticate:
 
 ```bash
-runas /user:{user} cmd
+runas /user:{serviceuser} cmd
 # e.g. runas /user:winserv cmd
 ```
-_where `{user}` is the service account (not the admin account)_
+_where `{serviceuser}` is the service account (not the admin account)_
 
 ### Check the users npm global path is set in the Users Environment Variables
 
