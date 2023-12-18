@@ -163,7 +163,7 @@ rundll32 sysdm.cpl,EditEnvironmentVariables
 If you did have to add the npm path to the users `Path` variable, you will need to **restart** the command prompt for the change to take effect and relogin as **user**.
 
 ### Install the device agent
-Note: you may have already installed the device-agent, however, **we strongly recommend** you do this step again as the service account and has the latest version.
+Note: you may have already installed the device-agent, however, **we strongly recommend** you do this step again as the service account and ensure that account has the latest version.
 
 ```bash
 npm i -g @flowfuse/device-agent
