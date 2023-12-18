@@ -1,8 +1,12 @@
-const fetch = require('node-fetch');
+const EleventyFetch = require("@11ty/eleventy-fetch");
 
 module.exports = async function() {
-  const response = await fetch('https://catalog.flowfuse.com/catalogue.json');
-  const data = await response.json();
+  const url = 'https://catalog.flowfuse.com/catalogue.json';
+
+  const data = await EleventyFetch(url, {
+    duration: "1d", // save for 1 day
+    type: "json"    // parse the JSON
+  });
 
   const transformedData = data.modules.map(item => ({
     title: item.id.replace(/^(node-red-contrib-|node-red-node-|@flowfuse\/)/, '').split('-').map(word => word.toUpperCase()).join(' '),
