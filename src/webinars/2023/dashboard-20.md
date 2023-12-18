@@ -10,6 +10,7 @@ video: 7GTHYzRpQ9M
 hosts: ["joe-pavitt"]
 hubspot:
     formId: b4ec9aa1-8648-47b3-b908-ec8597e8735d
+    downloadFormId: 1b361db7-cf8e-4574-981b-9de01de04fd9
 ---
 
 **The next generation of the Node-RED dashboard is starting to mature. Development work on Dashboard 2.0 started earlier this year and amazing progress has been made already.**

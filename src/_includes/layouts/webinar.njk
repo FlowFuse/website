@@ -58,7 +58,7 @@ layout: layouts/base.njk
                     </script>
                     <script async type="text/javascript" charset="utf-8" src="//js-eu1.hsforms.net/forms/embed/v2.js" onload="displayHubSpotForm()"></script>
                 </div>
-                {% endif %}
+                {% endif %}                
                 <div class="mt-6 flex flex-col">
                     <h3 class="mb-3">Hosted By:</h3>
                     {% for host in hosts %}
@@ -70,6 +70,27 @@ layout: layouts/base.njk
                         </div>
                     </div>
                     {% endfor %}
+                    {% if hubspot.downloadFormId %}
+                    <div class="mt-6 flex flex-col">
+                        <h3 class="mb-3">Download webinar slides</h3>
+                        <script>
+                            function displayHSpotForm() {
+                                hbspt.forms.create({
+                                    region: "eu1",
+                                    portalId: "26586079",
+                                    formId: "{{ hubspot.downloadFormId }}",
+                                    onFormSubmit: function($form) {
+                                        const article_title = "{{ title }}"
+                                        capture('cta-webinar-download-slides', {
+                                            'webinar-name': article_title
+                                        })
+                                    }
+                                });
+                            }
+                        </script>
+                        <script charset="utf-8" type="text/javascript" src="//js-eu1.hsforms.net/forms/embed/v2.js" onload="displayHSpotForm()"></script>
+                    </div>
+                    {% endif %}
                 </div>
             </div>
         </div>
