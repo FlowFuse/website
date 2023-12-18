@@ -7,7 +7,11 @@ navGroup: Customer Department
 
 ## Subscription agreement
 
-For self-managed licenses FlowFuse has a standard [subscription agreement template](https://docs.google.com/document/d/1szqCRC7w-f82I4HL-cOTTCiSMKDhVWju84Md4M07RGk).
+For self-managed licenses FlowFuse has a standard [subscription agreement template](https://docs.google.com/document/d/1szqCRC7w-f82I4HL-cOTTCiSMKDhVWju84Md4M07RGk){rel="nofollow"}.
+
+## Professional Services agreement
+
+When a customer requires FlowFuse's professional services, this is the [Professional Services Agreement](https://docs.google.com/document/d/1OsasRHu208IOarTiZXp_xLshJX7IKJqfTztgzgovCIA){rel="nofollow"}.
 
 ## Cloud Partnership agreement
 
@@ -30,10 +34,10 @@ Signed NDA documents should be stored on the [Google Drive](https://drive.google
 
 Clauses we cannot agree to:
 1. Only keeping Confidential Information at our legal offices. We're a fully
-remote company and keep Confidential Information according to our [data classification policies](https://flowfuse.com/handbook/company/security/data-management/#data-classification).
+remote company and keep Confidential Information according to our [data classification policies](/handbook/company/security/data-management/#data-classification).
 1. Auditability of destruction of Confidential Information. As a remote company
 we will not allow third parties access to homes or offices of employees.
 
 ## Miscellaneous
 
-- [W9 with signature](https://drive.google.com/file/d/12XE_88XlxxfP5guLgQHxBMPnhJRz5KCQ/view?usp=share_link)
+- [W9 with signature](https://drive.google.com/file/d/12XE_88XlxxfP5guLgQHxBMPnhJRz5KCQ/view?usp=share_link){rel="nofollow"}
