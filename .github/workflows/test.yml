@@ -29,13 +29,6 @@ jobs:
           ref: main
           path: 'blueprint-library'
           token: ${{ steps.generate_token.outputs.token }}
-      - name: Check out FlowFuse/certified-nr-nodes repository (to access the modules.json)
-        uses: actions/checkout@v4
-        with:
-          repository: 'FlowFuse/certified-nr-nodes'
-          ref: main
-          path: 'certified-nr-nodes'
-          token: ${{ steps.generate_token.outputs.token }}
       - name: Cache image pipeline output
         uses: actions/cache@v3
         with:
