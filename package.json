@@ -32,7 +32,6 @@
         "@flowforge/forge-ui-components": "^0.2.2",
         "@kevingimbel/eleventy-plugin-mermaid": "^2.0.0",
         "@tailwindcss/typography": "^0.4.1",
-        "@xmldom/xmldom": "^0.7.0",
         "autoprefixer": "^10.3.7",
         "cross-env": "^7.0.3",
         "del-cli": "^5.0.0",
@@ -60,7 +59,9 @@
     "dependencies": {
         "@11ty/eleventy-fetch": "^4.0.0",
         "@quasibit/eleventy-plugin-schema": "^1.11.0",
+        "@xmldom/xmldom": "^0.8.10",
         "codeowners": "^5.1.1",
-        "markdown-it-attrs": "^4.1.6"
+        "markdown-it-attrs": "^4.1.6",
+        "xml-js": "^1.6.11"
     }
 }
