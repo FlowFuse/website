@@ -1,9 +1,9 @@
 ---
-title: Running the FlowFuse Device Agent as a service on Windows
-subtitle: Step by step guide to run the device agent as a Windows service
+title: Run Node-RED as a service on Windows
+subtitle: Step by step guide to run FlowFuse device agent as a Windows service
 description: Step by step guide to run the device agent as a Windows service
-date: 2023-12-11
-authors: ["stephen-mclaughlin", "rob-marcer"]
+date: 2023-12-18
+authors: ["stephen-mclaughlin", "rob-marcer", "grey-dziuba"]
 image: /blog/2023/12/images/agent-as-windows-service.png
 tags:
     - posts
@@ -72,6 +72,10 @@ The device-agent requires Node.js to be installed. You can download the latest v
 
 It is recommended to install the LTS version and to check the "Automatically install the necessary tools" option. This is especially important if you intend on using any nodes that require native modules (like serialport).
 
+### Create a New Windows User
+
+If you need to create a new **user** account follow these [instructions](https://support.microsoft.com/en-us/windows/create-a-local-user-or-administrator-account-in-windows-20de74e0-ac7f-3502-a866-32915af2a34d#:~:text=Select%20Start%20%3E%20Settings%20%3E%20Accounts%20and,other%20user%2C%20select%20Add%20account.).
+
 ## Prepare the device-agent files directory
 As the admin user, open an [elevated](#tip-launching-an-elevated-command-prompt-window-eg-as-the-admin-user) command prompt, create the files directory and setup access permissions.
 
@@ -129,7 +133,13 @@ Ultimately, you should end up with a file named `nssm.exe` in the `c:\opt\` dire
 
 ## Install and configure the device-agent
 
-As the regular **user** account, open a command prompt window
+As the regular **user** account, to do so open a command prompt window and run the following and authenticate:
+
+```bash
+runas /user:{user} cmd
+# e.g. runas /user:winserv cmd
+```
+_where `{user}` is the regular account (not the admin account)_
 
 ### Check the users npm global path is set in the Users Environment Variables
 
@@ -144,16 +154,16 @@ Next, ensure the `Path` Variable under the "User variables for _user_" contains 
 Use the below command, to check the user’s `Path` setting.  If it is not present, edit the path to include it.
 
 ```bash
-# open the environment variables editor, 
+# This commands opens the environment variables editor, 
 # look for the "Path" variable under "User variables for user",
 # and ensure it contains the npm global path
 rundll32 sysdm.cpl,EditEnvironmentVariables
 ```
 
-If you did have to add the npm path to the users `Path` variable, you will need to restart the command prompt for the change to take effect.
+If you did have to add the npm path to the users `Path` variable, you will need to **restart** the command prompt for the change to take effect and relogin as **user**.
 
 ### Install the device agent
-Note: you may have already installed the device-agent, however, we strongly recommend you do this step again to ensure the correct user account is used and you have the latest version
+Note: you may have already installed the device-agent, however, **we strongly recommend** you do this step again to ensure the correct user account is used and you have the latest version.
 
 ```bash
 npm i -g @flowfuse/device-agent
@@ -206,6 +216,9 @@ Some things are easier to edit in the UI, so we will edit the service via the NS
 ```bash
 nssm edit flowfuse-device-agent
 ```
+
+![nssm editor](./images/nssm_service_editor.png)
+
 In the UI, you can edit the service name, description, startup type, etc.
 The most important thing to check is the `Application` tab. This includes the path to the flowfuse-device-agent.cmd and its arguments.
 Select the "Log on" tab, select "This account" and enter the user account name and password that will run the device-agent.
