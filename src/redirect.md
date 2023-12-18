@@ -24,7 +24,7 @@ redirects:
   - { "from": "/blog/2023/03/comparinig-dashboards/", "to": "/blog/2023/03/comparing-node-red-dashboards" }
   - { "from": "/roadmap/", "to": "/product/roadmap/" }
   - { "from": "/handbook/development/release/", "to": "/handbook/development/releases/" }
-  - { "from": "/blog/2023/06/Flowforge-as-a-No-Code-Ethernet_IP-to-Profinet-Protocol-Converter/", "to": "/blog/2023/06/Node-RED-as-a-No-Code-Ethernet_IP-to-S7-Protocol-Converter/" }
+  - { "from": "/blog/2023/06/Flowforge-as-a-No-Code-Ethernet_IP-to-Profinet-Protocol-Converter/", "to": "/blog/2023/06/node-red-as-a-no-code-ethernet_ip-to-s7-protocol-converter/" }
   - { "from": "/docs/user/devices/", "to": "/docs/device-agent/introduction" }
   - { "from": "/blog/2023/06/node-explained-split/", "to": "/node-red/core-nodes/split/"}
   - { "from": "/blog/2023/07/node-explained-filter/", "to": "/node-red/core-nodes/rbe/"}
@@ -44,7 +44,6 @@ redirects:
   - { "from": "/handbook/development/guides/", "to": "/handbook/company/guides/" }
   - { "from": "/blog/2023/08/uns-article/", "to": "/blog/2023/08/isa-95-automation-pyramid-to-unified-namespace/"}
   - { "from": "/blog/2023/08/UNS-article/", "to": "/blog/2023/08/isa-95-automation-pyramid-to-unified-namespace/"}
-
 
 # The "permalink" attribute determines where the output page will be located.
 permalink: "{{ redirect.from }}"

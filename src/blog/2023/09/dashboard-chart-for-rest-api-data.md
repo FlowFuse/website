@@ -42,7 +42,7 @@ Where we paste the URL from above into the settings panel:
 When running this flow you'll see a blob of text in the `Debug` pane. This is a
 great first start, but a blob isn't useful for the rest of the flow.
 
-We need to parse the data as JSON. While the [JSON node](/node-red/core-nodes/JSON)
+We need to parse the data as JSON. While the [JSON node](/node-red/core-nodes/json)
 would work, the HTTP request node can do this natively. Let `a parsed JSON object`
 the `Return` settings of the HTTP request node.
 

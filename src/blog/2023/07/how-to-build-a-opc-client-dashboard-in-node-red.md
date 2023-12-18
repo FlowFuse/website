@@ -20,7 +20,7 @@ Note: full source code for the OPC Client Dashboard is included at the end of th
 
 ## Custom Nodes Used & Assumptions
 
-Several custom nodes are required in order to properly deploy this flow.  For more detailed information on how to install a custom node, follow the instructions from an [earlier article](/blog/2023/06/Node-RED-as-a-No-Code-Ethernet_IP-to-S7-Protocol-Converter/) where the process on installing custom nodes is explained in detail.
+Several custom nodes are required in order to properly deploy this flow.  For more detailed information on how to install a custom node, follow the instructions from an [earlier article](/blog/2023/06/node-red-as-a-no-code-ethernet_ip-to-s7-protocol-converter/) where the process on installing custom nodes is explained in detail.
 
 - [node-red-dashboard](https://flows.nodered.org/node/node-red-dashboard)
 - [node-red-contrib-opcua](https://flows.nodered.org/node/node-red-contrib-opcua)

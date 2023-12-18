@@ -33,7 +33,7 @@ Our next webinar will be focused on the device management capabilities in the Fl
 
 - [The Next Step in Data Visualization - Announcing the Successor to the Node-RED Dashboard](/blog/2023/06/dashboard-announcement/) - FlowFuse announces plans to develop the next version of the Node-RED Dashboard project.
 
-- [Node-RED as a No-Code Ethernet/IP to S7 Protocol Converter](/blog/2023/06/Node-RED-as-a-No-Code-Ethernet_IP-to-S7-Protocol-Converter/) - A guide to using Node-RED for converting ethernet IP data to Siemens S7.  Also a [video version](https://youtu.be/dteXgcBXUnk) of the same content. 
+- [Node-RED as a No-Code Ethernet/IP to S7 Protocol Converter](/blog/2023/06/node-red-as-a-no-code-ethernet_ip-to-s7-protocol-converter/) - A guide to using Node-RED for converting ethernet IP data to Siemens S7.  Also a [video version](https://youtu.be/dteXgcBXUnk) of the same content. 
 
 - [MQTT and its Role in IoT and Industrial IoT](/blog/2023/06/connect-to-hivemq-in-flowforge/) - A practical explainer on the role of MQTT in IoT use cases and how to connect with an MQTT broker in Node-RED.
 
