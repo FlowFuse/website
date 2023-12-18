@@ -1,5 +1,5 @@
-const assert = require('assert');
-const xmljs = require('xml-js');
+const should = require('should')
+const xmljs = require('xml-js')
 const fs = require('fs')
 const path = require('path')
 
@@ -11,6 +11,6 @@ describe('Sitemap.xml', function () {
             url.loc._text !== url.loc._text.toLowerCase()
         )
 
-        assert.equal(badURLs, []);
+        badURLs.should.be.empty()
     });
 });
