@@ -8,8 +8,8 @@ image:
 <div class="mt-12">
     {% include "components/divider-flow--top-red--light.njk" %}
 </div>
-<div class="about w-full ff-bg-light -mt-1 pt-16 pb-24">
-    <div class="container m-auto max-w-lg md:max-w-5xl flex flex-col gap-y-10">
+<div class="about w-full ff-bg-light -mt-1 pt-16">
+    <div class="container m-auto max-w-lg md:max-w-5xl flex flex-col gap-y-10 pb-12">
         {% for item in reasons %}
             <div class="relative w-full p-6 m-auto">
                 <div class="absolute {% if loop.index is odd %}bottom-4 left-4{% else %}top-4 right-4{% endif %} bg-red-600 w-48 h-32 rounded-md z-0"></div>
@@ -36,4 +36,5 @@ image:
             </div>
         {% endfor %}
     </div>
+    {% include "common-cta.njk" %}
 </div>
