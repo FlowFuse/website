@@ -62,7 +62,9 @@ and approval.
 
 The following items are not reimbursable: Phones, watches, smart speakers and tablets.
 
-Laptops are covered separately and are provided as needed when a new hire joins the team.
+Laptops are covered separately and are provided as needed when a new hire joins the team. 
+If you choose to order a laptop by yourself, we generally recommend a Apple Macbook Air with 16GB RAM. 
+
 Unless circumstances require otherwise, laptops will only be considered for a refresh after 3 years. Please discuss with your manager if you need to refresh your laptop.
 
 ### Asset purchases over $500
