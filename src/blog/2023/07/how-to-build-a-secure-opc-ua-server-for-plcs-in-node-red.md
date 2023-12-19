@@ -47,7 +47,7 @@ A visual representation of our PLC to OPC-UA Server architecture is shown in the
 5. Encrypt the OPC Server with SSL
 6. Set up the OPC Client  
 
-The PLC is an Allen Bradley, and an instance of Node-RED running on the same OT network as the PLC will act as the OPC UA Server. In our Allen Bradley PLC, we will re-use an example from a [previous article](/blog/2023/06/Node-RED-as-a-No-Code-Ethernet_IP-to-S7-Protocol-Converter/) where the PLC is simulating a conveyor line, called *Line 4 PLC,* depicted as number 1 architecture drawing above. The tags below represent the data to be transferred from the Line 4 PLC to the Node-RED OPC UA server, depicted as number 2 in the architecture drawing.
+The PLC is an Allen Bradley, and an instance of Node-RED running on the same OT network as the PLC will act as the OPC UA Server. In our Allen Bradley PLC, we will re-use an example from a [previous article](/blog/2023/06/node-red-as-a-no-code-ethernet_ip-to-s7-protocol-converter/) where the PLC is simulating a conveyor line, called *Line 4 PLC,* depicted as number 1 architecture drawing above. The tags below represent the data to be transferred from the Line 4 PLC to the Node-RED OPC UA server, depicted as number 2 in the architecture drawing.
 
 | **Tag**          | **Data Type** | **Description**               |
 | ---------------- | ------------- | ----------------------------- |
@@ -90,7 +90,7 @@ Go to the `Nodes` tab and confirm the 3 custom nodes have been properly installe
 
 ## Set Up Ethernet/IP Data <a name="set-up-eth-ip"></a>
 
-Note: this process is largely a recap from the first part of a previous article where [Node-RED is used as an Ethernet/IP to S7 protocol converter](/blog/2023/06/Node-RED-as-a-No-Code-Ethernet_IP-to-S7-Protocol-Converter/).
+Note: this process is largely a recap from the first part of a previous article where [Node-RED is used as an Ethernet/IP to S7 protocol converter](/blog/2023/06/node-red-as-a-no-code-ethernet_ip-to-s7-protocol-converter/).
 
 Let’s start by dragging a `eth-ip in` node onto the palette. Then add a new endpoint, which will point to our Line4 PLC.
 

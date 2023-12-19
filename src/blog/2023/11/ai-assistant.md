@@ -10,7 +10,6 @@ tags:
     - node-red
     - community
     - flowfuse
-
 ---
 
 ## Introduction to the World of GPTs and AI Assistants
