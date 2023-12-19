@@ -19,8 +19,6 @@ hubspot:
 
 Joe Pavitt, FlowFuse Head of Design and UX, is leading the development work and will be the host of this webinar. During the webinar, Joe will conduct a live demonstration of the project, present the roadmap for the planned next steps, and lead an open discussion to gather new ideas and feedback.
 
-If you are a current user of Node-RED Dashboard or interested in building your own User Interfaces and Data Visualisations using Node-RED then join us on October 26.
-
-Sign-up today to participate.
+If you are a current user of Node-RED Dashboard or interested in building your own User Interfaces and Data Visualisations using Node-RED watch the on-demand video or download the slides. 
 
 

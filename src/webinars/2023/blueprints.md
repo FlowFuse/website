@@ -23,9 +23,6 @@ We will highlight upcoming Blueprints to be showcased, with a spotlight on the A
 
 We will end with a Q&A session. Allowing attendees to voice their thoughts on which Blueprints they’d love to see next, fostering a collaborative space for innovation and forward-thinking.
 
-Join us on November 30 to see the potential of FlowFuse Blueprints. 
-
-Sign-up today to participate.
 
 
 
