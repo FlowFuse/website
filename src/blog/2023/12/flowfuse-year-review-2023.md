@@ -4,7 +4,7 @@ subtitle: "Reviewing an amazing 2023 for FlowFuse"
 description: "Reviewing an amazing 2023 for FlowFuse"
 authors: ["zeger-jan-van-de-weg"]
 date: 2023-12-22
-image: # TODO
+image: "/blog/2023/12/images/2023-review.png"
 tags:
     - posts
     - flowfuse
