@@ -36,54 +36,5 @@ image:
             </div>
         {% endfor %}
     </div>
-    <div class="bg-white pt-10 pb-6">
-        <h3 class="flex items-center text-center justify-center">
-            <div class="flex flex-col leading-9 text-3xl mb-4 red-gradient font-semibold">
-                Adopt FlowFuse Today
-            </div>
-        </h3>
-        <div class="container m-auto max-w-lg md:max-w-5xl grid grid-cols-1 md:grid-cols-3 gap-3 px-6 py-8 mb-10">
-            <div class="features-card">
-                <div>
-                    <label class="flex items-center text-center justify-center font-medium text-2xl text-gray-800 mt-5">On Premise</label>
-                    <p>
-                        <div class="text-sm leading-6 mb-6 mt-6">
-                            Install FlowFuse on your own hardware for increased deployment flexibility. You can use the open source version of FlowFuse to install it on-premises and support the deployment yourselves. 
-                        </div>
-                    </p>
-                </div>
-                <div class="flex flex-col items-center">
-                    <a class="ff-btn ff-btn--secondary-outlined uppercase align-baseline w-full" href="/docs/install/introduction/"
-                        onclick="capture('cta-install', {'position': 'primary'})">Install now</a>
-                </div>
-            </div>
-            <div class="features-card">
-                <div>
-                    <label class="flex items-center text-center justify-center font-medium text-2xl text-gray-800 mt-5">FlowFuse Cloud</label>
-                    <p>
-                        <div class="text-sm leading-6 mb-6 mt-6">
-                            Our managed hosted solution, maintained and supported by the FlowFuse team. Experience flexibility, scalability, and expert assistance to drive your business forward.
-                        </div>
-                    </p>
-                </div>
-                <div class="flex flex-col items-center">
-                    <a class="ff-btn ff-btn--primary uppercase align-baseline w-full" href="{{ site.appURL }}/account/create" onclick="capture('cta-join', {'position': 'primary'})">TRY FOR FREE</a>
-                </div>
-            </div>
-            <div class="features-card">
-                <div>
-                    <label class="flex items-center text-center justify-center font-medium text-2xl text-gray-800 mt-5">Contact Sales</label>
-                    <p>
-                        <div class="text-sm leading-6 mb-6 mt-6">
-                            Do you want to know what adopting FlowFuse could mean for your company?
-                            Customers can purchase an enterprise license fo FlowFuse to install on premise and obtain support from FlowFuse. 
-                        </div>
-                    </p>
-                </div>
-                <div class="flex flex-col items-center">
-                    <a class="ff-btn ff-btn--secondary-outlined uppercase align-baseline w-full" href='/book-demo/'>Book a demo</a> 
-                </div>
-            </div>                       
-        </div>
-    </div>
+    {% include "common-cta.njk" %}
 </div>
