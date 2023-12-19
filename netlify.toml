@@ -11,6 +11,18 @@ status = 301
 force = true
 
 [[redirects]]
+from = "http://www.flowforge.com/*"
+to = "http://flowfuse.com/:splat"
+status = 301
+force = true
+
+[[redirects]]
+from = "https://www.flowforge.com/*"
+to = "https://flowfuse.com/:splat"
+status = 301
+force = true
+
+[[redirects]]
 from = "http://flowfuze.com/*"
 to = "http://flowfuse.com/:splat"
 status = 301
@@ -18,6 +30,18 @@ force = true
 
 [[redirects]]
 from = "https://flowfuze.com/*"
+to = "https://flowfuse.com/:splat"
+status = 301
+force = true
+
+[[redirects]]
+from = "http://www.flowfuze.com/*"
+to = "http://flowfuse.com/:splat"
+status = 301
+force = true
+
+[[redirects]]
+from = "https://www.flowfuze.com/*"
 to = "https://flowfuse.com/:splat"
 status = 301
 force = true
