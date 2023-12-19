@@ -53,4 +53,5 @@ jobs:
           args: website/_site/ --check-anchors --sources website/src
       - name: Test the website
         run: npm run test
+        working-directory: 'website'
 
