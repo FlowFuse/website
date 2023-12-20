@@ -10,7 +10,12 @@ tags:
     - flowfuse
 ---
 
-As your organization is generating more data there’s key architectural decisions to be made to ensure the full value can be unlocked and you’re leveraging not just the tip of the iceberg. The Unified Namespace provides a blueprint to allow data to be consumed by many data-consumers.
+As your organization is generating more data there’s key architectural
+decisions to be made to ensure the full value can be unlocked and you’re
+leveraging not just the tip of the iceberg. The Unified Namespace
+provides a blueprint to allow data to be consumed by many data-consumers.
+FlowFuse helps you manage this migration and the operationalization of your
+data.
 
 <!--more-->
 
@@ -37,7 +42,7 @@ points, and thus will try on a cycle or need another mechanism to understand if
 new data is available.
 
 This is why a hub and spoke model should be employed. For each data source or
-data producer, a connection is made to a central hub; generally called a broker. 
+data producer, a connection is made to a central hub; generally called a broker.
 
 ![Hub and spoke graphic](./images/uns-hub.png "Unified Namespace Hub and Spokes communication")
 
