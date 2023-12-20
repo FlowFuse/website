@@ -4,7 +4,7 @@ subtitle: "Making data available for Industry 4.0 use-cases"
 description: "Making data available for Industry 4.0 use-cases"
 authors: ["zeger-jan-van-de-weg"]
 date: 2023-12-20
-image: "/blog/2023/11/images/raspberry-pi-5-device-agent.png" #todo
+image: "/blog/2023/12/images/introduction-to-uns.png"
 tags:
     - posts
     - flowfuse
