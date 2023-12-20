@@ -21,7 +21,7 @@ To facilitate a many to many connection between data producers and data consumer
 Traditionally, for example web servers serving web pages, the client requests a
 page from a server. This is a point to point connection between those two parties.
 
-<!--insert-point-to-point-image-->
+![Point to point graphic](./images/uns-point-to-point.png)
 
 For the same data to be transmitted to a new data consumer, the consumer needs
 to make another request to obtain the data. This works great when you know what
@@ -37,7 +37,7 @@ new data is available.
 This is why a hub and spoke model should be employed. For each data source or
 data producer, a connection is made to a central hub; generally called a broker. 
 
-<!--insert-hub-and-spokes-image-->
+![Hub and spoke graphic](./images/uns-hub.png)
 
 ## Structured data
 
