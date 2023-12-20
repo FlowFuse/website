@@ -11,8 +11,10 @@ tags:
 ---
 
 As your organization is generating more data there’s key architectural decisions to be made to ensure the full value can be unlocked and you’re leveraging not just the tip of the iceberg. The Unified Namespace provides a blueprint to allow data to be consumed by many data-consumers.
+
 <!--more-->
-To facilitate a many to many connection between data producers and data consumer, there are two changes to be made for your architecture:
+
+To facilitate a many to many connection between data producers and data consumers, there are two changes to be made to your architecture:
 1. Data transport through a hub-and-spokes model
 1. Set structure of the Data
 
