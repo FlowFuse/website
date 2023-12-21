@@ -4,7 +4,7 @@ image: /images/stories/large-us-manufacturing.jpg
 date: 2023-05-04
 logo:
 story:
-    brand:
+    brand: Manufacturing Company
     url:
     quote: Overall, the project leader sees Node-RED as the future of software development. The low code paradigm makes it possible for companies to decentralize innovation within an organization
     challenge: Maintain and track the thousands of Node-RED developed instances and versions of these instances.

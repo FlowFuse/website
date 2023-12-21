@@ -4,7 +4,7 @@ image: /images/stories/un-wmo.jpg
 date: 2023-09-07
 logo: /images/stories/logos/logo_wmo.png
 story:
-    brand:
+    brand: WMO
     url:
     logo: /images/stories/logos/logo_wmo.png
     quote: Node-RED was the right platform to use to build the AntiLoop part of the Global Broker... Node-RED has proven to be a very reliable platform.

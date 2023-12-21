@@ -4,61 +4,26 @@ sitemapPriority: 0.8
 meta:
     title: Customer Stories
 ---
-<div class="container m-auto text-left max-w-4xl pt-8 pb-24 w-full">
-    <div class="px-2">
+<div class="container m-auto text-left max-w-md sm:max-w-6xl pt-8 pb-24 w-full">
+    <div class="px-6">
         <h1>Customer Stories</h1>
     </div>
     {% if collections.posts.length > 0 %}
-    <ul class="grid grid-cols-1 md:grid md:grid-cols-3 gap-y-4">
+    <ul class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 px-6">
         {%- for item in collections.stories | sort(attribute='item.date') | reverse -%}
-        {% if loop.first %}
-        <li class="w-full md:col-span-2 md:row-span-2 my-2 px-2 pb-4 border-b">
-            <a href="{{ item.url }}" class="w-full flex flex-col group hover:no-underline">
-                <div class="pr-2">
-                    {% if item.data.image %}
-                    <div class="relative">    
-                        <div class="w-full h-40 md:h-80 ff-image-cover">
-                            {% set imageSrc = ["./", item.data.image ] | join %}
-                            {% set imageDescription = ["Image representing ", item.data.title] | join %}
-                            {% image imageSrc, imageDescription, [768] %}
-                        </div>
-                        {% if item.data.logo %}
-                        <div class="w-1/2 h-full md:w-40 md:h-40 absolute left-0 top-0 bg-white p-2 flex items-center justify-center object-contain border border-gray-200">
-                            <div class="h-full ff-image-cover">
-                                {% set imageSrc = ["./", item.data.logo ] | join %}
-                                {% set imageDescription = ["Image representing ", item.data.story.brand, " logo"] | join %}
-                                {% image imageSrc, imageDescription, [285] %}
-                            </div>
-                        </div>
-                        {% endif %}                        
-                    </div>
-                    {% else %}
-                        {{ item.url | generatePostSVG |safe}}
-                    {% endif %}
-                </div>
-                <h3 class="font-medium group-hover:underline pt-5" style="line-height: 1.75rem">{{ item.data.title }}</h3>
-                <div class="flex flex-col justify-between">
-                    <div class="-mt-3">
-                        {{ item.templateContent | excerpt | striptags(true)| restoreParagraphs | safe }}
-                    </div>
-                    <div class="group-hover:underline">read more...</div>
-                </div>
-            </a>
-        </li>
-        {% else %}
-        <li class="w-full my-2 px-2 pb-6 border-b">
-            <a href="{{ item.url }}" class="w-full flex flex-col group hover:no-underline">
+        <li class="w-full my-2 border rounded-lg hover:drop-shadow-lg hover:border-blue-600 transition ease-in-out duration-300 bg-white">
+            <a href="{{ item.url }}" class="w-full flex flex-col group hover:no-underline h-full">
                 <div class="">
                     <div>
                         {% if item.data.image %}
-                        <div class="relative">
-                            <div class="w-full h-40 ff-image-cover">
+                        <div class="relative border-b">
+                            <div class="w-full h-52 sm:h-48 ff-image-cover ff-image-top-rounded">
                                 {% set imageSrc = ["./", item.data.image ] | join %}
                                 {% set imageDescription = ["Image representing ", item.data.title] | join %}
                                 {% image imageSrc, imageDescription, [285] %}
                             </div>
                             {% if item.data.logo %}
-                                <div class="w-1/2 h-full absolute left-0 top-0 bg-white flex items-center justify-center object-contain">
+                                <div class="w-1/2 h-full absolute left-0 top-0 bg-white flex items-center justify-center object-contain rounded-tl-lg">
                                     {% set imageSrc = ["./", item.data.logo ] | join %}
                                     {% set imageDescription = ["Image representing ", item.data.story.brand, " logo"] | join %}
                                     {% image imageSrc, imageDescription, [285] %}
@@ -69,11 +34,13 @@ meta:
                             {{ item.url | generatePostSVG |safe}}
                         {% endif %}
                     </div>
-                    <h3 class="mt-1 mb-0 font-medium group-hover:underline" style="line-height: 1.75rem">{{ item.data.title }}</h3>
+                    <div class="flex flex-col mt-1 mb-0 p-5 pt-3 gap-2">
+                        <label class="font-bold"><span class="text-gray-400">{{item.data.story.brand}}</span></label>
+                        <h3 class="group-hover:text-blue-600 font-medium" style="line-height: 1.6rem"><span class="text-lg">{{ item.data.title }}</span></h3>
+                    </div>
                 </div>
             </a>
         </li>
-        {% endif %}
     {%- endfor -%}
     </ul>
     {% else %}
