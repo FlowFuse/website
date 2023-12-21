@@ -8,7 +8,7 @@ It is built using [Tailwind CSS](https://tailwindcss.com/) and [Eleventy](https:
 
 It is hosted on Netlify with each commit to the `main` branch being automatically deployed to the live site.
 
-This works by a GitHub action automatically updating the `live` branch to includes documentation pulled from the `maintenance` branch of the [FlowFuse/flowforge](https://github.com/FlowFuse/flowforge)
+This works by a GitHub action automatically updating the `live` branch to includes documentation pulled from the `maintenance` branch of the [FlowFuse/flowfuse](https://github.com/FlowFuse/flowfuse)
 repository, when changes are pushed to `main`.
 
 Netlify is then configured to watch the `live` branch for any changes, once detected, it will automatically pull the contents of this branch (docs included) and deploy to our production site.
@@ -63,7 +63,7 @@ It is recommended to response `y` to both of these questions.
 
 ### Running FlowFuse Documentation
 
-Much like our Handbook, the documentation for FlowFuse are also maintained in a separate repository. Our docs are maintained in the core [FlowFuse repo](https://github.com/FlowFuse/flowforge).
+Much like our Handbook, the documentation for FlowFuse are also maintained in a separate repository. Our docs are maintained in the core [FlowFuse repo](https://github.com/FlowFuse/flowfuse).
 
 If you want to run a local version of the documentation, you'll need to clone the FlowFuse repository alongside the website, e.g.:
 
@@ -99,7 +99,7 @@ repository.
 
 To make a documentation update *and* make it live on the website:
 
-1. PR the documentation update to the `main` branch of [FlowFuse/flowforge](https://github.com/FlowFuse/flowfuse)
+1. PR the documentation update to the `main` branch of [FlowFuse/flowfuse](https://github.com/FlowFuse/flowfuse)
 2. Attach the `backport` label to the PR
 3. Get the PR reviewed and merged in the normal manner.
 4. A new PR will get automatically raised that backports the change to the `maintenance` branch
