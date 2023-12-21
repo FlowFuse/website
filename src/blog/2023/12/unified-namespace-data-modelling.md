@@ -3,7 +3,7 @@ title: Data Modeling for your Unified Namespace
 subtitle: How to use FlowFuse as your Schema Registry?
 date: 2023-12-27
 authors: ["Marian Demme"]
-# image: /blog/2023/12/images/agent-as-windows-service.png
+image: /blog/2023/12/images/uns-data-modeling.png
 tags:
     - posts
     - flowfuse
