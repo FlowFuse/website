@@ -392,6 +392,15 @@ h4:hover .header-anchor {
     @apply rounded-lg;
 }
 
+.ff-image-top-rounded img,
+.ff-image-top-rounded picture {
+    @apply rounded-t-lg;
+}
+
+.ff-image-t-left-rounded img,
+.ff-image-t-left-rounded picture {
+    @apply rounded-tl-lg;
+}
 /*
     Header
 */
