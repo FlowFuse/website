@@ -71,4 +71,4 @@ That also includes if you have any feedback or feature requests.
 
 Customers of FlowFuse Cloud can raise a ticket by emailing support@flowfuse.com
 
-We also have a `#flowforge` channel on the [Node-RED Slack workspace](https://nodered.org/slack).
+We also have a `#flowfuse` channel on the [Node-RED Slack workspace](https://nodered.org/slack).

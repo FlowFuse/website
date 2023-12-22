@@ -99,7 +99,7 @@ You can also get help on [the Node-RED forums](https://discourse.nodered.org/)
 
 As well as in the [forum within our Github project](https://github.com/FlowFuse/flowfuse/discussions)
 
-Chat with us on the `#flowforge` channel on the [Node-RED Slack workspace](https://nodered.org/slack)
+Chat with us on the `#flowfuse` channel on the [Node-RED Slack workspace](https://nodered.org/slack)
 
 You can raise a support ticket by emailing [support@flowfuse.com](mailto:support@flowfuse.com)
 

@@ -239,7 +239,7 @@ module.exports = function(eleventyConfig) {
             }
 
             filePath = path.join(...pathElements.slice(2))
-            baseUrl = 'https://github.com/FlowFuse/flowforge/edit/main/'
+            baseUrl = 'https://github.com/FlowFuse/flowfuse/edit/main/'
         }
 
         return baseUrl+filePath.replace(/^.\//,'')

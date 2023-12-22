@@ -5,12 +5,12 @@ eleventyExcludeFromCollections: true
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
     <title>{{ site.title }}</title>
-    <link href="https://flowforge.com/blog/index.xml" rel="self"/>
-    <link href="https://flowforge.com/blog"/>
+    <link href="https://flowfuse.com/blog/index.xml" rel="self"/>
+    <link href="https://flowfuse.com/blog"/>
     <updated>{{ collections.posts | getNewestCollectionItemDate | dateToRfc3339 }}</updated>
-    <id>https://flowforge.com/blog</id>
+    <id>https://flowfuse.com/blog</id>
     {%- for post in collections.posts | reverse %}
-    {% set absolutePostUrl %}{{ post.url | url | absoluteUrl("https://flowforge.com/blog/") }}{% endset %}
+    {% set absolutePostUrl %}{{ post.url | url | absoluteUrl("https://flowfuse.com/blog/") }}{% endset %}
     <entry>
         <id>{{ absolutePostUrl }}</id>
         <title>{{ post.data.title }}</title>
