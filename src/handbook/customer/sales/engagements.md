@@ -29,7 +29,7 @@ countersignature.
 1. Move the deal to `Closed Won` in HubSpots Deal overview.
 1. Provide access to the bought resources
    * *Cloud*
-      * Ensure a team on FlowFuse Cloud has been set up by the custome including billing.
+      * Ensure a team on FlowFuse Cloud has been set up by the customer including billing.
       * Apply the discounts on the stripe customer through Coupons
       * Have a FlowFuse Admin upgrade the customer to the correct tier
    * *Self-Managed*
