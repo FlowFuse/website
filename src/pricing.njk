@@ -4,6 +4,9 @@ layout: layouts/page.njk
 sitemapPriority: 0.90
 meta:
     description: Find out how much it costs to use FlowFuse.
+hubspot:
+    script: "hubspot/hs-form.njk"
+    formId: 734455e5-4cda-4329-97da-07e40cda791c
 ---
 <div class="pricing">
 <div class="w-full gradient-bg">
@@ -282,7 +285,7 @@ meta:
                     Excited to explore FlowFuse Enterprise together! Share your info, and our sales team will reach out to discuss tailored solutions for your business-critical applications.
                 </p>
             </div>
-            {% include "contact-form-js.njk" %}
+            {% include hubspot.script %}
         </div>
     </div>
 </div>

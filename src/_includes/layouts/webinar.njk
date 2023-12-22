@@ -41,22 +41,7 @@ layout: layouts/base.njk
                 {% if date | dateInFuture %}
                 <div class="mt-6 flex flex-col">
                     <h3 class="mb-3">Register Here:</h3>
-                    <script>
-                        function displayHubSpotForm() {
-                            hbspt.forms.create({
-                                region: "eu1",
-                                portalId: "26586079",
-                                formId: "{{ hubspot.formId }}",
-                                onFormSubmit: function($form) {
-                                    const article_title = "{{ title }}"
-                                    capture('cta-webinar-register', {
-                                        'webinar-name': article_title
-                                    })
-                                }
-                            });
-                        }
-                    </script>
-                    <script async type="text/javascript" charset="utf-8" src="//js-eu1.hsforms.net/forms/embed/v2.js" onload="displayHubSpotForm()"></script>
+                    {% include "hubspot/hs-form.njk" %}
                 </div>
                 {% endif %}                
                 <div class="mt-6 flex flex-col">
@@ -73,23 +58,8 @@ layout: layouts/base.njk
                     {% if hubspot.downloadFormId %}
                     <div class="mt-6 flex flex-col">
                         <h3 class="mb-3">Download webinar slides</h3>
-                        <script>
-                            function displayHSpotForm() {
-                                hbspt.forms.create({
-                                    region: "eu1",
-                                    portalId: "26586079",
-                                    formId: "{{ hubspot.downloadFormId }}",
-                                    onFormSubmit: function($form) {
-                                        const article_title = "{{ title }}"
-                                        capture('cta-webinar-download-slides', {
-                                            'webinar-name': article_title
-                                        })
-                                    }
-                                });
-                            }
-                        </script>
-                        <script charset="utf-8" type="text/javascript" src="//js-eu1.hsforms.net/forms/embed/v2.js" onload="displayHSpotForm()"></script>
-                    </div>
+                        {% set formId = hubspot.downloadFormId %}
+                        {% include "hubspot/hs-form.njk" %}
                     {% endif %}
                 </div>
             </div>
