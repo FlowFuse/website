@@ -31,10 +31,15 @@ module.exports = function(eleventyConfig) {
     eleventyConfig.setUseGitIgnore(false); // Otherwise docs are ignored
 
     eleventyConfig.addCollection("posts", function(collection) {
-        return collection.getFilteredByTag("posts").filter(function(item) {
-          // Exclude posts with a future date
-          return item.date <= new Date();
-        });
+        if (!DEV_MODE) {
+          // In production, exclude posts with a future date
+          return collection.getFilteredByTag("posts").filter(function(item) {
+            return item.date <= new Date();
+          });
+        } else {
+          // In dev mode, return all posts
+          return collection.getFilteredByTag("posts");
+        }
     });
 
     eleventyConfig.addPlugin(EleventyEdgePlugin);
