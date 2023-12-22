@@ -30,6 +30,13 @@ const DEV_MODE = process.env.ELEVENTY_RUN_MODE !== "build" // i.e. serve/watch
 module.exports = function(eleventyConfig) {
     eleventyConfig.setUseGitIgnore(false); // Otherwise docs are ignored
 
+    eleventyConfig.addCollection("posts", function(collection) {
+        return collection.getFilteredByTag("posts").filter(function(item) {
+          // Exclude posts with a future date
+          return item.date <= new Date();
+        });
+    });
+
     eleventyConfig.addPlugin(EleventyEdgePlugin);
 
     // Layout aliases
