@@ -1,41 +1,43 @@
-[ {
-  "title": "<span class=\"text-red-600\">Low-code development<\/span> to enable citizen developers",
-  "content": "Node-RED's low-code development environment allows your engineers to quickly build applications that solve their requirements. Reducing the reliance on external application developers makes it possible to innovate faster and get the results you need.",
-  "image": "citizen_dev_red",
-  "imagealt": "a team of developers"
-},{
-    "title": "Access, <span class=\"text-red-600\">transform, and visualize any data,<\/span> over any protocol",
-    "content": "Getting access to data from your operations is key to the start of a digital transformation. Node-RED makes it easy to access and transform data over any protocol. Node-RED Dashboard makes it possible to create dashboards and HMIs to visualize the data.",
+[
+  {
+    "title": "<span class=\"text-red-600\">Capture data<\/span> like never before",
+    "content": "Gathering data from your operations is key to start a digital transformation. We make it easy to access, transform, and visualize data over any protocol.",
     "image": "connect_device_red",
     "imagealt": "data transformation"
   },
   {
-    "title": "Build <span class=\"text-red-600\">bespoke solutions<\/span> that fits like a glove",
-    "content": "Every manufacturing operation is unique so you need a custom solution to meet your unique requirements. Off the shelf solutions never really work for everyone. Node-RED and the Node-RED library makes it possible to build manufacturing applications that fit your operations.",
+    "title": "Custom <span class=\"text-red-600\">solutions<\/span> for your company",
+    "content": "FlowFuse offers the customization essential for your specific needs. Leveraging Node-RED and its extensive library, we enable the creation of manufacturing applications that align perfectly with your operational requirements.",
     "image": "bespoke_red",
     "imagealt": "icon of code"
   },
   {
-    "title": "Manage and configure <span class=\"text-red-600\">Node-RED at scale<\/span>",
-    "content": "FlowFuse manages the deployment  and configuration of all your Node-RED instances from a common platform. FlowFuse automates the process of creating snapshots of Node-RED instances that can be deployed to multiple target edge devices.",
+    "title": "<span class=\"text-red-600\">Centralized<\/span> management and automated deployment",
+    "content": "FlowFuse streamlines the management of your development environments, offering a unified platform for deployment and configuration. With our automated processes, creating and deploying configurations across multiple devices is efficient and hassle-free.",
     "image": "scalable_pictogram_red",
     "imagealt": "scalability"
   },
   {
-    "title": "<span class=\"text-red-600\">Reliable Node-RED<\/span> application delivery",
-    "content": "FlowFuse creates a resilient application delivery environment that simplifies the software development lifecycle for Node-RED. Using our DevOps delivery pipelines to support a development, test and production environment to ensure reliable Node-RED application delivery.",
+    "title": "<span class=\"text-red-600\">Reliable delivery<\/span> every time",
+    "content": "FlowFuse revolutionizes the software development process, streamlining the lifecycle for your applications. Our DevOps pipelines facilitate development, testing, and production, ensuring consistent and reliable application delivery.",
     "image": "pipeline_red",
     "imagealt": "a pipeline of Node-RED instances"
   },
   {
-    "title": "<span class=\"text-red-600\">Security compliance<\/span> for Node-RED",
-    "content": "FlowFuse enhances compliance when developing workflows using Node-RED by offering Single Sign-On (SSO) for secure user authentication, an audit log for monitoring, ensuring strict access control through Role-Based Access Control (RBAC), and change control. Thereby bolstering security and traceability in your processes.",
+    "title": "<span class=\"text-red-600\">Secure and compliant<\/span> development",
+    "content": "Digitally transform your operations while maintaining the security you rely upon. Single-Sign-On (SSO), audit logs for monitoring, and change control are a few ways we ensure secure building in a collaborative environment.",
     "image": "security_pictogram_red",
     "imagealt": "a lock"
   },
   {
-    "title": "<span class=\"text-red-600\">Professional Support<\/span> for Node-RED deployments",
-    "content": "FlowFuse is the trusted partner for providing professional support for business critical applications, built on Node-RED. Our experts can help with any challenge, ensuring that your Node-RED applications are running smoothly and securely. We keep your systems up-to-date with the latest versions of Node-RED and security updates, ensuring the continuity of your operations.",
+    "title": "<span class=\"text-red-600\">Low-code<\/span> development",
+    "content": "Our low-code platform enables your team to rapidly develop tailored applications in-house for faster, optimized results.",
+    "image": "citizen_dev_red",
+    "imagealt": "a team of developers"
+  },
+  {
+    "title": "<span class=\"text-red-600\">Expert Support<\/span> for your applications",
+    "content": "FlowFuse is your trusted partner for professional support, ensuring smooth and secure operation of your critical applications. Our team of experts is dedicated to tackling any challenge and maintaining the highest level of performance. We keep your systems current with the latest updates, safeguarding the continuity and efficiency of your operations.",
     "image": "support_pictogram_red",
     "imagealt": "support"
   }
