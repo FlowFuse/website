@@ -15,7 +15,7 @@ hubspot:
 
 <!--more-->
 
-In this webinar, join industry experts Marc Pous and Grey Dziuba as they delve into the integration of balena.io and FlowFuse, two pioneering platforms in the realm of industrial IoT and application development. 
+In this webinar, join industry experts Marc Pous and Grey Dziuba as they delve into the integration of [balena.io](https://www.balena.io/) and FlowFuse, two pioneering platforms in the realm of industrial IoT and application development. 
 
 This session is tailored for professionals seeking to harness the power of advanced fleet management in sectors like wind farms, vehicular fleets, discrete and process manufacturing, oil rigs, and many more.
 
