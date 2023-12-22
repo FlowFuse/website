@@ -30,6 +30,8 @@ const DEV_MODE = process.env.ELEVENTY_RUN_MODE !== "build" // i.e. serve/watch
 module.exports = function(eleventyConfig) {
     eleventyConfig.setUseGitIgnore(false); // Otherwise docs are ignored
 
+    eleventyConfig.addShortcode('now', () => new Date());
+
     eleventyConfig.addCollection("posts", function(collection) {
         if (!DEV_MODE) {
           // In production, exclude posts with a future date
