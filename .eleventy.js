@@ -30,23 +30,25 @@ const DEV_MODE = process.env.ELEVENTY_RUN_MODE !== "build" // i.e. serve/watch
 module.exports = function(eleventyConfig) {
     eleventyConfig.setUseGitIgnore(false); // Otherwise docs are ignored
 
+    // Define a filter named 'isFuturePost'
     eleventyConfig.addFilter('isFuturePost', (date) => {
         const isFuturePost = date && date > new Date();
         return isFuturePost && !DEV_MODE;
     });
 
+    // Exclude future posts from posts unless we're in dev mode
     eleventyConfig.addFilter('excludeFuturePosts', (posts) => {
-        if (DEV_MODE) {
-            return posts;
-        }
         const now = new Date();
-        return posts.filter(post => post.date <= now);
+        return posts.filter(post => {
+            const isFuturePost = post.date > now;
+            if (isFuturePost) {
+                let text = DEV_MODE ? "Including" : "Excluding";
+                console.log(`[11ty/eleventy-base-blog] ${text} future post ${post.data.page.inputPath}`);
+            }
+            return !isFuturePost || DEV_MODE;
+        });
     });
 
-    eleventyConfig.addCollection('posts', collection => {
-        return collection.getFilteredByTag('posts');
-    });
-    
     eleventyConfig.addPlugin(EleventyEdgePlugin);
 
     // Layout aliases
