@@ -30,6 +30,10 @@ const DEV_MODE = process.env.ELEVENTY_RUN_MODE !== "build" // i.e. serve/watch
 module.exports = function(eleventyConfig) {
     eleventyConfig.setUseGitIgnore(false); // Otherwise docs are ignored
 
+    // Set DEV_MODE to true if the deploy URL starts with 'https://deploy-preview-'
+    const DEV_MODE = process.env.ELEVENTY_ENV === 'development' ||
+        (process.env.DEPLOY_URL && process.env.DEPLOY_URL.startsWith('https://deploy-preview-'));
+
     // Define a filter named 'isFuturePost'
     eleventyConfig.addFilter('isFuturePost', (date) => {
         const isFuturePost = date && date > new Date();
