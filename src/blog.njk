@@ -11,4 +11,5 @@ meta:
 ---
 
 {% set filter = 'posts' %}
+{% set posts = posts | excludeFuturePosts %}
 {% include "blog/template.njk" %}

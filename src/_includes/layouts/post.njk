@@ -1,7 +1,8 @@
 ---
 layout: layouts/base.njk
 type: post
-permalink: "{% if date > now %}false{% else %}/posts/{{ title | slug }}/{% endif %}"
+eleventyComputed:
+    permalink: "{% if date | isFuturePost %}false{% else %}{{permalink}}{% endif %}"
 ---
 
 <div class="w-full page post">
