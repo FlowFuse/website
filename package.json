@@ -10,7 +10,7 @@
         "start": "npm-run-all clean:dev build:js --parallel dev:*",
         "test": "mocha",
         "build:js": "terser -c -m -o _site/js/cc.min.js node_modules/vanilla-cookieconsent/dist/cookieconsent.js src/js/cookies.js",
-        "build": "cross-env NODE_ENV=production ELEVENTY_ENV=production npm-run-all clean build:js --parallel prod:*",
+        "build": "cross-env NODE_ENV=production npm-run-all clean build:js --parallel prod:*",
         "clean:dev": "cross-env npx del-cli '_site/!(img)' 'src/docs/**/*.md' 'src/blueprints/**/*' && cross-env npx mkdirp '_site/js'",
         "clean": "cross-env npx del-cli '_site/!(img)' && cross-env mkdir -p '_site/js'",
         "dev:docs": "node scripts/watch_docs.js",

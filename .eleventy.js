@@ -42,10 +42,10 @@ module.exports = function(eleventyConfig) {
         return posts.filter(post => {
             const isFuturePost = post.date > now;
             if (isFuturePost) {
-                let text = process.env.ELEVENTY_ENV === 'production' ? "Excluding" : "Including";
+                let text = DEV_MODE ? "Including" : "Excluding";
                 console.log(`[11ty/eleventy-base-blog] ${text} future post ${post.data.page.inputPath}`);
             }
-            return !isFuturePost || process.env.ELEVENTY_ENV !== 'production';
+            return !isFuturePost || DEV_MODE;
         });
     });
 
