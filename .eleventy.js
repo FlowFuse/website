@@ -30,14 +30,14 @@ const DEV_MODE = process.env.ELEVENTY_RUN_MODE !== "build" // i.e. serve/watch
 module.exports = function(eleventyConfig) {
     eleventyConfig.setUseGitIgnore(false); // Otherwise docs are ignored
 
-    // Set DEV_MODE to true if the deploy URL starts with 'https://deploy-preview-'
-    const DEV_MODE = process.env.ELEVENTY_ENV === 'development' ||
+    // Set DEV_MODE_POSTS to true if the deploy URL starts with 'https://deploy-preview-'
+    const DEV_MODE_POSTS = process.env.ELEVENTY_RUN_MODE !== "build" || 
         (process.env.DEPLOY_URL && process.env.DEPLOY_URL.startsWith('https://deploy-preview-'));
 
     // Define a filter named 'isFuturePost'
     eleventyConfig.addFilter('isFuturePost', (date) => {
         const isFuturePost = date && date > new Date();
-        return isFuturePost && !DEV_MODE;
+        return isFuturePost && !DEV_MODE_POSTS;
     });
 
     // Exclude future posts from posts unless we're in dev mode
@@ -46,10 +46,10 @@ module.exports = function(eleventyConfig) {
         return posts.filter(post => {
             const isFuturePost = post.date > now;
             if (isFuturePost) {
-                let text = DEV_MODE ? "Including" : "Excluding";
+                let text = DEV_MODE_POSTS ? "Including" : "Excluding";
                 console.log(`[11ty/eleventy-base-blog] ${text} future post ${post.data.page.inputPath}`);
             }
-            return !isFuturePost || DEV_MODE;
+            return !isFuturePost || DEV_MODE_POSTS;
         });
     });
 
