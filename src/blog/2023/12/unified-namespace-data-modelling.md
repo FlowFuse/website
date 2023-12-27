@@ -16,7 +16,7 @@ This paradigm allows for a flexible role allocation within the network, where no
 This article aims to explain the process of data modeling for your UNS, highlighting the role of tools like the FlowFuse Team Library in schema management.
 
 **Overview of Steps:**
-1. [Connection to your Operational Technology (OT) equipment](#step-1---connection-to-your-operational-technology-ot-equipment)
+1. [Connection to your Operational Technology (OT) equipment](#step-1---connection-to-your-operational-technology-(ot)-equipment)
 2. [Structuring your payload](#step-2---structuring-your-payload)
 3. [Building your Topic Hierarchy](#step-3---building-your-topic-hierarchy)
 4. [Connection to your Unified Namespace](#step-4---connection-to-your-unified-namespace)
