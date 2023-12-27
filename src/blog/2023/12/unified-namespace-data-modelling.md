@@ -16,7 +16,7 @@ This paradigm allows for a flexible role allocation within the network, where no
 This article aims to explain the process of data modeling for your UNS, highlighting the role of tools like the FlowFuse Team Library in schema management.
 
 **Overview of Steps:**
-1. [Connection to your Operational Technology (OT) equipment](#step-1---connecting-to-operational-technology-ot-equipment)
+1. [Connection to your Operational Technology (OT) equipment](#step-1---connection-to-your-operational-technology-ot-equipment)
 2. [Structuring your payload](#step-2---structuring-your-payload)
 3. [Building your Topic Hierarchy](#step-3---building-your-topic-hierarchy)
 4. [Connection to your Unified Namespace](#step-4---connection-to-your-unified-namespace)
@@ -40,6 +40,33 @@ The payload is the core of transmitted data. Transforming the payload for mutual
 Utilizing FlowFuse and Node-RED can enforce schema consistency. Node-RED's template node lets you define JSON schemas for your flows, while the FlowFuse Team Library facilitates schema sharing and consistency across your organization.
 
 In my example, I use a very simple JSON schema as a structure for measurements for `StationA`:
+```json
+{
+    "$schema": "Enterprise/Site/Line1/StationA/measurements/_schema",
+    "title": "Measurement Schema for StationA",
+    "type": "object",
+    "properties": {
+        "value": {
+            "description": "The actual value being measured",
+            "type": "number"
+        },
+        "unit": {
+            "description": "The unit of the measurement value",
+            "type": "string"
+        },
+        "timestamp": {
+            "description": "The timestamp of the measurement in ISO 8601 format",
+            "type": "string"
+        }
+    },
+    "required": [
+        "value",
+        "unit",
+        "timestamp"
+    ]
+}
+```
+Example Data:
 ```json
 {
     "value": msg.payload,
