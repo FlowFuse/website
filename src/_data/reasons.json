@@ -1,25 +1,25 @@
 [{
-    "title": "Hosted Node-RED - Easy to get started, easier to maintain",
-    "content": "FlowFuse Cloud takes care of running Node-RED for you. No more messing around with Docker containers, upgrading to new releases, keeping your Node-RED running, we take care of it for you.",
+    "title": "Simplified Hosting and Maintenance",
+    "content": "Experience ease of use with FlowFuse Cloud, handling all your hosting needs. Forget the complexities of maintaining your development environment; we've got it covered.",
     "videoid": "Ec4yvcvGmu8"
   },{
-    "title": "Multiple Node-RED Instances from one place",
-    "content": "FlowFuse allows you to create multiple Node-RED instances and manage them in one place. Gone are the days of trying to coordinate Node-RED installations, or multitude of tabs. Finally Node-RED allows for serious application development.",
+    "title": "Centralized Instance Management",
+    "content": "FlowFuse enables seamless management of multiple instances from a single platform, streamlining your development and coordination efforts.",
     "videoid": "KOnQnR7yfT0"
   },{
-    "title": "Version control your Node-RED flows",
-    "content": "Who hasn't made changes to a Node-RED flow but regret not exporting the previous version? FlowFuse has built in version control. You can create snapshots of your instance that can be rolled back at any time.",
+    "title": "Built-In Version Control",
+    "content": "With FlowFuse, safeguard your progress with integrated version control. Effortlessly create and revert to snapshots, ensuring peace of mind in your development process.",
     "videoid": "m2Onip4Lf4w"
   },{
-    "title": "Team development",
-    "content": "Node-RED is an amazing productivity tool for an individual engineer. However, doing any type of collaborative development with colleagues is very difficult. FlowFuse allows for team development on the same Node-RED instances.",
+    "title": "Enhanced Team Collaboration",
+    "content": "Facilitate collaborative development with FlowFuse, allowing teams to work together efficiently on the same projects.",
     "videoid": "HCUDQvBI9JU"
   },{
-    "title": "Development Pipelines",
-    "content": "In modern software development, best practices are that you set up stages of the development process to streamline development, test and production, often called pipelines. FlowFuse allows you to set up pipelines for your Node-RED development."
+    "title": "Robust Development Pipelines",
+    "content": "Adopt best practices in software development with FlowFuse's pipeline setup, optimizing your workflow from development to production."
   },{
-    "title": "Remote device management",
-    "content": "Many people are using Node-RED to aggregate and analyze data from remote devices. However, Node-RED is really meant for running locally or in the cloud. FlowFuse breaks down the barriers to remote device management by providing a central platform that can manage hundreds of devices running Node-RED. A great way to scale up your use of Node-RED in your organization."
+    "title": "Efficient Remote Device Management",
+    "content": "Scale your operations with FlowFuse’s remote device management, offering a centralized platform for extensive device control and data analysis."
   },{
     "title": "Certified Nodes for Reliability and Security",
     "content": "FlowFuse offers a curated collection of certified nodes, ensuring top-notch quality, security, and support. Explore our certified nodes on the <a href='/certified-nodes'>Certified Nodes Page</a> and benefit from a robust ecosystem while maintaining operational reliability."
