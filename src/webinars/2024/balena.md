@@ -11,7 +11,7 @@ hubspot:
     formId: b4ec9aa1-8648-47b3-b908-ec8597e8735d
 ---
 
-**Explore building manufacturing applications with FlowFuse Blueprints in our upcoming webinar. Blueprints make it easy to get started building applications with Node-RED.**
+**In this webinar we will share how leveraging balena with FlowFuse simplifies your fleet management.**
 
 <!--more-->
 
