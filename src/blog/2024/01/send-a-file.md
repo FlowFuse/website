@@ -68,23 +68,37 @@ print(f"Response Body: {response.text}")
 
 This application can be run on either Windows or Linux, .bat for windows and .sh for linux.
 
+## Installation
+
+Clone the repository:
+```bash
+git clone https://github.com/gdziuba/FF_Send-File-to-NR.git
+```
+Navigate to the directory:
+```bash
+cd FF_Send-File-to-NR
+```
+
+## Configuration
+
+Edit the lines in the body of [index.html](https://github.com/gdziuba/FF_Send-File-to-NR/blob/21214f88c6c4536f49efb88cf5f84bf52071a88b/templates/index.html#L69) to include the endpoints to which you would like to send the files.
+
+```
+<option value="http://localhost:1880/fileupload">CSV File Upload</option>
+```
+
 ## Operating Systems
 
-### Windows
+### Windows 
 
-To Run: 
-
+Run the script:
 ```bash
-start_app.bat
+.\start_app.bat
 ```
 
 This will install if necessary, start the Flask Application, and take you to localhost:5000 on the browser.
 
 ### Linux
-
-```bash
-git clone https://github.com/gdziuba/FF_Send-File-to-NR.git
-```
 
 Make the script executable: Run:
 
@@ -104,7 +118,9 @@ To access the application, open a browser to the ip:5000 of the running applicat
 
 # Node-RED Ingress
 
-![csv upload application](./images/nr_flow_csv_ingress.png)
+<!-- ![csv upload application](./images/nr_flow_csv_ingress.png) -->
+
+<iframe width="100%" height="225px" src="https://flows.nodered.org/flow/effb53752e5d6f767b3c7e5d41a4a6e8/share?height=100" allow="clipboard-read; clipboard-write" style="border: none;"></iframe>
 
 Once we have a file ready to be sent, we now need to configure the receiving side in Node-RED. In this example, we are leveraging a CSV formatted file and then converting it to be used at a later time.
 
