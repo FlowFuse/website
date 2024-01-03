@@ -39,7 +39,7 @@ Update the **file_path** with the path to where the file to be uploaded will be 
 
 
 
-```
+```python
 import requests
 
 def send_file(nodered_url, file_path):
