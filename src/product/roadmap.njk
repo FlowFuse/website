@@ -210,7 +210,8 @@ has a headline, description, and a container for roadmap items. -->
     // Update the roadmap sections with the fetched issues.
     async function updateRoadmap() {
     const inConsiderationItems = await fetchGitHubIssues("consideration");
-    const progressItems = await fetchDevIssues();
+    // const progressItems = await fetchDevIssues();
+    const progressItems = await fetchGitHubIssues("in-progress");
     const considerationElements = document.querySelectorAll(".consideration");
     const progressElements = document.querySelectorAll(".progress");
 
