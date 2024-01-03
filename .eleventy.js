@@ -41,8 +41,7 @@ module.exports = function(eleventyConfig) {
 
     // Define a filter named 'isFutureDate'
     eleventyConfig.addFilter('isFutureDate', (date) => {
-        const isFutureDate = date && date > new Date();
-        return isFutureDate;
+        return date && date > new Date();
     });
 
     // Exclude future posts from livePosts unless we're in dev mode
