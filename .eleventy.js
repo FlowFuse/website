@@ -527,7 +527,9 @@ module.exports = function(eleventyConfig) {
 
         const folderPath = env.page.inputPath
         
-        const widths = [650] // maximum width an image can be displayed at as part of blog prose
+        // Check if the image has the 'data-zoomable' attribute
+        const widths = 'data-zoomable' in attributes ? [1920] : [650]; // maximum width an image can be displayed at as part of blog prose
+
         const htmlSizes = null
 
         const async = false // cannot run async inside markdown
@@ -548,7 +550,7 @@ module.exports = function(eleventyConfig) {
             throw error
         }
     }
-
+    
     eleventyConfig.setLibrary("md", markdownLib)
 
     if (!DEV_MODE) {
