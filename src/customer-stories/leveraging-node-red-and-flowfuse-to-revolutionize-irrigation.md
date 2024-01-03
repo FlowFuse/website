@@ -36,7 +36,7 @@ Before implementing Node-RED and FlowFuse, PIDD grappled with operational challe
 
 Recognizing the need for a technological overhaul, PIDD embraced Node-RED, a flow-based development tool, while using FlowFuse to help manage their edge and cloud devices. This combination served as a bridge between diverse devices, including Raspberry Pis, PLCs, and more. FlowFuse played a crucial role in securely exposing and controlling these devices through web interfaces.
 
-![PIDD Overview](./images/stories/pidd-view.png "PIDD Overview")
+![PIDD Overview](./images/stories/pidd-view.png "PIDD Overview"){data-zoomable}
 
 #### Key Applications
 
@@ -65,4 +65,3 @@ PIDD's forward-thinking approach extends to their future plans:
 #### Conclusion
 
 Paloma Irrigation and Drainage District's journey showcases the tangible benefits of using FlowFuse to integrate Node-RED into agricultural operations. This case study illustrates how innovative technology solutions can address challenges, improve efficiency, and set the stage for the next era of smart agriculture. As PIDD continues to embrace these technologies, they position themselves at the forefront of sustainable and technology-driven water management in agriculture.
-

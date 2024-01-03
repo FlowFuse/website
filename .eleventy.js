@@ -519,6 +519,12 @@ module.exports = function(eleventyConfig) {
         const imgAlt = token.content
         const imgTitle = token.attrGet('title')
 
+        // Get all the attributes of the image
+        const attributes = token.attrs.reduce((acc, attr) => {
+            acc[attr[0]] = attr[1];
+            return acc;
+        }, {});
+
         const folderPath = env.page.inputPath
         
         const widths = [650] // maximum width an image can be displayed at as part of blog prose
@@ -527,7 +533,16 @@ module.exports = function(eleventyConfig) {
         const async = false // cannot run async inside markdown
 
         try {
-            return imageHandler(imgSrc, imgAlt, imgTitle, widths, htmlSizes, folderPath, eleventyConfig, async, DEV_MODE)
+            let imageHtml = imageHandler(imgSrc, imgAlt, imgTitle, widths, htmlSizes, folderPath, eleventyConfig, async, DEV_MODE)
+
+            // Add the additional attributes to the image
+            for (let attr in attributes) {
+                if (attr !== 'src' && attr !== 'alt' && attr !== 'title') {
+                    imageHtml = imageHtml.replace('<img', `<img ${attr}="${attributes[attr]}"`);
+                }
+            }
+
+            return imageHtml;
         } catch (error) {
             console.error(`Image generation error while handling: ${imgSrc} in ${folderPath} - ${error}, consider using @skip`)
             throw error
