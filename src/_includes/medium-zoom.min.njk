@@ -3,10 +3,19 @@
 </script>
 <script>
     document.addEventListener('DOMContentLoaded', (event) => {
+        const zoomableImages = document.querySelectorAll('img[data-zoomable]');
+
+        zoomableImages.forEach((img) => {
+            const wrapper = document.createElement('div');
+            wrapper.classList.add('zoomable-image');
+            img.parentNode.insertBefore(wrapper, img);
+            wrapper.appendChild(img);
+        });
+
         mediumZoom('[data-zoomable]', {
             margin: 24,
             background: 'black',
             scrollOffset: 0,
-        })
-    })
+        });
+    });
 </script>
