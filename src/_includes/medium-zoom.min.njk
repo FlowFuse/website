@@ -8,8 +8,8 @@
         zoomableImages.forEach((img) => {
             const wrapper = document.createElement('div');
             wrapper.classList.add('zoomable-image');
-            img.parentNode.insertBefore(wrapper, img);
-            wrapper.appendChild(img);
+            img.parentNode.parentNode.insertBefore(wrapper, img.parentNode);
+            wrapper.appendChild(img.parentNode);
         });
 
         mediumZoom('[data-zoomable]');
