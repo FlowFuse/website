@@ -4,7 +4,7 @@ type: post
 eleventyComputed:
     permalink: "{% if date | isFuturePost %}false{% else %}{{permalink}}{% endif %}"
 ---
-{% if date | shortDate > now | shortDate %}
+{% if date | isFutureDate %}
     <div class="w-full page post bg-teal-400 text-center text-gray-800 py-4 font-bold">
         This post is scheduled to be published on {{ date | shortDate }}
     </div>
