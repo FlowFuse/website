@@ -1,8 +1,14 @@
 ---
 layout: layouts/base.njk
 type: post
+eleventyComputed:
+    permalink: "{% if date | isFuturePost %}false{% else %}{{permalink}}{% endif %}"
 ---
-
+{% if date | isFutureDate %}
+    <div class="w-full page post bg-teal-400 text-center text-gray-800 py-4 font-bold">
+        This post is scheduled to be published on {{ date | shortDate }}
+    </div>
+{% endif %}
 <div class="w-full page post">
     {% if title %}
         <div class="post-title container m-auto text-center px-6 flex mt-6 mb-6 md:max-w-screen-lg md:mt-12">
