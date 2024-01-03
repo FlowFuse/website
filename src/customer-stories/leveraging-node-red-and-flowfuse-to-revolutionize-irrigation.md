@@ -4,7 +4,7 @@ image: /images/stories/pidd-view.png
 date: 2023-12-29
 logo:
 story:
-    brand: PIDD
+    brand: Paloma Irrigation and Drainage District
     url:
     logo: /images/stories/logos/pidd-logo.jpg
     quote: Once we settled on using Node-RED, we knew we needed a solution to help us manage our edge devices as well as our central control system. FlowFuse has helped us take our Node-RED from proof-of-concept through to a reliable, scalable solution for the future.
