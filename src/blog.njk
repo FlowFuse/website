@@ -2,7 +2,7 @@
 layout: nohero
 sitemapPriority: 0.9
 pagination:
-  data: collections.livePosts
+  data: collections.posts
   size: 19 # creates a nice matrix (1 header, 18 left: 3 on 6 rows)
   alias: posts
   reverse: true
@@ -10,4 +10,5 @@ meta:
     title: Blog
 ---
 
+{% set filter = 'posts' %}
 {% include "blog/template.njk" %}
