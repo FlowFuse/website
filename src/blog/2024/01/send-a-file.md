@@ -93,15 +93,6 @@ python run.py
 ```
 
 
-Update the **nodered_url** to the location of the NodeRED instance.  Be sure to adjust the port if the default port of 1880 isn't being used.
-
-Update the **file_path** with the path to where the file to be uploaded will be located.
-
-
-
-
-
-
 ## Web Application
 
 ![csv upload application](./images/csv_upload_app.png)
