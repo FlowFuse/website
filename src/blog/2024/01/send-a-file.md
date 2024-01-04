@@ -135,7 +135,7 @@ This will install if necessary, start the Flask Application, and take you to loc
 
 ### Linux ###
 
-Make the script executable: Run:
+Make the script executable by running running `chmod +x setup_and_run.sh`. Then run the application with: `chmod +x setup_and_run.sh`.
 
 ```bash
 chmod +x setup_and_run.sh
