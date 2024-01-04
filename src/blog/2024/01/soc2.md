@@ -15,7 +15,7 @@ SOC 2, governed by the American Institute of Certified Public Accountants (AICPA
 
 <!--more-->
 
-## Improving Your Security Posture
+# Improving Your Security Posture
 For FlowFuse, pursuing SOC 2 compliance was a natural step in enhancing our security posture. In today's landscape, where cybersecurity threats and data breaches are rampant, prioritizing information security is not optional but a necessity. Our SOC 2 audit was more than a procedural hurdle; it was a comprehensive validation of our robust controls and processes by an independent third party.
 
 # Why We Pursued SOC 2 Now
