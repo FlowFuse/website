@@ -1,9 +1,9 @@
 ---
 title: Send a File to Node-RED
 subtitle: A guide to sending a csv file to Node-RED and start interacting with it.
-date: 2024-01-03
+date: 2024-01-04
 authors: ["grey-dziuba"]
-image: /blog/2023/12/images/uns-data-modeling.png
+image: /blog/2024/01/images/send-a-file.png
 tags:
     - posts
     - flowfuse
