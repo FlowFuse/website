@@ -23,7 +23,7 @@ Furthermore, on the management layer of most companies, Excel and Google Sheets 
 
 # Summary
 
-There are many approaches that can be taken when solving this. We are going to go over 3. 
+There are many approaches that can be taken when solving this. We are going to go over three. 
 
 1. [Node-RED Dashboard (FlowFuse)](#node-red-dashboard-(flowfuse)) - Leverage [FlowFuse's Dashboard](https://dashboard.flowfuse.com/) to allow the user to navigate to the webpage, upload a file, and visualize before sending it on to the next process. 
 2. [Simple Python Script](#simple-python-script) - Simple script that will be shared below. It is a simple Python application that allows the user to send a file with a simple command, but this might require a little more technical skills that the end user may not feel comfortable with. 
@@ -38,7 +38,9 @@ There are many approaches that can be taken when solving this. We are going to g
 This is the **recommended** approach.  This simple flow allows the user to visualize data from a CSV in the Node-RED Dashboard. The button then allows the user to initiate a request to send the data to the next step. This next step could be anything from loading into a SQL database to saving it.
 
 ### Instructions ###
-To configuring, install Node-RED Dashboard 2.0.  Follow these [instructions](https://dashboard.flowfuse.com/getting-started.html) to install.  Once you have Dashboards 2.0 installed, you will need to import the flow into your Node-RED instance.  To do this, follow these [instructions](https://flowfuse.com/blog/2023/03/3-quick-node-red-tips-5/#1.-copy-and-share-your-flows-using-export-and-import). To access the dashboard, navigate to the ```http://hostname:1880/dashboard```.
+1. Install Node-RED Dashboard 2.0.  Follow these [instructions](https://dashboard.flowfuse.com/getting-started.html) to install.  
+2. Import Flow - to import the flow into your Node-RED instance follow these [instructions](https://flowfuse.com/blog/2023/03/3-quick-node-red-tips-5/#1.-copy-and-share-your-flows-using-export-and-import). 
+3. Access Dashboard - To access the dashboard, navigate to the ```http://hostname:1880/dashboard```.
 
 This dashboard is currently configured to take in CSV files and transform them into a single message that is sent to the table for visualization.  Simultaneously the data from the import is stored locally in the flow context.  From there, the button can be used to trigger the sending of the data from the flow context to the next destination.  In this case, it is a simple debug node.
 
@@ -149,7 +151,7 @@ To access the application, open a browser to the ip:5000 of the running applicat
 
 
 
-## Node-RED Ingress
+### Node-RED Ingress
 
 <!-- ![csv upload application](./images/nr_flow_csv_ingress.png) -->
 
