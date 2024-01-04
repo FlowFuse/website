@@ -9,15 +9,15 @@ async function copyFiles(src, dest) {
     const files = await fs.readdir(src, { withFileTypes: true });
     for (const file of files) {
         if (!file.name.startsWith('.')) {
-            const lowerCaseFileName = file.name.toLowerCase();
             if (file.isDirectory()) {
+                const lowerCaseFileName = file.name.toLowerCase();
                 const newSrc = path.join(src, file.name);
                 const newDest = path.join(dest, lowerCaseFileName);
                 await fs.mkdir(newDest, { recursive: true });
                 await copyFiles(newSrc, newDest);
             } else {
                 const srcFile = path.join(src, file.name);
-                const destFile = path.join(dest, lowerCaseFileName.replace(/readme/, 'index'));
+                const destFile = path.join(dest, file.name.replace(/README/, 'index'));
 
                 if (!file.name.endsWith('.md')) {
                     await fs.copyFile(srcFile, destFile);
