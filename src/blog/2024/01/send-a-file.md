@@ -33,7 +33,7 @@ There are many approaches that can be taken when solving this. We are going to g
 
 ## Simple Python Script
 
-This simple Python script sends a file to a Node-RED flow.  The flow that will work with can be seen [here](#node-red-ingress).
+This simple Python script sends a file to a Node-RED flow.  The flow that will work with this script can be seen [here](#node-red-ingress).
 
 The script requires **requests** and **Python 3.x**.
 
