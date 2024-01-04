@@ -21,7 +21,7 @@ Furthermore, on the management layer of most companies, Excel and Google Sheets 
 
 
 
-# Summary
+# 3 Ways to send a file to node-RED
 
 There are many approaches that can be taken when solving this. We are going to go over three. 
 
