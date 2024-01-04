@@ -35,7 +35,7 @@ There are many approaches that can be taken when solving this. We are going to g
 
 ![csv dashboard](./images/csv-dashboard.png)
 
-This is the **recommended** approach.  This simple flow allows the user to visualize data from a CSV in the Node-RED Dashboard. The button then allows the user to initiate a request to send the data to the next step. This next step could be anything from loading into a SQL database to saving it.
+This is the **recommended** approach. This simple flow allows the user to visualize data from a CSV in the Node-RED Dashboard. The button then allows the user to initiate a request to send the data to the next step. This next step could be anything from loading into a SQL database to saving it.
 
 ### Instructions ###
 1. Install Node-RED Dashboard 2.0. Follow these [instructions](https://dashboard.flowfuse.com/getting-started.html) to install.  
