@@ -105,14 +105,9 @@ This stand-alone web application can be run on either Windows or Linux, .bat for
 
 ### Installation
 
-Clone the repository:
+Clone the repository and navigate to the directory:
 ```bash
-git clone https://github.com/gdziuba/FF_Send-File-to-NR.git
-```
-Navigate to the directory:
-```bash
-cd FF_Send-File-to-NR
-```
+git clone https://github.com/gdziuba/FF_Send-File-to-NR.git && cd FF_Send-File-to-NR
 
 ### Configuration ###
 
