@@ -9,7 +9,10 @@ module.exports = async function() {
   });
 
   const transformedData = data.modules.map(item => ({
-    title: item.id.replace(/^(node-red-contrib-|node-red-node-|@flowfuse\/)/, '').split('-').map(word => word.toUpperCase()).join(' '),
+    title: item.id.replace(/^(node-red-contrib-|node-red-node-|@flowfuse\/)/, '')
+      .split('-')
+      .map(word => word.replace(/^\w/, (c) => c.toUpperCase()))
+      .join(' '),
     id: item.id,
     url: item.url,
     description: item.description,
