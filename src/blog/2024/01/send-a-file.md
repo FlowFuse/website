@@ -10,44 +10,45 @@ tags:
     - how-to
 ---
 
-Have you ever needed to send a CSV file to your Node-RED instance? This file can go on to populate a shift schedule, product specifications, or some other configuration file that is used. In this guide, we are covering many different approaches on how to get a file into your Node-RED instance.
+Have you ever needed to send a CSV file to your Node-RED instance? This file can go on to populate a shift schedule, product specifications, or some other configuration file that is used. In this guide, we provide multiple options to upload the data to your Node-RED for further processing and to organize the data to be sent on or used.
 
 <!--more-->
 
 # Why would you need to send a file to Node-RED?
-
 Often times it is necessary to update lookup tables in a SQL database, but you don't necessarily want to give access to everyone to edit the database, nor do you want to have to do it all yourself. This can often be seen when new products are introduced into a manufacturing facility. It may not be often, but enough that it warrants its own application. This process will guide you in a way that will enable your teammates to upload the files to the system themselves.
+
+Furthermore, on the management layer of most companies, Excel and Google Sheets are the go-to tools to perform data collection tasks. Getting management to involved in processes might require you to build an import feature for them. Asking your manager to "Save as" CSV is much easier than teaching them SQL!
+
+
 
 # Summary
 
-There are many approaches that can be taken when solving this. We are going to go over 4. The first is the most simple approach but very manual.  A simple cURL command to send the file.  The second is to leverage FlowFuse's Dashboards to allow the user to navigate to the webpage upload a file and visualize before sending it on to the next process.  The third approach is a simple script that will be shared below. It is a simple Python application that allows the user to send a file with a simple command, but this might require a little more technical skills that the end user may not feel comfortable with. Which brought us to last option. A web-based application that allows the user to upload files to a browser with a selectable endpoint. All have their pros and cons. I will let you decide which is best for your application.
+There are many approaches that can be taken when solving this. We are going to go over 3. 
+
+1. [Node-RED Dashboard (FlowFuse)](#node-red-dashboard-(flowfuse)) - Leverage [FlowFuse's Dashboard](https://dashboard.flowfuse.com/) to allow the user to navigate to the webpage, upload a file, and visualize before sending it on to the next process. 
+2. [Simple Python Script](#simple-python-script) - Simple script that will be shared below. It is a simple Python application that allows the user to send a file with a simple command, but this might require a little more technical skills that the end user may not feel comfortable with. 
+3. [Stand Alone Web Application](#stand-alone-web-application) - A web-based application that allows the user to upload files to a browser with a selectable endpoint. All have their pros and cons. I will let you decide which is best for your application.
 
 
-## cURL
 
-Honestly it doesn't get much more simple than this, but it is probably not for everyone.  Not everyone has access to a device that has cURL available.  Generally it is only available on Linux and UNIX.  It was announced to be available in Windows, but it isn't a direct translation and function more like a alias to "[Invoke-WebRequest](https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/invoke-webrequest?view=powershell-7.4)".  It isn't a one to one.  None the less here is an example cURL command that will work with this [flow](#node-red-ingress).
-
-```bash
-curl -F 'data=@/path/to/file.csv' http://localhost:1880/fileupload
-```
-
-
-## NodeRED Dashboard (FlowFuse)
-
-This simple flow allows the user to visualize data from a CSV in FlowFuse Dashboards. The button then allows the user to initiate a request to send the data to the next step. This next step could be anything from loading into a SQL Database to saving it locally.
+## Node-RED Dashboard (FlowFuse)
 
 ![csv dashboard](./images/csv-dashboard.png)
 
+This is the **recommended** approach.  This simple flow allows the user to visualize data from a CSV in the Node-RED Dashboard. The button then allows the user to initiate a request to send the data to the next step. This next step could be anything from loading into a SQL database to saving it.
+
+### Instructions ###
+To configuring, install Node-RED Dashboard 2.0.  Follow these [instructions](https://dashboard.flowfuse.com/getting-started.html) to install.  Once you have Dashboards 2.0 installed, you will need to import the flow into your Node-RED instance.  To do this, follow these [instructions](https://flowfuse.com/blog/2023/03/3-quick-node-red-tips-5/#1.-copy-and-share-your-flows-using-export-and-import). To access the dashboard, navigate to the ```http://hostname:1880/dashboard```.
+
+This dashboard is currently configured to take in CSV files and transform them into a single message that is sent to the table for visualization.  Simultaneously the data from the import is stored locally in the flow context.  From there, the button can be used to trigger the sending of the data from the flow context to the next destination.  In this case, it is a simple debug node.
+
+
 <iframe width="100%" height="225px" src="https://flows.nodered.org/flow/8c505039ac1b8dbed2bee1e22ee2975a/share?height=100" allow="clipboard-read; clipboard-write" style="border: none;"></iframe>
 
-A link to the flow can be found [here](https://flows.nodered.org/flow/8c505039ac1b8dbed2bee1e22ee2975a).
 
-To import the flow, follows these [instructions](https://flowfuse.com/blog/2023/03/3-quick-node-red-tips-5/#1.-copy-and-share-your-flows-using-export-and-import).
+## Simple Python Script
 
-
-## Simple Script
-
-This simple Python scripts sends a file to a Node-RED flow.  The flow that will work with can be seen [here](#node-red-ingress).
+This simple Python script sends a file to a Node-RED flow.  The flow that will work with can be seen [here](#node-red-ingress).
 
 The script requires **requests** and **Python 3.x**.
 
@@ -94,11 +95,11 @@ python run.py
 ```
 
 
-## Web Application
+## Stand Alone Web Application
 
 ![csv upload application](./images/csv_upload_app.png)
 
-This stand alone web application can be run on either Windows or Linux, .bat for windows and .sh for linux.
+This stand-alone web application can be run on either Windows or Linux, .bat for Windows, and .sh for Linux.
 
 ### Installation
 
@@ -158,6 +159,6 @@ Once we have a file ready to be sent, we now need to configure the receiving sid
 
 A link to the flow can be found [here](https://flows.nodered.org/flow/effb53752e5d6f767b3c7e5d41a4a6e8).
 
-To import the flow, follows these [instructions](https://flowfuse.com/blog/2023/03/3-quick-node-red-tips-5/#1.-copy-and-share-your-flows-using-export-and-import).
+To import the flow, follow these [instructions](https://flowfuse.com/blog/2023/03/3-quick-node-red-tips-5/#1.-copy-and-share-your-flows-using-export-and-import).
 
 A Simple HTTP In node can be used in the form of a Post, ensuring the configuration allows for a file.
