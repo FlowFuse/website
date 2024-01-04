@@ -24,7 +24,7 @@ There are many approaches that can be taken when solving this. We are going to g
 
 ## cURL
 
-Honestly it doesn't get much more simple than this, but it is probably not for everyone.  Not everyone has access to a device that has cURL available.  Generally it is only available on Linux and UNIX.  It was announced to be available in Windows, but it isn't a direct translation and function more like a alias to "[Invoke-WebRequest](https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/invoke-webrequest?view=powershell-7.4)".  It isn't a one to one.  None the less here is an example cURL command that will work with this [flow](https://flows.nodered.org/flow/effb53752e5d6f767b3c7e5d41a4a6e8).
+Honestly it doesn't get much more simple than this, but it is probably not for everyone.  Not everyone has access to a device that has cURL available.  Generally it is only available on Linux and UNIX.  It was announced to be available in Windows, but it isn't a direct translation and function more like a alias to "[Invoke-WebRequest](https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/invoke-webrequest?view=powershell-7.4)".  It isn't a one to one.  None the less here is an example cURL command that will work with this [flow](#node-red-ingress).
 
 ```bash
 curl -F 'data=@/path/to/file.csv' http://localhost:1880/fileupload
@@ -35,10 +35,20 @@ curl -F 'data=@/path/to/file.csv' http://localhost:1880/fileupload
 
 This simple flow allows the user to visualize data from a CSV in FlowFuse Dashboards. The button then allows the user to initiate a request to send the data to the next step. This next step could be anything from loading into a SQL Database to saving it locally.
 
+![csv dashboard](./images/csv-dashboard.png)
+
+<iframe width="100%" height="225px" src="https://flows.nodered.org/flow/8c505039ac1b8dbed2bee1e22ee2975a/share?height=100" allow="clipboard-read; clipboard-write" style="border: none;"></iframe>
+
+A link to the flow can be found [here](https://flows.nodered.org/flow/8c505039ac1b8dbed2bee1e22ee2975a).
+
+To import the flow, follows these [instructions](https://flowfuse.com/blog/2023/03/3-quick-node-red-tips-5/#1.-copy-and-share-your-flows-using-export-and-import).
+
 
 ## Simple Script
 
-This Python script requires **requests** and **Python 3.x**.
+This simple Python scripts sends a file to a Node-RED flow.  The flow that will work with can be seen [here](#node-red-ingress).
+
+The script requires **requests** and **Python 3.x**.
 
 Install requests:
 
@@ -46,17 +56,7 @@ Install requests:
 pip install requests
 ```
 
-### Configuration ###
-
-Update the **nodered_url** to the location of the NodeRED instance.  Be sure to adjust the port if the default port of 1880 isn't being used.
-
-Update the **file_path** with the path to where the file to be uploaded will be located.
-
-<iframe width="100%" height="225px" src="https://flows.nodered.org/flow/8c505039ac1b8dbed2bee1e22ee2975a/share?height=100" allow="clipboard-read; clipboard-write" style="border: none;"></iframe>
-
-A link to the flow can be found [here](https://flows.nodered.org/flow/8c505039ac1b8dbed2bee1e22ee2975a).
-
-To import the flow, follows these [instructions](https://flowfuse.com/blog/2023/03/3-quick-node-red-tips-5/#1.-copy-and-share-your-flows-using-export-and-import).
+Create a file called run.py and paste the contents into the file.
 
 ```python
 import requests
@@ -80,13 +80,33 @@ print(f"Response Status Code: {response.status_code}")
 print(f"Response Body: {response.text}")
 ```
 
+Update the **nodered_url** to the location of the NodeRED instance.  Be sure to adjust the port if the default port of 1880 isn't being used.
+
+Update the **file_path** with the path to where the file to be uploaded will be located.
+
+**Save**
+
+To run:
+
+```python
+python run.py
+```
+
+
+Update the **nodered_url** to the location of the NodeRED instance.  Be sure to adjust the port if the default port of 1880 isn't being used.
+
+Update the **file_path** with the path to where the file to be uploaded will be located.
+
+
+
+
 
 
 ## Web Application
 
 ![csv upload application](./images/csv_upload_app.png)
 
-This application can be run on either Windows or Linux, .bat for windows and .sh for linux.
+This stand alone web application can be run on either Windows or Linux, .bat for windows and .sh for linux.
 
 ### Installation
 
