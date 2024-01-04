@@ -1,0 +1,19 @@
+.medium-zoom-overlay{position:fixed;top:0;right:0;bottom:0;left:0;opacity:0;transition:opacity .3s;will-change:opacity;z-index:1000;}.medium-zoom--opened .medium-zoom-overlay{cursor:pointer;cursor:zoom-out;opacity:1}.medium-zoom-image{cursor:pointer;cursor:zoom-in;transition:transform .3s cubic-bezier(.2,0,.2,1)!important}.medium-zoom-image--hidden{visibility:hidden}.medium-zoom-image--opened{position:relative;cursor:pointer;cursor:zoom-out;will-change:transform;z-index:1000;}
+
+.zoomable-image {
+    position: relative;
+    display: inline-block;
+}
+
+.zoomable-image:before {
+    content: url('/images/icons/magnifying-glass-circle.svg');
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 1;
+    transition: transform 0.3s ease-in-out;
+}
+
+.zoomable-image:hover:before {
+    transform: scale(1.15);
+}
