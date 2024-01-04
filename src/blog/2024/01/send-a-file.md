@@ -147,7 +147,7 @@ To Run:
 ./setup_and_run.sh
 ```
 
-To access the application, open a browser to the ip:5000 of the running application.
+To access the application, open a browser to the <node-red-host-ip>:5000 of the running application.
 
 
 
