@@ -10,7 +10,8 @@ tags:
     - how-to
 ---
 
-Have you ever needed to send a CSV file to your Node-RED instance? This file can go on to populate a shift schedule, product specifications, or some other configuration file that is used. In this guide, we are leveraging a Python script that runs a Flask application to post the file to a Node-RED instance and organize the data to be sent on or used.
+Have you ever needed to send a CSV file to your Node-RED instance? This file can go on to populate a shift schedule, product specifications, or some other configuration file that is used. In this guide, we are covering many different approaches on how to get a file into your Node-RED instance.
+
 <!--more-->
 
 # Why would you need to send a file to Node-RED?
