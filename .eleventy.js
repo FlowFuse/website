@@ -398,7 +398,7 @@ module.exports = function(eleventyConfig) {
                     if (!accumulator[currentValue]) {
                         accumulator[currentValue] = {
                             'name': currentValue,
-                            'url': page.data.redirect || page.url,
+                            'url': page.data.redirect?.to || page.data.redirect || page.url,
                             'order': page.data.navOrder || Number.MAX_SAFE_INTEGER,
                             'children': {}
                         }
