@@ -1,6 +1,7 @@
 ---
 title: Send a File to Node-RED
 subtitle: A guide to sending a CSV file to Node-RED and start interacting with it.
+description: A guide to sending a CSV file to Node-RED and start interacting with it.
 date: 2024-01-05
 authors: ["grey-dziuba"]
 image: /blog/2024/01/images/send-file-to-node-red.png
@@ -131,8 +132,6 @@ To access the application, open a browser to the **\<node-red-host-ip\>:5000** o
 
 
 ### Node-RED Ingress
-
-<!-- ![csv upload application](./images/nr_flow_csv_ingress.png) -->
 
 <iframe width="100%" height="225px" src="https://flows.nodered.org/flow/effb53752e5d6f767b3c7e5d41a4a6e8/share?height=100" allow="clipboard-read; clipboard-write" style="border: none;"></iframe>
 

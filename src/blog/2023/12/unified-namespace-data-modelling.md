@@ -1,8 +1,9 @@
 ---
 title: Data Modeling for your Unified Namespace
 subtitle: How to use FlowFuse as your Schema Registry?
+description: How to use FlowFuse as your Schema Registry?
 date: 2023-12-27
-authors: ["Marian Demme"]
+authors: ["marian-demme"]
 image: /blog/2023/12/images/uns-data-modeling.png
 tags:
     - posts
@@ -99,4 +100,3 @@ In conclusion, implementing a Unified Namespace (UNS) with efficient data modeli
 ### The complete Node-RED flow
 
 <iframe width="100%" height="225px" src="https://flows.nodered.org/flow/f6c783c6e9c1863145e0c63418eb5fe5/share?height=100" allow="clipboard-read; clipboard-write" style="border: none;"></iframe>
-

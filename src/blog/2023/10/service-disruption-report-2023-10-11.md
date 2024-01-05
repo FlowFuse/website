@@ -1,6 +1,7 @@
 ---
 title: Service Disruption Report for October 11th, 2023
 date: 2023-10-18
+description: ____________
 authors: ["nick-oleary"]
 tags:
     - posts 
