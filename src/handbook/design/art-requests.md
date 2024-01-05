@@ -19,9 +19,9 @@ Likely places this will be required are:
 
 You can create an issue on any of the FlowFuse Repositories that best suits the asset required, e.g:
 
-- [flowforge/flowforge](https://github.com/FlowFuse/flowfuse): In-Product Visuals (e.g. icons, diagrams, pictograms)
-- [flowforge/website](https://github.com/FlowFuse/website): Markitechture Diagrams, Blog Tiles, Webinar & AMA Tiles
-- [flowforge/content](https://github.com/FlowFuse/content): Social Media Assets, YouTube Thumbnails Tiles and anything else that doesn't fit above 
+- [FlowFuse/flowfuse](https://github.com/FlowFuse/flowfuse): In-Product Visuals (e.g. icons, diagrams, pictograms)
+- [FlowFuse/website](https://github.com/FlowFuse/website): Markitechture Diagrams, Blog Tiles, Webinar & AMA Tiles
+- [FlowFuse/content](https://github.com/FlowFuse/customer){rel="nofollow"}: Social Media Assets, YouTube Thumbnails Tiles and anything else that doesn't fit above 
 
 When creating an issue, you'll be presented with an option to create an "Art Request" from the Issue Templates:
 
@@ -40,6 +40,12 @@ Please be sure to include as much detail as possible, but most importantly:
 
 ## Tracking Art Request Progress
 
-All newly created Art Requests will be tagged with `design` and `artwork` - this ensures that the issue is automatically added to our [Art Requests Project Board](https://github.com/orgs/FlowFuse/projects/10), and alerts a designer in the `#art-requests` channel on Slack.
+All newly created Art Requests will be tagged with `design` and `artwork` - this ensures that the issue is automatically added to our [Art Requests Project Board](https://github.com/orgs/FlowFuse/projects/10), and alerts a designer in the `#gh-art-requests` channel on Slack.
 
 When a designer assigns themselves to the issue, they should also add the issue to the Development Project Board, and assign the relevant Iteration within which the piece of work is being undertaken, this ensures that it shows on our wider Team view as to what everyone is working on at any given time.
+
+## Delivery of Art
+
+While the art request will include a delivery method of the assets, please be
+sure to also always export the asset to the [Design directory](https://drive.google.com/drive/folders/1PiuFwW3H8XuydolepmfQQ4BjcdNekVQg){rel="nofollow"}
+so others, non-designers, can find and reuse these assets.

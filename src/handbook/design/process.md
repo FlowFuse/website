@@ -33,9 +33,3 @@ All design proposals, including UX/UI and other design assets, will be presented
 For UX/UI proposals, the design review concludes with the sign-off of Figma designs by the page owner, who is usually the DRI for the Website but may be another team member. As for the rest of the design assets, it's determined by the person who created the Art Request.
 
 While iterations can be made during the development phase for UX/UI design in terms of content and layout, it is recommended to facilitate feedback loops during the design phase. By getting early feedback, we aim to identify and address any potential issues before entering the development phase. This approach helps streamline the design workflow, allowing for quicker iterations and ultimately saving time.
-
-## Delivery of Art
-
-While the art request will include a delivery method of the assets, please be
-sure to also always export the asset to the [Design directory](https://drive.google.com/drive/folders/1PiuFwW3H8XuydolepmfQQ4BjcdNekVQg){rel="nofollow"}
-so others, non-designers, can find and reuse these assets.

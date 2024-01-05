@@ -71,7 +71,7 @@ A lunch is organized to celebrate every release, and team members participating 
 
 The company wide goal for closed business per month is set by the CEO. When the
 growth target is met a $100 bonus is awarded to be expensed for a dinner out.
-The bonus is awarded per calendar month.
+The bonus is awarded per quarter.
 
 #### Health Care
 

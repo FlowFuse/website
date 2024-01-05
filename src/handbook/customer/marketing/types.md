@@ -8,7 +8,7 @@ Content should be published to the appropriate channels, the types of published 
 
 ## Release
 
-Major releases of FlowFuse, the timing of these releases are governed by our [development cadence](../development/releases/planning#cadence).
+Major releases of FlowFuse, the timing of these releases are governed by our [development cadence](/handbook/development/releases/planning#cadence).
 
 ## Patch
 

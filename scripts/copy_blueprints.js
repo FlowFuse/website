@@ -10,8 +10,9 @@ async function copyFiles(src, dest) {
     for (const file of files) {
         if (!file.name.startsWith('.')) {
             if (file.isDirectory()) {
+                const lowerCaseFileName = file.name.toLowerCase();
                 const newSrc = path.join(src, file.name);
-                const newDest = path.join(dest, file.name);
+                const newDest = path.join(dest, lowerCaseFileName);
                 await fs.mkdir(newDest, { recursive: true });
                 await copyFiles(newSrc, newDest);
             } else {
