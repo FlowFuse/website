@@ -26,11 +26,10 @@ countersignature.
 
 ### Steps
 
-1. Move the deal to `Closed Won` in HubSpots Deal overview.
 1. Provide access to the bought resources
    * *Cloud*
-      * Ensure a team on FlowFuse Cloud has been set up by the customer including billing.
-      * Apply the discounts on the stripe customer through Coupons
+      * Ensure a team on FlowFuse Cloud has been set up by the customer
+      * Request the customer team to [enter manual billing mode](/handbook/operations/accounts/#internal-teams-and-contracted-revenue)
       * Have a FlowFuse Admin upgrade the customer to the correct tier
    * *Self-Managed*
       * Generate a [license key](../sales/meetings/poc.md#generating-a-license)
@@ -39,4 +38,5 @@ countersignature.
    * Email the billing (billing@) department with the signed fully
 quote. Also include customer details like their email and if applicable their stripe customer details.
    * Update the Stripe customer to set `CommittedRevenue` to `true` in the Metadata
+1. Move the deal to `Closed Won` in HubSpots Deal overview.
 1. Once all parties have signed, download the completed Order Form and Subscription Agreement, and upload them to the Legal folder in Google Drive.
