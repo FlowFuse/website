@@ -42,7 +42,7 @@ Re-usable `.mp4` files that may be used across FlowFuse videos. These are also a
 
 ## Tools
 
-If you require a license to one of the following tools (where applicable), then please read our [licensing](../peopleops/expenses#software-licenses) section in order to attain one.
+If you require a license to one of the following tools (where applicable), then please read our [licensing](/handbook/peopleops/expenses#software-licenses) section in order to attain one.
 
 ### Adobe Creative Cloud ([more info](https://www.adobe.com/uk/creativecloud.html))
 
@@ -79,4 +79,4 @@ In our "FlowFuse Templates" Adobe Premiere Pro library we have three "UI Preview
 
 ### Marketing Videos
 
-Much more creative license and freedom in terms of content and approach. If we are using iconography and pictograms, then they should be stylized and animated as per our [branding guidelines](../design/branding.md).
+Much more creative license and freedom in terms of content and approach. If we are using iconography and pictograms, then they should be stylized and animated as per our [branding guidelines](/handbook/design/branding.md).

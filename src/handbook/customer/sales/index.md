@@ -1,5 +1,6 @@
 ---
-navGroup: Sales & Marketing
+navTitle: Sales
+navGroup: Customer department
 ---
 
 # Sales

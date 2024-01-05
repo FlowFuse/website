@@ -15,7 +15,7 @@ Internal documents:
 
 Quotes are generated through HubSpot. Each quote should link to the subsciption
 agreement as well as include "Order Form" in the description. Link the latest
-version of the document with the [subscription agreement](/handbook/customer/legal/#subscription-agreement).
+version of the document with the [subscription agreement](/handbook/customer/sales/legal/#subscription-agreement).
 
 ## Closing a deal
 

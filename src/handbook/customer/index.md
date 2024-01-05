@@ -1,4 +1,5 @@
 ---
+navTitle: Customer
 navGroup: Customer department
 ---
 
