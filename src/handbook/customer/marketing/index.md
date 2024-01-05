@@ -1,6 +1,6 @@
 ---
 navTitle: Marketing
-navGroup: Sales & Marketing
+navGroup: Customer Department
 ---
 
 # Marketing

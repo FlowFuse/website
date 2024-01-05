@@ -33,23 +33,15 @@ The following is a description of each stage.
 
 ##### From MQL to SQL - Qualifying questions
 
-1. Have you adopted Node-RED? If so, what have you built with Node-RED?
-1. How many Node Red instances do you have, and how many people are developing on Node-RED?
-1. Is Node-RED used in production?	
-1. What are you looking to build in the next year with Node-RED?
+1. How did you hear about FlowFuse?
+1. What is your use case?
+1. What happens if Node-RED goes down?
+1. What will FlowFuse allow you to do?
+1. Why now?
 
 ##### From SQL to Opportunity
 
-For each sales opportunity a clear answer for the customers needs and wants should be known. It boils down to the following questions:
-
-| Question | |
-| :------- | :------ |
-| Why change? | What's the trigger to invest in FlowFuse and Node-RED? |
-| Why now? | Timeline is everything! |
-| Why FlowFuse? | What value does FlowFuse offer to the customer, what features are of most interest? |
-
-If, and only if, the answers are known and added as notes to HubSpot, an
-opportunity is added to the HubSpot deals board.
+A SQL becomes an opportunity when their is a realistic indication of a purchase within the next 3 months, based on the qualifying questions.
 
 | Deal Stages |  | |
 | :------- | :--:| :---- |
