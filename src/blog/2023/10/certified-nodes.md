@@ -1,6 +1,7 @@
 ---
 title: What are Certified Nodes?
 subtitle: Enhanced Security, Quality, and Support 
+description: Enhanced Security, Quality, and Support
 date: 2023-10-27
 authors: ["marian-demme"]
 image: "/blog/2023/10/images/image-certified-nodes.png"
