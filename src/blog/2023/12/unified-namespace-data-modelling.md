@@ -23,7 +23,7 @@ This article aims to explain the process of data modeling for your UNS, highligh
 3. [Building your Topic Hierarchy](#step-3---building-your-topic-hierarchy)
 4. [Connection to your Unified Namespace](#step-4---connection-to-your-unified-namespace)
 
-## Step 1 - Connection to your Operational Technology OT equipment
+## Step 1 - Connection to your Operational Technology (OT) equipment
 
 The journey begins with establishing connections to OT equipment, which may include Programmable Logic Controllers (PLCs), Historian databases, and sensors. It is essential to facilitate compatibility with a diverse array of protocols. In this context, Node-RED emerges as a pivotal tool, bolstered by its expansive community-generated catalog featuring over 4500 nodes.
 
