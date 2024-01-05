@@ -80,11 +80,11 @@ The '\<\!\-\-more\-\-\>' tag is used to define the text shown in the blog index 
 
 ### Example blog index item based on the header above
 
-![Example of how the headers are shown on the blog index](../images/blog-index.png)
+![Example of how the headers are shown on the blog index](./images/blog-index.png)
 
 ### Example blog article based on the header above
 
-![Example of how the headers are shown on blog articles](../images/blog-article.png)
+![Example of how the headers are shown on blog articles](./images/blog-article.png)
 
 ### Writing content
 
