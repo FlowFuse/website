@@ -17,14 +17,14 @@ This paradigm allows for a flexible role allocation within the network, where no
 This article aims to explain the process of data modeling for your UNS, highlighting the role of tools like the FlowFuse Team Library in schema management.
 
 **Overview of Steps:**
-- [Step 1 - Connection to your Operational Technology (OT) equipment](#step-1---connection-to-your-operational-technology-ot-equipment)
+- [Step 1 - Connection to your Operational Technology OT equipment](#step-1---connection-to-your-operational-technology-ot-equipment)
 - [Step 2 - Structuring your payload](#step-2---structuring-your-payload)
 - [Step 3 - Building your Topic Hierarchy](#step-3---building-your-topic-hierarchy)
 - [Step 4 - Connection to your Unified Namespace](#step-4---connection-to-your-unified-namespace)
 - [Conclusion](#conclusion)
   - [The complete Node-RED flow](#the-complete-node-red-flow)
 
-## Step 1 - Connection to your Operational Technology (OT) equipment
+## Step 1 - Connection to your Operational Technology OT equipment
 
 The journey begins with establishing connections to OT equipment, which may include Programmable Logic Controllers (PLCs), Historian databases, and sensors. It is essential to facilitate compatibility with a diverse array of protocols. In this context, Node-RED emerges as a pivotal tool, bolstered by its expansive community-generated catalog featuring over 4500 nodes.
 
