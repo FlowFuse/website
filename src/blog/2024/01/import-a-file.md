@@ -1,6 +1,7 @@
 ---
 title: Import a File into Node-RED with Dashboard 2.0
 subtitle: Use Dashboard 2.0 to import a CSV file into Node-RED.
+description: Use Dashboard 2.0 to import a CSV file into Node-RED.
 date: 2024-01-05
 authors: ["grey-dziuba"]
 image: /blog/2024/01/images/send-file-to-node-red.png
