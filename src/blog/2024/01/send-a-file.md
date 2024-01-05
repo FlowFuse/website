@@ -133,8 +133,6 @@ To access the application, open a browser to the **\<node-red-host-ip\>:5000** o
 
 ### Node-RED Ingress
 
-<!-- ![csv upload application](./images/nr_flow_csv_ingress.png) -->
-
 <iframe width="100%" height="225px" src="https://flows.nodered.org/flow/effb53752e5d6f767b3c7e5d41a4a6e8/share?height=100" allow="clipboard-read; clipboard-write" style="border: none;"></iframe>
 
 Once we have a file ready to be sent, we now need to configure the receiving side in Node-RED. In this example, we are leveraging a CSV formatted file and then converting it to be used at a later time.
