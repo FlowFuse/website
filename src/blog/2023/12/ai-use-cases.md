@@ -1,6 +1,7 @@
 ---
 title: Beyond Automation - AI Use Cases that are shaping the next manufacturing frontier
 subtitle: In which AI-powered capabilities should one invest to bring about transformative changes in the manufacturing environment?
+description: In which AI-powered capabilities should one invest to bring about transformative changes in the manufacturing environment?
 date: 2023-12-04
 authors: ["marian-demme"]
 image: "/blog/2023/12/images/beyond-automation.png"
