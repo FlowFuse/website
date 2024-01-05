@@ -33,9 +33,16 @@ module.exports = function(eleventyConfig) {
     // Set DEV_MODE_POSTS to true if the context is not 'production'
     const DEV_MODE_POSTS = process.env.CONTEXT !== "production";
 
+    let hasPrintedMessage = false;
+
     // Define a filter named 'isFuturePost'
     eleventyConfig.addFilter('isFuturePost', (date) => {
         const isFuturePost = date && date > new Date();
+        if (isFuturePost && !hasPrintedMessage) {
+            let text = DEV_MODE_POSTS ? 'Including' : 'Excluding';
+            console.log(`[11ty/eleventy-base-blog] ${text} scheduled post(s)`);
+            hasPrintedMessage = true;
+        }
         return isFuturePost && !DEV_MODE_POSTS;
     });
 

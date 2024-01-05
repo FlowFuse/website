@@ -3,8 +3,8 @@
     layout: "layouts/base.njk",
     type: "post",
     eleventyComputed: {
-        permalink: data => isFutureDate(data.date) ? false : data.page.filePathStem,
-        eleventyExcludeFromCollections: data => isFutureDate(data.date) ? true : false
+        permalink: data => isFuturePost(data.date) ? false : data.page.filePathStem,
+        eleventyExcludeFromCollections: data => isFuturePost(data.date) ? true : false
     }
 }
 ---
