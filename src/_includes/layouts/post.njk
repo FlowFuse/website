@@ -1,25 +1,29 @@
----
-layout: layouts/base.njk
-type: post
-eleventyComputed:
-    permalink: "{% if date | isFuturePost %}false{% else %}{{permalink}}{% endif %}"
+---js
+{
+    layout: "layouts/base.njk",
+    type: "post",
+    eleventyComputed: {
+        permalink: data => isFutureDate(data.date) ? false : data.page.filePathStem,
+        eleventyExcludeFromCollections: data => isFutureDate(data.date) ? true : false
+    }
+}
 ---
 {% if date | isFutureDate %}
-    <div class="w-full page post bg-teal-400 text-center text-gray-800 py-4 font-bold">
-        This post is scheduled to be published on {{ date | shortDate }}
-    </div>
-    {% endif %}
+<div class="w-full page post bg-teal-400 text-center text-gray-800 py-4 font-bold">
+    This post is scheduled to be published on {{ date | shortDate }}
+</div>
+{% endif %}
 <div class="w-full page post">
     {% if title %}
-        <div class="post-title container m-auto text-center px-6 flex mt-6 mb-6 md:max-w-screen-lg md:mt-12">
-            <div class="text-left md:pr-32">
-                <label>Article</label>
-                <h1>{{ title }}</h1>
-                {% if subtitle %}
-                <h4>{{ subtitle | safe }}</h4>
-                {% endif %}
-            </div>
+    <div class="post-title container m-auto text-center px-6 flex mt-6 mb-6 md:max-w-screen-lg md:mt-12">
+        <div class="text-left md:pr-32">
+            <label>Article</label>
+            <h1>{{ title }}</h1>
+            {% if subtitle %}
+            <h4>{{ subtitle | safe }}</h4>
+            {% endif %}
         </div>
+    </div>
     {% endif %}
     <div class="blog nohero w-full pt-6 pb-24 ff-bg-light">
         <div class="container flex flex-col md:flex-row m-auto text-left px-6 md:max-w-screen-lg gap-8 items-stretch">
@@ -31,15 +35,18 @@ eleventyComputed:
                 <div class="prose">
                     <div class="mb-4 hero-img">
                         {% if video %}
-                            <iframe width="560" height="315" src="https://www.youtube.com/embed/{{video}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/{{video}}"
+                            title="YouTube video player" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen></iframe>
                         {% elif image %}
-                            <div class="w-full h-auto">
-                                {% set imageSrc = ["./", image ] | join %}
-                                {% set imageDescription = ["Image representing ", title] | join %}
-                                {% image imageSrc, imageDescription, [560] %}
-                            </div>
+                        <div class="w-full h-auto">
+                            {% set imageSrc = ["./", image ] | join %}
+                            {% set imageDescription = ["Image representing ", title] | join %}
+                            {% image imageSrc, imageDescription, [560] %}
+                        </div>
                         {% else %}
-                            {{ page.url | generatePostSVG | safe }}
+                        {{ page.url | generatePostSVG | safe }}
                         {% endif %}
                     </div>
                     {{ content | safe }}
@@ -67,20 +74,20 @@ eleventyComputed:
                 <div class="sticky top-4 mt-6 flex flex-col">
                     <h3 class="mb-3">Written By:</h3>
                     {% for author in authors %}
-                        {% if people[author] %}
-                            {% renderTeamMember people[author] %}
-                        {% endif %}
+                    {% if people[author] %}
+                    {% renderTeamMember people[author] %}
+                    {% endif %}
                     {% endfor %}
-                    <p>Published on: <time value="{{ date | dateToRfc3339 }}">{{ date  | shortDate }}</time></p>
+                    <p>Published on: <time value="{{ date | dateToRfc3339 }}">{{ date | shortDate }}</time></p>
                     <h3 class="mb-3 pt-6 border-t-2">Recommended Articles:</h3>
                     <ul class="ml-6 list-disc">
-                    {% for post in collections.livePosts | reverse | limit(5) %}
+                        {% for post in collections.posts | reverse | limit(5) %}
                         {% if post.data.title != title %}
-                            <li class="mb-3"><a href="{{ post.url }}">
+                        <li class="mb-3"><a href="{{ post.url }}">
                                 {{ post.data.title }}
                             </a></li>
-                        {% endif %}                        
-                    {% endfor %}
+                        {% endif %}
+                        {% endfor %}
                     </ul>
                     <div class="mt-3 pt-6 flex flex-col border-t-2">
                         <h3 class="">Sign up for updates</h3>
@@ -90,13 +97,14 @@ eleventyComputed:
                                     region: "eu1",
                                     portalId: "26586079",
                                     formId: "159c173d-dd95-49bd-922b-ff3ef243e90c",
-                                    onFormSubmit: function($form) {
-                                        capture('cta-blog-subscribe', {'position': 'article'})
+                                    onFormSubmit: function ($form) {
+                                        capture('cta-blog-subscribe', { 'position': 'article' })
                                     }
                                 });
                             }
                         </script>
-                        <script async type="text/javascript" charset="utf-8" src="//js-eu1.hsforms.net/forms/embed/v2.js" onload="displayHubSpotForm()"></script>
+                        <script async type="text/javascript" charset="utf-8"
+                            src="//js-eu1.hsforms.net/forms/embed/v2.js" onload="displayHubSpotForm()"></script>
                     </div>
                 </div>
             </div>
@@ -105,8 +113,10 @@ eleventyComputed:
 </div>
 
 <!-- Clipboard -->
-<link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/19.1.1/tooltips.min.css"  as="style" onload="this.onload=null;this.rel='stylesheet'" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/19.1.1/tooltips.min.css" as="style"
+    onload="this.onload=null;this.rel='stylesheet'" crossorigin="anonymous" referrerpolicy="no-referrer" />
 {% initClipboardJS %}
 
 <!-- Syntax Highlighting CSS -->
-<link rel="preload" href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism-tomorrow.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism-tomorrow.min.css" as="style"
+    onload="this.onload=null;this.rel='stylesheet'" crossorigin="anonymous" referrerpolicy="no-referrer" />

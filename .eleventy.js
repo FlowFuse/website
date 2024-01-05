@@ -44,18 +44,9 @@ module.exports = function(eleventyConfig) {
         return date && date > new Date();
     });
 
-    // Exclude future posts from livePosts unless we're in dev mode
-    eleventyConfig.addCollection('livePosts', (collection) => {
-        const now = new Date();
-        return collection.getFilteredByTag('posts').filter((item) => {
-            const isFuturePost = item.date > now;
-            if (isFuturePost) {
-                let text = DEV_MODE_POSTS ? 'Including' : 'Excluding';
-                console.log(`[11ty/eleventy-base-blog] ${text} future post ${item.inputPath}`);
-            }
-            return !isFuturePost || DEV_MODE_POSTS;
-        });
-    });
+    // Make filters globally accessible
+    global.isFuturePost = eleventyConfig.getFilter('isFuturePost');
+    global.isFutureDate = eleventyConfig.getFilter('isFutureDate');
 
     eleventyConfig.addPlugin(EleventyEdgePlugin);
 

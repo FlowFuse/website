@@ -7,9 +7,9 @@ eleventyExcludeFromCollections: true
     <title>{{ site.title }}</title>
     <link href="https://flowfuse.com/blog/index.xml" rel="self"/>
     <link href="https://flowfuse.com/blog"/>
-    <updated>{{ collections.livePosts | getNewestCollectionItemDate | dateToRfc3339 }}</updated>
+    <updated>{{ collections.posts | getNewestCollectionItemDate | dateToRfc3339 }}</updated>
     <id>https://flowfuse.com/blog</id>
-    {%- for post in collections.livePosts | reverse %}
+    {%- for post in collections.posts | reverse %}
     {% set absolutePostUrl %}{{ post.url | url | absoluteUrl("https://flowfuse.com/blog/") }}{% endset %}
     <entry>
         <id>{{ absolutePostUrl }}</id>
