@@ -1,9 +1,7 @@
 const plugin = require('tailwindcss/plugin')
 
 module.exports = {
-    mode: 'jit',
-    purge: ['src/**/*.html','src/**/*.njk','src/**/*.md','src/**/*.svg','.eleventy.js'],
-    darkMode: false, // or 'media' or 'class'
+    content: ['src/**/*.html','src/**/*.njk','src/**/*.md','src/**/*.svg','.eleventy.js'],
     theme: {
         extend: {
             fontSize: {
@@ -66,9 +64,6 @@ module.exports = {
                 }
             }
         }
-    },
-    variants: {
-        extend: {},
     },
     plugins: [
         // require('postcss-import'),
