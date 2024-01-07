@@ -5,20 +5,53 @@ meta:
 
 # Strategy
 
-> We will only be successful if the whole Node-RED community is successful.
+## Our North Star
 
-Our company vision has four parts and captures what we want FlowFuse to evolve
-into in the next 5 years. The vision is inspiration for the [product strategy](../product/strategy.md), which is updated continuously. It’s based on the four pillars. This allows us to adapt to changing market conditions so that we meet customer needs.
+### Core believe
 
-- Drive the growth and success of the [Node-RED](https://nodered.org) project
-- Build a platform that becomes the standard way of running Node-RED at any scale - Be DevOps for Node-RED
-- Drive adoption of Node-RED in manufacturing
-- Build an inclusive, high-performance team
+By empowering a larger workforce to participate in automation an acceleration of digital transformation can be realized in manufacturing, agriculture, and other productive industries. This will lead to an increase in productivity.
 
-## Drive the growth and success of the Node-RED project
+FlowFuse is riding two waves:
+1. Companies need to accellerate their innovation. 
+2. Digitalization is at the inflection point of implementation.
 
-Node-RED is at the core of what we do. It is the reason the company exists. Our
-success is fed by the success of the core project. Node-RED enables tens of
+FlowFuse allows businesses to acquire, enrich, visualize, and build applications
+through a workforce already employed.
+
+Our current (prospective) customers have already adopted Node-RED and need to
+professionalize their data streams and workflows. FlowFuse is the only company
+that can help them.
+
+### Our mission
+
+FlowFuse exists to empower bottom-up innovation. We allow companies to professionalize their workflows to business critical applications.
+
+### Core Values
+
+Please see our [company values](/handbook/company/values/)
+
+## The market
+
+Corporations that have many data sources with unpredictable structure.
+
+The ideal lead has adopted Node-RED already and is in the following industries:
+1. Manufacturing (IIoT & Industry 4.0)
+1. Logistics
+1. Agriculture
+1. Building management
+1. Mining, Oil & Gas, and renewable energy
+
+Due the to breath of the Node-RED community and the industries they apply it in,
+FlowFuse does not qualify customers based on industry.
+
+## Execution on our believe and mission
+
+> We will only be successful if the Node-RED community is successful.
+
+### Drive the growth and success of the Node-RED project
+
+Node-RED is at the core of what we do. It's the cornerstone for the company. Our
+success is fed by the success of the Node-RED ecosystem. Node-RED enables tens of
 thousands to create and maintain workflows and logic of both physical devices
 and digital services. Ensure their effectiveness grows, while new users are
 introduced to Node-RED is vital to the success of FlowFuse.
@@ -65,53 +98,3 @@ We are positioned to become the Open-Source DevOps for Node-RED solution – a s
 As a new company that starts small but aspires to grow, we need to ensure that growth is well managed, sustainable and rewarding.
 
 Our [values](./values) help shape the culture we want to build, both inside the company and beyond.
-
-## Strategic Initiatives
-
-### 2022
-
-There are four pillars of the product we're investing in:
-1. Provide the best Node-RED experience.
-1. Enable users to run Node-RED at the edge.
-1. Enable teams to collaborate when working with Node-RED.
-1. Meet the compliance needs of the enterprise.
-
-The [product plan](../product/plan.md) goes into this in more depth.
-Check out our [roadmap](/product/roadmap/) for on what we're pursuing in the next few releases.
-
-Furthermore, we will continue our involvement with the Node-RED community.
-
-1. **Provide technical leadership and direction** - This includes
-    - Flow Testing Framework
-    - Runtime Hooks on Deploy path
-
-2. **Improve the node ecosystem**. This includes:
-    - **node-red-dev** - CLI tool for node developers to help them produce higher quality nodes
-    - Integrating **node-red-dev** into the Flow Library to provide node scorecards
-
-3. **Improve the Getting Started experience** - update and expand the getting started docs to provide a more consistent and broader range of options/platforms to run on.
-
-4. **Community events**
-    - Establish a regular Node-RED virtual meetup for community members to share what they are doing with Node-RED.
-    - Work towards a global Node-RED Con 2022 event in conjunction with the Node-RED Japan User Group. Build on the success of the 2021 event's global track, to make it bigger, with more EU/US-centric content and timezone accessibility
-
-## Key metrics
-
-At FlowFuse we're engaged in many initiatives to grow our offering and assess
-product market fit. Currently we're measuring 2 key metrics which serve as
-heuristic for company wide success.
-
-### Installed Platforms
-
-FlowFuse is the key product we're verifying in the market currently. Each
-platform installed and running shows value is delivered to customers. Through
-telemetry we know the number of instances that reported their unique instance ID.
-
-Other than the number of unique instances reporting on telemetry the last 7 days
-we measure the number of managed instances of Node-RED through FlowFuse. This
-is the sum of projects and devices.
-
-Telemetry collection is opt-in, and dependant on an internet connection. As such
-it's anticipated to under report the true number of FlowFuse managed instances.
-
-Target growth for this metric is 10% week over week.
