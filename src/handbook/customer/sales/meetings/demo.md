@@ -33,7 +33,8 @@ flowforge-device-agent -d . --ui --ui-user foo --ui-pass bar
 
 ## Live Demo
 
-[Demo Track](https://docs.google.com/document/d/1sOaaNq4Cf2GkX4EFeEBgDB0XuL-gm1WJIEefZUpmNtM/edit)
+[Demo Track 1](https://docs.google.com/document/d/1sOaaNq4Cf2GkX4EFeEBgDB0XuL-gm1WJIEefZUpmNtM/edit)
+[Demo Track 2](https://docs.google.com/document/d/1CwpOapiOeOnM0FgPs_4SJAIDoQv-TRpOAKNnVRCZUsw/edit)
 
 ### Key Terminology
 
