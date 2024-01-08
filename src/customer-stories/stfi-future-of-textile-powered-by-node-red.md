@@ -3,6 +3,8 @@ title: The Future of Textile Manufacturing Powered with Node-RED
 image: /images/stories/stfi-future-textile.jpg
 date: 2023-11-14
 logo:
+hubspot:
+    formId:
 story:
     brand: STFI
     url: https://stfi.de/

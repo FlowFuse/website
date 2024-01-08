@@ -3,6 +3,8 @@ title: World Meteorological Organization (WMO) Uses Node-RED to Modernize Sharin
 image: /images/stories/un-wmo.jpg
 date: 2023-09-07
 logo: /images/stories/logos/logo_wmo.png
+hubspot:
+    formId:
 story:
     brand: WMO
     url:

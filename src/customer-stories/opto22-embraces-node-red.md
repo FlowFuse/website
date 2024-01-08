@@ -4,6 +4,8 @@ image: /images/stories/opto22.jpg
 date: 2023-06-01
 # This "logo" is for the main page
 logo: 
+hubspot:
+    formId: 
 story:
     brand: Opto 22
     # This "logo" goes inside the article
