@@ -11,6 +11,8 @@ managed and FlowFuse managed instances.
 
 ## Application
 
+FlowFuse architecture is described on our [documentation](/docs/contribute/architecture/).
+
 ### User sessions
 
 Users are identified by an unique combination of username and password, or by a
