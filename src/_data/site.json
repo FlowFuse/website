@@ -1,11 +1,13 @@
 {
-    "title": "FlowFuse",
     "baseURL": "https://flowfuse.com",
     "appURL": "https://app.flowfuse.com",
     "jobBoard": "https://boards.greenhouse.io/flowfuse",
     "openings": {
-        "sales": "https://boards.greenhouse.io/flowfuse/jobs/4843566004",
-        "devadvocate": "https://boards.greenhouse.io/flowfuse/jobs/4843566004",
         "frontenddash": "https://boards.greenhouse.io/flowfuse/jobs/4911532004"
+    },
+    "messaging": {
+        "tagLine": "Build bespoke, flexible, and resilient manufacturing applications",
+        "subtitle": "FlowFuse and Node-RED allows your engineers to deliver custom manufacturing applications that can grow to meet your changing requirements.",
+        "title": "Bespoke, flexible, and resilient manufacturing applications"
     }
 }

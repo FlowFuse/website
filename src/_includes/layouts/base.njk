@@ -4,7 +4,7 @@ meta:
   type: page
   site:
     name: FlowFuse
-    description: Bespoke, flexible, and resilient manufacturing applications
+    description: {{ messaging.title }}
     url: https://FlowFuse.com
     logo:
       src: https://flowfuse.com/handbook/images/logos/ff-logo--square--dark.png
@@ -20,6 +20,7 @@ eleventyComputed:
     description: "{{ description }}"
     modified: "{{ page.date }}"
 ---
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -43,7 +44,7 @@ eleventyComputed:
     {% elif title %}
     <title>{{ title }} &#x2022; FlowFuse{% if page.url.match('\/handbook\/.+') %} Handbook{% endif %}{% if page.url.match('\/docs\/.+') %} Docs{% endif %}</title>
     {% else %}
-    <title>FlowFuse &#x2022; Bespoke, flexible, and resilient manufacturing applications</title>
+    <title>FlowFuse &#x2022; {{ site.messaging.title }}</title>
     {% endif %}
 
     <link rel="canonical" href="{{ page.url | toAbsoluteUrl }}">
@@ -54,7 +55,7 @@ eleventyComputed:
     {% elif description %}
     <meta name="description" content="{{ description }}">
     {% else %}
-    <meta name="description" content="Bespoke, flexible, and resilient manufacturing applications">
+    <meta name="description" content="{{ site.messaging.subtitle }}">
     {% endif %}
 
     {% if skipIndex -%}
@@ -69,7 +70,7 @@ eleventyComputed:
     {% elif title %}
     <meta property="og:title" content="{{ title }} &#x2022; FlowFuse{% if page.url.match('\/handbook\/.+') %} Handbook{% endif %}" />
     {% else %}
-    <meta property="og:title" content="FlowFuse &#x2022; DevOps for Node-RED" />
+    <meta property="og:title" content="FlowFuse &#x2022; {{ site.messaging.title }}" />
     {% endif %}
 
     <!-- Open Graph Description -->
@@ -78,7 +79,7 @@ eleventyComputed:
     {% elif description %}
     <meta property="og:description" content="{{ description }}" />
     {% else %}
-    <meta property="og:description" content="FlowFuse and Node-RED allows your engineers to deliver fast, low-cost, low-code manufacturing applications." />
+    <meta property="og:description" content="{{ site.messaging.subtitle }}" />
     {% endif %}
 
     <!-- Open Graph URL -->
