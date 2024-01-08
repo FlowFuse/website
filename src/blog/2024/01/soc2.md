@@ -3,7 +3,7 @@ title: FlowFuse is Now SOC 2 Compliant
 subtitle: FlowFuse's Path to SOC 2 Compliance - A Testament to Our Commitment to Security
 date: 2024-01-15
 authors: ["grey-dziuba"]
-image: /blog/2023/12/images/uns-data-modeling.png
+image: /blog/2024/01/images/soc-2-compliant.png
 tags:
     - posts
     - flowfuse
