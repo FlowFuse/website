@@ -5,7 +5,7 @@ date: 2023-06-01
 # This "logo" is for the main page
 logo: 
 hubspot:
-    formId: 
+    formId: ef2e9c57-df05-456e-a612-0531c3241002
 story:
     brand: Opto 22
     # This "logo" goes inside the article
