@@ -5,9 +5,10 @@ title: Security Statement - FlowFuse
 
 <div class="prose prose-blue container m-auto max-w-4xl px-6 pb-24">
 
-Security aspects of FlowFuse are divided up into two sections, configuration
-and application level. Application level security aspects apply to both self
-managed and FlowFuse managed instances.
+Security aspects of FlowFuse are divided up into three sections;
+1. [Application level](#application)
+1. [FlowFuse configuration](#flowfuse-configuration)
+1. [Organisation](#organisation)
 
 ## Application
 
@@ -16,11 +17,16 @@ FlowFuse architecture is described on our [documentation](/docs/contribute/archi
 ### User sessions
 
 Users are identified by an unique combination of username and password, or by a
-SAML compliant server for SSO. 
+SAML compliant server for Single Sign-on. 
 
 User provisioning is on a per user basis.
 
-## Configuration
+### Multi-factor authentication
+
+FlowFuse support Multi-factor authenication (MFA), also known as 2-factor
+authentication (2FA) for its users once the user has this configured.
+
+## FlowFuse Configuration
 
 Configuration of the FlowFuse application influences security aspects of the
 system at large. For each section the implementation of FlowFuse Cloud is
@@ -78,5 +84,25 @@ application is served at [app.flowfuse.com]({{ site.appURL }}), while
 the Node-RED instances are served from \*.flowforge.cloud.
 
 MQTT traffic is served from mqtt.flowforge.cloud as MQTT over WebSockets.
+
+## Organisation
+
+Keeping our customer's data secure is dependant on our internal practises too.
+
+### Certifications
+
+FlowFuse obtained the SOC 2 Type 1 certification, audited by Advantage Partners.
+Currenlty, Advantage Partners is observing FlowFuse practises for us to obtain
+SOC 2 Type 1.
+
+### Security Governance
+
+FlowFuse has information and data policies, the full list can be found in [our handbook](/handbook/company/security/).
+
+Most notably for (prospective) customers assessing FlowFuse:
+
+1. [Information Security Policy and Acceptable Use Policy](/handbook/company/security/information-security/)
+1. [Data Management Policy](/handbook/company/security/data-management/)
+1. [Information security awareness training](/handbook/company/security/human-resources/#information-security-awareness%2C-education-%26-training)
 
 </div>
