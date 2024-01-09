@@ -3,6 +3,8 @@ title: Node-RED Enables Digital Transformation of a Large US Manufacturing Compa
 image: /images/stories/large-us-manufacturing.jpg
 date: 2023-05-04
 logo:
+hubspot:
+    formId: 
 story:
     brand: Manufacturing Company
     url:

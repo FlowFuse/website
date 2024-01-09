@@ -3,6 +3,8 @@ title: Leveraging Node-RED and FlowFuse to Revolutionize Irrigation
 image: /images/stories/pidd-view.png
 date: 2023-12-29
 logo:
+hubspot:
+    formId: f77ee5dd-6e7a-4475-aa66-4f1824aab8d7
 story:
     brand: Paloma Irrigation and Drainage District
     url:
