@@ -23,7 +23,12 @@ A customer story is the same as a case study, these are helpful in illustrating 
     - Confirm that the file is saved in the [Google Docs version](https://drive.google.com/drive/folders/1SbZ7ISJaYcxcJ_00Y_CwdY5gd9_uOTHP?usp=drive_link) folder.
     - Once ready, you can either print or download it as a PDF and then place it in the [PDFs folder](https://drive.google.com/drive/folders/1QXCso0HQPbShrB5_8N0n_sDnIlluUaaI?usp=drive_link).   
 8. Create a download form in HubSpot specifically for the PDF you just created:
-    - Replace with instructions 
+    - Upload the PDF file to HubSpot under 'Files and Templates' and copy the public URL.
+    - In HubSpot, navigate to Marketing -> Lead Capture -> Forms, then 'Create Form' or clone an existing case study download form.
+    - The form should include fields for first name, last name, email, and company (not mandatory).
+    - Set the PDF URL as the action after submission, under 'Redirect to another page.'
+    - Update and publish the form.
+    - Copy the form ID from the script generated when you click on publish.
 9. Create a new branch of the website repository. Follow our standard [development processes](/handbook/development/releases/planning/#development-board). Google Docs has an [extension to convert the reviewed draft document to markdown](https://workspace.google.com/marketplace/app/docs_to_markdown/700168918607?hl=en&pann=docs_addon_widget). 
 10. Add the HubSpot formId to your story's front matter, so anyone can download the PDF version of the case study.
 11. It is OK for you to merge your own PR to main without review where the content is urgent or has been reviewed outside of Git but where it is practical to follow the
