@@ -30,18 +30,7 @@ on the [quote](/handbook/customer/sales/engagements#generating-a-quote-and-order
 
 ### Creating an invoice
 
-1. Log into Stripe
-1. Click `Billing` in the nav bar, followed by going to the invoices tab
-1. Click the `Create invoice` button
-1. Select the customer the invoice is for, or create one.
-1. Add the line items with the right pricing
-1. Ensure customers can pay with ACH and Credit card
-1. Mention the accepted quote in the memo
-1. Review the invoice and send it to the customer for payment
-
-When the invoice is generated and send to the customer you can go ahead with
-providing them they [license for self-managed](/handbook/customer/sales/meetings/poc#generating-a-license),
-or [create a coupon](#coupons) and apply that to the FlowFuse Cloud team.
+Email billing@flowfuse.com with [this template](https://docs.google.com/document/d/1u9KqAovcKJ8AWpWZhYDEAX90T-BfUfRNlPYKieOKnOY/edit).
 
 ## Coupons
 
