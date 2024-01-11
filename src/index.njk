@@ -5,7 +5,7 @@ sitemapPriority: 1.0
 <!--Hero Content-->
 <div class="w-full px-6 pb-24 mt-12 ff-bg-flows">
     <div class="container m-auto text-left max-w-screen-lg lg:flex lg:flex-row lg:items-start lg:justify-between lg:gap-6">
-        <div class="lg:my-auto lg:py-10 lg:max-w-[600px]">
+        <div class="max-w-xl mx-auto lg:mx-0 lg:my-auto lg:py-10 lg:max-w-[600px]">
             <h1 class="text-gray-50 max-w-xl m-auto lg:m-0 text-center lg:text-left">
                 {{ site.messaging.tagLine }}
             </h1>
@@ -13,70 +13,64 @@ sitemapPriority: 1.0
                 {{ site.messaging.subtitle }}
             </p>
             <div class="flex flex-col">
-                <div class="m-auto mt-7 flex flex-col gap-4 items-center justify-center lg:items-start lg:justify-start lg:m-0 lg:flex-row">
+                <div
+                    class="m-auto mt-7 flex gap-4 items-center justify-center lg:items-start lg:justify-start lg:m-0 flex-row">
                     <a class="ff-btn ff-btn--primary flex flex-col mb-6" href="{{ site.appURL }}/account/create"
                         onclick="capture('cta-join', {'position': 'primary'})">
-                        <span class="text-base uppercase flex gap-2 items-center">
-                            TRY IT OUT
-                            {% include "components/icons/arrow-right.svg" %}
+                        <span class="text-base uppercase items-center">
+                            Contact us
                         </span>
                     </a>
                     <a class="ff-btn flex flex-col mb-6" href="{{ site.appURL }}/account/create"
                         onclick="capture('cta-join', {'position': 'primary'})">
-                        <span class="text-base uppercase items-center text-gray-200">
-                            Contact us
+                        <span class="text-base uppercase flex gap-2 items-center text-gray-200">
+                            TRY IT OUT
+                            {% include "components/icons/arrow-right.svg" %}
                         </span>
                     </a>
                 </div>
             </div>
         </div>
         <div class="flex justify-center items-end m-auto lg:mx-0">
-            <lite-youtube videoid="eR0P40sxge8" style="background-image: url('images/thumbnail-nick-flowfuse.png'); width: 620px; height: 360px" class="max-w-xs max-h-48 border-4 rounded-md sm:max-w-none sm:max-h-full lg:max-w-lg lg:max-h-80"></lite-youtube>
+            <lite-youtube videoid="eR0P40sxge8" style="background-image: url('images/thumbnail-nick-flowfuse.png'); width: 620px; height: 360px" class="max-w-xs max-h-48 border-4 rounded-md sm:max-w-none sm:max-h-full lg:max-w-lg lg:max-h-72"></lite-youtube>
         </div>
     </div>
 </div>
 
-{% include "components/divider-flow--default.njk" %}
-
-
+{% include "components/divider-flow--top-red--light.njk" %}
 
 <!-- Secondary Content -->
-<div class="w-full ff-bg-light px-6 pt-12 sm:pt-32">
+<div class="w-full ff-bg-light px-6 pt-8">
     <div class="container m-auto text-center max-w-5xl">
-        <div class="m-auto mb-12 w-full text-center mt-32 mb-12 sm:mt-56 sm:mb-16">
+        <div class="m-auto mb-12 w-full text-center mb-12 sm:mb-16">
             {% include "social-proof.njk" %}
         </div>
-        <div class="m-auto w-full text-center mb-8 md:mt-24">
-            <h2>Why FlowFuse and Node-RED</h2>
+        <div class="m-auto w-full text-center mt-20 md:mb-8 md:mt-24">
+            <h2>Why FlowFuse?</h2>
             <h5><a href="/node-red/">Learn more about Node-RED</a></h5>
         </div>
     </div>
 </div>
-<div class="about w-full ff-bg-light -mt-1 pb-40">
-    <div class="container m-auto max-w-lg md:max-w-5xl flex flex-col gap-y-4">
+<div class="about w-full ff-bg-light pt-10 pb-40 px-6">
+    <div class="container mx-auto max-w-lg md:max-w-screen-lg flex flex-col md:grid md:grid-cols-2 gap-y-14 md:gap-x-12">
         {% for item in home %}
-            <div class="relative w-full p-6 m-auto">
-                <div class="flex flex-col md:flex-row{% if loop.index is even %}-reverse{% endif %} md:gap-8 items-center z-10 px-8 md:justify-between">
-                    <div class="md:w-1/4 flex justify-center">
-                        <div class="max-w-[190px] w-full max-w-sm md:max-w-none sm:max-h-full">
+            <div class="relative w-full mx-auto">
+                <div class="flex flex-col items-center md:items-start z-10">
+                    <div class="flex flex-col justify-center md:justify-start items-start gap-6 md:min-h-28 w-full">
+                        <div class="max-w-[64px] w-full max-w-sm md:w-1/5 sm:max-h-full h-16 m-auto md:m-0">
                             {% set imageSrc = ['./images/pictograms/', item.image, '.png'] | join %}
                             {% set imageDescription = ['Image depicting ', item.imagealt] | join %}
-                            {% image imageSrc, imageDescription, [190] %}
+                            {% image imageSrc, imageDescription, [64] %}
                         </div>                      
-                    </div>
-                    <div class="md:w-3/4 pt-4">
-                        <div class="flex flex-row gap-3 items-center">
-                            <h3><div class="leading-tight pt-1">{{ item.title | safe }}</div></h3>
+                        <div class="flex flex-row gap-3 m-auto md:m-0 text-center md:text-left">
+                            <h5><div class="text-xl">{{ item.title | safe }}</div></h5>
                         </div>
-                        <p>{{ item.content }}</p>
+                    </div>
+                    <div>
+                        <p class="text-center md:text-left">{{ item.content }}</p>
                     </div>
                 </div>
             </div>
-            {% if not loop.last %}
-            <div class="md:p-6 px-6">
-            {% if loop.index is even %}{% include "components/divider-grey-wires-left.njk" %}{% else %}{% include "components/divider-grey-wires-right.njk" %}{% endif %} 
-            </div>
-            {% endif %}
         {% endfor %}
     </div>
 </div>
