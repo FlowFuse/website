@@ -52,9 +52,9 @@ sitemapPriority: 1.0
     </div>
 </div>
 <div class="about w-full ff-bg-light pt-10 pb-40 px-6">
-    <div class="container mx-auto max-w-lg md:max-w-screen-lg flex flex-col md:grid md:grid-cols-2 gap-y-14 md:gap-x-12">
+    <div class="container mx-auto max-w-lg md:max-w-screen-lg flex flex-col md:flex md:flex-row md:flex-wrap gap-y-14 md:gap-x-12">
         {% for item in home %}
-            <div class="relative w-full mx-auto">
+            <div class="relative w-full {% if loop.last %}md:w-full{% else %}md:w-[47%]{% endif %} mx-auto">
                 <div class="flex flex-col items-center md:items-start z-10">
                     <div class="flex flex-col justify-center md:justify-start items-start gap-6 md:min-h-28 w-full">
                         <div class="max-w-[64px] w-full max-w-sm md:w-1/5 sm:max-h-full h-16 m-auto md:m-0">
@@ -89,7 +89,7 @@ sitemapPriority: 1.0
                 <div class="w-40 m-auto mb-4">
                     {% image "./images/pictograms/book-a-demo.png", "Icon representing a booked demo.", [160] %}
                 </div>
-                <h5 class="flex justify-center">Talk to an Expert</h5>
+                <h5 class="flex justify-center">Learn More</h5>
                 <label class="font-light mt-2 block">The best way to learn about FlowFuse is to book a demo! We’d love to show you how FlowFuse can transform your business.</label>
                 <a class="mt-4 ff-btn ff-btn--secondary uppercase inline-block" href="/book-demo/" onclick="capture('cta-talk-to-expert', {'position': 'secondary'})">Book a Demo</a>
             </div>
@@ -101,7 +101,7 @@ sitemapPriority: 1.0
                 <h5 class="flex justify-center">Get Started Today</h5>
                 </div>
                 <label class="font-light mt-2 block">Ready to get started? Start exploring the FlowFuse platform in less than a minute.</label>
-                <a class="mt-4 ff-btn ff-btn--primary uppercase inline-block" href="{{ site.appURL }}/account/create" onclick="capture('cta-get-started-today', {'position': 'secondary'})">Join Now</a>   
+                <a class="mt-4 ff-btn ff-btn--primary uppercase inline-block" href="{{ site.appURL }}/account/create" onclick="capture('cta-get-started-today', {'position': 'secondary'})">Try it out</a>   
             </div>
         </div>
     </div>
