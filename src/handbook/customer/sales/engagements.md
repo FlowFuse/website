@@ -26,7 +26,7 @@ countersignature.
 
 ### Steps
 
-1. [Start invoice procedure](https://flowfuse.com/handbook/operations/billing/#creating-an-invoice)
+1. [Start invoice procedure](/handbook/operations/billing/#creating-an-invoice)
 1. Send an email introducing the Customer Success Manager and providing access to the bought resources
    * *Cloud*
       * Ensure a team on FlowFuse Cloud has been set up by the customer
