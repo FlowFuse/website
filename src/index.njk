@@ -3,32 +3,42 @@ layout: default
 sitemapPriority: 1.0
 ---
 <!--Hero Content-->
-<div class="w-full px-6 pb-24 mt-12 md:px-0 ff-bg-flows">
-    <div class="container m-auto text-center max-w-2xl">
-        <h1 class="text-gray-50 max-w-xl m-auto">
-            {{ site.messaging.tagLine }}
-        </h1>
-        <p class="mt-6 text-gray-400 text-lg font-normal">
-            {{ site.messaging.subtitle }}
-        </p>
-        <div class="flex flex-col">
-            <div class="m-auto mt-7 flex flex-col gap-4 items-center justify-center">
-                <a class="ff-btn ff-btn--primary flex flex-col" href="{{ site.appURL }}/account/create" onclick="capture('cta-join', {'position': 'primary'})">
-                    <span class="text-base uppercase flex gap-2 items-center">
-                        TRY IT OUT
-                        {% include "components/icons/arrow-right.svg" %}
-                    </span>
-                </a>
+<div class="w-full px-6 pb-24 mt-12 ff-bg-flows">
+    <div class="container m-auto text-left max-w-screen-lg lg:flex lg:flex-row lg:items-start lg:justify-between lg:gap-6">
+        <div class="lg:my-auto lg:py-10 lg:max-w-[600px]">
+            <h1 class="text-gray-50 max-w-xl m-auto lg:m-0 text-center lg:text-left">
+                {{ site.messaging.tagLine }}
+            </h1>
+            <p class="mt-6 text-gray-400 text-lg font-normal text-center lg:text-left">
+                {{ site.messaging.subtitle }}
+            </p>
+            <div class="flex flex-col">
+                <div class="m-auto mt-7 flex flex-col gap-4 items-center justify-center lg:items-start lg:justify-start lg:m-0 lg:flex-row">
+                    <a class="ff-btn ff-btn--primary flex flex-col mb-6" href="{{ site.appURL }}/account/create"
+                        onclick="capture('cta-join', {'position': 'primary'})">
+                        <span class="text-base uppercase flex gap-2 items-center">
+                            TRY IT OUT
+                            {% include "components/icons/arrow-right.svg" %}
+                        </span>
+                    </a>
+                    <a class="ff-btn flex flex-col mb-6" href="{{ site.appURL }}/account/create"
+                        onclick="capture('cta-join', {'position': 'primary'})">
+                        <span class="text-base uppercase items-center text-gray-200">
+                            Contact us
+                        </span>
+                    </a>
+                </div>
             </div>
+        </div>
+        <div class="flex justify-center items-end m-auto lg:mx-0">
+            <lite-youtube videoid="eR0P40sxge8" style="background-image: url('images/thumbnail-nick-flowfuse.png'); width: 620px; height: 360px" class="max-w-xs max-h-48 border-4 rounded-md sm:max-w-none sm:max-h-full lg:max-w-lg lg:max-h-80"></lite-youtube>
         </div>
     </div>
 </div>
 
 {% include "components/divider-flow--default.njk" %}
 
-<div class="flex justify-center">
-    <lite-youtube videoid="eR0P40sxge8" style="background-image: url('images/thumbnail-nick-flowfuse.png'); width: 620px; height: 360px" class="absolute -mt-10 max-w-xs max-h-48 border-4 rounded-md sm:max-w-none sm:max-h-full"></lite-youtube>
-</div>
+
 
 <!-- Secondary Content -->
 <div class="w-full ff-bg-light px-6 pt-12 sm:pt-32">
