@@ -449,7 +449,7 @@ h4:hover .header-anchor {
 
     .ff-website header #mobile-ctas {
         transition: 0.3s bottom;
-        @apply -bottom-20 fixed w-full flex left-0 pl-4 right-0 pr-4 bg-gray-900 py-4 gap-4;
+        @apply -bottom-32 fixed w-full flex flex-col left-0 pl-4 right-0 pr-4 bg-gray-900 py-4 gap-3;
     }
     .ff-website header #mobile-ctas button,
     .ff-website header #mobile-ctas a {

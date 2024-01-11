@@ -230,7 +230,10 @@ eleventyComputed:
                 </nav>
                 <!-- Mobile CTAs -->
                 <div id="mobile-ctas" class="hidden fixed bottom-0 z-20">
-                    <a href="{{ site.appURL }}" class="ff-btn ff-btn--tertiary">Sign In</a>
+                    <div class="grid grid-cols-2 gap-2">
+                        <a href="{{ site.appURL }}" class="ff-btn ff-btn--tertiary">Sign In</a>
+                        <a href="{{ site.appURL }}/account/create" onclick="capture('cta-join', {'position': 'header'})" class="ff-btn ff-btn--tertiary">Free Trial</a>
+                    </div>
                     <a class="ff-btn ff-btn--primary" href="/contact-us" onclick="capture('cta-talk-to-sales', {'position': 'header'})">Talk to Sales</a>
                 </div>    
             </header>
