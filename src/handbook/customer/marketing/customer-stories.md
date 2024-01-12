@@ -14,9 +14,9 @@ A customer story is the same as a case study, these are helpful in illustrating 
 2. If the content is date specific create an 'all day' event on the Google Calendar [FlowFuse Publishing Schedule](https://calendar.google.com/calendar/u/0?cid=Y18yMGFjMmM5MmMwYmE0YTYwNDg4NDE1MjBmMGU2YWE0MGFhZGUxNTlkNThjZGY0ZGMwMjA0NTI4ZjFjMTcxZmQ0QGdyb3VwLmNhbGVuZGFyLmdvb2dsZS5jb20){rel="nofollow"}, include a link to the issue in the event description. If you don't have the permission to create events please ask our Google Workspace admin to give you access.
 3. If you want to work on the content immediately please triage the issue into our [development board](https://github.com/orgs/FlowFuse/projects/1/views/33).
 4. Conduct an interview call with the customer using Google Meet to record and transcribe the conversation.
-5. Consider that the readers of the story may have little knowledge of the industry discussed in the story. Try to avoid using language which excludes any potential FlowFuse customer from understanding and gaining value from the content.
+5. Consider that the readers of the story may have little knowledge of the industry discussed in the story. Try to explain industry specific terms or avoid using language which excludes any potential FlowFuse customer from understanding altogether.
 6. Create the draft customer story in a Google Doc. The document should be stored in the [Marketing -> Case Study](https://drive.google.com/drive/folders/13A3UWjXdC7a13CVi1nQOMHvTb8MCLd-K?usp=drive_link){rel="nofollow"} folder. Everyone at FlowFuse should be given access to comment on the document.  Add a link to the document in the GitHub issue.
-7. Ask people to review the document draft by sharing it directly with them using the Share button in the document. This will send your reviewers an email notification. 
+7. Leave a comment on the doc for each reviewer to request a review.
 8. As a document reviewer, you should leave red-line edits in the document or add comments to the document.
 9. When the final version of the story is done, follow these steps to create a PDF version:
     - Go to our [Template gallery](https://docs.google.com/document/u/0/?ftv=1&folder=1QXCso0HQPbShrB5_8N0n_sDnIlluUaaI&tgif=d) and select 'FlowFuse Customer Story - Template'.
