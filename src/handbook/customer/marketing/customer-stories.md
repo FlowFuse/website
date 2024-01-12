@@ -11,7 +11,7 @@ meta:
 A customer story is the same as a case study, these are helpful in illustrating how Node-RED and FlowFuse can be useful for our potential customers. The process would be as follows:
 
 1. Raise an issue for the content in our private [Github repository](https://github.com/FlowFuse/customer){rel="nofollow"}.
-2. If the content is date specific create an 'all day' event on the Google Calendar [FlowFuse Publishing Schedule](https://calendar.google.com/calendar/u/0?cid=Y18yMGFjMmM5MmMwYmE0YTYwNDg4NDE1MjBmMGU2YWE0MGFhZGUxNTlkNThjZGY0ZGMwMjA0NTI4ZjFjMTcxZmQ0QGdyb3VwLmNhbGVuZGFyLmdvb2dsZS5jb20){rel="nofollow"}, include a link to the issue in the event description. If you don't have the permission to create events please ask our Google Workspace admin to give you access.
+2. Add it to the [Content Calendar Project](https://github.com/orgs/FlowFuse/projects/21) and schedule it.
 3. If you want to work on the content immediately please triage the issue into our [development board](https://github.com/orgs/FlowFuse/projects/1/views/33).
 4. Conduct an interview call with the customer using Google Meet to record and transcribe the conversation.
 5. Consider that the readers of the story may have little knowledge of the industry discussed in the story. Try to explain industry specific terms or avoid using language which excludes any potential FlowFuse customer from understanding altogether.
