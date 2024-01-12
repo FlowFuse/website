@@ -3,8 +3,8 @@
     layout: "layouts/base.njk",
     type: "post",
     eleventyComputed: {
-        permalink: data => isFuturePost(data.date) ? false : `${data.page.filePathStem}/`,
-        eleventyExcludeFromCollections: data => isFuturePost(data.date) ? true : false
+        permalink: data => isFuturePost(data) ? false : `${data.page.filePathStem}/`,
+        eleventyExcludeFromCollections: data => isFuturePost(data)
     }
 }
 ---
@@ -19,9 +19,9 @@
         <div class="text-left md:pr-32">
             <label>Article</label>
             <h1>{{ title }}</h1>
-            {% if subtitle %}
+                {% if subtitle %}
             <h4>{{ subtitle | safe }}</h4>
-            {% endif %}
+                {% endif %}
         </div>
     </div>
     {% endif %}
@@ -74,19 +74,19 @@
                 <div class="sticky top-4 mt-6 flex flex-col">
                     <h3 class="mb-3">Written By:</h3>
                     {% for author in authors %}
-                    {% if people[author] %}
-                    {% renderTeamMember people[author] %}
-                    {% endif %}
+                        {% if people[author] %}
+                            {% renderTeamMember people[author] %}
+                        {% endif %}
                     {% endfor %}
                     <p>Published on: <time value="{{ date | dateToRfc3339 }}">{{ date | shortDate }}</time></p>
                     <h3 class="mb-3 pt-6 border-t-2">Recommended Articles:</h3>
                     <ul class="ml-6 list-disc">
                         {% for post in collections.posts | reverse | limit(5) %}
-                        {% if post.data.title != title %}
-                        <li class="mb-3"><a href="{{ post.url }}">
-                                {{ post.data.title }}
-                            </a></li>
-                        {% endif %}
+                            {% if post.data.title != title %}
+                            <li class="mb-3"><a href="{{ post.url }}">
+                                    {{ post.data.title }}
+                                </a></li>
+                            {% endif %}
                         {% endfor %}
                     </ul>
                     <div class="mt-3 pt-6 flex flex-col border-t-2">

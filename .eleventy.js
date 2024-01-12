@@ -36,12 +36,14 @@ module.exports = function(eleventyConfig) {
     let hasPrintedMessage = false;
 
     // Define a filter named 'isFuturePost'
-    eleventyConfig.addFilter('isFuturePost', (date) => {
-        const isFuturePost = date && date > new Date();
-        if (isFuturePost && !hasPrintedMessage) {
+    let processedPosts = {};
+    eleventyConfig.addFilter('isFuturePost', (post) => {
+        const isFuturePost = post.date && post.date > new Date();
+        if (isFuturePost && !processedPosts[post.title]) {
             let text = DEV_MODE_POSTS ? 'Including' : 'Excluding';
-            console.log(`[11ty/eleventy-base-blog] ${text} scheduled post(s)`);
-            hasPrintedMessage = true;
+            let formattedDate = eleventyConfig.getFilter('shortDate')(post.date);
+            console.log(`[11ty/eleventy-base-blog] ${text} ${post.title} scheduled for ${formattedDate}`);
+            processedPosts[post.title] = true;
         }
         return isFuturePost && !DEV_MODE_POSTS;
     });
