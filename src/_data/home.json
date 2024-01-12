@@ -2,7 +2,7 @@
   {
     "title": "Capture data like never before",
     "content": "Gathering data from your operations is key to start a digital transformation. We make it easy to access, transform, and visualize data over any protocol.",
-    "image": "connect_device_red",
+    "image": "device_group_red",
     "imagealt": "data transformation"
   },
   {
@@ -20,7 +20,7 @@
   {
     "title": "Reliable delivery every time",
     "content": "FlowFuse revolutionizes the software development process, streamlining the lifecycle for your applications. Our DevOps pipelines facilitate development, testing, and production, ensuring consistent and reliable application delivery.",
-    "image": "pipeline_red",
+    "image": "small-pipeline_red",
     "imagealt": "a pipeline of Node-RED instances"
   },
   {
@@ -38,7 +38,7 @@
   {
     "title": "Low-code development",
     "content": "Our low-code platform enables your team to rapidly develop tailored applications in-house for faster, optimized results.",
-    "image": "citizen_dev_red",
+    "image": "low-code_red",
     "imagealt": "a team of developers"
   }
 ]
