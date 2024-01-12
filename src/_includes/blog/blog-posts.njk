@@ -37,19 +37,7 @@
 <div class="w-full px-2 pt-2 pb-2 mb-2 flex flex-col border-t-2 border-b-2">
     <a id="sign-up"></a>
     <h5 class="mb-0">Sign up for our monthly email updates:</h5>
-    <script>
-        function displayHubSpotForm() {
-            hbspt.forms.create({
-                region: "eu1",
-                portalId: "26586079",
-                formId: "159c173d-dd95-49bd-922b-ff3ef243e90c",
-                onFormSubmit: function($form) {
-                    capture('cta-blog-subscribe', {'position': 'primary'})
-                }
-            });
-        }
-    </script>
-    <script async type="text/javascript" charset="utf-8" src="//js-eu1.hsforms.net/forms/embed/v2.js" onload="displayHubSpotForm()"></script>
+    {% include "hubspot/hs-newsletter.njk" %}
 </div>
 {% else %}
 <li class="w-full md:w-1/3 my-2 px-2 pb-6 border-b">
