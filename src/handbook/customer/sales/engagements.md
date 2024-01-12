@@ -27,7 +27,7 @@ countersignature.
 ### Steps
 
 1. [Start invoice procedure](/handbook/operations/billing/#creating-an-invoice)
-1. Send an email introducing the Customer Success Manager and providing access to the bought resources
+1. Send an email including instructions how they get access to bought resources and to introduce the customer to their Customer Success Manager.
    * *Cloud*
       * Ensure a team on FlowFuse Cloud has been set up by the customer
       * Request the customer team to [enter manual billing mode](/handbook/operations/accounts/#internal-teams-and-contracted-revenue)
