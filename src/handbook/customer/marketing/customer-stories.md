@@ -13,25 +13,27 @@ A customer story is the same as a case study, these are helpful in illustrating 
 1. Raise an issue for the content in our private [Github repository](https://github.com/FlowFuse/customer){rel="nofollow"}.
 2. If the content is date specific create an 'all day' event on the Google Calendar [FlowFuse Publishing Schedule](https://calendar.google.com/calendar/u/0?cid=Y18yMGFjMmM5MmMwYmE0YTYwNDg4NDE1MjBmMGU2YWE0MGFhZGUxNTlkNThjZGY0ZGMwMjA0NTI4ZjFjMTcxZmQ0QGdyb3VwLmNhbGVuZGFyLmdvb2dsZS5jb20){rel="nofollow"}, include a link to the issue in the event description. If you don't have the permission to create events please ask our Google Workspace admin to give you access.
 3. If you want to work on the content immediately please triage the issue into our [development board](https://github.com/orgs/FlowFuse/projects/1/views/33).
-4. Create the draft customer story in a Google Doc. The document should be stored in the [Marketing -> Case Study](https://drive.google.com/drive/folders/13A3UWjXdC7a13CVi1nQOMHvTb8MCLd-K?usp=drive_link){rel="nofollow"} folder. Everyone at FlowFuse should be given access to comment on the document.  Add a link to the document in the GitHub issue.
-5. Ask people to review the document draft by sharing it directly with them using the Share button in the document. This will send your reviewers an email notification. 
-6. As a document reviewer, you should leave red-line edits in the document or add comments to the document.
-7. When the final version of the story is done, follow these steps to create a PDF version:
+4. Conduct an interview call with the customer using Google Meet to record and transcribe the conversation.
+5. Consider that the readers of the story may have little knowledge of the industry discussed in the story. Try to avoid using language which excludes any potential FlowFuse customer from understanding and gaining value from the content.
+6. Create the draft customer story in a Google Doc. The document should be stored in the [Marketing -> Case Study](https://drive.google.com/drive/folders/13A3UWjXdC7a13CVi1nQOMHvTb8MCLd-K?usp=drive_link){rel="nofollow"} folder. Everyone at FlowFuse should be given access to comment on the document.  Add a link to the document in the GitHub issue.
+7. Ask people to review the document draft by sharing it directly with them using the Share button in the document. This will send your reviewers an email notification. 
+8. As a document reviewer, you should leave red-line edits in the document or add comments to the document.
+9. When the final version of the story is done, follow these steps to create a PDF version:
     - Go to our [Template gallery](https://docs.google.com/document/u/0/?ftv=1&folder=1QXCso0HQPbShrB5_8N0n_sDnIlluUaaI&tgif=d) and select 'FlowFuse Customer Story - Template'.
     - Change the file name by replacing 'Template' with the customer's name.
     - Replace all the template information with your story. Ensure you paste using `ctrl + shift + v` to maintain the template format.
     - Confirm that the file is saved in the [Google Docs version](https://drive.google.com/drive/folders/1SbZ7ISJaYcxcJ_00Y_CwdY5gd9_uOTHP?usp=drive_link) folder.
     - Once ready, you can either print or download it as a PDF and then place it in the [PDFs folder](https://drive.google.com/drive/folders/1QXCso0HQPbShrB5_8N0n_sDnIlluUaaI?usp=drive_link).   
-8. Create a download form in HubSpot specifically for the PDF you just created:
+10. Create a download form in HubSpot specifically for the PDF you just created:
     - Upload the PDF file to HubSpot under 'Files and Templates' and copy the public URL.
     - In HubSpot, navigate to Marketing -> Lead Capture -> Forms, then 'Create Form' or clone an existing case study download form.
     - The form should include fields for first name, last name, email, and company (not mandatory).
     - Set the PDF URL as the action after submission, under 'Redirect to another page.'
     - Update and publish the form.
     - Copy the form ID from the script generated when you click on publish.
-9. Create a new branch of the website repository. Follow our standard [development processes](/handbook/development/releases/planning/#development-board). Google Docs has an [extension to convert the reviewed draft document to markdown](https://workspace.google.com/marketplace/app/docs_to_markdown/700168918607?hl=en&pann=docs_addon_widget). 
-10. Add the HubSpot formId to your story's front matter, so anyone can download the PDF version of the case study.
-11. It is OK for you to merge your own PR to main without review where the content is urgent or has been reviewed outside of Git but where it is practical to follow the
+11. Create a new branch of the website repository. Follow our standard [development processes](/handbook/development/releases/planning/#development-board). Google Docs has an [extension to convert the reviewed draft document to markdown](https://workspace.google.com/marketplace/app/docs_to_markdown/700168918607?hl=en&pann=docs_addon_widget). 
+12. Add the HubSpot formId to your story's front matter, so anyone can download the PDF version of the case study.
+13. It is OK for you to merge your own PR to main without review where the content is urgent or has been reviewed outside of Git but where it is practical to follow the
 [standard process](/handbook/development/releases/planning/#development-board) we encourage you to do so.
 
 ## Customer Story CMS
