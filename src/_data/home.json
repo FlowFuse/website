@@ -1,11 +1,5 @@
 [
   {
-    "title": "Low-code development",
-    "content": "Our low-code platform enables your team to rapidly develop tailored applications in-house for faster, optimized results.",
-    "image": "citizen_dev_red",
-    "imagealt": "a team of developers"
-  },
-  {
     "title": "Capture data like never before",
     "content": "Gathering data from your operations is key to start a digital transformation. We make it easy to access, transform, and visualize data over any protocol.",
     "image": "connect_device_red",
@@ -40,5 +34,11 @@
     "content": "FlowFuse is your trusted partner for professional support, ensuring smooth and secure operation of your critical applications. Our team of experts is dedicated to tackling any challenge and maintaining the highest level of performance. We keep your systems current with the latest updates, safeguarding the continuity and efficiency of your operations.",
     "image": "support_pictogram_red",
     "imagealt": "support"
+  },
+  {
+    "title": "Low-code development",
+    "content": "Our low-code platform enables your team to rapidly develop tailored applications in-house for faster, optimized results.",
+    "image": "citizen_dev_red",
+    "imagealt": "a team of developers"
   }
 ]
