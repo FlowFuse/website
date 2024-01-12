@@ -26,7 +26,8 @@ countersignature.
 
 ### Steps
 
-1. Provide access to the bought resources
+1. [Start invoice procedure](/handbook/operations/billing/#creating-an-invoice)
+1. Send an email including instructions how they get access to bought resources and to introduce the customer to their Customer Success Manager.
    * *Cloud*
       * Ensure a team on FlowFuse Cloud has been set up by the customer
       * Request the customer team to [enter manual billing mode](/handbook/operations/accounts/#internal-teams-and-contracted-revenue)
@@ -34,9 +35,6 @@ countersignature.
    * *Self-Managed*
       * Generate a [license key](../sales/meetings/poc.md#generating-a-license)
       * Send the license key with the onboarding email to the customer
-1. Start invoice procedure
-   * Email the billing (billing@) department with the signed fully
-quote. Also include customer details like their email and if applicable their stripe customer details.
-   * Update the Stripe customer to set `CommittedRevenue` to `true` in the Metadata
+1. Download the completed Order Form and Subscription Agreement, and upload them to the Legal folder in Google Drive.
 1. Move the deal to `Closed Won` in HubSpots Deal overview.
-1. Once all parties have signed, download the completed Order Form and Subscription Agreement, and upload them to the Legal folder in Google Drive.
+
