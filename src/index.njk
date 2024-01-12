@@ -47,81 +47,83 @@ sitemapPriority: 1.0
         </div>
         <div class="m-auto w-full text-center mt-20 md:mb-8 md:mt-24">
             <h2>Why FlowFuse?</h2>
-            <h5><a href="/node-red/">Learn more about Node-RED</a></h5>
         </div>
     </div>
 </div>
-<div class="about w-full ff-bg-light pt-10 pb-40 px-6">
-    <div class="container mx-auto max-w-lg md:max-w-screen-lg flex flex-col md:flex md:flex-row md:flex-wrap gap-y-14 md:gap-x-12">
+<div class="about w-full ff-bg-light pt-10 pb-12">
+    <div class="container mx-auto max-w-lg sm:max-w-screen-lg flex flex-col md:flex md:flex-row md:flex-wrap gap-y-14">
         {% for item in home %}
-            <div class="relative w-full mx-auto {% if loop.last %}md:w-full{% else %}md:w-[47%]{% endif %}">
-                <div class="flex flex-col items-center md:items-start z-10">
-                    <div class="flex flex-col justify-center md:justify-start items-start gap-6 md:min-h-28 w-full">
-                        <div class="max-w-[64px] w-full max-w-sm md:w-1/5 sm:max-h-full h-16 m-auto md:m-0">
-                            {% set imageSrc = ['./images/pictograms/', item.image, '.png'] | join %}
-                            {% set imageDescription = ['Image depicting ', item.imagealt] | join %}
-                            {% image imageSrc, imageDescription, [64] %}
-                        </div>                      
-                        <div class="flex flex-row gap-3 m-auto md:m-0 text-center md:text-left">
-                            <h5><div class="text-xl">{{ item.title | safe }}</div></h5>
-                        </div>
+        <div class="relative w-full px-6 mx-auto {% if loop.last %}md:w-full{% else %}md:w-1/2{% endif %}">
+            <div class="flex flex-col items-center md:items-start z-10">
+                <div class="flex flex-col justify-center md:justify-start items-start gap-6 md:min-h-28 w-full">
+                    <div class="max-w-[64px] w-full max-w-sm md:w-1/5 sm:max-h-full h-16 m-auto md:m-0">
+                        {% set imageSrc = ['./images/pictograms/', item.image, '.png'] | join %}
+                        {% set imageDescription = ['Image depicting ', item.imagealt] | join %}
+                        {% image imageSrc, imageDescription, [64] %}
                     </div>
-                    <div>
-                        <p class="text-center md:text-left">{{ item.content }}</p>
+                    <div class="flex flex-row gap-3 m-auto md:m-0 text-center md:text-left">
+                        <h5>
+                            <div class="text-xl">{{ item.title | safe }}</div>
+                        </h5>
                     </div>
                 </div>
+                <div>
+                    <p class="text-center md:text-left">{{ item.content }}</p>
+                </div>
             </div>
+        </div>
         {% endfor %}
     </div>
 </div>
+<div class="w-full ff-bg-light text-white -mb-1">
+    {% include "components/dividers/light-grey-curve.svg" %}
 </div>
-
-{% include "components/divider-flow--top-red--dark.njk" %}
-
 <!-- Deployment Options -->
-<div class="w-full ff-bg-dark px-6 pt-0 pb-28 md:pt-0 md:px-0">
+<div class="w-full ff-bg-light pt-0 md:pt-0 md:px-0">
+    <div class="bg-white pb-10 md:pb-8 px-6">
     <div class="container m-auto text-center max-w-4xl">
-        <div class="m-auto mt-10 w-full text-center">
+        <div class="m-auto pt-12 w-full text-center">
             <h2>Get Started with FlowFuse</h2>
-            <p class="text-white font-light">Explore our <a href="/pricing/">pricing</a>.</p>
+            <p class="text-white font-light -mt-1">Explore our <a href="/pricing/">pricing</a>.</p>
         </div>
-        <div class="sm:mt-10 md:mt-10 w-full max-w-4xl text-center flex flex-wrap gap-2 justify-around">
+        <div class="sm:mt-10 md:mt-4 w-full max-w-4xl text-center flex flex-wrap gap-2 justify-around">
             <div class="w-full px-3 mt-4 sm:w-72 md:mt-0 css-full">
-                <div class="w-40 m-auto mb-4">
-                    {% image "./images/pictograms/book-a-demo.png", "Icon representing a booked demo.", [160] %}
+                <div class="w-24 m-auto">
+                    {% image "./images/pictograms/book-a-demo_red.png", "Icon representing a booked demo.", [96] %}
                 </div>
                 <h5 class="flex justify-center">Learn More</h5>
                 <label class="font-light mt-2 block">The best way to learn about FlowFuse is to book a demo! We’d love to show you how FlowFuse can transform your business.</label>
-                <a class="mt-4 ff-btn ff-btn--secondary uppercase inline-block" href="/book-demo/" onclick="capture('cta-talk-to-expert', {'position': 'secondary'})">Book a Demo</a>
+                <a class="mt-4 mb-10 md:mb-0 ff-btn ff-btn--primary uppercase inline-block" href="/book-demo/" onclick="capture('cta-book-a-demo', {'position': 'secondary'})">Book a Demo</a>
             </div>
             <div class="w-full px-3 mt-4 sm:w-72 md:mt-0 flex flex-col items-center justify-between">
                 <div>
-                <div class="w-40 mb-4">
-                    {% image "./images/pictograms/enterprise.png", "Graphic image representing 'Infrastructure'.", [160] %}
+                <div class="w-24 m-auto">
+                    {% image "./images/pictograms/enterprise_red.png", "Graphic image representing 'Infrastructure'.", [96] %}
                 </div>
                 <h5 class="flex justify-center">Get Started Today</h5>
                 </div>
                 <label class="font-light mt-2 block">Ready to get started? Start exploring the FlowFuse platform in less than a minute.</label>
-                <a class="mt-4 ff-btn ff-btn--primary uppercase inline-block" href="{{ site.appURL }}/account/create" onclick="capture('cta-try-it-now', {'position': 'secondary'})">Try it out</a>   
+                <a class="mt-4 ff-btn ff-btn--primary-outlined uppercase inline-block" href="{{ site.appURL }}/account/create" onclick="capture('cta-try-it-now', {'position': 'secondary'})">Try it out</a>   
             </div>
         </div>
     </div>
+    </div> 
 </div>
-<div class="divider-flow transform scale-x-[-1]">
-    {% include "components/divider-flow--top-red--light.njk" %}
+<div class="w-full bg-white text-gray-50 -mb-1">
+    {% include "components/dividers/divider-flow--top-grey.svg" %}
 </div>
 <!-- FF Content -->
-<div class="ff-bg-light w-full pb-16 md:px-0">
-    <div class="container m-auto max-w-5xl pt-12 px-6">
-        <h2 class="text-center w-full">Explore more about FlowFuse and Node-RED</h2>
-        <div class="w-full max-w-md md:max-w-none mx-auto flex flex-col md:grid md:grid-cols-3 md:gap-6 pt-16">
+<div class="ff-bg-light w-full pb-20 md:px-0">
+    <div class="container m-auto max-w-5xl pt-6 md:pt-3 px-6">
+        <h3 class="text-center w-full font-medium">Explore more about FlowFuse and Node-RED</h3>
+        <div class="w-full max-w-md md:max-w-none mx-auto flex flex-col md:grid md:grid-cols-3 gap-6 pt-10">
             {%- for item in collections.posts | sort(attribute='item.date') | reverse | limit(1) -%}
-            <div class="w-full my-2 pb-6">
+            <div class="w-full my-2 border rounded-lg hover:drop-shadow-lg hover:border-red-600 transition ease-in-out duration-300 bg-white">
                 <a href="{{ item.url }}" class="w-full flex flex-col group hover:no-underline">
                     <div class="">
-                        <div class="">
                             {% if item.data.image %}
-                            <div class="w-full h-auto">
+                            <div class="relative border-b">
+                                <div class="w-full ff-image-cover ff-image-top-rounded">
                                 {% set imageSrc = ["./", item.data.image ] | join %}
                                 {% set imageDescription = ["Image representing ", item.data.title] | join %}
                                 {% image imageSrc, imageDescription, [285] %}
@@ -130,18 +132,23 @@ sitemapPriority: 1.0
                             {{ item.url | generatePostSVG |safe}}
                             {% endif %}
                         </div>
-                        <h5 class="mt-4 mb-0 group-hover:underline text-gray-200 font-light text-lg">{{ item.data.title }}</h5>
+                        <div class="p-5 pt-0">
+                        <h5 class="mt-4 mb-0 font-normal text-lg"><span class="text-gray-500 group-hover:text-red-600">{{ item.data.title }}</span></h5>
+                        <div class="text-sm py-1 text-gray-500 font-light">
+                            {{ item.data.description | excerpt | safe }}
+                        </div>
+                        </div>
                     </div>
                 </a>
             </div>
             {%- endfor -%}
             {%- for item in collections.webinar | sort(attribute='item.date') | reverse | limit(1) -%}
-            <div class="w-full my-2 pb-6">
+            <div class="w-full my-2 border rounded-lg hover:drop-shadow-lg hover:border-red-600 transition ease-in-out duration-300 bg-white">
                 <a href="{{ item.url }}" class="w-full flex flex-col group hover:no-underline">
-                    <div class="">
-                        <div class="bg-white">
+                        <div class="">
                             {% if item.data.image %}
-                            <div class="w-full h-auto md:pt-3">
+                            <div class="relative border-b pt-3">
+                                <div class="bg-white w-full ff-image-cover ff-image-top-rounded">
                                 {% set imageSrc = ["./", item.data.image ] | join %}
                                 {% set imageDescription = ["Image representing ", item.data.title] | join %}
                                 {% image imageSrc, imageDescription, [285] %}
@@ -150,15 +157,17 @@ sitemapPriority: 1.0
                             {{ item.url | generatePostSVG |safe}}
                             {% endif %}
                         </div>
-                        <h5 class="mt-4 mb-0 group-hover:underline text-gray-200 font-light text-lg">{{ item.data.title }}</h5>
+                        <h5 class="mt-4 mb-0 font-normal text-lg p-5 pt-0"><span class="text-gray-500 group-hover:text-red-600">{{ item.data.title }}</span></h5>
                     </div>
                 </a>
             </div>
             {%- endfor -%}
-            <div class="w-full pt-2 pb-2 mb-2 flex flex-col">
+            <div class="w-full my-2 border rounded-lg hover:drop-shadow-lg hover:border-red-600 transition ease-in-out duration-300 bg-white flex flex-col">
                 <a id="sign-up"></a>
-                <h5 class="mb-3">Sign up for our monthly email updates:</h5>
-                {% include "hubspot/hs-newsletter.njk" %}
+                <h4 class="w-full bg-gray-200 font-medium text-xl p-5 rounded-t-lg">Sign up for our monthly email updates</h4>
+                <div class="p-5 pb-0 -mb-1">
+                    {% include "hubspot/hs-newsletter.njk" %}
+                </div>
             </div>
         </div>
     </div>
