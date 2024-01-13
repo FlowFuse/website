@@ -33,8 +33,6 @@ module.exports = function(eleventyConfig) {
     // Set DEV_MODE_POSTS to true if the context is not 'production'
     const DEV_MODE_POSTS = process.env.CONTEXT !== "production";
 
-    let hasPrintedMessage = false;
-
     // The filter excludes blog posts with a date in the future for the production website.
     let processedPosts = {};
     eleventyConfig.addFilter('isFuturePost', (post) => {
