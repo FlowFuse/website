@@ -35,7 +35,7 @@ module.exports = function(eleventyConfig) {
 
     let hasPrintedMessage = false;
 
-    // Define a filter named 'isFuturePost'
+    // The filter excludes blog posts with a date in the future for the production website.
     let processedPosts = {};
     eleventyConfig.addFilter('isFuturePost', (post) => {
         const isFuturePost = post.date && post.date > new Date();
