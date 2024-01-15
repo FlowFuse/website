@@ -58,6 +58,8 @@ Provides the (OpenGraph) description used when sharing a post on social media. A
 
 The data can be seen on both the blog index and the articles.
 
+The `date` field in the blog post front matter serves a crucial role in determining when a blog post is published. You can set this field to a future date if you wish to schedule your blog post for publication on a specific day. See the [Scheduling a blog post](#scheduling-a-blog-post) section for more details.
+
 ### Authors
 
 The author can be seen on both the blog index and the articles.
@@ -90,3 +92,12 @@ The '\<\!\-\-more\-\-\>' tag is used to define the text shown in the blog index 
 
 FlowFuse blog posts are written in markdown. To learn how to style content and
 have a nice markup for your content, please read the [markdown guide](/handbook/company/guides/markdown/)
+
+### Scheduling a blog post
+
+By setting a future date, the blog post will be automatically scheduled for publication on the specified date. This allows contributors to plan ahead and coordinate blog posts with events or marketing strategies. The post will be published at the next deploy after the `date` is set, a daily deploy is done at noon GMT.
+
+Feel free to request reviews and merge your blog post when it's ready, even if the publication date is set in the future. This provides the flexibility to collaborate, make revisions, and ensure the content is polished well before it goes live.
+The post, to be published in the future, will be rendered when developing locally and on deployment previews.
+
+By utilizing the scheduling feature, we can maintain a consistent and organized publishing schedule without the need for last-minute adjustments.

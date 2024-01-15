@@ -30,6 +30,31 @@ const DEV_MODE = process.env.ELEVENTY_RUN_MODE !== "build" // i.e. serve/watch
 module.exports = function(eleventyConfig) {
     eleventyConfig.setUseGitIgnore(false); // Otherwise docs are ignored
 
+    // Set DEV_MODE_POSTS to true if the context is not 'production'
+    const DEV_MODE_POSTS = process.env.CONTEXT !== "production";
+
+    // The filter excludes blog posts with a date in the future for the production website.
+    let processedPosts = {};
+    eleventyConfig.addFilter('isFuturePost', (post) => {
+        const isFuturePost = post.date && post.date > new Date();
+        if (isFuturePost && !processedPosts[post.title]) {
+            let text = DEV_MODE_POSTS ? 'Including' : 'Excluding';
+            let formattedDate = eleventyConfig.getFilter('shortDate')(post.date);
+            console.log(`[11ty/eleventy-base-blog] ${text} ${post.title} scheduled for ${formattedDate}`);
+            processedPosts[post.title] = true;
+        }
+        return isFuturePost && !DEV_MODE_POSTS;
+    });
+
+    // Define a filter named 'isFutureDate'
+    eleventyConfig.addFilter('isFutureDate', (date) => {
+        return date && date > new Date();
+    });
+
+    // Make filters globally accessible
+    global.isFuturePost = eleventyConfig.getFilter('isFuturePost');
+    global.isFutureDate = eleventyConfig.getFilter('isFutureDate');
+
     eleventyConfig.addPlugin(EleventyEdgePlugin);
 
     // Layout aliases
