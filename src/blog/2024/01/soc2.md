@@ -1,5 +1,5 @@
 ---
-title: FlowFuse is Now SOC 2 Compliant
+title: FlowFuse is now SOC 2 Type 1 compliant
 subtitle: FlowFuse's Path to SOC 2 Compliance - A Testament to Our Commitment to Security
 date: 2024-01-15
 authors: ["grey-dziuba"]
