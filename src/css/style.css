@@ -416,7 +416,7 @@ h4:hover .header-anchor {
     }
 
     .ff-website header nav {
-        @apply z-10 flex justify-between lg:grid lg:grid-cols-header;
+        @apply z-10 flex justify-between xl:grid xl:grid-cols-header;
     }
 
     .ff-website header nav .ff-nav-chevron {
@@ -425,7 +425,7 @@ h4:hover .header-anchor {
 
     .ff-website header #nav-content {
         height: calc(100% - 64px - 64px);
-        @apply top-8 md:top-0 transition-height fixed mt-8 w-full overflow-hidden border-none max-h-0 right-0 border-t shadow-sm z-10 bg-gray-800 flex-col items-center justify-between font-medium no-underline;
+        @apply top-8 md:top-0 transition-height fixed mt-8 w-full overflow-hidden border-none max-h-0 right-0 border-t shadow-sm z-10 bg-gray-800 flex-col items-center justify-between font-light no-underline;
         @apply md:mt-0 md:h-auto md:overflow-visible md:max-h-20 md:relative md:shadow-none md:border-0 md:bg-transparent md:w-auto lg:static md:float-none md:flex md:flex-row;
     }
 
@@ -449,7 +449,7 @@ h4:hover .header-anchor {
 
     .ff-website header #mobile-ctas {
         transition: 0.3s bottom;
-        @apply -bottom-20 fixed w-full flex left-0 pl-4 right-0 pr-4 bg-gray-900 py-4 gap-4;
+        @apply -bottom-32 fixed w-full flex flex-col left-0 pl-4 right-0 pr-4 bg-gray-900 py-4 gap-3;
     }
     .ff-website header #mobile-ctas button,
     .ff-website header #mobile-ctas a {
@@ -472,16 +472,22 @@ h4:hover .header-anchor {
     }
     
     .ff-website header a {
-        color: theme(colors.red.400);
+        color: theme(colors.gray.400);
     }
+    
+    .ff-website header .cta a {
+        color: theme(colors.gray.200);
+        @apply md:px-3 font-normal;
+    }
+
 
     .ff-website header ul a {
         border-color: theme(colors.gray.200);
-        @apply py-3 sm:py-4 px-4 text-base sm:border-b-0 sm:text-lg text-center;
+        @apply py-3 sm:py-4 px-4 text-base sm:border-b-0 text-center;
     }
 
     .ff-website header ul a.ff-btn {
-        @apply text-sm;
+        @apply text-sm font-bold;
     }
 
     .ff-website header a:hover .ff-icon--down path,
@@ -531,7 +537,7 @@ h4:hover .header-anchor {
     }
 
     .ff-website header .ff-nav-dropdown ul li {
-        @apply border-b text-left sm:bg-gray-700 sm:text-right sm:border-gray-600 font-normal;
+        @apply border-b text-left sm:bg-gray-700 sm:text-right sm:border-gray-600 font-light;
     }
 
     .ff-website header .ff-nav-dropdown >ul li a {
