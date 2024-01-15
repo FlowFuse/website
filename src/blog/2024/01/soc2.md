@@ -25,12 +25,12 @@ SOC 2 Type 1 assesses the design of an organization's security controls at a spe
 # FlowFuse's Journey to SOC 2 Compliance
 ## Compliance Partners
 
-### Advantage Partners:
-Working with Advantage Partners, our audit firm, was a seamless experience. Their expertise and support were vital in our efficient, successful attainment of SOC 2 compliance.
+The independent audit was performed by Advantage Partners. Their expertise played a large role in our successful attainment of this certification. Before the audit was performed the company went through an extensive process to uncover what policies were missing, required updating, or were already in place. Further, lots of tribal knowledge has been written down and is now enforced by internal policies. For example
 
-## Process
-The journey to SOC 2 compliance, while extensive, was streamlined thanks to our partners. Vanta's integration with our systems and guidance on policies and procedures expedited our readiness. Following this, Advantage Partners evaluated our controls during our Type I audit and subsequently issued our report.
+1. [Data Management Policy](https://flowfuse.com/handbook/company/security/data-management/#data-management-policy)
+2. [Access Control Policy](https://flowfuse.com/handbook/company/security/access-control/#access-control-policy)
+3. [Incident Response Policy](https://flowfuse.com/handbook/company/security/incident-response/#incident-response-plan)
+4. [Human Resources Security Policy](https://flowfuse.com/handbook/company/security/human-resources/#human-resources-security-policy)
 
-## Timeline
-Achieving compliance is a significant undertaking. However, with dedicated focus and the right partners, we were able to fast-track our readiness from months to weeks. This preparation not only facilitated our current audit but also laid a foundation for more streamlined future audits.
+It's been a team effort from engineering to updated HR polices!
 
