@@ -16,7 +16,7 @@ While cloud computing has revolutionized data access and analysis, not all data 
 
 <!--more-->
 
-FlowFuse enables data to be collected through Node-RED. Data can be processed locally on the edge or sent on to other services. FlowFuse doesn’t rely on continuous connections to the cloud, making it a good choice for locations with unreliable internet connectivity. Use cases like real-time monitoring of critical systems, proactive maintenance and improved operational efficiency are now possible to implement.
+FlowFuse enables data to be collected through Node-RED. Data can be processed locally on the edge or sent on to other services. FlowFuse doesn’t rely on continuous connections to the cloud, making it a good choice for locations with unreliable internet connectivity. Use cases like real-time monitoring of critical systems, proactive maintenance, and improved operational efficiency are now possible to implement.
 
 ## Installing the FlowFuse agent
 
@@ -27,7 +27,7 @@ The device agent can run anywhere you can run a Docker container or Node.JS runt
 
 ### Registering a device on FlowFuse
 
-For the edge device to know what it’s supposed to do it needs to listen to the FlowFuse commands. To agents configuration is provided by a `device.yml` file from FlowFuse. Go to the team you’d like to add an edge device to, select “Devices” on the left hand menu followed by the “Add Device” button.
+For the edge device to know what it’s supposed to do, it needs to listen to the FlowFuse commands. The agent's configuration is provided by a `device.yml` file from FlowFuse. Go to the team you’d like to add an edge device to, and select “Devices” on the left-hand menu, followed by the “Add Device” button.
 
 ![Setting up a FlowFuse agent](./images/flowfuse-agent-setup.png "Setting up a FlowFuse agent")
 
@@ -37,9 +37,9 @@ FlowFuse will prompt you to add a name (required), and a type (not required). Wh
 
 ### Install the FlowFuse agent through Docker
 
-If your edge device is capable of running containers, it’s the fastest way to run the FlowFuse agent. Assuming you’ve already got Docker installed, we there’s just two steps to follow: first move the device YAML file downloaded from FlowFuse to the edge device and save it in `/opt/flowfuse/device.yml`. Start the agent by running:
+If your device supports it, the fastest way to run the FlowFuse agent is with containers. Assuming you’ve already got Docker installed, there are two steps to follow: first, move the device YAML file downloaded from FlowFuse to the edge device and save it in `/opt/flowfuse/device.yml`. Start the agent by running:
 
-Note that for production cases, make sure the container is restarted on reboot. Docker can do this for you, [please follow their guide](https://docs.docker.com/config/containers/start-containers-automatically/).
+Note that for production cases, ensure the container is restarted on reboot. Docker can do this for you, [please follow their guide](https://docs.docker.com/config/containers/start-containers-automatically/).
 
 
 ### Install the FlowFuse agent with npm
@@ -48,15 +48,14 @@ To install the agent through NPM, you’ll need a Node.JS version of 18.0 or lat
 
 This will install the FlowFuse Device Agent as a global npm module, making the flowfuse-device-agent command available in any directory on your system.
 
-Once the installation is complete, you need to configure the Device Agent to connect to your FlowFuse instance. In this guide you’ve previously downloaded the `device.yml` file that’s needed now. On linux or mac, move the file to `/opt/flowfuse-device/device.yml`, for Windows based systems to `c:\opt\flowfuse-device\device.yml`.
+Once the installation is complete, you must configure the Device Agent to connect to your FlowFuse instance. In this guide, you’ve previously downloaded the `device.yml` file that’s needed now. On Linux or Mac, move the file to `/opt/flowfuse-device/device.yml`, and for Windows-based systems, move the file to `c:\opt\flowfuse-device\device.yml`.
 
-Afterwards start the agent with:
-
+Afterward, start the agent with:
 This will launch the Device Agent and connect it to your FlowFuse instance. The Device Agent will wait for instructions on which flows to run.
 
 
 ### Programming flows for the edge
 
-Now the agent is running, the FlowFuse platform will show it has contacted back to the platform and is ready to do some work. First add it to the application and start the developer mode. That enables the device editor and provides you secure access to the editor, anywhere in the world for everyone in the FlowFuse team with the right access role.
+Now the agent is running, the FlowFuse platform will show it has contacted back to the platform and is ready to do some work. First, add it to the application and start the developer mode. That enables the device editor and provides you secure access to the editor anywhere in the world for everyone in the FlowFuse team with the right access role.
 
-When the development is done, be sure to create a snapshot of the developed flows to create a point in time backup, or to roll the snapshot out to many other devices later.
+When the development is done, be sure to create a snapshot of the developed flows to create a point-in-time backup, or to roll the snapshot out to many other devices later.
