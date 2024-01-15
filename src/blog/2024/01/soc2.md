@@ -11,20 +11,19 @@ tags:
 ---
 
 
-SOC 2, governed by the American Institute of Certified Public Accountants (AICPA), is a crucial framework for organizations handling customer data. It involves an independent audit assessing whether a company's controls are effectively designed and operational. Achieving SOC 2 compliance is not just about meeting standards; it's a declaration of our unwavering commitment to data security and customer trust.
+FlowFuse achieved SOC 2 type 1 compliance! SOC 2, governed by the American Institute of Certified Public Accountants (AICPA), is a crucial framework for organizations handling customer data.
+An independent audit assessed that FlowFuse's controls are effectively designed and operationally applied. Achieving SOC 2 Type 1 compliance validates our practises as an business and provides our customers assurances we apply the highest standards to ensure their data is protected.
 
 <!--more-->
 
-# Improving Your Security Posture
-For FlowFuse, pursuing SOC 2 compliance was a natural step in enhancing our security posture. In today's landscape, where cybersecurity threats and data breaches are rampant, prioritizing information security is not optional but a necessity. Our SOC 2 audit was more than a procedural hurdle; it was a comprehensive validation of our robust controls and processes by an independent third party.
+# Improving Our Security Posture
+At FlowFuse, we understand that professionalizing Node-RED deployments for our clients means adhering to the highest standards, including SOC 2 requirements. This commitment is at the core of our security philosophy. In a world rife with cybersecurity threats and data breaches, taking information security seriously isn't just an option—it's a critical necessity. Our SOC 2 audit was far more than just a procedural step. It represented a comprehensive, independent third-party validation of our robust controls and processes. We believe in transparency and accountability, which is why we document our policies in our open handbook, inviting scrutiny from vendors and reinforcing trust with our customers. Providing this level of independent audit not only serves our customers better and more efficiently but also offers FlowFuse valuable insights into enhancing our security measures and identifying any gaps in our policies. This proactive approach ensures we continue keeping your data safe and secure at all times.
+As we continue to grow and evolve, ensuring the security of our systems and data becomes ever more critical. The next step on FlowFuse's journey to provide independant proof we're on the right track: We're currently in the observation phase of the SOC2 type 2.
 
-# Why We Pursued SOC 2 Now
-As we continue to grow and evolve, ensuring the security of our systems and data becomes ever more critical. Our decision to pursue SOC 2 compliance now reflects our proactive stance on security and our dedication to data protection, aligning perfectly with our goal to "Build bespoke, flexible, and resilient manufacturing applications."
+SOC 2 Type 1 assesses the design of an organization's security controls at a specific point in time, while SOC 2 Type 2 evaluates the effectiveness of those controls over a period of time, typically three to twelve months.
 
 # FlowFuse's Journey to SOC 2 Compliance
 ## Compliance Partners
-### Vanta:
-Our partnership with Vanta, a leader in Trust Management, was instrumental. Vanta's tools automated the collection of our audit evidence, laying a strong foundation to protect customer data.
 
 ### Advantage Partners:
 Working with Advantage Partners, our audit firm, was a seamless experience. Their expertise and support were vital in our efficient, successful attainment of SOC 2 compliance.
@@ -34,24 +33,4 @@ The journey to SOC 2 compliance, while extensive, was streamlined thanks to our 
 
 ## Timeline
 Achieving compliance is a significant undertaking. However, with dedicated focus and the right partners, we were able to fast-track our readiness from months to weeks. This preparation not only facilitated our current audit but also laid a foundation for more streamlined future audits.
-
-# Lessons We Learned
-## Focus on Security, Not Just Compliance:
-Compliance should not be seen as a mere checkbox exercise. It's about embedding continuous, evolving security practices into the organization.
-
-## Start Early:
-Early implementation of policies is easier and more effective. Building secure infrastructure is crucial for a robust security program.
-
-## Scaling Your Business:
-Achieving compliance is not just about mitigating risks; it's also about unlocking business potential, as SOC 2 compliance is often a prerequisite in vendor security reviews.
-
-## Knowing Your Stakeholders:
-Identify which internal stakeholders will contribute to policy development, procedural adherence, and security tasks. It's a collective effort.
-
-## Choosing the Right Partners:
-The journey is made smoother with the right tools and partners. Select partners who are as dedicated to your success as you are.
-
-In conclusion, FlowFuse's SOC 2 compliance is more than just an audit accomplishment; it's a reflection of our deep-rooted commitment to security, trust, and building a resilient future for manufacturing applications. Our journey is a testament to the belief that when you prioritize security, you're not just protecting data; you're safeguarding trust.
-
-
 
