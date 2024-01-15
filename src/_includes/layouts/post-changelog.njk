@@ -1,5 +1,10 @@
 ---
 layout: layouts/base.njk
+hubspot:
+  script: "hubspot/hs-form.njk"
+  formId: 159c173d-dd95-49bd-922b-ff3ef243e90c
+  cta: "cta-blog-subscribe"
+  reference: "changelog"
 ---
 
 <div class="w-full page post">
@@ -64,19 +69,7 @@ layout: layouts/base.njk
                     </ul>
                     <div class="mt-3 pt-6 flex flex-col border-t-2">
                         <h3 class="">Sign up for updates</h3>
-                        <script>
-                            function displayHubSpotForm() {
-                                hbspt.forms.create({
-                                    region: "eu1",
-                                    portalId: "26586079",
-                                    formId: "159c173d-dd95-49bd-922b-ff3ef243e90c",
-                                    onFormSubmit: function($form) {
-                                        capture('cta-blog-subscribe', {'position': 'article'})
-                                    }
-                                });
-                            }
-                        </script>
-                        <script async type="text/javascript" charset="utf-8" src="//js-eu1.hsforms.net/forms/embed/v2.js" onload="displayHubSpotForm()"></script>
+                        {% include hubspot.script %}
                     </div>
                 </div>
             </div>

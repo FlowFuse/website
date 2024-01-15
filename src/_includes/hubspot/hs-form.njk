@@ -4,6 +4,11 @@
             region: "eu1",
             portalId: "26586079",
             formId: "{{ hubspot.formId }}",
+            onFormSubmit: function ($form) {
+                capture('{{ cta or hubspot.cta }}', {
+                    'page': '{{ hubspot.reference or title }}'
+                })
+            }
         });
     }
 </script>

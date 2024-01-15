@@ -1,6 +1,11 @@
 ---
 layout: default
 sitemapPriority: 1.0
+hubspot:
+  script: "hubspot/hs-form.njk"
+  formId: 159c173d-dd95-49bd-922b-ff3ef243e90c
+  cta: "cta-blog-subscribe"
+  reference: "homepage"
 ---
 <!--Hero Content-->
 <div class="w-full px-6 pb-24 mt-12 ff-bg-flows">
@@ -158,7 +163,7 @@ sitemapPriority: 1.0
                 <h5 class="font-bold pb-3 pt-2">Sign up for our monthly email updates</h5>
                 </div>
                 <div class="-mb-1 self-end w-full">
-                    {% include "hubspot/hs-newsletter.njk" %}
+                    {% include hubspot.script %}
                 </div>
             </div>
         </div>

@@ -3,6 +3,11 @@ align: center
 layout: layouts/page.njk
 title: Professional Services
 description: <p>FlowFuse partners with our customers to ensure their successful deployment of FlowFuse and Node-RED. Discover our professional service offerings.</p>
+hubspot:
+  script: "hubspot/hs-form.njk"
+  formId: b8ae3144-7eb2-4f5a-a9f8-f99e5c7bb07f
+  cta: "cta-contact-us"
+  reference: "professional-services"
 ---
 <div class="text-left max-w-full ff-bg-light">
   <div class="w-full pt-10 md:pt-12 px-0 ff-prose">
@@ -51,18 +56,7 @@ description: <p>FlowFuse partners with our customers to ensure their successful 
       <div class="container m-auto md:max-w-xl prose">
         <div class="px-6 mb-16">
           <script src="https://www.google.com/recaptcha/api.js"></script>
-          <script>
-            function displayHubSpotForm() {
-              hbspt.forms.create({
-                region: "eu1",
-                portalId: "26586079",
-                formId: "b8ae3144-7eb2-4f5a-a9f8-f99e5c7bb07f"
-              });
-            }
-          </script>
-          <script async type="text/javascript" charset="utf-8" src="//js-eu1.hsforms.net/forms/embed/v2.js"
-            onload="displayHubSpotForm()"></script>
-        </div>
+          {% include hubspot.script %}
       </div>
     </div>
   </div>
