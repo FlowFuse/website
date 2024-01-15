@@ -317,6 +317,8 @@ module.exports = function(eleventyConfig) {
                     </div>`
     });
 
+    eleventyConfig.addShortcode("year", () => `${new Date().getFullYear()}`);
+
     function loadSVG (file) {
         let relativeFilePath = `./src/_includes/components/icons/${file}.svg`;
         let data = fs.readFileSync(relativeFilePath, function(err, contents) {
