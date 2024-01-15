@@ -13,7 +13,7 @@ We recognise the benefit of 3rd party security researchers looking for potential
 
 Please make a good faith effort to avoid privacy violations, destruction of data, and interruption or degradation of our service. Only interact with accounts you own or with explicit permission of the account holder.
 
-We ask that you refrain from:
+Please refrain from:
  - Denial of service live/running services
  - Spamming
  - Social engineering (including phishing) of FlowFuse staff or contractors
