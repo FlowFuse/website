@@ -73,10 +73,4 @@ definitive and each reported bug will be considered on its own merits.
 
 If a decision is made to reward a disclosure based on the criteria above you will be notified via the email used to submit the disclosure. If you have sent multiple reports we may choose to produce a combined response rather than reply to each email individually.
 
-The following process should be followed to claim the reward.
-
-1. Create a PDF invoice that includes:
-   - An itemised list of the agreed rewards including their $ amount - they should be itemised as `Bug Bounty reward`.
-   - Your contact details. This should include the email address used to report the original issue(s).
-   - Payment details. Our preferred payment mechanism is via bank transfer.
-2. Send the invoice to `billing@flowfuse.com`. Once the details are verified, payment will be made.
+To claim your reward, please create an invoice and file [in accordance with our vendor process](/handbook/operations/vendors/#process).
