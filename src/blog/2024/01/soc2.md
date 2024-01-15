@@ -1,5 +1,5 @@
 ---
-title: FlowFuse is now SOC 2 Type 1 compliant
+title: FlowFuse is now SOC 2 Type 1 Compliant
 subtitle: FlowFuse's Path to SOC 2 Compliance - A Testament to Our Commitment to Security
 date: 2024-01-15
 authors: ["grey-dziuba"]
@@ -30,7 +30,7 @@ Our partnership with Vanta, a leader in Trust Management, was instrumental. Vant
 Working with Advantage Partners, our audit firm, was a seamless experience. Their expertise and support were vital in our efficient, successful attainment of SOC 2 compliance.
 
 ## Process
-The journey to SOC 2 compliance, while extensive, was streamlined thanks to our partners. Vanta's integration with our systems and guidance on policies and procedures expedited our readiness. Following this, Advantage Partners evaluated our controls during our Type [I or II] audit and subsequently issued our report.
+The journey to SOC 2 compliance, while extensive, was streamlined thanks to our partners. Vanta's integration with our systems and guidance on policies and procedures expedited our readiness. Following this, Advantage Partners evaluated our controls during our Type I audit and subsequently issued our report.
 
 ## Timeline
 Achieving compliance is a significant undertaking. However, with dedicated focus and the right partners, we were able to fast-track our readiness from months to weeks. This preparation not only facilitated our current audit but also laid a foundation for more streamlined future audits.
