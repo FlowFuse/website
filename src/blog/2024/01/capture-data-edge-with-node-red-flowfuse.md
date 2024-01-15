@@ -50,9 +50,9 @@ This will install the FlowFuse Device Agent as a global npm module, making the f
 
 Once the installation is complete, you must configure the Device Agent to connect to your FlowFuse instance. In this guide, you’ve previously downloaded the `device.yml` file that’s needed now. On Linux or Mac, move the file to `/opt/flowfuse-device/device.yml`, and for Windows-based systems, move the file to `c:\opt\flowfuse-device\device.yml`.
 
-Afterward, start the agent with:
-This will launch the Device Agent and connect it to your FlowFuse instance. The Device Agent will wait for instructions on which flows to run.
+Afterward, start the agent with: `flowfuse-device-agent`.
 
+This will launch the Device Agent and connect it to your FlowFuse instance. The Device Agent will wait for instructions on which flows to run.
 
 ### Programming flows for the edge
 
