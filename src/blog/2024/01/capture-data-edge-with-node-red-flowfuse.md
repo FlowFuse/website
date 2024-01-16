@@ -4,7 +4,7 @@ subtitle: FlowFuse allows you to run Node-RED anywhere to capture all the data
 description: FlowFuse allows you to run Node-RED anywhere to capture all the data
 date: 2024-01-17
 authors: ["zeger-jan-van-de-weg"]
-image: # TODO
+image: /blog/2024/01/images/capture-data-from-edge-devices.png
 tags:
     - posts
     - flowfuse
