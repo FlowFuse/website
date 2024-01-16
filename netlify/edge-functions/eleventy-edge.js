@@ -178,7 +178,10 @@ export default async (request, context) => {
         });
         const distinctId = getDistinctId(context)
         setCookie(context, "ff-distinctid", distinctId, 1);
-        return await edge.handleResponse();
+        const response = await edge.handleResponse();
+        response.headers.set('X-Frame-Options', 'DENY')
+        response.headers.set('Content-Security-Policy', "frame-ancestors 'none';")    
+        return response
     } catch (e) {
         console.error("ERROR", { e });
         return context.next(e);
