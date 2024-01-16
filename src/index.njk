@@ -115,56 +115,49 @@ sitemapPriority: 1.0
 <div class="ff-bg-light w-full pb-20 md:px-0">
     <div class="container m-auto max-w-5xl pt-6 md:pt-3 px-6">
         <h3 class="text-center w-full font-medium">Explore more about FlowFuse and Node-RED</h3>
-        <div class="w-full max-w-md md:max-w-none mx-auto flex flex-col md:grid md:grid-cols-3 gap-6 pt-10">
-            {%- for item in collections.posts | sort(attribute='item.date') | reverse | limit(1) -%}
-            <div class="w-full my-2 border rounded-lg hover:drop-shadow-lg hover:border-red-600 transition ease-in-out duration-300 bg-white">
-                <a href="{{ item.url }}" class="w-full flex flex-col group hover:no-underline">
-                    <div class="">
-                            {% if item.data.image %}
-                            <div class="relative border-b">
-                                <div class="w-full ff-image-cover ff-image-top-rounded">
-                                {% set imageSrc = ["./", item.data.image ] | join %}
-                                {% set imageDescription = ["Image representing ", item.data.title] | join %}
-                                {% image imageSrc, imageDescription, [285] %}
-                            </div>
-                            {% else %}
-                            {{ item.url | generatePostSVG |safe}}
-                            {% endif %}
-                        </div>
-                        <div class="p-5 pt-0">
-                        <h5 class="mt-4 mb-0 font-normal text-lg"><span class="text-gray-500 group-hover:text-red-600">{{ item.data.title }}</span></h5>
-                        <div class="text-sm py-1 text-gray-500 font-light">
-                            {{ item.data.description | excerpt | safe }}
-                        </div>
-                        </div>
-                    </div>
+        <div class="w-full max-w-md md:max-w-none mx-auto flex flex-col md:grid md:grid-cols-3 gap-6 md:gap-x-8 pt-10">
+            <div class="w-full my-2 grid grid-cols-1 pb-4">
+                <div class="pb-2 md:pb-0">
+                <h4 class="text-xl font-bold pb-3"><span class="text-red-600">Latest on the blog</span></h4>
+                {%- for item in collections.posts | sort(attribute='item.date') | reverse | limit(3) -%}
+                <a href="{{ item.url }}" class="w-full flex flex-col group {% if not loop.last %}border-b{% endif %}">
+                    <h5 class="my-2 font-normal text-lg">
+                        <span class="text-gray-500 group-hover:text-blue-700">
+                            {{ item.data.title }}
+                        </span>
+                    </h5>
+                </a>
+                {%- endfor -%}
+                </div>
+                <a href="/blog/" class="w-full text-right flex flex-row items-center justify-end self-end justify-self-end gap-1">
+                    See all
+                    {% include "components/icons/arrow-long-right.svg" %}
                 </a>
             </div>
-            {%- endfor -%}
-            {%- for item in collections.webinar | sort(attribute='item.date') | reverse | limit(1) -%}
-            <div class="w-full my-2 border rounded-lg hover:drop-shadow-lg hover:border-red-600 transition ease-in-out duration-300 bg-white">
-                <a href="{{ item.url }}" class="w-full flex flex-col group hover:no-underline">
-                        <div class="">
-                            {% if item.data.image %}
-                            <div class="relative border-b pt-3">
-                                <div class="bg-white w-full ff-image-cover ff-image-top-rounded">
-                                {% set imageSrc = ["./", item.data.image ] | join %}
-                                {% set imageDescription = ["Image representing ", item.data.title] | join %}
-                                {% image imageSrc, imageDescription, [285] %}
-                            </div>
-                            {% else %}
-                            {{ item.url | generatePostSVG |safe}}
-                            {% endif %}
-                        </div>
-                        <h5 class="mt-4 mb-0 font-normal text-lg p-5 pt-0"><span class="text-gray-500 group-hover:text-red-600">{{ item.data.title }}</span></h5>
-                    </div>
-                </a>
+            <div class="w-full my-2 grid grid-cols-1 pb-4">
+                {%- for item in collections.webinar | sort(attribute='item.date') | reverse | limit(1) -%}
+                <div class="pb-2 md:pb-0">
+                <h4 class="text-xl font-bold pb-3"><span class="text-red-600">{% if item.date | isFutureDate %}Upcoming{% else %}Latest{% endif %} Webinar</span></h4>
+                <div class="w-full flex flex-col">
+                    <h5 class="my-2 font-normal text-lg"><span class="text-gray-500">{{ item.data.title }}</span></h5>
+                </div>
+                <div class="webinar-title w-full border-t pt-3 font-light text-gray-500">
+                    <time value="{{ item.date }}">{{ item.date | shortDate }} | </time>
+                    {% if item.date | isFutureDate %}
+                    <time value="{{ item.data.time }}">{{ item.data.time }}</time>
+                    {% endif %}
+                </div>
+                </div>
+                <a class="mt-4 ff-btn ff-btn--primary-outlined uppercase inline-block self-end justify-self-end"
+                    href="{{ item.url }}">{% if item.date | isFutureDate %}REGISTER NOW{% else %}WATCH WEBINAR{% endif %}</a>
+                {%- endfor -%}
             </div>
-            {%- endfor -%}
-            <div class="w-full my-2 border rounded-lg hover:drop-shadow-lg hover:border-red-600 transition ease-in-out duration-300 bg-white flex flex-col">
-                <a id="sign-up"></a>
-                <h4 class="w-full bg-gray-200 font-medium text-xl p-5 rounded-t-lg">Sign up for our monthly email updates</h4>
-                <div class="p-5 pb-0 -mb-1">
+            <div class="w-full my-2 grid grid-cols-1">
+                <div class="pb-2 md:pb-0">
+                <h4 class="text-xl font-bold pb-3"><span class="text-red-600">Newsletter</h4>
+                <h5 class="font-bold pb-3 pt-2">Sign up for our monthly email updates</h5>
+                </div>
+                <div class="-mb-1 self-end w-full">
                     {% include "hubspot/hs-newsletter.njk" %}
                 </div>
             </div>
