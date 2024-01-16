@@ -24,8 +24,7 @@ In this webinar, join industry experts Marc Pous and Grey Dziuba as they delve i
 We will talk about 
 - What is balena and FlowFuse; why you should leverage them on your next fleet management application.
 - How balena and FlowFuse work together.   
-- Deep dive into the balena architecture and how FlowFuse fits into it, along with a demo  
-on how it applies to examples like Wind Farm, Vehicles, Discrete and Process man, Oil Rigs.
+- Deep dive into the balena architecture and how FlowFuse fits into it, along with a demo  on how it applies to examples like Wind Farm, Vehicles, Discrete and Process man, Oil Rigs.
 
 And answer any questions you may have. 
 
