@@ -11,10 +11,10 @@ tags:
     - news
 ---
 
-Following the release of FlowFuse 1.0 end of 2022, we're excited to release FlowFuse 2.0, marking a significant step in managing Node-RED remote instances, which we term Devices. 
+Following the release of FlowFuse 1.0 end of 2022, we're excited to release FlowFuse 2.0, marking a significant step in managing Node-RED remote instances, which we call Devices. 
 <!--more-->
 
-Many organizations position Node-RED instances on remote servers, edge or industrial devices, to meet network, infrastructure, or use case requirements. Therefore, management of remote instances is crucial for the overall success of closing the gap between IT and OT. A key enhancement was the introduction of Device Groups (from version 1.15) and the new feature to assign target snapshots. This allows for direct and streamlined management of Node-RED Device fleets, setting the stage for future advancements in device management capabilities.
+Many organizations position Node-RED instances on remote servers like edge or industrial devices. This way they can meet network requirement, interact with analog protocols, and overcome other infrastructure requirements. Management of remote instances is crucial for the overall success of closing the gap between IT and OT. A key enhancement was the introduction of Device Groups (from version 1.15) and the new feature to assign target snapshots. This allows for direct and streamlined management of Node-RED Device fleets, setting the stage for future advancements in device management capabilities.
 
 For our FlowFuse users, this means it is no longer necessary or recommended to assign devices to an instance. Node-RED devices can be managed independently, and snapshots can be assigned via DevOps pipelines.
 
@@ -23,7 +23,7 @@ For our FlowFuse users, this means it is no longer necessary or recommended to a
 FlowFuse is committed to augmenting the enterprise-readiness of Node-RED with introductions like [Single Sign-On (SSO)](https://flowfuse.com/docs/admin/sso/), [Multi-Factor Authentication (MFA)](https://flowfuse.com/docs/user/user-settings/#two-factor-authentication), and [High Availability](https://flowfuse.com/docs/user/high-availability/) since version 1.0. Furthermore, we recently achieved [SOC2 Type 1 compliance](https://flowfuse.com/blog/2024/01/soc2/). With these advancements, Node-RED, in combination with FlowFuse, is genuinely ready for enterprise and production use.
 
 ## Enhanced Integration Capabilities
-The Node-RED Library has always been a cornerstone, offering over 4800 connectors (nodes) for various OT and IT protocols., thanks to the community and the Node-RED library. Building on this foundation, FlowFuse introduced "Certified Nodes" and "Blueprints". These [Blueprints](https://flowfuse.com/blog/2023/10/blueprints/) are designed to provide an easier start with Node-RED, showcasing its full potential, while Certified Nodes ensure the security of the nodes used. Learn more about our new Certified Nodes [here](https://flowfuse.com/blog/2023/10/certified-nodes/).
+The Node-RED Flow Library has always been a cornerstone, offering over 4800 connectors (nodes) for various OT and IT protocols. Thanks to the community and the Node-RED library. Building on this foundation, FlowFuse introduced "Certified Nodes" and "Blueprints". These [Blueprints](https://flowfuse.com/blog/2023/10/blueprints/) are designed to provide an easier start with Node-RED, showcasing its full potential, while Certified Nodes ensure the security of the nodes used. Learn more about our new Certified Nodes [here](https://flowfuse.com/blog/2023/10/certified-nodes/).
 
 ## Looking Ahead
 
