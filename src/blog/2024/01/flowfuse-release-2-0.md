@@ -1,0 +1,30 @@
+---
+title: FlowFuse 2.0 Release
+subtitle: Elevating Node-RED Device Management to new heights
+description: Announcing the launch of FlowFuse 2.0, a significant upgrade in managing Node-RED remote instances.
+date: 2024-01-18
+authors: ["marian-demme"]
+#image: /blog/2024/01/images/
+tags:
+    - posts
+    - flowfuse
+    - news
+---
+
+Following the release of FlowFuse 1.0 end of 2022, we're excited to release FlowFuse 2.0, marking a significant step in managing Node-RED remote instances, which we term Devices. 
+<!--more-->
+
+Many organizations position Node-RED instances on remote servers, edge or industrial devices, to meet network, infrastructure, or use case requirements. Therefore, management of remote instances is crucial for the overall success of closing the gap between IT and OT. A key enhancement was the introduction of Device Groups (from version 1.15) and the new feature to assign target snapshots. This allows for direct and streamlined management of Node-RED Device fleets, setting the stage for future advancements in device management capabilities.
+
+For our FlowFuse users, this means it is no longer necessary or recommended to assign devices to an instance. Node-RED devices can be managed independently, and snapshots can be assigned via DevOps pipelines.
+
+## Enterprise-Readiness
+
+FlowFuse is committed to augmenting the enterprise-readiness of Node-RED with introductions like [Single Sign-On (SSO)](https://flowfuse.com/docs/admin/sso/), [Multi-Factor Authentication (MFA)](https://flowfuse.com/docs/user/user-settings/#two-factor-authentication), and [High Availability](https://flowfuse.com/docs/user/high-availability/) since version 1.0. Furthermore, we recently achieved [SOC2 Type 1 compliance](https://flowfuse.com/blog/2024/01/soc2/). With these advancements, Node-RED, in combination with FlowFuse, is genuinely ready for enterprise and production use.
+
+## Enhanced Integration Capabilities
+The Node-RED Library has always been a cornerstone, offering over 4800 connectors (nodes) for various OT and IT protocols., thanks to the community and the Node-RED library. Building on this foundation, FlowFuse introduced "Certified Nodes" and "Blueprints". These [Blueprints](https://flowfuse.com/blog/2023/10/blueprints/) are designed to provide an easier start with Node-RED, showcasing its full potential, while Certified Nodes ensure the security of the nodes used. Learn more about our new Certified Nodes [here](https://flowfuse.com/blog/2023/10/certified-nodes/).
+
+## Looking Ahead
+
+At FlowFuse, our mission is to empower bottom-up innovation and enable organizations to transform their workflows into business-critical applications with unprecedented efficiency. As we move forward, we are excited to invite our users to actively engage with our future developments. Our  [Roadmap](https://flowfuse.com/product/roadmap/) lays out the advancements we're targeting, offering a glimpse into the features and enhancements that are on the horizon. We also encourage our users to stay informed and involved by checking out our latest updates in our detailed [changelog](https://flowfuse.com/changelog/). Your insights and feedback are crucial to us; they fuel our commitment to continuous improvement and innovation. We warmly invite you to [share your thoughts and suggestions](https://flowfuse.com/contact-us/), as your input is a vital part of our journey in shaping the next steps for FlowFuse.
