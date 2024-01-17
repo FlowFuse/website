@@ -2,7 +2,7 @@
 title:  Selecting a broker for your Unified Namespace
 subtitle: The broker is the data backbone for the unified namespace, which one is right for you?
 description: The broker is the data backbone for the unified namespace, which one is right for you?
-date: 2024-01-16
+date: 2024-01-19
 authors: ["zeger-jan-van-de-weg"]
 image: # TODO
 tags:
