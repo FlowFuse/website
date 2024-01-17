@@ -62,8 +62,6 @@ At this stage we're using the default set of status's in HubSpot:
 | :---------: | :---------- |
 | New | The contact in question has had only _marketing_ contact (E-mails, etc). |
 | Open | In the stage where a contact is assigned to a Account exec, but no official connection has be made. Usually contacts are only in this stage for a short while.|
-| Attempted to contact | From the moment the AE reached out, until there's a reply from them. |
-| Connected | MQLs and SQL that have replied and engaged with FlowFuse. |
 | In Progress | After contact has been made, this status captures the nurturing process toward an opportunity. |
 | Open Deal | When a deal is on the board, and the opportunity is real, this is the status! |
 | Unqualified | Either this contact specifically cannot lead the sales process, or the account itself has been found unqualified. |
