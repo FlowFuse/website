@@ -1,0 +1,182 @@
+---
+layout: page
+nohero: true
+meta:
+  title: "Unified Namespace (UNS)"
+  faq:
+  - question: "What is the UNS?"
+    answer: >
+      The unified namespace is a new data architecture to accellerate digital transformation. All data, from sensors, systems, and machines are connected to make their data available to a unified network of data producers and consumers. This speeds up
+      application building, system integration, and delivers faster insights into productivity.
+  - question: "Why is the UNS important?"
+    answer: >
+      The UNS makes data available for more people to make better data-driven decisions. Furthermore,  
+  - question: "How to implement a unified namespace?"
+    answer: >
+      To implement a unified namespace you'll adapt your data producers to talk to
+      a common broker. The adaptation layer is usually Node-RED, where MQTT is the current
+      default pick as broker protocol. Implementation can start piece-meal and the value
+      the UNS delivers will grow expontially.
+  - question: "How much does a unified namespace cost?"
+    answer: >
+      A proof-of-concept implementation can happen entirely with open-source software, and be free. For production and enterprise features
+      and reliablity there's licenses for sale for both MQTT brokers, and message formatters like Node-RED.
+---
+
+<!--First two sections-->
+<div class="nohero w-full ff-bg-light">
+    <!--Hero Content-->
+    <div class="nodered-pillar-bg w-full pt-12 pb-20 md:pt-6 md:pb-12 border-b-4 border-gray-100">
+        <div class="flex flex-col px-6 items-center md:flex-row md:items-start container mx-auto text-center md:text-left max-w-screen-lg">
+            <div class="md:my-auto md:py-10 md:max-w-[476px]">
+                <h1 class="mt-0 px-12 md:px-0 m-auto">
+                    <span class="leading-3">What is the unified namespace (UNS)?</span>
+                </h1>
+                <h5 class="mt-5 text-gray-400 text-lg font-light md:mb-8">
+                    Making data available to many applications across the organisation for rapid
+                    iterative development and integration.
+                </h5>
+            </div>
+            <div class="max-w-[500px] text-center md:text-left m-auto">
+                {% image "../images/node-red-in-cloud.png", "FlowFuse hosting Node-RED", [500] %}
+            </div>
+        </div>
+    </div>
+    <div class="text-gray-50 -mt-12">
+        {% include "components/dividers/light-grey-curve.svg" %}
+    </div>
+
+    <!-- What is UNS -->
+    <div class="w-full ff-bg-light pt-4 px-0 pb-12 ff-prose">
+        <div class="text-center mt-6 md:mt-2 mb-6">
+            <h2>Learn about the Unified Namespace!</h2>
+        </div>
+        <div class="container m-auto max-w-screen-lg prose">
+            <div class="grid px-6 grid-cols-1 md:grid-cols-3 gap-6 sm:gap-x-8 sm:gap-y-0 mb-16">
+                <div class="text-left self-start">
+                    <h3 class="flex items-center gap-4">
+                        <div class="w-16">
+                            {% image "./images/pictograms/node_catalog_red.png", "Graphics depicting low-code programming.", [64] %}
+                        </div>
+                        <div class="flex flex-col leading-8">
+                            Hub and Spokes data distribution
+                        </div>
+                    </h3>
+                    <p class="mb-0">
+                        UNS allows many diffent applications to receive data from the same source, by distributing the data through a hub.
+                    </p>
+                </div>
+                <div class="text-left self-start">
+                    <h3 class="flex items-center gap-4">
+                        <div class="w-16">
+                            {% image "./images/pictograms/edge_red.png",
+                            "Graphics depicting connectivity and integration.",
+                            [64] %}
+                        </div>
+                        <div class="flex flex-col leading-8">
+                            Structured messages
+                        </div>
+                    </h3>
+                    <p class="mb-0">
+                        Provide insight into the information available with a defined message structure.
+                    </p>
+                </div>
+                <div class="text-left self-start">
+                    <h3 class="flex items-center gap-4">
+                        <div class="w-16">
+                            {% image "./images/pictograms/scalable_red.png", "Graphics depicting low-code visualisation.", [64] %}
+                        </div>
+                        <div class="flex flex-col leading-8">
+                            Data availability
+                        </div>
+                    </h3>
+                    <p class="mb-0">
+                        Break the ISA-95 chains and make data available for the whole shop floor, accellerate innovation.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="nohero w-full ff-bg-light">
+    <!-- Learn UNS -->
+    <div class="about w-full bg-white pt-12 md:pt-12 pb-12">
+        <div class="text-center">
+            <h2>Learn about the Unified Namespace (UNS)</h2>
+        </div>
+        <div class="container m-auto max-w-4xl">
+            <div
+                class="grid grid-cols-1 md:grid-cols-2 pt-4 md:pt-6 gap-x-8 items-start">
+                <!-- Quick Tips Column -->
+                <div class="px-6 pb-6 md:pb-0">
+                    <h3 class="w-full text-center mb-4">Getting Started</h3>
+                    <ul class="ff-nodered-resources">
+                        <a href="/blog/2023/12/introduction-to-unified-namespace/">
+                            <li>
+                                <div class="ff-nodered-resources--icon">{% ffIconLg "nodered",
+                                    true %}</div>
+                                <label>Introduction into the UNS</label>
+                            </li>
+                        </a>
+                        <a href="/blog/2023/08/isa-95-automation-pyramid-to-unified-namespace/">
+                            <li>
+                                <div class="ff-nodered-resources--icon">{% ffIconLg "bug",
+                                    true %}</div>
+                                <label>From ISA 95 towards the UNS</label>
+                            </li>
+                        </a>
+                    </ul>
+                </div>
+                <!-- Concepts Column -->
+                <div class="px-6 pb-6 md:pb-0">
+                    <h3 class="w-full text-center mb-4">Implementation of the UNS</h3>
+                    <ul class="ff-nodered-resources">
+                        <a href="/blog/2023/12/unified-namespace-data-modelling/">
+                            <li>
+                                <div class="ff-nodered-resources--icon">{% ffIconLg "chart",
+                                    true %}</div>
+                                <label>Comparing Node-RED Dashboard Solutions</label>
+                            </li>
+                        </a>
+                        <a href="/blog/2024/01/unified-namespace-what-broker/">
+                            <li>
+                                <div class="ff-nodered-resources--icon">{% ffIconLg "lock",
+                                    true %}</div>
+                                <label>Selecting your UNS Broker</label>
+                            </li>
+                        </a>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="text-white">
+        {% include "components/dividers/light-grey-curve-inverted.svg" %}
+    </div>
+    <!-- Frequently Asked Questions -->
+    <div class="w-full ff-bg-light px-6 pt-8 pb-24 sm:px-0">
+        <div class="container m-auto max-w-4xl px-6">
+            <h2 class="text-center">Frequently Asked Questions</h2>
+            <label class="m-auto text-center block max-w-lg md:max-w-none">Have a question that you don't see answered here? Feel free to reach out to us via our <a href="/contact-us">Contact Us</a> page</label>
+            <div class="mt-12 m-auto w-full ff-prose">
+                <div class="prose max-w-none">
+                    {% for faq in meta.faq %}
+                        <div class="w-full {% if not loop.last %}border-b{% endif %} py-4">
+                            <h5 class="question flex flex-row justify-between items-center w-full m-0 gap-6 cursor-pointer" id="question-{{ loop.index }}">
+                                <span>{{ faq.question }}</span>
+                                <div class="chevron transition-transform ease-in-out duration-300" id="chevron-{{ loop.index }}">
+                                    {% include "components/icons/chevron-down.svg" %}
+                                </div>
+                            </h5>
+                            <div class="answer px-6 mt-6 hidden" id="answer-{{ loop.index }}">
+                                <p>{{ faq.answer | safe }}</p>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

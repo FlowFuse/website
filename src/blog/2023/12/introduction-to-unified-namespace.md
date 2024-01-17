@@ -13,7 +13,7 @@ tags:
 
 As your organization is generating more data there’s key architectural
 decisions to be made to ensure the full value can be unlocked and you’re
-leveraging not just the tip of the iceberg. The Unified Namespace
+leveraging not just the tip of the iceberg. The Unified Namespace (UNS)
 provides a blueprint to allow data to be consumed by many data-consumers.
 FlowFuse helps you manage this migration and the operationalization of your
 data.
