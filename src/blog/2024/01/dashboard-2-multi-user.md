@@ -13,7 +13,7 @@ tags:
     - dashboard
 ---
 
-This week has seen the release of the [first major version of Node-RED Dashboard 2.0](/blog/2021/01/dashboard-2-ga), with it, we've made available a new FlowFuse-exclusive feature, Multi User Dashboards.
+This week has seen the release of the [first major version of Node-RED Dashboard 2.0](/blog/2024/01/dashboard-2-ga), with it, we've made available a new FlowFuse-exclusive feature, Multi User Dashboards.
 
 This new feature will allow you to build Dashboards that provide unique data to each user, build admin-only views, and track user activity, to name but a few. We're really excited to see what the Node-RED Community and our FlowFuse customers can do with such a powerful and flexible framework.
 

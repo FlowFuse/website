@@ -33,7 +33,7 @@ We've also just published another new article detailing our latest feature:
 
 This is available now in Node-RED Dashboard 2.0 when running on FlowFuse Cloud.
 
-If that wasn't enough, we also have [rich documentation]((https://dashboard.flowfuse.com/)) for Dashboard 2.0 too, detailing all of the available nodes, details on how Dashboard 2.0 is built and how to contribute to the project too if you're that way inclined.
+If that wasn't enough, we also have [rich documentation](https://dashboard.flowfuse.com/) for Dashboard 2.0 too, detailing all of the available nodes, details on how Dashboard 2.0 is built and how to contribute to the project too if you're that way inclined.
 
 ## Follow our Progress
 
