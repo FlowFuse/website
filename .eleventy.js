@@ -292,9 +292,12 @@ module.exports = function(eleventyConfig) {
 
     eleventyConfig.addFilter("relatedPosts", function (collection = []) {
         const { tags: requiredTags, page } = this.ctx;
-        return collection.filter(post => {
-            return post.url !== page.url && requiredTags?.every(tag => post.data.tags?.includes(tag));
-        });
+        return collection
+            .map(post => {
+                const commonTags = requiredTags?.reduce((count, tag) => count + (post.data.tags?.includes(tag) ? 1 : 0), 0);
+                return { ...post, commonTags };
+            })
+            .filter(post => post.url !== page.url && post.commonTags >= requiredTags.length - 1);
     });
     
     // Custom async filters
