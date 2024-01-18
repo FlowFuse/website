@@ -46,5 +46,5 @@ For all services that support it, 2FA authentication should be enabled and if po
 The CEO, CTO, and other executives at FlowFuse will never email anyone to wire
 money, request you to buy gift cards, or request any other type of monitory
 transaction. Transactions are started through [a set process](../../operations/vendors.md)
-only. When in doubt, reach out through Slack and request a call with the executive
+only. When in doubt, reach out through Slack and request a huddle with the executive
 to validate.
