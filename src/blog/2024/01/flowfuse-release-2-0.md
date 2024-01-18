@@ -9,6 +9,7 @@ tags:
     - posts
     - flowfuse
     - news
+    - releases
 ---
 
 Following the release of FlowFuse 1.0 end of 2022, we're excited to release FlowFuse 2.0, marking a significant step in managing Node-RED remote instances, which we call Devices. 
@@ -28,3 +29,26 @@ The Node-RED Flow Library has always been a cornerstone, offering over 4800 conn
 ## Looking Ahead
 
 At FlowFuse, our mission is to empower bottom-up innovation and enable organizations to transform their workflows into business-critical applications with unprecedented efficiency. As we move forward, we are excited to invite our users to actively engage with our future developments. Our  [Roadmap](https://flowfuse.com/product/roadmap/) lays out the advancements we're targeting, offering a glimpse into the features and enhancements that are on the horizon. We also encourage our users to stay informed and involved by checking out our latest updates in our detailed [changelog](https://flowfuse.com/changelog/). Your insights and feedback are crucial to us; they fuel our commitment to continuous improvement and innovation. We warmly invite you to [share your thoughts and suggestions](https://flowfuse.com/contact-us/), as your input is a vital part of our journey in shaping the next steps for FlowFuse.
+
+## How to get started
+
+You can install our [local build](/docs/install/local/), use [Docker](/docs/install/docker/), or [Kubernetes](/docs/install/kubernetes/).
+
+If you'd rather use our hosted offering: [Get started for free]({{ site.appURL }}/account/create) on FlowFuse Cloud.
+
+## Upgrading FlowFuse
+
+[FlowFuse Cloud]({{ site.appURL }}) is already running version 2.0.
+
+If you installed a previous version of FlowFuse and want to upgrade, our documentation provides a
+guide for [upgrading your FlowFuse instance](/docs/upgrade/).
+
+The version 2.0 release of the FlowFuse Helm Chart includes a breaking change for deployments making use of the `forge.localPostgresql` setting when upgrading. This is where the helm chart installs a dedicated PostgreSQL database instance.
+With v2.0 we have updated the version of the Bitnami PostgreSQL Helm sub-chart we bundle and the upgrade process will require some manual intervention to ensure things work correctly. A fresh install should not require any extra steps.
+
+The steps are documented on the [Upgrade instructions](https://flowfuse.com/docs/install/kubernetes/#upgrade) page, please read them carefully before upgrading
+
+## Getting help
+
+Please check FlowFuse's [documentation](/docs/) as the answers to many questions are covered there. Additionally you can go to the [community forum](https://community.flowfuse.com) if you have
+any feedback or feature requests.
