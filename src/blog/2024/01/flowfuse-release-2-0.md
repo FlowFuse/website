@@ -12,8 +12,10 @@ tags:
     - releases
 ---
 
-Following the release of FlowFuse 1.0 end of 2022, we're excited to release FlowFuse 2.0, marking a significant step in managing Node-RED remote instances, which we call Devices. 
+Following the release of FlowFuse 1.0 end of 2022, we're excited to release FlowFuse 2.0, marking a significant step in managing Node-RED remote instances, which we call Devices. FlowFuse already was the best place to operate Node-RED at scale in the cloud or on-premise, now it's able to manage Node-RED where ever it's run.
+ 
 <!--more-->
+
 
 Many organizations position Node-RED instances on remote servers like edge or industrial devices. This way they can meet network requirement, interact with analog protocols, and overcome other infrastructure requirements. Management of remote instances is crucial for the overall success of closing the gap between IT and OT. A key enhancement was the introduction of Device Groups (from version 1.15) and the new feature to assign target snapshots. This allows for direct and streamlined management of Node-RED Device fleets, setting the stage for future advancements in device management capabilities.
 
@@ -28,7 +30,7 @@ The Node-RED Flow Library has always been a cornerstone, offering over 4800 conn
 
 ## Looking Ahead
 
-At FlowFuse, our mission is to empower bottom-up innovation and enable organizations to transform their workflows into business-critical applications with unprecedented efficiency. As we move forward, we are excited to invite our users to actively engage with our future developments. Our  [Roadmap](https://flowfuse.com/product/roadmap/) lays out the advancements we're targeting, offering a glimpse into the features and enhancements that are on the horizon. We also encourage our users to stay informed and involved by checking out our latest updates in our detailed [changelog](https://flowfuse.com/changelog/). Your insights and feedback are crucial to us; they fuel our commitment to continuous improvement and innovation. We warmly invite you to [share your thoughts and suggestions](https://flowfuse.com/contact-us/), as your input is a vital part of our journey in shaping the next steps for FlowFuse.
+At FlowFuse, our mission is to empower bottom-up innovation and enable organizations to transform their workflows into business-critical applications with unprecedented efficiency. As we move forward, we are excited to invite our users to actively engage with our future developments. Our [Roadmap](https://flowfuse.com/product/roadmap/) lays out the advancements we're targeting, offering a glimpse into the features and enhancements that are on the horizon. We also encourage our users to stay informed and involved by checking out our latest updates in our detailed [changelog](https://flowfuse.com/changelog/). Your insights and feedback are crucial to us; they fuel our commitment to continuous improvement and innovation. We warmly invite you to [share your thoughts and suggestions](https://flowfuse.com/contact-us/), as your input is a vital part of our journey in shaping the next steps for FlowFuse.
 
 ## How to get started
 
