@@ -79,7 +79,7 @@ Tag your content appropriately from the collection of tags that help us manage o
 
 There's a page with a collection of posts for each tag in that list.
 
-You can also add your own custom tags. While these won't create a new page with a collection of posts, they will help suggest related articles. Keep in mind that for an article to be considered related, the full set of tags must match.
+You can also add your own custom tags. While these won't create a new page with a collection of posts, they will help suggest related articles. Keep in mind that for an article to be considered related, the majority of tags must match, with allowance for a difference in one tag.
 
 ### More tag
 
