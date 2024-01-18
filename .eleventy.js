@@ -290,7 +290,7 @@ module.exports = function(eleventyConfig) {
         return teamMembers
     });
 
-    eleventyConfig.addNunjucksFilter("related", function (collection = []) {
+    eleventyConfig.addFilter("relatedPosts", function (collection = []) {
         const { tags: requiredTags, page } = this.ctx;
         return collection.filter(post => {
             return post.url !== page.url && requiredTags?.every(tag => post.data.tags?.includes(tag));
