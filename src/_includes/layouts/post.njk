@@ -65,32 +65,26 @@
                     {% endfor %}
                     <p>Published on: <time value="{{ date | dateToRfc3339 }}">{{ date | shortDate }}</time>
                     </p>
-                    {%- set relatedPosts = collections.posts | relatedPosts | reverse | limit(5) -%}
-                    {%- if relatedPosts.length > 0 %}
-                        <h3 class="mb-3 pt-6 border-t-2">Related Articles:</h3>
-                        <ul class="ml-6 list-disc">
-                            {%- for post in relatedPosts %}
+                    {%- set postsToShow = collections.posts | relatedPosts | reverse | limit(5) -%}
+                    {%- if postsToShow.length == 0 %}
+                        {%- set postsToShow = collections.posts | reverse | limit(5) -%}
+                        {%- set heading = "Recommended Articles:" %}
+                    {%- else %}
+                        {%- set heading = "Related Articles:" %}
+                    {%- endif %}
+
+                    <h3 class="mb-3 pt-6 border-t-2">{{ heading }}</h3>
+                    <ul class="ml-6 list-disc">
+                        {%- for post in postsToShow %}
+                            {% if post.data.title != title %}
                                 <li class="mb-3">
                                     <a href="{{ post.url }}">
                                         {{ post.data.title }}
                                     </a>
                                 </li>
-                            {%- endfor %}
-                        </ul>
-                    {%- else %}
-                        <h3 class="mb-3 pt-6 border-t-2">Recommended Articles:</h3>
-                        <ul class="ml-6 list-disc">
-                            {% for post in collections.posts | reverse | limit(5) %}
-                                {% if post.data.title != title %}
-                                    <li class="mb-3">
-                                        <a href="{{ post.url }}">
-                                            {{ post.data.title }}
-                                        </a>
-                                    </li>
-                                {% endif %}
-                            {% endfor %}
-                        </ul>
-                    {%- endif %}
+                            {% endif %}
+                        {%- endfor %}
+                    </ul>
                     <div class="mt-3 pt-6 flex flex-col border-t-2">
                         <h3 class="">Sign up for updates</h3>
                         <script>
