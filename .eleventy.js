@@ -55,6 +55,13 @@ module.exports = function(eleventyConfig) {
     global.isFuturePost = eleventyConfig.getFilter('isFuturePost');
     global.isFutureDate = eleventyConfig.getFilter('isFutureDate');
 
+    eleventyConfig.addNunjucksFilter("related", function (collection = []) {
+        const { tags: requiredTags, page } = this.ctx;
+        return collection.filter(post => {
+            return post.url !== page.url && requiredTags?.every(tag => post.data.tags?.includes(tag));
+        });
+    });
+
     eleventyConfig.addPlugin(EleventyEdgePlugin);
 
     // Layout aliases
