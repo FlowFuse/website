@@ -55,13 +55,6 @@ module.exports = function(eleventyConfig) {
     global.isFuturePost = eleventyConfig.getFilter('isFuturePost');
     global.isFutureDate = eleventyConfig.getFilter('isFutureDate');
 
-    eleventyConfig.addNunjucksFilter("related", function (collection = []) {
-        const { tags: requiredTags, page } = this.ctx;
-        return collection.filter(post => {
-            return post.url !== page.url && requiredTags?.every(tag => post.data.tags?.includes(tag));
-        });
-    });
-
     eleventyConfig.addPlugin(EleventyEdgePlugin);
 
     // Layout aliases
@@ -297,6 +290,13 @@ module.exports = function(eleventyConfig) {
         return teamMembers
     });
 
+    eleventyConfig.addNunjucksFilter("related", function (collection = []) {
+        const { tags: requiredTags, page } = this.ctx;
+        return collection.filter(post => {
+            return post.url !== page.url && requiredTags?.every(tag => post.data.tags?.includes(tag));
+        });
+    });
+    
     // Custom async filters
     eleventyConfig.addNunjucksAsyncFilter("jsmin", async function (code, callback) {
         try {
