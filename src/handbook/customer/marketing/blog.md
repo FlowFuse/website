@@ -66,7 +66,7 @@ The author can be seen on both the blog index and the articles.
 
 ### Tags
 
-Tag your content appropriately from the collection of tags that help us manage our blog content. They are:
+Tag your content appropriately from the collection of tags that help us manage our blog content. They include:
 
 - `node-red`
 - `flowfuse`
@@ -75,6 +75,10 @@ Tag your content appropriately from the collection of tags that help us manage o
 - `community`
 - `releases`
 - `news`
+
+There's a page with a collection of posts for each tag in that list.
+
+You can also add your own custom tags. While these won't create a new page with a collection of posts, they will help suggest related articles. Keep in mind that for an article to be considered related, the full set of tags must match.
 
 ### More tag
 

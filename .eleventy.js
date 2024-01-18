@@ -290,6 +290,13 @@ module.exports = function(eleventyConfig) {
         return teamMembers
     });
 
+    eleventyConfig.addFilter("relatedPosts", function (collection = []) {
+        const { tags: requiredTags, page } = this.ctx;
+        return collection.filter(post => {
+            return post.url !== page.url && requiredTags?.every(tag => post.data.tags?.includes(tag));
+        });
+    });
+    
     // Custom async filters
     eleventyConfig.addNunjucksAsyncFilter("jsmin", async function (code, callback) {
         try {
