@@ -44,7 +44,7 @@ If you installed a previous version of FlowFuse and want to upgrade, our documen
 guide for [upgrading your FlowFuse instance](/docs/upgrade/).
 
 The version 2.0 release of the FlowFuse Helm Chart includes a breaking change for deployments making use of the `forge.localPostgresql` setting when upgrading. This is where the helm chart installs a dedicated PostgreSQL database instance.
-With v2.0 we have updated the version of the Bitnami PostgreSQL Helm sub-chart we bundle and the upgrade process will require some manual intervention to ensure things work correctly. A fresh install should not require any extra steps.
+With version 2.0 we have updated the version of the Bitnami PostgreSQL Helm sub-chart we bundle and the upgrade process will require some manual intervention to ensure things work correctly. A fresh install should not require any extra steps.
 
 The steps are documented on the [Upgrade instructions](https://flowfuse.com/docs/install/kubernetes/#upgrade) page, please read them carefully before upgrading
 
