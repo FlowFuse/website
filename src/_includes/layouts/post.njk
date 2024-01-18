@@ -65,7 +65,7 @@
                     {% endfor %}
                     <p>Published on: <time value="{{ date | dateToRfc3339 }}">{{ date | shortDate }}</time>
                     </p>
-                    {%- set postsToShow = collections.posts | relatedPosts | reverse | limit(5) -%}
+                    {%- set postsToShow = collections.posts | relatedPosts -%}
                     {%- if postsToShow.length == 0 %}
                         {%- set postsToShow = collections.posts | reverse | limit(5) -%}
                         {%- set heading = "Recommended Articles:" %}
