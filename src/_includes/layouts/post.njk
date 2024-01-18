@@ -65,7 +65,7 @@
                     {% endfor %}
                     <p>Published on: <time value="{{ date | dateToRfc3339 }}">{{ date | shortDate }}</time>
                     </p>
-                    {%- set relatedPosts = collections.posts | related | reverse | limit(5) -%}
+                    {%- set relatedPosts = collections.posts | relatedPosts | reverse | limit(5) -%}
                     {%- if relatedPosts.length > 0 %}
                         <h3 class="mb-3 pt-6 border-t-2">Related Articles:</h3>
                         <ul class="ml-6 list-disc">
