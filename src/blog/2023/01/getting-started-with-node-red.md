@@ -13,7 +13,9 @@ tags:
 
 
 Node-RED is a visual programming tool for working with IoT devices and web services. It allows users to create flows using a drag-and-drop interface, making it easy to connect different nodes together to build powerful automations.
+
 <!--more-->
+
 In this blog post, we'll take a look at how to get started with Node-RED and create some basic flows. Additionally, we will explore the use of the palette manager, a powerful feature that allows users to install and manage additional nodes for Node-RED.
 
 ### Installing Node-RED
@@ -22,12 +24,12 @@ First, you'll need to get an installation of Node-RED up and running. There are 
 
 #### FlowFuse
 
-To get Node-RED running on FlowFuse visit our [web site and create a new user]({{ site.appURL }}/account/create). We've got an offer at the moment which gives you a Node-RED instance for free for one month.
+To get Node-RED running on FlowFuse [sign up as a new user]({{ site.appURL }}/account/create).
+New users are enrolled in a trial and a Node-RED will be started for you within a minute.
 
-You now need to create an application, which includes an instance of Node-RED. Once that instance has booted up you access Node-RED by pressing "Open Editor".
+Once that instance has booted up you access Node-RED by pressing "Open Editor".
 
 #### npm
-
 
 To install Node-RED locally using npm, open up your terminal and type the following command:
 
@@ -44,27 +46,28 @@ This will start the Node-RED server and open up the [editor in your web browser]
 
 ### First Flow
 
-Now that you have Node-RED running, let's take a look at how to create a simple flow. In this example, we'll create a simple "Hello World" endpoint. To do this, we'll use the "http in", "http response", and the "change" nodes, which can be found in the common nodes menu on the left of Node-RED.
+Now that you have Node-RED running, let's take a look at how to create a simple flow. In this example, we'll create a simple "Hello World" endpoint. To do this, we'll use the `http in`, `http response`, and the `change` nodes, which can be found in the common nodes menu on the left of Node-RED.
 
-First, drag an "http in" node into the editor. This node will listen for incoming HTTP requests. Next drag in the "change" and the "http response" node into the editor. Connect the "http in" node to the "change" node and connect the "change" node to the "http response" node. Hopefully your flow looks similar to this:
+First, drag an `http in` node into the editor. This node will listen for incoming HTTP requests. Next drag in the "change" and the `http response` node into the editor. Connect the `http in` node to the `change` node and connect the `change` node to the `http response` node. Hopefully your flow looks similar to this:
 
 ![The three nodes we need to build this flow](./images/three-nodes.png)
 
-To configure the "http in" node, double-click on it to open its properties. Here, you can set the URL that the node will listen to, as well as the method (GET, POST, etc.). In this example, we'll set the URL to "/hello" and the method to "GET".
+To configure the `http in` node, double-click on it to open its properties. Here, you can set the URL that the node will listen to, as well as the method (GET, POST, etc.). In this example, we'll set the URL to `/hello` and the method to `GET`.
 
-Now we need to set what the endpoint will respond with, we will do that in the "change" node. Double-click the "change" node then add "Hello World" to the field which says "to the value". It should look like this:
+Now we need to set what the endpoint will respond with, we will do that in the `change` node.
+Double-click the `change` node then add "Hello World" to the field which says "to the value". It should look like this:
 
 ![Configure the change node to output Hello World](./images/set-reply.png)
 
-To configure the "http response" node, double-click on it to open its properties. Here, you should set the "Status Code" to be 200. This is not vital for the demo to work but it's good practice to return the correct codes when something connects to an API. Status code 200 means the API responded OK. This is how your "http response" node should look:
+To configure the `http response` node, double-click on it to open its properties. Here, you should set the "Status Code" to be 200. This is not vital for the demo to work but it's good practice to return the correct codes when something connects to an API. Status code 200 means the API responded OK. This is how your `http response` node should look:
 
 ![We should send back a 200 response code](./images/response-code.png)
 
-You can read more about http response codes in [this article](https://en.wikipedia.org/wiki/List_of_HTTP_status_codes).
+You can read more about HTTP response codes in [this article](https://en.wikipedia.org/wiki/List_of_HTTP_status_codes).
 
 ### Testing Your Flow
 
-Now that we have our flow set up, we can deploy it by clicking the "Deploy" button in the top right corner of the editor. Once the flow is deployed, you can test it by opening up a web browser, if you installed Node-RED using npm navigate to "http://localhost:1880/hello". If you are working on FlowFuse take the URL of your project and add "/hello" to the end, it should looks something like this "https://your-project.flowforge.cloud/hello". You should see "Hello World!" displayed in the browser.
+Now that we have our flow set up, we can deploy it by clicking the "Deploy" button in the top right corner of the editor. Once the flow is deployed, you can test it by opening up a web browser, if you installed Node-RED using npm navigate to "http://localhost:1880/hello". If you are working on FlowFuse take the URL of your project and add "/hello" to the end, it should looks something like this "https://your-instance-name.flowfuse.cloud/hello". You should see "Hello World!" displayed in the browser.
 
 ### Debug Output
 
