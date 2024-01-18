@@ -75,6 +75,7 @@ Tag your content appropriately from the collection of tags that help us manage o
 - `community`
 - `releases`
 - `news`
+- `unified-namespace`
 
 There's a page with a collection of posts for each tag in that list.
 

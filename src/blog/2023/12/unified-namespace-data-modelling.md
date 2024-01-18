@@ -8,6 +8,7 @@ image: /blog/2023/12/images/uns-data-modeling.png
 tags:
     - posts
     - flowfuse
+    - unified-namespace
 ---
 
 In the realm of industrial manufacturing, the concept of a Unified Namespace (UNS) emerges as a pivotal instrument for enhanced communication within a manufacturing network framework. Predicated on an event-driven architectural model, this approach advocates for the universal accessibility of data, irrespective of the immediate presence of a data consumer. 

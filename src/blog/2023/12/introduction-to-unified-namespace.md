@@ -8,6 +8,7 @@ image: "/blog/2023/12/images/introduction-to-uns.png"
 tags:
     - posts
     - flowfuse
+    - unified-namespace
 ---
 
 As your organization is generating more data there’s key architectural
