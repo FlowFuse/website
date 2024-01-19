@@ -8,6 +8,7 @@ image: /blog/2024/01/images/broker-for-uns.png
 tags:
     - posts
     - flowfuse
+    - unified-namespace
 ---
 
 When starting to roll out a new data distribution architecture for the unified namespace (UNS), one of the first questions you'll ask is, "What broker should I select for my UNS? The broker must implement a publish-subscribe (pub-sub) pattern, though that leaves plenty of options.
