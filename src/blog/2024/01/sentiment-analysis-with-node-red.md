@@ -69,7 +69,7 @@ Finally, we are going to display the result on Dashboard 2.0 with the help of th
 
 We're aware that not everyone coming into Dashboard 2.0 will be familiar with VueJS. We have a more detailed guide [here](https://dashboard.flowfuse.com/nodes/widgets/ui-template.html#building-full-vue-components), but we'll also give a quick overview of the component that we'll use to display the result:
 
-```
+```html
 <template>
   <div>
     <v-progress-circular :rotate="360" :size="245" width="20" :width="15" :model-value="msg.payload" color="rgb(0,255,0)">
