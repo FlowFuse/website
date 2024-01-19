@@ -297,9 +297,7 @@ module.exports = function(eleventyConfig) {
                 const commonTags = requiredTags?.reduce((count, tag) => count + (post.data.tags?.includes(tag) ? 1 : 0), 0);
                 return { ...post, commonTags };
             })
-            .filter(post => post.url !== page.url && post.commonTags >= requiredTags.length - 1)
-            .sort((a, b) => b.commonTags - a.commonTags || b.date - a.date)
-            .slice(0, 5);
+            .filter(post => post.url !== page.url && post.commonTags >= requiredTags.length - 1);
     });
     
     // Custom async filters
