@@ -320,11 +320,11 @@ module.exports = function(eleventyConfig) {
 
         return `<div class="team-card--sm">
                     <div class="ff-headshot" style="background-image: url(/images/team/headshot-${teamMember.headshot})"></div>
-                        <div class="team-card-info">
-                            <label>${teamMember.name}</label>
-                            <span>${teamMember.title}</span>
-                        </div>
-                    </div>`
+                    <div class="team-card-info">
+                        <label>${teamMember.name}</label>
+                        <span>${teamMember.title}</span>
+                    </div>
+                </div>`
     });
 
     eleventyConfig.addShortcode("year", () => `${new Date().getFullYear()}`);
