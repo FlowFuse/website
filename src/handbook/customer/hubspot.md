@@ -21,9 +21,9 @@ The following is a description of each stage.
 | - | - |
 | Subscriber | Contact has signed up to hear more information, when it is available, about FlowFuse, e.g. newsletter subscriber |
 | Lead | Contact that has converted on our website, or through some other interaction, with our organisation beyond a subscription sign up. For example, registered for a webinar, signed up for a free trial, etc.|
-| Marketing Qualified Lead | The contact has requested to talk to someone directly at FlowFuse about the product/services of FlowFuse, either through book a demo, contact us, direct outreach to a FlowFuse employee at an event, or asked a sales question at a webinar. Support requests are not considered MQL. |
+| Marketing Qualified Lead | The contact has requested to talk to someone directly at FlowFuse about the product/services of FlowFuse. Either through book a demo, contact us, direct outreach to a FlowFuse employee at an event, or asked a sales question at a webinar. Support requests are not considered MQL. |
 | Product Qualified Lead | The Customer success team identifies a contact that they believe is a candidate for an upsell opportunity. Customer success will identify an PQL by monitoring FlowFuse Cloud usage and engaging with these users in a consultative manner. Any contact already identified as an MQL, SQL or Opportunity should not be a candidate for PQL. |
-| Sales Qualified Lead | The Sales team will initiate a discussion with an MQL, and will qualify the contact as SQL if the contact is a potential customer. The qualifying questions are listed below. The status of the contact is then further tracked in the [Lead Status](#lead-status) property. |
+| Sales Qualified Lead | The Sales team will initiate a discussion with an MQL, and will qualify the contact as SQL. Qualification is done based on the qualifying questions that [are listed below](#from-mql-to-sql---qualifying-questions). The status of the contact is then further tracked in the [Lead Status](#lead-status) property. |
 | Opportunity | When the expected revenue and the potential close date is known an SQL becomes an Opportunity. A Deal is created for each Opportunity.  |
 | Customer | An active, paying, user of FlowFuse. |
 | Evangelist | FlowFuse will not actively use Evangelist lifecycle stage. |
