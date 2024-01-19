@@ -1,10 +1,10 @@
 ---
-title: Dashboard 2.0 is Generally Available!
+title: Node-RED Dashboard 2.0 is Generally Available!
 subtitle: This week sees our first major version release of Node-RED Dashboard 2.0!
 description: This week sees our first major version release of Node-RED Dashboard 2.0!
-date: 2024-01-16
+date: 2024-01-24
 authors: ["joe-pavitt"]
-image: "/blog/2023/12/images/tile-dashboard-0-10-0.png"
+image: "/blog/2024/01/images/tile-dashboard-2-ga.png"
 tags:
     - posts
     - releases
