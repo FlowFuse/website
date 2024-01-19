@@ -32,7 +32,7 @@ In this system, we will analyse the sentiment of text content obtained from the 
 3. Drag a ui form widget to the canvas and select the created group.
 4. Add an element in the form widget and give it a name and label, select the type as multiline, and set the number of rows according to your need.
 
-![](./images/sentiment-analysis-form.png)
+!["Taking user input for Sentiment analysis using form"](./images/sentiment-analysis-form.png "Taking user input for Sentiment analysis using form")
 
 # Normalizing the data
 
@@ -42,7 +42,7 @@ We need to normalize the payload before sending it to the next node because the 
 2. Set `msg.payload.$FORM_ELEMENT_NAME` to `msg.payload`, replace the `$FORM_ELEMENT_NAME` with the name of the form element that you have added to the form to obtain user input.
 3. Connect the UI form nodes output to the change node’s input.
 
-![<insert_alt_tag>](./images/sentiment-anlaysis-change-node(1).png "insert image description")
+!["Normalizing the payload using change node"](./images/sentiment-anlaysis-change-node(1).png "Normalizing the payload using change node")
 
 # Installing custom node
 
@@ -59,7 +59,7 @@ Why do we need to calculate the percentage? We will show the final result with t
 1. Drag another change node to canvas.
 2. set `msg.payload` to `((msg.sentiment.score - (-5)) / (5 - (-5))) * 100` as a JSON expression, it will calculate the percentage of the score.
 
-![](./images/sentiment-analysis-change-node(2).png)
+!["Calculating the percentage based on the score using the change node"](./images/sentiment-analysis-change-node(2).png "Calculating the percentage based on the score using the change node")
 
 # Displaying result on Dashboard 2.0
 Finally, we are going to display the result on Dashboard 2.0 with the help of the Vuetify circular progress bar and emojis. To do that we will build a Vue component by using our ui template widget.
@@ -92,7 +92,7 @@ Your final flow should look like this:
 
 # Deploying the Flow
 
-![](./images/sentiement-analysis-flowfuse-editor.png)
+!["Deploying Sentiment analysis Node-RED flow"](./images/sentiement-analysis-flowfuse-editor.png "Deploying Sentiment analysis Node-RED flow")
 
 Finally, we have successfully built our sentiment analysis system. Now it's time to deploy the flow, to do that click on the red deploy button which you can find in the top right corner. After that go to `https://<your-instance-name>.flowfuse.cloud/dashboard`
 
