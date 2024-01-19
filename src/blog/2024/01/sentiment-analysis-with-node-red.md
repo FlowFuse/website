@@ -42,7 +42,7 @@ We need to normalize the payload before sending it to the next node because the 
 2. Set `msg.payload.$FORM_ELEMENT_NAME` to `msg.payload`, replace the `$FORM_ELEMENT_NAME` with the name of the form element that you have added to the form to obtain user input.
 3. Connect the UI form nodes output to the change node’s input.
 
-![](./images/sentiment-anlaysis-change-node(1).png)
+![<insert_alt_tag>](./images/sentiment-anlaysis-change-node(1).png "insert image description")
 
 # Installing custom node
 
