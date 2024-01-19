@@ -2,7 +2,7 @@
 title: Sentiment Analysis with Node-RED
 subtitle: A guide to building a simple sentiment analysis system with Node-RED.
 description: A guide to building a simple sentiment analysis system with Node-RED.
-date: 2024-01-19
+date: 2024-01-23
 authors: ["sumit-shinde"]
 image: /blog/2024/01/images/sentiment-analysis-dashboard-gif.gif
 tags:
