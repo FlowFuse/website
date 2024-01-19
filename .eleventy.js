@@ -312,17 +312,17 @@ module.exports = function(eleventyConfig) {
         }
     });
 
-    eleventyConfig.addShortcode("renderTeamMember", function(teamMember) {
+    eleventyConfig.addShortcode("renderTeamMember", function (teamMember) {
         // When the author is no longer at FlowFuse
         if (typeof teamMember === "undefined") {
             return ""
-    }
+        }
 
         return `<div class="team-card--sm">
-                    <div class="ff-headshot" style="background-image: url(/images/team/headshot-${ teamMember.headshot })"></div>
+                    <div class="ff-headshot" style="background-image: url(/images/team/headshot-${teamMember.headshot})"></div>
                         <div class="team-card-info">
-                            <label>${ teamMember.name }</label>
-                            <span>${ teamMember.title }</span>
+                            <label>${teamMember.name}</label>
+                            <span>${teamMember.title}</span>
                         </div>
                     </div>`
     });
