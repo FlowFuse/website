@@ -88,7 +88,7 @@ We're aware that not everyone coming into Dashboard 2.0 will be familiar with Vu
 
 Your final flow should look like this:
 
-![](./images/sentiment-anlaysis-flow.png)
+!["Node-RED flow to do sentiment analysis"](./images/sentiment-anlaysis-flow.png "Node-RED flow to do sentiment analysis")
 
 # Deploying the Flow
 
