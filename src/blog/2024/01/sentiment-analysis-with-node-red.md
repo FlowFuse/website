@@ -96,7 +96,7 @@ Your final flow should look like this:
 
 Finally, we have successfully built our sentiment analysis system. Now it's time to deploy the flow, to do that click on the red deploy button which you can find in the top right corner. After that go to `https://<your-instance-name>.flowfuse.cloud/dashboard`
 
-![](./images/sentiment-analysis-dashboard-gif.gif)
+!["Sentiment analysis on Text using Node-RED Dashboard 2.0"](./images/sentiment-analysis-dashboard-gif.gif "Sentiment analysis on Text using Node-RED Dashboard 2.0")
 
 # Conclusion
 
