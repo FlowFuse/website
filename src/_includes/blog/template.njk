@@ -1,8 +1,8 @@
 <div class="ff-blog container m-auto text-left max-w-4xl pt-8 pb-24 w-full">
     <div class="px-2 flex items-center gap-12">
         <h1 class="mb-0">Blog</h1>
-        <div class="flex-grow">
-            {% include "components/divider-grey-wires-right.njk" %}
+        <div class="w-full px-2 my-4 grid">
+            <div id="algolia-search" class="border rounded w-full md:w-1/2 justify-self-end"></div>
         </div>
     </div>
     <div class="px-2 my-4 flex flex-wrap gap-4">
@@ -21,3 +21,4 @@
     </ul>
     {% include "blog/pagination.njk" %}
 </div>
+{% include "layouts/common-js.njk" %}
