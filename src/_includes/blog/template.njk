@@ -5,12 +5,12 @@
             <div id="algolia-search" class="border rounded w-full md:w-1/2 justify-self-end"></div>
         </div>
     </div>
-    <div class="px-2 my-4 flex flex-wrap gap-4">
+    <div class="px-2 my-4 flex flex-wrap flex-row gap-4 md:justify-between">
         {%- for tag in blogTags -%}
             {% if tag.value !== "posts" %}
-            <a class="hover:no-underline" href="/blog/{{ tag.value }}/"><button class="ff-btn ff-btn--primary{% if not page.url.includes('/' + tag.value + '/')%}-outlined{% endif %}">{{ tag.label }}</button></a>
+            <a class="hover:no-underline" href="/blog/{{ tag.value }}/"><button class="w-full ff-btn ff-btn--primary{% if not page.url.includes('/' + tag.value + '/')%}-outlined{% endif %}">{{ tag.label }}</button></a>
             {% else %}
-            <a class="hover:no-underline" href="/blog/"><button class="ff-btn ff-btn--primary{% if page.url !== "/blog/"%}-outlined{% endif %}">{{ tag.label }}</button></a>
+            <a class="hover:no-underline" href="/blog/"><button class="w-full ff-btn ff-btn--primary{% if page.url !== "/blog/"%}-outlined{% endif %}">{{ tag.label }}</button></a>
             {% endif %}
         {% endfor %}
     </div>
