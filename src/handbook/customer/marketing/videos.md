@@ -28,17 +28,7 @@ These can be created in Adobe After Effects and provide an easy-to-use editable 
 
 ### Videos
 
-Re-usable `.mp4` files that may be used across FlowFuse videos. These are also available in "FlowFuse Templates" Premiere Pro Library. For example, our introduction and outro title sequences:
-
-<div class="video-caption">FlowFuse - Intro</div>
-<video width="500" controls>
-  <source src="https://website-data.s3.eu-west-1.amazonaws.com/ff-intro.mp4" type="video/mp4">
-</video>
-
-<div class="video-caption">FlowFuse - Outro</div>
-<video width="500" controls>
-  <source src="https://website-data.s3.eu-west-1.amazonaws.com/ff-outro.mp4" type="video/mp4">
-</video>
+Re-usable `.mp4` files that may be used across FlowFuse videos. These are also available in "FlowFuse Templates" Premiere Pro Library. If you don't have access to the library and need the `.mp4` files to use them in a different software, you can find them in the [Video assets](https://drive.google.com/drive/folders/1QcVSXPs2Rip2vi6S8BrmZAwp9TLAVsrw?usp=drive_link) folder from our shared Drive. 
 
 ## Tools
 
