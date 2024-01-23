@@ -15,5 +15,6 @@ List of new Blueprints:
 - [5S Manufacturing checklist](/blueprints/manufacturing/5s-checklist/)
 - [Performance Operator Terminal](/blueprints/manufacturing/performance-overview/)
 
-Curious about what Blueprints are? [Click here](https://flowfuse.com/blog/2023/10/blueprints/)
-For an overview of all available Blueprints, [click here](https://flowfuse.com/blueprints/)
+Curious about what Blueprints are? Read our recent blog post that [introduced Blueprints to FlowFuse](https://flowfuse.com/blog/2023/10/blueprints/).
+
+For an overview of all available Blueprints check out our [Blueprint Library](https://flowfuse.com/blueprints/).
