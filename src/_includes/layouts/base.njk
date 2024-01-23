@@ -154,69 +154,30 @@ eleventyComputed:
                             </ul>
                         {% endnavoption %}
                         {% navoption "Company", null, 0 %}
-                            <ul class="grid grid-cols-2 sm:grid-rows-6 sm:grid-flow-col">
+                            <ul class="sm:grid sm:grid-flow-col sm:grid-rows-5 sm:grid-cols-1 sm:pr-9">
                                 {% navoption "About", "/about/", 1, "info" %}{% endnavoption %}
-                                {% navoption "Blog", "/blog/", 1, "newspaper" %}{% endnavoption %}
                                 {% navoption "Changelog", "/changelog/", 1, "cog" %}{% endnavoption %}
                                 {% navoption "Partners", "/partners/", 1, "puzzle-piece" %}{% endnavoption %}
                                 {% navoption "Professional services", "/professional-services/", 1, "academic-cap" %}{% endnavoption %}
-                                {% navoption "Team", "/team/", 1, "users" %}{% endnavoption %}
+                                {% navoption "Support", "/support/", 1, "chat" %}{% endnavoption %}
                                 {% navoption "Handbook", "/handbook/", 1, "star" %}{% endnavoption %}
                                 {% navoption "Jobs", "https://boards.greenhouse.io/flowfuse", 1, "case" %}{% endnavoption %}
-                                {% navoption "Support", "/support/", 1, "chat" %}{% endnavoption %}
+                                {% navoption "Team", "/team/", 1, "users" %}{% endnavoption %}
                                 {% navoption "Contact us", "/contact-us/", 1, "mail" %}{% endnavoption %}
                                 {% navoption "Privacy", "/privacy-policy/", 1, "privacy" %}{% endnavoption %}
                             </ul>
                         {% endnavoption %}
                         {% navoption "Resources", null, 0 %}
-                            <!-- Mobile -->
-                            <ul class="block sm:hidden">
-                                {% navoption "FlowFuse", null, 1, "flowforge", true, "col-span-2" %}
-                                    <ul class="sm:grid sm:grid-flow-col sm:grid-cols-2 sm:grid-rows-5">
-                                        {# {% navoption "Getting started", "/blog/", 2, "clip-list" %}{% endnavoption %} #}
-                                        {% navoption "Github", "https://github.com/FlowFuse/flowfuse", 2, "github", true %}{% endnavoption %}
-                                        {% navoption "Docs", "/docs/", 2, "document-text" %}{% endnavoption %}
-                                        {% navoption "Blog", "/blog/", 2, "newspaper" %}{% endnavoption %}
-                                        {% navoption "Webinars", "/webinars/", 2, "screen" %}{% endnavoption %}
-                                        {% navoption "Newsletters", "/community/newsletter/", 2, "mail-open" %}{% endnavoption %}
-                                    </ul>
-                                {% endnavoption %}
-                                {% navoption "Node-RED", null, 1, "nr-icon" %}
-                                    <ul class="sm:grid sm:grid-flow-col sm:grid-cols-2 sm:grid-rows-5">
-                                        {% navoption "About", "/node-red/", 2, "info" %}{% endnavoption %}
-                                        {% navoption "Core nodes", "/node-red/core-nodes/", 2, "nodered" %}{% endnavoption %}
-                                        {% navoption "Getting started", "/blog/2023/01/getting-started-with-node-red/", 2, "clip-list" %}{% endnavoption %}
-                                        {% navoption "Github", "https://github.com/node-red/node-red", 2, "github", true %}{% endnavoption %}
-                                        {% navoption "Docs", "https://nodered.org/docs/", 2, "document-text" %}{% endnavoption %}
-                                        {% navoption "Support forums", "https://discourse.nodered.org/", 2, "star" %}{% endnavoption %}
-                                    </ul>
-                                {% endnavoption %}
-                            </ul>
-                            <!-- Desktop -->
-                            <ul class="ff-nav-nested-cols hidden bg-gray-600 sm:flex">
-                                <div class="flex-grow">
-                                    {% navoption "Node-RED", null, 1, "nr-icon", false, "bg-gray-700" %}{% endnavoption %}
-                                    <ul class="sm:grid sm:grid-flow-col sm:grid-rows-6 sm:grid-cols-1 sm:pr-6">
-                                        {% navoption "About", "/node-red/", 2, "info" %}{% endnavoption %}
-                                        {% navoption "Core nodes", "/node-red/core-nodes/", 2, "nodered" %}{% endnavoption %}
-                                        {% navoption "Getting started", "/blog/2023/01/getting-started-with-node-red/", 2, "clip-list" %}{% endnavoption %}
-                                        {% navoption "Github", "https://github.com/node-red/node-red", 2, "github", true %}{% endnavoption %}
-                                        {% navoption "Docs", "https://nodered.org/docs/", 2, "document-text" %}{% endnavoption %}
-                                        {% navoption "Support forums", "https://discourse.nodered.org/", 2, "star" %}{% endnavoption %}
-                                    </ul>
-                                </div>
-                                <div class="flex-grow-[2]">
-                                    {% navoption "FlowFuse", null, 1, "flowforge", true, "bg-gray-700 border-r border-gray-600" %}{% endnavoption %}
-                                    <ul class="sm:grid sm:grid-flow-col sm:grid-rows-6 sm:grid-cols-1 sm:pr-9">
-                                        {# {% navoption "Getting started", "/blog/", 2, "clip-list" %}{% endnavoption %} #}
-                                        {% navoption "Github", "https://github.com/FlowFuse/flowfuse", 2, "github", true %}{% endnavoption %}
-                                        {% navoption "Docs", "/docs/", 2, "document-text" %}{% endnavoption %}
-                                        {% navoption "Blog", "/blog/", 2, "newspaper" %}{% endnavoption %}
-                                        {% navoption "Webinars", "/webinars/", 2, "screen" %}{% endnavoption %}
-                                        {% navoption "Newsletters", "/community/newsletter/", 2, "mail-open" %}{% endnavoption %}
-                                        {% navoption "Support forums", "https://community.flowfuse.com/", 2, "star" %}{% endnavoption %}
-                                    </ul>
-                                </div>
+                            <ul class="sm:grid sm:grid-flow-col sm:grid-rows-5 sm:grid-cols-1 sm:pr-9">
+                                {% navoption "Blog", "/blog/", 1, "newspaper" %}{% endnavoption %}
+                                {% navoption "Webinars", "/webinars/", 1, "screen" %}{% endnavoption %}
+                                {% navoption "Github", "https://github.com/FlowFuse/flowfuse", 1, "github", true %}{% endnavoption %}
+                                {% navoption "Docs", "/docs/", 1, "document-text" %}{% endnavoption %}
+                                {% navoption "Newsletters", "/community/newsletter/", 1, "mail-open" %}{% endnavoption %}
+                                {% navoption "Support forums", "https://community.flowfuse.com/", 1, "chat-bubble-left-right-sm" %}{% endnavoption %}
+                                {% navoption "Customer Stories", "/customer-stories/", 1, "presentation" %}{% endnavoption %}
+                                {% navoption "Node-RED", "/node-red/", 1, "info" %}{% endnavoption %}
+                                {% navoption "Unified Namespace", "/unified-namespace/", 1, "info" %}{% endnavoption %}
                             </ul>
                         {% endnavoption %}
                         {% navoption "Docs", "/docs/", 0, false %}{% endnavoption %}
