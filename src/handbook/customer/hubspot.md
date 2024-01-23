@@ -34,8 +34,7 @@ The following is a description of each stage.
 ##### From MQL to SQL - Qualifying questions
 
 1. What is your business, and where does FlowFuse fit in?
-1. Why are these Node-RED applications important?
-1. What are you hoping to do with FlowFuse?
+1. What are you building with FlowFuse, what is your concrete use case?
 1. Why now?
 
 ##### From SQL to Opportunity
