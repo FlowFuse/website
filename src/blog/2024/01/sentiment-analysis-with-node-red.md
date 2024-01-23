@@ -57,7 +57,7 @@ Now it’s time to install a custom node that can perform sentiment analysis for
 Why do we need to calculate the percentage? We will show the final result with the help of a circular progress bar and three different emojis. Ideally we should show the progress bar based on a percentage of score instead of negative values.
 
 1. Drag another change node to canvas.
-2. set `msg.payload` to `((msg.sentiment.score - (-5)) / (5 - (-5))) * 100` as a JSON expression, it will calculate the percentage of the score.
+2. set `msg.payload` to `((msg.sentiment.score - (-5)) / (5 - (-5))) * 100` as a JSONata expression, it will calculate the percentage of the score.
 
 !["Calculating the percentage based on the score using the change node"](./images/sentiment-analysis-change-node(2).png "Calculating the percentage based on the score using the change node")
 
