@@ -26,8 +26,8 @@ meta:
 <!--First two sections-->
 <div class="nohero w-full ff-bg-light">
     <!--Hero Content-->
-    <div class="nodered-pillar-bg w-full pt-12 pb-20 md:pt-6 md:pb-12 border-b-4 border-gray-100">
-        <div class="flex flex-col px-6 items-center md:flex-row md:items-start container mx-auto text-center md:text-left max-w-screen-lg">
+    <div class="bg-white pt-12 pb-20 md:pt-6 md:pb-12 border-b-4 border-gray-100">
+        <div class="flex flex-col px-6 items-center md:flex-row md:items-start container mx-auto text-center md:text-left max-w-screen-lg gap-x-6">
             <div class="md:my-auto md:py-10 md:max-w-[476px]">
                 <h1 class="mt-0 px-12 md:px-0 m-auto">
                     <span class="leading-3">What is the unified namespace (UNS)?</span>
@@ -37,8 +37,8 @@ meta:
                     iterative development and integration.
                 </h5>
             </div>
-            <div class="max-w-[500px] text-center md:text-left m-auto">
-                {% image "../images/node-red-in-cloud.png", "FlowFuse hosting Node-RED", [500] %}
+            <div class="max-w-[250px] md:max-w-[300px] text-center pt-6 md:py-4 md:text-left m-auto">
+                {% image "../images/uns/uns.png", "Unified namespace diagram", [300] %}
             </div>
         </div>
     </div>
@@ -49,14 +49,14 @@ meta:
     <!-- What is UNS -->
     <div class="w-full ff-bg-light pt-4 px-0 pb-12 ff-prose">
         <div class="text-center mt-6 md:mt-2 mb-6">
-            <h2>Learn about the Unified Namespace!</h2>
+            <h2>Understanding the Unified Namespace</h2>
         </div>
         <div class="container m-auto max-w-screen-lg prose">
-            <div class="grid px-6 grid-cols-1 md:grid-cols-3 gap-6 sm:gap-x-8 sm:gap-y-0 mb-16">
+            <div class="grid px-6 grid-cols-1 md:grid-cols-3 gap-5 sm:gap-x-8 sm:gap-y-0 mb-16">
                 <div class="text-left self-start">
                     <h3 class="flex items-center gap-4">
                         <div class="w-16">
-                            {% image "./images/pictograms/node_catalog_red.png", "Graphics depicting low-code programming.", [64] %}
+                            {% image "./images/pictograms/hub_spokes_red.png", "Graphics depicting hub and spokes.", [64] %}
                         </div>
                         <div class="flex flex-col leading-8">
                             Hub and Spokes data distribution
@@ -69,8 +69,8 @@ meta:
                 <div class="text-left self-start">
                     <h3 class="flex items-center gap-4">
                         <div class="w-16">
-                            {% image "./images/pictograms/edge_red.png",
-                            "Graphics depicting connectivity and integration.",
+                            {% image "./images/pictograms/speech_red_b.png",
+                            "Graphics depicting messages.",
                             [64] %}
                         </div>
                         <div class="flex flex-col leading-8">
@@ -84,7 +84,7 @@ meta:
                 <div class="text-left self-start">
                     <h3 class="flex items-center gap-4">
                         <div class="w-16">
-                            {% image "./images/pictograms/scalable_red.png", "Graphics depicting low-code visualisation.", [64] %}
+                            {% image "./images/pictograms/storage_red.png", "Graphics depicting a data base.", [64] %}
                         </div>
                         <div class="flex flex-col leading-8">
                             Data availability
@@ -102,48 +102,52 @@ meta:
 <div class="nohero w-full ff-bg-light">
     <!-- Learn UNS -->
     <div class="about w-full bg-white pt-12 md:pt-12 pb-12">
-        <div class="text-center">
+        <div class="text-center px-6">
             <h2>Learn about the Unified Namespace (UNS)</h2>
         </div>
         <div class="container m-auto max-w-4xl">
             <div
-                class="grid grid-cols-1 md:grid-cols-2 pt-4 md:pt-6 gap-x-8 items-start">
-                <!-- Quick Tips Column -->
+                class="grid grid-cols-1 md:grid-cols-2 pt-4 md:pt-6 items-start">
+                <!-- Getting Started -->
                 <div class="px-6 pb-6 md:pb-0">
                     <h3 class="w-full text-center mb-4">Getting Started</h3>
                     <ul class="ff-nodered-resources">
                         <a href="/blog/2023/12/introduction-to-unified-namespace/">
                             <li>
-                                <div class="ff-nodered-resources--icon">{% ffIconLg "nodered",
-                                    true %}</div>
-                                <label>Introduction into the UNS</label>
+                                <div class="w-2/5 sm:w-52 md:w-2/5 ff-image-cover ff-image-left-rounded">
+                                    {% image "./blog/2023/12/images/introduction-to-uns.png", "Graphics depicting a unified namespace.", [208] %}
+                                </div>
+                                <label class="w-3/5 sm:w-auto md:w-3/5">Introduction into the UNS</label>
                             </li>
                         </a>
                         <a href="/blog/2023/08/isa-95-automation-pyramid-to-unified-namespace/">
                             <li>
-                                <div class="ff-nodered-resources--icon">{% ffIconLg "bug",
-                                    true %}</div>
-                                <label>From ISA 95 towards the UNS</label>
+                                <div class="w-2/5 sm:w-52 md:w-2/5 ff-image-cover ff-image-left-rounded">
+                                    {% image "./blog/2023/08/images/UNS/UNS-Headline.svg", "Graphics depicting the UNS related to the automation pyramid.", [208] %}
+                                </div>
+                                <label class="w-3/5 sm:w-auto md:w-3/5">From ISA 95 towards the UNS</label>
                             </li>
                         </a>
                     </ul>
                 </div>
-                <!-- Concepts Column -->
+                <!-- Implementation of the UNS -->
                 <div class="px-6 pb-6 md:pb-0">
                     <h3 class="w-full text-center mb-4">Implementation of the UNS</h3>
                     <ul class="ff-nodered-resources">
                         <a href="/blog/2023/12/unified-namespace-data-modelling/">
                             <li>
-                                <div class="ff-nodered-resources--icon">{% ffIconLg "chart",
-                                    true %}</div>
-                                <label>Comparing Node-RED Dashboard Solutions</label>
+                                <div class="w-2/5 sm:w-52 md:w-2/5 ff-image-cover ff-image-left-rounded">
+                                    {% image "./blog/2023/12/images/uns-data-modeling.png", "Graphics depicting unified namespace data modeling using FlowFuse.", [208] %}
+                                </div>
+                                <label class="w-3/5 sm:w-auto md:w-3/5">Data Modeling for your Unified Namespace</label>
                             </li>
                         </a>
                         <a href="/blog/2024/01/unified-namespace-what-broker/">
                             <li>
-                                <div class="ff-nodered-resources--icon">{% ffIconLg "lock",
-                                    true %}</div>
-                                <label>Selecting your UNS Broker</label>
+                                <div class="w-2/5 sm:w-52 md:w-2/5 ff-image-cover ff-image-left-rounded">
+                                    {% image "./blog/2024/01/images/broker-for-uns.png", "Graphics displaying different broker logos.", [208] %}
+                                </div>
+                                <label class="w-3/5 sm:w-auto md:w-3/5">Selecting your UNS Broker</label>
                             </li>
                         </a>
                     </ul>
@@ -156,7 +160,7 @@ meta:
         {% include "components/dividers/light-grey-curve-inverted.svg" %}
     </div>
     <!-- Frequently Asked Questions -->
-    <div class="w-full ff-bg-light px-6 pt-8 pb-24 sm:px-0">
+    <div class="w-full ff-bg-light pt-8 pb-24 sm:px-0">
         <div class="container m-auto max-w-4xl px-6">
             <h2 class="text-center">Frequently Asked Questions</h2>
             <label class="m-auto text-center block max-w-lg md:max-w-none">Have a question that you don't see answered here? Feel free to reach out to us via our <a href="/contact-us">Contact Us</a> page</label>
