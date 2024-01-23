@@ -20,7 +20,7 @@ Have you ever built a sentiment analysis system to extract insights from text co
 Sentiment analysis is a context-mining technique used to understand emotions and opinions expressed in text, often classifying them as positive, neutral, or negative. There are many real-world applications of this technique.
 
 - **Analysing Feedback:** Customers, or other stakeholders like employees, are periodically requested to fill out a feedback form. Analysis of such feedback is the most widespread application of sentiment analysis.
-- **Campaign Monitoring:** Another use-case of sentiment analysis is a measure of influence which is crucial in any marketing campaign.
+- **Campaign Monitoring:** Another use case of sentiment analysis is a measure of influence which is crucial in any marketing campaign.
 - **Brand Monitoring:** Brand monitoring is another great use case for sentiment analysis. Companies can use sentiment analysis to check the social media sentiments around their brand from their audience.
 
 # Building a Form in Dashboard 2.0
