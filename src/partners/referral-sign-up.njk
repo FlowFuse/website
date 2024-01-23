@@ -9,6 +9,11 @@ heroimg: "../images/pictograms/anvil1.png"
 sitemapPriority: 0.7
 meta:
     title: Partnership program
+hubspot:
+  script: "hubspot/hs-form.njk"
+  formId: aad1cda7-2e1f-423d-a528-05228b0c4a3f
+  cta: "cta-referral-register"
+  reference: "referral-sign-up"
 ---
 <div class="mt-3">
 {% include "components/divider-flow--default.njk" %}
@@ -19,8 +24,7 @@ meta:
     <div class="container md:max-w-xl m-auto text-center">
         <div class="mt-9">
             <h2 class="mb-6">Register here</h2>
-              <script charset="utf-8" type="text/javascript" src="//js-eu1.hsforms.net/forms/embed/v2.js"></script> <script> hbspt.forms.create({ region: "eu1", portalId: "26586079", formId: "aad1cda7-2e1f-423d-a528-05228b0c4a3f" }); </script>
-              <script async type="text/javascript" charset="utf-8" src="//js-eu1.hsforms.net/forms/embed/v2.js" onload="displayHubSpotForm()"></script>
+            {% include hubspot.script %}
             </h1>
 	</div>
   </div>

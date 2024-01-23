@@ -4,6 +4,11 @@ layout: layouts/page.njk
 title: Help Center
 description: <p>Search through our extensive range of resources, knowledge base, or reach out to our dedicated support team by submitting a ticket.</p>
 sitemapPriority: 0.8
+hubspot:
+  script: "hubspot/hs-form.njk"
+  formId: 74ffcab1-a984-459a-871f-5751b8d69ac2
+  cta: "cta-submit-a-ticket"
+  reference: "support"
 ---
 <!-- <div class="flex px-6 -mt-32 mx-auto text-gray-400 md:max-w-screen-lg md:-mt-40 mb-8 md:mb-16">
   <p class="lead-p max-w-screen-lg m-auto text-center md:max-w-xl md:px-4">
@@ -81,17 +86,7 @@ sitemapPriority: 0.8
       <div class="container m-auto md:max-w-xl prose">
         <div class="px-6 mb-16">
           <script src="https://www.google.com/recaptcha/api.js"></script>
-          <script>
-            function displayHubSpotForm() {
-              hbspt.forms.create({
-                region: "eu1",
-                portalId: "26586079",
-                formId: "74ffcab1-a984-459a-871f-5751b8d69ac2"
-              });
-            }
-          </script>
-          <script async type="text/javascript" charset="utf-8" src="//js-eu1.hsforms.net/forms/embed/v2.js"
-            onload="displayHubSpotForm()"></script>
+          {% include hubspot.script %}
         </div>
       </div>
     </div>

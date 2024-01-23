@@ -41,6 +41,7 @@ layout: layouts/base.njk
                 {% if date | dateInFuture %}
                     <div class="mt-6 flex flex-col">
                         <h3 class="mb-3">Register Here:</h3>
+                        {% set cta = 'cta-webinar-register' %}
                         {% include "hubspot/hs-form.njk" %}
                     </div>
                 {% endif %}
@@ -55,6 +56,7 @@ layout: layouts/base.njk
                         <div class="mt-6 flex flex-col">
                             <h3 class="mb-3">Download webinar slides</h3>
                             {% set formId = hubspot.downloadFormId %}
+                            {% set cta = 'cta-webinar-download-slides' %}
                             {% include "hubspot/hs-form.njk" %}
                         {% endif %}
                     </div>
