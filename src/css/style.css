@@ -398,6 +398,11 @@ h4:hover .header-anchor {
     @apply rounded-t-lg;
 }
 
+.ff-image-left-rounded img,
+.ff-image-left-rounded picture {
+    @apply rounded-l-lg;
+}
+
 .ff-image-t-left-rounded img,
 .ff-image-t-left-rounded picture {
     @apply rounded-tl-lg;
