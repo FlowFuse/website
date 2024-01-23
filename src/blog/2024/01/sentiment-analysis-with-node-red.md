@@ -25,7 +25,7 @@ Sentiment analysis is a context-mining technique used to understand emotions and
 
 # Building a Form in Dashboard 2.0
 
-In this system, we will analyse the sentiment of text content obtained from the user, for that we are going to build a user interface using Dashboard 2.0 and Node-RED.
+In this system, we will analyse the sentiment of text content obtained from the user.  For this we are going to build a user interface using Dashboard 2.0 and Node-RED.
 
 1. Install Node-RED Dashboard 2.0. Follow these [instructions](https://dashboard.flowfuse.com/getting-started.html) to install.
 2. Create your first group, page, theme, and base.
