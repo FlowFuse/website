@@ -10,6 +10,7 @@ hubspot:
     cta: "cta-contact-us"
     reference: "pricing"
 ---
+
 <div class="pricing">
 <div class="w-full gradient-bg">
 <div class="text-center w-full pt-8">
@@ -68,7 +69,6 @@ hubspot:
                     <a class="md:self-end ff-btn ff-btn--primary uppercase align-baseline w-full" href="{{ site.appURL }}/account/create" onclick="capture('cta-join', {'position': 'primary'}, {'plan': 'cloud-starter'})">TRY FOR FREE</a> 
                 </div>
             </div>
-    
             <div class="pricing-tile md:h-full">
                 <div class="pricing-tile-background pb-6 md:grid flex-col">
                     <div>
@@ -120,7 +120,7 @@ hubspot:
                     <div class="mt-7 md:text-left items-left w-full mb-8 flex flex-row">
                         <div class="self-end">{% include "components/icons/chat-bubble-left-right.svg" %}</div>
                     </div>
-                        <a class="md:self-end ff-btn ff-btn--primary uppercase align-baseline w-full" href='/contact-us/' onclick="capture('cta-contact', {'position': 'primary'}, {'plan': 'cloud-enterprise'})">CONTACT SALES</a>
+                    <a class="md:self-end ff-btn ff-btn--primary uppercase align-baseline w-full" href='/contact-us/' onclick="capture('cta-contact-us', {'position': 'primary'}, {'plan': 'cloud-enterprise'})">CONTACT US</a>
                 </div>
             </div>
         </div>
@@ -204,7 +204,7 @@ hubspot:
                     <div class="mt-7 md:text-left items-left w-full mb-8 flex flex-row">
                         <div class="self-end">{% include "components/icons/chat-bubble-left-right.svg" %}</div>
                     </div>
-                    <a class="md:self-end ff-btn ff-btn--primary uppercase align-baseline w-full" href='/contact-us/' onclick="capture('cta-contact', {'position': 'primary'}, {'plan': 'sh-enterprise'})">CONTACT SALES</a>
+                    <a class="md:self-end ff-btn ff-btn--primary uppercase align-baseline w-full" href='/contact-us/' onclick="capture('cta-contact-us', {'position': 'primary'}, {'plan': 'sh-enterprise'})">CONTACT US</a>
                 </div>
             </div>
         </div>
@@ -269,10 +269,10 @@ hubspot:
         <div class="container max-w-5xl m-auto grid grid-cols-1 md:grid-cols-2 px-6 pt-16 gap-x-16 gap-y-6">
             <div>
                 <h4 class="w-full text-center md:text-left">
-                    Contact Sales
+                    Contact Us
                 </h4>
                 <p>
-                    Excited to explore FlowFuse Enterprise together! Share your info, and our sales team will reach out to discuss tailored solutions for your business-critical applications.
+                    Excited to explore FlowFuse Enterprise together! Share your info, and our onboarding team will reach out to discuss tailored solutions for your business-critical applications.
                 </p>
             </div>
             {% include hubspot.script %}
@@ -351,4 +351,3 @@ hubspot:
         document.getElementById("ff-dialog--feature--" + id + "-" + hosting).classList.remove('active')
     }
 </script>
-
