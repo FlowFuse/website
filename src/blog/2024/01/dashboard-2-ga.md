@@ -31,7 +31,7 @@ We've shared plenty of updates since we started, detailing the feature parity wi
 
 We've also just published another new article detailing our latest feature:
 
-- [Multi User Dashboards](/blog/2024/01/dashboard-2-multi-user/)
+- [Multi User Dashboards](/blog/2024/01/node-red-dashboard-2-multi-user/)
 
 This is available now in Node-RED Dashboard 2.0 when running on FlowFuse Cloud.
 

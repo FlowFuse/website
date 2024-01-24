@@ -108,7 +108,7 @@ Further extensions of this could also check `ui-event` in case a non-admin user 
 
 ## Upcoming Webinar
 
-If you're interested in learning more about Dashboard 2.0 and in particular multi-user Dashboards, we're hosting a webinar on the Thursday, 29th February. You can find out more information [here](/webinars/2024/dashboard-multi-user/)
+If you're interested in learning more about Dashboard 2.0 and in particular multi-user Dashboards, we're hosting a webinar on the Thursday, 29th February. You can find out more information [here](/webinars/2024/node-red-dashboard-multi-user/)
 
 ## Follow our Progress
 
