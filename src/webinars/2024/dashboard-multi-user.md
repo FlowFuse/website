@@ -8,7 +8,7 @@ duration: 60
 #video: gk2DXI7J7cA
 hosts: ["joe-pavitt"]
 hubspot:
-    formId: b4ec9aa1-8648-47b3-b908-ec8597e8735d
+    formId: 1d7e11d4-a507-4230-9395-fe54245b0602
 ---
 
 **Node-RED Dashboard 2.0 has recently seen it's first major, stable release. In this Webinar, Joe Pavitt will demonstrate some of the new features available, and in particular, demonstrate how you can easily build out a multi-user Dashboard when running Node-RED Dashboard 2.0 on FlowFuse**
