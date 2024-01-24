@@ -82,6 +82,7 @@ module.exports = function(eleventyConfig) {
 
     // make global accessible in src/_includes/layouts/base.njk for loading of PH scripts
     eleventyConfig.addGlobalData('POSTHOG_APIKEY', () => process.env.POSTHOG_APIKEY || '' )
+    eleventyConfig.addGlobalData('DEV_MODE', () => !DEV_MODE && !DEV_MODE_POSTS)
 
     // Custom Tooltip "Component"
     eleventyConfig.addPairedShortcode("tooltip", function (content, text) {
