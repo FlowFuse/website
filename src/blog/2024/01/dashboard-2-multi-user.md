@@ -106,6 +106,10 @@ All events going into `ui-control` are automatically filtered based on the `msg.
 
 Further extensions of this could also check `ui-event` in case a non-admin user tries to access the `/admin` page directly, in which case we can utilise `ui-control` to navigate the user away from the page immediately. See the [ui-control documentation](https://dashboard.flowfuse.com/nodes/widgets/ui-control.html#navigation) for more details on this.
 
+## Upcoming Webinar
+
+If you're interested in learning more about Dashboard 2.0 and in particular multi-user Dashboards, we're hosting a webinar on the Thursday, 29th February. You can find out more information [here](webinars/2024/dashboard-multi-user/)
+
 ## Follow our Progress
 
 We aren't stopping here, we'll continnue to push Dashboard 2.0 forward with future development, and you can track that progress on our GitHub Projects:

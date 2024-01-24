@@ -35,6 +35,11 @@ This is available now in Node-RED Dashboard 2.0 when running on FlowFuse Cloud.
 
 If that wasn't enough, we also have [rich documentation](https://dashboard.flowfuse.com/) for Dashboard 2.0 too, detailing all of the available nodes, details on how Dashboard 2.0 is built and how to contribute to the project too if you're that way inclined.
 
+## Upcoming Webinar
+
+If you're interested in learning more about Dashboard 2.0 and in particular multi-user Dashboards, we're hosting a webinar on the Thursday, 29th February. You can find out more information [here](webinars/2024/dashboard-multi-user/)
+
+
 ## Follow our Progress
 
 We aren't stopping here, we'll continnue to push Dashboard 2.0 forward with future development, with a [new UI Gauge](https://github.com/FlowFuse/node-red-dashboard/issues/12) next on the list. You can track that progress of that particular issue, and the rest of the work we have lined up on our GitHub Projects:
