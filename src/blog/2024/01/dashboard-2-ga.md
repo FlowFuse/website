@@ -19,6 +19,8 @@ We followed this up with the [first release](/blog/2023/07/dashboard-0-1-release
 
 <!--more-->
 
+With our `1.0.0` release, we're offering a stable basis on which you can now build your Dashboards, and invite you to to start conttributing your own third-party [widgets](https://dashboard.flowfuse.com/contributing/widgets/third-party.html) and [plugins](https://dashboard.flowfuse.com/contributing/plugins/). We're excited to see what the community can contribute and build on top of this new Dashboard framework, and we'll be continuing to development to the core collection of widgets too.
+
 With Node-RED Dashboard 2.0, we have re-built the original Node-RED Dashboard from the ground up. It is now VueJS-based, completely responsive down to mobile and have made many quality of life improvements across the board to the existing widget collection, as well as adding a few new ones too.
 
 We've shared plenty of updates since we started, detailing the feature parity with the original Node-RED Dashboard, as well as some of the new widgets and features we've added to the new Dashboard, such as Markdown, Mermaid Charts and new Layout Options, you can read more about those here:
@@ -38,7 +40,6 @@ If that wasn't enough, we also have [rich documentation](https://dashboard.flowf
 ## Upcoming Webinar
 
 If you're interested in learning more about Dashboard 2.0 and in particular multi-user Dashboards, we're hosting a webinar on the Thursday, 29th February. You can find out more information [here](/webinars/2024/dashboard-multi-user/)
-
 
 ## Follow our Progress
 
