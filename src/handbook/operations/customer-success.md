@@ -19,7 +19,7 @@ FlowFuse has a diverse customer-base. When devising a strategy to deliver CS it 
 |Premium|Team of users, collaboration on applications|
 |Enterprise|Large scale applications, extensive use of FlowFuse's features|
 
-You can view our current customer-base and their cohorts in [this report](https://main.flowforge.cloud/ui/#!/1?socketid=rq-XlmWmn83upsPQAAAp){rel="nofollow}.
+You can view our current customer-base and their cohorts in [this report](https://main.flowforge.cloud/ui/#!/7?socketid=reLw4efoWf45RfOsAACH){rel="nofollow}.
 
 CS activity is planned to manage each of the cohorts with appropriate support & communications. The support and communications will be in some cases fully automated and in others will involve individual actions by our CS team, such as holding regular review meetings with customers.
 
@@ -49,6 +49,18 @@ To drive CS, we need to utilise data across various platforms to understand what
 To deliver automated and manual communication with customers, we use Hubspot CRM. Hubspot allows us to collaborate as a team. This is vital when manually communicating with customers as well as operating automated email campaigns based on a customer's current cohort and interaction with their account.
 
 We have built an integration in Node-RED which can extract data from our platforms then append it to a customer's record in Hubspot. The integration as well as any other CS resources built in Node-RED are hosted on FlowFuse Cloud and can be [accessed in this application](https://main.flowforge.cloud/){rel="nofollow}.
+
+### Hubspot Properties
+
+For FlowFuse Cloud customers, we add various useful data to our CRM records to help us better understand who each customer is and how they are using FlowFuse. They are as follows:
+
+| Field name | Description |
+|--------|--------|
+| FFC-Tier | This links each contact on Hubspot to the tier their team is currently associated with. Where a contact is in more than one team with different tiers we will show the tier which is expected to deliver the highest ARR. You can view the current contacts by tier in [this report](https://app-eu1.hubspot.com/reports-list/26586079/182668969/){rel="nofollow"}. |
+| FFC-Actions | This shows actions which have been taken by someone on a team this contact is on. To see a full list of available actions view [this report](https://app-eu1.hubspot.com/reports-list/26586079/182831966/){rel="nofollow"} in Hubspot
+ |
+| FFC-Usage | This field shows a contact's answer to how they are planning to use FlowFuse Cloud, you can view the options and current data on [this report](https://app-eu1.hubspot.com/reports-list/26586079/182851924/){rel="nofollow"}. |
+| FFC-Usage (deprecated) | This legacy field showed email campaigns which had been triggered to be sent to each contact. For example, after 24 hours if a user had not used out snapshots feature the integration between FlowFuse Cloud and Hubspot would add the relevant tag to this user. Hubspot would in turn send the email to the contact. This way of working is being replaced by FFC-Actions as that field can triggered email campaigns based on action or inaction as well as adding value to our CRM. |
 
 ## Inbound Support
 
