@@ -10,7 +10,7 @@ tags:
 image: # /images/blog/tile-needed.jpg
 ---
 
-We are thrilled to announce the launch of the [Community Forum for FlowFuse](https://community.flowfuse.com).
+We are thrilled to announce the launch of the [Community Forum for FlowFuse](https://discourse.nodered.org/c/vendors/flowfuse/24).
 A forum dedicated to empowering developers and enthusiasts to create innovative
 applications using FlowFuse, Node-RED and related technologies. 
 

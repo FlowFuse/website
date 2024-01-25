@@ -146,4 +146,4 @@ itself or their flows should be redirected to the
 customer direct to a repo for a 3rd party node question.
 
 [support-tickets]: ../../support/
-[support-forum]: https://community.flowfuse.com
+[support-forum]: https://discourse.nodered.org/c/vendors/flowfuse/24

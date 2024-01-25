@@ -83,5 +83,5 @@ guide for [upgrading your FlowFuse instance](/docs/upgrade/).
 
 ## Getting help
 
-Please check FlowFuse's [documentation](/docs/) as the answers to many questions are covered there. Additionally you can go the the [community forum](https://community.flowfuse.com) if you have
+Please check FlowFuse's [documentation](/docs/) as the answers to many questions are covered there. Additionally you can go the the [community forum](https://discourse.nodered.org/c/vendors/flowfuse/24) if you have
 any feedback or feature requests.
