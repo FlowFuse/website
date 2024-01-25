@@ -13,7 +13,7 @@ tags:
     - dashboard
 ---
 
-Back in [June 2023](/blog/2023/06/dashboard-announcement/) we announced that FlowFuse would be investing time into building out the next generation of Node-RED Dashboard, the incredibly popular UI framework for Node-RED.
+Back in [June 2023](/blog/2023/06/dashboard-announcement/) we announced that FlowFuse would be investing into building out the next generation of Node-RED Dashboard, the most popular UI framework for Node-RED.
 
 We followed this up with the [first release](/blog/2023/07/dashboard-0-1-release/) (`0.0.1`) in July, just one month later, and today, we are pleased to announce that we have reached a major milestone in this journey, with the release of our first major version (`1.0.0`) of Node-RED Dashboard 2.0.
 
