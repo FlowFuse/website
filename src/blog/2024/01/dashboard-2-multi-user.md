@@ -36,7 +36,7 @@ Once enabled, any messages emitted by a Dashboard 2.0 node will contain a new `m
 {
     "userId": "",   // unique identifier for the user
     "username": "", // FlowFuse Username
-    "email": "",    // E-Mail Address connected to their FF account
+    "email": "",    // E-Mail Address connected to their FlowFuse account
     "name": "",     // Full Name
     "image": ""     // User Avatar from FF
 }
