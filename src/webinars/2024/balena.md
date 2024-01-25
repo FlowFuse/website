@@ -5,13 +5,13 @@ image: /images/webinars/webinar-january-2024.jpg
 date: 2024-01-25
 time: 17:00 CET (11:00am ET) 
 duration: 60
-#video: gk2DXI7J7cA
+video: qYaDV6p95Xo
 hosts: ["grey-dziuba"]
 hubspot:
     formId: b4ec9aa1-8648-47b3-b908-ec8597e8735d
 ---
 
-**In this webinar we will share how leveraging balena with FlowFuse simplifies your fleet management.**
+**In this webinar we shared how leveraging balena with FlowFuse simplifies your fleet management.**
 
 <!--more-->
 
