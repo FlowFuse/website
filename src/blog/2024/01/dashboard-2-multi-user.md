@@ -25,7 +25,7 @@ The original Node-RED Dashboard was built with a "single source of truth", no ma
 
 ### Getting Started
 
-To enable multi-user dashboards, you'll need to be using FlowFuse, then complete two steps:
+To enable personalised multi-user dashboards, you'll need to be using FlowFuse, and complete two steps:
 
 #### Step 1: Enable "FlowFuse User Authentication"
 
@@ -36,7 +36,23 @@ All instances on FlowFuse can be configured with _"FlowFuse User Authentication"
 
 #### Step 2: Install FlowFuse's User Addon
 
+##### FlowFuse Cloud
+
+_Note: Every instance created from today onwards automatically comes with the necessary configuration. Already created instances need to be manually restarted._
+
+The Personalised Multi-User Dashboard plugin, `@flowfuse/node-red-dashboard-2-user-addon`, is available in our [Certified Nodes](https://flowfuse.com/certified-nodes/) catalogue, accessible to our Teams and Enterprise customers.
+
 Once the "FlowFuse User Authentication" option has been enabled on your instance, you can then install our plugin, `@flowfuse/node-red-dashboard-2-user-addon`, through the "Manage Palette" option in the Node-RED Editor.
+
+For your devices, we provide the necessary configuration and access token upon request, so that your Node-RED devices can also benefit from a Personalised Multi-user Dashboard.
+
+##### FlowFuse Self-Hosted
+
+For all our Teams and Enterprise Self-Hosted customers who also want to use the Certified Nodes and the Multi-User Dashboard, we provide all necessary configurations upon request to get started.
+
+Alternatively, if you're looking to elevate your Node-RED infrastructure, [book in a chat with us](/contact-us) to talk about how FlowFuse can help.
+
+### Using the Plugin
 
 Once enabled, any messages emitted by a Dashboard 2.0 node will contain a new `msg._client.user` object, e.g:
 
@@ -129,17 +145,3 @@ We aren't stopping here, we'll continue to push Dashboard 2.0 forward with futur
 - [Dashboard 1.0 Feature Parity Tracker](https://github.com/orgs/FlowFuse/projects/15/views/5)
 
  If you have any feature requests, bugs/complaints or general feedback, please do reach out, and raise issues on our relevant [GitHub repository](https://github.com/FlowFuse/node-red-dashboard).
-
-## How to get started
-
-### FlowFuse Cloud
-
-The Personalised Multi-user Dashboard plugin, `@flowfuse/node-red-dashboard-2-user-addon`, is available in our [Certified Nodes](https://flowfuse.com/certified-nodes/) catalogue, accessible to our Teams and Enterprise customers. You just have to go to the Node-RED Palette Manager of your Node-RED instance and select the Certified Nodes catalogue. Every instance created from today onwards automatically comes with the necessary configuration. Already created instances need to be manually restarted.
-
-For your devices, we provide the necessary configuration and access token upon request, so that your Node-RED devices can also benefit from a Personalised Multi-user Dashboard.
-
-### FlowFuse Self-Hosted
-
-For all our Teams and Enterprise Self-Hosted customers who also want to use the Certified Nodes and the Multi-User Dashboard, we provide all necessary configurations upon request to get started.
-
-Alternatively, if you're looking to elevate your Node-RED infrastructure, [book in a chat with us](/contact-us) to talk about how FlowFuse can help.
