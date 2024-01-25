@@ -13,19 +13,19 @@ tags:
     - dashboard
 ---
 
-This week has seen the release of the [first major version of Node-RED Dashboard 2.0](/blog/2024/01/dashboard-2-ga), with it, we've made available a new FlowFuse-exclusive feature, Multi User Dashboards.
+This week has seen the release of the [first major version of Node-RED Dashboard 2.0](/blog/2024/01/dashboard-2-ga), with it, we've made available a new FlowFuse-exclusive feature, personalised multi-user dashboards.
 
-This new feature will allow you to build Dashboards that provide unique data to each user, build admin-only views, and track user activity, to name but a few. We're really excited to see what the Node-RED Community and our FlowFuse customers can do with such a powerful and flexible framework.
+This new feature will allow you to build dashboards that provide unique data to each user, build admin-only views, and track user activity, to name but a few. We're really excited to see what the Node-RED Community and our FlowFuse customers can do with such a powerful and flexible framework.
 
 <!--more-->
 
 ## Multi User Dashboards
 
-The original Node-RED Dashboard was built with a "single source of truth", no matter how many users interacted with the Dashboard, each user would always see the same data. This is great for prototyping, or hobby projects, but as you scale up your Node-RED usage, you'll want to be able to have unique Dashboard experiences for each user.
+The original Node-RED Dashboard was built with a "single source of truth", no matter how many users interacted with the dashboard, each user would always see the same data. This is great for prototyping, or hobby projects, but as you scale up your Node-RED usage, you'll want to be able to have unique dashboard experiences for each user.
 
 ### Getting Started
 
-To enable multi-user Dashboards, you'll need to be using FlowFuse, and have an instance with _"FlowFuse User Authentication"_ enabled in the "Security" Settings, this will require any user that wants access to your Editor or Dashboard to be authorized by FlowFuse first.
+To enable multi-user dashboards, you'll need to be using FlowFuse, and have an instance with _"FlowFuse User Authentication"_ enabled in the "Security" Settings, this will require any user that wants access to your Editor or dashboard to be authorized by FlowFuse first.
 
 !["Screenshot of the 'Security' settings available for any Instances running in FlowFuse"](./images/multi-user-dashboard-ffauth.png "Screenshot of the 'Security' settings available for any Instances running in FlowFuse"){data-zoomable}
 <figcaption class="-mt-6 mb-4 text-center"><b>"Screenshot of the 'Security' settings available for any Instances running in FlowFuse"</b></figcaption>
@@ -49,16 +49,16 @@ Then, when running Node-RED Dashboard 2.0 on FlowFuse, you'll have a new sidebar
 
 In the original Node-RED Dashboard, this was _always_ enabled for the `ui-notification` and `ui-control` nodes, whereby you could include `msg.socket` data and it would only then send that message to the specified client. For Dashboard 2.0 we've extended this concept so that as a Node-RED Developer, you can now include `msg._client.user` data in any message sent to a Dashboard 2.0 node. Under the covers, our FlowFuse-exclusive plugin will then automatically filter messages to only send to the relevant user's connection.
 
-Utilising this feature, below you can see an example where we send data to a `ui-template` to render a custom table for each user. Under the covers this is a `ui-event` node (triggered on a page view), which then uses the `msg._client.user` object to make a REST API call to retrieve a list of todo items for that specific user. We then wire the response into the `ui-template`, which has been configured to "Accept Client Constraints", and so only sends this data to User 2's Dashboard.
+Utilising this feature, below you can see an example where we send data to a `ui-template` to render a custom table for each user. Under the covers this is a `ui-event` node (triggered on a page view), which then uses the `msg._client.user` object to make a REST API call to retrieve a list of todo items for that specific user. We then wire the response into the `ui-template`, which has been configured to "Accept Client Constraints", and so only sends this data to User 2's dashboard.
 
 ![Showing Admin Task View](./images/multi-user-dashboard-admin-tasks.png "Showing Admin Task View"){data-zoomable}
-<figcaption class="-mt-6 mb-4 text-center"><b>Example of a Dashboard that displays user-specific content.</b></figcaption>
+<figcaption class="-mt-6 mb-4 text-center"><b>Example of a dashboard that displays user-specific content.</b></figcaption>
 
-Note too that we're also utilising the new [Teleport](https://dashboard.flowfuse.com/nodes/widgets/ui-template.html#teleports) option available in a `ui-template` which allows us to define content to show in the top-right of the Dashboard, in this case, a little _"Hi {username}"_ message.
+Note too that we're also utilising the new [Teleport](https://dashboard.flowfuse.com/nodes/widgets/ui-template.html#teleports) option available in a `ui-template` which allows us to define content to show in the top-right of the dashboard, in this case, a little _"Hi {username}"_ message.
 
 ### Rendering Logged In User Data
 
-In the previous example, you may have noticed that we're also displaying a welcome to the authenticated user on our Dashboard, this means that we have access to the full User object within any `ui-template` that we render too.
+In the previous example, you may have noticed that we're also displaying a welcome to the authenticated user on our dashboard, this means that we have access to the full User object within any `ui-template` that we render too.
 
 ![Showing User Unique Data](./images/multi-user-dashboard-user2.png "Showing User Unique Data"){data-zoomable}
 <figcaption class="-mt-6 mb-4 text-center"><b>The "Admin" view that is only made available to users registered as an "admin".</b></figcaption>
