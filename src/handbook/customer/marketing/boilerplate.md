@@ -7,16 +7,16 @@ navGroup: Sales & Marketing
 
 ## Tagline
 
-Build bespoke, flexible, and resilient manufacturing applications
+Elevating Node-RED
 
 ## One sentence description
 
-FlowFuse empowers manufacturing organisations to build bespoke, flexible,
-and resilient applications.
+FlowFuse provides a complete platform to scale your production Node-RED applications, increase developer velocity, and enhance security in order to accelerate innovation.
 
 ## About FlowFuse - 50 Words
 
-FlowFuse empowers manufacturers to build bespoke, flexible, and resilient applications that drive business value and transformation. FlowFuse and Node-RED provide a low-code platform that allows your engineers to quickly build applications that solve your business problems and also make it easy to adapt these applications in the future.
+FlowFuse is a low-code development platform bringing innovation to enterprise companies. Elevating Node-RED, the renowned open-source development tool, FlowFuse empowers companies to transform their production by building custom, adaptable applications. FlowFuse provides enhanced features for security and scalability, making it an ideal platform for complex enterprise applications.
+
 
 
 ## About FlowFuse - 150 Words
@@ -25,4 +25,5 @@ FlowFuse is an open-core company investing in Node-RED. Nick O’Leary, co-creat
 
 Node-RED is an open-source low-code programming tool, allowing developers to quickly and easily connect IoT devices, APIs, and online services by creating flow-based applications. It uses a drag-and-drop interface to wire together nodes, which can represent devices, APIs, or functions, to process data, and create powerful automations. 
 
-FlowFuse is the platform that empowers manufacturing companies to build custom applications that fit their unique requirements. Off the shelf software doesn't work in the manufacturing industry. Each manufacturing operation is unique so you need a tool platform that allows your engineers to easily build custom applications that fit your unique requirements. FlowFuse and Node-RED combined together is the platform that allows manufactures to build bespoke, flexible and resilient applications that solve their business requirements.
+FlowFuse is a low-code development platform for building reliable and adaptable applications. FlowFuse eliminates the pain points of digital transformation by empowering companies across industries to create seamless, dynamic applications. Powered by Node-RED, FlowFuse enables teams of all sizes to harness low-code capabilities to build robust applications with unparalleled scalability, and security. FlowFuse’s collaborative environment and scalable architecture ensure that teams can build securely and together for continuous development and operational success.
+
