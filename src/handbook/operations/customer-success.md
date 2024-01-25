@@ -50,13 +50,13 @@ To deliver automated and manual communication with customers, we use Hubspot CRM
 
 We have built an integration in Node-RED which can extract data from our platforms then append it to a customer's record in Hubspot. The integration as well as any other CS resources built in Node-RED are hosted on FlowFuse Cloud and can be [accessed in this application](https://main.flowforge.cloud/){rel="nofollow}.
 
-### Hubspot Proterties
+### Hubspot Properties
 
 For FlowFuse Cloud customers, we add various useful data to our CRM records to help us better understand who each customer is and how they are using FlowFuse. They are as follows:
 
 #### FFC-Tier
 
-This links each contact on Hubspot to the tier their team is currently associated with. Where a contact is in more than one team with different tiers we will show the tier which is expected to deliver the highest ARR. Yoy can view the current contacts by tier in [this report](https://app-eu1.hubspot.com/reports-list/26586079/182668969/).
+This links each contact on Hubspot to the tier their team is currently associated with. Where a contact is in more than one team with different tiers we will show the tier which is expected to deliver the highest ARR. You can view the current contacts by tier in [this report](https://app-eu1.hubspot.com/reports-list/26586079/182668969/).
 
 #### FFC-Actions
 
@@ -66,9 +66,9 @@ This shows actions which have been taken by someone on a team this contact is on
 
 This field shows a contact's answer to how they are planning to use FlowFuse Cloud, you can view the options and current data on [this report](https://app-eu1.hubspot.com/reports-list/26586079/182851924/).
 
-#### FFC-Usage (deprcated)
+#### FFC-Usage (deprecated)
 
-This legacy field showed email campaigns which had been triggered to be sent to each contact. For example, after 24 hours if a user had not used out snapshots feature the integration between FlowFuse Cloud and Hubspot would add the relevant tag to this user. Hubspot would in turn send the email to the contact. This way of working is being replaced by FFC-Actions as that field can triggered email campains based on action or inaction as well as adding value to our CRM.
+This legacy field showed email campaigns which had been triggered to be sent to each contact. For example, after 24 hours if a user had not used out snapshots feature the integration between FlowFuse Cloud and Hubspot would add the relevant tag to this user. Hubspot would in turn send the email to the contact. This way of working is being replaced by FFC-Actions as that field can triggered email campaigns based on action or inaction as well as adding value to our CRM.
 
 ## Inbound Support
 
