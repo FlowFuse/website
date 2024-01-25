@@ -290,13 +290,14 @@ document.getElementById('nav-toggle').onclick = function(){
 <script async src="https://cdn.jsdelivr.net/npm/lite-youtube-embed@0.2.0/src/lite-yt-embed.min.js"></script>
 <link rel="preload" href="https://cdn.jsdelivr.net/npm/lite-youtube-embed@0.2.0/src/lite-yt-embed.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
+<!-- Cookie banner -->
+<script async type="text/javascript" src="/js/cc.min.js"></script>
+
+{%- if not DEV_MODE -%}
 <!-- HubSpot Tracking -->
 {% set hubspotJS %}{% include "hubspot.js" %}{% endset %}
 <script>{{ hubspotJS | jsmin | safe }}</script>
 <script async type="text/javascript" id="hs-script-loader" src="//js-eu1.hs-scripts.com/26586079.js"></script>
-
-<!-- Cookie banner -->
-<script async type="text/javascript" src="/js/cc.min.js"></script>
 
 <!-- PostHog -->
 <script>
@@ -403,5 +404,5 @@ gtag('config', 'G-2ZH9W82QL8');
 </script>
 
 <script async src="https://tag.clearbitscripts.com/v1/pk_a40db34c3e210290335fe7ad7f2a7197/tags.js" referrerpolicy="strict-origin-when-cross-origin"></script>
-
+{%- endif -%}
 </html>
