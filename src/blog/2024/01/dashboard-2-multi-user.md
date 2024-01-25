@@ -32,13 +32,13 @@ To enable multi-user Dashboards, you'll need to be using FlowFuse, and have an i
 
 Once enabled, any messages emitted by a Dashboard 2.0 node will contain a new `msg._client.user` object, e.g:
 
-```json
+```js
 {
     "userId": "",   // unique identifier for the user
     "username": "", // FlowFuse Username
     "email": "",    // E-Mail Address connected to their FlowFuse account
     "name": "",     // Full Name
-    "image": ""     // User Avatar from FF
+    "image": ""     // User Avatar from FlowFuse
 }
 ```
 
@@ -47,7 +47,7 @@ Then, when running Node-RED Dashboard 2.0 on FlowFuse, you'll have a new sidebar
 ![The new 'FF Auth' options available in Node-RED to allow for client constraints](./images/multi-user-dashboard-ff-settings.png "The new 'FF Auth' options available in Node-RED to allow for client constraints"){data-zoomable}
 <figcaption class="-mt-6 mb-4 text-center"><b>A screenshot of the new 'FF Auth' options available in Node-RED to allow for client constraints on different node types.</b></figcaption>
 
-In the original Node-RED Dashboard, this was _always_ enabled for the `ui-notification` and `ui-control` nodes, whereby you could include `msg.socket` data and it would only then send that message to the specified client. For Dashboard 2.0 we've extended this concept so that as a Node-RED Developer, you can now include `msg._client.user` data in any message sent to a Dashboard 2.0 node. Under the covers, our FlowFuse-exclusive plugin will then automtically filter messages to only send to the relevant user's connection.
+In the original Node-RED Dashboard, this was _always_ enabled for the `ui-notification` and `ui-control` nodes, whereby you could include `msg.socket` data and it would only then send that message to the specified client. For Dashboard 2.0 we've extended this concept so that as a Node-RED Developer, you can now include `msg._client.user` data in any message sent to a Dashboard 2.0 node. Under the covers, our FlowFuse-exclusive plugin will then automatically filter messages to only send to the relevant user's connection.
 
 Utilising this feature, below you can see an example where we send data to a `ui-template` to render a custom table for each user. Under the covers this is a `ui-event` node (triggered on a page view), which then uses the `msg._client.user` object to make a REST API call to retrieve a list of todo items for that specific user. We then wire the response into the `ui-template`, which has been configured to "Accept Client Constraints", and so only sends this data to User 2's Dashboard.
 
@@ -120,8 +120,15 @@ We aren't stopping here, we'll continue to push Dashboard 2.0 forward with futur
 
  If you have any feature requests, bugs/complaints or general feedback, please do reach out, and raise issues on our relevant [GitHub repository](https://github.com/FlowFuse/node-red-dashboard).
 
- ## Try it out
+ ## How to get started
 
- If you're in need for a multi-user Dashboard, then you can try out FlowFuse Cloud for free on a two-week trial [here](https://app.flowfuse.com/account/create).
+### FlowFuse Cloud
+The Multi-user Dashboard plugin is available in our Certified Nodes catalogue, accessible to our Teams and Enterprise customers. You just have to go to the Node-RED Palette Manager of your Node-RED instance and select the Certified Nodes catalogue. Every instance created from today onwards automatically comes with the necessary configuration. Already created instances need to be manually restarted.
+
+For your devices, we provide the necessary configuration and access token upon request, so that your Node-RED devices can also benefit from the Multi-user Dashboard.
+
+### FlowFuse Self-Hosted
+
+For all our Teams and Enterprise Self-Hosted customers who also want to use the Certified Nodes and the Multi-User Dashboard, we provide all necessary configurations upon request to get started.
 
  Alternatively, if you're looking to elevate your Node-RED infrastructure, [book in a chat with us](/contact-us) to talk about how FlowFuse can help.

@@ -17,7 +17,11 @@ hubspot:
 
 With Node-RED Dashboard 1.0, a very common feature request was "Multi User Dashboards", now with the evolution of FlowFuse to elevate your Node-RED experience, we can easily secure our instances with FlowFuse Authentication, and utilise this to build out multi-user Dashboards.
 
-Joe will demonstrate some of the main features of Node-RED Dashboard 2.0, and then dive into how you can use these features to build out a multi-user Dashboard, with unique data for each user, build admin-only views, and track user activity for auditing purposes.
+Joe will demonstrate some of the main features of Node-RED Dashboard 2.0, and then dive into how you can use these features to: 
+- Build out a multi-user Dashboard, with unique data for each user
+- Build admin-only views
+- Track user activity for auditing purposes.
+
 
 We'll also be hosting a Q&A session at the end of the Webinar if you have any particular questions, queries of feedback you'd like to discuss directly with the team.
 

@@ -28,7 +28,7 @@ We've shared plenty of updates since we started, detailing the feature parity wi
 - [UI Chart Improvements](/blog/2023/11/dashboard-0-7/)
 - [Building a Custom Video Player](/blog/2023/12/dashboard-0-10-0/)
 
-We've also just published another new article detailing our latest feature:
+Furthermore, the most requested feature for the legacy dashboard has been implemented in Dashboard 2.0, the ability to hide charts and forms based on the user that's viewing the dashboard. Read more about it:
 
 - [Multi User Dashboards](/blog/2024/01/dashboard-2-multi-user/)
 
