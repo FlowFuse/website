@@ -19,16 +19,24 @@ This new feature will allow you to build dashboards that provide unique data to 
 
 <!--more-->
 
-## Multi User Dashboards
+## Personalised Multi User Dashboards
 
 The original Node-RED Dashboard was built with a "single source of truth", no matter how many users interacted with the dashboard, each user would always see the same data. This is great for prototyping, or hobby projects, but as you scale up your Node-RED usage, you'll want to be able to have unique dashboard experiences for each user.
 
 ### Getting Started
 
-To enable multi-user dashboards, you'll need to be using FlowFuse, and have an instance with _"FlowFuse User Authentication"_ enabled in the "Security" Settings, this will require any user that wants access to your Editor or dashboard to be authorized by FlowFuse first.
+To enable multi-user dashboards, you'll need to be using FlowFuse, then complete two steps:
+
+#### Step 1: Enable "FlowFuse User Authentication"
+
+All instances on FlowFuse can be configured with _"FlowFuse User Authentication"_ in the "Security" Settings. This option requires any user that wants access to your Editor or dashboard to be authorized by FlowFuse first.
 
 !["Screenshot of the 'Security' settings available for any Instances running in FlowFuse"](./images/multi-user-dashboard-ffauth.png "Screenshot of the 'Security' settings available for any Instances running in FlowFuse"){data-zoomable}
 <figcaption class="-mt-6 mb-4 text-center"><b>"Screenshot of the 'Security' settings available for any Instances running in FlowFuse"</b></figcaption>
+
+#### Step 2: Install FlowFuse's User Addon
+
+Once the "FlowFuse User Authentication" option has been enabled on your instance, you can then install our plugin, `@flowfuse/node-red-dashboard-2-user-addon`, through the "Manage Palette" option in the Node-RED Editor.
 
 Once enabled, any messages emitted by a Dashboard 2.0 node will contain a new `msg._client.user` object, e.g:
 
@@ -56,7 +64,9 @@ Utilising this feature, below you can see an example where we send data to a `ui
 
 Note too that we're also utilising the new [Teleport](https://dashboard.flowfuse.com/nodes/widgets/ui-template.html#teleports) option available in a `ui-template` which allows us to define content to show in the top-right of the dashboard, in this case, a little _"Hi {username}"_ message.
 
-### Rendering Logged In User Data
+### Examples
+
+#### Rendering Logged In User Data
 
 In the previous example, you may have noticed that we're also displaying a welcome to the authenticated user on our dashboard, this means that we have access to the full User object within any `ui-template` that we render too.
 
@@ -77,7 +87,7 @@ Under the covers, we're appending our `user` object to the `msg` object, via the
 
 To enable custom user-by-user content in a `ui-template` though, we must allow it to "Accept Client Constraints". This means that if a `.msg._client.user` value is included in any messages sent to a `ui-template` node, then the underlying SocketIO message will be filtered to only send to the relevant user's connection, and no others.
 
-### Admin Only Views
+#### Admin Only Views
 
 With this new functionality we can also now show/hide content based on the authenticated user. 
 
@@ -120,15 +130,16 @@ We aren't stopping here, we'll continue to push Dashboard 2.0 forward with futur
 
  If you have any feature requests, bugs/complaints or general feedback, please do reach out, and raise issues on our relevant [GitHub repository](https://github.com/FlowFuse/node-red-dashboard).
 
- ## How to get started
+## How to get started
 
 ### FlowFuse Cloud
-The Multi-user Dashboard plugin is available in our Certified Nodes catalogue, accessible to our Teams and Enterprise customers. You just have to go to the Node-RED Palette Manager of your Node-RED instance and select the Certified Nodes catalogue. Every instance created from today onwards automatically comes with the necessary configuration. Already created instances need to be manually restarted.
 
-For your devices, we provide the necessary configuration and access token upon request, so that your Node-RED devices can also benefit from the Multi-user Dashboard.
+The Personalised Multi-user Dashboard plugin, `@flowfuse/node-red-dashboard-2-user-addon`, is available in our [Certified Nodes](https://flowfuse.com/certified-nodes/) catalogue, accessible to our Teams and Enterprise customers. You just have to go to the Node-RED Palette Manager of your Node-RED instance and select the Certified Nodes catalogue. Every instance created from today onwards automatically comes with the necessary configuration. Already created instances need to be manually restarted.
+
+For your devices, we provide the necessary configuration and access token upon request, so that your Node-RED devices can also benefit from a Personalised Multi-user Dashboard.
 
 ### FlowFuse Self-Hosted
 
 For all our Teams and Enterprise Self-Hosted customers who also want to use the Certified Nodes and the Multi-User Dashboard, we provide all necessary configurations upon request to get started.
 
- Alternatively, if you're looking to elevate your Node-RED infrastructure, [book in a chat with us](/contact-us) to talk about how FlowFuse can help.
+Alternatively, if you're looking to elevate your Node-RED infrastructure, [book in a chat with us](/contact-us) to talk about how FlowFuse can help.
