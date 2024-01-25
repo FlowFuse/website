@@ -1275,3 +1275,13 @@ div.content section.footnotes ol li p {
 #hubspot-messages-iframe-container {
     z-index: 5 !important;
 }
+
+
+/*
+    Overwrite Cookie Banner buttons border
+*/
+
+.pm__btn,
+.cm__btn {
+    border: none !important;
+}
