@@ -57,5 +57,5 @@ The steps are documented on the [Upgrade instructions](https://flowfuse.com/docs
 
 ## Getting help
 
-Please check FlowFuse's [documentation](/docs/) as the answers to many questions are covered there. Additionally you can go to the [community forum](https://community.flowfuse.com) if you have
+Please check FlowFuse's [documentation](/docs/) as the answers to many questions are covered there. Additionally you can go to the [community forum](https://discourse.nodered.org/c/vendors/flowfuse/24) if you have
 any feedback or feature requests.
