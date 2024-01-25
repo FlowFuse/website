@@ -50,15 +50,15 @@ In the ever-evolving landscape of data visualization and dashboard development, 
 
 #### FAQs
 
-1.  What is Node-RED Dashboards 2.0? Node-RED Dashboards 2.0 is the latest version of the Node-RED Dashboard, a platform for creating user interfaces for IoT and other applications.
+1.  What is Node-RED Dashboards 2.0? **Node-RED Dashboards 2.0 is the latest version of the Node-RED Dashboard, a platform for creating user interfaces for IoT and other applications.**
 
-2.  How does Node-RED Dashboards 2.0 differ from its previous versions? It has been rebuilt with a VueJS-based architecture, offers improved UI/UX, enhanced data visualization tools, and greater customizability.
+2.  How does Node-RED Dashboards 2.0 differ from its previous versions? **It has been rebuilt with a VueJS-based architecture, offers improved UI/UX, enhanced data visualization tools, and greater customizability.**
 
-3.  Is Node-RED Dashboards 2.0 suitable for beginners? Yes, although it has advanced features, its intuitive design makes it accessible to beginners.
+3.  Is Node-RED Dashboards 2.0 suitable for beginners? **Yes, although it has advanced features, its intuitive design makes it accessible to beginners.**
 
-4.  Can I integrate custom components in Node-RED Dashboards 2.0? Yes, Node-RED Dashboards 2.0 supports the integration of custom Vuetify components and widgets.
+4.  Can I integrate custom components in Node-RED Dashboards 2.0? **Yes, Node-RED Dashboards 2.0 supports the integration of custom Vuetify components and widgets.**
 
-5.  Is there a way to track user engagement on my dashboard? Yes, Node-RED Dashboards 2.0 includes user tracking features for personalized dashboard experiences.
+5.  Is there a way to track user engagement on my dashboard? **Yes, Node-RED Dashboards 2.0 includes user tracking features for personalized dashboard experiences.**
 
 * * * * *
 
