@@ -123,7 +123,7 @@ We aren't stopping here, we'll continue to push Dashboard 2.0 forward with futur
  ## How to get started
 
 ### FlowFuse Cloud
-The Multi-user Dashboard plugin is available in our Certified Nodes catalogue, accessible to our Teams and Enterprise customers. You just have to go to the Node-RED Palette Manager of your Node-RED instance and select the Certified Nodes catalogue. Every instance created from today onwards automatically comes with the necessary configuration. Already created instances need to be manually restarted.
+The Personalised Multi-user Dashboard plugin is available in our Certified Nodes catalogue, accessible to our Teams and Enterprise customers. You just have to go to the Node-RED Palette Manager of your Node-RED instance and select the Certified Nodes catalogue. Every instance created from today onwards automatically comes with the necessary configuration. Already created instances need to be manually restarted.
 
 For your devices, we provide the necessary configuration and access token upon request, so that your Node-RED devices can also benefit from the Multi-user Dashboard.
 
