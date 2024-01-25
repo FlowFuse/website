@@ -112,7 +112,7 @@ If you're interested in learning more about Dashboard 2.0 and in particular mult
 
 ## Follow our Progress
 
-We aren't stopping here, we'll continnue to push Dashboard 2.0 forward with future development, and you can track that progress on our GitHub Projects:
+We aren't stopping here, we'll continue to push Dashboard 2.0 forward with future development, and you can track that progress on our GitHub Projects:
 
 - [Dashboard 2.0 Activity Tracker](https://github.com/orgs/FlowFuse/projects/15/views/1)
 - [Dashboard 2.0 Planning Board](https://github.com/orgs/FlowFuse/projects/15/views/4)
