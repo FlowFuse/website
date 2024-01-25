@@ -293,7 +293,7 @@ document.getElementById('nav-toggle').onclick = function(){
 <!-- Cookie banner -->
 <script async type="text/javascript" src="/js/cc.min.js"></script>
 
-{%- if DEV_MODE -%}
+{%- if not DEV_MODE -%}
 <!-- HubSpot Tracking -->
 {% set hubspotJS %}{% include "hubspot.js" %}{% endset %}
 <script>{{ hubspotJS | jsmin | safe }}</script>
