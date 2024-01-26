@@ -35,7 +35,7 @@ The first thing we need to do to get things started is installing Dashboard 2.0.
 
 # Building Speech-to-Text Vue component 
 In this section, we will build a Vue component that will perform a speech-to-text conversion operation using Web speech API, and display results on the dashboard.  While we did say previously that we won't need any external API for speech recognition, this [Web Speech API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Speech_API) is not an external API. 
-is not any external API and it will process your speech locally, it is a JavaScript API that allows us to use speech-related functionalities, such as speech recognition and synthesis, in a web browser directly. It is widely present in modern browsers except firefox, which eliminates the need for external APIs to implement these features. That's quite a bit, now let's start to build that component.
+This will process your speech locally as it is a JavaScript API that allows us to use speech-related functionalities, such as speech recognition and synthesis, in a web browser directly. It is widely present in modern browsers (except Firefox) which eliminates the need for external APIs to implement these features. Let's now start to build that component.
 
 
 1. Drag a ui template widget to canvas and select the created group.
