@@ -41,7 +41,7 @@ This will process your speech locally as it is a JavaScript API that allows us t
 1. Drag a ui template widget to canvas and select the created group.
 2. Paste the below Vue snippets into the template widget step by step.
 
-Of course, I know you might face challenges in understanding Vue, and for that, I have added comments that will allow you to understand the code better.
+If you are unfamiliar with Vue, we have added comments that will help you to understand the code better.
 
 We are going to start by pasting a user interface’s snippet which will allow us to interact with our system. This snippet adds a button that triggers our system to listen, an Icon, and a paragraph to display speech recognition results on the dashboard.
 
