@@ -169,7 +169,7 @@ Paste the below snippet in the template widget which displays chat-gpt response 
 ```
 Paste the below snippet right after the HTML, This snippet adds the functionality of text-to-speech into our system, which triggers when msg received by the previous node.
 
-```
+```html
 <script>
   export default {
   data() {
