@@ -123,7 +123,7 @@ export default {
 
 # Adding an Environment variable
 
-Why do we need to add an environment variable? In this guide, we will build a speech-driven chatbot that involves integrating the Chat-GPT AI model, for that we need openAi’s API key, right? An API key is a form of private data that needs to be protected from being exposed. That is why we need the environment variables, it provides a secure way to store and access the API key without revealing it directly in the flow, for a more detailed guide refer to [Using Environment Variables in Node-RED • FlowFuse.](https://flowfuse.com/blog/2023/01/environment-variables-in-node-red/)
+Why do we need to add an environment variable? In this guide, we will build a speech-driven chatbot that involves integrating the Chat-GPT AI model. For this we need openAi’s API key. An API key is a form of private data that needs to be protected from being exposed. That is why we need the environment variables. It provides a secure way to store and access the API key without revealing it directly in the flow.  For more details see [Using Environment Variables in Node-RED](https://flowfuse.com/blog/2023/01/environment-variables-in-node-red/)
 
 
 1. Navigate to the instance's setting and then go to the environment section.
