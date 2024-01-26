@@ -13,7 +13,7 @@ tags:
 
 Have you ever wanted to integrate speech recognition and synthesis into your Node-RED project and thought it was too complex? Often it has required external services or APIs. However, in this guide, we show you how you can use speech recognition and synthesis in your Node-RED projects without needing an external service or API.  
 
-Not only this, I will make this guide more interesting by building a system that can listen to us and respond like humans using the Chat-GPT API.
+In addition, we make things more interesting by building a system that can listen to us and respond like humans using the Chat-GPT API.
 Let's get started!
 
 <!--more-->
