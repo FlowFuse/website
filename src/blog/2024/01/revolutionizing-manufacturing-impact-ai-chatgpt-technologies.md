@@ -15,8 +15,7 @@ The realm of artificial intelligence (AI) and its applications within various in
 <!--more-->
 
 
-How AI and ChatGPT are Changing Manufacturing
----------------------------------------------
+## How AI and ChatGPT are Changing Manufacturing
 
 The integration of AI and ChatGPT into the manufacturing industry signifies a paradigm shift in how production processes are managed and executed. Here's an in-depth look at the impact of these technologies:
 
