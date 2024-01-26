@@ -87,9 +87,7 @@ export default {
       let results = Array.from(event.results).map(result =>   result[0].transcript).join('');
       this.results = results;
       this.$emit('speak', results);
-
-
-//Sending result to next node as payload
+      //Sending result to next node as payload
       this.send(results);
     },
     // Method to handle the start of recognition
