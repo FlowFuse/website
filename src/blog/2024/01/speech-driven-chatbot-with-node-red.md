@@ -47,7 +47,7 @@ Of course, I know you might face challenges in understanding Vue, and for that, 
 
 We are going to start by pasting a user interface’s snippet which will allow us to interact with our system. This snippet adds a button that triggers our system to listen, an Icon, and a paragraph to display speech recognition results on the dashboard.
 
-```
+```html
 <template>
   <div style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
     <!-- Button triggers recording when clicked -->
