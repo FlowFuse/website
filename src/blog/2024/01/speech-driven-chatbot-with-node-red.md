@@ -22,7 +22,7 @@ Let's get started!
 
 Speech recognition is a technology where a device captures spoken words through a microphone, checks against grammar rules and vocabulary, and returns recognized words as text. On the other hand, speech synthesis converts app text into speech and plays it through a device's speaker or audio output. There are many benefits and real-world applications of this technology.
 
-- **Hands-Free Operation:** Nowadays using speech recognition technology we can perform tasks such as making calls, sending messages, or controlling smart home devices without the need for physical interaction.
+- **Hands-Free Operation:** Using speech recognition technology is often used today to perform tasks such as making calls, sending messages, or controlling smart home devices without the need for physical interaction.
 - **Accessibility:** It allows individuals with visual impairments to access digital content through spoken words and as discussed above, to control devices without physical interaction.
 - **Efficient Content Consumption:** It allows us to listen to information instead of reading. For example, in the audiobook industry by using speech synthesis technology they create audio versions of books which helps users to be more productive.
 
