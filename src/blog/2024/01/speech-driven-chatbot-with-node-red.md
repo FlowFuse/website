@@ -160,7 +160,7 @@ We will build a Vue component that converts text received from ChatGPT into spee
 As I mentioned previously, I have added a comment for your understanding of the code.
 Paste the below snippet in the template widget which displays chat-gpt response on the dashboard
 
-```
+```html
 <template>
   <div>
     <strong> Chat-gpt: </strong> {{textToSpeech}}
