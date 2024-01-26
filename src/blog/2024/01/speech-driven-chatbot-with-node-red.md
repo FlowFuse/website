@@ -63,7 +63,7 @@ We are going to start by pasting a user interface’s snippet which will allow u
 ```
 Now paste the below script right after the HTML in the template widget, This script adds functionality of speech recognition in our system.
 
- ```
+ ```html
 <script>
 export default {
   data() {
