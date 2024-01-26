@@ -18,9 +18,13 @@ We followed this up with the [first release](/blog/2023/07/dashboard-0-1-release
 
 <!--more-->
 
+![Dashboard 2.0 Example showing weather data](./images/dashboard-ga-example.png)
+
 With our `1.0.0` release, you can now build your dashboards on a reliable and stable package, and we invite you to to start contributing your own third-party [widgets](https://dashboard.flowfuse.com/contributing/widgets/third-party.html) and [plugins](https://dashboard.flowfuse.com/contributing/plugins/). We're excited to see what the community can contribute and build on top of this new Dashboard 2.0 framework, and we'll be continuing development to the core collection of widgets too.
 
 With Node-RED Dashboard 2.0, we have re-built the original Node-RED Dashboard from the ground up. It is now extensible due to it being VueJS-based, completely responsive down to mobile, and we've made many quality of life improvements across the board to the existing widget collection, as well as adding a few new ones too.
+
+## What's new in Dashboard 2.0?
 
 We've shared plenty of updates since we started, detailing the feature parity with the original Node-RED Dashboard, as well as some of the new widgets and features we've added to the new Dashboard, such as Markdown, Mermaid Charts and new Layout Options, you can read more about those here:
 
@@ -28,11 +32,13 @@ We've shared plenty of updates since we started, detailing the feature parity wi
 - [UI Chart Improvements](/blog/2023/11/dashboard-0-7/)
 - [Building a Custom Video Player](/blog/2023/12/dashboard-0-10-0/)
 
-Furthermore, the most requested feature for the legacy dashboard has been implemented in Dashboard 2.0, the ability to hide charts and forms based on the user that's viewing the dashboard. Read more about it:
+Furthermore, the most requested feature for the legacy dashboard has been implemented in Dashboard 2.0, the ability to hide charts and forms based on the user that's viewing the dashboard.
+
+![Dashboard 2.0 Example showing personalised dashboard](./images/multi-user-dashboard-user2.png)
+
+Read more about it here:
 
 - [Personalised Multi User Dashboards](/blog/2024/01/dashboard-2-multi-user/)
-
-This is available now in Node-RED Dashboard 2.0 when running on FlowFuse Cloud.
 
 If that wasn't enough, we also have [rich documentation](https://dashboard.flowfuse.com/) for Dashboard 2.0 too, detailing all of the available nodes, details on how Dashboard 2.0 is built and how to contribute to the project too if you're that way inclined.
 
