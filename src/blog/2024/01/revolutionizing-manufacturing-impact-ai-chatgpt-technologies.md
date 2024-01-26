@@ -59,8 +59,7 @@ Pros and Cons of AI and ChatGPT in Manufacturing
 5.  Dependence on Technology: Over-reliance on AI might hinder problem-solving skills in workers.
 
 
-Frequently Asked Questions (FAQs)
----------------------------------
+## Frequently Asked Questions (FAQs)
 
 1.  How is AI transforming the manufacturing industry? 
         **AI is revolutionizing manufacturing through automation, efficiency optimization, and innovation in production processes.**
