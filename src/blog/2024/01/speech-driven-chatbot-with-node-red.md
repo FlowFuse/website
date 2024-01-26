@@ -219,7 +219,7 @@ Your final flow should look like this:
 
 !["Deploying Sentiment analysis Node-RED flow"](./images/speech-driven-chatbot-flowfue-editor.png "Deploying Sentiment analysis Node-RED flow")
 
-Hurray ! We have successfully built our Speech-Driven Chatbot System. Now it's time to deploy the flow, to do that click on the red deploy button which you can find in the top right corner. After that go to `https://<your-instance-name>.flowfuse.cloud/dashboard`
+We have successfully built our Speech-Driven Chatbot System. Now it's time to deploy the flow, to do that click on the red deploy button which you can find in the top right corner. After that go to `https://<your-instance-name>.flowfuse.cloud/dashboard`
 
 !["Speech Driven Chatbot using Node-RED Dashboard 2.0"](./images/speech-driven-chatbot-system.gif "Speech Driven Chatbot using Node-RED Dashboard 2.0")
 
