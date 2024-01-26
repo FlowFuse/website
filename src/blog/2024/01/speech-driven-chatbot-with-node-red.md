@@ -155,7 +155,6 @@ We will build a Vue component that converts text received from ChatGPT into spee
 2. Paste the below Vue snippets into the template widget.
 3. Connect the template widget’s input to the ChatGPT node’s output.
 
-As I mentioned previously, I have added a comment for your understanding of the code.
 Paste the below snippet in the template widget which displays chat-gpt response on the dashboard
 
 ```html
