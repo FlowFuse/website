@@ -214,7 +214,7 @@ eleventyComputed:
                 <div class="w-full self-end order-last md:order-none">
                     <div class="copyright-statement inline">
                         <div>Copyright {% year %} FlowForge Inc. DBA FlowFuse. All Rights Reserved.
-                            <br>This site uses cookies. Click <a class="underline cursor-pointer" type="button" data-cc="c-settings">here</a> to manage your preferences.
+                            <br>This site uses cookies. Click <a class="underline cursor-pointer" type="button" data-cc="show-preferencesModal">here</a> to manage your preferences.
                         </div>
                     </div>
                 </div>
@@ -277,13 +277,13 @@ eleventyComputed:
     </footer>
 </body>
 <script>
-document.getElementById('nav-toggle').onclick = function(){
-    // self
-    document.getElementById("nav-toggle").classList.toggle("mobile-open");
-
-    let classes = document.getElementById("ff-header").classList;
-    classes.toggle("mobile-open");
-}
+    document.getElementById('nav-toggle').onclick = function(){
+        // self
+        document.getElementById("nav-toggle").classList.toggle("mobile-open");
+        
+        let classes = document.getElementById("ff-header").classList;
+        classes.toggle("mobile-open");
+    }
 </script>
 
 <!-- Youtube Facade -->
@@ -300,7 +300,7 @@ document.getElementById('nav-toggle').onclick = function(){
 <script async type="text/javascript" id="hs-script-loader" src="//js-eu1.hs-scripts.com/26586079.js"></script>
 
 <!-- PostHog -->
-<script>
+<script type="text/javascript">
     const getCookieValue = (name) => (
         document.cookie.match('(^|;)\\s*' + name + '\\s*=\\s*([^;]+)')?.pop() || ''
     )
@@ -395,14 +395,40 @@ document.getElementById('nav-toggle').onclick = function(){
 </script>
 
 <!-- Google tag (gtag.js) -->
-<script async type="text/javascript" src="https://www.googletagmanager.com/gtag/js?id=G-2ZH9W82QL8"></script>
-<script>
+<script async type="text/plain" data-category="analytics" src="https://www.googletagmanager.com/gtag/js?id=G-2ZH9W82QL8"></script>
+<script type="text/plain" data-category="analytics">
 window.dataLayer = window.dataLayer || [];
 function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
 gtag('config', 'G-2ZH9W82QL8');
+gtag('consent', 'update', {
+    'analytics_storage': 'granted'
+});
 </script>
 
-<script async src="https://tag.clearbitscripts.com/v1/pk_a40db34c3e210290335fe7ad7f2a7197/tags.js" referrerpolicy="strict-origin-when-cross-origin"></script>
+<script type="text/plain" data-category="!analytics">
+gtag('consent', 'update', {
+    'analytics_storage': 'denied'
+});
+</script>
+
+<script type="text/plain" data-category="ads">
+    gtag('consent', 'update', {
+        'ad_storage': 'granted',
+        'ad_user_data': 'granted',
+        'ad_personalization': 'granted'
+    });
+</script>
+
+<script type="text/plain" data-category="!ads">
+    gtag('consent', 'update', {
+        'ad_storage': 'denied',
+        'ad_user_data': 'denied',
+        'ad_personalization': 'denied'
+    });
+</script>
+
+<script type="text/javascript" async src="https://tag.clearbitscripts.com/v1/pk_a40db34c3e210290335fe7ad7f2a7197/tags.js" referrerpolicy="strict-origin-when-cross-origin"></script>
 {%- endif -%}
+
 </html>
