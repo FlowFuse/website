@@ -45,6 +45,7 @@ If you are unfamiliar with Vue, we have added comments that will help you to und
 
 We are going to start by pasting a user interface’s snippet which will allow us to interact with our system. This snippet adds a button that triggers our system to listen, an Icon, and a paragraph to display speech recognition results on the dashboard.
 
+{% raw %}
 ```html
 <template>
   <div style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
@@ -57,8 +58,9 @@ We are going to start by pasting a user interface’s snippet which will allow u
     <p> <strong>You:</strong> {{ results }}</p>
   </div>
 </template>
-
 ```
+{% endraw %}
+
 Now paste the below script right after the HTML in the template widget, This script adds functionality of speech recognition in our system.
 
  ```html
@@ -157,6 +159,7 @@ We will build a Vue component that converts text received from ChatGPT into spee
 
 Paste the below snippet in the template widget which displays chat-gpt response on the dashboard
 
+{% raw %}
 ```html
 <template>
   <div>
@@ -164,6 +167,8 @@ Paste the below snippet in the template widget which displays chat-gpt response 
   </div>
 </template>
 ```
+{% endraw %}
+
 Paste the below snippet right after the HTML, This snippet adds the functionality of text-to-speech into our system, which triggers when msg received by the previous node.
 
 ```html
