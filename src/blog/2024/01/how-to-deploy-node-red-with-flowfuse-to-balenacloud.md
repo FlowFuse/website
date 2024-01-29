@@ -11,7 +11,7 @@ tags:
     - how-to
 ---
 
-In a recent webinar with balena, we explored the dynamic capabilities of deploying FlowFuse to a fleet of devices using balena Cloud. This blog post serves as a practical guide to replicate that process, specifically tailored for those aiming to streamline their deployment of FlowFuse in an efficient and user-friendly manner.
+In a [recent webinar with balena](https://flowfuse.com/webinars/2024/balena/), we explored the dynamic capabilities of deploying FlowFuse to a fleet of devices using balena Cloud. This blog post serves as a practical guide to replicate that process, specifically tailored for those aiming to streamline their deployment of FlowFuse in an efficient and user-friendly manner.
 
 <!--more-->
 
@@ -23,7 +23,7 @@ Before diving into the deployment process, it's crucial to familiarize yourself 
 ## Creating a New Fleet in balena Cloud
 1. Navigate to the [FlowFuse git](https://github.com/FlowFuse/balena-device-agent) repository. Click on the **Deploy with balena** button.
 2. Name your fleet.
-3. Select your default device.*
+3. Select your default device.
 4. Click **Create and Deploy**.
 
 ## Adding Devices to the Fleet
