@@ -13,12 +13,45 @@ CookieConsent.run({
             flipButtons: false
         }
     },
+
+    onChange: function({changedCategories}){
+        if(changedCategories.includes('analytics')){
+            if(CookieConsent.acceptedCategory('analytics')){
+                // Enable Google Analytics
+                gtag('consent', 'update', {
+                    'analytics_storage': 'granted'
+                });
+            }else{
+                // Disable Google Analytics
+                gtag('consent', 'update', {
+                    'analytics_storage': 'denied'
+                });
+            }
+        }
+
+        if(changedCategories.includes('ads')){
+            if(CookieConsent.acceptedCategory('ads')){
+                gtag('consent', 'update', {
+                    'ad_storage': 'granted',
+                    'ad_user_data': 'granted',
+                    'ad_personalization': 'granted'
+                });
+            }else{
+                gtag('consent', 'update', {
+                    'ad_storage': 'denied',
+                    'ad_user_data': 'denied',
+                    'ad_personalization': 'denied'
+                });
+            }
+        }
+    },
+
     categories: {
         necessary: {
             readOnly: true
         },
-        // marketing: {},
-        analytics: {}
+        analytics: {},
+        ads: {}
     },
     language: {
         default: "en",
@@ -26,14 +59,14 @@ CookieConsent.run({
         translations: {
             en: {
                 consentModal: {
-                    title: "Hello traveller, it's cookie time!",
-                    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.",
+                    title: "This site uses cookies",
+                    description: "We use cookies to ensure this site's proper operation and, if you approve, tracking cookies to understand how you interact with it.",
                     acceptAllBtn: "Accept all",
-                    showPreferencesBtn: "Manage preferences",
-                    footer: "<a href=\"#link\">Privacy Policy</a>\n<a href=\"#link\">Terms and conditions</a>"
+                    showPreferencesBtn: "Settings",
+                    footer: "<a href=\"/privacy-policy/\">Privacy Policy</a>\n"
                 },
                 preferencesModal: {
-                    title: "Consent Preferences Center",
+                    title: "Cookie Options",
                     acceptAllBtn: "Accept all",
                     acceptNecessaryBtn: "Reject all",
                     savePreferencesBtn: "Save preferences",
@@ -42,26 +75,22 @@ CookieConsent.run({
                     sections: [
                         {
                             title: "Cookie Usage",
-                            description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+                            description: "We use cookies to ensure the basic functionality of the website and to enhance your online experience. You can opt-in/out of receiving non-essential cookies."
                         },
                         {
                             title: "Strictly Necessary Cookies <span class=\"pm__badge\">Always Enabled</span>",
-                            description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+                            description: "Essential cookies are crucial for the basic functionality of our website. Without these cookies, our website could not function properly.",
                             linkedCategory: "necessary"
                         },
                         {
                             title: "Analytics Cookies",
-                            description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+                            description: "Cookies and similar technologies used for analytics help collect data that allows services to understand how you interact with a particular service. These insights allow services to both improve content and build better features that enhance your experience.",
                             linkedCategory: "analytics"
                         },
                         {
                             title: "Advertisement Cookies",
-                            description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-                            linkedCategory: "marketing"
-                        },
-                        {
-                            title: "More information",
-                            description: "For any query in relation to my policy on cookies and your choices, please <a class=\"cc__link\" href=\"#yourdomain.com\">contact me</a>."
+                            description: "Google uses cookies for advertising, including serving and rendering ads, personalizing ads, limiting the number of times an ad is shown to a user, muting ads you have chosen to stop seeing, and measuring the effectiveness of ads.",
+                            linkedCategory: "ads"
                         }
                     ]
                 }
