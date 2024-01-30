@@ -1,6 +1,6 @@
 ---
-title: Device Quick connect
-date: 2024-01-26 13:00:00.0
+title: Device Onboarding Improvements
+date: 2024-02-15 13:00:00.0
 authors: ["stephen-mclaughlin"]
 tags:
     - changelog
@@ -11,8 +11,8 @@ have now introduced a new simpler and faster way of getting your devices
 configured and connected to the FlowFuse platform.
 
 Now, when you create a device on the platform, you will be offered a simple
-"Quick Connect" command. Run this command in a terminal or command windows
-and the let the device agent do all the hard work for you.
+"Setup command". Run this command in a terminal and the let the device
+agent do all the hard work for you.
 
 ![](./images/quick-connect-1.png)
 
