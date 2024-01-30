@@ -22,6 +22,7 @@ using the `New Repository Checklist` and then worked through.
 ### Settings
 
 - A rule should be added under the projects `settings/branches` to prevent pushing directly to the `main` branch
+- The `Do not allow bypassing the above settings` rule should be ticked when create branch rules
 
 ### Content
 
