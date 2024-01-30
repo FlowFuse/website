@@ -4,7 +4,7 @@ subtitle: Data isn't created equal, some data doesn't fit the UNS
 description: Data isn't created equal, some data doesn't fit the UNS
 date: 2024-01-31
 authors: ["zeger-jan-van-de-weg"]
-image: # TODO and update the UNS pillar page link image
+image: blog/2024/01/images/when-not-to-use-the-uns.png
 tags:
     - posts
     - flowfuse
