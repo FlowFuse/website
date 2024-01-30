@@ -4,7 +4,7 @@ subtitle: Fleet management made easier with FlowFuse and balena.
 description: Fleet management made easier with FlowFuse and balena.
 date: 2024-01-29
 authors: ["grey-dziuba"]
-image: 
+image: blog/2024/01/images/balena-and-flowfuse.png
 tags:
     - posts
     - flowfuse
