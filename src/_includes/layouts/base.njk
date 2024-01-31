@@ -17,7 +17,7 @@ meta:
 eleventyComputed:
   meta:
     url: "{{ page.url | url | toAbsoluteUrl }}"
-    description: "{{ description }}"
+    description: "{{ meta.description }}"
     modified: "{{ page.date }}"
 ---
 
