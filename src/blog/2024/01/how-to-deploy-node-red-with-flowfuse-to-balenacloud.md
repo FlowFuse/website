@@ -1,5 +1,5 @@
 ---
-title: Step-by-Step Guide to Deploying Node-RED with FlowFuse in balena Cloud
+title: Step-by-Step Guide to Deploying Node-RED with FlowFuse in balenaCloud
 subtitle: Fleet management made easier with FlowFuse and balena.
 description: Fleet management made easier with FlowFuse and balena.
 date: 2024-01-30
@@ -11,19 +11,19 @@ tags:
     - how-to
 ---
 
-In a [recent webinar with balena](https://flowfuse.com/webinars/2024/balena/), we explored the dynamic capabilities of deploying FlowFuse to a fleet of devices using balena Cloud. This blog post serves as a practical guide to replicate that process, specifically tailored for those aiming to streamline their deployment of FlowFuse in an efficient and user-friendly manner.
+In a [recent webinar with balena](https://flowfuse.com/webinars/2024/balena/), we explored the dynamic capabilities of deploying FlowFuse to a fleet of devices using [balenaCloud](https://www.balena.io/cloud). This blog post serves as a practical guide to replicate that process, specifically tailored for those aiming to streamline their deployment of FlowFuse in an efficient and user-friendly manner.
 
 <!--more-->
 
-# How to Implement FlowFuse with balena Cloud on a Fleet of devices
+# How to Implement FlowFuse with balenaCloud on a Fleet of devices
 
-[![Deploying Node-RED with FlowFuse in balena Cloud](https://i.ytimg.com/vi/cKFu1ljUlKE/hqdefault.jpg)](https://www.youtube.com/watch?v=cKFu1ljUlKE "Deploying Node-RED with FlowFuse in balena Cloud")
+[![Deploying Node-RED with FlowFuse in balenaCloud](https://i.ytimg.com/vi/cKFu1ljUlKE/hqdefault.jpg)](https://www.youtube.com/watch?v=cKFu1ljUlKE "Deploying Node-RED with FlowFuse in balenaCloud")
 
 
 ## Preparation Steps
 Before diving into the deployment process, it's crucial to familiarize yourself with key resources. We recommend reviewing our previous [blog post](https://flowfuse.com/blog/2023/11/device-agent-balena/) on deploying the FlowFuse Device Agent via balena. This post contains a vital link to the GitHub repository, essential for deploying FlowFuse with balena, laying the groundwork for the steps ahead.
 
-## Creating a New Fleet in balena Cloud
+## Creating a New Fleet in balenaCloud
 1. Navigate to the [FlowFuse git](https://github.com/FlowFuse/balena-device-agent) repository. Click on the **Deploy with balena** button.
 2. Name your fleet.
 3. Select your default device.
@@ -69,6 +69,6 @@ The final steps ensure that your setup is fully operational:
 3. Next, click the newly revealed button, **Open Editor**, to access the deployed Flow.
 
 ## Conclusion
-Implementing FlowFuse with balena Cloud significantly enhances your device management and data processing capabilities. This guide provides a foundational approach, but don't hesitate to delve deeper into each step to tailor the setup to your specific needs.
+Implementing FlowFuse with balenaCloud significantly enhances your device management and data processing capabilities. This guide provides a foundational approach, but don't hesitate to delve deeper into each step to tailor the setup to your specific needs.
 
 
