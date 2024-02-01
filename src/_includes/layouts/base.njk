@@ -112,6 +112,27 @@ eleventyComputed:
     {% set js %}{% include "base.js" %}{% endset %}
     <script>{{ js | jsmin | safe }}</script>
     {% jsonLdScript meta, type, tags %}
+
+    {%- if not DEV_MODE -%}
+    <!-- Google tag (gtag.js) -->
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+
+        // Set cookies to denied by default in EU countries, California, Brazil, Canada and Australia
+        gtag('consent', 'default', {
+            'ad_storage': 'denied',
+            'analytics_storage': 'denied',
+            'ad_user_data': 'denied',
+            'ad_personalization': 'denied',
+            'region': ['AT', 'BE', 'BG', 'HR', 'CY', 'CZ', 'DK', 'EE', 'FI', 'FR', 'DE', 'GR', 'HU', 'IE', 'IT', 'LV', 'LT', 'LU', 'MT', 'NL', 'PL', 'PT', 'RO', 'SK', 'SI', 'SE', 'GB', 'US-CA', 'BR', 'CA', 'AU']
+        });
+
+        gtag('js', new Date());
+        gtag('config', 'G-2ZH9W82QL8');
+    </script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2ZH9W82QL8"></script>
+    {%- endif -%}
 </head>
 <body class="ff-website leading-normal tracking-normal gradient text-gray-500 min-h-screen flex flex-col" style="">
     <div class="flex-grow base">
@@ -394,22 +415,17 @@ eleventyComputed:
     }
 </script>
 
-<!-- Google tag (gtag.js) -->
-<script async type="text/plain" data-category="analytics" src="https://www.googletagmanager.com/gtag/js?id=G-2ZH9W82QL8"></script>
+<!-- gtag - cookie banner update -->
 <script type="text/plain" data-category="analytics">
-window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
-gtag('config', 'G-2ZH9W82QL8');
-gtag('consent', 'update', {
-    'analytics_storage': 'granted'
-});
+    gtag('consent', 'update', {
+        'analytics_storage': 'granted'
+    });
 </script>
 
 <script type="text/plain" data-category="!analytics">
-gtag('consent', 'update', {
-    'analytics_storage': 'denied'
-});
+    gtag('consent', 'update', {
+        'analytics_storage': 'denied'
+    });
 </script>
 
 <script type="text/plain" data-category="ads">
