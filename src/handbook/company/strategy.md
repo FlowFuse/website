@@ -64,36 +64,33 @@ FlowFuse will drive the Node-RED project through:
  - **Establish close relationships** with other stakeholders of the project - those who have their own commercial interest in the success of the project. Encourage participation and engagement in the core project.
  - **Driving adoption** of Node-RED through our advocacy and our actions.
 
-## Become the standard way of running any Node-RED at any scale
+### Become the standard way of running any Node-RED for professional usage
 
 There's a wide range of deployment scenarios for applications built on Node-RED
-and FlowFuse aims to build a platform to help each of them to be successful.
+and FlowFuse aims to build a platform to help all businesses  of them to be successful.
 FlowFuse will solve challenges unsolved by Node-RED and push Low-Code and the
 extensions of Node-RED beyond the current capabilities.
 
 FlowFuse streamlines Node-RED for commercial use. On many levels FlowFuse helps
-organisations streamline their deployments with multi-tenancy,
-Role-based access control, audit logging, and enhanced security controls.
+organisations. By eleviating them of their operation burden and help scaling their 
+Node-RED fleets, providing improved developer velocity, and ensure deployments
+are secure and abide by the compliance of the customer.
 
-Teams are more effective with FlowFuse through our collaboration tooling.
-Allowing Flows to be developed by multiple individuals, ensuring quality and
-correctness. Push the boundaries of Low-Code to allow more people to collaborate.
+We believe this will make FlowFuse synonymous with Node-RED, and make it attractive to
+SMB users as well as enterprises.
 
-Furthermore, Node-RED is deployed in many different envirnments. FlowFuse
-empowers everyone to achieve the best results whatever the execution context.
+### Drive adoption of Node-RED in traditional industries
 
-We believe these two points will make FlowFuse synonymous with Node-RED, and
-make it attractive to individual users as well as Enterprises. Value offered
-will increase exponentially as the platform scales to teams of developers and
-larger deployment scenarios.
+Traditional industrial businesses (producing atoms, not bits) are currently digitalizing
+their operations to optimize their margins. They are struggling to acquire data produced by
+their operations, enrich and combine data from sources, and lastly visualizing and interacting
+with that data. Their production facilities are a mix of legacy machinery and modern digital-ready machinery.
 
-## Drive adoption of Node-RED in manufacturing
+Companies adopting Node-RED and FlowFuse are unlikely to need to restaff or upskill their staffing
+to accelerate their digitalization efforts. The mass adoption of Node-RED by industrial companies
+creates an opportunity for FlowFuse to offer a platform which professionalizes the operation of their Node-RED applications.
 
-Node-RED itself is already being used today in many industries to connect OT and IT environments, due to the challenge of heterogeneous protocols and demands. This shift is part of a larger trend: teams of all types are realizing that breaking down silos has compounding effects on productivity. Especially in all kinds of manufacturing and industrial companies, the way of production is changing rapidly and therefore the need to further integrate IT and OT. 
-
-We are positioned to become the Open-Source DevOps for Node-RED solution – a single application for all innovation and transformation to effectively close the gaps that exist between OT and IT.
-
-## Build an inclusive, high-performance team
+### Build an inclusive, high-performance team
 
 As a new company that starts small but aspires to grow, we need to ensure that growth is well managed, sustainable and rewarding.
 
