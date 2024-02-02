@@ -322,7 +322,7 @@ eleventyComputed:
 
 <!-- PostHog -->
 <script type="text/javascript">
-    const getCookieValue = (name) => (
+    const getMyCookieValue = (name) => (
         document.cookie.match('(^|;)\\s*' + name + '\\s*=\\s*([^;]+)')?.pop() || ''
     )
 
@@ -332,12 +332,12 @@ eleventyComputed:
 
     var phBootstrap = {}
 
-    if (!!(getCookieValue("ff-distinctid"))) {
-        phBootstrap['distinctID'] = getCookieValue("ff-distinctid")
+    if (!!(getMyCookieValue("ff-distinctid"))) {
+        phBootstrap['distinctID'] = getMyCookieValue("ff-distinctid")
     }
 
-    if (!!(getCookieValue("ff-feats"))) {
-        phBootstrap['featureFlags'] = decodeCookie(getCookieValue("ff-feats"))
+    if (!!(getMyCookieValue("ff-feats"))) {
+        phBootstrap['featureFlags'] = decodeCookie(getMyCookieValue("ff-feats"))
     } else {
         console.log("No feature flags found - falling back to 'control' content")
     }
@@ -346,9 +346,9 @@ eleventyComputed:
     posthog.init('{{ POSTHOG_APIKEY }}', {
         api_host:'https://eu.posthog.com',
         bootstrap: phBootstrap,
-        capture_pageleave: false
+        capture_pageleave: false,
+        opt_out_capturing_by_default: true
     })
-
     /*
         Custom pageleave handler to track scroll
     */
@@ -413,6 +413,15 @@ eleventyComputed:
             posthog.capture(eventName, props);
         }
     }
+</script>
+
+<!-- PostHog - cookie banner update -->
+<script type="text/plain" data-category="analytics">
+    posthog.opt_in_capturing();
+</script>
+
+<script type="text/plain" data-category="!analytics">
+    posthog.opt_out_capturing();
 </script>
 
 <!-- gtag - cookie banner update -->

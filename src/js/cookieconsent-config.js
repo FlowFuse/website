@@ -24,7 +24,7 @@ CookieConsent.run({
             gtag('event', 'cookie_consent', {
                 'event_category': 'analytics',
                 'event_label': 'accepted'
-            });
+            });        
         }else{
             // Disable Google Analytics
             gtag('consent', 'update', {
@@ -34,7 +34,7 @@ CookieConsent.run({
             gtag('event', 'cookie_consent', {
                 'event_category': 'analytics',
                 'event_label': 'denied'
-            });
+            });         
         }
 
         if(CookieConsent.acceptedCategory('ads')){
@@ -74,6 +74,8 @@ CookieConsent.run({
                     'event_category': 'analytics',
                     'event_label': 'accepted'
                 });
+                // Enable PostHog
+                posthog.opt_in_capturing();
             }else{
                 // Disable Google Analytics
                 gtag('consent', 'update', {
@@ -84,6 +86,8 @@ CookieConsent.run({
                     'event_category': 'analytics',
                     'event_label': 'denied'
                 });
+                // Disable PostHog
+                posthog.opt_out_capturing();
             }
         }
 
