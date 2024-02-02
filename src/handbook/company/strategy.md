@@ -67,12 +67,12 @@ FlowFuse will drive the Node-RED project through:
 ### Become the standard way of running any Node-RED for professional usage
 
 There's a wide range of deployment scenarios for applications built on Node-RED
-and FlowFuse aims to build a platform to help all businesses  of them to be successful.
+and FlowFuse aims to build a platform to help all businesses to be successful.
 FlowFuse will solve challenges unsolved by Node-RED and push Low-Code and the
 extensions of Node-RED beyond the current capabilities.
 
 FlowFuse streamlines Node-RED for commercial use. On many levels FlowFuse helps
-organisations. By eleviating them of their operation burden and help scaling their 
+organisations. By alleviating them of their operation burden and help scaling their 
 Node-RED fleets, providing improved developer velocity, and ensure deployments
 are secure and abide by the compliance of the customer.
 
