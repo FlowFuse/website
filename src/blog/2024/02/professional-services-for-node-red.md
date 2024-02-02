@@ -10,9 +10,12 @@ tags:
     - flowfuse
 ---
 
-In the industrial automation and control space, choosing the right tools and methods is crucial. As an Electrical Engineer with experience in System Integration, I've seen how different programming techniques impact the upkeep of a production line.  Complex programming techniques can cause downtime to be extended because troubleshooting becomes more complex. To minimize this effect, plant personnel typically create a set of standards that range from anything like wire coloring to programming languages. Whether it be Structured Text, Function Block Diagrams, or Ladder logic, staying consistent within a plant or facility is key.  Therefore, selecting the right SI (System Integrator) is crucial to the long-term success of a project because much of their goal is to adhere to these standards. Taking this philosophy a step forward, standardizing on a platform like Node-RED not only improves process flow, it opens the door to outsourcing integrations work.
+Choosing the right tools and methods is crucial, especially in the industrial automation and control space. While Node-RED is low-code, getting expert help might still be a good choice.
 
 <!--more-->
+
+As an Electrical Engineer with experience in System Integration, I've seen how different programming techniques impact the upkeep of a production line. Complex programming techniques can cause downtime to be extended because troubleshooting becomes more complex. To minimize this effect, plant personnel typically create a set of standards that range from anything like wire coloring to programming languages. Whether it be Structured Text, Function Block Diagrams, or Ladder logic, staying consistent within a plant or facility is key. Therefore, selecting the right SI (System Integrator) is crucial to the long-term success of a project because much of their goal is to adhere to these standards. Taking this philosophy a step forward, standardizing on a platform like Node-RED not only improves process flow, it opens the door to outsourcing integrations work.
+
 
 # Should You Invest in Professional Services for Your Node-RED Development?
 
