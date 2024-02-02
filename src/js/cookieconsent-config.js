@@ -157,7 +157,7 @@ CookieConsent.run({
                         },
                         {
                             title: "Analytics Cookies",
-                            description: "Cookies and similar technologies used for analytics help collect data that allows services to understand how you interact with a particular service. These insights allow services to both improve content and build better features that enhance your experience.",
+                            description: "We use Google Analytics, PostHog, and Clearbit for analytics. These services use cookies to collect data that helps us understand how you interact with our website. These insights allow us to improve our content and build better features that enhance your experience. Google Analytics uses cookies to track visitor interactions. PostHog uses cookies to understand user behavior. Clearbit uses cookies to attribute page views back to anonymous individuals and groups.",
                             linkedCategory: "analytics"
                         },
                         {
