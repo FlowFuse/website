@@ -149,4 +149,4 @@ FlowFuse has a [free trial]({{ site.appURL }}/account/create) if you'd like to s
 
 ## Conclusion
 
-However you host Node-RED, it's a great idea to get into good security practices as early as possible, and that no unsecured Node-RED instances are exposed to the internet. I hope some of the tips above help you get started down the path to creating more secure Node-RED projects.
+However you host Node-RED, it's a great idea to get into good security practices as early as possible to ensure no unsecured Node-RED instances are exposed to the internet. I hope some of the tips above help you get started down the path to creating more secure Node-RED projects.
