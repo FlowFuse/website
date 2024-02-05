@@ -1,6 +1,6 @@
 ---
 title: Device Onboarding Improvements
-date: 2024-02-15 13:00:00.0
+date: 2024-02-05 13:00:00.0
 authors: ["stephen-mclaughlin"]
 tags:
     - changelog
@@ -11,9 +11,9 @@ have now introduced a new simpler and faster way of getting your devices
 configured and connected to the FlowFuse platform.
 
 Now, when you create a device on the platform, you will be offered a simple
-"Setup command". Run this command in a terminal and the let the device
-agent do all the hard work for you.
+"Setup command". Run this command in a terminal and the let the Device
+Agent do all the hard work for you.
 
-![](./images/quick-connect-1.png)
+![](./images/device-onboarding-improvements-1.png)
 
-![](./images/quick-connect-2.png)
+![](./images/device-onboarding-improvements-2.png)
