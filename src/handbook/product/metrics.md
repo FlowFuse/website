@@ -26,7 +26,7 @@ The formula for calculating the WCI is as follows:
 
 This metric is designed to reflect the relative value of different customer segments to the organization, with higher tiers of customers being weighted more heavily due to their greater impact on revenue and strategic value.
 
-The metric can be found [here](https://new-product-metrics.flowfuse.cloud/dashboard/product).
+The metric can be found [on this dashboard](https://new-product-metrics.flowfuse.cloud/dashboard/product).
 
 ## Available Metrics
 
