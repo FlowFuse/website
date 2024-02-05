@@ -11,9 +11,9 @@ tags:
 ---
 
 
-<!--more-->
-
 In January 2013, I could have never foreseen that my fun little proof-of-concept project would become Node-RED, an open source low-code environment with millions of deployments in IoT and automation.
+
+<!--more-->
 
 Long before IoT became the ubiquitous term it is today, I was working in IBM’s Emerging Technology Group playing around with capturing data from devices and doing interesting things with it. The team focused on very fast-paced, short, proof-of-concept projects and was afforded time to learn new skills, innovate and work on side projects.
 
