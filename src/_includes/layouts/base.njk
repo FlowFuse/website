@@ -122,7 +122,7 @@ eleventyComputed:
     <script>{{ js | jsmin | safe }}</script>
     {% jsonLdScript meta, type, tags %}
 
-    {%- if not DEV_MODE -%}
+    {# {%- if not DEV_MODE -%} #}
     <!-- Google tag (gtag.js) -->
     <script>
         window.dataLayer = window.dataLayer || [];
@@ -141,7 +141,8 @@ eleventyComputed:
         gtag('config', 'G-2ZH9W82QL8');
     </script>
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-2ZH9W82QL8"></script>
-    {%- endif -%}
+    <script async type="text/javascript" id="hs-script-loader" data-category="analytics" src="//js-eu1.hs-scripts.com/26586079.js" onload="addHubSpotConsentListener()"></script>
+    {# {%- endif -%} #}
 </head>
 <body class="ff-website leading-normal tracking-normal gradient text-gray-500 min-h-screen flex flex-col">
     <div class="flex-grow base">
@@ -300,7 +301,27 @@ eleventyComputed:
                               {% include "components/rss.njk" %}
                             </a>
                           </li>
-                    </ul>
+                        </ul>
+                        <!-- Start of HubSpot code snippet -->
+                        <button type="button" id="hs_show_banner_button" style="background-color: #374151; border: 1px solid #374151;
+                               border-radius: 3px; padding: 10px 16px; text-decoration: none; color: #fff;
+                               font-family: inherit; font-size: inherit; font-weight: normal; line-height: inherit;
+                               text-align: left; text-shadow: none;" onClick="showBanner()">
+                            Cookie Settings
+                        </button>
+
+                        <script>
+                        function showBanner() {
+                            var _hsp = window._hsp = window._hsp || [];
+                            var intervalId = setInterval(function() {
+                                if (_hsp.indexOf('showBanner') > -1) {
+                                    _hsp.push(['showBanner']);
+                                    clearInterval(intervalId);
+                                }
+                            }, 1000); // Check every second
+                        }
+                        </script>
+                        <!-- End of HubSpot code snippet -->
                 </div>
             </div>
         </div>
@@ -320,7 +341,7 @@ eleventyComputed:
 <script async src="https://cdn.jsdelivr.net/npm/lite-youtube-embed@0.2.0/src/lite-yt-embed.min.js"></script>
 <link rel="preload" href="https://cdn.jsdelivr.net/npm/lite-youtube-embed@0.2.0/src/lite-yt-embed.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-{%- if not DEV_MODE -%}
+{# {%- if not DEV_MODE -%} #}
 <!-- PostHog -->
 <script type="text/javascript">
     const getMyCookieValue = (name) => (
@@ -431,10 +452,56 @@ eleventyComputed:
 <!-- HubSpot Tracking -->
 {% set hubspotJS %}{% include "hubspot.js" %}{% endset %}
 <script>{{ hubspotJS | jsmin | safe }}</script>
-<script async type="text/javascript" id="hs-script-loader" src="//js-eu1.hs-scripts.com/26586079.js"></script>
+
+<!-- Google Ads Tag -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-16456599728"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'AW-16456599728');
+</script>
+
+<!-- HubSpot Consent Listener -->
+<script type="text/javascript">
+    function addHubSpotConsentListener() {
+        console.log('addHubSpotConsentListener is running');
+        var _hsp = window._hsp = window._hsp || [];
+        console.log('CookieConsent.acceptedCategory: ', typeof CookieConsent.acceptedCategory);
+        _hsp.push(['addPrivacyConsentListener', function (consent) {
+            console.log('HubSpot consent listener added')
+            // Enable HubSpot functionality cookies by default
+            consent.categories.functionality = true;
+
+            if (CookieConsent.acceptedCategory('analytics')) {
+                // The user has accepted analytics cookies
+                // Enable HubSpot analytics cookies
+                consent.categories.analytics = true;
+            } else {
+                // The user has rejected analytics cookies
+                // Disable HubSpot analytics cookies
+                consent.categories.analytics = false;
+            }
+
+            if (CookieConsent.acceptedCategory('ads')) {
+                // The user has accepted ads cookies
+                // Enable HubSpot ads cookies
+                consent.categories.ads = true;
+            } else {
+                // The user has rejected ads cookies
+                // Disable HubSpot ads cookies
+                consent.categories.ads = false;
+            }
+
+            console.log(`analytics: ${consent.categories.analytics}`);
+            console.log(`advertisement: ${consent.categories.advertisement}`);
+            console.log(`functionality: ${consent.categories.functionality}`);
+        }]);
+    }
+</script>
 
 <!-- Cookie banner -->
 <script async type="text/javascript" src="/js/cc.min.js"></script>
-<script async src="https://www.googletagmanager.com/gtag/js?id=AW-16456599728"> </script> <script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'AW-16456599728'); </script>
-{%- endif -%}
+
+{# {%- endif -%} #}
 </html>
