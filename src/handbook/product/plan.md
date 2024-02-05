@@ -44,7 +44,7 @@ The progress bars presented adjacent to each category are rough estimates, offer
 ### Enhanced Integration Capabilities
 ![](https://geps.dev/progress/0)
 
-- Introduce a way of sharing MQTT Broker connection configurations securely in a team
+- [Introduce a way of sharing MQTT Broker connection configurations securely in a team](https://github.com/FlowFuse/flowfuse/issues/3444)
 - Adding MQTT Topic tree browsing capabilities
 
 ### Data Visualization & Analytics
