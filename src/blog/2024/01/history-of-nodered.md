@@ -2,7 +2,7 @@
 title: History of Node-RED
 subtitle: How it all started as told by Node-RED creator Nick O'Leary
 description: How it all started by Node-RED creator Nick O'Leary
-date: 
+date: 2024-02-08
 authors: 
 image: 
 tags:
