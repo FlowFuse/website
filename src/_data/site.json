@@ -8,6 +8,7 @@
     "messaging": {
         "tagLine": "Elevate Node-RED with FlowFuse ",
         "subtitle": "FlowFuse provides a complete platform to scale your production Node-RED applications, increase developer velocity, and enhance security in order to accelerate innovation.",
-        "title": "Node-RED for professionals"
+        "title": "Node-RED for professionals",
+        "keywords": "Node-RED, Application Developement, IoT, IIoT, Low-Code, Open-Source, open source"
     }
 }

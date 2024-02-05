@@ -34,7 +34,16 @@ eleventyComputed:
     <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#aa4444">
     <meta name="msapplication-TileColor" content="#00aba9">
     <meta name="theme-color" content="#ffffff">
-    <meta name="keywords" content="Node-RED, Application Developement, IoT, IIoT, Low-Code, Open-Source, open source">
+    
+    <!-- Meta Keywords -->
+    {% if tags %}
+    {% set filtered_tags = tags | reject('equalto', 'posts') | reject('equalto', 'node-red') | list %}
+    <meta name="keywords" content="{{ filtered_tags | join(', ') }}, {{ site.messaging.keywords }}">
+    {% elif meta.keywords %}
+    <meta name="keywords" content="{{ meta.keywords }}, {{ site.messaging.keywords }}">
+    {% else %}
+    <meta name="keywords" content="{{ site.messaging.keywords }}">
+    {% endif %}
 
     <!-- Browser Title -->
     {% if navTitle %}
