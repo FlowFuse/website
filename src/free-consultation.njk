@@ -1,0 +1,40 @@
+---
+layout: layouts/page.njk
+title: Schedule your Free Consultation
+meta:
+  description: Schedule a 30 minute free consultation with our experts and see how we can help scale your workflows.
+  robots: noindex, nofollow
+hubspot:
+  script: "hubspot/hs-form.njk"
+  formId: d24fa635-f19c-400b-82d4-b6f233faf38b
+  cta: "schedule-free-consult"
+  reference: "free-consultation"
+---
+<div class="w-full page webinar">
+  <div class="w-full pt-6 pb-24 ff-bg-light">
+    <div class="container flex flex-col md:flex-row m-auto text-left px-6 md:max-w-screen-lg gap-8 ">
+      <div class="max-w-screen-sm w-full">
+        <p>
+          Want to elevate your Node-RED applications to the next level and get results faster? <span class="font-bold">Schedule a 30 minute free
+            consultation with our experts</span> and see how we can help scale your workflows with high availability, enhanced
+          security, and simplified automation.
+          Our expertise has helped businesses across the world
+        </p>
+        <!-- Social proof logos -->
+        <div class="social-proof-logos-smaller mt-10 border-t border-gray-200">
+          <h4>
+            <div class="leading-8 w-auto mb-10">
+              Our expertise has helped businesses across the world
+            </div>
+          </h4>
+            {% include "social-proof.njk" %}
+        </div>
+      </div>
+      <!-- Form / Calendar Script -->
+      <div class="product mt-3">
+        <div class="w-80 w-full mx-auto">
+          {% include hubspot.script %}
+        </div>
+      </div>
+    </div>
+  </div>
