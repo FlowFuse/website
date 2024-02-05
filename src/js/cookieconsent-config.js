@@ -24,7 +24,7 @@ CookieConsent.run({
             gtag('event', 'cookie_consent', {
                 'event_category': 'analytics',
                 'event_label': 'accepted'
-            });        
+            });
         }else{
             // Disable Google Analytics
             gtag('consent', 'update', {
@@ -34,7 +34,7 @@ CookieConsent.run({
             gtag('event', 'cookie_consent', {
                 'event_category': 'analytics',
                 'event_label': 'denied'
-            });         
+            });
         }
 
         if(CookieConsent.acceptedCategory('ads')){
@@ -157,7 +157,7 @@ CookieConsent.run({
                         },
                         {
                             title: "Analytics Cookies",
-                            description: "We use Google Analytics, PostHog, and Clearbit for analytics. These services use cookies to collect data that helps us understand how you interact with our website. These insights allow us to improve our content and build better features that enhance your experience. Google Analytics uses cookies to track visitor interactions. PostHog uses cookies to understand user behavior. Clearbit uses cookies to attribute page views back to anonymous individuals and groups.",
+                            description: "We use Google Analytics, PostHog, and Clearbit for analytics. These services use cookies to collect data that helps us understand how you interact with our website. These insights allow us to improve our content and build better features that enhance your experience.",
                             linkedCategory: "analytics"
                         },
                         {
