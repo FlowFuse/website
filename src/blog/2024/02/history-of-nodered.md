@@ -4,7 +4,7 @@ subtitle: How it all started as told by Node-RED creator Nick O'Leary
 description: How it all started by Node-RED creator Nick O'Leary
 date: 2024-02-08
 authors: ["nick-oleary"]
-image: 
+image: blog/2024/02/images/history-of-node-red.png
 tags:
     - posts
     - flowfuse
