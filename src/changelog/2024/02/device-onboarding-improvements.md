@@ -17,3 +17,5 @@ Agent do all the hard work for you.
 ![](./images/device-onboarding-improvements-1.png)
 
 ![](./images/device-onboarding-improvements-2.png)
+
+To learn more about this, head to the [FlowFuse Device Agent](https://flowfuse.com/docs/device-agent/) documentation.
