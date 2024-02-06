@@ -2,7 +2,7 @@
 title: "Node-RED: The perfect adapter and middleware for your UNS"
 subtitle: The broker is the data backbone for the unified namespace, which one is right for you?
 description: The broker is the data backbone for the unified namespace, which one is right for you?
-date: 2024-02-05
+date: 2024-02-06
 authors: ["zeger-jan-van-de-weg", "marian-demme"]
 image: # TODO /blog/2024/01/images/broker-for-uns.png
 tags:
@@ -19,7 +19,7 @@ Digitalization is at the inflection point where it’s been adopted enough that 
 
 The digitalization effort in traditional industries like manufacturing, agriculture, and beyond, has additional challenges due to the high capex assets that need to join in the effort. As these assets will not be replaced, the only way is to adapt them. Adaptation will require tooling that can interact with sensor data regardless of the protocol, data format, and data structures.
 
-Node-RED bridges the gap between analog and digital data acquisition by seamlessly integrating with a vast array of protocols including serial bus support, Modbus, MQTT, and OPC-UA. Its format agnostic nature allows it to handle diverse data formats, from parsing binary data, to JSON, Protobuf (Sparkplug b),  making it a versatile tool for extracting and manipulating data from various sources. With its widespread adoption, Node-RED ensures compatibility with almost every protocol, enabling users to connect and process data from a wide range of devices and applications.
+Node-RED bridges the gap between analog and digital data acquisition by seamlessly integrating with a vast array of protocols including serial bus support, Modbus, MQTT, and OPC-UA. Its format agnostic nature allows it to handle diverse data formats, from parsing binary data, to JSON, Protobuf (Sparkplug B), making it a versatile tool for extracting and manipulating data from various sources. With its widespread adoption, Node-RED ensures compatibility with almost every protocol, enabling users to connect and process data from a wide range of devices and applications.
 
 ### Contextualisation of the data
 
@@ -33,12 +33,12 @@ Filtering of data is also a great use-case for Node-RED, generally just a `chang
 
 ### Continuous improvement
 
-While it would be ideal if data schemas were stable, changes are frequent and unpredictable. It’s a non-obvious requirement for your UNS edge to be adaptable. Message structures can change, to add or remove data from them. Though also the format, from JSON to Sparkplug B, or maybe to XML. Not so say that standardization of messages will continuously require updates to leverage the UNS for higher business value.
+While it would be ideal if data schemas were stable, changes are frequent and unpredictable. It’s a non-obvious requirement for your UNS edge to be adaptable. Message structures can change, to add or remove data from them. Though also the format, from JSON to Sparkplug B, or maybe to XML. Not to say that standardization of messages will continuously require updates to leverage the UNS for higher business value.
 
 A swiss-army knife as both data sender and receiver is not just a nice-to-have, it’s a requirement.
 
 ### Scalable operations
 
-While there’s other tools available that can adapt to a few protocols, or parse a handful of data formats, there’s no alternative for Node-REDs breadth and depth of integration level. This is why many organizations have already adopted Node-RED for their edge cases, which their current standard solution doesn’t handle.
+While there are other tools available that can adapt to a few protocols, or parse a handful of data formats, there’s no alternative for Node-REDs breadth and depth of integration level. This is why many organizations have already adopted Node-RED for their edge cases, which their current standard solution doesn’t handle.
 
 There’s no situation where a vendor provided, off-the-shelf solution handles protocols and formats across vendors, modern and legacy OT, that also satisfies the IT requirements unless the extensibility is handled through an Open-Source community, with compliance and security controls from a professional entity surrounding the open source project.
