@@ -4,7 +4,7 @@ subtitle: The broker is the data backbone for the unified namespace, which one i
 description: The broker is the data backbone for the unified namespace, which one is right for you?
 date: 2024-02-06
 authors: ["zeger-jan-van-de-weg", "marian-demme"]
-image: # TODO /blog/2024/01/images/broker-for-uns.png
+image: /blog/2024/02/images/node-red-for-uns.png
 tags:
     - posts
     - flowfuse
