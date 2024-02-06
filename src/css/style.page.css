@@ -637,10 +637,6 @@
         @apply w-full px-4 pt-4 md:pt-12;
     }
 
-    .social-proof-logos {
-        @apply m-auto max-w-5xl pb-10 text-center px-6 border-t border-gray-200 pt-10 md:mt-6;
-    }
-
     .other-channels {
         @apply grid px-6 lg:px-0 grid-cols-1 md:grid-cols-2 gap-6 md:gap-x-12 gap-y-12 mb-16 pt-14;
     }
