@@ -9,6 +9,9 @@ tags:
     - posts
     - node-red
     - how-to
+meta:
+  keywords: Node-RED getting started, Node-RED Tutorial, Install Node-RED, 
+  
 ---
 
 
