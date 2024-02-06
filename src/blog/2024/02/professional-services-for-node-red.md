@@ -10,27 +10,31 @@ tags:
     - flowfuse
 ---
 
-Professional services come in many different forms.  Anything from setup and configuration, flow development, to node development.  In this article, we will cover a few examples of how you can leverage professional services for your Node-RED applications.
+Professional services come in many different forms. Anything from setup and configuration, flow development, to node development. In this article, we will cover a few examples of how you can leverage professional services for your Node-RED applications.
 
 <!--more-->
 
 # Should You Invest in Professional Services for Your Node-RED Development?
 
-Node-RED is multifaceted, and Professional Services can apply to many use cases.  We will break it down into three categories that will help identify whether PS (Professional Services) is right for you.  Those categories will be setup, flow development, and node development.  Each takes a different skill set and has different levels of complexity.
+Node-RED is multifaceted, and Professional Services (PS) can apply to many use cases.  We will break it down into three categories that will help identify whether PS (Professional Services) is right for you. Those categories will be setup, flow development, and node development. Each takes a different skill set and has different levels of complexity.
 
-Before we jump into things, we need to understand the value proposition of Node-RED.  Why Node-RED?  Node-RED is a tool that makes Citizen Development a reality.  It should be treated that way throughout the development journey regardless of Professional Services or not.  Following standard procedures that minimize complexity, for example: reducing the use of function nodes when other nodes would be more ideal. Don’t overcomplicate things that don’t need to be or better said by this quote.
+Before we jump into things, we need to understand the value proposition of Node-RED. Why Node-RED? Node-RED is a tool that makes Citizen Development a reality. It should be treated that way throughout the development journey regardless of Professional Services or not. Following standard procedures that minimize complexity, for example: reducing the use of function nodes when other nodes would be more ideal. Don’t overcomplicate things that don’t need to be or better said by this quote.
 
 > Easy things should be easy, and hard things should be possible. 
 -Larry Wall
 
 ## Setup
 
-It is often recommended to use PS for the setup and installation of products, and Node-RED and FlowFuse aren't different.  This becomes especially true if you desire to professionalize your Node-RED instance.  The reason for this is that PS teams focus on minimizing the risk of application failure, security compromise, and data/ip loss.   This is an area of PS that can easily be overlooked, mainly there aren't any negative consequences in the short term.  The work these teams focus on prevents catastrophic issues in the future.  With Node-RED and FlowFuse, these teams will focus on installing FlowFuse based on system requirements and prerequisites, migrating existing Node-RED instances, securing your environment, and integrating with your existing ecosystem of applications.
-
+It is often recommended to use PS for the setup and installation of products,
+and Node-RED and FlowFuse aren't different. This becomes especially true if you
+desire to professionalize your Node-RED instance. The reason for this is that PS
+teams focus on minimizing the risk of application failure, security compromise,
+and data/ip loss. This is an area of PS that can easily be overlooked, mainly
+there aren't any negative consequences in the short term. The work these teams focus on prevents catastrophic issues in the future. With Node-RED and FlowFuse, these teams will focus on installing FlowFuse based on system requirements and prerequisites, migrating existing Node-RED instances, securing your environment, and integrating with your existing ecosystem of applications.
 
 ## Flow development
 
-Oftentimes, many think of Flow development when they think of PS for Node-RED. There will be a process flow that needs to be accomplished, but it is leveraging standard nodes built within the Node-RED platform.  Occasionally, there will be a need to install a custom node from the pallet manager, but the complexities in the development are adhering to a process and or visualization.  There may be complex data translation, but for the most part, access to the command line of the Node-RED instance is unnecessary.  Professional services may be used in situations like this where knowledge of specific systems that Node-RED is integrating into is complex.  For example, a complex backend database for specific industry-wide used applications.
+Oftentimes, many think of Flow development when they think of PS for Node-RED. There will be a process flow that needs to be accomplished, but it is leveraging standard nodes built within the Node-RED platform. Occasionally, there will be a need to install a custom node from the pallet manager, but the complexities in the development are adhering to a process and or visualization.  There may be complex data translation, but for the most part, access to the command line of the Node-RED instance is unnecessary. Professional services may be used in situations like this where knowledge of specific systems that Node-RED is integrating into is complex. For example, a complex backend database for specific industry-wide used applications.
 
 ## Node Development
 
@@ -40,7 +44,7 @@ Whether addressing the need for custom integration with internal systems or expa
 
 ### Conflating Flow and Node Development
 
-It is important when scoping out a project to identify all of the potential nodes needed and identify any potential missing ones.  The skills for developing Nodes and Flow development, while similar, are often different skill sets.  Having these identified will help prevent scope creep and setting expectations on timelines.
+It is important when scoping out a project to identify all of the potential nodes needed and identify any potential missing ones. The skills for developing Nodes and Flow development, while similar, are often different skill sets.  Having these identified will help prevent scope creep and setting expectations on timelines.
 
 ## Conclusion
 
