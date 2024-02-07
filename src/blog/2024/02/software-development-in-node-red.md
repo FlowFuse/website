@@ -37,7 +37,7 @@ Whether you are writing lines of code or not, eventually you will need to figure
 
 In Software Engineering there are two typical approaches. One is to add debug statements through the code to print out bits of information as the program runs. Then, depending on what output you got, you'd move the debug statements around, add some more, print out different bits of information - all until you'd nailed down the problem. This is the Debug node approach in Node-RED; adding nodes at different points of your flow to capture some piece of information and then iterating as you go.
 
-This is probably how most Node-RED users go about it today. The downside is you end up leaving the Debug nodes in place, capturing information long after its needed.
+This is probably how most Node-RED users go about it today. The downside is you end up leaving the Debug nodes in place, capturing information long after it is needed.
 
 The alternative approach is Step-by-Step debugging. This is why you are able to pause the program and then step it forward one statement at a time - examining the state at each point. But what's the equivalent for low-code? Pretty much exactly that when you have the Node-RED Debugger plugin installed.
 
@@ -49,11 +49,11 @@ You can then examine those messages and tell the Debugger to 'release' them one 
 
 ### Testing
 
-Testing code is a critical part of developing software. You want to make sure it does what you want. But its more than just manually testing it once and then letting it go; you want to have tests you can run regularly, whenever you make changes, to ensure you don't break something that was working previously.
+Testing code is a critical part of developing software. You want to make sure it does what you want. But it's more than just manually testing it once and then letting it go; you want to have tests you can run regularly, whenever you make changes, to ensure you don't break something that was working previously.
 
 In the Software Development world, there are all sorts of testing methodologies and techniques; unit testing individual components, system testing larger sections, stubbing out components to simulate different conditions, integrating test suites into the whole development process.
 
-They each have their own place in the process of software development. The question is how does this apply to Node-RED? 
+They each have their own place in the process of software development. The question is, how does this apply to Node-RED? 
 
 Most Node-RED users today will of course be testing their flows whilst developing them - iterating until the flow does what is needed. It's far less common to have a set of repeatable tests including the flows.
 
