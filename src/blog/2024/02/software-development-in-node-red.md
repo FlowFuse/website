@@ -24,11 +24,13 @@ This is all about spotting problems *before* the code runs. It also helps ensure
 
 Having code that is consistently formatted and free of syntactic mistakes makes it much easier to maintain.
 
-Applying this concept to Node-RED, we have the `nrlint` tool. This is a linting tool that can run either on the command-line or within the editor directly to spot potential problems with the flows.
+Applying this concept to Node-RED, we have the [`nrlint` tool](https://github.com/node-red/nrlint). This is a linting tool that can run either on the command-line or within the editor directly to spot potential problems with the flows.
 
 On the stylistic side, for example, it can highlight nodes that aren't properly aligned to the grid. Whilst this doesn't have any bearing on the runtime operation of the flow, it encourages keeping the flows tidy and orderly.
 
 It can help identify potential infinite loops in flows, and highlight Debug nodes without a name set.
+
+![](./images/node-red-linter.png)
 
 
 ### Debugging
@@ -39,12 +41,13 @@ In Software Engineering there are two typical approaches. One is to add debug st
 
 This is probably how most Node-RED users go about it today. The downside is you end up leaving the Debug nodes in place, capturing information long after it is needed.
 
-The alternative approach is Step-by-Step debugging. This is why you are able to pause the program and then step it forward one statement at a time - examining the state at each point. But what's the equivalent for low-code? Pretty much exactly that when you have the Node-RED Debugger plugin installed.
+The alternative approach is Step-by-Step debugging. This is why you are able to pause the program and then step it forward one statement at a time - examining the state at each point. But what's the equivalent for low-code? Pretty much exactly that when you have the [Node-RED Debugger plugin](https://flows.nodered.org/node/node-red-debugger) installed.
 
 This allows you to set 'breakpoints' on any node input or output that are triggered when a message arrives at that point of the flow. The Debugger will then pause the whole runtime and shows you all of the queued up messages in the flow.
 
 You can then examine those messages and tell the Debugger to 'release' them one at a time - seeing how the flow progresses.
 
+![](./images/node-red-debugger.png)
 
 
 ### Testing
@@ -78,3 +81,9 @@ The low-code nature of Node-RED means it is easily accessible to a wide range of
 If you have a task to solve, and understand it well enough to break it into the right set of steps, translating that into a Node-RED flow can be much easier than having to write all of the corresponding code from scratch.
 
 Just because you aren't writing code in Node-RED, it doesn't mean you shouldn't be able to benefit from ways of working that are proven to improve the end result - whilst keeping true to the low-code nature of the project.
+
+### FlowFuse Cloud
+
+Both `nrlint` and Node-RED Debugger are already pre-installed in all [FlowFuse Cloud](https://app.flowfuse.com) hosted instances. You can start using them today via the sidebar menu.
+
+![](./images/node-red-sidebar.png)
