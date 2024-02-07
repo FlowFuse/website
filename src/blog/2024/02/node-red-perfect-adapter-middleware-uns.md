@@ -1,7 +1,7 @@
 ---
 title: "Node-RED: The perfect adapter and middleware for your UNS"
-subtitle: The broker is the data backbone for the unified namespace, which one is right for you?
-description: The broker is the data backbone for the unified namespace, which one is right for you?
+subtitle: How Node-RED Enhances Connectivity and Efficiency in Unified Namespace Environments.
+description: How Node-RED Enhances Connectivity and Efficiency in Unified Namespace Environments.
 date: 2024-02-06
 authors: ["zeger-jan-van-de-weg", "marian-demme"]
 image: /blog/2024/02/images/node-red-for-uns.png
