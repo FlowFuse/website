@@ -1,7 +1,7 @@
 ---
 title: Bringing Software Development practices to Node-RED
-subtitle: Applying lessions from traditional development to the low-code space.
-description: Applying lessions from traditional development to the low-code space.
+subtitle: Applying lessons from traditional development to the low-code space.
+description: Applying lessons from traditional development to the low-code space.
 date: 2024-02-06
 authors: ["nick-oleary"]
 image: /blog/2024/02/images/software-development-practices-to-node-red.png
