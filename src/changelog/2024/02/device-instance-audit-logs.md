@@ -6,18 +6,12 @@ tags:
     - changelog
 ---
 
-With the introduction of the Device Auditlog last month, now we collect and display the logging events from the Node-RED instance running on your device.
+With the recent introduction of the Device audit log, we've now updated the Device Agent to start logging events from the Node-RED instance running on your device.
 
 This brings closer parity with the logging you get from a hosted instance.
 
-Additional Events Recorded in the Device Auditlog include:
+The audit log events include details of the flows being updated, nodes being added or removed from the palette and other changes to the configuration.
 
-- Context Key Deleted
-- Node-RED Settings Updated
-- Flows Reloaded
-- Flow Deployed
-- Nodes Installed
-- Nodes Removed
-- Library Item Saved
+Update to Device Agent v2.2 to start receiving the events.
 
 ![Device Audit log](./images/device-auditlog.png)
