@@ -25,6 +25,24 @@ Please report any vulnerabilities discovered in FlowFuse products to security@fl
 We will endeavour to acknowledge and fix any reported vulnerabilities as soon as possible based
 on its severity and assessed impact to our users.
 
+### Reporting Requirements
+
+We will evaluate all submissions made in good faith, however we do require a minimum set of information
+to be included for a report to be considered. This is intended to discourage spam submissions as they
+do not benefit anyone involved.
+
+1. Time/date (UTC) the issue was discovered
+2. Username/email of any users involved with the issue
+3. URLs involved in the issue; simply providing the home url of our website is not sufficient
+
+The more concrete information that can be provided in the initial issue report, the quicker we will
+be able to evaluate it.
+
+We reserve the right to reject any submission that fails to provide sufficient details. We will also
+record submissions that turn out to be invalid or lack supporting evidence. Where there becomes a
+pattern of such submissions from an individual, this will have a bearing on any future consideration
+of bug bounty rewards for genuine issues they submit.
+
 ## Bug Bounties
 
 At our sole discretion, we offer rewards for responsibly disclosed issues according
