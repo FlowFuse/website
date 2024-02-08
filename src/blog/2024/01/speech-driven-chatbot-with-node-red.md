@@ -28,7 +28,7 @@ Speech recognition is a technology where a device captures spoken words through 
 
 # Installing Dashboard 2.0 
 
-The first thing we need to do to get things started is installing Dashboard 2.0.  This allows you to [Add a bit about why we are using dashboard 2.0] 
+The first thing we need to do to get things started is installing Dashboard 2.0.
 
 1. Install Node-RED Dashboard 2.0. Follow these [instructions](https://dashboard.flowfuse.com/getting-started.html) to install.
 2. Create your first group, page, theme, and base.
