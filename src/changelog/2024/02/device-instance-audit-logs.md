@@ -1,6 +1,6 @@
 ---
 title: Device Instance Audit Logging
-date: 2024-02-07 13:00:00.0
+date: 2024-02-08 13:00:00.0
 authors: ["stephen-mclaughlin"]
 tags:
     - changelog
