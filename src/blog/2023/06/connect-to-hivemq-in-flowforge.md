@@ -1,5 +1,5 @@
 ---
-title: Connect to an MQTT Broker - HiveMQ Cloud with Node-RED
+title: Connect Node-RED to HiveMQ Cloud an MQTT Broker
 subtitle: A Guide to Connecting HiveMQ with Node-RED
 description: Node-RED has great support for MQTT, in this guide we'll explain why that's fundamental for IoT and how to connect to a broker
 date: 2023-06-13
