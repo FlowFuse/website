@@ -1,5 +1,5 @@
 ---
-title: Pricing chnage for Devices
+title: Pricing change for Devices
 date: 2024-02-09 13:00:00.0
 authors: ["marian-demme"]
 tags:
