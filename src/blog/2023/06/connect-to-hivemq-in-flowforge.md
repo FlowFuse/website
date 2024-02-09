@@ -1,10 +1,14 @@
 ---
-title: MQTT and its Role in IoT and Industrial IoT
+title: Connect Node-RED to HiveMQ Cloud an MQTT Broker
 subtitle: A Guide to Connecting HiveMQ with Node-RED
 description: Node-RED has great support for MQTT, in this guide we'll explain why that's fundamental for IoT and how to connect to a broker
 date: 2023-06-13
 authors: ["zeger-jan-van-de-weg"]
 image: blog/2023/06/images/flowforge-nodered-mqtt-hivemq.png
+tags:
+  - node-red
+  - mqtt
+  - hivemq
 ---
 
 In the world of IIoT (Industrial Internet of Things), effective and efficient communication between devices is crucial. One protocol that has gained significant popularity for its lightweight and scalable nature is MQTT (Message Queuing Telemetry Transport). This post explains what MQTT is, highlight its relevance in IIoT, and walk you through the process of connecting a broker (HiveMQ) with Node-RED in FlowFuse.
