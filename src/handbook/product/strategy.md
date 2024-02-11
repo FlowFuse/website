@@ -18,6 +18,13 @@ Click [here](./verticals.md#industrial-iot-platforms) for more details about the
 
 With its prowess in connecting and processing data from IIoT devices, Node-RED and FlowFuse find a fitting place in the sphere of IIoT platforms, becoming an integral tool in industries like manufacturing where the utility of such data is paramount for fostering operational efficacy and stimulating innovation. We exist to empower bottom-up innovation. We allow companies to professionalize their workflows to business critical applications.
 
+Our market positioning is underpinned by two pivotal hypotheses that address pressing demands in the IIoT space:
+
+1. The prevailing landscape of IIoT software solutions is full of off-the-shelf products that seldom meet the unique demands of specific use cases. This gap underscores a pressing need for flexible, adaptable solutions that can be tailored to fit the intricate requirements of diverse operational environments, ensuring a glove-like fit rather than a one-size-fits-all approach.
+2. The notion that true innovation within a manufacturing landscape should emanate from a bottom-up approach is central to our philosophy. Engineers and frontline workers, immersed in the day-to-day challenges and intricacies of manufacturing processes, are uniquely positioned to identify areas ripe for innovation and improvement. By empowering these individuals with the tools and platforms to implement their insights, we can unlock a wellspring of transformative ideas and solutions that drive the industry forward.
+
+[Here](./personas/index.md#common-use-cases) you can find the demands of specific personas and their classic use cases.
+
 ## Go to Market (GTM) pillars & initiatives
 
 Our strategic pillars are points aimed at steering our investment and innovation efforts. The initiatives are indication and statement of intent for the next 6 months. All GTM pricing principles can be found [here](./pricing.md).
