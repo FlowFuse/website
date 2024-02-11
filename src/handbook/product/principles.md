@@ -46,6 +46,18 @@ default and only expose to the user if absolutely necessary.
 
 See also: [Convention over Configuration on Wikipedia](https://en.wikipedia.org/wiki/Convention_over_configuration).
 
+### Low level of shame 
+
+GitLab Head of Remote Darren M.
+
+> In many organizations, you take a risk when you put forth any work that’s not perfect — where you haven’t spent endless cycles planning for contingencies or counterpoints. Because of this, you’re incentivized to invest a lot of time and effort into preparing for ‘What if?’ scenarios before any work is presented.
+
+The downside to that is clear. If you do eventually put forth the work, but it needed to be course corrected a long time ago, you’ve now squandered a lot of time that you could have spent improving it via iteration.
+
+Having a low level of shame requires you to combat a natural inclination to conceal work until it’s perfect, and instead celebrate the small changes.
+
+See also: [Low level of shame - GitLab handbook](https://handbook.gitlab.com/handbook/values/#low-level-of-shame)
+
 ### Open Source & Enterprise
 
 We offer a number of ways that users can run the FlowFuse product, we will
