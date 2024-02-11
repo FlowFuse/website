@@ -18,9 +18,9 @@ Click [here](./verticals.md#industrial-iot-platforms) for more details about the
 
 With its prowess in connecting and processing data from IIoT devices, Node-RED and FlowFuse find a fitting place in the sphere of IIoT platforms, becoming an integral tool in industries like manufacturing where the utility of such data is paramount for fostering operational efficacy and stimulating innovation. We exist to empower bottom-up innovation. We allow companies to professionalize their workflows to business critical applications.
 
-## Go to Market pillars & initiatives
+## Go to Market (GTM) pillars & initiatives
 
-Our strategic pillars are points aimed at steering our investment and innovation efforts. The initiatives are indication and statement of intent for the next 6 months.
+Our strategic pillars are points aimed at steering our investment and innovation efforts. The initiatives are indication and statement of intent for the next 6 months. All GTM pricing principles can be found [here](./pricing.md).
 
 ### Advancing Enterprise-Readiness
 
@@ -42,23 +42,22 @@ FlowFuse already supports this process by creating snapshots on Node-RED instanc
 
 ### Enhanced Integration Capabilities
 
-The [Unified Namespace](https://flowfuse.com/unified-namespace/) is a modern IT/OT Architecture for industrial companies to accellerate digital transformation. All data, from sensors, systems, and machines, are connected to make their data available to a unified network of data producers and consumers. This speeds up application building, system integration, and delivers faster insights into productivity. Node-RED and FlowFuse are a perfect match and should be positioned as integral entities of a modern UNS architecture. The natural flexibility of Node-RED, in combination with FlowFuse, offers all the requirements to realize the OT and IT integration and contextualization into a UNS. It also provides analytical and real-time monitoring capabilities to generate actionable insights.
+The [Unified Namespace](https://flowfuse.com/unified-namespace/) is a modern IT/OT architecture for industrial companies to accelerate digital transformation. All data, from sensors, systems, and machines, are connected to make their data available to a unified network of data producers and consumers. This speeds up application building, system integration, and delivers faster insights into productivity. Node-RED and FlowFuse are a perfect match and should be positioned as integral entities of a modern UNS architecture. The natural flexibility of Node-RED, in combination with FlowFuse, offers all the requirements to realize the OT and IT integration and contextualization into a UNS. It also provides analytical and real-time monitoring capabilities to generate actionable insights.
 
-- [Introduce a way of sharing MQTT Broker connection configurations securely in a team](https://github.com/FlowFuse/flowfuse/issues/3444)
-- Adding MQTT Topic tree browsing capabilities
+- [Introduce a way of sharing MQTT Broker connection configurations securely in a team](https://github.com/FlowFuse/flowfuse/issues/3444). MQTT is one of the most common protocols used for an UNS architecture; therefore, it is extremely important to allow users to not only configure and establish an MQTT connection from Node-RED but also to share configurations in a team or enterprise.
+- Adding MQTT Topic tree browsing capabilities is one of the most common MQTT features, which allows easier navigation and application creation while using MQTT. The MQTT topic tree should be ideally accessible directly within the Editor and shared across a Team.
 
 ### Data Visualization & Analytics
 
-FlowFuse's commitment to a low-programming approach via Node-RED, complemented by Node-RED Dashboard, allows for advanced data management and analytical functions. The Node-RED Dashboard provides a crucial interactive graphical user interface for Node-RED applications, allowing users to see data in a more visually engaging and understandable format. By processing and visualization of data, we will deliver insights into asset state, track patterns, and optimize asset use.
+FlowFuse's commitment to a low-programming approach via Node-RED, complemented by the Node-RED Dashboard, allows for advanced data management and analytical functions. The Node-RED Dashboard provides a crucial interactive graphical user interface for Node-RED applications, allowing users to see data in a more visually engaging and understandable format. By processing and visualizing data, we will deliver insights into asset state, track patterns, and optimize asset use.
 
-- FlowFuse Dashboard extension allowing [user specific dashboards](https://github.com/FlowFuse/node-red-dashboard/issues/1) and RBAC.
+- FlowFuse Dashboard feature parity with D1.0. A logical step to replace D1.0 .
 
-- Manufacturing Widgets Extension for Dashboard 2.0
+- Manufacturing Widgets Extension for Dashboard 2.0. This extension should provide very classic manufacturing visualization, making it even easier to create Node-RED Dashboards for manufacturing.
 
 ### User-Friendly Low-Code Approach
 
-FlowFuse is built upon the strength of Node-RED's user-friendly, low-code approach, positioning us well within the IIoT market. We believe Node-RED provides the best foundation, but we're committed to not only utilizing its existing capabilities but also contributing to its upstream improvement. By refining Node-RED and adding enhancements, we aim to create an even more intuitive, powerful, and accessible platform. This will enable end-users to swiftly and intuitively build applications and reducing the dependency on expert programmers.
+FlowFuse is built upon the strength of Node-RED's user-friendly, low-code approach, positioning us well within the IIoT market. We believe Node-RED provides the best foundation, but we're committed to not only utilizing its existing capabilities but also contributing to its upstream improvement. By refining Node-RED and adding enhancements, we aim to create an even more intuitive, powerful, and accessible platform. This will enable end-users to swiftly and intuitively build applications, reducing the dependency on expert programmers.
 
-- [Immersive Node-RED experience](https://github.com/FlowFuse/flowfuse/issues/2246)
+- [Immersive Node-RED experience](https://github.com/FlowFuse/flowfuse/issues/2246), a separation between the Node-RED Editor and FlowFuse leads to unused features from a UX standpoint in FlowFuse, due to the need to jump between both entities. An immersive Node-RED experience embeds Node-RED into FlowFuse, allowing seamless usage of Node-RED and FlowFuse features.
 
-- Having all blueprints in our library to build a MES system.
