@@ -211,4 +211,4 @@ Our Inventory Management System is now complete and ready for deployment. To ini
 !["Inventory management system"](./images/postgresql_with_node-red_Inventory_management_system.png "Inventory management system")
 
 # Conclusion 
-Tthis guide has demonstrated the integration of PostgreSQL with Node-RED. Throughout this article we've built an inventory management system with data stored in a database. You've learned to create and drop tables, and performing operations like inserting, updating, and deleting data. Also, we have highlighted best practices such as utilizing environment variables and selecting certified nodes to ensure security.
+This guide has demonstrated the integration of PostgreSQL with Node-RED. Throughout this article we've built an inventory management system with data stored in a database. You've learned to create and drop tables, and performing operations like inserting, updating, and deleting data. Also, we have highlighted best practices such as utilizing environment variables and selecting certified nodes to ensure security.
