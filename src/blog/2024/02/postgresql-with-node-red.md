@@ -1,7 +1,7 @@
 ---
-title: Using Postgresql with Node-RED
-subtitle: Guide to integrating Postgresql database into Node-red Applications.
-description: Guide to integrating Postgresql database into Node-red Applications.
+title: Using PostgreSQL with Node-RED
+subtitle: Guide to integrating PostgreSQL database into Node-RED Applications for Storing, Updating, and Querying Data
+description: Guide to integrating PostgreSQL database into Node-RED Applications for Storing, Updating, and Querying Data
 date: 
 authors: ["sumit-shinde"]
 image: /blog/2024/02/images/postgresql_with_node-red_Inventory_management_system.png
@@ -16,13 +16,13 @@ Node-RED.
 
 <!--more-->
 
-# What exactly is Postgresql?
+# What exactly is PostgreSQL?
 
 PostgreSQL is an open-source database with a strong reputation for its reliability, flexibility, and support of open technical standards. Unlike other Relational Database Management Systems PostgreSQL supports both non-relational and relational data types. This makes it one of the most compliant, stable, and mature relational databases available today.
 
 ## Using PostgreSQL with Node-RED
 
-The first thing we need to do to get things started is to install the Postgresql custom node and gain an understanding of Postgresql configuration details.
+The first thing we need to do to get things started is to install the PostgreSQL custom node and gain an understanding of PostgreSQL configuration details.
 
 1. Install `node-red-contrib-postgresql` by the pallet manager. You can choose other nodes too, but we chose this node because it is part of the [certified node catalogue by FlowFuse](https://flowfuse.com/certified-nodes/) which assures me that the node is robust, secure, and developed with high-quality.
 2. Before connecting to your PostgreSQL database, ensure you have the following information ready. Later We will add environment variables to configure the PostgreSQL node to connect with the database:
@@ -35,7 +35,7 @@ The first thing we need to do to get things started is to install the Postgresql
 
 # Adding environment variables
 
-We have discussed many times in previous blogs that using environment variables is a best practice that prevents revealing confidential configuration details such as API keys, passwords, secret keys, etc directly in the flow. Therefore, In this section, we will add environment variables for Postgresql configuration details, for more details see  [Using Environment Variables in Node-RED](https://flowfuse.com/blog/2023/02/environment-variables-in-node-red/).
+We have discussed many times in previous blogs that using environment variables is a best practice that prevents revealing confidential configuration details such as API keys, passwords, secret keys, etc directly in the flow. Therefore, In this section, we will add environment variables for PostgreSQL configuration details, for more details see  [Using Environment Variables in Node-RED](https://flowfuse.com/blog/2023/02/environment-variables-in-node-red/).
 
 1. Navigate to the instance's setting and then go to the environment section.
 2. Click on the `add variable` button and add variables for each of the configuration data that we discussed in the above section.
@@ -51,7 +51,7 @@ In this section, we will create a table in our database to store product data. A
 
 1. Drag an Inject node onto canvas, and keep it unchanged.
 2. Drag the change node onto canvas, and set `msg.pgConfig` properties using the added environment variable as shown in the above image.
-3. Drag a Postgresql node onto Canvas, click on that node, and paste the following SQL command into the query input field (I have added comments for your understanding of sql commands)
+3. Drag a PostgreSQL node onto Canvas, click on that node, and paste the following SQL command into the query input field (I have added comments for your understanding of sql commands)
 
 ```sql
 -- This is an SQL INSERT statement used to add data into the product_data table.
@@ -61,7 +61,7 @@ INSERT INTO product_data (id, name, price, stock)
 VALUES ($1, $2, $3, $4);
 ```
 
-4. Connect the change node’s input to the inject node’s output and the Postgresql node’s input to the change node’s output.
+4. Connect the change node’s input to the inject node’s output and the PostgreSQL node’s input to the change node’s output.
 
 !["Creating table for product data"](./images/postgresql_with_node-red_create_table.png "Creating table for product data")
 # Installing Dashboard 2.0 
@@ -70,7 +70,7 @@ VALUES ($1, $2, $3, $4);
 2. Create your first group, page, theme, and base.
 
 # Inserting Product Data into the Database
-In this section, we will add a Form interface that will enable us to obtain product data that we need to insert into the database. Moreover, we will use the Postgresql node to interact with the database.
+In this section, we will add a Form interface that will enable us to obtain product data that we need to insert into the database. Moreover, we will use the PostgreSQL node to interact with the database.
 
 !["Adding form to insert data"](./images/postgresql_with_node-red_form1.png "Adding form to insert data")
 1. Drag a Ui-Form widget onto the canvas and select the created group.
@@ -88,7 +88,7 @@ msg.params = [id, name, price, stock];
 return msg;
 ```
 
-5. Drag a Postgresql node onto the Canvas and click on that node and paste the following SQL command into the query input field
+5. Drag a PostgreSQL node onto the Canvas and click on that node and paste the following SQL command into the query input field
 
 ```sql
 -- This is an SQL INSERT statement used to add data into the product_data table.
@@ -106,7 +106,7 @@ In this section, we will retrieve all data from our database table and display i
 
 1. Drag an Inject node onto canvas.
 2. Drag and change node to canvas and follow the same steps to set configuration object's property which we have discussed in the above sections.
-3. Drag a Postgresql node onto canvas and paste the below SQL command into the query input field. 
+3. Drag a PostgreSQL node onto canvas and paste the below SQL command into the query input field. 
 4. Drag a Ui-table widget onto canvas and create a new Ui group for it.
 5. Connect ui-form’s output to change node’s input, change node’s output to function node’s input, and function node's output to the PostgreSQL node’s input.
 ```sql
@@ -134,7 +134,7 @@ const { id, stock } = msg.payload;
 msg.params = [id, stock];
 return msg;
 ```
-5. Drag a Postgresql node on canvas click on that node and paste the following SQL command into the query input field.
+5. Drag a PostgreSQL node on canvas click on that node and paste the following SQL command into the query input field.
 
 ```sql 
 -- UPDATE statement to modify data in the product_data table
@@ -176,7 +176,7 @@ const { id, name } = msg.payload;
 msg.params = [id, name ];
 return msg;
 ```
-5. Drag a Postgresql node on canvas click on that node and paste the following SQL command into the query input field.
+5. Drag a PostgreSQL node on canvas click on that node and paste the following SQL command into the query input field.
 
 ```sql 
 -- Deletes rows from the "product_data" table where both "id" and "name" match the given parameters
@@ -194,7 +194,7 @@ In this final section, we will understand how to drop ( delete ) tables from the
 
 1. Drag an Inject node onto the canvas.
 2. Drag a change node onto canvas and set `msg.pgConfig` object’s property as we discussed above.
-3. Drag a Postgresql node onto canvas and paste the following SQL command into the query input field.
+3. Drag a PostgreSQL node onto canvas and paste the following SQL command into the query input field.
 
 ```sql 
 -- SQL command to drop the product_data table
