@@ -26,7 +26,7 @@ From segway tours through historic streets to culinary competitions, we bonded a
 
 Our goal remains steadfast: to enhance bidirectional communication with you, our valued community, and make Node-RED's power more accessible than ever. 
 
-<img src="/blog/2023/11/images/IMG_6334.png" width=500 />
+<img src="/blog/2023/11/images/IMG_6334.jpg" width=500 />
 
 ## Announcements TLDR
 
