@@ -20,7 +20,7 @@ Node-RED.
 
 PostgreSQL is an open-source database with a strong reputation for its reliability, flexibility, and support of open technical standards. Unlike other Relational Database Management Systems PostgreSQL supports both non-relational and relational data types. This makes it one of the most compliant, stable, and mature relational databases available today.
 
-# Installing Postgresql custom node
+## Using PostgreSQL with Node-RED
 
 The first thing we need to do to get things started is to install the Postgresql custom node and gain an understanding of Postgresql configuration details.
 
