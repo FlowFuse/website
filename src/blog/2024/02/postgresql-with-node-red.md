@@ -24,7 +24,7 @@ PostgreSQL is an open-source database with a strong reputation for its reliabili
 
 The first thing we need to do to get things started is to install the Postgresql custom node and gain an understanding of Postgresql configuration details.
 
-1. Install `node-red-contrib-postgresql` by the pallet manager, you can choose other nodes according to your preference, but we chose this node because it is part of a flowfuse-certified node which assures me that the node is robust, secure, and developed with high-quality. For more details refer to our [certified node](https://flowfuse.com/blog/2023/10/certified-nodes/) blog post.
+1. Install `node-red-contrib-postgresql` by the pallet manager. You can choose other nodes too, but we chose this node because it is part of the [certified node catalogue by FlowFuse](https://flowfuse.com/certified-nodes/) which assures me that the node is robust, secure, and developed with high-quality.
 2. Before connecting to your PostgreSQL database, ensure you have the following information ready. Later We will add environment variables to configure the PostgreSQL node to connect with the database:
 
 - Host: IP address or hostname of your PostgreSQL server.
