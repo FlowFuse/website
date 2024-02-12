@@ -139,9 +139,12 @@ eleventyComputed:
 
         gtag('js', new Date());
         gtag('config', 'G-2ZH9W82QL8');
+        gtag('config', 'AW-16456599728');
     </script>
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-2ZH9W82QL8"></script>
-    <script async type="text/javascript" id="hs-script-loader" data-category="analytics" src="//js-eu1.hs-scripts.com/26586079.js" onload="addHubSpotConsentListener()"></script>
+
+    <!-- Google Ads Tag -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-16456599728"></script>
     {# {%- endif -%} #}
 </head>
 <body class="ff-website leading-normal tracking-normal gradient text-gray-500 min-h-screen flex flex-col">
@@ -302,26 +305,6 @@ eleventyComputed:
                             </a>
                           </li>
                         </ul>
-                        <!-- Start of HubSpot code snippet -->
-                        <button type="button" id="hs_show_banner_button" style="background-color: #374151; border: 1px solid #374151;
-                               border-radius: 3px; padding: 10px 16px; text-decoration: none; color: #fff;
-                               font-family: inherit; font-size: inherit; font-weight: normal; line-height: inherit;
-                               text-align: left; text-shadow: none;" onClick="showBanner()">
-                            Cookie Settings
-                        </button>
-
-                        <script>
-                        function showBanner() {
-                            var _hsp = window._hsp = window._hsp || [];
-                            var intervalId = setInterval(function() {
-                                if (_hsp.indexOf('showBanner') > -1) {
-                                    _hsp.push(['showBanner']);
-                                    clearInterval(intervalId);
-                                }
-                            }, 1000); // Check every second
-                        }
-                        </script>
-                        <!-- End of HubSpot code snippet -->
                 </div>
             </div>
         </div>
@@ -453,14 +436,11 @@ eleventyComputed:
 {% set hubspotJS %}{% include "hubspot.js" %}{% endset %}
 <script>{{ hubspotJS | jsmin | safe }}</script>
 
-<!-- Google Ads Tag -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=AW-16456599728"></script>
-<script>
-window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
-gtag('config', 'AW-16456599728');
-</script>
+<!-- Cookie banner -->
+<script async type="text/javascript" src="/js/cc.min.js" onload="addHubSpotConsentListener()"></script>
+
+<!-- HS script -->
+<script async type="text/javascript" id="hs-script-loader" src="//js-eu1.hs-scripts.com/26586079.js"></script>
 
 <!-- HubSpot Consent Listener -->
 <script type="text/javascript">
@@ -499,9 +479,6 @@ gtag('config', 'AW-16456599728');
         }]);
     }
 </script>
-
-<!-- Cookie banner -->
-<script async type="text/javascript" src="/js/cc.min.js"></script>
 
 {# {%- endif -%} #}
 </html>
