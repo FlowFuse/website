@@ -4,7 +4,9 @@ navTitle: Strategy
 
 # Product Strategy
 
-Our strategy is an indication and statement of intent for the next 2 years, and reflects FlowFuse’s [vision and strategy](..//company/strategy.md). FlowFuse will allow everyone to build custom applications to achieve their business goals and depend less on off-the-shelf software.  It is a living strategy, so we will revisit on a regular basis and iterate when there is reason to do so; timing is everything. 
+Our strategy is an indication and statement of intent for the next 2 years, and reflects FlowFuse’s [vision and strategy](/handbook/company/strategy.md). FlowFuse will allow everyone to build custom applications to achieve their business goals and depend less on off-the-shelf point solutions. 
+
+It strategy is ever-changing, it will be revised on a regular basis and we will iterate when there is reason to do so; timing is everything. 
 
 ## Market Vision
 
