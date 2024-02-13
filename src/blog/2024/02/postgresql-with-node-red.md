@@ -18,14 +18,14 @@ Node-RED.
 
 # What exactly is PostgreSQL?
 
-PostgreSQL is an open-source database with a strong reputation for its reliability, flexibility, and support of open technical standards. Unlike other Relational Database Management Systems PostgreSQL supports both non-relational and relational data types. This makes it one of the most compliant, stable, and mature relational databases available today.
+PostgreSQL is a highly reliable open-source relational database known for its extensive features. It supports diverse data types, robust SQL, and ACID compliance, allowing high-performance systems. Over the years, it has demonstrated reliability, security, and compatibility, which makes it a popular choice of businesses worldwide.
 
 ## Using PostgreSQL with Node-RED
 
 The first thing we need to do to get things started is to install the PostgreSQL custom node and gain an understanding of PostgreSQL configuration details.
 
-1. Install `node-red-contrib-postgresql` by the pallet manager. You can choose other nodes too, but we chose this node because it is part of the [certified node catalogue by FlowFuse](https://flowfuse.com/certified-nodes/) which assures me that the node is robust, secure, and developed with high-quality.
-2. Before connecting to your PostgreSQL database, ensure you have the following information ready. Later We will add environment variables to configure the PostgreSQL node to connect with the database:
+1. Install `node-red-contrib-postgresql` by the pallet manager. You can choose other nodes too, but we chose this node because it is part of the [certified node catalogue by FlowFuse](https://flowfuse.com/certified-nodes/) which assures that the node is robust, secure, and developed with high-quality.
+2. Before connecting to your PostgreSQL database, ensure you have the following information ready and environment variables set up as discussed below in `Adding environment variable` section:
 
 - Host: IP address or hostname of your PostgreSQL server.
 - Port: By default, PostgreSQL uses port 5432. Ensure this matches your PostgreSQL server configuration.
@@ -33,7 +33,12 @@ The first thing we need to do to get things started is to install the PostgreSQL
 - User: username with the necessary privileges to access the specified database.
 - Password: corresponding password for the username.
 
-# Adding environment variables
+3. Drag the PostgreSQL node onto the canvas, click on that node and click on the edit icon next to the server input field to configure it.
+
+!["Configuring PostgreSQL"](./images/postgresql_with_node-red_pgconfig1.png "Configuring PostgreSQL")
+
+!["Configuring PostgreSQL"](./images/postgresql_with_node-red_pgconfig2.png "Configuring PostgreSQL")
+# Adding environment variables 
 
 We have discussed many times in previous blogs that using environment variables is a best practice that prevents revealing confidential configuration details such as API keys, passwords, secret keys, etc directly in the flow. Therefore, In this section, we will add environment variables for PostgreSQL configuration details, for more details see  [Using Environment Variables in Node-RED](https://flowfuse.com/blog/2023/02/environment-variables-in-node-red/).
 
@@ -41,29 +46,35 @@ We have discussed many times in previous blogs that using environment variables 
 2. Click on the `add variable` button and add variables for each of the configuration data that we discussed in the above section.
 3. Click on the save button and restart the instance by clicking on the top right `Action` button and selecting the restart option.
 
-!["Adding environment variables"](./images/postgresql_with_node-red_environment_variables.png "Adding environment variables")
+!["Adding environment variables"](./images/postgresql_with_nodred_environment_variable.png "Adding environment variables")
 
 # Creating Table
 
-In this section, we will create a table in our database to store product data. Additionally, it's important to note that throughout this guide we will send an object containing the properties of configuration details with each request to the database. This approach allows us to use environment variables to secure our sensitive configuration details while connecting to the database.
-
-!["Setting pgConfig objects property"](./images/postgresql_with_node-red_change_node.png "Setting pgConfig objects property")
+In this section, we will create a table in our database to store product data.
 
 1. Drag an Inject node onto canvas, and keep it unchanged.
-2. Drag the change node onto canvas, and set `msg.pgConfig` properties using the added environment variable as shown in the above image.
-3. Drag a PostgreSQL node onto Canvas, click on that node, and paste the following SQL command into the query input field (I have added comments for your understanding of sql commands)
+2. Click on the PostgreSQL node that we have added previously, and paste the following SQL command into the query input field. (I have added comments for your understanding of SQL commands)
 
 ```sql
--- This is an SQL INSERT statement used to add data into the product_data table.
-INSERT INTO product_data (id, name, price, stock)
--- This line specifies the columns into which data will be inserted. The columns are id, name, price, and stock.
--- It's important to match the columns in the same order as the values in the next line.
-VALUES ($1, $2, $3, $4);
+-- Create a table named product_data if it does not already exist
+CREATE TABLE IF NOT EXISTS product_data (
+  -- Define a column named id as a bigint type, which serves as the primary key
+  id bigint PRIMARY KEY,
+  
+  -- Define a column named name to store product names as variable-length character strings with a maximum length of 100 characters, ensuring it's not null
+  name varchar(100) NOT NULL,
+  
+  -- Define a column named price to store product prices, ensuring it's not null
+  price int NOT NULL,
+  
+  -- Define a column named stock to store product stock levels, ensuring it's not null
+  stock int NOT NULL
+);
 ```
+!["Creating table for product data"](./images/postgresql_with_nodered_create_table.png "Creating table for product data")
 
-4. Connect the change node’s input to the inject node’s output and the PostgreSQL node’s input to the change node’s output.
+4. Connect the inject node’s output to the PostgreSQL node’s input.
 
-!["Creating table for product data"](./images/postgresql_with_node-red_create_table.png "Creating table for product data")
 # Installing Dashboard 2.0 
 
 1. Install Dashboard 2.0. Follow these [instructions](https://dashboard.flowfuse.com/getting-started.html) to install.
@@ -75,8 +86,7 @@ In this section, we will add a Form interface that will enable us to obtain prod
 !["Adding form to insert data"](./images/postgresql_with_node-red_form1.png "Adding form to insert data")
 1. Drag a Ui-Form widget onto the canvas and select the created group.
 2. Add an element for all required input data in the form widget and give it a name, label, and select type, I have selected 'number' as a type for 'product id', 'price', and 'stock', and 'text' for 'name', but feel free to adjust according to your preference and data requirements.
-3. Drag a change node onto canvas and follow the same steps to set `pgConfig` object properties or you can simply copy and paste that node onto canvas.
-4. Drag the function node onto Canvas and paste the following script.
+3. Drag the function node onto Canvas and paste the following script.
 
 ```javascript
 // Destructure the properties from msg.payload (obtained data by using form)
@@ -88,7 +98,7 @@ msg.params = [id, name, price, stock];
 return msg;
 ```
 
-5. Drag a PostgreSQL node onto the Canvas and click on that node and paste the following SQL command into the query input field
+4. Drag a PostgreSQL node onto the Canvas and click on that node and paste the following SQL command into the query input field
 
 ```sql
 -- This is an SQL INSERT statement used to add data into the product_data table.
@@ -97,18 +107,17 @@ INSERT INTO product_data (id, name, price, stock)
 -- It's important to match the columns in the same order as the values in the next line.
 VALUES ($1, $2, $3, $4);
 ```
-6. Connect ui-form’s output to change node’s input, change node’s output to function node’s input, and function node's output to the PostgreSQL node’s input.
-
 !["Inserting data into database"](./images/postgresql_with_node-red_insert_data.png "Inserting data into database")
+
+6. Connect ui-form’s output to function node’s input, and function node's output to the PostgreSQL node’s input.
 
 # Displaying product data on Dashboard 2.0
 In this section, we will retrieve all data from our database table and display it on Dashboard 2.0 using the Ui-table widget.
 
 1. Drag an Inject node onto canvas.
-2. Drag and change node to canvas and follow the same steps to set configuration object's property which we have discussed in the above sections.
-3. Drag a PostgreSQL node onto canvas and paste the below SQL command into the query input field. 
-4. Drag a Ui-table widget onto canvas and create a new Ui group for it.
-5. Connect ui-form’s output to change node’s input, change node’s output to function node’s input, and function node's output to the PostgreSQL node’s input.
+2. Drag a PostgreSQL node onto the Canvas and click on that node and paste the following SQL command into the query input field. 
+3. Drag a Ui-table widget onto canvas and create a new Ui group for it.
+4. Connect ui-form’s output to function node’s input, and function node's output to the PostgreSQL node’s input.
 ```sql
 -- Retrieve all data from the product_data table
 SELECT * FROM product_data;
@@ -122,8 +131,7 @@ In this section, we will add a form interface to collect the product ID and the 
 
 1. Drag a Ui-Form widget onto the canvas and create a new UI group for it.
 2. Add elements for product id and stock in the form widget and give it a name, label, and select type.
-3. Drag the change node onto canvas and set `msg.pgConfig` properties using the added environment variable as we discussed in the above section.
-4. Drag a function node onto Canvas and paste the following script.
+3. Drag a function node onto Canvas and paste the following script.
 
 ```javascript 
 // Destructure the properties from msg.payload
@@ -134,7 +142,7 @@ const { id, stock } = msg.payload;
 msg.params = [id, stock];
 return msg;
 ```
-5. Drag a PostgreSQL node on canvas click on that node and paste the following SQL command into the query input field.
+4. Drag a PostgreSQL node on canvas, click on that node and paste the following SQL command into the query input field.
 
 ```sql 
 -- UPDATE statement to modify data in the product_data table
@@ -152,20 +160,19 @@ WHERE id = $1;
 -- In this case, it updates rows where the "id" column matches the value represented by the parameter $1.
 ```
 
-6. Connect ui-form’s output to change node’s input, change node’s output to function node’s input, and function node's output to the PostgreSQL node’s input.
-
 !["Updating product data to the database"](./images/postgresql_with_node-red_update_data.png "Updating product data to the database")
+
+5. Connect ui-form’s output to function node’s input, and function node's output to the PostgreSQL node’s input.
 
 # Deleting product data from the database
 
 !["Deleting product data to the database"](./images/postgresql_with_node-red_form3.png "Deleting product data to the database")
 
-In this section, we'll cover how to delete product data from the database. To facilitate this process, we will use Dashboard 2.0's form interface, which collects essential information like the product id and name. While the product id alone is sufficient to delete a product from the database, we include the product name as an additional precaution to prevent accidental deletion of product data.
+In this section, we'll cover how to delete product data from the database. we will use Dashboard 2.0's form interface to collects essential information like the product id and name. While the product id alone is sufficient to delete a product from the database, we include the product name as an additional precaution to prevent accidental deletion of product data.
 
 1. Drag a Ui-Form widget onto the canvas and create a new UI group for it.
 2. Add elements for product id and name in the form widget and give it a name, label, and select type.
-3. Drag the change node onto canvas and follow the same steps to set `msg.pgConfig` properties using the added environment variable as discuessed in above sections.
-4. Drag a function node onto Canvas and paste the following script.
+3. Drag a function node onto Canvas and paste the following script.
 
 ```javascript 
 // Destructure the properties from msg.payload
@@ -176,7 +183,7 @@ const { id, name } = msg.payload;
 msg.params = [id, name ];
 return msg;
 ```
-5. Drag a PostgreSQL node on canvas click on that node and paste the following SQL command into the query input field.
+4. Drag a PostgreSQL node on canvas, click on that node and paste the following SQL command into the query input field.
 
 ```sql 
 -- Deletes rows from the "product_data" table where both "id" and "name" match the given parameters
@@ -184,31 +191,42 @@ DELETE FROM product_data
 -- Specifies the conditions for deletion
 WHERE id = $1 AND name = $2;
 ```
-
-6. Connect ui-form’s output to change node’s input, change node’s output to function node’s input, and function node's output to PostgreSQL node’s input.
-
 !["Deleting product data to the database"](./images/postgresql_with_node-red_delete_data.png "Deleting product data to the database")
 
+5. Connect ui-form’s output to function node’s input, and function node's output to PostgreSQL node’s input.
+
 # Dropping Table
-In this final section, we will understand how to drop ( delete ) tables from the database.
+In this section, we will understand how to drop ( delete ) tables from the database.
 
 1. Drag an Inject node onto the canvas.
-2. Drag a change node onto canvas and set `msg.pgConfig` object’s property as we discussed above.
-3. Drag a PostgreSQL node onto canvas and paste the following SQL command into the query input field.
+2. Drag a PostgreSQL node onto canvas and paste the following SQL command into the query input field.
 
 ```sql 
--- SQL command to drop the product_data table
-DROP TABLE product_data;
+-- Drop the table 'product_data' if it exists to avoid conflicts.
+DROP TABLE IF EXISTS product_data;
+
+-- Note: 'IF EXISTS' is used to check if the table exists in the database before attempting to drop it.
 ```
 
 !["Droping product_data from the database"](./images/postgresql_with_node-red_drop_tables.png "Droping product_data from the database")
 
 # Deploying Flow
-!["Deploying Inventory management system's flow"](./images/postgresql_with_node-red_ff_editor.png "Deploying Inventory management system's flow")
+!["Deploying Inventory management system's flow"](./images/postgresql_with_nodred_environment_variable_ff_editor.png "Deploying Inventory management system's flow")
 
-Our Inventory Management System is now complete and ready for deployment. To initiate the deployment process, locate the red deploy button positioned in the top right corner. Begin by creating a table using the insert node button. For product data insertion, updates, and deletions, navigate to https://<your-instance-name>.flowfuse.cloud/dashboard.
+Our Inventory Management System is now complete and ready for deployment. To initiate the deployment process, locate the red 'Deploy' button positioned in the top right corner. To create, drop tables, and retrieve table data, you need to click on the 'Inject Node's button. For product data insertion, updates, and deletions, navigate to https://<your-instance-name>.flowfuse.cloud/dashboard.
 
 !["Inventory management system"](./images/postgresql_with_node-red_Inventory_management_system.png "Inventory management system")
+
+## Best practices to follow
+Throughout this guide, we have followed some best practices that we think need to be discussed separately. In this section, we'll discuss some best practices that need to be followed while using the PostgreSQL database.
+
+1. Connection Pooling: Implementing connection pooling can significantly enhance the performance of PostgreSQL. It allows multiple clients to reuse a set of database connections, which reduces the overhead of establishing new connections for each query. By configuring PostgreSQL to use connection pooling, you can optimize resource usage and improve overall system performance. Rest assured that in this guide, we have already configured our PostgreSQL to use connection pooling via the Postgres Config node/tab.
+
+2. Environment Variables: The [Twelve Factors](https://12factor.net/) emphasize the importance of separating configuration from code(flow) to ensure better security. Storing database credentials within the codebase can pose a security risk. Instead, expose the configuration details, as environment variables. This ensures that sensitive information remains secure and can be managed separately from the codebase.
+
+3. Primary Key Types: Choosing the appropriate data type for primary keys is crucial for database scalability and performance. While INT may suffice for small-scale applications, it's recommended to use BIGINT or UUID as primary keys for larger datasets. BIGINT offers a larger storage capacity and is more suitable for long-term scalability without the need for frequent migrations.
+
+4. Credential Rotation: Regularly rotating database credentials is essential for maintaining robust security practices. This includes changing login information for managed databases and other database access points. Implementing a scheduled credential rotation process, such as quarterly 'rotation days,' streamlines the task and reduces the risk of unauthorized access. 
 
 # Conclusion 
 This guide has demonstrated the integration of PostgreSQL with Node-RED. Throughout this article we've built an inventory management system with data stored in a database. You've learned to create and drop tables, and performing operations like inserting, updating, and deleting data. Also, we have highlighted best practices such as utilizing environment variables and selecting certified nodes to ensure security.
