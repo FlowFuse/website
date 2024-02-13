@@ -60,7 +60,7 @@ In this section, we will create a table in our database to store product data.
 -- Create a table named product_data if it does not already exist
 CREATE TABLE IF NOT EXISTS product_data (
   -- Define a column named id as a bigint type, which serves as the primary key
-  id bigint PRIMARY KEY,
+  id SERIAL PRIMARY KEY,
   
   -- Define a column named name to store product names as variable-length character strings with a maximum length of 100 characters, ensuring it's not null
   name varchar(100) NOT NULL,
