@@ -9,6 +9,7 @@ tags:
     - posts
     - node-red
     - dashboard
+    - postgresql
 ---
 
 A few months back, we shared a blog on [integrating InfluxDB with Node-RED](https://flowfuse.com/blog/2023/07/connect-node-red-to-influxdb/) to handle time-series data effectively. However, applications typically involve more than just time-series data, they often include various data types that can be efficiently managed with SQL-based databases. In this guide, we will walk you through building a simple inventory management system with Node-RED and PostgreSQL to demonstrate how to integrate PostgreSQL with
