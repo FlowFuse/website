@@ -74,7 +74,7 @@ CREATE TABLE IF NOT EXISTS product_data (
 ```
 !["Creating table for product data"](./images/postgresql_with_nodered_create_table.png "Creating table for product data")
 
-4. Connect the inject node’s output to the PostgreSQL node’s input.
+3. Connect the inject node’s output to the PostgreSQL node’s input.
 
 # Installing Dashboard 2.0 
 
@@ -110,7 +110,7 @@ VALUES ($1, $2, $3, $4);
 ```
 !["Inserting data into database"](./images/postgresql_with_node-red_insert_data.png "Inserting data into database")
 
-6. Connect ui-form’s output to function node’s input, and function node's output to the PostgreSQL node’s input.
+5. Connect ui-form’s output to function node’s input, and function node's output to the PostgreSQL node’s input.
 
 # Displaying product data on Dashboard 2.0
 In this section, we will retrieve all data from our database table and display it on Dashboard 2.0 using the Ui-table widget.
