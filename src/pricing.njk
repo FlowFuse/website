@@ -40,29 +40,32 @@ hubspot:
         <div class="pricing-tiles flex flex-col md:grid md:flex-row md:max-w-screen-lg mt-4 md:mt-0">
             <div class="pricing-tile md:h-full">
                 <div class="pricing-tile-background pb-6 md:grid flex-col">
-                    <div>
-                        <div class="flex flex-col items-center text-left md:flex-row md:-mb-0 md:px-0 md:block md:min-h-[133px]">
-                        <div class="flex flex-row justify-between mt-4 w-full gap-x-2">
-                            <h4 style="display:inline-block;">Starter</h4>                            
-                        </div>
-                        <p class="mt-7"><span class="inline font-normal">Ideal to get started. </span>Quick hosting of Node-RED instances.</p>
-                        </div>
-                        <div class="flex flex-col content-start features text-sm md:mt-3 mt-6 w-full">
-                            <note class="font-bold text-teal-100" style="display: inline-block;">Includes:</note>
-                            <ul class="ff-checklist font-light text-white leading-7 mt-2">
-                                <li>2 team members</li>
-                                <li>2 Node-RED instances</li>
-                                <li>2 devices</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="mt-9 md:text-left items-left w-full mb-11 flex flex-row">
-                            <h2 class="self-end">$15</h2>
-                            <div class= "pl-1 text-sm leading-4 text-left self-end pb-1">
-                                <note class="note text-teal-100">/month</note>    
+                    {% macro starterCloud() %}
+                        <div>
+                            <div class="flex flex-col items-center text-left md:flex-row md:-mb-0 md:px-0 md:block md:min-h-[133px]">
+                            <div class="flex flex-row justify-between mt-4 w-full gap-x-2">
+                                <h4 style="display:inline-block;">Starter</h4>                            
                             </div>
-                    </div>
-                    <a class="md:self-end ff-btn ff-btn--primary uppercase align-baseline w-full" href="{{ site.appURL }}/account/create" onclick="capture('cta-join', {'position': 'primary'}, {'plan': 'cloud-starter'})">TRY FOR FREE</a> 
+                            <p class="mt-7"><span class="inline font-normal">Ideal to get started. </span>Quick hosting of Node-RED instances.</p>
+                            </div>
+                            <div class="flex flex-col content-start features text-sm md:mt-3 mt-6 w-full">
+                                <note class="font-bold text-teal-100" style="display: inline-block;">Includes:</note>
+                                <ul class="ff-checklist font-light text-white leading-7 mt-2">
+                                    <li>2 team members</li>
+                                    <li>2 Node-RED instances</li>
+                                    <li>2 devices</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="mt-9 md:text-left items-left w-full mb-11 flex flex-row">
+                                <h2 class="self-end">$15</h2>
+                                <div class= "pl-1 text-sm leading-4 text-left self-end pb-1">
+                                    <note class="note text-teal-100">/month</note>    
+                                </div>
+                        </div>
+                        <a class="md:self-end ff-btn ff-btn--primary uppercase align-baseline w-full" href="{{ site.appURL }}/account/create" onclick="capture('cta-join', {'position': 'primary'}, {'plan': 'cloud-starter'})">TRY FOR FREE</a>
+                    {% endmacro %}
+                    {{ starterCloud() }}
                 </div>
             </div>
             <div class="pricing-tile md:h-full">
@@ -132,26 +135,7 @@ hubspot:
         <div class="pricing-tiles flex flex-col md:grid md:flex-row md:max-w-screen-lg mt-4 md:mt-0">
             <div class="pricing-tile md:h-full">
                 <div class="pricing-tile-background pb-6 md:grid flex-col">
-                    <div>
-                        <div class="flex flex-col items-center text-left md:flex-row md:-mb-0 md:px-0 md:block md:min-h-[133px]">
-                        <div class="flex flex-row justify-between mt-4 w-full gap-x-2">
-                            <h4 style="display:inline-block;">Starter</h4>                            
-                        </div>
-                        <p class="mt-7">Download the <span class="inline font-normal">open source edition</span> of FlowFuse platform to get started.</p>
-                        </div>
-                        <div class="flex flex-col content-start features text-sm md:mt-3 mt-6 w-full">
-                            <note class="font-bold text-teal-100" style="display: inline-block;">Includes:</note>
-                            <ul class="ff-checklist font-light text-white leading-7 mt-2">
-                                <li>50 team members</li>
-                                <li>50 Node-RED instances</li>
-                                <li>50 devices</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="mt-9 md:text-left items-left w-full mb-11 flex flex-row">
-                            <h2 class="self-end">Free</h2>
-                    </div>
-                    <a class="md:self-end ff-btn ff-btn--primary uppercase align-baseline w-full" href="/docs/install/introduction/" onclick="capture('cta-install', {'position': 'primary'}, {'plan': 'sh-starter'})">Install now</a> 
+                    {{ starterCloud() }}
                 </div>
             </div>
             <div class="pricing-tile md:h-full">
@@ -244,22 +228,22 @@ hubspot:
         <div class="md:my-9">
             <h2 id="feature-comparison">Feature Comparison</h2>
         </div>
-            <!-- Toggle-->
-    <div class="text-center my-8 md:mb-12">
-        <div class="mainToggle">
-            <button class="btnToggle">
-                <span class="selector"></span>
-                <div class="hosting">
-                    <div class="divCloud">
-                        </span><span class="cloudText">CLOUD</span>
+        <!-- Toggle-->
+        <div class="text-center my-8 md:mb-12">
+            <div class="mainToggle">
+                <button class="btnToggle">
+                    <span class="selector"></span>
+                    <div class="hosting">
+                        <div class="divCloud">
+                            </span><span class="cloudText">CLOUD</span>
+                        </div>
+                        <div class="divSelfHosted">
+                            <span class="selfHostedText">SELF HOSTED</span>
+                        </div>
                     </div>
-                    <div class="divSelfHosted">
-                        <span class="selfHostedText">SELF HOSTED</span>
-                    </div>
-                </div>
-            </button>
+                </button>
+            </div>
         </div>
-    </div>
         <!-- Feature List -->
         <div class="sticky">{{ featuresHtml | safe }}</div>
     </div>
