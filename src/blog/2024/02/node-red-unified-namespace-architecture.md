@@ -4,7 +4,7 @@ subtitle:
 description: 
 date: 2024-02-14
 authors: ["marian-demme"]
-image: /blog/2024/02/images/unified-namespace-architecture.png
+image: /src/blog/2024/02/images/unified-namespace-architecture.png
 tags:
     - posts
     - flowfuse
@@ -40,7 +40,7 @@ In such cases, Node-RED shines as a middleware for protocol conversion and data 
 **Direct Consumer/Producers**
 Contrastingly, direct actors can interact with the UNS out of the box. Modern industrial equipment usually falls into this category, equipped to speak the language of the UNS directly. However, the challenge remains not just in protocol communication but also in data contextualization. Merely speaking the same language is not enough; the data must also carry the correct context to be fully understood and utilized.
 
-![Example Architecture](/blog/2024/02/images/unified-namespace-architecture.png)
+![Example Architecture](./images/unified-namespace-architecture.png)
 
 ## Harnessing Node-RED for Actionable Insights
 
