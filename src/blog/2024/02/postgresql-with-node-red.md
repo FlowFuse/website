@@ -154,7 +154,7 @@ UPDATE product_data
 SET 
     stock =  $2
 -- Sets the value of the "stock" column to the value represented by the parameter $2.
--- The value to be set is typically provided externally, In our context we getting this parameter by "msg.params"
+-- The value to be set is typically provided externally, In our context, we get this parameter by "msg.params"
 
 WHERE id = $1;
 -- Specifies the condition that must be met for the update to occur.
