@@ -115,7 +115,7 @@ VALUES ($1, $2, $3);
 # Displaying product data on Dashboard 2.0
 In this section, we will retrieve all data from our database table and display it on Dashboard 2.0 using the ui-table widget.
 
-1. Drag an Inject node onto canvas.
+1. Drag an Inject node onto the canvas.
 2. Drag a PostgreSQL node onto the Canvas and click on that node and paste the following SQL command into the query input field. 
 3. Drag a ui-table widget onto canvas and create a new ui-group for it.
 4. Connect inject node's output to PostgreSQL node’s input, and PostgreSQL node's output to the ui-table's input.
