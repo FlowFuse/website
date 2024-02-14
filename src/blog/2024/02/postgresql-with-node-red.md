@@ -169,7 +169,7 @@ WHERE id = $1;
 
 !["Deleting product data to the database"](./images/postgresql_with_node-red_form3.png "Deleting product data to the database")
 
-In this section, we'll cover how to delete product data from the database. we will use Dashboard 2.0's form interface to collects essential information like the product id and name. While the product id alone is sufficient to delete a product from the database, we include the product name as an additional precaution to prevent accidental deletion of product data.
+In this section, we'll cover how to delete product data from the database. We will use Dashboard 2.0's form interface to collect essential information like the product id and name. While the product id alone is sufficient to delete a product from the database, we include the product name as an additional precaution to prevent accidental deletion of product data.
 
 1. Drag a ui-form widget onto the canvas and create a new ui-group for it.
 2. Add elements for product id and name in the form widget and give it a name, label, and select type.
