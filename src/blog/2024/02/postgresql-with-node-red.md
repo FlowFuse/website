@@ -54,7 +54,7 @@ We have discussed many times in previous blogs that using environment variables 
 In this section, we will create a table in our database to store product data.
 
 1. Drag an Inject node onto canvas, and keep it unchanged.
-2. Click on the PostgreSQL node that we have added previously, and paste the following SQL command into the query input field. (I have added comments for your understanding of SQL commands)
+2. Click on the PostgreSQL node we added previously and paste the following SQL command into the query input field. (I have added comments for your understanding of SQL commands)
 
 ```sql
 -- Create a table named product_data if it does not already exist
