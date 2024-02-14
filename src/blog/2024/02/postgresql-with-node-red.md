@@ -31,14 +31,14 @@ The first thing we need to do to get things started is to install the PostgreSQL
 - Host: IP address or hostname of your PostgreSQL server.
 - Port: By default, PostgreSQL uses port 5432. Ensure this matches your PostgreSQL server configuration.
 - Database: The name of the PostgreSQL database you want to connect to.
-- User: username with the necessary privileges to access the specified database.
-- Password: corresponding password for the username.
+- User: Username with the necessary privileges to access the specified database.
+- Password: Corresponding password for the username.
 
 3. Drag the PostgreSQL node onto the canvas, click on that node and click on the edit icon next to the server input field to configure it.
 
-!["Configuring PostgreSQL"](./images/postgresql_with_node-red_pgconfig1.png "Configuring PostgreSQL")
+!["Configuring PostgreSQL - connection tab"](./images/postgresql_with_node-red_pgconfig1.png "Configuring PostgreSQL - connection tab")
 
-!["Configuring PostgreSQL"](./images/postgresql_with_node-red_pgconfig2.png "Configuring PostgreSQL")
+!["Configuring PostgreSQL - security tab"](./images/postgresql_with_node-red_pgconfig2.png "Configuring PostgreSQL - security tab")
 # Adding environment variables 
 
 We have discussed many times in previous blogs that using environment variables is a best practice that prevents revealing confidential configuration details such as API keys, passwords, secret keys, etc directly in the flow. Therefore, In this section, we will add environment variables for PostgreSQL configuration details, for more details see  [Using Environment Variables in Node-RED](https://flowfuse.com/blog/2023/02/environment-variables-in-node-red/).
@@ -59,8 +59,8 @@ In this section, we will create a table in our database to store product data.
 ```sql
 -- Create a table named product_data if it does not already exist
 CREATE TABLE IF NOT EXISTS product_data (
-  -- Define a column named id as a bigint type, which serves as the primary key
-  id SERIAL PRIMARY KEY,
+  -- Define a column named id as a SERIAL type, which serves as the primary key
+  id SERIAL PRIMARY KEY, -- SERIAL data type automatically generates unique integer values for each row inserted into the table
   
   -- Define a column named name to store product names as variable-length character strings with a maximum length of 100 characters, ensuring it's not null
   name varchar(100) NOT NULL,
@@ -86,16 +86,16 @@ In this section, we will add a Form interface that will enable us to obtain prod
 
 !["Adding form to insert data"](./images/postgresql_with_node-red_form1.png "Adding form to insert data")
 1. Drag a Ui-Form widget onto the canvas and select the created group.
-2. Add an element for all required input data in the form widget and give it a name, label, and select type, I have selected 'number' as a type for 'product id', 'price', and 'stock', and 'text' for 'name', but feel free to adjust according to your preference and data requirements.
+2. Add an element for all required input data in the form widget and give it a name, label, and select type, I have selected 'number' as a type for 'price' and 'stock', and 'text' for 'name', but feel free to adjust according to your preference and data requirements.
 3. Drag the function node onto Canvas and paste the following script.
 
 ```javascript
 // Destructure the properties from msg.payload (obtained data by using form)
-const { id, name, price, stock } = msg.payload;
-// Create an array containing id, name, price, and stock
+const {name, price, stock } = msg.payload;
+// Create an array containing name, price, and stock
 // The order of the array items in msg.params will correspond to the placeholders in the SQL query
-// For example, $1 will be replaced by the value of id, $2 will be replaced by the value of name, and so on
-msg.params = [id, name, price, stock];
+// For example, $1 will be replaced by the value of name, $2 will be replaced by the value of price, and so on
+msg.params = [name, price, stock];
 return msg;
 ```
 
@@ -103,14 +103,14 @@ return msg;
 
 ```sql
 -- This is an SQL INSERT statement used to add data into the product_data table.
-INSERT INTO product_data (id, name, price, stock)
--- This line specifies the columns into which data will be inserted. The columns are id, name, price, and stock.
+INSERT INTO product_data ( name, price, stock)
+-- This line specifies the columns into which data will be inserted. The columns are name, price, and stock.
 -- It's important to match the columns in the same order as the values in the next line.
-VALUES ($1, $2, $3, $4);
+VALUES ($1, $2, $3);
 ```
 !["Inserting data into database"](./images/postgresql_with_node-red_insert_data.png "Inserting data into database")
 
-5. Connect ui-form’s output to function node’s input, and function node's output to the PostgreSQL node’s input.
+5. Connect Ui-form’s output to function node’s input, and function node's output to the PostgreSQL node’s input.
 
 # Displaying product data on Dashboard 2.0
 In this section, we will retrieve all data from our database table and display it on Dashboard 2.0 using the Ui-table widget.
@@ -118,7 +118,7 @@ In this section, we will retrieve all data from our database table and display i
 1. Drag an Inject node onto canvas.
 2. Drag a PostgreSQL node onto the Canvas and click on that node and paste the following SQL command into the query input field. 
 3. Drag a Ui-table widget onto canvas and create a new Ui group for it.
-4. Connect ui-form’s output to function node’s input, and function node's output to the PostgreSQL node’s input.
+4. Connect inject node's output to PostgreSQL node’s input, and PostgreSQL node's output to the Ui-table's input.
 ```sql
 -- Retrieve all data from the product_data table
 SELECT * FROM product_data;
@@ -163,7 +163,7 @@ WHERE id = $1;
 
 !["Updating product data to the database"](./images/postgresql_with_node-red_update_data.png "Updating product data to the database")
 
-5. Connect ui-form’s output to function node’s input, and function node's output to the PostgreSQL node’s input.
+5. Connect Ui-form’s output to function node’s input, and function node's output to the PostgreSQL node’s input.
 
 # Deleting product data from the database
 
@@ -194,7 +194,7 @@ WHERE id = $1 AND name = $2;
 ```
 !["Deleting product data to the database"](./images/postgresql_with_node-red_delete_data.png "Deleting product data to the database")
 
-5. Connect ui-form’s output to function node’s input, and function node's output to PostgreSQL node’s input.
+5. Connect Ui-form’s output to function node’s input, and function node's output to PostgreSQL node’s input.
 
 # Dropping Table
 In this section, we will understand how to drop ( delete ) tables from the database.
@@ -214,7 +214,7 @@ DROP TABLE IF EXISTS product_data;
 # Deploying Flow
 !["Deploying Inventory management system's flow"](./images/postgresql_with_nodred_environment_variable_ff_editor.png "Deploying Inventory management system's flow")
 
-Our Inventory Management System is now complete and ready for deployment. To initiate the deployment process, locate the red 'Deploy' button positioned in the top right corner. To create, drop tables, and retrieve table data, you need to click on the 'Inject Node's button. For product data insertion, updates, and deletions, navigate to https://<your-instance-name>.flowfuse.cloud/dashboard.
+Our Inventory Management System is now complete and ready for deployment. To initiate the deployment process, locate the red 'Deploy' button positioned in the top right corner. To create, drop tables, and retrieve table data, you need to click on the 'Inject Node's button. For product data insertion, updates, and deletions, navigate to `https://<your-instance-name>.flowfuse.cloud/dashboard`.
 
 !["Inventory management system"](./images/postgresql_with_node-red_Inventory_management_system.png "Inventory management system")
 
@@ -223,11 +223,9 @@ Throughout this guide, we have followed some best practices that we think need t
 
 1. Connection Pooling: Implementing connection pooling can significantly enhance the performance of PostgreSQL. It allows multiple clients to reuse a set of database connections, which reduces the overhead of establishing new connections for each query. By configuring PostgreSQL to use connection pooling, you can optimize resource usage and improve overall system performance. Rest assured that in this guide, we have already configured our PostgreSQL to use connection pooling via the Postgres Config node/tab.
 
-2. Environment Variables: The [Twelve Factors](https://12factor.net/) emphasize the importance of separating configuration from code(flow) to ensure better security. Storing database credentials within the codebase can pose a security risk. Instead, expose the configuration details, as environment variables. This ensures that sensitive information remains secure and can be managed separately from the codebase.
+2. Environment Variables: The [Twelve Factors](https://12factor.net/) emphasize the importance of separating configuration details from the code (flow) to ensure better security. Storing database credentials within the codebase can pose a security risk. Instead, expose the configuration details, as environment variables. This ensures that sensitive information remains secure and can be managed separately from the codebase.
 
-3. Primary Key Types: Choosing the appropriate data type for primary keys is crucial for database scalability and performance. While INT may suffice for small-scale applications, it's recommended to use BIGINT or UUID as primary keys for larger datasets. BIGINT offers a larger storage capacity and is more suitable for long-term scalability without the need for frequent migrations.
-
-4. Credential Rotation: Regularly rotating database credentials is essential for maintaining robust security practices. This includes changing login information for managed databases and other database access points. Implementing a scheduled credential rotation process, such as quarterly 'rotation days,' streamlines the task and reduces the risk of unauthorized access. 
+3. Credential Rotation: Regularly rotating database credentials is essential for maintaining robust security practices. This includes changing login information for managed databases and other database access points. Implementing a scheduled credential rotation process, such as quarterly 'rotation days,' streamlines the task and reduces the risk of unauthorized access. 
 
 # Conclusion 
 This guide has demonstrated the integration of PostgreSQL with Node-RED. Throughout this article we've built an inventory management system with data stored in a database. You've learned to create and drop tables, and performing operations like inserting, updating, and deleting data. Also, we have highlighted best practices such as utilizing environment variables and selecting certified nodes to ensure security.
