@@ -221,7 +221,7 @@ Our Inventory Management System is now complete and ready for deployment. To ini
 ## Best practices to follow
 Throughout this guide, we have followed some best practices that we think need to be discussed separately. In this section, we'll discuss some best practices that need to be followed while using the PostgreSQL database.
 
-1. Connection Pooling: Implementing connection pooling can significantly enhance the performance of PostgreSQL. It allows multiple clients to reuse a set of database connections, which reduces the overhead of establishing new connections for each query. By configuring PostgreSQL to use connection pooling, you can optimize resource usage and improve overall system performance. Rest assured that in this guide, we have already configured our PostgreSQL to use connection pooling via the Postgres Config node/tab.
+1. Connection Pooling: Implementing connection pooling can significantly enhance the performance of PostgreSQL. It allows multiple clients to reuse database connections, reducing the overhead of establishing new connections for each query. By configuring PostgreSQL to use connection pooling, you can optimize resource usage and improve overall system performance. In this guide, we have configured our PostgreSQL to use connection pooling via the Postgres Config node/tab.
 
 2. Environment Variables: The [Twelve Factors](https://12factor.net/) emphasize the importance of separating configuration details from the code (flow) to ensure better security. Storing database credentials within the codebase can pose a security risk. Instead, expose the configuration details, as environment variables. This ensures that sensitive information remains secure and can be managed separately from the codebase.
 
