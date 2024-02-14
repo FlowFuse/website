@@ -54,7 +54,7 @@ We have discussed many times in previous blogs that using environment variables 
 In this section, we will create a table in our database to store product data.
 
 1. Drag an Inject node onto canvas, and keep it unchanged.
-2. Click on the PostgreSQL node that we have added previously, and paste the following SQL command into the query input field. (I have added comments for your understanding of SQL commands)
+2. Click on the PostgreSQL node we added previously and paste the following SQL command into the query input field. (I have added comments for your understanding of SQL commands)
 
 ```sql
 -- Create a table named product_data if it does not already exist
@@ -115,7 +115,7 @@ VALUES ($1, $2, $3);
 # Displaying product data on Dashboard 2.0
 In this section, we will retrieve all data from our database table and display it on Dashboard 2.0 using the ui-table widget.
 
-1. Drag an Inject node onto canvas.
+1. Drag an Inject node onto the canvas.
 2. Drag a PostgreSQL node onto the Canvas and click on that node and paste the following SQL command into the query input field. 
 3. Drag a ui-table widget onto the canvas and create a new ui-group for it.
 4. Connect the inject node's output to the PostgreSQL node’s input and the PostgreSQL node's output to the ui-table's input.
@@ -154,7 +154,7 @@ UPDATE product_data
 SET 
     stock =  $2
 -- Sets the value of the "stock" column to the value represented by the parameter $2.
--- The value to be set is typically provided externally, In our context we getting this parameter by "msg.params"
+-- The value to be set is typically provided externally, In our context, we get this parameter by "msg.params"
 
 WHERE id = $1;
 -- Specifies the condition that must be met for the update to occur.
@@ -169,7 +169,7 @@ WHERE id = $1;
 
 !["Deleting product data to the database"](./images/postgresql_with_node-red_form3.png "Deleting product data to the database")
 
-In this section, we'll cover how to delete product data from the database. we will use Dashboard 2.0's form interface to collects essential information like the product id and name. While the product id alone is sufficient to delete a product from the database, we include the product name as an additional precaution to prevent accidental deletion of product data.
+In this section, we'll cover how to delete product data from the database. We will use Dashboard 2.0's form interface to collect essential information like the product id and name. While the product id alone is sufficient to delete a product from the database, we include the product name as an additional precaution to prevent accidental deletion of product data.
 
 1. Drag a ui-form widget onto the canvas and create a new ui-group for it.
 2. Add elements for product id and name in the form widget and give it a name, label, and select type.
@@ -197,7 +197,7 @@ WHERE id = $1 AND name = $2;
 5. Connect ui-form’s output to the function node’s input and the function node's output to PostgreSQL node’s input.
 
 # Dropping Table
-In this section, we will understand how to drop ( delete ) tables from the database.
+This section will explain how to drop ( delete ) tables from the database.
 
 1. Drag an Inject node onto the canvas.
 2. Drag a PostgreSQL node onto canvas and paste the following SQL command into the query input field.
@@ -214,14 +214,14 @@ DROP TABLE IF EXISTS product_data;
 # Deploying Flow
 !["Deploying Inventory management system's flow"](./images/postgresql_with_nodred_environment_variable_ff_editor.png "Deploying Inventory management system's flow")
 
-Our Inventory Management System is now complete and ready for deployment. To initiate the deployment process, locate the red 'Deploy' button positioned in the top right corner. To create, drop tables, and retrieve table data, you need to click on the 'Inject Node's button. For product data insertion, updates, and deletions, navigate to `https://<your-instance-name>.flowfuse.cloud/dashboard`.
+Our Inventory Management System is now complete and ready for deployment. To initiate the deployment process, locate the red 'Deploy' button positioned in the top right corner. To create, drop tables, and retrieve table data, click on the 'Inject Node' button. For product data insertion, updates, and deletions, navigate to `https://<your-instance-name>.flowfuse.cloud/dashboard`.
 
 !["Inventory management system"](./images/postgresql_with_node-red_Inventory_management_system.png "Inventory management system")
 
 ## Best practices to follow
 Throughout this guide, we have followed some best practices that we think need to be discussed separately. In this section, we'll discuss some best practices that need to be followed while using the PostgreSQL database.
 
-1. Connection Pooling: Implementing connection pooling can significantly enhance the performance of PostgreSQL. It allows multiple clients to reuse a set of database connections, which reduces the overhead of establishing new connections for each query. By configuring PostgreSQL to use connection pooling, you can optimize resource usage and improve overall system performance. Rest assured that in this guide, we have already configured our PostgreSQL to use connection pooling via the Postgres Config node/tab.
+1. Connection Pooling: Implementing connection pooling can significantly enhance the performance of PostgreSQL. It allows multiple clients to reuse database connections, reducing the overhead of establishing new connections for each query. By configuring PostgreSQL to use connection pooling, you can optimize resource usage and improve overall system performance. In this guide, we have configured our PostgreSQL to use connection pooling via the Postgres Config node/tab.
 
 2. Environment Variables: The [Twelve Factors](https://12factor.net/) emphasize the importance of separating configuration details from the code (flow) to ensure better security. Storing database credentials within the codebase can pose a security risk. Instead, expose the configuration details, as environment variables. This ensures that sensitive information remains secure and can be managed separately from the codebase.
 
