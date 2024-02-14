@@ -85,7 +85,7 @@ CREATE TABLE IF NOT EXISTS product_data (
 In this section, we will add a Form interface that will enable us to obtain product data that we need to insert into the database. Moreover, we will use the PostgreSQL node to interact with the database.
 
 !["Adding form to insert data"](./images/postgresql_with_node-red_form1.png "Adding form to insert data")
-1. Drag a Ui-Form widget onto the canvas and select the created group.
+1. Drag a ui-form widget onto the canvas and select the created ui-group.
 2. Add an element for all required input data in the form widget and give it a name, label, and select type, I have selected 'number' as a type for 'price' and 'stock', and 'text' for 'name', but feel free to adjust according to your preference and data requirements.
 3. Drag the function node onto Canvas and paste the following script.
 
@@ -110,15 +110,15 @@ VALUES ($1, $2, $3);
 ```
 !["Inserting data into database"](./images/postgresql_with_node-red_insert_data.png "Inserting data into database")
 
-5. Connect Ui-form’s output to function node’s input, and function node's output to the PostgreSQL node’s input.
+5. Connect ui-form’s output to function node’s input, and function node's output to the PostgreSQL node’s input.
 
 # Displaying product data on Dashboard 2.0
-In this section, we will retrieve all data from our database table and display it on Dashboard 2.0 using the Ui-table widget.
+In this section, we will retrieve all data from our database table and display it on Dashboard 2.0 using the ui-table widget.
 
 1. Drag an Inject node onto canvas.
 2. Drag a PostgreSQL node onto the Canvas and click on that node and paste the following SQL command into the query input field. 
-3. Drag a Ui-table widget onto canvas and create a new Ui group for it.
-4. Connect inject node's output to PostgreSQL node’s input, and PostgreSQL node's output to the Ui-table's input.
+3. Drag a ui-table widget onto canvas and create a new ui-group for it.
+4. Connect inject node's output to PostgreSQL node’s input, and PostgreSQL node's output to the ui-table's input.
 ```sql
 -- Retrieve all data from the product_data table
 SELECT * FROM product_data;
@@ -130,7 +130,7 @@ SELECT * FROM product_data;
 
 In this section, we will add a form interface to collect the product ID and the new stock value for the update process. Feel free to select other data fields that you need to update. To achieve this, we will add a form interface using Dashboard 2.0. Additionally, we will interact with the database using the same PostgreSQL node that we have used so far in this guide.
 
-1. Drag a Ui-Form widget onto the canvas and create a new UI group for it.
+1. Drag a ui-form widget onto the canvas and create a new ui-group for it.
 2. Add elements for product id and stock in the form widget and give it a name, label, and select type.
 3. Drag a function node onto Canvas and paste the following script.
 
@@ -163,7 +163,7 @@ WHERE id = $1;
 
 !["Updating product data to the database"](./images/postgresql_with_node-red_update_data.png "Updating product data to the database")
 
-5. Connect Ui-form’s output to function node’s input, and function node's output to the PostgreSQL node’s input.
+5. Connect ui-form’s output to function node’s input, and function node's output to the PostgreSQL node’s input.
 
 # Deleting product data from the database
 
@@ -171,7 +171,7 @@ WHERE id = $1;
 
 In this section, we'll cover how to delete product data from the database. we will use Dashboard 2.0's form interface to collects essential information like the product id and name. While the product id alone is sufficient to delete a product from the database, we include the product name as an additional precaution to prevent accidental deletion of product data.
 
-1. Drag a Ui-Form widget onto the canvas and create a new UI group for it.
+1. Drag a ui-form widget onto the canvas and create a new ui-group for it.
 2. Add elements for product id and name in the form widget and give it a name, label, and select type.
 3. Drag a function node onto Canvas and paste the following script.
 
@@ -194,7 +194,7 @@ WHERE id = $1 AND name = $2;
 ```
 !["Deleting product data to the database"](./images/postgresql_with_node-red_delete_data.png "Deleting product data to the database")
 
-5. Connect Ui-form’s output to function node’s input, and function node's output to PostgreSQL node’s input.
+5. Connect ui-form’s output to function node’s input, and function node's output to PostgreSQL node’s input.
 
 # Dropping Table
 In this section, we will understand how to drop ( delete ) tables from the database.
