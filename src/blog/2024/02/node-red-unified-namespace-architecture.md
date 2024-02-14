@@ -4,7 +4,7 @@ subtitle: How does Node-RED elevate a Unified Namespace Architecture?
 description: Discover how Node-RED serves as a critical link in Unified Namespace architectures, driving interoperability and insights in industrial ecosystems.
 date: 2024-02-14
 authors: ["marian-demme"]
-image: /src/blog/2024/02/images/unified-namespace-architecture.png
+image: /blog/2024/02/images/unified-namespace-architecture.png
 tags:
     - posts
     - flowfuse
