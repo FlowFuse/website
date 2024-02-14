@@ -110,15 +110,15 @@ VALUES ($1, $2, $3);
 ```
 !["Inserting data into database"](./images/postgresql_with_node-red_insert_data.png "Inserting data into database")
 
-5. Connect ui-form’s output to function node’s input, and function node's output to the PostgreSQL node’s input.
+5. Connect ui-form’s output to the function node’s input and the function node's output to the PostgreSQL node’s input.
 
 # Displaying product data on Dashboard 2.0
 In this section, we will retrieve all data from our database table and display it on Dashboard 2.0 using the ui-table widget.
 
 1. Drag an Inject node onto canvas.
 2. Drag a PostgreSQL node onto the Canvas and click on that node and paste the following SQL command into the query input field. 
-3. Drag a ui-table widget onto canvas and create a new ui-group for it.
-4. Connect inject node's output to PostgreSQL node’s input, and PostgreSQL node's output to the ui-table's input.
+3. Drag a ui-table widget onto the canvas and create a new ui-group for it.
+4. Connect the inject node's output to the PostgreSQL node’s input and the PostgreSQL node's output to the ui-table's input.
 ```sql
 -- Retrieve all data from the product_data table
 SELECT * FROM product_data;
@@ -163,7 +163,7 @@ WHERE id = $1;
 
 !["Updating product data to the database"](./images/postgresql_with_node-red_update_data.png "Updating product data to the database")
 
-5. Connect ui-form’s output to function node’s input, and function node's output to the PostgreSQL node’s input.
+5. Connect ui-form’s output to the function node’s input and the function node's output to the PostgreSQL node’s input.
 
 # Deleting product data from the database
 
@@ -194,7 +194,7 @@ WHERE id = $1 AND name = $2;
 ```
 !["Deleting product data to the database"](./images/postgresql_with_node-red_delete_data.png "Deleting product data to the database")
 
-5. Connect ui-form’s output to function node’s input, and function node's output to PostgreSQL node’s input.
+5. Connect ui-form’s output to the function node’s input and the function node's output to PostgreSQL node’s input.
 
 # Dropping Table
 In this section, we will understand how to drop ( delete ) tables from the database.
@@ -228,4 +228,4 @@ Throughout this guide, we have followed some best practices that we think need t
 3. Credential Rotation: Regularly rotating database credentials is essential for maintaining robust security practices. This includes changing login information for managed databases and other database access points. Implementing a scheduled credential rotation process, such as quarterly 'rotation days,' streamlines the task and reduces the risk of unauthorized access. 
 
 # Conclusion 
-This guide has demonstrated the integration of PostgreSQL with Node-RED. Throughout this article we've built an inventory management system with data stored in a database. You've learned to create and drop tables, and performing operations like inserting, updating, and deleting data. Also, we have highlighted best practices such as utilizing environment variables and selecting certified nodes to ensure security.
+This guide has demonstrated the integration of PostgreSQL with Node-RED. Throughout this article, we've built an inventory management system with data stored in a database. You've learned to create and drop tables and perform operations like inserting, updating, and deleting data. Also, we have highlighted best practices, such as utilizing environment variables and selecting certified nodes to ensure security.
