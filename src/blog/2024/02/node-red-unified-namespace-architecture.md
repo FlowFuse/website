@@ -28,8 +28,6 @@ This is where the physical assets dwell, requiring connectivity through a networ
 **The Service Layer**
 Here resides the applications and software that analyze data, transforming raw metrics into actionable insights. It's where the data becomes meaningful through analytics, dashboards, and decision-support tools.
 
-![Example Architecture](/blog/2024/02/images/unified-namespace-architecture.png)
-
 ## The Roles in UNS Architecture
 
 Within this bifurcated architecture, we have two general categories of actors: Indirect Consumer/Producers and Direct Consumer/Producers.
@@ -41,6 +39,8 @@ In such cases, Node-RED shines as a middleware for protocol conversion and data 
 
 **Direct Consumer/Producers**
 Contrastingly, direct actors can interact with the UNS out of the box. Modern industrial equipment usually falls into this category, equipped to speak the language of the UNS directly. However, the challenge remains not just in protocol communication but also in data contextualization. Merely speaking the same language is not enough; the data must also carry the correct context to be fully understood and utilized.
+
+![Example Architecture](/blog/2024/02/images/unified-namespace-architecture.png)
 
 ## Harnessing Node-RED for Actionable Insights
 
