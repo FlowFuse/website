@@ -1,7 +1,7 @@
 ---
 title: Node-RED in a Unified Namespace Architecture
-subtitle: 
-description: 
+subtitle: How does Node-RED elevate a Unified Namespace Architecture?
+description: Discover how Node-RED serves as a critical link in Unified Namespace architectures, driving interoperability and insights in industrial ecosystems.
 date: 2024-02-14
 authors: ["marian-demme"]
 image: /src/blog/2024/02/images/unified-namespace-architecture.png
@@ -32,12 +32,12 @@ Here resides the applications and software that analyze data, transforming raw m
 
 Within this bifurcated architecture, we have two general categories of actors: Indirect Consumer/Producers and Direct Consumer/Producers.
 
-**Indirect Consumer/Producers**
+**Indirect Consumer/Producers**:
 These actors cannot natively communicate with our UNS broker. The communication barrier could be due to protocol differences, such as not using MQTT, or payload structures incompatible with your UNS's schema. This is a common challenge in manufacturing, especially in "brownfield" scenarios where legacy machines and equipment from various eras must be integrated.
 
 In such cases, Node-RED shines as a middleware for protocol conversion and data contextualization. Take, for example, the topic hierarchy in UNS based on location for context. A raw sensor reading might lack necessary details like measurement units or message versions. Node-RED steps in to enrich this data, ensuring compatibility with the UNS. In our [concrete architecture example](https://flowfuse.com/blog/2023/12/unified-namespace-data-modelling/), we have an indirect PLC producer. With Node-RED, we can convert and contextualize the data from this PLC for the UNS, ensuring smooth communication and effective integration.
 
-**Direct Consumer/Producers**
+**Direct Consumer/Producers**:
 Contrastingly, direct actors can interact with the UNS out of the box. Modern industrial equipment usually falls into this category, equipped to speak the language of the UNS directly. However, the challenge remains not just in protocol communication but also in data contextualization. Merely speaking the same language is not enough; the data must also carry the correct context to be fully understood and utilized.
 
 ![Example Architecture](./images/unified-namespace-architecture.png)
