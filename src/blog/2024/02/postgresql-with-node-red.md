@@ -214,7 +214,7 @@ DROP TABLE IF EXISTS product_data;
 # Deploying Flow
 !["Deploying Inventory management system's flow"](./images/postgresql_with_nodred_environment_variable_ff_editor.png "Deploying Inventory management system's flow")
 
-Our Inventory Management System is now complete and ready for deployment. To initiate the deployment process, locate the red 'Deploy' button positioned in the top right corner. To create, drop tables, and retrieve table data, you need to click on the 'Inject Node's button. For product data insertion, updates, and deletions, navigate to `https://<your-instance-name>.flowfuse.cloud/dashboard`.
+Our Inventory Management System is now complete and ready for deployment. To initiate the deployment process, locate the red 'Deploy' button positioned in the top right corner. To create, drop tables, and retrieve table data, click on the 'Inject Node' button. For product data insertion, updates, and deletions, navigate to `https://<your-instance-name>.flowfuse.cloud/dashboard`.
 
 !["Inventory management system"](./images/postgresql_with_node-red_Inventory_management_system.png "Inventory management system")
 
