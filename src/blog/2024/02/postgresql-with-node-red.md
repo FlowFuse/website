@@ -197,7 +197,7 @@ WHERE id = $1 AND name = $2;
 5. Connect ui-form’s output to function node’s input, and function node's output to PostgreSQL node’s input.
 
 # Dropping Table
-In this section, we will understand how to drop ( delete ) tables from the database.
+This section will explain how to drop ( delete ) tables from the database.
 
 1. Drag an Inject node onto the canvas.
 2. Drag a PostgreSQL node onto canvas and paste the following SQL command into the query input field.
