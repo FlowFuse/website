@@ -4,7 +4,7 @@ subtitle: Guide to integrating PostgreSQL database into Node-RED Applications fo
 description: Guide to integrating PostgreSQL database into Node-RED Applications for Storing, Updating, and Querying Data
 date: 
 authors: ["sumit-shinde"]
-image: /blog/2024/02/images/postgresql_with_node-red_Inventory_management_system.png
+image: /blog/2024/02/images/postgresql_with_node-red.png
 tags:
     - posts
     - node-red
