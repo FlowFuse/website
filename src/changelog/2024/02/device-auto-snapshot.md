@@ -6,7 +6,7 @@ tags:
     - changelog
 ---
 
-FlowFuse V2.1 introduces Auto Snapshot for your Application Assigned Devices.
+FlowFuse V2.1 introduces Auto Snapshots for your Application Assigned Devices.
 
 When you deploy a change to the device flows, a snapshot will be taken automatically.
 
