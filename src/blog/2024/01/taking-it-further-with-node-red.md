@@ -73,7 +73,7 @@ Using this technique, we can build the content of message.store (or any other na
 
 Where possible, it's more robust to store all the information related to a particular message within the message rather than saving it to context and retrieving it later. Using context risks a [race condition](https://en.wikipedia.org/wiki/Race_condition#:~:text=A%20race%20condition%20or%20race,to%20unexpected%20or%20inconsistent%20results) within your flow that could result in data corruption.
 
-In this example, we simulate how a race condition can make context a bad choice for transactional data storage. The flow passes in the name and age of two people then moves the age to context. The flow then adds a random delay for each message so that in some cases, the messages do not reach the debug in the order they were created. After the delay, the age is pulled back from context and added to each msg.payload.
+In this example, we simulate how a race condition can make context a bad choice for transactional data storage. The flow passes in the name and age of two people then moves the age to context. The flow then adds a random delay for each message so that, in some cases, the messages do not reach the debug in the order they were created. After the delay, the age is pulled back from context and added to each msg.payload.
 
 ![Example of how a race condition can make context a bad place to cache data](./images/race-condition.gif "Example of how a race condition can make context a bad place to cache data")
 
