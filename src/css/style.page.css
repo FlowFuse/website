@@ -177,6 +177,10 @@
         margin-right: auto;
     }
 
+    .contentAnnual .pricing-tiles {
+        grid-template-columns: 1fr 1fr;
+    }
+
     .pricing-tile {
         position: relative;
         border-radius: 12px;
@@ -313,19 +317,19 @@
 }
 
 .slides .cloudText, 
-.slides .annualText {
+.slides .monthlyText {
     color: white;
 }
 
 .ff-bg-light .slides .cloudText,
-.ff-bg-light .slides .annualText {
+.ff-bg-light .slides .monthlyText {
     color: theme(colors.gray.800);
 }
 
 .slides .selfHostedText,
 .ff-bg-light .slides .selfHostedText,
-.slides .monthlyText,
-.ff-bg-light .slides .monthlyText {
+.slides .annualText,
+.ff-bg-light .slides .annualText {
     color: theme(colors.teal.300);
 }
 
@@ -393,21 +397,21 @@
 
 /* words */
 .cloudText, .selfHostedText,
-.annualText, .monthlyText {
+.monthlyText, .annualText {
     font-size: 12px;
     font-weight: 600;
     transition-duration: 0.5s;
 }
 
-.cloudText, .annualText {
+.cloudText, .monthlyText {
     color: theme(colors.teal.300);
 }
 
-.selfHostedText, .monthlyText {
+.selfHostedText, .annualText {
     color: white;
 }
 
-.ff-bg-light .selfHostedText, .ff-bg-light .monthlyText {
+.ff-bg-light .selfHostedText, .ff-bg-light .annualText {
     color: theme(colors.gray.800);
 }
 
