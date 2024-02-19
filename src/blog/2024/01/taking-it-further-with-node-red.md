@@ -89,4 +89,4 @@ You can import the flow using this code.
 
 Storing transactional data in msg rather than context in Node-RED offers advantages in modularity, scalability, simplicity, and also helps prevent race conditions. By using msg, data transfer between nodes becomes more seamless, allowing for independent node reuse across flows without additional configuration. This approach ensures scalability by avoiding the imposition of large datasets on the global context. Moreover, storing data outside of msg.payload within the msg object enhances flexibility. It separates metadata and other relevant information from the main payload, promoting a cleaner and more organized structure. This practice not only aligns with Node-RED's visual programming paradigm but also improves code readability. Steering clear of context for transactional data, while also organizing it within the msg object, provides a comprehensive and reliable solution within the Node-RED framework.
 
-Thanks to [https://sunrisesunset.io/](SunriseSunset) for creating the useful API we've used in this article.
+Thanks to [SunriseSunset](https://sunrisesunset.io/) for creating the useful API we've used in this article.
