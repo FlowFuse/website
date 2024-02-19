@@ -31,7 +31,7 @@ You can import the flow using this code.
 [{"id":"aaa1e17e5f158004","type":"inject","z":"67746003c844dbc4","name":"Inject the message","props":[{"p":"payload"},{"p":"later","v":"A string I want to be able to use later in my flow","vt":"str"}],"repeat":"","crontab":"","once":false,"onceDelay":0.1,"topic":"","payload":"Hello World","payloadType":"str","x":690,"y":140,"wires":[["bce1bf09736125b7"]]},{"id":"bce1bf09736125b7","type":"debug","z":"67746003c844dbc4","name":"debug 1","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"true","targetType":"full","statusVal":"","statusType":"auto","x":880,"y":140,"wires":[]}]
 ```
 
-Storing data outside of msg.payload can be very useful when you need access to that data later in your flow. You may notice that many nodes overwrite the content of msg.payload, so putting your data elsewhere is essential otherwise it will be overwritten and lost.
+Storing data outside of msg.payload can be very useful when you need access to that data later in your flow. You may notice that many nodes overwrite the content of msg.payload, so putting your data elsewhere is essential otherwise, it will be overwritten and lost.
 
 #### Tidying your messages
 
