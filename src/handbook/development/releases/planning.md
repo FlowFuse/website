@@ -11,13 +11,7 @@ Our planning process is continuously evolving as we find the best way to accommo
 
 ## Cadence
 
-FlowFuse is continuously released to FlowFuse Cloud, and every four weeks, on a Thursday, it is packaged for users who are self-hosting FlowFuse. 
-
-### Milestones
-
-We track releases using GitHub Milestones. We utilize GitHub issues for planning work. Issues are continuously scheduled by the PM. Releases are structured following the [Semantic Versioning](https://semver.org/#semantic-versioning-200).
-
-Milestones indicate the week of the release instead of a Patch version. This leads to a specific structure for Milestones: **MAJORversion.MINORversion.WEEK**. For example, 1.14.2 would represent the second week of the release of 1.14. This method ensures that Milestones can be used as targets while allowing continuous planning.
+FlowFuse is continuously released to FlowFuse Cloud, and every four weeks, on a Thursday, it is packaged for users who are self-hosting FlowFuse.
 
 ## Planning & Prioritization
 
@@ -33,11 +27,9 @@ Once an issue is refined, the PM continuously assigns issues to the [Development
 This section should include a maximum of 40 [effort estimation points](#effort-estimation).
 
 ### Step 3 - Assignment to the Up Next section
-This section is most relevant for the engineering team because it includes the issues which should be picked up next. The issues should generally be ready for pickup. Both the PM and CTO are responsible for directly assigning the issues in this section to an engineer.
+This section is most relevant for the engineering team because it includes the issues which should be picked up next. The issues should generally be ready for pickup. The PM is responsible for assigning issues to the "Up Next" section, while the Engineering Manager is responsible for directly assigning the issues in this section to an engineer. The `Up Next` section should consistently contain sufficient items, ensuring that members of the engineering team can immediately transition to a new task once other issues have been [successfully developed](#defining-done).
 
-**Milestone Assignment:** the CTO and PM are responsible for assigning a milestone to the items in this section based on the [effort estimation](#effort-estimation), indicating the week when this issue is expected to be released to FlowFuse Cloud.
-
-The `Up Next` section should consistently contain sufficient items, ensuring that members of the engineering team can immediately transition to a new task once other issues have been [successfully developed](#defining-done). Every available engineer should have exactly one pre-assigned task, providing clear visibility for everyone on their subsequent responsibility.
+**Start and End Date:** The Engineering Manager is responsible for assigning an end date to the items based on the [effort estimation](#effort-estimation), indicating the date when this issue is expected to be released to FlowFuse Cloud.
 
 ## UX Planning
 
@@ -122,9 +114,9 @@ As items move up the list and get closer to Next we should have a greater unders
 ### Development Board
 
 The [Development Board](https://github.com/orgs/FlowFuse/projects/1/views/1) is
-used to plan and track the work within the current Iteration.
+used to plan and track the work.
 
-Within the board, we use iterations to indicate when an item is being worked on. The `Up Next` section clearly indicates to everyone which item should be picked up next.
+The `Up Next` section clearly indicates to everyone which item should be picked up next.
 
 Design work should be handled in a sub-task linked to the development issue.
 
