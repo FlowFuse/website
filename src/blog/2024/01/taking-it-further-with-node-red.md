@@ -1,5 +1,5 @@
 ---
-title: Getting Started with Node-RED
+title: "Storing Data: Getting Started with Node-RED"
 subtitle: Node-RED is one of the easiest ways to program ever created but everyone needs a little help
 description: In this article we are going to explain how you can store data outside of msg.payload for later use
 date: 2024-02-19
