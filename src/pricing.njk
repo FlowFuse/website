@@ -242,7 +242,7 @@ hubspot:
                                         </h2>
                                     </div>
                                     <div class="pl-2 text-sm leading-4 text-left self-end pb-1">
-                                        <note id="team-annual-price-note" class="note text-teal-100 text-xs">instances <br>Billed annually at <span class="font-semibold">$32,500</span><br \></note>
+                                        <note id="team-annual-price-note" class="note text-teal-100 text-xs">instances <br>Annual bill. <span class="font-semibold">$2,708.50</span>/month<br \></note>
                                     </div>
                                 </div>
                             </div>
@@ -539,9 +539,9 @@ hubspot:
             priceDecElement.textContent = decValue;
 
             if (isAnnual) {
-                annualPriceElement.innerHTML = `/instance a month <br>Billed annually at <span class="font-semibold">$${(discountedPriceAnnual * tempSliderValue).toLocaleString('en-US', {minimumFractionDigits: 0})}</span><br \\>`;
+                annualPriceElement.innerHTML = `/instance a month<br>Annual bill. <span class="font-semibold">$${(discountedPriceMonthly * tempSliderValue).toLocaleString('en-US', {minimumFractionDigits: 2, maximumFractionDigits: 2})}</span>/month<br \\>`;
             } else {
-                annualPriceElement.innerHTML = `/instance a month <br>Billed monthly at <span class="font-semibold">$${(discountedPriceMonthly * tempSliderValue).toLocaleString('en-US', {minimumFractionDigits: 2})}</span><br \\>`;
+                annualPriceElement.innerHTML = `/instance a month <br>Billed monthly at <span class="font-semibold">$${(discountedPriceMonthly * tempSliderValue).toLocaleString('en-US', {minimumFractionDigits: 2, maximumFractionDigits: 2})}</span><br \\>`;
             }
         })
 
