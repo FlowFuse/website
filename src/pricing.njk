@@ -135,7 +135,7 @@ hubspot:
                             </div>
                             <a class="md:self-end ff-btn ff-btn--primary uppercase align-baseline w-full"
                                 href="/book-demo/"
-                                onclick="capture('cta-contact', {'position': 'primary'}, {'plan': 'sh-team'})">BOOK A
+                                onclick="capture('cta-book-demo', {'position': 'primary'}, {'plan': 'sh-team'})">BOOK A
                                 DEMO</a>
                         </div>
                     </div>
@@ -196,8 +196,8 @@ hubspot:
                                 </div>
                             </div>
                             <a class="md:self-end ff-btn ff-btn--primary uppercase align-baseline w-full"
-                                href='/contact-us/'
-                                onclick="capture('cta-contact-us', {'position': 'primary'}, {'plan': 'sh-enterprise'})">CONTACT
+                                href='#contact-us'
+                                onclick="scrollToAnchor(event, 'contact-us'), capture('cta-contact-us', {'position': 'primary'}, {'plan': 'sh-enterprise'})">CONTACT
                                 US</a>
                         </div>
                     </div>
@@ -248,7 +248,7 @@ hubspot:
                             </div>
                             <a class="md:self-end ff-btn ff-btn--primary uppercase align-baseline w-full"
                                 href='/book-demo/'
-                                onclick="capture('cta-contact', {'position': 'primary'}, {'plan': 'cloud-team'})">BOOK A
+                                onclick="capture('cta-book-demo', {'position': 'primary'}, {'plan': 'cloud-team'})">BOOK A
                                 DEMO</a>
                         </div>
                     </div>
@@ -288,8 +288,8 @@ hubspot:
                                 </div>
                             </div>
                             <a class="md:self-end ff-btn ff-btn--primary uppercase align-baseline w-full"
-                                href='/contact-us/'
-                                onclick="capture('cta-contact-us', {'position': 'primary'}, {'plan': 'cloud-enterprise'})">CONTACT
+                                href='#contact-us'
+                                onclick="scrollToAnchor(event, 'contact-us'), capture('cta-contact-us', {'position': 'primary'}, {'plan': 'cloud-enterprise'})">CONTACT
                                 US</a>
                         </div>
                     </div>
@@ -385,9 +385,10 @@ hubspot:
     const cloud = document.querySelectorAll(".contentCloud");
     const selfHosted = document.querySelectorAll(".contentSelfHosted");
 
-    // Get the hosting parameter from the URL
+    // Get the hosting and billing parameters from the URL
     const urlParams = new URLSearchParams(window.location.search);
     const hosting = urlParams.get('hosting');
+    const billing = urlParams.get('billing');
 
     // Check the hosting parameter when the page loads
     if (hosting === 'self-hosted') {
@@ -419,13 +420,15 @@ hubspot:
             // Change the hosting parameter based on toggle state
             if (btn.classList.contains("slides")) {
                 // Change hosting parameter to Self-Hosted state
-                urlParams.set('hosting', 'self-hosted');
-                // Update the URL with the new hosting parameter
-                window.history.replaceState({}, '', `${window.location.pathname}?${urlParams}`);
+                urlParams.set('features', 'self-hosted');
             } else {
                 // Remove the hosting parameter for Cloud state
-                urlParams.delete('hosting');
-                // Update the URL without the hosting parameter
+                urlParams.delete('features');
+            }
+            // Update the URL
+            if (urlParams.toString()) {
+                window.history.replaceState({}, '', `${window.location.pathname}?${urlParams}`);
+            } else {
                 window.history.replaceState({}, '', window.location.pathname);
             }
         });
@@ -435,8 +438,6 @@ hubspot:
     const billingBtns = document.querySelectorAll(".billingToggle");
     const annual = document.querySelectorAll(".contentAnnual");
     const monthly = document.querySelectorAll(".contentMonthly");
-
-
 
     billingBtns.forEach(btn => {
         btn.addEventListener("click", function() {
@@ -451,6 +452,21 @@ hubspot:
             monthly.forEach((item) => {
                 item.classList.toggle("hide");
             });
+
+            // Change the billing parameter based on toggle state
+            if (btn.classList.contains("slides")) {
+                // Change billing parameter to Annual state
+                urlParams.set('billing', 'annual');
+            } else {
+                // Remove the billing parameter for Monthly state
+                urlParams.delete('billing');
+            }
+            // Update the URL
+            if (urlParams.toString()) {
+                window.history.replaceState({}, '', `${window.location.pathname}?${urlParams}`);
+            } else {
+                window.history.replaceState({}, '', window.location.pathname);
+            }
         });
     });
 </script>
@@ -555,7 +571,7 @@ hubspot:
     setupPricingSlider("#enterprise-monthly-slider", 600, 10, "#enterprise-monthly-price-int", "#enterprise-monthly-price-dec", "#enterprise-monthly-price-note", "#enterprise-monthly-value", false);
 </script>
 
-<!-- Append hosting to URL -->
+<!-- Features info -->
 <script>
     function openInfo(id, hosting) {
         capture('info-feature', { feature: id }, { hosting: hosting })
