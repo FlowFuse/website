@@ -60,7 +60,7 @@ hubspot:
                                     </ul>
                                 </div>
                             </div>
-                            <div class="mt-9 md:text-left items-left w-full mb-11 flex flex-row">
+                            <div class="mt-9 md:text-left items-left w-full mb-11 md:mt-11 md:mb-0 flex flex-row">
                                 <h2 class="self-end">$15</h2>
                                 <div class="pl-1 text-sm leading-4 text-left self-end pb-1">
                                     <note class="note text-teal-100">/month</note>
@@ -97,14 +97,41 @@ hubspot:
                             </div>
                             {% endmacro %}
                             {{ team() }}
-                            <div class="mt-9 mb-11 flex flex-row flex-wrap w-full gap-x-2">
+                            <!-- Slider -->
+                            <ul class="font-extralight text-sm leading-7 mt-6 w-full flex flex-row justify-between text-gray-400">
+                                <li>Instances</li>
+                                <li id="team-monthly-value" class="value">5</li>
+                            </ul>
+                            <div class="range contentMonthly">
+                                <input type="range" min="5" max="255" value="5" id="team-monthly-slider" class="transition duration-1000" />
+                            </div>
+                            <!-- Price -->
+                            <div id="team-m-original-div" class="mt-3 mb-6 flex flex-row flex-wrap w-full gap-x-2">
                                 <div class="text-left flex flex-row">
-                                    <h2 class="self-end">$25</h2>
+                                    <div class="w-16 mr-1">
+                                        <h2 class="self-end">
+                                            <span class="align-top text-sm leading-7">$</span><span
+                                                id="team-monthly-price-int" class="align-top">20</span><span
+                                                id="team-monthly-price-dec" class="align-top text-sm leading-7">83</span>
+                                        </h2>
+                                    </div>
                                     <div class="pl-2 text-sm leading-4 text-left self-end pb-1">
-                                        <note class="note text-teal-100">/instance<br>a month</note>
+                                        <note id="team-monthly-price-note" class="note text-teal-100 text-xs">/instance a
+                                            month <br>Billed monthly at $300<br \></note>
                                     </div>
                                 </div>
-                                <note class="note text-teal-100 text-xs">Volume discounts available</note>
+                            </div>
+                            <div id="team-m-alternate-div" class="hidden mt-3 mb-6 flex flex-row flex-wrap w-full gap-x-2">
+                                <div class="text-left flex flex-row">
+                                    <div class="w-16 mr-1">
+                                        <h2 class="self-end">
+                                            <span id="team-monthly-price-int" class="align-top text-6xl leading-9">∞</span>
+                                        </h2>
+                                    </div>
+                                    <div class="pl-2 text-sm leading-4 text-left self-end pb-1">
+                                        <note id="team-monthly-price-note" class="note text-teal-100 text-xs">instances <br>Billed monthly at <span class="font-semibold">$3,250.00</span><br \></note>
+                                    </div>
+                                </div>
                             </div>
                             <a class="md:self-end ff-btn ff-btn--primary uppercase align-baseline w-full"
                                 href="/book-demo/"
@@ -117,8 +144,7 @@ hubspot:
                         <div class="pricing-tile-background pb-6 md:grid flex-col">
                             {% macro enterprise() %}
                             <div>
-                                <div
-                                    class="flex flex-col items-center text-left md:flex-row md:-mb-0 md:px-0 md:block md:min-h-[133px]">
+                                <div class="flex flex-col items-center text-left md:flex-row md:-mb-0 md:px-0 md:block md:min-h-[133px]">
                                     <div class="flex flex-row justify-between mt-4 w-full gap-x-2">
                                         <h4 style="display:inline-block;">Enterprise</h4>
                                     </div>
@@ -138,14 +164,36 @@ hubspot:
                             </div>
                             {% endmacro %}
                             {{ enterprise() }}
-                            <div class="mt-9 mb-11 flex flex-row flex-wrap w-full gap-x-2">
+                            <!-- Slider -->
+                            <ul class="font-extralight text-sm leading-7 mt-6 w-full flex flex-row justify-between text-gray-400">
+                                <li>Instances</li>
+                                <li id="enterprise-monthly-value" class="value">10</li>
+                            </ul>
+                            <div class="range contentMonthly">
+                                <input type="range" min="10" max="510" value="10" id="enterprise-monthly-slider" class="transition duration-1000" />
+                            </div>
+                            <!-- Price -->
+                            <div id="enterprise-m-original-div" class="mt-3 mb-6 flex flex-row flex-wrap w-full gap-x-2">
                                 <div class="text-left flex flex-row">
-                                    <h2 class="self-end">$50</h2>
+                                    <div class="w-16 mr-1">
+                                        <h2 class="self-end">
+                                            <span class="align-top text-sm leading-7">$</span><span
+                                                id="enterprise-monthly-price-int" class="align-top">20</span><span
+                                                id="enterprise-monthly-price-dec" class="align-top text-sm leading-7">83</span>
+                                        </h2>
+                                    </div>
                                     <div class="pl-2 text-sm leading-4 text-left self-end pb-1">
-                                        <note class="note text-teal-100">/instance<br>a month</note><br \>
+                                        <note id="enterprise-monthly-price-note" class="note text-teal-100 text-xs">/instance a
+                                            month <br>Billed monthly at $600<br \></note>
                                     </div>
                                 </div>
-                                <note class="note text-teal-100 text-xs">Volume discounts available</note>
+                            </div>
+                            <div id="enterprise-m-alternate-div" class="hidden mt-3 mb-6 flex flex-row flex-wrap w-full gap-x-2">
+                                <div class="text-left">
+                                    <h2 class="self-end">
+                                        <span class="align-top">Let's talk</span>
+                                    </h2>
+                                </div>
                             </div>
                             <a class="md:self-end ff-btn ff-btn--primary uppercase align-baseline w-full"
                                 href='/contact-us/'
@@ -163,8 +211,7 @@ hubspot:
                         <div class="pricing-tile-background pb-6 md:grid flex-col">
                             {{ team() }}
                             <!-- Slider -->
-                            <ul
-                                class="font-extralight text-sm leading-7 mt-6 w-full flex flex-row justify-between text-gray-400">
+                            <ul class="font-extralight text-sm leading-7 mt-6 w-full flex flex-row justify-between text-gray-400">
                                 <li>Instances</li>
                                 <li id="team-annual-value" class="value">5</li>
                             </ul>
@@ -195,7 +242,7 @@ hubspot:
                                         </h2>
                                     </div>
                                     <div class="pl-2 text-sm leading-4 text-left self-end pb-1">
-                                        <note id="team-annual-price-note" class="note text-teal-100 text-xs">instances <br>Billed annually at $32,500<br \></note>
+                                        <note id="team-annual-price-note" class="note text-teal-100 text-xs">instances <br>Billed annually at <span class="font-semibold">$32,500</span><br \></note>
                                     </div>
                                 </div>
                             </div>
@@ -446,6 +493,30 @@ hubspot:
                     originalDiv.classList.remove('hidden');
                     alternateDiv.classList.add('hidden');
                 }
+            } else if (sliderId === "#team-monthly-slider") {
+                let originalDiv = document.querySelector('#team-m-original-div');
+                let alternateDiv = document.querySelector('#team-m-alternate-div');
+                if (tempSliderValue > 250) {
+                    sliderValue.textContent = "∞";
+                    originalDiv.classList.add('hidden');
+                    alternateDiv.classList.remove('hidden');
+                } else {
+                    sliderValue.textContent = tempSliderValue;
+                    originalDiv.classList.remove('hidden');
+                    alternateDiv.classList.add('hidden');
+                }
+            } else if (sliderId === "#enterprise-monthly-slider") {
+                let originalDiv = document.querySelector('#enterprise-m-original-div');
+                let alternateDiv = document.querySelector('#enterprise-m-alternate-div');
+                if (tempSliderValue > 500) {
+                    sliderValue.textContent = "+500";
+                    originalDiv.classList.add('hidden');
+                    alternateDiv.classList.remove('hidden');
+                } else {
+                    sliderValue.textContent = tempSliderValue;
+                    originalDiv.classList.remove('hidden');
+                    alternateDiv.classList.add('hidden');
+                }
             } else {
                 lastSliderValue = tempSliderValue;
                 sliderValue.textContent = tempSliderValue;
@@ -468,9 +539,9 @@ hubspot:
             priceDecElement.textContent = decValue;
 
             if (isAnnual) {
-                annualPriceElement.innerHTML = `/instance a month <br>Billed annually at $${(discountedPriceMonthly * 12 * tempSliderValue).toLocaleString('en-US', {minimumFractionDigits: 0})}<br \\>`;
+                annualPriceElement.innerHTML = `/instance a month <br>Billed annually at <span class="font-semibold">$${(discountedPriceAnnual * tempSliderValue).toLocaleString('en-US', {minimumFractionDigits: 0})}</span><br \\>`;
             } else {
-                annualPriceElement.innerHTML = `/instance a month <br>Billed monthly at $${(discountedPriceMonthly * tempSliderValue).toFixed(2)}<br \\>`;
+                annualPriceElement.innerHTML = `/instance a month <br>Billed monthly at <span class="font-semibold">$${(discountedPriceMonthly * tempSliderValue).toLocaleString('en-US', {minimumFractionDigits: 2})}</span><br \\>`;
             }
         })
 
@@ -480,8 +551,8 @@ hubspot:
     // Setup the sliders
     setupPricingSlider("#team-annual-slider", 250, 5, "#team-annual-price-int", "#team-annual-price-dec", "#team-annual-price-note", "#team-annual-value", true);
     setupPricingSlider("#enterprise-annual-slider", 500, 10, "#enterprise-annual-price-int", "#enterprise-annual-price-dec", "#enterprise-annual-price-note", "#enterprise-annual-value", true);
-    // setupPricingSlider("#team-monthly-slider", 300, 5, "#team-monthly-price-int", "#team-monthly-price-dec", "#team-monthly-price-note", "#team-monthly-value");
-    // setupPricingSlider("#enterprise-monthly-slider", 600, 10, "#enterprise-monthly-price-int", "#enterprise-monthly-price-dec", "#enterprise-monthly-price-note", "#enterprise-monthly-value");
+    setupPricingSlider("#team-monthly-slider", 300, 5, "#team-monthly-price-int", "#team-monthly-price-dec", "#team-monthly-price-note", "#team-monthly-value", false);
+    setupPricingSlider("#enterprise-monthly-slider", 600, 10, "#enterprise-monthly-price-int", "#enterprise-monthly-price-dec", "#enterprise-monthly-price-note", "#enterprise-monthly-value", false);
 </script>
 
 <!-- Append hosting to URL -->
