@@ -380,14 +380,29 @@ h4:hover .header-anchor {
     margin-left: -5px;
     transform: translate(0,0px); 
 }
+.ff-image-cover {
+    overflow: hidden;
+}
 
 .ff-image-cover img,
 .ff-image-cover picture {
     object-fit: cover;
     height: 100%;
     width: 100%;
+    transition: transform 0.5s;
 }
 
+.ff-image-cover.scale:hover img,
+.ff-image-cover.scale:hover picture {
+    transform: scale(1.1);
+}
+
+.ff-image-cover.scale,
+.ff-image-cover.scale {
+    @apply cursor-pointer;
+}
+
+.ff-image-rounded,
 .ff-image-rounded img,
 .ff-image-rounded picture {
     @apply rounded-lg;
