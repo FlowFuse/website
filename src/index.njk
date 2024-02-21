@@ -51,6 +51,15 @@ hubspot:
             {% include "social-proof.njk" %}
         </div>
     </div>
+    <!--Solutions-->
+    <div class="w-full pt-20 pb-8 md:px-0">
+        <div class="sm:max-w-screen-lg mx-auto">
+            <div class="mb-10 md:mb-12">
+                <h2 class="text-center w-full md:text-left font-medium">See how FlowFuse <span class="text-red-600">powers industries</span></h2>
+            </div>
+            {% include "solutions.njk" %}
+        </div>
+    </div>
 </div>
 <div class="about w-full ff-bg-light pt-10">
     <!-- FlowFuse Benefits -->
@@ -129,7 +138,7 @@ hubspot:
                     <div class="pb-2 md:pb-0">
                         <a href="/blog/">
                             <div class="sm:max-h-none md:min-w-[40%] max-w-[448px] ff-image-cover ff-image-rounded scale mx-auto mb-4 aspect-video">
-                                {% image "./images/home/blog.png", "Image of hands typing on laptop working on Node-RED flows", [357] %}
+                                {% image "./images/home/blog.png", "Image of hands typing on laptop working on Node-RED flows", [448] %}
                             </div>
                         </a>
                         <h4 class="text-xl font-bold pb-3">Latest on the blog</h4>
@@ -154,7 +163,7 @@ hubspot:
                     <div class="pb-2 md:pb-0">
                         <a href="{{ item.url }}">
                             <div class="sm:max-h-none md:min-w-[40%] max-w-[448px] ff-image-cover ff-image-rounded scale mx-auto mb-4 aspect-video">
-                                {% image "./images/home/webinar.png", "Image of hands typing on laptop working on Node-RED flows", [357] %}
+                                {% image "./images/home/webinar.png", "Image of hands typing on laptop working on Node-RED flows", [448] %}
                             </div>
                         </a>
                         <h4 class="text-xl font-bold pb-3">{% if item.date | isFutureDate %}Upcoming{% else %}Latest{% endif %} Webinar</h4>
@@ -176,7 +185,7 @@ hubspot:
                 <div class="w-full my-2 grid grid-cols-1">
                     <div class="pb-2 md:pb-0">
                             <div class="sm:max-h-none md:min-w-[40%] max-w-[448px] ff-image-cover ff-image-rounded mx-auto mb-4 aspect-video">
-                                {% image "./images/home/newsletter.png", "Image of hands typing on laptop working on Node-RED flows", [357] %}
+                                {% image "./images/home/newsletter.png", "Image of hands typing on laptop working on Node-RED flows", [448] %}
                             </div>
                         <h4 class="text-xl font-bold pb-3">Newsletter</h4>
                         <h5 class="font-bold pb-3 pt-2">Sign up for our monthly email updates</h5>
