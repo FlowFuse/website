@@ -1,6 +1,6 @@
 ---
 title: Leveraging Node-RED and FlowFuse to Automate Precision Manufacturing
-image: /images/stories/pidd-view.png
+image: /images/stories/abrasive_tech.jpg
 date: 2024-02-21
 logo:
 hubspot:
