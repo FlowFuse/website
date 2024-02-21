@@ -177,6 +177,10 @@
         margin-right: auto;
     }
 
+    .contentAnnual .pricing-tiles {
+        grid-template-columns: 1fr 1fr;
+    }
+
     .pricing-tile {
         position: relative;
         border-radius: 12px;
@@ -307,21 +311,31 @@
     width: 60%;
 }
 
-.slides .cloudText {
+.billingToggle.slides .selector {
+    left: 50%;
+    width: 49%;
+}
+
+.slides .cloudText, 
+.slides .monthlyText {
     color: white;
 }
 
-.ff-bg-light .slides .cloudText {
+.ff-bg-light .slides .cloudText,
+.ff-bg-light .slides .monthlyText {
     color: theme(colors.gray.800);
 }
 
 .slides .selfHostedText,
-.ff-bg-light .slides .selfHostedText {
+.ff-bg-light .slides .selfHostedText,
+.slides .annualText,
+.ff-bg-light .slides .annualText {
     color: theme(colors.teal.300);
 }
 
-/* contains switch buttons cloud - self-hosted */
-.mainToggle {
+/* contains switch buttons */
+.mainToggle,
+.billingToggle {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -358,8 +372,12 @@
     z-index: -1;
 }
 
-/* contains the container for cloud & self-hosted */
-.hosting {
+.billingToggle .selector {
+    width: 50%;
+}
+
+/* contains the container */
+.hosting, .billing {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -368,31 +386,32 @@
     z-index: 1;
 }
 
-/* container for cloud & self-hosted */
-.divCloud,
-.divSelfHosted {
+/* container */
+.divCloud, .divSelfHosted,
+.divAnnual, .divMonthly {
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
 }
 
-/* words cloud and self-hosted */
-.cloudText, .selfHostedText {
+/* words */
+.cloudText, .selfHostedText,
+.monthlyText, .annualText {
     font-size: 12px;
     font-weight: 600;
     transition-duration: 0.5s;
 }
 
-.cloudText {
+.cloudText, .monthlyText {
     color: theme(colors.teal.300);
 }
 
-.selfHostedText {
+.selfHostedText, .annualText {
     color: white;
 }
 
-.ff-bg-light .selfHostedText {
+.ff-bg-light .selfHostedText, .ff-bg-light .annualText {
     color: theme(colors.gray.800);
 }
 

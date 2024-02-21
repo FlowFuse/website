@@ -154,11 +154,11 @@
         }, {
             cta: "BOOK A DEMO",
             url: "/book-demo/",
-            onclick: "capture('cta-book-demo', {'position': 'primary'}, {'plan': 'cloud-team'})"
+            onclick: "capture('cta-book-demo', {'position': 'secondary'}, {'plan': 'cloud-team'})"
         }, {
             cta: "CONTACT Us",
-            url: "/contact-us/",
-            onclick: "capture('cta-contact-us', {'position': 'secondary'}, {'plan': 'cloud-enterprise'})"
+            url: "#contact-us",
+            onclick: "scrollToAnchor(event, 'contact-us'), capture('cta-contact-us', {'position': 'secondary'}, {'plan': 'cloud-enterprise'})"
         }] 
     }]
 %}
