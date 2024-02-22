@@ -36,9 +36,9 @@ The first thing we need to do to get things started is to install the PostgreSQL
 
 3. Drag the PostgreSQL node onto the canvas, click on that node and click on the edit icon next to the server input field to configure it.
 
-!["Configuring PostgreSQL - connection tab"](./images/postgresql_with_node-red_pgconfig1.png "Configuring PostgreSQL - connection tab")
+!["Configuring PostgreSQL Connection"](./images/postgresql_with_node-red_pgconfig1.png "Configuring PostgreSQL Connection")
 
-!["Configuring PostgreSQL - security tab"](./images/postgresql_with_node-red_pgconfig2.png "Configuring PostgreSQL - security tab")
+!["Configuring PostgreSQL Security"](./images/postgresql_with_node-red_pgconfig2.png "Configuring PostgreSQL Security")
 # Adding environment variables 
 
 We have discussed many times in previous blogs that using environment variables is a best practice that prevents revealing confidential configuration details such as API keys, passwords, secret keys, etc directly in the flow. Therefore, In this section, we will add environment variables for PostgreSQL configuration details, for more details see  [Using Environment Variables in Node-RED](https://flowfuse.com/blog/2023/02/environment-variables-in-node-red/).
