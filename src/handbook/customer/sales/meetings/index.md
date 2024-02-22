@@ -13,5 +13,6 @@ The organizer of the meeting should perform pre-call preparation, including rese
 For each meeting, try to be 2 minutes early. This allows everyone to check their setup
 and sync up what the goals are for the meeting.
 
+- [Intro](./intro.md)
 - [Demo](./demo.md)
 - [POC](./poc.md)
