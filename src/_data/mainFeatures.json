@@ -1,7 +1,7 @@
 [{
     "id": "feature1",
-    "buttonText": "LOW-CODE NODE-RED",
-    "buttonTextMobile": "LOW-CODE",
+    "buttonText": "Low-code Node-RED",
+    "buttonTextMobile": "Low-code",
     "title": "Low-code Node-RED",
     "imageFolder": "./images/features/",
     "imageFile": "feature-low-code-nr.png",
@@ -25,8 +25,8 @@
   },
   {
     "id": "feature3",
-    "buttonText": "DATA SHARING & STORAGE",
-    "buttonTextMobile": "DATA",
+    "buttonText": "Data sharing and storage",
+    "buttonTextMobile": "Data",
     "title": "Data sharing and storage",
     "imageFolder": "./images/pictograms/",
     "imageFile": "feature-data-sharing.png",
@@ -40,8 +40,8 @@
   },
   {
     "id": "feature4",
-    "buttonText": "EDGE MANAGEMENT",
-    "buttonTextMobile": "EDGE",
+    "buttonText": "Edge Management",
+    "buttonTextMobile": "Edge",
     "title": "Remote device management at the edge",
     "imageFolder": "./images/pictograms/",
     "imageFile": "edge_red.png",

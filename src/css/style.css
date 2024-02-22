@@ -380,14 +380,29 @@ h4:hover .header-anchor {
     margin-left: -5px;
     transform: translate(0,0px); 
 }
+.ff-image-cover {
+    overflow: hidden;
+}
 
 .ff-image-cover img,
 .ff-image-cover picture {
     object-fit: cover;
     height: 100%;
     width: 100%;
+    transition: transform 0.5s;
 }
 
+.ff-image-cover.scale:hover img,
+.ff-image-cover.scale:hover picture {
+    transform: scale(1.1);
+}
+
+.ff-image-cover.scale,
+.ff-image-cover.scale {
+    @apply cursor-pointer;
+}
+
+.ff-image-rounded,
 .ff-image-rounded img,
 .ff-image-rounded picture {
     @apply rounded-lg;
@@ -662,28 +677,42 @@ h4:hover .header-anchor {
 .features-card{
     @apply flex flex-wrap flex-col justify-between h-full bg-gray-50 rounded-3xl px-5 pb-5;
 }
-
-.feature-button {
-    background-color: none;
-    color: theme(colors.gray.800);
-    text-transform: uppercase;
+.feature-button,
+.solution-button {
+    background-color: transparent;
+    color: theme(colors.gray.500);
+    text-transform: capitalize;
     display: inline-block;
-    padding: 8px 12px;
-    font-weight: 600;
+    padding: 8px 18px;
+    font-weight: 300;
+    border: 2px solid theme(colors.gray.200);
+    border-radius: 24px;
 }
 
-.feature-button.active {
-    background-color: theme(colors.blue.800);
-    color: white;
+.feature-button.active,
+.solution-button.active {
+    background-color: theme(colors.gray.200);
+    color: theme(colors.gray.800);
+    border: 2px solid theme(colors.gray.300);
 }
 
-.feature {
-    display: none;
-  }
+.feature,
+.solution {
+    transition: opacity 0.7s ease, transform 0.7s ease;
+    opacity: 0;
+    visibility: hidden;
+    position: absolute;
+    width: 100%;
+    transform: translateX(20px);
+}
 
-  .feature.active {
-    display: block;
-  }
+.feature.active,
+.solution.active {
+    opacity: 1;
+    visibility: visible;
+    position: relative;
+    transform: translateX(0);
+}
 /*
     Footer
 */
