@@ -422,6 +422,12 @@ h4:hover .header-anchor {
 .ff-image-t-left-rounded picture {
     @apply rounded-tl-lg;
 }
+
+@media (min-width: 768px) {
+    .ff-min-h-56 {
+        min-height: 56px;
+    }
+}
 /*
     Header
 */
