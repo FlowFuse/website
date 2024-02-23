@@ -485,10 +485,10 @@ hubspot:
 
             // Map slider IDs to div IDs
             const divIds = {
-                "#team-annual-slider": ["#team-original-div", "#team-alternate-div", 250, "∞"],
-                "#enterprise-annual-slider": ["#enterprise-original-div", "#enterprise-alternate-div", 500, "+500"],
-                "#team-monthly-slider": ["#team-m-original-div", "#team-m-alternate-div", 250, "∞"],
-                "#enterprise-monthly-slider": ["#enterprise-m-original-div", "#enterprise-m-alternate-div", 500, "+500"]
+                "#team-annual-slider": ["#team-original-div", "#team-alternate-div", 250],
+                "#enterprise-annual-slider": ["#enterprise-original-div", "#enterprise-alternate-div", 500],
+                "#team-monthly-slider": ["#team-m-original-div", "#team-m-alternate-div", 250],
+                "#enterprise-monthly-slider": ["#enterprise-m-original-div", "#enterprise-m-alternate-div", 500]
             };
 
             // Check if the slider ID is in the divIds map
@@ -496,10 +496,9 @@ hubspot:
                 let originalDiv = document.querySelector(divIds[sliderId][0]);
                 let alternateDiv = document.querySelector(divIds[sliderId][1]);
                 let limit = divIds[sliderId][2];
-                let displayValue = divIds[sliderId][3];
 
                 if (tempSliderValue > limit) {
-                    sliderValue.textContent = displayValue;
+                    sliderValue.textContent = "∞";
                     originalDiv.classList.add('hidden');
                     alternateDiv.classList.remove('hidden');
                 } else {
