@@ -1,9 +1,7 @@
 const plugin = require('tailwindcss/plugin')
 
 module.exports = {
-    mode: 'jit',
-    purge: ['src/**/*.html','src/**/*.njk','src/**/*.md','src/**/*.svg','.eleventy.js'],
-    darkMode: false, // or 'media' or 'class'
+    content: ['src/**/*.html','src/**/*.njk','src/**/*.md','src/**/*.svg','.eleventy.js'],
     theme: {
         extend: {
             fontSize: {
@@ -25,6 +23,7 @@ module.exports = {
                 'navdropdown': 'max-height, margin, padding'
             },
             colors: { // https://coolors.co/aa4444-2d2d2a-779fa1-efd09e-fafac6
+                current: 'currentColor',
                 black: "#000",
                 white: "#FFF",
                 gray: {
@@ -66,9 +65,6 @@ module.exports = {
                 }
             }
         }
-    },
-    variants: {
-        extend: {},
     },
     plugins: [
         // require('postcss-import'),
