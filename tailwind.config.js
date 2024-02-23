@@ -4,6 +4,16 @@ module.exports = {
     content: ['src/**/*.html','src/**/*.njk','src/**/*.md','src/**/*.svg','.eleventy.js'],
     theme: {
         extend: {
+            typography: (theme) => ({
+                DEFAULT: {
+                  css: {
+                    picture: {
+                      marginTop: '0',
+                      marginBottom: '0',
+                    },
+                  },
+                },
+            }),
             fontSize: {
                 'page-h1': ['2.5rem', '3.5rem'],
                 'post-h4': ['1.25rem']
