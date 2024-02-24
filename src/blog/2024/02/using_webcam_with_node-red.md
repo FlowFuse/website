@@ -26,8 +26,7 @@ Once Dashboard 2.0 is installed, proceed to install the ui-webcam widget:
 
 1. Install `node-red-dashboard-2-ui-webcam` by the palette manager.
 2. Select a created group for the ui-webcam widget in which it will render.
-3. Deploy the flow by. 
-4. clicking on the top-right red deploy button.
+3. Deploy the flow by clicking on the top-right red deploy button.
 
 # Inner Workings of the Webcam Widget
 In this section, we will take a closer look at the inner workings of the webcam widget. The widget is built using Vue.js, which provides a highly engaging and interactive user interface that follows Node-RED and Dashboard 2.0 standards. To enable webcam functionality, the widget makes use of the [MediaDevices API](https://developer.mozilla.org/en-US/docs/Web/API/MediaDevices/getUserMedia), which facilitates access to connected media input devices like cameras and microphones. 
@@ -37,11 +36,11 @@ Now, let's discuss how you can capture images using the ui-webcam widget:
 
 ## Capturing images using controls
 
-This webcam widget offers nice interactive controls that will allow you to interact with webcam simply.
+This webcam widget offers nice interactive controls that will allow you to interact with the webcam easily.
 
 1. Navigate to the dashboard by accessing `https://<your-instance-name>.flowfuse.cloud/dashboard`.
-2. Initially, you'll see a black interface with a power button. Clicking this button will activate the webcam. Ensure that you grant permission to the dashboard to access your webcam.
-3. Once the webcam is active, you can capture images by clicking the button with the camera icon located at the bottom center of the interface.
+2. Initially, you'll see a black interface with a power button on the dashboard. Clicking this button will activate the webcam. Ensure that you grant permission to the dashboard to access your webcam.
+3. Once the webcam is active, you can capture images by clicking the button with the camera icon located at the bottom center of the webcam interface.
 4. The widget returns a Base64 string containing the captured image in PNG format.
 
 !["capturing images using webcam widget controls"](./images/using_webcam_with_node-red_capturing_images_by_control.gif "capturing images using webcam widget controls")
@@ -61,7 +60,7 @@ This webcam widget offers nice interactive controls that will allow you to inter
 The webcam widget also allows you to select different camera devices connected to your system:
 
 1. Click on the ellipsis icon located at the top-right corner of the webcam interface.
-2. A dropdown menu will display the connected cameras. Select your preferred camera to use. Additionally, you can turn off the camera by selecting the "off camera" option.
+2. A dropdown menu will display the connected cameras. Select your preferred camera to use. Additionally, you can turn off the camera by selecting the "Turn camera off" option.
 
 !["selecting diffrent camera"](./images/using_webcam_with_node-red_selecting_diffrent_camera.gif "selecting diffrent camera")
 
@@ -73,4 +72,4 @@ The webcam widget also allows you to select different camera devices connected t
 
 
 # Conclusion
-In this guide, we have guided you through the steps of integrating the webcam feature into Node-RED applications. Additionally, we have discussed the inner workings, privacy considerations, and browser compatibility of the webcam widget that we used to integrate webcam feature.
+In this guide, we have guided you through the steps of integrating the webcam feature into Node-RED applications. Additionally, we have discussed the inner workings, privacy considerations, and browser compatibility of the webcam widget that we will use to integrate the webcam feature in Node-Red applications.
