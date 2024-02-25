@@ -29,7 +29,7 @@ This section should include a maximum of 40 [effort estimation points](#effort-e
 ### Step 3 - Assignment to the Up Next section
 This section is most relevant for the engineering team because it includes the issues which should be picked up next. The issues should generally be ready for pickup. The PM is responsible for assigning issues to the "Up Next" section, while the Engineering Manager is responsible for directly assigning the issues in this section to an engineer. The `Up Next` section should consistently contain sufficient items, ensuring that members of the engineering team can immediately transition to a new task once other issues have been [successfully developed](#defining-done).
 
-**Start and End Date:** The Engineering Manager is responsible for assigning an end date to the items based on the [effort estimation](#effort-estimation), indicating the date when this issue is expected to be released to FlowFuse Cloud.
+**Start and End Date:** When a task is started, developers should record the "Start" date on the issue, or, at a minimum, move the item to "In Progress". If possible, developers should also provide a rough "Estimated" date as to when they expect the development, testing and documentation to be finished for the associated item. If this is not conducted, the Engineering Manager will assign an end date to the items based on the [effort estimation](#effort-estimation).
 
 ## UX Planning
 
