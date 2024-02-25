@@ -49,6 +49,8 @@ FlowFuse already supports this process by creating snapshots on Node-RED instanc
 
 - [Enhanced Device Settings](https://github.com/FlowFuse/flowfuse/issues/3172): The initiative focuses on expanding the configuration options for Devices, aligning with existing capabilities on hosted Node-RED setups. It aims to empower users to remotely manage their device settings, enhancing the efficiency and flexibility of device fleet management. 
 
+- [Immersive Node-RED experience](https://github.com/FlowFuse/flowfuse/issues/2246), a separation between the Node-RED Editor and FlowFuse leads to unused features from a UX standpoint in FlowFuse, due to the need to jump between both entities. An immersive Node-RED experience embeds Node-RED into FlowFuse, allowing seamless usage of Node-RED and FlowFuse features.
+
 ### Enhanced Integration Capabilities
 
 The [Unified Namespace](https://flowfuse.com/unified-namespace/) is a modern IT/OT architecture for industrial companies to accelerate digital transformation. All data, from sensors, systems, and machines, are connected to make their data available to a unified network of data producers and consumers. This speeds up application building, system integration, and delivers faster insights into productivity. Node-RED and FlowFuse are a perfect match and should be positioned as integral entities of a modern UNS architecture. The natural flexibility of Node-RED, in combination with FlowFuse, offers all the requirements to realize the OT and IT integration and contextualization into a UNS. It also provides analytical and real-time monitoring capabilities to generate actionable insights.
@@ -64,9 +66,5 @@ FlowFuse's commitment to a low-programming approach via Node-RED, complemented b
 
 - Manufacturing Widgets Extension for Dashboard 2.0. This extension should provide very classic manufacturing visualization, making it even easier to create Node-RED Dashboards for manufacturing.
 
-### User-Friendly Low-Code Approach
 
-FlowFuse is built upon the strength of Node-RED's user-friendly, low-code approach, positioning us well within the IIoT market. We believe Node-RED provides the best foundation, but we're committed to not only utilizing its existing capabilities but also contributing to its upstream improvement. By refining Node-RED and adding enhancements, we aim to create an even more intuitive, powerful, and accessible platform. This will enable end-users to swiftly and intuitively build applications, reducing the dependency on expert programmers.
-
-- [Immersive Node-RED experience](https://github.com/FlowFuse/flowfuse/issues/2246), a separation between the Node-RED Editor and FlowFuse leads to unused features from a UX standpoint in FlowFuse, due to the need to jump between both entities. An immersive Node-RED experience embeds Node-RED into FlowFuse, allowing seamless usage of Node-RED and FlowFuse features.
 
