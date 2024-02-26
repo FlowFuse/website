@@ -21,7 +21,7 @@ In the competitive world of manufacturing, where precision, innovation, and effi
 
 <!--more-->
 
-This case study provides an in-depth exploration of how Abrasive Technology harnessed the power and flexibility of Node-RED to optimize automation, streamline communication with machinery, and accelerate development processes.
+This case study provides an in-depth exploration of how Abrasive Technology harnessed the power and flexibility of FlowFuse and Node-RED to optimize automation, streamline communication with machinery, and accelerate development processes.
 
 #### Organization Profile
 
