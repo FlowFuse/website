@@ -2,7 +2,6 @@
 
 .zoomable-image {
     position: relative;
-    display: inline-block;
 }
 
 .zoomable-image:before {
