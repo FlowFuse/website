@@ -34,7 +34,7 @@ Reports and Dashboards are often created by a BI teams that have to take informa
 - Reseliency: Backup management.
 
 
-## Citizen Developers: Not Rube Goldberg Machines, But Value Creators
+### Citizen Developers: Not Rube Goldberg Machines, But Value Creators
 
 The key to successful citizen development lies in empowerment, not abdication. By providing the right tools, training, and governance, organizations can avoid creating complex, fragile solutions. Instead, citizen developers become powerful problem-solvers, building value-driven applications that address specific needs and contribute to overall business goals.
 
