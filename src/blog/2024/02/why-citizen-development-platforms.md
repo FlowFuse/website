@@ -1,10 +1,10 @@
 ---
 title: "Citizen Development: Unleashing Domain Experts"
 subtitle: Why you should encourage domain experts to build applications
-description: Domain experts are they key to every organization.  By providind the tools and training innovation accelerates.
+description: Domain experts are they key to every organization.  By providing the tools and training innovation accelerates.
 date: 2024-02-26
 authors: ["grey-dziuba"]
-image: 
+image: /blog/2024/02/images/citizen-development.png
 tags:
     - posts
     - flowfuse
