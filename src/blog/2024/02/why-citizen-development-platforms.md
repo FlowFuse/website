@@ -23,7 +23,7 @@ While the drive for user-friendliness has always been present in programming lan
 - Business Agility: The need for rapid innovation necessitates solutions that bypass lengthy IT backlogs. Citizen developers can bridge the gap, creating applications and internal tools quickly and efficiently.
 - Domain Expertise: Business users possess deep insights into specific processes and challenges. By giving them the tools to build solutions, organizations can tap into a new knowledge source by putting domain experts into the driver's seat.
 
-## Beyond Spreadsheets: Platforms of Empowerment
+### Beyond Spreadsheets: Platforms of Empowerment
 
 Reports and Dashboards are often created by a BI teams that have to take information from specialists to create custom visualizations that may or may not come out to be exactly what they asked for. Queue old faiful, spreadsheets, where a domain expert can create their own reports that suit their needs.  Spreadsheets are powerful for analysis, but they often lack the real-time secure connectivity needed for enterprise applications. Transform the knowledge created in a spreadsheet into a personalized real-time visualization. To do that, you must first select a citizen development platform and those platforms should offer:
 
