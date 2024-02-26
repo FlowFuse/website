@@ -380,6 +380,14 @@ h4:hover .header-anchor {
     margin-left: -5px;
     transform: translate(0,0px); 
 }
+
+.ff-image-contain img,
+.ff-image-contain picture {
+    object-fit: contain;
+    height: 100%;
+    width: 100%;
+}
+
 .ff-image-cover {
     overflow: hidden;
 }

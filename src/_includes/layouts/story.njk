@@ -4,8 +4,7 @@ layout: layouts/base.njk
 
 <div class="w-full page post">
     {% if title %}
-    <div class="w-full py-6 bg-cover bg-center md:py-9 md:min-h-[272px] md:flex md:content-center"
-        style="background-image: linear-gradient(to right, #1F2937, #1F293700), url({{ image }})">
+    <div class="w-full py-6 bg-cover bg-center md:py-9 md:min-h-[272px] md:flex md:content-center" style="background-image: linear-gradient(to right, #1F2937, #1F293700), url({{ image }})">
         <div class="post-title container m-auto text-center px-6 flex md:max-w-screen-lg">
             <div class="text-left max-w-screen-md md:pr-32">
                 <label>Customer Story</label>
@@ -37,7 +36,7 @@ layout: layouts/base.njk
                         style="box-shadow: 4px 4px 6px rgba(75,85,99,0.05)">
                         {% if story.logo %}
                         <div class="h-[180px] object-contain flex items-center justify-center bg-white p-2">
-                            <a href="{{ story.url }}" target="_blank" class="h-full ff-image-cover">
+                            <a href="{{ story.url }}" target="_blank" class="h-full ff-image-contain">
                                 {% set imageSrc = ["./", story.logo ] | join %}
                                 {% set imageDescription = ["Image representing ", story.brand, " logo"] | join %}
                                 {% image imageSrc, imageDescription, [270] %}
