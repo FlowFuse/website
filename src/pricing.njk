@@ -103,7 +103,7 @@ hubspot:
                                 <li id="team-monthly-value" class="value">5</li>
                             </ul>
                             <div class="range contentMonthly">
-                                <input type="range" min="5" max="255" value="5" id="team-monthly-slider" class="transition duration-1000" />
+                                <input type="range" min="5" max="355" value="5" id="team-monthly-slider" class="transition duration-1000" step="5"/>
                             </div>
                             <!-- Price -->
                             <div id="team-m-original-div" class="mt-3 mb-6 flex flex-row flex-wrap w-full gap-x-2">
@@ -129,7 +129,7 @@ hubspot:
                                         </h2>
                                     </div>
                                     <div class="pl-2 text-sm leading-4 text-left self-end pb-1">
-                                        <note id="team-monthly-price-note" class="note text-teal-100 text-xs">instances <br>Billed monthly at <span class="font-semibold">$3,250.00</span><br \></note>
+                                        <note id="team-monthly-price-note" class="note text-teal-100 text-xs">instances <br>Billed monthly at <span class="font-semibold">$3,200.00</span><br \></note>
                                     </div>
                                 </div>
                             </div>
@@ -170,7 +170,7 @@ hubspot:
                                 <li id="enterprise-monthly-value" class="value">10</li>
                             </ul>
                             <div class="range contentMonthly">
-                                <input type="range" min="10" max="510" value="10" id="enterprise-monthly-slider" class="transition duration-1000" />
+                                <input type="range" min="10" max="510" value="10" id="enterprise-monthly-slider" class="transition duration-1000" step="10" />
                             </div>
                             <!-- Price -->
                             <div id="enterprise-m-original-div" class="mt-3 mb-6 flex flex-row flex-wrap w-full gap-x-2">
@@ -216,7 +216,7 @@ hubspot:
                                 <li id="team-annual-value" class="value">5</li>
                             </ul>
                             <div class="range contentAnnual hide">
-                                <input type="range" min="5" max="255" value="5" id="team-annual-slider" class="transition duration-1000" />
+                                <input type="range" min="5" max="355" value="5" id="team-annual-slider" class="transition duration-1000" step="5"/>
                             </div>
                             <!-- Price -->
                             <div id="team-original-div" class="mt-3 mb-6 flex flex-row flex-wrap w-full gap-x-2">
@@ -262,7 +262,7 @@ hubspot:
                                 <li id="enterprise-annual-value" class="value">10</li>
                             </ul>
                             <div class="range contentAnnual hide">
-                                <input type="range" min="10" max="510" value="10" id="enterprise-annual-slider" class="transition duration-1000" />
+                                <input type="range" min="10" max="510" value="10" id="enterprise-annual-slider" class="transition duration-1000" step="10"/>
                             </div>
                             <!-- Price -->
                             <div id="enterprise-original-div" class="mt-3 mb-6 flex flex-row flex-wrap w-full gap-x-2">
@@ -485,10 +485,10 @@ hubspot:
 
             // Map slider IDs to div IDs
             const divIds = {
-                "#team-annual-slider": ["#team-original-div", "#team-alternate-div", 250, "∞"],
-                "#enterprise-annual-slider": ["#enterprise-original-div", "#enterprise-alternate-div", 500, "+500"],
-                "#team-monthly-slider": ["#team-m-original-div", "#team-m-alternate-div", 250, "∞"],
-                "#enterprise-monthly-slider": ["#enterprise-m-original-div", "#enterprise-m-alternate-div", 500, "+500"]
+                "#team-annual-slider": ["#team-original-div", "#team-alternate-div", 350],
+                "#enterprise-annual-slider": ["#enterprise-original-div", "#enterprise-alternate-div", 500],
+                "#team-monthly-slider": ["#team-m-original-div", "#team-m-alternate-div", 350],
+                "#enterprise-monthly-slider": ["#enterprise-m-original-div", "#enterprise-m-alternate-div", 500]
             };
 
             // Check if the slider ID is in the divIds map
@@ -496,10 +496,9 @@ hubspot:
                 let originalDiv = document.querySelector(divIds[sliderId][0]);
                 let alternateDiv = document.querySelector(divIds[sliderId][1]);
                 let limit = divIds[sliderId][2];
-                let displayValue = divIds[sliderId][3];
 
                 if (tempSliderValue > limit) {
-                    sliderValue.textContent = displayValue;
+                    sliderValue.textContent = "∞";
                     originalDiv.classList.add('hidden');
                     alternateDiv.classList.remove('hidden');
                 } else {
@@ -511,14 +510,25 @@ hubspot:
                 sliderValue.textContent = tempSliderValue;
             }
 
-            tempSliderValue = Math.ceil(tempSliderValue / stepSize) * stepSize;
-
             const progress = (tempSliderValue / sliderEl.max) * 100;
             sliderEl.style.background = `linear-gradient(to right, #9CA3AF ${progress}%, #374151 ${progress}%)`;
 
             const discount = ((tempSliderValue - stepSize) / stepSize) * 0.01;
 
-            const discountedPriceMonthly = (basePrice * (1 - discount)) / 12;
+            let fixedMonthlyPrice;
+            if (isAnnual) {
+                fixedMonthlyPrice = 2708.50;
+            } else {
+                fixedMonthlyPrice = 3200.00;
+            }
+
+            let discountedPriceMonthly;
+            if (tempSliderValue > 250 && (sliderId === "#team-annual-slider" || sliderId === "#team-monthly-slider")) {
+                discountedPriceMonthly = fixedMonthlyPrice / tempSliderValue;
+            } else {
+                const discount = ((tempSliderValue - stepSize) / stepSize) * 0.01;
+                discountedPriceMonthly = (basePrice * (1 - discount)) / 12;
+            }
 
             const [intValue, decValue] = discountedPriceMonthly.toFixed(2).split(".");
             priceIntElement.textContent = intValue;
