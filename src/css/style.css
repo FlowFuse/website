@@ -1347,6 +1347,12 @@ div.content section.footnotes ol li p {
     z-index: 5 !important;
 }
 
+/*
+    Hide HubSpot cookie banner
+*/
+#hs-banner-parent {
+    display: none !important;
+}
 
 /*
     Overwrite Cookie Banner buttons border
