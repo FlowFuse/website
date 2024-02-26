@@ -15,7 +15,7 @@ Citizen development has taken the spotlight recently, but the concept itself isn
 
 <!--more-->
 
-# Why Now?
+## Why Now?
 
 While the drive for user-friendliness has always been present in programming languages, several factors have converged to push citizen development to the forefront:
 
