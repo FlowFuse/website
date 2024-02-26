@@ -122,7 +122,7 @@ eleventyComputed:
     <script>{{ js | jsmin | safe }}</script>
     {% jsonLdScript meta, type, tags %}
 
-    {# {%- if not DEV_MODE -%} #}
+    {%- if not DEV_MODE -%}
     <!-- Google tag (gtag.js) -->
     <script>
         window.dataLayer = window.dataLayer || [];
@@ -145,7 +145,7 @@ eleventyComputed:
 
     <!-- Google Ads Tag -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=AW-16456599728"></script>
-    {# {%- endif -%} #}
+    {%- endif -%} 
 </head>
 <body class="ff-website leading-normal tracking-normal gradient text-gray-500 min-h-screen flex flex-col">
     <div class="flex-grow base">
@@ -324,7 +324,7 @@ eleventyComputed:
 <script async src="https://cdn.jsdelivr.net/npm/lite-youtube-embed@0.2.0/src/lite-yt-embed.min.js"></script>
 <link rel="preload" href="https://cdn.jsdelivr.net/npm/lite-youtube-embed@0.2.0/src/lite-yt-embed.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-{# {%- if not DEV_MODE -%} #}
+{%- if not DEV_MODE -%}
 <!-- PostHog -->
 <script type="text/javascript">
     const getMyCookieValue = (name) => (
@@ -482,5 +482,5 @@ eleventyComputed:
     });
 </script>
 
-{# {%- endif -%} #}
+{%- endif -%} 
 </html>
