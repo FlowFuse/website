@@ -45,7 +45,7 @@ Manufacturing environments, particularly those involving electro-coating process
 
 Abrasive Technology initially utilized Raspberry Pis for hosting Node-RED instances, linking them to industrialized touch screens for Human-Machine Interfaces (HMIs). While Raspberry Pis proved reliable for many applications, certain projects pushed hardware capabilities. Dudley highlights: "I have found them to be very reliable, but on the current project, I'm absolutely bumping up against its hardware capabilities." The anticipation of the Pi5, with enhanced capabilities, holds promise, and Dudley is eagerly awaiting its arrival.
 
-In addition to Raspberry Pis, Abrasive Technology currently operates a server running Node-RED locally, with additional instances in locally installed FlowFuse. Dudley notes, “We are now actively transitioning our Node-RED instances from locally maintained servers to the FlowFuse cloud.”
+In addition to Raspberry Pis, Abrasive Technology currently operates a server running Node-RED locally, with additional instances in locally installed FlowFuse. Dudley notes, “We are now actively transitioning our Node-RED instances from locally maintained servers to the FlowFuse Cloud.”
 
 
 #### Impact on Business Operations
