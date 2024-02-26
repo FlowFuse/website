@@ -437,7 +437,7 @@ eleventyComputed:
 <script>{{ hubspotJS | jsmin | safe }}</script>
 
 <!-- Cookie banner -->
-<script async type="text/javascript" src="/js/cc.min.js" onload="addHubSpotConsentListener()"></script>
+<script async type="text/javascript" src="/js/cc.min.js"></script>
 
 <!-- HS script -->
 <script async type="text/javascript" id="hs-script-loader" src="//js-eu1.hs-scripts.com/26586079.js"></script>
@@ -447,37 +447,45 @@ eleventyComputed:
     function addHubSpotConsentListener() {
         console.log('addHubSpotConsentListener is running');
         var _hsp = window._hsp = window._hsp || [];
-        console.log('CookieConsent.acceptedCategory: ', typeof CookieConsent.acceptedCategory);
-        _hsp.push(['addPrivacyConsentListener', function (consent) {
-            console.log('HubSpot consent listener added')
-            // Enable HubSpot functionality cookies by default
-            consent.categories.functionality = true;
 
-            if (CookieConsent.acceptedCategory('analytics')) {
-                // The user has accepted analytics cookies
-                // Enable HubSpot analytics cookies
-                consent.categories.analytics = true;
-            } else {
-                // The user has rejected analytics cookies
-                // Disable HubSpot analytics cookies
-                consent.categories.analytics = false;
+        _hsp.push(['addPrivacyConsentListener', function(consent) {
+            console.log('addPrivacyConsentListener is running');
+            // Check if the HubSpot cookie banner is enabled
+            var isBannerEnabled = document.querySelector('#hs-banner-parent') !== null;
+
+            if (isBannerEnabled) {
+                if (CookieConsent.acceptedCategory('analytics')) {
+                    // The user has accepted analytics cookies
+                    // Enable HubSpot analytics cookies
+                    consent.categories.analytics = true;
+                } else {
+                    // The user has rejected analytics cookies
+                    // Disable HubSpot analytics cookies
+                    consent.categories.analytics = false;
+                }
+
+                if (CookieConsent.acceptedCategory('ads')) {
+                    // The user has accepted ads cookies
+                    // Enable HubSpot ads cookies
+                    consent.categories.advertisement = true;
+                } else {
+                    // The user has rejected ads cookies
+                    // Disable HubSpot ads cookies
+                    consent.categories.advertisement = false;
+                }
+                // Enable HubSpot functionality cookies by default
+                consent.categories.functionality = true;
+                
+                console.log(`analytics: ${consent.categories.analytics}`);
+                console.log(`advertisement: ${consent.categories.advertisement}`);
+                console.log(`functionality: ${consent.categories.functionality}`);
             }
-
-            if (CookieConsent.acceptedCategory('ads')) {
-                // The user has accepted ads cookies
-                // Enable HubSpot ads cookies
-                consent.categories.advertisement = true;
-            } else {
-                // The user has rejected ads cookies
-                // Disable HubSpot ads cookies
-                consent.categories.advertisement = false;
-            }
-
-            console.log(`analytics: ${consent.categories.analytics}`);
-            console.log(`advertisement: ${consent.categories.advertisement}`);
-            console.log(`functionality: ${consent.categories.functionality}`);
         }]);
     }
+
+    window.addEventListener('load', (event) => {
+        addHubSpotConsentListener();
+    });
 </script>
 
 {# {%- endif -%} #}
