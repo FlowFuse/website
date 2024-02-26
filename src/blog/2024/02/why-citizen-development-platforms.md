@@ -8,6 +8,7 @@ image: /blog/2024/02/images/citizen-development.png
 tags:
     - posts
     - flowfuse
+    - citizen-development
 ---
 
 Citizen development has taken the spotlight recently, but the concept itself isn't entirely new. Remember the era of "hackers"? They weren't malicious actors, but individuals who tinkered with technology, pushing boundaries and creating solutions. Today, these same problem-solving personas have evolved into "[citizen developers](https://www.gartner.com/en/information-technology/glossary/citizen-developer)" – business users empowered to build applications without relying solely on professional coders.
