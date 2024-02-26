@@ -305,6 +305,15 @@ eleventyComputed:
                             </a>
                           </li>
                         </ul>
+                        <!-- Start of HubSpot code snippet -->
+                        <button type="button" id="hs_show_banner_button" style="background-color: #374151; border: 1px solid #374151; border-radius: 3px; padding: 10px 16px; text-decoration: none; color: #fff; font-family: inherit; font-size: inherit; font-weight: normal; line-height: inherit; text-align: left; text-shadow: none;"
+                            onClick="(function(){
+                                var _hsp = window._hsp = window._hsp || [];
+                                _hsp.push(['showBanner']);
+                            })()">
+                            Cookie Settings
+                        </button>
+<!-- End of HubSpot code snippet -->
                 </div>
             </div>
         </div>
@@ -466,11 +475,11 @@ eleventyComputed:
             if (CookieConsent.acceptedCategory('ads')) {
                 // The user has accepted ads cookies
                 // Enable HubSpot ads cookies
-                consent.categories.ads = true;
+                consent.categories.advertisement = true;
             } else {
                 // The user has rejected ads cookies
                 // Disable HubSpot ads cookies
-                consent.categories.ads = false;
+                consent.categories.advertisement = false;
             }
 
             console.log(`analytics: ${consent.categories.analytics}`);
