@@ -17,7 +17,7 @@ Dashboard 2.0 just got its first third-party webcam widget that simplifies integ
 
 Additionally, if you are willing to develop your own third-party widget, we have our [example widget](https://github.com/FlowFuse/node-red-dashboard-2-ui-example) which helps you develop your widget. Additionally for a detailed step-by-step guide refer to [Building Third Party Widgets](https://dashboard.flowfuse.com/contributing/widgets/third-party.html).
 
-# Installing Dashboard 2.0
+## Installing Dashboard 2.0
 Before we start integrating the webcam, make sure you have installed Dashboard 2.0, if not follow the below steps.
 
 1. Install Node-RED Dashboard 2.0. Follow these [instructions](https://dashboard.flowfuse.com/getting-started.html) to install.
