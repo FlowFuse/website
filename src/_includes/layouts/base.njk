@@ -267,7 +267,7 @@ eleventyComputed:
                     </ul>
                 </div>
                 <div class="w-full md:row-span-2">
-                    <ul class="flex flex-row w-full -mx-3 md:mx-0 text-base justify-between sm:justify-start sm:gap-x-6 md:justify-end">
+                    <ul class="flex flex-row w-full -mx-3 md:mx-0 text-base text-white justify-between sm:justify-start sm:gap-x-4 lg:gap-x-6 md:justify-end">
                         <li class="inline md:m-0 md:block">
                             <a href="https://www.facebook.com/FlowFuse/" class="block px-3 py-3 md:p-0">
                                 <span class="sr-only">Visit our Facebook page</span>
@@ -298,10 +298,15 @@ eleventyComputed:
                               {% include "components/github.njk" %}
                             </a>
                         </li>      
-                          <li class="inline md:m-0 md:block">
+                        <li class="inline md:m-0 md:block">
+                            <a href="https://discord.gg/2RrvW8dkrF" class="block px-3 py-3 md:p-0">
+                                <span class="sr-only">Join our discord</span>
+                                {% include "components/discord.njk" %}
+                            </a>
+                        <li class="inline md:m-0 md:block">
                             <a href="/blog/index.xml" class="block px-3 py-3 md:p-0">
-                              <span class="sr-only">Subscribe to our RSS feed</span>
-                              {% include "components/rss.njk" %}
+                                <span class="sr-only">Subscribe to our RSS feed</span>
+                                {% include "components/rss.njk" %}
                             </a>
                         </li>
                     </ul>
