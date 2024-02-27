@@ -1,5 +1,5 @@
 ---
-title: Using webcam with Node-Red
+title: Using a webcam with Node-RED
 subtitle: Guide to integrating webcam features into Node-Red applications.
 description: Guide to integrating webcam features into Node-Red applications.
 date: 
