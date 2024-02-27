@@ -139,9 +139,13 @@ eleventyComputed:
 
         gtag('js', new Date());
         gtag('config', 'G-2ZH9W82QL8');
+        gtag('config', 'AW-16456599728');
     </script>
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-2ZH9W82QL8"></script>
-    {%- endif -%}
+
+    <!-- Google Ads Tag -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-16456599728"></script>
+    {%- endif -%} 
 </head>
 <body class="ff-website leading-normal tracking-normal gradient text-gray-500 min-h-screen flex flex-col">
     <div class="flex-grow base">
@@ -299,7 +303,7 @@ eleventyComputed:
                               <span class="sr-only">Subscribe to our RSS feed</span>
                               {% include "components/rss.njk" %}
                             </a>
-                          </li>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -431,10 +435,52 @@ eleventyComputed:
 <!-- HubSpot Tracking -->
 {% set hubspotJS %}{% include "hubspot.js" %}{% endset %}
 <script>{{ hubspotJS | jsmin | safe }}</script>
-<script async type="text/javascript" id="hs-script-loader" src="//js-eu1.hs-scripts.com/26586079.js"></script>
 
 <!-- Cookie banner -->
 <script async type="text/javascript" src="/js/cc.min.js"></script>
-<script async src="https://www.googletagmanager.com/gtag/js?id=AW-16456599728"> </script> <script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'AW-16456599728'); </script>
-{%- endif -%}
+
+<!-- HS script -->
+<script async type="text/javascript" id="hs-script-loader" src="//js-eu1.hs-scripts.com/26586079.js"></script>
+
+<!-- HubSpot Consent Listener -->
+<script type="text/javascript">
+    function addHubSpotConsentListener() {
+        var _hsp = window._hsp = window._hsp || [];
+
+        _hsp.push(['addPrivacyConsentListener', function(consent) {
+            // Check if the HubSpot cookie banner is enabled
+            var isBannerEnabled = document.querySelector('#hs-banner-parent') !== null;
+
+            if (isBannerEnabled) {
+                if (CookieConsent.acceptedCategory('analytics')) {
+                    // The user has accepted analytics cookies
+                    // Enable HubSpot analytics cookies
+                    consent.categories.analytics = true;
+                } else {
+                    // The user has rejected analytics cookies
+                    // Disable HubSpot analytics cookies
+                    consent.categories.analytics = false;
+                }
+
+                if (CookieConsent.acceptedCategory('ads')) {
+                    // The user has accepted ads cookies
+                    // Enable HubSpot ads cookies
+                    consent.categories.advertisement = true;
+                } else {
+                    // The user has rejected ads cookies
+                    // Disable HubSpot ads cookies
+                    consent.categories.advertisement = false;
+                }
+                // Enable HubSpot functionality cookies by default
+                consent.categories.functionality = true;
+            }
+        }]);
+    }
+
+    window.addEventListener('load', (event) => {
+        addHubSpotConsentListener();
+    });
+</script>
+
+{%- endif -%} 
 </html>
