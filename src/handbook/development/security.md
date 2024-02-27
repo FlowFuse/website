@@ -22,6 +22,7 @@ Please refrain from:
 Out of scope assets:
  - The marketing website (https://flowfuse.com - forms, chat, etc)
  - The dashboard documentation (https://dashboard.flowfuse.com)
+ - The community forum (https://community.flowfuse.com/)
 
 ## Reporting a Vulnerability
 
