@@ -5,7 +5,7 @@
 
 // Third party injected scripts that are not wanted
 const blockedScripts = [
-    /hs-banner.com/ // HubSpot cookie banner that's loaded even if not used
+    // /hs-banner.com/ HubSpot cookie banner that's loaded even if not used
 ]
 
 function needsToBeBlocked(src) {
