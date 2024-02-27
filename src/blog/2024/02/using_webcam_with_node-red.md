@@ -1,17 +1,17 @@
 ---
 title: Using a webcam with Node-RED
-subtitle: Guide to integrating webcam features into Node-Red applications.
-description: Guide to integrating webcam features into Node-Red applications.
+subtitle: Guide to integrating webcam features into Node-RED applications.
+description: Guide to integrating webcam features into Node-RED applications.
 date: 
 authors: ["sumit-shinde"]
-image: /blog/2024/02/images/using_webcam_with_node-red_capturing_images_by_passing_payload.gif
+image: /blog/2024/02/images/using_webcam_with_Node-RED_capturing_images_by_passing_payload.gif
 tags:
     - posts
     - node-red
     - dashboard
 ---
 
-Dashboard 2.0 just got its first third-party webcam widget that simplifies integrating webcam features with Node-Red applications. In this guide, we will show you how you can use the ui-webcam widget in your node-red applications.
+Dashboard 2.0 just got its first third-party webcam widget that simplifies integrating webcam features with Node-RED applications. In this guide, we will show you how you can use the ui-webcam widget in your Node-RED applications.
 
 <!---more--->
 
@@ -23,14 +23,14 @@ Before we start integrating the webcam, make sure you have installed Dashboard 2
 1. Install Node-RED Dashboard 2.0. Follow these [instructions](https://dashboard.flowfuse.com/getting-started.html) to install.
 2. Create your first group, page, theme, and base.
 
-# Using a webcam custom widget
+## Using a webcam custom widget
 Once Dashboard 2.0 is installed, proceed to install the ui-webcam widget:
 
 1. Install `node-red-dashboard-2-ui-webcam` by the palette manager.
 2. Select a created group for the ui-webcam widget in which it will render.
 3. Deploy the flow by clicking on the top-right red deploy button.
 
-# Inner Workings of the Webcam Widget
+## Inner Workings of the Webcam Widget
 In this section, we will take a closer look at the inner workings of the webcam widget. The widget is built using Vue.js and provides a highly engaging and interactive user interface that follows Node-RED and Dashboard 2.0 standards. To enable webcam functionality, the widget makes use of the [MediaDevices API](https://developer.mozilla.org/en-US/docs/Web/API/MediaDevices/getUserMedia), which facilitates access to connected media input devices like cameras and microphones. 
 
 
@@ -43,7 +43,7 @@ This webcam widget offers nice interactive controls that will allow you to inter
 3. Once the webcam is active, you can capture images by clicking the button with the camera icon located at the bottom center of the webcam interface.
 4. The widget returns a Base64 string containing the captured image in PNG format.
 
-!["capturing images using webcam widget controls"](./images/using_webcam_with_node-red_capturing_images_by_control.gif "capturing images using webcam widget controls")
+!["capturing images using webcam widget controls"](./images/using_webcam_with_Node-RED_capturing_images_by_control.gif "capturing images using webcam widget controls")
 
 ## Capturing images by passing payload
 
@@ -54,22 +54,23 @@ This webcam widget offers nice interactive controls that will allow you to inter
 
 By passing the "capture" string as payload, the webcam widget will activate (if it's off) and capture images automatically, without requiring user interaction. This method is commonly used in industrial applications which commonly depend on automated actions.
 
-!["capturing images by payload"](./images/using_webcam_with_node-red_capturing_images_by_passing_payload.gif "capturing images by payload")
+!["capturing images by passing payload"](./images/using_webcam_with_Node-RED_capturing_images_by_passing_payload.gif "capturing images by passing payload")
 
-# Selecting different camera devices
+## Selecting different camera devices
 
 The webcam widget also allows you to select different camera devices connected to your system:
 
 1. Click on the ellipsis icon located at the top-right corner of the webcam interface.
 2. A dropdown menu will display the connected cameras. Select your preferred camera to use. Additionally, you can turn off the camera by selecting the "Turn camera off" option.
 
-!["selecting diffrent camera"](./images/using_webcam_with_node-red_selecting_diffrent_camera.gif "selecting diffrent camera")
+!["selecting different camera"](./images/using_webcam_with_Node-RED_selecting_different_camera.gif "selecting different camera")
 
-# Browser support and privacy
+## Browser support and privacy
 
 - Browser Compatibility: The webcam widget is compatible with all modern browsers, except Internet Explorer. Whether you're using Chrome, Firefox, Safari, or Edge, you can seamlessly integrate webcam features into your Node-RED applications.
+- Control Limitation: It's important to note that this widget is designed to interact with webcams directly accessible to the system running Node-RED. For example, if the webcam is connected to a different device or network and not directly accessible to the Node-RED running system, the video stream from that webcam won't be displayed on a dashboard using this widget.
 - HTTPS Requirement: When accessing Dashboard 2.0 remotely (not via `localhost`), it's crucial to use HTTPS. Failure to do so may result in the browser blocking access to the webcam. 
 - User Permission: Before the webcam can be activated, the browser will prompt the user for permission to access the webcam device. This ensures user privacy and consent before any image capture occurs. The widget cannot capture images until the user has given their permission.
 
-# Conclusion
-In this guide, we have guided you through the steps of integrating the webcam feature into Node-RED applications. Additionally, we have discussed the inner workings, privacy considerations, and browser compatibility of the webcam widget that we will use to integrate the webcam feature in Node-Red applications.
+## Conclusion
+In this guide, we have guided you through the steps of integrating the webcam feature into Node-RED applications. Additionally, we have discussed the inner workings, privacy considerations, and browser compatibility of the webcam widget that we will use to integrate the webcam feature in Node-RED applications.
