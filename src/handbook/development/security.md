@@ -9,7 +9,8 @@ FlowFuse platform and associated components.
 
 Our internal Incident Response plan is documented [here](../company/security/incident-response.md).
 
-We recognise the benefit of 3rd party security researchers looking for potential vulnerabilities in our software. However we ask researchers to do so responsibly.
+We recognise the benefit of 3rd party security researchers looking for potential vulnerabilities in our application (https://app.flowfuse.com).
+However we ask researchers to do so responsibly.
 
 Please make a good faith effort to avoid privacy violations, destruction of data, and interruption or degradation of our service. Only interact with accounts you own or with explicit permission of the account holder.
 
@@ -17,6 +18,10 @@ Please refrain from:
  - Denial of service live/running services
  - Spamming
  - Social engineering (including phishing) of FlowFuse staff or contractors
+
+Out of scope assets:
+ - The marketing website (https://flowfuse.com - forms, chat, etc)
+ - The dashboard documentation (https://dashboard.flowfuse.com)
 
 ## Reporting a Vulnerability
 
