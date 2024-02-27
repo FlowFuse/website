@@ -8,6 +8,9 @@ image: blog/2024/02/images/history-of-node-red.png
 tags:
     - posts
     - flowfuse
+    - History of Node-RED
+    - Node-RED
+    -Node Red
 ---
 
 
