@@ -48,10 +48,11 @@ This webcam widget offers nice interactive controls that will allow you to inter
 ## Capturing images by passing payload
 
 1. Drag an inject node onto the canvas.
-2. Set `msg.payload` as a “capture” string.
+2. Set msg.payload as a 'capture' string. You can also set an interval time to automatically send the message after a specific interval, or you can keep it unchanged to manually send the payload by clicking the inject button.
 3. Connect the output of the inject node to the input of the webcam widget.
 4. Deploy the flow.
-5. By passing the "capture" string as payload, the webcam widget will activate (if it's off) and capture images automatically, without requiring user interaction. This method is commonly used in industrial applications which commonly depend on automated actions.
+
+By passing the "capture" string as payload, the webcam widget will activate (if it's off) and capture images automatically, without requiring user interaction. This method is commonly used in industrial applications which commonly depend on automated actions.
 
 !["capturing images by payload"](./images/using_webcam_with_node-red_capturing_images_by_passing_payload.gif "capturing images by payload")
 
@@ -69,7 +70,6 @@ The webcam widget also allows you to select different camera devices connected t
 - Browser Compatibility: The webcam widget is compatible with all modern browsers, except Internet Explorer. Whether you're using Chrome, Firefox, Safari, or Edge, you can seamlessly integrate webcam features into your Node-RED applications.
 - HTTPS Requirement: When accessing Dashboard 2.0 remotely (not via `localhost`), it's crucial to use HTTPS. Failure to do so may result in the browser blocking access to the webcam. 
 - User Permission: Before the webcam can be activated, the browser will prompt the user for permission to access the webcam device. This ensures user privacy and consent before any image capture occurs. The widget cannot capture images until the user has given their permission.
-
 
 # Conclusion
 In this guide, we have guided you through the steps of integrating the webcam feature into Node-RED applications. Additionally, we have discussed the inner workings, privacy considerations, and browser compatibility of the webcam widget that we will use to integrate the webcam feature in Node-Red applications.
