@@ -31,7 +31,7 @@ Once Dashboard 2.0 is installed, proceed to install the ui-webcam widget:
 3. Deploy the flow by clicking on the top-right red deploy button.
 
 # Inner Workings of the Webcam Widget
-In this section, we will take a closer look at the inner workings of the webcam widget. The widget is built using Vue.js, which provides a highly engaging and interactive user interface that follows Node-RED and Dashboard 2.0 standards. To enable webcam functionality, the widget makes use of the [MediaDevices API](https://developer.mozilla.org/en-US/docs/Web/API/MediaDevices/getUserMedia), which facilitates access to connected media input devices like cameras and microphones. 
+In this section, we will take a closer look at the inner workings of the webcam widget. The widget is built using Vue.js and provides a highly engaging and interactive user interface that follows Node-RED and Dashboard 2.0 standards. To enable webcam functionality, the widget makes use of the [MediaDevices API](https://developer.mozilla.org/en-US/docs/Web/API/MediaDevices/getUserMedia), which facilitates access to connected media input devices like cameras and microphones. 
 
 # Capturing images 
 Now, let's discuss how you can capture images using the ui-webcam widget:
