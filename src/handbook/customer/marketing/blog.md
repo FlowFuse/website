@@ -79,7 +79,13 @@ Tag your content appropriately from the collection of tags that help us manage o
 
 There's a page with a collection of posts for each tag in that list.
 
+#### Custom Tags
+
 You can also add your own custom tags. While these won't create a new page with a collection of posts, they will help suggest related articles. Keep in mind that for an article to be considered related, the majority of tags must match, with allowance for a difference in one tag.
+
+#### Meta Keywords
+
+Additionally, the tags you assign to your content will also be used as [meta keywords](/handbook/customer/marketing/website/#meta-keywords) for each article, alongside the [default keywords](/handbook/customer/marketing/website#default-keywords).
 
 ### More tag
 

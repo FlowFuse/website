@@ -34,7 +34,16 @@ eleventyComputed:
     <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#aa4444">
     <meta name="msapplication-TileColor" content="#00aba9">
     <meta name="theme-color" content="#ffffff">
-    <meta name="keywords" content="Node-RED, Application Developement, IoT, IIoT, Low-Code, Open-Source, open source">
+    
+    <!-- Meta Keywords -->
+    {% if tags %}
+    {% set filtered_tags = tags | reject('equalto', 'posts') | reject('equalto', 'node-red') | list %}
+    <meta name="keywords" content="{{ filtered_tags | join(', ') }}, {{ site.messaging.keywords }}">
+    {% elif meta.keywords %}
+    <meta name="keywords" content="{{ meta.keywords }}, {{ site.messaging.keywords }}">
+    {% else %}
+    <meta name="keywords" content="{{ site.messaging.keywords }}">
+    {% endif %}
 
     <!-- Browser Title -->
     {% if navTitle %}
@@ -134,7 +143,7 @@ eleventyComputed:
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-2ZH9W82QL8"></script>
     {%- endif -%}
 </head>
-<body class="ff-website leading-normal tracking-normal gradient text-gray-500 min-h-screen flex flex-col" style="">
+<body class="ff-website leading-normal tracking-normal gradient text-gray-500 min-h-screen flex flex-col">
     <div class="flex-grow base">
         <div class="w-full">
             <!-- Events Banner Comment out line below to remove banner-->
@@ -311,18 +320,10 @@ eleventyComputed:
 <script async src="https://cdn.jsdelivr.net/npm/lite-youtube-embed@0.2.0/src/lite-yt-embed.min.js"></script>
 <link rel="preload" href="https://cdn.jsdelivr.net/npm/lite-youtube-embed@0.2.0/src/lite-yt-embed.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-<!-- Cookie banner -->
-<script async type="text/javascript" src="/js/cc.min.js"></script>
-
 {%- if not DEV_MODE -%}
-<!-- HubSpot Tracking -->
-{% set hubspotJS %}{% include "hubspot.js" %}{% endset %}
-<script>{{ hubspotJS | jsmin | safe }}</script>
-<script async type="text/javascript" id="hs-script-loader" src="//js-eu1.hs-scripts.com/26586079.js"></script>
-
 <!-- PostHog -->
 <script type="text/javascript">
-    const getCookieValue = (name) => (
+    const getMyCookieValue = (name) => (
         document.cookie.match('(^|;)\\s*' + name + '\\s*=\\s*([^;]+)')?.pop() || ''
     )
 
@@ -332,12 +333,12 @@ eleventyComputed:
 
     var phBootstrap = {}
 
-    if (!!(getCookieValue("ff-distinctid"))) {
-        phBootstrap['distinctID'] = getCookieValue("ff-distinctid")
+    if (!!(getMyCookieValue("ff-distinctid"))) {
+        phBootstrap['distinctID'] = getMyCookieValue("ff-distinctid")
     }
 
-    if (!!(getCookieValue("ff-feats"))) {
-        phBootstrap['featureFlags'] = decodeCookie(getCookieValue("ff-feats"))
+    if (!!(getMyCookieValue("ff-feats"))) {
+        phBootstrap['featureFlags'] = decodeCookie(getMyCookieValue("ff-feats"))
     } else {
         console.log("No feature flags found - falling back to 'control' content")
     }
@@ -346,9 +347,9 @@ eleventyComputed:
     posthog.init('{{ POSTHOG_APIKEY }}', {
         api_host:'https://eu.posthog.com',
         bootstrap: phBootstrap,
-        capture_pageleave: false
+        capture_pageleave: false,
+        opt_out_capturing_by_default: true
     })
-
     /*
         Custom pageleave handler to track scroll
     */
@@ -415,36 +416,25 @@ eleventyComputed:
     }
 </script>
 
-<!-- gtag - cookie banner update -->
+<!-- PostHog - cookie banner update -->
 <script type="text/plain" data-category="analytics">
-    gtag('consent', 'update', {
-        'analytics_storage': 'granted'
-    });
+    posthog.opt_in_capturing();
 </script>
 
 <script type="text/plain" data-category="!analytics">
-    gtag('consent', 'update', {
-        'analytics_storage': 'denied'
-    });
+    posthog.opt_out_capturing();
 </script>
 
-<script type="text/plain" data-category="ads">
-    gtag('consent', 'update', {
-        'ad_storage': 'granted',
-        'ad_user_data': 'granted',
-        'ad_personalization': 'granted'
-    });
-</script>
+<!-- Clearbit Tracking -->
+<script type="text/plain" data-category="analytics" async src="https://tag.clearbitscripts.com/v1/pk_a40db34c3e210290335fe7ad7f2a7197/tags.js" referrerpolicy="strict-origin-when-cross-origin"></script>
 
-<script type="text/plain" data-category="!ads">
-    gtag('consent', 'update', {
-        'ad_storage': 'denied',
-        'ad_user_data': 'denied',
-        'ad_personalization': 'denied'
-    });
-</script>
+<!-- HubSpot Tracking -->
+{% set hubspotJS %}{% include "hubspot.js" %}{% endset %}
+<script>{{ hubspotJS | jsmin | safe }}</script>
+<script async type="text/javascript" id="hs-script-loader" src="//js-eu1.hs-scripts.com/26586079.js"></script>
 
-<script type="text/javascript" async src="https://tag.clearbitscripts.com/v1/pk_a40db34c3e210290335fe7ad7f2a7197/tags.js" referrerpolicy="strict-origin-when-cross-origin"></script>
+<!-- Cookie banner -->
+<script async type="text/javascript" src="/js/cc.min.js"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-16456599728"> </script> <script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'AW-16456599728'); </script>
 {%- endif -%}
-
 </html>

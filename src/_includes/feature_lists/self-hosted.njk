@@ -87,6 +87,11 @@
             values: [null, 'check', 'check'],
             info: "<p>FlowFuse Certified Nodes a selection of certfied Node-RED nodes, enhancing efficiency and security.</p>"
         }, {
+            id: "multi-user-dashboard",
+            label: "Personalised Multi-user Dashboards",
+            values: [null, 'check', 'check'],
+            info: "<p>Personalised Multi-user Dashboard allow you to build applications that provide unique data to each user <a href=\"https://flowfuse.com/blog/2024/01/dashboard-2-multi-user\" target=\"blank\">Learn more</a></p>"
+        }, {
             id: "instance-monitoring",
             label: "Instance Monitoring",
             values: [null, 'check', 'check'],
@@ -144,8 +149,8 @@
             onclick: "capture('cta-book-demo', {'position': 'secondary'}, {'plan': 'sh-team'})"
         }, {
             cta: "CONTACT US",
-            url: "/contact-us/",
-            onclick: "capture('cta-contact-us', {'position': 'secondary'}, {'plan': 'sh-enterprise'})"
+            url: "#contact-us",
+            onclick: "scrollToAnchor(event, 'contact-us'), capture('cta-contact-us', {'position': 'secondary'}, {'plan': 'sh-enterprise'})"
         }] 
     }]
 %}

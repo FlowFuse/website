@@ -3,11 +3,13 @@
     "appURL": "https://app.flowfuse.com",
     "jobBoard": "https://boards.greenhouse.io/flowfuse",
     "openings": {
-        "frontenddash": "https://boards.greenhouse.io/flowfuse/jobs/4911532004"
+        "frontenddash": "https://boards.greenhouse.io/flowfuse/jobs/4911532004",
+        "snrfrontend": "https://boards.greenhouse.io/flowfuse/jobs/5078447004"
     },
     "messaging": {
         "tagLine": "Elevate Node-RED with FlowFuse ",
         "subtitle": "FlowFuse provides a complete platform to scale your production Node-RED applications, increase developer velocity, and enhance security in order to accelerate innovation.",
-        "title": "Node-RED for professionals"
+        "title": "Node-RED for professionals",
+        "keywords": "Node-RED, Application Developement, IoT, IIoT, Low-Code, Open-Source, open source"
     }
 }

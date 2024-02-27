@@ -8,7 +8,8 @@ hubspot:
   reference: "homepage"
 ---
 <!--Hero Content-->
-<div class="w-full px-6 pb-24 mt-12 ff-bg-flows">
+<div class="w-full px-6 ff-bg-flows">
+    <div class="max-w-md sm:max-w-screen-lg pb-24 mt-12 mx-auto">
     <div class="container m-auto text-left max-w-screen-lg lg:flex lg:flex-row lg:items-start lg:justify-between lg:gap-6">
         <div class="max-w-xl mx-auto lg:mx-0 lg:my-auto lg:py-10 lg:max-w-[600px]">
             <h1 class="text-gray-50 max-w-xl m-auto lg:m-0 text-center lg:text-left">
@@ -36,135 +37,163 @@ hubspot:
             </div>
         </div>
         <div class="flex justify-center items-end m-auto lg:mx-0">
-            <lite-youtube videoid="eR0P40sxge8" style="background-image: url('images/thumbnail-nick-flowfuse.png'); width: 620px; height: 360px" class="max-w-xs max-h-48 border-4 rounded-md sm:max-w-none sm:max-h-full lg:max-w-lg lg:max-h-72"></lite-youtube>
+            <lite-youtube videoid="eR0P40sxge8" style="background-image: url('images/thumbnail-nick-flowfuse.png'); width: 620px; height: 360px" class="max-w-sm max-h-52 border-4 rounded-md sm:max-w-none sm:max-h-full lg:max-w-lg lg:max-h-72"></lite-youtube>
         </div>
     </div>
+    </div>
 </div>
-
 {% include "components/divider-flow--top-red--light.njk" %}
 
 <!-- Secondary Content -->
 <div class="w-full ff-bg-light px-6 pt-8">
-    <div class="container m-auto text-center max-w-5xl">
-        <div class="m-auto mb-12 w-full text-center mb-12 sm:mb-16">
+    <div class="max-w-md sm:max-w-screen-lg m-auto max-w-5xl">
+        <div class="social-proof-logos mx-auto md:-mt-6 w-full text-center">
             {% include "social-proof.njk" %}
         </div>
-        <div class="m-auto w-full text-center mt-20 md:mb-8 md:mt-24">
-            <h2>Why FlowFuse?</h2>
+    </div>
+    <!--Solutions-->
+    <div class="w-full pt-20 pb-8 md:px-0">
+        <div class="sm:max-w-screen-lg mx-auto">
+            <div class="mb-10 md:mb-12">
+                <h2 class="text-center w-full md:text-left font-medium">See how FlowFuse <span class="text-red-600">powers industries</span></h2>
+            </div>
+            {% include "solutions.njk" %}
         </div>
     </div>
 </div>
-<div class="about w-full ff-bg-light pt-10 pb-12">
-    <div class="container mx-auto max-w-lg sm:max-w-screen-lg flex flex-col md:flex md:flex-row md:flex-wrap gap-y-14">
-        {% for item in home %}
-        <div class="relative w-full px-4 mx-auto {% if loop.last %}md:w-full{% else %}md:w-1/2{% endif %}">
-            <div class="flex flex-col items-center md:items-start z-10">
-                <div class="flex flex-col justify-center md:justify-start items-start gap-6 md:min-h-28 w-full">
-                    <div class="max-w-[64px] w-full max-w-sm md:w-1/5 sm:max-h-full h-16 m-auto md:m-0">
-                        {% set imageSrc = ['./images/pictograms/', item.image, '.png'] | join %}
-                        {% set imageDescription = ['Image depicting ', item.imagealt] | join %}
-                        {% image imageSrc, imageDescription, [64] %}
+<div class="about w-full ff-bg-light pt-10">
+    <!-- FlowFuse Benefits -->
+    <div class="w-full px-6">
+        <div class="max-w-md sm:max-w-screen-lg mx-auto">
+            <div class="mx-auto w-full md:max-w-screen-lg grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-x-8 gap-y-14 pb-14">
+                <h2 class="text-center w-full md:text-left col-span-full font-medium"><span class="text-red-600">Benefits</span> of
+                    choosing FlowFuse</h2>
+                {% for item in home %}
+                <div class="relative w-full {% if loop.last %}col-span-full{% endif %}">
+                    <div class="flex flex-col items-center sm:items-start">
+                        <div class="flex flex-col justify-center md:justify-start gap-3 w-full">
+                            <div class="w-8 h-8 m-auto sm:m-0 text-red-600">
+                                {% set svgPath = "components/icons/" + item.icon + ".svg" %}
+                                {% include svgPath %}
+                            </div>
+                            <div class="w-full flex flex-row gap-3 mx-auto md:m-0 {% if not loop.last %}ff-min-h-56{% endif %}">
+                                <h5 class="w-full md:m-0">
+                                    <div class="text-xl text-gray-600 text-center sm:text-left">{{ item.title | safe }}
+                                    </div>
+                                </h5>
+                            </div>
+                        </div>
+                        <div>
+                            <p class="text-center sm:text-left font-light">{{ item.content }}</p>
+                        </div>
                     </div>
-                    <div class="flex flex-row gap-3 m-auto md:m-0 text-center md:text-left">
-                        <h5>
-                            <div class="text-xl">{{ item.title | safe }}</div>
-                        </h5>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    <div class="bg-white pb-10 md:pb-8 px-6 pt-14 px-6">
+        <!-- Get Started -->
+        <div class="m-auto text-center sm:text-left p-8 max-w-md sm:max-w-screen-lg bg-gray-100 rounded-md border-[3px] mt-6 drop-shadow-xl">
+            <div class="m-auto w-full text-center sm:text-left mb-8">
+                <h2><span class="text-red-600">Get Started</span> with FlowFuse</h2>
+                <p class="text-white font-light -mt-1">Explore our <a href="/pricing/">pricing</a></p>
+            </div>
+            <div class="w-full sm:grid sm:grid-cols-2 gap-6 sm:gap-8">
+                <div class="w-full mt-4 md:mt-0 flex flex-col justify-between">
+                    <div>
+                        <div class="flex justify-center sm:justify-start mt-3 mb-2">
+                            {% include "components/icons/chat-bubble-left-right-sm.svg" %}
+                        </div>
+                        <h4 class="flex justify-center sm:justify-start font-bold">Learn More</h4>
+                        <p class="font-light mt-6">The best way to learn about FlowFuse is to book a demo! We’d love to
+                            show you how FlowFuse can transform your business.</p>
+                    </div>
+                    <a class="mt-4 mb-6 sm:mb-0 ff-btn ff-btn--primary uppercase inline-block self-center sm:self-start"
+                        href="/book-demo/" onclick="capture('cta-book-a-demo', {'position': 'secondary'})">Book a
+                        Demo</a>
+                </div>
+                <div class="w-full mt-4 md:mt-0 flex flex-col justify-between">
+                    <div>
+                        <div class="flex justify-center sm:justify-start mt-3 mb-2 mx-auto md:mx-0">
+                            {% include "components/icons/chat-bubble-left-right-sm.svg" %}
+                        </div>
+                        <h4 class="flex justify-center sm:justify-start font-bold">Get Started Today</h4>
+                        <p class="font-light mt-6">Ready to get started? Start exploring the FlowFuse platform in less
+                            than a minute.</p>
+                    </div>
+                    <a class="mt-4 ff-btn ff-btn--primary-outlined uppercase inline-block self-center sm:self-start"
+                        href="{{ site.appURL }}/account/create"
+                        onclick="capture('cta-try-it-now', {'position': 'secondary'})">Try it out</a>
+                </div>
+            </div>
+        </div>
+        <!-- FF Content -->
+        <div class="w-full px-6">
+            <div class="max-w-md sm:max-w-screen-lg m-auto max-w-5xl pt-12 mt-10 pb-12">
+            <h2 class="text-center w-full md:text-left col-span-full font-medium"><span class="text-red-600">Explore more</span> about FlowFuse and Node-RED</h2>
+            <div class="w-full max-w-md md:max-w-none mx-auto flex flex-col md:grid md:grid-cols-3 gap-6 md:gap-x-8 pt-8">
+                <div class="w-full my-2 grid grid-cols-1 pb-4">
+                    <div class="pb-2 md:pb-0">
+                        <a href="/blog/">
+                            <div class="sm:max-h-none md:min-w-[40%] max-w-[448px] ff-image-cover ff-image-rounded scale mx-auto mb-4 aspect-video">
+                                {% image "./images/home/blog.png", "Image of hands typing on laptop working on Node-RED flows", [448] %}
+                            </div>
+                        </a>
+                        <h4 class="text-xl font-bold pb-3">Latest on the blog</h4>
+                        {%- for item in collections.posts | sort(attribute='item.date') | reverse | limit(3) -%}
+                        <a href="{{ item.url }}"
+                            class="w-full flex flex-col group {% if not loop.last %}border-b{% endif %}">
+                            <h5 class="my-2 font-light">
+                                <span class="text-gray-500 group-hover:text-blue-700">
+                                    {{ item.data.title }}
+                                </span>
+                            </h5>
+                        </a>
+                        {%- endfor -%}
+                    </div>
+                    <a href="/blog/" class="w-full text-right flex flex-row items-center justify-end self-end justify-self-end gap-1">
+                        See all
+                        {% include "components/icons/arrow-long-right.svg" %}
+                    </a>
+                </div>
+                <div class="w-full my-2 grid grid-cols-1 pb-4">
+                    {%- for item in collections.webinar | sort(attribute='item.date') | reverse | limit(1) -%}
+                    <div class="pb-2 md:pb-0">
+                        <a href="{{ item.url }}">
+                            <div class="sm:max-h-none md:min-w-[40%] max-w-[448px] ff-image-cover ff-image-rounded scale mx-auto mb-4 aspect-video">
+                                {% image "./images/home/webinar.png", "Image of hands typing on laptop working on Node-RED flows", [448] %}
+                            </div>
+                        </a>
+                        <h4 class="text-xl font-bold pb-3">{% if item.date | isFutureDate %}Upcoming{% else %}Latest{% endif %} Webinar</h4>
+                        <div class="w-full flex flex-col">
+                            <h5 class="my-2 font-light"><span class="text-gray-500">{{ item.data.title }}</span></h5>
+                        </div>
+                        <div class="webinar-title w-full border-t pt-3 font-light text-gray-500">
+                            <time value="{{ item.date }}">{{ item.date | shortDate }} | </time>
+                            {% if item.date | isFutureDate %}
+                            <time value="{{ item.data.time }}">{{ item.data.time }}</time>
+                            {% endif %}
+                        </div>
+                    </div>
+                    <a class="mt-4 ff-btn ff-btn--primary-outlined uppercase inline-block self-end justify-self-end"
+                        href="{{ item.url }}">{% if item.date | isFutureDate %}REGISTER NOW{% else %}WATCH WEBINAR{%
+                        endif %}</a>
+                    {%- endfor -%}
+                </div>
+                <div class="w-full my-2 grid grid-cols-1">
+                    <div class="pb-2 md:pb-0">
+                            <div class="sm:max-h-none md:min-w-[40%] max-w-[448px] ff-image-cover ff-image-rounded mx-auto mb-4 aspect-video">
+                                {% image "./images/home/newsletter.png", "Image of hands typing on laptop working on Node-RED flows", [448] %}
+                            </div>
+                        <h4 class="text-xl font-bold pb-3">Newsletter</h4>
+                        <h5 class="font-bold pb-3 pt-2">Sign up for our monthly email updates</h5>
+                    </div>
+                    <div class="-mb-1 self-end w-full">
+                        {% include hubspot.script %}
                     </div>
                 </div>
-                <div>
-                    <p class="text-center md:text-left">{{ item.content }}</p>
-                </div>
             </div>
-        </div>
-        {% endfor %}
-    </div>
-</div>
-<div class="w-full ff-bg-light text-white -mb-1">
-    {% include "components/dividers/light-grey-curve.svg" %}
-</div>
-<!-- Deployment Options -->
-<div class="w-full ff-bg-light pt-0 md:pt-0 md:px-0">
-    <div class="bg-white pb-10 md:pb-8 px-6">
-    <div class="container m-auto text-center max-w-4xl">
-        <div class="m-auto pt-12 w-full text-center">
-            <h2>Get Started with FlowFuse</h2>
-            <p class="text-white font-light -mt-1">Explore our <a href="/pricing/">pricing</a>.</p>
-        </div>
-        <div class="sm:mt-10 md:mt-4 w-full max-w-4xl text-center flex flex-wrap gap-2 justify-around">
-            <div class="w-full px-3 mt-4 sm:w-72 md:mt-0 css-full">
-                <div class="w-24 m-auto">
-                    {% image "./images/pictograms/book-a-demo_red.png", "Icon representing a booked demo.", [96] %}
-                </div>
-                <h5 class="flex justify-center">Learn More</h5>
-                <label class="font-light mt-2 block">The best way to learn about FlowFuse is to book a demo! We’d love to show you how FlowFuse can transform your business.</label>
-                <a class="mt-4 mb-10 md:mb-0 ff-btn ff-btn--primary uppercase inline-block" href="/book-demo/" onclick="capture('cta-book-a-demo', {'position': 'secondary'})">Book a Demo</a>
-            </div>
-            <div class="w-full px-3 mt-4 sm:w-72 md:mt-0 flex flex-col items-center justify-between">
-                <div>
-                <div class="w-24 m-auto">
-                    {% image "./images/pictograms/enterprise_red.png", "Graphic image representing 'Infrastructure'.", [96] %}
-                </div>
-                <h5 class="flex justify-center">Get Started Today</h5>
-                </div>
-                <label class="font-light mt-2 block">Ready to get started? Start exploring the FlowFuse platform in less than a minute.</label>
-                <a class="mt-4 ff-btn ff-btn--primary-outlined uppercase inline-block" href="{{ site.appURL }}/account/create" onclick="capture('cta-try-it-now', {'position': 'secondary'})">Try it out</a>   
-            </div>
-        </div>
-    </div>
-    </div> 
-</div>
-<div class="w-full bg-white text-gray-50 -mb-1">
-    {% include "components/dividers/divider-flow--top-grey.svg" %}
-</div>
-<!-- FF Content -->
-<div class="ff-bg-light w-full pb-20 md:px-0">
-    <div class="container m-auto max-w-5xl pt-6 md:pt-3 px-6">
-        <h3 class="text-center w-full font-medium">Explore more about FlowFuse and Node-RED</h3>
-        <div class="w-full max-w-md md:max-w-none mx-auto flex flex-col md:grid md:grid-cols-3 gap-6 md:gap-x-8 pt-10">
-            <div class="w-full my-2 grid grid-cols-1 pb-4">
-                <div class="pb-2 md:pb-0">
-                <h4 class="text-xl font-bold pb-3"><span class="text-red-600">Latest on the blog</span></h4>
-                {%- for item in collections.posts | sort(attribute='item.date') | reverse | limit(3) -%}
-                <a href="{{ item.url }}" class="w-full flex flex-col group {% if not loop.last %}border-b{% endif %}">
-                    <h5 class="my-2 font-normal text-lg">
-                        <span class="text-gray-500 group-hover:text-blue-700">
-                            {{ item.data.title }}
-                        </span>
-                    </h5>
-                </a>
-                {%- endfor -%}
-                </div>
-                <a href="/blog/" class="w-full text-right flex flex-row items-center justify-end self-end justify-self-end gap-1">
-                    See all
-                    {% include "components/icons/arrow-long-right.svg" %}
-                </a>
-            </div>
-            <div class="w-full my-2 grid grid-cols-1 pb-4">
-                {%- for item in collections.webinar | sort(attribute='item.date') | reverse | limit(1) -%}
-                <div class="pb-2 md:pb-0">
-                <h4 class="text-xl font-bold pb-3"><span class="text-red-600">{% if item.date | isFutureDate %}Upcoming{% else %}Latest{% endif %} Webinar</span></h4>
-                <div class="w-full flex flex-col">
-                    <h5 class="my-2 font-normal text-lg"><span class="text-gray-500">{{ item.data.title }}</span></h5>
-                </div>
-                <div class="webinar-title w-full border-t pt-3 font-light text-gray-500">
-                    <time value="{{ item.date }}">{{ item.date | shortDate }} | </time>
-                    {% if item.date | isFutureDate %}
-                    <time value="{{ item.data.time }}">{{ item.data.time }}</time>
-                    {% endif %}
-                </div>
-                </div>
-                <a class="mt-4 ff-btn ff-btn--primary-outlined uppercase inline-block self-end justify-self-end"
-                    href="{{ item.url }}">{% if item.date | isFutureDate %}REGISTER NOW{% else %}WATCH WEBINAR{% endif %}</a>
-                {%- endfor -%}
-            </div>
-            <div class="w-full my-2 grid grid-cols-1">
-                <div class="pb-2 md:pb-0">
-                <h4 class="text-xl font-bold pb-3"><span class="text-red-600">Newsletter</h4>
-                <h5 class="font-bold pb-3 pt-2">Sign up for our monthly email updates</h5>
-                </div>
-                <div class="-mb-1 self-end w-full">
-                    {% include hubspot.script %}
-                </div>
             </div>
         </div>
     </div>

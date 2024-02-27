@@ -14,6 +14,10 @@ If a self-hosted trial is desired, you need to generate a license key. See below
 
 Every self-hosted POC call should have an engineer present.
 
+### POC Criteria
+
+During the initial POC meeting, the [POC Criteria document](https://docs.google.com/document/d/1Dr5S9b9dm7Zn84rx-xV9_AvpEwjUPxSk8ZfQDBgpBgQ/edit) should be completed by both FlowFuse and the prospective customer. This ensures both parties are clear about what needs to be technically validated and what the next steps are after the testing is complete.
+
 ### Generating a license
 
 For self-managed installs a license needs to be generated and installed to

@@ -42,8 +42,9 @@ redirects:
   - { "from": "/handbook/development/markdown-how-to/", "to": "/handbook/company/guides/markdown/" }
   - { "from": "/handbook/development/guides/markdown", "to": "/handbook/company/guides/markdown/" }
   - { "from": "/handbook/development/guides/", "to": "/handbook/company/guides/" }
-  - { "from": "/blog/2023/08/uns-article/", "to": "/blog/2023/08/isa-95-automation-pyramid-to-unified-namespace/"}
-  - { "from": "/blog/2023/08/UNS-article/", "to": "/blog/2023/08/isa-95-automation-pyramid-to-unified-namespace/"}
+  - { "from": "/blog/2023/08/uns-article/", "to": "/blog/2023/08/isa-95-automation-pyramid-to-unified-namespace/" }
+  - { "from": "/blog/2023/08/UNS-article/", "to": "/blog/2023/08/isa-95-automation-pyramid-to-unified-namespace/" }
+  - { "from": "/product/", "to": "/product/why-flowfuse/" }
 
 # The "permalink" attribute determines where the output page will be located.
 permalink: "{{ redirect.from }}"
