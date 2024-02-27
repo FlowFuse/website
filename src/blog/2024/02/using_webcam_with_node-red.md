@@ -43,7 +43,7 @@ This webcam widget offers nice interactive controls that will allow you to inter
 3. Once the webcam is active, you can capture images by clicking the button with the camera icon located at the bottom center of the webcam interface.
 4. The widget returns a Base64 string containing the captured image in PNG format.
 
-!["capturing images using webcam widget controls"](./images/using_webcam_with_Node-RED_capturing_images_by_control.gif "capturing images using webcam widget controls")
+!["capturing images using webcam widget controls"](./images/using_webcam_with_node-red_capturing_images_by_control.gif "capturing images using webcam widget controls")
 
 ## Capturing images by passing payload
 
@@ -54,7 +54,7 @@ This webcam widget offers nice interactive controls that will allow you to inter
 
 By passing the "capture" string as payload, the webcam widget will activate (if it's off) and capture images automatically, without requiring user interaction. This method is commonly used in industrial applications which commonly depend on automated actions.
 
-!["capturing images by passing payload"](./images/using_webcam_with_Node-RED_capturing_images_by_passing_payload.gif "capturing images by passing payload")
+!["capturing images by passing payload"](./images/using_webcam_with_node-red_capturing_images_by_passing_payload.gif "capturing images by passing payload")
 
 ## Selecting different camera devices
 
@@ -63,7 +63,7 @@ The webcam widget also allows you to select different camera devices connected t
 1. Click on the ellipsis icon located at the top-right corner of the webcam interface.
 2. A dropdown menu will display the connected cameras. Select your preferred camera to use. Additionally, you can turn off the camera by selecting the "Turn camera off" option.
 
-!["selecting different camera"](./images/using_webcam_with_Node-RED_selecting_different_camera.gif "selecting different camera")
+!["selecting different camera"](./images/using_webcam_with_node-red_selecting_different_camera.gif "selecting different camera")
 
 ## Browser support and privacy
 
