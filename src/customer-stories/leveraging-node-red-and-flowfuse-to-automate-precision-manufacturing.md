@@ -1,7 +1,7 @@
 ---
 title: Revolutionizing Precision Manufacturing with Node-RED
 image: /images/stories/abrasive_tech.jpg
-date: 2024-02-21
+date: 2024-02-28
 logo:
 hubspot:
     formId: 8569c8e2-ceca-4817-98bf-4d6cc591e93d
@@ -11,7 +11,7 @@ story:
     logo: /images/stories/logos/abrasive-tech-logo-4.png
     quote: Node-RED has immensely facilitated our work. The tool's versatility and development speed have allowed Abrasive Technology to tackle projects that might have been deemed out-of-reach or discouraging in the past. It also allows us to develop our applications in a platform agnostic way that is much more flexible and agile in terms of hardware selection and adaptability.
     challenge: Optimise the production of precision abrasive materials.
-    solution: Rapid development of command and monitoring systems using Node-RED.
+    solution: Rapid development of command and monitoring systems using Node-RED hosted on FlowFuse.
     results:
         - Significant impacted on Abrasive Technology's business operations
         - Delivered projects which previously may have not been practical
@@ -21,7 +21,7 @@ In the competitive world of manufacturing, where precision, innovation, and effi
 
 <!--more-->
 
-This case study provides an in-depth exploration of how Abrasive Technology harnessed the power and flexibility of FlowFuse and Node-RED to optimize automation, streamline communication with machinery, and accelerate development processes.
+This case study provides an in-depth exploration of how Abrasive Technology harnessed the power and flexibility of FlowFuse and Node-RED and FlowFuse to optimize automation, streamline communication with machinery, and accelerate development processes.
 
 #### Organization Profile
 
@@ -45,8 +45,7 @@ Manufacturing environments, particularly those involving electro-coating process
 
 Abrasive Technology initially utilized Raspberry Pis for hosting Node-RED instances, linking them to industrialized touch screens for Human-Machine Interfaces (HMIs). While Raspberry Pis proved reliable for many applications, certain projects pushed hardware capabilities. Dudley highlights: "I have found them to be very reliable, but on the current project, I'm absolutely bumping up against its hardware capabilities." The anticipation of the Pi5, with enhanced capabilities, holds promise, and Dudley is eagerly awaiting its arrival.
 
-In addition to Raspberry Pis, Abrasive Technology currently operates a server running Node-RED locally, with additional instances in locally installed FlowFuse. Dudley notes, “We are now actively transitioning our Node-RED instances from locally maintained servers to the FlowFuse Cloud.”
-
+In addition to Raspberry Pis, Abrasive Technology currently operates a server running Node-RED locally alongside instances on FlowFuse. The company is actively transitioning its Node-RED instances from locally maintained servers to FlowFuse Cloud to make it easier to manage them. Dudley notes, "We also currently have a server Running Node-RED locally as well as instances on FlowFuse. Our search for a better way to host and manage our Node-RED instances is what started our transition to using FlowFuse."
 
 #### Impact on Business Operations
 
