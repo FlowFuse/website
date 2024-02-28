@@ -7,12 +7,12 @@ meta:
 
 ## Our North Star
 
-### Core believe
+### Core Belief
 
 By empowering a larger workforce to participate in automation an acceleration of digital transformation can be realized in manufacturing, agriculture, and other productive industries. This will lead to an increase in productivity.
 
 FlowFuse is riding two waves:
-1. Companies need to accellerate their innovation. 
+1. Companies need to accelerate their innovation. 
 2. Digitalization is at the inflection point of implementation.
 
 FlowFuse allows businesses to acquire, enrich, visualize, and build applications
@@ -44,7 +44,7 @@ The ideal lead has adopted Node-RED already and is in the following industries:
 Due the to breath of the Node-RED community and the industries they apply it in,
 FlowFuse does not qualify customers based on industry.
 
-## Execution on our believe and mission
+## Execution on our belief and mission
 
 > We will only be successful if the Node-RED community is successful.
 
