@@ -48,7 +48,7 @@ This webcam widget offers nice interactive controls that will allow you to inter
 ## Capturing images by passing payload
 
 1. Drag an inject node onto the canvas.
-2. Set msg.payload as a 'capture' string. You can also set an interval time to automatically send the message after a specific interval, or you can keep it unchanged to manually send the payload by clicking the inject button.
+2. Set `msg.payload` to `capture` as string. You can also set an interval time to automatically send the message after a specific interval, or you can keep it unchanged to manually send the payload by clicking the inject button.
 3. Connect the output of the inject node to the input of the webcam widget.
 4. Deploy the flow.
 
