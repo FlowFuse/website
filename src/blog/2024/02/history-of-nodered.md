@@ -10,7 +10,6 @@ tags:
     - flowfuse
     - History of Node-RED
     - Node-RED
-    -Node Red
 ---
 
 
