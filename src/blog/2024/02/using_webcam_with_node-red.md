@@ -52,7 +52,7 @@ This webcam widget offers nice interactive controls that will allow you to inter
 3. Connect the output of the inject node to the input of the webcam widget.
 4. Deploy the flow.
 
-By passing the "capture" string as payload, the webcam widget will activate (if it's off) and capture images automatically, without requiring user interaction. This method is commonly used in industrial applications which commonly depend on automated actions.
+By passing the "capture" string as payload, the webcam widget will activate (if it's off) and capture images automatically, without requiring user interaction. This method is commonly used in industrial applications which depend on automated actions.
 
 !["capturing images by passing payload"](./images/using_webcam_with_node-red_capturing_images_by_passing_payload.gif "capturing images by passing payload")
 
