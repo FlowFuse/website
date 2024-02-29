@@ -8,24 +8,11 @@ At FlowFuse we're trying to leverage data obtained to make better decisions.
 
 ### Data sources
 
-Right now we're mostly using the Telemetry data from self-managed installs of
-FlowFuse. Later we'll likely add data from Stripe and Hubspot.
+1. Telemetry from self-managed installations
+2. [Hubspot](https://app-eu1.hubspot.com/reports-dashboard/26586079/view/106501027)
+3. Analytics - [Google Analytics](https://analytics.google.com/analytics/web/#/) and [PostHog](https://eu.posthog.com/project/2209)
 
-### Data warehouse
+### Data visualization
 
-For now the data is imported manually into Big Query. In big query materialized
-views are created - read; we're processing the data for more, derived, data.
-As the data is then in the Google realm, it is available as a data source in Google
-Sheets and [Data Studio](https://datastudio.google.com/).
-
-### Source to sink
-
-We've adopted Meltano to obtain and transfer the data. See also the
-[FlowFuse-Data](https://github.com/FlowFuse/flowforge-data){rel="nofollow"}
-(Internal project)
-on how we transfer the data. It's manually triggered for now.
-
-### Notable dashboards
-
-- [KPI Dashboard](https://datastudio.google.com/reporting/90315614-39bf-4eac-ba3d-45b4c635940e/page/P1V6C)
-- [Google Search Dashboard](https://datastudio.google.com/reporting/d22a6f9f-cd1c-419b-821f-872e8aee013d/page/6zXD)
+FlowFuse uses [our own Dashboard](https://dashboard.flowfuse.com) to obtain insights
+from the data.
