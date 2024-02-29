@@ -204,7 +204,7 @@ We will send an email to the departing employee covering the following points:
 1. Return of company property
 1. Reimbursement of business expenses
 
-At FlowFuse, we conduct Exit Interviews for employees who choose to leave the company voluntarily. This provides us with valuable feedback on their experience, reasons for leaving, and areas for improvement. The People Ops manager schedules these interviews during the employee's last week to ensure they have an opportunity to share their insights. Our aim is to use this feedback to enhance our workplace culture and practices.
+At FlowFuse, we conduct Exit Interviews for employees who choose to leave the company voluntarily. This provides us with valuable feedback on their experience, reasons for leaving, and areas for improvement. Their manager schedules these interviews during the employee's last week to ensure they have an opportunity to share their insights. Our aim is to use this feedback to enhance our workplace culture and practices. Please follow the [predefined questions](https://docs.google.com/document/d/1az9PddrvVk1TH1TPXJGXmavxBpo9OpcWbylN4gQBoe8/edit){rel="nofollow"} to guide the conversation.
 
 ### Offboarding Issue
 
