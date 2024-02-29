@@ -33,14 +33,14 @@ The following is a description of each stage.
 
 ##### From MQL to SQL - Qualifying questions
 
-1. What is your business, and where does Node-RED fit in?
-1. What are you building with Node-RED, and how is it helping your business?
-1. What challenges you've run into operating Node-RED?
-1. Why now?
+
+- Is there a NR use case?
+- Is NR used in production?
+- Is there a timeline within the next 6 months?
 
 ##### From SQL to Opportunity
 
-A SQL becomes an opportunity when their is a realistic indication of a purchase within the next 3 months, based on the qualifying questions.
+A SQL becomes an opportunity when there is an active evaluation of FlowFuse (this can be quotes, POCs, any other indication that they are planning to purchase something soon).
 
 | Deal Stages |  | |
 | :------- | :--:| :---- |
