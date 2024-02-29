@@ -29,24 +29,6 @@ hubspot:
                 <div class="prose">
                     {{ content | safe }}
                 </div>
-                <div class="mt-9 pt-3 border-t-2">
-                    <h3 class="mb-3">Comments:</h3>
-                    <div id='discourse-comments'></div>
-                </div>
-                <script type="text/javascript">
-                    window.DiscourseEmbed = {
-                        discourseUrl: 'https://discourse.nodered.org/c/vendors/flowfuse/24/',
-                        discourseEmbedUrl: "{{ site.baseURL }}{{ page.url }}",
-                        className: 'ff-comment-thread'
-                    };
-                    (function () {
-                        var d = document.createElement('script');
-                        d.type = 'text/javascript';
-                        d.async = true;
-                        d.src = window.DiscourseEmbed.discourseUrl + 'javascripts/embed.js';
-                        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(d);
-                    })();
-                </script>
             </div>
             <div class="w-72 max-w-full flex-shrink-0">
                 <div class="sticky top-4 mt-6 flex flex-col">
