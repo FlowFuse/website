@@ -12,11 +12,11 @@ image:
     <div class="container m-auto max-w-lg md:max-w-5xl flex flex-col gap-y-10 pb-12">
         {% for item in reasons %}
             <div class="relative w-full p-6 m-auto">
-                <div class="absolute {% if loop.index is odd %}bottom-4 left-4{% else %}top-4 right-4{% endif %} bg-red-600 w-48 h-32 rounded-md z-0"></div>
+                <div class="absolute {% if loop.index is odd %}bottom-4 left-4{% else %}top-4 right-4{% endif %} bg-indigo-600 w-48 h-32 rounded-md z-0"></div>
                 <div class="flex flex-col md:flex-row{% if loop.index is even %}-reverse{% endif %} gap-6 items-center z-10 bg-white rounded drop-shadow-md px-8 pt-6 pb-8 md:py-6 md:justify-between">
                     <div class="md:w-1/2 pt-4">
                         <div class="flex flex-row gap-3 items-center">
-                            <div class="min-w-[60px] h-20 text-7xl bg-red-600 text-gray-50 text-center font-bold px-1 rounded pt-1">{{ loop.index }}</div>
+                            <div class="min-w-[60px] h-20 text-7xl bg-indigo-600 text-gray-50 text-center font-bold px-1 rounded pt-1">{{ loop.index }}</div>
                             <h4><div class="font-medium leading-tight pt-1">{{ item.title }}</div></h4>
                         </div>
                         <p>{{ item.content | safe }}</p>
