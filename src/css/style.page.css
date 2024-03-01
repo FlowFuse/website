@@ -245,7 +245,7 @@
         margin-bottom: 0;
     }
 
-    .pricing-tile a.ff-btn .ff-btn--secondary-oulined {
+    .pricing-tile a.ff-btn .ff-btn--primary-oulined {
         display: inline-block;
         margin-top: 0.875rem;
         @apply text-center;

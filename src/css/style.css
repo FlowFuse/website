@@ -92,7 +92,7 @@ h1, h2, h3, h4, h5, p {
 
 
 .ff-website {
-    background-color: theme(colors.gray.800);
+    /* background-color: theme(colors.gray.800); */
 }
 
 .ff-bg-flows {
@@ -441,12 +441,12 @@ h4:hover .header-anchor {
 */
 @layer components {
     .ff-website .ff-header {
-        @apply bg-gray-800 w-full px-6 py-4 sm:py-6 md:py-0 top-0 z-10 relative;
+        @apply bg-white w-full px-6 py-4 sm:py-6 md:py-0 top-0 z-10 relative;
     }
 
     .ff-website header .ff-wordmark path,
     .ff-website header .ff-icon--gh path {
-        fill: theme(colors.indigo.400);
+        fill: theme(colors.indigo.600);
     }
 
     .ff-website header nav {
@@ -459,7 +459,7 @@ h4:hover .header-anchor {
 
     .ff-website header #nav-content {
         height: calc(100% - 64px - 64px);
-        @apply top-8 md:top-0 transition-height fixed mt-8 w-full overflow-hidden border-none max-h-0 right-0 border-t shadow-sm z-10 bg-gray-800 flex-col items-center justify-between font-light no-underline;
+        @apply top-8 md:top-0 transition-height fixed mt-8 w-full overflow-hidden border-none max-h-0 right-0 border-t shadow-sm z-10 bg-gray-50 flex-col items-center justify-between font-light no-underline;
         @apply md:mt-0 md:h-auto md:overflow-visible md:max-h-20 md:relative md:shadow-none md:border-0 md:bg-transparent md:w-auto lg:static md:float-none md:flex md:flex-row;
     }
 
@@ -483,14 +483,14 @@ h4:hover .header-anchor {
 
     .ff-website header #mobile-ctas {
         transition: 0.3s bottom;
-        @apply -bottom-32 fixed w-full flex flex-col left-0 pl-4 right-0 pr-4 bg-gray-900 py-4 gap-3;
+        @apply -bottom-32 fixed w-full flex flex-col left-0 pl-4 right-0 pr-4 bg-gray-50 py-4 gap-3;
     }
     .ff-website header #mobile-ctas button,
     .ff-website header #mobile-ctas a {
         @apply uppercase flex-grow;
     }
-    .ff-website header #mobile-ctas a.ff-btn--tertiary {
-        @apply text-red-400 border-red-400 border border-solid;
+    .ff-website header #mobile-ctas a.ff-btn--primary-outlined {
+        @apply text-indigo-600 border-indigo-600 border border-solid;
     }
 
     .ff-website header #nav-content li {
@@ -502,15 +502,15 @@ h4:hover .header-anchor {
     }
 
     .ff-website header a .ff-icon--down path {
-        @apply sm:text-red-400;
+        @apply sm:text-indigo-400;
     }
     
     .ff-website header a {
-        color: theme(colors.gray.400);
+        color: theme(colors.gray.800);
     }
     
     .ff-website header .cta a {
-        color: theme(colors.gray.200);
+        color: theme(colors.indigo.600);
         @apply md:px-3 font-normal;
     }
 
@@ -526,7 +526,7 @@ h4:hover .header-anchor {
 
     .ff-website header a:hover .ff-icon--down path,
     .ff-website header ul a:hover {
-        @apply text-teal-300 md:text-white;
+        @apply text-indigo-700 md:text-indigo-700;
     }
 
     .ff-website header a > span {
@@ -546,14 +546,15 @@ h4:hover .header-anchor {
         width: max-content;
         max-height: 0;
         overflow: hidden;
-        @apply md:mt-2 md:absolute md:rounded-lg md:shadow-nav md:bg-gray-700;
+        @apply md:mt-3 md:absolute md:rounded-lg md:shadow-nav md:bg-gray-50; /* dropdown bg color */
         @apply transition-navdropdown;
     }
 
     .ff-website header .ff-nav-dropdown > ul:before {
         content: url("/images/nav-arrow.svg");
+        z-index: 10;
         position: absolute;
-        top: -18px;
+        top: -16px;
         right: 3rem;
         @apply hidden md:block;
     }
@@ -567,20 +568,20 @@ h4:hover .header-anchor {
     .ff-website header .ff-nav-dropdown:hover > ul:not(.ff-nav-nested-cols),
     .ff-website header .ff-nav-dropdown:focus-within > ul:not(.ff-nav-nested-cols) {
         max-height: 400px;
-        @apply sm:py-2 sm:overflow-visible;
+        @apply sm:py-2 sm:overflow-visible text-gray-700;
     }
 
     .ff-website header .ff-nav-dropdown ul li {
-        @apply border-b text-left sm:bg-gray-700 sm:text-right sm:border-gray-600 font-light;
+        @apply text-left sm:bg-gray-50 sm:text-right font-light; /* bg each list item */
     }
 
     .ff-website header .ff-nav-dropdown >ul li a {
         cursor: pointer;
-        @apply text-left pl-6 md:text-right md:pr-6 text-white;
+        @apply text-left pl-6 md:text-right md:pr-6 text-gray-700;
     }
 
     .ff-website header .ff-nav-dropdown >ul li a .ff-icon--solid {
-        fill: white;
+        fill: theme(colors.gray.700);
     }
 
     /* double nested */
@@ -592,76 +593,30 @@ h4:hover .header-anchor {
         @apply pl-12;
     }
 
-    .ff-website header .ff-nav-dropdown:hover a {
-        @apply md:text-white;
+    .ff-website header .ff-nav-dropdown:hover {
+        @apply md:text-indigo-700;
     }
 
     .ff-website header .ff-nav-dropdown >ul li:hover > a,
     .ff-website header .ff-nav-dropdown >ul li:hover > a svg {
-        color: theme(colors.teal.300);
+        color: theme(colors.indigo.700);
     }
 
     .ff-website header .ff-nav-dropdown >ul li:hover > a .ff-icon--solid {
-        fill: theme(colors.teal.300);
+        fill: theme(colors.indigo.700);
     }
 
     .ff-website header.mobile-open {
-        @apply border-b border-gray-600 sticky sm:relative;
+        @apply border-b sticky sm:relative;
     }
 
     .ff-website header.mobile-open #nav-content {
         overflow-y: auto;
-        @apply max-h-full fixed border-t border-gray-600 border-solid;
+        @apply max-h-full fixed;
     }
 
     .ff-website header.mobile-open #mobile-ctas {
         @apply bottom-0;
-    }
-
-    /* Nested Cols - Resources */
-
-    .ff-website header .ff-nav-dropdown .ff-nav-nested-cols {
-        @apply py-0 rounded-lg overflow-hidden bg-gray-600;
-    }
-
-    .ff-website header .ff-nav-dropdown:focus-within .ff-nav-nested-cols,
-    .ff-website header .ff-nav-dropdown:hover .ff-nav-nested-cols {
-        max-height: 400px;
-        @apply overflow-visible;
-    }
-
-    .ff-website header .ff-nav-dropdown .ff-nav-nested-cols ul {
-        @apply my-3;
-    }
-
-    .ff-website header .ff-nav-dropdown .ff-nav-nested-cols >div > li {
-        @apply pt-3 pb-2 pointer-events-none;
-    }
-    .ff-website header .ff-nav-dropdown .ff-nav-nested-cols >div:first-child > li {
-        @apply rounded-tl-lg;
-    }
-    .ff-website header .ff-nav-dropdown .ff-nav-nested-cols >div:last-child > li {
-        @apply rounded-tr-lg;
-    }
-
-    .ff-website header .ff-nav-dropdown .ff-nav-nested-cols >div > li > a {
-        @apply py-0 pointer-events-none;
-    }
-
-    .ff-website header .ff-nav-dropdown .ff-nav-nested-cols >div:first-child > li > a {
-        @apply py-0 border-r border-gray-500 border-solid;
-    }
-
-    .ff-website header .ff-nav-dropdown .ff-nav-nested-cols >div:first-child ul {
-        @apply border-r border-gray-500 border-solid;
-    }
-
-    .ff-website header .ff-nav-dropdown .ff-nav-nested-cols ul li {
-        @apply bg-gray-600;
-    }
-
-    .ff-website header .ff-nav-dropdown .ff-nav-nested-cols >div >li {
-        @apply font-medium;
     }
 }
 
@@ -680,7 +635,7 @@ h4:hover .header-anchor {
     min-height: calc(100vh - 310px);
 }
 
-.red-gradient {
+.indigo-gradient {
     background: linear-gradient(127.44deg, #C63A3A 32.29%, #3A2828 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -903,16 +858,6 @@ h4:hover .header-anchor {
         color: white;
     }
 
-    .ff-website .ff-btn.ff-btn--secondary {
-        background-color: theme(colors.teal.700);
-        color: white;
-    }
-    
-    .ff-website .ff-btn.ff-btn--secondary:hover {
-        background-color: theme(colors.teal.800);
-        color: white;
-    }
-
     .ff-website .ff-btn.ff-btn--primary-outlined {
         background-color: transparent;
         color: theme(colors.indigo.600);
@@ -920,21 +865,31 @@ h4:hover .header-anchor {
     }
     
     .ff-website .ff-btn.ff-btn--primary-outlined:hover {
-        background-color: theme(colors.indigo.800);
+        background-color: theme(colors.indigo.700);
         color: theme(colors.white);
-        border: 1px solid theme(colors.indigo.800);
+        border: 1px solid theme(colors.indigo.700);
     }
 
-    .ff-website .ff-btn.ff-btn--secondary-outlined {
-        background-color: transparent;
-        color: theme(colors.teal.600);
-        border: 1px solid theme(colors.teal.500);
+    .ff-website .ff-btn.ff-btn--highlight {
+        background-color: theme(colors.red.600);
+        color: white;
     }
     
-    .ff-website .ff-btn.ff-btn--secondary-outlined:hover {
+    .ff-website .ff-btn.ff-btn--highlight:hover {
+        background-color: theme(colors.red.700);
+        color: white;
+    }
+
+    .ff-website .ff-btn.ff-btn--highlight-outlined {
         background-color: transparent;
-        color: theme(colors.teal.800);
-        border: 1px solid theme(colors.teal.800);
+        color: theme(colors.red.600);
+        border: 1px solid theme(colors.red.600);
+    }
+    
+    .ff-website .ff-btn.ff-btn--highlight-outlined:hover {
+        background-color: theme(colors.red.700);
+        color: theme(colors.white);
+        border: 1px solid theme(colors.red.700);
     }
     
     .ff-website .ff-text-input {
@@ -1218,7 +1173,7 @@ h4:hover .header-anchor {
     }
 
     .ff-website .ff-nodered-resources--icon {
-        @apply border-r p-2 bg-gray-50 text-red-600 rounded-tl-xl rounded-bl-xl transition-colors;
+        @apply border-r p-2 bg-gray-50 text-indigo-600 rounded-tl-xl rounded-bl-xl transition-colors;
     }
 
     .ff-website .ff-nodered-resources--icon svg {
@@ -1326,7 +1281,7 @@ pre.mermaid {
     background-color: #ffffff
 }
 /*
-    FlowFuse markdown-it rendered footnote styles
+    FlowFuse markdown-it rendeindigo footnote styles
 */
 div.content hr.footnotes-sep {
     margin-top: 3em;
