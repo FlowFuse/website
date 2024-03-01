@@ -70,7 +70,7 @@ A good issue is one that is well defined and has a clear goal. Issues should off
 
 #### Defining a Story
 
-The best "Stories" are those that follow the following structure:
+The best "Stories" are those that follow this structure:
 
 > As a _[type of user]_, I want to _[do something]_, so that they can _[achieve some goal]_.
 
