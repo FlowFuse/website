@@ -15,6 +15,7 @@
 
 html, body {
     font-size: 16px;
+    overflow-x: hidden;
 }
 
 *{
@@ -32,8 +33,9 @@ h1 {
 }
 
 h2 {
-    font-size: 2.25rem;
+    font-size: 2rem;
     line-height: 2.5rem;
+    font-weight: 600;
 }
 
 h3 {
@@ -60,23 +62,12 @@ p {
 }
 
 h1, h2, h3, h4, h5, p {
-    color: theme(colors.teal.300);
+    color: theme(colors.gray.600);
 }
 
 .container {
     position: relative;
     z-index: 2;
-}
-
-.ff-bg-light h1,
-.ff-bg-light h2,
-.ff-bg-light h3,
-.ff-bg-light h4,
-.ff-bg-light h5 {
-    color: theme(colors.gray.800);
-}
-.ff-bg-light p {
-    color: theme(colors.gray.800);
 }
 
 .ff-bg-dark h1, .ff-bg-mid h1,
@@ -95,15 +86,15 @@ h1, h2, h3, h4, h5, p {
     /* background-color: theme(colors.gray.800); */
 }
 
-.ff-bg-flows {
+/* .ff-bg-flows {
     background-image: url('/images/ff-bg-flows.svg');
     background-repeat: repeat-x;
     background-position-x: 50%;
     background-position-y: calc(100% + 50px);
     background-size: contain;
-}
+} */
 
-.hero .ff-bg-flows {
+/* .hero .ff-bg-flows {
     background-size: 100%;
     background-position-y: calc(100% + 100px);
 }
@@ -117,11 +108,10 @@ h1, h2, h3, h4, h5, p {
         background-size: 100%;
         background-position-y: calc(100% + 25px);
     }
-}
+} */
 
 .gradient-bg {
-    background: radial-gradient(circle 50vw at center 500px,theme(colors.gray.700),transparent);
-    background-size: 100vw;
+    background: radial-gradient(circle 80vw at 100% 0%, theme(colors.indigo.50), transparent);
 }
 
 .pricing .gradient-bg {
@@ -130,7 +120,7 @@ h1, h2, h3, h4, h5, p {
 }
 
 main a {
-    color: theme(colors.teal.300);
+    color: theme(colors.blue.600);
 }
 main  a:hover {
     text-decoration: underline;
@@ -138,14 +128,9 @@ main  a:hover {
 main  a.ff-btn:hover {
     text-decoration: none;
 }
-main .ff-bg-light a {
-    color: theme(colors.blue.600);
-}
-main .ff-bg-light a:hover {
-    color: theme(colors.blue.700);
-}
+
 main .ff-bg-dark a, main .ff-bg-mid a {
-    color: theme(colors.teal.300);
+    color: theme(colors.blue.600);
 }
 main .ff-bg-dark a:hover, main .ff-bg-mid a:hover {
     color: theme(colors.teal.500);
@@ -156,7 +141,7 @@ pre code {
 
 .prose code {
     font-weight: 500;
-    color: theme(colors.indigo.600);
+    color: theme(colors.red.700);
     padding-left: 0.25rem;
     padding-right: 0.25rem;
 }
@@ -318,19 +303,19 @@ h4:hover .header-anchor {
 .ff-bg-mid {
     background-color: theme(colors.gray.700);
 }
-.ff-bg-light {
+/* .ff-bg-light {
     background-color: theme(colors.gray.50);
-}
+} */
 
-.ff-website .ff-bg-light .ff-input.ff-text-input {
+.ff-website .ff-input.ff-text-input {
     background-color: white;
 }
 
-.ff-website .ff-bg-light .ff-dropdown-selected {
+.ff-website .ff-dropdown-selected {
     background-color: white;
 }
 
-.ff-website .ff-bg-light textarea {
+.ff-website textarea {
     background-color: white;
 }
 
@@ -752,7 +737,7 @@ h4:hover .header-anchor {
         stroke-width: 1px;
     } 
 
-    .ff-bg-light .ff-icon-lg:not(.ff-icon--solid) {
+    .ff-icon-lg:not(.ff-icon--solid) {
         stroke: theme(colors.indigo.600);
     }
 
@@ -892,7 +877,7 @@ h4:hover .header-anchor {
         border: 1px solid theme(colors.red.700);
     }
     
-    .ff-website .ff-text-input {
+    .ff-website .ff-bg-dark .ff-text-input {
         background-color: theme(colors.gray.700);
         border-color: theme(colors.teal.500);
         border-width: 1px;
@@ -902,7 +887,7 @@ h4:hover .header-anchor {
         color: theme(colors.white);
     }
 
-    .ff-website .ff-bg-light .ff-text-input {
+    .ff-website .ff-text-input {
         background-color: theme(colors.gray.50);
         border-color: theme(colors.gray.300);
         color: theme(colors.gray.800);
@@ -1006,7 +991,7 @@ h4:hover .header-anchor {
         @apply bg-gray-200;
     }
 
-    main .ff-bg-light .ff-feature-row a {
+    main .ff-feature-row a {
         @apply text-gray-800 no-underline;
     }
 

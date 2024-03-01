@@ -7,6 +7,7 @@ module.exports = {
             typography: (theme) => ({
                 DEFAULT: {
                   css: {
+                    '--tw-prose-headings': theme('colors.gray.600'),
                     picture: {
                       marginTop: '0',
                       marginBottom: '0',

@@ -6,12 +6,6 @@
     line-height: 3.5rem;
 }
 
-.page h2 {
-    color: theme(colors.gray.800);
-    font-size: 2rem;
-    font-weight: 600;
-}
-
 .page .ff-bg-dark h2 {
     color: theme(colors.teal.300);
 }
@@ -36,7 +30,7 @@
 }
 
 .page p {
-    color: theme(colors.white);
+    color: theme(colors.gray.600);
     line-height: 1.75rem;
     font-size: 16px;
     font-weight: 300;
@@ -80,7 +74,7 @@
 }
 
 .about-team h4 {
-    color: theme(colors.gray.800);
+    color: theme(colors.gray.600);
 }
 
 .about-team a:hover,
@@ -407,11 +401,11 @@
     color: theme(colors.teal.300);
 }
 
-.selfHostedText, .annualText {
+.ff-bg-dark .selfHostedText, .ff-bg-dark .annualText {
     color: white;
 }
 
-.ff-bg-light .selfHostedText, .ff-bg-light .annualText {
+.selfHostedText, .annualText {
     color: theme(colors.gray.800);
 }
 
