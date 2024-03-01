@@ -49,7 +49,7 @@ Issues are the building blocks of planning activities, helping the team to manag
    a user should be able to do and identify the value that brings to the user.
    A story should be deliverable in a single release.
 
- - **Task**: If we consider a Story as a user-centric view of a feature, the underlying tasks are the engineering-centric view of the same feature. This may also be a  piece of work that isn't necessarily tied to a specific Epic or Story. For example, items related to technical debt or house-keeping chores.
+ - **Task**: If we consider a Story as a user-centric view of a feature, the underlying tasks are the engineering-centric view of the same feature. This may also be a piece of work that isn't necessarily tied to a specific Epic or Story. For example, items related to technical debt or house-keeping chores.
 
   - **Bugs**: issues that arise from errors, flaws, or unintended behavior in the existing code or system. Bugs negatively impact the user experience or the functionality of the software. They should be addressed and resolved by the development team, prioritized based on their severity, and included in the appropriate release for fixes.
 
