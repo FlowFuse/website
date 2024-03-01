@@ -1208,6 +1208,7 @@ h4:hover .header-anchor {
     .ff-website .ff-nodered-resources {
         @apply gap-y-4;
     }
+    
     ul.ff-nodered-resources {
         @apply flex flex-col;
     }
