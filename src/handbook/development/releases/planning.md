@@ -49,8 +49,7 @@ Issues are the building blocks of planning activities, helping the team to manag
    a user should be able to do and identify the value that brings to the user.
    A story should be deliverable in a single release.
 
- - **Task**: a piece of work that isn't necessarily tied to a specific Epic or Story.
-   For example, items related to technical debt or house-keeping chores.
+ - **Task**: If we consider a Story as a user-centric view of a feature, the underlying tasks are the engineering-centric view of the same feature. This may also be a  piece of work that isn't necessarily tied to a specific Epic or Story. For example, items related to technical debt or house-keeping chores.
 
   - **Bugs**: issues that arise from errors, flaws, or unintended behavior in the existing code or system. Bugs negatively impact the user experience or the functionality of the software. They should be addressed and resolved by the development team, prioritized based on their severity, and included in the appropriate release for fixes.
 
@@ -64,6 +63,36 @@ milestone directly.
 
 We label some items as `headline`. These are items we want to highlight in the changelog and further
 announcements and should clearly describe the value they bring to our users.
+
+### What makes a good issue?
+
+A good issue is one that is well defined and has a clear goal. Issues should offer clarity over the benefit of the issue being resolved, e.g. security flaw resolved, new feature added and the benefit that feature offers. Some particular considerations to keep in mind:
+
+#### Defining a Story
+
+The best "Stories" are those that follow the following structure:
+
+> As a _[type of user]_, I want to _[do something]_, so that they can _[achieve some goal]_.
+
+Note how this is user-centric and focuses on the value that the feature brings to the user.
+
+#### Breaking a Story into Tasks
+
+If we consider a story as a user-centric view of a feature, the underlying tasks are the engineering-centric view of the same feature.
+
+Well structured stories, when it comes to implementation, can often be broken down into clearer tasks. A trivial breakdown could be a separation of the UI design work, UI implementation, and backend implementation.
+
+When a member of the team is assigned a Story, they may be comfortable handling the full piece of work themselves, which is fine, and they can continue as such.
+
+It is also fine to break it down into tasks and assign them to different people, if you feel others' skills are better suited to certain parts of the work. An example to consider is a piece of work that requires the following:
+
+- API Changes
+- Database Migration
+- Frontend Development
+
+_Engineer A_ may have been assigned the parent Story, and be comfortable doing the first two parts, but feel a colleague, _Engineer B_ is better suited to the front-end work. Engineers should feel empowered to use common sense here, and break the work down as they see fit, asking for assistance from their colleagues and collaborating to get the work done.
+
+If you're unsure, or uncomfortable with a piece of assigned work please speak to the Engineering Manager or Product Manager.
 
 ### Effort Estimation
 
