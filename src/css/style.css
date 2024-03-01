@@ -671,12 +671,6 @@ h4:hover .header-anchor {
     Footer
 */
 @layer components {
-    .ff-footer {
-        background-image: url(../images/footer-bg.svg);
-        background-size: cover;
-        margin-top: -48px;
-        padding-top: 48px;
-    }
 
     .ff-footer-columns {
         grid-template-columns: 1fr 38% 25%;
@@ -691,27 +685,31 @@ h4:hover .header-anchor {
     }
 
     .ff-footer h4 {
-        color: white;
+        color: theme(colors.gray.800);
         @apply mb-2;
     }
 
     .ff-footer .copyright-statement {
         font-size: 0.75rem;
         margin-top: 0.75rem;
-        color: theme(colors.gray.300);
+        color: theme(colors.gray.400);
         font-weight: 200;
     }
 
     .ff-footer li {
-        color: theme(colors.gray.200);
+        color: theme(colors.gray.800);
         font-weight: 200;
     }
 
     .ff-footer li:hover {
-        color: theme(colors.white);
+        color: theme(colors.indigo.700);
         text-decoration: underline;
     }
-
+    
+    .ff-footer svg {
+        color: theme(colors.gray.800);
+        opacity: 1;
+    }
     /*
         Components
     */

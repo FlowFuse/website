@@ -239,11 +239,11 @@ eleventyComputed:
         </div>
     </div>
     <!-- Footer -->
-    <footer class="ff-footer bg-red-hero w-full">
-        <div class="py-2 pb-8 px-10 md:px-6 text-white md:pt-6 md:pb-10 max-w-md sm:max-w-screen-xl xl:mx-auto">
+    <footer class="ff-footer bg-gray-100 w-full border-t border-white">
+        <div class="py-4 pb-8 px-10 md:px-6 md:pt-8 md:pb-10 max-w-md sm:max-w-screen-xl xl:mx-auto">
             <div class="w-full grid gap-y-8 md:gap-y-0 md:grid-rows-2 md:grid-flow-col md:ff-footer-columns md:gap-x-8 md:justify-between">
-                <div class="w-52">
-                        {% image "./images/flowfuse-logo-wordmark-white.svg", "FlowFuse Logo in White", [150] %}
+                <div class="w-36">
+                    {% include "components/ff-logo--wordmark--grey.svg" %}
                 </div>
                 <div class="w-full self-end order-last md:order-none">
                     <div class="copyright-statement inline">
@@ -267,7 +267,7 @@ eleventyComputed:
                     </ul>
                 </div>
                 <div class="w-full md:row-span-2">
-                    <ul class="flex flex-row w-full -mx-3 md:mx-0 text-base text-white justify-between sm:justify-start sm:gap-x-4 lg:gap-x-6 md:justify-end">
+                    <ul class="flex flex-row w-full -mx-3 md:mx-0 text-base justify-between sm:justify-start sm:gap-x-4 lg:gap-x-6 md:justify-end">
                         <li class="inline md:m-0 md:block">
                             <a href="https://www.facebook.com/FlowFuse/" class="block px-3 py-3 md:p-0">
                                 <span class="sr-only">Visit our Facebook page</span>

@@ -7,9 +7,6 @@ meta:
 <div class="container m-auto text-left max-w-4xl pt-8 pb-24 w-full px-2">
     <div class="px-2">
         <h1>Webinars</h1>
-        <div class="md:-mt-6">
-            {% include "components/divider-grey-wires-right.njk" %}
-        </div>
     </div>
     {% if (collections.webinar and collections.webinar.length > 0 and collections.ama and collections.ama.length > 0) and ((collections.ama[0].date | countDays).value < (collections.webinar[0].date | countDays).value) %}
     <div class="flex flex-col-reverse gap-6">
@@ -79,9 +76,6 @@ meta:
         {% endif %}
     </div>
     {% if (collections.webinar and (collections.webinar | inFuture | length) > 0) or (collections.ama and (collections.ama | inFuture | length) > 0) %}
-    <div class="mt-4 w-full">
-        {% include "components/divider-grey-wires-left.njk" %}
-    </div>
     {% endif %}
     {% if collections.webinar and (collections.webinar | inPast | length) > 0 %}
         <h2 class="w-full">Past Webinars</h2>
