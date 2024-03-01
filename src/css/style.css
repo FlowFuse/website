@@ -1206,11 +1206,14 @@ h4:hover .header-anchor {
     */
 
     .ff-website .ff-nodered-resources {
-        @apply space-y-4;
+        @apply gap-y-4;
+    }
+    ul.ff-nodered-resources {
+        @apply flex flex-col;
     }
 
     .ff-website .ff-nodered-resources a {
-        @apply block border rounded-xl text-black hover:text-blue-600 hover:no-underline hover:cursor-pointer;
+        @apply block border rounded-xl text-black hover:text-blue-600 hover:no-underline hover:cursor-pointer h-full;
     }
 
     .ff-website .ff-nodered-resources--icon {
@@ -1235,7 +1238,12 @@ h4:hover .header-anchor {
     }
 
     .ff-website .ff-nodered-resources li {
-        @apply text-base flex items-center gap-2 bg-white rounded-xl;
+        @apply text-base flex items-center gap-2 bg-white rounded-xl h-full;
+    }
+
+    .ff-website .ff-nodered-resources img,
+    .ff-website .ff-nodered-resources picture {
+        @apply w-full h-full;
     }
 
     .ff-website .ff-nodered-resources li label {

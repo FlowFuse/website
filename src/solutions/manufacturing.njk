@@ -61,8 +61,8 @@ description:
 
 {% include "components/divider-flow--top-red--dark.njk" %}
 
-<div class="w-full ff-bg-dark px-6 pt-0 pb-32 md:pt-12 md:px-0">
-    <div class="page container pt-6 pd-6 sm:pb-12 px-3 md:px-12 md:max-w-screen-lg m-auto text-center max-w-screen-lg">
+<div class="w-full ff-bg-dark pt-0 md:pt-12">
+    <div class="page container pt-6 pd-6 sm:pb-12 px-3 md:px-12 md:max-w-screen-lg m-auto text-center max-w-screen-lg px-6 md:px-0">
         <div class="hero">
             <h2 style="color: white" class="mb-6 m-auto">Enhancing Manufacturing with FlowFuse's DevOps Integration</h2>
             <p class="mt-0">
@@ -70,7 +70,7 @@ description:
             </p>
         </div>
     </div>
-    <div class="page mt-6 content max-w-screen-lg m-auto">
+    <div class="page mt-6 content max-w-screen-lg m-auto px-6 md:px-0">
         <div class="text-left self-start flex gap-8 items-center mb-12">
             <div class="flex flex-col sm:flex-row gap-8 max-w-screen-lg sm:pr-24 md:pr-48">
                 <div class="w-32 sm:w-48 flex-shrink-0">
@@ -132,12 +132,105 @@ description:
             </div>
         </div>
     </div>
-    <div class="mt-20 content max-w-screen-lg m-auto text-center border-2 rounded-lg py-6 px-20 bg-gray-600 bg-opacity-50 border-gray-500">
-        <p class="text-2xl leading-10 mt-0 mb-9">
-            Ready to learn more?
-        </p>
-        <div>
-            <a href="/contact-us/" class="inline-block ff-btn ff-btn--secondary m-auto uppercase">Get in touch</a>
+    <div class="text-gray-100 -mb-1">
+        {% include "components/dividers/light-grey-curve.svg" %}
+    </div>
+</div>
+<div class="w-full ff-bg-light">
+    <div class="bg-gray-100 px-6 pt-3 md:pt-8 pb-20 md:pb-12 text-lg flex-col flex-row items-center justify-center gap-1 hover:no-underline flex-wrap">
+        <!-- Resources -->
+        <div class="text-center mt-6 md:mt-4 mb-6">
+            <h2>Resources</h2>
+        </div>
+        <div class="container m-auto max-w-5xl">
+            <!-- Left -->
+            <div class="ff-nodered-resources grid grid-cols-1 md:grid-cols-2 md:grid-flow-row md:gap-x-4 pt-4 md:pt-6 items-start px-6">
+                <a class="h-full"
+                    href="/customer-stories/leveraging-node-red-and-flowfuse-to-automate-precision-manufacturing/">
+                    <li class="h-full">
+                        <div class="w-2/5 ff-image-cover ff-image-left-rounded h-full">
+                            {% image "./images/stories/abrasive_tech.jpg", "Photo of helicopters and a precision
+                            manufacturing machine", [208] %}
+                        </div>
+                        <label class="w-3/5"><span class="font-bold"><span class="font-bold">Case Study:</span></span> Revolutionizing Precision Manufacturing with <span class="inline-block">Node-RED</span></label>
+                    </li>
+                </a>
+                <a href="/customer-stories/stfi-future-of-textile-powered-by-node-red/">
+                    <li>
+                        <div class="w-2/5 ff-image-cover ff-image-left-rounded h-full">
+                            {% image "./images/stories/stfi-future-textile.jpg", "Photo of the STFI floor plant", [208] %}
+                        </div>
+                        <label class="w-3/5"><span class="font-bold">Case Study:</span> The Future of Textile Manufacturing Powered with <span class="inline-block">Node-RED</span></label>
+                    </li>
+                </a>
+                <!-- Right -->
+                <a class="h-full" href="/customer-stories/manufacturing-digital-transformation/">
+                    <li class="h-full">
+                        <div class="w-2/5 ff-image-cover ff-image-left-rounded h-full">
+                            {% image "./images/stories/large-us-manufacturing.jpg", "Photo of a manufacturing company with a
+                            worker holding a laptop.", [208] %}
+                        </div>
+                        <label class="w-3/5"><span class="font-bold">Case Study:</span> Node-RED Enables Digital Transformation of a Large US Manufacturing Company</label>
+                    </li>
+                </a>
+                <a href="/blog/2023/10/citizen-development/">
+                    <li>
+                        <div class="w-2/5 ff-image-cover ff-image-left-rounded h-full">
+                            {% image "./blog/2023/10/images/image-citizen-developers.png", "Graphics depicting unified
+                            citizen developers.", [208] %}
+                        </div>
+                        <label class="w-3/5">Empower your Operational Technology teams as Citizen Developers</label>
+                    </li>
+                </a>
+            </div>
+        </div>
+        <!-- Deployment options -->
+        <div class="text-center mt-20 mb-14">
+            <h2>Flexible Deployment Options with <span class="text-red-600">FlowFuse</span></h2>
+        </div>
+        <div class="container m-auto max-w-screen-lg">
+            <div class="grid md:px-6 md:px-0 grid-cols-1 md:grid-cols-3 gap-12 md:gap-5 max-w-md md:max-w-none mx-auto">
+                <div class="deployment-card">
+                    <div>
+                        <div class="title pb-4">
+                            <h4>
+                                <span class="text-gray-600">FlowFuse Cloud</span></br>
+                            </h4>
+                        </div>
+                        <p class="mb-0 text-left">
+                            The easiest way to start building Node-RED applications. No installation required! Simply sign up and gain immediate access to the editor.
+                        </p>
+                    </div>
+                    <a class="md:self-end ff-btn ff-btn--primary-outlined uppercase align-baseline w-full mt-3" href="https://app.flowfuse.com/account/create" onclick="capture('cta-join', {'position': 'manufacturing'})">SIGN UP</a>
+                </div>
+                <div class="deployment-card">
+                    <div>
+                        <div class="title">
+                            <h4>
+                                <span class="text-gray-600">Self managed</span></br>
+                            </h4>
+                            <div class="text-base font-bold text-gray-400 pb-4">(on premise)</div> 
+                        </div>
+                        <p class="mb-0 text-left">
+                            Run FlowFuse where you prefer; that's possible too! In your cloud of preference, or even on-site.
+                        </p>
+                    </div>
+                    <a class="md:self-end ff-btn ff-btn--primary-outlined uppercase align-baseline w-full mt-3" href="/docs/install/introduction/" onclick="capture('cta-install', {'position': 'manufacturing'})">INSTALL NOW</a>
+                </div>
+                <div class="deployment-card">
+                    <div>
+                        <div class="title pb-4">
+                            <h4>
+                                <span class="text-gray-600">Edge device</span></br>
+                            </h4>
+                        </div>
+                        <p class="mb-0 text-left">
+                            Run Node-RED where the data is generated. Manage thousands of edge devices through the FlowFuse Device Agent.
+                        </p>
+                    </div>
+                    <a class="md:self-end ff-btn ff-btn--primary-outlined uppercase align-baseline w-full mt-3" href="/docs/device-agent/introduction/">MORE INFO</a>
+                </div>
+            </div>
         </div>
     </div>
 </div>
