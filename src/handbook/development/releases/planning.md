@@ -66,7 +66,9 @@ announcements and should clearly describe the value they bring to our users.
 
 ### What makes a good issue?
 
-A good issue is one that is well defined and has a clear goal. Issues should offer clarity over the benefit of the issue being resolved, e.g. security flaw resolved, new feature added and the benefit that feature offers. Some particular considerations to keep in mind:
+A good issue is one that is clear in it's scope, key tasks to be completed, and the value accomplished through it's completion, e.g. security flaw resolved, new feature added and the benefit that feature offers.
+
+Some particular considerations to keep in mind:
 
 #### Defining a Story
 
