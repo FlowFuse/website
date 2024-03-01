@@ -524,7 +524,7 @@
 }
 
 .team-headshot:nth-child(3n) img {
-    background: url("/images/team/backing-cloud-3.png"), theme(colors.red.500);
+    background: url("/images/team/backing-cloud-3.png"), theme(colors.indigo.500);
     background-size: cover;
 }
 

@@ -50,7 +50,7 @@
     }
 
     .handbook-nav li.handbook-nav-group {
-        color: theme(colors.red.700);
+        color: theme(colors.indigo.700);
         padding-left: 0;
     }
 
@@ -73,7 +73,7 @@
     
     .handbook-nav li.active {
         background-color: theme(colors.gray.100);
-        border-color: theme(colors.red.600);
+        border-color: theme(colors.indigo.600);
     }
 
     .handbook-nav li a:hover {
@@ -86,7 +86,7 @@
 
     .handbook-nav li.core-nodes-nav-group a:hover,
     .handbook-nav li.core-nodes-nav-group a {
-        color: theme(colors.red.600);
+        color: theme(colors.indigo.600);
         text-decoration: none;
     }
 
