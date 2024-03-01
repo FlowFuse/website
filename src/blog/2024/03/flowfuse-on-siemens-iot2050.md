@@ -4,7 +4,7 @@ subtitle: How to install FlowFuse Device Agent on Siemens IoT2050
 description: In this guide, we will discuss how to install FlowFuse Device agent on Siemens IoT2050.
 date: 2024-03-04
 authors: ["grey-dziuba"]
-image: 
+image: /blog/2024/03/images/using_webcam_with_node-red.png
 tags:
     - posts
     - flowfuse
