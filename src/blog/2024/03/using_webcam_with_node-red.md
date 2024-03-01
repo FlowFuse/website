@@ -4,7 +4,7 @@ subtitle: Guide to integrating webcam features into Node-RED applications.
 description: Guide to integrating webcam features into Node-RED applications.
 date: 2024-03-01
 authors: ["sumit-shinde"]
-image: /blog/2024/03/images/using_webcam_with_node-red_capturing_images_by_passing_payload.gif
+image: /blog/2024/03/images/using_webcam_with_node-red.png
 tags:
     - posts
     - node-red
