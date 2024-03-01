@@ -37,8 +37,7 @@ by FlowFuse Cloud.
 
 #### Data at Rest
 
-All user data is stored in a relational database, which are encrypted by default
-for all install methods except local.
+All user data is stored in a relational database.
 
 _FlowFuse Cloud_: Data is stored in a PostgreSQL database. All data is encrypted
 [since October 2022](/blog/2022/10/db-migration-01/).
