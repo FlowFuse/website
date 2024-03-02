@@ -26,7 +26,7 @@ Before we start integrating the webcam, make sure you have installed Dashboard 2
 ## Using a webcam custom widget
 Once Dashboard 2.0 is installed, proceed to install the ui-webcam widget:
 
-1. Install `node-red-dashboard-2-ui-webcam` by the palette manager.
+1. Install `@sumit_shinde_84/node-red-dashboard-2-ui-webcam` by the palette manager.
 2. Select a created group for the ui-webcam widget in which it will render.
 3. Deploy the flow by clicking on the top-right red deploy button.
 
