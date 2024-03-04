@@ -34,7 +34,7 @@ module.exports = {
                 },
             }),
             fontSize: {
-                'page-h1': ['2.5rem', '3.5rem'],
+                'page-h1': ['2.4rem', '3rem'],
                 'post-h4': ['1.25rem']
             },
             fontFamily: {

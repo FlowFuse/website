@@ -29,22 +29,22 @@ html, body {
 */
 h1 {
     font-size: 2.75rem;
-    line-height: 3rem;
+    line-height: 3.1rem;
 }
 
 h2 {
     font-size: 2.25rem;
-    line-height: 2.5rem;
+    line-height: 2.7rem;
 }
 
 h3 {
     font-size: 2rem;
-    line-height: 2.5rem;
+    line-height: 2.7rem;
 }
 
 h4 {
     font-size: 1.75rem;
-    line-height: 2rem;
+    line-height: 2.2rem;
 }
 
 h5 {
@@ -649,9 +649,9 @@ h4:hover .header-anchor {
 
 .feature-button.active,
 .solution-button.active {
-    background-color: theme(colors.gray.200);
-    color: theme(colors.gray.800);
-    border: 2px solid theme(colors.gray.300);
+    background-color: theme(colors.indigo.100);
+    color: theme(colors.indigo.800);
+    border: 2px solid theme(colors.indigo.200);
 }
 
 .feature,
