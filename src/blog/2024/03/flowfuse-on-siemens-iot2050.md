@@ -18,7 +18,7 @@ Siemens [announced](https://press.siemens.com/global/en/pressrelease/new-siemens
 
 ## Prerequisites 
 
-In this guide we will be working with the IoT2050 Advanced, *6ES7 647-0BA00-1YA2*. The device has been [upgraded](https://support.industry.siemens.com/cs/attachments/109741799/IOT2050_How_To_Firmware_Update_V1.3.pdf) to the latest firmware at the time of writing this article of v1.3.1.  We will be leveraging the IOT2050_Example_Image_V1.3.1.zip image which is a debian base OS.  To complete this guide, knowledge of linux based cli is necessary.  Documentation to complete these requirements can be found [here](https://support.industry.siemens.com/cs/document/109741799/downloads-for-simatic-iot20x0?dti=0&lc=en-GB).  Our boot order is the following:
+In this guide we will be working with the IoT2050 Advanced, *6ES7 647-0BA00-1YA2*. The device has been [upgraded](https://support.industry.siemens.com/cs/attachments/109741799/IOT2050_How_To_Firmware_Update_V1.3.pdf) to the latest firmware at the time of writing this article of v1.3.1.  We will be leveraging the IOT2050_Example_Image_V1.3.1.zip image which is a debian base OS.  To complete this guide, knowledge of linux based cli is necessary.  Documentation to complete these requirements can be found [here](https://support.industry.siemens.com/cs/document/109741799/downloads-for-simatic-iot20x0?dti=0&lc=en-GB).
 
 ## Step by Step Guide
 
