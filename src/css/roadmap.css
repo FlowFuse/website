@@ -98,7 +98,7 @@
 }
 
 .roadmap-section h4 {
-    color: white;
+    color: theme(colors.indigo.600);
 }
 
 .title-number-container {
