@@ -4,17 +4,17 @@ subtitle: How to install FlowFuse Device Agent on Siemens IoT2050
 description: In this guide, we will discuss how to install FlowFuse Device agent on Siemens IoT2050.
 date: 2024-03-04
 authors: ["grey-dziuba"]
-image: 
+image: /blog/2024/03/images/flowfuse-on-siemens-iot2050.png
 tags:
     - posts
     - flowfuse
 ---
 
-Siemens [announced](https://press.siemens.com/global/en/pressrelease/new-siemens-gateway-between-cloud-company-it-and-production) the IoT2000 series in March of 2020.  With this tool many have been using it to function as a gateway between their plant operations and cloud infrastructure.  Onboard it came with Node-RED pre installed. To manage Node-RED as organisation the FlowFuse agent is recommended, this guide shows you how to do so.
+Siemens [announced](https://press.siemens.com/global/en/pressrelease/new-siemens-gateway-between-cloud-company-it-and-production) the IoT2000 series in March of 2020.  With this tool many have been using it to function as a gateway between their plant operations and cloud infrastructure.  Onboard it came with Node-RED pre installed. To manage Node-RED as organization the FlowFuse agent is recommended, this guide shows you how to do so.
 
 <!--more-->
 
-<div style="background-color: #fff4b9; border:1px solid #ffc400; color: #a27110; padding: 12px; border-radius: 6px; font-style: italic;">Warning: Later in the guide we will be updating Node.JS. This will break MRAA library. This will prevent communication to the I/O of the device.</div>
+<div style="background-color: #fff4b9; border:1px solid #ffc400; color: #a27110; padding: 12px; border-radius: 6px; font-style: italic;">Warning: Later in the guide we will be updating Node.JS. This will break MRAA library. This will prevent communication to the GPIO of the device.</div>
 
 ## Prerequisites 
 
@@ -44,7 +44,7 @@ systemctl status node-red
 
 4. Now it is time to upgrade your Node.js version.  To check the version before we get started run ```node -v```.  Then install a tool that will allow you to change your versions of Node.js with the following command.
 
-<div style="background-color: #fff4b9; border:1px solid #ffc400; color: #a27110; padding: 12px; border-radius: 6px; font-style: italic;">Warning: updating Node.js will break mraa library. This will prevent communication to the I/O of the device. Details can be found <a href="https://support.industry.siemens.com/forum/WW/en/posts/iot2050-node-js-versions/297170">here</a>.</div>
+<div style="background-color: #fff4b9; border:1px solid #ffc400; color: #a27110; padding: 12px; border-radius: 6px; font-style: italic;">Warning: updating Node.js will break the MRAA library. This will prevent communication to the GPIO of the device. Details can be found <a href="https://support.industry.siemens.com/forum/WW/en/posts/iot2050-node-js-versions/297170">here</a>.</div>
 
 ```shell
 npm install n -g
