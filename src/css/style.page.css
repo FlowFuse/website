@@ -159,8 +159,7 @@
     .pricing-tile {
         position: relative;
         border-radius: 12px;
-        border: 1px solid theme(colors.gray.600);
-        background: linear-gradient(0deg, theme(colors.gray.800), theme(colors.gray.700));
+        background: linear-gradient(theme(colors.indigo.100), theme(colors.indigo.50) 40%, rgba(255, 255, 255, 0));
         display: flex;
         flex-direction: column;
         @apply max-w-sm;
@@ -168,18 +167,13 @@
     
     .pricing-tile-background {
         position: relative;
-        width: calc(100% + 2px);
-        height: calc(100% + 2px);
-        bottom: -1px;
-        left: -1px;
-        background: linear-gradient(#1f293700, #1f2937);
+        width: calc(100% - 4px);
+        height: calc(100% + 4px);
+        bottom: -2px;
+        left: 2px;
+        background: linear-gradient(white 30%, rgba(255, 255, 255, 0));
         border-radius: 10px;
         @apply px-6;
-    }
-
-
-    .pricing-tiles p.lead-p {
-        @apply text-gray-400;
     }
 
     .pricing-tile h5 {
@@ -190,33 +184,20 @@
 
     .pricing-tile h4 {
         font-size: 24px;
-        font-weight: bold;
+        font-weight: 500;
         margin: 0;
         margin-bottom: 0;
-        color: theme(colors.teal.300);
         @apply text-left;
     }
 
     .pricing-tile h2 {
-        font-size: 35px;
-        font-weight: 500;
-        margin-bottom: 0;
-        color: theme(colors.teal.100);
-        @apply mt-0;
-    }
-    
-    .pricing-tile label {
-        font-weight: 300;
-        display: block;
-        color: theme(colors.gray.400);
-        font-size: 16px;
-        @apply text-right leading-6 md:leading-5;
+        @apply my-0;
     }
     
     .pricing-tile p {
-        font-size: 0.875rem;
-        line-height: 1.5rem;
-        font-weight: 200;
+        font-size: 1rem;
+        line-height: 1.7rem;
+        font-weight: 300;
         margin-bottom: 0;
     }
 
@@ -253,16 +234,15 @@
     }
 
 
-    .note {
-        font-weight: 300;
+    .pricing-tile note {
+        color: theme(colors.gray.700);
         margin: 0;
         margin-bottom: 0;
-        @apply text-center md:text-left;
+        @apply text-left;
     }
 
     .ff-checklist li {
-        font-weight: 100;
-        @apply flex gap-2;
+        @apply flex gap-2 text-gray-700;
     }
 
     .ff-checklist li::before {
@@ -293,19 +273,19 @@
 
 .slides .cloudText, 
 .slides .monthlyText {
-    color: white;
+    color: theme(colors.indigo.400);
 }
 
 .ff-bg-light .slides .cloudText,
 .ff-bg-light .slides .monthlyText {
-    color: theme(colors.gray.800);
+    color: theme(colors.indigo.300);
 }
 
 .slides .selfHostedText,
 .ff-bg-light .slides .selfHostedText,
 .slides .annualText,
 .ff-bg-light .slides .annualText {
-    color: theme(colors.teal.300);
+    color: theme(colors.indigo.700);
 }
 
 /* contains switch buttons */
@@ -327,7 +307,7 @@
     height: 36px;
     margin: 0rem;
     border-radius: 18px;
-    border: 1px solid theme(colors.gray.700);
+    border: 2px solid theme(colors.indigo.200);
     z-index: 0;
     cursor: pointer;
     padding: 0;
@@ -343,7 +323,7 @@
     border-radius: 16px;
     transition-duration: 0.5s;
     --tdur: 0;
-    background-color: theme(colors.gray.700);
+    background-color: theme(colors.indigo.200);
     z-index: -1;
 }
 
@@ -379,7 +359,7 @@
 }
 
 .cloudText, .monthlyText {
-    color: theme(colors.teal.300);
+    color: theme(colors.indigo.700);
 }
 
 .ff-bg-dark .selfHostedText, .ff-bg-dark .annualText {
@@ -387,7 +367,7 @@
 }
 
 .selfHostedText, .annualText {
-    color: theme(colors.gray.800);
+    color: theme(colors.indigo.400);
 }
 
 .hide {

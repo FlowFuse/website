@@ -119,8 +119,7 @@ h1, h2, h3, h4 {
 }
 
 .pricing .gradient-bg {
-    background: radial-gradient(circle 50vw at center -100px,rgba(55, 65, 81, 0.2),theme(colors.gray.800));
-    background-size: 100vw;
+    background: radial-gradient(circle 70vw at 50% 0%, theme(colors.indigo.50), transparent);
 }
 
 main a {
@@ -969,7 +968,11 @@ h4:hover .header-anchor {
         display: grid;
         grid-template-columns: 270px 1fr 1fr 1fr;
         align-items: center;
-        @apply bg-gray-200;
+        @apply bg-indigo-50;
+    }
+
+    .ff-feature-table-section li:first-child {
+        @apply bg-white;
     }
     
     @media (max-width: 720px) {
@@ -984,14 +987,12 @@ h4:hover .header-anchor {
         }
     }
 
-    .ff-feature-table-section li.ff-feature-row:nth-child(odd),
-    .ff-feature-table-section li.ff-feature-row:nth-child(odd) label {
-        background-color: theme(colors.gray.100);
+    .ff-feature-table-section li.ff-feature-row:nth-child(odd) {
+        @apply bg-indigo-50/50;
     }
 
     .ff-feature-table-section li.ff-feature-row label {
-        padding: 12px ;
-        @apply bg-gray-200;
+        padding: 12px;
     }
 
     main .ff-feature-row a {
@@ -1003,7 +1004,6 @@ h4:hover .header-anchor {
     }
 
     .ff-feature-table-section li.ff-feature--column-header {
-        background-color: theme(colors.gray.50);
         padding: 0;
         margin-top: 20px;
     }
@@ -1017,7 +1017,7 @@ h4:hover .header-anchor {
         height: 100%;   
         border-bottom: 0;
         border-radius: 12px 12px 0 0;
-        @apply flex items-center justify-center flex-col bg-gray-100;
+        @apply flex items-center justify-center flex-col bg-indigo-50;
     }
 
     .ff-feature-table-section li.ff-feature--column-header label.ff-blank {
@@ -1030,7 +1030,7 @@ h4:hover .header-anchor {
     }
 
     .ff-feature-table-section li.ff-feature--column-buttons {
-        background-color: theme(colors.gray.50);
+        background-color: white;
         padding: 0;
     }
     .ff-feature-table-section li.ff-feature--column-buttons label {
@@ -1340,7 +1340,7 @@ input[type="range"] {
     
     /* New additions */
     height: 6px;
-    background: theme(colors.gray.700);
+    background: theme(colors.indigo.600);
   }
   
   /* Thumb: webkit */
@@ -1351,9 +1351,9 @@ input[type="range"] {
     /* creating a custom design */
     height: 18px;
     width: 18px;
-    background-color: theme(colors.gray.700);
+    background-color: theme(colors.indigo.600);
     border-radius: 50%;
-    border: solid 2px theme(colors.gray.400);
+    border: solid 2px theme(colors.indigo.300);
   
     /* box-shadow: -407px 0 0 400px theme(colors.gray.700); emove this line */
     transition: .2s ease-in-out;
@@ -1363,9 +1363,9 @@ input[type="range"] {
   input[type="range"]::-moz-range-thumb {
     height: 18px;
     width: 18px;
-    background-color: theme(colors.gray.700);
+    background-color: theme(colors.indigo.600);
     border-radius: 50%;
-    border: solid 2px theme(colors.gray.400);
+    border: solid 2px theme(colors.indigo.300);
     
     /* box-shadow: -407px 0 0 400px theme(colors.gray.700); emove this line */
     transition: .2s ease-in-out;
@@ -1374,13 +1374,13 @@ input[type="range"] {
   /* Hover, active & focus Thumb: Webkit */
   
   input[type="range"]::-webkit-slider-thumb:hover {
-    background-color: theme(colors.gray.500);
+    background-color: theme(colors.indigo.800);
   }
   
   /* Hover, active & focus Thumb: Firefox */
   
   input[type="range"]::-moz-range-thumb:hover {
-    background-color: theme(colors.gray.500);
+    background-color: theme(colors.indigo.800);
   }
   
   /*=============
