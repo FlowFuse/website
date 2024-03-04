@@ -20,7 +20,7 @@ Siemens [announced](https://press.siemens.com/global/en/pressrelease/new-siemens
 
 In this guide we will be working with the IoT2050 Advanced, *6ES7 647-0BA00-1YA2*. The device has been [upgraded](https://support.industry.siemens.com/cs/attachments/109741799/IOT2050_How_To_Firmware_Update_V1.3.pdf) to the latest firmware at the time of writing this article of v1.3.1.  We will be leveraging the IOT2050_Example_Image_V1.3.1.zip image which is a debian base OS.  To complete this guide, knowledge of linux based cli is necessary.  Documentation to complete these requirements can be found [here](https://support.industry.siemens.com/cs/document/109741799/downloads-for-simatic-iot20x0?dti=0&lc=en-GB).  Our boot order is the following:
 
-## Guide
+## Step by Step Guide
 
 1. First we need to run the standard updates.
 
@@ -42,9 +42,12 @@ reboot -h now
 systemctl status node-red
 ```
 
-4. Now it is time to upgrade your Node.js version.  To check the version before we get started run ```node -v```.  Then install a tool that will allow you to change your versions of Node.js with the following command.
+4. Now it is time to upgrade your Node.js version.  To check the version before we get started run ```node -v```.
 
 <div style="background-color: #fff4b9; border:1px solid #ffc400; color: #a27110; padding: 12px; border-radius: 6px; font-style: italic;">Warning: updating Node.js will break the MRAA library. This will prevent communication to the GPIO of the device. Details can be found <a href="https://support.industry.siemens.com/forum/WW/en/posts/iot2050-node-js-versions/297170">here</a>.</div>
+
+Then install a tool called *n** that will allow you to change your versions of Node.js with the following command.
+
 
 ```shell
 npm install n -g
