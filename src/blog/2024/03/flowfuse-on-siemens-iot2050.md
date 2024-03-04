@@ -46,7 +46,7 @@ systemctl status node-red
 
 <div style="background-color: #fff4b9; border:1px solid #ffc400; color: #a27110; padding: 12px; border-radius: 6px; font-style: italic;">Warning: updating Node.js will break the MRAA library. This will prevent communication to the GPIO of the device. Details can be found <a href="https://support.industry.siemens.com/forum/WW/en/posts/iot2050-node-js-versions/297170">here</a>.</div>
 
-Then install a tool called *n** that will allow you to change your versions of Node.js with the following command.
+Then install a tool called *n* that will allow you to change your versions of Node.js with the following command.
 
 
 ```shell
