@@ -8,6 +8,8 @@ image: /blog/2024/03/images/flowfuse-on-siemens-iot2050.png
 tags:
     - posts
     - flowfuse
+    - node.js
+    - siemens iot2050
 ---
 
 Siemens [announced](https://press.siemens.com/global/en/pressrelease/new-siemens-gateway-between-cloud-company-it-and-production) the IoT2000 series in March of 2020.  With this tool many have been using it to function as a gateway between their plant operations and cloud infrastructure.  Onboard it came with Node-RED pre-installed. To manage Node-RED as an organization the FlowFuse agent is recommended, this guide shows you how to do so.
