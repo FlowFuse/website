@@ -14,11 +14,15 @@ Siemens [announced](https://press.siemens.com/global/en/pressrelease/new-siemens
 
 <!--more-->
 
-<div style="background-color: #fff4b9; border:1px solid #ffc400; color: #a27110; padding: 12px; border-radius: 6px; font-style: italic;">Warning: Later in the guide we will be updating Node.JS. This will break MRAA library. This will prevent communication to the GPIO of the device.</div>
+<div style="background-color: #fff4b9; border:1px solid #ffc400; color: #a27110; padding: 12px; border-radius: 6px; font-style: italic;">Warning: Later in the guide we will be updating Node.js. This will break MRAA library. This will prevent communication to the GPIO of the device.</div>
+
+## Goal
+
+The goal of this blog is to guide the user through the installation process of getting FlowFuse Device agent installed on an IoT2050.  The IoT2050 come pre-installed with version of 12.22.x Node.js on the [IOT2050_Example_Image_V1.3.1](https://support.industry.siemens.com/cs/document/109741799/downloads-for-simatic-iot20x0?dti=0&lc=en-GB) image. A requirement to install FlowFuse Device Agent, Node.js needs to be upgraded to version 18 minimum.  We will be going through that process.
 
 ## Prerequisites 
 
-In this guide we will be working with the IoT2050 Advanced, *6ES7 647-0BA00-1YA2*. The device has been [upgraded](https://support.industry.siemens.com/cs/attachments/109741799/IOT2050_How_To_Firmware_Update_V1.3.pdf) to the latest firmware at the time of writing this article of v1.3.1.  We will be leveraging the IOT2050_Example_Image_V1.3.1.zip image which is a debian base OS.  To complete this guide, knowledge of linux based cli is necessary.  Documentation to complete these requirements can be found [here](https://support.industry.siemens.com/cs/document/109741799/downloads-for-simatic-iot20x0?dti=0&lc=en-GB).
+We will be working with the IoT2050 Advanced, *6ES7 647-0BA00-1YA2*. The device has been [upgraded](https://support.industry.siemens.com/cs/attachments/109741799/IOT2050_How_To_Firmware_Update_V1.3.pdf) to the latest firmware at the time of writing this article of v1.3.1.  We will be leveraging the IOT2050_Example_Image_V1.3.1.zip image which is a debian base OS.  To complete this guide, knowledge of linux based cli is necessary.  Documentation to complete these requirements can be found [here](https://support.industry.siemens.com/cs/document/109741799/downloads-for-simatic-iot20x0?dti=0&lc=en-GB).
 
 ## Step by Step Guide
 
@@ -42,7 +46,17 @@ reboot -h now
 systemctl status node-red
 ```
 
+In the output look for the text that signifies the service has been stopped.
+
+> iot2050-debian systemd[1]: Stopped Node-RED.
+
+
 4. Now it is time to upgrade your Node.js version.  To check the version before we get started run ```node -v```.
+
+You should see an output like this:
+
+> v12.22.5
+
 
 <div style="background-color: #fff4b9; border:1px solid #ffc400; color: #a27110; padding: 12px; border-radius: 6px; font-style: italic;">Warning: updating Node.js will break the MRAA library. This will prevent communication to the GPIO of the device. Details can be found <a href="https://support.industry.siemens.com/forum/WW/en/posts/iot2050-node-js-versions/297170">here</a>.</div>
 
@@ -58,8 +72,11 @@ npm install n -g
 ```shell
 n v18.17
 ```
+Now run ```node -v``` again to confirm installation.  You should see the latest version now installed.
 
-6. From here we can now follow the instructions to [install](https://flowfuse.com/docs/device-agent/install/) the FlowFuse Device agent.  Then to connect your FlowFuse Device Agent follow these [instructions](https://flowfuse.com/docs/device-agent/register/).
+> v18.17.1
+
+6. Now that we have Node.js installed, we can proceed with the standard installation process.  First [install](https://flowfuse.com/docs/device-agent/install/) the FlowFuse Device agent.  Then to connect your FlowFuse Device Agent follow these [instructions](https://flowfuse.com/docs/device-agent/register/).
 
 7. Lastly, if you want your device to run on boot.  Follow these [instructions](https://flowfuse.com/blog/2023/05/device-agent-as-a-service/).
 
