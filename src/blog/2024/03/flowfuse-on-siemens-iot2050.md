@@ -10,7 +10,7 @@ tags:
     - flowfuse
 ---
 
-Siemens [announced](https://press.siemens.com/global/en/pressrelease/new-siemens-gateway-between-cloud-company-it-and-production) the IoT2000 series in March of 2020.  With this tool many have been using it to function as a gateway between their plant operations and cloud infrastructure.  Onboard it came with Node-RED pre installed.  In this guide we will show you how to install the FlowFuse device agent.  
+Siemens [announced](https://press.siemens.com/global/en/pressrelease/new-siemens-gateway-between-cloud-company-it-and-production) the IoT2000 series in March of 2020.  With this tool many have been using it to function as a gateway between their plant operations and cloud infrastructure.  Onboard it came with Node-RED pre installed. To manage Node-RED as organisation the FlowFuse agent is recommended, this guide shows you how to do so.
 
 <!--more-->
 
