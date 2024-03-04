@@ -44,7 +44,7 @@ systemctl status node-red
 
 4. Now it is time to upgrade your Node.js version.  To check the version before we get started run ```node -v```.  Then install a tool that will allow you to change your versions of Node.js with the following command.
 
-<div style="background-color: #fff4b9; border:1px solid #ffc400; color: #a27110; padding: 12px; border-radius: 6px; font-style: italic;">Warning: updating Node.js will break mraa library. This will prevent communication to the I/O of the device.</div>
+<div style="background-color: #fff4b9; border:1px solid #ffc400; color: #a27110; padding: 12px; border-radius: 6px; font-style: italic;">Warning: updating Node.js will break mraa library. This will prevent communication to the I/O of the device. Details can be found <a href="https://support.industry.siemens.com/forum/WW/en/posts/iot2050-node-js-versions/297170">here</a>.</div>
 
 ```shell
 npm install n -g
