@@ -6,13 +6,31 @@ module.exports = {
         extend: {
             typography: (theme) => ({
                 DEFAULT: {
-                  css: {
-                    '--tw-prose-headings': theme('colors.gray.600'),
-                    picture: {
-                      marginTop: '0',
-                      marginBottom: '0',
+                    css: {
+                        '--tw-prose-headings': theme('colors.gray.600'),
+                        picture: {
+                            marginTop: '0',
+                            marginBottom: '0',
+                        },
+                        h1: {
+                            fontWeight: '500',
+                        },
+                        h2: {
+                            fontWeight: '500',
+                        },
+                        h3: {
+                            fontWeight: '500',
+                        },
+                        h4: {
+                            fontWeight: '500',
+                        },
+                        h5: {
+                            fontWeight: '500',
+                        },
+                        h6: {
+                            fontWeight: '500',
+                        },
                     },
-                  },
                 },
             }),
             fontSize: {
