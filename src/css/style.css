@@ -35,7 +35,6 @@ h1 {
 h2 {
     font-size: 2rem;
     line-height: 2.5rem;
-    font-weight: 600;
 }
 
 h3 {
@@ -59,10 +58,15 @@ p {
     line-height: 1.75rem;
     margin-top: 1rem;
     margin-bottom: 1rem;
+    font-weight: 400;
 }
 
 h1, h2, h3, h4, h5, p {
     color: theme(colors.gray.600);
+}
+
+h1, h2, h3, h4 {
+    font-weight: 500;
 }
 
 .container {
@@ -444,7 +448,7 @@ h4:hover .header-anchor {
 
     .ff-website header #nav-content {
         height: calc(100% - 64px - 64px);
-        @apply top-8 md:top-0 transition-height fixed mt-8 w-full overflow-hidden border-none max-h-0 right-0 border-t shadow-sm z-10 bg-gray-50 flex-col items-center justify-between font-light no-underline;
+        @apply top-8 md:top-0 transition-height fixed mt-8 w-full overflow-hidden border-none max-h-0 right-0 border-t shadow-sm z-10 bg-gray-50 flex-col items-center justify-between no-underline; /* font-light */
         @apply md:mt-0 md:h-auto md:overflow-visible md:max-h-20 md:relative md:shadow-none md:border-0 md:bg-transparent md:w-auto lg:static md:float-none md:flex md:flex-row;
     }
 
