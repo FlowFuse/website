@@ -14,7 +14,7 @@ Siemens [announced](https://press.siemens.com/global/en/pressrelease/new-siemens
 
 <!--more-->
 
-<div style="background-color: #fff4b9; border:1px solid #ffc400; color: #a27110; padding: 12px; border-radius: 6px; font-style: italic;">Warning: Later in the guide we will be updating Node.js. This will break mraa library. This will prevent communication to the I/O of the device.</div>
+<div style="background-color: #fff4b9; border:1px solid #ffc400; color: #a27110; padding: 12px; border-radius: 6px; font-style: italic;">Warning: Later in the guide we will be updating Node.JS. This will break MRAA library. This will prevent communication to the I/O of the device.</div>
 
 ## Prerequisites 
 
