@@ -6,7 +6,6 @@ navTitle: Planning
 
 This page provides a comprehensive overview of the planning processes and procedures that guide our product development at FlowFuse. As a continuously evolving software, FlowFuse employs a structured planning method to ensure timely releases, both for the FlowFuse Cloud and for our self-hosting users.
 
-
 Our planning process is continuously evolving as we find the best way to accommodate both a growing team and an expanding set of requirements for how and what we deliver.
 
 ## Cadence
@@ -56,7 +55,7 @@ Issues are the building blocks of planning activities, helping the team to manag
 
   - **Feature Requests**: suggestions or ideas submitted by users or stakeholders for new functionalities, enhancements, or improvements to the existing software or system. Feature requests should be evaluated, prioritized, and potentially incorporated into the product roadmap, often being transformed into Epics or Stories for implementation in future releases.
 
-Whenever an issue is raised, it will be reviewed by the Product Manager/CTO and added
+Whenever an issue is raised, it will be reviewed by the Product Manager / Engineering Manager and added
 to the Product Board for prioritization and planning. The exception to this are
 tasks/bugs related to work already in progress and that need to be addressed in
 the current milestone. They should be added to the Development Board and current
