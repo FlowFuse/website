@@ -28,23 +28,23 @@ html, body {
     Standard FlowFuse Sizings
 */
 h1 {
-    font-size: 2.25rem;
+    font-size: 2.75rem;
     line-height: 3rem;
 }
 
 h2 {
-    font-size: 2rem;
+    font-size: 2.25rem;
     line-height: 2.5rem;
 }
 
 h3 {
-    font-size: 1.75rem;
+    font-size: 2rem;
     line-height: 2.5rem;
 }
 
 h4 {
-    font-size: 1.5rem;
-    line-height: 1.75rem;
+    font-size: 1.75rem;
+    line-height: 2rem;
 }
 
 h5 {
@@ -58,7 +58,7 @@ p {
     line-height: 1.75rem;
     margin-top: 1rem;
     margin-bottom: 1rem;
-    font-weight: 400;
+    font-weight: 300;
 }
 
 h1, h2, h3, h4, h5, p {
@@ -66,7 +66,7 @@ h1, h2, h3, h4, h5, p {
 }
 
 h1, h2, h3, h4 {
-    font-weight: 500;
+    font-weight: 400;
 }
 
 .container {
@@ -833,6 +833,7 @@ h4:hover .header-anchor {
         height: auto;
         padding: 8px 16px;
         border: 0;
+        border-radius: 4px;
     }
 
     .ff-website .ff-btn.ff-btn--primary {

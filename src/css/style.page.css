@@ -597,7 +597,6 @@
 
     .post-title h1,
     .webinar-title h1 {
-        color: white;
         @apply mb-2 text-2xl sm:text-page-h1;
     }
 

@@ -20,7 +20,7 @@ module.exports = {
                 'post-h4': ['1.25rem']
             },
             fontFamily: {
-                'sans': ['Helvetica', 'Arial', 'sans-serif'],
+                'sans': ['Heebo', 'Helvetica', 'Arial', 'sans-serif'],
             },
             textShadow: {
                 header: '1px 1px 0.25rem black'

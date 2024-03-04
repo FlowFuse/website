@@ -12,15 +12,15 @@ hubspot:
     <div class="max-w-md sm:max-w-screen-lg pb-24 mt-12 mx-auto">
     <div class="container m-auto text-left max-w-screen-lg lg:flex lg:flex-row lg:items-start lg:justify-between lg:gap-6">
         <div class="max-w-xl mx-auto lg:mx-0 lg:my-auto lg:py-10 lg:max-w-[600px]">
-            <h1 class="text-gray-50 max-w-xl m-auto lg:m-0 text-center lg:text-left">
+            <h1 class="font-medium max-w-xl m-auto lg:m-0 text-center lg:text-left">
                 {{ site.messaging.tagLine }}
             </h1>
-            <p class="mt-6 text-gray-400 text-lg font-normal text-center lg:text-left">
+            <p class="mt-6 text-center lg:text-left">
                 {{ site.messaging.subtitle }}
             </p>
             <div class="flex flex-col">
                 <div class="m-auto mt-7 flex gap-4 items-center justify-center lg:items-start lg:justify-start lg:m-0 flex-row">
-                    <a class="ff-btn ff-btn--primary flex flex-col mb-6" href="{{ site.appURL }}/account/create"
+                    <a class="ff-btn ff-btn--highlight flex flex-col mb-6" href="{{ site.appURL }}/account/create"
                         onclick="capture('cta-try-it-now', {'position': 'hero'})">
                         <span class="text-base uppercase items-center">
                             TRY IT OUT
@@ -28,7 +28,7 @@ hubspot:
                     </a>
                     <a class="ff-btn flex flex-col mb-6" href="/contact-us"
                         onclick="capture('cta-contact-us', {'position': 'hero'})">
-                        <span class="text-base flex gap-2 uppercase items-center text-gray-200">
+                        <span class="text-base flex gap-2 uppercase items-center text-indigo-600">
                             Contact us
                             {% include "components/icons/arrow-right.svg" %}
                         </span>
@@ -54,7 +54,7 @@ hubspot:
     <div class="w-full pt-20 pb-8 md:px-0">
         <div class="sm:max-w-screen-lg mx-auto">
             <div class="mb-10 md:mb-12">
-                <h2 class="text-center w-full md:text-left font-medium">See how FlowFuse <span class="text-indigo-600">powers industries</span></h2>
+                <h2 class="text-center w-full md:text-left">See how FlowFuse <span class="text-indigo-600">powers industries</span></h2>
             </div>
             {% include "solutions.njk" %}
         </div>
