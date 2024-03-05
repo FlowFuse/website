@@ -8,27 +8,6 @@
     margin-top: 0;
 }
 
-.nohero h1 {
-    font-size: 2.625rem;
-    line-height: 3.75rem;
-}
-
-.nohero h3 {
-    font-size: 1.25rem;
-    line-height: 2rem;
-}
-
-.nohero h4 {
-    font-size: 1rem;
-    line-height: 2rem;
-}
-
-.nohero p {
-    color: theme(colors.gray.600);
-    margin-bottom: 0.5rem;
-    line-height: 1.5rem;
-}
-
 .nohero a {
     color: theme(colors.blue.600);
 }
