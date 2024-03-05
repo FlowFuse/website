@@ -1,10 +1,10 @@
 ---
 layout: layouts/page.njk
 ---
-<div class="text-left max-w-full bg-gray-50">
+<div class="text-left max-w-full">
   <div class="container m-auto text-left max-w-5xl">
     <div class="flex flex-col justify-center items-center md:block mx-auto">
-      <div class="bg-gray-50 product form-container">
+      <div class="product pt-3">
         <!-- Form / Calendar Script -->
         <div class="max-w-2xl mx-auto">
           {% include hubspot.script %}
@@ -12,11 +12,11 @@ layout: layouts/page.njk
       </div>
     </div>
     <!-- Social proof logos -->
-    <div class="social-proof-logos px-6 border-t border-gray-200">
+    <div class="social-proof-logos px-6 border-t border-gray-200 mt-16">
       {% include "social-proof.njk" %}
     </div>
   </div>
-  <div class="w-full bg-white pb-10">
+  <div class="w-full py-10">
     <div class="container m-auto max-w-lg md:max-w-4xl">
       <!-- Alternative contact channels -->
       <div class="other-channels">
@@ -26,7 +26,7 @@ layout: layouts/page.njk
               <div class="w-16">
                 {% image channel.image, channel.imageAlt, [64] %}
               </div>
-              <div class="leading-8 w-auto">
+              <div class="text-2xl w-auto">
                 {{ channel.title }}
               </div>
             </h4>
