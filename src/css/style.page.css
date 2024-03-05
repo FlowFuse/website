@@ -394,8 +394,6 @@
     }
 
     .company-value h5 {
-        color: theme(colors.teal.500);
-        font-weight: bold;
         font-size: 1.25rem;
         margin-top: 1rem;
         margin-bottom: 3rem;
