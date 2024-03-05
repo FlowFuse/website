@@ -7,8 +7,8 @@ layout: layouts/base.njk
     <div class="w-full py-6 bg-cover bg-center md:py-9 md:min-h-[272px] md:flex md:content-center" style="background-image: linear-gradient(to right, #1F2937, #1F293700), url({{ image }})">
         <div class="post-title container m-auto text-center px-6 flex md:max-w-screen-lg">
             <div class="text-left max-w-screen-md md:pr-32">
-                <label>Customer Story</label>
-                <h1 class="text-shadow-header">{{ title }}</h1>
+                <label><span class="text-indigo-200">Customer Story</span></label>
+                <h1 class="text-shadow-header text-white">{{ title }}</h1>
                 {% if subtitle %}
                 <h4>{{ subtitle | safe }}</h4>
                 {% endif %}

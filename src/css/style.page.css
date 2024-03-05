@@ -413,7 +413,7 @@
     }
 
     .about-values .company-value h5 {
-        color: theme(colors.teal.300);
+        color: theme(colors.indigo.700);
         font-weight: 500;
         margin-top: 0;
         margin-bottom: 0;

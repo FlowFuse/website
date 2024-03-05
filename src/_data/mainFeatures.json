@@ -29,7 +29,7 @@
     "buttonTextMobile": "Data",
     "title": "Data sharing and storage",
     "imageFolder": "./images/pictograms/",
-    "imageFile": "feature-data-sharing.png",
+    "imageFile": "connect_device_blue.png",
     "imageAlt": " data sharing and storage.",
     "content": "FlowFuse adds to a Node-RED environment the ability to share information between instances and persistent data, including:",
     "list": [
@@ -44,7 +44,7 @@
     "buttonTextMobile": "Edge",
     "title": "Remote device management at the edge",
     "imageFolder": "./images/pictograms/",
-    "imageFile": "edge_red.png",
+    "imageFile": "edge_blue.png",
     "imageAlt": " edge management.",
     "content": "FlowFuse allows you to deploy and manage Node-RED instances out to edge devices. This allows you to deploy the exact same instance out to hundreds or thousands of edge devices and monitor their status.",
     "list": [

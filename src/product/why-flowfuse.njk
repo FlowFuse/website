@@ -20,9 +20,9 @@ image:
                     </div>
                     <div class="md:w-1/2 flex justify-center">
                         {% if item.videoid %}
-                        <lite-youtube videoid="{{ item.videoid }}" style="background-image: url('../../images/why-ff/why-ff-{{ loop.index }}.jpg');" class="w-[274px] sm:w-[444px] border-2 border-gray-800 rounded-md max-w-sm md:max-w-none sm:max-h-full"></lite-youtube>
+                        <lite-youtube videoid="{{ item.videoid }}" style="background-image: url('../../images/why-ff/why-ff-{{ loop.index }}.jpg'); overflow: hidden;" class="w-[274px] sm:w-[444px] border-2 border-indigo-100 rounded-md max-w-sm md:max-w-none sm:max-h-full"></lite-youtube>
                         {% else %}
-                        <div class="w-[274px] sm:w-[444px] border-2 border-gray-800 rounded-md w-full max-w-sm md:max-w-none sm:max-h-full">
+                        <div class="w-[274px] sm:w-[444px] border-2 border-indigo-200 rounded-md overflow-hidden w-full max-w-sm md:max-w-none sm:max-h-full">
                             {% set imageSrc = ['./images/why-ff/why-ff-', loop.index, '.jpg'] | join %}
                             {% set imageDescription = ['Image depicting', item.title] | join %}
                             {% image imageSrc, imageDescription, [444] %}

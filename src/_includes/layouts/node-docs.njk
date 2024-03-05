@@ -18,13 +18,13 @@ date: git Last Modified
         }
     }
 </script>
-
+<div class="w-full bg-white/50">
 <div class="handbook ff-prose text-left pb-24 md:max-w-screen-xl m-auto">
     {% include "./left-nav-core-nodes.njk" %}
 
     <div class="max-w-screen-lg mx-auto px-8 pt-8">
         <!-- Breadcrumbs - Desktop -->
-        <div class="hidden w-full mx-auto bg-gray-50 md:block">
+        <div class="hidden w-full mx-auto md:block">
             <div class="font-medium border-b pb-1">
                 {% if version %}
                 v{{ version }}
@@ -35,7 +35,7 @@ date: git Last Modified
         <div class="w-full m-auto md:mb-10 md:pt-6">
             <div id="algolia-search" class="border rounded"></div>
         </div>
-        <div class="w-full mx-auto bg-gray-50 flex flex-col md:flex-row">
+        <div class="w-full mx-auto flex flex-col md:flex-row">
             <!-- Main Content -->
             <div class="flex-grow order-last md:order-first">
                 <div class="mt-6 mb-4 prose prose-blue nodered main-content">
@@ -46,7 +46,7 @@ date: git Last Modified
     </div>
     <div class="border-l">
         <!-- Breadcrumbs - Mobile -->
-        <div class="block px-8 pt-4 w-full mx-auto bg-gray-50 md:hidden">
+        <div class="block px-8 pt-4 w-full mx-auto md:hidden">
             <div class="font-medium border-b pb-1">
                 {% if version %}
                 v{{ version }}
@@ -68,5 +68,5 @@ date: git Last Modified
         </div>
     </div>
 </div>
-
+</div>
 {% include "./common-js.njk" %}
