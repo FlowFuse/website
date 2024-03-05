@@ -452,8 +452,8 @@
 /* MEET THE TEAM */
 
 .team-headshot {
-    --border-width: 8px;
-    --border-radius: 16px;
+    --border-width: 3px;
+    --border-radius: 8px;
     height: 100%;
     position: relative;
     overflow: hidden;
@@ -463,24 +463,14 @@
     border-top-left-radius: var(--border-radius);
     border-top-right-radius: var(--border-radius);
     border-width: var(--border-width);
-    border-color: black;
+    border-color: theme(colors.indigo.200);
 }
 
-.team-headshot:nth-child(3n-2) img {
-    background: url("/images/team/backing-cloud-1.png"), theme(colors.gray.700);
+.team-headshot img {
+    background: linear-gradient(to bottom, theme(colors.indigo.50), theme(colors.indigo.200));
+    border-bottom: 0;
     background-size: cover;
 }
-
-.team-headshot:nth-child(3n-1) img {
-    background: url("/images/team/backing-cloud-2.png"), theme(colors.teal.700);
-    background-size: cover;
-}
-
-.team-headshot:nth-child(3n) img {
-    background: url("/images/team/backing-cloud-3.png"), theme(colors.indigo.500);
-    background-size: cover;
-}
-
 
 .member-facts {
     position: absolute;
@@ -488,8 +478,11 @@
     width: 100%;
     height: 0;
     opacity: 0;
-    background-color: #000000f0;
-    color: theme(colors.gray.300);
+    background-color: white;
+    color: theme(colors.gray.800);
+    border-width: var(--border-width);
+    border-bottom: 0;
+    border-color: theme(colors.indigo.200);
     font-weight: 500;
     padding: 24px;
     list-style: circle;
@@ -512,8 +505,9 @@
 
 .member-info {
     position: relative;
-    border-color: black;
-    background-color: theme(colors.gray.800);
+    height: %;
+    border-color: theme(colors.indigo.200);
+    background-color: white;
     text-align: center;
     padding: 12px 24px;
     border-width: var(--border-width);
@@ -523,28 +517,28 @@
 }
 
 .member-info h5 {
-    color: white;
+    /* color: white; */
 }
 
 .team .title {
-    color: white;
+    /* color: white; */
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
 .member-info .title .name {
-    color: white;
+    color: theme(colors.gray.600);
     font-size: 1.5rem;
     line-height: 2rem;
-    font-weight: 600;
+    font-weight: 400;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
 .member-info .title .role {
-    color: theme(colors.gray.400);
+    color: theme(colors.indigo.400);
     font-weight: 300;
     font-size: 1rem;
     margin-top: 8px;
@@ -552,7 +546,7 @@
 
 .team .socials {
     display: flex;
-    border-top: 2px solid theme(colors.gray.700);
+    border-top: 1px solid theme(colors.gray.100);
     margin-top: 1rem;
     padding-top: 1rem;
     justify-content: center;
@@ -564,7 +558,11 @@
 }
 
 .team .socials span a {
-    color: theme(colors.teal.200);
+    color: theme(colors.indigo.400);
+}
+
+.team .socials span a:hover {
+    color: theme(colors.indigo.600);
 }
 
 /*
