@@ -43,8 +43,8 @@ h3 {
 }
 
 h4 {
-    font-size: 1.75rem;
-    line-height: 2.2rem;
+    font-size: 1.5rem;
+    line-height: 2.1rem;
 }
 
 h5 {
@@ -1117,7 +1117,7 @@ h4:hover .header-anchor {
     */
 
     .ff-certify-list {
-        @apply flex flex-col pb-6 gap-y-10 sm:gap-y-0;
+        @apply flex flex-col gap-y-10 sm:gap-y-0;
     }
 
     .ff-certify-list > .ff-item {
