@@ -57,7 +57,7 @@ description: Node-RED's low-code brilliance hosted on FlowFuse cloud. Answer you
 sitemapPriority: 0.8
 ---
 <!--First two sections-->
-<div class="nohero w-full bg-gray-50">
+<div class="nohero w-full">
     <!--Hero Content-->
     <div class="nodered-pillar-bg w-full pt-12 pb-20 md:pt-6 md:pb-12 border-b-4 border-gray-100">
         <div class="flex flex-col px-6 items-center md:flex-row md:items-start container mx-auto text-center md:text-left max-w-screen-lg">
@@ -86,7 +86,7 @@ sitemapPriority: 0.8
     </div>
 
     <!-- What is Node-RED -->     
-    <div class="w-full bg-gray-50 pt-4 px-0 pb-12 ff-prose">
+    <div class="w-full pt-10 px-0 pb-12 ff-prose">
         <div class="text-center mt-6 md:mt-2 mb-6">
             <h2>What is Node-RED?</h2>
         </div>
@@ -137,13 +137,12 @@ sitemapPriority: 0.8
 </div>    
 
 <!--Customer Stories Banner-->
-<div class="w-full bg-gray-800 gradient-bg text-center text-teal-50 px-6 pb-3 pt-8 text-lg flex-col flex-row items-center justify-center gap-1 hover:no-underline flex-wrap">
-    <h2>
-        <span class="hover:no-underline text-gray-200">
-            <span class="font-bold text-teal-100">Node-RED use cases</span>
-            from our customer stories
+<div class="w-full text-center px-6 pb-3 pt-8 text-lg flex-col flex-row items-center justify-center gap-1 hover:no-underline flex-wrap">
+    <h3>
+        <span class="hover:no-underline">
+            Node-RED use cases from our customer stories
         </span>
-    </h2>
+    </h3>
     <ul class="mt-6 grid grid-cols-1 md:grid md:grid-cols-3 gap-y-4 pb-4 max-w-screen-lg m-auto">
         {%- for item in collections.stories | sort(attribute='item.date') | reverse | limit(3) -%}
         <li class="w-full max-w-md m-auto my-2 px-2">
@@ -152,13 +151,13 @@ sitemapPriority: 0.8
                     <div>
                         {% if item.data.image %}
                         <div class="relative">
-                            <div class="w-full h-40 ff-image-cover">
+                            <div class="w-full h-40 ff-image-cover scale mb-4 ff-image-rounded object-contain overflow-hidden">
                                 {% set imageSrc = ["./", item.data.image ] | join %}
                                 {% set imageDescription = ["Image representing ", item.data.title] | join %}
                                 {% image imageSrc, imageDescription, [285] %}
                             </div>
                             {% if item.data.logo %}
-                                <div class="w-1/2 h-full absolute left-0 top-0 bg-white flex items-center justify-center object-contain">
+                                <div class="w-1/2 h-full absolute left-0 top-0 bg-white flex items-center justify-center">
                                     {% set imageSrc = ["./", item.data.logo ] | join %}
                                     {% set imageDescription = ["Image representing ", item.data.story.brand, " logo"] | join %}
                                     {% image imageSrc, imageDescription, [285] %}
@@ -169,21 +168,21 @@ sitemapPriority: 0.8
                             {{ item.url | generatePostSVG |safe}}
                         {% endif %}
                     </div>
-                    <h5 class="mt-1 mb-0 font-medium group-hover:underline text-gray-200 font-light text-lg text-left">{{ item.data.title }}</h5>
+                    <h5 class="mt-1 mb-0 font-medium group-hover:underline font-light text-lg text-left">{{ item.data.title }}</h5>
                 </div>
             </a>
         </li>
         {% endfor %}
     </ul>
 </div>
-<a href="/customer-stories/" class="w-full text-center text-teal-100 hover:underline py-3 flex flex-row items-center justify-center gap-1 cursor-pointer flex-wrap">
+<a href="/customer-stories/" class="w-full text-center hover:underline pt-3 pb-8 flex flex-row items-center justify-center gap-1 cursor-pointer flex-wrap">
     See more customer stories {% include "components/icons/chevron-right-sm.svg" %}
 </a>
 
 <!--Learn & Faqs-->
-<div class="nohero w-full bg-gray-50">       
+<div class="nohero w-full">       
     <!-- Learn Node-RED --> 
-    <div class="about w-full bg-white pt-12 md:pt-12 pb-12">
+    <div class="about w-full bg-gray-50 pt-12 md:pt-12 pb-12">
         <div class="text-center">
             <h2>Learn Node-RED</h2>
         </div>
@@ -191,7 +190,7 @@ sitemapPriority: 0.8
             <div class="grid grid-cols-1 md:grid-cols-2 pt-4 md:pt-6 gap-x-8 items-start">
                 <!-- Node-RED Quick Tips Column -->
                 <div class="px-6 pb-6 md:pb-0">
-                    <h3 class="w-full text-center mb-4">Quick Tips</h3>
+                    <h4 class="w-full text-center mb-4">Quick Tips</h4>
                     <ul class="ff-nodered-resources">
                         <a href="/blog/2023/02/3-quick-node-red-tips-1">
                             <li>
@@ -227,7 +226,7 @@ sitemapPriority: 0.8
                 </div>
                 <!-- Node-RED Concepts Column -->
                 <div class="px-6 pb-6 md:pb-0">
-                    <h3 class="w-full text-center mb-4">Key Concepts</h3>
+                    <h4 class="w-full text-center mb-4">Key Concepts</h4>
                     <ul class="ff-nodered-resources">
                         <a href="/blog/2023/03/comparing-node-red-dashboards/">
                             <li>
@@ -267,7 +266,7 @@ sitemapPriority: 0.8
     <!-- Frequently Asked Questions --> 
     <div class="w-full bg-gray-50 px-6 pt-8 pb-10">
         <div class="container m-auto max-w-4xl md:px-6">
-            <h2 class="text-center">Frequently Asked Questions</h2>
+            <h3 class="text-center">Frequently Asked Questions</h3>
             <label class="m-auto text-center block max-w-lg md:max-w-none">Have a question that you don't see answered here? Feel free to reach out to us via our <a href="/contact-us">Contact Us</a> page</label>
             <div class="mt-12 m-auto w-full ff-prose">
                 <div class="prose max-w-none">
@@ -291,19 +290,19 @@ sitemapPriority: 0.8
 </div>
 
 <!--Flexible Deployment with FlowFuse-->
-<div class="w-full bg-gray-50">
-    <div class="bg-gray-100 text-center text-teal-50 px-6 pt-3 md:pt-8 pb-20 md:pb-12 text-lg flex-col flex-row items-center justify-center gap-1 hover:no-underline flex-wrap">
+<div class="w-full">
+    <div class="text-center text-teal-50 px-6 pt-6 md:py-8 pb-20 text-lg flex-col flex-row items-center justify-center gap-1 hover:no-underline flex-wrap">
         <div class="text-center mt-6 md:mt-4 mb-14">
             <h2>Flexible Deployment Options with <span class="text-indigo-600">FlowFuse</span></h2>
             <div class="w-full text-center text-gray-800 font-light">Run and manage <span class="text-indigo-600 font-medium">Node-RED</span> where it's most helpful for your business</div>
         </div>
         <div class="container m-auto max-w-screen-lg">
             <div class="grid md:px-6 md:px-0 grid-cols-1 md:grid-cols-3 gap-12 md:gap-5 max-w-md md:max-w-none mx-auto">
-                <div class="deployment-card">
+                <div class="deployment-card white-bg">
                     <div>
-                        <div class="title">
-                            <h4>
-                                <span class="text-gray-600">FlowFuse Cloud</span></br>
+                        <div class="title pb-4">
+                            <h4 class="text-indigo-600">
+                                FlowFuse Cloud
                             </h4>
                         </div>
                         <p class="mb-0 text-left">
@@ -312,13 +311,12 @@ sitemapPriority: 0.8
                     </div>
                     <a class="md:self-end ff-btn ff-btn--primary-outlined uppercase align-baseline w-full mt-3" href="/pricing/">MORE INFO</a>
                 </div>
-                <div class="deployment-card">
+                <div class="deployment-card white-bg">
                     <div>
                         <div class="title">
-                            <h4>
-                                <span class="text-gray-600">Self managed</span></br>
+                            <h4 class="text-indigo-600">Self managed
                             </h4>
-                            <div class="text-base font-bold -mt-3 text-gray-400 pb-4">(on premise)</div> 
+                            <div class="text-base font-bold text-gray-400 pb-4">(on premise)</div>  
                         </div>
                         <p class="mb-0 text-left">
                             Run FlowFuse where you prefer; that's possible too! In your cloud of preference, or even on-site.
@@ -326,11 +324,11 @@ sitemapPriority: 0.8
                     </div>
                     <a class="md:self-end ff-btn ff-btn--primary-outlined uppercase align-baseline w-full mt-3" href="/book-demo/" onclick="capture('cta-talk-to-sales', {'position': 'secondary'})">TALK TO SALES</a>
                 </div>
-                <div class="deployment-card">
+                <div class="deployment-card white-bg">
                     <div>
-                        <div class="title">
-                            <h4>
-                                <span class="text-gray-600">Edge device</span></br>
+                        <div class="title pb-4">
+                            <h4 class="text-indigo-600">
+                                Edge device
                             </h4>
                         </div>
                         <p class="mb-0 text-left">
