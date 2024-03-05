@@ -23,9 +23,27 @@
     padding: 0;
 }
 
+.ff-blog h3,
+.blog.nohero h3, 
+.webinar.nohero h3 {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+}
+
+.webinar.nohero h2 {
+    font-size: 2rem;
+    line-height: 2.3rem;
+}
+
+.webinar.nohero h1 {
+    font-size: 2.6rem;
+    line-height: 2.9rem;
+}
+
 .prose code::after {
     content: '' !important;
 }
+
 .prose code::before {
     content: '' !important;
 }

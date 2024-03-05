@@ -4,10 +4,8 @@ sitemapPriority: 0.9
 meta:
     title: Webinars
 ---
-<div class="container m-auto text-left max-w-4xl pt-8 pb-24 w-full px-2">
-    <div class="px-2">
-        <h1>Webinars</h1>
-    </div>
+<div class="webinar nohero container m-auto text-left max-w-4xl pt-8 pb-24 w-full px-2">
+    <h1>Webinars</h1>
     {% if (collections.webinar and collections.webinar.length > 0 and collections.ama and collections.ama.length > 0) and ((collections.ama[0].date | countDays).value < (collections.webinar[0].date | countDays).value) %}
     <div class="flex flex-col-reverse gap-6">
     {% else %}
@@ -16,7 +14,7 @@ meta:
         {% if collections.webinar and collections.webinar.length > 0 %}
             {%- for item in collections.event | inFuture | limit(2) -%}
             <div>
-                <h2 class="w-full">
+                <h2 class="w-full w-full text-indigo-400">
                     {%- if item.data.tags.includes('ama') -%}
                     Upcoming "Ask Me Anything" Session
                     {% else %}
@@ -78,7 +76,7 @@ meta:
     {% if (collections.webinar and (collections.webinar | inFuture | length) > 0) or (collections.ama and (collections.ama | inFuture | length) > 0) %}
     {% endif %}
     {% if collections.webinar and (collections.webinar | inPast | length) > 0 %}
-        <h2 class="w-full">Past Webinars</h2>
+        <h3 class="w-full text-indigo-400">Past Webinars</h3>
         <ul class="grid md:grid-cols-3 gap-4">
             {%- for item in collections.event | inPast | reverse -%}
                 <li class="w-full my-2 pb-6 border-b">
@@ -87,7 +85,7 @@ meta:
                             <time class="block text-xs mb-2" value="{{ item.date }}" class="text-gray-400">{{ item.date | shortDate }}</time>
                             <div>
                                 {% if item.data.image %}
-                                    <div class="w-full h-auto shadow rounded">
+                                    <div class="w-full h-auto shadow rounded mb-4">
                                         {% set imageSrc = ["./", item.data.image ] | join %}
                                         {% set imageDescription = ["Image representing ", item.data.title] | join %}
                                         {% image imageSrc, imageDescription, [285] %}

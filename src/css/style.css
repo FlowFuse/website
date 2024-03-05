@@ -618,12 +618,6 @@ h4:hover .header-anchor {
         aspect-ratio: 1.78;
         margin-bottom: 0.7rem;
     }
-
-    .ff-blog h3,
-    .blog.nohero h3 {
-        font-size: 1.25rem;
-        line-height: 1.75rem;
-    }
 }
 
 .ff-full-bg {
