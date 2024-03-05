@@ -1288,6 +1288,8 @@ div.content section.footnotes ol li p {
 
 .nodered-pillar-bg {
     background-image: url('../images/bg-nodered-editor.png');
+    background-blend-mode: luminosity;
+    background-color: theme(colors.indigo.600);
     background-size: cover;
     background-position-y: bottom;
 }
