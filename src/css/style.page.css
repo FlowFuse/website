@@ -590,7 +590,7 @@
 
     .webinar-title label,
     .post-title label {
-        @apply text-teal-300 text-xs uppercase font-bold;
+        @apply text-indigo-400 text-xs uppercase font-bold;
     }
 }
 
