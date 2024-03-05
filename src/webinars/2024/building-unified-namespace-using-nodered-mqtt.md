@@ -1,6 +1,6 @@
 ---
 title: Building Unified Namespace using Node-RED and MQTT
-subtitle: Join Grey Dziuba, OT Data and Community Strategist, and Kudzai Manditereza, Developer Advocate at HiveMQ, as they discuss MQTT and Node-RED and how it pertains to the Unified Name Space, UNS.
+subtitle: Join Grey Dziuba, OT Data and Community Strategist, and Kudzai Manditereza, Developer Advocate at HiveMQ, as they discuss MQTT and Node-RED and how it pertains to the Unified Namespace, UNS.
 image: 
 date: 2024-03-26
 time: 17:00 CET (11:00am ET) 
