@@ -11,7 +11,7 @@ hubspot:
     formId: b4ec9aa1-8648-47b3-b908-ec8597e8735d
 ---
 
-**The digital transformation journey for many manufacturers hasn’t always been a smooth one.  From new terminology, and technologies, to security concerns, progress is generally always hindered by one of these three. As manufacturing companies evolve their strategies from industry to industry, there is always one thing that is top of mind - trustworthy data; how to access it, how to share it, and how to keep it secure.**
+**What value does a UNS bring?  In this webinar, we will focus on why and how low-code plus UNS makes a powerful combination for citizen developers.**
 
 <!--more-->
 
