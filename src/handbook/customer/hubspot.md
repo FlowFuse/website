@@ -33,15 +33,17 @@ The following is a description of each stage.
 
 ##### From MQL to SQL - Qualifying questions
 
-1. What is your business, and where does Node-RED fit in?
-1. What are you building with Node-RED, and how is it helping your business?
-1. What challenges you've run into operating Node-RED?
-1. Why now?
+
+- Is there a use case FlowFuse can solve?
+- Is there a need, now or in the near future, for 10 or more instances?
+- Is there a timeline for implementation within the next 6 months?
+
 
 ##### From SQL to Opportunity
 
-A SQL becomes an opportunity when their is a realistic indication of a purchase within the next 3 months, based on the qualifying questions.
+- Is there an active evaluation that can close within the next 3 months? (evaluation can be quoting, POC, any other indication that they are planning to purchase something soon)
 
+  
 | Deal Stages |  | |
 | :------- | :--:| :---- |
 | Opportunity | 10% | When there is a legitimate opportunity to close the prospect within the next 6 months. This stage is primarily triggered by the timeline or urgency of the need for FlowFuse. |
