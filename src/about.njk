@@ -33,7 +33,7 @@ eleventyComputed:
 ---
 
 <!-- Primary Content -->
-<div class="about w-full ff-bg-light">
+<div class="about w-full">
     <div class="w-full pt-12 pb-16 md:pb-10 md:pt-12 flex flex-col items-center">
         <div class="container text-center max-w-xl md:max-w-4xl px-6">
             <h1>About FlowFuse</h1>
@@ -54,14 +54,11 @@ eleventyComputed:
             </div>
         </div>
     </div>
-    <div class="text-gray-100 bg-gray-50">
-        {% include "components/dividers/light-grey-curve.svg" %}
-    </div>
 
     <!-- Secondary Content -->
 
-    <div class="about w-full bg-gray-100">
-        <div class="container m-auto max-w-xl md:max-w-4xl pt-10 pb-20 md:pb-32 px-6">
+    <div class="about w-full">
+        <div class="container m-auto max-w-xl md:max-w-4xl pt-10 pb-12 px-6">
             <div class="pb-6 md:pb-0 flex flex-col md:flex-row gap-3 md:gap-1">
                 <div class="md:w-[28%] md:mt-4 flex flex-row gap-3">
                     <div class="w-[42px]">
@@ -91,10 +88,9 @@ eleventyComputed:
         </div>
     </div>
 </div>
-{% include "components/divider-flow--top-red--dark.njk" %}
 
 <!-- Company Values -->
-<div class="about w-full ff-bg-dark px-6 pt-12 pb-6 md:pt-12 md:pb-6">
+<div class="about w-full bg-gray-50 px-6 pt-12 pb-6 md:pt-12 md:pb-6">
     <div class="container about-values m-auto max-w-xl md:max-w-4xl px-0 sm:px-6 md:px-0">
         <div>
             <h2 class="mb-10 text-center">Corporate Values</h2>
@@ -103,13 +99,10 @@ eleventyComputed:
         {% include "values.njk" %}
     </div>
 </div>
-<div class="text-gray-50">
-    {% include "components/dividers/divider-flow--top-grey.svg" %}
-</div>
 
 <!-- Investors -->
-<div class="about w-full ff-bg-light px-6 pt-6 pb-14 md:px-0 -mt-px">
-    <div class="container m-auto text-center max-w-xl md:max-w-4xl">
+<div class="about w-full px-6 py-14">
+    <div class="container m-auto p-10 text-center max-w-xl md:max-w-4xl rounded-lg bg-white drop-shadow-lg">
         <h2 class="mb-4">Our Investors</h2>
         <!-- Mobile -->
         <div class="investors mt-12 m-auto md:hidden">
@@ -133,11 +126,8 @@ eleventyComputed:
         </div>
     </div>
 </div>
-<div class="text-gray-50 bg-white">
-    {% include "components/dividers/light-grey-curve-inverted.svg" %}
-</div>
 <!-- Working at FlowFuse -->
-<div class="about w-full ff-bg-light">
+<div class="about w-full">
     <div class="w-full bg-white px-6 pt-6 pb-12 md:px-0">
         <div class="container m-auto text-center max-w-xl md:max-w-4xl mt-12 md:mt-3">
             <h2 class="mb-4">Working at FlowFuse</h2>
@@ -146,11 +136,11 @@ eleventyComputed:
             <!-- Team -->
             <div class="w-full text-left m-auto flex flex-row justify-start items-center gap-3">
                 <div class="w-16">
-                    {% image "./images/pictograms/collaboration_red.png", "Graphics depicting a team.", [64] %}
+                    {% image "./images/pictograms/collaboration_blue.png", "Graphics depicting a team.", [64] %}
                 </div>
                 <div class="about-team flex flex-col justify-center">
                     <a href="/team/">
-                        <h4 class="flex leading-8 mt-6">
+                        <h4 class="flex leading-8 mb-4 mt-6">
                             <span class="font-medium">Team</span>
                             <div class="w-5 inline self-end mb-1 ml-2">
                                 {% include "components/icons/arrow-top-right-on-square.svg" %}
@@ -165,11 +155,11 @@ eleventyComputed:
             <!-- Careers -->
             <div class="w-full text-left m-auto flex flex-row justify-start items-center gap-3">
                 <div class="w-16 -mt-4 md:mt-0" style="flex-shrink: 0;">
-                    {% image "./images/pictograms/briefcase_red.png", "Graphics depicting a briefcase.", [64] %}
+                    {% image "./images/pictograms/briefcase_blue.png", "Graphics depicting a briefcase.", [64] %}
                 </div>
                 <div class="about-team flex flex-col justify-center">
                     <a href="/careers/">
-                        <h4 class="flex leading-8 md:mt-14">
+                        <h4 class="flex leading-8 mb-4 md:mt-14">
                             <span class="font-medium">Careers</span>
                             <div class="w-5 inline self-end mb-1 ml-2">
                                 {% include "components/icons/arrow-top-right-on-square.svg" %}

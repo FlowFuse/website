@@ -27,6 +27,9 @@ eleventyComputed:
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="/css/style.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@100..900&display=swap" rel="stylesheet">
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -147,7 +150,7 @@ eleventyComputed:
     <script async src="https://www.googletagmanager.com/gtag/js?id=AW-16456599728"></script>
     {%- endif -%} 
 </head>
-<body class="ff-website leading-normal tracking-normal gradient text-gray-500 min-h-screen flex flex-col">
+<body class="font-sans ff-website leading-normal tracking-normal gradient text-gray-500 min-h-screen flex flex-col">
     <div class="flex-grow base">
         <div class="w-full">
             <!-- Events Banner Comment out line below to remove banner-->
@@ -162,7 +165,7 @@ eleventyComputed:
                         {% include "components/flowfuse-square.svg" %}
                     </a>
                     <div class="block md:hidden">
-                        <button id="nav-toggle" class="text-white flex items-center text-red-hero">
+                        <button id="nav-toggle" class="text-gray-700 flex items-center text-red-hero">
                             <svg class="burger fill-current h-4 w-4" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Menu</title><path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/></svg>
                             <svg class="close fill-current h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" /></svg>
                         </button>
@@ -226,8 +229,8 @@ eleventyComputed:
                 <!-- Mobile CTAs -->
                 <div id="mobile-ctas" class="hidden fixed bottom-0 z-20">
                     <div class="grid grid-cols-2 gap-2">
-                        <a href="{{ site.appURL }}" class="ff-btn ff-btn--tertiary">Sign In</a>
-                        <a href="{{ site.appURL }}/account/create" onclick="capture('cta-join', {'position': 'header'})" class="ff-btn ff-btn--tertiary">Free Trial</a>
+                        <a href="{{ site.appURL }}" class="ff-btn ff-btn--primary-outlined">Sign In</a>
+                        <a href="{{ site.appURL }}/account/create" onclick="capture('cta-join', {'position': 'header'})" class="ff-btn ff-btn--primary-outlined">Free Trial</a>
                     </div>
                     <a class="ff-btn ff-btn--primary" href="/contact-us" onclick="capture('cta-talk-to-sales', {'position': 'header'})">Talk to Sales</a>
                 </div>    
@@ -239,11 +242,11 @@ eleventyComputed:
         </div>
     </div>
     <!-- Footer -->
-    <footer class="ff-footer bg-red-hero w-full">
-        <div class="py-2 pb-8 px-10 md:px-6 text-white md:pt-6 md:pb-10 max-w-md sm:max-w-screen-xl xl:mx-auto">
+    <footer class="ff-footer bg-gray-100 w-full border-t border-white">
+        <div class="py-8 px-10 md:px-6 md:pt-8 md:pb-10 max-w-md sm:max-w-screen-xl xl:mx-auto">
             <div class="w-full grid gap-y-8 md:gap-y-0 md:grid-rows-2 md:grid-flow-col md:ff-footer-columns md:gap-x-8 md:justify-between">
-                <div class="w-52">
-                        {% image "./images/flowfuse-logo-wordmark-white.svg", "FlowFuse Logo in White", [150] %}
+                <div class="w-36">
+                    {% include "components/ff-logo--wordmark--grey.svg" %}
                 </div>
                 <div class="w-full self-end order-last md:order-none">
                     <div class="copyright-statement inline">
@@ -267,7 +270,7 @@ eleventyComputed:
                     </ul>
                 </div>
                 <div class="w-full md:row-span-2">
-                    <ul class="flex flex-row w-full -mx-3 md:mx-0 text-base text-white justify-between sm:justify-start sm:gap-x-4 lg:gap-x-6 md:justify-end">
+                    <ul class="flex flex-row w-full -mx-3 md:mx-0 text-base justify-between sm:justify-start sm:gap-x-4 lg:gap-x-6 md:justify-end">
                         <li class="inline md:m-0 md:block">
                             <a href="https://www.facebook.com/FlowFuse/" class="block px-3 py-3 md:p-0">
                                 <span class="sr-only">Visit our Facebook page</span>

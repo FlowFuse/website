@@ -5,7 +5,7 @@
     .handbook {
         grid-template-columns: 265px 1fr auto;
         margin-top: -3rem;
-        @apply flex flex-col-reverse md:grid
+        @apply flex flex-col-reverse md:grid;
     }
 
     .handbook-nav {
@@ -14,9 +14,9 @@
         --nav-weight: 600;
         /* --nav-color: white; */
         --nav-color: black;
-        --nav-bg: theme(colors.gray.50);
+        --nav-bg: transparent;
         --nav-pl: 1rem;
-        background-color: theme(colors.gray.50);
+        background-color: transparent;
         padding-top: 0.25rem;
         max-height: calc(100vh - 1.5rem);
         overflow-y: auto;
@@ -24,7 +24,7 @@
     }
 
     .handbook-nav-nested {
-        --nav-bg: theme(colors.gray.50);
+        --nav-bg: transparent;
         --nav-color: black;
         --nav-weight: 300;
         --nav-pl: 1.25rem;
@@ -50,7 +50,7 @@
     }
 
     .handbook-nav li.handbook-nav-group {
-        color: theme(colors.red.700);
+        color: theme(colors.indigo.700);
         padding-left: 0;
     }
 
@@ -73,7 +73,7 @@
     
     .handbook-nav li.active {
         background-color: theme(colors.gray.100);
-        border-color: theme(colors.red.600);
+        border-color: theme(colors.indigo.600);
     }
 
     .handbook-nav li a:hover {
@@ -86,7 +86,7 @@
 
     .handbook-nav li.core-nodes-nav-group a:hover,
     .handbook-nav li.core-nodes-nav-group a {
-        color: theme(colors.red.600);
+        color: theme(colors.indigo.600);
         text-decoration: none;
     }
 

@@ -5,7 +5,7 @@ meta:
     title: Privacy Policy
 ---
 
-<div class="prose prose-blue container m-auto max-w-4xl">
+<div class="prose prose-blue container pt-12 m-auto max-w-4xl">
 
 # Privacy Policy
 

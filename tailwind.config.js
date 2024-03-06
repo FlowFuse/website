@@ -6,17 +6,39 @@ module.exports = {
         extend: {
             typography: (theme) => ({
                 DEFAULT: {
-                  css: {
-                    picture: {
-                      marginTop: '0',
-                      marginBottom: '0',
+                    css: {
+                        '--tw-prose-headings': theme('colors.gray.600'),
+                        picture: {
+                            marginTop: '0',
+                            marginBottom: '0',
+                        },
+                        h1: {
+                            fontWeight: '500',
+                        },
+                        h2: {
+                            fontWeight: '500',
+                        },
+                        h3: {
+                            fontWeight: '500',
+                        },
+                        h4: {
+                            fontWeight: '500',
+                        },
+                        h5: {
+                            fontWeight: '500',
+                        },
+                        h6: {
+                            fontWeight: '500',
+                        },
                     },
-                  },
                 },
             }),
             fontSize: {
-                'page-h1': ['2.5rem', '3.5rem'],
+                'page-h1': ['2.4rem', '3rem'],
                 'post-h4': ['1.25rem']
+            },
+            fontFamily: {
+                'sans': ['Heebo', 'Helvetica', 'Arial', 'sans-serif'],
             },
             textShadow: {
                 header: '1px 1px 0.25rem black'
@@ -49,17 +71,16 @@ module.exports = {
                     900: "#111827"
                 },
                 red: {
-                    50: "#FFEBEB",
-                    100: "#FFC6C6",
-                    200: "#FF8D8D",
-                    300: "#F16F6F",
+                    50: "#FFEFEA",
+                    100: "#FFD9CE",
+                    200: "#FFC5B3",
+                    300: "#FFB29A",
                     400: "#ED4E4E",
-                    500: "#D12B2B",
-                    "500B": "#D82525",
-                    600: "#BC3838",
-                    700: "#AB1818",
-                    800: "#8F0001",
-                    900: "#760000",
+                    500: "#EB6D46",
+                    600: "#DA3D0B",
+                    700: "#B33109",
+                    800: "#8D2606",
+                    900: "#671D06",
                 },
                 teal: {
                     50: "#E4FBFC",

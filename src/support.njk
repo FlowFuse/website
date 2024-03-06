@@ -10,16 +10,10 @@ hubspot:
   cta: "cta-submit-a-ticket"
   reference: "support"
 ---
-<!-- <div class="flex px-6 -mt-32 mx-auto text-gray-400 md:max-w-screen-lg md:-mt-40 mb-8 md:mb-16">
-  <p class="lead-p max-w-screen-lg m-auto text-center md:max-w-xl md:px-4">
-    Search through our extensive range of resources, knowledge base, or reach out to our dedicated support team by
-    submitting a ticket.
-  </p>
-</div> -->
-<div class="text-left max-w-full ff-bg-light">
+<div class="text-left max-w-full">
   <div class="w-full pt-10 md:pt-8 px-0 ff-prose">
-    <div class="text-center md:mt-10 mb-8">
-      <h2>Find answers instantly</h2>
+    <div class="text-center mb-8">
+      <h4>Find answers<span class="text-indigo-600"> instantly</span></h4>
     </div>
     <div class="max-w-lg m-auto px-6 md:px-0 md:mb-10">
       <div id="algolia-search" class="border rounded"></div>
@@ -30,10 +24,10 @@ hubspot:
           <div>
             <h4 class="flex items-center gap-4">
               <div class="w-16 mt-6">
-                {% image "./images/pictograms/community_red.png", "Graphics depicting low-code programming.", [64] %}
+                {% image "./images/pictograms/community_blue.png", "Graphics depicting low-code programming.", [64] %}
               </div>
               <div class="flex flex-col leading-8 mt-6">
-                Ask the community
+                <h4>Ask the <span class="text-indigo-600">community</span></h4>
               </div>
             </h4>
             <p class="mb-0">
@@ -53,10 +47,10 @@ hubspot:
           <div>
             <h4 class="flex items-center gap-4">
               <div class="w-16 mt-6">
-                {% image "./images/pictograms/speech_red.png", "Graphics depicting low-code programming.", [64] %}
+                {% image "./images/pictograms/speech_blue.png", "Graphics depicting low-code programming.", [64] %}
               </div>
               <div class="flex flex-col leading-8 mt-6">
-                Reach out via our chat
+                <h4>Reach out via our <span class="text-indigo-600">chat</span></h4>
               </div>
             </h4>
             <p class="mb-0">
@@ -73,17 +67,14 @@ hubspot:
         </div>
       </div>
     </div>
-    <div class="w-full bg-white pt-0 px-0 pb-24 ff-prose">
-      <div class="text-gray-50">
-        {% include "components/dividers/light-grey-curve-inverted.svg" %}
-      </div>
-      <div class="text-center m-auto mt-10 md:mt-12 mb-6 md:mb-12 md:max-w-xl">
+    <div class="w-full bg-gray-50 py-16 px-0 ff-prose">
+      <div class="text-center m-auto mb-6 md:max-w-xl">
         <h2>Submit a ticket</h2>
         <p>If you need assistance with the FlowFuse application, account, or billing, please submit a ticket by filling
           out the form below.</p>
       </div>
       <div class="container m-auto md:max-w-xl prose">
-        <div class="px-6 mb-16">
+        <div class="px-6">
           <script src="https://www.google.com/recaptcha/api.js"></script>
           {% include hubspot.script %}
         </div>
