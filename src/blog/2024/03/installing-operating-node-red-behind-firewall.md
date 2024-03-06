@@ -15,6 +15,8 @@ tags:
 Practitioners using Node-RED often find themselves in a situation where a firewall
 is deployed in their organization. This network configuration is a fact of life and is generally not controlled by the same people using Node-RED. Given security reigns supreme in Industrial IoT (IIoT), and a firewall offers a lot of benefits, we anticipate it will be deployed more often in the future, and as such it’s good to understand how you can get the most out of Node-RED when deployed behind a firewall.
 
+<!--more-->
+
 ## Node-RED installation with a firewall
 
 Generally, the normal install procedure for Node-RED requires a connection being made to the NPM servers that host the package. Due to the unaudited nature of NPM, it’s unlikely that IT will agree with a permanent exception to the firewall to have access to it. There’s a couple of actions one can take to install Node-RED anyway.
