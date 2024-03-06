@@ -21,7 +21,7 @@ Most industries function on a standard ISA-95, sometimes referred to as the Perd
 
 Enter the Unified Namespace (UNS).  Breaking the ISA-95 chains, UNS makes data available to many applications across the organization for rapid iterative development and integration. Typically to implement a unified namespace you'll adapt your data producers to talk to a common broker. The adaptation layer is usually Node-RED, and MQTT is the broker protocol.
 
-In this webinar Grey Dziuba, OT Data & Community Strategist at FlowFuse will be joined by UNS expert Kudzai Manditereza, Developer Advocate at HiveMQ to talk about:
+In this webinar **Grey Dziuba**, OT Data & Community Strategist at FlowFuse will be joined by UNS expert **Kudzai Manditereza**, Developer Advocate at HiveMQ to talk about:
 
 - How UNS can accelerate innovation 
 - How to properly organize your infrastructure for a standard discrete manufacturing plant. 
