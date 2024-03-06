@@ -39,12 +39,16 @@ FlowFuse will prompt you to add a name (required), and a type (not required). Wh
 
 If your device supports it, the fastest way to run the FlowFuse agent is with containers. Assuming you’ve already got Docker installed, there are two steps to follow: first, move the device YAML file downloaded from FlowFuse to the edge device and save it in `/opt/flowfuse/device.yml`. Start the agent by running:
 
+```
+docker run --mount type=bind,src=/path/to/device.yml,target=/opt/flowfuse-device/device.yml -p 1880:1880 flowfuse/device-agent:latest
+```
+
 Note that for production cases, ensure the container is restarted on reboot. Docker can do this for you, [please follow their guide](https://docs.docker.com/config/containers/start-containers-automatically/).
 
 
 ### Install the FlowFuse agent with npm
 
-To install the agent through NPM, you’ll need a Node.JS version of 18.0 or later. Open a command prompt and run:
+To install the agent through NPM, you’ll need a Node.JS version of 18.0 or later. Open a command prompt and run: `npm install -g @flowfuse/device-agent`.
 
 This will install the FlowFuse Device Agent as a global npm module, making the flowfuse-device-agent command available in any directory on your system.
 
