@@ -15,6 +15,8 @@ hubspot:
 
 <!--more-->
 
+The digital transformation journey for many manufacturers hasn’t always been a smooth one. From new terminology, and technologies, to security concerns, progress is generally always hindered by one of these three. As manufacturing companies evolve their strategies from industry to industry, there is always one thing that is top of mind - trustworthy data; how to access it, how to share it, and how to keep it secure.
+
 Most industries function on a standard ISA-95, sometimes referred to as the Perdue model.  One of the biggest takeaways is making sure that you have an impenetrable firewall that sits between your manufacturing side and the enterprise networks.  Oftentimes leaving the manufacturing side, OT network, in the dark without access to the internet. With an environment like this, how is it possible to make data easily accessible and usable?
 
 Enter the Unified Namespace (UNS).  Breaking the ISA-95 chains, UNS makes data available to many applications across the organization for rapid iterative development and integration. Typically to implement a unified namespace you'll adapt your data producers to talk to a common broker. The adaptation layer is usually Node-RED, and MQTT is the broker protocol.
