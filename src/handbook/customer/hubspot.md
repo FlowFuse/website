@@ -34,14 +34,16 @@ The following is a description of each stage.
 ##### From MQL to SQL - Qualifying questions
 
 
-- Is there a NR use case?
-- Is NR used in production?
-- Is there a timeline within the next 6 months?
+- Is there a use case FlowFuse can solve?
+- Is there a need, now or in the near future, for 10 or more instances?
+- Is there a timeline within the next 6 months? (project implementation)
+
 
 ##### From SQL to Opportunity
 
-A SQL becomes an opportunity when there is an active evaluation of FlowFuse (this can be quotes, POCs, any other indication that they are planning to purchase something soon).
+- Is there an active evaluation that can close within the next 3 months? (evaluation can be quoting, POC, any other indication that they are planning to purchase something soon)
 
+  
 | Deal Stages |  | |
 | :------- | :--:| :---- |
 | Opportunity | 10% | When there is a legitimate opportunity to close the prospect within the next 6 months. This stage is primarily triggered by the timeline or urgency of the need for FlowFuse. |
