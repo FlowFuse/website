@@ -6,6 +6,6 @@ Allow: /
 User-agent: Algolia Crawler
 Allow: /
 
-Host: https://flowforge.com/
+Host: https://flowfuse.com/
 
-Sitemap: https://flowforge.com/sitemap.xml
+Sitemap: https://flowfuse.com/sitemap.xml
