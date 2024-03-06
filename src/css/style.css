@@ -15,6 +15,7 @@
 
 html, body {
     font-size: 16px;
+    overflow-x: hidden;
 }
 
 *{
@@ -27,28 +28,28 @@ html, body {
     Standard FlowFuse Sizings
 */
 h1 {
-    font-size: 2.25rem;
-    line-height: 3rem;
+    font-size: 2.75rem;
+    line-height: 3.1rem;
 }
 
 h2 {
     font-size: 2.25rem;
-    line-height: 2.5rem;
+    line-height: 2.65rem;
 }
 
 h3 {
-    font-size: 1.75rem;
-    line-height: 2.5rem;
+    font-size: 1.85rem;
+    line-height: 2.3rem;
 }
 
 h4 {
-    font-size: 1.5rem;
-    line-height: 1.75rem;
+    font-size: 1.4rem;
+    line-height: 1.9rem;
 }
 
 h5 {
-    font-size: 1rem;
-    line-height: 1.75rem;
+    font-size: 1.1rem;
+    line-height: 1.85rem;
     font-weight: bold;
 }
 
@@ -57,26 +58,20 @@ p {
     line-height: 1.75rem;
     margin-top: 1rem;
     margin-bottom: 1rem;
+    font-weight: 300;
 }
 
 h1, h2, h3, h4, h5, p {
-    color: theme(colors.teal.300);
+    color: theme(colors.gray.700);
+}
+
+h1, h2, h3, h4 {
+    font-weight: 400;
 }
 
 .container {
     position: relative;
     z-index: 2;
-}
-
-.ff-bg-light h1,
-.ff-bg-light h2,
-.ff-bg-light h3,
-.ff-bg-light h4,
-.ff-bg-light h5 {
-    color: theme(colors.gray.800);
-}
-.ff-bg-light p {
-    color: theme(colors.gray.800);
 }
 
 .ff-bg-dark h1, .ff-bg-mid h1,
@@ -92,18 +87,18 @@ h1, h2, h3, h4, h5, p {
 
 
 .ff-website {
-    background-color: theme(colors.gray.800);
+    /* background-color: theme(colors.gray.800); */
 }
 
-.ff-bg-flows {
+/* .ff-bg-flows {
     background-image: url('/images/ff-bg-flows.svg');
     background-repeat: repeat-x;
     background-position-x: 50%;
     background-position-y: calc(100% + 50px);
     background-size: contain;
-}
+} */
 
-.hero .ff-bg-flows {
+/* .hero .ff-bg-flows {
     background-size: 100%;
     background-position-y: calc(100% + 100px);
 }
@@ -117,20 +112,18 @@ h1, h2, h3, h4, h5, p {
         background-size: 100%;
         background-position-y: calc(100% + 25px);
     }
-}
+} */
 
 .gradient-bg {
-    background: radial-gradient(circle 50vw at center 500px,theme(colors.gray.700),transparent);
-    background-size: 100vw;
+    background: radial-gradient(circle 80vw at 100% 0%, theme(colors.indigo.50), transparent);
 }
 
 .pricing .gradient-bg {
-    background: radial-gradient(circle 50vw at center -100px,rgba(55, 65, 81, 0.2),theme(colors.gray.800));
-    background-size: 100vw;
+    background: radial-gradient(circle 70vw at 50% 0%, theme(colors.indigo.50), transparent);
 }
 
 main a {
-    color: theme(colors.teal.300);
+    color: theme(colors.blue.600);
 }
 main  a:hover {
     text-decoration: underline;
@@ -138,14 +131,9 @@ main  a:hover {
 main  a.ff-btn:hover {
     text-decoration: none;
 }
-main .ff-bg-light a {
-    color: theme(colors.blue.600);
-}
-main .ff-bg-light a:hover {
-    color: theme(colors.blue.700);
-}
+
 main .ff-bg-dark a, main .ff-bg-mid a {
-    color: theme(colors.teal.300);
+    color: theme(colors.blue.600);
 }
 main .ff-bg-dark a:hover, main .ff-bg-mid a:hover {
     color: theme(colors.teal.500);
@@ -156,7 +144,7 @@ pre code {
 
 .prose code {
     font-weight: 500;
-    color: theme(colors.red.600);
+    color: theme(colors.red.700);
     padding-left: 0.25rem;
     padding-right: 0.25rem;
 }
@@ -176,7 +164,7 @@ dl.message-properties {
     font-size: 0.875em;
     font-weight: 500;
     margin: 5px 3px 1px;
-    color: theme(colors.red.600);
+    color: theme(colors.indigo.600);
     white-space: nowrap;
     background-color: theme(colors.gray.100); 
   }
@@ -318,19 +306,19 @@ h4:hover .header-anchor {
 .ff-bg-mid {
     background-color: theme(colors.gray.700);
 }
-.ff-bg-light {
+/* .ff-bg-light {
     background-color: theme(colors.gray.50);
-}
+} */
 
-.ff-website .ff-bg-light .ff-input.ff-text-input {
+.ff-website .ff-input.ff-text-input {
     background-color: white;
 }
 
-.ff-website .ff-bg-light .ff-dropdown-selected {
+.ff-website .ff-dropdown-selected {
     background-color: white;
 }
 
-.ff-website .ff-bg-light textarea {
+.ff-website textarea {
     background-color: white;
 }
 
@@ -441,12 +429,12 @@ h4:hover .header-anchor {
 */
 @layer components {
     .ff-website .ff-header {
-        @apply bg-gray-800 w-full px-6 py-4 sm:py-6 md:py-0 top-0 z-10 relative;
+        @apply bg-white w-full px-6 py-4 sm:py-6 md:py-0 top-0 z-10 relative;
     }
 
     .ff-website header .ff-wordmark path,
     .ff-website header .ff-icon--gh path {
-        fill: theme(colors.red.400);
+        fill: theme(colors.indigo.600);
     }
 
     .ff-website header nav {
@@ -459,7 +447,7 @@ h4:hover .header-anchor {
 
     .ff-website header #nav-content {
         height: calc(100% - 64px - 64px);
-        @apply top-8 md:top-0 transition-height fixed mt-8 w-full overflow-hidden border-none max-h-0 right-0 border-t shadow-sm z-10 bg-gray-800 flex-col items-center justify-between font-light no-underline;
+        @apply top-8 md:top-0 transition-height fixed mt-8 w-full overflow-hidden border-none max-h-0 right-0 border-t shadow-sm z-10 bg-gray-50 flex-col items-center justify-between no-underline; /* font-light */
         @apply md:mt-0 md:h-auto md:overflow-visible md:max-h-20 md:relative md:shadow-none md:border-0 md:bg-transparent md:w-auto lg:static md:float-none md:flex md:flex-row;
     }
 
@@ -483,14 +471,14 @@ h4:hover .header-anchor {
 
     .ff-website header #mobile-ctas {
         transition: 0.3s bottom;
-        @apply -bottom-32 fixed w-full flex flex-col left-0 pl-4 right-0 pr-4 bg-gray-900 py-4 gap-3;
+        @apply -bottom-32 fixed w-full flex flex-col left-0 pl-4 right-0 pr-4 bg-gray-50 py-4 gap-3;
     }
     .ff-website header #mobile-ctas button,
     .ff-website header #mobile-ctas a {
         @apply uppercase flex-grow;
     }
-    .ff-website header #mobile-ctas a.ff-btn--tertiary {
-        @apply text-red-400 border-red-400 border border-solid;
+    .ff-website header #mobile-ctas a.ff-btn--primary-outlined {
+        @apply text-indigo-600 border-indigo-600 border border-solid;
     }
 
     .ff-website header #nav-content li {
@@ -502,15 +490,15 @@ h4:hover .header-anchor {
     }
 
     .ff-website header a .ff-icon--down path {
-        @apply sm:text-red-400;
+        @apply sm:text-indigo-400;
     }
     
     .ff-website header a {
-        color: theme(colors.gray.400);
+        color: theme(colors.gray.800);
     }
     
     .ff-website header .cta a {
-        color: theme(colors.gray.200);
+        color: theme(colors.indigo.600);
         @apply md:px-3 font-normal;
     }
 
@@ -526,7 +514,7 @@ h4:hover .header-anchor {
 
     .ff-website header a:hover .ff-icon--down path,
     .ff-website header ul a:hover {
-        @apply text-teal-300 md:text-white;
+        @apply text-indigo-700 md:text-indigo-700;
     }
 
     .ff-website header a > span {
@@ -546,14 +534,15 @@ h4:hover .header-anchor {
         width: max-content;
         max-height: 0;
         overflow: hidden;
-        @apply md:mt-2 md:absolute md:rounded-lg md:shadow-nav md:bg-gray-700;
+        @apply md:mt-3 md:absolute md:rounded-lg md:shadow-nav md:bg-gray-50; /* dropdown bg color */
         @apply transition-navdropdown;
     }
 
     .ff-website header .ff-nav-dropdown > ul:before {
         content: url("/images/nav-arrow.svg");
+        z-index: 10;
         position: absolute;
-        top: -18px;
+        top: -16px;
         right: 3rem;
         @apply hidden md:block;
     }
@@ -567,20 +556,20 @@ h4:hover .header-anchor {
     .ff-website header .ff-nav-dropdown:hover > ul:not(.ff-nav-nested-cols),
     .ff-website header .ff-nav-dropdown:focus-within > ul:not(.ff-nav-nested-cols) {
         max-height: 400px;
-        @apply sm:py-2 sm:overflow-visible;
+        @apply sm:py-2 sm:overflow-visible text-gray-700;
     }
 
     .ff-website header .ff-nav-dropdown ul li {
-        @apply border-b text-left sm:bg-gray-700 sm:text-right sm:border-gray-600 font-light;
+        @apply text-left sm:bg-gray-50 sm:text-right font-light; /* bg each list item */
     }
 
     .ff-website header .ff-nav-dropdown >ul li a {
         cursor: pointer;
-        @apply text-left pl-6 md:text-right md:pr-6 text-white;
+        @apply text-left pl-6 md:text-right md:pr-6 text-gray-700;
     }
 
     .ff-website header .ff-nav-dropdown >ul li a .ff-icon--solid {
-        fill: white;
+        fill: theme(colors.gray.700);
     }
 
     /* double nested */
@@ -592,76 +581,30 @@ h4:hover .header-anchor {
         @apply pl-12;
     }
 
-    .ff-website header .ff-nav-dropdown:hover a {
-        @apply md:text-white;
+    .ff-website header .ff-nav-dropdown:hover {
+        @apply md:text-indigo-700;
     }
 
     .ff-website header .ff-nav-dropdown >ul li:hover > a,
     .ff-website header .ff-nav-dropdown >ul li:hover > a svg {
-        color: theme(colors.teal.300);
+        color: theme(colors.indigo.700);
     }
 
     .ff-website header .ff-nav-dropdown >ul li:hover > a .ff-icon--solid {
-        fill: theme(colors.teal.300);
+        fill: theme(colors.indigo.700);
     }
 
     .ff-website header.mobile-open {
-        @apply border-b border-gray-600 sticky sm:relative;
+        @apply border-b sticky sm:relative;
     }
 
     .ff-website header.mobile-open #nav-content {
         overflow-y: auto;
-        @apply max-h-full fixed border-t border-gray-600 border-solid;
+        @apply max-h-full fixed;
     }
 
     .ff-website header.mobile-open #mobile-ctas {
         @apply bottom-0;
-    }
-
-    /* Nested Cols - Resources */
-
-    .ff-website header .ff-nav-dropdown .ff-nav-nested-cols {
-        @apply py-0 rounded-lg overflow-hidden bg-gray-600;
-    }
-
-    .ff-website header .ff-nav-dropdown:focus-within .ff-nav-nested-cols,
-    .ff-website header .ff-nav-dropdown:hover .ff-nav-nested-cols {
-        max-height: 400px;
-        @apply overflow-visible;
-    }
-
-    .ff-website header .ff-nav-dropdown .ff-nav-nested-cols ul {
-        @apply my-3;
-    }
-
-    .ff-website header .ff-nav-dropdown .ff-nav-nested-cols >div > li {
-        @apply pt-3 pb-2 pointer-events-none;
-    }
-    .ff-website header .ff-nav-dropdown .ff-nav-nested-cols >div:first-child > li {
-        @apply rounded-tl-lg;
-    }
-    .ff-website header .ff-nav-dropdown .ff-nav-nested-cols >div:last-child > li {
-        @apply rounded-tr-lg;
-    }
-
-    .ff-website header .ff-nav-dropdown .ff-nav-nested-cols >div > li > a {
-        @apply py-0 pointer-events-none;
-    }
-
-    .ff-website header .ff-nav-dropdown .ff-nav-nested-cols >div:first-child > li > a {
-        @apply py-0 border-r border-gray-500 border-solid;
-    }
-
-    .ff-website header .ff-nav-dropdown .ff-nav-nested-cols >div:first-child ul {
-        @apply border-r border-gray-500 border-solid;
-    }
-
-    .ff-website header .ff-nav-dropdown .ff-nav-nested-cols ul li {
-        @apply bg-gray-600;
-    }
-
-    .ff-website header .ff-nav-dropdown .ff-nav-nested-cols >div >li {
-        @apply font-medium;
     }
 }
 
@@ -672,7 +615,8 @@ h4:hover .header-anchor {
     .ff-blog-tile img,
     .ff-blog-tile svg {
         object-fit: cover;
-        aspect-ratio: 1.78
+        aspect-ratio: 1.78;
+        margin-bottom: 0.7rem;
     }
 }
 
@@ -680,7 +624,7 @@ h4:hover .header-anchor {
     min-height: calc(100vh - 310px);
 }
 
-.red-gradient {
+.indigo-gradient {
     background: linear-gradient(127.44deg, #C63A3A 32.29%, #3A2828 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -698,16 +642,16 @@ h4:hover .header-anchor {
     text-transform: capitalize;
     display: inline-block;
     padding: 8px 18px;
-    font-weight: 300;
+    font-weight: 400;
     border: 2px solid theme(colors.gray.200);
     border-radius: 24px;
 }
 
 .feature-button.active,
 .solution-button.active {
-    background-color: theme(colors.gray.200);
-    color: theme(colors.gray.800);
-    border: 2px solid theme(colors.gray.300);
+    background-color: theme(colors.indigo.100);
+    color: theme(colors.indigo.800);
+    border: 2px solid theme(colors.indigo.200);
 }
 
 .feature,
@@ -731,12 +675,6 @@ h4:hover .header-anchor {
     Footer
 */
 @layer components {
-    .ff-footer {
-        background-image: url(../images/footer-bg.svg);
-        background-size: cover;
-        margin-top: -48px;
-        padding-top: 48px;
-    }
 
     .ff-footer-columns {
         grid-template-columns: 1fr 38% 25%;
@@ -751,27 +689,31 @@ h4:hover .header-anchor {
     }
 
     .ff-footer h4 {
-        color: white;
+        color: theme(colors.gray.800);
         @apply mb-2;
     }
 
     .ff-footer .copyright-statement {
         font-size: 0.75rem;
         margin-top: 0.75rem;
-        color: theme(colors.gray.300);
+        color: theme(colors.gray.400);
         font-weight: 200;
     }
 
     .ff-footer li {
-        color: theme(colors.gray.200);
+        color: theme(colors.gray.800);
         font-weight: 200;
     }
 
     .ff-footer li:hover {
-        color: theme(colors.white);
+        color: theme(colors.indigo.700);
         text-decoration: underline;
     }
-
+    
+    .ff-footer svg {
+        color: theme(colors.gray.800);
+        opacity: 1;
+    }
     /*
         Components
     */
@@ -781,7 +723,7 @@ h4:hover .header-anchor {
         height: 24px;
         display: inline-flex;
         stroke-width: 2px;
-        /* color: theme(colors.red.600); */
+        /* color: theme(colors.indigo.600); */
     }
 
     .ff-icon-sm {
@@ -797,8 +739,8 @@ h4:hover .header-anchor {
         stroke-width: 1px;
     } 
 
-    .ff-bg-light .ff-icon-lg:not(.ff-icon--solid) {
-        stroke: theme(colors.red.600);
+    .ff-icon-lg:not(.ff-icon--solid) {
+        stroke: theme(colors.indigo.600);
     }
 
     .ff-bg-dark .ff-icon-lg:not(.ff-icon--solid),
@@ -881,7 +823,7 @@ h4:hover .header-anchor {
     
     .ff-website .ff-video {
         border-radius: 12px;
-        border: 2px solid theme(colors.red.500);
+        border: 2px solid theme(colors.indigo.500);
         background-color: theme(colors.white);
     }
     
@@ -891,53 +833,54 @@ h4:hover .header-anchor {
         height: auto;
         padding: 8px 16px;
         border: 0;
+        border-radius: 4px;
     }
 
     .ff-website .ff-btn.ff-btn--primary {
-        background-color: theme(colors.red.600);
+        background-color: theme(colors.indigo.600);
         color: white;
     }
     
     .ff-website .ff-btn.ff-btn--primary:hover {
-        background-color: theme(colors.red.700);
-        color: white;
-    }
-
-    .ff-website .ff-btn.ff-btn--secondary {
-        background-color: theme(colors.teal.700);
-        color: white;
-    }
-    
-    .ff-website .ff-btn.ff-btn--secondary:hover {
-        background-color: theme(colors.teal.800);
+        background-color: theme(colors.indigo.700);
         color: white;
     }
 
     .ff-website .ff-btn.ff-btn--primary-outlined {
         background-color: transparent;
+        color: theme(colors.indigo.600);
+        border: 1px solid theme(colors.indigo.600);
+    }
+    
+    .ff-website .ff-btn.ff-btn--primary-outlined:hover {
+        background-color: theme(colors.indigo.700);
+        color: theme(colors.white);
+        border: 1px solid theme(colors.indigo.700);
+    }
+
+    .ff-website .ff-btn.ff-btn--highlight {
+        background-color: theme(colors.red.600);
+        color: white;
+    }
+    
+    .ff-website .ff-btn.ff-btn--highlight:hover {
+        background-color: theme(colors.red.700);
+        color: white;
+    }
+
+    .ff-website .ff-btn.ff-btn--highlight-outlined {
+        background-color: transparent;
         color: theme(colors.red.600);
         border: 1px solid theme(colors.red.600);
     }
     
-    .ff-website .ff-btn.ff-btn--primary-outlined:hover {
-        background-color: theme(colors.red.800);
+    .ff-website .ff-btn.ff-btn--highlight-outlined:hover {
+        background-color: theme(colors.red.700);
         color: theme(colors.white);
-        border: 1px solid theme(colors.red.800);
-    }
-
-    .ff-website .ff-btn.ff-btn--secondary-outlined {
-        background-color: transparent;
-        color: theme(colors.teal.600);
-        border: 1px solid theme(colors.teal.500);
+        border: 1px solid theme(colors.red.700);
     }
     
-    .ff-website .ff-btn.ff-btn--secondary-outlined:hover {
-        background-color: transparent;
-        color: theme(colors.teal.800);
-        border: 1px solid theme(colors.teal.800);
-    }
-    
-    .ff-website .ff-text-input {
+    .ff-website .ff-bg-dark .ff-text-input {
         background-color: theme(colors.gray.700);
         border-color: theme(colors.teal.500);
         border-width: 1px;
@@ -947,7 +890,7 @@ h4:hover .header-anchor {
         color: theme(colors.white);
     }
 
-    .ff-website .ff-bg-light .ff-text-input {
+    .ff-website .ff-text-input {
         background-color: theme(colors.gray.50);
         border-color: theme(colors.gray.300);
         color: theme(colors.gray.800);
@@ -984,7 +927,7 @@ h4:hover .header-anchor {
     }
     
     .ff-toggle-switch .ff-option.ff--active {
-        background-color: theme(colors.red.700);
+        background-color: theme(colors.indigo.700);
         cursor: default;
     }
     
@@ -1026,7 +969,11 @@ h4:hover .header-anchor {
         display: grid;
         grid-template-columns: 270px 1fr 1fr 1fr;
         align-items: center;
-        @apply bg-gray-200;
+        @apply bg-indigo-50;
+    }
+
+    .ff-feature-table-section li:first-child {
+        @apply bg-white;
     }
     
     @media (max-width: 720px) {
@@ -1041,17 +988,15 @@ h4:hover .header-anchor {
         }
     }
 
-    .ff-feature-table-section li.ff-feature-row:nth-child(odd),
-    .ff-feature-table-section li.ff-feature-row:nth-child(odd) label {
-        background-color: theme(colors.gray.100);
+    .ff-feature-table-section li.ff-feature-row:nth-child(odd) {
+        @apply bg-indigo-50/50;
     }
 
     .ff-feature-table-section li.ff-feature-row label {
-        padding: 12px ;
-        @apply bg-gray-200;
+        padding: 12px;
     }
 
-    main .ff-bg-light .ff-feature-row a {
+    main .ff-feature-row a {
         @apply text-gray-800 no-underline;
     }
 
@@ -1060,7 +1005,6 @@ h4:hover .header-anchor {
     }
 
     .ff-feature-table-section li.ff-feature--column-header {
-        background-color: theme(colors.gray.50);
         padding: 0;
         margin-top: 20px;
     }
@@ -1074,7 +1018,7 @@ h4:hover .header-anchor {
         height: 100%;   
         border-bottom: 0;
         border-radius: 12px 12px 0 0;
-        @apply flex items-center justify-center flex-col bg-gray-100;
+        @apply flex items-center justify-center flex-col bg-indigo-50;
     }
 
     .ff-feature-table-section li.ff-feature--column-header label.ff-blank {
@@ -1087,7 +1031,7 @@ h4:hover .header-anchor {
     }
 
     .ff-feature-table-section li.ff-feature--column-buttons {
-        background-color: theme(colors.gray.50);
+        background-color: white;
         padding: 0;
     }
     .ff-feature-table-section li.ff-feature--column-buttons label {
@@ -1174,7 +1118,7 @@ h4:hover .header-anchor {
     */
 
     .ff-certify-list {
-        @apply flex flex-col pb-6 gap-y-10 sm:gap-y-0;
+        @apply flex flex-col gap-y-10 sm:gap-y-0;
     }
 
     .ff-certify-list > .ff-item {
@@ -1218,7 +1162,7 @@ h4:hover .header-anchor {
     }
 
     .ff-website .ff-nodered-resources--icon {
-        @apply border-r p-2 bg-gray-50 text-red-600 rounded-tl-xl rounded-bl-xl transition-colors;
+        @apply border-r p-2 bg-gray-50 text-indigo-600 rounded-tl-xl rounded-bl-xl transition-colors;
     }
 
     .ff-website .ff-nodered-resources--icon svg {
@@ -1326,7 +1270,7 @@ pre.mermaid {
     background-color: #ffffff
 }
 /*
-    FlowFuse markdown-it rendered footnote styles
+    FlowFuse markdown-it rendeindigo footnote styles
 */
 div.content hr.footnotes-sep {
     margin-top: 3em;
@@ -1344,6 +1288,8 @@ div.content section.footnotes ol li p {
 
 .nodered-pillar-bg {
     background-image: url('../images/bg-nodered-editor.png');
+    background-blend-mode: luminosity;
+    background-color: theme(colors.indigo.600);
     background-size: cover;
     background-position-y: bottom;
 }
@@ -1397,7 +1343,7 @@ input[type="range"] {
     
     /* New additions */
     height: 6px;
-    background: theme(colors.gray.700);
+    background: theme(colors.indigo.600);
   }
   
   /* Thumb: webkit */
@@ -1408,9 +1354,9 @@ input[type="range"] {
     /* creating a custom design */
     height: 18px;
     width: 18px;
-    background-color: theme(colors.gray.700);
+    background-color: theme(colors.indigo.600);
     border-radius: 50%;
-    border: solid 2px theme(colors.gray.400);
+    border: solid 2px theme(colors.indigo.300);
   
     /* box-shadow: -407px 0 0 400px theme(colors.gray.700); emove this line */
     transition: .2s ease-in-out;
@@ -1420,9 +1366,9 @@ input[type="range"] {
   input[type="range"]::-moz-range-thumb {
     height: 18px;
     width: 18px;
-    background-color: theme(colors.gray.700);
+    background-color: theme(colors.indigo.600);
     border-radius: 50%;
-    border: solid 2px theme(colors.gray.400);
+    border: solid 2px theme(colors.indigo.300);
     
     /* box-shadow: -407px 0 0 400px theme(colors.gray.700); emove this line */
     transition: .2s ease-in-out;
@@ -1431,13 +1377,13 @@ input[type="range"] {
   /* Hover, active & focus Thumb: Webkit */
   
   input[type="range"]::-webkit-slider-thumb:hover {
-    background-color: theme(colors.gray.500);
+    background-color: theme(colors.indigo.800);
   }
   
   /* Hover, active & focus Thumb: Firefox */
   
   input[type="range"]::-moz-range-thumb:hover {
-    background-color: theme(colors.gray.500);
+    background-color: theme(colors.indigo.800);
   }
   
   /*=============

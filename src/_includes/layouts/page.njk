@@ -4,21 +4,21 @@ layout: layouts/base.njk
 <!--Hero Content-->
 <div class="w-full page hero">
     {% if title %}
-    <div class="w-full ff-bg-flows">
+    <div class="w-full">
         {% if nohero %}
         <div class="container m-auto text-center flex py-12 px-12 md:max-w-screen-lg md:pt-12">
             <div class="text-center w-full">
-                <h1 class="text-teal-300">{{ title }}</h1>
+                <h1>{{ title }}</h1>
             </div>
         {% elif heroimg %}
         <div class="hero {{ 'hero-lg' if heroLg else ''}} {{ 'hero-wide' if heroWide else ''}} container m-auto text-center flex flex-wrap mt-6 py-6 px-6 md:px-0 pb-24 md:flex-nowrap md:max-w-screen-md md:mt-12">
             <div class="text-left {{ 'md:pr-20' if heroLg else ('md:pr-10' if heroWide else 'md:pr-6') }}">
-                <h1 class="text-teal-300">{{ title }}</h1>
+                <h1>{{ title }}</h1>
                 {% if subtitle %}
-                <h4>{{ subtitle | safe }}</h4>
+                <h4 class="text-indigo-400">{{ subtitle | safe }}</h4>
                 {% endif %}
                 {% if (description and not hideDescription) %}
-                <div>{{ description | safe }}</div>
+                <p class="mt-8">{{ description | safe }}</p>
                 {% endif %}
             </div>
             {% if heroimg %}
@@ -30,9 +30,9 @@ layout: layouts/base.njk
         {% else %}
         <div class="hero {{ 'hero-lg' if heroLg else ''}} container m-auto text-center flex flex-wrap pt-6 px-6 pb-12 md:flex-nowrap md:max-w-4xl md:pt-12">
             <div class="text-center w-full">
-                <h1 class="text-teal-300">{{ title }}</h1>
-                <h4>{{ subtitle | safe }}</h4>
-                <div class="lead-p max-w-screen-lg m-auto text-center md:max-w-xl md:px-4">{{ description | safe }}</div>
+                <h1>{{ title }}</h1>
+                <h4 class="text-indigo-400">{{ subtitle | safe }}</h4>
+                <p class="lead-p max-w-screen-lg m-auto text-center md:max-w-xl md:px-4 mt-3">{{ description | safe }}</p>
             </div>
         {% endif %}            
         </div>

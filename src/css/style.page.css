@@ -6,12 +6,6 @@
     line-height: 3.5rem;
 }
 
-.page h2 {
-    color: theme(colors.gray.800);
-    font-size: 2rem;
-    font-weight: 600;
-}
-
 .page .ff-bg-dark h2 {
     color: theme(colors.teal.300);
 }
@@ -22,25 +16,6 @@
 
 .page .ff-bg-mid h5 {
     color: theme(colors.teal.400);
-}
-
-.page h4 {
-    font-size: 1.5rem;
-    font-weight: 600;
-    margin-bottom: 12px;
-    color: white;
-}
-
-.page .hero h4 {
-    margin-bottom: 1.5rem;
-}
-
-.page p {
-    color: theme(colors.white);
-    line-height: 1.75rem;
-    font-size: 16px;
-    font-weight: 300;
-    margin-bottom: 1rem;
 }
 
 .page .hero img {
@@ -80,7 +55,7 @@
 }
 
 .about-team h4 {
-    color: theme(colors.gray.800);
+    color: theme(colors.gray.600);
 }
 
 .about-team a:hover,
@@ -184,8 +159,7 @@
     .pricing-tile {
         position: relative;
         border-radius: 12px;
-        border: 1px solid theme(colors.gray.600);
-        background: linear-gradient(0deg, theme(colors.gray.800), theme(colors.gray.700));
+        background: linear-gradient(theme(colors.indigo.100), theme(colors.indigo.50) 40%, rgba(255, 255, 255, 0));
         display: flex;
         flex-direction: column;
         @apply max-w-sm;
@@ -193,18 +167,13 @@
     
     .pricing-tile-background {
         position: relative;
-        width: calc(100% + 2px);
-        height: calc(100% + 2px);
-        bottom: -1px;
-        left: -1px;
-        background: linear-gradient(#1f293700, #1f2937);
+        width: calc(100% - 4px);
+        height: calc(100% + 4px);
+        bottom: -2px;
+        left: 2px;
+        background: linear-gradient(white 30%, rgba(255, 255, 255, 0));
         border-radius: 10px;
         @apply px-6;
-    }
-
-
-    .pricing-tiles p.lead-p {
-        @apply text-gray-400;
     }
 
     .pricing-tile h5 {
@@ -215,37 +184,24 @@
 
     .pricing-tile h4 {
         font-size: 24px;
-        font-weight: bold;
+        font-weight: 500;
         margin: 0;
         margin-bottom: 0;
-        color: theme(colors.teal.300);
         @apply text-left;
     }
 
     .pricing-tile h2 {
-        font-size: 35px;
-        font-weight: 500;
-        margin-bottom: 0;
-        color: theme(colors.teal.100);
-        @apply mt-0;
-    }
-    
-    .pricing-tile label {
-        font-weight: 300;
-        display: block;
-        color: theme(colors.gray.400);
-        font-size: 16px;
-        @apply text-right leading-6 md:leading-5;
+        @apply my-0;
     }
     
     .pricing-tile p {
-        font-size: 0.875rem;
-        line-height: 1.5rem;
-        font-weight: 200;
+        font-size: 1rem;
+        line-height: 1.7rem;
+        font-weight: 300;
         margin-bottom: 0;
     }
 
-    .pricing-tile a.ff-btn .ff-btn--secondary-oulined {
+    .pricing-tile a.ff-btn .ff-btn--primary-oulined {
         display: inline-block;
         margin-top: 0.875rem;
         @apply text-center;
@@ -278,16 +234,15 @@
     }
 
 
-    .note {
-        font-weight: 300;
+    .pricing-tile note {
+        color: theme(colors.gray.700);
         margin: 0;
         margin-bottom: 0;
-        @apply text-center md:text-left;
+        @apply text-left;
     }
 
     .ff-checklist li {
-        font-weight: 100;
-        @apply flex gap-2;
+        @apply flex gap-2 text-gray-700;
     }
 
     .ff-checklist li::before {
@@ -318,19 +273,19 @@
 
 .slides .cloudText, 
 .slides .monthlyText {
-    color: white;
+    color: theme(colors.indigo.400);
 }
 
 .ff-bg-light .slides .cloudText,
 .ff-bg-light .slides .monthlyText {
-    color: theme(colors.gray.800);
+    color: theme(colors.indigo.300);
 }
 
 .slides .selfHostedText,
 .ff-bg-light .slides .selfHostedText,
 .slides .annualText,
 .ff-bg-light .slides .annualText {
-    color: theme(colors.teal.300);
+    color: theme(colors.indigo.700);
 }
 
 /* contains switch buttons */
@@ -352,7 +307,7 @@
     height: 36px;
     margin: 0rem;
     border-radius: 18px;
-    border: 1px solid theme(colors.gray.700);
+    border: 2px solid theme(colors.indigo.200);
     z-index: 0;
     cursor: pointer;
     padding: 0;
@@ -368,7 +323,7 @@
     border-radius: 16px;
     transition-duration: 0.5s;
     --tdur: 0;
-    background-color: theme(colors.gray.700);
+    background-color: theme(colors.indigo.200);
     z-index: -1;
 }
 
@@ -404,15 +359,15 @@
 }
 
 .cloudText, .monthlyText {
-    color: theme(colors.teal.300);
+    color: theme(colors.indigo.700);
 }
 
-.selfHostedText, .annualText {
+.ff-bg-dark .selfHostedText, .ff-bg-dark .annualText {
     color: white;
 }
 
-.ff-bg-light .selfHostedText, .ff-bg-light .annualText {
-    color: theme(colors.gray.800);
+.selfHostedText, .annualText {
+    color: theme(colors.indigo.400);
 }
 
 .hide {
@@ -439,8 +394,6 @@
     }
 
     .company-value h5 {
-        color: theme(colors.teal.500);
-        font-weight: bold;
         font-size: 1.25rem;
         margin-top: 1rem;
         margin-bottom: 3rem;
@@ -460,7 +413,7 @@
     }
 
     .about-values .company-value h5 {
-        color: theme(colors.teal.300);
+        color: theme(colors.indigo.700);
         font-weight: 500;
         margin-top: 0;
         margin-bottom: 0;
@@ -499,8 +452,8 @@
 /* MEET THE TEAM */
 
 .team-headshot {
-    --border-width: 8px;
-    --border-radius: 16px;
+    --border-width: 3px;
+    --border-radius: 8px;
     height: 100%;
     position: relative;
     overflow: hidden;
@@ -510,24 +463,14 @@
     border-top-left-radius: var(--border-radius);
     border-top-right-radius: var(--border-radius);
     border-width: var(--border-width);
-    border-color: black;
+    border-color: theme(colors.indigo.200);
 }
 
-.team-headshot:nth-child(3n-2) img {
-    background: url("/images/team/backing-cloud-1.png"), theme(colors.gray.700);
+.team-headshot img {
+    background: linear-gradient(to bottom, theme(colors.indigo.50), theme(colors.indigo.200));
+    border-bottom: 0;
     background-size: cover;
 }
-
-.team-headshot:nth-child(3n-1) img {
-    background: url("/images/team/backing-cloud-2.png"), theme(colors.teal.700);
-    background-size: cover;
-}
-
-.team-headshot:nth-child(3n) img {
-    background: url("/images/team/backing-cloud-3.png"), theme(colors.red.500);
-    background-size: cover;
-}
-
 
 .member-facts {
     position: absolute;
@@ -535,8 +478,11 @@
     width: 100%;
     height: 0;
     opacity: 0;
-    background-color: #000000f0;
-    color: theme(colors.gray.300);
+    background-color: white;
+    color: theme(colors.gray.800);
+    border-width: var(--border-width);
+    border-bottom: 0;
+    border-color: theme(colors.indigo.200);
     font-weight: 500;
     padding: 24px;
     list-style: circle;
@@ -559,8 +505,9 @@
 
 .member-info {
     position: relative;
-    border-color: black;
-    background-color: theme(colors.gray.800);
+    height: %;
+    border-color: theme(colors.indigo.200);
+    background-color: white;
     text-align: center;
     padding: 12px 24px;
     border-width: var(--border-width);
@@ -570,28 +517,28 @@
 }
 
 .member-info h5 {
-    color: white;
+    /* color: white; */
 }
 
 .team .title {
-    color: white;
+    /* color: white; */
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
 .member-info .title .name {
-    color: white;
+    color: theme(colors.gray.600);
     font-size: 1.5rem;
     line-height: 2rem;
-    font-weight: 600;
+    font-weight: 400;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
 .member-info .title .role {
-    color: theme(colors.gray.400);
+    color: theme(colors.indigo.400);
     font-weight: 300;
     font-size: 1rem;
     margin-top: 8px;
@@ -599,7 +546,7 @@
 
 .team .socials {
     display: flex;
-    border-top: 2px solid theme(colors.gray.700);
+    border-top: 1px solid theme(colors.gray.100);
     margin-top: 1rem;
     padding-top: 1rem;
     justify-content: center;
@@ -611,7 +558,11 @@
 }
 
 .team .socials span a {
-    color: theme(colors.teal.200);
+    color: theme(colors.indigo.400);
+}
+
+.team .socials span a:hover {
+    color: theme(colors.indigo.600);
 }
 
 /*
@@ -622,7 +573,6 @@
 
     .post-title h1,
     .webinar-title h1 {
-        color: white;
         @apply mb-2 text-2xl sm:text-page-h1;
     }
 
@@ -636,7 +586,7 @@
 
     .webinar-title label,
     .post-title label {
-        @apply text-teal-300 text-xs uppercase font-bold;
+        @apply text-indigo-400 text-xs uppercase font-bold;
     }
 }
 
@@ -644,8 +594,12 @@
     @apply pt-6 px-6 md:pb-16 rounded-t-xl bg-gradient-to-b from-white to-gray-100 h-full flex flex-col justify-between;
 }
 
+.deployment-card.white-bg {
+    @apply bg-gradient-to-b from-indigo-50 to-white ;
+}
+
 .deployment-card .title {
-    @apply text-center w-full border-b md:min-h-[72px] flex flex-col items-center justify-center text-gray-400;
+    @apply text-center w-full border-b md:min-h-[72px] flex flex-col items-center justify-center text-indigo-400;
 }
 
 /* CONTACT US & BOOK A DEMO */

@@ -2,7 +2,7 @@
 title: Meet the Team
 layout: layouts/nohero.njk
 ---
-<div class="team w-full pt-16 pb-48 ff-bg-light">
+<div class="team w-full pb-20">
     <div class="container m-auto text-left max-w-4xl">
         <div class="grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-3">
             {%- for member in team | dictsortBy(false, 'order') -%}
@@ -64,10 +64,8 @@ layout: layouts/nohero.njk
     </div>
 </div>
 
-{% include "components/divider-flow--top-red--dark.njk" %}
-
 <!-- Benefits -->
-<div class="about w-full ff-bg-dark px-6 pt-12 pb-24 md:pt-20 md:px-0 md:pb-48">
+<div class="about w-full bg-gray-50 px-6 pt-12 pb-12 md:pt-20 md:px-0">
     <div class="container m-auto text-center max-w-4xl">
         <div>
             <h2 class="mb-4">Working at FlowFuse</h2>
@@ -77,10 +75,8 @@ layout: layouts/nohero.njk
     </div>
 </div>
 
-{% include "components/divider-flow--top-grey.njk" %}
-
 <!-- Company Values -->
-<div class="about w-full ff-bg-mid px-6 pt-12 pb-20 md:px-0 md:pt-20">
+<div class="about w-full px-6 pt-12 pb-20 md:px-0 md:pt-20">
     <div class="container m-auto text-center max-w-4xl">
         <div class="">
             <h1 class="mb-4">Company Values</h1>

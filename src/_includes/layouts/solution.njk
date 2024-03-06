@@ -3,17 +3,17 @@ layout: layouts/base.njk
 sitemapPriority: 0.8
 ---
 <!--Hero Content-->
-<div class="page w-full px-6 pb-24 mt-12 md:px-0 ff-bg-flows">
+<div class="page w-full px-6 mt-12 md:px-0">
     <div class="hero container m-auto text-center max-w-screen-md">
         <div>
-            <h1 class="px-12 md:px-0 text-gray-50 m-auto">
+            <h1 class="px-12 md:px-0 m-auto">
                 {{ title }}
             </h1>
-            <h3 class="mt-4">
+            <h4 class="mt-4 text-indigo-400">
                 {{ subtitle }}
-            </h3>
+            </h4>
         </div>
-        <div class="text-white text-left flex items-center gap-6 mt-12">
+        <div class="flex items-center gap-6 mt-6">
             <div class="hidden sm:block w-64 flex-shrink-0">
                 {% image heroImg, "Hero image for the respective solution", [250] %}
             </div>
@@ -24,8 +24,6 @@ sitemapPriority: 0.8
     </div>
 </div>
 
-{% include "components/divider-flow--default.njk" %}
-
-<div class="w-full ff-bg-light pt-20 px-0 md:pt-32">
+<div class="w-full px-0">
     {{ content | safe }}
 </div>

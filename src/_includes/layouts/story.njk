@@ -7,8 +7,8 @@ layout: layouts/base.njk
     <div class="w-full py-6 bg-cover bg-center md:py-9 md:min-h-[272px] md:flex md:content-center" style="background-image: linear-gradient(to right, #1F2937, #1F293700), url({{ image }})">
         <div class="post-title container m-auto text-center px-6 flex md:max-w-screen-lg">
             <div class="text-left max-w-screen-md md:pr-32">
-                <label>Customer Story</label>
-                <h1 class="text-shadow-header">{{ title }}</h1>
+                <label><span class="text-indigo-200">Customer Story</span></label>
+                <h1 class="text-shadow-header text-white">{{ title }}</h1>
                 {% if subtitle %}
                 <h4>{{ subtitle | safe }}</h4>
                 {% endif %}
@@ -16,7 +16,7 @@ layout: layouts/base.njk
         </div>
     </div>
     {% endif %}
-    <div class="blog nohero w-full pt-6 pb-24 ff-bg-light">
+    <div class="blog nohero w-full pt-6 pb-24 bg-gray-50">
         <div class="container flex flex-col m-auto text-left px-6 md:max-w-screen-lg items-stretch">
             <a class="inline-flex align-center gap-1 mb-5 md:mb-4" href="/customer-stories">
                 {% include "components/icons/chevron-left.svg" %}

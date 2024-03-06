@@ -7,9 +7,9 @@ meta:
     robots: noindex
 ---
 <!--First two sections-->
-<div class="nohero w-full ff-bg-light">
+<div class="nohero w-full">
     <!--Hero Content-->
-    <div class="nodered-pillar-bg w-full pt-12 pb-20 md:pt-6 md:pb-12 border-b-4 border-gray-100">
+    <div class="nodered-pillar-bg w-full pt-12 pb-20 md:pt-6 md:pb-6 border-b-4 border-gray-100">
         <div class="flex flex-col px-6 items-center md:flex-row md:items-start container mx-auto text-center md:text-left max-w-screen-lg">
             <div class="md:my-auto md:py-10 md:max-w-[476px]">
                 <span class="ff-animation-text-carousel px-12 md:px-0 max-w-lg text-gray-800 h-7 text-xl font-bold mx-auto md:mx-0">
@@ -26,33 +26,30 @@ meta:
                 <h5 class="mt-5 text-gray-400 text-lg font-light md:mb-8">
                     Enhanced Node-RED security, collaboration, and features in our fully managed FlowFuse Cloud. Simplify integration, elevate visualization, and streamline workflows effortlessly.
                 </h5>
-                <a class="ff-btn ff-btn--primary hidden md:inline-block" href="{{ site.appURL }}/account/create" onclick="capture('cta-join', {'position': 'landing-signup-campaign'})">START FOR FREE</a>
+                <a class="ff-btn ff-btn--highlight hidden md:inline-block" href="{{ site.appURL }}/account/create" onclick="capture('cta-join', {'position': 'landing-signup-campaign'})">START FOR FREE</a>
             </div>
             <div class="max-w-[500px] text-center md:text-left m-auto">
                 {% image "../../images/node-red-in-cloud.png", "FlowFuse hosting Node-RED", [500] %}
             </div>
-            <a class="ff-btn ff-btn--primary flex flex-col w-full md:hidden" href="{{ site.appURL }}/account/create" onclick="capture('cta-join', {'position': 'landing-signup-campaign'})">START FOR FREE</a>
+            <a class="ff-btn ff-btn--highlight flex flex-col w-full md:hidden" href="{{ site.appURL }}/account/create" onclick="capture('cta-join', {'position': 'landing-signup-campaign'})">START FOR FREE</a>
         </div>   
         <div class="social-proof-logos mx-auto md:-mt-8 w-full text-center max-w-screen-lg px-6">
             <p class="pb-4"><span class="text-gray-500 text-sm">Trusted by</span></p>
             {% include "social-proof.njk" %}
         </div>
     </div>
-    <div class="text-gray-50 -mt-12">
-        {% include "components/dividers/light-grey-curve.svg" %}
-    </div>
 
     <!-- What is Node-RED -->     
-    <div class="w-full ff-bg-light pt-4 px-0 pb-12 ff-prose">
+    <div class="w-full pt-10 px-0 pb-12 ff-prose">
         <div class="text-center mt-6 md:mt-2 mb-6">
             <h2>What is Node-RED?</h2>
         </div>
         <div class="container m-auto max-w-screen-lg prose">
-            <div class="grid px-6 grid-cols-1 md:grid-cols-3 gap-6 sm:gap-x-8 sm:gap-y-0 mb-16">
+            <div class="grid px-6 grid-cols-1 md:grid-cols-3 gap-6 sm:gap-x-8 sm:gap-y-0">
                 <div class="text-left self-start">
                     <h3 class="flex items-center gap-4">
                         <div class="w-16">
-                            {% image "../../images/pictograms/node_catalog_red.png", "Graphics depicting low-code programming.", [64] %}
+                            {% image "./images/pictograms/node_catalog_blue.png", "Graphics depicting low-code programming.", [64] %}
                         </div>
                         <div class="flex flex-col leading-8">
                             Flow Based Programming
@@ -65,7 +62,7 @@ meta:
                 <div class="text-left self-start">
                     <h3 class="flex items-center gap-4">
                         <div class="w-16">
-                            {% image "../../images/pictograms/edge_red.png", "Graphics depicting connectivity and integration.", [64] %}
+                            {% image "./images/pictograms/edge_blue.png", "Graphics depicting connectivity and integration.", [64] %}
                         </div>
                         <div class="flex flex-col leading-8">
                             Digital Services Integration
@@ -78,7 +75,7 @@ meta:
                 <div class="text-left self-start">
                     <h3 class="flex items-center gap-4">
                         <div class="w-16">
-                            {% image "../../images/pictograms/scalable_red.png", "Graphics depicting low-code visualisation.", [64] %}
+                            {% image "./images/pictograms/scalable_blue.png", "Graphics depicting low-code visualisation.", [64] %}
                         </div>
                         <div class="flex flex-col leading-8">
                             Data Visualization
@@ -94,13 +91,12 @@ meta:
 </div>    
 
 <!--Customer Stories Banner-->
-<div class="w-full bg-gray-800 gradient-bg text-center text-teal-50 px-6 pb-10 pt-8 text-lg flex-col flex-row items-center justify-center gap-1 hover:no-underline flex-wrap">
-    <h2>
-        <span class="hover:no-underline text-gray-200">
-            <span class="font-bold text-teal-100">Node-RED use cases</span>
-            from our customer stories
+<div class="w-full text-center px-6 pb-3 pt-8 text-lg flex-col flex-row items-center justify-center gap-1 hover:no-underline flex-wrap">
+    <h3>
+        <span class="hover:no-underline">
+            Node-RED use cases from our customer stories
         </span>
-    </h2>
+    </h3>
     <ul class="mt-6 grid grid-cols-1 md:grid md:grid-cols-3 gap-y-4 pb-4 max-w-screen-lg m-auto">
         {%- for item in collections.stories | sort(attribute='item.date') | reverse | limit(3) -%}
         <li class="w-full max-w-md m-auto my-2 px-2">
@@ -109,13 +105,13 @@ meta:
                     <div>
                         {% if item.data.image %}
                         <div class="relative">
-                            <div class="w-full h-40 ff-image-cover">
+                            <div class="w-full h-40 ff-image-cover scale mb-4 ff-image-rounded object-contain overflow-hidden">
                                 {% set imageSrc = ["./", item.data.image ] | join %}
                                 {% set imageDescription = ["Image representing ", item.data.title] | join %}
                                 {% image imageSrc, imageDescription, [285] %}
                             </div>
                             {% if item.data.logo %}
-                                <div class="w-1/2 h-full absolute left-0 top-0 bg-white flex items-center justify-center object-contain">
+                                <div class="w-1/2 h-full absolute left-0 top-0 bg-white flex items-center justify-center">
                                     {% set imageSrc = ["./", item.data.logo ] | join %}
                                     {% set imageDescription = ["Image representing ", item.data.story.brand, " logo"] | join %}
                                     {% image imageSrc, imageDescription, [285] %}
@@ -126,13 +122,13 @@ meta:
                             {{ item.url | generatePostSVG |safe}}
                         {% endif %}
                     </div>
-                    <h5 class="mt-1 mb-0 font-medium group-hover:underline text-gray-200 font-light text-lg text-left">{{ item.data.title }}</h5>
+                    <h5 class="mt-1 mb-0 font-medium group-hover:underline font-light text-lg text-left">{{ item.data.title }}</h5>
                 </div>
             </a>
         </li>
         {% endfor %}
     </ul>
-    <a href="/customer-stories/" class="w-full text-center text-teal-100 hover:underline py-3 flex flex-row items-center justify-center gap-1 cursor-pointer flex-wrap">
-        See more customer stories {% include "components/icons/chevron-right-sm.svg" %}
-    </a>
 </div>
+<a href="/customer-stories/" class="w-full text-center hover:underline pt-3 pb-8 flex flex-row items-center justify-center gap-1 cursor-pointer flex-wrap">
+    See more customer stories {% include "components/icons/chevron-right-sm.svg" %}
+</a>
