@@ -35,4 +35,4 @@ Once Node-RED is installed and the initial development has been completed, FlowF
 
 ## Wrap up
 
-FlowFuse founding engineers have decades of experience running Node-RED wherever it is valuable. Our product is the collimation of that, and we’re excited to help you become successful in your digitization efforts – even when a firewall is in play.
+FlowFuse founding engineers have decades of experience running Node-RED wherever it is valuable. Our product is the culmination of that, and we’re excited to help you become successful in your digitization efforts – even when a firewall is in play.
