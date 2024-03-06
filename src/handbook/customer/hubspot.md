@@ -36,7 +36,7 @@ The following is a description of each stage.
 
 - Is there a use case FlowFuse can solve?
 - Is there a need, now or in the near future, for 10 or more instances?
-- Is there a timeline within the next 6 months? (project implementation)
+- Is there a timeline for implementation within the next 6 months?
 
 
 ##### From SQL to Opportunity
