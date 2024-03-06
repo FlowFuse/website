@@ -1,7 +1,7 @@
 ---
-title: Installing and operating Node-RED with a VPN
-subtitle: FlowFuse was built to empower Node-RED to run everywhere, also in a VPN
-description: FlowFuse was built to empower Node-RED to run everywhere, also in a VPN
+title: Installing and operating Node-RED behind a firewall
+subtitle: FlowFuse was built to empower Node-RED to run everywhere, also behind a firewall
+description: FlowFuse was built to empower Node-RED to run everywhere, also behind a firewall
 date: 2024-03-06
 authors: ["zeger-jan-van-de-weg"]
 image: # /blog/2024/03/images/node-red-vpn.png
@@ -12,24 +12,25 @@ tags:
     - vpn
 ---
 
-Practitioners using Node-RED often find themselves in a situation where a VPN ([Virtual Private Network](https://en.wikipedia.org/wiki/Virtual_private_network)) is deployed in their organization. The VPN is a fact of life and is generally not controlled by the same people using Node-RED. Given security regions supreme in Industrial IoT (IIoT), and a VPN offers a lot of benefits, the VPN will be deployed more often instead of less, and as such it’s good to understand how you can get the most out of Node-RED when deployed in a VPN.
+Practitioners using Node-RED often find themselves in a situation where a firewall
+is deployed in their organization. This network configuration is a fact of life and is generally not controlled by the same people using Node-RED. Given security reigns supreme in Industrial IoT (IIoT), and a firewall offers a lot of benefits, we anticipate it will be deployed more often in the future, and as such it’s good to understand how you can get the most out of Node-RED when deployed behind a firewall.
 
-## Node-RED installation with a VPN
+## Node-RED installation with a firewall
 
-Generally the normal install procedure for Node-RED requires a connection being made to the NPM servers that host the package. Due to the unaudited nature of NPM, it’s unlikely that IT will agree with a permanent exception for the VPN to have access to it. There’s a couple of actions one can take to install Node-RED anyway.
+Generally the normal install procedure for Node-RED requires a connection being made to the NPM servers that host the package. Due to the unaudited nature of NPM, it’s unlikely that IT will agree with a permanent exception to the firewall to have access to it. There’s a couple of actions one can take to install Node-RED anyway.
 
-First, ask for a temporary exception. Node-RED is installed in a few minutes, so if there’s a set time schedule an exception can be made there’s a regular method available again through collaboration with the network administrator. The second option is leveraging vendor specific package managers. As these are vetted repositories, it’s not uncommon that these gates in the VPN have been created and opened to you. Some vendors supply repositories for major package managers like `apt-get` on Debian/Ubuntu-based systems, or there’s a marketplace approach to install Node-RED like for example the [Rexroth CtrlX with Node-RED in it](https://developer.community.boschrexroth.com/t5/Store-and-How-to/FlowFuse-Node-RED/ba-p/82135). Lastly you could consider downloading the NPM package beforehand and transferring it to your machine within the network. NPM allows installation of local packages which in turn allows you to create applications with Node-RED. This is generally a shadow IT action, and not recommended unless it’s approved.
+First, ask for a temporary exception. Node-RED is installed in a few minutes, so if there’s a set time schedule an exception can be made there’s a regular method available again through collaboration with the network administrator. The second option is leveraging vendor specific package managers. As these are vetted repositories, it’s not uncommon that these gates in the firewall have been created and opened to you. Some vendors supply repositories for major package managers like `apt-get` on Debian/Ubuntu-based systems, or there’s a marketplace approach to install Node-RED like for example the [Rexroth CtrlX with Node-RED in it](https://developer.community.boschrexroth.com/t5/Store-and-How-to/FlowFuse-Node-RED/ba-p/82135). Lastly you could consider downloading the NPM package beforehand and transferring it to your machine within the network. NPM allows installation of local packages which in turn allows you to create applications with Node-RED. This is generally a shadow IT action, and not recommended unless it’s approved.
 
-## FlowFuse and your VPN
+## FlowFuse and your firewall
 
-As FlowFuse can be installed behind your VPN, there’s no requirement to open up a ‘gate’ in your VPN to FlowFuse servers. The safe perimeter provided remains to the outside world. The security aspect remains, though as a Node-RED developer there’s still common tasks you’ll need access to the outside world for.
+As FlowFuse can be installed in a VPN behind a firewall, there’s no requirement to open up a ‘gate’ in your firewall to FlowFuse servers. The safe perimeter provided remains to the outside world. The security aspect remains, though as a Node-RED developer there’s still common tasks you’ll need access to the outside world for.
 
-Consider installing third party nodes to connect your Node-RED instance to virtually any protocol or digital service. There’s over 5000 of these nodes available, and as an organization it’s challenging to keep on top of. Your VPN provides one layer of security that the data you’re accessing remains safe. A second layer of protection is provided by FlowFuse; we’ve introduced a [“Certified Nodes” catalog](https://flowfuse.com/certified-nodes/). These nodes have gone through automated and manual inspection to prevent malicious code making it onto your production systems.
+Consider installing third party nodes to connect your Node-RED instance to virtually any protocol or digital service. There’s over 5000 of these nodes available, and as an organization it’s challenging to keep on top of. Your firewall provides one layer of security that the data you’re accessing remains safe. A second layer of protection is provided by FlowFuse; we’ve introduced a [“Certified Nodes” catalog](https://flowfuse.com/certified-nodes/). These nodes have gone through automated and manual inspection to prevent malicious code making it onto your production systems.
 
 Installing these packages would normally still require you to obtain files from NPM. With FlowFuse however, a cache can be built with only vetted nodes – All other nodes remain unavailable.
 
-Once Node-RED is installed and the initial development has been completed, FlowFuse aims to reduce the maintenance burden on both IT and OT teams too. In the same package cache aforementioned, Node-RED versions can be added. Updating Node-RED to the latest version becomes a job of just a few clicks. Updating your Node-RED instances is even behind a VPN very important, as virtually all breaches are the result of daisy-chaining multiple security vulnerabilities into a high to critical event.
+Once Node-RED is installed and the initial development has been completed, FlowFuse aims to reduce the maintenance burden on both IT and OT teams too. In the same package cache aforementioned, Node-RED versions can be added. Updating Node-RED to the latest version becomes a job of just a few clicks. Updating your Node-RED instances is even behind a firewall very important, as virtually all breaches are the result of daisy-chaining multiple security vulnerabilities into a high to critical event.
 
 ## Wrap up
 
-FlowFuse founding engineers have decades of experience running Node-RED wherever it is valuable. Our product is the collunation of that, and we’re excited to help you become successful in your digitization efforts – even when VPN is in play.
+FlowFuse founding engineers have decades of experience running Node-RED wherever it is valuable. Our product is the collunation of that, and we’re excited to help you become successful in your digitization efforts – even when firewall is in play.
