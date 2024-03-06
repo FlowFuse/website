@@ -9,15 +9,20 @@ meta:
 
 Content creation and blogging are an effective way to communicate with our community. The process for publishing a blog is as follows:
 
-1. Raise an issue for the content in our private [Github repository](https://github.com/FlowFuse/customer){rel="nofollow"}.
-2. If the content is date specific create an 'all day' event on the Google Calendar [FlowFuse Publishing Schedule](https://calendar.google.com/calendar/u/0?cid=Y18yMGFjMmM5MmMwYmE0YTYwNDg4NDE1MjBmMGU2YWE0MGFhZGUxNTlkNThjZGY0ZGMwMjA0NTI4ZjFjMTcxZmQ0QGdyb3VwLmNhbGVuZGFyLmdvb2dsZS5jb20){rel="nofollow"}, include a link to the issue in the event description. If you don't have the permission to create events please ask our Google Workspace admin to give you access.
-3. If you want to work on the content immediately please triage the issue into our [development board](https://github.com/orgs/FlowFuse/projects/1/views/33).
-4. Create the draft blog post in a Google Doc. The document should be stored in the [Marketing -> Content](https://drive.google.com/drive/folders/1sdyVfD29dFE74i7zfmL0Cp9tPmPyK0-8?usp=share_link){rel="nofollow"} folder. Everyone at FlowFuse should be given access to comment on the document.  Add a link to the document in the GitHub issue.
-5. Ask people to review the document draft by sharing it directly with them using the Share button in the document. This will send your reviewers an email notification. 
-6. As a document reviewer, you should leave red-line edits in the document or add comments to the document.
-7. Once the document is finished, create a new branch of the website repository and then follow our standard [development processes](/handbook/development/releases/planning/#development-board). Google Docs has an [extension to convert the document to markdown](https://workspace.google.com/marketplace/app/docs_to_markdown/700168918607?hl=en&pann=docs_addon_widget).
-5. It is OK for you to merge your own PR to main without review where the content is urgent or has been reviewed outside of Git but where it is practical to follow the
-[standard process](/handbook/development/releases/planning/#development-board) we encourage you to do so.
+1. Create an initial issue or tie your blog to one of your scheduled issues [here](https://github.com/orgs/FlowFuse/projects/21/views/1).
+2. Issues should be assigned a date, which should be posted here in this [Github projects](https://github.com/orgs/FlowFuse/projects/21/views/1).
+3. Create a PR requests with your Blog Content.
+4. Assign yourself as an Assignee.
+5. Convert to Draft
+6. No Reviews shall be done until the PR is “Ready for Review”
+7. Assign two reviewers
+    * One Reviewer for Content (ZJ / Grey)
+    * One Reviewer for SEO. (Hasmin / Grey)
+8. Content will be reviewed first.
+9. SEO will be reviewed second.
+10. When both reviews are done, the Author or SEO reviewer can merge. In the event of an external author, SEO/content review will merge.
+11. Once merged, SEO Reviewer will promote on FlowFuse Social channels.
+
 
 ## Blog CMS
 
