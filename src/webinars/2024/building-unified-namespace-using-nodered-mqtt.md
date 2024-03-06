@@ -21,9 +21,9 @@ Enter the Unified Namespace (UNS).  Breaking the ISA-95 chains, UNS makes data a
 
 In this webinar Grey Dziuba, OT Data & Community Strategist at FlowFuse will be joined by UNS expert Kudzai Manditereza, Developer Advocate at HiveMQ to talk about:
 
-How UNS can accelerate innovation 
-How to properly organize your infrastructure for a standard discrete manufacturing plant. 
-How FlowFuse extends the value of the UNS
+- How UNS can accelerate innovation 
+- How to properly organize your infrastructure for a standard discrete manufacturing plant. 
+- How FlowFuse extends the value of the UNS
 
 They will demo how FlowFuse and UNS can empower your manufacturing environment and answer any questions you may have. 
 
