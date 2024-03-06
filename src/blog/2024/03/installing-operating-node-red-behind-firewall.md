@@ -4,7 +4,7 @@ subtitle: FlowFuse was built to empower Node-RED to run everywhere, also behind 
 description: FlowFuse was built to empower Node-RED to run everywhere, also behind a firewall
 date: 2024-03-06
 authors: ["zeger-jan-van-de-weg"]
-image: # /blog/2024/03/images/node-red-vpn.png
+image: /blog/2024/03/images/node-red-vpn.png
 tags:
     - posts
     - flowfuse
