@@ -24,32 +24,32 @@ To ensure that we make the most of Kafka, it's best to start by understanding it
 
 !["Architecture of Kafka"](./images/using_kafka_with_node-red_kafka_architecture.png "Architecture of Kafka")
 
-**1. Topics and Partitions
-Topics:** Imagine topics as folders for organizing data – they act as distinct categories. Kafka arranges information into these topics for systematic storage.
-Partitions: Think of partitions as subdivisions within topics. They enable parallel processing across multiple servers, enhancing fault tolerance and throughput.
+**1. Topics and Partitions**
+- Topics: Imagine topics as folders for organizing data – they act as distinct categories. Kafka arranges information into these topics for systematic storage.
+- Partitions: Think of partitions as subdivisions within topics. They enable parallel processing across multiple servers, enhancing fault tolerance and throughput.
 
 **2. Producers:**
-Producers: Producers are like architects of data flow. They decide where to send records within a topic. This decision can be balanced using a round-robin or directed by a record key for specific purposes, such as maintaining order.
+- Producers: Producers are like architects of data flow. They decide where to send records within a topic. This decision can be balanced using a round-robin or directed by a record key for specific purposes, such as maintaining order.
 
 **3. Brokers:**
-Definition: Brokers are the backbone servers in a Kafka cluster.
-Tasks: Brokers store data, handle requests from both producers and consumers and maintain the integrity and persistence of data. They also manage the critical task of tracking offsets, which determine the position of consumers within partitions.
+- Definition: Brokers are the backbone servers in a Kafka cluster.
+- Tasks: Brokers store data, handle requests from both producers and consumers and maintain the integrity and persistence of data. They also manage the critical task of tracking offsets, which determine the position of consumers within partitions.
 
 **4. Consumers and Consumer Groups:**
-Consumers: These entities read data from brokers. They subscribe to one or more topics and pull data from the specific partitions they are interested in.
-Consumer Groups: Consumers collaborate in groups to scale data processing. Kafka dynamically assigns each consumer in a group a set of partitions from the subscribed topics, ensuring that each partition is processed by only one consumer within the group.
+- Consumers: These entities read data from brokers. They subscribe to one or more topics and pull data from the specific partitions they are interested in.
+- Consumer Groups: Consumers collaborate in groups to scale data processing. Kafka dynamically assigns each consumer in a group a set of partitions from the subscribed topics, ensuring that each partition is processed by only one consumer within the group.
 
 **5. Offsets**
-Definition: Offsets act as unique identifiers for records within a partition. They denote the position of a consumer in the partition.
-Function: As consumers read records, they increment their offset. This allows them to resume processing from where they left off, crucial for handling failures or restarts. Kafka stores offset information in a specialized topic for easy recovery.
+- Definition: Offsets act as unique identifiers for records within a partition. They denote the position of a consumer in the partition.
+- Function: As consumers read records, they increment their offset. This allows them to resume processing from where they left off, crucial for handling failures or restarts. Kafka stores offset information in a specialized topic for easy recovery.
 
 **6. Replication**
-Mechanism: Kafka ensures data durability by replicating partitions across multiple brokers.
+- Mechanism: Kafka ensures data durability by replicating partitions across multiple brokers.
 Replication Factor: This configurable setting determines the number of copies of a partition in the cluster. If one broker fails, another can seamlessly take over, guaranteeing high availability.
 
 
 ## Features of Kafka
-We have now a basic understanding of Kafka. In this section, we will discuss Kafka features which make Kafka stand out as a popular choice for many organizations which makes it more than just another data processing tool.
+Now we have a basic understanding of Kafka. In this section, we will discuss Kafka features which make Kafka stand out as a popular choice for many organizations which makes it more than just another data processing tool.
 
 - **High Throughput and Scalability:** Kafka can handle thousands of messages per second and can scale horizontally and vertically to meet growing data demands without compromising performance.
 - **Fault Tolerance and Reliability:** Built to ensure reliability, Kafka guarantees fault tolerance through replication, safeguarding data against loss in the event of a broker failure. Data redundancy ensures data safety even during hardware failures.
@@ -73,7 +73,7 @@ Now that we have covered the basic components and features of Kafka, let's take 
 **6. Financial Services:** Banks leverage Kafka to process transactions in real-time, enabling immediate fraud detection by analyzing patterns in transaction data as they occur. This enhances overall security and compliance in financial operations.
 
 ## Building a real-time temperature monitoring system with Kafka and Node-RED
-In the rest of this guide, we will create a simple real-time temperature monitoring system using Kafka with Node-RED al. This system will help you understand how to use Kafka in your Node-RED applications. We will cover everything from creating topics to sending and receiving data in Kafka. 
+In the rest of this guide, we will create a simple real-time temperature monitoring system using Kafka with Node-RED. This system will help you understand how to use Kafka in your Node-RED applications. We will cover everything from creating topics to sending and receiving data in Kafka. 
 
 Imagine a temperature sensor in a city. It sends temperature data to Kafka's "Temperature" topic, split into partitions for downtown, suburban, and industrial areas. Producers decide where data goes based on zones. Brokers store and manage data, handling requests and maintaining order through offsets. Replication ensures data safety another server takes over if needed. Consumers, representing city departments, subscribe to "Temperature." They work in groups, each managing a zone for parallel processing. As the sensor keeps sending data, offsets track positions, letting consumers resume from the last reading. Replication guarantees data availability for real-time analysis. 
 
@@ -126,7 +126,8 @@ In this section, we will install Dashboard 2.0, we will display the temperature 
 
 !["Configuring Kafka configuration node"](./images/using_kafka_with_node-red_kafka_configuration.png "Configuring Kafka configuration node")
 
-4. Enable the TLS option if your Kafka broker server is using it for secure communication. 5. After enabling the TLS option click on the edit icon next to `add new tls-config` and upload CA Certificate in PEM format.
+4. Enable the TLS option if your Kafka broker server is using it for secure communication.
+5. After enabling the TLS option click on the edit icon next to `add new tls-config` and upload CA Certificate in PEM format.
 
 !["Configuring tls for kafka"](./images/using_kafka_with_node-red_tls_configuration.png "Configuring tls for kafka")
 
@@ -138,7 +139,7 @@ In this section, we will be setting up environment variables for Kafka configura
 1. Navigate to the instance's setting and then go to the environment section.
 2. Click on the `add variable` button and add variables ( host, port, username and password) for the configuration data that we discussed in the above section. To leverage the ease of configuration provided by the Kafka custom node that we are utilizing, ensure to set only one variable for both host and port in the following format:
 ```
-format:`[{"host":<enter IP address or hostname of your Kafka broker server >,"port":<enter port on which your kafka broker server is listening>}]
+[format:`[{"host":<enter IP address or hostname of your Kafka broker server >,"port":<enter port on which your kafka broker server is listening>}]
 ```
 3. Click on the save button and restart the instance by clicking on the top right Action button and selecting the restart option.
 
