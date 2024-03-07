@@ -209,5 +209,5 @@ Kafka uses system calls before delivering a message. Therefore, the messages are
 Apache Kafka is not a recommended option for storing large sets of data. If the data is stored for a long period, the redundant copies of it are also stored. When this happens the app must be ready to compromise its performance. For this reason, only use Kafka if there is a need to store data for a short period. 
    
 ## Conclusion 
-This guide has covered everything you need to get started with Kafka and Node-RED. Throughout this article, we've built a real-time temperature monitoring system using Kafka and Node-RED to explain practical development, Additionally, we have covered the installation of Kafka, its applications, limitations etc.
+This guide has covered everything you need to get started with Kafka with Node-RED. Throughout this article, we've built a real-time temperature monitoring system using Kafka and Node-RED to explain how you can use Kafka in your Node-RED applications, Additionally, we have covered the installation of Kafka, its applications, limitations etc.
 
