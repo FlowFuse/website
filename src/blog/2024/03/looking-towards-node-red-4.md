@@ -2,7 +2,7 @@
 title: Looking towards Node-RED 4.0 and beyond
 subtitle: A look at what is coming in Node-RED 4.0
 description: A look at what is coming in Node-RED 4.0
-date: 2024-03-06
+date: 2024-03-07
 authors: ["nick-oleary"]
 image: /blog/2024/03/images/looking-towards-node-red-4.png
 tags:
@@ -30,9 +30,9 @@ There are a few things already merged and ready to be released in the first beta
 
 Node-RED already has simple auto-complete on `msg` fields in the editor. We've now extended that to also work with `flow`/`global` context inputs as well as the `env` type for accessing environment variables.
 
-![](./images/nr4-auto-complete.png)
+![Node-RED editor autocompleting properties](./images/nr4-auto-complete.png "Node-RED editor autocompleting properties")
 
-This makes is so much easier to work with these types of properties - being sure you're using something that exists rather than having to switch between different views in the editor to get the names right.
+This makes it so much easier to work with these types of properties - being sure you're using something that exists rather than having to switch between different views in the editor to get the names right.
 
 In the case of env vars, it also shows you where the value was set - useful when you have nested groups and subflows which might be overriding a particular value.
 
@@ -40,13 +40,13 @@ The `msg` auto-complete is still based on a built-in list of common message prop
 
 ### Timestamp formatting
 
-The Inject node has provided the ability to inject a timestamp since the very early days of Node-RED. The value it actually sets is the number of milliseconds since epoch (aka January 1st, 1970). If you're used to working with JavaScript, then this is a perfectly normal way to pass times around. However it isn't always what is needed and flows end up using a Function node to reformat it in some way.
+The Inject node has provided the ability to inject a timestamp since the very early days of Node-RED. The value it actually sets is the number of milliseconds since epoch (aka January 1st, 1970). If you're used to working with JavaScript, then this is a perfectly normal way to pass times around. However, it isn't always what is needed and flows end up using a Function node to reformat it in some way.
 
-With 4.0 we've added options to pick what format the timestamp is generated in at the start. Now, formatting times and dates can be a big can of worms of options. So for this initial release, we've kept it simple by offering three options:
+With 4.0 we've added options to pick what format the timestamp is generated in at the start. Now, formatting times and dates can be a big can of worms of options. So, for this initial release, we've kept it simple by offering three options:
 
-![](./images/nr4-timestamp-formatting.png)
+!["Format options for Node-RED timestamp"](./images/nr4-timestamp-formatting.png "Format options for Node-RED timestamp")
 
- - *milliseconds since ecoch* - the existing option, just more explicitly labelled for what it is
+ - *milliseconds since epoch* - the existing option, just more explicitly labelled for what it is
  - *YYYY-MM-DDTHH:mm:ss.sssZ* - also known as ISO 8601
  - *JavaScript Date Object* - the standard Date object
 
@@ -63,7 +63,7 @@ For those flows that rely on some of the non-standard edge case behaviour of the
 
 ### Customising config nodes in Subflows
 
-This one needs a bit of explaining. Subflows are a way Node-RED lets you create a flow and add multiple resuable instances of it within your flows. For example, a subflow may connect to an MQTT broker and do some standard processing on the messages it received before sending them on. The Subflow can then expose a set of properties that can be customised for each instance. In our example, that could be the topic the MQTT node subscribes to.
+This one needs a bit of explaining. Subflows are a way Node-RED lets you create a flow and add multiple reusable instances of it within your flows. For example, a subflow may connect to an MQTT broker and do some standard processing on the messages it received before sending them on. The Subflow can then expose a set of properties that can be customised for each instance. In our example, that could be the topic the MQTT node subscribes to.
 
 However, in that example, the MQTT node's broker configuration would be locked to the same broker config node in every instance - and that's something we're solving in Node-RED 4.0.
 
@@ -84,6 +84,8 @@ I'll hold off listing them all out here, but there are plenty of other smaller c
 Whilst all of these are great incremental improvements to Node-RED, there are some bigger items we're looking at that will really improve the overall Node-RED experience.
 
 I wrote recently about improving how users can [test their flows](/blog/2024/02/software-development-in-node-red/#testing). This remains something I think we really help make Node-RED stand apart from other low-code solutions. It won't be in the imminent 4.0 release, but it is definitely still on the roadmap for a future release.
+
+### Concurrent editing
 
 Another area we want to improve is the collaboration experience within Node-RED. Working on flows as a team is a key feature of FlowFuse, and we want to make it even easier to do.
 
