@@ -1,0 +1,46 @@
+---
+align: center
+layout: layouts/mql-contact.njk
+title: Request a Quote
+description: <p>Ready to unlock all FlowFuse has to offer?</br> Share what you need, and a quote will be created for you shortly.</p>
+sitemapPriority: 0.75
+meta:
+    description: Request a quote for FlowFuse, the automation platform.
+    keywords: FlowFuse Quote, License FlowFuse
+hubspot:
+    script: "hubspot/hs-form.njk"
+    formId: "5b9d1cfb-f658-43c3-8d4d-a5b1b2802b74"
+    cta: "cta-request-quote"
+    reference: "pricing"
+otherChannels:
+  - title: Talk to an expert first?
+    description: Pick a date and time and we’ll guide you through the purchasing process.
+    buttonText: BOOK A CALL
+    buttonLink: /book-demo
+    image: ./images/pictograms/book-a-demo_blue.png
+    imageAlt: "Graphics depicting a video call."
+  - title: Where you looking to solve some technical issue?
+    description: Check out our Help Center for support, you’ll find all the channels available to solve any issues you’re encountering.
+    buttonText: HELP CENTER
+    buttonLink: /support
+    image: ./images/pictograms/support_blue.png
+    imageAlt: "Graphics depicting a helping hand."
+---
+
+<div class="prose prose-blue container m-auto max-w-4xl px-6 pb-24">
+    <div id="contact-us" class="w-full bg-gray-50 mt-16 pt-0">
+        <div class="w-full bg-gray-50 pb-12">
+            <div class="container max-w-5xl m-auto grid grid-cols-1 md:grid-cols-2 px-6 pt-16 gap-x-16 gap-y-6">
+                <div>
+                    <h4 class="w-full text-center md:text-left">
+                        Request a Quote
+                    </h4>
+                    <p>
+                        Ready to buy a FlowFuse license? Let us know what you need, and receive a quote the next business day!
+                    </p>
+                </div>
+                {% include hubspot.script %}
+            </div>
+        </div>
+    </div>
+</div>
