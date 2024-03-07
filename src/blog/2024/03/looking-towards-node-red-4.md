@@ -83,13 +83,13 @@ I'll hold off listing them all out here, but there are plenty of other smaller c
 
 Whilst all of these are great incremental improvements to Node-RED, there are some bigger items we're looking at that will really improve the overall Node-RED experience.
 
-I wrote recently about improving how users can [test their flows](/blog/2024/02/software-development-in-node-red/#testing). This remains something I think we really help make Node-RED stand apart from other low-code solutions. It's won't be in the imminent 4.0 release, but it is definitely still on the roadmap for a future release.
+I wrote recently about improving how users can [test their flows](/blog/2024/02/software-development-in-node-red/#testing). This remains something I think we really help make Node-RED stand apart from other low-code solutions. It won't be in the imminent 4.0 release, but it is definitely still on the roadmap for a future release.
 
 Another area we want to improve is the collaboration experience within Node-RED. Working on flows as a team is a key feature of FlowFuse, and we want to make it even easier to do.
 
-One of the common complaints is how Node-RED currently handles multiple users editing flows at the same time. Whilst its better than it used to be, it still makes for a very jarring experience when you have to keep merging other users' changes into your own.
+One of the common complaints is how Node-RED currently handles multiple users editing flows at the same time. Whilst it's better than it used to be, it still makes for a very jarring experience when you have to keep merging other users' changes into your own.
 
-Our goal is to make collaboration is simple and natural as possible.
+Our goal is to make collaboration as simple and natural as possible.
 
 There are a wide range of approaches we could take here. For example, a small improvement would be to merge other users' changes in the background without interrupting what you're doing. But I think we do better than that.
 
