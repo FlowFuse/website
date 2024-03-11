@@ -9,6 +9,7 @@ tags:
     - posts
     - flowfuse
     - low-code
+    - citizen development
 ---
 
 When I bring up the potential of low-code platforms shaping the future, I'm genuinely interested in sparking a conversation, not stirring debate for its own sake. I'm curious about your perspective. Do you see traditional coding as irreplaceable, or do you also believe in the shift towards low-code?
