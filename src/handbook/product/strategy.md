@@ -10,9 +10,9 @@ It strategy is ever-changing, it will be revised on a regular basis and we will 
 
 ## Market Vision
 
-See our [company startegy](/handbook/company/strategy.md#the-market)
+See our [company strategy](/handbook/company/strategy.md#the-market).
 
-Click [here](./verticals.md#industrial-iot-platforms) for more details about the relvant market segments.
+Click [here](./verticals.md#industrial-iot-platforms) for more details about the relevant market segments.
 
 ### Market Demand & Positioning
 
