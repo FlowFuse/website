@@ -2,9 +2,9 @@
 title: Using Kafka with Node-Red
 subtitle: Guide to Using Kafka with Node-RED for sending and receiving data.
 description: Guide to Using Kafka with Node-RED for sending and receiving data.
-date: 
+date: 2024-03-26
 authors: ["sumit-shinde"]
-image: 
+image: /blog/2024/03/images/using-kafka-with-node-red.png
 tags:
     - posts
     - node-red
@@ -22,7 +22,7 @@ Apache Kafka is a platform for distributed data streaming that allows for the pu
 ## Understanding Kafka's Core Components and its working
 To ensure that we make the most of Kafka, it's best to start by understanding its core components and how it works before moving to practice. By doing so, we can use it more efficiently and without any confusion.
 
-!["Architecture of Kafka"](./images/using_kafka_with_node-red_kafka_architecture.png "Architecture of Kafka")
+!["Architecture of Kafka"](./images/using-kafka-with-node-red-architecture-v.png "Architecture of Kafka"){data-zoomable}
 
 **1. Topics and Partitions**
 - Topics: Imagine topics as folders for organizing data – they act as distinct categories. Kafka arranges information into these topics for systematic storage.
