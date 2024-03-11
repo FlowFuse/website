@@ -1,7 +1,7 @@
 ---
-title: Low-Code is Better
+title: Why Low-Code is Better
 subtitle: Stop coding in High-Code when it can be done in Low-Code
-description: When any programing language can solve a task, pick a low code tool where applicable.
+description: When any programming language can solve a task, pick a low code tool where applicable.
 date: 2024-03-11
 authors: ["grey-dziuba"]
 image: /blog/2024/03/images/low-code-is-better.png
