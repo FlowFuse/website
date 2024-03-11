@@ -75,4 +75,3 @@ A free trial is currently available.
 The Freemium is not available as it currently doesn't fit FlowFuse, as:
 1. There's no social / viral benefit for FlowFuse
 2. Free trial already allows low-intent users to understand the value
-3. 
