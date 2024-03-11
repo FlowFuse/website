@@ -37,8 +37,8 @@ The idea behind Citizen Development is simple, make programming accessible to mo
 
 If we want to drive meaningful change within our organizations, embracing tools that broaden participation is key. The aim of adopting new standards and tools is to simplify, not complicate. It's about finding better, more accessible ways to work that can accommodate a wider range of skill sets.
 
-## End of Sophistication
+## Simplification
 
-This discussion isn't just about the mechanics of coding, it's about opening up the field to more diverse contributions. Low-code platforms represent a step towards a more inclusive, collaborative future in technology. By lowering barriers to entry, we're not just simplifying coding, we're inviting a broader community to engage, innovate, and drive progress. I look forward to seeing how we can all contribute to this evolving landscape.
+This discussion isn't about the mechanics of coding, it's about opening up the field to more diverse contributions. Low-code platforms represent a step towards a more inclusive, collaborative future in technology. By lowering barriers to entry, we're not just simplifying coding, we're inviting a broader community to engage, innovate, and drive progress. I look forward to seeing how we can all contribute to this evolving landscape.
 
-<!-- As low-code applications advance, and the nuance of which language should be used will become less and less.  When this occurs, a clear pathway for low-code is created.  Will low code replace all, probably not, but one can hope. -->
+<!-- As low-code applications advance, and the nuance of which language should be used becomes less and less.  When this occurs, a clear pathway for low-code is created.  Will low code replace all, probably not, but one can hope. -->
