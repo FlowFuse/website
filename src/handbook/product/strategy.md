@@ -10,11 +10,9 @@ It strategy is ever-changing, it will be revised on a regular basis and we will 
 
 ## Market Vision
 
-**Our strategic goal is to be the leading "Low-Code IIoT Application Platform"**
+See our [company startegy](/handbook/company/strategy.md#the-market)
 
-An IIoT platform is a comprehensive solution that securely collects, integrates, and manages vast volumes of data from IoT endpoints. It's the bridge between Information Technology (IT) and Operational Technology (OT), bringing about a seamless fusion of diverse protocols and data formats, facilitating edge and cloud analytics, and enhancing overall asset management. This digital conduit not only augments traditional OT functionalities but also propels sectors like manufacturing and energy towards a more digitized, efficient future. A robust IIoT platform encapsulates essential elements such as unwavering security, sophisticated automation, and a commitment to sustainability. It fosters an environment where interoperability with a myriad of business applications is not just a feature but a foundational aspect. From meticulous device management and seamless integration to advanced data analytics and application development (see also [IIoT platform definition](https://www.gartner.com/doc/reprints?id=1-2C757S9J&ct=230105&st=sb)).
-
-Click [here](./verticals.md#industrial-iot-platforms) for more details about the "Low-Code IIoT Application Platforms" market.
+Click [here](./verticals.md#industrial-iot-platforms) for more details about the relvant market segments.
 
 ### Market Demand & Positioning
 
@@ -30,6 +28,11 @@ Our market positioning is underpinned by two pivotal hypotheses that address pre
 ## Go to Market (GTM) pillars & initiatives
 
 Our strategic pillars are points aimed at steering our investment and innovation efforts. The initiatives are indication and statement of intent for the next 6 months. All GTM pricing principles can be found [here](./pricing.md).
+
+- [Advancing Enterprise-Readiness](#advancing-enterprise-readiness)
+- [Applications on the edge](#applications-on-the-edge)
+- [Enhanced Integration Capabilities](#enhanced-integration-capabilities)
+- [Data Visualization & Analytics](#data-visualization--analytics)
 
 ### Advancing Enterprise-Readiness
 
