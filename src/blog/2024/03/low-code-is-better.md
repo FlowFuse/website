@@ -42,6 +42,6 @@ If we want to drive meaningful change within our organizations, embracing tools 
 
 This discussion isn't about the mechanics of coding, it's about opening up the field to more diverse contributions. Low-code platforms represent a step towards a more inclusive, collaborative future in technology. By lowering barriers to entry, we're not just simplifying coding, we're inviting a broader community to engage, innovate, and drive progress. I look forward to seeing how we can all contribute to this evolving landscape.
 
-## FlowFuse
+## How FlowFuse Helps
 
 Our goal here at FlowFuse is to keep expanding on the swiss army knife, Node-RED. We strive to elevate Node-RED for professional by providing the tools needed to deploy Node-RED in a safe and secure way. We believe that Low-Code is the future and strive to make Citizen Development a reality.
