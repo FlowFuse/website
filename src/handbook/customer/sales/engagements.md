@@ -4,10 +4,7 @@ navTitle: Engagements & Pricing
 
 # Engagements
 
-FlowFuse has two commercial offerings; self-managed and FlowFuse Cloud. How we
-engage with customers will differentiate based on the install method and size of
-the opportunity. The pre-approved [Price list with volume discounts](https://docs.google.com/spreadsheets/d/1q1OEo_5fr20txl__bJDR1cFrzv3qzvLLXcgEVFq6h68){rel="nofollow"}
-is available for FlowFuse employees.
+Pricing is publicly available at [our pricing page](/pricing/).
 
 ## Generating a Quote and Order Form
 
