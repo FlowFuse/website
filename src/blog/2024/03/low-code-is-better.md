@@ -16,7 +16,7 @@ A common reason why new languages come about is because of two reasons.  They pr
 
 <!--more-->
 
-## My Coding Evolution
+## A Typical Coding Evolution
 
 Every decade seems to introduce something that simplifies coding. For me, in college, it was Python. A classmate was excited about this new programming language that was all about simplicity and readability, especially with its indentation-based syntax. It seemed too simple at first. Yet, over time, Python became a staple in my programming toolbox.
 
