@@ -17,7 +17,10 @@ Have you ever wondered how manufacturing and automotive industries can effective
 Kafka provides a distributed streaming platform that enables the efficient handling of real-time data streams. By leveraging Kafka, we can aggregate, process, and analyze data in real-time seamlessly. However, despite its extensive benefits, Kafka also has some limitations. But there's no need to worry. Throughout this comprehensive guide, we will delve into everything about Kafka, including its pros and cons, its applications in the real world, and how to use it efficiently with Node-RED applications.
 
 ## What exactly is Kafka?
+
 Apache Kafka is a platform for distributed data streaming that allows for the publishing, subscribing, storing, and processing of streams of records in real-time. It is intended to handle data streams from multiple sources and to deliver them to multiple consumers. In essence, it can move large quantities of data in real-time from any source to any destination, simultaneously.
+
+Kafka is also a very good [broker for a UNS architecture](https://flowfuse.com/blog/2024/01/unified-namespace-what-broker/).
 
 ## Understanding Kafka's Core Components and its working
 To ensure that we make the most of Kafka, it's best to start by understanding its core components and how it works before moving to practice. By doing so, we can use it more efficiently and without any confusion.
