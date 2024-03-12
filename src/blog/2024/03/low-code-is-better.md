@@ -12,7 +12,7 @@ tags:
     - citizen development
 ---
 
-A common reason why new languages come about is because of two reasons.  They provide a feature that is missing in the existing programming languages, or the other option is a tool that is easier to learn and use.  The latter often functions like a swiss army knife with each iteration including more and more tools.  The journey of low-code is like a swiss army knife, the perfect tool for the Citizen Developer.
+There are two common reasons why new languages come about.  They provide a feature missing in the existing programming languages, or it is a tool that is easier to learn and use.  The latter often functions like a swiss army knife with each iteration including more and more tools.  The journey of low-code is like a swiss army knife, the perfect tool for the Citizen Developer.
 
 <!--more-->
 
