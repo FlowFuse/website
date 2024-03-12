@@ -41,8 +41,9 @@ The ideal lead has adopted Node-RED already and is in the following industries:
 1. Building management
 1. Mining, Oil & Gas, and renewable energy
 
-Due the to breath of the Node-RED community and the industries they apply it in,
-FlowFuse does not qualify customers based on industry.
+Due to the breadth of the Node-RED community and the industries they
+apply it in, FlowFuse does not qualify customers based on industry.
+
 
 ## Execution on our belief and mission
 
