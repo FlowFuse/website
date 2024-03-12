@@ -12,7 +12,7 @@ tags:
     - citizen development
 ---
 
-When I bring up the potential of low-code platforms shaping the future, I'm genuinely interested in sparking a conversation, not stirring debate for its own sake. I'm curious about your perspective. Do you see traditional coding as irreplaceable, or do you also believe in the shift towards low-code?
+A common reason why new languages come about is because of two reasons.  They provide a feature that is missing in the existing programming languages, or the other option is a tool that is easier to learn and use.  The latter often functions like a swiss army knife with each iteration including more and more tools.  The journey of low-code is like a swiss army knife, the perfect tool for the Citizen Developer.
 
 <!--more-->
 
@@ -42,4 +42,6 @@ If we want to drive meaningful change within our organizations, embracing tools 
 
 This discussion isn't about the mechanics of coding, it's about opening up the field to more diverse contributions. Low-code platforms represent a step towards a more inclusive, collaborative future in technology. By lowering barriers to entry, we're not just simplifying coding, we're inviting a broader community to engage, innovate, and drive progress. I look forward to seeing how we can all contribute to this evolving landscape.
 
-<!-- As low-code applications advance, and the nuance of which language should be used becomes less and less.  When this occurs, a clear pathway for low-code is created.  Will low code replace all, probably not, but one can hope. -->
+## FlowFuse
+
+Our goal here at FlowFuse is to keep expanding on the swiss army knife, Node-RED. We strive to elevate Node-RED for professional by providing the tools needed to deploy Node-RED in a safe and secure way. We believe that Low-Code is the future and strive to make Citizen Development a reality.
