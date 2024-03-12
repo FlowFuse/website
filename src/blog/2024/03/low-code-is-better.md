@@ -44,4 +44,6 @@ This discussion isn't about the mechanics of coding, it's about opening up the f
 
 ## How FlowFuse Helps
 
-Our goal here at FlowFuse is to keep expanding on the swiss army knife, Node-RED. We strive to elevate Node-RED for professional by providing the tools needed to deploy Node-RED in a safe and secure way. We believe that Low-Code is the future and strive to make Citizen Development a reality.
+Our goal here at FlowFuse is to keep expanding on the Swiss army knife, Node-RED. We strive to elevate Node-RED for professionals by providing the tools needed to deploy Node-RED in a safe and secure way.  For example by default, the editor for Node-RED is protected using your FlowFuse user credentials. You can also use SSO to further protect your user accounts and give access to Node-RED to your team members. All traffic to FlowFuse and your Node-RED instances is protected by HTTPS. FlowFuse has set up the domain name and manages the certificates so you can spend time on your flows rather than configuring security.
+
+We believe that Low-Code is the future and strive to make Citizen Development a reality. To learn more [schedule a call with one of our experts. ](https://flowfuse.com/free-consultation/)
