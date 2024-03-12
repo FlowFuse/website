@@ -32,7 +32,7 @@ Our strategic pillars are points aimed at steering our investment and innovation
 - [Advancing Enterprise-Readiness](#advancing-enterprise-readiness)
 - [Applications on the edge](#applications-on-the-edge)
 - [Enhanced Integration Capabilities](#enhanced-integration-capabilities)
-- [Data Visualization & Analytics](#data-visualization--analytics)
+- [Data Visualization & Analytics](#data-visualization-&-analytics)
 
 ### Advancing Enterprise-Readiness
 
