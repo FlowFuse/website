@@ -1,7 +1,6 @@
 ---
-layout: layouts/ebook.njk
 title: The Ultimate Beginner Guide to a Professional <span class="inline-block">Node-RED</span>
-image: images/beginner-guide-node-red.png
+image: /ebooks/images/beginner-guide-node-red.png
 meta:
   description: Explore the world of Node-RED with our comprehensive beginner's ebook. From its history to securing your flows, get all you need to start building. Download for free!
 hubspot:

@@ -25,7 +25,8 @@ hubspot:
                     <div class="absolute top-0 right-0 transform translate-x-[-15%] md:translate-x-[-30%] rounded-b-md bg-white md:px-4 px-2 py-1">
                         <label class="text-red-600 max-md:text-sm">eBook</label>
                     </div>
-                    {% image image, "eBook cover image with title and FlowFuse logo", [302] %}
+                    {% set imageSrc = ["./", image ] | join %}
+                    {% image imageSrc, "eBook cover image with title and FlowFuse logo", [302] %}
                 </div>
                 <div class="mb-4 hero-img prose ff-prose">
                     <h5>Table of Contents</h5>
