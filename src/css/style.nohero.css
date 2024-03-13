@@ -76,7 +76,8 @@
 }
 
 .ff-prose .prose p,
-.ff-prose .prose li {
+.ff-prose .prose li,
+.ff-prose li {
     font-weight: 300;
 }
 
