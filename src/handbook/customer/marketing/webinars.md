@@ -81,7 +81,7 @@ Webinar pages follow a fixed structure, you can see plenty of examples [here](ht
 title: "DevOps for Node-RED: An Introduction to FlowFuse"
 subtitle: Join FlowFuse's CTO Nick O'Leary for an introduction to FlowFuse and how it provides DevOps for Node-RED.
 video: 47EvfmJji-k
-image: /images/webinars/webinar-nr-5mins.jpg
+image: /images/webinars/intro-to-node-red-5-minutes-to-your-first-program-webinar-feb-2023.jpg
 date: YYYY-MM-DD
 time: HH:MM GMT (HH:MM ET) 
 duration: MM

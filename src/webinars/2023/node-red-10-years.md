@@ -1,7 +1,7 @@
 ---
 title: "Celebrate 10 Years of Node-RED and What’s New in 3.1 and Beyond"
 subtitle: Join FlowFuse's CTO Nick O'Leary and co-creator of Node-RED to learn about what's new in the new release of Node-RED and what is next for the community.
-image: /images/webinars/webinar-september.jpg
+image: /images/webinars/celebrate-10-years-of-node-red-webinar-september.jpg
 
 date: 2023-09-21
 time: 17:00 CET (11:00am ET) 
