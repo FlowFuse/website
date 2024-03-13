@@ -58,7 +58,7 @@ Now that we've gained a foundational understanding of Kafka, let's explore the k
 
 - **High Throughput and Scalability:** Kafka can handle thousands of messages per second and can scale horizontally and vertically to meet growing data demands without compromising performance.
 - **Fault Tolerance and Reliability:** Built to ensure reliability, Kafka guarantees fault tolerance through replication, safeguarding data against loss in the event of a broker failure. Data redundancy ensures data safety even during hardware failures.
-- **Real-Time Processing and Low Latency:** Kafka's real-time processing ensures low latency for instant data analysis, critical for real-time decision-making.
+- **Real-Time Processing and Low Latency:** Kafka's real-time processing ensures low latency for instant data analysis, which is critical for real-time decision-making.
 
 ## Applications of Kafka
 
