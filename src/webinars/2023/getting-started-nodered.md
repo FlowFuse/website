@@ -2,7 +2,7 @@
 title: "Introduction to Node-RED: 5 minutes to your first program"
 subtitle: Join Rob Marcer, Developer Educator at FlowFuse, for a webinar on getting started with Node-RED
 video: 47EvfmJji-k
-image: /images/webinars/webinar-nr-5mins.jpg
+image: /images/webinars/intro-to-node-red-5-minutes-to-your-first-program-webinar-feb-2023.jpg
 date: 2023-02-23
 time: 16:00 GMT (11:00 ET) 
 duration: 60

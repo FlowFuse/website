@@ -1,7 +1,7 @@
 ---
 title: "Getting Started with OPC-UA and Node-RED"
 subtitle: Discover how easy it is to build an OPC-UA client using Node-RED
-image: /images/webinars/webinar-august.jpg
+image: /images/webinars/getting-started-with-opc-ua-and-node-red-webinar-august.jpg
 date: 2023-08-30
 time: 17:00 CEST (11:00 ET) 
 duration: 60

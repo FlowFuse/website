@@ -1,7 +1,7 @@
 ---
 title: "Building Node-RED Applications for Scalability and High Availability"
 subtitle: Join Marian Demme, FlowFuse Product Manger, to learn how to build Node-RED applications that can scale and be highly available.
-image: /images/webinars/webinar-june.jpg
+image: /images/webinars/building-node-red-applications-for-scalability-and-high-availability-webinar-june.jpg
 video: yOLvdAbopUg
 date: 2023-06-22
 time: 17:00 CEST (11:00 ET) 

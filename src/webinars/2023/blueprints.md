@@ -1,7 +1,7 @@
 ---
 title: "FlowFuse Blueprints: Your Pathway to Enhanced Manufacturing"
 subtitle: Join FlowFuse's Marian Demme to learn about Unlocking the Power of Node-Red for Modern Manufacturing.
-image: /images/webinars/webinar-november23.jpg
+image: /images/webinars/flowFuse-blueprints-your-pathway-enhanced-manufacturing-webinar-nov-23.jpg
 date: 2023-11-30
 time: 17:00 CET (11:00am ET) 
 duration: 60
