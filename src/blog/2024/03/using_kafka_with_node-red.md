@@ -1,8 +1,8 @@
 ---
-title: Using Kafka with Node-Red - Part 1
-subtitle: Getting started with Kafka.
-description: Getting started with Kafka.
-date: 2024-03-26
+title: How Kafka is applied in manufacturing
+subtitle: An overview of Kafka -- How it's applied for industrial applications, and how it works
+description: An overview of Kafka -- How it's applied for industrial applications, and how it works
+date: 2024-03-15
 authors: ["sumit-shinde"]
 image: /blog/2024/03/images/using-kafka-with-node-red.png
 tags:
