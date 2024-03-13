@@ -46,7 +46,7 @@ Kafka architecture is designed to provide a scalable and fault-tolerant platform
 
 **5. Offsets**
 - Definition: Offsets act as unique identifiers for records within a partition. They denote the position of a consumer in the partition.
-- Function: As consumers read records, they increment their offset. This allows them to resume processing from where they left off, crucial for handling failures or restarts. Kafka stores offset information in a specialized topic for easy recovery.
+- Function: As consumers read records, they increment their offset. This allows them to resume processing from where they left off, which is crucial for handling failures or restarts. Kafka stores offset information in a specialized topic for easy recovery.
 
 **6. Replication**
 - Mechanism: Kafka ensures data durability by replicating partitions across multiple brokers.
