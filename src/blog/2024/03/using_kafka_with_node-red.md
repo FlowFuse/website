@@ -90,7 +90,7 @@ As beneficial as Kafka is in various industries, it also presents certain limita
 
 4. Message Tweaking: Kafka uses system calls before delivering a message. Therefore, the messages are sensitive to modifications. Tweaking messages reduces the performance of Kafka to a greater extent. The performance is not impacted only under the condition of not changing the message. 
 
-5. Data Storage: Apache Kafka is not a recommended option for storing large sets of data. If the data is stored for a long period, the redundant copies of it are also stored. When this happens the app must be ready to compromise its performance. For this reason, only use Kafka if there is a need to store data for a short period. 
+5. Data Storage: Apache Kafka is not a recommended option for storing large sets of data. If the data is stored for a long period, the redundant copies of it are also stored. When this happens, the app must be ready to compromise its performance. For this reason, only use Kafka if there is a need to store data for a short period. 
 
 ## Conclusion 
 
