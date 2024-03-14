@@ -144,7 +144,6 @@ pre code {
 
 .prose code {
     font-weight: 500;
-    color: theme(colors.red.700);
     padding-left: 0.25rem;
     padding-right: 0.25rem;
 }
@@ -192,14 +191,14 @@ dl.message-properties {
     vertical-align: top;
   }
 
-.ff-blue-card {
+  .ff-blue-card {
     box-shadow:  inset 13px 13px 26px theme('colors.indigo.100'), 
                  inset -13px -13px 26px theme('colors.white'), 
                  10px 10px 26px theme('colors.indigo.100'), 
                  -10px -10px 26px theme('colors.white');
     @apply m-auto text-center sm:text-left p-8 max-w-md sm:max-w-screen-lg bg-indigo-50 border border-white rounded-lg mt-6;
-}
-  
+  }
+
 /*
     Blog
 */
@@ -651,15 +650,20 @@ h4:hover .header-anchor {
     display: inline-block;
     padding: 8px 18px;
     font-weight: 400;
-    border: 2px solid theme(colors.gray.200);
+    border: 1px solid theme(colors.gray.200);
     border-radius: 24px;
+    transition: all 0.5s ease;
 }
 
 .feature-button.active,
 .solution-button.active {
     background-color: theme(colors.indigo.100);
     color: theme(colors.indigo.800);
-    border: 2px solid theme(colors.indigo.200);
+    border: 1px solid theme(colors.indigo.200);
+    box-shadow:  inset 4px 4px 9px theme('colors.indigo.100'), 
+                 inset -4px -4px 9px theme('colors.white'), 
+                 3px 3px 9px theme('colors.indigo.100'), 
+                 -3px -3px 9px theme('colors.white');
 }
 
 .feature,
