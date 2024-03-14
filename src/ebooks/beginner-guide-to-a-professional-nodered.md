@@ -2,7 +2,10 @@
 title: The Ultimate Beginner Guide to a Professional <span class="inline-block">Node-RED</span>
 image: /images/ebooks/beginner-guide-node-red.png
 meta:
-  description: Explore the world of Node-RED with our comprehensive beginner's ebook. From its history to securing your flows, get all you need to start building. Download for free!
+  title: The Ultimate Beginner guide to a Professional Node-RED
+  description: Here's your free guide to an enterprise-ready Node-RED. Learn all about Node-RED history to securing your flows and dashboard data visualization. Download now!
+  Keywords: Node-RED guide 
+  
 hubspot:
   formId: 922ba9f5-223e-4af3-890f-97afce05f290
   cta: "download-ebook"
