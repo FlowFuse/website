@@ -9,4 +9,4 @@ We're excited to announce the introduction of the Instance Protection Mode, an e
 
 A key aspect of Instance Protection Mode is the exclusive control it grants Owners over the execution of DevOps pipelines targeting protected instances. This means: Only Owners can initiate and execute pipelines.
 
-The Instance Protection Mode is available for all our Teams and Enterprise Tier customers.
+The Instance Protection option can be found under the Instance settings view for all our Teams and Enterprise Tier customers.
