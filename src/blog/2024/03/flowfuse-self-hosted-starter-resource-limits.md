@@ -1,7 +1,7 @@
 ---
 title: FlowFuse Open Source Starter Tier Resource Limits
-subtitle: FlowFuse was built to empower Node-RED to run everywhere, even behind a firewall
-description: FlowFuse was built to empower Node-RED to run everywhere, even behind a firewall
+subtitle: The first 5 Node-RED runtimes are part of the starter package going forward
+description: The first 5 Node-RED runtimes are part of the starter package going forward
 date: 2024-03-14
 authors: ["zeger-jan-van-de-weg"]
 image: # /blog/2024/03/images/node-red-vpn.png
