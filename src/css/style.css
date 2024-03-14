@@ -197,8 +197,8 @@ dl.message-properties {
                  10px 10px 26px theme('colors.indigo.100'), 
                  -10px -10px 26px theme('colors.white');
     @apply m-auto text-center sm:text-left p-8 max-w-md sm:max-w-screen-lg bg-indigo-50 border border-white rounded-lg mt-6;
-}
- 
+  }
+
 /*
     Blog
 */
