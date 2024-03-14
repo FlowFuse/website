@@ -17,7 +17,7 @@ Have you ever wondered how manufacturing and automotive industries can effective
 
 Kafka provides a distributed streaming platform that enables the efficient handling of real-time data streams. By leveraging Kafka, we can aggregate, process, and analyze data in real-time seamlessly. This guide provides a high-level overview of Kafka, covering its definition, components, functionality, applications, and limitations.
 
-## What exactly is Kafka?
+## What is Kafka?
 
 Apache Kafka is a platform for distributed data streaming that allows for the publishing, subscribing, storing, and processing of streams of records in real-time. It is intended to handle data streams from multiple sources and to deliver them to multiple consumers. In essence, it can move large quantities of data in real-time from any source to any destination, simultaneously.
 
