@@ -30,6 +30,9 @@ module.exports = {
                         h6: {
                             fontWeight: '500',
                         },
+                        code: {
+                            color: theme('colors.red.700'),
+                        },
                     },
                 },
             }),
