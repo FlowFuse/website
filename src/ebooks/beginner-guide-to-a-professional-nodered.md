@@ -1,5 +1,5 @@
 ---
-title: The Ultimate Beginner Guide to a Professional <span class="inline-block">Node-RED</span>
+contentTitle: The Ultimate Beginner Guide to a Professional <span class="inline-block">Node-RED</span>
 image: /images/ebooks/beginner-guide-node-red.png
 meta:
   title: The Ultimate Beginner guide to a Professional Node-RED
