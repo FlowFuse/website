@@ -9,15 +9,16 @@
                 {%- endfor %}
             </div>
             <div class="ff-blog-tile">
-                {% if item.data.image %}
-                    <div class="w-full h-auto">
+                <div class="w-full h-auto">
+                    {% if item.data.image %}
                         {% set imageSrc = ["./", item.data.image ] | join %}
                         {% set imageDescription = ["Image representing ", item.data.title] | join %}
-                        {% image imageSrc, imageDescription, [285] %}
-                    </div>
-                {% else %}
-                    {{ item.url | generatePostSVG | safe }}
-                {% endif %}
+                    {% else %}
+                        {% set imageSrc = "./images/og-blog.jpg" %}
+                        {% set imageDescription = "Image with logo and the slogan: Elevate Node-RED with Flowfuse" %}
+                    {% endif %}
+                    {% image imageSrc, imageDescription, [285] %}
+                </div>
             </div>
             <h3 class="mt-1 mb-0 font-medium group-hover:underline">{{ item.data.title }}</h3>
         </div>

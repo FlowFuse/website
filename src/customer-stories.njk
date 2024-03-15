@@ -16,22 +16,26 @@ meta:
                 <div class="">
                     <div>
                         {% if item.data.image %}
-                        <div class="relative border-b">
-                            <div class="w-full h-52 sm:h-48 ff-image-cover ff-image-top-rounded">
-                                {% set imageSrc = ["./", item.data.image ] | join %}
-                                {% set imageDescription = ["Image representing ", item.data.title] | join %}
-                                {% image imageSrc, imageDescription, [285] %}
-                            </div>
-                            {% if item.data.logo %}
-                                <div class="w-1/2 h-full absolute left-0 top-0 bg-white flex items-center justify-center object-contain rounded-tl-lg">
-                                    {% set imageSrc = ["./", item.data.logo ] | join %}
-                                    {% set imageDescription = ["Image representing ", item.data.story.brand, " logo"] | join %}
+                            <div class="relative border-b">
+                                <div class="w-full h-52 sm:h-48 ff-image-cover ff-image-top-rounded">
+                                    {% set imageSrc = ["./", item.data.image ] | join %}
+                                    {% set imageDescription = ["Image representing ", item.data.title] | join %}
                                     {% image imageSrc, imageDescription, [285] %}
                                 </div>
+                                {% if item.data.logo %}
+                                    <div class="w-1/2 h-full absolute left-0 top-0 bg-white flex items-center justify-center object-contain rounded-tl-lg">
+                                        {% set imageSrc = ["./", item.data.logo ] | join %}
+                                        {% set imageDescription = ["Image representing ", item.data.story.brand, " logo"] | join %}
+                                        {% image imageSrc, imageDescription, [285] %}
+                                    </div>
                                 {% endif %}
-                        </div>    
+                            </div>    
                         {% else %}
-                            {{ item.url | generatePostSVG |safe}}
+                            <div class="w-full h-52 sm:h-48 ff-image-cover ff-image-top-rounded">
+                                {% set imageSrc = "./images/og-blog.jpg" %}
+                                {% set imageDescription = "Image with logo and the slogan: Elevate Node-RED with Flowfuse" %}
+                                {% image imageSrc, imageDescription, [285] %}
+                            </div>
                         {% endif %}
                     </div>
                     <div class="flex flex-col mt-1 mb-0 p-5 pt-3 gap-2">

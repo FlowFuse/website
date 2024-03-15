@@ -95,18 +95,17 @@
         display: flex;
     }
     .webinar-tile label {
-        text-shadow: 0 0 10px black;
         @apply absolute left-3 bottom-3 w-11/12 text-white;
     }
     .webinar-tile label h4 {
         font-size: 1.5rem;
-        font-weight: 500;
+        font-weight: 400;
         margin-bottom: 0.5rem;
         @apply text-white;
     }
     .webinar-tile label time {
         font-size: 1rem;
-        font-weight: 500;
+        font-weight: 300;
         @apply text-white;
     }
     .webinar time:not(:first-child),

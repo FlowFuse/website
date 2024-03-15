@@ -32,15 +32,16 @@ hubspot:
                 </div>
                 <div class="flex flex-col md:flex-row">
                     <div class="pr-2 md:w-1/3">
-                        {% if item.data.image %}
-                            <div class="w-full h-auto mb-10">
+                        <div class="w-full h-auto mb-10">
+                            {% if item.data.image %}
                                 {% set imageSrc = ["./", item.data.image ] | join %}
                                 {% set imageDescription = ["Image representing ", item.data.title] | join %}
-                                {% image imageSrc, imageDescription, [285] %}
-                            </div>
-                        {% else %}
-                            {{ item.url | generatePostSVG |safe}}
-                        {% endif %}
+                            {% else %}
+                                {% set imageSrc = "./images/og-blog.jpg" %}
+                                {% set imageDescription = "Image with logo and the slogan: Elevate Node-RED with Flowfuse" %}
+                            {% endif %}
+                            {% image imageSrc, imageDescription, [285] %}
+                        </div>
                     </div>
                     <div class="flex flex-col justify-between md:w-2/3 md:px-2">
                         <div>
@@ -62,15 +63,16 @@ hubspot:
                 <div class="">
                     <time class="block text-xs mb-2" value="{{ item.date }}" class="text-gray-400">{{ item.date | shortDate }}</time>
                     <div>
-                        {% if item.data.image %}
-                            <div class="w-full h-auto mb-4">
+                        <div class="w-full h-auto mb-4">
+                            {% if item.data.image %}
                                 {% set imageSrc = ["./", item.data.image ] | join %}
                                 {% set imageDescription = ["Image representing ", item.data.title] | join %}
-                                {% image imageSrc, imageDescription, [285] %}
-                            </div>
-                        {% else %}
-                            {{ item.url | generatePostSVG | safe }}
-                        {% endif %}
+                            {% else %}
+                                {% set imageSrc = "./images/og-blog.jpg" %}
+                                {% set imageDescription = "Image with logo and the slogan: Elevate Node-RED with Flowfuse" %}
+                            {% endif %}
+                            {% image imageSrc, imageDescription, [285] %}
+                        </div>
                     </div>
                     <h3 class="mt-1 mb-0 font-medium group-hover:underline">{{ item.data.title }}</h3>
                 </div>

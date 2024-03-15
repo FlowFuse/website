@@ -1,7 +1,7 @@
 ---
 title: "Enterprise-grade Edge Device Fleet Management with balena and FlowFuse"
 subtitle: Join FlowFuse's Grey Dziuba and balena's Marc Pous to learn about Fleet Management.
-image: /images/webinars/enterprise-grade-edge-device-fleet-management-balena-and-flowfuse-webinar-january-2024.jpg
+image: #/images/webinars/enterprise-grade-edge-device-fleet-management-balena-and-flowfuse-webinar-january-2024.jpg
 date: 2024-01-25
 time: 17:00 CET (11:00am ET) 
 duration: 60

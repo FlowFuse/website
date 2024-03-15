@@ -46,16 +46,17 @@
                             title="YouTube video player" frameborder="0"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                             allowfullscreen></iframe>
-                        {% elif image %}
-                            <div class="w-full h-auto">
-                                {% set imageSrc = ["./", image] | join %}
-                                {% set imageDescription = ["Image representing ", title] | join %}
-                                {% image imageSrc,
-                                imageDescription,
-                                [560] %}
-                            </div>
                         {% else %}
-                            {{ page.url | generatePostSVG | safe }}
+                            <div class="w-full h-auto">
+                                {% if image %}
+                                    {% set imageSrc = ["./", image] | join %}
+                                    {% set imageDescription = ["Image representing ", title] | join %}
+                                {% else %}
+                                    {% set imageSrc = "./images/og-blog.jpg" %}
+                                    {% set imageDescription = "Image with logo and the slogan: Elevate Node-RED with Flowfuse" %}
+                                {% endif %}
+                                {% image imageSrc, imageDescription, [560] %}
+                            </div>
                         {% endif %}
                     </div>
                     {{ content | safe }}

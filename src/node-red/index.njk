@@ -149,24 +149,25 @@ sitemapPriority: 0.8
             <a href="{{ item.url }}" class="w-full flex flex-col group hover:no-underline">
                 <div>
                     <div>
-                        {% if item.data.image %}
                         <div class="relative">
                             <div class="w-full h-40 ff-image-cover scale mb-4 ff-image-rounded object-contain overflow-hidden">
-                                {% set imageSrc = ["./", item.data.image ] | join %}
-                                {% set imageDescription = ["Image representing ", item.data.title] | join %}
+                                {% if item.data.image %}
+                                    {% set imageSrc = ["./", item.data.image ] | join %}
+                                    {% set imageDescription = ["Image representing ", item.data.title] | join %}
+                                    {% if item.data.logo %}
+                                        <div class="w-1/2 h-full absolute left-0 top-0 bg-white flex items-center justify-center">
+                                            {% set logoSrc = ["./", item.data.logo ] | join %}
+                                            {% set logoDescription = ["Image representing ", item.data.story.brand, " logo"] | join %}
+                                            {% image logoSrc, logoDescription, [285] %}
+                                        </div>
+                                    {% endif %}
+                                {% else %}
+                                    {% set imageSrc = "./images/og-blog.jpg" %}
+                                    {% set imageDescription = "Image with logo and the slogan: Elevate Node-RED with Flowfuse" %}
+                                {% endif %}
                                 {% image imageSrc, imageDescription, [285] %}
                             </div>
-                            {% if item.data.logo %}
-                                <div class="w-1/2 h-full absolute left-0 top-0 bg-white flex items-center justify-center">
-                                    {% set imageSrc = ["./", item.data.logo ] | join %}
-                                    {% set imageDescription = ["Image representing ", item.data.story.brand, " logo"] | join %}
-                                    {% image imageSrc, imageDescription, [285] %}
-                                </div>
-                                {% endif %}
-                        </div>    
-                        {% else %}
-                            {{ item.url | generatePostSVG |safe}}
-                        {% endif %}
+                        </div>
                     </div>
                     <h5 class="mt-1 mb-0 font-medium group-hover:underline font-light text-lg text-left">{{ item.data.title }}</h5>
                 </div>

@@ -19,8 +19,6 @@ const spacetime = require("spacetime");
 const { minify } = require("terser");
 const codeowners = require('codeowners');
 const schema = require("@quasibit/eleventy-plugin-schema");
-
-const heroGen = require("./lib/post-hero-gen.js");
 const imageHandler = require('./lib/image-handler.js')
 const site = require("./src/_data/site");
 const coreNodeDoc = require("./lib/core-node-docs.js");
@@ -201,10 +199,6 @@ module.exports = function(eleventyConfig) {
         const content = new String(str);
         return "<p>"+content.split(/\.\n/).join(".</p><p>")+"</p>"
     });
-
-    eleventyConfig.addFilter("generatePostSVG", function(id) {
-        return heroGen(""+id)
-    })
 
     eleventyConfig.addFilter("toAbsoluteUrl", function(url) {
         return new URL(url, site.baseURL).href;

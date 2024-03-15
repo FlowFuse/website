@@ -1,6 +1,6 @@
 ---
 title: Leveraging Node-RED and FlowFuse to Revolutionize Irrigation
-image: /images/stories/pidd-view.png
+image: #/images/stories/pidd-view.png
 date: 2023-12-29
 logo:
 hubspot:
