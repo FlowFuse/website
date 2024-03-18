@@ -23,6 +23,10 @@ Have you ever wanted to have an extra layer of protection for your Node-RED inst
 > All you have to do is go inside of your instances. You can start from applications and look for that particular instance that you would like to protect. Click on the instance, go to settings, clicked on "Protect Instance," and select "Enable Protection Mode."
 > You'll notice, up at the top right, that it says "Protected." To have the privileges to enable Protection Mode, travel over to "Members." If you want to create a new member that has access, they must have a type "Owner" to be able to enable and disable Protection Mode.
 
+!["FlowFuse Instance Protection Mode"](./images/node-red-protect-instance-flowfuse.png "FlowFuse Instance Protection Mode"){data-zoomable}
+
+# Step by Step Guide to Instance Protection Mode
+
 ## Step 1: Access Your Instances
 First, navigate to your list of applications to find the specific instance you wish to protect.
 

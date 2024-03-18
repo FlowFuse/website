@@ -22,6 +22,8 @@ Often, when authenticating between machines, bearer authentication is a better c
 > Now, the first step we need to do is navigate over to the applications. What we're going to do is select the instance in which we want to create a token for. Go to Settings > Security > Select "FlowFuse User Authentication". From here, we'll click "Add Token". Give it a name, and if you'd like, add an expiry date. Click "Create", then "Copy to Clipboard". Make sure to save this because this will be the only time you see it. Click "Done".
 > Now, you have your Bearer token that can be used in your applications.
 
+ !["Bearer Authentication Token for Node-RED"](./images/node-red-bearer-token-flowfuse.png "Bearer Authentication Token for Node-RED"){data-zoomable}
+
 # Step by Step Guide to Create a bearer Token
 
 ## Step 1: Navigate to Your Application
