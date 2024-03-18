@@ -67,7 +67,13 @@ The `date` field in the blog post front matter serves a crucial role in determin
 
 ### Authors
 
-The author can be seen on both the blog index and the articles.
+The author can be seen on both the blog index and the articles. If you need to add multiple authors, it can be achieved in this way:
+```njk
+authors: ["rob-marcer", "joe-pavitt"]
+```
+If the authors are FlowFuse team members, the names need to be formatted inline with the file names found [here](https://github.com/FlowFuse/website/tree/main/src/_data/team)
+
+If they're not FlowFuse team members, they need to be added to the [guests list](https://github.com/FlowFuse/website/tree/main/src/_data/guests). Duplicate any of the files already in that folder, proceed to change the name of the file and update the info inside the `json` file. You'll also need to add a headshot in the images/team [folder](https://github.com/FlowFuse/website/tree/main/src/images/team) following the same name convention as the rest of the files.
 
 ### Tags
 
