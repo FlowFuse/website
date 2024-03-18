@@ -8,7 +8,7 @@ In accordance with our [Third-Party Risk Management policy](../company/security/
 all vendors should be reviewed to ensure their suitability for handling FlowFuse
 data.
 
-A list of approved vendors is available interally [here](https://docs.google.com/spreadsheets/d/1ro77wy0cRK6gpzVv_iq4vpdmbdMq61X5-tTwI_F3hXM/edit?usp=sharing){rel="nofollow"}.
+A list of approved vendors is available internally [here](https://docs.google.com/spreadsheets/d/1ro77wy0cRK6gpzVv_iq4vpdmbdMq61X5-tTwI_F3hXM/edit?usp=sharing){rel="nofollow"}.
 
 For new vendors not on the list, get CEO approval and add any signed agreements to [this folder](https://drive.google.com/drive/u/0/folders/1r6u1MNHZFAM1uhHmX-XtQs_bRcFVxQ25){rel="nofollow"}.  
 
