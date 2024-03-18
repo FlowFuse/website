@@ -65,9 +65,7 @@
                 <div class="sticky top-4 mt-6 flex flex-col">
                     <h3 class="mb-3">Written By:</h3>
                     {% for author in authors %}
-                        {% if people[author] %}
-                            {% renderTeamMember people[author] %}
-                        {% endif %}
+                        {% renderTeamMember people[author] %}
                     {% endfor %}
                     <p>Published on: <time value="{{ date | dateToRfc3339 }}">{{ date | shortDate }}</time>
                     </p>
