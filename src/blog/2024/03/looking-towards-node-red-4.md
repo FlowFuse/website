@@ -4,7 +4,7 @@ subtitle: A look at what is coming in Node-RED 4.0
 description: A look at what is coming in Node-RED 4.0
 date: 2024-03-07
 authors: ["nick-oleary"]
-image: /blog/2024/03/images/looking-towards-node-red-4.png
+image: #/blog/2024/03/images/looking-towards-node-red-4.png
 tags:
     - posts
     - flowfuse

@@ -389,6 +389,28 @@ module.exports = function(eleventyConfig) {
         return await imageHandler(src, alt, title, widths, sizes, currentWorkingFilePath, eleventyConfig, async=true, DEV_MODE)
     });
 
+    eleventyConfig.addAsyncShortcode("tileImage", async function(item, image, defaultImage, defaultDescription, imageSize, title = null) {
+        let imageSrc, imageDescription;
+
+        if (item && item.data && item.data.image) {
+            // item.data.image exists
+            imageSrc = `./${item.data.image}`;
+            imageDescription = `Image representing ${item.data.title}`;
+        } else if (image) {
+            // image exists
+            imageSrc = `./${image}`;
+            imageDescription = `Image representing ${title}`;
+        } else {
+            // use default values
+            imageSrc = defaultImage;
+            imageDescription = defaultDescription;
+        }
+
+        const currentWorkingFilePath = this.page.inputPath;
+
+        return await imageHandler(imageSrc, imageDescription, title, [imageSize], null, currentWorkingFilePath, eleventyConfig, async=true, DEV_MODE);
+    });
+    
     // Create a collection for sidebar navigation
     eleventyConfig.addCollection('nav', function(collection) {
         let nav = {}
