@@ -10,6 +10,8 @@ data.
 
 A list of approved vendors is available interally [here](https://docs.google.com/spreadsheets/d/1ro77wy0cRK6gpzVv_iq4vpdmbdMq61X5-tTwI_F3hXM/edit?usp=sharing){rel="nofollow"}.
 
+For new vendors not on the list, get CEO approval and add any signed agreements to [this folder](https://drive.google.com/drive/u/0/folders/1r6u1MNHZFAM1uhHmX-XtQs_bRcFVxQ25){rel="nofollow"}.  
+
 ### Process
 
 To initiate the approval and payment process for invoices, suppliers should send a PDF of the invoice to billing@flowfuse.com from a company email. FlowFuse pays invoices 30 days after filing unless specifically agreed otherwise prior to filing the invoice.
