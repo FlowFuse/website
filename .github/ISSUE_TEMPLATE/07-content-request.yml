@@ -1,0 +1,34 @@
+name: 📝 Content Request
+description: Submit a request for new content creation. Ideal for requesting written articles, blog posts, videos, etc.
+labels: [task]
+body: 
+  - type: markdown
+    attributes:
+      value: "## Original Issue\nProvide the URL of the original issue or feature request that this content is related to."
+  - type: input
+    attributes:
+      label: Original Issue URL
+      description: "Please provide the URL of the original GitHub issue or feature documentation."
+  - type: textarea
+    attributes:
+      label: Description
+      description: "Detail the content needed, including the purpose, target audience, and key messages."
+      value: |
+        **Content Overview:**
+        
+        - Briefly describe the feature or update.
+        - Specify the target audience for this content.
+        - Outline the key messages or points that need to be covered.
+        
+        **Detailed Description:**
+        
+        Provide a comprehensive description of the feature, its benefits, and its impact. Include any technical details or user benefits that should be highlighted.
+  - type: textarea
+    attributes:
+      label: Demo Link
+      description: "If there's a demo or visual representation available, please provide the link."
+  - type: input
+    attributes:
+      label: Expected Live Date
+      description: "Specify the expected date for the content to go live."
+      placeholder: 'MM/DD/YYYY'
