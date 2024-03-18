@@ -317,8 +317,13 @@ module.exports = function(eleventyConfig) {
 
     eleventyConfig.addShortcode("renderTeamMember", function (teamMember) {
         // When the author is no longer at FlowFuse
-        if (typeof teamMember === "undefined") {
-            return ""
+        if (typeof teamMember === "undefined" || teamMember === null) {
+            return `<div class="team-card--sm">
+                        <div class="ff-headshot" style="background-image: url(/images/flowfuse-icon.png)"></div>
+                        <div class="team-card-info my-auto">
+                            <label>FlowFuse</label>
+                        </div>
+                    </div>`
         }
 
         return `<div class="team-card--sm">
