@@ -4,7 +4,7 @@ subtitle: The first 5 Node-RED runtimes are part of the starter package going fo
 description: The first 5 Node-RED runtimes are part of the starter package going forward
 date: 2024-03-14
 authors: ["zeger-jan-van-de-weg"]
-image: #/blog/2024/03/images/starter-tier-resource-limits.png
+image: /blog/2024/03/images/starter-tier-resource-limits.png
 tags:
     - posts
     - flowfuse
