@@ -14,30 +14,24 @@ meta:
         {% if collections.webinar and collections.webinar.length > 0 %}
             {%- for item in collections.event | inFuture | limit(2) -%}
             <div>
-                <h2 class="w-full w-full text-indigo-400">
+                <h3 class="w-full w-full text-indigo-400">
                     {%- if item.data.tags.includes('ama') -%}
                     Upcoming "Ask Me Anything" Session
                     {% else %}
                     Upcoming Webinar:
                     {% endif %}
                     <span class="text-indigo-600 italic text-lg ml-2">{{ item.date.toLocaleDateString(undefined, { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' }) }}</span>
-                </h2>
+                </h3>
                 <ul>
                     <li class="webinar-tile">
                         <div class="flex flex-col md:flex-row">
                             <a href="{{ item.url }}" onclick="capture('cta-webinar-info')" class="webinar-tile-img relative mb-4 md:mb-0 flex md:w-1/2 mr-2 rounded-lg">
-                                {% if item.data.image %}
-                                    <div class="w-full h-auto">
-                                        {% set imageSrc = ["./", item.data.image ] | join %}
-                                        {% set imageDescription = ["Image representing ", item.data.title] | join %}
-                                        {% image imageSrc, imageDescription, [432] %}
-                                        <div class="webinar-tile-radialshade"></div>
-                                    </div>  
-                                {% else %}
-                                    {{ item.url | generatePostSVG | safe }}
-                                {% endif %}
+                                <div class="w-full h-auto">
+                                    {% tileImage item, "./images/og-webinar.jpg", "Image with FlowFuse logo", 432 %}
+                                    <div class="webinar-tile-radialshade"></div>
+                                </div>
                                 {% if not item.data.image %}
-                                    <div class="webinar-tile-shade">
+                                    <div>
                                         <label>
                                             <h4 class="text-white">{{ item.data.title }}</h4>
                                             <div class="webinar-tile-datetime">
@@ -84,15 +78,9 @@ meta:
                         <div class="">
                             <time class="block text-xs mb-2" value="{{ item.date }}" class="text-gray-400">{{ item.date | shortDate }}</time>
                             <div>
-                                {% if item.data.image %}
-                                    <div class="w-full h-auto shadow rounded mb-4">
-                                        {% set imageSrc = ["./", item.data.image ] | join %}
-                                        {% set imageDescription = ["Image representing ", item.data.title] | join %}
-                                        {% image imageSrc, imageDescription, [285] %}
-                                    </div>
-                                {% else %}
-                                    {{ item.url | generatePostSVG | safe }}
-                                {% endif %}
+                                <div class="w-full h-auto shadow rounded mb-4">
+                                    {% tileImage item, "./images/og-blog.jpg", "Image with logo and the slogan: Elevate Node-RED with Flowfuse", 285 %}
+                                </div>
                             </div>
                             <h3 class="mt-1 mb-0 font-medium group-hover:underline">{{ item.data.title }}</h3>
                         </div>
