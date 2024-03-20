@@ -24,7 +24,14 @@ HTTP Basic Authentication is widely supported and straightforward to implement, 
 
 ## FlowFuse Authentication: Seamless Integration
 
-FlowFuse Authentication is similar to Basic Authentication, with one distinct difference. It allows users to authenticate using the same credentials as their FlowFuse platform login. This approach is excellent for when a citizen developer wants to create an application backend that will only be used by FlowFuse-authenticated team members, outside of that it functions the same as the Basic Authentication method.  This prevents the need to share passwords between team members because they will use their own authentication to interact with the application.
+FlowFuse authentication offers a seamless and secure way for users to access dashboards and other resources that are typically accessed through a browser. It leverages single sign-on (SSO) and SAML 2.0, reducing the management burden for organizations. 
+
+For users this is convenient as they can access multiple applications and resources using a single set of credentials, eliminating the need to remember and manage multiple passwords.
+
+For organizations, SSO enhances security by centralizing authentication and authorization, reducing the risk of unauthorized access. By leveraging SSO and SAML 2.0, FlowFuse takes care of user management, freeing up customers from the administrative burden of managing user accounts and passwords. FlowFuse authentication adheres to industry-standard security protocols, ensuring compliance with regulatory requirements.
+
+This method of authentication is however impractical for API access by other services, to programmatically transfer data between them.
+
 
 ## Bearer Authentication: A Token-Based Approach
 
