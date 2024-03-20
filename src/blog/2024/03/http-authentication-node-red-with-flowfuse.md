@@ -13,7 +13,9 @@ tags:
     - api
 ---
 
-In today’s interconnected world, web development often involves interacting with APIs through a variety of authentication methods for secure data exchange. As a citizen developer using Node-RED and FlowFuse, it's essential to understand these authentication types and how they can be utilized in your projects.
+Citizen development empowers employees to create digital solutions. However, it requires guardrails to ensure data security, operational stability, and compliance. These guardrails are what FlowFuse provides to the Node-RED community to level up their deployments. FlowFuse offers many different security measures for authentication and authorization, which all apply to different scenarios. 
+
+In this post we’ll take a look at most of them, specifically for HTTP traffic. We’ll discuss the trade-offs for auditabliltiy, convenience to use as either machine or human, among other factors.
 
 <!--more-->
 
