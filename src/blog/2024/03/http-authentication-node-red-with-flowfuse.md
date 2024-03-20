@@ -20,7 +20,7 @@ In today’s interconnected world, web development often involves interacting wi
 
 ## HTTP Basic Authentication: A Simple Approach
 
-Basic Authentication is widely supported and straightforward to implement. It requires users to provide a username and password before accessing the Node-RED instance. In FlowFuse, developers can create application-specific usernames and passwords for Basic Authentication, making it suitable for internal applications or environments with tight control over access. Remember that the security of this method relies on secure connections like HTTPS to prevent credential interception.
+HTTP Basic Authentication is widely supported and straightforward to implement, making it a popular choice for securing APIs. It requires users to provide a username and password before accessing the Node-RED instance. While this method is easy to use, it's important to note that the username and password are shared and transmitted in plain text, making it vulnerable to interception.
 
 ## FlowFuse Authentication: Seamless Integration
 
