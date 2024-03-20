@@ -1,5 +1,5 @@
 ---
-title: HTTP Node Authentication in Node-RED with FlowFuse
+title: Securing HTTP Traffic for Node-RED with FlowFuse
 subtitle: Choosing the right form of authentication for your Node-RED integration is important.
 description: In this blog we will discuss the various forms of authentication for integrating web applications with Node-RED.
 date: 2024-03-25
