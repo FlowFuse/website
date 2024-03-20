@@ -35,7 +35,9 @@ This method of authentication is however impractical for API access by other ser
 
 ## Bearer Authentication: A Token-Based Approach
 
-Bearer Authentication offers a more secure and flexible alternative to traditional username/password authentication. Users will generate the token through the FlowFuse platform with each instance generating it's own token. These tokens can be designed to have limited lifespans, reducing the risk if compromised.   In the case the token then becomes compromised only the instance in which the token is generated can become subject to malicious behaviors.  In the case that this does occur, simple deleting the token will elevate any unwanted access.
+Bearer Authentication offers a more secure and flexible alternative to traditional username/password authentication. Users will generate the token through the FlowFuse platform with each instance generating its own token. These tokens can be designed to have limited lifespans, reducing the risk if compromised. In the case the token then becomes compromised only the instance in which the token is generated can become subject to malicious behaviors. In the case that this does occur, simply deleting the token will elevate any unwanted access.
+
+Compared to FlowFuse Authentication, this method is very well suited for API access and programmatic access to FlowFuse.
 
 ## Choosing the Right Authentication Strategy
 
