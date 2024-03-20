@@ -4,7 +4,7 @@ subtitle: Managing your Node-RED instances is easier with FlowFuse.
 description: With FlowFuse, Node-RED instances can be scaled and managed easily.
 date: 2024-03-20
 authors: ["grey-dziuba"]
-image: 
+image: /blog/2024/03/images/scaling-node-red-with-flowfuse.png
 tags:
     - posts
     - flowfuse
