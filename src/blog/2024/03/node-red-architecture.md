@@ -1,5 +1,5 @@
 ---
-title: Node-RED Factory Architecture
+title: Node-RED Manufacturing Architecture
 subtitle: 
 description: 
 authors: ["marian-demme"]
@@ -10,19 +10,23 @@ tags:
     - flowfuse
 ---
 
-The architecture of a factory's Node-RED infrastructure is a common topic of discussion and inquiry. Fundamentally, my response to such queries unfolds in two parts. Initially, the focus must be on data organization. I champion a structure centered around a Unified Namespace, a concept I explore in depth in this article "Node-RED in a Unified Namespace Architecture." However, this is only one part of the inquiry. The more nuanced part of the question delves into the positioning of FlowFuse and Node-RED within the network infrastructure and the nature of their interconnectivity.
+The architecture of a factory's Node-RED infrastructure is a common topic of discussion and inquiry. Fundamentally, my response to such queries unfolds in two parts. Initially, the focus must be on data organization. I champion a structure centered around a [Unified Namespace](https://flowfuse.com/unified-namespace/), a concept I explore in depth in this article ["Node-RED in a Unified Namespace Architecture."](https://flowfuse.com/blog/2024/02/node-red-unified-namespace-architecture/) However, this is only one part of the inquiry. The other part of the question delves into the positioning of FlowFuse and Node-RED within the network infrastructure.
 
 <!--more-->
 
 ## Understanding the Multilayered Approach: The Foundation of Factory Architecture
 
-For illustrative purposes, I’ve opted to reference the Purdue Model, despite its fair share of criticism. Many of today's factories and manufacturing spaces adhere to this model, and the aim here is to mirror a realistic network scenario. For the sake of clarity, I've condensed the network into three primary layers.
+For illustrative purposes, I’ve opted to reference the [Purdue Model](https://webstore.ansi.org/preview-pages/ISA/preview_S_990001_2007.pdf), despite its fair share of criticism. Many of today's factories and manufacturing spaces adhere to this model, and the aim here is to mirror a realistic network scenario. For the sake of clarity, I've condensed the network into three primary layers.
+
+<!--![Purdue Model]()-->
 
 At the base is the Shopfloor layer. This is where all the physical factory equipment resides. Often, this layer is segmented further, but for our discussion, it's represented as a single zone.
 
 Next is the Edge layer, which serves as the communicative conduit between the Shopfloor and the Enterprise layers. This layer often contains a Demilitarized Zone (DMZ) where various Gateways are positioned.
 
 At the top, we find the Enterprise Layer. This can signify either cloud services or a company-wide accessible network. Frequently, the Cloud and Enterprise layers are divided, but in our case, it doesn’t matter whether they are separated.
+
+<!--![Node-RED Manufacturing Architecture]()-->
 
 ## Applications Across Factory Layers
 
