@@ -16,9 +16,9 @@ The architecture of a factory's Node-RED infrastructure is a common topic of dis
 
 ## Understanding the Multilayered Approach: The Foundation of Factory Architecture
 
-For illustrative purposes, I’ve opted to reference the [Purdue Model](https://webstore.ansi.org/preview-pages/ISA/preview_S_990001_2007.pdf), despite its fair share of criticism. Many of today's factories and manufacturing spaces adhere to this model, and the aim here is to mirror a realistic network scenario. For the sake of clarity, I've condensed the network into three primary layers.
+For illustrative purposes, I’ve opted to reference the [Purdue / ISA-99 Model](https://webstore.ansi.org/preview-pages/ISA/preview_S_990001_2007.pdf), despite its fair share of criticism. Many of today's factories and manufacturing spaces adhere to this model, and the aim here is to mirror a realistic network scenario. For the sake of clarity, I've condensed the network into three primary layers.
 
-<!--![Purdue Model]()-->
+![Purdue Model](./images/purdue-model.png)
 
 At the base is the Shopfloor layer. This is where all the physical factory equipment resides. Often, this layer is segmented further, but for our discussion, it's represented as a single zone.
 
