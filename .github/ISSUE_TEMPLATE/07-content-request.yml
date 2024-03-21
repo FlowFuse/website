@@ -1,6 +1,6 @@
-name: 📝 Content Request
+name: 📝 Content - Launch Briefing
 description: Submit a request for new content creation. Ideal for requesting written articles, blog posts, videos, etc.
-labels: [task]
+labels: [epic]
 body: 
   - type: markdown
     attributes:
@@ -25,10 +25,16 @@ body:
         Provide a comprehensive description of the feature, its benefits, and its impact. Include any technical details or user benefits that should be highlighted.
   - type: textarea
     attributes:
+      label: Are there any pricing considerations?
+  - type: textarea
+    attributes:
+      label: Are there any website updates that need to be made?  
+  - type: input
+    attributes:
       label: Demo Link
       description: "If there's a demo or visual representation available, please provide the link."
   - type: input
     attributes:
-      label: Expected Live Date
+      label: When will it be available?
       description: "Specify the expected date for the content to go live."
       placeholder: 'MM/DD/YYYY'
