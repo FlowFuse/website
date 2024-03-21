@@ -86,7 +86,7 @@ mkdir c:\opt\flowfuse-device
 # grant full access to the service account that will run the device-agent
 icacls c:\opt\flowfuse-device /grant "user":F /T
 ```
-_where `"user"` is the servi account (not the admin account)_
+_where `"user"` is the service account (not the admin account)_
 
 ## Install nssm
 `nssm` can simply be downloaded and executed from any path.
