@@ -3,7 +3,6 @@ title: Node-RED Manufacturing Architecture
 subtitle: Enhancing Factory Operations with Node-RED and FlowFuse
 description: This article explores the integration of Node-RED and FlowFuse within a factory's multilayered infrastructure, highlighting the strategic organization of data and connectivity from the shopfloor to the enterprise level for improved operational efficiency.
 authors: ["marian-demme"]
-# image: 
 tags:
     - posts
     - node-red
