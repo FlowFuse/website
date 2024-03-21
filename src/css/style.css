@@ -15,7 +15,6 @@
 
 html, body {
     font-size: 16px;
-    overflow-x: hidden;
 }
 
 *{
@@ -672,7 +671,7 @@ h4:hover .header-anchor {
     opacity: 0;
     visibility: hidden;
     position: absolute;
-    width: 100%;
+    width: 0%;
     transform: translateX(20px);
 }
 
@@ -681,6 +680,7 @@ h4:hover .header-anchor {
     opacity: 1;
     visibility: visible;
     position: relative;
+    width: 100%;
     transform: translateX(0);
 }
 /*
