@@ -22,8 +22,7 @@ In this post we’ll take a look at most of them, specifically for HTTP traffic.
 
 ## HTTP Basic Authentication: A Simple Approach
 
-HTTP Basic Authentication is widely supported and straightforward to implement, making it a popular choice for securing APIs. It requires users to provide a username and password before accessing the Node-RED instance. While this method is easy to use, it's important to note that the username and password are shared and transmitted in plain text, making it vulnerable to interception if the connection doesn't leverage 
-SSL/TLS. FlowFuse by default ensures SSL/TLS is deployed.
+HTTP Basic Authentication is widely supported and straightforward to implement, making it a popular choice for securing APIs. It requires users to provide a username and password before accessing the Node-RED instance. While this method is easy to use, it's important to note that the username and password are shared and transmitted in plain text, making it vulnerable to interception if the connection doesn't leverage SSL/TLS. FlowFuse by default ensures SSL/TLS is deployed.
 
 ## Personal access tokens: Knowing who accessed the Node-RED
 
