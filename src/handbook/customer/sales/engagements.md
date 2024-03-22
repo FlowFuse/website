@@ -8,9 +8,10 @@ Pricing is publicly available at [our pricing page](/pricing/).
 
 ## Generating a Quote and Order Form
 
-Quotes are generated through HubSpot. Each quote should link to the subsciption
-agreement as well as include "Order Form" in the description. Link the latest
-version of the document with the [subscription agreement](/handbook/customer/sales/legal/#subscription-agreement).
+Quotes are generated through HubSpot. Each quote should include:
+- A link to the deep copy of the version of the document with the [subscription agreement](/handbook/customer/sales/legal/#subscription-agreement).
+- "Order Form" in the description.
+- The subscription period.
 
 ## Closing a deal
 
