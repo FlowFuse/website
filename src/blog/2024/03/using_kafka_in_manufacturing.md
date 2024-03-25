@@ -4,7 +4,7 @@ subtitle: An overview of Kafka -- How it's applied for industrial applications, 
 description: An overview of Kafka -- How it's applied for industrial applications, and how it works
 date: 2024-03-15
 authors: ["sumit-shinde"]
-image: /blog/2024/03/images/using-kafka-with-node-red.png
+image:/blog/2024/03/images/using_kafka_in_manufacturing.png
 tags:
     - posts
     - node-red
@@ -27,7 +27,7 @@ Kafka is also a very good [broker for UNS architecture](https://flowfuse.com/blo
 
 Kafka architecture is designed to provide a scalable and fault-tolerant platform for handling real-time data streams. The architecture consists of several key components, each component serves a specific purpose in the data processing pipeline. In this section, we will take an overview of Kafka's architecture and its key components.
 
-!["Architecture of Kafka"](./images/using-kafka-with-node-red-architecture-v.png "Architecture of Kafka"){data-zoomable}
+!["Architecture of Kafka"](./images/using_kafka_in_manufacturing_kafka_architecture.png "Architecture of Kafka"){data-zoomable}
 
 **1. Topics and Partitions**
 - Topics: Imagine topics as folders for organizing data – they act as distinct categories. Kafka arranges information into these topics for systematic storage.
