@@ -4,7 +4,7 @@ subtitle: Choosing the right form of authentication for your Node-RED integratio
 description: In this blog we will discuss the various forms of authentication for integrating web applications with Node-RED.
 date: 2024-03-25
 authors: ["grey-dziuba"]
-image: 
+image: /blog/2024/03/images/node-authentication.png
 tags:
     - posts
     - flowfuse
