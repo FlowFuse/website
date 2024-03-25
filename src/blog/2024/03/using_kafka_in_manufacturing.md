@@ -4,7 +4,7 @@ subtitle: An overview of Kafka -- How it's applied for industrial applications, 
 description: An overview of Kafka -- How it's applied for industrial applications, and how it works
 date: 2024-03-15
 authors: ["sumit-shinde"]
-image:/blog/2024/03/images/using_kafka_in_manufacturing.png
+image: /blog/2024/03/images/using_kafka_in_manufacturing.png
 tags:
     - posts
     - node-red
