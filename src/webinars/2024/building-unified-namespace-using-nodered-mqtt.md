@@ -1,6 +1,6 @@
 ---
 title: Building Unified Namespace using Node-RED and MQTT
-subtitle: Join Grey Dziuba, OT Data and Community Strategist, and Kudzai Manditereza, Developer Advocate at HiveMQ, as they discuss MQTT and Node-RED and how it pertains to the Unified Namespace, UNS.
+subtitle: Grey Dziuba, OT Data and Community Strategist, and Kudzai Manditereza, Developer Advocate at HiveMQ, discuss MQTT and Node-RED and how it pertains to the Unified Namespace, UNS.
 image: /images/webinars/building-unified-namespace-uns-using-node-red-and-mqtt-webinar-2024-march.jpg
 date: 2024-03-26
 time: 17:00 CET (11:00am ET) 
@@ -8,7 +8,7 @@ duration: 60
 video: U4njRFVLTjI
 hosts: ["grey-dziuba"]
 hubspot:
-    formId: b4ec9aa1-8648-47b3-b908-ec8597e8735d
+    formId: 49e2f5b2-2e8b-4be0-808c-57c1bd691224
 ---
 
 **What value does a UNS bring?  In this webinar, we will focused on why and how low-code plus UNS makes a powerful combination for citizen developers.**
@@ -21,15 +21,14 @@ Most industries function on a standard ISA-95, sometimes referred to as the Perd
 
 Enter the Unified Namespace (UNS).  Breaking the ISA-95 chains, UNS makes data available to many applications across the organization for rapid iterative development and integration. Typically to implement a unified namespace you'll adapt your data producers to talk to a common broker. The adaptation layer is usually Node-RED, and MQTT is the broker protocol.
 
-In this webinar **Grey Dziuba**, OT Data & Community Strategist at FlowFuse will be joined by UNS expert **Kudzai Manditereza**, Developer Advocate at HiveMQ to talk about:
+In this webinar **Grey Dziuba**, OT Data & Community Strategist at FlowFuse is joined by UNS expert **Kudzai Manditereza**, Developer Advocate at HiveMQ where they talk about:
 
 - How UNS can accelerate innovation 
 - How to properly organize your infrastructure for a standard discrete manufacturing plant. 
 - How FlowFuse extends the value of the UNS
 
-They will demo how FlowFuse and UNS can empower your manufacturing environment and answer any questions you may have. 
 
-This webinar is ideal for those who are considering the UNS or have already implemented it and want to extend its value by leveraging a citizen development platform. 
+This on-demand webinar is ideal for those who are considering the UNS or have already implemented it and want to extend its value by leveraging a citizen development platform. 
 
 
 
