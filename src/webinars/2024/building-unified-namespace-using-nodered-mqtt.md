@@ -5,13 +5,13 @@ image: /images/webinars/building-unified-namespace-uns-using-node-red-and-mqtt-w
 date: 2024-03-26
 time: 17:00 CET (11:00am ET) 
 duration: 60
-# video: rl6uwV2PhOc
+video: U4njRFVLTjI
 hosts: ["grey-dziuba"]
 hubspot:
     formId: b4ec9aa1-8648-47b3-b908-ec8597e8735d
 ---
 
-**What value does a UNS bring?  In this webinar, we will focus on why and how low-code plus UNS makes a powerful combination for citizen developers.**
+**What value does a UNS bring?  In this webinar, we will focused on why and how low-code plus UNS makes a powerful combination for citizen developers.**
 
 <!--more-->
 
