@@ -4,7 +4,7 @@ subtitle: New to Node-RED? New to Dashboard 2.0? This guide will help you get st
 description: New to Node-RED? New to Dashboard 2.0? This guide will help you get started.
 date: 2024-03-27
 authors: ["joe-pavitt"]
-image: "/blog/2024/01/images/tile-dashboard-2-ga.png"
+image: /blog/2024/03/images/getting-started-with-dashboard-2.png
 tags:
     - posts
     - releases
