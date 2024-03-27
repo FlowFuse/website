@@ -21,11 +21,11 @@ This includes, but is not limited to:
 - [Security Policy](./security.md)
 - [Packaging](./packaging.md) - how we manage repos and npm packaging
 - [Contributing](./contributing.md) - tips on our development style to help get started contributing
+- [Project Management](./project-management.md) - details the processes we use to guide product development.
 - [Tools](./tools.md) - the tools we use
 
 ## Releases
 
-- [Planning](./releases/planning.md) - how we plan what we're doing
 - [Release Process](./releases/process.md) - how we ship
 
 ## Front-End
