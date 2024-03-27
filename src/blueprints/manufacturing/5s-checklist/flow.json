@@ -1,0 +1,1929 @@
+[
+    {
+        "id": "d4aa6dd5b63a56de",
+        "type": "tab",
+        "label": "Flow 2",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "0256c6eb48109c11",
+        "type": "group",
+        "z": "d4aa6dd5b63a56de",
+        "name": "Home",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "0d616103a06d1c4b",
+            "b4c5402d79ec77dc",
+            "577d8f73370c558a",
+            "c9b05896fdcd5005",
+            "dfb03483b9275105",
+            "5967d31a0650694d",
+            "b4ae7d3d754410d2",
+            "aa80743cb7f3235b",
+            "50e48c8bb4709ac5",
+            "dcb0118f06bd2b84",
+            "787c0cf856941d5a",
+            "dd9e47065aac345c"
+        ],
+        "x": 34,
+        "y": 159,
+        "w": 772,
+        "h": 422
+    },
+    {
+        "id": "1fc9f093d1c94152",
+        "type": "group",
+        "z": "d4aa6dd5b63a56de",
+        "name": "Dashboard",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "56891cf2040d0749",
+            "47594d3f765a976a",
+            "01cfe0a36b9a7d6a",
+            "ad011f9f8b8ed61e",
+            "ad401755701ebc2b",
+            "335bd427bb822247",
+            "d3de0685ce81c2f8",
+            "4a01baaa93d0ba73",
+            "4293adacf884fcc0",
+            "b0b8d12cddfee9de",
+            "6aeab35aeef57600",
+            "1b5d4ac9ec5389c9",
+            "c686ca8383b548d3"
+        ],
+        "x": 34,
+        "y": 619,
+        "w": 932,
+        "h": 362
+    },
+    {
+        "id": "350691ea509b4ec6",
+        "type": "group",
+        "z": "d4aa6dd5b63a56de",
+        "name": "Audit",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "3504e66bebadadbd",
+            "3399acbef92fe6b2",
+            "02e46440362b07d6",
+            "f46c76eeafbd6617",
+            "a2b9c33f53a9b1ec",
+            "e3644bf42e1342a6",
+            "0f49943d46c0a377",
+            "0e81cb9511c491d2",
+            "c3d394a9153e9d18",
+            "b369e4561fa8bf7f",
+            "3e44f7e2f0641ce4",
+            "c68a04d19f8fa9de",
+            "e13284a3e534d6ef",
+            "843259bcf823a214",
+            "a7eddcbb9727ef2a",
+            "b2b046337906e245",
+            "c79f9eaeea24f61c",
+            "31b40f2b2df00710",
+            "870699c231d45d87",
+            "5dfbce5c6b44a358"
+        ],
+        "x": 1014,
+        "y": 179,
+        "w": 1132,
+        "h": 522
+    },
+    {
+        "id": "eff25d98eece7970",
+        "type": "group",
+        "z": "d4aa6dd5b63a56de",
+        "name": "Event details",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "73735e7b29185507",
+            "626ad44786d35f6f",
+            "0f161b28f0df2abc",
+            "2d2e1bf5d0fd02f9",
+            "806fb5ad3575deda",
+            "9110c17c8bf6cb73",
+            "fa259f874d418622",
+            "43ca2cc1073eceab"
+        ],
+        "x": 1014,
+        "y": 719,
+        "w": 752,
+        "h": 262
+    },
+    {
+        "id": "4af97a279e03c7c5",
+        "type": "group",
+        "z": "d4aa6dd5b63a56de",
+        "name": "Report audit non-conformance or Event page",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "2a08239f52bc7357",
+            "a10ec14535e386b0",
+            "b51cf4c91eb01ecb",
+            "5271b1782a416bef",
+            "e3d8a9e37d2118e2",
+            "9fa33727e0118d56",
+            "f35877c48cc20f73",
+            "ab39390603e8afd5",
+            "d3c84e7de45494de"
+        ],
+        "x": 1014,
+        "y": 999,
+        "w": 712,
+        "h": 262
+    },
+    {
+        "id": "3504e66bebadadbd",
+        "type": "ui-button",
+        "z": "d4aa6dd5b63a56de",
+        "g": "350691ea509b4ec6",
+        "group": "f2722b544580bc1b",
+        "name": "",
+        "label": "⬅ Previous",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "previous",
+        "icon": "",
+        "payload": "0",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 1130,
+        "y": 420,
+        "wires": [
+            [
+                "c79f9eaeea24f61c"
+            ]
+        ]
+    },
+    {
+        "id": "3399acbef92fe6b2",
+        "type": "ui-template",
+        "z": "d4aa6dd5b63a56de",
+        "g": "350691ea509b4ec6",
+        "group": "f2722b544580bc1b",
+        "dashboard": "25f447d87d1ce5c9",
+        "page": "ccc4825f24719240",
+        "name": "Group stepper",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "head": "",
+        "format": "<template>\n  <v-stepper v-model=\"msg.payload.currentStep\" class=\"stepper\">\n    <v-stepper-header>\n      <template v-for=\"(item, index) in steps\">\n        <v-stepper-item :key=\"index\" :title=\"item.step\" :complete=\"msg.payload.completed.includes(index + 1)\"\n          :value=\"index + 1\"></v-stepper-item>\n        <v-divider v-if=\"index !== steps.length - 1\"></v-divider>\n      </template>\n    </v-stepper-header>\n  </v-stepper>\n</template>\n\n<script>\n  export default {\n  data() {\n    return {\n      steps: [\n        { step: 'Sort', question: 4 },\n        { step: 'Set in order', question: 5 },\n        { step: 'Shine', question: 5 },\n        { step: 'Standardize', question: 6 },\n        { step: 'Sustain', question: 5 }\n      ]\n\n     \n    };\n  }\n};\n</script>\n<style>\n  .v-stepper-header , .v-stepper{\n    box-shadow:none !important;\n  }\n</style>",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "stepper",
+        "x": 1540,
+        "y": 660,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "02e46440362b07d6",
+        "type": "ui-button",
+        "z": "d4aa6dd5b63a56de",
+        "g": "350691ea509b4ec6",
+        "group": "f2722b544580bc1b",
+        "name": "",
+        "label": "⚠ Create follow up",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "follow-up",
+        "icon": "",
+        "payload": "+1",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 1130,
+        "y": 300,
+        "wires": [
+            [
+                "a7eddcbb9727ef2a"
+            ]
+        ]
+    },
+    {
+        "id": "f46c76eeafbd6617",
+        "type": "ui-button",
+        "z": "d4aa6dd5b63a56de",
+        "g": "350691ea509b4ec6",
+        "group": "f2722b544580bc1b",
+        "name": "",
+        "label": "→ Next",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "next",
+        "icon": "",
+        "payload": "-1",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 1140,
+        "y": 360,
+        "wires": [
+            [
+                "e3644bf42e1342a6",
+                "c79f9eaeea24f61c"
+            ]
+        ]
+    },
+    {
+        "id": "a2b9c33f53a9b1ec",
+        "type": "ui-template",
+        "z": "d4aa6dd5b63a56de",
+        "g": "350691ea509b4ec6",
+        "group": "1bc173050737de02",
+        "dashboard": "25f447d87d1ce5c9",
+        "page": "ccc4825f24719240",
+        "name": "questionAndImgSection",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "head": "",
+        "format": "<template>\n  <div>\n    <p style=\"font-size:19px;\">{{ questionsWithImages[msg.payload - 1].question }}</p>\n    <br>\n    <div class=\"image-container\">\n    <img width=\"450\" height=\"260\" :src=\"questionsWithImages[msg.payload - 1].imageUrl\" alt=\"Question Image\">\n    </div>\n  </div>\n</template>\n\n<script>\n  export default {\n  data() {\n\n    return {\n      questionsWithImages: [\n      { question: \"Is there unnecessary material lying around?\", imageUrl: \"https://i.ibb.co/6sfjHvt/Screenshot-176.png\" },\n      { question: \"Are workstations organized and clutter-free?\", imageUrl: \"https://i.ibb.co/ssr76d9/Screenshot-184.png\" },\n      { question: \"Are tools properly labeled and stored?\", imageUrl: \"https://i.ibb.co/v3pStX9/Screenshot-182.png\" },\n      { question: \"Are safety hazards promptly addressed?\", imageUrl: \"https://i.ibb.co/8sVkLSF/Screenshot-181.png\" },\n      { question: \"Are cleaning schedules regularly followed?\", imageUrl: \"https://i.ibb.co/LhPdZg8/Screenshot-188.png\" },\n      { question: \"Are all equipment and machinery well-maintained?\", imageUrl: \"https://i.ibb.co/HNwHjc0/Screenshot-183.png\" },\n      { question: \"Is there a systematic arrangement for inventory?\", imageUrl: \"https://i.ibb.co/gjjTCW5/Screenshot-177.png\" },\n      { question: \"Are employees trained in 5S principles?\", imageUrl: \"https://i.ibb.co/DLV8Wrr/Screenshot-185.png\" },\n      { question: \"Is the workplace free of unnecessary documents?\", imageUrl: \"https://i.ibb.co/DzS5vPm/Screenshot-178.png\" },\n      { question: \"Are walkways clear of obstructions?\", imageUrl: \"https://i.ibb.co/9NxSbKJ/Screenshot-186.png\" },\n      { question: \"Are safety signs and labels clearly visible?\", imageUrl: \"https://i.ibb.co/2PChLpt/Screenshot-189.png\" },\n      { question: \"Are cleaning supplies adequately stocked?\", imageUrl: \"https://i.ibb.co/wzVZY4Y/Screenshot-191.png\" },\n      { question: \"Are shelves and storage areas well-organized?\", imageUrl: \"https://i.ibb.co/dm1JKWV/Screenshot-192.png\" },\n      { question: \"Is waste properly segregated for disposal?\", imageUrl: \"https://i.ibb.co/5xbHgJM/Screenshot-196.png\" },\n      { question: \"Are work instructions easily accessible?\", imageUrl: \"https://i.ibb.co/XsJVxzk/Screenshot-193.png\" },\n      { question: \"Are inspection and maintenance logs up-to-date?\", imageUrl: \"https://i.ibb.co/cCC5Kv2/Screenshot-194.png\" },\n      { question: \"Is lighting adequate across all work areas?\", imageUrl: \"https://i.ibb.co/5xbHgJM/Screenshot-196.png\" },\n      { question: \"Are fire exits and emergency routes clear?\", imageUrl: \"https://i.ibb.co/gjjTCW5/Screenshot-177.png\" },\n      { question: \"Are personal protective equipment (PPE) available?\", imageUrl: \"https://i.ibb.co/5xbHgJM/Screenshot-196.png\" },\n      { question: \"Are spills and leaks promptly addressed?\", imageUrl: \"https://i.ibb.co/pwRK7qw/Screenshot-201.png\" },\n      { question: \"Are tools and equipment inspected regularly?\", imageUrl: \"https://i.ibb.co/0FT3Lqx/Screenshot-195.png\" },\n      { question: \"Is the workspace optimized for efficiency?\", imageUrl: \"https://i.ibb.co/DLV8Wrr/Screenshot-185.png\" },\n      { question: \"Are employees actively engaged in 5S practices?\", imageUrl: \"https://i.ibb.co/2PChLpt/Screenshot-189.png\" },\n      { question: \"Are non-essential items removed from workspaces?\", imageUrl: \"https://i.ibb.co/DzS5vPm/Screenshot-178.png\" },\n      { question: \"Is there continuous improvement in 5S implementation?\", imageUrl: \"https://i.ibb.co/pwRK7qw/Screenshot-201.png\" }\n      ]\n    };\n  }\n};\n</script>\n\n<style>\n\n\n\n</style>",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "audit-quiz",
+        "x": 1590,
+        "y": 500,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "e3644bf42e1342a6",
+        "type": "ui-radio-group",
+        "z": "d4aa6dd5b63a56de",
+        "g": "350691ea509b4ec6",
+        "group": "388073d857766f13",
+        "name": "",
+        "label": "Select Option:",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "columns": 1,
+        "passthru": false,
+        "options": [
+            {
+                "label": "Great (5)",
+                "value": 5,
+                "type": "num"
+            },
+            {
+                "label": "Good (4)",
+                "value": 4,
+                "type": "num"
+            },
+            {
+                "label": "Ok  (3)",
+                "value": 3,
+                "type": "num"
+            },
+            {
+                "label": "Need improvement (2)",
+                "value": 2,
+                "type": "num"
+            },
+            {
+                "label": "Unacceptable (1)",
+                "value": 1,
+                "type": "num"
+            }
+        ],
+        "payload": "",
+        "topic": "topic",
+        "topicType": "msg",
+        "className": "audit-grade",
+        "x": 1340,
+        "y": 360,
+        "wires": [
+            [
+                "b369e4561fa8bf7f"
+            ]
+        ]
+    },
+    {
+        "id": "0f49943d46c0a377",
+        "type": "ui-template",
+        "z": "d4aa6dd5b63a56de",
+        "g": "350691ea509b4ec6",
+        "group": "f8130b57e2f7f61f",
+        "dashboard": "25f447d87d1ce5c9",
+        "page": "ccc4825f24719240",
+        "name": "Question stepper",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "head": "",
+        "format": "<template>\n  <v-stepper v-model=\"msg.payload.count\" class=\"stepper\">\n    <v-stepper-header>\n      <template v-for=\"(step, index) in msg.payload.quizStep[msg.payload.currentStep - 1]\">\n        <v-stepper-item :class=\"msg.payload.completedQuiz[msg.payload.currentStep - 1].includes(index)?green:''\" :key=\"index\" :title=\"step\" :complete=\"msg.payload.completedQuiz[msg.payload.currentStep - 1].includes(index)\"\n          :value=\"index + 1\"></v-stepper-item>\n        <v-divider v-if=\"index !== msg.payload.quizStep[msg.payload.currentStep - 1].length - 1\"></v-divider>\n      </template>\n    </v-stepper-header>\n  </v-stepper>\n</template>\n<style>\n  .v-stepper-header , .v-stepper{\n    box-shadow:none !important;\n  }\n\n</style>",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "stepper ",
+        "x": 1550,
+        "y": 620,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "0e81cb9511c491d2",
+        "type": "inject",
+        "z": "d4aa6dd5b63a56de",
+        "g": "350691ea509b4ec6",
+        "name": "",
+        "props": [
+            {
+                "p": "payload.currentStep",
+                "v": "currentStep",
+                "vt": "global"
+            },
+            {
+                "p": "payload.completed",
+                "v": "completedStep",
+                "vt": "global"
+            }
+        ],
+        "repeat": "0.5",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 1110,
+        "y": 660,
+        "wires": [
+            [
+                "3399acbef92fe6b2"
+            ]
+        ]
+    },
+    {
+        "id": "c3d394a9153e9d18",
+        "type": "inject",
+        "z": "d4aa6dd5b63a56de",
+        "g": "350691ea509b4ec6",
+        "name": "Inject",
+        "props": [
+            {
+                "p": "payload.count",
+                "v": "count",
+                "vt": "global"
+            },
+            {
+                "p": "payload.completedQuiz",
+                "v": "completedQuiz",
+                "vt": "global"
+            },
+            {
+                "p": "payload.quizStep",
+                "v": "quizStep",
+                "vt": "global"
+            },
+            {
+                "p": "payload.currentStep",
+                "v": "currentStep",
+                "vt": "global"
+            }
+        ],
+        "repeat": "0.5",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 1110,
+        "y": 620,
+        "wires": [
+            [
+                "0f49943d46c0a377"
+            ]
+        ]
+    },
+    {
+        "id": "b369e4561fa8bf7f",
+        "type": "function",
+        "z": "d4aa6dd5b63a56de",
+        "g": "350691ea509b4ec6",
+        "name": "storeQuestionScore",
+        "func": "let currentIndex = global.get('currentIndex') || 1;\nlet score = global.get('auditScore') || {};\nlet avgScore = 0\nscore[currentIndex] = msg.payload || 1\n\nglobal.set('auditScore', score);\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1560,
+        "y": 360,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "3e44f7e2f0641ce4",
+        "type": "ui-control",
+        "z": "d4aa6dd5b63a56de",
+        "g": "350691ea509b4ec6",
+        "name": "",
+        "ui": "25f447d87d1ce5c9",
+        "events": "all",
+        "x": 1900,
+        "y": 360,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "c68a04d19f8fa9de",
+        "type": "change",
+        "z": "d4aa6dd5b63a56de",
+        "g": "350691ea509b4ec6",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "Home",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1720,
+        "y": 420,
+        "wires": [
+            [
+                "3e44f7e2f0641ce4",
+                "843259bcf823a214"
+            ]
+        ]
+    },
+    {
+        "id": "e13284a3e534d6ef",
+        "type": "switch",
+        "z": "d4aa6dd5b63a56de",
+        "g": "350691ea509b4ec6",
+        "name": "",
+        "property": "auditScore",
+        "propertyType": "global",
+        "rules": [
+            {
+                "t": "hask",
+                "v": "25",
+                "vt": "num"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 1530,
+        "y": 420,
+        "wires": [
+            [
+                "c68a04d19f8fa9de"
+            ]
+        ]
+    },
+    {
+        "id": "2a08239f52bc7357",
+        "type": "ui-button",
+        "z": "d4aa6dd5b63a56de",
+        "g": "4af97a279e03c7c5",
+        "group": "d2c065fe637b3d61",
+        "name": "",
+        "label": "Log event",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "log-event",
+        "icon": "",
+        "payload": "-1",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 1100,
+        "y": 1180,
+        "wires": [
+            [
+                "9fa33727e0118d56"
+            ]
+        ]
+    },
+    {
+        "id": "a10ec14535e386b0",
+        "type": "ui-button",
+        "z": "d4aa6dd5b63a56de",
+        "g": "4af97a279e03c7c5",
+        "group": "d2c065fe637b3d61",
+        "name": "",
+        "label": "⬅ Previous",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "previous",
+        "icon": "",
+        "payload": "-1",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 1110,
+        "y": 1140,
+        "wires": [
+            [
+                "ab39390603e8afd5"
+            ]
+        ]
+    },
+    {
+        "id": "b51cf4c91eb01ecb",
+        "type": "ui-template",
+        "z": "d4aa6dd5b63a56de",
+        "g": "4af97a279e03c7c5",
+        "group": "99ebb0140d03a311",
+        "dashboard": "25f447d87d1ce5c9",
+        "page": "37e1fafe6e84119c",
+        "name": "report audit non-conformance",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "head": "",
+        "format": "<template>\n<div class=\"detail-text\">Procedure    :   <strong>5s audit</strong></div>\n<div class=\"detail-text\">Location :      <strong>{{msg.payload.location}}</strong> </div>\n<div class=\"detail-text\" >Group Name    :  <strong>{{steps[msg.payload.groupName - 1].step}}</strong></div>\n<div class=\"detail-text\" >Step Name   :  <strong> Question {{msg.payload.step}}</strong></div>\n</template>\n\n<script>\n    export default {\n  data() {\n    return {\n      steps: [\n        { step: 'Sort', question: 4 },\n        { step: 'Set in order', question: 5 },\n        { step: 'Shine', question: 5 },\n        { step: 'Standardize', question: 6 },\n        { step: 'Sustain', question: 5 }\n      ]\n\n     \n    };\n  }\n};\n</script>\n<style>\n .detail-text{\n    font-weight:530;\n    font-size:15px;\n}\n</style>",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "location-details",
+        "x": 1570,
+        "y": 1100,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "5271b1782a416bef",
+        "type": "ui-form",
+        "z": "d4aa6dd5b63a56de",
+        "g": "4af97a279e03c7c5",
+        "name": "",
+        "group": "b95b554e4f268469",
+        "label": "",
+        "order": 0,
+        "width": "0",
+        "height": "0",
+        "options": [
+            {
+                "label": "Description",
+                "key": "event-description",
+                "type": "multiline",
+                "required": true,
+                "rows": 7
+            }
+        ],
+        "formValue": {
+            "event-description": ""
+        },
+        "payload": "",
+        "submit": "submit",
+        "cancel": "clear",
+        "resetOnSubmit": true,
+        "topic": "topic",
+        "topicType": "msg",
+        "splitLayout": "",
+        "className": "",
+        "x": 1090,
+        "y": 1220,
+        "wires": [
+            [
+                "9fa33727e0118d56"
+            ]
+        ]
+    },
+    {
+        "id": "e3d8a9e37d2118e2",
+        "type": "inject",
+        "z": "d4aa6dd5b63a56de",
+        "g": "4af97a279e03c7c5",
+        "name": "",
+        "props": [
+            {
+                "p": "payload.step",
+                "v": "count",
+                "vt": "global"
+            },
+            {
+                "p": "payload.groupName",
+                "v": "currentStep",
+                "vt": "global"
+            },
+            {
+                "p": "payload.location",
+                "v": "location",
+                "vt": "global"
+            }
+        ],
+        "repeat": ".5",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 1110,
+        "y": 1100,
+        "wires": [
+            [
+                "b51cf4c91eb01ecb"
+            ]
+        ]
+    },
+    {
+        "id": "9fa33727e0118d56",
+        "type": "function",
+        "z": "d4aa6dd5b63a56de",
+        "g": "4af97a279e03c7c5",
+        "name": "logEventFuntion",
+        "func": "let id = global.get('event-id','persistent') || 0\nconst status = 'open'\nconst question = global.get('count')\nconst groupId = global.get('currentStep');\nconst location = global.get('location')\nconst description = global.get('eventDescription')\nconst events = global.get('events','persistent') || []\nconst groups = ['sort','set in order','shine','standardize','sustain']\nconst group_Name = groups[groupId]\nlet event = {\n    id,question, group_Name ,location,description,status\n}\n\n\n\nif(msg.payload =='-1'){\nevents.push(event)\nglobal.set('events',events,'persistent')\nid++\nmsg.payload = '-1'\n}else{\n    global.set('eventDescription',msg.payload['event-description'])\n}\n\nglobal.set('event-id', id,'persistent')\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1320,
+        "y": 1200,
+        "wires": [
+            [
+                "f35877c48cc20f73"
+            ]
+        ]
+    },
+    {
+        "id": "843259bcf823a214",
+        "type": "function",
+        "z": "d4aa6dd5b63a56de",
+        "g": "350691ea509b4ec6",
+        "name": "calculateTotalScoreAndResetAudit",
+        "func": "let locationWiseScore = global.get('locationWiseScore','persistent')|| {\n  'Inspection area': 0,\n  'Machine shop':0\n\n}\nlet currentLocation = global.get('location');\nlet currentIndex = 1;\nlet score = global.get('auditScore') || {};\nlet avgScore = 0;\nlet groupWiseScore = global.get('groupWiseScore','persistent') || { \n  'sort':0,\n  'set in order':0,\n  'shine': 0,\n  'standardize':0,\n  'sustain':0\n}\nlet quizSet = [ 4, 5,  5,  6,  5]\n// Calculating average score\nlet totalScore = 0;\nlet numberOfQuestions = 125;\n\nlet numberOfAuditPerformed = global.get('totalAuditPerformed','persistent') || 0\nnumberOfAuditPerformed++\nfor (let key in score) {\n  totalScore += score[key] || 0;\n}\n\n\navgScore = totalScore\n\nlocationWiseScore[currentLocation] += avgScore\n\nlet questionIndex = 1;\nfor (let i = 0; i < quizSet.length; i++) {\n  const groupIndex = Object.keys(groupWiseScore)[i];\n  const questionCount = quizSet[i];\n\n  for (let j = 0; j < questionCount; j++) {\n    const questionKey = questionIndex.toString();\n\n    if (score.hasOwnProperty(questionKey)) {\n      groupWiseScore[groupIndex] += score[questionKey];\n    }\n    \n    questionIndex++;\n  }\n}\n\nfor (const group in groupWiseScore) {\n  if (Object.hasOwnProperty.call(groupWiseScore, group)) {\n    groupWiseScore[group] = (groupWiseScore[group] / 5) / numberOfAuditPerformed;\n  }\n} \n\n\nglobal.set('currentIndex', currentIndex);\nglobal.set('currentStep', 1);\nglobal.set('completedStep', []);\nglobal.set('completedQuiz', [[], [], [], [], []]);\nglobal.set('avgScore', avgScore,'persistent');\nglobal.set('totalAuditPerformed', numberOfAuditPerformed,'persistent')\nglobal.set('auditScore',{})\nglobal.set('groupwiseScore', groupWiseScore,'persistent')\nglobal.set('locationWiseScore', locationWiseScore,'persistent')\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1980,
+        "y": 480,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "a7eddcbb9727ef2a",
+        "type": "ui-control",
+        "z": "d4aa6dd5b63a56de",
+        "g": "350691ea509b4ec6",
+        "name": "",
+        "ui": "25f447d87d1ce5c9",
+        "events": "all",
+        "x": 1500,
+        "y": 300,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "f35877c48cc20f73",
+        "type": "ui-control",
+        "z": "d4aa6dd5b63a56de",
+        "g": "4af97a279e03c7c5",
+        "name": "",
+        "ui": "25f447d87d1ce5c9",
+        "events": "all",
+        "x": 1500,
+        "y": 1200,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "ab39390603e8afd5",
+        "type": "ui-control",
+        "z": "d4aa6dd5b63a56de",
+        "g": "4af97a279e03c7c5",
+        "name": "",
+        "ui": "25f447d87d1ce5c9",
+        "events": "all",
+        "x": 1500,
+        "y": 1140,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "0d616103a06d1c4b",
+        "type": "ui-radio-group",
+        "z": "d4aa6dd5b63a56de",
+        "g": "0256c6eb48109c11",
+        "group": "483d8aa48dd9f63c",
+        "name": "location form",
+        "label": "",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "columns": 1,
+        "passthru": true,
+        "options": [
+            {
+                "label": "Inspection area",
+                "value": "Inspection area",
+                "type": "str"
+            },
+            {
+                "label": "Machine shop",
+                "value": "Machine shop",
+                "type": "str"
+            }
+        ],
+        "payload": "",
+        "topic": "topic",
+        "topicType": "msg",
+        "className": "location-form",
+        "x": 430,
+        "y": 540,
+        "wires": [
+            [
+                "aa80743cb7f3235b"
+            ]
+        ]
+    },
+    {
+        "id": "b4c5402d79ec77dc",
+        "type": "ui-template",
+        "z": "d4aa6dd5b63a56de",
+        "g": "0256c6eb48109c11",
+        "group": "752556b56b1dddb2",
+        "dashboard": "25f447d87d1ce5c9",
+        "page": "37e1fafe6e84119c",
+        "name": "location audit details",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "head": "",
+        "format": "<div class=\"detail-text\">Last audit performed    :   <strong>{{msg.payload.lastAuditDate || \"?\"}}</strong></div>\n<div class=\"detail-text\">Last score :      <strong>{{(msg.payload.lastAuditAvgScore/125)*100 || \"?\"}}</strong> </div>\n<div class=\"detail-text\" >Number of audit performed    :  <strong>{{msg.payload.totalAuditPerformed || \"?\"}}</strong></div>\n<style>\n .detail-text{\n    font-weight:530;\n    font-size:15px;\n}\n</style>",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "location-details",
+        "x": 520,
+        "y": 260,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "577d8f73370c558a",
+        "type": "ui-button",
+        "z": "d4aa6dd5b63a56de",
+        "g": "0256c6eb48109c11",
+        "group": "9139adec501ea015",
+        "name": "",
+        "label": "👁 Dashboard",
+        "order": 0,
+        "width": "1",
+        "height": "1",
+        "passthru": false,
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "dashboard-btn",
+        "icon": "",
+        "payload": "Dashboard",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 180,
+        "y": 340,
+        "wires": [
+            [
+                "dfb03483b9275105"
+            ]
+        ]
+    },
+    {
+        "id": "c9b05896fdcd5005",
+        "type": "ui-button",
+        "z": "d4aa6dd5b63a56de",
+        "g": "0256c6eb48109c11",
+        "group": "9139adec501ea015",
+        "name": "",
+        "label": "► New Audit",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "new-audit",
+        "icon": "",
+        "payload": "Audit",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 190,
+        "y": 400,
+        "wires": [
+            [
+                "50e48c8bb4709ac5",
+                "dfb03483b9275105"
+            ]
+        ]
+    },
+    {
+        "id": "dfb03483b9275105",
+        "type": "ui-control",
+        "z": "d4aa6dd5b63a56de",
+        "g": "0256c6eb48109c11",
+        "name": "ui control",
+        "ui": "25f447d87d1ce5c9",
+        "events": "all",
+        "x": 420,
+        "y": 360,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "5967d31a0650694d",
+        "type": "inject",
+        "z": "d4aa6dd5b63a56de",
+        "g": "0256c6eb48109c11",
+        "name": "Inject lastAudit Details",
+        "props": [
+            {
+                "p": "payload.lastAuditDate",
+                "v": "#:(persistent)::lastAuditDate",
+                "vt": "global"
+            },
+            {
+                "p": "payload.totalAuditPerformed",
+                "v": "#:(persistent)::totalAuditPerformed",
+                "vt": "global"
+            },
+            {
+                "p": "payload.lastAuditAvgScore",
+                "v": "#:(persistent)::avgScore",
+                "vt": "global"
+            }
+        ],
+        "repeat": "1",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 190,
+        "y": 260,
+        "wires": [
+            [
+                "b4c5402d79ec77dc"
+            ]
+        ]
+    },
+    {
+        "id": "b4ae7d3d754410d2",
+        "type": "inject",
+        "z": "d4aa6dd5b63a56de",
+        "g": "0256c6eb48109c11",
+        "name": "Inject default location",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "Inspection area",
+        "payloadType": "str",
+        "x": 180,
+        "y": 540,
+        "wires": [
+            [
+                "0d616103a06d1c4b"
+            ]
+        ]
+    },
+    {
+        "id": "aa80743cb7f3235b",
+        "type": "change",
+        "z": "d4aa6dd5b63a56de",
+        "g": "0256c6eb48109c11",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "location",
+                "pt": "global",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 670,
+        "y": 540,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "b2b046337906e245",
+        "type": "link in",
+        "z": "d4aa6dd5b63a56de",
+        "g": "350691ea509b4ec6",
+        "name": "link in 1",
+        "links": [
+            "50e48c8bb4709ac5"
+        ],
+        "x": 1175,
+        "y": 500,
+        "wires": [
+            [
+                "c79f9eaeea24f61c"
+            ]
+        ]
+    },
+    {
+        "id": "50e48c8bb4709ac5",
+        "type": "link out",
+        "z": "d4aa6dd5b63a56de",
+        "g": "0256c6eb48109c11",
+        "name": "link out 1",
+        "mode": "link",
+        "links": [
+            "b2b046337906e245"
+        ],
+        "x": 375,
+        "y": 400,
+        "wires": []
+    },
+    {
+        "id": "56891cf2040d0749",
+        "type": "ui-button",
+        "z": "d4aa6dd5b63a56de",
+        "g": "1fc9f093d1c94152",
+        "group": "5e8ce4c4db63599e",
+        "name": "",
+        "label": "Previous",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "previous",
+        "icon": "",
+        "payload": "Home",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 220,
+        "y": 900,
+        "wires": [
+            [
+                "6aeab35aeef57600"
+            ]
+        ]
+    },
+    {
+        "id": "47594d3f765a976a",
+        "type": "ui-template",
+        "z": "d4aa6dd5b63a56de",
+        "g": "1fc9f093d1c94152",
+        "group": "44e723a1c7f6a8b9",
+        "dashboard": "25f447d87d1ce5c9",
+        "page": "ccc4825f24719240",
+        "name": "Group wise score avg score",
+        "order": 0,
+        "width": "0",
+        "height": "0",
+        "head": "",
+        "format": "<div class=\"detail-text\">Sort average score: {{msg.payload.sort.toFixed(2) || \"?\" }}</div>\n<div class=\"detail-text\">Set in order average score: {{msg.payload['set in order'].toFixed(2)  || \"?\"}}</div>\n<div class=\"detail-text\">Shine average score: {{msg.payload.shine.toFixed(2) || \"?\"}}</div>\n<div class=\"detail-text\">Standardize average score: {{msg.payload.standardize.toFixed(2)  || \"?\"}}</div>\n<div class=\"detail-text\">Sustain average score: {{msg.payload.sustain.toFixed(2)  || \"?\"}}</div>\n\n<style>\n    .detail-text {\n        font-weight: 530;\n        font-size: 17px;\n    }\n</style>",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "group-score-details",
+        "x": 760,
+        "y": 720,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "01cfe0a36b9a7d6a",
+        "type": "change",
+        "z": "d4aa6dd5b63a56de",
+        "g": "1fc9f093d1c94152",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload.sort",
+                "pt": "msg",
+                "to": "#:(persistent)::groupwiseScore.sort",
+                "tot": "global"
+            },
+            {
+                "t": "set",
+                "p": "payload['set in order']",
+                "pt": "msg",
+                "to": "#:(persistent)::groupwiseScore['set in order']",
+                "tot": "global"
+            },
+            {
+                "t": "set",
+                "p": "payload.shine",
+                "pt": "msg",
+                "to": "#:(persistent)::groupwiseScore.shine",
+                "tot": "global"
+            },
+            {
+                "t": "set",
+                "p": "payload.standardize",
+                "pt": "msg",
+                "to": "#:(persistent)::groupwiseScore.standardize",
+                "tot": "global"
+            },
+            {
+                "t": "set",
+                "p": "payload.sustain",
+                "pt": "msg",
+                "to": "#:(persistent)::groupwiseScore.sustain",
+                "tot": "global"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 500,
+        "y": 720,
+        "wires": [
+            [
+                "47594d3f765a976a"
+            ]
+        ]
+    },
+    {
+        "id": "ad011f9f8b8ed61e",
+        "type": "ui-dropdown",
+        "z": "d4aa6dd5b63a56de",
+        "g": "1fc9f093d1c94152",
+        "group": "a9d4bff06566501d",
+        "name": "Audit area selection form",
+        "label": "Select Option:",
+        "tooltip": "",
+        "order": 0,
+        "width": "3",
+        "height": "1",
+        "passthru": false,
+        "multiple": false,
+        "options": [
+            {
+                "label": "Inspection area",
+                "value": "Inspection area",
+                "type": "str"
+            },
+            {
+                "label": "Machine shop",
+                "value": "Machine shop",
+                "type": "str"
+            }
+        ],
+        "payload": "",
+        "topic": "topic",
+        "topicType": "msg",
+        "className": "",
+        "x": 170,
+        "y": 780,
+        "wires": [
+            [
+                "4293adacf884fcc0"
+            ]
+        ]
+    },
+    {
+        "id": "ad401755701ebc2b",
+        "type": "ui-template",
+        "z": "d4aa6dd5b63a56de",
+        "g": "1fc9f093d1c94152",
+        "group": "a9d4bff06566501d",
+        "dashboard": "25f447d87d1ce5c9",
+        "page": "ccc4825f24719240",
+        "name": "Location wise avg score and actions",
+        "order": 0,
+        "width": "0",
+        "height": "0",
+        "head": "",
+        "format": "<template class=\"avg-score\">\n   <p class=\"score\">{{msg.payload.avgScore.toFixed(2)}}</p>\n   <p>Average score<br> per month</p>\n\n   <hr>\n   <div class=\"actions\">\n      <div>\n   <p class=\"score\">{{msg.payload.openEvents}}</p>\n   <p>Pending <br>  Actions</p>\n      </div>\n      <div>\n   <p class=\"score\">{{msg.payload.closedEvents}}</p>\n   <p>Closed <br>  Actions</p>\n   </div>\n   </div>\n</template>\n<style>\n   .avg-score , p{\n      text-align:center;\n      margin-top:5px;\n      margin-bottom:10px;\n   }\n\n   p{\n   text-align:center;\n   }\n\n   .score{\n      font-size:18px;\n      font-weight:580px;\n   }\n\n   .actions{\n      margin-top:5px;\n      display:flex;\n      justify-content:space-around;\n   }\n\n</style>",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "avg-area-score",
+        "x": 790,
+        "y": 780,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "335bd427bb822247",
+        "type": "ui-table",
+        "z": "d4aa6dd5b63a56de",
+        "g": "1fc9f093d1c94152",
+        "group": "c45d1751e4644648",
+        "name": "Leaderboard table",
+        "label": "text",
+        "order": 0,
+        "width": "4",
+        "height": "5",
+        "maxrows": "2",
+        "autocols": true,
+        "columns": [],
+        "x": 730,
+        "y": 840,
+        "wires": []
+    },
+    {
+        "id": "d3de0685ce81c2f8",
+        "type": "inject",
+        "z": "d4aa6dd5b63a56de",
+        "g": "1fc9f093d1c94152",
+        "name": "Trigger",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "1",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "true",
+        "payloadType": "bool",
+        "x": 220,
+        "y": 840,
+        "wires": [
+            [
+                "4a01baaa93d0ba73"
+            ]
+        ]
+    },
+    {
+        "id": "4a01baaa93d0ba73",
+        "type": "function",
+        "z": "d4aa6dd5b63a56de",
+        "g": "1fc9f093d1c94152",
+        "name": "sendAvgScoreToTable",
+        "func": "let locationWiseScore = global.get('locationWiseScore','persistent');\nlet totalAuditPerformed = global.get('totalAuditPerformed','persistent');\n\nlet locations = [\n    {\n        \"Location\": \"Inspection area\",\n        \"Score\": locationWiseScore[\"Inspection area\"]\n    },\n    {\n        \"Location\": \"Machine shop\",\n        \"Score\": locationWiseScore[\"Machine shop\"]\n    }\n    // Add more locations if needed following the same structure\n];\n\nlet averageScores = locations.map(location => ({\n    \"Location\": location.Location,\n    \"AverageScore\": ((location.Score / (125 * totalAuditPerformed)) * 100).toFixed(2)\n}));\n\nmsg.payload = averageScores;\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 440,
+        "y": 840,
+        "wires": [
+            [
+                "335bd427bb822247"
+            ]
+        ]
+    },
+    {
+        "id": "c79f9eaeea24f61c",
+        "type": "function",
+        "z": "d4aa6dd5b63a56de",
+        "g": "350691ea509b4ec6",
+        "name": "handleActions",
+        "func": "// Retrieve or initialize global variables\nlet currentIndex = global.get('currentIndex') || 1;\nlet count = global.get('count') || 0;\nlet completedQuiz = global.get('completedQuiz') || [[], [], [], [], []];\nlet completedStep = global.get('completedStep') || [];\nlet currentStep = global.get('currentStep') || 1;\nlet lastAuditDate = new Date().toISOString();\nlet auditScore = global.get('auditScore');\n\nconst stepsToUpdate = [5, 10, 15, 21, 26];\nconst quizStep = [\n  [1, 2, 3, 4],\n  [1, 2, 3, 4, 5],\n  [1, 2, 3, 4, 5],\n  [1, 2, 3, 4, 5, 6],\n  [1, 2, 3, 4, 5]\n];\n\n// Handle previous and next actions\nif (msg.payload === \"-1\" && currentIndex <= 25 && auditScore[currentIndex]) {\n  currentIndex++;\n  \n  if (!completedQuiz[currentStep - 1].includes(count)) {\n    completedQuiz[currentStep - 1].push(count);\n  }\n  \n  count++;\n  \n  if (stepsToUpdate.includes(currentIndex)) {\n    if (completedStep.length !== 5) {\n      completedStep.push(currentStep);\n    }\n    \n    currentStep++;\n    count = 0;\n  }\n} else if (msg.payload == \"0\" && currentIndex >= 1) {\n  if (currentStep > 1 && stepsToUpdate.includes(currentIndex)){\n    currentStep--;\n  }\n  \n  if (count > 0) {\n    count--; // Reduce count until it reaches 0\n  } else {\n    // Reset count to the number of questions for the current step\n    count = quizStep[currentStep - 1].length;\n  }\n  \n  currentIndex--;\n}\n\n// Set updated global variables\nglobal.set('currentIndex', currentIndex);\nglobal.set('count', count);\nglobal.set('completedQuiz', completedQuiz);\nglobal.set('completedStep', completedStep);\nglobal.set('currentStep', currentStep);\nglobal.set('quizStep', quizStep);\nglobal.set('lastAuditDate', lastAuditDate,'persistent');\n\nmsg.payload = currentIndex; // Update payload with currentIndex value\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1340,
+        "y": 420,
+        "wires": [
+            [
+                "a2b9c33f53a9b1ec",
+                "e13284a3e534d6ef"
+            ]
+        ]
+    },
+    {
+        "id": "4293adacf884fcc0",
+        "type": "function",
+        "z": "d4aa6dd5b63a56de",
+        "g": "1fc9f093d1c94152",
+        "name": "sendEventAndScoreDetails",
+        "func": "let events = global.get('events','persistent') || []\nlet locationWiseScore = global.get('locationWiseScore','persistent') \nlet totalAuditPerformed = global.get('totalAuditPerformed','persistent')\nlet selectedLocation = msg.payload\nlet avgScore = (locationWiseScore[selectedLocation]/(25 * totalAuditPerformed)) || 0\n\nlet openEvents = events.filter(item=>item.status=='open')\nmsg.payload = {}\nmsg.payload.avgScore = avgScore\nmsg.payload.openEvents = openEvents.length\nmsg.payload.closedEvents = events.length - openEvents.length\n\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 460,
+        "y": 780,
+        "wires": [
+            [
+                "ad401755701ebc2b"
+            ]
+        ]
+    },
+    {
+        "id": "b0b8d12cddfee9de",
+        "type": "ui-button",
+        "z": "d4aa6dd5b63a56de",
+        "g": "1fc9f093d1c94152",
+        "group": "a9d4bff06566501d",
+        "name": "",
+        "label": "Action detail",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "Actions",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 210,
+        "y": 940,
+        "wires": [
+            [
+                "6aeab35aeef57600"
+            ]
+        ]
+    },
+    {
+        "id": "73735e7b29185507",
+        "type": "ui-button",
+        "z": "d4aa6dd5b63a56de",
+        "g": "eff25d98eece7970",
+        "group": "48b101b73a6aff92",
+        "name": "",
+        "label": "Previous",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "previous",
+        "icon": "",
+        "payload": "Dashboard",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 1220,
+        "y": 940,
+        "wires": [
+            [
+                "9110c17c8bf6cb73"
+            ]
+        ]
+    },
+    {
+        "id": "626ad44786d35f6f",
+        "type": "ui-table",
+        "z": "d4aa6dd5b63a56de",
+        "g": "eff25d98eece7970",
+        "group": "7778bc8551ec32b5",
+        "name": "Event details",
+        "label": "text",
+        "order": 0,
+        "width": "8",
+        "height": "4",
+        "maxrows": "3",
+        "autocols": true,
+        "columns": [],
+        "x": 1670,
+        "y": 820,
+        "wires": []
+    },
+    {
+        "id": "0f161b28f0df2abc",
+        "type": "function",
+        "z": "d4aa6dd5b63a56de",
+        "g": "eff25d98eece7970",
+        "name": "sendEventDetailsToTable",
+        "func": "let events = global.get('events','persistent') || []\nlet tableData = [...events]\n\nmsg.payload = tableData\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1390,
+        "y": 820,
+        "wires": [
+            [
+                "626ad44786d35f6f"
+            ]
+        ]
+    },
+    {
+        "id": "2d2e1bf5d0fd02f9",
+        "type": "ui-form",
+        "z": "d4aa6dd5b63a56de",
+        "g": "eff25d98eece7970",
+        "name": "Form to close event actions",
+        "group": "c82276a84966f7da",
+        "label": "",
+        "order": 0,
+        "width": "4",
+        "height": "4",
+        "options": [
+            {
+                "label": "Event id",
+                "key": "id",
+                "type": "number",
+                "required": false,
+                "rows": null
+            }
+        ],
+        "formValue": {
+            "id": ""
+        },
+        "payload": "",
+        "submit": "Close event",
+        "cancel": "Clear",
+        "resetOnSubmit": true,
+        "topic": "topic",
+        "topicType": "msg",
+        "splitLayout": false,
+        "className": "",
+        "x": 1160,
+        "y": 900,
+        "wires": [
+            [
+                "806fb5ad3575deda"
+            ]
+        ]
+    },
+    {
+        "id": "806fb5ad3575deda",
+        "type": "function",
+        "z": "d4aa6dd5b63a56de",
+        "g": "eff25d98eece7970",
+        "name": "closedAction",
+        "func": "let events = global.get('events','persistent') \nlet id = Number(msg.payload.id)\n\nevents = events.map(event => {\n    if (event.id === id) {\n        event.status = \"closed\";\n    }\n    return event;\n});\n\nglobal.set('events',events,'persistent')\nmsg.payload = events\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1610,
+        "y": 900,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "9110c17c8bf6cb73",
+        "type": "ui-control",
+        "z": "d4aa6dd5b63a56de",
+        "g": "eff25d98eece7970",
+        "name": "",
+        "ui": "25f447d87d1ce5c9",
+        "events": "all",
+        "x": 1600,
+        "y": 940,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "6aeab35aeef57600",
+        "type": "ui-control",
+        "z": "d4aa6dd5b63a56de",
+        "g": "1fc9f093d1c94152",
+        "name": "",
+        "ui": "25f447d87d1ce5c9",
+        "events": "all",
+        "x": 440,
+        "y": 920,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "fa259f874d418622",
+        "type": "inject",
+        "z": "d4aa6dd5b63a56de",
+        "g": "eff25d98eece7970",
+        "name": "Trigger",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "1",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 1140,
+        "y": 820,
+        "wires": [
+            [
+                "0f161b28f0df2abc"
+            ]
+        ]
+    },
+    {
+        "id": "1b5d4ac9ec5389c9",
+        "type": "inject",
+        "z": "d4aa6dd5b63a56de",
+        "g": "1fc9f093d1c94152",
+        "name": "Trigger",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "1",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "{}",
+        "payloadType": "json",
+        "x": 220,
+        "y": 720,
+        "wires": [
+            [
+                "01cfe0a36b9a7d6a"
+            ]
+        ]
+    },
+    {
+        "id": "dcb0118f06bd2b84",
+        "type": "ui-template",
+        "z": "d4aa6dd5b63a56de",
+        "g": "0256c6eb48109c11",
+        "group": "483d8aa48dd9f63c",
+        "dashboard": "25f447d87d1ce5c9",
+        "page": "37e1fafe6e84119c",
+        "name": "CSS",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "head": "",
+        "format": "/* Height for certain classes */\n.location-form,\n.location-details {\n    height: 48vh;\n}\n\n/* Footer styles */\n.footer .v-card {\n    position: absolute !important;\n    bottom: 0;\n    height: 65px;\n    width: 100vw;\n    left: -5px;\n}\n\n/* Styles for dashboard button */\n.dashboard-btn {\n    position: absolute;\n    height: 65px;\n    top: 0;\n    left: 0;\n}\n\n/* Styles for new audit button */\n.new-audit {\n    position: absolute;\n    height: 65px;\n    top: 0;\n    right: 0;\n}\n\n/* Styles for previous button */\n.previous {\n    position: absolute;\n    height: 65px;\n    top: 0;\n    left: 0;\n}\n\n/* Button styles within dashboard button */\n.dashboard-btn .v-btn {\n    background: rgb(232, 240, 250);\n    color: rgb(101, 144, 221);\n}\n\n/* Button styles within new audit button */\n.new-audit .v-btn {\n    background: rgb(34, 159, 32);\n    color: white;\n}\n\n/* Button styles within previous button */\n.previous .v-btn {\n    background: rgb(232, 240, 250);\n    color: rgb(101, 144, 221);\n}\n\n/* Styles for detail text */\n.detail-text {\n    font-weight: 500;\n}\n\n/* Styles for stepper */\n.stepper {\n    position: absolute;\n    top: 0;\n    padding-bottom: 10px;\n    left: 80px;\n    width: 700px;\n}\n\n/* Styles for follow-up button */\n.follow-up {\n    position: absolute;\n    height: 65px;\n    top: 0px;\n    right: 180px;\n}\n\n/* Button styles within follow-up button */\n.follow-up .v-btn {\n    background: rgb(188, 0, 12);\n    color: white;\n}\n\n/* Styles for next button */\n.next {\n    position: absolute;\n    height: 65px;\n    top: 0px;\n    right: 0px;\n    width: 150px;\n}\n\n/* Styles for log event button */\n.log-event {\n    position: absolute;\n    height: 65px;\n    top: 0px;\n    right: 0px;\n    width: 150px;\n}\n\n/* Button styles within next button */\n.next .v-btn {\n    background: rgb(36, 104, 220);\n    color: white;\n}\n\n/* Button styles within log event button */\n.log-event .v-btn {\n    background: rgb(188, 0, 12);\n    color: white;\n}\n\n/* Height settings for specific sections */\n.audit-quiz,\n.audit-grade {\n    height: 48vh;\n}\n\n/* Styles for group score details */\n.group-score-details {\n    height: 45vh;\n}\n\n/* Styles for header stepper */\n.header-stepper,\n.header-stepper .v-card-text {\n    height: 70px !important;\n}\n\n/* Styles for stepper within header stepper */\n.header-stepper .stepper {\n    position: absolute;\n    top: 0;\n    left: 130px;\n    width: 700px;\n}\n",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": true,
+        "templateScope": "site:style",
+        "className": "",
+        "x": 730,
+        "y": 260,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "787c0cf856941d5a",
+        "type": "comment",
+        "z": "d4aa6dd5b63a56de",
+        "g": "0256c6eb48109c11",
+        "name": "Showing last audit details",
+        "info": "Here we display the average score of the last audit, including details such as date and time, the average score presented as a percentage, \nand the total number of audits performed.",
+        "x": 170,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "dd9e47065aac345c",
+        "type": "comment",
+        "z": "d4aa6dd5b63a56de",
+        "g": "0256c6eb48109c11",
+        "name": "Setting location for audit",
+        "info": "Here, by default, we set the location to \"Inspection area\" if no option is selected. Users have the ability to choose a location by selecting an \noption from the dropdown menu.",
+        "x": 160,
+        "y": 480,
+        "wires": []
+    },
+    {
+        "id": "c686ca8383b548d3",
+        "type": "comment",
+        "z": "d4aa6dd5b63a56de",
+        "g": "1fc9f093d1c94152",
+        "name": "Displaying audit details of month",
+        "info": "- Here, we display the average score of the month for 5s question groups.\n- Additionally, we display the average score of the month for specific areas. Users have the ability to choose an area by selecting an option from the dropdown menu.\n- Users can view the number of pending and closed events. They can also view and close details by navigating to the event details page, accessed by clicking the \"Action Details\" button.\n- Moreover, users can observe the average percentage of the month for both areas on the leaderboard.",
+        "x": 210,
+        "y": 660,
+        "wires": []
+    },
+    {
+        "id": "31b40f2b2df00710",
+        "type": "comment",
+        "z": "d4aa6dd5b63a56de",
+        "g": "350691ea509b4ec6",
+        "name": "steppers for showing user current question and group",
+        "info": "",
+        "x": 1240,
+        "y": 560,
+        "wires": []
+    },
+    {
+        "id": "870699c231d45d87",
+        "type": "comment",
+        "z": "d4aa6dd5b63a56de",
+        "g": "350691ea509b4ec6",
+        "name": "Performing audit ",
+        "info": "Here, we have three buttons: 'Previous', 'Create follow-up', and 'Next', along with a section where we display questions and images based on the 'currentIndex' variable. \nWe utilize an array of objects containing questions and image URLs. The display adjusts according to the 'currentIndex' variable. When the 'Next' button is clicked, \nthe 'currentIndex' increases; however, when 'Previous' is clicked, 'currentIndex' decreases. When 'currentIndex' reaches 25, the user will navigate to the home page. \nThis logic governs how the display behaves.\n\nAdditionally, there's a 'Create follow-up' button that allows logging events for specific questions.\n\nWe also have two steppers:\n\nOne for displaying the current question, based on the 'count' variable.\nAnother for the current question group, operating on the 'currentStep' variable",
+        "x": 1120,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "5dfbce5c6b44a358",
+        "type": "comment",
+        "z": "d4aa6dd5b63a56de",
+        "g": "350691ea509b4ec6",
+        "name": "Calculate and reset all variable ",
+        "info": "When 'currentIndex' reaches 25, a calculateTotalScoreAndResetAudit function is triggered. Within this function, we store the total score of the audit into a global variable. Additionally, we \ncalculate and store separate scores for each question group . Finally,  we update numberofauditperformed variable and we reset certain variables to prepare them for a new audit.",
+        "x": 1970,
+        "y": 420,
+        "wires": []
+    },
+    {
+        "id": "964792f2fa683a74",
+        "type": "comment",
+        "z": "d4aa6dd5b63a56de",
+        "name": "LICENSE",
+        "info": "The FlowForge License\nCopyright (c) 2021-present FlowForge Inc\n\nWith regard to the FlowForge Software:\n\nThis Node-RED flow and associated documentation files (the \"Software\") may only be\nused in production, if you (and any entity that you represent) have agreed to,\nand are in compliance with, the FlowForge Subscription Terms (the \"Terms\"),\nor other agreements governing the use of the Software, as mutually agreed by you\nand FlowForge Inc (\"FlowForge\"), and otherwise have a valid FlowForge Subscription\nfor the active usage. Subject to the foregoing sentence, you are free to modify\nthis Software and publish patches to the Software. You agree that FlowForge and/or\nits licensors (as applicable) retain all right, title and interest in and to all\nsuch modifications and/or patches, and all such modifications and/or patches may\nonly be used, copied, modified, displayed, distributed, or otherwise exploited\nwith a valid Subscription.\nNotwithstanding the foregoing, you may copy and modify the Software for development\nand testing purposes, without requiring a subscription.  You agree that FlowForge\nand/or its licensors (as applicable) retain all right, title and interest in and\nto all such modifications.  You are not granted any other rights beyond what is\nexpressly stated herein. Subject to the foregoing, it is forbidden to copy, merge,\npublish, distribute, sublicense, and/or sell the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE.\n\nFor all third party components incorporated into the FlowForge Software, those\ncomponents are licensed under the original license provided by the owner of the\napplicable component.",
+        "x": 100,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "ab0f6e1b6e848a65",
+        "type": "comment",
+        "z": "d4aa6dd5b63a56de",
+        "name": "README",
+        "info": "# 5S Checklist\n\nThe 5S Checklist app makes it quick and easy to capture and analyze 5S audit data for reporting. End users are guided through 25 checks that can be configured to meet your operational needs. \nThis leans app allows you to store data automatically and view it in an included dashboard.\n\n## Accessing the Dashboard\n\nTo access the dashboard:\n1. Click on the right navigation bar in Dashboard 2.0.\n2. Select \"Open Dashboard.\"\n3. The Dashboard will launch in a new pop-up window.\n\nFor further details about the Dashboard, visit: [FlowFuse Dashboard](https://dashboard.flowfuse.com/)\n\n## Flow Structure\n\nThe flow's structure mirrors that of the dashboard. In the Node-RED Editor, \neach group corresponds to a page on the Node-RED Dashboard. \nEvery group comes with a headline that is prominently displayed on the Dashboard itself.\n\n## Data Integration: Simulation vs. Live Data\n\nBefore integrating the Dashboard into your environment:\n1. Familiarize yourself with the provided data simulation. \nIt helps users understand the expected input and offers guidance on how to adjust data sources and streams within Node-RED.\n2. Modify the flows to connect to your live data sources. Before making any changes, it's crucial to:\n   - **Create a Snapshot**: This step ensures that you have a backup to revert to. \n   If any issues arise while adjusting the flows, you can effortlessly revert to a previous state.\n\nFor comprehensive details on utilizing Snapshots, \nrefer to: [FlowFuse Snapshots Documentation](https://flowfuse.com/docs/user/snapshots/).\n",
+        "x": 260,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "43ca2cc1073eceab",
+        "type": "comment",
+        "z": "d4aa6dd5b63a56de",
+        "g": "eff25d98eece7970",
+        "name": "Display and close events ",
+        "info": "Here, we display all follow-up action events in a table where users can view details such as the location where the audit was performed, \nthe related question, the question group, a description of the event, and its status (indicating whether the action is closed or open).\nAdditionally, users have the capability to close a specific action by entering the ID of that action event into a form and marking it as closed.",
+        "x": 1170,
+        "y": 760,
+        "wires": []
+    },
+    {
+        "id": "d3c84e7de45494de",
+        "type": "comment",
+        "z": "d4aa6dd5b63a56de",
+        "g": "4af97a279e03c7c5",
+        "name": "Creating follow-up action",
+        "info": "Here, users can create a follow-up action. On the left side, they can view details \nfor which they want to create a follow-up action. On the right side, users can enter \na description for that specific follow-up action. After clicking on 'Log Event', \nthe data will be stored in the global context.",
+        "x": 1150,
+        "y": 1040,
+        "wires": []
+    },
+    {
+        "id": "f2722b544580bc1b",
+        "type": "ui-group",
+        "name": "footer",
+        "page": "ccc4825f24719240",
+        "width": "6",
+        "height": "1",
+        "order": 3,
+        "showTitle": false,
+        "className": "footer"
+    },
+    {
+        "id": "25f447d87d1ce5c9",
+        "type": "ui-base",
+        "name": "Dashboard",
+        "path": "/dashboard"
+    },
+    {
+        "id": "ccc4825f24719240",
+        "type": "ui-page",
+        "name": "Audit",
+        "ui": "25f447d87d1ce5c9",
+        "path": "/audit",
+        "layout": "grid",
+        "theme": "a52e2aee436b2e26",
+        "order": -1,
+        "className": ""
+    },
+    {
+        "id": "1bc173050737de02",
+        "type": "ui-group",
+        "name": "question and image section",
+        "page": "ccc4825f24719240",
+        "width": "6",
+        "height": "1",
+        "order": 1,
+        "showTitle": false,
+        "className": ""
+    },
+    {
+        "id": "388073d857766f13",
+        "type": "ui-group",
+        "name": "audit grade options",
+        "page": "ccc4825f24719240",
+        "width": "6",
+        "height": "1",
+        "order": 2,
+        "showTitle": false,
+        "className": ""
+    },
+    {
+        "id": "f8130b57e2f7f61f",
+        "type": "ui-group",
+        "name": "header-stepper",
+        "page": "ccc4825f24719240",
+        "width": "12",
+        "height": "1",
+        "order": -1,
+        "showTitle": false,
+        "className": "header-stepper"
+    },
+    {
+        "id": "d2c065fe637b3d61",
+        "type": "ui-group",
+        "name": "footer",
+        "page": "466d64c7e52120e5",
+        "width": "6",
+        "height": "1",
+        "order": 3,
+        "showTitle": false,
+        "className": "footer"
+    },
+    {
+        "id": "99ebb0140d03a311",
+        "type": "ui-group",
+        "name": "Report audit non-conformance",
+        "page": "466d64c7e52120e5",
+        "width": "6",
+        "height": "1",
+        "order": 1,
+        "showTitle": true,
+        "className": ""
+    },
+    {
+        "id": "37e1fafe6e84119c",
+        "type": "ui-page",
+        "name": "Home",
+        "ui": "25f447d87d1ce5c9",
+        "path": "/",
+        "layout": "grid",
+        "theme": "a52e2aee436b2e26",
+        "order": -1,
+        "className": ""
+    },
+    {
+        "id": "b95b554e4f268469",
+        "type": "ui-group",
+        "name": "Description",
+        "page": "466d64c7e52120e5",
+        "width": "6",
+        "height": "4",
+        "order": 2,
+        "showTitle": true,
+        "className": ""
+    },
+    {
+        "id": "483d8aa48dd9f63c",
+        "type": "ui-group",
+        "name": "Select a location",
+        "page": "37e1fafe6e84119c",
+        "width": "6",
+        "height": "6",
+        "order": -1,
+        "showTitle": true,
+        "className": "location-form"
+    },
+    {
+        "id": "752556b56b1dddb2",
+        "type": "ui-group",
+        "name": "Selected location details",
+        "page": "37e1fafe6e84119c",
+        "width": "6",
+        "height": "1",
+        "order": -1,
+        "showTitle": true,
+        "className": "location-details"
+    },
+    {
+        "id": "9139adec501ea015",
+        "type": "ui-group",
+        "name": "footer",
+        "page": "37e1fafe6e84119c",
+        "width": "12",
+        "height": "1",
+        "order": -1,
+        "showTitle": false,
+        "className": "footer"
+    },
+    {
+        "id": "5e8ce4c4db63599e",
+        "type": "ui-group",
+        "name": "footer",
+        "page": "c5414601756df1a7",
+        "width": "6",
+        "height": "1",
+        "order": 5,
+        "showTitle": true,
+        "className": "footer"
+    },
+    {
+        "id": "44e723a1c7f6a8b9",
+        "type": "ui-group",
+        "name": "Average score for group per month",
+        "page": "c5414601756df1a7",
+        "width": "5",
+        "height": "1",
+        "order": 1,
+        "showTitle": true,
+        "className": ""
+    },
+    {
+        "id": "a9d4bff06566501d",
+        "type": "ui-group",
+        "name": "Average score for area",
+        "page": "c5414601756df1a7",
+        "width": "3",
+        "height": "1",
+        "order": 2,
+        "showTitle": true,
+        "className": "area-avg-score"
+    },
+    {
+        "id": "c45d1751e4644648",
+        "type": "ui-group",
+        "name": "Leaderboard",
+        "page": "c5414601756df1a7",
+        "width": "4",
+        "height": "5",
+        "order": 3,
+        "showTitle": true,
+        "className": "leaderboard"
+    },
+    {
+        "id": "48b101b73a6aff92",
+        "type": "ui-group",
+        "name": "footer",
+        "page": "de5923834c83b6c9",
+        "width": "6",
+        "height": "1",
+        "order": 3,
+        "showTitle": true,
+        "className": "footer"
+    },
+    {
+        "id": "7778bc8551ec32b5",
+        "type": "ui-group",
+        "name": "Action Details",
+        "page": "de5923834c83b6c9",
+        "width": "8",
+        "height": "1",
+        "order": 1,
+        "showTitle": true,
+        "className": ""
+    },
+    {
+        "id": "c82276a84966f7da",
+        "type": "ui-group",
+        "name": "Action Form",
+        "page": "de5923834c83b6c9",
+        "width": "4",
+        "height": "1",
+        "order": 2,
+        "showTitle": true,
+        "className": ""
+    },
+    {
+        "id": "a52e2aee436b2e26",
+        "type": "ui-theme",
+        "name": "Dashboard",
+        "colors": {
+            "surface": "#ffffff",
+            "primary": "#0094ce",
+            "bgPage": "#eeeeee",
+            "groupBg": "#ffffff",
+            "groupOutline": "#cccccc"
+        }
+    },
+    {
+        "id": "466d64c7e52120e5",
+        "type": "ui-page",
+        "name": "Event",
+        "ui": "25f447d87d1ce5c9",
+        "path": "/event",
+        "layout": "grid",
+        "theme": "a52e2aee436b2e26",
+        "order": -1,
+        "className": ""
+    },
+    {
+        "id": "c5414601756df1a7",
+        "type": "ui-page",
+        "name": "Dashboard",
+        "ui": "25f447d87d1ce5c9",
+        "path": "/dashboard",
+        "layout": "grid",
+        "theme": "a52e2aee436b2e26",
+        "order": -1,
+        "className": ""
+    },
+    {
+        "id": "de5923834c83b6c9",
+        "type": "ui-page",
+        "name": "Actions",
+        "ui": "25f447d87d1ce5c9",
+        "path": "/actions",
+        "layout": "grid",
+        "theme": "a52e2aee436b2e26",
+        "order": -1,
+        "className": ""
+    }
+]
