@@ -10,7 +10,7 @@ We do two types of releases:
 
 ## Scheduled Releases
 
-We publish a new release of FlowFuse in line with our [release plan](./planning.md#cadence). Each
+We publish a new release of FlowFuse in line with our [release plan](../project-management.md#cadence). Each
 release has a Release Manager who oversees the process. This role rotates around
 the team to ensure everyone is able to do it and that we don't have any single
 points of failure in the process.
