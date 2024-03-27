@@ -1,6 +1,6 @@
 ---
 title: Automating Building Management with FlowFuse & Node-RED
-image: /images/stories/power-workplace-diagram.png
+image: /images/stories/power-workplace-diagram.svg
 date: 2024-03-28
 logo:
 hubspot:
@@ -43,7 +43,7 @@ Let's say for example a customer is dealing with 5 floors within each building i
 
 We are a core Microsoft partner, so we have some Node-RED instances hosted in Azure. We're trying to move towards having less dependency on running our own environment because as I mentioned, we're quite a small organization and we want to reduce the amount of time we spend on maintaining our own systems. That's where FlowFuse Cloud is interesting for us because it allows us to focus on growing our business rather than maintaining environments.
 
-![Using FlowFuse and Node-RED to automate workplaces](./images/stories/power-workplace-diagram.png "Using FlowFuse and Node-RED to automate workplaces"){data-zoomable}
+![Using FlowFuse and Node-RED to automate workplaces](./images/stories/power-workplace-diagram.svg "Using FlowFuse and Node-RED to automate workplaces"){data-zoomable}
 
 **Rob Marcer:** What were you using before Node-RED?
 
