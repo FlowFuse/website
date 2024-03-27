@@ -9,6 +9,9 @@ tags:
     - posts
     - node-red
     - flowfuse
+    - manufacturing
+	- perdue model
+	- ISA 99
 ---
 
 The architecture of a factory's Node-RED infrastructure is a common topic of discussion and inquiry. Fundamentally, my response to such queries unfolds in two parts. Initially, the focus must be on data organization. I champion a structure centered around a [Unified Namespace](https://flowfuse.com/unified-namespace/), a concept I explore in depth in this article ["Node-RED in a Unified Namespace Architecture."](https://flowfuse.com/blog/2024/02/node-red-unified-namespace-architecture/) However, this is only one part of the inquiry. The other part of the question delves into the positioning of FlowFuse and Node-RED within the network infrastructure.
@@ -27,7 +30,7 @@ Next is the Edge layer, which serves as the communicative conduit between the Sh
 
 At the top, we find the Enterprise Layer. This can signify either cloud services or a company-wide accessible network. Frequently, the Cloud and Enterprise layers are divided, but in our case, it doesn’t matter whether they are separated.
 
-![Node-RED Manufacturing Architecture](/blog/2024/03/images/node-red-architecture.png)
+![Node-RED Manufacturing Architecture](./images/node-red-architecture.png)
 
 ## Applications Across Factory Layers
 
@@ -47,7 +50,7 @@ Every Node-RED instance that isn’t hosted within the Enterprise/Cloud Network�
 
 Facilitating communication between Node-RED instances is a fundamental requirement for creating a cohesive and responsive Node-RED architecture. FlowFuse elevates this capability by providing an event-driven communication framework (based on MQTT) that binds different Node-RED instances together. This is primarily achieved through the use of Project Links—a feature within FlowFuse that allows for the smooth transfer of data between instances.
 
-These Project Links are more than just communication channels; they represent a method of organizing Node-RED instances into a networked application, where each instance can be considered a node within the project. With Project Links, instances can subscribe to specific events or topics and publish messages that other instances are listening for. This is particularly useful for triggering actions across the network, like updating a dashboard in real time or controlling devices on the shopfloor based on analytics computed at the edge.
+These [Project Links](https://flowfuse.com/docs/user/projectnodes/) are more than just communication channels; they represent a method of organizing Node-RED instances into a networked application, where each instance can be considered a node within the project. With Project Links, instances can subscribe to specific events or topics and publish messages that other instances are listening for. This is particularly useful for triggering actions across the network, like updating a dashboard in real time or controlling devices on the shopfloor based on analytics computed at the edge.
 
 ## Summary
 
