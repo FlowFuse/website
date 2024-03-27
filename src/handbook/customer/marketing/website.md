@@ -21,6 +21,11 @@ Once you have those, you can update the [following file](https://github.com/Flow
 
 Update the `href=""` value of the `<a>` tag to update the Event URL, and change the title inside the middle `<span>`
 
+You should also ensure that the banner is not disabled in [this file](https://github.com/FlowFuse/website/blob/main/src/_includes/layouts/base.njk). If it is, it would look like this: 
+`{% raw %}
+{# {% include "../components/events-banner.njk" %} #}
+{% endraw %}`. Please remove the comment symbols `{#` and `#}` to enable the banner.
+
 ## Images
 
 All images on the website, whether part of the blog or otherwise, are run though an [image pipeline](https://github.com/FlowFuse/website/blob/main/lib/image-handler.js), that compresses, resizes and converts the images to reduce file size and improve page loading speed.
