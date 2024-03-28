@@ -510,6 +510,9 @@ hubspot:
 <script>
     function setupPricingSlider(sliderId, basePrice, stepSize, priceIntElementId, priceDecElementId, annualPriceElementId, valueElementId, isAnnual) {
         const sliderEl = document.querySelector(sliderId)
+        sliderEl.min = stepSize;
+        sliderEl.value = stepSize;
+        sliderEl.step = stepSize;
         const sliderValue = document.querySelector(valueElementId)
         const priceIntElement = document.querySelector(priceIntElementId);
         const priceDecElement = document.querySelector(priceDecElementId);
