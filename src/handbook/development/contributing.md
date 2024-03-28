@@ -3,11 +3,11 @@ originalPath: development/contributing.md
 updated: git modified
 ---
 
-## Contributing
+# Contributing
 
-### Coding Best Practices
+## Coding Best Practices
 
-#### Linting
+### Linting
 
 All code repositories adopt our standard linting rules found in the [flowforge/.github repository](https://github.com/FlowFuse/.github/blob/main/.eslintrc).
 
@@ -21,7 +21,7 @@ In the case of working with `vue` or `njk` files (found in the [frontend](https:
 
 <img width="478" alt="ESLint - Probe" src="../images/eslint_probe.png">
 
-#### Editor Config
+### Editor Config
 
 The [website repository][website-repo] uses a [`.editorconfig`](https://editorconfig.org)
 to allow editors to automatically pick up the correct style for that repository.
@@ -29,7 +29,7 @@ Some editors, like neovim, has this pre-installed. If you're using VSCode, an
 [plugin](https://marketplace.visualstudio.com/items?itemName=EditorConfig.EditorConfig)
 is available.
 
-### Git Best Practices
+## Git Best Practices
 
 ### Committing
 
@@ -53,7 +53,7 @@ It is preferred that new work be added on a branch (rather than in a forked repo
 
 Once code is merged, please close any related branches in order to keep the repository tidy.
 
-#### Pull Requests
+### Pull Requests
 
 PRs, when opened, should have at least one reviewer assigned, and a consequent review approved, before any merge takes place. If a PR is opened for review/discussion purposes, this PR should be set to `draft` state.
 
@@ -62,8 +62,37 @@ When merging a PR, you should choose the "Merge pull request" option. There is n
 When conducting a PR review, if you are the last (or only) reviewer and all reviews (including your own) are approvals, unless there is a comment from the author stating otherwise, you are free to conduct the merge. Otherwise, leave the merge to the author of the PR, or a future reviewer.
 
 For a comprehensive review of the Pull Request, utilize the designated FlowFuse pre-staging environment. As of the composition of this document, the pre-staging verification is only available for the primary [FlowFuse NPM package](https://github.com/FlowFuse/flowfuse).
-To validate changes within the pre-staging environment, apply the `deploy:pr` label to the PR. The PR will then undergo automatic deployment to the pre-staging environment, and the deployment link will be appended to the associated workflow summary. The label should remain until the PR is merged.
-A unique pre-staging environment is established for each Pull Request. This environment is terminated upon PR merging or closure. The FlowFuse application deployed from the Pull Request comes pre-configured. Access credentials for the pre-staging environment are located in the FlowFuse 1Password vault.
+
+To validate changes within the pre-staging environment, you can add the `deploy:pr` label to the PR. This will trigger a deployment to a unique staging environment. Read more in the [Test Changes in Staging](#test-changes-in-staging) section.
+
+## Conducting Code Reviews
+
+As part of our commitment to quality, all code changes should be reviewed by at least one other developer before being merged. This is to ensure that the code is of a high standard, and that any potential issues are caught early.
+
+When code is ready to review, developer should open a Pull Request (PR) and assign a reviewer. The reviewer should then review the code, and provide feedback in the form of comments on the PR.
+
+When reviewing code, consider the following:
+
+- **Functionality:** Has the acceptance criteria on the attached issue been met? Does the code do what it is supposed to do? You ***must explicitly test the functionality***. It is recommended to do so in a [staging environment](#test-changes-in-staging) as well as pulling code changes locally and testing on your own machine. 
+- **Test Coverage:** Are there tests for the new code introduced? Are the test cases sufficient, and do they cover more than just golden path?
+- **Documentation:** Ensure that supporting documentation has been written, this is especially important for new features and options introduced.
+
+### Test Changes in Staging
+
+For FlowFuse, when changes are merged into the `main` branch, they are [automatically deployed to the production environment](./ops/production#deployment-to-flowfuse-cloud). As such, it is vital a thorough review has been conducted before merging, and that the changes have been tested in a staging environment.
+
+It is possible to deploy a PR to a dedicated staging environment for testing. To do this, add the `deploy:pr` label to the PR. This will trigger a deployment to a unique staging environment. The label should remain until the PR is merged.
+
+A unique pre-staging environment will be established for each Pull Request. 
+
+![Example entry in the PR status to show the "Deploy Staging" job](../images/screenshots/devops-pr-staging.png)
+
+The environment itself will then be available at: `https://<pr-number>.flowfuse.dev/`
+
+Access credentials for the pre-staging environment are located in the FlowFuse 1Password vault.
+
+The FlowFuse application deployed from the Pull Request comes pre-configured. The environment is terminated upon PR merging or closure. 
+
 
 
 [website-repo]: https://github.com/FlowFuse/website
