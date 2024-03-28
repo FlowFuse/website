@@ -61,4 +61,9 @@ When merging a PR, you should choose the "Merge pull request" option. There is n
 
 When conducting a PR review, if you are the last (or only) reviewer and all reviews (including your own) are approvals, unless there is a comment from the author stating otherwise, you are free to conduct the merge. Otherwise, leave the merge to the author of the PR, or a future reviewer.
 
+For a comprehensive review of the Pull Request, utilize the designated FlowFuse pre-staging environment. As of the composition of this document, the pre-staging verification is only available for the primary [FlowFuse NPM package](https://github.com/FlowFuse/flowfuse).
+To validate changes within the pre-staging environment, apply the `deploy:pr` label to the PR. The PR will then undergo automatic deployment to the pre-staging environment, and the deployment link will be appended to the associated workflow summary. The label should remain until the PR is merged.
+A unique pre-staging environment is established for each Pull Request. This environment is terminated upon PR merging or closure. The FlowFuse application deployed from the Pull Request comes pre-configured. Access credentials for the pre-staging environment are located in the FlowFuse 1Password vault.
+
+
 [website-repo]: https://github.com/FlowFuse/website
