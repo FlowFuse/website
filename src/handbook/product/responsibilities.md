@@ -27,4 +27,4 @@ The Product Manager (PM) at FlowFuse, is primarily responsible for:
 - Technical decisions on how the product is built or architected. 
 - A team of engineers: The PM will take the lead in decisions about the product, but not manage the people implementing it.
 - Shipping in time
-- Effort estimations, the Product Manager provides effort estimation when creating issues, as outlined in the [handbook](../development/releases/planning.md#effort-estimation). However, the DRI for this process is the CTO.
+- Effort estimations, the Product Manager provides effort estimation when creating issues, as outlined in the [handbook](../development/project-management#sizing-issues). However, the DRI for this process is the CTO.

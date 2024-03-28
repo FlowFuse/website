@@ -28,7 +28,7 @@ Based on customer feedback, input from the FlowFuse team, and all stakeholders, 
 #### Step 2 - Assignment to the To-Do section
 Once an issue is refined, the PM continuously assigns issues to the [Development Board's](#development-board) `To-Do` Section. This is the first indication that this particular item is planned and will be the one of the next items for the `Up Next` section. It also signals the engineering and UX team to raise any open design or architectural clarifications if required.
 
-This section should include a maximum of 40 [effort estimation points](#effort-estimation).
+This section should include a maximum of 40 [effort estimation points](#sizing-issues).
 
 #### Step 3 - Assignment to the Up Next section
 This section is most relevant for the engineering team because it communicates the highest priority items that need to be worked on next. 
@@ -43,15 +43,15 @@ When an engineer is looking for their next item to work on, they should scan the
 
 ##### Mark "In Progress"
 
-It is important that when a developer starts working on an issue, they move it to the `In Progress` section. This signals to the PM and the rest of the team that the issue is being worked on and is no longer available for others to pick up. It will also enable some of the [automations](#automations) we use for tracking progress. It is also desired that the engineer marks when a task is started, by recording the "Started" date on the issue's "Development" board item.
+It is important that when a developer starts working on an issue, they move it to the `In Progress` section. This signals to the PM and the rest of the team that the issue is being worked on and is no longer available for others to pick up. It will also enable some of the automations we use for tracking progress. It is also desired that the engineer marks when a task is started, by recording the "Started" date on the issue's "Development" board item.
 
 ##### Record "Expected" Date
 
 Where possible, developers should also provide a rough "Estimated" date as to when they expect the issue to be ready for review, i.e. development, testing and documentation has been finished.
 
-If this is not conducted, the Engineering Manager will assign an end date to the items based on the [effort estimation](#effort-estimation).
+If this is not conducted, the Engineering Manager will assign an end date to the items based on the [effort estimation](#sizing-issues).
 
-The estimated date should take into account the associated [size](#effort-estimation) of the issue and most importantly the developer's availability, and other workload commitments.
+The estimated date should take into account the associated [size](#sizing-issues) of the issue and most importantly the developer's availability, and other workload commitments.
 
 ### UX Planning
 
