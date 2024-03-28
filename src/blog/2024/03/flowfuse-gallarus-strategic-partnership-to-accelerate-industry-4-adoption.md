@@ -13,10 +13,9 @@ tags:
     - digital Transformation
 ---
 
+FlowFuse, a leading provider of the low-code end-to-end development platform for industrial applications, and Gallarus Industry Solutions Limited, the leading industry 4.0 integrator in Europe dedicated to digital transformation through the deployment of the Unified Namespace (UNS) digital architecture, today announced an exciting strategic partnership. This collaboration aims to empower businesses with advanced solutions for Industry 4.0 transformation and optimized operational efficiency.
 
 <!--more-->
-
-FlowFuse, a leading provider of the low-code end-to-end development platform for industrial applications, and Gallarus Industry Solutions Limited, the leading industry 4.0 integrator in Europe dedicated to digital transformation through the deployment of the Unified Namespace (UNS) digital architecture, today announced an exciting strategic partnership. This collaboration aims to empower businesses with advanced solutions for Industry 4.0 transformation and optimized operational efficiency.
 
 Powered by Node-RED, FlowFuse enables teams of all sizes to harness low-code capabilities to build robust applications with unparalleled scalability, and security. FlowFuse’s collaborative environment and scalable architecture ensure that teams can build securely and together for continuous development and operational success. Gallarus, with its extensive experience in digital transformation projects and industrial technology integration, will leverage its expertise in high-quality project implementation, support, and maintenance. Together, they offer a comprehensive solution for businesses seeking to digitally transform their operations.
 
