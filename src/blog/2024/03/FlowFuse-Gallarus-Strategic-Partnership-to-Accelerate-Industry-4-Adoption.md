@@ -11,7 +11,6 @@ tags:
     - strategic Partner
     - Indusstry 4.0
     - digital Transformation
-    - 
 ---
 
 
