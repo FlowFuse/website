@@ -10,6 +10,7 @@ tags:
    - node-red
    - kafka
 ---
+
 In today's fast-paced manufacturing landscape, innovation is essential, alongside streamlined data integration and analysis. Manufacturing firms must navigate a constant influx of real-time data streams efficiently. Leveraging Kafka offers a robust solution to this challenge. If you're interested in learning more about how businesses in the manufacturing industry use Kafka, we recommend checking out our blog post on [using kakfa in manufacturing](https://flowfuse.com/blog/2024/03/using_kafka_in_manufacturing/).
 
 <!--more-->
