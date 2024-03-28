@@ -10,6 +10,8 @@ tags:
     - flowfuse
     - node.js
     - siemens iot2050
+    - RBAC
+    - Role Based Access Control
 ---
 
 Role-based access Control (RBAC) is a crucial component of modern software platforms. It provides granular control over access rights and enhances security. Integrating RBAC into the FlowFuse platform brings this level of sophistication to Node-RED, allowing users to manage their environments with precision and confidence. This blog will explore how FlowFuse's RBAC system improves both security and user experience within the Node-RED ecosystem.
