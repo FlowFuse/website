@@ -564,7 +564,7 @@ hubspot:
             if (tempSliderValue > 250 && (sliderId === "#team-annual-slider" || sliderId === "#team-monthly-slider")) {
                 discountedPriceMonthly = fixedMonthlyPrice / tempSliderValue;
             } else {
-                const discount = ((tempSliderValue - stepSize) / stepSize) * 0.005;
+                const discount = ((tempSliderValue - stepSize) / stepSize) * 0.01;
                 discountedPriceMonthly = (basePrice * (1 - discount)) / 12;
             }
 
@@ -583,10 +583,10 @@ hubspot:
     }
 
     // Setup the sliders
-    setupPricingSlider("#team-annual-slider", 250, 3, "#team-annual-price-int", "#team-annual-price-dec", "#team-annual-price-note", "#team-annual-value", true);
-    setupPricingSlider("#enterprise-annual-slider", 500, 5, "#enterprise-annual-price-int", "#enterprise-annual-price-dec", "#enterprise-annual-price-note", "#enterprise-annual-value", true);
-    setupPricingSlider("#team-monthly-slider", 300, 3, "#team-monthly-price-int", "#team-monthly-price-dec", "#team-monthly-price-note", "#team-monthly-value", false);
-    setupPricingSlider("#enterprise-monthly-slider", 600, 5, "#enterprise-monthly-price-int", "#enterprise-monthly-price-dec", "#enterprise-monthly-price-note", "#enterprise-monthly-value", false);
+    setupPricingSlider("#team-annual-slider", 250, 5, "#team-annual-price-int", "#team-annual-price-dec", "#team-annual-price-note", "#team-annual-value", true);
+    setupPricingSlider("#enterprise-annual-slider", 500, 10, "#enterprise-annual-price-int", "#enterprise-annual-price-dec", "#enterprise-annual-price-note", "#enterprise-annual-value", true);
+    setupPricingSlider("#team-monthly-slider", 300, 5, "#team-monthly-price-int", "#team-monthly-price-dec", "#team-monthly-price-note", "#team-monthly-value", false);
+    setupPricingSlider("#enterprise-monthly-slider", 600, 10, "#enterprise-monthly-price-int", "#enterprise-monthly-price-dec", "#enterprise-monthly-price-note", "#enterprise-monthly-value", false);
 </script>
 
 <!-- Features info -->
