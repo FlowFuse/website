@@ -20,7 +20,6 @@ In this step-by-step guide, we’ll walk you through everything you need to know
 ## Discussing problem and potential solution
 Let's start by dissussing a problem: imagine a temperature sensor network across a city. We need to centralize and analyze this data in real time for effective monitoring and visualization.
 
-**Solution Overview:** 
 To achieve real-time temperature monitoring, we'll utilize Kafka. Temperature sensors will feed data into Kafka through Kafka producer. To retrive real-time data for visualization and monitoring, we’ll be using Kafka consumer. We will organize the data by region. The temperature data for each region will be managed in a specific Kafka topic partition.
 
 While in this guide, we will generate simulated data using random number expression and run both producers and consumers on the same system, practical scenarios often involve distributed setups across different devices or systems.
