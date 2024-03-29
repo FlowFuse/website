@@ -15,7 +15,7 @@ Kafka is one of the most powerful technologies enabling seamless data communicat
 
 <!--more-->
 
-During our recent visit to the Node-RED Forum, we noticed that while some Kafka-related queries have been answered nicely, others remain unanswered or have not been satisfactorily addressed, leaving users feeling stuck. To address this issue, we've created a comprehensive Kafka guide covering everything you need to know about Kafka, from installation and connection to data transmission. For newcomers to Kafka, we recommend reading our previous blog on [how Kafka is applied in manufacturing](https://flowfuse.com/blog/2024/03/using-kafka-in-manufacturing/), where we've covered the basics and practical applications extensively.
+During my recent visit to the Node-RED Forum, I noticed that while some Kafka-related queries have been answered nicely, others remain unanswered or have not been satisfactorily addressed, leaving users feeling stuck. To address this issue, we've created a comprehensive Kafka guide covering everything you need to know about Kafka, from installation and connection to data transmission. For newcomers to Kafka, we recommend reading our previous blog on [how Kafka is applied in manufacturing](https://flowfuse.com/blog/2024/03/using-kafka-in-manufacturing/), where we've covered the basics and practical applications extensively.
 
 ## Discussing problem and potential solution
 Let's start by discussing a problem: imagine a temperature sensor network across a city. We need to centralize and analyze this data in real time for effective monitoring and visualization.
