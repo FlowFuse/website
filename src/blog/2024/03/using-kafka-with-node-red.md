@@ -2,7 +2,7 @@
 title: Using Kafka with Node-Red
 subtitle: Step-by-step Guide to Using Kafka with Node-RED for sending and receiving data.
 description: Learn how to seamlessly integrate Apache Kafka with Node-RED to facilitate real-time data communication. This step-by-step guide covers everything you need to harness the full potential of Kafka in your Node-RED applications.
-date: 
+date: 2024-03-29
 authors: ["sumit-shinde"]
 image: /blog/2024/03/images/using-kafka-with-node-red.png
 tags:
@@ -48,10 +48,7 @@ To run Kafka on the cloud, you can consider utilizing any cloud service accordin
 During the writing of this tutorial, I utilized [Aiven’s cloud data platform](https://aiven.io/kafka-connect) which offers the option to use Kafka in the free trial. However, you are free to choose any cloud service that suits your requirements and preferences.
 
 ## Installing Dashboard 2.0
-In this section, we will install Dashboard 2.0, we will display the temperature data of different regions on the Dashboard 2.0 chart in real-time. 
-
-1. Install Node-RED Dashboard 2.0. Follow these [instructions](https://dashboard.flowfuse.com/getting-started.html) to install.
-2. Create your first group, page, theme, and base.
+We will be installing Dashboard 2.0 to display real-time temperature data of various regions on a chart. If you are new to Dashboard 2.0, we recommend referring to [Getting started with Dashboard 2.0](https://flowfuse.com/blog/2024/03/dashboard-getting-started/)\, which covers everything from basic concepts to installation and creating your first dashboard seamlessly.
 
 ## Installing and configuring Kafka custom node
 
