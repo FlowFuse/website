@@ -141,5 +141,8 @@ Now you’ll be able to see the profile icon with a greeting with your name.
 
 !["Screenshot of Dashboard displaying logged in user information "](./images/displaying-logged-in-user-dashboard-view.png "Screenshot of Dashboard displaying logged in user information ")
 
+If you are interested in learning more about Multiuser dashboards, please refer to our [webinar](https://flowfuse.com/webinars/2024/node-red-dashboard-multi-user/) and [blog post](https://flowfuse.com/blog/2024/01/dashboard-2-multi-user/). They provide detailed insights and practical tips on maximizing the potential of Multiuser dashboards with Node-RED Dashboard 2.0, Additionally, we offer a [Multi-User Dashboard for Ticket/Task Management](https://flowfuse.com/blueprints/flowfuse-dashboard/multi-user-dashboard/#multi-user-dashboard-for-ticket%2Ftask-management), which allows you to quickly utilize templates for develope Personalize multi-user dashboard.
+ .
+
 ## Conclusion 
 In this guide, we have demonstrated how to secure your dashboard and how to retrieve and display logged in user data on the dashboard. Additionally, we have discussed the functionality of the Flowfuse multi-user addon.
