@@ -18,7 +18,7 @@ A few months ago when Dashboard 2.0 didn't exist, I was searching for customizab
 If you're new to Dashboard 2.0, refer to our blog post [Getting Started with Dashboard 2.0](https://flowfuse.com/blog/2024/03/dashboard-getting-started/)
 
 ## Enabling Flowfuse User Authentication 
-Before we can show user data on the dashboard we need to figure out how we get the data from users. This may seem like a pain point but don’t worry about it. Flowfuse offers a feature that not only helps us secure the dashboard but also makes it simpler to get the user data at the dashboard at a later stage.
+Before we can show user data on the dashboard we need to figure out how we get the data from users. This might seem complicated, but don’t worry about it. FlowFuse offers a feature that not only helps us secure the dashboard but also makes it simpler to get the user data at the dashboard at a later stage.
 
 1. Navigate to the instance setting.
 2. Select the Security tab.
