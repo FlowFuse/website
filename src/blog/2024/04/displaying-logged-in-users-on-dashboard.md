@@ -83,7 +83,7 @@ To display user information on the dashboard we will use Vue’s [Teleport](http
 
 ```
 <template>
-    <!-- Teleporting user info to #app-bar-actions, which is id of actions bars right corners area -->
+    <!-- Teleporting user info to #app-bar-actions, which is the ID of the action bars' right corners area -->
     <Teleport v-if="loaded" to="#app-bar-actions">
         <div class="user-info">
             <!-- Displaying user image -->
@@ -95,32 +95,35 @@ To display user information on the dashboard we will use Vue’s [Teleport](http
 </template>
 
 <script>
-    export default {
-        data() {
-            return {
-                // Flag to indicate if the component is loaded
-                loaded: false
-            };
-        },
-        mounted() {
-            // Component is mounted, set loaded to true
-            this.loaded = true;
-        }
+export default {
+    data() {
+        return {
+            // Flag to indicate if the component is loaded
+            loaded: false
+        };
+    },
+    mounted() {
+        // This function is called when the component is inserted into the DOM.
+        // Setting loaded to true here ensures the component is ready to access #app-bar-actions,
+        // as it's now part of the same DOM structure.
+        // Accessing it before mounted() would cause an error because the component wouldn't be initialized in the DOM yet.
+        this.loaded = true; // Setting loaded to true to indicate that the component has been mounted successfully
     }
+}
 </script>
 
 <style>
-    /* Styling for user info display */
-    .user-info {
-        display: flex;
-        align-items: center;
-        gap: 8px;
-    }
-    /* Styling for user avatar image*/
-    .user-info img {
-        width: 24px;
-        height: 24px;
-  }
+/* Styling for user info display */
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+/* Styling for user avatar image*/
+.user-info img {
+    width: 24px;
+    height: 24px;
+}
 </style>
 ```
 
