@@ -50,7 +50,8 @@ The FlowFuse User Addon is a plugin developed for Dashboard 2.0, leveraging the 
    "image": "" // User Avatar from FlowFuse
 }
 ```
-Behind the scenes, we're appending our user object to the msg object, via the SocketIO auth option. We make the socketio object available via a computed [setup](https://dashboard.flowfuse.com/contributing/guides/state-management.html#setup-store) object, this means that we can also access user data in any ui-template widget like this:
+
+Behind the scenes, the user addon is appending the user object to the `msg`, via the SocketIO auth option. We make the socketio object available via a computed [setup](https://dashboard.flowfuse.com/contributing/guides/state-management.html#setup-store) object, this means that we can also access user data in any ui-template widget like this:
 
 ```
 setup.socketio.auth.user
