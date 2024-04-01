@@ -74,7 +74,7 @@ For example, consider a manufacturing facility where each production line has it
 
 ## Displaying logged in user on Dashboard 2.0
 
-We are all set to display logged in user on Dashboard 2.0. You can confirm this by printing the msg object emitted by the Dashboard 2.0 widget, which should have attached user information. Use the debug node for this.
+Now you know how the user add on works, you are all set to display logged in user on Dashboard 2.0. To confirm this you can use a `debug` node that receives the `msg` object emitted by the Dashboard 2.0 widgets.
 
 To display user information on the dashboard we will use Vue’s [Teleport](https://dashboard.flowfuse.com/nodes/widgets/ui-template.html#teleports) feature to render content to a specific location in the DOM, we will display user information at the action bar’s right-hand side.
 
