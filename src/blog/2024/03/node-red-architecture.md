@@ -12,6 +12,8 @@ tags:
   - manufacturing
   - perdue model
   - ISA 99
+  - UNS
+  - Unified Namespace
 ---
 
 The architecture of a factory's Node-RED infrastructure is a common topic of discussion and inquiry. Fundamentally, my response to such queries unfolds in two parts. Initially, the focus must be on data organization. I champion a structure centered around a [Unified Namespace](https://flowfuse.com/unified-namespace/), a concept I explore in depth in this article ["Node-RED in a Unified Namespace Architecture."](https://flowfuse.com/blog/2024/02/node-red-unified-namespace-architecture/) However, this is only one part of the inquiry. The other part of the question delves into the positioning of FlowFuse and Node-RED within the network infrastructure.
