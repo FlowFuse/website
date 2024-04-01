@@ -11,13 +11,9 @@ tags:
 
 ---
 
-Flipping through pages one by one, scratching my head, and taking cup after cup of coffee, no, it's not like I'm studying for an entrance exam with a textbook. It's me scrolling through different forum threads a few months ago when Dashboard 2.0 didn't exist, searching for customizable solutions with Dashboard 1.0 to build a more user-friendly, customizable, and powerful dashboard.
+A few months ago when Dashboard 2.0 didn't exist, I was searching for customizable solutions with Dashboard 1.0 to build a more user-friendly, customizable, and powerful dashboard. Now Dashboard 2.0 is released, we've gained a more powerful, customizable, and well-maintained Dashboard compared to Dashboard 1.0. Now In this guide, we will explore one of the most powerful features that Dashboard 2.0 offers us. We will create a Multi-user dashboard that will display logged in user information on the dashboard.
 
 <!--more-->
-
-But it felt like I was hunting for answers to mathematical questions in a history book. If you've experienced this, you're not alone, there are a lot of users, along with me and you, who have felt the same.
-
-But worry not, as we all know that now we possess a Dashboard 2.0 that is a lot more powerful, customizable, and well-maintained compared to Dashboard 1.0. If you're new to Dashboard 2.0, refer to our blog post [Getting Started with Dashboard 2.0](https://flowfuse.com/blog/2024/03/dashboard-getting-started/). Now In this guide, we will explore one of the most powerful features that Dashboard 2.0 offers us. We will create a Multi-user dashboard that will display logged in user information on the dashboard
 
 If you're new to Dashboard 2.0, refer to our blog post [Getting Started with Dashboard 2.0](https://flowfuse.com/blog/2024/03/dashboard-getting-started/)
 
