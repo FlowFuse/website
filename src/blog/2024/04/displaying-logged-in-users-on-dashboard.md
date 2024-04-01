@@ -17,7 +17,8 @@ A few months ago when Dashboard 2.0 didn't exist, I was searching for customizab
 
 If you're new to Dashboard 2.0, refer to our blog post [Getting Started with Dashboard 2.0](https://flowfuse.com/blog/2024/03/dashboard-getting-started/)
 
-## Enabling Flowfuse User Authentication 
+## Enabling Flowfuse User Authentication
+
 Before we can show user data on the dashboard we need to figure out how we get the data from users. This might seem complicated, but don’t worry about it. FlowFuse offers a feature that not only helps us secure the dashboard but also makes it simpler to get the user data at the dashboard at a later stage.
 
 1. Navigate to the instance setting.
@@ -71,6 +72,7 @@ For example, consider a manufacturing facility where each production line has it
 !["Screenshot displaying the Flowfuse Muti-user addon option"](./images/displaying-logged-in-user-ff-auth-tab.png "Screenshot displaying the Flowfuse Muti-user addon option")
 
 ## Displaying logged in user on Dashboard 2.0
+
 We are all set to display logged in user on Dashboard 2.0. You can confirm this by printing the msg object emitted by the Dashboard 2.0 widget, which should have attached user information. Use the debug node for this.
 
 To display user information on the dashboard we will use Vue’s [Teleport](https://dashboard.flowfuse.com/nodes/widgets/ui-template.html#teleports) feature to render content to a specific location in the DOM, we will display user information at the action bar’s right-hand side.
