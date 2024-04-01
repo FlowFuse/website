@@ -1,7 +1,7 @@
 ---
 title: Displaying logged in user on Node-RED Dashboard 2.0
-subtitle: Step-by-Step Beginner's Guide to Displaying logged in User on Node-RED Dashboard
-description: Learn how to secure your Dashboard, install, and configure the Multi-user addon, and display logged-in users on Dashboard 2.0. Additionally, delve deeper into understanding how the Multi-user addon functions.
+subtitle: Step-by-Step Beginner's Guide to Displaying logged in User on Node-RED Dashboard 2.0
+description: Learn how to secure your Dashboard, install, and configure the Multi-user addon, and display logged-in users on Node-RED Dashboard 2.0. Additionally, delve deeper into understanding how the Multi-user addon functions.
 date: 2024-04-02
 authors: ["sumit-shinde"]
 image: 
@@ -11,11 +11,11 @@ tags:
 
 ---
 
-Flipping through pages one by one, scratching my head, and taking cup after cup of coffee, no, it's not like I'm studying for an entrance exam with a notebook. It's me scrolling through different forum threads a few months ago when Dashboard 2.0 didn't exist, searching for customizable solutions with Dashboard 1.0 to build a more user-friendly, customizable, and powerful dashboard.
+Flipping through pages one by one, scratching my head, and taking cup after cup of coffee, no, it's not like I'm studying for an entrance exam with a textbook. It's me scrolling through different forum threads a few months ago when Dashboard 2.0 didn't exist, searching for customizable solutions with Dashboard 1.0 to build a more user-friendly, customizable, and powerful dashboard.
 
 <!--more-->
 
-But it felt like I was hunting for answers to mathematical questions in a history book. If you've experienced this, you're not alone; there are a lot of users, along with me and you, who have felt the same.
+But it felt like I was hunting for answers to mathematical questions in a history book. If you've experienced this, you're not alone, there are a lot of users, along with me and you, who have felt the same.
 
 But worry not, as we all know that now we possess a Dashboard 2.0 that is a lot more powerful, customizable, and well-maintained compared to Dashboard 1.0. If you're new to Dashboard 2.0, refer to our blog post [Getting Started with Dashboard 2.0](https://flowfuse.com/blog/2024/03/dashboard-getting-started/). Now In this guide, we will explore one of the most powerful features that Dashboard 2.0 offers us. We will create a Multi-user dashboard that will display logged in user information on the dashboard
 
@@ -49,7 +49,7 @@ Before we can show user data on the dashboard we need to figure out how we get t
 
 ## Exploring the Flowfuse User Addon
 Understanding the Flowfuse User Addon can be a bit complex if you're not familiar with the basics of how it works and the type of object it attaches to the msg emitted by Dashboard 2.0 widgets. Therefore, discussing it in a separate section is important.
-The Flowfuse User Addon is a plugin developed for Dashboard 2.0, leveraging the Flowfuse API to retrieve information about logged in user. In this addon, user information is attached to the msg emitted by Dashboard 2.0 nodes. This user information object is attached as msg._client.user Below is an example of how that object looks:
+The Flowfuse User Addon is a plugin developed for Dashboard 2.0, leveraging the Flowfuse API to retrieve information about logged in user. In this addon, user information is attached to the msg emitted by Dashboard 2.0 nodes. This user information object is attached as msg._client.user, Below is an example of how that object looks:
 
 ```
    "userId": "", // unique identifier for the user
@@ -59,7 +59,7 @@ The Flowfuse User Addon is a plugin developed for Dashboard 2.0, leveraging the 
    "image": "" // User Avatar from FlowFuse
 }
 ```
-Behind the scenes, we're appending our user object to the msg object, via the SocketIO auth option. We make the socketio object available via a computed [setup](https://dashboard.flowfuse.com/contributing/guides/state-management.html#setup-store) object, this means that we can access user data in any ui-template widget like this:
+Behind the scenes, we're appending our user object to the msg object, via the SocketIO auth option. We make the socketio object available via a computed [setup](https://dashboard.flowfuse.com/contributing/guides/state-management.html#setup-store) object, this means that we can also access user data in any ui-template widget like this:
 
 ```
 setup.socketio.auth.user
@@ -83,7 +83,7 @@ For example, consider a manufacturing facility where each production line has it
 ## Displaying logged in user on Dashboard 2.0
 We are all set to display logged in user on Dashboard 2.0. You can confirm this by printing the msg object emitted by the Dashboard 2.0 widget, which should have attached user information. Use the debug node for this.
 
-To display user information we will use Vue’s [Teleport](https://dashboard.flowfuse.com/nodes/widgets/ui-template.html#teleports) feature to render content to a specific location in the DOM, we will display user information at the action bar’s right-hand side.
+To display user information on the dashboard we will use Vue’s [Teleport](https://dashboard.flowfuse.com/nodes/widgets/ui-template.html#teleports) feature to render content to a specific location in the DOM, we will display user information at the action bar’s right-hand side.
 
 1. Drag an ui-template widget onto the canvas.
 2. Click on that node, and select type as “Widget (Ui-Scoped)”. ( this allows us to render this ui-template at ui scoped which means I will not required to add separate ui-templates for different pages )
@@ -91,7 +91,7 @@ To display user information we will use Vue’s [Teleport](https://dashboard.flo
 
 ```
 <template>
-    <!-- Teleporting user info to #app-bar-actions, which id of actions bars right corners area -->
+    <!-- Teleporting user info to #app-bar-actions, which is id of actions bars right corners area -->
     <Teleport v-if="loaded" to="#app-bar-actions">
         <div class="user-info">
             <!-- Displaying user image -->
@@ -137,12 +137,12 @@ To display user information we will use Vue’s [Teleport](https://dashboard.flo
 1. To initiate the deployment process, locate and click the red 'Deploy' button positioned in the top right corner. 
 2. Navigate to `https://<your-instance-name>.flowfuse.cloud/dashboard`.
 
-Now you’ll be able to see the profile icon with a greeting with your name.
+Now you'll be able to see the profile icon along with a greeting containing your name.
 
 !["Screenshot of Dashboard displaying logged in user information "](./images/displaying-logged-in-user-dashboard-view.png "Screenshot of Dashboard displaying logged in user information ")
 
-If you are interested in learning more about Multiuser dashboards, please refer to our [webinar](https://flowfuse.com/webinars/2024/node-red-dashboard-multi-user/) and [blog post](https://flowfuse.com/blog/2024/01/dashboard-2-multi-user/). They provide detailed insights and practical tips on maximizing the potential of Multiuser dashboards with Node-RED Dashboard 2.0, Additionally, we offer a [Multi-User Dashboard for Ticket/Task Management](https://flowfuse.com/blueprints/flowfuse-dashboard/multi-user-dashboard/#multi-user-dashboard-for-ticket%2Ftask-management), which allows you to quickly utilize templates for develope Personalize multi-user dashboard.
+If you are interested in learning more about Multiuser dashboards, please refer to our [webinar](https://flowfuse.com/webinars/2024/node-red-dashboard-multi-user/) and [blog post](https://flowfuse.com/blog/2024/01/dashboard-2-multi-user/). They provide detailed insights and practical tips on maximizing the potential of Multiuser dashboards with Node-RED Dashboard 2.0, Additionally, we offer a [Multi-User Dashboard for Ticket/Task Management](https://flowfuse.com/blueprints/flowfuse-dashboard/multi-user-dashboard/#multi-user-dashboard-for-ticket%2Ftask-management) blueprint, which allows you to quickly utilize templates to develope Personalize multi-user dashboard.
  .
 
 ## Conclusion 
-In this guide, we have demonstrated how to secure your dashboard and how to retrieve and display logged in user data on the dashboard. Additionally, we have discussed the functionality of the Flowfuse multi-user addon.
+In this guide, we have demonstrated how to secure your dashboard and how to retrieve and display logged in user data on the Dashboard 2.0. Additionally, we have discussed the functionality of the Flowfuse multi-user addon.
