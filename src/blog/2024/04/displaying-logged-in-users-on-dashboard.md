@@ -19,14 +19,7 @@ But it felt like I was hunting for answers to mathematical questions in a histor
 
 But worry not, as we all know that now we possess a Dashboard 2.0 that is a lot more powerful, customizable, and well-maintained compared to Dashboard 1.0. If you're new to Dashboard 2.0, refer to our blog post [Getting Started with Dashboard 2.0](https://flowfuse.com/blog/2024/03/dashboard-getting-started/). Now In this guide, we will explore one of the most powerful features that Dashboard 2.0 offers us. We will create a Multi-user dashboard that will display logged in user information on the dashboard
 
-## Installing Dashboard 2.0
-To get things started we need to install Dashboard 2.0. 
-
-1. Click the Node-RED Settings (top-right)
-2. Click "Manage Palette"
-3. Switch to the "Install" tab
-4. Search for `@flowfuse/node-red-dashboard`
-5. Click "Install"
+If you're new to Dashboard 2.0, refer to our blog post [Getting Started with Dashboard 2.0](https://flowfuse.com/blog/2024/03/dashboard-getting-started/)
 
 ## Enabling Flowfuse User Authentication 
 Before we can show user data on the dashboard we need to figure out how we get the data from users. This may seem like a pain point but don’t worry about it. Flowfuse offers a feature that not only helps us secure the dashboard but also makes it simpler to get the user data at the dashboard at a later stage.
