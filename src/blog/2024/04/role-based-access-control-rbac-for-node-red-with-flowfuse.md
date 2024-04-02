@@ -4,12 +4,10 @@ subtitle: Collaboration and Security in Node-RED with Role-Based Access Control 
 description: Collaboration and Security in Node-RED with Role-Based Access Control with FlowFuse.
 date: 2024-04-01
 authors: ["grey-dziuba"]
-image: 
+image: /blog/2024/04/images/role-based-access.png
 tags:
     - posts
     - flowfuse
-    
-    
     - RBAC
     - Role Based Access Control
 ---
