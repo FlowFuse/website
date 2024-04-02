@@ -4,7 +4,7 @@ subtitle: Enhancing Factory Operations with Node-RED and FlowFuse
 description: This article explores the integration of Node-RED and FlowFuse within a factory's multilayered infrastructure, highlighting the strategic organization of data and connectivity from the shopfloor to the enterprise level for improved operational efficiency.
 date: 2024-03-27
 authors: ["marian-demme"]
-image: /blog/2024/03/images/node-red-architecture.png
+image: /blog/2024/04/images/node-red-architecture.png
 tags:
   - posts
   - node-red
@@ -24,7 +24,7 @@ The architecture of a factory's Node-RED infrastructure is a common topic of dis
 
 For illustrative purposes, I’ve opted to reference the [Purdue / ISA-99 Model](https://webstore.ansi.org/preview-pages/ISA/preview_S_990001_2007.pdf), despite its fair share of criticism. Many of today's factories and manufacturing spaces adhere to this model, and the aim here is to mirror a realistic network scenario. For the sake of clarity, I've condensed the network into three primary layers.
 
-![Purdue Model](./images/purdue-model.png)
+![Purdue Model](./images/purdue-model.png){data-zoomable}
 
 At the base is the Shopfloor layer. This is where all the physical factory equipment resides. Often, this layer is segmented further, but for our discussion, it's represented as a single zone.
 
