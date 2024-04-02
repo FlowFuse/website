@@ -34,7 +34,7 @@ Next is the Edge layer, which serves as the communicative conduit between the Sh
 
 At the top, we find the Enterprise Layer. This can signify either cloud services or a company-wide accessible network. Frequently, the Cloud and Enterprise layers are divided, but in our case, it doesn’t matter whether they are separated.
 
-![Node-RED Manufacturing Architecture](./images/node-red-architecture.png)
+![Node-RED Manufacturing Architecture](./images/node-red-architecture.png){data-zoomable}
 
 ## Applications Across Factory Layers
 
