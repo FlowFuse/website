@@ -25,7 +25,7 @@ FlowFuse offers a variety of roles that cater to different levels of access with
 3. Viewer - Allows users to visualize and see flows and dashboards.  This is great for collaboration across multi tenant teams.
 4. Dashboard Only - Designed for end users that will interact with Dashboards, but don't have a reason to see or edit flows.
 
-!["Protect Node-RED instance from change with Instance Protection Mode"](./images/protect-instance-node-red-with-flowfuse.png "Protect Node-RED instance from change with Instance Protection Mode"){data-zoomable}
+!["Role Based Access Control For Node-RED with FlowFuse"](./images/role-based-access-control-for-node-red-flowfuse.png "Role Based Access Control For Node-RED with FlowFuse"){data-zoomable}
 
 For further details see [documentation](https://flowfuse.com/docs/user/team/#role-based-access-control) for full granularity of roles.
 
@@ -33,7 +33,7 @@ For further details see [documentation](https://flowfuse.com/docs/user/team/#rol
 
 A standout feature of FlowFuse's RBAC system is the Instance Protection Mode. This mode adds an additional layer of security by locking down critical Node-RED instances, preventing unauthorized modifications to configuration and nodes. The protection mode is particularly useful in production environments or scenarios where stability and security are paramount.
 
-!["Role Based Access Control For Node-RED with FlowFuse"](./images/role-based-access-control-for-node-red-flowfuse.png "Role Based Access Control For Node-RED with FlowFuse"){data-zoomable}
+!["Protect Node-RED instance from change with Instance Protection Mode"](./images/protect-instance-node-red-with-flowfuse.png "Protect Node-RED instance from change with Instance Protection Mode"){data-zoomable}
 
 ## The Impact on User Experience
 FlowFuse's RBAC system significantly enhances the user experience for Node-RED users by providing a secure, customizable, and controlled environment. Teams can collaborate more efficiently and safely, knowing that access is properly managed and critical systems are protected.
