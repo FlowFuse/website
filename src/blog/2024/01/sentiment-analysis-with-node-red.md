@@ -27,10 +27,9 @@ Sentiment analysis is a context-mining technique used to understand emotions and
 
 In this system, we will analyse the sentiment of text content obtained from the user.  For this we are going to build a user interface using Dashboard 2.0 and Node-RED.
 
-1. Install Node-RED Dashboard 2.0. Follow these [instructions](https://dashboard.flowfuse.com/getting-started.html) to install.
-2. Create your first group, page, theme, and base.
-3. Drag a ui form widget to the canvas and select the created group.
-4. Add an element in the form widget and give it a name and label, select the type as multiline, and set the number of rows according to your need.
+1. Install Node-RED Dashboard 2.0. Follow these [instructions](https://flowfuse.com/blog/2024/01/sentiment-analysis-with-node-red/) to install.
+1. Drag a ui form widget to the canvas and select the created group.
+1. Add an element in the form widget and give it a name and label, select the type as multiline, and set the number of rows according to your need.
 
 !["Taking user input for Sentiment analysis using form"](./images/sentiment-analysis-form.png "Taking user input for Sentiment analysis using form")
 

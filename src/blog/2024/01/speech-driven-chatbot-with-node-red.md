@@ -28,10 +28,7 @@ Speech recognition is a technology where a device captures spoken words through 
 
 # Installing Dashboard 2.0 
 
-The first thing we need to do to get things started is installing Dashboard 2.0.
-
-1. Install Node-RED Dashboard 2.0. Follow these [instructions](https://dashboard.flowfuse.com/getting-started.html) to install.
-2. Create your first group, page, theme, and base.
+Install Dashboard 2.0. Follow these [instructions](https://flowfuse.com/blog/2024/03/dashboard-getting-started/) to get up and running.
 
 # Building Speech-to-Text Vue component 
 In this section, we will build a Vue component that will perform a speech-to-text conversion operation using Web speech API, and display results on the dashboard.  While we did say previously that we won't need any external API for speech recognition, this [Web Speech API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Speech_API) is not an external API. 

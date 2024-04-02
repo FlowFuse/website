@@ -78,14 +78,13 @@ CREATE TABLE IF NOT EXISTS product_data (
 
 # Installing Dashboard 2.0 
 
-1. Install Dashboard 2.0. Follow these [instructions](https://dashboard.flowfuse.com/getting-started.html) to install.
-2. Create your first group, page, theme, and base.
+Install Dashboard 2.0. Follow these [instructions](https://flowfuse.com/blog/2024/03/dashboard-getting-started/) to get up and running.
 
 # Inserting Product Data into the Database
 In this section, we will add a Form interface that will enable us to obtain product data that we need to insert into the database. Moreover, we will use the PostgreSQL node to interact with the database.
 
 !["Adding form to insert data"](./images/postgresql_with_node-red_form1.png "Adding form to insert data")
-1. Drag a ui-form widget onto the canvas and select the created ui-group.
+1. Drag a `ui-form` widget onto the canvas and select the created `ui-group`.
 2. Add an element for all required input data in the form widget and give it a name, label, and select type, I have selected 'number' as a type for 'price' and 'stock', and 'text' for 'name', but feel free to adjust according to your preference and data requirements.
 3. Drag the function node onto Canvas and paste the following script.
 
