@@ -98,9 +98,25 @@ You can also add your own custom tags. While these won't create a new page with 
 
 Additionally, the tags you assign to your content will also be used as [meta keywords](/handbook/customer/marketing/website/#meta-keywords) for each article, alongside the [default keywords](/handbook/customer/marketing/website#default-keywords).
 
+### Adding Images
+
+Images can be added into the respective `/blog/<year>/<month>/images` folder.
+
+The image can then be referenced in the markdown file like so:
+
+```md
+![Alt Text](./images/<image>.png){data-zoomable}
+<figcaption>Caption Here</figcaption>
+```
+
+- `Alt Text` is the text that will be displayed if the image fails to load.
+- `./images/<image>.png` is the path to the image.
+- `{data-zoomable}` is an optional attribute that allows the image to be zoomed in when clicked. It is recommended to use this as users can often explore images in more detail.
+- `<figcaption>Caption Here</figcaption>` is an optional caption that will be displayed below the image. It is recommended to use these, as it makes the article easier to read.
+
 ### More tag
 
-The '\<\!\-\-more\-\-\>' tag is used to define the text shown in the blog index from each article.
+The `<!--more-->` tag is used to define the text shown in the blog index from each article.
 
 ### Example blog index item based on the header above
 
