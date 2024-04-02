@@ -6,7 +6,7 @@ tags:
     - changelog
 ---
 
-We have added quick access buttons to help you navigate to your shiny Dashboard in a single click.
+We have added quick access buttons to help you navigate to your Dashboard 2.0 UI in a single click.
 
 ![](./images/Dashboard-Link.png)
 _Dashboard button is displayed alongside the Open Editor button when an instance has `@flowfuse/mode-red-dashboard` installed._
