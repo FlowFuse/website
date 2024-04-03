@@ -1,6 +1,6 @@
 ---
 title: "Elevating Node-RED: A FlowFuse Platform Update"
-subtitle: In this platform update webinar Nick O’Leary, co-founder and CTO of FlowFuse will reveal the latest features and whats coming up next in the FlowFuse platform.
+subtitle: In this platform update webinar Nick O’Leary, co-founder and CTO of FlowFuse will reveal the latest features and what's coming up next in the FlowFuse platform.
 image: 
 
 date: 2024-04-30
