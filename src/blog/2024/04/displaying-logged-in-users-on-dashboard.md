@@ -22,7 +22,7 @@ If you're new to Dashboard 2.0, refer to our blog post [Getting Started with Das
 Before we can show user data on the dashboard we need to figure out how we get the data from users. This might seem complicated, but don’t worry about it. FlowFuse offers a feature that not only helps us secure the dashboard but also makes it simpler to get the user data at the dashboard at a later stage.
 
 1. Navigate to the Instance "settings".
-2. Select the Security tab.
+2. Select the "Security" tab.
 3. Enable “Flowfuse user authentication”
 
 !["Screenshot displaying the configuration settings within the Flowfuse instance, enabling user authentication for enhanced security.
