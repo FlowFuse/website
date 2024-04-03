@@ -4,11 +4,10 @@ subtitle: Step-by-Step Beginner's Guide to Displaying logged in User on Node-RED
 description: Learn how to secure your Dashboard, install, and configure the FlowFuse Multi-user addon, and display logged-in users on Node-RED Dashboard 2.0. Additionally, delve deeper into understanding how the FlowFuse Multi-user addon functions.
 date: 2024-04-02
 authors: ["sumit-shinde"]
-image: 
+image: /blog/2024/04/images/logged-in-user-dashboard.png
 tags:
    - posts
    - dashboard 2.0
-
 ---
 
 About a month ago, a powerful solution became available to the Node-RED community to deal with users and allow multiple to interact with the same dashboard in a personalized manner. It's called the  Multli user Dashboard for Node-RED. In this guide, we will provide a step-by-step guide to show you how to secure your dashboard and access and display logged in user information on Dashboard 2.0.
