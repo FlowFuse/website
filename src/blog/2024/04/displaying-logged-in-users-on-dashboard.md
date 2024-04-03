@@ -56,7 +56,7 @@ In this addon, user information is attached to the `msg` emitted by Dashboard 2.
 }
 ```
 
-Behind the scenes, the user addon is appending the user object to the `msg`, via the SocketIO auth option. We make the socketio object available via a computed [setup](https://dashboard.flowfuse.com/contributing/guides/state-management.html#setup-store) object, this means that we can also access user data in any ui-template widget like this:
+Behind the scenes, the user addon is appending the user object to the `msg`, via the SocketIO auth option. We make the socketio object available via a computed [setup](https://dashboard.flowfuse.com/contributing/guides/state-management.html#setup-store) object, this means that we can also access user data in any ui-template widget with `{{ setup.socketio.auth.user }}`, in the `<template>`, or `this.setup.socketio.auth.user`, in the JS.
 
 ```
 setup.socketio.auth.user
