@@ -11,7 +11,7 @@ Pricing is publicly available at [our pricing page](/pricing/).
 Quotes are generated through HubSpot. Each quote should include:
 - A link to the deep copy of the version of the document with the [subscription agreement](/handbook/customer/sales/legal/#subscription-agreement).
 - "Order Form" in the description.
-- The subscription period.
+- The commencement date of the subscription as well as the time period of the subscription.
 
 ## Closing a deal
 
