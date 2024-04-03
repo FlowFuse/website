@@ -11,7 +11,7 @@ tags:
 
 ---
 
-Have you ever tried brainstorming solutions for securing your dashboard with a login mechanism, and then accessing the data of logged in users for further customization? If yes, then you might know that finding and applying such solutions is not always an easy task. However, about a month ago, we came up with a powerful solution and even conducted an amazing webinar on building a personalized Mutliuser Dashboard. Despite having such great resources, we believe that breaking down the webinar into parts and creating content around it can be really helpful. In this guide, we will provide a step-by-step guide to show you how to secure your dashboard and access and display logged in user information on Dashboard 2.0.
+About a month ago, a powerful solution became available to the Node-RED community to deal with users and allow multiple to interact with the same dashboard in a personalized manner. It's called the  Multli user Dashboard for Node-RED. In this guide, we will provide a step-by-step guide to show you how to secure your dashboard and access and display logged in user information on Dashboard 2.0.
 
 <!--more-->
 
