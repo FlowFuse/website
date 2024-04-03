@@ -64,7 +64,7 @@ When running Node-RED Dashboard 2.0 on FlowFuse, you'll have a new tab available
 
 By default, this option is enabled. When this option is enabled, an object with user information will be added to the “msg” emitted by any widget of the Node-red Dashboard 2.0.
 
-**Option 2: Accept client constraints**
+**Option 2: Accept Client Constraints**
 
 A feature that ensures messages are specifically targeted to individual clients, which enhances the precision and security of data transmission within the platform. It determines by enabling the nodes option in the FF Auth tab whether the enabled node type will utilize client data, such as socketid, and restrict communications to only that client.
 
