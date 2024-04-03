@@ -28,7 +28,7 @@ Before proceeding further, let’s enable FlowFuse user authentication. This ste
 3. Enable “FlowFuse User Authentication”
 
 !["Screenshot displaying the configuration settings within the FlowFuse instance, enabling user authentication for enhanced security.
-"](./images/displaying-logged-in-user-FlowFuse-instance-setting.png "Screenshot displaying the configuration settings within the FlowFuse instance, enabling user authentication for enhanced security.
+"](./images/building-admin-panel-node-red-dashboard-2-flowfuse-instance-setting.png "Screenshot displaying the configuration settings within the FlowFuse instance, enabling user authentication for enhanced security.
 "){data-zoomable}
 
 ## Installing FlowFuse Multiuser Addon 
