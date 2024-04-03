@@ -78,7 +78,7 @@ Now you know how the user add on works, you are all set to display logged in use
 
 To display user information on the dashboard we will use Vue’s [Teleport](https://dashboard.flowfuse.com/nodes/widgets/ui-template.html#teleports) feature to render content to a specific location in the DOM, we will display user information at the action bar’s right-hand side.
 
-1. Drag an ui-template widget onto the canvas.
+1. Drag a `ui-template` widget onto the canvas.
 2. Click on that node, and select type as “Widget (Ui-Scoped)”. ( this allows us to render this ui-template at ui scoped which means I will not required to add separate ui-templates for different pages )
 3. Copy the below vue snippet and paste that into the ui-template.
 
