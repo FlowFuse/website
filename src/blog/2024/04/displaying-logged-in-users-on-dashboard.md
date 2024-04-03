@@ -25,6 +25,8 @@ Before we display logged-in user data on the dashboard, first we need to set up 
 2. Select the "Security" tab.
 3. Enable “FlowFuse User Authentication”
 
+Now, the first time you visit the dashboard, you'll need to log in with your registered FlowFuse username and password
+
 !["Screenshot displaying the configuration settings within the FlowFuse instance, enabling user authentication for enhanced security."](./images/displaying-logged-in-user-flowfuse-instance-setting.png "Screenshot displaying the configuration settings within the FlowFuse instance, enabling user authentication for enhanced security."){data-zoomable}
 
 ## Exploring the FlowFuse User Addon
@@ -131,7 +133,7 @@ export default {
 1. With your flow updated to include the above, click the "Deploy" button in the top-right of the Node-RED Editor.
 2. Navigate to `https://<your-instance-name>.flowfuse.cloud/dashboard`.
 
-Now you'll be able to see the profile icon along with a greeting containing your name.
+Now, the first time you visit the dashboard, you'll need to log in with your registered FlowFuse username and password.
 
 !["Screenshot of Dashboard displaying logged in user information"](./images/displaying-logged-in-user-dashboard-view.png "Screenshot of Dashboard displaying logged in user information"){data-zoomable}
 
