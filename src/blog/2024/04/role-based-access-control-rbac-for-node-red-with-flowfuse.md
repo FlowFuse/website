@@ -31,7 +31,7 @@ For further details see [documentation](https://flowfuse.com/docs/user/team/#rol
 
 ## Instance Protection Mode
 
-A standout feature of FlowFuse's RBAC system is the Instance Protection Mode. This mode adds an additional layer of security by locking down critical Node-RED instances, preventing unauthorized modifications to configuration and nodes. The protection mode is particularly useful in production environments or scenarios where stability and security are paramount.
+A useful feature of FlowFuse's RBAC system is the Instance Protection Mode. This mode adds an additional layer of security by locking down critical Node-RED instances, preventing unauthorized modifications to configuration and nodes. The protection mode is particularly useful in production environments and areas in which need an extra layer of protection for any unintentional updates or changes.
 
 !["Protect Node-RED instance from change with Instance Protection Mode"](./images/protect-instance-node-red-with-flowfuse.png "Protect Node-RED instance from change with Instance Protection Mode"){data-zoomable}
 
