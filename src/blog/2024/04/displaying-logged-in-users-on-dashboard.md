@@ -45,6 +45,7 @@ The FlowFuse User Addon is a plugin developed for Dashboard 2.0, leveraging the 
 In this addon, user information is attached to the `msg` emitted by Dashboard 2.0 nodes. This user information object is attached as `msg._client.user`. Below is an example of how that object looks:
 
 ```
+{
    "userId": "", // unique identifier for the user
    "username": "", // FlowFuse Username
    "email": "", // E-Mail Address connected to their FlowFuse account
@@ -131,8 +132,6 @@ export default {
 
 1. With your flow updated to include the above, click the "Deploy" button in the top-right of the Node-RED Editor.
 2. Navigate to `https://<your-instance-name>.flowfuse.cloud/dashboard`.
-
-Now, the first time you visit the dashboard, you'll need to log in with your registered FlowFuse username and password.
 
 !["Screenshot of Dashboard displaying logged in user information"](./images/displaying-logged-in-user-dashboard-view.png "Screenshot of Dashboard displaying logged in user information"){data-zoomable}
 
