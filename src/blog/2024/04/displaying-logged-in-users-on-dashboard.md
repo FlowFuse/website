@@ -27,6 +27,10 @@ Before we can show user data on the dashboard we need to figure out how we get t
 
 !["Screenshot displaying the configuration settings within the Flowfuse instance, enabling user authentication for enhanced security."](./images/displaying-logged-in-user-flowfuse-instance-setting.png "Screenshot displaying the configuration settings within the Flowfuse instance, enabling user authentication for enhanced security."){data-zoomable}
 
+## Exploring the FlowFuse User Addon
+
+The FlowFuse User Addon is a plugin developed for Dashboard 2.0, leveraging the FlowFuse API to retrieve information about logged in user. 
+
 ## Installing Flowfuse user addon
 
 1. Click the Node-RED Settings (top-right)
@@ -34,12 +38,6 @@ Before we can show user data on the dashboard we need to figure out how we get t
 3. Switch to the "Install" tab
 4. Search for `@flowfuse/node-red-dashboard-2-user-addon`
 5. Click "Install"
-
-## Exploring the FlowFuse User Addon
-
-The FlowFuse User Addon is a plugin developed for Dashboard 2.0, leveraging the FlowFuse API to retrieve information about logged in user. 
-
-// insert the "install" instructions here
 
 ### How it Works
 
