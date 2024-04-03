@@ -25,9 +25,7 @@ Before we can show user data on the dashboard we need to figure out how we get t
 2. Select the "Security" tab.
 3. Enable “Flowfuse User Authentication”
 
-!["Screenshot displaying the configuration settings within the Flowfuse instance, enabling user authentication for enhanced security.
-"](./images/displaying-logged-in-user-flowfuse-instance-setting.png "Screenshot displaying the configuration settings within the Flowfuse instance, enabling user authentication for enhanced security.
-")
+!["Screenshot displaying the configuration settings within the Flowfuse instance, enabling user authentication for enhanced security."](./images/displaying-logged-in-user-flowfuse-instance-setting.png "Screenshot displaying the configuration settings within the Flowfuse instance, enabling user authentication for enhanced security."){data-zoomable}
 
 ## Installing Flowfuse user addon
 
