@@ -28,13 +28,14 @@ The following are the steps to produce a montly webinar.
         * Under Survey, you can decide if you want to do a survey at the end of the webinar. We ask if someone wants to be contacted by FlowFuse to discuss our services. These become MQLs in Hubspot.
    6. Setup HubSpot to accept webinar registrations.
         * Create a new static list called ‘Webinar Registrations [&lt;month> Edition]
-        * NOTE: You can only do the following changes once the previous month webinar has passed. You can not accept registrations for multiple webinars at the same time
-        * Edit Workflow called ‘Webinar Registration Integration with Zoom’. Two changes are required:
+        * Create a new form - clone an existing webinar registration form and rename it
+        * Edit Workflow called ‘Webinar Registration Integration with Zoom’. Three changes are required:
+         * Edit enrollment criteria to the new registration form submission. 
          * Edit ‘Add Contact to Zoom Webinar’ to update the new Webinar ID. Replace the current number with the number from the webinar you just created for this month. You find the Webinar ID on the main page of the Zoom webinar. NOTE: you need to  hyphens to replace the spaces in the ID number.
         * Edit ‘Add to static list’ to change the list to the new list for this month’s webinar.
         * Remember to Save the changes.
-   7. Test the web page for the webinar to see if a new registrant gets added to the Hubspot list.
-   8. Page is now ready to be published.
+   8. Test the web page for the webinar to see if a new registrant gets added to the Hubspot list.
+   9. Page is now ready to be published.
 
 ## Webinar Promotion
 
@@ -44,7 +45,7 @@ The following are the steps to produce a montly webinar.
     * Encourage FlowFuse employees to promote their network
 * Week 3 (1 week before webinar): Email to Hubspot list
     * Typically clone a previous email as the starting point.
-* Week 4: Another social media promotion
+* Week 4: Another social media promotion and email. 
 
 ## Post Webinar
 
@@ -53,6 +54,7 @@ The following are the steps to produce a montly webinar.
 * Publish webinar recording
 * Social media post with link to webinar recording
 * In Hubspot send follow-up email to the registration list created in Hubspot that includes a link to the recording on YouTube.
+* For those who wanted to be contacted, change Life Cycle Stage property to MQL 
 
 
 
