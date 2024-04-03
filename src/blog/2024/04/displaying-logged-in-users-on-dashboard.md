@@ -39,7 +39,13 @@ Before we can show user data on the dashboard we need to figure out how we get t
 
 ## Exploring the FlowFuse User Addon
 
-The FlowFuse User Addon is a plugin developed for Dashboard 2.0, leveraging the FlowFuse API to retrieve information about logged in user. In this addon, user information is attached to the `msg` emitted by Dashboard 2.0 nodes. This user information object is attached as `msg._client.user`. Below is an example of how that object looks:
+The FlowFuse User Addon is a plugin developed for Dashboard 2.0, leveraging the FlowFuse API to retrieve information about logged in user. 
+
+// insert the "install" instructions here
+
+### How it Works
+
+In this addon, user information is attached to the `msg` emitted by Dashboard 2.0 nodes. This user information object is attached as `msg._client.user`. Below is an example of how that object looks:
 
 ```
    "userId": "", // unique identifier for the user
