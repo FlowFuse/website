@@ -72,7 +72,7 @@ For example, consider a manufacturing facility where each production line has it
 
 *Note: Please note that Multi-User Addons can only be used by our Teams and Enterprise Self-Hosted customers. Upon request, we provide all required configurations to get started.*
 
-!["Screenshot displaying the Flowfuse Muti-user addon option"](./images/displaying-logged-in-user-ff-auth-tab.png "Screenshot displaying the Flowfuse Muti-user addon option")
+!["Screenshot displaying the Flowfuse Muti-user addon option"](./images/displaying-logged-in-user-ff-auth-tab.png "Screenshot displaying the Flowfuse Muti-user addon option"){data-zoomable}
 
 ## Displaying logged in user on Dashboard 2.0
 
