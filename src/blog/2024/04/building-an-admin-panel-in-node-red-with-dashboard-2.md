@@ -11,11 +11,9 @@ tags:
 
 ---
 
-As businesses grow, data doubles, and managing and analyzing such increasing amounts of data becomes crucial. businesses are using Node-RED and its Dashboard 2.0 to handle this effectively. But what about controlling who can access what data? That's where an admin-only page comes in.
+As businesses grow, data doubles, and managing and analyzing such increasing amounts of data becomes crucial. businesses are using Node-RED and its Dashboard 2.0 to handle this effectively. But what about controlling who can access what data? That's where an admin-only page comes in. Now With Node-RED Dashboard 2.0, we can also create robust and secure admin-only pages easily. In this guide, we'll provide you with step-by-step instructions to Build an Admin-only page with Node-RED Dashboard 2.0.
 
 <!--more-->
-
-Now With Node-RED Dashboard 2.0, we can also create robust and secure admin-only pages easily. In this guide, we'll show you a step-by-step guide to Build an Admin-only page with Node-RED Dashboard 2.0.
 
 If you're new to Dashboard 2.0, refer to our blog post [Getting Started with Dashboard 2.0](https://flowfuse.com/blog/2024/03/dashboard-getting-started/), and Dashboard 2.0 to get things started.
 
