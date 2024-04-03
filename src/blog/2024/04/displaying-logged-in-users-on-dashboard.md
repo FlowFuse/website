@@ -130,7 +130,7 @@ export default {
 
 ## Deploying the flow 
 
-1. To initiate the deployment process, locate and click the red 'Deploy' button positioned in the top right corner. 
+1. With your flow updated to include the above, click the "Deploy" button in the top-right of the Node-RED Editor.
 2. Navigate to `https://<your-instance-name>.flowfuse.cloud/dashboard`.
 
 Now you'll be able to see the profile icon along with a greeting containing your name.
