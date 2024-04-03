@@ -61,7 +61,7 @@ Behind the scenes, the user addon is appending the user object to the `msg`, via
 ```
 setup.socketio.auth.user
 ```
-When running Node-RED Dashboard 2.0 on FlowFuse, you'll have a new sidebar option in the Node-RED Editor, you just have to navigate to the FF Auth tab and you’ll see two option
+When running Node-RED Dashboard 2.0 on FlowFuse, you'll have a new tab available in the "Dashboard 2.0" sidebar in the Node-RED Editor, you just have to navigate to the "FF Auth" tab and you’ll see two options.
 
 **Option 1: Include client Data**
 
