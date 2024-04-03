@@ -7,9 +7,9 @@ date: 2024-04-30
 time: 17:00 CET (11:00am ET) 
 duration: 60
 video:
-hosts: ["Nick-dziuba"]
+hosts: ["nick-oleary"]
 hubspot:
-    formId: 
+    formId: 04bc9eb9-a37c-4c88-bfc3-fd6f0abbffdb
     
 ---
 
@@ -23,7 +23,7 @@ Some of the recent highlights include:
 - Flow Blueprints to get you started with solutions
 - Improved HTTP security for your Node-RED applications
 - Instance protection mode to help manage deployments
-- Addtional cloud capabilities 
+- Additional cloud capabilities 
 
 
 With more arriving each week, there’s plenty to get excited about. Join us live and get all your questions answered. 
