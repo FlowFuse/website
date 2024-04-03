@@ -1,5 +1,5 @@
 ---
-title: Elevating Node-RED: A FlowFuse Platform Update
+title: "Elevating Node-RED: A FlowFuse Platform Update"
 subtitle: In this platform update webinar Nick O’Leary, co-founder and CTO of FlowFuse will reveal the latest features and whats coming up next in the FlowFuse platform.
 image: 
 
@@ -13,7 +13,7 @@ hubspot:
     
 ---
 
-FlowFuse fundamentally transforms the experience of Node-RED to meet enterprise needs by offering an adaptable foundation for complex application development.
+**FlowFuse fundamentally transforms the experience of Node-RED to meet enterprise needs by offering an adaptable foundation for complex application development.**
 
 <!--more-->
 
