@@ -30,7 +30,6 @@ In this part, we’ll be installing Kafka locally using Docker to simplify the i
 1. Pull the zookeeper image if it is not already, and run the zookeeper container.
 ```
 docker run -p 2181:2181 zookeeper
-
 ```
 
 2. Pull the Kafka image if it is not already, and run Kafka Container, expose PORT 9092.
