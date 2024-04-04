@@ -46,7 +46,7 @@ In the service file, you'll need to define the following parameters:
 - `User and Group`: The user and group that the service runs as.
 - `Type`: Whether the service is a simple or a forking type.
 
-We've created the content you'll need for this file and shared it via [this GitHub page](https://github.com/FlowFuse/device-agent/blob/main/service/flowforge-device.service).
+We've created the content you'll need for this file and shared it via [this GitHub page](https://github.com/FlowFuse/device-agent/blob/main/service/flowfuse-device.service).
 
 Copy the code from that page into the nano window you created in step 1, then save and exit out of nano.
 
