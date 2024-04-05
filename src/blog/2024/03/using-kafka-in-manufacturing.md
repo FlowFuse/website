@@ -94,6 +94,9 @@ As beneficial as Kafka is in various industries, it also presents certain limita
 
 5. Data Storage: Apache Kafka is not a recommended option for storing large sets of data. If the data is stored for a long period, the redundant copies of it are also stored. When this happens, the app must be ready to compromise its performance. For this reason, only use Kafka if there is a need to store data for a short period. 
 
+
+Additionally, if you are interested in learning more about Kafka and its practical implementation, refer to our guide on Using [Kafka with Node-RED](https://flowfuse.com/blog/2024/03/using-kafka-with-node-red/).
+
 ## Conclusion 
 
 This guide provides a high-level overview of Apache Kafka, including its definition, architecture, features, and applications in various industries and the challenges or limitations of using Kafka. Kafka's versatility in real-time data processing, decision-making, and operational efficiency is highlighted, with applications ranging from manufacturing to finance. The overview aims to provide a clear understanding of Kafka's role in handling data challenges and fostering innovation across sectors.
