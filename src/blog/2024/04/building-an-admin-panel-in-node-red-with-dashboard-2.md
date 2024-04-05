@@ -11,7 +11,7 @@ tags:
 
 ---
 
-As businesses grow, data doubles, and managing and analyzing such increasing amounts of data becomes crucial. businesses are using Node-RED and its Dashboard 2.0 to handle this effectively. But what about controlling who can access what data? That's where an admin-only page comes in. Now With Node-RED Dashboard 2.0, we can also create robust and secure admin-only pages easily. In this guide, we'll provide you with step-by-step instructions to Build an Admin-only page with Node-RED Dashboard 2.0.
+Managing and analyzing increasing amounts of data becomes crucial for organisations. Dashboard 2.0 and Node-RED help organisations to access the data, normalize it, and visualize it. But what about controlling who can access what data? That's where an admin-only page comes in. Now With Node-RED Dashboard 2.0, we can also create robust and secure admin-only pages easily. In this guide, we'll provide you with step-by-step instructions to Build an Admin-only page with Node-RED Dashboard 2.0.
 
 <!--more-->
 
@@ -52,23 +52,20 @@ Before we start building the Admin-only page, let's outline our approach :
 ### Practical implementation
 
 Now, let's proceed with the practical steps to implement the admin-only page:
-
-
-- Create an admin page in Dashboard 2.0 to hide sensitive data from regular users.
-- Drag an event node on the canvas, then click on it, and choose the UI base of which your admin page and other pages are part.
-- Drag a switch node on the canvas, and add two one to check whether the user’s username is contained in the admin list or a second for otherwise, see the below image.
+1. Create an admin page in Dashboard 2.0 to hide sensitive data from regular users.
+2. Drag an event node on the canvas, then click on it, and choose the UI base of which your admin page and other pages are part.
+3. Drag a switch node on the canvas, and add two one to check whether the user’s username is contained in the admin list or a second for otherwise, see the below image.
 
 !["Screenshot displaying the switch node which checks whether the logged-in user's username is contained in the admin list or not"](./images/building-admin-panel-node-red-dashboard-2-switch-node-checking-page-viewer-isadmin.png "Screenshot displaying the switch node which checks whether the logged-in user's username is contained in the admin list or not"){data-zoomable}
 
-- Drag two change nodes onto the canvas. Configure the first one to show the admin page using the payload: `{"pages":{"show":["Admin View"]}}`, and the second one to hide it using the payload: `{"pages":{"hide":["Admin View"]}}`.
+4. Drag two change nodes onto the canvas. Configure the first one to show the admin page using the payload: `{"pages":{"show":["Admin View"]}}`, and the second one to hide it using the payload: `{"pages":{"hide":["Admin View"]}}`.
 
 !["Screenshot displaying the change node which contains payload to show admin page"](./images/building-admin-panel-node-red-dashboard-2-change-node-for-showing-page.png "Screenshot displaying the change node which contains payload to show admin page"){data-zoomable}
 
 !["Screenshot displaying the change node which contains payload to hide admin page"](./images/building-admin-panel-node-red-dashboard-2-change-node-for-hidding-page.png "Screenshot displaying the change node which contains payload to display admin page"){data-zoomable}
-
-- Connect the first change node to the switch node's first output, and the second change node to the second output.
-- Drag a UI control node onto the canvas, then click on it to select the same UI base that you selected for the event node. 
-- Finally, connect both change node’s output to the ui control’s input.
+5. Connect the first change node to the switch node's first output, and the second change node to the second output.
+6. Drag a UI control node onto the canvas, then click on it to select the same UI base that you selected for the event node. 
+7. Finally, connect both change node’s output to the ui control’s input.
 
 ## Storing a list of Admin users
 
