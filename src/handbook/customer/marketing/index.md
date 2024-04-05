@@ -26,7 +26,7 @@ sales or sign ups for [FlowFuse Cloud](https://app.flowfuse.com).
 | CEO  | [ZJ](https://www.linkedin.com/in/zegerjan/) [@ZJvandeWeg](https://github.com/ZJvandeWeg) |
 | Visual Designer | [Yndira Escobar](https://www.linkedin.com/in/yndira-escobar-es) [@Yndira-FlowForge](https://github.com/Yndira-FlowForge) |
 | OT Data & Community Strategist | [Grey Dziuba](https://www.linkedin.com/in/gdziuba) [@gdziuba](https://github.com/gdziuba) |
-| Demand Gen Manager | To be hired |
+| Demand Gen Manager | [Hasmin AbdulCader](https://www.linkedin.com/in/hasminabdulcader/) |
 
 ## Contact us
 
