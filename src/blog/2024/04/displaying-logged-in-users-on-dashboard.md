@@ -82,15 +82,15 @@ To display user information on the dashboard we will use Vue’s [Teleport](http
 2. Click on that node, and select type as “Widget (Ui-Scoped)”. ( this allows us to render this ui-template at ui scoped which means I will not required to add separate ui-templates for different pages )
 3. Copy the below vue snippet and paste that into the ui-template.
 
-```
+```html
 <template>
     <!-- Teleporting user info to #app-bar-actions, which is the ID of the action bars' right corners area -->
     <Teleport v-if="loaded" to="#app-bar-actions">
         <div class="user-info">
             <!-- Displaying user image -->
             <img :src="setup.socketio.auth.user.image" />
-            <!-- Greeting the user -->
-            <span>Hi, {{ setup.socketio.auth.user.name }}</span>
+            <!-- Greeting the user -->{% raw %}
+            <span>Hi, {{ setup.socketio.auth.user.name }}</span>{% endraw %}
         </div>
     </Teleport>
 </template>
