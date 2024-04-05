@@ -13,3 +13,7 @@ We encourage contributions from the community, whether it's in the form of featu
 ## Monetization
 
 We adopted the open-core strategy, meaning all features from the former dashboard, along with other enhancements, will be available as described under the Apache 2.0 license. Additionally, an enterprise extension of the dashboard is offered, with features tailored to suit Personalised Multi-user Dashboards. See the [release blogpost](https://flowfuse.com/blog/2024/01/dashboard-2-multi-user/) for more details. This arrangement acknowledges that individuals with higher positions within an organization often have unique needs and demands.
+
+## Request Access to the FlowFuse Multiuser Plugin
+
+To access and use the FlowFuse Multiuser plugin, an authentication token is required. While FlowFuse Cloud Instances come preconfigured, self-hosted customers need an additional access token. As a FlowFuse employee, simply fill out [this GitHub issue template]() to request an access token. To configure your npmjs config in FlowFuse, follow the instructions provided [here](https://flowfuse.com/blog/2023/10/use-private-custom-nodes-with-flowfuse/#step-3---flowfuse-configuration).
