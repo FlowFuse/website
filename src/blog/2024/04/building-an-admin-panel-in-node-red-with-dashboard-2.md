@@ -44,10 +44,10 @@ The FlowFuse Multiuser Addon is a plugin developed for Dashboard 2.0 to access l
 
 Before we start building the Admin-only page, let's outline our approach :
 
-- Once the FlowFuse Multiuser addon is configured, each Dashboard 2.0 node emits a `msg` which will have user information attached as `msg._client.user`.
-- We'll store the list of admin user’s usernames in the Node-RED global context.
-- Using an event node, we'll track visitors to the admin-only page.
-- If the visitor's username is contained in the list of admin usernames, they'll see the page; otherwise, the page will be hidden.
+1. Once the FlowFuse Multiuser addon is configured, each Dashboard 2.0 node emits a `msg` which will have user information attached as `msg._client.user`.
+2. We'll store the list of admin user’s usernames in the Node-RED global context.
+3. Using an event node, we'll track visitors to the admin-only page.
+4. If the visitor's username is contained in the list of admin usernames, they'll see the page; otherwise, the page will be hidden.
 
 ### Practical implementation
 
@@ -71,8 +71,8 @@ Now, let's proceed with the practical steps to implement the admin-only page:
 
 Now we will have to store a list of admin users somewhere, For this guide we will store that admin list in the Node-RED global context.
 
-- Drag an inject node onto the canvas.
-- Drag the 'change' node onto the canvas and set msg.payload to a JSON array containing the usernames of admin users. This will store the created admin list in our Node-RED global context. Click the inject node’s button once you've deployed the flow.
+1. Drag an inject node onto the canvas.
+2. Drag the 'change' node onto the canvas and set msg.payload to a JSON array containing the usernames of admin users. This will store the created admin list in our Node-RED global context. Click the inject node’s button once you've deployed the flow.
 
 !["Screenshot displaying the change node which which stores list of admins username in global context"](./images/building-admin-panel-node-red-dashboard-2-change-node-for-storing-adminlist-to-global-contenxt.png "Screenshot displaying the change node which which stores list of admins username in global context"){data-zoomable}
 
