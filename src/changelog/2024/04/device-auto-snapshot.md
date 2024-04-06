@@ -1,6 +1,6 @@
 ---
 title: Direct Dashboard Access
-date: 2024-03-02 13:00:00.0
+date: 2024-03-06 13:00:00.0
 authors: ["stephen-mclaughlin"]
 tags:
     - changelog
