@@ -43,5 +43,5 @@ After that, one possible option will be to show the user's mouse cursor movement
 
 I mentioned earlier this feature has to be enabled. For a local install, details on how to do this are in the [release forum post](https://discourse.nodered.org/t/node-red-4-0-0-beta-2-released/87026#introducing-multiplayer-mode-2).
 
-If you want to give it a go now, we already have Node-RED v4-beta.2 available to try on FlowFuse Cloud - where the multiplayer feature is pre-enabled whilst it's in beta mode.
+If you want to give it a go now, we already have Node-RED v4-beta.2 available to [try on FlowFuse Cloud](https://app.flowfuse.com/) - where the multiplayer feature is pre-enabled whilst it's in beta mode.
 
