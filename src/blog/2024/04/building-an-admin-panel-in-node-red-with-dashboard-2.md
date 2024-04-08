@@ -13,7 +13,7 @@ tags:
 
 ---
 
-Managing and analyzing increasing amounts of data becomes crucial for organizations. Dashboard 2.0 and Node-RED help organizations to access the data, normalize it, and visualize it. But what about controlling who can access what data? That's where an admin-only page comes in. Now With Node-RED Dashboard 2.0, we can also create robust and secure admin-only pages easily. In this guide, we'll provide you with step-by-step instructions to Build an Admin-only page with Node-RED Dashboard 2.0.
+Managing and analyzing increasing amounts of data becomes crucial for organizations. Dashboard 2.0 and Node-RED help organizations access the data, normalize it, and visualize it. But what about controlling who can access what data? That's where an admin-only page comes in. Now With Node-RED Dashboard 2.0, we can also create robust and secure admin-only pages easily. In this guide, we'll provide you with step-by-step instructions to Build an Admin-only page with Node-RED Dashboard 2.0.
 
 <!--more-->
 
@@ -21,7 +21,7 @@ If you're new to Dashboard 2.0, refer to our blog post [Getting Started with Das
 
 ## Enabling FlowFuse User Authentication
 
-Before proceeding further, let’s enable FlowFuse user authentication. This step adds an extra layer of protection to our dashboard by adding a login page that restricts access exclusively to registered FlowFuse users. Additionally, it further simplifies the process for the FlowFuse Multiuser addon to track and access logged-in users data on the dashboard.
+Before proceeding further, let’s enable FlowFuse user authentication. This step adds an extra layer of protection to our dashboard by adding a login page that restricts access exclusively to registered FlowFuse users. Additionally, it further simplifies the process for the FlowFuse Multiuser addon to track and access logged-in user's data on the dashboard.
 
 1. Navigate to the instance setting.
 2. Select the “Security” tab.
@@ -71,9 +71,9 @@ Now, let's proceed with the practical steps to implement the admin-only page:
 
 finally, we need to hide an admin-only page by default to ensure regular users don't accidentally land on the admin-only page.
 
-1. Go to Dashboard 2.0 sidebar, select layout tab.
+1. Go to the Dashboard 2.0 sidebar, and select the layout tab.
 2. Locate the admin-only page and click on the edit icon next to it.
-3. Set visiblity as "hidden".
+3. Set visibility as "hidden".
 
 !["Screenshot displaying admin-only page configuration"](./images/building-admin-panel-node-red-dashboard-2-admin-only-page-configuration.png "Screenshot displaying admin-only page configuration"){data-zoomable}
 
@@ -103,6 +103,3 @@ If you want to learn more about FlowFuse multiuser addon and personalize the mul
 
 ## Conclusion
 In conclusion, by following the steps in this guide, you can easily make an Admin-only page in Node-RED Dashboard 2.0. Using the FlowFuse Multiuser addon and FlowFuse's features, you'll make sure only allowed users can see important information. This way, you increase security and control over your dashboard, giving you better management over who can see what data.
-
-
-
