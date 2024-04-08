@@ -67,6 +67,16 @@ Now, let's proceed with the practical steps to implement the admin-only page:
 6. Drag a ui-control widget onto the canvas, then click on it and select ui-base which includes all your pages including the admin page. 
 7. Finally, connect both change node’s outputs to the ui-control’s input.
 
+## Hidding Admin only page by default 
+
+finally, we need to hide an admin-only page by default to ensure regular users don't accidentally land on the admin-only page.
+
+1. Go to Dashboard 2.0 sidebar, select layout tab.
+2. Locate the admin-only page and click on the edit icon next to it.
+3. Set visiblity as "hidden".
+
+!["Screenshot displaying admin-only page configuration"](./images/building-admin-panel-node-red-dashboard-2-admin-only-page-configuration.png "Screenshot displaying admin-only page configuration"){data-zoomable}
+
 ## Deploying the flow
 
 !["Screenshot displaying the FlowFuse Editor with flow of admin-only page"](./images/building-admin-panel-node-red-dashboard-2-flowfuse-editior.png "Screenshot displaying the FlowFuse Editor with flow of admin-only page"){data-zoomable}
