@@ -41,7 +41,7 @@ Each content type has channels which are appropriate, this table sets out which 
 - **Own content:** 3x week. Mondays, Wednesdays, and Thursdays.
     - 2 fresh blog articles: shared as a link to the article. The target day for review should be 3 work days before posting date, and the tile image should be requested when it's submited for review.
     - 1 repurposed blog article: in the form of slides with summary of the article, diagram, new tile image, image with a quote,animation or short video.
-    - Product updates: this would replace one of the previous type of content, it could be share as a Short video, short tutorial,animation, diagram.
+    - Product updates: this would replace one of the previous type of content, it could be share as a short video, short tutorial,animation, diagram.
 - **Curated content from other sources:** 1x week. Fridays.
     - Articles relevant to our ideal customer / industry related / news / posts.
         - Avoid competitor mentions.
@@ -63,7 +63,7 @@ Each content type has channels which are appropriate, this table sets out which 
     - Clone them to be able to create a new post adressed to all social channels at once.
     - The draft includes the type of content to be shared on the given date and time, and structure recomendations for the description.
     - When posting content on Facebook, always share to the relevant groups too.
-    - We'll add a placeholder for youtube, but this needs to be shared from the Youtube platform and not HubSpot.
+    - We'll add a placeholder for Youtube, but this needs to be shared from the Youtube platform and not HubSpot.
 - **Posting hours:** USA Easter Time break and before work hours, trying to coincide with Germany lunch and after work hours.
     - USA before work (6:00 am EDT - 12 pm CEST).
     - USA lunch hours (11:30 am EDT -  5:30 pm CEST).
