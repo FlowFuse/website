@@ -15,11 +15,11 @@ Managing and analyzing increasing amounts of data becomes crucial for organizati
 
 <!--more-->
 
-If you're new to Dashboard 2.0, refer to our blog post [Getting Started with Dashboard 2.0](https://flowfuse.com/blog/2024/03/dashboard-getting-started/), and Dashboard 2.0 to get things started.
+If you're new to Dashboard 2.0, refer to our blog post [Getting Started with Dashboard 2.0](https://flowfuse.com/blog/2024/03/dashboard-getting-started/) to install and get things started.
 
 ## Enabling FlowFuse User Authentication
 
-Before proceeding further, let’s enable FlowFuse user authentication. This step adds an extra layer of protection to our dashboard by adding a login page that restricts access exclusively to registered FlowFuse users. Additionally, it further simplifies the process for the FlowFuse Multiuser addon to track logged-in users on the dashboard.
+Before proceeding further, let’s enable FlowFuse user authentication. This step adds an extra layer of protection to our dashboard by adding a login page that restricts access exclusively to registered FlowFuse users. Additionally, it further simplifies the process for the FlowFuse Multiuser addon to track and access logged-in users data on the dashboard.
 
 1. Navigate to the instance setting.
 2. Select the “Security” tab.
@@ -35,10 +35,10 @@ The FlowFuse Multiuser Addon is a plugin developed for Dashboard 2.0 to access l
 
 ## Storing a list of Admin users
 
-Now we need to store a list of admin users somewhere so that we can later display the admin-only page to those users, For this guide we will store the admin list in the global context.
+Before we start building the admin-only page We need to store a list of admin users somewhere so that we can later display the admin-only page to those users only, For this guide we will store the admin list in the global context.
 
 1. Drag an inject node onto the canvas.
-2. Drag the 'change' node onto the canvas and set msg.payload to a JSON array containing the usernames of admin users. This will store the created admin list in our Node-RED global context.
+2. Drag the 'change' node onto the canvas and set `global.admins` to a JSON array containing the usernames of admin users. This will store the created admin list in our Node-RED global context.
 
 !["Screenshot displaying the change node which which stores list of admins username in global context"](./images/building-admin-panel-node-red-dashboard-2-change-node-for-storing-adminlist-to-global-contenxt.png "Screenshot displaying the change node which which stores list of admins username in global context"){data-zoomable}
 
@@ -49,8 +49,8 @@ Now we need to store a list of admin users somewhere so that we can later displa
 
 Now, let's proceed with the practical steps to implement the admin-only page:
 
-1. Create a new page in Dashboard 2.0,  where we will display sensitive data to that we want to hide from regular users, this page will be our admin page.
-2. Drag an event node on the canvas, then click on it, and select the UI base in which your all pages contain including admin page 
+1. Create a new page in Dashboard 2.0, where we will display sensitive data that we want to hide from regular users, this page will be our admin page.
+2. Drag an event node on the canvas, then click on it, and select the UI base that contains your all pages including the admin page 
 3. Drag a switch node on the canvas, and add two conditions, one to check whether the user’s username is contained in the admin list or a second for otherwise, see the below image.
 
 !["Screenshot displaying the switch node which checks whether the logged-in user's username is contained in the admin list or not"](./images/building-admin-panel-node-red-dashboard-2-switch-node-checking-page-viewer-isadmin.png "Screenshot displaying the switch node which checks whether the logged-in user's username is contained in the admin list or not"){data-zoomable}
@@ -61,9 +61,9 @@ Now, let's proceed with the practical steps to implement the admin-only page:
 
 !["Screenshot displaying the change node which contains payload to hide admin page"](./images/building-admin-panel-node-red-dashboard-2-change-node-for-hidding-page.png "Screenshot displaying the change node which contains payload to display admin page"){data-zoomable}
 
-5. Connect the first change node's input to the switch node's first output and the second change node's input to the second output.
-6. Drag a UI control node onto the canvas, then click on it and select ui-base which includes all the pages including the admin page. 
-7. Finally, connect both change node’s outputs to the ui control’s input.
+5. Connect the first change node's input to the switch node's first output and the second change node's input to the switch node's second output.
+6. Drag a ui-control widget onto the canvas, then click on it and select ui-base which includes all your pages including the admin page. 
+7. Finally, connect both change node’s outputs to the ui-control’s input.
 
 ## Deploying the flow
 
@@ -71,9 +71,9 @@ Now, let's proceed with the practical steps to implement the admin-only page:
 
 1. With your flow updated to include the above, click the "Deploy" button in the top-right of the Node-RED Editor.
 2. Navigate to `https://<your-instance-name>.flowfuse.cloud/dashboard`.
-3. when you visit the page for the first time you'll have to login with your FlowFuse username and password.
+3. When you visit the page for the first time, you'll need to log in with your FlowFuse username and password
 
-Now if your username is added to the list of admin usernames stored in global context, you will be able to see the admin only page
+Now, if your username is added to the list of admin usernames stored in the global context, you will be able to see the admin-only page.
 
 !["Screenshot displaying the Dashboard view of normal users"](./images/building-admin-panel-node-red-dashboard-2-dashboard-view-for-normal-users.png "Screenshot displaying the Dashboard view of normal users"){data-zoomable}
 
