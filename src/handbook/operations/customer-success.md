@@ -60,7 +60,7 @@ For FlowFuse Cloud customers, we add various useful data to our CRM records to h
 | FFC-Actions | This shows actions which have been taken by someone on a team this contact is on. To see a full list of available actions view [this report](https://app-eu1.hubspot.com/reports-list/26586079/182831966/){rel="nofollow"} in Hubspot
  |
 | FFC-Usage | This field shows a contact's answer to how they are planning to use FlowFuse Cloud, you can view the options and current data on [this report](https://app-eu1.hubspot.com/reports-list/26586079/182851924/){rel="nofollow"}. |
-| FFC-Usage (deprecated) | This legacy field showed email campaigns which had been triggered to be sent to each contact. For example, after 24 hours if a user had not used out snapshots feature the integration between FlowFuse Cloud and Hubspot would add the relevant tag to this user. Hubspot would in turn send the email to the contact. This way of working is being replaced by FFC-Actions as that field can triggered email campaigns based on action or inaction as well as adding value to our CRM. |
+| FFC-Events (deprecated) | This legacy field showed email campaigns which had been triggered to be sent to each contact. For example, after 24 hours if a user had not used out snapshots feature the integration between FlowFuse Cloud and Hubspot would add the relevant tag to this user. Hubspot would in turn send the email to the contact. This way of working is being replaced by FFC-Actions as that field can triggered email campaigns based on action or inaction as well as adding value to our CRM. |
 
 ## Inbound Support
 
