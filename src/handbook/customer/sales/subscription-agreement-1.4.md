@@ -87,7 +87,7 @@ PMB 24889, San Francisco, California 94104-5401 (or, if a different corporate en
 
 “User(s)” is defined as the unique and single Individual, employee, Contractor, or other third party individual or machine authorized by Customer (in accordance with this Agreement) that requires the provision of a seat within the admin platform, who are able to access the Software purchased under a Subscription, regardless of whether the User actually accesses or the frequency with which they access the Software. A User must be over the age of thirteen (13) years old.
 
-“Website” means FlowFuse’s website located at [www.flowfuse.com](http://www.flowfuse.com), [www.flowforge.cloud](http://www.flowforge.cloud),[www.flowfuse.cloud](www.flowfuse.cloud) and all subdomains, and all content, services, documentation provided on the Website.
+“Website” means FlowFuse’s website located at [flowfuse.com](https://flowfuse.com), [flowforge.cloud](https://www.flowforge.cloud),[flowfuse.cloud](https://www.flowfuse.cloud) and all subdomains, and all content, services, documentation provided on the Website.
 
 
 ### **2. SCOPE OF AGREEMENT**
