@@ -39,7 +39,7 @@ Each content type has channels which are appropriate, this table sets out which 
 #### Type of content
 
 - **Own content:** 3x week. Mondays, Wednesdays, and Thursdays.
-    - 2 fresh blog articles: shared as a link to the article. The target day for review should be 3 work days before posting date,and the tile image should be requested when it's submited for review.
+    - 2 fresh blog articles: shared as a link to the article. The target day for review should be 3 work days before posting date, and the tile image should be requested when it's submited for review.
     - 1 repurposed blog article: in the form of slides with summary of the article, diagram, new tile image, image with a quote,animation or short video.
     - Product updates: this would replace one of the previous type of content, it could be share as a Short video, short tutorial,animation, diagram.
 - **Curated content from other sources:** 1x week. Fridays.

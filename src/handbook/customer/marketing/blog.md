@@ -7,10 +7,10 @@ meta:
 
 ## Blogging Process
 
-Content creation and blogging are an effective way to communicate with our community. The process for publishing a blog is as follows:
+Content creation and blogging are effective ways to communicate with our community and are tied to our SEO performance and our [Social Media Strategy](/handbook/customer/marketing/social-media/#strategy-for-increasing-reach). The process for publishing a blog is as follows:
 
 1. Create an initial issue or tie your blog to one of your scheduled issues [here](https://github.com/orgs/FlowFuse/projects/21/views/1).
-2. Issues should be assigned a date, which should be posted here in this [Github projects](https://github.com/orgs/FlowFuse/projects/21/views/1).
+2. Issues should be assigned a date, which should be posted here in this [Github projects](https://github.com/orgs/FlowFuse/projects/21/views/1). The target date for review should be at least three working days before the planned posting date on social media. Check the [social media planning and posting section](/handbook/customer/marketing/social-media/#planning-and-posting).
 3. Create a PR requests with your Blog Content.
 4. Assign yourself as an Assignee.
 5. Convert to Draft
