@@ -1,8 +1,8 @@
 ---
-title: Using Mongodb With Node-RED
-subtitle: Guide to integrating MongoDB database into Node-RED Applications, for retrieving, updating, and deleting data
+title: Using MongoDB With Node-RED
+subtitle: Guide to integrating MongoDB database into Node-RED Applications, for writing, updating, and deleting data.
 description: Learn how to seamlessly integrate MongoDB, a NoSQL database, into your Node-RED applications with this step-by-step guide. Gain a fundamental understanding of MongoDB's key concepts and terminologies. 
-date: 2024-04-05
+date: 2024-04-12
 authors: ["sumit-shinde"]
 image: 
 tags:
@@ -18,7 +18,7 @@ MongoDB, a popular NoSQL database, is a favored choice among developers. As Mong
 
 ## What is MongoDB
 
-MongoDB is an open-source, NoSQL database system designed for flexibility and scalability in handling data for modern applications. It stores data in a format called JSON-like documents, which offers a schema-less approach where each document can have its unique structure. This flexibility allows for easy schema evolution and dynamic querying. MongoDB is widely used in web and mobile applications for its ability to handle large volumes of data and support real-time applications efficiently.
+MongoDB is an open-source, NoSQL database system designed for flexibility and scalability in handling data for modern applications. It stores data in documents, which are JSON-like structures. MongoDB offers a schema-less approach where each document can have its unique structure. This flexibility allows for easy schema evolution and dynamic querying. MongoDB is widely used in web and mobile applications for its ability to handle large volumes of data and support real-time applications efficiently.
 
 In MongoDB, instead of tables, rows, and columns as in SQL databases, we have collections, documents, and fields.
 
@@ -44,13 +44,13 @@ To kickstart the MongoDB integration with Node-RED, let's begin by installing th
 
 ### Understanding MongoDB Configuration
 
-To establish a connection between our Node-RED application and the MongoDB database, it's essential to have the following configuration details prepared ( While writing the article, I have utilized MongoDB Atlas, but feel free to choose any MongoDB setup, as the instructions in the article are adaptable for any setup ) :
+While writing the article, I have utilized MongoDB Atlas, but feel free to choose any MongoDB setup, as the instructions in the article are adaptable for any setup. To establish a connection between our Node-RED application and the MongoDB database, it's essential to have the following configuration details prepared:
 
-- Host: IP address or hostname of your MongoDB server.
-- Port: By default, MongoDB uses port 27017. ( If you're using a managed MongoDB service like MongoDB Atlas, this information may not be required.)
-- Database: The name of the MongoDB database you want to connect to.
-- User: Username with the necessary privileges to access the specified database.
-- Password: Corresponding password for the username.
+- `Host`: IP address or hostname of your MongoDB server.
+- `Port`: By default, MongoDB uses port 27017. ( If you're using a managed MongoDB service like MongoDB Atlas, this information may not be required.)
+- `Database`: The name of the MongoDB database you want to connect to.
+- `User`: Username with the necessary privileges to access the specified database.
+- `Password`: Corresponding password for the username.
 
 To learn about advanced configurations such as TLS/SSL, please refer to the [node's readme](https://flows.nodered.org/node/node-red-contrib-mongodb4).
 
