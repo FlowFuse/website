@@ -2,7 +2,7 @@
 title: How to Build an Admin Dashboard with Node-RED Dashboard 2.0
 subtitle: A guide to building an Admin Dashboard in Node-RED with Dashboard 2.0
 description: Discover step-by-step instructions for developing an admin-only page in Node-RED Dashboard 2.0 using the FlowFuse Multiuser addon. Additionally, learn how to secure Dashboard 2.0 and explore the features of the FlowFuse multiuser addon.
-date: 2024-04-05
+date: 2024-04-08
 authors: ["sumit-shinde"]
 image: /blog/2024/04/images/admin-dashboard.png
 tags:
@@ -68,7 +68,7 @@ Now, let's proceed with the practical steps to implement the admin-only page:
 
 ## Hidding Admin only page by default 
 
-finally, we need to hide an admin-only page by default to ensure regular users don't accidentally land on the admin-only page.
+To hide an admin-only page by default to ensure regular users don't accidentally land on the admin-only page the following steps are needed.
 
 1. Go to the Dashboard 2.0 sidebar, and select the layout tab.
 2. Locate the admin-only page and click on the edit icon next to it.
@@ -82,7 +82,7 @@ finally, we need to hide an admin-only page by default to ensure regular users d
 
 1. With your flow updated to include the above, click the "Deploy" button in the top-right of the Node-RED Editor.
 2. Navigate to `https://<your-instance-name>.flowfuse.cloud/dashboard`.
-3. When you visit the page for the first time, you'll need to log in with your FlowFuse username and password
+3. When you visit the page for the first time, you'll need to log in with your FlowFuse username and password or through Single-Sign on.
 
 Now, if your username is added to the list of admin usernames stored in the global context, you will be able to see the admin-only page.
 
@@ -100,5 +100,3 @@ If you want to learn more about FlowFuse multiuser addon and personalize the mul
 
 - [Multi-User Dashboard for Ticket/Task Management](https://flowfuse.com/blueprints/flowfuse-dashboard/multi-user-dashboard/#multi-user-dashboard-for-ticket%2Ftask-management) blueprint, which allows you to utilize templates to develop Personalize multi-user dashboard quickly.
 
-## Conclusion
-In conclusion, by following the steps in this guide, you can easily make an Admin-only page in Node-RED Dashboard 2.0. Using the FlowFuse Multiuser addon and FlowFuse's features, you'll make sure only allowed users can see important information. This way, you increase security and control over your dashboard, giving you better management over who can see what data.
