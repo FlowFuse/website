@@ -8,6 +8,8 @@ tags:
     - posts
     - flowfuse
     - node-red
+    - collaborative editing
+    - concurrent editing
 ---
 
 Last month I [wrote](/blog/2024/03/looking-towards-node-red-4/) about what users
