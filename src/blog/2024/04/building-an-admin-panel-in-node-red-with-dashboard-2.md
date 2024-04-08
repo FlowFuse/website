@@ -4,13 +4,12 @@ subtitle: A guide to building an Admin Dashboard in Node-RED with Dashboard 2.0
 description: Discover step-by-step instructions for developing an admin-only page in Node-RED Dashboard 2.0 using the FlowFuse Multiuser addon. Additionally, learn how to secure Dashboard 2.0 and explore the features of the FlowFuse multiuser addon.
 date: 2024-04-05
 authors: ["sumit-shinde"]
-image: 
+image: /blog/2024/04/images/admin-dashboard.png
 tags:
    - posts
    - dashboard 2.0
    - admin dashboard
    - admin-only page
-
 ---
 
 Managing and analyzing increasing amounts of data becomes crucial for organizations. Dashboard 2.0 and Node-RED help organizations access the data, normalize it, and visualize it. But what about controlling who can access what data? That's where an admin-only page comes in. Now With Node-RED Dashboard 2.0, we can also create robust and secure admin-only pages easily. In this guide, we'll provide you with step-by-step instructions to Build an Admin-only page with Node-RED Dashboard 2.0.
