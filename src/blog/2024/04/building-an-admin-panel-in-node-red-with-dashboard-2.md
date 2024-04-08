@@ -8,6 +8,8 @@ image:
 tags:
    - posts
    - dashboard 2.0
+   - admin dashboard
+   - admin-only page
 
 ---
 
