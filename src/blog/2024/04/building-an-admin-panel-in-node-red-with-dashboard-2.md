@@ -22,9 +22,7 @@ If you're new to Dashboard 2.0, refer to our blog post [Getting Started with Das
 
 Before proceeding further, let’s enable FlowFuse user authentication. This step adds an extra layer of protection to our dashboard by adding a login page that restricts access exclusively to registered FlowFuse users. Additionally, it further simplifies the process for the FlowFuse Multiuser addon to track and access logged-in user's data on the dashboard.
 
-1. Navigate to the instance setting.
-2. Select the “Security” tab.
-3. Enable “FlowFuse User Authentication”
+For more information, refer to the [documentation](https://flowfuse.com/docs/user/instance-settings/#flowfuse-user-authentication) and ensure that it is enabled.
 
 !["Screenshot displaying the configuration settings within the FlowFuse instance, enabling user authentication for enhanced security.
 "](./images/building-admin-panel-node-red-dashboard-2-flowfuse-instance-setting.png "Screenshot displaying the configuration settings within the FlowFuse instance, enabling user authentication for enhanced security.
