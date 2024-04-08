@@ -12,10 +12,7 @@ tags:
     - NoSQL
 ---
 
-
-
-
-
+MongoDB, a popular NoSQL database, is a favored choice among developers. As MongoDB continuously releases updates to enhance efficiency and suitability for manufacturing purposes, we find it essential to provide content for our Node-RED users. In this guide, I will cover everything from MongoDB foundations to setup, providing you with step-by-step instructions for integration into your Node-RED applications.
 
 <!--more-->
 
@@ -32,7 +29,7 @@ In MongoDB, instead of tables, rows, and columns as in SQL databases, we have co
 - MongoDB's schema-less approach fosters agile development without predefined structures, contrasting with SQL databases.
 - MongoDB's distributed architecture facilitates seamless horizontal scaling across multiple nodes, ensuring consistent performance. Although some SQL databases, such as PostgreSQL, can also be scaled horizontally, the process may be more complex.
 - MongoDB's query language and document-oriented data model are aligned with modern programming paradigms, which boosts developer efficiency.
-- MongoDB a fully managed cloud database service, provides tools like Atlas Data Explorer, Real-Time Performance Metrics, Atlas Search, and Atlas Data Lake. These simplify database management with automated backups, point-in-time recovery, security features, and seamless scalability, which enhances operational efficiency for developers and administrators.
+- MongoDB a fully managed cloud database service, provides tools like Atlas Data Explorer, Real-Time Performance Metrics, Atlas Search, and Atlas Data Lake. These simplify database management with automated backups, point-in-time recovery, security features, and seamless scalability, which enhances operational efficiency for developers and administrators. Additionally, MongoDB has released Atlas specialized for manufacturing. For more information, refer to  [MongoDB Launches Atlas for Manufacturing and Automotive](https://www.mongodb.com/company/newsroom/press-releases/mongodb-atlas-for-manufacturing-and-automotive)
 - More Importantly, MongoDB's native support for JSON documents simplifies data storage and retrieval, making it perfect for integration with Node-RED.
 
 ## Setting Up MongoDB with Node-RED
@@ -188,7 +185,7 @@ To build a user-friendly interactive UI for our CRM system, we will utilize Node
 
 !["Screenshot displaying connections of wires in the 'Update Data from Database' flow"](./images/using-mongodb-with-node-red-mongodb-updateone-flow.png "Screenshot displaying connections of wires in the 'Update Data from Database' flow"){data-zoomable}
 
-### deleting Customer Data to Database
+### Deleting Customer Data to Database
 
 - Drag the ui-form widget onto the canvas, create a new ui-group for it, and add form elements for id and name.
 
@@ -233,7 +230,7 @@ To build a user-friendly interactive UI for our CRM system, we will utilize Node
 
 ## Debugging the operations
 
-Now you can add debug to after the mongoDB4 node to debug the operation and get to know operations are performed successfully and if not what is the reason for the error. I have provided a debug message of successful operation for each operation.
+To debug MongoDB operations in Node-RED, simply add a debug node after the MongoDB4 node. This enables you to monitor the execution of operations and diagnose any errors that may occur. Below are sample debug messages indicating successful operations for each operation we have covered in this guide.
 
 ```
 // Message received after insert operation successful
@@ -264,9 +261,8 @@ Now you can add debug to after the mongoDB4 node to debug the operation and get 
 
 !["Screenshot displaying flow of CRM System"](./images/using-mongodb-with-node-red-crm-system-node-red-flow.png "Screenshot displaying flow of CRM System"){data-zoomable}
 
-
 - With your flow updated to include the above, click the "Deploy" button in the top-right of the Node-RED Editor.
-- Navigate to `https://<your-instance-name>.flowfuse.cloud/dashboard`.
+- Locate the 'Open Dashboard' button at the top-right corner of the Dashboard 2.0 sidebar and click on it to navigate to the dashboard.
 
 Now To drop tables, and retrieve table data, click on the 'Inject Node' button. For customer data insertion, updates, and deletions, navigate to fill in the corresponding forms and submit.
 
@@ -277,7 +273,8 @@ Now To drop tables, and retrieve table data, click on the 'Inject Node' button. 
 This section contains helpful links to other content. It isn’t required, so consider it supplemental.
 
 - [MongoDB best practices](https://www.mongodb.com/basics/best-practices) for to increase performance
-- [Ebook: MongoDB in manufacturing](https://www.mongodb.com/collateral/manufacturing-with-mongodb) 
+- [Ebook: MongoDB in manufacturing](https://www.mongodb.com/collateral/manufacturing-with-mongodb).
+- [Manufacturing & Automotive Industry Knowledge Accelerator](https://learn.mongodb.com/learning-paths/manufacturing-automotive-industry-knowledge-accelerator)
 
 ## Conclusion
 
