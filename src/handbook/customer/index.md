@@ -12,7 +12,7 @@ on taking the FlowFuse platform to market.
 
 1. Marketing activities, like:
    1. Creating awareness
-   1. Enging with the Node-RED community
+   1. Engaging with the Node-RED community
    1. Write content on how to use Node-RED with FlowFuse
 1. Engage with prospective customers to help them adopt FlowFuse
 1. Nurture current customers to be successful with FlowFuse
@@ -25,8 +25,9 @@ on taking the FlowFuse platform to market.
 | CEO  | [ZJ](https://www.linkedin.com/in/zegerjan/) [@ZJvandeWeg](https://github.com/ZJvandeWeg) |
 | Account Executive | [Zack](https://www.linkedin.com/in/zack-wasli/) [@zackwasli](https://github.com/zackwasli) |
 | Customer Success Manager | [Rob](https://www.linkedin.com/in/rob-marcer-b414b910/) [@robmarcer](https://github.com/robmarcer) |
-| Visual designer | [Yndira](https://www.linkedin.com/in/yndira-escobar-es/) [@Yndira-FlowForge](https://github.com/Yndira-FlowForge) |
+| Visual designer | [Yndira](https://www.linkedin.com/in/yndira-escobar-es/) [@Yndira-E](https://github.com/Yndira-E) |
 | OT Data & Community Strategist | [Grey](https://www.linkedin.com/in/gdziuba/) [@gdziuba](https://github.com/gdziuba) |
+| Demand Gen Manager | [Hasmin AbdulCader](https://www.linkedin.com/in/hasminabdulcader/) |
 
 
 ## Contact us
