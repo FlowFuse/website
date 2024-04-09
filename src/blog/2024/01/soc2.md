@@ -17,14 +17,14 @@ An independent audit assessed that FlowFuse's controls are effectively designed 
 
 <!--more-->
 
-# Improving Our Security Posture
+## Improving Our Security Posture
 At FlowFuse, we understand that professionalizing Node-RED deployments for our clients means adhering to the highest standards, including SOC 2 requirements. This commitment is at the core of our security philosophy. In a world rife with cybersecurity threats and data breaches, taking information security seriously isn't just an option—it's a critical necessity. Our SOC 2 audit was far more than just a procedural step. It represented a comprehensive, independent third-party validation of our robust controls and processes. We believe in transparency and accountability, which is why we document our policies in our open handbook, inviting scrutiny from vendors and reinforcing trust with our customers. Providing this level of independent audit not only serves our customers better and more efficiently but also offers FlowFuse valuable insights into enhancing our security measures and identifying any gaps in our policies. This proactive approach ensures we continue keeping your data safe and secure at all times.
 As we continue to grow and evolve, ensuring the security of our systems and data becomes ever more critical. The next step on FlowFuse's journey to provide independant proof we're on the right track: We're currently in the observation phase of the SOC2 type 2.
 
 SOC 2 Type 1 assesses the design of an organization's security controls at a specific point in time, while SOC 2 Type 2 evaluates the effectiveness of those controls over a period of time, typically three to twelve months.
 
-# FlowFuse's Journey to SOC 2 Compliance
-## Compliance Partners
+## FlowFuse's Journey to SOC 2 Compliance
+### Compliance Partners
 
 The independent audit was performed by Advantage Partners. Their expertise played a large role in our successful attainment of this certification. Before the audit was performed the company went through an extensive process to uncover what policies were missing, required updating, or were already in place. Further, lots of tribal knowledge has been written down and is now enforced by internal policies. For example
 
@@ -34,4 +34,3 @@ The independent audit was performed by Advantage Partners. Their expertise playe
 4. [Human Resources Security Policy](https://flowfuse.com/handbook/company/security/human-resources/#human-resources-security-policy)
 
 It's been a team effort from engineering to updated HR polices!
-

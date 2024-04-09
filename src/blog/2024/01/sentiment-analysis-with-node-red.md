@@ -15,7 +15,7 @@ Have you ever built a sentiment analysis system to extract insights from text co
 
 <!--more-->
 
-# What exactly is sentiment analysis?
+## What exactly is sentiment analysis?
 
 Sentiment analysis is a context-mining technique used to understand emotions and opinions expressed in text, often classifying them as positive, neutral, or negative. There are many real-world applications of this technique.
 
@@ -23,7 +23,7 @@ Sentiment analysis is a context-mining technique used to understand emotions and
 - **Campaign Monitoring:** Another use case of sentiment analysis is a measure of influence which is crucial in any marketing campaign.
 - **Brand Monitoring:** Brand monitoring is another great use case for sentiment analysis. Companies can use sentiment analysis to check the social media sentiments around their brand from their audience.
 
-# Building a Form in Dashboard 2.0
+## Building a Form in Dashboard 2.0
 
 In this system, we will analyse the sentiment of text content obtained from the user.  For this we are going to build a user interface using Dashboard 2.0 and Node-RED.
 
@@ -33,7 +33,7 @@ In this system, we will analyse the sentiment of text content obtained from the 
 
 !["Taking user input for Sentiment analysis using form"](./images/sentiment-analysis-form.png "Taking user input for Sentiment analysis using form")
 
-# Normalizing the data
+## Normalizing the data
 
 We need to normalize the payload before sending it to the next node because the form widget always returns an object containing the property of values of form elements.
 
@@ -43,7 +43,7 @@ We need to normalize the payload before sending it to the next node because the 
 
 !["Normalizing the payload using change node"](./images/sentiment-anlaysis-change-node(1).png "Normalizing the payload using change node")
 
-# Installing custom node
+## Installing custom node
 
 Now it’s time to install a custom node that can perform sentiment analysis for us. In this guide, we will use the `node-red-node-sentiment` which is a Node-RED node that uses the AFINN-165 wordlists for sentiment analysis of words. It returns a sentiment object containing a score and other properties but we will only use the score property. Score property typically ranges from -5 to 5.
 
@@ -51,7 +51,7 @@ Now it’s time to install a custom node that can perform sentiment analysis for
 2. Drag a sentiment node to canvas.
 3. Connect the change nodes output to sentiment node input.
 
-# Calculating percentage
+## Calculating percentage
 
 Why do we need to calculate the percentage? We will show the final result with the help of a circular progress bar and three different emojis. Ideally we should show the progress bar based on a percentage of score instead of negative values.
 
@@ -60,7 +60,7 @@ Why do we need to calculate the percentage? We will show the final result with t
 
 !["Calculating the percentage based on the score using the change node"](./images/sentiment-analysis-change-node(2).png "Calculating the percentage based on the score using the change node")
 
-# Displaying result on Dashboard 2.0
+## Displaying result on Dashboard 2.0
 Finally, we are going to display the result on Dashboard 2.0 with the help of the Vuetify circular progress bar and emojis. To do that we will build a Vue component by using our ui template widget.
 
 1. Drag a ui template widget to canvas and create another group for it.
@@ -89,7 +89,7 @@ Your final flow should look like this:
 
 !["Node-RED flow to do sentiment analysis"](./images/sentiment-anlaysis-flow.png "Node-RED flow to do sentiment analysis")
 
-# Deploying the Flow
+## Deploying the Flow
 
 !["Deploying Sentiment analysis Node-RED flow"](./images/sentiement-analysis-flowfuse-editor.png "Deploying Sentiment analysis Node-RED flow")
 
@@ -97,6 +97,6 @@ Finally, we have successfully built our sentiment analysis system. Now it's time
 
 !["Sentiment analysis on Text using Node-RED Dashboard 2.0"](./images/sentiment-analysis-dashboard-gif.gif "Sentiment analysis on Text using Node-RED Dashboard 2.0")
 
-# Conclusion
+## Conclusion
 
 In this post, a sentiment analysis system is built with Node-RED in which the user has a form field to paste text content. After submitting the form, it calculates the percentage based on the output score, which ranges from -5 to 5. The output will be displayed on dashboard 2.0 by a circular progress bar and three different emojis based on percentage.
