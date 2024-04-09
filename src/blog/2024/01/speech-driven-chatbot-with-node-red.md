@@ -18,7 +18,7 @@ Let's get started!
 
 <!--more-->
 
-# What exactly is speech recognition and synthesis?
+## What exactly is speech recognition and synthesis?
 
 Speech recognition is a technology where a device captures spoken words through a microphone, checks against grammar rules and vocabulary, and returns recognized words as text. On the other hand, speech synthesis converts app text into speech and plays it through a device's speaker or audio output. There are many benefits and real-world applications of this technology.
 
@@ -26,14 +26,13 @@ Speech recognition is a technology where a device captures spoken words through 
 - **Accessibility:** It allows individuals with visual impairments to access digital content through spoken words and as discussed above, to control devices without physical interaction.
 - **Efficient Content Consumption:** It allows us to listen to information instead of reading. For example, in the audiobook industry by using speech synthesis technology they create audio versions of books which helps users to be more productive.
 
-# Installing Dashboard 2.0 
+## Installing Dashboard 2.0 
 
 Install Dashboard 2.0. Follow these [instructions](https://flowfuse.com/blog/2024/03/dashboard-getting-started/) to get up and running.
 
-# Building Speech-to-Text Vue component 
+## Building Speech-to-Text Vue component 
 In this section, we will build a Vue component that will perform a speech-to-text conversion operation using Web speech API, and display results on the dashboard.  While we did say previously that we won't need any external API for speech recognition, this [Web Speech API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Speech_API) is not an external API. 
 This will process your speech locally as it is a JavaScript API that allows us to use speech-related functionalities, such as speech recognition and synthesis, in a web browser directly. It is widely present in modern browsers (except Firefox) which eliminates the need for external APIs to implement these features. Let's now start to build that component.
-
 
 1. Drag a ui template widget to canvas and select the created group.
 2. Paste the below Vue snippets into the template widget step by step.
@@ -120,7 +119,7 @@ export default {
 </script>
 ```
 
-# Adding an Environment variable
+## Adding an Environment variable
 
 Why do we need to add an environment variable? In this guide, we will build a speech-driven chatbot that involves integrating the Chat-GPT AI model. For this we need openAi’s API key. An API key is a form of private data that needs to be protected from being exposed. That is why we need the environment variables. It provides a secure way to store and access the API key without revealing it directly in the flow.  For more details see [Using Environment Variables in Node-RED](https://flowfuse.com/blog/2023/01/environment-variables-in-node-red/)
 
@@ -130,7 +129,7 @@ Why do we need to add an environment variable? In this guide, we will build a sp
 
 !["Setting environment variable for Chat-gpt token"](./images/speech-driven-chatbot-environment-section.png "Setting environment variable for chat-gpt token")
 
-# Setting msg property
+## Setting msg property
 
 Now let’s set that added environment variables as msg's property.
 
@@ -140,14 +139,14 @@ Now let’s set that added environment variables as msg's property.
 
 !["Setting msg's property for Chat-gpt token"](./images/speech-driven-chatbot-change-node.png "Setting msg's property for Chat-gpt token")
 
-# Installing and configuring custom node
+## Installing and configuring custom node
 In this section, we will install a custom node that will allow us to interact with the Chat-gpt AI model.
 
 1. Install `@sumit_shinde_84/node-red-contrib-node-gpt` by pallet manager, you can use other nodes according to your preference.
 2. Drag a ChatGPT node to canvas.
 3. Connect the ChatGPT node’s input to the change node’s output.
 
-# Building Text-to-Speech Vue component
+## Building Text-to-Speech Vue component
 We will build a Vue component that converts text received from ChatGPT into speech.
 
 1. Drag another template widget to canvas and select the added group, alternatively, you can create a separate group for this component according to your preference.
@@ -217,7 +216,7 @@ Your final flow should look like this:
 
 !["Speech Driven Chatbot system flow"](./images/speech-driven-chatbot-flow.png "Speech Driven Chatbot system flow")
 
-# Deploying the Flow
+## Deploying the Flow
 
 !["Deploying Sentiment analysis Node-RED flow"](./images/speech-driven-chatbot-flowfue-editor.png "Deploying Sentiment analysis Node-RED flow")
 
@@ -225,6 +224,6 @@ We have successfully built our Speech-Driven Chatbot System. Now it's time to de
 
 !["Speech Driven Chatbot using Node-RED Dashboard 2.0"](./images/speech-driven-chatbot-system.gif "Speech Driven Chatbot using Node-RED Dashboard 2.0")
 
-# Conclusion
+## Conclusion
 
 In this guide, we have built a Speech-Driven Chatbot System which allows us to understand how we can add speech recognition and synthesis features into our project without any external API or custom node. It also provides a brief overview of how we can integrate chat-gpt into our system.

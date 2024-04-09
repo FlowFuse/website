@@ -14,17 +14,17 @@ KepserverEX, often referred to as Kepware, is an OPC server that has been the im
 
 <!--more-->
 
-# PTC's KepserverEX
+## PTC's KepserverEX
 
 PTC's [KEPServerEX](https://www.ptc.com/en/products/kepware/kepserverex-ppc) is a versatile connectivity platform designed to securely manage, monitor, and control diverse automation devices and software applications. Central to its functionality is the OPC standard, which enables universal communication across industrial hardware and software, facilitating data exchange. This makes KEPServerEX particularly valuable in a variety of use cases, such as real-time data monitoring, machine-to-machine (M2M) communication, and industrial Internet of Things (IIoT) applications. It serves as a critical bridge in the automation and controls engineering space, offering a robust solution for integrating disparate systems, thereby enhancing operational efficiency and enabling data-driven decision-making. Integrating KEPServerEX with Node-RED extends this functionality, by allowing bidirectional communication for sending, storing, and or manipulating data.  
 
-## Scope
+### Scope
 
 The goal of this blog is for a quick start guide on the configuration for collecting data from a KepserverEX OPC server.  We are going to be leveraging the [node-red-contrib-opcua](https://flows.nodered.org/node/node-red-contrib-opcua) node.  We will assume that you already have [KepserverEX](https://www.ptc.com/en/products/kepware/kepserverex-ppc) install and ready for the integration. We will be using Basic256Sha256 security in this guide with anonymous authentication.  Assumptions of the installation include allowing Default configuration of the installation of KepserverEX 6.15 and allowing dynamic tag addressing.
 
-## Configure Connection from Node-RED to Kepserver
+### Configure Connection from Node-RED to Kepserver
 
-### Step 1: KepserverEX
+#### Step 1: KepserverEX
 
 The first thing we need to do is check our **OPC UA Configuration Manager** for the security requirements for our environment.  In the tray at the bottom, click on the KepserverEX symbol and select **OPC UA Configuration**
 
@@ -40,7 +40,7 @@ We are testing locally on the server, so we will use the one selected for loopba
 
 Click **OK**.
 
-### Step 2:  Node-RED
+#### Step 2:  Node-RED
 
 Next, navigate to your Node-RED instance and install the [node-red-contrib-opcua](https://flows.nodered.org/node/node-red-contrib-opcua) node if you haven't already done so.  
 
@@ -62,7 +62,7 @@ Trigger the flow by **clicking** on the inject node.  The server may not connect
 ![kepware node-red invalid endpoint](./images/node-red-opc-ua-invalid-endpoint.png)
 
 
-### Step 3: KepserverEX
+#### Step 3: KepserverEX
 
 Moving back over to KepserverEX,  Click on the tray again in the bottom of the screen and select **Configuration**, then select **Edit** from the file menu, then **Properties**.  Next, Select **OPC UA** and ensure that **Allow Anonymous login** is set to **Yes**.  Click **OK**.  
 
@@ -78,14 +78,13 @@ Now select the **NodeOPCUA-Client** and then **click** Trust.  ***If you don't h
 
 ![kepware node-red trusted client after](./images/kepserverex-trusted-client-after.png)
 
-### Step 4: Node-RED
+#### Step 4: Node-RED
 
 Lastly,  Navigate back to Node-RED and **trigger** the inject node.  This node will now browse the project from the KepserverEX and display all of the existing tags.
 
 ![kepware node-red browsed tags](./images/kepware-opc-browsed-tags-node-red.png)
 
-
-## Read Tags 
+### Read Tags 
 
 We will be leveraging the default Simulated Examples for reading tags from KepserverEX.  Let's move on to the next set of flows.
 
@@ -104,7 +103,7 @@ The debug node is set to show a complete msg object.  Note the payload as the va
 
 ![kepware node-red read tags output](./images/node-red-debug-output-opc.png)
 
-## Write Tag
+### Write Tag
 
 Writing a tag is a similar process.  The only difference is that a variable is set in the **OPCUa-Item** node and the **OPCUa-Client** action is set to Write.
 
@@ -125,6 +124,6 @@ Open up the **Quick Client** within KepserverEX and navigate to the address of *
 ![kepware node-red write tags output](./images/node-red-debug-output-write-opc.png)
 ![kepware node-red quick client](./images/kepware-quick-client.png)
 
-## Conclusion
+### Conclusion
 
 This guide was designed to help you easily connect your Node-RED instance to KepserverEX with security.  For more examples of how to do more advanced configuration, please watch the past [webinar](https://flowfuse.com/webinars/2023/getting-started-opcua-node-red/) going over these [examples](https://github.com/mikakaraila/node-red-contrib-opcua/tree/master/examples) in detail.  

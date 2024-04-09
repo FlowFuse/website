@@ -17,11 +17,11 @@ Node-RED.
 
 <!--more-->
 
-# What exactly is PostgreSQL?
+## What exactly is PostgreSQL?
 
 PostgreSQL is a highly reliable open-source relational database known for its extensive features. It supports diverse data types, robust SQL, and ACID compliance, allowing high-performance systems. Over the years, it has demonstrated reliability, security, and compatibility, which makes it a popular choice of businesses worldwide.
 
-## Using PostgreSQL with Node-RED
+### Using PostgreSQL with Node-RED
 
 The first thing we need to do to get things started is to install the PostgreSQL custom node and gain an understanding of PostgreSQL configuration details.
 
@@ -49,7 +49,7 @@ We have discussed many times in previous blogs that using environment variables 
 
 !["Adding environment variables"](./images/postgresql_with_nodred_environment_variable.png "Adding environment variables")
 
-# Creating Table
+## Creating Table
 
 In this section, we will create a table in our database to store product data.
 
@@ -76,11 +76,11 @@ CREATE TABLE IF NOT EXISTS product_data (
 
 3. Connect the inject node’s output to the PostgreSQL node’s input.
 
-# Installing Dashboard 2.0 
+## Installing Dashboard 2.0 
 
 Install Dashboard 2.0. Follow these [instructions](https://flowfuse.com/blog/2024/03/dashboard-getting-started/) to get up and running.
 
-# Inserting Product Data into the Database
+## Inserting Product Data into the Database
 In this section, we will add a Form interface that will enable us to obtain product data that we need to insert into the database. Moreover, we will use the PostgreSQL node to interact with the database.
 
 !["Adding form to insert data"](./images/postgresql_with_node-red_form1.png "Adding form to insert data")
@@ -111,7 +111,7 @@ VALUES ($1, $2, $3);
 
 5. Connect ui-form’s output to the function node’s input and the function node's output to the PostgreSQL node’s input.
 
-# Displaying product data on Dashboard 2.0
+## Displaying product data on Dashboard 2.0
 In this section, we will retrieve all data from our database table and display it on Dashboard 2.0 using the ui-table widget.
 
 1. Drag an Inject node onto the canvas.
@@ -124,7 +124,7 @@ SELECT * FROM product_data;
 ```
 !["Retriving all product data from database"](./images/postgresql_with_node-red_retrive_data.png "Retriving all product data from database")
 
-# Updating product data to the Database
+## Updating product data to the Database
 !["Adding form to update product data"](./images/postgresql_with_node-red_form2.png "adding form to update product data")
 
 In this section, we will add a form interface to collect the product ID and the new stock value for the update process. Feel free to select other data fields that you need to update. To achieve this, we will add a form interface using Dashboard 2.0. Additionally, we will interact with the database using the same PostgreSQL node that we have used so far in this guide.
@@ -164,7 +164,7 @@ WHERE id = $1;
 
 5. Connect ui-form’s output to the function node’s input and the function node's output to the PostgreSQL node’s input.
 
-# Deleting product data from the database
+## Deleting product data from the database
 
 !["Deleting product data to the database"](./images/postgresql_with_node-red_form3.png "Deleting product data to the database")
 
@@ -195,7 +195,7 @@ WHERE id = $1 AND name = $2;
 
 5. Connect ui-form’s output to the function node’s input and the function node's output to PostgreSQL node’s input.
 
-# Dropping Table
+## Dropping Table
 This section will explain how to drop ( delete ) tables from the database.
 
 1. Drag an Inject node onto the canvas.
@@ -210,14 +210,14 @@ DROP TABLE IF EXISTS product_data;
 
 !["Droping product_data from the database"](./images/postgresql_with_node-red_drop_tables.png "Droping product_data from the database")
 
-# Deploying Flow
+## Deploying Flow
 !["Deploying Inventory management system's flow"](./images/postgresql_with_nodred_environment_variable_ff_editor.png "Deploying Inventory management system's flow")
 
 Our Inventory Management System is now complete and ready for deployment. To initiate the deployment process, locate the red 'Deploy' button positioned in the top right corner. To create, drop tables, and retrieve table data, click on the 'Inject Node' button. For product data insertion, updates, and deletions, navigate to `https://<your-instance-name>.flowfuse.cloud/dashboard`.
 
 !["Inventory management system"](./images/postgresql_with_node-red_Inventory_management_system.png "Inventory management system")
 
-## Best practices to follow
+### Best practices to follow
 Throughout this guide, we have followed some best practices that we think need to be discussed separately. In this section, we'll discuss some best practices that need to be followed while using the PostgreSQL database.
 
 1. Connection Pooling: Implementing connection pooling can significantly enhance the performance of PostgreSQL. It allows multiple clients to reuse database connections, reducing the overhead of establishing new connections for each query. By configuring PostgreSQL to use connection pooling, you can optimize resource usage and improve overall system performance. In this guide, we have configured our PostgreSQL to use connection pooling via the Postgres Config node/tab.
@@ -226,5 +226,5 @@ Throughout this guide, we have followed some best practices that we think need t
 
 3. Credential Rotation: Regularly rotating database credentials is essential for maintaining robust security practices. This includes changing login information for managed databases and other database access points. Implementing a scheduled credential rotation process, such as quarterly 'rotation days,' streamlines the task and reduces the risk of unauthorized access. 
 
-# Conclusion 
+## Conclusion 
 This guide has demonstrated the integration of PostgreSQL with Node-RED. Throughout this article, we've built an inventory management system with data stored in a database. You've learned to create and drop tables and perform operations like inserting, updating, and deleting data. Also, we have highlighted best practices, such as utilizing environment variables and selecting certified nodes to ensure security.

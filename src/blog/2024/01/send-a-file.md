@@ -15,24 +15,20 @@ Have you ever needed to send a CSV file to your Node-RED instance? This file can
 
 <!--more-->
 
-# Why would you need to send a file to Node-RED?
+## Why would you need to send a file to Node-RED?
 
 Often times it is necessary to update lookup tables in a SQL database, but you don't necessarily want to give access to everyone to edit the database, nor do you want to have to do it all yourself. This can often be seen when new products are introduced into a manufacturing facility. It may not be often, but enough that it warrants its own application. This process will guide you in a way that will enable your teammates to upload the files to the system themselves.
 
 Furthermore, on the management layer of most companies, Excel and Google Sheets are the go-to tools to perform data collection tasks. Getting management involved in processes might require you to build an import feature for them. Asking your manager to "Save as" CSV is much easier than teaching them SQL!
 
-
-
-# 2 Ways to send a file to node-RED
+## 2 Ways to send a file to node-RED
 
 There are many approaches that can be taken when solving this. We are going to go over 2 here. 
 
 1. [Simple Python Script](#simple-python-script) - Simple script that will be shared below. It is a simple Python application that allows the user to send a file with a simple command, but this might require a little more technical skills that the end user may not feel comfortable with. 
 2. [Stand Alone Web Application](#stand-alone-web-application) - A web-based application that allows the user to upload files to a browser with a selectable endpoint. 
 
-
-
-## Simple Python Script
+### Simple Python Script
 
 This simple Python script sends a file to a Node-RED flow.  The flow that will work with this script can be seen [here](#node-red-ingress).
 
@@ -80,21 +76,20 @@ To run:
 python run.py
 ```
 
-
-## Stand Alone Web Application
+### Stand Alone Web Application
 
 ![csv upload application](./images/csv_upload_app.png)
 
 This stand-alone web application can be run on either Windows or Linux, .bat for Windows, and .sh for Linux.
 
-### Installation
+#### Installation
 
 Clone the repository and navigate to the directory:
 ```bash
 git clone https://github.com/gdziuba/FF_Send-File-to-NR.git && cd FF_Send-File-to-NR
 ```
 
-### Configuration ###
+#### Configuration
 
 Edit the lines in the body of [index.html](https://github.com/gdziuba/FF_Send-File-to-NR/blob/21214f88c6c4536f49efb88cf5f84bf52071a88b/templates/index.html#L69) to include the endpoints to which you would like to send the files.
 
@@ -104,7 +99,7 @@ Edit the lines in the body of [index.html](https://github.com/gdziuba/FF_Send-Fi
 
 ### Operating Systems
 
-### Windows ###
+#### Windows
 
 Run the script:
 ```bash
@@ -113,7 +108,7 @@ Run the script:
 
 This will install if necessary, start the Flask Application, and take you to localhost:5000 on the browser.
 
-### Linux ###
+#### Linux
 
 Make the script executable by running running:
 
@@ -129,9 +124,7 @@ Then run the application with:
 
 To access the application, open a browser to the **\<node-red-host-ip\>:5000** of the running application.
 
-
-
-### Node-RED Ingress
+#### Node-RED Ingress
 
 <iframe width="100%" height="225px" src="https://flows.nodered.org/flow/effb53752e5d6f767b3c7e5d41a4a6e8/share?height=100" allow="clipboard-read; clipboard-write" style="border: none;"></iframe>
 
@@ -143,6 +136,6 @@ To import the flow, follow these [instructions](https://flowfuse.com/blog/2023/0
 
 A Simple HTTP In node can be used in the form of a Post, ensuring the configuration allows for a file.
 
-# Wanna import it directly into your Node-RED instance via a Dashboard?
+## Wanna import it directly into your Node-RED instance via a Dashboard?
 
 Check out this [blog](/blog/2024/01/import-a-file) on how to directly import a file into a Node-RED instance via Dashboard 2.0.
