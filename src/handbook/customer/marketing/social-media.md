@@ -39,9 +39,10 @@ Each content type has channels which are appropriate, this table sets out which 
 #### Type of content
 
 - **Own content:** 3x week. Mondays, Wednesdays, and Thursdays.
-    - 2 fresh blog articles: shared as a link to the article. The target day for review should be 3 work days before posting date, and the tile image should be requested when it's submited for review.
-    - 1 repurposed blog article: in the form of slides with summary of the article, diagram, new tile image, image with a quote,animation or short video.
-    - Product updates: this would replace one of the previous type of content, it could be share as a short video, short tutorial,animation, diagram.
+    - Fresh blog articles: Every new piece of content will be shared on social media as a link to the article.
+        - The target day for review should be 3 work days before posting date, and the tile image should be requested when it's submited for review.
+    - Additionally, we'll share 1 repurposed blog article per week. This can take the form of slides with a summary of the article, a diagram, a new tile image, an image with a quote, animation, or a short video.
+    - Product updates: this could replace one of the previous types of content, and it could be shared as a short video, short tutorial, animation, or diagram.
 - **Curated content from other sources:** 1x week. Fridays.
     - Articles relevant to our ideal customer / industry related / news / posts.
         - Avoid competitor mentions.
@@ -58,22 +59,23 @@ Each content type has channels which are appropriate, this table sets out which 
 #### Planning and posting
 
 - We'll plan **two weeks ahead**, to give us time to prepare content and the associated materials.
-- We'll keep the planning on our **HubSpot social calendar**.
+- We'll keep the planning on our [HubSpot social calendar](https://app-eu1.hubspot.com/social/26586079/manage/calendar).
     - There are placeholder posts in the form of drafts.
     - Clone them to be able to create a new post adressed to all social channels at once.
     - The draft includes the type of content to be shared on the given date and time, and structure recomendations for the description.
     - When posting content on Facebook, always share to the relevant groups too.
     - We'll add a placeholder for Youtube, but this needs to be shared from the Youtube platform and not HubSpot.
-- **Posting hours:** USA Easter Time break and before work hours, trying to coincide with Germany lunch and after work hours.
+- **Posting hours:** Aligned with USA Eastern Time before work hours and during lunch, aiming to coincide with Germany's lunch and after work hours.
     - USA before work (6:00 am EDT - 12 pm CEST).
     - USA lunch hours (11:30 am EDT -  5:30 pm CEST).
+- While we have a planned schedule, it's crucial to remain flexible. If more impactful or relevant content emerges, we'll adapt our plan accordingly to ensure the best possible engagement.
 
 #### Posts format
 
 - Descriptive text: 
     - Align with post purpose and audience goals.
     - Think about relevance to the audience.
-- Emojis
+- Emoji
 - Only one CTA
 - Hashtags, ideally three.
 - Link to article / website.
