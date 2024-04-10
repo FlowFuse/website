@@ -92,26 +92,26 @@ In this section, we will construct the practical implementation of the scenario 
 
 ### Setting Up a Webhook
 
-- Drag an http-in node onto the canvas. Configure the method as POST and set the path to "/test-webhook".
+- Drag an http-in node onto the canvas. Configure the method as POST and set the path as "/test-webhook".
 
 !["Screenshot displaying webhook http-in nodes configuration"](./images/using-webhook-with-node-red-http-in-node-endpoint-for-receiving-data-from-server-2.png "Screenshot displaying webhook http-in nodes configuration"){data-zoomable}
 
-- Drag an http request node onto the canvas. Configure the method as POST and set the URL to `https://<your-instance-name>.flowfuse.cloud/schedule-maintenance` This will serve as our endpoint for posting requests to the maintenance monitoring system.
+- Drag an http request node onto the canvas. Configure the method as POST and set the URL to `https://<your-instance-name>.flowfuse.cloud/schedule-maintenance`, replace <your-instance-name> with your actual name of the instance. "/schedule-maintenance" will be the endpoint for posting requests to the maintenance monitoring system provided by Server 3. 
 
 !["Screenshot displaying http request nodes configuration for sending post request to server 3"](./images/using-webhook-with-node-red-request-node-sending-request-to-server3.png "Screenshot displaying http request nodes configuration for sending post request to server 3"){data-zoomable}
 
-- Drag an http response node onto the canvas and connect its input to the output of the http-in node. Also, connect an http request node's input to the same http response node's output.
+- Drag an http response node onto the canvas and connect its input to the output of the http-in node. Also, connect an http request node's input to the same http in node's output.
 
 ## Setting Up a Temperature sensors (Server 1)
 
-1. Drag an inject node onto the canvas and set msg.payload as below:
+1. Drag an inject node onto the canvas and set `msg.payload` as below:
 
 ```
 {"name": "sensor 1", "temperature": ($random() * 100)}
 ```
 !["Screenshot displaying the inject node setting payload for genrating simulated data for sensor 1"](./images/using-webhook-with-node-sensor1-inject-node.png "Screenshot displaying the inject node setting payload for genrating simulated data for sensor 1"){data-zoomable}
 
-2. Drag another inject node onto the canvas and set msg.payload as below:
+2. Drag the another inject node onto the canvas and set `msg.payload` as below:
 
 ```
 {"name": "sensor 2", "temperature": ($random() * 100)}
@@ -126,7 +126,7 @@ In this section, we will construct the practical implementation of the scenario 
 
 !["Screenshot displaying HTTP request node configuration for triggering or sending a POST request to the webhook server in case of abnormal temperature."](./images/using-webhook-with-node-red-webhook-trigger.png "Screenshot displaying HTTP request node configuration for triggering or sending a POST request to the webhook server in case of abnormal temperature."){data-zoomable}
 
-5. Connect the http request node’s output to the first and second output of the switch node. then connect the third of the switch node debug node.
+5. Connect the http request node’s output to the first and second output of the switch node. then connect the third output of the switch node to the debug node.
 
 ## Setting Up a Server 3
 
@@ -174,7 +174,12 @@ return msg;
 5. Drag the ui-table widget onto Canvas, and create a new ui group for it in which it will render.
 6. Connect the http in the node’s output to the function node’s and the change node’s input and connect the function node’s output to the http response node’s input and the change node’s output to the ui-table widget’s input.
 
+### Deploying the flow
+
 !["Screenshot Displaying the flow of scheduled maintenance table"](./images/using-webhook-with-node-red-flow.png "Screenshot Displaying the flow of scheduled maintenance table"){data-zoomable}
+
+- With your flow updated to include the above, click the "Deploy" button in the top-right of the Node-RED Editor.
+- Locate the 'Open Dashboard' button at the top-right corner of the Dashboard 2.0 sidebar and click on it to navigate to the dashboard.
 
 !["Screenshot Displaying the flow of scheduled maintenance table"](./images/using-webhook-with-node-red-scheduled-maintenance-table-dashboard-view.png "Screenshot Displaying the flow of scheduled maintenance table"){data-zoomable}
 
