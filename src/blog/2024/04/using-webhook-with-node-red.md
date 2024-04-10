@@ -36,49 +36,22 @@ In simple terms, Webhooks are "user-defined HTTP callbacks.” This callback is 
 
 It's common and understandable to get confused between APIs and webhooks, especially when you are learning about webhooks for the first time. However, comparing the two can help dispel these confusions.
 
-## API:
-
-- **Direction:**
-  - Typically involves client-to-server communication.
-- **Initiation:**
-  - Requests are initiated by the client.
-- **Request Method:**
-  - Usually employs HTTP methods like GET, POST, etc.
-- **Response:**
-  - Provides an immediate response upon request.
-- **Data Transfer:**
-  - Utilizes a pull model where the client fetches data.
-- **Polling:**
-  - Requires periodic polling for updates.
-- **Payload:**
-  - The client specifies the payload in the request.
-- **Error Handling:**
-  - Typically includes error codes and messages.
-
-## Webhook:
-
-- **Direction:**
-  - Typically involves server-to-server communication.
-- **Initiation:**
-  - Requests are initiated by the server.
-- **Request Method:**
-  - Typically uses the HTTP POST method.
-- **Response:**
-  - Does not provide an immediate response; asynchronous.
-- **Data Transfer:**
-  - Operates on a push model where the server pushes data to the client.
-- **Polling:**
-  - No need for polling; receives updates directly.
-- **Payload:**
-  - The server defines the payload in the outgoing request.
-- **Error Handling:**
-  - Errors are handled by retry mechanisms or manual intervention.
+| Aspect            | API                                                    | Webhook                                              |
+|-------------------|--------------------------------------------------------|------------------------------------------------------|
+| Direction         | Typically involves client-to-server communication.     | Typically involves server-to-server communication.   |
+| Initiation        | Requests are initiated by the client.                  | Requests are initiated by the server.                |
+| Request Method    | Usually employs HTTP methods like GET, POST, etc.      | Typically uses the HTTP POST method.                 |
+| Response          | Provides an immediate response upon request.           | Does not provide an immediate response; asynchronous.|
+| Data Transfer     | Utilizes a pull model where the client fetches data.  | Operates on a push model where the server pushes data to the client.|
+| Polling           | Requires periodic polling for updates.                 | No need for polling; receives updates directly.      |
+| Payload           | The client specifies the payload in the request.       | The server defines the payload in the outgoing request. |
+| Error Handling    | Typically includes error codes and messages.           | Errors are handled by retry mechanisms or manual intervention. |
 
 ### Example Scenario:
 
 Consider a manufacturing facility that utilizes temperature sensors to monitor temperature levels in critical areas. When the temperature surpasses predefined thresholds, it triggers a series of actions for maintenance and monitoring.
 
-!["Diagram explaining how component works in"](./images/using-webhook-with-node-red-diagram.png "Role Based Access Control For Node-RED with FlowFuse"){data-zoomable}
+!["Diagram explaining how component works in Webhook"](./images/using-webhook-with-node-red-diagram.png "Diagram explaining how component works in Webhook"){data-zoomable}
 
 - Temperature Sensor (Server 1): These physical sensors are installed in the manufacturing plant to monitor temperature. They trigger webhook requests to Server 2 whenever abnormal temperature patterns are detected.
 
