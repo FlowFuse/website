@@ -82,14 +82,14 @@ For the CRM system we will develop, the data structure will be as follows:
 
 ```json
 {
-_id: "NXaxeFEK"
-firstname: "alice"
-lastname: "demo"
-email: "userdemo601@gmail.com"
-phone: "+19876543561"
-company: "self"
-status: "Prospect"
-source: "website"
+"_id": "NXaxeFEK"
+"firstname": "alice"
+"lastname": "demo"
+"email": "userdemo601@gmail.com"
+"phone": "+19876543561"
+"company": "self"
+"status": "Prospect"
+"source": "website"
 }
 
 ```
@@ -168,7 +168,7 @@ To build a user-friendly interactive UI for our CRM system, we will utilize Node
 
 Note:- *Please note that the comments provided are for explanation purposes only and should not be copied along with the code*
 
-```json
+```yml
 [
     // Specifying the criteria to identify the document to update, based on its _id field
     { "_id": msg.payload._id },
