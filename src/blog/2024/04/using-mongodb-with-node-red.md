@@ -195,7 +195,7 @@ Note:- *Please note that the comments provided are for explanation purposes only
 
 - Drag the change node onto the canvas. In the change node, set `msg.payload` as the following JSON object:
 
-```json
+```yaml
 [
     // Specify the criteria to identify the document to delete, based on its _id field and firstname
     {
@@ -234,7 +234,7 @@ Note:- *Please note that the comments provided are for explanation purposes only
 
 To debug MongoDB operations in Node-RED, simply add a debug node after the MongoDB4 node. This enables you to monitor the execution of operations and diagnose any errors that may occur. Below are sample debug messages indicating successful operations for each operation we have covered in this guide.
 
-```
+```js
 // Message received after insert operation successful
 {
     "acknowledged": true,
