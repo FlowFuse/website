@@ -11,7 +11,7 @@ tags:
     - webhook
 ---
 
-Have you ever needed to automate tasks based on specific events in your IoT applications? The answer lies in the technology known as webhooks. webhooks play a crucial role in streamlining operations. In this comprehensive guide, we delve into the world of webhooks, exploring their significance in IoT scenarios. Additionally, we provide detailed step-by-step instructions on integrating webhooks within Node-RED applications.
+Have you found yourself needing to automate tasks based on specific events within your IoT applications? If so, utilizing webhooks presents an efficient solution for this challenge. Webhooks play an integral role in streamlining operations, facilitating real-time communication and seamless integration between disparate systems and devices. In this comprehensive guide, we cover everything you need to get started with webhooks, from basics to practical implementation. We provide detailed, step-by-step instructions on integrating webhooks within Node-RED applications.
 
 <!--more-->
 
@@ -19,20 +19,20 @@ Have you ever needed to automate tasks based on specific events in your IoT appl
 
 Webhooks are a mechanism that allows real-time communication between two different applications or services. They are essentially HTTP requests triggered by events in a source system and sent to a destination system, often with a payload of data. Webhooks are automated, meaning they are automatically sent out when their corresponding event is fired in the source system. 
 
-In simple terms, Webhooks are "user-defined HTTP callbacks.”
+In simple terms, Webhooks are "user-defined HTTP callbacks.” This callback is triggered after a specific event occurs in the source system, prompting the system to automatically send an HTTP request to the designated destination system.
 
 ## How Webhook works 
 
 !["Image displaying how webhook works"](./images/using-webhook-with-node-red-how-webhook-works.png "Image displaying how webhook works"){data-zoomable}
 
 - Event Initiator: This refers to the event specified to trigger the WebHook. Whenever this event occurs, the WebHook will be activated.
-- WebHook Provider: The WebHook provider is responsible for configuring and creating the WebHook. It monitors the specified event and generates the WebHook accordingly. Upon event triggering, the WebHook generator will dispatch the POST HTTP request to the designated third-party application.
+- Webhook Server: The webhook server, is responsible for managing webhook configurations and endpoints. It listens for the specified event. When the event is detected, the webhook server automatically sends an HTTP POST request containing relevant data to the designated third-party application or service.
 - Data Reception by Third-Party Application: The third-party application will receive the data sent via the WebHook to the designated URL or listener provided during registration.
 - Custom Action Execution: Upon receiving the POST request, specific actions can be performed.
 
 ## API Vs Webhook
 
-Commonly, people always confused between API and webhook some assume it is similar to an HTTP request and some assume it is different and more complex than it but let differentiate
+It's common and understandable to get confused between APIs and webhooks, especially when you are learning about webhooks for the first time. However, comparing the two can help dispel these confusions.
 
 ## API:
 
@@ -74,21 +74,21 @@ Commonly, people always confused between API and webhook some assume it is simil
 
 ### Example Scenario:
 
-!["Diagram explaining how component works in"](./images/using-webhook-with-node-red-diagram.png "Role Based Access Control For Node-RED with FlowFuse"){data-zoomable}
-
 For example, Consider a manufacturing facility that utilizes temperature sensors to monitor temperature levels in critical areas. When the temperature surpasses predefined thresholds, it triggers a series of actions for maintenance and monitoring.
 
-- Temperature Sensor ( server 1): These are the physical temperature sensors installed in the manufacturing plant. They trigger webhook requests to Server 2 whenever abnormal temperature patterns are detected.
+!["Diagram explaining how component works in"](./images/using-webhook-with-node-red-diagram.png "Role Based Access Control For Node-RED with FlowFuse"){data-zoomable}
 
-- Server 2 (Webhook provider ): This server creates and hosts the webhook. It receives HTTP requests from the temperature sensors (Server 1) when abnormal temperatures are detected. The request contains temperature data. Server 2 then processes this data and sends a POST request with relevant information to Server 3.
+- Temperature Sensor (Server 1): These physical sensors are installed in the manufacturing plant to monitor temperature. They trigger webhook requests to Server 2 whenever abnormal temperature patterns are detected.
 
-- Maintenance System (Server 3): This system will recive post request containing event related data, then it will schedule maintainance automatically.
+- Server 2 (Webhook Server): This server creates and hosts the webhook endpoint. It receives HTTP requests from the temperature sensors (Server 1) when abnormal temperatures are detected. The request contains temperature data. Server 2 then processes this data and sends a POST request with relevant information to Server 3.
+
+- Maintenance System (Server 3): This system receives POST requests from Server 2 containing event-related data on a specific endpoint provided to Server 2. It then automatically schedules maintenance tasks based on the received information.
 
 ## Practical implementation
 
 In this section, we will construct the practical implementation of the scenario described above. However, all three components or servers will be hosted on the same Node-RED instance in our example. Furthermore, we will simulate data rather than using real sensors by utilizing random number expressions.
 
-### Setting Up a Webhook Receiver or HTTP Endpoint (Server 2)
+### Setting Up a Webhook
 
 - Drag an http-in node onto the canvas. Configure the method as POST and set the path to "/test-webhook".
 
@@ -156,10 +156,9 @@ let maintenanceScheduleRecentData = {
 // Add recent maintenance data to records
 scheduledMaintenanceData.push(maintenanceScheduleRecentData);
 
-// Update global scheduled maintenance data
+// Update scheduled maintenance data to global context
 global.set('scheduledMaintenance', scheduledMaintenanceData);
 
-// Return the processed message object
 return msg;
 ```
 !["Screenshot displaying function node processing and storing data to global context"](./images/using-webhook-with-node-red-function-node.png "Screenshot displaying function node processing and storing data to global context"){data-zoomable}
@@ -178,3 +177,5 @@ return msg;
 !["Screenshot Displaying the flow of scheduled maintenance table"](./images/using-webhook-with-node-red-scheduled-maintenance-table-dashboard-view.png "Screenshot Displaying the flow of scheduled maintenance table"){data-zoomable}
 
 ## Conclusion 
+
+In summary, this guide comprehensively covers using webhooks in Node-RED for automating tasks in their Node-RED applications. With clear explanations and practical demonstrations, users can seamlessly integrate webhooks to enhance communication, automate responses to events, and streamline operations.
