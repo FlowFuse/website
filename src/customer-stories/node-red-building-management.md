@@ -53,6 +53,8 @@ We are a core Microsoft partner, so we have some Node-RED instances hosted in Az
 
 **Alan Yeung:** Version control could be stronger. If we have multiple people working on a flow it can be hard to spot where a new bug was introduced. We also see situations where Node-RED instances have to be restarted to fix a problem or deploy a new stack. We need to find better ways to manage those admin tasks.
 
+**Rob Marcer** FlowFuse is working to address the challenges of version control, we've implemented our DevOps Pipelines feature which allows our users to build, test and deploy their Node-RED applications with the confidence that they can esaily roll back to a previous state in a few clicks of a button. I expect a lot more to be added to FlowFuse in this area over the coming year.
+
 **Rob Marcer:** What's been the impact of Node-RED on your business?
 
 **Alan Yeung:** It's very significant. We're not a development company, that’s not our skill set. We didn’t want to bring in developers and the management they require. We've been very successful in creating a product and a platform with a small and relatively inexperienced team. Without Node-RED, we’d probably still be in an early phase of the product development cycle right now with far less customers and revenue. I think it's probably allowing us to get solutions to customers at least three to five times quicker which is a game changer.
@@ -64,7 +66,7 @@ We are a core Microsoft partner, so we have some Node-RED instances hosted in Az
 **Rob Marcer:** What have been your experiences of using FlowFuse?
 
 **Alan Yeung:** We don't have to focus on scaling or maintaining our environment or ensuring uptime. We can focus on product development, we don't foresee ourselves growing the team significantly, but at the same time, we see our customer acquisition growing exponentially. FlowFuse removes most of our concerns about scalability and reliability.
-It’s also making it a lot easier for us to complete security audits for our customers. FlowFuse’s stack is open, widely used and well documented which gives auditors confidence in our applications built on your platform.
+FlowFuse is also making it a lot easier for us to complete security audits for our customers. FlowFuse’s stack is open, widely used and well documented which gives auditors confidence in our applications built on your platform.
 
 **Rob Marcer:** Thanks for your time today, if anyone wants to know more about your services how can they find out more?
 
