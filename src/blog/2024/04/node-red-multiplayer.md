@@ -4,6 +4,7 @@ subtitle: An update on our work to bring concurrent editing to Node-RED
 description: An update on our work to bring concurrent editing to Node-RED
 date: 2024-04-10
 authors: ["nick-oleary"]
+image: /blog/2024/04/images/node-red-multiplayer.png
 tags:
     - posts
     - flowfuse
