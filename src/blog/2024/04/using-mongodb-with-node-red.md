@@ -12,7 +12,7 @@ tags:
     - NoSQL
 ---
 
-MongoDB, a popular NoSQL database, is a favored choice among developers. As MongoDB continuously releases updates to enhance efficiency and suitability for manufacturing purposes, we find it essential to provide content for our Node-RED users. In this guide, I will cover everything from MongoDB foundations to setup, providing you with step-by-step instructions for integration into your Node-RED applications.
+MongoDB, a popular NoSQL database, is a favored choice among developers. As MongoDB continuously releases updates to enhance efficiency and suitability for manufacturing purposes, we find providing content around MongoDB for our Node-RED users essential. In this guide, I will cover everything from MongoDB foundations to setup, providing you with step-by-step instructions for integration into your Node-RED applications.
 
 <!--more-->
 
@@ -272,10 +272,11 @@ Now To drop tables, and retrieve table data, click on the 'Inject Node' button. 
 
 This section contains helpful links to other content. It isn’t required, so consider it supplemental.
 
+- [Basic MongoDB CRUD implementation blueprint](https://flowfuse.com/blueprints/getting-started/crud/)
 - [MongoDB best practices](https://www.mongodb.com/basics/best-practices) for to increase performance
 - [Ebook: MongoDB in manufacturing](https://www.mongodb.com/collateral/manufacturing-with-mongodb).
 - [Manufacturing & Automotive Industry Knowledge Accelerator](https://learn.mongodb.com/learning-paths/manufacturing-automotive-industry-knowledge-accelerator)
 
 ## Conclusion
 
-In this guide, we've covered the integration of MongoDB with Node-RED to create dynamic applications. We've walked through the foundation, setup process, demonstrated how to perform CRUD operations, and discussed debugging techniques. Additionally, to enhance understanding and engagement we've built a Customer Relationship Management system.
+In this guide, we've covered the integration of MongoDB with Node-RED to create dynamic applications. We've walked through the foundation, and setup process, demonstrated how to perform CRUD operations, and discussed debugging techniques. Additionally, we've built a Customer Relationship Management system to enhance understanding and engagement.
