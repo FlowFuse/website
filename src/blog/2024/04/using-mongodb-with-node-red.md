@@ -4,7 +4,7 @@ subtitle: Guide to integrating MongoDB database into Node-RED Applications, for 
 description: Learn how to seamlessly integrate MongoDB, a NoSQL database, into your Node-RED applications with this step-by-step guide. Gain a fundamental understanding of MongoDB's key concepts and terminologies. 
 date: 2024-04-12
 authors: ["sumit-shinde"]
-image: 
+image: /blog/2024/04/images/using-Mongo-with-nr.png
 tags:
     - posts
     - node-red
