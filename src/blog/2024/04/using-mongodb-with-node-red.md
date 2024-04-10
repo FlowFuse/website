@@ -166,6 +166,8 @@ To build a user-friendly interactive UI for our CRM system, we will utilize Node
 
 - Drag the change node onto the canvas. In the change node, set `msg.payload` as the following JSON object:
 
+Note:- *Please note that the comments provided are for explanation purposes only and should not be copied along with the code*
+
 ```json
 [
     // Specifying the criteria to identify the document to update, based on its _id field
