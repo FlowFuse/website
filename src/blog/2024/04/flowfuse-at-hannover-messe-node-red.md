@@ -4,7 +4,7 @@ subtitle: Meet the team behind FlowFuse and contributors to Node-RED
 description: We will be at Hannover Messe 2024 in Hall 14 at Stand L59
 date: 2024-04-11
 authors: ["grey-dziuba"]
-image: 
+image: /blog/2024/04/images/flowfuse-at-hannover-messe-node-red.png
 tags:
     - posts
     - flowfuse
@@ -15,7 +15,7 @@ tags:
 
 We're excited to announce that FlowFuse will be exhibiting at the upcoming Hannover Messe! This renowned industrial trade fair provides a platform to connect with global innovators and explore the latest advancements.  Visit us in Hall 14, Stand L59 from April 22nd - 26th.  
 
-Do you need a pass?  We can help with that as well.
+**Do you need a pass?  We can help with that as well.**
 
 <!--more-->
 
