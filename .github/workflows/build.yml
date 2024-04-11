@@ -5,7 +5,7 @@ on:
     branches:
       - main
   schedule:
-    - cron: "0 12 * * *"
+    - cron: "0 10 * * *"
 jobs:
   build_deploy:
     if: ${{ github.repository == 'FlowFuse/website' }}
