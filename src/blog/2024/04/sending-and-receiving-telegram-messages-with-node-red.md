@@ -10,6 +10,7 @@ tags:
    - post
    - telegram
    - bot
+
 ---
 
 Integrating messaging applications or services in home automation is becoming common. Telegram is a popular choice among those messaging platforms. Today, in this guide, we will demonstrate how to integrate Telegram with Node-RED applications for sending and receiving messages
