@@ -39,7 +39,7 @@ Telegram chat ID is a unique identifier for a chat or a group in Telegram, which
 
 1. Open your Telegram app Click on the top right search icon and type “Get My ID”
 
-!["screenshot displaying searching &quot;Get My ID&quot; bot for obtaining chat id"](./images/sending-telegram-with-node-red-getmyid.png "screenshot displaying searching &quot;Get My ID&quot; bot for obtaining chat id"){data-zoomable}
+!["screenshot displaying searching 'Get My ID' bot for obtaining chat id"](./images/sending-telegram-with-node-red-getmyid.png "screenshot displaying searching 'Get My ID' bot for obtaining chat id"){data-zoomable}
 
 2. Click on the first account you'll see, the chat interface will open, and type `/start` and press enter. After that, you’ll receive a message containing your Chat ID and User ID.
 
