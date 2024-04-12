@@ -50,9 +50,13 @@ Telegram chat ID is a unique identifier for a chat or a group in Telegram, which
 
 ## Installing custom node
 
-1. Switch to the "Install" tab
-2. Search for "node-red-contrib-telegrambot"
-3. Click "Install"
+1. Log into FlowFuse with your username and password.
+2. Create a new application and Node-RED instance, then open the editor.
+3. Click the Node-RED Settings (top-right)
+4. Click "Manage Palette"
+5. Switch to the "Install" tab
+6. Search for "node-red-contrib-telegrambot"
+7. Click "Install"
 
 ## Adding environment variables
 
@@ -107,4 +111,4 @@ Now that we're set up to send messages with our Telegram bot, simply click 'Inje
 
 ## Conclusion
 
-In this guide, you've learned how to seamlessly integrate Telegram with Node-RED for sending and receiving messages. From creating your custom bot to obtaining your chat ID, configuring nodes, and sending and receiving messages.
+In this guide, you've learned how to integrate Telegram with Node-RED for sending and receiving messages seamlessly. From creating your custom bot to obtaining your chat ID, configuring nodes, and sending and receiving messages.
