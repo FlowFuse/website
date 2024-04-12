@@ -20,7 +20,7 @@ Integrating messaging applications or services in home automation is becoming co
 - Navigate to your Telegram application and click on the top right search icon, make sure you have a Telegram account and are logged in with it.
 - Then type “botFather” and you'll see many accounts. Make sure to select the one with the blue verified tick.
 
-!["screenshot displaying searching botFather bot for creating custom bot"](./images/sending-telegram-with-node-red-botfather.png "screenshot displaying searching botFather bot for creating custom bot"){data-zoomable}
+!["screenshot displaying searching for botFather bot for creating custom bot"](./images/sending-telegram-with-node-red-botfather.png "screenshot displaying searching for botFather bot for creating custom bot"){data-zoomable}
 
 - After that, you'll see the chat interface. Type `/newbot` and press enter to send the command.
 - The bot will ask for a name, which will be the display name of your bot. You can choose any name you like.
@@ -28,7 +28,7 @@ Integrating messaging applications or services in home automation is becoming co
 - Once you have entered a correct and unique username, you’ll receive a message confirming that you have successfully created the bot. It will contain the secret access token and a link to initiate your bot.
 - Click on the provided link. You'll be directed to the chat interface between you and the created bot, with a start button at the bottom. Click on that button to activate your bot.
 
-!["screenshot displaying chat interface with start buttom of your custome bot"](./images/sending-telegram-with-node-red-activating-bot.png "screenshot displaying chat interface with start buttom of your custome bot"){data-zoomable}
+!["screenshot displaying chat interface with start buttom for activating your bot"](./images/sending-telegram-with-node-red-activating-bot.png "screenshot displaying chat interface with start buttom for activating your bot"){data-zoomable}
 
 ## Obtaining your Telegram Chat ID
 
@@ -38,7 +38,7 @@ Telegram chat ID is a unique identifier for a chat or a group in Telegram, which
 
 - Open your Telegram app Click on the top right search icon and type “Get My ID”
 
-!["screenshot displaying searching botFather bot for creating custom bot"](./images/sending-telegram-with-node-red-getmyid.png "screenshot displaying searching botFather bot for creating custom bot"){data-zoomable}
+!["screenshot displaying searching "Get My ID" bot for obtaining chat id"](./images/sending-telegram-with-node-red-getmyid.png "screenshot displaying searching "Get My ID" bot for obtaining chat id"){data-zoomable}
 
 - Click on the first account you'll see, the chat interface will open, and type `/start` and press enter.
 - After that, you’ll receive a message containing your Chat ID and User ID.
@@ -63,7 +63,7 @@ Utilizing environment variables is crucial while doing any configuration in your
 - Add variables for a secret access token and chat ID.
 - Click on the "Save settings" button and restart the instance by clicking on the top "action" button and selecting the "Restart" option.
 
-!["Screenshot displaying flowfuse instance setting with adding enviroment varible"](./images/sending-telegram-with-node-red-flowfue-instance-settings.png "Screenshot displaying flowfuse instance setting with adding enviroment varible"){data-zoomable}
+!["Screenshot displaying flowfuse instance settings for adding enviroment varible"](./images/sending-telegram-with-node-red-flowfue-instance-settings.png "Screenshot displaying flowfuse instance settings for adding enviroment varible"){data-zoomable}
 
 ## Configuring custom node
 
