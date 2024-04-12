@@ -11,7 +11,7 @@ tags:
    - telegram
 ---
 
-Integrating messaging applications or services in home automation is becoming common. Telegram is a popular choice among those messaging platforms in IoT. Today, in this guide, we will demonstrate how to integrate Telegram with Node-RED applications for sending and receiving messages
+Integrating messaging applications or services in home automation is becoming common. Telegram is a popular choice among those messaging platforms. Today, in this guide, we will demonstrate how to integrate Telegram with Node-RED applications for sending and receiving messages
 
 <!--more-->
 
@@ -32,7 +32,7 @@ Integrating messaging applications or services in home automation is becoming co
 
 ## Obtaining your Telegram Chat ID
 
-Telegram chat ID is a unique identifier for a chat or a group in Telegram, in this section, you can take the chat ID of the person or group from which you want to send or receive the message.
+Telegram chat ID is a unique identifier for a chat or a group in Telegram, which is required for sending and receiving messages. In this section, you'll learn how to obtain your own and your group's Telegram chat IDs.
 
 ### Obtaining your Telegram Chat ID
 
@@ -40,7 +40,7 @@ Telegram chat ID is a unique identifier for a chat or a group in Telegram, in th
 
 !["screenshot displaying searching botFather bot for creating custom bot"](./images/sending-telegram-with-node-red-getmyid.png "screenshot displaying searching botFather bot for creating custom bot"){data-zoomable}
 
-- Click on the account you'll see, the chat interface will open, and type `/start` and press enter.
+- Click on the first account you'll see, the chat interface will open, and type `/start` and press enter.
 - After that, you’ll receive a message containing your Chat ID and User ID.
 
 ### Obtaining your Telegram group Chat ID
@@ -56,16 +56,18 @@ Telegram chat ID is a unique identifier for a chat or a group in Telegram, in th
 
 ## Adding environment variables
 
+Utilizing environment variables is crucial while doing any configuration in your application as they contain sensitive information. Environment variables enable you to configure nodes or applications without exposing such information in the flow.json. For more details refer to [Using Environment Variables with Node-RED](https://flowfuse.com/blog/2023/01/environment-variables-in-node-red/).
+
 - Go to Instance settings, and switch to the “Environment” tab.
 - Click the top right “Add variable” button.
 - Add variables for a secret access token and chat ID.
-- Click on the "Save settings" button and restart the instance by clicking on the top action button and selecting the "Restart" option.
+- Click on the "Save settings" button and restart the instance by clicking on the top "action" button and selecting the "Restart" option.
 
 !["Screenshot displaying flowfuse instance setting with adding enviroment varible"](./images/sending-telegram-with-node-red-flowfue-instance-settings.png "Screenshot displaying flowfuse instance setting with adding enviroment varible"){data-zoomable}
 
 ## Configuring custom node
 
-- Drag a sender node onto the canvas.
+- Drag a Sender node onto the canvas.
 - Click on it, then enable the "send error on second output" option. By doing this, you can separate the error message from the output that confirms your message has been sent successfully.
 
 !["Screenshot displaying 'Send error to second output' option"](./images/sending-telegram-with-node-red-enabling-send-error-to-second-option.png "Screenshot displaying 'Send error to second output' option"){data-zoomable}
@@ -77,22 +79,23 @@ Telegram chat ID is a unique identifier for a chat or a group in Telegram, in th
 
 ## Sending a message to telegram
 
-- Drag an inject node onto the canvas.
-- Drag a change node onto the canvas. Set msg.payload.type as "message"  To explore other types, refer to the [node readme](https://flows.nodered.org/node/node-red-contrib-telegrambot), set msg.payload.chatId as the environment variable added for the chat ID, and then set msg.payload.content as the message you want to send.
+- Drag an Inject node onto the canvas.
+- Drag a Change node onto the canvas. Set msg.payload.type as "message"  To explore other types, refer to the [node readme](https://flows.nodered.org/node/node-red-contrib-telegrambot), set msg.payload.chatId as the environment variable added for the chat ID, and then set msg.payload.content as the message you want to send.
 
 !["Screenshot displaying the change node setting payload for sending message"](./images/sending-telegram-with-node-red-change-node.png "Screenshot displaying the change node setting payload for sending message"){data-zoomable}
 
 - Drag two debug nodes onto the canvas.
-- Connect the input node's output to the change node's input, and the change node's output to the sender node's input which you have dragged while adding configurations.
+- Connect the Inject node's output to the change node's input, and the change node's output to the sender node's input which you have dragged while adding configurations.
+- Connect one Debug node's input to the first output of the Sender node and the second Debug node's input to the Sender node's second output.
 
 ## Receiving a message from a telegram 
 
-1. Drag a "Receiver" node onto the canvas.
+1. Drag a Receiver node onto the canvas.
 2. Click on the node, and ensure you have selected the correct bot configuration that you have added.
-3. For the receiver node, you'll see two outputs: one for receiving messages from authorized users, and another for receiving messages from unauthorized users.
-4. To add users to your authorized user list, click on any receiver node and click on the edit icon next to the bot input field, then add users separated by commas into the "users" input field.
-5. Drag two "Debug" nodes onto the canvas.
-6. Connect the first debug node’s output to the first input of the receiver node, and the second debug node’s output to the second input of the receiver node.
+3. For the Receiver node, you'll see two outputs: one for receiving messages from authorized users, and another for receiving messages from unauthorized users.
+4. To add users to your authorized user list, click on the receiver node and click on the edit icon next to the bot input field, then add users separated by commas into the users input field.
+5. Drag two Debug nodes onto the canvas.
+6. Connect the first Debug node’s input to the first output of the Receiver node and the second Debug node’s input to the second output of the Receiver node.
 
 ## Deploying the flow
 
@@ -100,7 +103,7 @@ Telegram chat ID is a unique identifier for a chat or a group in Telegram, in th
 
 - Deploy the flow by clicking the top right Deploy button.
 
-Now we are all set to send messages to our created telegram you’ll just need to click on the inject button, And you’ll receive a notification of the message, or just go to the telegram and search for your telegram bot username, and open the account you'll be able to see the message you have sent using node-red
+Now that we're set up to send messages with our Telegram bot, simply click 'Inject' to send a message. You'll receive a notification from Telegram. Alternatively, check your bot's account on Telegram to see messages sent via Node-RED. To test receiving messages, send a message to your bot, and you'll see an object printed on debug containing the message along with other information
 
 ## Conclusion
 
