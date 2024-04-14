@@ -162,7 +162,7 @@ To build a user-friendly interactive UI for our CRM system, we will utilize Node
 
 - Drag the ui-form widget onto the canvas, create a new ui-group for it, and add form elements for "id" and "status".
 
-!["Screenshot displaying form widget configuration to update data in MongoDB"](./images/using-mongodb-with-node-red-insert-data-form.png "Screenshot displaying form widget configuration to update data in MongoDB"]{data-zoomable}
+!["Screenshot displaying form widget configuration to update data in MongoDB"](./images/using-mongodb-with-node-red-insert-data-form.png "Screenshot displaying form widget configuration to update data in MongoDB"){data-zoomable}
 
 - Drag the change node onto the canvas. In the change node, set `msg.payload` as the following JSON object:
 
