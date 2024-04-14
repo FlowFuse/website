@@ -122,7 +122,7 @@ To build a user-friendly interactive UI for our CRM system, we will utilize Node
 
 1. Drag a ui-form widget onto the canvas, select ui-group for it, and add the form elements for `firstname`, `lastname`, `email`, `phone`, `company`, `status` and `source`.
 
-!["Screenshot displaying form widget configuration to insert data in MongoDB"](./images/using-mongodb-with-node-red-insert-data-form.png "Screenshot displaying form widget configuration to insert data in MongoDB"](./images/using-mongodb-with-node-red-insert-data-form.png "Screenshot displaying form to insert data in MongoDB"){data-zoomable}
+!["Screenshot displaying form widget configuration to insert data in MongoDB"](./images/using-mongodb-with-node-red-insert-data-form.png "Screenshot displaying form widget configuration to insert data in MongoDB"){data-zoomable}
 
 2. Drag the friendly-id node onto Canvas, click on and select and select mode as “Generate a random FriendlyId (nanoid)”, set the size according to your need, and output-to `msg.payload._id`.
 
@@ -162,7 +162,7 @@ To build a user-friendly interactive UI for our CRM system, we will utilize Node
 
 - Drag the ui-form widget onto the canvas, create a new ui-group for it, and add form elements for "id" and "status".
 
-!["Screenshot displaying form widget configuration to update data in MongoDB"](./images/using-mongodb-with-node-red-insert-data-form.png "Screenshot displaying form widget configuration to update data in MongoDB"]{data-zoomable}
+!["Screenshot displaying form widget configuration to update data in MongoDB"](./images/using-mongodb-with-node-red-insert-data-form.png "Screenshot displaying form widget configuration to update data in MongoDB"){data-zoomable}
 
 - Drag the change node onto the canvas. In the change node, set `msg.payload` as the following JSON object:
 
