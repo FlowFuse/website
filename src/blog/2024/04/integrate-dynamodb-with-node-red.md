@@ -14,7 +14,7 @@ tags:
     - aws
 ---
 
-Amazon's DynamoDB is a fully managed NoSQL database service known for its fast and predictable performance and scalable design. This makes it suitable for applications needing consistent, low-latency responses. In this blog, we’ll look at how to set up and use DynamoDB, configure the necessary IAM roles, and apply Node-RED flows to store and retrieve data effectively.
+Amazon's DynamoDB is a fully managed NoSQL database service known for its fast and predictable performance and scalable design. This makes it suitable for applications needing low-latency responses. In this blog, we’ll look at how to set up and use DynamoDB, configure the necessary IAM roles, and apply Node-RED flows to store and retrieve data effectively.
 
 
 <!--more-->
