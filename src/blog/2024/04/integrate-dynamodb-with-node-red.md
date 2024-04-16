@@ -22,7 +22,7 @@ Amazon's DynamoDB is a fully managed NoSQL database service known for its fast a
 ## Setting Up DynamoDB
 ### Creating a DynamoDB Table
 
-To begin with DynamoDB, you first need to create a table. Here’s how you can do it:
+There's no need to create a DynamoDB database, you do need to create a table. Here’s how you can do it:
 
 1. Log into the AWS Management Console and navigate to the DynamoDB section.
 2. Click on **Create table**.
