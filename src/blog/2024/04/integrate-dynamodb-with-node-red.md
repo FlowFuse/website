@@ -53,7 +53,7 @@ Proper permissions are critical for secure and efficient operation:
 
 ## Working with DynamoDB: Use Case Flows
 
-#### Prerequisites:
+### Prerequisites
 Please install the following nodes:
 1. [node-red-contrib-aws](https://flows.nodered.org/node/node-red-contrib-aws)
 2. [node-red-node-data-generator](https://flows.nodered.org/node/node-red-node-data-generator)
