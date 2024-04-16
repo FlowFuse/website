@@ -4,7 +4,7 @@ subtitle: Get started with DynamoDB with Node-RED
 description: Get started with DynamoDB with Node-RED
 date: 2024-04-17
 authors: ["grey-dziuba"]
-# image: /blog/2024/04/images/flowfuse-at-hannover-messe-node-red.png
+image: /blog/2024/04/images/node-red-dynamodb.png
 tags:
     - posts
     - flowfuse
