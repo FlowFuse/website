@@ -2,7 +2,7 @@
 title: "Install the FlowFuse Edge Agent on the Raspberry Pi 5"
 subtitle: "Managing your Raspberry Pi 5 with Node-RED through FlowFuse is
 easy to set up"
-description: "Managing your Raspberry Pi 5 with Node-RED through FlowFuse is
+description: Learn how to install the FlowFuse Edge Agent on the Raspberry Pi 5 effortlessly. Manage your device with Node-RED through FlowFuse with ease. 
 easy to set up"
 authors: ["zeger-jan-van-de-weg"]
 date: 2023-11-07
@@ -11,6 +11,7 @@ tags:
     - posts
     - how-to
     - node-red
+    - raspberry pi 
 ---
 
 Since the Raspberry Pi 5 was recently announced I pre-ordered it to use with 

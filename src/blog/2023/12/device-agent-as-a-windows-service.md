@@ -1,7 +1,7 @@
 ---
 title: Run Node-RED as a service on Windows
 subtitle: Step by step guide to run FlowFuse device agent as a Windows service
-description: Step by step guide to run the device agent as a Windows service
+description: Learn how to configure the FlowFuse device agent as a Windows service using the nssm utility. Ensure uninterrupted Node-RED operation on your hardware for manufacturing efficiency.
 date: 2023-12-18
 authors: ["stephen-mclaughlin", "rob-marcer", "grey-dziuba"]
 image: /blog/2023/12/images/agent-as-windows-service.png

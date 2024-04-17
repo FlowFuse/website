@@ -1,7 +1,7 @@
 ---
 title: Sentiment Analysis with Node-RED
 subtitle: A guide to building a simple sentiment analysis system with Node-RED.
-description: A guide to building a simple sentiment analysis system with Node-RED.
+description: Learn how to build a sentiment analysis system with Node-RED using Dashboard 2.0. Extract insights from text content effortlessly with step-by-step guidance.
 date: 2024-01-23
 authors: ["sumit-shinde"]
 image: /blog/2024/01/images/sentiment-analysis-dashboard-gif.gif
@@ -9,6 +9,7 @@ tags:
     - posts
     - node-red
     - dashboard
+    - sentiment analysis
 ---
 
 Have you ever built a sentiment analysis system to extract insights from text content? If yes then I don’t think you'll need an explanation of how complex it is to build. In this guide, we will build a sentiment analysis system with Node-RED using Dashboard 2.0 in a few easy steps. 

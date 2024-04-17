@@ -1,7 +1,7 @@
 ---
 title: Speech-Driven Chatbot System with Node-RED
 subtitle: Guide to building speech-driven chatbot using Node-RED, speech recognition, and Dashboard 2.0.
-description: Guide to building speech-driven chatbot using Node-RED, speech recognition, and Dashboard 2.0.
+description: Learn to build a speech-driven chatbot system with Node-RED and Dashboard 2.0. Integrate speech recognition, synthesis, and Chat-GPT seamlessly.
 date: 2024-01-29
 authors: ["sumit-shinde"]
 image: /blog/2024/01/images/speech-driven-chatbot-system.gif
@@ -9,6 +9,7 @@ tags:
     - posts
     - node-red
     - dashboard
+    - virtual assistant
 ---
 
 Have you ever wanted to integrate speech recognition and synthesis into your Node-RED project and thought it was too complex? Often it has required external services or APIs. However, in this guide, we show you how you can use speech recognition and synthesis in your Node-RED projects without needing an external service or API.  

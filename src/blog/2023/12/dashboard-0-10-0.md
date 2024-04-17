@@ -1,7 +1,7 @@
 ---
 title: Building a Custom Video Player in Dashboard 2.0
 subtitle: We've just released the latest version of Dashboard 2.0, with a fully featured UI Templates node which now allows for full definition of a Vue component, external JS dependencies and CSS.
-description: We've just released the latest version of Dashboard 2.0, with a fully featured UI Templates node which now allows for full definition of a Vue component, external JS dependencies and CSS.
+description: Delve into the possibilities of Dashboard 2.0's new UI Templates with a comprehensive tutorial on building a custom video player.
 date: 2023-12-07
 authors: ["joe-pavitt"]
 image: "/blog/2023/12/images/tile-dashboard-0-10-0.png"

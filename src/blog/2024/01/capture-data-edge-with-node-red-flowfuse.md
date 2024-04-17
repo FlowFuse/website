@@ -1,7 +1,7 @@
 ---
 title:  Capture Data from edge devices with Node-RED
 subtitle: FlowFuse allows you to run Node-RED anywhere to capture all the data
-description: FlowFuse allows you to run Node-RED anywhere to capture all the data
+description: Learn to capture data from edge devices with Node-RED using FlowFuse. Install the agent via Docker or npm, configure device registration, and program custom flows.
 date: 2024-01-17
 authors: ["zeger-jan-van-de-weg"]
 image: /blog/2024/01/images/capture-data-from-edge-devices.png

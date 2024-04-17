@@ -1,7 +1,7 @@
 ---
 title: Send a File to Node-RED
 subtitle: A guide to sending a CSV file to Node-RED and start interacting with it.
-description: A guide to sending a CSV file to Node-RED and start interacting with it.
+description: Learn how to send CSV files to Node-RED with a Python script or web app. Streamline data processing with step-by-step guidance.
 date: 2024-01-05
 authors: ["grey-dziuba"]
 image: /blog/2024/01/images/send-file-to-node-red.png

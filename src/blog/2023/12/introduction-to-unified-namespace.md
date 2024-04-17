@@ -1,7 +1,7 @@
 ---
 title: "Introduction to the Unified Namespace"
 subtitle: "Making data available for Industry 4.0 use-cases"
-description: "Making data available for Industry 4.0 use-cases"
+description: Explore how the Unified Namespace (UNS) empowers Industry 4.0 with seamless data exchange, maximizing organizational potential.
 authors: ["zeger-jan-van-de-weg"]
 date: 2023-12-20
 image: "/blog/2023/12/images/introduction-to-uns.png"
