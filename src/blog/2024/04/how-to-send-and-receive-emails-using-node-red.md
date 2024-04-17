@@ -22,7 +22,7 @@ With so many communication methods available, each with its advantages, it’s e
 - For Non-Urgent Notifications: Emails are great for sending updates or notifications that don't require an immediate response. They're perfect for IoT situations where quick reactions aren't necessary.
 - For Compliance and Documentation: Emails provide a clear record of communication, which is essential for meeting compliance requirements and audit standards in regulated IoT industries.
 - For Sending Detailed Information: Emails support longer messages and file attachments, making them ideal for sharing comprehensive reports, logs, or documents in IoT applications.
-- Broad Notification Reach: Emails enable notifications to be delivered to multiple recipients simultaneously, ensuring IoT messages can reach users efficiently across different locations.
+- Broad Notification Reach: Emails enable notifications to be delivered to multiple recipients simultaneously, that ensures IoT messages can reach users efficiently across different locations.
 
 ## Installing Email Custom Node
 
