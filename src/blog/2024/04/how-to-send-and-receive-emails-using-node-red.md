@@ -53,7 +53,7 @@ With so many communication methods available, each with its advantages, it’s e
    - For ports 587 or 25, if the mail server supports the STARTTLS extension (which upgrades a plain text connection to an encrypted one), you should leave this option disabled.
 
 4. **Auth Type:**
-   - Choose the authentication method required by your email service provider:
+   - The authentication method required by your email service provider:
      - **Basic:** This method requires a username and password to authenticate with the mail server.
      - **XOAuth:** This method requires a username and access token, typically used for OAuth authentication.
      - **None:** Use this option if your mail server does not require authentication. However, this is rare and generally not recommended for outgoing mail servers.
