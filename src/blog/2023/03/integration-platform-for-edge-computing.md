@@ -1,7 +1,7 @@
 ---
 title: 'Node-RED: The Integration Platform for IIoT Edge Computing & PLCs'
-subtitle: 
-description: Node-RED is widely adopted by leading IoT gateway and PLC to be their standard data integration platform.
+subtitle: Node-RED's Role in IIoT Edge Computing & PLC Integration
+description: Discover why Node-RED is the go-to integration platform for IIoT edge computing and PLCs, embraced by leading vendors for its versatility and ease of use.
 date: 2023-03-06
 authors: ["ian-skerrett"]
 image: /blog/2023/03/images/integration-platform-blog-image.jpg

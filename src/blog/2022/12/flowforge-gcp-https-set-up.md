@@ -1,13 +1,15 @@
 ---
 title: Configure FlowFuse in Docker to secure all traffic
 subtitle: Use Let's Encrypt and Acme Companion to quickly set up FlowFuse to encrypt all traffic
-description: Use Let's Encrypt and Acme Companion to quickly set up FlowFuse to encrypt all traffic
+description: Discover how to effortlessly secure all web traffic for your FlowFuse server using Let's Encrypt and Acme Companion with Docker. Encrypt HTTP traffic for secure communication.
 date: 2022-12-09
 authors: ["rob-marcer"]
 tags:
     - posts
     - flowfuse
     - how-to
+    - Acme Companion
+    - Let's Encrypt
 ---
 
 Following on from our [previous article](/blog/2022/10/ff-docker-gcp/) in which we covered how to run FlowFuse in Docker on Google’s Cloud Platform, today we are going to look at how to secure HTTP traffic to your FlowFuse server.

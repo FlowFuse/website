@@ -1,7 +1,7 @@
 ---
 title: Chat GPT in Node-RED Function Nodes
 subtitle: New Node-RED function with embedded ChatGPT is now open-sourced and available to use!
-description: Save yourself time when working on Node-RED with these three tips.
+description: Discover how ChatGPT integrates with Node-RED function nodes, enabling automated code generation. Explore the prompt engineering process and additional features.
 date: 2023-05-02 12:00:00
 authors: ["joe-pavitt", "stephen-mclaughlin"]
 image: /images/blog/tile-chatgpt-fcn-node.jpg
@@ -10,6 +10,7 @@ tags:
     - node-red
     - community
     - how-to
+    - chatgpt
 ---
 
 Recently we [posted a demo of ChatGPT integration in a Node-RED function node](https://www.linkedin.com/posts/flowforge_chatgpt-with-node-red-function-nodes-activity-7052725869684953088-2yOA?utm_source=share&utm_medium=member_desktop) 

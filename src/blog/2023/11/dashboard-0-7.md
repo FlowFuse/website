@@ -1,7 +1,7 @@
 ---
 title: Chart Improvements & Migrating to Dashboard 2.0
 subtitle: With the 0.7.x Releases of Dashboard 2.0, we've made big improvements to Charts, generated a migration guide, and much more...
-description: With the 0.7.x Releases of Dashboard 2.0, we've made big improvements to Charts, generated a migration guide, and much more...
+description: Discover significant chart enhancements and migration guidance in Dashboard 2.0's 0.7.x releases. Stay informed on project updates.
 date: 2023-11-09
 authors: ["joe-pavitt"]
 image: "/blog/2023/11/images/tile-blog-dashboard-migration.png"
