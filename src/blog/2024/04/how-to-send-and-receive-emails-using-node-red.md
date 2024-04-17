@@ -67,6 +67,7 @@ With so many communication methods available, each with its advantages, it’s e
    - If this option is unticked, you must manually format the token before passing it to the email node.
 
 7. **Protocols:**
+    - SMTP (Simple Mail Transfer Protocol): Responsible for sending outgoing email messages from the sender's email client or application to the recipient's email server.
     - POP3 (Post Office Protocol version 3): Downloads messages to the client, typically deleting from the server.
     - IMAP (Internet Message Access Protocol): Access and manage email directly on the server, syncing across devices.
 
