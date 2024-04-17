@@ -17,7 +17,7 @@ Have you found yourself needing to automate tasks based on specific events withi
 
 <!--more-->
 
-## What are the Webhooks?
+## What are Webhooks?
 
 Webhooks are a mechanism that allows fast communication between two different applications or services. They are essentially HTTP requests triggered by events in a source system and sent to a destination system, often with a payload of data. Webhooks are automated, meaning they are automatically sent out when their corresponding event is fired in the source system. 
 
@@ -28,7 +28,7 @@ In simple terms, Webhooks are "user-defined HTTP callbacks.” This callback is 
 !["Image displaying how webhook works"](./images/using-webhook-with-node-red-how-webhook-works.png "Image displaying how webhook works"){data-zoomable}
 
 - Event Initiator: This refers to the event specified to trigger the WebHook. Whenever this event occurs, the WebHook will be activated.
-- Webhook Server: The webhook server, is responsible for managing webhook configurations and endpoints. It listens for the specified event. When the event is detected, the webhook server automatically sends an HTTP POST request containing relevant data to the designated third-party application or service.
+- Webhook Server: The webhook server is responsible for managing webhook configurations and endpoints. It listens for the specified event. When the event is detected, the webhook server automatically sends an HTTP POST request containing relevant data to the designated third-party application or service.
 - Data Reception by Third-Party Application: The third-party application will receive the data sent via the WebHook to the designated URL or listener provided during registration.
 - Custom Action Execution: Upon receiving the POST request, specific actions can be performed.
 
@@ -39,7 +39,7 @@ It's common and understandable to get confused between APIs and webhooks, especi
 | Aspect            | API                                                    | Webhook                                              |
 |-------------------|--------------------------------------------------------|------------------------------------------------------|
 | Direction         | Typically involves client-to-server communication.     | Typically involves server-to-server communication.   |
-| Initiation        | Requests are initiated by the client.                  | Requests are initiated by the server.                |
+| Initiation        | The client initiates requests.                  | The server initiates requests.                |
 | Request Method    | Usually employs HTTP methods like GET, POST, etc.      | Typically uses the HTTP POST method.                 |
 | Response          | Provides an immediate response upon request.           | Does not provide an immediate response; asynchronous.|
 | Data Transfer     | Utilizes a pull model where the client fetches data.  | Operates on a push model where the server pushes data to the client.|
@@ -49,7 +49,7 @@ It's common and understandable to get confused between APIs and webhooks, especi
 
 ### Example Scenario:
 
-Consider a manufacturing facility that utilizes temperature sensors to monitor temperature levels in critical areas. When the temperature surpasses predefined thresholds, it triggers a series of actions for maintenance and monitoring.
+Consider a manufacturing facility that utilizes temperature sensors to monitor temperature levels in critical areas. When the temperature exceeds predefined thresholds, it triggers a series of actions for maintenance and monitoring.
 
 !["Diagram explaining how component works in Webhook"](./images/using-webhook-with-node-red-diagram.png "Diagram explaining how component works in Webhook"){data-zoomable}
 
@@ -65,37 +65,37 @@ In this section, we will construct the practical implementation of the scenario 
 
 ### Setting Up a Webhook
 
-- Drag an http-in node onto the canvas. Configure the method as POST and set the path as "/test-webhook".
+- Drag an **http-in** node onto the canvas. Configure the method as POST and set the path as **/test-webhook**.
 
 !["Screenshot displaying webhook http-in nodes configuration"](./images/using-webhook-with-node-red-http-in-node-endpoint-for-receiving-data-from-server-2.png "Screenshot displaying webhook http-in nodes configuration"){data-zoomable}
 
-- Drag an http request node onto the canvas. Configure the method as POST and set the URL to `https://<your-instance-name>.flowfuse.cloud/schedule-maintenance`, replace <your-instance-name> with your actual name of the instance. "/schedule-maintenance" will be the endpoint for posting requests to the maintenance monitoring system provided by Server 3. 
+- Drag an **http request** node onto the canvas. Configure the method as POST and set the URL to `https://<your-instance-name>.flowfuse.cloud/schedule-maintenance`, replace <your-instance-name> with your actual name of the instance. **/schedule-maintenance** will be the endpoint for posting requests to the maintenance monitoring system provided by Server 3. 
 
 !["Screenshot displaying http request nodes configuration for sending post request to server 3"](./images/using-webhook-with-node-red-request-node-sending-request-to-server3.png "Screenshot displaying http request nodes configuration for sending post request to server 3"){data-zoomable}
 
-- Drag an http response node onto the canvas and connect its input to the output of the http-in node. Also, connect an http request node's input to the same http in node's output.
+- Drag an **http response** node onto the canvas and connect its input to the output of the http-in node. Also, connect an http request node's input to the same http in node's output.
 
 ## Setting Up a Temperature sensors (Server 1)
 
-1. Drag an inject node onto the canvas and set `msg.payload` as below:
+1. Drag an **inject** node onto the canvas and set `msg.payload` as below:
 
 ```
 {"name": "sensor 1", "temperature": ($random() * 100)}
 ```
 !["Screenshot displaying the inject node setting payload for genrating simulated data for sensor 1"](./images/using-webhook-with-node-sensor1-inject-node.png "Screenshot displaying the inject node setting payload for genrating simulated data for sensor 1"){data-zoomable}
 
-2. Drag the another inject node onto the canvas and set `msg.payload` as below:
+2. Drag in another **inject** node onto the canvas and set `msg.payload` as below:
 
 ```
 {"name": "sensor 2", "temperature": ($random() * 100)}
 ```
 !["Screenshot displaying the inject node setting payload for genrating simulated data for sensor 2"](./images/using-webhook-with-node-red-sensor2-inject-node.png "Screenshot displaying the inject node setting payload for genrating simulated data for sensor 2"){data-zoomable}
 
-3. Drag a switch node onto the canvas, click on it, and set up three conditions: one to check if the temperature is less than 50, the second to check if the temperature is greater than 70, and the last one for other cases.
+3. Drag a **switch** node onto the canvas, click on it, and set up three conditions: one to check if the temperature is less than 50, the second to check if the temperature is greater than 70, and the last one for other cases.
 
 !["Screenshot displaying the switch node with conditions checking whether the temperature is normal or not"](./images/using-webhook-with-node-red-switch-node.png "Screenshot displaying the switch node with conditions checking whether the temperature is normal or not"){data-zoomable}
 
-4. Drag an http request node onto the canvas, click on it, set the method as POST, and set the URL as `https://<your-instance-name>.flowfuse.cloud/test-webhook`
+4. Drag an **http request** node onto the canvas, click on it, set the method as POST, and set the URL as `https://<your-instance-name>.flowfuse.cloud/test-webhook`
 
 !["Screenshot displaying HTTP request node configuration for triggering or sending a POST request to the webhook server in case of abnormal temperature."](./images/using-webhook-with-node-red-webhook-trigger.png "Screenshot displaying HTTP request node configuration for triggering or sending a POST request to the webhook server in case of abnormal temperature."){data-zoomable}
 
@@ -105,11 +105,11 @@ In this section, we will construct the practical implementation of the scenario 
 
 Before moving further install Dashboard 2.0 as we will display the scheduled maintenance on the table for more information for more information refer to [Getting started with Dashboard 2.0](https://flowfuse.com/blog/2024/03/dashboard-getting-started/).
 
-- Drag the http in node onto canvas, select the method as POST, and set the method as “/schedule-maintenance”.
+- Drag the **http in** node onto canvas, select the method as POST, and set the method as **/schedule-maintenance**.
 
 !["Screenshot displaying HTTP In node configuration for creating the POST request endpoint."](./images/using-webhook-with-node-red-http-in-node-endpoint-for-receiving-data-from-server-2.png "Screenshot displaying HTTP In node configuration for creating the POST request endpoint."){data-zoomable}
 
-- Drag the function node onto Canvas and copy the below code in it.
+- Drag the **function** node onto Canvas and copy the below code in it.
 
 ```js
 // Extract data from the incoming request
@@ -138,13 +138,13 @@ return msg;
 ```
 !["Screenshot displaying function node processing and storing data to global context"](./images/using-webhook-with-node-red-function-node.png "Screenshot displaying function node processing and storing data to global context"){data-zoomable}
 
-3. Drag the http response node onto the canvas.
-4. Drag the change node onto the canvas and set `msg.payload` as 
+3. Drag the **http response** node onto the canvas.
+4. Drag the **change** node onto the canvas and set `msg.payload` as 
 `global.scheduledMaintenance`.
 
 !["Screenshot displaying the change node retriving data"](./images/using-webhook-with-node-red-change-node.png "Screenshot displaying the change node retriving data"){data-zoomable}
 
-5. Drag the ui-table widget onto Canvas, and create a new ui group for it in which it will render.
+5. Drag the **ui-table** widget onto Canvas, and create a new ui group for it in which it will render.
 6. Connect the http in the node’s output to the function node’s and the change node’s input and connect the function node’s output to the http response node’s input and the change node’s output to the ui-table widget’s input.
 
 ### Deploying the flow
