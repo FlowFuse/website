@@ -78,7 +78,7 @@ Throughout this guide, we will demonstrate how to send emails using Node-RED wit
 - **Server:** For outgoing emails `smtp.gmail.com` and for incoming emails `imap.gmail.com`. 
 - **Userid:** Your Gmail address, e.g., example@gmail.com.
 - **Port:** Either 465 (SSL) or 587 (TLS).
-- **Password:** To connect to Google, you'll need to enable and generate an app password to connect your Gmail account with your apps or devices. For more information, refer to [Sign in with app passwords](https://support.google.com/mail/answer/185833?hl=en). Make sure to generate a separate app password for each of your Node-RED applications.
+- **Password:** To connect to your Google account with your app or devices, you'll need to enable and generate an app password. For more information, refer to [Sign in with app passwords](https://support.google.com/mail/answer/185833?hl=en). Make sure to generate a separate app password for each of your Node-RED applications.
 
 ## Creating Environment Variables for Secure Email Configuration
 
