@@ -84,7 +84,7 @@ Throughout this guide, we will demonstrate how to send emails using Node-RED wit
 
 Configuring your email account within Node-RED involves handling sensitive data such as your login credentials. To ensure the security of your information, it's essential to utilize environment variables. This approach prevents your sensitive data from being directly exposed within your flow. For more information refer to the [Using Environment variable with Node-RED](https://flowfuse.com/blog/2023/01/environment-variables-in-node-red/).
 
-!["Screenshot of Dashboard displaying logged in user information"](./images/sending-and-receiving-email-with-node-red-node-red_setting_environment_variables.png "Screenshot of Dashboard displaying logged in user information"){data-zoomable}
+!["Screenshot of FlowFuse instance settings Environment tab"](./images/sending-and-receiving-email-with-node-red-node-red_setting_environment_variables.png "Screenshot of FlowFuse instance settings Environment tab"){data-zoomable}
 
 1. Navigate to the instance's “setting” and then go to the “environment” tab.
 2. Click on the add variable button and add variables for userid and password.
@@ -93,7 +93,7 @@ Configuring your email account within Node-RED involves handling sensitive data 
 ## Configuring Email Node for Sending Emails
 
 1. Drag an e-mail node onto the canvas and click on it.
-2. Enter the email address of the recipient you want to send the email notification to in the 'to' input field. You can also dynamically set it with msg.to. To include recipients for the 'cc' and 'bcc', use `msg.cc` and `msg.bcc` respectively. For more information, refer to the [Node README](https://flows.nodered.org/node/node-red-node-email).
+2. Enter the email address of the recipient you want to send the email notification to in the 'to' input field. You can also dynamically set it with `msg.to`. To include recipients for the 'cc' and 'bcc', use `msg.cc` and `msg.bcc` respectively. For more information, refer to the [Node README](https://flows.nodered.org/node/node-red-node-email).
 3. Enter the server address as `smtp.gmail.com` into the server input field.
 4. Enter the port as 465 to use SSL-encrypted connections and 587 for TLS-encrypted connections. You can use either of them.
 5. Select the auth type as "basic" and enter the environment variables set for the user ID and password in the corresponding input fields as shown below.
@@ -104,11 +104,11 @@ Configuring your email account within Node-RED involves handling sensitive data 
 ## Sending emails to Gmail
 
 1. Drag an inject node onto the canvas.
-2. Set `msg.payload` as the body content of your email. To set it dynamically, use `msg.plaintext` for the plain text email body and msg.html for the HTML email body. To include attachments, use `msg.attachment`, which should be an array containing one or more attachments in the [Nodemailer](https://nodemailer.com/message/attachments/) format.
+2. Set `msg.payload` as the body content of your email. To set it dynamically, use `msg.plaintext` for the plain text email body and `msg.html` for the HTML email body. To include attachments, use `msg.attachment`, which should be an array containing one or more attachments in the [Nodemailer](https://nodemailer.com/message/attachments/) format.
 3. Set `msg.topic` as the subject of your email.
 4. Connect the e-mail node's input to the inject node's output.
 
-![Screenshot of Dashboard displaying logged-in user information](./images/sending-and-receiving-email-with-node-red-inject-node.png "Screenshot of Dashboard displaying logged-in user information") {data-zoomable}
+!["Screenshot of the inject node setting payload for sending email notification"](./images/sending-and-receiving-email-with-node-red-inject-node.png "Screenshot of the inject node setting payload for sending email notification") {data-zoomable}
 
 ## Receiving Email from Gmail
 
@@ -118,13 +118,13 @@ Configuring your email account within Node-RED involves handling sensitive data 
 4. Enter the environment variable set for userid and password in the corresponding field as shown below.
 5. Drag a debug node onto the canvas and connect the debug node's input to the "e-mail in" node's output.
 
-!["Screenshot of Dashboard displaying logged in user information"](./images/sending-and-receiving-email-with-node-red-e-mail-node-configuration.png "Screenshot of Dashboard displaying logged in user information"){data-zoomable}
+!["Screenshot displaying configuration of e-mail in node for sending emails"](./images/sending-and-receiving-email-with-node-red-e-mail-node-configuration.png "Screenshot displaying configuration of e-mail in node for sending emails"){data-zoomable}
 
 ## Deploying the Flow
 
-!["Screenshot of Dashboard displaying logged in user information"](./images/sending-and-receiving-email-with-node-red-node-red-flow.png "Screenshot of Dashboard displaying logged in user information"){data-zoomable}
+!["Screenshot displaying Node-RED flow: Sending and Receiving Emails using Node-RED"](./images/sending-and-receiving-email-with-node-red-node-red-flow.png "Screenshot displaying Node-RED flow: Sending and Receiving Emails using Node-RED"){data-zoomable}
 
-!["Screenshot of Dashboard displaying logged in user information"](./images/sending-and-receiving-email-with-node-red-gmail-inbox.png "Screenshot of Dashboard displaying logged in user information"){data-zoomable}
+!["Screenshot of Gmail inbox displaying received email notification"](./images/sending-and-receiving-email-with-node-red-gmail-inbox.png "Screenshot of Gmail inbox displaying received email notification"){data-zoomable}
 
 - With your flow updated to include the above, click the "Deploy" button in the top-right of the Node-RED Editor.
 
@@ -132,7 +132,7 @@ Now, to send an email, you can either click the inject button or set it to trigg
 
 ## Ensuring Email Delivery: Understanding Anti-Spam Measures and Best Practices
 
-Typically, third-party email service providers implement some type of anti-spam measures to reduce spam and protect users from fraudulent emails. However, these measures may occasionally misclassify legitimate emails as spam or originate from trusted sources. To prevent such incidents from occurring with our sent emails or notifications, it is crucial to comprehend these anti-spam measures and adopt best practices to reduce the likelihood of being marked as spam.
+Typically, all third-party email service providers implement some type of anti-spam measures to reduce spam and protect users from fraudulent emails. However, these measures may occasionally misclassify legitimate emails as spam. To prevent such incidents from occurring with our sent emails or notifications, it is crucial to comprehend these anti-spam measures and adopt best practices to reduce the likelihood of being marked as spam.
 
 ### Understanding Anti-Spam Measures
 
