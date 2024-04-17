@@ -135,7 +135,7 @@ Typically, third-party email service providers implement some type of anti-spam 
 
 Anti-spam measures are essential components of email servers aimed at filtering out unwanted or malicious emails. These measures encompass various strategies, including:
 
-- Content Filtering: This method involves scanning email content for specific keywords, phrases, or patterns commonly associated with spam messages, words such as free, urgent, hurry up cheap, etc.
+- Content Filtering: This method involves scanning email content for specific keywords, phrases, or patterns commonly associated with spam messages.
 - Sender Authentication:  Verifying the legitimacy of sender email addresses or domains. This often involves using the Sender Policy Framework (SPF) to check if the sender's IP is authorized to send emails on behalf of their domain.
 - IP Filtering: IP filtering blocks or filters messages from known spam sources based on their IP addresses.
 - Reputation Scoring: Reputation scoring assigns a numerical score to senders based on their email sending history, behavior, and other factors. This score influences the likelihood of emails being marked as spam.
@@ -148,9 +148,8 @@ Anti-spam measures are essential components of email servers aimed at filtering 
 - Manage Email Frequency: Avoid sending too many email notifications within a short period, as this can trigger spam filters. Instead, maintain a consistent sending frequency and provide valuable content to recipients.
 - Maintain a Clean Email List: Regularly clean your email list by removing invalid or inactive email addresses. High bounce rates and spam complaints can negatively impact your sender's reputation.
 - Monitor Sending Reputation: Monitor your sender reputation using tools like SenderScore or Postmaster Tools. A poor sender reputation can result in email deliverability issues and increased spam filtering.
-- Configure SMTP Correctly: Ensure that SMTP configurations are accurate and up-to-date to establish secure and reliable email communication. Consider using third-party mail servers like Gmail for enhanced security and reliability.
 
 ## Conclusion
 
-
+This guide covers integrating email into Node-RED for seamless sending and receiving email notifications. We provide step-by-step instructions, explore best practices, and address anti-spam measures, ensuring reliable delivery of email notifications.
 
