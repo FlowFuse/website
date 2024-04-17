@@ -38,7 +38,7 @@ With so many communication methods available, each with its advantages, it’s e
    - This is the mail server address of your email service provider. It typically looks like `smtp.example.com` for outgoing emails and `imap.example.com` or `pop.example.com` for incoming emails.
 
 2. **Port:**
-   - The port number to use for connecting to the mail server. Common ports include:
+   - The port number to use for connecting to the mail server. Common ports include for outgoing emails:
      - 465: This is the SMTP port for SSL-encrypted connections.
      - 587: This is the SMTP port for TLS encrypted connections (STARTTLS).
      - 25: This is the default SMTP port, but ISPs often block it for security reasons.
