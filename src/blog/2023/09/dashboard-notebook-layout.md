@@ -1,7 +1,7 @@
 ---
 title: Dynamic Markdown, Tables & Notebooks with Dashboard 2.0
 subtitle: A dive into the new features available in 0.4.0 - The "Notebook" Layout and new dynamic Markdown & Table widgets.
-description: Explore Dashboard 2.0's latest features in v0.4.0: "Notebook" layout, dynamic Markdown & Table widgets, and more enhancements.
+description: Explore the latest features in Dashboard 2.0's v0.4.0 release, including "Notebook" layout, dynamic Markdown & Table widgets, and additional enhancements.
 date: 2023-09-06
 authors: ["joe-pavitt"]
 image: "/blog/2023/09/images/db-notebook-tile.png"
