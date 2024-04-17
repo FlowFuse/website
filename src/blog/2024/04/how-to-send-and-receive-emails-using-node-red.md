@@ -8,6 +8,7 @@ image:
 tags:
    - posts
    - gmail
+   - anti-spam measures
 ---
 
 We recently published an article on [Sending Telegram messages using Node-RED](https://flowfuse.com/blog/2024/04/sending-and-receiving-telegram-messages-with-node-red/). However, in IoT, it's not the only option we utilize for sending notifications. We employ numerous other approaches, and email notification is one popular approach among those. In this guide, we will cover how you can send and receive emails using Node-RED. Additionally, we will discuss some of the best practices that should be followed when sending email notifications with your IoT applications.
@@ -16,7 +17,7 @@ We recently published an article on [Sending Telegram messages using Node-RED](h
 
 ## When to Use Email for IoT Notification
 
-With so many communication methods available, each with its own advantages, it’s essential to consider the situations where email is best suited for IoT integration.
+With so many communication methods available, each with its advantages, it’s essential to consider the situations where email is best suited for IoT integration.
 
 - For Non-Urgent Notifications: Emails are great for sending updates or notifications that don't require an immediate response. They're perfect for IoT situations where real-time reactions aren't necessary.
 - For Compliance and Documentation: Emails provide a clear record of communication, which is essential for meeting compliance requirements and audit standards in regulated IoT industries.
@@ -79,7 +80,7 @@ Throughout this guide, we will demonstrate how to send emails using Node-RED wit
 
 ## Creating Environment Variables for Secure Email Configuration
 
-Configuring your email account within Node-RED involves handling sensitive data such as your login credentials. To ensure the security of your information, it's essential to utilize environment variables. This approach prevents your sensitive data from being directly exposed within your flow. For more information refer to the [Using Environemnt varriable with Node-RED].
+Configuring your email account within Node-RED involves handling sensitive data such as your login credentials. To ensure the security of your information, it's essential to utilize environment variables. This approach prevents your sensitive data from being directly exposed within your flow. For more information refer to the [Using Environment variable with Node-RED].
 
 !["Screenshot of Dashboard displaying logged in user information"](./images/sending-and-receiving-email-with-node-red-node-red_setting_environment_variables.png "Screenshot of Dashboard displaying logged in user information"){data-zoomable}
 
@@ -101,7 +102,7 @@ Configuring your email account within Node-RED involves handling sensitive data 
 ## Sending emails to Gmail
 
 1. Drag an inject node onto the canvas.
-2. Set `msg.payload` as the body content of your email. For setting it dynamically, use `msg.plaintext` for the plain text email body and msg.html for the HTML email body. To include attachments, use `msg.attachment`, which should be an array containing one or more attachments in the [Nodemailer](https://nodemailer.com/message/attachments/) format.
+2. Set `msg.payload` as the body content of your email. To set it dynamically, use `msg.plaintext` for the plain text email body and msg.html for the HTML email body. To include attachments, use `msg.attachment`, which should be an array containing one or more attachments in the [Nodemailer](https://nodemailer.com/message/attachments/) format.
 3. Set `msg.topic` as the subject of your email.
 4. Connect the e-mail node's input to the inject node's output.
 
@@ -151,5 +152,5 @@ Anti-spam measures are essential components of email servers aimed at filtering 
 
 ## Conclusion
 
-This guide covers integrating email into Node-RED for seamless sending and receiving email notifications. We provide step-by-step instructions, explore best practices, and address anti-spam measures, ensuring reliable delivery of email notifications.
+This guide covers integrating email into Node-RED for the seamless sending and receiving of email notifications. We provide step-by-step instructions, explore best practices, and address anti-spam measures, ensuring reliable delivery of email notifications.
 
