@@ -29,7 +29,7 @@ With so many communication methods available, each with its advantages, it’s e
 1. Click the Node-RED Settings (top-right).
 2. Click "Manage Palette."
 3. Switch to the "Install" tab.
-4. Search for `node-red-contrib-email`.
+4. Search for `node-red-node-email`.
 
 ## Understanding Custom Email Node Configurations
 
