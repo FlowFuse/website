@@ -1,7 +1,7 @@
 ---
 title: Modernize your legacy industrial data. Part 2.
-subtitle: "Enhancing Legacy Industrial Data Utilization in the IIoT Era: Strategies, Challenges, and Smart Processing Techniques with Node-RED"
-description: A deeper dive with into making the most of legacy industrial data from the likes of Modbus and older, non IIoT protocols and putting it to work in an IIoT world.
+subtitle: Explore strategies, challenges, and smart processing techniques for enhancing legacy industrial data utilization in the IIoT era with Node-RED.
+description: A deeper dive into making the most of legacy industrial data from the likes of Modbus and older, non IIoT protocols and putting it to work in an IIoT world.
 date: 2023-09-17
 authors: ["stephen-mclaughlin"]
 image: "/blog/2023/09/images/industrial-legacy-data-blog-image.png"
