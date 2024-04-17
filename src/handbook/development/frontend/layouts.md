@@ -1,5 +1,4 @@
 ---
-meta:
 title: Front-End Layouts
 ---
 
