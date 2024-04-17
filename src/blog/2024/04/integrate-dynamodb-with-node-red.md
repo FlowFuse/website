@@ -57,7 +57,7 @@ When working with Amazon DynamoDB, it’s crucial to ensure that the right entit
 
 ## Working with DynamoDB: Use Case Flows
 
-![DynamoDB Flow Node-RED](./images/node-red-dyanamodb-flow-flowfuse.png){data-zoomable}
+![DynamoDB Flow Node-RED](./images/node-red-dynamodb-flow-flowfuse.png){data-zoomable}
 
 ### Prerequisites
 Please install the following nodes:
