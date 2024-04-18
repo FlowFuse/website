@@ -22,7 +22,7 @@ With so many communication methods available, each with its advantages, it’s e
 - For Non-Urgent Notifications: Emails are great for sending updates or notifications that don't require an immediate response. They're perfect for IoT situations where quick reactions aren't necessary.
 - For Compliance and Documentation: Emails provide a clear record of communication, which is essential for meeting compliance requirements and audit standards in regulated IoT industries.
 - For Sending Detailed Information: Emails support longer messages and file attachments, making them ideal for sharing comprehensive reports, logs, or documents in IoT applications.
-- Broad Notification Reach: Emails enable notifications to be delivered to multiple recipients simultaneously, that ensures IoT messages can reach users efficiently across different locations.
+- Broad Notification Reach: Emails enable notifications to be delivered to multiple recipients simultaneously, which ensures IoT messages can reach users efficiently across different locations.
 
 ## Installing Email Custom Node
 
@@ -81,7 +81,7 @@ Throughout this guide, we will demonstrate how to send emails using Node-RED wit
 
 ## Creating Environment Variables for Secure Email Configuration
 
-Configuring your email account within Node-RED involves handling sensitive data such as your login credentials. To ensure the security of your information, it's essential to utilize environment variables. This approach prevents your sensitive data from being directly exposed within your flow. For more information refer to the [Using Environment variable with Node-RED](https://flowfuse.com/blog/2023/01/environment-variables-in-node-red/).
+Configuring your email account within Node-RED involves handling sensitive data such as your login credentials. To ensure the security of your information, it's essential to utilize environment variables. This approach prevents your sensitive data from being directly exposed within your flow. For more information refer to the [Using Environment variable with Node-RED](/blog/2023/01/environment-variables-in-node-red/).
 
 !["Screenshot of FlowFuse instance settings Environment tab"](./images/sending-and-receiving-email-with-node-red-node-red_setting_environment_variables.png "Screenshot of FlowFuse instance settings Environment tab"){data-zoomable}
 
