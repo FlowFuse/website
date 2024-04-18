@@ -18,7 +18,7 @@ assets we produce.
 <!--more-->
 
 Rebranding a company isn't a small undertaking, especially when your company
-name is also your product name. When we announced our [new name last month](https://flowfuse.com/blog/2023/08/flowforge-is-now-flowfuse/) we
+name is also your product name. When we announced our [new name last month](/blog/2023/08/flowforge-is-now-flowfuse/) we
 prioritised updating the website, our documentation and social media presences.
 All of the most visible things relating to the company name.
 

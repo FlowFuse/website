@@ -25,7 +25,7 @@ PostgreSQL is a highly reliable open-source relational database known for its ex
 
 The first thing we need to do to get things started is to install the PostgreSQL custom node and gain an understanding of PostgreSQL configuration details.
 
-1. Install `node-red-contrib-postgresql` by the pallet manager. You can choose other nodes too, but we chose this node because it is part of the [certified node catalogue by FlowFuse](https://flowfuse.com/certified-nodes/) which assures that the node is robust, secure, and developed with high-quality.
+1. Install `node-red-contrib-postgresql` by the pallet manager. You can choose other nodes too, but we chose this node because it is part of the [certified node catalogue by FlowFuse](/certified-nodes/) which assures that the node is robust, secure, and developed with high-quality.
 2. Before connecting to your PostgreSQL database, ensure you have the following information ready and environment variables set up as discussed below in `Adding environment variable` section:
 
 - Host: IP address or hostname of your PostgreSQL server.
@@ -41,7 +41,7 @@ The first thing we need to do to get things started is to install the PostgreSQL
 !["Configuring PostgreSQL Security"](./images/postgresql_with_node-red_pgconfig2.png "Configuring PostgreSQL Security")
 # Adding environment variables 
 
-We have discussed many times in previous blogs that using environment variables is a best practice that prevents revealing confidential configuration details such as API keys, passwords, secret keys, etc directly in the flow. Therefore, In this section, we will add environment variables for PostgreSQL configuration details, for more details see  [Using Environment Variables in Node-RED](https://flowfuse.com/blog/2023/01/environment-variables-in-node-red/).
+We have discussed many times in previous blogs that using environment variables is a best practice that prevents revealing confidential configuration details such as API keys, passwords, secret keys, etc directly in the flow. Therefore, In this section, we will add environment variables for PostgreSQL configuration details, for more details see  [Using Environment Variables in Node-RED](/blog/2023/01/environment-variables-in-node-red/).
 
 1. Navigate to the instance's setting and then go to the environment section.
 2. Click on the `add variable` button and add variables for each of the configuration data that we discussed in the above section.
@@ -78,7 +78,7 @@ CREATE TABLE IF NOT EXISTS product_data (
 
 ## Installing Dashboard 2.0 
 
-Install Dashboard 2.0. Follow these [instructions](https://flowfuse.com/blog/2024/03/dashboard-getting-started/) to get up and running.
+Install Dashboard 2.0. Follow these [instructions](/blog/2024/03/dashboard-getting-started/) to get up and running.
 
 ## Inserting Product Data into the Database
 In this section, we will add a Form interface that will enable us to obtain product data that we need to insert into the database. Moreover, we will use the PostgreSQL node to interact with the database.

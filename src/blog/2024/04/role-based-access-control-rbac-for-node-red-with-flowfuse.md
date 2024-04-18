@@ -27,7 +27,7 @@ FlowFuse offers a variety of roles that cater to different levels of access with
 
 !["Role Based Access Control For Node-RED with FlowFuse"](./images/role-based-access-control-for-node-red-flowfuse.png "Role Based Access Control For Node-RED with FlowFuse"){data-zoomable}
 
-For further details see [documentation](https://flowfuse.com/docs/user/team/#role-based-access-control) for full granularity of roles.
+For further details see [documentation](/docs/user/team/#role-based-access-control) for full granularity of roles.
 
 ## Instance Protection Mode
 
@@ -41,4 +41,4 @@ FlowFuse's RBAC system significantly enhances the user experience for Node-RED u
 ## Conclusion
 FlowFuse's integration of RBAC into the Node-RED ecosystem represents a significant enhancement in how users can interact with, manage, and secure their Node-RED instances. By offering detailed control over access rights and introducing features like Instance Protection Mode, FlowFuse not only secures Node-RED environments but also greatly improves their manageability and the overall user experience. With RBAC, users can now tailor their Node-RED platforms according to their specific needs while ensuring that security and collaboration are at the forefront of their operations.
 
-For more information on how to implement and utilize Role-Based Access Control within FlowFuse, please refer to our [documentation](https://flowfuse.com/docs/user/team/#role-based-access-control).
+For more information on how to implement and utilize Role-Based Access Control within FlowFuse, please refer to our [documentation](/docs/user/team/#role-based-access-control).

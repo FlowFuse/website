@@ -15,7 +15,7 @@ Kafka is one of the most powerful technologies enabling seamless data communicat
 
 <!--more-->
 
-During my recent visit to the Node-RED Forum, I noticed that while some Kafka-related queries have been answered nicely, others remain unanswered or have not been satisfactorily addressed, leaving users feeling stuck. To address this issue, we've created a comprehensive Kafka guide covering everything you need to know about Kafka, from installation and connection to data transmission. For newcomers to Kafka, we recommend reading our previous blog on [how Kafka is applied in manufacturing](https://flowfuse.com/blog/2024/03/using-kafka-in-manufacturing/), where we've covered the basics and practical applications extensively.
+During my recent visit to the Node-RED Forum, I noticed that while some Kafka-related queries have been answered nicely, others remain unanswered or have not been satisfactorily addressed, leaving users feeling stuck. To address this issue, we've created a comprehensive Kafka guide covering everything you need to know about Kafka, from installation and connection to data transmission. For newcomers to Kafka, we recommend reading our previous blog on [how Kafka is applied in manufacturing](/blog/2024/03/using-kafka-in-manufacturing/), where we've covered the basics and practical applications extensively.
 
 ## Discussing problem and potential solution
 Let's start by discussing a problem: imagine a temperature sensor network across a city. We need to centralize and analyze this data in real time for effective monitoring and visualization.
@@ -47,7 +47,7 @@ To run Kafka on the cloud, you can consider utilizing any cloud service accordin
 During the writing of this tutorial, I utilized [Aiven’s cloud data platform](https://aiven.io/kafka-connect) which offers the option to use Kafka in the free trial. However, you are free to choose any cloud service that suits your requirements and preferences.
 
 ## Installing Dashboard 2.0
-We will be installing Dashboard 2.0 to display real-time temperature data of various regions on a chart. If you are new to Dashboard 2.0, we recommend referring to [Getting started with Dashboard 2.0](https://flowfuse.com/blog/2024/03/dashboard-getting-started/)\, which covers everything from basic concepts to installation and creating your first dashboard seamlessly.
+We will be installing Dashboard 2.0 to display real-time temperature data of various regions on a chart. If you are new to Dashboard 2.0, we recommend referring to [Getting started with Dashboard 2.0](/blog/2024/03/dashboard-getting-started/)\, which covers everything from basic concepts to installation and creating your first dashboard seamlessly.
 
 ## Installing and configuring Kafka custom node
 
@@ -72,7 +72,7 @@ We will be installing Dashboard 2.0 to display real-time temperature data of var
 !["Screenshot showing TLS configuration for kafka"](./images/using-kafka-with-node-red-tls-configuration.png "Configuring tls for kafka")
 
 ## Adding Environment variables
-In this section, we will be setting up environment variables for Kafka configuration. If you have read our previous blog post, you may already know why we highly suggest using environment variables for every configuration. If not, please refer to our blog post on [Using Environment Variables in Node-RED](https://flowfuse.com/blog/2023/01/environment-variables-in-node-red/) for more information.
+In this section, we will be setting up environment variables for Kafka configuration. If you have read our previous blog post, you may already know why we highly suggest using environment variables for every configuration. If not, please refer to our blog post on [Using Environment Variables in Node-RED](/blog/2023/01/environment-variables-in-node-red/) for more information.
 
 !["Screenshot showing adding environment variable in Node-RED"](./images/using-kafka-with-node-red-setting-environment-variables.png "Screenshot showing adding environment variable in Node-RED")
 

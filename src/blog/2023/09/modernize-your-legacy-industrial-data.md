@@ -82,6 +82,6 @@ Converting an array of 16-bit unsigned integers to String, Float and a scaled in
 ### Learn More
 
 We will be publishing follow-up blog posts with more details, best practices and examples on how to use Node-RED to make sense of your industrial data. In the meantime, you can learn more about these tools by visiting the following links:
-* [Node-RED blog posts](https://flowfuse.com/blog/node-red/)
+* [Node-RED blog posts](/blog/node-red/)
 * [Node-RED videos](https://www.youtube.com/playlist?list=PLpcyqc7kNgp09XeRx_cae1fEIOloPqM1C)
 * [Buffer Parser Node](https://flows.nodered.org/node/node-red-contrib-buffer-parser) 

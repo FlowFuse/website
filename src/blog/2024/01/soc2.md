@@ -28,9 +28,9 @@ SOC 2 Type 1 assesses the design of an organization's security controls at a spe
 
 The independent audit was performed by Advantage Partners. Their expertise played a large role in our successful attainment of this certification. Before the audit was performed the company went through an extensive process to uncover what policies were missing, required updating, or were already in place. Further, lots of tribal knowledge has been written down and is now enforced by internal policies. For example
 
-1. [Data Management Policy](https://flowfuse.com/handbook/company/security/data-management/#data-management-policy)
-2. [Access Control Policy](https://flowfuse.com/handbook/company/security/access-control/#access-control-policy)
-3. [Incident Response Policy](https://flowfuse.com/handbook/company/security/incident-response/#incident-response-plan)
-4. [Human Resources Security Policy](https://flowfuse.com/handbook/company/security/human-resources/#human-resources-security-policy)
+1. [Data Management Policy](/handbook/company/security/data-management/#data-management-policy)
+2. [Access Control Policy](/handbook/company/security/access-control/#access-control-policy)
+3. [Incident Response Policy](/handbook/company/security/incident-response/#incident-response-plan)
+4. [Human Resources Security Policy](/handbook/company/security/human-resources/#human-resources-security-policy)
 
 It's been a team effort from engineering to updated HR polices!

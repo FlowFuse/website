@@ -21,7 +21,7 @@ FlowFuse Blueprints aim to make the Node-RED experience more accessible for newc
 
 ### How to use Blueprints?
 
-All our FlowFuse Cloud users can select a Blueprint directly while creating a new Node-RED instance. Self-hosted customers can request access to our blueprints via a [support ticket](https://flowfuse.com/support/).
+All our FlowFuse Cloud users can select a Blueprint directly while creating a new Node-RED instance. Self-hosted customers can request access to our blueprints via a [support ticket](/support/).
 
 ## The first three Blueprints
 

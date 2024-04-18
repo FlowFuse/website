@@ -28,7 +28,7 @@ Speech recognition is a technology where a device captures spoken words through 
 
 ## Installing Dashboard 2.0 
 
-Install Dashboard 2.0. Follow these [instructions](https://flowfuse.com/blog/2024/03/dashboard-getting-started/) to get up and running.
+Install Dashboard 2.0. Follow these [instructions](/blog/2024/03/dashboard-getting-started/) to get up and running.
 
 ## Building Speech-to-Text Vue component 
 In this section, we will build a Vue component that will perform a speech-to-text conversion operation using Web speech API, and display results on the dashboard.  While we did say previously that we won't need any external API for speech recognition, this [Web Speech API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Speech_API) is not an external API. 
@@ -121,7 +121,7 @@ export default {
 
 ## Adding an Environment variable
 
-Why do we need to add an environment variable? In this guide, we will build a speech-driven chatbot that involves integrating the Chat-GPT AI model. For this we need openAi’s API key. An API key is a form of private data that needs to be protected from being exposed. That is why we need the environment variables. It provides a secure way to store and access the API key without revealing it directly in the flow.  For more details see [Using Environment Variables in Node-RED](https://flowfuse.com/blog/2023/01/environment-variables-in-node-red/)
+Why do we need to add an environment variable? In this guide, we will build a speech-driven chatbot that involves integrating the Chat-GPT AI model. For this we need openAi’s API key. An API key is a form of private data that needs to be protected from being exposed. That is why we need the environment variables. It provides a secure way to store and access the API key without revealing it directly in the flow.  For more details see [Using Environment Variables in Node-RED](/blog/2023/01/environment-variables-in-node-red/)
 
 
 1. Navigate to the instance's setting and then go to the environment section.

@@ -13,7 +13,7 @@ tags:
 
 In the realm of industrial manufacturing, the concept of a Unified Namespace (UNS) emerges as a pivotal instrument for enhanced communication within a manufacturing network framework. Predicated on an event-driven architectural model, this approach advocates for the universal accessibility of data, irrespective of the immediate presence of a data consumer. 
 <!--more-->
-This paradigm allows for a flexible role allocation within the network, where nodes can dynamically switch between being data producers and consumers, contingent upon the fluctuating requirements of the system at any specific juncture. For those unfamiliar with UNS, I recommend revisiting my [previous article](https://flowfuse.com/blog/2023/08/isa-95-automation-pyramid-to-unified-namespace/) on the subject.
+This paradigm allows for a flexible role allocation within the network, where nodes can dynamically switch between being data producers and consumers, contingent upon the fluctuating requirements of the system at any specific juncture. For those unfamiliar with UNS, I recommend revisiting my [previous article](/blog/2023/08/isa-95-automation-pyramid-to-unified-namespace/) on the subject.
 
 This article aims to explain the process of data modeling for your UNS, highlighting the role of tools like the FlowFuse Team Library in schema management.
 
@@ -27,7 +27,7 @@ This article aims to explain the process of data modeling for your UNS, highligh
 
 The journey begins with establishing connections to OT equipment, which may include Programmable Logic Controllers (PLCs), Historian databases, and sensors. It is essential to facilitate compatibility with a diverse array of protocols. In this context, Node-RED emerges as a pivotal tool, bolstered by its expansive community-generated catalog featuring over 4500 nodes.
 
-In my example, the focus is on integration with a RevolutionPi. To achieve this, the FlowFuse Device Agent was deployed on a RevolutionPi (see our [documentation](https://flowfuse.com/docs/hardware/raspbian/)), and specific RevolutionPi nodes were installed. These nodes enable direct interaction with all interfaces of the PLC and are available through the [Node-RED library](https://flows.nodered.org/node/node-red-contrib-revpi-nodes). Subsequent steps involved acquiring temperature data directly from the PLC.
+In my example, the focus is on integration with a RevolutionPi. To achieve this, the FlowFuse Device Agent was deployed on a RevolutionPi (see our [documentation](/docs/hardware/raspbian/)), and specific RevolutionPi nodes were installed. These nodes enable direct interaction with all interfaces of the PLC and are available through the [Node-RED library](https://flows.nodered.org/node/node-red-contrib-revpi-nodes). Subsequent steps involved acquiring temperature data directly from the PLC.
 
 ![](./images/revpi_nodes.png)
 

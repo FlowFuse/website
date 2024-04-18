@@ -16,13 +16,13 @@ Managing and analyzing increasing amounts of data becomes crucial for organizati
 
 <!--more-->
 
-If you're new to Dashboard 2.0, refer to our blog post [Getting Started with Dashboard 2.0](https://flowfuse.com/blog/2024/03/dashboard-getting-started/) to install and get things started.
+If you're new to Dashboard 2.0, refer to our blog post [Getting Started with Dashboard 2.0](/blog/2024/03/dashboard-getting-started/) to install and get things started.
 
 ## Enabling FlowFuse User Authentication
 
 Before proceeding further, let’s enable FlowFuse user authentication. This step adds an extra layer of protection to our dashboard by adding a login page that restricts access exclusively to registered FlowFuse users. Additionally, it further simplifies the process for the FlowFuse Multiuser addon to track and access logged-in user's data on the dashboard.
 
-For more information, refer to the [documentation](https://flowfuse.com/docs/user/instance-settings/#flowfuse-user-authentication) and ensure that it is enabled.
+For more information, refer to the [documentation](/docs/user/instance-settings/#flowfuse-user-authentication) and ensure that it is enabled.
 
 !["Screenshot displaying the configuration settings within the FlowFuse instance, enabling user authentication for enhanced security.
 "](./images/building-admin-panel-node-red-dashboard-2-flowfuse-instance-setting.png "Screenshot displaying the configuration settings within the FlowFuse instance, enabling user authentication for enhanced security.
@@ -30,7 +30,7 @@ For more information, refer to the [documentation](https://flowfuse.com/docs/use
 
 ## Exploring FlowFuse Multiuser Addon 
 
-The FlowFuse Multiuser Addon is a plugin developed for Dashboard 2.0 to access logged-in user data on the dashboard. To install and understand how the FlowFuse Multiuser Addon works, refer to [Exploring the FlowFuse User Addon ](https://flowfuse.com/blog/2024/04/displaying-logged-in-users-on-dashboard/#Enabling-FlowFuse-User-Authentication)
+The FlowFuse Multiuser Addon is a plugin developed for Dashboard 2.0 to access logged-in user data on the dashboard. To install and understand how the FlowFuse Multiuser Addon works, refer to [Exploring the FlowFuse User Addon ](/blog/2024/04/displaying-logged-in-users-on-dashboard/#enabling-flowfuse-user-authentication)
 
 ## Storing a list of Admin users
 
@@ -92,9 +92,9 @@ Now, if your username is added to the list of admin usernames stored in the glob
 
 If you want to learn more about FlowFuse multiuser addon and personalize the multiuser dashboard. we do have many other resources, please refer to them to learn more.
 
-- [Webinar](https://flowfuse.com/webinars/2024/node-red-dashboard-multi-user/) - This webinar provides an in-depth discussion of the Personalised Multi-User Dashboards feature and offers guidance on how to get started with it.
-- [Personalised Multi-user Dashboards with Node-RED Dashboard 2.0](https://flowfuse.com/blog/2024/01/dashboard-2-multi-user/) - This article explores the process of building multi-user Dashboards secured with FlowFuse Cloud.
-- [Displaying logged-in users on Dashboard 2.0](https://flowfuse.com/blog/2024/04/displaying-logged-in-users-on-dashboard/) - This detailed guide demonstrates how to display logged-in users on Dashboard 2.0 which using the FlowFuse Multiuser addon and FlowFuse.
+- [Webinar](/webinars/2024/node-red-dashboard-multi-user/) - This webinar provides an in-depth discussion of the Personalised Multi-User Dashboards feature and offers guidance on how to get started with it.
+- [Personalised Multi-user Dashboards with Node-RED Dashboard 2.0](/blog/2024/01/dashboard-2-multi-user/) - This article explores the process of building multi-user Dashboards secured with FlowFuse Cloud.
+- [Displaying logged-in users on Dashboard 2.0](/blog/2024/04/displaying-logged-in-users-on-dashboard/) - This detailed guide demonstrates how to display logged-in users on Dashboard 2.0 which using the FlowFuse Multiuser addon and FlowFuse.
 
-- [Multi-User Dashboard for Ticket/Task Management](https://flowfuse.com/blueprints/flowfuse-dashboard/multi-user-dashboard/#multi-user-dashboard-for-ticket%2Ftask-management) blueprint, which allows you to utilize templates to develop Personalize multi-user dashboard quickly.
+- [Multi-User Dashboard for Ticket/Task Management](/blueprints/flowfuse-dashboard/multi-user-dashboard/#multi-user-dashboard-for-ticket%2Ftask-management) blueprint, which allows you to utilize templates to develop Personalize multi-user dashboard quickly.
 

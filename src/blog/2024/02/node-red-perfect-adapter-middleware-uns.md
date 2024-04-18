@@ -27,7 +27,7 @@ When data is captured and parsed, it needs to be contextualized. For example; in
 
 ### Filtering and preprocessing
 
-Not all messages are created equal, which was discussed in [an earlier post](https://flowfuse.com/blog/2024/01/unified-namespace-when-not-to-use/.). In two of the three examples provided in that post, Node-RED can preprocess or filter information before sending it to the UNS. In the case of big files or binary data, Node-RED can store it in S3 or a network attached storage layer, or even store it locally through a REST interface. The distribution of the event that created the binary data is still published through the UNS though.
+Not all messages are created equal, which was discussed in [an earlier post](/blog/2024/01/unified-namespace-when-not-to-use/.). In two of the three examples provided in that post, Node-RED can preprocess or filter information before sending it to the UNS. In the case of big files or binary data, Node-RED can store it in S3 or a network attached storage layer, or even store it locally through a REST interface. The distribution of the event that created the binary data is still published through the UNS though.
 
 Filtering of data is also a great use-case for Node-RED, generally just a `change` node and the data is ready to be published. The flexibility to do virtually anything with captured data is what makes Node-RED such a strong partner for your UNS.
 

@@ -27,7 +27,7 @@ Sentiment analysis is a context-mining technique used to understand emotions and
 
 In this system, we will analyse the sentiment of text content obtained from the user.  For this we are going to build a user interface using Dashboard 2.0 and Node-RED.
 
-1. Install Node-RED Dashboard 2.0. Follow these [instructions](https://flowfuse.com/blog/2024/03/dashboard-getting-started/) to install.
+1. Install Node-RED Dashboard 2.0. Follow these [instructions](/blog/2024/03/dashboard-getting-started/) to install.
 1. Drag a ui form widget to the canvas and select the created group.
 1. Add an element in the form widget and give it a name and label, select the type as multiline, and set the number of rows according to your need.
 
@@ -80,7 +80,7 @@ We're aware that not everyone coming into Dashboard 2.0 will be familiar with Vu
 </template>
 ```
 
-- v-progress-circular is a Vuetify component to display a circular progress bar, for a detailed guide refer to our blog on  [Custom Vuetify components for Dashboard 2.0](https://flowfuse.com/blog/2023/10/custom-vuetify-components-dashboard/).
+- v-progress-circular is a Vuetify component to display a circular progress bar, for a detailed guide refer to our blog on  [Custom Vuetify components for Dashboard 2.0](/blog/2023/10/custom-vuetify-components-dashboard/).
 - `rotate` is an attribute that lets you specify the rotation angle of the progress bar.
 - `size` and `width` allow you to set the size of the circular progress bar, and another `width` attribute allows you to set the stroke width of the circular progress bar.
 -  v-if, v-else-if, and v-else, allow dynamic rendering of elements based on specified conditions, in this component we are rendering emojis based on percentages calculated by score.
