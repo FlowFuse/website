@@ -11,7 +11,7 @@ tags:
    - anti-spam measures
 ---
 
-We recently published an article on [Sending Telegram messages using Node-RED](https://flowfuse.com/blog/2024/04/sending-and-receiving-telegram-messages-with-node-red/). However, in IoT, it's not the only option we utilize for sending notifications. We employ numerous other approaches, and email notification is one popular approach among those. In this guide, we will cover how you can send and receive emails using Node-RED. Additionally, we will discuss some of the best practices that should be followed when sending email notifications with your IoT applications.
+We recently published an article on [Sending Telegram messages using Node-RED](/blog/2024/04/sending-and-receiving-telegram-messages-with-node-red/). However, in IoT, it's not the only option that is utilized for sending notifications. Numerous other approaches are employed and email notification is one popular approach among those. In this guide, we will cover how you can send and receive emails using Node-RED. Additionally, we will discuss some of the best practices that should be followed when sending email notifications with your IoT applications.
 
 <!--more-->
 
