@@ -9,6 +9,7 @@ tags:
   - posts
   - node-red
   - flowfuse
+  - dedicated
 ---
 
 Today, we are excited to officially announce FlowFuse Dedicated, a new way to use our enterprise platform as a single-tenant SaaS offering. This new offering provides all of the benefits of FlowFuse enterprise, with an added focus on data residency, isolation, and private networking to meet compliance needs.
