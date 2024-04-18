@@ -1,7 +1,7 @@
 ---
 title: "Embracing Innovation: Build vs Buy in MES"
 subtitle: "Bridging the Gap: Uniting MES Development with Automation System Practices"
-description: Transform MES strategy with Node-RED and FlowFuse for unparalleled efficiency and adaptability.
+description: "Bridging the Gap: Uniting MES Development with Automation System Practices"
 date: 2023-10-20
 authors: ["grey-dziuba"]
 image: "/blog/2023/10/images/buildvbuy.png"

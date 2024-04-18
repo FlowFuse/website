@@ -1,7 +1,7 @@
 ---
 title: Integrate your own widgets with Dashboard 2.0
 subtitle: With the 0.6.0 Release of Dashboard 2.0, we now support third-party widget integration. Read more in this deep dive.
-description: Explore Dashboard 2.0's 0.6.0 Release with third-party widget support. Learn more, build your widgets, and join our community on GitHub.
+description: With the 0.6.0 Release of Dashboard 2.0, we now support third-party widget integration. Read more in this deep dive.
 date: 2023-10-06
 authors: ["joe-pavitt"]
 image: "/blog/2023/10/images/tile-db-integration.png"

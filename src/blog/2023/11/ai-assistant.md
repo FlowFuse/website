@@ -1,7 +1,7 @@
 ---
 title: "Integrate with ChatGPT Assistants with Node-RED"
 subtitle: "Get start quickly leveraging Flows utilizing ChatGPT Assistant"
-description: Discover how seamlessly integrating AI Assistants into Node-RED workflows enhances efficiency and innovation across industries.
+description: "Get start quickly leveraging Flows utilizing ChatGPT Assistant"
 date: 2023-11-21
 authors: ["grey-dziuba"]
 image: "/blog/2023/11/images/ai-assistant.png"
@@ -10,7 +10,6 @@ tags:
     - node-red
     - community
     - flowfuse
-    - openai
 ---
 
 ## Introduction to the World of GPTs and AI Assistants

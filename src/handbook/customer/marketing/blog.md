@@ -57,7 +57,7 @@ The subtitle is only shown on the articles.
 
 ### Description
 
-Provides the (OpenGraph) description for social media sharing and may appear on search engine results pages. Also used on the `/blog` page for past articles. Keep it unique, simple, and concise, capturing the essence of the content within 80 to 220 characters, ideally around 160.
+Provides the (OpenGraph) description used when sharing a post on social media. Also used on the `/blog` page for past articles.
 
 ### Date
 

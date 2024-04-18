@@ -1,7 +1,7 @@
 ---
 title: Innovate from within - Why manufacturing must embrace Citizen Developers
 subtitle: Empower your Operational Technology teams as Citizen Developers
-description: Explore the significance of Citizen Developers in manufacturing, bridging the IT-OT gap. Learn about their role, benefits, and the impact of low-code platforms like Node-RED on application development and innovation.
+description: Empower your Operational Technology teams as Citizen Developers
 authors: ["marian-demme"]
 image: blog/2023/10/images/image-citizen-developers.png
 date: 2023-10-30

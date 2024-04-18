@@ -1,7 +1,7 @@
 ---
 title: Format your Node-RED flows for better team collaboration
 subtitle: From formatting your flows for readability to providing clear comments on nodes and groups, a little bit of effort upfront can save your team a lot of headaches down the road
-description: Learn best practices for formatting Node-RED flows to enhance team collaboration. From descriptive group names to clear switch explanations, optimize your flows for readability and efficiency.
+description: From formatting your flows for readability to providing clear comments on nodes and groups, a little bit of effort upfront can save your team a lot of headaches down the road
 date: 2022-12-05
 authors: ["rob-marcer"]
 tags:

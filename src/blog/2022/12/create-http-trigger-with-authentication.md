@@ -1,7 +1,7 @@
 ---
 title: Create HTTP triggers with authentication
 subtitle: From any browser or command line you now have the ability to securely trigger your flows
-description: Learn how to create HTTP triggers with authentication in Node-RED using FlowFuse. Securely trigger flows from any browser or command line while safeguarding your endpoints with HTTP Basic Authentication.
+description: From any browser or command line you now have the ability to securely trigger your flows
 date: 2022-12-07
 authors: ["rob-marcer"]
 tags:

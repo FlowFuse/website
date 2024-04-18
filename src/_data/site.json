@@ -3,7 +3,8 @@
     "appURL": "https://app.flowfuse.com",
     "jobBoard": "https://boards.greenhouse.io/flowfuse",
     "openings": {
-        "pgm": "https://boards.greenhouse.io/flowfuse/jobs/5155365004"
+        "frontenddash": "https://boards.greenhouse.io/flowfuse/jobs/4911532004",
+        "snrfrontend": "https://boards.greenhouse.io/flowfuse/jobs/5078447004"
     },
     "messaging": {
         "tagLine": "Elevate Node-RED with FlowFuse ",

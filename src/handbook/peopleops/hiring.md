@@ -96,9 +96,9 @@ When opening a job post, you'll need a couple of things:
 
 1. A draft Job Description
 2. Verifying the availability of the approved role.
-3. Set up the role within Greenhouse. The CEO will provide support in case any custom alterations to the job post are required.
+3. Set up the role within Greenhouse. The Peopleops manager will provide support in case any custom alterations to the job post are required.
 
-Once these elements are in place, the CEO will proceed to design a pipeline for the hiring process.
+Once these elements are in place, the PeopleOps Manager will proceed to design a pipeline for the hiring process.
 
 ### Pipeline design
 

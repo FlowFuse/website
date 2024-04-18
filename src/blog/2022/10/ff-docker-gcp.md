@@ -1,7 +1,7 @@
 ---
 title: Install FlowFuse Docker on Google Cloud
 subtitle: Step by step instructions to get FlowFuse Docker running on Google Cloud
-description: Learn to deploy FlowFuse Docker on Google Cloud Platform. Achieve a production-ready environment with email alerts, HTTPS access, and MQTT server deployment.
+description: Step by step instructions to get FlowFuse Docker running on Google Cloud
 date: 2022-10-14
 authors: ["rob-marcer"]
 tags:

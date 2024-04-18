@@ -1,7 +1,7 @@
 ---
 title: Why you need FlowFuse when you already have Node-RED?
 subtitle: FlowFuse makes developer collaboration, flow deployment, and scaling of infrastructure easy when working with Node-RED
-description: Discover how FlowFuse enhances Node-RED with easy developer collaboration, flow deployment, and infrastructure scaling. Maximize the value of your Node-RED projects effortlessly.
+description: FlowFuse makes developer collaboration, flow deployment, and scaling of infrastructure easy when working with Node-RED
 date: 2022-12-15
 authors: ["rob-marcer"]
 tags:

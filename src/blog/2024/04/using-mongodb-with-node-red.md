@@ -37,10 +37,10 @@ To kickstart the MongoDB integration with Node-RED, let's begin by installing th
 
 ### Installing MongoDB custom node
 
-1. Click the Node-RED Settings (top-right)
-2. Click "Manage Palette"
-3. Switch to the "Install" tab
-4. Search for `node-red-contrib-mongodb4`
+- Click the Node-RED Settings (top-right)
+- Click "Manage Palette"
+- Switch to the "Install" tab
+- Search for `node-red-contrib-mongodb4`
 
 ### Understanding MongoDB Configuration
 
@@ -60,17 +60,17 @@ Using environment variables during configuration is crucial to prevent exposing 
 
 !["Screenshot displaying FlowFuse instance settings"](./images/using-mongodb-with-node-red-flowfuse-instance-setting.png "Screenshot displaying FlowFuse instance settings"){data-zoomable}
 
-1. Navigate to the instance's “setting” and then go to the “environment” tab.
-2. Click on the add variable button and “add variables” for each of the configuration data that we discussed in the above section.
-3. Click on the save button and restart the instance by clicking on the top right Action button and selecting the restart option.
+- Navigate to the instance's “setting” and then go to the “environment” tab.
+- Click on the add variable button and “add variables” for each of the configuration data that we discussed in the above section.
+- Click on the save button and restart the instance by clicking on the top right Action button and selecting the restart option.
 
 ### Configuring MongoDB node
 
 Now let's configure MongoDB4 node using added environment variables 
 
-1. Drag the MongoDB4 node onto the canvas.
-2. Click on the node to select it, Then, click on the edit icon next to the connection input field.
-3. Add your environment variables as shown in the image below.
+- Drag the MongoDB4 node onto the canvas.
+- Click on the node to select it, Then, click on the edit icon next to the connection input field.
+- Add your environment variables as shown in the image below.
 
 !["Screenshot displaying connection configuration of MongoDB 4 node."](./images/using-mongodb-with-node-red-mongodb-node-connection-configuration.png "Screenshot displaying connection configuration of MongoDB 4 node."){data-zoomable}
 
@@ -129,42 +129,42 @@ To build a user-friendly interactive UI for our CRM system, we will utilize Node
 !["Screenshot displaying friend-id node configuration"](./images/using-mongodb-with-node-red-friend-id-node.png "Screenshot displaying friend-id node configuration"){data-zoomable}
 
 3. Drag the change node onto the canvas.
-4. In the change node Set `msg.payload` to `[msg.payload]` as a JSON expression. This will insert the `msg.payload` containing the customer (data received by the insert form) into the database.
+- In the change node Set `msg.payload` to `[msg.payload]` as a JSON expression. This will insert the `msg.payload` containing the customer (data received by the insert form) into the database.
 
 !["Screenshot displaying change node setting payload containing data that needs to be inserted in the database."](./images/using-mongodb-with-node-red-change-node-to-insert-data.png "Screenshot displaying change node setting payload containing data that needs to be inserted in the database."){data-zoomable}
 
-5. Click on the MongoDB4 node that we have added while configuring the MongoDB4 node.
-6. Select the connection which we have added, and enter the collection name as “customers”. The collection will be created if it does not exist already in your MongoDB database.
-7. Set the operation as “insertOne” and keep the other things unchanged.
+4. Click on the MongoDB4 node that we have added while configuring the MongoDB4 node.
+5. Select the connection which we have added, and enter the collection name as “customers”. The collection will be created if it does not exist already in your MongoDB database.
+6. Set the operation as “insertOne” and keep the other things unchanged.
 
 !["Screenshot displaying configuration of MongoDB 4 node for inserting data"](./images/using-mongodb-with-node-red-mongodb-insertone-node-configuration.png "Screenshot displaying configuration of MongoDB 4 node for inserting data"){data-zoomable}
 
-8. Connect the nodes' wires as shown in the below image.
+7 Connect the nodes' wires as shown in the below image.
 
 !["Screenshot displaying connections of wires in the 'Insert Data into Database' flow"](./images/using-mongodb-with-node-red-mongodb-insertone-flow.png "Screenshot displaying connections of wires in the 'Insert Data into Database' flow"){data-zoomable}
 
 ### Retrieving Customer Data from Database
 
-1. Drag the inject node onto the canvas. In the inject node, set `msg.payload` as an empty object. Additionally, set the inject node to send the payload after a specific interval of time to update the data in the table.
-2. Drag the MongoDB4 node onto canvas, make sure you have selected the connection, and enter “find” into the operation input field.
+- Drag the inject node onto the canvas. In the inject node, set `msg.payload` as an empty object. Additionally, set the inject node to send the payload after a specific interval of time to update the data in the table.
+- Drag the MongoDB4 node onto canvas, make sure you have selected the connection, and enter “find” into the operation input field.
 
 !["Screenshot displaying configuration of MongoDB 4 node for retrieving data"](./images/using-mongodb-with-node-red-mongodb-find-node-configuration.png "Screenshot displaying configuration of MongoDB 4 node for retrieving data"){data-zoomable}
 
-3. Drag the ui-table widget onto the canvas, create a new ui-group for it, and set max rows according to your preference.
+- Drag the ui-table widget onto the canvas, create a new ui-group for it, and set max rows according to your preference.
 
 !["Screenshot displaying ui-table widget configuration"](./images/using-mongodb-with-node-red-table-widget.png "Screenshot displaying ui-table widget configuration"){data-zoomable}
 
-4. Connect the nodes' wires as shown in the below image.
+- Connect the nodes' wires as shown in the below image.
 
 !["Screenshot displaying connections of wires in the 'Retrive Data from Database' flow"](./images/using-mongodb-with-node-red-mongodb-find-flow.png "Annotomy of MongoDB document"){data-zoomable}
 
 ### Updating Customer Data to Database
 
-1. Drag the ui-form widget onto the canvas, create a new ui-group for it, and add form elements for "id" and "status".
+- Drag the ui-form widget onto the canvas, create a new ui-group for it, and add form elements for "id" and "status".
 
 !["Screenshot displaying form widget configuration to update data in MongoDB"](./images/using-mongodb-with-node-red-insert-data-form.png "Screenshot displaying form widget configuration to update data in MongoDB"){data-zoomable}
 
-2. Drag the change node onto the canvas. In the change node, set `msg.payload` as the following JSON object:
+- Drag the change node onto the canvas. In the change node, set `msg.payload` as the following JSON object:
 
 Note:- *Please note that the comments provided are for explanation purposes only and should not be copied along with the code*
 
@@ -179,21 +179,21 @@ Note:- *Please note that the comments provided are for explanation purposes only
 
 !["Screenshot displaying the change node setting payload as an array containing a query and operation to perform an update operation in the database"](./images/using-mongodb-with-node-red-change-node-to-update-data.png "Screenshot displaying the change node setting payload as an array containing a query and operation to perform an update operation in the database"){data-zoomable}
 
-3. Drag the MongoDB4 node onto canvas, make sure to select the connection, and enter “updateOne” into the operation input field.
+- Drag the MongoDB4 node onto canvas, make sure to select the connection, and enter “updateOne” into the operation input field.
 
 !["Screenshot displaying configuration of MongoDB 4 node for updating data"](./images/using-mongodb-with-node-red-mongodb-update-node-configuration.png "Screenshot displaying configuration of MongoDB 4 node for updating data"){data-zoomable}
 
-4. Connect the nodes' wires as shown in the below image.
+- Connect the nodes' wires as shown in the below image.
 
 !["Screenshot displaying connections of wires in the 'Update Data from Database' flow"](./images/using-mongodb-with-node-red-mongodb-updateone-flow.png "Screenshot displaying connections of wires in the 'Update Data from Database' flow"){data-zoomable}
 
 ### Deleting Customer Data to Database
 
-1. Drag the ui-form widget onto the canvas, create a new ui-group for it, and add form elements for id and name.
+- Drag the ui-form widget onto the canvas, create a new ui-group for it, and add form elements for id and name.
 
 !["Screenshot displaying form widget configuration to delete data in MongoDB"](./images/using-mongodb-with-node-red-delete-data-form.png "Screenshot displaying form widget configuration to delete data in MongoDB"){data-zoomable}
 
-2. Drag the change node onto the canvas. In the change node, set `msg.payload` as the following JSON object:
+- Drag the change node onto the canvas. In the change node, set `msg.payload` as the following JSON object:
 
 ```yaml
 [
@@ -211,22 +211,22 @@ Note:- *Please note that the comments provided are for explanation purposes only
 
 !["Screenshot displaying the change node setting payload as an array containing a query and operation to perform an delete operation in the database"](./images/using-mongodb-with-node-red-change-node-to-delete-data.png "Screenshot displaying the change node setting payload as an array containing a query and operation to perform an delete operation in the database"){data-zoomable}
 
-3. Drag the MongoDB4 node onto canvas, make sure to select the connection, and enter “deleteOne” into the operation input field.
+- Drag the MongoDB4 node onto canvas, make sure to select the connection, and enter “deleteOne” into the operation input field.
 
 !["Screenshot displaying configuration of MongoDB 4 node for deleting data"](./images/using-mongodb-with-node-red-mongodb-update-node-configuration.png "Screenshot displaying configuration of MongoDB 4 node for deleting data"){data-zoomable}
 
-4. Connect the nodes' wires as shown in the below image.
+- Connect the nodes' wires as shown in the below image.
 
 !["Screenshot displaying connections of wires in the 'Delete Data from Database' flow"](./images/using-mongodb-with-node-red-mongodb-updateone-flow.png "Screenshot displaying connections of wires in the 'Delete Data from Database' flow"){data-zoomable}
 
 ### Dropping the collection 
 
-1. Drag the inject node onto canvas, and set msg.payload as an empty object.
-2. Drag the MongoDB4 node onto canvas, make sure you have selected the added connection, Enter the collection name that you want to drop from the database, and enter “drop” into the operation input field.
+- Drag the inject node onto canvas, and set msg.payload as an empty object.
+- Drag the MongoDB4 node onto canvas, make sure you have selected the added connection, Enter the collection name that you want to drop from the database, and enter “drop” into the operation input field.
 
 !["Screenshot displaying configuration of MongoDB4 node for droping collection from database"](./images/using-mongodb-with-node-red-mongodb-drop-node-configuration.png "Screenshot displaying configuration of MongoDB4 node for droping collection from database"){data-zoomable}
 
-3. Connect the nodes' wires as shown in the below image.
+- Connect the nodes' wires as shown in the below image.
 
 !["Screenshot displaying connections of wires in the 'Drop collecton from Database' flow"](./images/using-mongodb-with-node-red-mongodb-drop-flow.png "Screenshot displaying connections of wires in the 'Drop collecton from Database' flow"){data-zoomable}
 
@@ -263,8 +263,8 @@ To debug MongoDB operations in Node-RED, simply add a debug node after the Mongo
 
 !["Screenshot displaying flow of CRM System"](./images/using-mongodb-with-node-red-crm-system-node-red-flow.png "Screenshot displaying flow of CRM System"){data-zoomable}
 
-1. With your flow updated to include the above, click the "Deploy" button in the top-right of the Node-RED Editor.
-2. Locate the 'Open Dashboard' button at the top-right corner of the Dashboard 2.0 sidebar and click on it to navigate to the dashboard.
+- With your flow updated to include the above, click the "Deploy" button in the top-right of the Node-RED Editor.
+- Locate the 'Open Dashboard' button at the top-right corner of the Dashboard 2.0 sidebar and click on it to navigate to the dashboard.
 
 Now To drop tables, and retrieve table data, click on the 'Inject Node' button. For customer data insertion, updates, and deletions, navigate to fill in the corresponding forms and submit.
 

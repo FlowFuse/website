@@ -1,7 +1,7 @@
 ---
 title: Securing Node-RED
-subtitle: Step-by-step guide for securing your Node-RED projects.
-description: Explore essential steps for securing Node-RED projects, from LAN access control to encrypted traffic, ensuring robust protection for your projects.
+subtitle: In this blog post, I will cover some of the key steps to securing Node-RED projects.
+description: In this blog post, I will cover some of the key steps to securing Node-RED projects.
 date: 2023-04-05
 authors: ["rob-marcer"]
 image: /blog/2023/04/images/security-header.png
@@ -9,7 +9,6 @@ tags:
     - posts
     - node-red
     - how-to
-    - securing node-red
 ---
 
 Node-RED is very easy to get up and running. Whether you run it locally, in Docker, on a Raspberry Pi, or on a service such as FlowFuse Cloud you can have a project up and running in minutes.
