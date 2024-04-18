@@ -19,6 +19,10 @@ the job advert on Greenhouse. This was introduced [here](https://github.com/Flow
 1. Update the redirect URL in the `njk` file to match that added in Step 1.
 1. Open an [Art Request](/handbook/design/art-requests/) to have a new Social Tile designed & attach it to the relevant page
 
+#### Otta Integration
+
+We have an automated integration setup with [Otta](https://hire.otta.com). When a job is posted to our Greenhouse account, it _should_ appear on Otta within 24 hours. If it does not, raise a support ticket with them, and it should be addressed an made public very soon after.
+
 ### Referrals
 
 To participate in FlowFuse's employee referral program, kindly send all referral resumes to the People Ops Manager. If your recommended candidate gets hired and successfully completes 3 months, you will receive a $100 reward. Alternatively, you can choose a charitable foundation of your liking, and we will double the referral amount donated to that organization.
