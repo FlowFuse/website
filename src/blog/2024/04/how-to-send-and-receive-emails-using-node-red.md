@@ -91,10 +91,10 @@ Configuring your email account within Node-RED involves handling sensitive data 
 
 ## Configuring Email Node for Sending Emails
 
-1. Drag an e-mail node onto the canvas and click on it.
+1. Drag an **e-mail** node onto the canvas and click on it.
 2. Enter the email address of the recipient you want to send the email notification to in the 'to' input field. You can also dynamically set it with `msg.to`. To include recipients for the 'cc' and 'bcc', use `msg.cc` and `msg.bcc` respectively. For more information, refer to the [Node README](https://flows.nodered.org/node/node-red-node-email).
 3. Enter the server address as `smtp.gmail.com` into the server input field.
-4. Enter the port as 465 to use SSL-encrypted connections and 587 for TLS-encrypted connections. You can use either of them.
+4. Enter port 465 to use SSL-encrypted connections and 587 for TLS-encrypted connections. You can use either of them.
 5. Select the auth type as "basic" and enter the environment variables set for the user ID and password in the corresponding input fields as shown below.
 6. Enable the "use secure connection" option.
 
@@ -102,20 +102,20 @@ Configuring your email account within Node-RED involves handling sensitive data 
 
 ## Sending emails to Gmail
 
-1. Drag an inject node onto the canvas.
+1. Drag an **inject** node onto the canvas.
 2. Set `msg.payload` as the body content of your email. To set it dynamically, use `msg.plaintext` for the plain text email body and `msg.html` for the HTML email body. To include attachments, use `msg.attachment`, which should be an array containing one or more attachments in the [Nodemailer](https://nodemailer.com/message/attachments/) format.
 3. Set `msg.topic` as the subject of your email.
-4. Connect the e-mail node's input to the inject node's output.
+4. Connect the **e-mail** node's input to the **inject** node's output.
 
 !["Screenshot of the inject node setting payload for sending email notification"](./images/sending-and-receiving-email-with-node-red-inject-node.png "Screenshot of the inject node setting payload for sending email notification") {data-zoomable}
 
 ## Receiving Email from Gmail
 
-1. Drag an "e-mail in" node onto the canvas.
+1. Drag an **e-mail in** node onto the canvas.
 2. Select the "Get mail" option according to your preference.
 3. Select Protocol as "IMAP," which is recommended when you are connecting your third-party app for receiving emails.
 4. Enter the environment variable set for userid and password in the corresponding field as shown below.
-5. Drag a debug node onto the canvas and connect the debug node's input to the "e-mail in" node's output.
+5. Drag a **debug** node onto the canvas and connect the **debug** node's input to the **e-mail in** node's output.
 
 !["Screenshot displaying configuration of e-mail in node for sending emails"](./images/sending-and-receiving-email-with-node-red-e-mail-node-configuration.png "Screenshot displaying configuration of e-mail in node for sending emails"){data-zoomable}
 
