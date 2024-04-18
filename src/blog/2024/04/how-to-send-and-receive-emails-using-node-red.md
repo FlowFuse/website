@@ -8,44 +8,40 @@ image:
 tags:
    - posts
    - gmail
-   - anti-spam measures
 ---
 
-We recently published an article on [Sending Telegram messages using Node-RED](/src/blog/2024/04/sending-and-receiving-telegram-messages-with-node-red.md). However, in IoT, it's not the only option that is utilized for sending notifications. Numerous other approaches are employed and email notification is one popular approach among those. In this guide, we will cover how you can send and receive emails using Node-RED. Additionally, we will discuss some of the best practices that should be followed when sending email notifications with your IoT applications.
+We recently published an article on [sending Telegram messages using Node-RED](https://flowfuse.com/blog/2024/04/sending-and-receiving-telegram-messages-with-node-red/). However, in IoT, it's not the only option we utilize for sending notifications. We employ numerous other approaches, and email notification is one popular approach. In this guide, we will cover how you can send and receive emails using Node-RED. Additionally, we will discuss some of the best practices that should be followed when sending email notifications.
 
 <!--more-->
 
 ## When to Use Email for IoT Notification
 
-With so many communication methods available, each with its advantages, it’s essential to consider the situations where email is best suited for IoT integration.
+Understanding when to utilize email notifications in IoT is essential. With numerous communication approaches available, each offering unique benefits, it's crucial to explore the scenarios where email fits best for integrating it with IoT:
 
-- For Non-Urgent Notifications: Emails are great for sending updates or notifications that don't require an immediate response. They're perfect for IoT situations where quick reactions aren't necessary.
+- For Non-Urgent Notifications: Emails are great for sending updates or notifications that don't require an immediate response. They're perfect for IoT situations where real-time reactions aren't necessary.
 - For Compliance and Documentation: Emails provide a clear record of communication, which is essential for meeting compliance requirements and audit standards in regulated IoT industries.
 - For Sending Detailed Information: Emails support longer messages and file attachments, making them ideal for sharing comprehensive reports, logs, or documents in IoT applications.
-- Broad Notification Reach: Emails enable notifications to be delivered to multiple recipients simultaneously, which ensures IoT messages can reach users efficiently across different locations.
+- Broad Notification Reach: Emails enable notifications to be delivered to multiple recipients simultaneously, ensuring that IoT messages can reach users across different locations efficiently.
 
 ## Installing Email Custom Node
 
 1. Click the Node-RED Settings (top-right).
 2. Click "Manage Palette."
 3. Switch to the "Install" tab.
-4. Search for `node-red-node-email`.
-5. Click "Install"
+4. Search for `node-red-contrib-email`.
 
-## Understanding Custom Email Node Configurations
+## Understanding Configurations
+
+### Custom Email Node Configuration
 
 1. **Server:**
    - This is the mail server address of your email service provider. It typically looks like `smtp.example.com` for outgoing emails and `imap.example.com` or `pop.example.com` for incoming emails.
-   - Understanding the protocols associated with the server settings is crucial
-       -  SMTP (Simple Mail Transfer Protocol): Responsible for sending outgoing email messages from the sender's email client or application to the recipient's email server.
-       - POP3 (Post Office Protocol version 3): Downloads messages to the client, typically deleting from the server.
-       - IMAP (Internet Message Access Protocol): Access and manage email directly on the server, syncing across devices.
 
 2. **Port:**
-   - The port number to use for connecting to the mail server. Common ports include for outgoing emails:
+   - The port number to use for connecting to the mail server. Common ports include:
      - 465: This is the SMTP port for SSL-encrypted connections.
      - 587: This is the SMTP port for TLS encrypted connections (STARTTLS).
-     - 25: This is the default SMTP port, but ISPs often block it for security reasons.
+     - 25: This is the default SMTP port, but it's often blocked by ISPs for security reasons.
    - For incoming emails, the default ports are:
      - 993: IMAP port for SSL-encrypted connections.
      - 143: IMAP port for plain TCP connections.
@@ -57,7 +53,7 @@ With so many communication methods available, each with its advantages, it’s e
    - For ports 587 or 25, if the mail server supports the STARTTLS extension (which upgrades a plain text connection to an encrypted one), you should leave this option disabled.
 
 4. **Auth Type:**
-   - The authentication method required by your email service provider:
+   - Choose the authentication method required by your email service provider:
      - **Basic:** This method requires a username and password to authenticate with the mail server.
      - **XOAuth:** This method requires a username and access token, typically used for OAuth authentication.
      - **None:** Use this option if your mail server does not require authentication. However, this is rare and generally not recommended for outgoing mail servers.
@@ -68,22 +64,26 @@ With so many communication methods available, each with its advantages, it’s e
 6. **Format to SASL:**
    - SASL (Simple Authentication and Security Layer) XOAuth2 tokens are used for authentication when using the XOAuth authentication method.
    - If this option is ticked, the email node will automatically format the XOAuth2 token by combining the username and token, encoding it in base64, and passing it to the mail server in the correct format.
-   - If this option is unticked, you must manually format the token before passing it to the email node.
+   - If this option is unticked, you'll need to manually format the token before passing it to the email node.
 
-## Gmail Configuration Details for Node-RED Integration
+7. **Protocols:**
+    - POP3 (Post Office Protocol version 3): Downloads messages to the client, typically deleting from the server.
+    - IMAP (Internet Message Access Protocol): Access and manage email directly on the server, syncing across devices.
 
-Throughout this guide, we will demonstrate how to send emails using Node-RED with Gmail as a third-party email service provider. To connect our Gmail account with the Node-RED application, it is essential to understand the following Gmail-specific configuration details.
+### Gmail Configuration Details
+
+Throughtout this guide, we will demonstrate how to send emails using Node-RED with Gmail as a third-party email service provider. To connect our Gmail account with the Node-RED application, it is essential to understand the following Gmail-specific configuration details.
 
 - **Server:** For outgoing emails `smtp.gmail.com` and for incoming emails `imap.gmail.com`. 
 - **Userid:** Your Gmail address, e.g., example@gmail.com.
 - **Port:** Either 465 (SSL) or 587 (TLS).
-- **Password:** To connect to your Google account with your app or devices, you'll need to enable and generate an app password. For more information, refer to [Sign in with app passwords](https://support.google.com/mail/answer/185833?hl=en). Make sure to generate a separate app password for each of your Node-RED applications.
+- **Password:** To connect to Google, you'll need to enable and generate an app password to connect your Gmail account with your apps or devices. For more information, refer to [Sign in with app passwords](https://support.google.com/mail/answer/185833?hl=en). Make sure to generate a separate app password for each of your Node-RED applications.
 
 ## Creating Environment Variables for Secure Email Configuration
 
-Configuring your email account within Node-RED involves handling sensitive data such as your login credentials. To ensure the security of your information, it's essential to utilize environment variables. This approach prevents your sensitive data from being directly exposed within your flow. For more information refer to the [Using Environment variable with Node-RED](/src/blog/2023/01/environment-variables-in-node-red.md/).
+Configuring your email account within Node-RED involves handling sensitive data such as your login credentials. To ensure the security of your information, it's essential to utilize environment variables. This approach prevents your sensitive data from being directly exposed within your flow. For more information refer to the [Using Environemnt varriable with Node-RED].
 
-!["Screenshot of FlowFuse instance settings Environment tab"](./images/sending-and-receiving-email-with-node-red-node-red_setting_environment_variables.png "Screenshot of FlowFuse instance settings Environment tab"){data-zoomable}
+!["Screenshot of Dashboard displaying logged in user information"](./images/sending-and-receiving-email-with-node-red-node-red_setting_environment_variables.png "Screenshot of Dashboard displaying logged in user information"){data-zoomable}
 
 1. Navigate to the instance's “setting” and then go to the “environment” tab.
 2. Click on the add variable button and add variables for userid and password.
@@ -91,64 +91,54 @@ Configuring your email account within Node-RED involves handling sensitive data 
 
 ## Configuring Email Node for Sending Emails
 
-1. Drag an **e-mail** node onto the canvas and click on it.
-2. Enter the email address of the recipient you want to send the email notification to in the 'to' input field. You can also dynamically set it with `msg.to`. To include recipients for the 'cc' and 'bcc', use `msg.cc` and `msg.bcc` respectively. For more information, refer to the [Node README](https://flows.nodered.org/node/node-red-node-email).
+1. Drag an email node onto the canvas and click on it.
+2. Enter the email address to which you want to send emails. You can also set "cc" and "bcc" with `msg.cc` and `msg.bcc`, respectively. The primary recipient can be set with `msg.to`. For more information, refer to the [Node README](https://flows.nodered.org/node/node-red-node-email).
 3. Enter the server address as `smtp.gmail.com` into the server input field.
-4. Enter port 465 to use SSL-encrypted connections and 587 for TLS-encrypted connections. You can use either of them.
-5. Select the auth type as "basic" and enter the environment variables set for the user ID and password in the corresponding input fields as shown below.
+4. Enter the port as 465 to use SSL-encrypted connections and 587 for TLS-encrypted connections. You can use either of them.
+5. Select the auth type as basic and enter the environment variable set for the user id and password in the corresponding input fields as shown below.
 6. Enable the "use secure connection" option.
 
-!["Screenshot displaying configuration of e-mail node for sending emails"](./images/sending-and-receiving-email-with-node-red-e-mail-in-node-configuration.png "Screenshot displaying configuration of e-mail node for sending emails") {data-zoomable}
+!["Screenshot of Dashboard displaying logged in user information"](./images/sending-and-receiving-email-with-node-red-e-mail-in-node-configuration.png "Screenshot of Dashboard displaying logged in user information"){data-zoomable}
 
-## Sending emails to Gmail
+## Sending email to Gmail
 
-1. Drag an **inject** node onto the canvas.
-2. Set `msg.payload` as the body content of your email. To set it dynamically, use `msg.plaintext` for the plain text email body and `msg.html` for the HTML email body. To include attachments, use `msg.attachment`, which should be an array containing one or more attachments in the [Nodemailer](https://nodemailer.com/message/attachments/) format.
-3. Set `msg.topic` as the subject of your email.
-4. Connect the **e-mail** node's input to the **inject** node's output.
+1. Drag an inject node onto the canvas.
+2. To set the email body content and to set the body in HTML, use `msg.html`. You can use `msg.payload`. To send an attachment, set `msg.attachments`, which should contain an array of one or more attachments in [Nodemailer](https://nodemailer.com/message/attachments/) format.
+3. To set the subject of the email, use `msg.topic`.
 
-!["Screenshot of the inject node setting payload for sending email notification"](./images/sending-and-receiving-email-with-node-red-inject-node.png "Screenshot of the inject node setting payload for sending email notification") {data-zoomable}
+!["Screenshot of Dashboard displaying logged in user information"](./images/sending-and-receiving-email-with-node-red-inject-node.png "Screenshot of Dashboard displaying logged in user information"){data-zoomable}
 
 ## Receiving Email from Gmail
 
-1. Drag an **e-mail in** node onto the canvas.
+1. Drag an email node onto the canvas.
 2. Select the "Get mail" option according to your preference.
 3. Select Protocol as "IMAP," which is recommended when you are connecting your third-party app for receiving emails.
-4. Enter the environment variable set for userid and password in the corresponding field as shown below.
-5. Drag a **debug** node onto the canvas and connect the **debug** node's input to the **e-mail in** node's output.
+4. Enter the environment variable set for user id and password in the corresponding field as shown below.
+5. Drag a debug node onto the canvas and connect the debug node input to the email node output.
 
-!["Screenshot displaying configuration of e-mail in node for sending emails"](./images/sending-and-receiving-email-with-node-red-e-mail-node-configuration.png "Screenshot displaying configuration of e-mail in node for sending emails"){data-zoomable}
+!["Screenshot of Dashboard displaying logged in user information"](./images/sending-and-receiving-email-with-node-red-e-mail-node-configuration.png "Screenshot of Dashboard displaying logged in user information"){data-zoomable}
 
 ## Deploying the Flow
 
-!["Screenshot displaying Node-RED flow: Sending and Receiving Emails using Node-RED"](./images/sending-and-receiving-email-with-node-red-node-red-flow.png "Screenshot displaying Node-RED flow: Sending and Receiving Emails using Node-RED"){data-zoomable}
+!["Screenshot of Dashboard displaying logged in user information"](./images/sending-and-receiving-email-with-node-red-node-red-flow.png "Screenshot of Dashboard displaying logged in user information"){data-zoomable}
 
-!["Screenshot of Gmail inbox displaying received email notification"](./images/sending-and-receiving-email-with-node-red-gmail-inbox.png "Screenshot of Gmail inbox displaying received email notification"){data-zoomable}
+!["Screenshot of Dashboard displaying logged in user information"](./images/sending-and-receiving-email-with-node-red-gmail-inbox.png "Screenshot of Dashboard displaying logged in user information"){data-zoomable}
 
 - With your flow updated to include the above, click the "Deploy" button in the top-right of the Node-RED Editor.
+- Locate the 'Open Dashboard' button at the top-right corner of the Dashboard 2.0 sidebar and click on it to navigate to the dashboard.
 
-Now, to send an email, you can either click the inject button or set it to trigger it on critical events.
+Now, to send an email, you can either click the inject button or trigger it on critical events.
 
-## Ensuring Email Delivery: Understanding Anti-Spam Measures and Best Practices
 
-### Understanding Anti-Spam Measures
+## Best practices to follow while sending notifcations or email
 
-Anti-spam measures are an important component of email servers that keep unwanted or harmful emails away, which safeguards users from fraudulent activities. These measures include content filtering, sender authentication, IP filtering, and reputation scoring.
-
-Content filtering involves scanning email content for specific keywords, phrases, or patterns commonly associated with spam messages. Sender authentication verifies the legitimacy of sender email addresses or domains, often utilizing protocols like the Sender Policy Framework (SPF) to ensure that the sender's IP is authorized to send emails on behalf of their domain. IP filtering blocks or filters messages from known spam sources based on their IP addresses, while reputation scoring assigns a numerical score to senders based on their email sending history and behavior, influencing the likelihood of emails being marked as spam.
-
-### Best practices to follow 
-
-Occasionally, legitimate emails may be misclassified as spam due to these anti-spam measures. To prevent such incidents with our outgoing emails or notifications, it's crucial to implement best practices to minimize the risk of being marked as spam.
-
-- Clear and Concise Messaging: Keep notification messages clear, concise, and action-oriented. Communicate the purpose of the notification and any necessary next steps that recipients should take.
-- Avoid spam trigger words: Refrain from using words commonly associated with spam in your email content, such as "free," "limited time offer," or "urgent."
-- Ensure your email is authenticated: Perform email authentication using protocols like SPF, DKIM, and DMARC to verify the legitimacy of your emails and improve deliverability.
+- Clear and Concise Messaging: Keep notification messages clear, concise, and action-oriented. Clearly communicate the purpose of the notification and any necessary next steps that recipients should tak
 - Manage Email Frequency: Avoid sending too many email notifications within a short period, as this can trigger spam filters. Instead, maintain a consistent sending frequency and provide valuable content to recipients.
-- Maintain a Clean Email List: Regularly clean your email list by removing invalid or inactive email addresses. High bounce rates and spam complaints can negatively impact your sender's reputation.
+- Maintain a Clean Email List: Regularly clean your email list by removing invalid or inactive email addresses. High bounce rates and spam complaints can negatively impact your sender reputation.
 - Monitor Sending Reputation: Monitor your sender reputation using tools like SenderScore or Postmaster Tools. A poor sender reputation can result in email deliverability issues and increased spam filtering.
+- Configure SMTP Correctly: Ensure that SMTP configurations are accurate and up-to-date to establish secure and reliable email communication. Consider using third-party mail servers like Gmail for enhanced security and reliability.
 
 ## Conclusion
 
-This guide covers integrating email into Node-RED for the seamless sending and receiving of email notifications. We provide step-by-step instructions, explore best practices, and address anti-spam measures, ensuring reliable delivery of email notifications.
+
 
