@@ -53,7 +53,7 @@ We are a core Microsoft partner, so we have some Node-RED instances hosted in Az
 
 **Alan Yeung:** Version control could be stronger. If we have multiple people working on a flow it can be hard to spot where a new bug was introduced. We also see situations where Node-RED instances have to be restarted to fix a problem or deploy a new stack. We need to find better ways to manage those admin tasks.
 
-**Rob Marcer** FlowFuse is working to address the challenges of version control, we've implemented our DevOps Pipelines feature which allows our users to build, test and deploy their Node-RED applications with the confidence that they can esaily roll back to a previous state in a few clicks of a button. I expect a lot more to be added to FlowFuse in this area over the coming year.
+**Rob Marcer** FlowFuse is working to address the challenges of version control, we've implemented our DevOps Pipelines feature which allows our users to build, test and deploy their Node-RED applications with the confidence that they can easily roll back to a previous state in a few clicks of a button. I expect a lot more to be added to FlowFuse in this area over the coming year.
 
 **Rob Marcer:** What's been the impact of Node-RED on your business?
 
