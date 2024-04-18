@@ -1,7 +1,7 @@
 ---
 title: Running the FlowFuse Device Agent as a service on a Raspberry Pi
 subtitle: Step by step guide to run the device agent as a service
-description: Step by step guide to run the device agent as a service
+description: Learn how to run the FlowFuse Device Agent as a service on your Raspberry Pi with this step-by-step guide. Ensure uninterrupted operation even after device restarts.
 date: 2023-05-02
 authors: ["rob-marcer"]
 image: /blog/2023/05/images/agent-on-pi.png
@@ -9,6 +9,7 @@ tags:
     - posts
     - flowfuse
     - how-to
+    - raspberry pi 
 ---
 
 FlowFuse's device agent allows you to manage and run your Node-RED instances on

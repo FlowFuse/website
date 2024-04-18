@@ -1,10 +1,14 @@
 ---
 title: Bringing High Availability to Node-RED
 subtitle: How we are tackling the hard problems of HA in FlowFuse
-description: How we are tackling the hard problems of HA in FlowFuse
+description: Explore how FlowFuse tackles HA challenges, statefulness, and work routing, revolutionizing Node-RED's reliability.
 date: 2023-06-02 12:00:00
 authors: ["nick-oleary"]
 image: /images/blog/tile-ha-nr.jpg
+tags:
+    - posts
+    - node-red
+    - high availablity 
 ---
 
 Many companies look to deploy Node-RED into use cases that require the application

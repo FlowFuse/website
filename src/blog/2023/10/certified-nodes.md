@@ -1,7 +1,7 @@
 ---
 title: What are Certified Nodes?
 subtitle: Enhanced Security, Quality, and Support 
-description: Enhanced Security, Quality, and Support
+description: Explore Certified Nodes for Node-RED—ensuring robustness with quality, security, and support standards.
 date: 2023-10-27
 authors: ["marian-demme"]
 image: "/blog/2023/10/images/image-certified-nodes.png"

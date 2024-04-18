@@ -4,11 +4,10 @@
 
 /src/handbook/design @joepavitt
 /src/handbook/development @knolleary
-/src/handbook/product @MarianRaphael
 
 # Customer department
 /src/handbook/customer @ZJvandeWeg
-/src/handbook/customer/marketing/videos.md @Yndira-FlowForge
+/src/handbook/customer/marketing/videos.md @Yndira-E
 /src/handbook/customer/hubspot.md @zackwasli
 /src/handbook/customer/sales/ @zackwasli
 

@@ -1,7 +1,7 @@
 ---
 title: Overhauling the Dashboard 2.0 Build Pipeline
 subtitle: A month or so ago, we released the Third-Party widget support for Dashboard 2.0, but having seen the feedback, we missed the beat, so we've built it again!
-description: A month or so ago, we released the Third-Party widget support for Dashboard 2.0, but having seen the feedback, we missed the beat, so we've built it again!
+description: Explore the latest updates in Dashboard 2.0 with the 0.8.0 release, featuring an overhauled build pipeline, improved debugging capabilities, and more.
 date: 2023-11-23
 authors: ["joe-pavitt", "pez-cuckow"]
 image: "/blog/2023/11/images/dashboard-0-8-0.png"

@@ -1,7 +1,7 @@
 ---
 title: Share & Preview Flows on flows.nodered.org
 subtitle: FlowFuse has just contributed an interactive "Flow Viewer" to flows.nodered.org, allowing users to preview flows, and embed them in articles & forum posts.
-description: FlowFuse has just contributed an interactive "Flow Viewer" to flows.nodered.org, allowing users to preview flows, and embed them in articles & forum posts.
+description: "Explore FlowFuse's latest contribution to flows.nodered.org: an interactive "Flow Viewer" for sharing and embedding flows in articles and forum posts."
 date: 2023-09-20
 authors: ["joe-pavitt"]
 image: "/blog/2023/09/images/tile-flowviewer.jpg"
@@ -9,6 +9,8 @@ tags:
     - posts
     - news
     - community
+    - flowfuse
+    - node-red
 ---
 
 For years, Node-RED's website has provided functionality to share flows through [flows.nodered.org](https://flows.nodered.org)

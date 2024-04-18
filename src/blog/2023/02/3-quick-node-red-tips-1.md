@@ -1,7 +1,7 @@
 ---
 title: Node-RED Tips - Wiring Shortcuts
 subtitle: Save yourself time when working on Node-RED with these three tips.
-description: Save yourself time when working on Node-RED with these three tips.
+description: "Learn three valuable Node-RED tips to enhance your workflow: search nodes efficiently, split code sections with link nodes, and link multiple inputs/outputs in one command."
 date: 2023-02-07 18:00:00
 authors: ["rob-marcer"]
 image: /images/blog/nr-quicktips.jpg
@@ -9,6 +9,7 @@ tags:
     - posts 
     - node-red
     - how-to
+    - node-red tips
 ---
 
 There is usually more than one way to complete a given task in software and Node-RED is no exception. In this blog post we are going to share three useful tips to save yourself time when working on your flows.
