@@ -36,6 +36,10 @@ With so many communication methods available, each with its advantages, it’s e
 
 1. **Server:**
    - This is the mail server address of your email service provider. It typically looks like `smtp.example.com` for outgoing emails and `imap.example.com` or `pop.example.com` for incoming emails.
+   - Understanding the protocols associated with the server settings is crucial
+       -  SMTP (Simple Mail Transfer Protocol): Responsible for sending outgoing email messages from the sender's email client or application to the recipient's email server.
+       - POP3 (Post Office Protocol version 3): Downloads messages to the client, typically deleting from the server.
+       - IMAP (Internet Message Access Protocol): Access and manage email directly on the server, syncing across devices.
 
 2. **Port:**
    - The port number to use for connecting to the mail server. Common ports include for outgoing emails:
@@ -65,11 +69,6 @@ With so many communication methods available, each with its advantages, it’s e
    - SASL (Simple Authentication and Security Layer) XOAuth2 tokens are used for authentication when using the XOAuth authentication method.
    - If this option is ticked, the email node will automatically format the XOAuth2 token by combining the username and token, encoding it in base64, and passing it to the mail server in the correct format.
    - If this option is unticked, you must manually format the token before passing it to the email node.
-
-7. **Protocols:**
-    - SMTP (Simple Mail Transfer Protocol): Responsible for sending outgoing email messages from the sender's email client or application to the recipient's email server.
-    - POP3 (Post Office Protocol version 3): Downloads messages to the client, typically deleting from the server.
-    - IMAP (Internet Message Access Protocol): Access and manage email directly on the server, syncing across devices.
 
 ## Gmail Configuration Details for Node-RED Integration
 
@@ -132,18 +131,15 @@ Now, to send an email, you can either click the inject button or set it to trigg
 
 ## Ensuring Email Delivery: Understanding Anti-Spam Measures and Best Practices
 
-Typically, all third-party email service providers implement some type of anti-spam measures to reduce spam and protect users from fraudulent emails. However, these measures may occasionally misclassify legitimate emails as spam. To prevent such incidents from occurring with our sent emails or notifications, it is crucial to comprehend these anti-spam measures and adopt best practices to reduce the likelihood of being marked as spam.
-
 ### Understanding Anti-Spam Measures
 
-Anti-spam measures are essential components of email servers aimed at filtering out unwanted or malicious emails. These measures encompass various strategies, including:
+Anti-spam measures are an important component of email servers that keep unwanted or harmful emails away, which safeguards users from fraudulent activities. These measures include content filtering, sender authentication, IP filtering, and reputation scoring.
 
-- Content Filtering: This method involves scanning email content for specific keywords, phrases, or patterns commonly associated with spam messages.
-- Sender Authentication:  Verifying the legitimacy of sender email addresses or domains. This often involves using the Sender Policy Framework (SPF) to check if the sender's IP is authorized to send emails on behalf of their domain.
-- IP Filtering: IP filtering blocks or filters messages from known spam sources based on their IP addresses.
-- Reputation Scoring: Reputation scoring assigns a numerical score to senders based on their email sending history, behavior, and other factors. This score influences the likelihood of emails being marked as spam.
+Content filtering involves scanning email content for specific keywords, phrases, or patterns commonly associated with spam messages. Sender authentication verifies the legitimacy of sender email addresses or domains, often utilizing protocols like the Sender Policy Framework (SPF) to ensure that the sender's IP is authorized to send emails on behalf of their domain. IP filtering blocks or filters messages from known spam sources based on their IP addresses, while reputation scoring assigns a numerical score to senders based on their email sending history and behavior, influencing the likelihood of emails being marked as spam.
 
 ### Best practices to follow 
+
+Occasionally, legitimate emails may be misclassified as spam due to these anti-spam measures. To prevent such incidents with our outgoing emails or notifications, it's crucial to implement best practices to minimize the risk of being marked as spam.
 
 - Clear and Concise Messaging: Keep notification messages clear, concise, and action-oriented. Communicate the purpose of the notification and any necessary next steps that recipients should take.
 - Avoid spam trigger words: Refrain from using words commonly associated with spam in your email content, such as "free," "limited time offer," or "urgent."
