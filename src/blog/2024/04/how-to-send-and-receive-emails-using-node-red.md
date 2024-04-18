@@ -11,7 +11,7 @@ tags:
    - anti-spam measures
 ---
 
-We recently published an article on [Sending Telegram messages using Node-RED](/src/blog/2024/04/sending-and-receiving-telegram-messages-with-node-red.md/). However, in IoT, it's not the only option that is utilized for sending notifications. Numerous other approaches are employed and email notification is one popular approach among those. In this guide, we will cover how you can send and receive emails using Node-RED. Additionally, we will discuss some of the best practices that should be followed when sending email notifications with your IoT applications.
+We recently published an article on [Sending Telegram messages using Node-RED](/blog/2024/04/sending-and-receiving-telegram-messages-with-node-red/). However, in IoT, it's not the only option that is utilized for sending notifications. Numerous other approaches are employed and email notification is one popular approach among those. In this guide, we will cover how you can send and receive emails using Node-RED. Additionally, we will discuss some of the best practices that should be followed when sending email notifications with your IoT applications.
 
 <!--more-->
 
@@ -81,7 +81,7 @@ Throughout this guide, we will demonstrate how to send emails using Node-RED wit
 
 ## Creating Environment Variables for Secure Email Configuration
 
-Configuring your email account within Node-RED involves handling sensitive data such as your login credentials. To ensure the security of your information, it's essential to utilize environment variables. This approach prevents your sensitive data from being directly exposed within your flow. For more information refer to the [Using Environment variable with Node-RED](/src/blog/2023/01/environment-variables-in-node-red.md/).
+Configuring your email account within Node-RED involves handling sensitive data such as your login credentials. To ensure the security of your information, it's essential to utilize environment variables. This approach prevents your sensitive data from being directly exposed within your flow. For more information refer to the [Using Environment variable with Node-RED](/blog/2023/01/environment-variables-in-node-red/).
 
 !["Screenshot of FlowFuse instance settings Environment tab"](./images/sending-and-receiving-email-with-node-red-node-red_setting_environment_variables.png "Screenshot of FlowFuse instance settings Environment tab"){data-zoomable}
 
