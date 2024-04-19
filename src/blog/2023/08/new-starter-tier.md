@@ -29,7 +29,7 @@ We expect these layers to fit the customers as they grow in their FlowFuse and N
 
 ### Do you have an overview of the different tiers?
 
-Certainly, an overview of the tiers and prices are available at our [pricing page](https://flowfuse.com/pricing).
+Certainly, an overview of the tiers and prices are available at our [pricing page](/pricing).
 
 ### How do I upgrade from Starter to Team tier?
 
@@ -53,4 +53,4 @@ No, the new team tiers and pricing are on FlowFuse Cloud only.
 
 ### Anything else?
 
-If you have any further questions, please [contact us](https://flowfuse.com/contact-us/) and we’ll be happy to discuss.
+If you have any further questions, please [contact us](/contact-us/) and we’ll be happy to discuss.

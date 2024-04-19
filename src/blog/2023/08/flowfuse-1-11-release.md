@@ -30,7 +30,7 @@ A number of usability improvements have been added to the FlowFuse device manage
 
 ## FlowFuse Rebranding [#119](https://github.com/orgs/FlowFuse/projects/1?pane=issue&itemId=34719640)
 
-Earlier in August, [FlowForge announced](https://flowfuse.com/blog/2023/08/flowforge-is-now-flowfuse/) a change to our company and product name to FlowFuse. Work has begun to change the product branding to FlowFuse. The UI has been rebranded and the remaining points will be changed in the next release.
+Earlier in August, [FlowForge announced](/blog/2023/08/flowforge-is-now-flowfuse/) a change to our company and product name to FlowFuse. Work has begun to change the product branding to FlowFuse. The UI has been rebranded and the remaining points will be changed in the next release.
 
 ## Other New Features
 

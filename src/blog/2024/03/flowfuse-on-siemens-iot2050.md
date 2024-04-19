@@ -35,7 +35,7 @@ apt-get update
 apt-get upgrade
 ```
 
-2. If you need to migrate your existing Node-RED follow these [instructions](https://flowfuse.com/docs/migration) to backup your existing progress.  From there we will need to remove the existing service that autostarts Node-RED by running the following command and rebooting:
+2. If you need to migrate your existing Node-RED follow these [instructions](/docs/migration) to backup your existing progress.  From there we will need to remove the existing service that autostarts Node-RED by running the following command and rebooting:
 
 ```shell
 systemctl disable node-red.service
@@ -78,9 +78,9 @@ Now run ```node -v``` again to confirm the installation.  You should see the lat
 
 > v18.17.1
 
-6. Now that we have Node.js installed, we can proceed with the standard installation process.  First [install](https://flowfuse.com/docs/device-agent/install/) the FlowFuse Device agent.  Then, to connect your FlowFuse Device Agent, follow these [instructions](https://flowfuse.com/docs/device-agent/register/).
+6. Now that we have Node.js installed, we can proceed with the standard installation process.  First [install](/docs/device-agent/install/) the FlowFuse Device agent.  Then, to connect your FlowFuse Device Agent, follow these [instructions](/docs/device-agent/register/).
 
-7. Lastly, if you want your device to run on boot.  Follow these [instructions](https://flowfuse.com/blog/2023/05/device-agent-as-a-service/).
+7. Lastly, if you want your device to run on boot.  Follow these [instructions](/blog/2023/05/device-agent-as-a-service/).
 
 ## Switching between versions of Node.js
 

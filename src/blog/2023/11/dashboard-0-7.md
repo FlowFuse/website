@@ -19,7 +19,7 @@ It's been a little while since we've done an update, since we last posted we've 
 
 ## Package Name Changes
 
-Firstly a bit of news regarding the `npm` package we publish. Inline with our own [company name change](https://flowfuse.com/blog/2023/08/flowforge-is-now-flowfuse), we've had to update Dashboard 2.0's npm package, and so, we've changed from `@flowforge/node-red-dashboard` to `@flowfuse/node-red-dashboard`.
+Firstly a bit of news regarding the `npm` package we publish. Inline with our own [company name change](/blog/2023/08/flowforge-is-now-flowfuse), we've had to update Dashboard 2.0's npm package, and so, we've changed from `@flowforge/node-red-dashboard` to `@flowfuse/node-red-dashboard`.
 
 In the short term, we'll be keeping @flowforge available on the Node-RED Palette Manager, but it will be removed soon, and the associated NPM Package will be put into a "deprecated" mode.
 

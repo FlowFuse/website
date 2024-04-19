@@ -56,7 +56,7 @@ To learn about advanced configurations such as TLS/SSL, please refer to the [nod
 
 ### Adding Environment variables
 
-Using environment variables during configuration is crucial to prevent exposing sensitive information directly within the flow. To learn more about it refer to [Using Environment Variables in Node-RED.](https://flowfuse.com/blog/2023/01/environment-variables-in-node-red/)
+Using environment variables during configuration is crucial to prevent exposing sensitive information directly within the flow. To learn more about it refer to [Using Environment Variables in Node-RED.](/blog/2023/01/environment-variables-in-node-red/)
 
 !["Screenshot displaying FlowFuse instance settings"](./images/using-mongodb-with-node-red-flowfuse-instance-setting.png "Screenshot displaying FlowFuse instance settings"){data-zoomable}
 
@@ -116,7 +116,7 @@ Install `node-red-contrib-friendly-id` via the palette manager which is a node t
 
 ### Installing Dashboard 2.0 
 
-To build a user-friendly interactive UI for our CRM system, we will utilize Node-RED Dashboard 2.0 by following these [instructions](https://flowfuse.com/blog/2024/03/dashboard-getting-started/) to quickly set up and get started.
+To build a user-friendly interactive UI for our CRM system, we will utilize Node-RED Dashboard 2.0 by following these [instructions](/blog/2024/03/dashboard-getting-started/) to quickly set up and get started.
 
 ### Inserting Customer Data into the Database
 
@@ -274,7 +274,7 @@ Now To drop tables, and retrieve table data, click on the 'Inject Node' button. 
 
 This section contains helpful links to other content. It isn’t required, so consider it supplemental.
 
-- [Basic MongoDB CRUD implementation blueprint](https://flowfuse.com/blueprints/getting-started/crud/)
+- [Basic MongoDB CRUD implementation blueprint](/blueprints/getting-started/crud/)
 - [MongoDB best practices](https://www.mongodb.com/basics/best-practices) for to increase performance
 - [Ebook: MongoDB in manufacturing](https://www.mongodb.com/collateral/manufacturing-with-mongodb).
 - [Manufacturing & Automotive Industry Knowledge Accelerator](https://learn.mongodb.com/learning-paths/manufacturing-automotive-industry-knowledge-accelerator)

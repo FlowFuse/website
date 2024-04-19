@@ -50,4 +50,4 @@ It is important when scoping out a project to identify all of the potential node
 
 As we've explored throughout this article, Professional Services for Node-RED can significantly enhance the efficiency, security, and scalability of your automation and integration projects. From the initial setup and configuration to the intricacies of flow and node development, the expertise PS teams offer can be invaluable. The decision to engage with Professional Services should be informed by your project's specific needs, internal capabilities, and strategic priorities. Whether it's leveraging PS for the foundational setup of your Node-RED instance, outsourcing flow development to expedite project timelines, or seeking expert assistance for node development, the goal is the same: create a coding environment that is conducive to citizen development.
 
-If you are interested in professional services or consultation, [please reach out](https://flowfuse.com/professional-services/).
+If you are interested in professional services or consultation, [please reach out](/professional-services/).

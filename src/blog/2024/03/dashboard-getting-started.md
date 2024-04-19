@@ -149,11 +149,11 @@ With all of this together, we have the following functional Dashboard:
 
 Whilst this is just a simple introduction of Node-RED Dashboard 2.0, we do have many other articles and documentation that can help you get started with more advanced features. 
 
-- [FlowFuse Dashboard Articles](https://flowfuse.com/blog/dashboard/) - Collection of examples and guides written by FlowFuse.
+- [FlowFuse Dashboard Articles](/blog/dashboard/) - Collection of examples and guides written by FlowFuse.
 - [Node-RED Dashboard 2.0 Documentation](https://dashboard.flowfuse.com) - Detailed information for each of the nodes available in Dashboard 2.0, as well as useful guides on building custom nodes and widgets of your own.
 - [Node-RED Forums - Dashboard 2.0](https://discourse.nodered.org/tag/dashboard-2) -  The Node-RED forums is a great place to ask questions, share your projects and get help from the community.
-- [Beginner Guide to a Professional Node-RED](https://flowfuse.com/ebooks/beginner-guide-to-a-professional-nodered/) - A free guide to an enterprise-ready Node-RED. Learn all about Node-RED history, securing your flows and dashboard data visualization.
-- [FlowFuse - Book a Demo](https://flowfuse.com/contact-us) - FlowFuse provides a complete platform to scale your production Node-RED applications, increase developer velocity, and enhance security in order to accelerate innovation.
+- [Beginner Guide to a Professional Node-RED](/ebooks/beginner-guide-to-a-professional-nodered/) - A free guide to an enterprise-ready Node-RED. Learn all about Node-RED history, securing your flows and dashboard data visualization.
+- [FlowFuse - Book a Demo](/contact-us) - FlowFuse provides a complete platform to scale your production Node-RED applications, increase developer velocity, and enhance security in order to accelerate innovation.
 
 ## Follow our Progress
 

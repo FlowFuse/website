@@ -60,7 +60,7 @@ Telegram chat ID is a unique identifier for a chat or a group in Telegram, which
 
 ## Adding environment variables
 
-Utilizing environment variables is crucial while doing any configuration in your application as they contain sensitive information. Environment variables enable you to configure nodes or applications without exposing such information in the flow.json. For more details refer to [Using Environment Variables with Node-RED](https://flowfuse.com/blog/2023/01/environment-variables-in-node-red/).
+Utilizing environment variables is crucial while doing any configuration in your application as they contain sensitive information. Environment variables enable you to configure nodes or applications without exposing such information in the flow.json. For more details refer to [Using Environment Variables with Node-RED](/blog/2023/01/environment-variables-in-node-red/).
 
 1. Go to Instance settings, and switch to the “Environment” tab.
 2. Click the top right “Add variable” button.

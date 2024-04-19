@@ -22,7 +22,7 @@ ChatGPT, and other models, can write code for you, much like [GitHub CoPilot](ht
 
 ![Example of Chat GPT to generate contents of a function node](./images/chatgpt-fcn-example.png)
 
-At FlowFuse we’ve written about this [before](https://flowfuse.com/blog/2023/05/chatgpt-nodered-fcn-node/), and published a [plugin](https://github.com/FlowFuse/node-red-function-gpt). This node allows flow developers to be more productive and efficient. While this works only for the function node, there’s countless other possibilities to describe a flow in text and import a ChatGPT generated flow that are on the horizon!
+At FlowFuse we’ve written about this [before](/blog/2023/05/chatgpt-nodered-fcn-node/), and published a [plugin](https://github.com/FlowFuse/node-red-function-gpt). This node allows flow developers to be more productive and efficient. While this works only for the function node, there’s countless other possibilities to describe a flow in text and import a ChatGPT generated flow that are on the horizon!
 
 ### Flow Interpretation
 

@@ -23,7 +23,7 @@ Kafka provides a distributed streaming platform that enables the efficient handl
 
 Apache Kafka is a platform for distributed data streaming that allows for the publishing, subscribing, storing, and processing of streams of records in real-time. It is intended to handle data streams from multiple sources and to deliver them to multiple consumers. In essence, it can move large quantities of data in real-time from any source to any destination, simultaneously.
 
-Kafka is also a very good [broker for UNS architecture](https://flowfuse.com/blog/2024/01/unified-namespace-what-broker/).
+Kafka is also a very good [broker for UNS architecture](/blog/2024/01/unified-namespace-what-broker/).
 
 ## Understanding Kafka's Architecture
 
@@ -94,7 +94,7 @@ As beneficial as Kafka is in various industries, it also presents certain limita
 
 5. Data Storage: Apache Kafka is not a recommended option for storing large sets of data. If the data is stored for a long period, the redundant copies of it are also stored. When this happens, the app must be ready to compromise its performance. For this reason, only use Kafka if there is a need to store data for a short period. 
 
-Additionally, if you are interested in learning more about Kafka and its practical implementation, refer to our guide on Using [Kafka with Node-RED](https://flowfuse.com/blog/2024/03/using-kafka-with-node-red/).
+Additionally, if you are interested in learning more about Kafka and its practical implementation, refer to our guide on Using [Kafka with Node-RED](/blog/2024/03/using-kafka-with-node-red/).
 
 ## Conclusion 
 

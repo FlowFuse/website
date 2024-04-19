@@ -29,8 +29,8 @@ Furthermore, on the management layer of most companies, Excel and Google Sheets 
 This simple flow allows the user to visualize data from a CSV in the Node-RED Dashboard. The button then allows the user to initiate a request to send the data to the next step. This next step could be anything from loading into a SQL database to saving it.
 
 ### Instructions ###
-1. Install Node-RED Dashboard 2.0. Follow these [instructions](https://flowfuse.com/blog/2024/03/dashboard-getting-started/) to install.  
-2. Import Flow - to import the flow into your Node-RED instance follow these [instructions](https://flowfuse.com/blog/2023/03/3-quick-node-red-tips-5/#1.-copy-and-share-your-flows-using-export-and-import). 
+1. Install Node-RED Dashboard 2.0. Follow these [instructions](/blog/2024/03/dashboard-getting-started/) to install.  
+2. Import Flow - to import the flow into your Node-RED instance follow these [instructions](/blog/2023/03/3-quick-node-red-tips-5/#1.-copy-and-share-your-flows-using-export-and-import). 
 3. Access Dashboard - To access the dashboard, navigate to the `https://<flowfuse-instance-name>.flowfuse.cloud/dashboard`.
 
 This dashboard is currently configured to take in CSV files and transform them into a single message that is sent to the table for visualization.  Simultaneously the data from the import is stored locally in the flow context.  From there, the button can be used to trigger the sending of the data from the flow context to the next destination.  In this case, it is a simple debug node.

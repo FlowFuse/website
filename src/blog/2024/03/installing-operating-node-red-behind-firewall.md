@@ -27,7 +27,7 @@ First, ask for a temporary exception. Node-RED is installed in a few minutes, so
 
 As FlowFuse can be installed in a VPN behind a firewall, there’s no requirement to open up a ‘gate’ in your firewall to FlowFuse servers. The safe perimeter provided remains to the outside world. The security aspect remains, though as a Node-RED developer, there are still everyday tasks you’ll need access to the outside world.
 
-Consider installing third party nodes to connect your Node-RED instance to virtually any protocol or digital service. There are over 5000 of these nodes available, and as an organization it’s challenging to keep on top of. Your firewall provides one layer of security so that the data you’re accessing remains safe. FlowFuse provides a second layer of protection; we’ve introduced a [“Certified Nodes” catalog](https://flowfuse.com/certified-nodes/). These nodes have gone through automated and manual inspection to prevent malicious code from making it onto your production systems.
+Consider installing third party nodes to connect your Node-RED instance to virtually any protocol or digital service. There are over 5000 of these nodes available, and as an organization it’s challenging to keep on top of. Your firewall provides one layer of security so that the data you’re accessing remains safe. FlowFuse provides a second layer of protection; we’ve introduced a [“Certified Nodes” catalog](/certified-nodes/). These nodes have gone through automated and manual inspection to prevent malicious code from making it onto your production systems.
 
 Installing these packages would typically still require you to obtain files from NPM. With FlowFuse however, a cache can be built with only vetted nodes – All other nodes remain unavailable.
 
