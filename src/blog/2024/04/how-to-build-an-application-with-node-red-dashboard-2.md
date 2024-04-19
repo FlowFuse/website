@@ -1,7 +1,7 @@
 ---
 title: How to Build An Application With Node-RED Dashboard 2.0
 subtitle: A step-by-step guide to building a personalized, secure, and fully functional application with Dashboard 2.0.
-description: 
+description: Learn to build custom applications effortlessly with Node-RED Dashboard 2.0. This step-by-step guide walks you through building the personalized, secure, and fully functional app.
 date: 2024-04-11
 authors: ["sumit-shinde"]
 image: 
@@ -11,7 +11,7 @@ tags:
     - dashboard
 ---
 
-We started developing Dashboard 2.0 a few months ago to replace the outdated Node-RED Dashboard 1.0. Initially, our goal was simply to replicate the old features. But it is way beyond our expectations. With its powerful features and customizable nature, not only does building dashboards become incredibly easy, but also enables the creation of applications that we use regularly.
+We started developing Dashboard 2.0 a few months ago to replace the outdated Node-RED Dashboard 1.0. Initially, our goal was simply to replicate the old features. But it is way beyond our expectations. With its powerful features and customizable nature, not only does building dashboards become incredibly easy, but also enables the creation of advanced applications that we use regularly.
 
 <!--more-->
 
@@ -21,11 +21,11 @@ If you're new to Dashboard 2.0, refer to our blog post [Getting Started with Das
 
 ## Installing Flowfuse user addon
 
-The FlowFuse User Addon is a plugin developed for Dashboard 2.0, leveraging the FlowFuse API to access logged in user's information at Dashboard 2.0. For detailed information refer to the [Exploring the FlowFuse User Addon](/blog/2024/04/displaying-logged-in-users-on-dashboard/#exploring-the-flowfuse-user-addon) and make sure install it.
+The FlowFuse User Addon is a plugin developed for Dashboard 2.0, leveraging the FlowFuse API to access logged in user's information at Dashboard 2.0. For detailed information refer to the [Exploring the FlowFuse User Addon](/blog/2024/04/displaying-logged-in-users-on-dashboard/#exploring-the-flowfuse-user-addon) and make sure to install it.
 
 ## Enabling FlowFuse user authentication
 
-Before beginning the application development process, ensure that FlowFuse user authentication is enabled. This feature adds a layer of security to your application by providing a login page. By combining the FlowFuse user addon with user authentication, we gain access to the logged in user's data within our application. For more information, refer to the [documentation](/docs/user/instance-settings/#flowfuse-user-authentication) and ensure that it is enabled.
+Before beginning the application development process, ensure that FlowFuse user authentication is enabled. This feature adds a layer of security to your application with a login page. By combining the FlowFuse user addon with user authentication, we gain access to the logged in user's data within our application. For more information FlowFuse user authentication, refer to the [documentation](/docs/user/instance-settings/#flowfuse-user-authentication) and ensure that it is enabled.
 
 ## Outlining Approach
 
@@ -37,13 +37,13 @@ In this guide, we are going to build a simple, secure task management applicatio
 1. Accessing User Data: We have already enabled the application to access user data by installing the FlowFuse User Addon and enabling user authentication.
 2. Building a Form to Submit Tasks: We will create a form using Node-RED Dashboard 2.0 to allow users to input task details such as title, description, due date, etc.
 3. Storing Tasks in the Global Context: Upon task submission, we'll store this data alongside the associated user object in the global context of Node-RED.
-4. Displaying Task Submission Confirmation: After submitting a task, we'll display a notification to confirm the successful submission.
+4. Displaying Task Submission Confirmation: Additionally, after a successful task submission, we'll display a notification.
 5. Retrieving and Filtering Tasks: We will retrieve the stored tasks from the global context and filter them based on the logged in user. This ensures that users only see their own tasks.
 6. Building a Customized Table: Using ui-template and Vuetify components, we will design a customized table on the dashboard to display the filtered tasks in a visually appealing format.
 
 ## Building a Form to Submit Tasks
 
-1. Drag an **ui-form** widget onto the canvas.
+1. Drag an **ui-form** widget onto the canvas.
 2. Click on the edit icon next to Page 1 (The default page added when you install Dashboard 2.0) in the Dashboard 2.0 sidebar. While this step is optional, updating the page configurations as shown in the image below ensures that your application aligns with the layout described in this guide.
 
 !["screenshot displaying new task page configuration"](./images/building-an-application-with-dashboard-2-page1-configuration.png "screenshot displaying new task page configuration"){data-zoomable}
@@ -87,7 +87,7 @@ return msg;
 !["screenshot of the change node setting payload for notification"](./images/building-an-application-with-dashboard-change-node-setting-payload-for-notification.png "screenshot of the change node setting payload for notification"){data-zoomable}
 
 2. Drag an **ui-notification** onto the canvas select **ui-base** and set the position to "center".
-3. Connect the **ui-form** widget’s output to the **change** node’s input and the **change** node’s output to the **ui-notifications** input.
+3. Connect the **ui-form** widget’s output to the **change** node’s input and the **change** node’s output to the **ui-notification** widget's input.
 
 ## Retrieving and Filtering Tasks
 
@@ -109,28 +109,27 @@ return msg;
 ```
 4. Connect the **ui-event** widget’s output to the **change** node’s input and the **change** nodes’ output to the **function** node’s input.
 
-
 ## Building a Customized Table
 
 ### Enabling client constraint for ui-template
 
-Before we begin constructing our table to display tasks, we need to enable access to client constraints for the **ui-template** widget. Access client constraints ensure that messages or actions are specifically targeted to individual clients. For instance, if 100 people are interacting with the same task management dashboard simultaneously and one person submits a task, the notification will only be visible to that person and not to the remaining 99 individuals.
+Before we begin building our table to display tasks, we need to enable access to client constraints for the **ui-template** widget. Access client constraints ensure that messages or actions are specifically targeted to individual clients. For instance, if 100 people are interacting with the same task management dashboard simultaneously and one person submits a task, the notification will only be visible to that person and not to the remaining 99 individuals.
 
 If you have experience with Node-RED Dashboard 1.0, you may recall that these client constraints were only available for **ui-control** and **ui-notification** widgets but in Dashboard 2.0 you can enable it for any widget.
 
 !["Screenshot displaying FF Auth tab"](./images/building-an-application-with-dashboard-2-ff-auth-tab.png "Screenshot displaying FF Auth tab"){data-zoomable}
 
-1. Navigate to the sidebar and select "FF Auth" Tab
-2. In the second option "Accept Client Constraints" you'll see dashboard 2.0 widgets where this option is by default enabled for **ui-notification** and **ui-control**, enable it for **ui-template** as well.
+1. Navigate to the Dashboard 2.0 sidebar and select the top-right "FF Auth" Tab
+2. In the "Accept Client Constraints" option, you'll see Dashboard 2.0 widgets where this option is by default enabled for **ui-notification** and **ui-control**, enable it for **ui-template** as well.
 
 ### Creating a table and displaying the task
 
 1. Drag an **ui-template** widget onto the canvas
-2. Create a new ui-page, ui-group for it. Below, I have provided a screenshot of the page two configurations if you want to replicate the design and layout as it is.
+2. Create a new **ui-page** and **ui-group** for it. Below, I have provided a screenshot of the "new task" page configurations. You can replicate it if you want to align with the layout described in this guide; otherwise, it is optional.
 
 !["Screenshot displaying ui-template widget with code for building table for displaying task"](./images/building-an-application-with-dashboard-template-widget.png "Screenshot displaying ui-template widget with code for building table for displaying task"){data-zoomable}
 
-3. Insert the below code into the widget. We've used [Vuetify components](https://vuetifyjs.com/en/components/all/) in this Vue.js code, All supported by Dashboard 2.0. If you're new to Vue.js, rest assured I've included helpful comments for clarity.
+3. Paste the below code into the widget. We've used [Vuetify components](https://vuetifyjs.com/en/components/all/) in this Vue.js code, All are supported by Dashboard 2.0. If you're new to Vue.js, rest assured I've included helpful comments for clarity.
 
 ```
 ` <template>
@@ -206,7 +205,7 @@ If you have experience with Node-RED Dashboard 1.0, you may recall that these cl
 </style>
 
 ```
-3. Connect the **ui-template** widget's input to the **function** node's output (function node which we have added to filter tasks based on user).
+3. Connect the **ui-template** widget's input to the **function** node's output ( function node which we have added to filter tasks based on user ).
 
 ## Deploying the flow 
 
@@ -214,9 +213,9 @@ If you have experience with Node-RED Dashboard 1.0, you may recall that these cl
 
 1. Deploy the flow by clicking the top right Deploy button.
 2. Locate the 'Open Dashboard' button at the top-right corner of the Dashboard 2.0 sidebar and click on it to navigate to the dashboard.
+3. Login with the registered FlowFuse account username and password.
 
-Now, we're all set to add tasks. Navigate to the "New Task" page to add tasks. To view tasks, navigate to the "Your Task" page.
-
+Now, we're all set to add tasks. Navigate to the "New Task" page to add tasks. To view tasks, navigate to the "your Task" page.
 
 ## Next step
 
