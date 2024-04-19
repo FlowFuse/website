@@ -1,7 +1,7 @@
 ---
 title: How to Build An Application With Node-RED Dashboard 2.0
 subtitle: A step-by-step guide to building a personalized, secure, and fully functional application with Dashboard 2.0.
-description: Learn to build custom applications effortlessly with Node-RED Dashboard 2.0. This step-by-step guide walks you through building the personalized, secure, and fully functional app.
+description: Learn to build custom applications effortlessly with Node-RED Dashboard 2.0. This step-by-step guide walks you through building a personalized, secure, and fully functional app.
 date: 2024-04-11
 authors: ["sumit-shinde"]
 image: 
@@ -25,23 +25,16 @@ The FlowFuse User Addon is a plugin developed for Dashboard 2.0, leveraging the 
 
 ## Enabling FlowFuse user authentication
 
-Before beginning the application development process, ensure that FlowFuse user authentication is enabled. This feature adds a layer of security to your application with a login page. By combining the FlowFuse user addon with user authentication, we gain access to the logged in user's data within our application. For more information FlowFuse user authentication, refer to the [documentation](/docs/user/instance-settings/#flowfuse-user-authentication) and ensure that it is enabled.
+Before you begin the application development process, please make sure that FlowFuse user authentication is enabled. This feature adds a layer of security to your application with a login page. By combining the FlowFuse user addon with user authentication, we gain access to the logged in user's data within our application. For more information on FlowFuse user authentication, refer to the [documentation](/docs/user/instance-settings/#flowfuse-user-authentication) and make sure that it is enabled.
 
-## Outlining Approach
+## Building Task Management application
 
-!["Screenshot of the task management system we will be building in this guide"](./images/building-an-application-with-dashboard-2-task-management-system.gif 
-"Screenshot of the task management system we will be building in this guide"){data-zoomable}
+!["Screenshot of the task management system built with Node-RED Dashboard 2.0"](./images/building-an-application-with-dashboard-2-task-management-system.gif 
+"Screenshot of the task management system built with Node-RED Dashboard 2.0"){data-zoomable}
 
-In this guide, we are going to build a simple, secure task management application that will allow users to submit and view their own tasks, making the dashboard more personalized. Here's an overview of the steps:
+Throughout this guide, we will be building a simple secure, and personalized Task management application that will allow users to create and view their tasks.
 
-1. Accessing User Data: We have already enabled the application to access user data by installing the FlowFuse User Addon and enabling user authentication.
-2. Building a Form to Submit Tasks: We will create a form using Node-RED Dashboard 2.0 to allow users to input task details such as title, description, due date, etc.
-3. Storing Tasks in the Global Context: Upon task submission, we'll store this data alongside the associated user object in the global context of Node-RED.
-4. Displaying Task Submission Confirmation: Additionally, after a successful task submission, we'll display a notification.
-5. Retrieving and Filtering Tasks: We will retrieve the stored tasks from the global context and filter them based on the logged in user. This ensures that users only see their own tasks.
-6. Building a Customized Table: Using ui-template and Vuetify components, we will design a customized table on the dashboard to display the filtered tasks in a visually appealing format.
-
-## Building a Form to Submit Tasks
+### Building a Form to Submit Tasks
 
 1. Drag an **ui-form** widget onto the canvas.
 2. Click on the edit icon next to Page 1 (The default page added when you install Dashboard 2.0) in the Dashboard 2.0 sidebar. While this step is optional, updating the page configurations as shown in the image below ensures that your application aligns with the layout described in this guide.
@@ -52,7 +45,9 @@ In this guide, we are going to build a simple, secure task management applicatio
 
 !["Screenshot of ui widget form configuration"](./images/building-an-application-with-dashboard-2-task-submission-form.png "Screenshot of ui widget form configuration"){data-zoomable}
 
-## Storing Tasks in the Global Context
+### Storing Tasks in the Global Context
+
+For this guide, we are storing our Tasks in Node-RED global context but you can store them in the database which will indeed make it easy to manage your task data.
 
 1. Drag a **function** node onto the canvas
 2. Paste the below code in the **function** node.
@@ -80,7 +75,7 @@ return msg;
 
 3. Connect the **ui-form** widget’s output to the **function** node’s input.
 
-## Displaying Task Submission Confirmation
+### Displaying notification on successful task submission
 
 1. Drag a **change** node onto the canvas and set `msg.payload` to the confirmation message you want to display on successful task submission.
 
@@ -89,7 +84,9 @@ return msg;
 2. Drag an **ui-notification** onto the canvas select **ui-base** and set the position to "center".
 3. Connect the **ui-form** widget’s output to the **change** node’s input and the **change** node’s output to the **ui-notification** widget's input.
 
-## Retrieving and Filtering Tasks
+### Retrieving and Filtering Tasks
+
+Now that we can store tasks along with the user details of who submitted them, we need to retrieve and filter them based on users, ensuring that users can only see their tasks and not others.
 
 1. Drag a **ui-event** widget onto the canvas and select **ui-base** for it. The **ui-event** will enable us to display updated tasks on the table without the need for polling, as it triggers when the page reloads or changes.
 2. Drag a **change** node onto the canvas and set `msg.payload` to `global.tasks`.
@@ -109,8 +106,6 @@ return msg;
 ```
 4. Connect the **ui-event** widget’s output to the **change** node’s input and the **change** nodes’ output to the **function** node’s input.
 
-## Building a Customized Table
-
 ### Enabling client constraint for ui-template
 
 Before we begin building our table to display tasks, we need to enable access to client constraints for the **ui-template** widget. Access client constraints ensure that messages or actions are specifically targeted to individual clients. For instance, if 100 people are interacting with the same task management dashboard simultaneously and one person submits a task, the notification will only be visible to that person and not to the remaining 99 individuals.
@@ -124,12 +119,14 @@ If you have experience with Node-RED Dashboard 1.0, you may recall that these cl
 
 ### Creating a table and displaying the task
 
+In this section, we will build an interactive table using **ui-template** and [vuetify component](https://vuetifyjs.com/en/components/all/). Vuetify offers a diverse array of components, all of which are compatible with our Node-RED Dashboard 2.0's ui-template widget. You can easily copy and paste them into the **ui-template** widget.
+
 1. Drag an **ui-template** widget onto the canvas
-2. Create a new **ui-page** and **ui-group** for it. Below, I have provided a screenshot of the "new task" page configurations. You can replicate it if you want to align with the layout described in this guide; otherwise, it is optional.
+2. Create a new **ui-page** and **ui-group** for it. Below, I have provided a screenshot of the "new task" page configurations. You can replicate it if you want to align with the layout described in this guide, otherwise, it is optional.
 
 !["Screenshot displaying ui-template widget with code for building table for displaying task"](./images/building-an-application-with-dashboard-template-widget.png "Screenshot displaying ui-template widget with code for building table for displaying task"){data-zoomable}
 
-3. Paste the below code into the widget. We've used [Vuetify components](https://vuetifyjs.com/en/components/all/) in this Vue.js code, All are supported by Dashboard 2.0. If you're new to Vue.js, rest assured I've included helpful comments for clarity.
+3. Paste the below code into the widget, If you're new to Vue.js, rest assured I've included helpful comments for clarity.
 
 ```
 ` <template>
