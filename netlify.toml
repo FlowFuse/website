@@ -72,7 +72,3 @@ package = "@algolia/netlify-plugin-crawler"
 package = "netlify-plugin-cache"
   [plugins.inputs]
   paths = [ ".cache" ]
-  
-[[edge_functions]]
-function = "eleventy-edge"
-path = "/*"
