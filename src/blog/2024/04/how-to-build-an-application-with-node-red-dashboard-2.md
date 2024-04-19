@@ -1,14 +1,14 @@
 ---
 title: How to Build An Application With Node-RED Dashboard 2.0
 subtitle: A step-by-step guide to building a personalized, secure, and fully functional application with Dashboard 2.0.
-description: 
+description: Create custom applications effortlessly with Node-RED Dashboard 2.0. This step-by-step guide walks you through building personalized, secure, and fully functional apps.
 date: 2024-04-11
 authors: ["sumit-shinde"]
 image: 
 tags:
-    - posts
-    - node-red
-    - dashboard
+  - posts
+  - node-red
+  - dashboard
 ---
 
 We started developing Dashboard 2.0 a few months ago to replace the outdated Node-RED Dashboard 1.0. Initially, our goal was simply to replicate the old features. But today, we're thrilled to introduce Dashboard 2.0, which exceeds our initial expectations. With its powerful features, not only does building dashboards become incredibly easy, but also enables the creation of applications that we use regularly.
@@ -40,14 +40,14 @@ In this guide, we are going to build a simple, secure task management applicatio
 
 ## Building a Form to Submit Tasks
 
-1.  Drag an **ui-form** widget onto the canvas.
-2. Click on the edit icon next to page 1 at the dashboard 2.0 sidebar and update the page configurations as shown in the below image,  to ensure your application design aligns with our intended layout.
+1. Drag an **ui-form** widget onto the canvas.
+2. Click on the edit icon next to page 1 at the dashboard 2.0 sidebar and update the page configurations as shown in the below image, to ensure your application design aligns with our intended layout.
 3. Click on the **ui-form** widget to add form elements such as title, description, due date, and priority.
 
 ## Storing Tasks in the Global Context
 
 1. Drag a **function** node onto the canvas
-2. Paste the below code in **function** node.
+2. Paste the below code in the **function** node.
 3. Connect the **ui-form** widget’s output to the **function** node’s input.
 
 ```
@@ -58,10 +58,10 @@ let tasks = global.get('tasks') || [];
 // // Push the new task object into the tasks array, including the task details and the user object extracted from the message object, as each payload emitted by the Node-RED Dashboard 2.0 widgets contains user information due to the FlowFuse User Addon.
 
 tasks.push({
-    ...msg.payload,
-    ...{
-        user: msg._client.user // Assign the user object to the task
-    }
+  ...msg.payload,
+  ...{
+    user: msg._client.user // Assign the user object to the task
+  }
 });
 
 // Update the 'tasks' variable in the global context with the modified tasks array
@@ -79,8 +79,8 @@ return msg;
 ## Retrieving and Filtering Tasks
 
 1. Drag a **ui-event** widget onto the canvas and select **ui-base** for it. The **ui-event** will enable us to display updated tasks on the table without the need for polling, as it triggers when the page reloads or changes.
-2. Drag an **change** node onto the canvas and set `msg.payload` to `global.tasks`.
-3. Drag a **function** node onto the canvas and paste the below code in it.
+2. Drag a **change** node onto the canvas and set `msg.payload` to `global.tasks`.
+3. Drag a **function** node onto the canvas and paste the below code into it.
 
 ```
 // Filter the payload array of tasks to include only those tasks associated with the currently logged-in user.
@@ -93,3 +93,117 @@ containing the filtered tasks.
 return msg;
 ```
 4. Connect the **ui-event** widget’s output to the **change** node’s input and the **change** nodes’ output to the **function** node’s input.
+
+
+## Building a Customized Table
+
+### Enabling client constraint for ui-template
+
+Before we begin constructing our table to display tasks, we need to enable access to client constraints for the ui-template widget. Access client constraints ensure that messages or actions are specifically targeted to individual clients. For instance, if 100 people are interacting with the same task management dashboard simultaneously and one person submits a task, the notification will only be visible to that person and not to the remaining 99 individuals.
+
+If you have experience with Node-RED Dashboard 1.0, you may recall that these client constraints were only available for ui-control and ui-notification widgets but in Dashboard 2.0 you can enable it for any widget.
+
+1. Navigate to the sidebar and select "FF Auth" Tab
+2. In the second option "Accept Client Constraints" you'll see dashboard 2.0 widgets where this option is by default enabled for **ui-notification** and **ui-control**, enable it for **ui-template** as well.
+
+### Creating a table and displaying the task
+
+1. Drag an ui-template widget onto the canvas
+2. Create a new ui-page, ui-group for it. Below, I have provided a screenshot of the page two configurations if you want to replicate the design and layout as it is.
+3. Paste the code below into it. Rest assured if you are not proficient in Vue.js, I have explained each step with comments.
+
+```
+` <template>
+ <!-- Input field for searching tasks -->
+ <v-text-field v-model="search" label="Search" prepend-inner-icon="mdi-magnify" single-line variant="outlined"
+  hide-details></v-text-field>
+ 
+ <!-- Data table to display tasks -->
+ <v-data-table :search="search" :items="msg?.payload">
+  <!-- Custom header for the "current" column -->
+  <template v-slot:header.current>
+   <div class="text-center">Center-Aligned</div>
+  </template>
+
+  <!-- Template for the "priority" column -->
+  <template v-slot:item.priority="{ item }">
+   <!-- Display priority icon if it exists -->
+   <v-icon v-if="item.priority" icon="mdi-alert" color="red"></v-icon>
+  </template>
+
+  <!-- Template for the "user" column -->
+  <template v-slot:item.user="{ item }">
+   <!-- Display user avatar and username -->
+   <div class="user">
+    <!-- User avatar -->
+    <img :src="item.user.image" width="24" />
+    <!-- Username -->
+    {% raw %}<span>{{ item.user.username }}</span>{% endraw %}
+   </div>
+  </template>
+
+  <!-- Template for the "due" column -->
+  <template v-slot:item.due="{ item }">
+   <!-- Calculate and display the number of days between due date and current date -->
+   {% raw %}{{ daysBetween(item.due, new Date()) }} Days{% endraw %}
+  </template>
+ </v-data-table>
+</template>
+
+<script>
+ export default {
+  data() {
+   return {
+    // Search input field model
+    search: '',
+   }
+  },
+  methods: {
+   // Method to calculate the number of days between two dates
+   daysBetween(date1, date2) {
+    // Calculate the difference in days
+    const oneDay = 24 * 60 * 60 * 1000; // hours*minutes*seconds*milliseconds
+    const firstDate = new Date(date1);
+    const secondDate = new Date(date2);
+    const diffDays = Math.round(Math.abs((firstDate - secondDate) / oneDay));
+    return diffDays;
+   }
+  }
+ }
+</script>
+
+<style scoped>
+ /* Styling for user avatar and username */
+ .user {
+  display: flex;
+  gap: 5px; /* Gap between avatar and username */
+ }
+
+ /* Styling for user avatar */
+ .user img {
+  width: 24px; /* Set width of user avatar */
+ }
+</style>
+
+```
+3. Connect the ui-template widget's input to the function node's output (function node which we have added to filter tasks based on user).
+
+## Deploying the flow 
+
+1. Deploy the flow by clicking the top right Deploy button.
+2. Locate the 'Open Dashboard' button at the top-right corner of the Dashboard 2.0 sidebar and click on it to navigate to the dashboard.
+
+Now, we're all set to add tasks. Navigate to the "New Task" page to add tasks. To view tasks, navigate to the "Your Task" page.
+
+
+## Next step
+
+If you want to enhance this simple application or add more features, consider the following resources:
+
+- [Webinar](https://flowfuse.com/webinars/2024/node-red-dashboard-multi-user/) - This webinar provides an in-depth discussion of the Personalised Multi-User Dashboards feature and offers guidance on how to get started with it.
+
+- [Displaying logged-in users on Dashboard 2.0](https://flowfuse.com/blog/2024/04/displaying-logged-in-users-on-dashboard/) - This detailed guide demonstrates how to display logged-in users on Dashboard 2.0 which using the FlowFuse Multiuser addon and FlowFuse.
+
+- [How to Build an Admin Dashboard with Node-RED Dashboard 2.0](https://flowfuse.com/blog/2024/04/building-an-admin-panel-in-node-red-with-dashboard-2/) - This detailed guide demonstrates how to build an secure admin page in Node-RED Dashboard 2.0.
+
+- [Multi-User Dashboard for Ticket/Task Management](https://flowfuse.com/blueprints/flowfuse-dashboard/multi-user-dashboard/#multi-user-dashboard-for-ticket%2Ftask-management) blueprint, which allows you to utilize templates to develop a personalized multi-user dashboard quickly. This Task management blueprint has all features such as adding, updating, deleting tasks, user profiles, and admin dashboard.
