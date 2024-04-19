@@ -29,8 +29,8 @@ Before beginning the application development process, ensure that FlowFuse user 
 
 ## Outlining Approach
 
-!["screenshot of Task management system we will be building"](./images/building-an-application-with-dashboard-2-task-management-system.gif 
-"screenshot of Task management system we will be building"){data-zoomable}
+!["Screenshot of the task management system we will be building in this guide"](./images/building-an-application-with-dashboard-2-task-management-system.gif 
+"Screenshot of the task management system we will be building in this guide"){data-zoomable}
 
 In this guide, we are going to build a simple, secure task management application that will allow users to submit and view their own tasks, making the dashboard more personalized. Here's an overview of the steps:
 
@@ -46,11 +46,11 @@ In this guide, we are going to build a simple, secure task management applicatio
 1. Drag an **ui-form** widget onto the canvas.
 2. Click on the edit icon next to Page 1 (The default page added when you install Dashboard 2.0) in the Dashboard 2.0 sidebar. While this step is optional, updating the page configurations as shown in the image below ensures that your application aligns with the layout described in this guide.
 
-!["screenshot displaying new task page configuration"](./images/building-an-application-with-dashboard-2-page1-configuration.png "screenshot displaying new task page configuration"){data-zoomable}
+!["Screenshot displaying 'new task' page configurations"](./images/building-an-application-with-dashboard-2-page1-configuration.png "Screenshot displaying 'new task' page configurations"){data-zoomable}
 
 3. Click on the **ui-form** widget to add form elements such as title, description, due date, and priority.
 
-!["Screenshot displaying ui widget form configuration"](./images/building-an-application-with-dashboard-2-task-submission-form.png "Screenshot displaying ui widget form configuration"){data-zoomable}
+!["Screenshot of ui widget form configuration"](./images/building-an-application-with-dashboard-2-task-submission-form.png "Screenshot of ui widget form configuration"){data-zoomable}
 
 ## Storing Tasks in the Global Context
 
@@ -221,7 +221,7 @@ Now, we're all set to add tasks. Navigate to the "New Task" page to add tasks. T
 
 If you want to enhance this simple application or add more features, consider the following resources:
 
-- [Webinar](https://flowfuse.com/webinars/2024/node-red-dashboard-multi-user/) - This webinar provides an in-depth discussion of the Personalised Multi-User Dashboards feature and offers guidance on how to get started with it.
+- [Webinar](/webinars/2024/node-red-dashboard-multi-user/) - This webinar provides an in-depth discussion of the Personalised Multi-User Dashboards feature and offers guidance on how to get started with it.
 
 - [Displaying logged-in users on Dashboard 2.0](/blog/2024/04/displaying-logged-in-users-on-dashboard/) - This detailed guide demonstrates how to display logged-in users on Dashboard 2.0 which using the FlowFuse Multiuser addon and FlowFuse.
 
