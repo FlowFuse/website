@@ -4,7 +4,7 @@ subtitle: The Next Level in Node-RED Solutions
 description: FlowFuse Dedicated a new Node-RED solution with a secure, compliant, and fully managed single-tenant SaaS platform tailored for enterprise needs.
 date: 2024-04-22
 authors: ["marian-demme"]
-#image: /blog/2024/04/images/node-red-architecture.png
+image: /blog/2024/04/images/introducing-flowfuse-dedicated.png
 tags:
   - posts
   - node-red
