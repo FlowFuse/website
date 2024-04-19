@@ -4,7 +4,7 @@ subtitle: Step-by-step Guide for Sending and Receiving Emails using Node-RED
 description: Learn how to send and receive emails using Node-RED, along with best practices for sending email notifications.
 date: 2024-04-19
 authors: ["sumit-shinde"]
-image: 
+image: /blog/2024/04/images/email_node-red.png
 tags:
    - posts
    - gmail
