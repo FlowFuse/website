@@ -6,9 +6,8 @@ date: 2024-04-11
 authors: ["sumit-shinde"]
 image: /blog/2024/04/images/telegram_node-red.png
 tags:
-  - posts
-  - node-red
-  - dashboard
+   - node-red
+   - post
 ---
 
 We started developing Dashboard 2.0 a few months ago to replace the outdated Node-RED Dashboard 1.0. Initially, our goal was simply to replicate the old features. But today, we're thrilled to introduce Dashboard 2.0, which exceeds our initial expectations. With its powerful features, not only does building dashboards become incredibly easy, but also enables the creation of applications that we use regularly.
