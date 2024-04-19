@@ -1,13 +1,14 @@
 ---
 title: How to Build An Application With Node-RED Dashboard 2.0
-subtitle: A step-by-step guide to building a personalized, secure, and fully functional application with Dashboard 2.0.
-description: Create custom applications effortlessly with Node-RED Dashboard 2.0. This step-by-step guide walks you through building personalized, secure, and fully functional apps.
+subtitle: A step-by-step guide to building a personalized, secure, and fully functional application with Dashboard 2.0.
+description: 
 date: 2024-04-11
 authors: ["sumit-shinde"]
-image: /blog/2024/04/images/telegram_node-red.png
+image: 
 tags:
-  - node-red
-  - post
+    - posts
+    - node-red
+    - dashboard
 ---
 
 We started developing Dashboard 2.0 a few months ago to replace the outdated Node-RED Dashboard 1.0. Initially, our goal was simply to replicate the old features. But it is way beyond our expectations. With its powerful features and customizable nature, not only does building dashboards become incredibly easy, but also enables the creation of applications that we use regularly.
