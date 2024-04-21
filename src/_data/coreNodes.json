@@ -1,49 +1,194 @@
 {
     "common": [
-        "20-inject",
-        "21-debug",
-        "24-complete",
-        "25-catch",
-        "25-status",
-        "60-link",
-        "90-comment",
-        "98-unknown"
+        {
+            "xpath": "inject",
+            "name": "Inject",
+            "file": "20-inject"
+        },
+        {
+            "xpath": "debug",
+            "name": "Debug",
+            "file": "21-debug"
+        },
+        {
+            "xpath": "complete",
+            "name": "Complete",
+            "file": "24-complete"
+        },
+        {
+            "xpath": "catch",
+            "name": "Catch",
+            "file": "25-catch"
+        },
+        {
+            "xpath": "status",
+            "name": "Status",
+            "file": "25-status"
+        },
+        {
+            "xpath": "link",
+            "name": "Link",
+            "file": "60-link"
+        },
+        {
+            "xpath": "comment",
+            "name": "Comment",
+            "file": "90-comment"
+        },
+        {
+            "xpath": "unknown",
+            "name": "Unknown",
+            "file": "98-unknown"
+        }
     ],
     "function": [
-        "10-function",
-        "10-switch",
-        "15-change",
-        "16-range",
-        "80-template",
-        "89-delay",
-        "89-trigger",
-        "90-exec",
-        "rbe"
+        {
+            "xpath": "function",
+            "name": "Function",
+            "file": "10-function"
+        },
+        {
+            "xpath": "switch",
+            "name": "Switch",
+            "file": "10-switch"
+        },
+        {
+            "xpath": "change",
+            "name": "Change",
+            "file": "15-change"
+        },
+        {
+            "xpath": "range",
+            "name": "Range",
+            "file": "16-range"
+        },
+        {
+            "xpath": "template",
+            "name": "Template",
+            "file": "80-template"
+        },
+        {
+            "xpath": "delay",
+            "name": "Delay",
+            "file": "89-delay"
+        },
+        {
+            "xpath": "trigger",
+            "name": "Trigger",
+            "file": "89-trigger"
+        },
+        {
+            "xpath": "exec",
+            "name": "Exec",
+            "file": "90-exec"
+        },
+        {
+            "xpath": "rbe",
+            "name": "Filter",
+            "file": "rbe"
+        }
     ],
     "network": [
-        "05-tls",
-        "06-httpproxy",
-        "10-mqtt",
-        "21-httpin",
-        "21-httprequest",
-        "22-websocket",
-        "31-tcpin",
-        "32-udp"
+        {
+            "xpath": "tls",
+            "name": "TLS",
+            "file": "05-tls"
+        },
+        {
+            "xpath": "http proxy",
+            "name": "HTTP Proxy",
+            "file": "06-httpproxy"
+        },
+        {
+            "xpath": "mqtt",
+            "name": "MQTT",
+            "file": "10-mqtt"
+        },
+        {
+            "xpath": "http in",
+            "name": "HTTP in",
+            "file": "21-httpin"
+        },
+        {
+            "xpath": "http request",
+            "name": "HTTP request",
+            "file": "21-httprequest"
+        },
+        {
+            "xpath": "websocket",
+            "name": "WebSocket",
+            "file": "22-websocket"
+        },
+        {
+            "xpath": "tcp in",
+            "name": "TCP in",
+            "file": "31-tcpin"
+        },
+        {
+            "xpath": "upd",
+            "name": "UDP",
+            "file": "32-udp"
+        }
     ],
     "parsers": [
-        "70-CSV",
-        "70-HTML",
-        "70-JSON",
-        "70-XML",
-        "70-YAML"
+        {
+            "xpath": "csv",
+            "name": "CSV",
+            "file": "70-CSV"
+        },
+        {
+            "xpath": "html",
+            "name": "HTML",
+            "file": "70-HTML"
+        },
+        {
+            "xpath": "json",
+            "name": "JSON",
+            "file": "70-JSON"
+        },
+        {
+            "xpath": "xml",
+            "name": "XML",
+            "file": "70-XML"
+        },
+        {
+            "xpath": "yaml",
+            "name": "YAML",
+            "file": "70-YAML"
+        }
     ],
     "sequence": [
-        "17-split",
-        "18-sort",
-        "19-batch"
+        {
+            "xpath": "split",
+            "name": "Split",
+            "file": "17-split"
+        },
+        {
+            "xpath": "sort",
+            "name": "Sort",
+            "file": "18-sort"
+        },
+        {
+            "xpath": "batch",
+            "name": "Batch",
+            "file": "19-batch"
+        },
+        {
+            "xpath": "join",
+            "name": "Join",
+            "file": "17-split"
+        }
     ],
     "storage": [
-        "10-file",
-        "23-watch"
+        {
+            "xpath": "file",
+            "name": "File",
+            "file": "10-file"
+        },
+        {
+            "xpath": "watch",
+            "name": "Watch",
+            "file": "23-watch"
+        }
     ]
 }

@@ -5,11 +5,9 @@ pagination:
     alias: node
     addAllPagesToCollections: true
 coreNodeCategory: "storage"
-permalink: "node-red/core-nodes/{{ node | coreNodeName }}/"
+permalink: "node-red/core-nodes/{{ node.name | lower | replace(\" \", \"\") }}/"
 eleventyComputed:
-  meta:
-    title: "{{ node | coreNodeName }}"
-  navTitle: "{{ node | coreNodeName }}"
+  navTitle: "{{ node.name }}"
   navGroup: "{{ coreNodeCategory }}"
 ---
 
