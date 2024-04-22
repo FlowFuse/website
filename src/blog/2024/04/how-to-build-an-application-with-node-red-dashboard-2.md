@@ -22,7 +22,6 @@ If you're new to Dashboard 2.0, refer to our blog post [Getting Started with Das
 
 The FlowFuse User Addon is a plugin developed for Dashboard 2.0, that levereges the FlowFuse API to access logged in user's information at Dashboard 2.0. For detailed information refer to the [Exploring the FlowFuse User Addon](/blog/2024/04/displaying-logged-in-users-on-dashboard/#exploring-the-flowfuse-user-addon) and make sure to install it.
 
-## Enabling FlowFuse user authentication
 
 Before you begin the application development process, please make sure that FlowFuse user authentication is enabled. This feature adds a layer of security to your application with a login page. By combining the FlowFuse user addon with user authentication, we gain access to the logged in user's data within our application. For more information on FlowFuse user authentication, refer to the [documentation](/docs/user/instance-settings/#flowfuse-user-authentication) and make sure that it is enabled.
 
