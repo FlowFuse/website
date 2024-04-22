@@ -16,7 +16,7 @@ Today, we are excited to officially announce FlowFuse Dedicated, a new way to us
 
 <!--more-->
 
-At FlowFuse, we cater to a diverse spectrum of clients, ranging from burgeoning startups to formidable global enterprises. It's clear that a one-size-fits-all approach to deployment doesn't align with the varied needs of our customer base. The stakes for compliance and security have never been higher. Even sectors not traditionally bound by stringent regulatory frameworks are finding compliance to be a critical factor impacting productivity and profitability.
+At FlowFuse, we cater to a diverse spectrum of clients, ranging from burgeoning startups to formidable global enterprises. It's clear that a one-size-fits-all approach to deployment doesn't align with the varied needs of our customer base. FlowFuse's product already has flexible deployment options, ranging from FlowFuse Cloud, to a cloud environment of your choosing, to your own hardware on-premise. Allowing our customers to achieve compliance even in the stringent regulatory frameworks. Even sectors not traditionally bound by stringent regulatory frameworks are finding compliance to be a critical factor impacting productivity and profitability.
 
 Here’s what sets FlowFuse Dedicated apart:
 
