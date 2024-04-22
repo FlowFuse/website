@@ -1384,9 +1384,7 @@ input[type="range"] {
     background-color: theme(colors.indigo.600);
     border-radius: 50%;
     border: solid 2px theme(colors.indigo.300);
-  
     /* box-shadow: -407px 0 0 400px theme(colors.gray.700); emove this line */
-    transition: .2s ease-in-out;
   }
   
   /* Thumb: Firefox */

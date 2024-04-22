@@ -152,7 +152,7 @@
         margin-right: auto;
     }
 
-    .contentAnnual .pricing-tiles {
+    .contentSelfHosted .pricing-tiles {
         grid-template-columns: 1fr 1fr;
     }
 
@@ -271,26 +271,21 @@
     width: 49%;
 }
 
-.slides .cloudText, 
-.slides .monthlyText {
+.slides .cloudText {
     color: theme(colors.indigo.400);
 }
 
-.ff-bg-light .slides .cloudText,
-.ff-bg-light .slides .monthlyText {
+.ff-bg-light .slides .cloudText, {
     color: theme(colors.indigo.300);
 }
 
 .slides .selfHostedText,
-.ff-bg-light .slides .selfHostedText,
-.slides .annualText,
-.ff-bg-light .slides .annualText {
+.ff-bg-light .slides .selfHostedText, {
     color: theme(colors.indigo.700);
 }
 
 /* contains switch buttons */
-.mainToggle,
-.billingToggle {
+.mainToggle {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -342,8 +337,7 @@
 }
 
 /* container */
-.divCloud, .divSelfHosted,
-.divAnnual, .divMonthly {
+.divCloud, .divSelfHosted{
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -351,22 +345,21 @@
 }
 
 /* words */
-.cloudText, .selfHostedText,
-.monthlyText, .annualText {
+.cloudText, .selfHostedText {
     font-size: 12px;
     font-weight: 600;
     transition-duration: 0.5s;
 }
 
-.cloudText, .monthlyText {
+.cloudText {
     color: theme(colors.indigo.700);
 }
 
-.ff-bg-dark .selfHostedText, .ff-bg-dark .annualText {
+.ff-bg-dark .selfHostedText {
     color: white;
 }
 
-.selfHostedText, .annualText {
+.selfHostedText {
     color: theme(colors.indigo.400);
 }
 
