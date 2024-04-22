@@ -11,7 +11,7 @@ tags:
     - dashboard
 ---
 
-We started developing Dashboard 2.0 a few months ago to replace the outdated Node-RED Dashboard 1.0. Initially, our goal was simply to replicate the old features. But it is way beyond our expectations. With its powerful features and customizable nature, not only does building dashboards become incredibly easy, but also enables the creation of advanced applications that we use regularly.
+We started developing Dashboard 2.0 a few months ago to replace the outdated Node-RED Dashboard 1.0. Initially, our goal was to replicate the old features and achieve feature parity. During the development Dashboard 2.0 has surpassed the deprecated Node-RED Dashboard, and it's now possible to build advanced applications. In this guide we'll build a Todo application to guide you through the features and explain how you can build rich and dynamic applications too.
 
 <!--more-->
 
