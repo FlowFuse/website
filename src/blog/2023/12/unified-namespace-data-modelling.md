@@ -1,7 +1,7 @@
 ---
 title: Data Modeling for your Unified Namespace
 subtitle: How to use FlowFuse as your Schema Registry?
-description: How to use FlowFuse as your Schema Registry?
+description: Explore how FlowFuse serves as your Schema Registry for Unified Namespace data modeling. Learn to establish connections, structure payloads, and seamlessly integrate.
 date: 2023-12-27
 authors: ["marian-demme"]
 image: /blog/2023/12/images/uns-data-modeling.png

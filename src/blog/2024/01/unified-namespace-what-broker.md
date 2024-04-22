@@ -1,7 +1,7 @@
 ---
 title:  Selecting a broker for your Unified Namespace
 subtitle: The broker is the data backbone for the unified namespace, which one is right for you?
-description: The broker is the data backbone for the unified namespace, which one is right for you?
+description: Discover how to choose the right broker for your Unified Namespace. Explore MQTT, Kafka, cloud options, and open-source solutions like Mosquitto and EMqX
 date: 2024-01-19
 authors: ["zeger-jan-van-de-weg"]
 image: /blog/2024/01/images/broker-for-uns.png

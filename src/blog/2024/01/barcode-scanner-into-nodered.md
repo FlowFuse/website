@@ -1,7 +1,7 @@
 ---
 title: How to connect a barcode scanner to your Node-RED application
 subtitle: A guide to connecting a barcode scanner to Node-RED.
-description: A guide to connecting a barcode scanner to Node-RED.
+description: Learn to seamlessly connect a barcode scanner to Node-RED for efficient data capture and automation
 date: 2024-01-24
 authors: ["grey-dziuba"]
 image: /blog/2024/01/images/barcode-scanner.png
@@ -9,6 +9,7 @@ tags:
     - posts
     - flowfuse
     - how-to
+    - barcode scanner
 ---
 
 Barcode scanners, functioning as Human Interface Devices (HID) similar to keyboards, offer versatile programming options.  Variations of barcode scanners can be seen used from anything from checkout counters, logistics, and to manufacturing erp systems. In our case, we kept it basic and we used one to trigger a Node-RED flow, keeping the process straightforward and efficient.  Don't let that limit your imagination though, with QR codes, you can store just about anything including recipes in a JSON structure.

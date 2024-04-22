@@ -1,7 +1,7 @@
 ---
 title: Modernize your legacy industrial data. Part 2.
-subtitle: A deeper dive with into making the most of legacy industrial data from the likes of Modbus and older, non IIoT protocols and putting it to work in an IIoT world.
-description: A deeper dive with into making the most of legacy industrial data from the likes of Modbus and older, non IIoT protocols and putting it to work in an IIoT world.
+subtitle: Explore strategies, challenges, and smart processing techniques for enhancing legacy industrial data utilization in the IIoT era with Node-RED.
+description: A deeper dive into making the most of legacy industrial data from the likes of Modbus and older, non IIoT protocols and putting it to work in an IIoT world.
 date: 2023-09-17
 authors: ["stephen-mclaughlin"]
 image: "/blog/2023/09/images/industrial-legacy-data-blog-image.png"
@@ -17,7 +17,7 @@ In this article, I will dive a little deeper into the topic and discuss some of 
 
 <!--more-->
 
-### Obtaining Industrial Data
+## Obtaining Industrial Data
 
 In order to convert the legacy data to a format more suited to IIoT we first need to _grab_ that data.
 
@@ -26,7 +26,7 @@ Node-RED has core nodes that can help you and many more contribution nodes exist
 But getting the data is just the beginning, it's the methods and considerations you need to make that can make the difference between success and failure. Read on...
 
 
-### Data consistency
+## Data consistency
 
 An often overlooked aspect of working with legacy industrial data is the consistency of the data being read. In the context of this article, consistency means that the multiple values that make up a related data set are read in a way that they are all valid to one another at the point in time it was read.
 
@@ -42,7 +42,7 @@ Let's take a look at a simple example. We have a process PLC recording productio
 
 In the above data sample, we can see the total production time is 30 seconds and the run time is 20 seconds. The expectation is that the Stoppage Time should be 10 seconds. However, as we can see, Stoppage Time in this sample is 11 seconds. That is because this data is not consistent.
 
-#### Why is the data inconsistent?
+### Why is the data inconsistent?
 
 The most common reason for the data inconsistency is that the data is being read from the PLC while the PLC is running. The data is changing as it is being read.
 
@@ -62,7 +62,7 @@ Yippie! We have the data, it works, we publish it to MQTT, job done. Right?
 
 Unfortunately, no. The data is inconsistent.
 
-#### So whats the big deal?
+### So whats the big deal?
 
 Inconsistent data is not useful data and errors can get compounded over time. This leads to bad decisions being made and a loss of confidence in the data. Ultimately, this leads to the data being ignored and the opportunities to make improvements are lost. Loss of improvements means loss of money!
 
@@ -75,7 +75,7 @@ Not only that, from a developer or maintainers perspective, it has many problems
 6. Slow - each read takes time
 7. Inefficient use of network bandwidth - each read requires a request and response packet
 
-#### How can we make the data consistent?
+### How can we make the data consistent?
 
 The most obvious solution is to stop the PLC before reading the data.
 However, I am faily certain your boss will not be super pleased with stopping the manufacturing process.
@@ -83,7 +83,7 @@ The next best thing is for the PLC to sample and store the data in an internal m
 
 The next best thing to do is to read relative data as quickly as possible and in one block.
 
-#### A quick side-bar (timing is ... everything)
+### A quick side-bar (timing is ... everything)
 
 In many protocols, including Modbus, data must be polled. Each poll, depending on many factors, can take a number of milliseconds.
 
@@ -98,7 +98,7 @@ _Image 3: A comparison of individual reads vs block reads_
 
 OK, back to the topic at hand.
 
-### Getting the data in a more consistent way
+## Getting the data in a more consistent way
 
 Here is the same example as above but this time we are reading the data in one go:
 
@@ -109,7 +109,7 @@ Note how much simpler this is? Not only that, it is easier to maintain, faster, 
 
 Great, lets move on.
 
-### Processing the data in readiness for IIoT: MQTT
+## Processing the data in readiness for IIoT: MQTT
 
 Now that we have good data, we need to process it in readiness for IIoT. In this example, we are going to publish the data to an MQTT broker as individual topics. This is a common approach as it allows the data to be easily consumed by other systems and applications. Using `node-red-contrib-buffer-parser` we can easily convert the data into more meaningful formats.
 
@@ -125,7 +125,7 @@ But lets be smarter about this. We know that the data is consistent and we know 
 _Image 6: block reads, smart processing, no-code solution_
 ![image showing 1 modbus poll with smart processing](images/industrial-legacy-data-pt2-1poll-extensible.gif)
 
-#### Wrap up
+## Wrap up
 
 I hope this article has given you some food for thought and some ideas on not only simplifying your journey to IIoT but also the pitfalls to avoid along the way.
 

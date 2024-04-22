@@ -1,13 +1,14 @@
 ---
 title: AI and ChatGPT - Revolutionizing the Manufacturing Industry
 subtitle: How AI and Conversational Technologies are Transforming Industrial Processes
-description: How AI and Conversational Technologies are Transforming Industrial Processes
+description: Explore how AI and ChatGPT revolutionize manufacturing with boosted efficiency, quality control, and workforce transformation.
 date: 2024-01-31
 authors: ["flowfuseteam"]
 image: /blog/2024/01/images/Futuristic factory with robots and AI technology, showing advanced machinery and computers integrated with ChatGPT for manufacturing processes.png
 tags:
     - posts
     - flowfuse
+    - ai
 ---
 
 The application of artificial intelligence (AI) in various industries, particularly in manufacturing, is a topic of growing interest. The evolution of technologies like ChatGPT is driving significant changes in this sector. For a more nuanced understanding, we reference four informative blog posts from our team members. The first post, ["AI Use Cases that are shaping the next manufacturing frontier"](/blog/2023/12/ai-use-cases/), offers an insightful overview of AI's role in diverse areas. Following this, ["ChatGPT AI Assistants with Node-RED"](/blog/2023/11/ai-assistant/) examines the specific impact of AI assistants. The third article, ["Node-Red Builder a ChatGPT GPT"](/blog/2023/11/chatgpt-gpt/), discusses the capabilities of generative pre-trained transformers like ChatGPT. Lastly, ["How ChatGPT improves Node-RED Developer Experience"](/blog/2023/09/chatgpt-for-node-red-developers/) explores ChatGPT's application in Node-Red development, an important aspect for many in manufacturing.

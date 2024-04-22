@@ -1,7 +1,7 @@
 ---
 title: Comparing Node-RED Dashboards Solutions
 subtitle: One of the most common features Node-RED users add to their flows is a dashboard, we compaure the 3 most popular options.
-description: One of the most common features Node-RED users add to their flows is a dashboard, we compaure the 3 most popular options.
+description: Explore a thorough comparison of Node-RED dashboard solutions, covering installation, UI elements, support, and future development plans.
 date: 2023-03-13
 authors: ["rob-marcer"]
 image: /images/blog/db-comparison.jpg

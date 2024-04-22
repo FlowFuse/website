@@ -1,7 +1,7 @@
 ---
 title: "Our Open Source offering is a tier, not our competition"
-subtitle: 
-description: Often our customers think we're competing against ourself, we're not
+subtitle: Discover the perspective on open source as a valuable tier, not competition.
+description: Gain insights into FlowFuse's approach to its open-source tier versus its paid offerings. Understand why the open-source model is considered a tier, not competition.
 date: 2023-08-18
 authors: ["zeger-jan-van-de-weg"]
 image: "/blog/2023/08/images/matt-hardy-waves.jpg"
