@@ -1,7 +1,7 @@
 ---
 title: How to Build An Application With Node-RED Dashboard 2.0
 subtitle: A step-by-step guide to building a personalized, secure, and fully functional application with Dashboard 2.0.
-description: Learn to build custom applications effortlessly with Node-RED Dashboard 2.0. This step-by-step guide walks you through building a personalized, secure, and fully functional app.
+description: Learn to build custom applications effortlessly with Node-RED Dashboard 2.0. This step-by-step guide walks you through building a personalized, secure, and fully functional application.
 date: 2024-04-11
 authors: ["sumit-shinde"]
 image: 
@@ -21,7 +21,7 @@ If you're new to Dashboard 2.0, refer to our blog post [Getting Started with Das
 
 ## Installing Flowfuse user addon
 
-The FlowFuse User Addon is a plugin developed for Dashboard 2.0, leveraging the FlowFuse API to access logged in user's information at Dashboard 2.0. For detailed information refer to the [Exploring the FlowFuse User Addon](/blog/2024/04/displaying-logged-in-users-on-dashboard/#exploring-the-flowfuse-user-addon) and make sure to install it.
+The FlowFuse User Addon is a plugin developed for Dashboard 2.0, that levereges the FlowFuse API to access logged in user's information at Dashboard 2.0. For detailed information refer to the [Exploring the FlowFuse User Addon](/blog/2024/04/displaying-logged-in-users-on-dashboard/#exploring-the-flowfuse-user-addon) and make sure to install it.
 
 ## Enabling FlowFuse user authentication
 
@@ -32,7 +32,7 @@ Before you begin the application development process, please make sure that Flow
 !["Screenshot of the task management system built with Node-RED Dashboard 2.0"](./images/building-an-application-with-dashboard-2-task-management-system.gif 
 "Screenshot of the task management system built with Node-RED Dashboard 2.0"){data-zoomable}
 
-Throughout this guide, we will be building a simple secure, and personalized Task management application that will allow users to create and view their tasks.
+Throughout this guide, we will be building a simple, secure, and personalized Task management application that will allow users to create and view their tasks.
 
 ### Building a Form to Submit Tasks
 
@@ -47,7 +47,7 @@ Throughout this guide, we will be building a simple secure, and personalized Tas
 
 ### Storing Tasks in the Global Context
 
-For this guide, we are storing our Tasks in Node-RED global context but you can store them in the database which will indeed make it easy to manage your task data.
+For this guide, we are storing our Tasks in Node-RED global context but storing them  in a database will make it easy to manage your task data.
 
 1. Drag a **function** node onto the canvas
 2. Paste the below code in the **function** node.
@@ -86,7 +86,7 @@ return msg;
 
 ### Retrieving and Filtering Tasks
 
-Now that we can store tasks along with the user details of who submitted them, we need to retrieve and filter them based on users, ensuring that users can only see their tasks and not others.
+Now that we can store tasks along with the user details of who submitted them, we need to retrieve and filter them based on users, ensuring that users can only see their tasks only and not others.
 
 1. Drag a **ui-event** widget onto the canvas and select **ui-base** for it. The **ui-event** will enable us to display updated tasks on the table without the need for polling, as it triggers when the page reloads or changes.
 2. Drag a **change** node onto the canvas and set `msg.payload` to `global.tasks`.
@@ -119,10 +119,10 @@ If you have experience with Node-RED Dashboard 1.0, you may recall that these cl
 
 ### Creating a table and displaying the task
 
-In this section, we will build an interactive table using **ui-template** and [vuetify component](https://vuetifyjs.com/en/components/all/). Vuetify offers a diverse array of components, all of which are compatible with our Node-RED Dashboard 2.0's ui-template widget. You can easily copy and paste them into the **ui-template** widget.
+In this section, we will build an interactive table using **ui-template** and [vuetify component](https://vuetifyjs.com/en/components/all/). Vuetify offers a wide range of components, all of which are compatible with our Node-RED Dashboard 2.0's ui-template widget. You can easily use them by just simply copying and pasting them into the **ui-template** widget.
 
 1. Drag an **ui-template** widget onto the canvas
-2. Create a new **ui-page** and **ui-group** for it. Below, I have provided a screenshot of the "new task" page configurations. You can replicate it if you want to align with the layout described in this guide, otherwise, it is optional.
+2. Create a new **ui-page** and **ui-group** for it. Below, I have provided a screenshot of the "new task" page configurations. Again You can replicate it if you want to align with the layout described in this guide, otherwise, it is optional.
 
 !["Screenshot displaying ui-template widget with code for building table for displaying task"](./images/building-an-application-with-dashboard-template-widget.png "Screenshot displaying ui-template widget with code for building table for displaying task"){data-zoomable}
 
@@ -216,7 +216,7 @@ Now, we're all set to add tasks. Navigate to the "New Task" page to add tasks. T
 
 ## Next step
 
-If you want to enhance this simple application or add more features, consider the following resources:
+If you want to enhance this simple application by adding more features, consider the following resources:
 
 - [Webinar](/webinars/2024/node-red-dashboard-multi-user/) - This webinar provides an in-depth discussion of the Personalised Multi-User Dashboards feature and offers guidance on how to get started with it.
 
