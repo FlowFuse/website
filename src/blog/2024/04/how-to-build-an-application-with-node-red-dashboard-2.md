@@ -15,7 +15,6 @@ We started developing Dashboard 2.0 a few months ago to replace the outdated Nod
 
 <!--more-->
 
-In this guide, we will demonstrate how you can build powerful, customizable, and secure applications with Node-RED Dashboard 2.0.
 
 If you're new to Dashboard 2.0, refer to our blog post [Getting Started with Dashboard 2.0](/blog/2024/03/dashboard-getting-started/) to install and get things started.
 
