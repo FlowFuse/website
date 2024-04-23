@@ -4,7 +4,8 @@ subtitle: Understanding Flow, Global, and Environment Variables in Node-RED.
 description: Understand Node-RED node, flow, global, and environment varriable. Learn to initiate, retrieve, and manage them effortlessly.
 date: 2024-04-08
 authors: ["sumit-shinde"]
-image: 
+image:
+tags:
   - posts
   - node-red 
   - environment
