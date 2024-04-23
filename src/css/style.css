@@ -958,12 +958,12 @@ h4:hover .header-anchor {
     }
 
     .ff-feature-table {
-        @apply max-w-screen-lg w-full md:px-9;
+        @apply sm:max-w-screen-lg w-full md:px-9;
         margin-top: 3rem;
         position: relative;
         color: theme(colors.gray.800);
         border-radius: 12px;
-        min-width: 610px;
+        min-width: 600px;
     }
 
     .ff-feature-table li .ff-icon {
@@ -986,7 +986,7 @@ h4:hover .header-anchor {
         display: grid;
         grid-template-columns: 270px 1fr 1fr 1fr;
         align-items: center;
-        @apply bg-indigo-50;
+        @apply bg-indigo-50/30;
     }
 
     .self-hosted.ff-feature-table-section li {
@@ -1016,7 +1016,7 @@ h4:hover .header-anchor {
     }
 
     .ff-feature-table-section li.ff-feature-row:nth-child(odd) {
-        @apply bg-indigo-50/50;
+        @apply bg-white;
     }
 
     .ff-feature-table-section li.ff-feature-row label {
@@ -1045,7 +1045,8 @@ h4:hover .header-anchor {
         height: 100%;   
         border-bottom: 0;
         border-radius: 12px 12px 0 0;
-        @apply flex items-center justify-center flex-col bg-indigo-50;
+        background: linear-gradient(theme(colors.indigo.50), theme(colors.white));
+        @apply flex items-center justify-center flex-col text-indigo-700;
     }
 
     .ff-feature-table-section li.ff-feature--column-header label.ff-blank {
@@ -1080,6 +1081,14 @@ h4:hover .header-anchor {
         justify-content: flex-end;
     }
 
+    .ff-feature-table-section li:not(.ff-feature--column-header):nth-child(even) label {
+        background-color: #FAFBFF;
+    }
+
+    .ff-feature-table-section li:not(.ff-feature--column-header):nth-child(odd) label {
+        @apply bg-white;
+    }
+
     .ff-feature-table-section li:not(.ff-feature--column-header) label .ff-icon {
         margin-left: 4px;
         width: 20px;
@@ -1104,12 +1113,11 @@ h4:hover .header-anchor {
     }
 
     .ff-feature--header {
-        background-color: theme(colors.gray.700) !important;
-        color: white;
+        background-color: theme(colors.indigo.50) !important;
+        color: theme(colors.indigo.700);
         /* padding: 12px 24px; */
         width: 100%;
         text-align: left;
-        font-weight: bold;
         z-index: 1;
     }
     

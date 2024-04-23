@@ -275,12 +275,11 @@
     color: theme(colors.indigo.400);
 }
 
-.ff-bg-light .slides .cloudText, {
+.ff-bg-light .slides .cloudText {
     color: theme(colors.indigo.300);
 }
 
-.slides .selfHostedText,
-.ff-bg-light .slides .selfHostedText, {
+.slides .selfHostedText {
     color: theme(colors.indigo.700);
 }
 
