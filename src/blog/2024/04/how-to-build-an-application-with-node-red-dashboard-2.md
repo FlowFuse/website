@@ -11,7 +11,7 @@ tags:
     - dashboard
 ---
 
-We started developing Dashboard 2.0 a few months ago to replace the outdated Node-RED Dashboard 1.0. Initially, our goal was to replicate the old features and achieve feature parity. During the development Dashboard 2.0 has surpassed the deprecated Node-RED Dashboard, and it's now possible to build advanced applications. In this guide we'll build a Todo application to guide you through the features and explain how you can build rich and dynamic applications too.
+In this guide we'll build a Todo application to guide you through the features and explain how you can build rich and dynamic applications too. It shows many of the features that make Dashboard 2.0 great, and why you should use it over the deprecated node-red-dashboard.
 
 <!--more-->
 
@@ -50,7 +50,7 @@ For this guide, we are storing our Tasks in Node-RED global context but storing 
 1. Drag a **function** node onto the canvas
 2. Paste the below code in the **function** node.
 
-```
+```javascript
 // Retrieve the existing tasks from the global context or initialize an empty array if none exists
 
 let tasks = global.get('tasks') || [];
@@ -93,7 +93,7 @@ Now that we can store tasks along with the user details of who submitted them, w
 
 3. Drag a **function** node onto the canvas and paste the below code into it.
 
-```
+```javascript
 // Filter the payload array of tasks to include only those tasks associated with the currently logged in user.
 
 msg.payload = msg.payload.filter((task) => task.user.userId === msg._client.user.userId);
@@ -126,7 +126,7 @@ In this section, we will build an interactive table using **ui-template** and [v
 
 3. Paste the below code into the widget, If you're new to Vue.js, rest assured I've included helpful comments for clarity.
 
-```
+```html
 ` <template>
  <!-- Input field for searching tasks -->
  <v-text-field v-model="search" label="Search" prepend-inner-icon="mdi-magnify" single-line variant="outlined"
