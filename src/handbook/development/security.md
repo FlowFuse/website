@@ -93,6 +93,13 @@ definitive and each reported bug will be considered on its own merits.
 
  - Exposure of any integer resource IDs (primary keys in our database)
 
+### Ineligible vulnerability types
+
+The following types of vulnerability are not eligible for a reward.
+
+ - **Admin-initiated Stored XSS / HTML Injection** - FlowFuse administrators are considered trusted users on the system. If an issue is only exploitable by administrators, then it is not eligible.
+ - **Rate-limiting** - We apply rate limiting across the whole FlowFuse platform API, with different limits applied based on the context of the API. We keep the limits under review to balance security and convenience. If an issue relates to rate-limiting, but is demonstrably within our configure rate-limits, then it will not be eligible.
+
 ### Payments
 
 If a decision is made to reward a disclosure based on the criteria above you will be notified via the email used to submit the disclosure. If you have sent multiple reports we may choose to produce a combined response rather than reply to each email individually.

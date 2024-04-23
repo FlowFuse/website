@@ -5,111 +5,110 @@
         rows: [{
             id: "teams",
             label: "Number of Teams",
-            values: ['5', 'Unlimited', 'Unlimited'],
+            values: ['5', 'Unlimited'],
             info: "<p>FlowFuse allows multiple team members to collaborate on the same Node-RED flows.</p>"
         }, {
             id: "team-members",
             label: "Team Members",
-            values: ['5', 'Unlimited', 'Unlimited'],
+            values: ['5', 'Unlimited'],
             info: "<p>FlowFuse allows multiple team members to collaborate on the same Node-RED flows.</p>"
         }, {
             id: "nodered-instances",
             label: "Number of Node-RED instances",
-            values: ['5', 'Licensed amount', 'Licensed amount'],
+            values: ['5', 'Licensed amount'],
             info: "<p>Number of Node-RED runtimes, either as hosted instances or as devices</p>"
         }, {
             id: "nr-hosting",
             label: "Node-RED Hosting",
-            values: ['check', 'check', 'check'],
+            values: ['check', 'check'],
             info: "<p>FlowFuse hosts Node-RED instances.</p>"
         }, {
             id: "audit-log",
             label: "Audit Log",
-            values: ['check', 'check', 'check'],
+            values: ['check', 'check'],
             info: "<p>Keep track of everything going on in your Node-RED instances and FlowFuse.</p><p>Audit Logs provide details on what actions have taken place, when they happened, and who did them.</p>"
         }, {
             id: "device-mgmt",
             label: "Device Management",
-            values: ['check', 'check', 'check'],
+            values: ['check', 'check'],
             info: "<p>Connect to edge devices to quickly assess and update logic. Debug one device and roll out improvements to your fleet in minutes. All securely without requiring full device access for your whole organisation.</p>"
         }, { 
             id: "rbac",
             label: "Role-Based Access Control",
-            values: ['check', 'check', 'check'],
+            values: ['check', 'check'],
             info: "<p>FlowFuse's intuitive team management tooling makes it easy for you to control whom has access to what.</p>"
         }, { 
             id: "dashboard",
             label: "Node-RED Dashboard",
-            values: ['check', 'check', 'check'],
+            values: ['check', 'check'],
             info: "<p>Visualize your data with the powerful and intuitive <a href=\"https://dashboard.flowfuse.com\" target=\"blank\">Node-RED Dashboard</a></p>"
         }, {
             id: "pipelines",
             label: "DevOps Pipelines",
-            values: [null, 'check', 'check'],
+            values: [null, 'check'],
             info: "<p>DevOps pipelines allows for you to setup different environments for development, testing and production Node-RED instances.</p>"
         }, {
             id: "security",
             label: "Endpoint Security",
             values: [
                 'None<br>HTTP Basic Auth',
-                'None<br>HTTP Basic Auth<br>FlowFuse Authentication',
                 'None<br>HTTP Basic Auth<br>FlowFuse Authentication'
                 ],
             info: "<p>Use FlowFuse credentials to secure HTTP endpoints</p>"
          }, { 
             id: "project-nodes",
             label: "Seamless Data Stream",
-            values: [null, 'check', 'check'],
+            values: [null, 'check'],
             info: "<p><a href=\"https://github.com/FlowFuse/nr-project-nodes\" target=\"blank\">FlowFuse Project Nodes</a> enable the passing of data and messages between your Node-RED projects, included with all FlowFuse Projects by default.</p>"
         }, {
             id: "team-library",
             label: "Team Library",
-            values: [null, 'check', 'check'],
+            values: [null, 'check'],
             info: "<p>Setup standard nodes and flows that can be shared with all team members.</p>"
          }, {
             id: "edge-development",
             label: "Edge Development",
-            values: [null, 'check', 'check'],
+            values: [null, 'check'],
             info: "<p>Connect to a edge device and develop your flows.</p>"
         },  { 
             id: "blueprints",
             label: "Access to Blueprints",
-            values: [null, 'check', 'check'],
+            values: [null, 'check'],
             info: "<p><a href=\"https://flowfuse.com/blog/2023/10/blueprints/\" target=\"blank\">FlowFuse's Blueprints</a> simplify Node-RED deployments by offering pre-built, customizable flows for specific use cases.</p>"
         },  {
             id: "certified-nodes",
             label: "Certified Nodes",
-            values: [null, 'check', 'check'],
+            values: [null, 'check'],
             info: "<p>FlowFuse Certified Nodes a selection of certfied Node-RED nodes, enhancing efficiency and security.</p>"
         }, {
             id: "multi-user-dashboard",
             label: "Personalised Multi-user Dashboards",
-            values: [null, 'check', 'check'],
+            values: [null, 'check'],
             info: "<p>Personalised Multi-user Dashboard allow you to build applications that provide unique data to each user <a href=\"https://flowfuse.com/blog/2024/01/dashboard-2-multi-user\" target=\"blank\">Learn more</a></p>"
         }, {
             id: "instance-monitoring",
             label: "Instance Monitoring",
-            values: [null, 'check', 'check'],
+            values: [null, 'check'],
             info: "<p>You can enable alerts to be sent to you via email. <a href=\"https://flowfuse.com/docs/user/instance-settings/#alerts\" target=\"blank\">Learn more</a></p>"
         }, { 
             id: "2fa",
             label: "Two-factor authentication",
-            values: [null, null, 'check'],
+            values: [null, 'check'],
             info: "<p><a href=\"https://flowfuse.com/docs/user/user-settings/#two-factor-authentication\" target=\"blank\">Two-factor authentication</a> adds an extra layer of security to your account.</p>"
         }, {
             id: "device-groups",
             label: "Device Group Management",
-            values: [null, null, 'check'],
+            values: [null, 'check'],
             info: "<p>Device Groups enables users to logically group their devices assigned to an application. Additionally, Device Groups can be integrated into the DevOps Pipeline.</p>"
         }, {
             id: "sso",
             label: "Single Sign-On (SSO)",
-            values: [null, null, 'check'],
+            values: [null, 'check'],
             info: "<p>FlowFuse can be configured to run with your own Single Sign-On (SSO) provider. Allow users to access FlowFuse with a single set of login credentials, improving security, user experience, and save them time.</p>"
         }, {
             id: "high-availibility",
             label: "High Availibility",
-            values: [null, null, 'check'],
+            values: [null, 'check'],
             info: "<p>Leverage horizontal scaling for reliable and scalible processing of your data through Node-RED.</p>"
         }]
     }, {
@@ -117,22 +116,22 @@
         hosting: "self-hosted",
         rows: [{
             label: "FlowFuse Support",
-            values: ['<a href="https://discourse.nodered.org/c/vendors/flowfuse/24/">Community Forum</a>', 'Next business day', '4 hours']
+            values: ['<a href="https://discourse.nodered.org/c/vendors/flowfuse/24/">Community Forum</a>', '4 hours']
         }, {
             label: "Node-RED Support",
-            values: ['<a href="https://discourse.nodered.org/">Community Forum</a>', 'Next business day', '4 hours']
+            values: ['<a href="https://discourse.nodered.org/">Community Forum</a>', '4 hours']
         },
         {
             label: "Training",
-            values: [null, 'check', 'check'],
-            info: "<p>Expert training session in both Node-RED and FlowFuse to ensure your whole team gets the most out of it.</p>"
+            values: [null, 'check'],
+            info: "<p>Expert training on FlowFuse and Node-RED migration to ensure your whole team is able to hit the ground running.</p>"
         }]
     }, {
         label: "Subscription",
         hosting: "self-hosted",
         rows: [{
             label: "Price",
-            values: ['Free', '$25/instance/month', 'Contact Us']
+            values: ['Free', 'Contact Us']
         }],
         buttons: [{
             cta: "INSTALL NOW",
@@ -142,10 +141,6 @@
             cta: "Request a Quote",
             url: "/pricing/request-quote/",
             onclick: "capture('cta-request-quote', {'position': 'secondary'}, {'plan': 'sh-team'})"
-        }, {
-            cta: "BOOK A DEMO",
-            url: "/book-demo/",
-            onclick: "capture('cta-book-demo', {'position': 'secondary'}, {'plan': 'sh-team'})"
         }]
     }]
 %}

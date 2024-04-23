@@ -1,7 +1,7 @@
 ---
 title: Terminology Changes
 subtitle: Applications, Instances & Devices - the new way forward for FlowFuse
-description: Applications, Instances & Devices - the new way forward for FlowFuse
+description: "FlowFuse introduces new terminology: Applications, Instances & Devices for better organization and management."
 date: 2023-03-16 14:00:00.0
 authors: ["joe-pavitt"]
 image: /blog/2023/03/images/concept-changes.png

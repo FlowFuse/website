@@ -1,7 +1,7 @@
 ---
 title: Step-by-Step Guide to Deploying Node-RED with FlowFuse in balenaCloud
 subtitle: Fleet management made easier with FlowFuse and balena.
-description: Fleet management made easier with FlowFuse and balena.
+description: Deploy Node-RED with FlowFuse on balenaCloud effortlessly with our step-by-step guide. Simplify fleet management and enhance data processing capabilities.
 date: 2024-01-30
 authors: ["grey-dziuba"]
 image: blog/2024/01/images/balena-and-flowfuse.png

@@ -1,12 +1,13 @@
 ---
 title: Beyond Automation - AI Use Cases that are shaping the next manufacturing frontier
 subtitle: In which AI-powered capabilities should one invest to bring about transformative changes in the manufacturing environment?
-description: In which AI-powered capabilities should one invest to bring about transformative changes in the manufacturing environment?
+description: Discover how AI is revolutionizing manufacturing with citizen development, demand forecasting, and predictive maintenance
 date: 2023-12-04
 authors: ["marian-demme"]
 image: "/blog/2023/12/images/beyond-automation.png"
 tags:
     - posts
+    - ai 
 ---
 Are we standing on the brink of a Fifth Industrial Revolution? The manufacturing industry has been in a state of flux for some time, with the rise of automation and digitization transforming the way factories operate. But today, we are witnessing something even more profound: AI is pushing manufacturing to a whole new level. Some have even referred to it as “the fifth industrial revolution” due to its potential for disruption.
 

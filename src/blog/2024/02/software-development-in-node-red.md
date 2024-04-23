@@ -1,7 +1,7 @@
 ---
 title: Bringing Software Development practices to Node-RED
 subtitle: Applying lessons from traditional development to the low-code space.
-description: Applying lessons from traditional development to the low-code space.
+description: Discover how software development practices enhance Node-RED workflows. Learn about linting, debugging, testing, and more.
 date: 2024-02-06
 authors: ["nick-oleary"]
 image: /blog/2024/02/images/software-development-practices-to-node-red.png

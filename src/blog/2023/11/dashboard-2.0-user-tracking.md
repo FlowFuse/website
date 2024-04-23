@@ -1,7 +1,7 @@
 ---
 title: "Tracking Who Has Opened a Dashboard"
 subtitle: "Using FlowFuse Authentication Audit Dashboard v2 Access"
-description: "Using FlowFuse Authentication Audit Dashboard v2 Access"
+description: Learn how to track user visits to your Node-RED Dashboard v2 using FlowFuse Authentication. Secure access and identify users accessing your dashboard with this implementation. 
 date: 2023-11-13
 authors: ["ben-hardill"]
 image: "/blog/2023/11/images/dashboard-user-flow.png"

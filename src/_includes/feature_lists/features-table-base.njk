@@ -1,21 +1,23 @@
 <div class="ff-feature-table m-auto">
-    <ul class="ff-feature-table-section sticky top-0 z-10">
+    <ul class="{{ sections[0].hosting }} ff-feature-table-section sticky top-0 z-10">
         <li class="ff-feature--column-header">
             <span class="sticky left-0 h-full"></span>
+            {% if sections[0].hosting == "cloud" %}
             <label class="mr-2">
                 <div>Starter</div>
             </label>
             <label>Team</label>
+            {% else %}
+            <label>Starter</label>
+            {% endif %}
             <label class="ml-2">Enterprise</label>
         </li>
     </ul>
     
     {% for section in sections %}
-    <ul class="ff-feature-table-section">
-
+    <ul class="{{ section.hosting }} ff-feature-table-section">
         <li class="ff-feature--header sticky top-[44px]">
             <span style="padding-top: 12px; padding-bottom: 12px;" class="sticky left-0 h-full">{{ section.label }}</span>
-            <span></span>
             <span></span>
             <span></span>
         </li>
@@ -50,7 +52,7 @@
         {% endfor %}
     </ul>
     {% endfor %}
-    <ul class="ff-feature-table-section">
+    <ul class="{{ sections[0].hosting }} ff-feature-table-section">
         <li class="ff-feature--column-buttons mt-6 h-10 gap-x-3">
             <span class="sticky left-0 h-full z-10"></span>
             {% for section in sections %}

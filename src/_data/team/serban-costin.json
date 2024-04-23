@@ -1,0 +1,14 @@
+{
+    "order": 16,
+    "name": "Serban Costin",
+    "title": "Senior Front End Developer",
+    "github": "cstns",
+    "linkedin": "serban-costin-32a07894",
+    "country": "RO",
+    "headshot": "serban.png",
+    "facts": [
+      "IT enthusiast and allround tinkerer with a keen eye for UX",
+      "Built his own bare metal server just for giggles",
+      "Snowboarder, surfer, mountain hiker, overlander, wannabe fisherman, amateur sailor, part time cook, dog owner"
+    ]
+}

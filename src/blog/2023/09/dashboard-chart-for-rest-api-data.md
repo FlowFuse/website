@@ -1,7 +1,7 @@
 ---
 title: Charting REST API Data in a Dashboard
 subtitle: Within a couple of minutes you'll learn how to request data from a REST endpoint and build a chart to display data points
-description: Within a couple of minutes you'll learn how to request data from a REST endpoint and build a chart to display data points
+description: Explore step-by-step instructions on fetching data from a REST API and crafting a dynamic dashboard chart effortlessly.
 authors: ["zeger-jan-van-de-weg"]
 image: blog/2023/09/images/tile-restapi-dashboard.png
 date: 2023-09-20
@@ -10,6 +10,7 @@ tags:
     - how-to
     - node-red
     - dashboard
+    - rest api
 ---
 
 There are many different ways to get data for a Node-RED dashboard. One common
