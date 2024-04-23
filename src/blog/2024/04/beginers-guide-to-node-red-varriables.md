@@ -6,16 +6,16 @@ date: 2024-04-08
 authors: ["sumit-shinde"]
 image:
 tags:
-  - posts
-  - node-red 
-  - environment
-  - global
-  - flow
-  - context
-
+   - posts
+   - node-red
+   - variables
+   - global
+   - context
+   - flow
+   - environment
 ---
 
-Node-RED is super easy and doesn't require much coding knowledge, which is why lots of people love it! Even though Node-RED is straightforward, some terms, like "global," "flow," and "environment" variables, might seem puzzling at first. However, many people have realized that these concepts are quite easy to grasp after reading about them or simply participating in Node-RED forums. While it may take some time. 
+Node-RED is super easy and doesn't require much coding knowledge, which is why many people love it! Even though Node-RED is straightforward, some terms, like "global," "flow," and "environment" variables, might seem puzzling at first. However, many people have realized these concepts are quite easy to grasp after reading about them or simply participating in Node-RED forums. In contrast, it may take some time. 
 
 <!--more-->
 
