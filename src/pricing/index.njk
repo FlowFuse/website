@@ -90,6 +90,7 @@ hubspot:
                                         <li>Device management</li>
                                         <li>DevOps Pipelines</li>
                                         <li>Team collaboration</li>
+                                        <li>Commited SLA: 99.5&#37;</li>
                                     </ul>
                                 </div>
                             </div>
@@ -143,7 +144,7 @@ hubspot:
                         </div>
                     </div>
                     <!-- Enterprise -->
-                    {% macro enterprise(id_suffix) %}
+                    {% macro enterprise(id_suffix, show_sla=true) %}
                     <div class="pricing-tile md:h-full">
                         <div class="pricing-tile-background pb-6 md:grid flex-col">
                             <div>
@@ -163,6 +164,9 @@ hubspot:
                                         <li>High availability</li>
                                         <li>Single Sign-On</li>
                                         <li>Enterprise Support</li>
+                                        {% if show_sla %}
+                                        <li>Commited SLA: up to 99.9&#37;</li>
+                                        {% endif %}
                                     </ul>
                                 </div>
                             </div>
@@ -245,7 +249,7 @@ hubspot:
                     </div>
                     <!-- Enterprise -->
                     <div class="pricing-tile md:h-full">
-                        {{ enterprise("2") }}
+                        {{ enterprise("2", false) }}
                     </div>
                 </div>
             </div>
