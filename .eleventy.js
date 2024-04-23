@@ -87,9 +87,8 @@ module.exports = function(eleventyConfig) {
         return `<span class="ff-tooltip" data-tooltip="${text}">${content}</span><span></span>`
     });
 
-    eleventyConfig.addFilter("coreNodeName", (name) => { return name.split("-").at(-1).toLowerCase() })
-    eleventyConfig.addAsyncShortcode("coreNodeDoc", async function (category, name) {
-        return await coreNodeDoc(category, name)
+    eleventyConfig.addAsyncShortcode("coreNodeDoc", async function (category, node) {
+        return await coreNodeDoc(category, node)
     });
 
     eleventyConfig.addFilter("filterNodeCategory", function(nodes, category) {

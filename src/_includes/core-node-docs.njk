@@ -1,6 +1,5 @@
-{% set nodeName = node | coreNodeName %}
-{% set templateFile = "src/_includes/core-nodes/" + nodeName + "-use-case.md" %}
-<h1>{{ nodeName | title }}</h1>
+{% set templateFile = "src/_includes/core-nodes/" + node.name + "-use-case.md" %}
+<h1>{{ node.name }}</h1>
 
 {% if templateFile | templateExists %}
   {% renderFile templateFile %}

@@ -23,7 +23,7 @@
         <ul class="handbook-nav-nested">
             {% for entry in group.children %}
             <li class="{% if entry.url === page.url %}active{% endif %}">
-                <a href="{{entry.url}}">
+                <a href="{{entry.url | lower | replace(" ", "") }}">
                     {{ entry.name }}
                 </a>
                 {% if entry.children %}
