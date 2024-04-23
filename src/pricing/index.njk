@@ -7,8 +7,8 @@ meta:
     keywords: FlowFuse pricing, Cost, Plans, Features, Cloud, Self-hosted
 hubspot:
     script: "hubspot/hs-form.njk"
-    formId: d43ab79b-d075-4b63-ba5e-bf971ca0b86e
-    cta: "cta-contact-us"
+    formId: 41e858e1-6756-45be-9082-3980237fa229
+    cta: "cta-request-trial-license"
     reference: "pricing"
 ---
 
@@ -138,7 +138,7 @@ hubspot:
                             </div>
                             <a class="md:self-end ff-btn ff-btn--primary uppercase align-baseline w-full"
                                 href="/book-demo/"
-                                onclick="capture('cta-book-demo', {'position': 'primary'}, {'plan': 'sh-team'})">BOOK A
+                                onclick="capture('cta-book-demo', {'position': 'primary'}, {'plan': 'team'})">BOOK A
                                 DEMO</a>
                         </div>
                     </div>
@@ -205,9 +205,8 @@ hubspot:
                                 </div>
                             </div>
                             <a class="md:self-end ff-btn ff-btn--primary uppercase align-baseline w-full"
-                                href='#contact-us'
-                                onclick="scrollToAnchor(event, 'contact-us'), capture('cta-contact-us', {'position': 'primary'}, {'plan': 'sh-enterprise'})">CONTACT
-                                US</a>
+                                href='/pricing/request-quote/'
+                                onclick="scrollToAnchor(event, 'contact-us'), capture('cta-request-quote', {'position': 'primary'}, {'plan': 'enterprise'})">Request a Quote</a>
                         </div>
                     </div>
                     {% endmacro %}
@@ -241,8 +240,7 @@ hubspot:
                                 <h2 class="self-end">Free</h2>
                             </div>
                             <a class="md:self-end ff-btn ff-btn--primary uppercase align-baseline w-full"
-                            href="/docs/install/introduction/" onclick="capture('cta-install', {'position': 'primary'}, {'plan': 'sh-starter'})">TRY
-                                FOR FREE</a>
+                            href="/docs/install/introduction/" onclick="capture('cta-install', {'position': 'primary'}, {'plan': 'sh-starter'})">INSTALL NOW</a>
                         </div>
                     </div>
                     <!-- Enterprise -->
@@ -305,15 +303,15 @@ hubspot:
 
     </div>
 </div>
-<div id="contact-us" class="w-full bg-gray-50 mt-16 pt-0">
+<div id="contact-us" class="contentSelfHosted w-full bg-gray-50 mt-16 pt-0">
     <div class="w-full bg-gray-50 pb-12">
         <div class="container max-w-5xl m-auto grid grid-cols-1 md:grid-cols-2 px-6 pt-16 gap-x-16 gap-y-6">
             <div>
-                <h4 class="w-full text-center md:text-left">
-                    Contact Us
-                </h4>
+                <h3 class="w-full text-center md:text-left">
+                    Request a trial license
+                </h3>
                 <p>
-                    Excited to explore FlowFuse Enterprise together? Share your info and we'll get in touch.
+                    Unlock the complete potential of FlowFuse with a complimentary 30-day Enterprise license. This trial gives you the chance to explore all the features and functionalities of FlowFuse in your own environment. To start your trial, just fill out the form.
                 </p>
             </div>
             {% include hubspot.script %}
