@@ -5,6 +5,13 @@ sitemapPriority: 0.90
 meta:
     description: Discover the pricing options for FlowFuse, featuring Starter, Team, and Enterprise plans. Benefit from volume discounts on Team and Enterprise plans. Get started with a 14-day trial period for the Starter plan.
     keywords: FlowFuse pricing, Cost, Plans, Features, Cloud, Self-hosted
+    faq:
+        - question: "What is Node-RED and how does it work?"
+          answer: >
+            Node-RED is a low-code programming environment that allows developers to connect a wide variety of endpoints, such as industrial PLCs, APIs, databases, enterprise applications and online services. Users of Node-RED visually drag ‘nodes’ from a palette that represent the end points and then connect them together into flows to accomplish the desired task. Node-RED applications are accessible via a web browser.
+        - question: "How do I deploy Node-RED online or in the Cloud?"
+          answer: >
+            <a href='https://app.flowfuse.com/account/create/'>FlowFuse Cloud</a> is a hosted Node-RED service that developers can use to access Node-RED online. This makes it much quicker to get started using Node-RED since you don't need to install it locally.
 hubspot:
     script: "hubspot/hs-form.njk"
     formId: 41e858e1-6756-45be-9082-3980237fa229
@@ -321,7 +328,9 @@ hubspot:
                     Request a trial license
                 </h3>
                 <p>
-                    Unlock the complete potential of FlowFuse with a complimentary 30-day Enterprise license. This trial gives you the chance to explore all the features and functionalities of FlowFuse in your own environment. To start your trial, just fill out the form.
+                    Unlock the complete potential of FlowFuse with a complimentary 30-day Enterprise license. This trial
+                    gives you the chance to explore all the features and functionalities of FlowFuse in your own
+                    environment. To start your trial, just fill out the form.
                 </p>
             </div>
             {% include hubspot.script %}
@@ -329,6 +338,34 @@ hubspot:
     </div>
 </div>
 
+<!-- Frequently Asked Questions -->
+<div class="w-full px-6 py-16">
+    <div class="container m-auto sm:max-w-screen-lg md:px-9">
+        <h2 class="text-center">Frequently Asked <span class="text-indigo-600">Questions</span></h2>
+        <label class="m-auto block max-w-lg md:max-w-none text-center">If you have any questions not addressed here, don't hesitate to contact us through our <a href="/contact-us">Contact Us</a> page</label>
+        <div class="mt-12 m-auto w-full ff-prose">
+            <div class="prose max-w-none">
+                {% for faq in meta.faq %}
+                <div class="w-full {% if not loop.last %}border-b{% endif %} py-4">
+                    <h5 class="question flex flex-row justify-between items-center w-full m-0 gap-6 cursor-pointer"
+                        id="question-{{ loop.index }}">
+                        <span>{{ faq.question }}</span>
+                        <div class="chevron transition-transform ease-in-out duration-300"
+                            id="chevron-{{ loop.index }}">
+                            {% include "components/icons/chevron-down.svg" %}
+                        </div>
+                    </h5>
+                    <div class="answer px-6 mt-6 hidden" id="answer-{{ loop.index }}">
+                        <p>{{ faq.answer | safe }}</p>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+
+{% include "accordion.njk" %}
 <!-- Scroll to anchor -->
 <script>
     function scrollToAnchor(event, anchorId) {
