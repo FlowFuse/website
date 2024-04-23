@@ -69,7 +69,7 @@ Having a separate server for webhooks is crucial as it will receive data from mu
 
 !["Screenshot displaying webhook http-in nodes configuration"](./images/using-webhook-with-node-red-http-in-node-endpoint-for-receiving-data-from-server-2.png "Screenshot displaying webhook http-in nodes configuration"){data-zoomable}
 
-- Drag an **http request** node onto the canvas. Configure the method as POST and set the URL to `https://<your-instance-name>.flowfuse.cloud/schedule-maintenance`, replace <your-instance-name> with your actual name of the instance. **/schedule-maintenance** will be the endpoint for posting requests to the maintenance monitoring system provided by Server 3. 
+- Drag an **http request** node onto the canvas. Configure the method as POST and set the URL to `https://<your-instance-name-in-which-server-3-running>.flowfuse.cloud/schedule-maintenance`, replace <your-instance-name> with your actual name of the instance. **/schedule-maintenance** will be the endpoint for posting requests to the maintenance monitoring system provided by Server 3. 
 
 !["Screenshot displaying http request nodes configuration for sending post request to server 3"](./images/using-webhook-with-node-red-request-node-sending-request-to-server3.png "Screenshot displaying http request nodes configuration for sending post request to server 3"){data-zoomable}
 
@@ -87,16 +87,24 @@ While writing this blog, I connected my DHT11 sensor to my Raspberry Pi 4, and I
 4. Search for `node-red-contrib-dht-sensor`.
 5. Click "Install"
 
-### Reading sensor data
+### Reading and formating sensor data
 
 Before proceeding with this step, it is necessary to run Node-RED on your Raspberry Pi as a superuser and ensure that the DHT11 sensor is correctly connected with wires. Also, make sure to install the [BCM2835](https://www.airspayce.com/mikem/bcm2835/).
 
 1. Drag an **inject** node onto the canvas and set the interval to your preference so that it triggers readings after a specific interval of time.
-2. Drag an **rpi-dht11** sensor node onto the canvas.
+
+!["Screenshot displaying the rpi-dht22 node's configuration for reading data from dht 11 sensor"](./images/using-webhook-with-node-red-dht-sensor-node.png "Screenshot displaying the rpi-dht22 node's configuration for reading data from dht 11 sensor"){data-zoomable}
+
+2. Drag an **rpi-dht22** sensor node onto the canvas (This node will return the object containing humidity, payload etc where payload is temperature).
 3. Select the sensor model. Since I am using the DHT11 sensor, I will select "DHT11."
 4. Choose the pin numbering as **BCM GPIO**.
 5. Select the GPIO pin to which your sensor's data output is connected.
-6. Connect the **inject** node's output to the **rpi-dht11** node's input.
+6. Drag the **change** node onto canvas.
+7. Set `msg.payload` to `{"Temperature":$number(payload),"name":topic}` as JSON expression.
+
+!["Screenshot of the change node formating sensor data"](./images/using-webhook-with-node-red-change-node-formating-sensor-data.png "Screenshot of the change node formating sensor data"){data-zoomable}
+
+6. Connect the **inject** node's output to the **rpi-dht22** node's input and **rpi-dht22** node's output to **change** node's input.
 
 ## Monitoring Temperature ( Server 1 )
 
@@ -104,11 +112,11 @@ Before proceeding with this step, it is necessary to run Node-RED on your Raspbe
 
 !["Screenshot displaying the switch node with conditions checking whether the temperature is normal or not"](./images/using-webhook-with-node-red-switch-node.png "Screenshot displaying the switch node with conditions checking whether the temperature is normal or not"){data-zoomable}
 
-2. Drag an **http request** node onto the canvas, click on it, set the method as POST, and set the URL as `https://<your-instance-name of webhook server>.flowfuse.cloud/test-webhook`
+2. Drag an **http request** node onto the canvas, click on it, set the method as POST, and set the URL as `https://<your-instance-name-in-which-webhook-server>.flowfuse.cloud/test-webhook`
 
 !["Screenshot displaying HTTP request node configuration for triggering or sending a POST request to the webhook server in case of abnormal temperature."](./images/using-webhook-with-node-red-webhook-trigger.png "Screenshot displaying HTTP request node configuration for triggering or sending a POST request to the webhook server in case of abnormal temperature."){data-zoomable}
 
-3. Connect the **rpi-dht22** node's output to the switch node's input and the http request node’s output to the first and second output of the switch node. then connect the third output of the switch node to the debug node.
+3. Connect the **change** node's output to the switch node's input and the **http request** node’s output to the first and second output of the switch node. then connect the third output of the switch node to the debug node.
 
 ## Setting Up a Server 3
 
@@ -119,7 +127,13 @@ Before moving further install Dashboard 2.0 as we will display the scheduled mai
 !["Screenshot displaying HTTP In node configuration for creating the POST request endpoint."](./images/using-webhook-with-node-red-http-in-node-endpoint-for-receiving-data-from-server-2.png "Screenshot displaying HTTP In node configuration for creating the POST request endpoint."){data-zoomable}
 
 2. Drag a **change** node onto the canvas, and set `msg.payload` to `msg.req.body`. Name this node "Set payload as request body."
-3. Drag another **change** node onto the canvas, and set `msg.payload` as `{ "ocured_at":$moment(), "temperature": payload.temperature, "name": payload.topic }` using JSON expression. Name this node "Format the payload."
+
+!["Screenshot displaying the change node setting payload as request body"](./images/using-webhook-with-node-red-change1-node.png "Screenshot displaying the change node setting payload as request body"){data-zoomable}
+
+3. Drag another **change** node onto the canvas, and set `msg.payload` as `{ "ocured_at":$moment(), "temperature": payload.temperature, "name": payload.name }` using JSON expression. Name this node "Format the payload."
+
+!["Screenshot displaying the change node formating sensor data"](./images/using-webhook-with-node-red-change2-node.png "Screenshot displaying the change node formating sensor data"){data-zoomable}
+
 4. Drag the **function** node onto Canvas and copy the below code in it.
 
 ```js
@@ -154,12 +168,16 @@ return msg;
 
 ### Deploying the flow
 
-!["Screenshot Displaying the flow of scheduled maintenance table"](./images/using-webhook-with-node-red-flow.png "Screenshot Displaying the flow of scheduled maintenance table"){data-zoomable}
+!["Screenshot Displaying the flow of server 1"](./images/using-webhook-with-node-red-server-1-instance.png "Screenshot Displaying the flow of server 1"){data-zoomable}
+
+!["Screenshot Displaying the flow of server 2"](./images/using-webhook-with-node-red-server-2-instance.png "Screenshot Displaying the flow of server 2"){data-zoomable}
+
+!["Screenshot Displaying the flow of server 3"](./images/using-webhook-with-node-red-server-3-instance.png "Screenshot Displaying the flow of scheduled maintenance table"){data-zoomable}
 
 - With your flow updated to include the above, click the "Deploy" button in the top-right of the Node-RED Editor.
 - Locate the 'Open Dashboard' button at the top-right corner of the Dashboard 2.0 sidebar and click on it to navigate to the dashboard.
 
-!["Screenshot Displaying the flow of scheduled maintenance table"](./images/using-webhook-with-node-red-scheduled-maintenance-table-dashboard-view.png "Screenshot Displaying the flow of scheduled maintenance table"){data-zoomable}
+!["Screenshot Displaying the flow of scheduled maintenance table"](./images/using-webhook-with-node-red-scheduled-maintenance-table-dashboard-view.gif "Screenshot Displaying the flow of scheduled maintenance table"){data-zoomable}
 
 ## Conclusion 
 
