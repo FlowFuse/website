@@ -53,17 +53,19 @@ Consider a manufacturing facility that utilizes temperature sensors to monitor t
 
 !["Diagram explaining how component works in Webhook"](./images/using-webhook-with-node-red-diagram.png "Diagram explaining how component works in Webhook"){data-zoomable}
 
-- Temperature Sensor (Server 1): These physical sensors are installed in the manufacturing plant to monitor temperature. They trigger webhook requests to Server 2 whenever abnormal temperature patterns are detected.
-
-- Server 2 (Webhook Server): This server creates and hosts the webhook endpoint. It receives HTTP requests from the temperature sensors (Server 1) when abnormal temperatures are detected. The request contains temperature data. Server 2 then processes this data and sends a POST request with relevant information to Server 3.
+- Temperature Sensor (Server 1): Physical sensors are installed in the manufacturing facility and connected to a Raspberry Pi running Node-RED for reading and monitoring temperature data. The application running on Node-RED triggers webhook requests to Server 2 whenever abnormal temperature patterns are detected.
+- 
+- Server 2 (Webhook Server): This server creates and hosts the webhook endpoint. It receives HTTP requests from (Server 1) when abnormal temperatures are detected. The request contains temperature data. Server 2 then processes this data and sends a POST request with relevant information to Server 3.
 
 - Maintenance System (Server 3): This system receives POST requests from Server 2 containing event-related data on a specific endpoint provided to Server 2. It then automatically schedules maintenance tasks based on the received information.
 
 ## Practical implementation
 
-In this section, we will construct the practical implementation of the scenario described above. However, all three components or servers will be hosted on the same Node-RED instance in our example. Furthermore, we will simulate data rather than using real sensors by utilizing random number expressions.
+In this section, we will construct the practical implementation of the scenario described above. all three components or servers will be hosted on the seprate Node-RED instance in our example.
 
-### Setting Up a Webhook
+### Setting Up a Webhook (Server 2) 
+
+Having a separate server for webhooks is crucial as it will receive data from multiple sensors. You might wonder why we need a separate Server 2 instead of using one server running on the Raspberry Pi (Server 1) to send data directly to Server 3. The answer is simple: the Raspberry Pi is hardware with limited memory and power, which can slow down communication if the server running on it receives a lot of traffic. Therefore, running a separate instance on each Raspberry Pi and having one centralized separate webhook server is necessary. This central server, running on the cloud, will have significantly more power and resources to handle the incoming traffic efficiently.                              
 
 - Drag an **http-in** node onto the canvas. Configure the method as POST and set the path as **/test-webhook**.
 
@@ -75,31 +77,40 @@ In this section, we will construct the practical implementation of the scenario 
 
 - Drag an **http response** node onto the canvas and connect its input to the output of the http-in node. Also, connect an http request node's input to the same http in node's output.
 
-## Setting Up a Temperature sensors (Server 1)
+## Setting Up a Temperature sensors
 
-1. Drag an **inject** node onto the canvas and set `msg.payload` as below:
+While writing this blog, I connected my DHT11 sensor to my Raspberry Pi 4, and I am running the FlowFuse device agent on this RPi. Running Node-RED on the RPi allows me to directly read and monitor sensor data in Node-RED, and the FlowFuse device agent allows me to edit and manage flows running on the RPi from any corner of the world. For more details, refer to the [Running the FlowFuse Device Agent as a service on a Raspberry Pi](https://flowfuse.com/blog/2023/05/device-agent-as-a-service/).
 
-```
-{"name": "sensor 1", "temperature": ($random() * 100)}
-```
-!["Screenshot displaying the inject node setting payload for genrating simulated data for sensor 1"](./images/using-webhook-with-node-sensor1-inject-node.png "Screenshot displaying the inject node setting payload for genrating simulated data for sensor 1"){data-zoomable}
+### Installing custom node for reading sensor data
 
-2. Drag in another **inject** node onto the canvas and set `msg.payload` as below:
+1. Click the Node-RED Settings (top-right).
+2. Click "Manage Palette."
+3. Switch to the "Install" tab.
+4. Search for `node-red-contrib-dht-sensor`.
+5. Click "Install"
 
-```
-{"name": "sensor 2", "temperature": ($random() * 100)}
-```
-!["Screenshot displaying the inject node setting payload for genrating simulated data for sensor 2"](./images/using-webhook-with-node-red-sensor2-inject-node.png "Screenshot displaying the inject node setting payload for genrating simulated data for sensor 2"){data-zoomable}
+### Reading sensor data
 
-3. Drag a **switch** node onto the canvas, click on it, and set up three conditions: one to check if the temperature is less than 50, the second to check if the temperature is greater than 70, and the last one for other cases.
+Before proceeding with this step, it is necessary to run Node-RED on your Raspberry Pi as a superuser and ensure that the DHT11 sensor is correctly connected with wires. Also, make sure to install the [BCM2835](https://www.airspayce.com/mikem/bcm2835/).
+
+1. Drag an **inject** node onto the canvas and set the interval to your preference so that it triggers readings after a specific interval of time.
+2. Drag an **rpi-dht11** sensor node onto the canvas.
+3. Select the sensor model as "DHT11".
+4. Choose the pin numbering as **BCM GPIO**.
+5. Select the GPIO pin to which your sensor's data output is connected.
+6. Connect the **inject** node's output to the **rpi-dht11** node's input.
+
+## Monitoring Temperature ( Server 1 )
+
+1. Drag a **switch** node onto the canvas, click on it, and set up three conditions: one to check if the temperature is less than 50, the second to check if the temperature is greater than 70, and the last one for other cases.
 
 !["Screenshot displaying the switch node with conditions checking whether the temperature is normal or not"](./images/using-webhook-with-node-red-switch-node.png "Screenshot displaying the switch node with conditions checking whether the temperature is normal or not"){data-zoomable}
 
-4. Drag an **http request** node onto the canvas, click on it, set the method as POST, and set the URL as `https://<your-instance-name>.flowfuse.cloud/test-webhook`
+2. Drag an **http request** node onto the canvas, click on it, set the method as POST, and set the URL as `https://<your-instance-name of webhook server>.flowfuse.cloud/test-webhook`
 
 !["Screenshot displaying HTTP request node configuration for triggering or sending a POST request to the webhook server in case of abnormal temperature."](./images/using-webhook-with-node-red-webhook-trigger.png "Screenshot displaying HTTP request node configuration for triggering or sending a POST request to the webhook server in case of abnormal temperature."){data-zoomable}
 
-5. Connect the http request node’s output to the first and second output of the switch node. then connect the third output of the switch node to the debug node.
+3. Connect the **rpi-dht22** node's output to the switch node's input and the http request node’s output to the first and second output of the switch node. then connect the third output of the switch node to the debug node.
 
 ## Setting Up a Server 3
 
