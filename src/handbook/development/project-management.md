@@ -192,8 +192,7 @@ The board has the following states:
  - `Up Next` - items that should be picked up next
  - `In Design` - items being designed, whether that is UX/UI design or engineering design
  - `In Progress` - items being developed
- - `Review` - items that are ready to be reviewed (PR open, [feature demo](#feature-demos) created)
- - `Verify` - items that have been merged and can be verified once deployed to the Staging and Production environment
+ - `Review` - items that are ready to be reviewed (PR open & [feature demo](#feature-demos) created)
  - `Done` - items that are [Done](#defining-done)
 
 ##### In Design Deliverables

@@ -23,18 +23,13 @@ If you want to create your own Team for work purposes, use your Brex card when s
 up the billing details. You can then request a Stripe Coupon to cover the costs
 by raising an issue in [CloudProject](https://github.com/FlowFuse/CloudProject)
 
-## Deployment
+## Deployment to FlowFuse Cloud
 
-We deploy the latest product code on a weekly basis. This is done by creating a
-new [maintenance release](../releases/process.md#unmanaged-releases), including updates
-to the [`helm`](https://github.com/FlowFuse/helm) templates. They are then applied
-manually to production by the engineering team.
+Any pull requests that are merged into `main` will automatically trigger a deployment to the production environment. As such, it is vitally important that PR Reviews are conducted thoroughly, following our guidance [here](../contributing#conducting-code-reviews).
 
-The automated deployment to staging has been prepared to apply to production with
-a manual verification step blocking the final deploy. We have not yet fully enabled
-this mode but we are getting closer to doing so.
+All pull requests can be tested in a full staging environment ahead of being merged. Details on how to do this can be found in our [Contributing](../contributing#test-changes-in-staging) guide.
 
 ## Observability
 
- - [Observability](../observability.md) - how we monitor production
+ - [Observability](./observability.md) - how we monitor production
 
