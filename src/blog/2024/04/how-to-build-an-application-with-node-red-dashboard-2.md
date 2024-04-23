@@ -11,10 +11,9 @@ tags:
     - dashboard
 ---
 
-In this guide we'll build a Todo application to guide you through the features and explain how you can build rich and dynamic applications too. It shows many of the features that make Dashboard 2.0 great, and why you should use it over the deprecated node-red-dashboard.
+In this guide, we'll build a Todo application to guide you through the features and explain how you can build rich and dynamic applications too. It shows many of the features that make Dashboard 2.0 great, and why you should use it over the deprecated node-red-dashboard.
 
 <!--more-->
-
 
 If you're new to Dashboard 2.0, refer to our blog post [Getting Started with Dashboard 2.0](/blog/2024/03/dashboard-getting-started/) to install and get things started.
 
