@@ -27,7 +27,7 @@ In simple terms, Webhooks are "user-defined HTTP callbacks.” This callback is 
 
 !["Image displaying how webhook works"](./images/using-webhook-with-node-red-how-webhook-works.png "Image displaying how webhook works"){data-zoomable}
 
-- Event Initiator: This refers to the event specified to trigger the WebHook. Whenever this event occurs, the WebHook will be activated.
+- Event Initiator: This refers to the event specified to trigger the WebHook. Whenever this event occurs, the WebHook will be triggered.
 - Webhook Server: The webhook server is responsible for managing webhook configurations and endpoints. It listens for the specified event. When the event is detected, the webhook server automatically sends an HTTP POST request containing relevant data to the designated third-party application or service.
 - Data Reception by Third-Party Application: The third-party application will receive the data sent via the WebHook to the designated URL or listener provided during registration.
 - Custom Action Execution: Upon receiving the POST request, specific actions can be performed.
@@ -49,12 +49,12 @@ It's common and understandable to get confused between APIs and webhooks, especi
 
 ### Example Scenario:
 
-Consider a manufacturing facility that utilizes temperature sensors to monitor temperature levels in critical areas. When the temperature exceeds predefined thresholds, it triggers a series of actions for maintenance and monitoring.
+Consider a manufacturing facility that utilizes temperature sensors to monitor temperature levels in critical areas. When the temperature falls or exceeds predefined thresholds, it triggers a series of actions for maintenance and monitoring.
 
 !["Diagram explaining how component works in Webhook"](./images/using-webhook-with-node-red-diagram.png "Diagram explaining how component works in Webhook"){data-zoomable}
 
-- Temperature Sensor (Server 1): Physical sensors are installed in the manufacturing facility and connected to a Raspberry Pi running Node-RED for reading and monitoring temperature data. The application running on Node-RED triggers webhook requests to Server 2 whenever abnormal temperature patterns are detected.
-- Server 2 (Webhook Server): This server creates and hosts the webhook endpoint. It receives HTTP requests from (Server 1) when abnormal temperatures are detected. The request contains temperature data. Server 2 then processes this data and sends a POST request with relevant information to Server 3.
+- Raspberry Pi with connected temperature sensor (Server 1): Physical sensors are installed in the manufacturing facility and connected to a Raspberry Pi running Node-RED for reading and monitoring temperature data. The application running on Node-RED triggers webhook requests to Server 2 whenever abnormal temperature patterns are detected.
+- Webhook Server (Server 2): This server creates and hosts the webhook endpoint. It receives HTTP requests from (Server 1) when abnormal temperatures are detected. The request contains temperature data. Server 2 then processes this data and sends a POST request with relevant information to Server 3.
 - Maintenance System (Server 3): This system receives POST requests from Server 2 containing event-related data on a specific endpoint provided to Server 2. It then automatically schedules maintenance tasks based on the received information.
 
 ## Practical implementation
@@ -63,7 +63,7 @@ In this section, we will construct the practical implementation of the scenario 
 
 ### Setting Up a Webhook (Server 2) 
 
-Having a separate server for webhooks is crucial as it will receive data from multiple sensors. You might wonder why we need a separate Server 2 instead of using one server running on the Raspberry Pi (Server 1) to send data directly to Server 3. The answer is simple: the Raspberry Pi is hardware with limited memory and power, which can slow down communication if the server running on it receives a lot of traffic. Therefore, running a separate instance on each Raspberry Pi and having one centralized separate webhook server is necessary. This central server, running on the cloud, will have significantly more power and resources to handle the incoming traffic efficiently.                              
+Having a separate server for webhooks is crucial as it will receive data from multiple sensors. You might wonder why we need a separate Server 2 instead of using one server running on the Raspberry Pi (Server 1) to send data directly to Server 3. The answer is simple: the Raspberry Pi is hardware with limited memory and power, which can slow down communication if the server running on it receives a lot of traffic. Therefore, running a separate Node-RED instance on each Raspberry Pi and having one centralized separate webhook server is necessary. This central server, running on the cloud, will have significantly more power and resources to handle the incoming traffic efficiently.                              
 
 - Drag an **http-in** node onto the canvas. Configure the method as POST and set the path as **/test-webhook**.
 
@@ -73,11 +73,11 @@ Having a separate server for webhooks is crucial as it will receive data from mu
 
 !["Screenshot displaying http request nodes configuration for sending post request to server 3"](./images/using-webhook-with-node-red-request-node-sending-request-to-server3.png "Screenshot displaying http request nodes configuration for sending post request to server 3"){data-zoomable}
 
-- Drag an **http response** node onto the canvas and connect its input to the output of the http-in node. Also, connect an http request node's input to the same http in node's output.
+- Drag an **http response** node onto the canvas and connect its input to the output of the http-in node. Also, connect an http request node's input to the same http in the node's output.
 
 ## Setting Up a Temperature sensors
 
-While writing this blog, I connected my DHT11 sensor to my Raspberry Pi 4, and I am running the FlowFuse device agent on this RPi. Running Node-RED on the RPi allows me to directly read and monitor sensor data in Node-RED, and the FlowFuse device agent allows me to edit and manage flows running on the RPi from any corner of the world. For more details, refer to the [Running the FlowFuse Device Agent as a service on a Raspberry Pi](https://flowfuse.com/blog/2023/05/device-agent-as-a-service/).
+While writing this blog, I connected my DHT11 sensor to my Raspberry Pi 4, and I am running the FlowFuse device agent on this RPi. Running Node-RED on the RPi allows me to directly read and monitor sensor data, and the FlowFuse device agent allows me to edit and manage Node-RED applications running on the RPi from any corner of the world. For more details, refer to the [Running the FlowFuse Device Agent as a service on a Raspberry Pi](https://flowfuse.com/blog/2023/05/device-agent-as-a-service/).
 
 ### Installing custom node for reading sensor data
 
@@ -87,7 +87,7 @@ While writing this blog, I connected my DHT11 sensor to my Raspberry Pi 4, and I
 4. Search for `node-red-contrib-dht-sensor`.
 5. Click "Install"
 
-### Reading and formating sensor data
+### Reading and formatting sensor data
 
 Before proceeding with this step, it is necessary to run Node-RED on your Raspberry Pi as a superuser and ensure that the DHT11 sensor is correctly connected with wires. Also, make sure to install the [BCM2835](https://www.airspayce.com/mikem/bcm2835/).
 
@@ -95,8 +95,8 @@ Before proceeding with this step, it is necessary to run Node-RED on your Raspbe
 
 !["Screenshot displaying the rpi-dht22 node's configuration for reading data from dht 11 sensor"](./images/using-webhook-with-node-red-dht-sensor-node.png "Screenshot displaying the rpi-dht22 node's configuration for reading data from dht 11 sensor"){data-zoomable}
 
-2. Drag an **rpi-dht22** sensor node onto the canvas (This node will return the object containing humidity, payload etc where payload is temperature).
-3. Select the sensor model. Since I am using the DHT11 sensor, I will select "DHT11."
+2. Drag an **rpi-dht22** sensor node onto the canvas. This node will return an object containing humidity, temperature (as the payload), etc.
+3. Select the sensor model. Since I am using the DHT11 sensor, I have selected "DHT11."
 4. Choose the pin numbering as **BCM GPIO**.
 5. Select the GPIO pin to which your sensor's data output is connected.
 6. Drag the **change** node onto canvas.
@@ -108,7 +108,7 @@ Before proceeding with this step, it is necessary to run Node-RED on your Raspbe
 
 ## Monitoring Temperature ( Server 1 )
 
-1. Drag a **switch** node onto the canvas, click on it, and set up three conditions: one to check if the temperature is less than 50, the second to check if the temperature is greater than 70, and the last one for other cases.
+1. Drag a **switch** node onto the canvas, click on it, and set up three conditions: one to check if the temperature is less than 20, the second to check if the temperature is greater than 30, and the last one for other cases.
 
 !["Screenshot displaying the switch node with conditions checking whether the temperature is normal or not"](./images/using-webhook-with-node-red-switch-node.png "Screenshot displaying the switch node with conditions checking whether the temperature is normal or not"){data-zoomable}
 
@@ -120,7 +120,7 @@ Before proceeding with this step, it is necessary to run Node-RED on your Raspbe
 
 ## Setting Up a Server 3
 
-Before moving further install Dashboard 2.0 as we will display the scheduled maintenance on the table for more information for more information refer to [Getting started with Dashboard 2.0](https://flowfuse.com/blog/2024/03/dashboard-getting-started/).
+Before moving further install Dashboard 2.0 as we will display the scheduled maintenance on the table, For more information for more information refer to [Getting started with Dashboard 2.0](https://flowfuse.com/blog/2024/03/dashboard-getting-started/).
 
 1. Drag the **http in** node onto canvas, select the method as POST, and set the method as **/schedule-maintenance**.
 
@@ -130,7 +130,7 @@ Before moving further install Dashboard 2.0 as we will display the scheduled mai
 
 !["Screenshot displaying the change node setting payload as request body"](./images/using-webhook-with-node-red-change1-node.png "Screenshot displaying the change node setting payload as request body"){data-zoomable}
 
-3. Drag another **change** node onto the canvas, and set `msg.payload` as `{ "ocured_at":$moment(), "temperature": payload.temperature, "name": payload.name }` using JSON expression. Name this node "Format the payload."
+3. Drag another **change** node onto the canvas, and set `msg.payload` as `{ "ocured_at":$moment(), "temperature": payload.temperature, "name": payload.name }` as JSON expression. Name this node "Format the payload."
 
 !["Screenshot displaying the change node formating sensor data"](./images/using-webhook-with-node-red-change2-node.png "Screenshot displaying the change node formating sensor data"){data-zoomable}
 
@@ -157,7 +157,7 @@ return msg;
 !["Screenshot displaying function node processing and storing data to global context"](./images/using-webhook-with-node-red-function-node.png "Screenshot displaying function node processing and storing data to global context"){data-zoomable}
 
 5. Drag the **http response** node onto the canvas.
-6. Drag another change node onto the canvas and set `msg.payload` to `global.scheduledMaintenance`. Name this node "Retrieve data from global context."
+6. Drag another **change** node onto the canvas and set `msg.payload` to `global.scheduledMaintenance`. Name this node "Retrieve data from global context."
 
 !["Screenshot displaying the change node retriving data"](./images/using-webhook-with-node-red-change-node.png "Screenshot displaying the change node retriving data"){data-zoomable}
 
@@ -174,8 +174,8 @@ return msg;
 
 !["Screenshot Displaying the flow of server 3"](./images/using-webhook-with-node-red-server-3-instance.png "Screenshot Displaying the flow of scheduled maintenance table"){data-zoomable}
 
-- With your flow updated to include the above, click the "Deploy" button in the top-right of the Node-RED Editor.
-- Locate the 'Open Dashboard' button at the top-right corner of the Dashboard 2.0 sidebar and click on it to navigate to the dashboard.
+- With your flow updated to include the above, click the "Deploy" button in the top-right corner of the Node-RED Editor in each Node-RED instance.
+- In server 3 (Maintenance scheduling system), Locate the 'Open Dashboard' button at the top-right corner of the Dashboard 2.0 sidebar and click on it to navigate to the dashboard.
 
 !["Screenshot Displaying the flow of scheduled maintenance table"](./images/using-webhook-with-node-red-scheduled-maintenance-table-dashboard-view.gif "Screenshot Displaying the flow of scheduled maintenance table"){data-zoomable}
 
