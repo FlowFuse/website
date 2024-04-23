@@ -54,9 +54,7 @@ Consider a manufacturing facility that utilizes temperature sensors to monitor t
 !["Diagram explaining how component works in Webhook"](./images/using-webhook-with-node-red-diagram.png "Diagram explaining how component works in Webhook"){data-zoomable}
 
 - Temperature Sensor (Server 1): Physical sensors are installed in the manufacturing facility and connected to a Raspberry Pi running Node-RED for reading and monitoring temperature data. The application running on Node-RED triggers webhook requests to Server 2 whenever abnormal temperature patterns are detected.
-- 
 - Server 2 (Webhook Server): This server creates and hosts the webhook endpoint. It receives HTTP requests from (Server 1) when abnormal temperatures are detected. The request contains temperature data. Server 2 then processes this data and sends a POST request with relevant information to Server 3.
-
 - Maintenance System (Server 3): This system receives POST requests from Server 2 containing event-related data on a specific endpoint provided to Server 2. It then automatically schedules maintenance tasks based on the received information.
 
 ## Practical implementation
@@ -95,7 +93,7 @@ Before proceeding with this step, it is necessary to run Node-RED on your Raspbe
 
 1. Drag an **inject** node onto the canvas and set the interval to your preference so that it triggers readings after a specific interval of time.
 2. Drag an **rpi-dht11** sensor node onto the canvas.
-3. Select the sensor model as "DHT11".
+3. Select the sensor model. Since I am using the DHT11 sensor, I will select "DHT11."
 4. Choose the pin numbering as **BCM GPIO**.
 5. Select the GPIO pin to which your sensor's data output is connected.
 6. Connect the **inject** node's output to the **rpi-dht11** node's input.
@@ -116,28 +114,22 @@ Before proceeding with this step, it is necessary to run Node-RED on your Raspbe
 
 Before moving further install Dashboard 2.0 as we will display the scheduled maintenance on the table for more information for more information refer to [Getting started with Dashboard 2.0](https://flowfuse.com/blog/2024/03/dashboard-getting-started/).
 
-- Drag the **http in** node onto canvas, select the method as POST, and set the method as **/schedule-maintenance**.
+1. Drag the **http in** node onto canvas, select the method as POST, and set the method as **/schedule-maintenance**.
 
 !["Screenshot displaying HTTP In node configuration for creating the POST request endpoint."](./images/using-webhook-with-node-red-http-in-node-endpoint-for-receiving-data-from-server-2.png "Screenshot displaying HTTP In node configuration for creating the POST request endpoint."){data-zoomable}
 
-- Drag the **function** node onto Canvas and copy the below code in it.
+2. Drag a **change** node onto the canvas, and set `msg.payload` to `msg.req.body`. Name this node "Set payload as request body."
+3. Drag another **change** node onto the canvas, and set `msg.payload` as `{ "ocured_at":$moment(), "temperature": payload.temperature, "name": payload.topic }` using JSON expression. Name this node "Format the payload."
+4. Drag the **function** node onto Canvas and copy the below code in it.
 
 ```js
-// Extract data from the incoming request
-let data = msg.req.body;
 
 // Retrieve or initialize scheduled maintenance data
 let scheduledMaintenanceData = global.get('scheduledMaintenance') || [];
 
 // Randomly assign maintenance task
 let assignedTo = Math.random() < 0.5 ? "Bob Smith": "Alice Walker";
-
-// Create a recent maintenance schedule record
-let maintenanceScheduleRecentData = {
-    "ocured_at": new Date().toISOString(), // Current timestamp
-    ...data, // Include incoming data
-    "assigned_to": assignedTo // Assign to a worker
-};
+msg.payload.assignedTo = assignedTo
 
 // Add recent maintenance data to records
 scheduledMaintenanceData.push(maintenanceScheduleRecentData);
@@ -147,16 +139,18 @@ global.set('scheduledMaintenance', scheduledMaintenanceData);
 
 return msg;
 ```
+
 !["Screenshot displaying function node processing and storing data to global context"](./images/using-webhook-with-node-red-function-node.png "Screenshot displaying function node processing and storing data to global context"){data-zoomable}
 
-3. Drag the **http response** node onto the canvas.
-4. Drag the **change** node onto the canvas and set `msg.payload` as 
-`global.scheduledMaintenance`.
+5. Drag the **http response** node onto the canvas.
+6. Drag another change node onto the canvas and set `msg.payload` to `global.scheduledMaintenance`. Name this node "Retrieve data from global context."
 
 !["Screenshot displaying the change node retriving data"](./images/using-webhook-with-node-red-change-node.png "Screenshot displaying the change node retriving data"){data-zoomable}
 
-5. Drag the **ui-table** widget onto Canvas, and create a new ui group for it in which it will render.
-6. Connect the http in the node’s output to the function node’s and the change node’s input and connect the function node’s output to the http response node’s input and the change node’s output to the ui-table widget’s input.
+7. Drag the **ui-table** widget onto Canvas, and create a new **ui-group** for it in which it will render.
+8. Connect the output of the **http in** node to the input of the "Set payload as request body" **change** node.
+9. Connect the output of the "Set payload as request body" **change** node to the input of the "Format the payload" **change** node, and subsequently, connect the output of the "Format the payload" **change** node to the input of the **function** node.
+10. Connect the output of the **function** node to the input of the **http response** node, and connect the output of the "Retrieve data from global context" **change** node to the input of the **ui-table** widget.
 
 ### Deploying the flow
 
