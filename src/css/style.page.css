@@ -156,6 +156,18 @@
         grid-template-columns: 1fr 1fr;
     }
 
+    .contentDedicated .pricing-tiles {
+        grid-template-columns: 1fr;
+    }
+    
+    .contentDedicated .pricing-tiles .pricing-tile {
+        @apply max-w-sm md:max-w-[976px] w-full m-auto;
+    }
+
+    .contentDedicated .pricing-tile-background {
+        @apply px-10 py-6;
+    }
+
     .pricing-tile {
         position: relative;
         border-radius: 12px;
@@ -260,29 +272,6 @@
 
 /* PRICING TOGGLE */
 
-/* changes .selector */
-.slides .selector {
-    left: 39%;
-    width: 60%;
-}
-
-.billingToggle.slides .selector {
-    left: 50%;
-    width: 49%;
-}
-
-.slides .cloudText {
-    color: theme(colors.indigo.400);
-}
-
-.ff-bg-light .slides .cloudText {
-    color: theme(colors.indigo.300);
-}
-
-.slides .selfHostedText {
-    color: theme(colors.indigo.700);
-}
-
 /* contains switch buttons */
 .mainToggle {
     display: flex;
@@ -297,7 +286,7 @@
 /* toggle btn bg */
 .btnToggle {
     position: absolute;
-    width: 218px;
+    width: 300px;
     height: 36px;
     margin: 0rem;
     border-radius: 18px;
@@ -308,21 +297,18 @@
 }
 
 /* switch */
+
 .selector {
     position: absolute;
-    width: 40%;
+    width: 33%;
     height: 88%;
     top: 2px;
     left: 2px;
     border-radius: 16px;
-    transition-duration: 0.5s;
+    transition: left 0.5s ease;
     --tdur: 0;
     background-color: theme(colors.indigo.200);
     z-index: -1;
-}
-
-.billingToggle .selector {
-    width: 50%;
 }
 
 /* contains the container */
@@ -336,32 +322,31 @@
 }
 
 /* container */
-.divCloud, .divSelfHosted{
+.divCloud, .divSelfHosted, .divDedicated {
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
 }
 
+.hosting div {
+    @apply w-1/3;
+}
+
 /* words */
-.cloudText, .selfHostedText {
+.cloudText, .selfHostedText, .dedicatedText {
     font-size: 12px;
     font-weight: 600;
     transition-duration: 0.5s;
 }
 
-.cloudText {
-    color: theme(colors.indigo.700);
-}
-
-.ff-bg-dark .selfHostedText {
-    color: white;
-}
-
-.selfHostedText {
+.cloudText, .selfHostedText, .dedicatedText {
     color: theme(colors.indigo.400);
 }
 
+.cloudText.active, .selfHostedText.active, .dedicatedText.active {
+    color: theme(colors.indigo.700);
+}
 .hide {
     visibility: hidden;
     position: absolute;
