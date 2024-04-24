@@ -165,7 +165,7 @@
     }
 
     .contentDedicated .pricing-tile-background {
-        @apply px-10 py-6;
+        @apply md:px-10 md:py-6;
     }
 
     .pricing-tile {
