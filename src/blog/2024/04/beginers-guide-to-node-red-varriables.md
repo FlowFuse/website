@@ -49,7 +49,7 @@ context.get('variableName');
 
 #### Deleting Node variables
 
-We cannot delete node variables using a Node-RED node; you'll need to use the Node-RED "Context Data" tab delete option available for each variable, as explained in the "Exploring Context Data" tab section at the end of the guide.
+We cannot delete node variables using a Node-RED node; you'll need to use the Node-RED "Context Data" tab'S delete option available for each variable, as explained in the "Exploring Context Data" tab section at the end of the guide.
 
 ### Exploring Flow variables
 
@@ -89,9 +89,9 @@ To Delete flow variables you can use both the "context data" tab and the change 
 
 ### Exploring Global variables
 
-Global variables in Node-RED are accessible to function, change, inject, switch, and certain third-party nodes within a given Node-RED instance. They serve as a centralized storage point for data that needs to be accessed across different parts of an application. This is especially useful when sharing data across multiple flows or tabs within the same Node-RED instance.
+Global variables in Node-RED are accessible to function, change, inject, switch, and certain third-party nodes within a given Node-RED instance. They serve as a centralized storage point for data that needs to be accessed across different parts of an application. This is especially useful when you want to share data across multiple flows or tabs within the same Node-RED instance.
 
-For example, in a home automation system with flows for lighting, security, and climate control, global variables can store user preferences or system settings that all flows can access and update. This allows for consistent behavior across the entire system.
+For example, In a home automation system with flows for lighting, security, and climate control, global variables can store user preferences or system settings that all flows can access and update. This allows for consistent behavior across the entire system.
 
 #### Initiating/setting Flow variable
 
@@ -136,7 +136,7 @@ To set flow-level environment variables you'll have to use the edit dialog of th
 
 !["Screenshot showing how to set flow level environment varriables"](./images/varriables-in-node-red-setting-flow-scope-enviroment-varriable.gif "Screenshot showing how to set flow level environment varriables"){data-zoomable}
 
-For information on setting and managing global-level environment variables, refer to [Using Environment varriables in Node-RED](https://flowfuse.com/blog/2023/01/environment-variables-in-node-red/).
+For information on setting and managing global-level environment variables, refer to [Using Environment varriables in Node-RED](/blog/2023/01/environment-variables-in-node-red/).
 
 #### Accessing Environment variables 
 
@@ -145,7 +145,7 @@ To access both flow-level and global-level environment variables in a function n
 ```javascript
 env.get('variableName');
 ```
-Environment variables in the change, inject, and switch nodes can be accessed by selecting the "$ env variable" option and entering the variable name in the input field. Here's an example of retrieving an environment variable using the change node:
+Environment variables in the change, inject, and switch nodes can be accessed by selecting the "$ env variable" option and entering the variable name in the input field. Here's an example of Accessing an environment variable using the change node:
 
 !["Screenshot showing how to retrieve environment varriable in the change node"](./images/varriables-in-node-red-retriving-environment-varriable-using-change-node.png "Screenshot showing how to retrieve environment varriable in the change node"){data-zoomable}
 
@@ -155,7 +155,8 @@ In the template node, you can access it like below:
 This is my username : {% raw %}{{env.USERNAME}}.
 {% endraw %}
 ```
-When you have variables with the same name, accessing them will prioritize the flow-level variable over the global-level one. To access a global-level environment variable in this scenario, you need to add a prefix to the variable name with '$parent'
+
+*Note: When you have variables with the same name, accessing them will prioritize the flow-level variable over the global-level one. To access a global-level environment variable in this scenario, you need to add a prefix to the variable name with '$parent'*
 
 #### Deleting Environment variables 
 
@@ -173,7 +174,7 @@ In this tab, you'll also find information about when each variable was set or up
 
 ### FlowFuse persistent storage
 
-So far, we have seen four types of variables and all are stored in memory, except environment variables. This means that when we stop the Node-RED instance, the variables will get wiped out.
+So far, we have seen three types of context variables and all are stored in memory. This means that when we stop the Node-RED instance, the variables will get wiped out.
 
 FlowFuse provides a way to persist these variable values between restarts and FlowFuse stack updates. For more details, refer to [FlowFuse Persistent Context](https://flowfuse.com/docs/user/persistent-context/).
 
