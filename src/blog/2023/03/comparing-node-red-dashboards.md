@@ -170,7 +170,11 @@ After using FlexDash over the past couple of weeks and finding it to be already 
 
 ### Dashboard - third place
 
-**UPDATE:** A new project has been started on the next generation of Node-RED Dashboard. You can get the read more about it on the [documentation site](https://dashboard.flowfuse.com)
+***Important Update: New Generation of Node-RED Dashboard Released:*** *A new generation of the outdated and unmaintained Node-RED Dashboard has been released to replace it. Introducing [Node-RED Dashboard 2.0](https://dashboard.flowfuse.com/), built on Vue.js, offering significantly more versatility than its predecessor. This new dashboard, managed by FlowFuse, is designed to allow full customization, addressing the limitations of the previous version.* 
+
+*Node-RED Dashboard 2.0 retains all the widgets and concepts from the old version so Transitioning from Node-RED Dashboard 1.0 to 2.0 is easy. Also it includes various chart types such as line, scater, bar, gauge, and more, and it's compatible with all the amazing Vuetify components, making it easier to build advanced dashboards.also it allows to  build secure personalized multi-user dashboards*
+
+*To ensure a smooth transition, FlowFuse provides easy-to-follow guides. Refer [Node-RED Dashboard 2.0 Guides](https://flowfuse.com/blog/dashboard/) for more information.*
 
 As mentioned above, Dashboard is no longer in active development. This is due to the framework upon which it was build [(AngularJS)](https://angularjs.org/) now being unsupported as of the end of 2021. You can read a lot more detail on why ongoing development of Dashboard is not practical in this [thread on the Node-RED forums](https://discourse.nodered.org/t/discussion-about-a-new-dashboard/51119/3).
 
