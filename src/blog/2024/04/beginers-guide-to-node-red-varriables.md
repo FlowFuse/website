@@ -15,30 +15,24 @@ tags:
    - environment
 ---
 
-Node-RED is super easy and doesn't require much coding knowledge, which is why many people love it! Even though Node-RED is straightforward, some terms, like "global," "flow," and "environment" variables, might seem puzzling at first. However, many people have realized these concepts are quite easy to grasp after reading about them on a few resources or simply participating in Node-RED forums. Nonetheless, exploring multiple resources may take some time.
+Node-RED is super easy and doesn't require much coding knowledge, which is why many people love it! Even though Node-RED is straightforward, some terms, like "global," "flow," and "environment" variables, might seem puzzling at first. However, many people have realized these concepts are quite easy to grasp after reading about them on a few resources or simply participating in Node-RED forums. Nonetheless, exploring resources may take some time. To save you time and strengthen your understanding, this guide will cover Node-RED variables in depth, aiming to deepen your proficiency while minimizing the effort required to gather information.
 
 <!--more-->
 
-In this guide, we understand that your time is valuable. We offer a concise yet comprehensive exploration of Node-RED variables, aiming to deepen your understanding and proficiency with Node-RED variables.
-
 ## Understanding Node-RED Variables
 
-Variables in Node-RED simplify tasks and enable state tracking. Node-RED has four types of variables: Node, Flow, Global, and Environment. Each type has a unique scope and can store various data types like numbers, strings, objects, arrays, and buffers. All variables, except Environment variables, are stored in memory, making them temporary.
+Variables are a crucial component in Node-RED. They come in two types: context variables and environment variables. Context variables are used to keep track of the application's state, which includes node, flow, and global variables. On the other hand, environment variables store confidential configuration information such as secret and API keys, preventing this data from being accidentally exposed in the flow.
 
 ### Exploring Node variables
 
-Node variables are specific to each node and are only visible within that node. This means we cannot read or write into that variable from outside of that node.
-
-#### When to use it?
-
-- Ideal for storing data specific to a single node, ensuring data isolation and preventing interference with other nodes
-- **Example Scenario:** You have a form on a Node-RED Dashboard 2.0, and you want to insert the submitted data into a database along with a unique ID for each submission. You can use a node variable to store and track a counter variable in the function node.
+Node variables are specific to each node and are only visible within that node. This means we cannot read or write into that variable from outside of the node where it is initialized. Ideal for cases where you want to store data specific to a single node, to ensure data isolation and prevent interference with other nodes
+For example: You have a form on a Node-RED Dashboard 2.0, and you want to insert the submitted data into a database along with a unique ID for each submission. You can use a node variable to store and track a counter variable in the function node.
 
 #### Initiating/setting Node variable
 
 To initiate and set a node variable in the function node, you will have to use the context’s `set` method:
 
-```js
+```javascript
 context.set('variableName', value);
 ```
 
@@ -48,28 +42,24 @@ This action sets the value for the context variable with the specified name.
 
 To retrieve a node variable, use the context's `get` method:
 
-```js
+```javascript
 context.get('variableName');
 ```
 
-#### Deleting Node varriables
+#### Deleting Node variables
 
-We cannot delete node variables using a Node-RED node; you'll need to use the Node-RED "Context Data" tab delete option which is avalable for each varriable, as explained in the "Exploring Context Data" tab section at the end of the guide.
+We cannot delete node variables using a Node-RED node; you'll need to use the Node-RED "Context Data" tab delete option which is available for each variable, as explained in the "Exploring Context Data" tab section at the end of the guide.
 
 ### Exploring Flow variables
 
-Flow variables are accessible to function, change, inject, and switch nodes, as well as some third-party nodes, within the same tab or flow where they have been set. They allow you to share data between nodes within a specific flow.
-
-#### When to use it?
-
-- Useful for sharing data within a specific flow or tab, allowing for seamless data transfer between nodes within the same flow.
-- **Example Scenario:** In a temperature monitoring system, you have multiple sensors sending data to different nodes within the same flow. You can use flow variables to pass the current temperature reading between nodes for processing and analysis within that specific flow.
+Flow variables are accessible to function, change, inject, and switch nodes, as well as some third-party nodes, within the same tab or flow where they have been set. Useful for sharing data within a specific flow or tab, allowing for seamless data transfer between nodes within the same flow.
+For example: In a temperature monitoring system, you have multiple sensors sending data to different nodes within the same flow. You can use flow variables to pass the current temperature reading between nodes for processing and analysis within that specific flow.
 
 #### Initiating/setting Flow variable
 
 We can set flow variables using function and change node. To initiate a Flow variable in the function node, you will have to use the flow's `set` method like below in the function node:
 
-```js
+```javascript
 flow.set('variableName', value);
 ```
 
@@ -81,7 +71,7 @@ In the change node, you can set it as shown in the below image
 
 You can retrieve flow variables using the function, change, inject, and switch. To retrieve a flow variable, use the flow's `get` method like the below in the function node:
 
-```js
+```javascript
 flow.get('variableName');
 ```
 
@@ -89,26 +79,21 @@ Retrieving flow variables in change, inject, and switch nodes is quite similar. 
 
 !["Screenshot showing how to retrive flow varriable using the change node"](./images/varriables-in-node-red-retriving-flow-varriable-using-change-node.png "Screenshot showing how to retrive flow varriable using the change node"){data-zoomable}
 
-#### Deleting Flow varriables
+#### Deleting Flow variables
 
-To Delete flow varriable you can use both "context data" tab and the change node. i have shown in the below image how you can delete flow varriable using change node:
+To Delete flow variables you can use both "context data" tab and the change node. I have shown in the below image how you can delete flow variables using change node:
 
 !["Screenshot showing how to delete flow varriable using the change node"](./images/varriables-in-node-red-deleting-global-varriable-using-change-node.png "Screenshot showing how to delete flow varriable using the change node"){data-zoomable}
 
 ### Exploring Global variables
 
-Global variables are accessible to function, change, inject, and switch nodes, as well as some third-party nodes within the Node-RED instance where they are set. They provide a centralized location for storing data that needs to be accessed from different parts of your application.
-
-#### When to use it?
-
-- When you need to share data across different flows or tabs within the same Node-RED instance.
-- **Example Scenario:** You're building a home automation system where different flows control various aspects of your smart home, such as lighting, security, and climate control. You can use global variables to store user preferences or system settings that need to be accessed and updated by multiple flows, ensuring consistent behavior across your entire home automation setup.
+Global variables are accessible to function, change, inject, and switch nodes, as well as some third-party nodes within the Node-RED instance where they are set. They provide a centralized location for storing data that needs to be accessed from different parts of your application. Useful When you need to share data across different flows or tabs within the same Node-RED instance. For example: You're building a home automation system where different flows control various aspects of your smart home, such as lighting, security, and climate control. You can use global variables to store user preferences or system settings that need to be accessed and updated by multiple flows, ensuring consistent behavior across your entire home automation setup.
 
 #### Initiating/setting Flow variable
 
 We can set Global variables using the function and change node. To initiate a Flow variable in the function node, you will have to use the global`s set method like the below in the function node:
 
-```js
+```javascript
 global.set('variableName', value);
 ```
 
@@ -120,53 +105,47 @@ In the change node, you can set it as shown in the below image
 
 To retrieve a global variable, use the global's `get` method like the below in the function node:
 
-```js
+```javascript
 global.get('variableName');
 ```
 Retrieving global variables in change, inject, and switch nodes is quite similar. You simply need to select the "global" option and enter the variable name in the input field. Below is an image showing how you can retrieve global variables using the change node:
 
 !["Screenshot showing how to retrieve global variables using the change node"](./images/varriables-in-node-red-retriving-global-varriable-using-change-node.png "Screenshot showing how to retrieve global variables using the change node"){data-zoomable}
 
-#### Deleting Global varriables
+#### Deleting Global variables
 
-To Delete global varriable again you can use both "context data" tab and the change node. i have shown in the below image how you can delete global varriable using change node:
+To Delete the global variables again you can use both the "context data" tab and the change node. I have shown in the below image how you can delete global variables using the change node:
 
 !["Screenshot showing how to delete global varriable using the change node"](./images/varriables-in-node-red-deleting-global-varriable-using-change-node.png "Screenshot showing how to delete global varriable using the change node"){data-zoomable}
 
 ### Exploring Environmental variables
 
-Environment variables are specifically used for storing sensitive configuration data, such as API keys or database credentials, ensuring this information isn't directly exposed within your flows. In Node-RED you can set environment varriables at flow and global level.
+Environment variables are specifically used for storing sensitive configuration data, such as API keys or database credentials, ensuring this information isn't directly exposed within your flows. In Node-RED you can set environment variables at flow and global level.
 
-1. Flow-level environment:  
-   - Used to store sensitive configuration data accessible only within a specific flow. This ensures secure and isolated storage of sensitive information. 
+- Flow-level environment: Used to store sensitive configuration data accessible only within a specific flow. This ensures secure and isolated storage of sensitive information. For example: When building a multi-flow Node-RED application, each flow may need different configuration details, like API keys or unique identifiers. Using flow-level environment variables allows each flow to securely store its specific sensitive data without exposing it to other flows.
 
-   - Example Scenario: When building a multi-flow Node-RED application, each flow may need different configuration details, like API keys or unique identifiers. Using flow-level environment variables allows each flow to securely store its specific sensitive data without exposing it to other flows.
-
-2. Global-level environment
-   - variables are used to store sensitive data accessible across all flows in a Node-RED instance. They are helpful when you need to share the same sensitive data across different flows.
-
-   - Example Scenario: If multiple flows need to use the same API key, setting a global-level environment variable allows them to access this data securely, avoiding repeated configurations and ensuring consistency.
+- Global-level environment: variables are used to store sensitive data accessible across all flows in a Node-RED instance. They are helpful when you need to share the same sensitive data across different flows. For example: If multiple flows need to use the same API key, setting a global-level environment variable allows them to access this data securely, avoiding repeated configurations and ensuring consistency.
 
 #### Setting Environment Variables
 
-To set flow level environment varriable you'll have to use the edit dialog of the flow.
+To set flow-level environment variables you'll have to use the edit dialog of the flow.
 
 !["Screenshot showing how to set flow level environment varriables"](./images/varriables-in-node-red-setting-flow-scope-enviroment-varriable.gif "Screenshot showing how to set flow level environment varriables"){data-zoomable}
 
 For information on setting and managing global-level environment variables, refer to [Using Environment varriables in Node-RED](https://flowfuse.com/blog/2023/01/environment-variables-in-node-red/).
 
-#### Accessing Environment varriables 
+#### Accessing Environment variables 
 
 To access both flow-level and global-level environment variables in a function node, use:
 
-```js
+```javascript
 env.get('variableName');
 ```
 Environment variables in the change, inject, and switch nodes can be accessed by selecting the "$ env variable" option and entering the variable name in the input field. Here's an example of retrieving an environment variable using the change node:
 
 !["Screenshot showing how to retrieve environment varriable in the change node"](./images/varriables-in-node-red-retriving-environment-varriable-using-change-node.png "Screenshot showing how to retrieve environment varriable in the change node"){data-zoomable}
 
-In the template node you can access it like below:
+In the template node, you can access it like below:
 
 ```javascript
 This is my username : {% raw %}{{env.USERNAME}}.
@@ -194,15 +173,15 @@ FlowFuse provides a way to persist these variable values between restarts and Fl
 
 To set variables as persistent in a function node, you just need to pass one more argument "persistent" in the set method.
 
-```js
+```javascript
 context.set('varriableName',value,'persistent'); 
 ```
 
-```js
+```javascript
 flow.set('varriableName',value,'persistent');
 ```
 
-```js
+```javascript
 global.set('varriableName',value,'persistent');
 ```
 
@@ -214,15 +193,15 @@ To set them using change node steps are the same as storing them in memory you j
 
 To retrieve a variable stored in the persistent store you'll need to pass "persistent" in the get method.
 
-```js
+```javascript
 context.get('varriableName','persistent'); 
 ```
 
-```js
+```javascript
 flow.get('varriableName','persistent');
 ```
 
-```js
+```javascript
 global.get('varriableName','persistent');
 ```
 
