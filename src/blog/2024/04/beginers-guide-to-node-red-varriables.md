@@ -135,29 +135,44 @@ To Delete global varriable again you can use both "context data" tab and the cha
 
 ### Exploring Environmental variables
 
-Environment variables, similar to global variables, are accessible across all nodes and flows within a Node-RED instance. However, they're specifically used for storing sensitive configuration data, such as API keys or database credentials, ensuring this information isn't directly exposed within your flows.
+Environment variables are specifically used for storing sensitive configuration data, such as API keys or database credentials, ensuring this information isn't directly exposed within your flows. In Node-RED you can set environment varriables at flow and global level.
 
-#### When to use it?
+1. Flow-level environment:  
+   - Used to store sensitive configuration data accessible only within a specific flow. This ensures secure and isolated storage of sensitive information. 
 
-- When you need to securely store sensitive configuration data separately so that you won't expose it accidentally in flow.
-- **Example Scenario:** You're developing a Node-RED application that integrates with external APIs, such as a weather service or a payment gateway. You can use environment variables to store API keys or authentication tokens securely, ensuring that sensitive information is not exposed within your flow configurations or source code.
+   - Example Scenario: When building a multi-flow Node-RED application, each flow may need different configuration details, like API keys or unique identifiers. Using flow-level environment variables allows each flow to securely store its specific sensitive data without exposing it to other flows.
 
-#### Initiating/setting Flow variable
+2. Global-level environment
+   - variables are used to store sensitive data accessible across all flows in a Node-RED instance. They are helpful when you need to share the same sensitive data across different flows.
 
-We cannot set and delete environment variables using nodes, to set and delete we have separate interfaces within instance settings.
+   - Example Scenario: If multiple flows need to use the same API key, setting a global-level environment variable allows them to access this data securely, avoiding repeated configurations and ensuring consistency.
 
-For more information on setting environment variables refer to the [Using Environment variables with Node-RED](https://flowfuse.com/blog/2023/01/environment-variables-in-node-red/)
+#### Setting Environment Variables
 
-#### Retrieving Environment variable
+To set flow level environment varriable you'll have to use the edit dialog of the flow.
 
-we can retrieve environment variables using the function node and change node, to retrieve it, using the function node use the global's `get` method like as below:
+!["Screenshot showing how to set flow level environment varriables"](./images/varriables-in-node-red-setting-flow-scope-enviroment-varriable.gif "Screenshot showing how to set flow level environment varriables"){data-zoomable}
+
+For information on setting and managing global-level environment variables, refer to [Using Environment varriables in Node-RED](https://flowfuse.com/blog/2023/01/environment-variables-in-node-red/).
+
+#### Accessing Environment varriables 
+
+To access both flow-level and global-level environment variables in a function node, use:
 
 ```js
 env.get('variableName');
 ```
-Retrieving environment variables in change, inject, and switch nodes is quite similar. You simply need to select the "$ env varriable" option and enter the variable name in the input field. Below is an image showing how you can retrieve environment variables using the change node.:
+Environment variables in the change, inject, and switch nodes can be accessed by selecting the "$ env variable" option and entering the variable name in the input field. Here's an example of retrieving an environment variable using the change node:
 
 !["Screenshot showing how to retrieve environment varriable in the change node"](./images/varriables-in-node-red-retriving-environment-varriable-using-change-node.png "Screenshot showing how to retrieve environment varriable in the change node"){data-zoomable}
+
+In the template node you can access it like below:
+
+```javascript
+This is my username : {% raw %}{{env.USERNAME}}.
+{% endraw %}
+```
+When you have variables with the same name, accessing them will prioritize the flow-level variable over the global-level one. To access a global-level environment variable in this scenario, you need to add a prefix to the variable name with '$parent'
 
 ### Exploring Context Data tab
 
