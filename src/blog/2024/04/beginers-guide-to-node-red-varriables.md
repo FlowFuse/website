@@ -23,7 +23,7 @@ In this guide, we understand that your time is valuable. We offer a concise yet 
 
 ## Understanding Node-RED Variables
 
-Variables are crucial in Node-RED. They simplify tasks and reduce database needs for small applications or dashboards. Node-RED has four types of variables: Node, Flow, Global, and Environment. Each has a unique scope and use case, and they can store all data types, including numbers, strings, objects, arrays, buffers, and more. All except Environment variables are stored in memory, which makes them temporary.
+Variables in Node-RED simplify tasks and enable state tracking. Node-RED has four types of variables: Node, Flow, Global, and Environment. Each type has a unique scope and can store various data types like numbers, strings, objects, arrays, and buffers. All variables, except Environment variables, are stored in memory, making them temporary.
 
 ### Exploring Node variables
 
