@@ -41,7 +41,7 @@ This action sets the value for the context variable with the specified name.
 
 #### Retrieving Node variable
 
-To retrieve a node variable, use the context's `get` method:
+To retrieve a node variable within a function node, use the context's `get` method:
 
 ```javascript
 context.get('variableName');
@@ -49,11 +49,11 @@ context.get('variableName');
 
 #### Deleting Node variables
 
-We cannot delete node variables using a Node-RED node; you'll need to use the Node-RED "Context Data" tab delete option which is available for each variable, as explained in the "Exploring Context Data" tab section at the end of the guide.
+We cannot delete node variables using a Node-RED node; you'll need to use the Node-RED "Context Data" tab delete option available for each variable, as explained in the "Exploring Context Data" tab section at the end of the guide.
 
 ### Exploring Flow variables
 
-Flow variables are accessible to function, change, inject, and switch nodes, as well as some third-party nodes, within the same tab or flow where they have been set. Useful for sharing data within a specific flow or tab, allowing for seamless data transfer between nodes within the same flow.
+Flow variables are accessible to function, change, inject, and switch nodes and some third-party nodes within the same tab or flow where they have been set. It is useful for sharing data within a specific flow or tab, allowing for seamless data transfer between nodes within the same flow.
 
 For example, In a temperature monitoring system, you have multiple sensors sending data to different nodes within the same flow. You can use flow variables to pass the current temperature reading between nodes for processing and analysis within that specific flow.
 
@@ -83,7 +83,7 @@ Retrieving flow variables in change, inject, and switch nodes is quite similar. 
 
 #### Deleting Flow variables
 
-To Delete flow variables you can use both "context data" tab and the change node. I have shown in the below image how you can delete flow variables using change node:
+To Delete flow variables you can use both the "context data" tab and the change node. I have shown in the below image how you can delete flow variables using the change node:
 
 !["Screenshot showing how to delete flow varriable using the change node"](./images/varriables-in-node-red-deleting-global-varriable-using-change-node.png "Screenshot showing how to delete flow varriable using the change node"){data-zoomable}
 
@@ -156,6 +156,10 @@ This is my username : {% raw %}{{env.USERNAME}}.
 {% endraw %}
 ```
 When you have variables with the same name, accessing them will prioritize the flow-level variable over the global-level one. To access a global-level environment variable in this scenario, you need to add a prefix to the variable name with '$parent'
+
+#### Deleting Environment variables 
+
+To delete added environment variables, you can use the same interface where added them. In the right corner of your added environment variable, you'll see a delete or cross icon. Simply click on it to delete the variable.
 
 ### Exploring Context Data tab
 
