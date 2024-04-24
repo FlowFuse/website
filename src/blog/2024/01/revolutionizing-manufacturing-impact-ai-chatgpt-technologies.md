@@ -4,7 +4,7 @@ subtitle: How AI and Conversational Technologies are Transforming Industrial Pro
 description: Explore how AI and ChatGPT revolutionize manufacturing with boosted efficiency, quality control, and workforce transformation.
 date: 2024-01-31
 authors: ["flowfuseteam"]
-image: /blog/2024/01/images/Futuristic factory with robots and AI technology, showing advanced machinery and computers integrated with ChatGPT for manufacturing processes.png
+image: /blog/2024/01/images/Futuristic factory with robots.png
 tags:
     - posts
     - flowfuse
