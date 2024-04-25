@@ -11,6 +11,10 @@ tags:
     - community
     - changelog
     - dashboard
+    - node-red Dashboard 2.0
+    - node-red visualization
+    - progressive web app
+    - Vuetify
 ---
 
 With a new release of Node-RED Dashboard 2.0 we have plenty of new fixes and improvements being added to the project. In this post, we'll deep dive into community contributions, PWA support, new Vuetify components, and the rest of the great work published in this latest release.
