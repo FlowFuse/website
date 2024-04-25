@@ -174,7 +174,7 @@ After using FlexDash over the past couple of weeks and finding it to be already 
 
 *Node-RED Dashboard 2.0 retains all the widgets and concepts from the old version so Transitioning from Node-RED Dashboard 1.0 to 2.0 is easy. Also, it includes various chart types such as line, scatter, bar, gauge, and more, and it's compatible with all the amazing Vuetify components, making it easier to build advanced dashboards. also, it allows to building of secure personalized multi-user dashboards*
 
-*To ensure a smooth transition, FlowFuse provides easy-to-follow guides. Refer to [Node-RED Dashboard 2.0 Guides](https://flowfuse.com/blog/dashboard/) for more information.*
+*Furthermore, the team is continuously working on adding more amazing features to enhance the user experience. For a smooth transition, FlowFuse provides easy-to-follow guides. Refer to [Node-RED Dashboard 2.0 Guides](https://flowfuse.com/blog/dashboard/) for more information.*
 
 As mentioned above, Dashboard is no longer in active development. This is due to the framework upon which it was build [(AngularJS)](https://angularjs.org/) now being unsupported as of the end of 2021. You can read a lot more detail on why ongoing development of Dashboard is not practical in this [thread on the Node-RED forums](https://discourse.nodered.org/t/discussion-about-a-new-dashboard/51119/3).
 
