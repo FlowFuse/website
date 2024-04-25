@@ -10,9 +10,9 @@ tags:
    - node-red
    - node-red variables
    - node-red global variable
-   - context
-   - node-red flow
-   - node-red environment
+   - node-red context variable
+   - node-red flow variable
+   - node-red environment variables
 ---
 
 Node-RED is super easy and doesn't require much coding knowledge, which is why many people love it! Even though Node-RED is straightforward, some terms, like "global," "flow," and "environment" variables, might seem puzzling at first. However, many people have realized these concepts are quite easy to grasp after reading about them on a few resources or simply participating in Node-RED forums. To save you time and help you understand the different concepts quicker, this guide will cover Node-RED variables in depth, aiming to deepen your proficiency while minimizing the effort required to gather information.
