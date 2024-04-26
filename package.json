@@ -7,7 +7,7 @@
     "license": "Apache-2.0",
     "author": "Nick O'Leary",
     "scripts": {
-        "start": "npm-run-all build:js --parallel dev:*",
+        "start": "npm-run-all clean:dev build:js --parallel dev:*",
         "test": "mocha",
         "build:js": "terser -c -m -o _site/js/cc.min.js node_modules/vanilla-cookieconsent/dist/cookieconsent.umd.js src/js/cookieconsent-config.js",
         "build": "cross-env NODE_ENV=production npm-run-all clean build:js --parallel prod:*",
