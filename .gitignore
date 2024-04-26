@@ -7,14 +7,13 @@ src/docs/*
 src/blueprints/*
 !src/blueprints/*.njk
 
-# Netlify generated stuff
-.netlify/
+# Local development config
 .vscode/
-
-# Eleventy Edge Build Data files
-netlify/edge-functions/_generated/
 
 .env
 
 # Cache for assets
 .cache
+
+# Local Netlify folder
+.netlify

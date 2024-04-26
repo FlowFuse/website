@@ -2,7 +2,6 @@ const path = require("path");
 const util = require("util");
 const fs = require("fs");
 
-const { EleventyEdgePlugin } = require("@11ty/eleventy");
 const { EleventyRenderPlugin } = require("@11ty/eleventy");
 
 const eleventyImage = require("@11ty/eleventy-img");
@@ -52,8 +51,6 @@ module.exports = function(eleventyConfig) {
     // Make filters globally accessible
     global.isFuturePost = eleventyConfig.getFilter('isFuturePost');
     global.isFutureDate = eleventyConfig.getFilter('isFutureDate');
-
-    eleventyConfig.addPlugin(EleventyEdgePlugin);
 
     // Layout aliases
     eleventyConfig.addLayoutAlias('default', 'layouts/base.njk');
@@ -623,9 +620,6 @@ module.exports = function(eleventyConfig) {
                     conservativeCollapse: true,
                     preserveLineBreaks: true,
                     removeComments: true,
-                    ignoreCustomComments: [
-                        /ELEVENTYEDGE.*/
-                    ],
                     removeEmptyAttributes: true,
                     removeRedundantAttributes: true,
                     useShortDoctype: true,
