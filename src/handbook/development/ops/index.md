@@ -13,7 +13,8 @@ navTitle: Platform Ops
 ## CI/CD
 
 As part of our CI/CD pipeline in our [@flowfuse/flowfuse](https://github.com/FlowFuse/flowfuse/) repository, we perform the following actions when code is merged to the `main` branch:
-
+1. Several backend and UI tests are executed against the code by [this pipeline](https://github.com/FlowFuse/flowfuse/blob/main/.github/workflows/tests.yml)
+2. Once all tests complete with success, [FlowFuse npm package](https://www.npmjs.com/package/@flowfuse/flowfuse) is built and published to the npm registry with a `nightly` tag by [this pipeline](https://github.com/FlowFuse/flowfuse/actions/workflows/publish.yml).
 1. [FlowFuse npm package](https://www.npmjs.com/package/@flowfuse/flowfuse) is built and published to the npm registry with a `nightly` tag by [this pipeline](https://github.com/FlowFuse/flowfuse/actions/workflows/publish.yml).
 2. The same pipeline triggers another action, responsible for [building a container image](https://github.com/FlowFuse/helm/actions/workflows/flowforge-container.yml) 
 3. Container image build pipeline uses [flowfuse npm package](https://www.npmjs.com/package/@flowfuse/flowfuse) created in step 1 (tagged as `nightly`) to build a fresh container image
