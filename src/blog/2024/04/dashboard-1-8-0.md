@@ -23,7 +23,7 @@ With a new release of Node-RED Dashboard 2.0 we have plenty of new fixes and imp
 
 ## Community Contributions
 
-I firstly wanted to take this opportunity to point out a big milestone that I'm very proud to see in Node-RED Dashboard 2.0.
+We firstly wanted to take this opportunity to point out a big milestone that we're very proud to see in Node-RED Dashboard 2.0.
 
 This release marks the first time we've had more contributions in a single release from the community, than from FlowFuse employees. I think this is a testament to the community, and a big milestone in validating the success, and popularity, of Dashboard 2.0 in the wider Node-RED community.
 
