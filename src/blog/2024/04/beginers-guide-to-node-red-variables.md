@@ -170,7 +170,7 @@ And if you need to access environment variables in third-party configuration nod
 
 #### Deleting Environment variables 
 
-To delete added environment variables, you can use the same interface where added them. In the right corner of your added environment variable, you'll see a delete or cross icon. Simply click on it to delete the variable.
+To delete added environment variables, you can use the same interface where added them. In the right corner of your added environment variable, you'll see a delete or cross icon. Simply click on it to delete the variable and restart your Node-RED instance.
 
 ### Exploring Context Data tab
 
