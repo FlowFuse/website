@@ -31,7 +31,7 @@ For example, You have a form on a Node-RED Dashboard 2.0, and you want to insert
 
 #### Initiating/setting Node variable
 
-To initiate and set a node variable in the function node, you will have to use the context’s `set` method:
+To initiate and set a node variable using the function node, you will have to use the context’s `set` method:
 
 ```javascript
 context.set('variableName', value);
@@ -41,7 +41,7 @@ This action sets the value for the context variable with the specified name.
 
 #### Retrieving Node variable
 
-To retrieve a node variable within a function node, use the context's `get` method:
+To retrieve a node variable using a function node, use the context's `get` method:
 
 ```javascript
 context.get('variableName');
@@ -49,7 +49,7 @@ context.get('variableName');
 
 #### Deleting Node variables
 
-We cannot delete node variables using a Node-RED node; you'll need to use the Node-RED "Context Data" tab'S delete option available for each variable, as explained in the "Exploring Context Data" tab section at the end of the guide.
+We cannot delete node variables using a Node-RED node; you'll need to use the Node-RED "Context Data" tab's delete option available for each variable, as explained in the "Exploring Context Data" tab section at the end of the guide.
 
 ### Exploring Flow variables
 
@@ -59,68 +59,75 @@ For example, In a temperature monitoring system, you have multiple sensors sendi
 
 #### Initiating/setting Flow variable
 
-We can set flow variables using function and change node. To initiate a Flow variable in the function node, you will have to use the flow's `set` method like below in the function node:
+We can set flow variables using function and change node. 
+
+In the change node, you can set it as shown in the below image
+
+!["Screenshot showing how to set flow variable using the change node"](./images/variables-in-node-red-setting-flow-variable-using-change-node.png "Screenshot showing how to set flow variable using the change node"){data-zoomable}
+
+To initiate a Flow variable using the function node, you will have to use the global`s set method like the below in the function node:
 
 ```javascript
 flow.set('variableName', value);
 ```
 
-In the change node, you can set it as shown in the below image
-
-!["Screenshot showing how to set flow varriable using the change node"](./images/varriables-in-node-red-setting-flow-varriable-using-change-node.png "Screenshot showing how to set flow varriable using the change node"){data-zoomable}
-
 #### Retrieving Flow variable
 
-You can retrieve flow variables using the function, change, inject, and switch. To retrieve a flow variable, use the flow's `get` method like the below in the function node:
+You can retrieve flow variables using the function, change, inject, and switch. 
+
+Retrieving flow variables using change, inject, and switch nodes is quite similar. You simply need to select the "flow" option and enter the variable name in the input field. Below is an image showing how you can retrieve flow variables using the change node.
+
+!["Screenshot showing how to retrieve flow variable using the change node"](./images/variables-in-node-red-retrieving-flow-variable-using-change-node.png "Screenshot showing how to retrieve flow variable using the change node"){data-zoomable}
+
+To retrieve a flow variable, use the flow's `get` method like the below in the function node:
 
 ```javascript
 flow.get('variableName');
 ```
 
-Retrieving flow variables in change, inject, and switch nodes is quite similar. You simply need to select the "flow" option and enter the variable name in the input field. Below is an image showing how you can retrieve flow variables using the change node.
-
-!["Screenshot showing how to retrive flow varriable using the change node"](./images/varriables-in-node-red-retriving-flow-varriable-using-change-node.png "Screenshot showing how to retrive flow varriable using the change node"){data-zoomable}
-
 #### Deleting Flow variables
 
 To Delete flow variables you can use both the "context data" tab and the change node. I have shown in the below image how you can delete flow variables using the change node:
 
-!["Screenshot showing how to delete flow varriable using the change node"](./images/varriables-in-node-red-deleting-global-varriable-using-change-node.png "Screenshot showing how to delete flow varriable using the change node"){data-zoomable}
+!["Screenshot showing how to delete flow variable using the change node"](./images/variables-in-node-red-deleting-global-variable-using-change-node.png "Screenshot showing how to delete flow variable using the change node"){data-zoomable}
 
 ### Exploring Global variables
 
-Global variables in Node-RED are accessible to function, change, inject, switch, and certain third-party nodes within a given Node-RED instance. They serve as a centralized storage point for data that needs to be accessed across different parts of an application. This is especially useful when you want to share data across multiple flows or tabs within the same Node-RED instance.
+Global variables in Node-RED are accessible to function, change, inject, switch nodes within a given Node-RED instance. They serve as a centralized storage point for data that needs to be accessed across different parts of an application. This is especially useful when you want to share data across multiple flows or tabs within the same Node-RED instance.
 
 For example, In a home automation system with flows for lighting, security, and climate control, global variables can store user preferences or system settings that all flows can access and update. This allows for consistent behavior across the entire system.
 
 #### Initiating/setting Flow variable
 
-We can set Global variables using the function and change node. To initiate a Flow variable in the function node, you will have to use the global`s set method like the below in the function node:
+We can set Global variables using the function and change node.
+
+In the change node, you can set it as shown in the below image
+
+!["Screenshot showing how to set global variable using the change node"](./images/variables-in-node-red-setting-global-variable-using-change-node.png "Screenshot showing how to set global variable using the change node"){data-zoomable}
+
+To initiate a Flow variable in the function node, you will have to use the global`s set method like the below in the function node:
 
 ```javascript
 global.set('variableName', value);
 ```
 
-In the change node, you can set it as shown in the below image
-
-!["Screenshot showing how to set global varriable using the change node"](./images/varriables-in-node-red-setting-global-varriable-using-change-node.png "Screenshot showing how to set global varriable using the change node"){data-zoomable}
-
 #### Retrieving Global variable
 
-To retrieve a global variable, use the global's `get` method like the below in the function node:
+Retrieving global variables using change, inject, and switch nodes is quite similar. You simply need to select the "global" option and enter the variable name in the input field. Below is an image showing how you can retrieve global variables using the change node:
+
+!["Screenshot showing how to retrieve global variables using the change node"](./images/variables-in-node-red-retrieving-global-variable-using-change-node.png "Screenshot showing how to retrieve global variables using the change node"){data-zoomable}
+
+To retrieve a global variable using the function, use the global's `get` method like the below in the function node:
 
 ```javascript
 global.get('variableName');
 ```
-Retrieving global variables in change, inject, and switch nodes is quite similar. You simply need to select the "global" option and enter the variable name in the input field. Below is an image showing how you can retrieve global variables using the change node:
-
-!["Screenshot showing how to retrieve global variables using the change node"](./images/varriables-in-node-red-retriving-global-varriable-using-change-node.png "Screenshot showing how to retrieve global variables using the change node"){data-zoomable}
 
 #### Deleting Global variables
 
 To Delete the global variables again you can use both the "context data" tab and the change node. I have shown in the below image how you can delete global variables using the change node:
 
-!["Screenshot showing how to delete global varriable using the change node"](./images/varriables-in-node-red-deleting-global-varriable-using-change-node.png "Screenshot showing how to delete global varriable using the change node"){data-zoomable}
+!["Screenshot showing how to delete global variable using the change node"](./images/variables-in-node-red-deleting-global-variable-using-change-node.png "Screenshot showing how to delete global variable using the change node"){data-zoomable}
 
 ### Exploring Environmental variables
 
@@ -134,20 +141,21 @@ Environment variables are specifically used for storing sensitive configuration 
 
 To set flow-level environment variables you'll have to use the edit dialog of the flow.
 
-!["Screenshot showing how to set flow level environment varriables"](./images/varriables-in-node-red-setting-flow-scope-enviroment-varriable.gif "Screenshot showing how to set flow level environment varriables"){data-zoomable}
+!["Screenshot showing how to set flow level environment variables"](./images/variables-in-node-red-setting-flow-scope-enviroment-variable.gif "Screenshot showing how to set flow level environment variables"){data-zoomable}
 
-For information on setting and managing global-level environment variables, refer to [Using Environment varriables in Node-RED](/blog/2023/01/environment-variables-in-node-red/).
+For information on setting and managing global-level environment variables, refer to [Using Environment variables in Node-RED](/blog/2023/01/environment-variables-in-node-red/).
 
 #### Accessing Environment variables 
 
-To access both flow-level and global-level environment variables in a function node, use:
+Environment variables in the change, inject, and switch nodes can be accessed by selecting the "$ env variable" option and entering the variable name in the input field. Here's an example of Accessing an environment variable using the change node:
+
+!["Screenshot showing how to retrieve environment variable in the change node"](./images/variables-in-node-red-retrieving-environment-variable-using-change-node.png "Screenshot showing how to retrieve environment variable in the change node"){data-zoomable}
+
+To access environment variables in a function node, use:
 
 ```javascript
 env.get('variableName');
 ```
-Environment variables in the change, inject, and switch nodes can be accessed by selecting the "$ env variable" option and entering the variable name in the input field. Here's an example of Accessing an environment variable using the change node:
-
-!["Screenshot showing how to retrieve environment varriable in the change node"](./images/varriables-in-node-red-retriving-environment-varriable-using-change-node.png "Screenshot showing how to retrieve environment varriable in the change node"){data-zoomable}
 
 In the template node, you can access it like below:
 
@@ -155,6 +163,8 @@ In the template node, you can access it like below:
 This is my username : {% raw %}{{env.USERNAME}}.
 {% endraw %}
 ```
+
+And if you need to access environment variables in third-party configuration nodes where they haven't provided an option to use environment variables, you can access them with `${variableName}` in the node's input field.
 
 *Note: When you have variables with the same name, accessing them will prioritize the flow-level variable over the global-level one. To access a global-level environment variable in this scenario, you need to add a prefix to the variable name with '$parent'*
 
@@ -164,11 +174,11 @@ To delete added environment variables, you can use the same interface where adde
 
 ### Exploring Context Data tab
 
-!["Screenshot showing Node-RED Context data tab"](./images/varriables-in-node-red-context-data-tab.png "Screenshot showing Node-RED Context data tab"){data-zoomable}
+!["Screenshot showing Node-RED Context data tab"](./images/variables-in-node-red-context-data-tab.png "Screenshot showing Node-RED Context data tab"){data-zoomable}
 
 Node-RED provides a dedicated interface for viewing and managing all Node-RED variables. Navigate to the sidebar's "Context Data" tab, where you'll find sections for Node, Flow, and Global variables. Each section has a refresh icon at the top right corner; click on it to see the latest or newly added variables.
 
-!["Screenshot showing Node-RED Context data tab options for managing varriables"](./images/varriables-in-node-red-context-data-tab-options-for-varriables.png "Screenshot showing Node-RED Context data tab options for managing varriables"){data-zoomable}
+!["Screenshot showing Node-RED Context data tab options for managing variables"](./images/variables-in-node-red-change-node-persistent-store-option.gif "Screenshot showing Node-RED Context data tab options for managing variables"){data-zoomable}
 
 In this tab, you'll also find information about when each variable was set or updated, along with additional options on the right side of each variable. The first option allows you to copy the variable's name, the second option lets you copy the variable's value, the third option refreshes the variable to show the most recent value, and the fourth option allows you to delete the variable.
 
@@ -180,41 +190,43 @@ FlowFuse provides a way to persist these variable values between restarts and Fl
 
 #### Setting Persistent Variables in Function Node
 
-To set variables as persistent in a function node, you just need to pass one more argument "persistent" in the set method.
+To set variables in persistent store using change node steps are the same as storing them in memory you just need to change the store option to persistent from memory in the change node like below:
+
+!["Screenshot showing how to set global variable using the change node"](./images/variables-in-node-red-change-node-persistent-store-option-for-while-setting-variable.gif "Screenshot showing how to set global variable using the change node"){data-zoomable}
+
+In the function node, you just need to pass one more argument "persistent" in the set method.
 
 ```javascript
-context.set('varriableName',value,'persistent'); 
+context.set('variableName',value,'persistent'); 
 ```
 
 ```javascript
-flow.set('varriableName',value,'persistent');
+flow.set('variableName',value,'persistent');
 ```
 
 ```javascript
-global.set('varriableName',value,'persistent');
+global.set('variableName',value,'persistent');
 ```
 
-To set them using change node steps are the same as storing them in memory you just need to change the store option to persistent from memory in the change node like below:
+#### Retrieving Persistent Variables
 
-!["Screenshot showing how to set global varriable using the change node"](./images/varriables-in-node-red-change-node-persistent-store-option-for-while-setting-varriable.gif "Screenshot showing how to set global varriable using the change node"){data-zoomable}
+You can retrieve variables stored in the persistent store using the change node as shown in the below image:
 
-#### Retrieving Persistent Variables in Function Node
+!["Screenshot showing how to retrieve global variable using the change node"](./images/variables-in-node-red-change-node-persistent-store-option.gif "Screenshot showing how to retrieve global variable using the change node"){data-zoomable}
 
-To retrieve a variable stored in the persistent store you'll need to pass "persistent" in the get method.
-
-```javascript
-context.get('varriableName','persistent'); 
-```
+To retrieve a variable stored in the persistent store using the function node, you'll need to pass "persistent" in the get method.
 
 ```javascript
-flow.get('varriableName','persistent');
+context.get('variableName','persistent'); 
 ```
 
 ```javascript
-global.get('varriableName','persistent');
+flow.get('variableName','persistent');
 ```
 
-!["Screenshot showing how to set global varriable using the change node"](./images/varriables-in-node-red-change-node-persistent-store-option.gif "Screenshot showing how to set global varriable using the change node"){data-zoomable}
+```javascript
+global.get('variableName','persistent');
+```
 
 ## Conclusion
 
