@@ -1,0 +1,43 @@
+<div class="w-full px-6 py-16">
+    <div class="container m-auto sm:max-w-screen-lg md:px-9">
+        <h2 class="text-center">{{ faqTitle | safe }}</span></h2>
+        <label class="m-auto block max-w-lg md:max-w-none text-center"> {{ faqSubtitle | safe }} </label>
+        <div class="mt-12 m-auto w-full ff-prose">
+            <div class="prose max-w-none">
+                {% for faq in meta.faq %}
+                <div class="w-full {% if not loop.last %}border-b{% endif %} py-4">
+                    <h5 class="question flex flex-row justify-between items-center w-full m-0 gap-6 cursor-pointer"
+                        id="question-{{ loop.index }}">
+                        <span>{{ faq.question }}</span>
+                        <div class="chevron transition-transform ease-in-out duration-300"
+                            id="chevron-{{ loop.index }}">
+                            {% include "components/icons/chevron-down.svg" %}
+                        </div>
+                    </h5>
+                    <div class="answer px-6 mt-6 hidden" id="answer-{{ loop.index }}">
+                        <p>{{ faq.answer | safe }}</p>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    const questions = document.querySelectorAll('.question');
+    questions.forEach((question, index) => {
+        question.addEventListener('click', () => {
+            const answer = document.querySelector(`#answer-${index + 1}`);
+            const chevron = document.querySelector(`#chevron-${index + 1}`);
+            if (answer.classList.contains('hidden')) {
+                // Show the clicked answer and rotate its chevron
+                answer.classList.remove('hidden');
+                chevron.style.transform = 'rotate(180deg)';
+            } else {
+                // Hide the clicked answer and rotate its chevron to original state
+                answer.classList.add('hidden');
+                chevron.style.transform = 'rotate(0deg)';
+            }
+        });
+    });
+</script>
