@@ -4,7 +4,7 @@ subtitle: Checkout all the great content that's been added to Dashboard 2.0 in t
 description: Checkout all the great content that's been added to Dashboard 2.0 in the past few weeks and the new (in-preview) Vuetify components we've made available in UI Template nodes.
 date: 2024-04-26
 authors: ["joe-pavitt"]
-image: /blog/2024/03/images/getting-started-with-dashboard-2.png
+image: /blog/2024/04/images/milestones-pwa-new-components.png
 tags:
     - posts
     - releases
