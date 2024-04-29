@@ -65,15 +65,15 @@ In this section, we will construct the practical implementation of the scenario 
 
 Having a separate server for webhooks is crucial as it will receive data from multiple sensors. You might wonder why we need a separate Server 2 instead of using one server running on the Raspberry Pi (Server 1) to send data directly to Server 3. The answer is simple: the Raspberry Pi is hardware with limited memory and power, which can slow down communication if the server running on it receives a lot of traffic. Therefore, running a separate Node-RED instance on each Raspberry Pi and having one centralized separate webhook server is necessary. This central server, running on the cloud, will have significantly more power and resources to handle the incoming traffic efficiently.                              
 
-- Drag an **http-in** node onto the canvas. Configure the method as POST and set the path as **/test-webhook**.
+1. Drag an **http-in** node onto the canvas. Configure the method as POST and set the path as **/test-webhook**.
 
 !["Screenshot displaying webhook http-in nodes configuration"](./images/using-webhook-with-node-red-http-in-node-endpoint-for-receiving-data-from-server-2.png "Screenshot displaying webhook http-in nodes configuration"){data-zoomable}
 
-- Drag an **http request** node onto the canvas. Configure the method as POST and set the URL to `https://<your-instance-name-in-which-server-3-running>.flowfuse.cloud/schedule-maintenance`, replace <your-instance-name> with your actual name of the instance. **/schedule-maintenance** will be the endpoint for posting requests to the maintenance monitoring system provided by Server 3. 
+2. Drag an **http request** node onto the canvas. Configure the method as POST and set the URL to `https://<your-instance-name-in-which-server-3-running>.flowfuse.cloud/schedule-maintenance`, replace <your-instance-name> with your actual name of the instance. **/schedule-maintenance** will be the endpoint for posting requests to the maintenance monitoring system provided by Server 3. 
 
 !["Screenshot displaying http request nodes configuration for sending post request to server 3"](./images/using-webhook-with-node-red-request-node-sending-request-to-server3.png "Screenshot displaying http request nodes configuration for sending post request to server 3"){data-zoomable}
 
-- Drag an **http response** node onto the canvas and connect its input to the output of the http-in node. Also, connect an http request node's input to the same http in the node's output.
+3. Drag an **http response** node onto the canvas and connect its input to the output of the http-in node. Also, connect an http request node's input to the same http in the node's output.
 
 ## Setting Up a Temperature sensors
 
@@ -104,7 +104,7 @@ Before proceeding with this step, it is necessary to run Node-RED on your Raspbe
 
 !["Screenshot of the change node formating sensor data"](./images/using-webhook-with-node-red-change-node-formating-sensor-data.png "Screenshot of the change node formating sensor data"){data-zoomable}
 
-6. Connect the **inject** node's output to the **rpi-dht22** node's input and **rpi-dht22** node's output to **change** node's input.
+8. Connect the **inject** node's output to the **rpi-dht22** node's input and **rpi-dht22** node's output to **change** node's input.
 
 ## Monitoring Temperature ( Server 1 )
 
@@ -174,8 +174,8 @@ return msg;
 
 !["Screenshot Displaying the flow of server 3"](./images/using-webhook-with-node-red-server-3-instance.png "Screenshot Displaying the flow of scheduled maintenance table"){data-zoomable}
 
-- With your flow updated to include the above, click the "Deploy" button in the top-right corner of the Node-RED Editor in each Node-RED instance.
-- In server 3 (Maintenance scheduling system), Locate the 'Open Dashboard' button at the top-right corner of the Dashboard 2.0 sidebar and click on it to navigate to the dashboard.
+1. With your flow updated to include the above, click the "Deploy" button in the top-right corner of the Node-RED Editor in each Node-RED instance.
+2. In server 3 Node-RED instance (Maintenance scheduling system), Locate the 'Open Dashboard' button at the top-right corner of the Dashboard 2.0 sidebar and click on it to navigate to the dashboard.
 
 !["Screenshot Displaying the flow of scheduled maintenance table"](./images/using-webhook-with-node-red-scheduled-maintenance-table-dashboard-view.gif "Screenshot Displaying the flow of scheduled maintenance table"){data-zoomable}
 
