@@ -3,6 +3,11 @@
         label: "No-Ops Node-RED",
         hosting: "self-hosted",
         rows: [{
+            id: "nr-hosting",
+            label: "Node-RED Hosting",
+            values: ['check', 'check'],
+            info: "<p>FlowFuse hosts Node-RED instances.</p>"
+        }, {
             id: "nodered-instances",
             label: "Number of Node-RED instances",
             values: ['5', 'Licensed amount'],
@@ -76,11 +81,6 @@
         label: "Security & Compliance",
         hosting: "self-hosted",
         rows: [{
-            id: "nr-hosting",
-            label: "Node-RED Hosting",
-            values: ['check', 'check'],
-            info: "<p>FlowFuse hosts Node-RED instances.</p>"
-        }, {
             id: "audit-log",
             label: "Audit Log",
             values: ['check', 'check'],
