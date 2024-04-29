@@ -2,9 +2,9 @@
 title: Using Webhooks with Node-RED
 subtitle: Learn to Integrate and Automate with Webhooks and Node-RED.
 description: Learn how to seamlessly integrate webhooks into your Node-RED applications for automating tasks and enhancing communication. Get detailed, step-by-step instructions on setting up webhooks and practical implementation examples.
-date: 2024-04-07
+date: 2024-04-29
 authors: ["sumit-shinde"]
-image:
+image: /blog/2024/04/images/webhooks-node-red.png
 tags:
     - post
     - node-red
