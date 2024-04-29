@@ -84,7 +84,7 @@ In our income-expense application, we will display the income and expense data s
 2. Set `msg.payload` to the JSON expression below, which first sorts the array containing both income and expense data by time.
 3. Connect the output of the ui-event widget to the input of the change node.
 
-```json
+```javascript
 $sort([$globalContext('income'), $globalContext('expense')], function($a, $b) { $moment($a.date).toDate().getTime() - $moment($b.date).toDate().getTime() })
 ```
 
