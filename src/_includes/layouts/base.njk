@@ -125,6 +125,8 @@ eleventyComputed:
     <script>{{ js | jsmin | safe }}</script>
     {% jsonLdScript meta, type, tags %}
 
+    <script type="module" src="/js/flowrenderer.min.js"></script>
+
     {%- if not DEV_MODE -%}
     <!-- Google tag (gtag.js) -->
     <script>

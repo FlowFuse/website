@@ -38,11 +38,9 @@ Creating an output message for each element is the default mode for Split. When
 inputting one array with `1, 2, 3, 4` as contents, 4 messages will be printed in
 order:
 
-![Splitting an Array](./images/split-node-array.png)
-
-```json
+{% renderFlow 200 %}
 [{"id":"6354daaccf2b2504","type":"inject","z":"2862bf5c278ff5bd","name":"","props":[{"p":"payload"}],"repeat":"","crontab":"","once":false,"onceDelay":0.1,"topic":"","payload":"[1, 2, 3, 4]","payloadType":"json","x":140,"y":100,"wires":[["82ab52c7f894f725"]]},{"id":"82ab52c7f894f725","type":"split","z":"2862bf5c278ff5bd","name":"Split Array","splt":"\\n","spltType":"str","arraySplt":1,"arraySpltType":"len","stream":false,"addname":"","x":310,"y":100,"wires":[["80ee79b75e373ba9"]]},{"id":"80ee79b75e373ba9","type":"debug","z":"2862bf5c278ff5bd","name":"Print individual values","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"payload","targetType":"msg","statusVal":"","statusType":"auto","x":520,"y":100,"wires":[]}]
-```
+{% endrenderFlow %}
 
 #### Regrouping elements
 
@@ -52,11 +50,9 @@ records at the time. If you have more input, splitting its sub-groups will divid
 is `[1, 2, 3, 4, 5]` with a `Fixed length of` set to 2. This will send 3
 messages: `[1, 2]`, `[3, 4]`, and `[5]`.
 
-![Regroup an Array with Split](./images/split-node-regroup.png)
-
-```json
+{% renderFlow %}
 [{"id":"57087c8029d44fa2","type":"inject","z":"2862bf5c278ff5bd","name":"","props":[{"p":"payload"}],"repeat":"","crontab":"","once":false,"onceDelay":0.1,"topic":"","payload":"[1, 2, 3, 4, 5]","payloadType":"json","x":150,"y":160,"wires":[["b8d0aec7f0cba6c5"]]},{"id":"b8d0aec7f0cba6c5","type":"split","z":"2862bf5c278ff5bd","name":"Regroup array","splt":"\\n","spltType":"str","arraySplt":"2","arraySpltType":"len","stream":false,"addname":"","x":340,"y":160,"wires":[["d45d698bae8b575d"]]},{"id":"d45d698bae8b575d","type":"debug","z":"2862bf5c278ff5bd","name":"Print individual values","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"payload","targetType":"msg","statusVal":"","statusType":"auto","x":560,"y":160,"wires":[]}]
-```
+{% endrenderFlow %}
 
 ### Splitting Strings
 
@@ -69,14 +65,12 @@ Keep the `Split using` set to `\n`, which is the line ending character in Unix
 based systems. In our next example, we have a list of 3 cities in Europe, which
 we need individually. 
 
-![Splitting text by line](./images/split-node-by-line.png "Node-RED flow to split text by line")
-
 Note we use the template node here simply, as the "Inject" node does not allow you
 to create multi-line strings.
 
-```json
+{% renderFlow %}
 [{"id":"39a0a053a3696cd7","type":"inject","z":"2862bf5c278ff5bd","name":"Trigger","props":[],"repeat":"","crontab":"","once":false,"onceDelay":0.1,"topic":"","x":130,"y":220,"wires":[["60bf012438abb4eb"]]},{"id":"4b56a3ed831df59e","type":"split","z":"2862bf5c278ff5bd","name":"Split by line","splt":"\\n","spltType":"str","arraySplt":1,"arraySpltType":"len","stream":false,"addname":"","x":470,"y":220,"wires":[["31f8ca22882b297f"]]},{"id":"31f8ca22882b297f","type":"debug","z":"2862bf5c278ff5bd","name":"Print each line","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"payload","targetType":"msg","statusVal":"","statusType":"auto","x":660,"y":220,"wires":[]},{"id":"60bf012438abb4eb","type":"template","z":"2862bf5c278ff5bd","name":"Data in lines","field":"payload","fieldType":"msg","format":"handlebars","syntax":"mustache","template":"Amsterdam\nAndorra la Vella\nAthens","output":"str","x":290,"y":220,"wires":[["4b56a3ed831df59e"]]}]
-```
+{% endrenderFlow %}
 
 #### Splitting by word
 
@@ -84,11 +78,9 @@ When you've split something by line, you might need to split by word. Simply
 putting a space in the `Split using` setting. That doesn't show a visible character
 in the form, as opposed to the line ending character.
 
-![Node-RED split by word](./images/split-node-by-word.png "Split text by space in Node-RED")
-
-```json
+{% renderFlow 400 %}
 [{"id":"619209d6e3f02473","type":"inject","z":"2862bf5c278ff5bd","name":"","props":[{"p":"payload"}],"repeat":"","crontab":"","once":false,"onceDelay":0.1,"topic":"","payload":"foo bar","payloadType":"str","x":130,"y":280,"wires":[["15b9b3d17a64e2c7"]]},{"id":"15b9b3d17a64e2c7","type":"split","z":"2862bf5c278ff5bd","name":"Split by space","splt":" ","spltType":"str","arraySplt":1,"arraySpltType":"len","stream":false,"addname":"","x":300,"y":280,"wires":[["12607e8708ef58f2"]]},{"id":"12607e8708ef58f2","type":"debug","z":"2862bf5c278ff5bd","name":"Print each word","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"payload","targetType":"msg","statusVal":"","statusType":"auto","x":500,"y":280,"wires":[]}]
-```
+{% endrenderFlow %}
 
 ### Splitting Objects
 
@@ -97,8 +89,6 @@ the catch-all category. Node-RED uses hashes, key-value pairs of property names
 and values. JSON is example of this. In the example below, we'll split the mapping
 of the words "one" and "two" versus the number values.
 
-![Split an object](./images/split-node-hash.png "Split arbitrary objects")
-
-```json
+{% renderFlow 500 %}
 [{"id":"3c4c5535ec3b2138","type":"inject","z":"2862bf5c278ff5bd","name":"","props":[{"p":"payload"}],"repeat":"","crontab":"","once":false,"onceDelay":0.1,"topic":"","payload":"{\"one\": 1, \"two\": 2}","payloadType":"json","x":170,"y":340,"wires":[["eb3227c954debb95"]]},{"id":"eb3227c954debb95","type":"split","z":"2862bf5c278ff5bd","name":"Split map","splt":"\\n","spltType":"str","arraySplt":"1","arraySpltType":"len","stream":false,"addname":"","x":360,"y":340,"wires":[["8c82877cdaff8f0d"]]},{"id":"8c82877cdaff8f0d","type":"debug","z":"2862bf5c278ff5bd","name":"Print property values","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"payload","targetType":"msg","statusVal":"","statusType":"auto","x":560,"y":340,"wires":[]}]
-```
+{% endrenderFlow %}
