@@ -65,9 +65,9 @@ If you're looking to migrate your Node-RED instance, follow the steps in [this m
      sudo npm install -g @flowfuse/device-agent
      ```
 
-**4. Might need to turn of service:**
+**4. Might need to turn off Node-RED service:**
 
-**Checking with the robusttel team.**
+**Checking with the robustel team.**
 
 **5. Device Registration and Initialization:**
    - After the installation of the device agent, it is now time to start the device agent:
