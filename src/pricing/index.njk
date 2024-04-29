@@ -25,8 +25,13 @@ meta:
             To allow business to standardize on FlowFuse and Node-RED for all their data acquisition, visualization, and interaction it's possible to purchase a flat-fee license to deploy an unlimited amount of Node-RED instances through FlowFuse.
 hubspot:
     script: "hubspot/hs-form.njk"
-    formId: 41e858e1-6756-45be-9082-3980237fa229
-    cta: "cta-request-trial-license"
+    selfHosted:
+        formId: 41e858e1-6756-45be-9082-3980237fa229
+        cta: "cta-request-trial-license"
+    dedicated:
+        formId: 5a9939ee-899a-46b7-ab16-6376e310381d
+        cta: "cta-contact-us-for-pricing"
+        id: 
     reference: "pricing"
 ---
 
@@ -309,7 +314,7 @@ hubspot:
                                 </div>
                             </section>
                             <div class="md:container text-center w-full md:max-w-4xl flex flex-col gap-x-8 gap-y-4 items-center justify-center md:items-start md:justify-start md:flex-row">
-                                <a href="/dedicated/#contact-us" onclick="capture('cta-contact-us-for-pricing', {'position': 'primary'}, {'plan': 'dedicated'})" class="ff-btn ff-btn--primary flex flex-col max-md:w-full">
+                                <a onclick="scrollToAnchor(event, 'contact-us-dedicated'); capture('cta-contact-us-for-pricing', {'position': 'primary'}, {'plan': 'dedicated'});" class="ff-btn ff-btn--primary flex flex-col max-md:w-full">
                                   <span class="text-base uppercase no-underline md:px-4">
                                     CONTACT US FOR PRICING
                                   </span>
@@ -366,6 +371,7 @@ hubspot:
     </div>
 </div>
 <!-- Form section -->
+<!-- Trial License -->
 <div id="request-trial-license" class="contentSelfHosted hide w-full bg-gray-50 pt-0">
     <div class="w-full bg-gray-50 pb-12">
         <div class="container max-w-5xl m-auto grid grid-cols-1 md:grid-cols-2 px-6 pt-16 gap-x-16 gap-y-6">
@@ -379,7 +385,39 @@ hubspot:
                     environment. To start your trial, just fill out the form.
                 </p>
             </div>
+            {% if hubspot.selfHosted %}
+            {% set formId = hubspot.selfHosted.formId %}
+            {% set cta = hubspot.selfHosted.cta %}
             {% include hubspot.script %}
+            {% endif %}
+        </div>
+    </div>
+</div>
+<!-- Dedicated contact us -->
+<div class="contentDedicated hide w-full px-6" id="contact-us-dedicated">
+    <div class="flex flex-col m-auto max-w-2xl mt-10 pb-12 gap-12">
+        <h2 class="w-full text-center"><span class="text-indigo-600">Contact us</span> for pricing
+        </h2>
+        <div>
+            {% if hubspot.dedicated %}
+            {% set formId = hubspot.dedicated.formId %}
+            {% set cta = hubspot.dedicated.cta %}
+            <script>
+                function displayHubSpotForm2() {
+                    hbspt.forms.create({
+                        region: "eu1",
+                        portalId: "26586079",
+                        formId: "{{ formId or hubspot.formId }}",
+                        onFormSubmit: function ($form) {
+                            capture('{{ cta or hubspot.cta }}', {
+                                'page': '{{ hubspot.reference or title }}'
+                            })
+                        }
+                    });
+                }
+            </script>
+            <script async type="text/javascript" charset="utf-8" src="//js-eu1.hsforms.net/forms/embed/v2.js" onload="displayHubSpotForm2()"></script>
+            {% endif %}
         </div>
     </div>
 </div>
