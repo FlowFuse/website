@@ -6,9 +6,9 @@ date: 2024-04-25
 authors: ["sumit-shinde"]
 image: 
 tags:
-  - posts
-  - node-red
-  - dashboard
+    - posts
+    - flowfuse
+    - node-red
 ---
 
 This guide delves into Node-RED Dashboard 2.0 widgets, teaching you how to construct applications using them.
