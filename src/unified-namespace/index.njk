@@ -1,6 +1,8 @@
 ---
 layout: page
 nohero: true
+faqTitle: "Frequently Asked Questions"
+faqSubtitle: "Have a question that you don't see answered here? Feel free to reach out to us via our <a href='/contact-us'>Contact Us</a> page"
 meta:
   title: "Unified Namespace (UNS)"
   keywords: Unified Namespace, UNS, Data Architecture, Digital Transformation, Data Integration, Data Management, Data Governance
@@ -230,28 +232,6 @@ meta:
     </div>
 
     <!-- Frequently Asked Questions -->
-    <div class="w-full bg-white pt-8 pb-24 sm:px-0">
-        <div class="container m-auto max-w-4xl px-6">
-            <h2 class="text-center">Frequently Asked Questions</h2>
-            <label class="m-auto text-center block max-w-lg md:max-w-none">Have a question that you don't see answered here? Feel free to reach out to us via our <a href="/contact-us">Contact Us</a> page</label>
-            <div class="mt-12 m-auto w-full ff-prose">
-                <div class="prose max-w-none">
-                    {% for faq in meta.faq %}
-                        <div class="w-full {% if not loop.last %}border-b{% endif %} py-4">
-                            <h5 class="question flex flex-row justify-between items-center w-full m-0 gap-6 cursor-pointer" id="question-{{ loop.index }}">
-                                <span>{{ faq.question }}</span>
-                                <div class="chevron transition-transform ease-in-out duration-300" id="chevron-{{ loop.index }}">
-                                    {% include "components/icons/chevron-down.svg" %}
-                                </div>
-                            </h5>
-                            <div class="answer px-6 mt-6 hidden" id="answer-{{ loop.index }}">
-                                <p>{{ faq.answer | safe }}</p>
-                            </div>
-                        </div>
-                    {% endfor %}
-                </div>
-            </div>
-        </div>
-    </div>
+    {% include "faq.njk" %}
 </div>
-{% include "accordion.njk" %}
+
