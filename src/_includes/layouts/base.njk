@@ -125,15 +125,32 @@ eleventyComputed:
     <script>{{ js | jsmin | safe }}</script>
     {% jsonLdScript meta, type, tags %}
 
-    {# {%- if not DEV_MODE -%} #}
+    {%- if not DEV_MODE -%}
+    <!-- Google Consent -->
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+
+        // Set cookies to denied by default in EU countries, California, Brazil, Canada and Australia
+        gtag('consent', 'default', {
+            'ad_storage': 'denied',
+            'analytics_storage': 'denied',
+            'ad_user_data': 'denied',
+            'ad_personalization': 'denied',
+            'region': ['AT', 'BE', 'BG', 'HR', 'CY', 'CZ', 'DK', 'EE', 'ES', 'FI', 'FR', 'DE', 'GR', 'HU', 'IE', 'IT', 'LV', 'LT', 'LU', 'MT', 'NL', 'PL', 'PT', 'RO', 'SK', 'SI', 'SE', 'GB', 'US-CA', 'BR', 'CA', 'AU']
+        });
+    </script>
     <!-- Google Tag Manager -->
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-55L36797');</script>
+    <script>(function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-55L36797');</script>
     <!-- End Google Tag Manager -->
-    {# {%- endif -%} #}
+    {%- endif -%}
 </head>
 <body class="font-sans ff-website leading-normal tracking-normal gradient text-gray-500 min-h-screen flex flex-col">
     <!-- Google Tag Manager (noscript) -->
@@ -480,5 +497,5 @@ eleventyComputed:
     });
 </script>
 
-{%- endif -%} 
+{%- endif -%}
 </html>
