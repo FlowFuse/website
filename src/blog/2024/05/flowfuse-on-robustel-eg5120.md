@@ -75,7 +75,7 @@ If you're looking to migrate your Node-RED instance, follow the steps in [this m
      ```
    - Congratulation you now you now are utilizing FlowFuse to manage your Node-RED runtime.  If you would like this to run as a service please follow this [documentation](/blog/2023/05/device-agent-as-a-service/).
 
-#### **Visual Aids and Practical Application**
+## Visual Aids and Practical Application
 Consider a scenario where a manufacturing facility needs to efficiently monitor and manage multiple industrial machines. By integrating the robustel EG5120 with FlowFuse, the facility can streamline data collection, enhance device management, and improve operational efficiencies through real-time analytics and remote management capabilities. Below are visual aids including diagrams and flowcharts that illustrate the integration process and clarify these complex concepts.
 
 #### **Troubleshooting Tips**
