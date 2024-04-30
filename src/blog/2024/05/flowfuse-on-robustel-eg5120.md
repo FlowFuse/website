@@ -17,7 +17,6 @@ The [robustel EG5120](https://www.robustel.com/product/eg5120-industrial-edge-co
 
 <!--more-->
 
-#### **Introduction**
 
 This blog is designed for IoT enthusiasts and professionals who are looking to enhance their industrial IoT applications. The [robustel EG5120](https://www.robustel.com/product/eg5120-industrial-edge-computing-gateway/), equipped with Linux-based Debian 11 and preinstalled Node-RED, offers robust connectivity options. When combined with FlowFuse, this gateway becomes even more powerful, enabling seamless device management and deployment. 
 
