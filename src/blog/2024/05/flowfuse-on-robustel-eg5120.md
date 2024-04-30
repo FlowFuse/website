@@ -29,7 +29,7 @@ The robustel EG5120 supports multiple connectivity options including Ethernet, W
 
 If you're looking to migrate your Node-RED instance, follow the steps in [this migration guide](/docs/migration/node-red-tools/) to back up and transfer your configurations safely. By incorporating the FlowFuse device agent, we aim to replace the preinstalled Node-RED runtime, thus providing enhanced monitoring, automated backups, and improved management capabilities. This transition will make your deployments more secure and resilient.
 
-#### **Setting Up the Environment**
+## Setting Up the Environment
 
 **Important Notice:** The device encounters an issue where the SuperUser and the default user are running different versions of Node.js. The SuperUser is running an outdated version incompatible with our needs. For the FlowFuse device agent, a minimum of NodeJS v14 is required, though v20 or later is recommended. For the latest recommendations, check this [documentation](/docs/device-agent/install/#prerequisites).
 
