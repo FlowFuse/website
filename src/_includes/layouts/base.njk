@@ -126,7 +126,7 @@ eleventyComputed:
     {% jsonLdScript meta, type, tags %}
 
     {%- if not DEV_MODE -%}
-    <!-- Google tag (gtag.js) -->
+    <!-- Google Consent -->
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
@@ -139,18 +139,24 @@ eleventyComputed:
             'ad_personalization': 'denied',
             'region': ['AT', 'BE', 'BG', 'HR', 'CY', 'CZ', 'DK', 'EE', 'ES', 'FI', 'FR', 'DE', 'GR', 'HU', 'IE', 'IT', 'LV', 'LT', 'LU', 'MT', 'NL', 'PL', 'PT', 'RO', 'SK', 'SI', 'SE', 'GB', 'US-CA', 'BR', 'CA', 'AU']
         });
-
-        gtag('js', new Date());
-        gtag('config', 'G-2ZH9W82QL8');
-        gtag('config', 'AW-16456599728');
     </script>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2ZH9W82QL8"></script>
-
-    <!-- Google Ads Tag -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-16456599728"></script>
-    {%- endif -%} 
+    <!-- Google Tag Manager -->
+    <script>(function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-55L36797');</script>
+    <!-- End Google Tag Manager -->
+    {%- endif -%}
 </head>
 <body class="font-sans ff-website leading-normal tracking-normal gradient text-gray-500 min-h-screen flex flex-col">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-55L36797"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
     <div class="flex-grow base">
         <div class="w-full">
             <!-- Events Banner Comment out line below to remove banner-->
@@ -491,5 +497,5 @@ eleventyComputed:
     });
 </script>
 
-{%- endif -%} 
+{%- endif -%}
 </html>
