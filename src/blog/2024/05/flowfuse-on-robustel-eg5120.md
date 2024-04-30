@@ -45,7 +45,7 @@ If you're looking to migrate your Node-RED instance, follow the steps in [this m
    - If the version is below v14, proceed to the next step to upgrade. If it's v14 or higher, you might opt to skip to step 4.
 
 **2. Updating Node.js:**
-   - To ensure optimal functionality, update or install Node.js v20.12 using the Node version manager:
+   - To ensure optimal functionality, update or install Node.js LTS (Long Term Support) using the Node version manager:
      ```bash
      npm install n -g
      n v20.12
