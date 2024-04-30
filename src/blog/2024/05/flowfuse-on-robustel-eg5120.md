@@ -84,7 +84,7 @@ During the integration process, you may encounter issues such as conflicting Nod
 - Revisit the Node.js installation steps if version discrepancies occur.
 - For connectivity issues, check network settings and device configuration.
 
-#### **Conclusion**
+## Conclusion
 Integrating the robustel EG5120 with FlowFuse simplifies the deployment of IoT solutions and enhances the manageability and scalability of your IoT infrastructure. This setup ensures your devices are secure, backed up, and optimized for performance. We encourage you to explore this solution further and enhance your industrial IoT applications.
 
 
