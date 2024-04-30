@@ -9,6 +9,9 @@ tags:
     - posts
     - flowfuse
     - node-red
+    - posts
+    - flowfuse
+    - node-red
 ---
 
 This guide delves into Node-RED Dashboard 2.0 widgets, teaching you how to build applications using them.
@@ -49,7 +52,7 @@ The **ui-form** widget emits a payload object with key-value pairs of form eleme
 
 1. Drag a **function** node onto the canvas and use the following code:
 
-```js
+```javascript
 let income = global.get('income') || [];
 
 income.push({
@@ -93,7 +96,7 @@ In our income-expense application, we will display the income and expense data s
 2. Set `msg.payload` to the JSON expression below, which first sorts the array containing both income and expense data by time.
 3. Connect the output of the **ui-event** widget to the input of the **change** node.
 
-```
+```javascript
 $sort([$globalContext('income'), $globalContext('expense')], function($a, $b) { $moment($a.date).toDate().getTime() - $moment($b.date).toDate().getTime() })
 ```
 !["Screenshot displaying the change node setting JSON expression to payload for retrieving and sorting data."](./images/exploring-dashboard-2-widgets-change-node.png "Screenshot displaying the change node setting JSON expression to payload for retrieving and sorting data."){data-zoomable}
@@ -115,8 +118,12 @@ For more information on ui-table refer to [ui-table docs](https://dashboard.flow
 
 In our application, we will display data on the chart for analysis. For better analysis, we will display two charts: one with the total income and total expense, and a second chart with the total of each added category such as entertainment, grocery, education, and more.
 
+For the filter selection, we will add a dropdown using the ui-dropdown widget. This widget allows us to add a dropdown on the dashboard with multiple options.
 For the filter selection, we will add a dropdown using **ui-dropdown** widget. This widget allows us to add a dropdown on the dashboard with multiple options.
 
+1. Drag the ui-dropdown widget onto the canvas.
+2. Create new ui-page and ui-group for it.
+3. Add two options by clicking on "+option" for financial overview and detailed overview as shown in the below image.
 1. Drag a **ui-event** widget onto the canvas and select **ui-base** of your application. You can use the same ui-event widget added before, but adding a separate widget for each page makes the flow less complex.
 2. Drag **ui-dropdown** widget onto the canvas.
 3. Create new **ui-page** and **ui-group** for it.
@@ -124,10 +131,12 @@ For the filter selection, we will add a dropdown using **ui-dropdown** widget. T
 
 !["Screenshot displaying the ui-dropdown widget's configuration"](./images/exploring-dashboard-2-widgets-dropdown-widget.png "Screenshot displaying the ui-dropdown widget's configuration"){data-zoomable}
 
-#### Calculating total categorywise 
+#### Calculating total category-wise 
 
-Now we need to add an javascript which will calculate the total expense based on selected category data.
+Now we need to add a javascript which will calculate the total expense based on selected category data.
 
+1. Drag a function node onto the canvas.
+2. Paste the following code on it. I have added the comments for your understanding.
 1. Drag an **function** node onto canvas.
 2. Paste the following code on it, we have added comments in the code for your better understanding.
 
@@ -183,6 +192,7 @@ return msg;
 
 #### Displaying data on the chart 
 
+To display charts on the dashboard, we have to use the ui-chart widget which allows us to display different types of chart on a dashboard including linear, bar, scatter, etc. This accepts an array and object as input.
 To display chart on the dashbord, we have to use **ui-chart** widget which allow us to display diffrent types of chart on a dashboard including linear, bar, scatter etc. this accepts array and object as input.
 
 1. Drag a **ui-chart** widget onto the canvas.
@@ -198,6 +208,9 @@ With ui-template, we add a custom component to our app using Vue.js and Vuetify 
 
 Using this widget, we will add a footer to our application.
 
+1. Drag an ui-template widget onto the canvas.
+2. Set the type widget( ui scoped ).
+3. Insert the following Vuetify component code in the template widget. 
 1. Drag an **ui-template** widget onto the canvas.
 2. Set the type widget (ui scoped).
 3. Insert the following vuetify component code in the template widget. 
@@ -224,7 +237,7 @@ Using this widget, we will add a footer to our application.
 
     <!-- Copyright information -->
     <div>
-      {{ new Date().getFullYear() }} — <strong>Vuetify</strong>
+      {% raw %}{{ new Date().getFullYear() }} — <strong>Vuetify</strong>{% endraw %}
     </div>
   </v-footer>
 </template>
@@ -268,7 +281,7 @@ Now that we've built an income-expense tracker application and gained a better u
 
 ### Up next
 
-If you want to enhance this simple application by adding more features or wanted to make application personlize for users, consider the following resources:
+If you want to enhance this simple application by adding more features or want to make the application personalize for users, consider the following resources:
 
 [Webinar](https://flowfuse.com/webinars/2024/node-red-dashboard-multi-user/) - This webinar provides an in-depth discussion of the Personalised Multi-User Dashboards feature and offers guidance on how to get started with it.
 
@@ -276,7 +289,7 @@ If you want to enhance this simple application by adding more features or wanted
 
 [How to Build an Admin Dashboard with Node-RED Dashboard 2.0](https://flowfuse.com/blog/2024/04/building-an-admin-panel-in-node-red-with-dashboard-2/) - This detailed guide demonstrates how to build a secure admin page in Node-RED Dashboard 2.0.
 
-[How to Build An Application With Node-RED Dashboard 2.0](https://flowfuse.com/blog/2024/04/how-to-build-an-application-with-node-red-dashboard-2/) - This guide, covers how you can build personilze multiuser dashboard using flowfuse multi user addon
+[How to Build An Application With Node-RED Dashboard 2.0](https://flowfuse.com/blog/2024/04/how-to-build-an-application-with-node-red-dashboard-2/) - This guide, covers how you can build personalize multiuser dashboard using flow fuse multi-user addon
 
 [Multi-User Dashboard for Ticket/Task Management blueprint](https://flowfuse.com/blueprints/flowfuse-dashboard/multi-user-dashboard/#multi-user-dashboard-for-ticket%2Ftask-management) -  this blueprint allows you to utilize templates to develop a personalized multi-user dashboard quickly. This Task management blueprint has all features such as adding, updating, and deleting tasks, user profiles, and admin dashboard.
 
