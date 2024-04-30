@@ -48,7 +48,7 @@ If you're looking to migrate your Node-RED instance, follow the steps in [this m
    - To ensure optimal functionality, update or install Node.js LTS (Long Term Support) using the Node version manager:
      ```bash
      npm install n -g
-     n v20.12
+     n lts
      ```
 
 **3. Verifying Node.js Installation:**
@@ -56,7 +56,7 @@ If you're looking to migrate your Node-RED instance, follow the steps in [this m
      ```bash
      node -v
      ```
-   - If the output confirms v20.12, proceed to the next installation step.
+   - If the output confirms node version higher than v12, proceed to the next installation step.
 
 **4. Installing FlowFuse Device Agent:**
    - Install the FlowFuse device agent globally to connect your robustel EG5120 to the FlowFuse platform efficiently:
