@@ -6,11 +6,11 @@ image: /images/webinars/webinar-elevating-nodered-flowfuse-paltform-update-2.jpg
 date: 2024-04-30
 time: 17:00 CET (11:00am ET) 
 duration: 60
-video:
+video: K6X6A7WpIPk
 hosts: ["nick-oleary"]
 hubspot:
     formId: 04bc9eb9-a37c-4c88-bfc3-fd6f0abbffdb
-    
+    downloadFormId: ae70f7ae-cfb7-4900-8a7b-f1a153be68fe
 ---
 
 **FlowFuse fundamentally transforms the experience of Node-RED to meet enterprise needs by offering an adaptable foundation for complex application development.**
@@ -26,5 +26,5 @@ Some of the recent highlights include:
 - Additional cloud capabilities 
 
 
-With more arriving each week, there’s plenty to get excited about. Join us live and get all your questions answered. 
+With more arriving each week, there’s plenty to get excited about. Participants joined live and got all their questions answered.
 
