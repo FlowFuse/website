@@ -78,7 +78,7 @@ If you're looking to migrate your Node-RED instance, follow the steps in [this m
 ## Visual Aids and Practical Application
 Consider a scenario where a manufacturing facility needs to efficiently monitor and manage multiple industrial machines. By integrating the robustel EG5120 with FlowFuse, the facility can streamline data collection, enhance device management, and improve operational efficiencies through real-time analytics and remote management capabilities. Below are visual aids including diagrams and flowcharts that illustrate the integration process and clarify these complex concepts.
 
-#### **Troubleshooting Tips**
+## Troubleshooting Tips
 During the integration process, you may encounter issues such as conflicting Node.js versions or connectivity problems. Here are some troubleshooting tips:
 - Ensure all commands are run with appropriate permissions.
 - Revisit the Node.js installation steps if version discrepancies occur.
