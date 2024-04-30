@@ -435,7 +435,7 @@ hubspot:
     }
 </script>
 
-<!-- Toggles -->
+<!-- Toggle -->
 <script>
     // Get the hosting and billing parameters from the URL
     const urlParams = new URLSearchParams(window.location.search);
@@ -495,18 +495,21 @@ hubspot:
         if (hosting === 'cloud') return;
         hosting = 'cloud';
         updateContentAndUrl(hosting);
+        capture('cloud');
     });
 
     selfHostedText.addEventListener("click", function() {
         if (hosting === 'self-hosted') return;
         hosting = 'self-hosted';
         updateContentAndUrl(hosting);
+        capture('self-hosted');
     });
 
     dedicatedText.addEventListener("click", function() {
         if (hosting === 'dedicated') return;
         hosting = 'dedicated';
         updateContentAndUrl(hosting);
+        capture('dedicated');
     });
 </script>
 
