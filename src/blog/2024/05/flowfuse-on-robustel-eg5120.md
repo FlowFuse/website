@@ -21,7 +21,7 @@ The [robustel EG5120](https://www.robustel.com/product/eg5120-industrial-edge-co
 This blog is designed for IoT enthusiasts and professionals who are looking to enhance their industrial IoT applications. The [robustel EG5120](https://www.robustel.com/product/eg5120-industrial-edge-computing-gateway/), equipped with Linux-based Debian 11 and preinstalled Node-RED, offers robust connectivity options. When combined with FlowFuse, this gateway becomes even more powerful, enabling seamless device management and deployment. 
 
 
-#### **Robustel and Node-RED**
+## Robustel and Node-RED
 
 The robustel EG5120 supports multiple connectivity options including Ethernet, Wi-Fi, and cellular networks, which are essential for flexible deployments in various industrial scenarios. Its built-in support for MQTT and Modbus protocols facilitates seamless integration with a wide array of IoT devices and services. This blog will guide you through using FlowFuse to effectively manage your Node-RED instance, enhancing both the security and scalability of your IoT applications.
 
