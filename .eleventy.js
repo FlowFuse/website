@@ -87,7 +87,7 @@ module.exports = function(eleventyConfig) {
     });
 
     let flowId = 0; // Keep a global counter to allow more than one 
-    eleventyConfig.addPairedShortcode("renderFlow", function (flow, height = 300) {
+    eleventyConfig.addPairedShortcode("renderFlow", function (flow, height = 200) {
         flowId++; // Increment the flowId to allow multiple flows on the same page
 
         return `<div id="nr-flow-${flowId}" style="height: ${height}px" data-grid-lines="true" data-zoom="true" data-images="true" data-link-lines="false" data-labels="true"></div>
