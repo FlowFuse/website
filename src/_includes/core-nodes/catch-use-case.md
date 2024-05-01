@@ -189,7 +189,7 @@ In the example flow below, the inject node sets a request timeout of 2000 millis
     }
 ]
 
-{% renderFlow %}
+{% endrenderFlow %}
 
 2. **User Input Validation**: In applications with user input, validation errors can disrupt the flow. The Catch node handles these errors, providing feedback or corrective actions.
 
@@ -372,7 +372,7 @@ In the example flow below, the function sorts input data received from an inject
     }
 ]
 
-{% renderFlow %}
+{% endrenderFlow %}
 
 ## Message object emmited by Catch node
 
