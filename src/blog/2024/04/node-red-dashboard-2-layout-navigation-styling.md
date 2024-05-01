@@ -6,8 +6,8 @@ date: 2024-04-03
 authors: ["sumit-shinde"]
 image: 
 tags:
-   - posts
-   - dashboard 2.0
+   - posts
+   - dashboard 2.0
 ---
 
 In this comprehensive guide, we will explore different layouts, and navigation styles. Additionally, we will cover how you can style the dashboard 2.0 element effortlessly.
