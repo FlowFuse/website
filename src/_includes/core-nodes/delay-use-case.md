@@ -19,10 +19,8 @@ Here are some other use cases for using the Delay node:
 
 An example of using the Delay node to rate limit http request to an external API.
 
-![Delay node](./images/delay-node.png)
-
 ![Delay node properties](./images/delay-node-2.png)
 
-```json
+{% renderFlow %}
 [{"id":"1f825afc.866efc","type":"delay","z":"e92fb6c3b304fd7c","name":"Rate Limit","pauseType":"rate","timeout":"20","timeoutUnits":"seconds","rate":"10","nbRateUnits":"","rateUnits":"minute","randomFirst":"1","randomLast":"5","randomUnits":"seconds","drop":false,"allowrate":false,"outputs":1,"x":620,"y":120,"wires":[["26f1f0e3.65e3c8"]]}]
-```
+{% endrenderFlow %}

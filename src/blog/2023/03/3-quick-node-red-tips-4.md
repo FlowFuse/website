@@ -12,8 +12,8 @@ tags:
 ---
 
 There is usually more than one way to complete a given task in software, and Node-RED is no exception. In each of this series of blog posts, we are going to share three useful tips to save yourself time when working on your flows.
-<!--more-->
 
+<!--more-->
 
 ### 1. Use the Smooth node to get the minimum and maximum values of your payloads
 
@@ -35,9 +35,9 @@ You can perform basic maths functions using the Change node and JSONata. Let's s
 
 This will take the input payload, multiply it by 2.5 then output it as the new payload. You can try this out using the code below.
 
-```json
+{% renderFlow %}
 [{"id":"6bbe9c1e81c4ee39","type":"inject","z":"cfe9fec308e144db","name":"","props":[{"p":"payload"}],"repeat":"","crontab":"","once":false,"onceDelay":0.1,"topic":"","payload":"2","payloadType":"num","x":350,"y":400,"wires":[["07aa636f3db17775"]]},{"id":"07aa636f3db17775","type":"change","z":"cfe9fec308e144db","name":"","rules":[{"t":"set","p":"payload","pt":"msg","to":"msg.payload * 2.5","tot":"jsonata"}],"action":"","property":"","from":"","to":"","reg":false,"x":520,"y":440,"wires":[["8bde558e6e2f8551"]]},{"id":"8bde558e6e2f8551","type":"debug","z":"cfe9fec308e144db","name":"debug 26","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"false","statusVal":"","statusType":"auto","x":680,"y":440,"wires":[]},{"id":"1c04633997beb150","type":"inject","z":"cfe9fec308e144db","name":"","props":[{"p":"payload"}],"repeat":"","crontab":"","once":false,"onceDelay":0.1,"topic":"","payload":"3","payloadType":"num","x":350,"y":440,"wires":[["07aa636f3db17775"]]},{"id":"bc52c3d2f38115b1","type":"inject","z":"cfe9fec308e144db","name":"","props":[{"p":"payload"}],"repeat":"","crontab":"","once":false,"onceDelay":0.1,"topic":"","payload":"4","payloadType":"num","x":350,"y":480,"wires":[["07aa636f3db17775"]]}]
-```
+{% endrenderFlow %}
 
 ### 3. Use the Catch node to trigger flows on errors
 
@@ -49,8 +49,8 @@ You can do this using the Catch node. Drop the node onto your workspace then sel
 
 Note that there are no wires connecting the flow to the error output. This means you can have a single Catch node monitoring a whole project and logging errors as well as sending alerts as needed. You can import the flows from this example using the code below.
 
-```json
+{% renderFlow %}
 [{"id":"d6399c6fddb572ef","type":"debug","z":"0c6a2ba248b5933f","name":"debug 28","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"payload","targetType":"msg","statusVal":"","statusType":"auto","x":1100,"y":300,"wires":[]},{"id":"de70fda720070c57","type":"inject","z":"0c6a2ba248b5933f","name":"","props":[],"repeat":"","crontab":"","once":false,"onceDelay":0.1,"topic":"","x":790,"y":260,"wires":[["a18f9c8638c78e57"]]},{"id":"a18f9c8638c78e57","type":"file in","z":"0c6a2ba248b5933f","name":"","filename":"example.txt","filenameType":"str","format":"utf8","chunk":false,"sendError":false,"encoding":"none","allProps":false,"x":930,"y":260,"wires":[[]]},{"id":"2dbb0cc4bc10d0bc","type":"catch","z":"0c6a2ba248b5933f","name":"","scope":["a18f9c8638c78e57"],"uncaught":false,"x":790,"y":300,"wires":[["b22988df6357a52a"]]},{"id":"b22988df6357a52a","type":"change","z":"0c6a2ba248b5933f","name":"Debug message","rules":[{"t":"set","p":"payload","pt":"msg","to":"There was an error reading the file","tot":"str"}],"action":"","property":"","from":"","to":"","reg":false,"x":940,"y":300,"wires":[["d6399c6fddb572ef"]]}]
-```
+{% endrenderFlow %}
 
 We hope you found these tips useful, if you'd like to suggest some of your own tips which you think we should share in our future blog posts please [get in touch](mailto:contact@flowfuse.com).
