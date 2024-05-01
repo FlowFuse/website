@@ -4,7 +4,6 @@ const fs = require("fs");
 
 const { EleventyRenderPlugin } = require("@11ty/eleventy");
 
-const eleventyImage = require("@11ty/eleventy-img");
 const pluginRSS = require("@11ty/eleventy-plugin-rss");
 const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 const pluginMermaid = require("@kevingimbel/eleventy-plugin-mermaid");
@@ -82,6 +81,15 @@ module.exports = function(eleventyConfig) {
     // Custom Tooltip "Component"
     eleventyConfig.addPairedShortcode("tooltip", function (content, text) {
         return `<span class="ff-tooltip" data-tooltip="${text}">${content}</span><span></span>`
+    });
+
+    let flowId = 0; // Keep a global counter to allow more than one 
+    eleventyConfig.addPairedShortcode("renderFlow", function (flow, height = 200) {
+        flowId++; // Increment the flowId to allow multiple flows on the same page
+
+        return `<div id="nr-flow-${flowId}" style="height: ${height}px" data-grid-lines="true" data-zoom="true" data-images="true" data-link-lines="false" data-labels="true"></div>
+        <script type="module">const flow${flowId} = ${JSON.stringify(flow)};
+        new FlowRenderer().renderFlows(JSON.parse(flow${flowId}), { container: document.getElementById('nr-flow-${flowId}') })</script>`
     });
 
     eleventyConfig.addAsyncShortcode("coreNodeDoc", async function (category, node) {

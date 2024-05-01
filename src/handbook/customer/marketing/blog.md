@@ -126,6 +126,23 @@ The `<!--more-->` tag is used to define the text shown in the blog index from ea
 
 ![Example of how the headers are shown on blog articles](./images/blog-article.png)
 
+### Rendering Node-RED Flows
+
+The blog uses a flow renderer to make it easier for users to understand what the
+flow looks like and how to use them. Furthermore it automatically provides a
+download and copy button too for users to use what they've learned.
+
+To render a flow you'll need to export it to JSON in Node-RED and paste it in a
+`renderFlow` shortcode:
+
+{% raw %}
+```
+{% renderFlow %}
+<flowJSONHere>
+{% endrenderFlow %}
+```
+{% endraw %}
+
 ### Writing content
 
 FlowFuse blog posts are written in markdown. To learn how to style content and
