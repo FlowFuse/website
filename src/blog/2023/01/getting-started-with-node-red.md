@@ -147,4 +147,4 @@ If you want to view this flow you can import it using the code below. Copy the c
 
 ### What's Next?
 
-Well done, hopefully you've now got your first flow up and running and your mind is racing with all the possibilities of what comes next. Enjoy using Node-RED and thanks for reading.
+Well done, hopefully you've now got your first flow up and running and your mind is racing with all the possibilities of what comes next. Enjoy using Node-RED and thanks for reading. If you'd like to dive deeper into more Node-RED capabilities and how it can help in an enterprise setting, check out our [eBook The Ultimate Beginner Guide to a Professional Node-RED](https://flowfuse.com/ebooks/beginner-guide-to-a-professional-nodered/).  
