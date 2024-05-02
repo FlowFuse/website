@@ -27,7 +27,7 @@ For batch processing tasks, the Complete Node can be used to signal the completi
 
 - **Output-less Node:**
 
-In Node-RED, some nodes do not have output nodes such as websocket out, mqtt out etc. The Complete Node can be used to perform action after task completion by that node
+In Node-RED, certain nodes like WebSocket-out and MQTT-out do not have outputs to connect with. The Complete node in Node-RED can be helpful when you need to know when a process is done by those nodes.
 
 # Example
 
