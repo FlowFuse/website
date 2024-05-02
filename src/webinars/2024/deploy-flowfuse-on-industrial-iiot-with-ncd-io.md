@@ -14,15 +14,15 @@ hubspot:
     
 ---
 
-**The journey towards advanced Industrial Internet of Things (IIoT) solutions is fraught with challenges, from complex setups and scalability issues to serious security concerns. As industrial sectors evolve, the demand for reliable and secure data access becomes paramount. Typically, operational technology networks are isolated from enterprise networks, often without internet access, to protect critical manufacturing data and systems.**
+**Discover how to overcome industrial IIoT challenges and how a low-code platform can enhance data access and securty across various industries.**
 
 <!--more-->
 
+The journey towards advanced Industrial Internet of Things (IIoT) solutions is fraught with challenges, from complex setups and scalability issues to serious security concerns. As industrial sectors evolve, the demand for reliable and secure data access becomes paramount. Typically, operational technology networks are isolated from enterprise networks, often without internet access, to protect critical manufacturing data and systems.
 
+How can these networks be safely connected to enable better data access and usability? Enter FlowFuse and NCD.io’s Enterprise IIoT Gateway where FlowFuse’s ability to enhance these connections makes getting data from various sources ranging from wind turbines, cooling towers, maritime, to tank farms effortless.
 
-How can these networks be safely connected to enable better data access and usability? Enter FlowFuse and NCD.io’s Enterprise IIoT Gateway where FlowFuse’s ability to enhance these connections makes getting data from various sources ranging from wind turbines, cooling towers, maritime, to tank farms.
-
-In this webinar, Grey Dziuba, OT Data and Community Strategist, alongside Travis Elliot, COO of NCD.io, will discuss:
+Join Grey Dziuba, OT Data and Community Strategist at FlowFuse and Travis Elliot, COO of NCD.io, as they discuss:
 
 - How Node-Red and NCD.io’s technologies can streamline IIoT deployments.
 - Best practices for integrating these technologies into your existing infrastructure.
