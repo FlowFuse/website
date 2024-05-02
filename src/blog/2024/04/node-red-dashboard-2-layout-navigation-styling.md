@@ -1,7 +1,7 @@
 ---
-title: "Comprehensive guide: Node-RED Dashboard 2.0 layout, navigation and styling"
-subtitle: Explore Dashboard 2.0 Different layouts and navigation. learn how to style Dashboard 2.0 elements effortlessly.
-description: Discover Dashboard 2.0's layouts, navigation, and styling features for a seamless user experience.
+title: "Comprehensive guide: Node-RED Dashboard 2.0 layout, sidebar, and styling"
+subtitle: Explore Dashboard 2.0 Different layouts and sidebars. learn how to style Dashboard 2.0 elements effortlessly.
+description: Discover Dashboard 2.0's layouts, sidebars, and styling features for a seamless user experience.
 date: 2024-04-03
 authors: ["sumit-shinde"]
 image: 
@@ -10,11 +10,11 @@ tags:
    - dashboard 2.0
 ---
 
-In this comprehensive guide, we will explore different layouts, and navigation styles. Additionally, we will cover how you can style the dashboard 2.0 element effortlessly.
+In this comprehensive guide, we will explore different layouts and sidebar styles in Dashboard 2.0. Additionally, we will cover how you can style the dashboard 2.0 element effortlessly.
 
 <!--more-->
 
-If you are new to Dashboard 2.0, refer to [Getting started with Node-RED Dashboard 2.0](https://flowfuse.com/blog/2024/03/dashboard-getting-started/) and make sure you have installed it.
+If you are new to Dashboard 2.0, refer to [Getting started with Node-RED Dashboard 2.0](/blog/2024/03/dashboard-getting-started/) and make sure you have installed it.
 
 ## Understanding Dashboard 2.0 layouts.
 
@@ -26,29 +26,23 @@ In Dashboard 2.0, we have three types of layouts: Grid, Notebook, and fixed.
 
 #### Grid layout
 
-Choosing this layout divides your dashboard page into 12 equal-size columns, and you can specify how many columns your group will occupy using the 'size' property. When groups within a row take up all column space of a given screen width, new rows automatically start. Additionally, the height of each row is determined by the tallest widget in that row.
+Choosing this layout divides your dashboard page into **12 equal-size** columns, and you can specify how many columns your group will occupy using the **size** property. When groups within a row take up all column space of a given screen width, new rows automatically start. Additionally, the height of each row is determined by the tallest widget in that row.
 
-Within this layout, each group creates its internal grid layout based on the columns it occupies.
+In this layout, each group creates its internal grid layout based on the columns it occupies.
 
 !["Screenshot of dashboard having grid layout"](./images/node-red-dashboard-2-layout-navigation-styling-grid-layout.jpg "Screenshot of dashboard having grid layout"){data-zoomable}
 
-In the image above, you can see that the first and last widget groups occupy all columns, while in the middle, two groups each take up 6 columns. Notice how the first widget in each group creates its grid layout, utilizing all available column space.
+In the image above, you can see that the first and last widget groups occupy all columns, while in the middle, two groups each take up 6 columns. Notice how the first group creates its internal grid layout.
 
 #### Notebook layout
 
-Choosing this layout for your page will give it a Jupyter Notebook-like behavior, where the layout stretches to 100% width (up to a maximum of 1024px) and aligns centrally.
-
-In this layout, groups of pages are arranged sequentially, with each group defaulting to occupying 6 column spaces.
+Choosing the Notebook layout for your page in Dashboard 2.0 makes it work like a Jupyter Notebook, fixed at a width of **1024px** and **centered**. Changing the width doesn't affect the group's width but changes the internal column counts. It's great for dynamic Markdown, data tables, and visuals. Groups of pages are stacked vertically, and groups by default represent **6 column** counts each.
 
 !["Screenshot of dashboard having notebook layout"](./images/node-red-dashboard-2-layout-navigation-styling-notebook-layout.png "Screenshot of dashboard having notebook layout"){data-zoomable}
 
-While the width of groups remains fixed at 6 columns in this layout, you have the option to render a group with up to 12 columns. However, the widgets within the group will only utilize 6 columns of space. This can be seen in the following image, where the width of groups is increased to 12 columns, but the widgets only take up half of the available space, which is 6 columns each.
-
 #### Fixed layout
 
-In Dashboard 1.0, we had a fixed layout where the width of a group was a fixed pixel size, typically 90px. This layout was designed as a flexbox layout 
-
-with a single row. If the groups in a row occupied all available space on the screen, any newly added widget would be placed in a new row.
+In this layout, the horizontal (width) unit in the size property is fixed at 90px. For example, if you set the group width to 3 units, it will be 3 * 90 = 270px wide. Each widget size unit represents a column in the group's internal grid, following the same pattern as other layouts.
 
 !["Screenshot of dashboard having fixed layout"](./images/node-red-dashboard-2-layout-navigation-styling-fix-layout.png "Screenshot of dashboard having fixed layout"){data-zoomable}
 
@@ -56,10 +50,35 @@ with a single row. If the groups in a row occupied all available space on the sc
 
 ### Setting page layout
 
-1. Navigate to the page configuration by clicking on the edit button of your page in the Dashboard 2.0 sidebar.
+1. Navigate to the page configuration by clicking on the **edit** button of your page in the Dashboard 2.0 sidebar.
 2. In the page configuration, you can select the preferred layout for that page within the layout field.
 
 !["Image showing process of setting page layout"](./images/node-red-dashboard-2-layout-navigation-styling-setting-new-page-layout.gif "Image showing process of setting page layout"){data-zoomable}
+
+## Setting Dashboard 2.0 elements size
+
+Setting the size for elements in Dashboard 2.0 is straightforward, but understanding the actual unit size in the size property can be a bit tricky. It's important to note that the size of a horizontal unit varies depending on the layout, while the vertical size is fixed at **48px** currently.
+
+## Understanding unit size in different layouts
+
+#### Grid Layout
+
+In a grid layout, each unit specified in the size property represents a column, dividing the page evenly. When you assign columns to a group, it forms an internal grid with the same number of columns as the group. For example, if you have a group with 4 columns and two widgets inside it, each widget can be sized by considering those columns. If you set 1 column for the first widget and 3 columns for the second widget, the first widget will occupy 25% of the group's width, and the second widget will occupy 75%.
+
+#### Notebook Layout
+
+In the Notebook layout, As you know the width for the group is fixed at **1024px**. The size unit represents the number of columns that the group will create or represent in its internal grid, increasing size will increase the number of columns in group. For example, if you have one group with a size of 12 columns, that group will create an internal grid with 12 columns, and widgets can occupy those columns using the size property where each will also represent one column in group.
+
+#### Fixed Layout
+
+The fixed layout in Dashboard 2.0 employs a flexbox design with a single row of widgets. Each width unit in this layout is set at a fixed 90px. Groups follow the same internal grid pattern as other layouts. When a widget occupies the entire screen width, it shifts to the next row. However, this layout remains unchanged for varying screen sizes, potentially resulting in empty space on larger screens.
+
+###  Setting element size 
+
+To set the size of groups and widgets in Dashboard 2.0, follow these steps:
+
+1. Go to the Dashboard 2.0 sidebar and click on the edit button next to the element you want to resize.
+2. Adjust the size using the size property.
 
 ## Understanding Dashboard 2.0 Theme 
 
@@ -155,12 +174,11 @@ In Dashboard 2.0, the ui-template allows you to write custom CSS for Dashboard 2
 
 !["Screenshot of ui-template widget adding CSS for styling elements of all pages of a ui-base"](./images/node-red-dashboard-2-layout-navigation-styling-adding-style-in-ui-template.png "Screenshot of ui-template widget adding CSS for styling elements of all pages of a ui-base"){data-zoomable}
 
+## Up next 
 
+To delve deeper into Node-RED Dashboard 2.0, explore the following resources:
 
-
-
-
-
-
-
-
+- [FlowFuse Dashboard Articles](https://flowfuse.com/blog/dashboard/) - Collection of examples and guides written by FlowFuse.
+- [Node-RED Dashboard 2.0 Documentation](https://dashboard.flowfuse.com/) - Detailed information for each of the nodes available in Dashboard 2.0, as well as useful guides on building custom nodes and widgets of your own.
+- [Node-RED Forums - Dashboard 2.0](https://discourse.nodered.org/tag/dashboard-2) - The Node-RED forums is a great place to ask questions, share your projects and get help from the community.
+- [Beginner Guide to a Professional Node-RED](https://flowfuse.com/ebooks/beginner-guide-to-a-professional-nodered/) - A free guide to an enterprise-ready Node-RED. Learn all about Node-RED history, securing your flows and dashboard data visualization.
