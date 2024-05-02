@@ -4,7 +4,7 @@ subtitle: Explore Dashboard 2.0 Different layouts and sidebars. learn how to sty
 description: Discover Dashboard 2.0's layouts, sidebars, and styling features for a seamless user experience.
 date: 2024-04-03
 authors: ["sumit-shinde"]
-image: 
+image: /blog/2024/04/images//blog/2024/04/images/build-application-dashboard-2.png
 tags:
    - posts
    - dashboard 2.0
