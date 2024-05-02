@@ -4,13 +4,82 @@ navTitle: Strategy
 
 # Product Strategy
 
-Our strategy is an indication and statement of intent for the next 2 years, and reflects FlowFuse’s [vision and strategy](/handbook/company/strategy.md). FlowFuse will allow everyone to build custom applications to achieve their business goals and depend less on off-the-shelf point solutions. 
+In support of our [company strategy](/handbook/company/strategy.md), we build our product around a single product mission statement:
 
-It strategy is ever-changing, it will be revised on a regular basis and we will iterate when there is reason to do so; timing is everything. 
+> **Provide the best way to build, manage and deploy Node-RED applications at scale, in reliable and secure production environments.**
+
+Our strategy is an indication and statement of intent for the next 2 years. FlowFuse will empower everyone to build custom applications to achieve their business goals and depend less on off-the-shelf point solutions. 
+
+Our strategy is reviewed on a regular basis and we will iterate when there is reason to do so; timing is everything. 
+
+## Product Pillars
+
+When we talk about our product features and the value it offers to our customers, we refer to our product pillars. These pillars ensure we are aligned with our product mission statement and company strategy.
+
+Any new feature requests, product improvements, or other changes to our product can be reflected back to these pillars to ensure they are in line with our product strategy.
+
+| Build | Manage | Deploy |
+|-------|--------|--------|
+| [Simplified Hosting](#simplified-hosting) | [Security](#security) | [DevOps](#devops) |
+| [Version Control](#version-control) | [Centralized Management](#centralized-management) | [Remote Deployments](#remote-deployments) |
+| [Trust](#trust) | [Frictionless Maintenance](#frictionless-maintences) | [Scale](#scale) |
+| [Remote Access](#remote-access) | [Observability](#observability) | [Reliability](#reliability) |
+| [Full Stack Applications](#full-stack-applications) |  |  |
+| [Collaborative Development](#collaborative-development) |  |  |
+
+### Build
+
+#### Simplified Hosting
+
+FlowFuse should offer a seamless hosting experience for Node-RED applications. This includes a simple onboarding process, control over the hosting environment (e.g. Node-RED versions), and a reliable infrastructure.
+
+#### Version Control
+
+FlowFuse should provide a way to manage and track changes to Node-RED applications. This includes the ability to save progress of work, compare changes made over time. and revert to previous versions when required.
+
+#### Trust
+
+One of the joys of Node-RED as an open-source technology is the [rich ecosystem of community-contributed nodes and flows](https://flows.nodered.org/). The disadvantage of this in a production/enterprise context is the difficulty to trust in the reliability, quality and security of these contributions.
+
+FlowFuse should ensure that users have an easy way to identify trustworthy and stable third-party nodes, without compromising the flexibility and openness of the platform.
+
+#### Remote Access
+
+Most of our customers are using Node-RED in remote environments, where they do not have easy access to the device running Node-RED. FlowFuse should provide a secure and reliable way to access, and deploy on Node-RED instances remotely.
+
+#### Full Stack Applications
+
+FlowFuse should support the full end-to-end architecture of a modern application. This includes the ability to build both the frontend and backend of an application, as well as the ability to integrate with external services and APIs.
+
+Additionally, FlowFuse should ensure that it not only supports, but flourishes with modern IT/OT architecture such as the [Unified Namespace](https://flowfuse.com/unified-namespace/).
+
+#### Collaborative Development
+
+FlowFuse should ensure that it is optimized for collaborative development. We often see teams of over a dozen developers all needing to contribute and access the same Node-RED application. FlowFuse should provide the tools to make working in such an environment as easy as possible.
+
+### Manage
+
+
+
+#### Security
+
+#### Centralized Management
+
+#### Frictionless Maintences
+
+#### Observability
+
+### Deploy
+
+#### DevOps
+
+#### Remote Deployments
+
+#### Scale
+
+#### Reliability
 
 ## Market Vision
-
-See our [company strategy](/handbook/company/strategy.md#the-market).
 
 Click [here](./verticals.md#industrial-iot-platforms) for more details about the relevant market segments.
 

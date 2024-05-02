@@ -1,10 +1,10 @@
 ---
-navTitle: Product Categories
+navTitle: Market Segments
 ---
 
-# Product Categories
+# Market Segments
 
-Product categories refer to specific, identifiable segments within an industry or market that have distinct characteristics and needs. By understanding the categories, we can align our [product strategy](./strategy.md) to meet those specific needs. For this overview, we will focus on three distinct product categories: Industrial IoT Platforms, Low-Code Tools, and Data Integration Tools.
+By understanding the various markets in which we fit, we can align our [product strategy](./strategy.md) to meet those specific needs. For this overview, we will focus on three distinct product markets: Industrial IoT Platforms, Low-Code Tools, and Data Integration Tools.
 
 ## Industrial IoT Platforms
 
