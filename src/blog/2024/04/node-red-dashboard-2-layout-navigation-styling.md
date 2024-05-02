@@ -80,7 +80,7 @@ To set the size of groups and widgets in Dashboard 2.0, follow these steps:
 1. Go to the Dashboard 2.0 sidebar and click on the edit button next to the element you want to resize.
 2. Adjust the size using the size property.
 
-!["Image showing process of setting element size"](./images/node-red-dashboard-2-layout-navigation-styling-setting-size.giff "Image showing process of setting element size"){data-zoomable}
+!["Image showing process of setting element size"](./images/node-red-dashboard-2-layout-navigation-styling-setting-size.gif "Image showing process of setting element size"){data-zoomable}
 
 ## Understanding Dashboard 2.0 Theme 
 
