@@ -61,15 +61,15 @@ Setting the size for elements in Dashboard 2.0 is straightforward, but understan
 
 ## Understanding unit size in different layouts
 
-#### Grid Layout
+#### Grid
 
 In a grid layout, each unit specified in the size property represents a column, dividing the page evenly. When you assign columns to a group, it forms an internal grid with the same number of columns as the group. For example, if you have a group with 4 columns and two widgets inside it, each widget can be sized by considering those columns. If you set 1 column for the first widget and 3 columns for the second widget, the first widget will occupy 25% of the group's width, and the second widget will occupy 75%.
 
-#### Notebook Layout
+#### Notebook
 
 In the Notebook layout, As you know the width for the group is fixed at **1024px**. The size unit represents the number of columns that the group will create or represent in its internal grid, increasing size will increase the number of columns in group. For example, if you have one group with a size of 12 columns, that group will create an internal grid with 12 columns, and widgets can occupy those columns using the size property where each will also represent one column in group.
 
-#### Fixed Layout
+#### Fixed
 
 The fixed layout in Dashboard 2.0 employs a flexbox design with a single row of widgets. Each width unit in this layout is set at a fixed 90px. Groups follow the same internal grid pattern as other layouts. When a widget occupies the entire screen width, it shifts to the next row. However, this layout remains unchanged for varying screen sizes, potentially resulting in empty space on larger screens.
 
@@ -79,6 +79,8 @@ To set the size of groups and widgets in Dashboard 2.0, follow these steps:
 
 1. Go to the Dashboard 2.0 sidebar and click on the edit button next to the element you want to resize.
 2. Adjust the size using the size property.
+
+!["Image showing process of setting element size"](./images/node-red-dashboard-2-layout-navigation-styling-setting-size.giff "Image showing process of setting element size"){data-zoomable}
 
 ## Understanding Dashboard 2.0 Theme 
 
@@ -94,7 +96,7 @@ Within the color section, you'll need to specify colors for Navigation, primary 
 
 In the sizing section, you'll define the gaps between groups, page padding, group outline radius, and gaps between widgets, all in pixels.
 
-For additional information on the `ui-theme` settings, please consult the [ui-theme documentation](https://dashboard.flowfuse.com/nodes/config/ui-theme.html).
+For additional information on the `ui-theme` settings, please refer to the [ui-theme documentation](/nodes/config/ui-theme.html).
 
 ### Setting a new page theme
 
