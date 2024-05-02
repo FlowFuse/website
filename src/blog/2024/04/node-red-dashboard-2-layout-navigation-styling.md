@@ -180,7 +180,7 @@ In Dashboard 2.0, the ui-template allows you to write custom CSS for Dashboard 2
 
 To delve deeper into Node-RED Dashboard 2.0, explore the following resources:
 
-- [FlowFuse Dashboard Articles](https://flowfuse.com/blog/dashboard/) - Collection of examples and guides written by FlowFuse.
+- [FlowFuse Dashboard Articles](/blog/dashboard/) - Collection of examples and guides written by FlowFuse.
 - [Node-RED Dashboard 2.0 Documentation](https://dashboard.flowfuse.com/) - Detailed information for each of the nodes available in Dashboard 2.0, as well as useful guides on building custom nodes and widgets of your own.
-- [Node-RED Forums - Dashboard 2.0](https://discourse.nodered.org/tag/dashboard-2) - The Node-RED forums is a great place to ask questions, share your projects and get help from the community.
-- [Beginner Guide to a Professional Node-RED](https://flowfuse.com/ebooks/beginner-guide-to-a-professional-nodered/) - A free guide to an enterprise-ready Node-RED. Learn all about Node-RED history, securing your flows and dashboard data visualization.
+- [Node-RED Forums - Dashboard 2.0](https://discourse.nodered.org/tag/dashboard-2) - The Node-RED forums are a great place to ask questions, share your projects and get help from the community.
+- [Beginner Guide to a Professional Node-RED](/ebooks/beginner-guide-to-a-professional-nodered/) - A free guide to an enterprise-ready Node-RED. Learn all about Node-RED history, securing your flows, and dashboard data visualization.
