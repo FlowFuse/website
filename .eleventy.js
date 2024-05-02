@@ -21,7 +21,8 @@ const imageHandler = require('./lib/image-handler.js')
 const site = require("./src/_data/site");
 const coreNodeDoc = require("./lib/core-node-docs.js");
 
-const DEV_MODE = process.env.ELEVENTY_RUN_MODE !== "build" // i.e. serve/watch
+// Skip slow optimizations when developing i.e. serve/watch or Netlify deploy preview
+const DEV_MODE = process.env.ELEVENTY_RUN_MODE !== "build" || process.env.CONTEXT === "deploy-preview" 
 
 module.exports = function(eleventyConfig) {
     eleventyConfig.setUseGitIgnore(false); // Otherwise docs are ignored
