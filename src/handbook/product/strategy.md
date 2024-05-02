@@ -59,25 +59,43 @@ FlowFuse should ensure that it is optimized for collaborative development. We of
 
 ### Manage
 
-
-
 #### Security
+
+It goes without saying that security is a top priority for any product. FlowFuse should ensure that Node-RED applications are secure by default, and that users have the tools to manage and monitor the security of their applications. Users should not have to worry about the security of their applications, but be able to have clear control over access and permissions to their applications when required.
 
 #### Centralized Management
 
-#### Frictionless Maintences
+The are two components to centralized management:
+
+1. Node-RED - The ability to manage multiple Node-RED instances from a single interface, whether that be a few instances hosted on FlowFuse or thousands of Node-RED environments running on edge devices.
+
+2. Users - Clear control over the access and permissions of users within a team. This includes the ability to manage who can access what applications, and what level of access they have.
+
+#### Frictionless Maintenance
+
+FlowFuse should ensure that maintenance, e.g. upgrading of Node-RED versions and dependencies. Maintenance will always be a chore for any application, but with FlowFuse, it should be as frictionless as possible.
 
 #### Observability
+
+FlowFuse should provide users with the tools to monitor appropriate activity of their Node-RED applications, ranging from performance metrics, to audit and error logging. This will ensure users are able to identify and resolve issues quickly, ideally before problems even occur, and ensure that their applications can stay running smoothly.
 
 ### Deploy
 
 #### DevOps
 
+
+
 #### Remote Deployments
+
+
 
 #### Scale
 
+
+
 #### Reliability
+
+
 
 ## Market Vision
 
