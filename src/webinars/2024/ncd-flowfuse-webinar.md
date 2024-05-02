@@ -1,7 +1,7 @@
 ---
 title: "Deploy FlowFuse on Industrial IIoT with NCD.io"
 subtitle: In this webinar, we focus on how integrating Node-Red and robust hardware from NCD.io forms a powerful solution for system integrators and developers in the industrial sector.
-image: 
+image: /images/webinars/ncd-io-and-flowfuse.jpg
 
 date: 2024-05-29
 time: 17:00 CET (11:00am ET) 
