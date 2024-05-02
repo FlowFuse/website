@@ -96,7 +96,7 @@ Within the color section, you'll need to specify colors for Navigation, primary 
 
 In the sizing section, you'll define the gaps between groups, page padding, group outline radius, and gaps between widgets, all in pixels.
 
-For additional information on the `ui-theme` settings, please refer to the [ui-theme documentation](/nodes/config/ui-theme.html).
+For additional information on the `ui-theme` settings, please refer to the [ui-theme documentation](https://dashboard.flowfuse.com/nodes/config/ui-theme.html).
 
 ### Setting a new page theme
 
