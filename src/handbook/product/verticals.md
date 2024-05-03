@@ -8,11 +8,15 @@ By understanding the various markets in which we fit, we can align our [product 
 
 ## Industrial IoT Platforms
 
-An IIoT platform is a comprehensive solution that securely collects, integrates, and manages vast volumes of data from IoT endpoints. It supports various manufacturer and industry protocols, normalizing and analyzing data at the edge and in the cloud. By bridging IT and OT endpoints, it enhances asset management and promotes application development. It can supplement traditional OT functions and pivot asset-intensive industries like manufacturing or energy towards digitalization. The IIoT platform should fulfill key requirements like security, automation, and sustainability. It enables interoperability with various business applications. Key capabilities include device management, integration, data management, analytics, application enablement, and security (see also [IIoT platform definition](https://www.gartner.com/doc/reprints?id=1-2C757S9J&ct=230105&st=sb)). With its prowess in connecting and processing data from IIoT devices, Node-RED finds a fitting place in the sphere of IIoT platforms, becoming an integral tool in industries like manufacturing where the utility of such data is paramount for fostering operational efficacy and stimulating innovation. Further augmenting Node-RED's proficiency, FlowFuse introduces enterprise-grade features that streamline the management of remote deployments and delivery pipelines, thus amplifying Node-RED's and FlowFuse's potential as IIoT platform.
+An IIoT platform is a comprehensive solution that securely collects, integrates, and manages vast volumes of data from IoT endpoints. It supports various manufacturer and industry protocols, normalizing and analyzing data at the edge and in the cloud. By bridging IT and OT endpoints, it enhances asset management and promotes application development. It can supplement traditional OT functions and pivot asset-intensive industries like manufacturing or energy towards digitalization. 
+
+An IIoT platform should fulfill key requirements like security, automation, and sustainability. It enables interoperability with various business applications. Key capabilities include device management, integration, data management, analytics, application enablement, and security (see also [IIoT platform definition](https://www.gartner.com/doc/reprints?id=1-2C757S9J&ct=230105&st=sb)). With its prowess in connecting and processing data from IIoT devices, Node-RED finds a fitting place in the sphere of IIoT platforms, becoming an integral tool in industries like manufacturing where the utility of such data is paramount for fostering operational efficacy and stimulating innovation. Further augmenting Node-RED's proficiency, FlowFuse introduces enterprise-grade features that streamline the management of remote deployments and delivery pipelines, thus amplifying Node-RED's and FlowFuse's potential as IIoT platform.
 
 However, a potential downside is that it may currently be perceived as too general-purpose and not specialized enough for specific IIoT tasks compared to other, more narrowly focused IIoT platforms.
 
-### [Market Size](https://www.imarcgroup.com/industrial-iot-market)
+### Market Size
+
+- Source: [https://www.imarcgroup.com/industrial-iot-market](https://www.imarcgroup.com/industrial-iot-market)
 
 The Industrial IoT market is expected to reach a value of $516.6 Billion by 2028 ($221.7 Billion in 2022), with a compound annual growth rate (CAGR) of 15.49% from 2023 to 2028. About 30%, $66.5 Billion of this was in software alone in 2022.
 
@@ -34,7 +38,14 @@ The primary customer base in the IIoT sector includes manufacturing, energy, tra
 
 ### Positioning
 
-FlowFuse needs to leverage its enterprise features and also focus on providing an end-to-end IIoT solution. By promoting its capacity for device management and remote deployments, it can appeal to organizations seeking greater operational control and efficiency. Furthermore, forging partnerships with key industrial equipment manufacturers can help integrate FlowFuse as part of a comprehensive IIoT solution.
+With its prowess in connecting and processing data from IIoT devices, Node-RED and FlowFuse find a fitting place in the sphere of IIoT platforms, becoming an integral tool in industries like manufacturing where the utility of such data is paramount for fostering operational efficacy and stimulating innovation. We exist to empower bottom-up innovation. We allow companies to professionalize their workflows to business critical applications.
+
+Our market positioning is underpinned by two pivotal hypotheses that address pressing demands in the IIoT space:
+
+1. The prevailing landscape of IIoT software solutions is full of off-the-shelf products that seldom meet the unique demands of specific use cases. This gap underscores a pressing need for flexible, adaptable solutions that can be tailored to fit the intricate requirements of diverse operational environments, ensuring a glove-like fit rather than a one-size-fits-all approach.
+2. The notion that true innovation within a manufacturing landscape should emanate from a bottom-up approach is central to our philosophy. Engineers and frontline workers, immersed in the day-to-day challenges and intricacies of manufacturing processes, are uniquely positioned to identify areas ripe for innovation and improvement. By empowering these individuals with the tools and platforms to implement their insights, we can unlock a wellspring of transformative ideas and solutions that drive the industry forward.
+
+[Here](https://flowfuse.com/handbook/product/personas/#common-use-cases) you can find the demands of specific personas and their classic use cases.
 
 ## Low-Code Tools
 

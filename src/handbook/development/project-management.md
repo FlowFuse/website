@@ -6,6 +6,18 @@ navTitle: Project Management
 
 This page details provides a comprehensive overview of the project management processes and procedures that guide product development at FlowFuse. 
 
+## Hierarchy
+
+As per our [Product Strategy](../product/strategy.md), our product is broken into three pillars - Build, Manage and Deploy. Within these pillars we have a collection of [Areas]((../product/strategy.md#product-pillars)).
+
+Beneath the areas, we then utilize the standard GitHub hierarchy of Epics, Stories, and Tasks. As such, the hierarchy is as follows:
+
+- **Pillar**: One of three overarching values of the product - Build, Manage, Deploy.
+- **Area**: A sub-section of a Pillar, representing a specific feature set or value offered to the customer within a pillar of the product.
+- **Epic**: A significant feature or piece of work. It will typically have a number of Stories and/or Tasks associated with it that can be delivered iteratively. This may represent a single high level feature of the product, e.g. "Blueprints".
+- **Story**: A user-oriented description of a feature. It should describe what a user should be able to do and identify the value that brings to the user. A story should be deliverable in a single release.
+- **Task**: If we consider a Story as a user-centric view of a feature, the underlying tasks are the engineering-centric view of the same feature. This may also be a piece of work that isn't necessarily tied to a specific Epic or Story. For example, items related to technical debt or house-keeping chores.
+
 ## Planning
 
 Our planning process is continuously evolving as we find the best way to accommodate both a growing team and an expanding set of requirements for how and what we deliver. We operate on a continuous delivery model, with iterations of two-weeks. 
@@ -53,19 +65,13 @@ If this is not conducted, the Engineering Manager will assign an end date to the
 
 The estimated date should take into account the associated [size](#sizing-issues) of the issue and most importantly the developer's availability, and other workload commitments.
 
-### UX Planning
-
-Every four weeks this meeting is conducted between the Product Manager (PM) and the Head of User Experience (UX), it is designed to discuss and identify potential UX issues and requirements that need to be addressed in the upcoming iteration. The goal is to be proactive in identifying and resolving UX-related challenges before the start of the development phase.
-
-See also ['In Design' Deliverables](#in-design-deliverables)
-
 ## Issues
 
 Issues are the building blocks of planning activities, helping the team to manage and prioritize work. 
 
 ### Types
 
-- **Epic**: a significant feature or piece of work. It will typically have a number of Stories and/or Tasks associated with it that can be delivered iteratively. Typically, an Epic shouldn't be assigned to the "Up Next" section; instead, the subtasks describing the first, second, third iterations can be assigned to this section and should be linked to the Epic.
+- **Epic**: a significant feature or piece of work. It will typically have a number of Stories and/or Tasks associated with it that can be delivered iteratively, and should be presented in the Epic as a [Tasklist](https://docs.github.com/en/issues/managing-your-tasks-with-tasklists/creating-a-tasklist). Typically, an Epic shouldn't be assigned a "Status"; instead, the subtasks describing the first, second, third iterations, which in turn are assigned respective status'.
 
 - **Story**: a *user-oriented* description of a feature. It should describe what a user should be able to do and identify the value that brings to the user. A story should be deliverable in a single release.
 
@@ -145,31 +151,36 @@ If you're unsure, or uncomfortable with a piece of assigned work please speak to
 
 ## Project Boards
 
-We use three project boards to plan and track our work.
+We use two project boards to plan and track our work.
 
- - [Roadmap Board](https://github.com/orgs/FlowFuse/projects/5)
  - [Product Board](https://github.com/orgs/FlowFuse/projects/3/views/1)
  - [Development Board](https://github.com/orgs/FlowFuse/projects/1/views/1)
 
-### Roadmap Board
-
-This is a high-level view of our product roadmap over the coming releases. 
-
-### Product Backlog Board
+### Product Board
 
 [This board](https://github.com/orgs/FlowFuse/projects/3/views/1) is maintained
-by the Product Manager (PM) and CTO. It is the main entry point for all issues.
+by the Product Manager (PM) and CTO. It is the main entry point for all issues. Longer term planning and strategy is defined here. Each item on the 
 
-Items on this board are put into one of the following states to indicate their priority in the backlog, they can move up or down the priority depending on business needs.
+#### Area (for Epics)
+
+As per our [Product Strategy](../product/strategy.md), our product is broken into three pillars - Build, Manage and Deploy. Within these pillars we have a collection of [Areas](../product/strategy.md#product-pillars).
+
+When we create Epics in GitHub, we assign them to an Area. This helps us to understand where the work fits into our overall product strategy, and what fundamental area of the product will be improved by the work.
+
+You can see a breakdown of all Epics by Area & Status [here](https://github.com/orgs/FlowFuse/projects/3/views/9)
+
+#### Status (for all other issues)
+
+Stories and Tasks on this board are put into one of the following states to indicate their priority in the backlog, they can move up or down the priority depending on business needs.
 
  - `No Status` - This is where all new items initially land so that they can be appropriately triaged and assigned by the PM and CTO
- - `Unplanned`- Not all issues will be planned immediately. Issues can should be assigned to this section if there is no decision yet on the planning.
  - `Long` - This is the long term horizon, items that we know we will want to do one day but at the moment are long term goals, typically this could be 12 months away or more.
  - `Medium` - These are items that are in the 6-12 month time frame. 
  - `Short` - These are items in the 3-6 month time frame, Often these items will get pulled into a milestone from this point depending on capacity.
  - `Next` - These are items which we should be targeting for the next milestone to be planned, We plan milestones 2-3 iterations ahead so this time frame will typically be 2-3 months. 
- - `Closed` - All closed items are assigned to this section or beeing removed from th backlog.
+ - `Closed` - All closed items are assigned to this section or being removed from th backlog.
  - `Support & Under Review` - Customers often ask questions via GitHub issues. From these questions, new insightful requirements sometimes arise. Initially, to clarify the situation with the users, issues belong to this category.
+- `Iceblock` - These are items that we do not currently see a clear plan for in building into FlowFuse, however, may be important to keep in mind for the future.
 
 As items move up the list and get closer to Next we should have a greater understanding of what the detail and demand is for that feature. This is an iterative approach and as we gain understanding on an item we will use that information to aid in reviewing its position on the board.
 
@@ -177,7 +188,7 @@ As items move up the list and get closer to Next we should have a greater unders
 
 ### Development Board
 
-Our "Development" board consist of multiple views that are useful to get a clear picture on our active, and short-term planned items.
+Any item on the Development board detail in-action items, or items planned for the immediate future (<4 weeks). It provides multiple views that are useful to get a clear picture on our active, and short-term planned items.
 
 #### Activity Tracker
 

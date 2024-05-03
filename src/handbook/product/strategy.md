@@ -14,17 +14,21 @@ Our strategy is reviewed on a regular basis and we will iterate when there is re
 
 ## Product Pillars
 
-When we talk about our product features and the value it offers to our customers, we refer to our product pillars. These pillars ensure we are aligned with our product mission statement and company strategy.
+When we talk about our product features and the value it offers to our customers, we refer to our product pillars. 
+
+These three pillars ensure we are aligned with our product mission statement and company strategy.
 
 Any new feature requests, product improvements, or other changes to our product can be reflected back to these pillars to ensure they are in line with our product strategy.
+
+We can break down our product pillars into smaller "Areas", which are more specific focus areas on how to optimize the product pillar. You can see how these Areas are used in our product planning [here](../development/project-management.md).
 
 | Build | Manage | Deploy |
 |-------|--------|--------|
 | [Simplified Hosting](#simplified-hosting) | [Security](#security) | [DevOps](#devops) |
 | [Version Control](#version-control) | [Centralized Management](#centralized-management) | [Remote Deployments](#remote-deployments) |
-| [Trust](#trust) | [Frictionless Maintenance](#frictionless-maintences) | [Scale](#scale) |
-| [Remote Access](#remote-access) | [Observability](#observability) | [Reliability](#reliability) |
-| [Full Stack Applications](#full-stack-applications) |  |  |
+| [Trust](#trust) | [Adminsitration](#administration) | [Scale](#scale) |
+| [Remote Access](#remote-access) | [Frictionless Maintenance](#frictionless-maintences) | [Reliability](#reliability) |
+| [Full Stack Applications](#full-stack-applications) | [Observability](#observability) |  |
 | [Collaborative Development](#collaborative-development) |  |  |
 
 ### Build
@@ -51,25 +55,27 @@ Most of our customers are using Node-RED in remote environments, where they do n
 
 FlowFuse should support the full end-to-end architecture of a modern application. This includes the ability to build both the frontend and backend of an application, as well as the ability to integrate with external services and APIs.
 
-Additionally, FlowFuse should ensure that it not only supports, but flourishes with modern IT/OT architecture such as the [Unified Namespace](https://flowfuse.com/unified-namespace/).
+Additionally, FlowFuse should ensure that it not only supports, but flourishes with, modern IT/OT architecture such as the [Unified Namespace](https://flowfuse.com/unified-namespace/).
 
 #### Collaborative Development
 
 FlowFuse should ensure that it is optimized for collaborative development. We often see teams of over a dozen developers all needing to contribute and access the same Node-RED application. FlowFuse should provide the tools to make working in such an environment as easy as possible.
 
+In addition to the scope of collaboration within a team, FlowFuse has an opportunity to become an ecosystem for sharing and collaborating on Node-RED applications with the wider Node-RED community too.
+
 ### Manage
 
 #### Security
 
-It goes without saying that security is a top priority for any product. FlowFuse should ensure that Node-RED applications are secure by default, and that users have the tools to manage and monitor the security of their applications. Users should not have to worry about the security of their applications, but be able to have clear control over access and permissions to their applications when required.
+It goes without saying that security is a top priority for any product. FlowFuse should ensure that Node-RED applications are secure by default, and that users have the tools to manage and monitor the security of their applications, for example through role-based access control (RBAC). Users should not have to worry about the security of their applications, but be able to have clear control over access and permissions to their applications when required.
 
 #### Centralized Management
 
-The are two components to centralized management:
+This refers to the tooling that FlowFuse provides for the centralized management of Node-RED instances. In particular, the ability to manage multiple Node-RED instances from a single interface, whether that be a few instances hosted on FlowFuse or thousands of Node-RED environments running on edge devices.
 
-1. Node-RED - The ability to manage multiple Node-RED instances from a single interface, whether that be a few instances hosted on FlowFuse or thousands of Node-RED environments running on edge devices.
+#### Administration
 
-2. Users - Clear control over the access and permissions of users within a team. This includes the ability to manage who can access what applications, and what level of access they have.
+Clear control over the full FlowFuse platform. This includes the ability to have clarity on platform-wide activity and the billing aspects of the platform and associated resources.
 
 #### Frictionless Maintenance
 
@@ -78,6 +84,10 @@ FlowFuse should ensure that maintenance, e.g. upgrading of Node-RED versions and
 #### Observability
 
 FlowFuse should provide users with the tools to monitor appropriate activity of their Node-RED applications, ranging from performance metrics, to audit and error logging. This will ensure users are able to identify and resolve issues quickly, ideally before problems even occur, and ensure that their applications can stay running smoothly.
+
+#### Billing
+
+FlowFuse should provide a clear and transparent billing system for users. This includes the ability to manage and monitor costs, and the ability to scale up and down as required.
 
 ### Deploy
 
@@ -96,21 +106,6 @@ FlowFuse users should not have to concern when scaling their own applications. F
 #### Reliability
 
 Flowfuse users should have trust that their applications will run reliably. This includes ensuring that applications are highly available, and that users have the tools to monitor and manage the reliability of their applications, including being alerted when things go wrong, and making the recovery as easy as possible.
-
-## Market Vision
-
-Click [here](./verticals.md#industrial-iot-platforms) for more details about the relevant market segments.
-
-### Market Demand & Positioning
-
-With its prowess in connecting and processing data from IIoT devices, Node-RED and FlowFuse find a fitting place in the sphere of IIoT platforms, becoming an integral tool in industries like manufacturing where the utility of such data is paramount for fostering operational efficacy and stimulating innovation. We exist to empower bottom-up innovation. We allow companies to professionalize their workflows to business critical applications.
-
-Our market positioning is underpinned by two pivotal hypotheses that address pressing demands in the IIoT space:
-
-1. The prevailing landscape of IIoT software solutions is full of off-the-shelf products that seldom meet the unique demands of specific use cases. This gap underscores a pressing need for flexible, adaptable solutions that can be tailored to fit the intricate requirements of diverse operational environments, ensuring a glove-like fit rather than a one-size-fits-all approach.
-2. The notion that true innovation within a manufacturing landscape should emanate from a bottom-up approach is central to our philosophy. Engineers and frontline workers, immersed in the day-to-day challenges and intricacies of manufacturing processes, are uniquely positioned to identify areas ripe for innovation and improvement. By empowering these individuals with the tools and platforms to implement their insights, we can unlock a wellspring of transformative ideas and solutions that drive the industry forward.
-
-[Here](https://flowfuse.com/handbook/product/personas/#common-use-cases) you can find the demands of specific personas and their classic use cases.
 
 ## Go to Market (GTM) pillars & initiatives
 
