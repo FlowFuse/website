@@ -174,14 +174,14 @@ You can see a breakdown of all Epics by Area & Status [here](https://github.com/
 Stories and Tasks on this board are put into one of the following states to indicate their priority in the backlog, they can move up or down the priority depending on business needs.
 
  - `No Status` - This is where all new items initially land so that they can be appropriately triaged and assigned by the PM and CTO
- - `Long` - This is the long term horizon, items that we know we will want to do one day but at the moment are long term goals, typically this could be 12 months away or more.
- - `Medium` - These are items that are in the 6-12 month time frame. 
- - `Short` - These are items in the 3-6 month time frame, Often these items will get pulled into a milestone from this point depending on capacity.
+ - `Started` - Some work in this has been started, in the case of Epics, it may be a reflection that not all work here is planned to be completed though.
  - `Next` - These are items which we should be targeting for the next milestone to be planned, We plan milestones 2-3 iterations ahead so this time frame will typically be 2-3 months. 
- - `Closed` - All closed items are assigned to this section or being removed from th backlog.
- - `Support & Under Review` - Customers often ask questions via GitHub issues. From these questions, new insightful requirements sometimes arise. Initially, to clarify the situation with the users, issues belong to this category.
+ - `Short` - These are items in the 3-6 month time frame, Often these items will get pulled into a milestone from this point depending on capacity.
+ - `Medium` - These are items that are in the 6-12 month time frame. 
+ - `Long` - This is the long term horizon, items that we know we will want to do one day but at the moment are long term goals, typically this could be 12 months away or more.
 - `Iceblock` - These are items that we do not currently see a clear plan for in building into FlowFuse, however, may be important to keep in mind for the future.
-
+ - `Support & Under Review` - Customers often ask questions via GitHub issues. From these questions, new insightful requirements sometimes arise. Initially, to clarify the situation with the users, issues belong to this category.
+ - `Closed` - All closed items are assigned to this section or being removed from th backlog.
 As items move up the list and get closer to Next we should have a greater understanding of what the detail and demand is for that feature. This is an iterative approach and as we gain understanding on an item we will use that information to aid in reviewing its position on the board.
 
  A continuous review is held by the PM to keep the backlog in order - triaging new items that have been raised and not yet added to the backlog, and reflecting on changing priorities and requirements.
