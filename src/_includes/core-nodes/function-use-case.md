@@ -6,7 +6,19 @@ In Node-RED, a function should either return an object, which is a message objec
 
 Ideally, the function node should have the message object returned at the end of the code written within it. Placing the return statement in the middle of the code may result in incomplete execution of the remaining code.
 
-If you want to pass a message object in the middle of the JavaScript code written in the function node, you can use `node.send()` to pass a message to subsequent nodes and continue executing the rest of the code, as shown below:
+If the function node needs to perform an asynchronous action before sending a message, it cannot use the return statement to send the message at the end of the function. Instead, in such cases, you must use `node.send()`, as shown below: 
+
+```javascript
+// Simulate an asynchronous operation with setTimeout
+setTimeout(() => {
+    // After 2 seconds, create a message object with some data
+    const message = { payload: "Async operation complete" };
+    // Send the message to subsequent nodes
+    node.send(message);
+}, 2000);
+```
+
+Additionally, if you need to pass a message object mid-script within a function node to subsequent nodes, you can utilize `node.send()` for this purpose while continuing the execution of the remaining code, as shown below:
 
 ```javascript
 // Extract data from the incoming message
@@ -64,6 +76,18 @@ This is the tab where you can provide the JavaScript code that will execute when
 ### On Stop
 
 This tab allows you to add code to clean up any ongoing tasks or close connections before the flow is redeployed.
+
+## Logging events
+
+When a function node needs to log something, it can utilize the following methods:
+
+- `node.log()`: This is used for general logging purposes.
+- `node.warn()`: This method is used to log warnings.
+- `node.error()`: This is used to log errors.
+
+Messages logged using `node.warn()` and `node.error()` will be sent to the **debug tab**.
+
+To view messages logged using `node.log()`, you can check the command from where you started Node-RED. If you're running it under an app like PM2, it will have its own method for displaying logs. On a Raspberry Pi, the install script adds a `node-red-log` command that shows the log. If you're using FlowFuse Cloud, you can find the logged messages in the Instance's **Node-RED logs** tab.
 
 ## Node-RED Objects Accessible in Function Node
 
