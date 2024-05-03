@@ -90,20 +90,11 @@ If you wish to be granted access to HubSpot please post in the FlowFuse
 
 Whenever a customer raises a new ticket or replies with an update a message is
 posted into slack #support-tickets.
-This will allow the whole team visibility of customer issues, comments on the
-Slack thread will be added to the ticket as notes.
-
-When the customer has used the support widget you can communicate with that customer in real-time using the support-tickets Slack channel.
+This will allow the whole team visibility of customer issues, to reply to a ticket we need to use the Help Desk UI in Hubspot. Each reply from a customer creates an alert in the #support-tickets Slack channel with a link to the ticket in Hubspot.
 
 When replying to the ticket one should have the intent to always reply with links
 to FlowFuse articles or documentation. If these resources are missing, please
 start or update where applicable.
-
-HubSpot uses notes and responses within the thread, notes are internal and not sent to the customer, responses are sent to the customer.
-
-We monitor the time since a ticket on HubSpot was last updated and send alerts to slack #support-tickets where those tickets have not been updated for longer than:
-
- - 1 day for customer created support tickets.
 
 #### Scope of Support
 
