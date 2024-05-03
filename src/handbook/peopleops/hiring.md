@@ -112,7 +112,11 @@ For each stage of the hiring pipeline scoresheets **must** be filled out. Each s
 
 #### Accepting applications
 
-Applicants for a job are required to submit their resume, and it is optional for them to include a cover letter. Additionally, it is recommended to include one or two acceptance questions that are relevant to the specific position. These questions should be thought-provoking, yet not overly time-consuming, and they should allow skilled candidates to provide a response within a minute or two. For example, for a developer position, a question could be: "What happens if someone types 'https://flowforge.com' in their browser and presses enter?" The intention is to engage candidates and assess their problem-solving skills.
+When you open the role on Greenhouse to accept applications, please [follow the advertisement instructions](/handbook/peopleops/hiring/#advertising-a-role).
+
+Applicants for a job are required to submit their resume, and it is optional for them to include a cover letter.
+Additionally, it is recommended to include one or two acceptance questions that are relevant to the specific position.
+These questions should be thought-provoking, yet not overly time-consuming, and they should allow skilled candidates to provide a response within a minute or two. For example, for a developer position, a question could be: "What happens if someone types 'https://flowfuse.com' in their browser and presses enter?" The intention is to engage candidates and assess their problem-solving skills.
 
 #### Initial Review
 
