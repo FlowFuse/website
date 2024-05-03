@@ -18,71 +18,40 @@ The [robustel EG5120](https://www.robustel.com/product/eg5120-industrial-edge-co
 <!--more-->
 
 
-This blog is designed for IoT enthusiasts and professionals who are looking to enhance their industrial IoT applications. The [robustel EG5120](https://www.robustel.com/product/eg5120-industrial-edge-computing-gateway/), equipped with Linux-based Debian 11 and preinstalled Node-RED, offers robust connectivity options. When combined with FlowFuse, this gateway becomes even more powerful, enabling seamless device management and deployment. 
+This blog is designed for IoT enthusiasts and professionals who are looking to enhance their industrial IoT applications. The [robustel EG5120](https://www.robustel.com/product/eg5120-industrial-edge-computing-gateway/), equipped with Linux-based Debian 11 supporting a wide variety of programming languages including Node.js, offers robust connectivity options. When combined with FlowFuse, this gateway becomes even more powerful, enabling seamless device management and deployment. 
 
 
-## Robustel and Node-RED
+## robustel
 
-The robustel EG5120 supports multiple connectivity options including Ethernet, Wi-Fi, and cellular networks, which are essential for flexible deployments in various industrial scenarios. Its built-in support for MQTT and Modbus protocols facilitates seamless integration with a wide array of IoT devices and services. This blog will guide you through using FlowFuse to effectively manage your Node-RED instance, enhancing both the security and scalability of your IoT applications.
+The robustel EG5120 supports multiple connectivity options including Ethernet, Wi-Fi, and cellular networks, which are essential for flexible deployments in various industrial scenarios. Its built-in support for Bluetooth, cellular connectivity, RS232, RS485, and Modbus facilitates seamless integration with a wide array of IoT devices and services. This blog will guide you through using FlowFuse to effectively manage your Node-RED instance, enhancing both the security and scalability of your IoT applications.
 
 ## Migration
 
-If you're looking to migrate your Node-RED instance, follow the steps in [this migration guide](/docs/migration/node-red-tools/) to back up and transfer your configurations safely. By incorporating the FlowFuse device agent, we aim to replace the preinstalled Node-RED runtime, thus providing enhanced monitoring, automated backups, and improved management capabilities. This transition will make your deployments more secure and resilient.
+If you're looking to migrate your Node-RED instance, follow the steps in [this migration guide](/docs/migration/node-red-tools/) to back up and transfer your configurations safely. By incorporating the FlowFuse device agent, we aim to replace the  Node-RED runtime, thus providing enhanced monitoring, automated backups, and improved management capabilities. This transition will make your deployments more secure and resilient.
 
 ## Setting Up the Environment
 
-**Important Notice:** The device encounters an issue where the SuperUser and the default user are running different versions of Node.js. The SuperUser is running an outdated version incompatible with our needs. For the FlowFuse device agent, a minimum of NodeJS v14 is required, though v20 or later is recommended. For the latest recommendations, check this [documentation](/docs/device-agent/install/#prerequisites).
+After spending a few weeks find out all the convoluted ways to do something, my CEO recommended testing out the raspbian deployment script for deploying FlowFuse to a Raspberry Pi.  Both robustel and Raspberry pi run a debian base linux operating system.  Raspberry pi's run a customized and unofficial port of Debian called Raspbian, while robustel leverages Debian 11.  I decided to give it a shot and the script works flawlessly.  
+  
+A simple script found (here)[/docs/hardware/raspbian/#installing-the-device-agent] can guide you on how to install FlowFuse on the EG5120.  
 
-**1. Gaining Root Access:**
-   - Start by opening your terminal and gain root access to adjust system configurations crucial for the following steps:
-     ```bash
-     sudo su
-     ```
-   - Verify the version of Node.js:
-     ```bash
-     node -v
-     ```
-   - If the version is below v14, proceed to the next step to upgrade. If it's v14 or higher, you might opt to skip to step 4.
+When finished you should see an out put stating **Started FlowFuse Device Agent.**
 
-**2. Updating Node.js:**
-   - To ensure optimal functionality, update or install Node.js LTS (Long Term Support) using the Node version manager:
-     ```bash
-     npm install n -g
-     n lts
-     ```
+!["Started FlowFuse Device Agent"](./images/flowfuse-on-robustel-eg5120-installation-complete.png "Screenshot displaying completion of installation"){data-zoomable}
 
-**3. Verifying Node.js Installation:**
-   - Confirm the update by checking the Node.js version again:
-     ```bash
-     node -v
-     ```
-   - If the output confirms node version higher than v12, proceed to the next installation step.
+The script does the following:
 
-**4. Installing FlowFuse Device Agent:**
-   - Install the FlowFuse device agent globally to connect your robustel EG5120 to the FlowFuse platform efficiently:
-     ```bash
-     sudo npm install -g @flowfuse/device-agent
-     ```
+1. Detect if Node.js is already installed, it will ensure it is at least v14. If less than v14 it will stop. If nothing is found it will install the Node.js 18 LTS release
+2. Install the latest version of the FlowFuse Device Agent using npm.
+3. Setup the FlowFuse Device Agent to run as a service and installs it to **/opt/flowfuse-device**.
 
-**4. Might need to turn off Node-RED service:**
+To run the agent a service continue following the documentation (here)[/docs/hardware/raspbian/#running-as-a-service].
 
-**Checking with the robustel team.**
+The last step is to link your EG5120 to FlowFuse.  These steps entail registering your device withing the FlowFuse platform.  The (guide here)[docs/device-agent/quickstart/] will help you register your EG5120 with FlowFuse.
 
-**5. Device Registration and Initialization:**
-   - After the installation of the device agent, it is now time to start the device agent:
-     ```bash
-     flowfuse-device-agent
-     ```
-   - Congratulation you now you now are utilizing FlowFuse to manage your Node-RED runtime.  If you would like this to run as a service please follow this [documentation](/blog/2023/05/device-agent-as-a-service/).
+## Practical Application
+Consider a scenario where multiple similar remote facilities need to efficiently monitor and manage multiple industrial machines. By integrating the robustel EG5120 with FlowFuse, the facilities can streamline data collection, enhance device management, and improve operational efficiencies through real-time analytics and remote management capabilities. By leveraging FlowFuse, managing your Node-RED instance becomes even easier by allow the management of all the runtimes from a central location.  
 
-## Visual Aids and Practical Application
-Consider a scenario where a manufacturing facility needs to efficiently monitor and manage multiple industrial machines. By integrating the robustel EG5120 with FlowFuse, the facility can streamline data collection, enhance device management, and improve operational efficiencies through real-time analytics and remote management capabilities. Below are visual aids including diagrams and flowcharts that illustrate the integration process and clarify these complex concepts.
-
-## Troubleshooting Tips
-During the integration process, you may encounter issues such as conflicting Node.js versions or connectivity problems. Here are some troubleshooting tips:
-- Ensure all commands are run with appropriate permissions.
-- Revisit the Node.js installation steps if version discrepancies occur.
-- For connectivity issues, check network settings and device configuration.
 
 ## Conclusion
 Integrating the robustel EG5120 with FlowFuse simplifies the deployment of IoT solutions and enhances the manageability and scalability of your IoT infrastructure. This setup ensures your devices are secure, backed up, and optimized for performance. We encourage you to explore this solution further and enhance your industrial IoT applications.
