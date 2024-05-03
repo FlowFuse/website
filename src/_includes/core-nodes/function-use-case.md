@@ -4,7 +4,7 @@ In Node-RED, a function node allows you to write custom JavaScript code to proce
 
 In Node-RED, a function should either return an object, which is a message object, or nothing at all. Returning other data types instead of an object will cause an error. By default, the function node returns the message object unchanged, passing the data as it is to further nodes.
 
-Ideally, the function node should return the message object at the end of the code written in the function node. Adding it in the middle will not execute the entire code.
+Ideally, the function node should have the message object returned at the end of the code written within it. Placing the return statement in the middle of the code may result in incomplete execution of the remaining code.
 
 If you want to pass a message object in the middle of the JavaScript code written in the function node, you can use `node.send()` to pass a message to subsequent nodes and continue executing the rest of the code, as shown below:
 
