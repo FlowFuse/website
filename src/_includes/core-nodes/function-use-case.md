@@ -1,4 +1,4 @@
-## What Is a Function in Node-RED?
+## What Is a Function node in Node-RED?
 
 In Node-RED, a function node allows you to write custom JavaScript code to process message objects in your flow. It's used for specific tasks that can't be accomplished with the standard built-in nodes alone. When you write custom JavaScript in a function node, this code gets executed every time a message passes through the node.
 
