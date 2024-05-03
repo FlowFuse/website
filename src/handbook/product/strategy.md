@@ -83,19 +83,19 @@ FlowFuse should provide users with the tools to monitor appropriate activity of 
 
 #### DevOps
 
-
+FlowFuse should provide the tools to enable a DevOps workflow for Node-RED applications. In particular, users of FlowFuse should have confidence in developing and experimenting with Node-RED, without fear of interfering with their production environments, and trust that it can easily be deployed to production environments when it is ready.
 
 #### Remote Deployments
 
-
+FlowFuse should provide a seamless experience when deploying flows to remote environments, known in FlowFuse as "Devices". This includes the ability to deploy to multiple devices at once.
 
 #### Scale
 
-
+FlowFuse users should not have to concern when scaling their own applications. FlowFuse should provide intuitive tooling to ensure that applications can scale with ease, and where possible handle this automatically.
 
 #### Reliability
 
-
+Flowfuse users should have trust that their applications will run reliably. This includes ensuring that applications are highly available, and that users have the tools to monitor and manage the reliability of their applications, including being alerted when things go wrong, and making the recovery as easy as possible.
 
 ## Market Vision
 
