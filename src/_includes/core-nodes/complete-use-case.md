@@ -37,17 +37,9 @@ In Node-RED, certain nodes like WebSocket-out and MQTT-out do not have outputs t
 
 [
     {
-        "id": "a2240ea952051e81",
-        "type": "tab",
-        "label": "Flow 1",
-        "disabled": false,
-        "info": "",
-        "env": []
-    },
-    {
-        "id": "0ffd052d3a0c583c",
+        "id": "75e4c8a97e30b108",
         "type": "inject",
-        "z": "a2240ea952051e81",
+        "z": "1027b41ed961cbc5",
         "name": "send data",
         "props": [
             {
@@ -65,42 +57,42 @@ In Node-RED, certain nodes like WebSocket-out and MQTT-out do not have outputs t
         "y": 240,
         "wires": [
             [
-                "1160967f875f5399"
+                "85383be37566ea36"
             ]
         ]
     },
     {
-        "id": "1160967f875f5399",
+        "id": "85383be37566ea36",
         "type": "websocket out",
-        "z": "a2240ea952051e81",
+        "z": "1027b41ed961cbc5",
         "name": "websocket server",
-        "server": "0b8456b0529f60be",
+        "server": "65bb0cfe75e94539",
         "client": "",
         "x": 690,
         "y": 240,
         "wires": []
     },
     {
-        "id": "84d9c72e648a4640",
+        "id": "c51c076d5d15b727",
         "type": "complete",
-        "z": "a2240ea952051e81",
+        "z": "1027b41ed961cbc5",
         "name": "complete",
         "scope": [
-            "1160967f875f5399"
+            "85383be37566ea36"
         ],
         "uncaught": false,
         "x": 380,
         "y": 360,
         "wires": [
             [
-                "f9c439ec61e6d287"
+                "206f2f78564b40d8"
             ]
         ]
     },
     {
-        "id": "f9c439ec61e6d287",
+        "id": "206f2f78564b40d8",
         "type": "debug",
-        "z": "a2240ea952051e81",
+        "z": "1027b41ed961cbc5",
         "name": "debug 1",
         "active": true,
         "tosidebar": true,
@@ -114,9 +106,9 @@ In Node-RED, certain nodes like WebSocket-out and MQTT-out do not have outputs t
         "wires": []
     },
     {
-        "id": "e0852e10d3f8a8e2",
+        "id": "3a3c5d99ecf56c4a",
         "type": "comment",
-        "z": "a2240ea952051e81",
+        "z": "1027b41ed961cbc5",
         "name": "Sending data to websocket server",
         "info": "",
         "x": 520,
@@ -124,9 +116,9 @@ In Node-RED, certain nodes like WebSocket-out and MQTT-out do not have outputs t
         "wires": []
     },
     {
-        "id": "69800e773f4cb150",
+        "id": "126eac07e1f41280",
         "type": "comment",
-        "z": "a2240ea952051e81",
+        "z": "1027b41ed961cbc5",
         "name": "Upon successful data transmission to the WebSocket server, the Complete node handles the event.",
         "info": "",
         "x": 560,
@@ -134,7 +126,7 @@ In Node-RED, certain nodes like WebSocket-out and MQTT-out do not have outputs t
         "wires": []
     },
     {
-        "id": "0b8456b0529f60be",
+        "id": "65bb0cfe75e94539",
         "type": "websocket-listener",
         "path": "/ws/response",
         "wholemsg": "false"
@@ -149,27 +141,19 @@ In Node-RED, certain nodes like WebSocket-out and MQTT-out do not have outputs t
 
 [
     {
-        "id": "a2240ea952051e81",
-        "type": "tab",
-        "label": "Flow 1",
-        "disabled": false,
-        "info": "",
-        "env": []
-    },
-    {
         "id": "f3567f52f2c9f98b",
         "type": "function",
         "z": "a2240ea952051e81",
         "name": "Long running process",
-        "func": " try {\n        // Simulate an asynchronous operation with await\n        let result = await new Promise(resolve => {\n            setTimeout(() => {\n                resolve('Async operation completed');\n            }, 3000); // Simulate a 3-second asynchronous operation\n        });\n        \n        // Call node.done() to indicate completion\n        node.done();\n\n    // additional operation after completion \n       \n     result = result.toUpperCase()   \n     msg.payload = result\n\n    } catch (error) {\n        // Handle errors if the asynchronous operation fails\n        console.error('Error:', error);\n        // Call node.error() if needed to indicate an error in Node-RED flow\n        node.error(error);\n    }\n\n    return msg",
+        "func": "// Simulate an asynchronous operation with await\nlet result = await new Promise(resolve => {\n    setTimeout(() => {\n        resolve('Async operation completed');\n    }, 2000); // Simulate a 3-second asynchronous operation\n});\n\n// Call node.done() to indicate completion\nnode.done();\n\n// Perform additional long process \nlet length = result.length\n\nsetTimeout(() => {\n    \n    node.send({ payload: length });\n}, 4000);\n",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 500,
-        "y": 160,
+        "x": 420,
+        "y": 220,
         "wires": [
             [
                 "9ea7b8d70f98e480"
@@ -197,8 +181,8 @@ In Node-RED, certain nodes like WebSocket-out and MQTT-out do not have outputs t
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 230,
-        "y": 160,
+        "x": 150,
+        "y": 220,
         "wires": [
             [
                 "f3567f52f2c9f98b"
@@ -214,8 +198,8 @@ In Node-RED, certain nodes like WebSocket-out and MQTT-out do not have outputs t
             "f3567f52f2c9f98b"
         ],
         "uncaught": false,
-        "x": 370,
-        "y": 280,
+        "x": 290,
+        "y": 340,
         "wires": [
             [
                 "5f1a90e93fad1567"
@@ -235,8 +219,8 @@ In Node-RED, certain nodes like WebSocket-out and MQTT-out do not have outputs t
         "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
-        "x": 660,
-        "y": 280,
+        "x": 580,
+        "y": 340,
         "wires": []
     },
     {
@@ -251,8 +235,8 @@ In Node-RED, certain nodes like WebSocket-out and MQTT-out do not have outputs t
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 740,
-        "y": 160,
+        "x": 660,
+        "y": 220,
         "wires": []
     },
     {
@@ -261,8 +245,8 @@ In Node-RED, certain nodes like WebSocket-out and MQTT-out do not have outputs t
         "z": "a2240ea952051e81",
         "name": "Perform long-running process and upon completion, trigger the Complete node, then perform additional operations.",
         "info": "",
-        "x": 530,
-        "y": 100,
+        "x": 450,
+        "y": 160,
         "wires": []
     },
     {
@@ -271,8 +255,8 @@ In Node-RED, certain nodes like WebSocket-out and MQTT-out do not have outputs t
         "z": "a2240ea952051e81",
         "name": "Handle long-running process completion event.",
         "info": "",
-        "x": 500,
-        "y": 220,
+        "x": 420,
+        "y": 280,
         "wires": []
     }
 ]
