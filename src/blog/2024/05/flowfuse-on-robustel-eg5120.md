@@ -2,7 +2,7 @@
 title: Run FlowFuse on robustel EG5120
 subtitle: How to install FlowFuse Device Agent on robustel EG5120
 description: In this guide, we will discuss how to install FlowFuse Device agent on robustel EG5120.
-date: 2024-05-01
+date: 2024-05-06
 authors: ["grey-dziuba"]
 image: /blog/2024/05/images/flowfuse-on-rubustel-eg5120-node-red.png
 tags:
