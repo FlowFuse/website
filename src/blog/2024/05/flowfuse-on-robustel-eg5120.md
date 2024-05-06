@@ -31,7 +31,7 @@ If you're looking to migrate your Node-RED instance, follow the steps in [this m
 
 ## Setting Up the Environment
 
-After spending a few weeks find out all the convoluted ways to do something, my CEO recommended testing out the raspbian deployment script for deploying FlowFuse to a Raspberry Pi.  Both Robustel and Raspberry pi run a debian base linux operating system.  Raspberry pi's run a customized and unofficial port of Debian called Raspbian, while Robustel leverages Debian 11.  I decided to give it a shot and the script works flawlessly.  
+After spending a few weeks finding out all the convoluted ways to do something, my CEO recommended testing the Raspbian deployment script for deploying FlowFuse to a Raspberry Pi.  Both Robustel and Raspberry pi run a debian base linux operating system.  Raspberry pi's run a customized and unofficial port of Debian called Raspbian, while Robustel leverages Debian 11.  I decided to give it a shot and the script works flawlessly.  
   
 An [install script is available](/docs/hardware/raspbian/#installing-the-device-agent) that will guide through installing the FlowFuse device agent on the EG5120.  
 
