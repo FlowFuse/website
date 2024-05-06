@@ -47,7 +47,7 @@ The script does the following:
 
 If you are interested in running the device agent as a service, we have provided a [guide](/docs/hardware/raspbian/#running-as-a-service) on just how to do that.
 
-The last step is to link your EG5120 to FlowFuse.  These steps entail registering your device withing the FlowFuse platform.  The [guide here](docs/device-agent/quickstart/) will help you register your EG5120 with FlowFuse.
+The last step is to link your EG5120 to FlowFuse.  These steps entail registering your device withing the FlowFuse platform.  The [guide here](/docs/device-agent/quickstart/) will help you register your EG5120 with FlowFuse.
 
 ## Practical Application
 Consider a scenario where multiple similar remote facilities need to efficiently monitor and manage multiple industrial machines. By integrating the Robustel EG5120 with FlowFuse, the facilities can streamline data collection, enhance device management, and improve operational efficiencies through real-time analytics and remote management capabilities. By leveraging FlowFuse, managing your Node-RED instance becomes even easier by allow the management of all the runtimes from a central location.  
