@@ -85,7 +85,7 @@ In addition to the built-in nodes, Node-RED also has a palette manager feature w
 
 If you want to view this flow you can import it using the code below. Copy the code then select Import from the top right menu in Node-RED. Paste the code into the field then press Import.
 
-```json
+{% renderFlow %}
 [
     {
         "id": "a742e7a95697bb40",
@@ -143,7 +143,8 @@ If you want to view this flow you can import it using the code below. Copy the c
         ]
     }
 ]
-```
+{% endrenderFlow %}
+
 
 ### What's Next?
 

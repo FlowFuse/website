@@ -46,9 +46,10 @@ The fields are the individual pieces of data that you are writing. The tags are 
 
 You can import the flow below into Node-RED to see an example of a payload which will write all the required values to create a data point in InfluxDB:
 
-```json
+{% renderFlow %}
 [{"id":"cb3b0ecc762dbf93","type":"inject","z":"4542482476b9c71d","name":"","props":[{"p":"payload"}],"repeat":"","crontab":"","once":false,"onceDelay":0.1,"topic":"","payload":"[{\"time\":1688718546,\"temperature\":24},{\"device\":\"dQBgXeWLRE\",\"deviceType\":\"Pi4\",\"deviceName\":\"demo-pi-rob\"}]","payloadType":"json","x":450,"y":420,"wires":[["87166c0dafdeea33"]]},{"id":"87166c0dafdeea33","type":"debug","z":"4542482476b9c71d","name":"debug 31","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"true","targetType":"full","statusVal":"","statusType":"auto","x":600,"y":420,"wires":[]}]
-```
+{% endrenderFlow %}
+
 In this example, the time & temperature fields are hard coded, you will need to overwrite the values stored in ```payload[0].time``` & ```payload[0].temperature``` with real data if you were to connect this flow to a real IOT thermometer.
 
 ## Step 4: Write the data point to InfluxDB
@@ -75,9 +76,9 @@ This is an example valid payload:
 ```
 
 You can import a demo, including the demo payload flow using the code below:
-```json
+{% renderFlow %}
 [{"id":"ecbb02face30cbcd","type":"influxdb out","z":"4542482476b9c71d","influxdb":"1c1a5edef41716e3","name":"InfluxDB","measurement":"temperature","precision":"","retentionPolicy":"","database":"database","precisionV18FluxV20":"s","retentionPolicyV18Flux":"","org":"organisation","bucket":"my_data","x":360,"y":220,"wires":[]},{"id":"de83c2b49ba249fd","type":"inject","z":"4542482476b9c71d","name":"","props":[{"p":"measurement","v":"temperature","vt":"str"},{"p":"payload"}],"repeat":"","crontab":"","once":false,"onceDelay":0.1,"topic":"","payload":"[{\"time\":1688987984,\"temperature\":24},{\"device\":\"dQBgXeWLRE\",\"deviceType\":\"Pi4\",\"deviceName\":\"demo-pi-rob\"}]","payloadType":"json","x":190,"y":160,"wires":[["aad6353f2f00333e","ecbb02face30cbcd"]]},{"id":"aad6353f2f00333e","type":"debug","z":"4542482476b9c71d","name":"debug 31","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"true","targetType":"full","statusVal":"","statusType":"auto","x":360,"y":160,"wires":[]},{"id":"1c1a5edef41716e3","type":"influxdb","hostname":"127.0.0.1","port":"8086","protocol":"http","database":"my_data","name":"","usetls":false,"tls":"","influxdbVersion":"2.0","url":"https://localhost","rejectUnauthorized":true}]
-```
+{% endrenderFlow %}
 
 Bear in mind that you will need to edit the server and database details in your influxdb node for this demo to work.
 

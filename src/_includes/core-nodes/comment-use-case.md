@@ -31,12 +31,10 @@ to add these.
 
 ### Examples
 
-![A comment node](./images/comment-node.png)
+{% renderFlow %}
+[{"id":"fc32e2266a87c07d","type":"comment","z":"1adbd550af387f9c","name":"Flow Explanation","info":"This comment can explain what nodes near to\nthis one are intended to do.\n\nComments are written in a WYSIWYG editor.","x":500,"y":320,"wires":[]}]
+{% endrenderFlow %}
 
 When you double click the node, the full text is revealed:
 
 ![Comment node editor](./images/comment-node-full-text.png)
-
-```json
-[{"id":"fc32e2266a87c07d","type":"comment","z":"1adbd550af387f9c","name":"Flow Explanation","info":"This comment can explain what nodes near to\nthis one are intended to do.\n\nComments are written in a WYSIWYG editor.","x":500,"y":320,"wires":[]}]
-```

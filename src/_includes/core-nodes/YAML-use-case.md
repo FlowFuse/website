@@ -19,30 +19,26 @@ the default `payload` is used. The YAML node with try and understand what the
 input format is. When it's JSON, it will send the `msg.payload` onwards as YAML
 format.
 
-![From JSON to YAML parsing](./images/yaml-node-from-json.png)
-
-```json
+{% renderFlow %}
 [{"id":"4481ea08a9fe27e1","type":"inject","z":"7d38803e3d40ee7e","name":"","props":[{"p":"payload"}],"repeat":"","crontab":"","once":false,"onceDelay":0.1,"topic":"","payload":"{\"foo\":\"bar\"}","payloadType":"json","x":190,"y":220,"wires":[["b31536833d27aee0"]]},{"id":"b31536833d27aee0","type":"yaml","z":"7d38803e3d40ee7e","property":"payload","name":"Parse JSON to YAML","x":400,"y":220,"wires":[["90fed168a9d1a4b5"]]},{"id":"90fed168a9d1a4b5","type":"debug","z":"7d38803e3d40ee7e","name":"Debug: Output YAML","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"payload","targetType":"msg","statusVal":"","statusType":"auto","x":640,"y":220,"wires":[]}]
-```
+{% endrenderFlow %}
 
 ### Parsing YAML to JSON
 
 As before, the input is detected by the node itself. When JSON is the input format,
 it's reformatted to valid YAML.
 
-![From YAML to JSON](./images/yaml-node-to-json.png)
-
-```json
+{% renderFlow %}
 [{"id":"4481ea08a9fe27e1","type":"inject","z":"7d38803e3d40ee7e","name":"","props":[{"p":"payload"}],"repeat":"","crontab":"","once":false,"onceDelay":0.1,"topic":"","payload":"{\"foo\":\"bar\"}","payloadType":"json","x":190,"y":220,"wires":[["b31536833d27aee0"]]},{"id":"b31536833d27aee0","type":"yaml","z":"7d38803e3d40ee7e","property":"payload","name":"Parse JSON to YAML","x":400,"y":220,"wires":[["90fed168a9d1a4b5"]]},{"id":"90fed168a9d1a4b5","type":"debug","z":"7d38803e3d40ee7e","name":"Debug: Output YAML","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"payload","targetType":"msg","statusVal":"","statusType":"auto","x":640,"y":220,"wires":[]}]
-```
+{% endrenderFlow %}
+
 
 ### Invalid input error handling
 
 When the input is structured wrongly the YAML node will create an error. The
 error can be caught using the error node.
 
-![YAML node error handling](./images/yaml-node-error.png)
-
-```json
+{% renderFlow %}
 [{"id":"0fc216b8cebccc25","type":"yaml","z":"7d38803e3d40ee7e","property":"payload","name":"Input invalid","x":370,"y":420,"wires":[[]]},{"id":"a0dc30d8f5225962","type":"inject","z":"7d38803e3d40ee7e","name":"","props":[{"p":"payload"}],"repeat":"","crontab":"","once":false,"onceDelay":0.1,"topic":"","payload":"foo: \"bar","payloadType":"str","x":180,"y":420,"wires":[["0fc216b8cebccc25"]]},{"id":"c9a3f66e67b41ad4","type":"debug","z":"7d38803e3d40ee7e","name":"Caught error","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"payload","targetType":"msg","statusVal":"","statusType":"auto","x":370,"y":500,"wires":[]},{"id":"6e3ba1ebc7beaf81","type":"catch","z":"7d38803e3d40ee7e","name":"","scope":["a0dc30d8f5225962"],"uncaught":false,"x":190,"y":500,"wires":[["c9a3f66e67b41ad4"]]}]
-```
+{% endrenderFlow %}
+
