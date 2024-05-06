@@ -4,7 +4,7 @@ subtitle: Ever wanted to deploy the MING stack but want to reduce the complexity
 description: Ever wanted to deploy the MING stack but want to reduce the complexity?
 date: 2024-05-06
 authors: ["flowfuse-team"]
-image: 
+image: /blog/2024/05/images/mind-mqtt-influxdb-node-red-dashboard-2-0.png
 tags:
     - posts
     - flowfuse
