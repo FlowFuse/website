@@ -4,7 +4,7 @@ The Trigger node in Node-RED allows for the initiation and repetition of message
 
 ## Inject Node Vs Trigger Node
 
-The Inject node lets you send messages at specific intervals at specific time but it starts imediatly and continues indefinitely unless manually stopped. With the Trigger node, you have control over when it starts and stops sending messages. Nonetheless, both nodes possess distinct use cases and limitations.
+The Inject node lets you send messages at specific intervals but it starts immediately and continues indefinitely unless manually configured to none. With the Trigger node, you have control over when it starts and stops sending messages. Nonetheless, both nodes possess distinct use cases and limitations.
 
 ## Configuring the Trigger Node
 
@@ -20,7 +20,7 @@ The Inject node lets you send messages at specific intervals at specific time bu
 
 - **Reset the Trigger if:** Allows setting msg.payload that, when received, will reset the trigger node. Alternatively, sending a message containing a reset property will reset the node (which is the default behavior).
    
-- **Override Delay with `msg.delay`:** Allows sending the delay time dynamically with the `msg.delay`. The value must be provided in milliseconds.
+- **Override Delay with `msg.delay`:** Enabling this option will allow sending the delay time dynamically with the `msg.delay`. The value must be provided in milliseconds.
 - **Handling:** Allows configuring the node to treat messages as separate streams, using a `msg` property to identify each stream. Selecting "All Messages" will handle all types of messages separately.
 
 ## Trigger node Usecases:
