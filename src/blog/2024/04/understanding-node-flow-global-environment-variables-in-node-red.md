@@ -2,7 +2,7 @@
 title: Understanding Node, Flow, Global, and Environment Variables in Node-RED
 subtitle: Guide to Understanding and Managing Node-RED Variables for Efficient Workflows
 description: Understand Node-RED node, flow, global, and environment variables. Learn to initiate, retrieve, and manage them effortlessly.
-date: 2024-04-25
+date: 2024-05-06
 authors: ["sumit-shinde"]
 image: /blog/2024/04/images/understanding-node-red.png
 tags:
@@ -187,7 +187,7 @@ In this tab, you'll also find information about when each variable was set or up
 
 So far, we have seen three types of context variables and all are stored in memory. This means that when we stop the Node-RED instance, the variables will get wiped out.
 
-FlowFuse provides a way to persist these variable values between restarts and FlowFuse stack updates. For more details, refer to [FlowFuse Persistent Context](https://flowfuse.com/docs/user/persistent-context/).
+FlowFuse provides a way to persist these variable values between restarts and FlowFuse stack updates. For more details, refer to [FlowFuse Persistent Context](/docs/user/persistent-context/).
 
 #### Setting Persistent Variables in Function Node
 
