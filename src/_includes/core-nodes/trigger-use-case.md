@@ -4,7 +4,7 @@ The Trigger node in Node-RED allows for the initiation and repetition of message
 
 ## Inject Node Vs Trigger Node
 
-The Inject node lets you send messages at specific intervals but it starts immediately and continues indefinitely unless manually configured to none. With the Trigger node, you have control over when it starts and stops sending messages. Nonetheless, both nodes possess distinct use cases and limitations.
+The Inject node lets you send messages at specific intervals but it starts immediately and continues indefinitely unless manually configured to stop. With the Trigger node, you have control over when it starts and stops sending messages. Nonetheless, both nodes possess distinct use cases and limitations.
 
 ## Configuring the Trigger Node
 
