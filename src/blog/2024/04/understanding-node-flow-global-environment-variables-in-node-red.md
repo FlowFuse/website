@@ -21,35 +21,45 @@ Node-RED is super easy and doesn't require much coding knowledge, which is why m
 
 ## Understanding Node-RED Variables
 
-Variables are a crucial component in Node-RED. They come in two types: context variables and environment variables. Context variables are used to keep track of the application's state, which includes node, flow, and global variables. On the other hand, environment variables store confidential configuration information such as secret and API keys, preventing this data from being accidentally exposed in the flow.
+Variables are a crucial part of Node-RED. They come in different types like message, context, and environment variables. Message context variables are linked to individual messages as they move through the flow, For more info on messages, check out [Working with messages](https://nodered.org/docs/user-guide/messages). Context variables are used to keep track of the application's state, which includes node, flow, and global variables. On the other hand, environment variables store confidential configuration information such as secret and API keys, preventing this data from being accidentally exposed in the flow.
 
-### Exploring Node variables
+### Exploring Global variables
 
-Node variables are specific to each node and are only visible within that node. This means we cannot read or write into that variable from outside of the node where it is initialized. This is ideal for cases where you want to store data specific to a single node, to ensure data isolation and prevent interference with other nodes
+Global variables in Node-RED are accessible to function, change, inject, and switch nodes within a given Node-RED instance. They serve as a centralized storage point for data that needs to be accessed across different parts of an application. This is especially useful when you want to share data across multiple flows or tabs within the same Node-RED instance.
 
-For example, You have a form on a Node-RED Dashboard 2.0, and you want to insert the submitted data into a database along with a unique ID for each submission. You can use a node variable to store and track a counter variable in the function node.
+For example, in a home automation system with flows for lighting, security, and climate control, global variables can store user preferences or system settings that all flows can access and update. This allows for consistent behavior across the entire system.
 
-#### Initiating/setting Node variable
+#### Initiating/setting Flow variable
 
-To initiate and set a node variable using the function node, you will have to use the context’s `set` method:
+We can set Global variables using the function and change node.
 
-```javascript
-context.set('variableName', value);
-```
+In the change node, you can set it as shown in the below image
 
-This action sets the value for the context variable with the specified name.
+!["Screenshot showing how to set global variable using the change node"](./images/variables-in-node-red-setting-global-variable-using-change-node.png "Screenshot showing how to set global variable using the change node"){data-zoomable}
 
-#### Retrieving Node variable
-
-To retrieve a node variable using a function node, use the context's `get` method:
+To initiate a Flow variable in the function node, you will have to use the global`s set method like the below in the function node:
 
 ```javascript
-context.get('variableName');
+global.set('variableName', value);
 ```
 
-#### Deleting Node variables
+#### Retrieving Global variable
 
-We cannot delete node variables using a Node-RED node; you'll need to use the Node-RED "Context Data" tab's delete option available for each variable, as explained in the "Exploring Context Data" tab section at the end of the guide.
+Retrieving global variables using change, inject, and switch nodes is quite similar. You simply need to select the "global" option and enter the variable name in the input field. Below is an image showing how you can retrieve global variables using the change node:
+
+!["Screenshot showing how to retrieve global variables using the change node"](./images/variables-in-node-red-retrieving-global-variable-using-change-node.png "Screenshot showing how to retrieve global variables using the change node"){data-zoomable}
+
+To retrieve a global variable using the function, use the global's `get` method like the below in the function node:
+
+```javascript
+global.get('variableName');
+```
+
+#### Deleting Global variables
+
+To delete the global variables again you can use both the "context data" tab and the change node. I have shown in the below image how you can delete global variables using the change node:
+
+!["Screenshot showing how to delete global variable using the change node"](./images/variables-in-node-red-deleting-global-variable-using-change-node.png "Screenshot showing how to delete global variable using the change node"){data-zoomable}
 
 ### Exploring Flow variables
 
@@ -91,43 +101,34 @@ To delete flow variables you can use both the "context data" tab and the change 
 
 !["Screenshot showing how to delete flow variable using the change node"](./images/variables-in-node-red-deleting-global-variable-using-change-node.png "Screenshot showing how to delete flow variable using the change node"){data-zoomable}
 
-### Exploring Global variables
+### Exploring Node variables
 
-Global variables in Node-RED are accessible to function, change, inject, switch nodes within a given Node-RED instance. They serve as a centralized storage point for data that needs to be accessed across different parts of an application. This is especially useful when you want to share data across multiple flows or tabs within the same Node-RED instance.
+Node variables are specific to each node and are only visible within that node. This means we cannot read or write into that variable from outside of the node where it is initialized. This is ideal for cases where you want to store data specific to a single node, to ensure data isolation and prevent interference with other nodes
 
-For example, in a home automation system with flows for lighting, security, and climate control, global variables can store user preferences or system settings that all flows can access and update. This allows for consistent behaviour across the entire system.
+For example, You have a form on a Node-RED Dashboard 2.0, and you want to insert the submitted data into a database along with a unique ID for each submission. You can use a node variable to store and track a counter variable in the function node.
 
-#### Initiating/setting Flow variable
+#### Initiating/setting Node variable
 
-We can set Global variables using the function and change node.
-
-In the change node, you can set it as shown in the below image
-
-!["Screenshot showing how to set global variable using the change node"](./images/variables-in-node-red-setting-global-variable-using-change-node.png "Screenshot showing how to set global variable using the change node"){data-zoomable}
-
-To initiate a Flow variable in the function node, you will have to use the global`s set method like the below in the function node:
+To initiate and set a node variable using the function node, you will have to use the context’s `set` method:
 
 ```javascript
-global.set('variableName', value);
+context.set('variableName', value);
 ```
 
-#### Retrieving Global variable
+This action sets the value for the context variable with the specified name.
 
-Retrieving global variables using change, inject, and switch nodes is quite similar. You simply need to select the "global" option and enter the variable name in the input field. Below is an image showing how you can retrieve global variables using the change node:
+#### Retrieving Node variable
 
-!["Screenshot showing how to retrieve global variables using the change node"](./images/variables-in-node-red-retrieving-global-variable-using-change-node.png "Screenshot showing how to retrieve global variables using the change node"){data-zoomable}
-
-To retrieve a global variable using the function, use the global's `get` method like the below in the function node:
+To retrieve a node variable using a function node, use the context's `get` method:
 
 ```javascript
-global.get('variableName');
+context.get('variableName');
 ```
 
-#### Deleting Global variables
+#### Deleting Node variables
 
-To delete the global variables again you can use both the "context data" tab and the change node. I have shown in the below image how you can delete global variables using the change node:
+We cannot delete node variables using a Node-RED node; you'll need to use the Node-RED "Context Data" tab's delete option available for each variable, as explained in the "Exploring Context Data" tab section at the end of the guide.
 
-!["Screenshot showing how to delete global variable using the change node"](./images/variables-in-node-red-deleting-global-variable-using-change-node.png "Screenshot showing how to delete global variable using the change node"){data-zoomable}
 
 ### Exploring Environmental variables
 
@@ -197,7 +198,7 @@ To set variables in persistent store using change node steps are the same as sto
 In the function node, you just need to pass one more argument "persistent" in the set method.
 
 ```javascript
-context.set('variableName',value,'persistent'); 
+global.set('variableName',value,'persistent');
 ```
 
 ```javascript
@@ -205,7 +206,7 @@ flow.set('variableName',value,'persistent');
 ```
 
 ```javascript
-global.set('variableName',value,'persistent');
+context.set('variableName',value,'persistent'); 
 ```
 
 #### Retrieving Persistent Variables
@@ -217,7 +218,7 @@ You can retrieve variables stored in the persistent store using the change node 
 To retrieve a variable stored in the persistent store using the function node, you'll need to pass "persistent" in the get method.
 
 ```javascript
-context.get('variableName','persistent'); 
+global.get('variableName','persistent');
 ```
 
 ```javascript
@@ -225,9 +226,8 @@ flow.get('variableName','persistent');
 ```
 
 ```javascript
-global.get('variableName','persistent');
+context.get('variableName','persistent'); 
 ```
-
 ## Conclusion
 
 In this comprehensive guide, we've explored the fundamental concepts of Node-RED variables, including node, flow, global, and environment variables. We've learned how to initiate, retrieve, and manage these variables effectively, utilizing both function nodes and change nodes. Additionally, we have learned about memory storage and persistent storage.
