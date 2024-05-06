@@ -4,7 +4,7 @@ subtitle: Guide to Understanding and Managing Node-RED Variables for Efficient W
 description: Understand Node-RED node, flow, global, and environment variables. Learn to initiate, retrieve, and manage them effortlessly.
 date: 2024-05-06
 authors: ["sumit-shinde"]
-image: /blog/2024/04/images/understanding-node-red.png
+image: /blog/2024/05/images/understanding-node-red.png
 tags:
    - posts
    - node-red
