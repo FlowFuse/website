@@ -24,3 +24,16 @@ An example of using the Delay node to rate limit http request to an external API
 {% renderFlow %}
 [{"id":"1f825afc.866efc","type":"delay","z":"e92fb6c3b304fd7c","name":"Rate Limit","pauseType":"rate","timeout":"20","timeoutUnits":"seconds","rate":"10","nbRateUnits":"","rateUnits":"minute","randomFirst":"1","randomLast":"5","randomUnits":"seconds","drop":false,"allowrate":false,"outputs":1,"x":620,"y":120,"wires":[["26f1f0e3.65e3c8"]]}]
 {% endrenderFlow %}
+
+### Reset the queue for the delay node
+
+The Delay node might create a queue that will continue their journey to the connected output nodes.
+There's situations however where the queue needs to be cleared. This is done by resetting the queue.
+When a `reset` property is set, the queue will be empty.
+
+This is useful for when the lack of an event might need to send a notification. Schedule the notification
+to be send but allow a positive event to cancel the notification.
+
+{% renderFlow %}
+[{"id":"06b93157ff07c9b1","type":"delay","z":"e512003df3c971c7","name":"","pauseType":"delay","timeout":"5","timeoutUnits":"seconds","rate":"1","nbRateUnits":"1","rateUnits":"second","randomFirst":"1","randomLast":"5","randomUnits":"seconds","drop":false,"allowrate":false,"outputs":1,"x":300,"y":100,"wires":[["f345c902d09aaf76"]]},{"id":"1965e58562943d69","type":"inject","z":"e512003df3c971c7","name":"","props":[{"p":"reset","v":"true","vt":"bool"}],"repeat":"5","crontab":"","once":false,"onceDelay":0.1,"topic":"","x":130,"y":100,"wires":[["06b93157ff07c9b1"]]},{"id":"f345c902d09aaf76","type":"debug","z":"e512003df3c971c7","name":"Never receive a message","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"payload","targetType":"msg","statusVal":"","statusType":"auto","x":510,"y":100,"wires":[]},{"id":"834f0812a01be7a4","type":"inject","z":"e512003df3c971c7","name":"","props":[{"p":"payload"}],"repeat":"1","crontab":"","once":false,"onceDelay":0.1,"topic":"","payload":"","payloadType":"date","x":130,"y":160,"wires":[["06b93157ff07c9b1"]]}]
+{% endrenderFlow %}
