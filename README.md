@@ -8,7 +8,7 @@ It is built using [Tailwind CSS](https://tailwindcss.com/) and [Eleventy](https:
 
 It is hosted on Netlify with each commit to the `main` branch being automatically deployed to the live site.
 
-This works by a GitHub action automatically updating the `live` branch to includes documentation pulled from the `maintenance` branch of the [FlowFuse/flowfuse](https://github.com/FlowFuse/flowfuse)
+This works by a GitHub action automatically updating the `live` branch to includes documentation pulled from the `main` branch of the [FlowFuse/flowfuse](https://github.com/FlowFuse/flowfuse)
 repository, when changes are pushed to `main`.
 
 Netlify is then configured to watch the `live` branch for any changes, once detected, it will automatically pull the contents of this branch (docs included) and deploy to our production site.
@@ -94,17 +94,14 @@ The `authors` list should correspond to an entry under `src/_data/team`.
 ## Updating the FlowFuse Documentation
 
 When the website is built it will include the documentation
-from the `maintenance` branch of the [FlowFuse/flowfuse](https://github.com/FlowFuse/flowfuse)
+from the `main` branch of the [FlowFuse/flowfuse](https://github.com/FlowFuse/flowfuse)
 repository.
 
 To make a documentation update *and* make it live on the website:
 
 1. PR the documentation update to the `main` branch of [FlowFuse/flowfuse](https://github.com/FlowFuse/flowfuse)
-2. Attach the `backport` label to the PR
-3. Get the PR reviewed and merged in the normal manner.
-4. A new PR will get automatically raised that backports the change to the `maintenance` branch
-5. Review and merge the PR to that branch.
-6. Manually kick-off a website rebuild by clicking 'Run workflow' on [this page](https://github.com/FlowFuse/website/actions/workflows/build.yml).
+2. Get the PR reviewed and merged in the normal manner.
+3. Manually kick-off a website rebuild by clicking 'Run workflow' on [this page](https://github.com/FlowFuse/website/actions/workflows/build.yml).
 
 ## Acknowledgements
 
