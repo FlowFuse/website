@@ -25,9 +25,6 @@ This blog is designed for IoT enthusiasts and professionals who are looking to e
 
 The Robustel EG5120 supports multiple connectivity options including Ethernet, Wi-Fi, and cellular networks, which are essential for flexible deployments in various industrial scenarios. Its built-in support for Bluetooth, cellular connectivity, RS232, RS485, and Modbus facilitates seamless integration with a wide array of IoT devices and services. This blog will guide you through using FlowFuse to effectively manage your Node-RED instance, enhancing both the security and scalability of your IoT applications.
 
-## Migration
-
-If you're looking to migrate your Node-RED instance, follow the steps in [this migration guide](/docs/migration/node-red-tools/) to back up and transfer your configurations safely. By incorporating the FlowFuse device agent, we aim to replace the  Node-RED runtime, thus providing enhanced monitoring, automated backups, and improved management capabilities. This transition will make your deployments more secure and resilient.
 
 ## Setting Up the Environment
 
