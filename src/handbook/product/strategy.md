@@ -27,7 +27,7 @@ We can break down our product pillars into smaller "Areas", which are more speci
 | [Simplified Hosting](#simplified-hosting) | [Security](#security) | [DevOps](#devops) |
 | [Version Control](#version-control) | [Centralized Management](#centralized-management) | [Remote Deployments](#remote-deployments) |
 | [Trust](#trust) | [Adminsitration](#administration) | [Scale](#scale) |
-| [Remote Access](#remote-access) | [Frictionless Maintenance](#frictionless-maintences) | [Reliability](#reliability) |
+| [Remote Access](#remote-access) | [Frictionless Maintenance](#frictionless-maintence) | [Reliability](#reliability) |
 | [Full Stack Applications](#full-stack-applications) | [Observability](#observability) |  |
 | [Collaborative Development](#collaborative-development) |  |  |
 

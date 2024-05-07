@@ -35,7 +35,7 @@ This process covers the standard planning and prioritization process; bugs or mi
 Naturally there will be items that crop up unexpectedly and have to be dealt with pragmatically. For example, we may realize an item is needed for the current release that needs to be expedited through the process. We should remain flexible in how we work.
 
 #### Step 1 - Backlog prioritization and refinement
-Based on customer feedback, input from the FlowFuse team, and all stakeholders, issues are continuously raised and prioritized [in our Backlog](#product-backlog-board).
+Based on customer feedback, input from the FlowFuse team, and all stakeholders, issues are continuously raised and prioritized [in our Backlog](#product-planning-board).
 
 #### Step 2 - Assignment to the To-Do section
 Once an issue is refined, the PM continuously assigns issues to the [Development Board's](#development-board) `To-Do` Section. This is the first indication that this particular item is planned and will be the one of the next items for the `Up Next` section. It also signals the engineering and UX team to raise any open design or architectural clarifications if required.
@@ -82,7 +82,7 @@ Issues are the building blocks of planning activities, helping the team to manag
 - **Feature Requests**: suggestions or ideas submitted by users or stakeholders for new functionalities, enhancements, or improvements to the existing software or system. Feature requests should be evaluated, prioritized, and potentially incorporated into the product roadmap, often being transformed into Epics or Stories for implementation in future releases.
 
 Whenever an issue is raised, it will be reviewed by the Product Manager / Engineering Manager and added
-to the Product Board for prioritization and planning. The exception to this are
+to the Product Planning Board for prioritization and planning. The exception to this are
 tasks/bugs related to work already in progress and that need to be addressed in
 the current milestone. They should be added to the Development Board and current
 milestone directly.
@@ -153,10 +153,10 @@ If you're unsure, or uncomfortable with a piece of assigned work please speak to
 
 We use two project boards to plan and track our work.
 
- - [Product Board](https://github.com/orgs/FlowFuse/projects/3/views/1)
+ - [Product Planning Board](https://github.com/orgs/FlowFuse/projects/3/views/1)
  - [Development Board](https://github.com/orgs/FlowFuse/projects/1/views/1)
 
-### Product Board
+### Product Planning Board
 
 [This board](https://github.com/orgs/FlowFuse/projects/3/views/1) is maintained
 by the Product Manager (PM) and CTO. It is the main entry point for all issues. Longer term planning and strategy is defined here. Each item on the 
