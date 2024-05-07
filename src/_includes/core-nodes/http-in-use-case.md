@@ -21,7 +21,6 @@ Examples
 [{"id":"d705b6ca20481a18","type":"http in","z":"a2240ea952051e81","name":"","url":"/test","method":"get","upload":false,"swaggerDoc":"","x":220,"y":220,"wires":[["500bcf5db325f188"]]},{"id":"f74c362610a1f4dd","type":"debug","z":"a2240ea952051e81","name":"debug 1","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"true","targetType":"full","statusVal":"","statusType":"auto","x":780,"y":160,"wires":[]},{"id":"102ecacbf029fa61","type":"http response","z":"a2240ea952051e81","name":"","statusCode":"200","headers":{},"x":800,"y":280,"wires":[]},{"id":"500bcf5db325f188","type":"template","z":"a2240ea952051e81","name":"","field":"payload","fieldType":"msg","format":"html","syntax":"mustache","template":"<!DOCTYPE html>\n<html lang=\"en\">\n\n<head>\n    <meta charset=\"UTF-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <title>Devs page</title>\n</head>\n\n<body>\n    <h1>Hello, Devs</h1>\n</body>\n\n</html>","output":"str","x":480,"y":220,"wires":[["f74c362610a1f4dd","102ecacbf029fa61"]]},{"id":"d0bd0e43011a33b1","type":"comment","z":"a2240ea952051e81","name":"The HTTP In node returns an HTML page as response when a request is received at the specified path.","info":"","x":510,"y":100,"wires":[]}]
 {% endrenderFlow %}
 
-
 2. In the example flow below, we have an HTTP In node configured to return the todo item stored in the global context, which is associated with the requested ID provided as a request parameter.
 
 {% renderFlow %}
