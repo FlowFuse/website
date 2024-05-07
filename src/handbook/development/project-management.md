@@ -179,7 +179,7 @@ Stories and Tasks on this board are put into one of the following states to indi
  - `Short` - These are items in the 3-6 month time frame, Often these items will get pulled into a milestone from this point depending on capacity.
  - `Medium` - These are items that are in the 6-12 month time frame. 
  - `Long` - This is the long term horizon, items that we know we will want to do one day but at the moment are long term goals, typically this could be 12 months away or more.
-- `Iceblock` - These are items that we do not currently see a clear plan for in building into FlowFuse, however, may be important to keep in mind for the future.
+ - `Icebox` - These are items that we do not currently see a clear plan for in building into FlowFuse, however, may be important to keep in mind for the future.
  - `Support & Under Review` - Customers often ask questions via GitHub issues. From these questions, new insightful requirements sometimes arise. Initially, to clarify the situation with the users, issues belong to this category.
  - `Closed` - All closed items are assigned to this section or being removed from th backlog.
 As items move up the list and get closer to Next we should have a greater understanding of what the detail and demand is for that feature. This is an iterative approach and as we gain understanding on an item we will use that information to aid in reviewing its position on the board.
