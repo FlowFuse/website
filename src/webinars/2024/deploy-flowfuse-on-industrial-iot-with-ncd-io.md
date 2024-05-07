@@ -7,7 +7,7 @@ date: 2024-05-29
 time: 17:00 CET (11:00am ET) 
 duration: 60
 video:
-hosts: ["grey-dziuba"]
+hosts: ["grey-dziuba", "travis-elliot"]
 hubspot:
     formId: 45695dae-9102-4a06-a3d5-e38b3f82ab3a    
 ---
