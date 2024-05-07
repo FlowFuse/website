@@ -1,10 +1,10 @@
-## What is the Trgger Node in Node-RED?
+## What is the Trigger Node in Node-RED?
 
-The Trigger node in Node-RED allows for the initiation and repetition of messages at specified intervals, offering precise control over when messages are sent, their recurrence frequency, and optional delays. This functionality is valuable for automating tasks and efficiently managing communication flow within Node-RED flows.
+The Trigger node in Node-RED facilitates the initiation and repetition of messages at customizable intervals, offering precise control over when messages are sent, their recurrence frequency, and optional delays. This functionality is valuable for automating tasks and efficiently managing communication flow within Node-RED flows.
 
 ## Inject Node Vs Trigger Node
 
-The Inject node lets you send messages at specific intervals but it starts immediately and continues indefinitely unless manually configured to stop. With the Trigger node, you have control over when it starts and stops sending messages. Nonetheless, both nodes possess distinct use cases and limitations.
+The Inject node lets you send messages at specific intervals but it starts immediately and continues indefinitely unless manually configured to stop. With the Trigger node, you have control over when the node starts and stops sending messages. Nonetheless, both nodes possess distinct use cases and limitations.
 
 ## Configuring the Trigger Node
 
@@ -23,7 +23,7 @@ The Inject node lets you send messages at specific intervals but it starts immed
 - **Override Delay with `msg.delay`:** Enabling this option will allow sending the delay time dynamically with the `msg.delay`. The value must be provided in milliseconds.
 - **Handling:** Allows configuring the node to treat messages as separate streams, using a `msg` property to identify each stream. Selecting "All Messages" will handle all types of messages separately.
 
-## Trigger node Usecases:
+## Trigger node Use cases:
 
 - Repetitive Tasks: If you have tasks that need to be repeated at regular intervals, such as data polling or device status checks when triggered, the Trigger node can handle this by configuring it to resend messages at specified time intervals.
 
