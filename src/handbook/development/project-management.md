@@ -8,7 +8,7 @@ This page details provides a comprehensive overview of the project management pr
 
 ## Hierarchy
 
-As per our [Product Strategy](../product/strategy.md), our product is broken into three pillars - Build, Manage and Deploy. Within these pillars we have a collection of [Areas]((../product/strategy.md#product-pillars)).
+As per our [Product Strategy](../product/strategy.md), our product is broken into three pillars - Build, Manage and Deploy. Within these pillars we have a collection of [Areas](../product/strategy.md#product-pillars).
 
 Beneath the areas, we then utilize the standard GitHub hierarchy of Epics, Stories, and Tasks. As such, the hierarchy is as follows:
 
