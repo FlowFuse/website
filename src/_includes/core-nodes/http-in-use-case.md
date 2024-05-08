@@ -31,6 +31,7 @@ The baseurl will be the URL of the Node-RED instance at which your flow is deplo
 
 {% renderFlow %}
 [{"id":"203195252f71d9f4","type":"http in","z":"b152a914653d9fce","name":"","url":"/todo","method":"post","upload":true,"swaggerDoc":"","x":220,"y":280,"wires":[["93df3c07ae4ad228","995da14e2a688758"]]},{"id":"93df3c07ae4ad228","type":"debug","z":"b152a914653d9fce","name":"debug 1","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"true","targetType":"full","statusVal":"","statusType":"auto","x":500,"y":240,"wires":[]},{"id":"eb447a5a61f6654d","type":"http response","z":"b152a914653d9fce","name":"","statusCode":"201","headers":{},"x":820,"y":320,"wires":[]},{"id":"995da14e2a688758","type":"function","z":"b152a914653d9fce","name":"store todo in todolist ","func":"let todoList = global.get('todos') || [];\nlet newTodo = msg.payload;\n\ntodoList.push(newTodo);\nglobal.set('todos',todoList)\nreturn msg;","outputs":1,"timeout":0,"noerr":0,"initialize":"","finalize":"","libs":[],"x":520,"y":320,"wires":[["eb447a5a61f6654d"]]},{"id":"503937c4fc8b7902","type":"comment","z":"b152a914653d9fce","name":"The HTTP In node stores the todo object in the todolist when a POST request with a todo object is received.","info":"","x":520,"y":180,"wires":[]}]
+{% endrenderFlow %}
 
 ## Output 
 
