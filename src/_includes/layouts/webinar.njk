@@ -6,11 +6,7 @@ layout: layouts/base.njk
     {% if title %}
         <div class="webinar-title container m-auto text-center px-6 flex mt-6 mb-6 md:max-w-screen-lg md:mt-12">
             <div class="text-left md:pr-32">
-                {% if tags.includes("ama") %}
-                    <label>Ask Me Anything</label>
-                {% elif tags.includes("webinar") %}
-                    <label>Webinar</label>
-                {% endif %}
+                <label>Webinar</label>
                 <h1>{{ title }}</h1>
                 {% if subtitle %}
                     <h4>{{ subtitle | safe }}</h4>
@@ -48,9 +44,7 @@ layout: layouts/base.njk
                 <div class="mt-6 flex flex-col">
                     <h3 class="mb-3">Presented by:</h3>
                     {% for host in hosts %}
-                        {% if team[host] %}
-                            {% renderTeamMember people[host] %}
-                        {% endif %}
+                        {% renderTeamMember people[host] %}
                     {% endfor %}
                     {% if hubspot.downloadFormId %}
                         <div class="mt-6 flex flex-col">
