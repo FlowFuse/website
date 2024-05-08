@@ -44,7 +44,8 @@ redirects:
   - { "from": "/handbook/development/guides/", "to": "/handbook/company/guides/" }
   - { "from": "/blog/2023/08/uns-article/", "to": "/blog/2023/08/isa-95-automation-pyramid-to-unified-namespace/" }
   - { "from": "/blog/2023/08/UNS-article/", "to": "/blog/2023/08/isa-95-automation-pyramid-to-unified-namespace/" }
-  - { "from": "/product/", "to": "/product/why-flowfuse/" }
+  - { "from": "/product/", "to": "/product/features/" }
+  - { "from": "/product/why-flowfuse", "to": "/product/features/" }
   - { "from": "/node-red/core-nodes/rbe/", "to": "/node-red/core-nodes/filter/" }
   - { "from": "/webinars/2024/deploy-flowfuse-on-industrial-iiot-with-ncd-io/", "to": "/webinars/2024/deploy-flowfuse-on-industrial-iot-with-ncd-io/" }
 

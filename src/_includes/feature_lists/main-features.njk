@@ -1,13 +1,13 @@
 <div class="flex flex-wrap md:justify-between gap-3 md:gap-0 flex-row justify-center mt-4 md:mt-8 mb-3 mb:6 md:mb-6">
-  {%- for f in mainFeatures -%}
+  {%- for f in features.main -%}
   <button class="feature-button align-baseline" data-section="{{ f.id }}">
     <span class="hidden md:inline">{{ f.buttonText }}</span>
     <span class="inline md:hidden">{{ f.buttonTextMobile }}</span>
   </button>
   {%- endfor -%}
 </div>
-<div class="flex flex-col flex-wrap content-center justify-center md:min-h-[450px]">
-  {%- for f in mainFeatures -%}
+<div class="flex flex-col flex-wrap content-center justify-center md:min-h-[460px]">
+  {%- for f in features.main -%}
   <div class="feature active md:text-left" id="{{ f.id }}">
     <div class="container m-auto max-w-screen-lg">
       <div class="flex flex-col md:flex-row justify-center items-center">

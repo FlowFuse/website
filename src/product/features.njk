@@ -1,0 +1,72 @@
+---
+layout: page
+nohero: true
+meta:
+    title: FlowFuse Features
+description:
+    FlowFuse provides the features companies require to reliably deliver Node-RED applications to devices and cloud in a collaborative, secure manner.
+sitemapPriority: 0.8
+---
+
+<div class="nohero w-full">
+    <!--Hero Content-->
+    <div class="w-full pt-12 pb-16 md:px-0 border-b-4 border-gray-100">
+        <div class="container m-auto max-w-screen-lg px-6 max-w-4xl">
+            <div class="text-center">
+                <h1 class="mt-0 md:px-12 m-auto">
+                    FlowFuse Features
+                </h1>
+                <h3 class="mt-6 text-2xl font-light md:px-24">
+                    FlowFuse provides the features companies require to reliably deliver Node-RED applications to devices and cloud in a collaborative, secure manner.
+                </h3>
+            </div>
+            {% include "feature_lists/main-features.njk" %}
+        </div>
+    </div>
+    {%- for f in features.secondary -%}
+    <div class="w-full {% if loop.index is even %}bg-gray-50{% else %}bg-white{% endif %} py-12 px-0">
+        <div class="container m-auto max-w-screen-lg prose">
+            <div class="flex px-6 flex-col flex-col-reverse md:flex-row{% if loop.index is even %}-reverse{% endif %} gap-6 sm:gap-x-8 sm:gap-y-0 md:items-center">
+                <div class="{% if f.videoid %}md:w-[480px]{% endif %}">
+                    <h3 class="flex items-center gap-4 text-center md:text-left w-full">
+                        <div class="flex flex-col leading-9 text-3xl mb-4 w-full">
+                            {{ f.title }}
+                        </div>
+                    </h3>
+                    <p class="mb-0">
+                        {{ f.content | safe }}
+                    </p>
+                    <ul>
+                        {% if f.list %}
+                        {%- for item in f.list -%}
+                        <li>{{ item }}</li>
+                        {%- endfor -%}
+                        {% endif %}
+                    </ul>
+                </div>
+                {% if f.videoid %}
+                <div class="flex justify-center items-center w-full px-1 md:px-2.5 md:w-[461px] bg-contain bg-center bg-no-repeat md:my-6">
+                    <div class="flex justify-center items-center w-[90%] md:w-full">
+                        <lite-youtube videoid="{{ f.videoid }}" params="rel=0"
+                            class="aspect-video bg-cover bg-top bg-no-repeat border-2 border-indigo-100 rounded-md"
+                            style="background-image: url('{{ f.videoThumbnail }}'); width: 442px; aspect-ratio: 16 / 9; background-repeat: no-repeat;"></lite-youtube>
+                    </div>
+                </div>
+                {% else %}
+                <div class="flex justify-center items-center md:w-2/5">
+                    <div class="md:w-[250px] -mt-2 -mb-8 md:mb-0 md:mt-0 max-w-[250px]">
+                        {% set imageSrc = [f.imageFolder, f.imageFile] | join %}
+                        {% set imageDescription = ["Image depicting", f.imageAlt] | join %}
+                        {% image imageSrc, imageDescription, [250] %}
+                    </div>
+                </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+    {%- endfor -%}
+    <div class="w-full border-t pt-6">
+        {% include "common-cta.njk" %}
+    </div>
+</div>
+

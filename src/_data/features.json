@@ -1,4 +1,5 @@
-[{
+{
+  "main":[{
     "id": "feature1",
     "buttonText": "Low-code Node-RED",
     "buttonTextMobile": "Low-code",
@@ -53,4 +54,52 @@
         "Consistent deployment of Node-RED instance snapshots out to all of you devices that allow for quick deployment and redeployment of versions of flows.",
         "The ability to remotely access the Node-RED editor on remote devices to debug, troubleshoot and correct production errors."
         ]
+  }],
+  "secondary":[{
+    "title": "Centralized Instance Management",
+    "content": "FlowFuse enables seamless management of multiple instances from a single platform, streamlining your development and coordination efforts.",
+    "videoid": "KOnQnR7yfT0",
+    "videoThumbnail": "../../images/features/features-instance.jpg"
+  },{
+    "title": "Simplified Hosting and Maintenance",
+    "content": "Experience ease of use with FlowFuse Cloud, handling all your hosting needs. Forget the complexities of maintaining your development environment; we've got it covered.",
+    "videoid": "Ec4yvcvGmu8",
+    "videoThumbnail": "../../images/features/features-hosting.jpg"
+  },{
+    "title": "Software Delivery Pipelines and Version History",
+    "content": "FlowFuse allows software development teams to establish software delivery pipelines that are common for teams that have embraced DevOps practices.",
+    "list": [
+      "DevOps pipelines can be set up to stage Node-RED instances that have different development stages, ex. Test, development and production.",
+      "Snapshots of Node-RED instances can be taken to create a version history of the development work. Previous snapshot versions can be rolled back at any time."
+      ],
+    "videoid": "Pbql22f3vqY",
+    "videoThumbnail": "../../images/features/features-pipelines.jpg"
+  },{
+    "title": "Team Development",
+    "content": "Node-RED team development is made possible with FlowFuse. Different development team members are able to share and collaborate on the same Node-RED instance. This makes for much easier collaboration between Node-RED developers.",
+    "list": [
+      "Team membership and access control is controlled from a central administration console.",
+      "Role based access control allows for restrictions on what team members can access and do while using the FlowFuse platform."
+      ],
+    "imageFolder": "../images/pictograms/",
+    "imageFile": "collaboration_blue.png",
+    "imageAlt": " a team."
+  },{
+    "title": "Security Built-in to your Node-RED instances",
+    "content": "FlowFuse has built-in security for your Node-RED instances.",
+    "list": [
+      "All Node-RED instances are accessed using TLS/SSL.",
+      "Single Sign-on (SSO) allows for users to sign in to FlowFuse using an existing SAML identity provider.",
+      "Audit logs keep track of all changes that occur to a Node-RED instance and which user was responsible for the change."
+      ],
+    "imageFolder": "../images/pictograms/",
+    "imageFile": "security_blue.png",
+    "imageAlt": " a lock."
+  },{
+    "title": "Certified Nodes for Reliability and Security",
+    "content": "FlowFuse offers a curated collection of certified nodes, ensuring top-notch quality, security, and support. Explore our certified nodes on the <a href='/certified-nodes'>Certified Nodes Page</a> and benefit from a robust ecosystem while maintaining operational reliability.",
+    "imageFolder": "../images/pictograms/",
+    "imageFile": "certified-nodes_blue.png",
+    "imageAlt": " certifying badge."
   }]
+}
