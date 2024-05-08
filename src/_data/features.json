@@ -81,7 +81,7 @@
       "Team membership and access control is controlled from a central administration console.",
       "Role based access control allows for restrictions on what team members can access and do while using the FlowFuse platform."
       ],
-    "imageFolder": "../../images/pictograms/",
+    "imageFolder": "../images/pictograms/",
     "imageFile": "collaboration_blue.png",
     "imageAlt": " a team."
   },{
@@ -92,13 +92,13 @@
       "Single Sign-on (SSO) allows for users to sign in to FlowFuse using an existing SAML identity provider.",
       "Audit logs keep track of all changes that occur to a Node-RED instance and which user was responsible for the change."
       ],
-    "imageFolder": "./images/pictograms/",
+    "imageFolder": "../images/pictograms/",
     "imageFile": "security_blue.png",
     "imageAlt": " a lock."
   },{
     "title": "Certified Nodes for Reliability and Security",
     "content": "FlowFuse offers a curated collection of certified nodes, ensuring top-notch quality, security, and support. Explore our certified nodes on the <a href='/certified-nodes'>Certified Nodes Page</a> and benefit from a robust ecosystem while maintaining operational reliability.",
-    "imageFolder": "./images/pictograms/",
+    "imageFolder": "../images/pictograms/",
     "imageFile": "certified-nodes_blue.png",
     "imageAlt": " certifying badge."
   }]
