@@ -22,6 +22,8 @@ Beneath the areas, we then utilize the standard GitHub hierarchy of Epics, Stori
 
 Our planning process is continuously evolving as we find the best way to accommodate both a growing team and an expanding set of requirements for how and what we deliver. We operate on a continuous delivery model, with iterations of two-weeks. 
 
+Whilst we deploy to FlowFuse Cloud on every merge to `main` branch, we conduct formal releases every four weeks. With this, we utilize GitHub milestones in order to track which items are planned for each release. The "Active Release" view provides a picture of all issues assigned to a given release, which is updated when a new release starts after our [retrospective](./releases/process.md#retrospective).
+
 ### Cadence
 
 FlowFuse is continuously released to FlowFuse Cloud, and every four weeks, on a Thursday, it is packaged for users who are self-hosting FlowFuse.
@@ -87,8 +89,12 @@ tasks/bugs related to work already in progress and that need to be addressed in
 the current milestone. They should be added to the Development Board and current
 milestone directly.
 
+#### Headline Features
+
 We label some items as `headline`. These are items we want to highlight in the changelog and further
 announcements and should clearly describe the value they bring to our users.
+
+We provide the ["Headlines" view](https://github.com/orgs/FlowFuse/projects/1/views/39) on our GitHub project boards to track these items on a release-by-release basis so that the customer team has a clearer view on what new content can be discussed in socials, etc.
 
 ### Sizing Issues
 
