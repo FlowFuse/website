@@ -1,37 +1,17 @@
 [
   {
-    "title": "Capture data like never before",
-    "content": "Start a digital transformation. We make it easy to access, transform, and visualize data over any protocol.",
-    "icon": "circle-stack"
+    "title": "Developer Velocity",
+    "content": "FlowFuse empowers a wide range of engineers to build applications, significantly reducing the time to develop and going into production. The low-code development platform and a rich integration ecosystem help accelerate ROI.",
+    "icon": "code-bracket"
   },
   {
-    "title": "Custom solutions for your company",
-    "content": "Create manufacturing applications that align perfectly with your operational requirements.",
-    "icon": "light-bulb"
-  },
-  {
-    "title": "Centralized management and automated deployment",
-    "content": "With our automated processes, creating and deploying configurations across multiple devices is efficient and hassle-free.",
+    "title": "No-Ops Digitalization Platform",
+    "content": "Simplifying hosting and maintenance, FlowFuse removes the complexities of keeping your development environment up to date. Easily connect to edge devices and manage your flows in a single instance. ",
     "icon": "bolt"
   },
   {
-    "title": "Reliable delivery every time",
-    "content": "Our DevOps pipelines facilitate development, testing, and production, ensuring consistent and reliable application delivery.",
-    "icon": "arrow-up-on-square-stack"
-  },
-  {
-    "title": "Secure and compliant development",
-    "content": "Single-Sign-On (SSO), audit logs for monitoring, and change control are a few ways we ensure secure building in a collaborative environment",
+    "title": "Compliance and Security",
+    "content": "FlowFuse is built with security and compliance in mind; ideal for highly regulated industries. Apart from supporting standard identity and access management, FlowFuse Certified Nodes provide enhanced efficiency and security.",
     "icon": "lock-closed"
-  },
-  {
-    "title": "Expert Support for your applications",
-    "content": "Our team of experts keep your systems current with the latest updates, safeguarding the continuity and efficiency of your operations.",
-    "icon": "lifebuoy"
-  },
-  {
-    "title": "Low-code development",
-    "content": "Our low-code platform enables your team to rapidly develop tailored applications in-house for faster, optimized results.",
-    "icon": "code-bracket"
   }
 ]

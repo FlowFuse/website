@@ -1,44 +1,45 @@
 <div class="flex flex-wrap flex-row gap-2 justify-center sm:justify-start sm:gap-6 mt-2 sm:mt-8 mb-6">
-  {%- for s in solutions -%}
-  <button class="solution-button align-baseline" data-section="{{ s.id }}">
-    <span class="hidden sm:inline">{{ s.buttonText }}</span>
-    <span class="inline sm:hidden">{{ s.buttonTextMobile }}</span>
+  {%- for i in industries -%}
+  <button class="solution-button align-baseline" data-section="{{ i.id }}">
+    <span class="hidden sm:inline">{{ i.buttonText }}</span>
+    <span class="inline sm:hidden">{{ i.buttonTextMobile }}</span>
   </button>
   {%- endfor -%}
 </div>
-<div class="flex flex-col flex-wrap content-center justify-center sm:min-h-[450px]  transition duration-1000">
-  {%- for s in solutions -%}
-  <div class="solution active sm:text-left" id="{{ s.id }}">
+<div class="flex flex-col flex-wrap content-center justify-center sm:min-h-[350px]  transition duration-1000">
+  {%- for i in industries -%}
+  <div class="solution active sm:text-left" id="{{ i.id }}">
     <div class="m-auto max-w-screen-lg">
-      <div class="max-w-[410px] sm:max-w-none mx-auto sm:grid justify-center items-center" style="grid-template-columns: 40% auto;">
-        {% set imageFolder = './images/home/' %}
-        <div class="max-h-[300px] sm:max-h-full ff-image-cover scale ff-image-rounded w-full h-full mb-4 sm:mb-0">
-            <a href="/solutions/{{ s.url }}/">
-            {% set imageSrc = [imageFolder, s.imageFile] | join %}
-            {% set imageDescription = ["Image depicting", s.imageAlt] | join %}
+      <div class="max-w-[410px] sm:max-w-none mx-auto sm:grid justify-center items-center" style="grid-template-columns: 45% auto;">
+        <div class="max-h-[300px] md:max-h-[272px] ff-image-cover scale ff-image-rounded w-full h-full mb-4 sm:mb-0">
+            <a href="{{ i.url }}">
+            {% set imageSrc = i.imageFile %}
+            {% set imageDescription = ["Image depicting", i.imageAlt] | join %}
             {% image imageSrc, imageDescription, [410] %}
           </a>
         </div>
         <div class="content-center justify-center sm:pl-6 flex-1">
+          {% if i.title %}
           <h3 class="flex items-center text-center justify-center sm:text-left sm:justify-start">
             <div class="flex flex-col leading-8 text-xl mb-3 text-gray-600">
-              {{ s.title }}
+              {{ i.title }}
             </div>
           </h3>
+          {% endif %}
           <p class="font-light">
-            {{ s.content }}
+            {{ i.content }}
           </p>
           <div class="prose">
             <ul>
-              {% if s.list %}
-              {%- for item in s.list -%}
+              {% if i.list %}
+              {%- for item in i.list -%}
               <li class="font-light">{{ item }}</li>
               {%- endfor -%}
               {% endif %}
             </ul>
           </div>
-          <a href="/solutions/{{ s.url }}/" class="w-full text-right flex flex-row items-center gap-1 mt-6 justify-end sm:justify-start">
-            Learn more
+          <a href="{{ i.url }}" class="w-full text-right flex flex-row items-center gap-1 mt-6 justify-end sm:justify-start">
+            {{ i.cta }}
             {% include "components/icons/arrow-long-right.svg" %}
           </a>
         </div>

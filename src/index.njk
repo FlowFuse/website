@@ -9,7 +9,7 @@ hubspot:
 ---
 <!--Hero Content-->
 <div class="w-full px-6">
-    <div class="max-w-md sm:max-w-screen-lg pb-6 mt-12 mx-auto">
+    <div class="max-w-md sm:max-w-screen-lg mt-12 mx-auto">
         <div class="container m-auto text-left max-w-screen-lg lg:flex lg:flex-row lg:items-start lg:justify-between lg:gap-6">
             <div class="max-w-xl mx-auto lg:mx-0 lg:my-auto lg:py-10 lg:max-w-[600px]">
                 <h1 class="font-medium max-w-xl m-auto lg:m-0 text-center lg:text-left text-indigo-800 max-sm:text-4xl">
@@ -37,7 +37,7 @@ hubspot:
                 </div>
             </div>
             <div class="flex justify-center items-end m-auto lg:mx-0">
-                <lite-youtube videoid="eR0P40sxge8" style="background-image: url('images/thumbnail-nick-flowfuse.png'); width: 620px; height: 360px; overflow: hidden;" class="max-w-sm max-h-52 border-4 border-indigo-200 rounded-xl sm:max-w-none sm:max-h-full lg:max-w-lg lg:max-h-72"></lite-youtube>
+                <lite-youtube videoid="PkuCa_wB5jU" params="rel=0" style="background-image: url('images/ff-explainer.gif'); background-size: cover; width: 500px; overflow: hidden;" class="border-4 border-indigo-200 rounded-xl sm:max-w-none sm:max-h-full lg:max-w-lg lg:max-h-72"></lite-youtube>
             </div>
         </div>
     </div>
@@ -50,13 +50,14 @@ hubspot:
             {% include "social-proof.njk" %}
         </div>
     </div>
-    <!--Solutions-->
-    <div class="w-full pt-24 pb-12 md:px-0">
+    <!--Industries-->
+    <div class="w-full pt-20 pb-12 md:px-0">
         <div class="sm:max-w-screen-lg mx-auto">
             <div class="mb-10 md:mb-12">
-                <h2 class="text-center w-full md:text-left">See how FlowFuse <span class="text-indigo-600">powers industries</span></h2>
+                <h2 class="text-center w-full md:text-left">FlowFuse <span class="text-indigo-600">powers industries</span></h2>
+                <p class="text-center lg:text-left pt-3">Leveraging the low-code capabilities of <a href="/node-red/">Node-RED</a>, we empower organizations across industries to build bespoke applications tailored to their specific needs. We bring agile iteration into industrial operations to continuously improve efficiency.</p>
             </div>
-            {% include "solutions.njk" %}
+            {% include "industries.njk" %}
         </div>
     </div>
 </div>
@@ -65,17 +66,16 @@ hubspot:
     <div class="w-full px-6 pt-2">
         <div class="max-w-md sm:max-w-screen-lg mx-auto">
             <div class="mx-auto w-full md:max-w-screen-lg grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-x-8 gap-y-14 pb-14">
-                <h2 class="text-center w-full md:text-left col-span-full"><span class="text-indigo-600">Benefits</span> of
-                    choosing FlowFuse</h2>
+                <h2 class="text-center w-full md:text-left col-span-full">FlowFuse Creates <span class="text-indigo-600">Value</span></h2>
                 {% for item in home %}
-                <div class="relative w-full {% if loop.last %}col-span-full{% endif %}">
+                <div class="relative w-full">
                     <div class="flex flex-col items-center sm:items-start">
                         <div class="flex flex-col justify-center md:justify-start gap-3 w-full">
                             <div class="w-8 h-8 m-auto sm:m-0 text-indigo-600">
                                 {% set svgPath = "components/icons/" + item.icon + ".svg" %}
                                 {% include svgPath %}
                             </div>
-                            <div class="w-full flex flex-row gap-3 mx-auto md:m-0 {% if not loop.last %}ff-min-h-56{% endif %}">
+                            <div class="w-full flex flex-row gap-3 mx-auto md:m-0">
                                 <h5 class="w-full md:m-0">
                                     <div class="text-xl text-gray-600 text-center sm:text-left">{{ item.title | safe }}
                                     </div>
@@ -102,24 +102,21 @@ hubspot:
                 <div class="w-full mt-4 md:mt-0 flex flex-col justify-between">
                     <div>
                         <div class="flex justify-center sm:justify-start mt-3 mb-2">
-                            {% include "components/icons/chat-bubble-left-right-sm.svg" %}
+                            {% include "components/icons/building-office-2.svg" %}
                         </div>
-                        <h4 class="flex justify-center sm:justify-start font-semibold">Learn More</h4>
-                        <p class="font-light mt-6">The best way to learn about FlowFuse is to book a demo! We’d love to
-                            show you how FlowFuse can transform your business.</p>
+                        <h4 class="flex justify-center sm:justify-start font-semibold">On Premise</h4>
+                        <p class="font-light mt-6">Deploy FlowFuse on your hardware for enhanced flexibility. Opt for self-hosted deployment with FlowFuse, enabling on-premises installation and full control over your deployment process.</p>
                     </div>
                     <a class="mt-4 mb-6 sm:mb-0 ff-btn ff-btn--highlight uppercase inline-block self-center sm:self-start"
-                        href="/book-demo/" onclick="capture('cta-book-a-demo', {'position': 'secondary'})">Book a
-                        Demo</a>
+                        href="/docs/install/introduction/" onclick="capture('cta-install', {'position': 'secondary'})">Install now</a>
                 </div>
                 <div class="w-full mt-4 md:mt-0 flex flex-col justify-between">
                     <div>
                         <div class="flex justify-center sm:justify-start mt-3 mb-2 mx-auto md:mx-0">
-                            {% include "components/icons/power.svg" %}
+                            {% include "components/icons/cloud.svg" %}
                         </div>
-                        <h4 class="flex justify-center sm:justify-start font-semibold">Get Started Today</h4>
-                        <p class="font-light mt-6">Ready to get started? Start exploring the FlowFuse platform in less
-                            than a minute.</p>
+                        <h4 class="flex justify-center sm:justify-start font-semibold">FlowFuse Cloud</h4>
+                        <p class="font-light mt-6">Our managed hosted solution, maintained and supported by the FlowFuse team. Experience flexibility, scalability, and expert assistance to drive your business forward.</p>
                     </div>
                     <a class="mt-4 ff-btn ff-btn--primary uppercase inline-block self-center sm:self-start"
                         href="{{ site.appURL }}/account/create"
