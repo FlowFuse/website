@@ -13,7 +13,7 @@ The baseurl will be the URL of the Node-RED instance at which your flow is deplo
 
 *Note: This node does not send any response to the request. The flow must include an **HTTP Response node** to complete the request.*
 
-Examples
+## Examples
 
 1. In the example flow below, we have an HTTP In node configured with the GET method and "/test" as the URL path. This node returns an HTML page as a response when a request is received.
 
