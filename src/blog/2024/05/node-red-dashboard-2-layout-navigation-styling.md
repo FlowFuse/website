@@ -4,7 +4,7 @@ subtitle: Explore Dashboard 2.0 Different layouts and sidebars. learn how to sty
 description: Discover Dashboard 2.0's layouts, sidebars, and styling features for a seamless user experience.
 date: 2024-05-10
 authors: ["sumit-shinde"]
-image: blog/2024/05/images/node-red-dashboard-2-layout-navigation-styling.png
+image: /blog/2024/05/images/node-red-dashboard-2-layout-navigation-styling.png
 tags:
    - posts
    - dashboard 2.0
