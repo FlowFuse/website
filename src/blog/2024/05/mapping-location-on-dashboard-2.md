@@ -56,11 +56,11 @@ To ensure compatibility with the Worldmap custom node, we need to format the loc
 
 ![Screenshot of the Switch node checking if the vehicle type is tram or not](./images/mapping-location-on-dashboard-2-switch-node-checking-is-vehicale-type-is-tram-or-not.png "Screenshot of the Switch node checking if the vehicle type is tram or not"){data-zoomable}
 
-5. Add another **Change** node to the canvas and give it a name like **set icon and icon color for tram**. Set `msg.payload.icon` to **fa-train** and `msg.payload.iconColor` to **yellow**.
+5. Add another **Change** node to the canvas and give it a name **set icon and icon color for tram**. Set `msg.payload.icon` to **fa-train** and `msg.payload.iconColor` to **yellow**.
 
 ![Screenshot of the Change node setting the icon and icon color for tram](./images/mapping-location-on-dashboard-2-change-node-setting-icon-for-tram.png "Screenshot of the Change node setting the icon and icon color for tram"){data-zoomable}
 
-7. Add another **Change** node to the canvas and give it a name like **set icon and icon color for bus**. Set `msg.payload.icon` to **bus** and `msg.payload.iconColor` to **red**.
+7. Add another **Change** node to the canvas and give it a name **set icon and icon color for bus**. Set `msg.payload.icon` to **bus** and `msg.payload.iconColor` to **red**.
 
 ![Screenshot of the Change node setting the icon and icon color for bus](./images/mapping-location-on-dashboard-2-change-node-setting-icon-for-bus.png "Screenshot of the Change node setting the icon and icon color for bus"){data-zoomable}
 
