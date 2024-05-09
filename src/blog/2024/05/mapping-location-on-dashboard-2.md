@@ -30,28 +30,28 @@ To render an interactive world map webpage for plotting data, we will use a popu
 
 ## Retrieving location Data
 
-Before plotting locations, we need to obtain the data first. For this purpose, we will be utilizing the [Edenburg Open Public Transportation API](https://tfe-opendata.readme.io/docs/getting-started). This API provides the live locations of all public buses and trams, enabling us to access the necessary data for plotting on our Dashboard 2.0.
+Before plotting locations, we need to obtain the data first. For this purpose, we will utilize the [Edenburg Open Public Transportation API](https://tfe-opendata.readme.io/docs/getting-started). This API provides the live locations of all public buses and trams, enabling us to access the necessary data for plotting on our Dashboard 2.0.
 
-1. Drag an inject node onto the canvas and set the repeat property to a 20-second interval.
-2. Drag an HTTP request node onto the canvas, select the GET method, and enter `https://tfe-opendata.com/api/v1/vehicle_locations` in the URL field. Since this API is open to all, we don't need to use environment variables. However, for private APIs, it's recommended to use [environment variables](/blog/2023/01/environment-variables-in-node-red) for added security.
+1. Drag an **Inject** node onto the canvas and set the repeat property to a 20-second interval.
+2. Drag an **HTTP request** node onto the canvas, select the **GET** method, and enter `https://tfe-opendata.com/api/v1/vehicle_locations` in the URL field. Since this API is open to all, we don't need to use environment variables. However, for private APIs, it's recommended to use [environment variables](/blog/2023/01/environment-variables-in-node-red) for added security.
 
 !["Screenshot of the HTTP request node configuration for retrieving data from the API"](./images/mapping-location-on-dashboard-2-http-request-node.png "Screenshot of the HTTP request node configuration for retrieving data from the API"){data-zoomable}
 
-3. Connect the inject node output to the http request node's input.
+3. Connect the **Inject** node output to the **HTTP request** node's input.
 
 ## Formatting Location Data
 
 The public URL we are using returns an array of JSON in string format. We need to parse that JSON array before using it. Additionally, we need to format the data to ensure that we are passing it in the correct format, as the Worldmap custom node requires.
 
-1. Drag a JSON node onto the canvas, and select that action to Always convert to a javascript object.
+1. Drag a **JSON** node onto the canvas, and select that Action to **Always convert to a javascript object**.
 
 !["Screenshot of the JSON node configuration for parsing string JSON"](./images/mapping-location-on-dashboard-2-json-node.png "Screenshot of the JSON node configuration for parsing string JSON"){data-zoomable}
 
-2. Drag the change node onto the canvas, and set the `msg.payload` to `msg.payload.vehicles`.
+2. Drag the **Change** node onto the canvas, and set the `msg.payload` to `msg.payload.vehicles`.
 
 !["Screenshot of the Change node setting the payload to the vehicles JSON array containing actual vehicle location data"](./images/mapping-location-on-dashboard-2-change-node.png "Screenshot of the Change node setting the payload to the vehicles JSON array containing actual vehicle location data"){data-zoomable}
 
-3. Drag a function node onto the canvas and paste the following code into it.
+3. Drag a **Function** node onto the canvas and paste the following code into it.
 
 ```javascript
 // Extract the payload data from the message
@@ -85,17 +85,17 @@ msg.payload = data;
 return msg;
 ```
 
-4. Connect json node's output to the change node's input and change the node's output to function node's input.
+4. Connect **JSON** node's output to the **Change** node's input and change the node's output to the **Function** node's input.
 
-## Plotting location data on worldmap
+## Plotting location data on Worldmap
 
-1. Drag a worldmap node onto the canvas. Set the path to "/worldmap" and keep the rest of the settings unchanged, although you can modify other properties according to your preferences.
+1. Drag a **Worldmap** node onto the canvas. Set the path to "/worldmap" and keep the rest of the settings unchanged, although you can modify other properties according to your preferences.
 
 !["Screenshot displaying the configuration of the Worldmap custom node"](./images/mapping-location-on-dashboard-2-worldmap-node.png "Screenshot displaying the configuration of the Worldmap custom node"){data-zoomable}
 
 2. With the worldmap node configured, it will generate a world map with plotted data accessible at the specified path.
-3. Now, drag a ui-template widget onto the canvas, selecting ui-group and ui-page for it.
-4. Insert the following code into the ui-template:
+3. Now, drag a **ui-template** widget onto the canvas, selecting **ui-group** and **ui-page** for it.
+4. Insert the following code into the** ui-template**:
 
 ```javascript
 <template>
@@ -114,7 +114,7 @@ return msg;
 
 ![""Screenshot of the UI-template widget rendering a world map on the dashboard""](./images/mapping-location-on-dashboard-2-template-widget.png ""Screenshot of the UI-template widget rendering a world map on the dashboard""){data-zoomable}
 
-5. Connect the function node's output to worldmap node's input.
+5. Connect the **Function** node's output to **Worldmap** node's input.
 
 ## Deploying the flow
 
@@ -125,8 +125,8 @@ return msg;
 
 {% endrenderFlow %}
 
-1. With your flow updated to include the above, click the "Deploy" button in the top-right of the Node-RED Editor.
-2. Locate the 'Open Dashboard' button at the top-right corner of the Dashboard 2.0 sidebar and click on it to navigate to the dashboard.
+1. With your flow updated to include the above, click the **Deploy** button in the top-right of the Node-RED Editor.
+2. Locate the **Open Dashboard** button at the top-right corner of the Dashboard 2.0 sidebar and click on it to navigate to the dashboard.
 
 Now you can see the live location of the Edenburg public transport on dashboard. Moreover, if you want to have live locations of your vehicles plotted on a map instead of Edenburg public transport vehicles, you can read your vehicles GPS data with the [Flowfuse device agent](/docs/device-agent/introduction/).
 
