@@ -40,7 +40,9 @@ It can be useful to select a sepecific version of Node-RED to run, for example w
 
 ## Full list of release features and bug fixes
 
-You can view everything included in 2.4 on our [Github](https://github.com/FlowFuse/flowfuse/releases/tag/v2.4.0).
+You can view everything included in 2.4 on the [Github Release page](https://github.com/FlowFuse/flowfuse/releases/tag/v2.4.0).
+
+We also regularly release updates to [FlowFuse Cloud]({{ site.appURL }}) in between our monthly releases. You can follow the updates as they are made via our [ChangeLog](/changelog).
 
 ## What's next?
 
