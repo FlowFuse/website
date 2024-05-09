@@ -45,6 +45,8 @@ With FlowFuse, it's possible to manage thousands of Node-RED instances, all in o
 
 ### Deploy
 
+With FlowFuse, we aim to provide the best way to deploy Node-RED applications to production environments, whether that be to hundreds of remote devices, or via staging environments to ensure you can deploy with confidence.
+
 - **DevOps:** Test your applications in development and staging environments, ensuring you can deploy them with confidence to production.
 - **Remote Deployments:** Deploy your applications to hundreds of remote devices with a single-click, ensuring you can get your applications running in production quickly and easily.
 - **Reliability:** FlowFuse users can have trust that their applications will run without issues with features like [High Availability](blog/2023/06/flowforge-1-8-released/). FlowFuse makes sure users have the tools to monitor and manage the reliability of their applications, including being alerted when things go wrong, and making the recovery as easy as possible.
