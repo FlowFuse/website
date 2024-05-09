@@ -9,22 +9,22 @@ When you configure an HTTP Request node, you typically specify the method (GET, 
 Below, you'll find a range of settings to tailor HTTP requests to fit the needs of different APIs or web services. Depending on the service you're working with, some options might be crucial, while others could be optional.
 
 - **Method:** Select the HTTP method for the request (e.g., GET, POST, PUT, DELETE). You can dynamically set it using `msg.method`.
-- **URL:** Specify the endpoint URL to communicate with. Dynamic URL setting is allowed using `msg.url`. additionally if you want construct url with message's property you can utilze Mustache-style tags in the URL. ex - example.com/{{{topic}}}, it will have the value of `msg.topic` automatically inserted. Using {{{...}}} prevents mustache from escaping characters like / & etc.
-- **Payload:** Allows to choose how recevied payload from previous node will be sent with request:
-  - **Ignore:** If enabled Payload wil be ignored.
-  - **Append to query-string parameter:** Enabling this option will Allow to send URL query string parameter usigna `msg.payload`.
+- **URL:** Specify the endpoint URL to communicate with. Dynamic URL setting is allowed using `msg.url`. additionally, if you want to construct url with the message's property you can utilize Mustache-style tags in the URL. ex - example.com/{{{topic}}}, it will have the value of `msg.topic` automatically inserted. Using {{{...}}} prevents mustache from escaping characters like / & etc.
+- **Payload:** Allows to choose how received payload from the previous node will be sent with the request:
+  - **Ignore:** If enabled Payload will be ignored.
+  - **Append to query-string parameter:** Enabling this option will Allow sending URL query string parameters using `msg.payload`.
   - **Send as request:** Send payload data as part of the request body.
-- **Enable Secure Connection:** Activate SSL/TLS for secure communication. TLS configuration options available.
+- **Enable Secure Connection:** Activate SSL/TLS for secure communication. TLS configuration options are available.
   - **TLS Configuration:**
-    - **Use key and certificates from local files:** enabling this option will allows to enter path of the certificates files if not allows to upload directly from device
+    - **Use key and certificates from local files:** If this option is enabled it will allow you to enter the path of the certificate files. if not, it allows to upload directly from the device
     - **Certificate:** the server's certificate( PEM FORMAT).
     - **Private Key:** the private key associated with the certificate ( PEM FORMAT).
     - **Passphrase (optional):** If the private key is encrypted, provide the passphrase.
     - **CA Certificate:** Optionally provide a CA certificate for certificate verification ( PEM FORMAT).
-    - **Verify server certificate:** enablign this option will verify server certificate.
+    - **Verify server certificate:** Enabling this option will verify the server certificate.
     - **Server Name:** Specify the server name for SNI (Server Name Indication).
     - **ALPN Protocol:** Specify the ALPN (Application-Layer Protocol Negotiation) protocol.
-- **Use Authentication:** If required, allows to provide credentials for authentication.
+- **Use Authentication:** If required, allow to provide credentials for authentication.
   - **Type:** Select the authentication type.
     - **basic:** Uses Basic authentication where the username and password are sent in the request headers in Base64-encoded form.
       - **Username:** Provide the username for authentication.
