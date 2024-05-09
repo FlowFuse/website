@@ -36,7 +36,7 @@ The second place we are adding the ability to preview flows is to the Snapshots 
 
 ## Manage Node-RED versions on Devices [#3766](https://github.com/FlowFuse/flowfuse/pull/3766)
 
-It can be useful to select a sepecific version of Node-RED to run, for example where you are using a custom node which only runs on specific versions of Node-RED. In this release we have added the ability to easily select the version of Node-RED you wish to run on your devices. 
+It can be useful to select a specific version of Node-RED to run, for example where you are using a custom node which only runs on specific versions of Node-RED. In this release we have added the ability to easily select the version of Node-RED you wish to run on your devices. 
 
 ## Full list of release features and bug fixes
 
