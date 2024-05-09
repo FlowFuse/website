@@ -10,7 +10,7 @@ tags:
    - dashboard 2.0
 ---
 
-In this comprehensive guide, we will explore different layouts and sidebar styles in Dashboard 2.0. Additionally, we will cover how you can style the dashboard 2.0 element effortlessly.
+In this comprehensive guide, we will explore different layouts and sidebar styles in Dashboard 2.0. Additionally, we will cover how you can style Dashboard 2.0 elements effortlessly.
 
 <!--more-->
 
@@ -22,31 +22,30 @@ A layout in Node-RED Dashboard 2.0 refers to how groups of widgets are organized
 
 ### Exploring Dashboard 2.0 layouts
 
-In Dashboard 2.0, we have three types of layouts: Grid, Notebook, and fixed.
+In Dashboard 2.0, we have three types of layouts: Grid, Notebook, and Fixed.
 
 #### Grid layout
 
-Choosing this layout divides your dashboard page into **12 equal-size** columns, and you can specify how many columns your group will occupy using the **size** property. When groups within a row take up all column space of a given screen width, new rows automatically start. Additionally, the height of each row is determined by the tallest widget in that row.
+Choosing this layout divides your dashboard page into **12 equally-sized columns**, and you can specify how many columns your group will occupy using the `size` property. When groups within a row take up all available columns, a new row automatically starts. The height of each row is determined by the tallest widget in that row.
 
-In this layout, each group creates its internal grid layout based on the columns it occupies.
 
 !["Screenshot of dashboard having grid layout"](./images/node-red-dashboard-2-layout-navigation-styling-grid-layout.jpg "Screenshot of dashboard having grid layout"){data-zoomable}
 
-In the image above, you can see that the first and last widget groups occupy all columns, while in the middle, two groups each take up 6 columns. Notice how the first group creates its internal grid layout.
+In the image above, you can see that the first and last widget groups occupy all 12 columns, while in the middle, two groups each take up six columns each.
 
 #### Notebook layout
 
-Choosing the Notebook layout for your page in Dashboard 2.0 makes it work like a Jupyter Notebook, fixed at a width of **1024px** and **centered**. Changing the width doesn't affect the group's width but changes the internal column counts. It's great for dynamic Markdown, data tables, and visuals. Groups of pages are stacked vertically, and groups by default represent **6 column** counts each.
+Choosing the Notebook layout for your page in Dashboard 2.0 makes it work like a Jupyter Notebook, fixed at a width of **1024px** and **centered**. Here, a groups' "width" defines the number of columns the group contains. The group itself will always render the full-width of the Notebook. It's great for dynamic Markdown, data tables, and visuals. Groups of pages are stacked vertically.
 
 !["Screenshot of dashboard having notebook layout"](./images/node-red-dashboard-2-layout-navigation-styling-notebook-layout.png "Screenshot of dashboard having notebook layout"){data-zoomable}
 
 #### Fixed layout
 
-In this layout, the horizontal (width) unit in the size property is fixed at 90px. For example, if you set the group width to 3 units, it will be 3 * 90 = 270px wide. Each widget size unit represents a column in the group's internal grid, following the same pattern as other layouts.
+In this layout, the width value is converted to "units", with each unit being `90px` wide. For example, if you set the group width to `3`, it will be 3 * 90 = 270px wide. Within a given group, the group size represents a column in the group's internal grid, following the same pattern as other layouts.
 
 !["Screenshot of dashboard having fixed layout"](./images/node-red-dashboard-2-layout-navigation-styling-fix-layout.png "Screenshot of dashboard having fixed layout"){data-zoomable}
 
-*Note: Currently this layout is not completely ready to use so it is recommended to use other layouts.*
+*Note: Currently this layout is not optimised, with plans to make it similar to Dashboard 1.0 in how it compresses content vertically, so it is recommended to use other layouts.*
 
 ### Setting page layout
 
@@ -57,7 +56,9 @@ In this layout, the horizontal (width) unit in the size property is fixed at 90p
 
 ## Setting Dashboard 2.0 elements size
 
-Setting the size for elements in Dashboard 2.0 is straightforward, but understanding the actual unit size in the size property can be a bit tricky. It's important to note that the size of a horizontal unit varies depending on the layout, while the vertical size is fixed at **48px** currently.
+Setting the size for elements in Dashboard 2.0 is straightforward, but understanding the actual unit size in the size property can be a bit tricky. 
+
+It's important to note that the size of a single horizontal unit varies depending on the layout, but the vertical size of a single row is consistently **48px**.
 
 ## Understanding unit size in different layouts
 
@@ -86,15 +87,14 @@ To set the size of groups and widgets in Dashboard 2.0, follow these steps:
 
 The theme is a collection of colors that control the look and feel of the widgets, groups, and other elements on the page.
 
-In Dashboard 2.0, while adding a page ( ui-page ) we have to specify which theme it will use. By default, we have one default theme in dashboard 2.0. Additionally, we can add a new theme (ui-theme) where we need to specify colors and sizing.
+In Dashboard 2.0, when adding a page ( ui-page ) we can specify which theme it will use. By default, we have one theme in dashboard 2.0, we can add more themes using the Dashboard 2.0 side panel.
 
 ### Understanding theme properties
 
-In the theme (`ui-theme`) configuration, there are two main sections: colors and sizing. 
+In the theme (`ui-theme`) configuration, there are two main sections: 
 
-Within the color section, you'll need to specify colors for Navigation, primary elements, page background, group backgrounds, and outlines.
-
-In the sizing section, you'll define the gaps between groups, page padding, group outline radius, and gaps between widgets, all in pixels.
+- **Colors:** Specify colors for Navigation, primary elements, page background, group backgrounds, and outlines.
+- **Sizing:** Define the gaps between groups, page padding, group outline radius, and gaps between widgets, all in pixels.
 
 For additional information on the `ui-theme` settings, please refer to the [ui-theme documentation](https://dashboard.flowfuse.com/nodes/config/ui-theme.html).
 
@@ -108,11 +108,11 @@ For additional information on the `ui-theme` settings, please refer to the [ui-t
 
 !["Image showing process of adding new theme"](./images/node-red-dashboard-2-layout-navigation-styling-adding-new-theme.gif "Image showing process of adding new theme"){data-zoomable}
 
-## Dashboard 2.0 Sidebar
+## Dashboard 2.0 Navigation
 
-In Dashboard 2.0, we have 5 different types of sidebars.
+In Dashboard 2.0, we have 5 different navigation options for your application.
 
-### Exploring different types of Dashboard 2.0 sidebar
+### Sidebar Navigation Options
 
 #### Collapsing
 
@@ -150,15 +150,15 @@ In this type, the sidebar is always hidden, and navigation between different pag
 
 ### Setting sidebar 
 
-1. Navigate to the Dashboard 2.0 sidebar.
+1. Navigate to the Dashboard 2.0 sidebar in the Node-RED editor
 2. Click on the "Edit Settings" button located at the top left side of the Dashboard 2.0 sidebar.
 3. Select your preferred sidebar style from the "Style" field in the sidebar options section.
 
 !["Image showing process of changing sidebar style"](./images/node-red-dashboard-2-layout-navigation-styling-setting-sidebar.gif "Image showing process of changing sidebar style"){data-zoomable}
 
-## Styling your Dashboard 2.0 elements
+## Customising your Dashboard 2.0 further
  
-In Dashboard 2.0, we can add classes to almost all widgets, pages, and groups and style them using CSS. Applying styles to these classes will inject the CSS inline, giving them an inline scope. This means the specified styles will take precedence over any existing CSS rules.
+In Dashboard 2.0, we can add classes to almost all widgets, pages, and groups and style them using CSS.
 
 ### Adding classes
 
@@ -167,18 +167,25 @@ In Dashboard 2.0, we can add classes to almost all widgets, pages, and groups an
 
 ### Writing custom CSS
 
-In Dashboard 2.0, the ui-template allows you to write custom CSS for Dashboard 2.0 elements. In the ui-template, you can add CSS for two different scopes: Single page (selecting this allows you to specify CSS for all classes within the selected page) and All pages (selecting this allows you to specify CSS for classes across all pages in a ui-base).
+In Dashboard 2.0, the `ui-template` node allows you to write custom CSS for Dashboard 2.0. 
+
+In the template node, you can add CSS for two different scopes:
+
+- **Single Page:** Selecting this allows you to specify CSS that is constrained to a single page of your dashboard.
+- **All Pages:** Selecting this allows you to define CSS that will apply across your whole dashboard.
+
+To define your own CSS:
 
 1. Drag an ui-template widget onto the canvas.
 2. Double-click on it and select the scope within the type field.
-3. If you select the single-page scope, you'll need to select the page to which your element or class belongs for adding styling. If you select the all-page scope, then you'll need to select the ui-base that includes those pages to which you want to add styling.
+3. If you select the "CSS (Single Page)" type, you'll then need to select the `ui-page` to which your custom class definitions will apply. If you select the "CSS (All Pages)" type, then you'll need to select the `ui-base` that includes those pages to which you want to add styling.
 4. Now you can write your custom CSS within the ui-template.
 
 !["Screenshot of ui-template widget adding CSS for styling elements of all pages of a ui-base"](./images/node-red-dashboard-2-layout-navigation-styling-adding-style-in-ui-template.png "Screenshot of ui-template widget adding CSS for styling elements of all pages of a ui-base"){data-zoomable}
 
-## Up next 
+## Up Next 
 
-To delve deeper into Node-RED Dashboard 2.0, explore the following resources:
+To delve deeper into Node-RED Dashboard 2.0, we recommend exploring the following resources:
 
 - [FlowFuse Dashboard Articles](/blog/dashboard/) - Collection of examples and guides written by FlowFuse.
 - [Node-RED Dashboard 2.0 Documentation](https://dashboard.flowfuse.com/) - Detailed information for each of the nodes available in Dashboard 2.0, as well as useful guides on building custom nodes and widgets of your own.
