@@ -24,7 +24,11 @@ We introduced our library of Node-RED [Blueprints](/blog/2023/10/blueprints/) in
 
 ## View Flows within the Team Library without loading Node-RED [#3803](https://github.com/FlowFuse/flowfuse/issues/3803)
 
-In September 2023 nodered.org introduced the ability to [visualise](/blog/2023/09/flow-viewer/) flows without actually loading the Node-RED editor using [gorenje's](https://github.com/gorenje) fantastic [node-red-flowviewer-js](https://github.com/gorenje/node-red-flowviewer-js). With a big thanks to gorenje, we are happy to be introducing the ability to view Node-RED flows in FlowFuse directly. Our first step to adding this new feature to FlowFuse is within our [Team Library](/changelog/2024/05/library-flowviewer/). You can now view a visual representation of saved flows in your Team Library.
+In September 2023, Node-RED community member [gorenje](https://github.com/gorenje) created some code that could be used to visualise Node-RED flows without having to load the full Node-RED editor. This was added to the community [flow library](/blog/2023/09/flow-viewer/) and has proven to be a great addition.
+
+With gorenje's support, we've packaged up his library to make it easier to embed in other sites and have made it generally available [here](https://github.com/FlowFuse/flow-renderer). A big thanks to gorenje for laying the ground work and allow us to build on it.
+
+We've wasted no time putting this to good use within FlowFuse. Our first step is in our [Team Library](/changelog/2024/05/library-flowviewer/). You can now view a visual representation of saved flows in your Team Library.
 
 ## View Flows within Snapshots without loading Node-RED [#3798](https://github.com/FlowFuse/flowfuse/issues/3798)
 
