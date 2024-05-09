@@ -43,19 +43,27 @@ Before plotting locations, we need to obtain the data first. For this purpose, w
 
 To ensure compatibility with the Worldmap custom node, we need to format the location data appropriately. 
 
-## Formatting Location Data
-
-To ensure compatibility with the Worldmap custom node, we need to format the location data appropriately. 
-
-1. Drag the **Change** node onto the canvas, and set the `msg.payload` to `msg.payload.vehicles`, and name it **Set payload**.
+1. Drag the **Change** node onto the canvas, and set the `msg.payload` to `msg.payload.vehicles`, and give it name **Set payload**.
 
 ![Screenshot of the Change node setting the payload to the vehicles JSON array containing actual vehicle location data](./images/mapping-location-on-dashboard-2-change-node.png "Screenshot of the Change node setting the payload to the vehicles JSON array containing actual vehicle location data"){data-zoomable}
 
 2. Drag a **Split** node onto the canvas.
-3. Add another **Change** node to the canvas. Configure it to set and delete properties as shown in the image below, and name it **Change and delete properties**. By changing and deleting properties of the location, we ensure that only the properties acceptable by the **Worldmap** node are included in the location data.
+3. Add another **Change** node to the canvas. Configure it to set and delete properties as shown in the image below, and give it name **Change and delete properties**. By changing and deleting properties of the location, we ensure that only the properties acceptable by the **Worldmap** node are included in the location data.
+
+![Screenshot of the Change node configuring properties to ensure compatibility with the Worldmap node](./images/mapping-location-on-dashboard-2-change-node-changing-and-deleting-properties.png "Screenshot of the Change node configuring properties to ensure compatibility with the Worldmap node"){data-zoomable}
+
 4. Drag a **Switch** node onto the canvas and add conditions to check if `msg.payload.vehicle_type` is equal to **tram** or not.
+
+![Screenshot of the Switch node checking if the vehicle type is tram or not](./images/mapping-location-on-dashboard-2-switch-node-checking-is-vehicale-type-is-tram-or-not.png "Screenshot of the Switch node checking if the vehicle type is tram or not"){data-zoomable}
+
 5. Add another **Change** node to the canvas and give it a name like **set icon and icon color for tram**. Set `msg.payload.icon` to **fa-train** and `msg.payload.iconColor` to **yellow**.
+
+![Screenshot of the Change node setting the icon and icon color for tram](./images/mapping-location-on-dashboard-2-change-node-setting-icon-for-tram.png "Screenshot of the Change node setting the icon and icon color for tram"){data-zoomable}
+
 7. Add another **Change** node to the canvas and give it a name like **set icon and icon color for bus**. Set `msg.payload.icon` to **bus** and `msg.payload.iconColor` to **red**.
+
+![Screenshot of the Change node setting the icon and icon color for bus](./images/mapping-location-on-dashboard-2-change-node-setting-icon-for-bus.png "Screenshot of the Change node setting the icon and icon color for bus"){data-zoomable}
+
 8. Connect the **HTTP request** node's output to the input of the **Change** node named **Set payload**, and connect the output of that **Change** node to the input of the **Split** node.
 9. Then, connect the output of the **Split** node to the input of the **Change** node named **Change and delete properties**, and connect the output of the "Change and delete properties" node to the input of the **Switch** node. Then **Switch** node's first output to the input of the **Change** node named **set icon and icon color for tram**, and its second output to the input of the **Change** node named **set icon and icon color for bus**.
  
@@ -84,7 +92,7 @@ To ensure compatibility with the Worldmap custom node, we need to format the loc
 </style>
 ```
 
-![""Screenshot of the UI-template widget rendering a world map on the dashboard""](./images/mapping-location-on-dashboard-2-template-widget.png ""Screenshot of the UI-template widget rendering a world map on the dashboard""){data-zoomable}
+![Screenshot of the UI-template widget rendering a world map on the dashboard](./images/mapping-location-on-dashboard-2-template-widget.png "Screenshot of the UI-template widget rendering a world map on the dashboard"){data-zoomable}
 
 5. Connect the **Function** node's output to **Worldmap** node's input.
 
