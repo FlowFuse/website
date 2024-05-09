@@ -1,5 +1,5 @@
 ---
-title: Mapping location data withing Node-RED Dashboard 2.0.
+title: Mapping location data within Node-RED Dashboard 2.0.
 subtitle: Step-by-step guide to plot location data on dashboard 2.0.
 description: Learn how to plot location data on Dashboard 2.0 with this comprehensive step-by-step guide. 
 date: 2024-05-06
