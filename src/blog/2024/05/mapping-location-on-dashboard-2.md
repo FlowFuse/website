@@ -12,38 +12,38 @@ tags:
    - location
 ---
 
-Have you ever needed to develop a fleet management system or something similar that requires a map with plotted location data on a dashboard? If so, this guide is for you. In this tutorial, we will learn how to plot location data on a world map within Dashboard 2.0.
+Have you ever needed to develop a fleet management system or something similar that requires a map with plotted location data on a dashboard? If so, this guide is for you. In this guide, we will learn how to plot location data on a world map within Dashboard 2.0.
 
 <!--more-->
 
-Before moving further, make sure you have installed Dashboard 2.0. If you are new to Dashboard 2.0, refer to [Getting Started with Dashboard 2.0](/blog/2024/03/dashboard-getting-started/).
+Before moving further, make sure you have installed Dashboard 2.0. If you are new to Dashboard 2.0, please refer to [Getting Started with Dashboard 2.0](/blog/2024/03/dashboard-getting-started/) for more information.
 
 ## Installing world map custom node
 
-To render an interactive world map webpage for plotting data, we will use a popular custom node called [node-red-contrib-web-worldmap page](https://flows.nodered.org/node/node-red-contrib-web-worldmap). This node offers extensive features enabling us to render a world map and plot various items with different icons, colors, NATO symbologies, ranges, and more.
+To render an interactive world map webpage for plotting location data, we will use a popular custom node called [node-red-contrib-web-worldmap-page](https://flows.nodered.org/node/node-red-contrib-web-worldmap). This node offers extensive features enabling us to render a world map and plot various items with different icons, colors, NATO symbologies, ranges, and more.
 
 1. Click the Node-RED Settings (top-right).
 2. Click "Manage Palette".
 3. Switch to the "Install" tab.
-4. Search for "node-red-contrib-web-worldmap".
+4. Search for `node-red-contrib-web-worldmap`.
 5. Click "Install".
 
 ## Retrieving location Data
 
-Before plotting locations, we need to obtain the data first. For this purpose, we will utilize the [Edenburg Open Public Transportation API](https://tfe-opendata.readme.io/docs/getting-started). This API provides the live locations of all public buses and trams, enabling us to access the necessary data for plotting on our Dashboard 2.0.
+Before plotting locations, we need to obtain the data first. For this purpose, we will utilize the [Edenburg Open Public Transportation API](https://tfe-opendata.readme.io/docs/getting-started). This API provides the live locations of all of Edenburg's public buses and trams, enabling us to access the necessary data for plotting on Worldmap within Dashboard 2.0.
 
 1. Drag an **Inject** node onto the canvas and set the repeat property to a 20-second interval.
 2. Drag an **HTTP request** node onto the canvas, select the **GET** method, and enter `https://tfe-opendata.com/api/v1/vehicle_locations` in the URL field. Since this API is open to all, we don't need to use environment variables. However, for private APIs, it's recommended to use [environment variables](/blog/2023/01/environment-variables-in-node-red) for added security.
 
 !["Screenshot of the HTTP request node configuration for retrieving data from the API"](./images/mapping-location-on-dashboard-2-http-request-node.png "Screenshot of the HTTP request node configuration for retrieving data from the API"){data-zoomable}
 
-3. Connect the **Inject** node output to the **HTTP request** node's input.
+3. Connect the **Inject** node's output to the **HTTP request** node's input.
 
 ## Formatting Location Data
 
 The public URL we are using returns an array of JSON in string format. We need to parse that JSON array before using it. Additionally, we need to format the data to ensure that we are passing it in the correct format, as the Worldmap custom node requires.
 
-1. Drag a **JSON** node onto the canvas, and select that Action to **Always convert to a javascript object**.
+1. Drag a **JSON** node onto the canvas, and select Action to **Always convert to a javascript object**.
 
 !["Screenshot of the JSON node configuration for parsing string JSON"](./images/mapping-location-on-dashboard-2-json-node.png "Screenshot of the JSON node configuration for parsing string JSON"){data-zoomable}
 
@@ -68,7 +68,7 @@ data.forEach(obj => {
     // Set icon based on vehicle type, if tram, use train icon
     obj.icon = obj.vehicle_type !== "tram" ? obj.vehicle_type : "fa-train";
     
-    // Set icon color to yellow if the vehicle is a tram, else undefined
+    // Set icon color to yellow if the vehicle is a tram, else red.
     obj.iconColor = obj.vehicle_type !== "tram" ? "red" : "yellow";
 
     // Set the color of route lines to 'blue'
@@ -85,7 +85,7 @@ msg.payload = data;
 return msg;
 ```
 
-4. Connect **JSON** node's output to the **Change** node's input and change the node's output to the **Function** node's input.
+4. Connect **JSON** node's output to the **Change** node's input and **Change** the node's output to the **Function** node's input.
 
 ## Plotting location data on Worldmap
 
@@ -93,9 +93,9 @@ return msg;
 
 !["Screenshot displaying the configuration of the Worldmap custom node"](./images/mapping-location-on-dashboard-2-worldmap-node.png "Screenshot displaying the configuration of the Worldmap custom node"){data-zoomable}
 
-2. With the worldmap node configured, it will generate a world map with plotted data accessible at the specified path.
-3. Now, drag a **ui-template** widget onto the canvas, selecting **ui-group** and **ui-page** for it.
-4. Insert the following code into the** ui-template**:
+2. With the **worldmap** node configured, it will generate a world map with plotted data accessible at the specified path.
+3. Now, drag a **ui-template** widget onto the canvas, select **ui-group** and **ui-page** for it.
+4. Insert the following code into the **ui-template**:
 
 ```javascript
 <template>
@@ -128,7 +128,7 @@ return msg;
 1. With your flow updated to include the above, click the **Deploy** button in the top-right of the Node-RED Editor.
 2. Locate the **Open Dashboard** button at the top-right corner of the Dashboard 2.0 sidebar and click on it to navigate to the dashboard.
 
-Now you can see the live location of the Edenburg public transport on dashboard. Moreover, if you want to have live locations of your vehicles plotted on a map instead of Edenburg public transport vehicles, you can read your vehicles GPS data with the [Flowfuse device agent](/docs/device-agent/introduction/).
+Now you can view the live location of Edinburgh public transport vehicles on the dashboard. Additionally, if you prefer to track the live locations of your own vehicles plotted on a map instead of the Edenburg public transport vehicles, you can connect your devices and read GPS and sensor data using the [Flowfuse device agent](/docs/device-agent/introduction/).
 
 ## Conclusion 
 
