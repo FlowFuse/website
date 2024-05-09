@@ -4,7 +4,7 @@ subtitle: Step-by-step guide to plot location data on dashboard 2.0.
 description: Learn how to plot location data on Dashboard 2.0 with this comprehensive step-by-step guide. 
 date: 2024-05-06
 authors: ["sumit-shinde"]
-image: 
+image: /blog/2024/05/images/mapping-location-on-dashboard-2-worldmap.png
 tags:
    - posts
    - dashboard
