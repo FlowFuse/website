@@ -1,8 +1,6 @@
 ---
 layout: page
 nohero: true
-faqTitle: "Frequently Asked Questions"
-faqSubtitle: "Have a question that you don't see answered here? Feel free to reach out to us via our <a href='/contact-us'>Contact Us</a> page"
 meta:
     title: Start using Node-RED online for free
     keywords: Node-RED, FlowFuse Cloud, Node-RED use cases, Node-RED FAQs, Node-RED tips, Node-RED concepts
@@ -51,33 +49,33 @@ meta:
         - question: "How is Node-RED used in IoT?"
           answer: >
             Node-RED is very popular in the manufacturing and industrial automation industries (IIoT) as an edge computing solution. Often deployed on PLCs and IoT gateways, Node-RED supports collecting data from legacy and proprietary systems (Siemens S7, Modbus, OPC-UA, etc), integrating the industrial data with other data sources (weather data, enterprise data), filtering data on the edge, and then sending the data to the cloud. FlowFuse offers remote device deployment to IIoT edge devices. Node-RED is also very popular with DIY home automation enthusiasts, in particular the <a href='https://community.home-assistant.io/t/home-assistant-community-add-on-node-red/55023/' target='_blank'>Home Assistant</a> community. 
-description: Node-RED's low-code brilliance hosted on FlowFuse cloud. Answer your questions about getting started with Node-RED including tips, best practices, and FAQs to using Node-RED for different use cases.
+description: Node-RED is the low-code programming language of choice for industrial applications. Industrial engineers use Node-RED to collect, transform, and integrate data through visualized dashboards.
 sitemapPriority: 0.8
 ---
 <!--First two sections-->
 <div class="nohero w-full">
     <!--Hero Content-->
     <div class="w-full pt-12 pb-20 md:pt-6 md:pb-12">
-        <div class="flex flex-col px-6 md:my-16 items-center md:flex-row md:items-start container mx-auto text-center md:text-left max-w-screen-lg gap-8">
-            <div class="md:my-auto md:w-1/2 lg:w-5/12">
+        <div class="flex flex-col px-6 md:my-16 items-center md:flex-row md:items-start container mx-auto text-center md:text-left md:max-w-screen-lg gap-8">
+            <div class="md:my-auto md:w-1/2 lg:w-5/12 max-w-md">
                 <h1 class="mt-0 px-12 md:px-0 m-auto text-indigo-800">
-                    <span class="leading-3">What is Node-RED?</span>
+                    What is <span class="inline-block">Node-RED?</span>
                 </h1>
                 <p>
-                    Co-created by Nick O’Leary, CTO of FlowFuse, Node-RED is <span class="font-semibold">the low-code programming language of choice for industrial applications</span>. Industrial engineers use Node-RED to collect, transform, and integrate data through visualized dashboards.
+                    Co-created by Nick O’Leary, CTO of FlowFuse, Node-RED is <span class="font-semibold">the <span class="inline-block">low-code</span> programming language of choice for industrial applications</span>. Industrial engineers use Node-RED to collect, transform, and integrate data through visualized dashboards.
                 </p>
                 <p class="md:mb-10"><span class="font-semibold">FlowFuse enhances Node-RED with enterprise features</span> to accelerate digitizing and optimizing industrial processes.</p>
                 <a class="ff-btn ff-btn--primary hidden min-h-[40px] md:inline" href="/ebooks/beginner-guide-to-a-professional-nodered/" onclick="capture('cta-download-ebook', {'position': 'nodered'})">DOWNLOAD eBOOK</a>
             </div>
-            <div class="max-w-[500px] md:w-1/2 lg:w-7/12 m-auto border-4 border-indigo-200 rounded-xl ff-image-cover">
+            <div class="max-w-md md:w-1/2 lg:w-7/12 m-auto border-4 border-indigo-200 rounded-xl ff-image-cover">
                 {% image "../images/pseudo-editor.png", "Node-RED pseudo UI", [500] %}
             </div>
-            <a class="ff-btn ff-btn--primary flex flex-col w-full md:hidden" href="/ebooks/beginner-guide-to-a-professional-nodered/" onclick="capture('cta-download-ebook', {'position': 'nodered'})">DOWNLOAD eBOOK</a>
+            <a class="ff-btn ff-btn--primary flex flex-col w-full md:hidden max-w-md" href="/ebooks/beginner-guide-to-a-professional-nodered/" onclick="capture('cta-download-ebook', {'position': 'nodered'})">DOWNLOAD eBOOK</a>
         </div>   
     </div>
 
     <!-- Power of low-code -->  
-    <div class="w-full px-6 pb-16">
+    <div class="w-full pb-16">
         <div class="max-w-screen-lg mx-auto px-6">
             <div class="w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-x-8 gap-y-14">
                 <h2 class="text-center w-full md:text-left col-span-full">Harness the Power of <span class="text-indigo-600">Low-Code Integration</span></h2>
@@ -103,7 +101,7 @@ sitemapPriority: 0.8
                 ] %}
 
                 {% for section in sections %}
-                    <div class="relative w-full">
+                    <div class="relative w-full max-md:max-w-md mx-auto">
                         <div class="flex flex-col items-center sm:items-start">
                             <div class="flex flex-col justify-center md:justify-start gap-3 w-full">
                                 <div class="w-8 h-8 m-auto sm:m-0 text-indigo-600">
@@ -128,16 +126,16 @@ sitemapPriority: 0.8
 </div>    
 
 <!--Learning Resources-->
-<div class="w-full bg-gray-50 py-20">
+<div class="w-full bg-gray-50 pb-20 pt-16">
     <div class="max-w-screen-lg m-auto px-6">
     <h2 class="max-md:text-center">
         Node-RED <span class="text-indigo-600">Learning Resources</span>
     </h2>
-<div class="flex flex-col mt-12 items-center md:flex-row md:items-start mx-auto text-center md:text-left gap-8">
-    <div class="max-w-[500px] md:w-1/2 lg:w-5/12 my-auto rounded-xl ff-image-cover">
+<div class="max-sm:text-center max-w-md sm:max-w-none mx-auto sm:grid justify-center items-center mt-10" style="grid-template-columns: 45% auto;">
+    <div class="max-h-[300px] md:max-h-[272px] ff-image-cover scale ff-image-rounded w-full h-full mb-4 sm:mb-0">
         {% image "../images/learning_nr.png", "Node-RED pseudo UI", [406] %}
     </div>
-        <div class="h-full md:w-1/2 lg:w-7/12">
+        <div class="content-center justify-center sm:pl-8 flex-1">
             <p class="md:mt-0">
                 Jumpstart your Node-RED journey with FlowFuse’s comprehensive learning resources, including tutorials, case studies, and community forums. Whether you’re new to Node-RED or looking to refine your skills, our resources are designed to accelerate your learning curve.
             </p>
@@ -154,16 +152,12 @@ sitemapPriority: 0.8
 </div>
 </div>
 
-<!--Customer Stories Banner-->
-<div class="w-full text-center px-6 pb-3 pt-8 text-lg flex-col flex-row items-center justify-center gap-1 hover:no-underline flex-wrap">
-    <h2>
-        <span class="hover:no-underline">
-            Node-RED use cases from our customer stories
-        </span>
-    </h2>
-    <ul class="mt-6 grid grid-cols-1 md:grid md:grid-cols-3 gap-y-4 pb-4 max-w-screen-lg m-auto">
+<div class="max-w-screen-lg mx-auto text-center pt-20 pb-6 px-6 text-lg flex-col flex-row items-center justify-center gap-1 hover:no-underline flex-wrap">
+    <!--Customer Stories Banner-->
+    <h2 class="md:text-left max-w-3xl">Explore <span class="text-indigo-600">Real-World Node-RED Applications</span> from FlowFuse Customers</h2>
+    <ul class="mt-10 grid grid-cols-1 md:grid md:grid-cols-3 gap-y-4 pb-4 m-auto gap-6">
         {%- for item in collections.stories | sort(attribute='item.date') | reverse | limit(3) -%}
-        <li class="w-full max-w-md m-auto my-2 px-2">
+        <li class="w-full max-w-md m-auto my-2">
             <a href="{{ item.url }}" class="w-full flex flex-col group hover:no-underline">
                 <div>
                     <div>
@@ -187,165 +181,110 @@ sitemapPriority: 0.8
                             </div>
                         </div>
                     </div>
-                    <h5 class="mt-1 mb-0 font-medium group-hover:underline font-light text-lg text-left">{{ item.data.title }}</h5>
+                    <h5 class="mt-1 mb-0 group-hover:underline font-light text-lg text-left text-gray-600">{{ item.data.title }}</h5>
                 </div>
             </a>
         </li>
         {% endfor %}
     </ul>
-</div>
-<a href="/customer-stories/" class="w-full text-center hover:underline pt-3 pb-8 flex flex-row items-center justify-center gap-1 cursor-pointer flex-wrap">
-    See more customer stories {% include "components/icons/chevron-right-sm.svg" %}
-</a>
+    <a href="/customer-stories/" class="w-full font-light text-center md:text-left hover:underline pt-3 flex flex-row items-center gap-1 cursor-pointer flex-wrap max-md:max-w-md mx-auto mb-20">
+        See more customer stories {% include "components/icons/chevron-right-sm.svg" %}
+    </a>
 
-<!--Learn & Faqs-->
-<div class="nohero w-full">       
-    <!-- Learn Node-RED --> 
-    <div class="about w-full bg-gray-50 pt-12 md:pt-12 pb-12">
-        <div class="text-center">
-            <h2>Learn Node-RED</h2>
+    <!--Why FlowFuse-->
+    <div class="ff-blue-card">
+        <h2 class="font-bold m-auto w-full text-center sm:text-left mb-5">Why Choose <span class="text-red-600">FlowFuse</span> for Node-RED </h2>
+        <div class="w-full sm:grid sm:grid-cols-2 gap-6 sm:gap-8">
+            {% set sections = [
+                {
+                    "iconPath": "components/icons/shield-check.svg",
+                    "title": "Enhanced Security",
+                    "description": "Security and compliance guardrails ensure adherence to security protocols."
+                },
+                {
+                    "iconPath": "components/icons/user-group.svg",
+                    "title": "Seamless Collaboration",
+                    "description": "Cloud-based solutions and dev-ops pipelines streamline development with user-friendly interfaces and safeguard against errors."
+                },
+                {
+                    "iconPath": "components/icons/arrows-pointing-out.svg",
+                    "title": "Scalable Architecture ",
+                    "description": "Start small and scale to thousands of self–built and self–maintained applications. Reduce reliance on point solutions and vendor lock-in."
+                },
+                {
+                    "iconPath": "components/icons/academic-cap.svg",
+                    "title": "Expert Support",
+                    "description": "Get access to our dedicated support team who are creators and experts in Node-RED, ready to assist you at every step."
+                }
+            ] %}
+
+            {% for section in sections %}
+                <div class="w-full mt-4 md:mt-0 flex flex-col justify-between">
+                    <div>
+                        <div class="flex max-sm:w-full justify-center sm:justify-start mt-3 mb-2 w-8 h-8">
+                            {% include section.iconPath %}
+                        </div>
+                        <h4 class="flex justify-center sm:justify-start font-semibold">{{ section.title }}</h4>
+                        <p class="font-light mt-6">{{ section.description }}</p>
+                    </div>
+                </div>
+            {% endfor %}
         </div>
-        <div class="container m-auto max-w-4xl">
-            <div class="grid grid-cols-1 md:grid-cols-2 pt-4 md:pt-6 gap-x-8 items-start">
-                <!-- Node-RED Quick Tips Column -->
-                <div class="px-6 pb-6 md:pb-0">
-                    <h4 class="w-full text-center mb-4">Quick Tips</h4>
-                    <ul class="ff-nodered-resources">
-                        <a href="/blog/2023/02/3-quick-node-red-tips-1">
-                            <li>
-                                <div class="ff-nodered-resources--icon">{% ffIconLg "nodered", true %}</div>
-                                <label>Wiring Shortcuts</label>
-                            </li>
-                        </a>
-                        <a href="/blog/2023/02/3-quick-node-red-tips-2">
-                            <li>
-                                <div class="ff-nodered-resources--icon">{% ffIconLg "bug", true %}</div>
-                                <label>Deploying, Debugging, and Delaying</label>
-                            </li>
-                        </a>
-                        <a href="/blog/2023/03/3-quick-node-red-tips-3">
-                            <li>
-                                <div class="ff-nodered-resources--icon">{% ffIconLg "cmdline", true %}</div>
-                                <label>Exec, Filter, and Debug</label>
-                            </li>
-                        </a>
-                        <a href="/blog/2023/03/3-quick-node-red-tips-4">
-                            <li>
-                                <div class="ff-nodered-resources--icon">{% ffIconLg "smooth", true %}</div>
-                                <label>Smooth, Catch, and Math</label>
-                            </li>
-                        </a>
-                        <a href="/blog/2023/03/3-quick-node-red-tips-5">
-                            <li>
-                                <div class="ff-nodered-resources--icon">{% ffIconLg "upload", true %}</div>
-                                <label>Importing, Exporting, and Grouping Flows</label>
-                            </li>
-                        </a>
-                    </ul>
-                </div>
-                <!-- Node-RED Concepts Column -->
-                <div class="px-6 pb-6 md:pb-0">
-                    <h4 class="w-full text-center mb-4">Key Concepts</h4>
-                    <ul class="ff-nodered-resources">
-                        <a href="/blog/2023/03/comparing-node-red-dashboards/">
-                            <li>
-                                <div class="ff-nodered-resources--icon">{% ffIconLg "chart", true %}</div>
-                                <label>Comparing Node-RED Dashboard Solutions</label>
-                            </li>
-                        </a>
-                        <a href="/blog/2023/04/securing-node-red-in-production/">
-                            <li>
-                                <div class="ff-nodered-resources--icon">{% ffIconLg "lock", true %}</div>
-                                <label>Securing Node-RED</label>
-                            </li>
-                        </a>
-                        <a href="/blog/2023/03/why-should-you-use-node-red-function-nodes/">
-                            <li>
-                                <div class="ff-nodered-resources--icon">{% ffIconLg "codeblock", true %}</div>
-                                <label>The benefits of using Node-RED function nodes</label>
-                            </li>
-                        </a>
-                        <a href="/blog/2023/05/visualize-production-data-via-modbus-in-node-red/">
-                            <li>
-                                <div class="ff-nodered-resources--icon">{% ffIconLg "factory", true %}</div>
-                                <label>How to visualize Industrial data via Modbus</label>
-                            </li>
-                        </a>
-                        <a href="/node-red/core-nodes/">
-                            <li>
-                                <div class="ff-nodered-resources--icon">{% ffIconLg "newspaper", true %}</div>
-                                <label>Node-RED Core Node Documentation</label>
-                            </li>
-                        </a>
-                    </ul>
-                </div>
+    </div>
+
+    <!--Flexible Deployment with FlowFuse-->
+    <div class="text-center text-teal-50 mt-12 pt-12 text-lg flex-col flex-row items-center justify-center gap-1 hover:no-underline flex-wrap">
+        <div class="text-center mt-6 md:mt-4 mb-14">
+            <h2 class="md:text-left max-w-3xl"><span class="text-indigo-600">Flexible Deployment</span> with FlowFuse</h2>
+        </div>
+        <div class="m-auto max-w-screen-lg">
+            <div class="grid md:px-0 grid-cols-1 md:grid-cols-3 gap-12 md:gap-5 max-w-md md:max-w-none mx-auto">
+                {% set cards = [
+                    {
+                        "title": "FlowFuse Cloud",
+                        "description": "Get started with Node-RED easily! No installation needed – just sign up for instant editor access.",
+                        "buttonText": "MORE INFO",
+                        "buttonLink": "/pricing/"
+                    },
+                    {
+                        "title": "Self managed",
+                        "description": "Run FlowFuse where you prefer; that's possible too! In your cloud of preference, or even on-site.",
+                        "buttonText": "TALK TO SALES",
+                        "buttonLink": "/book-demo/"
+                    },
+                    {
+                        "title": "Dedicated",
+                        "description": "Leverage the power of FlowFuse as a single-tenant SaaS to meet security and compliance needs.",
+                        "buttonText": "MORE INFO",
+                        "buttonLink": "/dedicated/"
+                    }
+                ] %}
+
+                {% for card in cards %}
+                    <div class="deployment-card white-bg">
+                        <div>
+                            <div class="title pb-4">
+                                <h4 class="text-indigo-600">
+                                    {{ card.title }}
+                                </h4>
+                            </div>
+                            <p class="mb-0 text-left mb-8">
+                                {{ card.description }}
+                            </p>
+                        </div>
+                        <a class="md:self-end ff-btn ff-btn--primary-outlined uppercase align-baseline w-full mt-3" href="{{ card.buttonLink }}" {% if card.onClick %}onclick="{{ card.onClick }}"{% endif %}>{{ card.buttonText }}</a>
+                    </div>
+                {% endfor %}
             </div>
-            <ul class="ff-nodered-resources px-6 mt-4 md:max-w-[500px] mx-auto">
-                <a href="/ebooks/beginner-guide-to-a-professional-nodered/">
-                    <li>
-                        <div class="ff-nodered-resources--icon">{% ffIconLg "book-open", true %}</div>
-                        <label>eBook: Beginner guide to a professional <span class="inline-block">Node-RED</span></label>
-                    </li>
-                </a>
-            </ul>
         </div>
-    </div>    
+    </div>
     <!-- Frequently Asked Questions --> 
-    <div class="w-full bg-gray-50 px-6 pt-8 pb-10">
+    <div class="md:text-left max-md:max-w-md mx-auto pt-24 md:pt-16 text-left">
+        <h2 class="max-md:text-center -mb-12">
+            Frequently Asked <span class="text-indigo-600">Questions</span>
+        </h2>
         {% include "faq.njk" %}
     </div>
 </div>
 
-<!--Flexible Deployment with FlowFuse-->
-<div class="w-full">
-    <div class="text-center text-teal-50 px-6 pt-6 md:py-8 pb-20 text-lg flex-col flex-row items-center justify-center gap-1 hover:no-underline flex-wrap">
-        <div class="text-center mt-6 md:mt-4 mb-14">
-            <h2>Flexible Deployment Options with <span class="text-indigo-600">FlowFuse</span></h2>
-            <div class="w-full text-center text-gray-800 font-light">Run and manage <span class="text-indigo-600 font-medium">Node-RED</span> where it's most helpful for your business</div>
-        </div>
-        <div class="container m-auto max-w-screen-lg">
-            <div class="grid md:px-6 md:px-0 grid-cols-1 md:grid-cols-3 gap-12 md:gap-5 max-w-md md:max-w-none mx-auto">
-                <div class="deployment-card white-bg">
-                    <div>
-                        <div class="title pb-4">
-                            <h4 class="text-indigo-600">
-                                FlowFuse Cloud
-                            </h4>
-                        </div>
-                        <p class="mb-0 text-left">
-                            The easiest way to start building Node-RED applications. No installation required! Simply sign up and gain immediate access to the editor.
-                        </p>
-                    </div>
-                    <a class="md:self-end ff-btn ff-btn--primary-outlined uppercase align-baseline w-full mt-3" href="/pricing/">MORE INFO</a>
-                </div>
-                <div class="deployment-card white-bg">
-                    <div>
-                        <div class="title">
-                            <h4 class="text-indigo-600">Self managed
-                            </h4>
-                            <div class="text-base font-bold text-gray-400 pb-4">(on premise)</div>  
-                        </div>
-                        <p class="mb-0 text-left">
-                            Run FlowFuse where you prefer; that's possible too! In your cloud of preference, or even on-site.
-                        </p>
-                    </div>
-                    <a class="md:self-end ff-btn ff-btn--primary-outlined uppercase align-baseline w-full mt-3" href="/book-demo/" onclick="capture('cta-talk-to-sales', {'position': 'secondary'})">TALK TO SALES</a>
-                </div>
-                <div class="deployment-card white-bg">
-                    <div>
-                        <div class="title pb-4">
-                            <h4 class="text-indigo-600">
-                                Edge device
-                            </h4>
-                        </div>
-                        <p class="mb-0 text-left">
-                            Run Node-RED where the data is generated. Manage thousands of edge devices through the FlowFuse Device Agent.
-                        </p>
-                    </div>
-                    <a class="md:self-end ff-btn ff-btn--primary-outlined uppercase align-baseline w-full mt-3" href="/docs/device-agent/introduction/">MORE INFO</a>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
 

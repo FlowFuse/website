@@ -1,7 +1,11 @@
-<div class="w-full px-6 py-16">
-    <div class="container m-auto sm:max-w-screen-lg md:px-9">
-        <h2 class="text-center">{{ faqTitle | safe }}</span></h2>
+<div class="w-full py-16" id="faqs">
+    <div class="m-auto sm:max-w-screen-lg">
+        {% if faqSubtitle %}
+        <h2 class="text-center">{{ faqTitle | safe }}</h2>
+        {% endif %}
+        {% if faqSubtitle %}
         <label class="m-auto block max-w-lg md:max-w-none text-center"> {{ faqSubtitle | safe }} </label>
+        {% endif %}
         <div class="mt-12 m-auto w-full ff-prose">
             <div class="prose max-w-none">
                 {% for faq in meta.faq %}

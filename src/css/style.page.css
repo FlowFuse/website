@@ -568,7 +568,7 @@
 }
 
 .deployment-card {
-    @apply pt-6 px-6 md:pb-16 rounded-t-xl bg-gradient-to-b from-white to-gray-100 h-full flex flex-col justify-between;
+    @apply pt-10 px-6 md:pb-16 rounded-t-xl bg-gradient-to-b from-white to-gray-100 h-full flex flex-col justify-between;
 }
 
 .deployment-card.white-bg {
@@ -576,7 +576,7 @@
 }
 
 .deployment-card .title {
-    @apply text-center w-full border-b md:min-h-[72px] flex flex-col items-center justify-center text-indigo-400;
+    @apply text-center w-full flex flex-col items-center justify-center text-indigo-400;
 }
 
 /* CONTACT US & BOOK A DEMO */
