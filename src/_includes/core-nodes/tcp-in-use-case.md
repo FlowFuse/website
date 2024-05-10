@@ -1,6 +1,6 @@
 ## What are TCP-In nodes used for in Node-RED
 
-The TCP node in Node-RED allows you to establish connections to remote TCP ports, serving as a TCP client for communication with external services or devices. Additionally, it facilitates the creation of a TCP server that can accept incoming connections. This functionality supports various applications, such as querying web servers or receiving data streams from IoT devices. Whether you're working on IoT projects, industrial automation, or networked systems, the TCP node seamlessly integrates TCP/IP communication into your Node-RED workflows.
+The TCP node in Node-RED allows you to establish connections to remote TCP ports, serving as a TCP client for communication with external services or devices. Additionally, it facilitates the creation of a TCP server that can accept incoming connections. This functionality supports various applications, such as querying web servers or receiving data streams from IoT devices. Whether you're working on IoT projects, industrial automation, or networked systems, this node seamlessly integrates TCP/IP communication into your Node-RED workflows.
 
 ### What is TCP
 
