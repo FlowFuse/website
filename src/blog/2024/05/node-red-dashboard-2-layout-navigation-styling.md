@@ -31,11 +31,11 @@ Choosing this layout divides your dashboard page into **12 equally-sized columns
 
 !["Screenshot of dashboard having grid layout"](./images/node-red-dashboard-2-layout-navigation-styling-grid-layout.jpg "Screenshot of dashboard having grid layout"){data-zoomable}
 
-In the image above, you can see that the first and last widget groups occupy all 12 columns, while in the middle, two groups each take up six columns each.
+In the image above, you can see that the first and last widget groups occupy all 12 columns, while in the middle, two groups each take up six columns.
 
 #### Notebook layout
 
-Choosing the Notebook layout for your page in Dashboard 2.0 makes it work like a Jupyter Notebook, fixed at a width of **1024px** and **centered**. Here, a groups' "width" defines the number of columns the group contains. The group itself will always render the full-width of the Notebook. It's great for dynamic Markdown, data tables, and visuals. Groups of pages are stacked vertically.
+Choosing the Notebook layout for your page in Dashboard 2.0 makes it work like a Jupyter Notebook, fixed at a width of **1024px** and **centered**. Here, a groups' "width" defines the number of columns the group contains. The group itself will always render the full width of the Notebook. It's great for dynamic Markdown, data tables, and visuals. Groups of pages are stacked vertically.
 
 !["Screenshot of dashboard having notebook layout"](./images/node-red-dashboard-2-layout-navigation-styling-notebook-layout.png "Screenshot of dashboard having notebook layout"){data-zoomable}
 
@@ -69,7 +69,7 @@ Widgets are sized relative to the number of columns in the internal grid. For ex
 
 Regardless of the layout type, the concept of sizing widgets within a group remains consistent. Whether it's the grid, notebook, or fixed layout, the same principles apply, ensuring uniformity in widget layout and design.
 
-###  Setting element size 
+###  Setting element size 
 
 To set the size of groups and widgets in Dashboard 2.0, follow these steps:
 
@@ -82,7 +82,7 @@ To set the size of groups and widgets in Dashboard 2.0, follow these steps:
 
 The theme is a collection of colors that control the look and feel of the widgets, groups, and other elements on the page.
 
-In Dashboard 2.0, when adding a page ( ui-page ) we can specify which theme it will use. By default, we have one theme in dashboard 2.0, we can add more themes using the Dashboard 2.0 side panel.
+In Dashboard 2.0, when adding a page ( ui-page ) we can specify which theme it will use. By default, we have one theme in Dashboard 2.0, we can add more themes using the Dashboard 2.0 side panel.
 
 ### Understanding theme properties
 
@@ -105,9 +105,17 @@ For additional information on the `ui-theme` settings, please refer to the [ui-t
 
 ## Dashboard 2.0 Navigation
 
-In Dashboard 2.0, we have 5 different navigation options for your application.
+### Setting sidebar 
+
+1. Navigate to the Dashboard 2.0 sidebar in the Node-RED editor
+2. Click on the "Edit Settings" button located at the top left side of the Dashboard 2.0 sidebar.
+3. Select your preferred sidebar style from the "Style" field in the sidebar options section.
+
+!["Image showing process of changing sidebar style"](./images/node-red-dashboard-2-layout-navigation-styling-setting-sidebar.gif "Image showing process of changing sidebar style"){data-zoomable}
 
 ### Sidebar Navigation Options
+
+In Dashboard 2.0, we have 5 different navigation options for your application.
 
 #### Collapsing
 
@@ -143,14 +151,6 @@ In this type, the sidebar is always hidden, and navigation between different pag
 
 !["screenshot displaying searching for botFather bot for creating custom bot"](./images/node-red-dashboard-2-layout-navigation-styling-always-hidden.png "screenshot displaying searching for botFather bot for creating custom bot"){data-zoomable}
 
-### Setting sidebar 
-
-1. Navigate to the Dashboard 2.0 sidebar in the Node-RED editor
-2. Click on the "Edit Settings" button located at the top left side of the Dashboard 2.0 sidebar.
-3. Select your preferred sidebar style from the "Style" field in the sidebar options section.
-
-!["Image showing process of changing sidebar style"](./images/node-red-dashboard-2-layout-navigation-styling-setting-sidebar.gif "Image showing process of changing sidebar style"){data-zoomable}
-
 ## Customising your Dashboard 2.0 further
  
 In Dashboard 2.0, we can add classes to almost all widgets, pages, and groups and style them using CSS.
@@ -159,6 +159,8 @@ In Dashboard 2.0, we can add classes to almost all widgets, pages, and groups an
 
 1. To add classes to your widget, page, or group, you'll need to open its configuration
 2. Find the 'Class' field and enter your class.
+
+!["Screenshot showing the class property input field"](./images/node-red-dashboard-2-layout-navigation-styling-showing-class-property-feild.png "Screenshot showing the class property input field"){data-zoomable}
 
 ### Writing custom CSS
 
@@ -176,7 +178,7 @@ To define your own CSS:
 3. If you select the "CSS (Single Page)" type, you'll then need to select the `ui-page` to which your custom class definitions will apply. If you select the "CSS (All Pages)" type, then you'll need to select the `ui-base` that includes those pages to which you want to add styling.
 4. Now you can write your custom CSS within the ui-template.
 
-!["Screenshot of ui-template widget adding CSS for styling elements of all pages of a ui-base"](./images/node-red-dashboard-2-layout-navigation-styling-adding-style-in-ui-template.png "Screenshot of ui-template widget adding CSS for styling elements of all pages of a ui-base"){data-zoomable}
+!["Image displaying the left side with the page and group where custom CSS has been applied, and the right side showcasing the UI-template with the corresponding CSS"](./images/node-red-dashboard-2-layout-navigation-styling-adding-style.png "Image displaying the left side with the page and group where custom CSS has been applied, and the right side showcasing the UI-template with the corresponding CSS"){data-zoomable}
 
 ## Up Next 
 
