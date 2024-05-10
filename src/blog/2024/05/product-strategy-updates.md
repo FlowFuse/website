@@ -31,7 +31,7 @@ FlowFuse strives to be the best place to build Node-RED applications by providin
 - **Simplified Hosting:** Whether you want cloud-hosted instances, or to run Node-RED on edge devices, FlowFuse provides the smoothest experience to setup new Node-RED instances.
 - **Trust**: [Certified Nodes](blog/2023/10/certified-nodes/) ensure Node-RED developers can trust the reliability, quality and security of third-party nodes they're using in their applications.
 - **Version Control**: [Snapshots](https://flowfuse.com/docs/user/snapshots/) capture point-in-time views of Node-RED flows, environment variables and other configuration settings. We even capture automatic snapshots of your flows every time you deploy, so you can always be confident you have a backup.
-- **Collaborative Development**: We are building FlowFuse to be a platform that enables teams to work seamlessly together on Node-RED applications. From the [Team Library](/docs/user/shared-library/), through to [Node-RED Multiplayer](https://flowfuse.com/blog/2024/04/node-red-multiplayer/), we want to make sure that FlowFuse is the best platform for collaborative development in Node-RED.
+- **Collaborative Development**: We are building FlowFuse to be a platform that enables teams to work seamlessly together on Node-RED applications. From the [Team Library](/docs/user/shared-library/), through to [Node-RED Multiplayer](/blog/2024/04/node-red-multiplayer/), we want to make sure that FlowFuse is the best platform for collaborative development in Node-RED.
 - **Remote Access:** FlowFuse provides a secure way to access your Node-RED instances and devices from anywhere in the world, so you can build and debug your applications with ease.
 
 ### Manage
@@ -55,7 +55,7 @@ With FlowFuse, we aim to provide the best way to deploy Node-RED applications to
 
 Our development team are busy working on a range of new features to help us deliver on our mission. If you're interested to see what highlight features we're working on for the next release (v2.5) in four weeks time, you can checkout our [Development Board](https://github.com/orgs/FlowFuse/projects/1/views/39) on GitHub.
 
-For longer term planning, we have our [Product Planning Board](https://github.com/orgs/FlowFuse/projects/3/views/9), which outlines the features we're working on for the next 12 months. It's subject to change, as we're always [iterating](http://localhost:8080/handbook/company/values/#%F0%9F%94%81-iterative-improvement), but it gives a good idea of where our focus will likely be in the coming months.
+For longer term planning, we have our [Product Planning Board](https://github.com/orgs/FlowFuse/projects/3/views/9), which outlines the features we're working on for the next 12 months. It's subject to change, as we're always [iterating](/handbook/company/values/#%F0%9F%94%81-iterative-improvement), but it gives a good idea of where our focus will likely be in the coming months.
 
 In the mean time, please do reach out if there are any features you'd like to see in FlowFuse, or if you have any feedback on our product strategy. We're always keen to hear from our users and learn how we can better serve you.
 
