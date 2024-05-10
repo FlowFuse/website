@@ -115,6 +115,13 @@
         display: block;
     }
 
+    .handbook picture+em {
+        font-size: 0.825rem;
+        display: block;
+        width: 100%;
+        text-align: center;
+    }
+
     /* Define animation transitions for all child UL elements */
     .handbook-nav ul {
         max-height: 0;
