@@ -60,19 +60,14 @@ Setting the size for elements in Dashboard 2.0 is straightforward, but understan
 
 It's important to note that the size of a single horizontal unit varies depending on the layout, but the vertical size of a single row is consistently **48px**.
 
-## Understanding unit size in different layouts
+## Sizing Widgets within a Group
 
-#### Grid
+In any layout—Grid, Notebook, or Fixed—widgets within a group are sized using a unified approach. The size property assigned to widgets determines their width within the group. Each unit in the size property represents a fraction of the group's total width. This width is determined by an internal grid established by the group.
 
-In a grid layout, each unit specified in the size property represents a column, dividing the page evenly. When you assign columns to a group, it forms an internal grid with the same number of columns as the group. For example, if you have a group with 4 columns and two widgets inside it, each widget can be sized by considering those columns. If you set 1 column for the first widget and 3 columns for the second widget, the first widget will occupy 25% of the group's width, and the second widget will occupy 75%.
+### Widget Sizing
+Widgets are sized relative to the number of columns in the internal grid. For example, if a group has 4 columns and two widgets, and the first widget is set to 1 width while the second to 3 width, the first widget will occupy 25% of the group's width, and the second widget will occupy 75%.
 
-#### Notebook
-
-In the Notebook layout, As you know the width for the group is fixed at **1024px**. The size unit represents the number of columns that the group will create or represent in its internal grid, increasing size will increase the number of columns in group. For example, if you have one group with a size of 12 columns, that group will create an internal grid with 12 columns, and widgets can occupy those columns using the size property where each will also represent one column in group.
-
-#### Fixed
-
-The fixed layout in Dashboard 2.0 employs a flexbox design with a single row of widgets. Each width unit in this layout is set at a fixed 90px. Groups follow the same internal grid pattern as other layouts. When a widget occupies the entire screen width, it shifts to the next row. However, this layout remains unchanged for varying screen sizes, potentially resulting in empty space on larger screens.
+Regardless of the layout type, the concept of sizing widgets within a group remains consistent. Whether it's the grid, notebook, or fixed layout, the same principles apply, ensuring uniformity in widget layout and design.
 
 ###  Setting element size 
 
