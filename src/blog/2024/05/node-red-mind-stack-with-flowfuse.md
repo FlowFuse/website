@@ -34,6 +34,8 @@ FlowFuse has a built-in feature called projects, which leverages MQTT, that allo
 
 Sensor > Node-RED(FlowFuse Device Agent) > MQTT Encapsulated by FlowFuse > Node-RED(FlowFuse Platform) > InfluxDB
 
+!["Screenshot showing the flow of data: Sensor > Node-RED(FlowFuse Device Agent) > MQTT Encapsulated by FlowFuse > Node-RED(FlowFuse Platform) > InfluxDB"](./images/mind-blog-diagram.png ""){data-zoomable}
+
 A key benefit of having the MQTT broker encapsulated by FlowFuse is that it becomes extremely easy to set up.  With the project nodes, there isn’t a need to configure certificates or security credentials because it is only exposed internally to the FlowFuse platform.
 
 
