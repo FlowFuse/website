@@ -15,7 +15,7 @@ updates to share that are available today.
 
 ### Viewing snapshot contents
 
-Following the work done to [enable viewing flows in the Team Library](./library-flowviewer.md), we've added
+Following the work done to [enable viewing flows in the Team Library](/changelog/2024/05/library-flowviewer), we've added
 the same capability to snapshots.
 
 Each snapshot now has a 'View Snapshot' option that will display the flows without having to open up
