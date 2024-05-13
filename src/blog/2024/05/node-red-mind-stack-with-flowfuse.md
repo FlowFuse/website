@@ -2,7 +2,7 @@
 title: The MIND stack with Node-RED and FlowFuse Dashboard 2.0
 subtitle: Leveraging FlowFuse for a Lighter MIND Stack (MIND = MQTT, InfluxDB, Node-RED, Dashboard 2.0)
 description: Our objective is to streamline the deployment of the MIND stack, enhancing its usability without compromising functionality.
-date: 2024-05-07
+date: 2024-05-14
 authors: ["grey-dziuba", "harshad-joshi"]
 image: /blog/2024/05/images/mind-mqtt-influxdb-node-red-dashboard-2-0.png
 tags:
