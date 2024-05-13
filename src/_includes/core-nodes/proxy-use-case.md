@@ -1,6 +1,6 @@
 ## What are HTTP Proxy Nodes in Node-RED?
 
-The HTTP Proxy Config node in Node-RED allows you to configure settings for an HTTP proxy server. It enables routing outgoing HTTP requests through a specified proxy. This is useful for scenarios where internet access requires passing through a proxy server. However, this node is not directly available in the Node-RED palette; it may be accessible within Node-RED core nodes and custom nodes used for communicating with other services over the internet.
+The HTTP Proxy Config node in Node-RED allows you to configure settings for an HTTP proxy server. It enables routing outgoing HTTP requests through a specified proxy. This is useful for scenarios where internet access requires passing through a proxy server. However, this node is not directly available in the Node-RED palette; it is accessible within the configuration settings of some Node-RED core nodes and certain custom nodes used for facilitating network communication, such as HTTP-In, TCP-In, and custom nodes like Kafka, MongoDB, etc.
 
 ### What is an HTTP Proxy?
 
