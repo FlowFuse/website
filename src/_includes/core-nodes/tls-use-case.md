@@ -1,6 +1,6 @@
 ## What is the TLS config node in Node-RED?
 
-In Node-RED, the TLS Config node is used to configure Transport Layer Security (TLS) settings for secure communication over networks. TLS ensures that data transmitted between applications, servers, and devices is encrypted and secure. However, this node is not directly available in the Node-RED palette; it is accessible within the configuration settings of some Node-RED core nodes and certain custom nodes used for facilitating network communication, such as HTTP-In, TCP-In, and custom nodes like Kafka, MongoDB, etc.
+In Node-RED, the TLS Config node is used to configure Transport Layer Security (TLS) settings for secure communication over networks. TLS ensures that data transmitted between applications, servers, and devices is encrypted and secure. However, this node is not directly available in the Node-RED palette; it is accessible within the configuration settings of some Node-RED core nodes and certain custom nodes used for facilitating network communication, such as HTTP Request, TCP-In, and custom nodes like Kafka, MongoDB, etc.
 
 ## Configuring TLS config node
 
