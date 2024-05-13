@@ -76,7 +76,7 @@ To ensure compatibility with the Worldmap custom node, we need to format the loc
 2. With the **worldmap** node configured, it will generate a world map with plotted data accessible at the specified path.
 3. Connect the **Function** node's output to **Worldmap** node's input.
 
-Now we have successfully created page with worlmap plotted vehicles location data on it, to conform that you can go to `https://<your-instance-name>.flowfuse.cloud/worlmap`.
+Now we have successfully created a page with a world map displaying plotted vehicle location data. To confirm, you can visit `https://<your-instance-name>.flowfuse.cloud/worldmap`.
 
 ## Rendering map on Dashboard 2.0
 To render worlmap webpage on dashboard 2.0 we will use **iframe** custom widget which will allow us to embed an external webpage into Dashboard 2.0 applications using an iframe.
@@ -84,10 +84,10 @@ To render worlmap webpage on dashboard 2.0 we will use **iframe** custom widget 
 ### Installing iframe custom widget
 
 1. Click the Node-RED Settings (top-right)
-2. Click "Manage Palette"
-3. Switch to the "Install" tab
-4. Search for "@flowfuse/node-red-dashboard-2-ui-iframe"
-5. Click "Install"
+2. Click **Manage Palette**
+3. Switch to the **Install** tab
+4. Search for `@flowfuse/node-red-dashboard-2-ui-iframe`
+5. Click **Install**
 
 ### Rendering worlmap on Dashboard 2.0
 
@@ -95,7 +95,7 @@ To render worlmap webpage on dashboard 2.0 we will use **iframe** custom widget 
 2. Select **ui-group** and **ui-base** for it, where you want to render the webpage.
 3. Set height and width for it according to your preference and set URL to **/worlmap**.
 
-!["Image displaying live locations of UK public transport on the dashboard"](./images/mapping-location-on-dashboard-2-uk-live-transport.gif "Image displaying live locations of UK public transport on the dashboard"){data-zoomable}
+!["Screenshot showing configurations of iframe widget for rendering worlmap page on dashboard"](./images/mapping-location-on-dashboard-2-iframe-widget.png "Screenshot showing configurations of iframe widget for rendering worlmap page on dashboard"){data-zoomable}
 
 ## Deploying the flow
 
