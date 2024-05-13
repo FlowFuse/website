@@ -26,10 +26,8 @@ Out of scope assets:
 
 ## Reporting a Vulnerability
 
-Please report any vulnerabilities discovered in FlowFuse products to security@flowfuse.com.
-
-We will endeavour to acknowledge and fix any reported vulnerabilities as soon as possible based
-on its severity and assessed impact to our users.
+Please report any vulnerabilities discovered in FlowFuse products to `security@flowfuse.com`.
+Reports must meet our [reporting requirements](#reporting-requirements) otherwise they will be rejected.
 
 ### Reporting Requirements
 
@@ -51,57 +49,24 @@ of bug bounty rewards for genuine issues they submit.
 
 ## Bug Bounties
 
-At our sole discretion, we offer rewards for responsibly disclosed issues according
-to their severity.
+At our sole discretion, we may choose to reward a responsibly disclosed issue according
+to their severity, impact and quality of report.
 
-Please note the following are general guidelines and any reward decisions are up
-to the discretion of FlowFuse. We keep these reward levels under review to ensure
-they provide a fair reflection of the issues being reported.
-
-
-Low   | Medium   | High   | Critical
-------|----------|--------|----------
-$128  | $256     | $512   | $1024
-
+We also consider a reporter's history of reporting issues. We will not reward someone who spams
+us in the hope that something sticks.
 
 Multiple reports of the same issue manifesting in different ways will be treated
 as a single report.
 
-The quality of bug report will also impact any ultimate reward decision.
-
-### Sample criteria
-
-The following are examples of the types of bug for each severity. It is not
-definitive and each reported bug will be considered on its own merits.
-
-*Critical Severity Bugs*
-
- - SQL Injection
- - Remote Code Execution
- - Privilege Escalation
-
-*High Severity Bugs*
-
- - Cross-Site Request Forgery
- - Information leaks of user data
-
-*Medium Severity Bugs*
-
- - Information leaks of non-user data
-
-*Low Severity Bugs*
-
- - Exposure of any integer resource IDs (primary keys in our database)
-
 ### Ineligible vulnerability types
 
-The following types of vulnerability are not eligible for a reward.
+The following types of vulnerability are not eligible for any reward.
 
  - **Admin-initiated Stored XSS / HTML Injection** - FlowFuse administrators are considered trusted users on the system. If an issue is only exploitable by administrators, then it is not eligible.
  - **Rate-limiting** - We apply rate limiting across the whole FlowFuse platform API, with different limits applied based on the context of the API. We keep the limits under review to balance security and convenience. If an issue relates to rate-limiting, but is demonstrably within our configure rate-limits, then it will not be eligible.
-
+ 
 ### Payments
 
-If a decision is made to reward a disclosure based on the criteria above you will be notified via the email used to submit the disclosure. If you have sent multiple reports we may choose to produce a combined response rather than reply to each email individually.
+In the exceptional circumstances that we choose to reward a disclosure based on the criteria above you will be notified via the email used to submit the disclosure. If you have sent multiple reports we may choose to produce a combined response rather than reply to each email individually.
 
-To claim your reward, please create an invoice and file [in accordance with our vendor process](/handbook/operations/vendors/#process).
+Rewards are paid in accordance with our [vendor process](/handbook/operations/vendors/#process).
