@@ -2,7 +2,7 @@
 title: Mapping location data within Node-RED Dashboard 2.0.
 subtitle: Step-by-step guide to plot location data on dashboard 2.0.
 description: Learn how to plot location data on Dashboard 2.0 with this comprehensive step-by-step guide. 
-date: 2024-05-06
+date: 2024-05-13
 authors: ["sumit-shinde"]
 image: /blog/2024/05/images/mapping-location-on-dashboard-2-worldmap.png
 tags:
@@ -12,7 +12,7 @@ tags:
    - location
 ---
 
-Have you ever needed to develop a fleet management system or something similar that requires a map with plotted location data on a dashboard? If so, this guide is for you. In this guide, we will learn how to plot location data on a world map within Dashboard 2.0.
+Fleet management in IoT uses sensors and software to collect real-time data on vehicles, such as location, fuel consumption, and driver behavior. This data allows companies to optimize routes, reduce costs, improve safety, and enhance overall operational efficiency of their fleet. Building an application that allows the tracking of location to support Fleet management is what this post is about.
 
 <!--more-->
 
