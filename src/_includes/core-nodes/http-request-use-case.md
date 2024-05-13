@@ -1,8 +1,8 @@
 ## What are HTTP request nodes used for in Node-RED
 
-In Node-RED, an HTTP Request node is a node that allows you to make HTTP requests to external servers or services. This node allows you to interact with web services, APIs, or any other HTTP-based endpoints.
+In Node-RED, an HTTP Request node allows you to make HTTP requests to external servers or services. This allows you to interact with web services, APIs, or any other HTTP-based endpoints.
 
-When you configure an HTTP Request node, you typically specify the method (GET, POST, PUT, DELETE, etc.), the URL of the endpoint you want to communicate with, any headers you need to include, and the payload if applicable. Once configured, this node will send the HTTP request when triggered by an incoming message or event.
+When you configure an HTTP Request node, you typically specify the method (GET, POST, PUT, DELETE, among others), the URL of the endpoint you want to communicate with, any headers you need to include, and the payload if applicable. Once configured, this node will send the HTTP request when triggered by an incoming message or event.
 
 ## Configuring HTTP Request node
 
@@ -31,7 +31,7 @@ Below, you'll find a range of settings to tailor HTTP requests to fit the needs 
     - **A UTF-8 string:** Return response data as a UTF-8 string.
     - **A binary buffer:** Return response data as a binary buffer.
     - **A parsed JSON object:** Parse response data as JSON and return the object.
-- **Headers:** Allows to  Add headers to the HTTP request such as content-type, accept, user agent, etc. You can dynamically set headers using `msg.headers`. However Reset `msg.headers` to avoid unintended header inheritance when using multiple HTTP request nodes in the same flow. Moreover, If `msg.payload` is an Object, the node automatically sets the content-type to application/json.
+- **Headers:** Allows to  Add headers to the HTTP request such as content-type, accept, user agent, etc. You can dynamically set headers using `msg.headers`. However Reset `msg.headers` to avoid unintended header inheritance when using multiple HTTP request nodes in the same flow. Moreover, If `msg.payload` is an Object, the node automatically sets the `Content-Type` to `application/json`.
 
 ## Usecase
 
@@ -77,7 +77,7 @@ These are a few use cases of the HTTP Request node, but its ability to communica
 
 ## Output
 
-- **Payload:** The body of the response can be returned as a string, parsed JSON object, or a binary buffer.
+- **payload:** The body of the response can be returned as a string, parsed JSON object, or a binary buffer.
 - **statusCode:** Indicates the status code of the response or the error code if the request couldn't be completed.
 - **headers:** An object containing the response headers.
 - **responseURL:** Provides the final redirected URL if any redirects occurred during processing; otherwise, it shows the URL of the original request.
