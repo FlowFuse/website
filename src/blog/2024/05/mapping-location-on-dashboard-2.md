@@ -79,6 +79,7 @@ To ensure compatibility with the Worldmap custom node, we need to format the loc
 Now we have successfully created a page with a world map displaying plotted vehicle location data. To confirm, you can visit `https://<your-instance-name>.flowfuse.cloud/worldmap`.
 
 ## Rendering map on Dashboard 2.0
+
 To render worlmap webpage on dashboard 2.0 we will use **iframe** custom widget which will allow us to embed an external webpage into Dashboard 2.0 applications using an iframe.
 
 ### Installing iframe custom widget
