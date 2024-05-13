@@ -22,11 +22,3 @@ The TLS Config node primarily facilitates secure communication over the network.
 **Web Server Security:** When building web servers using Node-RED, it's essential to secure communication between clients and the server. The TLS Config node can be used to configure TLS settings for nodes such as HTTP , TCP, enabling HTTPS communication and encrypting data exchanged between clients and the server.
 
 **Database Connection Security:** Node-RED is frequently used to interact with databases for storing and retrieving data. When connecting to databases, such as MongoDB or MySQL, it's crucial to ensure that data is transmitted securely. The TLS Config node can be used to configure TLS settings for database nodes, securing communication with the database server.
-
-
-
-
-
-
-
-
