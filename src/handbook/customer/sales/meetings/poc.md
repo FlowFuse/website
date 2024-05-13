@@ -23,4 +23,4 @@ During the initial POC meeting, the [POC Criteria document](https://docs.google.
 For self-managed installs a license needs to be generated and installed to
 unlock paid-for features. Generate one by [filling out this form](https://energetic-sanderling-4472.flowfuse.cloud/dashboard/license){rel="nofollow"}.
 
-All licenses must be added [to this document](https://docs.google.com/spreadsheets/d/1wM_o8IWjjkwi-WMRueKfS-lrmkQYzV83xm4BIzZNAO0){rel="nofollow"}.
+All generated licenses are added [to this sheet](https://docs.google.com/spreadsheets/d/1wM_o8IWjjkwi-WMRueKfS-lrmkQYzV83xm4BIzZNAO0){rel="nofollow"} automatically.
