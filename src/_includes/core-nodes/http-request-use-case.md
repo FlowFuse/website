@@ -9,7 +9,7 @@ When you configure an HTTP Request node, you typically specify the method (GET, 
 Below, you'll find a range of settings to tailor HTTP requests to fit the needs of different APIs or web services. Depending on the service you're working with, some options might be crucial, while others could be optional.
 
 - **Method:** Select the HTTP method for the request (e.g., GET, POST, PUT, DELETE). You can dynamically set it using `msg.method`.
-- **URL:** Specify the endpoint URL to communicate with. Dynamic URL setting is allowed using `msg.url`. additionally, if you want to construct a URL with the message's property you can utilize Mustache-style tags in the URL. ex - example.com/{{{topic}}}, it will have the value of `msg.topic` automatically inserted. Using {{{...}}} prevents mustache from escaping characters like / & etc.
+- **URL:** Specify the endpoint URL to communicate with. Dynamic URL setting is allowed using `msg.url`. additionally, if you want to construct a URL with the message's property you can utilize Mustache-style tags. ex - `example.com/{{{topic}}}`, it will have the value of `msg.topic` automatically inserted. Using {{{...}}} prevents mustache from escaping characters like / & etc.
 - **Payload:** Allows to choose how received payload from the previous node will be sent with the request:
   - **Ignore:** If enabled Payload will be ignored.
   - **Append to query-string parameter:** Enabling this option will Allow sending URL query string parameters using `msg.payload`.
@@ -41,7 +41,7 @@ Below, you'll find a range of settings to tailor HTTP requests to fit the needs 
 
 3. **Remote Control and Device Management:** In smart home systems, the HTTP request node can be used to facilitates remote device management. It allows users to control various devices such as lights, thermostats, and security cameras via web or mobile interfaces by interacting with device APIs. Actions like toggling devices, adjusting settings, and receiving real-time updates can be achieved through the HTTP request node.
 
-These are a few use cases of the HTTP Request node, but its ability to communicate with other services is a significant and core capability. This capability alone opens the door to a diverse array of other use cases.
+These are a few use cases of the HTTP Request node, but its ability to communicate with other services is a significant and core capability. This capability alone opens the door to a diverse array of different use cases.
 
 ## Examples
 
