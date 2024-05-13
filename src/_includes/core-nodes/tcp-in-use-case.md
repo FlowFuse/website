@@ -21,8 +21,8 @@ TCP (Transmission Control Protocol) is one of the core protocols of the Internet
     - **buffer:** Data is sent/received as a buffer object.
     - **String:** Data is sent/received as a string.
     - **Base64 String:** Data is sent/received as a Base64 String.
-        - **delimited by:** Specify the delimiter for splitting incoming data streams. Commonly, \r\n.
-        - **re-attach delimiter:** Enabling this option will reattach the delimiter to its orignal place.
+        - **delimited by:** Specify the delimiter for splitting incoming data streams. Specify the delimiter for splitting incoming data streams. Commonly, `,`, `\r`, `\n`.
+        - **re-attach delimiter:** Enabling this option will reattach the delimiter to its original place.
 
 ## Usecases
 
