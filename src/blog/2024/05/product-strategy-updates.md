@@ -29,7 +29,7 @@ We believe that by focusing on this mission, we can better serve our users and p
 FlowFuse strives to be the best place to build Node-RED applications by providing tools to help users build applications with more confidence.
 
 - **Simplified Hosting:** Whether you want cloud-hosted instances, or to run Node-RED on edge devices, FlowFuse provides the smoothest experience to setup new Node-RED instances.
-- **Trust**: [Certified Nodes](blog/2023/10/certified-nodes/) ensure Node-RED developers can trust the reliability, quality and security of third-party nodes they're using in their applications.
+- **Trust**: [Certified Nodes](/blog/2023/10/certified-nodes/) ensure Node-RED developers can trust the reliability, quality and security of third-party nodes they're using in their applications.
 - **Version Control**: [Snapshots](https://flowfuse.com/docs/user/snapshots/) capture point-in-time views of Node-RED flows, environment variables and other configuration settings. We even capture automatic snapshots of your flows every time you deploy, so you can always be confident you have a backup.
 - **Collaborative Development**: We are building FlowFuse to be a platform that enables teams to work seamlessly together on Node-RED applications. From the [Team Library](/docs/user/shared-library/), through to [Node-RED Multiplayer](/blog/2024/04/node-red-multiplayer/), we want to make sure that FlowFuse is the best platform for collaborative development in Node-RED.
 - **Remote Access:** FlowFuse provides a secure way to access your Node-RED instances and devices from anywhere in the world, so you can build and debug your applications with ease.
@@ -41,7 +41,7 @@ With FlowFuse, it's possible to manage thousands of Node-RED instances, all in o
 - **Centralized Management**: FlowFuse provides a single entry point to manage all of your Node-RED instances, no matter where they are hosted.
 - **Security**: FlowFuse provides a range of security features to help you keep your Node-RED instances secure. From [Two-Factor Authentication](/docs/user/user-settings/#two-factor-authentication) to [Role-Based Access Control](/blog/2024/04/role-based-access-control-rbac-for-node-red-with-flowfuse/), we're building FlowFuse to be the most secure way to manage your Node-RED instances.
 - **Frictionless Maintenance:** Whether you're updating your Node-RED version, or one of the many third-party dependencies that your applications depend upon, FlowFuse provides tools to make it easy to keep your instances up-to-date and running smoothly.
-- **Observability:** FlowFuse provides tools to help you keep an eye on your Node-RED instances and make sure they're running smoothly. Get alerts when something goes wrong, and use the [Audit Logs](docs/user/logs/#audit-log) to help you debug issues when they arise.
+- **Observability:** FlowFuse provides tools to help you keep an eye on your Node-RED instances and make sure they're running smoothly. Get alerts when something goes wrong, and use the [Audit Logs](/docs/user/logs/#audit-log) to help you debug issues when they arise.
 
 ### Deploy
 
@@ -49,7 +49,7 @@ With FlowFuse, we aim to provide the best way to deploy Node-RED applications to
 
 - **DevOps:** Test your applications in development and staging environments, ensuring you can deploy them with confidence to production.
 - **Remote Deployments:** Deploy your applications to hundreds of remote devices with a single-click, ensuring you can get your applications running in production quickly and easily.
-- **Reliability:** FlowFuse users can have trust that their applications will run without issues with features like [High Availability](blog/2023/06/flowforge-1-8-released/). FlowFuse makes sure users have the tools to monitor and manage the reliability of their applications, including being alerted when things go wrong, and making the recovery as easy as possible.
+- **Reliability:** FlowFuse users can have trust that their applications will run without issues with features like [High Availability](/blog/2023/06/flowforge-1-8-released/). FlowFuse makes sure users have the tools to monitor and manage the reliability of their applications, including being alerted when things go wrong, and making the recovery as easy as possible.
 
 ### What's Next?
 
