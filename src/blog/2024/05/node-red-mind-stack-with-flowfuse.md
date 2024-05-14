@@ -14,7 +14,7 @@ tags:
     - dashboards
 ---
 
-The MING stack has gained significant popularity over the years as it built upon open-sourced projects.  That has given way to many people leveraging this stack to build solutions upon in various different environments.  The MING stack is composed of 4 main components, MQTT, InfluxDB, Node-RED, and Graphana.  Combined together are the 4 main pillars, data transportation, data storage, data transformation, and visualizations.  With this, it requires the management of 4 different applications, which often reside on the same server, but not necessarily.  With more moving parts, creates complexity.
+The MING stack has gained significant popularity over the years as it built upon open-source projects.  That has given way to many people leveraging this stack to build solutions upon in various different environments.  The MING stack is composed of 4 main components, MQTT, InfluxDB, Node-RED, and Grafana.  Combined together are the 4 main pillars, data transportation, data storage, data transformation, and visualizations.  With this, it requires the management of 4 different applications, which often reside on the same server, but not necessarily.  With more moving parts, creates complexity.
 
 <!--more-->
 
