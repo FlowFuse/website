@@ -33,7 +33,7 @@ Sensor > Node-RED(FlowFuse Device Agent) > MQTT Encapsulated by FlowFuse > Node-
 
 !["Screenshot showing the flow of data: Sensor > Node-RED(FlowFuse Device Agent) > MQTT Encapsulated by FlowFuse > Node-RED(FlowFuse Platform) > InfluxDB"](./images/sensor-data-mqtt-node-red-dashboard-influxdb.png ""){data-zoomable}
 
-A key benefit of having the MQTT broker encapsulated by FlowFuse is that it becomes extremely easy to set up.  With the project nodes, there isn’t a need to configure certificates or security credentials because it is only exposed internally to the FlowFuse platform.
+A key benefit of having the MQTT broker encapsulated by FlowFuse is that it becomes extremely easy to set up. With the project nodes, there isn’t a need to configure certificates or security credentials because it is only exposed internally to the FlowFuse platform. Furthermore, the access and control limits are applied by the platform so your data remains within the same FlowFuse Team.
 
 
 ### InfluxDB: Efficient Data Storage
