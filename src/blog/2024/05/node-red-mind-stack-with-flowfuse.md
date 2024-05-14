@@ -27,7 +27,7 @@ It often makes sense to deploy a full MING stack, but in some deployments, it mi
 
 ### FlowFuse MQTT: Simplified Communications
 
-FlowFuse has a built-in feature called projects, which leverages MQTT, that allows the communication of data between FlowFuse runtimes of Node-RED.  One caveat is that this MQTT broker is only available within the FlowFuse platform. What this means is there needs to be some form of translation to be done within Node-RED.  This isn’t a big deal for small deployments, because often Node-RED runtimes at the edger are collecting data from various sources that aren’t MQTT.  The flow of data is as follows: 
+FlowFuse has a built-in feature called project link nodes, which leverages MQTT, that allows the communication of data between FlowFuse runtimes of Node-RED. One caveat is that this MQTT broker is only available within the FlowFuse platform. What this means is there needs to be some form of translation to be done within Node-RED.  This isn’t a big deal for small deployments, because often Node-RED runtimes at the edger are collecting data from various sources that aren’t MQTT. The flow of data is as follows: 
 
 Sensor > Node-RED(FlowFuse Device Agent) > MQTT Encapsulated by FlowFuse > Node-RED(FlowFuse Platform) > InfluxDB
 
