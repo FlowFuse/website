@@ -2,7 +2,7 @@
 title: Product Mission Statement and Strategy Updates
 subtitle: We've recently refined our product strategy to better align with our mission and vision. Here's a summary of the changes.
 description: We've recently refined our product strategy to better align with our mission and vision. Here's a summary of the changes.
-date: 2024-05-09
+date: 2024-05-14
 authors: ["joe-pavitt"]
 image: /blog/2024/05/images/product-strategy-updates.png
 tags:
@@ -30,7 +30,7 @@ FlowFuse strives to be the best place to build Node-RED applications by providin
 
 - **Simplified Hosting:** Whether you want cloud-hosted instances, or to run Node-RED on edge devices, FlowFuse provides the smoothest experience to setup new Node-RED instances.
 - **Trust**: [Certified Nodes](/blog/2023/10/certified-nodes/) ensure Node-RED developers can trust the reliability, quality and security of third-party nodes they're using in their applications.
-- **Version Control**: [Snapshots](https://flowfuse.com/docs/user/snapshots/) capture point-in-time views of Node-RED flows, environment variables and other configuration settings. We even capture automatic snapshots of your flows every time you deploy, so you can always be confident you have a backup.
+- **Version Control**: [Snapshots](/docs/user/snapshots/) capture point-in-time views of Node-RED flows, environment variables and other configuration settings. We even capture automatic snapshots of your flows every time you deploy, so you can always be confident you have a backup.
 - **Collaborative Development**: We are building FlowFuse to be a platform that enables teams to work seamlessly together on Node-RED applications. From the [Team Library](/docs/user/shared-library/), through to [Node-RED Multiplayer](/blog/2024/04/node-red-multiplayer/), we want to make sure that FlowFuse is the best platform for collaborative development in Node-RED.
 - **Remote Access:** FlowFuse provides a secure way to access your Node-RED instances and devices from anywhere in the world, so you can build and debug your applications with ease.
 
