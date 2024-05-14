@@ -12,6 +12,8 @@ tags:
 
 Creating applications for IoT and IIoT projects is often challenging, especially when dealing with hardware devices. However, Node-RED simplifies this process by providing an intuitive platform for interacting with hardware devices, sensors, and microcontrollers. Raspberry Pi is a widely used microcontroller in conjunction with Node-RED according to [survey conducted in 2023](https://nodered.org/about/community/survey/2023/). In this guide, we will explore how to set up Node-RED on Raspberry Pi and utilize it to read sensors and more.
 
+<!--more-->
+
 ## What is the Raspberry Pi and why to use it?
 
 The Raspberry Pi is a series of small, affordable single-board computers developed by the Raspberry Pi Foundation. These credit card-sized computers are designed to promote education in computer science and programming. They run various operating systems like Raspberry Pi OS (formerly Raspbian) and Ubuntu, and feature GPIO pins for hardware connections. Raspberry Pi boards are popular for DIY electronics projects, home automation, and educational purposes.
