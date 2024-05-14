@@ -1,0 +1,54 @@
+---
+title: Why Do You Need a Low-Code Platform?
+subtitle: 
+description: 
+date: 2024-05-20
+authors: ["grey-dziuba"]
+image: 
+tags:
+    - posts
+    - flowfuse
+    - low-code
+---
+
+Digital transformation is a series of technological advancements that aim to simplify complex tasks. From calculators and graphical user interfaces (GUIs) to new programming languages, these advancements have enabled individuals to create value that was once beyond their reach. The key is to understand that these tools are not meant to replace expertise but to enhance it, making complex tasks more manageable and empowering more people.
+
+<!--more-->
+
+## What Does It Mean to Empower Someone?
+
+Often, people perceive "empowerment" as a derogatory term, but it shouldn't be. Empowerment should mean enabling a domain expert to further grow their expertise. They are adding one more tool (and hopefully replacing some) to their toolbox to bring value to what they **know**. And what they know is often hard to explain. It has taken years to master their role, which people usually take for granted because they don't understand the complex dance they do to make their section of the world operate flawlessly.
+
+## What Do They Do, and Why Is It Hard to Explain?
+
+Imagine a simple project like building a tire swing. The humorous illustration below shows how different interpretations and outcomes can arise throughout a project lifecycle:
+
+![Tire Swing Analogy](./images/tire-swing.png "Example of communication issues between the developers and end-users"){data-zoomable}
+
+This analogy highlights the potential misunderstandings and miscommunications that occur between various stakeholders in a project. From the initial customer explanation to the final product, each stage can introduce variations that stray from the original intent. This leads to a final outcome that often doesn't meet the customer's needs or expectations.
+
+In a perfect world, with clear instructions and years of prep work to define the problem statement, there's a chance the project will be completed close to 95% of what the domain expert wanted, if you're lucky. But how do you close the last 5%? Developers might move on to new projects, or worse, leave the company. The remaining tasks become difficult to complete and often go undone.
+
+## Put the Domain Expert in the Driver’s Seat
+
+Calculators were not created to be used only by mathematicians. GUIs weren't created to be used only by programmers. They were created to make people's lives easier. No longer was there a **need** to use the command line to start an application; simply click the icon for the desired application. These simple iterations open the opportunity for a larger range of people to leverage tools.
+
+With low-code applications, the process is the same. Put the domain expert in the driver’s seat. Make them their own developer. They understand the process better than anyone else. Pair them with a low-code domain expert and have them co-develop the application.
+
+With the domain expert in the driver’s seat of their own low-code project, the days of the last 5% undone become less common. There is always a path forward.
+
+## Which Low-Code Solution should you go with?
+
+With over 10 years of development emerging from [IBM’s Emerging Technology Group](https://flowfuse.com/blog/2024/02/history-of-nodered/), Node-RED is a clear leader.  Dare I say the defacto solution. It is open-source and easy to spin up. It is currently being leveraged in many industries, ranging from pharmaceuticals to agriculture to telecom.
+
+But you might think Node-RED is just a proof-of-concept tool. You’re wrong. Has it been used as [Shadow-IT](https://www.cloudflare.com/learning/access-management/what-is-shadow-it/)? Yes, and that is beautiful and awesome. Innovation is at the heart of Shadow-IT. No one ever said, “There is a tool supported by my IT company that would be perfect for the job, but I think I would rather deploy an unsanctioned tool.” The flaw in this statement is believing there is a choice in tools. Node-RED has often been the only tool available in the domain expert's toolbox.
+
+## FlowFuse
+
+FlowFuse is your solution to solving Shadow-IT and paving the way for your Citizen Development journey. All the reasons why Node-RED hasn’t been sanctioned within organizations have nothing to do with its ability to execute but more with its lack of scalability, easy-to-use security, and manageability. Enter FlowFuse, developed by the same people who developed your go-to low-code solution. FlowFuse addresses exactly the problems that put it in the Shadow-IT realm.
+
+With security and scalability top of mind, FlowFuse allows IT teams to manage their Node-RED deployments with features like Role-Based Access Control (RBAC), remote management of Node-RED runtimes, and backup and recovery of Node-RED deployments called Snapshots. These are just a few of the features that elevate an already widely used solution, making it ready for enterprise networks.
+
+## The Low-Code Future
+
+In conclusion, low-code platforms like Node-RED and FlowFuse empower domain experts to take control of their own digital transformation journeys. By putting the domain expert in the driver’s seat, low-code applications enable them to create solutions tailored to their specific needs and requirements. This approach not only reduces the risk of the last 5% of a project going undone but also fosters a culture of innovation and collaboration within organizations.
