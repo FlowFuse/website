@@ -22,9 +22,6 @@ The MING stack has gained significant popularity over the years as it built upon
 
 With FlowFuse we have bundled up 3 of those 4.  First and foremost, the FlowFuse platform deploys Node-RED in two main ways.  A cloud based deployment and remote deployment with management from the FlowFuse platform.  Part of this management piece leverage MQTT between the devices for management.  Because of this we have a built in MQTT broker that allows for communication between Node-RED instance within the FlowFuse platform.  Lastly, with the release of Dashboards 2.0 from FlowFuse we have introduced the next generation of visualizations for the Node-RED platform.
 
-
-## Optimizing IoT with the MIND Stack
-
 It often makes sense to deploy a full MING stack, but in some deployments, it might be necessary to deploy a more simplistic version of the MING stack.  This is where MIND comes into play.
 
 
