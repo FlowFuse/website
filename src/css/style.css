@@ -204,6 +204,33 @@ dl.message-properties {
   }
 
 /*
+    Event banner
+*/
+.event-banner-container {
+    position: relative;
+    height: 44px;
+    width: 100%;
+}
+
+.event-banner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    visibility: hidden;
+    animation: slideDown 0.5s ease-in-out;
+}
+
+.event-banner:first-child {
+    visibility: visible;
+}
+
+@keyframes slideDown {
+    0% { transform: translateY(-100%); }
+    100% { transform: translateY(0); }
+}
+
+/*
     Blog
 */
 .pagination a{
