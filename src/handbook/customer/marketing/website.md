@@ -12,16 +12,33 @@ navTitle: Marketing - Website
 
 ## Events Banner
 
-To update the event banner that appears at the top of the Website, you will need two pieces of information:
+The event banner at the top of the website can display more than one event or announcement.
 
-- The title of the Webinar
-- URL that the Webinar Registration is hosted at
+To add or update an event, you'll need to modify the [following file](https://github.com/FlowFuse/website/blob/main/src/_data/events.yaml). The information should be formatted as follows for each banner:
 
-Once you have those, you can update the [following file](https://github.com/FlowFuse/website/blob/main/src/_includes/components/events-banner.njk):
+```
+- type: "Webinar"
+  title: "Deploy FlowFuse on Industrial IoT with NCD.io"
+  buttonText: "Learn more"
+  link: "/webinars/2024/deploy-flowfuse-on-industrial-iot-with-ncd-io/"
+```
 
-Update the `href=""` value of the `<a>` tag to update the Event URL, and change the title inside the middle `<span>`
+If there were more than one event, then duplicating that and updating the info will create the second banner for rotation. It would look like this:
 
-You should also ensure that the banner is not disabled in [this file](https://github.com/FlowFuse/website/blob/main/src/_includes/layouts/base.njk). If it is, it would look like this: 
+```
+- type: "Webinar"
+  title: "Deploy FlowFuse on Industrial IoT with NCD.io"
+  buttonText: "Learn more"
+  link: "/webinars/2024/deploy-flowfuse-on-industrial-iot-with-ncd-io/"
+- type: "New Release"
+  title: "FlowFuse 2.4: making it easier to work with Snapshots, Blueprints & Devices "
+  buttonText: "See blog post"
+  link: "/blog/2024/05/flowfuse-2-4-release/"
+```
+
+If there is only one event, the banner will continuously display that event. If there are multiple events, the banner will rotate through them, displaying each one for a few seconds at a time.
+
+Please also ensure that the banner is not disabled in [this file](https://github.com/FlowFuse/website/blob/main/src/_includes/layouts/base.njk). If it is, the code would look like this: 
 `{% raw %}
 {# {% include "../components/events-banner.njk" %} #}
 {% endraw %}`. Please remove the comment symbols `{#` and `#}` to enable the banner.
