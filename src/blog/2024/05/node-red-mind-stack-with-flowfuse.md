@@ -14,7 +14,7 @@ tags:
     - dashboards
 ---
 
-The MING stack has gained significant popularity over the years as it built upon open-source projects.  That has given way to many people leveraging this stack to build solutions upon in various different environments.  The MING stack is composed of 4 main components, MQTT, InfluxDB, Node-RED, and Grafana.  Combined together are the 4 main pillars, data transportation, data storage, data transformation, and visualizations.  With this, it requires the management of 4 different applications, which often reside on the same server, but not necessarily.  With more moving parts, creates complexity.
+The [MING stack](https://flowfuse.com/blog/2023/02/ming-blog/) has gained significant popularity over the years as it built upon open-source projects.  That has given way to many people leveraging this stack to build solutions upon in various different environments.  The MING stack is composed of 4 main components, [MQTT](https://mosquitto.org/), [InfluxDB](https://www.influxdata.com/), [Node-RED](/node-red/), and [Grafana](https://grafana.com/).  Combined together are the 4 main pillars, data transportation, data storage, data transformation, and visualizations.  With this, it requires the management of 4 different applications, which often reside on the same server, but not necessarily.  With more moving parts, creates complexity.
 
 <!--more-->
 
@@ -27,9 +27,9 @@ It often makes sense to deploy a full MING stack, but in some deployments, it mi
 
 ### FlowFuse MQTT: Simplified Communications
 
-FlowFuse has a built-in feature called project link nodes, which leverages MQTT, that allows the communication of data between FlowFuse runtimes of Node-RED. One caveat is that this MQTT broker is only available within the FlowFuse platform. What this means is there needs to be some form of translation to be done within Node-RED.  This isn’t a big deal for small deployments, because often Node-RED runtimes at the edger are collecting data from various sources that aren’t MQTT. The flow of data is as follows: 
+FlowFuse has a built-in feature called [project link nodes](/docs/user/projectnodes/), which leverages MQTT, that allows the communication of data between FlowFuse runtimes of Node-RED. One caveat is that this MQTT broker is only available within the FlowFuse platform. What this means is there needs to be some form of translation to be done within Node-RED.  This isn’t a big deal for small deployments, because often Node-RED runtimes at the edger are collecting data from various sources that aren’t MQTT. The flow of data is as follows: 
 
-Sensor > Node-RED(FlowFuse Device Agent) > MQTT Encapsulated by FlowFuse > Node-RED(FlowFuse Platform) > InfluxDB
+Sensor > Node-RED([FlowFuse Device Agent](https://flowfuse.com/docs/device-agent/introduction/)) > [MQTT Encapsulated by FlowFuse](/docs/user/projectnodes/) > Node-RED(FlowFuse Platform) > InfluxDB
 
 !["Screenshot showing the flow of data: Sensor > Node-RED(FlowFuse Device Agent) > MQTT Encapsulated by FlowFuse > Node-RED(FlowFuse Platform) > InfluxDB"](./images/sensor-data-mqtt-node-red-dashboard-influxdb.png ""){data-zoomable}
 
