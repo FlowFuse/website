@@ -31,6 +31,8 @@ UDP (User Datagram Protocol) is a connectionless protocol in the Internet Protoc
 
 *Note: On some systems, you may need root or administrator access to use ports below 1024 and/or broadcast, and have to ensure your firewall allows the data in.*
 
+**Note: The default UDP nodes have been removed from the Node-RED palette in the FlowFuse Cloud due to limitations in routing connections to the container running Node-RED inside the FlowFuse platform**
+
 ## Usecases
 
 - **Sensor data transmission:** Utilize the udp-out node to transmit real-time data acquired from IoT sensors deployed in the field, such as temperature, humidity, or motion sensor readings, to a centralized processing system or server for analysis and storage.
