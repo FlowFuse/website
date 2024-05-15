@@ -2,9 +2,7 @@
 
 The udp-out node in Node-RED is a node used for sending UDP messages to a specified network destination. When you add a udp-out node to your Node-RED flow, you configure it with the IP address and port of the destination device or service. Then, any messages received by the udp-out node are sent as UDP packets to that destination. This node is particularly useful for applications where real-time communication or lightweight message transmission is required.
 
-### What is Udp?
-
-UDP (User Datagram Protocol) is a connectionless protocol in the Internet Protocol suite. It transmits data packets, or datagrams, without establishing a connection, prioritizing speed over reliability. Commonly used for real-time applications like video streaming, online gaming, and VoIP. UDP's simplicity reduces latency but doesn't guarantee the delivery of data packets. For more information refer to [UDP MDN Docs](https://developer.mozilla.org/en-US/docs/Glossary/UDP).
+For more information on UDP refer to [What is UDP](/node-red/core-nodes/udp-in/#what-is-udp)
 
 ## Configuring UDP-Out Node
 
