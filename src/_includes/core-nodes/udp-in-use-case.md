@@ -29,7 +29,7 @@ The UDP-In node in Node-RED provides versatile configuration options to tailor U
 
 *Note: On some systems, you may need root or administrator access to use ports below 1024 and/or broadcast, and have to ensure your firewall allows the data in.*
 
-**Note: The default TCP and UDP nodes have been removed from the Node-RED palette in the FlowFuse Cloud due to limitations in routing connections to the container running Node-RED inside the FlowFuse platform**
+**Note: The default UDP nodes have been removed from the Node-RED palette in the FlowFuse Cloud due to limitations in routing connections to the container running Node-RED inside the FlowFuse platform**
 
 ## Usecases
 
