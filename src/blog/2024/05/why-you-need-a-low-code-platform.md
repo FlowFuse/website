@@ -1,10 +1,10 @@
 ---
 title: Why Do You Need a Low-Code Platform?
 subtitle: "Empowering Domain Experts with Low-Code Platforms: A Path to Seamless Digital Transformation"
-description: Discover how low-code platforms like Node-RED and FlowFuse empower domain experts to drive digital transformation. Learn how these tools enhance collaboration, close project gaps, and foster innovation, ensuring project success from start to finish.
+description: Discover how low-code platforms like FlowFuse empower domain experts to drive digital transformation. Learn how these tools enhance collaboration, close project gaps, and foster innovation, ensuring project success from start to finish.
 date: 2024-05-20
 authors: ["grey-dziuba"]
-image: 
+image: ./images/why-do-you-need-a-low-code-platform-flowfuse-node-red.png
 tags:
     - posts
     - flowfuse
@@ -23,7 +23,7 @@ Often, people perceive "empowerment" as a derogatory term, but it shouldn't be. 
 
 Imagine a simple project like building a tire swing. The humorous illustration below shows how different interpretations and outcomes can arise throughout a project lifecycle:
 
-![Tire Swing Analogy](./images/tire-swing.png "Example of communication issues between the developers and end-users"){data-zoomable}
+![Tire Swing Analogy](./images/tire-swing-project-management-flowfuse-node-red.png "Example of communication issues between the developers and end-users"){data-zoomable}
 
 This analogy highlights the potential misunderstandings and miscommunications that occur between various stakeholders in a project. From the initial customer explanation to the final product, each stage can introduce variations that stray from the original intent. This leads to a final outcome that often doesn't meet the customer's needs or expectations.
 
