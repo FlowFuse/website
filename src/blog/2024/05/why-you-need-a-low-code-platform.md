@@ -39,7 +39,7 @@ With the domain expert in the driver’s seat of their own low-code project, the
 
 ## Which Low-Code Solution should you go with?
 
-With over 10 years of development emerging from [IBM’s Emerging Technology Group](/blog/2024/02/history-of-nodered/), Node-RED is a clear leader.  Dare I say the defacto solution. It is open-source and easy to spin up. It is currently being leveraged in many industries, ranging from pharmaceuticals to agriculture to telecom.
+With over 10 years of development emerging from [IBM’s Emerging Technology Group](/blog/2024/02/history-of-nodered/), Node-RED is a clear leader.  Dare I say the defacto solution. It is open-source and easy to spin up. It is currently being leveraged in many industries; ranging from pharmaceuticals, to agriculture, and to telecom.
 
 But you might think Node-RED is just a proof-of-concept tool. You’re wrong. Has it been used as [Shadow-IT](https://www.cloudflare.com/learning/access-management/what-is-shadow-it/)? Yes, and that is beautiful and awesome. Innovation is at the heart of Shadow-IT. No one ever said, “There is a tool supported by my IT company that would be perfect for the job, but I think I would rather deploy an unsanctioned tool.” The flaw in this statement is believing there is a choice in tools. Node-RED has often been the only tool available in the domain expert's toolbox.
 
