@@ -12,19 +12,39 @@ navTitle: Marketing - Website
 
 ## Events Banner
 
-To update the event banner that appears at the top of the Website, you will need two pieces of information:
+The event banner at the top of the website can display more than one event or announcement.
 
-- The title of the Webinar
-- URL that the Webinar Registration is hosted at
+To add or update an event, you'll need to modify the [following file](https://github.com/FlowFuse/website/blob/main/src/_data/events.yaml). The information should be formatted as follows for each banner:
 
-Once you have those, you can update the [following file](https://github.com/FlowFuse/website/blob/main/src/_includes/components/events-banner.njk):
+```
+- type: "Webinar"
+  title: "Deploy FlowFuse on Industrial IoT with NCD.io"
+  buttonText: "Learn more"
+  link: "/webinars/2024/deploy-flowfuse-on-industrial-iot-with-ncd-io/"
+  expire: "2024-05-29T16:00:00Z"
+```
+The `expire` field is used to set the date and time when the event should stop being displayed on the banner. The date and time are set in the ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`, and the time is in Coordinated Universal Time (UTC).
 
-Update the `href=""` value of the `<a>` tag to update the Event URL, and change the title inside the middle `<span>`
+For example, `expire: "2024-05-29T15:00:00Z"` means that the event will stop being displayed on the banner at 16:00 UTC on May 29, 2024.
 
-You should also ensure that the banner is not disabled in [this file](https://github.com/FlowFuse/website/blob/main/src/_includes/layouts/base.njk). If it is, it would look like this: 
-`{% raw %}
-{# {% include "../components/events-banner.njk" %} #}
-{% endraw %}`. Please remove the comment symbols `{#` and `#}` to enable the banner.
+Please note that the website is built once a day at 9:30 AM UTC, and also on Wednesdays and Thursdays at 16:05 UTC. This means that if an event expires at some point during the day, it will still be displayed until the next time the website is built.
+
+If there were more than one event, then duplicating that and updating the info will create the second banner for rotation. It would look like this:
+
+```
+- type: "Webinar"
+  title: "Deploy FlowFuse on Industrial IoT with NCD.io"
+  buttonText: "Learn more"
+  link: "/webinars/2024/deploy-flowfuse-on-industrial-iot-with-ncd-io/"
+  expire: "2024-05-29T15:00:00Z"
+- type: "New Release"
+  title: "FlowFuse 2.4: making it easier to work with Snapshots, Blueprints & Devices "
+  buttonText: "See blog post"
+  link: "/blog/2024/05/flowfuse-2-4-release/"
+  expire: "2024-05-20T15:00:00Z"
+```
+
+If there is only one event, the banner will continuously display that event. If there are multiple events, the banner will rotate through them, displaying each one for a few seconds at a time.
 
 ## Images
 
