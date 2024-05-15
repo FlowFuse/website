@@ -1,13 +1,13 @@
 ---
 title: "Setting Up Node-RED on Raspberry Pi: Quick Guide"
 subtitle: Step-by-step guide to set up Node-RED on Raspberry Pi
-description: Explore how to set up Node-RED on Raspberry Pi Quickly. Learn installation, configuration, deploying flows, hardware integration, security, and other advanced configurations.
+description: Set up Node-RED on Raspberry Pi swiftly. Learn installation, configuration, deploying flows, hardware integration, security, and other advanced configurations.
 date: 2024-05-15
 authors: ["sumit-shinde"]
 image: 
 tags:
-   - node red 
-   - raspberry pi
+   - node red 
+   - raspberry pi
 ---
 
 Creating applications for IoT and IIoT projects is often challenging, especially when dealing with hardware devices. However, Node-RED simplifies this process by providing an intuitive platform for interacting with hardware devices, sensors, and microcontrollers. Raspberry Pi is a widely used microcontroller in conjunction with Node-RED according to [survey conducted in 2023](https://nodered.org/about/community/survey/2023/). In this guide, we will explore how to set up Node-RED on Raspberry Pi and utilize it to interact with sensors and actuators.
