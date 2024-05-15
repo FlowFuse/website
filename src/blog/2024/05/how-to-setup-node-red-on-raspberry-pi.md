@@ -10,10 +10,9 @@ tags:
    - raspberry pi
 ---
 
-Creating applications for IoT and IIoT projects is often challenging, especially when dealing with hardware devices. However, Node-RED simplifies this process by providing an intuitive platform for interacting with hardware devices, sensors, and microcontrollers. Raspberry Pi is a widely used microcontroller in conjunction with Node-RED according to [survey conducted in 2023](https://nodered.org/about/community/survey/2023/). In this guide, we will explore how to set up Node-RED on Raspberry Pi and utilize it to read sensors and more.
+Creating applications for IoT and IIoT projects is often challenging, especially when dealing with hardware devices. However, Node-RED simplifies this process by providing an intuitive platform for interacting with hardware devices, sensors, and microcontrollers. Raspberry Pi is a widely used microcontroller in conjunction with Node-RED according to [survey conducted in 2023](https://nodered.org/about/community/survey/2023/). In this guide, we will explore how to set up Node-RED on Raspberry Pi and utilize it to interact with sensors and actuators.
 
 <!--more-->
-Node-RED streamlines the development of IoT and IIoT applications by offering an intuitive platform for hardware interaction. With its visual programming approach, Node-RED facilitates the creation of flows to connect devices, sensors, and services seamlessly. In this guide, we'll explore how to set up Node-RED on Raspberry Pi, a widely used microcontroller in conjunction with Node-RED according to a [survey conducted in 2023](https://nodered.org/about/community/survey/2023/#use-nr-03/), to unlock its potential in IoT and IIoT projects.
 
 ## What is the Raspberry Pi?
 
