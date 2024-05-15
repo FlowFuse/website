@@ -23,7 +23,7 @@ Often, people perceive "empowerment" as a derogatory term, but it shouldn't be. 
 
 Imagine a simple project like building a tire swing. The humorous illustration below shows how different interpretations and outcomes can arise throughout a project lifecycle:
 
-![Tire Swing Analogy](./images/tire-swing-project-management-flowfuse-node-red.png "Example of communication issues between the developers and end-users"){data-zoomable}
+![Tire Swing Analogy](./images/tire-swing.png "Example of communication issues between the developers and end-users"){data-zoomable}
 
 This analogy highlights the potential misunderstandings and miscommunications that occur between various stakeholders in a project. From the initial customer explanation to the final product, each stage can introduce variations that stray from the original intent. This leads to a final outcome that often doesn't meet the customer's needs or expectations.
 
