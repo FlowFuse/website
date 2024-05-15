@@ -2,9 +2,9 @@
 
 The UDP-In node in Node-RED enables the reception of UDP messages from remote devices or services. It acts as a listener, waiting for incoming UDP packets on a specified port. This functionality is crucial for real-time applications, such as IoT data ingestion and network communication. Whether you're receiving sensor data from IoT devices or communicating with other networked systems, the UDP-In node seamlessly integrates UDP communication into your Node-RED workflows, providing a lightweight and efficient solution for data reception.
 
-### What is Udp?
+### What is UDP?
 
-UDP (User Datagram Protocol) is a connectionless protocol in the Internet Protocol suite. It transmits data packets, or datagrams, without establishing a connection, prioritizing speed over reliability. Commonly used for real-time applications like video streaming, online gaming, and VoIP. UDP's simplicity reduces latency but doesn't guarantee delivery of data packets. For more information refer to [UDP MDN Docs](https://developer.mozilla.org/en-US/docs/Glossary/UDP)
+UDP (User Datagram Protocol) is a connectionless protocol in the Internet Protocol suite. It transmits data packets, or datagrams, without establishing a connection, prioritizing speed over reliability. Commonly used for real-time applications like video streaming, online gaming, and VoIP. UDP's simplicity reduces latency but doesn't guarantee delivery of data packets. For more information refer to [UDP MDN Docs](https://developer.mozilla.org/en-US/docs/Glossary/UDP).
 
 ## Configuring UDP-In Node 
 
