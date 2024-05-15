@@ -24,6 +24,8 @@ TCP (Transmission Control Protocol) is one of the core protocols of the Internet
         - **delimited by:** Specify the delimiter for splitting incoming data streams. Specify the delimiter for splitting incoming data streams. Commonly, `,`, `\r`, `\n`.
         - **re-attach delimiter:** Enabling this option will reattach the delimiter to its original place.
 
+**Note: The default TCP nodes have been removed from the Node-RED palette in the FlowFuse Cloud due to limitations in routing connections to the container running Node-RED inside the FlowFuse platform**
+
 ## Usecases
 
 **Communicating with Servers:** The TCP-In node allows Node-RED to interact with various servers through TCP/IP communication. This enables applications such as fetching data from web servers or exchanging information with other networked services.
