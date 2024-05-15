@@ -11,7 +11,7 @@ tags:
     - low-code
 ---
 
-Digital transformation is a series of technological advancements that aim to simplify complex tasks. From calculators and graphical user interfaces (GUIs) to new programming languages, these advancements have enabled individuals to create value that was once beyond their reach. The key is to understand that these tools are not meant to replace expertise but to enhance it, making complex tasks more manageable and empowering more people.
+Digital transformation is a series of technological advancements that aim to simplify complex tasks. From calculators and graphical user interfaces (GUIs) to new programming languages, these advancements have enabled individuals to create value that was once beyond their reach. The key is to understand that these tools are not meant to replace expertise but to enhance it, making complex tasks more manageable, speeding up development time, and empowering more people.
 
 <!--more-->
 
@@ -23,7 +23,7 @@ Often, people perceive "empowerment" as a derogatory term, but it shouldn't be. 
 
 Imagine a simple project like building a tire swing. The humorous illustration below shows how different interpretations and outcomes can arise throughout a project lifecycle:
 
-![Tire Swing Analogy](./images/tire-swing.png "Example of communication issues between the developers and end-users"){data-zoomable}
+![Tire Swing Analogy](./images/tire-swing-project-management-flowfuse-node-red.png "Example of communication issues between the developers and end-users"){data-zoomable}
 
 This analogy highlights the potential misunderstandings and miscommunications that occur between various stakeholders in a project. From the initial customer explanation to the final product, each stage can introduce variations that stray from the original intent. This leads to a final outcome that often doesn't meet the customer's needs or expectations.
 
@@ -37,11 +37,15 @@ With low-code applications, the process is the same. Put the domain expert in th
 
 With the domain expert in the driver’s seat of their own low-code project, the days of the last 5% undone become less common. There is always a path forward.
 
-## Which Low-Code Solution should you go with?
+## Which Low-Code Solution Should You Go With?
 
-With over 10 years of development emerging from [IBM’s Emerging Technology Group](/blog/2024/02/history-of-nodered/), Node-RED is a clear leader.  Dare I say the defacto solution. It is open-source and easy to spin up. It is currently being leveraged in many industries; ranging from pharmaceuticals, to agriculture, and to telecom.
+With over 10 years of development emerging from [IBM’s Emerging Technology Group](/blog/2024/02/history-of-nodered/), Node-RED is a clear leader.  Dare I say the de facto solution. It is open-source and easy to spin up. It is currently being leveraged in many industries; ranging from pharmaceuticals, to agriculture, and to telecom.
 
 But you might think Node-RED is just a proof-of-concept tool. You’re wrong. Has it been used as [Shadow-IT](https://www.cloudflare.com/learning/access-management/what-is-shadow-it/)? Yes, and that is beautiful and awesome. Innovation is at the heart of Shadow-IT. No one ever said, “There is a tool supported by my IT company that would be perfect for the job, but I think I would rather deploy an unsanctioned tool.” The flaw in this statement is believing there is a choice in tools. Node-RED has often been the only tool available in the domain expert's toolbox.
+
+## Increased Development Speed
+
+Domain experts often find themselves needing to develop solutions but learning a new programming language can be time-consuming. With the open-source community behind Node-RED, many common integrations and transformations have already been created. This community sharing of knowledge accelerates development because often a needed programming task has already been developed and shared. This allows domain experts to repurpose existing code as [**nodes, flows, or collections**](https://flows.nodered.org/), significantly speeding up the development process.
 
 ## FlowFuse
 
