@@ -1,26 +1,39 @@
 {% set colors = ["bg-indigo-700 hover:bg-indigo-600", "bg-indigo-800 hover:bg-indigo-700", "bg-indigo-900 hover:bg-indigo-800"] %}
+{% set hasFutureEvents = false %}
 
+{% for event in events %}
+    {% if event.expire | isFutureDate %}
+        {% set hasFutureEvents = true %}
+    {% endif %}
+{% endfor %}
+
+{% if hasFutureEvents %}
 <div class="event-banner-container bg-indigo-700 hidden sm:block">
     {% for event in events %}
-    {% if event.link %}
-        {% set color = colors[loop.index0 % colors.length] %}
-        <a href="{{ event.link }}" class="event-banner hidden sm:flex text-center w-full py-1 pb-3 sm:py-3 {{ color }} text-indigo-100 text-sm px-2 gap-1 sm:gap-2 flex-col sm:flex-row items-center justify-center">
-            <span class="hidden sm:block font-semibold">{{ event.type }}</span>
-            <span class="hidden sm:block">-</span>
-            <span class="">{{ event.title }}</span>
-            <span class="hidden sm:block">-</span>
-            <span class="flex items-center gap-1 font-medium underline" >
-                {{ event.buttonText }} {% include "components/icons/chevron-right-sm.svg" %}
-            </span>
-        </a>
+        {% if event.expire | isFutureDate %}
+            {% set color = colors[loop.index0 % colors.length] %}
+            <a href="{{ event.link }}" class="event-banner hidden sm:flex text-center w-full py-1 pb-3 sm:py-3 {{ color }} text-indigo-100 text-sm px-2 gap-1 sm:gap-2 flex-col sm:flex-row items-center justify-center">
+                <span class="hidden sm:block font-semibold">{{ event.type }}</span>
+                <span class="hidden sm:block">-</span>
+                <span class="">{{ event.title }}</span>
+                <span class="hidden sm:block">-</span>
+                <span class="flex items-center gap-1 font-medium underline" >
+                    {{ event.buttonText }} {% include "components/icons/chevron-right-sm.svg" %}
+                </span>
+            </a>
         {% endif %}
     {% endfor %}
 </div>
+{% endif %}
 
 <script>
     window.onload = function() {
         const banners = document.querySelectorAll('.event-banner');
         const container = document.querySelector('.event-banner-container');
+        
+        // If there are no banners, exit the function
+        if (banners.length === 0) return;
+        
         let currentBanner = 0;
 
         // Change the container color to match the current banner
@@ -37,7 +50,7 @@
         banners[0].style.visibility = 'visible';
         changeContainerColor(banners[0]);
 
-        // If there is more than one banner, change the visible banner every 5 seconds
+        // If there is more than one banner, change the visible banner every 10 seconds
         if (banners.length > 1) {
             setInterval(function() {
                 // Hide the current banner
@@ -57,7 +70,7 @@
                 setTimeout(function() {
                     changeContainerColor(banners[currentBanner]);
                 }, 500); // wait for the slideDown animation to finish
-            }, 7000);
+            }, 10000);
         }
     };
 </script>

@@ -46,7 +46,8 @@ module.exports = function(eleventyConfig) {
     });
 
     // Define a filter named 'isFutureDate'
-    eleventyConfig.addFilter('isFutureDate', (date) => {
+    eleventyConfig.addFilter('isFutureDate', (dateString) => {
+        const date = new Date(dateString);
         return date && date > new Date();
     });
 
