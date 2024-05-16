@@ -25,7 +25,7 @@ The Raspberry Pi is a small, affordable computer known for its versatility. It's
 
 ## Installing Flowfuse Device Agent on Raspberry Pi
 
-The FlowFuse Device Agent, developed by FlowFuse, simplifies the operation of Node-RED on your edge device, facilitating connections and interactions with hardware devices. Furthermore, it enables remote management, streamlining the monitoring and administration of the Node-RED application running on the device from any remote location.
+[The FlowFuse Device Agent](https://flowfuse.com/docs/device-agent/introduction/), developed by FlowFuse, simplifies the operation of Node-RED on your edge device, facilitating connections and interactions with hardware devices. Furthermore, it enables remote management, streamlining the monitoring and administration of the Node-RED application running on the device from any remote location.
 
 ### Prerequisites for Installation:
 
