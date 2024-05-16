@@ -74,15 +74,15 @@ To begin development, you need to access the Node-RED editor, which can be done 
 
 ### Accessing Node-RED Editor within the same Network
 
-1. Open your browser on the same device where Flowfuse device agent is running.
+1. Open your browser on the same device where the FlowFuse device agent is running.
 2. Type 127.0.0.1:8080 into the URL input field and press Enter. Then, enter 'admin' as the username and 'password' as the default password for the editor login.
 
 ### Accessing Node-RED Editor Outside of the LAN Network
 
 1. Login into your FlowFuse account.
 2. Click on the Devices option in the left sidebar.
-3. Click on the device and enable the developer mode option by clicking on  top right corner switch.
-4. Then click on the Device Editor option which is next to developer mode option.
+3. Click on the device and enable the developer mode option by clicking on the top right-corner switch.
+4. Then click on the Device Editor option which is next to the developer mode option.
 
 ### Creating Your First Flow
 
@@ -111,9 +111,9 @@ For reading data from sensors, you can search for nodes by sensor names in the p
 To demonstrate the integration of a sensor with Node-RED, we will walk you through the steps of connecting a DHT11 sensor to read temperature data with Node-RED.
 
 1. Grab three female-to-female jumper wires.
-2. Connect the wire from the signal(s or +) pin of the DHT11 sensor to the GPIO 4 pin on the Raspberry Pi.
-3. Connect the wire from the Vcc(v or out) pin of the DHT11 sensor to any 5-volt pin on the Raspberry Pi.
-4. Connect the wire from the Ground(g or -) pin of the DHT11 sensor to any ground (GND) pin on the Raspberry Pi.
+2. Connect the wire from the signal(s or +) pin of the DHT11 sensor to the **GPIO 4** pin on the Raspberry Pi.
+3. Connect the wire from the Vcc(v or out) pin of the DHT11 sensor to any **5-volt** pin on the Raspberry Pi.
+4. Connect the wire from the Ground(g or -) pin of the DHT11 sensor to any **ground (GND)** pin on the Raspberry Pi.
 
 If you are unsure about the pin configurations, you can refer to the images below:
 
@@ -176,8 +176,8 @@ This node only works on all versions of Raspberry Pi 4; for other versions, you 
 
 1. Open your device's editor in the flowfuse.
 2. Click on the menu icon in the top right corner.
-3. Select "Manage palette" from the menu.
-4. Go to the "Install" tab.
+3. Select **Manage palette** from the menu.
+4. Go to the **Install** tab.
 5. Search for `node-red-contrib-dht-sensor` in the search bar.
 6. Click on the "Install" button next to the "node-red-contrib-dht-sensor".
 
@@ -189,19 +189,19 @@ This node only works on all versions of Raspberry Pi 4; for other versions, you 
 4. Select pin numbering to **BCM GPIO**.
 5. Select pin number to **4** as our signal pin is connected to the GPIO 4 pin.
 6. Drag the **Debug** node onto the canvas and select output to **complete the msg object**.
-7. Connect the inject node's output to the **rpi-dht-22** node's input and the **rpi-dht-22** node's output to the **debug** node's input.
-8. Deploy the flow by clicking on the top-right red deploy button.
+7. Connect the **inject** node's output to the **rpi-dht-22** node's input and the **rpi-dht-22** node's output to the **debug** node's input.
+8. Deploy the flow by clicking on the top-right red **deploy** button.
 
-## Why to use FlowFuse with Rapberry pi and Node-RED.
+## Why use FlowFuse with Raspberry Pi and Node-RED?
 
 Employing FlowFuse alongside Node-RED and Raspberry Pi offers a multitude of benefits, enhancing the development, management, and security of IoT projects. Let's explore the advantages:
 
-- Enhanced Security: FlowFuse provides robust security features, including TLS/SSL encryption and Single Sign-On (SSO) integration, ensuring secure access and authentication. Comprehensive audit logs track all changes made to Node-RED instances, enhancing accountability and facilitating security monitoring.
+- **Enhanced Security:** FlowFuse offers strong security, including TLS/SSL encryption and Single Sign-On (SSO) integration for safe access. Additionally, detailed audit logs help track all changes to Node-RED instances, ensuring accountability and easy monitoring.
 
-- Remote Device Management at the Edge: FlowFuse offers seamless remote device management for Node-RED instances at the edge, enabling easy deployment, monitoring, and debugging across hundreds or thousands of devices.
+- **Remote Device Management at the Edge:** FlowFuse offers seamless remote device management for Node-RED instances at the edge, enabling easy deployment, monitoring, and debugging across hundreds or thousands of devices from remote locations.
 
-- Scalability: FlowFuse facilitates the scaling of infrastructure, making it easy to manage large-scale environments. With one-click deployment to thousands of devices, organizations can effortlessly scale their Node-RED projects to meet growing demands.
+- **Scalability:** FlowFuse facilitates the scaling of infrastructure, making it easy to manage large-scale environments. With one-click deployment to thousands of devices, organizations can effortlessly scale their Node-RED projects to meet growing demands.
 
-- Collaboration: FlowFuse enables effortless collaboration for Node-RED team development, offering centralized administration of team membership and role-based access control for secure and efficient project management.
+- **Collaboration:** FlowFuse facilitates seamless collaboration for Node-RED development teams, providing centralized administration of team and role-based access control for secure and efficient project management.
 
-- Cost Reduction: FlowFuse helps organizations reduce operational costs by streamlining development processes, improving efficiency, and enabling better resource utilization. This leads to cost savings across the organization's Node-RED projects.
+- **Cost Reduction:** FlowFuse helps organizations reduce operational costs by streamlining development processes, improving efficiency, and enabling better resource utilization. This leads to cost savings across the organization's Node-RED projects.
