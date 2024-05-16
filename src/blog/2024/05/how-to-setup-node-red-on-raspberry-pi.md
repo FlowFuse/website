@@ -102,7 +102,7 @@ When using the Node-RED along with FlowFuse , there's no need to add security me
 
 Furthermore, accessing the audit log allows you to monitor changes made by team members to instances of your team, ensuring transparency and accountability. Additionally, FlowFuse empowers team owners to control the access of team members, enhancing security and privacy during collaboration.
 
-For more information on the audit log, refer to [Audit log](https://flowfuse.com/docs/user/logs/#audit-log).
+For more information on the audit log, refer to [Audit log](/docs/user/logs/#audit-log).
 
 For enhanced security and granular control over team access, refer to [Role-Based Access for your Node-RED applications](/blog/2024/04/role-based-access-control-rbac-for-node-red-with-flowfuse/).
 
