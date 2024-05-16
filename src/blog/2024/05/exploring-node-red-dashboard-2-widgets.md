@@ -87,7 +87,7 @@ In our income-expense application, we will display the income and expenses in a 
 2. Set `msg.payload` to the JSON expression below, which merges the income and expense arrays.
 3. Connect the output of the **ui-event** widget to the input of the **change** node.
 
-```json
+```javascript
 [$globalContext('income'), $globalContext('expense')]
 ```
 !["Screenshot displaying the change node setting JSON expression to payload for retrieving and sorting data."](./images/exploring-dashboard-2-widgets-change-node.png "Screenshot displaying the change node setting JSON expression to payload for retrieving and sorting data."){data-zoomable}
