@@ -67,7 +67,7 @@ async function copyFiles(src, dest) {
     const blueprintsDir = '../blueprint-library'; // Blueprints repository
     if (!existsSync(blueprintsDir)) {
         console.log(`Blueprint library not found ${blueprintsDir} - skipping`);
-        process.exit(-1);
+        process.exit();
     }
 
       readdirSync(blueprintsDir, { withFileTypes: true })
