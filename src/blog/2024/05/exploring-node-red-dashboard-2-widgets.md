@@ -18,7 +18,7 @@ If you're new to Dashboard 2.0, we recommend starting with the [Getting Started 
 
 ## What Are Widgets?
 
-Widgets in Node-RED are like building blocks for creating the user interface. They're made of front-end pieces of code and work on the client's side. In Dashboard 2.0, you get a variety of widgets like forms, templates, buttons, and others to make different parts of your interface.
+Widgets in Node-RED Dashboard 2.0 are like building blocks for creating the user interface. They're made of front-end pieces of code and work on the client's side. In Dashboard 2.0, you get a variety of widgets like forms, templates, buttons, and others to make different parts of your interface.
 
 ## Building Applications with Dashboard 2.0 Widgets
 
