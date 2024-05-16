@@ -14,7 +14,7 @@ This guide delves into Node-RED Dashboard 2.0 widgets, teaching you how to build
 
 <!--more-->
 
-If you're new to Dashboard 2.0, I recommend starting with the [Getting Started with Dashboard 2.0](/blog/2024/03/dashboard-getting-started/) guide and installing it.
+If you're new to Dashboard 2.0, we recommend starting with the [Getting Started with Dashboard 2.0](/blog/2024/03/dashboard-getting-started/) guide and make sure to install it.
 
 ## What Are Widgets?
 
@@ -45,7 +45,7 @@ Once you've added the income submission form, repeat the process to add an expen
 
 The **ui-form** widget emits a payload object with key-value pairs of form elements upon submission. We'll store this data in a global context.
 
-1. Drag a **function** node onto the canvas and use the following code which also contain notification message set to payload:
+1. Drag a **function** node onto the canvas and use the following code which also contains a notification message set to payload:
 
 ```javascript
 let income = global.get('income') || [];
@@ -73,9 +73,9 @@ For displaying notifications on the dashboard, we'll utilize the **ui-notificati
 
 ### Listening events 
 
-In Dashboard 2.0, the **ui-event** widget allows you to listen for user behavior or events. It does not render any content or components on the dashboard. Currently, this widget only listens for page view and leave events.
+In Dashboard 2.0, the **ui-event** widget allows you to listen to user behavior or events. It does not render any content or components on the dashboard. Currently, this widget only listens for page views and leaves events.
 
-With this, we can listen for a page view and page leave event and trigger tasks based on those events. For instance, in our application, we will be displaying a table containing income-expense data and a chart that we will gets update when we visit a new page or leave a page.
+With this, we can listen for a page view and page leave event and trigger tasks based on those events. For instance, in our application, we will be displaying a table containing income-expense data and a chart. that we will update when we visit a new page or leave a page.
 
 1. Drag an **ui-event** widget onto the canvas.
 2. Double-click on it and select the correct **ui-base** of your application.
@@ -87,7 +87,7 @@ For more information on ui-event refer to [ui-event docs](https://dashboard.flow
 In our income-expense application, we will display the income and expenses in a single table.
 
 1. Drag a **change** node onto the canvas.
-2. Set `msg.payload` to the JSON expression below, which merges two icome and expense array.
+2. Set `msg.payload` to the JSON expression below, which merges two income and expense array.
 3. Connect the output of the **ui-event** widget to the input of the **change** node.
 
 ```javascript
@@ -109,7 +109,7 @@ For more information on ui-table refer to [ui-table docs](https://dashboard.flow
 
 ### Calculating total category-wise 
 
-In our application, we will display data on the chart with the total income and total expenses for analysis. For that in this section we will calculate the total expense and income using the function node.
+In our application, we will display data on the chart with the total income and total expenses for analysis. For that in this section, we will calculate the total expense and income using the function node.
 
 1. Drag an **function** node onto canvas.
 2. Paste the following code in it, we have added comments in the code for your better understanding.
@@ -122,7 +122,7 @@ let expense = global.get('expense') || [];
 // Initialize an empty result array
 let result = [];
 
-// Send an empty payload to reset chart
+// Send an empty payload to reset the chart
 node.send({ payload: [] });
 
 // Calculate total income by summing up amounts in the income array
@@ -153,23 +153,23 @@ To display charts on the dashboard, we have to use the ui-chart widget which all
 
 ### Adding custom footer with ui-template
 
-With ui-template widget, we can add a custom component to our app using Vue.js. It also allows adding custom CSS for dashboar and more. For more information refer to [ui-template docs](https://dashboard.flowfuse.com/nodes/widgets/ui-template.html).
+With the ui-template widget, we can add a custom component to our app using Vue.js. It also allows adding custom CSS for the dashboard and more. For more information refer to [ui-template docs](https://dashboard.flowfuse.com/nodes/widgets/ui-template.html).
 
 Using this widget, we will add a footer to our application.
 
 1. Drag an ui-template widget onto the canvas.
-2. Set the type widget( ui scoped ) which will render this widget on entire dashboard so that we will not need to add seprate footers for each page of the dashboard.
+2. Set the type widget( ui scoped ) that will render this widget on the entire dashboard so that we will not need to add separate footers for each page of the dashboard.
 3. Insert the following vue.js code in the ui-template widget. 
 
 ```javascript
-// Get income and expense arrays from global context, or set them as empty arrays if not found
+// Get income and expense arrays from a global context, or set them as empty arrays if not found
 let income = global.get('income') || [];
 let expense = global.get('expense') || [];
 
 // Initialize an empty result array
 let result = [];
 
-// Send an empty payload to reset chart
+// Send an empty payload to reset the chart
 node.send({ payload: [] });
 
 // Calculate total income by summing up amounts in the income array
