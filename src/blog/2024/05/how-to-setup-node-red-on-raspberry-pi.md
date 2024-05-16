@@ -4,7 +4,7 @@ subtitle: Step-by-step guide to set up Node-RED on Raspberry Pi
 description: Set up Node-RED on Raspberry Pi swiftly. Learn installation, configuration, deploying flows, hardware integration, security, and other advanced configurations.
 date: 2024-05-15
 authors: ["sumit-shinde"]
-image: 
+image: /blog/2024/05/images/how-to-setup-node-red-on-raspberry-pi.png
 tags:
    - node red 
    - raspberry pi
@@ -72,33 +72,44 @@ Now, your device has successfully connected to your FlowFuse team. When you rest
 
 ## Accessing Node-RED Editor and Creating your first flow
 
-To begin development, you need to access the Node-RED editor, which can be done in two ways: within the local network and from outside of the network anywhere in the world.
-
-### Accessing Node-RED Editor within the same Network
-
-1. Open your browser on the same device where the FlowFuse device agent is running.
-2. Type 127.0.0.1:8080 into the URL input field and press Enter. Then, enter 'admin' as the username and 'password' as the default password for the editor login.
-
-### Accessing Node-RED Editor Outside of the LAN Network
+### Accessing Node-RED Editor.
 
 1. Login into your FlowFuse account.
-2. Click on the Devices option in the left sidebar.
-3. Click on the device and enable the developer mode option by clicking on the top right-corner switch.
-4. Then click on the Device Editor option which is next to the developer mode option.
+2. Click on the **Devices** option in the left sidebar.
+3. Click on the device and enable the **developer mode** by clicking on the top right-corner switch.
+
+![Image showing switch to enable developer mode option.](./images/how-to-setup-node-red-on-raspberry-pi-developer-mode-option.png "Image showing switch to enable developer mode option."){data-zoomable}
+
+4. Then click on the **Device Editor** option which is next to the developer mode switch.
+
+![Image showing device edtitor button.](./images/how-to-setup-node-red-on-raspberry-pi-device-editor-button.png "Image showing device edtitor button."){data-zoomable}
 
 ### Creating Your First Flow
 
 Now you will see a nice editor with various options. To gain an understanding of the Node-RED editor and other basic things, refer to [Node-RED Editor Guide](https://nodered.org/docs/user-guide/editor/).
 
-- Drag an Inject node onto the canvas from the Palette.
-- Drag a Debug node onto the canvas.
-- Connect the Inject node's output to the Debug node's input.
-- Click on the red deploy button located at the top right corner to deploy the flow.
+- Drag an **Inject** node onto the canvas from the Palette.
+- Drag a **Debug** node onto the canvas.
+- Connect the **Inject** node's output to the Debug node's input.
+- Click on the red **deploy** button located at the top right corner to deploy the flow.
+
+{% renderFlow %}
+[{"id":"bdb27b9ab0d94897","type":"inject","z":"b152a914653d9fce","name":"Inject","props":[{"p":"payload"}],"repeat":"5","crontab":"","once":true,"onceDelay":0.1,"topic":"","payload":"","payloadType":"date","x":330,"y":380,"wires":[["4ece54ca3c91f7ff"]]},{"id":"4ece54ca3c91f7ff","type":"debug","z":"b152a914653d9fce","name":"debug 1","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"true","targetType":"full","statusVal":"","statusType":"auto","x":580,"y":380,"wires":[]}]
+{% endrenderFlow %}
 
 Now, your basic flow is set up. When you click the "Inject" button, it will trigger a message to be sent to the "Debug" node, which will display the message in the debug panel. This helps you understand how nodes can be connected to create a flow in Node-RED. 
 
 ## Securing Node-RED
 
+When using the Node-RED along with FlowFuse , there's no need to add security measures as FlowFuse provides robust security, ensuring that no one can access your device editor without proper authorization. However, disabling the editor after development prevents unauthorized changes to your flows by team members.
+
+Furthermore, accessing the audit log allows you to monitor changes made by team members to instances of your team, ensuring transparency and accountability. Additionally, FlowFuse empowers team owners to control the access of team members, enhancing security and privacy during collaboration.
+
+For more information on the audit log, refer to [Audit log](https://flowfuse.com/docs/user/logs/#audit-log).
+
+For enhanced security and granular control over team access, refer to [Role-Based Access for your Node-RED applications](/blog/2024/04/role-based-access-control-rbac-for-node-red-with-flowfuse/).
+
+To learn more about security provided by FlowFuse at every level, refer to the [Security Statement](/product/security/#application).
 
 ## Integrating sensors and actuators
 
@@ -112,7 +123,7 @@ For reading data from sensors, you can search for nodes by sensor names in the p
 
 To demonstrate the integration of a sensor with Node-RED, we will walk you through the steps of connecting a DHT11 sensor to read temperature data with Node-RED.
 
-1. Grab three female-to-female jumper wires.
+1. Grab three **female-to-female** jumper wires.
 2. Connect the wire from the signal(s or +) pin of the DHT11 sensor to the **GPIO 4** pin on the Raspberry Pi.
 3. Connect the wire from the Vcc(v or out) pin of the DHT11 sensor to any **5-volt** pin on the Raspberry Pi.
 4. Connect the wire from the Ground(g or -) pin of the DHT11 sensor to any **ground (GND)** pin on the Raspberry Pi.
@@ -185,14 +196,29 @@ This node only works on all versions of Raspberry Pi 4; for other versions, you 
 
 #### Reading sensor data with rpi-dht-22 node
 
-1. Drag an inject node onto the canvas and set repeat to 5 seconds of interval.
+1. Drag an **Inject** node onto the canvas and set repeat to 5 seconds of interval.\
+
+!["Screenshot showing the inject node configuration"](./images/how-to-setup-node-red-on-raspberry-pi-inject-node.png "Screenshot showing the inject node configuration"){data-zoomable}
+
 2. Drag a **rpi-dht-22** node onto the canvas.
 3. Select the sensor model to **DHT11**.
 4. Select pin numbering to **BCM GPIO**.
 5. Select pin number to **4** as our signal pin is connected to the GPIO 4 pin.
+
+!["Screenshot showing custom dht sensor node's configurations"](./images/how-to-setup-node-red-on-raspberry-pi-dht-sensor.png "Screenshot showing custom dht sensor node's configurations"){data-zoomable}
+
 6. Drag the **Debug** node onto the canvas and select output to **complete the msg object**.
+
+!["Screenshot showing debug node configuration for printing complete message object"](./images/how-to-setup-node-red-on-raspberry-pi-debug-node.png "Screenshot showing debug node configuration for printing complete message object"){data-zoomable}
+
 7. Connect the **inject** node's output to the **rpi-dht-22** node's input and the **rpi-dht-22** node's output to the **debug** node's input.
 8. Deploy the flow by clicking on the top-right red **deploy** button.
+
+{% renderFlow %}
+[{"id":"bdb27b9ab0d94897","type":"inject","z":"b152a914653d9fce","name":"Trigger","props":[{"p":"payload"},{"p":"topic","vt":"str"}],"repeat":"5","crontab":"","once":true,"onceDelay":0.1,"topic":"","payload":"","payloadType":"date","x":260,"y":380,"wires":[["8a4fe9cf342b6156"]]},{"id":"4ece54ca3c91f7ff","type":"debug","z":"b152a914653d9fce","name":"debug 1","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"true","targetType":"full","statusVal":"","statusType":"auto","x":680,"y":380,"wires":[]},{"id":"8a4fe9cf342b6156","type":"rpi-dht22","z":"b152a914653d9fce","name":"","topic":"rpi-dht22","dht":"11","pintype":"0","pin":4,"x":460,"y":380,"wires":[["4ece54ca3c91f7ff"]]}]
+{% endrenderFlow %}
+
+Now every five seconds you'll see a message object containing temperature set to the payload property and humidity set to humidity printed on the debug tab.
 
 ## Why use FlowFuse with Raspberry Pi and Node-RED?
 
@@ -207,3 +233,8 @@ Employing FlowFuse alongside Node-RED and Raspberry Pi offers a multitude of ben
 - **Collaboration:** FlowFuse facilitates seamless collaboration for Node-RED development teams, providing centralized administration of team and role-based access control for secure and efficient project management.
 
 - **Cost Reduction:** FlowFuse helps organizations reduce operational costs by streamlining development processes, improving efficiency, and enabling better resource utilization. This leads to cost savings across the organization's Node-RED projects.
+
+
+## Conclusion
+
+In conclusion, this guide offers a quick walkthrough for setting up Node-RED on a Raspberry Pi, enhanced by the FlowFuse Device Agent. It covers the entire process from hardware setup to software installation, configuration, and integration with sensors and actuators. Additionally, it explores the security measures provided by FlowFuse, highlighting its benefits for IoT projects.
