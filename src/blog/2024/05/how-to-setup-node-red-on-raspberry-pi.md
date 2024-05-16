@@ -98,7 +98,7 @@ Now, your basic flow is set up. When you click the "Inject" button, it will trig
 
 ## Securing Node-RED
 
-When using the Node-RED along with FlowFuse , there's no need to add security measures as FlowFuse provides robust security, ensuring that no one can access your device editor without proper authorization. However, disabling the editor after development prevents unauthorized changes to your flows by team members.
+When using Node-RED along with FlowFuse , there's no need to add security measures as FlowFuse provides robust security, ensuring that no one can access your device editor without proper authorization. However, disabling the editor after development prevents unauthorized changes to your flows by team members.
 
 Furthermore, accessing the audit log allows you to monitor changes made by team members to instances of your team, ensuring transparency and accountability. Additionally, FlowFuse empowers team owners to control the access of team members, enhancing security and privacy during collaboration.
 
