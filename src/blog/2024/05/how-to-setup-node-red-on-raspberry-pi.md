@@ -51,17 +51,19 @@ Now, before you begin developing applications with FlowFuse running on the devic
 
 ### Generating "Device Configuration"
 
-1. Go to your team's Devices page.
-2. Click the Add Device button.
+1. Go to your team's **Devices** page.
+2. Click the **Add Device** button.
 3. You will be prompted to give the device a Name, an optional Type, and to choose which Application, if any, the device should be assigned to.
 4. The Type field can be used to record additional meta information about the device.
 5. If you do not wish to assign the device to an Application at this time, you can do so later.
-6. Click Add.
+6. Click **Add**.
 7. Once the device has been registered, you will be shown the Device Configuration dialog which contains all the information needed to connect the device to the platform.
 
 ### Linking to FlowFuse Team and Running
 
 To link the FlowFuse Device Agent to your FlowFuse team, you have two different options. You can either utilize the command provided by FlowFuse, as explained in this section or opt for the Device Agent web UI interface. For more details on using the Device Agent web UI, refer to the [Device Agent Web UI documentation](/docs/device-agent/register/#device-agent-web-ui).
+
+![Image showing command device configuration dialog and the command placeholder, where you will find the command to link the device to your FlowFuse team.](./images/how-to-setup-node-red-on-raspberry-pi-device-configuration-dialog.png "Image showing command device configuration dialog and the command placeholder, where you will find the command to link the device to your FlowFuse team."){data-zoomable}
 
 1. Copy the command given in the dialog.
 2. Paste that into your Raspberry Pi command line.
@@ -94,7 +96,6 @@ Now you will see a nice editor with various options. To gain an understanding of
 - Click on the red deploy button located at the top right corner to deploy the flow.
 
 Now, your basic flow is set up. When you click the "Inject" button, it will trigger a message to be sent to the "Debug" node, which will display the message in the debug panel. This helps you understand how nodes can be connected to create a flow in Node-RED. 
-
 
 ## Securing Node-RED
 
