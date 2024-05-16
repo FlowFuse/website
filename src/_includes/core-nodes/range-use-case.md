@@ -17,10 +17,8 @@ Besides unit conversion, the range node can be used for:
 
 An example of a change node that converts from miles to kilometers.
 
-![Range](./images/range-node.png)
-
 ![Range properties](./images/range-node2.png)
 
-```json
+{% renderFlow %}
 [{"id":"183739aecda7dc43","type":"range","z":"e92fb6c3b304fd7c","minin":"1","maxin":"100","minout":"0","maxout":"160","action":"scale","round":true,"property":"payload","name":"Miles >Km","x":390,"y":220,"wires":[["9c4edf7250c34cdb"]]}]
-```
+{% endrenderFlow %}

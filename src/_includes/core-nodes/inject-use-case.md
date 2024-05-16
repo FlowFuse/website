@@ -14,11 +14,9 @@ Repeating the measure on an interval is done by selecting "interval" in the "rep
 
 To setup state when starting Node-RED, the inject node can be set to a zero delay to trigger a flow. When an Inject node is set to run only once, a small '1' is displayed after the label inside the node.
 
-![Inject once on start](./images/inject-node-once.png)
-
-```json
+{% renderFlow %}
 [{"id":"73cc510bee68600f","type":"inject","z":"80987f27785245a7","name":"","props":[{"p":"payload"}],"repeat":"","crontab":"","once":true,"onceDelay":"0.1","topic":"","payload":"","payloadType":"date","x":190,"y":200,"wires":[["7f83bf24bdf7bc68"]]},{"id":"7f83bf24bdf7bc68","type":"debug","z":"80987f27785245a7","name":"Output once","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"payload","targetType":"msg","statusVal":"","statusType":"auto","x":370,"y":200,"wires":[]}]
-```
+{% endrenderFlow %}
 
 ### Run a flow daily at midnight
 
@@ -26,11 +24,9 @@ By selecting "at a specific" time in the Repeat section the inject node can gene
 
 Do set the correct timezone in the [editor settings](/docs/user/instance-settings/#editor).
 
-![Inject nightly](./images/inject-node-nightly.png)
-
-```json
+{% renderFlow %}
 [{"id":"998e844a7e50e275","type":"inject","z":"80987f27785245a7","name":"","props":[{"p":"payload"}],"repeat":"","crontab":"59 23 * * *","once":false,"onceDelay":"0","topic":"","payload":"","payloadType":"date","x":190,"y":320,"wires":[["1e80f5229516e910"]]},{"id":"1e80f5229516e910","type":"debug","z":"80987f27785245a7","name":"Output daily at night","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"payload","targetType":"msg","statusVal":"","statusType":"auto","x":400,"y":320,"wires":[]}]
-```
+{% endrenderFlow %}
 
 ### Insert a static string
 
@@ -39,8 +35,6 @@ static string. Note this string cannot have multiple lines.
 
 !["Configure Inject a string for a flow"](./images/inject-config-string.png)
 
-!["Inject string for a flow"](./images/inject-static-string.png)
-
-```json
+{% renderFlow %}
 [{"id":"c0451e14f6b7eff0","type":"inject","z":"80987f27785245a7","name":"Inject a string","props":[{"p":"payload"}],"repeat":"","crontab":"","once":false,"onceDelay":0.1,"topic":"","payload":"Hello FlowFuse!","payloadType":"str","x":190,"y":280,"wires":[["9fbd8a0a9d21562a"]]},{"id":"9fbd8a0a9d21562a","type":"debug","z":"80987f27785245a7","name":"Output \"Hello FlowFuse\"","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"payload","targetType":"msg","statusVal":"","statusType":"auto","x":410,"y":280,"wires":[]}]
-```
+{% endrenderFlow %}

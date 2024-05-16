@@ -24,12 +24,17 @@ Receipts can be attached via the web UI, email, or Slack.
 Please [read their docs](https://www.brex.com/support/how-do-i-attach-receipts-to-brex-transactions/).
 
 Brex can also be used to create vendor cards that allow for reoccurring payment for a monthly subscription with a vendor.
-Contact the People Ops manager if you require a vendor card.
+Contact the CEO/CTO if you require a vendor card.
 
 
 ### Oops! Misused Your Brex Card for Personal Expenses? Here's How to Handle the Situation Like a Pro
 
-If you realize that you have used your Brex card for personal purposes by mistake, it is crucial to promptly notify the People Ops Manager. The People Ops Manager is responsible for overseeing employee-related matters, including expenses and reimbursements. They will be able to assist you in addressing the situation appropriately. Contacting the People Ops Manager as soon as possible ensures that they are made aware of the mistake and can guide you on the necessary steps to rectify it, such as initiating reimbursement or repayment processes.
+Needless to say, Brex cards should not be used for personal expenses. However, sometimes we make a mistake and checkout with the wrong card.
+If you realize that you have used your Brex card for personal purposes by mistake, here is what you should do next:
+
+1. In Brex, open the expense entry and click the 'repay' button and follow the instructions. This will create a new expense for the amount owed back and mark the original expense as 'Denied'.
+2. Notify the CEO/CTO, who will advise on how to reimburse the company the cost of the expense. This can be done via bank transfer to the company account. Note that any fees associated with the transfer will need to be met by you.
+3. Once payment has been confirmed, the Brex expense entry can be marked as 'Paid'.
 
 ## Reimbursement
 
@@ -41,7 +46,7 @@ company, you can claim back the money through [Deel](https://help.letsdeel.com/h
 * Enter a description, expense name, price and attach an invoice, then click <kbd>Submit</kbd>
 * This expense will now appear in your "Pending" list
 * Adjustments approved before the payroll cut-off date will be processed in the current month's payroll. Any adjustment approved after the payroll cut-off date will be processed in the next month's payroll
-* The People Ops Manager is authorized to approve expenses that are $250 or less. However, if an expense exceeds $250, both the CEO and the People Ops Manager will need to review and approve it.
+* Your manager is authorized to approve expenses that are $250 or less. However, if an expense exceeds $250, both the CEO and your manager will need to review and approve it.
 
 ## Equipment
 
@@ -71,7 +76,7 @@ Unless circumstances require otherwise, laptops will only be considered for a re
 
 Any asset purchase over $500 (laptops, devices etc) needs to be centrally recorded.
 This is done in [this Google Sheet](https://docs.google.com/spreadsheets/d/1sHJmUGG-m7y9TGrFrtqiZ6ubioLf1ySSam_cL-cmiRo/edit#gid=0)
-and shared with the Finance team. Send details of the purchase to the PeopleOps Manager so 
+and shared with the Finance team. Send details of the purchase to your manager so 
 it can be recorded.
 
 ### Return of equipment

@@ -85,7 +85,7 @@ In addition to the built-in nodes, Node-RED also has a palette manager feature w
 
 If you want to view this flow you can import it using the code below. Copy the code then select Import from the top right menu in Node-RED. Paste the code into the field then press Import.
 
-```json
+{% renderFlow %}
 [
     {
         "id": "a742e7a95697bb40",
@@ -143,8 +143,9 @@ If you want to view this flow you can import it using the code below. Copy the c
         ]
     }
 ]
-```
+{% endrenderFlow %}
+
 
 ### What's Next?
 
-Well done, hopefully you've now got your first flow up and running and your mind is racing with all the possibilities of what comes next. Enjoy using Node-RED and thanks for reading.
+Well done, hopefully you've now got your first flow up and running and your mind is racing with all the possibilities of what comes next. Enjoy using Node-RED and thanks for reading. If you'd like to dive deeper into more Node-RED capabilities and how it can help in an enterprise setting, check out our [eBook The Ultimate Beginner Guide to a Professional Node-RED](https://flowfuse.com/ebooks/beginner-guide-to-a-professional-nodered/).  

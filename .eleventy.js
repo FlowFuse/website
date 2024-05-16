@@ -4,7 +4,6 @@ const fs = require("fs");
 
 const { EleventyRenderPlugin } = require("@11ty/eleventy");
 
-const eleventyImage = require("@11ty/eleventy-img");
 const pluginRSS = require("@11ty/eleventy-plugin-rss");
 const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 const pluginMermaid = require("@kevingimbel/eleventy-plugin-mermaid");
@@ -21,10 +20,13 @@ const schema = require("@quasibit/eleventy-plugin-schema");
 const imageHandler = require('./lib/image-handler.js')
 const site = require("./src/_data/site");
 const coreNodeDoc = require("./lib/core-node-docs.js");
+const yaml = require("js-yaml");
 
-const DEV_MODE = process.env.ELEVENTY_RUN_MODE !== "build" // i.e. serve/watch
+// Skip slow optimizations when developing i.e. serve/watch or Netlify deploy preview
+const DEV_MODE = process.env.ELEVENTY_RUN_MODE !== "build" || process.env.CONTEXT === "deploy-preview" 
 
 module.exports = function(eleventyConfig) {
+    eleventyConfig.addDataExtension("yaml", contents => yaml.load(contents)); // Add support for YAML data files
     eleventyConfig.setUseGitIgnore(false); // Otherwise docs are ignored
 
     // Set DEV_MODE_POSTS to true if the context is not 'production'
@@ -44,7 +46,8 @@ module.exports = function(eleventyConfig) {
     });
 
     // Define a filter named 'isFutureDate'
-    eleventyConfig.addFilter('isFutureDate', (date) => {
+    eleventyConfig.addFilter('isFutureDate', (dateString) => {
+        const date = new Date(dateString);
         return date && date > new Date();
     });
 
@@ -82,6 +85,15 @@ module.exports = function(eleventyConfig) {
     // Custom Tooltip "Component"
     eleventyConfig.addPairedShortcode("tooltip", function (content, text) {
         return `<span class="ff-tooltip" data-tooltip="${text}">${content}</span><span></span>`
+    });
+
+    let flowId = 0; // Keep a global counter to allow more than one 
+    eleventyConfig.addPairedShortcode("renderFlow", function (flow, height = 200) {
+        flowId++; // Increment the flowId to allow multiple flows on the same page
+
+        return `<div id="nr-flow-${flowId}" style="height: ${height}px" data-grid-lines="true" data-zoom="true" data-images="true" data-link-lines="false" data-labels="true"></div>
+        <script type="module">const flow${flowId} = ${JSON.stringify(flow)};
+        new FlowRenderer().renderFlows(JSON.parse(flow${flowId}), { container: document.getElementById('nr-flow-${flowId}') })</script>`
     });
 
     eleventyConfig.addAsyncShortcode("coreNodeDoc", async function (category, node) {

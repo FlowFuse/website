@@ -9,6 +9,8 @@ navTitle: Platform Ops
  - [Production Environment](./production.md)
  - [Deployment](./deployment.md)
  - [Incident Response](./incident-response.md)
+ - [FlowFuse Dedicated](./dedicated.md)
+ 
 
 ## CI/CD
 

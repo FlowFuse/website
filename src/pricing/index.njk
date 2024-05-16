@@ -2,13 +2,36 @@
 align: center
 layout: layouts/page.njk
 sitemapPriority: 0.90
+faqTitle: "Frequently Asked <span class='text-indigo-600'>Questions</span>"
+faqSubtitle: "If you have any questions not addressed here, don't hesitate to contact us through our <a href='/contact-us'>Contact Us</a> page"
 meta:
     description: Discover the pricing options for FlowFuse, featuring Starter, Team, and Enterprise plans. Benefit from volume discounts on Team and Enterprise plans. Get started with a 14-day trial period for the Starter plan.
     keywords: FlowFuse pricing, Cost, Plans, Features, Cloud, Self-hosted
+    faq:
+        - question: "Does FlowFuse offer annual discounts for FlowFuse Cloud?"
+          answer: >
+            Yes, we offer a 15% discount for annual subscriptions. Please <a href="/contact-us/">reach out</a> to request the discount.
+        - question: "Is there a minimum for purchase?"
+          answer: >
+            Yes, 5 instances on Team and 10 instances on Enterprise.
+        - question: "Why isn't there an option for self-hosted Team?"
+          answer: >
+            Due to the configuration and support required for a self-hosted deployment, it is only possible through the Enterprise tier at this time.
+        - question: "Why is self-hosted the same price as cloud?"
+          answer: >
+            Self-hosted environments require more support and configuration than FlowFuse Cloud, which offset any resources saved.
+        - question: "Are flat-fee or site-wide licenses available?"
+          answer: >
+            To allow business to standardize on FlowFuse and Node-RED for all their data acquisition, visualization, and interaction it's possible to purchase a flat-fee license to deploy an unlimited amount of Node-RED instances through FlowFuse.
 hubspot:
     script: "hubspot/hs-form.njk"
-    formId: d43ab79b-d075-4b63-ba5e-bf971ca0b86e
-    cta: "cta-contact-us"
+    selfHosted:
+        formId: 41e858e1-6756-45be-9082-3980237fa229
+        cta: "cta-request-trial-license"
+    dedicated:
+        formId: 5a9939ee-899a-46b7-ab16-6376e310381d
+        cta: "cta-contact-us-for-pricing"
+        id: 
     reference: "pricing"
 ---
 
@@ -25,10 +48,13 @@ hubspot:
                         <span class="selector"></span>
                         <div class="hosting">
                             <div class="divCloud">
-                                </span><span class="cloudText">CLOUD</span>
+                                <span class="cloudText">CLOUD</span>
                             </div>
                             <div class="divSelfHosted">
                                 <span class="selfHostedText">SELF HOSTED</span>
+                            </div>
+                            <div class="divDedicated">
+                                <span class="dedicatedText">DEDICATED</span>
                             </div>
                         </div>
                     </button>
@@ -36,7 +62,7 @@ hubspot:
             </div>
             <!-- Plans -->
             <!-- Cloud -->
-            <div class="contentCloud m-auto transition duration-1000">
+            <div class="contentCloud m-auto transition duration-1000 md:min-h-[547px]">
                 <div class="pricing-tiles flex flex-col md:grid md:flex-row md:max-w-screen-lg mt-4 md:mt-0">
                     <!-- Starter -->
                     <div class="pricing-tile md:h-full">
@@ -90,6 +116,7 @@ hubspot:
                                         <li>Device management</li>
                                         <li>DevOps Pipelines</li>
                                         <li>Team collaboration</li>
+                                        <li>Commited SLA: 99.5&#37;</li>
                                     </ul>
                                 </div>
                             </div>
@@ -138,12 +165,12 @@ hubspot:
                             </div>
                             <a class="md:self-end ff-btn ff-btn--primary uppercase align-baseline w-full"
                                 href="/book-demo/"
-                                onclick="capture('cta-book-demo', {'position': 'primary'}, {'plan': 'sh-team'})">BOOK A
+                                onclick="capture('cta-book-demo', {'position': 'primary'}, {'plan': 'team'})">BOOK A
                                 DEMO</a>
                         </div>
                     </div>
                     <!-- Enterprise -->
-                    {% macro enterprise(id_suffix) %}
+                    {% macro enterprise(id_suffix, show_sla=true) %}
                     <div class="pricing-tile md:h-full">
                         <div class="pricing-tile-background pb-6 md:grid flex-col">
                             <div>
@@ -163,6 +190,9 @@ hubspot:
                                         <li>High availability</li>
                                         <li>Single Sign-On</li>
                                         <li>Enterprise Support</li>
+                                        {% if show_sla %}
+                                        <li>Commited SLA: up to 99.9&#37;</li>
+                                        {% endif %}
                                     </ul>
                                 </div>
                             </div>
@@ -205,9 +235,8 @@ hubspot:
                                 </div>
                             </div>
                             <a class="md:self-end ff-btn ff-btn--primary uppercase align-baseline w-full"
-                                href='#contact-us'
-                                onclick="scrollToAnchor(event, 'contact-us'), capture('cta-contact-us', {'position': 'primary'}, {'plan': 'sh-enterprise'})">CONTACT
-                                US</a>
+                                href='/pricing/request-quote/'
+                                onclick="capture('cta-request-quote', {'position': 'primary'}, {'plan': 'enterprise'})">Request a Quote</a>
                         </div>
                     </div>
                     {% endmacro %}
@@ -215,7 +244,7 @@ hubspot:
                 </div>
             </div>
             <!-- Self-hosted -->
-            <div class="contentSelfHosted hide m-auto transition duration-1000">
+            <div class="contentSelfHosted hide m-auto transition duration-1000 md:min-h-[547px]">
                 <div class="pricing-tiles flex flex-col md:grid md:flex-row md:max-w-screen-sm mt-4 md:mt-0">
                     <!-- Starter -->
                     <div class="pricing-tile md:h-full">
@@ -241,24 +270,65 @@ hubspot:
                                 <h2 class="self-end">Free</h2>
                             </div>
                             <a class="md:self-end ff-btn ff-btn--primary uppercase align-baseline w-full"
-                            href="/docs/install/introduction/" onclick="capture('cta-install', {'position': 'primary'}, {'plan': 'sh-starter'})">TRY
-                                FOR FREE</a>
+                            href="/docs/install/introduction/" onclick="capture('cta-install', {'position': 'primary'}, {'plan': 'sh-starter'})">INSTALL NOW</a>
                         </div>
                     </div>
                     <!-- Enterprise -->
                     <div class="pricing-tile md:h-full">
-                        {{ enterprise("2") }}
+                        {{ enterprise("2", false) }}
                     </div>
                 </div>
             </div>
-            <!-- Scroll to anchor -->
-            <div class="flex flex-col items-center text-teal-300 mb-12 -mt-4">
-                <a href="#feature-comparison" onclick="scrollToAnchor(event, 'feature-comparison')">
-                    {% include "components/icons/chevron-down.svg" %}
-                </a>
+            <!-- Dedicated -->
+            <div class="contentDedicated hide m-auto transition duration-1000 md:min-h-[547px] w-full mb-12">
+                <div class="pricing-tiles flex flex-col md:grid md:flex-row md:max-w-screen-lg mt-4 md:mt-0">
+                    <!-- Card -->
+                    <div class="pricing-tile md:h-full">
+                        <div class="pricing-tile-background pb-6 md:grid">
+                            <section class="flex md:flex-row gap-2">
+                                <div class="md:w-2/3">
+                                    <div class="flex flex-col items-center text-left md:flex-row md:mb-6 md:px-0 md:block md:min-h-[133px]">
+                                        <div class="flex flex-row justify-between mt-4 w-full gap-x-2">
+                                            <h4 style="display:inline-block;">FlowFuse Dedicated</h4>
+                                        </div>
+                                        <p class="mt-7">Tailored for businesses prioritizing data security, compliance, and regional flexibility, ideal for demanding efficiency and productivity in strict regulatory environments.</p>
+                                    </div>
+                                    <div class="flex flex-col content-start features md:mt-3 mt-10 mb-10 w-full">
+                                        <note class="font-bold" style="display: inline-block;">Everything from Enterprise Tier, plus:
+                                        </note>
+                                        <ul class="ff-checklist font-light leading-7 mt-2 flex flex-col md:flex-row md:gap-2">
+                                            <div class="w-full md:w-3/5">
+                                                <li>Fully managed by FlowFuse</li>
+                                                <li>Data residency in region of your choice</li>
+                                                <li>Full data and source code isolation</li>
+                                            </div>
+                                            <div class="w-full md:w-2/5">
+                                                <li>Enterprise grade security</li>
+                                                <li>Regular upgrade cadence</li>
+                                            </div>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="justify-center items-center m-auto md:w-1/3 max-w-[347px] w-full hidden md:flex lg:mt-3">
+                                    {% image "./images/dedicated/flowfuse-dedicated.png", "FlowFuse and Node-RED logos in a double shield", [347] %}
+                                </div>
+                            </section>
+                            <div class="md:container text-center w-full md:max-w-4xl flex flex-col gap-x-8 gap-y-4 items-center justify-center md:items-start md:justify-start md:flex-row">
+                                <a onclick="scrollToAnchor(event, 'contact-us-dedicated'); capture('cta-contact-us-for-pricing', {'position': 'primary'}, {'plan': 'dedicated'});" class="ff-btn ff-btn--primary flex flex-col max-md:w-full">
+                                  <span class="text-base uppercase no-underline md:px-4">
+                                    CONTACT US FOR PRICING
+                                  </span>
+                                </a>
+                                <a href="/dedicated/" onclick="capture('cta-learn-more', {'position': 'primary'}, {'plan': 'dedicated'})" class="max-md:w-full py-2 flex flex-row text-center justify-center md:text-left items-center md:justify-end md:self-end md:justify-self-end gap-1">
+                                    Learn more about dedicated
+                                    {% include "components/icons/arrow-long-right.svg" %}
+                                </a>
+                            </div>
+                        </div>
+                    </div>    
+                </div>
             </div>
         </div>
-
         <!-- Feature List -->
         {% set featuresHtml %}
         <div
@@ -273,54 +343,89 @@ hubspot:
 
         <!-- Feature Comparison -->
         <div id="feature-comparison" class="product w-full px-6 md:px-0 md:pt-6">
+            <!-- Scroll to anchor -->
+            <div class="flex flex-col items-center text-teal-300 mb-14 md:mb-0 -mt-4">
+                <a href="#feature-comparison-table" onclick="scrollToAnchor(event, 'feature-comparison-table')">
+                    {% include "components/icons/chevron-down.svg" %}
+                </a>
+            </div>
             <div class="container max-w-screen-lg m-auto text-center">
-                <div class="md:my-9">
-                    <h2 id="feature-comparison"><span class="text-indigo-600">Feature</span> Comparison</h2>
-                </div>
-                <!-- Toggle-->
-                <div class="text-center my-8 md:mb-12">
-                    <div class="mainToggle">
-                        <button class="btnToggle">
-                            <span class="selector"></span>
-                            <div class="hosting">
-                                <div class="divCloud">
-                                    </span><span class="cloudText">CLOUD</span>
-                                </div>
-                                <div class="divSelfHosted">
-                                    <span class="selfHostedText">SELF HOSTED</span>
-                                </div>
-                            </div>
-                        </button>
-                    </div>
+                <div id="feature-comparison-table" class="md:py-9 mt-10 mb-6">
+                    <h2><span class="text-indigo-600">Feature</span> Comparison</h2>
                 </div>
                 <!-- Feature List -->
                 <div class="sticky">{{ featuresHtml | safe }}</div>
             </div>
-            <p class="max-w-screen-lg m-auto mt-12 text-center">
+            <p class="max-w-screen-lg m-auto mt-12 text-center md:px-9 pb-12 border-b">
                 At FlowFuse we understand that the security practises of our product
                 are important to your company. We've prepared a <a href="../product/security">security statement</a>
                 for you to understand the choices we've made.
             </p>
         </div>
-
     </div>
 </div>
-<div id="contact-us" class="w-full bg-gray-50 mt-16 pt-0">
+<!-- Social proof -->
+<div class="max-w-md sm:max-w-screen-lg m-auto max-w-5xl pb-7 md:px-9">
+    <div class="social-proof-logos mx-auto w-full text-center">
+        {% include "social-proof.njk" %}
+    </div>
+</div>
+<!-- Form section -->
+<!-- Trial License -->
+<div id="request-trial-license" class="contentSelfHosted hide w-full bg-gray-50 pt-0">
     <div class="w-full bg-gray-50 pb-12">
         <div class="container max-w-5xl m-auto grid grid-cols-1 md:grid-cols-2 px-6 pt-16 gap-x-16 gap-y-6">
             <div>
-                <h4 class="w-full text-center md:text-left">
-                    Contact Us
-                </h4>
+                <h3 class="w-full text-center md:text-left">
+                    Request a trial license
+                </h3>
                 <p>
-                    Excited to explore FlowFuse Enterprise together? Share your info and we'll get in touch.
+                    Unlock the complete potential of FlowFuse with a complimentary 30-day Enterprise license. This trial
+                    gives you the chance to explore all the features and functionalities of FlowFuse in your own
+                    environment. To start your trial, just fill out the form.
                 </p>
             </div>
+            {% if hubspot.selfHosted %}
+            {% set formId = hubspot.selfHosted.formId %}
+            {% set cta = hubspot.selfHosted.cta %}
             {% include hubspot.script %}
+            {% endif %}
+        </div>
+    </div>
+</div>
+<!-- Dedicated contact us -->
+<div class="contentDedicated hide w-full px-6" id="contact-us-dedicated">
+    <div class="flex flex-col m-auto max-w-2xl mt-10 pb-12 gap-12">
+        <h2 class="w-full text-center"><span class="text-indigo-600">Contact us</span> for pricing
+        </h2>
+        <div>
+            {% if hubspot.dedicated %}
+            {% set formId = hubspot.dedicated.formId %}
+            {% set cta = hubspot.dedicated.cta %}
+            <script>
+                function displayHubSpotForm2() {
+                    hbspt.forms.create({
+                        region: "eu1",
+                        portalId: "26586079",
+                        formId: "{{ formId or hubspot.formId }}",
+                        onFormSubmit: function ($form) {
+                            capture('{{ cta or hubspot.cta }}', {
+                                'page': '{{ hubspot.reference or title }}'
+                            })
+                        }
+                    });
+                }
+            </script>
+            <script async type="text/javascript" charset="utf-8" src="//js-eu1.hsforms.net/forms/embed/v2.js" onload="displayHubSpotForm2()"></script>
+            {% endif %}
         </div>
     </div>
 </div>
 
+<!-- Frequently Asked Questions -->
+<div class="md:px-14 max-w-screen-lg mx-auto">
+    {% include "faq.njk" %}
+</div>
 <!-- Scroll to anchor -->
 <script>
     function scrollToAnchor(event, anchorId) {
@@ -332,60 +437,81 @@ hubspot:
     }
 </script>
 
-<!-- Toggles -->
+<!-- Toggle -->
 <script>
+    // Get the hosting and billing parameters from the URL
+    const urlParams = new URLSearchParams(window.location.search);
+    let hosting = urlParams.get('hosting') || 'cloud';
+
     // Hosting toggle
     const btns = document.querySelectorAll(".mainToggle");
     const cloud = document.querySelectorAll(".contentCloud");
     const selfHosted = document.querySelectorAll(".contentSelfHosted");
+    const dedicated = document.querySelectorAll(".contentDedicated"); // New dedicated elements
+    const cloudText = document.querySelector(".cloudText");
+    const selfHostedText = document.querySelector(".selfHostedText");
+    const dedicatedText = document.querySelector(".dedicatedText");
+    const selector = document.querySelector(".selector");
+    const featureComparison = document.querySelector("#feature-comparison");
 
-    // Get the hosting and billing parameters from the URL
-    const urlParams = new URLSearchParams(window.location.search);
-    const hosting = urlParams.get('hosting');
-    const billing = urlParams.get('billing');
+    function updateContentAndUrl(hosting) {
+        cloudText.classList.remove('active');
+        selfHostedText.classList.remove('active');
+        dedicatedText.classList.remove('active');
 
-    // Check the hosting parameter when the page loads
-    if (hosting === 'self-hosted') {
-        // Show Self-Hosted state
-        btns.forEach((item) => item.classList.add("slides"));
-        cloud.forEach((item) => item.classList.add("hide"));
-        selfHosted.forEach((item) => item.classList.remove("hide"));
-    } else {
-        // Show Cloud state
-        btns.forEach((item) => item.classList.remove("slides"));
-        cloud.forEach((item) => item.classList.remove("hide"));
-        selfHosted.forEach((item) => item.classList.add("hide"));
+        if (hosting === 'cloud') {
+            selector.style.left = "0.8%";
+            cloud.forEach((item) => item.classList.remove("hide"));
+            selfHosted.forEach((item) => item.classList.add("hide"));
+            dedicated.forEach((item) => item.classList.add("hide"));
+            urlParams.delete('hosting');
+            cloudText.classList.add('active');
+            featureComparison.classList.remove("hide");
+        } else if (hosting === 'self-hosted') {
+            selector.style.left = "33%";
+            cloud.forEach((item) => item.classList.add("hide"));
+            selfHosted.forEach((item) => item.classList.remove("hide"));
+            dedicated.forEach((item) => item.classList.add("hide"));
+            urlParams.set('hosting', hosting);
+            selfHostedText.classList.add('active');
+            featureComparison.classList.remove("hide");
+        } else {
+            selector.style.left = "66.2%";
+            cloud.forEach((item) => item.classList.add("hide"));
+            selfHosted.forEach((item) => item.classList.add("hide"));
+            dedicated.forEach((item) => item.classList.remove("hide"));
+            urlParams.set('hosting', hosting);
+            dedicatedText.classList.add('active');
+            featureComparison.classList.add("hide");
+        }
+
+        // Update the history
+        let paramString = urlParams.toString();
+        window.history.replaceState({}, '', paramString ? "?" + paramString : window.location.pathname);
     }
 
-    btns.forEach(btn => {
-        btn.addEventListener("click", function() {
-            // Toggle .slides class on buttons
-            btns.forEach((item) => item.classList.toggle("slides"));
+    // Check the hosting parameter when the page loads
+    updateContentAndUrl(hosting);
 
-            // Toggle .hide class on cloud and selfHosted elements
-            cloud.forEach((item) => {
-                item.classList.toggle("hide");
-            });
+    cloudText.addEventListener("click", function() {
+        if (hosting === 'cloud') return;
+        hosting = 'cloud';
+        updateContentAndUrl(hosting);
+        capture('cloud');
+    });
 
-            selfHosted.forEach((item) => {
-                item.classList.toggle("hide");
-            });
+    selfHostedText.addEventListener("click", function() {
+        if (hosting === 'self-hosted') return;
+        hosting = 'self-hosted';
+        updateContentAndUrl(hosting);
+        capture('self-hosted');
+    });
 
-            // Change the hosting parameter based on toggle state
-            if (btn.classList.contains("slides")) {
-                // Change hosting parameter to Self-Hosted state
-                urlParams.set('features', 'self-hosted');
-            } else {
-                // Remove the hosting parameter for Cloud state
-                urlParams.delete('features');
-            }
-            // Update the URL
-            if (urlParams.toString()) {
-                window.history.replaceState({}, '', `${window.location.pathname}?${urlParams}`);
-            } else {
-                window.history.replaceState({}, '', window.location.pathname);
-            }
-        });
+    dedicatedText.addEventListener("click", function() {
+        if (hosting === 'dedicated') return;
+        hosting = 'dedicated';
+        updateContentAndUrl(hosting);
+        capture('dedicated');
     });
 </script>
 

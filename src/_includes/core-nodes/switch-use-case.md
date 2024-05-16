@@ -20,8 +20,6 @@ Here are some common use cases for using the Switch node in Node-RED:
 
 ![Switch Node Example](./images/switch-example-2.png)
 
-![Switch Node Property](./images/switch-example.png)
-
-```json
+{% renderFlow %}
 [{"id":"1401d664616fc956","type":"tab","label":"Flow 8","disabled":false,"info":"","env":[]},{"id":"inject-node","type":"inject","z":"1401d664616fc956","name":"Simulate Temperature Data","props":[{"p":"payload"},{"p":"topic","vt":"str"}],"repeat":"","crontab":"","once":false,"onceDelay":0.1,"topic":"","payload":"{\"sensorType\": \"temperature\", \"value\": 28}","payloadType":"json","x":190,"y":200,"wires":[["temperature-route-node"]]},{"id":"temperature-route-node","type":"switch","z":"1401d664616fc956","name":"Temperature Routing","property":"payload.value","propertyType":"msg","rules":[{"t":"lt","v":"25","vt":"num"},{"t":"gte","v":"25","vt":"num"}],"checkall":"true","outputs":2,"x":470,"y":200,"wires":[["below-25-node"],["above-25-node"]]},{"id":"below-25-node","type":"debug","z":"1401d664616fc956","name":"Below 25°C","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"payload","targetType":"msg","statusVal":"","statusType":"auto","x":680,"y":160,"wires":[]},{"id":"above-25-node","type":"debug","z":"1401d664616fc956","name":"Above 25°C","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"payload","targetType":"msg","x":680,"y":240,"wires":[]}]
-```
+{% endrenderFlow %}
