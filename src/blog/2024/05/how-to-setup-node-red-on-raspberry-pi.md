@@ -6,7 +6,7 @@ date: 2024-05-15
 authors: ["sumit-shinde"]
 image: /blog/2024/05/images/how-to-setup-node-red-on-raspberry-pi.png
 tags:
-   - node red 
+   - node-red 
    - raspberry pi
 ---
 
@@ -203,7 +203,7 @@ This node only works on all versions of Raspberry Pi 4; for other versions, you 
 2. Drag a **rpi-dht-22** node onto the canvas.
 3. Select the sensor model to **DHT11**.
 4. Select pin numbering to **BCM GPIO**.
-5. Select pin number to **4** as our signal pin is connected to the GPIO 4 pin.
+5. Select pin number **4** as our signal pin is connected to the GPIO 4 pin.
 
 !["Screenshot showing custom dht sensor node's configurations"](./images/how-to-setup-node-red-on-raspberry-pi-dht-sensor.png "Screenshot showing custom dht sensor node's configurations"){data-zoomable}
 
@@ -233,7 +233,6 @@ Employing FlowFuse alongside Node-RED and Raspberry Pi offers a multitude of ben
 - **Collaboration:** FlowFuse facilitates seamless collaboration for Node-RED development teams, providing centralized administration of team and role-based access control for secure and efficient project management.
 
 - **Cost Reduction:** FlowFuse helps organizations reduce operational costs by streamlining development processes, improving efficiency, and enabling better resource utilization. This leads to cost savings across the organization's Node-RED projects.
-
 
 ## Conclusion
 
