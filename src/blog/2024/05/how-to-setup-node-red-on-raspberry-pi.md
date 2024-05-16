@@ -6,7 +6,7 @@ date: 2024-05-15
 authors: ["sumit-shinde"]
 image: /blog/2024/05/images/how-to-setup-node-red-on-raspberry-pi.png
 tags:
-   - node red 
+   - node-red 
    - raspberry pi
 ---
 
@@ -198,7 +198,7 @@ This node only works on all versions of Raspberry Pi 4; for other versions, you 
 2. Drag a **rpi-dht-22** node onto the canvas.
 3. Select the sensor model to **DHT11**.
 4. Select pin numbering to **BCM GPIO**.
-5. Select pin number to **4** as our signal pin is connected to the GPIO 4 pin.
+5. Select pin number **4** as our signal pin is connected to the GPIO 4 pin.
 
 !["Screenshot showing custom dht sensor node's configurations"](./images/how-to-setup-node-red-on-raspberry-pi-dht-sensor.png "Screenshot showing custom dht sensor node's configurations"){data-zoomable}
 
