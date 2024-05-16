@@ -74,15 +74,12 @@ Now, your device has successfully connected to your FlowFuse team. When you rest
 
 ### Accessing Node-RED Editor.
 
+![Image showing device edtitor button.](./images/how-to-setup-node-red-on-raspberry-pi-flowfuse-device-instance.png "Image showing device edtitor button."){data-zoomable}
+
 1. Login into your FlowFuse account.
 2. Click on the **Devices** option in the left sidebar.
 3. Click on the device and enable the **developer mode** by clicking on the top right-corner switch.
-
-![Image showing switch to enable developer mode option.](./images/how-to-setup-node-red-on-raspberry-pi-developer-mode-option.png "Image showing switch to enable developer mode option."){data-zoomable}
-
-4. Then click on the **Device Editor** option which is next to the developer mode switch.
-
-![Image showing device edtitor button.](./images/how-to-setup-node-red-on-raspberry-pi-device-editor-button.png "Image showing device edtitor button."){data-zoomable}
+4. Once Developer Mode is enabled, click on the **Device Editor** option located next to the that switch.
 
 ### Creating Your First Flow
 
@@ -130,9 +127,7 @@ To demonstrate the integration of a sensor with Node-RED, we will walk you throu
 
 If you are unsure about the pin configurations, you can refer to the images below:
 
-!["Image showing the Raspberry Pi pins with details"](./images/how-to-setup-node-red-on-raspberry-pi-pins.png "Image showing the Raspberry Pi pins with details"){data-zoomable}
-
-!["Image displaying Raspberry Pi connected to DHT11 sensor for data reading"](./images/how-to-setup-node-red-on-raspberry-pi-with-dht11-connected.png "Image displaying Raspberry Pi connected to DHT11 sensor for data reading"){data-zoomable}
+!["Image showing the Raspberry Pi pins with diagram"](./images/how-to-setup-node-red-on-raspberry-pi-pins.png "Image showing the Raspberry Pi pins with diagram"){data-zoomable}
 
 ### Reading sensor data with Node-RED
 
@@ -233,7 +228,6 @@ Employing FlowFuse alongside Node-RED and Raspberry Pi offers a multitude of ben
 - **Collaboration:** FlowFuse facilitates seamless collaboration for Node-RED development teams, providing centralized administration of team and role-based access control for secure and efficient project management.
 
 - **Cost Reduction:** FlowFuse helps organizations reduce operational costs by streamlining development processes, improving efficiency, and enabling better resource utilization. This leads to cost savings across the organization's Node-RED projects.
-
 
 ## Conclusion
 
