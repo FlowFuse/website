@@ -6,7 +6,7 @@ The Sort node in Node-RED is a function node used to sort either an array of dat
 
 - **Sort:**
     - `msg.<property>`: Specify the message property which contains array data and needs to be sorted.
-    - Message sequences: Sorts a sequence of messages. Selecting this sort node relies on the received messages to have `msg.parts` set. The split node generates this property, but it can be manually created. It has the following properties:
+    - Message sequences: Sort a sequence of messages. selecting this sort node relies on the received messages to have `msg.parts` set. The split node generates this property, but it can be manually created. It has the following properties:
         - id: An identifier for the group of messages.
         - index: The position within the group.
         - count: The total number of messages in the group.
@@ -21,7 +21,7 @@ The Sort node in Node-RED is a function node used to sort either an array of dat
 
 - **As numbers:** When checked, treats the values as numbers for numerical ordering.
 
-**Note:** This node internally keeps messages for its operation. In order to prevent unexpected memory usage, the maximum number of messages kept can be specified. Default is no limit on the number of messages. you can set the max length with `nodeMessageBufferMaxLength` property is set in settings.js.
+**Note:** This node internally keeps messages for its operation. In order to prevent unexpected memory usage, the maximum number of messages kept can be specified. The default is no limit on the number of messages. you can set the max length with `nodeMessageBufferMaxLength` property is set in settings.js.
 
 ## Usecases
 
@@ -37,7 +37,7 @@ The Sort node in Node-RED is a function node used to sort either an array of dat
 
 ## Examples
 
-1. In the example below, the Sort node sorts the array of numbers and array of English alphabet in ascending order.
+1. In the example below, the Sort node sorts the array of numbers and array of the English alphabet in ascending order.
 
 {% renderFlow %}
 [{"id":"b5ea6d2a.6e7bb","type":"tab","label":"openValve","disabled":false,"info":""},{"id":"416d6d32df411abe","type":"sort","z":"b5ea6d2a.6e7bb","name":"","order":"ascending","as_num":false,"target":"payload","targetType":"msg","msgKey":"payload","msgKeyType":"elem","seqKey":"payload.quantity","seqKeyType":"msg","x":570,"y":320,"wires":[["eb923bde78247dc5"]]},{"id":"c8bd64176725f43f","type":"inject","z":"b5ea6d2a.6e7bb","name":"","props":[{"p":"payload"}],"repeat":"","crontab":"","once":false,"onceDelay":0.1,"topic":"","payload":"[7,8,41,90,2,4,2]","payloadType":"json","x":360,"y":320,"wires":[["416d6d32df411abe"]]},{"id":"eb923bde78247dc5","type":"debug","z":"b5ea6d2a.6e7bb","name":"debug 2","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"false","statusVal":"","statusType":"auto","x":760,"y":320,"wires":[]},{"id":"67f2e62eec9509c5","type":"comment","z":"b5ea6d2a.6e7bb","name":"Ordering numbers in ascending order","info":"","x":530,"y":240,"wires":[]},{"id":"481e382abac7a730","type":"sort","z":"b5ea6d2a.6e7bb","name":"","order":"ascending","as_num":false,"target":"payload","targetType":"msg","msgKey":"payload","msgKeyType":"elem","seqKey":"payload.quantity","seqKeyType":"msg","x":570,"y":440,"wires":[["f43093160e436025"]]},{"id":"21502b212a9c0f80","type":"inject","z":"b5ea6d2a.6e7bb","name":"","props":[{"p":"payload"}],"repeat":"","crontab":"","once":false,"onceDelay":0.1,"topic":"","payload":"[\"G\", \"F\", \"T\", \"A\", \"R\", \"P\", \"H\", \"W\", \"C\", \"Y\", \"N\", \"B\", \"L\", \"O\", \"X\", \"I\", \"V\", \"E\", \"J\", \"U\", \"K\", \"M\", \"S\", \"Z\", \"D\", \"Q\"]","payloadType":"json","x":330,"y":440,"wires":[["481e382abac7a730"]]},{"id":"f43093160e436025","type":"debug","z":"b5ea6d2a.6e7bb","name":"debug 3","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"false","statusVal":"","statusType":"auto","x":760,"y":440,"wires":[]},{"id":"dba624ac20a75580","type":"comment","z":"b5ea6d2a.6e7bb","name":"Ordering alphabets in ascending order","info":"","x":510,"y":380,"wires":[]}]
