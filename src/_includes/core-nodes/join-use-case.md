@@ -20,7 +20,7 @@ The Join node in Node-RED is used to combine sequences of messages into a single
         - **Reduce exp**: An expression applied to each message in the sequence to combine them into a single message.
         - **Initial value**: The starting value used in the combining process.
         - **Fix-up exp**: An optional expression used after combining the messages.
-            - **Evaluate in reverse order (last to first)**: Optionally combine messages in reverse order, starting from the last message.
+            - **Evaluate in reverse order (last to first)**: Enabling this option combines messages in reverse order, starting from the last message.
 
 ## Usecases
 
