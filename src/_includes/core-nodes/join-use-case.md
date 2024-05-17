@@ -6,7 +6,6 @@ The Join node in Node-RED is used to combine sequences of messages into a single
 
 - **Mode**:
     - **Automatic**: When join node paired with the split node, it will automatically join the messages to reverse the split that was performed.
-
     - **Manual**: Allows manual selection of how messages should be combined.
       - **combine each**: Allows selecting which message properties should be combined. Additionally allows to select complete message object to combine.
         - **to create**: Specifies the output type such as a string, buffer, array, key/value object, or merged object.
