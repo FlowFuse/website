@@ -21,7 +21,6 @@ The Join node in Node-RED is used to combine sequences of messages into a single
         - **Initial value**: The starting value used in the combining process.
         - **Fix-up exp**: An optional expression used after combining the messages.
             - **Evaluate in reverse order (last to first)**: Enabling this option combines messages in reverse order, starting from the last message.
-
 ## Usecases
 
 - **Data Aggregation from Multiple Sensors:** Suppose you have several sensors (e.g., temperature, humidity, pressure) sending data independently. You can use the Join node to combine these separate readings into a single message for analysis or storage.
@@ -35,7 +34,6 @@ The Join node in Node-RED is used to combine sequences of messages into a single
 - **Handling Parallel Workflows:** In workflows where multiple tasks run concurrently and their results need to be synchronized or aggregated, the Join node helps manage parallel execution and consolidate outputs.
 
 - **Batch Processing:** If you want to process data in batches rather than individually, the Join node can accumulate messages until a specified count or time threshold is reached, then emit a combined message for batch processing.
-
 
 ## Examples 
 
