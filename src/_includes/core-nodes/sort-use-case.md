@@ -6,7 +6,7 @@ The Sort node in Node-RED is a function node used to sort either an array of dat
 
 - **Sort:**
     - `msg.<property>`: Specify the message property which contains array data and needs to be sorted.
-    - Message sequences: Sort a sequence of messages. selecting this sort node relies on the received messages to have `msg.parts` set. The split node generates this property, but it can be manually created. It has the following properties:
+    - Message sequences: Sort a sequence of messages. Selecting this sort node relies on the received messages to have `msg.parts` set. The split node generates this property, but it can be manually created. It has the following properties:
         - id: An identifier for the group of messages.
         - index: The position within the group.
         - count: The total number of messages in the group.
@@ -21,7 +21,6 @@ The Sort node in Node-RED is a function node used to sort either an array of dat
 
 - **As numbers:** When checked, treats the values as numbers for numerical ordering.
 
-**Note:** This node internally keeps messages for its operation. In order to prevent unexpected memory usage, the maximum number of messages kept can be specified. The default is no limit on the number of messages. you can set the max length with `nodeMessageBufferMaxLength` property is set in settings.js.
 
 ## Usecases
 
