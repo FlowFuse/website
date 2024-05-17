@@ -57,6 +57,15 @@ FlowFuse is your solution to solving Shadow-IT and paving the way for your [Citi
 
 With security and scalability top of mind, FlowFuse allows IT teams to manage their Node-RED deployments with features like Role-Based Access Control (RBAC), remote management of Node-RED runtimes, and backup and recovery of Node-RED deployments called Snapshots. These are just a few of the features that elevate an already widely used solution, making it ready for enterprise networks.
 
+### Customer Success Stories
+
+- [**Abrasive Technology:**](/customer-stories/leveraging-node-red-and-flowfuse-to-automate-precision-manufacturing/) "Node-RED has immensely facilitated our work. The tool's versatility and development speed have allowed Abrasive Technology to tackle projects that might have been deemed out-of-reach or discouraging in the past".
+
+- [**Power Workplace:**](/customer-stories/node-red-building-management/) "FlowFuse removes most of our concerns about scalability and reliability. It’s also making it a lot easier for us to complete security audits for our customers".
+
+- [**Large US Manufacturing Company:**](/customer-stories/manufacturing-digital-transformation/) "The low-code paradigm makes it possible for companies to decentralize innovation within an organization. Allowing subject matter experts to build digital systems that drive innovation".
+
+
 ## The Low-Code Future
 
 In conclusion, low-code platforms like Node-RED and FlowFuse empower domain experts to take control of their own digital transformation journeys. By putting the domain expert in the driver’s seat, low-code applications enable them to create solutions tailored to their specific needs and requirements. This approach not only reduces the risk of the last 5% of a project going undone but also fosters a culture of innovation and collaboration within organizations.
