@@ -19,5 +19,5 @@ if you prefer, automate it via the APIs it is built on.
 
 We hope you like this nifty little feature. 
 
-Stay tuned as we expect the final peices in the overall [Snapshot Improvements](snapshot-improvements.md)
+Stay tuned as we expect the final peices in the overall [Snapshot Improvements](/changelog/2024/05/snapshot-improvements)
 to be delivered in the coming days.
