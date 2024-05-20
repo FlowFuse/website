@@ -13,7 +13,7 @@ TCP (Transmission Control Protocol) is one of the core protocols of the Internet
     - **Connect to:** Enables the TCP node to act as a client, establishing connections to remote servers.
 - **Hostname:** Specifies the hostname or IP address of the remote server when using the "Connect to" type.
 - **Port:** Specifies the TCP port number to listen on (when using "Listen on" type) or to connect to (when using "Connect to" type).
-- **Enable secure (SSL/TLS) connection:** Enabling this option activates SSL/TLS for secure communication. In Node-RED we have TLS config node which allows to activate TLS secure communication, refer to [TLS config node](/node-red/core-nodes/tls/) for details on configurations.
+- **Enable secure (SSL/TLS) connection:** Enabling this option activates SSL/TLS for secure communication. In Node-RED we have TLS config node which allows to activate TLS secure communication, refer to [TLS config node](/node-red/learning-resources/core-nodes/tls/) for details on configurations.
 - **Output:**
     - **Streams of:** Selecting this option will outputs the data stream received from the TCP connection as a continuous stream of messages.
     - **Single:** Selecting this option will outputs a single message containing the data received from the TCP connection.

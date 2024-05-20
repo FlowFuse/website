@@ -26,9 +26,9 @@ redirects:
   - { "from": "/handbook/development/release/", "to": "/handbook/development/releases/" }
   - { "from": "/blog/2023/06/Flowforge-as-a-No-Code-Ethernet_IP-to-Profinet-Protocol-Converter/", "to": "/blog/2023/06/node-red-as-a-no-code-ethernet_ip-to-s7-protocol-converter/" }
   - { "from": "/docs/user/devices/", "to": "/docs/device-agent/introduction" }
-  - { "from": "/blog/2023/06/node-explained-split/", "to": "/node-red/core-nodes/split/"}
-  - { "from": "/blog/2023/07/node-explained-filter/", "to": "/node-red/core-nodes/rbe/"}
-  - { "from": "/blog/2022/12/node-red-exec-explained/", "to": "/node-red/core-nodes/exec/"}
+  - { "from": "/blog/2023/06/node-explained-split/", "to": "/node-red/learning-resources/core-nodes/split/"}
+  - { "from": "/blog/2023/07/node-explained-filter/", "to": "/node-red/learning-resources/core-nodes/rbe/"}
+  - { "from": "/blog/2022/12/node-red-exec-explained/", "to": "/node-red/learning-resources/core-nodes/exec/"}
   - { "from": "/blog/2023/05/Integrating Modbus with Node-RED", "to": "/blog/2023/05/integrating-modbus-with-node-red/"}
   - { "from": "/handbook/development/observability/", "to": "/handbook/development/ops/observability/" }
   - { "from": "/handbook/development/staging/", "to": "/handbook/development/ops/staging/" }
@@ -47,7 +47,7 @@ redirects:
   - { "from": "/product/", "to": "/product/features/" }
   - { "from": "/product/why-flowfuse/", "to": "/product/features/" }
   - { "from": "/features/", "to": "/product/features/" }
-  - { "from": "/node-red/core-nodes/rbe/", "to": "/node-red/core-nodes/filter/" }
+  - { "from": "/node-red/learning-resources/core-nodes/rbe/", "to": "/node-red/learning-resources/core-nodes/filter/" }
   - { "from": "/webinars/2024/deploy-flowfuse-on-industrial-iiot-with-ncd-io/", "to": "/webinars/2024/deploy-flowfuse-on-industrial-iot-with-ncd-io/" }
 
 # The "permalink" attribute determines where the output page will be located.

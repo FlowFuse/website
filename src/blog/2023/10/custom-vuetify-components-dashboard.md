@@ -40,7 +40,7 @@ generated for you, in my case it's:
 
 ### Using the template node
 
-Like the [template core node](/node-red/core-nodes/template), the dashboard package
+Like the [template core node](/node-red/learning-resources/core-nodes/template), the dashboard package
 comes with [a template node of its own](https://dashboard.flowfuse.com/nodes/widgets/ui-template.html).
 If we take the HTML from the Vuetify docs pages and copy it in a template node
 the spinner will show up on the dashboard.
@@ -52,7 +52,7 @@ the spinner will show up on the dashboard.
 While a custom element on a page is cool, and shows you can inject arbitrary HTML
 on a Dashboard, it's even better if we could make the element dynamic. So let's
 start with a first dynamic element. The quickest way to get that done is have
-an [`Inject`](/node-red/core-nodes/inject) node output a random number every second.
+an [`Inject`](/node-red/learning-resources/core-nodes/inject) node output a random number every second.
 
 So let's hook up an Inject, with `msg.payload`'s output being a JSONata expression 
 `$round($random() * 100)` to generate a random number. And let's make sure it
@@ -82,7 +82,7 @@ This is mostly a programmers job, but it's not hard, so let's get to it. A butto
 would be great to reset the timer, and for the sake of this post we can hardcode
 the deadline to 1m from the button press.
 
-When dragging in a button node, connect it to a [change](/node-red/core-nodes/change)
+When dragging in a button node, connect it to a [change](/node-red/learning-resources/core-nodes/change)
 node. In the change node set the flow variable `flow.deadline` to the timestamp. The
 Inject node from earlier needs updating to inject the `flow.deadline`. All that's
 left is calculating how many seconds passed, and normalizing 60 seconds to the

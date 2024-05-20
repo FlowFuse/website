@@ -431,7 +431,7 @@ module.exports = function(eleventyConfig) {
 
         createNav('handbook')
         createNav('docs')
-        createNav('core-nodes')
+        createNav('learning-resources')
 
         function createNav(tag) {
             const groupOrder = {
@@ -454,8 +454,8 @@ module.exports = function(eleventyConfig) {
                 return hierarchyA.length - hierarchyB.length
             }).forEach((page) => {
                 let url = page.url
-                if (tag == "core-nodes") {
-                    url = page.url.replace("/node-red", "")
+                if (tag == "learning-resources") {
+                    url = page.url.replace("/node-red/", "")
                 }
 
                 // work out ToC Hierarchy
@@ -541,16 +541,42 @@ module.exports = function(eleventyConfig) {
 
                 nav[tag].groups = Object.values(groups).sort(sortChildren)
 
-                nav[tag].groups.forEach((group) => {
-                    if (group.children) {
-                        group.children.forEach((child) => {
-                            if (child.children) {
-                                child.children.sort(sortChildren)
+                let group = nav['learning-resources'];
+                if (group && group.children) {
+                    group.children.forEach((child) => {
+                        if (child.children && child.url && child.url.includes('/node-red/learning-resources/core-nodes')) {
+                            let grandchildGroups = {};
+
+                            for (let grandchild of child.children) {
+                                if (grandchild.group) {
+                                    const grandchildGroup = grandchild.group;
+                                    if (!grandchildGroups[grandchildGroup]) {
+                                        grandchildGroups[grandchildGroup] = {
+                                            name: grandchildGroup,
+                                            order: Number.MAX_SAFE_INTEGER,
+                                            children: []
+                                        };
+                                    }
+                                    grandchildGroups[grandchildGroup].children.push(grandchild);
+                                } else {
+                                    if (!grandchild.navGroup) {
+                                        if (!grandchildGroups['Other']) {
+                                            grandchildGroups['Other'] = {
+                                                name: 'Other',
+                                                order: Number.MAX_SAFE_INTEGER,
+                                                children: []
+                                            };
+                                        }
+                                        grandchildGroups['Other'].children.push(grandchild);
+                                    }
+                                }
                             }
-                        })
-                        group.children.sort(sortChildren)
-                    }
-                })
+
+                            child.children = Object.values(grandchildGroups).sort(sortChildren);
+                        }
+                    });
+                    group.children.sort(sortChildren);
+                }
             }
         }
 

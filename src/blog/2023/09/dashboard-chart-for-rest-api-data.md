@@ -43,13 +43,13 @@ Where we paste the URL from above into the settings panel:
 When running this flow you'll see a blob of text in the `Debug` pane. This is a
 great first start, but a blob isn't useful for the rest of the flow.
 
-We need to parse the data as JSON. While the [JSON node](/node-red/core-nodes/json)
+We need to parse the data as JSON. While the [JSON node](/node-red/learning-resources/core-nodes/json)
 would work, the HTTP request node can do this natively. Let `a parsed JSON object`
 the `Return` settings of the HTTP request node.
 
 So now we got the data, and a little more than we need, so let's change the
 message output to keep only what we're interested in; `payload.downloads`. To
-do this, we'll use the [change node](/node-red/core-nodes/change).
+do this, we'll use the [change node](/node-red/learning-resources/core-nodes/change).
 
 ![Change node to set the payload with downloads](./images/change-node-set-downloads-payload.png "Change node to set the payload")
 
@@ -74,7 +74,7 @@ The default theme is great, so just accept that, and save all dialogs to continu
 ### Normalizing the data
 
 The data for the chart needs to be changed before we can show it. The messages should have a `x` and `y` key. So let's prepare the data with
-a combination of the [Split](/node-red/core-nodes/split) and change node.
+a combination of the [Split](/node-red/learning-resources/core-nodes/split) and change node.
 
 The Split node with the default configuration allows to 30 elements of the array
 to be mapped individually. The change node will set the `payload.x` and `payload.y`
@@ -90,7 +90,7 @@ Connect the change node output to a new chart node, and voila:
 
 While we created a chart and it has some data, there's one more thing to explain.
 How can the data be kept up-to-date? It's straight forward to have the `Inject`
-node [run every night](/node-red/core-nodes/inject/),
+node [run every night](/node-red/learning-resources/core-nodes/inject/),
 but the chart would now have multiple data points
 for the same day. This paints multiple lines on top of each other. While that works,
 the hover of the chart will display the duplication and it's wastefull.

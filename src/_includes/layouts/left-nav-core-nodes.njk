@@ -1,7 +1,7 @@
 <!-- Navigation -->
 <div class="border-r" data-{{nav}}>
     <ul class="handbook-nav" data-el="navigation">
-        {% set path = (["node-red/", nav] | join) if nav == "core-nodes" else nav %}
+        {% set path = (["node-red/", nav] | join) if nav == "learning-resources" else nav %}
 
         <li class="core-nodes-nav-group py-1.5 px-0 {% if "/{{ path }}/" === page.url %}active{% endif %}">
             <a href="/{{ path }}/"><span class="text-indigo-600 pr-0">{{ nav }}</span></a>

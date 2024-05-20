@@ -1,0 +1,8 @@
+{
+    "layout": "layouts/handbook.njk",
+    "nav": "learning-resources",
+    "navGroup": "learning-resources",
+    "tags": [
+        "learning-resources"
+    ]
+}
