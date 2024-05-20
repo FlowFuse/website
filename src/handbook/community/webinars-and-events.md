@@ -10,7 +10,7 @@ At FlowFuse, we are committed to delivering value to our customers and users. Th
 
 Every month, we host live webinars where experts share their knowledge, provide updates on FlowFuse, and offer the opportunity for community members to ask questions directly during the webinar.
 
-[FlowFuse Webinars](https://flowfuse.com/webinars/).
+[FlowFuse Webinars](/webinars/).
 
 ### Other Initiatives
 
