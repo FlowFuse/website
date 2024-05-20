@@ -40,7 +40,7 @@ In addition to the forum, there are several support options available for FlowFu
 -  **Webinars**: Attend our live webinars to learn directly from experts, get insights into best practices, and interact with the community additionally you can watch past webinars as well.
   - [FlowFuse Webinars](/webinars/)
 
-- **Community Discord**: Join the community Discord channel where all users discuss about FlowFuse, and Node-RED and share resources ask questions, .
+- **Community Discord**: Join the community Discord channel where all users discuss about FlowFuse and Node-RED, share resources, and ask questions.
   - [Discord Channel](https://discord.gg/2RrvW8dkrF)
 
 - **Ticket Support and Instant Chat**: Get help through our help center for more personalized and real-time support.
@@ -49,4 +49,4 @@ In addition to the forum, there are several support options available for FlowFu
 - **GitHub Issues**: If you encounter a bug or have a feature request, use GitHub to report it. Be sure to provide detailed information to help the developers understand and address your issue.
   - [FlowFuse GitHub](https://github.com/FlowFuse)
 
-By utilizing these forums and support resources, you can effectively resolve issues, learn new skills, and contribute to the community's collective knowledge. Remember to always engage respectfully and constructively to maintain a positive and supportive environment for all members.
+Utilizing these forums and support resources allows you to effectively resolve issues, learn new skills, and contribute to the community's collective knowledge. Remember always to engage respectfully and constructively to maintain a positive and supportive environment for all members.
