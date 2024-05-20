@@ -44,7 +44,7 @@ In addition to the forum, there are several support options available for FlowFu
   - [Discord Channel](https://discord.gg/2RrvW8dkrF)
 
 - **Ticket Support and Instant Chat**: Get help through our help center for more personalized and real-time support.
-  - [FlowFuse Help Center](https://flowfuse.com/support/)
+  - [FlowFuse Help Center](/support/)
 
 - **GitHub Issues**: If you encounter a bug or have a feature request, use GitHub to report it. Be sure to provide detailed information to help the developers understand and address your issue.
   - [FlowFuse GitHub](https://github.com/FlowFuse)
