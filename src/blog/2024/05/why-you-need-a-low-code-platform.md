@@ -2,7 +2,7 @@
 title: Why you need a low-code platform
 subtitle: "Empowering Domain Experts with Low-Code Platforms: A Path to Seamless Digital Transformation"
 description: Discover how low-code platforms like FlowFuse empower domain experts to drive digital transformation. Learn how these tools enhance collaboration, close project gaps, and foster innovation, ensuring project success from start to finish.
-date: 2024-05-20
+date: 2024-05-21
 authors: ["grey-dziuba"]
 image: /blog/2024/05/images/why-you-need-a-low-code-platform.png
 tags:
