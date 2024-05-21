@@ -38,7 +38,7 @@ In addition to the forum, we also offer:
   - [The Ultimate Beginner Guide to a Professional Node-RED](/ebooks/beginner-guide-to-a-professional-nodered/)
 
 - **Webinars**: Live webinars where experts share their knowledge, provide updates on FlowFuse, and offer the opportunity for community members to ask questions directly during the webinar.
-  - [FlowFuse Webinars](./event-and-webinars#monthly-webinars/)
+  - [FlowFuse Webinars](./event-and-webinars#monthly-webinars)
 
 - **Community Discord**: A channel for users to discuss FlowFuse and Node-RED, share resources, and ask questions.
   - [Discord Channel](https://discord.gg/2RrvW8dkrF)
