@@ -1,5 +1,5 @@
 ---
-navTitle: Variables
+navTitle: #Variables
 ---
 
 # Company

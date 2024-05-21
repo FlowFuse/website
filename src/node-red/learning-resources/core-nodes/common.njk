@@ -9,6 +9,8 @@ permalink: "node-red/learning-resources/core-nodes/{{ node.name | lower | replac
 eleventyComputed:
   navTitle: "{{ node.name }}"
   navGroup: "{{ coreNodeCategory }}"
+  category: "{{ coreNodeCategory }}"
 ---
 
+<h1>category: {{ category }}</h1>
 {% include "core-node-docs.njk" %}

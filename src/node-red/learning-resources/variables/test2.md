@@ -1,5 +1,5 @@
 ---
-navTitle: core nodes test
+navTitle: #core nodes test
 meta:
     title: KPIs and OKRs
 ---

@@ -540,41 +540,40 @@ module.exports = function(eleventyConfig) {
                 }
 
                 nav[tag].groups = Object.values(groups).sort(sortChildren)
-
+                
                 let group = nav['learning-resources'];
                 if (group && group.children) {
                     group.children.forEach((child) => {
-                        if (child.children && child.url && child.url.includes('/node-red/learning-resources/core-nodes')) {
+                        if (child.children && child.url) {
                             let grandchildGroups = {};
+                            let looseGrandchildren = []; // Array to hold loose grandchildren
 
                             for (let grandchild of child.children) {
-                                if (grandchild.group) {
-                                    const grandchildGroup = grandchild.group;
-                                    if (!grandchildGroups[grandchildGroup]) {
-                                        grandchildGroups[grandchildGroup] = {
-                                            name: grandchildGroup,
-                                            order: Number.MAX_SAFE_INTEGER,
-                                            children: []
-                                        };
-                                    }
-                                    grandchildGroups[grandchildGroup].children.push(grandchild);
+                                let grandchildGroup;
+                                let grandchildGroupName;
+                                if (grandchild.group && grandchild.group !== group.group) {
+                                    grandchildGroup = grandchild.group;
+                                    grandchildGroupName = grandchild.group.split('/').filter(n => n).pop();
                                 } else {
-                                    if (!grandchild.navGroup) {
-                                        if (!grandchildGroups['Other']) {
-                                            grandchildGroups['Other'] = {
-                                                name: 'Other',
-                                                order: Number.MAX_SAFE_INTEGER,
-                                                children: []
-                                            };
-                                        }
-                                        grandchildGroups['Other'].children.push(grandchild);
-                                    }
+                                    // If there is no group, add the grandchild directly to the looseGrandchildren array
+                                    looseGrandchildren.push(grandchild);
+                                    continue;
                                 }
+
+                                if (!grandchildGroups[grandchildGroup]) {
+                                    grandchildGroups[grandchildGroup] = {
+                                        name: grandchildGroupName,
+                                        order: Number.MAX_SAFE_INTEGER,
+                                        children: []
+                                    };
+                                }
+                                grandchildGroups[grandchildGroup].children.push(grandchild);
                             }
 
-                            child.children = Object.values(grandchildGroups).sort(sortChildren);
+                            child.children = Object.values(grandchildGroups).concat(looseGrandchildren).sort(sortChildren);
                         }
                     });
+
                     group.children.sort(sortChildren);
                 }
             }
