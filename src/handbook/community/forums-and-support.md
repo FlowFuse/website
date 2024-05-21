@@ -8,7 +8,7 @@ navTitle: Forums and Support
 
 We provide a comprehensive support and community platform for FlowFuse users, developers, and enthusiasts. Our forums and support resources are designed to empower you with the knowledge, assistance, and collaboration you need to make the most out of FlowFuse and Node-RED.
 
-At FlowFuse, we believe in fostering a community that is not only knowledgeable but also supportive and inclusive. We encourage you to explore our [Community Guidelines](./community-guidelines.md/) to understand how you can contribute positively to this dynamic ecosystem.
+At FlowFuse, we believe in fostering a community that is not only knowledgeable but also supportive and inclusive. We encourage you to explore our [Community Guidelines](./community-guidelines/) to understand how you can contribute positively to this dynamic ecosystem.
 
 ### Forums
 
@@ -32,13 +32,13 @@ In addition to the forum, we also offer:
   - [FlowFuse Documentation](/docs/)
 
 - **Tutorials and Guides**: Detailed tutorials and guides to help you get started and master advanced topics.
-  - [FlowFuse Tutorials and Guides](/tutorials/)
+  - [FlowFuse Tutorials and Guides](/blog/)
 
 - **Ebook**: The ultimate beginner guide to professional Node-RED.
   - [The Ultimate Beginner Guide to a Professional Node-RED](/ebooks/beginner-guide-to-a-professional-nodered/)
 
 - **Webinars**: Live webinars where experts share their knowledge, provide updates on FlowFuse, and offer the opportunity for community members to ask questions directly during the webinar.
-  - [FlowFuse Webinars](./event-and-webinars.md/#monthly-webinars)
+  - [FlowFuse Webinars](./event-and-webinars#monthly-webinars/)
 
 - **Community Discord**: A channel for users to discuss FlowFuse and Node-RED, share resources, and ask questions.
   - [Discord Channel](https://discord.gg/2RrvW8dkrF)
