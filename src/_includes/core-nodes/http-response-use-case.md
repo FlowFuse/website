@@ -1,6 +1,6 @@
 ## What is Http Response node in Node-RED?
 
-The HTTP Response node in Node-RED is a tool for sending tailored HTTP responses back to clients that make requests to your application. It allows you to customize status codes, headers, and response bodies, facilitating dynamic communication between your application and its users.
+The HTTP Response node allows you to send tailored HTTP responses back to clients that make requests to your application. It enables you to customize status codes, headers, and response bodies, facilitating dynamic communication between your application and its users.
 
 ## Configuring HTTP Response node
 
