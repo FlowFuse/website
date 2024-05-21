@@ -57,7 +57,7 @@ FlowFuse is your solution to solving Shadow-IT and paving the way for your [Citi
 
 With security and scalability top of mind, FlowFuse allows IT teams to manage their Node-RED deployments with features like Role-Based Access Control (RBAC), remote management of Node-RED runtimes, and backup and recovery of Node-RED deployments called Snapshots. These are just a few of the features that elevate an already widely used solution, making it ready for enterprise networks.
 
-### Customer Success Stories
+### Low-code platform success in the real world
 
 - [**Abrasive Technology:**](/customer-stories/leveraging-node-red-and-flowfuse-to-automate-precision-manufacturing/) Leveraged Node-RED and FlowFuse to optimize automation and improve operational efficiency. The transition to FlowFuse Cloud has enhanced their ability to manage Node-RED instances effectively, supporting innovation and agility in their manufacturing processes.
 
