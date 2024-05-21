@@ -1,15 +1,13 @@
 ---
-title: Node-RED Tips - Importing, Exporting, and Grouping Flows
-subtitle: Save yourself time when working on Node-RED with these three tips.
-description: "Learn how to save time on Node-RED with three essential techniques: exporting and importing flows, accessing example flows from custom nodes, and organizing nodes using groups for improved clarity and management."
+navTitle: Importing, Exporting, and Grouping Flows
+navOrder: 5
+meta:
+    title: Node-RED Tips - Importing, Exporting, and Grouping Flows
+    description: "Learn how to save time on Node-RED with three essential techniques: exporting and importing flows, accessing example flows from custom nodes, and organizing nodes using groups for improved clarity and management."
+    keywords: node-red, how-to, node-red tips
 date: 2023-03-27 12:00:00
 authors: ["rob-marcer"]
-image: /images/blog/nr-quicktips.jpg
-tags:
-    - posts 
-    - node-red
-    - how-to
-    - node-red tips
+image: /node-red/learning-resources/quick-tips/images/nr-quicktips.jpg
 ---
 
 There is usually more than one way to complete a given task in software, and Node-RED is no exception. In each of this series of blog posts, we are going to share three useful tips to save yourself time when working on your flows.

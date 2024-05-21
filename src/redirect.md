@@ -44,10 +44,17 @@ redirects:
   - { "from": "/handbook/development/guides/", "to": "/handbook/company/guides/" }
   - { "from": "/blog/2023/08/uns-article/", "to": "/blog/2023/08/isa-95-automation-pyramid-to-unified-namespace/" }
   - { "from": "/blog/2023/08/UNS-article/", "to": "/blog/2023/08/isa-95-automation-pyramid-to-unified-namespace/" }
+  - { "from": "/blog/2023/02/3-quick-node-red-tips-1/", "to": "/node-red/learning-resources/quick-tips/node-red-tips-1/" }
+  - { "from": "/blog/2023/02/3-quick-node-red-tips-2/", "to": "/node-red/learning-resources/quick-tips/node-red-tips-2/" }
+  - { "from": "/blog/2023/03/3-quick-node-red-tips-3/", "to": "/node-red/learning-resources/quick-tips/node-red-tips-3/" }
+  - { "from": "/blog/2023/03/3-quick-node-red-tips-4/", "to": "/node-red/learning-resources/quick-tips/node-red-tips-4/" }
+  - { "from": "/blog/2023/03/3-quick-node-red-tips-5/", "to": "/node-red/learning-resources/quick-tips/node-red-tips-5/" }
+  - { "from": "/blog/2023/04/3-quick-node-red-tips-6/", "to": "/node-red/learning-resources/quick-tips/node-red-tips-6/" }
+  - { "from": "/blog/2024/05/understanding-node-flow-global-environment-variables-in-node-red/", "to": "/node-red/learning-resources/variables/" }
   - { "from": "/product/", "to": "/product/features/" }
   - { "from": "/product/why-flowfuse/", "to": "/product/features/" }
   - { "from": "/features/", "to": "/product/features/" }
-  - { "from": "/node-red/learning-resources/core-nodes/rbe/", "to": "/node-red/learning-resources/core-nodes/filter/" }
+  - { "from": "/node-red/core-nodes/rbe/", "to": "/node-red/learning-resources/core-nodes/filter/" }
   - { "from": "/webinars/2024/deploy-flowfuse-on-industrial-iiot-with-ncd-io/", "to": "/webinars/2024/deploy-flowfuse-on-industrial-iot-with-ncd-io/" }
 
 # The "permalink" attribute determines where the output page will be located.

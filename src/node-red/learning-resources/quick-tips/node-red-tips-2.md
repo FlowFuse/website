@@ -1,18 +1,18 @@
 ---
-title: Node-RED Tips - Deploying, Debugging, and Delaying
-subtitle: Save yourself time when working on Node-RED with these three tips.
-description: Save yourself time when working on Node-RED with these three tips.
+navTitle: Deploying, Debugging, and Delaying
+navOrder: 2
+meta:
+    title: Node-RED Tips - Deploying, Debugging, and Delaying
+    description: Save yourself time when working on Node-RED with these three tips.
+    keywords: node-red, tips
 date: 2023-02-23 18:00:00
 authors: ["rob-marcer"]
-image: /images/blog/nr-quicktips.jpg
-tags:
-    - posts 
-    - node-red
-    - tips
+image: /node-red/learning-resources/quick-tips/images/nr-quicktips.jpg
 ---
 
+
+
 There is usually more than one way to complete a given task in software, and Node-RED is no exception. In each of this series of blog posts, we are going to share three useful tips to save yourself time when working on your flows.
-<!--more-->
 
 ### 1. Deploy just what you've changed
 

@@ -1,14 +1,13 @@
 ---
-title: Node-RED Tips - Smooth, Catch, and Math
-subtitle: Save yourself time when working on Node-RED with these three tips.
-description: Save yourself time when working on Node-RED with these three tips.
+navTitle: Smooth, Catch, and Math
+navOrder: 4
+meta:
+    title: Node-RED Tips - Smooth, Catch, and Math
+    description: Save yourself time when working on Node-RED with these three tips.
+    keywords: node-red, how-to, tips
 date: 2023-03-13 12:00:00
 authors: ["rob-marcer"]
-image: /images/blog/nr-quicktips.jpg
-tags:
-    - posts 
-    - node-red
-    - tips
+image: /node-red/learning-resources/quick-tips/images/nr-quicktips.jpg
 ---
 
 There is usually more than one way to complete a given task in software, and Node-RED is no exception. In each of this series of blog posts, we are going to share three useful tips to save yourself time when working on your flows.
