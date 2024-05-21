@@ -35,21 +35,19 @@ On completion of write, input message is sent to the output port.
 
 2. **Error Logging:** Capture and log error messages, exceptions, or debugging information to a file for troubleshooting and debugging purposes.
 
-3. **Application Configuration:** Write configuration settings or parameters to a file, allowing for dynamic configuration changes without modifying the code.
+3. **User Inputs:** Save user inputs or form submissions to a file, such as user preferences, feedback, or user-generated content.
 
-4. **User Inputs:** Save user inputs or form submissions to a file, such as user preferences, feedback, or user-generated content.
+4. **Reporting:** Generate reports in CSV, JSON, or plain text formats and save them to a file for later retrieval or distribution.
 
-5. **Reporting:** Generate reports in CSV, JSON, or plain text formats and save them to a file for later retrieval or distribution.
+5. **Backup and Recovery:** Create backup files of critical data or system states for disaster recovery or version control purposes.
 
-6. **Backup and Recovery:** Create backup files of critical data or system states for disaster recovery or version control purposes.
+6. **Integration with External Systems:** Save data retrieved from APIs, databases, or external services to a file for further processing or analysis.
 
-7. **Integration with External Systems:** Save data retrieved from APIs, databases, or external services to a file for further processing or analysis.
+7. **Archiving:** Archive log files, historical data, or outdated documents to maintain a record of past events or changes.
 
-8. **Archiving:** Archive log files, historical data, or outdated documents to maintain a record of past events or changes.
+8. **Data Transformation:** Perform data transformation operations and write the transformed data to a file in a different format or structure.
 
-9. **Data Transformation:** Perform data transformation operations and write the transformed data to a file in a different format or structure.
-
-10. **Event Logging:** Log events, notifications, or user interactions to a file for auditing, compliance, or historical tracking purposes.
+9. **Event Logging:** Log events, notifications, or user interactions to a file for auditing, compliance, or historical tracking purposes.
 
 ## Examples
 
