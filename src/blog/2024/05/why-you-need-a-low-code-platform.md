@@ -59,11 +59,11 @@ With security and scalability top of mind, FlowFuse allows IT teams to manage th
 
 ### Customer Success Stories
 
-- [**Abrasive Technology:**](/customer-stories/leveraging-node-red-and-flowfuse-to-automate-precision-manufacturing/) "Node-RED has immensely facilitated our work. The tool's versatility and development speed have allowed Abrasive Technology to tackle projects that might have been deemed out-of-reach or discouraging in the past".
+- [**Abrasive Technology:**](/customer-stories/leveraging-node-red-and-flowfuse-to-automate-precision-manufacturing/) Leveraged Node-RED and FlowFuse to optimize automation and improve operational efficiency. The transition to FlowFuse Cloud has enhanced their ability to manage Node-RED instances effectively, supporting innovation and agility in their manufacturing processes.
 
-- [**Power Workplace:**](/customer-stories/node-red-building-management/) "FlowFuse removes most of our concerns about scalability and reliability. It’s also making it a lot easier for us to complete security audits for our customers".
+- [**Power Workplace:**](/customer-stories/node-red-building-management/) Utilized FlowFuse and Node-RED to automate building management, significantly reducing development time and enhancing scalability and reliability. This has helped them meet security and compliance requirements more easily, improving service delivery across multiple regions.
 
-- [**Large US Manufacturing Company:**](/customer-stories/manufacturing-digital-transformation/) "The low-code paradigm makes it possible for companies to decentralize innovation within an organization. Allowing subject matter experts to build digital systems that drive innovation".
+- [**Large US Manufacturing Company:**](/customer-stories/manufacturing-digital-transformation/) Employed Node-RED and FlowFuse to drive digital transformation across numerous manufacturing sites. By decentralizing innovation, they have improved data visibility, real-time decision-making, and overall process efficiency, using FlowFuse to manage extensive Node-RED deployments and version control.
 
 
 ## The Low-Code Future
