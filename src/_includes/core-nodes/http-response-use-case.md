@@ -1,11 +1,11 @@
-## What is Http Response node in Node-RED?
+## What is the Http Response node in Node-RED?
 
 The HTTP Response node allows you to send tailored HTTP responses back to clients that make requests to your application. It enables you to customize status codes, headers, and response bodies, facilitating dynamic communication between your application and its users.
 
 ## Configuring HTTP Response node
 
 - **Status code:** This field allows you to specify the HTTP status code to be included in the response, you can also set that with the `msg.statusCode`
-- **Headers:** with this feild you can add any custom HTTP headers to be included in the response. Headers provide additional information about the data being transferred between the client and server. You might use headers to specify the content type (Content-Type), set cookies, or provide caching directives. to set headers dynamically you can use `msg.headers` with json object containing headers.
+- **Headers:** with this feild you can add any custom HTTP headers to be included in the response. Headers provide additional information about the data being transferred between the client and server. You might use headers to specify the content type (Content-Type), set cookies, or provide caching directives. to set headers dynamically you can use `msg.headers` with JSON object containing headers.
 - **Cookies:** To set cookies, you need to pass `msg.cookies` to the response node. The `msg.cookies` object should contain key-value pairs where the keys represent the names of the cookies, The value can be either a string to set the value of the cookie with default options, or it can be an object of options
 
 The valid options include:
@@ -18,7 +18,7 @@ The valid options include:
 
 To delete a cookie, set its value to `null`.
 
-**Note: The messages sent to this node must originate from an http input node**
+**Note: The messages sent to this node must originate from an HTTP input node**
 
 ## Usecases 
 
@@ -40,9 +40,13 @@ Authentication and Authorization:
 ## Examples
 
 1. In the example flow below, we demonstrate how you can set cookies using the HTTP Response node.
-
+2. 
+{% renderFlow %}
 [{"id":"6eda375547f05f47","type":"group","z":"b5ea6d2a.6e7bb","style":{"stroke":"#b2b3bd","stroke-opacity":"1","fill":"#f2f3fb","fill-opacity":"0.5","label":true,"label-position":"nw","color":"#32333b"},"nodes":["2bd5d08c8203ed60","75ed75867c5f6920","fe6a06ebc6814dde","80b9896e7089da9b"],"x":174,"y":99,"w":612,"h":162},{"id":"2bd5d08c8203ed60","type":"http response","z":"b5ea6d2a.6e7bb","g":"6eda375547f05f47","name":"","statusCode":"200","headers":{},"x":700,"y":220,"wires":[]},{"id":"75ed75867c5f6920","type":"http in","z":"b5ea6d2a.6e7bb","g":"6eda375547f05f47","name":"","url":"/test","method":"get","upload":false,"swaggerDoc":"","x":260,"y":220,"wires":[["fe6a06ebc6814dde"]]},{"id":"fe6a06ebc6814dde","type":"change","z":"b5ea6d2a.6e7bb","g":"6eda375547f05f47","name":"set cookies","rules":[{"t":"set","p":"cookies","pt":"msg","to":"{\"name\":\"nick\",\"session\":{\"value\":\"1234\",\"maxAge\":900000}}","tot":"json"}],"action":"","property":"","from":"","to":"","reg":false,"x":470,"y":220,"wires":[["2bd5d08c8203ed60"]]},{"id":"80b9896e7089da9b","type":"comment","z":"b5ea6d2a.6e7bb","g":"6eda375547f05f47","name":"Setting cookies using response node","info":"","x":480,"y":140,"wires":[]}]
+{% endrenderFlow %}
 
-2. In the following example, we demonstrate how you can send a response back to the requesting client and set headers using the HTTP Response node.
+4. In the following example, we demonstrate how you can send a response back to the requesting client and set headers using the HTTP Response node.
 
+{% renderFlow %}
 [{"id":"e7285a491834f67f","type":"group","z":"246014ec93295463","style":{"stroke":"#b2b3bd","stroke-opacity":"1","fill":"#f2f3fb","fill-opacity":"0.5","label":true,"label-position":"nw","color":"#32333b"},"nodes":["2bd5d08c8203ed60","75ed75867c5f6920","80b9896e7089da9b","414c874caa4abe9c"],"x":254,"y":199,"w":532,"h":162},{"id":"2bd5d08c8203ed60","type":"http response","z":"246014ec93295463","g":"e7285a491834f67f","name":"","statusCode":"200","headers":{"content-type":"text/html"},"x":700,"y":320,"wires":[]},{"id":"75ed75867c5f6920","type":"http in","z":"246014ec93295463","g":"e7285a491834f67f","name":"","url":"/test","method":"get","upload":false,"swaggerDoc":"","x":340,"y":320,"wires":[["414c874caa4abe9c"]]},{"id":"80b9896e7089da9b","type":"comment","z":"246014ec93295463","g":"e7285a491834f67f","name":"Sending html as response data","info":"","x":510,"y":240,"wires":[]},{"id":"414c874caa4abe9c","type":"template","z":"246014ec93295463","g":"e7285a491834f67f","name":"","field":"payload","fieldType":"msg","format":"html","syntax":"mustache","template":"<!DOCTYPE html>\n<html>\n<head>\n    <title>Simple HTML Example</title>\n</head>\n<body>\n    <h1>This is a Header</h1>\n    <p>This is a paragraph of text under the header.</p>\n</body>\n</html>","output":"str","x":520,"y":320,"wires":[["2bd5d08c8203ed60"]]}]
+{% endrenderFlow %}
