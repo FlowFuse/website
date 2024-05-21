@@ -27,7 +27,7 @@ The "Write File" node in Node-RED is used to write data to a file on the filesys
 
 ## Output
 
-After the completion of the write operation, the input message passed to the write file node is sent to the subsequent node.
+After the completion of the write operation, the input message passed to the write file node is sent to the output port.
 
 ## Use Cases
 
