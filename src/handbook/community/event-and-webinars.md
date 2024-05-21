@@ -8,7 +8,7 @@ At FlowFuse, we are committed to delivering value to our customers and users. Th
 
 ### Monthly Webinars
 
-Every month, we host live webinars where experts share their knowledge, provide updates on FlowFuse, and offer the opportunity for community members to ask questions directly during the webinar.
+Every month, we host live webinars where experts share their knowledge, provide updates on FlowFuse, and offer the opportunity for community members to ask questions directly during the webinar. Additionally, we allow users to watch past webinars at their convenience.
 
 [FlowFuse Webinars](/webinars/).
 

@@ -8,11 +8,11 @@ navTitle: Forums and Support
 
 We provide a comprehensive support and community platform for FlowFuse users, developers, and enthusiasts. Our forums and support resources are designed to empower you with the knowledge, assistance, and collaboration you need to make the most out of FlowFuse and Node-RED.
 
-At FlowFuse, we believe in fostering a community that is not only knowledgeable but also supportive and inclusive. We encourage you to explore our [Community Guidelines](./community-guidelines/) to understand how you can contribute positively to this dynamic ecosystem.
+At FlowFuse, we believe in fostering a community that is not only knowledgeable but also supportive and inclusive. We encourage you to explore our [Community Guidelines](./community-guidelines.md/) to understand how you can contribute positively to this dynamic ecosystem.
 
 ### Forums
 
-The FlowFuse forums are key places for discussions, problem-solving, and community support. To ensure productive and respectful interactions, community members should adhere to the following guidelines:
+The FlowFuse forums are key places for discussions, problem-solving, and community support. To maintain a structured and detailed forum, community members should adhere to the following guidelines:
 
 - **Stay On Topic**: Keep your posts relevant to the discussion topic. If you have a new question or issue, start a new thread rather than diverting an existing one.
 - **Use Clear Titles**: Make your thread titles clear and descriptive to help others understand the topic at a glance.
@@ -26,27 +26,27 @@ You can access the forum here:
 
 ### Other Support
 
-In addition to the forum, there are several support options available for FlowFuse users:
+In addition to the forum, we also offer:
 
 - **Documentation**: Extensive documentation is available on the FlowFuse websites. This should be your first stop for information on features, configuration, and troubleshooting.
   - [FlowFuse Documentation](/docs/)
 
-- **Tutorials and Guides**: We offer detailed tutorials and guides to help you get started and master advanced topics.
-  - [FlowFuse Blogs](/blog/)
+- **Tutorials and Guides**: Detailed tutorials and guides to help you get started and master advanced topics.
+  - [FlowFuse Tutorials and Guides](/tutorials/)
 
-- **Ebook**: Access the ultimate beginner guide to professional Node-RED.
+- **Ebook**: The ultimate beginner guide to professional Node-RED.
   - [The Ultimate Beginner Guide to a Professional Node-RED](/ebooks/beginner-guide-to-a-professional-nodered/)
 
--  **Webinars**: Attend our live webinars to learn directly from experts, get insights into best practices, and interact with the community additionally you can watch past webinars as well.
-  - [FlowFuse Webinars](/webinars/)
+- **Webinars**: Live webinars where experts share their knowledge, provide updates on FlowFuse, and offer the opportunity for community members to ask questions directly during the webinar.
+  - [FlowFuse Webinars](./event-and-webinars.md/#monthly-webinars)
 
-- **Community Discord**: Join the community Discord channel where all users discuss about FlowFuse and Node-RED, share resources, and ask questions.
+- **Community Discord**: A channel for users to discuss FlowFuse and Node-RED, share resources, and ask questions.
   - [Discord Channel](https://discord.gg/2RrvW8dkrF)
 
-- **Ticket Support and Instant Chat**: Get help through our help center for more personalized and real-time support.
+- **Ticket Support and Instant Chat**: Personalized and real-time support through our help center.
   - [FlowFuse Help Center](/support/)
 
-- **GitHub Issues**: If you encounter a bug or have a feature request, use GitHub to report it. Be sure to provide detailed information to help the developers understand and address your issue.
+- **GitHub Issues**: A platform for submitting issues for new features or bug reports. Provide detailed information to help our developers understand and address your issue.
   - [FlowFuse GitHub](https://github.com/FlowFuse)
 
 Utilizing these forums and support resources allows you to effectively resolve issues, learn new skills, and contribute to the community's collective knowledge. Remember always to engage respectfully and constructively to maintain a positive and supportive environment for all members.
