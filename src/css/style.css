@@ -258,6 +258,15 @@ dl.message-properties {
     margin-left: 0.5rem;
 }
 
+.blog-update-notes {
+    background-color: theme(colors.indigo.50);
+    border-radius: 4px;
+    border: 2px solid theme(colors.indigo.200);
+    padding: 1rem;
+    border-radius: 0.5rem;
+    margin-top: 1rem;
+}
+
 /*
     prevent top margin on first/hero img of a blog post
 */
