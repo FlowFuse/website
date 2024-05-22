@@ -35,7 +35,7 @@ Join Steve McLaughlin from FlowFuse as he showcases how easy it is to use Node-R
 
 Node-RED Quick Tips - Rob Marcer, FlowFuse Developer Educator has a weekly series of Node-RED hints and tips
 * [Node-RED Tips - Importing, Exporting, and Grouping Flows](/node-red/learning-resources/quick-tips/node-red-tips-5//)
-* [Node-RED Tips - Smooth, Catch, and Math](/blog/2023/03/3-quick-node-red-tips-4/)
+* [Node-RED Tips - Smooth, Catch, and Math](/node-red/learning-resources/quick-tips/node-red-tips-4/)
 
 ## From the Community
 

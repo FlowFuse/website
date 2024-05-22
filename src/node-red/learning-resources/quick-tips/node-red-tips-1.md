@@ -10,7 +10,7 @@ authors: ["rob-marcer"]
 image: /node-red/learning-resources/quick-tips/images/nr-quicktips.jpg
 ---
 
-# Node-RED Tips - Wiring Shortcuts
+# {{ meta.title }}
 
 There is usually more than one way to complete a given task in software and Node-RED is no exception. In this blog post we are going to share three useful tips to save yourself time when working on your flows.
 

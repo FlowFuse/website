@@ -9,9 +9,9 @@ date: 2023-03-27 12:00:00
 authors: ["rob-marcer"]
 image: /node-red/learning-resources/quick-tips/images/nr-quicktips.jpg
 ---
+# {{ meta.title }}
 
 There is usually more than one way to complete a given task in software, and Node-RED is no exception. In each of this series of blog posts, we are going to share three useful tips to save yourself time when working on your flows.
-<!--more-->
 
 ### 1. Copy and share your flows using Export and Import
 
@@ -72,9 +72,9 @@ We hope you found these tips useful, if you'd like to suggest some of your own t
 
 You can read our previous Node-RED tips here.
 
-[Node-RED Tips - Smooth, Catch, and Math](/blog/2023/03/3-quick-node-red-tips-4/)\
-[Node-RED Tips - Exec, Filter, and Debug](/blog/2023/03/3-quick-node-red-tips-3/)\
-[Node-RED Tips - Deploying, Debugging, and Delaying](/blog/2023/02/3-quick-node-red-tips-2/)\
+[Node-RED Tips - Smooth, Catch, and Math](/node-red/learning-resources/quick-tips/node-red-tips-4/)\
+[Node-RED Tips - Exec, Filter, and Debug](/node-red/learning-resources/quick-tips/node-red-tips-3/)\
+[Node-RED Tips - Deploying, Debugging, and Delaying](/node-red/learning-resources/quick-tips/node-red-tips-2/)\
 [Node-RED Tips - Wiring Shortcuts
-](/blog/2023/02/3-quick-node-red-tips-1/)
+](/node-red/learning-resources/quick-tips/node-red-tips-1/)
 

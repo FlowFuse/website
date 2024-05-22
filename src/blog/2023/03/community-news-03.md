@@ -31,8 +31,8 @@ Join Nick O'Leary, FlowFuse CTO, as he presents an Introduction to FlowFuse and 
 [Introduction to Node-RED](https://www.youtube.com/watch?v=47EvfmJji-k) - An in-depth webinar recording on key Node-RED concepts and demonstration on how to get started with Node-RED.
 
 Node-RED Quick Tips - Rob Marcer, FlowFuse Developer Educator has a weekly series of Node-RED hints and tips
-* [Tips #1](/blog/2023/02/3-quick-node-red-tips-1/)
-* [Tips #2](/blog/2023/02/3-quick-node-red-tips-2/)
+* [Tips #1](/node-red/learning-resources/quick-tips/node-red-tips-1/)
+* [Tips #2](/node-red/learning-resources/quick-tips/node-red-tips-2/)
 
 ## From the Community
 
