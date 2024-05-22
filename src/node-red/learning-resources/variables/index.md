@@ -6,14 +6,6 @@ meta:
 date: 2024-05-06
 authors: ["sumit-shinde"]
 image: /node-red/learning-resources/variables/images/understanding-node-red.png
-tags:
-   - posts
-   - node-red
-   - node-red variables
-   - node-red global variable
-   - node-red context variable
-   - node-red flow variable
-   - node-red environment variables
 ---
 # Understanding Node, Flow, Global, and Environment Variables in <span style="white-space: nowrap;">Node-RED</span>
 

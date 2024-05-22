@@ -50,6 +50,7 @@ redirects:
   - { "from": "/blog/2023/03/3-quick-node-red-tips-4/", "to": "/node-red/learning-resources/quick-tips/node-red-tips-4/" }
   - { "from": "/blog/2023/03/3-quick-node-red-tips-5/", "to": "/node-red/learning-resources/quick-tips/node-red-tips-5/" }
   - { "from": "/blog/2023/04/3-quick-node-red-tips-6/", "to": "/node-red/learning-resources/quick-tips/node-red-tips-6/" }
+  - { "from": "/blog/2023/06/3-quick-node-red-tips-7/", "to": "/node-red/learning-resources/quick-tips/node-red-tips-7/" }
   - { "from": "/blog/2024/05/understanding-node-flow-global-environment-variables-in-node-red/", "to": "/node-red/learning-resources/variables/" }
   - { "from": "/product/", "to": "/product/features/" }
   - { "from": "/product/why-flowfuse/", "to": "/product/features/" }

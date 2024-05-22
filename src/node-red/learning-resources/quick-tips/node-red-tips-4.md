@@ -13,8 +13,6 @@ image: /node-red/learning-resources/quick-tips/images/nr-quicktips.jpg
 
 There is usually more than one way to complete a given task in software, and Node-RED is no exception. In each of this series of blog posts, we are going to share three useful tips to save yourself time when working on your flows.
 
-<!--more-->
-
 ### 1. Use the Smooth node to get the minimum and maximum values of your payloads
 
 When taking data in from sensors sometimes a spurious value can be sent into your flow. This can result in oddities in a graph or even misfiring of actions such as turning on a heating system. The Smooth custom node allows you to store the min and max of a payload for the last few messages received.

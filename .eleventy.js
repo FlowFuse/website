@@ -541,6 +541,17 @@ module.exports = function(eleventyConfig) {
 
                 nav[tag].groups = Object.values(groups).sort(sortChildren)
                 
+                nav[tag].groups.forEach((group) => {
+                    if (group.children) {
+                        group.children.forEach((child) => {
+                            if (child.children) {
+                                child.children.sort(sortChildren)
+                            }
+                        })
+                        group.children.sort(sortChildren)
+                    }
+                })
+
                 let group = nav['learning-resources'];
                 if (group && group.children) {
                     group.children.forEach((child) => {

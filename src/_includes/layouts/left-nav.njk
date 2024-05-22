@@ -2,13 +2,13 @@
 <div class="border-r" data-{{nav}}>
     <ul class="handbook-nav" data-el="navigation">
         {% if nav == "learning-resources" %}
-        <li>
-            <a href="/node-red/">Node-RED</a>
-        </li>
+            <li>
+                <a href="/node-red/">Node-RED</a>
+            </li>
         {% else %}
-        <li class="{% if "/{{ path }}/" === page.url %}active{% endif %}">
-            <a href="/{{ path }}/">{{ nav }}</a>
-        </li>
+            <li class="{% if "/{{ nav }}/" === page.url %}active{% endif %}">
+                <a href="/{{ nav }}/">{{ nav }}</a>
+            </li>
         {% endif %}
         {% for group in collections
             .nav[nav]

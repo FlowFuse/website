@@ -26,4 +26,4 @@ Unlock the potential of subflows, link nodes, and the range node to create modul
 #### [Dashboard](/node-red/learning-resources/quick-tips/node-red-tips-7/)
 Save time with Node-RED Dashboards using tips on responsive layouts, adding multiple data series to charts, and persisting slider values.
 
-Browse through these articles and elevate your Node-RED skills with our quick and easy-to-follow tips. Happy coding!
+Browse through these articles and elevate your Node-RED skills with our quick and easy-to-follow tips.

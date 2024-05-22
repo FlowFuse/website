@@ -70,11 +70,3 @@ Overall, the group feature in Node-RED is a valuable tool that can help users be
 
 We hope you found these tips useful, if you'd like to suggest some of your own tips which you think we should share in our future blog posts please [get in touch](mailto:contact@flowfuse.com).
 
-You can read our previous Node-RED tips here.
-
-[Node-RED Tips - Smooth, Catch, and Math](/node-red/learning-resources/quick-tips/node-red-tips-4/)\
-[Node-RED Tips - Exec, Filter, and Debug](/node-red/learning-resources/quick-tips/node-red-tips-3/)\
-[Node-RED Tips - Deploying, Debugging, and Delaying](/node-red/learning-resources/quick-tips/node-red-tips-2/)\
-[Node-RED Tips - Wiring Shortcuts
-](/node-red/learning-resources/quick-tips/node-red-tips-1/)
-

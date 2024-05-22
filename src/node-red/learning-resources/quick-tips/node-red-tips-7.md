@@ -64,10 +64,3 @@ If you'd like to view this slider and the flow which makes it work on your own N
 {% endrenderFlow %}
 
 We hope you found these tips useful, if you'd like to suggest some of your own tips which you think we should share in our future blog posts please [get in touch](mailto:contact@flowfuse.com). You can also read some of our previous Node-RED tips using the links below.
-
-[Node-RED Tips - Subflows, Link Nodes, and the Range Node](/node-red/learning-resources/quick-tips/node-red-tips-6/)\
-[Node-RED Tips - Importing, Exporting, and Grouping Flows](/node-red/learning-resources/quick-tips/node-red-tips-5//)\
-[Node-RED Tips - Smooth, Catch, and Maths](/node-red/learning-resources/quick-tips/node-red-tips-4/)\
-[Node-RED Tips - Exec, Filter, and Debug](/node-red/learning-resources/quick-tips/node-red-tips-3/)\
-[Node-RED Tips - Deploying, Debugging, and Delaying](/node-red/learning-resources/quick-tips/node-red-tips-2/)\
-[Node-RED Tips - Wiring Shortcuts](/node-red/learning-resources/quick-tips/node-red-tips-1/)

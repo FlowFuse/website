@@ -40,7 +40,7 @@ On June 27, FlowFuse is doing a webinar with our friends at InfluxDB. A great op
     - [Using Node-RED to Visualize Industrial Production Data via Modbus](/blog/2023/05/visualize-production-data-via-modbus-in-node-red/)
     - [Best Practices Integrating a Modbus Device With Node-RED](/blog/2023/05/integrating modbus with node-red/)
 
-- [Node-RED Tips - Dashboard Edition](/blog/2023/06/3-quick-node-red-tips-7/) - A new set of Node-RED quick tips that are focused on using Node-RED Dashboard.
+- [Node-RED Tips - Dashboard Edition](//node-red/learning-resources/quick-tips/node-red-tips-7//) - A new set of Node-RED quick tips that are focused on using Node-RED Dashboard.
 
 - [Persisting chart data in Node-RED Dashboards](/blog/2023/05/persisting-chart-data-in-node-red/) - How to store data from the Node-RED Dasbhaord chart node.
 
