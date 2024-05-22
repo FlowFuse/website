@@ -2,7 +2,7 @@
 title: Why you need a low-code platform
 subtitle: "Empowering Domain Experts with Low-Code Platforms: A Path to Seamless Digital Transformation"
 description: Discover how low-code platforms like FlowFuse empower domain experts to drive digital transformation. Learn how these tools enhance collaboration, close project gaps, and foster innovation, ensuring project success from start to finish.
-date: 2024-05-21
+date: 2024-05-22
 authors: ["grey-dziuba"]
 image: /blog/2024/05/images/why-you-need-a-low-code-platform.png
 tags:
@@ -58,6 +58,8 @@ FlowFuse is your solution to solving Shadow-IT and paving the way for your [Citi
 With security and scalability top of mind, FlowFuse allows IT teams to manage their Node-RED deployments with features like Role-Based Access Control (RBAC), remote management of Node-RED runtimes, and backup and recovery of Node-RED deployments called Snapshots. These are just a few of the features that elevate an already widely used solution, making it ready for enterprise networks.
 
 ### Low-code platform success in the real world
+
+Low-code platforms are industry-agnostic, with applications varying from industrial manufacturing to news agencies. Here are some customer success stories of how the FlowFuse low-code platform has helped:
 
 - [**Abrasive Technology:**](/customer-stories/leveraging-node-red-and-flowfuse-to-automate-precision-manufacturing/) Leveraged Node-RED and FlowFuse to optimize automation and improve operational efficiency. The transition to FlowFuse Cloud has enhanced their ability to manage Node-RED instances effectively, supporting innovation and agility in their manufacturing processes.
 
