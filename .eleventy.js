@@ -466,6 +466,18 @@ module.exports = function(eleventyConfig) {
                 hierarchy.reduce((accumulator, currentValue, i) => {
                     // create a nested object detailing the full handbook hierarchy
                     if (!accumulator[currentValue]) {
+                        // heck for subGroup and use it to group the pages
+                        if (i > 1 && page.data.subGroup) {
+                            if (!accumulator[page.data.subGroup]) {
+                                accumulator[page.data.subGroup] = {
+                                    'name': page.data.subGroup,
+                                    'order': page.data.navOrder || Number.MAX_SAFE_INTEGER,
+                                    'children': {},
+                                    'isSubGroup': true
+                                }
+                            }
+                            accumulator = accumulator[page.data.subGroup].children;
+                        }
                         accumulator[currentValue] = {
                             'name': currentValue,
                             'url': page.data.redirect?.to || page.data.redirect || page.url,
@@ -475,7 +487,6 @@ module.exports = function(eleventyConfig) {
                         if (page.data.navTitle) {
                             accumulator[currentValue].name = page.data.navTitle
                         }
-                        // TODO: navGroup will be used in the rendering of the ToC at a later stage
                         if (page.data.navGroup) {
                             accumulator[currentValue].group = page.data.navGroup
                         }
@@ -552,41 +563,18 @@ module.exports = function(eleventyConfig) {
                     }
                 })
 
-                let group = nav['learning-resources'];
-                if (group && group.children) {
-                    group.children.forEach((child) => {
-                        if (child.children && child.url) {
-                            let grandchildGroups = {};
-                            let looseGrandchildren = []; // Array to hold loose grandchildren
-
-                            for (let grandchild of child.children) {
-                                let grandchildGroup;
-                                let grandchildGroupName;
-                                if (grandchild.group && grandchild.group !== group.group) {
-                                    grandchildGroup = grandchild.group;
-                                    grandchildGroupName = grandchild.group.split('/').filter(n => n).pop();
-                                } else {
-                                    // If there is no group, add the grandchild directly to the looseGrandchildren array
-                                    looseGrandchildren.push(grandchild);
-                                    continue;
-                                }
-
-                                if (!grandchildGroups[grandchildGroup]) {
-                                    grandchildGroups[grandchildGroup] = {
-                                        name: grandchildGroupName,
-                                        order: Number.MAX_SAFE_INTEGER,
-                                        children: []
-                                    };
-                                }
-                                grandchildGroups[grandchildGroup].children.push(grandchild);
-                            }
-
-                            child.children = Object.values(grandchildGroups).concat(looseGrandchildren).sort(sortChildren);
+                function sortAllChildren(element) {
+                    if (element.children) {
+                        element.children.sort(sortChildren);
+                        // Update the URL of the group to point to the first child, only if it's a subGroup
+                        if (element.isSubGroup && element.children.length > 0) {
+                            element.url = element.children[0].url;
                         }
-                    });
-
-                    group.children.sort(sortChildren);
+                        element.children.forEach(sortAllChildren);
+                    }
                 }
+                
+                nav[tag].groups.forEach(sortAllChildren);
             }
         }
 

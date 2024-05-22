@@ -8,7 +8,7 @@ coreNodeCategory: "function"
 permalink: "node-red/learning-resources/core-nodes/{{ node.name | lower | replace(\" \", \"\") }}/"
 eleventyComputed:
   navTitle: "{{ node.name }}"
-  navGroup: "{{ coreNodeCategory }}"
+  subGroup: "{{ coreNodeCategory }}"
 ---
 
 {% include "core-node-docs.njk" %}
