@@ -95,7 +95,7 @@ Now, you'll notice the timestamp printed on the debug tab every 5 seconds, confi
 
 ## Creating a Simple Project
 
-Now that you're familiar with sending and receiving data using MQTT, let's dive into creating a simple project in this section. We'll transmit temperature data obtained from a temperature sensor from one instance of Node-RED to another. This project will provide a practical demonstration of how MQTT can be utilized for communication. If you don't know how to run Node-RED on your edge device and read sensor data data, please refer to this guide on [Setting up Node-RED on Raspberry Pi](/blog/2024/05/how-to-setup-node-red-on-raspberry-pi).
+Now that you're familiar with sending and receiving data using MQTT, let's dive into creating a simple project in this section. We'll transmit temperature data obtained from a temperature sensor from one instance of Node-RED to another. This project will provide a practical demonstration of how MQTT can be utilized for communication. If you don't know how to run Node-RED on your edge device and read sensor data data, please refer to this guide on Setting up Node-RED on Raspberry Pi.
 
 ### Publishing Temperature Data to a Topic on the MQTT Broker
 
