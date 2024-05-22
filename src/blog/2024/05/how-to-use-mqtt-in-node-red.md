@@ -95,7 +95,7 @@ Now, you'll notice the timestamp printed on the debug tab every 5 seconds, confi
 
 ## Creating a Simple Project
 
-Now that you're familiar with sending and receiving data using MQTT, let's dive into creating a simple project in this section. We'll transmit temperature data obtained from a temperature sensor from one instance of Node-RED to another. This project will provide a practical demonstration of how MQTT can be utilized for communication. If you don't know how to run Node-RED on your edge device and read sensor data data, please refer to this guide on [Setting up Node-RED on Raspberry Pi](src/blog/2024/05/how-to-setup-node-red-on-raspberry-pi).
+Now that you're familiar with sending and receiving data using MQTT, let's dive into creating a simple project in this section. We'll transmit temperature data obtained from a temperature sensor from one instance of Node-RED to another. This project will provide a practical demonstration of how MQTT can be utilized for communication. If you don't know how to run Node-RED on your edge device and read sensor data data, please refer to this guide on [Setting up Node-RED on Raspberry Pi](/blog/2024/05/how-to-setup-node-red-on-raspberry-pi).
 
 ### Publishing Temperature Data to a Topic on the MQTT Broker
 
@@ -106,7 +106,7 @@ Now that you're familiar with sending and receiving data using MQTT, let's dive 
 
 ### Subscribing to the Topic on the MQTT Broker to Receive Temperature Data
 
-Now, create the new instance in which we will receive the temperature data by subscribing to the topic. Refer to this guide which shows how you can [create a new instance in FlowFuse](https://flowfuse.com/docs/user/introduction/#creating-a-node-red-instance).
+Now, create the new instance in which we will receive the temperature data by subscribing to the topic. Refer to this guide which shows how you can [create a new instance in FlowFuse](/docs/user/introduction/#creating-a-node-red-instance).
 
 1. Drag an **mqtt-in** node onto the canvas, and configure it with the broker to which you are sending temperature data.
 2. Enter "temp" in the topic field and set **QoS** to **2**.
@@ -116,8 +116,8 @@ Now, create the new instance in which we will receive the temperature data by su
 
 Now, you will see the temperature data printed in the debug tab in the sidebar. Additionally, you can display this data on a chart using Dashboard 2.0 or store it in a database. For details refer to this following guides:
 
-- [Sending data to influxDB](https://flowfuse.com/blog/2023/07/connect-node-red-to-influxdb/)
-- [Charting Data in on Dashboard 2.0](https://flowfuse.com/blog/2023/09/dashboard-chart-for-rest-api-data/)
+- [Sending data to influxDB](/blog/2023/07/connect-node-red-to-influxdb/)
+- [Charting Data in on Dashboard 2.0](/blog/2023/09/dashboard-chart-for-rest-api-data/)
 
 ## Best Practices
 
@@ -129,7 +129,7 @@ Ensuring the security and efficiency of your MQTT and Node-RED deployments is cr
 
 - **Authentication and Authorization:** Implement strong authentication mechanisms to verify the identity of clients connecting to the broker. Additionally, enforce access control policies to restrict clients' actions based on their roles and permissions. For instance, you can allow specific clients to only publish or subscribe to data as needed.
 
-- **Environment Variables:** Utilize environment variables to prevent exposing your sensitive configuration data within the flow. For more details, refer to  [Using Environment varriables](https://flowfuse.com/blog/2023/01/environment-variables-in-node-red/)
+- **Environment Variables:** Utilize environment variables to prevent exposing your sensitive configuration data within the flow. For more details, refer to  [Using Environment varriables](/blog/2023/01/environment-variables-in-node-red/)
 
 ### Performance Optimization
 
