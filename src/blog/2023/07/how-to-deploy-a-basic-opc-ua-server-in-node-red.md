@@ -9,6 +9,7 @@ tags:
     - posts
     - flowfuse
     - node-red
+    - OPC-UA
 ---
 
 This article is the first part of a series of OPC-UA content.  Here, we will explain some basic concepts of OPC-UA as they apply to building a server in Node-RED, then walk through and deploy an example OPC-UA Server.  
