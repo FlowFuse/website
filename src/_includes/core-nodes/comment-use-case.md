@@ -22,7 +22,7 @@ what the flow or nodes do in the sequence, business logic and requirements docum
 next to the flow increased developer effeciency.
 
 The comment node can be added to any open space in the editor, and it's advised
-to add a comment to all [flow groups](/blog/2023/03/3-quick-node-red-tips-5/#3.-group-nodes-together-to-make-your-flows-easier-to-read).
+to add a comment to all [flow groups](/node-red/learning-resources/quick-tips/node-red-tips-5//#3.-group-nodes-together-to-make-your-flows-easier-to-read).
 
 As the comment node will not take up more space if your write a larger comment,
 Node-RED allows you to be more explicit and elaborate further in your comments.

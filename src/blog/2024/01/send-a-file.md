@@ -132,7 +132,7 @@ Once we have a file ready to be sent, we now need to configure the receiving sid
 
 A link to the flow can be found [here](https://flows.nodered.org/flow/effb53752e5d6f767b3c7e5d41a4a6e8).
 
-To import the flow, follow these [instructions](/blog/2023/03/3-quick-node-red-tips-5/#1.-copy-and-share-your-flows-using-export-and-import).
+To import the flow, follow these [instructions](/node-red/learning-resources/quick-tips/node-red-tips-5//#1.-copy-and-share-your-flows-using-export-and-import).
 
 A Simple HTTP In node can be used in the form of a Post, ensuring the configuration allows for a file.
 

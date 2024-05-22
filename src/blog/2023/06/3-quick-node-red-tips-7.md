@@ -69,7 +69,7 @@ If you'd like to view this slider and the flow which makes it work on your own N
 We hope you found these tips useful, if you'd like to suggest some of your own tips which you think we should share in our future blog posts please [get in touch](mailto:contact@flowfuse.com). You can also read some of our previous Node-RED tips using the links below.
 
 [Node-RED Tips - Subflows, Link Nodes, and the Range Node](/blog/2023/04/3-quick-node-red-tips-6/)\
-[Node-RED Tips - Importing, Exporting, and Grouping Flows](/blog/2023/03/3-quick-node-red-tips-5/)\
+[Node-RED Tips - Importing, Exporting, and Grouping Flows](/node-red/learning-resources/quick-tips/node-red-tips-5//)\
 [Node-RED Tips - Smooth, Catch, and Maths](/blog/2023/03/3-quick-node-red-tips-4/)\
 [Node-RED Tips - Exec, Filter, and Debug](/blog/2023/03/3-quick-node-red-tips-3/)\
 [Node-RED Tips - Deploying, Debugging, and Delaying](/blog/2023/02/3-quick-node-red-tips-2/)\

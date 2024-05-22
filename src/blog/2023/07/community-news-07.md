@@ -39,7 +39,7 @@ Our next webinar will be focused on the device management capabilities in the Fl
 
 - Two new Node-RED Nodes Explained articles
     - [Nodes explained: Split](/node-red/learning-resources/core-nodes/split/)
-    - [Nodes explained: Filter](/node-red/learning-resources/core-nodes/rbe/)
+    - [Nodes explained: Filter](/node-red/learning-resources/core-nodes/filter//)
 
 ## From the Community
 
