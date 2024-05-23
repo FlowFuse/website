@@ -21,6 +21,7 @@ const imageHandler = require('./lib/image-handler.js')
 const site = require("./src/_data/site");
 const coreNodeDoc = require("./lib/core-node-docs.js");
 const yaml = require("js-yaml");
+const eleventyNavigationPlugin = require("@11ty/eleventy-navigation");
 
 // Skip slow optimizations when developing i.e. serve/watch or Netlify deploy preview
 const DEV_MODE = process.env.ELEVENTY_RUN_MODE !== "build" || process.env.CONTEXT === "deploy-preview" 
@@ -96,6 +97,15 @@ module.exports = function(eleventyConfig) {
         <script type="module">const flow${flowId} = ${JSON.stringify(flow)};
         new FlowRenderer().renderFlows(JSON.parse(flow${flowId}), { container: document.getElementById('nr-flow-${flowId}') })</script>`
     });
+
+    // Read the JSON file with core nodes
+    const coreNodes = JSON.parse(fs.readFileSync(path.resolve(__dirname, 'src/_data/coreNodes.json'), 'utf-8'));
+
+    // Transform coreNodes object into an array
+    const coreNodesArray = Object.entries(coreNodes).map(([key, nodes]) => ({ key, nodes }));
+  
+    // Add coreNodesArray to global data
+    eleventyConfig.addGlobalData('coreNodesArray', coreNodesArray);
 
     eleventyConfig.addAsyncShortcode("coreNodeDoc", async function (category, node) {
         return await coreNodeDoc(category, node)
@@ -431,7 +441,6 @@ module.exports = function(eleventyConfig) {
 
         createNav('handbook')
         createNav('docs')
-        createNav('node-red')
 
         function createNav(tag) {
             const groupOrder = {
@@ -464,17 +473,6 @@ module.exports = function(eleventyConfig) {
                     // create a nested object detailing the full handbook hierarchy
                     if (!accumulator[currentValue]) {
                         // check for subGroup and use it to group the pages
-                        if (i > 1 && page.data.subGroup) {
-                            if (!accumulator[page.data.subGroup]) {
-                                accumulator[page.data.subGroup] = {
-                                    'name': page.data.subGroup,
-                                    'order': page.data.navOrder || Number.MAX_SAFE_INTEGER,
-                                    'children': {},
-                                    'isSubGroup': true
-                                }
-                            }
-                            accumulator = accumulator[page.data.subGroup].children;
-                        }
                         accumulator[currentValue] = {
                             'name': currentValue,
                             'url': page.data.redirect?.to || page.data.redirect || page.url,
@@ -559,19 +557,6 @@ module.exports = function(eleventyConfig) {
                         group.children.sort(sortChildren)
                     }
                 })
-
-                function sortAllChildren(element) {
-                    if (element.children) {
-                        element.children.sort(sortChildren);
-                        // Update the URL of the group to point to the first child, only if it's a subGroup
-                        if (element.isSubGroup && element.children.length > 0) {
-                            element.url = element.children[0].url;
-                        }
-                        element.children.forEach(sortAllChildren);
-                    }
-                }
-                
-                nav[tag].groups.forEach(sortAllChildren);
             }
         }
 
@@ -585,6 +570,7 @@ module.exports = function(eleventyConfig) {
     eleventyConfig.addPlugin(codeClipboard)
     eleventyConfig.addPlugin(pluginMermaid)
     eleventyConfig.addPlugin(schema);
+    eleventyConfig.addPlugin(eleventyNavigationPlugin);
 
     const markdownItOptions = {
         html: true,

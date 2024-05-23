@@ -1,6 +1,8 @@
 ---
-navTitle: Deploying, Debugging, and Delaying
-navOrder: 2
+eleventyNavigation:
+  key: Deploying, Debugging, and Delaying
+  parent: Quick Tips
+  order: 2
 meta:
     title: Node-RED Tips - Deploying, Debugging, and Delaying
     description: Save yourself time when working on Node-RED with these three tips.

@@ -1,5 +1,7 @@
 ---
-navGroup: Learning Resources
+eleventyNavigation:
+  key: Variables
+  order: 3
 meta:
    title: Understanding Node, Flow, Global, and Environment Variables in Node-RED
    description: Understand Node-RED node, flow, global, and environment variables. Learn to initiate, retrieve, and manage them effortlessly.

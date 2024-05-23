@@ -8,7 +8,8 @@
         @apply flex flex-col-reverse md:grid;
     }
 
-    .handbook-nav {
+    .handbook-nav,
+    .learning-resources-nav {
         border-right: 1px solid right;
         text-transform: capitalize;
         --nav-weight: 600;

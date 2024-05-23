@@ -7,10 +7,9 @@ pagination:
 coreNodeCategory: "network"
 permalink: "node-red/core-nodes/{{ node.name | lower | replace(\" \", \"\") }}/"
 eleventyComputed:
-  meta:
-    title: "{{ node.name }}"
-  navTitle: "{{ node.name }}"
-  subGroup: "{{ coreNodeCategory }}"
+  eleventyNavigation:
+    key: "{{ node.name }}"
+    parent: "{{ coreNodeCategory }}"
 ---
 
 {% include "core-node-docs.njk" %}

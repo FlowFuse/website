@@ -1,7 +1,6 @@
 {
-    "layout": "layouts/handbook.njk",
-    "nav": "node-red",
+    "layout": "layouts/learning-resources.njk",
     "tags": [
-        "node-red"
+        "learningResources"
     ]
 }

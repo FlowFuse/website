@@ -1,6 +1,7 @@
 ---
-navTitle: Quick Tips
-navGroup: Learning Resources
+eleventyNavigation:
+  key: Quick Tips
+  order: 2
 ---
 # Node-RED Quick Tips
 

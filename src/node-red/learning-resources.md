@@ -1,7 +1,7 @@
 ---
-navTitle: Overview
-navGroup: Learning Resources
-navOrder: 1
+eleventyNavigation:
+  key: Overview
+  order: 0
 ---
 # Node-RED Learning Resources
 

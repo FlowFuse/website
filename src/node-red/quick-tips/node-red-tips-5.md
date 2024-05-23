@@ -1,6 +1,8 @@
 ---
-navTitle: Importing, Exporting, and Grouping Flows
-navOrder: 5
+eleventyNavigation:
+  key: Importing, Exporting, and Grouping Flows
+  parent: Quick Tips
+  order: 5
 meta:
     title: Node-RED Tips - Importing, Exporting, and Grouping Flows
     description: "Learn how to save time on Node-RED with three essential techniques: exporting and importing flows, accessing example flows from custom nodes, and organizing nodes using groups for improved clarity and management."

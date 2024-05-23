@@ -1,6 +1,8 @@
 ---
-navTitle: Wiring Shortcuts
-navOrder: 1
+eleventyNavigation:
+  key: Wiring Shortcuts
+  parent: Quick Tips
+  order: 1
 meta:
     title: Node-RED Tips - Wiring Shortcuts
     description: "Learn three valuable Node-RED tips to enhance your workflow: search nodes efficiently, split code sections with link nodes, and link multiple inputs/outputs in one command."

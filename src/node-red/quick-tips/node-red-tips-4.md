@@ -1,6 +1,8 @@
 ---
-navTitle: Smooth, Catch, and Math
-navOrder: 4
+eleventyNavigation:
+  key: Smooth, Catch, and Math
+  parent: Quick Tips
+  order: 4
 meta:
     title: Node-RED Tips - Smooth, Catch, and Math
     description: Save yourself time when working on Node-RED with these three tips.

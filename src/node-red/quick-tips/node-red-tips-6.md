@@ -1,6 +1,8 @@
 ---
-navTitle: Subflows, Link Nodes, and the Range Node
-navOrder: 6
+eleventyNavigation:
+  key: Subflows, Link Nodes, and the Range Node
+  parent: Quick Tips
+  order: 6
 meta:
     title: Node-RED Tips - Subflows, Link Nodes, and the Range Node
     description: "Learn how to streamline your Node-RED projects with these essential tips: Subflows, Link Nodes, and Range Node for efficient workflow organization."

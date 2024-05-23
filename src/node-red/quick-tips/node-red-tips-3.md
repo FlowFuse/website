@@ -1,6 +1,8 @@
 ---
-navTitle: Exec, Filter, and Debug
-navOrder: 3
+eleventyNavigation:
+  key: Exec, Filter, and Debug
+  parent: Quick Tips
+  order: 3 
 meta:
     title: Node-RED Tips - Exec, Filter, and Debug
     description: Save yourself time when working on Node-RED with these three tips.

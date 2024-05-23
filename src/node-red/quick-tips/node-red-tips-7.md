@@ -1,6 +1,8 @@
 ---
-navTitle: Dashboard
-navOrder: 7
+eleventyNavigation:
+  key: Dashboard
+  parent: Quick Tips
+  order: 7
 meta:
     title: Node-RED Tips - Dashboard
     description: Learn three practical tips for improving your Node-RED Dashboard workflow, such as creating responsive layouts, adding multiple data series to charts, and persisting slider values.
