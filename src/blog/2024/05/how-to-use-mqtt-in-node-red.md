@@ -82,7 +82,7 @@ When you open the Node-RED editor, you'll see the MQTT nodes already installed a
 3. In the topic field, enter the desired topic name.
 4. Set the **QoS** to **2** for accurate and guaranteed data delivery.
 5. Set **retain** to true if you want to retain the data.
-6. Connect the node's output, which is emitting the payload data you want to send to the MQTT broker, to the input of the mqtt-out node.
+6. Connect the node's output, which is emitting the payload data you want to send to the MQTT broker, to the input of the **mqtt-out** node.
 
 !["Screenshot of the mqtt-out node configuration"](./images/how-to-use-mqtt-mqtt-out-node.png "Screenshot of the mqtt-out node configuration"){data-zoomable}
 
@@ -93,7 +93,7 @@ When you open the Node-RED editor, you'll see the MQTT nodes already installed a
 3. Set **action** to **subscribe to a single topic** and  enter the topic name to which you want to subscribe for receiving data in the topic field.
 4. Set the **QoS** to **2**.
 5. Set the output to the desired format.
-6. Connect the output of the mqtt-in node to the input of the node to whom you want to pass the data for further processing or analysis.
+6. Connect the output of the **mqtt-in** node to the input of the node to whom you want to pass the data for further processing or analysis.
 
 !["Screenshot of the mqtt-in node configuration"](./images/how-to-use-mqtt-mqtt-in-node.png "Screenshot of the mqtt-in node configuration"){data-zoomable}
 
