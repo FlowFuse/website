@@ -111,9 +111,9 @@ To display data on the table, we use the **ui-table** widget in Dashboard 2.0. T
 
 For more information on ui-table refer to [ui-table docs](https://dashboard.flowfuse.com/nodes/widgets/ui-table.html)
 
-### Retrieve, Calculate and format income-expense data
+### Calculating total category-wise 
 
-In our application, we will display data on a chart, showing the total income and total expenses for analysis. This section will focus on retrieving, formatting, and calculating the necessary data for charting.
+In our application, we will display data on the chart, showing the total income and total expenses for analysis. In this section, we will calculate the total expenses and income using the function node.
 
 1. Drag the two **change** node onto the canvas.
 2. For the first **Change** node Set `msg.payload` to `global.income` and `msg.topic` to "income" and give it name "retrive income". For the second **Change** node, set `msg.payload` to `global.expense` and `msg.topic` to "expense" and give that second change node name "retrive expense".
@@ -141,12 +141,12 @@ In our application, we will display data on a chart, showing the total income an
 
 ### Displaying data on the chart 
 
-To display charts on the dashboard, we have to use the **ui-chart** widget which allows us to display different types of charts on a dashboard including linear, bar, scatter, etc. This accepts an array and object as input.
+To display charts on the dashboard, we have to use the ui-chart widget which allows us to display different types of charts on a dashboard including linear, bar, scatter, etc. This accepts an array and object as input.
 
 1. Drag a **ui-chart** widget onto the canvas.
 2. Double-click on the widget and select Type as **bar**.
 3. Configure the series to **category** and the y-axis to **amount**. This configuration informs the chart that the **amount** property of the input objects will be plotted on the y-axis of the chart.
-4. Connect the output of **join** node named "Combine Objects into Array" to input of the **ui-chart** widget
+4. Connect the output of the **ui-event** widget's output to the input of the **function** node and the **function** node's output to the **ui-chart** widget's output.
 
 !["Screenshot displaying the ui-chart widget's configuration"](./images/exploring-dashboard-2-widgets-chart-widget.png "Screenshot displaying the ui-chart widget's configuration"){data-zoomable}
 
