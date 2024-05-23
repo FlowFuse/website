@@ -4,14 +4,14 @@ The HTTP Response node allows you to send tailored HTTP responses back to client
 
 ## Configuring HTTP Response node
 
-- **Status code:** This field allows you to specify the HTTP status code to be included in the response, you can also set that with the `msg.statusCode`
-- **Headers:** with this feild you can add any custom HTTP headers to be included in the response. Headers provide additional information about the data being transferred between the client and server. You might use headers to specify the content type (Content-Type), set cookies, or provide caching directives. to set headers dynamically you can use `msg.headers` with JSON object containing headers.
+- **Status code:** This field allows you to specify the HTTP status code to be included in the response. You can also set it with `msg.statusCode`. For more information on status codes, refer to [MDN Docs on HTTP response status codes](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status).
+- **Headers:** With this field you can add any custom HTTP headers to be included in the response. Headers provide additional information about the data being transferred between the client and server. You might use headers to specify the content type (Content-Type), set cookies, or provide caching directives. to set headers dynamically you can use `msg.headers` with JSON object containing headers.
 - **Cookies:** To set cookies, you need to pass `msg.cookies` to the response node. The `msg.cookies` object should contain key-value pairs where the keys represent the names of the cookies, The value can be either a string to set the value of the cookie with default options, or it can be an object of options
 
 The valid options include:
 
 - **domain:** (String) Optional. Specifies the domain name for the cookie.
-- **expires:** (Date) Optional. Specifies the expiry date for the cookie in GMT. If not specified or set to 0, it creates a session cookie.
+- **expires:** (Date) Optional. Specifies the expiration date for the cookie in GMT. If not specified or set to 0, it creates a session cookie. Setting the expiry to 0 means the cookie has no defined expiration time and will be discarded at the end of the browsing session.
 - **maxAge:** (Number) Optional. Specifies the expiry date as relative to the current time in milliseconds.
 - **path:** (String) Optional. Specifies the path for the cookie. Defaults to '/'.
 - **value:** (String) Required. Specifies the value to use for the cookie.
