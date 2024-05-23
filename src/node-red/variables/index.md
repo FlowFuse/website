@@ -1,11 +1,12 @@
 ---
+navGroup: Learning Resources
 meta:
    title: Understanding Node, Flow, Global, and Environment Variables in Node-RED
    description: Understand Node-RED node, flow, global, and environment variables. Learn to initiate, retrieve, and manage them effortlessly.
    keywords: node-red, node-red variables, node-red global variable, node-red context variable, node-red flow variable, node-red environment variables
 date: 2024-05-06
 authors: ["sumit-shinde"]
-image: /node-red/learning-resources/variables/images/understanding-node-red.png
+image: /node-red/variables/images/understanding-node-red.png
 ---
 # Understanding Node, Flow, Global, and Environment Variables in <span style="white-space: nowrap;">Node-RED</span>
 

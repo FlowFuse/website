@@ -1,0 +1,7 @@
+{
+    "layout": "layouts/handbook.njk",
+    "nav": "node-red",
+    "tags": [
+        "node-red"
+    ]
+}

@@ -4,10 +4,8 @@ navOrder: 7
 meta:
     title: Node-RED Tips - Dashboard
     description: Learn three practical tips for improving your Node-RED Dashboard workflow, such as creating responsive layouts, adding multiple data series to charts, and persisting slider values.
-    keywords: how-to, node-red, dashboard,node-red tips
-date: 2023-06-01 12:00:00
-authors: ["rob-marcer"]
-image: /node-red/learning-resources/quick-tips/images/nr-quicktips.jpg
+    keywords: how-to, node-red, dashboard, node-red tips
+image: /node-red/quick-tips/images/nr-quicktips.jpg
 ---
 # {{ meta.title }}
 

@@ -26,9 +26,9 @@ redirects:
   - { "from": "/handbook/development/release/", "to": "/handbook/development/releases/" }
   - { "from": "/blog/2023/06/Flowforge-as-a-No-Code-Ethernet_IP-to-Profinet-Protocol-Converter/", "to": "/blog/2023/06/node-red-as-a-no-code-ethernet_ip-to-s7-protocol-converter/" }
   - { "from": "/docs/user/devices/", "to": "/docs/device-agent/introduction" }
-  - { "from": "/blog/2023/06/node-explained-split/", "to": "/node-red/learning-resources/core-nodes/split/"}
-  - { "from": "/blog/2023/07/node-explained-filter/", "to": "/node-red/learning-resources/core-nodes/filter/"}
-  - { "from": "/blog/2022/12/node-red-exec-explained/", "to": "/node-red/learning-resources/core-nodes/exec/"}
+  - { "from": "/blog/2023/06/node-explained-split/", "to": "/node-red/core-nodes/split/"}
+  - { "from": "/blog/2023/07/node-explained-filter/", "to": "/node-red/core-nodes/filter/"}
+  - { "from": "/blog/2022/12/node-red-exec-explained/", "to": "/node-red/core-nodes/exec/"}
   - { "from": "/blog/2023/05/Integrating Modbus with Node-RED", "to": "/blog/2023/05/integrating-modbus-with-node-red/"}
   - { "from": "/handbook/development/observability/", "to": "/handbook/development/ops/observability/" }
   - { "from": "/handbook/development/staging/", "to": "/handbook/development/ops/staging/" }
@@ -44,14 +44,14 @@ redirects:
   - { "from": "/handbook/development/guides/", "to": "/handbook/company/guides/" }
   - { "from": "/blog/2023/08/uns-article/", "to": "/blog/2023/08/isa-95-automation-pyramid-to-unified-namespace/" }
   - { "from": "/blog/2023/08/UNS-article/", "to": "/blog/2023/08/isa-95-automation-pyramid-to-unified-namespace/" }
-  - { "from": "/blog/2023/02/3-quick-node-red-tips-1/", "to": "/node-red/learning-resources/quick-tips/node-red-tips-1/" }
-  - { "from": "/blog/2023/02/3-quick-node-red-tips-2/", "to": "/node-red/learning-resources/quick-tips/node-red-tips-2/" }
-  - { "from": "/blog/2023/03/3-quick-node-red-tips-3/", "to": "/node-red/learning-resources/quick-tips/node-red-tips-3/" }
-  - { "from": "/blog/2023/03/3-quick-node-red-tips-4/", "to": "/node-red/learning-resources/quick-tips/node-red-tips-4/" }
-  - { "from": "/blog/2023/03/3-quick-node-red-tips-5/", "to": "/node-red/learning-resources/quick-tips/node-red-tips-5/" }
-  - { "from": "/blog/2023/04/3-quick-node-red-tips-6/", "to": "/node-red/learning-resources/quick-tips/node-red-tips-6/" }
-  - { "from": "/blog/2023/06/3-quick-node-red-tips-7/", "to": "/node-red/learning-resources/quick-tips/node-red-tips-7/" }
-  - { "from": "/blog/2024/05/understanding-node-flow-global-environment-variables-in-node-red/", "to": "/node-red/learning-resources/variables/" }
+  - { "from": "/blog/2023/02/3-quick-node-red-tips-1/", "to": "/node-red/quick-tips/node-red-tips-1/" }
+  - { "from": "/blog/2023/02/3-quick-node-red-tips-2/", "to": "/node-red/quick-tips/node-red-tips-2/" }
+  - { "from": "/blog/2023/03/3-quick-node-red-tips-3/", "to": "/node-red/quick-tips/node-red-tips-3/" }
+  - { "from": "/blog/2023/03/3-quick-node-red-tips-4/", "to": "/node-red/quick-tips/node-red-tips-4/" }
+  - { "from": "/blog/2023/03/3-quick-node-red-tips-5/", "to": "/node-red/quick-tips/node-red-tips-5/" }
+  - { "from": "/blog/2023/04/3-quick-node-red-tips-6/", "to": "/node-red/quick-tips/node-red-tips-6/" }
+  - { "from": "/blog/2023/06/3-quick-node-red-tips-7/", "to": "/node-red/quick-tips/node-red-tips-7/" }
+  - { "from": "/blog/2024/05/understanding-node-flow-global-environment-variables-in-node-red/", "to": "/node-red/variables/" }
   - { "from": "/product/", "to": "/product/features/" }
   - { "from": "/product/why-flowfuse/", "to": "/product/features/" }
   - { "from": "/features/", "to": "/product/features/" }

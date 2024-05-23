@@ -5,9 +5,7 @@ meta:
     title: Node-RED Tips - Exec, Filter, and Debug
     description: Save yourself time when working on Node-RED with these three tips.
     keywords: node-red, how-to
-date: 2023-03-07 12:00:00
-authors: ["rob-marcer"]
-image: /node-red/learning-resources/quick-tips/images/nr-quicktips.jpg
+image: /node-red/quick-tips/images/nr-quicktips.jpg
 ---
 # {{ meta.title }}
 

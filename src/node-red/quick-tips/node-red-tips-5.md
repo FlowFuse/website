@@ -5,9 +5,7 @@ meta:
     title: Node-RED Tips - Importing, Exporting, and Grouping Flows
     description: "Learn how to save time on Node-RED with three essential techniques: exporting and importing flows, accessing example flows from custom nodes, and organizing nodes using groups for improved clarity and management."
     keywords: node-red, how-to, node-red tips
-date: 2023-03-27 12:00:00
-authors: ["rob-marcer"]
-image: /node-red/learning-resources/quick-tips/images/nr-quicktips.jpg
+image: /node-red/quick-tips/images/nr-quicktips.jpg
 ---
 # {{ meta.title }}
 

@@ -38,8 +38,8 @@ Our next webinar will be focused on the device management capabilities in the Fl
 - [MQTT and its Role in IoT and Industrial IoT](/blog/2023/06/connect-to-hivemq-in-flowforge/) - A practical explainer on the role of MQTT in IoT use cases and how to connect with an MQTT broker in Node-RED.
 
 - Two new Node-RED Nodes Explained articles
-    - [Nodes explained: Split](/node-red/learning-resources/core-nodes/split/)
-    - [Nodes explained: Filter](/node-red/learning-resources/core-nodes/filter//)
+    - [Nodes explained: Split](/node-red/core-nodes/split/)
+    - [Nodes explained: Filter](/node-red/core-nodes/filter//)
 
 ## From the Community
 

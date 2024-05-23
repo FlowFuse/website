@@ -52,12 +52,6 @@ to = "https://flowfuse.com/:splat"
 status = 301
 force = true
 
-[[redirects]]
-from = "/node-red/core-nodes/*"
-to = "/node-red/learning-resources/core-nodes/:splat"
-status = 301
-force = true
-
 [dev]
 port = 8080
 framework = "#static"

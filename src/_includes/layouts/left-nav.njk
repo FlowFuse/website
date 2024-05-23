@@ -1,15 +1,10 @@
 <!-- Navigation -->
 <div class="border-r" data-{{nav}}>
     <ul class="handbook-nav" data-el="navigation">
-        {% if nav == "learning-resources" %}
-            <li>
-                <a href="/node-red/">Node-RED</a>
-            </li>
-        {% else %}
-            <li class="{% if "/{{ nav }}/" === page.url %}active{% endif %}">
-                <a href="/{{ nav }}/">{{ nav }}</a>
-            </li>
-        {% endif %}
+
+        <li class="{% if "/{{ nav }}/" === page.url %}active{% endif %}">
+            <a href="/{{ nav }}/">{{ nav }}</a>
+        </li>
         {% for group in collections
             .nav[nav]
             .groups %}
@@ -50,7 +45,6 @@
                                     {% endif %}
                                 </li>
                                 {% if child.children %}
-
                                     <ul class="handbook-nav-nested-2">
                                         {% for grandchild in child.children %}
                                             <li class="{% if grandchild.url === page.url %}active{% endif %}">

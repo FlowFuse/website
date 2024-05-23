@@ -5,9 +5,7 @@ meta:
     title: Node-RED Tips - Deploying, Debugging, and Delaying
     description: Save yourself time when working on Node-RED with these three tips.
     keywords: node-red, tips
-date: 2023-02-23 18:00:00
-authors: ["rob-marcer"]
-image: /node-red/learning-resources/quick-tips/images/nr-quicktips.jpg
+image: /node-red/quick-tips/images/nr-quicktips.jpg
 ---
 # {{ meta.title }}
 

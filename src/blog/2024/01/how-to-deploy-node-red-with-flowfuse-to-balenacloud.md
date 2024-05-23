@@ -58,7 +58,7 @@ Integrating InfluxDB enables effective data storage and management:
 
 ### Data Generation and Management
 For testing, we have created a flow to get you started. Follow this [link](https://flows.nodered.org/flow/66f37bb739b6cdb0c7ad3a4e2edd68ef) and import it. There are four sets of flows for you to begin with. The first is for data generation. The second is a manual data generation flow. The third is key as it initiates the creation of a database, in this case, **mydb**. The last flow is a simple query that pulls data from InfluxDB.
-1. Import the flows into your FlowFuse instance of Node-RED and deploy. Follow these [instructions](/node-red/learning-resources/quick-tips/node-red-tips-5//#2.-import-helpful-example-flows-provided-with-custom-nodes) for importing and exporting.
+1. Import the flows into your FlowFuse instance of Node-RED and deploy. Follow these [instructions](/node-red/quick-tips/node-red-tips-5//#2.-import-helpful-example-flows-provided-with-custom-nodes) for importing and exporting.
 2. Return to Flowfuse, go to your instance, and create another [snapshot](/docs/user/snapshots/#create-a-snapshot).
 3. Ensure that you **Set Target Snapshot**.
 

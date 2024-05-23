@@ -431,7 +431,7 @@ module.exports = function(eleventyConfig) {
 
         createNav('handbook')
         createNav('docs')
-        createNav('learning-resources')
+        createNav('node-red')
 
         function createNav(tag) {
             const groupOrder = {
@@ -454,9 +454,6 @@ module.exports = function(eleventyConfig) {
                 return hierarchyA.length - hierarchyB.length
             }).forEach((page) => {
                 let url = page.url
-                if (tag == "learning-resources") {
-                    url = page.url.replace("/node-red/", "")
-                }
 
                 // work out ToC Hierarchy
                 // split the folder URI/URL, as this defines our TOC Hierarchy
@@ -466,7 +463,7 @@ module.exports = function(eleventyConfig) {
                 hierarchy.reduce((accumulator, currentValue, i) => {
                     // create a nested object detailing the full handbook hierarchy
                     if (!accumulator[currentValue]) {
-                        // heck for subGroup and use it to group the pages
+                        // check for subGroup and use it to group the pages
                         if (i > 1 && page.data.subGroup) {
                             if (!accumulator[page.data.subGroup]) {
                                 accumulator[page.data.subGroup] = {

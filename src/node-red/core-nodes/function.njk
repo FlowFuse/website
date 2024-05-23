@@ -1,11 +1,11 @@
 ---
 pagination:
-    data: coreNodes.sequence
+    data: coreNodes.function
     size: 1
     alias: node
     addAllPagesToCollections: true
-coreNodeCategory: "sequence"
-permalink: "node-red/learning-resources/core-nodes/{{ node.name | lower | replace(\" \", \"\") }}/"
+coreNodeCategory: "function"
+permalink: "node-red/core-nodes/{{ node.name | lower | replace(\" \", \"\") }}/"
 eleventyComputed:
   navTitle: "{{ node.name }}"
   subGroup: "{{ coreNodeCategory }}"

@@ -2,7 +2,7 @@
 
 TCP-Out nodes in Node-RED facilitate communication over TCP/IP networks by providing options to connect to remote TCP ports, accept incoming connections, or reply to messages received from a TCP In node.
 
-If you dont know what is TCP, refer to [What is TCP](/node-red/learning-resources/core-nodes/tcp-in/#what-is-udp/).
+If you dont know what is TCP, refer to [What is TCP](/node-red/core-nodes/tcp-in/#what-is-udp/).
 
 ## Configuring TCP-Out Node
 
@@ -16,7 +16,7 @@ To configure a TCP-Out node in Node-RED, follow these steps:
 
 2. **Port**: Specify the port number for the TCP connection.
 
-3. **Enable Secure (SSL/TLS) Connection**: Activate SSL/TLS for secure communication. If enabled, Node-RED provides a TLS config node for configuring TLS settings. Refer to the [TLS config node](/node-red/learning-resources/core-nodes/tls/) documentation for details on configurations.
+3. **Enable Secure (SSL/TLS) Connection**: Activate SSL/TLS for secure communication. If enabled, Node-RED provides a TLS config node for configuring TLS settings. Refer to the [TLS config node](/node-red/core-nodes/tls/) documentation for details on configurations.
 
 4. **Close Connection After Each Message is Sent**: Choose whether to close the connection after sending each message.
 

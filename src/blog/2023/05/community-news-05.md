@@ -35,7 +35,7 @@ How can you use Node-RED to create dashboards and interactive graphs of your dat
 
 [FlowFuse 1.6 Now Available](/blog/2023/04/flowforge-1-6-released/) - FlowFuse 1.6 included support for multi-instance Node-RED within a single application as well as support for logging from remote devices.
 
-[Node-RED Tips - Subflows, Link Nodes, and the Range Node](/node-red/learning-resources/quick-tips/node-red-tips-6/)
+[Node-RED Tips - Subflows, Link Nodes, and the Range Node](/node-red/quick-tips/node-red-tips-6/)
 
 ## From the Community
 

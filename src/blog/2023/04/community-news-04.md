@@ -34,8 +34,8 @@ Join Steve McLaughlin from FlowFuse as he showcases how easy it is to use Node-R
 [FlowFuse 15. Now Available](/blog/2023/03/flowforge-1-5-0-released/) - FlowFuse 1.5 included updates to the UI and architecture to allow for future features.
 
 Node-RED Quick Tips - Rob Marcer, FlowFuse Developer Educator has a weekly series of Node-RED hints and tips
-* [Node-RED Tips - Importing, Exporting, and Grouping Flows](/node-red/learning-resources/quick-tips/node-red-tips-5//)
-* [Node-RED Tips - Smooth, Catch, and Math](/node-red/learning-resources/quick-tips/node-red-tips-4/)
+* [Node-RED Tips - Importing, Exporting, and Grouping Flows](/node-red/quick-tips/node-red-tips-5//)
+* [Node-RED Tips - Smooth, Catch, and Math](/node-red/quick-tips/node-red-tips-4/)
 
 ## From the Community
 
