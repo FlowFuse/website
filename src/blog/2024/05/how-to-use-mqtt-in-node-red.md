@@ -43,7 +43,7 @@ If you want to install Node-RED locally, refer to the [Installing Node-RED](http
 
 ## Configuring MQTT Node in Node-RED
 
-When you open the Node-RED editor, you'll see the MQTT nodes already installed as they are core Node-RED nodes. When you drag an **mqtt-in** or **mqtt-out** node onto the workspace, you need to configure the MQTT broker node. You can do this by Double-clicking mqtt node and clicking on the edit icon next to the Server field and entering the following details of your MQTT broker into the MQTT broker config node, For more details on mqtt nodes refer to the [MQTT core node docs](/node-red/core-nodes/mqtt/).
+When you open the Node-RED editor, you'll see the MQTT nodes already installed as they are part of Node-RED core nodes. When you drag an **mqtt-in** or **mqtt-out** node onto the workspace, you need to configure the MQTT broker node. You can do this by Double-clicking mqtt node and clicking on the edit icon next to the Server field and entering the following details of your MQTT broker into the MQTT broker config node, For more details on mqtt nodes refer to the [MQTT core node docs](/node-red/core-nodes/mqtt/).
 
 ## Connection Tab
 
@@ -73,17 +73,16 @@ When you open the Node-RED editor, you'll see the MQTT nodes already installed a
 
 2. **Password:** Enter the password associated with the username.
 
-*Note: - Make sure you are using environment variables while dealing with sensitive configuration information to prevent exposing them directly in the flow*
+*Note: - Make sure you are using environment variables while dealing with sensitive configuration information to prevent exposing them directly in the flow, for more details refer to [Using Environment varriables in Node-RED](/blog/2023/01/environment-variables-in-node-red/)*
 
 ## Publishing Data to a Topic on MQTT Broker
 
-1. Drag an **Inject** node onto the canvas, set `msg.payload` to timestamp, and set repeat to an interval of **5 seconds**.
-2. Drag an **mqtt-out** node onto the canvas.
-3. Double-click on the **mqtt-out** node and select the added configuration to which you want to send data in the server field.
-4. In the topic field, enter the desired topic name.
-5. Set the **QoS** to **2** for accurate and guaranteed data delivery.
-6. Set **retain** to true if you want to retain the data.
-7. Connect the **Inject** node's output to the input of the **mqtt-out** node.
+1. Drag an **mqtt-out** node onto the canvas.
+2. Double-click on the **mqtt-out** node and select the added broker configuration to which you want to send data in the server field.
+3. In the topic field, enter the desired topic name.
+4. Set the **QoS** to **2** for accurate and guaranteed data delivery.
+5. Set **retain** to true if you want to retain the data.
+6. Connect the node's output, which is emitting the payload data you want to send to the MQTT broker, to the input of the mqtt-out node.
 
 !["Screenshot of the mqtt-out node configuration"](./images/how-to-use-mqtt-mqtt-out-node.png "Screenshot of the mqtt-out node configuration"){data-zoomable}
 
@@ -94,8 +93,7 @@ When you open the Node-RED editor, you'll see the MQTT nodes already installed a
 3. Set **action** to **subscribe to a single topic** and  enter the topic name to which you want to subscribe for receiving data in the topic field.
 4. Set the **QoS** to **2**.
 5. Set the output to the desired format.
-6. Drag a **Debug** node onto the canvas.
-7. Connect the output of the **MQTT-in** node to the input of the **Debug** node.
+6. Connect the output of the mqtt-in node to the input of the node to whom you want to pass the data for further processing or analysis.
 
 !["Screenshot of the mqtt-in node configuration"](./images/how-to-use-mqtt-mqtt-in-node.png "Screenshot of the mqtt-in node configuration"){data-zoomable}
 
@@ -147,7 +145,7 @@ Ensuring the security and efficiency of your MQTT and Node-RED deployments is cr
 
 - **Authentication and Authorization:** Implement strong authentication mechanisms to verify the identity of clients connecting to the broker. Additionally, enforce access control policies to restrict clients' actions based on their roles and permissions. For instance, you can allow specific clients to only publish or subscribe to data as needed.
 
-- **Environment Variables:** Utilize environment variables to prevent exposing your sensitive configuration data within the flow. For more details, refer to [Using Environment varriables](/blog/2023/01/environment-variables-in-node-red/)
+- **Environment Variables:** Utilize environment variables to prevent exposing your sensitive configuration data within the flow.
 
 ### Performance Optimization
 
