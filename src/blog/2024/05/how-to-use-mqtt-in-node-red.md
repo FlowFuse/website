@@ -2,7 +2,7 @@
 title: How to Use MQTT in Node-RED.
 subtitle: Step-by-step guide on integrating MQTT with Node-RED.
 description: Learn how to effectively integrate MQTT and Node-RED in this comprehensive guide, covering setup, configuration, and practical applications for IoT projects.
-date: 2024-05-25
+date: 2024-05-24
 authors: ["sumit-shinde"]
 image: 
 tags:
@@ -11,7 +11,7 @@ tags:
    - mqtt
 ---
 
-In the realm of IoT, the number of IoT devices is set to surpass 75 billion by 2025, according to a [statista report](https://www.statista.com/statistics/471264/iot-number-of-connected-devices-worldwide/). Therefore, Efficient communication protocols and platforms that can easily connect to these devices and allow programming with low code are crucial. MQTT and Node-RED stand out for this purpose in the IoT domain. These technologies form the backbone of the popular [MING Stack](/blog/2023/02/ming-blog/) used in IoT, demonstrating their effectiveness in managing and processing IoT data. This guide will walk you through integrating MQTT with Node-RED, practical applications and best practices.
+In the realm of IoT, the number of IoT devices is set to surpass 75 billion by 2025, according to a [statista report](https://www.statista.com/statistics/471264/iot-number-of-connected-devices-worldwide/). Therefore, Efficient communication protocols and platforms that can easily connect to these devices and allow programming with low code are crucial. MQTT and Node-RED stand out for this purpose in the IoT domain. These technologies form the backbone of the popular [MING Stack](/blog/2023/02/ming-blog/) used in IoT, demonstrating their effectiveness in managing and processing IoT data. This guide will walk you through integrating MQTT with Node-RED, practical applications, and best practices.
 
 <!--more-->
 
@@ -91,7 +91,7 @@ When you open the Node-RED editor, you'll see the MQTT nodes already installed a
 
 1. Drag an **MQTT-in** node onto the canvas.
 2. Double-click on the **MQTT-in** node and select the appropriate added broker configuration from which you want to receive data in the server field.
-3. Set **action** to **subscribe to a single topic** and  and enter the topic name to which you want to subscribe for receiving data in the topic field.
+3. Set **action** to **subscribe to a single topic** and  enter the topic name to which you want to subscribe for receiving data in the topic field.
 4. Set the **QoS** to **2**.
 5. Set the output to the desired format.
 6. Drag a **Debug** node onto the canvas.
@@ -118,7 +118,7 @@ Now that you're familiar with how to send and receive data using MQTT, let's div
 3. Connect the output of the node that is reading your temperature data to the input of the **mqtt-out** node.
 4. Deploy the flow by clicking on the **deploy** button located at the top-right corner.
 
-!["Screenshot of first Node-RED instance editor in in which we are reading temperature data from temperature sensor and sending it to the mqtt broker"](./images/how-to-use-mqtt-with-node-red-mqtt-node-red-instance-1.png "Screenshot of first Node-RED instance editor in in which we are reading temperature data from temperature sensor and sending it to the mqtt broker"){data-zoomable}
+!["Screenshot of the device editor of a Node-RED instance running on the device (connected to a temperature sensor) using the FlowFuse device agent, where we are reading temperature data from the sensor and sending it to an MQTT broker."](./images/how-to-use-mqtt-with-node-red-mqtt-node-red-instance-1.png "Screenshot of the device editor of a Node-RED instance running on the device ( connected to a temperature sensor ) using the FlowFuse device agent, where we are reading temperature data from the sensor and sending it to an MQTT broker."){data-zoomable}
 
 ### Subscribing to the Topic on the MQTT Broker to Receive Temperature Data
 
