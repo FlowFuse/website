@@ -28,6 +28,7 @@ const DEV_MODE = process.env.ELEVENTY_RUN_MODE !== "build" || process.env.CONTEX
 module.exports = function(eleventyConfig) {
     eleventyConfig.addDataExtension("yaml", contents => yaml.load(contents)); // Add support for YAML data files
     eleventyConfig.setUseGitIgnore(false); // Otherwise docs are ignored
+    eleventyConfig.setWatchThrottleWaitTime(500); // in milliseconds
 
     // Set DEV_MODE_POSTS to true if the context is not 'production'
     const DEV_MODE_POSTS = process.env.CONTEXT !== "production";

@@ -13,9 +13,9 @@ This is a guide for the setup and delivery of a dedicated instance.
 
 In order to create the dedicated instance, some information will be required from the customer.
 
- - **A domain name to host the platform on**. The core platform (`forge.`), broker (`mqtt.`) and
+ - **A domain name or sub domain name to host the platform on**. The core platform (`forge.`), broker (`mqtt.`) and
    hosted instances will be made available under this domain.
-   The customer will need to setup the DNS entry for this domain to point at the AWS Route53
+   The customer will need to setup the DNS entry for this domain or sub domain to point at the AWS Route53
    end-point.
  - **Choice of AWS region**. We default to `eu-west-1` but customers may want to choose one more
    local to them. Not all AWS regions are equal and we may need to review their choice for suitability.
