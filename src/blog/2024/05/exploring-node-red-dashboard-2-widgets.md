@@ -38,6 +38,8 @@ To enable income and expense submission, we'll incorporate a form using the **ui
 
 Once you've added the income submission form, repeat the process to add an expense submission form on another **ui-page** and **ui-group**, For more information on **ui-form**, refer to the [ui-form docs](https://dashboard.flowfuse.com/nodes/widgets/ui-form.html).
 
+!["Screenshot displaying Expense submission ui-form's configuration"](./images/exploring-dashboard-2-widgets-expense-submission-form.png "Screenshot displaying Expense submission ui-form's configuration"){data-zoomable}
+
 ### Storing Form Data
 
 The **ui-form** widget emits a payload object with key-value pairs of form elements upon submission. We'll store this data in a global context, If you are not familiar with Node-RED context, refer to [Understanding Node-RED varriables](/blog/2024/05/understanding-node-flow-global-environment-variables-in-node-red/).
