@@ -18,21 +18,21 @@ If you're new to Dashboard 2.0, we recommend starting with the [Getting Started 
 
 ## What Are Widgets?
 
-Widgets in Node-RED Dashboard 2.0 are like building blocks for creating the user interface. They're made of front-end pieces of code and work on the client's side. In Dashboard 2.0, you get a variety of widgets like forms, templates, buttons, and others to make different parts of your interface.
+Widgets in Node-RED Dashboard 2.0 are the building blocks for creating a user interface. In Dashboard 2.0, you get a variety of widgets like forms, templates, buttons, and others to make different parts of your interface.
 
 ## Building Applications with Dashboard 2.0 Widgets
 
 !["Income-expense tracker build with dashboard 2.0"](./images/exploring-dashboard-2-widgets-incom-expense-tracker-system.gif "Income-expense tracker build with dashboard 2.0"){data-zoomable}
 
-In this guide, we'll create a basic app where you can input expenses and income. That will be displayed on the chart and table for analysis. This app will utilize a significant number of the widgets available in Dashboard 2.0, helping you understand and use them confidently. 
+In this guide, we'll create a basic application to input expenses and income. This will then be displayed in a chart and table for analysis. The application will utilize a wide range of widgets available in Dashboard 2.0, helping you understand and use them confidently.
 
 ### Adding Forms
 
-To enable income and expense submission, we'll incorporate a form using the **ui-form** widget.
+For the income and expense submission, we'll incorporate a form using the **ui-form** widget.
 
 1. Drag the **ui-form** widget onto the canvas.
 2. Double-click on it to access various widget properties and select the **ui-group** where it should render.
-4. Add date, description, amount, and note form elements by clicking the **+element** button at the bottom left.
+4. Add "date", "description", "amount", and "note" form elements by clicking the **+element** button at the bottom left.
 
 !["Screenshot displaying Income submission ui-form's configuration"](./images/exploring-dashboard-2-widgets-income-submission-form.png "Screenshot displaying Income submission ui-form's configuration"){data-zoomable}
 
@@ -44,7 +44,7 @@ Once you've added the income submission form, repeat the process to add an expen
 
 The **ui-form** widget emits a payload object with key-value pairs of form elements upon submission. We'll store this data in a global context, If you are not familiar with Node-RED context, refer to [Understanding Node-RED varriables](/blog/2024/05/understanding-node-flow-global-environment-variables-in-node-red/).
 
-1. Drag a **function** node onto the canvas and use the following code which also contains a notification message set to payload:
+1. Drag a **function** node onto the canvas and add the following code. This will store the submission in the `income` global context variable, and then modify `msg.payload` to pass on a notification to any further connected nodes.
 
 ```javascript
 // Retrieve the existing 'income' array from the global context, or initialize it as an empty array if it doesn't exist
@@ -70,16 +70,16 @@ Similarly, you can do this for storing expense data submitted using the expense 
 
 ### Displaying Notifications
 
-For displaying notifications on the dashboard, we'll utilize the **ui-notification** widget, which allows showing notifications at different positions on the dashboard. It accepts `msg.payload` to send string messages or raw HTML/JavaScript for custom formatting.
+For displaying notifications on the dashboard, we'll utilize the **ui-notification** widget, which emits notifications to the user's dashboard. It accepts `msg.payload` which should be a string format or raw HTML/JavaScript for custom formatting.
 
 1. Drag the **ui-notification** widget onto the canvas.
 2. Set the position property to **center**. You can also adjust colors or notification timeout by modifying the color and timeout properties. Please take a look at the [ui-notification docs](https://dashboard.flowfuse.com/nodes/widgets/ui-notification.html#properties) for more information on **ui-notification**.
 
 !["Screenshot displaying ui-notification widgets configuration"](./images/exploring-dashboard-2-widgets-notification-widget.png "Screenshot displaying ui-notification widgets configuration"){data-zoomable}
 
-### Listening events 
+### Listening for events
 
-In Dashboard 2.0, the **ui-event** widget allows you to listen to user behavior or events. It does not render any content or components on the dashboard. Currently, this widget only listens for page views and leaves events.
+In Dashboard 2.0, the **ui-event** widget allows you to listen to user behavior or events. It does not render any content or components on the dashboard. Currently, this widget only listens for page views (`$pageview`) and leave (`$pageleave`) events.
 
 With this, we can listen for page view and page leave events and trigger tasks based on those events. For instance, in our application, we will be displaying a table containing income and expense data, along with a chart. We'll update them when navigating to a new page or leaving a page.
 
@@ -93,9 +93,8 @@ For more information on ui-event refer to [ui-event docs](https://dashboard.flow
 In our income-expense application, we will display the income and expenses in a single table.
 
 1. Drag a **change** node onto the canvas.
-2. Set `msg.payload` to the JSON expression below, which merges the income and expense arrays.
-3. Connect the output of the **ui-event** widget to the input of the **change** node.
-
+2. Set `msg.payload` to the JSONata expression below, which merges the income and expense arrays.
+   
 ```javascript
 [$globalContext('income'), $globalContext('expense')]
 ```
@@ -128,7 +127,7 @@ In our application, we will display data on the chart, showing the total income 
 !["Screenshot displaying the change node retrieving expense data from global context"](./images/exploring-dashboard-2-widgets-chart-widget-retrieve-expense-change-node.png "Screenshot displaying the change node retrieving expense data from global context"){data-zoomable}
 
 3. Drag a **Split** node onto the canvas.
-4. Drag the **Change** node onto the canvas and set `msg.payload.amount` to the JSON expression `$number(payload.amount)` and give it name "Convert amount to number".
+4. Drag the **Change** node onto the canvas and set `msg.payload.amount` to the JSONata expression `$number(payload.amount)` and give it name "Convert amount to number".
 
 !["Screenshot displaying the change node converting amount to number"](./images/exploring-dashboard-2-widgets-chart-widget-convert-amount-to-number-change-node.png "Screenshot displaying the change node converting amount to number"){data-zoomable}
 
@@ -150,9 +149,9 @@ To display charts on the dashboard, we have to use the ui-chart widget which all
 
 1. Drag a **ui-chart** widget onto the canvas.
 2. Double-click on the widget and select Type as **bar**.
-3. Configure the series to **category** and the y-axis to **amount**. This configuration informs the chart that the **amount** property of the input objects will be plotted on the y-axis of the chart.
-4. Connect the output of the **ui-event** widget's output to the input of the **function** node and the **function** node's output to the **ui-chart** widget's output.
-
+3. Configure the series to **category** and the y-axis to **amount**. This configuration informs the chart that the **amount** property of the input objects will be plotted on the y-axis and category to the x-axis of the chart.
+4. Connect the output of the **join** node named "Combine Objects into Array" to the **ui-chart** widget's input.
+   
 !["Screenshot displaying the ui-chart widget's configuration"](./images/exploring-dashboard-2-widgets-chart-widget.png "Screenshot displaying the ui-chart widget's configuration"){data-zoomable}
 
 ### Adding custom footer with ui-template
