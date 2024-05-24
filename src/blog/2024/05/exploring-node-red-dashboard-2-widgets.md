@@ -10,7 +10,7 @@ tags:
     - dashboard
 ---
 
-This guide delves into Node-RED Dashboard 2.0 widgets, teaching you how to build applications using them.
+This guide delves into Node-RED Dashboard 2.0 widgets. It is a guide on how to build a Dashboard application, and will cover many of the widgets available today.
 
 <!--more-->
 
@@ -23,6 +23,7 @@ Widgets in Node-RED Dashboard 2.0 are the building blocks for creating a user in
 ## Building Applications with Dashboard 2.0 Widgets
 
 !["Income-expense tracker build with dashboard 2.0"](./images/exploring-dashboard-2-widgets-incom-expense-tracker-system.gif "Income-expense tracker build with dashboard 2.0"){data-zoomable}
+_Income-expense tracker build with dashboard 2.0_
 
 In this guide, we'll create a basic application to input expenses and income. This will then be displayed in a chart and table for analysis. The application will utilize a wide range of widgets available in Dashboard 2.0, helping you understand and use them confidently.
 
@@ -35,10 +36,12 @@ For the income and expense submission, we'll incorporate a form using the **ui-f
 4. Add "date", "description", "amount", and "note" form elements by clicking the **+element** button at the bottom left.
 
 !["Screenshot displaying Income submission ui-form's configuration"](./images/exploring-dashboard-2-widgets-income-submission-form.png "Screenshot displaying Income submission ui-form's configuration"){data-zoomable}
+_Screenshot displaying Income submission ui-form's configuration_
 
-Once you've added the income submission form, repeat the process to add an expense submission form on another **ui-page** and **ui-group**, For more information on **ui-form**, refer to the [ui-form docs](https://dashboard.flowfuse.com/nodes/widgets/ui-form.html).
+Once you've added the income submission form, repeat the process to add an expense submission form on another **ui-page** and **ui-group**. For more information on **ui-form**, refer to the [ui-form docs](https://dashboard.flowfuse.com/nodes/widgets/ui-form.html).
 
 !["Screenshot displaying Expense submission ui-form's configuration"](./images/exploring-dashboard-2-widgets-expense-submission-form.png "Screenshot displaying Expense submission ui-form's configuration"){data-zoomable}
+_Screenshot displaying Expense submission ui-form's configuration_
 
 ### Storing Form Data
 
@@ -76,6 +79,7 @@ For displaying notifications on the dashboard, we'll utilize the **ui-notificati
 2. Set the position property to **center**. You can also adjust colors or notification timeout by modifying the color and timeout properties. Please take a look at the [ui-notification docs](https://dashboard.flowfuse.com/nodes/widgets/ui-notification.html#properties) for more information on **ui-notification**.
 
 !["Screenshot displaying ui-notification widgets configuration"](./images/exploring-dashboard-2-widgets-notification-widget.png "Screenshot displaying ui-notification widgets configuration"){data-zoomable}
+_Screenshot displaying ui-notification widgets configuration_
 
 ### Listening for events
 
@@ -102,6 +106,7 @@ In our income-expense application, we will display the income and expenses in a 
 3. Connect the output of the **ui-event** widget to the input of the **change** node.
 
 !["Screenshot displaying the change node setting JSON expression to payload for retrieving and sorting data."](./images/exploring-dashboard-2-widgets-change-node.png "Screenshot displaying the change node setting JSON expression to payload for retrieving and sorting data."){data-zoomable}
+_Screenshot displaying the change node setting JSON expression to payload for retrieving and sorting data._
 
 ### Displaying Data on the Table
 
@@ -112,6 +117,7 @@ To display data on the table, we use the **ui-table** widget in Dashboard 2.0. T
 3. Connect the output of the **change** node to the input of the **ui-table** widget.
 
 !["Screenshot displaying the ui-table widget configuration"](./images/exploring-dashboard-2-widgets-table-widget.png "Screenshot displaying the ui-table widget configuration"){data-zoomable}
+_Screenshot displaying the ui-table widget configuration_
 
 For more information on ui-table refer to [ui-table docs](https://dashboard.flowfuse.com/nodes/widgets/ui-table.html)
 
@@ -123,21 +129,26 @@ In our application, we will display data on the chart, showing the total income 
 2. For the first **Change** node Set `msg.payload` to `global.income` and `msg.topic` to "income" and give it name "retrive income". For the second **Change** node, set `msg.payload` to `global.expense` and `msg.topic` to "expense" and give that second change node name "retrive expense".
 
 !["Screenshot displaying the change node retrieving income data from global context"](./images/exploring-dashboard-2-widgets-chart-widget-retrieve-income-change-node.png "Screenshot displaying the change node retrieving income data from global context"){data-zoomable}
+_Screenshot displaying the change node retrieving income data from global context_
 
 !["Screenshot displaying the change node retrieving expense data from global context"](./images/exploring-dashboard-2-widgets-chart-widget-retrieve-expense-change-node.png "Screenshot displaying the change node retrieving expense data from global context"){data-zoomable}
+_Screenshot displaying the change node retrieving expense data from global context_
 
 3. Drag a **Split** node onto the canvas.
 4. Drag the **Change** node onto the canvas and set `msg.payload.amount` to the JSONata expression `$number(payload.amount)` and give it name "Convert amount to number".
 
 !["Screenshot displaying the change node converting amount to number"](./images/exploring-dashboard-2-widgets-chart-widget-convert-amount-to-number-change-node.png "Screenshot displaying the change node converting amount to number"){data-zoomable}
+_Screenshot displaying the change node converting amount to number_
 
 5. Drag a **Join** node onto the canvas, select mode as **reduced expression**, and set the **Reduce exp** to `$A + payload.amount`. Set Initial value to `0`, and **Fix-up exp** to `$A`. Give this **join** node the name "Calculate total". This function operates similarly to using the javascript reduce method on an array to calculate the sum of its values. `$A` stores the accumulated value, and with every incoming message payload, it adds the `payload.amount` value to it, for more details on this refer to the [core node docs on join node](/node-red/core-nodes/join/).
 
 !["Screenshot displaying the join node calculating the total income and expense data"](./images/exploring-dashboard-2-widgets-chart-widget-calculate-total-join-node.png "Screenshot displaying the join node calculating the total income and expense data"){data-zoomable}
+_Screenshot displaying the join node calculating the total income and expense data_
 
 7. Drag an another join node onto the canvas set mode to manual, combine each to complete message, to create to array and After a number of message parts to 2 and give it name "combine two objects into array".
 
 !["Screenshot displaying the join node combining the income and expense object into the array"](./images/exploring-dashboard-2-widgets-chart-widget-retrieve-combine-object-join-node.png "Screenshot displaying the join node combining the income and expense object into the"){data-zoomable}
+_Screenshot displaying the join node combining the income and expense object into the array_
 
 7. Connect the output of the **ui-event** widget to the input of the **Change** node named "Retrieve Income" and "Retrieve Expense". Then, connect the outputs of the "Retrieve Income" and "Retrieve Expense" **Change** nodes to the input of the **Split** node. 
 
@@ -153,6 +164,7 @@ To display charts on the dashboard, we have to use the ui-chart widget which all
 4. Connect the output of the **join** node named "Combine Objects into Array" to the **ui-chart** widget's input.
    
 !["Screenshot displaying the ui-chart widget's configuration"](./images/exploring-dashboard-2-widgets-chart-widget.png "Screenshot displaying the ui-chart widget's configuration"){data-zoomable}
+_Screenshot displaying the ui-chart widget's configuration_
 
 ### Adding custom footer with ui-template
 
