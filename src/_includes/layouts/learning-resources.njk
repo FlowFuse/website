@@ -1,45 +1,6 @@
 ---
 layout: nohero
 ---
-<!-- <script>
-    function toggleNavList (el) {
-        const li = el.parentElement
-        li.classList.toggle('open')
-        const ul = li.nextElementSibling
-        ul.classList.toggle('open')
-        if (ul.style.maxHeight) {
-            ul.style.maxHeight = null;
-        } else {
-            if (ul.parentElement.tagName === "UL" && !ul.parentElement.classList.contains('eleventy-nav')) {
-                ul.parentElement.style.maxHeight = "initial"
-            }
-            ul.style.maxHeight = ul.scrollHeight + "px";
-        } 
-    }
-
-    document.addEventListener('DOMContentLoaded', function() {
-        var navItems = document.querySelectorAll('.eleventy-nav li');
-
-        navItems.forEach(function(navItem) {
-            var sublist = navItem.querySelector('ul');
-            if (sublist) {
-                var button = document.createElement('button');
-                button.innerHTML = `
-                    <span class="ff-icon icon-expand">
-                        {% include "components/icons/chevron-down.svg" %}
-                    </span>
-                    <span class="ff-icon icon-minimise">
-                        {% include "components/icons/chevron-up.svg" %}
-                    </span>
-                `;
-                button.onclick = function() {
-                    toggleNavList(button);
-                };
-                navItem.insertBefore(button, navItem.firstChild);
-            }
-        });
-    });
-</script> -->
 <div class="w-full bg-white/50">
 <div class="eleventy md:grid md:grid-cols-[265px_1fr_auto] flex flex-col-reverse text-left pb-24 md:max-w-screen-xl m-auto">
     {% include "./learning-resources-nav.njk" %}

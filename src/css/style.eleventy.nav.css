@@ -9,8 +9,7 @@
     .eleventy-nav {
         border-right: 1px solid right;
         text-transform: capitalize;
-        --nav-weight: 400;
-        /* --nav-color: white; */
+        --nav-weight: 500;
         --nav-color: theme(colors.gray.700);
         --nav-bg: transparent;
         --nav-pl: 1rem;
@@ -21,7 +20,6 @@
         @apply sticky top-12 pl-2 sm:pl-6 xl:pl-0;
     }
 
-    /* eleventy-nav-nested */
     .has-children > ul > li:not(.has-children) {
         --nav-bg: transparent;
         color: var(--nav-color);
@@ -34,7 +32,8 @@
         margin-left: 1.25rem;
     }
 
-    .eleventy-nav li a {
+    .eleventy-nav li > a,
+    .eleventy-nav li > div {
         @apply flex justify-between items-stretch my-1;
         font-weight: var(--nav-weight);
         background-color: var(--nav-bg);
@@ -43,104 +42,57 @@
         flex-grow: 1;
         color: var(--nav-color) !important;
         padding-right: var(--nav-pl);
+        padding-left: var(--nav-pl);
         @apply py-1.5;
     }
 
-    /* .eleventy-nav li a,
-    .eleventy-nav li.eleventy-nav-group {
-        flex-grow: 1;
-        @apply py-1.5 px-4;
-    } */
-
-    /* .eleventy-nav li.eleventy-nav-group .a {
-        display: grid;
-        grid-template-columns: 1fr auto;
-        color: theme(colors.indigo.700);
-        padding-left: 0;
+    .eleventy-nav li > div > a {
+        color: var(--nav-color) !important;
     }
 
-    .eleventy li .ff-icon {
-        padding-right: 1rem;
+    .eleventy-nav li div:hover, 
+    .eleventy-nav li > a:hover {
+        background-color: theme(colors.gray.200);
     }
 
-    .eleventy-nav li button {
-        @apply px-2;
-    }
-
-    .eleventy-nav li button:hover .ff-icon svg path {
-        stroke: theme(colors.blue.600);
-    }
-    
-    .eleventy-nav li.active > a {
+    .eleventy-nav li.active > a,
+    .eleventy-nav li.active.has-children > div,
+    .eleventy-nav .has-children > ul > li.active:not(.has-children) > a {
         background-color: theme(colors.gray.100);
         border-color: theme(colors.indigo.600);
     }
 
-    .eleventy-nav li a:hover {
-        background-color: theme(colors.gray.200);
-    } */
-
-    /* .eleventy-nav li a:active {
-        background-color: theme(colors.gray.200);
-    } */
-
-
-    /* .eleventy-nav li.core-nodes-nav-group.active {
-        background-color: theme(colors.gray.100);
-    } */
-
-    /* .eleventy li .icon-expand {
-        display: block;
-        color: black;
+    .has-children {
+        display: flex;
+        flex-direction: column;
     }
 
-    .eleventy li .icon-minimise {
-        display: none;
-    }
-
-    .eleventy li.open {
-        background-color: theme(colors.gray.100);
-    }
-
-    .eleventy li.open .icon-expand {
-        display: none;
-    }
-
-    .eleventy li.open .icon-minimise {
-        display: block;
-    }
-
-    .eleventy picture+em {
-        font-size: 0.825rem;
-        display: block;
+    .link-chevron-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
         width: 100%;
-        text-align: center;
-    } */
-
-    /* Define animation transitions for all child UL elements */
-    /* .eleventy-nav ul {
-        max-height: 0;
-        overflow-y: hidden;
-        transition: 0.3s;
     }
 
-    .eleventy-nav ul:has(li.active) {
-        max-height: initial;
+    .link-chevron-container > a {
+        flex-grow: 1;
     }
 
-    .eleventy .persona-card label {
-        @apply font-bold;
+    .link-chevron-container > span.chevron {
+        display: inline-block;
+        width: 24px; 
+        height: 24px; 
+        padding: 3px;
+        margin-right: 10px;
+        cursor: pointer;
+        transition: transform 0.3s ease;
     }
 
-    .eleventy .persona-card ul {
-        margin-top: 0;
-        margin-bottom: 0;
-        @apply text-white;
+    .chevron.rotated {
+        transform: rotate(180deg);
     }
 
-    .eleventy .persona-card li {
-        margin-top: 0.125rem;
-        margin-bottom: 0.125rem;
-        padding-left: 1.25rem;
-    } */
+    .has-children ul {
+        display: none;
+    }
 }

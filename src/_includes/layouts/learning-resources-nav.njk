@@ -1,66 +1,62 @@
-{# {% set navigationOptions = {
-listElement: "ul",
-listItemElement: "li",
-listClass: "eleventy-nav",
-listItemClass: "eleventy-nav-nested",
-listItemHasChildrenClass: "has-children eleventy-nav-group",
-activeListItemClass: "active",
-anchorClass: "",
-activeAnchorClass: "",
-activeKey: eleventyNavigation.key,
-showExcerpt: false
-} %} #}
+{% set navigationOptions = {
+    listElement: "ul",
+    listItemElement: "li",
+    listClass: "eleventy-nav",
+    listItemClass: "",
+    listItemHasChildrenClass: "has-children",
+    activeListItemClass: "active",
+    anchorClass: "",
+    activeAnchorClass: "",
+    activeKey: eleventyNavigation.key,
+    showExcerpt: false
+} %}
 
 <!-- Navigation -->
-
-<div class="border-r pl-2 sm:pl-6 xl:pl-0 pt-6">
-    <ul class="eleventy-nav">
-        <li><a href="/node-red/learning-resources/">Overview</a></li>
-        <li class="active has-children"><a href="/node-red/core-nodes/">Core Nodes</a>
-            <ul>
-                <li class="has-children"><a href="/node-red/core-nodes/inject/">Common</a>
-                    <ul>
-                        <li><a href="/node-red/core-nodes/inject/">Inject</a></li>
-                        <li><a href="/node-red/core-nodes/debug/">Debug</a></li>
-                        <li><a href="/node-red/core-nodes/complete/">Complete</a></li>
-                        <li><a href="/node-red/core-nodes/catch/">Catch</a></li>
-                        <li><a href="/node-red/core-nodes/status/">Status</a></li>
-                        <li><a href="/node-red/core-nodes/link/">Link</a></li>
-                        <li><a href="/node-red/core-nodes/comment/">Comment</a></li>
-                        <li><a href="/node-red/core-nodes/unknown/">Unknown</a></li>
-                    </ul>
-                </li>
-                <li class="has-children"><a href="/node-red/core-nodes/function/">Function</a>
-                    <ul>
-                        <li><a href="/node-red/core-nodes/function/">Function</a></li>
-                        <li><a href="/node-red/core-nodes/switch/">Switch</a></li>
-                        <li><a href="/node-red/core-nodes/change/">Change</a></li>
-                        <li><a href="/node-red/core-nodes/range/">Range</a></li>
-                        <li><a href="/node-red/core-nodes/template/">Template</a></li>
-                        <li><a href="/node-red/core-nodes/delay/">Delay</a></li>
-                        <li><a href="/node-red/core-nodes/trigger/">Trigger</a></li>
-                        <li><a href="/node-red/core-nodes/exec/">Exec</a></li>
-                        <li><a href="/node-red/core-nodes/filter/">Filter</a></li>
-                    </ul>
-                </li>
-            </ul>
-        </li>
-        <li class="has-children"><a href="/node-red/quick-tips/">Quick Tips</a>
-            <ul>
-                <li><a href="/node-red/quick-tips/node-red-tips-1/">Wiring Shortcuts</a></li>
-                <li><a href="/node-red/quick-tips/node-red-tips-2/">Deploying, Debugging, and Delaying</a></li>
-                <li><a href="/node-red/quick-tips/node-red-tips-3/">Exec, Filter, and Debug</a></li>
-                <li><a href="/node-red/quick-tips/node-red-tips-4/">Smooth, Catch, and Math</a></li>
-                <li><a href="/node-red/quick-tips/node-red-tips-5/">Importing, Exporting, and Grouping Flows</a></li>
-                <li><a href="/node-red/quick-tips/node-red-tips-6/">Subflows, Link Nodes, and the Range Node</a></li>
-                <li><a href="/node-red/quick-tips/node-red-tips-7/">Dashboard</a></li>
-            </ul>
-        </li>
-        <li><a href="/node-red/variables/">Variables</a></li>
-    </ul>
+<div class="border-r">
+{{ collections.learningResources | eleventyNavigation | eleventyNavigationToHtml(navigationOptions) | safe }}
 </div>
 
+<!-- Turn .has-children elements into accordions -->
+<script>
+    window.addEventListener('load', (event) => {
+        document.querySelectorAll('.has-children').forEach(function(element) {
+            var container = document.createElement('div');
+            container.classList.add('link-chevron-container');
 
-<!-- <div class="border-r">
-{{ collections.learningResources | eleventyNavigation | eleventyNavigationToHtml(navigationOptions) | safe }}
-</div> -->
+            var link = element.children[0];
+            container.appendChild(link);
+
+            var chevron = document.createElement('span');
+            chevron.classList.add('chevron');
+            chevron.innerHTML = '{% include "components/icons/chevron-down.svg" %}';
+
+            var sublist = element.querySelector('ul');
+            sublist.style.display = 'none';
+
+            chevron.addEventListener('click', function(event) {
+                event.stopPropagation();
+                sublist.style.display = sublist.style.display === 'none' ? 'block' : 'none';
+                chevron.classList.toggle('rotated');
+            });
+
+            container.appendChild(chevron);
+            element.insertBefore(container, element.children[0]);
+        });
+
+        var currentUrl = window.location.href;
+        document.querySelectorAll('.has-children ul a').forEach(function(element) {
+            if (element.href === currentUrl) {
+                var currentElement = element.closest('li');
+                while (currentElement !== null) {
+                    if (currentElement.tagName.toLowerCase() === 'ul') {
+                        currentElement.style.display = 'block';
+                    }
+                    if (currentElement.classList.contains('has-children')) {
+                        currentElement.querySelector('.chevron').classList.add('rotated');
+                    }
+                    currentElement = currentElement.parentElement.closest('li, ul');
+                }
+            }
+        });
+    });
+</script>

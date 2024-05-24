@@ -472,7 +472,6 @@ module.exports = function(eleventyConfig) {
                 hierarchy.reduce((accumulator, currentValue, i) => {
                     // create a nested object detailing the full handbook hierarchy
                     if (!accumulator[currentValue]) {
-                        // check for subGroup and use it to group the pages
                         accumulator[currentValue] = {
                             'name': currentValue,
                             'url': page.data.redirect?.to || page.data.redirect || page.url,
@@ -482,6 +481,7 @@ module.exports = function(eleventyConfig) {
                         if (page.data.navTitle) {
                             accumulator[currentValue].name = page.data.navTitle
                         }
+                        // TODO: navGroup will be used in the rendering of the ToC at a later stage
                         if (page.data.navGroup) {
                             accumulator[currentValue].group = page.data.navGroup
                         }
@@ -546,7 +546,7 @@ module.exports = function(eleventyConfig) {
                 }
 
                 nav[tag].groups = Object.values(groups).sort(sortChildren)
-                
+
                 nav[tag].groups.forEach((group) => {
                     if (group.children) {
                         group.children.forEach((child) => {

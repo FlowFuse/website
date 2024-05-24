@@ -29,7 +29,7 @@ Several custom nodes are required in order to properly deploy this flow.  For mo
 
 As this is not a production application, no security will be utilized, and it is assumed that the OPC UA Server is running on the same network as the Node-RED OPC Client.
 
-Is it also assumed that the end user of this article has familiarization with dashboards.  There are many dashboard basic guides available online, including a [node red quick tips - dashboard edition](/node-red/quick-tips/node-red-tips-7//) here on FlowFuse.  You can still deploy the flow and access the dashboard UI at the url [http://localhost:1880/ui](http://localhost:1880/ui) (if the default settings are used), though this article does not delve into the details of dashboard building.  
+Is it also assumed that the end user of this article has familiarization with dashboards.  There are many dashboard basic guides available online, including a [node red quick tips - dashboard edition](/node-red/quick-tips/node-red-tips-7/) here on FlowFuse.  You can still deploy the flow and access the dashboard UI at the url [http://localhost:1880/ui](http://localhost:1880/ui) (if the default settings are used), though this article does not delve into the details of dashboard building.  
 
 ## Install and Deploy the Prosys OPC UA Simulation Server
 
