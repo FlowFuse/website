@@ -49,21 +49,19 @@ async function copyFiles (src, dest, version) {
 }
 
 (async () => {
-
     // Check we are in the root of the website repo
     if (!existsSync('src')) {
         console.log('Run this from the top of the website repository')
         process.exit(-1)
     }
 
-    // Go find the FF docs folder. It could be ../flowforge/docs or ../flowfuse/docs
-    let ffRepo = '../flowfuse'
-    if (!existsSync(ffRepo)) {
-        ffRepo = '../flowforge'
-        if (!existsSync(ffRepo)) {
-            console.log('FlowFuse repository not found (../flowfuse or ../flowforge) - skipping')
-            process.exit(-1)
-        }
+    const repoPaths = ['../dev-env/packages/flowfuse', '../flowfuse', '../flowforge'];
+
+    // For the first repoPath to exist, we will use that one
+    const ffRepo = repoPaths.find(p => existsSync(path.join(p, 'docs')))
+    if (!ffRepo) {
+        console.log(`FlowFuse repository not found (${repoPaths}) - skipping`)
+        process.exit(-1)
     }
 
     const docsDir = path.join(ffRepo, 'docs')
@@ -101,8 +99,6 @@ async function copyFiles (src, dest, version) {
         })
         setInterval(() => {}, 1 << 30);
     }
-
-
 })()
 
 
