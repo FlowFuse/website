@@ -16,7 +16,13 @@ Dashboards are a great feature of Node-RED, allowing you to easily expose data v
 
 <!--more-->
 
-**UPDATE:** A new project has been started on the next generation of Node-RED Dashboard. You can get the read more about it on the [documentation site](https://dashboard.flowfuse.com)
+<div class="blog-update-notes">
+    <p><strong>UPDATE:</strong> Since this article was published, it's worth noting a couple of important updates:</p>
+    <ul>
+        <li>FlexDash is no longer maintained and supported.</li>
+        <li><a href="https://dashboard.flowfuse.com">Node-RED Dashboard 2.0</a> has been released, which is a new, modern dashboard stack for Node-RED, and offers all of the benefits of the original "Node-RED Dashboard", plus more.</li>
+    </ul>
+</div>
 
 ## Which dashboards am I going to consider?
 
