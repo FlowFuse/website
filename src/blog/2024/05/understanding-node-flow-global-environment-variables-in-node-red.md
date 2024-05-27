@@ -29,7 +29,7 @@ Global variables in Node-RED are accessible to function, change, inject, and swi
 
 For example, in a home automation system with flows for lighting, security, and climate control, global variables can store user preferences or system settings that all flows can access and update. This allows for consistent behavior across the entire system.
 
-#### Initiating/setting Flow variable
+#### Initiating/setting Global variable
 
 We can set Global variables using the function and change node.
 
