@@ -9,7 +9,7 @@ tags:
     - posts
     - ai 
 ---
-Are we standing on the brink of a Fifth Industrial Revolution? The manufacturing industry has been in a state of flux for some time, with the rise of automation and digitization transforming the way factories operate. But today, we are witnessing something even more profound: AI is pushing manufacturing to a whole new level. Some have even referred to it as “the fifth industrial revolution” due to its potential for disruption.
+Are we standing on the brink of a Fifth Industrial Revolution? The manufacturing industry has been in a state of flux for some time, with the rise of automation and digital transforming the way factories operate. But today, we are witnessing something even more profound: AI is pushing manufacturing to a whole new level. Some have even referred to it as “the fifth industrial revolution” due to its potential for disruption.
 
 <!--more-->
 
