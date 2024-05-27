@@ -4,7 +4,7 @@ navTitle: Community Guidelines
 
 ## Node-RED is FlowFuse
 
-We strongly encourage the belief that the Node-RED and FlowFuse communities are the same.Whether you are a FlowFuse community member or an employee, you should treat both community members equally. Remember, the success of FlowFuse lies in the success of Node-RED.
+We strongly encourage the belief that the Node-RED and FlowFuse communities are the same. Whether you are a FlowFuse community member or an employee, you should treat both community members equally. Remember, the success of FlowFuse lies in the success of Node-RED.
 
 ### General Guidelines
 
