@@ -1,62 +1,70 @@
-{% set navigationOptions = {
-    listElement: "ul",
-    listItemElement: "li",
-    listClass: "eleventy-nav",
-    listItemClass: "",
-    listItemHasChildrenClass: "has-children",
-    activeListItemClass: "active",
-    anchorClass: "",
-    activeAnchorClass: "",
-    activeKey: eleventyNavigation.key,
-    showExcerpt: false
-} %}
-
 <!-- Navigation -->
 <div class="border-r">
-{{ collections.learningResources | eleventyNavigation | eleventyNavigationToHtml(navigationOptions) | safe }}
+    {% set navPages = collections.all | eleventyNavigation %}
+    {% macro renderNavListItem(entry) -%}
+        {% set isChildUrl = false %}
+        {% for child in entry.children %}
+            {% if child.url == page.url %}
+                {% set isChildUrl = true %}
+            {% endif %}
+        {% endfor %}
+
+        <li class="{% if entry.url==page.url and not isChildUrl %}active{% endif %}{% if entry.children.length %} has-children{% endif %}">
+            {%- if entry.children.length -%}
+            <div class="link-chevron-container {% if entry.url==page.url %}active{% endif %}">
+                <a href="{{ entry.url }}">{{ entry.title }}</a>
+                <span class="chevron">{% include "components/icons/chevron-down.svg" %}</span>
+            </div>
+                <ul style="display: none;">
+                    {%- for child in entry.children %}
+                    {{ renderNavListItem(child) }}
+                    {%- endfor -%}
+                </ul>
+            {%- else -%}
+            <a href="{{ entry.url }}">{{ entry.title }}</a>
+            {%- endif %}
+        </li>
+    {%- endmacro %}
+    <ul class="eleventy-nav">
+        {%- for entry in navPages %}
+        {{ renderNavListItem(entry) }}
+        {%- endfor -%}
+    </ul>
 </div>
 
 <!-- Turn .has-children elements into accordions -->
 <script>
-    window.addEventListener('load', (event) => {
-        document.querySelectorAll('.has-children').forEach(function(element) {
-            var container = document.createElement('div');
-            container.classList.add('link-chevron-container');
+    document.querySelectorAll('.chevron').forEach(function(chevron) {
+        var sublist = chevron.parentElement.nextElementSibling;
 
-            var link = element.children[0];
-            container.appendChild(link);
-
-            var chevron = document.createElement('span');
-            chevron.classList.add('chevron');
-            chevron.innerHTML = '{% include "components/icons/chevron-down.svg" %}';
-
-            var sublist = element.querySelector('ul');
-            sublist.style.display = 'none';
-
-            chevron.addEventListener('click', function(event) {
-                event.stopPropagation();
-                sublist.style.display = sublist.style.display === 'none' ? 'block' : 'none';
-                chevron.classList.toggle('rotated');
-            });
-
-            container.appendChild(chevron);
-            element.insertBefore(container, element.children[0]);
+        chevron.addEventListener('click', function(event) {
+            event.stopPropagation();
+            sublist.style.display = sublist.style.display === 'none' ? 'block' : 'none';
+            chevron.classList.toggle('rotated');
         });
+    });
 
-        var currentUrl = window.location.href;
-        document.querySelectorAll('.has-children ul a').forEach(function(element) {
-            if (element.href === currentUrl) {
-                var currentElement = element.closest('li');
-                while (currentElement !== null) {
-                    if (currentElement.tagName.toLowerCase() === 'ul') {
-                        currentElement.style.display = 'block';
-                    }
-                    if (currentElement.classList.contains('has-children')) {
-                        currentElement.querySelector('.chevron').classList.add('rotated');
-                    }
-                    currentElement = currentElement.parentElement.closest('li, ul');
+    var currentUrl = window.location.href;
+    document.querySelectorAll('.has-children ul a').forEach(function(element) {
+        if (element.href === currentUrl) {
+            var currentElement = element.closest('li');
+            while (currentElement !== null) {
+                if (currentElement.tagName.toLowerCase() === 'ul') {
+                    currentElement.style.display = 'block';
                 }
+                if (currentElement.querySelector('.chevron')) {
+                    currentElement.querySelector('.chevron').classList.add('rotated');
+                }
+                currentElement = currentElement.parentElement.closest('li, ul');
             }
-        });
+        }
+    });
+
+    document.querySelectorAll('.has-children').forEach(function(element) {
+        if (element.querySelector('.active') && element.querySelector('ul').style.display !== 'none') {
+            element.querySelector('.chevron').classList.add('rotated');
+        } else if (element.querySelector('.chevron.rotated') && element.querySelector('ul').style.display === 'none') {
+            element.querySelector('.chevron').classList.remove('rotated');
+        }
     });
 </script>
