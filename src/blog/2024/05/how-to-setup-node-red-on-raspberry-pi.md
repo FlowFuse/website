@@ -8,7 +8,7 @@ image: /blog/2024/05/images/how-to-setup-node-red-on-raspberry-pi.png
 tags:
    - node-red 
    - raspberry pi
-   - remote Device Management
+   - remote device management
    - remote access
 
 ---
