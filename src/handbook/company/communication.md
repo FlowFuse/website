@@ -152,15 +152,6 @@ Every department gets 5 minutes to explain what initiatives have been implemente
 over the past 2 weeks, what initiatives or milestones are scheduled for the next
 two weeks, and what results are expected to the company wide KPI.
 
-## Node-RED community interactions.
-
-As an employee of FlowFuse, when we interact with the OSS Node-RED community we 
-must be mindful of our position.  For example, when offering advice on the Node-RED 
-forum or the Node-RED slack, the first answer we offer should be how a solution can 
-be achieved using Node-RED.  If a native Node-RED solution is not possible or the 
-user would benefit from the advantages that FlowFuse offers, then, like any other 
-person or company, we can offer FlowFuse as a potential solution.
-
 ## Feedback and Thanks
 
 In FlowFuse, we strongly encourage the sharing of feedback and thank you's. We have
