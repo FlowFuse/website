@@ -1,6 +1,5 @@
 ---
 navTitle: Community 
-navGroup: Community
 ---
 
 # Community
