@@ -267,7 +267,7 @@ DROP TABLE IF EXISTS sensor_data;
 
 1. To test the imported flows, you need to deploy them. To do that, click on the deploy button located in the top right corner.
 
-After deploying the flow, you can test each operation such as creating, deleting, updating, and other queries by clicking on the inject button. Upon successful operation, you will be able to see the results in the debug panel of the sidebar. Additionally, if you want to learn more about PostgreSQL, you can refer to the [Using PostgreSQL with Node-RED](https://flowfuse.com/blog/2024/02/postgresql-with-node-red/) where you will also find the section which shows the messages received after a successful operation by the PostgresWQL node.
+After deploying the flow, you can test each operation such as creating, deleting, updating, and other queries by clicking on the inject button. Upon successful operation, you will be able to see the results in the debug panel of the sidebar. Additionally, if you want to learn more about PostgreSQL, you can refer to the [Using PostgreSQL with Node-RED](/blog/2024/02/postgresql-with-node-red/) where you will also find the section which shows the messages received after a successful operation by the PostgresWQL node.
 
 
 ## Conclusion
