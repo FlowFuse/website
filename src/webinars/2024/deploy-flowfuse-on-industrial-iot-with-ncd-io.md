@@ -9,7 +9,8 @@ duration: 60
 video: uDtUQtNI_So
 hosts: ["grey-dziuba", "travis-elliot"]
 hubspot:
-    formId: 45695dae-9102-4a06-a3d5-e38b3f82ab3a    
+    formId: 45695dae-9102-4a06-a3d5-e38b3f82ab3a
+    downloadFormId: 734f7878-9f53-4943-89d4-4de7d9f7cea9
 ---
 
 **Discover how to overcome Industrial IoT challenges and how a low-code platform can enhance data access and securty across various industries.**
@@ -20,10 +21,10 @@ The journey towards advanced Industrial Internet of Things (IIoT) solutions is f
 
 How can these networks be safely connected to enable better data access and usability? Enter FlowFuse and NCD.io’s Enterprise IIoT Gateway where FlowFuse’s ability to enhance these connections makes getting data from various sources ranging from wind turbines, cooling towers, maritime, to tank farms effortless.
 
-Join Grey Dziuba, OT Data and Community Strategist at FlowFuse and Travis Elliot, COO of NCD.io, as they discuss:
+Grey Dziuba, OT Data and Community Strategist at FlowFuse and Travis Elliot, COO of NCD.io, discuss:
 
 - How Node-Red and NCD.io’s technologies can streamline IIoT deployments.
 - Best practices for integrating these technologies into your existing infrastructure.
 - The extended capabilities of FlowFuse in enhancing the security and scalability of IIoT systems.
 
-This live session is essential for engineers, system integrators, and decision-makers in manufacturing and industrial sectors looking to enhance their IIoT strategies. Join us to discover how to leverage these technologies to not just overcome the traditional challenges but to propel your operations forward securely and efficiently.
+This webinar is essential for engineers, system integrators, and decision-makers in manufacturing and industrial sectors looking to enhance their IIoT strategies. Discover how to leverage these technologies to not just overcome the traditional challenges but to propel your operations forward securely and efficiently.
