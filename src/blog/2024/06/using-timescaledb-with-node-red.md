@@ -284,8 +284,6 @@ DROP TABLE IF EXISTS sensor_data;
 
 After deploying the flow, you can test each operation such as creating, deleting, updating, and other queries by clicking on the inject button. Upon successful operation, you will be able to see the results in the debug panel of the sidebar. Additionally, if you want to learn more about PostgreSQL, you can refer to the [Using PostgreSQL with Node-RED](/blog/2024/02/postgresql-with-node-red/) where you will also find the section which shows the messages received after a successful operation by the PostgresWQL node.
 
-
 ## Conclusion
 
 In this guide, we have demonstrated how to integrate TimescaleDB with Node-RED. We have covered various operations, including creating hypertables, deleting them, and performing data manipulation tasks such as inserting, updating, and deleting data, as well as executing advanced queries.
-
