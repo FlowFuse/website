@@ -103,8 +103,9 @@ SELECT create_hypertable('sensor_data', 'time');
 2. Drag an Inject node onto the canvas, which we will use to trigger the operation.
 3. Connect the Inject node's output to the input of the PostgreSQL node.
 
-
+{% renderFlow %}
 [{"id":"d766709f13c8410b","type":"inject","z":"7748186d67ad0a58","name":"Create hypertable","props":[{"p":"payload"},{"p":"topic","vt":"str"}],"repeat":"","crontab":"","once":false,"onceDelay":0.1,"topic":"","payload":"","payloadType":"date","x":210,"y":140,"wires":[["a977cb646de2a30b"]]},{"id":"a977cb646de2a30b","type":"postgresql","z":"7748186d67ad0a58","name":"PostgreSQL","query":"CREATE TABLE sensor_data (\n    time TIMESTAMPTZ NOT NULL,\n    location TEXT,\n    temperature DOUBLE PRECISION\n);\n\nSELECT create_hypertable('sensor_data', 'time');\n","postgreSQLConfig":"ea1f8e3d9db95245","split":false,"rowsPerMsg":1,"outputs":1,"x":490,"y":140,"wires":[["c843732f2088f83e"]]},{"id":"c843732f2088f83e","type":"debug","z":"7748186d67ad0a58","name":"debug 1","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"false","statusVal":"","statusType":"auto","x":740,"y":140,"wires":[]},{"id":"ea1f8e3d9db95245","type":"postgreSQLConfig","name":"TimescaleDB Configurations","host":"${HOST}","hostFieldType":"str","port":"${PORT}","portFieldType":"num","database":"${DATABASE}","databaseFieldType":"str","ssl":"false","sslFieldType":"bool","applicationName":"","applicationNameType":"str","max":"10","maxFieldType":"num","idle":"1000","idleFieldType":"num","connectionTimeout":"10000","connectionTimeoutFieldType":"num","user":"${USERNAME}","userFieldType":"str","password":"${PASSWORD}","passwordFieldType":"str"}]
+{% endrenderFlow %}
 
 ### Inserting Data into the Table
 
@@ -135,7 +136,9 @@ VALUES (
 5. Drag a Debug node onto the canvas.
 6. Connect the output of the Inject nodes to the input of the PostgreSQL node and the output of PostgreSQL to the input of the Debug node.
 
+{% renderFlow %}
 [{"id":"c42dfdaa44a02eda","type":"postgresql","z":"7748186d67ad0a58","name":"","query":"INSERT INTO sensor_data (time, location, temperature)\nVALUES (now(), '{{msg.payload.location}}', '{{msg.payload.temperature}}');\n","postgreSQLConfig":"ea1f8e3d9db95245","split":false,"rowsPerMsg":1,"outputs":1,"x":490,"y":540,"wires":[["f88822fc9fdf90dc"]]},{"id":"f88822fc9fdf90dc","type":"debug","z":"7748186d67ad0a58","name":"debug 2","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"false","statusVal":"","statusType":"auto","x":700,"y":540,"wires":[]},{"id":"b3b5fc6ad830145e","type":"inject","z":"7748186d67ad0a58","name":"Sensor placed in the New York","props":[{"p":"payload.location","v":"New York","vt":"str"},{"p":"payload.temperature","v":"$floor(($random() * 21) + 30)","vt":"jsonata"}],"repeat":"5","crontab":"","once":false,"onceDelay":0.1,"topic":"","x":230,"y":580,"wires":[["c42dfdaa44a02eda"]]},{"id":"2d07d8d73ed43f37","type":"inject","z":"7748186d67ad0a58","name":"Sensor placed in the Chicago","props":[{"p":"payload.location","v":"Chicago","vt":"str"},{"p":"payload.temperature","v":"$floor(($random() * 21) + 30)","vt":"jsonata"}],"repeat":"5","crontab":"","once":false,"onceDelay":0.1,"topic":"","x":230,"y":520,"wires":[["c42dfdaa44a02eda"]]},{"id":"ea1f8e3d9db95245","type":"postgreSQLConfig","name":"TimescaleDB Configurations","host":"${HOST}","hostFieldType":"str","port":"${PORT}","portFieldType":"num","database":"${DATABASE}","databaseFieldType":"str","ssl":"false","sslFieldType":"bool","applicationName":"","applicationNameType":"str","max":"10","maxFieldType":"num","idle":"1000","idleFieldType":"num","connectionTimeout":"10000","connectionTimeoutFieldType":"num","user":"${USERNAME}","userFieldType":"str","password":"${PASSWORD}","passwordFieldType":"str"}]
+{% endrenderFlow %}
 
 ### Updating data to the table
 
@@ -154,8 +157,9 @@ UPDATE sensor_data
 3. Drag a Debug node onto the canvas.
 4. Connect the output of the Inject node to the input of the PostgreSQL node and the output of the PostgreSQL node to the input of the Debug node.
 
-
+{% renderFlow %}
 [{"id":"702b9169ff00396c","type":"inject","z":"7748186d67ad0a58","name":"Updating data based on condition","props":[{"p":"payload"},{"p":"topic","vt":"str"}],"repeat":"","crontab":"","once":false,"onceDelay":0.1,"topic":"","payload":"","payloadType":"date","x":210,"y":1120,"wires":[["81dcb2d851bb9316"]]},{"id":"81dcb2d851bb9316","type":"postgresql","z":"7748186d67ad0a58","name":"","query":"-- Update temperature data in the sensor_data table\nUPDATE sensor_data\n  SET temperature = temperature + 0.1\n  WHERE time >= '2024-05-29T11:50:25.859Z' -- Starting timestamp for the update\n    AND time < '2024-05-29T12:17:43.305Z'; -- Ending timestamp for the update\n","postgreSQLConfig":"ea1f8e3d9db95245","split":false,"rowsPerMsg":1,"outputs":1,"x":530,"y":1120,"wires":[["29e28595a9f5a0df"]]},{"id":"29e28595a9f5a0df","type":"debug","z":"7748186d67ad0a58","name":"debug 14","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"false","statusVal":"","statusType":"auto","x":760,"y":1120,"wires":[]},{"id":"ea1f8e3d9db95245","type":"postgreSQLConfig","name":"TimescaleDB Configurations","host":"${HOST}","hostFieldType":"str","port":"${PORT}","portFieldType":"num","database":"${DATABASE}","databaseFieldType":"str","ssl":"false","sslFieldType":"bool","applicationName":"","applicationNameType":"str","max":"10","maxFieldType":"num","idle":"1000","idleFieldType":"num","connectionTimeout":"10000","connectionTimeoutFieldType":"num","user":"${USERNAME}","userFieldType":"str","password":"${PASSWORD}","passwordFieldType":"str"}]
+{% endrenderFlow %}
 
 ### Deleting data to the table
 
@@ -170,7 +174,9 @@ WHERE temperature < 35 -- Delete rows where the temperature is less than 35 degr
 3. Drag a Debug node onto the canvas.
 4. Connect the output of the Inject node to the input of the PostgreSQL node and the output of the PostgreSQL node to the input of the Debug node.
 
+{% renderFlow %}
 [{"id":"702b9169ff00396c","type":"inject","z":"7748186d67ad0a58","name":"Delete data based on condition","props":[{"p":"payload"},{"p":"topic","vt":"str"}],"repeat":"","crontab":"","once":false,"onceDelay":0.1,"topic":"","payload":"","payloadType":"date","x":210,"y":1120,"wires":[["81dcb2d851bb9316"]]},{"id":"81dcb2d851bb9316","type":"postgresql","z":"7748186d67ad0a58","name":"","query":"-- Delete rows from the sensor_data table where the temperature is below 35 degrees Celsius or humidity is below 60%\nDELETE FROM sensor_data\nWHERE temperature < 35 -- Delete rows where the temperature is less than 35 degrees Celsius","postgreSQLConfig":"ea1f8e3d9db95245","split":false,"rowsPerMsg":1,"outputs":1,"x":530,"y":1120,"wires":[["29e28595a9f5a0df"]]},{"id":"29e28595a9f5a0df","type":"debug","z":"7748186d67ad0a58","name":"debug 14","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"false","statusVal":"","statusType":"auto","x":760,"y":1120,"wires":[]},{"id":"ea1f8e3d9db95245","type":"postgreSQLConfig","name":"TimescaleDB Configurations","host":"${HOST}","hostFieldType":"str","port":"${PORT}","portFieldType":"num","database":"${DATABASE}","databaseFieldType":"str","ssl":"false","sslFieldType":"bool","applicationName":"","applicationNameType":"str","max":"10","maxFieldType":"num","idle":"1000","idleFieldType":"num","connectionTimeout":"10000","connectionTimeoutFieldType":"num","user":"${USERNAME}","userFieldType":"str","password":"${PASSWORD}","passwordFieldType":"str"}]
+{% endrenderFlow %}
 
 ### Retrieving all data from the table
 
@@ -184,7 +190,9 @@ SELECT * FROM sensor_data;
 3. Drag a Debug node onto the canvas.
 4. Connect the output of the Inject node to the input of the PostgreSQL node and the output of the PostgreSQL node to the input of the Debug node.
 
+{% renderFlow %}
 [{"id":"d551e15f7013e970","type":"inject","z":"7748186d67ad0a58","name":"Retrieve all data","props":[{"p":"payload"},{"p":"topic","vt":"str"}],"repeat":"","crontab":"","once":false,"onceDelay":0.1,"topic":"","payload":"","payloadType":"date","x":180,"y":660,"wires":[["858063c8e7d90f50"]]},{"id":"858063c8e7d90f50","type":"postgresql","z":"7748186d67ad0a58","name":"","query":"SELECT * FROM sensor_data;","postgreSQLConfig":"ea1f8e3d9db95245","split":false,"rowsPerMsg":1,"outputs":1,"x":550,"y":660,"wires":[["79156835d5ad4c4d"]]},{"id":"79156835d5ad4c4d","type":"debug","z":"7748186d67ad0a58","name":"debug 9","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"false","statusVal":"","statusType":"auto","x":780,"y":660,"wires":[]},{"id":"ea1f8e3d9db95245","type":"postgreSQLConfig","name":"TimescaleDB Configurations","host":"${HOST}","hostFieldType":"str","port":"${PORT}","portFieldType":"num","database":"${DATABASE}","databaseFieldType":"str","ssl":"false","sslFieldType":"bool","applicationName":"","applicationNameType":"str","max":"10","maxFieldType":"num","idle":"1000","idleFieldType":"num","connectionTimeout":"10000","connectionTimeoutFieldType":"num","user":"${USERNAME}","userFieldType":"str","password":"${PASSWORD}","passwordFieldType":"str"}]
+{% endrenderFlow %}
 
 ### Retrieve Recent Data
 
@@ -204,7 +212,9 @@ LIMIT 100; -- Limit the results to 100 rows
 3. Drag a Debug node onto the canvas.
 4. Connect the output of the Inject node to the input of the PostgreSQL node and the output of the PostgreSQL node to the input of the Debug node.
 
+{% renderFlow %}
 [{"id":"9436c79e9d9e3593","type":"inject","z":"7748186d67ad0a58","name":"Retrieve last 100 data ordered by time","props":[{"p":"payload"},{"p":"topic","vt":"str"}],"repeat":"","crontab":"","once":false,"onceDelay":0.1,"topic":"","payload":"","payloadType":"date","x":250,"y":720,"wires":[["6d26117dd61d0ecc"]]},{"id":"6d26117dd61d0ecc","type":"postgresql","z":"7748186d67ad0a58","name":"","query":"SELECT * FROM sensor_data ORDER BY time DESC LIMIT 100;","postgreSQLConfig":"ea1f8e3d9db95245","split":false,"rowsPerMsg":1,"outputs":1,"x":550,"y":720,"wires":[["092a08307ae6d63c"]]},{"id":"092a08307ae6d63c","type":"debug","z":"7748186d67ad0a58","name":"debug 10","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"false","statusVal":"","statusType":"auto","x":780,"y":720,"wires":[]},{"id":"ea1f8e3d9db95245","type":"postgreSQLConfig","name":"TimescaleDB Configurations","host":"${HOST}","hostFieldType":"str","port":"${PORT}","portFieldType":"num","database":"${DATABASE}","databaseFieldType":"str","ssl":"false","sslFieldType":"bool","applicationName":"","applicationNameType":"str","max":"10","maxFieldType":"num","idle":"1000","idleFieldType":"num","connectionTimeout":"10000","connectionTimeoutFieldType":"num","user":"${USERNAME}","userFieldType":"str","password":"${PASSWORD}","passwordFieldType":"str"}]
+{% endrenderFlow %}
 
 ### Retrieve Data Based on Time Range
 
@@ -223,7 +233,9 @@ WHERE time > NOW() - INTERVAL '400 SECONDS';
 3. Drag a Debug node onto the canvas.
 4. Connect the output of the inject node to the input of the PostgreSQL node, and connect the output of the PostgreSQL node to the input of the debug node.
 
+{% renderFlow %}
 [{"id":"60e111b1f6e09613","type":"inject","z":"7748186d67ad0a58","name":"Retrieve data based on time range","props":[{"p":"payload"},{"p":"topic","vt":"str"}],"repeat":"","crontab":"","once":false,"onceDelay":0.1,"topic":"","payload":"","payloadType":"date","x":240,"y":880,"wires":[["0b1ec338dbb164f9"]]},{"id":"0b1ec338dbb164f9","type":"postgresql","z":"7748186d67ad0a58","name":"","query":"-- Aggregate data into specific time buckets\nSELECT time_bucket('15 minutes', time) AS fifteen_min, -- Create time buckets of 15 minutes\n       location, -- Location of the sensor\n       MAX(temperature) AS max_temp -- Calculate the maximum temperature within each time bucket\nFROM sensor_data -- Select data from the conditions table\nWHERE time > NOW() - INTERVAL '3 hours' -- Filter data to include only the last 3 hours\nGROUP BY fifteen_min, location -- Group data by time buckets and location\nORDER BY fifteen_min DESC, max_temp DESC; -- Order the results by time bucket in descending order, and then by maximum temperature in descending order\n","postgreSQLConfig":"ea1f8e3d9db95245","split":false,"rowsPerMsg":1,"outputs":1,"x":550,"y":880,"wires":[["f6f6c4fa651ee351"]]},{"id":"f6f6c4fa651ee351","type":"debug","z":"7748186d67ad0a58","name":"debug 13","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"false","statusVal":"","statusType":"auto","x":780,"y":880,"wires":[]},{"id":"ea1f8e3d9db95245","type":"postgreSQLConfig","name":"TimescaleDB Configurations","host":"${HOST}","hostFieldType":"str","port":"${PORT}","portFieldType":"num","database":"${DATABASE}","databaseFieldType":"str","ssl":"false","sslFieldType":"bool","applicationName":"","applicationNameType":"str","max":"10","maxFieldType":"num","idle":"1000","idleFieldType":"num","connectionTimeout":"10000","connectionTimeoutFieldType":"num","user":"${USERNAME}","userFieldType":"str","password":"${PASSWORD}","passwordFieldType":"str"}]
+{% endrenderFlow %}
 
 ### Aggregating data into specific time bucket
 
@@ -246,7 +258,9 @@ ORDER BY fifteen_min DESC, max_temp DESC; -- Order the results by time bucket in
 3. Drag the Debug node onto the canvas.
 4. Connect the output of the inject node to the input of the PostgreSQL node, and connect the output of the PostgreSQL node to the input of the debug node.
 
+{% renderFlow %}
 [{"id":"60e111b1f6e09613","type":"inject","z":"7748186d67ad0a58","name":"Aggregating data into specific time bucket","props":[{"p":"payload"},{"p":"topic","vt":"str"}],"repeat":"","crontab":"","once":false,"onceDelay":0.1,"topic":"","payload":"","payloadType":"date","x":260,"y":880,"wires":[["0b1ec338dbb164f9"]]},{"id":"0b1ec338dbb164f9","type":"postgresql","z":"7748186d67ad0a58","name":"","query":"-- Aggregate data into specific time buckets\nSELECT time_bucket('15 minutes', time) AS fifteen_min, -- Create time buckets of 15 minutes\n       location, -- Location of the sensor\n       MAX(temperature) AS max_temp -- Calculate the maximum temperature within each time bucket\nFROM sensor_data -- Select data from the conditions table\nWHERE time > NOW() - INTERVAL '3 hours' -- Filter data to include only the last 3 hours\nGROUP BY fifteen_min, location -- Group data by time buckets and location\nORDER BY fifteen_min DESC, max_temp DESC; -- Order the results by time bucket in descending order, and then by maximum temperature in descending order\n","postgreSQLConfig":"ea1f8e3d9db95245","split":false,"rowsPerMsg":1,"outputs":1,"x":550,"y":880,"wires":[["f6f6c4fa651ee351"]]},{"id":"f6f6c4fa651ee351","type":"debug","z":"7748186d67ad0a58","name":"debug 13","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"false","statusVal":"","statusType":"auto","x":780,"y":880,"wires":[]},{"id":"ea1f8e3d9db95245","type":"postgreSQLConfig","name":"TimescaleDB Configurations","host":"${HOST}","hostFieldType":"str","port":"${PORT}","portFieldType":"num","database":"${DATABASE}","databaseFieldType":"str","ssl":"false","sslFieldType":"bool","applicationName":"","applicationNameType":"str","max":"10","maxFieldType":"num","idle":"1000","idleFieldType":"num","connectionTimeout":"10000","connectionTimeoutFieldType":"num","user":"${USERNAME}","userFieldType":"str","password":"${PASSWORD}","passwordFieldType":"str"}]
+{% endrenderFlow %}
 
 ### Dropping the table 
 
@@ -260,8 +274,9 @@ DROP TABLE IF EXISTS sensor_data;
 3. Drag the Debug node onto the canvas.
 4. Connect the output of the inject node to the input of the PostgreSQL node, and connect the output of the PostgreSQL node to the input of the debug node.
 
+{% renderFlow %}
 [{"id":"5275332fecd1c715","type":"inject","z":"7748186d67ad0a58","name":"Drop table","props":[{"p":"payload"},{"p":"topic","vt":"str"}],"repeat":"","crontab":"","once":false,"onceDelay":0.1,"topic":"","payload":"","payloadType":"date","x":160,"y":960,"wires":[["382c26de90712487"]]},{"id":"382c26de90712487","type":"postgresql","z":"7748186d67ad0a58","name":"","query":"DROP TABLE IF EXISTS sensor_data;","postgreSQLConfig":"ea1f8e3d9db95245","split":false,"rowsPerMsg":1,"outputs":1,"x":450,"y":960,"wires":[["d7eb0c9020c968c5"]]},{"id":"d7eb0c9020c968c5","type":"debug","z":"7748186d67ad0a58","name":"debug 12","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"false","statusVal":"","statusType":"auto","x":720,"y":960,"wires":[]},{"id":"ea1f8e3d9db95245","type":"postgreSQLConfig","name":"TimescaleDB Configurations","host":"${HOST}","hostFieldType":"str","port":"${PORT}","portFieldType":"num","database":"${DATABASE}","databaseFieldType":"str","ssl":"false","sslFieldType":"bool","applicationName":"","applicationNameType":"str","max":"10","maxFieldType":"num","idle":"1000","idleFieldType":"num","connectionTimeout":"10000","connectionTimeoutFieldType":"num","user":"${USERNAME}","userFieldType":"str","password":"${PASSWORD}","passwordFieldType":"str"}]
-
+{% endrenderFlow %}
 
 ## Deploying the Flow
 
