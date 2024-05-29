@@ -1,6 +1,6 @@
 ## What is the Write File Node in Node-RED?
 
-The "Write File" node in Node-RED is used to write data to a file on the filesystem. It's commonly employed in flows where you need to save data or logs for later analysis or storage. However, In FlowFuse Cloud, the Write File node interacts with a cloud-based storage solution, leveraging AWS S3 for file storage. The content to be written is specified using `msg.payload`.
+The "Write File" node in Node-RED is used to write data to a file on the filesystem. It's commonly employed in flows where you need to save data or logs for later analysis or storage. In FlowFuse Cloud, the Write File node interacts with a cloud-based storage solution, leveraging AWS S3 for file storage. However, in the Node-RED instance running on edge devices using the FlowFuse device agent, this node will interact with the local file system of that device. The content to be written is specified using `msg.payload`.
 
 # Configuring the Write File Node in Node-RED:
 
@@ -20,8 +20,6 @@ The "Write File" node in Node-RED is used to write data to a file on the filesys
 - **Create Directory if it Doesn't Exist:** Enabling this option will create the specified directory if it is not already present in the filesystem.
 
 - **Encoding:** Specifies the character encoding to be used when writing data to the file, when selecting "set by `msg.encoding`" you can set it dynamically.
-
-*Note: The Edge devices running the FlowFuse device agent will use the local filesystem for file storage.*
 
 *Tip: Always use an absolute path for the filename to ensure Node-RED can accurately locate and manipulate the specified file.*
 
