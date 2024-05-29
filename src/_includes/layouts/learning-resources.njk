@@ -1,26 +1,9 @@
 ---
 layout: nohero
-date: git Last Modified
 ---
-<script>
-    function toggleNavList (el) {
-        const li = el.parentElement
-        li.classList.toggle('open')
-        const ul = li.nextElementSibling
-        ul.classList.toggle('open')
-        if (ul.style.maxHeight) {
-            ul.style.maxHeight = null;
-        } else {
-            if (ul.parentElement.tagName === "UL" && !ul.parentElement.classList.contains('handbook-nav')) {
-                ul.parentElement.style.maxHeight = "initial"
-            }
-            ul.style.maxHeight = ul.scrollHeight + "px";
-        } 
-    }
-</script>
 <div class="w-full bg-white/50">
-<div class="handbook ff-prose text-left pb-24 md:max-w-screen-xl m-auto">
-    {% include "./left-nav.njk" %}
+<div class="eleventy md:grid md:grid-cols-[265px_1fr_auto] flex flex-col-reverse text-left pb-24 md:max-w-screen-xl m-auto">
+    {% include "./learning-resources-nav.njk" %}
 
     <div class="max-w-screen-lg mx-auto px-8 pt-8">
         <!-- Breadcrumbs - Desktop -->
@@ -29,7 +12,9 @@ date: git Last Modified
                 {% if version %}
                 v{{ version }}
                 {% endif %}
-                {{ page.url | handbookBreadcrumbs | safe }}
+                {% if page.url %}
+                    {{ page.url | handbookBreadcrumbs | safe }}
+                {% endif %}
             </div>
         </div>
         <div class="w-full m-auto md:pt-6">
@@ -51,7 +36,9 @@ date: git Last Modified
                 {% if version %}
                 v{{ version }}
                 {% endif %}
-                {{ page.url | handbookBreadcrumbs | safe }}
+                {% if page.url %}
+                    {{ page.url | handbookBreadcrumbs | safe }}
+                {% endif %}
             </div>
         </div>
         <!-- Right side bar -->
