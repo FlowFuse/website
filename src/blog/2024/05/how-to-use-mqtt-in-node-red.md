@@ -11,7 +11,7 @@ tags:
    - mqtt
 ---
 
-In the realm of IoT, the number of IoT devices is set to surpass 75 billion by 2025, according to a [statista report](https://www.statista.com/statistics/471264/iot-number-of-connected-devices-worldwide/). Therefore, Efficient communication protocols and platforms that can easily connect to these devices and allow programming with low code are crucial. MQTT and Node-RED stand out for this purpose in the IoT domain. These technologies form the backbone of the popular [MING Stack](/blog/2023/02/ming-blog/) used in IoT, demonstrating their effectiveness in managing and processing IoT data. This guide will walk you through integrating MQTT with Node-RED, practical applications, and best practices.
+In the realm of IoT, the number of IoT devices is set to surpass 75 billion by 2025, according to a [statista report](https://www.statista.com/statistics/471264/iot-number-of-connected-devices-worldwide/). Therefore, efficient communication protocols and platforms that can easily connect to these devices and allow low-code programming are crucial. MQTT and Node-RED stand out for this purpose in the IoT domain. These technologies form the backbone of the popular [MING Stack](/blog/2023/02/ming-blog/) used in IoT, demonstrating their effectiveness in managing and processing data. This guide will walk you through integrating MQTT with Node-RED, practical applications, and best practices.
 
 <!--more-->
 
@@ -25,7 +25,7 @@ Node-RED, on the other hand, is a visual programming tool designed for connectin
 
 ### Setting up your MQTT Environment
 
-In this guide, we will utilize the [HiveMQ Cloud MQTT broker](https://www.hivemq.com/mqtt-cloud-broker/) , a fully managed MQTT broker service platform provided by HiveMQ. We will use their free trial as we are learning, but if you want to use it for your project, make sure to use their correct cluster according to your need. If you prefer to use another cloud platform, feel free to do so.
+In this guide, we will utilize the [HiveMQ Cloud MQTT broker](https://www.hivemq.com/mqtt-cloud-broker/), a fully managed MQTT broker service platform provided by HiveMQ. We will use their free trial as we are learning, but if you want to use it for your project, make sure to use their correct cluster according to your need. If you prefer to use another cloud platform, feel free to do so.
 
 1. Create your account with HiveMQ and log in.
 2. After logging in, you will be asked to select a cluster. Choose the **Starter** cluster, then select the **AWS Cloud** provider and set the tier to **Production S**. Make sure to select the correct region and proceed to create the cluster.
@@ -39,7 +39,6 @@ For Node-RED, we will be using FlowFuse, which enhances Node-RED usage with mana
 2. After successful login, you will see the Application and instance which is added by default.
 3. Click on that instance and then click on the editor URL to open the Node-RED editor.
 
-If you want to install Node-RED locally, refer to the [Installing Node-RED](https://nodered.org/docs/getting-started/local) guide. And if you are new to Node-RED, refer to the [Node-RED Editor Guide](https://nodered.org/docs/user-guide/editor/) and the tutorial on [Creating your first flow](https://nodered.org/docs/tutorials/first-flow#1-access-the-editor).
 
 ## Configuring MQTT Node in Node-RED
 
