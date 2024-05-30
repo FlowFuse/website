@@ -12,7 +12,7 @@
 	// "forwardPorts": [],
 
 	// Use 'postCreateCommand' to run commands after the container is created.
-	"postCreateCommand": "git clone https://github.com/FlowFuse/flowfuse.git && npm install",
+	"postCreateCommand": "git -C /workspace/ clone https://github.com/FlowFuse/flowfuse.git && npm install",
 
 	// Configure tool-specific properties.
 	"customizations": {
