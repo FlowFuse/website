@@ -1,7 +1,7 @@
 ---
 title: How to Use MQTT in Node-RED.
 subtitle: Step-by-step guide on integrating MQTT with Node-RED.
-description: Learn how to effectively integrate MQTT and Node-RED in this comprehensive guide, covering setup, configuration, and practical applications for IoT projects.
+description: Learn how to effectively integrate MQTT with Node-RED in this comprehensive guide, covering setup, configuration, and practical applications for IoT projects.
 date: 2024-05-29
 authors: ["sumit-shinde"]
 image: /blog/2024/05/images/how-to-use-mqtt-in-node-red.png
@@ -9,6 +9,7 @@ tags:
    - posts
    - node-red
    - mqtt
+   - manufacturing
 ---
 
 In the realm of IoT, the number of IoT devices is set to surpass 75 billion by 2025, according to a [statista report](https://www.statista.com/statistics/471264/iot-number-of-connected-devices-worldwide/). Therefore, efficient communication protocols and platforms that can easily connect to these devices and allow low-code programming are crucial. MQTT and Node-RED stand out for this purpose in the IoT domain. These technologies form the backbone of the popular [MING Stack](/blog/2023/02/ming-blog/) used in IoT, demonstrating their effectiveness in managing and processing data. This guide will walk you through integrating MQTT with Node-RED, practical applications, and best practices.
@@ -17,15 +18,15 @@ In the realm of IoT, the number of IoT devices is set to surpass 75 billion by 2
 
 ## Understanding MQTT and Node-RED
 
-MQTT, or Message Queuing Telemetry Transport, is a lightweight messaging protocol designed for efficient communication between devices in low-bandwidth and high-latency environments. It operates on a publish-subscribe model, where devices (clients) can publish messages to topics or subscribe to topics to receive messages. This architecture is particularly beneficial for IoT applications, where sensors and devices often need to communicate in real time across unreliable networks.
+MQTT (Message Queuing Telemetry Transport) is a lightweight messaging protocol designed for establishing communication among multiple devices. It operates on TCP and follows the publish-subscribe model, which makes it ideal for IoT applications due to its ability to transmit data efficiently between resource-constrained devices with low bandwidth and power requirements. Additionally, MQTT perfectly aligns With UNS architecture in manufacturing, for more details refer to the [Selecting a broker for your Unified Namespace](https://flowfuse.com/blog/2024/01/unified-namespace-what-broker/)
 
-Node-RED, on the other hand, is a visual programming tool designed for connecting devices and services through a web-based interface. It uses a drag-and-drop approach to create workflows, making it easy to create complex workflows without extensive coding. Node-RED's flexibility allows users to integrate various hardware devices, APIs, and online services seamlessly. It's built on Node.js, making it lightweight and scalable, and supports a wide range of plugins contributed by the community. Node-RED simplifies complex automation processes, making it popular in smart homes, industrial automation, and IoT applications.
+On the other hand, Node-RED is an open-source visual programming tool used for wiring together hardware devices, APIs, and online services. It provides a browser-based flow editor that simplifies the creation of complex workflows by visually connecting nodes. With its extensive palette of pre-built nodes and flexibility, Node-RED is widely used in IoT, automation, and data integration projects, For more information refer to our [Node-RED page](/node-red/).
 
 ## Setting up your MQTT and Node-RED Environment
 
 ### Setting up your MQTT Environment
 
-In this guide, we will utilize the [HiveMQ Cloud MQTT broker](https://www.hivemq.com/mqtt-cloud-broker/), a fully managed MQTT broker service platform provided by HiveMQ. We will use their free trial as we are learning, but if you want to use it for your project, make sure to use their correct cluster according to your need. If you prefer to use another cloud platform, feel free to do so.
+In this guide, we will utilize the [HiveMQ Cloud MQTT broker](https://www.hivemq.com/mqtt-cloud-broker/), a fully managed MQTT broker service platform provided by HiveMQ. We will use their free trial as we are learning, but if you want to use it for your project, make sure to use their correct cluster according to your needs. If you prefer to use another cloud platform such as Mosquito, or EMqX, feel free to do so.
 
 1. Create your account with HiveMQ and log in.
 2. After logging in, you will be asked to select a cluster. Choose the **Starter** cluster, then select the **AWS Cloud** provider and set the tier to **Production S**. Make sure to select the correct region and proceed to create the cluster.
