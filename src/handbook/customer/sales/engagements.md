@@ -30,7 +30,7 @@ countersignature.
       * Have a FlowFuse Admin upgrade the customer to the correct tier
    * *Self-Managed*
       * Generate a [license key](../sales/meetings/poc.md#generating-a-license)
-      * Send the license key with the onboarding email to the customer
+      * Send the license key with the onboarding email to the customer, in the email explain how to use support@flowfuse.com and our live chat the get support from our team.
 1. Download the completed Order Form and Subscription Agreement, and upload them to the Legal folder in Google Drive.
 1. Set the Renewal data for the deal
 1. Move the deal to `Closed Won` in HubSpots Deal overview.
