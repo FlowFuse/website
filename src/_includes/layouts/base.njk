@@ -17,8 +17,10 @@ meta:
 eleventyComputed:
   meta:
     url: "{{ page.url | url | toAbsoluteUrl }}"
+    title: "{{ meta.title }}"
     description: "{{ meta.description }}"
     modified: "{{ page.date }}"
+    keywords: "{{ meta.keywords }}"
 ---
 
 <!doctype html>
@@ -39,13 +41,15 @@ eleventyComputed:
     <meta name="theme-color" content="#ffffff">
     
     <!-- Meta Keywords -->
-    {% if tags %}
-    {% set filtered_tags = tags | reject('equalto', 'posts') | reject('equalto', 'node-red') | list %}
-    <meta name="keywords" content="{{ filtered_tags | join(', ') }}, {{ site.messaging.keywords }}">
-    {% elif meta.keywords %}
-    <meta name="keywords" content="{{ meta.keywords }}, {{ site.messaging.keywords }}">
+    {% if meta.keywords %}
+        <meta name="keywords" content="{{ meta.keywords }}, {{ site.messaging.keywords }}">
+    {% elif keywords %}
+        <meta name="keywords" content="{{ keywords }}, {{ site.messaging.keywords }}">
+    {% elif tags %}
+        {% set filtered_tags = tags | reject('equalto', 'posts') | reject('equalto', 'node-red') | list %}
+        <meta name="keywords" content="{{ filtered_tags | join(', ') }}, {{ site.messaging.keywords }}">
     {% else %}
-    <meta name="keywords" content="{{ site.messaging.keywords }}">
+        <meta name="keywords" content="{{ site.messaging.keywords }}">
     {% endif %}
 
     <!-- Browser Title -->

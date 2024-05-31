@@ -75,13 +75,15 @@ By default, each webpage on the FlowFuse website includes a set of predefined ke
 
 ### Priority of Keywords
 
-When it comes to determining which keywords to include in the meta tags of a webpage, FlowFuse follows a specific priority order:
+When adding meta keywords to the website pages, a specific priority order is followed:
 
-1. [**Tags:**](/handbook/customer/marketing/blog/#tags) The tags assigned to the content take precedence and are included as meta keywords. These tags are used to categorize the content and provide relevant context.
+1. **Meta Keywords:** These are the keywords specified in the front matter of the webpage. They are specifically defined for each page and offer additional context.
 
-2. **Meta Keywords:** If no tags are available, the meta keywords specified in the front matter of the webpage are used. These meta keywords are specifically defined for each page and offer additional context.
+2. **Keywords:** If no `meta.keywords` are found, the `keywords` specified in the front matter of the webpage are used.
 
-3. **Default Keywords:** These keywords are always included and provide general information about the website's content. They can be appended to the keywords obtained from previous points. If neither tags nor meta keywords are present, the default keywords are used as a fallback option. 
+3. [**Tags:**](/handbook/customer/marketing/blog/#tags) If neither `meta.keywords` nor `keywords` are assigned, the `tags` assigned to the content are included as meta keywords. These tags are used to categorize the content and provide relevant context.
+
+4. **Default Keywords:** These are always included and provide general information about the website's content. They can be appended to the keywords obtained from previous points, or, if neither of the previous conditions are met, the default keywords are used as a fallback option.
 
 ### Adding Meta Keywords
 
