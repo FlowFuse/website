@@ -32,7 +32,7 @@ This documentation is designed to help you understand the key terms and concepts
    ![Image displaying node](./images/node-red-node.png "Image displaying node"){data-zoomable}
 
 5. **Core-Node:**
-   The core nodes are the set of nodes that are included with the Node-RED runtime by default, without the need for a node installation procedure. For more information on core nodes, refer to the [Core node docs](/node-red/core-node/).
+   The core nodes are the set of nodes that are included with the Node-RED runtime by default, without the need for a node installation procedure. For more information on core nodes, refer to the [Core node docs](/node-red/core-nodes/).
 
 6. **Wires:**
    The "wires" refer to the connections that link nodes together to define the flow of data. These wires visually represent the direction and flow of information from one node to another within a Node-RED flow.
