@@ -37,12 +37,11 @@ The Prosys OPC UA Simulation Server is [free to download](https://prosysopc.com/
 
 This will give us access to the address space tab, which we will need to develop our client application in Node-RED.
 
-![expert-mode.png](./images/opc-ua-3/expert-mode.png)
-
+![expert-mode.png](./images/opc-ua-3/expert-mode.png){data-zoomable}
 
 When the application is run, an endpoint url will be displayed on the `status` tab, along with an indication that the server is currently running.
 
-![opc-endpoint-url.png](./images/opc-ua-3/opc-endpoint-url.png)
+![opc-endpoint-url.png](./images/opc-ua-3/opc-endpoint-url.png){data-zoomable}
  Copy the connection endpoint, but be warned that you will likely need to replace the computer name (in my case `DESKTOP-0K0483A`, with the actual IP address of the machine running the server.  The IP address of the machine on my local network is `192.168.0.141`, which changes my UA TCP endpoint address to `opc.tcp://192.168.0.141:53530/OPCUA/SimulationServer`. 
 
 Now the simulation server is set up and we are ready to start developing the OPC Client application.
@@ -62,7 +61,8 @@ Rather than building the flow step-by-step, the flow source code will be present
 
 The first flow will browse the hierarchical OPC UA Server address space structure and display it on the dashboard.
 
-![image-20230727-085611.png](./images/opc-ua-3/image-20230727-085611.png)
+![image-20230727-085611.png](./images/opc-ua-3/image-20230727-085611.png){data-zoomable}
+
 You can import this flow into Node-RED using the code below:
 
 {% renderFlow %}
@@ -73,36 +73,34 @@ To understand what is going on in this flow, we must refer back to the OPC UA Si
 
 When we browse the OPC Server base folder structure in Node-RED, we will be browsing everything included under the `Objects` tree.  
 
-![address-space.png](./images/opc-ua-3/address-space.png)
+![address-space.png](./images/opc-ua-3/address-space.png){data-zoomable}
 In our flow, we get the base folder structure by using an OPC-UA Browser node, as shown, with an endpoint that points to our OPC UA Server endpoint url we grabbed earlier in this article.  It is also worth noting we leave the `Topic` blank.  By doing this, we will browse the entire folder structure by default.
 
-![image-20230727-090252.png](./images/opc-ua-3/image-20230727-090252.png)
+![image-20230727-090252.png](./images/opc-ua-3/image-20230727-090252.png){data-zoomable}
 The configuration of the endpoint properties includes no security credentials, as shown below.
 
-![endpoint-configure.png](./images/opc-ua-3/endpoint-configure.png)
+![endpoint-configure.png](./images/opc-ua-3/endpoint-configure.png){data-zoomable}
 
 
 Using the output of a debug node, we get from the OPC UA Browser yield a payload with an array of 5 objects.  
 
-![address-debug.png](./images/opc-ua-3/address-debug.png)
-
+![address-debug.png](./images/opc-ua-3/address-debug.png){data-zoomable}
 
 Each object returned represents the 5 objects that are in our OPC UA Server Objects tree.  
 
-![browse-payload-1.png](./images/opc-ua-3/browse-payload-1.png)
-
+![browse-payload-1.png](./images/opc-ua-3/browse-payload-1.png){data-zoomable}
 
 However, of those 5 objects, only 3 of them are folders that contain actual OPC values.  `MyObjects`, `Simulation`, and `StaticData`.  We can ignore `Aliases` and `Server`.  
 
-![address-space-folders-only.png](./images/opc-ua-3/address-space-folders-only.png)
+![address-space-folders-only.png](./images/opc-ua-3/address-space-folders-only.png){data-zoomable}
+
 So looking deeper into the payload of our global browse from the `OPC UA Browser node`, we can drill down into the details and see how they correlate with the folders in the server.
 
-![browse-node.png](./images/opc-ua-3/browse-node.png)
-
+![browse-node.png](./images/opc-ua-3/browse-node.png){data-zoomable}
 
 As shown above, element 2 in the array returned from the global browse corresponds to the `Simulation` folder.  And we are interested in two important values in this data-structure - the `NodeId`, which is topic an OPC Client uses to point specific OPC values, and the `browseName`, which is the name we see visually when we try to identify an OPC topic.  We can now use this logic to parse out this useful information using a change node.
 
-![simulation-folder.png](./images/opc-ua-3/simulation-folder.png)
+![simulation-folder.png](./images/opc-ua-3/simulation-folder.png){data-zoomable}
 This change node is grabbing the `nodeId` and `browseName` .  The `nodeId` is stored in a context variable for later use, while the `browseName` is used as the payload to be displayed on our dashboard.  
 
 The rest of the flow follows this same pattern, to end up with a folder structure that we can display on our dashboard that matches the structure on our OPC Server
@@ -111,14 +109,14 @@ The rest of the flow follows this same pattern, to end up with a folder structur
 
 If you deploy the flow and pull up the dashboard, it results in the following output - 
 
-![address-space-dashboard.png](./images/opc-ua-3/address-space-dashboard.png)
+![address-space-dashboard.png](./images/opc-ua-3/address-space-dashboard.png){data-zoomable}
 Showing side-by-side with the server, you can see that we successfully browsed a portion of the address space and displayed the values on the dashboard.  Admittedly, a lot of work for not much pay-off, but it’s a worthwhile exercise in understanding how to browse topics using the `OPC UA Browser` node.  The browser node is best used for reading OPC UA values, which will be covered next.
 
 ## Read OPC UA Values Using OPC UA Browser Node
 
 The next set of flows read OPC UA values from the server and displays them on the dashboard.  
 
-![read-opc-values.png](./images/opc-ua-3/read-opc-values.png)
+![read-opc-values.png](./images/opc-ua-3/read-opc-values.png){data-zoomable}
 You can import these flows into Node-RED using the code below:
 
 {% renderFlow %}
@@ -127,41 +125,41 @@ You can import these flows into Node-RED using the code below:
 
 The values are derived from the `nodeId` values we stored in memory in our previous flow, via our `change` nodes in the previous flow.
 
-![flow-context-nodeid.png](./images/opc-ua-3/flow-context-nodeid.png)
+![flow-context-nodeid.png](./images/opc-ua-3/flow-context-nodeid.png){data-zoomable}
 As stated earlier, you reference a OPC UA topic by its `nodeId`.  So we will use these node IDs to read actual values from our OPC nodes.
 
  In our first flow, we want to read the values in the `Simulation` folder at a 1 second interval.  So we use an `inject` node with a `msg.topic` that references the `nodeId` corresponding to the `Simulation` folder.
 
-![simulation-injection.png](./images/opc-ua-3/simulation-injection.png)
+![simulation-injection.png](./images/opc-ua-3/simulation-injection.png){data-zoomable}
 That `msg.topic` tells the `OPC UA Browser` node what `nodeId` to browse.  If we look at the debug output of the browser `msg.payload`, we can see that it produces an array of 7 objects, and an empty set array.
 
-![simulation-debug.png](./images/opc-ua-3/simulation-debug.png)
+![simulation-debug.png](./images/opc-ua-3/simulation-debug.png){data-zoomable}
 If we allow that empty array to be passed, that means all values will be reset to 0 on each read.  So to prevent that from happening, we use a `switch` node to filter out the empty set.
 
-![empty-check.png](./images/opc-ua-3/empty-check.png)
+![empty-check.png](./images/opc-ua-3/empty-check.png){data-zoomable}
 Now only non-empty payloads will be passed, preventing the values being reset to 0 on each read.
 
 Now we can actually read the values.  To do this, we use a `change` node again, referencing the non-empty payload and drilling down to the `value` that corresponds to the `name` of the node we want to read.  In this case, we’re getting the value of the node `Counter` located in the `Simulation` folder.  
 
-![get-counter-value.png](./images/opc-ua-3/get-counter-value.png)
+![get-counter-value.png](./images/opc-ua-3/get-counter-value.png){data-zoomable}
 Going back to our OPC Server, we can see that exactly where that value is derived below - 
 
-![sim-counter-server.png](./images/opc-ua-3/sim-counter-server.png)
+![sim-counter-server.png](./images/opc-ua-3/sim-counter-server.png){data-zoomable}
 
 
 Now we add a `gauge` dashboard node to visualize the counter on the dashboard.  In the OPC Server, it is shown that the counter increments in a range of 0-30 in 1 count increments.  
 
-![counter-properties.png](./images/opc-ua-3/counter-propertie.png)
+![counter-properties.png](./images/opc-ua-3/counter-propertie.png){data-zoomable}
 Now that we’ve gone through the full process of reading an OPC UA value and displaying it on the dashboard, we can apply the same logic other values published by the OPC UA Server, which are repeated in the remaining parts of the flow.
 
 The end result on the dashboard now looks like this - 
 
-![opc-read-dashboard.gif](./images/opc-ua-3/opc-read-dashboard.gif)
+![opc-read-dashboard.gif](./images/opc-ua-3/opc-read-dashboard.gif){data-zoomable}
 ## Write OPC UA Values To Server Using OpcUa-Item and Opc-Ua-Client Nodes
 
 The next flow writes OPC UA values to the server using dashboard UI elements.  
 
-![write-mydevice.png](./images/opc-ua-3/write-mydevice.png)
+![write-mydevice.png](./images/opc-ua-3/write-mydevice.png){data-zoomable}
  You can import this flow into Node-RED using the code below:
 
 {% renderFlow %} 
@@ -172,27 +170,27 @@ We have two values to write, a boolean value corresponding to the node object `M
 
 There’s no need to modify the toggle switch properties, other than giving it a name.  The slider needs to have the range modified to match the range of the level, which is 0-100%.
 
-![level-range.png](./images/opc-ua-3/level-range.png)
+![level-range.png](./images/opc-ua-3/level-range.png){data-zoomable}
 For the `OpcUa-Item` nodes, copy the `NodeId` corresponding to each device,
 
-![copy-node-id.png](./images/opc-ua-3/copy-node-id.png)
+![copy-node-id.png](./images/opc-ua-3/copy-node-id.png){data-zoomable}
 and paste it into `OpcUa-Item` node.  You must also ensure the data-type matches with the value you’re writing to.
 
-![opcua-item.png](./images/opc-ua-3/opcua-item.png)
+![opcua-item.png](./images/opc-ua-3/opcua-item.png){data-zoomable}
 The `Opc-Ua-Client` needs to have an endpoint and the action changed to `WRITE`.  
 
-![client-node.png](./images/opc-ua-3/client-node.png)
+![client-node.png](./images/opc-ua-3/client-node.png){data-zoomable}
 The process is the same for `MySwitch` and `MyLevel`, the only difference being what `NodeId` is referenced in the  `OpcUa-Item` node.  
 
 When deployed, you can confirm values are being written to from the client to the server from the dashboard.
 
-![opc-write.gif](./images/opc-ua-3/opc-write.gif)
+![opc-write.gif](./images/opc-ua-3/opc-write.gif){data-zoomable}
 
 ## Read Alarms & Events from OPC UA Server Using OpcUa-Event and Opc-Ua-Client Nodes
 
 Our last flow we’ll show how to read OPC UA Alarms & Events. 
 
-![opc-event-flow.png](./images/opc-ua-3/opc-event-flow.png)
+![opc-event-flow.png](./images/opc-ua-3/opc-event-flow.png){data-zoomable}
 You can import this flow into Node-RED using the code below:
 
 {% renderFlow %}
@@ -201,23 +199,23 @@ You can import this flow into Node-RED using the code below:
 
 We use an inject node to trigger the `OpcUa-Event` node.  In the properties of the event node, we get the `NodeId` from the `MyLevelAlarm` event from the OPC Server - 
 
-![mylevel-event.png](./images/opc-ua-3/mylevel-event.png)
+![mylevel-event.png](./images/opc-ua-3/mylevel-event.png){data-zoomable}
 And copy that `NodeId` into the `OpcUa-Event` node.  Event type will be `BaseEvent (all)`.  
 
-![event-node-properties.png](./images/opc-ua-3/event-node-properties.png)
+![event-node-properties.png](./images/opc-ua-3/event-node-properties.png){data-zoomable}
 In the `Opc-Ua-Client` node, we set the `Action` to `EVENTS`. 
 
-![client-events.png](./images/opc-ua-3/client-events.png)
+![client-events.png](./images/opc-ua-3/client-events.png){data-zoomable}
 If we stick a debug node on the output of the client event, we can see how the OPC Server annunciates events.  
 
-![event-debug.png](./images/opc-ua-3/event-debug.png)
+![event-debug.png](./images/opc-ua-3/event-debug.png){data-zoomable}
 Every time `MyLevel` exceeds certain thresholds (10%, 30%, 70% and 90%) it will flag a `Level Exceeded` alarm.   The event is timestamped and assigned a severity level, which we will record and put onto the dashboard.  
 
 To make things simple, we’ll only track the last event.  But in a production system, you’d likely want to store these events in a relational database (historian) to keep an alarm history.  We’ll also include a notification pop-up when an alarm occurs to notify someone monitoring the dashboard a new alarm has occurred.
 
 Adding alarms and events to our dashboard creates the following result - 
 
-![opc-event.gif](./images/opc-ua-3/opc-event.gif)
+![opc-event.gif](./images/opc-ua-3/opc-event.gif){data-zoomable}
 ## Conclusion
 
 In this final article, we went over building a OPC UA Client dashboard that can browse the address space, read values from an OPC Server, write values to an OPC Server, and get events from an OPC Server.  
