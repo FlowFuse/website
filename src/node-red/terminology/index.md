@@ -3,6 +3,16 @@ eleventyNavigation:
   key: Terminology
 ---
 
+---
+title: Node-RED Terminology
+description: Explore key terms and concepts used within the Node-RED community, including flows, nodes, subflows, workspace, and more.
+tags:
+    - node-red
+    - node-red terminology
+    - node-red concepts
+    - node-red key terms
+---
+
 ## Node-RED Terminology
 
 This documentation is designed to help you understand the key terms and concepts used within the Node-RED community. Having a standardized vocabulary ensures clarity and consistency in our communications.
