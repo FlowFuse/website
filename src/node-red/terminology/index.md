@@ -1,3 +1,8 @@
+---
+eleventyNavigation:
+  key: Terminology
+---
+
 ## Node-RED Terminology
 
 This documentation is designed to help you understand the key terms and concepts used within the Node-RED community. Having a standardized vocabulary ensures clarity and consistency in our communications.
@@ -78,5 +83,3 @@ This documentation is designed to help you understand the key terms and concepts
 
 19. **Importing, Exporting, Grouping Flows:**
     Flows can be imported, exported, and grouped in Node-RED, which allows you to share your flows with others or import flows created by others. Flows are exported in JSON format and commonly named `flow.json`. Grouping flows allows you to organize related flows together for better management and sharing. This feature facilitates collaboration and sharing of Node-RED projects among the community. For more information, refer to [Importing, Exporting, and Grouping Flows](/blog/2023/03/3-quick-node-red-tips-5/).
-
-
