@@ -17,6 +17,7 @@ In order to create the dedicated instance, some information will be required fro
    - By default, we will offer to host the platform under a domain of `<customer>.flowfuse.io`.
    - The core platform (`app.`), broker (`mqtt.`) and hosted instances will be made available under this domain.
    - The base domain, `<customer>.flowfuse.io`, will redirect to `app.<customer>.flowfuse.io`
+   - All traffic to the domain will be on port 443 - including the Device Agent MQTT connection
    - If the customer requests to use their own (sub-)domain, they will need to setup their DNS to point
      at the AWS Route53 end-point once it has been created.
  - **Choice of AWS region**. We default to `eu-west-1` but customers may want to choose one more
