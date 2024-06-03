@@ -13,6 +13,9 @@ tags:
    - time-series database
 ---
 
+In the context of IoT and IIoT applications, time series databases are essential for storing data based on timestamps. While InfluxDB has been a popular choice for a long time, another time series database, TimescaleDB, is gaining popularity. This article will cover how to use TimescaleDB with Node-RED, when to choose it over InfluxDB, and important operations and queries needed when building IoT applications.
+
+<!--more-->
 
 ## What is TimeScaleDB
 
@@ -20,7 +23,7 @@ TimescaleDB is a time-series database built on PostgreSQL for handling large tim
 
 ## TimescaleDB Vs InfluxDB
 
-When it comes to time-series databases, there are many options available. However, InfluxDB and TimescaleDB stand out for their specific strengths and features. Understanding when to choose InfluxDB or TimescaleDB is essential for optimizing your application's performance and capabilities. Here’s a comparison to help guide your decision:
+When it comes to time-series databases, there are many options available. However, InfluxDB and TimescaleDB stand out for their specific strengths and features. But understanding when to choose InfluxDB or TimescaleDB is essential for optimizing your application's performance and capabilities. Here’s a comparison to help guide your decision:
 
 | **Feature** | **TimescaleDB** | **InfluxDB** |
 |-----------------------------|-----------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------|
@@ -57,7 +60,7 @@ TimescaleDB also offers a cloud option that simplifies deployment and management
 
 ## Using TimescaleDB with Node-RED
 
-In this section of the guide, we will explore integrating TimescaleDB with Node-RED. We'll cover creating and deleting hypertables, and inserting, updating, and deleting data from these tables. Additionally, we'll delve into advanced queries for comprehensive data analysis. Throughout this guide, we'll use a temperature example to illustrate each operation.
+In this section of the guide, we will explore integrating TimescaleDB with Node-RED. We'll cover creating and deleting Hypertables, and inserting, updating, and deleting data from these tables. Additionally, we'll delve into advanced queries for comprehensive data analysis. Throughout this guide, we'll use a temperature example to illustrate each operation.
 
 ### Installing PostgreSQL Custom Node
 
@@ -82,11 +85,11 @@ Before proceeding further make sure you have added environment variables for you
 
 !["Screenshot showing PostgreSQL config node's security tab"](./images/using-timescaledb-with-node-red-postgresql-config-node-security-tab.png "Screenshot showing PostgreSQL config node's security tab"){data-zoomable}
 
-### Creating hypertable
+### Creating Hypertables
 
-Hypertables in TimescaleDB manage time-series data efficiently by partitioning it across time and space. To create one, start with a creating standard PostgreSQL table and convert it into a hypertable.
+Hypertables are PostgreSQL tables that automatically partition your data by time. To create one, start with creating a standard PostgreSQL table and convert it into a Hypertable.
 
-1. Insert the following SQL commands into the query field of the PostgreSQL which we have added in the above section.
+1. Insert the following SQL commands into the PostgreSQL node's query field.
 
 ```sql
 -- Create a standard PostgreSQL table
@@ -109,11 +112,10 @@ SELECT create_hypertable('sensor_data', 'time');
 
 ### Inserting Data into the Table
 
-To insert data into a TimescaleDB hypertable, the steps are similar to inserting data into a standard PostgreSQL table.
+To insert data into a TimescaleDB Hypertable, the steps are similar to inserting data into a standard PostgreSQL table.
 
 1. Drag the Inject nodes onto the canvas.
 2. Set the `msg.payload.temperature` to the JSONata expression `$floor(($random() * 21) + 30)` which will generate random data for us,  and `msg.payload.location` to "New York" for the first Inject node, and do the same for the second Inject node but with a different location.
-
 
 !["Screenshot of the inject node generating sensor data for new york city"](./images/using-timescaledb-with-node-red-inject-node-2.png "Screenshot of the inject node generating sensor data for new york city"){data-zoomable}
 
@@ -286,4 +288,4 @@ After deploying the flow, you can test each operation such as creating, deleting
 
 ## Conclusion
 
-In this guide, we have demonstrated how to integrate TimescaleDB with Node-RED. We have covered various operations, including creating hypertables, deleting them, and performing data manipulation tasks such as inserting, updating, and deleting data, as well as executing advanced queries.
+In this guide, we have demonstrated how to integrate TimescaleDB with Node-RED. We have covered various operations, including creating hypertables, deleting them, and performing data manipulation tasks such as inserting, updating, and deleting data and executing advanced queries.
