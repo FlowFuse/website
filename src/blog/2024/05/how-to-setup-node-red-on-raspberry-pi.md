@@ -148,7 +148,7 @@ cd ~
 3. Download the bcm2835 library package by executing the following command:
 
 ```
-wget  http://www.airspayce.com/mikem/bcm2835/bcm2835-1.75.tar.gz
+curl -O  http://www.airspayce.com/mikem/bcm2835/bcm2835-1.75.tar.gz
 ```
 
 4. Extract the downloaded package using the following command:
