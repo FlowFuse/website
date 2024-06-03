@@ -293,7 +293,7 @@
         {
             "xpath": "file read",
             "name": "File read",
-            "file": "23-fileread",
+            "file": "fileread",
             "description": "Learn how to use the read file node in node-red to read file contents from the file system.",
             "keywords": "node-red mqtt config node, configuring mqtt nodes, file read usecase, file read example flow"
         }
