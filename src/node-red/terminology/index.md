@@ -9,7 +9,7 @@ meta:
 
 ## Node-RED Terminology
 
-This documentation is designed to help you understand the key terms and concepts used within the Node-RED community. Having a standardized vocabulary ensures clarity and consistency in our communications.
+Here are the key terms and concepts used within the Node-RED community to ensure clarity and consistency when communicating across projects. 
 
 1. **Flow:**
    A flow is represented as a tab within the editor workspace which provides a new workspace for building applications by connecting nodes. The term "flow" is also used to informally describe a single set of connected nodes. So a flow (tab) can contain multiple flows (sets of connected nodes), but formally we can say a flow is a parent group of multiple connected nodes.
