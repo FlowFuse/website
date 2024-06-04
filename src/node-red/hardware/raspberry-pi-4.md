@@ -28,11 +28,11 @@ The FlowFuse Device Agent, developed by FlowFuse, simplifies the operation of No
 
 - Required Hardware:
 
-Before proceeding further, ensure you have all the necessary hardware components ready. This includes the Raspberry Pi single-board computer (recommended models: Raspberry Pi version 1 or higher ), an SD card (8GB or larger recommended), a compatible power supply, and any required peripherals such as a keyboard, mouse, and display. It's also beneficial to have a DHT11 sensor for following the practical guide further, but it is not necessary for the installation process. 
+Before proceeding further, ensure you have all the necessary hardware components ready. This includes the Raspberry Pi single-board computer (recommended model: Raspberry Pi version 4; however, for setting up Node-RED, any Raspberry Pi from version 0 or higher is sufficient, but the practical demonstration further in the guide uses Raspberry Pi 4), an SD card (8GB or larger recommended), a compatible power supply, and any required peripherals such as a keyboard, mouse, and display if you are not running it in headless mode. It's also beneficial to have a DHT11 sensor for following the practical guide further, but it is not necessary for the installation process. 
 
 - Software Preparation:
 
-Ensure your Raspberry Pi is fully set up and running on the latest version of Raspbian OS. For more information on installing Raspberry Pi OS, refer to [How to Install Raspberry Pi OS on Your Pi](https://raspberrytips.com/install-raspberry-pi-os/). Additionally, ensure your Raspberry Pi is connected to a stable network, either via Ethernet or Wi-Fi.
+Ensure your Raspberry Pi is fully set up and running on a Debian-based OS, preferably the latest version of Raspberry Pi OS (formerly known as Raspbian). While Raspbian is recommended for optimal compatibility and performance, other Debian-based distributions may also work. For more information on installing Raspberry Pi OS, refer to [How to Install Raspberry Pi OS on Your Pi](https://raspberrytips.com/install-raspberry-pi-os/). If you're setting up your Raspberry Pi in headless mode, where it operates without a monitor, keyboard, or mouse, refer to the [How to Install a Headless Raspberry Pi](https://raspberrytips.com/raspberry-pi-headless-setup/) guide. Additionally, ensure your Raspberry Pi is connected to a stable network, either via Ethernet or Wi-Fi.
 
 ### Installing the Device Agent
 
@@ -95,11 +95,11 @@ Now, your basic flow is set up. When you click the "Inject" button, it will trig
 
 ## Securing Node-RED
 
-When using the Node-RED along with FlowFuse , there's no need to add security measures as FlowFuse provides robust security, ensuring that no one can access your device editor without proper authorization. However, disabling the editor after development prevents unauthorized changes to your flows by team members.
+When using Node-RED along with FlowFuse , there's no need to add security measures as FlowFuse provides robust security, ensuring that no one can access your device editor without proper authorization. However, disabling the editor after development prevents unauthorized changes to your flows by team members.
 
 Furthermore, accessing the audit log allows you to monitor changes made by team members to instances of your team, ensuring transparency and accountability. Additionally, FlowFuse empowers team owners to control the access of team members, enhancing security and privacy during collaboration.
 
-For more information on the audit log, refer to [Audit log](https://flowfuse.com/docs/user/logs/#audit-log).
+For more information on the audit log, refer to [Audit log](/docs/user/logs/#audit-log).
 
 For enhanced security and granular control over team access, refer to [Role-Based Access for your Node-RED applications](/blog/2024/04/role-based-access-control-rbac-for-node-red-with-flowfuse/).
 
