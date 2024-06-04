@@ -135,45 +135,45 @@ The bcm2835 library is essential for Raspberry Pi (RPi) as it provides access to
 1. Open the command line of your Raspberry Pi.
 2. Navigate to your home directory by entering the following command:
 
-`
+```
 cd ~
-`
+```
 
 3. Download the bcm2835 library package by executing the following command:
 
-`
+```
 wget  http://www.airspayce.com/mikem/bcm2835/bcm2835-1.75.tar.gz
-`
+```
 
 4. Extract the downloaded package using the following command:
 
-`
+```
 tar xvfz bcm2835-1.75.tar.gz
-`
+```
 
 5. Enter the extracted directory by executing:
 
-`
+```
 cd bcm2835-1.75
-`
+```
 
 6. Configure the installation by running:
 
-`
+```
 ./configure
-`
+```
 
 7. Compile the library by executing:
 
-`
+```
 make
-`
+```
 
 8. Finally, install the library using:
 
-`
+```
 sudo make install
-`
+```
 
 #### Installing DHT custom node
 
