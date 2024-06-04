@@ -8,6 +8,9 @@ image: /blog/2024/05/images/how-to-setup-node-red-on-raspberry-pi.png
 tags:
    - node-red 
    - raspberry pi
+   - remote device management
+   - remote access
+
 ---
 
 Creating applications for IoT and IIoT projects is often challenging, especially when dealing with hardware devices. However, Node-RED simplifies this process by providing an intuitive platform for interacting with hardware devices, sensors, and microcontrollers. Raspberry Pi is a widely used microcontroller in conjunction with Node-RED according to [survey conducted in 2023](https://nodered.org/about/community/survey/2023/). In this guide, we will explore how to set up Node-RED on Raspberry Pi and utilize it to interact with sensors and actuators.
@@ -25,17 +28,17 @@ The Raspberry Pi is a small, affordable computer known for its versatility. It's
 
 ## Installing Flowfuse Device Agent on Raspberry Pi
 
-The FlowFuse Device Agent, developed by FlowFuse, simplifies the operation of Node-RED on your edge device, facilitating connections and interactions with hardware devices. Furthermore, it enables remote management, streamlining the monitoring and administration of the Node-RED application running on the device from any remote location.
+[The FlowFuse Device Agent](/docs/device-agent/introduction/), developed by FlowFuse, simplifies the operation of Node-RED on your edge device, facilitating connections and interactions with hardware devices. Furthermore, it enables remote management, streamlining the monitoring and administration of the Node-RED application running on the device from any remote location.
 
 ### Prerequisites for Installation:
 
 - Required Hardware:
 
-Before proceeding further, ensure you have all the necessary hardware components ready. This includes the Raspberry Pi single-board computer (recommended models: Raspberry Pi version 1 or higher ), an SD card (8GB or larger recommended), a compatible power supply, and any required peripherals such as a keyboard, mouse, and display. It's also beneficial to have a DHT11 sensor for following the practical guide further, but it is not necessary for the installation process. 
+Before proceeding further, ensure you have all the necessary hardware components ready. This includes the Raspberry Pi single-board computer (recommended models: Raspberry Pi version 1 or higher ), an SD card (8GB or larger recommended), a compatible power supply, and any required peripherals such as a keyboard, mouse, and display if you are not running it in headless mode. It's also beneficial to have a DHT11 sensor for following the practical guide further, but it is not necessary for the installation process.
 
 - Software Preparation:
 
-Ensure your Raspberry Pi is fully set up and running on the latest version of Raspbian OS. For more information on installing Raspberry Pi OS, refer to [How to Install Raspberry Pi OS on Your Pi](https://raspberrytips.com/install-raspberry-pi-os/). Additionally, ensure your Raspberry Pi is connected to a stable network, either via Ethernet or Wi-Fi.
+Ensure your Raspberry Pi is fully set up and running on a Debian-based OS, preferably the latest version of Raspberry Pi OS (formerly known as Raspbian). While Raspbian is recommended for optimal compatibility and performance, other Debian-based distributions may also work. For more information on installing Raspberry Pi OS, refer to [How to Install Raspberry Pi OS on Your Pi](https://raspberrytips.com/install-raspberry-pi-os/). If you're setting up your Raspberry Pi in headless mode, where it operates without a monitor, keyboard, or mouse, refer to the [How to Install a Headless Raspberry Pi](https://raspberrytips.com/raspberry-pi-headless-setup/) guide. Additionally, ensure your Raspberry Pi is connected to a stable network, either via Ethernet or Wi-Fi.
 
 ### Installing the Device Agent
 
@@ -98,11 +101,11 @@ Now, your basic flow is set up. When you click the "Inject" button, it will trig
 
 ## Securing Node-RED
 
-When using the Node-RED along with FlowFuse , there's no need to add security measures as FlowFuse provides robust security, ensuring that no one can access your device editor without proper authorization. However, disabling the editor after development prevents unauthorized changes to your flows by team members.
+When using Node-RED along with FlowFuse , there's no need to add security measures as FlowFuse provides robust security, ensuring that no one can access your device editor without proper authorization. However, disabling the editor after development prevents unauthorized changes to your flows by team members.
 
 Furthermore, accessing the audit log allows you to monitor changes made by team members to instances of your team, ensuring transparency and accountability. Additionally, FlowFuse empowers team owners to control the access of team members, enhancing security and privacy during collaboration.
 
-For more information on the audit log, refer to [Audit log](https://flowfuse.com/docs/user/logs/#audit-log).
+For more information on the audit log, refer to [Audit log](/docs/user/logs/#audit-log).
 
 For enhanced security and granular control over team access, refer to [Role-Based Access for your Node-RED applications](/blog/2024/04/role-based-access-control-rbac-for-node-red-with-flowfuse/).
 
@@ -138,45 +141,45 @@ The bcm2835 library is essential for Raspberry Pi (RPi) as it provides access to
 1. Open the command line of your Raspberry Pi.
 2. Navigate to your home directory by entering the following command:
 
-`
+```
 cd ~
-`
+```
 
 3. Download the bcm2835 library package by executing the following command:
 
-`
-wget  http://www.airspayce.com/mikem/bcm2835/bcm2835-1.75.tar.gz
-`
+```
+curl -O  http://www.airspayce.com/mikem/bcm2835/bcm2835-1.75.tar.gz
+```
 
 4. Extract the downloaded package using the following command:
 
-`
+```
 tar xvfz bcm2835-1.75.tar.gz
-`
+```
 
 5. Enter the extracted directory by executing:
 
-`
+```
 cd bcm2835-1.75
-`
+```
 
 6. Configure the installation by running:
 
-`
+```
 ./configure
-`
+```
 
 7. Compile the library by executing:
 
-`
+```
 make
-`
+```
 
 8. Finally, install the library using:
 
-`
+```
 sudo make install
-`
+```
 
 #### Installing DHT custom node
 
