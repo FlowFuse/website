@@ -5,30 +5,13 @@ meta:
 
 # Strategy
 
-## Our North Star
-
-### Core Belief
-
-By empowering a larger workforce to participate in automation an acceleration of digital transformation can be realized in manufacturing, agriculture, and other productive industries. This will lead to an increase in productivity.
-
-FlowFuse is riding two waves:
-1. Companies need to accelerate their innovation. 
-2. Digitalization is at the inflection point of implementation.
-
-FlowFuse allows businesses to acquire, enrich, visualize, and build applications
-through a workforce already employed.
-
-Our current (prospective) customers have already adopted Node-RED and need to
-professionalize their data streams and workflows. FlowFuse is the only company
-that can help them.
-
-### Our mission
-
-FlowFuse exists to empower bottom-up innovation. We allow companies to professionalize their workflows to business critical applications.
-
-### Core Values
+## Core Values
 
 Please see our [company values](/handbook/company/values/)
+
+## FlowFuse's Mission
+
+FlowFuse will empower all engineers to innovate faster, by bringing the joy of software development to the world.
 
 ## The market
 
