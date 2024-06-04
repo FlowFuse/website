@@ -21,7 +21,7 @@ Sächsisches Textilforschungsinstitut e.V. ([STFI](https://www.stfi.de/en/)) in 
 
 <!--more-->
 
-!["The textile model factory for automated, networked and low-code-based digitized production"](images/stories/stfi-future-textile.jpg "The textile model factory for automated, networked and low-code-based digitized production") (ⒸSTFI/D. Hanus)_
+!["The textile model factory for automated, networked and low-code-based digital production"](images/stories/stfi-future-textile.jpg "The textile model factory for automated, networked and low-code-based digital production") (ⒸSTFI/D. Hanus)_
 
 The Model Factory consists of a number of different manufacturing applications, including for instance a product configurator, systems for job control, and [location based carrier management](https://youtu.be/yzK7vo6VpNU?si=YFhiaJTZpgmreU0c). Node-RED has been used for these applications to provide back end integration to different systems. For instance, the [Product Configurator](https://youtu.be/cgtHO1OVkV8?si=CmbDHoMzlkAS6Siu) uses Node-RED to manage the login information and to forward a product definition to the control system and/or the ERP system. The ability to forward the product definition to different systems makes the application flexible enough to support different types of applications.
 

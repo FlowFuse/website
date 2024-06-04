@@ -2,6 +2,7 @@
 @import "./style.page.css";
 @import "./style.nohero.css";
 @import "./style.handbook.css";
+@import "./style.eleventy.nav.css";
 @import "./style.components.css";
 @import "./style.animations.css";
 @import "./algolia-theme.css";
@@ -148,7 +149,6 @@ pre code {
 
 .prose code {
     font-weight: 500;
-    padding-left: 0.25rem;
     padding-right: 0.25rem;
 }
 
@@ -204,6 +204,33 @@ dl.message-properties {
   }
 
 /*
+    Event banner
+*/
+.event-banner-container {
+    position: relative;
+    height: 44px;
+    width: 100%;
+}
+
+.event-banner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    visibility: hidden;
+    animation: slideDown 0.5s ease-in-out;
+}
+
+.event-banner:first-child {
+    visibility: visible;
+}
+
+@keyframes slideDown {
+    0% { transform: translateY(-100%); }
+    100% { transform: translateY(0); }
+}
+
+/*
     Blog
 */
 .pagination a{
@@ -230,6 +257,15 @@ dl.message-properties {
     flex-shrink: 0;
     padding-top: 2px;
     margin-left: 0.5rem;
+}
+
+.blog-update-notes {
+    background-color: theme(colors.indigo.50);
+    border-radius: 4px;
+    border: 2px solid theme(colors.indigo.200);
+    padding: 1rem;
+    border-radius: 0.5rem;
+    margin-top: 1rem;
 }
 
 /*

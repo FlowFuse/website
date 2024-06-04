@@ -3,7 +3,9 @@
         {
             "xpath": "inject",
             "name": "Inject",
-            "file": "20-inject"
+            "file": "20-inject",
+            "description": "Guide on the Node-RED core node that injects a message into a flow",
+            "keywords": "inject, message, flow"
         },
         {
             "xpath": "debug",

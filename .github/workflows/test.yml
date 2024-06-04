@@ -18,7 +18,7 @@ jobs:
           path: 'flowfuse'
       - name: Generate a token
         id: generate_token
-        uses: tibdex/github-app-token@v1
+        uses: tibdex/github-app-token@v2
         with:
           app_id: ${{ secrets.GH_BOT_APP_ID }}
           private_key: ${{ secrets.GH_BOT_APP_KEY }}
@@ -48,7 +48,7 @@ jobs:
       - name: Build the forge
         run: npm run build
         working-directory: 'website'
-      - uses: untitaker/hyperlink@0.1.31
+      - uses: untitaker/hyperlink@0.1.32
         with:
           args: website/_site/ --check-anchors --sources website/src
       - name: Test the website

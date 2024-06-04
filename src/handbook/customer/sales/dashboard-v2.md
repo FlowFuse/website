@@ -16,6 +16,6 @@ team with suitable npm access will then create a new token and
 record the details in the gsheet 
 [here](https://docs.google.com/spreadsheets/d/1EZ3FAM9bjQd0yvlc6cn_yueRGIKoMeOcFxQSDxztb48/edit#gid=0).
 
-The key should be securely communicated to the customer along with 
+The key should be emailed to the customer along with 
 link to the documentation on how to deploy the token which can be 
 found [here](https://flowfuse.com/docs/upgrade/open-source-to-premium)

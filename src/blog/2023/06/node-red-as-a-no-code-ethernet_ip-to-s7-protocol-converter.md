@@ -1,5 +1,5 @@
 ---
-title: "Node-RED as a No-Code Ethernet/IP to S7 Protocol Converter"
+title: "Node-RED as a No-Code EtherNet/IP to S7 Protocol Converter"
 subtitle: Beginner tutorial for using Node-RED as free industrial protocol converter
 description: step-by-step guide for using Node-RED as an industrial protocol converter
 date: 2023-06-20
@@ -9,6 +9,9 @@ video: dteXgcBXUnk
 tags:
   - posts
   - how-to
+  - Industrial protocol converter
+  - EtherNet/IP
+  - S7 Protocol
 ---
 
 Frequently in industrial automation, there's a need for two devices that use different protocols to communicate with each other, requiring protocol conversion.  

@@ -1,0 +1,50 @@
+---
+layout: layouts/base.njk
+date: git Last Modified
+---
+<div class="w-full bg-white/50 nohero">
+<div class="eleventy md:grid md:grid-cols-[265px_1fr_auto] flex flex-col-reverse text-left pb-24 md:max-w-screen-xl m-auto">
+    {% include "./learning-resources-nav.njk" %}
+
+    <div class="max-w-screen-lg mx-auto px-8 pt-8">
+        <!-- Breadcrumbs - Desktop -->
+        <div class="hidden w-full mx-auto md:block">
+            <div class="font-medium border-b pb-1">
+                {% if page.url %}
+                    {{ page.url | handbookBreadcrumbs | safe }}
+                {% endif %}
+            </div>
+        </div>
+        <div class="w-full m-auto md:pt-6">
+            <div id="algolia-search" class="border rounded"></div>
+        </div>
+        <div class="w-full mx-auto flex flex-col md:flex-row">
+            <!-- Main Content -->
+            <div class="flex-grow order-last md:order-first">
+                <div class="mt-6 mb-4 prose prose-blue main-content">
+                    {{ content | rewriteHandbookLinks(page) | safe }}
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="border-l">
+        <!-- Breadcrumbs - Mobile -->
+        <div class="block px-8 pt-4 w-full mx-auto md:hidden">
+            <div class="font-medium border-b pb-1">
+                {% if page.url %}
+                    {{ page.url | handbookBreadcrumbs | safe }}
+                {% endif %}
+            </div>
+        </div>
+        <!-- Right side bar -->
+        <div class="sticky top-6 w-full md:w-64 mt-4 md:mt-6 px-8">
+            <h3 class="font-medium border-b pb-1 mb-4">On this page</h3>
+            <ul id="toc" class="text-sm border-b mb-4"></ul>
+            <div class="text-sm pb-1 text-right mb-4"><a href="{{ page | handbookEditLink }}">Edit this page</a></div>
+            <div class="text-xs pb-1 text-right mb-4 italic">Updated: {{ page.date | shortDate }}</div>
+        </div>
+    </div>
+</div>
+</div>
+
+{% include "./common-js.njk" %}

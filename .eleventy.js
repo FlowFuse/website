@@ -20,12 +20,16 @@ const schema = require("@quasibit/eleventy-plugin-schema");
 const imageHandler = require('./lib/image-handler.js')
 const site = require("./src/_data/site");
 const coreNodeDoc = require("./lib/core-node-docs.js");
+const yaml = require("js-yaml");
+const eleventyNavigationPlugin = require("@11ty/eleventy-navigation");
 
 // Skip slow optimizations when developing i.e. serve/watch or Netlify deploy preview
 const DEV_MODE = process.env.ELEVENTY_RUN_MODE !== "build" || process.env.CONTEXT === "deploy-preview" 
 
 module.exports = function(eleventyConfig) {
+    eleventyConfig.addDataExtension("yaml", contents => yaml.load(contents)); // Add support for YAML data files
     eleventyConfig.setUseGitIgnore(false); // Otherwise docs are ignored
+    eleventyConfig.setWatchThrottleWaitTime(500); // in milliseconds
 
     // Set DEV_MODE_POSTS to true if the context is not 'production'
     const DEV_MODE_POSTS = process.env.CONTEXT !== "production";
@@ -44,7 +48,8 @@ module.exports = function(eleventyConfig) {
     });
 
     // Define a filter named 'isFutureDate'
-    eleventyConfig.addFilter('isFutureDate', (date) => {
+    eleventyConfig.addFilter('isFutureDate', (dateString) => {
+        const date = new Date(dateString);
         return date && date > new Date();
     });
 
@@ -92,6 +97,14 @@ module.exports = function(eleventyConfig) {
         <script type="module">const flow${flowId} = ${JSON.stringify(flow)};
         new FlowRenderer().renderFlows(JSON.parse(flow${flowId}), { container: document.getElementById('nr-flow-${flowId}') })</script>`
     });
+
+    eleventyConfig.addGlobalData("coreNodesArray", () => {
+        // Read the JSON file with core nodes
+        const coreNodes = JSON.parse(fs.readFileSync(path.join(__dirname, 'src', '_data', 'coreNodes.json'), 'utf-8'));
+
+        // Transform coreNodes object into an array
+        return Object.entries(coreNodes).map(([key, nodes]) => ({ key, nodes }));		
+    })
 
     eleventyConfig.addAsyncShortcode("coreNodeDoc", async function (category, node) {
         return await coreNodeDoc(category, node)
@@ -427,7 +440,6 @@ module.exports = function(eleventyConfig) {
 
         createNav('handbook')
         createNav('docs')
-        createNav('core-nodes')
 
         function createNav(tag) {
             const groupOrder = {
@@ -450,9 +462,6 @@ module.exports = function(eleventyConfig) {
                 return hierarchyA.length - hierarchyB.length
             }).forEach((page) => {
                 let url = page.url
-                if (tag == "core-nodes") {
-                    url = page.url.replace("/node-red", "")
-                }
 
                 // work out ToC Hierarchy
                 // split the folder URI/URL, as this defines our TOC Hierarchy
@@ -560,6 +569,7 @@ module.exports = function(eleventyConfig) {
     eleventyConfig.addPlugin(codeClipboard)
     eleventyConfig.addPlugin(pluginMermaid)
     eleventyConfig.addPlugin(schema);
+    eleventyConfig.addPlugin(eleventyNavigationPlugin);
 
     const markdownItOptions = {
         html: true,

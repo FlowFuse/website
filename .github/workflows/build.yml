@@ -6,29 +6,30 @@ on:
       - main
   schedule:
     - cron: "30 9 * * *"
+    - cron: "5 16 * * 3,4"
 jobs:
   build_deploy:
     if: ${{ github.repository == 'FlowFuse/website' }}
     runs-on: ubuntu-latest
     steps:
       - name: Check out website repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           path: 'website'
       - name: Check out FlowFuse/flowfuse repository (to access the docs)
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           repository: 'FlowFuse/flowfuse'
           ref: main
           path: 'flowfuse'
       - name: Generate a token
         id: generate_token
-        uses: tibdex/github-app-token@v1
+        uses: tibdex/github-app-token@v2
         with:
           app_id: ${{ secrets.GH_BOT_APP_ID }}
           private_key: ${{ secrets.GH_BOT_APP_KEY }}
       - name: Check out FlowFuse/blueprint-library repository (to access the blueprints)
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           repository: 'FlowFuse/blueprint-library'
           ref: main
@@ -36,7 +37,7 @@ jobs:
           token: ${{ steps.generate_token.outputs.token }}
       - name: Install jq
         run: sudo apt-get -qy install jq
-      - uses: actions/setup-node@v3
+      - uses: actions/setup-node@v4
         with:
           cache: 'npm'
           cache-dependency-path: './website/package-lock.json'

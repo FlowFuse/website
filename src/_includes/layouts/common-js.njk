@@ -1,4 +1,55 @@
 
+<!-- Generate "On this page" -->
+<script>
+    let toc = document.getElementById("toc")
+
+    let currentTag = "";
+    let currentToc = toc;
+    let currentItem;
+
+    let activeTier = 0 // which index to read from the depth
+    let depth = [1, 1, 1, 1] // tracks the active number to render at each depth
+
+    document.querySelectorAll(".main-content > h2, .main-content > h3, .main-content > h4").forEach(function(n) {
+        // which level of "H_" are we working with, and which one did we see most recently
+        const level = parseInt(n.nodeName[1])
+        const prevLevel = currentTag.length > 1 ? parseInt(currentTag[1]) : 0
+
+        // Render Table of Contents
+        if (prevLevel > 0 && level - prevLevel < 0) {
+            // we are moving left with our indent
+            currentToc = toc;
+        } else if (prevLevel > 0 && level - prevLevel > 0) {
+            // we are creating a new, nested `<ul>`
+            currentToc = document.createElement("ul");
+            currentToc.classList.add("ml-4")
+            currentToc.classList.add("mt-2")
+            currentToc.classList.add("mb-4")
+            currentItem.append(currentToc);
+        }
+        currentTag = n.nodeName;
+        currentItem = document.createElement("li");
+        currentItem.classList.add("mb-2")
+        let currentLink = document.createElement("a");
+        currentItem.append(currentLink);
+        let link = n.getElementsByTagName('a')
+        currentLink.href = link[0].href;
+        currentLink.textContent = n.textContent.replace(/#\s+/g,"");
+        currentToc.append(currentItem);
+    })
+
+    // All external links open in new page
+    document.querySelectorAll("[data-{{nav}}] a").forEach((link) => {
+        try {
+            if (!link.target && window.location.host !== new URL(link.href).host) {
+                link.target = "_blank";
+            }
+        } catch {
+            // Swallow errors
+        }
+    })
+</script>
+
 <!-- MermaidJS -->
 <script type="module">
     import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@10.0.0/dist/mermaid.esm.mjs";

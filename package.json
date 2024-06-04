@@ -7,13 +7,13 @@
     "license": "Apache-2.0",
     "author": "Nick O'Leary",
     "scripts": {
-        "start": "npm-run-all clean:dev build:js --parallel dev:*",
+        "start": "npm-run-all clean:dev build:js docs blueprints --parallel dev:*",
         "test": "mocha",
         "build:js": "terser -c -m -o _site/js/cc.min.js node_modules/vanilla-cookieconsent/dist/cookieconsent.umd.js src/js/cookieconsent-config.js && cp node_modules/@flowfuse/flow-renderer/index.min.js _site/js/flowrenderer.min.js",
         "build": "cross-env NODE_ENV=production npm-run-all clean build:js --parallel prod:*",
         "clean:dev": "cross-env npx del-cli '_site/!(img)' 'src/docs/**/*.md' 'src/blueprints/**/*' && cross-env npx mkdirp '_site/js/flows'",
         "clean": "cross-env npx del-cli '_site/!(img)' && cross-env mkdir -p '_site/js'",
-        "dev:docs": "node scripts/watch_docs.js",
+        "dev:docs": "node scripts/copy_docs.js --watch",
         "dev:blueprints": "node scripts/watch_blueprints.js",
         "dev:serve": "cross-env npx @11ty/eleventy --serve --quiet --incremental",
         "dev:postcss": "cross-env TAILWIND_MODE=watch npx postcss ./src/css/style.css -o ./_site/css/style.css --config ./postcss.config.js -w",
@@ -26,6 +26,7 @@
     "devDependencies": {
         "@11ty/eleventy": "^2.0.1",
         "@11ty/eleventy-img": "^3.1.8",
+        "@11ty/eleventy-navigation": "^0.3.5",
         "@11ty/eleventy-plugin-rss": "^1.2.0",
         "@11ty/eleventy-plugin-syntaxhighlight": "^4.2.0",
         "@algolia/netlify-plugin-crawler": "^1.0.15",
@@ -61,6 +62,7 @@
         "@quasibit/eleventy-plugin-schema": "^1.11.0",
         "@xmldom/xmldom": "^0.8.10",
         "codeowners": "^5.1.1",
+        "js-yaml": "^4.1.0",
         "markdown-it-attrs": "^4.1.6",
         "xml-js": "^1.6.11"
     }

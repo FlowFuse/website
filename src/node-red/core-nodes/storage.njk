@@ -7,8 +7,12 @@ pagination:
 coreNodeCategory: "storage"
 permalink: "node-red/core-nodes/{{ node.name | lower | replace(\" \", \"\") }}/"
 eleventyComputed:
-  navTitle: "{{ node.name }}"
-  navGroup: "{{ coreNodeCategory }}"
+  eleventyNavigation:
+    key: "{{ node.name }}"
+    parent: "{{ coreNodeCategory }}"
+  title: "Node-RED - {{ node.name }} Node"
+  description: "{{ node.description }}"
+  keywords: "{{ node.keywords }}"
 ---
 
 {% include "core-node-docs.njk" %}
