@@ -1,7 +1,7 @@
 ---
 eleventyNavigation:
-  key: PostgreSQL
-  parent: Database
+  key: PostgreSQL
+  parent: Database
 meta:
   title: Using PostgreSQL with Node-RED
   description: Learn how to seamlessly integrate PostgreSQL with Node-RED for efficient data management and application development.
