@@ -4,7 +4,6 @@ eleventyNavigation:
 meta:
    title: Setting Up Node-RED on Different Hardware
    description: Learn how to set up Node-RED on various hardware platforms, including Raspberry Pi, Arduino, and more.
-   image: ./images/how-to-setup-node-red-on-raspberry-pi.png
    keywords: node-red, node-red with different hardwares, flowfuse device agent
 ---
 
