@@ -1,20 +1,17 @@
 ---
-title: Using MongoDB With Node-RED
-subtitle: Guide to integrating MongoDB database into Node-RED Applications, for writing, updating, and deleting data.
-description: Learn how to seamlessly integrate MongoDB, a NoSQL database, into your Node-RED applications with this step-by-step guide. Gain a fundamental understanding of MongoDB's key concepts and terminologies. 
-date: 2024-04-12
-authors: ["sumit-shinde"]
-image: /blog/2024/04/images/using-Mongo-with-nr.png
-tags:
-    - posts
-    - node-red
-    - MongoDB
-    - NoSQL
+eleventyNavigation:
+  key: MongoDB
+  parent: Database
+meta:
+  title: Using MongoDB With Node-RED
+  description: Learn how to seamlessly integrate MongoDB, a NoSQL database, into your Node-RED applications with this step-by-step Documentation.
+  keywords: node-red, databases, integration, mongodb, no-sql database
+image: ./images/using-Mongo-with-nr.png
 ---
 
-MongoDB, a popular NoSQL database, is a favored choice among developers. As MongoDB continuously releases updates to enhance efficiency and suitability for manufacturing purposes, we find providing content around MongoDB for our Node-RED users essential. In this guide, I will cover everything from MongoDB foundations to setup, providing you with step-by-step instructions for integration into your Node-RED applications.
+# Using MongoDB With Node-RED
 
-<!--more-->
+MongoDB, a popular NoSQL database, is a favored choice among developers. As MongoDB continuously releases updates to enhance efficiency and suitability for manufacturing purposes, we find providing content around MongoDB for our Node-RED users essential. In this documentation, we will cover everything from MongoDB foundations to setup, providing you with step-by-step instructions for integration into your Node-RED applications.
 
 ## What is MongoDB
 
@@ -29,10 +26,11 @@ In MongoDB, instead of tables, rows, and columns as in SQL databases, we have co
 - MongoDB's schema-less approach fosters agile development without predefined structures, contrasting with SQL databases.
 - MongoDB's distributed architecture facilitates seamless horizontal scaling across multiple nodes, ensuring consistent performance. Although some SQL databases, such as PostgreSQL, can also be scaled horizontally, the process may be more complex.
 - MongoDB's query language and document-oriented data model are aligned with modern programming paradigms, which boosts developer efficiency.
-- MongoDB a fully managed cloud database service, provides tools like Atlas Data Explorer, Real-Time Performance Metrics, Atlas Search, and Atlas Data Lake. These simplify database management with automated backups, point-in-time recovery, security features, and seamless scalability, which enhances operational efficiency for developers and administrators. Additionally, MongoDB has released Atlas specialized for manufacturing. For more information, refer to  [MongoDB Launches Atlas for Manufacturing and Automotive](https://www.mongodb.com/company/newsroom/press-releases/mongodb-atlas-for-manufacturing-and-automotive)
+- MongoDB a fully managed cloud database service, provides tools like Atlas Data Explorer, Real-Time Performance Metrics, Atlas Search, and Atlas Data Lake. These simplify database management with automated backups, point-in-time recovery, security features, and seamless scalability, which enhances operational efficiency for developers and administrators. Additionally, MongoDB has released Atlas specialized in manufacturing. For more information, refer to  [MongoDB Launches Atlas for Manufacturing and Automotive](https://www.mongodb.com/company/newsroom/press-releases/mongodb-atlas-for-manufacturing-and-automotive)
 - More Importantly, MongoDB's native support for JSON documents simplifies data storage and retrieval, making it perfect for integration with Node-RED.
 
 ## Setting Up MongoDB with Node-RED
+
 To kickstart the MongoDB integration with Node-RED, let's begin by installing the MongoDB custom node and familiarizing ourselves with MongoDB configuration details:
 
 ### Installing MongoDB custom node
@@ -44,7 +42,7 @@ To kickstart the MongoDB integration with Node-RED, let's begin by installing th
 
 ### Understanding MongoDB Configuration
 
-While writing the article, I have utilized MongoDB Atlas, but feel free to choose any MongoDB setup, as the instructions in the article are adaptable for any setup. To establish a connection between our Node-RED application and the MongoDB database, it's essential to have the following configuration details prepared:
+Before you begin, gather the following configuration details:
 
 - `Host`: IP address or hostname of your MongoDB server.
 - `Port`: By default, MongoDB uses port 27017. ( If you're using a managed MongoDB service like MongoDB Atlas, this information may not be required.)
@@ -66,7 +64,7 @@ Using environment variables during configuration is crucial to prevent exposing 
 
 ### Configuring MongoDB node
 
-Now let's configure MongoDB4 node using added environment variables 
+Now let's configure the MongoDB4 node using added environment variables 
 
 1. Drag the MongoDB4 node onto the canvas.
 2. Click on the node to select it, Then, click on the edit icon next to the connection input field.
@@ -76,7 +74,7 @@ Now let's configure MongoDB4 node using added environment variables
 
 ## Using MongoDB with Node-RED
 
-In this section, we'll delve into leveraging MongoDB to perform operations such as storing, retrieving, updating, and deleting data within Node-RED. To enhance understanding and engagement, we'll develop a basic customer relationship manager system utilizing MongoDB and Node-RED. 
+In this section, we'll explore how to use MongoDB to perform operations such as storing, retrieving, updating, and deleting data within Node-RED. To enhance understanding and engagement, we'll develop a basic customer relationship management system using MongoDB and Node-RED.
 
 For the CRM system we will develop, the data structure will be as follows:
 
@@ -96,9 +94,11 @@ For the CRM system we will develop, the data structure will be as follows:
 
 ### Understanding MongoDB Operations
 
-Before we move to practical implementation, we need to gain an understanding of MongoDB operations that will be used in this guide.
+Before we move to practical implementation, we need to gain an understanding of the MongoDB operations that will be used in this documentation.
 
 MongoDB operations refer to the actions or commands executed on a MongoDB database to perform various tasks such as inserting, querying, updating, and deleting data.
+
+#### MongoDB Operations used in this documentation
 
 - InsertOne: Adds a single document to a MongoDB collection.
 - Find: Retrieves documents based on specified criteria.
@@ -170,10 +170,10 @@ Note:- *Please note that the comments provided are for explanation purposes only
 
 ```yml
 [
-    // Specifying the criteria to identify the document to update, based on its _id field
-    { "_id": msg.payload._id },
-    // Setting the "status" field of the identified document to the new value received from msg.payload.status
-    { "$set": { "status": msg.payload.status } }
+    // Specifying the criteria to identify the document to update, based on its _id field
+ { "_id": msg.payload._id },
+    // Setting the "status" field of the identified document to the new value received from msg.payload.status
+ { "$set": { "status": msg.payload.status } }
 ]
 ```
 
@@ -197,15 +197,15 @@ Note:- *Please note that the comments provided are for explanation purposes only
 
 ```yaml
 [
-    // Specify the criteria to identify the document to delete, based on its _id field and firstname
-    {
-        "_id": msg.payload._id,         // Document ID to identify the document to delete
-        "firstname": msg.payload.firstname // Additional criteria (e.g., firstname) to narrow down the deletion operation for accuracy
-    },
-    // Perform the delete operation
-    {
-        "$delete": "" // Indicates the delete operation to be performed
-    }
+    // Specify the criteria to identify the document to delete, based on its _id field and firstname
+ {
+        "_id": msg.payload._id,         // Document ID to identify the document to delete
+        "firstname": msg.payload.firstname // Additional criteria (e.g., firstname) to narrow down the deletion operation for accuracy
+ },
+    // Perform the delete operation
+ {
+        "$delete": "" // Indicates the delete operation to be performed
+ }
 ]
 ```
 
@@ -230,30 +230,32 @@ Note:- *Please note that the comments provided are for explanation purposes only
 
 !["Screenshot displaying connections of wires in the 'Drop collecton from Database' flow"](./images/using-mongodb-with-node-red-mongodb-drop-flow.png "Screenshot displaying connections of wires in the 'Drop collecton from Database' flow"){data-zoomable}
 
-## Debugging the operations
+## Debugging MongoDB Operations
 
-To debug MongoDB operations in Node-RED, simply add a debug node after the MongoDB4 node. This enables you to monitor the execution of operations and diagnose any errors that may occur. Below are sample debug messages indicating successful operations for each operation we have covered in this guide.
+To debug MongoDB operations in Node-RED, simply add a debug node after the MongoDB4 node. This enables you to monitor the execution of operations and diagnose any errors that may occur. Below are example debug messages indicating successful operations for each operation we have covered in this documentation.
+
+### Example Debug Messages
 
 ```js
 // Message received after insert operation successful
 {
-    "acknowledged": true,
-    "insertedId": "BKoIzMuW" // ID of inserted data
+    "acknowledged": true,
+    "insertedId": "BKoIzMuW" // ID of inserted data
 }
 
 // Message received after update operation successful
 {
-    "acknowledged": true,
-    "modifiedCount": 1, // Indicates that one document is updated
-    "upsertedId": null,
-    "upsertedCount": 0,
-    "matchedCount": 1 // Indicates one document is matched for the provided query
+    "acknowledged": true,
+    "modifiedCount": 1, // Indicates that one document is updated
+    "upsertedId": null,
+    "upsertedCount": 0,
+    "matchedCount": 1 // Indicates one document is matched for the provided query
 }
 
 // Message received after delete operation successful
 {
-    "acknowledged": true,
-    "deletedCount": 1 // Indicates that one document is deleted
+    "acknowledged": true,
+    "deletedCount": 1 // Indicates that one document is deleted
 }
 
 // To indicate collection is dropped successfully and true value will be returned
@@ -278,7 +280,3 @@ This section contains helpful links to other content. It isn’t required, so co
 - [MongoDB best practices](https://www.mongodb.com/basics/best-practices) for to increase performance
 - [Ebook: MongoDB in manufacturing](https://www.mongodb.com/collateral/manufacturing-with-mongodb).
 - [Manufacturing & Automotive Industry Knowledge Accelerator](https://learn.mongodb.com/learning-paths/manufacturing-automotive-industry-knowledge-accelerator)
-
-## Conclusion
-
-In this guide, we've covered the integration of MongoDB with Node-RED to create dynamic applications. We've walked through the foundation, and setup process, demonstrated how to perform CRUD operations, and discussed debugging techniques. Additionally, we've built a Customer Relationship Management system to enhance understanding and engagement.
