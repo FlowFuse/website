@@ -10,7 +10,7 @@ eleventyNavigation:
 
 TCP-Out nodes in Node-RED facilitate communication over TCP/IP networks by providing options to connect to remote TCP ports, accept incoming connections, or reply to messages received from a TCP In node.
 
-If you dont know what is TCP, refer to [What is TCP](/node-red/core-nodes/network/tcp-in/#what-is-tcp/).
+If you dont know what is TCP, refer to [What is TCP](/node-red/core-nodes/network/tcp-in/#what-is-tcp).
 
 ## Configuring TCP-Out Node
 
