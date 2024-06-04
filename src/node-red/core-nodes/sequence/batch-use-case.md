@@ -20,11 +20,11 @@ For example, if you set the batch size to 5, then the first 5 messages will be g
 
 See the below example flow for what this looks like in practice.
 
-![Batching messages into 5 groups](./images/batch-example1.png)
+![Batching messages into 5 groups](../images/batch-example1.png)
 
 Additionally, you can add overlap so that the last message is included in the next batch
 
-![Batching messages into 5 groups with overlap](./images/batch-example2.png)
+![Batching messages into 5 groups with overlap](../images/batch-example2.png)
 
 ### Group by Time Interval
 
@@ -35,7 +35,7 @@ Then the next batch will be created for the next 2 seconds, and so on.
 
 See the below example flow for what this looks like in practice.
 
-![Batching messages into 2 second groups](./images/batch-example3.gif)
+![Batching messages into 2 second groups](../images/batch-example3.gif)
 
 ### Concatenate sequences
 
@@ -45,9 +45,9 @@ For example, you could use this to duplicate the sequence of messages in a seque
 
 See the below example flow for what this looks like in practice.
 
-![Duplicating a sequence of data](./images/batch-example4.png)
+![Duplicating a sequence of data](../images/batch-example4.png)
 
-![Batch filter and concatenate](./images/batch-example5.png)
+![Batch filter and concatenate](../images/batch-example5.png)
 
 ### Demo flows used in this article
 
