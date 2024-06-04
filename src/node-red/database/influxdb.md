@@ -6,7 +6,7 @@ meta:
   title: Using InfluxDB with Node-RED
   description: Node-RED has great support for InfluxDB, in this guide we'll explain how to get your data flowing into one of the most popular time-series database.
   keywords: node-red, databases, integration, mongodb, no-sql database
-image: blog/2023/07/images/node-red-influxdb.png
+image: /node-red/core-nodes/images/node-red-influxdb.png
 ---
 
 # Using InfluxDB with Node-RED

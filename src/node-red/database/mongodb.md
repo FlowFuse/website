@@ -6,7 +6,7 @@ meta:
   title: Using MongoDB With Node-RED
   description: Learn how to seamlessly integrate MongoDB, a NoSQL database, into your Node-RED applications with this step-by-step Documentation.
   keywords: node-red, databases, integration, mongodb, no-sql database
-image: ./images/using-Mongo-with-nr.png
+image: /node-red/core-nodes/images/using-Mongo-with-nr.png
 ---
 
 # Using MongoDB With Node-RED

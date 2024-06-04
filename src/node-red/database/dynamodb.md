@@ -6,7 +6,7 @@ meta:
   title: Using DynamoDB with Node-RED
   description: Get started with AWS' NoSQL database DynamoDB with Node-RED
   keywords: node-red, flowfuse, integration, dynamodb, aws, nosql
-image: /blog/2024/04/images/node-red-dynamodb.png
+image: /node-red/core-nodes/images/node-red-dynamodb.png
 ---
 
 # Using DynamoDB with Node-RED

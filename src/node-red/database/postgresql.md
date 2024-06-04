@@ -6,6 +6,7 @@ meta:
   title: Using PostgreSQL with Node-RED
   description: Learn how to seamlessly integrate PostgreSQL with Node-RED for efficient data management and application development.
   keywords: node-red, databases, integration, PostgreSQL, SQL database
+image: /node-red/core-nodes/images/postgresql_with_node-red.png
 ---
 
 # Using PostgreSQL with Node-RED
