@@ -15,8 +15,8 @@ FlowFuse will empower all engineers to innovate faster, by bringing the joy of s
 
 ## Achieving our Mission
 
-At the core of the product is Node-RED, the Low-Code platform that allows many
-to build software with little or no training. FlowFuse will only be successful if
+At the core of FlowFuse is Node-RED, the Low-Code platform that allows many
+to build software with little or no coding knowledge. This enables anyone to be innovative and develop solutions to be successful in their respective roles. FlowFuse will only be successful if
 Node-RED becomes the default way to write software for hundreds of thousands of people.
 FlowFuse is, and will remain, the primary contributor to Node-RED. Our product is
 the best way to run Node-RED at any scale.
