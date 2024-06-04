@@ -45,4 +45,4 @@ to add these.
 
 When you double click the node, the full text is revealed:
 
-![Comment node editor](./images/comment-node-full-text.png)
+![Comment node editor](../images/comment-node-full-text.png)
