@@ -6,8 +6,7 @@ meta:
    title: Setting Node-RED on Raspberry Pi 4
    description: Learn how to set up Node-RED on a Raspberry Pi 4, including installation, configuration, and integration with sensors and actuators.
    keywords: node-red, raspberry pi, raspberry pi 4
-image: ./images/how-to-setup-node-red-on-raspberry-pi.png
-
+og_image: ./images/how-to-setup-node-red-on-raspberry-pi.png
 ---
 
 # Setting Node-RED on Raspberry Pi 4
