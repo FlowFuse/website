@@ -4,7 +4,7 @@ eleventyNavigation:
   parent: Database
 meta:
   title: Using PostgreSQL with Node-RED
-  description: Learn how to seamlessly integrate PostgreSQL with Node-RED for efficient data management and application development. Complete guide with best practices.
+  description: Learn how to seamlessly integrate PostgreSQL with Node-RED for efficient data management and application development.
   keywords: node-red, databases, integration, PostgreSQL, SQL database
 ---
 
