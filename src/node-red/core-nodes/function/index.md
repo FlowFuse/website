@@ -1,5 +1,5 @@
 ---
 eleventyNavigation:
   key: Function
-  parent: "Core Nodes
+  parent: "Core Nodes"
 ---
