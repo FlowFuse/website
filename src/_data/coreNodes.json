@@ -286,14 +286,14 @@
         {
             "xpath": "file write",
             "name": "File write",
-            "file": "10-filewrite",
+            "file": "17-filewrite",
             "description": "Learn how to use the Write File Node in Node-RED for efficient data logging and management. ",
             "keywords": "node-red write file node, data logging, writing data to file, deleting file, file write usecase, file write example flow"
         },
         {
             "xpath": "file read",
             "name": "File read",
-            "file": "fileread",
+            "file": "17-fileread",
             "description": "Learn how to use the read file node in node-red to read file contents from the file system.",
             "keywords": "node-red mqtt config node, configuring mqtt nodes, file read usecase, file read example flow"
         }
