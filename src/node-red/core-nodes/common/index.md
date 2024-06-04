@@ -1,5 +1,5 @@
 ---
 eleventyNavigation:
   key: Common
-  parent: "Core Nodes
+  parent: "Core Nodes"
 ---
