@@ -19,7 +19,6 @@ const codeowners = require('codeowners');
 const schema = require("@quasibit/eleventy-plugin-schema");
 const imageHandler = require('./lib/image-handler.js')
 const site = require("./src/_data/site");
-const coreNodeDoc = require("./lib/core-node-docs.js");
 const yaml = require("js-yaml");
 const eleventyNavigationPlugin = require("@11ty/eleventy-navigation");
 
@@ -96,18 +95,6 @@ module.exports = function(eleventyConfig) {
         return `<div id="nr-flow-${flowId}" style="height: ${height}px" data-grid-lines="true" data-zoom="true" data-images="true" data-link-lines="false" data-labels="true"></div>
         <script type="module">const flow${flowId} = ${JSON.stringify(flow)};
         new FlowRenderer().renderFlows(JSON.parse(flow${flowId}), { container: document.getElementById('nr-flow-${flowId}') })</script>`
-    });
-
-    eleventyConfig.addGlobalData("coreNodesArray", () => {
-        // Read the JSON file with core nodes
-        const coreNodes = JSON.parse(fs.readFileSync(path.join(__dirname, 'src', '_data', 'coreNodes.json'), 'utf-8'));
-
-        // Transform coreNodes object into an array
-        return Object.entries(coreNodes).map(([key, nodes]) => ({ key, nodes }));		
-    })
-
-    eleventyConfig.addAsyncShortcode("coreNodeDoc", async function (category, node) {
-        return await coreNodeDoc(category, node)
     });
 
     eleventyConfig.addFilter("filterNodeCategory", function(nodes, category) {
