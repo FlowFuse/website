@@ -9,4 +9,4 @@ meta:
 
 # Hardware
 
-Welcome to the Hardware category. Here, we provide comprehensive resources and guides for installing and configuring Node-RED on various hardware platforms. Whether you're using a Raspberry Pi, windows , ctrlX, or other devices, you'll find the information you need to get started.
+FlowFuse supports a wide range of hardware devices to allow users to connect Node-RED to many devices and sensors. This allows for the creation of interactive and automated systems, where data from physical inputs can trigger actions or responses in the digital realm. By bridging the gap between software and hardware, Node-RED expands its applicability to a wide range of use cases.
