@@ -43,7 +43,7 @@ want.
 When there's continous output you'll need to select `spawn` mode in the settings
 windown of the `exec` node:
 
-![spawn mode for exec in Node-RED](./images/spawn-mode-exec.png)
+![spawn mode for exec in Node-RED](../images/spawn-mode-exec.png)
 
 This will produce a message per line to the standard out output for further
 processing.

@@ -15,7 +15,7 @@ The output of the status node is in two formats: 1) the textual output is added 
 
 ## Example of Status nodes
 
-![Delay Node with Status Node](./images/status-node.png)
+![Delay Node with Status Node](../images/status-node.png)
 
-![Debug output of Status Node](./images/status-node-output.png)
+![Debug output of Status Node](../images/status-node-output.png)
 

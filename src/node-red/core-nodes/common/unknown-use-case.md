@@ -14,11 +14,11 @@ To understand which nodes need installing when importing a flow, it is advised
 to create a list of installed node packages _before_ exporting your flows. Such a list 
 can be obtained by looking in the palette manager.
 
-!["List of nodes installed, including unused nodes"](./images/list-nodes-unused.png)
+!["List of nodes installed, including unused nodes"](../images/list-nodes-unused.png)
 
 Or use the `System Info` dialog to get a list:
 
-!["List of nodes installed through the System Info dialog"](./images/system-info-installed-nodes.gif)
+!["List of nodes installed through the System Info dialog"](../images/system-info-installed-nodes.gif)
 
 Presently it is not possible to install older versions of a package into Node-RED so your flows will need to run on the latest version of each package, you may want to consider updating before you migrate.
 

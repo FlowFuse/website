@@ -41,7 +41,7 @@ Do set the correct timezone in the [editor settings](/docs/user/instance-setting
 The Inject node can also set the payload to other input data, for example a
 static string. Note this string cannot have multiple lines.
 
-!["Configure Inject a string for a flow"](./images/inject-config-string.png)
+!["Configure Inject a string for a flow"](../images/inject-config-string.png)
 
 {% renderFlow %}
 [{"id":"c0451e14f6b7eff0","type":"inject","z":"80987f27785245a7","name":"Inject a string","props":[{"p":"payload"}],"repeat":"","crontab":"","once":false,"onceDelay":0.1,"topic":"","payload":"Hello FlowFuse!","payloadType":"str","x":190,"y":280,"wires":[["9fbd8a0a9d21562a"]]},{"id":"9fbd8a0a9d21562a","type":"debug","z":"80987f27785245a7","name":"Output \"Hello FlowFuse\"","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"payload","targetType":"msg","statusVal":"","statusType":"auto","x":410,"y":280,"wires":[]}]

@@ -12,4 +12,4 @@ The Link In and Link Out nodes are used to help Node-RED developers to organize 
 
 ## Examples
 
-![Connecting two groups of nodes](./images/link-node.png)
+![Connecting two groups of nodes](../images/link-node.png)

@@ -13,7 +13,7 @@ During development, it is highly recommended to add Debug nodes at key points in
 
 In the Node-RED editor, debug messages can be viewed in the right-hand sidebar panel, under the debug icon.
 
-![Debug Panel](./images/debug-panel.png)
+![Debug Panel](../images/debug-panel.png)
 
 Please feel free to skip ahead to the [Top Tips](#top-tips) section if you are already familiar with the Debug node configuration options.
 
@@ -48,7 +48,7 @@ The Debug node has a number of configuration options:
 The **Copy Path** feature is a real time saver and can save you much heartache when you are building your flows by helping you avoid typos and other errors.
 Lets see it in action!
 
-![Copy Path helper](./images/debug-copy-path.gif)
+![Copy Path helper](../images/debug-copy-path.gif)
 
 
 ### Copy Value
@@ -58,7 +58,7 @@ This is also extremely useful when you need help - you can provide a demo flow c
 
 Lets see it in action!
 
-![Copy Value helper](./images/debug-copy-value.gif)
+![Copy Value helper](../images/debug-copy-value.gif)
 
 ### Pin Open
 
@@ -67,12 +67,12 @@ The **Pin Open** feature can help you find those things in a snap.
 
 Lets see it in action!
 
-![Pin Open helper](./images/debug-pin-open.gif)
+![Pin Open helper](../images/debug-pin-open.gif)
 
 
 ## Example
 
 Here is a demo flow that shows the most common ways the debug node can used to visualise your data and assist your development.
 
-![Debug Nodes](./images/debug-examples.png)
+![Debug Nodes](../images/debug-examples.png)
 
