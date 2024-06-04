@@ -49,12 +49,15 @@
     content: '' !important;
 }
 
+.ff-prose.whitepaper .prose {
+    max-width: none;
+}
 .ff-prose .prose h1 {
     font-size: 2.25em;
     line-height: 1.3;
 }
 .ff-prose .prose h2 {
-    font-size: 1.75rem;
+    font-size: 1.85rem;
 }
 
 .ff-prose .prose h3 {
@@ -79,6 +82,11 @@
 .ff-prose .prose li,
 .ff-prose li {
     font-weight: 300;
+}
+
+.ff-prose .prose p strong,
+.ff-prose .prose li strong {
+    font-weight: 500;
 }
 
 .ff-prose .prose hr {

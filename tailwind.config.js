@@ -16,22 +16,25 @@ module.exports = {
                             fontWeight: '500',
                         },
                         h2: {
-                            fontWeight: '500',
+                            fontWeight: '400',
                         },
                         h3: {
-                            fontWeight: '500',
+                            fontWeight: '400',
                         },
                         h4: {
-                            fontWeight: '500',
+                            fontWeight: '400',
                         },
                         h5: {
-                            fontWeight: '500',
+                            fontWeight: '400',
                         },
                         h6: {
-                            fontWeight: '500',
+                            fontWeight: '400',
                         },
                         code: {
                             color: theme('colors.red.700'),
+                        },
+                        strong: {
+                            color: theme('colors.gray.500'),
                         },
                     },
                 },

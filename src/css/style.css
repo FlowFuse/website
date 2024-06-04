@@ -216,6 +216,10 @@ dl.message-properties {
     @apply m-auto text-center sm:text-left p-8 max-w-md sm:max-w-screen-lg bg-indigo-50 border border-white rounded-lg mt-6;
   }
 
+  .main-content .ff-blue-card {
+    @apply mb-6;
+  }
+
 /*
     Event banner
 */
