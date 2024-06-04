@@ -69,6 +69,19 @@ h1, h2, h3, h4 {
     font-weight: 400;
 }
 
+.prose .ff-blue-card > h1:first-of-type,
+.prose .ff-blue-card > h2:first-of-type,
+.prose .ff-blue-card > h3:first-of-type,
+.prose .ff-blue-card > h4:first-of-type,
+.prose .ff-blue-card > h5:first-of-type,
+.prose .ff-blue-card > h6:first-of-type {
+    margin-top: 0;
+}
+
+.prose .ff-blue-card > p:last-of-type {
+    margin-bottom: 0;
+}
+
 .prose figcaption {
     text-align: center;
     margin-bottom: 1rem;
@@ -1341,7 +1354,7 @@ pre.mermaid {
     background-color: #ffffff
 }
 /*
-    FlowFuse markdown-it rendeindigo footnote styles
+    FlowFuse markdown-it rendered footnote styles
 */
 div.content hr.footnotes-sep {
     margin-top: 3em;
