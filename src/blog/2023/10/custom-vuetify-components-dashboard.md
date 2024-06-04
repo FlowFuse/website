@@ -40,7 +40,7 @@ generated for you, in my case it's:
 
 ### Using the template node
 
-Like the [template core node](/node-red/core-nodes/common/template), the dashboard package
+Like the [template core node](/node-red/core-nodes/function/template), the dashboard package
 comes with [a template node of its own](https://dashboard.flowfuse.com/nodes/widgets/ui-template.html).
 If we take the HTML from the Vuetify docs pages and copy it in a template node
 the spinner will show up on the dashboard.

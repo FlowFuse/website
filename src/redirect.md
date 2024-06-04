@@ -27,7 +27,7 @@ redirects:
   - { "from": "/blog/2023/06/Flowforge-as-a-No-Code-Ethernet_IP-to-Profinet-Protocol-Converter/", "to": "/blog/2023/06/node-red-as-a-no-code-ethernet_ip-to-s7-protocol-converter/" }
   - { "from": "/docs/user/devices/", "to": "/docs/device-agent/introduction" }
   - { "from": "/blog/2023/06/node-explained-split/", "to": "/node-red/core-nodes/sequence/split/"}
-  - { "from": "/blog/2023/07/node-explained-filter/", "to": "/node-red/core-nodes/function/rbe/"}
+  - { "from": "/blog/2023/07/node-explained-filter/", "to": "/node-red/core-nodes/function/filter/"}
   - { "from": "/blog/2022/12/node-red-exec-explained/", "to": "/node-red/core-nodes/function/exec/"}
   - { "from": "/blog/2023/05/Integrating Modbus with Node-RED", "to": "/blog/2023/05/integrating-modbus-with-node-red/"}
   - { "from": "/handbook/development/observability/", "to": "/handbook/development/ops/observability/" }
