@@ -2,7 +2,7 @@
 title: "Accelerating Innovation in <span class='text-indigo-600'>Manufacturing with FlowFuse</span>"
 meta:
     title: Accelerating Innovation in Manufacturing with FlowFuse
-    description: 
+    description: Break down data silos & unlock innovation! Discover how FlowFuse leverages UNS, MQTT & Node-RED to create a unified data platform for agile application development in manufacturing. Download our whitepaper to see how FlowFuse empowers citizen developers & accelerates digital transformation.
 image: /whitepaper/images/whitepaper-manufacturing.png
 hubspot:
     script: "hubspot/hs-form.njk"
