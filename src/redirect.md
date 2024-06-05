@@ -49,6 +49,9 @@ redirects:
   - { "from": "/features/", "to": "/product/features/" }
   - { "from": "/node-red/core-nodes/rbe/", "to": "/node-red/core-nodes/filter/" }
   - { "from": "/webinars/2024/deploy-flowfuse-on-industrial-iiot-with-ncd-io/", "to": "/webinars/2024/deploy-flowfuse-on-industrial-iot-with-ncd-io/" }
+  - { "from": "/blog/2023/11/raspberry-pi-5-flowfuse-edge-agent/", "to": "/node-red/hardwares/raspberry-pi-5/" }
+  - { "from": "/blog/2024/03/flowfuse-on-siemens-iot2050/", "to": "/node-red/hardwares/siemens-iot-2050/" }
+  - { "from": "/blog/2024/05/flowfuse-on-robustel-eg5120/", "to": "/node-red/hardwares/robustel-eg5120/" }
 
 # The "permalink" attribute determines where the output page will be located.
 permalink: "{{ redirect.from }}"

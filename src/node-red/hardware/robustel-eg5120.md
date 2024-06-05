@@ -6,7 +6,7 @@ meta:
    title: Setting Node-RED on Robustel EG5120
    description: In this guide, we will discuss how to install FlowFuse Device agent on Robustel EG5120.
    keywords: node-red, flowfuse, robustel eg5120
-image: /node-red/core-nodes/hardware/images/flowfuse-on-robustel-eg5120-node-red.png
+image: /node-red/hardwares/images/flowfuse-on-robustel-eg5120-node-red.png
 ---
 
 # {{meta.title}}

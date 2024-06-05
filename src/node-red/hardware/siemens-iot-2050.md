@@ -6,7 +6,7 @@ meta:
    title: Run FlowFuse on Siemens IoT2050
    description: In this guide, we will discuss how to install FlowFuse Device agent on Siemens IoT2050.
    keywords: node-red, siemens iot2050 flowfuse
-image: /node-red/core-nodes/hardware/images/flowfuse-on-siemens-iot2050.png
+image: /node-red/hardwares/images/flowfuse-on-siemens-iot2050.png
 ---
 
 # {{meta.title}}
