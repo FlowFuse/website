@@ -1,7 +1,7 @@
 ---
 eleventyNavigation:
   key: DynamoDB
-  parent: Database
+  parent: Databases
 meta:
   title: Using DynamoDB with Node-RED
   description: Get started with AWS' NoSQL database DynamoDB with Node-RED
