@@ -1,6 +1,6 @@
 ---
 eleventyNavigation:
-  key: Hardware
+  key: Hardwares
 meta:
    title: Setting Up Node-RED on Different Hardware
    description: Learn how to set up Node-RED on various hardware platforms, including Raspberry Pi, Arduino, and more.
