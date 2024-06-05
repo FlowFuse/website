@@ -1,6 +1,6 @@
 # FlowFuse Branding Guidelines
 
-For FlowFuse Assets (e.g. logos, pictograms, and raw design files), please look in the [`/design/Media`](https://drive.google.com/drive/u/1/folders/1guBnBUrIiRXuK6vsik_NIXIhtE1cZRRa) folder on Google Drive.
+For FlowFuse Assets (e.g. logos, pictograms, and raw design files), please look in the [`/design/Media`](https://drive.google.com/drive/folders/1PiuFwW3H8XuydolepmfQQ4BjcdNekVQg?usp=drive_link) folder on Google Drive.
 
 ## Logo
 ### Composition
