@@ -9,7 +9,7 @@ meta:
 image: /node-red/core-nodes/images/node-red-dynamodb.png
 ---
 
-# Using DynamoDB with Node-RED
+# {{ meta.title }}
 
 Amazon's DynamoDB is a fully managed NoSQL database service known for its fast and predictable performance and scalable design. This makes it suitable for applications needing low-latency responses. In this  documentation, we’ll look at how to set up and use DynamoDB, configure the necessary IAM roles, and apply Node-RED flows to store and retrieve data effectively.
 
