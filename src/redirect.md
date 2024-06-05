@@ -49,6 +49,8 @@ redirects:
   - { "from": "/features/", "to": "/product/features/" }
   - { "from": "/node-red/core-nodes/rbe/", "to": "/node-red/core-nodes/filter/" }
   - { "from": "/webinars/2024/deploy-flowfuse-on-industrial-iiot-with-ncd-io/", "to": "/webinars/2024/deploy-flowfuse-on-industrial-iot-with-ncd-io/" }
+  - { "from": "/blog/2023/07/how-to-build-a-secure-opc-ua-server-for-plcs-in-node-red/", "to": "/node-red/communication-protocols/opc-ua/" }
+  - { "from": "/blog/2023/06/connect-to-hivemq-in-flowforge/", "to": "/node-red/communication-protocols/mqtt/" }
 
 # The "permalink" attribute determines where the output page will be located.
 permalink: "{{ redirect.from }}"
