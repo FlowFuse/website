@@ -1,4 +1,4 @@
-## What's the MQTT-broker config Node in Node-RED Used For?
+## What is the MQTT-broker config Node in Node-RED Used For?
 
 The MQTT-Broker config node in Node-RED is used to define the connection settings for an MQTT broker. This will create a single connection to the broker which can then be reused by MQTT In and MQTT Out nodes.
 
