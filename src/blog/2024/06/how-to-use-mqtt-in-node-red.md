@@ -40,7 +40,6 @@ For Node-RED, we will be using FlowFuse, which enhances Node-RED usage with mana
 2. After successful login, you will see the Application and instance which is added by default.
 3. Click on that instance and then click on the editor URL to open the Node-RED editor.
 
-
 ## Configuring MQTT Node in Node-RED
 
 When you open the Node-RED editor, you'll see the MQTT nodes already installed as they are part of Node-RED core nodes. When you drag an **mqtt-in** or **mqtt-out** node onto the workspace, you need to configure the MQTT broker node. You can do this by Double-clicking mqtt node and clicking on the edit icon next to the Server field and entering the following details of your MQTT broker into the MQTT broker config node, For more details on mqtt nodes refer to the [MQTT core node docs](/node-red/core-nodes/mqtt/).
@@ -168,7 +167,6 @@ Ensuring the security and efficiency of your MQTT and Node-RED deployments is cr
 - **Healthcare and Remote Patient Monitoring:** In healthcare, Node-RED coupled with MQTT can facilitate remote patient monitoring by collecting health data from sensors or wearable devices, transmitting it securely, and providing real-time alerts to healthcare providers or patients for timely interventions.
 
 - **Energy Management and Smart Grids:** Node-RED can play a crucial role in energy management systems by integrating with smart meters, renewable energy sources, and grid infrastructure via MQTT. This integration enables real-time monitoring, demand response, and optimization of energy consumption.
-
 - **Building Automation and Energy Efficiency:** For building automation and energy efficiency projects, Node-RED can control HVAC systems, lighting, and other building components based on occupancy, environmental conditions, and energy demand signals received through MQTT, leading to cost savings and sustainability.
 
 ## Conclusion 
