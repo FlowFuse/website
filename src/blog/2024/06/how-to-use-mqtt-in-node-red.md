@@ -4,7 +4,7 @@ subtitle: Step-by-step guide on integrating MQTT with Node-RED.
 description: Learn how to effectively integrate MQTT with Node-RED in this comprehensive guide, covering setup, configuration, and practical applications for IoT projects.
 date: 2024-06-05
 authors: ["sumit-shinde"]
-image: /blog/2024/05/images/how-to-use-mqtt-in-node-red.png
+image: /blog/2024/06/images/how-to-use-mqtt-in-node-red.png
 tags:
    - posts
    - node-red
