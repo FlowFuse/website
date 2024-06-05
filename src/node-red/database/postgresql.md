@@ -9,7 +9,7 @@ meta:
 image: /node-red/core-nodes/images/postgresql_with_node-red.png
 ---
 
-# Using PostgreSQL with Node-RED
+# {{ meta.title }}
 
 PostgreSQL is a highly reliable open-source relational database known for its extensive features. It supports diverse data types, robust SQL, and ACID compliance, allowing high-performance systems. Over the years, it has demonstrated reliability, security, and compatibility, which makes it a popular choice for businesses worldwide.
 
