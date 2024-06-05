@@ -46,7 +46,7 @@ jobs:
         run: npm install
         working-directory: 'website'
       - name: Build the forge
-        run: npm run build
+        run: npm run build:skip-images
         working-directory: 'website'
       - uses: untitaker/hyperlink@0.1.32
         with:
