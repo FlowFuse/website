@@ -7,7 +7,7 @@ meta:
   keywords: node-red, databases, integration, PostgreSQL, MongoDB, InfluxDB, DynamoDB, TimescaleDB
 ---
 
-# Database Integration Guides
+# {{ meta.title }}
 
 Welcome to the Database Integration Guides section. Here, you'll find comprehensive tutorials on integrating various databases with Node-RED. Whether you're working with SQL or NoSQL databases, or need to handle time-series data, these guides will help you connect, store, query, and visualize data effectively.
 
