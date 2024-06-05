@@ -27,10 +27,10 @@ to be achieved. Two good examples are
 1. FlowFuse Dashboard - Allowing to build Dashboards and interactive applications
 1. Project-Link - Linking Edge devices to the Cloud, enabling broadcasts and point-to-point connections
 
-A key differenciator for FlowFuse is our approach to licensing of our software.
+A key differentiator for FlowFuse is our approach to licensing of our software.
 The core is open, free as in beer and as in speech. Our product is open for scrutany,
 usage, improvements, for the world. While there's a subset of the product
-propietery licensed, the source is available to read. We believe that Open Source
+proprietary licensed, the source is available to read. We believe that Open Source
 Software plays a key part in education, reducing vendor lock-in, and community building.
 
 ## The market
