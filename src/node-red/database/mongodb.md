@@ -9,7 +9,7 @@ meta:
 image: /node-red/core-nodes/images/using-Mongo-with-nr.png
 ---
 
-# Using MongoDB With Node-RED
+# {{ meta.title }}
 
 MongoDB, a popular NoSQL database, is a favored choice among developers. As MongoDB continuously releases updates to enhance efficiency and suitability for manufacturing purposes, we find providing content around MongoDB for our Node-RED users essential. In this documentation, we will cover everything from MongoDB foundations to setup, providing you with step-by-step instructions for integration into your Node-RED applications.
 
