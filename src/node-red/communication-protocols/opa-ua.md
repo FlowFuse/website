@@ -13,7 +13,7 @@ image: /node-red/hardware/images/opc-ua-2-title-image.png
 
 OPC-UA (OPC Unified Architecture) is a communication protocol designed for industrial automation. It enables seamless data exchange and interoperability between various devices, systems, and software applications in the industrial domain. OPC-UA offers secure and reliable communication, making it a preferred choice for building robust industrial solutions. In this document, we will delve into the creation of a fully custom secure OPC-UA Server for PLCs in Node-RED.
 
-If you're not familiar with OPC-UA, you can learn more about it [here](blog/2023/07/how-to-deploy-a-basic-opc-ua-server-in-node-red/).
+If you're not familiar with OPC-UA, you can learn more about it [here](/blog/2023/07/how-to-deploy-a-basic-opc-ua-server-in-node-red/).
 
 ## Introduction
 
