@@ -4,7 +4,7 @@ eleventyNavigation:
   parent : Common
 ---
 
-# Node-RED Function Node
+# Node-RED Catch Node
 
 ## What is the Catch Node?
 
