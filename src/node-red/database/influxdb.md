@@ -9,7 +9,7 @@ meta:
 image: /node-red/core-nodes/images/node-red-influxdb.png
 ---
 
-# Using InfluxDB with Node-RED
+# {{ meta.title }}
 
 InfluxDB is a time series database that is commonly used for storing and analysing IoT data. Node-RED is a visual programming tool that makes it easy to connect different data sources and create flows that automate tasks.
 
