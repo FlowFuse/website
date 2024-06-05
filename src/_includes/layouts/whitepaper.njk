@@ -1,0 +1,32 @@
+---
+layout: layouts/base.njk
+---
+<div class="w-full nohero py-16">
+    <div class="container flex flex-col m-auto text-left max-lg:px-6 md:max-w-screen-lg items-stretch">
+        <label class="text-gray-400 font-medium mb-2">Whitepaper</label>
+        <h1 class="md:max-w-screen-sm">{{ title | safe }}</h1>
+        <div class="ff-prose whitepaper w-full flex flex-col md:flex-row md:gap-10">
+            <div class="w-full flex-grow main-content prose">
+                <div class="ff-image-cover ff-image-rounded aspect-video mb-6">
+                    {% set imageSrc = ["./", image ] | join %}
+                    {% set imageDescription = ["Image representing ", title] | join %}
+                    {% image imageSrc, imageDescription, [644] %}
+                </div>
+                {{ content | safe }}
+            </div>
+            <div class="w-72 flex-shrink-0 flex flex-col">
+                <div class="sticky top-4">
+                    <h5 class="font-medium pb-1 mb-4">Table of Contents</h5>
+                    <ul id="toc" class="text-sm border-b mb-10"></ul>
+                    {% include hubspot.script %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Generate "On this page" -->
+{% include "layouts/right-nav.njk" %}
+
+<!-- medium-zoom 1.1.0 | MIT License | https://github.com/francoischalifour/medium-zoom -->
+{% include "medium-zoom.min.njk" %}

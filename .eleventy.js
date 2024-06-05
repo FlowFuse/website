@@ -89,6 +89,12 @@ module.exports = function(eleventyConfig) {
         return `<span class="ff-tooltip" data-tooltip="${text}">${content}</span><span></span>`
     });
 
+    eleventyConfig.addPairedShortcode("blueCard", function(content) {
+        const md = new markdownIt();
+        let markdownContent = md.render(content);
+        return `<div class="ff-blue-card">${markdownContent}</div>`;
+    });
+
     let flowId = 0; // Keep a global counter to allow more than one 
     eleventyConfig.addPairedShortcode("renderFlow", function (flow, height = 200) {
         flowId++; // Increment the flowId to allow multiple flows on the same page
