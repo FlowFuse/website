@@ -6,7 +6,7 @@ meta:
    title: Sending and receiving emails with Node-RED
    description: Learn how to send and receive emails using Node-RED, along with best practices for sending email notifications.
    keywords: node-red, gmail, flowfuse device agent, anti-spam measures, email]
-image: /node-red/notifications/images/email_node-red.png
+image: /node-red/notification/images/email_node-red.png
 ---
 
 # {{meta.title}}

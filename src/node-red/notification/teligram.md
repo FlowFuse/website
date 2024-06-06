@@ -6,7 +6,7 @@ meta:
    title: Sending and receiving Telegram messages with Node-RED
    description: Learn to seamlessly integrate Telegram with Node-RED for messaging. Create bots, obtain chat IDs, and send/receive messages, including group messaging.
    keywords: node-red, telegram, bot
-image: /node-red/notifications/images/telegram_node-red.png
+image: /node-red/notification/images/telegram_node-red.png
 ---
 
 # {{meta.title}}
