@@ -24,7 +24,7 @@ const yaml = require("js-yaml");
 const eleventyNavigationPlugin = require("@11ty/eleventy-navigation");
 
 // Skip slow optimizations when developing i.e. serve/watch or Netlify deploy preview
-const DEV_MODE = process.env.ELEVENTY_RUN_MODE !== "build" || process.env.CONTEXT === "deploy-preview" 
+const DEV_MODE = process.env.ELEVENTY_RUN_MODE !== "build" || process.env.CONTEXT === "deploy-preview" || process.env.SKIP_IMAGES === 'true'
 
 module.exports = function(eleventyConfig) {
     eleventyConfig.addDataExtension("yaml", contents => yaml.load(contents)); // Add support for YAML data files
@@ -87,6 +87,12 @@ module.exports = function(eleventyConfig) {
     // Custom Tooltip "Component"
     eleventyConfig.addPairedShortcode("tooltip", function (content, text) {
         return `<span class="ff-tooltip" data-tooltip="${text}">${content}</span><span></span>`
+    });
+
+    eleventyConfig.addPairedShortcode("blueCard", function(content) {
+        const md = new markdownIt();
+        let markdownContent = md.render(content);
+        return `<div class="ff-blue-card">${markdownContent}</div>`;
     });
 
     let flowId = 0; // Keep a global counter to allow more than one 

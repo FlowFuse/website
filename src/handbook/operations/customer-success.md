@@ -83,18 +83,23 @@ If you're not a FlowFuse customer, or in your trial phase, please go to the
 
 #### HubSpot
 
-We use HubSpot to manage our customer support tickets for the managed FlowFuse platform. We can give each FlowFuse team member access to HubSpot by assigning them a seat. 
+We use HubSpot to manage our customer support tickets for the managed FlowFuse platform. We can give each FlowFuse team member access to HubSpot by assigning them a seat.
 
-If you wish to be granted access to HubSpot please post in the FlowFuse
-[#support-tickets](https://flowforgeworkspace.slack.com/archives/C031K13FLDD) Slack channel.
+If you wish to be granted access to HubSpot please post in the FlowFuse [#support-tickets](https://flowforgeworkspace.slack.com/archives/C031K13FLDD) Slack channel.
 
-Whenever a customer raises a new ticket or replies with an update a message is
-posted into slack #support-tickets.
-This will allow the whole team visibility of customer issues, to reply to a ticket we need to use the Help Desk UI in Hubspot. Each reply from a customer creates an alert in the #support-tickets Slack channel with a link to the ticket in Hubspot.
+Whenever a customer raises a new ticket, a message is posted into slack #support-tickets.
 
-When replying to the ticket one should have the intent to always reply with links
-to FlowFuse articles or documentation. If these resources are missing, please
-start or update where applicable.
+This will allow the whole team visibility of a new ticket, to reply to a ticket we need to use the Help [Desk UI in Hubspot](https://app-eu1.hubspot.com/help-desk/26586079/view/233410279/list-view). Once you reply to a ticket (if nobody in our team has already replied) you will be assigned as a ticket owner. Once you are a ticket owner you will get alerts via the Hubspot Slack app each time a customer replies. You are the only person who gets these alerts so it's important you deal with them in a timely manner. You can assign the ticket to someone you feel is a more appropriate owner using the Hubspot interface in the top right corner of the help desk. You may want to assign a ticket to a team member if you are out of office due to holidays, time zones etc so that the customer continues to get the support they need.
+
+When replying to a ticket, you can either send a message to a customer via live chat or an email. Please ensure you check if the customer is still online before using live chat, that can be checked by looking for a green circle next to their avatar on each post. If you don't see the green circle you should switch to emailing the customer.
+
+You can also add comments to a ticket which will only be visible to our team. This is a great place to add more context for other team members and ask for help. You can send an alert to a team member by adding @teammembername to your comments.
+
+When replying to the ticket one should have the intent to always reply with links to FlowFuse articles or documentation. If these resources are missing, please start or update where applicable.
+
+Where a conversation needs to happen with regards to a ticket between FlowFuse team members we should use the comments feature rather than having a parallel conversation is Slack so that anyone who wants to help with the ticket can see all relevant information in one place.
+
+Where you can help by replying to a customer you should do so rather than asking the ticket owner to relay messages. Working this way saves time, reduces the chance of the wrong information being passed to the customer, and shows that our wider team is invested in tickets which should have a positive impact on customer satisfaction.
 
 #### Scope of Support
 

@@ -53,6 +53,9 @@ redirects:
   - { "from": "/blog/2024/04/using-mongodb-with-node-red/", "to": "/node-red/database/mongodb/" }
   - { "from": "/blog/2024/04/integrate-dynamodb-with-node-red/", "to": "/node-red/database/dynamodb/" }
   - { "from": "/blog/2023/07/connect-node-red-to-influxdb/", "to": "/node-red/database/influxdb/" }
+  - { "from": "/blog/2023/11/raspberry-pi-5-flowfuse-edge-agent/", "to": "/node-red/hardware/raspberry-pi-5/" }
+  - { "from": "/blog/2024/03/flowfuse-on-siemens-iot2050/", "to": "/node-red/hardware/siemens-iot-2050/" }
+  - { "from": "/blog/2024/05/flowfuse-on-robustel-eg5120/", "to": "/node-red/hardware/robustel-eg5120/" }
 
 # The "permalink" attribute determines where the output page will be located.
 permalink: "{{ redirect.from }}"
