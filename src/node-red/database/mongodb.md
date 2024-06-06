@@ -1,7 +1,7 @@
 ---
 eleventyNavigation:
   key: MongoDB
-  parent: Databases
+  parent: Database
 meta:
   title: Using MongoDB With Node-RED
   description: Learn how to seamlessly integrate MongoDB, a NoSQL database, into your Node-RED applications with this step-by-step Documentation.
