@@ -35,7 +35,7 @@ Similarly to the feature to be able to compare snapshots we have enabled this sa
 
 ## Import and Export support for snapshots
 
-Managing your Node-RED artifacts just got simpler with our new import and export support for snapshots. You can now easily transfer configurations between deployment or back up your current setup with just a few clicks. This feature is perfect for those who need to replicate environments within or ensure their configurations are safely stored.
+Managing your Node-RED artifacts just got simpler with our new import and export support for snapshots. With just a few clicks, you can easily transfer configurations between deployments or back up your current setup. This feature is perfect for those who need to replicate environments within their own enterprise with multiple deployments or ensure their configurations are safely stored.
 
 ## Deploy Dashboard and APIs running on Flowfuse via your own Domain Names
 
