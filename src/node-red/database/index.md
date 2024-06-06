@@ -13,7 +13,7 @@ Welcome to the Database Integration Guides section. Here, you'll find comprehens
 
 {% for item in collections.all %}
   {% if item.data.eleventyNavigation.parent == "Database" %}
-    - [{{ item.data.eleventyNavigation.key }}]({{ item.url }})
+    - [{{ item.data.meta.title }}]({{ item.url }})
   {% endif %}
 {% endfor %}
 
