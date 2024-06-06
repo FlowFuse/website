@@ -51,7 +51,9 @@ redirects:
   - { "from": "/webinars/2024/deploy-flowfuse-on-industrial-iiot-with-ncd-io/", "to": "/webinars/2024/deploy-flowfuse-on-industrial-iot-with-ncd-io/" }
   - { "from": "/blog/2023/11/raspberry-pi-5-flowfuse-edge-agent/", "to": "/node-red/hardware/raspberry-pi-5/" }
   - { "from": "/blog/2024/03/flowfuse-on-siemens-iot2050/", "to": "/node-red/hardware/siemens-iot-2050/" }
-  - { "from": "/blog/2024/05/flowfuse-on-robustel-eg5120/", "to": "/node-red/hardware/robustel-eg5120/" }
+  - { "from": "/blog/2024/04/sending-and-receiving-telegram-messages-with-node-red/", "to": "/node-red/notification/teligram/" }
+  - { "from": "/blog/2024/04/how-to-send-and-receive-emails-using-node-red/", "to": "/node-red/notification/email/" }
+
 
 # The "permalink" attribute determines where the output page will be located.
 permalink: "{{ redirect.from }}"
