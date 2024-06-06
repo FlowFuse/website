@@ -11,11 +11,11 @@ image: /node-red/hardware/images/flowforge-nodered-mqtt-hivemq.png
 
 # {{meta.title}}
 
-In the realm of [IIoT (Industrial Internet of Things)](/docs/glossary/iiot), effective communication between devices is crucial. One protocol that has gained significant popularity for its lightweight and scalable nature is [MQTT (Message Queuing Telemetry Transport)](https://en.wikipedia.org/wiki/MQTT). This guide explains MQTT, its relevance in IIoT, and walks you through connecting a broker ([HiveMQ](https://www.hivemq.com/mqtt-cloud-broker/)) with Node-RED in [FlowFuse](/docs/user/flowfuse/).
+In the realm of IIoT (Industrial Internet of Things), effective communication between devices is crucial. One protocol that has gained significant popularity for its lightweight and scalable nature is MQTT (Message Queuing Telemetry Transport). This guide explains MQTT, its relevance in IIoT, and walks you through connecting a broker HiveMQ with Node-RED in FlowFuse.
 
 ## Understanding MQTT
 
-MQTT, with development starting in 1999, is a publish-subscribe-based messaging protocol designed for efficient communication between IoT devices. It operates on top of TCP/IP, like HTTP, providing a lightweight approach to messaging. MQTT follows a client-server model, where devices (clients) publish messages to a central server called the broker. Other clients interested in receiving those messages subscribe to specific topics on the broker.
+[MQTT](https://en.wikipedia.org/wiki/MQTT), with development starting in 1999, is a publish-subscribe-based messaging protocol designed for efficient communication between IoT devices. It operates on top of TCP/IP, like HTTP, providing a lightweight approach to messaging. MQTT follows a client-server model, where devices (clients) publish messages to a central server called the broker. Other clients interested in receiving those messages subscribe to specific topics on the broker.
 
 ## Advantages of MQTT in IIoT
 
@@ -26,7 +26,7 @@ MQTT has become a preferred choice for IoT and industrial IoT applications due t
 
 ## Sending Messages to an MQTT Broker with Node-RED
 
-Using a Cloud MQTT broker provided by HiveMQ, we'll host and manage the Node-RED instance in FlowFuse. The MQTT nodes are pre-installed as "Core Nodes" in Node-RED.
+Using a [Cloud MQTT broker](https://www.hivemq.com/mqtt-cloud-broker/) provided by HiveMQ, we'll host and manage the Node-RED instance in FlowFuse. The MQTT nodes are pre-installed as "Core Nodes" in Node-RED.
 
 1. Drag in the "Inject" node and the "MQTT out" node, connecting the Inject node's output to the MQTT out node.
 2. Configure the MQTT node to connect to the broker, using the username, password, and server details from HiveMQ.
