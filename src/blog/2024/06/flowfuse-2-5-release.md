@@ -18,7 +18,7 @@ FlowFuse 2.5 introduces LDAP integration, Snapshot comparison, Extends the abili
 
 ## Support for LDAP integration
 
-In our commitment to making FlowFuse more versatile and secure, we've introduced support for LDAP. This has been a much requested feature that we are excited to release.  This allows organizations to manage user authentication and authorization seamlessly, leveraging their existing LDAP infrastructure. With this feature, you can ensure that access controls are robust and aligned with your company's security policies.
+In our commitment to making FlowFuse more versatile and secure, we've introduced support for LDAP alongside our existing SAML SSO options. This has been a much requested feature that we are excited to release.  This allows organizations to manage user authentication seamlessly, leveraging their existing LDAP infrastructure. With this feature, you can ensure that access controls are robust and aligned with your company's security policies.
 
 ## Compare Snapshots Visually to see differences
 
