@@ -1,12 +1,12 @@
 ---
 eleventyNavigation:
   key: Raspberry Pi 5
-  parent: Hardwares
+  parent: Hardware
 meta:
    title: Setting Up Node-RED on Raspberry Pi 5
    description: Learn how to install the FlowFuse Edge Agent on the Raspberry Pi 5 effortlessly. Manage your device with Node-RED through FlowFuse with ease.
    keywords: node-red, flowfuse, raspberry pi, raspberry pi 5
-image: "/node-red/hardwares/images/raspberry-pi-5-device-agent.png"
+image: "/node-red/hardware/images/raspberry-pi-5-device-agent.png"
 ---
 
 # {{meta.title}}
@@ -56,8 +56,16 @@ The FlowFuse Device Agent manages Node-RED on the Raspberry Pi, handling Node-RE
 
 ### Configuring the FlowFuse Agent
 
-To configure the FlowFuse Cloud with your devices, you need to set up a token for identification. Follow the instructions in the [FlowFuse documentation](/docs/user/introduction/#working-with-devices) to obtain and configure the device YAML file.
+To configure the FlowFuse Cloud with your devices:
 
-1. Copy the YAML file to `/opt/flowforge/device.yml` on the Raspberry Pi.
+1. Log into the FlowFuse team and go to the devices option in the sidebar.
+2. Add a new device by clicking on the top right "Add Device" button. In the popup that opens, enter the name for your device, select the type (optional), and assign the device to an application (optional). Then, click on the "Add" button.
+3. After successfully creating and adding the device, you'll see a popup window with the command that allows you to quickly configure the device with FlowFuse Cloud.
 
-2. Reboot the Raspberry Pi. The agent should start automatically and register with FlowFuse Cloud, making the device available for use.
+![Image showing command device configuration dialog and the command placeholder, where you will find the command to link the device to your FlowFuse team.](./images/how-to-setup-node-red-on-raspberry-pi-device-configuration-dialog.png "Image showing command device configuration dialog and the command placeholder, where you will find the command to link the device to your FlowFuse team."){data-zoomable}
+
+4. Copy that command and run it in your device's terminal. The device agent will start, and it will be configured with FlowFuse Cloud. To verify this, go to the FlowFuse team, click on the devices option in the sidebar, and then click on the device you have configured. You will see the status as running and last seen in green color.
+
+![Image showing command device connection status](./images/flowfuse-cloud-device-connection.png "Image showing command device connection status"){data-zoomable}
+
+For more information refer to [FlowFuse documentation](/docs/user/introduction/#working-with-devices)
