@@ -31,7 +31,7 @@ Keeping track of changes and updates has never been easier. With our new visual 
 
 ## Preview Blueprints before Deployment
 
-Similarly to the feature to be able to compare snapshots we have enabled this same feature to allow users to preview team flows and blueprints prior to deploying.  This expedites the process when you are attempting to find the correct flow for your application.  We find that our users will be able to 
+Similarly to the feature to be able to compare snapshots we have enabled this same feature to allow users to preview team flows and blueprints prior to deploying.  This expedites the process when you are attempting to find the correct flow for your application.  We find that our users will be able to expedite the exploration of both their own team library and the blueprints.
 
 ## Import and Export support for snapshots
 
