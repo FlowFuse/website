@@ -1,19 +1,17 @@
 ---
-title: How to Send and Receive Emails using Node-RED
-subtitle: Step-by-step Guide for Sending and Receiving Emails using Node-RED
-description: Learn how to send and receive emails using Node-RED, along with best practices for sending email notifications.
-date: 2024-04-19
-authors: ["sumit-shinde"]
-image: /blog/2024/04/images/email_node-red.png
-tags:
-   - posts
-   - gmail
-   - anti-spam measures
+eleventyNavigation:
+  key: Email
+  parent: "Notification Services"
+meta:
+   title: Sending and receiving emails with Node-RED
+   description: Learn how to send and receive emails using Node-RED, along with best practices for sending email notifications.
+   keywords: node-red, gmail, flowfuse device agent, anti-spam measures, email]
+image: /node-red/notifications/images/email_node-red.png
 ---
 
-We recently published an article on [Sending Telegram messages using Node-RED](/blog/2024/04/sending-and-receiving-telegram-messages-with-node-red/). However, in IoT, it's not the only option that is utilized for sending notifications. Numerous other approaches are employed and email notification is one popular approach among those. In this guide, we will cover how you can send and receive emails using Node-RED. Additionally, we will discuss some of the best practices that should be followed when sending email notifications with your IoT applications.
+# {{meta.title}}
 
-<!--more-->
+In this documentation, we will cover how you can send and receive emails using Node-RED. Additionally, we will discuss some of the best practices that should be followed when sending email notifications with your IoT applications.
 
 ## When to Use Email for IoT Notification
 
@@ -72,7 +70,7 @@ With so many communication methods available, each with its advantages, it’s e
 
 ## Gmail Configuration Details for Node-RED Integration
 
-Throughout this guide, we will demonstrate how to send emails using Node-RED with Gmail as a third-party email service provider. To connect our Gmail account with the Node-RED application, it is essential to understand the following Gmail-specific configuration details.
+Throughout this documentation, we will demonstrate how to send emails using Node-RED with Gmail as a third-party email service provider. To connect our Gmail account with the Node-RED application, it is essential to understand the following Gmail-specific configuration details.
 
 - **Server:** For outgoing emails `smtp.gmail.com` and for incoming emails `imap.gmail.com`. 
 - **Userid:** Your Gmail address, e.g., example@gmail.com.
@@ -147,7 +145,3 @@ Occasionally, legitimate emails may be misclassified as spam due to these anti-s
 - Manage Email Frequency: Avoid sending too many email notifications within a short period, as this can trigger spam filters. Instead, maintain a consistent sending frequency and provide valuable content to recipients.
 - Maintain a Clean Email List: Regularly clean your email list by removing invalid or inactive email addresses. High bounce rates and spam complaints can negatively impact your sender's reputation.
 - Monitor Sending Reputation: Monitor your sender reputation using tools like SenderScore or Postmaster Tools. A poor sender reputation can result in email deliverability issues and increased spam filtering.
-
-## Conclusion
-
-This guide covers integrating email into Node-RED for the seamless sending and receiving of email notifications. We provide step-by-step instructions, explore best practices, and address anti-spam measures, ensuring reliable delivery of email notifications.
