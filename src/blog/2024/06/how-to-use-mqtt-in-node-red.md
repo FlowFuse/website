@@ -132,7 +132,7 @@ Now, create a new instance in which we will receive the temperature data by subs
 Now, you will see the temperature data printed in the debug tab in the sidebar. Additionally, you can display this data on a chart using Dashboard 2.0 or store it in a database. For more details refer to the following guides:
 
 - [Sending data to influxDB](/blog/2023/07/connect-node-red-to-influxdb/)
-- [Charting Data in on Dashboard 2.0](/blog/2023/09/dashboard-chart-for-rest-api-data/)
+- [Charting Data in on Dashboard 2.0](/node-red/integration-technologies/rest/)
 
 ## Best Practices
 

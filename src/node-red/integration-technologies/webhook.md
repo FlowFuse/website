@@ -1,21 +1,17 @@
 ---
-title: Using Webhooks with Node-RED
-subtitle: Learn to Integrate and Automate with Webhooks and Node-RED.
-description: Learn how to seamlessly integrate webhooks into your Node-RED applications for automating tasks and enhancing communication. Get detailed, step-by-step instructions on setting up webhooks and practical implementation examples.
-date: 2024-04-29
-authors: ["sumit-shinde"]
-image: /blog/2024/04/images/webhooks-node-red.png
-tags:
-    - post
-    - node-red
-    - webhooks
-    - event-driven
-    - automation
+eleventyNavigation:
+  key: Webhook
+  parent: "Integration Technologies"
+meta:
+   title: Using Webhook with Node-RED
+   description: Learn how to seamlessly integrate webhooks into your Node-RED applications for automating tasks and enhancing communication.
+   keywords: node-red, flowfuse, webhooks, automation, event-driven
+image: /node-red/hardware/images/webhooks-node-red.png
 ---
 
-Have you found yourself needing to automate tasks based on specific events within your IoT applications? If so, utilizing webhooks presents an efficient solution for this challenge. Webhooks play an integral role in streamlining operations, facilitating fast communication and seamless integration between disparate systems and devices. In this guide, we cover everything you need to get started with webhooks, from basics to practical implementation. We provide detailed, step-by-step instructions on integrating systems through webhooks using Node-RED.
+# {{meta.title}}
 
-<!--more-->
+Webhooks play an integral role in streamlining operations, facilitating fast communication and seamless integration between disparate systems and devices. In this documentation, we cover everything you need to get started with webhooks, from basics to practical implementation. We provide detailed, step-by-step instructions on integrating systems through webhooks using Node-RED.
 
 ## What are Webhooks?
 
@@ -77,7 +73,7 @@ Having a separate server for webhooks is crucial as it will receive data from mu
 
 ## Setting Up a Temperature sensors
 
-While writing this blog, I connected my DHT11 sensor to my Raspberry Pi 4, and I am running the FlowFuse device agent on this RPi. Running Node-RED on the RPi allows me to directly read and monitor sensor data, and the FlowFuse device agent allows me to edit and manage Node-RED applications running on the RPi from any corner of the world. For more details, refer to the [Running the FlowFuse Device Agent as a service on a Raspberry Pi](https://flowfuse.com/blog/2023/05/device-agent-as-a-service/).
+For this practicle, the DHT11 sensor is connected to a Raspberry Pi 4, which is running the FlowFuse device agent. Node-RED on the Raspberry Pi allows direct reading and monitoring of sensor data, while the FlowFuse device agent enables remote editing and management of Node-RED applications from anywhere in the world. For more details, refer to the [Running the FlowFuse Device Agent as a service on a Raspberry Pi](https://flowfuse.com/blog/2023/05/device-agent-as-a-service/).
 
 ### Installing custom node for reading sensor data
 
@@ -178,7 +174,3 @@ return msg;
 2. In server 3 Node-RED instance (Maintenance scheduling system), Locate the 'Open Dashboard' button at the top-right corner of the Dashboard 2.0 sidebar and click on it to navigate to the dashboard.
 
 !["Screenshot Displaying the flow of scheduled maintenance table"](./images/using-webhook-with-node-red-scheduled-maintenance-table-dashboard-view.gif "Screenshot Displaying the flow of scheduled maintenance table"){data-zoomable}
-
-## Conclusion 
-
-In summary, this guide comprehensively covers using webhooks in Node-RED for automating tasks in their Node-RED applications. With clear explanations and practical demonstrations, users can seamlessly integrate webhooks to enhance communication, automate responses to events, and streamline operations.
