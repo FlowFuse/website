@@ -11,9 +11,9 @@ meta:
 
 Welcome to the Database Integration Guides section. Here, you'll find comprehensive tutorials on integrating various databases with Node-RED. Whether you're working with SQL or NoSQL databases, or need to handle time-series data, these guides will help you connect, store, query, and visualize data effectively.
 
-{% for item in collections.all | eleventyNavigation("Database") %}
+{% for item in collections.all %}
   {% if item.data.eleventyNavigation.parent == "Database" %}
-    - [{{ item.data.meta.title }}]({{ item.url }})
+    - [{{ item.data.eleventyNavigation.key }}]({{ item.url }})
   {% endif %}
 {% endfor %}
 
