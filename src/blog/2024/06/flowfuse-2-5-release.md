@@ -12,7 +12,7 @@ tags:
 
 ---
 
-FlowFuse 2.5 introduces LDAP integration, Snapshot comparison, Extends the ability to preview flow to Blueprints, rounds out the management for snapshots, while lastly enabling customer to deploy FlowFuse with your own domain name.
+FlowFuse 2.5 introduces LDAP integration, snapshot comparison, extends the ability to preview flow to Blueprints, rounds out the management for snapshots, and allows you to point your own domain names at your FlowFuse instances.
 
 <!--more-->
 
