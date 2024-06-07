@@ -49,6 +49,8 @@ redirects:
   - { "from": "/features/", "to": "/product/features/" }
   - { "from": "/node-red/core-nodes/rbe/", "to": "/node-red/core-nodes/filter/" }
   - { "from": "/webinars/2024/deploy-flowfuse-on-industrial-iiot-with-ncd-io/", "to": "/webinars/2024/deploy-flowfuse-on-industrial-iot-with-ncd-io/" }
+  - { "from": "/blog/2023/09/dashboard-chart-for-rest-api-data/", "to": "/node-red/integration-technologies/rest" }
+  - { "from": "/blog/2024/04/using-webhook-with-node-red/", "to": "/node-red/integration-technologies/webhook/" }
   - { "from": "/blog/2023/07/how-to-build-a-secure-opc-ua-server-for-plcs-in-node-red/", "to": "/node-red/protocol/opa-ua/" }
   - { "from": "/blog/2023/06/connect-to-hivemq-in-flowforge/", "to": "/node-red/protocol/mqtt/" }
   - { "from": "/blog/2023/11/raspberry-pi-5-flowfuse-edge-agent/", "to": "/node-red/hardware/raspberry-pi-5/" }
