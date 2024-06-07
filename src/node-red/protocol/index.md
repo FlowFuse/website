@@ -4,7 +4,7 @@ eleventyNavigation:
 meta:
    title: Using Different Protocols for Building Applications with Node-RED.
    description: Learn how to leverage various communication protocols with Node-RED for building robust and interconnected applications.
-   keywords: node-red, flowfuse, node-red with different hardwares
+   keywords: node-red, flowfuse
 ---
 
 # Communication Protocols
