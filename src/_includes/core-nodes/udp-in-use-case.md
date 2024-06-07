@@ -43,7 +43,9 @@ The UDP-In node in Node-RED provides versatile configuration options to tailor U
 
 1. In the example below, we have a UDP-In node configured to receive data sent over localhost and port 90, using a UDP-Out node.
 
+{% renderFlow %}
 [{"id":"8b65196d8e0682a7","type":"group","z":"5b972161c4e0464e","style":{"stroke":"#999999","stroke-opacity":"1","fill":"none","fill-opacity":"1","label":true,"label-position":"nw","color":"#a4a4a4"},"nodes":["c69190416293c2c5","1448bee95281f5bb","4d31d05731f0fa6c","cd0155779b527eb2","9b0fd28ce351cbee","53660b468f150faa"],"x":374,"y":59,"w":472,"h":262},{"id":"c69190416293c2c5","type":"inject","z":"5b972161c4e0464e","g":"8b65196d8e0682a7","name":"","props":[{"p":"payload"},{"p":"topic","vt":"str"}],"repeat":"1","crontab":"","once":false,"onceDelay":0.1,"topic":"","payload":"","payloadType":"date","x":490,"y":160,"wires":[["1448bee95281f5bb"]]},{"id":"1448bee95281f5bb","type":"udp out","z":"5b972161c4e0464e","g":"8b65196d8e0682a7","name":"","addr":"127.0.0.1","iface":"","port":"90","ipv":"udp4","outport":"","base64":false,"multicast":"false","x":730,"y":160,"wires":[]},{"id":"4d31d05731f0fa6c","type":"udp in","z":"5b972161c4e0464e","g":"8b65196d8e0682a7","name":"","iface":"","port":"90","ipv":"udp4","multicast":"false","group":"","datatype":"buffer","x":470,"y":280,"wires":[["cd0155779b527eb2"]]},{"id":"cd0155779b527eb2","type":"debug","z":"5b972161c4e0464e","g":"8b65196d8e0682a7","name":"debug 1","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"true","targetType":"full","statusVal":"","statusType":"auto","x":720,"y":280,"wires":[]},{"id":"9b0fd28ce351cbee","type":"comment","z":"5b972161c4e0464e","g":"8b65196d8e0682a7","name":"Sending data to client","info":"","x":600,"y":100,"wires":[]},{"id":"53660b468f150faa","type":"comment","z":"5b972161c4e0464e","g":"8b65196d8e0682a7","name":"Receving data from server ","info":"","x":610,"y":220,"wires":[]}]
+{% endrenderFlow %}
 
 ## Output
 
