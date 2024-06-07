@@ -9,7 +9,7 @@ meta:
 image: /node-red/hardware/images/how-to-setup-node-red-on-raspberry-pi.png
 ---
 
-# Setting Node-RED on Raspberry Pi 4
+# {{meta.title}}
 
 ## What is the Raspberry Pi?
 

@@ -22,5 +22,6 @@ During the initial POC meeting, the [POC Criteria document](https://docs.google.
 
 For self-managed installs a license needs to be generated and installed to
 unlock paid-for features. Generate one by [filling out this form](https://energetic-sanderling-4472.flowfuse.cloud/dashboard/license){rel="nofollow"}.
+For Trial licenses the license is valid for 30 days, from the day of the request onwards and includes 10 users, 10 teams, and 10 Node-RED instances on the Enterprise Tier.
 
 All generated licenses are added [to this sheet](https://docs.google.com/spreadsheets/d/1wM_o8IWjjkwi-WMRueKfS-lrmkQYzV83xm4BIzZNAO0){rel="nofollow"} automatically.

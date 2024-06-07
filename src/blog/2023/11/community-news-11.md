@@ -59,7 +59,7 @@ Explore building manufacturing applications with FlowFuse Blueprints in our upco
 
 * [Meet FlowFuse at SPS Nuremberg](/blog/2023/11/meet-us-at-sps-nuremberg/) - Talk about Node-RED and how FlowFuse can help you operationalize your flows!
 
-* [Install the FlowFuse Edge Agent on the Raspberry Pi 5](/blog/2023/11/raspberry-pi-5-flowfuse-edge-agent/) - Managing your Raspberry Pi 5 with Node-RED through FlowFuse is easy to set up
+* [Install the FlowFuse Edge Agent on the Raspberry Pi 5](/node-red/hardware/raspberry-pi-5) - Managing your Raspberry Pi 5 with Node-RED through FlowFuse is easy to set up
 
 * [Innovate from within - Why manufacturing must embrace Citizen Developers](/blog/2023/10/citizen-development/) - Empower your Operational Technology teams as Citizen Developers
 
