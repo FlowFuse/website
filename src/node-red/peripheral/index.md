@@ -4,7 +4,7 @@ eleventyNavigation:
 meta:
    title: Integrating Node-RED with Peripheral Devices
    description: Learn how to integrate Node-RED with various peripheral devices, including keyboards, mice, printers, and more.
-   keywords: node-red, flowfuse, peripheral devices, webcam, barcodescanner
+   keywords: node-red, flowfuse, peripheral devices, webcam, barcode scanner
 ---
 
 # Peripheral Devices
