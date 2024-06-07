@@ -51,6 +51,12 @@ redirects:
   - { "from": "/webinars/2024/deploy-flowfuse-on-industrial-iiot-with-ncd-io/", "to": "/webinars/2024/deploy-flowfuse-on-industrial-iot-with-ncd-io/" }
   - { "from": "/blog/2023/09/dashboard-chart-for-rest-api-data/", "to": "/node-red/integration-technologies/rest" }
   - { "from": "/blog/2024/04/using-webhook-with-node-red/", "to": "/node-red/integration-technologies/webhook/" }
+  - { "from": "/blog/2023/07/how-to-build-a-secure-opc-ua-server-for-plcs-in-node-red/", "to": "/node-red/protocol/opa-ua/" }
+  - { "from": "/blog/2023/06/connect-to-hivemq-in-flowforge/", "to": "/node-red/protocol/mqtt/" }
+  - { "from": "/blog/2023/11/raspberry-pi-5-flowfuse-edge-agent/", "to": "/node-red/hardware/raspberry-pi-5/" }
+  - { "from": "/blog/2024/03/flowfuse-on-siemens-iot2050/", "to": "/node-red/hardware/siemens-iot-2050/" }
+  - { "from": "/blog/2024/04/sending-and-receiving-telegram-messages-with-node-red/", "to": "/node-red/notification/teligram/" }
+  - { "from": "/blog/2024/04/how-to-send-and-receive-emails-using-node-red/", "to": "/node-red/notification/email/" }
 
 # The "permalink" attribute determines where the output page will be located.
 permalink: "{{ redirect.from }}"
