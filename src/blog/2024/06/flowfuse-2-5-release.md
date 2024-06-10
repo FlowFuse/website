@@ -5,16 +5,12 @@ description: Discover the new features in FlowFuse 2.5, including LDAP integrati
 date: 2024-06-06
 authors: ["grey-dziuba"]
 image: /blog/2024/06/images/release-2-5-graphic.png
+meta:
+   keywords: LDAP, snapshot, blueprints, Node-RED
 tags:
    - posts
    - flowfuse
    - releases
-   - LDAP
-   - snapshot
-   - blueprints
-   - Node-RED
-   
-
 ---
 
 FlowFuse 2.5 introduces LDAP integration, snapshot comparison, extends the ability to preview flow to Blueprints, rounds out the management for snapshots, and allows you to point your own domain names at your FlowFuse instances.
