@@ -11,7 +11,7 @@ tags:
    - releases
    - LDAP
    - snapshot
-   - blueprints
+   - blueprint
    - Node-RED
    
 
