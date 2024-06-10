@@ -47,7 +47,7 @@ Following the initialization of settings, Node-RED sets up utility functions fro
 
 ### Loading Nodes
 
-Node-RED then loads all the available nodes from the `.node-red/node_modules` directory and additionally looks outside of the Node-RED install structure in the `.node_modules` folder. This means if someone installed nodes outside of `.node-red`, Node-RED can still access them. After loading the palettes, it stores the configuration of all loaded nodes, such as name and file path, in the `.node-red/.config.nodes` file, making loading them again easier and faster.
+Node-RED loads all core nodes from the `@node-red/nodes/core` directory first, followed by third-party nodes from the `.node-red/node_modules` directory, and additionally looks outside of the Node-RED install structure in the `.node_modules` folder. This means if someone installed nodes outside of `.node-red`, Node-RED can still access them. After loading the palettes, it stores the configuration of all loaded nodes, such as name and file path, in the `.node-red/.config.nodes` file, making loading them again easier and faster.
 
 ### Loading Flows
 
@@ -86,7 +86,6 @@ When you install a node via the Palette Manager, Node-RED uses a child process t
 ## Stopping Node-RED
 
 When you stop Node-RED, it follows a meticulous shutdown process to ensure data integrity and smooth restart capabilities. First, Node-RED initiates a graceful shutdown, informing all nodes to complete any ongoing tasks and clean up resources. Next, it saves the current state of the flows and context, ensuring that the system can resume from the same state when restarted. After saving the state, Node-RED stops the HTTP server, terminating any active connections to the Node-RED editor and API endpoints. Finally, the Node.js runtime is terminated, concluding the Node-RED process. 
-
 This thorough shutdown process ensures that no data is lost and the system can be restarted smoothly.
 
 ## Conclusion
