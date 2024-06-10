@@ -88,6 +88,11 @@
         transition: transform 0.3s ease;
     }
 
+    .chevron {
+        margin-top: auto;
+        margin-bottom: auto;
+    }
+
     .chevron.rotated {
         transform: rotate(180deg);
     }

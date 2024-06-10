@@ -3,7 +3,7 @@
 
 @layer components {
     .handbook {
-        grid-template-columns: 265px 1fr auto;
+        grid-template-columns: 220px 1fr auto;
         margin-top: -3rem;
         @apply flex flex-col-reverse md:grid;
     }
@@ -11,9 +11,8 @@
     .handbook-nav {
         border-right: 1px solid right;
         text-transform: capitalize;
-        --nav-weight: 600;
-        /* --nav-color: white; */
-        --nav-color: black;
+        --nav-weight: 500;
+        --nav-color: theme(colors.gray.700);
         --nav-bg: transparent;
         --nav-pl: 1rem;
         background-color: transparent;
