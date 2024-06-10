@@ -43,7 +43,7 @@ Next, Node-RED initializes the runtime settings. If no custom settings are provi
 
 ### Logging System
 
-Following the initialization of settings, Node-RED sets up utility functions from the `@node-red/util` module. This includes initializing the logging system, which is crucial for debugging and monitoring Node-RED's operations. The logging system is configured based on the runtime settings and provides detailed logs of Node-RED's operations.
+After Node-RED initializes its runtime settings, it proceeds to execute the rest of the code in the red.js file. During this process, Node-RED logs details using the console object methods present in its codebase, such as .log and .error. Logging is crucial for monitoring and debugging Node-RED operations. Third-party nodes also utilize the console object methods for general logging, ensuring comprehensive visibility into system behavior.
 
 ### Loading Nodes
 
@@ -91,3 +91,11 @@ This thorough shutdown process ensures that no data is lost and the system can b
 ## Conclusion
 
 In this guide, we've explored the inner workings of Node-RED, from its initialization process to flow management and deployment. However, it's essential to note that this is just a basic overview, and there's much more to Node-RED than what we've covered here. Understanding the basic internal workings of Node-RED not only helps in better utilizing its features but also in troubleshooting and optimizing performance for complex IoT and automation projects.
+
+## Additional Resources
+
+If you are interested in delving deeper into the workings of Node-RED, the following resources are recommended:
+
+- [Node-RED Modules](https://nodered.org/docs/) - Official documentation providing a high-level overview of Node-RED modules.
+- [Node-RED GitHub Repository](https://github.com/node-red/node-red) - Source code repository for Node-RED, allowing you to delve deeper into its workings and contribute to its development.
+- [FlowFuse Architecture](/docs/contribute/architecture/) - Detailed explanation of the architecture of FlowFuse, providing insights into Node-RED's implementation.
