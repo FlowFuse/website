@@ -59,7 +59,7 @@ Node-RED then sets up context storage, which can be configured to store data eit
 
 ### Starting the HTTP Server
 
-Finally, Node-RED starts an HTTP server to serve the web-based editor and API endpoints for programmatic interaction with Node-RED. By default, it starts on `localhost:1880`.
+Finally, Node-RED starts an HTTP server, which is an Express application serving the web-based editor and API endpoints for programmatic interaction with Node-RED. By default, it starts on `localhost:1880`.
 
 ## Building and Deploying Flows
 
