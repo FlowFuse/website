@@ -26,7 +26,8 @@
 .ff-blog h3,
 .blog.nohero h3, 
 .webinar.nohero h3, 
-.newsletter.nohero h3 {
+.newsletter.nohero h3,
+.handbook h3 {
     font-size: 1.25rem;
     line-height: 1.75rem;
 }
