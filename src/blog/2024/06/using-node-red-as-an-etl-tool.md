@@ -3,8 +3,8 @@ title: Using Node-RED as an ETL Tool
 subtitle: A Step-by-Step Guide on How to Use Node-RED as an ETL Tool
 description: Learn how to utilize Node-RED as an ETL (Extract, Transform, Load) tool, and explore its advantages and disadvantages in this context.
 date: 2024-06-05
-authors:["Sumit Shinde"]
-image: 
+authors: ["sumit-shinde"]
+image:
 tags:
   - etl
   - extract
