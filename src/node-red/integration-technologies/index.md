@@ -7,6 +7,18 @@ meta:
    keywords: node-red, flowfuse, node-red integration, integration technologies, webhook, rest api
 ---
 
-# Integration Technologies
+# {{meta.title}}
 
-Welcome to the Integration Technologies category. This section provides comprehensive documentation on utilizing various integration technologies with Node-RED to build seamless and interconnected applications. Discover how Node-RED supports diverse integration methods, such as REST and webhooks, to enhance connectivity and automate workflows across different systems and services. Learn best practices and practical examples to effectively implement these technologies in your projects.
+In today's interconnected world, developing powerful and scalable applications frequently necessitates the integration of various technologies. This integration is crucial for creating seamless and efficient systems that can handle complex tasks and large volumes of data. Whether you're working with REST APIs to enable communication between different services or implementing GraphQL for more efficient data querying, the ability to blend these technologies effectively is essential for modern application development.
+
+Node-RED offers a versatile and robust platform to meet these needs. Its intuitive flow-based interface allows developers to easily design and deploy sophisticated workflows, which makes it an invaluable tool for integrating REST APIs, GraphQL, webhooks, and more.
+
+## Resources
+
+Here are some resources to help you integrate Node-RED with various different technologies:
+
+{% for item in collections.all %}
+  {% if item.data.eleventyNavigation.key == "Integration Technologies" %}
+    - [{{ item.data.meta.title }}]({{ item.url }}): {{ item.data.meta.description }}
+  {% endif %}
+{% endfor %}
