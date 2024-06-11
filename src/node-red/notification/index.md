@@ -16,7 +16,7 @@ In today's hyper-connected world, real-time notifications play a crucial role in
 Here are some resources to help you get started with Node-RED on diffrent notification services:
 
 {% for item in collections.all %}
-  {% if item.data.eleventyNavigation.key == "Notification Services" %}
-    - [{{ item.data.meta.title }}]({{ item.url }}): {{ item.data.meta.description }}
+  {% if item.data.eleventyNavigation.parent == "Notification Services" %}
+    - [{{ item.data.meta.title }}]({{ item.url }})
   {% endif %}
 {% endfor %}
