@@ -1,0 +1,105 @@
+---
+layout: page
+nohero: true
+title: FlowFuse Dashboard Migration Service
+description: 
+sitemapPriority: 0.7
+---
+
+<div class="nohero w-full">
+    <div class="container m-auto md:max-w-screen-lg">
+        <div class="ff-dashboard-migration">
+            <div
+                class="ff-file-drop-zone"
+                onclick="openFilePicker();"
+                ondrop="dropHandler(event);"
+                ondragover="dragOverHandler(event);">
+                <p id="drag-instruction">Drag a <i>flow.json</i> file containing Node-RED Dashboard 1.0 nodes here.</p>
+                <p id="file-selected" style="display: none;">
+                    Flow: "<i id="file-selected-name">drop zone</i>""
+                </p>
+                <input id="dashboard1-flow-file" name="dashboard1-flow-file" type="file" accept="json" onchange="fileSelected()"/>
+            </div>
+            <div class="ff-dashboard-migration-actions">
+                <button class="ff-btn ff-btn--primary" onclick="migrateFile()">Convert to Dashboard 2.0</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    var d1Flow = null
+
+    function openFilePicker () {
+        // open file selector
+        document.getElementById("dashboard1-flow-file").click()
+    }
+
+    function fileSelected () {
+        // get file
+        var file = document.getElementById("dashboard1-flow-file").files[0]
+        if (file) {
+            document.getElementById("file-selected-name").innerText = file.name
+            // hide drag instructions
+            document.getElementById("file-selected").style.display = "block"
+            document.getElementById("drag-instruction").style.display = "none"
+        } else {
+            // hide drag instructions
+            document.getElementById("file-selected").style.display = "none"
+            document.getElementById("drag-instruction").style.display = "block"
+        }
+    }
+
+    function migrateFile() {
+        // Your migration logic goes here
+        
+        var file = null
+        var selectedFile = document.getElementById("dashboard1-flow-file").files
+        if (selectedFile) {
+            file = selectedFile[0]
+        } else {
+            file = d1Flow
+        }
+
+        if (file) {
+            fetch('https://dashboard-migration-service.flowfuse.cloud/migrate-flow', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: file
+            })
+        }
+
+    }
+
+    function dropHandler(event) {
+
+        // Prevent default behavior (Prevent file from being opened)
+        ev.preventDefault()
+
+        if (ev.dataTransfer.items) {
+            // Use DataTransferItemList interface to access the file(s)
+            [...ev.dataTransfer.items].forEach((item, i) => {
+                // If dropped items aren't files, reject them
+                if (item.kind === "file") {
+                    d1Flow = item.getAsFile();
+                    console.log(`… file[${i}].name = ${dashboard1Flow.name}`)
+                }
+            });
+        } else {
+            // Use DataTransfer interface to access the file(s)
+            [...ev.dataTransfer.files].forEach((file, i) => {
+                console.log(`… file[${i}].name = ${dashboard1Flow.name}`)
+            });
+        }
+    }
+
+    function dragOverHandler(event) {
+        event.preventDefault();
+    }
+</script>
+
+<style>
+    
+</style>
