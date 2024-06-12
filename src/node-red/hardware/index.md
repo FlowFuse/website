@@ -19,6 +19,6 @@ Here are some resources to help you get started with Node-RED on diffrent hardwa
 
 {% for item in collections.all %}
   {% if item.data.eleventyNavigation.parent == "Hardware" %}
-    - [{{ item.data.meta.title }}]({{ item.url }})
+    - [{{ item.data.meta.title }}]({{ item.url }}): {{item.data.meta.description}}
   {% endif %}
 {% endfor %}

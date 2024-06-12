@@ -19,6 +19,6 @@ Here are some resources to help you get started with integrating Node-RED with v
 
 {% for item in collections.all %}
   {% if item.data.eleventyNavigation.parent == "Communication Protocols" %}
-    - [{{ item.data.meta.title }}]({{ item.url }})
+    - [{{ item.data.meta.title }}]({{ item.url }}): {{item.data.meta.description}}
   {% endif %}
 {% endfor %}

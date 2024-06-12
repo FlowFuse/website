@@ -19,6 +19,6 @@ Here are some resources to help you integrate Node-RED with various different te
 
 {% for item in collections.all %}
   {% if item.data.eleventyNavigation.parent == "Integration Technologies" %}
-    - [{{ item.data.meta.title }}]({{ item.url }})
+    - [{{ item.data.meta.title }}]({{ item.url }}): {{item.data.meta.description}}
   {% endif %}
 {% endfor %}
