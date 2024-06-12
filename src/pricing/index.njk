@@ -329,18 +329,6 @@ hubspot:
                 </div>
             </div>
         </div>
-        <!-- Feature List -->
-        {% set featuresHtml %}
-        <div
-            class="contentCloud transition duration-1000 max-w-full overflow-x-scroll sm:overflow-x-visible h-[60vh] sm:h-full">
-            {% include "feature_lists/cloud.njk" %}
-        </div>
-        <div
-            class="contentSelfHosted hide transition duration-1000 max-w-full overflow-x-scroll sm:overflow-x-visible h-[60vh] sm:h-full">
-            {% include "feature_lists/self-hosted.njk" %}
-        </div>
-        {% endset %}
-
         <!-- Feature Comparison -->
         <div id="feature-comparison" class="product w-full px-6 md:px-0 md:pt-6">
             <!-- Scroll to anchor -->
@@ -354,7 +342,16 @@ hubspot:
                     <h2><span class="text-indigo-600">Feature</span> Comparison</h2>
                 </div>
                 <!-- Feature List -->
-                <div class="sticky">{{ featuresHtml | safe }}</div>
+                <div class="sticky">{{ featuresHtml | safe }}
+                    {% set hosting = "cloud" %}
+                    <div class="contentCloud transition duration-1000 max-w-full overflow-x-scroll sm:overflow-x-visible h-[60vh] sm:h-full">
+                        {% include "feature_lists/features-table-base.njk" %}
+                    </div>
+                    {% set hosting = "self-hosted" %}
+                    <div class="contentSelfHosted hide transition duration-1000 max-w-full overflow-x-scroll sm:overflow-x-visible h-[60vh] sm:h-full">
+                        {% include "feature_lists/features-table-base.njk" %}
+                    </div>
+                </div>
             </div>
             <p class="max-w-screen-lg m-auto mt-12 text-center md:px-9 pb-12 border-b">
                 At FlowFuse we understand that the security practises of our product

@@ -1,8 +1,8 @@
 <div class="ff-feature-table m-auto">
-    <ul class="{{ sections[0].hosting }} ff-feature-table-section sticky top-0 z-10">
+    <ul class="{{ hosting }} ff-feature-table-section sticky top-0 z-10">
         <li class="ff-feature--column-header">
             <span class="sticky left-0 h-full"></span>
-            {% if sections[0].hosting == "cloud" %}
+            {% if hosting == "cloud" %}
             <label class="mr-2">
                 <div>Starter</div>
             </label>
@@ -14,22 +14,28 @@
         </li>
     </ul>
     
-    {% for section in sections %}
-    <ul class="{{ section.hosting }} ff-feature-table-section">
+    {% for section in pricingFeatures.sections %}
+    <ul class="{{ hosting }} ff-feature-table-section">
         <li class="ff-feature--header sticky top-[44px]">
             <span style="padding-top: 12px; padding-bottom: 12px;" class="sticky left-0 h-full">{{ section.label }}</span>
             <span></span>
             <span></span>
         </li>
         {% for row in section.rows %}
+        {% if hosting in row.tags %}
+        {% if hosting == "cloud" %}
+            {% set values = row.cloudValues %}
+        {% elif hosting == "self-hosted" %}
+            {% set values = row.selfHostedValues %}
+        {% endif %}
         <li class="ff-feature-row">
-            <label {% if row.info %}class="sticky left-0 h-full" onclick="openInfo('{{ row.id }}', '{{ section.hosting }}')"{% else %}class="sticky left-0 h-full pointer-events-none"{% endif %}>
+            <label {% if row.info %}class="sticky left-0 h-full" onclick="openInfo('{{ row.id }}', '{{ hosting }}')"{% else %}class="sticky left-0 h-full pointer-events-none"{% endif %}>
                 {{ row.label }}
                 {% if row.info %}
-                <i id="ff-info--{{ row.id }}-{{ section.hosting }}" class="ff-icon min-w-[20px]">{% include "components/icons/info.svg" %}</i>
+                <i id="ff-info--{{ row.id }}-{{ hosting }}" class="ff-icon min-w-[20px]">{% include "components/icons/info.svg" %}</i>
                 {% endif %}
             </label>
-            {% for value in row.values %}
+            {% for value in values %}
             <span>
                 {% if value === "check" %}
                     {% include "components/feature-check.svg" %}
@@ -49,10 +55,11 @@
             </span>
             {% endfor %}
         </li>
+        {% endif %}
         {% endfor %}
     </ul>
     {% endfor %}
-    <ul class="{{ sections[0].hosting }} ff-feature-table-section">
+    <ul class="{{ hosting }} ff-feature-table-section">
         <li class="ff-feature--column-buttons mt-6 h-10 gap-x-3">
             <span class="sticky left-0 h-full z-10"></span>
             {% for section in sections %}
@@ -67,11 +74,11 @@
 </div>
 
 <div id="feature-dialogs">
-    {% for section in sections %}
+    {% for section in pricingFeatures.sections %}
     {% for row in section.rows %}
     {% if row.info %}
-    <div id="ff-dialog--feature--{{ row.id }}-{{ section.hosting }}" class="ff-dialog-container">
-        <div class="ff-dialog-shadow" onclick="closeInfo('{{ row.id }}', '{{ section.hosting }}')"></div>
+    <div id="ff-dialog--feature--{{ row.id }}-{{ hosting }}" class="ff-dialog-container">
+        <div class="ff-dialog-shadow" onclick="closeInfo('{{ row.id }}', '{{ hosting }}')"></div>
         <div class="ff-dialog-modal">
             <div id="ff-dialog--header" class="ff-dialog-header">Feature: {{ row.label }}</div>
             <div id="ff-dialog--content" class="ff-dialog-content">{{ row.info | safe }}</div>
