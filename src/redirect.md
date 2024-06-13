@@ -53,9 +53,14 @@ redirects:
   - { "from": "/blog/2024/04/using-mongodb-with-node-red/", "to": "/node-red/database/mongodb/" }
   - { "from": "/blog/2024/04/integrate-dynamodb-with-node-red/", "to": "/node-red/database/dynamodb/" }
   - { "from": "/blog/2023/07/connect-node-red-to-influxdb/", "to": "/node-red/database/influxdb/" }
+  - { "from": "/blog/2023/09/dashboard-chart-for-rest-api-data/", "to": "/node-red/integration-technologies/rest" }
+  - { "from": "/blog/2024/04/using-webhook-with-node-red/", "to": "/node-red/integration-technologies/webhook/" }
+  - { "from": "/blog/2023/07/how-to-build-a-secure-opc-ua-server-for-plcs-in-node-red/", "to": "/node-red/protocol/opa-ua/" }
+  - { "from": "/blog/2023/06/connect-to-hivemq-in-flowforge/", "to": "/node-red/protocol/mqtt/" }
   - { "from": "/blog/2023/11/raspberry-pi-5-flowfuse-edge-agent/", "to": "/node-red/hardware/raspberry-pi-5/" }
   - { "from": "/blog/2024/03/flowfuse-on-siemens-iot2050/", "to": "/node-red/hardware/siemens-iot-2050/" }
-  - { "from": "/blog/2024/05/flowfuse-on-robustel-eg5120/", "to": "/node-red/hardware/robustel-eg5120/" }
+  - { "from": "/blog/2024/04/sending-and-receiving-telegram-messages-with-node-red/", "to": "/node-red/notification/teligram/" }
+  - { "from": "/blog/2024/04/how-to-send-and-receive-emails-using-node-red/", "to": "/node-red/notification/email/" }
 
 # The "permalink" attribute determines where the output page will be located.
 permalink: "{{ redirect.from }}"

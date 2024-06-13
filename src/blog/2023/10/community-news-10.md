@@ -49,7 +49,7 @@ The next generation of the Node-RED dashboard is starting to mature. Development
 
 * [Share & Preview Flows on flows.nodered.org](/blog/2023/09/flow-viewer/) - A new way to visualize flows in web pages.
 
-* [Charting REST API Data in a Dashboard](/blog/2023/09/dashboard-chart-for-rest-api-data/) - A short tutorial on how to gather data from a REST API for a dashboard.
+* [Charting REST API Data in a Dashboard](/node-red/integration-technologies/rest/) - A short tutorial on how to gather data from a REST API for a dashboard.
 
 * Modernize your legacy industrial data - Two part series on making sense of your industrial data. 
     - [Part 1](/blog/2023/09/modernize-your-legacy-industrial-data/)

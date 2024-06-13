@@ -37,7 +37,7 @@ Below, you'll find a range of settings to tailor HTTP requests to fit the needs 
 
 1. **API Integration:** The HTTP request node allows seamless integration with external APIs. Developers can utilize it to fetch data from APIs using GET requests or send data to APIs using POST/PUT requests. For instance, fetching weather data from a weather API or posting data to a messaging service like Slack are common scenarios.
 
-2. **Webhooks:** With the HTTP request node, users can set up webhooks to trigger actions in response to specific events. This enables real-time communication between different applications. For example, triggering a webhook to notify a third-party service when certain conditions are met or when data is received from a sensor. For more information, refer to [Using webhook with Node-RED](/blog/2024/04/using-webhook-with-node-red/)
+2. **Webhooks:** With the HTTP request node, users can set up webhooks to trigger actions in response to specific events. This enables real-time communication between different applications. For example, triggering a webhook to notify a third-party service when certain conditions are met or when data is received from a sensor. For more information, refer to [Using webhook with Node-RED](/node-red/integration-technologies/webhook/)
 
 3. **Remote Control and Device Management:** In smart home systems, the HTTP request node can be used to facilitates remote device management. It allows users to control various devices such as lights, thermostats, and security cameras via web or mobile interfaces by interacting with device APIs. Actions like toggling devices, adjusting settings, and receiving real-time updates can be achieved through the HTTP request node.
 

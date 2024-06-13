@@ -1,20 +1,18 @@
 ---
-title: Sending and receiving Telegram messages with Node-RED
-subtitle: A step-by-step guide to integrating telegram into your node-red application for sending and receiving messages.
-description: Learn to seamlessly integrate Telegram with Node-RED for messaging. Create bots, obtain chat IDs, and send/receive messages, including group messaging. 
-date: 2024-04-15
-authors: ["sumit-shinde"]
-image: /blog/2024/04/images/telegram_node-red.png
-tags:
-   - node-red
-   - post
-   - bot
-   - telegram
+eleventyNavigation:
+  key: Teligram
+  parent: "Notification Services"
+meta:
+   title: Sending and receiving Telegram messages with Node-RED
+   description: Learn to seamlessly integrate Telegram with Node-RED for messaging. Create bots, obtain chat IDs, and send/receive messages, including group messaging.
+   keywords: node-red, telegram, bot
+image: /node-red/notification/images/telegram_node-red.png
 ---
 
-Integrating messaging applications or services in home automation is becoming common. Telegram is a popular choice among those messaging platforms. Today, in this guide, we will demonstrate how to integrate Telegram with Node-RED applications for sending and receiving messages
+# {{meta.title}}
 
-<!--more-->
+Integrating messaging applications or services in home automation is becoming common. Telegram is a popular choice among those messaging platforms.In this documentation, we will demonstrate how to integrate Telegram with Node-RED applications for sending and receiving messages
+
 
 ## Creating a bot in Telegram
 
@@ -107,8 +105,4 @@ Utilizing environment variables is crucial while doing any configuration in your
 
 1. Deploy the flow by clicking the top right Deploy button.
 
-Now that we're set up to send messages with our Telegram bot, simply click 'Inject' to send a message. You'll receive a notification from Telegram. Alternatively, check your bot's account on Telegram to see messages sent via Node-RED. To test receiving messages, send a message to your bot, and you'll see an object printed on debug containing the message along with other information
-
-## Conclusion
-
-In this guide, you've learned how to integrate Telegram with Node-RED for sending and receiving messages seamlessly. From creating your custom bot to obtaining your chat ID, configuring nodes, and sending and receiving messages.
+Now that we're set up to send messages with our Telegram bot, simply click 'Inject' to send a message. You'll receive a notification from Telegram. Alternatively, check your bot's account on Telegram to see messages sent via Node-RED. To test receiving messages, send a message to your bot, and you'll see an object printed on debug containing the message along with other information.
