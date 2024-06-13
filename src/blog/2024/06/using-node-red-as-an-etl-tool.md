@@ -14,7 +14,7 @@ tags:
   - business intelligence
 ---
 
-ETL is essential for data integration and analysis, playing a crucial role in many business contexts by helping to gain detailed business insights. Node-RED, known for its ease in creating IoT applications, has also been recognized for its potential in ETL tasks. When IBM published its blog on using Node-RED for ETL, the topic garnered significant attention and sparked discussions on whether it could be effectively utilized for ETL. In this guide, we'll explore how to use Node-RED for ETL, discussing both its strengths and weaknesses along the way.
+ETL (Extract, Transform, Load) is essential for integrating and analyzing data, helping businesses unlock detailed insights. You might already know Node-RED for its user-friendly approach to creating IoT applications, but did you know it can also be a powerful tool for ETL tasks? When IBM published a blog about using Node-RED for ETL, it caught a lot of attention and got people talking about its potential in this space. In this guide, we'll walk you through how to use Node-RED for ETL, sharing its strengths and weaknesses along the way.
 
 <!--more-->
 
@@ -24,13 +24,13 @@ ETL is essential for data integration and analysis, playing a crucial role in ma
 
 ## Node-RED as an ETL tool
 
-Node-RED is specifically used for building various types of IoT applications. During the development of such applications, Node-RED is sometimes used as an ETL tool without even realizing it. For instance, when monitoring sensors across a facility, the process involves extracting data from sensors, transforming (cleaning and formatting) sensor data, and loading it into a database. There are thousands of other such examples. This demonstrates that Node-RED has already been adopted as an ETL tool at certain level.
+Node-RED is specifically used for building various types of IoT applications. During the development of such applications, Node-RED is sometimes used as an ETL tool without even realizing it. For instance, when monitoring sensors across a facility, the process involves extracting data from sensors, transforming (cleaning and formatting) sensor data, and loading it into a database. There are thousands of other such examples. This demonstrates that Node-RED has already been adopted as an ETL tool at a certain level.
 
 *Note: We have mentioned only a few nodes that can be used in the ETL process, but there are thousands of other nodes that you can explore yourself by visiting the [Node-RED Nodes Library](https://flows.nodered.org/search?type=node)*
 
 ### Extracting
 
-Node-RED can extract data from various sources, including APIs, databases, local filesystems, and IoT devices using built-in nodes and community-contributed nodes. For example, the HTTP request node can be used to pull data from web services, while nodes for MySQL, MongoDB, and PostgreSQL can extract data from databases. Nodes for MQTT and Kafka can fetch data from message brokers. Additionally, there are diffrent cloud nodes for cloud platform such as AWS, GCP, and IBM Watson that allow extraction of data from cloud storage services.
+Node-RED can extract data from various sources, including APIs, databases, local filesystems, and IoT devices using built-in nodes and community-contributed nodes. For example, the HTTP request node can be used to pull data from web services, while nodes for MySQL, MongoDB, and PostgreSQL can extract data from databases. Nodes for MQTT and Kafka can fetch data from message brokers. Additionally, there are different cloud nodes for cloud platforms such as AWS, GCP, and IBM Watson that allow extraction of data from cloud storage services.
 
 ### Transforming
 
@@ -72,7 +72,7 @@ Before proceeding further make sure you have installed the following nodes:
 1. Drag an Inject node onto the canvas.
 2. Drag an HTTP Request node onto the canvas, double-click on it, and set the URL to `https://api.slingacademy.com/v1/sample-data/files/customers.json`.
 3. Drag a Link-out node onto the canvas.
-4. Connect the Inject node's output to the input of the HTTP Request node, and the HTTP Request node's output to the input of the Link-out node.
+4. Connect the Inject node's output to the input of the HTTP Request node and the HTTP Request node's output to the input of the Link-out node.
 
 Now, if you add a Debug node after the HTTP Request node, you will see an array of objects containing customer data in the Debug panel. Each object has properties such as `first_name`, `last_name`, `email`, and others.
 
@@ -88,7 +88,7 @@ In next section, we'll perform a transformation to replace the existing properti
 2. Drag a Split node onto the canvas.
 3. Drag a Change node onto the canvas and Set `msg.payload.full_name` to `payload.first_name & " " & payload.last_name` as the JSONata expression, this JSONata expression will concat the firstname and lastname properties, then delete unnecessary properties like `first_name` and `last_name`.
 4. Drag a Join node onto the canvas.
-5. Connect the output of Link-in node to the input of Split node, then split node output to the input of join node.
+5. Connect the output of the Link-in node to the input of the Split node, then the Split node output to the input of the Join node.
 
 Up to this point, we've established a flow that creates a new property in customer data objects called 'full_name' and subsequently removes any unnecessary properties. In summary, we've cleaned the data according to our needs.
 
@@ -96,7 +96,7 @@ Up to this point, we've established a flow that creates a new property in custom
 
 1. Drag a Change node onto the canvas, and set `msg.data` to `msg.payload` and `msg.payload` to `[]`.
 2. Drag a MongoDB4 node onto the canvas, and configure it with your correct details. If you haven't used MongoDB with Node-RED, please refer to the [Using MongoDB with Node-RED](/blog/2024/04/using-mongodb-with-node-red/). Enter `find` into the Operation field.
-3. Drag a Function node onto the canvas and insert the following code into it and give it name "Data deplication":
+3. Drag a Function node onto the canvas and insert the following code into it and give it the name "Data deduplication":
 
 ```javascript
 // Check if previously stored customer data is present, and ensure it's an array
@@ -123,13 +123,13 @@ if (latest_customer_data.length !== 0 && previously_stored_customer_data.length 
 ```
 
 4. Drag a Link-out node onto the canvas.
-5. Connect the output of Join node to the input of change node and output of change node to the input of MongoDB4 node and then MongoDB4 output to the input of function node named "Data deplication" and output of that function node to the input of Link-out node.
+5. Connect the output of the Join node to the input of change node and the output of the Change node to the input of the MongoDB4 node and then MongoDB4 output to the input of the function node named "Data deplication" and output of that function node to the input of Link-out node.
 
 Now, we have added additional nodes that perform data deduplication. This means we will create a new array containing unique data that is not already stored in the database to avoid data duplications. For filtering that data, we are using JavaScript with a function node.
 
 ## Data Processing
 
-1. Drag a Function node onto the canvas and insert the following code into it and name this node "Data processing":
+1. Drag a Function node onto the canvas insert the following code into it and name this node "Data processing":
 
 ```javascript
 let data = msg.payload;
@@ -211,7 +211,7 @@ Following is the complete flow of the project along with dashboard visualization
 {% endrenderFlow %}
 
 1. To Deploy the flow, click on the top-right Deploy button
-2. To visit the dashboard, Go to Dashboard 2.0 sidebar and click on the top-right "Open dashboard" button.
+2. To visit the dashboard, Go to the Dashboard 2.0 sidebar and click on the top-right "Open dashboard" button.
 
 !["Screenshot of dashboard visualizing process customer data based on job profile"](./images/etl-with-node-red-chart-based-on-job-profile.png "Screenshot of dashboard visualizing process customer data based on job profile"){data-zoomable}
 
@@ -219,7 +219,7 @@ Following is the complete flow of the project along with dashboard visualization
 
 ## What are the limitations of using Node-RED as an ETL tool
 
-While Node-RED is versatile, there are some limitations to consider while using it as ETL tool:
+While Node-RED is versatile, there are some limitations to consider while using it as an ETL tool:
 
 - **Scalability:** Node-RED might struggle with extremely large datasets compared to dedicated ETL tools.
 - **Advanced Features:** Some advanced ETL features, like automated schema detection and sophisticated error handling, might require additional customization or external modules.
