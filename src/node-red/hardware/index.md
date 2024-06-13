@@ -9,7 +9,7 @@ meta:
 
 # {{ meta.title }}
 
-Node-RED is highly versatile and can be set up on a wide range of hardware devices, including popular choices like Raspberry Pi, Ardiuno, siemens 2050 etc. This flexibility allows you to connect Node-RED to diverse devices and sensors, which enables the creation of interactive and automated systems.
+Node-RED is highly versatile and can be set up on a wide range of hardware devices, including popular choices like Raspberry Pi, Ardiuno, Siemens 2050, and more. This flexibility allows you to connect Node-RED to diverse devices and sensors, which enables the creation of interactive and automated systems.
 
 By setting up Node-RED on different hardware, you can easily integrate physical inputs with digital systems. This capability is essential for IoT (Internet of Things) applications, where data from sensors and devices can trigger actions or responses in real-time.
 
