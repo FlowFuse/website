@@ -154,3 +154,21 @@ sections:
         selfHostedValues: [ null, 'check' ]
         tags: [ 'cloud', 'self-hosted' ]
         info: "<p>FlowFuse can be configured to run with your own Single Sign-On (SSO) provider. Allow users to access FlowFuse with a single set of login credentials, improving security, user experience, and save them time.</p>"
+buttons: 
+  cloud:
+    - cta: TRY FOR FREE
+      url: https://app.flowfuse.com/account/create
+      onclick: "capture('cta-join', {'position': 'secondary'}, {'plan': 'cloud-starter'})"
+    - cta: BOOK A DEMO
+      url: /book-demo/
+      onclick: "capture('cta-book-demo', {'position': 'secondary'}, {'plan': 'cloud-team'})"
+    - cta: Request a Quote
+      url: /pricing/request-quote/
+      onclick: "capture('cta-request-quote', {'position': 'secondary'}, {'plan': 'sh-enterprise'})"
+  selfHosted:
+    - cta: INSTALL NOW
+      url: /docs/install/introduction/
+      onclick: "capture('cta-install', {'position': 'secondary'}, {'plan': 'sh-starter'})"
+    - cta: Request a Quote
+      url: /pricing/request-quote/
+      onclick: "capture('cta-request-quote', {'position': 'secondary'}, {'plan': 'sh-enterprise'})"
