@@ -1,5 +1,6 @@
 ---
 title: Device Groups - Automatic snapshot assignment
+description: With enhanced Device Groups functionality, automatically synchronize snapshot updates across your fleet for streamlined device management.
 date: 2024-01-18 13:00:00.0
 authors: ["marian-demme"]
 tags:

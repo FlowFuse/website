@@ -1,5 +1,6 @@
 ---
 title: Instance Protection Mode
+description: FlowFuse introduces Instance Protection Mode, empowering Team Owners to restrict production instance modifications for secure, careful management.
 date: 2024-03-14 13:00:00.0
 authors: ["marian-demme"]
 tags:

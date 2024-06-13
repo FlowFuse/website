@@ -1,5 +1,6 @@
 ---
 title: Improving Device Groups
+description: FlowFuse now updated the Device Group view to include more information about what snapshot is currently deployed to the group, and more.
 date: 2024-04-11 12:01:01.0
 authors: ["nick-oleary"]
 tags:

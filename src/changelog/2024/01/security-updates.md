@@ -1,5 +1,6 @@
 ---
 title: Security Updates
+description: "Security Updates: We've strengthened user privacy and platform security with stricter rate limiting and improved password-reset flows."
 date: 2024-01-17 13:00:00.0
 authors: ["nick-oleary"]
 tags:
