@@ -2,7 +2,6 @@
 @import "./style.page.css";
 @import "./style.nohero.css";
 @import "./style.handbook.css";
-@import "./style.eleventy.nav.css";
 @import "./style.components.css";
 @import "./style.animations.css";
 @import "./algolia-theme.css";
@@ -67,19 +66,6 @@ h1, h2, h3, h4, h5, p {
 
 h1, h2, h3, h4 {
     font-weight: 400;
-}
-
-.prose .ff-blue-card > h1:first-of-type,
-.prose .ff-blue-card > h2:first-of-type,
-.prose .ff-blue-card > h3:first-of-type,
-.prose .ff-blue-card > h4:first-of-type,
-.prose .ff-blue-card > h5:first-of-type,
-.prose .ff-blue-card > h6:first-of-type {
-    margin-top: 0;
-}
-
-.prose .ff-blue-card > p:last-of-type {
-    margin-bottom: 0;
 }
 
 .prose figcaption {
@@ -216,10 +202,6 @@ dl.message-properties {
     @apply m-auto text-center sm:text-left p-8 max-w-md sm:max-w-screen-lg bg-indigo-50 border border-white rounded-lg mt-6;
   }
 
-  .main-content .ff-blue-card {
-    @apply mb-6;
-  }
-
 /*
     Event banner
 */
@@ -274,15 +256,6 @@ dl.message-properties {
     flex-shrink: 0;
     padding-top: 2px;
     margin-left: 0.5rem;
-}
-
-.blog-update-notes {
-    background-color: theme(colors.indigo.50);
-    border-radius: 4px;
-    border: 2px solid theme(colors.indigo.200);
-    padding: 1rem;
-    border-radius: 0.5rem;
-    margin-top: 1rem;
 }
 
 /*
@@ -682,10 +655,6 @@ h4:hover .header-anchor {
         aspect-ratio: 1.78;
         margin-bottom: 0.7rem;
     }
-    .ff-blog-tile img,
-    .prose img {
-        @apply rounded-lg;
-    }
 }
 
 .ff-full-bg {
@@ -745,6 +714,53 @@ h4:hover .header-anchor {
     width: 100%;
     transform: translateX(0);
 }
+
+/*
+    Migration Service
+*/
+
+.ff-file-drop-zone {
+    background-color: theme(colors.blue.50);
+    border: 1px dashed theme(colors.blue.300);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    height: 100%;
+    padding: 64px;
+    text-align: center;
+}
+
+.ff-file-drop-zone:hover {
+    background-color: theme(colors.blue.100);
+    border: 1px solid theme(colors.blue.300);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.ff-file-drop-zone input[type="file"] {
+    display: none;
+}
+
+.ff-dashboard-migration {
+    padding: 0 32px;
+    display: grid;
+    flex-direction: column;
+    gap: 32px;
+    justify-content: center;
+}
+
+.ff-dashboard-migration-actions {
+    margin: auto;
+}
+
+@media (min-width: 680px) {
+    .ff-dashboard-migration {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
 /*
     Footer
 */
@@ -1362,7 +1378,7 @@ pre.mermaid {
     background-color: #ffffff
 }
 /*
-    FlowFuse markdown-it rendered footnote styles
+    FlowFuse markdown-it rendeindigo footnote styles
 */
 div.content hr.footnotes-sep {
     margin-top: 3em;
