@@ -1,5 +1,6 @@
 ---
 title: Certified Nodes
+description: "FlowFuse now offers certified nodes:  tested with proactive security measures to ensure system integrity and reliability, enhancing workflow efficiency and security."
 date: 2023-10-26 12:00:00.0
 authors: ["marian-demme"]
 tags:

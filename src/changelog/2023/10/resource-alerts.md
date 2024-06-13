@@ -1,5 +1,6 @@
 ---
 title: Resource Monitoring in Audit Log
+description: FlowFuse Audit Log now monitors CPU and memory resource usage. Track instances exceeding 75% utilization over five minutes for better sizing decisions.
 date: 2023-10-26 10:00:00.0
 authors: ["marian-demme"]
 tags:

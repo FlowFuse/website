@@ -1,6 +1,7 @@
 ---
 title: Ask Me Anything about Debugging Node-RED (May Edition)
 subtitle: Join Nick O'Leary, co-creator of Node-RED & CTO at FlowFuse and Rob Marcer, Developer Educator at FlowFuse, for an AMA on Node-RED Debugging
+description: Join Nick O'Leary and Rob Marcer for an Ask Me Anything on debugging Node-RED! You ask, we answer. Learn expert tips and tricks for Node-RED debugging. Register now!
 video: 5o4GW2twOb4
 image: /images/webinars/ama-may.jpg
 date: 2023-05-11

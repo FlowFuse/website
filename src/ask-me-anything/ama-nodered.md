@@ -1,6 +1,7 @@
 ---
 title: Ask Me Anything about Node-RED (March Edition)
 subtitle: Join Nick O'Leary, co-creator of Node-RED & CTO at FlowFuse and Rob Marcer, Developer Educator at FlowFuse, for an AMA on Node-RED
+description: Join Node-RED co-creator Nick O'Leary and Rob Marcer for an insightful AMA session. Ask your Node-RED questions directly and get expert advice and solutions. Don't miss out—register now!
 video: P0ZfQXh-mqM
 image: /images/webinars/ama-march.jpg
 date: 2023-03-09
