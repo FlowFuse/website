@@ -1,5 +1,6 @@
 ---
 title: Helm Chart v2.0 
+description: "FlowFuse Helm Chart Update: v2 introduces streamlined upgrades and enhanced capabilities for managing resource constraints and Pod Security Context."
 date: 2024-01-18 13:00:00.0
 authors: ["ben-hardill"]
 tags:

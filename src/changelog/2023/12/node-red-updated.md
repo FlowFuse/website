@@ -1,5 +1,6 @@
 ---
 title: Node-RED 3.1.3 now available
+description: Node-RED 3.1.3 now in FlowFuse Cloud, with updated stacks and default installation for new instances. Update existing instances with our guide.
 date: 2023-12-07 13:00:00.0
 authors: ["nick-oleary"]
 tags:

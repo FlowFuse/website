@@ -1,5 +1,6 @@
 ---
 title: Team Library - Flow Viewer
+description: FlowFuse introduces Team Library - Flow Viewer, enabling easy preview and management of shared flows across your team.
 date: 2024-05-01 13:00:00.0
 authors: ["joe-pavitt"]
 tags:

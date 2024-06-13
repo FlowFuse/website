@@ -1,5 +1,6 @@
 ---
 title: Device Onboarding Improvements
+description: Improved Device Onboarding to Simplify and accelerate device configuration and connection to FlowFuse with our new setup command.
 date: 2024-02-05 13:00:00.0
 authors: ["stephen-mclaughlin"]
 tags:
