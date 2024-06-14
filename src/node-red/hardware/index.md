@@ -17,8 +17,4 @@ By setting up Node-RED on different hardware, you can easily integrate physical 
 
 Here are some resources to help you get started with Node-RED on diffrent hardware devices:
 
-{% for item in collections.all %}
-  {% if item.data.eleventyNavigation.parent == "Hardware" %}
-    - [{{ item.data.meta.title }}]({{ item.url }}): {{item.data.meta.description}}
-  {% endif %}
-{% endfor %}
+{% include "navigation-items-list.njk" %}

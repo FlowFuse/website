@@ -17,8 +17,4 @@ Node-RED offers a versatile and robust platform to meet these needs. Its intuiti
 
 Here are some resources to help you integrate Node-RED with various different technologies:
 
-{% for item in collections.all %}
-  {% if item.data.eleventyNavigation.parent == "Integration Technologies" %}
-    - [{{ item.data.meta.title }}]({{ item.url }}): {{item.data.meta.description}}
-  {% endif %}
-{% endfor %}
+{% include "navigation-items-list.njk" %}

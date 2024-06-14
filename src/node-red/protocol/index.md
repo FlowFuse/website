@@ -17,8 +17,4 @@ Node-RED, with its intuitive visual programming interface, simplifies the integr
 
 Here are some resources to help you get started with integrating Node-RED with various communication protocols:
 
-{% for item in collections.all %}
-  {% if item.data.eleventyNavigation.parent == "Communication Protocols" %}
-    - [{{ item.data.meta.title }}]({{ item.url }}): {{item.data.meta.description}}
-  {% endif %}
-{% endfor %}
+{% include "navigation-items-list.njk" %}
