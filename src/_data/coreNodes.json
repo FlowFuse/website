@@ -4,7 +4,7 @@
             "xpath": "inject",
             "name": "Inject",
             "file": "20-inject",
-            "description": "Explore the Node-RED Inject node: learn how to use it, understand its use cases, and discover various examples.",
+            "description": "Explore the Node-RED Inject node to learn its usage, understand versatile applications, and discover practical examples.",
             "keywords": "node-red inject node, repeat messages, specific time, inject node use case, inject node example flow"
         },
         {
@@ -18,21 +18,21 @@
             "xpath": "complete",
             "name": "Complete",
             "file": "24-complete",
-            "description": "Learn about the Node-RED Complete Node: trigger flows upon task completion, handle asynchronous operations, and explore practical examples for streamlined process automation.",
+            "description": "Learn about the Node-RED Complete Node to trigger flows on task completion, handle async operations, and explore examples for streamlined automation.",
             "keywords": "node-red complete node, asynchronous operations, complete node use case, complete node example flow"
         },
         {
             "xpath": "catch",
             "name": "Catch",
             "file": "25-catch",
-            "description": "Explore the Node-RED Catch node: manage errors, handle asynchronous operations, and see real-world use-cases and practical examples for effective error handling in your flows.",
+            "description": "Learn how to use the Node-RED Catch node to manage errors, handle asynchronous operations, and explore real-world examples for effective error handling in your flows.",
             "keywords": "node-red catch node, error handling, catch node use case, catch node example flow"
         },
         {
             "xpath": "status",
             "name": "Status",
             "file": "25-status",
-            "description": "Explore the Node-RED Status node: Monitor and react to the operational status of individual nodes or entire flows in real-time and explore practical example flows.",
+            "description": "Explore the Node-RED Status node: monitor and react to node and flow statuses in real-time with practical examples.",
             "keywords": "node-red status node, monitoring flow status, status node use case, status node example flow"
         },
         {
@@ -46,7 +46,7 @@
             "xpath": "comment",
             "name": "Comment",
             "file": "90-comment",
-            "description": "Explore how to enhance flow readability, improve maintenance, and simplify debugging in Node-RED with the Comment node, using detailed inline comments and explanations.",
+            "description": "Enhance flow readability, simplify debugging, and improve maintenance in Node-RED with the Comment node, using detailed inline comments and explanations.",
             "keywords": "node-red comment nodes, flow documentation, inline comments, flow readability, comment node use case, comment node example flow"
         },
         {
@@ -62,21 +62,21 @@
             "xpath": "function",
             "name": "Function",
             "file": "10-function",
-            "description": "Learn how to use Node-RED Function node: Write JavaScript to process messages, handle tasks, and customize flows. Explore different use cases with practical examples.",
+            "description": "Learn to use the Node-RED Function node. Write JavaScript to process messages, handle tasks, and customize flows with practical examples.",
             "keywords": "node-red function node, writing custom javascript, flow customization, function node use case, function node example flow"
         },
         {
             "xpath": "switch",
             "name": "Switch",
             "file": "10-switch",
-            "description": "Learn how to use the Switch node in Node-RED to direct messages based on specific conditions, like filtering messages, routing them conditionally, and processing different types of events.",
+            "description": "Learn to use the Switch node in Node-RED for directing messages based on conditions, such as filtering, conditional routing, and event processing.",
             "keywords": "node-red switch node, conditional routing, switch node use case, switch node example flow"
         },
         {
             "xpath": "change",
             "name": "Change",
             "file": "15-change",
-            "description": "Learn how the Node-RED Change node simplifies data manipulation in your flows. Explore practical examples for filtering, enriching, renaming, and formatting messages effortlessly.",
+            "description": "Discover how the Node-RED Change node simplifies data manipulation in flows with practical examples for filtering, enriching, renaming, and formatting messages.",
             "keywords": "node-red change node, message transformation, data manipulation, message filtering, rename properties, message formatting, change node use case, change node example flow"
         },
         {
@@ -90,7 +90,7 @@
             "xpath": "template",
             "name": "Template",
             "file": "80-template",
-            "description": "Learn how to use the Node-RED Template node: Learn to create dynamic text templates with Mustache syntax, populate data, configure output formats, and generate HTML or JSON effortlessly",
+            "description": "Learn to use the Node-RED Template node to create dynamic text templates with Mustache syntax, populate data, configure output formats, and generate HTML or JSON.",
             "keywords": "node-red template node, mustache template, html template, text template, dynamic content, template node use case, template node example flow"
         },
         {
@@ -118,7 +118,7 @@
             "xpath": "rbe",
             "name": "Filter",
             "file": "rbe",
-            "description": "Learn how to utilize the Filter node in Node-RED to manage data transmission efficiently. Explore deadband and narrowband modes for filtering changes and values with practical examples.",
+            "description": "Learn to use the Node-RED Filter node for efficient data transmission. Explore deadband and narrowband modes to filter changes and values with practical examples.",
             "keywords": "node-red, filter node, deadband mode, narrowband mode, report by exception, rbe node, optimize data transmission, rbe node use case, rbe node example flow"
         }
     ],
@@ -127,7 +127,7 @@
             "xpath": "tls",
             "name": "TLS",
             "file": "05-tls",
-            "description": "Learn to configure TLS for secure communication in Node-RED using the TLS Config node with HTTP, TCP, and custom network nodes. Ensure encrypted data transmission and secure connections.",
+            "description": "Learn to configure TLS in Node-RED using the TLS Config node for secure, encrypted communication with HTTP, TCP, and custom network nodes.",
             "keywords": "tls config node, node-red tls configuration, secure communication, encrypted communication, tls node use case, tls node example flow"
         },
         {
@@ -148,7 +148,7 @@
             "xpath": "mqtt in",
             "name": "MQTT in",
             "file": "10-mqttin",
-            "description": "Learn how to configure and use MQTT-in nodes in Node-RED for subscribing to topic patterns on MQTT brokers. Explore practical examples and setup guides to efficiently handle MQTT messages.",
+            "description": "Learn to configure and use MQTT-in nodes in Node-RED for subscribing to MQTT broker topic patterns. Explore practical examples and setup guides for efficient message handling.",
             "keywords": "node-red mqtt-in node, node-red mqtt, subscribing to mqtt topic, mqtt message handling, data streaming, mqtt in node use case, mqtt in node example flow"
         },
         {
@@ -169,14 +169,14 @@
             "xpath": "http request",
             "name": "HTTP request",
             "file": "21-httprequest",
-            "description": "Learn how to use HTTP Request nodes in Node-RED to make various HTTP requests (GET, POST, PUT, DELETE, PATCH) to external servers or services, manage JSON data, and integrate with APIs efficiently.",
+            "description": "Learn to use HTTP Request nodes in Node-RED for making various HTTP requests (GET, POST, PUT, DELETE, PATCH), managing JSON data, and integrating with APIs efficiently.",
             "keywords": "node-red http-request node, handle http requests, get request, post request, put request, delete request, patch request, http request usecase, http request example flow"
         },
         {
             "xpath": "http response",
             "name": "HTTP response",
             "file": "21-httpresponse",
-            "description": "Learn how to use the HTTP Response node in Node-RED to send customized HTTP responses, set status codes, headers, and manage cookies, for enabling dynamic interaction with client requests.",
+            "description": "Learn to use the HTTP Response node in Node-RED to send customized HTTP responses, set status codes, headers, and manage cookies for dynamic client interaction.",
             "keywords": "node-red http response node, setting cookies, sending response back, status codes, http response usecase, http response example flow"
         },
         {
@@ -190,7 +190,7 @@
             "xpath": "tcp in",
             "name": "TCP in",
             "file": "31-tcpin",
-            "description": "Learn how to use Node-RED's TCP nodes to facilitate TCP/IP communication for various applications. Configure client and server modes, integrate IoT devices, and streamline workflows effortlessly.",
+            "description": "Learn to use Node-RED's TCP nodes for TCP/IP communication. Configure client and server modes, integrate IoT devices, and streamline workflows.",
             "keywords": "node-red tcp-in nodes, tcp/ip communication, tcp client, tcp servers, tcp in usecase, tcp in example flow"
         },
         {
@@ -257,7 +257,7 @@
             "xpath": "split",
             "name": "Split",
             "file": "17-split",
-            "description": "Learn how to use the Split node in Node-RED to divide messages into multiple parts based on specific rules. Split strings, arrays, and objects to handle data effectively in your workflows.",
+            "description": "Learn to use the Split node in Node-RED to divide messages based on rules. Split strings, arrays, and objects to handle data effectively in workflows.",
             "keywords": "node-red split node, divide messages, split strings, split arrays, split objects, message splitting, message processing, split usecase, split example flow"
         },
         {
