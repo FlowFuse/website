@@ -2,9 +2,9 @@
 title: Using TimescaleDB with Node-RED.
 subtitle: Guide to integrating TimescaleDB into Node-RED for Storing, Updating, and Querying Data.
 description: Learn how to integrate TimescaleDB with Node-RED for storing and managing time-series data efficiently.
-date: 2024-06-03
+date: 2024-06-19
 authors: ["sumit-shinde"]
-image: 
+image: /blog/2024/06/images/timescaledb-with-node-red.png
 tags:
    - posts
    - node-red
