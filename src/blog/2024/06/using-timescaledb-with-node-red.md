@@ -49,7 +49,7 @@ When it comes to time-series databases, there are many options available. Howeve
 
 ### Installing TimescaleDB locally
 
-If you want to install TimescaleDB locally on your system, you can follow their official documentation on [Install TimescaleDB](https://docs.timescale.com/self-hosted/latest/install/).
+If you want to install TimescaleDB locally, you can follow their official documentation on [Install TimescaleDB](https://docs.timescale.com/self-hosted/latest/install/).
 
 ### Using TimescaleDB cloud option
 
@@ -58,7 +58,7 @@ TimescaleDB also offers a cloud option that simplifies deployment and management
 1. Go to the [Timescale Cloud](https://console.cloud.timescale.com/signup) website and sign up for an account.
 2. Once logged in, create a new TimescaleDB service by following the on-screen instructions.
 3. Choose your service settings, such as region, CPU, memory, and storage requirements, based on your application's needs.
-4. After the service is created, you’ll see the connection details. If you cannot see them, go to the "Services" option in the sidebar, click on the created service, and then in the "Overview" tab at the bottom, you will see your configuration details.
+4. After creating the service, you’ll see the connection details. If you cannot see them, go to the "Services" option in the sidebar, click on the created service, and then in the "Overview" tab at the bottom, you will see your configuration details.
 
 ## Using TimescaleDB with Node-RED
 
@@ -114,7 +114,7 @@ SELECT create_hypertable('sensor_data', 'time');
 
 ### Inserting Data into the Table
 
-To insert data into a TimescaleDB Hypertable, the steps are similar to inserting data into a standard PostgreSQL table.
+The steps to insert data into a TimescaleDB Hypertable are similar to inserting data into a standard PostgreSQL table.
 
 1. Drag the Inject nodes onto the canvas.
 2. Set the `msg.payload.temperature` to the JSONata expression `$floor(($random() * 21) + 30)` which will generate random data for us,  and `msg.payload.location` to "New York" for the first Inject node, and do the same for the second Inject node but with a different location.
@@ -286,8 +286,8 @@ DROP TABLE IF EXISTS sensor_data;
 
 1. To test the imported flows, you need to deploy them. To do that, click on the deploy button located in the top right corner.
 
-After deploying the flow, you can test each operation such as creating, deleting, updating, and other queries by clicking on the inject button. Upon successful operation, you will be able to see the results in the debug panel of the sidebar. Additionally, if you want to learn more about PostgreSQL, you can refer to the [Using PostgreSQL with Node-RED](/blog/2024/02/postgresql-with-node-red/) where you will also find the section which shows the messages received after a successful operation by the PostgresWQL node.
+After deploying the flow, you can test each operation such as creating, deleting, updating, and other queries by clicking on the inject button. Upon successful operation, you will be able to see the results in the debug panel of the sidebar. If you want to learn any additional information about PostgreSQL, you can refer to the [Using PostgreSQL with Node-RED](/blog/2024/02/postgresql-with-node-red/) where you will also find the section which shows the messages received after a successful operation by the PostgresWQL node.
 
 ## Conclusion
 
-In this guide, we have demonstrated how to integrate TimescaleDB with Node-RED. We have covered various operations, including creating hypertables, deleting them, and performing data manipulation tasks such as inserting, updating, and deleting data and executing advanced queries.
+In this guide, we have demonstrated how to integrate TimescaleDB with Node-RED and covered various operations, including creating hypertables and deleting them, performing data manipulation tasks such as inserting, updating, and deleting data, and executing advanced queries.
