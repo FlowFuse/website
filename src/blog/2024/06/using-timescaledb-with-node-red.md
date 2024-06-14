@@ -15,6 +15,8 @@ tags:
 
 In the context of IoT and IIoT applications, time series databases are essential for storing data based on timestamps. While InfluxDB has been a popular choice for a long time, another time series database, TimescaleDB, is gaining popularity. This article will cover how to use TimescaleDB with Node-RED, when to choose it over InfluxDB, and important operations and queries needed when building IoT applications.
 
+If you prefer video tutorials, a few months ago, Gray, OT Data & Community Strategist at Flowfuse, conducted a live session on TimescaleDB. You can watch it [here](https://www.youtube.com/watch?v=MD1U6LDqJ1c).
+
 <!--more-->
 
 ## What is TimeScaleDB
