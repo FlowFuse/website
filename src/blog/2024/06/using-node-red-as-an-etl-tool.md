@@ -14,7 +14,7 @@ tags:
   - business intelligence
 ---
 
-ETL (Extract, Transform, Load) is essential for integrating and analyzing data, helping businesses unlock detailed insights. You might already know Node-RED for its user-friendly approach to creating IoT applications, but did you know it can also be a powerful tool for ETL tasks? When IBM published a blog about using Node-RED for ETL, it caught a lot of attention and got people talking about its potential in this space. In this guide, we'll walk you through how to use Node-RED for ETL, sharing its strengths and weaknesses along the way.
+ETL (Extract, Transform, Load) is essential for integrating and analyzing data, helping businesses unlock detailed insights. You already know Node-RED for its user-friendly approach to creating IoT applications, but did you know it can also be a powerful tool for ETL tasks? When IBM published a blog about using Node-RED for ETL, it caught a lot of attention and got people talking about its potential in this space. In this guide, we'll walk you through how to use Node-RED for ETL, sharing its strengths and weaknesses along the way.
 
 <!--more-->
 
@@ -24,17 +24,17 @@ ETL (Extract, Transform, Load) is essential for integrating and analyzing data, 
 
 ## Node-RED as an ETL tool
 
-Node-RED is specifically used for building various types of IoT applications. During the development of such applications, Node-RED is sometimes used as an ETL tool without even realizing it. For instance, when monitoring sensors across a facility, the process involves extracting data from sensors, transforming (cleaning and formatting) sensor data, and loading it into a database. There are thousands of other such examples. This demonstrates that Node-RED has already been adopted as an ETL tool at a certain level.
+Node-RED is specifically used for building various types of IoT applications. During the development of such applications, we sometimes used Node-RED as an ETL is tool without even realizing it. For instance, when monitoring sensors across a facility, the process involves extracting data from sensors, transforming (cleaning and formatting) sensor data, and loading it into a database. There are thousands of other such examples. This demonstrates that Node-RED has already been adopted as an ETL tool at a certain level.
 
 *Note: We have mentioned only a few nodes that can be used in the ETL process, but there are thousands of other nodes that you can explore yourself by visiting the [Node-RED Nodes Library](https://flows.nodered.org/search?type=node)*
 
 ### Extracting
 
-Node-RED can extract data from various sources, including APIs, databases, local filesystems, and IoT devices using built-in nodes and community-contributed nodes. For example, the HTTP request node can be used to pull data from web services, while nodes for MySQL, MongoDB, and PostgreSQL can extract data from databases. Nodes for MQTT and Kafka can fetch data from message brokers. Additionally, there are different cloud nodes for cloud platforms such as AWS, GCP, and IBM Watson that allow extraction of data from cloud storage services.
+Node-RED can extract data from various sources, including APIs, databases, local filesystems, and IoT devices using built-in nodes and community-contributed nodes. For example, the HTTP request node can be used to pull data from web services, while nodes for MySQL, MongoDB, and PostgreSQL can extract data from databases. Nodes for MQTT and Kafka can fetch data from message brokers. File nodes enable extraction of data from local filesystems, while different cloud nodes for platforms like AWS, GCP, and IBM Watson allow extraction of data from cloud storage services. Moreover, Node-RED running on edge devices can extract data from sensors connected directly to them.
 
 ### Transforming
 
-Transforming data involves cleaning, structuring, and applying business rules. This can be done using function nodes with custom JavaScript, along with nodes like JSON, split, join, change, CSV, and XML for parsing and formatting.
+Transforming data involves cleaning, structuring, and applying business rules. This can be done using function nodes with custom JavaScript, along with nodes like JSON, Split, Join, Change, CSV, and XML for parsing and formatting.
 
 ### Loading
 
@@ -50,7 +50,7 @@ Node-RED Dashboard 2.0 provides several chart options, and more are expected in 
 
 1. **Ease of Use:** Its visual programming interface makes it accessible to non-developers.
 2. **Flexibility:** A wide range of nodes and the ability to write custom JavaScript allow for flexible data processing.
-3. **Integration:** Strong support for IoT and real-time data processing, making it ideal for integrating diverse data sources.
+3. **Integration:** Node-RED excels in integrating IoT devices and handling real-time data, making it well-suited for combining diverse data sources into unified workflows.
 4. **Cost-Effective:** Being open-source, Node-RED can be a cost-effective alternative to expensive ETL tools.
 5. **Community Support:** A large community provides a wealth of nodes, examples, and support.
 
@@ -71,7 +71,7 @@ Before proceeding further make sure you have installed the following nodes:
 
 1. Drag an Inject node onto the canvas.
 2. Drag an HTTP Request node onto the canvas, double-click on it, and set the URL to `https://api.slingacademy.com/v1/sample-data/files/customers.json`.
-3. Drag a Link-out node onto the canvas.
+3. Drag a Link-out node onto the canvas, I am using Link nodes to separate flow groups for different ETL phases to enhance organization, although you can directly connect nodes or maintain a single flow group.
 4. Connect the Inject node's output to the input of the HTTP Request node and the HTTP Request node's output to the input of the Link-out node.
 
 Now, if you add a Debug node after the HTTP Request node, you will see an array of objects containing customer data in the Debug panel. Each object has properties such as `first_name`, `last_name`, `email`, and others.
@@ -221,9 +221,9 @@ Following is the complete flow of the project along with dashboard visualization
 
 While Node-RED is versatile, there are some limitations to consider while using it as an ETL tool:
 
-- **Scalability:** Node-RED might struggle with extremely large datasets compared to dedicated ETL tools.
-- **Advanced Features:** Some advanced ETL features, like automated schema detection and sophisticated error handling, might require additional customization or external modules.
-- **Data Governance:** Node-RED does not inherently provide robust data governance and lineage tracking which are often essential in enterprise ETL tools.
+- Advanced Features: Some advanced ETL features, like automated schema detection and sophisticated error handling, might require additional customization or external modules.
+- Data Governance: Node-RED does not inherently provide robust data governance and lineage tracking, which are often essential in enterprise ETL tools.
+- Scalability: While Node-RED can handle many tasks effectively, it might not offer the same level of optimization for extremely large datasets compared to dedicated ETL tools.
 
 ## Additional resources
 
