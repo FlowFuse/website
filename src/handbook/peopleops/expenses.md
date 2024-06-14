@@ -67,10 +67,32 @@ and approval.
 
 The following items are not reimbursable: Phones, watches, smart speakers and tablets.
 
-Laptops are covered separately and are provided as needed when a new hire joins the team. 
-If you choose to order a laptop by yourself, we generally recommend a Apple Macbook Air with 16GB RAM. 
+### Laptops
 
-Unless circumstances require otherwise, laptops will only be considered for a refresh after 3 years. Please discuss with your manager if you need to refresh your laptop.
+Laptops are covered separately and are provided as needed when a new hire joins the team. 
+If you choose to order a laptop by yourself, we generally recommend the following devices:
+
+#### Developers
+
+We recognize that developers will have slightly more demanding requirements for their laptops. As such, the following devices are recommended:
+
+| Operating System | Recommended Device |
+|------------------|--------------------|
+| MacOS            | [MacBook Pro 14"/16" - 18 GB RAM](https://www.apple.com/uk/shop/buy-mac/macbook-pro/16-inch) (~$3,000)
+| Windows/Linux    | [ThinkPad P16s Gen 3 - 32 GB RAM](https://www.lenovo.com/gb/en/p/laptops/thinkpad/thinkpadp/lenovo-thinkpad-p16s-gen-3-(16-inch-intel)-mobile-workstation/len101t0105?orgRef=https%253A%252F%252Fwww.google.com%252F&cid=uk:sem:0whw5v&gad_source=1&gclid=CjwKCAjw1K-zBhBIEiwAWeCOF_UftxW7heFXlvLivuHrs3Wy_UyLikLPHu8j42i5Gt1nyz6AKqP4jxoCKFwQAvD_BwE&gclsrc=aw.ds) (~$2,300) or [Dell XPS 15 - 16 GB RAM](https://www.dell.com/en-uk/shop/laptops-2-in-1-pcs/xps-15-laptop/spd/xps-15-9530-laptop/cn95303cc) (~$2,300) |
+
+If you require an alternative device, please discuss with your manager.
+
+#### Other Employees
+
+For any other employee within the company, the following devices are recommended:
+
+| Operating System | Recommended Device |
+|------------------|--------------------|
+| MacOS            | [MacBook Air 15" - 16 GB RAM](https://www.apple.com/uk/shop/buy-mac/macbook-air/15-inch-m3) (~$2,300) |
+| Windows/Linux    | [Dell XPS 14](https://www.dell.com/en-uk/shop/laptops-2-in-1-pcs/xps-14-laptop/spd/xps-14-9440-laptop/cn94001cc) (~$1,800) |
+
+Unless circumstances require otherwise, laptops will only be considered for a refresh after 4 years. Please discuss with your manager if you need to refresh your laptop.
 
 ### Asset purchases over $500
 
@@ -84,6 +106,14 @@ it can be recorded.
 When a team member leaves the company, they will be required to return any company
 assets such as laptops. This should be discussed with their manager as part of
 the off-boarding process.
+
+#### Buying Equipment
+
+If you want to retain your laptop when departing FlowFuse, we do offer a buy-back scheme.
+
+Laptop deprecation is considered to be 25% per calendar year from purchase. The buy-back price is calculated as the original cost paid by FlowFuse price minus the deprecation. The buy-back price is subject to approval by the CEO.
+
+For example, if you have a laptop that was purchased for $2,000 and you have had it for 1.5 years (1 full calendar year), the buy-back price would be $1,500.
 
 ## Education & Conferences
 
