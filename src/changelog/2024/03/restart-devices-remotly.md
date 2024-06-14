@@ -1,5 +1,6 @@
 ---
 title: Remote Device Restart
+description: The latest FlowFuse device agent now supports remotely restarting Node-RED flows, aligning with capabilities for hosted instances.
 date: 2024-03-14 09:00:00.0
 authors: ["marian-demme"]
 tags:

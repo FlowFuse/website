@@ -1,5 +1,6 @@
 ---
 title: Renaming "Default Device Mode" to "Fleet Mode"
+description: 'FlowFuse updated terminology: "Default Device Mode" is now "Fleet Mode," enhancing clarity and operational distinctions for users.'
 date: 2024-01-11 13:00:00.0
 authors: ["marian-demme"]
 tags:

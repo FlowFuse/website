@@ -1,5 +1,6 @@
 ---
 title: Introducing the Device Auditlog Feature
+description: "FlowFuse's Device Auditlog: monitor mode changes, remote access, credential updates, and device assignments for enhanced oversight and security."
 date: 2024-01-18 12:00:00.0
 authors: ["marian-demme"]
 tags:

@@ -9,7 +9,7 @@ hubspot:
 
 <div class="w-full page post">
     {% if title %}
-        <div class="post-title container m-auto text-center px-6 flex mt-6 mb-6 md:max-w-screen-lg md:mt-12">
+        <div class="post-title container m-auto text-center max-lg:px-6 flex mt-6 mb-6 md:max-w-screen-lg md:mt-12">
             <div class="text-left md:pr-32">
                 <label>Changelog</label>
                 <h1>{{ title }}</h1>
@@ -20,7 +20,7 @@ hubspot:
         </div>
     {% endif %}
     <div class="blog nohero w-full pb-24">
-        <div class="container flex flex-col md:flex-row m-auto text-left px-6 md:max-w-screen-lg gap-8 items-stretch">
+        <div class="container flex flex-col md:flex-row m-auto text-left max-lg:px-6 md:max-w-screen-lg gap-8 items-stretch">
             <div class="ff-prose flex-grow">
                 <a class="inline-flex align-center gap-1 mb-4" href="/changelog">
                     {% include "components/icons/chevron-left.svg" %}
