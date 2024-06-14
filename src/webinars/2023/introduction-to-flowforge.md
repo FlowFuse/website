@@ -1,6 +1,7 @@
 ---
 title: "DevOps for Node-RED: An Introduction to FlowFuse"
 subtitle: Join FlowFuse's CTO Nick O'Leary for an introduction to FlowFuse and how it provides DevOps for Node-RED.
+description: Join Nick O'Leary, CTO of FlowFuse, for an introduction to FlowFuse's DevOps capabilities for Node-RED.
 image: /images/webinars/devops-for-node-red-an-introduction-webinar.jpg
 video: G6Ve84yrV2Q
 date: 2023-03-30

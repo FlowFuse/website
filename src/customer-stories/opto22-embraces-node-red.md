@@ -1,5 +1,6 @@
 ---
 title: Opto 22 Embraces Node-RED to Drive Customer Innovation
+description: Learn how Opto 22 leverages Node-RED to drive innovation in industrial automation. Learn about their commitment to integrating Node-RED into their hardware devices.
 image: /images/stories/opto22.jpg
 date: 2023-06-01
 # This "logo" is for the main page

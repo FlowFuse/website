@@ -1,5 +1,6 @@
 ---
 title: The Future of Textile Manufacturing Powered with Node-RED
+description: Learn how Node-RED transforms textile manufacturing at STFI's Model Factory with seamless integration and advanced applications. 
 image: /images/stories/stfi-future-textile.jpg
 date: 2023-11-14
 logo:

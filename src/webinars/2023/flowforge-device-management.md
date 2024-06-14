@@ -1,6 +1,7 @@
 ---
 title: "How to deploy Node-RED to hundreds of PLCs and IoT edge devices"
 subtitle: Discover how to deploy and managed hundreds of devices running Node-RED on PLCs and IoT edge computers.
+description: Join Rob Marcer to learn efficient deployment and management of Node-RED on hundreds of PLCs and IoT edge devices. Discover FlowFuse’s automation and troubleshooting features.
 image: /images/webinars/how-to-deploy-node-red-to-hundreds-of-plcs-and-iot-edge-devices-webinar-july.jpg
 video: dvTgCBXCa5A
 date: 2023-07-27
