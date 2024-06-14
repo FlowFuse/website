@@ -1,6 +1,7 @@
 ---
 title: "New Year Celebration - Sync Music with Fireworks or Light Shows"
 subtitle: DIY Guide to Synchronizing Music with Light Shows or Digital Fireworks for New Year's Eve
+description: Celebrate New Year's Eve with our DIY guide on synchronizing music with light shows or digital fireworks. Learn to use MQTT, Dashboard 2.0, and open-source tools. 
 image: /images/webinars/new-year-celebration-sync-music-with-fireworks-or-light-shows-webinar-december.jpg
 
 date: 2023-12-21

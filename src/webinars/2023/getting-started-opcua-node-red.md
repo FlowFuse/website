@@ -1,6 +1,7 @@
 ---
 title: "Getting Started with OPC-UA and Node-RED"
 subtitle: Discover how easy it is to build an OPC-UA client using Node-RED
+description: Join Mika Karaila, Research Director at Valmet Automation, for a webinar on building OPC-UA clients with Node-RED. Learn how to connect to OPC servers, create clients, and visualize industrial data. 
 image: /images/webinars/getting-started-with-opc-ua-and-node-red-webinar-august.jpg
 date: 2023-08-30
 time: 17:00 CEST (11:00 ET) 

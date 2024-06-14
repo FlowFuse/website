@@ -2,6 +2,7 @@
 navTitle: Customer Stories
 meta:
     title: Marketing - Customer Stories
+    description: Learn how Node-RED drives WMO's global weather data sharing modernization, implementing critical components like AntiLoop in WIS 2.0 for efficient performance.
 ---
 
 # Customer Stories

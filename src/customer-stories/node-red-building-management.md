@@ -1,5 +1,6 @@
 ---
 title: Automating Building Management with FlowFuse & Node-RED
+description: Learn how PowerWorkplace uses Node-RED and FlowFuse for scalable, rapid building management automation and robust security audits for global enterprises.
 image: /images/stories/power-workplace-diagram.svg
 date: 2024-03-28
 logo:

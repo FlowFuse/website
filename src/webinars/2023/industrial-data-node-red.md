@@ -1,6 +1,7 @@
 ---
 title: "Connect, Integrate & Visualize Industrial Production Metrics with Node-RED"
 subtitle: Join FlowFuse's Steve McLaughlin as he showcases how easy it is to use Node-RED to visualize popular production metrics using Node-RED.
+description: Learn to connect PLCs, integrate MQTT data, create production dashboards, sanitize data, and generate reports using Node-RED with Steve McLaughlin from FlowFuse.
 image: /images/webinars/connect-integrate-visualise-industrial-production-metrics-with-node-red.jpg
 video: yx_YduKR5Fs
 date: 2023-04-27
