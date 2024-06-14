@@ -9,12 +9,10 @@ meta:
 
 # {{ meta.title }}
 
-Welcome to the Database Integration Guides section. Here, you'll find comprehensive tutorials on integrating various databases with Node-RED. Whether you're working with SQL or NoSQL databases, or need to handle time-series data, these guides will help you connect, store, query, and visualize data effectively.
+Node-RED is highly versatile and can be set up to work with a variety of databases, whether it is SQL (e.g., PostgreSQL, MySQL), NoSQL (e.g., MongoDB), or time-series databases (e.g., InfluxDB). This flexibility allows you to store and manage IoT data effectively, enabling the creation of interactive and data-driven applications for IoT environments.
 
-{% for item in collections.all %}
-  {% if item.data.eleventyNavigation.parent == "Database" %}
-    - [{{ item.data.meta.title }}]({{ item.url }})
-  {% endif %}
-{% endfor %}
+## Resources
 
-Explore our guides for each database. Each guide provides step-by-step instructions to help you get started, along with advanced techniques for optimizing performance and handling complex data operations.
+Here are some resources to help you get started with Node-RED on diffrent types of databases. Each guide provides step-by-step instructions to help you get started, along with advanced techniques for optimizing performance and handling complex data operations.:
+
+{% include "navigation-items-list.njk" %}
