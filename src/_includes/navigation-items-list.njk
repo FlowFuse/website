@@ -1,5 +1,7 @@
-{% for item in collections.all %}
-  {% if item.data.eleventyNavigation.parent == eleventyNavigation.key  %}
-    - [{{ item.data.meta.title }}]({{ item.url }}): {{ item.data.meta.description }}
-  {% endif %}
-{% endfor %}
+<ul>
+  {% for item in collections.all %}
+    {% if item.data.eleventyNavigation.parent == eleventyNavigation.key %}
+      <li><a href="{{ item.url }}">{{ item.data.meta.title }}</a>: {{ item.data.meta.description }}</li>
+    {% endif %}
+  {% endfor %}
+</ul>
