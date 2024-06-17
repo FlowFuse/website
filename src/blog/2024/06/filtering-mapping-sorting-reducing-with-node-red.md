@@ -1,7 +1,7 @@
 ---
 title: How to Filter, Map, Sort, and Reduce Data in Node-RED
 subtitle: Step-by-step guide on how to perform filtering, mapping, sorting and reducing in Node-RED.
-description: Learn how to perform data tranformation in Node-RED with low-code approach.
+description: Learn how to perform data transformation in Node-RED with a low-code approach.
 date: 2024-06-19
 authors: ["sumit-shinde"]
 image: 
@@ -16,7 +16,9 @@ tags:
    - reducing
    - data tranformation
    
-[Node-RED](/node-red/) is a visual programming platform known for its user-friendly interface and low-code approach, that allows developers to spend more time developing solutions instead of dealing with technical complexities. However, users can sometimes make applications developed with Node-RED complex and hard to maintain when they are not familiar with its basics. Understanding Node-RED basics helps keep flows low-coded.
+[Node-RED](https://flowfuse.com/node-red/) is a visual programming platform known for its user-friendly interface and low-code approach, that allows developers to spend more time developing solutions instead of dealing with technical complexities. However, users can sometimes make applications developed with Node-RED complex and hard to maintain when they are not familiar with its basics. Understanding Node-RED basics helps keep flows low-coded.
+
+<!--more-->
 
 Often, I have noticed that many users are unfamiliar with how to filter, map, sort, and reduce data using a low-code approach. They tend to rely on function nodes, which can add complexity. If you are unfamiliar with function nodes and their drawbacks, please refer to [The benefits and drawbacks of using Node-RED function nodes](/blog/2023/03/why-should-you-use-node-red-function-nodes/). In this guide, we will show you how to filter, map, sort, and reduce data with Node-RED while sticking to low-code practices.
 
