@@ -14,13 +14,15 @@ tags:
   - business intelligence
 ---
 
-ETL (Extract, Transform, Load) is essential for integrating and analyzing data, helping businesses unlock detailed insights. You already know Node-RED for its user-friendly approach to creating IoT applications, but did you know it can also be a powerful tool for ETL tasks? When IBM published a blog about using Node-RED for ETL, it caught a lot of attention and got people talking about its potential in this space. In this guide, we'll walk you through how to use Node-RED for ETL, sharing its strengths and weaknesses along the way.
+ETL is the process data-driven organizations use to gather data from diverse sources and merge it to support discovery, reporting, analysis, and decision-making. While Node-RED is widely known as a low-code visual programming tool for building IoT applications, it also has significant potential for ETL tasks. This potential was highlighted when IBM published a blog about using Node-RED for ETL that sparked interest and discussion in the community.
 
 <!--more-->
 
+In this guide, we'll walk you through how to use Node-RED as an ETL tool for your data industrial data ops, its strengths and weaknesses along the way.
+
 ## What is ETL
 
-[ETL](https://en.wikipedia.org/wiki/Extract,_transform,_load) (Extract, Transform, Load) is a fundamental process in managing data efficiently. It consists of three main stages: extraction, transformation, and loading. In the extraction phase, data is gathered from various sources such as databases, APIs, or files. Then, in the transformation stage, the data is converted into a format that is suitable for analysis by cleaning, filtering, and structuring it. Finally, in the loading stage, the transformed data is stored in a target database or data warehouse for further analysis and decision-making. ETL plays a significant role in ensuring that data is organized, consistent, and readily available for generating insights and making informed decisions in businesses and organizations.
+[ETL](https://en.wikipedia.org/wiki/Extract,_transform,_load) (Extract, Transform, Load) is a fundamental process in managing data efficiently. It consists of three main stages: extraction, transformation, and loading. In the extraction phase, data is gathered from various sources such as SCADA systems, IoT devices, industrial sensors, APIs and more. In the transformation stage, the data is converted into a format that is suitable for analysis by cleaning, filtering, and structuring it. For example, this may involve converting raw sensor data into operational metrics. Aggregating time-series data over intervals (e.g., hourly, daily) to analyze trends and patterns in process performance. Filtering and analyzing event logs are for monitoring system performance and identifying potential issues. Finally, in the loading stage, the transformed data is stored in a target database or data warehouse for further analysis and decision-making. ETL plays a significant role in ensuring that data is organized, consistent, and readily available for generating insights and making informed decisions in businesses and organizations.
 
 ## Node-RED as an ETL tool
 
@@ -30,11 +32,13 @@ Node-RED is specifically used for building various types of IoT applications. Da
 
 ### Extracting
 
-Node-RED can extract data from various sources, including APIs, databases, local filesystems, and IoT devices using built-in nodes and community-contributed nodes. For example, the HTTP request node can be used to pull data from web services, while nodes for MySQL, MongoDB, and PostgreSQL can extract data from databases. Nodes for MQTT and Kafka can fetch data from message brokers. File nodes enable extraction of data from local filesystems, while different cloud nodes for platforms like AWS, GCP, and IBM Watson allow extraction of data from cloud storage services. Moreover, Node-RED running on edge devices can extract data from sensors connected directly to them.
+Node-RED can extract data from various sources, including APIs, databases, local filesystems, and IoT devices using built-in nodes and community-contributed nodes. For example, the HTTP request node can be used to pull data from web services, while nodes for MySQL, MongoDB, and PostgreSQL can extract data from databases. Nodes for MQTT and Kafka can fetch data from message brokers. File nodes enable extraction of data from local filesystems, while different cloud nodes for platforms like AWS, GCP, and IBM Watson allow extraction of data from cloud storage services. Nodes for OPC-UA, Modbus, EtherNet/IP can be used to extract data from SCADA systems, PLCs, RTUs, and more. Moreover, Node-RED running on edge devices can extract directly extract data from devices.
 
 ### Transforming
 
-Transforming data involves cleaning, structuring, and applying business rules. This can be done using function nodes with custom JavaScript, along with nodes like JSON, Split, Join, Change, CSV, and XML for parsing and formatting.
+Transforming data involves cleaning, structuring, and applying business rules. This can be done using various nodes in Node-RED, including function nodes with custom JavaScript, along with nodes like JSON for parsing or stringifying JSON data, CSV for parsing CSV data into JSON or stringifying JSON into CSV, Split for breaking data into parts, Join for combining data and calculating total of data, Switch for conditional routing, Change for mapping and filtering data, Sort for ordering data, and XML for parsing and formatting.
+
+For example, imagine you have extracted sensor data objects from factory floor devices. Using Node-RED, you can convert that object into JSON using JSON nodes, route it based on device IDs with Switch nodes, filter out irrelevant sensor readings with Change nodes, apply custom business rules with Function nodes, sort it chronologically with Sort nodes and format it into XML with XML nodes for analysis and reporting.
 
 ### Loading
 
