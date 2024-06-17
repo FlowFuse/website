@@ -15,8 +15,9 @@ tags:
    - mapping 
    - reducing
    - data tranformation
+---
    
-[Node-RED](https://flowfuse.com/node-red/) is a visual programming platform known for its user-friendly interface and low-code approach, that allows developers to spend more time developing solutions instead of dealing with technical complexities. However, users can sometimes make applications developed with Node-RED complex and hard to maintain when they are not familiar with its basics. Understanding Node-RED basics helps keep flows low-coded.
+[Node-RED](/node-red/) is a visual programming platform known for its user-friendly interface and low-code approach, that allows developers to spend more time developing solutions instead of dealing with technical complexities. However, users can sometimes make applications developed with Node-RED complex and hard to maintain when they are not familiar with its basics. Understanding Node-RED basics helps keep flows low-coded.
 
 <!--more-->
 
