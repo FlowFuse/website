@@ -90,11 +90,13 @@ Learning to filter, map, sort, and reduce data is crucial for effective data pro
 ]
 ```
 
-However, you noticed that the property 'emperature' is missing the 't'; it should be 'temperature'. Additionally, the data is not correctly ordered based on the timestamp, and you only need the data from June 17th. Finally, you want to calculate the average temperature for that day. Users who are not familiar with Node-RED basics will do it using a JavaScript function node, as shown below. While it may seem simple to you, it will require good enough JavaScript knowledge for all other members involved in your project, and Most Node-RED users are creative innovators who prefer to develop quick and easy solutions, and they don't focus on wasting time learning programming languages:
+However, you noticed that the property 'emperature' is missing the 't'; it should be 'temperature'. Additionally, the data is not correctly ordered based on the timestamp, and you only need the data from June 17th. Finally, you want to calculate the average temperature for that day. Users who are not familiar with Node-RED basics will do it using a JavaScript function node, as shown below:
 
 {% renderFlow %}
 [{"id":"306d455509a3747e","type":"inject","z":"cc28dc90c5cbc3a7","name":"Inject the sample data","props":[{"p":"payload"}],"repeat":"","crontab":"","once":false,"onceDelay":0.1,"topic":"","payload":"[{\"timestamp\":\"2024-06-17T10:00:00Z\",\"emperature\":25},{\"timestamp\":\"2024-06-17T11:00:00Z\",\"emperature\":26},{\"timestamp\":\"2024-06-17T10:30:00Z\",\"emperature\":27},{\"timestamp\":\"2024-06-17T10:15:00Z\",\"emperature\":28},{\"timestamp\":\"2024-06-17T10:45:00Z\",\"emperature\":30},{\"timestamp\":\"2024-06-18T09:00:00Z\",\"emperature\":24},{\"timestamp\":\"2024-06-18T10:00:00Z\",\"emperature\":27},{\"timestamp\":\"2024-06-18T11:00:00Z\",\"emperature\":28},{\"timestamp\":\"2024-06-18T12:00:00Z\",\"emperature\":29},{\"timestamp\":\"2024-06-19T10:00:00Z\",\"emperature\":25},{\"timestamp\":\"2024-06-19T11:00:00Z\",\"emperature\":26}]","payloadType":"json","x":500,"y":640,"wires":[["c58e1653fe5511eb"]]},{"id":"c58e1653fe5511eb","type":"function","z":"cc28dc90c5cbc3a7","name":"Filtering, mapping, reducing and sorting data with traditional coding","func":"let sensorData = msg.payload;\n\nconst filteredData = sensorData\n    .filter(item => item.timestamp.startsWith(\"2024-06-17\"))\n    .map(item => ({\n        timestamp: item.timestamp,\n        temperature: item.emperature\n    }));\n\nfilteredData.sort((a, b) => (a.timestamp > b.timestamp) ? 1 : ((b.timestamp > a.timestamp) ? -1 : 0));\n\nconst totalTemperature = filteredData.reduce((acc, entry) => acc + entry.temperature, 0);\nconst averageTemperature = totalTemperature / filteredData.length\n\nmsg.payload = {\n    sensorData: filteredData,\n    averageTemperature: averageTemperature\n};\n\nreturn msg;\n","outputs":1,"timeout":0,"noerr":0,"initialize":"","finalize":"","libs":[],"x":940,"y":640,"wires":[["827c7d2009eeb046"]]},{"id":"827c7d2009eeb046","type":"debug","z":"cc28dc90c5cbc3a7","name":"debug 3","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"false","statusVal":"","statusType":"auto","x":1300,"y":640,"wires":[]}]
 {% endrenderFlow %}
+
+While it may seem simple to you, it will require sufficient JavaScript knowledge for all other members involved in your project. Most Node-RED users are creative innovators who prefer developing quick and easy solutions and do not want to spend time learning programming languages.
 
 ## Using Low-Code No-Code approach
 
@@ -102,14 +104,14 @@ Now let's do it with the standard Node-RED low-code approach:
 
 ## Mapping
 
-Mapping often refers to the process of applying a function to each item in a list, array, or other collection to produce a new collection of transformed items. here in our context, we need to modify the property of each object. To perform mapping we will use the Split, Change, and Join nodes. 
+Mapping often refers to the process of applying a function to each item in a list, array, or other collection to produce a new collection of transformed items. here in our context, we need to modify the  property of each object. To perform mapping we will use the Split, Change, and Join nodes. 
 
-1. Drag a Split node onto the canvas, the split node will Split a message into a sequence of messages which will allow us to operate on each message.
-2. Drag a Change node onto the canvas, set the `msg.payload.temperature` to `msg.payload.emperature` and then delete the `msg.payload.emperature` property.\
+1. Drag a Split node onto the canvas, the Split node will Split a message into a sequence of messages which will allow us to operate on each message.
+2. Drag a Change node onto the canvas, set the `msg.payload.temperature` to `msg.payload.emperature`, and then delete the `msg.payload.emperature` property.
 
 !["Screenshot change node correcting the temperature property"](./images/filtering-mapping-sorting-reducing-data-with-node-red-change-node.png "Screenshot change node correcting the temperature property"){data-zoomable}
 
-3. Now Drag the Join node onto the canvas and select the Mode to "manual" and to create "an array" and set the After a number of message parts to 0, this will join all of the messages originating from the split node into an array.
+3. Now Drag the Join node onto the canvas, select the Mode to "manual" and to create to "an array" and set the After a number of message parts to 0, this will join all of the messages originating from the split node into an array.
 
 !["Screenshot join node creating new array by combining message sequnce"](./images/filtering-mapping-sorting-reducing-data-with-node-red-join-node-combining-node.png "Screenshot join node creating new array by combining message sequnce"){data-zoomable}
 
@@ -121,8 +123,8 @@ Mapping often refers to the process of applying a function to each item in a lis
 
 Filtering is the process of selecting specific items from an array to create a new array. In Node-RED, filtering is achieved using mapping and condition-based routing. Now we are familiar with mapping and have done it above so we need to use only one more extra node which is the switch node for condition-based routing.
 
-1. Drag a switch node and place it after the change node and before the join node.
-2. Set the condition to check whether `msg.payload.timestamp` includes '2024-06-17'. it checks this for all the messages and only sends the message further which matches the condition.
+1. Drag a switch node and place it after the Change node and before the Join node.
+2. Set the condition to check whether `msg.payload.timestamp` includes '2024-06-17'. This condition ensures that only messages containing the specified date in their timestamp are sent further.
 
 !["Screenshot switch node filtering data bases on timestamp"](./images/filtering-mapping-sorting-reducing-data-with-node-red-switch-node.png "Screenshot switch node filtering data bases on timestamp"){data-zoomable}
 
@@ -133,10 +135,10 @@ Filtering is the process of selecting specific items from an array to create a n
 ## Sorting 
 
 Sorting, as the name suggests, means arranging items in a specific order. This order can be ascending (smallest to largest), descending (largest to smallest), or based on any defined criteria. In the Node-RED you can sort the numbers, alphabets, arrays, strings, and more.
-To perform sorting,  we have to use the Node-RED Sort Node.
+To perform sorting, we have to use the Node-RED Sort Node.
 
 1. Drag the Sort node on the canvas.
-2. Set the key to timestamp as the JsonAta expression and then the order "ascending". we set the key to a timestamp because we want to sort the data based on the timestamp you can set its temperature if you want to sort based on it.
+2. Set the key to `timestamp` as the JSONata expression and then set the order to 'ascending'. We set the key to timestamp because we want to sort the data based on the timestamp. You can set it to temperature if you want to sort based on that instead.
 
 !["Screenshot of sort node sorting data in ascending order based on timestamp"](./images/filtering-mapping-sorting-reducing-data-with-node-red-sort-node.png "Screenshot of sort node sorting data in ascending order based on timestamp"){data-zoomable}
 
@@ -146,7 +148,7 @@ To perform sorting,  we have to use the Node-RED Sort Node.
 
 ## Reducing 
 
-Reducing refers to the process of combining elements of a data structure (such as an array) into a single value. It involves iterating over the elements of the data structure and applying a combining function repeatedly until all elements have been processed. For example.
+Reducing refers to the process of combining elements of a data structure (such as an array) into a single value. It involves iterating over the elements of the data structure and applying a combining function repeatedly until all elements have been processed.
 
 1. Drag another Split node onto the canvas 
 2. Drag Join another node onto the canvas.
