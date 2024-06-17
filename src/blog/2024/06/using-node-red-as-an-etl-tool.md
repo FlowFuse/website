@@ -1,7 +1,7 @@
 ---
-title: Using Node-RED as an ETL Tool.
-subtitle: A Step-by-Step Guide on How to Use Node-RED as an ETL Tool.
-description: Learn how to utilize Node-RED as an ETL (Extract, Transform, Load) tool, and explore its advantages and disadvantages in this context.
+title: Using Node-RED as an ETL Tool
+subtitle: A Step-by-Step Guide to use Use Node-RED for your industrial ETL Tool.
+description: Learn how to utilize Node-RED as an ETL (Extract, Transform, Load) tool for your data industrial data ops.
 date: 2024-06-05
 authors: ["sumit-shinde"]
 image:
@@ -24,7 +24,7 @@ ETL (Extract, Transform, Load) is essential for integrating and analyzing data, 
 
 ## Node-RED as an ETL tool
 
-Node-RED is specifically used for building various types of IoT applications. During the development of such applications, we sometimes used Node-RED as an ETL is tool without even realizing it. For instance, when monitoring sensors across a facility, the process involves extracting data from sensors, transforming (cleaning and formatting) sensor data, and loading it into a database. There are thousands of other such examples. This demonstrates that Node-RED has already been adopted as an ETL tool at a certain level.
+Node-RED is specifically used for building various types of IoT applications. Data ops workload are part of these use-cases, and are often deployed without thinking of them as DataOps. For instance, when monitoring sensors across a facility, the process involves extracting data from sensors, transforming (cleaning and formatting) sensor data, and loading it into a database. There are thousands of other such examples.
 
 *Note: We have mentioned only a few nodes that can be used in the ETL process, but there are thousands of other nodes that you can explore yourself by visiting the [Node-RED Nodes Library](https://flows.nodered.org/search?type=node)*
 
