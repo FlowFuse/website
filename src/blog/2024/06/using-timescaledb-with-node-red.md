@@ -13,7 +13,7 @@ tags:
    - time-series database
 ---
 
-In the context of IoT and IIoT applications, time series databases are essential for storing data based on timestamps. While InfluxDB has been a popular choice for a long time, another time series database, TimescaleDB, is gaining popularity. This article will cover how to use TimescaleDB with Node-RED, when to choose it over InfluxDB, and important operations and queries needed when building IoT applications.
+In the context of IoT and IIoT applications, time series databases are essential for storing data based on timestamps. While InfluxDB has been a popular choice for a long time, another time series database, TimescaleDB, is gaining popularity. This article will cover how to use TimescaleDB with Node-RED, how TimescaleDB works, and the queries needed when building IoT applications.
 
 If you prefer video tutorials, a few months ago, Gray, OT Data & Community Strategist at Flowfuse, conducted a [live session on TimescaleDB](https://www.youtube.com/watch?v=MD1U6LDqJ1c).
 
@@ -21,29 +21,9 @@ If you prefer video tutorials, a few months ago, Gray, OT Data & Community Strat
 
 ## What is TimeScaleDB
 
-TimescaleDB is a time-series database built on PostgreSQL for handling large time-stamped data efficiently. It's optimized for time-series data, which offers automatic partitioning, optimized indexing, compression, and advanced analytics like continuous aggregates. Unlike PostgreSQL, it focuses specifically on time-series data management with distributed hypertable architecture.
+TimescaleDB is a time-series database built on PostgreSQL for efficiently handling large volumes of event data. This means that a TimescaleDB runs within an overall PostgreSQL instance which enables it to take advantage of many of the attributes of PostgreSQL such as reliability, security, and connectivity to a wide range of third-party tools. 
 
-## TimescaleDB Vs InfluxDB
-
-When it comes to time-series databases, there are many options available. However, InfluxDB and TimescaleDB stand out for their specific strengths and features. But understanding when to choose InfluxDB or TimescaleDB is essential for optimizing your application's performance and capabilities. Here’s a comparison to help guide your decision:
-
-| **Feature** | **TimescaleDB** | **InfluxDB** |
-|-----------------------------|-----------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------|
-| **Data Model** | Flexible relational model with full SQL support. Ideal for complex schema and rich querying capabilities.       | Simple tagset model, suitable for applications with simpler data structures.                                    |
-| **Indexing** | Offers primary, secondary, and custom indexes, enhancing query performance.                                    | Relies on tagset indexing, which may lack efficiency for complex queries.                                       |
-| **Schema Flexibility** | Supports complex schema definitions, enabling detailed data modeling and normalization via SQL.               | Schemaless appearance, making it easy to start with simple datasets but less suited for complex data models.     |
-| **Metadata Handling** | Flexible storage and querying of metadata due to its relational nature. Simplifies managing rich metadata.     | Handles metadata within the tagset, potentially limiting the complexity of stored metadata.                     |
-| **Query Language** | Full SQL support enables complex queries, JOINs, and extensive PostgreSQL integration.                         | InfluxQL and Flux; InfluxQL is SQL-like but less powerful, Flux offers flexibility but requires learning.       |
-| **Third-Party Tools** | Compatible with various third-party tools, leveraging PostgreSQL's foundation for broader integration.         | A limited ecosystem of third-party tools may restrict integration options for certain applications.               |
-| **Complex Query Performance.** | Excels in handling complex queries and high-cardinality datasets, suitable for analytics and reporting.        | Better suited for simpler queries, may struggle with performance on complex or high-cardinality datasets  |
-| **Insert Performance** | Efficient with high-cardinality data, managing large unique values effectively.                                | Efficient with low-cardinality data, but may encounter performance issues with high-cardinality datasets. |
-| **Read Latency** | Faster read performance for complex and high-cardinality queries due to advanced indexing and optimization.   | Offers faster read performance for simple queries, but may lag with more complex operations.                   |
-| **Reliability** | Built on reliable and mature PostgreSQL infrastructure, benefiting from stability and extensive features.     | Custom implementation may lack some robustness found in established databases.                                  |
-| **High Availability** | Supports mature high-availability solutions for robust failover and replication in enterprise-grade apps.     | Offers clustering and high availability but TimescaleDB provides more robust solutions for enterprise needs.     |
-| **Scalability & HA** | Multi-node clustering, read replicas, automated high availability with multi-AZ deployments.                  | Clustering and high availability are offered, but TimescaleDB provides more robust solutions for enterprise use.   |
-| **Geospatial Support** | Supports geospatial and vector data types, ideal for geographical analysis and machine learning.              | Focused primarily on time-series data, lacking native support for advanced data types.                         |
-| **Disk Usage** | Effective compression with lower memory usage, narrowing storage gap at higher cardinalities.                 | Achieves better compression ratios with column-oriented structure, especially at lower cardinalities.           |
-| **CPU Usage** | 10x better resource utilization according to DNSFilter comparison, even with 30% higher requests.            | Higher CPU usage compared to TimescaleDB.                                                                     |
+Unlike PostgreSQL, TimescaleDB uses a distributed hypertable architecture, which consists of standard PostgreSQL tables that automatically partition your data by time. You interact with hypertables in the same way as regular PostgreSQL tables, but with extra features that make managing your time-series data much easier. Each hypertable consists of multiple PostgreSQL table chunks. Each chunk is assigned a range of time and only contains data from that range. 
 
 ## Setting up TimescaleDB environment
 
@@ -89,7 +69,7 @@ Before proceeding further make sure you have added environment variables for you
 
 ### Creating Hypertables
 
-Hypertables are PostgreSQL tables that automatically partition your data by time. To create one, start with creating a standard PostgreSQL table and convert it into a Hypertable.
+To create one, start with creating a standard PostgreSQL table and convert it into a Hypertable.
 
 1. Insert the following SQL commands into the PostgreSQL node's query field.
 
