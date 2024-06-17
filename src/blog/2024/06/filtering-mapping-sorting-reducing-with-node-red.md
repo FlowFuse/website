@@ -29,7 +29,7 @@ Low-code is a software development approach that requires little to no coding to
 
 > Low-code is not just about accelerating development; it’s about democratizing it. It’s about giving more people the ability to create solutions to business problems.
 >
-> *— Charles Lamanna, Corporate Vice President of Business Applications & Platforms at Microsoft*
+> *— Unknwon*
 
 For more details refer to the following guides:
 
