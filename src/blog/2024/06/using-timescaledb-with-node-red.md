@@ -23,6 +23,8 @@ If you prefer video tutorials, a few months ago, Gray, OT Data & Community Strat
 
 TimescaleDB is a time-series database built on PostgreSQL for efficiently handling large volumes of event data. This means that a TimescaleDB runs within an overall PostgreSQL instance which enables it to take advantage of many of the attributes of PostgreSQL such as reliability, security, and connectivity to a wide range of third-party tools. 
 
+!["Image displaying regular postgreSQL table and TimescaleDB hypertable"](./images/timescaledb-with-node-red-hypertables.png "Image displaying regular postgreSQL table and TimescaleDB hypertable"){data-zoomable}
+
 Unlike PostgreSQL, TimescaleDB uses a distributed hypertable architecture, which consists of standard PostgreSQL tables that automatically partition your data by time. You interact with hypertables in the same way as regular PostgreSQL tables, but with extra features that make managing your time-series data much easier. Each hypertable consists of multiple PostgreSQL table chunks. Each chunk is assigned a range of time and only contains data from that range. 
 
 ## Setting up TimescaleDB environment
