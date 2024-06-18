@@ -1,20 +1,15 @@
 ---
-title: How to connect a barcode scanner to your Node-RED application
-subtitle: A guide to connecting a barcode scanner to Node-RED.
-description: Learn to seamlessly connect a barcode scanner to Node-RED for efficient data capture and automation
-date: 2024-01-24
-authors: ["grey-dziuba"]
-image: /blog/2024/01/images/barcode-scanner.png
-tags:
-    - posts
-    - flowfuse
-    - how-to
-    - barcode scanner
+eleventyNavigation:
+  key: "Barcode Scanner"
+  parent: "Peripheral Devices"
+meta:
+   title: How to connect a barcode scanner to your Node-RED application
+   description: Learn to seamlessly connect a barcode scanner to Node-RED for efficient data capture and automation.
+   keywords: node-red, flowfuse, barcodescanner
+image: /node-red/peripheral/images/barcode-scanner.png
 ---
 
 Barcode scanners, functioning as Human Interface Devices (HID) similar to keyboards, offer versatile programming options.  Variations of barcode scanners can be seen used from anything from checkout counters, logistics, and to manufacturing erp systems. In our case, we kept it basic and we used one to trigger a Node-RED flow, keeping the process straightforward and efficient.  Don't let that limit your imagination though, with QR codes, you can store just about anything including recipes in a JSON structure.
-
-<!--more-->
 
 ## Configuring the scanner and scanning barcodes
 
@@ -37,7 +32,3 @@ You could even take it a step further and create a [QR code](https://smalldev.to
 ## Linux Setup
 
 Linux users might face a slightly more complicated setup, as access to communication ports isn't always granted by default, and specific drivers are needed for optimal node functionality. This is due to the security around applications having access to specific devices connected to the system. For this, we recommend following the detailed instructions available in the project's [GitHub](https://github.com/gdziuba/node-red-contrib-usbhid) repository.
-
-## Conclusion
-
-At first this project seemed like it was going to be overly complicated, but after updating the node, it became incredibly easy. The way Node-RED is supposed to make it. Simple.
