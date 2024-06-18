@@ -17,4 +17,5 @@ With the `2.5.0` release of the Device Agent, we now support running the Device 
 
 Support comes using the industry standard set of `http_proxy` environment variables - familiar to anyone running services behind a proxy.
 
-Full details are available in [http proxy documentation](https://flowfuse.com/docs/device-agent/running/#running-behind-a-http-proxy).
+Full details are available in our [http proxy documentation](https://flowfuse.com/docs/device-agent/running/#running-behind-a-http-proxy).
+
