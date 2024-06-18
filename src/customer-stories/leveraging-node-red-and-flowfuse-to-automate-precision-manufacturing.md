@@ -1,5 +1,6 @@
 ---
 title: Revolutionizing Precision Manufacturing with Node-RED
+description: Read how Abrasive Technology leverages FlowFuse and Node-RED to revolutionize precision manufacturing, enhancing automation and communication efficiency in the industry.
 image: /images/stories/abrasive_tech.jpg
 date: 2024-02-28
 logo:

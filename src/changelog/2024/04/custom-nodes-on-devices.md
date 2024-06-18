@@ -1,5 +1,6 @@
 ---
 title: Custom Nodes Support on Devices
+description: FlowFuse now provides support for configuring Node-RED devices with custom node catalogues, enabling access to private node repositories across your device fleet.
 date: 2024-04-11 12:01:01.0
 authors: ["nick-oleary"]
 tags:

@@ -1,5 +1,6 @@
 ---
 title: Managing Team Membership via SSO
+description: "Enhance Team Membership Management via SSO: Update roles in FlowFuse with providers such as Okta and Microsoft Entra, ensuring streamlined access control."
 date: 2024-01-17 13:00:00.0
 authors: ["nick-oleary"]
 tags:

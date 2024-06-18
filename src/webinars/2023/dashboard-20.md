@@ -1,6 +1,7 @@
 ---
 title: "Dashboard 2.0 - Where we are, and what’s next?"
 subtitle: Join FlowFuse's Joe Pavitt to learn about FlowFuse's current development work to update Node-RED Dashboard project.
+description: Join FlowFuse's Joe Pavitt in a webinar to explore the latest updates on Node-RED Dashboard 2.0. Learn about current development progress, future plans, and participate in an open discussion.
 image: /images/webinars/dashboard-2-0-where-we-are-and-whats-next-webinar-october.jpg
 
 date: 2023-10-26

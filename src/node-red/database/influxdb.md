@@ -1,17 +1,19 @@
 ---
-title: Send data from your Node-RED flows into InfluxDB
-subtitle: A Guide to Connecting InfluxDB with Node-RED
-description: Node-RED has great support for InfluxDB, in this guide we'll explain how to get your data flowing into one of the most popular time-series database.
-date: 2023-07-11
-authors: ["rob-marcer"]
-image: blog/2023/07/images/node-red-influxdb.png
+eleventyNavigation:
+  key: InfluxDB
+  parent: Database
+meta:
+  title: Using InfluxDB with Node-RED
+  description: Node-RED has great support for InfluxDB. In this guide, we'll explain how to get your data flowing into one of the most popular time-series databases.
+  keywords: node-red, databases, integration, influxdb, time-series database
+image: /node-red/core-nodes/images/node-red-influxdb.png
 ---
+
+# {{ meta.title }}
 
 InfluxDB is a time series database that is commonly used for storing and analysing IoT data. Node-RED is a visual programming tool that makes it easy to connect different data sources and create flows that automate tasks.
 
-<!--more-->
-
-In this blog article, we will show you how to write data to InfluxDB from a Node-RED flow. We will also provide you with a few tips for writing data to InfluxDB effectively.
+In this documentation, we will show you how to write data to InfluxDB from a Node-RED flow. We will also provide you with a few tips for writing data to InfluxDB effectively.
 
 ## Step 1: Install the InfluxDB Node-RED package
 
@@ -34,7 +36,6 @@ We can now configure the database.
 - Measurement (table) name.
 
 ![configuring the influxdb node step 2](./images/config-database.png "configuring the influxdb node step 2")
-
 
 ## Step 3: Create a data point
 
@@ -97,7 +98,3 @@ Great, our data has arrived correctly and is ready to be used.
 1. Set the correct tags and fields. Tags are used to identify the data points, while fields are used to store the actual data values. It is important to set the correct tags and fields for your data so that you can easily query and analyse it later.
 1. Set the correct timestamp. The timestamp is the time at which the data point was recorded. It is important to set the correct timestamp so that you can track the evolution of your data over time.
 1. Use the correct precision. The precision is the number of decimal places that are stored for each data value. It is important to use the correct precision so that your data is easy to use.
-
-## Conclusion
-
-In this blog article, we showed you how to write data to InfluxDB from a Node-RED flow. We also provided you with a few tips for writing data to InfluxDB effectively. If you'd like to learn more about using InfluxDB with Node-RED, checkout the [webinar](https://www.influxdata.com/resources/build-an-edge-to-cloud-solution-with-the-ming-stack/) we created with InfluxData.

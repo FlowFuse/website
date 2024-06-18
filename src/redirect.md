@@ -49,6 +49,12 @@ redirects:
   - { "from": "/features/", "to": "/product/features/" }
   - { "from": "/node-red/core-nodes/rbe/", "to": "/node-red/core-nodes/filter/" }
   - { "from": "/webinars/2024/deploy-flowfuse-on-industrial-iiot-with-ncd-io/", "to": "/webinars/2024/deploy-flowfuse-on-industrial-iot-with-ncd-io/" }
+  - { "from": "/blog/2024/02/postgresql-with-node-red/", "to": "/node-red/database/postgresql/" }
+  - { "from": "/blog/2024/04/using-mongodb-with-node-red/", "to": "/node-red/database/mongodb/" }
+  - { "from": "/blog/2024/04/integrate-dynamodb-with-node-red/", "to": "/node-red/database/dynamodb/" }
+  - { "from": "/blog/2023/07/connect-node-red-to-influxdb/", "to": "/node-red/database/influxdb/" }
+  - { "from": "/blog/2023/09/dashboard-chart-for-rest-api-data/", "to": "/node-red/integration-technologies/rest" }
+  - { "from": "/blog/2024/04/using-webhook-with-node-red/", "to": "/node-red/integration-technologies/webhook/" }
   - { "from": "/blog/2023/07/how-to-build-a-secure-opc-ua-server-for-plcs-in-node-red/", "to": "/node-red/protocol/opa-ua/" }
   - { "from": "/blog/2023/06/connect-to-hivemq-in-flowforge/", "to": "/node-red/protocol/mqtt/" }
   - { "from": "/blog/2023/11/raspberry-pi-5-flowfuse-edge-agent/", "to": "/node-red/hardware/raspberry-pi-5/" }
@@ -57,6 +63,7 @@ redirects:
   - { "from": "/blog/2024/04/how-to-send-and-receive-emails-using-node-red/", "to": "/node-red/notification/email/" }
   - { "from": "/blog/2024/01/barcode-scanner-into-nodered/", "to": "/node-red/peripheral/barcodescanner/" }
   - { "from": "/blog/2024/03/using_webcam_with_node-red/", "to": "/node-red/peripheral/webcam/" }
+  - { "from": "/blog/2023/05/visualize-production-data-via-modbus-in-node-red/", "to": "/node-red/protocol/modbus/" }
 
 # The "permalink" attribute determines where the output page will be located.
 permalink: "{{ redirect.from }}"

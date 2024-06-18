@@ -1,5 +1,6 @@
 ---
 title: Configure HTTP Payload and Debug Message size
+description: Introducing new FlowFuse configuration option control over HTTP request sizes and debug messages.
 date: 2024-03-22 09:00:00.0
 authors: ["marian-demme"]
 tags:

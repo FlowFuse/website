@@ -4,7 +4,7 @@ layout: layouts/base.njk
 
 <div class="w-full page webinar">
     {% if title %}
-        <div class="webinar-title container m-auto text-center px-6 flex mt-6 mb-6 md:max-w-screen-lg md:mt-12">
+        <div class="webinar-title container m-auto text-center max-lg:px-6 flex mt-6 mb-6 md:max-w-screen-lg md:mt-12">
             <div class="text-left md:pr-32">
                 <label>Webinar</label>
                 <h1>{{ title }}</h1>
@@ -20,7 +20,7 @@ layout: layouts/base.njk
         </div>
     {% endif %}
     <div class="blog nohero w-full pt-6 pb-24">
-        <div class="container flex flex-col md:flex-row m-auto text-left px-6 md:max-w-screen-lg gap-8">
+        <div class="container flex flex-col md:flex-row m-auto text-left max-lg:px-6 md:max-w-screen-lg gap-8">
             <div>
                 <a class="mb-4 inline-flex align-center gap-1" href="/webinars/">
                     {% include "components/icons/chevron-left.svg" %}
@@ -33,7 +33,7 @@ layout: layouts/base.njk
                     {{ content | safe }}
                 </div>
             </div>
-            <div class="w-96 max-w-full">
+            <div class="w-72 max-w-full">
                 {% if date | dateInFuture %}
                     <div class="mt-6 flex flex-col">
                         <h3 class="mb-3">Register Here:</h3>

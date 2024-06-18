@@ -1,5 +1,5 @@
 ---
-title: Building a foundation for Enterprise Agility and Process Optimization
+title: Building a Foundation for Enterprise Agility and Process Optimization
 subtitle: Unlock innovation and efficiency with low-code platforms.
 description: Join our webinar on June 26, 2024, as Grey Dziuba explores how low-code platforms empower enterprises to overcome digital challenges by combining domain expertise with user-friendly development tools.
 image: /images/webinars/building-a-foundation-for-enterprise-agility-and-process-optimization.jpg
