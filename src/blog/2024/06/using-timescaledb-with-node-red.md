@@ -15,7 +15,7 @@ tags:
 
 In the context of IoT and IIoT applications, time series databases are essential for storing data based on timestamps. While InfluxDB has been a popular choice for a long time, another time series database, TimescaleDB, is gaining popularity. This article will cover how to use TimescaleDB with Node-RED, how TimescaleDB works, and the queries needed when building IoT applications.
 
-If you prefer video tutorials, a few months ago, Gray, OT Data & Community Strategist at Flowfuse, conducted a [live session on TimescaleDB](https://www.youtube.com/watch?v=MD1U6LDqJ1c).
+If you prefer video tutorials, a few months ago, Grey, OT Data & Community Strategist at Flowfuse, conducted a [live session on TimescaleDB](https://www.youtube.com/watch?v=MD1U6LDqJ1c).
 
 <!--more-->
 
@@ -57,7 +57,7 @@ Since TimescaleDB is built on top of PostgreSQL, we can use the PostgreSQL node.
 
 ### Configuring PostgreSQL node with TimescaleDB configurations
 
-Before proceeding further make sure you have added environment variables for your TimescaleDB configuration details, for more information refer to [Using environment variables with Node-RED](/blog/2023/01/environment-variables-in-node-red/).
+Before proceeding, make sure you have added environment variables for your TimescaleDB configuration details. For more information, refer to [Using environment variables with Node-RED](/blog/2023/01/environment-variables-in-node-red/).
 
 1. Drag a PostgreSQL node onto the canvas and double-click on it.
 2. Click on the edit icon next to the Server input field to add configuration details in the PostgreSQL config node.
