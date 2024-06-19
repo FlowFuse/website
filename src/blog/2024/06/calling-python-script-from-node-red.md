@@ -1,7 +1,7 @@
 ---
-title: Calling Python script from Node-RED
-subtitle: Guite on how to execute Python scripts from Node-RED
-description: Learn How to seamlessly execute python script from Node-RED.
+title: Calling a Python script from Node-RED
+subtitle: Guide on how to execute Python scripts from Node-RED
+description: Learn how to seamlessly execute python script from Node-RED.
 date: 2024-06-21
 authors: ["sumit-shinde"]
 image: 
@@ -16,7 +16,7 @@ Have you ever needed to execute Python scripts from Node-RED? If so, this compre
 
 <!--more-->
 
-## Why people use python with Node-RED
+## Why use python with Node-RED
 
 Node-RED is a powerful visual programming tool used for building IoT applications. It is built on Node.js, which meets IoT application needs with its asynchronous operations and event-driven, non-blocking architecture. Javascript on which Node.js is built and the Node-RED supports can handle a wide range of tasks, However, Python excels in specific areas such as complex computations and machine learning due to its extensive set of libraries.
 
@@ -24,7 +24,7 @@ Many users choose to integrate Python with Node-RED to leverage these strengths.
 
 ## Installing Python
 
-When executing Python scripts, it's essential to have the Python runtime installed on your system. However, if you've installed Node-RED using npm, Python is typically have already installed on your system. This is because Python is a prerequisite for npm to build native modules.
+When executing Python scripts, it's essential to have the Python runtime installed on your system. Since Python is a prerequisite for npm, you might already have it installed if you installed Node-RED via npm 
 
 To verify if Python is installed, open your terminal and execute:
 
@@ -44,7 +44,7 @@ The specific command to use depends on how Python was installed and configured o
 
 ## Executing Python Script from Node-RED
 
-Let's learn how to call a Python script from Node-RED. First, we'll create a basic script file that contains a function to print text in the console based on input. Currently, the function uses hardcoded input. To create this file using Node-RED, import the following flow, deploy it and press the inject button:
+Let's now see how to call a Python script from Node-RED. First, we'll create a basic script file that contains a function to print text in the console based on input. Currently, the function uses hardcoded input. To create this file using Node-RED, import the following flow, deploy it and press the inject button:
 
 {% renderFlow %}
 [{"id":"b9d7d6aff0016631","type":"inject","z":"FFF0000000000001","name":"","props":[{"p":"payload"},{"p":"topic","vt":"str"}],"repeat":"","crontab":"","once":false,"onceDelay":0.1,"topic":"","payload":"","payloadType":"date","x":240,"y":100,"wires":[["2e1daccf2a7b3d0f"]]},{"id":"d2d1450deaa588f4","type":"file","z":"FFF0000000000001","name":"","filename":".\\example.py","filenameType":"str","appendNewline":true,"createDir":false,"overwriteFile":"true","encoding":"none","x":570,"y":100,"wires":[["e140a8508fb10d96"]]},{"id":"e140a8508fb10d96","type":"debug","z":"FFF0000000000001","name":"debug 1","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"false","statusVal":"","statusType":"auto","x":760,"y":100,"wires":[]},{"id":"2e1daccf2a7b3d0f","type":"template","z":"FFF0000000000001","name":"","field":"payload","fieldType":"msg","format":"handlebars","syntax":"mustache","template":"def main():\n    # Hardcoded value\n    user_input = 20  \n    \n    # Check if the input is numeric\n    if isinstance(user_input, int) or (isinstance(user_input, str) and user_input.isdigit()):\n        number = int(user_input) if isinstance(user_input, str) else user_input\n        \n        # Conditionally render based on the input value\n        if number < 0:\n            print(\"Negative number entered\")\n        elif number == 0:\n            print(\"Zero entered\")\n        else:\n            print(\"Positive number entered\")\n    else:\n        print(\"Invalid input. Please enter a valid number.\")\n\nif __name__ == \"__main__\":\n    main()\n","output":"str","x":400,"y":100,"wires":[["d2d1450deaa588f4"]]}]
@@ -68,9 +68,9 @@ Now, when you deploy this flow and click on the inject node to execute the file,
 
 ## Reading Temperature Sensor using Python script
 
-Now that we've covered how to execute a Python script from Node-RED with a simple example, let's dive into a more practical demonstration where we read sensor data using Python. While Node-RED has a wide range of community nodes that allow reading different sensors, for better demonstration this example is great so we will use Python for this purpose.
+Having explored how to run a Python script within Node-RED with the basic practical example, let's move to a real-world scenario. We'll demonstrate how to read sensor data using Python, despite Node-RED providing numerous community-built nodes for this purpose. This approach provides deeper insights into integrating external scripts, showcasing the flexibility of Node-RED for custom solutions.
 
-Before proceeding, ensure that Node-RED is running on a device connected to a temperature sensor. For detailed instructions, refer to [Setting Up Node-RED on Different Hardware](/node-red/hardware/), In my case, I am running Node-RED on a Raspberry Pi 5 with a DHT11 sensor connected to it.
+Before proceeding, ensure that Node-RED is running on a device connected to a temperature sensor. For detailed instructions, refer to [Setting Up Node-RED on Different Hardware](/node-red/hardware/), In this case, we ae running Node-RED on a Raspberry Pi 5 with a DHT11 sensor connected to it.
 
 1. Drag an Inject node onto the canvas, and set repeat to 1 seconds of interval.
 2. Drag an Exec node and set the path to `python <filename>.py`, replace the filename with the name of the file which reads the sensor data, and make sure the python file doesn't contain the loop.
@@ -78,7 +78,7 @@ Before proceeding, ensure that Node-RED is running on a device connected to a te
 4. Drag the Debug node onto the canvas.
 5. Connect the output of the Inject node to the input of the Exec node and output of the Exec node to the input of the JSON node, and finally the JSON node's output to the input of the Debug node.
 
-I have given the complete flow which creates the Python file to read the DHT11 sensor and executes that file after 1 second of interval. After deploying the flow you should able to see the sensor data on the debug sidebar as shown in the below image.
+Below is the complete flow which creates the Python file to read the DHT11 sensor and executes that file after 1 second of interval. After deploying the flow you should able to see the sensor data on the debug sidebar as shown in the below image.
 
 !["Image showing the Node-RED flow executing the python script that reads the sensor data"](./images/calling-python-scrpt-from-node-red-output.gif "Image showing the Node-RED flow executing the python script that reads the sensor data"){data-zoomable}
 
