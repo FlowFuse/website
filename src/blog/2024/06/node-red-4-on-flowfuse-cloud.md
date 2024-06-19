@@ -54,5 +54,5 @@ There are of course many other great reasons to start using Node-RED 4.0. The [c
 
 Node-RED 4.0 is available on FlowFuse Cloud right now. You can spin up a new instance, or upgrade any of your existing instances via the options under the Instance Settings page.
 
-If you haven't signed up yet, you can [get started with a two-week free trial](({{ site.appURL }}/account/create)) and see Node-RED 4.0 in action today on FlowFuse Cloud.
+If you haven't signed up yet, you can [get started with a two-week free trial]({{ site.appURL }}/account/create) and see Node-RED 4.0 in action today on FlowFuse Cloud.
 
