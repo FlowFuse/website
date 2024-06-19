@@ -57,8 +57,8 @@ Now, let's execute this Python script from Node-RED. To do that, we will use Nod
 
 !["Screenshot of the Exec node executing python file"](./images/calling-python-scrpt-from-node-red-exec-node.png "Screenshot of the Exec node executing python file"){data-zoomable}
 
-3. Drag an Debug node onto the canvas.
-4. Connect the output of the Inject node to input of Exec node, and output of Exec node to input of Debug node.
+3. Drag a Debug node onto the canvas.
+4. Connect the output of the Inject node to the input of the Exec node, and the output of the Exec node to the input of Debug node.
 
 {% renderFlow %}
 [{"id":"2e26b84c0ce17312","type":"exec","z":"FFF0000000000001","command":"python ./example.py -u","addpay":"","append":"","useSpawn":"false","timer":"","winHide":false,"oldrc":false,"name":"","x":460,"y":300,"wires":[["89589c56117004e0"],["7fdb901b144749c2"],["3f49b49308941782"]]},{"id":"739e08c1ec77c2a1","type":"inject","z":"FFF0000000000001","name":"","props":[{"p":"payload"},{"p":"topic","vt":"str"}],"repeat":"","crontab":"","once":false,"onceDelay":0.1,"topic":"","payload":"","payloadType":"date","x":240,"y":300,"wires":[["2e26b84c0ce17312"]]},{"id":"89589c56117004e0","type":"debug","z":"FFF0000000000001","name":"Output","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"payload","targetType":"msg","statusVal":"","statusType":"auto","x":690,"y":260,"wires":[]},{"id":"7fdb901b144749c2","type":"debug","z":"FFF0000000000001","name":"Error","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"payload","targetType":"msg","statusVal":"","statusType":"auto","x":690,"y":300,"wires":[]},{"id":"3f49b49308941782","type":"debug","z":"FFF0000000000001","name":"Return code","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"payload","targetType":"msg","statusVal":"","statusType":"auto","x":710,"y":340,"wires":[]}]
@@ -73,7 +73,7 @@ Now that we've covered how to execute a Python script from Node-RED with a simpl
 Before proceeding, ensure that Node-RED is running on a device connected to a temperature sensor. For detailed instructions, refer to [Setting Up Node-RED on Different Hardware](/node-red/hardware/), In my case, I am running Node-RED on a Raspberry Pi 5 with a DHT11 sensor connected to it.
 
 1. Drag an Inject node onto the canvas, and set repeat to 1 seconds of interval.
-2. Drag an Exec node and set the path to `python <filename>.py`, replace the filename with the name of the file which reads the sensor data, make sure the python file doesn't contain the loop.
+2. Drag an Exec node and set the path to `python <filename>.py`, replace the filename with the name of the file which reads the sensor data, and make sure the python file doesn't contain the loop.
 3. Drag the JSON node onto the canvas and set the action to "Always convert to JSON object".
 4. Drag the Debug node onto the canvas.
 5. Connect the output of the Inject node to the input of the Exec node and output of the Exec node to the input of the JSON node, and finally the JSON node's output to the input of the Debug node.
@@ -101,7 +101,7 @@ Now, let's revisit our first example. In that example, we executed a simple Pyth
 3. Now Drag the Debug node onto the canvas.
 4. Connect the output of the Inject node to the input of the Exec node, and the output of the Exec node to the input of the Debug node.
 
-If you examine the Python file we've created, you'll notice the use of the 'sys' module, which allows us to read command-line arguments. In our context, we execute the command `python ./example.py -30`. By accessing `sys.argv[1]`, we retrieve the argument -30. The index 1 is used because `sys.argv[0]` provides the filename of the script being executed. Additionally, Python supports passing multiple arguments, so that you can pass as many argument as you want.
+If you examine the Python file we've created, you'll notice the use of the 'sys' module, which allows us to read command-line arguments. In our context, we execute the command `python ./example.py -30`. By accessing `sys.argv[1]`, we retrieve the argument -30. The index 1 is used because `sys.argv[0]` provides the filename of the script being executed. Additionally, Python supports passing multiple arguments, so that you can pass as many arguments as you want.
 
 {% renderFlow %}
 [{"id":"2e26b84c0ce17312","type":"exec","z":"FFF0000000000001","command":"python -u ./example.py  -30","addpay":"","append":"","useSpawn":"false","timer":"","winHide":false,"oldrc":false,"name":"","x":520,"y":580,"wires":[["89589c56117004e0"],["7fdb901b144749c2"],["3f49b49308941782"]]},{"id":"739e08c1ec77c2a1","type":"inject","z":"FFF0000000000001","name":"","props":[{"p":"payload"}],"repeat":"","crontab":"","once":false,"onceDelay":0.1,"topic":"","payload":"","payloadType":"date","x":280,"y":580,"wires":[["2e26b84c0ce17312"]]},{"id":"89589c56117004e0","type":"debug","z":"FFF0000000000001","name":"Output","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"payload","targetType":"msg","statusVal":"","statusType":"auto","x":730,"y":540,"wires":[]},{"id":"7fdb901b144749c2","type":"debug","z":"FFF0000000000001","name":"Error","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"payload","targetType":"msg","statusVal":"","statusType":"auto","x":730,"y":580,"wires":[]},{"id":"3f49b49308941782","type":"debug","z":"FFF0000000000001","name":"Return code","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"payload","targetType":"msg","statusVal":"","statusType":"auto","x":750,"y":620,"wires":[]}]
