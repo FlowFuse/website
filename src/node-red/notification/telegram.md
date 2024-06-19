@@ -1,6 +1,6 @@
 ---
 eleventyNavigation:
-  key: Teligram
+  key: Telegram
   parent: "Notification Services"
 meta:
    title: Sending and receiving Telegram messages with Node-RED
