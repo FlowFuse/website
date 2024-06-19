@@ -14,10 +14,10 @@ tags:
    - sorting
    - mapping 
    - reducing
-   - data tranformation
+   - data transformation
 ---
    
-[Node-RED](/node-red/) is a visual programming platform known for its user-friendly interface and low-code approach, that allows developers to spend more time developing solutions instead of dealing with technical complexities. However, users can sometimes make applications developed with Node-RED complex and hard to maintain when they are not familiar with its basics. Understanding Node-RED basics helps keep flows low-coded.
+[Node-RED](/node-red/) is a visual programming platform known for its user-friendly interface and low-code approach, that allows developers to spend more time developing solutions instead of dealing with technical complexities. However, users can sometimes make applications developed with Node-RED complex and hard to maintain when they are not familiar with its basics. Understanding Node-RED basics helps keep flows low-coded which helps keep your projects simple and easy to understand. This enables more team members to contribute ideas and develop effective solutions for business problems.
 
 <!--more-->
 
