@@ -1,6 +1,6 @@
 ---
 title: How to Filter, Map, Sort, and Reduce Data in Node-RED
-subtitle: Step-by-step guide on how to perform filtering, mapping, sorting and reducing in Node-RED.
+subtitle: Step-by-step guide to use the most common data transformation operations like filtering, mapping, sorting and reducing in Node-RED.
 description: Learn how to perform data transformation in Node-RED with a low-code approach.
 date: 2024-06-19
 authors: ["sumit-shinde"]
@@ -31,7 +31,7 @@ Low-code is a software development approach that requires little to no coding to
 >
 > *— Charles Lamanna, Corporate Vice President of Business Applications & Platforms at Microsoft*
 
-For more details refer to the following guides:
+For more details refer to the following articles:
 
 - [Why Low-Code is Better](/blog/2024/03/low-code-is-better/).
 - [Why you need a low-code platform](/blog/2024/05/why-you-need-a-low-code-platform/).
@@ -98,9 +98,6 @@ However, you noticed that the property 'emperature' is missing the 't'; it shoul
 
 While it may seem simple to you, it will require sufficient JavaScript knowledge for all other members involved in your project. Most Node-RED users are creative innovators who prefer developing quick and easy solutions and do not want to spend time learning programming languages.
 
-## Using Low-Code No-Code approach
-
-Now let's do it with the standard Node-RED low-code approach:
 
 ## Mapping
 
