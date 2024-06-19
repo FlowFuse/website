@@ -1,6 +1,6 @@
 ---
 title: Calling Python script from Node-RED
-subtitle: Guite on how to execute python scripts from Node-RED
+subtitle: Guite on how to execute Python scripts from Node-RED
 description: Learn How to seamlessly execute python script from Node-RED.
 date: 2024-06-21
 authors: ["sumit-shinde"]
@@ -18,9 +18,9 @@ Have you ever needed to execute Python scripts from Node-RED? If so, this compre
 
 ## Why people use python with Node-RED
 
-Node-RED is a powerful visual programming tool used for building IoT applications. It is built on Node.js, which meets IoT application needs with its asynchronous operations and event-driven, non-blocking architecture. Javascript on which Node.js built and the Node-RED supports can handle a wide range of tasks, But Python standout in specific areas like data processing and machine learning due to its extensive set of libraries.
+Node-RED is a powerful visual programming tool used for building IoT applications. It is built on Node.js, which meets IoT application needs with its asynchronous operations and event-driven, non-blocking architecture. Javascript on which Node.js is built and the Node-RED supports can handle a wide range of tasks, However, Python excels in specific areas such as complex computations and machine learning due to its extensive set of libraries.
 
-Many users choose to integrate Python with Node-RED to leverage these strengths. Python's libraries make it ideal for tasks such as complex data analytics, AI model integration, and interfacing with machine learning frameworks. By using Node-RED and Python's together, developers can create advanced IoT solutions that can handle data processing and analysis effectively.
+Many users choose to integrate Python with Node-RED to leverage these strengths. By using Node-RED and Python together,  developers can create advanced IoT solutions that excel in computational tasks and analysis effectively.
 
 ## Installing Python
 
@@ -34,13 +34,13 @@ python --version
 
 !["Screenshot of terminal showing the python version installed, conforming it is installed"](./images/calling-python-script-from-node-red-py-conformation.png "Screenshot of terminal showing the python version installed, conforming it is installed"){data-zoomable}
 
-Above command displays the version of Python installed on your system as shown in the above image. If above command doesn't work, try:
+The above command displays the version of Python installed on your system as shown in the above image. If the above command doesn't work, try:
 
 ```bash
 python3 --version
 ```
 
-The specific command to use depends on how Python was installed and configured on your system. However, make sure to use `python <filename>.py` if first command works, or `python3 <filename>.py` if second command works, while executing Python scripts.
+The specific command to use depends on how Python was installed and configured on your system. However, make sure to use `python <filename>.py` if the first command works, or `python3 <filename>.py` if the second command works, while executing Python scripts.
 
 ## Executing Python Script from Node-RED
 
@@ -68,21 +68,21 @@ Now, when you deploy this flow and click on the inject node to execute the file,
 
 ## Reading Temperature Sensor using Python script
 
-Now that we've covered how to execute a Python script from Node-RED with a simple example, let's dive into a more practical demonstration where we read sensor data using Python. While Node-RED has wide range of community nodes that allows reading diffrent sensors, but for better demostration this example is great so we will use python for this purpose.
+Now that we've covered how to execute a Python script from Node-RED with a simple example, let's dive into a more practical demonstration where we read sensor data using Python. While Node-RED has a wide range of community nodes that allow reading different sensors, for better demonstration this example is great so we will use Python for this purpose.
 
-Before proceeding, ensure that Node-RED is running on a device connected to a temperature sensor. For detailed instructions, refer to [Setting Up Node-RED on Different Hardware](/node-red/hardware/), In my case, I am running Node-RED on a Raspberry Pi 4 with a DHT11 sensor connected to it.
+Before proceeding, ensure that Node-RED is running on a device connected to a temperature sensor. For detailed instructions, refer to [Setting Up Node-RED on Different Hardware](/node-red/hardware/), In my case, I am running Node-RED on a Raspberry Pi 5 with a DHT11 sensor connected to it.
 
-1. Drag an Inject node onto the canvas, set repeat to 1 seconds of interval.
-2. Drag an Exec node and set the path to `python <filename>.py`, replace the filname to the name of the file which reads the sensor data, make sure the python file doesnt contain the loop.
-3. Drag the JSON node onto the canvas and set the action to "Always convert to JSON objct".
+1. Drag an Inject node onto the canvas, and set repeat to 1 seconds of interval.
+2. Drag an Exec node and set the path to `python <filename>.py`, replace the filename with the name of the file which reads the sensor data, make sure the python file doesn't contain the loop.
+3. Drag the JSON node onto the canvas and set the action to "Always convert to JSON object".
 4. Drag the Debug node onto the canvas.
-5. Connect the output of the Inject node to the input of Exec node and output of the Exec node to the input of JSON node, and finally the JSON node's output to input of Debug node.
+5. Connect the output of the Inject node to the input of the Exec node and output of the Exec node to the input of the JSON node, and finally the JSON node's output to the input of the Debug node.
 
-I have given the complete flow which creates the python file to read DHT11 sensor and executes that file after 1 second of interval. After deploying the flow you should able to see the sensor data on debug sidebar as shown in the below image.
+I have given the complete flow which creates the Python file to read the DHT11 sensor and executes that file after 1 second of interval. After deploying the flow you should able to see the sensor data on the debug sidebar as shown in the below image.
 
 !["Image showing the Node-RED flow executing the python script that reads the sensor data"](./images/calling-python-scrpt-from-node-red-output.gif "Image showing the Node-RED flow executing the python script that reads the sensor data"){data-zoomable}
 
-Note: The file uses the [adafruit-circuitpython](https://docs.circuitpython.org/projects/dht/en/latest/index.html) to read the sensor data so make sure install it. Additionally the code contains in following flow considers that your sensor's signal pin is connected to GPIO 4.
+Note: The file uses the [adafruit-circuitpython](https://docs.circuitpython.org/projects/dht/en/latest/index.html) to read the sensor data so make sure to install it. Additionally, the code contained in the template node in the following flow considers that your sensor's signal pin is connected to GPIO 4.
 
 {% renderFlow %}
 [{"id":"94bc6fa766c4b397","type":"file","z":"FFF0000000000001","name":"","filename":"~/sensor.py","filenameType":"str","appendNewline":false,"createDir":false,"overwriteFile":"true","encoding":"none","x":610,"y":520,"wires":[["9b08eee57f666de5"]]},{"id":"37453becdf842bd7","type":"template","z":"FFF0000000000001","name":"","field":"payload","fieldType":"msg","format":"handlebars","syntax":"mustache","template":"import time\nimport board\nimport adafruit_dht\nimport json\n\ndef publish():\n    dhtDevice = adafruit_dht.DHT11(board.D4)\n    try:\n        temperature_c = dhtDevice.temperature\n        humidity = dhtDevice.humidity\n\n        # Create JSON object\n        data = {\n            \"temperature_c\": temperature_c,\n            \"humidity\": humidity\n        }\n\n        # Convert JSON object to string and print\n        print(json.dumps(data))\n\n    except RuntimeError as error:\n        print(error.args[0])\n    except Exception as error:\n        dhtDevice.exit()\n        raise error\n    finally:\n        dhtDevice.exit()\n\ndef run():\n    publish()\n\nif __name__ == '__main__':\n    run()\n","output":"str","x":380,"y":520,"wires":[["94bc6fa766c4b397"]]},{"id":"5b3642d39c122576","type":"debug","z":"FFF0000000000001","name":"debug 2","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"payload","targetType":"msg","statusVal":"","statusType":"auto","x":880,"y":660,"wires":[]},{"id":"88144cbc887aada9","type":"inject","z":"FFF0000000000001","name":"","props":[],"repeat":"1","crontab":"","once":false,"onceDelay":0.1,"topic":"","x":150,"y":660,"wires":[["c896267214914641"]]},{"id":"1b1d792011ffac2c","type":"inject","z":"FFF0000000000001","name":"","props":[{"p":"kill","v":"g","vt":"str"}],"repeat":"","crontab":"","once":false,"onceDelay":0.1,"topic":"","x":150,"y":520,"wires":[["37453becdf842bd7"]]},{"id":"c896267214914641","type":"exec","z":"FFF0000000000001","command":"python ~/sensor.py -u","addpay":"payload","append":"","useSpawn":"false","timer":"5","winHide":false,"oldrc":false,"name":"","x":400,"y":660,"wires":[["1d02a33a018f0f8d"],[],[]]},{"id":"1d02a33a018f0f8d","type":"json","z":"FFF0000000000001","name":"","property":"payload","action":"","pretty":false,"x":650,"y":660,"wires":[["5b3642d39c122576"]]},{"id":"9b08eee57f666de5","type":"debug","z":"FFF0000000000001","name":"debug 3","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"payload","targetType":"msg","statusVal":"","statusType":"auto","x":880,"y":520,"wires":[]},{"id":"343a9f704951f3ed","type":"comment","z":"FFF0000000000001","name":"Create python file that reads the sensor data","info":"","x":510,"y":440,"wires":[]},{"id":"216eb1333b2c264c","type":"comment","z":"FFF0000000000001","name":"Execute the python file that read the data","info":"","x":500,"y":580,"wires":[]}]
@@ -90,18 +90,18 @@ Note: The file uses the [adafruit-circuitpython](https://docs.circuitpython.org/
 
 ## Executing Python Script with Arguments from Node-RED
 
-Now lets get back to our first example, in the example we have executed the simple python file with the hardcoded value. Now lets learn how to pass argument or input to the python script when executing from Node-RED, for that we will also need to update the file, to do that import the following flow and deploy and click on inject button to create file.
+Now, let's revisit our first example. In that example, we executed a simple Python file with a hardcoded value. Now, we'll learn how to pass arguments or inputs to the Python script when executing from Node-RED. For this, we'll need to update the file. Import the following flow, deploy it, and click on the inject button to create the file.
 
 {% renderFlow %}
 [{"id":"b9d7d6aff0016631","type":"inject","z":"FFF0000000000001","name":"","props":[{"p":"payload"},{"p":"topic","vt":"str"}],"repeat":"","crontab":"","once":false,"onceDelay":0.1,"topic":"","payload":"","payloadType":"date","x":300,"y":440,"wires":[["2e1daccf2a7b3d0f"]]},{"id":"d2d1450deaa588f4","type":"file","z":"FFF0000000000001","name":"","filename":"./example.py","filenameType":"str","appendNewline":true,"createDir":false,"overwriteFile":"true","encoding":"none","x":630,"y":440,"wires":[["e140a8508fb10d96"]]},{"id":"e140a8508fb10d96","type":"debug","z":"FFF0000000000001","name":"debug 1","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"false","statusVal":"","statusType":"auto","x":820,"y":440,"wires":[]},{"id":"2e1daccf2a7b3d0f","type":"template","z":"FFF0000000000001","name":"","field":"payload","fieldType":"msg","format":"handlebars","syntax":"mustache","template":"import sys\n\ndef main():\n    if len(sys.argv) != 2:\n        print(\"Usage: python your_script.py <number>\")\n        return\n    \n    user_input = sys.argv[1]\n    \n    # Check if the input is numeric\n    if user_input.isdigit() or (user_input[0] == '-' and user_input[1:].isdigit()):\n        number = int(user_input)\n        \n        # Conditionally render based on the input value\n        if number < 0:\n            print(\"Negative number entered\")\n        elif number == 0:\n            print(\"Zero entered\")\n        else:\n            print(\"Positive number entered\")\n    else:\n        print(\"Invalid input. Please enter a valid number.\")\n\nif __name__ == \"__main__\":\n    main()\n","output":"str","x":460,"y":440,"wires":[["d2d1450deaa588f4"]]}]
 {% endrenderFlow %}
 
 1. Drag the Inject node onto the canvas.
-2. Drag Exec node onto the canvas, and set the command to `python -u ./example.py <arg>`, replace the <arg> with your argument.
+2. Drag the Exec node onto the canvas, set the command to `python -u ./example.py <arg>`, and replace the `<arg>` with your argument.
 3. Now Drag the Debug node onto the canvas.
-4. Connect the output of the Inject node to input of Exec node, and output of Exec node to input of Debug node.
+4. Connect the output of the Inject node to the input of the Exec node, and the output of the Exec node to the input of the Debug node.
 
-If you examine the Python file we've created, you'll notice the use of the 'sys' module, which allows us to read command-line arguments. In our context, we execute the command `python ./example.py -30`. By accessing `sys.argv[1]`, we retrieve the argument -30. The index 1 is used because `sys.argv[0]` provides the filename of the script being executed. Additionally, Python supports passing multiple arguments, so that you can pass as many argument you want.
+If you examine the Python file we've created, you'll notice the use of the 'sys' module, which allows us to read command-line arguments. In our context, we execute the command `python ./example.py -30`. By accessing `sys.argv[1]`, we retrieve the argument -30. The index 1 is used because `sys.argv[0]` provides the filename of the script being executed. Additionally, Python supports passing multiple arguments, so that you can pass as many argument as you want.
 
 {% renderFlow %}
 [{"id":"2e26b84c0ce17312","type":"exec","z":"FFF0000000000001","command":"python -u ./example.py  -30","addpay":"","append":"","useSpawn":"false","timer":"","winHide":false,"oldrc":false,"name":"","x":520,"y":580,"wires":[["89589c56117004e0"],["7fdb901b144749c2"],["3f49b49308941782"]]},{"id":"739e08c1ec77c2a1","type":"inject","z":"FFF0000000000001","name":"","props":[{"p":"payload"}],"repeat":"","crontab":"","once":false,"onceDelay":0.1,"topic":"","payload":"","payloadType":"date","x":280,"y":580,"wires":[["2e26b84c0ce17312"]]},{"id":"89589c56117004e0","type":"debug","z":"FFF0000000000001","name":"Output","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"payload","targetType":"msg","statusVal":"","statusType":"auto","x":730,"y":540,"wires":[]},{"id":"7fdb901b144749c2","type":"debug","z":"FFF0000000000001","name":"Error","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"payload","targetType":"msg","statusVal":"","statusType":"auto","x":730,"y":580,"wires":[]},{"id":"3f49b49308941782","type":"debug","z":"FFF0000000000001","name":"Return code","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"payload","targetType":"msg","statusVal":"","statusType":"auto","x":750,"y":620,"wires":[]}]
@@ -110,4 +110,3 @@ If you examine the Python file we've created, you'll notice the use of the 'sys'
 ## Conclusion
 
 In this guide, we've demonstrated how to seamlessly execute Python scripts from Node-RED, along with troubleshooting tips and instructions on passing arguments to scripts. By leveraging Python's extensive libraries for data processing, machine learning, and other tasks in conjunction with Node-RED, developers can build powerful IoT solutions with ease.
-
