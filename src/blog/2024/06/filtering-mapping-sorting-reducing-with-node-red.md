@@ -4,7 +4,7 @@ subtitle: Step-by-step guide to use the most common data transformation operatio
 description: Learn how to perform data transformation in Node-RED with a low-code approach.
 date: 2024-06-19
 authors: ["sumit-shinde"]
-image: 
+image: /blog/2024/06/images/filtering-mapping-sorting-reducing-with-node-red.png
 tags:
    - posts
    - node-red
