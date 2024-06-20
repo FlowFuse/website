@@ -2,15 +2,14 @@
 title: "Node-RED 4: Bringing better collaboration to FlowFuse Cloud"
 subtitle: Making use of the Multiplayer Mode to collaborate with your teams
 description: Find out about the new Node-RED 4 release and what it brings to FlowFuse Cloud
-date: 2024-06-19
+date: 2024-06-20
 authors: ["nick-oleary"]
+image: /blog/2024/06/images/node-red-4-on-flowfuse-cloud.png
 tags:
    - posts
    - flowfuse
    - Node-RED
    - FlowFuse Cloud
-   
-
 ---
 
 Node-RED 4.0 is the new major release of the project, which is at the heart of all we do at FlowFuse. It brings a range of new features that continue to make Node-RED the first choice for low-code development.
