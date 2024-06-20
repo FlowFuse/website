@@ -165,6 +165,14 @@ pre code {
     padding-right: 0.25rem;
 }
 
+.prose .zoomable-image + em,
+.prose picture + em {
+    display: block;
+    text-align: center;
+    font-size: 0.875rem;
+    color: theme(colors.gray.600);
+}
+
 .nodered table {
     text-align: center;
 }
@@ -745,6 +753,8 @@ h4:hover .header-anchor {
     width: 100%;
     transform: translateX(0);
 }
+
+
 /*
     Footer
 */
