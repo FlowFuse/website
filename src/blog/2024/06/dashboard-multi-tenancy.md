@@ -12,7 +12,7 @@ tags:
    - dashboard 2.0
 ---
 
-We've listened to community feedback about our initial decision to make the FlowFuse User Addon available only to specific FlowFuse team tiers. This decision also meant that we locked away the ability to constrain communications (using a client's socket ID) to specific users. 
+FlowFuse Dashboard has featured multi-tenancy features through the FlowFuse User Addon. This made user based applications available only to specific FlowFuse team tiers and customers. However, the Node-RED community wanted to use the same feature set in cases FlowFuse didn't consider initially. Taking this feedback on board, today we announce some significant changes to how you can build Dashboards with multi-tenancy in mind.
 
 Having taken that feedback on board, we've made some significant changes to how you can build Dashboards with multi-tenancy in mind.
 
