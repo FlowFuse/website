@@ -58,6 +58,16 @@ from the previous paragraph.
 2. this is another item in the list
 ```
 
+To prevent reordering and keeping count, Markdown allows you to use non-sequencial numbers:
+
+```
+1. Item one
+1. Item two
+```
+
+1. Item one
+1. Item two
+
 ## Text Format - Italic
 
 *this will be italic*
