@@ -8,6 +8,7 @@ tags:
    - posts
    - flowfuse
    - Node-RED
+   - FlowFuse Cloud
    
 
 ---
