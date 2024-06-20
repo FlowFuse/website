@@ -13,27 +13,27 @@ tags:
    - how to
 ---
 
-Have you ever needed integrate google sheet with your Node-RED application for tracking and managing data seamlessly? This guide will walk you through the process of integrating Google Sheets with Node-RED, enabling you to write, read, update, and delete data effortlessly.
+Have you ever needed to integrate Google Sheets with your Node-RED application to track and manage data seamlessly? This guide will walk you through the process of integrating Google Sheets with Node-RED, enabling you to write, read, update, and delete data effortlessly.
 
 <!--more-->
 
-## What is the Google Sheet ?
+## What is the Google Sheet?
 
-[Google Sheets](https://www.google.com/sheets/about/) is a cloud-based spreadsheet application developed by Google. It allows users to create, edit, and collaborate on spreadsheets in real-time over the internet. This makes it an ideal option for easily and securely collaborating on data that is not large in size. In businesses, Google Sheets is commonly used for tasks such as analyzing daily profits, tracking expenses, and managing collaborative projects. However, for products or services with large user bases, businesses often prefer using databases, which are recommended for efficiently managing and scaling data operations.
+[Google Sheets](https://www.google.com/sheets/about/) is a cloud-based spreadsheet application developed by Google. It allows users to create, edit, and collaborate on spreadsheets in real-time over the Internet. This makes it an ideal option for easily and securely collaborating on data that is not large in size. In businesses, Google Sheets is commonly used for tasks such as analyzing daily profits, tracking expenses, and managing collaborative projects. However, for products or services with large user bases, businesses often prefer using databases, which are recommended for efficiently managing and scaling data operations.
 
 ## Prequisite
 
-Before proceeding, make sure you have installed the following node from the pallete manger.
+Before proceeding, make sure you have installed the following node from the pallet manager.
 
 - [node-red-contrib-google-sheets](https://flows.nodered.org/node/node-red-contrib-google-sheets)
 
-## Interacting with Google Sheet with Node-RED
+## Interacting with Google Sheets with Node-RED
 
-When writing this blog, I watched some videos on the internet about how to integrate Google Sheets with our application with traditional programming. I noticed that almost all of videos demonstrate complex steps and involve a lot of coding. Fortunately, as a Node-RED developer, you won't have to go through such lengthy processes.
+When writing this blog, I watched some videos on the internet about how to integrate Google Sheets with our application with traditional programming. I noticed that almost all of the videos demonstrate complex steps and involve a lot of coding. Fortunately, as a Node-RED developer, you won't have to go through such lengthy processes.
 
-### Creating Google service account 
+### Creating a Google service account 
 
-To integrate google sheets with our application we must have to first enable the google sheet API,and create the service account in the google cloud, before proceeding, make sure you have the google cloud account created.
+To integrate Google Sheets with our application we must first enable the Google Sheets API, and create the service account in the Google Cloud, before proceeding, make sure you have the Google Cloud account created.
 
 1. Open your browser and go to [Service accounts](https://console.cloud.google.com/projectselector2/apis/library/sheets?supportedpurview=project&authuser=0).
 2. Create a new project by clicking the "CREATE PROJECT" button in the top right corner. Enter the project details such as project name and organization.
@@ -68,7 +68,7 @@ To integrate google sheets with our application we must have to first enable the
 
 !["Screenshot showing the 'Create' button"](./images/interacting-with-google-sheet-from-node-red-delete-page_9.png "Screenshot showing the 'Create' button"){data-zoomable}
 
-9. Select the Role from as the "Owner" and click on the "Continue" button.
+9. Select the Role from the "Owner" and click on the "Continue" button.
 
 !["Screenshot showing the 'Continue' button"](./images/interacting-with-google-sheet-from-node-red-delete-page_10.png "Screenshot showing the 'Continue' button"){data-zoomable}
 
@@ -86,11 +86,11 @@ To integrate google sheets with our application we must have to first enable the
 
 !["Screenshot showing the 'Add key' and the 'Create new key'"](./images/interacting-with-google-sheet-from-node-red-delete-page_15.png "Screenshot showing the 'Add key' and the 'Create new key'"){data-zoomable}
 
-!["Screenshot showing the 'json' option and 'Create new key' button"](./images/interacting-with-google-sheet-from-node-red-delete-page_13.png "Screenshot showing the 'JSON' option and 'Create new key' button"){data-zoomable}
+!["Screenshot showing the 'JSON' option and 'Create new key' button"](./images/interacting-with-google-sheet-from-node-red-delete-page_13.png "Screenshot showing the 'JSON' option and 'Create new key' button"){data-zoomable}
 
 ### Configuring the Google Sheet Node
 
-Before proceeding, ensure you have added the [environment variable](/blog/2023/01/environment-variables-in-node-red/) for the private key that was generated. Additionally, grant editor access to the sheet you want to interact with for that service account email we created in the above section.
+Before proceeding, ensure you have added the [environment variable](/blog/2023/01/environment-variables-in-node-red/) for the private key that was generated. Additionally, grant the editor access to the sheet you want to interact with for that service account email we created in the above section.
 
 1. Drag a GSheet node onto the canvas.
 2. Double-click on the node and click on the pencil icon next to "creds."
@@ -103,8 +103,8 @@ Before proceeding, ensure you have added the [environment variable](/blog/2023/0
 
 For demonstration purposes, I will write simulated sensor data which includes a timestamp and sensor data.
 
-1. Drag the Inject node onto the canvas, set `msg.payload` to `[$moment().format(), $random() * 100]` as a JSONata expression, and set it to repeat every 3 seconds of interval.
-2. Double-click on the GSheet node, select the method to "Append Row" and set the range to `<sheetname>!A2`, replace `sheetname` with the name of your sheet. I have defined cell A2 because I want to start writing data from cell A2.
+1. Drag the Inject node onto the canvas, and set `msg.payload` to `[$moment().format(), $random() * 100]` as a JSONata expression, and set it to repeat every 3 seconds of interval.
+2. Double-click on the GSheet node, select the method to "Append Row" set the range to `<sheetname>!A2`, and replace `sheetname` with the name of your sheet. I have defined cell A2 because I want to start writing data from cell A2.
 3. Drag the Debug node onto the canvas, which will help in debugging in case of any error.
 4. Connect the output of the Inject node to the input of the GSheet node, and the output of the GSheet node to the input of the Debug node.
 
@@ -123,7 +123,7 @@ This flow generates a timestamp and a random number. The data is formatted as an
 
 ### Updating Data of Cells
 
-1. Drag an Inject node onto the canvas, set the updated value as the `msg.payload`.
+1. Drag an Inject node onto the canvas, and set the updated value as the `msg.payload`.
 2. Drag another GSheet node onto the canvas, and set the method to "Update Cells" and the range to `<sheetname>!A2`, as I wanted to update the value of cell A2.
 3. Drag a Debug node onto the canvas.
 4. Connect the output of the Inject node to the input of the GSheet node, and the output of the GSheet node to the input of the Debug node.
@@ -139,10 +139,10 @@ This flow generates a timestamp and a random number. The data is formatted as an
 
 !["Image showing the delete operation"](./images/interacting-with-google-sheet-from-node-red-delete.gif "Image showing the delete operation"){data-zoomable}
 
-Below i have provided the complete flow which we have built thorught the guide, make sure to replace the environment variable with your environment variable added for the prviate key.
+Below I have provided the complete flow that we have built through the guide, make sure to replace the environment variable with your environment variable added for the private key.
 
 {% renderFlow %}
-[{"id":"7d0282761979574c","type":"inject","z":"baa50b8a4762ec1f","name":"Wrting data to the cells","props":[{"p":"payload"}],"repeat":"","crontab":"","once":false,"onceDelay":0.1,"topic":"","payload":"[\t    $moment(),\t    $random()*100\t    \t]","payloadType":"jsonata","x":240,"y":140,"wires":[["eda23377d98e1a51"]]},{"id":"eda23377d98e1a51","type":"GSheet","z":"baa50b8a4762ec1f","creds":"d38cb80ae8574ea6","method":"append","action":"","sheet":"1TEEShkuxxrb3WH4NTFyk1COeDyWpgX1w6HN08ZezC7s","cells":"Sheet1!A2:C1000","flatten":false,"name":"","x":510,"y":140,"wires":[["3e670f575b8227d0"]]},{"id":"3e670f575b8227d0","type":"debug","z":"baa50b8a4762ec1f","name":"debug 1","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"false","statusVal":"","statusType":"auto","x":760,"y":140,"wires":[]},{"id":"2c916b1d5c10dffe","type":"inject","z":"baa50b8a4762ec1f","name":"Read the cells data","props":[],"repeat":"","crontab":"","once":false,"onceDelay":0.1,"topic":"","x":210,"y":260,"wires":[["941c7fe7c7dbcbcd"]]},{"id":"941c7fe7c7dbcbcd","type":"GSheet","z":"baa50b8a4762ec1f","creds":"d38cb80ae8574ea6","method":"get","action":"","sheet":"1TEEShkuxxrb3WH4NTFyk1COeDyWpgX1w6HN08ZezC7s","cells":"Sheet1!A2:C3","flatten":false,"name":"","x":490,"y":260,"wires":[["f910d7637788361a"]]},{"id":"f910d7637788361a","type":"debug","z":"baa50b8a4762ec1f","name":"debug 2","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"false","statusVal":"","statusType":"auto","x":760,"y":260,"wires":[]},{"id":"c20997333f9d4bda","type":"inject","z":"baa50b8a4762ec1f","name":"Updating the cells data","props":[{"p":"payload"}],"repeat":"","crontab":"","once":false,"onceDelay":0.1,"topic":"","payload":"[\t   \"none\",\t   \"none\"\t    \t]","payloadType":"jsonata","x":220,"y":360,"wires":[["d9ca2a1e0614f764"]]},{"id":"d9ca2a1e0614f764","type":"GSheet","z":"baa50b8a4762ec1f","creds":"d38cb80ae8574ea6","method":"update","action":"","sheet":"1TEEShkuxxrb3WH4NTFyk1COeDyWpgX1w6HN08ZezC7s","cells":"Sheet1!A35","flatten":false,"name":"","x":510,"y":360,"wires":[["9febe629870b7a54"]]},{"id":"9febe629870b7a54","type":"debug","z":"baa50b8a4762ec1f","name":"debug 3","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"false","statusVal":"","statusType":"auto","x":760,"y":360,"wires":[]},{"id":"c9ceec9844fa74a9","type":"inject","z":"baa50b8a4762ec1f","name":"Deleting the cells data","props":[],"repeat":"","crontab":"","once":false,"onceDelay":0.1,"topic":"","x":220,"y":460,"wires":[["b9cef9c376d1bea3"]]},{"id":"b9cef9c376d1bea3","type":"GSheet","z":"baa50b8a4762ec1f","creds":"d38cb80ae8574ea6","method":"clear","action":"","sheet":"1TEEShkuxxrb3WH4NTFyk1COeDyWpgX1w6HN08ZezC7s","cells":"Sheet1!A2:C20","flatten":false,"name":"","x":500,"y":460,"wires":[["a1766b498efb50f4"]]},{"id":"a1766b498efb50f4","type":"debug","z":"baa50b8a4762ec1f","name":"debug 4","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"false","statusVal":"","statusType":"auto","x":780,"y":460,"wires":[]},{"id":"d38cb80ae8574ea6","type":"gauth","name":"Unknown"}]
+[{"id":"7d0282761979574c","type":"inject","z":"baa50b8a4762ec1f","name":"Wrting data to the cells","props":[{"p":"payload"}],"repeat":"","crontab":"","once":false,"onceDelay":0.1,"topic":"","payload":"[\t    $moment(),\t    $random()*100\t    \t]","payloadType":"jsonata","x":240,"y":140,"wires":[["eda23377d98e1a51"]]},{"id":"eda23377d98e1a51","type":"GSheet","z":"baa50b8a4762ec1f","creds":"d38cb80ae8574ea6","method":"append","action":"","sheet":"1TEEShkuxxrb3WH4NTFyk1COeDyWpgX1w6HN08ZezC7s","cells":"Sheet1!A2:C1000","flatten":false,"name":"","x":510,"y":140,"wires":[["3e670f575b8227d0"]]},{"id":"3e670f575b8227d0","type":"debug","z":"baa50b8a4762ec1f","name":"debug 1","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"false","statusVal":"","statusType":"auto","x":760,"y":140,"wires":[]},{"id":"2c916b1d5c10dffe","type":"inject","z":"baa50b8a4762ec1f","name":"Read the cells data","props":[],"repeat":"","crontab":"","once":false,"onceDelay":0.1,"topic":"","x":210,"y":260,"wires":[["941c7fe7c7dbcbcd"]]},{"id":"941c7fe7c7dbcbcd","type":"GSheet","z":"baa50b8a4762ec1f","creds":"d38cb80ae8574ea6","method":"get","action":"","sheet":"1TEEShkuxxrb3WH4NTFyk1COeDyWpgX1w6HN08ZezC7s","cells":"Sheet1!A2:C3","flatten":false,"name":"","x":490,"y":260,"wires":[["f910d7637788361a"]]},{"id":"f910d7637788361a","type":"debug","z":"baa50b8a4762ec1f","name":"debug 2","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"false","statusVal":"","statusType":"auto","x":760,"y":260,"wires":[]},{"id":"c20997333f9d4bda","type":"inject","z":"baa50b8a4762ec1f","name":"Updating the cells data","props":[{"p":"payload"}],"repeat":"","crontab":"","once":false,"onceDelay":0.1,"topic":"","payload":"[\t   \"none\",\t   \"none\"\t    \t]","payloadType":"jsonata","x":220,"y":360,"wires":[["d9ca2a1e0614f764"]]},{"id":"d9ca2a1e0614f764","type":"GSheet","z":"baa50b8a4762ec1f","creds":"d38cb80ae8574ea6","method":"update","action":"","sheet":"1TEEShkuxxrb3WH4NTFyk1COeDyWpgX1w6HN08ZezC7s","cells":"Sheet1!A35","flatten":false,"name":"","x":510,"y":360,"wires":[["9febe629870b7a54"]]},{"id":"9febe629870b7a54","type":"debug","z":"baa50b8a4762ec1f","name":"debug 3","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"false","statusVal":"","statusType":"auto","x":760,"y":360,"wires":[]},{"id":"c9ceec9844fa74a9","type":"inject","z":"baa50b8a4762ec1f","name":"Deleting the cells data","props":[],"repeat":"","crontab":"","once":false,"onceDelay":0.1,"topic":"","x":220,"y":460,"wires":[["b9cef9c376d1bea3"]]},{"id":"b9cef9c376d1bea3","type":"GSheet","z":"baa50b8a4762ec1f","creds":"d38cb80ae8574ea6","method":"clear","action":"","sheet":"1TEEShkuxxrb3WH4NTFyk1COeDyWpgX1w6HN08ZezC7s","cells":"Sheet1!A2:C20","flatten":false,"name":"","x":500,"y":460,"wires":[["a1766b498efb50f4"]]},{"id":"a1766b498efb50f4","type":"debug","z":"baa50b8a4762ec1f","name":"debug 4","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"false","statusVal":"","statusType":"auto","x":780,"y":460,"wires":[]},{"id":"d38cb80ae8574ea6","type":"gauth","name":"Unknown"}]
 {% endrenderFlow %}
 
 ## Conclusion
