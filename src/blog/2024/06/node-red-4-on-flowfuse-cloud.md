@@ -13,7 +13,7 @@ tags:
 
 ---
 
-Node-RED 4.0 is the new major release of the project at the heart of all we do at FlowFuse. It brings a range of new features that continue to make Node-RED the first choice for low-code development.
+Node-RED 4.0 is the new major release of the project, which is at the heart of all we do at FlowFuse. It brings a range of new features that continue to make Node-RED the first choice for low-code development.
 
 <!--more-->
 
