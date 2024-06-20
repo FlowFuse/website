@@ -29,9 +29,6 @@ Before proceeding, make sure you have installed the following node from the pall
 
 ## Interacting with Google Sheets with Node-RED
 
-When writing this blog, I watched some videos on the internet about how to integrate Google Sheets with our application with traditional programming. I noticed that almost all of the videos demonstrate complex steps and involve a lot of coding. Fortunately, as a Node-RED developer, you won't have to go through such lengthy processes.
-
-### Creating a Google service account 
 
 To integrate Google Sheets with our application we must first enable the Google Sheets API, and create the service account in the Google Cloud, before proceeding, make sure you have the Google Cloud account created.
 
