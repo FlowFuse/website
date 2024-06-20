@@ -1,6 +1,6 @@
 ---
 title: "Node-RED 4: Bringing better collaboration to FlowFuse Cloud"
-subtitle: Making use of the Multiplayer Mode to collaborate in your team
+subtitle: Making use of the Multiplayer Mode to collaborate with your teams
 description: Find out about the new Node-RED 4 release and what it brings to FlowFuse Cloud
 date: 2024-06-19
 authors: ["nick-oleary"]
