@@ -1,7 +1,7 @@
 ---
 title: Calling a Python script from Node-RED
 subtitle: Guide on how to execute Python scripts from Node-RED
-description: Learn how to seamlessly execute python script from Node-RED.
+description: Learn how to seamlessly execute a Python script from Node-RED for advanced data processing and analysis.
 date: 2024-06-21
 authors: ["sumit-shinde"]
 image: /blog/2024/06/images/calling-python-script-from-node-red.png
@@ -12,15 +12,17 @@ tags:
    - python
 ---
 
-Have you ever needed to execute Python scripts from Node-RED? If so, this comprehensive guide is for you. We will walk you through the process of integrating Python seamlessly with Node-RED, alongside troubleshooting tips and techniques for passing arguments to scripts.
+Python's robust data processing capabilities and extensive libraries are well-known in programming. When combined with Node-RED, these technologies can synergize to elevate data analytics and automation to new heights.
+
+This guide walks you through seamlessly integrating Python scripts with Node-RED. You'll gain practical insights, troubleshooting tips, and effective techniques for executing scripts, enabling you to leverage this powerful combination for your IoT projects.
 
 <!--more-->
 
 ## Why use python with Node-RED
 
-Node-RED is a powerful visual programming tool used for building IoT applications. It is built on Node.js, which meets IoT application needs with its asynchronous operations and event-driven, non-blocking architecture. Javascript on which Node.js is built and the Node-RED supports can handle a wide range of tasks, However, Python excels in specific areas such as complex computations and machine learning due to its extensive set of libraries.
+Integrating Python and Node-RED can significantly enhance your IoT and automation initiatives by leveraging their distinct strengths. Node-RED excels in creating easy workflows, efficiently processing data streams, and integrating hardware, APIs, and. Meanwhile, Python offers a rich set of libraries for advanced tasks such as machine learning and AI, pivotal in realizing Industry 4.0 concepts.
 
-Many users choose to integrate Python with Node-RED to leverage these strengths. By using Node-RED and Python together,  developers can create advanced IoT solutions that excel in computational tasks and analysis effectively.
+This combination allows developers to build robust and flexible solutions. For instance, while Node-RED manages data flow and device communication, Python can perform complex analytics, and predictive modeling, or integrate with AI frameworks. This integration bridges the gap between data collection and actionable insights, enabling systems to make informed decisions autonomously.
 
 ## Installing Python
 
@@ -44,7 +46,7 @@ The specific command to use depends on how Python was installed and configured o
 
 ## Executing Python Script from Node-RED
 
-Let's now see how to call a Python script from Node-RED. First, we'll create a basic script file that contains a function to print text in the console based on input. Currently, the function uses hardcoded input. To create this file using Node-RED, import the following flow, deploy it and press the inject button:
+Let's now see how to call a Python script from Node-RED. First, we'll create a basic script file that contains a function to print text in the console based on input. Currently, the function uses hardcoded input. To create this file using Node-RED, import the following flow, deploy it, and press the inject button:
 
 {% renderFlow %}
 [{"id":"b9d7d6aff0016631","type":"inject","z":"FFF0000000000001","name":"","props":[{"p":"payload"},{"p":"topic","vt":"str"}],"repeat":"","crontab":"","once":false,"onceDelay":0.1,"topic":"","payload":"","payloadType":"date","x":240,"y":100,"wires":[["2e1daccf2a7b3d0f"]]},{"id":"d2d1450deaa588f4","type":"file","z":"FFF0000000000001","name":"","filename":".\\example.py","filenameType":"str","appendNewline":true,"createDir":false,"overwriteFile":"true","encoding":"none","x":570,"y":100,"wires":[["e140a8508fb10d96"]]},{"id":"e140a8508fb10d96","type":"debug","z":"FFF0000000000001","name":"debug 1","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"false","statusVal":"","statusType":"auto","x":760,"y":100,"wires":[]},{"id":"2e1daccf2a7b3d0f","type":"template","z":"FFF0000000000001","name":"","field":"payload","fieldType":"msg","format":"handlebars","syntax":"mustache","template":"def main():\n    # Hardcoded value\n    user_input = 20  \n    \n    # Check if the input is numeric\n    if isinstance(user_input, int) or (isinstance(user_input, str) and user_input.isdigit()):\n        number = int(user_input) if isinstance(user_input, str) else user_input\n        \n        # Conditionally render based on the input value\n        if number < 0:\n            print(\"Negative number entered\")\n        elif number == 0:\n            print(\"Zero entered\")\n        else:\n            print(\"Positive number entered\")\n    else:\n        print(\"Invalid input. Please enter a valid number.\")\n\nif __name__ == \"__main__\":\n    main()\n","output":"str","x":400,"y":100,"wires":[["d2d1450deaa588f4"]]}]
@@ -70,7 +72,7 @@ Now, when you deploy this flow and click on the inject node to execute the file,
 
 Having explored how to run a Python script within Node-RED with the basic practical example, let's move to a real-world scenario. We'll demonstrate how to read sensor data using Python, despite Node-RED providing numerous community-built nodes for this purpose. This approach provides deeper insights into integrating external scripts, showcasing the flexibility of Node-RED for custom solutions.
 
-Before proceeding, ensure that Node-RED is running on a device connected to a temperature sensor. For detailed instructions, refer to [Setting Up Node-RED on Different Hardware](/node-red/hardware/), In this case, we ae running Node-RED on a Raspberry Pi 5 with a DHT11 sensor connected to it.
+Before proceeding, ensure that Node-RED is running on a device connected to a temperature sensor. For detailed instructions, refer to [Setting Up Node-RED on Different Hardware](/node-red/hardware/), In this case, we are running Node-RED on a Raspberry Pi 5 with a DHT11 sensor connected to it.
 
 1. Drag an Inject node onto the canvas, and set repeat to 1 seconds of interval.
 2. Drag an Exec node and set the path to `python <filename>.py`, replace the filename with the name of the file which reads the sensor data, and make sure the python file doesn't contain the loop.
