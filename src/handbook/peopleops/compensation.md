@@ -19,6 +19,13 @@ and planning process. When determining compensation changes, FlowFuse considers
 three factors: performance, inflation, and market standards. These factors are
 taken into account together to make decisions about adjusting employee compensation.
 
+For sales functions, these conversations are held once a year with each individual.
+These conversations include quota negotiation, base and performance compensation.
+The [compensation plan](https://drive.google.com/file/d/1gAf6DuFnd20Ny_Ere5WnB6u63feB1lEE/view) is
+accompanied by an [exhibit](https://docs.google.com/document/d/1kYxnzVR0lh0GIZ1FHsPjq3QvggxN0hiVGLgwZMMKHo0/edit).
+When the terms of the next years compensation plan are signed they should be put
+into this [private Google Drive directory](https://drive.google.com/drive/folders/1yVryN4Kir7n8TLbM_cEttXb_rDC2ORn2) by managment.
+
 ## Performance Review
 
 Performance reviews will be carried out annually, in September. Any employee or
