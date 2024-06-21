@@ -30,7 +30,7 @@ skipIndex: true
       <section class="max-w-sm max-md:mx-auto rounded-lg border border-gray-300 bg-white px-8 py-6 md:mt-10">
         <div class="pb-2 md:pb-8">
           <h4 class="pb-3">Latest on the blog</h4>
-          {%- for item in collections.posts | sort(attribute='item.date') | reverse | limit(3) -%}
+          {%- for item in collections[collectionName] | sort(attribute='item.date') | reverse | limit(3) -%}
           <a href="{{ item.url }}" class="w-full flex flex-col group {% if not loop.last %}border-b{% endif %}">
             <h5 class="my-2 font-light">
               <span class="text-gray-500 group-hover:text-blue-700">
