@@ -2,7 +2,7 @@
 title: Calling a Python script from Node-RED
 subtitle: Guide on how to execute Python scripts from Node-RED
 description: Learn how to seamlessly execute a Python script from Node-RED for advanced data processing and analysis.
-date: 2024-06-21
+date: 2024-06-25
 authors: ["sumit-shinde"]
 image: /blog/2024/06/images/calling-python-script-from-node-red.png
 tags:
