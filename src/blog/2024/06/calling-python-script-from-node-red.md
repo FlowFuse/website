@@ -26,7 +26,7 @@ This combination allows developers to build robust and flexible solutions. For i
 
 ## Installing Python
 
-When executing Python scripts, it's essential to have the Python runtime installed on your system. Since Python is a prerequisite for npm, you might already have it installed if you installed Node-RED via npm 
+When executing Python scripts, it's essential to have the Python runtime installed on your system. Before proceeding, make sure you have it installed. You can follow the [official guide](https://wiki.python.org/moin/BeginnersGuide/Download) for instructions.
 
 To verify if Python is installed, open your terminal and execute:
 
