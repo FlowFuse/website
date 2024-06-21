@@ -44,7 +44,7 @@ To run our company we provide a comprehensive guide outlining policies, procedur
 | | |
 |:----|:----|
 | [Marketing](/handbook/customer/marketing/)<br /><p>How we reach companies that can benefit from FlowFuse.</p>
-| [Customer Success](/handbook/operations/customer-success/)<br /><p>Happy customers is what makes FlowFuse a sustainable business.</p>
+| [Customer Success](/handbook/customer/customer-success/)<br /><p>Happy customers is what makes FlowFuse a sustainable business.</p>
 | |
  
 ### About the Handbook
