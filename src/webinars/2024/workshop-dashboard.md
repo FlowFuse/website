@@ -1,22 +1,22 @@
 ---
 title: Dashboard Crash Course
-subtitle: Join us for this Dashboard 2.0 workshop where Joe will cover a collection of useful tips and design patterns to help you get the most out of your dashboards.
+subtitle: Join us for this workshop on the Dashboard for Node-RED where Joe will cover a collection of useful tips and design patterns to help you get the most out of your dashboards.
 image: /images/webinars/node-red-dashboard-crash-course.jpg
 date: 2024-07-02
 time: 17:00 CET (11:00am ET) 
 duration: 60
 hosts: ["joe-pavitt"]
 hubspot:
-    formId: <TBC>
+    formId: 7221ed3e-bace-4570-8db4-9b1e0c730083
 ---
 
-**Follow along with Joe Pavitt, lead developer on Node-RED Dashboard 2.0, as he dives into Dashboard 2.0 and demonstrates a collection of useful tips and design patterns to help you get the most out of your dashboards.**
+**Follow along with Joe Pavitt, lead developer on FlowFuse Dashboard for Node-RED, as he dives into Dashboard 2.0 and demonstrates a collection of useful tips and design patterns to help you get the most out of your dashboards.**
 
 <!--more-->
 
-Node-RED Dashboard 2.0 continues to see improvements and new features. In this Workshop session, Joe Pavitt will demonstrate some of the new features available and how you can use them to build useful dashboards.
+FlowFuse Dashboard for Node-RED continues to see improvements and new features. In this live Workshop session, Joe Pavitt will demonstrate some of the new features available and how you can use them to build useful User Interfaces.
 
-This will be a live and interactive session where you can ask questions as we go, and Joe will do his best to answer them live and incorporate ideas and thoughts into a Dashboard that he will build from scratch during the session.
+In this interactive session you can ask questions as we go, and Joe will do his best to answer them live and incorporate ideas and thoughts into a Dashboard that he will build from scratch during the session.
 
 The session will cover:
 
