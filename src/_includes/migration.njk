@@ -1,0 +1,125 @@
+<div class="nohero w-full">
+    <div class="container m-auto">
+        <div class="ff-dashboard-migration">
+            <div>
+                <div
+                    class="ff-file-drop-zone"
+                    onclick="openFilePicker();"
+                    ondrop="dropHandler(event);"
+                    ondragover="dragOverHandler(event);">
+                    <p id="drag-instruction">Drag a <i>flow.json</i> file containing Node-RED Dashboard 1.0 nodes here.</p>
+                    <p id="file-selected" style="display: none;">
+                        Flow Uploaded: "<i id="file-selected-name">drop zone</i>""
+                    </p>
+                    <input id="dashboard1-flow-file" name="dashboard1-flow-file" type="file" accept="json" onchange="fileSelected()"/>
+                </div>
+                <a id="dashboard-2-download" style="display:none"></a>
+            </div>
+            <div id="hs-user-form">
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    var d1Flow = null
+
+    function openFilePicker () {
+        // open file selector
+        document.getElementById("dashboard1-flow-file").click()
+    }
+
+    function fileSelected () {
+        console.log('file selected')
+        // get file
+        var file = document.getElementById("dashboard1-flow-file").files[0]
+        if (file) {
+            document.getElementById("file-selected-name").innerText = file.name
+            // hide drag instructions
+            document.getElementById("file-selected").style.display = "block"
+            document.getElementById("drag-instruction").style.display = "none"
+        } else {
+            // hide drag instructions
+            document.getElementById("file-selected").style.display = "none"
+            document.getElementById("drag-instruction").style.display = "block"
+        }
+    }
+
+    function downloadFlow (flow) {
+        var dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(flow))
+        var dlAnchorElem = document.getElementById('dashboard-2-download')
+        dlAnchorElem.setAttribute("href", dataStr)
+        dlAnchorElem.setAttribute("download", "flow-dashboard2.json")
+        dlAnchorElem.click()
+    }
+
+    function migrateFile() {
+        // Your migration logic goes here
+        
+        var file = null
+        var selectedFile = document.getElementById("dashboard1-flow-file").files
+        if (selectedFile) {
+            file = selectedFile[0]
+        } else {
+            file = d1Flow
+        }
+
+        if (file) {
+            fetch('https://dashboard-migration-service.flowfuse.cloud/migrate-flow', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: file
+            }).then(function (response) {
+                return response.json()
+            }).then(function (body) {
+                downloadFlow(body)
+            }).catch((err) => {
+                console.error('Error migrating flow', err)
+            })
+        }
+    }
+
+    function dropHandler(event) {
+
+        // Prevent default behavior (Prevent file from being opened)
+        ev.preventDefault()
+
+        if (ev.dataTransfer.items) {
+            // Use DataTransferItemList interface to access the file(s)
+            [...ev.dataTransfer.items].forEach((item, i) => {
+                // If dropped items aren't files, reject them
+                if (item.kind === "file") {
+                    d1Flow = item.getAsFile();
+                }
+            });
+        } else {
+            // Use DataTransfer interface to access the file(s)
+            [...ev.dataTransfer.files].forEach((file, i) => {
+                console.log(`… file[${i}].name = ${dashboard1Flow.name}`)
+            });
+        }
+    }
+
+    function dragOverHandler(event) {
+        event.preventDefault();
+    }
+
+    const PROD = '968a9ab6-3dd8-45b2-991c-3f055dc18787'
+    const TEST = '1ecbeb84-36a6-4077-b6c8-3f4a5b06bca0'
+    
+    function displayHubSpotForm() {
+        hbspt.forms.create({
+            target: '#hs-user-form',
+            region: "eu1",
+            portalId: "26586079",
+            formId: TEST,
+            onFormSubmitted: function ($form) {
+                migrateFile()
+            }
+        });
+    }
+</script>
+<script async type="text/javascript" charset="utf-8" src="//js-eu1.hsforms.net/forms/embed/v2.js" onload="displayHubSpotForm()"></script>

@@ -1,0 +1,120 @@
+---
+layout: nohero
+meta:
+  title: FlowFuse Dashboard
+  description: Discover FlowFuse Dashboard for Node-RED 2.0 - the ultimate tool for creating visually appealing and functional UIs in minutes. Empower your development with drag-and-drop simplicity, enhanced user experiences, and a growing ecosystem of widgets. Seamlessly migrate from Dashboard 1.0 and explore comprehensive learning resources. Contact our experts for tailored solutions.
+---
+<!--Hero Content-->
+<div class="w-full px-6">
+    <div class="max-w-md sm:max-w-screen-lg pb-6 mt-12 mx-auto">
+        <div class="text-center md:text-left max-w-xl mx-auto md:mx-0 md:my-auto md:py-10 md:max-w-none">
+            <h1 class="font-medium m-auto lg:m-0 max-sm:text-4xl">
+                <span class="text-indigo-600">FlowFuse Dashboard</span> for <span class="inline-block">Node-RED</span>
+            </h1>
+            <h4 class="font-light mt-2 text-gray-500">
+                Build visually appealing and useful UIs in minutes!
+            </h4>
+            <div class="justify-center items-center m-auto w-full flex mt-10">
+                {% image "./images/dashboard/dashboard.svg", "FlowFuse Dashboard", [1920] %}
+            </div>
+            <p class="mt-8">
+                FlowFuse Dashboard is a revolutionary tool that allows you to create beautiful and functional dashboards
+                within <a href="/node-red/">Node-RED</a>, the leading open-source low-code platform for wiring together a variety of data
+                endpoints. Whether you're a long-time user or just getting started with Node-RED, FlowFuse Dashboard
+                makes it easy to visualize and interact with your data like never before.
+                Much like the original Dashboard, FlowFuse Dashboard provides a set of easy-to-use, core nodes, but also
+                provides complete flexibility for customization and control over theming, layout and behavior. 
+            </p>
+            <div class="flex flex-col mt-10">
+                <div
+                    class="m-auto flex gap-4 items-center justify-center lg:items-start lg:justify-start lg:m-0 flex-row">
+                    <a class="ff-btn ff-btn--primary flex flex-col mb-6" href="https://dashboard.flowfuse.com/"
+                        target="_blank">
+                        <span class="text-base flex gap-2 uppercase items-center">
+                            GET STARTED
+                        </span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Secondary Content -->
+<div class="w-full px-6">
+    <div class="max-w-md md:max-w-screen-lg m-auto max-w-5xl">
+        <h2 class="text-center w-full md:text-left"><span class="text-indigo-600">Empowering Anyone</span> to Build Full-Stack Applications</h2>
+        <ul class="flex flex-col mx-auto w-full text-center md:grid md:grid-cols-2 gap-12 mt-12 mb-16">
+            {% for item in dashboard.section2 %}
+            <li class="flex flex-col items-center md:items-start border-2 border-indigo-100 rounded-md p-6 pb-3 gap-3">
+                <div class="flex flex-col justify-center md:justify-start gap-3 w-full">
+                    <div class="w-full flex flex-row gap-3 mx-auto md:m-0">
+                        <h5 class="w-full md:m-0 text-xl text-gray-600 text-center md:text-left">
+                            {{ item.title }}
+                        </h5>
+                    </div>
+                </div>
+                <div>
+                    <p class="text-center text-lg md:text-left font-light">
+                        {{ item.description }}
+                    </p>
+                </div>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>
+<div class="about w-full bg-gray-50 pt-16">
+    <!-- Migration -->
+    <div class="w-full px-6 pt-2">
+        <div class="max-w-md sm:max-w-screen-lg mx-auto pb-14">
+            <div class="mx-auto w-full md:max-w-screen-lg">
+                <h2 class="text-center w-full md:text-left">Easily migrate <span class="text-indigo-600">from Dashboard 1.0
+                        to FlowFuse Dashboard</span></h2>
+                <p class="mt-6 text-center lg:text-left pb-5">
+                    Get started quickly with your new FlowFuse Dashboard. This migration service will automatically convert
+                    your original Node-RED Dashboard flows, and make them FlowFuse Dashboard-ready.
+                </br>
+                    This service will improve over time. Currently, we support the automatic conversion of
+                    <code>ui_tab</code>, <code>ui_link</code> and <code>ui_group</code> nodes.
+                </p>
+            </div>
+            {% include "migration.njk" %}
+        </div>
+    </div>
+    <!-- Learning Resources -->
+    <div class="bg-white pb-12 md:pb-20 pt-12 px-6 text-center">
+        <div class="max-w-md sm:max-w-screen-lg mx-auto">
+            <h2 class="text-center w-full md:text-left">FlowFuse Dashboard <span class="text-indigo-600">Learning Resources</span></h2>
+            <ul class="mt-10 grid grid-cols-1 md:grid md:grid-cols-3 gap-y-4 m-auto gap-6">
+                {%- for item in dashboard.resources -%}
+                <li class="w-full max-w-md m-auto my-2">
+                    <a href="{{ item.url }}" class="w-full flex flex-col group hover:no-underline">
+                        <div>
+                            <div>
+                                <div class="relative">
+                                    <div class="w-full h-44 ff-image-cover scale mb-4 ff-image-rounded object-contain overflow-hidden">
+                                        {% set imageSrc = ["./", item.image ] | join %}
+                                        {% set imageDescription = ["Image representing ", item.data.title] | join %}
+
+                                        {% image imageSrc, imageDescription, [285] %}
+                                    </div>
+                                </div>
+                            </div>
+                            <h5 class="mt-1 mb-0 group-hover:underline font-light text-lg text-left text-gray-600">{{ item.title }}</h5>
+                        </div>
+                    </a>
+                </li>
+                {% endfor %}
+            </ul>
+            <div class="flex justify-end">
+                <a href="/customer-stories/" class="font-light hover:underline pt-3 flex flex-row items-center gap-1 cursor-pointer flex-wrap max-md:max-w-md mb-10">
+                    Learn more {% include "components/icons/arrow-long-right.svg" %}
+                </a>
+            </div>
+            <div class="bg-indigo-50 p-1 rounded-md w-full mx-auto">
+                <p>Looking for help with your project? <a href="/contact-us/">Contact us</a>; our experts will be happy to provide a solution for your needs.  </p>
+            </div>
+        </div>
+    </div>
+</div>
