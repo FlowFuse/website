@@ -2,7 +2,6 @@
 navTitle: Hubspot
 ---
 
-
 We use [HubSpot](https://www.hubspot.com/) to track and manage all of our customer interactions.
 It enables the creation of customer contacts, and then logging of emails/notes associated to that customer.
 
@@ -13,44 +12,28 @@ we talk to to ensure no crossover in sales and conversations.
 
 ### Lifecycle Stage
 
-All contacts in HubSpot need to have a defined lifecycle. It is required that all contacts pass through each lifecycle stage at the appropriate time based on their interaction with FlowFuse marketing and sales. Contacts should not skip a stage. It is up to the contact owner to ensure their contacts have the appropriate lifecycle stage set.
+All contacts in HubSpot need to have a defined lifecycle. It is required that all contacts pass through each lifecycle stage at the appropriate time based on their interaction with FlowFuse marketing and sales. Contacts should not skip a stage.
+It is up to the contact owner to ensure their contacts have the appropriate lifecycle stage set.
 
-The following is a description of each stage. 
-
-| Lifecycle Stage|Description
-| - | - |
-| Subscriber | Contact has signed up to hear more information, when it is available, about FlowFuse, e.g. newsletter subscriber |
-| Lead | Contact that has converted on our website, or through some other interaction, with our organisation beyond a subscription sign up. For example, registered for a webinar, signed up for a free trial, etc.|
-| Marketing Qualified Lead | The contact has requested to talk to someone directly at FlowFuse about the product/services of FlowFuse. Either through book a demo, contact us, direct outreach to a FlowFuse employee at an event, or asked a sales question at a webinar. Support requests are not considered MQL. |
-| Product Qualified Lead | The Customer success team identifies a contact that they believe is a candidate for an upsell opportunity. Customer success will identify an PQL by monitoring FlowFuse Cloud usage and engaging with these users in a consultative manner. Any contact already identified as an MQL, SQL or Opportunity should not be a candidate for PQL. |
-| Sales Qualified Lead | The Sales team will initiate a discussion with an MQL, and will qualify the contact as SQL. Qualification is done based on the qualifying questions that [are listed below](#from-mql-to-sql---qualifying-questions). The status of the contact is then further tracked in the [Lead Status](#lead-status) property. |
-| Opportunity | When the expected revenue and the potential close date is known an SQL becomes an Opportunity. A Deal is created for each Opportunity.  |
-| Customer | An active, paying, user of FlowFuse. |
-| Evangelist | FlowFuse will not actively use Evangelist lifecycle stage. |
-| Other | Does not fit into any of the other descriptions, likely someone we are talking to about FlowFuse, but will never be a paying customer, .e.g. Partners |
+| Stage Name | Lifecycle Stage | Owner | Deal Stage | Deal Probability | Requirements for this Stage | Supporting Materials | KPIs |
+| :---- | :---: | :---: | :---: | :---: | :---- | :---- | :---- |
+| Subscriber | Subscriber | Marketing | N/A | 0% | <ul><li>Email known in Hubspot</li><li>Proven interest in FlowFuse</li></ul> | N/A | <ul><li>Website Visitors</li><li>Social Media Company Followers</li></ul> |
+| Lead | Lead | Marketing | N/A | 0% | <ul><li>Demonstrate being a real human</li><li>Started trial on FlowFuse Cloud OR fill another form on the marketing website</li></ul> | N/A | N/A | # new leads |
+| Marketing Qualified Lead | MQL | Sales | N/A | 0% | <ul><li>Confirmation for First Meeting</li><li>Technical Fit and Pain is very probable</li></ul> | <ul><li>Lead Scoring</li><li>Sequences & Templates</li></ul> | # new MQLs |
+| Sales Qualified Lead | SQL | Sales | N/A | 0% | <ul><li>SPICED Discovery done</li><li>Customer Pain Identified</li><li>Confirmed Critical Event</li><li>Timeline PoC and Purchase known</li><li>Stakeholders Identified</li></ul> | <ul><li>Intro meeting Deck</li><li>Customer Success Stories</li></ul> | # New SQLs & # First Meetings Occurred |
+| Opportunity | Opportunity | Sales | Opportunity | 10% | <ul><li>Poc / Trial Requestments Documented</li><li>Deal Sheet Completed</li></ul> | <ul><li>PoC Document</li><li>Deal Sheet Template</li></ul> | Pipeline Forecast Sheet |
+| Value Identified | Opportunity | Sales | Value Identified | 30% | <ul><li>PoC / Trial started</li><li>Check in call scheduled</li><ul> | TODO: Account Mapping sheet |
+| Value Validated |  Opportunity | Sales | Value Validated | 50% | N/A | N/A | Pipeline Forecast Sheet |
+| Procurement | Opportunity | Sales | Procurement | 70% | N/A | N/A | Pipeline Forecast Sheet |
+| Closed Won | Customer | CSM / Sales | Customer | 100% | N/A | N/A | N/A |
 
 #### Lifecycle changes
 
 ##### From MQL to SQL - Qualifying questions
 
-
 - Is there a use case FlowFuse can solve?
 - Is there a need, now or in the near future, for 10 or more instances?
 - Is there a timeline for implementation within the next 6 months?
-
-
-##### From SQL to Opportunity
-
-- Is there an active evaluation that can close within the next 3 months? (evaluation can be quoting, POC, any other indication that they are planning to purchase something soon)
-
-  
-| Deal Stages |  | |
-| :------- | :--:| :---- |
-| Opportunity | 10% | When there is a legitimate opportunity to close the prospect within the next 6 months. This stage is primarily triggered by the timeline or urgency of the need for FlowFuse. |
-| POC Started | 30% | When the prospect enters a POC or has a POC kick-off call scheduled in the near future. |
-| Value Validated | 60% | FlowFuse has been technically proven in a POC. Procurement steps typically follow or are running concurrently: security, legal, budget, DM intro/meeting. |
-| Contract Sent | 90% | Contact is sent with an expiration date that has been communicated to the customer. While quotes may be sent at any time throughout the process, a deal should only enter this stage if it is reasonably guaranteed that a signature is pending based on current knowledge. |
-| Closed Won/Lost | 0% || 100% | Deals in these stages will remain visible on the deal board to keep them top of mind for learnings and/or follow up. |
 
 ### Lead Status
 
