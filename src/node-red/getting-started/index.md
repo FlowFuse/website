@@ -11,4 +11,4 @@ meta:
 
 This section provides an overview of Node-RED, a robust visual tool designed for integrating IoT devices and automating workflows without needing extensive programming knowledge.
 
-- **Node-RED Editor**: This [documentation](./editor/index.md) provides a detailed overview of the Node-RED Editor, covering each feature included in the editor.
+- **Node-RED Editor**: This [documentation](./editor/) provides a detailed overview of the Node-RED Editor, covering each feature included in the editor.
