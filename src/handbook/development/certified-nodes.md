@@ -8,7 +8,7 @@ to ensure they are of high quality and standards for use by our customers.
 The catalogue is maintained in the [certified-nr-nodes](https://github.com/FlowFuse/certified-nr-nodes)(🔒) repository.
 
 A daily GH action runs the audit process across all nodes and regenerates the `catalogue.json` file served to Node-RED
-instances withing FlowFuse.
+instances within FlowFuse.
 
 ## Proposing a new node to be included
 
