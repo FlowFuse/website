@@ -101,7 +101,10 @@ eleventyComputed:
     <!-- Open Graph URL -->
     <meta property="og:url" content="{{ page.url | toAbsoluteUrl }}" />
     <!-- Open Graph Image -->
-    {% if image %}
+    {% if meta and meta.image %}
+    <meta property="og:image" content="{{ meta.image | toAbsoluteUrl }}" />
+    <meta name="twitter:image" content="{{ meta.image | toAbsoluteUrl }}" />
+    {% elif image %}
     <meta property="og:image" content="{{ image | toAbsoluteUrl }}" />
     <meta name="twitter:image" content="{{ image | toAbsoluteUrl }}" />
     {% else %}
