@@ -1,10 +1,11 @@
 ---
 contentTitle: The Ultimate Guide to Building Applications with <span class="inline-block">FlowFuse Dashboard for Node-RED</span>
-image: /images/ebooks/ebook-dashboard-render.png
+image: /images/ebooks/ebook-dashboard.png
 meta:
   title: The Ultimate Guide to Building Applications with FlowFuse Dashboard for Node-RED
   description: Discover the power of the FlowFuse Dashboard for Node-RED with our comprehensive eBook. Learn how to effortlessly create stunning UIs, from data charts to custom components, and enable collaborative full-stack application development. Ideal for developers of all levels, this guide unlocks the potential of your data in industrial IoT environments.
   Keywords: FlowFuse Dashboard, Node-RED Dashboard, Dashboard 2.0, IoT dashboard creation, Low-code platform, Data visualization, UI development, Industrial IoT, Dashboard design
+  image: /images/ebooks/ebook-dashboard-render.png
 hubspot:
   formId: 372e557c-9f90-48e8-81da-d7e462f8ef55
   cta: "download-ebook"
