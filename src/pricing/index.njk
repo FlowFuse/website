@@ -220,8 +220,7 @@ hubspot:
                                         </div>
                                         <div class="pl-2 text-sm leading-4 text-left self-end pb-1">
                                             <note id="enterprise-monthly-price-note-{{ id_suffix }}" class="note text-xs">
-                                                /instance a
-                                                month <br>Billed monthly at $600<br \></note>
+                                            </note>
                                         </div>
                                     </div>
                                 </div>
@@ -514,7 +513,7 @@ hubspot:
 
 <!-- Sliders -->
 <script>
-    function setupPricingSlider(sliderId, basePrice, stepSize, priceIntElementId, priceDecElementId, valueElementId, priceNoteElementId) {
+    function setupPricingSlider(sliderId, basePrice, stepSize, priceIntElementId, priceDecElementId, valueElementId, priceNoteElementId, is_annual=false) {
         const sliderEl = document.querySelector(sliderId)
         sliderEl.min = stepSize;
         sliderEl.value = stepSize;
@@ -569,7 +568,13 @@ hubspot:
             priceDecElement.textContent = decValue;
 
             const totalMonthlyPrice = sliderId === "#team-monthly-slider" && tempSliderValue > 250 ? 3200 : discountedPriceMonthly * tempSliderValue;
-            priceNoteElement.innerHTML = `/instance a month <br>Billed monthly at <span class="font-semibold">$${totalMonthlyPrice.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</span><br \\>`;
+
+            if (is_annual) {
+                const totalAnnualPrice = totalMonthlyPrice * 12;
+                priceNoteElement.innerHTML = `/instance a month <br>Billed annually at <span class="font-semibold">$${totalAnnualPrice.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</span><br \\>`;
+            } else {
+                priceNoteElement.innerHTML = `/instance a month <br>Billed monthly at <span class="font-semibold">$${totalMonthlyPrice.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</span><br \\>`;
+            }
         })
 
         sliderEl.dispatchEvent(new Event('input'));
@@ -578,7 +583,7 @@ hubspot:
     // Setup the sliders
     setupPricingSlider("#team-monthly-slider", 300, 5, "#team-monthly-price-int", "#team-monthly-price-dec", "#team-monthly-value", "#team-monthly-price-note");
     setupPricingSlider("#enterprise-monthly-slider-1", 600, 10, "#enterprise-monthly-price-int-1", "#enterprise-monthly-price-dec-1", "#enterprise-monthly-value-1", "#enterprise-monthly-price-note-1");
-    setupPricingSlider("#enterprise-monthly-slider-2", 600, 10, "#enterprise-monthly-price-int-2", "#enterprise-monthly-price-dec-2", "#enterprise-monthly-value-2", "#enterprise-monthly-price-note-2");
+    setupPricingSlider("#enterprise-monthly-slider-2", 600, 10, "#enterprise-monthly-price-int-2", "#enterprise-monthly-price-dec-2", "#enterprise-monthly-value-2", "#enterprise-monthly-price-note-2", true);
 </script>
 
 <!-- Features info -->
