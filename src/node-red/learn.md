@@ -1,6 +1,7 @@
 ---
 eleventyNavigation:
   key: Learning Resources
+  order: 1
 meta:
    title: Node-RED Learning Resources
    description: Explore this comprehensive set of Node-RED learning resources, including how to set up Node-RED on various hardware platforms, its basic terminologies, integration of different databases, and more.
