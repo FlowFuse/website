@@ -3,7 +3,7 @@ layout: layouts/page.njk
 nohero: true
 meta:
     title: About
-    description: FlowFuse was founded by Nick O’Leary, co-creator of Node-RED to make it a more powerful solution for industrial enterprises.  
+    description: FlowFuse provides a complete platform for building, scaling and securing your production Node-RED applications. Accelerate digitalization of your industrial processes with ease.
     organization:
         name: FlowFuse
         legalName: FlowForge Inc
@@ -27,6 +27,10 @@ meta:
         - https://twitter.com/flowfuseinc
         - https://github.com/FlowFuse
         - https://www.youtube.com/channel/UCbBzP8NZbv3WDtlt4UouA-g
+eleventyComputed:
+    meta:
+        organization:
+            description: "{{ site.messaging.subtitle }}"
 ---
 
 <!-- Primary Content -->
