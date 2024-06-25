@@ -2,7 +2,7 @@
 title: How to Filter, Map, Sort, and Reduce Data in Node-RED
 subtitle: Step-by-step guide to use the most common data transformation operations like filtering, mapping, sorting and reducing in Node-RED.
 description: Learn how to perform data transformation in Node-RED with a low-code approach.
-date: 2024-06-19
+date: 2024-06-26
 authors: ["sumit-shinde"]
 image: /blog/2024/06/images/filtering-mapping-sorting-reducing-with-node-red.png
 tags:
