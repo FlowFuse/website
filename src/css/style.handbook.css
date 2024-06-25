@@ -121,6 +121,12 @@
         text-align: center;
     }
 
+    .handbook .table-wrapper {
+        overflow-x: auto;
+        max-width: 100%;
+        @apply lg:max-w-[calc(100vw-590px)];
+    }
+
     /* Define animation transitions for all child UL elements */
     .handbook-nav ul {
         max-height: 0;

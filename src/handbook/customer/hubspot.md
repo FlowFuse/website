@@ -15,6 +15,8 @@ we talk to to ensure no crossover in sales and conversations.
 All contacts in HubSpot need to have a defined lifecycle. It is required that all contacts pass through each lifecycle stage at the appropriate time based on their interaction with FlowFuse marketing and sales. Contacts should not skip a stage.
 It is up to the contact owner to ensure their contacts have the appropriate lifecycle stage set.
 
+<div class="table-wrapper" markdown="block">
+
 | Stage Name | Lifecycle Stage | Owner | Deal Stage | Deal Probability | Requirements for this Stage | Supporting Materials | KPIs |
 | :---- | :---: | :---: | :---: | :---: | :---- | :---- | :---- |
 | Subscriber | Subscriber | Marketing | N/A | 0% | <ul><li>Email known in Hubspot</li><li>Proven interest in FlowFuse</li></ul> | N/A | <ul><li>Website Visitors</li><li>Social Media Company Followers</li></ul> |
@@ -26,6 +28,8 @@ It is up to the contact owner to ensure their contacts have the appropriate life
 | Value Validated |  Opportunity | Sales | Value Validated | 50% | N/A | N/A | Pipeline Forecast Sheet |
 | Procurement | Opportunity | Sales | Procurement | 70% | N/A | N/A | Pipeline Forecast Sheet |
 | Closed Won | Customer | CSM / Sales | Customer | 100% | N/A | N/A | N/A |
+
+</div>
 
 #### Lifecycle changes
 
