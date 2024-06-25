@@ -1,0 +1,37 @@
+{
+  "section2": [
+    {
+      "title": "Effortless Development",
+      "description": "FlowFuse Dashboard's intuitive interface allows you to drag-and-drop widgets, buttons, and other elements to create rich dashboards without writing a single line of code. This significantly reduces development time and empowers non-technical users to build powerful applications."
+    },
+    {
+      "title": "Enhanced User Experience",
+      "description": "Go beyond simple data visualization. FlowFuse Dashboard lets you create interactive dashboards with features like buttons and user-specific views. This empowers users to explore data, filter results, and take actions directly within the dashboard."
+    },
+    {
+      "title": "Extensible Ecosystem",
+      "description": "Node-RED actively fosters a growing community of developers. This means a constantly expanding library of widgets and nodes, ensuring you have the tools you need to build any dashboard you can imagine."
+    },
+    {
+      "title": "Flexible deployment with FlowFuse",
+      "description": "With FlowFuse you can deploy FlowFuse Dashboard along with enterprise-grade features on the cloud or on-premises. This ensures a smooth and efficient development experience, for a high-performance and scalable solution."
+    }
+  ],
+  "resources": [
+    {
+      "url": "/blog/2024/03/dashboard-getting-started/",
+      "title": "Getting Started with Node-RED Dashboard 2.0",
+      "image": "/blog/2024/03/images/getting-started-with-dashboard-2.png"
+    },
+    {
+      "url": "/webinars/2024/node-red-dashboard-multi-user/",
+      "title": "Personalised Multi User Dashboards with Node-RED Dashboard 2.0",
+      "image": "/images/webinars/multi-user-dashboard-with-node-red-dashboard-2-0-webinar-2024-february.jpg"
+    },
+    {
+      "url": "/ebooks/ultimate-guide-to-building-applications-with-flowfuse-dashboard-for-node-red/",
+      "title": "The Ultimate Guide to Building Applications with FlowFuse Dashboard for Node-RED",
+      "image": "/images/ebooks/ebook_dashboard.png"
+    }
+  ]
+}
