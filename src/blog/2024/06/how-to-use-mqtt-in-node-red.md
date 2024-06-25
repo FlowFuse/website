@@ -42,7 +42,7 @@ For Node-RED, we will be using FlowFuse, which enhances Node-RED usage with mana
 
 ## Configuring MQTT Node in Node-RED
 
-When you open the Node-RED editor, you'll see the MQTT nodes already installed as they are part of Node-RED core nodes. When you drag an **mqtt-in** or **mqtt-out** node onto the workspace, you need to configure the MQTT broker node. You can do this by Double-clicking mqtt node and clicking on the edit icon next to the Server field and entering the following details of your MQTT broker into the MQTT broker config node, For more details on mqtt nodes refer to the [MQTT core node docs](/node-red/learn/core-nodes/mqtt/).
+When you open the Node-RED editor, you'll see the MQTT nodes already installed as they are part of Node-RED core nodes. When you drag an **mqtt-in** or **mqtt-out** node onto the workspace, you need to configure the MQTT broker node. You can do this by Double-clicking mqtt node and clicking on the edit icon next to the Server field and entering the following details of your MQTT broker into the MQTT broker config node, For more details on mqtt nodes refer to the [MQTT core node docs](/node-red/core-nodes/mqtt/).
 
 ## Connection Tab
 
@@ -106,7 +106,7 @@ When you open the Node-RED editor, you'll see the MQTT nodes already installed a
 
 ## Creating a Simple Project
 
-Now that you're familiar with how to send and receive data using MQTT, let's dive into creating a simple project in this section. We'll transmit temperature data obtained from a temperature sensor from one instance of Node-RED to another. This project will provide a practical demonstration of how MQTT can be utilized for communication. If you don't know how to run Node-RED on your edge device and read sensor data, please refer to this documentation on [Setting up Node-RED on Raspberry Pi](/node-red/learn/hardware/raspberry-pi-4/)
+Now that you're familiar with how to send and receive data using MQTT, let's dive into creating a simple project in this section. We'll transmit temperature data obtained from a temperature sensor from one instance of Node-RED to another. This project will provide a practical demonstration of how MQTT can be utilized for communication. If you don't know how to run Node-RED on your edge device and read sensor data, please refer to this documentation on [Setting up Node-RED on Raspberry Pi](/node-red/hardware/raspberry-pi-4/)
 
 ### Publishing Temperature Data to a Topic on the MQTT Broker
 
@@ -132,7 +132,7 @@ Now, create a new instance in which we will receive the temperature data by subs
 Now, you will see the temperature data printed in the debug tab in the sidebar. Additionally, you can display this data on a chart using Dashboard 2.0 or store it in a database. For more details refer to the following guides:
 
 - [Sending data to influxDB](/blog/2023/07/connect-node-red-to-influxdb/)
-- [Charting Data in on Dashboard 2.0](/node-red/learn/integration-technologies/rest/)
+- [Charting Data in on Dashboard 2.0](/node-red/integration-technologies/rest/)
 
 ## Best Practices
 
