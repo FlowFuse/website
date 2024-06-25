@@ -37,7 +37,7 @@ This section of our documentation includes tutorials on setting up Node-RED on d
 
 This section includes step-by-step documentation on integrating Node-RED with various peripheral devices such as webcams, barcode scanners, printer, mic and more.
 
-[Integrating Node-RED with Peripheral Devices](node-red/peripheral/)
+[Integrating Node-RED with Peripheral Devices](/node-red/peripheral/)
 
 ## Databases
 
