@@ -19,12 +19,12 @@ date: git Last Modified
     }
 </script>
 <div class="w-full bg-white/50">
-<div class="handbook ff-prose text-left pb-24 md:max-w-screen-xl m-auto">
+<div class="handbook ff-prose text-left pb-24 m-auto">
     {% include "./left-nav.njk" %}
 
-    <div class="max-w-screen-lg mx-auto px-10 pt-8">
+    <div class="px-10 pt-8 content-column">
         <!-- Breadcrumbs - Desktop -->
-        <div class="hidden w-full mx-auto md:block">
+        <div class="hidden w-full md:block">
             <div class="font-medium border-b pb-1">
                 {% if version %}
                 v{{ version }}
@@ -35,16 +35,16 @@ date: git Last Modified
         <div class="w-full m-auto md:pt-6">
             <div id="algolia-search" class="border rounded"></div>
         </div>
-        <div class="w-full mx-auto flex flex-col md:flex-row">
+        <div class="w-full">
             <!-- Main Content -->
-            <div class="flex-grow order-last md:order-first">
+            <div class="order-last md:order-first">
                 <div class="mt-6 mb-4 prose prose-blue main-content">
                     {{ content | rewriteHandbookLinks(page) | safe }}
                 </div>
             </div>
         </div>
     </div>
-    <div class="border-l">
+    <div class="border-l right-nav">
         <!-- Breadcrumbs - Mobile -->
         <div class="block px-8 pt-4 w-full mx-auto md:hidden">
             <div class="font-medium border-b pb-1">
