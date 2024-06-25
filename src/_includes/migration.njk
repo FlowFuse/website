@@ -107,15 +107,12 @@
         event.preventDefault();
     }
 
-    const PROD = '968a9ab6-3dd8-45b2-991c-3f055dc18787'
-    const TEST = '1ecbeb84-36a6-4077-b6c8-3f4a5b06bca0'
-    
     function displayHubSpotForm() {
         hbspt.forms.create({
             target: '#hs-user-form',
             region: "eu1",
             portalId: "26586079",
-            formId: TEST,
+            formId:"968a9ab6-3dd8-45b2-991c-3f055dc18787",
             onFormSubmitted: function ($form) {
                 migrateFile()
             }
