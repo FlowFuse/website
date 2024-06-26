@@ -166,6 +166,7 @@ pre code {
 }
 
 .prose .zoomable-image + em,
+.prose img + em,
 .prose picture + em {
     display: block;
     text-align: center;
