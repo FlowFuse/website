@@ -1,6 +1,6 @@
 ---
 title: Node-RED Dashboard Formally Deprecated
-subtitle: It has just been announced that the predecessor to FlowFuse's Dashboard, Node-RED Dashboard, has been formally deprecated. Find out more about FlowFuse Dashboard, and what we have planned.
+subtitle: It has just been announced that the predecessor to FlowFuse's Dashboard, Node-RED Dashboard, has been formally deprecated. Find out how FlowFuse Dashboard can help you build your Dashboards, and what we have planned in the near future.
 description: It has just been announced that the predecessor to FlowFuse's Dashboard, Node-RED Dashboard, has been formally deprecated. Find out what this means for your Node-RED instances, see how you can get started with FlowFuse's Dashboard, and what we have planned in the near future.
 date: 2024-06-27
 authors: ["joe-pavitt"]
