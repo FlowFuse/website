@@ -76,13 +76,14 @@ meta:
                 <p class="mt-6">
                     Get started quickly with your new FlowFuse Dashboard. This migration service will automatically convert
                     your original Node-RED Dashboard flows, and make them FlowFuse Dashboard-ready.
-                </p>
-                <p class="pb-5">
-                    This service will improve over time. Currently, we support the automatic conversion of
-                    <code>ui_tab</code>, <code>ui_link</code> and <code>ui_group</code> nodes.
-                </p>
-            </div>
+                </p></div>
             {% include "migration.njk" %}
+            <p>Note, this service is designed to help you get started with migration of your flow, and cannot automatically migrate the <i>full</i> flow over to FlowFuse Dashboard.</p>
+            <p>Currently, we support the automatic conversion of the following nodes: <code>ui_tab</code>,
+            <code>ui_link</code>, <code>ui_group</code>, <code>ui_text</code>, <code>ui_text_input</code>,
+            <code>ui_slider</code>, <code>ui_switch</code>, <code>ui_form</code>, <code>ui_dropdown</code>, and <code>ui_button</code>.
+            You can find out more details
+            <a href="https://github.com/FlowFuse/node-red-dashboard-2-migration?tab=readme-ov-file#supported-nodes">here</a>.</p>
         </div>
     </div>
     <!-- Learning Resources -->
