@@ -10,6 +10,7 @@ video: wGU_OvltOIY
 hosts: ["grey-dziuba"]
 hubspot:
     formId: 8fc67169-e654-4cca-ae6e-db2f534e66f0
+    downloadFormId: 1dba1b62-aef6-4e1b-a869-5a506f180d6a
 ---
 
 **In this webinar, learn how low-code/no-code platforms help provide value to resource-constrained development teams. See how you can unlock the full potential and knowledge of any engineer by reducing complexities in typical development processes.**
@@ -21,7 +22,7 @@ Enterprises across industries face various challenges when implementing seemingl
 So how can you combine domain expertise and low-code experts to lead to development success? 
 By enabling more people in the organization to innovate with easy-to-use development tools, they become part of the solution. This flips the paradigm where the owner of the project and beneficiary of the project is the same ensuring overall project success. Low-code and no-code platforms aim to solve these challenges by providing a flexible, efficient way to develop and integrate applications. 
 
-In this webinar, Grey Dziuba, OT Data and Community Strategist at FlowFuse will explore 
+In this webinar, Grey Dziuba, OT Data and Community Strategist at FlowFuse explores 
 
 - The real challenges enterprises face in today’s digitally transformed systems.  
 - How a low-code platform enhances efficiency and flexibility across the organization. 
@@ -30,5 +31,5 @@ In this webinar, Grey Dziuba, OT Data and Community Strategist at FlowFuse will 
 
 This webinar is ideal for project managers looking to change the development paradigm within their organization, focusing on enabling teams to solve their own problems with support from skilled teams. 
 
-Don’t miss out on discovering how low-code platforms can help you overcome traditional challenges and propel your operations forward securely and efficiently.
+Discover how low-code platforms can help you overcome traditional challenges and propel your operations forward securely and efficiently.
 
