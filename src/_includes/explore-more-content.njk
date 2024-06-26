@@ -1,0 +1,62 @@
+<div class="w-full max-w-md md:max-w-none mx-auto flex flex-col md:grid md:grid-cols-3 gap-6 md:gap-x-8 pt-8">
+    <div class="w-full my-2 grid grid-cols-1 pb-4">
+        <div class="pb-2 md:pb-0">
+            <a href="/blog/">
+                <div class="sm:max-h-none md:min-w-[40%] max-w-[448px] ff-image-cover ff-image-rounded scale mx-auto mb-4 aspect-video">
+                    {% image "./images/home/blog.png", "Image of hands typing on laptop working on Node-RED flows", [448] %}
+                </div>
+            </a>
+            <h4 class="text-xl font-bold pb-3">Latest on the blog</h4>
+            {%- for item in collections[collectionName or 'posts'] | sort(attribute='item.date') | reverse | limit(3) -%}
+            <a href="{{ item.url }}"
+                class="w-full flex flex-col group {% if not loop.last %}border-b{% endif %}">
+                <h5 class="my-2 font-light">
+                    <span class="text-gray-500 group-hover:text-blue-700">
+                        {{ item.data.title }}
+                    </span>
+                </h5>
+            </a>
+            {%- endfor -%}
+        </div>
+        <a href="/blog/{{ collectionName or '' }}" class="w-full text-right flex flex-row items-center justify-end self-end justify-self-end gap-1">
+            See all
+            {% include "components/icons/arrow-long-right.svg" %}
+        </a>
+    </div>
+    <div class="w-full my-2 grid grid-cols-1 pb-4">
+        {%- for item in collections.webinar | sort(attribute='item.date') | reverse | limit(1) -%}
+        <div class="pb-2 md:pb-0">
+            <a href="{{ item.url }}">
+                <div class="sm:max-h-none md:min-w-[40%] max-w-[448px] ff-image-cover ff-image-rounded scale mx-auto mb-4 aspect-video">
+                    {% image "./images/home/webinar.png", "Image of hands typing on laptop working on Node-RED flows", [448] %}
+                </div>
+            </a>
+            <h4 class="text-xl font-bold pb-3">{% if item.date | isFutureDate %}Upcoming{% else %}Latest{% endif %} Webinar</h4>
+            <div class="w-full flex flex-col">
+                <h5 class="my-2 font-light"><span class="text-gray-500">{{ item.data.title }}</span></h5>
+            </div>
+            <div class="webinar-title w-full border-t pt-3 font-light text-gray-500">
+                <time value="{{ item.date }}">{{ item.date | shortDate }}</time>
+                {% if item.date | isFutureDate %}
+                <time value="{{ item.data.time }}"> | {{ item.data.time }}</time>
+                {% endif %}
+            </div>
+        </div>
+        <a class="mt-4 ff-btn ff-btn--primary-outlined uppercase inline-block self-end justify-self-end"
+            href="{{ item.url }}">{% if item.date | isFutureDate %}REGISTER NOW{% else %}WATCH WEBINAR{%
+            endif %}</a>
+        {%- endfor -%}
+    </div>
+    <div class="w-full my-2 grid grid-cols-1">
+        <div class="pb-2 md:pb-0">
+                <div class="sm:max-h-none md:min-w-[40%] max-w-[448px] ff-image-cover ff-image-rounded mx-auto mb-4 aspect-video">
+                    {% image "./images/home/newsletter.png", "Image of hands typing on laptop working on Node-RED flows", [448] %}
+                </div>
+            <h4 class="text-xl font-bold pb-3">Newsletter</h4>
+            <h5 class="font-bold pb-3 pt-2">Sign up for our monthly email updates</h5>
+        </div>
+        <div class="-mb-1 self-end w-full">
+            {% include hubspot.script %}
+        </div>
+    </div>
+</div>

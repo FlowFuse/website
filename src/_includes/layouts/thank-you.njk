@@ -1,54 +1,16 @@
 ---
 layout: layouts/page.njk
 skipIndex: true
+hubspot:
+  script: "hubspot/hs-form.njk"
+  formId: 159c173d-dd95-49bd-922b-ff3ef243e90c
 ---
 <div class="flex flex-col max-w-5xl mx-auto gap-x-10 px-6">
-  <div class="{% if downloadFollowUp %}md:grid md:grid-rows-4 md:grid-cols-2 md:grid-flow-rows md:gap-x-6{% else %}w-full{% endif %}">
-    {% if downloadFollowUp %}
-    <!-- Secondary title -->
-    <div class="max-md:mx-auto flex flex-col max-md:max-w-md md:col-start-1 md:col-end-2 max-md:text-center">
-      <h4 class="w-full font-light mb-2 md:mb-6 pt-2 text-gray-500">See how Flowfuse can help with your next project</h4>
-      <h4 class="w-full text-red-600 md:flex md:flex-row md:gap-2 md:items-center">
-        Book a call now <span class="max-md:hidden">{% include "components/icons/arrow-long-right.svg" %}</span>
-        </h4>
+  <div class="max-w-md sm:max-w-screen-lg m-auto max-w-5xl pb-12">
+      {% include "explore-more-content.njk" %}
     </div>
-    {% endif %}
-    <!-- Form section -->
-    <section class="text-center md:text-left md:row-span-full md:col-start-2 md:col-end-7 {% if not downloadFollowUp %}md:mb-10{% endif %}">
-      <div class="container m-auto text-left max-w-5xl">
-        <div class="flex flex-col justify-center items-center md:block mx-auto">
-            <!-- Form / Calendar Script -->
-            <div class="max-w-2xl mx-auto">
-              {% include hubspot.script %}
-            </div>
-        </div>
-      </div>
-    </section>
-    {% if downloadFollowUp %}
-    <!-- Latest blog posts -->
-    <div class="my-2 pb-4 md:row-span-3 md:col-start-1 md:col-end-2">
-      <section class="max-w-sm max-md:mx-auto rounded-lg border border-gray-300 bg-white px-8 py-6 md:mt-10">
-        <div class="pb-2 md:pb-8">
-          <h4 class="pb-3">Latest on the blog</h4>
-          {%- for item in collections[collectionName] | sort(attribute='item.date') | reverse | limit(3) -%}
-          <a href="{{ item.url }}" class="w-full flex flex-col group {% if not loop.last %}border-b{% endif %}">
-            <h5 class="my-2 font-light">
-              <span class="text-gray-500 group-hover:text-blue-700">
-                {{ item.data.title }}
-              </span>
-            </h5>
-          </a>
-          {%- endfor -%}
-        </div>
-        <a href="/blog/" class="w-full items-center pt-6 md:mt-16">
-          See all
-        </a>
-      </section>
-    </div>
-    {% endif %}
-  </div>
   <!-- Social proof logos -->
-  <div class="w-full social-proof-logos md:-mt-12 mt-6 px-6 border-t border-gray-200">
+  <div class="w-full social-proof-logos mt-6 px-6 border-t border-gray-200">
     {% include "social-proof.njk" %}
   </div>
 </div>
