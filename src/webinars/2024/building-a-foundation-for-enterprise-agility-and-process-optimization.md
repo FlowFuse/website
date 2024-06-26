@@ -6,7 +6,7 @@ image: /images/webinars/building-a-foundation-for-enterprise-agility-and-process
 date: 2024-06-26
 time: 17:00 CET (11:00am ET) 
 duration: 60
-video: 
+video: wGU_OvltOIY
 hosts: ["grey-dziuba"]
 hubspot:
     formId: 8fc67169-e654-4cca-ae6e-db2f534e66f0
