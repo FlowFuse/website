@@ -14,6 +14,8 @@ tags:
 
 Sending notifications is crucial for IoT applications, especially for critical alerts, and there are a lot of different services that are used but Discord is standout among them. In recent months, we've written many articles on integrating different services with Node-RED, including popular notification platforms like [Email](/node-red/notification/email/) and [Telegram](/node-red/notification/telegram/). In this guide, we will delve into sending and receiving messages from Node-RED to users and channels on Discord.
 
+<!--more-->
+
 ## Creating Bot in Discord
 
 1. Navigate to the [Discord developer portal](https://discord.com/developers/applications).
