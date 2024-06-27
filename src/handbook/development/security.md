@@ -64,7 +64,8 @@ The following types of vulnerability are not eligible for any reward.
 
  - **Admin-initiated Stored XSS / HTML Injection** - FlowFuse administrators are considered trusted users on the system. If an issue is only exploitable by administrators, then it is not eligible.
  - **Rate-limiting** - We apply rate limiting across the whole FlowFuse platform API, with different limits applied based on the context of the API. We keep the limits under review to balance security and convenience. If an issue relates to rate-limiting, but is demonstrably within our configure rate-limits, then it will not be eligible.
- 
+ - **In-App Chat** - The in-app support chat is provided by a 3rd party and is out of scope of any reward. It allows file upload as means for users to share information when seeking support. This does not represent a vulnerability.
+
 ### Payments
 
 In the exceptional circumstances that we choose to reward a disclosure based on the criteria above you will be notified via the email used to submit the disclosure. If you have sent multiple reports we may choose to produce a combined response rather than reply to each email individually.
