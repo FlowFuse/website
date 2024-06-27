@@ -11,6 +11,7 @@ tags:
    - node-red
    - flowfuse
    - dashboard 2.0
+   - FlowFuse Dashboard
 ---
 
 Dave Conway-Jones, the lead maintainer of Node-RED Dashboard, has [just announced](https://discourse.nodered.org/t/node-red-dashboard-v1-deprecation-notice/89006) that Node-RED Dashboard has been formally deprecated, meaning there will be no further development activity on the project.
