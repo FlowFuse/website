@@ -42,7 +42,7 @@
                 {% endif %}
             </div>
         </div>
-        <a class="mt-4 ff-btn ff-btn--primary-outlined uppercase inline-block self-end justify-self-end"
+        <a class="mt-4 ff-btn ff-btn--primary{% if downloadFollowUp == undefined %}-outlined{% endif %} uppercase inline-block self-end justify-self-end"
             href="{{ item.url }}">{% if item.date | isFutureDate %}REGISTER NOW{% else %}WATCH WEBINAR{%
             endif %}</a>
         {%- endfor -%}
