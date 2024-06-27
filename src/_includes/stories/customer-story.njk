@@ -1,0 +1,42 @@
+{% macro storyTile(title, url, brand, logo, image) %}
+<li class="customer-story-tile w-full my-2 border px-0 rounded-lg hover:drop-shadow-lg hover:border-blue-600 transition ease-in-out duration-300 bg-white">
+    <a href="{{ url }}" class="w-full flex flex-col group hover:no-underline h-full m-0">
+        <div class="">
+            <div>
+                {% if image %}
+                    <div class="relative border-b">
+                        <div class="w-full h-52 sm:h-48 ff-image-cover ff-image-top-rounded">
+                            {% set imageSrc = [image ] | join %}
+                            {% set imageDescription = ["Image representing ", title] | join %}
+                            <picture>
+                                <img src="{{ imageSrc }}" alt="{{ imageDescription }}" />
+                            </picture>
+                        </div>
+                        {% if logo %}
+                            <div class="w-1/2 h-full absolute left-0 top-0 bg-white flex items-center justify-center object-contain rounded-tl-lg">
+                                {% set imageSrc = [logo] | join %}
+                                {% set imageDescription = ["Image representing ", brand, " logo"] | join %}
+                                <picture>
+                                    <img src="{{ imageSrc }}" alt="{{ imageDescription }}" />
+                                </picture>
+                            </div>
+                        {% endif %}
+                    </div>    
+                {% else %}
+                    <div class="w-full h-52 sm:h-48 ff-image-cover ff-image-top-rounded">
+                        {% set imageSrc = "/images/og-blog.jpg" %}
+                        {% set imageDescription = "Image with logo and the slogan: Elevate Node-RED with Flowfuse" %}
+                            <picture>
+                                <img src="{{ imageSrc }}" alt="{{ imageDescription }}" />
+                            </picture>
+                    </div>
+                {% endif %}
+            </div>
+            <div class="flex flex-col mt-1 mb-0 p-5 pt-3 gap-2">
+                <label class="font-bold"><span class="text-gray-400">{{ brand }}</span></label>
+                <h3 class="group-hover:text-blue-600 font-medium m-0 mt-0 mb-2" style="line-height: 1.6rem"><span class="text-lg">{{ title }}</span></h3>
+            </div>
+        </div>
+    </a>
+</li>
+{% endmacro %}
