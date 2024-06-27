@@ -1,6 +1,7 @@
 ---
 eleventyNavigation:
   key: Terminology
+  order: 2
 meta:
    title: Node-RED Terminology
    description: Explore key terms and concepts used within the Node-RED community, including flows, nodes, subflows, workspace, and more.
