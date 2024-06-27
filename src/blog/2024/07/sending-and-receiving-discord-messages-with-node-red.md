@@ -4,7 +4,7 @@ subtitle: Step-by-step guide on how to send and receive discord messages with No
 description: Learn how to send and receive Discord messages with Node-RED.
 date: 2024-07-01
 authors: ["sumit-shinde"]
-image: 
+image: /blog/2024/07/images/sending-and-receiving-discord-message-with-node-red.png
 tags:
    - node-red
    - discord
