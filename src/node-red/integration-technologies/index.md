@@ -1,7 +1,6 @@
 ---
 eleventyNavigation:
   key: "Integration Technologies"
-  order: 8
 meta:
    title: Using Different Technologies for Building Applications with Node-RED.
    description: Learn how to leverage various integration technologies with Node-RED for building robust and interconnected applications.

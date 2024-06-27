@@ -1,7 +1,6 @@
 ---
 eleventyNavigation:
   key: "Communication Protocols"
-  order: 7
 meta:
    title: Using Different Protocols for Building Applications with Node-RED
    description: Learn how to leverage various communication protocols with Node-RED for building robust and interconnected applications.

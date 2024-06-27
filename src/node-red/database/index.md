@@ -1,7 +1,6 @@
 ---
 eleventyNavigation:
   key: Database
-  order: 6
 meta:
   title: Node-RED Database Integration Guides
   description: Explore database integration guides for Node-RED, including PostgreSQL, MongoDB, InfluxDB, DynamoDB, and TimescaleDB

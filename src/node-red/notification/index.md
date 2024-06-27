@@ -1,7 +1,6 @@
 ---
 eleventyNavigation:
   key: "Notification Services"
-  order: 9
 meta:
    title: Notification Services in Node-RED
    description: Learn how to integrate various notification services with Node-RED for real-time alerts and messaging.
