@@ -43,6 +43,27 @@
     background-color: theme(colors.gray.600);
 }
 
+/*
+    Customer Story Tile
+*/
+.customer-story-tile a {
+    text-decoration: none;
+}
+
+/* njk/md parser intoduces a bunch of stray <p> tags that we can do nothing about */
+.customer-story-tile p:empty {
+    display: none;
+}
+.customer-story-tile p:not(:empty) {
+    height: 100%;
+}
+
+.customer-story-tile picture,
+.customer-story-tile img {
+    border-bottom-left-radius: 0 !important;
+    border-bottom-right-radius: 0 !important;
+}
+
 
 /*
     WEBINAR
