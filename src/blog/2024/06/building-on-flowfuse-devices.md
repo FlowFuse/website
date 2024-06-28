@@ -43,7 +43,7 @@ Breaking it down we have the following fundamental requirements:
 
 - **Read:** Reading data from the devices using the relevant protocol
 - **Parse:** Process the data into a computational format
-- **Monitor:** Analysis & monitoring of the data from all devices
+- **Compute/Monitor:** Analysis & monitoring of the data from all devices
 - **Action:** Taking action based on the data from the devices
 
 Then, we have to consider that this functionality needs to be deployed out to thousands of devices. So, our final requirement is:
@@ -54,19 +54,17 @@ Then, we have to consider that this functionality needs to be deployed out to th
 
 ![Lineup of each of the FlowFuse offerings](./images/ff-ecosystem-lineup.png){data-zoomable}
 
-With the FlowFuse Ecosystem, we have serval offerings that will help build a robust and scalable solution for the above use case:
+So, given the use case, how do the FlowFuse offerings piece together to build a solution?
 
 - **Node-RED:** Low-code platform for reading and parsing data from the hardware, building the application logic, analysis and alerting.
 - **FlowFuse Dashboard:** An add-on to Node-RED for building interactive user interfaces and dashboards to monitor the devices.
-- **FlowFuse:** Centralised platform that provides a single entry point to manage all of your Node-RED applications.
-- **FlowFuse Device Agent:** Deployed to remote hardware, this provides a connection to FlowFuse, and allows for remote deployment, management and updating of Node-RED instances.
-- **FlowFuse Project Nodes:** An add-on to Node-RED that provides (MQTT-based) nodes to interface directly between multiple instances of Node-RED.
+- **FlowFuse:** Centralized platform that provides a single entry point to manage all of your Node-RED applications and deployments.
+- **FlowFuse Device Agent:** Installed onto the relevant hardware, this provides a connection to FlowFuse, and allows for remote deployment, management and updating of Node-RED instances.
+- **FlowFuse Project Nodes:** An add-on to Node-RED that provides nodes to communicate over a secure (MQTT-based) connection to interface directly between multiple instances of Node-RED.
 
 ## Architecture
 
-So, given the use case, how do the FlowFuse offerings piece together to build a solution?
-
-
+So, given the use case, how do the FlowFuse offerings piece together to help build a solution?
 
 
 ## What Next?
