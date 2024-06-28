@@ -36,7 +36,7 @@ module.exports = {
                         strong: {
                             color: theme('colors.gray.500'),
                         },
-                        maxWidth: 'none',
+                        maxWidth: '80ch',
                     },
                 },
             }),

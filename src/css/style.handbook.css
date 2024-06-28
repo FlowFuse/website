@@ -8,6 +8,10 @@
         @apply flex flex-col-reverse lg:grid lg:max-w-screen-xl 2xl:max-w-[1920px] 2xl:grid-cols-[300px,auto,270px];
     }
 
+    .handbook .prose {
+        max-width: none;
+    }
+
     .handbook-nav {
         border-right: 1px solid right;
         text-transform: capitalize;
