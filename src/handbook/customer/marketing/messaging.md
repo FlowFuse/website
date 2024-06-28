@@ -4,7 +4,6 @@ navTitle: FlowFuse Messaging
 
 # {{ navTitle }}
 
-FlowFuse empowers every employee in 
 
 ## Audience
 
