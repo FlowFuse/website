@@ -4,7 +4,7 @@ module.exports = async function() {
   const url = 'https://catalog.flowfuse.com/catalogue.json';
 
   const data = await EleventyFetch(url, {
-    duration: "1d", // save for 1 day
+    duration: "4h", // save for 1 day
     type: "json"    // parse the JSON
   });
 
@@ -14,7 +14,7 @@ module.exports = async function() {
       .map(word => word.replace(/^\w/, (c) => c.toUpperCase()))
       .join(' '),
     id: item.id,
-    url: item.url,
+    url: item.url || `https://flows.nodered.org/node/${item.id}`,
     description: item.description,
   }));
 

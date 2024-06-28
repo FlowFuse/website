@@ -166,6 +166,7 @@ pre code {
 }
 
 .prose .zoomable-image + em,
+.prose img + em,
 .prose picture + em {
     display: block;
     text-align: center;
@@ -752,6 +753,52 @@ h4:hover .header-anchor {
     position: relative;
     width: 100%;
     transform: translateX(0);
+}
+
+/*
+    Migration Service
+*/
+
+.ff-file-drop-zone {
+    background-color: theme(colors.blue.50);
+    border: 1px dashed theme(colors.blue.300);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    height: 100%;
+    padding: 64px;
+    text-align: center;
+}
+
+.ff-file-drop-zone:hover {
+    background-color: theme(colors.blue.100);
+    border: 1px solid theme(colors.blue.300);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.ff-file-drop-zone input[type="file"] {
+    display: none;
+}
+
+.ff-dashboard-migration {
+    display: grid;
+    flex-direction: column;
+    gap: 32px;
+    justify-content: center;
+    @apply max-md:px-6;
+}
+
+.ff-dashboard-migration-actions {
+    margin: auto;
+}
+
+@media (min-width: 680px) {
+    .ff-dashboard-migration {
+        grid-template-columns: 1fr 1fr;
+    }
 }
 
 /*
