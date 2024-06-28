@@ -119,7 +119,7 @@ Below are common errors that can occur while integrating Discord with Node-RED, 
 
 !["User disallowed intent"](./images/discord-with-node-red-error-3.png "User disallowed intent")
 
-If your Discord nodes show a status similar to the image above, it might be because you forgot to enable the [Privileged Gateway Intents](https://discord.com/developers/docs/topics/gateway#gateway-intents) option. If you have already enabled it but still encounter this issue, it could be due to your app being verified, which requires applying for the privileged gateway intents, for more information refer to [Discord support article](https://support-dev.discord.com/hc/en-us/articles/6205754771351-How-do-I-get-Privileged-Intents-for-my-bot).
+If your Discord nodes show a status similar to the image above, it might be because you forgot to enable the [Privileged Gateway Intents](https://discord.com/developers/docs/topics/gateway#gateway-intents) option. If you have already enabled it but still encounter this issue, it could be due to your app bot is verified, verified app bot requires to apply for the privileged gateway intents, For more information refer to [Discord support article](https://support-dev.discord.com/hc/en-us/articles/6205754771351-How-do-I-get-Privileged-Intents-for-my-bot).
 
 !["DiscordAPIError:Unknwon channel"](./images/discord-with-node-red-error-2.png "DiscordAPIError:Unknwon channel")
 
