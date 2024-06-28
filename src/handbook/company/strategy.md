@@ -7,11 +7,11 @@ meta:
 
 ## Core Values
 
-Please see our [company values](/handbook/company/values/)
+Please see our [company values](/handbook/company/values/).
 
 ## FlowFuse's Mission
 
-FlowFuse will empower all engineers to innovate faster, by bringing the joy of software development to the world.
+FlowFuse will empower all employees to innovate faster, by bringing the joy of software development to the world.
 
 ## Achieving our Mission
 
@@ -46,3 +46,5 @@ The ideal lead has adopted Node-RED already and is in the following industries:
 
 Due to the breadth of the Node-RED community and the industries they
 apply it in, FlowFuse does not qualify customers based on industry.
+
+See also our [Messaging page](/handbook/customer/marketing/messaging/).
