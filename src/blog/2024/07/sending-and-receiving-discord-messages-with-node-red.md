@@ -12,9 +12,15 @@ tags:
    - discord notification
 ---
 
-Sending notifications is crucial for IoT applications, especially for critical alerts, and there are a lot of different services that are used but Discord is standout among them. In recent months, we've written many articles on integrating different services with Node-RED, including popular notification platforms like [Email](/node-red/notification/email/) and [Telegram](/node-red/notification/telegram/). In this guide, we will delve into sending and receiving messages from Node-RED to users and channels on Discord.
+Sending notifications is crucial for IoT applications, especially for critical alerts, and there are a lot of different services that are used but Discord is standout among them. In recent months, we've written many articles on integrating different services with Node-RED, including popular notification platforms like [Email](/node-red/notification/email/) and [Telegram](/node-red/notification/telegram/). In this guide, we will delve into sending and receiving messages from Node-RED to users and channels on Discord, along with troubleshooting tips for resolving common errors that may occur.
 
 <!--more-->
+
+## Prerequsite
+
+Before proceeding further, make sure you have installed the following node:
+
+- [node-red-contrib-discord-advance](https://flows.nodered.org/node/node-red-contrib-discord-advanced)
 
 ## Creating Bot in Discord
 
@@ -107,7 +113,20 @@ Below, I have provided the complete flow that we have built throughout the guide
 [{"id":"7a8dd49f9614608e","type":"inject","z":"4674ed668685adf6","name":"Sending mesasge to Discord server 's channel","props":[{"p":"payload"}],"repeat":"","crontab":"","once":false,"onceDelay":0.1,"topic":"","payload":"Hello,  This is from Node-RED","payloadType":"str","x":570,"y":420,"wires":[["3984c20a52db033f"]]},{"id":"3984c20a52db033f","type":"discordMessageManager","z":"4674ed668685adf6","name":"","channel":"56454645657765656","token":"","x":930,"y":420,"wires":[["b99ae75425047b6b"]]},{"id":"b99ae75425047b6b","type":"debug","z":"4674ed668685adf6","name":"debug 3","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"false","statusVal":"","statusType":"auto","x":1200,"y":420,"wires":[]},{"id":"6af740e11aba6ca2","type":"inject","z":"4674ed668685adf6","name":"Sending message to Discord user","props":[{"p":"payload"},{"p":"user","v":"65454534534345365","vt":"str"}],"repeat":"","crontab":"","once":false,"onceDelay":0.1,"topic":"","payload":"Hello, Sumit","payloadType":"str","x":550,"y":320,"wires":[["f69363f341b62333"]]},{"id":"f69363f341b62333","type":"discordMessageManager","z":"4674ed668685adf6","name":"","channel":"","token":"","x":930,"y":320,"wires":[["c5001a783992ae01"]]},{"id":"c5001a783992ae01","type":"debug","z":"4674ed668685adf6","name":"debug 4","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"false","statusVal":"","statusType":"auto","x":1220,"y":320,"wires":[]},{"id":"820b70826545a401","type":"debug","z":"4674ed668685adf6","name":"debug 2","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"true","targetType":"full","statusVal":"","statusType":"auto","x":1020,"y":540,"wires":[]},{"id":"f044d3784ef8c74a","type":"discordMessage","z":"4674ed668685adf6","name":"","channelIdFilter":"","token":"","x":720,"y":540,"wires":[["820b70826545a401"]]}]
 {% endrenderFlow %}
 
+## Debugging and Troubleshooting
+
+Below are common errors that can occur while integrating Discord with Node-RED, along with troubleshooting tips.
+
+!["User disallowed intent"](./images/discord-with-node-red-error-3.png "User disallowed intent")
+
+If your Discord nodes show a status similar to the image above, it might be because you forgot to enable the [Privileged Gateway Intents](https://discord.com/developers/docs/topics/gateway#gateway-intents) option. If you have already enabled it but still encounter this issue, it could be due to your app being verified, which requires applying for the privileged gateway intents, for more information refer to [Discord support article](https://support-dev.discord.com/hc/en-us/articles/6205754771351-How-do-I-get-Privileged-Intents-for-my-bot).
+
+!["DiscordAPIError:Unknwon channel"](./images/discord-with-node-red-error-2.png "DiscordAPIError:Unknwon channel")
+
+![DiscordAPIError:Unknwon user](./images/discord-with-node-red-error-1.png "DiscordAPIError:Unknwon user")
+
+If you are getting errors similar to the images above, it's likely because the `channelId` or `userId` is invalid. Double-check and correct these identifiers to resolve the errors.
+
 ## Conclusion
 
-In this guide, we've shown how to seamlessly integrate Discord messaging into Node-RED workflows, covering everything from setting up a Discord bot to sending and receiving messages to and from Discord users and server channels."
-
+In this guide, we've shown how to seamlessly integrate Discord messaging into Node-RED workflows, covering everything from setting up a Discord bot to sending and receiving messages to and from Discord users and server channels. Furthermore we have provided some troubleshooting tips to resolve the common errors which can occure during the integration of Discord with Node-RED.
