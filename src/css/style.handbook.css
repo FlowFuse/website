@@ -3,9 +3,9 @@
 
 @layer components {
     .handbook {
-        grid-template-columns: 220px 1fr auto;
+        grid-template-columns: 220px auto 260px;
         margin-top: -3rem;
-        @apply flex flex-col-reverse md:grid;
+        @apply flex flex-col-reverse lg:grid lg:max-w-screen-xl 2xl:max-w-[1920px] ;
     }
 
     .handbook-nav {
@@ -18,8 +18,9 @@
         background-color: transparent;
         padding-top: 0.25rem;
         max-height: calc(100vh - 1.5rem);
+        max-width: 300px;
         overflow-y: auto;
-        @apply sticky top-12 pl-2 sm:pl-6 xl:pl-0;
+        @apply sticky top-12 pl-6;
     }
 
     .handbook-nav-nested {
@@ -125,6 +126,10 @@
         overflow-x: auto;
         max-width: 100%;
         @apply lg:max-w-[calc(100vw-590px)];
+    }
+
+    .handbook pre {
+        max-width: max-content;
     }
 
     /* Define animation transitions for all child UL elements */
