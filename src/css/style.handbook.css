@@ -3,9 +3,9 @@
 
 @layer components {
     .handbook {
-        grid-template-columns: 220px auto 260px;
+        grid-template-columns: 230px auto 260px;
         margin-top: -3rem;
-        @apply flex flex-col-reverse lg:grid lg:max-w-screen-xl 2xl:max-w-[1920px] ;
+        @apply flex flex-col-reverse lg:grid lg:max-w-screen-xl 2xl:max-w-[1920px] 2xl:grid-cols-[300px,auto,270px];
     }
 
     .handbook-nav {
@@ -125,7 +125,7 @@
     .handbook .table-wrapper {
         overflow-x: auto;
         max-width: 100%;
-        @apply lg:max-w-[calc(100vw-590px)];
+        @apply lg:max-w-[calc(100vw-610px)];
     }
 
     .handbook pre {
