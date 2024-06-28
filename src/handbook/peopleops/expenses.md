@@ -96,7 +96,7 @@ Unless circumstances require otherwise, laptops will only be considered for a re
 
 ### Microphones and Cameras
 
-We recommend everyone has a quality microphone and web-cam, even if they are only communicating with other FlowFuse team members. Being able to clearly see and hear each other makes video calls more effective by maximising the chance of everyone understanding what you are saying as well as picking up on your non-verbal communication.
+We recommend everyone has a quality microphone and web-cam, even if they are only communicating with other FlowFuse team members. Being able to clearly see and hear each other makes video calls more effective, by minimising misunderstandings and the need for us to repeat ourselves.
 
 #### Suggested Setup
 
