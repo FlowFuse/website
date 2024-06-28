@@ -294,6 +294,11 @@ dl.message-properties {
     margin-top: 1rem;
 }
 
+.blog .ff-prose {
+    flex-grow: 1;
+    max-width: calc(100% - 18rem);
+}
+
 /*
     prevent top margin on first/hero img of a blog post
 */
