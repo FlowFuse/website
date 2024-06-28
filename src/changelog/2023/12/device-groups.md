@@ -1,6 +1,7 @@
 ---
 title: Device Groups
 date: 2023-12-21 13:00:00.0
+description: "FlowFuse update: Introducing Device Groups for improved device management and streamlined integration into DevOps Pipelines"
 authors: ["marian-demme"]
 tags:
     - changelog

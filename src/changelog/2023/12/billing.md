@@ -1,5 +1,6 @@
 ---
 title: No Credit Card required for billing
+description: FlowFuse Cloud now offers billing without requiring credit card details. Explore our flexible annual subscription options tailored to fit your needs. 
 date: 2023-12-06 13:00:00.0
 authors: ["marian-demme"]
 tags:

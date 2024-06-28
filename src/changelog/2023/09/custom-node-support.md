@@ -1,5 +1,6 @@
 ---
 title: Custom Node Support
+description: Flowfuse now supports custom Node Catalogues, letting you easily install modules from extra NPM registries to expand your Node-RED setup as needed.
 date: 2023-09-28 12:01:01.0
 authors: ["marian-demme"]
 tags:

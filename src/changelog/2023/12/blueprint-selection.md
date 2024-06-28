@@ -1,5 +1,6 @@
 ---
 title: Blueprint Selection Update
+description: "FlowFuse enhances UX: Improved blueprint selection interface for easier navigation and selection. Stay tuned for our expanding blueprint library."
 date: 2023-12-21 10:00:00.0
 authors: ["marian-demme"]
 tags:
