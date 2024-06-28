@@ -294,10 +294,6 @@ dl.message-properties {
     margin-top: 1rem;
 }
 
-.blog .ff-prose {
-    @apply md:flex-grow md:max-w-[calc(100%-18rem)];
-}
-
 /*
     prevent top margin on first/hero img of a blog post
 */
