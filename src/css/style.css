@@ -615,6 +615,11 @@ h4:hover .header-anchor {
         @apply transition-navdropdown;
     }
 
+    .ff-website header .ff-nav-dropdown > ul.align-left {
+        right: auto;
+        left: 0;
+    }
+
     .ff-website header .ff-nav-dropdown > ul:before {
         content: url("/images/nav-arrow.svg");
         z-index: 10;
@@ -622,6 +627,10 @@ h4:hover .header-anchor {
         top: -16px;
         right: 3rem;
         @apply hidden md:block;
+    }
+    .ff-website header .ff-nav-dropdown > ul.align-left:before {
+        right: auto;
+        left: 3rem;
     }
 
     .ff-website header .ff-nav-dropdown a {
