@@ -295,8 +295,7 @@ dl.message-properties {
 }
 
 .blog .ff-prose {
-    flex-grow: 1;
-    max-width: calc(100% - 18rem);
+    @apply md:flex-grow md:max-w-[calc(100%-18rem)];
 }
 
 /*
