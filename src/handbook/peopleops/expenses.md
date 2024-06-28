@@ -94,6 +94,16 @@ For any other employee within the company, the following devices are recommended
 
 Unless circumstances require otherwise, laptops will only be considered for a refresh after 4 years. Please discuss with your manager if you need to refresh your laptop.
 
+### Microphones and Cameras
+
+We recommend everyone has a quality microphone and web-cam, even if they are only communicating with other FlowFuse team members. Being able to clearly see and hear each other makes video calls more effective by maximising the chance of everyone understanding what you are saying as well as picking up on your non-verbal communication.
+
+#### Suggested Setup
+
+[FiFine USB Microphone](https://fifinemicrophone.com/collections/usb-mics/products/fifine-k669-669b) (~$30)
+[Microphone Stand](https://www.amazon.co.uk/Aokeo-AK-35-Microphone-Suspension-Scissor/dp/B01MZ99Y67) (~$25)
+[Logitech C920 Webcam](https://www.logitech.com/en-gb/products/webcams/c920-pro-hd-webcam.960-001055.html) (~$100)
+
 ### Asset purchases over $500
 
 Any asset purchase over $500 (laptops, devices etc) needs to be centrally recorded.
