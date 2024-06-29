@@ -19,7 +19,7 @@ our software being grass-roots.
 
 ### Ideal Customer Profile (ICP)
 
-FlowFuse caters to a brought range of customers, many of which do not fall into
+FlowFuse appeals to a broad range of customers, many of which do not fall into
 our 'ICP'. That's not to say FlowFuse shouldn't cater to this audience, but
 does 
 
