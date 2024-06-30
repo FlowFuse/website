@@ -7,10 +7,15 @@
                     onclick="openFilePicker();"
                     ondrop="dropHandler(event);"
                     ondragover="dragOverHandler(event);">
-                    <p id="drag-instruction">Drag a <i>flow.json</i> file containing Node-RED Dashboard 1.0 nodes here.</p>
-                    <p id="file-selected" style="display: none;">
-                        Flow Uploaded: "<i id="file-selected-name">drop zone</i>""
-                    </p>
+                    <div id="drag-instruction">
+                        <p>Drag a <i>flow.json</i> file containing Node-RED Dashboard 1.0 nodes here.</p>
+                        <p>or, click <span class="text-blue-600">here</span> to choose a file.</p>
+                    </div>
+                    <div id="file-selected" style="display: none;">
+                        <p>
+                            Flow Uploaded: "<i id="file-selected-name">drop zone</i>""
+                        </p>
+                    </div>
                     <input id="dashboard1-flow-file" name="dashboard1-flow-file" type="file" accept="json" onchange="fileSelected()"/>
                 </div>
                 <a id="dashboard-2-download" style="display:none"></a>
@@ -34,6 +39,10 @@
         console.log('file selected')
         // get file
         var file = document.getElementById("dashboard1-flow-file").files[0]
+        displayFileSelected(file)
+    }
+
+    function displayFileSelected (file) {
         if (file) {
             document.getElementById("file-selected-name").innerText = file.name
             // hide drag instructions
@@ -85,20 +94,18 @@
     function dropHandler(event) {
 
         // Prevent default behavior (Prevent file from being opened)
-        ev.preventDefault()
+        event.preventDefault()
 
-        if (ev.dataTransfer.items) {
+        if (event.dataTransfer.items) {
             // Use DataTransferItemList interface to access the file(s)
-            [...ev.dataTransfer.items].forEach((item, i) => {
+            [...event.dataTransfer.items].forEach((item, i) => {
+                console.log(item)
                 // If dropped items aren't files, reject them
                 if (item.kind === "file") {
-                    d1Flow = item.getAsFile();
+                    const file = item.getAsFile();
+                    console.log(`… file[${i}].name = ${file.name}`)
+                    displayFileSelected(file)
                 }
-            });
-        } else {
-            // Use DataTransfer interface to access the file(s)
-            [...ev.dataTransfer.files].forEach((file, i) => {
-                console.log(`… file[${i}].name = ${dashboard1Flow.name}`)
             });
         }
     }
