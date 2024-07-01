@@ -50,7 +50,7 @@ Before proceeding further, make sure you have installed the following node:
 Before proceeding further, make sure you have added the environment variable for your bot's secret token. Using environment variables prevents the configuration token from being exposed in the application flow. For more information refer to the guide on [Using environment variable](/blog/2023/01/environment-variables-in-node-red/).
 
 1. Drag the DiscordMessageManager Node onto the canvas.
-2. Double-click on it and click on the pencil icon next to the "Token" input field, and add the environment variable added for the bot token into the Token input field.
+2. Double-click on it and then click on the pencil icon next to "Token" input field, and add the environment variable added for the bot token into the Token input field.
 
 ## Sending a message to User
 
