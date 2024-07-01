@@ -12,7 +12,7 @@ tags:
    - discord notification
 ---
 
-Sending notifications is crucial for IoT applications, especially for critical alerts, and there are a lot of different services that are used but Discord is standout among them. In recent months, we've written many articles on integrating different services with Node-RED, including popular notification platforms like [Email](/node-red/notification/email/) and [Telegram](/node-red/notification/telegram/). In this guide, we will delve into sending and receiving messages from Node-RED to users and channels on Discord, along with troubleshooting tips for resolving common errors that may occur.
+Sending notifications is crucial for IoT applications, especially for critical alerts, and many different services are used, but Discord is a standout among them. In recent months, we've written many articles on integrating other services with Node-RED, including popular notification platforms like [Email](/node-red/notification/email/) and [Telegram](/node-red/notification/telegram/). In this guide, we will delve into sending and receiving messages from Node-RED to users and channels on Discord, along with troubleshooting tips for resolving common errors that may occur.
 
 <!--more-->
 
@@ -38,8 +38,8 @@ Before proceeding further, make sure you have installed the following node:
 
 !["Screenshot showing the 'bot' sidebar option and 'reset token' button"](./images/discord-with-node-red-bot-reset-token.png "Screenshot showing the 'bot' sidebar option and 'reset token' button")
 
-6. Click on the "Reset Token" and copy the regenrated bot secret token.
-7. Next, you'll need to [Privileged Gateway Intents](https://discord.com/developers/docs/topics/gateway#gateway-intents) for your bot, to enable scroll down onto the bot page and enable three intents.
+6. Click on the "Reset Token" and copy the regenerated bot secret token.
+7. Next, you'll need to enable [Privileged Gateway Intents](https://discord.com/developers/docs/topics/gateway#gateway-intents) for your bot.  To do so, navigate to the bot page and enable three intents as seen below.
 
 !["Screenshot showing the 'Privileged Gateway Intents' options"](./images/discord-with-node-red-privillage-itents.png "Screenshot showing the 'Privileged Gateway Intents' options")
 
@@ -50,9 +50,9 @@ Before proceeding further, make sure you have installed the following node:
 Before proceeding further, make sure you have added the environment variable for your bot's secret token. Using environment variables prevents the configuration token from being exposed in the application flow. For more information refer to the guide on [Using environment variable](/blog/2023/01/environment-variables-in-node-red/).
 
 1. Drag the DiscordMessageManager Node onto the canvas.
-2. Double-click on it and click on pencil icon next to "Token" input feild, and add the environemnt variable added for the bot token into the Token input feild.
+2. Double-click on it and click on the pencil icon next to the "Token" input field, and add the environment variable added for the bot token into the Token input field.
 
-## Sending message to User
+## Sending a message to User
 
 To send a message to a user, you will need the ID of that user. Before copying the ID, ensure that you have enabled "Developer Mode" in Discord, which starts displaying IDs for users, channels, and messages. Navigate to the Discord app, go to "Settings" -> "Advanced," and enable the "Developer Mode" option.
 
@@ -68,7 +68,7 @@ To send a message to a user, you will need the ID of that user. Before copying t
 
 !["Sending messages to Discord users"](./images/discord-with-node-red-sending-msg-to-user.gif "Sending messages to Discord users")
 
-## Sending messages to Discord server
+## Sending messages to the Discord server
 
 To send a message to the Discord server, you have to make sure that your bot is a member of that server with appropriate permissions.
 
@@ -82,7 +82,7 @@ To send a message to the Discord server, you have to make sure that your bot is 
 
 !["Screenshot showing discord popup to add bot into the server"](./images/discord-with-node-red-select-the-server.png "Screenshot showing discord popup to add bot into the server")
 
-6. Next, you have to confirm that you want to give the permissions you selected while generating the OAuth2 URL to the bot in the server and click "Authorize" to add it to the server along with those permissions.
+6. Next, confirm that you want to give the permissions you selected while generating the OAuth2 URL to the bot on the server and click "Authorize" to add it to the server along with those permissions.
 
 !["Screenshot showing conformation discord popup asking to conform the permission should be given to bot into server"](./images/discord-with-node-red-conform-add-to-server.png "Screenshot showing conformation discord popup asking to conform the permission should be given to bot into server")
 
@@ -103,11 +103,11 @@ To send a message to the Discord server, you have to make sure that your bot is 
 2. Double-click on it to ensure you have configured your bot correctly.
 3. Drag the Debug node onto the canvas, double-click on it, and select the output to "Complete message object".
 
-After deploying the flow, you will start receiving messages sent to your bot. In the debug panel in the sidebar, you will see the message object printed for each message, which contains different objects. Each object shows different details; for example, the author object contains details about the sender, and the channel object contains information about the channel if the message was sent in a channel.
+After deploying the flow, you will start receiving messages sent to your bot. In the debug panel in the sidebar, you will see the message object printed for each message, which contains different objects. Each object shows different details; for example, the author object contains details about the sender, and the channel object includes information of the channel if the message was sent in a channel.
 
 !["Receiving messages from users and server channels"](./images/discord-with-node-red-receiving-messages.gif "Receiving messages from users and server channels")
 
-Below, I have provided the complete flow that we have built throughout the guide. Make sure to replace the environment variable 'BOT_TOKEN' with your actual bot token.
+Below, I have provided the complete flow we built throughout the guide. Make sure to replace the environment variable 'BOT_TOKEN' with your actual bot token.
 
 {% renderFlow %}
 [{"id":"7a8dd49f9614608e","type":"inject","z":"4674ed668685adf6","name":"Sending mesasge to Discord server 's channel","props":[{"p":"payload"}],"repeat":"","crontab":"","once":false,"onceDelay":0.1,"topic":"","payload":"Hello,  This is from Node-RED","payloadType":"str","x":570,"y":420,"wires":[["3984c20a52db033f"]]},{"id":"3984c20a52db033f","type":"discordMessageManager","z":"4674ed668685adf6","name":"","channel":"56454645657765656","token":"","x":930,"y":420,"wires":[["b99ae75425047b6b"]]},{"id":"b99ae75425047b6b","type":"debug","z":"4674ed668685adf6","name":"debug 3","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"false","statusVal":"","statusType":"auto","x":1200,"y":420,"wires":[]},{"id":"6af740e11aba6ca2","type":"inject","z":"4674ed668685adf6","name":"Sending message to Discord user","props":[{"p":"payload"},{"p":"user","v":"65454534534345365","vt":"str"}],"repeat":"","crontab":"","once":false,"onceDelay":0.1,"topic":"","payload":"Hello, Sumit","payloadType":"str","x":550,"y":320,"wires":[["f69363f341b62333"]]},{"id":"f69363f341b62333","type":"discordMessageManager","z":"4674ed668685adf6","name":"","channel":"","token":"","x":930,"y":320,"wires":[["c5001a783992ae01"]]},{"id":"c5001a783992ae01","type":"debug","z":"4674ed668685adf6","name":"debug 4","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"false","statusVal":"","statusType":"auto","x":1220,"y":320,"wires":[]},{"id":"820b70826545a401","type":"debug","z":"4674ed668685adf6","name":"debug 2","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"true","targetType":"full","statusVal":"","statusType":"auto","x":1020,"y":540,"wires":[]},{"id":"f044d3784ef8c74a","type":"discordMessage","z":"4674ed668685adf6","name":"","channelIdFilter":"","token":"","x":720,"y":540,"wires":[["820b70826545a401"]]}]
@@ -119,7 +119,7 @@ Below are common errors that can occur while integrating Discord with Node-RED, 
 
 !["User disallowed intent"](./images/discord-with-node-red-error-3.png "User disallowed intent")
 
-If your Discord nodes show a status similar to the image above, it might be because you forgot to enable the [Privileged Gateway Intents](https://discord.com/developers/docs/topics/gateway#gateway-intents) option. If you have already enabled it but still encounter this issue, it could be due to your app bot is verified, verified app bot requires to apply for the privileged gateway intents, For more information refer to [Discord support article](https://support-dev.discord.com/hc/en-us/articles/6205754771351-How-do-I-get-Privileged-Intents-for-my-bot).
+If your Discord nodes show a status similar to the image above, you might still need to enable the [Privileged Gateway Intents](https://discord.com/developers/docs/topics/gateway#gateway-intents) option. If you have already enabled it but are still encountering this issue, it could be due to your app bot is verified. A verified app bot is required to apply for the privileged gateway intents. For more information, refer to [Discord support article](https://support-dev.discord.com/hc/en-us/articles/6205754771351-How-do-I-get-Privileged-Intents-for-my-bot).
 
 !["DiscordAPIError:Unknwon channel"](./images/discord-with-node-red-error-2.png "DiscordAPIError:Unknwon channel")
 
@@ -129,4 +129,4 @@ If you are getting errors similar to the images above, it's likely because the `
 
 ## Conclusion
 
-In this guide, we've shown how to seamlessly integrate Discord messaging into Node-RED workflows, covering everything from setting up a Discord bot to sending and receiving messages to and from Discord users and server channels. Furthermore we have provided some troubleshooting tips to resolve the common errors which can occure during the integration of Discord with Node-RED.
+In this guide, we've shown how to seamlessly integrate Discord messaging into Node-RED workflows, covering everything from setting up a Discord bot to sending and receiving messages to and from Discord users and server channels. Furthermore, we have provided some troubleshooting tips to resolve the common errors that can occur during Discord integration with Node-RED.
