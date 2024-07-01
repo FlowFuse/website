@@ -1,6 +1,7 @@
 ---
 eleventyNavigation:
   key: Workspace
+  parent: Editor
 meta:
   title: Node-RED Editor Workspace
   description:

@@ -1,6 +1,7 @@
 ---
 eleventyNavigation:
   key: Palette
+  parent: Editor
 meta:
   title: Node-RED
   description: Explore the features available in the Node-RED Editor palette, essential for navigation and configuration.
