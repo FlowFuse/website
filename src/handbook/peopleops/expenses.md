@@ -9,7 +9,7 @@ reasonable. The general principle to follow is to treat work-related expenses
 **as if they were your own money**. It is important to seek good value for your
 purchases and use common sense when making decisions.
 
-There are two methods available for using company funds: utilizing a [company credit card](#company-credit-card) or seeking [reimbursement](#reimbursement). If employees opt to use Brex for purchasing any company-related items or subscriptions, it is essential to upload the receipts and include a memo within three business days. For all reimbursement requests, please ensure to submit the required documentation and proofs through Deel.
+There are two methods available for using company funds: utilizing a [company credit card](#company-credit-card) or seeking [reimbursement](#reimbursement). If employees opt to use Brex for purchasing any company-related items or subscriptions, it is essential to file the expense in Deel within three business days. For all reimbursement requests, please ensure to submit the required documentation and proofs through Deel.
 
 If neither of the methods previously described is feasible (e.g., when a vendor doesn't accept card payments or you don't have the means to pay from your own funds and seek reimbursement), please refer to the instructions provided in our [vendors section](../operations/vendors/) for guidance.
 
@@ -19,9 +19,7 @@ We use [Brex](https://www.brex.com/) to provide cards to the team. They are, by
 default, virtual Mastercards, although there is an option to get a physical
 card sent out.
 
-Expenses on Brex require a memo and receipts. Memos explain the purpose of the expense, while receipts are necessary for expenses of $25 or more.
-Receipts can be attached via the web UI, email, or Slack.
-Please [read their docs](https://www.brex.com/support/how-do-i-attach-receipts-to-brex-transactions/).
+Brex should used only for transactions or as a credit card. Any expenses made with Brex should be filed through Deel.
 
 Brex can also be used to create vendor cards that allow for reoccurring payment for a monthly subscription with a vendor.
 Contact the CEO/CTO if you require a vendor card.
