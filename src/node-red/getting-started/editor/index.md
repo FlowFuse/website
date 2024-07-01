@@ -1,6 +1,7 @@
 ---
 eleventyNavigation:
   key: Editor
+  parent: Getting Started
 meta:
   title: Node-RED Editor
   description:  Learn about the powerful features of Node-RED Editor.

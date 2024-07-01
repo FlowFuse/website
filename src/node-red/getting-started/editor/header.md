@@ -1,6 +1,7 @@
 ---
 eleventyNavigation:
   key: Header
+  parent: Editor
 meta:
   title: Node-RED Editor Header component
   description:  Explore the features available in the Node-RED Editor header component, essential for navigation and configuration.
