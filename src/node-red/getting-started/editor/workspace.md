@@ -117,7 +117,7 @@ When drawing a wire from one node, leave the wire on the workspace to connect it
 
 #### Importing from the Library or Clipboard
 
-Nodes can also be added by [importing](./header.md/#import) them from the team or local library or using the clipboard.
+Nodes can also be added by [importing](./header.md#import) them from the team or local library or using the clipboard.
 
 ### Editing Node Properties
 
@@ -185,7 +185,7 @@ To do that, press the `Ctrl`/`Command` key, select the node by clicking the left
 
 #### Detaching Node from Wires
 
-To use this option, you have to set the [keyboard shortcut](./header.md/#keyboard-shortcuts) for the "core:detach-selected-nodes" action.
+To use this option, you have to set the [keyboard shortcut](./header.md#keyboard-shortcuts) for the "core:detach-selected-nodes" action.
 
 ## Groups
 
