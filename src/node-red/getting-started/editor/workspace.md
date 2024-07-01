@@ -82,7 +82,7 @@ If you have nodes on the workspace and you want to create a subflow of them, you
 
 The subflow's inputs and outputs are depicted by gray square nodes, which can be connected in the subflow workspace like regular nodes. The top toolbar offers functions for adding and removing these nodes. Similar to regular flow nodes, each subflow can have one input at most, but it can accommodate multiple outputs.
 
-## Status Node
+### Status Node
 
 The Status node is used to update the status of the subflow. This status node can be edited like regular flow nodes. This node uses the input of `msg.payload` which can either be a simple string or a Status Object.
 
