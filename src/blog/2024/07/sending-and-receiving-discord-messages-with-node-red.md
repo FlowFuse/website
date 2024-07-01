@@ -25,8 +25,8 @@ Before proceeding further, make sure you have installed the following node:
 ## Creating Bot in Discord
 
 1. Navigate to the [Discord developer portal](https://discord.com/developers/applications).
-2. Login with your Discord account crediantionals.
-3. To create application click on the top-right "Create Application" button.
+2. Login with your Discord account credentials.
+3. To create an application, click on the top-right "Create Application" button.
 
 !["Screenshot showing the 'create application' button"](./images/discord-with-node-red-new-application-button.png "Screenshot showing the 'create application' button")
 
@@ -34,7 +34,7 @@ Before proceeding further, make sure you have installed the following node:
 
 !["Screenshot showing the 'create' button"](./images/discord-with-node-red-create-app.png "Screenshot showing the 'create' button")
 
-5. Next, After the successful creation of the application you'll be redirected into that application's setting, click on the "Bot" option from left sidebar.
+5. After the successful creation of the application, you'll be redirected to that application's setting. Click on the "Bot" option from the left sidebar.
 
 !["Screenshot showing the 'bot' sidebar option and 'reset token' button"](./images/discord-with-node-red-bot-reset-token.png "Screenshot showing the 'bot' sidebar option and 'reset token' button")
 
@@ -72,7 +72,7 @@ To send a message to a user, you will need the ID of that user. Before copying t
 
 To send a message to the Discord server, you have to make sure that your bot is a member of that server with appropriate permissions.
 
-### Adding bot to the Discord server
+### Adding the bot to the Discord server
 
 1. Navigate to the Discord Developer Portal and click on your application, then click on the OAuth2 option from the sidebar.
 2. Select "bot" from the OAuth2 URL Generator's scope section and select the permissions you want to give to the bot in the server.
