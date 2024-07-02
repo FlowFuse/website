@@ -15,11 +15,9 @@ hubspot:
 
 <!--more-->
 
-FlowFuse Dashboard for Node-RED continues to see improvements and new features. In this live Workshop session, Joe Pavitt will demonstrate some of the new features available and how you can use them to build useful User Interfaces.
+FlowFuse Dashboard for Node-RED continues to see improvements and new features. In this live Workshop session, Joe Pavitt demonstrates some of the new features available and how you can use them to build useful User Interfaces.
 
-In this interactive session you can ask questions as we go, and Joe will do his best to answer them live and incorporate ideas and thoughts into a Dashboard that he will build from scratch during the session.
-
-The session will cover:
+The session covered:
 
 - Multi Tenant Dashboards
 - Visualizing Data
