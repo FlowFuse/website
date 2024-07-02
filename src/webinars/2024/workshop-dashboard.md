@@ -5,6 +5,7 @@ image: /images/webinars/node-red-dashboard-crash-course.jpg
 date: 2024-07-02
 time: 17:00 CET (11:00am ET) 
 duration: 60
+video: uxBz3qs7qZk
 hosts: ["joe-pavitt"]
 hubspot:
     formId: 7221ed3e-bace-4570-8db4-9b1e0c730083
