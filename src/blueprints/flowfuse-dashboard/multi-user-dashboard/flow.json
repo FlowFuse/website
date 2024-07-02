@@ -1,0 +1,1793 @@
+[
+    {
+        "id": "7ac3890dfa74703b",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "2edf81855a54a821",
+        "type": "group",
+        "z": "7ac3890dfa74703b",
+        "name": "Task Management System ",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "33235b02e4211bcd",
+            "ba82ea0851e5ed1f",
+            "1984036794fc1bb2",
+            "ab28ee8fac261362",
+            "d769cdb262b9ee51",
+            "b6f12d52781c9f0a",
+            "39381ef0727903cd",
+            "62f265986801c68d",
+            "4ed578409047eb5b",
+            "523572424bf9738a",
+            "99e733e5bdd57b66",
+            "5b10a50414f05960",
+            "530a1be9af9cccc5",
+            "bd0c1d67acd7ca21",
+            "2e08f30a2f4241e9",
+            "056952078d10effb",
+            "807cf3ba50a2b008",
+            "c697bba5bd2bf32d",
+            "f9d580ae9bb8c941",
+            "fbd480fe2a41b537",
+            "fbd0c30b6602d741",
+            "8f393255650fe461"
+        ],
+        "x": 94,
+        "y": 239,
+        "w": 1252,
+        "h": 362
+    },
+    {
+        "id": "5148d48804a0e38a",
+        "type": "group",
+        "z": "7ac3890dfa74703b",
+        "name": "sending demo data",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "21b1f5ab8b6cbd20",
+            "b1ec687d5b3fe3d3",
+            "4eb609f1f3d3dbbf",
+            "ea9c4522eb4ba850",
+            "98871d9e2d48bd52"
+        ],
+        "x": 94,
+        "y": 99,
+        "w": 752,
+        "h": 122
+    },
+    {
+        "id": "7b2118e7bb23e80f",
+        "type": "group",
+        "z": "7ac3890dfa74703b",
+        "name": "Task Management system  Admin view",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "f73adb42cbc7d5d6",
+            "6b78ea76fdcc1e79",
+            "b0b2a0418a19d87b",
+            "4f7e125ce9248ad3",
+            "6f50999c8415dd3b",
+            "6967a8395b94bc22",
+            "bcea861010ef12ee",
+            "d3ac5e9a3e52e7f7",
+            "7c709f30fc5cecea",
+            "e89ea0b3a24f8980",
+            "921d7aabd2275ba7",
+            "7141c30543c48cef",
+            "951cb7d1391a023b",
+            "b0a488b0ed15f782",
+            "e456f4390948d76b",
+            "f9fa8c8c2b5e226e",
+            "13dea8e4620f7001",
+            "788f6160f12d7a50",
+            "19cb67fbe3e21405",
+            "5e5c6569df14cf54",
+            "6958e4eaa790e531",
+            "ba5df15465e7fdec",
+            "0be88be0801c3112",
+            "9944c2e7086c5a99",
+            "f134a17c7a46fa0d",
+            "aea7bd0126d05e2e",
+            "588be50428505a47",
+            "3d1068526daff7be",
+            "efd9a74b1e12a1a6",
+            "ce208d62aeb7dce6",
+            "d5122b8567a5ac45",
+            "5290df604fb52bb0",
+            "ccccdf95307ae7b7",
+            "43894ba2f7560a6d",
+            "b0617b82ce9e625f",
+            "e2748dcec6c959f6",
+            "650e9dcda0c94ea7",
+            "ca631770e0a86d28",
+            "f1bcdbb3b66ff757"
+        ],
+        "x": 94,
+        "y": 639,
+        "w": 1152,
+        "h": 722
+    },
+    {
+        "id": "33235b02e4211bcd",
+        "type": "function",
+        "z": "7ac3890dfa74703b",
+        "g": "2edf81855a54a821",
+        "name": "addTask",
+        "func": "let allTask = global.get('allTask', 'persistent') || [];\nlet data = msg.payload;\nlet id;\n\nif (allTask.length > 0) {\n    id = allTask[allTask.length - 1].id + 1;\n} else {\n    id = 0;\n}\n\nlet assignee = msg['_client'].user.email;\nlet date = new Date().toLocaleString();\n\nmsg.payload = {\n    id,\n    ...data,\n    assignee,\n    date,\n    status: 'Open'\n};\n\nallTask.push(msg.payload);\nglobal.set('allTask', allTask, 'persistent');\nmsg.payload = allTask;\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 460,
+        "y": 360,
+        "wires": [
+            [
+                "fbd0c30b6602d741"
+            ]
+        ]
+    },
+    {
+        "id": "ba82ea0851e5ed1f",
+        "type": "ui-text",
+        "z": "7ac3890dfa74703b",
+        "g": "2edf81855a54a821",
+        "group": "9cab37a9fc869359",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "name": "Add task form titile",
+        "label": "Add task form",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "style": true,
+        "font": "",
+        "fontSize": "20",
+        "color": "#717171",
+        "className": "",
+        "x": 210,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "1984036794fc1bb2",
+        "type": "ui-table",
+        "z": "7ac3890dfa74703b",
+        "g": "2edf81855a54a821",
+        "group": "343c39bcadc6ed30",
+        "name": "Task list",
+        "label": "text",
+        "order": 2,
+        "width": "0",
+        "height": "0",
+        "maxrows": "5",
+        "autocols": true,
+        "columns": [],
+        "x": 1020,
+        "y": 480,
+        "wires": []
+    },
+    {
+        "id": "ab28ee8fac261362",
+        "type": "ui-form",
+        "z": "7ac3890dfa74703b",
+        "g": "2edf81855a54a821",
+        "name": "Add new ticket",
+        "group": "9cab37a9fc869359",
+        "label": "",
+        "order": 2,
+        "width": "0",
+        "height": "0",
+        "options": [
+            {
+                "label": "Task",
+                "key": "task",
+                "type": "text",
+                "required": false,
+                "rows": null
+            },
+            {
+                "label": "Description",
+                "key": "description",
+                "type": "text",
+                "required": false,
+                "rows": null
+            },
+            {
+                "label": "Assigned to (Email)",
+                "key": "email",
+                "type": "text",
+                "required": false,
+                "rows": null
+            }
+        ],
+        "formValue": {
+            "task": "",
+            "description": "",
+            "email": ""
+        },
+        "payload": "",
+        "submit": "submit",
+        "cancel": "clear",
+        "resetOnSubmit": true,
+        "topic": "topic",
+        "topicType": "msg",
+        "splitLayout": "",
+        "className": "",
+        "x": 200,
+        "y": 360,
+        "wires": [
+            [
+                "33235b02e4211bcd"
+            ]
+        ]
+    },
+    {
+        "id": "d769cdb262b9ee51",
+        "type": "ui-template",
+        "z": "7ac3890dfa74703b",
+        "g": "2edf81855a54a821",
+        "group": "9cab37a9fc869359",
+        "page": "",
+        "ui": "",
+        "name": "",
+        "order": 5,
+        "width": 0,
+        "height": 0,
+        "head": "",
+        "format": "<template>\n    <div>\n        <Teleport v-if=\"mounted\" to=\"#app-bar-actions\">\n            <v-avatar @click=toggleDropdown>\n                <v-img :src=\"msg.payload.image\" alt=\"John\"></v-img>\n            </v-avatar>\n\n        </Teleport>\n    </div>\n    <div>\n        <v-menu class=\"menu\" v-model=\"dropdownVisible\">\n            <v-list class=\"list\">\n                <v-list-item disabled>\n                    Account: {{msg.payload.username}}\n                     <br>               \n                    {{msg.payload.email}}\n                </v-list-item>\n                <v-list-item @click=\"goToSettings\">Sign out</v-list-item>\n            </v-list>\n        </v-menu>\n    </div>\n</template>\n\n<script>\n    export default {\n    data() {\n        return {\n            mounted: false,\n            dropdownVisible: false\n        }\n    },\n    methods: {\n        toggleDropdown() {\n            this.dropdownVisible = !this.dropdownVisible;\n        },\n        goToSettings() {\n        window.location.replace('https://flowfuse.com');\n        }\n    },\n    mounted() {\n        this.mounted = true;\n    },\n}\n</script>\n<style>\n    .menu .v-overlay__content {\n        position: absolute;\n        right: 10px;\n        top: 52px;\n    }\n\n    .menu .v-overlay__content .v-list {\n        width: 180px;\n        background: rgb(39, 49, 64);\n        color: white;\n        box-shadow: 0px 2px 8px rgba(255, 255, 255, 0.5);\n        font-size: .7rem;\n    }\n</style>",
+        "storeOutMessages": true,
+        "passthru": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 680,
+        "y": 560,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "b6f12d52781c9f0a",
+        "type": "ui-event",
+        "z": "7ac3890dfa74703b",
+        "g": "2edf81855a54a821",
+        "ui": "1150762457ae0d5b",
+        "name": "",
+        "x": 170,
+        "y": 520,
+        "wires": [
+            [
+                "39381ef0727903cd",
+                "62f265986801c68d",
+                "f9d580ae9bb8c941"
+            ]
+        ]
+    },
+    {
+        "id": "39381ef0727903cd",
+        "type": "function",
+        "z": "7ac3890dfa74703b",
+        "g": "2edf81855a54a821",
+        "name": "StoreUserData",
+        "func": "let usersData = global.get('userData','persistent') || [];\nlet newUser = msg['_client'].user;\nlet userExists = usersData.some(user => user.userId === newUser.userId);\nglobal.set('loggedUser',newUser);\nif(!userExists){\n    usersData.push(newUser)\n    global.set('userData', usersData,'persistent')\n}\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 460,
+        "y": 520,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "62f265986801c68d",
+        "type": "change",
+        "z": "7ac3890dfa74703b",
+        "g": "2edf81855a54a821",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "_client.user",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 460,
+        "y": 560,
+        "wires": [
+            [
+                "d769cdb262b9ee51"
+            ]
+        ]
+    },
+    {
+        "id": "4ed578409047eb5b",
+        "type": "comment",
+        "z": "7ac3890dfa74703b",
+        "g": "2edf81855a54a821",
+        "name": "Performing action based on event",
+        "info": "We are primarily tracking the pageload event. Upon pageload or render, we store user data in persistent storage if it does not already exist. Additionally, \nwe store that user data as loggedUser in the global context (after configuring and installing multi-user dashboard plugin every message emitted by a Dashboard\n 2.0 node will contain a new msg._client.user object, which will contain user data for detail refer to [Personalised Multi-user Dashboards with Node-RED Dashboard 2.0!](https://flowfuse.com/blog/2024/01/dashboard-2-multi-user/)). \n Furthermore, we send all tasks to the Task List table. Additionally, if the window width is less\n than 768, we redirect the user to the mobile view page.",
+        "x": 250,
+        "y": 420,
+        "wires": []
+    },
+    {
+        "id": "523572424bf9738a",
+        "type": "ui-form",
+        "z": "7ac3890dfa74703b",
+        "g": "2edf81855a54a821",
+        "name": "Update task form",
+        "group": "9cab37a9fc869359",
+        "label": "",
+        "order": 4,
+        "width": "0",
+        "height": "0",
+        "options": [
+            {
+                "label": "ID",
+                "key": "id",
+                "type": "number",
+                "required": false,
+                "rows": null
+            },
+            {
+                "label": "Status",
+                "key": "status",
+                "type": "text",
+                "required": false,
+                "rows": null
+            }
+        ],
+        "formValue": {
+            "id": "",
+            "status": ""
+        },
+        "payload": "",
+        "submit": "submit",
+        "cancel": "clear",
+        "resetOnSubmit": true,
+        "topic": "topic",
+        "topicType": "msg",
+        "splitLayout": "",
+        "className": "",
+        "x": 700,
+        "y": 380,
+        "wires": [
+            [
+                "5b10a50414f05960"
+            ]
+        ]
+    },
+    {
+        "id": "99e733e5bdd57b66",
+        "type": "ui-text",
+        "z": "7ac3890dfa74703b",
+        "g": "2edf81855a54a821",
+        "group": "9cab37a9fc869359",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "name": "Update task form title",
+        "label": "Update task form ",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "style": true,
+        "font": "",
+        "fontSize": "20",
+        "color": "#717171",
+        "className": "",
+        "x": 720,
+        "y": 340,
+        "wires": []
+    },
+    {
+        "id": "5b10a50414f05960",
+        "type": "function",
+        "z": "7ac3890dfa74703b",
+        "g": "2edf81855a54a821",
+        "name": "updateTask",
+        "func": "let taskId = msg.payload.id;\nlet updatedStatus = msg.payload.status;\nlet allTask = global.get('allTask', 'persistent');\nlet loggedUser = global.get('loggedUser');\n\nlet taskUpdated = false;\n\nfor (let i = 0; i < allTask.length; i++) {\n    if (allTask[i].id == taskId) {\n        if (allTask[i].email === loggedUser.email) {\n            allTask[i].status = updatedStatus;\n            taskUpdated = true;\n            break; // Assuming each task has a unique name, so we can exit the loop once we find and update the task\n        } else {\n            msg.payload = \"Sorry, you are not authorized to update it.\";\n            return msg;\n        }\n    }\n}\n\nif (taskUpdated) {\n    global.set('allTask', allTask, 'persistent');\n    msg.payload = allTask;\n} else {\n    msg.payload = \"Task not found.\";\n}\n\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 890,
+        "y": 380,
+        "wires": [
+            [
+                "530a1be9af9cccc5"
+            ]
+        ]
+    },
+    {
+        "id": "530a1be9af9cccc5",
+        "type": "switch",
+        "z": "7ac3890dfa74703b",
+        "g": "2edf81855a54a821",
+        "name": "",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "Sorry, you are not authorized to update it.",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "Task not found.",
+                "vt": "str"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 3,
+        "x": 1050,
+        "y": 380,
+        "wires": [
+            [
+                "bd0c1d67acd7ca21"
+            ],
+            [
+                "bd0c1d67acd7ca21"
+            ],
+            [
+                "807cf3ba50a2b008"
+            ]
+        ]
+    },
+    {
+        "id": "bd0c1d67acd7ca21",
+        "type": "ui-notification",
+        "z": "7ac3890dfa74703b",
+        "g": "2edf81855a54a821",
+        "ui": "1150762457ae0d5b",
+        "position": "center center",
+        "colorDefault": true,
+        "color": "#000000",
+        "displayTime": "3",
+        "showCountdown": true,
+        "outputs": 0,
+        "allowDismiss": true,
+        "dismissText": "Close",
+        "raw": false,
+        "className": "",
+        "name": "",
+        "x": 1230,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "2e08f30a2f4241e9",
+        "type": "comment",
+        "z": "7ac3890dfa74703b",
+        "g": "2edf81855a54a821",
+        "name": "Storing task to persistent storage  ",
+        "info": "Here, we receive tasks as input from the user by form widget, format them, and store them in Flowfuse persistent storage.",
+        "x": 250,
+        "y": 280,
+        "wires": []
+    },
+    {
+        "id": "056952078d10effb",
+        "type": "comment",
+        "z": "7ac3890dfa74703b",
+        "g": "2edf81855a54a821",
+        "name": "Updating Task Securely",
+        "info": "Here, we update the task status only if the user is assigned to the task or responsible for it. We verify this based on the loggedUser global context, \nwhich we stored upon user authentication and page load. This ensures security and prevents unauthorized users from updating tasks assigned to others",
+        "x": 720,
+        "y": 280,
+        "wires": []
+    },
+    {
+        "id": "807cf3ba50a2b008",
+        "type": "link out",
+        "z": "7ac3890dfa74703b",
+        "g": "2edf81855a54a821",
+        "name": "link out 1",
+        "mode": "link",
+        "links": [
+            "c697bba5bd2bf32d",
+            "e2376e65dce8a205"
+        ],
+        "x": 1155,
+        "y": 400,
+        "wires": []
+    },
+    {
+        "id": "c697bba5bd2bf32d",
+        "type": "link in",
+        "z": "7ac3890dfa74703b",
+        "g": "2edf81855a54a821",
+        "name": "link in 2",
+        "links": [
+            "807cf3ba50a2b008"
+        ],
+        "x": 505,
+        "y": 320,
+        "wires": [
+            [
+                "fbd0c30b6602d741"
+            ]
+        ]
+    },
+    {
+        "id": "f9d580ae9bb8c941",
+        "type": "change",
+        "z": "7ac3890dfa74703b",
+        "g": "2edf81855a54a821",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "#:(persistent)::allTask",
+                "tot": "global",
+                "dc": true
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 460,
+        "y": 480,
+        "wires": [
+            [
+                "fbd0c30b6602d741"
+            ]
+        ]
+    },
+    {
+        "id": "fbd480fe2a41b537",
+        "type": "link in",
+        "z": "7ac3890dfa74703b",
+        "g": "2edf81855a54a821",
+        "name": "link in 3",
+        "links": [
+            "4eb609f1f3d3dbbf"
+        ],
+        "x": 205,
+        "y": 480,
+        "wires": [
+            [
+                "f9d580ae9bb8c941"
+            ]
+        ]
+    },
+    {
+        "id": "fbd0c30b6602d741",
+        "type": "function",
+        "z": "7ac3890dfa74703b",
+        "g": "2edf81855a54a821",
+        "name": "filterTaskBasedOnLoggedUser",
+        "func": "let data = msg.payload\nlet loggedUser = global.get('loggedUser')\nif(data){\ndata = data.filter((task)=> task.email ==loggedUser.email)\n}\n msg.payload = data\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 750,
+        "y": 480,
+        "wires": [
+            [
+                "1984036794fc1bb2"
+            ]
+        ]
+    },
+    {
+        "id": "8f393255650fe461",
+        "type": "comment",
+        "z": "7ac3890dfa74703b",
+        "g": "2edf81855a54a821",
+        "name": "Adjusting table ",
+        "info": "Here, you can adjust the display of the maximum number of rows in the table by clicking on the UI-table widget and entering \nyour preferred number in the 'Max Rows' input field.",
+        "x": 1040,
+        "y": 440,
+        "wires": []
+    },
+    {
+        "id": "3135b6c40c0f5660",
+        "type": "comment",
+        "z": "7ac3890dfa74703b",
+        "name": "LICENCE",
+        "info": "The FlowForge License\nCopyright (c) 2021-present FlowForge Inc\n\nWith regard to the FlowForge Software:\n\nThis Node-RED flow and associated documentation files (the \"Software\") may only be\nused in production, if you (and any entity that you represent) have agreed to,\nand are in compliance with, the FlowForge Subscription Terms (the \"Terms\"),\nor other agreements governing the use of the Software, as mutually agreed by you\nand FlowForge Inc (\"FlowForge\"), and otherwise have a valid FlowForge Subscription\nfor the active usage. Subject to the foregoing sentence, you are free to modify\nthis Software and publish patches to the Software. You agree that FlowForge and/or\nits licensors (as applicable) retain all right, title and interest in and to all\nsuch modifications and/or patches, and all such modifications and/or patches may\nonly be used, copied, modified, displayed, distributed, or otherwise exploited\nwith a valid Subscription.\nNotwithstanding the foregoing, you may copy and modify the Software for development\nand testing purposes, without requiring a subscription.  You agree that FlowForge\nand/or its licensors (as applicable) retain all right, title and interest in and\nto all such modifications.  You are not granted any other rights beyond what is\nexpressly stated herein. Subject to the foregoing, it is forbidden to copy, merge,\npublish, distribute, sublicense, and/or sell the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE.\n\nFor all third party components incorporated into the FlowForge Software, those\ncomponents are licensed under the original license provided by the owner of the\napplicable component.",
+        "x": 160,
+        "y": 60,
+        "wires": []
+    },
+    {
+        "id": "ab540276647cc176",
+        "type": "comment",
+        "z": "7ac3890dfa74703b",
+        "name": "README",
+        "info": "# Multi-user Dashboard\n\nThis blueprint is built with the dashboard 2.0 multi-user feature, for more detail refer to \n[Personalised Multi-user Dashboards with Node-RED Dashboard 2.0](https://flowfuse.com/blog/2024/01/dashboard-2-multi-user/). \nThis task management blueprint allows users to manage their tasks by viewing their assigned tasks, creating tasks, updating task statuses\nwhile ensuring security.Additionally, it provides an admin view for users who are added to the admin user list in the global context.\n\n###  Feature of this multi user task management system.\n\n 1. When a user authenticates and views a page, their user data is stored in persistent storage if it does not already exist.\n 2. Users can only see tasks that are assigned to them.\n 3. Users can only update the status of tasks assigned to them.\n 4. Users can add new tasks and assign them to other users.\n 5. The user who creates a task will be added as an assignee.\n 6. all task will be added in flowfuse persistent storage\n 7. Users can click on the top right profile to view their account information.\n 8. For mobile device users, there is another page that focuses on each individual ticket.\n\n## Getting started with multi-user dashboard blueprint \nIn this section we will walk you through steps of getting started with this multi-user task management blueprint \n\n### Enable \"FlowFuse User Authentication\"\nBefore installing FlowFuse's User Addon we have to enable Flowfuse user authentication.\n\n 1. Navigate to instance setting and go to security tab \n 2. Enable flowfuse user authentication and click on save setting.\n 3. Restart the instance by clicking on top right action button and selecting restart option\n\n### Installing FlowFuse's User Addon\n\n 1. Install `@flowfuse/node-red-dashboard-2-user-addon` by pallet manager.\n 2. Once you have enabled flowfuse user authentication and installed flowfuse user adon, any messages emitted by a Dashboard 2.0 node will contain a new msg._client.user object.\n eg.\n ```\n {\n    \"userId\": \"\",   // unique identifier for the user\n    \"username\": \"\", // FlowFuse Username\n    \"email\": \"\",    // E-Mail Address connected to their FlowFuse account\n    \"name\": \"\",     // Full Name\n    \"image\": \"\"     // User Avatar from FlowFuse\n}\n```\n### Deploying flow\nNow it's time to deploy the flow\n\n1. Click on the red deploy button which you can find in the top right corner.\n2. Go to https://<your-instance-name>.flowfuse.cloud/dashboard.\n\n### Creating your first task\n\nIn this blueprint we sent the demo task data on page-view event to show demo task on dashboard. so before you add your first task make sure you have\ncleared allTask array which is stored in global context(persistent) and you have deleted the  `send demo data` flow group\n\n1. Enter task details in the add task form and click on the submit button.\n Now your task will be added to persistent storage, and you can now see the added task in the table on the dashboard.\n\n### Updating task \n\n1. Enter the id of task which you wanted to update in update task form and enter the \nupdated status and click on submit button. \n( user can only update the task which are assigned to them only)\n\n### Accessing admin panel\n\n1. add your username into admins global context array \n2. Once you have added your username to the admins global context, you can access the admin view page. On this page,\n as an admin, you can view all tasks and users, You can also see the task insight chart by selecting the filter located at the top.\n  Additionally, you have the authority to update any task.\n\n\n\n\n",
+        "x": 320,
+        "y": 60,
+        "wires": []
+    },
+    {
+        "id": "21b1f5ab8b6cbd20",
+        "type": "change",
+        "z": "7ac3890dfa74703b",
+        "g": "5148d48804a0e38a",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "#:(persistent)::allTask",
+                "pt": "global",
+                "to": "[\t   {\t       \"id\": 1,\t       \"task\": \"Create multi-user dashboard\",\t       \"description\": \"Create multi-user dashboard\",\t       \"email\": $globalContext('loggedUser').email,\t       \"assignee\": \"shindesumit217@gmail.com\",\t       \"date\": \"2/17/2024, 2:07:37 PM\",\t       \"status\": \"Done\"     \t   },\t   {\t       \"id\": 2,\t       \"task\": \"Implement user authentication\",\t       \"description\": \"Implement user authentication for the multi-user dashboard using OAuth2\",\t       \"email\": $globalContext('loggedUser').email,\t       \"assignee\": \"developer@example.com\",\t       \"date\": \"2/17/2024, 2:15:45 PM\",\t       \"status\": \"Done\"     \t   },\t   {\t       \"id\": 3,\t       \"task\": \"Design database schema\",\t       \"description\": \"Design the database schema for storing user data and dashboard information\",\t       \"email\": $globalContext('loggedUser').email,\t       \"assignee\": \"dbdeveloper@example.com\",\t       \"date\": \"2/17/2024, 2:25:19 PM\",\t       \"status\": \"Open\"     \t   },\t   {\t       \"id\": 4,\t       \"task\": \"Implement front-end UI\",\t       \"description\": \"Develop the front-end user interface for the dashboard using React.js\",\t       \"email\": $globalContext('loggedUser').email,\t       \"assignee\": \"frontenddeveloper@example.com\",\t       \"date\": \"2/17/2024, 2:35:55 PM\",\t       \"status\": \"Open\"     \t   },\t   {\t       \"id\": 5,\t       \"task\": \"Create API endpoints\",\t       \"description\": \"Develop API endpoints for CRUD operations to interact with the dashboard\",\t       \"email\": $globalContext('loggedUser').email,\t       \"assignee\": \"backenddeveloper@example.com\",\t       \"date\": \"2/17/2024, 2:45:02 PM\",\t       \"status\": \"In progress\"     \t   },\t   {\t       \"id\": 6,\t       \"task\": \"Implement user roles and permissions\",\t       \"description\": \"Define user roles and permissions for accessing dashboard features\",\t       \"email\": $globalContext('loggedUser').email,\t       \"assignee\": \"backenddeveloper@example.com\",\t       \"date\": \"2/17/2024, 2:55:21 PM\",\t       \"status\": \"Open\"     \t   },\t   {\t       \"id\": 7,\t       \"task\": \"Write unit tests\",\t       \"description\": \"Write unit tests to ensure the reliability of the dashboard components\",\t       \"email\": $globalContext('loggedUser').email,\t       \"assignee\": \"backenddeveloper@example.com\",\t       \"date\": \"2/17/2024, 3:05:47 PM\",\t       \"status\": \"Done\"     \t   },\t   {\t       \"id\": 8,\t       \"task\": \"Optimize database queries\",\t       \"description\": \"Optimize database queries to improve the performance of the dashboard\",\t       \"email\": $globalContext('loggedUser').email,\t       \"assignee\": \"dbdeveloper@example.com\",\t       \"date\": \"2/17/2024, 3:15:59 PM\",\t       \"status\": \"Open\"     \t   },\t   {\t       \"id\": 9,\t       \"task\": \"Implement data caching mechanism\",\t       \"description\": \"Implement caching mechanism to store frequently accessed data and reduce database load\",\t       \"email\": $globalContext('loggedUser').email,\t       \"assignee\": \"backenddeveloper@example.com\",\t       \"date\": \"2/17/2024, 3:25:12 PM\",\t       \"status\": \"Open\"     \t   },\t   {\t       \"id\": 10,\t       \"task\": \"Perform security audit\",\t       \"description\": \"Perform a security audit to identify and fix potential security vulnerabilities in the dashboard\",\t       \"email\": $globalContext('loggedUser').email,\t       \"assignee\": \"securityanalyst@example.com\",\t       \"date\": \"2/17/2024, 3:35:30 PM\",\t       \"status\": \"Open\"     \t   } \t]",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 630,
+        "y": 180,
+        "wires": [
+            [
+                "4eb609f1f3d3dbbf"
+            ]
+        ]
+    },
+    {
+        "id": "b1ec687d5b3fe3d3",
+        "type": "switch",
+        "z": "7ac3890dfa74703b",
+        "g": "5148d48804a0e38a",
+        "name": "Is allTask is undefined",
+        "property": "#:(persistent)::allTask",
+        "propertyType": "global",
+        "rules": [
+            {
+                "t": "istype",
+                "v": "undefined",
+                "vt": "undefined"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 380,
+        "y": 180,
+        "wires": [
+            [
+                "21b1f5ab8b6cbd20"
+            ]
+        ]
+    },
+    {
+        "id": "4eb609f1f3d3dbbf",
+        "type": "link out",
+        "z": "7ac3890dfa74703b",
+        "g": "5148d48804a0e38a",
+        "name": "link out 3",
+        "mode": "link",
+        "links": [
+            "a1af287dad3f6351",
+            "fbd480fe2a41b537"
+        ],
+        "x": 805,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "ea9c4522eb4ba850",
+        "type": "comment",
+        "z": "7ac3890dfa74703b",
+        "g": "5148d48804a0e38a",
+        "name": "Sending Demo task data",
+        "info": "This group of flows sends demo task data so that when you log in, you will see some demo tasks. feel free to remove this group of flow.",
+        "x": 230,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "98871d9e2d48bd52",
+        "type": "ui-event",
+        "z": "7ac3890dfa74703b",
+        "g": "5148d48804a0e38a",
+        "ui": "1150762457ae0d5b",
+        "name": "",
+        "x": 170,
+        "y": 180,
+        "wires": [
+            [
+                "b1ec687d5b3fe3d3"
+            ]
+        ]
+    },
+    {
+        "id": "f73adb42cbc7d5d6",
+        "type": "ui-event",
+        "z": "7ac3890dfa74703b",
+        "g": "7b2118e7bb23e80f",
+        "ui": "1150762457ae0d5b",
+        "name": "",
+        "x": 170,
+        "y": 800,
+        "wires": [
+            [
+                "4f7e125ce9248ad3"
+            ]
+        ]
+    },
+    {
+        "id": "43894ba2f7560a6d",
+        "type": "change",
+        "z": "7ac3890dfa74703b",
+        "g": "7b2118e7bb23e80f",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "admins",
+                "pt": "global",
+                "to": "[\"test\"]",
+                "tot": "json"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 370,
+        "y": 740,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "b0617b82ce9e625f",
+        "type": "comment",
+        "z": "7ac3890dfa74703b",
+        "g": "7b2118e7bb23e80f",
+        "name": "Define Admins Here",
+        "info": "",
+        "x": 210,
+        "y": 680,
+        "wires": []
+    },
+    {
+        "id": "ccccdf95307ae7b7",
+        "type": "inject",
+        "z": "7ac3890dfa74703b",
+        "g": "7b2118e7bb23e80f",
+        "name": "",
+        "props": [],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 190,
+        "y": 740,
+        "wires": [
+            [
+                "43894ba2f7560a6d"
+            ]
+        ]
+    },
+    {
+        "id": "6b78ea76fdcc1e79",
+        "type": "ui-control",
+        "z": "7ac3890dfa74703b",
+        "g": "7b2118e7bb23e80f",
+        "name": "",
+        "ui": "1150762457ae0d5b",
+        "events": "all",
+        "x": 940,
+        "y": 760,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "b0b2a0418a19d87b",
+        "type": "change",
+        "z": "7ac3890dfa74703b",
+        "g": "7b2118e7bb23e80f",
+        "name": "Show Admin Page",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "{\"pages\":{\"show\":[\"Admin View\"]}}",
+                "tot": "json"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 610,
+        "y": 740,
+        "wires": [
+            [
+                "6b78ea76fdcc1e79"
+            ]
+        ]
+    },
+    {
+        "id": "4f7e125ce9248ad3",
+        "type": "switch",
+        "z": "7ac3890dfa74703b",
+        "g": "7b2118e7bb23e80f",
+        "name": "Is Admin User?",
+        "property": "admins",
+        "propertyType": "global",
+        "rules": [
+            {
+                "t": "cont",
+                "v": "_client.user.username",
+                "vt": "msg"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 340,
+        "y": 800,
+        "wires": [
+            [
+                "b0b2a0418a19d87b"
+            ],
+            [
+                "6f50999c8415dd3b",
+                "7c709f30fc5cecea"
+            ]
+        ]
+    },
+    {
+        "id": "6f50999c8415dd3b",
+        "type": "change",
+        "z": "7ac3890dfa74703b",
+        "g": "7b2118e7bb23e80f",
+        "name": "Hide Admin Page",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "{\"pages\":{\"hide\":[\"Admin View\"]}}",
+                "tot": "json"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 610,
+        "y": 780,
+        "wires": [
+            [
+                "6b78ea76fdcc1e79"
+            ]
+        ]
+    },
+    {
+        "id": "6967a8395b94bc22",
+        "type": "comment",
+        "z": "7ac3890dfa74703b",
+        "g": "7b2118e7bb23e80f",
+        "name": "Show/Hide Admin in Side Navigation",
+        "info": "",
+        "x": 660,
+        "y": 680,
+        "wires": []
+    },
+    {
+        "id": "bcea861010ef12ee",
+        "type": "change",
+        "z": "7ac3890dfa74703b",
+        "g": "7b2118e7bb23e80f",
+        "name": "Redirect the User",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "Task Management System",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 750,
+        "y": 900,
+        "wires": [
+            [
+                "d5122b8567a5ac45"
+            ]
+        ]
+    },
+    {
+        "id": "d3ac5e9a3e52e7f7",
+        "type": "comment",
+        "z": "7ac3890dfa74703b",
+        "g": "7b2118e7bb23e80f",
+        "name": "Redirect is non-admin trying direct access",
+        "info": "",
+        "x": 680,
+        "y": 840,
+        "wires": []
+    },
+    {
+        "id": "7c709f30fc5cecea",
+        "type": "switch",
+        "z": "7ac3890dfa74703b",
+        "g": "7b2118e7bb23e80f",
+        "name": "",
+        "property": "payload.page.name",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "Admin View",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 570,
+        "y": 900,
+        "wires": [
+            [
+                "bcea861010ef12ee"
+            ]
+        ]
+    },
+    {
+        "id": "e89ea0b3a24f8980",
+        "type": "function",
+        "z": "7ac3890dfa74703b",
+        "g": "7b2118e7bb23e80f",
+        "name": "addTask",
+        "func": "let allTask = global.get('allTask', 'persistent') || [];\nlet data = msg.payload;\nlet id;\n\nif (allTask.length > 0) {\n    id = allTask[allTask.length - 1].id + 1;\n} else {\n    id = 0;\n}\n\nlet assignee = msg['_client'].user.email;\nlet date = new Date().toLocaleString();\n\nmsg.payload = {\n    id,\n    ...data,\n    assignee,\n    date,\n    status: 'Open'\n};\n\nallTask.push(msg.payload);\nglobal.set('allTask', allTask, 'persistent');\nmsg.payload = allTask;\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 980,
+        "y": 1160,
+        "wires": [
+            [
+                "ca631770e0a86d28"
+            ]
+        ]
+    },
+    {
+        "id": "921d7aabd2275ba7",
+        "type": "ui-text",
+        "z": "7ac3890dfa74703b",
+        "g": "7b2118e7bb23e80f",
+        "group": "9c8b69e7cdbec905",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "name": "Add task form titile",
+        "label": "Add task form",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "style": true,
+        "font": "",
+        "fontSize": "20",
+        "color": "#717171",
+        "className": "",
+        "x": 790,
+        "y": 1120,
+        "wires": []
+    },
+    {
+        "id": "7141c30543c48cef",
+        "type": "ui-form",
+        "z": "7ac3890dfa74703b",
+        "g": "7b2118e7bb23e80f",
+        "name": "Add new ticket",
+        "group": "9c8b69e7cdbec905",
+        "label": "",
+        "order": 2,
+        "width": "0",
+        "height": "0",
+        "options": [
+            {
+                "label": "Task",
+                "key": "task",
+                "type": "text",
+                "required": false,
+                "rows": null
+            },
+            {
+                "label": "Description",
+                "key": "description",
+                "type": "text",
+                "required": false,
+                "rows": null
+            },
+            {
+                "label": "Assigned to (Email)",
+                "key": "email",
+                "type": "text",
+                "required": false,
+                "rows": null
+            }
+        ],
+        "formValue": {
+            "task": "",
+            "description": "",
+            "email": ""
+        },
+        "payload": "",
+        "submit": "submit",
+        "cancel": "clear",
+        "resetOnSubmit": true,
+        "topic": "topic",
+        "topicType": "msg",
+        "splitLayout": "",
+        "className": "",
+        "x": 780,
+        "y": 1160,
+        "wires": [
+            [
+                "e89ea0b3a24f8980"
+            ]
+        ]
+    },
+    {
+        "id": "951cb7d1391a023b",
+        "type": "comment",
+        "z": "7ac3890dfa74703b",
+        "g": "7b2118e7bb23e80f",
+        "name": "Switching to groups based on filter dropdown",
+        "info": "",
+        "x": 290,
+        "y": 920,
+        "wires": []
+    },
+    {
+        "id": "b0a488b0ed15f782",
+        "type": "ui-form",
+        "z": "7ac3890dfa74703b",
+        "g": "7b2118e7bb23e80f",
+        "name": "Update task form",
+        "group": "9c8b69e7cdbec905",
+        "label": "",
+        "order": 4,
+        "width": "0",
+        "height": "0",
+        "options": [
+            {
+                "label": "ID",
+                "key": "id",
+                "type": "number",
+                "required": false,
+                "rows": null
+            },
+            {
+                "label": "Status",
+                "key": "status",
+                "type": "text",
+                "required": false,
+                "rows": null
+            }
+        ],
+        "formValue": {
+            "id": "",
+            "status": ""
+        },
+        "payload": "",
+        "submit": "submit",
+        "cancel": "clear",
+        "resetOnSubmit": true,
+        "topic": "topic",
+        "topicType": "msg",
+        "splitLayout": "",
+        "className": "",
+        "x": 780,
+        "y": 1320,
+        "wires": [
+            [
+                "f9fa8c8c2b5e226e"
+            ]
+        ]
+    },
+    {
+        "id": "e456f4390948d76b",
+        "type": "ui-text",
+        "z": "7ac3890dfa74703b",
+        "g": "7b2118e7bb23e80f",
+        "group": "9c8b69e7cdbec905",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "name": "Update task form title",
+        "label": "Update task form ",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "style": true,
+        "font": "",
+        "fontSize": "20",
+        "color": "#717171",
+        "className": "",
+        "x": 800,
+        "y": 1280,
+        "wires": []
+    },
+    {
+        "id": "f9fa8c8c2b5e226e",
+        "type": "function",
+        "z": "7ac3890dfa74703b",
+        "g": "7b2118e7bb23e80f",
+        "name": "updateTask",
+        "func": "let taskId = msg.payload.id;\nlet updatedStatus = msg.payload.status;\nlet allTask = global.get('allTask', 'persistent');\nlet loggedUser = global.get('loggedUser');\n\nlet taskUpdated = false;\n\nfor (let i = 0; i < allTask.length; i++) {\n    if (allTask[i].id == taskId) {\n        if (allTask[i].email === loggedUser.email) {\n            allTask[i].status = updatedStatus;\n            taskUpdated = true;\n            break; // Assuming each task has a unique name, so we can exit the loop once we find and update the task\n        } else {\n            msg.payload = \"Sorry, you are not authorized to update it.\";\n            return msg;\n        }\n    }\n}\n\nif (taskUpdated) {\n    global.set('allTask', allTask, 'persistent');\n    msg.payload = allTask;\n} else {\n    msg.payload = \"Task not found.\";\n}\n\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 970,
+        "y": 1320,
+        "wires": [
+            [
+                "ca631770e0a86d28"
+            ]
+        ]
+    },
+    {
+        "id": "13dea8e4620f7001",
+        "type": "ui-dropdown",
+        "z": "7ac3890dfa74703b",
+        "g": "7b2118e7bb23e80f",
+        "group": "d422113b3d8f6def",
+        "name": "Filter",
+        "label": "Filter",
+        "tooltip": "",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "multiple": false,
+        "options": [
+            {
+                "label": "all users",
+                "value": "all users",
+                "type": "str"
+            },
+            {
+                "label": "all task",
+                "value": "all task",
+                "type": "str"
+            },
+            {
+                "label": "task insight",
+                "value": "task insight",
+                "type": "str"
+            }
+        ],
+        "payload": "",
+        "topic": "topic",
+        "topicType": "msg",
+        "className": "",
+        "x": 170,
+        "y": 1000,
+        "wires": [
+            [
+                "588be50428505a47"
+            ]
+        ]
+    },
+    {
+        "id": "788f6160f12d7a50",
+        "type": "ui-control",
+        "z": "7ac3890dfa74703b",
+        "g": "7b2118e7bb23e80f",
+        "name": "",
+        "ui": "1150762457ae0d5b",
+        "events": "all",
+        "x": 800,
+        "y": 1000,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "19cb67fbe3e21405",
+        "type": "function",
+        "z": "7ac3890dfa74703b",
+        "g": "7b2118e7bb23e80f",
+        "name": "sendTaskInsight",
+        "func": "let allTask = global.get('allTask','persistent');\n\nlet done = allTask.filter((task)=>task.status=='Done' || task.status=='done' || task.status=='DONE')\nlet inProgress = allTask.filter((task) => task.status == 'In progress' || task.status == 'in progress')\nlet inComplete = allTask.filter((task) => task.status == 'open' || task.status == 'Open'|| task.status == 'OPEN')\n\nmsg.payload  = [{\n    \"x\": \"In complete\",\n    \"y\": inComplete.length\n},\n    {\n        \"x\": \"In progress\",\n        \"y\": inProgress.length\n    },\n    {\n        \"x\": \"Done\",\n        \"y\": done.length\n    }\n\n]\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 400,
+        "y": 1240,
+        "wires": [
+            [
+                "efd9a74b1e12a1a6"
+            ]
+        ]
+    },
+    {
+        "id": "5e5c6569df14cf54",
+        "type": "ui-event",
+        "z": "7ac3890dfa74703b",
+        "g": "7b2118e7bb23e80f",
+        "ui": "1150762457ae0d5b",
+        "name": "",
+        "x": 170,
+        "y": 1200,
+        "wires": [
+            [
+                "ba5df15465e7fdec",
+                "ce208d62aeb7dce6",
+                "19cb67fbe3e21405"
+            ]
+        ]
+    },
+    {
+        "id": "6958e4eaa790e531",
+        "type": "ui-table",
+        "z": "7ac3890dfa74703b",
+        "g": "7b2118e7bb23e80f",
+        "group": "d866713319b75a95",
+        "name": "all user",
+        "label": "text",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "maxrows": "4",
+        "autocols": true,
+        "columns": [],
+        "x": 580,
+        "y": 1160,
+        "wires": []
+    },
+    {
+        "id": "ba5df15465e7fdec",
+        "type": "change",
+        "z": "7ac3890dfa74703b",
+        "g": "7b2118e7bb23e80f",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "#:(persistent)::userData",
+                "tot": "global"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 400,
+        "y": 1160,
+        "wires": [
+            [
+                "6958e4eaa790e531"
+            ]
+        ]
+    },
+    {
+        "id": "0be88be0801c3112",
+        "type": "change",
+        "z": "7ac3890dfa74703b",
+        "g": "7b2118e7bb23e80f",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "{\"groups\":{\"show\":[\"Admin View:all users table\"],\"hide\":[\"Admin View:all tasks table\",\"Admin View:task insight\"]}}",
+                "tot": "json"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 580,
+        "y": 960,
+        "wires": [
+            [
+                "788f6160f12d7a50"
+            ]
+        ]
+    },
+    {
+        "id": "9944c2e7086c5a99",
+        "type": "ui-table",
+        "z": "7ac3890dfa74703b",
+        "g": "7b2118e7bb23e80f",
+        "group": "081b35e4575166ad",
+        "name": "all task",
+        "label": "text",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "maxrows": "4",
+        "autocols": true,
+        "columns": [],
+        "x": 580,
+        "y": 1200,
+        "wires": []
+    },
+    {
+        "id": "f134a17c7a46fa0d",
+        "type": "change",
+        "z": "7ac3890dfa74703b",
+        "g": "7b2118e7bb23e80f",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "{\"groups\":{\"show\":[\"Admin View:all tasks table\"],\"hide\":[\"Admin View:task insight\",\"Admin View:all users table\"]}}",
+                "tot": "json"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 580,
+        "y": 1000,
+        "wires": [
+            [
+                "788f6160f12d7a50"
+            ]
+        ]
+    },
+    {
+        "id": "aea7bd0126d05e2e",
+        "type": "change",
+        "z": "7ac3890dfa74703b",
+        "g": "7b2118e7bb23e80f",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "{\"groups\":{\"show\":[\"Admin View:task insight\"],\"hide\":[\"Admin View:all users table\",\"Admin View:all tasks table\"]}}",
+                "tot": "json"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 580,
+        "y": 1040,
+        "wires": [
+            [
+                "788f6160f12d7a50"
+            ]
+        ]
+    },
+    {
+        "id": "588be50428505a47",
+        "type": "switch",
+        "z": "7ac3890dfa74703b",
+        "g": "7b2118e7bb23e80f",
+        "name": "",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "all users",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "all task",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "task insight",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 3,
+        "x": 370,
+        "y": 1000,
+        "wires": [
+            [
+                "0be88be0801c3112"
+            ],
+            [
+                "f134a17c7a46fa0d"
+            ],
+            [
+                "aea7bd0126d05e2e"
+            ]
+        ]
+    },
+    {
+        "id": "3d1068526daff7be",
+        "type": "ui-template",
+        "z": "7ac3890dfa74703b",
+        "g": "7b2118e7bb23e80f",
+        "group": "",
+        "page": "756e6faab72e0671",
+        "ui": "",
+        "name": "admin page style",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "head": "",
+        "format": ".task-insight, .all-task-table, .all-user-table{\n    position: absolute;\n    top:170px;\n    left:293px;\n}",
+        "storeOutMessages": true,
+        "passthru": true,
+        "resendOnRefresh": true,
+        "templateScope": "page:style",
+        "className": "",
+        "x": 1130,
+        "y": 680,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "efd9a74b1e12a1a6",
+        "type": "ui-chart",
+        "z": "7ac3890dfa74703b",
+        "g": "7b2118e7bb23e80f",
+        "group": "de579c3344ebdbd8",
+        "name": "",
+        "label": "chart",
+        "order": 9007199254740991,
+        "chartType": "bar",
+        "category": "x",
+        "categoryType": "property",
+        "xAxisProperty": "",
+        "xAxisPropertyType": "msg",
+        "xAxisType": "category",
+        "yAxisProperty": "y",
+        "ymin": "",
+        "ymax": "",
+        "action": "replace",
+        "pointShape": "circle",
+        "pointRadius": 4,
+        "showLegend": false,
+        "removeOlder": 1,
+        "removeOlderUnit": "3600",
+        "removeOlderPoints": "",
+        "colors": [
+            "#bc3838",
+            "#8095ff",
+            "#42e43f",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "width": "11",
+        "height": "9",
+        "className": "",
+        "x": 570,
+        "y": 1240,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "ce208d62aeb7dce6",
+        "type": "change",
+        "z": "7ac3890dfa74703b",
+        "g": "7b2118e7bb23e80f",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "#:(persistent)::allTask",
+                "tot": "global"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 400,
+        "y": 1200,
+        "wires": [
+            [
+                "9944c2e7086c5a99"
+            ]
+        ]
+    },
+    {
+        "id": "d5122b8567a5ac45",
+        "type": "ui-control",
+        "z": "7ac3890dfa74703b",
+        "g": "7b2118e7bb23e80f",
+        "name": "",
+        "ui": "1150762457ae0d5b",
+        "events": "all",
+        "x": 940,
+        "y": 900,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "5290df604fb52bb0",
+        "type": "comment",
+        "z": "7ac3890dfa74703b",
+        "g": "7b2118e7bb23e80f",
+        "name": "sending data to tables and chart when page renders",
+        "info": "Here, we display all users and tasks exclusively to admin users. Additionally, we also display task insight chart specifically for admin users.",
+        "x": 310,
+        "y": 1100,
+        "wires": []
+    },
+    {
+        "id": "e2748dcec6c959f6",
+        "type": "comment",
+        "z": "7ac3890dfa74703b",
+        "g": "7b2118e7bb23e80f",
+        "name": "Storing task to persistent storage  ",
+        "info": "Here, we receive tasks as input from the admin user by form widget, format them, and store them in Flowfuse persistent storage.",
+        "x": 830,
+        "y": 1060,
+        "wires": []
+    },
+    {
+        "id": "650e9dcda0c94ea7",
+        "type": "link in",
+        "z": "7ac3890dfa74703b",
+        "g": "7b2118e7bb23e80f",
+        "name": "link in 4",
+        "links": [
+            "ca631770e0a86d28"
+        ],
+        "x": 465,
+        "y": 1280,
+        "wires": [
+            [
+                "9944c2e7086c5a99",
+                "6958e4eaa790e531"
+            ]
+        ]
+    },
+    {
+        "id": "ca631770e0a86d28",
+        "type": "link out",
+        "z": "7ac3890dfa74703b",
+        "g": "7b2118e7bb23e80f",
+        "name": "link out 4",
+        "mode": "link",
+        "links": [
+            "650e9dcda0c94ea7"
+        ],
+        "x": 1115,
+        "y": 1240,
+        "wires": []
+    },
+    {
+        "id": "f1bcdbb3b66ff757",
+        "type": "comment",
+        "z": "7ac3890dfa74703b",
+        "g": "7b2118e7bb23e80f",
+        "name": "Updating Task Securely",
+        "info": "Here, here we allows admin users to update any task. We verify this based on the loggedUser global context , \n(which we stored upon user authentication and page load) and admin global context. This ensures security and prevents unauthorized users from updating tasks.",
+        "x": 800,
+        "y": 1220,
+        "wires": []
+    },
+    {
+        "id": "9cab37a9fc869359",
+        "type": "ui-group",
+        "name": "forms",
+        "page": "fb3e77c3555c8f87",
+        "width": "3",
+        "height": "1",
+        "order": 1,
+        "showTitle": false,
+        "className": "",
+        "visible": "true",
+        "disabled": "false"
+    },
+    {
+        "id": "343c39bcadc6ed30",
+        "type": "ui-group",
+        "name": "Task list",
+        "page": "fb3e77c3555c8f87",
+        "width": "9",
+        "height": "1",
+        "order": 2,
+        "showTitle": true,
+        "className": "",
+        "visible": "true",
+        "disabled": "false"
+    },
+    {
+        "id": "1150762457ae0d5b",
+        "type": "ui-base",
+        "name": "Dashboard",
+        "path": "/dashboard",
+        "includeClientData": true,
+        "acceptsClientConfig": [],
+        "showPathInSidebar": false
+    },
+    {
+        "id": "9c8b69e7cdbec905",
+        "type": "ui-group",
+        "name": "forms",
+        "page": "756e6faab72e0671",
+        "width": "3",
+        "height": "1",
+        "order": 1,
+        "showTitle": false,
+        "className": "",
+        "visible": "true",
+        "disabled": "false"
+    },
+    {
+        "id": "d422113b3d8f6def",
+        "type": "ui-group",
+        "name": "filter dropdown",
+        "page": "756e6faab72e0671",
+        "width": "11",
+        "height": "1",
+        "order": 2,
+        "showTitle": false,
+        "className": "",
+        "visible": "true",
+        "disabled": "false"
+    },
+    {
+        "id": "d866713319b75a95",
+        "type": "ui-group",
+        "name": "all users table",
+        "page": "756e6faab72e0671",
+        "width": "11",
+        "height": "1",
+        "order": 4,
+        "showTitle": false,
+        "className": "all-user-table",
+        "visible": "true",
+        "disabled": "false"
+    },
+    {
+        "id": "081b35e4575166ad",
+        "type": "ui-group",
+        "name": "all tasks table",
+        "page": "756e6faab72e0671",
+        "width": "11",
+        "height": "1",
+        "order": 3,
+        "showTitle": false,
+        "className": "all-task-table",
+        "visible": "true",
+        "disabled": "false"
+    },
+    {
+        "id": "756e6faab72e0671",
+        "type": "ui-page",
+        "name": "Admin View",
+        "ui": "1150762457ae0d5b",
+        "path": "/admin",
+        "icon": "security",
+        "layout": "flex",
+        "theme": "f5936b5f149f3ea6",
+        "order": 2,
+        "className": "",
+        "visible": "false",
+        "disabled": "false"
+    },
+    {
+        "id": "de579c3344ebdbd8",
+        "type": "ui-group",
+        "name": "task insight",
+        "page": "756e6faab72e0671",
+        "width": "11",
+        "height": "3",
+        "order": 5,
+        "showTitle": false,
+        "className": "task-insight",
+        "visible": "true",
+        "disabled": "false"
+    },
+    {
+        "id": "fb3e77c3555c8f87",
+        "type": "ui-page",
+        "name": "Task Management System",
+        "ui": "1150762457ae0d5b",
+        "path": "/",
+        "icon": "home",
+        "layout": "grid",
+        "theme": "f5936b5f149f3ea6",
+        "order": 1,
+        "className": "",
+        "visible": "true",
+        "disabled": "false"
+    },
+    {
+        "id": "f5936b5f149f3ea6",
+        "type": "ui-theme",
+        "name": "flowfuse",
+        "colors": {
+            "surface": "#273140",
+            "primary": "#bc3838",
+            "bgPage": "#eeeeee",
+            "groupBg": "#ffffff",
+            "groupOutline": "#cccccc"
+        },
+        "sizes": {
+            "pagePadding": "12px",
+            "groupGap": "12px",
+            "groupBorderRadius": "4px",
+            "widgetGap": "12px"
+        }
+    }
+]
