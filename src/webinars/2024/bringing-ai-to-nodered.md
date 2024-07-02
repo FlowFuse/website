@@ -14,6 +14,14 @@ hubspot:
 
 <!--more-->
 
-There's no denying the place AI has in the software development world. Helping users be more productive and creating richer solutions using the power of AI.
+There's no denying the place AI has in the software development world. From helping developers create their applications, to making the applications themselves smarter, AI is a trend that isn't going away soon.
 
-In this webinar, Nick O'Leary will explore the different ways AI can improve your Node-RED applications - from help create the flows using the new FlowFuse Assistant, to building flows that leverage the AI to its full potential.
+In this webinar, Nick O'Leary will explore both of these topics and how they apply to Node-RED.
+
+On the development side, he'll introduce our new FlowFuse Assistant, bringing the power of AI into the heart of the Node-RED editor.
+
+The FlowFuse Assistant will let you tell it what you want your Function nodes to do, and it will suggest the code needed to do it - accelerating your application development.
+
+He will also look at how Node-RED applications can be enhanced with the power of AI - using Machine Learning models to bring real-time object detection to a camera feed.
+
+In this interactive session, Nick will show how AI is an ideal compliment to the low-code development process and how FlowFuse is unlocking its potential.
