@@ -4,11 +4,18 @@ navTitle: Customer Success
 
 # Customer Success
 
-Customer Success (CS) helps our customers get value from FlowFuse. This should result in them continuing to use, make broader use of, and become advocates of FlowFuse.
+Customer Success (CS) helps our customers get value from FlowFuse. This should
+result in them continuing to use, make broader use of, and become advocates of
+FlowFuse.
 
 ## Customer Success Methodology
 
-The basic principal of CS is to help customers succeed in their goals by getting value from our services. The assumption is, where customers get value they are likely to consciously recognise that value, be open to gaining more value, and recommending FlowFuse to potential customers. This should in turn result in customers remaining with FlowFuse for longer, delivering greater revenue, and encouraging more of their professional and personal networks to join FlowFuse.
+The basic principal of CS is to help customers succeed in their goals by getting
+value from our services. The assumption is, where customers get value they are
+likely to consciously recognise that value, be open to gaining more value, and
+recommending FlowFuse to potential customers. This should in turn result in
+customers remaining with FlowFuse for longer, delivering greater revenue, and
+encouraging more of their professional and personal networks to join FlowFuse.
 
 FlowFuse has a diverse customer-base. When devising a strategy to deliver CS it is important to recognise the key cohorts within our customers. They are grouped as follows:
 
@@ -143,3 +150,27 @@ customer direct to a repo for a 3rd party node question.
 
 [support-tickets]: ../../support/
 [support-forum]: https://discourse.nodered.org/c/vendors/flowfuse/24
+
+## Quarterly Business Review
+
+For all customers that are over $10k ARR, or are manually nominated because of
+their growth potential to the company, a quarterly business review is offered to
+them and scheduled. FlowFuse offers these meetings each quarterly, hence the name
+Quarterly Business Review (QBR). By meeting, FlowFuse can understand, pro-actively,
+how the customer is progressing with their adoption.
+
+For each meeting, the goals are:
+1. Relationship building -- By having a conversation instead of email, we hope
+there's more space for in-depth discussion and candor in the conversation.
+1. Assess Problem-Value alignment -- Understand if the problem the customer felt
+before buying FlowFuse has been mitigated, or what FlowFuse needs to do to further
+mitigate this.
+1. Issue prevention -- By proactively reviewing progress, potential roadblocks
+or challenges can be identified and addressed early, preventing customer
+dissatisfaction or churn.
+1. Broughter feature adoption -- Often customers are paying for a package that
+includes more value than they're currently extracting. Help the customer with adoption
+and getting more value from the product
+1. Data collection -- Provide space and time for the customer to provide feedback
+on the product and experience. Allow them to request feature ideas, or ask for bug
+fixes.
