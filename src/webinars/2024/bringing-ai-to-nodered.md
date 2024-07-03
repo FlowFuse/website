@@ -2,7 +2,7 @@
 title: Bringing AI to Node-RED with FlowFuse Assistant
 subtitle: Join us for this live webinar on infusing Node-RED with AI within FlowFuse.
 image: /images/webinars/bringing-ai-to-nodered.jpg
-date: 
+date: 2024-07-31
 time: 17:00 CET (11:00am ET) 
 duration: 60
 hosts: ["nick-oleary"]
