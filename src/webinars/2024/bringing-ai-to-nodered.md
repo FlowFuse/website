@@ -1,7 +1,7 @@
 ---
 title: Bringing AI to Node-RED with FlowFuse Assistant
 subtitle: Join us for this workshop on infusing Node-RED with AI within FlowFuse.
-image:
+image: /images/webinars/bringing-ai-to-nodered.jpg
 date: 
 time: 
 duration: 60
