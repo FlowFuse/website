@@ -168,7 +168,7 @@ mitigate this.
 1. Issue prevention -- By proactively reviewing progress, potential roadblocks
 or challenges can be identified and addressed early, preventing customer
 dissatisfaction or churn.
-1. Broughter feature adoption -- Often customers are paying for a package that
+1. Broader feature adoption -- Often customers are paying for a package that
 includes more value than they're currently extracting. Help the customer with adoption
 and getting more value from the product
 1. Data collection -- Provide space and time for the customer to provide feedback
