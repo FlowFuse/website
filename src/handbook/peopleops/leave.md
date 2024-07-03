@@ -15,6 +15,7 @@ Before you can take time off you should _always_:
   * Deel disallows [overages on the contracted days off](#holiday-policy), if you cannot file the complete length, file up to the allowance.
 * Add an 'Out of office' appointment in your personal Google Calendar, and decline
    all meetings automatically.
+* Add an event to the shared 'FlowFuse Team Events' calendar showing all the days you will not be working. This make it easier for our team to understand who is going to be away each week.
 * Inform fellow team members of your time off, and hand over work that's distributed.
 
 ## Holiday Policy
