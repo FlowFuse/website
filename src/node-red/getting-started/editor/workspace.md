@@ -44,7 +44,7 @@ A flow is represented as a tab within the editor workspace, providing a new work
 
 ![Image showing 'add flow' option in the editor](./images/workspace-add-flow.png "Image showing 'add flow' option in the editor"){data-zoomable}
 
-To create a parent flow, click on the top-right "+" icon, other you can use the [main menu's flow](./header.md/#flows) add option. 
+To create a parent flow, click on the top-right "+" icon, other you can use the [main menu's flow](./header.md#flows) add option. 
 
 ### Editing a flow properties
 
