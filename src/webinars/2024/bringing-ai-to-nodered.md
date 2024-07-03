@@ -7,7 +7,7 @@ time: 17:00 CET (11:00am ET)
 duration: 60
 hosts: ["nick-oleary"]
 hubspot:
-    formId:
+    formId: febea57b-ef8d-437e-b1be-43f419bff291
 ---
 
 **In this webinar, FlowFuse CTO and Node-RED creator Nick O'Leary will show how AI is being brought into the Node-RED world within FlowFuse.**
