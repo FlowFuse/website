@@ -19,6 +19,6 @@ The Node-RED Editor is one of the most important and essential components of Nod
 The Node-RED Editor has four main component as following:
 
 - Header: The [header](./header.md) contains the instance name, user profile menu and the main menu. 
-- Pallete: The palette is a sidebar containing all of the nodes that are installed and available to use.
-- Workspace: The workspace is where flows (groups of nodes) are developed by dragging nodes from the palette and wiring them together. Adding a new flow tab gives you a new workspace.
-- Sidebar: Provides additional context-sensitive options and information depending on the selected node or workspace.
+- Pallete: The [palette](palette.md) is a sidebar containing all of the nodes that are installed and available to use.
+- Workspace: The [workspace](./workspace.md) is where flows (groups of nodes) are developed by dragging nodes from the palette and wiring them together. Adding a new flow tab gives you a new workspace.
+- Sidebar: The [sidebar](./sidebar.md) Provides additional context-sensitive options and information depending on the selected node or workspace.
