@@ -56,6 +56,8 @@ _Screenshot showing the "FlowFuse" button at the bottom of the Node-RED Editor._
 
 Don't worry though, if you want the full editor experience again, you can just collapse the FlowFuse menus down to a little "FlowFuse" button at the bottom.
 
+The new Immersive Editor is available for instances running Node-RED 4.0.2 or later - older versions of Node-RED will still use the separate views.
+
 ## Persistent File Storage
 
 Since the early days of FlowFuse, we have provided custom File nodes that can be used to read and write individual files from a flow. This was necessary because the local file system was not considered persistent; restarting an instance would reset the file system back to how it was when the instance first started. 
