@@ -1,6 +1,5 @@
 ---
 title: "Open Source Software <span class='text-indigo-600'>for Manufacturing </span>"
-
 meta:
     title: Open Source Software for Manufacturing
     description: In this free white paper get a comprehensive understanding of why open source software (OSS) is a smart choice for digital transformation and industrial agility
