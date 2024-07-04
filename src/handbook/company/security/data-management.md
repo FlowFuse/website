@@ -55,7 +55,7 @@ process and agreement in place.
 
 *Example Critical Data* Types include
 
- - PII (personal identifiable information)
+ - PII (personally identifiable information, including a user's full name, address, government ID number, email address, phone number, IP address, biometric information, or other information that can uniquely identify a person)
  - Production security data, such as
     - Production secrets, passwords, access keys, certificates, etc.
     - Production security audit logs, events, and incident data
