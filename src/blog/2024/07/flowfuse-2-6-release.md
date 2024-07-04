@@ -56,12 +56,15 @@ Don't worry though, if you want the full editor experience again, you can just c
 
 ## Persistent File Storage
 
-This now unlocks many Node-RED nodes that previously couldn't run in the FlowFuse Cloud environment. Just a few now available are:
+Since the early days of FlowFuse, we have provided custom File nodes that can be used to read and write individual files from a flow. This was necessary because the local file system was not considered persistent; restarting an instance would reset the file system back to how it was when the instance first started. 
 
-- `node-red-node-sqlite` - A Node-RED node to read and write to a SQLite database.
-- ADD OTHERS HERE
+Whilst this solved the immediate problem for the File nodes, we know there were 3rd party nodes that would want to use the file system as well - and we couldn't expect them to update to work with our custom solution.
 
-// TODO: THIS NEEDS MORE CONTENT
+With the 2.6 release, each instance now gets a piece of persistent file system they can read and write to normally, from any node - with full confidence those files will be persisted between restarts.
+
+This unlocks lots of new capabilities using nodes from the community. For example, the [SQLite](https://flows.nodered.org/node/node-red-node-sqlite) nodes can be used to quickly add a locally managed database to store your data in.
+
+All newly created instances of FlowFuse Cloud from today will have this storage enabled. If you have an existing instance you'd like to move over, then do get [in touch](https://flowfuse.com/contact-us/) and we can help move you over.
 
 ## Other Highlights
 
