@@ -42,7 +42,7 @@ The Node-RED Assistant is an AI-powered tool that can help you write JavaScript 
 
 ### Immersive Editor Experience
 
-When we were investigating how users are using FlowFuse and Node-RED together, we found a lot of users having to jump back and forth between the Node-RED Editor and FlowFuse UI, to view logs, save snapshots, restart the Editor after updates, etc.
+During our investigation on how FlowFuse and Node-RED are used together, we found out that many users have to frequently switch between the Node-RED Editor and FlowFuse UI. This back-and-forth movement is often necessary to view logs, save snapshots, restart the Editor after updates, and perform other tasks.
 
 We're always seeking to reduce friction in the FlowFuse user experience, and as such, we've introduced a large overhaul of the developer experience for Node-RED when running in FlowFuse, in what we're calling the "Immersive Editor".
 
