@@ -29,6 +29,7 @@ We can break down our product pillars into smaller "Areas", which are more speci
 | [Trust](#trust) | [Adminsitration](#administration) | [Scale](#scale) |
 | [Remote Access](#remote-access) | [Frictionless Maintenance](#frictionless-maintenance) | [Reliability](#reliability) |
 | [Full Stack Applications](#full-stack-applications) | [Observability](#observability) |  |
+| [Low Code](#low-code) |  |  |
 | [Collaborative Development](#collaborative-development) |  |  |
 
 ### Build
@@ -56,6 +57,10 @@ Most of our customers are using Node-RED in remote environments, where they do n
 FlowFuse should support the full end-to-end architecture of a modern application. This includes the ability to build both the frontend and backend of an application, as well as the ability to integrate with external services and APIs.
 
 Additionally, FlowFuse should ensure that it not only supports, but flourishes with, modern IT/OT architecture such as the [Unified Namespace](https://flowfuse.com/unified-namespace/).
+
+#### Low-Code
+
+Node-RED's popularity is due to it's user-friendly, low-code user interface. FlowFuse should offer improvements to lower the point of entry for new users even further, and make it easier for users to build applications without needing to write code.
 
 #### Collaborative Development
 
