@@ -1,6 +1,7 @@
 ---
 title: The FlowFuse Assistant
-description: Introducing the FlowFuse Assistant: making low-code even more accessible.
+description: "Introducing the FlowFuse Assistant: making low-code even more accessible."
+
 date: 2024-07-04 13:00:00.0
 
 authors: ["stephen-mclaughlin"]
