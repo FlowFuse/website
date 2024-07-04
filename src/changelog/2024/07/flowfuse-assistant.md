@@ -1,6 +1,6 @@
 ---
 title: The FlowFuse Assistant
-description: FlowFuse now allows selecting and comparing snapshots to visualize differences, facilitating easier understanding of changes between snapshots.
+description: Introducing the FlowFuse Assistant: making low-code even more accessible.
 date: 2024-07-04 13:00:00.0
 
 authors: ["stephen-mclaughlin"]
