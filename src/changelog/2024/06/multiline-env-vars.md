@@ -7,7 +7,7 @@ tags:
     - changelog
 ---
 
-FlowFuse now supports the use input of multi-line environment variables for your Node-RED instances running on FlowFuse.
+FlowFuse now supports the input of multi-line environment variables for your Node-RED instances running on FlowFuse.
 
 This unlocks the ability to store certs or multi-line values like JSON as environment variables.
 
