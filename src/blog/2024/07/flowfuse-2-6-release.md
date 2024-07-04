@@ -9,8 +9,10 @@ tags:
    - posts
    - flowfuse
    - releases
-   - LDAP
-   - snapshot
+   - storage
+   - editor
+   - ai
+   - assistant
    - blueprint
    - Node-RED
 ---
