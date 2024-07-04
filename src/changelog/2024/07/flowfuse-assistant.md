@@ -14,7 +14,7 @@ Additionally, it works directly inside the Function Node editor right where you 
 
 This is just the beginning. The FlowFuse Assistant will continue to evolve, with future updates bringing even more powerful features and enhancements.
 
-Starting from today, FlowFuse users can try this out on their instances.
+Starting from today, FlowFuse Assistant is available on FlowFuse Cloud. Users will need to update their instances to the latest stack to enable it.
 
 
 ![Node-RED Editor toolbar button for the assistant](./images/assistant-toolbar.png)
