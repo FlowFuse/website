@@ -4,7 +4,7 @@ subtitle: Lowering the barrier to entry for new users, and enhancing the flexibi
 description: Discover the new features in FlowFuse 2.6, and it's focus on improving the Node-RED development experience.
 date: 2024-07-04
 authors: ["joe-pavitt"]
-image: /blog/2024/06/images/release-2-5-graphic.png
+image: /blog/2024/07/images/release-2-6-july-2024.png
 tags:
    - posts
    - flowfuse
@@ -56,7 +56,6 @@ _Screenshot showing the "FlowFuse" button at the bottom of the Node-RED Editor._
 
 Don't worry though, if you want the full editor experience again, you can just collapse the FlowFuse menus down to a little "FlowFuse" button at the bottom.
 
-
 ## Persistent File Storage
 
 This now unlocks many Node-RED nodes that previously couldn't run in the FlowFuse Cloud environment. Just a few now available are:
@@ -68,6 +67,15 @@ This now unlocks many Node-RED nodes that previously couldn't run in the FlowFus
 
 ## Other Highlights
 
+### Compact Applications View
+
+This is a great example of collaboration with our customers. Three weeks ago, a customer reached out to us with a design proposal for the main "Applications" view. Within three weeks it's not only been implemented, but is now live, running in FlowFuse Cloud, and available in FlowFuse 2.6.
+
+![Screenshot of new "Applications" view for a given Team in FlowFuse.](./images/compact-applications-view.png){data-zoomable}
+_Screenshot of new "Applications" view for a given Team in FlowFuse._
+
+The improvement here is that we've moved instances and devices to be shown as a maximum of three per row (rather than the one perviously) meaning you can see far more content at a glance, and hopefully, get to where you need to go in fewer clicks.
+
 ### Import/Export Blueprints
 
 ![Screenshot showing the admin page for "Flow Blueprints" with the new "Import"/"Export" buttons](./images/blueprint-import-export.png){data-zoomable}
@@ -76,6 +84,9 @@ _Screenshot showing the admin page for "Flow Blueprints" with the new "Import"/"
 Administrators of FlowFuse instances can now import and export Blueprints. This is the first stage of a larger feature set for Blueprints that will make it easier to share common flows and patterns across FlowFuse instances, and see many extensions to our [Blueprint Library](https://flowfuse.com/blueprints/).
 
 ### Multi-line Environment Variables
+
+![Screenshot showing the "Environment Variables" table in the Instance's Settings](./images/multiline-env-vars.png){data-zoomable}
+_Screenshot showing the "Environment Variables" table in an Instance's Settings_
 
 We now support the use of multi-line environment variables for your Node-RED instances running on FlowFuse. This unlocks the ability to store certs or multi-line values like JSON as environment variables.
 

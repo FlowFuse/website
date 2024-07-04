@@ -175,7 +175,11 @@ pre code {
 }
 
 /* ensure any images smaller than width of the content are centrally aligned */
-.prose picture img {
+.prose .zoomable-image {
+    text-align: center;
+}
+
+.prose picture {
     margin: auto;
 }
 
