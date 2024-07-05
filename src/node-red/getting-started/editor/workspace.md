@@ -4,7 +4,7 @@ eleventyNavigation:
   parent: Editor
 meta:
   title: Node-RED Editor Workspace
-  description: Explore the features available in the Node-RED Editor workspace component]
+  description: Explore the features available in the Node-RED Editor workspace component
   keywords: node-red, node-red editor, workspace
 ---
 
@@ -24,7 +24,7 @@ The workspace provides view tools at the footer in the right corner. This includ
 
 Additionally, it provides a view navigator that allows you to see a scaled-down view of the entire workspace. In this view, you can also see the currently visible area of the workspace in the editor. To jump to a specific workspace area, click on that area in the view navigator.
 
-If linter tool is enabled, Next to the view navigator on the left side, you can find the Linter tool option that displays the number of linting issues present in the workspace. By clicking on it, you will navigate to the Linter tool in the sidebar.
+If the Linter tool is enabled, next to the view navigator on the left side, you will find the Linter tool option that displays the number of linting issues present in the workspace. By clicking on it, you will navigate to the Linter tool in the sidebar.
 
 ## Search Flow
 

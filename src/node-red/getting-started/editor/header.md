@@ -40,7 +40,7 @@ After the deploy button, you will see the profile icon. Clicking on it allows yo
 
 ## Main Menu
 
-right after the user profile at the right-hand corner you will see the menu icon. by clicking on it will open the list of options that makes Node-RED work easy.
+Right after the user profile, you will see the menu icon at the right-hand corner. Clicking on it will open the list of options that make working with Node-RED.
 
 Following are the option available in the main menu
 
@@ -64,7 +64,7 @@ The first option in the menu allows you to perform essential editing actions. Ho
 
 ### View
 
-This option allows users to control the display and visibility of various interface elements within the Node-RED editor, and allow to access these elements seamlessly.
+This option allows users to control the display and visibility of various interface elements within the Node-RED editor and allows them to access these elements seamlessly.
 
 ![View option of the main menu's options](./images/main-menu-view-option.png "View option of the main menu's options"){data-zoomable}
 
@@ -97,7 +97,7 @@ This option allows you to arrange and manipulate selected flow groups within the
 
 ### Import 
 
-This option allows you to import the application's `flow.json`. In genral, You have two main methods available for importing: you can either use the "Clipboard" field or upload the file from your local system by clicking "Select file to import".
+This option allows you to import the application's `flow.json`. In general, you have two main methods available for importing: you can either use the "Clipboard" field or upload the file from your local system by clicking "Select file to import".
 
 ![Import option of the main menu's options](./images/main-menu-import.png "Import option of the main menu's options"){data-zoomable}
 
@@ -154,7 +154,7 @@ This option allows to search the flow groups created within that Node-RED instan
 
 ![Configuration option of the main menu's options](./images/main-menu-configuration-nodes.png "Configuration option of the main menu's options"){data-zoomable}
 
-Clicking on this option will open the sidebars config tab that will allow you to manage the all of configuration nodes of current Node-RED Instance
+Clicking on this option will open the sidebars config tab that will allow you to manage all of the configuration nodes of the current Node-RED Instance.
 
 ### Flows
 
