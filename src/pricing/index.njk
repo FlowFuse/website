@@ -423,15 +423,7 @@ hubspot:
     {% include "faq.njk" %}
 </div>
 <!-- Scroll to anchor -->
-<script>
-    function scrollToAnchor(event, anchorId) {
-        event.preventDefault();
-        const anchor = document.getElementById(anchorId);
-        if (anchor) {
-            anchor.scrollIntoView({ behavior: 'smooth' });
-        }
-    }
-</script>
+{% include "smooth-scroll.njk" %}
 
 <!-- Toggle -->
 <script>

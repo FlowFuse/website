@@ -12,8 +12,8 @@ description:
 
 <div class="w-full flex justify-center mt-6">
     <div class="mx-auto text-center flex flex-row gap-8">
-        <a href="/contact-us/" class="inline-block ff-btn ff-btn--highlight shadow uppercase">Speak to our team</a>
-        <a href="/whitepaper/accelerating-innovation-in-manufacturing-with-flowfuse/" class="inline-block ff-btn ff-btn--primary-outlined shadow uppercase">Read Whitepaper</a>
+        <a href="/book-demo/" class="inline-block ff-btn ff-btn--highlight shadow uppercase">Book a demo</a>
+        <a href="#whitepapers" onclick="scrollToAnchor(event, 'whitepapers')" class="inline-block ff-btn ff-btn--primary-outlined shadow uppercase">Read Whitepaper</a>
     </div>
 </div>
 
@@ -135,49 +135,71 @@ description:
 <div class="w-full">
     <div class="px-6 pt-3 md:pt-10 pb-20 md:pb-12 text-lg flex-col flex-row items-center justify-center gap-1 hover:no-underline flex-wrap">
         <!-- Resources -->
+        {% set caseStudies = [
+            {
+                title: "Revolutionizing Precision Manufacturing with Node-RED",
+                image: "./images/stories/abrasive_tech.jpg",
+                alt: "Photo of helicopters and a precision manufacturing machine",
+                link: "/customer-stories/leveraging-node-red-and-flowfuse-to-automate-precision-manufacturing/"
+            },
+            {
+                title: "The Future of Textile Manufacturing Powered with <span class='inline-block'>Node-RED</span>",
+                image: "./images/stories/stfi-future-textile.jpg",
+                alt: "Photo of the STFI floor plant",
+                link: "/customer-stories/stfi-future-of-textile-powered-by-node-red/"
+            },
+            {
+                title: "Node-RED Enables Digital Transformation of a Large US Manufacturing Company",
+                image: "./images/stories/large-us-manufacturing.jpg",
+                alt: "Photo of a manufacturing company with a worker holding a laptop",
+                link: "/customer-stories/manufacturing-digital-transformation/"
+            }
+        ] %}
+        
+        {% set whitepapers = [
+            {
+                title: "Accelerating Innovation in Manufacturing with FlowFuse",
+                image: "./whitepaper/images/whitepaper-manufacturing.png",
+                alt: "Photo of a manufacturing company with a worker holding a laptop",
+                link: "/whitepaper/accelerating-innovation-in-manufacturing-with-flowfuse/"
+            },
+            {
+                title: "Open Source Software for Manufacturing",
+                image: "./whitepaper/images/whitepaper-oss-manufacturing.jpg",
+                alt: "Photo of a manufacturing company shop floor",
+                link: "/whitepaper/open-source-software-for-manufacturing/"
+            }
+        ] %}
         <div class="text-center mt-6 md:mt-4 mb-6">
             <h2>Resources</h2>
         </div>
         <div class="container m-auto max-w-5xl">
-            <!-- Left -->
-            <div class="ff-nodered-resources grid grid-cols-1 md:grid-cols-2 md:grid-flow-row md:gap-x-4 pt-4 md:pt-6 items-start px-6">
-                <a class="h-full"
-                    href="/customer-stories/leveraging-node-red-and-flowfuse-to-automate-precision-manufacturing/">
+            <div
+                class="ff-nodered-resources grid grid-cols-1 md:grid-rows-[auto_1fr_1fr_1fr] md:grid-cols-2 md:grid-flow-col md:gap-x-4 pt-4 md:pt-6 items-start px-6">
+                <!-- Left -->
+                <h4 class="text-center">Case Studies</h4>
+                {% for caseStudy in caseStudies %}
+                <a class="h-full" href="{{ caseStudy.link }}">
                     <li class="h-full">
-                        <div class="w-2/5 ff-image-cover ff-image-left-rounded h-full">
-                            {% image "./images/stories/abrasive_tech.jpg", "Photo of helicopters and a precision
-                            manufacturing machine", [208] %}
+                        <div class="w-2/5 max-md:aspect-video ff-image-cover ff-image-left-rounded h-full">
+                            {% image caseStudy.image, caseStudy.alt, [208] %}
                         </div>
-                        <label class="w-3/5"><span class="font-bold"><span class="font-bold">Case Study:</span></span> Revolutionizing Precision Manufacturing with <span class="inline-block">Node-RED</span></label>
+                        <label class="w-3/5">{{ caseStudy.title | safe }}</label>
                     </li>
                 </a>
-                <a href="/customer-stories/stfi-future-of-textile-powered-by-node-red/">
-                    <li>
-                        <div class="w-2/5 ff-image-cover ff-image-left-rounded h-full">
-                            {% image "./images/stories/stfi-future-textile.jpg", "Photo of the STFI floor plant", [208] %}
-                        </div>
-                        <label class="w-3/5"><span class="font-bold">Case Study:</span> The Future of Textile Manufacturing Powered with <span class="inline-block">Node-RED</span></label>
-                    </li>
-                </a>
+                {% endfor %}
                 <!-- Right -->
-                <a class="h-full" href="/customer-stories/manufacturing-digital-transformation/">
-                    <li class="h-full">
-                        <div class="w-2/5 ff-image-cover ff-image-left-rounded h-full">
-                            {% image "./images/stories/large-us-manufacturing.jpg", "Photo of a manufacturing company with a
-                            worker holding a laptop.", [208] %}
-                        </div>
-                        <label class="w-3/5"><span class="font-bold">Case Study:</span> Node-RED Enables Digital Transformation of a Large US Manufacturing Company</label>
-                    </li>
-                </a>
-                <a href="/blog/2023/10/citizen-development/">
+                <h4 class="text-center max-md:pt-12" id="whitepapers">Whitepapers</h4>
+                {% for whitepaper in whitepapers %}
+                <a href="{{ whitepaper.link }}">
                     <li>
-                        <div class="w-2/5 ff-image-cover ff-image-left-rounded h-full">
-                            {% image "./blog/2023/10/images/image-citizen-developers.png", "Graphics depicting unified
-                            citizen developers.", [208] %}
+                        <div class="w-2/5 max-md:aspect-video ff-image-cover ff-image-left-rounded h-full">
+                            {% image whitepaper.image, whitepaper.alt, [208] %}
                         </div>
-                        <label class="w-3/5">Empower your Operational Technology teams as Citizen Developers</label>
+                        <label class="w-3/5">{{ whitepaper.title | safe }}</label>
                     </li>
                 </a>
+                {% endfor %}
             </div>
         </div>
         <!-- Deployment options -->
@@ -227,3 +249,5 @@ description:
         </div>
     </div>
 </div>
+<!-- Scroll to anchor -->
+{% include "smooth-scroll.njk" %}
