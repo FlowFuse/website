@@ -3,7 +3,7 @@ eleventyNavigation:
   key: Palette
   parent: Editor
 meta:
-  title: Node-RED
+  title: Node-RED Editor Palette
   description: Explore the features available in the Node-RED Editor palette, essential for navigation and configuration.
   keywords: node-red, node-red editor
 ---
@@ -16,7 +16,7 @@ The Palette is the left sidebar that contains all available nodes, including cor
 
 ![Image showing Node-RED Palette Search bar](./images/node-red-palette-search.png "Image showing Node-RED Palette Search bar"){data-zoomable}
 
-Located at the top of the Palette, the search bar allows you to quickly find nodes by their names.
+Located at the top of the Palette, the search bar allows you to quickly find nodes by their name.
 
 ## Node Categories
 
