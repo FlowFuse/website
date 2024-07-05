@@ -100,6 +100,8 @@ We provide the ["Headlines" view](https://github.com/orgs/FlowFuse/projects/1/vi
 
 We produce changelog entries for new features and changes that are of interest to users. These are typically short highlight articles that let users know what we have added or improved in the product and can be found at https://flowfuse.com/changelog/
 
+ChangeLog entries are created via PR to the [website](https://github.com/FlowFuse/website/tree/main/src/changelog) repository.
+
 ### Sizing Issues
 
 To more accurately understand which tasks can be scheduled without overloading our team, everyone conducts an initial, high-level analysis when creating an issue to assign weight estimates. We recognize that these estimates might not be precise. If the person who creates an issue cannot provide an estimate, any FlowFuse team member is welcome to contribute one.
