@@ -2,7 +2,7 @@
 layout: layouts/base.njk
 ---
 
-<div class="w-full page post">
+<div class="w-full page post story">
     {% if title %}
     <div class="w-full py-6 bg-cover bg-center md:py-9 md:min-h-[272px] md:flex md:content-center" style="background-image: linear-gradient(to right, #1F2937, #1F293700), url({{ image }})">
         <div class="post-title container m-auto text-center max-lg:px-6 flex md:max-w-screen-lg">
@@ -51,6 +51,26 @@ layout: layouts/base.njk
                         <div class="border-b pt-3 pb-3">
                             <h3 class="text-base">Solution</h3>
                             <p class="mt-2">{{ story.solution }}</p>
+                            {% if story.products.length > 0 %}
+                            <h5 class="font-normal text-gray-500">FlowFuse set up</h5>
+                            <ul class="flex flex-row flex-wrap gap-4 mt-4">
+                                {% for product in story.products %}
+                                <li class="mb-3 w-10 max-h-10 text-base flex items-center ff-tooltip" data-tooltip="{{ product }}">
+                                    {% set productIcons = {
+                                        "Node-RED": "node-red.svg",
+                                        "FlowFuse Dashboard": "ff-dashboard.svg",
+                                        "FlowFuse": "ff-icon.svg",
+                                        "FlowFuse Device Agent": "ff-device-agent.svg",
+                                        "FlowFuse Project Nodes": "ff-project-nodes.svg"
+                                    } %}
+
+                                    {% if product in productIcons %}
+                                        {% include "components/icons/product-icons/" ~ productIcons[product] %}
+                                    {% endif %}
+                                </li>
+                                {% endfor %}
+                            </ul>
+                            {% endif %}
                         </div>
                         <div class="pt-3 pb-3">
                             <h3 class="text-base">Results</h3>
