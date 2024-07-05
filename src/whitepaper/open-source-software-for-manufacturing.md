@@ -1,16 +1,16 @@
 ---
 title: "Open Source Software <span class='text-indigo-600'>for Manufacturing </span>"
+subtitle: "A Comprehensive Look at Why Open Source is a Smart Choice for Industrial Agility"
 meta:
     title: Open Source Software for Manufacturing
     description: In this free white paper get a comprehensive understanding of why open source software (OSS) is a smart choice for digital transformation and industrial agility
+image: /whitepaper/images/whitepaper-oss-manufacturing.jpg
 hubspot:
     script: "hubspot/hs-form.njk"
     formId: 0ecb7f9a-cae9-403f-9067-50d4cf494255
     cta: "send-me-a-copy"
     reference: "manufacturing-whitepaper"
 ---
-
-
 
 ## Understanding Open-Source Software 
 
@@ -57,6 +57,7 @@ The Linux Foundation, as a prime example, upholds a rigorous security posture th
 
 The ease of learning and training on OSS contributes significantly to its rapid adoption. The availability of documentation, tutorials, and online resources fosters a supportive learning environment. The vast community of users that many OSS-projects foster creates a space to readily share knowledge and expertise, making it easier for individuals and organizations to upskill and adapt to new technologies. The collaborative nature of these communities also encourages the development of training materials and courses, further enhancing the accessibility and learnability of OSS.
 
+![Benefits of Open-Source Software for Manufacturing Graphic](./whitepaper/images/oss.png){data-zoomable}
 
 ## <span class="text-indigo-600"> Risks and Remedies </span> for Open-Source Software in Manufacturing
 
