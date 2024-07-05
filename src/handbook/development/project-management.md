@@ -91,10 +91,16 @@ milestone directly.
 
 #### Headline Features
 
-We label some items as `headline`. These are items we want to highlight in the changelog and further
+We label some items as `headline`. These are items we want to highlight in the ["changelog"](#changelog) and further
 announcements and should clearly describe the value they bring to our users.
 
 We provide the ["Headlines" view](https://github.com/orgs/FlowFuse/projects/1/views/39) on our GitHub project boards to track these items on a release-by-release basis so that the customer team has a clearer view on what new content can be discussed in socials, etc.
+
+#### Changelog
+
+We produce changelog entries for new features and changes that are of interest to users. These are typically short highlight articles that let users know what we have added or improved in the product and can be found at https://flowfuse.com/changelog/
+
+ChangeLog entries are created via PR to the [website](https://github.com/FlowFuse/website/tree/main/src/changelog) repository.
 
 ### Sizing Issues
 
