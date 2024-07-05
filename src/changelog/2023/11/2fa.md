@@ -1,5 +1,6 @@
 ---
 title: Two-Factor Authentication
+description: Enhance your FlowFuse security with two-factor authentication (2FA). Set up 2FA using TOTP tools like Google Authenticator for an added layer of account security.
 date: 2023-11-23 13:00:00.0
 authors: ["marian-demme"]
 tags:

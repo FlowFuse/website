@@ -1,5 +1,6 @@
 ---
 title: Device Agent path bug fix
+description: "Fix: Device Agent now correctly passes the PATH environment variable to Node-RED instances, resolving issues with some of node installation when assigned to applications"
 date: 2023-10-26
 authors: ["marian-demme"]
 tags:
