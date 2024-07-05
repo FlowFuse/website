@@ -13,7 +13,7 @@ description:
 <div class="w-full flex justify-center mt-6">
     <div class="mx-auto text-center flex flex-row gap-8">
         <a href="/book-demo/" class="inline-block ff-btn ff-btn--highlight shadow uppercase">Book a demo</a>
-        <a href="#whitepapers" class="inline-block ff-btn ff-btn--primary-outlined shadow uppercase">Read Whitepaper</a>
+        <a href="#whitepapers" onclick="scrollToAnchor(event, 'whitepapers')" class="inline-block ff-btn ff-btn--primary-outlined shadow uppercase">Read Whitepaper</a>
     </div>
 </div>
 
@@ -249,3 +249,5 @@ description:
         </div>
     </div>
 </div>
+<!-- Scroll to anchor -->
+{% include "smooth-scroll.njk" %}
