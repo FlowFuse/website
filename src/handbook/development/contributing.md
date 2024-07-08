@@ -63,7 +63,7 @@ When conducting a PR review, if you are the last (or only) reviewer and all revi
 
 For a comprehensive review of the Pull Request, utilize the designated FlowFuse pre-staging environment. As of the composition of this document, the pre-staging verification is only available for the primary [FlowFuse NPM package](https://github.com/FlowFuse/flowfuse).
 
-To validate changes within the pre-staging environment, you can add the `deploy:pr` label to the PR. This will trigger a deployment to a unique staging environment. Read more in the [Test Changes in Staging](#test-changes-in-staging) section.
+Pre-staging environment is created for each Pull Request created within `FlowFuse/flowfuse` repo which includes changes in the source code. Read more in the [Test Changes in Staging](#test-changes-in-staging) section.
 
 ## Conducting Code Reviews
 
@@ -81,13 +81,11 @@ When reviewing code, consider the following:
 
 For FlowFuse, when changes are merged into the `main` branch, they are [automatically deployed to the production environment](./ops/production#deployment-to-flowfuse-cloud). As such, it is vital a thorough review has been conducted before merging, and that the changes have been tested in a staging environment.
 
-It is possible to deploy a PR to a dedicated staging environment for testing. To do this, add the `deploy:pr` label to the PR. This will trigger a deployment to a unique staging environment. The label should remain until the PR is merged.
-
-A unique pre-staging environment will be established for each Pull Request. 
+When a pull request includes modifications to the source code, a dedicated pre-staging environment is automatically generated. This pre-staging environment is a complete replica of the staging environment, ensuring that it mirrors the conditions and configurations found in staging. The pre-staging environment serves as a testing ground, allowing developers to thoroughly evaluate their changes before they are merged into the main codebase. This ensures that any issues can be identified and addressed in an isolated setting, maintaining the integrity of the staging environment.
 
 ![Example entry in the PR status to show the "Deploy Staging" job](../images/screenshots/devops-pr-staging.png)
 
-The environment itself will then be available at: `https://<pr-number>.flowfuse.dev/`
+The environment itself will then be available at: `https://<pr-number>.flowfuse.dev/` . Information about the pre-staging deployment is sent to `gh-pipelines` Slack channel.
 
 Access credentials for the pre-staging environment are located in the FlowFuse 1Password vault.
 
