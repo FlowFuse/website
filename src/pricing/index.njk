@@ -170,7 +170,7 @@ hubspot:
                         </div>
                     </div>
                     <!-- Enterprise -->
-                    {% macro enterprise(id_suffix, show_sla=true) %}
+                    {% macro enterprise(show_sla=true, show_slider=true) %}
                     <div class="pricing-tile md:h-full">
                         <div class="pricing-tile-background pb-6 md:grid flex-col">
                             <div>
@@ -196,35 +196,36 @@ hubspot:
                                     </ul>
                                 </div>
                             </div>
+                            {% if show_slider %}
                             <div data-nosnippet>
                                 <!-- Slider -->
                                 <ul class="font-extralight text-sm leading-7 mt-6 w-full flex flex-row justify-between text-gray-600">
                                     <li>Instances</li>
-                                    <li id="enterprise-monthly-value-{{ id_suffix }}" class="value">10</li>
+                                    <li id="enterprise-monthly-value" class="value">10</li>
                                 </ul>
                                 <div class="range contentMonthly">
-                                    <input type="range" min="10" max="510" value="10" id="enterprise-monthly-slider-{{ id_suffix }}"
+                                    <input type="range" min="10" max="510" value="10" id="enterprise-monthly-slider"
                                         class="transition duration-1000" step="10" />
                                 </div>
                                 <!-- Price -->
-                                <div id="enterprise-m-original-div-{{ id_suffix }}"
+                                <div id="enterprise-m-original-div"
                                     class="mt-3 mb-6 flex flex-row flex-wrap w-full gap-x-2">
                                     <div class="text-left flex flex-row">
                                         <div class="w-16 mr-1">
                                             <h2 class="self-end">
                                                 <span class="align-top text-sm leading-7">$</span><span
-                                                    id="enterprise-monthly-price-int-{{ id_suffix }}" class="align-top">20</span><span
-                                                    id="enterprise-monthly-price-dec-{{ id_suffix }}"
+                                                    id="enterprise-monthly-price-int" class="align-top">20</span><span
+                                                    id="enterprise-monthly-price-dec"
                                                     class="align-top text-sm leading-7">83</span>
                                             </h2>
                                         </div>
                                         <div class="pl-2 text-sm leading-4 text-left self-end pb-1">
-                                            <note id="enterprise-monthly-price-note-{{ id_suffix }}" class="note text-xs">
+                                            <note id="enterprise-monthly-price-note" class="note text-xs">
                                             </note>
                                         </div>
                                     </div>
                                 </div>
-                                <div id="enterprise-m-alternate-div-{{ id_suffix }}"
+                                <div id="enterprise-m-alternate-div"
                                     class="hidden mt-3 mb-6 flex flex-row flex-wrap w-full gap-x-2">
                                     <div class="text-left">
                                         <h2 class="self-end">
@@ -236,10 +237,17 @@ hubspot:
                             <a class="md:self-end ff-btn ff-btn--primary uppercase align-baseline w-full"
                                 href='/pricing/request-quote/'
                                 onclick="capture('cta-request-quote', {'position': 'primary'}, {'plan': 'enterprise'})">Request a Quote</a>
+                            {% else %}
+                            <div class="mt-9 md:text-left items-left w-full mb-11 md:mt-11 md:mb-3 flex flex-row">
+                                <h2 class="self-end">Let's Talk</h2>
+                            </div>
+                            <a class="md:self-end ff-btn ff-btn--primary uppercase align-baseline w-full"
+                            href="/book-demo/" onclick="capture('cta-lets-talk', {'position': 'primary'}, {'plan': 'sh-enterprise'})">book a demo</a>
+                            {% endif %}
                         </div>
                     </div>
                     {% endmacro %}
-                    {{ enterprise("1") }}
+                    {{ enterprise() }}
                 </div>
             </div>
             <!-- Self-hosted -->
@@ -274,7 +282,7 @@ hubspot:
                     </div>
                     <!-- Enterprise -->
                     <div class="pricing-tile md:h-full">
-                        {{ enterprise("2", false) }}
+                        {{ enterprise(false, false) }}
                     </div>
                 </div>
             </div>
@@ -331,7 +339,7 @@ hubspot:
         <!-- Feature Comparison -->
         <div id="feature-comparison" class="product w-full px-6 md:px-0 md:pt-6">
             <!-- Scroll to anchor -->
-            <div class="flex flex-col items-center text-teal-300 mb-14 md:mb-0 -mt-4">
+            <div class="flex flex-col items-center mb-14 md:mb-0 -mt-4">
                 <a href="#feature-comparison-table" onclick="scrollToAnchor(event, 'feature-comparison-table')">
                     {% include "components/icons/chevron-down.svg" %}
                 </a>
@@ -505,7 +513,7 @@ hubspot:
 
 <!-- Sliders -->
 <script>
-    function setupPricingSlider(sliderId, basePrice, stepSize, priceIntElementId, priceDecElementId, valueElementId, priceNoteElementId, is_annual=false) {
+    function setupPricingSlider(sliderId, basePrice, stepSize, priceIntElementId, priceDecElementId, valueElementId, priceNoteElementId) {
         const sliderEl = document.querySelector(sliderId)
         sliderEl.min = stepSize;
         sliderEl.value = stepSize;
@@ -521,8 +529,7 @@ hubspot:
             // Map slider IDs to div IDs
             const divIds = {
                 "#team-monthly-slider": ["#team-m-original-div", "#team-m-alternate-div", 350],
-                "#enterprise-monthly-slider-1": ["#enterprise-m-original-div-1", "#enterprise-m-alternate-div-1", 500],
-                "#enterprise-monthly-slider-2": ["#enterprise-m-original-div-2", "#enterprise-m-alternate-div-2", 500]
+                "#enterprise-monthly-slider": ["#enterprise-m-original-div", "#enterprise-m-alternate-div", 500]
             };
 
             // Check if the slider ID is in the divIds map
@@ -561,12 +568,7 @@ hubspot:
 
             const totalMonthlyPrice = sliderId === "#team-monthly-slider" && tempSliderValue > 250 ? 3200 : discountedPriceMonthly * tempSliderValue;
 
-            if (is_annual) {
-                const totalAnnualPrice = totalMonthlyPrice * 12;
-                priceNoteElement.innerHTML = `/instance a month <br>Billed annually at <span class="font-semibold">$${totalAnnualPrice.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</span><br \\>`;
-            } else {
-                priceNoteElement.innerHTML = `/instance a month <br>Billed monthly at <span class="font-semibold">$${totalMonthlyPrice.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</span><br \\>`;
-            }
+            priceNoteElement.innerHTML = `/instance a month <br>Billed monthly at <span class="font-semibold">$${totalMonthlyPrice.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</span><br \\>`;
         })
 
         sliderEl.dispatchEvent(new Event('input'));
@@ -574,8 +576,7 @@ hubspot:
 
     // Setup the sliders
     setupPricingSlider("#team-monthly-slider", 300, 5, "#team-monthly-price-int", "#team-monthly-price-dec", "#team-monthly-value", "#team-monthly-price-note");
-    setupPricingSlider("#enterprise-monthly-slider-1", 600, 10, "#enterprise-monthly-price-int-1", "#enterprise-monthly-price-dec-1", "#enterprise-monthly-value-1", "#enterprise-monthly-price-note-1");
-    setupPricingSlider("#enterprise-monthly-slider-2", 600, 10, "#enterprise-monthly-price-int-2", "#enterprise-monthly-price-dec-2", "#enterprise-monthly-value-2", "#enterprise-monthly-price-note-2", true);
+    setupPricingSlider("#enterprise-monthly-slider", 600, 10, "#enterprise-monthly-price-int", "#enterprise-monthly-price-dec", "#enterprise-monthly-value", "#enterprise-monthly-price-note");
 </script>
 
 <!-- Features info -->
