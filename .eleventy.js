@@ -399,7 +399,7 @@ module.exports = function(eleventyConfig) {
         } else if (link) {
             return `<li class="${classes}"><a class="flex items-center gap-2" href="${link}">${iconSvg}${label}</a></li>`
         } else {
-            return `<li class="${classes}"><a class="flex items-center gap-2">${iconSvg}${label}</a></li>`
+            return `<li class="${classes}"><span class="flex items-center gap-2">${iconSvg}${label}</span></li>`
         }
     });
     
