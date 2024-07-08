@@ -21,6 +21,9 @@ Not yet written
 *When running e2e tests locally, the NPM scripts are in the `flowforge` package.*
 *Be sure to `cd` to `flowforge` before attempting to run them*
 
+### Dependencies
+Before running the e2e test suites locally you should make sure you have Docker installed and running locally.
+
 ### Running Locally
 
 To run the E2E tests yourself, we need to first run our own local web server that the tests will run on.
@@ -29,6 +32,19 @@ To run this, open a terminal and run:
 
 ```bash
 npm run cy:web-server
+```
+
+This accomplishes two things: 
+- spins up two web servers, each configured differently
+- spins up a SMPT server running in a docker container for each server 
+
+```shell
+Mailpit: Starting e-mail server...
+Mailpit: Web UI available at http://localhost:8025/ with SMTP listening on port 1025
+Mailpit: Starting e-mail server...
+Mailpit: Web UI available at http://localhost:8026/ with SMTP listening on port 1026
+OS Environment running at http://localhost:3001
+EE Environment running at http://localhost:3002
 ```
 
 Once this is up and running, you then have two options:
