@@ -14,13 +14,15 @@ tags:
 
 With Node-RED's increasing role in IoT, FlowFuse Cloud has become a favored platform for deploying production Node-RED applications. It offers [extensive features](/product/features/) at a low cost, reducing operational overhead. However, the cloud is not the only option we provide; we also offer a self-hosted option for users who prefer to deploy FlowFuse on their servers. This guide demonstrates how to deploy FlowFuse on your Ubuntu server using Docker, covering key aspects such as domain setup, email, SSL, and more for real-world production scenarios
 
+<!--more-->
+
 ## What is Docker?
 
-[Docker](https://docs.docker.com/guides/docker-concepts/the-basics/what-is-an-image/) is an open-source platform that simplifies how applications are deployed, scaled, and managed through containerization. It enables you to package all components required by your project such as code, libraries, and dependencies into a single, portable unit known as a [Docker container](https://docs.docker.com/guides/docker-concepts/the-basics/what-is-a-container/). These containers ensure consistency in application environments and ease deployment by ensuring that applications run predictably across different computing environments, whether it's on a developer's laptop, a server, or a cloud platform.
+[Docker](https://docs.docker.com/guides/docker-concepts/the-basics/what-is-an-image/) is an open-source platform that simplifies how applications are deployed, scaled, and managed through containerization. It enables you to package all components required by your project such as code, libraries, and dependencies into a single, portable unit known as a [Docker container](https://docs.docker.com/guides/docker-concepts/the-basics/what-is-a-container/). These containers ensure consistency in application environments and ease deployment by ensuring that applications run predictably across different computing environments, whether on a developer's laptop, a server, or a cloud platform.
 
 ## Deploying FlowFuse on Ubuntu server with Docker
 
-Before proceeding, ensure you have your domain and a server with Ubuntu installed. If your Ubuntu server is running without a GUI, you can connect to it from your computer using [ssh](https://itsfoss.com/set-up-ssh-ubuntu/), so that you can run the command from your local computer on the server.
+Before proceeding, ensure you have your domain and a server with Ubuntu installed. If your server has Ubuntu installed without a GUI, you can connect to it from your computer using [SSH](https://itsfoss.com/set-up-ssh-ubuntu/), so that you can run commands from your local computer on the server.
 
 ### Installing Docker on the Ubuntu server.
 
@@ -32,6 +34,10 @@ sudo apt-get update
 
 ```bash
 sudo apt-get install ca-certificates curl
+```
+
+```bash
+sudo install -m 0755 -d /etc/apt/keyrings
 ```
 
 ```bash
@@ -53,8 +59,8 @@ echo \
 sudo apt-get update
 ```
 
-```
- sudo apt-get install docker-ce docker-ce-cli containerd.io docker-build-plugin docker-compose-plugin
+```bash
+ sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
 ```
 
 ```bash
@@ -63,9 +69,13 @@ sudo docker run hello-world
 
 Now, if you see the result similar to the below image it means the docker is installed successfully.
 
+!["Screenshot of terminal showing the docker installed successfully"](./images/successfull-docker-installation.png "Screenshot of terminal showing the docker installed successfully")
+
 ### Adding DNS records for your domain
 
 To make your application accessible on the internet via your domain name, adding DNS records is crucial. These records serve as a vital link between your domain name (like example.com) and your server's IP address. They ensure that when users type your domain into their browsers, they're directed to the correct location where your application is hosted.
+
+!["Screenshot of panel to add dns records provided by my domain provider"](./images/domain-provider-panel.png "Screenshot of panel to add dns records provided by my domain provider")
 
 1. Log in to your Domain Provider's Panel and access the DNS settings of the domain you want to use for the FlowFuse platform.
 
@@ -79,12 +89,20 @@ To make your application accessible on the internet via your domain name, adding
 
 FlowFuse uses Docker Compose to install and manage the required components. We have built and maintaining that Docker Compose project.
 
-1. Download the latest release `tar.gz` from our [Docker Compose project](https://github.com/FlowFuse/docker-compose/archive/refs).
+1. Download the latest release `tar.gz` from our [Docker Compose project](https://github.com/FlowFuse/docker-compose/releases/latest).
+
+```bash
+cd /opt
+```
+
+```bash
+wget <link of the latest tar.gz release>
+```
 
 2. Unpack this release with the following command. Make sure to replace the release name with the actual release name that you downloaded:
 
  ```bash
-    tar zxf v2.6.0.tar.gz
+    tar -xvzf vx.x.x.tar.gz
  ```
 
 3. Enter the folder with the following command. Again, don't forget to replace the release name with the actual release name that you downloaded:
@@ -96,14 +114,18 @@ FlowFuse uses Docker Compose to install and manage the required components. We h
 4. Now, update the FlowFuse configuration file `flowforge.yml` with your domain name. Currently, it is configured with `example.com`. To update it quickly, use the following command:
 
  ```bash
-    sed -i 's/example.com/<replace-with-your-domain-name>/g' /etc/flowforge.yml
+    sed -i 's/example.com/<replace-with-your-domain-name>/g' ./etc/flowforge.yml
  ```
 
 5. Next, update the Docker Compose configuration file `docker-compose.yml` with your domain:
 
  ```bash
-    sed -i 's/example.com/<replace-with-your-domain-name>/g' /opt/docker-compose.yml
+    sed -i 's/example.com/<replace-with-your-domain-name>/g' ./docker-compose.yml
  ```
+
+!["Screenshot the terminal showing the updates made in docker-compose.yml file"](./images/docker-compose-update.png "Screenshot the terminal showing the updates made in docker-compose.yml file")
+
+!["Screenshot the terminal showing the updates made in 'docker-compose.yml' file"](./images/docker-compose-update-2.png "Screenshot the terminal showing the updates made in 'docker-compose.yml' file")
 
 For your understanding, We updated the `flowforge.yml` file to include our domain in the following fields: `domain`, `base_url`, and `broker.public_url`. These changes ensure that instance names on Docker platforms prepend your domain, provide the correct URL to access the platform, and specify the URL for devices to connect to the broker if different from `broker.url`.
 
@@ -115,66 +137,73 @@ Securing communication with [SSL (Secure Sockets Layer)](https://www.youtube.com
 
 1. Open the Docker Compose file in your editor:
 
-    ```bash
-    nano docker-compose.yml
-    ```
+ ```bash
+    nano docker-compose.yml
+ ```
 
 2. Uncomment the following lines by removing the `#` symbol:
 
-    ```yaml
-    # - "./certs:/etc/nginx/certs"
-    ```
+ ```yaml
+    # - "./certs:/etc/nginx/certs"
+ ```
 
-    ```yaml
-    # - "443:443"
-    # environment:
-      # - "HTTPS_METHOD=redirect"
-    ```
+ ```yaml
+    # - "443:443"
+    # environment:
+      # - "HTTPS_METHOD=redirect"
+ ```
 
-    ```yaml
-    # acme:
-    #   image: nginxproxy/acme-companion
-    #   restart: always
-    #   volumes:
-    #     - "/var/run/docker.sock:/var/run/docker.sock:ro"
-    #     - "./acme:/etc/acme.sh"
-    #   volumes_from:
-    #     - nginx:rw
-    #   environment:
-    #     - "DEFAULT_EMAIL=mail@example.com"
-    #   depends_on:
-    #     - "nginx"
-    ```
+ ```yaml
+    # acme:
+    #   image: nginxproxy/acme-companion
+    #   restart: always
+    #   volumes:
+    #     - "/var/run/docker.sock:/var/run/docker.sock:ro"
+    #     - "./acme:/etc/acme.sh"
+    #   volumes_from:
+    #     - nginx:rw
+    #   environment:
+    #     - "DEFAULT_EMAIL=mail@example.com"
+    #   depends_on:
+    #     - "nginx"
+ ```
 
 3. Update the lines with your domain and email associated with the domain, then save the file:
 
-    ```yaml
-    - "DEFAULT_EMAIL=your-email@example.com"
+ ```yaml
+    - "DEFAULT_EMAIL=your-email@example.com"
 
-    - "LETSENCRYPT_HOST=mqtt.yourdomain.com"
+    - "LETSENCRYPT_HOST=mqtt.yourdomain.com"
 
-    - "LETSENCRYPT_HOST=forge.yourdomain.com"
-    ```
+    - "LETSENCRYPT_HOST=forge.yourdomain.com"
+ ```
+
+!["Screenshot the terminal showing the update made in `docker-compose.yml` file for ssl configuration"](./images/docker-compose-yml-acme-update.png "Screenshot the terminal showing the update made in `docker-compose.yml` file for ssl configuration")
 
 4. Open the `flowforge.yml` file in your editor:
 
-    ```bash
-    nano /etc/flowforge.yml
-    ```
+ ```bash
+    nano /etc/flowforge.yml
+ ```
 
 5. Update the `base_url` to start with `https://` instead of `http://` and the `broker.public_url` entry to start with `wss://` instead of `ws://`, then save the file.
 
-    ```yaml
-    base_url: https://yourdomain.com
+ ```yaml
+    base_url: https://yourdomain.com
 
-    broker:
-      public_url: wss://mqtt.yourdomain.com
-    ```
-Now, when we will start our application the acme container will get also start, that will will generate the certificates with lets encrypt on demand for the forge app and then for each of the instances as they are started.
+    broker:
+      public_url: wss://mqtt.yourdomain.com
+ ```
+
+!["Screenshot of the terminal showing the update made in 'broker's public_url' in the `flowforge.yml` file for SSL configuration"](./images/flowforge-yml-https-update.png "Screenshot of the terminal showing the update made in 'broker's public_url' in the `flowforge.yml` file for SSL configuration")
+
+!["Screenshot of the terminal showing the update made in 'base_url' in the `flowforge.yml` file for SSL configuration"](./images/flowforge-yml-https-update2.png "Screenshot of the terminal showing the update made in 'base_url' in the `flowforge.yml` file for SSL configuration")
+
+Now, when we start our application the acme container will also start and will generate the certificates with let's encrypt on demand for the forge app and then for each of the instances as they are started.
 
 ### Configuring FlowFuse to Enable and Use the Email Feature
 
-FlowFuse platform allows you to send invitations to other users within the platform and via email. It also supports receiving critical alerts and reseting password through email. To use these features, you need to enable and configure email in FlowFuse with your email address. Before you begin, make sure you have an email ID with an app password. FlowFuse supports Gmail and Outlook emails.
+FlowFuse platform allows you to send invitations to other users within the platform and via email. It also supports receiving critical alerts and resetting passwords through email. To use these features, you need to enable and configure email in FlowFuse with your email address. Before you begin, make sure you have an email ID with an app password. FlowFuse supports Gmail and Outlook emails.
 
 #### Creating an App Password for Your Email
 
@@ -187,9 +216,9 @@ If you're unfamiliar with generating an app password, watch these helpful videos
 
 1. Open the `flowforge.yml` config file in your editor:
 
-    ```bash
-    nano /etc/flowforge.yml
-    ```
+ ```bash
+    nano /etc/flowforge.yml
+ ```
 
 2. Update the email configuration section with your email details:
 
@@ -197,62 +226,68 @@ If you're unfamiliar with generating an app password, watch these helpful videos
 
 ```yaml
 email:
-  enabled: true
-  debug: false
-  smtp:
-    host: smtp.gmail.com
-    port: 465
-    secure: true
-    auth:
-      user: your-email@gmail.com
-      pass: your-app-password
+  enabled: true
+  debug: false
+  smtp:
+    host: smtp.gmail.com
+    port: 465
+    secure: true
+    auth:
+      user: your-email@gmail.com
+      pass: your-app-password
 ```
 
 **For Outlook:**
 
 ```yml
 email:
-  enabled: true
-  debug: false
-  smtp:
-    host: smtp.office365.com
-    port: 587
-    secure: false
-    tls:
-      ciphers: "SSLv3"
-      rejectUnauthorized: false
-    auth:
-      user: your-email@outlook.com
-      pass: your-app-password
+  enabled: true
+  debug: false
+  smtp:
+    host: smtp.office365.com
+    port: 587
+    secure: false
+    tls:
+      ciphers: "SSLv3"
+      rejectUnauthorized: false
+    auth:
+      user: your-email@outlook.com
+      pass: your-app-password
 ```
 
 ### Running FlowFuse Application
 
-We have completed the basic production-level configuration for running the FlowFuse application. Before running it, we need to ensure that we have the `flowfuse/node-red` container downloaded, which will use as the default Node-RED stack.
+We have completed the basic production-level configuration for running the FlowFuse application. Before running it, we need to ensure that we have the `flowfuse/node-red` container downloaded, which will be used as the default Node-RED stack.
 
 1. To download the Node-RED container, run the following command:
 
-    ```bash
-    docker pull flowfuse/node-red
-    ```
+ ```bash
+    docker pull flowfuse/node-red
+ ```
 
 2. Now, to run the FlowFuse application, execute the following command:
 
-    ```bash
-    docker compose -p flowforge up -d
-    ```
+ ```bash
+    docker compose -p flowforge up -d
+ ```
 
-If you see output similar to the following image, it indicates that all configurations and steps are correct. You can now access your self-hosted FlowFuse platform on the internet using the URL `https://forge.<yourdomain>.com`.
+If you see an output similar to the following image, it indicates that all containers that are required for the flowfuse application to run correctly are running.
+
+!["Screenshot of the terminal showing the all containers are running successfully that are required for the flowfuse to run"](./images/flowforge-yml-successfully-running-container.png "Screenshot of the terminal showing the all containers are running successfully that are required for the flowfuse to run")
+
+You can now access your self-hosted FlowFuse platform on the internet using the URL `forge.<yourdomain>.com`, and if your website shows the `https` as following that means the SSL configurations are also correct.
+
+!["Screenshot of the browser window with flowfuse platform opened"](./images/deploying-flowfuse-successfull-with-ssl.png "Screenshot of the browser window with flowfuse platform opened")
 
 ### Setting up the FlowFuse Platform
 
 When you open the platform in your browser for the first time, you'll need to create an administrator account and perform initial configurations:
 
-1. Open the platform in your browser. You'll see a screen similar to the image below.
-   
+1. Open the platform in your browser.
+   
 2. Click on the "START SETUP" button.
 
-3. Enter the username, full name, email, password, and confirm the password to addimistrator user account. This first user will have full access to the platform, allowing them to configure settings, manage users and teams.
+3. Enter the username, full name, email, and password, and confirm the password to the administrator user account. This first user will have full access to the platform, allowing them to configure settings, and manage users and teams.
 
 4. Next, If you intend to use the FlowFuse Enterprise Edition, enter your license details. You can request a free trial from [Request a Trial Enterprise License](/docs/install/introduction/#request-a-trial-enterprise-license).
 
@@ -261,5 +296,5 @@ When you open the platform in your browser for the first time, you'll need to cr
 ## Additional recources
 
 - [Deploying FlowFuse with Docker Documentation](https://flowfuse.com/docs/install/docker/): This documentation covers everything in detail on how to install FlowFuse using Docker.
-
 - [Deploying FlowFuse with Docker on Ubuntu youtube video](https://www.youtube.com/watch?v=qQwAPuz9bEk): This YouTube video demonstrates how to deploy FlowFuse using Docker on an Ubuntu server for your server's local network.
+- [Form for requesting Installation Service](https://flowfuse.com/docs/install/introduction/#do-you-need-help%3F-installation-service): Fill this form if you need assistance with the installation process.
