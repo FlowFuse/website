@@ -36,7 +36,7 @@ npm run cy:web-server
 
 This accomplishes two things: 
 - spins up two web servers, each configured differently
-- spins up a SMPT server running in a docker container for each server 
+- spins up a SMTP server running in a docker container for each server 
 
 ```shell
 Mailpit: Starting e-mail server...
