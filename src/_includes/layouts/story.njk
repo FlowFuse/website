@@ -52,7 +52,10 @@ layout: layouts/base.njk
                             <h3 class="text-base">Solution</h3>
                             <p class="mt-2">{{ story.solution }}</p>
                             {% if story.products.length > 0 %}
-                            <h5 class="font-normal text-gray-500">FlowFuse set up</h5>
+                            <div class="flex flex-row items-center">
+                                <h5 class="font-normal text-sm text-gray-500 mr-2">using:</h5>
+                                <hr class="flex-grow border-gray-200">
+                            </div>
                             <ul class="flex flex-row flex-wrap gap-4 mt-4">
                                 {% set productUrls = {
                                     "Node-RED": "/node-red/",
