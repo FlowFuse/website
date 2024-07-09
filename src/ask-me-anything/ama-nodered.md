@@ -1,23 +1,28 @@
 ---
-title: Ask Me Anything about Node-RED (March Edition)
-subtitle: Join Nick O'Leary, co-creator of Node-RED & CTO at FlowFuse and Rob Marcer, Developer Educator at FlowFuse, for an AMA on Node-RED
-description: Node-RED co-creator Nick O'Leary and Rob Marcer answer your questions in this insightful AMA session on Node-RED
+title: Ask Me Anything about Node-RED (March 2023 Edition)
+subtitle:  Dive Deep into Node-RED with Co-Creator Nick O'Leary and Developer Educator Rob Marcer
+description: Comprehensive AMA session with Node-RED experts Nick O'Leary and Rob Marcer, exploring key insights and solutions.
 video: P0ZfQXh-mqM
 image: /images/webinars/ama-march.jpg
 date: 2023-03-09
 time: 16:00 GMT (11:00 ET) 
-duration: 60
+duration: 60 minutes
 hosts: ["nick-oleary", "rob-marcer"]
 hubspot:
     formId: a9e45181-2490-44a9-9d94-62f2f19a6102
 ---
 
-**Do you have a questions about Node-RED or need some advice on a tricky issue using Node-RED? Here is your opportunity to get help from the experts.**
+**Node-RED co-creator Nick O'Leary and Rob Marcer, Developer Educator at FlowFuse, answers your questions in this March 2023 edition of Ask Me Anything session.**
 
 <!--more-->
 
-Nick O'Leary, co-founder of Node-RED & CTO of FlowFuse, and Rob Marcer, Node-RED community member & Developer Advocate @ FlowFuse, will be hosting an interactive Ask Me Anything session. This is a great opportunity to ask questions of the Node-RED experts.
-
-Attendees will be able to ask questions live during this session. However, we also encourage you to ask questions in advance. To ask an advance questions complete this [form](https://forms.gle/jCi3hhNg3cjw1VQE7).
-
-To attend the Ask Me Anything session please register in advance.
+Questions answered in this sessions include:
+ 1. What are the benefits of using the link Nodes
+ 2. How do you temporarily block the multiple loops after splitting for debugging purposes
+ 3. What are the latest updates on the Dashboard
+ 4. How can we build sub flows with Dynamic node instantiation
+ 5. How to create a complex workflow consisting of multiple steps involving third-party APIs without it timing out
+ 6. What examples are there of industrial automation and using Node-RED
+ 7. Is there a way to pass passwords to environmental  nodes other than with environmental variables so we can be more secure
+ 8. Is there a way to a create custom node UI using REACT
+    
