@@ -12,7 +12,7 @@ hubspot:
     formId: a9e45181-2490-44a9-9d94-62f2f19a6102
 ---
 
-**Engage with Node-RED co-creator Nick O'Leary and Rob Marcer, Developer Advocate at FlowFuse, in this Ask Me Anything session.**
+**Engage with Node-RED co-creator Nick O'Leary and Rob Marcer, Developer Educator at FlowFuse, in this Ask Me Anything session.**
 
 <!--more-->
 
