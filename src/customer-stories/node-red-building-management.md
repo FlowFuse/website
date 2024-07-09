@@ -15,10 +15,7 @@ story:
     solution: Use FlowFuse to allow collaboration and fast deployment of Node-RED flows to customers' premises.
     products:
         - Node-RED
-        - FlowFuse Dashboard
         - FlowFuse
-        - FlowFuse Device Agent
-        - FlowFuse Project Nodes
     results:
         - Significant reduction in time to value for customers
         - Empowerment of the whole team to improve products and services

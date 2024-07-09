@@ -13,6 +13,11 @@ story:
     quote: Once we settled on using Node-RED, we knew we needed a solution to help us manage our edge devices as well as our central control system. FlowFuse has helped us take our Node-RED from proof-of-concept through to a reliable, scalable solution for the future.
     challenge: Automate and optimize delivery of 185,000 acre-feet of water annually.
     solution: Using FlowFuse to manage remote Node-RED edge applications.
+    products:
+        - Node-RED
+        - FlowFuse
+        - FlowFuse Device Agent
+        - FlowFuse Project Nodes
     results:
         - Removed the need to travel to pumping stations for normal operation
         - More efficient use of limited water resource
