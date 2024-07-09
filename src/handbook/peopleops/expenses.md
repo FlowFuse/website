@@ -39,7 +39,7 @@ If you realize that you have used your Brex card for personal purposes by mistak
 ## Reimbursement
 
 If you use your own means to purchase something that ought to be covered by the
-company, you can claim back the money through [Deel](https://help.letsdeel.com/hc/en-gb/articles/4405497402257-How-Do-I-Add-An-Expense-Or-Allowance-To-My-Pay-).
+company, you can claim back the money through [Deel](https://help.letsdeel.com/hc/en-gb/articles/16801667118353-How-Do-I-Add-an-Expense-to-my-Pay).
 
 * Create a new expense by clicking <kbd>Add item on the Payment Items tab on your Deel homepage</kbd>
 * Enter the type of adjustment and select the Expense Category
