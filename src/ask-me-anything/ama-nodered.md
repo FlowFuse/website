@@ -1,23 +1,21 @@
 ---
 title: Ask Me Anything about Node-RED (March Edition)
-subtitle: Join Nick O'Leary, co-creator of Node-RED & CTO at FlowFuse and Rob Marcer, Developer Educator at FlowFuse, for an AMA on Node-RED
-description: Node-RED co-creator Nick O'Leary and Rob Marcer answer your questions in this insightful AMA session on Node-RED
+subtitle:  Dive Deep into Node-RED with Co-Creator Nick O'Leary and Developer Advocate Rob Marcer
+description: Participate in a comprehensive AMA session with Node-RED experts Nick O'Leary and Rob Marcer, exploring key insights and solutions.
 video: P0ZfQXh-mqM
 image: /images/webinars/ama-march.jpg
 date: 2023-03-09
 time: 16:00 GMT (11:00 ET) 
-duration: 60
+duration: 60 minutes
 hosts: ["nick-oleary", "rob-marcer"]
 hubspot:
     formId: a9e45181-2490-44a9-9d94-62f2f19a6102
 ---
 
-**Do you have a questions about Node-RED or need some advice on a tricky issue using Node-RED? Here is your opportunity to get help from the experts.**
+**Engage with Node-RED co-creator Nick O'Leary and Rob Marcer, Developer Advocate at FlowFuse, in this Ask Me Anything session.**
 
 <!--more-->
 
-Nick O'Leary, co-founder of Node-RED & CTO of FlowFuse, and Rob Marcer, Node-RED community member & Developer Advocate @ FlowFuse, will be hosting an interactive Ask Me Anything session. This is a great opportunity to ask questions of the Node-RED experts.
+Prepare your questions in advance or ask them live during the session. Submit your questions using this [form](https://forms.gle/jCi3hhNg3cjw1VQE7).
 
-Attendees will be able to ask questions live during this session. However, we also encourage you to ask questions in advance. To ask an advance questions complete this [form](https://forms.gle/jCi3hhNg3cjw1VQE7).
-
-To attend the Ask Me Anything session please register in advance.
+Register now to secure your place in this informative event!
