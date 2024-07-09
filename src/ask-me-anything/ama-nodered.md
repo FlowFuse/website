@@ -17,12 +17,12 @@ hubspot:
 <!--more-->
 
 Questions answered in this sessions include:
- 1. What the benefit of using the link Nodes
- 2. How do you temporarily block the multiple loops after splitting for debuggin purposes
- 3. What are the lateset update on the Dashboard
+ 1. What are the benefits of using the link Nodes
+ 2. How do you temporarily block the multiple loops after splitting for debugging purposes
+ 3. What are the latest updates on the Dashboard
  4. How can we build sub flows with Dynamic node instantiation
  5. How to create a complex workflow consisting of multiple steps involving third-party APIs without it timing out
- 6. What exmaples are there of indsutrial automations and using Node-RED
- 7. Is there a way to pass passwords to enviorement nodes other than with environmental variables so we can be more secure
- 8. Is there a way to create custom node UI using REACT
+ 6. What examples are there of industrial automation and using Node-RED
+ 7. Is there a way to pass passwords to environmental  nodes other than with environmental variables so we can be more secure
+ 8. Is there a way to a create custom node UI using REACT
     
