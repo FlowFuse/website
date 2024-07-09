@@ -16,3 +16,14 @@ At FlowFuse we're trying to leverage data obtained to make better decisions.
 
 FlowFuse uses [our own Dashboard](https://dashboard.flowfuse.com) to obtain insights
 from the data.
+
+
+### Determine which Instances are on which Kubernetes Nodes
+
+From time to time it will be required to migrate Instances from certain Kubernetes nodes as we 
+upgrade the cluster. The following command can be run by a cluster admin to get the list of 
+Instances on a given node group (in this case the node group name is `instance-t4g-static-23`).
+
+```
+for node in $(kubectl get nodes -l alpha.eksctl.io/nodegroup-name=instance-t4g-static-23 --no-headers | cut -d " " -f1) ; do   kubectl get pods -n flowforge --no-headers --field-selector spec.nodeName=${node} -o json | jq '.items[].spec | .containers[].env[] | select(.name == "FORGE_PROJECT_ID") | .value' ; done
+```
