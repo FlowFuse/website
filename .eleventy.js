@@ -395,11 +395,11 @@ module.exports = function(eleventyConfig) {
 
         if (content) {
             const chevronDown = loadSVG('chevron-down')
-            return `<li class="${classes}"><a class="flex items-center gap-1">${iconSvg}${label}<span class="ff-nav-chevron">${chevronDown}</span></a>${content}</li>`
+            return `<li class="${classes}"><span class="flex items-center gap-1">${iconSvg}${label}<span class="ff-nav-chevron">${chevronDown}</span></span>${content}</li>`
         } else if (link) {
             return `<li class="${classes}"><a class="flex items-center gap-2" href="${link}">${iconSvg}${label}</a></li>`
         } else {
-            return `<li class="${classes}"><a class="flex items-center gap-2">${iconSvg}${label}</a></li>`
+            return `<li class="${classes}"><span class="flex items-center gap-2">${iconSvg}${label}</span></li>`
         }
     });
     

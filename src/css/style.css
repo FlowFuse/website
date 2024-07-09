@@ -576,7 +576,7 @@ h4:hover .header-anchor {
         @apply sm:text-indigo-400;
     }
     
-    .ff-website header a {
+    .ff-website header a, .ff-website header span {
         color: theme(colors.gray.800);
     }
     
@@ -586,7 +586,7 @@ h4:hover .header-anchor {
     }
 
 
-    .ff-website header ul a {
+    .ff-website header ul a, .ff-website header ul span {
         border-color: theme(colors.gray.200);
         @apply py-3 sm:py-4 px-4 text-base sm:border-b-0 text-center;
     }
@@ -596,7 +596,7 @@ h4:hover .header-anchor {
     }
 
     .ff-website header a:hover .ff-icon--down path,
-    .ff-website header ul a:hover {
+    .ff-website header ul a:hover, .ff-website header ul span:hover {
         @apply text-indigo-700 md:text-indigo-700;
     }
 
