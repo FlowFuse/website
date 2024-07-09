@@ -54,8 +54,15 @@ layout: layouts/base.njk
                             {% if story.products.length > 0 %}
                             <h5 class="font-normal text-gray-500">FlowFuse set up</h5>
                             <ul class="flex flex-row flex-wrap gap-4 mt-4">
+                                {% set productUrls = {
+                                    "Node-RED": "/node-red/",
+                                    "FlowFuse Dashboard": "/product/dashboard/",
+                                    "FlowFuse": "/product/features/",
+                                    "FlowFuse Device Agent": "/docs/hardware/introduction/#device-agent---hardware",
+                                    "FlowFuse Project Nodes": "/docs/user/projectnodes/#flowfuse-project-nodes"
+                                } %}
                                 {% for product in story.products %}
-                                <li class="mb-3 w-10 max-h-10 text-base flex items-center ff-tooltip" data-tooltip="{{ product }}">
+                                <a href="{{ productUrls[product] }}" class="mb-3 w-10 max-h-10 text-base flex items-center ff-tooltip" data-tooltip="{{ product }}">
                                     {% set productIcons = {
                                         "Node-RED": "node-red.svg",
                                         "FlowFuse Dashboard": "ff-dashboard.svg",
@@ -67,7 +74,7 @@ layout: layouts/base.njk
                                     {% if product in productIcons %}
                                         {% include "components/icons/product-icons/" ~ productIcons[product] %}
                                     {% endif %}
-                                </li>
+                                </a>
                                 {% endfor %}
                             </ul>
                             {% endif %}

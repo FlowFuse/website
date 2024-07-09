@@ -452,6 +452,10 @@ h4:hover .header-anchor {
 }
 
 .story .ff-tooltip:after {
+    z-index: 1000;
+}
+
+.story .ff-tooltip:after {
     transform: translate(-50%, 100%);
     top: auto;
     bottom: -10px;
