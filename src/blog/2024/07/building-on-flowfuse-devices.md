@@ -3,9 +3,9 @@ templateEngineOverride: njk, md
 title: "Developing on FlowFuse: Remote Device Monitoring"
 subtitle: In this article we take a look at how elements of the FlowFuse ecosystem can be used to build powerful IoT applications for monitoring remote devices.
 description: In this article we take a look at how elements of the FlowFuse ecosystem can be used to build powerful IoT applications for monitoring remote devices.
-date: 2024-06-27
+date: 2024-07-07
 authors: ["joe-pavitt"]
-image: /blog/2024/06/images/design-pattern-device-monitoring.png
+image: /blog/2024/07/images/design-pattern-device-monitoring.png
 tags:
    - posts
    - news
@@ -50,22 +50,23 @@ Then, we have to consider that this functionality needs to be deployed out to th
 
 - **Maintain:** If we update functionality on one device, we may need to be able to easily roll those updates out to other devices. We need to sure it's easy to update and deploy to our devices, and if anything goes wrong, we should be able to easily find out what the problem is, and get easy access to fix it.
 
-## FlowFuse Offerings
+## Architecture
+
+Let's consider an example architecture set in an automotive plant:
+
+
+
+### FlowFuse Technology Stack
+
+Given the above architecture, let's take a look at the relevant FlowFuse offerings and see what they're contributing:
 
 ![Lineup of each of the FlowFuse offerings](./images/ff-ecosystem-lineup.png){data-zoomable}
 
-So, given the use case, how do the FlowFuse offerings piece together to build a solution?
-
-- **Node-RED:** Low-code platform for reading and parsing data from the hardware, building the application logic, analysis and alerting.
-- **FlowFuse Dashboard:** An add-on to Node-RED for building interactive user interfaces and dashboards to monitor the devices.
-- **FlowFuse:** Centralized platform that provides a single entry point to manage all of your Node-RED applications and deployments.
-- **FlowFuse Device Agent:** Installed onto the relevant hardware, this provides a connection to FlowFuse, and allows for remote deployment, management and updating of Node-RED instances.
-- **FlowFuse Project Nodes:** An add-on to Node-RED that provides nodes to communicate over a secure (MQTT-based) connection to interface directly between multiple instances of Node-RED.
-
-## Architecture
-
-So, given the use case, how do the FlowFuse offerings piece together to help build a solution?
-
+- **Node-RED:** Low-code, drag-and-drop integration platform. Here we'd be using it in multiple places to read and parse data from the hardware, define the application logic, conduct analysis and provide alerting.
+- **FlowFuse Dashboard:** An add-on to Node-RED for building interactive user interfaces and dashboards. We use this here to provide visual feedback on device performance and behaviors, making it easy for our workers to get an at-a-glance view of our plant.
+- **FlowFuse:** Centralized platform that provides a single entry point to manage all of your Node-RED applications and deployments. Provides role-based access control out of the box, so we can easily control who has access to flows, Dashboards and other configurations.
+- **FlowFuse Device Agent:** Installed onto the relevant hardware, this links your hardware to FlowFuse. Here, we're deploying it to multiple pieces of machinery, as well as local servers, such that we can easily manage (deploy, upgrade, debug) all of those Node-RED deployments centrally (and remotely) from FlowFuse.
+- **FlowFuse Project Nodes:** A small collection of nodes for Node-RED that provide communication over a secure (MQTT-based) connection between devices (our Node-RED deployments on our hardware in this case) and our hosted instances of Node-RED on FlowFuse.
 
 ## What Next?
 
