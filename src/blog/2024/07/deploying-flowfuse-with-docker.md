@@ -26,16 +26,16 @@ Before proceeding, ensure you have your domain and a server with Ubuntu installe
 
 ### Installing Docker on the Ubuntu server.
 
-1. Access the terminal on your Ubuntu server and execute the following commands:
-
+1. Access the terminal on your Ubuntu server and execute the following steps:
+2. Update Package Index:
 ```bash
 sudo apt-get update
 ```
-
+3. Install Required Packages:
 ```bash
 sudo apt-get install ca-certificates curl
 ```
-
+4. Setup Docker Repository:
 ```bash
 sudo install -m 0755 -d /etc/apt/keyrings
 ```
@@ -47,22 +47,22 @@ sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg -o /etc/apt/keyring
 ```bash
 sudo chmod a+r /etc/apt/keyrings/docker.asc
 ```
-
+5. Add Docker Repository:
 ```bash
 echo \
  "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/ubuntu \
  $(. /etc/os-release && echo "$VERSION_CODENAME") stable" | \
  sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
 ```
-
+6. Update Package Index Again:
 ```bash
 sudo apt-get update
 ```
-
+7. Install Docker Packages:
 ```bash
  sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
 ```
-
+8. Verify Docker Installation:
 ```bash
 sudo docker run hello-world
 ```
@@ -81,7 +81,7 @@ To make your application accessible on the internet via your domain name, adding
 
 2. Add entry first entry type: "A", enter "@" into the name field (it points to the domain name itself), and the public IP of your Ubuntu server into the data field.
 
-3. Add entry second entry type: "A", enter "*" into the name field (adding * serves as the wildcard domain entry to the IP address of the host running Docker, we are doing this because the FlowFuse application will be hosted on the `forge.your-domain-name.com`) and public IP of your Ubuntu server into the data field.
+3. Add entry second entry type: "A", enter "*" into the name field (adding * serves as the [wildcard domain entry](https://docs.digitalocean.com/glossary/wildcard-record/) to the IP address of the host running Docker, we are doing this because the FlowFuse application will be hosted on the `forge.your-domain-name.com` and when creating instances for each, our FlowFuse application will use unique subdomain ) and public IP of your Ubuntu server into the data field.
 
 4. Add the last entry type: "A", and enter "www" into the name field (we are adding this because previously domain names used to have the www prefix) and the public IP of your Ubuntu server into the data field.
 
@@ -127,9 +127,9 @@ wget <link of the latest tar.gz release>
 
 !["Screenshot the terminal showing the updates made in 'docker-compose.yml' file"](./images/docker-compose-update-2.png "Screenshot the terminal showing the updates made in 'docker-compose.yml' file")
 
-For your understanding, We updated the `flowforge.yml` file to include our domain in the following fields: `domain`, `base_url`, and `broker.public_url`. These changes ensure that instance names on Docker platforms prepend your domain, provide the correct URL to access the platform, and specify the URL for devices to connect to the broker if different from `broker.url`.
+The `flowforge.yml` file was updated to include our domain in key fields: `domain`, `base_url`, and `broker.public_url`. These adjustments ensure that instance names on Docker platforms incorporate your domain, provide accurate URLs for accessing the platform, and specify the correct URL for devices to connect to the broker if different from `broker.url`. Additionally, in the `docker-compose.yml` file, we configured `VIRTUAL_HOST` and `LETSENCRYPT_HOST` to reflect our domain.
 
-Additionally, in the docker-compose.yml file, we adjusted the `VIRTUAL_HOST` to point to our domain.
+For more details on these configuration changes, refer to the [documentation](/docs/install/docker/#configuring-flowfuse).
 
 ### Securing Communication with SSL
 
