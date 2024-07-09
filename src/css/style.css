@@ -1484,8 +1484,15 @@ div.content section.footnotes ol li p {
 }
 
 /*
-    Overwrite Cookie Banner buttons border
+    Overwrite Cookie Banner buttons style
 */
+
+#cc-main {
+    --cc-btn-primary-bg: theme(colors.indigo.600);
+    --cc-btn-primary-hover-bg: theme(colors.indigo.800);
+    --cc-btn-secondary-bg: theme(colors.gray.200);
+    --cc-btn-secondary-hover-bg: theme(colors.gray.200);
+}
 
 .pm__btn,
 .cm__btn {
