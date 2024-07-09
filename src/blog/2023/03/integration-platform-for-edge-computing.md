@@ -59,7 +59,7 @@ Below is a sample of the vendors offering a Node-RED solution:
 14. [Revolution Pi](https://revolutionpi.com/revpi-connect/) RevPi Connect
 15. [Schneider Electric](https://shop.exchange.se.com/en-US/apps/59823/ecostruxure-plant-data-expert/features) ExoStructure Plant Data Expert
 15. [Siemens](https://github.com/SIMATICmeetsLinux/IOT2050-NodeRed-OPCUA-Server) S7 PLC
-15. [ST-One](https://st-one.io/en/hardware/)
+15. [ST-One](https://st-one.io/en/)
 16. [Tulip](https://support.tulip.co/docs/using-node-red-with-edge-mc) Edge MC & Edge IO
 17. [Wago](https://www.wago.com/us/edge-devices) Edge Controller & Computer
 18. [Weidmueller](https://catalog.weidmueller.com/procat/Group.jsp;jsessionid=C885C404E7B4B798B23B8A9BB2200513?groupId=(%22group14048963834797%22)&page=Group) control web
