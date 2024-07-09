@@ -1,6 +1,6 @@
 ---
-title: Deploying FlowFuse with Docker on the Ubuntu server
-subtitle: Step-by-step guide on how to Deploy FlowFuse with FlowFuse with Docker on Ubuntu server
+title: Deploying FlowFuse with Docker on an Ubuntu server
+subtitle: Step-by-step guide on how to deploy FlowFuse with Docker on Ubuntu server
 description: Learn to deploy the FlowFuse on your Ubuntu server with Docker, from domain setup to running your app with email, SSL configurations.
 date: 2024-07-08
 authors: ["sumit-shinde"]
@@ -67,7 +67,7 @@ sudo apt-get update
 sudo docker run hello-world
 ```
 
-Now, if you see the result similar to the below image it means the docker is installed successfully.
+If installed correctly, you should see results similar to the image below.
 
 !["Screenshot of terminal showing the docker installed successfully"](./images/successfull-docker-installation.png "Screenshot of terminal showing the docker installed successfully")
 
@@ -133,7 +133,7 @@ Additionally, in the docker-compose.yml file, we adjusted the `VIRTUAL_HOST` to 
 
 ### Securing Communication with SSL
 
-Securing communication with [SSL (Secure Sockets Layer)](https://www.youtube.com/watch?v=SJJmoDZ3il8) is crucial for protecting data transmitted between your users and the server. Adding SSL requires obtaining a certificate from a trusted certificate authority (CA) and configuring your server to use this certificate. Configuring SSL manually can be a headache, so we have provided a setup that you just need to enable.
+Securing communication with [SSL (Secure Sockets Layer)](https://www.youtube.com/watch?v=SJJmoDZ3il8) is crucial for protecting data transmitted between your users and the server. Adding SSL requires obtaining a certificate from a trusted certificate authority (CA) and configuring your server to use this certificate. Configuring SSL manually can be a headache, so we have provided a setup you need to enable.
 
 1. Open the Docker Compose file in your editor:
 
