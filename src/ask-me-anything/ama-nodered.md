@@ -1,6 +1,6 @@
 ---
 title: Ask Me Anything about Node-RED (March Edition)
-subtitle:  Dive Deep into Node-RED with Co-Creator Nick O'Leary and Developer Advocate Rob Marcer
+subtitle:  Dive Deep into Node-RED with Co-Creator Nick O'Leary and Developer Educator Rob Marcer
 description: Participate in a comprehensive AMA session with Node-RED experts Nick O'Leary and Rob Marcer, exploring key insights and solutions.
 video: P0ZfQXh-mqM
 image: /images/webinars/ama-march.jpg
