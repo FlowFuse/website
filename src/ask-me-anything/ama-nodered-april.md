@@ -12,12 +12,21 @@ hubspot:
     formId: a9e45181-2490-44a9-9d94-62f2f19a6102
 ---
 
-**Do you have a questions about Node-RED or need some advice on a tricky issue using Node-RED? Here is your opportunity to get help from the experts.**
+**Node-RED co-creator Nick O'Leary and Rob Marcer, Developer Educator at FlowFuse, answers your questions in this March 2023 edition of Ask Me Anything session.**
 
 <!--more-->
 
-Nick O'Leary, co-founder of Node-RED & CTO of FlowFuse, and Rob Marcer, Node-RED community member & Developer Advocate @ FlowFuse, will be hosting an interactive Ask Me Anything session. This is a great opportunity to ask questions of the Node-RED experts.
-
-Attendees will be able to ask questions live during this session. However, we also encourage you to ask questions in advance. To ask an advance questions complete this [form](https://forms.gle/q8zgTPpJw7u51v9E9).
-
-To attend the Ask Me Anything session please register in advance.
+Questions answered in this sessions include:
+1. What are some tips for working with a MySQL database in Node-RED?
+2. How do we achieve a responsive screen in Node-RED?
+3. How can we integrate Node-RED with a Large Language Model (LLM)?
+4. Which approach is better for mapping data: using a loop or a split method
+5 What are the easy way for storing data persistently for historical charts?
+6. What are the disadvantages of using global context versus flow context in Node-RED?
+7. How can we send data to SAP using Node-RED?
+9. Is there a way to capture versions of flows in Node-RED?
+10. How can we gracefully handle errors in custom nodes in Node-RED?
+11. Does Node-RED ultimately generate code in JavaScript or Node.js?
+12. Is there a no-code approach to find a specific object from an array of objects in Node-RED?
+13. How can we effectively use the Join node in Node-RED?
+14. What are your thoughts on adding native support for other programming languages in Node-RED?
