@@ -3,7 +3,7 @@ title: How to Set Up SSO SAML for Node-RED
 subtitle: Step-by-step guide on setting up SSO SAML for your self-hosted FlowFuse platform
 description: Learn how to configure SSO SAML for your self-hosted FlowFuse platform using Google as the Identity Provider (IdP). Simplify user authentication across applications with this step-by-step guide.
 date: 2024-07-15
-authors: 
+authors: ["sumit-shinde"]
 image: 
 tags:
    - post
