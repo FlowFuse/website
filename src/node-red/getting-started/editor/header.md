@@ -16,7 +16,7 @@ The Node-RED editor header is a central component that facilitates navigation to
 
 ## Node-RED Instance Name
 
-Clicking on the left instance name redirects you to that instance's advanced options provided by the FlowFuse platform. These options include overview, edge devices assigned to that instance, audit logs for monitoring instance activities, settings and more.
+Clicking on the left instance name redirects you to that instance's advanced options provided by the [FlowFuse Cloud](https://flowfuse.com/). These options include overview, edge devices assigned to that instance, audit logs for monitoring instance activities, settings and more.
 
 ![FlowFuse Instance Option](./images/header-flowfuse-instance.png "FlowFuse Instance Option; click to redirect to instance on platform"){data-zoomable}
 
@@ -270,11 +270,11 @@ This option displays the changelog for the current Node-RED version in the sideb
 
 ### About FlowFuse
 
-This option directs you to the official FlowFuse website.
+This option directs you to the [official FlowFuse website](https://flowfuse.com/).
 
 ### FlowFuse Application
 
-This option navigates you to the FlowFuse platform.
+This option navigates you to the [FlowFuse Cloud's](https://flowfuse.com/) advance options.
 
 ### FlowFuse Launcher Version
 
