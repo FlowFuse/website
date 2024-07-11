@@ -162,7 +162,7 @@ Nodes can have one input and multiple output ports, connected via wires, which d
 
 Some nodes have buttons on either the left or right side. For example, the Inject node has its button on the left, while the Debug node has it on the right. The function of these buttons varies between nodes.
 
-![Image showing the node status](./images/how-to-use-mqtt-with-node-red-mqtt-showing-mqtt-node-status-F-d0it804Z-729.avif "Image showing the node status"){data-zoomable}
+![Image showing the node status](./images/how-to-use-mqtt-with-node-red-mqtt-showing-mqtt-node-status-F-d0it804Z-729.png "Image showing the node status"){data-zoomable}
 
 Additionally, some nodes display status at the bottom with icons indicating their runtime status. For example, MQTT and WebSocket nodes show "connected" text with a green circle icon indicating a successful connection.
 
