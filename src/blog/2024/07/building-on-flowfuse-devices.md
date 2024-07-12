@@ -1,6 +1,6 @@
 ---
 templateEngineOverride: njk, md
-title: "Developing on FlowFuse: Remote Device Monitoring"
+title: "Building on FlowFuse: Remote Device Monitoring"
 subtitle: In this article we take a look at how elements of the FlowFuse ecosystem can be used to build powerful IoT applications for monitoring remote devices.
 description: In this article we take a look at how elements of the FlowFuse ecosystem can be used to build powerful IoT applications for monitoring remote devices.
 date: 2024-07-07
@@ -59,6 +59,7 @@ Let's consider an example architecture set in an automotive plant:
 ![Diagram showing the architecture of a "Device Monitoring" use case in an automotive plant.](./images/device-monitoring-architecture.png){data-zoomable}
 _Diagram showing an example architecture of a "Device Monitoring" use case in an automotive plant._
 
+- **Laser Welding Machine:** Here we have a small system built around a single piece of laser welding hardware. The hardware is connected to a PLC via local network, and the PLC is connected to a local server. Each component here can have Node-RED installed, managed by FlowFuse and accessible via the Device Agent. Node-RED would enable extraction of data from the hardware, and provide a local, bespoke, Dashboard on a nearby PC for monitoring the hardware.
 - **Body Shop:** Here we have several piece of machinery, each with the "FlowFuse Device Agent" installed. This allows us to manage the Node-RED deployments on these machines remotely from FlowFuse, and easily extract data from the machines for analysis.
 - **Plant:** We have multiple servers running at the Planet-level, generally one for each "Shop", each with their own Device Agent installed, again for easy remote management and deployment of Node-RED, e.g. Dashboards that provide a single HMI for monitoring hardware across a full shop. Here, we also have our instance of FlowFuse. This is the central point for managing all of our Node-RED deployments across the factory floor.
 - **Company IT Dept:** The general IT department of the company would provide multiple servers and services, accessible to a range of departments and the plant. Node-RED could act as a bridge between the Plant and the Company IT Dept, allowing us to easily extract data from the Plant and send it to the Company IT Dept, and vice-versa.
