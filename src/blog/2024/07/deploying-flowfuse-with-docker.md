@@ -4,7 +4,7 @@ subtitle: Step-by-step guide on how to deploy FlowFuse with Docker on Ubuntu ser
 description: Learn to deploy the FlowFuse on your Ubuntu server with Docker, from domain setup to running your app with email, SSL configurations.
 date: 2024-07-08
 authors: ["sumit-shinde"]
-image:
+image: /blog/2024/07/images/deploying-flowfuse.png
 tags:
  - node-red
  - flowfuse
