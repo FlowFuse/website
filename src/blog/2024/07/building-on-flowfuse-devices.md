@@ -5,7 +5,7 @@ subtitle: In this article we take a look at how elements of the FlowFuse ecosyst
 description: In this article we take a look at how elements of the FlowFuse ecosystem can be used to build powerful IoT applications for monitoring remote devices.
 date: 2024-07-07
 authors: ["joe-pavitt"]
-image: /blog/2024/07/images/design-pattern-device-monitoring.png
+image: /blog/2024/07/images/device-monitoring-use-case.png
 tags:
    - posts
    - news
