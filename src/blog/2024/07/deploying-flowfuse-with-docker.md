@@ -22,54 +22,7 @@ With Node-RED's increasing role in IoT, FlowFuse Cloud has become a favored plat
 
 ## Deploying FlowFuse on Ubuntu server with Docker
 
-Before proceeding, ensure you have your domain and a server with Ubuntu installed. If your server has Ubuntu installed without a GUI, you can connect to it from your computer using [SSH](https://itsfoss.com/set-up-ssh-ubuntu/), so that you can run commands from your local computer on the server.
-
-### Installing Docker on the Ubuntu server.
-
-1. Access the terminal on your Ubuntu server and execute the following steps:
-2. Update Package Index:
-```bash
-sudo apt-get update
-```
-3. Install Required Packages:
-```bash
-sudo apt-get install ca-certificates curl
-```
-4. Setup Docker Repository:
-```bash
-sudo install -m 0755 -d /etc/apt/keyrings
-```
-
-```bash
-sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg -o /etc/apt/keyrings/docker.asc
-```
-
-```bash
-sudo chmod a+r /etc/apt/keyrings/docker.asc
-```
-5. Add Docker Repository:
-```bash
-echo \
- "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/ubuntu \
- $(. /etc/os-release && echo "$VERSION_CODENAME") stable" | \
- sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
-```
-6. Update Package Index Again:
-```bash
-sudo apt-get update
-```
-7. Install Docker Packages:
-```bash
- sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
-```
-8. Verify Docker Installation:
-```bash
-sudo docker run hello-world
-```
-
-If installed correctly, you should see results similar to the image below.
-
-!["Screenshot of terminal showing the docker installed successfully"](./images/successfull-docker-installation.png "Screenshot of terminal showing the docker installed successfully")
+Before proceeding, ensure you have your domain and a server with Ubuntu installed, and Docker is installed on it. For more information, refer to [Docker Compose Installation](https://docs.docker.com/compose/install/). Furthermore, If your server has Ubuntu installed without a GUI, you can connect to it from your computer using [SSH](https://itsfoss.com/set-up-ssh-ubuntu/), allowing you to run commands from your local computer on the server.
 
 ### Adding DNS records for your domain
 
