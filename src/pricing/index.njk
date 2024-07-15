@@ -34,7 +34,6 @@ hubspot:
     dedicated:
         formId: 5a9939ee-899a-46b7-ab16-6376e310381d
         cta: "cta-contact-us-for-pricing"
-        id: 
     reference: "pricing"
 ---
 
@@ -390,25 +389,11 @@ hubspot:
                     To learn more about our plans, discuss your specific needs, or get advice on the best fit for your project, please fill out the form and we will get back to you as soon as possible.
                 </p>
             </div>
-            {% if hubspot.cloud %}
             {% set formId = hubspot.cloud.formId %}
             {% set cta = hubspot.cloud.cta %}
-            <script>
-                function displayHubSpotForm2() {
-                    hbspt.forms.create({
-                        region: "eu1",
-                        portalId: "26586079",
-                        formId: "{{ formId or hubspot.formId }}",
-                        onFormSubmit: function ($form) {
-                            capture('{{ cta or hubspot.cta }}', {
-                                'page': '{{ hubspot.reference or title }}'
-                            })
-                        }
-                    });
-                }
-            </script>
-            <script async type="text/javascript" charset="utf-8" src="//js-eu1.hsforms.net/forms/embed/v2.js" onload="displayHubSpotForm2()"></script>
-            {% endif %}
+            {% set reference = hubspot.reference %}
+            {% set functionName = 'displayHubSpotForm1' %}
+            {% include hubspot.script %}
         </div>
     </div>
 </div>
@@ -426,11 +411,10 @@ hubspot:
                     environment. To start your trial, just fill out the form.
                 </p>
             </div>
-            {% if hubspot.selfHosted %}
             {% set formId = hubspot.selfHosted.formId %}
             {% set cta = hubspot.selfHosted.cta %}
+            {% set functionName = 'displayHubSpotForm2' %}
             {% include hubspot.script %}
-            {% endif %}
         </div>
     </div>
 </div>
@@ -440,25 +424,10 @@ hubspot:
         <h2 class="w-full text-center"><span class="text-indigo-600">Contact us</span> for pricing
         </h2>
         <div>
-            {% if hubspot.dedicated %}
             {% set formId = hubspot.dedicated.formId %}
             {% set cta = hubspot.dedicated.cta %}
-            <script>
-                function displayHubSpotForm3() {
-                    hbspt.forms.create({
-                        region: "eu1",
-                        portalId: "26586079",
-                        formId: "{{ formId or hubspot.formId }}",
-                        onFormSubmit: function ($form) {
-                            capture('{{ cta or hubspot.cta }}', {
-                                'page': '{{ hubspot.reference or title }}'
-                            })
-                        }
-                    });
-                }
-            </script>
-            <script async type="text/javascript" charset="utf-8" src="//js-eu1.hsforms.net/forms/embed/v2.js" onload="displayHubSpotForm3()"></script>
-            {% endif %}
+            {% set functionName = 'displayHubSpotForm3' %}
+            {% include hubspot.script %}
         </div>
     </div>
 </div>

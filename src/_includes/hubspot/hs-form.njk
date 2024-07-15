@@ -11,5 +11,11 @@
             }
         });
     }
+
+    {% if functionName %}
+        window['{{ functionName }}'] = displayHubSpotForm;
+    {% else %}
+        {% set functionName = 'displayHubSpotForm' %}
+    {% endif %}
 </script>
-<script async type="text/javascript" charset="utf-8" src="//js-eu1.hsforms.net/forms/embed/v2.js" onload="displayHubSpotForm()"></script>
+<script async type="text/javascript" charset="utf-8" src="//js-eu1.hsforms.net/forms/embed/v2.js" onload="{{ functionName }}()"></script>
