@@ -512,7 +512,7 @@ h4:hover .header-anchor {
 */
 @layer components {
     .ff-website .ff-header {
-        @apply bg-white w-full px-6 py-4 sm:py-6 md:py-0 top-0 z-10 relative md:sticky;
+        @apply bg-white w-full px-6 py-4 sm:py-6 md:py-0 top-0 z-50 relative md:sticky;
     }
 
     .ff-website header .ff-wordmark path,
