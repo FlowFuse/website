@@ -350,7 +350,7 @@ hubspot:
                     <h2><span class="text-indigo-600">Feature</span> Comparison</h2>
                 </div>
                 <!-- Feature List -->
-                <div class="sticky">{{ featuresHtml | safe }}
+                <div>{{ featuresHtml | safe }}
                     {% set hosting = "cloud" %}
                     <div class="contentCloud transition duration-1000 max-w-full overflow-x-scroll sm:overflow-x-visible h-[60vh] sm:h-full">
                         {% include "feature_lists/features-table-base.njk" %}
