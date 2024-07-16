@@ -2,7 +2,7 @@
 title: FlowFuse Assistant Writes JSON 
 description: "The FlowFuse Assistant gets more helpful."
 
-date: 2024-07-15 13:00:00.0
+date: 2024-07-16 13:00:00.0
 
 authors: ["stephen-mclaughlin"]
 tags:
