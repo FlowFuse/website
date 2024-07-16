@@ -24,7 +24,6 @@ meta:
           answer: >
             To allow business to standardize on FlowFuse and Node-RED for all their data acquisition, visualization, and interaction it's possible to purchase a flat-fee license to deploy an unlimited amount of Node-RED instances through FlowFuse.
 hubspot:
-    script: "hubspot/hs-form.njk"
     cloud:
         formId: d43ab79b-d075-4b63-ba5e-bf971ca0b86e
         cta: "cta-contact-us"
@@ -389,11 +388,7 @@ hubspot:
                     To learn more about our plans, discuss your specific needs, or get advice on the best fit for your project, please fill out the form and we will get back to you as soon as possible.
                 </p>
             </div>
-            {% set formId = hubspot.cloud.formId %}
-            {% set cta = hubspot.cloud.cta %}
-            {% set reference = hubspot.reference %}
-            {% set functionName = 'contactUsForm' %}
-            {% include hubspot.script %}
+            {% hubspotForm hubspot.cloud.formId, hubspot.cloud.cta, hubspot.reference, 'contactUsForm' %}
         </div>
     </div>
 </div>
@@ -411,10 +406,7 @@ hubspot:
                     environment. To start your trial, just fill out the form.
                 </p>
             </div>
-            {% set formId = hubspot.selfHosted.formId %}
-            {% set cta = hubspot.selfHosted.cta %}
-            {% set functionName = 'trialLicenseForm' %}
-            {% include hubspot.script %}
+            {% hubspotForm hubspot.selfHosted.formId, hubspot.selfHosted.cta, hubspot.reference, 'trialLicenseForm' %}
         </div>
     </div>
 </div>
@@ -424,10 +416,7 @@ hubspot:
         <h2 class="w-full text-center"><span class="text-indigo-600">Contact us</span> for pricing
         </h2>
         <div>
-            {% set formId = hubspot.dedicated.formId %}
-            {% set cta = hubspot.dedicated.cta %}
-            {% set functionName = 'dedicatedForm' %}
-            {% include hubspot.script %}
+            {% hubspotForm hubspot.dedicated.formId, hubspot.dedicated.cta, hubspot.reference, 'contactUsForPricingForm' %}
         </div>
     </div>
 </div>

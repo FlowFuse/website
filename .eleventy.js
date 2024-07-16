@@ -377,6 +377,26 @@ module.exports = function(eleventyConfig) {
         }
     });
 
+    eleventyConfig.addShortcode("hubspotForm", function(formId, cta, reference, functionName = 'displayHubSpotForm') {
+      return `
+        <script>
+            function ${functionName}() {
+                hbspt.forms.create({
+                    region: "eu1",
+                    portalId: "26586079",
+                    formId: "${formId}",
+                    onFormSubmit: function ($form) {
+                        capture('${cta}', {
+                            'page': '${reference}'
+                        })
+                    }
+                });
+            }
+        </script>
+        <script async type="text/javascript" charset="utf-8" src="//js-eu1.hsforms.net/forms/embed/v2.js" onload="${functionName}()"></script>
+      `;
+    });
+
     eleventyConfig.addPairedShortcode("navoption", function(content, label, link, depth, icon, iconSolid, addClasses) {
         let svg, iconSvg = '', classes, chevron
         if (icon) {
