@@ -13,7 +13,7 @@ tags:
    - google workspace
 ---
 
-SSO plays a crucial role in modern enterprise environments by simplifying user authentication across multiple applications. At FlowFuse, we recognize the significance of SSO and offer robust support for integrating it with your self-hosted platform. In this comprehensive guide, we will focus on configuring SSO SAML specifically using Google as the Identity Provider (IdP). We also support SSO with LDAP. For more information, refer to [Setting up LDAP SSO for your Self-Hosted FlowFuse](/docs/admin/sso/ldap/).
+SSO plays a crucial role in modern enterprise environments by simplifying user authentication across multiple applications. At FlowFuse, we recognize the significance of SSO and offer robust support for integrating it with your self-hosted platform. In this comprehensive guide, we will focus on configuring SSO SAML, specifically using Google as the Identity Provider (IdP). We also support SSO with LDAP. For more information, refer to [Setting up LDAP SSO for your Self-Hosted FlowFuse](/docs/admin/sso/ldap/).
 
 <!--more-->
 
@@ -91,14 +91,14 @@ If you haven't deployed FlowFuse yet, refer to our [documentation on installing 
 
 !["Screenshot showing the 'web and mobile apps' option in the sidebar in the Google workspace admin console"](./images/main-menu's-web-and-mobile-apps-option.png "Screenshot showing the 'web and mobile apps' option in the sidebar in the Google workspace admin console"){data-zoomable}
 
-2. Click on the "Apps" option, and then the additional option open click on the "Web and mobile apps"
+2. Click on the "Apps" icon, which expands additional choices. Then click on the "Web and mobile apps."
 
 3. Then the new tab opens, click on to the "Add app" from the top.
 
 !["Screenshot showing the 'Add app' and 'Add custom SAML apps' option in the Google workspace admin console"](./images/add-custom-saml-apps-option.png "Screenshot showing the 'Add custom SAML apps' option in the Google workspace admin console"){data-zoomable}
 
-4. The options open select the "Add custom SAML apps"
-5. Enter the app name description and upload the icon of the app.
+4. The options open select the "Add custom SAML apps."
+5. Enter the app name description and upload an icon for the app.
 
 !["Screenshot showing the form asking for app information for we are going to create the SAML app configuration in the Google workspace admin console"](./images/form-to-add-app-info.png "Screenshot showing the form asking for app information for we are going to create the SAML app configuration in the Google workspace admin console"){data-zoomable}
 
@@ -107,7 +107,7 @@ If you haven't deployed FlowFuse yet, refer to our [documentation on installing 
 !["Screenshot configuration provided the Google workspace admin console for SSO SAML"](./images/config-details-for-sso.png "Screenshot configuration provided the Google workspace admin console for SSO SAML"){data-zoomable}
 
 7. Click on the continue.
-8. In the next tab, enter the ACS URL and entity id provided by your self hosted flowfuse platform.
+8. In the next tab, enter the ACS URL and entity id provided by your self-hosted flowfuse platform.
 
 !["Screenshot form asking for the configuration detailes provided by your self-hosted FlowFuse"](./images/form-to-add-the-config-provided-flowfuse.png "Screenshot form asking for the configuration detailes provided by your self-hosted FlowFuse"){data-zoomable}
 
