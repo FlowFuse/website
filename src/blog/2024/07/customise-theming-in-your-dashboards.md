@@ -1,8 +1,8 @@
 ---
 title: Customise theming in your Node-RED Dashboard 2.0
-subtitle: 
-description: .
-date: 2024-07-10
+subtitle: Exploring Enhanced Customization Features
+description: Discover the latest enhancements in Node-RED Dashboard 2.0, including customizable headers, themes, and layout modifications to personalize your dashboard experience..
+date: 2024-07-20
 authors: ["sumit-shinde"]
 image: 
 tags:
@@ -37,7 +37,9 @@ The `#app-bar-title` currently spans the full width of the header. When adding e
 <template>
     <!-- Teleport the button to the #app-bar-actions area when mounted -->
     <Teleport v-if="mounted" to="#app-bar-actions">
-        <v-btn>Button</v-btn>
+        <v-btn>Button 1</v-btn>
+        <v-btn>Button 2</v-btn>
+        <v-btn>Button 3</v-btn>
     </Teleport>
 </template>
 
