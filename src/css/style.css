@@ -597,7 +597,7 @@ h4:hover .header-anchor {
     }
     .ff-website header ul.narrow span {
         border-color: theme(colors.gray.200);
-        @apply sm:py-2;
+        @apply sm:pt-2 sm:pb-4;
     }
 
     .ff-website header ul a.ff-btn {
@@ -664,6 +664,11 @@ h4:hover .header-anchor {
         @apply sm:py-2 sm:overflow-visible text-gray-700;
     }
 
+    .ff-website header .ff-nav-dropdown:hover > ul.narrow,
+    .ff-website header .ff-nav-dropdown:focus-within > ul.narrow {
+        @apply sm:pb-4;
+    }
+
     .ff-website header .ff-nav-dropdown ul li {
         @apply text-left sm:bg-gray-50 sm:text-right font-light; /* bg each list item */
     }
@@ -676,7 +681,7 @@ h4:hover .header-anchor {
     }
 
     .ff-website header .ff-nav-dropdown ul.sub-menu a {
-        @apply py-3;
+        @apply py-3 pl-3;
     }
 
     .ff-website header .ff-nav-dropdown >ul li a .ff-icon--solid {
