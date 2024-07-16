@@ -62,7 +62,7 @@ If you haven't deployed FlowFuse yet, refer to our [documentation on installing 
 1. To configure FlowFuse with SSO, make sure you are logged in as an administrator.
 2. Go to Admin settings by clicking on the profile icon in the top-right corner and then selecting "Admin settings".
 
-!["Screenshot of platform showing the 'admin settings' option"](./images/admin-setting-option.png "Screenshot of platform showing the 'admin settings' option"){data-zoomable}
+!["Screenshot of the platform showing the 'admin settings' 'SSO' tab option"](./images/setting's-sso-setting-section.png "Screenshot of the platform showing the 'admin settings' 'SSO' tab option"){data-zoomable}
 
 3. Click on "Settings" from the left sidebar and switch to the SSO section.
 
@@ -72,7 +72,7 @@ If you haven't deployed FlowFuse yet, refer to our [documentation on installing 
 
 !["Screenshot of platform showing the 'Creating configuration' button"](./images/create-sso-config-button.png "Screenshot of platform showing the 'Creating configuration' button"){data-zoomable}
 
-5. Enter name for your configuration, then enter domain that platform will use for sso and select "SAML" option and click on "create configruation" button.
+5. Enter a name for your configuration, then enter the domain that the platform will use for SSO and select "SAML" option and click on "create configuration" button.
 
 !["Screenshot of platform form for creating sso configuration"](./images/sso-config-initial-form.png "Screenshot of platform form for creating sso configuration"){data-zoomable}
 
@@ -91,7 +91,7 @@ If you haven't deployed FlowFuse yet, refer to our [documentation on installing 
 
 !["Screenshot showing the 'web and mobile apps' option in the sidebar in the Google workspace admin console"](./images/main-menu's-web-and-mobile-apps-option.png "Screenshot showing the 'web and mobile apps' option in the sidebar in the Google workspace admin console"){data-zoomable}
 
-2. Click onto the "Apps" option, and then the additional otion open click on to the "Web and mobile apps"
+2. Click on the "Apps" option, and then the additional option open click on the "Web and mobile apps"
 
 3. Then the new tab opens, click on to the "Add app" from the top.
 
@@ -106,20 +106,20 @@ If you haven't deployed FlowFuse yet, refer to our [documentation on installing 
 
 !["Screenshot configuration provided the Google workspace admin console for SSO SAML"](./images/config-details-for-sso.png "Screenshot configuration provided the Google workspace admin console for SSO SAML"){data-zoomable}
 
-7. Click onto the continue.
+7. Click on the continue.
 8. In the next tab, enter the ACS URL and entity id provided by your self hosted flowfuse platform.
 
 !["Screenshot form asking for the configuration detailes provided by your self-hosted FlowFuse"](./images/form-to-add-the-config-provided-flowfuse.png "Screenshot form asking for the configuration detailes provided by your self-hosted FlowFuse"){data-zoomable}
 
 9. Enter the start URL as `forge.<your-domain>.com`, we are specify that after successfull sign in the user should be redirected to this url.
 
-10. Next, click onto "Continue" button and then click on "finish".
+10. Next, click on "Continue" button and then click on "finish".
 
 ### Updating the FlowFuse SSO configuration and enabling it
 
-Now that we have created the SAML app in the workspace, to enable SSO we need to update the FlowFuse configuration and connect it to the app created in the workspace.
+Now that we have created the SAML app in the workspace, we need to update the FlowFuse configuration and connect it to the app created in the workspace to enable SSO.
 
-1. Go to the SSO section of the admin settings in your self-hosted FlowFuse platform. Click on the three dots icon located at the right corner of the added configuration and select "Edit".
+1. Go to the SSO section of the admin settings in your self-hosted FlowFuse platform. Click on the three-dot icon located at the right corner of the added configuration and select "Edit."
 
 !["Screenshot showing three dot icons in your self-hosted FlowFuse"](./images/edit-sso-config.png "Screenshot showing three dot icons in your self-hosted FlowFuse"){data-zoomable}
 
@@ -132,13 +132,13 @@ Now that we have created the SAML app in the workspace, to enable SSO we need to
 
 ### Signing in Using SSO
 
-To sign in using SSO, users of your self-hosted FlowFuse must have a FlowFuse account created with an email ID associated with the domain configured with SSO. For more information, refer to [creating users in FlowFuse](/docs/admin/user_management/#creating-new-users). Additionally, the user must already be logged in with that email in browser.
+To sign in using SSO, users of your self-hosted FlowFuse must have a FlowFuse account created with an email ID associated with the domain configured with SSO. For more information, refer to [creating users in FlowFuse](/docs/admin/user_management/#creating-new-users). Additionally, the user must already be logged in with that email in the browser.
 
-1. Open your platform in the browser, Enter email address on the username/email feild.
+1. Open your platform in the browser, Enter the email address in the username/email field.
 2. Click on "Login".
-3. A Google tab will open, displaying the email addresses you are signed in with. Select the email address you entered to into the username/email feild.
+3. A Google tab will open, displaying the email addresses you are signed in with. Select the email address you entered into the username/email field.
 
-*Note: Admin users will still be able to log in with their original FlowFuse username/password - this ensures they don't get locked out of the platform if there is a problem with the SSO configuratio*
+*Note: Admin users will still be able to log in with their original FlowFuse username/password - this ensures they don't get locked out of the platform if there is a problem with the SSO configuration*
 
 ## Conclusion
 
