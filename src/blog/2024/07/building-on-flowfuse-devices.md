@@ -91,7 +91,7 @@ Given the above architecture, let's take a look at the relevant FlowFuse offerin
 
 ### Deploy to FlowFuse
 
-If you're interested in discussing how your company could benefit from this design pattern, please do [get in touch](/contact/).
+If you're interested in discussing how your company could benefit from this design pattern, please do [get in touch](/contact-us/).
 
 ### Customer Stories
 
