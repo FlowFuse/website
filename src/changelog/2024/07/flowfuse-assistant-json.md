@@ -35,7 +35,8 @@ This is just the beginning of the FlowFuse Assistant's capabilities. Stay tuned!
 
 
 #### Updating the Assistant to get these new features
-If you are runing Node-RED V4.x, head over the the Palette Manager, update the plugin and restart your instance.
+If you are running Node-RED v4.x, head over to the Palette Manager, update the plugin and restart your instance.
+
 
 ![Updating assistant on Node-RED 4](./images/assistant-update-nr4.png)
 
