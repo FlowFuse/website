@@ -13,6 +13,9 @@ story:
     quote: FlowFuse removes most of our concerns about scalability and reliability. It’s also making it a lot easier for us to complete security audits for our customers. FlowFuse’s stack is open, widely used and well documented which gives auditors confidence in our applications built on your platform.
     challenge: Rapidly develop, test, and deploy tailored building management solutions.
     solution: Use FlowFuse to allow collaboration and fast deployment of Node-RED flows to customers' premises.
+    products:
+        - Node-RED
+        - FlowFuse
     results:
         - Significant reduction in time to value for customers
         - Empowerment of the whole team to improve products and services
