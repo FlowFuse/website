@@ -22,7 +22,8 @@ redirects:
   - { "from": "/blog/community-news-02/", "to": "/blog/2022/03/community-news-02/" }
   - { "from": "/blog/flowforge-03-released/", "to": "/blog/2022/03/flowforge-03-released/" }
   - { "from": "/blog/2023/03/comparinig-dashboards/", "to": "/blog/2023/03/comparing-node-red-dashboards" }
-  - { "from": "/roadmap/", "to": "/product/roadmap/" }
+  - { "from": "/roadmap/", "to": "/changelog/" }
+  - { "from": "/product/roadmap/", "to": "/changelog/" }
   - { "from": "/handbook/development/release/", "to": "/handbook/development/releases/" }
   - { "from": "/blog/2023/06/Flowforge-as-a-No-Code-Ethernet_IP-to-Profinet-Protocol-Converter/", "to": "/blog/2023/06/node-red-as-a-no-code-ethernet_ip-to-s7-protocol-converter/" }
   - { "from": "/docs/user/devices/", "to": "/docs/device-agent/introduction" }
