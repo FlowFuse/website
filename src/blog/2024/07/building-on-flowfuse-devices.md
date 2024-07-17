@@ -3,7 +3,7 @@ templateEngineOverride: njk, md
 title: "Building on FlowFuse: Remote Device Monitoring"
 subtitle: In this article we take a look at how elements of the FlowFuse ecosystem can be used to build powerful IoT applications for monitoring remote devices.
 description: In this article we take a look at how elements of the FlowFuse ecosystem can be used to build powerful IoT applications for monitoring remote devices.
-date: 2024-07-16
+date: 2024-07-17
 authors: ["joe-pavitt"]
 image: /blog/2024/07/images/tile-building-on-flowfuse-devices.png
 tags:
