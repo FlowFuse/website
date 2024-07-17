@@ -246,7 +246,7 @@ When you open the platform in your browser for the first time, you'll need to cr
 
 5. Alternatively, you can continue with the FlowFuse Community Edition (CE), which is free, by clicking "Continue with FlowFuse CE".
 
-## Additional recources
+## Additional resources
 
 - [Deploying FlowFuse with Docker Documentation](https://flowfuse.com/docs/install/docker/): This documentation covers everything in detail on how to install FlowFuse using Docker.
 - [Deploying FlowFuse with Docker on Ubuntu youtube video](https://www.youtube.com/watch?v=qQwAPuz9bEk): This YouTube video demonstrates how to deploy FlowFuse using Docker on an Ubuntu server for your server's local network.
