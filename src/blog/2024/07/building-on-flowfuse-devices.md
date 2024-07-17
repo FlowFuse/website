@@ -73,6 +73,7 @@ This diagram also demonstrates a sample of the rich ecosystem of communication p
 - **OPC-UA:**  Communicate with newer PLCs and OPC Servers 
 - **Modbus:**  Data collection from existing Modbus enabled devices like Temperature Probes, Invertors, Encoders
 - **MC Protocol:**  Gather data from Mitsubishi PLCs
+- **FINS:**  Gather data from OMRON PLCs
 - **Siemens S7:**   Gather data from Siemens PLCs using the S7 Protocol
 
 ### FlowFuse Technology Stack
