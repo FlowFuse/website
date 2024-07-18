@@ -65,6 +65,8 @@ redirects:
   - { "from": "/blog/2024/01/barcode-scanner-into-nodered/", "to": "/node-red/peripheral/barcodescanner/" }
   - { "from": "/blog/2024/03/using_webcam_with_node-red/", "to": "/node-red/peripheral/webcam/" }
   - { "from": "/blog/2023/05/visualize-production-data-via-modbus-in-node-red/", "to": "/node-red/protocol/modbus/" }
+  - { "from": "/blog/flowforge/", "to": "/blog/flowfuse/" }
+
 
 # The "permalink" attribute determines where the output page will be located.
 permalink: "{{ redirect.from }}"
