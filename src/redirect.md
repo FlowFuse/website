@@ -67,7 +67,6 @@ redirects:
   - { "from": "/blog/2023/05/visualize-production-data-via-modbus-in-node-red/", "to": "/node-red/protocol/modbus/" }
   - { "from": "/blog/flowforge/", "to": "/blog/flowfuse/" }
 
-
 # The "permalink" attribute determines where the output page will be located.
 permalink: "{{ redirect.from }}"
 # The "redirect" layout just has a small html header with the meta tags that do redirection.
