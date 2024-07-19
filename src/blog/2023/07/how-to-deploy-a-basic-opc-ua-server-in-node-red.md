@@ -22,36 +22,36 @@ Open Platform Communications Unified Architecture (OPC UA) is an open, platform 
 
 Because of OPC-UA’s wide industry acceptance, it is increasingly becoming natively supported on devices and systems spanning the entirety of the automation pyramid.  
 
-![Automation Pyramid](./images/opc-ua-1/automation-pyramid.jpg)
+!["Automation Pyramid"](./images/opc-ua-1/automation-pyramid.jpg "Automation Pyramid")
 *Image reference - [imagecontroltips.com](https://www.motioncontroltips.com/what-is-opc-ua-and-how-does-it-compare-with-industrial-ethernet/)*
 
 
 ## Fieldbus Model vs OPC-UA Information Model
 
 As of today, industrial ethernet fieldbuses dominate the field/device-level (level 0) and controller/PLC-level (level 1) of the automation pyramid. 
-![OPC-UA Pyramid](./images/opc-ua-1/OPC-UA-pyramid-2.webp)
+!["OPC-UA Pyramid"](./images/opc-ua-1/OPC-UA-pyramid-2.webp "OPC-UA Pyramid")
 *Image reference - [mdpi.com](https://www.mdpi.com/1424-8220/21/14/4656)*
 
 Fieldbuses such as Profinet, Ethernet/IP, and EtherCAT, employ deterministic, real-time communication, which is essential for mission-critical and safety-oriented automation tasks.  OPC-UA is most commonly encountered at the SCADA level and above (level 2-4).  However, with the inclusion of [Time Sensitive Networking (TSN) into the OPC-UA technology stack](https://www.tttech-industrial.com/resource-library/blog-posts/opc-ua-fx), OPC-UA can be feasibly used for real-time communication all the way down to the device level.  
 
 Traditionally, fieldbus protocols transmit only raw data from field devices (ie, a float to represent a pressure, or a boolean to represent the position of a switch).  The fieldbus data gets pushed up the automation stack layer by layer, where eventually it will be converted to a format suitable for IT systems to consume (such as OPC-UA).
 
-![Fieldbus Model.png](./images/opc-ua-1/fieldbus-model.png)
+!["Fieldbus Model"](./images/opc-ua-1/fieldbus-model.png "Fieldbus Model")
 
 
 In contrast to fieldbus protocols, OPC-UA represents automation data in the form of nodes. The framework for constructing nodes is referred to as the [OPC Information model](lhttps://reference.opcfoundation.org/Core/Part5/v104/docs/), and consists of pre-defined classes and methods that are programmed in the OPC Server address space.  
 
-![OPC Information Model](./images/opc-ua-1/opc-information-model.png)
+!["OPC Information Model"](./images/opc-ua-1/opc-information-model.png "OPC Information Model")
 Devices can be described as objects that give a holistic view of the device, beyond simply the raw value.  To construct a device object, we can take different individual attributes associated with a device, such as the transmitter raw value, transmitter fault flag, alarm setpoint, and combine them, similar to how user-defined datatypes (UDTs) are objects used to represent devices in PLCs.  The information model also defines a folder structure, to allow devices information to reside in a structured hierarchy.  Using the example temperature transmitter above, an example folder structure can be constructed as follows:
 
 `/Root/Objects/Calcinator 1 PLC/Temperature Transmitters/Tank 1 Temperature/Transmitter Value`
 
 This folder structure will be exposed via the OPC Client browser, allowing end-users to easily “drill down” to individual node information in a logical manner.
 
-![OPC Client Browser](./images/opc-ua-1/opc-client-browser.png)
+!["OPC Client Browser"](./images/opc-ua-1/opc-client-browser.png "OPC Information Model")
 In summary, OPC-UA represents a trade-off between complex information modeling, with the versatility for that data to be consumed by devices and systems all the way up the automation pyramid layers.  The data does not have to pass through subsequent automation layers on the way up, nor does the data need to undergo any conversion along the way.  
 
-![OPC-UA Distributed Model](./images/opc-ua-1/OPC-UA-distributed-model.jpg)
+!["OPC-UA Distributed Model"](./images/opc-ua-1/OPC-UA-distributed-model.jpg "OPC-UA Distributed Model")
 *Image reference - [ifr.org](https://ifr.org/post/faster-robot-communication-through-the-opc-robotics-companion-specification)*
 
 The OPC client simply needs to subscribe to the OPC Server endpoint url (ex. opc.tcp://server.address), and the client will be able to browse the structured OPC data as it’s modeled in the server.  Any client will receive the information in the same manner, regardless if it’s a PLC, SCADA, MES, or ERP system.  This opens the possibility for horizontal and vertical system integration in a standardized manner. Additionally, the more information that is exposed about a device, the easier it is to track, and use said data to autonomously reconfigure, or pre-emptively take maintenance actions.  
@@ -64,7 +64,7 @@ With some background on OPC-UA and how information is modeled in mind, we can ta
 
 Deploying the example flow yields the following result - 
 
-![Compact Server Flow](./images/opc-ua-1/compact-server-flow.png)
+![Compact Server Flow](./images/opc-ua-1/compact-server-flow.png "Compact Server Flow")
 - an inject node is trigging the function `set flow context Inputs` at a one second interval, which creates 7 randomly generated float values and stores them as flow context variables, `isoInput2` - `isoInput8` (isolated inputs).  The values will change to a new random number each time the node is injected.
 
 ```javascript 
@@ -94,22 +94,24 @@ flow.set('isoOutput8', Math.random() + 8.0)
 
 We can confirm the values are being stored in memory by checking the flow context data and pressing the refresh button.
 
-![Context Data 1](./images/opc-ua-1/context-data-1.png)
-![Context Data 2](./images/opc-ua-1/context-data-2.png)
+!["Screenshot showing the Context Data option"](./images/opc-ua-1/context-data-1.png "Screenshot showing the Context Data option")
+
+
+![Screenshot showing the flow variables in the context data tab](./images/opc-ua-1/context-data-2.png "Screenshot showing the flow variables in the context data tab")
 Each time we hit refresh, the values change, confirming that the values are randomly changing every second.
 
 The last, and most important part of the flow, is the `Compact-Server` node, which actually stands alone without any incoming or outgoing connections.
 
-![Compact Server Node](./images/opc-ua-1/compact-server-node.png)
+!["Compact Server Node"](./images/opc-ua-1/compact-server-node.png "Compact Server Node")
 In the `Compact-Server` node properties, the first tab is `Settings`, and the two important properties here are `Port` and `Show Errors`.  As can be seen in the node screenshot above, the node is reporting `active`, which means the server is configured correctly.  
 
-![Settings Tab](./images/opc-ua-1/settings-tab.png)
+![Screenshot showing the Settings Tab of compact server node](./images/opc-ua-1/settings-tab.png "Screenshot showing the Settings Tab of compact server node")
 
 The `Limits` tab specifies some default limits that we can configure if we like, but are not necessary to be modified for test purposes.  
 
 The `Security` tab has one important option, `Allow Anonymous`.  By default, anonymous access is enabled.  
 
-![Security Tab](./images/opc-ua-1/security-tab.png)
+![Screenshot showing the Security Tab of compact server node](./images/opc-ua-1/security-tab.png "Screenshot showing the Security Tab of compact server node")
 For a production system, we will want to enable security, but for test purposes, we will leave anonymous access enabled.  
 
 `Users & Sets` tab is related to security and permissions.  We can leave this empty for testing.  
@@ -211,17 +213,17 @@ Finally, on the `Discovery` tab, we must define an endpoint for an OPC Client to
 
 The `Endpoint Url` follows the format `opc.tcp://<address>:port`.  Our port was defined on the `Settings` tab, which by default, is port `54845`. The address will be either the url or ip address of your Node-RED instance.  In my case, it’s 192.168.0.114.  So my Endpoint Url = `opc.tcp://192.168.0.114:54845`
 
-![Discovery Tab](./images/opc-ua-1/discovery-tab.png)
+![Screenshot showing the Discovery Tab of compact server node](./images/opc-ua-1/discovery-tab.png "Screenshot showing the Discovery Tab of compact server node")
 Once the endpoint url is added, deploy the flow, and confirm the server is reporting “active”.
 
-![Compact Server Active](./images/opc-ua-1/compact-server-active.png)
+![Screenshot showing the Active Tab of compact server node](./images/opc-ua-1/compact-server-active.png "Screenshot showing the Active Tab of compact server node")
 ## Connect to Example OPC-Server Using OPC-UA Browser
 
 To connect to our OPC endpoint, we need an OPC Client.  Prosys provides a [free OPC-UA Browser ](https://www.prosysopc.com/products/opc-ua-browser/)that supports Windows, Linux, and Mac OS.  To test our Server, the Windows version of Prosys OPC-UA Browser will be utilized.
 
 To connect to our Node-RED OPC server, enter the endpoint url and press “connect to server”.
 
-![OPC Client Connect](./images/opc-ua-1/opc-client-connect.png)
+!["Screenshot showing the OPC Client"](./images/opc-ua-1/opc-client-connect.png "Screenshot showing the OPC Client")
 It will ask for security.  Remember that we allowed anonymous access, so the default security mode of `None` is the correct option.
 
 Once connected, we can browse our OPC Server.
@@ -231,7 +233,7 @@ If we navigate to `Objects → RaspberryPI-Zero-WLAN → GPIO → Inputs`, we ca
 
 Clicking `I1` we can see the value in real-time, along with some additional properties.
 
-![OPC Client Node](./images/opc-ua-1/opc-client-node.png)
+![OPC Client Node](./images/opc-ua-1/opc-client-node.png "OPC Client Node")
 If we go to `Views`, we can see the custom hierarchy defined in the example server, which divides the data by Digital-Ins and Digital-Outs.  
 
 ![OPC Client View](./images/opc-ua-1/opc-client-view.png)

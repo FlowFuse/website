@@ -54,11 +54,11 @@ Table 1 - Line 4 Tags to be sent to Stacklight PLC
 
 We can send any atomic data type we want, but it must be globally (controller) scoped.
 
-![AB Controller Tags](./images/ethip-to-S7/e-to-p-2.png)
+!["Screenshot showing the AB Controller Tags"](./images/ethip-to-S7/e-to-p-2.png "Screenshot showing the AB Controller Tags")
 
 Each tag must also have external read/write access enabled.
 
-![AB Tag Properties](./images/ethip-to-S7/e-to-p-3.png)
+!["Screenshot showing the AB Tag Properties"](./images/ethip-to-S7/e-to-p-3.png "Screenshot showing the AB Tag Properties")
 
 ### Data Treatment on S7 PLC
 
@@ -68,11 +68,11 @@ In the Siemens PLC, we have a DB for the data from the Line 4 PLC to be written 
     
 *   The tags must be writeable and accessible
     
-*   ![Siemens Tag DB Properties](./images/ethip-to-S7/e-to-p-4.png)
+*   !["Screenshot showing the Siemens Tag DB Properties"](./images/ethip-to-S7/e-to-p-4.png "Screenshot showing the Siemens Tag DB Properties")
     
     “No protection” must be set in the CPU properties
     
-*   ![Siemens CPU Properties](./images/ethip-to-S7/e-to-p-5.png)
+*   !["Screenshot showing the Siemens CPU Properties"](./images/ethip-to-S7/e-to-p-5.png "Screenshot showing the Siemens CPU Properties")
 
 ## Create The Flow
 
@@ -84,32 +84,32 @@ First, we need to add two custom nodes that will give node-red the ability to re
 
 Click the hamburger icon → manage pallette
 
-![FlowFuse Properties](./images/ethip-to-S7/e-to-p-6.png)
+![Screenshot showing the 'Manage palette option' in the menu](./images/ethip-to-S7/e-to-p-6.png)
 
 On the `install` tab, search for `s7` and install the `node-red-contrib-s7` node.
 
-![Install S7 S7 Node](./images/ethip-to-S7/e-to-p-7.png)
+!["Installing S7 node"](./images/ethip-to-S7/e-to-p-7.png "Installing S7 node")
 
 Next, search for `ethernet` and install the `node-red-contrib-cip-ethernet-ip` node.
 
-![Install EthernetIP Node](./images/ethip-to-S7/e-to-p-8.png)
+!["InstallING EthernetIP Node"](./images/ethip-to-S7/e-to-p-8.png "InstallING EthernetIP Node")
 Go to the `nodes` tab and confirm both custom nodes have been properly installed.
 
-![Nodes Installed List](./images/ethip-to-S7/e-to-p-9.png)
+!["Screenshot of 'Nodes' tab showing Installed nodes List"](./images/ethip-to-S7/e-to-p-9.png "Screenshot of 'Nodes' tab showing Installed nodes List")
 
 ### Set Up Ethernet/IP Data
 
 Let’s start by dragging a `eth-ip in` node onto the pallette. Then add a new endpoint, which will point to our Line4 PLC.
 
-![eth-ip Setup](./images/ethip-to-S7/e-to-p-10.png)
+!["Screenshot showing dragged 'eth-ip in' node and it's config tab"](./images/ethip-to-S7/e-to-p-10.png "Screenshot showing dragged 'eth-ip in' node and it's config tab")
 
 In the endpoint `connection` properties, the connection information must match the PLC, so set the IP address and CPU slot number appropriately. Also, the default cycle time is 500ms. Depending on your application, polling the CPU at 500ms may be appropriate. But being that this is a simple stacklight, 500ms is unnecessarily fast. So we will change it to 1000ms, which is a more appropriate polling rate for this type of application.
 
-![eth-ip Endpoint Connection](./images/ethip-to-S7/e-to-p-11.png)
+!["Screenshot showing the eth-ip Endpoint config"](./images/ethip-to-S7/e-to-p-11.png "Screenshot showing the eth-ip Endpoint config")
 
 On the `Tags` tab, populate the tag information to match our Allen Bradley PLC. Then select `Update` to complete configuration of the `eth-ip endpoint`.
 
-![eth-ip Endpoint Tags](./images/ethip-to-S7/e-to-p-12.png)
+!["Screenshot showing eth-ip Endpoint Tags"](./images/ethip-to-S7/e-to-p-12.png "Screenshot showing eth-ip Endpoint Tags")
 
 Now that we have our endpoint, let’s finish configuring the `eth-ip in` node.
 
@@ -120,7 +120,7 @@ Now that we have our endpoint, let’s finish configuring the `eth-ip in` node.
 3.  give the node a descriptive name
     
 
-![eth-ip in Node Config](./images/ethip-to-S7/e-to-p-13.png)
+![Screeshot showing the eth-ip in Node config](./images/ethip-to-S7/e-to-p-13.png "Screeshot showing the eth-ip in Node config")
 
 Now let’s set up a quick test to confirm our PLC connection is valid by adding a `debug` node to the `eth-ip in` node. Then hit `deploy`.
 
@@ -129,11 +129,11 @@ Now let’s set up a quick test to confirm our PLC connection is valid by adding
 
 The output of the debug console did not report any errors so communication appears to be okay.
 
-![eth-ip in Debug](./images/ethip-to-S7/e-to-p-14.png)
+![Screenshot showing the output of eth-ip in Debug panel](./images/ethip-to-S7/e-to-p-14.png "Screenshot showing the output of eth-ip in Debug panel")
 
 But just to confirm, let’s toggle the value and see if comes through.
 
-![eth-ip in Debug Toggle](./images/ethip-to-S7/e-to-p-15.png)
+![Screenshot showing the eth-ip node output in Debug panel after Toggle](./images/ethip-to-S7/e-to-p-15.png "Screenshot showing the eth-ip node output in Debug panel after Toggle")
 
 So by toggling the value and see the result, here we confirmed 2 things:
 
@@ -148,17 +148,17 @@ Now we can remove the debug node and add the additional `eth-ip in` nodes to rec
 
 Here’s how the the flow should look at this point.
 
-![Line 4 PLC Nodes](./images/ethip-to-S7/e-to-p-16.png)
+![Screenshot of Line 4 PLC Nodes](./images/ethip-to-S7/e-to-p-16.png "Screenshot of Line 4 PLC Nodes")
 
 ### Set Up S7 Data
 
 Now we’ll set up the S7 endpoint, using an `s7 out` node.
 
-![s7 out Node on Pallette](./images/ethip-to-S7/e-to-p-17.png)
+![Screenshot of s7 out Node on Palette](./images/ethip-to-S7/e-to-p-17.png "Screenshot of s7 out Node on Palette")
 
 Populate the connection properties to match your hardware. The cycle time is updated to 1000ms to match the cycle time of our `eth-ip in` nodes. You can adjust this value to match your intended application.
 
-![S7 endpoint Connection](./images/ethip-to-S7/e-to-p-18.png)
+!["Screenshot showing the S7 endpoint Connection"](./images/ethip-to-S7/e-to-p-18.png "Screenshot showing the S7 endpoint Connection")
 
 On the `Variables` tab, some special formatting is required to point to the absolute reference of the tag DB location in the S7 PLC.
 
@@ -166,21 +166,21 @@ For information on how to format S7 absolute tag references in a way the `s7 end
 
 For reference, here is an example of how we set the tags in our stacklight PLC example and how it looks in our `s7 endpoint`.
 
-![s7 endpoint Variables](./images/ethip-to-S7/e-to-p-19.png)
+!["Screenshot of s7 endpoint Variables"](./images/ethip-to-S7/e-to-p-19.png "Screenshot of s7 endpoint Variables")
 
 Once the tags are populated we can select our configured endpoint from the dropdown list, point to our first variable, `Conveyor_RTS`, and give the node a name.
 
-![S7 out Config](./images/ethip-to-S7/e-to-p-20.png)
+!["Screenshot of S7 out Config"](./images/ethip-to-S7/e-to-p-20.png "Screenshot of S7 out Config")
 
 Repeat this process for the remaining tags.
 
-![Stacklight PLC Nodes](./images/ethip-to-S7/e-to-p-21.png)
+!["Screenshot of Stacklight PLC Nodes"](./images/ethip-to-S7/e-to-p-21.png "Screenshot of Stacklight PLC Nodes")
 
 ## Test the Conversion
 
 The only thing remaining is to simply wire the nodes together, and confirm the values pass through.
 
-![Complete Flow with Live Data](./images/ethip-to-S7/e-to-p-22.png)
+!["Screenshot of the complete flow with live Data"](./images/ethip-to-S7/e-to-p-22.png "Screenshot of the complete flow with live Data")
 
 Manipulate the incoming values and confirm the data passes through as expected. Because of the report by exception nature of the `eth-ip in` node, tag changes should be near instantaneous on the receiving PLC.
 
@@ -190,7 +190,7 @@ We can stop here, but we can improve this flow by adding a `filter` node on our 
 
 Depending on how noisy the REAL data is, which is common with unfiltered 4-20mA field transmitters, and how much granularity you need to capture, it is good practice to add a filter on REAL data to reduce FieldBus traffic coming out of our soft protocol converter.
 
-![Filter node Configuration](./images/ethip-to-S7/e-to-p-23.png)
+!["Screenshot showing the Filter node Configuration"](./images/ethip-to-S7/e-to-p-23.png "Screenshot showing the Filter node Configuration")
 
 In the example above, we arbitrarily applied a 3% [deadband](/node-red/core-nodes/filter/)
 to the `Robot_Position` value, which means that the value must change by greater than or equal to 3% compared to the last input value, or else the data will be discarded before being sent to the stacklight PLC.
@@ -199,7 +199,7 @@ You can adjust the deadband to find the right balance for your particular applic
 
 We can see the effect the deadband filter had by adding debug nodes before and after the filter.
 
-![Filter Node Debug](./images/ethip-to-S7/e-to-p-24.png)
+![Filter Node Debug](./images/ethip-to-S7/e-to-p-24.png "Filter Node Debug")
 
 As shown above, when `Robot_Position` changed from 15.6 to 15.6999..., the value was captured on the input of the filter, but was discarded on the output.
 

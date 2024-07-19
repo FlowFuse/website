@@ -136,19 +136,19 @@ uibuilder uses the filesystem of the host instance to store its configuration. I
 
 ### uibuilder - 1st place
 
-![uibuilder Github Commits](./images/uibuilder-activity.png "uibuilder Github Commits")
+![Image showing the uibuilder Github Commits](./images/uibuilder-activity.png "Image showing the uibuilder Github Commits")
 
 uibuilder has has consistent commits to the project going back several years with even greater activity since the start of 2022.
 
 ### FlexDash - 2nd place
 
-![FlexDash Github Commits](./images/flexdash-activity.png "FlexDash Github Commits")
+![Image showing the FlexDash Github Commits](./images/flexdash-activity.png "Image showing the FlexDash Github Commits")
 
 The commits to FlexDash have been regular since mid 2022.
 
 ### Dashboard - 3rd place
 
-![Dashboard Github Commits](./images/dashboard-activity.png "Dashboard Github Commits")
+![Image showing the Dashboard Github Commits](./images/dashboard-activity.png "Image showing the Dashboard Github Commits")
 
 Dashboard is now in a a maintenance only state. In the words of the project lead, *'Angular 1 (the framework used to build Dashboard) is now unsupported and it's just a matter of time before there is a serious security hole raised against it, for which there will be no fix. Of course we don't use all the features of it so we may be lucky that an exploit doesn't necessarily expose us directly but it will compromise any audits people may wish to do'*.
 
