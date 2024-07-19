@@ -9,9 +9,9 @@ tags:
     - posts
     - node-red
     - how-to
-    - Node-RED getting started
-    - Node-RED Tutorial
-    - Install Node-RED
+    - nodered getting started
+    - nodered tutorial
+    - install nodered
   
 ---
 
