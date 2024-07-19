@@ -1,10 +1,10 @@
 ---
 title: Using MySQL with Node-RED
-subtitle: 
-description: 
-date: 2024-07-17
+subtitle: Step-by-step guide on how to integrate MySQL with Node-RED for sending, retrieving, updating, and deleting data.
+description: Learn how to seamlessly integrate PostgreSQL with Node-RED for efficient data management and application development.
+date: 2024-07-23
 authors: ["sumit-shinde"]
-image: 
+image: /blog/2024/07/images/mysql-with-node-red.png
 tags:
    - post
    - nodered
