@@ -81,3 +81,7 @@ package = "netlify-plugin-cache"
     "_site/img", # Eleventy Image Disk Cache
     ".cache" # Remote asset cache
   ]
+
+[[edge_functions]]
+function = "eleventy-edge"
+path = "/*"
