@@ -25,7 +25,7 @@ We've introduced our first custom FlowFuse nodes to the palette of new projects.
 These projects can be running in the cloud or on devices, with the communication powered by our own internal MQTT broker.
 Try these out today on FlowFuse Cloud by creating a new project or updating your existing project's stack. There's more information in the [README](https://github.com/FlowFuse/nr-project-nodes/blob/main/README.md) for the nodes.
 For local installs of FlowFuse, the nodes are only available with an Enterprise Edition license.
-![](./images/ProjectLink.gif)
+!["Screenshot showing the message being sent from one project to another using project link nodes"](./images/ProjectLink.gif "Screenshot showing the message being sent from one project to another using project link nodes")
 
 
 [Start & Stop Flows](https://github.com/FlowFuse/flowfuse/issues/839)

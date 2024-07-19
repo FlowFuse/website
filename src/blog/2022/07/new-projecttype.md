@@ -15,7 +15,7 @@ We've added a second size of project to FlowFuse Cloud. A bigger project type wi
 Our [0.7 release](https://flowforge.com/blog/2022/07/flowforge-07-released/) introduced the concept of Project Types. This allows platforms to provide different sizes of projects, varying the memory/cpu or features available within a given type.
 
 Today we've put this feature to work on FlowFuse Cloud by introducing the new **Medium Project** type.
-![](./images/project-type.png)
+!["Screenshot showing the new stack selection feature"](./images/project-type.png "Screenshot showing the new stack selection feature")
 
 Medium projects have 3 times the resources of the existing Small type, allowing for more complex flows and larger message objects. This will be useful to business users looking to process complex sets of data.
 

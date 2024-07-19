@@ -33,5 +33,5 @@ FlowFuse extends this list with for example a `FF_PROJECT_ID` allowing you to fo
 
 In FlowFuse it’s easy to manage variables set for instances. Under settings in the environment tab it’s a form to set them. You’ll have to restart your instances to make them available in the cloud, and update the target snapshot for devices. When done, these are available.
 
-![Setting a environment variable in FlowFuse](./images/flowforge-set-env-var.png "set env var using FlowFuse")
+!["Setting a environment variable in FlowFuse"](./images/flowforge-set-env-var.png "Setting a environment variable in FlowFuse")
 

@@ -107,7 +107,7 @@ sudo docker compose -p flowforge up -d
 
 If you reload your FlowFuse root directory in a web browser you should now see that your traffic is encrypted using LetsEncypt.
 
-![A screenshot from Safari web browser showing that the traffic to FlowFuse is encrypted](./images/https-working.png)
+![A screenshot from Safari web browser showing that the traffic to FlowFuse is encrypted](./images/https-working.png "A screenshot from Safari web browser showing that the traffic to FlowFuse is encrypted")
 
 Nice! That’s it, you can now access your FlowFuse installation securely. 
 
