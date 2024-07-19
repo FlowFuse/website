@@ -244,7 +244,16 @@ eleventyComputed:
                     <ul class="hidden cta top-8 right-0 border shadow-sm md:inline md:shadow-none w-36 z-10 md:border-0 bg-white md:bg-transparent md:w-auto rounded md:static md:float-none md:flex md:flex-row flex-col items-center justify-end font-medium text no-underline">
 			            <li class="flex"><a href="{{ site.appURL }}">Sign In</a></li>
 			            <li class="flex"><a href="{{ site.appURL }}/account/create" onclick="capture('cta-join', {'position': 'header'})">Free Trial</a></li>
-                        <a class="ml-2 ff-btn ff-btn--primary uppercase text-sm inline-flex" href="/contact-us" onclick="capture('cta-talk-us', {'position': 'header'})">Talk to Us</a>
+                        {% edge "liquid" %}
+                        <a class="ml-2 ff-btn ff-btn--primary uppercase text-sm inline-flex" href="/contact-us" onclick="capture('cta-talk-us', {'position': 'header'})">
+                            {% abtesting "contact-us-ctr", "control" %}
+                            Talk to Us
+                            {% endabtesting \%}
+                            {% abtesting "contact-us-ctr", "test" %}
+                            Contact Us
+                            {% endabtesting %}
+                        </a>
+                        {% endedge %}
                     </ul>
                 </nav>
                 <!-- Mobile CTAs -->
@@ -354,7 +363,6 @@ eleventyComputed:
 <script async src="https://cdn.jsdelivr.net/npm/lite-youtube-embed@0.2.0/src/lite-yt-embed.min.js"></script>
 <link rel="preload" href="https://cdn.jsdelivr.net/npm/lite-youtube-embed@0.2.0/src/lite-yt-embed.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-{%- if not DEV_MODE -%}
 <!-- PostHog -->
 <script type="text/javascript">
     const getMyCookieValue = (name) => (
@@ -517,5 +525,4 @@ eleventyComputed:
     });
 </script>
 
-{%- endif -%}
 </html>
