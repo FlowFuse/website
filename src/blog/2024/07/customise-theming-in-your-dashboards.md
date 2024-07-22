@@ -2,7 +2,7 @@
 title: Customise theming in your Node-RED Dashboard 2.0
 subtitle: Exploring Enhanced Customization Features
 description: Discover the latest enhancements in Node-RED Dashboard 2.0, including customizable headers, themes, and layout modifications to personalize your dashboard experience..
-date: 2024-07-20
+date: 2024-07-24
 authors: ["sumit-shinde"]
 image: 
 tags:
@@ -10,7 +10,7 @@ tags:
    - dashboard
 ---
 
-In the latest Node-RED Dashboard 2.0 release, significant enhancements have enabled extensive customization options. While it already allowed customization of navigation sidebars, themes, group and page padding, But the header section was previously fixed and non-customizable. With this update, users can now fully customize the header, adding elements to personalize their dashboard experience. This article explores these new features along with other customization abilities such as theme adjustments, custom styling, and layout modifications.
+The latest release of Node-RED Dashboard 2.0 has taken customization to the next level. Previously, users enjoyed the flexibility of tweaking navigation sidebars, themes, and group and page padding. However, the header section remained static and non-customizable—until now. With the new update, you can fully personalize the header, adding unique elements to enhance your dashboard experience. In this article, we'll delve into these exciting new features, including theme adjustments, custom styling, and layout modifications, that empower you to tailor your Node-RED Dashboard like never before.
 
 <!--more-->
 
@@ -213,5 +213,3 @@ For more information on  theme, how to add new themes, and set themes for pages,
 ## Conclusion
 
 In this article, we explored Node-RED Dashboard 2.0's new customization features. We focused on adding elements like buttons and logos to the header, and discussed styling options such as default, hidden, and fixed for headers. We also covered how to adjust dashboard themes to personalize colors and layout. These insights empower users to create more personalized and functional Node-RED dashboards.
-
-
