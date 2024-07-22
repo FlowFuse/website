@@ -7,6 +7,7 @@ Personas help us not only define our messaging and marketing delivery, but also 
 ##### Manufacturing Inc.
 
 
+
 - [Paul Plant Manager](#paul%2C-plant-manager) <!-- omit in toc -->
 
 - [Steve Plant Engineer](#steve%2C-plant-engineer)
