@@ -664,8 +664,8 @@ module.exports = function(eleventyConfig) {
             return self.renderToken(tokens, idx, options);
         }
 
-        // Ensure the URL has a trailing slash
-        if (!href.endsWith('/')) {
+        // Ensure the URL has a trailing slash, but do not update if it contains a '#'
+        if (!href.endsWith('/') && !href.includes('#')) {
             href += '/';
         }
         
