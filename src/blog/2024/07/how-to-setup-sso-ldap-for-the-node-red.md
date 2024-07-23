@@ -8,6 +8,8 @@ image:
 tags:
    - post
    - node-red
+   - nodered
+   - flowfuse
    - sso
    - ldap
    - openldap
