@@ -39,11 +39,11 @@ LDAP enables applications and services to query, add, update, and delete directo
 
 ## Setting up SSO LDAP for FlowFuse
 
-Before we proceed, ensure that FlowFuse is deployed on your server with an Enterprise license and you have ssh connection with it so that you can run commnads in the server. If you haven't installed it yet, please check out our [documentation on installing FlowFuse](/docs/install/introduction/) or our blog on [deploying FlowFuse on Ubuntu with Docker](/blog/2024/07/deploying-flowfuse-with-docker/).
+Before we proceed, ensure that FlowFuse is deployed on your server with an Enterprise license and you have ssh connection with it so that you can run commands on the server. If you haven't installed it yet, please check out our [documentation on installing FlowFuse](/docs/install/introduction/) or our blog on [deploying FlowFuse on Ubuntu with Docker](/blog/2024/07/deploying-flowfuse-with-docker/).
 
 ### Installing and Configuring OpenLDAP
 
-Now throughout this section, we will install and configure OpenLDAP on your Ubuntu server. Make sure to replace the commands and configs with your details. If you are using a different distribution, you can follow other resources available on the internet for installation and configuration, as well as managing of users.
+Throughout this section, we will install and configure OpenLDAP on your Ubuntu server. Make sure to replace the commands and configs with your details. If you are using a different distribution, you can follow other resources available on the internet for installation and configuration, as well as managing of users.
 
 1. Set the hostname for your LDAP server:
 
@@ -63,7 +63,7 @@ Now throughout this section, we will install and configure OpenLDAP on your Ubun
    apt install slapd ldap-utils
    ```
 
-4. Set an administrator password for LDAP during installation and also conform it in the next prompt as well.
+4. Set an administrator password for LDAP during installation and confirm it in the next prompt.
 
 !["Screenshot of prompt asking to set the administrator password while installation"](./images/Ldap-Server-Admin-Password-Ubuntu.png "Screenshot of prompt asking to set the administrator password")
 
@@ -111,7 +111,7 @@ Now throughout this section, we will install and configure OpenLDAP on your Ubun
    sudo nano /etc/ldap/ldap.conf
    ```
 
-14. Uncomment the lines beginning with “BASE” and “URI”, for example my domain is `my-flows.site`, we have updated the file as below, but you have update it according to your domain:
+14. Uncomment the lines beginning with “BASE” and “URI”, for example my domain is `my-flows.site`, we have updated the file as below, but you have to update it according to your domain:
 
 ```
 BASE `dc=my-flows,dc=site.`
@@ -143,7 +143,7 @@ URI `ldap://ldap.my-flows.site.`
    ldapadd -x -D cn=admin,dc=my-flows,dc=site -W -f groups.ldif
    ```
 
-4. Create Password for user and store the encrypted password somewhere:
+4. Create  a password for the user and store the encrypted password:
 
 ```bash
 Slappasswd -g
@@ -276,7 +276,7 @@ Slappasswd -g
 
 To sign in using SSO, users of your self-hosted FlowFuse must have a FlowFuse account created with an email ID associated with the domain configured with SSO. For more information, refer to [creating users in FlowFuse](/docs/admin/user_management/#creating-new-users).
 
-1. Open your platform in the browser, Enter username in the username/email feild.
+1. Open your platform in the browser. Enter the username in the username/email field.
 2. Click on "Login".
 3. Then enter password set in the ldap directory for that user.
 
