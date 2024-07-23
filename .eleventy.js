@@ -658,10 +658,10 @@ module.exports = function(eleventyConfig) {
         if (hrefIndex >= 0) {
           let href = tokens[idx].attrs[hrefIndex][1];
           // Ensure the URL has a trailing slash
-          if (!href.endsWith('/') && !href.includes('#')) {
-             href = `${href}/`;
+          if (!href.endsWith('/')) {
+            href += '/';
           }
-            tokens[idx].attrs[hrefIndex][1] = href;
+          tokens[idx].attrs[hrefIndex][1] = href;
         }
         return self.renderToken(tokens, idx, options);
     };
