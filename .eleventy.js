@@ -652,6 +652,19 @@ module.exports = function(eleventyConfig) {
             throw error
         }
     }
+
+    markdownLib.renderer.rules.link_open = (tokens, idx, options, env, self) => {
+        const hrefIndex = tokens[idx].attrIndex('href');
+        if (hrefIndex >= 0) {
+          let href = tokens[idx].attrs[hrefIndex][1];
+          // Ensure the URL has a trailing slash
+          if (!href.endsWith('/')) {
+            href += '/';
+          }
+          tokens[idx].attrs[hrefIndex][1] = href;
+        }
+        return self.renderToken(tokens, idx, options);
+    };
     
     eleventyConfig.setLibrary("md", markdownLib)
 
