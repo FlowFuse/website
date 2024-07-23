@@ -657,8 +657,13 @@ module.exports = function(eleventyConfig) {
         const hrefIndex = tokens[idx].attrIndex('href');
         if (hrefIndex >= 0) {
           let href = tokens[idx].attrs[hrefIndex][1];
+          let classIndex = tokens[idx].attrIndex('class');
+          // exclude the link if it has the class 'header-anchor'
+         if (classIndex >= 0 && tokens[idx].attrs[classIndex][1] === 'header-anchor') {
+            return self.renderToken(tokens, idx, options);
+         }
           // Ensure the URL has a trailing slash
-          if (!href.endsWith('/')) {
+          if (!href.endsWith('/') && ) {
             href += '/';
           }
           tokens[idx].attrs[hrefIndex][1] = href;
