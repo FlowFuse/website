@@ -1,6 +1,7 @@
 ---
 eleventyNavigation:
   key: Getting Started
+  order: 1
 meta:
   title: Getting Started with Node-RED
   description:  Learn the basics of Node-RED, a powerful tool for IoT integration and workflow automation.

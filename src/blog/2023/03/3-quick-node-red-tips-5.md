@@ -32,7 +32,7 @@ To export a flow, follow these steps:
 3. If you chose "File" you will be prompted to save a compressed JSON file to your computer; if you chose "Clipboard" the flow JSON will be copied to your clipboard.
 4. Use the exported file or clipboard content to import into a different instance of Node-RED.
 
-![Import and export your flows](./images/import-export.gif "Import and export your flows")
+![Importing and exporting your flows](./images/import-export.gif "Importing and exporting your flows")
 
 Keep in mind that some nodes or flows may require additional setup or node installation on the Node-RED instance you import your flow to.
 

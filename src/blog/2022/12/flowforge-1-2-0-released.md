@@ -30,7 +30,7 @@ Keep reading for the details of what's in this release or you can watch our 1 mi
 ## Improvements
 
 - In FlowFuse 1.1 we added logging of user actions. In 1.2 we’ve [improved the audit log interface](https://github.com/FlowFuse/flowfuse/issues/517) to help you read the recorded user actions.
-![An image of the new audit log interface](./images/audit-log.png)
+!["An image of the new audit log interface of FlowFuse"](./images/audit-log.png "An image of the new audit log interface of FlowFuse")
 
 - Configuring DNS for FlowFuse has historically been challenging as for most FlowFuse installs you'll need two entries. One for the FlowFuse application, and one for the Node-RED projects. There's been updates to the documentation to make it much easier to set this up, and much faster. Please checkout the new [documentation](/docs/install/dns-setup/).
 

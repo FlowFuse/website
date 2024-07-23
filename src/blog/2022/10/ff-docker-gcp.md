@@ -36,19 +36,19 @@ Create a GCP account, once logged in navigate to Compute Engine then VM Instance
 
 Give your instance a name, select a Region and Zone. I have found that the default machine configuration works fine but depending on your project you may wish to change the resources.
 
-![GCP Create VM interface](./images/1.png)
+!["Screenshot showing the interface for creating GCP VM"](./images/1.png "Screenshot showing the interface for creating GCP VM")
 
 You now need to allow access to your FlowFuse installation from the internet. In the Firewall section tick Allow HTTP traffic and Allow HTTPS traffic.
 
-![GCP Create VM interface](./images/2.png)
+!["Screenshot showing the firewall section in the interface for creating a GCP VM"](./images/2.png "Screenshot showing the firewall section in the interface for creating a GCP VM")
 
-Next up, assigna static IP address to the VM. Click Advanced options, then Networking. Now scroll down until you see Network interfaces and click on default to expand that section. In External IPv4 address select Create IP Address, give it a name than press Reserve.
+Next up, assign a static IP address to the VM. Click Advanced options, then Networking. Now scroll down until you see Network interfaces and click on default to expand that section. In External IPv4 address select Create IP Address, give it a name than press Reserve.
 
-![GCP Create VM interface](./images/3.png)
+!["Screenshot showing the network section in the interface for creating a GCP VM"](./images/3.png "Screenshot showing the network section in the interface for creating a GCP VM")
 
 Once you have reserved your IP it will be shown in the External IPv4 address field, write it down as we will need it later to create the DNS records. Our IP address was 34.125.156.130.
 
-![GCP Create VM interface](./images/4.png)
+!["Screenshot showing your reserved IP in the External IPv4 address field"](./images/4.png "Screenshot showing your reserved IP in the External IPv4 address field")
 
 You are now ready to create and boot your VM, scroll to the bottom of the page and press Create. It can take a minute or two for the VM to be ready to use.
 
@@ -56,11 +56,11 @@ You are now ready to create and boot your VM, scroll to the bottom of the page a
 
 So that you can run FlowFuse on your newly created GCP VM you will need to set up 2 DNS records. These records are slightly different to what is suggested in the FlowFuse install docs. We were keen to be able to run other services on this domain so we set up the following records.
 
-![DNS interface](./images/5.png)
+![Screenshot showing interface for setting DNS](./images/5.png "Screenshot showing interface for setting DNS")
 
 DNS changes need to propagate, and depending on your DNS provider, ISP, and other factors, this can take anywhere between a few seconds to 4 hours. Our’s were in place very quickly. To validate the DNS records you can use `dig` on either a Mac or Linux.
 
-![Dig command](./images/6.png)
+![Screenshot showing output of the dig command](./images/6.png "Screenshot showing output of the dig command")
 
 The DNS records are set to the IP record we noted down earlier, so we're good to continue.
 
@@ -68,7 +68,7 @@ The DNS records are set to the IP record we noted down earlier, so we're good to
 
 The next step is to install Docker on our GCP VM. If you return to GCP you should see that your VM is now up and running, you can now click on SSH to connect to your VM. This will open up a browser based SSH session to your VM.
 
-![Access SSH in GCP](./images/7.png)
+![Screenshot showing access to SSH in GCP](./images/7.png "Screenshot showing access to SSH in GCP")
 
 Once you have a Secure Shell (SSH) session open, the first step is to install Docker using the following commands.
 
@@ -119,7 +119,7 @@ Uncompress FlowFuse and save it to the directory.
 
 You should now have all the code you need for FlowFuse in the directory `/opt/flowforge/docker-compose-0.10.1`, it should look something like this.
 
-![List command output](./images/8.png)
+!["Screenshot showing directory listing for FlowFuse"](./images/8.png "Screenshot showing directory listing for FlowFuse")
 
 # Configure FlowFuse
 
@@ -133,15 +133,15 @@ Then we need to edit the flowforge.yml file, we're using Nano to do that.
 
 At the top of the file you need to update the domain and base_url to match your domain
 
-![Domain config](./images/9.png)
+!["Screenshot showing domain configuration in flowforge.yml"](./images/9.png "Screenshot showing domain configuration in flowforge.yml")
 
 Next we will need to edit the Email Configuration section to match your SMTP provider. Set enabled to true then add in the details provider by your email provider. For example in this case I am using our Google Workspace account.
 
-![Email config](./images/10.png)
+!["Screenshot showing email configuration in flowforge.yml"](./images/10.png "Screenshot showing email configuration in flowforge.yml")
 
 Finally, you need to update the `public_url` for your mqtt broker to match your DNS record.
 
-![MQTT config](./images/11.png)
+!["Screenshot showing MQTT configuration in flowforge.yml"](./images/11.png "Screenshot showing MQTT configuration in flowforge.yml")
 
 You can now save and close that file, in Nano you can do that by pressing ‘control x’ then ‘y’ then the Return key.
 
@@ -151,7 +151,7 @@ Now we need to edit the `docker-compose.yml` file. We will use Nano again to do 
 
 We need to edit the file to add in to the domain as follows.
 
-![Virtual Hosts config](./images/12.png)
+!["Screenshot showing virtual hosts configuration in docker-compose.yml"](./images/12.png "Screenshot showing virtual hosts configuration in docker-compose.yml")
 
 Save and exit from that file, in Nano you can do that by pressing ‘control x’ then ‘y’ then the Return key.
 

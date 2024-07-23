@@ -13,6 +13,9 @@ story:
     quote: Node-RED allows you to focus on developing the important things you want to create and not worry about a lot of the lower level infrastructure you need to connect data from different sources.
     challenge: Connect to, combine, and enrich data from sources to build applications to modernize textile industries.
     solution: Adopt Node-RED to extract data from various sources and combine data from different streams.
+    products:
+        - Node-RED
+        - FlowFuse
     results:
         - Various process have now unlocked potential for the industry to adopt.
         - Dynamic applications can now access and utilize data streams through Node-RED.

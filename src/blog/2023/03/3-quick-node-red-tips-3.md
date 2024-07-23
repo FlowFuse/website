@@ -18,13 +18,13 @@ There is usually more than one way to complete a given task in software, and Nod
 
 Exec allows you to run Shell commands and receive the value back into your flow. This opens up almost any command which can be run on the host devices CLI to your Node-RED flows.
 
-![Example of using the Exec node](./images/exec-example.gif "Example of using the Exec node")
+!["Example flow using the Exec node"](./images/exec-example.gif "Example flow using the Exec node")
 
 ### 2. The Filter node helps you discard duplicate messages
 
 It can be useful to only allow messages to proceed through a flow where their value is unique. Filter makes that task simple, no need to store the past values and check each new message against a list.
 
-![Configure the Filter node to only allow unique payloads through](./images/filter-config.png "Configure the Filter node to only allow unique payloads through")
+![Configuring the Filter node to only allow unique payloads through](./images/filter-config.png "Configuring the Filter node to only allow unique payloads through")
 
 Once your filter is configured as shown above, try sending different payloads through to see the outcome.
 

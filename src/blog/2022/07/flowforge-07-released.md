@@ -27,7 +27,7 @@ In the last release we introduced the concept of devices. We're already learning
 
 [FlowFuse Theme](https://github.com/FlowFuse/flowforge-nr-theme/)
 Now that we have a stronger visual identity in the Forge application we have continued that work through to the Node-RED editor. If you create or upgrade a project with a Node-RED 3.0 stack you will see a different theme in the editor. It's still very much Node-RED but just has some subtle hints to tie it back to the FlowFuse application. We will continue to iterate on this to further integrate the experience between FlowFuse and Node-RED in both directions.
-![](./images/ff-07-theme.png)
+!["Screenshot showing the FlowFuse theme when the Node-RED 3.0 stack is selected"](./images/ff-07-theme.png "Screenshot showing the FlowFuse theme when the Node-RED 3.0 stack is selected")
 
 [ProjectTypes](https://github.com/FlowFuse/flowfuse/issues/380)
 The introduction of ProjectTypes is a way to group Stacks together that share common characteristics - such as memory/cpu limits, or the availability of particular features. In platforms with billing enabled, such as our own FlowFuse Cloud, the ProjectTypes can have different price points set on them. Within FlowFuse Cloud, you'll see we've introduced the Small ProjectType - which applies to all existing projects on the platform.
