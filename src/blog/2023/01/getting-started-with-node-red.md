@@ -54,7 +54,7 @@ Now that you have Node-RED running, let's take a look at how to create a simple 
 
 First, drag an `http in` node into the editor. This node will listen for incoming HTTP requests. Next drag in the "change" and the `http response` node into the editor. Connect the `http in` node to the `change` node and connect the `change` node to the `http response` node. Hopefully your flow looks similar to this:
 
-!["Screenshot shwoing the nodes that we be will using throughtout this blog for demonstration"](./images/three-nodes.png "Screenshot shwoing the nodes that we be will using throughtout this blog for demonstration")
+!["Screenshot showing the HTTP-in, Change, and HTTP-response nodes that we will be using throughout this blog for demonstration."](./images/three-nodes.png "Screenshot showing the HTTP-in, Change, and HTTP-response nodes that we will be using throughout this blog for demonstration.")
 
 To configure the `http in` node, double-click on it to open its properties. Here, you can set the URL that the node will listen to, as well as the method (GET, POST, etc.). In this example, we'll set the URL to `/hello` and the method to `GET`.
 
