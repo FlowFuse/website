@@ -23,7 +23,7 @@ The Node-RED Dashboard successor is now available for install as an npm package 
 
 This pre-alpha version includes the first set of Vue.js-based elements familiar to Node-RED Dashboard users:
 
-![](./images/nr-dashboard-screenshot.png "new Node-RED Dashboard Elements")
+!["new Node-RED Dashboard Elements"](./images/nr-dashboard-screenshot.png "new Node-RED Dashboard Elements")
 
 This is but a hint of what's to come. The objective of these pre-alpha releases is to provide early access to the current status.
 

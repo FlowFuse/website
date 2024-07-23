@@ -54,18 +54,18 @@ Now that you have Node-RED running, let's take a look at how to create a simple 
 
 First, drag an `http in` node into the editor. This node will listen for incoming HTTP requests. Next drag in the "change" and the `http response` node into the editor. Connect the `http in` node to the `change` node and connect the `change` node to the `http response` node. Hopefully your flow looks similar to this:
 
-![The three nodes we need to build this flow](./images/three-nodes.png)
+!["Screenshot showing the HTTP-in, Change, and HTTP-response nodes that we will be using throughout this blog for demonstration."](./images/three-nodes.png "Screenshot showing the HTTP-in, Change, and HTTP-response nodes that we will be using throughout this blog for demonstration.")
 
 To configure the `http in` node, double-click on it to open its properties. Here, you can set the URL that the node will listen to, as well as the method (GET, POST, etc.). In this example, we'll set the URL to `/hello` and the method to `GET`.
 
 Now we need to set what the endpoint will respond with, we will do that in the `change` node.
 Double-click the `change` node then add "Hello World" to the field which says "to the value". It should look like this:
 
-![Configure the change node to output Hello World](./images/set-reply.png)
+!["Configuring the change node to set the payload to Hello World"](./images/set-reply.png "Configuring the change node to set the payload to Hello World")
 
 To configure the `http response` node, double-click on it to open its properties. Here, you should set the "Status Code" to be 200. This is not vital for the demo to work but it's good practice to return the correct codes when something connects to an API. Status code 200 means the API responded OK. This is how your `http response` node should look:
 
-![We should send back a 200 response code](./images/response-code.png)
+!["Configuring the status node to set the response to 200"](./images/response-code.png "Configuring the status node to set the response to 200")
 
 You can read more about HTTP response codes in [this article](https://en.wikipedia.org/wiki/List_of_HTTP_status_codes).
 

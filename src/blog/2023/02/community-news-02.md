@@ -21,7 +21,7 @@ If you've got something that you think we should share on our newsletters please
 
 ### [Node-RED Ask Me Anything](/ask-me-anything/ama-nodered/)
 
-[![AMA Session with Nick O'Leary and Rob Marcer](images/webinars/ama-feb.jpg)](/ask-me-anything/ama-nodered/)
+![AMA Session with Nick O'Leary and Rob Marcer](../../../images/webinars/ama-feb.jpg "AMA Session with Nick O'Leary and Rob Marcer")
 
 Do you have any questions about Node-RED or need some advice on a tricky issue using Node-RED? Here is your opportunity to get help from the experts.
 

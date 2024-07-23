@@ -32,7 +32,7 @@ Assuming you want an easy way to package up and distribute the functionality you
 
 Hi John, interesting question, thanks for sending it in. For the sake of any readers who were not an the webinar here is what you are describing.
 
-![Flow where the random number generator sends a message to 4 nodes at the same time](./images/chart-flow.png "Flow where the random number generator sends a message to 4 nodes at the same time")
+!["Image showing the Flow where the random number generator sends a message to 4 nodes at the same time"](./images/chart-flow.png "Image showing the Flow where the random number generator sends a message to 4 nodes at the same time")
 
 All downstream nodes linked to the same prior node will be triggered at practically the same time.
 
@@ -42,6 +42,6 @@ You could use a delay node if you want to ensure a particular node is triggered 
 
 Thanks Abdelhamid, that's actually really easy to do. Double click the subflow you want to delete, then select 'delete subflow' from the top of your workspace.
 
-![How to delete a subflow](./images/delete-subflow.png "How to delete a subflow")
+!["Image showing how to delete a subflow"](./images/delete-subflow.png "Image showing how to delete a subflow")
 
 Thanks again to everyone who attended and participated in our first webinar. We have lots of other useful live content coming up soon, you can view and register for future events on our website's [webinars page](/webinars/).
