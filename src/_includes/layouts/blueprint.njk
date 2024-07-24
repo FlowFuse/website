@@ -21,7 +21,7 @@ layout: layouts/base.njk
             </div>
         </div> -->
     {% endif %}
-    <div class="blog nohero w-full pb-24 pt-20">
+    <div class="blog nohero w-full pb-12 pt-20">
         <div class="container flex flex-col md:flex-row m-auto text-left max-lg:px-6 md:max-w-screen-lg gap-8 items-stretch">
             <div class="ff-prose">
                 <a class="inline-flex align-center gap-1 mb-4" href="/blueprints">
@@ -29,6 +29,7 @@ layout: layouts/base.njk
                     Back to Blueprints Library
                 </a>
                 {{ content | safe }}
+                {% include "contact-us-cta-line.njk" %}
             </div>
         </div>
     </div>
