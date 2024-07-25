@@ -25,7 +25,7 @@ feature for their teams.
 
 It is now possible to configure a group to manage which users are granted
 administration privileges. The name of the group can be added to the SSO 
-configuration.
+configuration (SAML only).
 
 NOTE: It is advised to maintain a backup admin user that does not 
 authenticate via SSO so ensure access can be maintained if the SSO 
