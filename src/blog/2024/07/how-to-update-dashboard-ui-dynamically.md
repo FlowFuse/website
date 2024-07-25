@@ -52,7 +52,7 @@ Also, in the following image, observe the real-time communication between the da
 
 As you explore Node-RED Dashboard 2.0, you'll find that real-time updates and interactions are present across all widgets and components, meeting the first two criteria of a dynamic UI: real-time interaction and asynchronous data handling.
 
-### ### Does Node-RED Dashboard 2.0 Allow for Building Personalized and Secure Dashboards?
+### Does Node-RED Dashboard 2.0 Allow for Building Personalized and Secure Dashboards?
 
 Dashboard 2.0 is the first Node-RED Dashboard solution that allows you to build personalized and multi-user dashboards. Unlike other solutions that provide a uniform experience for all viewers, Dashboard 2.0 supports user-specific customization. Additionally, it can be fully secured with the FlowFuse authentication mechanism.
 
