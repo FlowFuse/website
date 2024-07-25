@@ -54,9 +54,23 @@ module.exports = function(eleventyConfig) {
         return date && date > new Date();
     });
 
+    eleventyConfig.addFilter('extractH1Content', (content) => {
+        if (!content) return '';
+
+        const match = content.match(/<h1[^>]*>([\s\S]*?)<\/h1>/);
+    
+        if (match) {
+          const textContent = match[1].replace(/<\/?[^>]+>/gi, '').trim();
+          return textContent;
+        }
+    
+        return null;
+      });
+
     // Make filters globally accessible
     global.isFuturePost = eleventyConfig.getFilter('isFuturePost');
     global.isFutureDate = eleventyConfig.getFilter('isFutureDate');
+    global.extractH1Content = eleventyConfig.getFilter('extractH1Content');
 
     // Layout aliases
     eleventyConfig.addLayoutAlias('default', 'layouts/base.njk');
