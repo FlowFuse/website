@@ -28,9 +28,11 @@ Key aspects of a dynamic UI include:
 
 2. **Asynchronous Data Handling**: The dashboard should be capable of fetching and updating data asynchronously (e.g., using AJAX or WebSockets) without requiring a full page refresh.
 
-3. **Responsive Design**: The interface should adapt to various screen sizes and orientations, maintaining usability and appearance across devices.
+4. **Personalized Content and Security**: The dashboard should provide a personalized experience for each individual user based on their preferences and roles. Additionally, it should incorporate robust security measures to ensure safe access and protect user data.
 
-4. **Dynamic Content Updates**: Content should update automatically to reflect the latest information or user interactions (e.g., live notifications, chat messages).
+5. **Responsive Design**: The interface should adapt to various screen sizes and orientations, maintaining usability and appearance across devices.
+
+6. **Dynamic Content Updates**: Content should update automatically to reflect the latest information or user interactions (e.g., live notifications, chat messages).
 
 ## Does Node-RED Dashboard 2.0 Support Dynamic UI?
 
@@ -49,6 +51,12 @@ Also, in the following image, observe the real-time communication between the da
 ![Image showing real-time communication between the Node-RED Dashboard and the Node-RED instance](./images/real-time-communication-dashboard.gif "Image showing real-time communication between the Node-RED Dashboard and the Node-RED instance"){data-zoomable}
 
 As you explore Node-RED Dashboard 2.0, you'll find that real-time updates and interactions are present across all widgets and components, meeting the first two criteria of a dynamic UI: real-time interaction and asynchronous data handling.
+
+### ### Does Node-RED Dashboard 2.0 Allow for Building Personalized and Secure Dashboards?
+
+Dashboard 2.0 is the first Node-RED Dashboard solution that allows you to build personalized and multi-user dashboards. Unlike other solutions that provide a uniform experience for all viewers, Dashboard 2.0 supports user-specific customization. Additionally, it can be fully secured with the FlowFuse authentication mechanism.
+
+For more information on how to build personalized and secure multi-user dashboards with Dashboard 2.0, refer to our comprehensive guide on [Building Personalized Multi-User Dashboards](https://flowfuse.com/blog/2024/01/dashboard-2-multi-user/) and the [Documentation](https://dashboard.flowfuse.com/getting-started.html#multi-tenancy) on how Dashboard 2.0 supports multi-tenancy.
 
 ### Is Node-RED Dashboard 2.0 Responsive?
 
