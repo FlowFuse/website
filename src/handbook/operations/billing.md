@@ -30,7 +30,17 @@ on the [quote](/handbook/customer/sales/engagements#generating-a-quote-and-order
 
 ### Creating an invoice
 
-Email billing@flowfuse.com with [this template](https://docs.google.com/document/d/1u9KqAovcKJ8AWpWZhYDEAX90T-BfUfRNlPYKieOKnOY/edit).
+Email billing@flowfuse.com with the following information:
+
+Start date:
+Name:
+Email:
+Address:
+Terms:
+VAT Number:
+Cloud or Self-Hosted:
+Custom terms (attach if applicable):
+
 
 ## Coupons
 

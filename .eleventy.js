@@ -22,6 +22,7 @@ const site = require("./src/_data/site");
 const coreNodeDoc = require("./lib/core-node-docs.js");
 const yaml = require("js-yaml");
 const eleventyNavigationPlugin = require("@11ty/eleventy-navigation");
+const { EleventyEdgePlugin } = require("@11ty/eleventy");
 
 // Skip slow optimizations when developing i.e. serve/watch or Netlify deploy preview
 const DEV_MODE = process.env.ELEVENTY_RUN_MODE !== "build" || process.env.CONTEXT === "deploy-preview" || process.env.SKIP_IMAGES === 'true'
@@ -53,9 +54,23 @@ module.exports = function(eleventyConfig) {
         return date && date > new Date();
     });
 
+    eleventyConfig.addFilter('extractH1Content', (content) => {
+        if (!content) return '';
+
+        const match = content.match(/<h1[^>]*>([\s\S]*?)<\/h1>/);
+    
+        if (match) {
+          const textContent = match[1].replace(/<\/?[^>]+>/gi, '').trim();
+          return textContent;
+        }
+    
+        return null;
+      });
+
     // Make filters globally accessible
     global.isFuturePost = eleventyConfig.getFilter('isFuturePost');
     global.isFutureDate = eleventyConfig.getFilter('isFutureDate');
+    global.extractH1Content = eleventyConfig.getFilter('extractH1Content');
 
     // Layout aliases
     eleventyConfig.addLayoutAlias('default', 'layouts/base.njk');
@@ -596,6 +611,7 @@ module.exports = function(eleventyConfig) {
     eleventyConfig.addPlugin(pluginMermaid)
     eleventyConfig.addPlugin(schema);
     eleventyConfig.addPlugin(eleventyNavigationPlugin);
+    eleventyConfig.addPlugin(EleventyEdgePlugin);
 
     const markdownItOptions = {
         html: true,
@@ -652,6 +668,28 @@ module.exports = function(eleventyConfig) {
             throw error
         }
     }
+
+    markdownLib.renderer.rules.link_open = (tokens, idx, options, env, self) => {
+    const hrefIndex = tokens[idx].attrIndex('href');
+    if (hrefIndex >= 0) {
+        let href = tokens[idx].attrs[hrefIndex][1];
+        let classIndex = tokens[idx].attrIndex('class');
+        
+        // Exclude the link if it has the class 'header-anchor'
+        if (classIndex >= 0 && tokens[idx].attrs[classIndex][1] === 'header-anchor') {
+            return self.renderToken(tokens, idx, options);
+        }
+
+        // Ensure the URL has a trailing slash, but do not update if it contains a '#' or ends with '.md'
+        if (!href.endsWith('/') && !href.includes('#') && !href.endsWith('.md')) {
+            href += '/';
+        }
+        
+        tokens[idx].attrs[hrefIndex][1] = href;
+    }
+    return self.renderToken(tokens, idx, options);
+   };
+
     
     eleventyConfig.setLibrary("md", markdownLib)
 
@@ -665,6 +703,9 @@ module.exports = function(eleventyConfig) {
                     conservativeCollapse: true,
                     preserveLineBreaks: true,
                     removeComments: true,
+                    ignoreCustomComments: [
+                        /ELEVENTYEDGE.*/
+                    ],
                     removeEmptyAttributes: true,
                     removeRedundantAttributes: true,
                     useShortDoctype: true,

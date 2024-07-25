@@ -13,7 +13,7 @@ We found out that many users have to frequently switch between the Node-RED Edit
 
 We're always seeking to reduce friction in the FlowFuse user experience, and as such, we've introduced a large overhaul of the developer experience for Node-RED when running in FlowFuse, in what we're calling the "Immersive Editor".
 
-![Node-RED Editor toolbar button for the assistant](/blog/2024/07/images/immersive-editor.png){data-zoomable}
+![Node-RED Editor toolbar button for the assistant](./blog/2024/07/images/immersive-editor.png){data-zoomable}
 
 Now, the instances tabs are all available in the same view as the Editor, and you can manage your instance, watch logs, capture snapshots and event restart it, all without leaving the Node-RED Editor.
 

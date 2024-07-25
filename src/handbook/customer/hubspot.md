@@ -71,6 +71,12 @@ The ideal process for importing FlowFuse Cloud contacts is that you first split 
 
 ## Recommended Apps
 
-We have several extension applications for HubSpot, these are a few that can be beneficial if you're interacting with customers:
+Extension applications for HubSpot that can be beneficial if you're interacting with customers:
 
 - **G-Mail Extension ([link](https://app-eu1.hubspot.com/ecosystem/26586079/marketplace/apps/sales/sales-enablement/gmail))** - Automatically creates contacts when you e-mail them for the first time, and logs e-mail activity against that contact in HubSpot.
+    - **Enhance your meeting invites by following these steps:**
+        1. After installing the extension, click on `Meetings` in the toolbar that appears in Gmail.
+        2. Pick at least three of your available timeslots to be added as options to your e-mail message.
+        3. HubSpot will automatically generate three buttons in the email, each corresponding to one of the proposed times. Take into consideration that the displayed time will correspond with the host's timezone.
+        ![E-mail message with options](./images/hs-email-message.png){ width=600 }
+        4. If none of the options work for the recipient, an additional link to your calendar will also be included.

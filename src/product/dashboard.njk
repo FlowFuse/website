@@ -124,13 +124,11 @@ meta:
                 {% endfor %}
             </ul>
             <div class="flex justify-end">
-                <a href="/blog/dashboard/" class="font-light hover:underline pt-3 flex flex-row items-center gap-1 cursor-pointer flex-wrap max-md:max-w-md mb-10">
+                <a href="/blog/dashboard/" class="font-light hover:underline pt-3 flex flex-row items-center gap-1 cursor-pointer flex-wrap max-md:max-w-md">
                     Learn more {% include "components/icons/arrow-long-right.svg" %}
                 </a>
             </div>
-            <div class="bg-indigo-50 py-1 px-4 rounded-md w-full mx-auto">
-                <p>Looking for help with your project? <a href="/contact-us/">Contact us</a>; our experts will be happy to provide a solution for your needs.  </p>
-            </div>
+            {% include "contact-us-cta-line.njk" %}
         </div>
     </div>
 </div>
