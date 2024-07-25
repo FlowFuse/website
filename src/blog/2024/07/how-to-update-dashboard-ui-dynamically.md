@@ -74,7 +74,7 @@ Dynamic style updates in Node-RED Dashboard 2.0 provide a robust way to customiz
 
 For instance, to visually indicate the status of machine names in text widgets—using red for "down" and green for "up" or "running"—you can use custom CSS within a `ui_template` widget. For details on adding custom CSS, refer to [Adding Custom Styling in `ui-template`](https://dashboard.flowfuse.com/user/template-examples.html#custom-styling). Here’s an example of the CSS you might use:
 
-```CSS
+```
 .stop {
    color: red;
 }
