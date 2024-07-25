@@ -1,7 +1,7 @@
 ---
-title: New Charts Available in Dashboard 2.0
-subtitle: Our most recent update for Dashboard 2.0 has introduced Pie, Donut and Grouped Bar charts, and plenty more.
-description: Our most recent update for Dashboard 2.0 has introduced Pie, Donut and Grouped Bar charts, and plenty more.
+title: New Charts Available in FlowFuse Dashboard
+subtitle: Our most recent update for FlowFuse Dashboard has introduced Pie, Donut and Grouped Bar charts, and plenty more.
+description: Our most recent update for FlowFuse Dashboard has introduced Pie, Donut and Grouped Bar charts, and plenty more.
 date: 2024-07-26
 authors: ["joe-pavitt"]
 image: /blog/2024/06/images/tile-dashboard-2-multi-tenancy.png
@@ -12,7 +12,7 @@ tags:
    - dashboard 2.0
 ---
 
-It's been a while coming, but we've finally introduced a new set of chart types to Dashboard 2.0. We've added Pie, Donut and Grouped (Stacks and Side-by-Side) Bar charts to the UI Chart node. We've also shipped plenty of other improvements and fixes in this release, so let's dive in.
+It's been a while coming, but we've finally introduced a new set of chart types to FlowFuse Dashboard. We've added Pie, Donut and Grouped (Stacks and Side-by-Side) Bar charts to the UI Chart node. We've also shipped plenty of other improvements and fixes in this release, so let's dive in.
 
 <!--more-->
 
