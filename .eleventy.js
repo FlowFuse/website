@@ -654,6 +654,28 @@ module.exports = function(eleventyConfig) {
             throw error
         }
     }
+
+    markdownLib.renderer.rules.link_open = (tokens, idx, options, env, self) => {
+    const hrefIndex = tokens[idx].attrIndex('href');
+    if (hrefIndex >= 0) {
+        let href = tokens[idx].attrs[hrefIndex][1];
+        let classIndex = tokens[idx].attrIndex('class');
+        
+        // Exclude the link if it has the class 'header-anchor'
+        if (classIndex >= 0 && tokens[idx].attrs[classIndex][1] === 'header-anchor') {
+            return self.renderToken(tokens, idx, options);
+        }
+
+        // Ensure the URL has a trailing slash, but do not update if it contains a '#' or ends with '.md'
+        if (!href.endsWith('/') && !href.includes('#') && !href.endsWith('.md')) {
+            href += '/';
+        }
+        
+        tokens[idx].attrs[hrefIndex][1] = href;
+    }
+    return self.renderToken(tokens, idx, options);
+   };
+
     
     eleventyConfig.setLibrary("md", markdownLib)
 
