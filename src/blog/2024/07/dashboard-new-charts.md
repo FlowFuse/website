@@ -51,7 +51,7 @@ It does however mean that Bar Charts created in `1.13.0` or below will need to b
 
 #### Series
 
-This property is now, consistently, how you want to group your data. If a new `msg` is coming in, and and a property on that `msg` defines it's group, then you can set "Series" to something like `msg.myCategory`.
+This property is now, consistently, how you want to group your data. If a new `msg` is coming in, and a property on that `msg` defines its group, then you can set "Series" to something like `msg.myCategory`.
 
 If a single data point needs to plot multiple points/bars onto a chart, then you can use the "JSON" type here, and list the different properties you want to plot, one for each category.
 
@@ -61,7 +61,7 @@ For Radial charts (Pie & Donut), having multiple series would provide multiple, 
 
 With this, we define which property (or _properties_ if a single piece of data needs to plot multiple points/bars) we want to plot on the x-axis.
 
-note that on Radial charts (Pie & Donut), this is the value that defines the label of the segment.
+Note that on Radial charts (Pie & Donut), this is the value that defines the label of the segment.
 
 #### Y
 
