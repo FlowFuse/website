@@ -686,9 +686,10 @@ module.exports = function(eleventyConfig) {
             }
     
             // make sure to update the flowfuse signup URL
-            if (href.includes('https://app.flowfuse.com/')) {
+            if (!href.endsWith('/') && href.includes('https://app.flowfuse.com/account/create')) {
                 href += '/';
             }
+
     
             tokens[idx].attrs[hrefIndex][1] = href;
         }
