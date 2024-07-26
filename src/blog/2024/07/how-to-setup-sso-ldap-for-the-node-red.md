@@ -2,7 +2,7 @@
 title: How to Set Up SSO LDAP for Node-RED
 subtitle: Step-by-step guide on setting up SSO LDAP for your self-hosted FlowFuse platform
 description: Learn how to configure SSO LDAP for your self-hosted FlowFuse platform using OpenLdap as the Identity Provider. Simplify user authentication across applications with this step-by-step guide.
-date: 2024-07-25
+date: 2024-07-29
 authors: ["sumit-shinde"]
 image: /blog/2024/07/images/how-to-set-up-sso-ldap-for-node-red.png
 tags:
