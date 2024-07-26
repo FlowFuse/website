@@ -87,7 +87,7 @@ Throughout this section, we will install and configure OpenLDAP on your Ubuntu s
 
 ![Screenshot of prompt asking to enter your domain to construct the base DN"](./images/prompt-for-domain.jpeg "Screenshot of prompt asking to enter your domain to construct the base DN")
 
-   - Provide a name for your organization, which will also be part of the base DN and press 'Enter'.
+   - Provide a name for your organization, which will also be part of the base DN and press 'Enter.'
 
 !["Screenshot of prompt asking to enter your org name"](./images/prompt-for-org.jpeg "Screenshot of prompt asking to enter your org name")
 
@@ -113,7 +113,7 @@ Throughout this section, we will install and configure OpenLDAP on your Ubuntu s
    sudo nano /etc/ldap/ldap.conf
    ```
 
-14. Uncomment the lines beginning with “BASE” and “URI”, for example my domain is `my-flows.site`, we have updated the file as below, but you have to update it according to your domain:
+14. Uncomment the lines beginning with “BASE” and “URI”, for example, my domain is `my-flows.site`, we have updated the file as below, but you have to update it according to your domain:
 
 ```
 BASE `dc=my-flows,dc=site.`
@@ -130,7 +130,7 @@ URI `ldap://ldap.my-flows.site.`
    nano groups.ldif
    ```
 
-2. Add the following content to `groups.ldif`, which will create the `users` group, make sure when you create new group the gidNumber and ou is unique:
+2. Add the following content to `groups.ldif`, which will create the `users` group, make sure when you create a new group the gidNumber and ou is unique:
 
    ```
    dn: ou=users,dc=my-flows,dc=site
@@ -261,7 +261,7 @@ Slappasswd -g
 
 !["Screenshot showing the 'create sso configuration' button"](./images/create-sso-config-button.png "Screenshot showing the 'create sso configuration' button")
 
-5. Enter name for your configuration, then enter domain with `@` prefix and select the "LDAP" option. Click on the "Create configuration" button.
+5. Enter the name for your configuration, then enter the domain with `@` prefix and select the "LDAP" option. Click on the "Create configuration" button.
 
 !["Screenshot showing the initial form to create ldap sso configuration"](./images/sso-config-ldap.png "Screenshot showing the initial form to create ldap sso configuration")
 
@@ -269,8 +269,8 @@ Slappasswd -g
 
 !["Screenshot showing the advance form to create ldap sso configuration"](./images/ldap-advance-config-tag.png "Screenshot showing the advance form to create ldap sso configuration")
 
-7. Enter the the bind DN into the username feild.
-8. Enter the password for the LDAP administrator in the password feild.
+7. Enter the the bind DN into the username field.
+8. Enter the password for the LDAP administrator in the password field.
 9. Enter the Base DN. For example, if your domain is `my-flows.site`, the Base DN will be `dc=my-flows,dc=site`.
 10. Click on the "Update configuration" button.
 
@@ -280,7 +280,7 @@ To sign in using SSO, users of your self-hosted FlowFuse must have a FlowFuse ac
 
 1. Open your platform in the browser. Enter the username in the username/email field.
 2. Click on "Login".
-3. Then enter password set in the ldap directory for that user.
+3. Then enter the password set in the LDAP directory for that user.
 
 *Note: Admin users will still be able to log in with their original FlowFuse username/password - this ensures they don't get locked out of the platform if there is a problem with the SSO configuration*
 
