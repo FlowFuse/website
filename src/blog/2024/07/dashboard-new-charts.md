@@ -108,9 +108,9 @@ You can read more about this example, and access the flow itself in our document
 ![Screenshot of our new interactive Dashboard to demonstrate how charts render in FlowFuse Dashboard](./images/dashboard-interactive-docs.png){data-zoomable}
 _Screenshot of our new interactive Dashboard to demonstrate how charts render in FlowFuse Dashboard_
 
-With the new release also comes a **new interactive Dashboard** that we're making available for public use.
+With the new release also comes a new [Public Demo Dashboard](https://dashboard-demos.flowfuse.cloud/dashboard/charts-example) that we've made available for all to use and play with.
 
-You can try it out [here](https://dashboard-demos.flowfuse.cloud/dashboard/charts-example), and interact with a range of different chart types, including the new Pie, Donut and Grouped Bar charts.
+You can try it out, and interact with a range of different chart types, including the new Pie, Donut and Grouped Bar charts. We'll also be extending this soon to cover the full range of widgets available in FlowFuse Dashboard.
 
 If you want more technical detail, you can also check out our online documentation [here](https://dashboard.flowfuse.com/nodes/widgets/ui-chart.html).
 
