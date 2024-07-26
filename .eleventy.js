@@ -670,25 +670,30 @@ module.exports = function(eleventyConfig) {
     }
 
     markdownLib.renderer.rules.link_open = (tokens, idx, options, env, self) => {
-    const hrefIndex = tokens[idx].attrIndex('href');
-    if (hrefIndex >= 0) {
-        let href = tokens[idx].attrs[hrefIndex][1];
-        let classIndex = tokens[idx].attrIndex('class');
-        
-        // Exclude the link if it has the class 'header-anchor'
-        if (classIndex >= 0 && tokens[idx].attrs[classIndex][1] === 'header-anchor') {
-            return self.renderToken(tokens, idx, options);
+        const hrefIndex = tokens[idx].attrIndex('href');
+        if (hrefIndex >= 0) {
+            let href = tokens[idx].attrs[hrefIndex][1];
+            const classIndex = tokens[idx].attrIndex('class');
+    
+            // Exclude the link if it has the class 'header-anchor'
+            if (classIndex >= 0 && tokens[idx].attrs[classIndex][1] === 'header-anchor') {
+                return self.renderToken(tokens, idx, options);
+            }
+    
+            // Ensure the URL has a trailing slash, but do not update if it contains a '#' or ends with '.md' or https
+            if (!href.endsWith('/') && !href.includes('#') && !href.endsWith('.md') && !href.includes('https')) {
+                href += '/';
+            }
+    
+            // make sure to update the flowfuse signup URL
+            if (href.includes('https://app.flowfuse.com/')) {
+                href += '/';
+            }
+    
+            tokens[idx].attrs[hrefIndex][1] = href;
         }
-
-        // Ensure the URL has a trailing slash, but do not update if it contains a '#' or ends with '.md'
-        if (!href.endsWith('/') && !href.includes('#') && !href.endsWith('.md')) {
-            href += '/';
-        }
-        
-        tokens[idx].attrs[hrefIndex][1] = href;
-    }
-    return self.renderToken(tokens, idx, options);
-   };
+        return self.renderToken(tokens, idx, options);
+    };
 
     
     eleventyConfig.setLibrary("md", markdownLib)
