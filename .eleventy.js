@@ -684,12 +684,7 @@ module.exports = function(eleventyConfig) {
             if (!href.endsWith('/') && !href.includes('#') && !href.endsWith('.md') && !href.includes('https')) {
                 href += '/';
             }
-    
-            // make sure to update the flowfuse signup URL
-            if (href.includes('https://app.flowfuse.com/')) {
-                href += '/';
-            }
-    
+
             tokens[idx].attrs[hrefIndex][1] = href;
         }
         return self.renderToken(tokens, idx, options);
