@@ -4,7 +4,7 @@ subtitle: Our most recent update for FlowFuse Dashboard has introduced Pie, Donu
 description: Our most recent update for FlowFuse Dashboard has introduced Pie, Donut and Grouped Bar charts, and plenty more.
 date: 2024-07-26
 authors: ["joe-pavitt"]
-image: /blog/2024/06/images/tile-dashboard-2-multi-tenancy.png
+image: /blog/2024/07/images/tile-dashboard-new-charts.png
 tags:
    - posts
    - news
@@ -15,8 +15,6 @@ tags:
 It's been a while coming, but we've finally introduced a new set of chart types to FlowFuse Dashboard. We've added Pie, Donut and Grouped (Stacks and Side-by-Side) Bar charts to the UI Chart node. We've also shipped plenty of other improvements and fixes in this release, so let's dive in.
 
 <!--more-->
-
-Documentation [here](http://localhost:5173/nodes/widgets/ui-chart.html#bar-charts).
 
 ## Grouped Bar Charts
 
@@ -105,6 +103,17 @@ Note, the chart takes in all of the data sent to it, uses the `name` field to de
 
 You can read more about this example, and access the flow itself in our documentation [here](https://dashboard.flowfuse.com/nodes/widgets/ui-chart.html#bar-charts)
 
+## Live Dashboard Demo
+
+![Screenshot of our new interactive Dashboard to demonstrate how charts render in FlowFuse Dashboard](./images/dashboard-interactive-docs.png){data-zoomable}
+_Screenshot of our new interactive Dashboard to demonstrate how charts render in FlowFuse Dashboard_
+
+With the new release also comes a **new interactive Dashboard** that we're making available for public use.
+
+You can try it out [here](https://dashboard-demos.flowfuse.cloud/dashboard/charts-example), and interact with a range of different chart types, including the new Pie, Donut and Grouped Bar charts.
+
+If you want more technical detail, you can also check out our online documentation [here](https://dashboard.flowfuse.com/nodes/widgets/ui-chart.html).
+
 ## What else is new?
 
 You can find the full 1.14.0 Release Notes [here](https://github.com/FlowFuse/node-red-dashboard/releases/tag/v1.14.0).
@@ -118,4 +127,4 @@ Just to highlight a few, particularly valuable, updates and fixes:
 
  ## What's Next?
 
- Work has already begun on the next release, `1.15.0`...
+ Work has already begun on the next release, `1.15.0`, you can see what items we have queued up [here](https://github.com/orgs/FlowFuse/projects/15/views/1), if you've got any feedback or suggestions, please do let us know, and feel free to open new issues on our [GitHub](https://github.com/FlowFuse/node-red-dashboard/issues)
