@@ -85,3 +85,4 @@ package = "netlify-plugin-cache"
 [[edge_functions]]
 function = "eleventy-edge"
 path = "/*"
+excludedPath = ["/*.css", "/*.png", "/*.jpg", "/*.svg", "/*.webmanifest", "/*.js", "/*.htm", "/*.html"]

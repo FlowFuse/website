@@ -77,6 +77,9 @@ async function getPHFeatureFlags (distinctId) {
           return response.json()
       }).then((data) => {
           resolve(data.featureFlags)
+      }).catch((err) => {
+          console.error("Error getting feature flags > ", err)
+          resolve({})
       })
   })
 }
@@ -99,7 +102,7 @@ async function featureFlagCalled (distinctId, feature, value) {
       }).then((data) => {
           resolve(data)
       }).catch((err) => {
-          console.error(err)
+          console.error("Error capturing feature flag called event > ", err)
       })
   })
 }
