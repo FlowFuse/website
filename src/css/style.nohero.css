@@ -42,6 +42,10 @@
     line-height: 2.9rem;
 }
 
+.prose code::after {
+    content: '' !important;
+}
+
 .prose code::before {
     content: '' !important;
 }
