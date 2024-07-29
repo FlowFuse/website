@@ -26,7 +26,7 @@ This allows you to update part of your flow without restarting other sections. T
 
 Once your flow has a few debug nodes it can become challenging to see which particular node generated an entry in the log. To quickly track an entry back to its source, click the text 'node: debug' and you will be whisked back to the specific debug node, even it it's elsewhere on you workspace or even on a different tab.
 
-![Find the debug node which generated the log line](./images/debug-jump.gif "Find the debug node which generated the log line")
+![Finding the debug node which generated the log line](./images/debug-jump.gif "Finding the debug node which generated the log line")
 
 ### 3. The delay node can be used as a rate limiter
 
@@ -36,6 +36,6 @@ You can use the delay node to limit how many messages can pass through in a give
 
 Open the delay node settings, select Rate Limit then select 1 message per 15 minutes, then select 'Drop intermediate messages'. This flow will now output a maximum of one message every quarter of an hour, all others will be deleted.
 
-![Limit how many alerts are sent](./images/rate-limit.gif "Limit how many alerts are sent")
+![Limiting how many alerts are sent](./images/rate-limit.gif "Limiting how many alerts are sent")
 
 We hope you found these tips useful, if you'd like to suggest some of your own tips which you think we should share in our future blog posts please [get in touch](mailto:contact@flowfuse.com).
