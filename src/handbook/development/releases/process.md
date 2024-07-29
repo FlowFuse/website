@@ -87,9 +87,10 @@ have been published as needed.
  - [`flowforge/nr-project-nodes`](https://github.com/FlowFuse/nr-project-nodes)
  - [`flowforge/nr-file-nodes`](https://www.github.com/FlowFuse/nr-file-nodes)
  - [`flowforge/nr-persistent-context`](https://github.com/FlowFuse/nr-persistent-context)
+ - [`flowforge/nr-assistant`](https://github.com/FlowFuse/nr-assistant)
  - [`flowforge/nr-tools-plugin`](https://www.github.com/FlowFuse/nr-tools-plugin)
 
-Verify [`flowforge/flowforge-nr-launcher`](https://www.github.com//flowforge/flowforge-nr-launcher) `package.json` has been updated to pull in the latest versions of `file-nodes`/`persistent-context`/`project-nodes`.
+Verify [`flowforge/flowforge-nr-launcher`](https://www.github.com//flowforge/flowforge-nr-launcher) `package.json` has been updated to pull in the latest versions of `file-nodes`/`persistent-context`/`project-nodes`/`nr-assistant`.
 
 If any need to be updated, refer to the section [Unmanaged Releases](#unmanaged-releases) for releasing these.
 
