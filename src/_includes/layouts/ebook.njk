@@ -9,6 +9,10 @@ hubspot:
         <div class="md:flex md:flex-row gap-6">
             <div class="text-left md:w-1/2">
                 <h1>{{ contentTitle | safe }}</h1>
+                {% if secondaryImage %}
+                {% set imageSrc = ["./", secondaryImage ] | join %}
+                <div class="my-6">{% image imageSrc, "FlowFuse Dashboard", [450] %}</div>
+                {% endif %}
             </div>
             <div class="ff-prose md:w-1/2">
                 <div class="prose mt-3">
