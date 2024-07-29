@@ -83,14 +83,14 @@ day.
 The Release Manager should verify the following repositories are up to date and
 have been published as needed.
 
- - [`flowforge/flowforge-device-agent`](https://github.com/FlowFuse/device-agent)
- - [`flowforge/nr-project-nodes`](https://github.com/FlowFuse/nr-project-nodes)
- - [`flowforge/nr-file-nodes`](https://www.github.com/FlowFuse/nr-file-nodes)
- - [`flowforge/nr-persistent-context`](https://github.com/FlowFuse/nr-persistent-context)
- - [`flowforge/nr-assistant`](https://github.com/FlowFuse/nr-assistant)
- - [`flowforge/nr-tools-plugin`](https://www.github.com/FlowFuse/nr-tools-plugin)
+ - [`flowfuse/device-agent`](https://github.com/FlowFuse/device-agent)
+ - [`flowfuse/nr-project-nodes`](https://github.com/FlowFuse/nr-project-nodes)
+ - [`flowfuse/nr-file-nodes`](https://www.github.com/FlowFuse/nr-file-nodes)
+ - [`flowfuse/nr-persistent-context`](https://github.com/FlowFuse/nr-persistent-context)
+ - [`flowfuse/nr-assistant`](https://github.com/FlowFuse/nr-assistant)
+ - [`flowfuse/nr-tools-plugin`](https://www.github.com/FlowFuse/nr-tools-plugin)
 
-Verify [`flowforge/flowforge-nr-launcher`](https://www.github.com//flowforge/flowforge-nr-launcher) `package.json` has been updated to pull in the latest versions of `file-nodes`/`persistent-context`/`project-nodes`/`nr-assistant`.
+Verify [`flowfuse/flowfuse-nr-launcher`](https://www.github.com//flowfuse/nr-launcher) `package.json` has been updated to pull in the latest versions of `file-nodes`/`persistent-context`/`project-nodes`/`nr-assistant`.
 
 If any need to be updated, refer to the section [Unmanaged Releases](#unmanaged-releases) for releasing these.
 
@@ -117,7 +117,7 @@ Follow these steps to run the script:
      - Checks to see if the repo has already been cloned into the release directory.
          - if it has been, ensures it is on `main` and pulls from origin
          - otherwise, clones it
-     - Checks that all @flowforge/* dependencies are on npm at the matching version
+     - Checks that all @flowfuse/* dependencies are on npm at the matching version
         - If any dependency is missing, it waits for you to ask it to check again.
      - Creates a clean `release-x.y.z` branch
      - Updates CHANGELOG, package.json and package-lock.json files and commits changes
@@ -159,13 +159,13 @@ by the PM and Marketing team.
 Patch releases are done as needed and have a much lighter process to allow
 fixes to be released quickly.
 
-The core `flowforge` repository has some automation in place to help with this process.
+The core `flowfuse` repository has some automation in place to help with this process.
 Until that is rolled out across the other repositories, some of the backporting work
 must be done manually.
 
  - Changes must first be PR'd to the `main` branch and reviewed in the normal manner.
  - Before merging, the PR should have the label `backport` added.
- - If in `flowforge/flowforge`, when the PR is merged, an automation will run to create a new PR that backports
+ - If in `flowfuse/flowfuse`, when the PR is merged, an automation will run to create a new PR that backports
    the change to the maintenance branch. Otherwise, the backport PR must be manually created.
  - The backport PR must be reviewed and merged in the normal manner.
  - Once all of the required backport PRs are merged, raise a PR on the `maintenance` branch
@@ -178,13 +178,13 @@ one for production to upgrade to the latest version.
 ### Unmanaged Releases
 
 The Unmanaged Repositories have a simpler release process. They are released
-as needed in coordination with the CTO/Senior Enginneer.
+as needed in coordination with the CTO/Senior Engineer.
 
 All release activity should be highlighted in #dev so the team is aware.
 
 1. Check that all changes have been merged to main
 1. Update the `package.json` version number
-1. Run the `generate-changelog` script from `flowforge/admin` repository. This
+1. Run the `generate-changelog` script from `flowfuse/admin` repository. This
    generates a list of the PRs merged since the last tagged release. Note: this
    script require the `gh` cli to be installed and logged in.
    Update `CHANGELOG.md` with the output of the script.
