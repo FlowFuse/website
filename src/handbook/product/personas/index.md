@@ -18,15 +18,8 @@ Personas help us not only define our messaging and marketing delivery, but also 
 
 - [Peter Automation and Controls Engineer](#peter%2C-automation-and-controls-engineer)
   
-##### Startup Inc.
-
-- [Sahib Startup CTO](#sahib%2C-startup-cto)
-
 - [Danielle Developer](#danielle%2C-developer)
   
-##### Others
-
-- [Harry Hobbyist](#harry%2C-hobbyist)
 
 
 ## Persona Template
@@ -451,81 +444,6 @@ What problem does the persona want to solve, or which benefit does the character
     </div>
 </div>
 
-### Sahib, Startup CTO
-
-<div class="persona-card rounded-md bg-gray-900 text-white p-4 border-2 border-black flex flex-col">
-    <div class="flex gap-6 border-b-2 border-red-400 pb-3 w-full">
-        <div class="w-48 py-2 pr-6 text-center border-r-2 border-teal-400">
-            <img class="w-full rounded-md border-2 border-white m-auto" src="../../images/personas/sahib.jpg">
-            <label class="block mt-2 font-medium text-2xl">Sahib</label>
-            <label class="block">Startup CTO</label>
-        </div>
-        <div class="py-2">
-            <div class="flex flex-col">
-                <label class="font-bold">Age:</label>
-                <span class="leading-6">33</span>
-            </div>
-            <div class="flex flex-col mt-1">
-                <label class="font-bold">Occupation:</label>
-                <span class="leading-6">CTO, New Startup Inc.</span>
-            </div>
-            <div class="flex flex-col mt-1">
-                <label class="font-bold">Purchasing Role:</label>
-                <span class="leading-6">High Influence</span>
-            </div>
-            <div class="flex flex-col mt-1">
-                <label class="font-bold">Technical Skillset:</label>
-                <span class="leading-6">Computer Science (MSc)</span>
-            </div>
-            <div class="flex flex-col mt-1">
-                <label class="font-bold">Node-RED Experience:</label>
-                <span class="leading-6">Using it extensively in New Startup Inc</span>
-            </div>
-        </div>
-    </div>
-    <div class="pt-3">
-        <div class="flex flex-col">
-            <label class="font-bold">Job to be done:</label>
-            <ul>
-                <li>Lead the technology vision, strategy, innovation, and execution for the organization</li>
-                <li>Monitor technology sector changes</li>
-            </ul>
-        </div>
-        <div class="flex flex-col">
-            <label class="font-bold">Motivations:</label>
-            <ul>
-                <li>Contributing to solving real problemss</li>
-            </ul>
-        </div>
-        <div class="flex flex-col">
-            <label>Influences:</label>
-            <ul>
-                <li>Twitter</li>
-                <li>LinkedIn</li>
-                <li>Personal Network</li>
-            </ul>
-        </div>
-        <div class="flex flex-col">
-            <label>Needs & Expectations:</label>
-            <ul>
-                <li>Has a startup budget, wants to get the most value for money</li>
-                <li>Needs to deliver value rapidly and be able to react to change</li>
-                <li>Wants to rent cloud/saas services</li>
-                <li>Self-Service</li>
-                <li>Fast first response time from support, fast turn around times on issues. Direct communications</li>
-                <li>“Just needs to work” out of the box</li>
-                <li>Hands on when first using FlowFuse/Node-RED</li>
-            </ul>
-        </div>
-        <div class="flex flex-col">
-            <label>Biggest Challenges:</label>
-            <ul>
-                <li>Not being afraid of new things</li>
-                <li>Easy way to provide PLC data to other systems</li>
-            </ul>
-        </div>
-    </div>
-</div>
 
 ### Danielle, Developer
 
@@ -563,7 +481,7 @@ What problem does the persona want to solve, or which benefit does the character
         <div class="flex flex-col">
             <label class="font-bold">Job to be done:</label>
             <ul>
-                <li>Works for <a href="#sahib%2C-startup-cto">Sahib</a></li>
+                <li>Works for Corporate team.</a></li>
                 <li>Drive application and product development activities</li>
             </ul>
         </div>
@@ -604,84 +522,6 @@ What problem does the persona want to solve, or which benefit does the character
     </div>
 </div>
 
-### Harry, Hobbyist
-
-<div class="persona-card rounded-md bg-gray-900 text-white p-4 border-2 border-black flex flex-col">
-    <div class="flex gap-6 border-b-2 border-red-400 pb-3 w-full">
-        <div class="w-48 py-2 pr-6 text-center border-r-2 border-teal-400">
-            <img class="w-full rounded-md border-2 border-white m-auto" src="../../images/personas/harry.jpg">
-            <label class="block mt-2 font-medium text-2xl">Harry</label>
-            <label class="block">Hobbyist</label>
-        </div>
-        <div class="py-2">
-            <div class="flex flex-col">
-                <label class="font-bold">Age:</label>
-                <span class="leading-6">52</span>
-            </div>
-            <div class="flex flex-col mt-1">
-                <label class="font-bold">Occupation:</label>
-                <span class="leading-6">Practical Engineer (not software)</span>
-            </div>
-            <div class="flex flex-col mt-1">
-                <label class="font-bold">Purchasing Role:</label>
-                <span class="leading-6">Low Budget</span>
-            </div>
-            <div class="flex flex-col mt-1">
-                <label class="font-bold">Technical Skillset:</label>
-                <span class="leading-6">Self-Taught</span>
-            </div>
-            <div class="flex flex-col mt-1">
-                <label class="font-bold">Node-RED Experience:</label>
-                <span class="leading-6">Active member of the Node-RED Community</span>
-            </div>
-        </div>
-    </div>
-    <div class="pt-3">
-        <div class="flex flex-col">
-            <label class="font-bold">Job to be done:</label>
-            <ul>
-                <li>Publish Content about what he builds</li>
-                <li>Personal automations, lifehacks</li>
-            </ul>
-        </div>
-        <div class="flex flex-col">
-            <label class="font-bold">Motivations:</label>
-            <ul>
-                <li>Fun</li>
-                <li>Show of cool features to friends and families:”Look, I can do X from my phone now”</li>
-                <li>Just enjoys learning new things</li>
-                <li>Prefers to build over buy</li>
-            </ul>
-        </div>
-        <div class="flex flex-col">
-            <label>Influences:</label>
-            <ul>
-                <li>Maker Community - Twitter, YouTube, TikTok, Discord Communities, Reddit, Magazines, Fairs</li>
-                <li>Things that are "cool"</li>
-                <li>Personal Network</li>
-            </ul>
-        </div>
-        <div class="flex flex-col">
-            <label>Needs & Expectations:</label>
-            <ul>
-                <li>Price sensitive - this is a hobby - Node-RED is free.</li>
-                <li>“Older” hardware should remain to be integrating with the rest of their home</li>
-                <li>Expect things to work</li>
-            </ul>
-        </div>
-        <div class="flex flex-col">
-            <label>Biggest Challenges:</label>
-            <ul>
-                <li>Easy ways to set up new things</li>
-                <li>Integrations break ‘over time’. Other family members are annoyed as their lives aren’t better than before anymore, but worse.</li>
-                <li>Doesn’t know Git, or follow development methodologies</li>
-                <li>Doesn’t want to spend time maintaining things</li>
-                <li>Backups, breaking things and not having an undo</li>
-                <li>Always asked to fix other peoples technology problems</li>
-            </ul>
-        </div>
-    </div>
-</div>
 
 ## Common Use Cases
 
@@ -702,12 +542,3 @@ As Paul, Plant Manager,
 I want a professional partner with seamless enterprise integration, security, and a reliable architecture,
 so that I can use Node-RED in corporate and production environments.
 
-4. **Scale Node-RED**
-As Sahib, Startup CTO and Isabella, IIoT Project Lead,
-I want to orchestrate a fleet of Node-RED instances,
-so that their management is simplified.
-
-5. **Team Collaboration**
-As Sahib, Startup CTO and Isabella, IIoT Project Lead,
-I want to collaborate with my colleagues on Node-RED projects,
-so that we can share ideas and work together effectively.
