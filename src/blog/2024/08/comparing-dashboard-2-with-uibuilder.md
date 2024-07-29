@@ -1,5 +1,4 @@
 ---
-
 title: "Node-RED Dashboard 2.0 vs UI-Builder: A Comprehensive Comparison"
 subtitle: Understanding the Differences Between Node-RED Dashboard 2.0 and UI-Builder
 description: Compare Node-RED Dashboard 2.0 and UI-Builder. Discover their installation ease, customization, performance, and support to find the best solution for your needs. 
