@@ -6,28 +6,27 @@ Personas help us not only define our messaging and marketing delivery, but also 
 
 ##### Manufacturing Inc.
 
-- [Paul Plant Manager](#paul%2C-plant-manager)
+
+
+- [Paul Plant Manager](#paul%2C-plant-manager) <!-- omit in toc -->
+
+- [Steve Plant Engineer](#steve%2C-plant-engineer)
+
+- [Sarah Process Engineer](#sarah%2C-process-engineer)
 
 - [Isabella IIoT Project Lead](#isabella%2C-iiot-project-lead)
 
-- [Peter PLC Engineer](#peter%2C-plc-engineer)
+- [Peter Automation and Controls Engineer](#peter%2C-automation-and-controls-engineer)
   
-##### Startup Inc.
-
-- [Sahib Startup CTO](#sahib%2C-startup-cto)
-
 - [Danielle Developer](#danielle%2C-developer)
   
-##### Others
-
-- [Harry Hobbyist](#harry%2C-hobbyist)
 
 
 ## Persona Template
 
 ### Profile
 
-- **Name**: Naming your Persona is very important to increase empathy with them. Having them named is shown to make relating to their situation easier to do, and result in better prodict decisions.
+- **Name**: Naming your Persona is very important to increase empathy with them. Having them named is shown to make relating to their situation easier to do, and result in better product decisions.
 - **Picture**: What does the persona look like? Choose a realistic and believable picture.
 - **Age**: Choose a realistic age for the persona, this can also be a range if needs be, but try to keep it fairly precise.
 
@@ -101,7 +100,6 @@ What problem does the persona want to solve, or which benefit does the character
                 <li>Sets guidelines for investments and serves as the final decision-making authority</li>
                 <li>Responsible for growth of the plant</li>
                 <li>Ongoing investment planning and budget setting for new machines and new employees</li>
-                <li>Prepares meaningful KPIs together with the production planner</li>
             </ul>
         </div>
         <div class="flex flex-col">
@@ -136,6 +134,160 @@ What problem does the persona want to solve, or which benefit does the character
         </div>
     </div>
 </div>
+
+
+### Steve, Plant Engineer
+
+<div class="persona-card rounded-md bg-gray-900 text-white p-4 border-2 border-black flex flex-col">
+    <div class="flex gap-6 border-b-2 border-red-400 pb-3 w-full">
+        <div class="w-48 py-2 pr-6 text-center border-r-2 border-teal-400">
+            <img class="w-full rounded-md border-2 border-white m-auto" src="../../images/personas/steve.jpg">
+            <label class="block mt-2 font-medium text-2xl">Steve</label>
+            <label class="block">Plant Engineer</label>
+        </div>
+        <div class="py-2">
+            <div class="flex flex-col">
+                <label class="font-bold">Age:</label>
+                <span class="leading-6">46</span>
+            </div>
+            <div class="flex flex-col mt-1">
+                <label class="font-bold">Occupation:</label>
+                <span class="leading-6">Plant Engineer, Manufacturing Inc.</span>
+            </div>
+            <div class="flex flex-col mt-1">
+                <label class="font-bold">Purchasing Role:</label>
+                <span class="leading-6">Decision Maker. >$15k. High Influence</span>
+            </div>
+            <div class="flex flex-col mt-1">
+                <label class="font-bold">Technical Skillset:</label>
+                <span class="leading-6">Mechanical Engineering, MEng</span>
+            </div>
+            <div class="flex flex-col mt-1">
+                <label class="font-bold">Node-RED Experience:</label>
+                <span class="leading-6">Knows of it</span>
+            </div>
+        </div>
+    </div>
+    <div class="pt-3">
+        <div class="flex flex-col">
+            <label class="font-bold">Job to be done:</label>
+            <ul>
+                <li>Responsible for the design, production, and maintenance of a line or facility</li>
+                <li>Sets guidelines for mechanical design of a facility</li>
+                <li>Responsible for identifying opportunities for increased production</li>
+                <li>Ongoing investment planning and budget setting for new machines </li>
+                <li>Prepares meaningful KPIs together with the production planner</li>
+            </ul>
+        </div>
+        <div class="flex flex-col">
+            <label class="font-bold">Motivations:</label>
+            <ul>
+                <li>Wants the factory to run smoothly</li>
+                <li>Downtime Reduction</li>
+                <li>Data & facts</li>
+            </ul>
+        </div>
+        <div class="flex flex-col">
+            <label>Influences:</label>
+            <ul>
+                <li>Conferences</li>
+                <li>Network</li>
+            </ul>
+        </div>
+        <div class="flex flex-col">
+            <label>Needs & Expectations:</label>
+            <ul>
+                <li>Easy access to reporting</li>
+                <li>Transparency</li>
+            </ul>
+        </div>
+        <div class="flex flex-col">
+            <label>Biggest Challenges:</label>
+            <ul>
+                <li>Predictive Maintenance</li>
+                <li>Downtime Reporting</li>
+                <li>Process Visibility</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+### Sarah, Process Engineer
+
+<div class="persona-card rounded-md bg-gray-900 text-white p-4 border-2 border-black flex flex-col">
+    <div class="flex gap-6 border-b-2 border-red-400 pb-3 w-full">
+        <div class="w-48 py-2 pr-6 text-center border-r-2 border-teal-400">
+            <img class="w-full rounded-md border-2 border-white m-auto" src="../../images/personas/sarah.jpg">
+            <label class="block mt-2 font-medium text-2xl">Sarah</label>
+            <label class="block">Process Engineer</label>
+        </div>
+        <div class="py-2">
+            <div class="flex flex-col">
+                <label class="font-bold">Age:</label>
+                <span class="leading-6">28</span>
+            </div>
+            <div class="flex flex-col mt-1">
+                <label class="font-bold">Occupation:</label>
+                <span class="leading-6">Process Engineer, Manufacturing Inc.</span>
+            </div>
+            <div class="flex flex-col mt-1">
+                <label class="font-bold">Purchasing Role:</label>
+                <span class="leading-6">Influencer, user</span>
+            </div>
+            <div class="flex flex-col mt-1">
+                <label class="font-bold">Technical Skillset:</label>
+                <span class="leading-6">Industrial Engineering</span>
+            </div>
+            <div class="flex flex-col mt-1">
+                <label class="font-bold">Node-RED Experience:</label>
+                <span class="leading-6">Knows of it</span>
+            </div>
+        </div>
+    </div>
+    <div class="pt-3">
+        <div class="flex flex-col">
+            <label class="font-bold">Job to be done:</label>
+            <ul>
+                <li>Responsible for the design</li>
+                <li>Identify process flow bottle necks</li>
+                <li>Report on productivity and efficiency of a production line</li>
+                <li>Identify quality problems and is the quality engineer if one isn't present</li>
+                <li>Identifies meaningful KPIs and creates them</li>
+            </ul>
+        </div>
+        <div class="flex flex-col">
+            <label class="font-bold">Motivations:</label>
+            <ul>
+                <li>Wants the factory to run smoothly</li>
+                <li>Quality production</li>
+                <li>Data & facts</li>
+            </ul>
+        </div>
+        <div class="flex flex-col">
+            <label>Influences:</label>
+            <ul>
+                <li>Industry specific Conferences</li>
+                <li>Peers</li>
+                <li>Automation and Controls Engineers</li>
+            </ul>
+        </div>
+        <div class="flex flex-col">
+            <label>Needs & Expectations:</label>
+            <ul>
+                <li>Easy access to reporting</li>
+                <li>Transparency</li>
+            </ul>
+        </div>
+        <div class="flex flex-col">
+            <label>Biggest Challenges:</label>
+            <ul>
+                <li>Data Access</li>
+                <li>Real Time Analytics</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
 
 ### Isabella, IIoT Project Lead
 
@@ -214,14 +366,14 @@ What problem does the persona want to solve, or which benefit does the character
     </div>
 </div>
 
-### Peter, PLC Engineer
+### Peter, Automation and Controls Engineer
 
 <div class="persona-card rounded-md bg-gray-900 text-white p-4 border-2 border-black flex flex-col">
     <div class="flex gap-6 border-b-2 border-red-400 pb-3 w-full">
         <div class="w-48 py-2 pr-6 text-center border-r-2 border-teal-400">
             <img class="w-full rounded-md border-2 border-white m-auto" src="../../images/personas/peter.jpg">
             <label class="block mt-2 font-medium text-2xl">Peter</label>
-            <label class="block">PLC Engineer</label>
+            <label class="block">Automation and Controls Engineer</label>
         </div>
         <div class="py-2">
             <div class="flex flex-col">
@@ -230,19 +382,19 @@ What problem does the persona want to solve, or which benefit does the character
             </div>
             <div class="flex flex-col mt-1">
                 <label class="font-bold">Occupation:</label>
-                <span class="leading-6">PLC Engineering Team Lead, Manufacturing Inc.</span>
+                <span class="leading-6">Automation and Controls Engineering Team Lead, Manufacturing Inc.</span>
             </div>
             <div class="flex flex-col mt-1">
                 <label class="font-bold">Purchasing Role:</label>
-                <span class="leading-6">$7k, Medium Influence</span>
+                <span class="leading-6">$15k, Medium Influence</span>
             </div>
             <div class="flex flex-col mt-1">
                 <label class="font-bold">Technical Skillset:</label>
-                <span class="leading-6">Mechanical Engineering (BEng)</span>
+                <span class="leading-6">Electrical Engineering (BEng)</span>
             </div>
             <div class="flex flex-col mt-1">
                 <label class="font-bold">Node-RED Experience:</label>
-                <span class="leading-6">Never heard of it</span>
+                <span class="leading-6">Has used it for small things</span>
             </div>
         </div>
     </div>
@@ -250,24 +402,27 @@ What problem does the persona want to solve, or which benefit does the character
         <div class="flex flex-col">
             <label class="font-bold">Job to be done:</label>
             <ul>
-                <li>Works alongside <a href="#isabella%2C-iiot-project-lead">Isabella</a></li>
+                <li>Works alongside <a href="#sarah%2C-process-engineer">Sarah</a></li>
                 <li>Management of a team responsible for planning, design, and programming of PLCs</li>
-                <li>Conception, specification, and programming of PLC software and hardware</li>
+                <li>Conception, specification, and programming of Controls Systems</li>
                 <li>Connection of the control systems to other systems and implementation of process adjustments</li>
                 <li>Management of the commissioning of machines and production lines and controlling of compliance with software standards in the application</li>
                 <li>Central contact for control technology</li>
+                <li>Extract data from control systems and make available to enterprise</li>
             </ul>
         </div>
         <div class="flex flex-col">
             <label class="font-bold">Motivations:</label>
             <ul>
-                <li>Having a satisfied team and highly motivated employees</li>
-                <li>Establishing "IIoT" (instruction from the boss)</li>
+                <li>Visibility into the production</li>
+                <li>Enabling team member to solve own problems</li>
             </ul>
         </div>
         <div class="flex flex-col">
             <label>Influences:</label>
             <ul>
+                <li>System Integrators</li>
+                <li>PLC OEMs (Siemens, Rockwell, ABB, Beckhoff)</li>
                 <li>LinkedIn</li>
                 <li>Trainings</li>
             </ul>
@@ -281,88 +436,14 @@ What problem does the persona want to solve, or which benefit does the character
         <div class="flex flex-col">
             <label>Biggest Challenges:</label>
             <ul>
-                <li>Not being afraid of new things</li>
-                <li>Easy way to provide PLC data to other systems</li>
+                <li>Budget</li>
+                <li>Time</li>
+                <li>Identifying problems gives them work</li>
             </ul>
         </div>
     </div>
 </div>
 
-### Sahib, Startup CTO
-
-<div class="persona-card rounded-md bg-gray-900 text-white p-4 border-2 border-black flex flex-col">
-    <div class="flex gap-6 border-b-2 border-red-400 pb-3 w-full">
-        <div class="w-48 py-2 pr-6 text-center border-r-2 border-teal-400">
-            <img class="w-full rounded-md border-2 border-white m-auto" src="../../images/personas/sahib.jpg">
-            <label class="block mt-2 font-medium text-2xl">Sahib</label>
-            <label class="block">Startup CTO</label>
-        </div>
-        <div class="py-2">
-            <div class="flex flex-col">
-                <label class="font-bold">Age:</label>
-                <span class="leading-6">33</span>
-            </div>
-            <div class="flex flex-col mt-1">
-                <label class="font-bold">Occupation:</label>
-                <span class="leading-6">CTO, New Startup Inc.</span>
-            </div>
-            <div class="flex flex-col mt-1">
-                <label class="font-bold">Purchasing Role:</label>
-                <span class="leading-6">High Influence</span>
-            </div>
-            <div class="flex flex-col mt-1">
-                <label class="font-bold">Technical Skillset:</label>
-                <span class="leading-6">Computer Science (MSc)</span>
-            </div>
-            <div class="flex flex-col mt-1">
-                <label class="font-bold">Node-RED Experience:</label>
-                <span class="leading-6">Using it extensively in New Startup Inc</span>
-            </div>
-        </div>
-    </div>
-    <div class="pt-3">
-        <div class="flex flex-col">
-            <label class="font-bold">Job to be done:</label>
-            <ul>
-                <li>Lead the technology vision, strategy, innovation, and execution for the organization</li>
-                <li>Monitor technology sector changes</li>
-            </ul>
-        </div>
-        <div class="flex flex-col">
-            <label class="font-bold">Motivations:</label>
-            <ul>
-                <li>Contributing to solving real problemss</li>
-            </ul>
-        </div>
-        <div class="flex flex-col">
-            <label>Influences:</label>
-            <ul>
-                <li>Twitter</li>
-                <li>LinkedIn</li>
-                <li>Personal Network</li>
-            </ul>
-        </div>
-        <div class="flex flex-col">
-            <label>Needs & Expectations:</label>
-            <ul>
-                <li>Has a startup budget, wants to get the most value for money</li>
-                <li>Needs to deliver value rapidly and be able to react to change</li>
-                <li>Wants to rent cloud/saas services</li>
-                <li>Self-Service</li>
-                <li>Fast first response time from support, fast turn around times on issues. Direct communications</li>
-                <li>“Just needs to work” out of the box</li>
-                <li>Hands on when first using FlowFuse/Node-RED</li>
-            </ul>
-        </div>
-        <div class="flex flex-col">
-            <label>Biggest Challenges:</label>
-            <ul>
-                <li>Not being afraid of new things</li>
-                <li>Easy way to provide PLC data to other systems</li>
-            </ul>
-        </div>
-    </div>
-</div>
 
 ### Danielle, Developer
 
@@ -400,7 +481,7 @@ What problem does the persona want to solve, or which benefit does the character
         <div class="flex flex-col">
             <label class="font-bold">Job to be done:</label>
             <ul>
-                <li>Works for <a href="#sahib%2C-startup-cto">Sahib</a></li>
+                <li>Works for Corporate team.</a></li>
                 <li>Drive application and product development activities</li>
             </ul>
         </div>
@@ -441,96 +522,18 @@ What problem does the persona want to solve, or which benefit does the character
     </div>
 </div>
 
-### Harry, Hobbyist
-
-<div class="persona-card rounded-md bg-gray-900 text-white p-4 border-2 border-black flex flex-col">
-    <div class="flex gap-6 border-b-2 border-red-400 pb-3 w-full">
-        <div class="w-48 py-2 pr-6 text-center border-r-2 border-teal-400">
-            <img class="w-full rounded-md border-2 border-white m-auto" src="../../images/personas/harry.jpg">
-            <label class="block mt-2 font-medium text-2xl">Harry</label>
-            <label class="block">Hobbyist</label>
-        </div>
-        <div class="py-2">
-            <div class="flex flex-col">
-                <label class="font-bold">Age:</label>
-                <span class="leading-6">52</span>
-            </div>
-            <div class="flex flex-col mt-1">
-                <label class="font-bold">Occupation:</label>
-                <span class="leading-6">Practical Engineer (not software)</span>
-            </div>
-            <div class="flex flex-col mt-1">
-                <label class="font-bold">Purchasing Role:</label>
-                <span class="leading-6">Low Budget</span>
-            </div>
-            <div class="flex flex-col mt-1">
-                <label class="font-bold">Technical Skillset:</label>
-                <span class="leading-6">Self-Taught</span>
-            </div>
-            <div class="flex flex-col mt-1">
-                <label class="font-bold">Node-RED Experience:</label>
-                <span class="leading-6">Active member of the Node-RED Community</span>
-            </div>
-        </div>
-    </div>
-    <div class="pt-3">
-        <div class="flex flex-col">
-            <label class="font-bold">Job to be done:</label>
-            <ul>
-                <li>Publish Content about what he builds</li>
-                <li>Personal automations, lifehacks</li>
-            </ul>
-        </div>
-        <div class="flex flex-col">
-            <label class="font-bold">Motivations:</label>
-            <ul>
-                <li>Fun</li>
-                <li>Show of cool features to friends and families:”Look, I can do X from my phone now”</li>
-                <li>Just enjoys learning new things</li>
-                <li>Prefers to build over buy</li>
-            </ul>
-        </div>
-        <div class="flex flex-col">
-            <label>Influences:</label>
-            <ul>
-                <li>Maker Community - Twitter, YouTube, TikTok, Discord Communities, Reddit, Magazines, Fairs</li>
-                <li>Things that are "cool"</li>
-                <li>Personal Network</li>
-            </ul>
-        </div>
-        <div class="flex flex-col">
-            <label>Needs & Expectations:</label>
-            <ul>
-                <li>Price sensitive - this is a hobby - Node-RED is free.</li>
-                <li>“Older” hardware should remain to be integrating with the rest of their home</li>
-                <li>Expect things to work</li>
-            </ul>
-        </div>
-        <div class="flex flex-col">
-            <label>Biggest Challenges:</label>
-            <ul>
-                <li>Easy ways to set up new things</li>
-                <li>Integrations break ‘over time’. Other family members are annoyed as their lives aren’t better than before anymore, but worse.</li>
-                <li>Doesn’t know Git, or follow development methodolgies</li>
-                <li>Doesn’t want to spend time maintaining things</li>
-                <li>Backups, breaking things and not having an undo</li>
-                <li>Always asked to fix other peoples technology problems</li>
-            </ul>
-        </div>
-    </div>
-</div>
 
 ## Common Use Cases
 
 Based on the Personas, the following section describes the most relevant Use Cases that we identified in exchange with our customers. These Use Cases align with the [Product Strategy](../strategy.md).
 
 1. **Data transformation**
-As Peter, PLC Engineer and Danielle, Developer,
+As Peter, Automation and Controls Engineer and Danielle, Developer,
 I want to connect, collect, and store data from several sources,
 so that I can analyze my data further and ensure it is accessible in a unified manner.
 
 2. **Generate actionable insights**
-As Peter, PLC Engineer and Danielle, Developer,
+As Peter, Automation and Controls Engineer and Danielle, Developer,
 I want to visualize and analyze my data,
 so that I can generate actionable insights from my data.
 
@@ -539,12 +542,3 @@ As Paul, Plant Manager,
 I want a professional partner with seamless enterprise integration, security, and a reliable architecture,
 so that I can use Node-RED in corporate and production environments.
 
-4. **Scale Node-RED**
-As Sahib, Startup CTO and Isabella, IIoT Project Lead,
-I want to orchestrate a fleet of Node-RED instances,
-so that their management is simplified.
-
-5. **Team Collaboration**
-As Sahib, Startup CTO and Isabella, IIoT Project Lead,
-I want to collaborate with my colleagues on Node-RED projects,
-so that we can share ideas and work together effectively.
