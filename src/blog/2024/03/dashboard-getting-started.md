@@ -11,6 +11,8 @@ tags:
     - community
     - changelog
     - dashboard
+    - nodered dashboard beginners guide
+    - nodered dashboard basics
 ---
 
 With our latest release of Node-RED Dashboard 2.0, we've made some big improvements to the onboarding experience.
