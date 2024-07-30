@@ -1,5 +1,5 @@
 ---
-title: Customise theming in your Node-RED Dashboard 2.0
+title: Customise theming in your FlowFuse Dashboard
 subtitle: Exploring Enhanced Customization Features
 description: Discover the latest enhancements in Node-RED Dashboard 2.0, including customizable headers, themes, and layout modifications to personalize your dashboard experience..
 date: 2024-07-24
@@ -10,33 +10,36 @@ tags:
    - dashboard
 ---
 
-The latest release of Node-RED Dashboard 2.0 has taken customization to the next level. Previously, users enjoyed the flexibility of tweaking navigation sidebars, themes, and group and page padding. However, the header section remained static and non-customizable—until now. With the new update, you can fully personalize the header, adding unique elements to enhance your dashboard experience. In this article, we'll delve into these exciting new features, including theme adjustments, custom styling, and layout modifications, that empower you to tailor your Node-RED Dashboard like never before.
+A recent release of FlowFuse Dashboard (Dashboard 2.0) has taken customization to the next level.
+
+Previously, users enjoyed the flexibility of tweaking navigation sidebars, themes, and group and page padding. With the new update, you can fully personalize the header too, adding unique elements to enhance your dashboard experience and customize your application to your own branding.
+
+In this article, we'll delve into these exciting new features, including theme adjustments, custom styling, and layout modifications, that empower you to tailor your Node-RED Dashboard like never before.
 
 <!--more-->
 
 ## Adding Elements in the Header
 
-To add elements to the header, we utilize Vue's Teleport feature with ui-template widget, which allows elements to be seamlessly rendered in specific areas of the dashboard using CSS selectors such as IDs or classes. This method simplifies the process compared to manually positioning items with CSS, which can be complex, time-consuming, and potentially disruptive to other dashboard elements.
+To add elements to the header, we can use [Teleports](https://dashboard.flowfuse.com/nodes/widgets/ui-template.html#teleports) within the `ui-template` node. This allows elements to be seamlessly rendered in specific areas of the dashboard. This method simplifies the process compared to manually positioning items with CSS, which can be complex, time-consuming, and potentially disruptive to other dashboard elements.
 
 ### Left Side of the Header
 
-To render elements on the left side of the header, you can utilize the div element having the `#app-bar-title` ID, in which our page name is displayed.
+To render content on the left side of the header, we can teleport content into the `#app-bar-title` element, where our page name is displayed.
 
 ![Left Side Area](./images/left-side-area.png){data-zoomable}
 
-The `#app-bar-title` currently spans the full width of the header. When adding elements, they will occupy this area and align from left to right. However, if you add multiple elements in succession (using the default `display: flex`), they may extend beyond the width of the page view.
 
 #### Example: Adding Buttons
 
-1. Drag the ui-template widget onto the canvas.
-2. Double-click on it and select the scope to either `ui-scope` or `page-scope`. Selecting `ui-scope` will eliminate the need for multiple template widgets for the same purpose. For example, where you want the same buttons on all pages of your dashboard.
+1. Drag a `ui-template` node onto the Node-RED Editor canvas.
+2. Double-click on it and select the scope to either `ui-scope` or `page-scope`. Selecting `ui-scope` will render this content on _all_ pages. `page-scope` will just render to a specified page. 
 3. Choose the page on which you want to render the buttons if you selected `page-scope`, or choose correct ui if `ui-scope` is selected.
-4. Paste the following Vue snippet into the template widget. In this snippet, note how we specify the "to" attribute targeting the `#app-bar-actions` ID in the teleport tag:
+4. Paste the following Vue snippet into the template widget. In this snippet, note how we specify the "to" attribute targeting the `#app-bar-title` ID in the teleport tag:
 
 ```js
 <template>
     <!-- Teleport the button to the #app-bar-actions area when mounted -->
-    <Teleport v-if="mounted" to="#app-bar-actions">
+    <Teleport v-if="mounted" to="#app-bar-title">
         <v-btn>Button 1</v-btn>
         <v-btn>Button 2</v-btn>
         <v-btn>Button 3</v-btn>
@@ -66,7 +69,7 @@ The `#app-bar-title` currently spans the full width of the header. When adding e
 
 If you want to add your brand's logo, you can replace the element inside <teleport> with an <img> tag. You can do this in the same ui-template widget or in a different ui-template widget:
 
-1. Drag the ui-template widget onto the canvas.
+1. Drag the `ui-template` node onto the canvas.
 2. Select the correct scope for that widget to render.
 3. Select the correct page or UI in which you want to render the element.
 3. Paste the same Vue snippet given in the above section into the `ui-template` widget and replace the code inside <teleport> with the following element:
@@ -97,7 +100,6 @@ To render elements on the right side of the header, you can use the empty div el
 
 ![Right Side Area](./images/right-side-area.png){data-zoomable}
 
-The `#app-bar-actions` currently has a width of 0px. As elements are added, this container will dynamically adjust its width based on the width of its children. Items will align from right to left. Similar to the left side, adding many elements in succession (using `display: flex`) may cause them to extend beyond the width of the page view.
 
 #### Example: Adding logged in user profile
 
@@ -160,11 +162,11 @@ For detailed guide on this section, refer to the guide on [Displaying logged in 
 
 ## Styling Header
 
-One of the significant customization features we've added in the latest release is the ability to style the header in different ways.
+One of the significant customization features we've added recently is the ability to style the header in different ways.
 
 To style the header:
 
-1. 1. Go to the Dashboard 2.0 sidebar
+1. Go to the Dashboard 2.0 sidebar
 2. Click on to the "Edit settings" option located at the top of the Dashboard 2.0 sidebar.
 
 ![Left Side Area](./images/edit-setting-button.png){data-zoomable}
