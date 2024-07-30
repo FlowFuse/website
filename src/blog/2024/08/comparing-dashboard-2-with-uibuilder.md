@@ -97,11 +97,11 @@ UI-Builder does not provide built-in charting options. However, you can add char
 
 ### Node-RED Dashboard 2.0
 
-Node-RED Dashboard 2.0 uses WebSockets for communication with Node-RED, enabling real-time and faster interactions. Most widgets uses the standard `msg.payload` for communication that makes it super easy to send the data from Node-RED client and vice-versa.
+Node-RED Dashboard 2.0 uses WebSockets for communication with Node-RED, enabling real-time and faster interactions. Most widgets uses the standard `msg.payload` for communication that makes it super easy to send the data from Node-RED to client and vice-versa.
 
 ### Ui-builder 
 
-The ui-builder also employs WebSockets for communication, providing real-time and fast interactions. However, it utilizes different types of msg properties, which can be complex for users and might increase the number of nodes unnecessarily for changing the property names.
+The ui-builder also employs WebSockets for communication, providing real-time and fast interactions. However, it utilizes different msg properties, which can be complex for users and might increase the number of nodes unnecessarily for changing the property names.
 
 ## How many Web Layout Does It Support?
 
