@@ -452,6 +452,28 @@ h4:hover .header-anchor {
     transform: translate(0,0px); 
 }
 
+.story .ff-tooltip:after {
+    z-index: 1000;
+}
+
+.story .ff-tooltip:after {
+    transform: translate(-50%, 100%);
+    top: auto;
+    bottom: -10px;
+}
+
+.story .ff-tooltip:before {
+    top: auto;
+    bottom: -10px;
+    border-color: rgba(0, 0, 0, 0);
+    border-bottom-color: #000;
+    transform: translate(0,0px);
+}
+
+.story .ff-tooltip:hover:after {
+    min-width: 80px;
+}
+
 .ff-image-contain img,
 .ff-image-contain picture {
     object-fit: contain;
@@ -512,7 +534,7 @@ h4:hover .header-anchor {
 */
 @layer components {
     .ff-website .ff-header {
-        @apply bg-white w-full px-6 py-4 sm:py-6 md:py-0 top-0 z-10 relative;
+        @apply bg-white w-full px-6 py-4 sm:py-6 md:py-0 top-0 z-50 relative md:sticky;
     }
 
     .ff-website header .ff-wordmark path,
@@ -525,7 +547,12 @@ h4:hover .header-anchor {
     }
 
     .ff-website header nav .ff-nav-chevron {
-        @apply block md:hidden;
+        @apply block md:hidden transition-transform;
+    }
+
+    .ff-website header .ff-nav-dropdown:hover .ff-nav-chevron,
+    .ff-website header .ff-nav-dropdown:focus-within .ff-nav-chevron {
+        @apply transform rotate-180;
     }
 
     .ff-website header #nav-content {
@@ -590,6 +617,10 @@ h4:hover .header-anchor {
         border-color: theme(colors.gray.200);
         @apply py-3 sm:py-4 px-4 text-base sm:border-b-0 text-center;
     }
+    .ff-website header ul.narrow span {
+        border-color: theme(colors.gray.200);
+        @apply sm:pt-2 sm:pb-4;
+    }
 
     .ff-website header ul a.ff-btn {
         @apply text-sm font-bold;
@@ -598,6 +629,10 @@ h4:hover .header-anchor {
     .ff-website header a:hover .ff-icon--down path,
     .ff-website header ul a:hover, .ff-website header ul span:hover {
         @apply text-indigo-700 md:text-indigo-700;
+    }
+
+    .ff-website header ul li.title span:hover {
+        @apply text-current;
     }
 
     .ff-website header a > span {
@@ -647,17 +682,28 @@ h4:hover .header-anchor {
     /* nested list */
     .ff-website header .ff-nav-dropdown:hover > ul:not(.ff-nav-nested-cols),
     .ff-website header .ff-nav-dropdown:focus-within > ul:not(.ff-nav-nested-cols) {
-        max-height: 400px;
+        max-height: none;
         @apply sm:py-2 sm:overflow-visible text-gray-700;
+    }
+
+    .ff-website header .ff-nav-dropdown:hover > ul.narrow,
+    .ff-website header .ff-nav-dropdown:focus-within > ul.narrow {
+        @apply sm:pb-4;
     }
 
     .ff-website header .ff-nav-dropdown ul li {
         @apply text-left sm:bg-gray-50 sm:text-right font-light; /* bg each list item */
     }
-
+    .ff-website header .ff-nav-dropdown ul li.title {
+        @apply font-normal;
+    }
     .ff-website header .ff-nav-dropdown >ul li a {
         cursor: pointer;
         @apply text-left pl-6 md:text-right md:pr-6 text-gray-700;
+    }
+
+    .ff-website header .ff-nav-dropdown ul.sub-menu a {
+        @apply py-3 pl-3;
     }
 
     .ff-website header .ff-nav-dropdown >ul li a .ff-icon--solid {

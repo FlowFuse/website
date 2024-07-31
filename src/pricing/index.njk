@@ -24,14 +24,15 @@ meta:
           answer: >
             To allow business to standardize on FlowFuse and Node-RED for all their data acquisition, visualization, and interaction it's possible to purchase a flat-fee license to deploy an unlimited amount of Node-RED instances through FlowFuse.
 hubspot:
-    script: "hubspot/hs-form.njk"
+    cloud:
+        formId: d43ab79b-d075-4b63-ba5e-bf971ca0b86e
+        cta: "cta-contact-us"
     selfHosted:
         formId: 41e858e1-6756-45be-9082-3980237fa229
         cta: "cta-request-trial-license"
     dedicated:
         formId: 5a9939ee-899a-46b7-ab16-6376e310381d
         cta: "cta-contact-us-for-pricing"
-        id: 
     reference: "pricing"
 ---
 
@@ -85,7 +86,7 @@ hubspot:
                                     </ul>
                                 </div>
                             </div>
-                            <div class="mt-9 md:text-left items-left w-full mb-11 md:mt-11 md:mb-0 flex flex-row">
+                            <div class="mt-9 md:text-left items-left w-full mb-11 md:mt-20 md:mb-0 flex flex-row">
                                 <h2 class="self-end">$15</h2>
                                 <div class="pl-1 text-sm leading-4 text-left self-end pb-1">
                                     <note class="note ">/month</note>
@@ -127,7 +128,7 @@ hubspot:
                                     <li id="team-monthly-value" class="value">5</li>
                                 </ul>
                                 <div class="range contentMonthly">
-                                    <input type="range" min="5" max="355" value="5" id="team-monthly-slider" class="transition duration-1000" step="5" />
+                                    <input type="range" min="5" max="105" value="5" id="team-monthly-slider" class="transition duration-1000" step="5" />
                                 </div>
                                 <!-- Price -->
                                 <div id="team-m-original-div" class="mt-3 mb-6 flex flex-row flex-wrap w-full gap-x-2">
@@ -147,30 +148,23 @@ hubspot:
                                         </div>
                                     </div>
                                 </div>
-                                <div id="team-m-alternate-div"
-                                    class="hidden mt-3 mb-6 flex flex-row flex-wrap w-full gap-x-2">
+                                <div id="team-m-alternate-div" class="hidden mt-3 mb-6 flex flex-row flex-wrap w-full gap-x-2">
                                     <div class="text-left flex flex-row">
-                                        <div class="w-16 mr-1">
+                                        <div class="text-left">
                                             <h2 class="self-end">
-                                                <span id="team-monthly-price-int"
-                                                    class="align-top text-6xl leading-9">∞</span>
+                                                <span class="align-top">Let's talk</span>
                                             </h2>
-                                        </div>
-                                        <div class="pl-2 text-sm leading-4 text-left self-end pb-1">
-                                            <note id="team-monthly-price-note" class="note  text-xs">
-                                                instances <br>Billed monthly at <span class="font-semibold">$3,200.00</span><br \></note>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                             <a class="md:self-end ff-btn ff-btn--primary uppercase align-baseline w-full"
-                                href="/book-demo/"
-                                onclick="capture('cta-book-demo', {'position': 'primary'}, {'plan': 'team'})">BOOK A
-                                DEMO</a>
+                                href='#contact-us'
+                                onclick="scrollToAnchor(event, 'contact-us'), capture('cta-contact-us', {'position': 'primary'}, {'plan': 'team'})">Contact Us</a>
                         </div>
                     </div>
                     <!-- Enterprise -->
-                    {% macro enterprise(show_sla=true, show_slider=true) %}
+                    {% macro enterprise(show_sla=true, cloud=true) %}
                     <div class="pricing-tile md:h-full">
                         <div class="pricing-tile-background pb-6 md:grid flex-col">
                             <div>
@@ -196,54 +190,11 @@ hubspot:
                                     </ul>
                                 </div>
                             </div>
-                            {% if show_slider %}
-                            <div data-nosnippet>
-                                <!-- Slider -->
-                                <ul class="font-extralight text-sm leading-7 mt-6 w-full flex flex-row justify-between text-gray-600">
-                                    <li>Instances</li>
-                                    <li id="enterprise-monthly-value" class="value">10</li>
-                                </ul>
-                                <div class="range contentMonthly">
-                                    <input type="range" min="10" max="510" value="10" id="enterprise-monthly-slider"
-                                        class="transition duration-1000" step="10" />
-                                </div>
-                                <!-- Price -->
-                                <div id="enterprise-m-original-div"
-                                    class="mt-3 mb-6 flex flex-row flex-wrap w-full gap-x-2">
-                                    <div class="text-left flex flex-row">
-                                        <div class="w-16 mr-1">
-                                            <h2 class="self-end">
-                                                <span class="align-top text-sm leading-7">$</span><span
-                                                    id="enterprise-monthly-price-int" class="align-top">20</span><span
-                                                    id="enterprise-monthly-price-dec"
-                                                    class="align-top text-sm leading-7">83</span>
-                                            </h2>
-                                        </div>
-                                        <div class="pl-2 text-sm leading-4 text-left self-end pb-1">
-                                            <note id="enterprise-monthly-price-note" class="note text-xs">
-                                            </note>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div id="enterprise-m-alternate-div"
-                                    class="hidden mt-3 mb-6 flex flex-row flex-wrap w-full gap-x-2">
-                                    <div class="text-left">
-                                        <h2 class="self-end">
-                                            <span class="align-top">Let's talk</span>
-                                        </h2>
-                                    </div>
-                                </div>
-                            </div>
-                            <a class="md:self-end ff-btn ff-btn--primary uppercase align-baseline w-full"
-                                href='/pricing/request-quote/'
-                                onclick="capture('cta-request-quote', {'position': 'primary'}, {'plan': 'enterprise'})">Request a Quote</a>
-                            {% else %}
-                            <div class="mt-9 md:text-left items-left w-full mb-11 md:mt-11 md:mb-3 flex flex-row">
+                            <div class="mt-9 md:text-left items-left w-full mb-11 {% if cloud %}md:mt-20 {% endif %}md:mb-3 flex flex-row">
                                 <h2 class="self-end">Let's Talk</h2>
                             </div>
                             <a class="md:self-end ff-btn ff-btn--primary uppercase align-baseline w-full"
                             href="/book-demo/" onclick="capture('cta-lets-talk', {'position': 'primary'}, {'plan': 'sh-enterprise'})">book a demo</a>
-                            {% endif %}
                         </div>
                     </div>
                     {% endmacro %}
@@ -251,7 +202,7 @@ hubspot:
                 </div>
             </div>
             <!-- Self-hosted -->
-            <div class="contentSelfHosted hide m-auto transition duration-1000 md:min-h-[547px]">
+            <div class="contentSelfHosted hide m-auto transition duration-1000 md:min-h-[500px]">
                 <div class="pricing-tiles flex flex-col md:grid md:flex-row md:max-w-screen-sm mt-4 md:mt-0">
                     <!-- Starter -->
                     <div class="pricing-tile md:h-full">
@@ -273,7 +224,7 @@ hubspot:
                                     </ul>
                                 </div>
                             </div>
-                            <div class="mt-9 md:text-left items-left w-full mb-11 md:mt-11 md:mb-3 flex flex-row">
+                            <div class="mt-9 md:text-left items-left w-full mb-11 md:mb-3 flex flex-row">
                                 <h2 class="self-end">Free</h2>
                             </div>
                             <a class="md:self-end ff-btn ff-btn--primary uppercase align-baseline w-full"
@@ -287,7 +238,7 @@ hubspot:
                 </div>
             </div>
             <!-- Dedicated -->
-            <div class="contentDedicated hide m-auto transition duration-1000 md:min-h-[547px] w-full mb-12">
+            <div class="contentDedicated hide m-auto transition duration-1000 md:min-h-[500px] w-full mb-12">
                 <div class="pricing-tiles flex flex-col md:grid md:flex-row md:max-w-screen-lg mt-4 md:mt-0">
                     <!-- Card -->
                     <div class="pricing-tile md:h-full">
@@ -349,7 +300,7 @@ hubspot:
                     <h2><span class="text-indigo-600">Feature</span> Comparison</h2>
                 </div>
                 <!-- Feature List -->
-                <div class="sticky">{{ featuresHtml | safe }}
+                <div>{{ featuresHtml | safe }}
                     {% set hosting = "cloud" %}
                     <div class="contentCloud transition duration-1000 max-w-full overflow-x-scroll sm:overflow-x-visible h-[60vh] sm:h-full">
                         {% include "feature_lists/features-table-base.njk" %}
@@ -375,6 +326,22 @@ hubspot:
     </div>
 </div>
 <!-- Form section -->
+<!-- Contact us -->
+<div id="contact-us" class="contentCloud hide w-full bg-gray-50 pt-0">
+    <div class="w-full bg-gray-50 pb-12">
+        <div class="container max-w-5xl m-auto grid grid-cols-1 md:grid-cols-2 px-6 pt-16 gap-x-16 gap-y-6">
+            <div>
+                <h3 class="w-full text-center md:text-left">
+                    Contact Us
+                </h3>
+                <p>
+                    To learn more about our plans, discuss your specific needs, or get advice on the best fit for your project, please fill out the form and we will get back to you as soon as possible.
+                </p>
+            </div>
+            {% hubspotForm hubspot.cloud.formId, hubspot.cloud.cta, hubspot.reference, 'contactUsForm' %}
+        </div>
+    </div>
+</div>
 <!-- Trial License -->
 <div id="request-trial-license" class="contentSelfHosted hide w-full bg-gray-50 pt-0">
     <div class="w-full bg-gray-50 pb-12">
@@ -384,16 +351,10 @@ hubspot:
                     Request a trial license
                 </h3>
                 <p>
-                    Unlock the complete potential of FlowFuse with a complimentary 30-day Enterprise license. This trial
-                    gives you the chance to explore all the features and functionalities of FlowFuse in your own
-                    environment. To start your trial, just fill out the form.
+                    Unlock the complete potential of FlowFuse with a complimentary 30-day Enterprise license. This trial gives you the chance to explore all the features and functionalities of FlowFuse in your own environment. To start your trial, simply fill out the form. Our sales team will reach out to you to discuss your needs and provide the license.
                 </p>
             </div>
-            {% if hubspot.selfHosted %}
-            {% set formId = hubspot.selfHosted.formId %}
-            {% set cta = hubspot.selfHosted.cta %}
-            {% include hubspot.script %}
-            {% endif %}
+            {% hubspotForm hubspot.selfHosted.formId, hubspot.selfHosted.cta, hubspot.reference, 'trialLicenseForm' %}
         </div>
     </div>
 </div>
@@ -403,31 +364,13 @@ hubspot:
         <h2 class="w-full text-center"><span class="text-indigo-600">Contact us</span> for pricing
         </h2>
         <div>
-            {% if hubspot.dedicated %}
-            {% set formId = hubspot.dedicated.formId %}
-            {% set cta = hubspot.dedicated.cta %}
-            <script>
-                function displayHubSpotForm2() {
-                    hbspt.forms.create({
-                        region: "eu1",
-                        portalId: "26586079",
-                        formId: "{{ formId or hubspot.formId }}",
-                        onFormSubmit: function ($form) {
-                            capture('{{ cta or hubspot.cta }}', {
-                                'page': '{{ hubspot.reference or title }}'
-                            })
-                        }
-                    });
-                }
-            </script>
-            <script async type="text/javascript" charset="utf-8" src="//js-eu1.hsforms.net/forms/embed/v2.js" onload="displayHubSpotForm2()"></script>
-            {% endif %}
+            {% hubspotForm hubspot.dedicated.formId, hubspot.dedicated.cta, hubspot.reference, 'dedicatedPricingForm' %}
         </div>
     </div>
 </div>
 
 <!-- Frequently Asked Questions -->
-<div class="md:px-14 max-w-screen-lg mx-auto">
+<div class="px-6 md:px-14 max-w-screen-lg mx-auto">
     {% include "faq.njk" %}
 </div>
 <!-- Scroll to anchor -->
@@ -528,8 +471,7 @@ hubspot:
 
             // Map slider IDs to div IDs
             const divIds = {
-                "#team-monthly-slider": ["#team-m-original-div", "#team-m-alternate-div", 350],
-                "#enterprise-monthly-slider": ["#enterprise-m-original-div", "#enterprise-m-alternate-div", 500]
+                "#team-monthly-slider": ["#team-m-original-div", "#team-m-alternate-div", 100],
             };
 
             // Check if the slider ID is in the divIds map
@@ -554,19 +496,14 @@ hubspot:
             const progress = (tempSliderValue / sliderEl.max) * 100;
             sliderEl.style.background = `linear-gradient(to right, #4F46E5 ${progress}%, #A5B4FC ${progress}%)`;
 
-            let discountedPriceMonthly;
-            if (tempSliderValue > 250 && sliderId === "#team-monthly-slider") {
-                discountedPriceMonthly = 3200 / tempSliderValue;
-            } else {
-                const discount = ((tempSliderValue - stepSize) / stepSize) * 0.01;
-                discountedPriceMonthly = (basePrice * (1 - discount)) / 12;
-            }
+            const discount = ((tempSliderValue - stepSize) / stepSize) * 0.01;
+            let discountedPriceMonthly = (basePrice * (1 - discount)) / 12;
 
             const [intValue, decValue] = discountedPriceMonthly.toFixed(2).split(".");
             priceIntElement.textContent = intValue;
             priceDecElement.textContent = decValue;
 
-            const totalMonthlyPrice = sliderId === "#team-monthly-slider" && tempSliderValue > 250 ? 3200 : discountedPriceMonthly * tempSliderValue;
+            const totalMonthlyPrice = discountedPriceMonthly * tempSliderValue;
 
             priceNoteElement.innerHTML = `/instance a month <br>Billed monthly at <span class="font-semibold">$${totalMonthlyPrice.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</span><br \\>`;
         })
@@ -576,7 +513,6 @@ hubspot:
 
     // Setup the sliders
     setupPricingSlider("#team-monthly-slider", 300, 5, "#team-monthly-price-int", "#team-monthly-price-dec", "#team-monthly-value", "#team-monthly-price-note");
-    setupPricingSlider("#enterprise-monthly-slider", 600, 10, "#enterprise-monthly-price-int", "#enterprise-monthly-price-dec", "#enterprise-monthly-value", "#enterprise-monthly-price-note");
 </script>
 
 <!-- Features info -->

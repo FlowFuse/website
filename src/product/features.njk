@@ -54,7 +54,7 @@ sitemapPriority: 0.8
                 </div>
                 {% else %}
                 <div class="flex justify-center items-center md:w-2/5">
-                    <div class="md:w-[250px] -mt-2 -mb-8 md:mb-0 md:mt-0 max-w-[250px]">
+                    <div class="md:w-[250px] -mt-2 md:mb-0 md:mt-0 max-w-[250px]">
                         {% set imageSrc = [f.imageFolder, f.imageFile] | join %}
                         {% set imageDescription = ["Image depicting", f.imageAlt] | join %}
                         {% image imageSrc, imageDescription, [250] %}

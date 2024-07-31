@@ -9,7 +9,7 @@
     }
 
     .handbook .prose {
-        max-width: none;
+        @apply max-w-full;
     }
 
     .handbook-nav {
@@ -132,8 +132,10 @@
         @apply lg:max-w-[calc(100vw-610px)];
     }
 
+    .handbook div[style="position: relative"],
     .handbook pre {
-        max-width: max-content;
+        width: max-content;
+        @apply max-w-full lg:max-w-[calc(100vw-580px)] xl:max-w-[calc(100vw-630px)]  2xl:max-w-[calc(100vw-690px)];
     }
 
     /* Define animation transitions for all child UL elements */

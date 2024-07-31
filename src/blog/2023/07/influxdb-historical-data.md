@@ -22,7 +22,7 @@ Here’s a screenshot of the dashboard we will create, which is divided into two
 
 
 
-![alt_text](images/influxdb-historical-data/dashboard-1.png "Dashboard")
+!["Screenshot showing the historical dashboard"](images/influxdb-historical-data/dashboard-1.png "Screenshot showing the historical dashboard")
 
 <br>
 
@@ -30,7 +30,7 @@ Here is a screenshot of the simple Node-RED flow to create that dashboard.  We w
 
 
 
-![alt_text](images/influxdb-historical-data/flow-2.png "Final Flow")
+![Screenshot showing the historical dashboard flow](images/influxdb-historical-data/flow-2.png "Screenshot showing the historical dashboard flow")
 
 
 
@@ -44,7 +44,7 @@ On the Node-RED side, a serial node can be configured to capture this incoming d
 Below, I have configured the serial port node with the same settings that were used to set up the scale. These settings are commonly documented as "9600 8N1" in shorthand.  In serial communication it is necessary for the two devices to have the exact same settings or the data becomes garbled.  The incoming stream of ASCII text is divided using the hex value 0x0D, which corresponds to the return character. This character is used as a delimiter to separate the individual chunks of text within the incoming data stream.
 
 
-![alt_text](images/influxdb-historical-data/serial-port-node-3.png "Serial Port Node")
+!["Screenshot showing the serial port node config"](images/influxdb-historical-data/serial-port-node-3.png "Screenshot showing the serial port node config")
 
 <br>
 
@@ -53,7 +53,7 @@ With this “delay” node, we now have a new message from the scale at a rate o
 
 
 
-![alt_text](images/influxdb-historical-data/delay-4.png "Delay Node")
+!["Screenshot showing the delay node properties tab"](images/influxdb-historical-data/delay-4.png "Screenshot showing the delay node properties tab")
 
 <br>
 
@@ -62,7 +62,7 @@ The debugger allows us to see the raw data as it is captured.
 
 
 
-![alt_text](images/influxdb-historical-data/debugger-5.png "Debugger")
+!["Debugger"](images/influxdb-historical-data/debugger-5.png "Debugger")
 
 
 <br>
@@ -72,7 +72,7 @@ Unfortunately, these values are not in a friendly form to work with.  Ideally, w
 
 
 
-![alt_text](images/influxdb-historical-data/change-node-6.png "Node-RED Change Node")
+!["Screenshot showing the change node setting payload"](images/influxdb-historical-data/change-node-6.png "Screenshot showing the change node setting payload")
 
  <br>
 
@@ -90,7 +90,7 @@ When we look in the debugger we see the payload specified as a “number” and 
 
 
 
-![alt_text](images/influxdb-historical-data/number-7.png "Debug Output")
+!["Screenshot showing the output type in the debug panel"](images/influxdb-historical-data/number-7.png "Screenshot showing the output type in the debug panel")
 
 
 
@@ -99,7 +99,7 @@ When we look in the debugger we see the payload specified as a “number” and 
 Now we have some live data, let’s store it using InfluxDB. Below are the steps to set up an account with the InfluxDB free service.  Navigate to [https://www.influxdata.com/products/influxdb-overview/](https://www.influxdata.com/products/influxdb-overview/) and let’s begin.  Click on “Get Started for Free” under Cloud, InfluxDB Cloud Serverless.
 
 
-![alt_text](images/influxdb-historical-data/run-influxdb-8.png "InfluxDB")
+!["Screenshot showing the Influxdb cloud 'Getting started' button"](images/influxdb-historical-data/run-influxdb-8.png "Screenshot showing the Influxdb cloud 'Getting started' button")
 
 
 For this example the Free plan will work fine.
@@ -108,7 +108,7 @@ For this example the Free plan will work fine.
 
 
 
-![alt_text](images/influxdb-historical-data/free-influxdb-9.png "Free InfluxDB")
+!["Screenshot showing the influxdb cloud tiers"](images/influxdb-historical-data/free-influxdb-9.png "Screenshot showing the influxdb cloud tiers")
 
 
 Create a bucket to store the data.
@@ -118,12 +118,12 @@ Create a bucket to store the data.
 
 
 
-![alt_text](images/influxdb-historical-data/bucket-influxdb-10.png "Create Bucket")
+!["Screenshot showing the 'Go to buckets' button"](images/influxdb-historical-data/bucket-influxdb-10.png "Screenshot showing the 'Go to buckets' button")
 
 
 
 
-![alt_text](images/influxdb-historical-data/load-data-influxdb-11.png "Create Bucket")
+!["Screenshot showing the 'Create Bucket' button"](images/influxdb-historical-data/load-data-influxdb-11.png "Screenshot showing the 'Create Bucket' button")
 
 
 
@@ -132,13 +132,13 @@ Generate a token to direct the calls from Node-RED to your InfluxDB account when
 
 
 
-![alt_text](images/influxdb-historical-data/token-influxdb-12.png "Token")
+!["Screenshot showing the 'Genrate token' button"](images/influxdb-historical-data/token-influxdb-12.png "Screenshot showing the 'Genrate token' button")
 
 
 I selected “Generate All Access API Token,” but eventually you will want a custom, more restricted approach.
 
 
-![alt_text](images/influxdb-historical-data/generate-token-influxdb-13.png "image_tooltip")
+!["Screenshot showing the 'prompt' asing to enter the description for token"](images/influxdb-historical-data/generate-token-influxdb-13.png "Screenshot showing the 'prompt' asing to enter the description for token")
 
 
 Copy your token and do not share it!  (mine will be deleted later)
@@ -152,7 +152,7 @@ Navigate to “Manage Palette” in the Node-RED hamburger menu in the upper rig
 
 
 
-![alt_text](images/influxdb-historical-data/install-contrib-influxdb-14.png "InfluxDB Nodes")
+!["Screenshot showing the influxdb node in the manage palette"](images/influxdb-historical-data/install-contrib-influxdb-14.png "Screenshot showing the influxdb node in the manage palette")
 
 
 <br>
@@ -160,14 +160,14 @@ Navigate to “Manage Palette” in the Node-RED hamburger menu in the upper rig
 After installing this package you will see three new nodes in your flow editor.
 
 
-![alt_text](images/influxdb-historical-data/influxdb-nodes-15.png "InfluxDB Nodes")
+![Screenshot showing the installed influxdb nodes in the palette](images/influxdb-historical-data/influxdb-nodes-15.png "Screenshot showing the installed influxdb nodes in the palette")
 
 
 Drag and drop the “influxdb out” node into your flow, double click on it, and start filling out the needed fields.  The naming convention of “test&lt;<THING>>” works well for initial setups to make it clear what names should go where.
 
 
 
-![alt_text](images/influxdb-historical-data/influxdb-out-node-16.png "InfluxDB Out Node")
+!["Screenshot showing the influxdb-out node config"](images/influxdb-historical-data/influxdb-out-node-16.png "Screenshot showing the influxdb-out node config")
 
 <br> 
 
@@ -176,7 +176,7 @@ It was a little unclear what URL to use with this serverless option, but I guess
 
 
 
-![alt_text](images/influxdb-historical-data/influxdb-node-17.png "image_tooltip")
+!["image_tooltip"](images/influxdb-historical-data/influxdb-node-17.png "image_tooltip")
 
 <br>
 
@@ -184,14 +184,14 @@ The “influxdb out” node is now ready to start storing payloads.  The documen
 
 
 
-![alt_text](images/influxdb-historical-data/flow-influxdb-out-18.png "Out Flow")
+![Screenshot showing the flow sending data to InfluxDB and to a dashboard chart widget"](images/influxdb-historical-data/flow-influxdb-out-18.png "Screenshot showing the flow sending data to InfluxDB and to a dashboard chart widget")
 
 <br>
 
 Here is a chart of the live data which is also being stored.
 
 
-![alt_text](images/influxdb-historical-data/live-data-chart-19.png "Live Data")
+!["Screenshot showing the dashboard with live data chart"](images/influxdb-historical-data/live-data-chart-19.png "Screenshot showing the dashboard with live data chart")
 
 <br> 
 
@@ -199,7 +199,7 @@ The InfluxDB Data Explorer helps you create a SQL call and allows you to run it 
 
 
 
-![alt_text](images/influxdb-historical-data/influxdb-explorer-20.png "InfluxDB Explorer")
+!["Screenshot showing the InfluxDB Explorer"](images/influxdb-historical-data/influxdb-explorer-20.png "Screenshot showing the InfluxDB Explorer")
 
 
 <br>
@@ -214,48 +214,48 @@ Here is the Dashboard group we will create for this GUI.
 
 
 
-![alt_text](images/influxdb-historical-data/historical-data-21.png "Historical Data")
+!["Screenshot showing the GUI for historical data"](images/influxdb-historical-data/historical-data-21.png "Screenshot showing the GUI for historical data")
 
 
 And here is the flow to create it.
 
 
 
-![alt_text](images/influxdb-historical-data/data-flow-22.png "Data Flow")
+!["Screenshot showing the flow of historical data GUI."](images/influxdb-historical-data/data-flow-22.png "Screenshot showing the flow of historical data GUI")
 
 
 A “template” node creates a convenient way to create a plain text output with variable properties within.  Below you can see that msg.query is created from a string of text with “rangeStart” and “rangeEnd” dynamically inserted using the “mustache” syntax.  More information about how to query InfluxDB can be found here:  [https://docs.influxdata.com/influxdb/v2.0/query-data/get-started/query-influxdb/](https://docs.influxdata.com/influxdb/v2.0/query-data/get-started/query-influxdb/).
 
 
 
-![alt_text](images/influxdb-historical-data/template-node-23.png "Template Node")
+!["Screenshot showing the template node"](images/influxdb-historical-data/template-node-23.png "Screenshot showing the template node")
 
 <br>
 
 Using the "Form" dashboard node is an easy way to collect all the required information for our query.  We need to be able to enter in a date and time to start gathering the data, and a window to know how long a range of values to pull.
 
 
-![alt_text](images/influxdb-historical-data/form-node-24.png "Form Node")
+!["Screenshot of the form widget"](images/influxdb-historical-data/form-node-24.png "Screenshot of the form widget")
 
 
 Here is the code from the “time/date” function node.  A bit of juggling of local time versus UTC time is needed to allow the user to intuitively query the correct data for their timezone. 
 
 
-![alt_text](images/influxdb-historical-data/function-node-25.png "Function Node")
+!["Screenshot of the function node properties tab"](images/influxdb-historical-data/function-node-25.png "Screenshot of the function node properties tab")
 
 <br> 
 
 Here is the “change” node used to create the msg.rangeEnd.  The JSONatta expression is $fromMillis($toMillis(msg.rangeStart) + msg.payload.window * 60 * 1000).  The expression combines the milliseconds from the msg.rangeStart with the calculated milliseconds in the “Window (minutes)” from the GUI.
 
 
-![alt_text](images/influxdb-historical-data/change-node-26.png "Change Node")
+!["Screenshot of the change node properties tab"](images/influxdb-historical-data/change-node-26.png "Screenshot of the change node properties tab")
 
 <br>
 
 Now that the query is coming back from InfluxDB, let’s break down how to transform this data object into one that can be read by the “chart” node.  Below, we see on the left column what the object looks like from InfluxDB and on the right we see how it must be structured to be viewed in the chart.
 
 
-![alt_text](images/influxdb-historical-data/data-format-27.png "Data Format")
+!["Screenshot showing the formated data in the debug panel"](images/influxdb-historical-data/data-format-27.png "Screenshot showing the formated data in the debug panel")
 
 
 Rob Marcer has a great article on working with persistent chart data found here: [/blog/2023/05/persisting-chart-data-in-node-red/](/blog/2023/05/persisting-chart-data-in-node-red/).
@@ -263,7 +263,7 @@ Rob Marcer has a great article on working with persistent chart data found here:
 We can use a series of nodes from the Node-RED core package to transform this data.
 
  
-![alt_text](images/influxdb-historical-data/transform-data-28.png "Flwo to transform data")
+!["Screenshot showing the flow to transform the data"](images/influxdb-historical-data/transform-data-28.png "Screenshot showing the flow to transform the data")
 
 <br>
 
@@ -272,21 +272,21 @@ First, a “switch” node is used to determine if the response InfluxDB contain
 
 
 
-![alt_text](images/influxdb-historical-data/switch-node-28.png "Switch Node")
+!["Screenshot of the switch node properties tab"](images/influxdb-historical-data/switch-node-28.png "Screenshot of the switch node properties tab")
 
 <br> 
 
 The “Label” field in the “chart” node can also be dynamically created with the mustache syntax.
 
 
-![alt_text](images/influxdb-historical-data/chart-node-29.png "Chart Node")
+!["Screenshot of the chart widget setting label dynamically"](images/influxdb-historical-data/chart-node-29.png "Screenshot of the chart widget setting label dynamically")
 
 <br> 
 
 If the “is not empty” “switch” node sees an empty payload, this “change” node sets the payload to an empty array, clearing the chart, and sets the msg.title to “No Data” so users know their query, though successful, returned an empty set of values.
 
 
-![alt_text](images/influxdb-historical-data/change-node-30.png "Change Node")
+!["Screenshot of the change node properties tab"](images/influxdb-historical-data/change-node-30.png "Screenshot of the change node properties tab")
 
 <br>
 
@@ -294,7 +294,7 @@ The parameters for the “split” node can be left as-is.
 
 
 
-![alt_text](images/influxdb-historical-data/split-node-31.png "Split Node")
+!["Screenshot of the split node properties tab"](images/influxdb-historical-data/split-node-31.png "Screenshot of the split node properties tab")
 
 <br>
 
@@ -303,7 +303,7 @@ In the “chartData” “change” node, will pull out the two values we need f
 
 
 
-![alt_text](images/influxdb-historical-data/change-node-32.png "Chnage Node")
+!["Screenshot of the change node properties tab"](images/influxdb-historical-data/change-node-32.png "Screenshot of the change node properties tab")
 
 <br>
 
@@ -311,14 +311,14 @@ The “join” node just needs to be set to “Combine each” msg.chartData obj
 
 
 
-![alt_text](images/influxdb-historical-data/join-node-33.png "Join Node")
+!["Screenshot of the join node properties tab"](images/influxdb-historical-data/join-node-33.png "Screenshot of the join node properties tab")
 
 <br>
 
 The final “change” node, “format,” is where we prescribe the format needed for the “chart” node, [{"series":[""],"data":[[]],"labels":[""]}], and finally we insert our msg.chartData array into that structure.  Notice msg.title is now set to “Data Received.”
 
 
-![alt_text](images/influxdb-historical-data/change-node-33.png "Change Node")
+!["Screenshot of the change node properties tab"](images/influxdb-historical-data/change-node-33.png "Screenshot of the change node properties tab")
 
 <br>
 
@@ -326,7 +326,7 @@ And, there you have it.  You can query the same range of data found on the live 
 
 
 
-![alt_text](images/influxdb-historical-data/final-dashboard-34.png "image_tooltip")
+!["Screenshot of the dashboard showing the historical and live data chart"](images/influxdb-historical-data/final-dashboard-34.png "Screenshot of the dashboard showing the historical and live data chart")
 
 
 ## Final Thoughts

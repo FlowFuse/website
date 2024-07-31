@@ -13,6 +13,12 @@ story:
     quote: Node-RED has immensely facilitated our work. The tool's versatility and development speed have allowed Abrasive Technology to tackle projects that might have been deemed out-of-reach or discouraging in the past. It also allows us to develop our applications in a platform agnostic way that is much more flexible and agile in terms of hardware selection and adaptability.
     challenge: Optimise the production of precision abrasive materials.
     solution: Rapid development of command and monitoring systems using Node-RED hosted on FlowFuse.
+    products:
+        - Node-RED
+        - FlowFuse Dashboard
+        - FlowFuse
+        - FlowFuse Device Agent
+        - FlowFuse Project Nodes
     results:
         - Significant impacted on Abrasive Technology's business operations
         - Delivered projects which previously may have not been practical

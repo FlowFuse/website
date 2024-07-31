@@ -41,5 +41,5 @@ Questions can be asked in the [#dept-customer](https://flowforgeworkspace.slack.
 | [Videos](./videos.md) | To produce quality content in video, follow these guidelines |
 | [Website](./website.md) | How to contribute to the FlowFuse marketing website |
 | [Webinars](./webinars.md) | Webinars are a key way FlowFuse interacts with the Node-RED community. |
-| [Boiler Plate](./boilerplate.md) | The marketing boilerplate |
+| [Messaging](./messaging.md) | Marketing messaging |
 | [Emails](./email.md) | How to engage with customers through email |

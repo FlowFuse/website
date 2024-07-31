@@ -159,9 +159,9 @@ buttons:
     - cta: TRY FOR FREE
       url: https://app.flowfuse.com/account/create
       onclick: "capture('cta-join', {'position': 'secondary'}, {'plan': 'cloud-starter'})"
-    - cta: BOOK A DEMO
-      url: /book-demo/
-      onclick: "capture('cta-book-demo', {'position': 'secondary'}, {'plan': 'cloud-team'})"
+    - cta: CONTACT US
+      url: "#contact-us"
+      onclick: "scrollToAnchor(event, 'contact-us'), capture('cta-contact-us', {'position': 'secondary'}, {'plan': 'team'})"
     - cta: Request a Quote
       url: /pricing/request-quote/
       onclick: "capture('cta-request-quote', {'position': 'secondary'}, {'plan': 'sh-enterprise'})"

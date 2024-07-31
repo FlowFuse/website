@@ -16,7 +16,7 @@
         "clean": "cross-env npx del-cli '_site/!(img)' && cross-env mkdir -p '_site/js'",
         "dev:docs": "node scripts/copy_docs.js --watch",
         "dev:blueprints": "node scripts/watch_blueprints.js",
-        "dev:serve": "cross-env npx @11ty/eleventy --serve --quiet --incremental",
+        "dev:netlify": "npx netlify dev -c \"cross-env npx @11ty/eleventy --serve --quiet --incremental\"",
         "dev:postcss": "cross-env TAILWIND_MODE=watch npx postcss ./src/css/style.css -o ./_site/css/style.css --config ./postcss.config.js -w",
         "docs": "node scripts/copy_docs.js",
         "blueprints": "node scripts/copy_blueprints.js",
@@ -65,6 +65,7 @@
         "codeowners": "^5.1.1",
         "js-yaml": "^4.1.0",
         "markdown-it-attrs": "^4.1.6",
+        "netlify-cli": "^17.33.5",
         "xml-js": "^1.6.11"
     }
 }

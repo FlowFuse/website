@@ -17,7 +17,7 @@ Function nodes are an essential part of Node-RED. They allow you to write custom
 
  ## 5 Benefits of using Function Nodes: ##
 
- ![Example of using a function node](./images/function-example.gif "Example of using a function node")
+ ![Example showing how to use the function node](./images/function-example.gif "Example showing how to use the function node")
 
 1. **Customisation:** Function nodes allow you to write custom JavaScript functions that can be tailored to your specific needs. You can create complex functions that perform a variety of tasks, the only limit is your programming skills.
 
@@ -31,7 +31,7 @@ Function nodes are an essential part of Node-RED. They allow you to write custom
 
 ## 5 Benefits of avoiding Function Nodes:
 
-![Example of not using a function node](./images/no-function-example.gif "Example of not using a function node")
+![Example showing how to not use the function node](./images/no-function-example.gif "Example showing how to not use the function node")
 
 1. **Simplicity:** Not using function nodes can make your flows simpler and easier to understand. By using standard Node-RED nodes, you can create flows that are easy to follow and maintain for both you and your team.
 

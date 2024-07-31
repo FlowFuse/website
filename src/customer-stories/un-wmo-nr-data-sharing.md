@@ -12,6 +12,8 @@ story:
     quote: Node-RED was the right platform to use to build the AntiLoop part of the Global Broker... Node-RED has proven to be a very reliable platform.
     challenge: Modernize global weather data sharing protocol to meet higher demand for real-time data
     solution: Using the Node-RED platform to address these challenges.
+    products:
+        - Node-RED
     results:
         - Node-RED's MQTT nodes used to implement AntiLoop part of the Global Broker
         - Pilot system handling 45,000 message / 15 minutes; Production system will handle 30,000/minute 
