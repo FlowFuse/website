@@ -1,13 +1,14 @@
 ---
 title: Customise theming in your FlowFuse Dashboard
-subtitle: Exploring Enhanced Customization Features
-description: Discover the latest enhancements in Node-RED Dashboard 2.0, including customizable headers, themes, and layout modifications to personalize your dashboard experience..
-date: 2024-07-24
+subtitle: Customising Headers, Themes, and Layouts in Node-RED Dashboard 2.0
+description: Discover the latest enhancements in Node-RED Dashboard 2.0, including customizable headers, themes, and layout modifications to personalize your dashboard experience.
+date: 2024-07-05
 authors: ["sumit-shinde"]
 image: 
 tags:
    - post
    - dashboard
+   - flowfuse dashboard
 ---
 
 A recent release of FlowFuse Dashboard (Dashboard 2.0) has taken customization to the next level.
@@ -26,8 +27,24 @@ To add elements to the header, we can use [Teleports](https://dashboard.flowfuse
 
 To render content on the left side of the header, we can teleport content into the `#app-bar-title` element, where our page name is displayed.
 
-![Left Side Area](./images/left-side-area.png){data-zoomable}
+!["Screenshot of Dashboard showing the #app-bar-title container"](./images/left-side-area.png "Image of Dashboard showing the #app-bar-title container"){data-zoomable}
+_Image of Dashboard showing the #app-bar-title container_
 
+#### Hiding the Page Name in the Header
+
+Before proceeding, you should hide the page name on the left side of the header by default. This will ensure that when you add elements to the header, they do not clash with the page name.
+
+To hide the page name:
+
+1. Go to the Dashboard 2.0 sidebar
+2. Click on to the "Edit settings" option located at the top of the Dashboard 2.0 sidebar.
+
+!["Screenshot showing the 'edit setting' option in the dashboard sidebar"](./images/edit-setting-button.png "Screenshot showing the 'edit setting' option in the dashboard sidebar"){data-zoomable}
+_Screenshot showing the 'edit setting' option in the dashboard sidebar_
+
+3. Untick the option "Show page name in the header bar".
+!["Screenshot showing the 'Show page name in the header bar' option in the dashboard settings"](./images/settings.png "Screenshot showing the 'Show page name in the header bar' option in the dashboard settings"){data-zoomable}
+_Screenshot showing the 'Show page name in the header bar' option in the dashboard settings_
 
 #### Example: Adding Buttons
 
@@ -63,7 +80,8 @@ To render content on the left side of the header, we can teleport content into t
 
 5. Next, you can customize further by adding more buttons or different elements inside the `<Teleport>` element.
 
-![Left Side Area](./images/button-added-dashboard.png){data-zoomable}
+!["Screenshot of Dashboard showing the added buttons in the header"](./images/button-added-dashboard.png "Screenshot of Dashboard showing the added buttons in the header"){data-zoomable}
+_Screenshot of Dashboard showing the added buttons in the header_
 
 #### Example: Adding Logo
 
@@ -80,28 +98,20 @@ If you want to add your brand's logo, you can replace the element inside <telepo
 
 You can replace the URL with your logo's URL or set it using the `msg.payload` as shown in examples given [documentation](https://dashboard.flowfuse.com/nodes/widgets/ui-template.html#page-name-app-bar-title).
 
-![Left Side Area](./images/logo-added-dashboard.png){data-zoomable}
-
-#### Hiding the Page Name in the Header
-
-After seeing the provided output images, you might wonder why your output looks different. It's because the page name is still visible, taking up extra space and not looking good with the added elements. No worries, we have added a feature that allows you to hide the page name from the header.
-
-To hide the page name:
-
-1. Go to the Dashboard 2.0 sidebar
-2. Click on to the "Edit settings" option located at the top of the Dashboard 2.0 sidebar.
-![Left Side Area](./images/edit-setting-button.png){data-zoomable}
-3. Untick the option "Show page name in the navigation bar".
-![Left Side Area](./images/settings.png){data-zoomable}
+!["Screenshot of the Dashboard displaying the added logo in the header"](./images/logo-added-dashboard.png "Screenshot of the Dashboard displaying the added logo in the header"){data-zoomable}
+_Screenshot of the Dashboard displaying the added logo in the header_
 
 ### Right Side of the Header
 
 To render elements on the right side of the header, you can use the empty div element having the `#app-bar-actions` ID, in which we can add elements.
 
-![Right Side Area](./images/right-side-area.png){data-zoomable}
-
+!["Screenshot of Dashboard showing the #app-bar-actions container"](./images/right-side-area.png "Screenshot of Dashboard showing the #app-bar-actions container"){data-zoomable}
+_Screenshot of Dashboard showing the #app-bar-actions container_
 
 #### Example: Adding logged in user profile
+
+!["Screenshot of Dashboard displaying the logged in user profile at the right side of header"](./images/user-profile.png "Screenshot of Dashboard displaying the logged in user profile at the right side of header"){data-zoomable}
+_Screenshot of Dashboard displaying the logged in user profile at the right side of header_
 
 In this section, we will add the user profile of the currently logged-in user to the right side of the header. Make sure you have installed "@flowfuse/node-red-dashboard-2-user-addon" via the palette manager and enabled [FlowFuse User Authentication](/docs/user/instance-settings/#flowfuse-user-authentication). Each message emitted by the Dashboard 2.0 widget will include the logged-in user information under `msg._client.user`. Additionally the [setup object](https://dashboard.flowfuse.com/contributing/guides/state-management.html#setup-store) will also contain this information under `setup.socketio.auth.user`.
 
@@ -156,8 +166,6 @@ export default {
 </style>
 ```
 
-![Right Side Area](./images/user-profile.png){data-zoomable}
-
 For detailed guide on this section, refer to the guide on [Displaying logged in user on Node-RED Dashboard 2.0](/blog/2024/04/displaying-logged-in-users-on-dashboard/). Furthermore, if you want to add logos or buttons on the right side similar to the left side of the header, you just need to replace the to attribute with the `#app-bar-actions`.
 
 ## Styling Header
@@ -169,11 +177,13 @@ To style the header:
 1. Go to the Dashboard 2.0 sidebar
 2. Click on to the "Edit settings" option located at the top of the Dashboard 2.0 sidebar.
 
-![Left Side Area](./images/edit-setting-button.png){data-zoomable}
+!["Screenshot showing the 'edit setting' option in the dashboard sidebar"](./images/edit-setting-button.png "Screenshot showing the 'edit setting' option in the dashboard sidebar"){data-zoomable}
+_Screenshot showing the 'edit setting' option in the dashboard sidebar_
 
 3. Select the desired option from the "Header Options" dropdown.
 
-![Left Side Area](./images/header-style-options.png){data-zoomable}
+!["Screenshot showing the header style options in the dashboard settings"](./images/header-style-options.png "Screenshot showing the header style options in the dashboard settings"){data-zoomable}
+_Screenshot showing the header style options in the dashboard settings_
 
 The following options are available for header styling:
 
@@ -181,19 +191,22 @@ The following options are available for header styling:
 
 This option as it name suggest it is the default option set for header. In which the header will get hidden if we scrolled down.
 
-![Left Side Area](./images/default-header.gif){data-zoomable}
+!["Image showing the dashboard with default header"](./images/default-header.gif "Image showing the dashboard with default header"){data-zoomable}
+_Image showing the dashboard with default header_
 
 ### Hidden
 
 Selecting this option completely hides the header, allowing you to use that space for other purposes.
 
-![Left Side Area](./images/hidden-header.png){data-zoomable}
+!["Image showing the dashboard with hidden header"](./images/hidden-header.png "Image showing the dashboard with hidden header"){data-zoomable}
+_Image showing the dashboard with hidden header_
 
 ### Fixed
 
 Selecting this option keeps the header fixed at the top. This means that when you scroll the page down, the header will remain visible.
 
-![Left Side Area](./images/fixed-header.gif){data-zoomable}
+!["Image showing the dashboard with fixed header"](./images/fixed-header.gif "Image showing the dashboard with fixed header"){data-zoomable}
+_Image showing the dashboard with fixed header_
 
 ## Changing Dashboard Theme
 
@@ -204,10 +217,15 @@ To edit the existing theme:
 1. Go to the Dashboard 2.0 sidebar.
 2. Switch to the "Theme" tab.
 
-![Left Side Area](./images/dashboard-theme-tab.png){data-zoomable}
+!["Screenshot showing the dashboard theme tab in the sidebar"](./images/dashboard-theme-tab.png "Screenshot showing the dashboard theme tab in the sidebar"){data-zoomable}
+_Screenshot showing the dashboard theme tab in the sidebar_
 
 3. Click on the edit button next to the theme.
 4. You can adjust the header color and the primary color (which applies to the navigation sidebar and elements like buttons and dropdowns) under the "Primary" section. In the "Pages" section, set the background color for pages, and in the "Groups" section, adjust the background color and border color of groups.
+
+!["Screenshot showing the theme properties dialog"](./images/dashboard-theme-tab.png "Screenshot showing the theme properties dialog"){data-zoomable}
+_Screenshot showing the theme properties dialog_
+
 5. Under "Sizing," adjust the page padding (the space between dashboard groups), the page border, group gap, group border radius (the thickness of the group border), and widget gap.
 
 For more information on  theme, how to add new themes, and set themes for pages, refer to the [Comprehensive guide: Node-RED Dashboard 2.0 layout, sidebar, and styling](/blog/2024/05/node-red-dashboard-2-layout-navigation-styling/#understanding-dashboard-2.0-theme). Additionally, this guide covers Node-RED Dashboard 2.0 layouts, themes, and custom styling in detail.
