@@ -39,6 +39,8 @@ UI-Builder can be more challenging to start with, as it does not follow a low-co
 
 ## How Easy is it to Migrate from Node-RED Dashboard ?
 
+[Node-RED Dashboard](https://flows.nodered.org/node/node-red-dashboard) is a module that provides a set of nodes in Node-RED to quickly create user interfaces or live data dashboards. It was developed by one of the creators of Node-RED and is the most used and downloaded package in the Node-RED ecosystem. However, it is now deprecated. For more information, refer to [Node-RED Dashboard Formally Deprecated](/blog/2024/06/dashboard-1-deprecated/).
+
 ### Node-RED Dashboard 2.0
 
 Node-RED Dashboard 2.0 is developed to replace the the deprecated standard Node-RED Dashboard. It retains the core concepts and UI elements but introduces more advanced options and configurations. To facilitate the transition, FlowFuse, the creator of Node-RED Dashboard 2.0, provides a [migration service](/product/dashboard/#migration-service) that simplifies migration of flows or projects from the Node-RED Dashboard to Node-RED Dashboard 2.0. This service helps ensure a smoother migration process with minimal disruption.
