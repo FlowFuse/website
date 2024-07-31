@@ -2,7 +2,7 @@
 title: "Node-RED Dashboard 2.0 vs UI-Builder: A Comprehensive Comparison"
 subtitle: Understanding the Differences Between Node-RED Dashboard 2.0 and UI-Builder
 description: Compare Node-RED Dashboard 2.0 and UI-Builder. Discover their installation ease, customization, performance, and support to find the best solution for your needs. 
-date: 2024-08-31
+date: 2024-08-01
 authors: ["sumit-shinde"]
 image: 
 tags:
@@ -75,37 +75,29 @@ Node-RED Dashboard 2.0 offers an extensive set of UI elements, including forms, 
 
 UI-Builder also offers a number of widgets, but these are not as user-friendly as those in Dashboard 2.0. Users must send a JSON config object, which can be complex for new users who lack knowledge of HTML/CSS. Additionally, handling widget data requires using UI-Builder's methods, which can further increase complexity. However, UI-Builder's strength lies in its flexibility, allowing any HTML element to be used as a component, and it also supports the W3C standard web components. Despite this, users need to perform a lot of additional tasks to get everything set up and will have the hassle of writing things.
 
-## How much dynamic insertion or update it support?
+## How easy it is to Control UI at runtime?
 
 ### Node-RED Dashboard
 
-Node-RED Dashboard 2.0 supports dynamically updating the UI via the msg object. Each UI widget supports the `msg.ui_update` property with a JSON object that allows you to update the UI components dynamically. For example, you can update form fields based on user input, dynamically insert or update options in a dropdown, or change the appearance of the UI by sending css classes.
+Node-RED Dashboard 2.0 supports dynamic control of the UI via the msg object. Each UI widget supports the `msg.ui_update` property, which allows you to control and update UI components dynamically. For example, you can update form fields based on user input, dynamically insert or update options in a dropdown, or change the appearance of the UI by sending CSS classes or selecting options in dropdowns or radio buttons through msg.
 
 ### UI-Builder
 
-UI-Builder also supports dynamic UI updates. Similar to Node-RED Dashboard, you can use messages to control the state and content of UI elements.
+UI-Builder also supports dynamic UI updates and control. Similar to Node-RED Dashboard, you can use messages to control the state and content of UI elements.
 
 ## Data Visualisation
 
+## Data Visualization
+
 ### Node-RED Dashboard 2.0
 
-Visualization is a core use case for Node-RED, and Node-RED Dashboard 2.0 makes it easy with its built-in [chart](https://dashboard.flowfuse.com/nodes/widgets/ui-chart.html) and [gauge widgets](https://dashboard.flowfuse.com/nodes/widgets/ui-gauge.html). The chart widgets support various types, including line, bar, scatter, pie, and donut charts, while the gauge widgets offer options like tile, 3/4 gauge, and half gauge. This range of built-in options simplifies the creation of visualizations. Additionally, you can use Vuetify or other third-party libraries in the ui-template node if you need different types of charts.
+Monitoring devices is one of the core use cases for Node-RED, and Node-RED Dashboard 2.0 makes it easy to monitor device metrics with its built-in [chart](https://dashboard.flowfuse.com/nodes/widgets/ui-chart.html) and [gauge widgets](https://dashboard.flowfuse.com/nodes/widgets/ui-gauge.html). The chart widgets support various types, including line, bar, scatter, pie, and donut charts, while the gauge widgets offer options like tile, 3/4 gauge, and half gauge. This range of built-in options simplifies the creation of visualizations for monitoring device metrics. Additionally, you can use Vuetify or other third-party libraries in the ui-template node if you need different types of charts.
 
 ### UI-Builder
 
-UI-Builder does not provide built-in charting options. However, you can add charts using any third-party JavaScript libraries. This approach requires additional effort to integrate and configure the libraries, as well as writing the relevant JavaScript to render the charts. This increases the complexity of creating visualizations, but does offer more control and customisation.
+UI-Builder does not provide built-in charting options. However, you can add charts using third-party JavaScript libraries. This approach requires additional effort to integrate and configure the libraries, as well as writing the relevant JavaScript to render the charts. While this increases the complexity of creating visualizations, it offers more control and customization.
 
-## How Fast and Easy is It to Communicate with Node-RED Instances?
-
-### Node-RED Dashboard 2.0
-
-Node-RED Dashboard 2.0 uses WebSockets for communication with Node-RED, enabling real-time and faster interactions. Most widgets uses the standard `msg.payload` for communication that makes it super easy to send the data from Node-RED to client and vice-versa.
-
-### Ui-builder 
-
-The ui-builder also employs WebSockets for communication, providing real-time and fast interactions. However, it utilizes different msg properties, which can be complex for users and might increase the number of nodes unnecessarily for changing the property names.
-
-## How many Web Layout Does It Support?
+## Building Layout
 
 ### Node-RED Dashboard 2.0
 
@@ -201,14 +193,20 @@ UI-Builder also has good support, with active contributions from the author and 
 
 ### Node-RED Dashboard 2.0
 
+### Node-RED Dashboard 2.0
+
 Node-RED Dashboard 2.0 is actively working on enhancing its feature set. With extensive functionality already in place, the project also has ambitious plans to introduce more advanced features to better serve its users. You can track these developments on the [Node-RED Dashboard 2.0 GitHub project board](https://github.com/orgs/FlowFuse/projects/15/views/4), where ongoing and upcoming features are documented.
 
 !["Screenshot of the Node-RED Dashboard 2.0 GitHub project board"](./images/dashboard-2-project-plan.png )
 _Screenshot of the Node-RED Dashboard 2.0 GitHub project board_
 
+Additionally, updates about new features and enhancements are also provided through social media, blogs, and the Node-RED forums, ensuring that users stay informed about the latest developments.
+
 ### UI-Builder
 
-UI-Builder does not have a publicly accessible project roadmap or a dedicated planning board for future updates. While development continues, details about forthcoming features and enhancements are not as transparently communicated as with Node-RED Dashboard 2.0. Users may need to rely on community discussions and updates on the UI-Builder GitHub repository for the latest information.
+### UI-Builder
+
+UI-Builder does not have a publicly accessible project roadmap or a dedicated planning board for future updates. While development continues, details about forthcoming features and enhancements are regularly updated on the Node-RED Discourse forums by its author. However, having a project roadmap could provide users with a better understanding of upcoming features and planned improvements, making it easier to plan and adapt their projects accordingly.
 
 ## Summary Table
 
@@ -221,18 +219,17 @@ UI-Builder does not have a publicly accessible project roadmap or a dedicated pl
 | **Development Activity**                 | **High**: Regular updates and improvements; actively maintained by a dedicated team | **Moderate**: Active but shows a decline in updates; less frequent enhancements |
 | **UI Elements Collection**                | **Extensive**: Includes a wide range of widgets like forms, charts, and gauges; built on Vue.js with Vuetify support | **Flexible but complex**: Allows any HTML element; requires custom coding and handling of UI elements |
 | **Visualization**                        | **Easy**: Built-in charting options for various types; additional options with third-party libraries | **Complex**: No built-in charts; requires integration of third-party libraries for visualization |
-| **Dynamic Insertion or Update**          | **Supported**: Can dynamically update UI components using `msg.ui_update` property | **Supported**: Dynamic updates possible, but can be more complex to implement |
-| **Communication with Node-RED Instances** | **Effective**: Uses WebSockets for real-time, bidirectional communication; standard `msg.payload` usage | **Effective but complex**: Also uses WebSockets; different message properties can complicate setup |
+| **Dynamic UI Control**          | **Supported**: Can dynamically control and update UI components using `msg.ui_update` property | **Supported**: Dynamic updates possible, but can be more complex to implement |
+|
 | **Web Layout Support**                   | **Predefined**: Offers three main layouts with some options for custom styling | **Customizable**: No predefined layouts; users must create their own using CSS |
 | **Device and Screen Size Support**       | **Excellent**: Responsive design adapts well to various devices and screen sizes | **Variable**: Responsiveness depends on user's implementation and knowledge of CSS |
 | **Customization**                       | **Good**: Offers customization through widget settings and custom CSS and ui-template; supports Vue components and third-party libraries | **High**: Full control over UI design and layout with custom coding; requires expertise in frontend development |
 | **App Installation**                     | **Available**: Can be installed as a Progressive Web App (PWA) for use as a standalone application | **Not available**: Designed as a web-based tool; cannot be installed as an app |
-| **Performance and Speed**                | **Reliable**: Good performance with consistent updates; may have slower initial load times on mobile | **Fast initial load**: Generally good performance but requires extensive setup for optimal results |
+| **Performance and Speed**                | **Reliable**: Good performance with consistent updates; may have slower initial load times on mobile | **Good**: Generally good performance on both desktop and mobile |
 | **Support and Documentation**            | **Robust**: Comprehensive, regularly updated documentation and active community support | **Good**: Detailed but may be complex; documentation includes technical jargon |
 | **Overall User Experience**              | **User-friendly**: Accessible and easy to use with low-code approach; suitable for a wide range of users | **Flexible but complex**: Offers greater customization but requires coding expertise; can be daunting for non-developers |
 | **User Community Activity**              | **Large and active**: High engagement in forums and discussions; growing number of downloads | **Smaller but dedicated**: Active users, but less engagement compared to Node-RED Dashboard 2.0 |
 | **Future Development Plans**             | **Active**: Continuous enhancements and new features planned; updates tracked on GitHub project board | **Less transparent**: No detailed roadmap; future features are less clearly communicated |
-
 
 ## Conclusion
 
