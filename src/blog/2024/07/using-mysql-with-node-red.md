@@ -11,13 +11,14 @@ tags:
    - mysql
 ---
 
-When discussing popular and widely used databases, MySQL inevitably stands out. This is especially evident within the Node-RED community, where the MySQL contrib node has the highest number of downloads among all database contrib nodes. However, popularity often brings its own set of challenges. To help our Node-RED community members navigate these challenges, we’ve prepared this comprehensive guide. It covers all aspects of using MySQL with Node-RED, including an overview of what MySQL is, the differences between PostgreSQL and MySQL, when to choose one over the other, essential MySQL operations and more.
+When discussing popular and widely used databases, MySQL inevitably stands out. This is especially evident within the Node-RED community, where the MySQL contrib node has the highest number of downloads among all database contrib nodes. However, popularity often brings its own set of challenges. We've prepared this comprehensive guide to help our Node-RED community members navigate these challenges. It covers all aspects of using MySQL with Node-RED, including an overview of what MySQL is, the differences between PostgreSQL and MySQL, when to choose one over the other, essential MySQL operations, and more.
+<!--more-->
 
 ## What is MySQL 
 
-[MySQL](https://dev.mysql.com/doc/) is an open-source relational database management system (RDBMS) developed by MySQL AB, which was later acquired by Sun Microsystems and then Oracle Corporation. It uses SQL (Structured Query Language) for querying and managing databases. MySQL is widely recognized for its performance, scalability, and ease of use.
+[MySQL](https://dev.mysql.com/doc/) is an open-source relational database management system (RDBMS) developed by MySQL AB, which Sun Microsystems later acquired and then Oracle Corporation. It uses SQL (Structured Query Language) to query and manage databases. MySQL is widely recognized for its performance, scalability, and ease of use.
 
-## MySQL Vs PostgreSQL 
+## MySQL vs PostgreSQL 
 
 | Feature                      | PostgreSQL                                             | MySQL                                                 |
 |------------------------------|--------------------------------------------------------|-------------------------------------------------------|
@@ -31,36 +32,36 @@ When discussing popular and widely used databases, MySQL inevitably stands out. 
 
 ## Choosing Between PostgreSQL and MySQL
 
-Deciding between [PostgreSQL](/node-red/database/postgresql/) and MySQL depends on what your project needs and what each database system does best. PostgreSQL is ideal for big projects that need complex data handling, strong data reliability, and often update data. It works well in environments where keeping data consistent is crucial. PostgreSQL's advanced features like materialized views and support for writing procedures in different languages beyond SQL make it great for managing sophisticated data needs.
+Deciding between [PostgreSQL](/node-red/database/postgresql/) and MySQL depends on your project's needs and what each database system does best. PostgreSQL is ideal for big projects requiring complex data handling, reliability, and often updated data. It works well in environments where keeping data consistent is crucial. PostgreSQL's advanced features, like materialized views and support for writing procedures in different languages beyond SQL make it great for managing sophisticated data needs.
 
-On the other hand, MySQL is excellent for projects that prioritize fast reading of data and are easy to set up and use. It's commonly used for smaller projects, quick prototypes, or applications where quick deployment is key. MySQL offers flexibility with different storage options—like InnoDB for transactions and MyISAM for handling lots of reads at once—making it versatile depending on your workload.
+On the other hand, MySQL is excellent for projects that prioritize fast data reading and are easy to set up and use. It's commonly used for smaller projects, quick prototypes, or applications where quick deployment is critical. MySQL offers flexibility with different storage options—like InnoDB for transactions and MyISAM for handling lots of reads simultaneously—making it versatile depending on your workload.
 
 Knowing what performance your project needs, how familiar your team is with each database, and how much your project might grow will help you pick the database that's best for you.
 
 ## Using MySQL with Node-RED
 
-In this section of the article, we will cover how you can configure MySQL with Node-RED, create and delete tables, and perform essential operations such as inserting, retrieving, updating, and deleting data. These operations are crucial for any application.
+This section of the article will cover how to configure MySQL with Node-RED, create and delete tables, and perform essential operations such as inserting, retrieving, updating, and deleting data. These operations are crucial for any application.
 
-Additionally for demostration purpost article using the simple weather data example so make sure you update the sql queries according to your data and application need. also throught the article we have used the inject nodes for ease to set the example data and trigger but instead you could utilize the Node-RED Dashboard 2.0 to grab the data from user and trigger it. 
+Additionally, for the demonstration purpose, the article uses a simple weather data example, so make sure you update the SQL queries according to your data and application needs. Also, through the article, we have used the inject nodes for ease to set the example data and trigger, but instead, you could utilize the Node-RED Dashboard 2.0 to grab the data from the user and trigger it.
 
-### Prequsite
+### Prerequisite
 
 Before proceeding further, ensure the following:
 
-- A running MySQL database instance, whether hosted in the cloud or locally, along with connection details, should be ready, and environment variables for those connnection details should be added. For more information on how to add environment variables, refer to [Using Environment Variables in Node-RED](https://flowfuse.com/blog/2023/01/environment-variables-in-node-red/).
-- The MySQL custom node [node-red-contrib-mysql](https://flows.nodered.org/node/node-red-node-mysql) installed in your Node-RED environment.
+- A running MySQL database instance, whether hosted in the cloud or locally, along with connection details, should be ready, and environment variables for those connection details should be added. For more information on how to add environment variables, refer to [Using Environment Variables in Node-RED](https://flowfuse.com/blog/2023/01/environment-variables-in-node-red/).
+- The MySQL custom node [node-red-contrib-mysql](https://flows.nodered.org/node/node-red-node-mysql) is installed in your Node-RED environment.
 
 ### Configuring MySQL Custom Node
 
-1. Drag MySQL node on to the canvas.
-2. Double Click on it, Click on to the "+" button located next to "Database" feild.
-3. Enter the Environment variables added for Host, Port, User, Password, Database into their corresponding feilds.
+1. Drag the MySQL node onto the canvas.
+2. Double-click on it, then Click on the "+" button located next to the "Database" field.
+3. Enter the Environment variables added for Host, Port, User, Password, and Database into their corresponding fields.
 4. Keep the Charset to default as it is set to "UTF8" which is widely compatible and supports various languages and characters.
-5. Click on add to "Add" to save the configuration.
+5. Click on "Add" to save the configuration.
 
 !["Screenshot of MySQL node property dialog with the environment variables added"](./images/mysql-node-config.png "Screenshot of MySQL node property dialog with the environment variables added")
 
-To check whether your configuration is correct and Node-RED is able to connect, deploy the flow by clicking on the top-right "Deploy" button. If the connection is successful, each MySQL node will show a green dot with "connected" text underneath.
+To check whether your configuration is correct and Node-RED can connect, deploy the flow by clicking on the top-right "Deploy" button. If the connection is successful, each MySQL node will show a green dot with "connected" text underneath.
 
 ### Creating Table in MySQL Database
 
@@ -80,12 +81,12 @@ CREATE TABLE IF NOT EXISTS weather_data (
 
 3. Connect the output of the Inject node to the input of the Template node and the output of the Template node to the input of the MySQL node.
 
-The MySQL node allows sending queries through the `msg.topic` property. We use the Template node because it enables us to use Mustache syntax, which is useful for setting things dynamically. This flexibility is not crucial when creating or deleting tables but essential for operations like inserts.
+The MySQL node allows sending queries through the `msg.topic` property. We use the Template node because it enables us to use Mustache syntax, which is useful for setting things dynamically. This flexibility is not crucial when creating or deleting tables but is essential for operations like inserts.
 
 ### Inserting Data in the MySQL Database Table
 
-1. Drag an Inject node onto the canvas, set `msg.payload` to the data you want to insert.
-2. Drag a Template node onto the canvas. Insert the following SQL into it. Note how the Template node dynamically inserts the value of `msg.payload` into the query. If you want to set the date and time using Node-RED, you can similarly set it up as you did for `msg.payload`, currently we are using MySQL function for setting time.
+1. Drag an Inject node onto the canvas, and set `msg.payload` to the data you want to insert.
+2. Drag a Template node onto the canvas. Insert the following SQL into it. Note how the Template node dynamically inserts the value of `msg.payload` into the query. If you want to set the date and time using Node-RED, you can similarly set it up as you did for `msg.payload`, currently, we are using the MySQL function for setting time.
 
 ```sql
 -- Insert a record into the weather_data table
@@ -99,7 +100,7 @@ CURTIME(),
 {{payload}});
 ```
 
-3. Drag another MySQL node onto the canvas, ensure that it is using the correct configuration by double clcing on it. While you can use a single MySQL node for all operations, However separating and organizing nodes can aid in better management, understanding, and debugging if issues occur.
+3. Drag another MySQL node onto the canvas, and ensure that it is using the correct configuration by double-clicking on it. While you can use a single MySQL node for all operations, However separating and organizing nodes can aid in better management, understanding, and debugging if issues occur.
 
 4. Connect the output of the Inject node to the input of the Template node, and connect the output of the Template node to the input of the MySQL node.
 
@@ -136,8 +137,8 @@ ORDER BY date DESC;
 
 ### Updating Data of the MySQL Database Table
 
-1. Drag an Inject node onto the canvas, set `msg.payload` to the data you want to update with.
-2. Drag a Template node onto the canvas. Insert the following SQL into it. In this SQL query, we are setting the `id` statically which we are uing to update the data, but you can also dynamically set it just like we did for `tem`. We have utilized the `WHERE` clause here, but there are plenty of other SQL clauses available for more complex operations. For more information Refer to this blog on [SQL Clauses (https://www.educba.com/sql-clauses/)
+1. Drag an Inject node onto the canvas and set the message.payload to the data you want to update
+2. Drag a Template node onto the canvas. Insert the following SQL into it. In this SQL query, we are setting the `id` statically, which we are using to update the data, but you can also dynamically set it just like we did for `tem`. We have utilized the `WHERE` clause here, but there are plenty of other SQL clauses available for more complex operations. For more information Refer to this blog on [SQL Clauses (https://www.educba.com/sql-clauses/)
 
 ```sql
 -- Update the temperature for a specific record in the weather_data table
@@ -191,12 +192,12 @@ Below is the complete flow covering all the operations discussed throughout this
 
 ### Deploying the Flow 
 
-1. To test the imported flows, you need to deploy them. To do that, click on the deploy button located in the top right corner.
+1. To test the imported flows, you need to deploy them. To do that, click the deploy button at the top right corner.
 
-After deploying the flow, you can test each operation—such as creating, deleting, updating, and executing other queries—by clicking the inject button. For debugging purposes, you can add debug nodes to the flow. 
+After deploying the flow, you can test each operation—such as creating, deleting, updating, and executing other queries—by clicking the inject button. For debugging purposes, add debug nodes to the flow. 
 
 Additionally, if you want to explore the integration of other databases with Node-RED, you can refer to our [database section](/node-red/database/) in the Node-RED learning resources, where we cover databases such as PostgreSQL, MongoDB, InfluxDB, DynamoDB, and more.
 
 ## Conclusion
 
-In summary, this guide has equipped you with essential skills for integrating MySQL with Node-RED. You've learned how to set up and manage MySQL nodes, perform crucial database operations, and leverage MySQL's capabilities within Node-RED for efficient data handling and automation.
+This guide has equipped you with essential skills for integrating MySQL with Node-RED. You've learned how to set up and manage MySQL nodes, perform crucial database operations, and leverage MySQL's capabilities within Node-RED for efficient data handling and automation.
