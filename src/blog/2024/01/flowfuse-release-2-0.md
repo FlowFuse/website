@@ -39,7 +39,7 @@ At FlowFuse, our mission is to empower bottom-up innovation and enable organizat
 
 ## How to get started
 
-You can install our [local build](/docs/install/local/), use [Docker](/docs/install/docker/), or [Kubernetes](/docs/install/kubernetes/).
+You can install our [local build](/docs/contribute/local/), use [Docker](/docs/install/docker/), or [Kubernetes](/docs/install/kubernetes/).
 
 If you'd rather use our hosted offering: [Get started for free]({{ site.appURL }}/account/create) on FlowFuse Cloud.
 
