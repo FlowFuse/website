@@ -138,7 +138,7 @@ ORDER BY date DESC;
 ### Updating Data of the MySQL Database Table
 
 1. Drag an Inject node onto the canvas and set the message.payload to the data you want to update
-2. Drag a Template node onto the canvas. Insert the following SQL into it. In this SQL query, we are setting the `id` statically, which we are using to update the data, but you can also dynamically set it just like we did for `tem`. We have utilized the `WHERE` clause here, but there are plenty of other SQL clauses available for more complex operations. For more information Refer to this blog on [SQL Clauses (https://www.educba.com/sql-clauses/)
+2. Drag a Template node onto the canvas. Insert the following SQL into it. In this SQL query, we are setting the `id` statically, which we are using to update the data, but you can also dynamically set it just like we did for `tem`. We have utilized the `WHERE` clause here, but there are plenty of other SQL clauses available for more complex operations. For more information, refer to this blog on [SQL Clauses (https://www.educba.com/sql-clauses/)
 
 ```sql
 -- Update the temperature for a specific record in the weather_data table
