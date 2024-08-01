@@ -1,10 +1,10 @@
 ---
-title: "FlowFuse 2.7: "
+title: "FlowFuse 2.7: Improved management at scale & AI JSON Editor"
 subtitle: We've extended the AI-infused Node-RED experience to the JSON Editor, plus improvements to managing and searching your resources on FlowFuse.
 description: We've extended the AI-infused Node-RED experience to the JSON Editor, plus improvements to managing and searching your resources on FlowFuse
 date: 2024-08-01
 authors: ["joe-pavitt"]
-image: /blog/2024/07/images/release-2-6-july-2024.png
+image: /blog/2024/07/images/release-2-7-aug-2024.png
 tags:
    - posts
    - flowfuse
