@@ -86,7 +86,7 @@ If you're interested in contributing, checkout our [guide in the docs](/docs/con
 
 As said before, a lot of effort went into the local installer. We're confident
 you can have your own FlowFuse running locally in about 30 minutes.
-[Get started right away!](/docs/install/local/)
+[Get started right away!](/docs/contribute/local/)
 ([Docker](/docs/install/docker/) and [Kubernetes](/docs/install/kubernetes/)
 are available too!)
 
