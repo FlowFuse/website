@@ -109,7 +109,7 @@ Together, we can make FlowFuse better with each release!
 
 ### Self-Hosted
 
-We're confident you can have self managed FlowFuse running locally in under 30 minutes. You can install our [local build](/docs/install/local/), use [Docker](/docs/install/docker/), or [Kubernetes](/docs/install/kubernetes/).
+We're confident you can have self managed FlowFuse running locally in under 30 minutes. You can install our [local build](/docs/contribute/local/), use [Docker](/docs/install/docker/), or [Kubernetes](/docs/install/kubernetes/).
 
 ### FlowFuse Cloud
 
