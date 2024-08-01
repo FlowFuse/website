@@ -86,7 +86,7 @@ of the platform:
 ### Upgrading FlowFuse
 
 If you installed FlowFuse 0.1 or 0.2 and want to upgrade, our documentation provides a
-guide for [upgrading FlowFuse on a local server](https://github.com/FlowFuse/flowfuse/tree/main/docs/install/local#upgrade).
+guide for [upgrading FlowFuse on a local server](/docs/install/introduction/).
 
 ### Getting help
 
