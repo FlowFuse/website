@@ -47,7 +47,7 @@ of the platform:
 ### Upgrading FlowFuse
 
 If you installed FlowFuse 0.1 and want to upgrade, our documentation provides a
-guide for [upgrading FlowFuse on a local server](/docs/install/introduction/).
+guide for [upgrading FlowFuse on a local server](/docs/upgrade/).
 
 ### Getting help
 
