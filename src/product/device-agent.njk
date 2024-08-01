@@ -6,18 +6,28 @@ meta:
     description: "Fully hosted service to build, manage, and deploy Node-RED applications without the hassle of setting up your own cloud infrastructure"
     keywords: FlowFuse, Device Agent, Node-RED, IoT, Industrial IoT, Remote Management
     faq:
-        - question: "How much does FlowFuse Cloud cost?"
+        - question: "How much does the Device Agent cost?"
           answer: >
-            After the 2-week free trial, the Starter Tier costs $15 a month for 2 team members, 2 Node-RED instances and 2 Devices. For more details on advanced tiers and features see <a href='/pricing/'>Pricing</a>.
-        - question: "Does FlowFuse offer annual discounts for FlowFuse Cloud?"    
+            The Device Agent is free, and <a href="https://github.com/FlowFuse/device-agent">open-source</a>. Depending on which offering/hosting of FlowFuse you choose there may be charges for the FlowFuse service itself, you can find out more on our <a href="/pricing">pricing page</a>.
+        - question: "Can I run the Device Agent in a closed network?"
           answer: >
-            Yes, we offer a 10% discount for annual subscriptions. Please <a href='/contact-us/'>reach out</a> to request the discount.
-        - question: "Do I need a Credit Card to get started?"    
+            Yes, you can, although it does need to be able to connect to your FlowFuse (Cloud or your self-hosted instance) in order to receive updates and deploy new flows. Once they're deployed though, the device agent will keep your flows running even if it loses connection to the internet.
+        - question: "How do I deploy to thousands of devices at once?"    
           answer: >
-            No, you don’t need a credit card to sign up for the 14-day free trial.
-        - question: "What features are included in FlowFuse Cloud vs Self-hosted?"
+            With FlowFuse, you can use <a href="https://flowfuse.com/docs/device-agent/register/#bulk-registration" target="_blank">Provisioning Tokens</a> to register large numbers of devices. This will automatically register each device in the FlowFuse Editor and save you <i>a lot</i> of clicking.
+        - question: "I've installed the Device Agent on my device, how do I access the Node-RED Editor?"
           answer: >
-            At the Enterprise level, all features are available both on the Cloud and Self hosted deployment. For more details on the tiers and available features see <a href='/pricing/'>Pricing</a>. 
+            The key advantage of the device agent is that it allows you to access the Node-RED editor from FlowFuse directly. Simply navigate to the device in the FlowFuse UI, and click on the "Open Editor" button. Once you've made your changes, within FlowFuse you can then rollout those flows to hundreds of other devices in just a few clicks.
+        - question: What's the difference between "Fleet Mode" and "Developer Mode"
+          answer: >
+            <p>"Fleet Mode" allows you to deploy a single Snapshot to multiple devices at once. The Device will have a "Target Snapshot", and whenever that is set, your device will automatically update.</p>
+            <p>"Developer Mode" on the other hand  opens a tunnel to your device, allowing you to edit the flows on that device directly. This is useful for debugging flows, or testing new flows on live hardware, before distributing them out to the rest of our</p>
+        - question: What are the system requirements for the Device Agent? Will it run on my hardware?
+          answer: >
+            Device Agent supports NodeJS 14 and above, and is designed to work with a wide range of devices. If you're unsure if your device is supported, please do get in touch.
+        - question: Can I run the Device Agent as a service?
+          answer: >
+            Yes, the Device Agent is designed to run as a service on your device, we have an example written up for a Raspberry Pi <a href="https://flowfuse.com/blog/2023/05/device-agent-as-a-service/" target="_blank">here</a>.
 ---
 <!--First two sections-->
 <div class="nohero w-full">
