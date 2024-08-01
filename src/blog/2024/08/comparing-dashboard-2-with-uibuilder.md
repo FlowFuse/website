@@ -85,8 +85,6 @@ Node-RED Dashboard 2.0 supports dynamic control of the UI via the msg object. Ea
 
 UI-Builder also supports dynamic UI updates and control. Similar to Node-RED Dashboard, you can use messages to control the state and content of UI elements.
 
-## Data Visualisation
-
 ## Data Visualization
 
 ### Node-RED Dashboard 2.0
@@ -193,16 +191,12 @@ UI-Builder also has good support, with active contributions from the author and 
 
 ### Node-RED Dashboard 2.0
 
-### Node-RED Dashboard 2.0
-
 Node-RED Dashboard 2.0 is actively working on enhancing its feature set. With extensive functionality already in place, the project also has ambitious plans to introduce more advanced features to better serve its users. You can track these developments on the [Node-RED Dashboard 2.0 GitHub project board](https://github.com/orgs/FlowFuse/projects/15/views/4), where ongoing and upcoming features are documented.
 
 !["Screenshot of the Node-RED Dashboard 2.0 GitHub project board"](./images/dashboard-2-project-plan.png )
 _Screenshot of the Node-RED Dashboard 2.0 GitHub project board_
 
 Additionally, updates about new features and enhancements are also provided through social media, blogs, and the Node-RED forums, ensuring that users stay informed about the latest developments.
-
-### UI-Builder
 
 ### UI-Builder
 
