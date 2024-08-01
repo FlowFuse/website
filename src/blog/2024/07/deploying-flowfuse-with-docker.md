@@ -242,7 +242,7 @@ When you open the platform in your browser for the first time, you'll need to cr
 
 3. Enter the username, full name, email, and password, and confirm the password to the administrator user account. This first user will have full access to the platform, allowing them to configure settings, and manage users and teams.
 
-4. Next, If you intend to use the FlowFuse Enterprise Edition, enter your license details. You can request a free trial from [Request a Trial Enterprise License](/docs/install/introduction/#request-a-trial-enterprise-license).
+4. Next, If you intend to use the FlowFuse Enterprise Edition, enter your license details.
 
 5. Alternatively, you can continue with the FlowFuse Community Edition (CE), which is free, by clicking "Continue with FlowFuse CE".
 
@@ -250,3 +250,4 @@ When you open the platform in your browser for the first time, you'll need to cr
 
 - [Deploying FlowFuse with Docker Documentation](/docs/install/docker/): This documentation covers everything in detail on how to install FlowFuse using Docker.
 - [Deploying FlowFuse with Docker on Ubuntu youtube video](https://www.youtube.com/watch?v=qQwAPuz9bEk): This YouTube video demonstrates how to deploy FlowFuse using Docker on an Ubuntu server for your server's local network.
+- [Form for requesting Installation Service](/docs/contribute/introduction/#do-you-need-help%3F-installation-service): Fill this form if you need assistance with the installation process.
