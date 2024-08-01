@@ -29,7 +29,7 @@ This new feature empowers you to create custom data sets within seconds, meaning
 
 ## Managing Resources at Scale
 
-As mentioned in the introduction, a big ofcus on this release, and moving forward into the next couple foot is around improving the user experience when managing large numbers of devices and instances.
+As mentioned in the introduction, a big focus on this release, and moving forward into the next couple too, is around improving the user experience when managing large numbers of devices and instances.
 
 ### Centralized Search
 
