@@ -250,4 +250,4 @@ When you open the platform in your browser for the first time, you'll need to cr
 
 - [Deploying FlowFuse with Docker Documentation](https://flowfuse.com/docs/install/docker/): This documentation covers everything in detail on how to install FlowFuse using Docker.
 - [Deploying FlowFuse with Docker on Ubuntu youtube video](https://www.youtube.com/watch?v=qQwAPuz9bEk): This YouTube video demonstrates how to deploy FlowFuse using Docker on an Ubuntu server for your server's local network.
-- [Form for requesting Installation Service](https://flowfuse.com/docs/install/introduction/#do-you-need-help%3F-installation-service): Fill this form if you need assistance with the installation process.
+- [Form for requesting Installation Service](https://flowfuse.com/docs/contribute/introduction/#do-you-need-help%3F-installation-service): Fill this form if you need assistance with the installation process.
