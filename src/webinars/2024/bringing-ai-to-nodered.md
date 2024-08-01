@@ -5,6 +5,7 @@ image: /images/webinars/bringing-ai-to-nodered.jpg
 date: 2024-07-31
 time: 17:00 CET (11:00am ET) 
 duration: 60
+video: K7XMiwCanus
 hosts: ["nick-oleary"]
 hubspot:
     formId: febea57b-ef8d-437e-b1be-43f419bff291
