@@ -45,13 +45,13 @@ In this section, we'll explore how to use CoAP with Node-RED to enable efficient
 
 - **node-red-contrib-coap**: Install the `node-red-contrib-coap` package in your Node-RED environment. This package provides the CoAP nodes needed for integration.
 
-For detailed instructions on setting up the Node-RED on your various hardware devices, refer to [Setting up Node-RED on Different Hardware](/node-red/hardware/).
+For detailed instructions on setting up the Node-RED on your various hardware devices, refer to [Setting up Node-RED on Different Hardware](/node-red/hardware/), this section of provides the steps to easily setup Node-RED using [FlowFuse Device agent](\/product/device-agent/).
 
 ### Setting up the CoAP Server
 
 Setting up a CoAP server in Node-RED is similar to setting up an HTTP server. CoAP uses a request-response model similar to HTTP with methods like GET, POST, DELETE, and PUT, making it straightforward if you're familiar with HTTP servers in Node-RED.
 
-If you are not fimilier with how to set up HTTP servers in Node-RED, refer to [Creating REST APIs with Node-RED](https://flowfuse.com/node-red/integration-technologies/rest/).
+If you are not fimilier with how to set up HTTP servers in Node-RED, refer to [Creating REST APIs with Node-RED](/node-red/integration-technologies/rest/).
 
 !["Screenshot showing the settings of the coap-in node"](./images/coap-in-node.png "Screenshot showing the settings of the coap-in node"){data-zoomable}
 _Screenshot showing the settings of the coap-in node_
