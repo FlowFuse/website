@@ -29,11 +29,11 @@ To understand how different protocols perform in real-world scenarios, let’s c
 
 **Note**: The values presented are approximate and calculated based on typical characteristics of each protocol under common conditions. Actual values may vary depending on specific implementations and network environments.
 
-| Protocol | Payload (bytes) | Message Size Overhead (bytes) | Total Data Sent per Message (bytes) | Bandwidth Usage Calculation                        | Bandwidth Usage (kbps) | Latency (ms) | CPU Usage (%) | Memory Usage (MB) | Typical Use Cases                     |
-|----------|------------------|-------------------------------|--------------------------------------|----------------------------------------------------|------------------------|--------------|---------------|-------------------|---------------------------------------|
-| **HTTPS**| 50               | 500                           | 550                                  | (550 bytes/message × 100 messages/second × 8 bits/byte) / 1000 | 440                    | 100          | 10% to 50%           | 100               | Web Services, API Communication       |
-| **MQTT** | 50               | 100                           | 150                                  | (150 bytes/message × 100 messages/second × 8 bits/byte) / 1000 | 120                    | 50           | 5% to 30%          | 50                | IoT, Telemetry, Messaging             |
-| **CoAP** | 50               | 20                            | 70                                   | (70 bytes/message × 100 messages/second × 8 bits/byte) / 1000  | 56                     | 10           | 2% to 20%          | 20                | IoT, Low-Power Sensor Networks        |
+| **Protocol** | **Payload (bytes)** | **Message Size Overhead (bytes)** | **Total Data Sent per Message (bytes)** | **Bandwidth Usage Calculation**                                         | **Bandwidth Usage (kbps)** | **Latency (ms)** | **CPU Usage (%)** | **Memory Usage (MB)** |
+|--------------|----------------------|----------------------------------|----------------------------------------|-------------------------------------------------------------------------|----------------------------|------------------|-------------------|-----------------------|
+| **HTTPS**    | 50                   | 500                              | 550                                    | (550 bytes/message × 100 messages/second × 8 bits/byte) / 1000          | 440                        | 100              | 10% to 50%        | 100                   |
+| **MQTT**     | 50                   | 100                              | 150                                    | (150 bytes/message × 100 messages/second × 8 bits/byte) / 1000           | 120                        | 50               | 5% to 30%         | 50                    |
+| **CoAP**     | 50                   | 20                               | 70                                     | (70 bytes/message × 100 messages/second × 8 bits/byte) / 1000            | 56                         | 10               | 2% to 20%        
 
 ## Using CoAP with Node-RED
 
