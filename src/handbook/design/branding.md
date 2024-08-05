@@ -3,8 +3,8 @@
 For FlowFuse Assets (e.g. logos, pictograms, and raw design files), if you're part of the FlowFuse team, please refer to the [`/design`](https://drive.google.com/drive/folders/1PiuFwW3H8XuydolepmfQQ4BjcdNekVQg) folder on the company Google Drive.
 
 If you're not part of the FlowFuse organization, you can download the logos from the following links:
-- [PNG low-resolution files](./images/logos/FlowFuse_logo_png.zip)
-- [Vector files (PDF and SVG)](./images/logos/FlowFuse_logo_vector.zip)
+- [PNG low-resolution files](../images/logos/FlowFuse_logo_png.zip)
+- [Vector files (PDF and SVG)](../images/logos/FlowFuse_logo_vector.zip)
 
 ## Logo
 ### Composition

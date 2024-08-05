@@ -681,7 +681,7 @@ module.exports = function(eleventyConfig) {
             }
     
             // Ensure the URL has a trailing slash, but do not update if it contains a '#' or ends with '.md' or https
-            if (!href.endsWith('/') && !href.includes('#') && !href.endsWith('.md') && !href.includes('https')) {
+            if (!href.endsWith('/') && !href.includes('#') && !href.endsWith('.md') && !href.endsWith('.zip') && !href.includes('https')) {
                 href += '/';
             }
 
