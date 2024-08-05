@@ -34,7 +34,7 @@ When interacting with a support ticket for the first time, the person who opens 
 
 -General Inquiry: for tickets not covered by any of the other ticket types.
 
--Product Performance Issue: for problems with the performance of particular features.
+- Product Performance Issue: for problems with the performance of particular features.
 
 -Dashboard Issue: for issues specifically with Dashboard.
 
