@@ -1,4 +1,4 @@
-{% set templateFile = "src/_includes/core-nodes/" + node.name | lower + "-use-case.md" %}
+{% set templateFile = "src/_includes/core-nodes/" + (node.name | lower | replace(" ", "-")) + "-use-case.md" %}
 <h1>{{ node.name }}</h1>
 
 {% if templateFile | templateExists %}
