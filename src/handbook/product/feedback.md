@@ -28,7 +28,7 @@ When interacting with a support ticket for the first time, the person who opens 
 
 - Product Issue: for tickets about FlowFuse, fit for a particular use case, and product issues not related to something not working as expected. (Those are covered in the category Product Performance Issue.)
 
--Billing Issue: for problems with billing and cancellation/refund requests.
+- Billing Issue: for problems with billing and cancellation/refund requests.
 
 -Feature Request: for feature requests.
 
