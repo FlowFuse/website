@@ -38,7 +38,7 @@ When interacting with a support ticket for the first time, the person who opens 
 
 - Dashboard Issue: for issues specifically with Dashboard.
 
--How-To Question: for tickets about how to do something with FlowFuse or Node-RED.
+- How-To Question: for tickets about how to do something with FlowFuse or Node-RED.
 
 
 When a user asks to cancel their subscription, follow this process:
