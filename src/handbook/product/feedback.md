@@ -30,7 +30,7 @@ When interacting with a support ticket for the first time, the person who opens 
 
 - Billing Issue: for problems with billing and cancellation/refund requests.
 
--Feature Request: for feature requests.
+- Feature Request: for feature requests.
 
 -General Inquiry: for tickets not covered by any of the other ticket types.
 
