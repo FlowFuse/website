@@ -26,7 +26,7 @@ One very valuable form of feedback is support tickets, where customers tell us t
 
 When interacting with a support ticket for the first time, the person who opens the ticket selects a Category for the ticket in the About This Ticket section. The categories are:
 
--Product Issue: for tickets about FlowFuse, fit for a particular use case, and product issues not related to something not working as expected. (Those are covered in the category Product Performance Issue.)
+- Product Issue: for tickets about FlowFuse, fit for a particular use case, and product issues not related to something not working as expected. (Those are covered in the category Product Performance Issue.)
 
 -Billing Issue: for problems with billing and cancellation/refund requests.
 
