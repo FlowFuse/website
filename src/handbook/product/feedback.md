@@ -36,7 +36,7 @@ When interacting with a support ticket for the first time, the person who opens 
 
 - Product Performance Issue: for problems with the performance of particular features.
 
--Dashboard Issue: for issues specifically with Dashboard.
+- Dashboard Issue: for issues specifically with Dashboard.
 
 -How-To Question: for tickets about how to do something with FlowFuse or Node-RED.
 
