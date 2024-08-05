@@ -32,7 +32,7 @@ When interacting with a support ticket for the first time, the person who opens 
 
 - Feature Request: for feature requests.
 
--General Inquiry: for tickets not covered by any of the other ticket types.
+- General Inquiry: for tickets not covered by any of the other ticket types.
 
 - Product Performance Issue: for problems with the performance of particular features.
 
