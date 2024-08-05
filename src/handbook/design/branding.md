@@ -1,6 +1,10 @@
 # FlowFuse Branding Guidelines
 
-For FlowFuse Assets (e.g. logos, pictograms, and raw design files), please look in the [`/design`](https://drive.google.com/drive/folders/1PiuFwW3H8XuydolepmfQQ4BjcdNekVQg) folder on Google Drive.
+For FlowFuse Assets (e.g. logos, pictograms, and raw design files), if you're part of the FlowFuse team, please refer to the [`/design`](https://drive.google.com/drive/folders/1PiuFwW3H8XuydolepmfQQ4BjcdNekVQg) folder on the company Google Drive.
+
+If you're not part of the FlowFuse organization, you can download the logos from the following links:
+- [PNG low-resolution files](./images/logos/FlowFuse_logo_png.zip)
+- [Vector files (PDF and SVG)](./images/logos/FlowFuse_logo_vector.zip)
 
 ## Logo
 ### Composition
@@ -15,14 +19,14 @@ Our logo is a combination mark, featuring an abstract symbol that represents the
 
 <hr style="margin-bottom:30px; border-color:#E5E7EB;">
 <div class="flex h-full flex-col justify-center items-center md:mt-0 mb-14">
-    <img width="250" min-width="250" alt="Image of the horizontal version of FlowFuse logo" src="../images/logos/ff-logo--wordmark--light.png">
+    <img width="250" min-width="250" class="p-2" alt="Image of the horizontal version of FlowFuse logo" src="../images/logos/ff-logo--wordmark--light.png">
 </div>
 
 #### Vertical Version
 
 <hr style="margin-bottom:30px; border-color:#E5E7EB;">
 <div class="flex h-full flex-col justify-center items-center md:mt-0 mb-14">
-    <img width="180" min-width="180" alt="Image of the vertical version of FlowFuse logo" src="../images/logos/ff-logo--square--light.png">
+    <img width="180" min-width="180" class="p-2" alt="Image of the vertical version of FlowFuse logo" src="../images/logos/ff-logo--square--light.png">
 </div>
 
 ### Minimum Sizes
@@ -33,7 +37,7 @@ Only when the size becomes too small for the combination mark to render the word
 
 <hr style="margin-bottom:30px; border-color:#E5E7EB;">
 <div class="flex h-full flex-col justify-center items-center md:mt-0 mb-14">
-    <img width="60" min-width="60" alt="Image of the FlowFuse symbol" src="../images/logos/ff-icon--light.png">
+    <img width="60" min-width="60" class="p-2" alt="Image of the FlowFuse symbol" src="../images/logos/ff-icon--light.png">
 </div>
 
 ### Construction and correct usage
@@ -46,14 +50,14 @@ A **safety area of 2X** is defined to ensure proper image usage and readability.
 
 <hr style="margin-bottom:30px; border-color:#E5E7EB;">
 <div class="flex h-full flex-col justify-center items-center md:mt-0 mb-14">
-    <img width="500" alt="Image depicting the construction process of the logo's horizontal version." src="../images/logos/horizontal-construction.png">
+    <img width="500" class="p-2" alt="Image depicting the construction process of the logo's horizontal version." src="../images/logos/horizontal-construction.png">
 </div>
 
 #### Construction of Vertical Version
 
 <hr style="margin-bottom:30px; border-color:#E5E7EB;">
 <div class="flex h-full flex-col justify-center items-center md:mt-0 mb-14">
-    <img width="357" alt="Image depicting the construction process of the logo's vertical version." src="../images/logos/vertical-construction.png">
+    <img width="357" class="p-2" alt="Image depicting the construction process of the logo's vertical version." src="../images/logos/vertical-construction.png">
 </div>
 
 ### Chromatic Versions
@@ -68,10 +72,10 @@ Search for the file name ending with "dark", such as: *ff-logo--wordmark--dark.p
 
 <div class="flex h-full flex-col justify-center items-center md:mt-4 mb-14 bg-gray-800 rounded-md md:w-[60%] min-w-[330px] m-auto">
     <div class="w-[90%] border-b border-gray-400 p-8">
-        <img class="m-auto" width="250" min-width="250" alt="Image of the horizontal version of FlowFuse logo for dark backgrounds" src="../images/logos/ff-logo--wordmark--dark.png">
+        <img class="m-auto p-2" width="250" min-width="250" class="p-2" alt="Image of the horizontal version of FlowFuse logo for dark backgrounds" src="../images/logos/ff-logo--wordmark--dark.png">
     </div>
     <div class="p-8">
-        <img width="180" min-width="180" alt="Image of the vertical version of FlowFuse logo for dark backgrounds" src="../images/logos/ff-logo--square--dark.png">
+        <img width="180" min-width="180" class="p-2" alt="Image of the vertical version of FlowFuse logo for dark backgrounds" src="../images/logos/ff-logo--square--dark.png">
     </div>
 </div>
 
@@ -83,10 +87,10 @@ Search for the file name ending with "light", like: *ff-logo--wordmark--light.pn
 
 <div class="flex h-full flex-col justify-center items-center md:mt-4 mb-14 bg-white rounded-md md:w-[60%] min-w-[330px] m-auto">
     <div class="w-[90%] border-b border-gray-100 p-8">
-        <img class="m-auto" width="250" min-width="250" alt="Image of the horizontal version of FlowFuse logo for light backgrounds" src="../images/logos/ff-logo--wordmark--light.png">
+        <img class="m-auto p-2" width="250" min-width="250" alt="Image of the horizontal version of FlowFuse logo for light backgrounds" src="../images/logos/ff-logo--wordmark--light.png">
     </div>
     <div class="p-8">
-        <img width="180" min-width="180" alt="Image of the horizontal version of FlowFuse logo for light backgrounds" src="../images/logos/ff-logo--square--light.png">
+        <img width="180" min-width="180" class="p-2" alt="Image of the horizontal version of FlowFuse logo for light backgrounds" src="../images/logos/ff-logo--square--light.png">
     </div>
 </div>
 
@@ -100,18 +104,18 @@ When only black or white are allowed, search for the file name ending with "blac
 
 <div class="flex h-full flex-col justify-center items-center md:mt-4 mb-14 bg-white rounded-md md:w-[60%] min-w-[330px] m-auto">
     <div class="w-[90%] border-b border-gray-100 p-8">
-        <img class="m-auto" width="250" min-width="250" alt="Image of the monochromatic version of FlowFuse logo" src="../images/logos/ff-logo--wordmark--black.png">
+        <img class="m-auto p-2" width="250" min-width="250" alt="Image of the monochromatic version of FlowFuse logo" src="../images/logos/ff-logo--wordmark--black.png">
     </div>
     <div class="p-8">
-        <img class="m-auto" width="180" min-width="180" alt="Image of the monochromatic version of FlowFuse logo" src="../images/logos/ff-logo--square--black.png">
+        <img class="m-auto p-2" width="180" min-width="180" alt="Image of the monochromatic version of FlowFuse logo" src="../images/logos/ff-logo--square--black.png">
     </div>
 </div>
 <div class="flex h-full flex-col justify-center items-center md:mt-4 mb-14 bg-black rounded-md md:w-[60%] min-w-[330px] m-auto">
     <div class="w-[90%] border-b border-gray-500 p-8">
-        <img class="m-auto" width="250" min-width="250" alt="Image of the monochromatic version of FlowFuse logo" src="../images/logos/ff-logo--wordmark--white.png">
+        <img class="m-auto p-2" width="250" min-width="250" alt="Image of the monochromatic version of FlowFuse logo" src="../images/logos/ff-logo--wordmark--white.png">
     </div>
     <div class="p-8">
-        <img class="m-auto" width="180" min-width="180" alt="Image of the monochromatic version of FlowFuse logo" src="../images/logos/ff-logo--square--white.png">
+        <img class="m-auto p-2" width="180" min-width="180" alt="Image of the monochromatic version of FlowFuse logo" src="../images/logos/ff-logo--square--white.png">
     </div>
 </div>
 
@@ -317,7 +321,7 @@ These larger images are used for stylistic purposes. We use pictograms to commun
 If you wish to create your own Pictograms, you can use this Adobe Illustrator file as a template:
 [pictogram.ai](https://drive.google.com/drive/u/1/folders/1guBnBUrIiRXuK6vsik_NIXIhtE1cZRRa)
 
-<img width="500" alt="An example showing how Pictograms are used in the 'Company Values' section of the FlowFuse website" src="../images/pictograms_example.png">
+<img width="500" class="p-2" alt="An example showing how Pictograms are used in the 'Company Values' section of the FlowFuse website" src="../images/pictograms_example.png">
 
 Sizings:
 
