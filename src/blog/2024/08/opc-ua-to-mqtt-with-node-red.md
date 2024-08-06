@@ -17,18 +17,18 @@ Have you ever found yourself trying to connect old industrial systems with new I
 
 <!-- more -->
 
-In this guide, we’ll explore how to use Node-RED to bridge OPC UA data to MQTT. We’ll walk you through easy steps to integrate these technologies, helping you streamline your data flow and enhance real-time monitoring. Whether you're looking to update your data handling or improve communication across systems, this tutorial offers a straightforward solution to modernize your setup. Join us to simplify your data integration and enhance your IoT operations.
+In this guide, we'll demonstrate how to use Node-RED to bridge OPC UA data to MQTT. This integration will streamline your data flow and enhance real-time monitoring, helping you modernize your setup and improve communication between systems.
 
 ### Why Bridge OPC UA to MQTT
 
 ![Diagram showing the data flow when bridging OPC UA to MQTT to enable communication between non-OPC UA compatible systems and devices](./images/factory-floor-mqtt-opcua.png){data-zoomable}
 _Diagram showing the data flow when bridging OPC UA to MQTT to enable communication between non-OPC UA compatible systems and devices._
 
-In modern industrial settings, integrating systems that use different communication protocols can be challenging. For instance, a CNC machine on a factory floor might communicate using OPC UA, a popular industrial protocol. However, many other systems, including real-time monitoring dashboards and IoT applications, might not support OPC UA directly. This is where bridging OPC UA to MQTT becomes highly beneficial.
+In modern industrial environments, integrating systems with different communication protocols can be a significant challenge. For example, a CNC machine on the factory floor might use OPC UA, while some cloud solutions, edge devices, and other systems, such as custom ERP solutions and IoT applications, might rely on MQTT protocol. This is where bridging OPC UA to MQTT becomes highly beneficial.
 
 By converting OPC UA data into MQTT messages, you make the data from the CNC machine accessible to a wider range of systems that use MQTT, which is a more universally supported messaging protocol. This bridging solution simplifies the integration process, allowing diverse systems to communicate effectively without needing direct OPC UA support.
 
-**Node-RED** is particularly well-suited for this task. It acts as an intermediary that supports both OPC UA and MQTT, enabling seamless data transformation and routing between different systems. Node-RED's flexibility and broad protocol support make it an ideal tool for integrating various hardware and software components in industrial settings. For a deeper look at how Node-RED can enhance industrial operations, check out [Building on FlowFuse: Remote Device Monitoring](/blog/2024/07/building-on-flowfuse-devices/).
+**Node-RED** is perfect for this job. It can connect both OPC UA and MQTT, making it easy to transform and route data between different systems. Its flexibility and support for many protocols make it great for integrating various industrial hardware and software. For more on how Node-RED can improve industrial operations, check out [Building on FlowFuse: Remote Device Monitoring](/blog/2024/07/building-on-flowfuse-devices/).
 
 ## Bridging OPC UA Data to MQTT with Node-RED
 
@@ -38,21 +38,21 @@ In this section, I'll demonstrate how to bridge OPC UA data to MQTT using Node-R
 
 - OPC UA Server : Make sure you have an OPC UA server configured and running with the necessary data. For this blog, we'll use the Prosys OPC UA Simulation Server, which simulates data of CNC machine for us designed for testing OPC UA client applications and learning the technology. You can download it from [here](https://prosysopc.com/products/opc-ua-simulation-server/).
 
-- node-red-contrib-opcua: install the node-red contrib package that will enable integration of opcua in Node-RED.
+- [node-red-contrib-opcua](https://flows.nodered.org/node/node-red-contrib-opcua): install the node-red contrib package that will enable integration of opcua in Node-RED.
 
 ### Retrieving Data from the OPC UA Server
 
 To begin retrieving data from your OPC UA server using Node-RED, follow these steps:
 
 1. Drag the Inject node onto the canvas. Double-click on the node to open its configuration settings. Set the `msg.topic` to the node ID and datatype of the property you wish to read.
-2. Drag the OPC UA Client node onto the canvas. Double-click on it to open its configuration settings. Click the "+" icon next to the Endpoint field and enter the URL of your running OPC UA server. Configure the security policy and mode according to your server setup. If you are using the Prosys OPC UA Simulation Server and have not enabled any security features, you can leave the security mode as "None."
+2. Drag the OPC UA Client node onto the canvas. Double-click on it to open its configuration settings. Click the "+" icon next to the Endpoint field and enter the URL of your running OPC UA server. Configure the security policy and mode according to your server setup. If you are using the Prosys OPC UA Simulation Server and have not enabled any security features, you can leave the security policy and mode as "None."
 3. In the OPC UA Client node settings, select the action type as "READ." This instructs Node-RED to read data from the OPC UA server.
 4. If your OPC UA server uses security features, specify the path to your certificate files in the relevant fields. If no security is configured, this step can be skipped.
 5. Drag the Debug node onto the canvas. This will help you verify the data retrieved from the OPC UA server.
 6. Connect the output of the Inject node to the input of the OPC UA Client node. Then, connect the output of the OPC UA Client node to the input of the Debug node. This setup ensures that when the Inject node triggers, it sends data to the OPC UA Client node, and the results are displayed in the Debug node.
 7. Deploy the flow by clicking the "Deploy" button in the top right corner. To test the setup, press the Inject button.
 
-You can follow the same steps to retrieve other property values from the OPC UA server. In this example, we are retrieving four simulated data properties: the name of the machine, temperature, operation status, and spindle speed. Your setup might differ depending on the properties and data available on your OPC UA server.
+You can follow the same steps to retrieve other property values from the OPC UA server. In this example, we are retrieving four simulated data properties: the name of the cycle time, temperature, and spindle speed of CNC machine. Your setup might differ depending on the properties and data available on your OPC UA server.
 
 ### Transforming and Aggregating Data
 
@@ -60,8 +60,8 @@ Once you have successfully retrieved data from your OPC UA server, the next step
 
 1. Drag the Change node onto the canvas.
 2. Double-click on the node and set `msg.topic` to the name of the property you want to set for the retrieved data. In this context, set `msg.topic` to `'cycle-time'`, which will be the key in the object that we will create.
-3. Drag the Join node onto the canvas. Set the mode to manual, with the option to create `msg.payload` using the values of `msg.topic` as keys. Set the count to 3 and ensure that the interval for all of the Inject nodes connected to the OPC UA client is the same. This ensures that the data is collected and aggregated correctly.
-4. Connect the Inject node input to the output of the OPC UA client node for the data property name set in the Change node. In my context, I have set it for the `cycle-time` data property .
+3. Drag the Join node onto the canvas. Set the mode to manual, with the option to create `msg.payload` using the values of `msg.topic` as keys. Set the count to 3 and ensure that the interval for all of the Inject nodes connected to the OPC UA client is the same. This ensures that the data is collected and aggregated correctly at the same time.
+4. Connect the output of the OPC UA client node (which retrieves the data) to the input of the Change node. For example, if I have set the Change node for the 'cycle-time' data property, connect it to the OPC UA client node that retrieves this data.
 5. Connect the output of the change node to the input of join node.
 6. Repeat this process for all of your data properties.
 
