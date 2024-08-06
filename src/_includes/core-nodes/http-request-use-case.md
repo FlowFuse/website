@@ -24,7 +24,7 @@ Below, you'll find a range of settings to tailor HTTP requests to fit the needs 
     - **bearer:** Uses Bearer token authentication where a bearer token, typically a JSON Web Token (JWT), is sent in the Authorization header.
       - **Token:** Provide the bearer token if bearer authentication is selected.
 - **Enable Connection Keep-Alive:** Enabling this option will allow Maintain persistent connections for efficiency.
-- **Use Proxy:** Allows to Route requests through a proxy server if necessary, for more information on the configuration of [HTTP Proxy](/node-red/core-nodes/httpproxy/) config node
+- **Use Proxy:** Allows to Route requests through a proxy server if necessary, for more information on the configuration of [HTTP Proxy](/node-red/core-nodes/http-proxy/) config node
 - **Only send non-2xx responses to Catch node:** Enabling this option will send only non-success responses to the Catch node.
 - **Disable Strict HTTP Parsing:** Enabling this option relaxes how Node-RED interprets HTTP responses. It's handy when dealing with responses that don't perfectly match the standard HTTP format.
 - **Return:** Allows to Choose the format for response data conversion
