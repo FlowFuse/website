@@ -6,7 +6,7 @@ navTitle: Accounts
 
 As a company we use a variety of online services in our day-to-day business.
 
-Access to the services is subject to our [access control policy](/company/security/access-control/).
+Access to the services is subject to our [access control policy](/handbook/company/security/access-control/).
 
 When new team members join the company, access will be provided to the core services in accordance with our [onboarding process](/handbook/peopleops/hiring/#onboarding).
 
