@@ -142,7 +142,7 @@ UI-Builder provides extensive customization capabilities, enabling users to buil
 
 FlowFuse Dashboard is built and deployed as a Progressive Web App. This means whilst it's built as a web application, it can be [installed on your mobile device](https://dashboard.flowfuse.com/user/pwa.html#installing-dashboards-on-mobile) and run as a standalone application, behaving as if it was a native app.
 
-### Ui-builder
+### Ui-Builder
 
 Dashboards built with UI-Builder, on the other hand, cannot be installed as an app. It is designed as a web-based tool for building custom UIs and does not support installation as a standalone application.
 
@@ -205,7 +205,7 @@ Additionally, updates about new features and enhancements are also provided thro
 
 ### UI-Builder
 
-UI-Builder does not have a publicly accessible project roadmap or a dedicated planning board for future updates. While development continues, details about forthcoming features and enhancements are regularly updated on the Node-RED Discourse forums by its author. However, having a project roadmap could provide users with a better understanding of upcoming features and planned improvements, making it easier to plan and adapt their projects accordingly.
+UI-Builder does not have a publicly accessible project roadmap or a dedicated planning board for future updates. While development continues, details about forthcoming features and enhancements are regularly updated on the Node-RED Discourse forums by its author. 
 
 ## Summary Table
 
