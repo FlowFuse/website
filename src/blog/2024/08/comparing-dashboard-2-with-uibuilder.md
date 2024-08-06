@@ -37,7 +37,7 @@ Getting started with Node-RED Dashboard 2.0 is relatively easy due to its low-co
 
 UI-Builder can be more challenging to start with, as it does not follow a low-code approach and lacks a separate sidebar for managing UI elements. Navigating the dashboard built with UI-Builder can be less straightforward, requiring users to have a deeper understanding of coding and UI design principles.
 
-## How Easy is it to Migrate from Node-RED Dashboard ?
+## Migrating from Node-RED Dashboard (Dashboard 1.0)
 
 [Node-RED Dashboard](https://flows.nodered.org/node/node-red-dashboard) is a module that provides a set of nodes in Node-RED to quickly create user interfaces or live data dashboards. It was developed by one of the creators of Node-RED and is the most used and downloaded package in the Node-RED ecosystem. However, it is now deprecated. For more information, refer to [Node-RED Dashboard Formally Deprecated](/blog/2024/06/dashboard-1-deprecated/).
 
