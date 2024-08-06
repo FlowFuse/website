@@ -128,7 +128,12 @@
         },
         {
             "xpath": "upd",
-            "name": "UDP",
+            "name": "UDP In",
+            "file": "32-udp"
+        },
+        {
+            "xpath": "upd",
+            "name": "UDP Out",
             "file": "32-udp"
         }
     ],
@@ -184,12 +189,12 @@
     "storage": [
         {
             "xpath": "file",
-            "name": "File",
+            "name": "Write File",
             "file": "10-file"
         },
         {
             "xpath": "watch",
-            "name": "Watch",
+            "name": "Read File",
             "file": "23-watch"
         }
     ]
