@@ -15,7 +15,7 @@ tags:
 
 Have you ever found yourself trying to connect old industrial systems with new IoT tools? Maybe you have machinery that uses OPC UA, but your data is sent through MQTT. How do you make these systems work together smoothly?
 
-<!-- more -->
+<!--more-->
 
 In this guide, we'll demonstrate how to use Node-RED to bridge OPC UA data to MQTT. This integration will streamline your data flow and enhance real-time monitoring, helping you modernize your setup and improve communication between systems.
 
