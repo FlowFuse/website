@@ -1617,7 +1617,31 @@ input[type="range"] {
     width: 100%;
   }
 
+  @media (max-width: 768px) {
+    .dashboard-image {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(2, 1fr);
+      gap: 1rem;
+    }
+  
+    .dashboard-image .item1 {
+      grid-column: span 1;
+      grid-row: span 1;
+    }
+  
+    .dashboard-image .item2 {
+      grid-column: span 1;
+      grid-row: span 1;
+    }
+  
+    .dashboard-image .item3 {
+      grid-column: span 2;
+      grid-row: span 2;
+    }
+  }
+
   .dashboard-image img {
     border: 2px solid  theme(colors.indigo.100);    
     border-radius: 8px;
- }
+  }
