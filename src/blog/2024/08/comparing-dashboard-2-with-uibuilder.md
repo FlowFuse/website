@@ -30,7 +30,7 @@ Finding UI-Builder is straightforward, as its package name `node-red-ui-builder`
 
 ## How Easy is it to Get Started?
 
-## FlowFuse Dashboard
+### FlowFuse Dashboard
 
 Getting started with FlowFuse Dashboard is relatively easy due to its low-code approach. It features a sidebar for managing UI widgets, themes, configurations, and settings, with intuitive navigation to the dashboard page. This makes it accessible for users with varying levels of technical expertise.
 
@@ -76,7 +76,7 @@ _Screenshot of the UI-Builder GitHub commit chart._
 
 FlowFuse Dashboard offers an extensive set of UI elements, including forms, dropdowns, tables, charts, and gauges that are super easy to use. These widgets are built with complex Vue.js components, but users are completely shielded from this complexity, allowing them to focus on ease of use. Additionally, if you want to create your own custom widget, you can do so with the ui-template node that accepts complete Vue components. By default, FlowFuse Dashboard supports the Vuetify library, which provides an extensive set of UI components.
 
-## UI-Builder
+### UI-Builder
 
 UI-Builder also offers a number of widgets, but these are not as user-friendly as those in FlowFuse Dashboard. Users must send a JSON config object, which can be complex for new users who lack knowledge of HTML/CSS. Additionally, handling widget data requires using UI-Builder's methods, which can further increase complexity. However, UI-Builder's strength lies in its flexibility, allowing any HTML element to be used as a component, and it also supports the W3C standard web components. Despite this, users need to perform a lot of additional tasks to get everything set up and will have the hassle of writing things.
 
