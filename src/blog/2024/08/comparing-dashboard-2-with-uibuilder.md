@@ -48,7 +48,9 @@ FlowFuse Dashboard is developed to replace the the deprecated standard Node-RED 
 
 ### UI-Builder
 
-Migrating from Node-RED Dashboard 1 to UI-Builder is significantly more complex. UI-Builder does not follow the same concepts or provide the same UI elements as the Node-RED Dashboard. Users will need to recreate their dashboards from scratch, as UI-Builder relies on custom coding and frontend frameworks rather than the predefined, low-code widgets of Node-RED Dashboard. This process can be overwhelming and requires a solid understanding of HTML, CSS and the frontend frameworks if you wanted use.
+Migrating from Node-RED Dashboard 1 to UI-Builder is significantly more complex. UI-Builder does not follow the same concepts or provide the same UI elements as the Node-RED Dashboard.
+
+Users will need to recreate their dashboards from scratch, as UI-Builder relies on custom coding and frontend frameworks rather than the predefined, low-code widgets of Node-RED Dashboard. This process can be overwhelming and requires a solid understanding of HTML, CSS and the frontend frameworks if you wanted use.
 
 ## How Active is the Project's Development?
 
@@ -66,7 +68,7 @@ _Screenshot of the FlowFuse Dashboard GitHub commit chart._
 ![Screenshot of the UI-Builder GitHub commit chart](./images/ui-builder-commits.png)  
 _Screenshot of the UI-Builder GitHub commit chart._
 
-## How Extensive is the Collection of Pre-Built UI Elements?
+## Pre-Built UI Elements
 
 ### FlowFuse Dashboard
 
@@ -76,7 +78,7 @@ FlowFuse Dashboard offers an extensive set of UI elements, including forms, drop
 
 UI-Builder also offers a number of widgets, but these are not as user-friendly as those in FlowFuse Dashboard. Users must send a JSON config object, which can be complex for new users who lack knowledge of HTML/CSS. Additionally, handling widget data requires using UI-Builder's methods, which can further increase complexity. However, UI-Builder's strength lies in its flexibility, allowing any HTML element to be used as a component, and it also supports the W3C standard web components. Despite this, users need to perform a lot of additional tasks to get everything set up and will have the hassle of writing things.
 
-## How easy it is to Control UI at runtime?
+## Changing the UI at Runtime
 
 ### FlowFuse Dashboard
 
@@ -108,7 +110,7 @@ These predefined layouts provide a solid foundation for most applications. If yo
 
 UI-Builder does not come with predefined layouts, which can make it more complex for users to get started. it does however, provides the flexibility to completely define your own layout using CSS. This approach allows for complete customization, but it requires users to have a good understanding of HTML and CSS. The lack of predefined layouts means users have to create their own from scratch, which can be time-consuming.
 
-## How Responsive Are They?
+## Responsiveness on Mobile
 
 ### FlowFuse Dashboard
 
