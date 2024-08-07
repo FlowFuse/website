@@ -82,7 +82,7 @@ sections:
         info: "<p>Setup standard nodes and flows that can be shared with all team members.</p>"
       - id: pipelines
         label: DevOps Pipelines
-        cloudValues: [ 'check', 'check', 'check' ]
+        cloudValues: [ null, 'check', 'check' ]
         selfHostedValues: [ null, 'check' ]
         tags: [ 'cloud', 'self-hosted' ]
         info: "<p>DevOps pipelines allows for you to setup different environments for development, testing and production Node-RED instances.</p>"
