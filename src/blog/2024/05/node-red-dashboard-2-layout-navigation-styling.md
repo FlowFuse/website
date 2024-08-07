@@ -8,6 +8,7 @@ image: /blog/2024/05/images/node-red-dashboard-2-layout-navigation-styling.png
 tags:
    - posts
    - dashboard 2.0
+   - customizing dashboard
 ---
 
 In this comprehensive guide, we will explore different layouts and sidebar styles in Dashboard 2.0. Additionally, we will cover how you can style Dashboard 2.0 elements effortlessly.

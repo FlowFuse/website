@@ -1,14 +1,15 @@
 ---
 title: Customise theming in your FlowFuse Dashboard
-subtitle: Customising Headers, Themes, and Layouts in Node-RED Dashboard 2.0
-description: Discover the latest enhancements in Node-RED Dashboard 2.0, including customizable headers, themes, and layout modifications to personalize your dashboard experience.
-date: 2024-07-05
+subtitle: Customising Headers, Themes, and Layouts in FlowFuse Dashboard
+description: Discover the latest enhancements in FlowFuse Dashboard, including customizable headers, themes, and layout modifications to personalize your dashboard experience.
+date: 2024-08-07
 authors: ["sumit-shinde"]
-image: 
+image: /blog/2024/07/images/customize-theming-flowfuse-dashboard.png
 tags:
    - post
    - dashboard
    - flowfuse dashboard
+   - customizing dashboard
 ---
 
 A recent release of FlowFuse Dashboard (Dashboard 2.0) has taken customization to the next level.
@@ -36,8 +37,8 @@ Before proceeding, you should hide the page name on the left side of the header 
 
 To hide the page name:
 
-1. Go to the Dashboard 2.0 sidebar
-2. Click on to the "Edit settings" option located at the top of the Dashboard 2.0 sidebar.
+1. Go to the FlowFuse Dashboard sidebar
+2. Click on to the "Edit settings" option located at the top of the FlowFuse Dashboard sidebar.
 
 !["Screenshot showing the 'edit setting' option in the dashboard sidebar"](./images/edit-setting-button.png "Screenshot showing the 'edit setting' option in the dashboard sidebar"){data-zoomable}
 _Screenshot showing the 'edit setting' option in the dashboard sidebar_
@@ -113,7 +114,7 @@ _Screenshot of Dashboard showing the #app-bar-actions container_
 !["Screenshot of Dashboard displaying the logged in user profile at the right side of header"](./images/user-profile.png "Screenshot of Dashboard displaying the logged in user profile at the right side of header"){data-zoomable}
 _Screenshot of Dashboard displaying the logged in user profile at the right side of header_
 
-In this section, we will add the user profile of the currently logged-in user to the right side of the header. Make sure you have installed "@flowfuse/node-red-dashboard-2-user-addon" via the palette manager and enabled [FlowFuse User Authentication](/docs/user/instance-settings/#flowfuse-user-authentication). Each message emitted by the Dashboard 2.0 widget will include the logged-in user information under `msg._client.user`. Additionally the [setup object](https://dashboard.flowfuse.com/contributing/guides/state-management.html#setup-store) will also contain this information under `setup.socketio.auth.user`.
+In this section, we will add the user profile of the currently logged-in user to the right side of the header. Make sure you have installed "@flowfuse/node-red-dashboard-2-user-addon" via the palette manager and enabled [FlowFuse User Authentication](/docs/user/instance-settings/#flowfuse-user-authentication). Each message emitted by the FlowFuse Dashboard widget will include the logged-in user information under `msg._client.user`. Additionally the [setup object](https://dashboard.flowfuse.com/contributing/guides/state-management.html#setup-store) will also contain this information under `setup.socketio.auth.user`.
 
 1. Drag the ui-template widget onto the canvas.
 2. Select the correct scope for that widget to render.
@@ -166,7 +167,7 @@ export default {
 </style>
 ```
 
-For detailed guide on this section, refer to the guide on [Displaying logged in user on Node-RED Dashboard 2.0](/blog/2024/04/displaying-logged-in-users-on-dashboard/). Furthermore, if you want to add logos or buttons on the right side similar to the left side of the header, you just need to replace the to attribute with the `#app-bar-actions`.
+For detailed guide on this section, refer to the guide on [Displaying logged in user on FlowFuse Dashboard](/blog/2024/04/displaying-logged-in-users-on-dashboard/). Furthermore, if you want to add logos or buttons on the right side similar to the left side of the header, you just need to replace the to attribute with the `#app-bar-actions`.
 
 ## Styling Header
 
@@ -174,8 +175,8 @@ One of the significant customization features we've added recently is the abilit
 
 To style the header:
 
-1. Go to the Dashboard 2.0 sidebar
-2. Click on to the "Edit settings" option located at the top of the Dashboard 2.0 sidebar.
+1. Go to the FlowFuse Dashboard sidebar
+2. Click on to the "Edit settings" option located at the top of the FlowFuse Dashboard sidebar.
 
 !["Screenshot showing the 'edit setting' option in the dashboard sidebar"](./images/edit-setting-button.png "Screenshot showing the 'edit setting' option in the dashboard sidebar"){data-zoomable}
 _Screenshot showing the 'edit setting' option in the dashboard sidebar_
@@ -214,7 +215,7 @@ In this section of the guide, you will learn how to change the Dashboard theme, 
 
 To edit the existing theme:
 
-1. Go to the Dashboard 2.0 sidebar.
+1. Go to the FlowFuse Dashboard sidebar.
 2. Switch to the "Theme" tab.
 
 !["Screenshot showing the dashboard theme tab in the sidebar"](./images/dashboard-theme-tab.png "Screenshot showing the dashboard theme tab in the sidebar"){data-zoomable}
@@ -223,13 +224,13 @@ _Screenshot showing the dashboard theme tab in the sidebar_
 3. Click on the edit button next to the theme.
 4. You can adjust the header color and the primary color (which applies to the navigation sidebar and elements like buttons and dropdowns) under the "Primary" section. In the "Pages" section, set the background color for pages, and in the "Groups" section, adjust the background color and border color of groups.
 
-!["Screenshot showing the theme properties dialog"](./images/dashboard-theme-tab.png "Screenshot showing the theme properties dialog"){data-zoomable}
+!["Screenshot showing the theme properties dialog"](./images/dashboard-theme-settings.png "Screenshot showing the theme properties dialog"){data-zoomable}
 _Screenshot showing the theme properties dialog_
 
 5. Under "Sizing," adjust the page padding (the space between dashboard groups), the page border, group gap, group border radius (the thickness of the group border), and widget gap.
 
-For more information on  theme, how to add new themes, and set themes for pages, refer to the [Comprehensive guide: Node-RED Dashboard 2.0 layout, sidebar, and styling](/blog/2024/05/node-red-dashboard-2-layout-navigation-styling/#understanding-dashboard-2.0-theme). Additionally, this guide covers Node-RED Dashboard 2.0 layouts, themes, and custom styling in detail.
+For more information on  theme, how to add new themes, and set themes for pages, refer to the [Comprehensive guide: FlowFuse Dashboard layout, sidebar, and styling](/blog/2024/05/node-red-dashboard-2-layout-navigation-styling/#understanding-dashboard-2.0-theme). Additionally, this guide covers FlowFuse Dashboard layouts, themes, and custom styling in detail.
 
 ## Conclusion
 
-In this article, we explored Node-RED Dashboard 2.0's new customization features. We focused on adding elements like buttons and logos to the header, and discussed styling options such as default, hidden, and fixed for headers. We also covered how to adjust dashboard themes to personalize colors and layout. These insights empower users to create more personalized and functional Node-RED dashboards.
+In this article, we explored FlowFuse Dashboard's new customization features. We focused on adding elements like buttons and logos to the header, and discussed styling options such as default, hidden, and fixed for headers. We also covered how to adjust dashboard themes to personalize colors and layout. These insights empower users to create more personalized and functional Node-RED dashboards.
