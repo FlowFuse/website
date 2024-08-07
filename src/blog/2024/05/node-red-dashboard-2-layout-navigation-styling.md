@@ -6,9 +6,11 @@ date: 2024-05-10
 authors: ["sumit-shinde"]
 image: /blog/2024/05/images/node-red-dashboard-2-layout-navigation-styling.png
 tags:
-   - posts
-   - dashboard 2.0
+   - post
+   - dashboard
+   - flowfuse dashboard
    - customizing dashboard
+   - dashboard 2.0
 ---
 
 In this comprehensive guide, we will explore different layouts and sidebar styles in Dashboard 2.0. Additionally, we will cover how you can style Dashboard 2.0 elements effortlessly.
