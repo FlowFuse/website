@@ -54,7 +54,7 @@ _Screenshot showing the 'Show page name in the header bar' option in the dashboa
 3. Choose the page on which you want to render the buttons if you selected `page-scope`, or choose correct ui if `ui-scope` is selected.
 4. Paste the following Vue snippet into the template widget. In this snippet, note how we specify the "to" attribute targeting the `#app-bar-title` ID in the teleport tag:
 
-```js
+```html
 <template>
     <!-- Teleport the button to the #app-bar-actions area when mounted -->
     <Teleport v-if="mounted" to="#app-bar-title">
@@ -121,7 +121,7 @@ In this section, we will add the user profile of the currently logged-in user to
 3. Select the correct page or UI in which you want to render the element.
 3. Paste the same Vue snippet given below into the `ui-template` widget:
 
-```js
+```html
 <template>
     <!-- Teleporting user info to #app-bar-actions, which is the ID of the action bars' right corners area -->
     <Teleport v-if="loaded" to="#app-bar-actions">
