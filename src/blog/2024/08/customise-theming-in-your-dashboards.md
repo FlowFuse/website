@@ -6,7 +6,7 @@ date: 2024-08-07
 authors: ["sumit-shinde"]
 image: /blog/2024/08/images/customize-theming-flowfuse-dashboard.png
 tags:
-   - post
+   - posts
    - dashboard
    - flowfuse dashboard
    - customizing dashboard
