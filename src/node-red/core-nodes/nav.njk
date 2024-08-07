@@ -4,12 +4,12 @@ pagination:
     size: 1
     alias: category
     addAllPagesToCollections: true
-permalink: "node-red/core-nodes/{{ category.key | lower | replace(\" \", \"\") }}-nav/"
+permalink: "node-red/core-nodes/{{ category.key | lower | replace(' ', '-') }}-nav/"
 eleventyComputed:
     eleventyNavigation:
         key: "{{ category.key }}"
         title: "{{ category.key | capitalize }}"
         parent: "Core Nodes"
-        url: "/node-red/core-nodes/{{ category.nodes[0].xpath | lower | replace(\" \", \"\") }}/"
+        url: "/node-red/core-nodes/{{ category.nodes[0].name | lower | replace(' ', '-') }}/"
     permalink: false
 ---

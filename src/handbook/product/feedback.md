@@ -20,6 +20,35 @@ For each call document all the learnings to share internally, to start; make a
 copy of [this template](https://docs.google.com/document/d/1_gya2WZTJW0G2CxlsJguLDCJI3eHRILJzd9ICsn5QTs)
 and roughly follow the questions listed.
 
+### Support Tickets
+
+One very valuable form of feedback is support tickets, where customers tell us the specific issues they are experiencing. To facilitate gathering feedback from support tickets, we categorize each ticket we receive.
+
+When interacting with a support ticket for the first time, the person who opens the ticket selects a Category for the ticket in the About This Ticket section. The categories are:
+
+- Product Issue: for tickets about FlowFuse, fit for a particular use case, and product issues not related to something not working as expected. (Those are covered in the category Product Performance Issue.)
+
+- Billing Issue: for problems with billing and cancellation/refund requests.
+
+- Feature Request: for feature requests.
+
+- General Inquiry: for tickets not covered by any of the other ticket types.
+
+- Product Performance Issue: for problems with the performance of particular features.
+
+- Dashboard Issue: for issues specifically with Dashboard.
+
+- How-To Question: for tickets about how to do something with FlowFuse or Node-RED.
+
+
+When a user asks to cancel their subscription, follow this process:
+1. Categorize their ticket as Billing Issue.
+2. Solicit feedback about why they would like to cancel.
+
+To facilitate (2), a Snippet has been created in HubSpot. In the Comment area in the open ticket, select Insert, Snippets, and 'User wants to cancel/delete team.'
+
+Users who delete their FlowFuse account are automatically sent a survey through HubSpot.
+
 ### LinkedIn Polls
 
 LinkedIn provides a valuable platform for gathering feedback. Creating polls on LinkedIn can provide us with quick, quantitative feedback on specific features or proposed changes. This method also helps us to reach out to a wider network that includes not just our customers, but also industry peers and influencers.
