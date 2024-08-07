@@ -14,11 +14,11 @@ tags:
 
 A recent release of FlowFuse Dashboard (Dashboard 2.0) has taken customization to the next level.
 
+<!--more-->
+
 Previously, users enjoyed the flexibility of tweaking navigation sidebars, themes, and group and page padding. With the new update, you can fully personalize the header too, adding unique elements to enhance your dashboard experience and customize your application to your own branding.
 
 In this article, we'll delve into these exciting new features, including theme adjustments, custom styling, and layout modifications, that empower you to tailor your Node-RED Dashboard like never before.
-
-<!--more-->
 
 ## Adding Elements in the Header
 
