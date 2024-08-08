@@ -115,8 +115,8 @@ module.exports = function(eleventyConfig) {
         flowId++; // Increment the flowId to allow multiple flows on the same page
 
         return `<div id="nr-flow-${flowId}" style="height: ${height}px" data-grid-lines="true" data-zoom="true" data-images="true" data-link-lines="false" data-labels="true"></div>
-        <script type="module">const flow${flowId} = ${JSON.stringify(flow)};
-        new FlowRenderer().renderFlows(JSON.parse(flow${flowId}), { container: document.getElementById('nr-flow-${flowId}') })</script>`
+        <script type="module">const flow${flowId} = ${JSON.stringify(flow).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')};
+        new FlowRenderer().renderFlows(JSON.parse(flow${flowId}.replace(/&gt;/g,'>').replace(/&lt;/g,'<').replace(/&amp;/g,'&')), { container: document.getElementById('nr-flow-${flowId}') })</script>`
     });
 
     eleventyConfig.addGlobalData("coreNodesArray", () => {
