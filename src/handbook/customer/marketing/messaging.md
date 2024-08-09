@@ -24,9 +24,17 @@ our 'ICP'. That's not to say FlowFuse shouldn't cater to this audience, but
 does 
 
 1. Manufacturing or industrial company
+$500MM or up in revenue
+At least a 3 man IT team
+Established or desired digitalization strategy
+
+
+1. Manufacturing or industrial company
 1. $500MM or up in revenue
 1. At least a 3 man IT team
 1. Established Digitalization strategy
+   * Are looking to integrate many different machines, services, and systems
+   * Have one tool to connect, collect, visualize and interact with their operations
 
 See also the description of [our market](/handbook/company/strategy/#the-market).
 
