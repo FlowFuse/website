@@ -5,7 +5,6 @@ image: /images/webinars/node-red-dashboard-crash-course.jpg
 date: 2024-08-28
 time: 17:00 CET (11:00am ET) 
 duration: 60
-video: uxBz3qs7qZk
 hosts: ["stephen-mclaughlin"]
 hubspot:
     formId: f7203c2b-062e-4634-98d4-c0394d1ab39b
