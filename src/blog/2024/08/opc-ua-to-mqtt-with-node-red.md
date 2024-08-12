@@ -2,9 +2,9 @@
 title: Bridging OPC UA Data to MQTT with Node-RED
 subtitle: Connecting OPC UA Data Streams to MQTT Brokers for Enhanced IoT Communication and Monitoring
 description: Learn how to bridge OPC UA data to MQTT using Node-RED for seamless industrial IoT integration and real-time data flow.
-date: 2024-08-07
+date: 2024-08-13
 authors: ["sumit-shinde"]
-image: 
+image: /blog/2024/07/images/brdging-opcua-to-mqtt.png
 tags:
    - posts
    - flowfuse
@@ -21,7 +21,7 @@ In this guide, we'll demonstrate how to use Node-RED to bridge OPC UA data to MQ
 
 ### Why Bridge OPC UA to MQTT
 
-![Diagram showing the data flow when bridging OPC UA to MQTT to enable communication between non-OPC UA compatible systems and devices](./images/factory-floor-mqtt-opcua.png){data-zoomable}
+![Diagram showing the data flow when bridging OPC UA to MQTT to enable communication between non-OPC UA compatible systems and devices](./images/opc-ua-to-mqtt.png){data-zoomable}
 _Diagram showing the data flow when bridging OPC UA to MQTT to enable communication between non-OPC UA compatible systems and devices._
 
 In modern industrial environments, integrating systems with different communication protocols can be a significant challenge. For example, a CNC machine on the factory floor might use OPC UA, while some cloud solutions, edge devices, and other systems, such as custom ERP solutions and IoT applications, might rely on MQTT protocol. This is where bridging OPC UA to MQTT becomes highly beneficial.
