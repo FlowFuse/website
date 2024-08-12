@@ -2,7 +2,7 @@
 title: Managing devices
 description: "Making device management that little bit easier."
 
-date: 2024-08-09 13:00:00.0
+date: 2024-08-12 13:00:00.0
 
 authors: ["stephen-mclaughlin"]
 tags:
