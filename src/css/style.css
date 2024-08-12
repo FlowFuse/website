@@ -1618,10 +1618,10 @@ input[type="range"] {
   }
 
 
-  .dashboard-image img {
-    border: 2px solid  theme(colors.indigo.100);    
-    border-radius: 8px; 
- }   
+  .dashboard-image img, .ebook-images img {
+    border: 2px solid theme(colors.indigo.100);    
+    border-radius: 8px;
+  }
 
 @media (max-width: 768px) {
   .dashboard-image {
@@ -1647,10 +1647,10 @@ input[type="range"] {
   }
 }
 
-.dashboard-image .ebook{
+.ebook-images{
     display: flex;
 }
 
-.dashboard-image .ebook> :nth-child(2){
+.ebook-images > :nth-child(2){
     height: 100%;
 }    
