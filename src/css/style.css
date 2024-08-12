@@ -1617,12 +1617,12 @@ input[type="range"] {
     width: 100%;
   }
 
-<<<<<<< HEAD
+
   .dashboard-image img {
     border: 2px solid  theme(colors.indigo.100);    
     border-radius: 8px; 
  }   
-=======
+
 @media (max-width: 768px) {
   .dashboard-image {
     display: grid;
@@ -1651,4 +1651,3 @@ input[type="range"] {
   border: 2px solid theme(colors.indigo.100);    
   border-radius: 8px;
 }
->>>>>>> 27b1d89461ab2b936d595fe77a60d987c389d8d5
