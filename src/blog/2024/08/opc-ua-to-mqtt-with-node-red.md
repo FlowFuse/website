@@ -13,7 +13,7 @@ tags:
    - node-red mqtt protocol conversion
 ---
 
-Have you ever found yourself trying to connect old industrial systems with new IoT tools? Maybe you have machinery that uses OPC UA, but your data is sent through MQTT. How do you make these systems work together smoothly?
+Have you ever found yourself trying to connect old industrial systems with new IoT tools? This is a common scenario when trying to digitally transform while setting up your Unified Name Space. Maybe you have machinery that uses OPC UA, but your data is sent through MQTT. How do you make these systems work together smoothly?  
 
 <!--more-->
 
@@ -26,17 +26,17 @@ _Diagram showing the data flow when bridging OPC UA to MQTT to enable communicat
 
 In modern industrial environments, integrating systems with different communication protocols can be a significant challenge. For example, a CNC machine on the factory floor might use OPC UA, while some cloud solutions, edge devices, and other systems, such as custom ERP solutions and IoT applications, might rely on MQTT protocol. This is where bridging OPC UA to MQTT becomes highly beneficial.
 
-By converting OPC UA data into MQTT messages, you make the data from the CNC machine accessible to a wider range of systems that use MQTT, which is a more universally supported messaging protocol. This bridging solution simplifies the integration process, allowing diverse systems to communicate effectively without needing direct OPC UA support.
+By converting OPC UA data into MQTT messages, you make the data from the CNC machine accessible to a broader range of systems that use MQTT, which is a more universally supported messaging protocol. This bridging solution simplifies the integration process, allowing diverse systems to communicate effectively without needing direct OPC UA support.
 
 **Node-RED** is perfect for this job. It can connect both OPC UA and MQTT, making it easy to transform and route data between different systems. Its flexibility and support for many protocols make it great for integrating various industrial hardware and software. For more on how Node-RED can improve industrial operations, check out [Building on FlowFuse: Remote Device Monitoring](/blog/2024/07/building-on-flowfuse-devices/).
 
 ## Bridging OPC UA Data to MQTT with Node-RED
 
-In this section, I'll demonstrate how to bridge OPC UA data to MQTT using Node-RED. We will use simulated OPC UA server data from a CNC machine as an example. The goal is to show how you can efficiently transfer this data to an MQTT broker, making it accessible to a variety of applications and systems.
+In this section, I'll demonstrate how to bridge OPC UA data to MQTT using Node-RED. We will use simulated OPC UA server data from a CNC machine as an example. The goal is to show how you can efficiently transfer this data to an MQTT broker, making it accessible to various applications and systems.
 
-### Prequiste
+### Prerequisite
 
-- OPC UA Server : Make sure you have an OPC UA server configured and running with the necessary data. For this blog, we'll use the Prosys OPC UA Simulation Server, which simulates data of CNC machine for us designed for testing OPC UA client applications and learning the technology. You can download it from [here](https://prosysopc.com/products/opc-ua-simulation-server/).
+- OPC UA Server: Make sure you have an OPC UA server configured and running with the necessary data. For this blog, we'll use the Prosys OPC UA Simulation Server, which simulates data from CNC machines designed for testing OPC UA client applications and learning the technology. You can download it from [here](https://prosysopc.com/products/opc-ua-simulation-server/).
 
 - [node-red-contrib-opcua](https://flows.nodered.org/node/node-red-contrib-opcua): install the node-red contrib package that will enable integration of opcua in Node-RED.
 
@@ -45,12 +45,12 @@ In this section, I'll demonstrate how to bridge OPC UA data to MQTT using Node-R
 To begin retrieving data from your OPC UA server using Node-RED, follow these steps:
 
 1. Drag the Inject node onto the canvas.
-2. Drag the Change node onto the canvas, Double-click on the node to open its configuration settings. Set the `msg.topic` to the node ID and datatype of the property you wish to read.
+2. Drag the Change node onto the canvas and double-click on the node to open its configuration settings. Set the `msg.topic` to the node ID and datatype of the property you wish to read.
 
 ![(Left) Image of the Change node setting the 'msg.topic' to retrieve the cycle time data and (Right) the OPC UA Prosys interface.](./images/change-node-setting-nodeid-datatype.png){data-zoomable}
 _(Left) Image of the Change node setting the 'msg.topic' to retrieve the cycle time data and (Right) the OPC UA Prosys interface._
 
-2. Drag the OPC UA Client node onto the canvas. Double-click on it to open its configuration settings. Click the "+" icon next to the Endpoint field and enter the URL of your running OPC UA server. Configure the security policy and mode according to your server setup. If you are using the Prosys OPC UA Simulation Server and have not enabled any security features, you can leave the security policy and mode as "None."
+2. Drag the OPC UA Client node onto the canvas. Double-click on it to open its configuration settings. Click the "+" icon next to the Endpoint field and enter the URL of your running OPC UA server. Configure the security policy and mode according to your server setup. If you use the Prosys OPC UA Simulation Server and have not enabled any security features, you can leave the security policy and mode as "None."
 
 ![Configuring opc-ua client node with the opc ua server endpoint](./images/opc-ua-config.png){data-zoomable}
 _Configuring opc-ua node with the opc ua server endpoint_
@@ -61,15 +61,15 @@ _Configuring opc-ua node with the opc ua server endpoint_
 _Configuring opc-ua client node to select the read operation_
 
 4. If your OPC UA server uses security features, specify the path to your certificate files in the relevant fields. If no security is configured, this step can be skipped.
-5. Drag the Debug node onto the canvas. This will help you verify the data retrieved from the OPC UA server.
+5. Drag the Debug node onto the canvas. The output will help you verify the data retrieved from the OPC UA server.
 6. Connect the output of the Inject node to the input of the Change node and the output of the change node to the input of the OPC UA Client node. Then, connect the output of the OPC UA Client node to the input of the Debug node. This setup ensures that when the Inject node triggers, it sends data to the OPC UA Client node, and the results are displayed in the Debug node.
 7. Deploy the flow by clicking the "Deploy" button in the top right corner. To test the setup, press the Inject button.
 
-You can follow the same steps to retrieve other property values from the OPC UA server. In this example, we are retrieving four simulated data properties: the name of the cycle time, temperature, and spindle speed of CNC machine. Your setup might differ depending on the properties and data available on your OPC UA server.
+You can follow the same steps to retrieve other property values from the OPC UA server. In this example, we are retrieving four simulated data properties: the name of the cycle time, temperature, and spindle speed of the simulated CNC machine. Your setup might differ depending on the properties and data available on your OPC UA server.
 
 ### Transforming and Aggregating Data
 
-Once you have successfully retrieved data from your OPC UA server, the next step is to transform and aggregate this data to make it suitable for publishing to an MQTT broker. In this demonstration, we will aggregate the retrieved individual property values into a single object. Depending on your specific needs, you might choose to split the object properties and send them separately or perform various calculations and transformations on the data.
+Once you have successfully retrieved data from your OPC UA server, the next step is to transform and aggregate this data to make it suitable for publishing to an MQTT broker. This demonstration, we will aggregate the retrieved individual property values into a single object. Depending on your specific needs, you might choose to split the object properties and send them separately or perform various calculations and transformations on the data.
 
 1. Drag the Change node onto the canvas.
 2. Double-click on the node and set `msg.topic` to the name of the property you want to set for the retrieved data. In this context, set `msg.topic` to `'cycle-time'`, which will be the key in the object that we will create.
@@ -79,7 +79,7 @@ _Setting the msg.topic with the Change node to retrieve data from the OPC UA ser
 
 3. Drag the Join node onto the canvas. Set the mode to manual, with the option to create `msg.payload` using the values of `msg.topic` as keys. Set the count to 3 and ensure that the interval for all of the Inject nodes triggering data retrieval is the same. This ensures that the data is collected and aggregated correctly at the same time.
 4. Connect the output of the OPC UA client node (which retrieves the data) to the input of the Change node. For example, if I have set the Change node for the 'cycle-time' data property, connect it to the OPC UA client node that retrieves this data.
-5. Connect the output of the change node to the input of join node.
+5. Connect the output of the change node to the input of the join node.
 6. Repeat this process for all of your data properties.
 
 ### Sending Data to the MQTT Broker
@@ -87,13 +87,13 @@ _Setting the msg.topic with the Change node to retrieve data from the OPC UA ser
 Now, in this section, we will show you how to send the collected data to an MQTT broker:
 
 1. Drag the mqtt out node onto the canvas.
-2. Double-click on it and configure it with your MQTT broker details. For this guide, I am utilizing the [free HiveMQ public broker](https://www.hivemq.com/mqtt/public-mqtt-broker/) which is specially desinged for testing and learning purpose.
+2. Double-click on it and configure it with your MQTT broker details. For this guide, I am using the [free HiveMQ public broker](https://www.hivemq.com/mqtt/public-mqtt-broker/), which is specially designed for testing and learning purposes.
 
 ![Configuring the mqtt out node with broker information](./images/mqtt-out-node-config.png){data-zoomable}
 _Configuring the mqtt out node with broker information_
 
 3. Set the topic for your data in the MQTT Out node.
-4. Connect the output of the Join node to the input of the mqtt out node.
+4. Connect the output of the Join node to the input of the MQTT out node.
 5. Deploy the flow. After deploying, you will see the status "connected" with a green dot at the bottom of each node, indicating that you have successfully connected to your MQTT broker.
 
 ### Retrieving Data from MQTT Broker
