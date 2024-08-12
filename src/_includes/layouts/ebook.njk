@@ -12,7 +12,7 @@ hubspot:
                 {% if secondaryImage and tertiaryImage %}
                 {% set imageSrc1 = ["./", secondaryImage] | join %}
                 {% set imageSrc2 = ["./", tertiaryImage] | join %}
-                <div class="my-6 flex gap-3 dashboard-image ebook">
+                <div class="my-6 flex gap-3 ebook-images">
                     {% image imageSrc1, "FlowFuse Dashboard", [225] %}
                     {% image imageSrc2, "FlowFuse Dashboard", [225] %}
                 </div>
