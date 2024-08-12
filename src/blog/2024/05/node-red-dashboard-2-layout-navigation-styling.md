@@ -7,6 +7,9 @@ authors: ["sumit-shinde"]
 image: /blog/2024/05/images/node-red-dashboard-2-layout-navigation-styling.png
 tags:
    - posts
+   - dashboard
+   - flowfuse dashboard
+   - customizing dashboard
    - dashboard 2.0
 ---
 

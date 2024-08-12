@@ -62,7 +62,7 @@ If you haven't deployed FlowFuse yet, refer to our [documentation on installing 
 1. To configure FlowFuse with SSO, make sure you are logged in as an administrator.
 2. Go to Admin settings by clicking on the profile icon in the top-right corner and then selecting "Admin settings".
 
-!["Screenshot of the platform showing the 'admin settings' 'SSO' tab option"](./images/setting's-sso-setting-section.png "Screenshot of the platform showing the 'admin settings' 'SSO' tab option"){data-zoomable}
+!["Screenshot showing the admin settings option in the profile icon"](./images/admin-setting-option.png "Screenshot showing the admin settings option in the profile icon")
 
 3. Click on "Settings" from the left sidebar and switch to the SSO section.
 

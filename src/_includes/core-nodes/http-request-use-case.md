@@ -9,7 +9,7 @@ When you configure an HTTP Request node, you typically specify the method (GET, 
 Below, you'll find a range of settings to tailor HTTP requests to fit the needs of different APIs or web services. Depending on the service you're working with, some options might be crucial, while others could be optional.
 
 - **Method:** Select the HTTP method for the request (e.g., GET, POST, PUT, DELETE). You can dynamically set it using `msg.method`.
-- **URL:** Specify the endpoint URL to communicate with. Dynamic URL setting is allowed using `msg.url`. additionally, if you want to construct a URL with the message's property you can utilize Mustache-style tags with double braces `{{ }}`. For example, `example.com/{{topic}}`, where the value of `msg.topic` will be automatically inserted. Using double braces `{{ }}` performs HTML escaping by default, so special characters in the substituted value will be escaped. However, if you want to preserve special characters like `/` and `&` in the constructed URL, you can use triple braces `{{{ }}}`.
+- **URL:** Specify the endpoint URL to communicate with. Dynamic URL setting is allowed using `msg.url`. additionally, if you want to construct a URL with the message's property you can utilize Mustache-style tags with double braces `{% raw %}{{ }}{% endraw %}`. For example, `example.com/{% raw %}{{topic}}{% endraw %}`, where the value of `msg.topic` will be automatically inserted. Using double braces `{% raw %}{{ }}{% endraw %}` performs HTML escaping by default, so special characters in the substituted value will be escaped. However, if you want to preserve special characters like `/` and `&` in the constructed URL, you can use triple braces `{% raw %}{{{ }}}{% endraw %}`.
 - **Payload:** Allows to choose how received payload from the previous node will be sent with the request:
   - **Ignore:** If enabled Payload will be ignored.
   - **Append to query-string parameter:** Enabling this option will Allow sending URL query string parameters using `msg.payload`.
@@ -24,7 +24,7 @@ Below, you'll find a range of settings to tailor HTTP requests to fit the needs 
     - **bearer:** Uses Bearer token authentication where a bearer token, typically a JSON Web Token (JWT), is sent in the Authorization header.
       - **Token:** Provide the bearer token if bearer authentication is selected.
 - **Enable Connection Keep-Alive:** Enabling this option will allow Maintain persistent connections for efficiency.
-- **Use Proxy:** Allows to Route requests through a proxy server if necessary, for more information on the configuration of [HTTP Proxy](/node-red/core-nodes/httpproxy/) config node
+- **Use Proxy:** Allows to Route requests through a proxy server if necessary, for more information on the configuration of [HTTP Proxy](/node-red/core-nodes/http-proxy/) config node
 - **Only send non-2xx responses to Catch node:** Enabling this option will send only non-success responses to the Catch node.
 - **Disable Strict HTTP Parsing:** Enabling this option relaxes how Node-RED interprets HTTP responses. It's handy when dealing with responses that don't perfectly match the standard HTTP format.
 - **Return:** Allows to Choose the format for response data conversion

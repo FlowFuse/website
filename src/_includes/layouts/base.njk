@@ -204,7 +204,7 @@ eleventyComputed:
                             {% navoption "Components", null, 1, null, true, "pl-3 title border-l-2" %}{% endnavoption %}
                             <ul class="sub-menu grid grid-rows-subgrid row-span-3 ml-7 auto-rows-auto border-l-2">
                                 {% navoption "FlowFuse Dashboard", "/product/dashboard/", 2, "dashboard" %}{% endnavoption %}
-                                {% navoption "Device Agent", "/docs/hardware/introduction/#device-agent---hardware", 2, "device-agent" %}{% endnavoption %}
+                                {% navoption "Device Agent", "/product/device-agent/", 2, "device-agent" %}{% endnavoption %}
                                 {% navoption "Project Nodes", "/docs/user/projectnodes/#flowfuse-project-nodes", 2, "project-nodes" %}{% endnavoption %}
                             </ul>
                             {% navoption "Customer Stories", "/customer-stories/", 1, "presentation" %}{% endnavoption %}
@@ -353,6 +353,19 @@ eleventyComputed:
             </div>
         </div>
     </footer>
+    <script>
+        // Adjust anchors so they don't get hidden behind the sticky header
+        function adjustAnchor() {
+            window.scrollBy(0, -70);
+        }
+
+        window.addEventListener('hashchange', adjustAnchor);
+
+        // Run adjustAnchor on page load if there's a hash
+        if (window.location.hash) {
+            window.addEventListener('load', adjustAnchor);
+        }
+    </script>
 </body>
 <script>
     document.getElementById('nav-toggle').onclick = function(){
@@ -363,7 +376,6 @@ eleventyComputed:
         classes.toggle("mobile-open");
     }
 </script>
-
 <!-- Youtube Facade -->
 <script async src="https://cdn.jsdelivr.net/npm/lite-youtube-embed@0.2.0/src/lite-yt-embed.min.js"></script>
 <link rel="preload" href="https://cdn.jsdelivr.net/npm/lite-youtube-embed@0.2.0/src/lite-yt-embed.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -392,12 +404,31 @@ eleventyComputed:
     }
 
     !function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.async=!0,p.src=s.api_host+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="capture identify alias people.set people.set_once set_config register register_once unregister opt_out_capturing has_opted_out_capturing opt_in_capturing reset isFeatureEnabled onFeatureFlags".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
-    posthog.init('{{ POSTHOG_APIKEY }}', {
-        api_host:'https://eu.posthog.com',
-        bootstrap: phBootstrap,
-        capture_pageleave: false,
-        opt_out_capturing_by_default: true
-    })
+    let optOutByDefault = false;
+
+    fetch('/country')
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Failed to fetch country code from edge function');
+            }
+            return response.text();
+        })
+        .then(countryCode => {
+            const optOutCountries = ['AT', 'BE', 'BG', 'HR', 'CY', 'CZ', 'DK', 'EE', 'ES', 'FI', 'FR', 'DE', 'GR', 'HU', 'IE', 'IT', 'LV', 'LT', 'LU', 'MT', 'NL', 'PL', 'PT', 'RO', 'SK', 'SI', 'SE', 'GB', 'US-CA', 'BR', 'CA', 'AU'];
+            optOutByDefault = optOutCountries.includes(countryCode);
+        })
+        .catch(error => {
+            console.error('Initializing PostHog with opt_out_capturing_by_default set to true due to Fetch failed by:', error);
+            optOutByDefault = true;
+        })
+        .finally(() => {
+            posthog.init('{{ POSTHOG_APIKEY }}', {
+                api_host:'https://eu.posthog.com',
+                bootstrap: phBootstrap,
+                capture_pageleave: false,
+                opt_out_capturing_by_default: optOutByDefault
+            });
+        });
     /*
         Custom pageleave handler to track scroll
     */

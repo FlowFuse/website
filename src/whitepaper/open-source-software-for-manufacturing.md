@@ -16,6 +16,7 @@ hubspot:
 
 Over the last few decades, Open-Source Software (OSS) has changed access to software by allowing free use, modification, and distribution. OSS is developed collaboratively by volunteers who release their work under licenses enabling users to freely share and modify the software without any royalties or fees. They can be easily accessed from a code-sharing platform or by asking the author or vendor for a copy. This stands in contrast to proprietary software, which is developed and copyrighted by companies or organizations. Access to proprietary software is typically restricted and only available directly from the vendor under license terms that limit usage rights and often prohibit modification or redistribution by users.
 
+![OSS icon with the text: It is estimated that about 90% of the world's software is open source](./whitepaper/images/open-source-world.png){width=250px class="float-right ml-4"}
 It is estimated that about 90% of the world's software is open source, and is used in a wide variety of applications including operating systems, web browsers, and office suites. OSS is especially popular in scenarios where the software serves as an infrastructure layer component, requiring minimal business logic configuration for implementation. At FlowFuse, the company contributes to the open-source project Node-RED, all contributions to that project are free to be used, modified, and redistributed by anyone.
 
 With the popularity of OSS, numerous vendors have begun utilizing the term "open" to describe their software offerings. However, it is crucial to distinguish between genuine OSS and marketing terms such as "open architecture" or "open ecosystem," as these do not necessarily indicate true open-source status. This distinction is essential to mitigate potential risks associated with non-open-source software.
@@ -41,6 +42,8 @@ Secondly, OSS excels in adaptability. It supports backward compatibility with ol
 
 Here are a few ways OSS improves software agility and the developer experience:
 
+![Benefits of Open-Source Software for Manufacturing Graphic](./whitepaper/images/oss.png){data-zoomable}
+
 **Faster adoption:** The most prominent advantage is the speed of adoption. With OSS, engineers can download and execute code in minutes, delivering value to business problems without any hurdles. Organizations adopting OSS typically demonstrate incredible agility in their adoption of different software, allowing them to iterate quickly toward solutions. 
 
 As OSS is free to adopt, it removes the upfront costs and risks of adopting software that might not fit the problem. Free software allows wider adoption and experimentation. This leads to a large and diverse user base that can provide valuable feedback and contributions, accelerating development. This extensive use provides a clear understanding of the software's capabilities and limitations, reducing uncertainty when considering implementing software in production systems.
@@ -57,9 +60,9 @@ The Linux Foundation, as a prime example, upholds a rigorous security posture th
 
 The ease of learning and training on OSS contributes significantly to its rapid adoption. The availability of documentation, tutorials, and online resources fosters a supportive learning environment. The vast community of users that many OSS-projects foster creates a space to readily share knowledge and expertise, making it easier for individuals and organizations to upskill and adapt to new technologies. The collaborative nature of these communities also encourages the development of training materials and courses, further enhancing the accessibility and learnability of OSS.
 
-![Benefits of Open-Source Software for Manufacturing Graphic](./whitepaper/images/oss.png){data-zoomable}
-
 ## <span class="text-indigo-600"> Risks and Remedies </span> for Open-Source Software in Manufacturing
+
+![Three workers wearing hard hats on a manufacturing shop floor, holding a laptop](./whitepaper/images/oss-risks-remedies.png)
 
 When deploying any software, there's always a risk of it becoming unmaintained without a dedicated team or individual overseeing it. Proprietary software typically includes yearly invoices, prompting organizations to assess its usage and value regularly. In contrast, when no invoices are sent, the responsibility falls explicitly on a team or individual within the organization. The approach to managing this responsibility depends on factors such as the software's level of adoption, its criticality to operations, and the available resources for proper oversight.
 
@@ -69,27 +72,33 @@ When contemplating active contribution as a participant in the project’s commu
 
 Collaborating on the code and community can be a cost-intensive option. This is why many open-source projects have a company associated with them as a core contributor and maintainer that has a commercial model for adopting organizations. This reduces the cost per contribution per organization, while each organization influences this commercial proxy into the project. These commercial organizations will often extend the open-source project with features that fit their target audience. For example; FlowFuse is the main contributor to the Node-RED project, and offers a product that improves the operational efficiency of deploying Node-RED at scale, enhances security and compliance, and improves the speed of development of the engineers using Node-RED. Having a vendor relationship for an adopted OSS project makes many organizational hurdles lower as the relationship between software and the adopting organization is normalized to what they’re familiar with; a vendor.
 
-Here are some other risks and remedies to consider: 
+#### Risk Matrix for Using Open Source Software (OSS) in Manufacturing
 
-**Legal and procurement:** When engineers adopt OSS, they generally do not go through a process that validates the license and verifies if the legal department approves of the license. While there’s very little risk in adopting OSS, some licenses are considered ‘viral’ – modifications made to the software MUST be published. This is inconvenient when requested by the community. When internal policies forbid the publishing of modifications as these might include business logic and intellectual property, there’s the possibility of an expensive legal process.
+This matrix provides a clear view of the risks associated with adopting OSS in manufacturing and the measures that can be taken to mitigate them. 
 
-Procurement often includes evaluation questionnaires to ensure that the software abides by the standards upheld for the buyer. OSS projects will not fill out questionnaires for an organization, and thus an investigation needs to commence internally. Generally, more time consuming, the result is less accurate and inefficient.
+**Legend**
+- **Impact**:
+    - **High**: Can cause significant disruptions in operations, equipment damage, or safety risks.
+    - **Medium**: Can cause some delays or additional costs but does not severely disrupt operations.
+    - **Low**: Has a minor and manageable effect on daily operations.
 
-**Hard Hat Safety:** The adoption of software, especially real-time control software, introduces a new layer of potential risks. In a manufacturing setting, this could mean controlling robotic arms, managing conveyor belts, or regulating temperatures in a chemical process. If this software malfunctions, the consequences can be severe, ranging from equipment damage and production halts to worker injuries or even catastrophic accidents. With OSS the liability for faults in the software lies with the user of the software, which might not have had the right information to make judgements on these concerns. This underscores the need for rigorous testing, validation, and redundancy mechanisms to ensure the reliability and safety of real-time control software in manufacturing environments.
+- **Probability**:
+    - **High**: Likely to occur frequently.
+    - **Moderate**: May occur occasionally.
+    - **Low**: Unlikely to occur but cannot be ruled out.
 
-**Black Hat Safety:** OSS is inherently open to scrutiny, enabling faster identification of vulnerabilities, but it also means users are responsible for patching and updates, leaving systems vulnerable to cyberattacks if patching is delayed or overlooked. Additionally, OSS projects often rely on numerous libraries and components, creating hidden dependencies that can introduce vulnerabilities if not carefully managed. Understanding the entire software stack is crucial to ensure all elements are secure.
 
-To mitigate these risks, organizations using OSS should establish a robust patching process for monitoring, testing, and promptly applying security patches. Automated tools can streamline this process. Managing dependencies is essential, including maintaining an inventory, regularly scanning for vulnerabilities, and updating components as needed. Secure coding practices are also crucial when customizing OSS to ensure modifications don't compromise security.
+| **Risk**                      | **Description**                                                                                              | **Impact** | **Probability** | **Remedy**                                                                                                     |
+|-------------------------------|--------------------------------------------------------------------------------------------------------------|------------|-----------------|---------------------------------------------------------------------------------------------------------------|
+| **Legal and Procurement**         | Risk of adopting licenses that do not comply with internal policies, especially those requiring publication of modifications. | Medium     | Low             | Conduct internal license reviews and obtain legal advice to ensure licenses comply with corporate policies. |
+| **Hard Hat Safety**               | Malfunctions in real-time control software can lead to severe consequences in manufacturing settings.       | High       | Moderate        | Implement rigorous testing, validation, and redundancy mechanisms to ensure reliability and safety in manufacturing environments. |
+| **Black Hat Safety**              | Users are responsible for patching and updates, leaving systems vulnerable to cyberattacks if not managed properly. | High       | High            | Establish a robust patching process, use automated tools for dependency management, and follow secure coding practices. |
+| **Maintenance and Support**       | OSS lacks formal support channels, leading to longer resolution times.                                      | High       | Moderate        | Establish relationships with OSS expert providers, use professional services, and ensure proper training.    |
+| **Professional Services**          | Engaging consultants or service providers for OSS security and training.                                      | Medium     | Moderate        | Utilize professional services for risk assessments, vulnerability management, and incident response; provide targeted training for staff. |
+| **Adaptation and Compatibility**  | Lack of compatibility with existing systems and hardware can slow adoption and generate additional costs.    | Medium     | Moderate        | Use OSS with an active community and broad ecosystem; conduct thorough compatibility testing before implementation. |
+| **Contribution Costs**            | Active participation in the OSS community can be costly in terms of time and resources.                     | Medium     | Moderate        | Collaborate with OSS providers who manage contributions and maintain the software; adopt an incremental approach to contributions. |
+| **Transparency and Reviews**      | Transparency allows for constant review but may make the software more susceptible to attacks if not regularly reviewed. | High       | Moderate        | Maintain continuous review and update processes, and collaborate with the community for timely detection and resolution of vulnerabilities. |
 
-Testing and validation are vital to ensure that any modifications made to the OSS do not introduce new vulnerabilities. By following these best practices, organizations can leverage the benefits of OSS while minimizing the risks associated with its use.
-
-**Maintenance and Support:** OSS lacks formal support channels, unlike proprietary software with vendor support contracts. In case of issues or malfunctions or unexpected behaviour, manufacturers may have to rely on community forums or their own expertise for troubleshooting, which can be time-consuming and risky.
-
-Vendors can address the concern of the lack of formal support channels in OSS by providing a range of support options to help customers. These options may include offering service level agreements (SLAs) that outline the level of support customers can expect, establishing a dedicated support team with experienced engineers, setting up a support portal with documentation and troubleshooting guides, and offering paid support contracts. Additionally, vendors can partner with managed service providers (MSPs) to provide support to customers, provide clear and comprehensive documentation, and offer training and workshops to help users understand how to use the software effectively.
-
-**Professional Services:** Professional services and training play a crucial role in ensuring the successful adoption and effective use of OSS within an organization. Engaging experienced consultants or service providers specializing in OSS security can assist with risk assessments, vulnerability management, and incident responses. This expertise contributes to a comprehensive approach to securing OSS, mitigating risks, and maintaining a secure environment.
-
-Additionally, training and education are essential for both operational technology (OT) and information technology (IT) teams to gain the necessary skills for managing OSS. Targeted training programs, knowledge sharing, and collaboration among teams foster a better understanding of Linux administration, scripting, and other required skills. A well-trained workforce ensures the efficient use of OSS, promotes innovation, and enables organizations to leverage the full potential of open-source solutions.
 
 ## Balancing Openness and Innovation: <span class="text-indigo-600">The Open Core Business Model at FlowFuse</span>
 
