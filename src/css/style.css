@@ -1647,7 +1647,10 @@ input[type="range"] {
   }
 }
 
-.dashboard-image img {
-  border: 2px solid theme(colors.indigo.100);    
-  border-radius: 8px;
+.dashboard-image .ebook{
+    display: flex;
 }
+
+.dashboard-image .ebook> :nth-child(2){
+    height: 100%;
+}    
