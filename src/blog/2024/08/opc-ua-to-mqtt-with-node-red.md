@@ -57,7 +57,7 @@ _(Left) Image of the Change node setting the 'msg.topic' to retrieve the cycle t
 ![Configuring opc-ua client node with the opc ua server endpoint](./images/opc-ua-config.png){data-zoomable}
 _Configuring opc-ua node with the opc ua server endpoint_
 
-3. In the OpcUa-Client node settings, select the action type as "READ." This instructs Node-RED to read data from the OPC UA server.
+3. In the **OpcUa-Client** node settings, select the action type as "READ." This instructs Node-RED to read data from the OPC UA server.
 
 ![Configuring OpcUa-Client node to select the read operation](./images/opc-ua-config2.png){data-zoomable}
 _Configuring OpcUa-Client node to select the read operation_
