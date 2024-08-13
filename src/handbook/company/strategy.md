@@ -35,11 +35,9 @@ Software plays a key part in education, reducing vendor lock-in, and community b
 
 ## The market
 
-*Our Target Market*
-Industrial engineer: specifically those working in manufacturing, logistics, and other data-intensive industrial sectors where operational efficiency is equivalent to generating profit and creates real business value.
+Our Target persona is the Industrial engineer: specifically those working in manufacturing, logistics, and other data-intensive industrial sectors where operational efficiency is equivalent to generating profit and creates real business value.
 
-*Why We Target Them*
-Industrial engineers are the driving force behind innovations that lead to process optimizations in their organizations. They possess deep domain expertise and understand the intricacies of their operations. In order to improve their systems, they need to actively collect and analyze data.
+We target them because Industrial engineers are the driving force behind innovations that lead to process optimizations in their organizations. They possess deep domain expertise and understand the intricacies of their operations. In order to improve their systems, they need to actively collect and analyze data.
 
 ## The problems 
 
@@ -59,7 +57,4 @@ The FlowFuse Platform addresses the problems status above by providing our ICP w
 1. Visualize and Interact: FlowFuse offers intuitive visualizations, real-time feedback loops, and interactive dashboards that enable engineers to monitor performance, identify trends, and make data-driven decisions.
 1. Build Custom Solutions: The low-code platform empowers engineers to create custom applications, dashboards, and automation workflows without extensive coding knowledge.
 1. Simplify Complexity: We abstract away the complexities of industrial systems, providing a comprehensive user-friendly interface that allows engineers to focus on solving problems, not wrestling with technology.
-   
-
-
 See also our [Messaging page](/handbook/customer/marketing/messaging/).
