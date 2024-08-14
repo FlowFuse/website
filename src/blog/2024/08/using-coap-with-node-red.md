@@ -20,7 +20,7 @@ Have you ever wondered how to make communication between IoT devices more effici
 
 ## What is CoAP and why it matters?
 
-CoAP (Constrained Application Protocol) is a specialized protocol designed for the Internet of Things (IoT) and other environments where resources are limited. Unlike traditional HTTP, which relies on the heavier TCP (Transmission Control Protocol), CoAP uses UDP (User Datagram Protocol). This allows CoAP to offer lower overhead and reduced latency, making it much more efficient for devices with limited power and bandwidth.
+CoAP (Constrained Application Protocol) is a specialized protocol designed for the Internet of Things (IoT) and other environments where resources are limited. Unlike HTTP and MQTT, which relies on the heavier TCP (Transmission Control Protocol), CoAP uses UDP (User Datagram Protocol). This allows CoAP to offer lower overhead and reduced latency, making it much more efficient for devices with limited power and bandwidth.
 
 **Why does this matter?** Take a battery-powered Raspberry Pi used for monitoring environmental conditions such as temperature and humidity. With CoAP, the Raspberry Pi can send and receive data more efficiently, conserving battery life and operating effectively even in low-bandwidth areas. By minimizing the energy required for communication, CoAP helps extend the device’s operational life and ensures reliable data transmission, which is essential for maintaining accurate and continuous monitoring in remote or resource-constrained settings.
 
