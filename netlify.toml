@@ -71,7 +71,7 @@ publish = "_site"
 [[plugins]]
 package = "@algolia/netlify-plugin-crawler"
   [plugins.inputs]
-  branches = ['main', 'live']
+  branches = ['live']
   template = "hierarchical"
 
 [[plugins]]
