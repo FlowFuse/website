@@ -1,10 +1,10 @@
 ---
 title: "The OT Democratization Journey"
-subtitle: hello
-description: hello
+subtitle: Why democratize connectivity and development?
+description: The democratization of data has been key in the digital transformation journey and the next step is to make that data valuable to everyone.
 date: 2024-08-14
 authors: ["grey-dziuba"]
-image: 
+image: /blog/2024/08/images/ot-democratization-journey.png
 tags:
    - posts
    - flowfuse
@@ -27,7 +27,7 @@ Industry 3.0 saw significant acceleration with the advent of Programmable Logic 
 
 The essence of Industry 4.0 has been connectivity, primarily marked by the industrial adoption of Ethernet’s physical layer. While previous solutions facilitated device communication on the same level (East-West traffic), they fell short of enabling what we now consider North-South communication. Ethernet, originally designed for IT infrastructure communication, had to be adapted for operational technology (OT) through the development of protocols like EthernetIP, EtherCAT, and Profinet, specifically designed for East-West traffic. However, these protocols evolved to also support data capture from systems using drivers like S7, marking a transformative phase in the industry that enabled real-time data-driven decision-making.
 
-!["Network Visualization of East-West vs North-South traffic"](./images/left-side-area.png "Network Visualization of East-West vs North-South traffic"){data-zoomable}
+!["Network Visualization of East-West vs North-South traffic"](./images/traffic-flow-diagram.png "Network Visualization of East-West vs North-South traffic"){data-zoomable}
 _Network Traffic Diagram_
 
 ## The Evolution of Data Handling Models
