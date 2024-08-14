@@ -2,17 +2,21 @@
 title: Using CoAP with Node-RED for Low-Power Devices
 subtitle: A Practical Guide to Integrating CoAP with Node-RED for Efficient IoT Communication
 description: Learn how to use CoAP with Node-RED to optimize communication for low-power, resource-constrained devices.
-date: 2024-08-02
+date: 2024-08-15
 authors: ["sumit-shinde"]
 image:
 tags:
    - post
    - nodered
+   - coap iot
    - coap
+   - CoAP vs HTTPS vs MQTT
    - low power device
 ---
 
 Have you ever wondered how to make communication between IoT devices more efficient, especially when dealing with limited resources? In this blog, we’ll explore CoAP (Constrained Application Protocol), a protocol designed for low-power, resource-constrained environments. We’ll compare CoAP with HTTPS and MQTT, and show you how to integrate CoAP with Node-RED for seamless data communication.
+
+<!--more-->
 
 ## What is CoAP and why it matters?
 
@@ -31,9 +35,9 @@ To understand how different protocols perform in real-world scenarios, let’s c
 
 | **Protocol** | **Payload (bytes)** | **Message Size Overhead (bytes)** | **Total Data Sent per Message (bytes)** | **Bandwidth Usage Calculation**                                         | **Bandwidth Usage (kbps)** | **Latency (ms)** | **CPU Usage (%)** | **Memory Usage (MB)** |
 |--------------|----------------------|----------------------------------|----------------------------------------|-------------------------------------------------------------------------|----------------------------|------------------|-------------------|-----------------------|
-| **HTTPS**    | 50                   | 500                              | 550                                    | (550 bytes/message × 100 messages/second × 8 bits/byte) / 1000          | 440                        | 100              | 10% to 50%        | 100                   |
-| **MQTT**     | 50                   | 100                              | 150                                    | (150 bytes/message × 100 messages/second × 8 bits/byte) / 1000           | 120                        | 50               | 5% to 30%         | 50                    |
-| **CoAP**     | 50                   | 20                               | 70                                     | (70 bytes/message × 100 messages/second × 8 bits/byte) / 1000            | 56                         | 10               | 2% to 20%        
+| **HTTPS**    | 50                   | 500                              | 550 ≈ 600                              | (550 bytes/message × 100 messages/second × 8 bits/byte) / 1000          | 440                        | 100 ≈ 110        | 10% ≈ 50%         | 100 ≈ 120             |
+| **MQTT**     | 50                   | 100                              | 150 ≈ 200                             | (150 bytes/message × 100 messages/second × 8 bits/byte) / 1000           | 120                        | 50 ≈ 60         | 5% ≈ 30%          | 50 ≈ 60               |
+| **CoAP**     | 50                   | 20                               | 70 ≈ 80                               | (70 bytes/message × 100 messages/second × 8 bits/byte) / 1000            | 56                         | 10 ≈ 15         | 2% ≈ 20%          | 20 ≈ 25               |
 
 ## Using CoAP with Node-RED
 
@@ -62,11 +66,9 @@ _Screenshot showing the settings of the coap-in node_
 4. Select the GET method.
 5. Enter the URL endpoint for the CoAP server, which specifies the path where the CoAP server will listen for incoming requests.
 6. Click "Done" to save the configuration.
-7. Drag the `change` node onto the canvas and set `msg.payload` to `flow.temp` (assuming you're storing the temperature value in this context variable).
-8. Drag the `coap-response` node onto the canvas and set the status to 200 and content format to application/json.
+7. Drag the `change` node onto the canvas and set `msg.payload` to `flow.temp` (for the example purpose storing the temperature value in this context variable).
+8. Drag the `coap-response` node onto the canvas and set the status to 200 and correct content format according your data.
 9. Connect the `coap-in` node's output to the input of the `change` node and the output of the `change` node to the input of the `coap-response` node.
-
-Our CoAP server is now set up on a low-overhead device that performs specific tasks and is capable of handling requests. This setup allows the server to communicate and share data with other devices efficiently, making it ideal for scenarios where power efficiency and minimal resource usage are crucial.
 
 ### Requesting Data from the Server
 
@@ -75,17 +77,13 @@ _Screenshot showing settings of coap-request node_
 
 1. Drag the `inject` node onto the canvas.
 2. Drag the `coap-request` node onto the canvas.
-3. Double-click on the `coap-request` node, set the URL to `coap://<ip-address>/sensor/temperature`, replacing `<ip-address>` with the IP address of your device running the CoAP server.
+3. Double-click on the `coap-request` node, set the URL to `coap://<ip-address>/sensor/temperature`, replace `<ip-address>` with the IP address of your device running the CoAP server.
 4. Select the method to `GET`.
 5. Enable the `Confirmable` option to ensure reliability.
-6. Enable the `Observe` option if you want to receive updates whenever the data changes.
-7. Enable the `Raw Buffer` option if you need the raw data format.
-8. To force multicast, enable the `Force Multicast` option and replace the IP address with `224.0.1.187` in the URL, which is a standard multicast address.
-9. Drag the `debug` node onto the canvas that will print the output.
-10. Connect the output of the `inject` node to the input of the `coap-request` node.
-11. Connect the output of the `coap-request` node to the input of the `debug` node.
+6. Drag the `debug` node onto the canvas that will print the output.
+7. Connect the output of the `inject` node to the input of the `coap-request` node. and the output of the `coap-request` node to the input of the `debug` node.
 
-Deploy the flow by clicking the top-right deploy button. Now You can then click the inject button to retrieve data, or set an interval in the inject node to retrieve data automatically after specific interval of time.
+Deploy the flow by clicking the deploy button in the top-right corner. To test the flow, click the inject button to retrieve data, or set an interval in the inject node to retrieve data automatically at specified time intervals.
 
 !["Image showing Node-RED instances, one running as a CoAP server and the other as a client requesting data"](./images/coap-with-node-red.gif "Image showing Node-RED instances, one running as a CoAP server and the other as a client requesting data"){data-zoomable}
 _Image showing Node-RED instances, one running as a CoAP server and the other as a client requesting data_
@@ -102,4 +100,4 @@ CoAP is designed to be efficient for constrained environments and IoT devices, b
 
 ## Conclusion
 
-CoAP is a great choice for IoT devices and situations where resources are limited. It’s more efficient than HTTP and MQTT because it uses less power and handles data more quickly due to its use of UDP. While HTTP and MQTT might be better for cases where strong security or complex interactions are needed, CoAP is ideal for low-power, resource-constrained environments. Choosing the right protocol depends on your specific needs, balancing efficiency, security, and complexity.
+CoAP is ideal for IoT devices with limited resources, offering efficient communication through its lightweight, UDP-based protocol. While HTTPS and MQTT are suited for more complex or secure environments, CoAP’s simplicity makes it perfect for conserving power and bandwidth in constrained settings. By integrating CoAP with Node-RED, you ensure effective and reliable data transmission for your low-power devices.
