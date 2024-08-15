@@ -14,7 +14,7 @@ tags:
    - development democratization
 ---
 
-To democratize technology means to make it accessible to the masses. The Industrial Revolution exemplified this, continually transforming technology to benefit a broader audience. This ranges from the discovery of fire to the development of the wheel, assembly lines, and the Universal Namespace (UNS)—with the common goal of sharing valuable new technologies. Our focus here will be on Industry 3.0 and 4.0 and the direction we are heading.
+To democratize means to make it accessible to the masses. The Industrial Revolution exemplified this for automation and manufacturing companies as the revolution continually transformed technology to benefit a broader audience. Ranging from the discovery of fire to the development of the wheel, assembly lines, and the [Unified Namespace (UNS)](/unified-namespace/) — with the common goal of sharing valuable new technologies. Our focus here will be on Industry 3.0 and 4.0 and the direction the industry is heading.
 
 <!--more-->
 
