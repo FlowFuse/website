@@ -19,7 +19,7 @@ Have you ever found yourself frustrated by unexpected delays in your Node-RED fl
 
 <!--more-->
 
-In this guide, we’ll show you how to integrate Open Telemetry with Node-RED to monitor latency across your flows. By implementing distributed tracing, you’ll gain the ability to see exactly where delays occur, helping you optimize performance and ensure your IoT applications run efficiently.
+Integrating Open Telemetry with Node-RED allows you to monitor latency across your flows. By implementing distributed tracing, you’ll gain the ability to see exactly where delays occur, helping you optimize performance and ensure your IoT applications run efficiently.
 
 ## What is Distributed Tracing and How Does Open Telemetry Help?
 
