@@ -4,7 +4,7 @@ subtitle: Integrating Open Telemetry with Node-RED for Efficient Distributed Tra
 description: Learn to integrate Open Telemetry with Node-RED to track and optimize flow performance.
 date: 2024-08-15
 authors: ["sumit-shinde"]
-image: 
+image: /blog/2024/08/images/opentelemetry-with-node-red.png
 tags:
    - posts
    - flowfuse
