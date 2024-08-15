@@ -30,7 +30,7 @@ The essence of Industry 4.0 has been connectivity, primarily marked by the indus
 !["Network Visualization of East-West vs North-South traffic"](./images/traffic-flow-diagram.png "Network Visualization of East-West vs North-South traffic"){data-zoomable}
 _Network Traffic Diagram_
 
-## The Evolution of Data Handling Models
+### The Evolution of Data Handling Models
 
 This period also witnessed the rise of ISA-95 and the Purdue Model, which were instrumental in structuring data transport between layers. Each layer chose protocols best suited to its needs, creating a point-to-point model that, while effective, was cumbersome to establish. Although some organizations emerged as industry leaders by successfully implementing this architecture, they often struggled with the last 5%+ of integration and incorporate of modern technologies. Seemingly simple tasks were complex due to data not being in the right place or in the right format, stripping away vital meta-information not considered during the initial data point definition.
 
