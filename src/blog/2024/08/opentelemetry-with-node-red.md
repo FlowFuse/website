@@ -33,10 +33,14 @@ In a manufacturing plant, Node-RED manages different machines and sensors. Suppo
 For demonstration purposes, we will use a flow that simulates sensor reading and data processing. We will monitor this flow using OpenTelemetry to track data across the system, identify bottlenecks, and optimize performance.
 
 {% renderFlow %}
-[{"id":"9e778f13beba757e","type":"group","z":"45e56b4089cada94","name":"flow1","style":{"label":true},"nodes":["636ac7b4d798a5c4","ac87db82c2ab66f5","ec0e6f08c443a048"],"x":134,"y":139,"w":692,"h":82},{"id":"636ac7b4d798a5c4","type":"inject","z":"45e56b4089cada94","g":"9e778f13beba757e","name":"Temperature sensor","props":[{"p":"payload"}],"repeat":"","crontab":"","once":true,"onceDelay":0.1,"topic":"","payload":"$random()* 200\t","payloadType":"jsonata","x":280,"y":180,"wires":[["ec0e6f08c443a048"]]},{"id":"ac87db82c2ab66f5","type":"debug","z":"45e56b4089cada94","g":"9e778f13beba757e","name":"debug 1","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"payload","targetType":"msg","statusVal":"","statusType":"auto","x":720,"y":180,"wires":[]},{"id":"ec0e6f08c443a048","type":"function","z":"45e56b4089cada94","g":"9e778f13beba757e","name":"Kelvin to Celcius","func":"// Extract the Kelvin value from the incoming message payload\nlet kelvin = msg.payload;\n\n// Function to convert Kelvin to Celsius\nfunction kelvinToCelsius(kelvin) {\n    return kelvin - 273.15;\n}\n\n// Function to add an intentional delay (e.g., 1 second)\nfunction delay(ms) {\n    return new Promise(resolve => setTimeout(resolve, ms));\n}\n\n// Convert Kelvin to Celsius\nlet celsius = kelvinToCelsius(kelvin);\n\n// Add an intentional delay (1 second)\nawait delay(1000);\n\n// Set the result in the message payload\nmsg.payload = celsius;\n\n// Return the modified message object\nreturn msg;","outputs":1,"timeout":0,"noerr":0,"initialize":"","finalize":"","libs":[],"x":520,"y":180,"wires":[["ac87db82c2ab66f5"]]}]
+[{"id":"78e4a1255f9d0ad1","type":"group","z":"45e56b4089cada94","name":"","style":{"label":true},"nodes":["636ac7b4d798a5c4","ac87db82c2ab66f5","c8a1749629359031","c0d30281031f07db"],"x":34,"y":139,"w":852,"h":82},{"id":"636ac7b4d798a5c4","type":"inject","z":"45e56b4089cada94","g":"78e4a1255f9d0ad1","name":"Temperature sensor","props":[{"p":"payload"}],"repeat":"","crontab":"","once":true,"onceDelay":0.1,"topic":"","payload":"300","payloadType":"jsonata","x":180,"y":180,"wires":[["c8a1749629359031"]]},{"id":"ac87db82c2ab66f5","type":"debug","z":"45e56b4089cada94","g":"78e4a1255f9d0ad1","name":"debug 1","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"payload","targetType":"msg","statusVal":"","statusType":"auto","x":780,"y":180,"wires":[]},{"id":"c8a1749629359031","type":"change","z":"45e56b4089cada94","g":"78e4a1255f9d0ad1","name":"Kelvin to Celsius","rules":[{"t":"set","p":"payload","pt":"msg","to":"payload - 273.15","tot":"jsonata"}],"action":"","property":"","from":"","to":"","reg":false,"x":400,"y":180,"wires":[["c0d30281031f07db"]]},{"id":"c0d30281031f07db","type":"delay","z":"45e56b4089cada94","g":"78e4a1255f9d0ad1","name":"","pauseType":"delay","timeout":"2","timeoutUnits":"seconds","rate":"1","nbRateUnits":"1","rateUnits":"second","randomFirst":"1","randomLast":"5","randomUnits":"seconds","drop":false,"allowrate":false,"outputs":1,"x":600,"y":180,"wires":[["ac87db82c2ab66f5"]]}]
 {% endrenderFlow %}
 
-Deploy the above flow, and you might notice that the data printed on the debug panel appears with a delay. For example purpose, in the function node that converts temperature data to Kelvin, we have intentionally added a delay. While you might have already spotted this delay quickly, in larger flows with hundreds of nodes, it can be challenging and time-consuming to pinpoint the exact problem. OpenTelemetry simplifies this task by providing detailed traces that help you identify where the delays or issues are occurring.
+"Deploy the flow above, and you might see a delay in the data shown on the debug panel. For this example, we added a Delay node before the Change node that converts temperature data to Kelvin. While this delay is visible here, finding such delays in larger flows with many nodes can be difficult and time-consuming. OpenTelemetry makes this easier by giving you detailed traces that show where delays or issues are happening
+
+## How Open Telemtry works in Node-RED
+
+The Open Telemtry module helps track messages in Node-RED by creating "spans" that record details about each message's journey. Every time a message moves from one node to another, a span is created to capture where it came from, where it’s going, and how long it took. These spans are linked together, showing the entire path of the message through the system. This makes it easier to spot slowdowns, fix problems, and improve how data moves through Node-RED. The module also makes sure this tracking information follows the message as it moves across different nodes and external services.
 
 ### Prequsite
 
@@ -53,13 +57,13 @@ _Screenshot showing the configuration of opentelmetry node_
 1. Drag an `OTEL` node onto the canvas.
 2. Double-click on the node and set the URL to your exporter endpoint (e.g., `http://localhost:4318/v1/traces` for a locally running Jaeger exporter). Provide a name for the service according to your preference, and set the Prefix, which will be added to the root Node-RED span name before the initial node name (you can keep it as "Message" if preferred).
 3. In the Ignore field, add the names of nodes you want to exclude from OpenTelemetry tracing.
-4. In the Propagate field, add the names of nodes to which you want OpenTelemetry to forward trace headers for tracking.
+4. In the Propagate field, add the names of nodes if you want them to forward trace headers to external systems or other nodes in the flow. This ensures that these nodes participate in the distributed trace, allowing the trace context to be maintained across different components.
 5. Set the Timeout to define how long (in seconds) the OTEL node should wait before ending and discarding a message that has not been modified.
 6. Now deploy the flow by clicking onto the top-right deploy button.
 
 Once the flow is deployed, OpenTelemetry will start collecting and sending trace data to your specified exporter.
 
-## Monitoring Performance Using the Exporter Web UI
+### Monitoring Performance Using the Exporter Web UI
 
 Now, let's monitor the performance and latency between each node to identify delays. For this section, I am assuming you have Jaeger running as your exporter.
 
@@ -68,33 +72,18 @@ Now, let's monitor the performance and latency between each node to identify del
 3. Select the service name that you configured in the OTEL node from the service field. Once selected, you will see all the traces for each interaction in the flow. You can filter the traces by specific nodes using the operation field.
 4. To monitor and find issues, select the desired trace and click on the "Find Trace" button. Click on the first trace to examine it.
 
-Once the trace opens, you will see the duration taken by each node to process and pass data. Notice the delay in the Kelvin to Celsius function, which is taking 2 seconds. By clicking on the green line corresponding to this function, you can view more detailed information about the trace.
+Once the trace opens, you will see the duration taken by each node to process and pass data. Notice the time taken by the delay node, which is taking 2 seconds so the problem found. By clicking on the green line corresponding to this delay node, you can view more detailed information about the trace.
 
 !["Image showing the total dueration taken by the flow"](./images/before.png "Image showing the tototal dueration taken by the flow")
 _Image showing the tototal dueration taken by the flow_
 
-Since the issue was identified in the function node, you can update the function to remove the delay which we have intentionally added. Replace the current function node with the following JavaScript code:
+Since the issue was identified in the with the delay node, let's remove that delay node.
 
-```js
-// Extract the Kelvin value from the incoming message payload
-let kelvin = msg.payload;
+{% renderFlow %}
+[{"id":"78e4a1255f9d0ad1","type":"group","z":"45e56b4089cada94","style":{"stroke":"#999999","stroke-opacity":"1","fill":"none","fill-opacity":"1","label":true,"label-position":"nw","color":"#a4a4a4"},"nodes":["636ac7b4d798a5c4","ac87db82c2ab66f5","c8a1749629359031","c0d30281031f07db"],"x":34,"y":139,"w":692,"h":82},{"id":"636ac7b4d798a5c4","type":"inject","z":"45e56b4089cada94","g":"78e4a1255f9d0ad1","name":"Temperature sensor","props":[{"p":"payload"}],"repeat":"","crontab":"","once":true,"onceDelay":0.1,"topic":"","payload":"300","payloadType":"jsonata","x":180,"y":180,"wires":[["c8a1749629359031"]]},{"id":"ac87db82c2ab66f5","type":"debug","z":"45e56b4089cada94","g":"78e4a1255f9d0ad1","name":"debug 1","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"payload","targetType":"msg","statusVal":"","statusType":"auto","x":620,"y":180,"wires":[]},{"id":"c8a1749629359031","type":"change","z":"45e56b4089cada94","g":"78e4a1255f9d0ad1","name":"Kelvin to Celsius","rules":[{"t":"set","p":"payload","pt":"msg","to":"payload - 273.15","tot":"jsonata"}],"action":"","property":"","from":"","to":"","reg":false,"x":400,"y":180,"wires":[["ac87db82c2ab66f5"]]},{"id":"c0d30281031f07db","type":"delay","z":"45e56b4089cada94","g":"78e4a1255f9d0ad1","name":"","pauseType":"delay","timeout":"2","timeoutUnits":"seconds","rate":"1","nbRateUnits":"1","rateUnits":"second","randomFirst":"1","randomLast":"5","randomUnits":"seconds","drop":false,"allowrate":false,"outputs":1,"x":600,"y":180,"wires":[[]]}]
+{% endrenderFlow %}
 
-// Function to convert Kelvin to Celsius
-function kelvinToCelsius(kelvin) {
-    return kelvin - 273.15;
-}
-
-// Convert Kelvin to Celsius
-let celsius = kelvinToCelsius(kelvin);
-
-// Set the result in the message payload
-msg.payload = celsius;
-
-// Return the modified message object
-return msg;
-```
-
-After updating the function node, redeploy the flow and check the traces again. You should see that the delay has been reduced significantly, with the overall flow now taking around 15 milliseconds instead of the previous 2 seconds. This demonstrates how OpenTelemetry helps in identifying and resolving performance issues in your Node-RED flows.
+After updating the flow, redeploy the flow and check the traces again. You should see that the total time has been reduced significantly, with the overall flow now taking around 8 milliseconds instead of the previous 2 seconds. This demonstrates how OpenTelemetry helps in identifying and resolving performance issues in your Node-RED flows.
 
 !["Image showing the total dueration taken by the flow after fixing the issue"](./images/after.png "Image showing the total dueration taken by the flow after fixing the issue")
 _Image showing the total dueration taken by the flow after fixing the issue_
