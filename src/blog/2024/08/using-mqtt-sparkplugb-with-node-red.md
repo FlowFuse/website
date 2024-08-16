@@ -49,9 +49,9 @@ Sparkplug B defines several message types to handle different aspects of device 
 - **REBIRTH**: Similar to `DBIRTH`, used to announce that a device has reconnected or restarted.
 - **DDEATH**: Used to indicate that a device has been removed or is no longer available, complementing `NDEATH`.
 
-## Key Components of a Sparkplug B Payload
+### Key Components of a Sparkplug B Payload
 
-When dealing with Sparkplug B messages, such as `NBIRTH`, `NDATA`, `NDEATH`, `NCMD`, `DBIRTH`, `DDEATH`, and `DCMD`, the payloads include several key components. Understanding these components is crucial for effective communication and data management:
+When dealing with Sparkplug B messages, such as `NBIRTH`, `NDATA`, `NDEATH`, `NCMD`, `DBIRTH`, `DDEATH`, and `DCMD`, the payloads include several key components.
 
 - **Timestamp**: Every Sparkplug B payload includes a timestamp to record the exact time the data was captured. This is essential for understanding the timing and relevance of the data.
 
