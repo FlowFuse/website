@@ -2,9 +2,9 @@
 title: Using MQTT Sparkplug B with Node-RED
 subtitle: A Practical Guide to integrating MQTT Sparkplug B with Node-RED
 description: Explore how MQTT Sparkplug B enhances MQTT with standardized data formats, making integration easier. Learn how to set up Sparkplug B in Node-RED for efficient data management in industrial environments.
-date: 2024-08-02
+date: 2024-08-21
 authors: ["sumit-shinde"]
-image: /blog/2024/08/images/mysql-with-node-red.png
+image: 
 tags:
    - post
    - nodered
