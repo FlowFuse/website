@@ -100,7 +100,7 @@ _Screenshot showing the configuration of Sparkplug broker config node_
 
 ### Sending Data to MQTT with Sparkplug B
 
-1. Drag the Inject node onto the canvas. Set the `msg.payload` to the metrics you want to send and set the repeat interval to 5 seconds. This Inject node could be any node that triggers the data sending. For example, you can use the following JSON expression:
+1. Drag the inject node onto the canvas. Set the `msg.payload` to the metrics you want to send and set the repeat interval to 5 seconds. This inject node could be any node that triggers the data sending. For example, you can use the following JSON expression:
 
     ```json
     {
@@ -117,24 +117,24 @@ _Screenshot showing the configuration of Sparkplug broker config node_
     }
     ```
 
-2. Drag the MQTT Sparkplug Device node onto the canvas.
-3. Double-click the MQTT Sparkplug Device node to open the configuration panel. Add the metric names that you will be sending by clicking the bottom-left "Add" button. Ensure that the names match the metric names in the payload you are sending and specify the data types for each metric.
+2. Drag the mqtt sparkplug device node onto the canvas.
+3. Double-click the mqtt sparkplug device node to open the configuration panel. Add the metric names that you will be sending by clicking the bottom-left "Add" button. Ensure that the names match the metric names in the payload you are sending and specify the data types for each metric.
 
 ![Screenshot showing the Sparkplug Device node configuration and the "Add" button for defining metrics](./images/mqtt-sparkplug-device-node.png "Screenshot showing the Sparkplug Device node configuration and the 'Add' button for defining metrics")  
 _Screenshot showing the Sparkplug Device node configuration and the "Add" button for defining metrics_
 
 4. Switch to the Advanced tab by clicking the "Advanced" option at the top-right.
 
-5. Enable the Send Birth Immediately option. This ensures that a Birth message (DBIRTH) is sent immediately upon deployment and connection to the MQTT broker. Note that enabling this option will send the DBIRTH message when the device node connects, but an NBIRTH message will always be sent regardless of this setting.
+5. Enable the "Send Birth Immediately" option. This ensures that a Birth message (DBIRTH) is sent immediately upon deployment and connection to the MQTT broker. Note that enabling this option will send the DBIRTH message when the device node connects, but an NBIRTH message will always be sent regardless of this setting.
 
 ![Screenshot showing the Sparkplug Device node configuration and the "Add" button for defining metrics](./images/mqtt-spark-device-advance.png "Screenshot showing the Sparkplug Device node configuration and the 'Add' button for defining metrics")  
 _Screenshot showing the Sparkplug Device node configuration and the "Add" button for defining metrics_
 
 6. Optionally, enable Store Forward when not connected if you want to ensure that messages are stored and sent once the connection is re-established.
-7. Connect the Inject node's output to the MQTT Sparkplug Device node's input.
-8. Deploy the flow by clicking the top-right **Deploy** button.
+7. Connect the inject node's output to the mqtt sparkplug device node's input.
+8. Deploy the flow by clicking the top-right "Deploy" button.
 
-Once you deploy the flow and all devices connect to the MQTT broker, the system automatically sends an NBIRTH message, indicating that the node ( group of devices) is online and ready to communicate. If the **Send Birth Immediately option** is enabled, the system will also send a `DBIRTH` message as soon as each device within the node connects, signaling that the device is ready for data transmission.
+Once you deploy the flow and all devices connect to the MQTT broker, the system automatically sends an `NBIRTH` message, indicating that the node ( group of devices) is online and ready to communicate. If the "Send Birth Immediately option" is enabled, the system will also send a `DBIRTH` message as soon as each device within the node connects, signaling that the device is ready for data transmission.
 
 {% renderFlow %}
 [{"id":"f2864f2b830e3590","type":"mqtt sparkplug device","z":"239c9025714089d3","name":"Machine1","metrics":{"sensor/temperature":{"dataType":"Float","name":"sensor/temperature"},"sensor/humidity":{"dataType":"Float","name":"sensor/humidity"}},"broker":"0d831bd9ba588536","birthImmediately":true,"bufferDevice":false,"x":380,"y":320,"wires":[["3dfc9b74f5e36bec"]]},{"id":"90cc413f58871fc1","type":"inject","z":"239c9025714089d3","name":"Send Metrics","props":[{"p":"payload"},{"p":"topic","vt":"str"}],"repeat":"","crontab":"","once":false,"onceDelay":0.1,"topic":"","payload":"{    \"metrics\": [        {            \"name\": \"sensor/temperature\",            \"value\": $random()*100        },        {            \"name\": \"sensor/humidity\",            \"value\": $random()*100        }    ]}","payloadType":"jsonata","x":130,"y":320,"wires":[["f2864f2b830e3590"]]},{"id":"3dfc9b74f5e36bec","type":"debug","z":"239c9025714089d3","name":"","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"payload","targetType":"msg","statusVal":"","statusType":"auto","x":650,"y":320,"wires":[]},{"id":"0d831bd9ba588536","type":"mqtt-sparkplug-broker","name":"Local Host","deviceGroup":"My Devices","eonName":"Node-Red","broker":"localhost","port":"1883","tls":"","clientid":"","usetls":false,"protocolVersion":"4","keepalive":"60","cleansession":true,"enableStoreForward":false,"compressAlgorithm":"","aliasMetrics":true,"manualEoNBirth":false,"primaryScada":""}]
@@ -144,11 +144,11 @@ Once you deploy the flow and all devices connect to the MQTT broker, the system 
 
 1. Drag the mqtt sparkplug in node onto the canvas.
 2. Double-click the node and configure the broker settings.
-3. Enter the topic in the **Topic** field in the format `namespace/group_id/message_type/edge_node_id/[device_id]`. Use `DDATA` for receiving metrics you are sending using device node or a wildcard like `spBv1.0/group_id/+/+/[device_id]` to listen to all message types from a specific device.
-4. Select the desired **QoS** level.
+3. Enter the topic in the "Topic" field in the format `namespace/group_id/message_type/edge_node_id/[device_id]`. Use `DDATA` for receiving metrics you are sending using device node or a wildcard like `spBv1.0/group_id/+/+/[device_id]` to listen to all message types from a specific device.
+4. Select the desired "QoS" level.
 5. Drag a debug node onto the canvas.
 6. Connect the mqtt sparkplug in node’s output to the debug node’s input.
-7. Click **Deploy** to save and run the flow.
+7. Click "Deploy" to save and run the flow.
 
 Now you will be able to see the `NBIRTH`, `DBIRTH`, and `DDATA` messages printed on the debug panel.
 
@@ -161,7 +161,7 @@ Now you will be able to see the `NBIRTH`, `DBIRTH`, and `DDATA` messages printed
 Beyond data exchange, MQTT Sparkplug B allows you to send commands for managing devices and Edge of Network (EoN) nodes, such as initiating a device's rebirth or signaling its death. These commands are crucial for maintaining device management and ensuring consistent data flow within your network.
 
 1. Drag inject node onto the canvas.
-2. Set the `msg.command` in the Inject node to the desired command. For instance, you can use the following JSON object to send a command that triggers a device's death:
+2. Set the `msg.command` in the inject node to the desired command. For instance, you can use the following JSON object to send a command that triggers a device's death:
 
 ```json
     {
@@ -181,17 +181,17 @@ Alternatively, to send a command that triggers a device's rebirth, use:
     }   
 ```
 
-3. Connect the output of the Inject node to the input of the relevant MQTT Sparkplug Device node.
+3. Connect the output of the inject node to the input of the relevant MQTT Sparkplug Device node.
 4. Deploy the flow by clicking the Deploy button at the top-right of the Node-RED interface.
-5. Click the Inject node’s button to send the command.
+5. Click the inject node’s button to send the command.
 
-In this example, we've used an Inject node to manually send commands, but you can also trigger these commands based on other inputs or conditions within your flow, such as device status or sensor data. For more information on available commands and advanced configurations, refer to the [MQTT Sparkplug nodes documentation](https://flows.nodered.org/node/node-red-contrib-mqtt-sparkplug-plus).
+In this example, we've used an inject node to manually send commands, but you can also trigger these commands based on other inputs or conditions within your flow, such as device status or sensor data. For more information on available commands and advanced configurations, refer to the [MQTT Sparkplug nodes documentation](https://flows.nodered.org/node/node-red-contrib-mqtt-sparkplug-plus).
 
 {% renderFlow %}
 [{"id":"f2864f2b830e3590","type":"mqtt sparkplug device","z":"239c9025714089d3","name":"Machine1","metrics":{"sensor/temperature":{"dataType":"Float"},"sensor/humidity":{"dataType":"Float"}},"broker":"0d831bd9ba588536","birthImmediately":true,"bufferDevice":false,"x":440,"y":320,"wires":[["3dfc9b74f5e36bec"]]},{"id":"90cc413f58871fc1","type":"inject","z":"239c9025714089d3","name":"Send connect command","props":[{"p":"command","v":"{\"node\":{\"connect\":true}}","vt":"jsonata"}],"repeat":"","crontab":"","once":false,"onceDelay":0.1,"topic":"","x":170,"y":260,"wires":[["f2864f2b830e3590"]]},{"id":"3dfc9b74f5e36bec","type":"debug","z":"239c9025714089d3","name":"","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"payload","targetType":"msg","statusVal":"","statusType":"auto","x":650,"y":320,"wires":[]},{"id":"915ca0772eebee04","type":"inject","z":"239c9025714089d3","name":"Send rebirth command","props":[{"p":"command","v":"{\"device\":{\"rebirth\":true}}","vt":"json"}],"repeat":"","crontab":"","once":false,"onceDelay":0.1,"topic":"","x":160,"y":320,"wires":[["f2864f2b830e3590"]]},{"id":"696db58cc9eb029d","type":"inject","z":"239c9025714089d3","name":"Send death command","props":[{"p":"command","v":"{\"device\":{\"death\":true}}","vt":"json"}],"repeat":"","crontab":"","once":false,"onceDelay":0.1,"topic":"","x":160,"y":380,"wires":[["f2864f2b830e3590"]]},{"id":"0d831bd9ba588536","type":"mqtt-sparkplug-broker","name":"Local Host","deviceGroup":"My Devices","eonName":"Node-Red","broker":"localhost","port":"1883","tls":"","clientid":"","usetls":false,"protocolVersion":"4","keepalive":"60","cleansession":true,"enableStoreForward":false,"compressAlgorithm":"","aliasMetrics":true,"manualEoNBirth":true,"primaryScada":""}]
 {% endrenderFlow %}
 
-If you need more flexibility in defining topic names when sending data, you can use the MQTT Sparkplug Out node. It’s quite similar to the standard MQTT Out node but is designed to handle Sparkplug-encoded messages. Below is an example showing how to use the Sparkplug MQTT out with in nodes.
+If you need more flexibility in defining topic names when sending data, you can use the mqtt sparkplug out node. It’s quite similar to the standard MQTT Out node but is designed to handle Sparkplug-encoded messages. Below is an example showing how to use the mqtt sparkplug device with in nodes.
 
 {% renderFlow %}
 [{"id":"bbe3765e67eed956","type":"mqtt sparkplug in","z":"f098830cc10afc2f","name":"","topic":"spBv1.0/+/+/#","qos":"2","broker":"0d831bd9ba588536","x":150,"y":100,"wires":[["d45ff4446380beaa"]]},{"id":"3b2b9788c51d5c3b","type":"mqtt sparkplug out","z":"f098830cc10afc2f","name":"","topic":"spBv1.0/My Devices/NDATA/Node-Red","qos":"","retain":"","broker":"0d831bd9ba588536","x":510,"y":200,"wires":[]},{"id":"d45ff4446380beaa","type":"debug","z":"f098830cc10afc2f","name":"","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"false","statusVal":"","statusType":"auto","x":410,"y":100,"wires":[]},{"id":"dc73048fd385783a","type":"inject","z":"f098830cc10afc2f","name":"Send Metrics","props":[{"p":"payload"}],"repeat":"","crontab":"","once":false,"onceDelay":0.1,"topic":"","payload":"{    \"metrics\": [        {            \"name\": \"sensor/temperature\",            \"value\": $random(),            \"type\": \"Float\"        },        {            \"name\": \"sensor/humidity\",            \"value\": $random(),            \"type\": \"Float\"        }    ]}","payloadType":"jsonata","x":170,"y":220,"wires":[["3b2b9788c51d5c3b"]]},{"id":"0d831bd9ba588536","type":"mqtt-sparkplug-broker","name":"Local Host","deviceGroup":"My Devices","eonName":"Node-Red","broker":"localhost","port":"1883","tls":"","clientid":"","usetls":false,"protocolVersion":"4","keepalive":"60","cleansession":true,"enableStoreForward":false,"compressAlgorithm":"","aliasMetrics":true,"manualEoNBirth":false,"primaryScada":""}]
