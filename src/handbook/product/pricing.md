@@ -57,13 +57,13 @@ Devices are owned by the team and are charged for when they are created
 regardless of if they are assigned to a project or their connection state.
 The team is billed per device at the same rate regardless of tier or number of devices.
 
-Devices are part of the licensed instances. The limit in the open source edition is 50 devices.
+Devices are part of the licensed instances.
 
 ## Licenses
 
-From the perspective of licensing the there's an unlicensed edition: open-source. This version is always self-managed. There's also a licensed version of FlowFuse, this can be self-managed or FlowFuse Managed. For FlowFuse managed properties there's 3 tiers; Starter, Premium, and Enterprise.
+From the perspective of licensing the there's an unlicensed edition: open-source. This version is always self-managed. There's also a licensed version of FlowFuse, this can be self-managed or FlowFuse Managed. For FlowFuse managed properties there's 3 tiers; Starter, Team, and Enterprise.
 The open source edition doesn't require a license key to be uploaded. Without a valid license a basic set of features and
-quantity of instances(50), users(150), teams(50), and devices(50) are available.
+quantity of instances(5), users(5), teams(5), and devices(5) are available.
 When a license is purchased it provides all of the functionality of the higher
 plans. It's then licensed for a number of Node-RED instances on an annual basis.
 
