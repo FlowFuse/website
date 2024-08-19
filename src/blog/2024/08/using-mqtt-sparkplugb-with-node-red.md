@@ -2,9 +2,9 @@
 title: Using MQTT Sparkplug B with Node-RED
 subtitle: A Practical Guide to integrating MQTT Sparkplug B with Node-RED
 description: Explore how MQTT Sparkplug B enhances MQTT with standardized data formats, making integration easier. Learn how to set up Sparkplug B in Node-RED for efficient data management in industrial environments.
-date: 2024-08-02
+date: 2024-08-21
 authors: ["sumit-shinde"]
-image: /blog/2024/08/images/mysql-with-node-red.png
+image: 
 tags:
    - post
    - nodered
@@ -46,9 +46,9 @@ Sparkplug B defines several message types to handle different aspects of communi
 - **DBIRTH**: Sent immediately upon deployment and connection to the MQTT broker, often used for dynamic configurations or updates.
 - **DDEATH**: Used to indicate that a device has been removed or is no longer available, complementing `NDEATH`.
 
-## Key Components of a Sparkplug B Payload
+### Key Components of a Sparkplug B Payload
 
-When dealing with Sparkplug B messages, such as `NBIRTH`, `NDATA`, `NDEATH`, `NCMD`, `DBIRTH`, `DDEATH`, and `DCMD`, the payloads include several key components. Understanding these components is crucial for effective communication and data management:
+When dealing with Sparkplug B messages, such as `NBIRTH`, `NDATA`, `NDEATH`, `NCMD`, `DBIRTH`, `DDEATH`, and `DCMD`, the payloads include several key components.
 
 - **Timestamp**: Every Sparkplug B payload includes a timestamp to record the exact time the data was captured. This is essential for understanding the timing and relevance of the data.
 
