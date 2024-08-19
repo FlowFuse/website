@@ -107,11 +107,11 @@ _Screenshot showing the configuration of Sparkplug broker config node_
         "metrics": [
             {
                 "name": "sensor/temperature",
-                "value": $random * 100
+                "value": $random() * 100
             },
             {
                 "name": "sensor/humidity",
-                "value": $random * 100
+                "value": $random() * 100
             }
         ]
     }
