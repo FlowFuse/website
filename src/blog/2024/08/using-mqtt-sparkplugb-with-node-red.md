@@ -11,19 +11,17 @@ tags:
    - mqtt sparkplug b with node-red
 ---
 
-Connected devices are transforming industries with vast amounts of data, and MQTT is central to this change with its efficient messaging capabilities. However, MQTT’s messaging flexibility can lead to integration challenges due to inconsistent data formats.
+Connected devices are creating a lot of data, but without a standard format, managing this data can be tricky. MQTT helps with messaging, but it can be inconsistent. MQTT Sparkplug B solves this problem by providing a clear, standardized format for data. In this guide, we’ll show you how to use MQTT Sparkplug B with Node-RED to make managing your device data easier and more organized.
 
 <!--more-->
 
-Sparkplug B simplifies these challenges by adding a standardized data format to MQTT, making data management across devices more consistent and easier. In this blog post, we’ll explore how Sparkplug B enhances MQTT, covering everything from basic to advanced, and guiding you through its integration with Node-RED.
-
 ## What is MQTT Sparkplug?
 
-*Sparkplug B* is an open-source specification hosted at the Eclipse Foundation that extends MQTT by providing a standardized way to structure data. It ensures that all devices use a consistent message format, simplifying integration and improving data consistency.
+*Sparkplug B* is an open-source specification hosted at the Eclipse Foundation that extends MQTT by providing a standardized way to structure data. It ensures that all devices use a consistent message format, that simplifies integration and improves data consistency.
 
 Now, imagine a factory where every machine sends data using different formats or terminologies. While parsing this data is possible, it introduces complexity, increases the risk of errors, and complicates maintenance. A consistent data format can greatly simplify integration and reduce these challenges.
 
-![Manufacturing floor where a dashboard isn't monitoring data from devices due to MQTT's lack of standardized data formats](./images/with-plane-mqtt.png){data-zoomable}
+![Manufacturing floor where a dashboard isn't monitoring data from all devices due to MQTT's lack of standardized data formats](./images/with-plane-mqtt.png){data-zoomable}
 _Manufacturing floor where a dashboard isn't monitoring data from devices due to MQTT's lack of standardized data formats_
 
 Sparkplug B addresses these issues by standardizing the data format and structure, making it easier to integrate and manage data from different sources.
@@ -39,14 +37,13 @@ Sparkplug B utilizes Google Protocol Buffers (Protobufs) for encoding its messag
 
 ### Types of Sparkplug B Messages
 
-Sparkplug B defines several message types to handle different aspects of device communication:
+Sparkplug B defines several message types to handle different aspects of communication:
 
 - **NBIRTH**: Announced when a device initially connects to the system, detailing the metrics it will report.
 - **NDATA**: Sent periodically to provide updated values for the device's metrics.
 - **NDEATH**: Indicates that a device has disconnected or is no longer available.
 - **NCMD**: Allows for sending commands to a device for remote control or configuration.
 - **DBIRTH**: Sent immediately upon deployment and connection to the MQTT broker, often used for dynamic configurations or updates.
-- **REBIRTH**: Similar to `DBIRTH`, used to announce that a device has reconnected or restarted.
 - **DDEATH**: Used to indicate that a device has been removed or is no longer available, complementing `NDEATH`.
 
 ## Key Components of a Sparkplug B Payload
@@ -55,21 +52,14 @@ When dealing with Sparkplug B messages, such as `NBIRTH`, `NDATA`, `NDEATH`, `NC
 
 - **Timestamp**: Every Sparkplug B payload includes a timestamp to record the exact time the data was captured. This is essential for understanding the timing and relevance of the data.
 
-- **Metrics**: Metrics are data points within the payload, crucial for `NBIRTH`, `NDATA`, `DBIRTH`, and `DDEATH` messages. Each metric includes:
+- **Metrics**: Metrics are data points within the payload, crucial for `NBIRTH`, `NDATA`, `DBIRTH`, and `DDEATH`,  messages. Each metric includes:
   - **Name**: The identifier for the metric (e.g., "Temperature").
   - **Alias**: A shorthand identifier to reduce the payload size.
   - **Timestamp**: The time when the metric was sampled or updated.
   - **Datatype**: The type of data (e.g., Integer, Float, String).
   - **Value**: The actual data being communicated.
   - **Flags**: Indicators such as `is_historical`, `is_transient`, and `is_null`.
-
 - **Sequence Number**: Each message includes a sequence number that increments with each new message. This helps detect any missing messages and ensures data consistency.
-
-- **Command and Parameters** (for `NCMD` and `DCMD` messages): Includes:
-  - **Command**: The specific command to be executed (e.g., "Restart").
-  - **Parameters**: Additional parameters for the command, if applicable.
-  - **Timestamp**: The time when the command was issued.
-  - **Sequence Number**: To track the order of commands and ensure correct execution.
 
 ### Topic Naming Conventions
 
@@ -100,10 +90,13 @@ Before you begin, ensure you have the following:
 
 1. Drag any MQTT Sparkplug node onto the canvas.
 2. Double-click the MQTT Sparkplug node to open the configuration panel.
-3. Click the "+" icon next to the **Broker** field. Enter your MQTT broker's host address (e.g., `mqtt.example.com`), specify the port number (e.g., 1883 for unencrypted or 8883 for TLS), and configure the TLS settings if required. Enter the username and password if authentication is needed. Optionally, enter a Client ID or leave it blank for auto-generation. Set the **Keep Alive** interval (default is 60 seconds).
+3. Click the "+" icon next to the "Broker" field. Enter your MQTT broker's host address (e.g., `mqtt.example.com`), specify the port number (e.g., 1883 for unencrypted or 8883 for TLS), and configure the TLS settings if required. Enter the username and password if authentication is needed. Optionally, enter a Client ID or leave it blank for auto-generation. Set the "Keep Alive"interval (default is 60 seconds).
 4. Switch to the Sparkplug tab by clicking the Sparkplug option in the top-right corner.
-5. Enter a name in the **Name** field (this will be the Edge Node ID). Enter the group name in the **Group** field. Select **No** for the compression setting. Enable the **Use Alias for Metrics** option if you prefer not to send the full metric names every time and use aliases instead.
-6. Click **Add** to save the configuration.
+5. Enter a name in the "Name" field (this will be the Edge Node ID). Enter the group name in the "Group" field. Select "No" for the compression setting. Enable the "Use Alias for Metrics" option if you prefer not to send the full metric names every time and use aliases instead.
+6. Click "Add" to save the configuration.
+
+![Screenshot showing the configuration of Sparkplug broker config node](./images/mqtt-broker-config.png "Screenshot showing the configuration of Sparkplug broker config node")  
+_Screenshot showing the configuration of Sparkplug broker config node_
 
 ### Sending Data to MQTT with Sparkplug B
 
@@ -125,14 +118,27 @@ Before you begin, ensure you have the following:
     ```
 
 2. Drag the MQTT Sparkplug Device node onto the canvas.
-3. Double-click the MQTT Sparkplug Device node to open the configuration panel. Add the metric names that you will be sending by clicking the bottom-left **Add** button. Ensure that the names match the metric names in the payload you are sending and specify the data types for each metric.
+3. Double-click the MQTT Sparkplug Device node to open the configuration panel. Add the metric names that you will be sending by clicking the bottom-left "Add" button. Ensure that the names match the metric names in the payload you are sending and specify the data types for each metric.
+
+![Screenshot showing the Sparkplug Device node configuration and the "Add" button for defining metrics](./images/mqtt-sparkplug-device-node.png "Screenshot showing the Sparkplug Device node configuration and the 'Add' button for defining metrics")  
+_Screenshot showing the Sparkplug Device node configuration and the "Add" button for defining metrics_
+
 4. Switch to the Advanced tab by clicking the "Advanced" option at the top-right.
+
 5. Enable the Send Birth Immediately option. This ensures that a Birth message (DBIRTH) is sent immediately upon deployment and connection to the MQTT broker. Note that enabling this option will send the DBIRTH message when the device node connects, but an NBIRTH message will always be sent regardless of this setting.
+
+![Screenshot showing the Sparkplug Device node configuration and the "Add" button for defining metrics](./images/mqtt-spark-device-advance.png "Screenshot showing the Sparkplug Device node configuration and the 'Add' button for defining metrics")  
+_Screenshot showing the Sparkplug Device node configuration and the "Add" button for defining metrics_
+
 6. Optionally, enable Store Forward when not connected if you want to ensure that messages are stored and sent once the connection is re-established.
 7. Connect the Inject node's output to the MQTT Sparkplug Device node's input.
 8. Deploy the flow by clicking the top-right **Deploy** button.
 
 Once you deploy the flow and all devices connect to the MQTT broker, the system automatically sends an NBIRTH message, indicating that the node ( group of devices) is online and ready to communicate. If the **Send Birth Immediately option** is enabled, the system will also send a `DBIRTH` message as soon as each device within the node connects, signaling that the device is ready for data transmission.
+
+{% renderFlow %}
+[{"id":"f2864f2b830e3590","type":"mqtt sparkplug device","z":"239c9025714089d3","name":"Machine1","metrics":{"sensor/temperature":{"dataType":"Float","name":"sensor/temperature"},"sensor/humidity":{"dataType":"Float","name":"sensor/humidity"}},"broker":"0d831bd9ba588536","birthImmediately":true,"bufferDevice":false,"x":380,"y":320,"wires":[["3dfc9b74f5e36bec"]]},{"id":"90cc413f58871fc1","type":"inject","z":"239c9025714089d3","name":"Send Metrics","props":[{"p":"payload"},{"p":"topic","vt":"str"}],"repeat":"","crontab":"","once":false,"onceDelay":0.1,"topic":"","payload":"{    \"metrics\": [        {            \"name\": \"sensor/temperature\",            \"value\": $random()*100        },        {            \"name\": \"sensor/humidity\",            \"value\": $random()*100        }    ]}","payloadType":"jsonata","x":130,"y":320,"wires":[["f2864f2b830e3590"]]},{"id":"3dfc9b74f5e36bec","type":"debug","z":"239c9025714089d3","name":"","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"payload","targetType":"msg","statusVal":"","statusType":"auto","x":650,"y":320,"wires":[]},{"id":"0d831bd9ba588536","type":"mqtt-sparkplug-broker","name":"Local Host","deviceGroup":"My Devices","eonName":"Node-Red","broker":"localhost","port":"1883","tls":"","clientid":"","usetls":false,"protocolVersion":"4","keepalive":"60","cleansession":true,"enableStoreForward":false,"compressAlgorithm":"","aliasMetrics":true,"manualEoNBirth":false,"primaryScada":""}]
+{% endrenderFlow %}
 
 ### Receiving Data from MQTT with Sparkplug B
 
@@ -145,3 +151,49 @@ Once you deploy the flow and all devices connect to the MQTT broker, the system 
 7. Click **Deploy** to save and run the flow.
 
 Now you will be able to see the `NBIRTH`, `DBIRTH`, and `DDATA` messages printed on the debug panel.
+
+{% renderFlow %}
+[{"id":"a98c49d80bb5c4ee","type":"mqtt sparkplug in","z":"239c9025714089d3","name":"","topic":"spBv1.0/My Devices/DDATA/Node-RED/Machine1","qos":"2","broker":"0d831bd9ba588536","x":330,"y":120,"wires":[["655761fb21409216"]]},{"id":"655761fb21409216","type":"debug","z":"239c9025714089d3","name":"debug 1","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"payload","targetType":"msg","statusVal":"","statusType":"auto","x":800,"y":120,"wires":[]},{"id":"0d831bd9ba588536","type":"mqtt-sparkplug-broker","name":"Local Host","deviceGroup":"My Devices","eonName":"Node-Red","broker":"localhost","port":"1883","tls":"","clientid":"","usetls":false,"protocolVersion":"4","keepalive":"60","cleansession":true,"enableStoreForward":false,"compressAlgorithm":"","aliasMetrics":true,"manualEoNBirth":false,"primaryScada":""}]
+{% endrenderFlow %}
+
+### Sending Commands for devices and EoN nodes
+
+Beyond data exchange, MQTT Sparkplug B allows you to send commands for managing devices and Edge of Network (EoN) nodes, such as initiating a device's rebirth or signaling its death. These commands are crucial for maintaining device management and ensuring consistent data flow within your network.
+
+1. Drag inject node onto the canvas.
+2. Set the `msg.command` in the Inject node to the desired command. For instance, you can use the following JSON object to send a command that triggers a device's death:
+
+```json
+    {
+        "device" : {
+            "death" : true
+        }
+    }   
+```
+
+Alternatively, to send a command that triggers a device's rebirth, use:
+
+```json
+    {
+        "device" : {
+            "rebirth" : true
+        }
+    }   
+```
+
+3. Connect the output of the Inject node to the input of the relevant MQTT Sparkplug Device node.
+4. Deploy the flow by clicking the Deploy button at the top-right of the Node-RED interface.
+5. Click the Inject node’s button to send the command.
+
+In this example, we've used an Inject node to manually send commands, but you can also trigger these commands based on other inputs or conditions within your flow, such as device status or sensor data. For more information on available commands and advanced configurations, refer to the [MQTT Sparkplug nodes documentation](https://flows.nodered.org/node/node-red-contrib-mqtt-sparkplug-plus).
+
+{% renderFlow %}
+[{"id":"f2864f2b830e3590","type":"mqtt sparkplug device","z":"239c9025714089d3","name":"Machine1","metrics":{"sensor/temperature":{"dataType":"Float"},"sensor/humidity":{"dataType":"Float"}},"broker":"0d831bd9ba588536","birthImmediately":true,"bufferDevice":false,"x":440,"y":320,"wires":[["3dfc9b74f5e36bec"]]},{"id":"90cc413f58871fc1","type":"inject","z":"239c9025714089d3","name":"Send connect command","props":[{"p":"command","v":"{\"node\":{\"connect\":true}}","vt":"jsonata"}],"repeat":"","crontab":"","once":false,"onceDelay":0.1,"topic":"","x":170,"y":260,"wires":[["f2864f2b830e3590"]]},{"id":"3dfc9b74f5e36bec","type":"debug","z":"239c9025714089d3","name":"","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"payload","targetType":"msg","statusVal":"","statusType":"auto","x":650,"y":320,"wires":[]},{"id":"915ca0772eebee04","type":"inject","z":"239c9025714089d3","name":"Send rebirth command","props":[{"p":"command","v":"{\"device\":{\"rebirth\":true}}","vt":"json"}],"repeat":"","crontab":"","once":false,"onceDelay":0.1,"topic":"","x":160,"y":320,"wires":[["f2864f2b830e3590"]]},{"id":"696db58cc9eb029d","type":"inject","z":"239c9025714089d3","name":"Send death command","props":[{"p":"command","v":"{\"device\":{\"death\":true}}","vt":"json"}],"repeat":"","crontab":"","once":false,"onceDelay":0.1,"topic":"","x":160,"y":380,"wires":[["f2864f2b830e3590"]]},{"id":"0d831bd9ba588536","type":"mqtt-sparkplug-broker","name":"Local Host","deviceGroup":"My Devices","eonName":"Node-Red","broker":"localhost","port":"1883","tls":"","clientid":"","usetls":false,"protocolVersion":"4","keepalive":"60","cleansession":true,"enableStoreForward":false,"compressAlgorithm":"","aliasMetrics":true,"manualEoNBirth":true,"primaryScada":""}]
+{% endrenderFlow %}
+
+!["Images of some sparkplug messages printed on debug panel"](./images/sparkplug-messages.png "Images of some sparkplug messages printed on debug panel")
+_Images of some sparkplug messages printed on debug panel_
+
+## Conclusion
+
+In this guide, we covered how to set up MQTT Sparkplug B in Node-RED, explored its message types and payload structures, and demonstrated how to send and receive data, as well as manage devices through commands. With these steps, you're now equipped to integrate and streamline data communication in your industrial IoT systems.
