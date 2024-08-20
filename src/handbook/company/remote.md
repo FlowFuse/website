@@ -4,8 +4,14 @@ navTitle: Remote Work
 
 # Remote Work
 
-FlowFuse is fully remote and our team spans multiple countries and timezones.
-Working remotely can require some changes.
+## All Remote
+
+We are a fully remote company that puts a strong emphasis on trust and respect
+for its employees, customers, partners, and communities. We are able to hire the
+right people from wherever they are in the world. We work openly with one
+another and value clear [communication](/handbook/company/communication/) and
+[decision making](/handbook/company/decisions/) without being sat in
+the same room.
 
 ## Working from a Coworking space
 

@@ -63,3 +63,13 @@ The FlowFuse Platform addresses the problems status above by providing our ICP w
 See also our [Messaging page](/handbook/customer/marketing/messaging/).
 
 FlowFuse uses Open-Source technologies like Node-RED, and MQTT to help our customers being successful in remedying their problems.
+
+## Open Source Stewardship
+
+We believe strongly that Open Source lives at the heart of everything we do. 
+Ever since Node-RED was published as  an Open Source project, we have taken
+great care to stay true to that principle.
+
+Node-RED has an open governance model which means everyone has a seat at the
+table. We will continue to champion that model and work with the community to
+ensure anyone who wants to contribute to the project is able to.
