@@ -33,7 +33,11 @@ San Francisco, CA 94120-7775 USA.
 
 ### Banking details
 
-Upon request wiring details can be provided by the CEO.
+Customer invoices are generated in Stripe, and the preferred way for FlowFuse is to use SWIFT or bank wires as
+the invoice suggests.
+
+For larger customers with internal processes requiring our bank details, they can wire the money to the company's
+checking account too. Wiring instructions to be shared by the rep are found in [our internal drive](https://drive.google.com/file/d/1XfO_nsh0OcB7S4peKEjiPV5qNIj9avJ0/view?usp=sharing).
 
 ### Dun & Bradstreet
 
