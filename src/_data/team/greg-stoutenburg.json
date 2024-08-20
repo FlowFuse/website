@@ -1,0 +1,15 @@
+{
+    "order": 15,
+    "name": "Greg Stoutenburg",
+    "title": "Product-Led Growth Manager",
+    "github": "gstout52",
+    "linkedin": "greg-stoutenburg",
+    "country": "US",
+    "email": "greg@flowfuse.com",
+    "headshot": "greg.png",
+    "facts": [
+        "Specialist in improving user onboarding and engagement",
+        "Wide background includes a philosophy PhD and time at Stack Overflow",
+        "Enjoys just about anything outside"
+    ]
+}
