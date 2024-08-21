@@ -112,7 +112,7 @@ You can now read information such as device battery level, available memory, dev
 4. Connect the output of the inject node to the input of the LwM2M client node, and connect the output of the LwM2M client node to the input of the debug node.
 5. Deploy the flow by clicking on to the top-right deploy button.
 
-!["Image showing Node-RED flow that reading data from LwM2M Server"](./images/executing-command-from-server.gif "Image showing Node-RED flow that reading data from LwM2M Server")
+!["Image showing Node-RED flow that reading data from LwM2M Server"](./images/reading-data-from-server-in-nr.gif "Image showing Node-RED flow that reading data from LwM2M Server")
 _Image showing Node-RED flow that reading data from LwM2M Server_
 
 ### Writing data and configuration to the LwM2M Server from Node-RED
