@@ -91,9 +91,77 @@ hubspot:
             </div>
         </div>
     </div>
-    <div class="bg-white pb-10 md:pb-8 px-6 pt-14 px-6">
-        <!-- Get Started -->
-        <div class="ff-blue-card">
+</div>
+<div class="pb-10 md:pb-8 pt-14 px-6">
+    <!-- Industrial Automation -->
+    <div class="w-full pt-2">
+        <div class="max-w-md sm:max-w-screen-lg mx-auto">
+            <div class="mx-auto w-full md:max-w-screen-lg gap-x-8 gap-y-14 pb-14">
+                <h2 class="text-center w-full md:text-left">End-to-end <span class="text-indigo-600">industrial automation</span></h2>
+                <h4 class="text-center w-full md:text-left">Streamline your operations with FlowFuse’s comprehensive suite of tools</h4>
+                <div class="grid grid-cols-1 gap-6 sm:max-md:grid-cols-2">
+                    {% set sections = [
+                        {
+                            title: "Connect",
+                            text: "Integrate seamlessly with industry-standard protocols to ensure secure communication with your devices.",
+                            svgPath: "components/icons/arrows.svg",
+                            image1: "./images/home/connect_graphic.png",
+                            image1Alt: "Icons of communication protocols",
+                            image2: "./images/home/connect.png",
+                            image2Alt: "Two workers connecting a device"
+                        },
+                        {
+                            title: "Connect",
+                            text: "Integrate seamlessly with industry-standard protocols to ensure secure communication with your devices.",
+                            svgPath: "components/icons/arrows.svg",
+                            image1: "./images/home/connect_graphic.png",
+                            image1Alt: "Icons of communication protocols",
+                            image2: "./images/home/connect.png",
+                            image2Alt: "Two workers connecting a device"
+                        },
+                        {
+                            title: "Connect",
+                            text: "Integrate seamlessly with industry-standard protocols to ensure secure communication with your devices.",
+                            svgPath: "components/icons/arrows.svg",
+                            image1: "./images/home/connect_graphic.png",
+                            image1Alt: "Icons of communication protocols",
+                            image2: "./images/home/connect.png",
+                            image2Alt: "Two workers connecting a device"
+                        },
+                        {
+                            title: "Connect",
+                            text: "Integrate seamlessly with industry-standard protocols to ensure secure communication with your devices.",
+                            svgPath: "components/icons/arrows.svg",
+                            image1: "./images/home/connect_graphic.png",
+                            image1Alt: "Icons of communication protocols",
+                            image2: "./images/home/connect.png",
+                            image2Alt: "Two workers connecting a device"
+                        }
+                    ] %}
+                    {% for section in sections %}
+                        <section class="border-2 border-indigo-200 rounded-lg p-5 mt-12 flex flex-col gap-10 md:flex-row items-center {% if loop.index is even %}md:flex-row-reverse{% endif %}">
+                            <div class="md:max-w-[60%]">
+                                <div class="max-md:mx-auto flex flex-row text-indigo-600">
+                                    <div class="w-10 h-10 sm:m-0 text-indigo-600">
+                                        {% set svgPath = section.svgPath %}
+                                        {% include svgPath %}
+                                    </div>
+                                    <h4 class="text-4xl font-light text-indigo-600">{{ section.title }}</h4>
+                                </div>
+                                <p>{{ section.text }}</p>
+                                {% image section.image1, section.image1Alt, [455] %}
+                            </div>
+                            <div class="rounded-md ff-image-cover md:max-w-[50%] max-h-[274px]">
+                                {% image section.image2, section.image2Alt, [455] %}
+                            </div>
+                        </section>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Get Started -->
+    <div class="ff-blue-card">
             <div class="m-auto w-full text-center sm:text-left mb-2">
                 <h2 class="font-bold"><span class="text-red-600">Get Started</span> with FlowFuse</h2>
                 <p class="-mt-1">Explore our <a href="/pricing/">pricing</a></p>
@@ -123,9 +191,9 @@ hubspot:
                         onclick="capture('cta-try-it-now', {'position': 'secondary'})">Try it out</a>
                 </div>
             </div>
-        </div>
-        <!-- FF Content -->
-        <div class="max-w-md sm:max-w-screen-lg m-auto max-w-5xl px-6">
+    </div>
+    <!-- FF Content -->
+    <div class="max-w-md sm:max-w-screen-lg m-auto max-w-5xl px-6">
             <div class="pt-12 mt-10 pb-12">
             <h2 class="text-center w-full md:text-left col-span-full font-medium"><span class="text-indigo-600">Explore more</span> about FlowFuse and Node-RED</h2>
                 {% include "explore-more-content.njk" %}
@@ -133,6 +201,6 @@ hubspot:
             <div class="md:hidden bg-indigo-50 py-1 px-4 rounded-md w-full mx-auto max-md:text-center">
                 <p>Need assistance with your project? <a href="/contact-us/">Contact us</a>, and our experts will gladly provide a solution tailored to your needs.</p>
             </div>
-        </div>
     </div>
 </div>
+
