@@ -61,7 +61,7 @@ hubspot:
         </div>
     </div>
 </div>
-<div class="about w-full bg-gray-50 pt-16">
+<div class="about w-full bg-gray-50 pt-16 px-6">
     <!-- Industrial Automation -->
     <div class="w-full pt-2">
         <div class="max-w-md sm:max-w-screen-lg mx-auto">
@@ -77,7 +77,8 @@ hubspot:
                             image1: "./images/home/connect_graphic.png",
                             image1Alt: "Icons of communication protocols",
                             image2: "./images/home/connect.png",
-                            image2Alt: "Two workers connecting a device"
+                            image2Alt: "Two workers connecting a device",
+                            url: "/solutions/device-management/"
                         },
                         {
                             title: "Collect & Transform",
@@ -86,16 +87,18 @@ hubspot:
                             image1: "./images/home/collect_graphic.png",
                             image1Alt: "Icons of files formats",
                             image2: "./images/home/collect.png",
-                            image2Alt: "Data travelling into a single point"
+                            image2Alt: "Data travelling into a single point",
+                            url: "/solutions/data-integration/"
                         },
                         {
                             title: "Visualise",
                             text: "Turn data into actionable insights with customizable dashboards and real-time monitoring.",
-                            svgPath: "components/icons/arrows.svg",
+                            svgPath: "components/icons/chart.svg",
                             image1: "./images/home/visualise_graphic.png",
                             image1Alt: "Dashboard charts",
                             image2: "./images/home/visualise.png",
-                            image2Alt: "A worker looking at four screens with dashboards"
+                            image2Alt: "A worker looking at four screens with dashboards",
+                            url: "/product/dashboard/"
                         },
                         {
                             title: "Interact",
@@ -104,14 +107,15 @@ hubspot:
                             image1: "./images/home/interact_graphic.png",
                             image1Alt: "Dashboard charts with interactive elements",
                             image2: "./images/home/interact.png",
-                            image2Alt: "A worker interacting with a machine through a dashboard"
+                            image2Alt: "A worker interacting with a machine through a dashboard",
+                            url: "/product/dashboard/"
                         }
                     ] %}
                     {% for section in sections %}
-                        <section class="border-2 border-indigo-200 rounded-lg p-5 mt-12 flex flex-col gap-10 md:flex-row items-center {% if loop.index is even %}md:flex-row-reverse{% endif %}">
-                            <div class="md:max-w-[60%]">
+                        <a href="{{ section.url }}" class="border border-indigo-200 rounded-lg bg-gray-50 p-5 mt-12 flex flex-col gap-6 md:gap-10 md:flex-row sm:max-md:justify-between items-center {% if loop.index is even %}md:flex-row-reverse{% endif %} hover:drop-shadow-lg hover:border-blue-600 hover:border-2 hover:no-underline transition ease-in-out duration-300">
+                            <div class="md:max-w-[60%] flex flex-col sm:max-md:place-content-between flex-grow">
                                 <div class="max-md:mx-auto flex flex-row text-indigo-600">
-                                    <div class="w-10 h-10 sm:m-0 text-indigo-600">
+                                    <div class="w-10 h-10 text-indigo-600 mr-2">
                                         {% set svgPath = section.svgPath %}
                                         {% include svgPath %}
                                     </div>
@@ -120,17 +124,17 @@ hubspot:
                                 <p>{{ section.text }}</p>
                                 {% image section.image1, section.image1Alt, [455] %}
                             </div>
-                            <div class="rounded-md ff-image-cover md:max-w-[50%] max-h-[274px]">
+                            <div class="rounded-md ff-image-cover scale md:max-w-[50%] max-h-[274px] sm:max-md:aspect-video">
                                 {% image section.image2, section.image2Alt, [455] %}
                             </div>
-                        </section>
+                        </a>
                     {% endfor %}
                 </div>
             </div>
         </div>
     </div>
 </div>
-<div class="pb-10 md:pb-8 pt-14 px-6">
+<div class="pb-10 md:pb-12 pt-14 px-6">
     <!-- Get Started -->
     <div class="ff-blue-card">
             <div class="m-auto w-full text-center sm:text-left mb-2">
