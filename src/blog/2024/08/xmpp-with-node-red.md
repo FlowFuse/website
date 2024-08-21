@@ -7,7 +7,7 @@ authors: ["sumit-shinde"]
 image: 
 tags:
    - post
-   - nodered
+   - unordered
    - node-red xmpp
    - xmpp real-time communication
 ---
@@ -16,23 +16,23 @@ XMPP (Extensible Messaging and Presence Protocol) powers real-time communication
 
 <!--more-->
 
-In this guide, you’ll discover how to integrate XMPP with Node-RED to leverage its full potential. You’ll learn to send and receive messages, manage chat rooms, and ensure your IoT applications are both secure and efficient.
+In this guide, you’ll discover how to integrate XMPP with Node-RED to leverage its full potential. You’ll learn to send and receive messages, manage chat rooms, and ensure your IoT applications are secure and efficient.
   
 ## What is XMPP?
 
-XMPP (Extensible Messaging and Presence Protocol) is a communication protocol used for real-time messaging and presence updates. Initially created for instant messaging, XMPP facilitates the exchange of messages and status updates between users and devices. It supports features such as chat, presence information, and even voice and video communication. Its flexibility and extensibility make it suitable for various applications.
+XMPP (Extensible Messaging and Presence Protocol) is a communication protocol for real-time messaging and presence updates. Initially created for instant messaging, XMPP facilitates the exchange of messages and status updates between users and devices. It supports features like chat, presence information, and even voice and video communication. Its flexibility and extensibility make it suitable for various applications.
 
 ## XMPP Vs Websocket
 
 | **Feature**          | **XMPP**                                         | **WebSocket**                                    |
 |----------------------|--------------------------------------------------|--------------------------------------------------|
-| **Communication Type** | Offers asynchronous messaging with real-time updates and presence information. | Provides full-duplex communication, enabling seamless bidirectional data exchange in real-time. |
+| **Communication Type** | Offers asynchronous messaging with real-time updates and presence information. | Provides full-duplex communication, enabling seamless bidirectional data exchange in real time. |
 | **Message Format**   | Utilizes XML, which adds structure and flexibility but can be more verbose. Great for complex, extensible messaging. | Utilizes lightweight text or binary formats, making it faster and simpler but less structured compared to XML. |
-| **Security**         | Built-in support for encryption (e.g., TLS) and authentication ensures secure and reliable communication. | Security depends on external implementation of TLS/SSL; not part of the core protocol, requiring additional setup for secure connections. |
+| **Security**         | Built-in support for encryption (e.g., TLS) and authentication ensures secure and reliable communication. | Security depends on the external implementation of TLS/SSL; not part of the core protocol, requiring additional setup for secure connections. |
 | **Presence Support** | Robust presence features allow users to see each other’s status and availability, enhancing real-time interactions. | Lacks inherent presence management; focuses solely on real-time data transfer without tracking user status. |
 | **Use Cases**        | Excellent for applications needing structured messaging, chat rooms, and real-time status updates, such as IoT and social platforms. | Best suited for applications requiring fast, continuous data updates like live chat, online gaming, or stock tickers. |
 | **Latency**          | May experience higher latency due to XML parsing and protocol overhead, which can affect speed in some scenarios. | Generally offers lower latency with its persistent connection and minimal overhead, providing faster data exchange. |
-| **Complexity**       | More complex due to its extensive feature set, including support for various types of messaging and presence updates. | Simpler and more straightforward, focusing on real-time data transfer with less protocol complexity. |
+| **Complexity**       | More complex due to its extensive feature set, including support for various types of messaging and presence updates. | more straightforward, focusing on real-time data transfer with less protocol complexity. |
 | **State Management** | Capable of managing session states effectively, making it suitable for complex, interactive applications. | Does not manage state inherently; relies on the application layer to handle state, which may require additional logic. |
 | **Scalability**      | Can be challenging to scale due to the protocol's complexity and overhead, which may impact performance at scale. | Generally easier to scale due to efficient handling of connections and data, making it suitable for high-throughput scenarios. |
 
@@ -53,13 +53,13 @@ Before you begin integrating XMPP with Node-RED, ensure you have the following i
 ## Configuring XMPP Node 
 
 1. Drag the **xmpp out** node onto the canvas. 
-2. Double-click on it and click the "+" icon next to the "Connect as" field. Enter your XMPP server host (IP or domain), port, your JID, and password, then click "Add" to save.
+2. Double-click on it and click the "+" icon next to the "Connect as" field. Enter your XMPP server host (IP or domain), port, JID, and password, then click "Add" to save.
 
 ## Sending Messages to a Specific Client
 
 To send a message to a specific client, ensure that you have an account with the correct password and the Jabber ID (JID) of the recipient.
 
-1. Drag the **inject** node onto the canvas. Set the `msg.payload` to data you want to send in either plain text or XML. For demonstration purposes, use the following XML data:
+1. Drag the **inject** node onto the canvas. Set the `msg.payload` to the data you want to send in either plain text or XML. For demonstration purposes, use the following XML data:
 
 ```xml
    <message from="sender@example.com" to="recipient@example.com">
@@ -69,15 +69,15 @@ To send a message to a specific client, ensure that you have an account with the
 ```
 
 2. Drag the xml node onto the canvas. This node will convert the XML string into a JavaScript stringified JSON object.
-3. In the XMPP out node, specify the JID of the recipient into the "to" field.
+3. In the XMPP out node, specify the JID of the recipient in the "to" field.
 
 ## Receiving Messages from a Specific User
 
-1. Drag the xmpp in node onto the canvas, select the correct XMPP server configuration that you have added.
+1. Drag the xmpp in node onto the canvas, and select the correct XMPP server configuration that you have added.
 2. In the xmpp in node, specify the JID of the sender from whom you want to receive data in the "Buddy" field.
-3. Drag the json node onto the canvas to parse the data if it is in JSON format. If the data is in XML format, you can use an xml node instead.
+3. Drag the JSON node onto the canvas to parse the data if it is in JSON format. If the data is in XML format, you can use an XML node instead.
 4. Drag the debug node onto the canvas to inspect the output data.
-5. Connect the XMPP in node's output to the input of the json node, and the json node's output to the input of the debug node.
+5. Connect the XMPP in the node's output to the input of the json node, and the json node's output to the input of the debug node.
 
 ## Sending Messages to a Room
 
@@ -90,9 +90,9 @@ To send a message to a specific client, ensure that you have an account with the
 
 1. Drag the xmpp in node onto the canvas, and select the correct XMPP server configuration that you have added.
 2. In the xmpp in node, specify the JID of the room from which you want to receive data in the "Buddy" field. Enable the option "Is chat room?", then enter the password of the room.
-3. Drag the json node onto the canvas to parse the data if it is in JSON format. If the data is in XML format, you can use an xml node instead.
+3. Drag the JSON node onto the canvas to parse the data if it is in JSON format. If the data is in XML format, you can use an XML node instead.
 4. Drag the debug node onto the canvas to inspect the output data.
-5. Connect the XMPP in node's output to the input of the json node, and the json node's output to the input of the debug node.
+5. Connect the XMPP in the node's output to the input of the json node, and the json node's output to the input of the debug node.
 
 ## Conclusion
 
