@@ -189,19 +189,10 @@ To center items added to the `#app-bar-title`, apply the following CSS in the `<
 To center items in the `#app-bar-actions` area, add the following CSS to the `<style>` tag of the `ui-template` widget:
 
 ```css
-#v-toolbar-title {
-    flex-grow: 0;
-}
-
 #v-toolbar__append {
     flex-grow: 1;
-    justify-content: center;
 }
 ```
-
-In the above CSS, you can adjust the proportion of space each element should take. The header typically contains two parent containers: one has child `#app-bar-title` and another has child `#app-bar-actions`.
-
-both CSS ensures that the items within these areas are centered horizontally by using `flex-grow` to make sure the areas expand to take up available space and `justify-content: center` to align the items in the center.
 
 ## Styling Header
 
