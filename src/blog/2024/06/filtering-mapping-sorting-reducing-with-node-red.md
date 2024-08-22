@@ -8,13 +8,12 @@ image: /blog/2024/06/images/filtering-mapping-sorting-reducing-with-node-red.png
 tags:
    - posts
    - node-red
-   - flowfuse
-   - low-code
-   - filtering
-   - sorting
-   - mapping 
-   - reducing
-   - data transformation
+   - how to filter data in node-red
+   - how to map array in node-red
+   - how to map data in node-red
+   - how to sort data in node-red
+   - how to reduce data in node-red
+   - data transformation in node-red
 ---
    
 [Node-RED](/node-red/) is a visual programming platform known for its user-friendly interface and low-code approach widely used for IoT application developement. In IoT applications, efficient data processing is crucial, and operations such as filter, map, sort, and reduce are essential for simplifying data transformations. However, many users struggle to implement these operations while sticking to a low-code approach, often relying on function nodes, which can introduce unnecessary complexity. In this guide, we will show you how to filter, map, sort, and reduce data with Node-RED for efficient data tranformation while sticking to low-code approach.
