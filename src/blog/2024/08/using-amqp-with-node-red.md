@@ -16,6 +16,8 @@ tags:
 
 Imagine your Node-RED flow working well, handling data from different sources, until suddenly, messages start disappearing or arriving out of order. [MQTT](/node-red/protocol/mqtt/) works fine for basic messaging, but it can struggle in more complex situations where you need reliable delivery and advanced routing.
 
+<!--more-->
+
 That’s where AMQP comes in. AMQP solves these issues with features that MQTT doesn’t have. In this guide, we'll explain what AMQP is, how it compares to MQTT and [Kafka](/blog/2024/03/using-kafka-with-node-red/), and how you can use it with Node-RED.
 
 ## What is AMQP 
