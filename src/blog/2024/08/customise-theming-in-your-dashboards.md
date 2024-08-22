@@ -169,6 +169,31 @@ export default {
 
 For detailed guide on this section, refer to the guide on [Displaying logged in user on FlowFuse Dashboard](/blog/2024/04/displaying-logged-in-users-on-dashboard/). Furthermore, if you want to add logos or buttons on the right side similar to the left side of the header, you just need to replace the to attribute with the `#app-bar-actions`.
 
+### Centering Header Items
+
+Sometimes you may want to center or position items added to either the `#app-bar-title` or the `#app-bar-actions`. By default, these elements do not have a specified width, and when you add items into them, they grow to fit their content. To center the elements, you first need to ensure that they are sized appropriately.
+
+#### Centering Items in the Left Side of the Header
+
+To center items added to the `#app-bar-title`, apply the following CSS in the `<style>` tag of the `ui-template` widget:
+
+```css
+#app-bar-title {
+    flex-grow: 1;
+    justify-content: center;
+}
+```
+
+#### Centering Items in the Right Side of the Header
+
+To center items in the `#app-bar-actions` area, add the following CSS to the `<style>` tag of the `ui-template` widget:
+
+```css
+#v-toolbar__append {
+    flex-grow: 1;
+}
+```
+
 ## Styling Header
 
 One of the significant customization features we've added recently is the ability to style the header in different ways.
