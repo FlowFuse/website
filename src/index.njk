@@ -61,39 +61,82 @@ hubspot:
         </div>
     </div>
 </div>
-<div class="about w-full bg-gray-50 pt-16">
-    <!-- FlowFuse Benefits -->
-    <div class="w-full px-6 pt-2">
+<div class="about w-full bg-gray-50 pt-16 px-6">
+    <!-- Industrial Automation -->
+    <div class="w-full pt-2">
         <div class="max-w-md sm:max-w-screen-lg mx-auto">
-            <div class="mx-auto w-full md:max-w-screen-lg grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-x-8 gap-y-14 pb-14">
-                <h2 class="text-center w-full md:text-left col-span-full">FlowFuse Creates <span class="text-indigo-600">Value</span></h2>
-                {% for item in home %}
-                <div class="relative w-full">
-                    <div class="flex flex-col items-center sm:items-start">
-                        <div class="flex flex-col justify-center md:justify-start gap-3 w-full">
-                            <div class="w-8 h-8 m-auto sm:m-0 text-indigo-600">
-                                {% set svgPath = "components/icons/" + item.icon + ".svg" %}
-                                {% include svgPath %}
-                            </div>
-                            <div class="w-full flex flex-row gap-3 mx-auto md:m-0">
-                                <h5 class="w-full md:m-0">
-                                    <div class="text-xl text-gray-600 text-center sm:text-left">{{ item.title | safe }}
+            <div class="mx-auto w-full md:max-w-screen-lg gap-x-8 gap-y-14 pb-14">
+                <h2 class="text-center w-full md:text-left">End-to-end <span class="text-indigo-600">Industrial Data Platform</span></h2>
+                <h4 class="text-center w-full md:text-left">Streamline your operations with FlowFuse’s comprehensive suite of tools</h4>
+                <div class="grid grid-cols-1 gap-6 sm:max-md:grid-cols-2">
+                    {% set sections = [
+                        {
+                            title: "Connect",
+                            text: "Integrate seamlessly with industry-standard protocols to ensure secure communication with your devices.",
+                            svgPath: "components/icons/arrows.svg",
+                            image1: "./images/home/connect_graphic.png",
+                            image1Alt: "Icons of communication protocols",
+                            image2: "./images/home/connect.png",
+                            image2Alt: "Two workers connecting a device",
+                            url: "/solutions/device-management/"
+                        },
+                        {
+                            title: "Collect & Transform",
+                            text: "Gather and standardize data from various sources into a unified format for powerful insights.",
+                            svgPath: "components/icons/data-block.svg",
+                            image1: "./images/home/collect_graphic.png",
+                            image1Alt: "Icons of files formats",
+                            image2: "./images/home/collect.png",
+                            image2Alt: "Data travelling into a single point",
+                            url: "/solutions/data-integration/"
+                        },
+                        {
+                            title: "Visualise",
+                            text: "Turn data into actionable insights with customizable dashboards and real-time monitoring.",
+                            svgPath: "components/icons/chart.svg",
+                            image1: "./images/home/visualise_graphic.png",
+                            image1Alt: "Dashboard charts",
+                            image2: "./images/home/visualise.png",
+                            image2Alt: "A worker looking at four screens with dashboards",
+                            url: "/product/dashboard/"
+                        },
+                        {
+                            title: "Interact",
+                            text: "Control systems directly from the dashboard, enabling real-time adjustments and responsiveness.",
+                            svgPath: "components/icons/bolt.svg",
+                            image1: "./images/home/interact_graphic.png",
+                            image1Alt: "Dashboard charts with interactive elements",
+                            image2: "./images/home/interact.png",
+                            image2Alt: "A worker interacting with a machine through a dashboard",
+                            url: "/product/dashboard/"
+                        }
+                    ] %}
+                    {% for section in sections %}
+                        <a href="{{ section.url }}" class="border border-indigo-200 rounded-lg bg-gray-50 p-5 mt-12 flex flex-col gap-6 md:gap-10 md:flex-row sm:max-md:justify-between items-center {% if loop.index is even %}md:flex-row-reverse{% endif %} hover:drop-shadow-lg hover:border-blue-600 hover:border-2 hover:no-underline transition ease-in-out duration-300">
+                            <div class="md:max-w-[60%] flex flex-col sm:max-md:place-content-between flex-grow">
+                                <div class="max-md:mx-auto flex flex-row text-indigo-600">
+                                    <div class="w-10 h-10 text-indigo-600 mr-2">
+                                        {% set svgPath = section.svgPath %}
+                                        {% include svgPath %}
                                     </div>
-                                </h5>
+                                    <h4 class="text-4xl font-light text-indigo-600">{{ section.title }}</h4>
+                                </div>
+                                <p>{{ section.text }}</p>
+                                {% image section.image1, section.image1Alt, [455] %}
                             </div>
-                        </div>
-                        <div>
-                            <p class="text-center sm:text-left font-light">{{ item.content }}</p>
-                        </div>
-                    </div>
+                            <div class="rounded-md ff-image-cover scale md:max-w-[50%] max-h-[274px] sm:max-md:aspect-video">
+                                {% image section.image2, section.image2Alt, [455] %}
+                            </div>
+                        </a>
+                    {% endfor %}
                 </div>
-                {% endfor %}
             </div>
         </div>
     </div>
-    <div class="bg-white pb-10 md:pb-8 px-6 pt-14 px-6">
-        <!-- Get Started -->
-        <div class="ff-blue-card">
+</div>
+<div class="pb-10 md:pb-12 pt-14 px-6">
+    <!-- Get Started -->
+    <div class="ff-blue-card">
             <div class="m-auto w-full text-center sm:text-left mb-2">
                 <h2 class="font-bold"><span class="text-red-600">Get Started</span> with FlowFuse</h2>
                 <p class="-mt-1">Explore our <a href="/pricing/">pricing</a></p>
@@ -123,9 +166,9 @@ hubspot:
                         onclick="capture('cta-try-it-now', {'position': 'secondary'})">Try it out</a>
                 </div>
             </div>
-        </div>
-        <!-- FF Content -->
-        <div class="max-w-md sm:max-w-screen-lg m-auto max-w-5xl px-6">
+    </div>
+    <!-- FF Content -->
+    <div class="max-w-md sm:max-w-screen-lg m-auto max-w-5xl px-6">
             <div class="pt-12 mt-10 pb-12">
             <h2 class="text-center w-full md:text-left col-span-full font-medium"><span class="text-indigo-600">Explore more</span> about FlowFuse and Node-RED</h2>
                 {% include "explore-more-content.njk" %}
@@ -133,6 +176,6 @@ hubspot:
             <div class="md:hidden bg-indigo-50 py-1 px-4 rounded-md w-full mx-auto max-md:text-center">
                 <p>Need assistance with your project? <a href="/contact-us/">Contact us</a>, and our experts will gladly provide a solution tailored to your needs.</p>
             </div>
-        </div>
     </div>
 </div>
+
