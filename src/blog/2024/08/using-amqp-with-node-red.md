@@ -14,9 +14,9 @@ tags:
    - how to use rabitmqq with node-red
 ---
 
-Imagine your Node-RED flow handling data from various sources, working flawlessly until suddenly; messages start disappearing or arriving out of order. While MQTT is great for basic messaging, it can fall short in more complex scenarios requiring reliable delivery and advanced routing.
+Imagine your Node-RED flow working well, handling data from different sources, until suddenly, messages start disappearing or arriving out of order. [MQTT](/node-red/protocol/mqtt/) works fine for basic messaging, but it can struggle in more complex situations where you need reliable delivery and advanced routing.
 
-This is where AMQP comes in. AMQP addresses these challenges with features that MQTT doesn’t offer. In this guide, we’ll cover everything you need to start with AMQP and Node-RED, including what AMQP is, how it compares to MQTT, and how to use it with Node-RED.
+That’s where AMQP comes in. AMQP solves these issues with features that MQTT doesn’t have. In this guide, we'll explain what AMQP is, how it compares to MQTT and [Kafka](/blog/2024/03/using-kafka-with-node-red/), and how you can use it with Node-RED.
 
 ## What is AMQP 
 
@@ -86,11 +86,7 @@ Configure the node by dragging an AMQP custom node onto the canvas and double-cl
 - **Reconnect On Error:** Determines whether the node should attempt to reconnect automatically if it encounters an error. This helps maintain communication with the broker even if temporary issues occur.
 
 - **Exchange Configuration**
-   - **Type:** Choose the exchange type that dictates how messages are routed:
-     - **Topic:** Routes messages based on wildcard patterns in routing keys.
-     - **Direct:** Routes messages with an exact match between routing keys.
-     - **Fanout:** Broadcasts messages to all bound queues.
-     - **Headers:** Routes messages based on multiple header attributes.
+   - **Type:** Choose the exchange type that dictates how messages are routed such as fanout, direct, topic and headers:
    - **Exchange Name:** Name of the exchange where messages will be published. This is where the message is sent before being routed to the appropriate queue.
    **Routing Key:** This key is Used to direct messages to the correct queues based on the exchange type. It helps specify which queue should receive the message.
    - **Durable:** Specifies whether the exchange should survive broker restarts. A durable exchange retains its messages through broker restarts.
