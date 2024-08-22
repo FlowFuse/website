@@ -66,6 +66,8 @@ redirects:
   - { "from": "/blog/2024/03/using_webcam_with_node-red/", "to": "/node-red/peripheral/webcam/" }
   - { "from": "/blog/2023/05/visualize-production-data-via-modbus-in-node-red/", "to": "/node-red/protocol/modbus/" }
   - { "from": "/blog/flowforge/", "to": "/blog/flowfuse/" }
+  - { "from": "/node-red/core-nodes/file/", "to": "/node-red/core-nodes/write-file/" }
+  - { "from": "/node-red/core-nodes/watch/", "to": "/node-red/core-nodes/read-file/" }
 
 # The "permalink" attribute determines where the output page will be located.
 permalink: "{{ redirect.from }}"
