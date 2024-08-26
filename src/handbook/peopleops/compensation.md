@@ -40,7 +40,7 @@ FlowFuse can choose to increase compensation based on varying situations:
 
 ### Equity
 
-FlowFuse intents to offers equity for most roles. The level of stock compensation
+FlowFuse intents to offers equity for key roles. The level of stock compensation
 can vary based on when an employee joined, their performance, and the variables
 that decide salary. Equity is offered as stock options, which upon
 execution will be transformed in the underlying stock. Stock compensation are
