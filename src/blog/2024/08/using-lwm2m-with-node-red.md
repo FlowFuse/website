@@ -29,9 +29,7 @@ In this section, I will demonstrate how you can monitor and control IoT devices 
 ### Prerequisites
 
 - **node-red-contrib-lwm2m:** Install the LwM2M contribution node via the Palette Manager in Node-RED.
-- **LwM2M Server:** Ensure you have a running OMA LwM2M server available and have its configuration details on hand. For more information, refer to [Eclipse Leshan](https://eclipse.dev/leshan/). In this guide, we'll use the public server Eclipse provided, which is specifically designed for testing and learning purposes.
-
-*Note: The Leshan Sandbox Server is public, meaning it is accessible to everyone without authentication. We recommend using the sandbox server with caution. Alternatively, you can use the Wakaama server or set up the Leshan server on your localhost for a more secure environment.*
+- **LwM2M Server:** Ensure you have a running OMA LwM2M server available and have its configuration details on hand. For more information, refer to [Eclipse Leshan](https://eclipse.dev/leshan/).
 
 ### Configuring LwM2M Node
 
@@ -39,7 +37,7 @@ In this section, I will demonstrate how you can monitor and control IoT devices 
 2. Double-click on the LwM2M node to open its configuration window.
 3. Click the "+" icon next to the Client field to add a new client.
 4. Enter a unique endpoint in URN format. This endpoint should be a unique identifier for your device, typically in the format `urn:uuid:<unique-id>,` where `<unique-id>` is a UUID or custom string specific to your device. Ensure that each device has a distinct endpoint to avoid conflicts.
-5. Enter the server host. For the public server, use `leshan.eclipseprojects.io.`
+5. Enter the server host.
 6. Enter the server port:
    - For plain UDP, use port `5683`.
    - For DTLS (encrypted communication), use port `5684`.
@@ -74,7 +72,7 @@ In this section, I will demonstrate how you can monitor and control IoT devices 
 9. If you are using a public server, make sure you enable "hide sensitive data," which will hide all of the device's sensitive information from the public server.
 10. Click "Add" to save the configuration.
 
-Once you have added the LwM2M node and configured it with the server details, you can go to the server's web UI to confirm that the client is connected. For the public server, go to `https://leshan.eclipseprojects.io/#/clients` and enter the endpoint of your client device into the search field. If it appears, that means it is connected. Alternatively, you can check the node's status, which will show "connected" if the connection is successful.
+Once you've configured the LwM2M node with the server details, you can confirm that the client is connected by visiting the server's web UI. Navigate to `<your-server-host>/#/clients` and enter the endpoint of your client device in the search field. If the client appears in the list, it means it is connected. Alternatively, you can check the node's status in Node-RED, which will display "connected" if the connection is successful.
 
 ### Reading Device Configuration and Data on the Server
 
