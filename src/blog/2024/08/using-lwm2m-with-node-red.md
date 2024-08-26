@@ -29,7 +29,7 @@ In this section, I will demonstrate how you can monitor and control IoT devices 
 ### Prerequisites
 
 - **node-red-contrib-lwm2m:** Install the LwM2M contribution node via the Palette Manager in Node-RED.
-- **LwM2M Server:**Ensure you have a running OMA LwM2M server available and have its configuration details on hand. For more information, refer to [Eclipse Leshan](https://eclipse.dev/leshan/). In this guide, we'll use the public server Eclipse Leshan provided, which is specifically designed for testing and learning purposes.
+- **LwM2M Server:** Ensure you have a running OMA LwM2M server available and have its configuration details on hand. For more information, refer to [Eclipse Leshan](https://eclipse.dev/leshan/). In this guide, we'll use the public server Eclipse Leshan provided, which is specifically designed for testing and learning purposes.
 
 ### Configuring LwM2M Node
 
