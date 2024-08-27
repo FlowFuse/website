@@ -174,3 +174,8 @@ and getting more value from the product
 1. Data collection -- Provide space and time for the customer to provide feedback
 on the product and experience. Allow them to request feature ideas, or ask for bug
 fixes.
+
+## Churned customers
+
+When an annually-billed customer chooses not to renew their subscription, the assigned Account Executive should login into Stripe and cancel the subscription. This will effectively close the account on the platform and prevent invoices to continue being sent.
+
