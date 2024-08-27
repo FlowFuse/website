@@ -4,7 +4,7 @@ subtitle: A Step-by-Step Guide to Using LwM2M with Node-RED
 description: Discover how to integrate LwM2M with Node-RED to manage IoT devices effectively. This guide covers everything from configuring LwM2M nodes to reading and writing data, and executing commands remotely, ensuring you can optimize your device management with ease.
 date: 2024-08-15
 authors: ["sumit-shinde"]
-image: 
+image: /blog/2024/08/images/using-lwm2m-with-node-red.png
 tags:
    - posts
    - LwM2M
