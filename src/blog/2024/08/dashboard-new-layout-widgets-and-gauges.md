@@ -32,6 +32,8 @@ Introducing the Number Input widget — a versatile addition that allows users t
 ![Screenshot showing a number input widget with Dashboard](./images/ui-number-input-widget.png){data-zoomable}
 _Screenshot showing a number input widget with Dashboard_
 
+You can try the Number Input now in our [live Dashboard running on FlowFuse](https://dashboard-demos.flowfuse.cloud/dashboard/number-input)
+
 ## New Gauges
 
 Data visualization is a cornerstone of any effective dashboard. We’re excited to introduce two new gauges designed to provide at-a-glance insights into your key metrics.
