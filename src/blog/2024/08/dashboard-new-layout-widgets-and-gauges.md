@@ -9,7 +9,7 @@ tags:
    - posts
    - news
    - flowfuse
-   - dashboard 2.0
+   - dashboard
 ---
 
 At FlowFuse, we're constantly evolving to make sure your dashboard experience is seamless and efficient. This month, we're excited to introduce several new features that enhance your interaction with the platform. From organizing your data with Tabs to visualizing critical information with new Gauges, we've got you covered.

@@ -9,7 +9,7 @@ tags:
    - posts
    - news
    - flowfuse
-   - dashboard 2.0
+   - dashboard
 ---
 
 FlowFuse Dashboard has featured multi-tenancy features through the FlowFuse User Addon. This made user based applications available only to specific FlowFuse team tiers and customers. However, the Node-RED community wanted to use the same feature set in cases FlowFuse didn't consider initially. Taking this feedback on board, today we announce some significant changes to how you can build Dashboards with multi-tenancy in mind.
