@@ -12,11 +12,16 @@ tags:
     - dashboard
 ---
 
-Node-RED makes it easy to create HMI (Human Machine Interfaces) using the [Dashboard set of custom nodes](https://flows.nodered.org/node/node-red-dashboard).
+Node-RED makes it easy to create HMI (Human Machine Interfaces) using [Node-RED Dashboard](https://flows.nodered.org/node/node-red-dashboard).
 
 <!--more-->
 
 One of the most useful features of Dashboard 1 is the ability to store historic data passed to a chart within the chart node itself. This makes your flows far simpler than would be the case if you needed to send the entire data set to the chart for each update.
+
+<div class="blog-update-notes">
+    <p><strong>UPDATE:</strong> Since this article was published, Node-RED Dashboard (1.0) has been <a href="https://discourse.nodered.org/t/announcement-node-red-dashboard-v1-deprecation-notice/89006" target="_blank">deprecated</a>.</p>
+    <p>Instead, it is recommended to use <a href="https://dashboard.flowfuse.com/">FlowFuse Dashboard (Dashboard 2.0)</a> which is a more modern and feature-rich dashboard solution for Node-RED.</p>
+</div>
 
 ### The Importance of Persisting Chart Data
 
