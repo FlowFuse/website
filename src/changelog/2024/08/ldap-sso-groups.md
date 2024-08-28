@@ -47,4 +47,4 @@ provider is unavailable. Also the system will not remove the admin flag
 from a user if that would leave the platform with no admins even if they 
 removed from the group.
 
-This feature is not available to FlowFuse Cloud customers.
+This feature is only available to FlowFuse self-hosted customers.
