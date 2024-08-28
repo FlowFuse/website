@@ -34,6 +34,11 @@ system at large. For each section the implementation of FlowFuse Cloud is
 mentioned too. For self managed installs we advise to follow the choices made
 by FlowFuse Cloud.
 
+## Audit logs
+
+FlowFuse features multiple layers of audit logging, both on the administrator level
+as well as on a team level. Audit logs are currently stored indefinitialy.
+
 ### Data storage
 
 #### Data at Rest
