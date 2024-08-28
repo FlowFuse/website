@@ -17,7 +17,8 @@ FlowFuse architecture is described on our [documentation](/docs/contribute/archi
 ### User sessions
 
 Users are identified by an unique combination of username and password, or by a
-SAML compliant server for Single Sign-on. 
+SAML compliant server for Single Sign-on (SSO) or LDAP. FlowFuse by default will  
+close active sessions after 14 days, of when user signs out.
 
 User provisioning is on a per user basis.
 
@@ -32,6 +33,11 @@ Configuration of the FlowFuse application influences security aspects of the
 system at large. For each section the implementation of FlowFuse Cloud is
 mentioned too. For self managed installs we advise to follow the choices made
 by FlowFuse Cloud.
+
+## Audit logs
+
+FlowFuse features multiple layers of audit logging, both on the administrator level
+as well as on a team level. Audit logs are currently stored indefinitialy.
 
 ### Data storage
 
