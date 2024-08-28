@@ -2,7 +2,7 @@
 title: Notifications Inbox
 description: "More notifications and alerts in FlowFuse"
 
-date: 2024-07-27 13:00:00.0
+date: 2024-08-27 13:00:00.0
 
 authors: ["stephen-mclaughlin"]
 tags:
