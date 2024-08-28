@@ -104,9 +104,12 @@ You can also add comments to a ticket which will only be visible to our team. Th
 
 When replying to the ticket one should have the intent to always reply with links to FlowFuse articles or documentation. If these resources are missing, please start or update where applicable.
 
-Where a conversation needs to happen with regards to a ticket between FlowFuse team members we should use the comments feature rather than having a parallel conversation is Slack so that anyone who wants to help with the ticket can see all relevant information in one place.
+Where a conversation needs to happen with regards to a ticket between FlowFuse team members, we should use the comments feature in the ticket rather than having a parallel conversation in Slack. This allows anyone who wants to help with the ticket can see all relevant information in one place.
 
 Where you can help by replying to a customer you should do so rather than asking the ticket owner to relay messages. Working this way saves time, reduces the chance of the wrong information being passed to the customer, and shows that our wider team is invested in tickets which should have a positive impact on customer satisfaction.
+
+When a ticket is assigned to you please monitor it for a conclusion. If it's unclear to you if the customer's request was satisfied please ask the customer to confirm they don't need any further help. Once the customer doesn't need any more help on the ticket please close it using the info bar on the right side of the ticket inbox. Look for the 'Ticket status' section and change the drop down to closed.
+
 
 #### Scope of Support
 
