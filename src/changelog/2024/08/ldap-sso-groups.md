@@ -35,6 +35,8 @@ the groups in the LDAP Provider - rather than using the team's id. However, a te
 by a team owner. Doing so will break the link between the group and the team membership - so should only
 be done with care.
 
+More details can be found in the [SSO LDAP documentation](/docs/admin/sso/ldap).
+
 ## Managing FlowFuse Admins
 
 In the previous release we added support for managing FlowFuse Admin users by group membership to SAML SSO, this is now available to LDAP as well.
