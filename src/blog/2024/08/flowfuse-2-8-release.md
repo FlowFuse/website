@@ -35,7 +35,7 @@ This feature is available for those running self-hosted FlowFuse.
 
 ## Notifications Improvements
 
-Last release we introduced the [Notifications Inbox](/blog/2024/08/flowfuse-2-7-release.md#notifications-inbox), and in this release we're starting to expand on the notifications that you wil receive in FlowFuse, starting with alerts when your Node-RED instances and devices crash unexpectedly, and when instances start in "Safe Mode".
+Last release we introduced the [Notifications Inbox](/blog/2024/08/flowfuse-2-7-release#notifications-inbox), and in this release we're starting to expand on the notifications that you wil receive in FlowFuse, starting with alerts when your Node-RED instances and devices crash unexpectedly, and when instances start in "Safe Mode".
 
 ![Screenshot showing some example notifications to inform users of unexpected crashes](./images/2-8-release-notifications.png){data-zoomable}
 _Screenshot showing some example notifications to inform users of unexpected crashes_
@@ -44,7 +44,7 @@ We're also added filters to show "Read" notifications, and grouping together sim
 
 ## Managing Devices at Scale
 
-As promised in the [FlowFuse 2.7 Release](/blog/2024/08/flowfuse-2-7-release.md#bulk-device-actions), we've expanded the actions you can take when working with many Devices at once, which now includes the ability to move Devices between Applications and Instances.
+As promised in the [FlowFuse 2.7 Release](/blog/2024/08/flowfuse-2-7-release#bulk-device-actions), we've expanded the actions you can take when working with many Devices at once, which now includes the ability to move Devices between Applications and Instances.
 
 ![Screenshot to show the new "Move to Instance" and "Move to Application" bulk actions](./images/2-8-release-bulk-move.png){data-zoomable}
 _Screenshot to show the new "Move to Instance" and "Move to Application" bulk actions_
