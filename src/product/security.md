@@ -17,7 +17,8 @@ FlowFuse architecture is described on our [documentation](/docs/contribute/archi
 ### User sessions
 
 Users are identified by an unique combination of username and password, or by a
-SAML compliant server for Single Sign-on. 
+SAML compliant server for Single Sign-on (SSO) or LDAP. FlowFuse by default will  
+close active sessions after 14 days, of when user signs out.
 
 User provisioning is on a per user basis.
 
