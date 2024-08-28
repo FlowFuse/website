@@ -15,7 +15,7 @@ approach to Self Hosted Licenses. Previously when a license expired the
 platform would continue to run with the same capabilities as when the
 license was valid.
 
-If you are currently running with older version and an expired license
+If you are currently running with older version with  an expired license
 please contact the Sales team to discuss renewing your license before 
 upgrading. You can check your current license on the 
 Admin Settings -> Overview page.
