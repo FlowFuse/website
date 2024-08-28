@@ -42,6 +42,9 @@ All user data is stored in a relational database.
 _FlowFuse Cloud_: Data is stored in a PostgreSQL database. All data is encrypted
 [since October 2022](/blog/2022/10/db-migration-01/).
 
+_FlowFuse Cloud_: All users files are stored at rest in Encrypted AWS EFS volume.
+[Persistent Storage](/changelog/2024/07/persistent-storage/)
+
 #### Data residency
 
 Long term data storage is depended on the location of the relational database
