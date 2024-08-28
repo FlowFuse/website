@@ -104,7 +104,7 @@ You can also add comments to a ticket which will only be visible to our team. Th
 
 When replying to the ticket one should have the intent to always reply with links to FlowFuse articles or documentation. If these resources are missing, please start or update where applicable.
 
-Where a conversation needs to happen with regards to a ticket between FlowFuse team members we should use the comments feature int eh ticket rather than having a parallel conversation in Slack, so that anyone who wants to help with the ticket can see all relevant information in one place.
+Where a conversation needs to happen with regards to a ticket between FlowFuse team members, we should use the comments feature in the ticket rather than having a parallel conversation in Slack. This allows anyone who wants to help with the ticket can see all relevant information in one place.
 
 Where you can help by replying to a customer you should do so rather than asking the ticket owner to relay messages. Working this way saves time, reduces the chance of the wrong information being passed to the customer, and shows that our wider team is invested in tickets which should have a positive impact on customer satisfaction.
 
