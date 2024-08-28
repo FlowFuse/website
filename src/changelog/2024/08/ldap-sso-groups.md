@@ -16,6 +16,8 @@ membership to be managed by LDAP groups.
 
 Building on the SAML based SSO configuration there is now a `Manage roles using group assertions` check box on the LDAP SSO configuration page. This allows a base LDAP DN for groups to be set. This will used to look up which groups a user is a member of when they login to the platform.
 
+![screen shot showing new LDAP group management settings](images/ldap-group.png)
+
 Groups can be `groupOfNames` or `groupOfUniqueNames` and membership will be checked against `memberOf` or `uniqueMemberOf` fields respectively.
 
 ### Group Naming
