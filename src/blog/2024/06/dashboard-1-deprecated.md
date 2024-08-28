@@ -10,7 +10,7 @@ tags:
    - news
    - node-red
    - flowfuse
-   - dashboard 2.0
+   - dashboard
    - FlowFuse Dashboard
 ---
 
