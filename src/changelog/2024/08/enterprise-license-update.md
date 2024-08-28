@@ -36,10 +36,10 @@ The email will be sent again every Sunday evening in the 30 days.
 - All running instances will be suspended.
 - Instances will not be stared.
 - No new Instances or Devices can be created.
-
-   ![expired banner](images/expired-banner.png)
 - A email will be sent to all Admin users saying the license has expired.
 - A banner showing the license as expired will be shown to all users.
+
+   ![expired banner](images/expired-banner.png)
 - All connections to the MQTT broker will be refused (This will impact 
 Project Nodes and Device control).
 
