@@ -69,4 +69,4 @@ Just to highlight a few, particularly valuable, updates and fixes:
 
  ## What's Next?
 
- Work has already begun on the next release, `1.16.0`, you can see what items we have queued up [here](https://github.com/orgs/FlowFuse/projects/16/views/1), if you've got any feedback or suggestions, please do let us know, and feel free to open new issues on our [GitHub](https://github.com/FlowFuse/node-red-dashboard/issues)
+ Work has already begun on the next release, `1.16.0`, you can see what items we have queued up [here](https://github.com/orgs/FlowFuse/projects/15/views/1), if you've got any feedback or suggestions, please do let us know, and feel free to open new issues on our [GitHub](https://github.com/FlowFuse/node-red-dashboard/issues)
