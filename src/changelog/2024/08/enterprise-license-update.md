@@ -17,7 +17,8 @@ license was valid.
 
 If you are currently running with older version and an expired license
 please contact the Sales team to discuss renewing your license before 
-upgrading.
+upgrading. You can check your current license on the 
+Admin Settings -> Overview page.
 
 ## Notifications
 
