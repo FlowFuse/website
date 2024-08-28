@@ -1,7 +1,7 @@
 ---
-title: Persisting chart data in Node-RED Dashboards
+title: Persisting chart data in Node-RED Dashboard 1
 subtitle: Keep your historic chart data safe and available
-description: Chart data in Node-RED can be stored directly in your flows but it's a good idea to also store data eleswhere. In this article we are looking at some easy ways to persist your historic chart data.
+description: Chart data in Node-RED can be stored directly in your flows but it's a good idea to also store data eleswhere. In this article we are looking at some easy ways to persist your historic chart data in Dashboard 1
 date: 2023-05-25
 authors: ["rob-marcer"]
 image: /blog/2023/05/images/persisting-data-header.jpeg
@@ -12,11 +12,16 @@ tags:
     - dashboard
 ---
 
-Node-RED makes it easy to create HMI (Human Machine Interfaces) using the [Dashboard set of custom nodes](https://flows.nodered.org/node/node-red-dashboard).
+Node-RED makes it easy to create HMI (Human Machine Interfaces) using [Node-RED Dashboard](https://flows.nodered.org/node/node-red-dashboard).
 
 <!--more-->
 
-One of the most useful features of Dashboard is the ability to store historic data passed to a chart within the chart node itself. This makes your flows far simpler than would be the case if you needed to send the entire data set to the chart for each update.
+One of the most useful features of Dashboard 1 is the ability to store historic data passed to a chart within the chart node itself. This makes your flows far simpler than would be the case if you needed to send the entire data set to the chart for each update.
+
+<div class="blog-update-notes">
+    <p><strong>UPDATE:</strong> Since this article was published, Node-RED Dashboard (1.0) has been <a href="https://discourse.nodered.org/t/announcement-node-red-dashboard-v1-deprecation-notice/89006" target="_blank">deprecated</a>.</p>
+    <p>Instead, it is recommended to use <a href="https://dashboard.flowfuse.com/">FlowFuse Dashboard (Dashboard 2.0)</a> which is a more modern and feature-rich dashboard solution for Node-RED.</p>
+</div>
 
 ### The Importance of Persisting Chart Data
 
@@ -33,7 +38,7 @@ If you'd like to see and edit the flows I've created, you can copy and paste the
 {% renderFlow %}
 [{"id":"c6825b1001216b89","type":"inject","z":"668c56888fd0f960","name":"","props":[],"repeat":"1","crontab":"","once":false,"onceDelay":0.1,"topic":"","x":110,"y":220,"wires":[["6b609d978540fb2a"]]},{"id":"6b609d978540fb2a","type":"Number","z":"668c56888fd0f960","name":"Random Number","minimum":"1","maximum":"10","roundTo":"0","Floor":true,"x":270,"y":220,"wires":[["794846db6dc8cef8"]]},{"id":"794846db6dc8cef8","type":"ui_chart","z":"668c56888fd0f960","name":"","group":"af1535b39b74f94a","order":0,"width":0,"height":0,"label":"chart","chartType":"line","legend":"false","xformat":"HH:mm:ss","interpolate":"linear","nodata":"","dot":false,"ymin":"","ymax":"","removeOlder":1,"removeOlderPoints":"","removeOlderUnit":"3600","cutout":0,"useOneColor":false,"useUTC":false,"colors":["#1f77b4","#aec7e8","#ff7f0e","#2ca02c","#98df8a","#d62728","#ff9896","#9467bd","#c5b0d5"],"outputs":1,"useDifferentColor":false,"className":"","x":430,"y":220,"wires":[["ad53848ee4b0d91e"]]},{"id":"ad53848ee4b0d91e","type":"debug","z":"668c56888fd0f960","name":"debug","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"payload","targetType":"msg","statusVal":"","statusType":"auto","x":550,"y":220,"wires":[]},{"id":"af1535b39b74f94a","type":"ui_group","name":"Example","tab":"14f1442eb7525190","order":1,"disp":true,"width":"6","collapse":false,"className":""},{"id":"14f1442eb7525190","type":"ui_tab","name":"Home","icon":"dashboard","disabled":false,"hidden":false}]
 {% endrenderFlow %}
-
+x
 ### How can we store and recall the chart data?
 
 The chart node has a really useful feature which allows us to access all the data currently shown in the chart. Each time the chart receives new data, it's added to the existing values then the whole data set is sent out the outbound port of the chart node.
@@ -109,5 +114,5 @@ Each of these solutions has strengths and weaknesses but there are many other wa
 
 ### Conclusion
 
-Node-RED Dashboard allows you to easily make informative HMIs, but it's important to make sure the chart data you are showing is stored safely. The approaches we have discussed above should give you a good start in ensuring your charts are populated with the correct data, even if your Node-RED instance crashes or you need to move it to a new hosting location.
+Node-RED Dashboard 1 allows you to easily make informative HMIs, but it's important to make sure the chart data you are showing is stored safely. The approaches we have discussed above should give you a good start in ensuring your charts are populated with the correct data, even if your Node-RED instance crashes or you need to move it to a new hosting location.
 
