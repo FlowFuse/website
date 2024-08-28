@@ -10,14 +10,14 @@ tags:
     - enterprise
 ---
 
-Starting with the v2.8.0 release we will be taking a slightly stricter 
-approach to Self Hosted Licenses. Previously when a license expired the
-platform would continue to run with the same capabilities as when the
-license was valid.
+Starting with the v2.8.0 release FlowFuse will be taking a slightly stricter 
+approach to License enforcement outside of FlowFuse Cloud. Previously
+when a license expired the platform would continue to run with the same
+capabilities as when the license was valid.
 
 If you are currently running with older version with an expired license
-please contact the Sales team to discuss renewing your license before 
-upgrading. You can check your current license on the 
+please [contact the Sales team](/contact-us/) to discuss renewing your
+license before upgrading. You can check your current license on the 
 Admin Settings -> Overview page.
 
 ## Notifications
@@ -34,7 +34,7 @@ The email will be sent again every Sunday evening in the 30 days.
 ## After Expiry
 
 - All running instances will be suspended.
-- Instances will not be stared.
+- Instances will not be started.
 - No new Instances or Devices can be created.
 - A email will be sent to all Admin users saying the license has expired.
 - A banner showing the license as expired will be shown to all users.
