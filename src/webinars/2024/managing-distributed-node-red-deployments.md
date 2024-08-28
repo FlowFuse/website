@@ -1,6 +1,6 @@
 ---
 title: Managing Distributed Node-RED Deployments on the Edge
-subtitle: This webinar will explore the capabilities of the FlowFuse Device Agent, a powerful tool for managing remote Node-RED deployments.
+subtitle: This webinar explores the capabilities of the FlowFuse Device Agent, a powerful tool for managing remote Node-RED deployments.
 image: /images/webinars/managing-distributed-node-red-deployments.jpg
 date: 2024-08-28
 time: 17:00 CET (11:00am ET) 
