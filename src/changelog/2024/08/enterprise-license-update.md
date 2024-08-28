@@ -22,7 +22,10 @@ upgrading.
 ## Notifications
 
 Starting 30 days before the license expires:
+
 - Admin users will see a banner showing the number of days left.
+
+   ![expiring banner](images/expiring-banner.png)
 - A email will be sent to all Admin users.
 
 The email will be sent again every Sunday evening in the 30 days.
