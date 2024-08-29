@@ -26,7 +26,7 @@ When searching for `flowfuse/node-red-dashboard` on Google, the first result we 
 
 ### UI-Builder
 
-Finding UI-Builder is straightforward, as its package name `node-red-ui-builder` is distinct and easily identifiable both on Google and in the Node-RED Palette Manager. This clear naming helps users quickly locate the correct package.
+Finding UI-Builder is straightforward, as its package name `node-red-contrib-uibuilder` is distinct and easily identifiable both on Google and in the Node-RED Palette Manager. This clear naming helps users quickly locate the correct package.
 
 ## How Easy is it to Get Started?
 
