@@ -34,7 +34,7 @@ Team Membership in FlowFuse can now be automatically managed using LDAP groups. 
 
 This also extends to the management of FlowFuse Admin users, which was previously only supported for SAML SSO.
 
-This feature is available for those running self-hosted FlowFuse.
+The Admin management feature is available for those running self-hosted FlowFuse.
 
 ## Notifications Improvements
 
