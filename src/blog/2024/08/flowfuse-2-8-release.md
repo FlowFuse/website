@@ -21,7 +21,10 @@ The Static Assets Service allows you to host and serve static files from your Fl
 
 With the Static Assets Service, you can upload files directly to your FlowFuse instance and access them from your Node-RED flows, like so:
 
-// Add video demo of the Static Assets Service
+<video controls>
+   <source src="https://website-data.s3.eu-west-1.amazonaws.com/Assets+Service+Demo.mp4" type="video/mp4">
+   Your browser does not support the video tag.
+</video>
 
 This is the first step in this new feature set, with more enhancements planned for future releases, whereby you'll also be able to configure access control to public HTTP endpoints for easy access in your Dashboards.
 
