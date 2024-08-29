@@ -49,6 +49,14 @@ As promised in the [FlowFuse 2.7 Release](/blog/2024/08/flowfuse-2-7-release#bul
 ![Screenshot to show the new "Move to Instance" and "Move to Application" bulk actions](./images/2-8-release-bulk-move.png){data-zoomable}
 _Screenshot to show the new "Move to Instance" and "Move to Application" bulk actions_
 
+## Stricter Approach to Expired Licenses
+
+We've made some changes to how FlowFuse handles expired licenses for self-hosted users.
+
+If your license has expired, you will now be unable to access your FlowFuse instance until you renew your license. This is to ensure that you are always using the latest version of FlowFuse and have access to the latest features and security updates.
+
+If you are currently running an older version of FlowFuse with an expired license please [contact the Sales team](/contact-us/) to discuss renewing your license before upgrading to FlowFuse 2.8. You can check your current license on the "Admin Settings" > "Overview" page.
+
 ## And Much More...
 
 For a full list of everything that went into our 2.8 release, you can check out the [release notes](https://github.com/FlowFuse/flowfuse/releases/tag/v2.8.0).
