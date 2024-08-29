@@ -33,3 +33,35 @@ The expectation is that the marketing and customer success team will continuousl
 
 FlowFuse Cloud Trial emails should only be sent by the marketing team via HubSpot. Requesting changes to these emails is done by opening a
 [GitHub issue on the website repository](https://github.com/FlowFuse/website/issues).
+
+### Essential communications with customers and users
+
+HubSpot is designed to send only marketing emails. Under GDPR and similar laws, as well as best practices, marketing messages can be sent only to people who have explicitly consented to receive such messages. Such explicit consent is typically given by choosing to opt-in to marketing messages upon signing up for a product.
+
+Sometimes users must receive information about a product regardless of whether they have explicitly consented to receive such messages. Some examples are:
+- When a product’s functionality is changing
+- When action must be taken to continue using a service
+- To confirm that a user has performed a certain action (e.g. adding a user)
+
+HubSpot is not equipped to send such messages. Some non-marketing emails are sent directly from the backend.
+
+When we need to create and send a non-marketing email, follow these steps:
+
+1. Confirm that the message is not a marketing message. There is no hint of an attempt to get the customer to buy something.
+2. Log into Brevo.com
+3. Navigate to Contacts
+4. Import a .csv file of the contacts you wish to reach by clicking Import Contacts
+5. Assign the contacts to a list when prompted
+
+You have now created a list of contacts that you can message.
+
+To send your contacts a message, follow these steps:
+
+1. Choose Campaigns
+2. Click Email
+3. Click Create Campaign
+4. Name your campaign
+5. Confirm each of the details that follow and design your message. 
+6. Preview your message and send your preview to another FlowFuse employee for a second pair of eyes.
+7. When you are satisfied with your message, choose Schedule to send your message immediately or at a designated time. 
+
