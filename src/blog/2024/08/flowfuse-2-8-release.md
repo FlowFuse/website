@@ -79,8 +79,9 @@ The quickest and easiest way to get started with FlowFuse is on our own hosted i
 
 If you're using [FlowFuse Cloud]({{ site.appURL }}), then there is nothing you need to do - it's already running 2.8, and you may have already been playing with the new features.
 
-If you installed a previous version of FlowFuse and want to upgrade, our documentation provides a
-guide for [upgrading your FlowFuse instance](/docs/upgrade/).
+If you installed a previous version of FlowFuse and want to upgrade, our documentation provides a guide for [upgrading your FlowFuse instance](/docs/upgrade/).
+
+If you have an Enterprise license please make sure to review this [changelog entry](/changelog/2024/08/enterprise-license-update)
 
 ## Getting help
 
