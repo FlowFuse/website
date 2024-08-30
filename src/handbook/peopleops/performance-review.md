@@ -15,7 +15,7 @@ feedback regularly to minimize the chance for surprises during the written revie
 
 ## Structure
 
-You can find a template document in Google Drive [here](https://docs.google.com/document/d/1E_Ni5kIcgRAvx9ZxFECOxJkFzzvDoUSpb5YfzKd1zCk/).
+A [template document](https://docs.google.com/document/d/1E_Ni5kIcgRAvx9ZxFECOxJkFzzvDoUSpb5YfzKd1zCk/) is available to structure the review.
 Please be sure to duplicate ***and move*** the document before filling it out as to not share employee performance reviews with others unintentionally.
 
 The template consists of the following:
