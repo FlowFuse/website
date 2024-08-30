@@ -13,4 +13,43 @@ employee can still grow. This text is shared with each individual employee.
 While this performance review is written down, each manager should've communicated
 feedback regularly to minimize the chance for surprises during the written review.
 
-Performance review might influence the [compensation adjustment](../peopleops/compensation#adjustment).
+## Structure
+
+You can find a template document in Google Drive [here](https://docs.google.com/document/d/1E_Ni5kIcgRAvx9ZxFECOxJkFzzvDoUSpb5YfzKd1zCk/).
+Please be sure to duplicate ***and move*** the document before filling it out as to not share employee performance reviews with others unintentionally.
+
+The template consists of the following:
+
+### Values
+
+Each of the Company Values will be rated as one of the following:
+
+- **Exceeds:** Employee consistently goes above and beyond in this area.
+- **Achieves:** Employee meets expectations for their seniority in this area.
+- **Room for Growth:** This is an area where the employee could improve.
+
+Details and examples should be provided with each instance. It is also important that employees are not disheartened
+if given "Room for Growth" feedback, in fact, managers are encouraged to assign this rating to at least one of the
+company values, although this should not be forced.
+
+It is almost impossible to achieve/exceed all values perfectly, sometimes particular employees are more focus on
+customer/community engagement, others may be more focussed on specific technical requirements. This is normal and should be embraced.
+
+### Highlights
+
+A chance to focus on the best things that the employee has contributed to FlowFuse since their last review (or first day
+if this is their first review). Highlights should come from both employees and their managers, and are a chance to reflect
+on the positive aspects of the employee's work, great contributions made and the impact it's had on the company's success.
+
+### Compensation Changes
+
+As per the ["Compensation"](../peopleops/compensation) section of the Handbook, FlowFuse can opt to adjust your compensation
+at the same time your performance reviews are delivered. Please see the ["Adjustments"](../peopleops/compensation#adjustment)
+section for more details on the factor of these changes.
+
+This section of the review should clearly state the Employee's existing compensation, the change (if any) to that compensation, and the net
+salary after the change.
+
+### Notes
+
+This section should be used to capture employee thoughts and feedback, and any other topics that come up during the review.
