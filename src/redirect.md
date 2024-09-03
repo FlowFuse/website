@@ -70,6 +70,8 @@ redirects:
   - { "from": "/node-red/core-nodes/httprequest/", "to": "/node-red/core-nodes/http-request/" }
   - { "from": "/node-red/core-nodes/file/", "to": "/node-red/core-nodes/write-file/" }
   - { "from": "/node-red/core-nodes/watch/", "to": "/node-red/core-nodes/read-file/" }
+  - { "from": "/node-red/core-nodes/tcpin/", "to": "/node-red/core-nodes/tcp-in/" }
+  - { "from": "/node-red/core-nodes/httpproxy/", "to": "/node-red/core-nodes/http-proxy/" }
 
 # The "permalink" attribute determines where the output page will be located.
 permalink: "{{ redirect.from }}"
