@@ -48,7 +48,7 @@ In this section, we will guide you through the process of scraping data from pub
 
 To start scraping data, follow these steps to send an HTTP GET request to the webpage:
 
-1. Drag the ** inject ** node onto the canvas. This node allows you to manually trigger the HTTP request or set it to fire at specific intervals.
+1. Drag the **inject** node onto the canvas. This node allows you to manually trigger the HTTP request or set it to fire at specific intervals.
 2. Drag the **http request** node onto the canvas. Double-click it to configure and set the **Method** to `GET.` Enter the webpage URL you want to scrape (e.g., `https://www.scrapethissite.com/pages/simple/`).
 3. Drag the **debug** node onto the canvas.
 4. Connect the **inject** node's output to the input of the **http request** node and the **http request** node's output to the input of the **debug** node.
@@ -62,7 +62,7 @@ Next, we need to process the raw HTML to extract meaningful data. This involves 
 
 #### Analyzing HTML Structure
 
-Begin by analyzing the HTML structure of the webpage. Open your browser’s developer tools (press Ctrl + shift + c) and inspect the elements to locate where the data resides and which HTML elements are contained. For example, on a page, you can see countries, each with its capital population and area; click your mouse on that element, and in the developer tool, you will navigate to that element's HTML. Now, find out the selector you can use to select those elements; in the countries page, you will see all of those countries' information is in the element that has the '.countries' class, so when using that class, we can extract all of the countries' data.
+Begin by analyzing the HTML structure of the webpage. Open your browser’s developer tools (press Ctrl + Shift + c ) and examine the elements to locate where the data resides and which HTML elements contain it. For example, on a page with a list of countries, each with its capital, population, and area, click on one of those countires elements to navigate to its HTML in the developer tools. Identify the selector that can be used to select those elements. On this webpage, the information about countries is contained within an element with the .countries class. You can use this class to extract all the data for the countries.
 
 ![Image showing the structure of the page and the data which we needed to extract](./images/html-structer-of-target-website.png){data-zoomable}
 _Image showing the structure of the page and the data which we needed to extract_
