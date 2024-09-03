@@ -68,7 +68,7 @@ redirects:
   - { "from": "/blog/flowforge/", "to": "/blog/flowfuse/" }
   - { "from": "/node-red/core-nodes/httpin/", "to": "/node-red/core-nodes/http-in/" }
   - { "from": "/node-red/core-nodes/file/", "to": "/node-red/core-nodes/write-file/" }
-  - { "from": "/node-red/core-nodes/watch/", "to": "/node-red/core-nodes/read-filee/" }
+  - { "from": "/node-red/core-nodes/watch/", "to": "/node-red/core-nodes/read-file/" }
 
 # The "permalink" attribute determines where the output page will be located.
 permalink: "{{ redirect.from }}"
