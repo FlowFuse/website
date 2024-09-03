@@ -107,4 +107,4 @@ Start leveraging the Static Asset Service to streamline your Node-RED projects! 
 
 Images can significantly enhance dashboards, but ensuring their proper display in different Node-RED hosting environments, especially within DevOps pipelines, can be challenging. The techniques discussed here enable effective use of images in dashboards, even within containerized setups. Additionally, if you are using FlowFuse, the new features simplify adding and managing static assets.
 
-I welcome your comments and suggestions on this article. Please share your thoughts and how you might apply these techniques in the comments section below.
+I'd love to hear your comments and suggestions on this article. please tell us what you think about this article, and how you might use these techniques in the comments section below.
