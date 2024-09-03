@@ -37,7 +37,7 @@ Once the HTML is received, the next step is parsing it. Parsing involves analyzi
 
 ## Web scrapping with Node-RED 
 
-In this section, we will guide you through the process of scraping data from publicly available websites using Node-RED. We'll start with a demonstration of extracting data from the website that allows specifically available internet for this purpose, we will scrap the countries data from this page https://www.scrapethissite.com/pages/simple/
+In this section, we will guide you through the process of scraping data from publicly available websites using Node-RED. We will demonstrate how to extract data from a website specifically designed for scraping practice. For this example, we will scrape country data from the page at `https://www.scrapethissite.com/pages/simple/`.
 
 ### Sending Requests to a Webpage
 
