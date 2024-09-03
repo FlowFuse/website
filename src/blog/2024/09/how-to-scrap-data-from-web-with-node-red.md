@@ -15,7 +15,7 @@ tags:
 
 Have you ever needed to scrape data from websites to monitor news, track competitors, or gather insights about your industry? In this guide, you'll learn how to use Node-RED for efficient web scraping, allowing you to extract and manage data from various websites seamlessly. Whether you're looking to keep tabs on the latest articles, product mentions, or market trends, this step-by-step approach will help you set up Node-RED, configure scraping flows, and handle data extraction effectively.
 
-<!-- more -->
+<!--more-->
 
 ## What is Web Scraping?
 
