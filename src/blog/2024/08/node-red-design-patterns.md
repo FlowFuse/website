@@ -32,7 +32,7 @@ Before diving into the specific Node-RED design patterns, it’s essential to gr
 
 ## Node-RED Design patterns
 
-### UI Pattern
+### UI Design Pattern
 
 User interface (UI) design patterns are reusable components that designers use to address common problems in user interface design. In this section, I have covered some of these design patterns. You can explore more options on the [FlowFuse dashboard(https://dashboard-demos.flowfuse.cloud/dashboard/)], where each page offers solutions for achieving unique UI components. You can read this [amazing docs](https://dashboard.flowfuse.com/getting-started.html#design-patterns) on data synchronization and user management patterns for FlowFuse Dashboard. We may also cover more UI design patterns in future blog posts.
 
