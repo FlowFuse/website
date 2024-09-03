@@ -14,11 +14,11 @@ tags:
    - how to use rabitmqq with node-red
 ---
 
-Imagine your Node-RED flow working well, handling data from different sources, until suddenly, messages start disappearing or arriving out of order. [MQTT](/node-red/protocol/mqtt/) works fine for basic messaging, but it can struggle in more complex situations where you need reliable delivery and advanced routing.
+Imagine your Node-RED flow working well, handling data from different sources, until suddenly, messages start disappearing or arriving out of order. [MQTT](/node-red/protocol/MQTT/) works fine for basic messaging, but it can struggle in more complex situations where you need reliable delivery and advanced routing.
 
 <!--more-->
 
-That’s where AMQP comes in. AMQP solves these issues with features that MQTT doesn’t have. In this guide, we'll explain what AMQP is, how it compares to MQTT and [Kafka](/blog/2024/03/using-kafka-with-node-red/), and how you can use it with Node-RED.
+That’s where AMQP comes in. AMQP solves these issues with features that MQTT doesn’t have. In this guide, we'll explain what AMQP is, how it compares to MQTT and [Kafka](/blog/2024/03/using-kafka-with-node-red/), and how to use it with Node-RED.
 
 ## What is AMQP 
 
@@ -29,7 +29,7 @@ At the heart of AMQP is the **Message Broker**, which acts as the central hub fo
 The broker uses **Exchanges** to determine how to route these messages. There are several types of exchanges:
 
 - **Direct Exchange (point-to-point):** Routes messages to specific queues based on an exact match with the routing key. For example, if a message has a routing key of "error," it will only go to queues set up to receive messages with that key.
-- **Topic Exchange (publish-subscribe) :** Routes messages to queues based on patterns in the routing key. This allows messages to be sent to multiple queues based on partial matches or wildcard patterns. For instance, a routing key of "logs.error" could match queues set up to handle "logs.*" or "logs.error".
+- **Topic Exchange (publish-subscribe):** Routes messages to queues based on patterns in the routing key. This allows messages to be sent to multiple queues based on partial matches or wildcard patterns. For instance, a routing key of "logs.error" could match queues set up to handle "logs.*" or "logs.error".
 - **Fanout Exchange:** Broadcast messages to all queues bound to it without considering the routing key. Every queue connected to this exchange receives a copy of the message.
 - **Headers Exchange (publish-subscribe) :** Routes messages based on attributes in the message headers instead of the routing key. For example, messages with specific header attributes can be directed to particular queues.
 
@@ -39,7 +39,7 @@ Finally, **Consumers** are systems or applications that retrieve and process mes
 
 ## Comparing AMQP with MQTT and kafka
 
-Choosing the right messaging protocol is essential for your project's success. With so many options available, it's easy to get confused about whether AMQP, MQTT, or Kafka is the best fit. Each protocol has its strengths and specific use cases. In this guide, we'll compare these three protocols to help you understand which one is the best match for your needs.
+Choosing the right messaging protocol is essential for your project's success. With so many options available, it's easy to confuse whether AMQP, MQTT, or Kafka is the best fit. Each protocol has its strengths and specific use cases. In this guide, we'll compare these three protocols to help you understand which one is the best match for your needs.
 
 | **Feature**            | **AMQP**                                  | **MQTT**                                   | **Kafka**                                    |
 |------------------------|-------------------------------------------|--------------------------------------------|----------------------------------------------|
@@ -66,7 +66,7 @@ In this section, we’ll guide you through using AMQP with Node-RED. We'll cover
 ### Prequiste
 
 - **AMQP Supported Broker Server:** Ensure you have a running AMQP-supported broker server. For this guide, we are using RabbitMQ.
-- **Node-RED AMQP Node:** Install the AMQP contrib node via Node-RED pallete manager.
+- **Node-RED AMQP Node:** Install the AMQP contrib node via Node-RED palette manager.
 
 ### Understanding AMQP Node configuration settings.
 
@@ -130,7 +130,7 @@ Configure the node by dragging an AMQP custom node onto the canvas and double-cl
 
 #### Sending Data using Direct Exchange
 
-1. Drag two `inject` nodes on to the canvas. Configure the first `inject` node to send data with a `msg.routingKey` of `"zone1"` and the second with a `msg.routingKey` of `"zone2"`. set the payload for each inject node you want to send to zones.
+1. Drag two `inject` nodes on to the canvas. Configure the first `inject` node to send data with a `msg.routingKey` of `"zone1"` and the second with a `msg.routingKey` of `"zone2"`. Set the payload for each inject node you want to send to zones.
 2. Add an `amqp-out` node. Set the exchange to `irrigation_control, ' where the commands will be sent.
 3. Connect the `inject` nodes to the `amqp-out` node.
 
@@ -195,11 +195,11 @@ _Image showing the flow that uses the Fanout exchange type to send and receive m
 [{"id":"7beb4237ba09010b","type":"inject","z":"807758ec576fbfd8","name":"Light update","props":[{"p":"payload"}],"repeat":"","crontab":"","once":false,"onceDelay":0.1,"topic":"","payload":"Light turned on","payloadType":"str","x":170,"y":1220,"wires":[["d699cd735cc8a0ae"]]},{"id":"8818f122c8937e58","type":"inject","z":"807758ec576fbfd8","name":"thermostats update","props":[{"p":"payload"}],"repeat":"","crontab":"","once":false,"onceDelay":0.1,"topic":"","payload":"A new firmware update is available for your thermostat","payloadType":"str","x":190,"y":1280,"wires":[["d699cd735cc8a0ae"]]},{"id":"517aad7b163d5bde","type":"inject","z":"807758ec576fbfd8","name":"Camera update","props":[{"p":"payload"}],"repeat":"","crontab":"","once":false,"onceDelay":0.1,"topic":"","payload":"Movement detected","payloadType":"str","x":180,"y":1340,"wires":[["d699cd735cc8a0ae"]]},{"id":"d699cd735cc8a0ae","type":"amqp-out","z":"807758ec576fbfd8","name":"","broker":"bfb1e7e97eef5e04","reconnectOnError":false,"exchangeName":"system_updates","exchangeType":"fanout","exchangeRoutingKey":"","exchangeRoutingKeyType":"str","exchangeDurable":true,"amqpProperties":"{ \"headers\": {} }","rpcTimeoutMilliseconds":3000,"outputs":0,"x":460,"y":1280,"wires":[]},{"id":"1db4056b4c66cb22","type":"amqp-in","z":"807758ec576fbfd8","name":"","broker":"bfb1e7e97eef5e04","prefetch":0,"reconnectOnError":true,"noAck":false,"exchangeName":"system_updates","exchangeType":"fanout","exchangeRoutingKey":"","exchangeDurable":true,"queueName":"","queueExclusive":true,"queueDurable":false,"queueAutoDelete":true,"headers":"{}","x":180,"y":1520,"wires":[["2392e7d9139813a3"]]},{"id":"2392e7d9139813a3","type":"debug","z":"807758ec576fbfd8","name":"debug 1","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"false","statusVal":"","statusType":"auto","x":420,"y":1520,"wires":[]},{"id":"bfb1e7e97eef5e04","type":"amqp-broker","name":"AMQP Config","host":"localhost","port":"5672","vhost":"","tls":false,"credsFromSettings":false}]
 {% endrenderFlow %}
 
-we used a Fanout type exchange to broadcast messages to all queues connected to the exchange. We illustrated this with a smart home system where status updates from different components are sent to all devices simultaneously. This type of exchange is perfect for scenarios where you need to send the same message to multiple recipients without concern for routing keys.
+We used a Fanout type exchange to broadcast messages to all queues connected to the exchange. We illustrated this with a smart home system where status updates from different components are sent to all devices simultaneously. This type of exchange is perfect for scenarios where you need to send the same message to multiple recipients without concern for routing keys.
 
 ## Headers Exchange
 
-**Scenario**: Suppose you have different machines in a factory sending data about their operational status, such as whether they are running, idle, or experiencing an error. You want to route messages based on machine type, operational status, and priority level. Has tow components in your monitoring system: one that receives updates from only the CNC machine with the status of error and priority high and another that recives updates from all of the machines with the idle status and high priority. 
+**Scenario**: Suppose you have different machines in a factory sending data about their operational status, such as whether they are running, idle, or experiencing an error. You want to route messages based on machine type, operational status, and priority level. Has two components in your monitoring system: one that receives updates from only the CNC machine with the status of error and priority high and another that receives updates from all of the machines with the idle status and high priority. 
 
 #### Sending Data from Headers Exchange
 
