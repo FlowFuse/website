@@ -4,7 +4,7 @@ subtitle: A step-by-step guide to leveraging Node-RED for efficient web scraping
 description: Learn how to use Node-RED for web scraping to efficiently collect and manage data from websites with this step-by-step guide.
 date:
 authors: ["sumit-shinde"]
-image: 
+image: /blog/2024/09/images/webscraping-with-node-red.png
 tags:
    - post
    - nodered
@@ -37,14 +37,14 @@ Once the HTML is received, the next step is parsing it. Parsing involves analyzi
 
 ## Web scrapping with Node-RED 
 
-In this section, we will guide you through the process of scraping data from publicly available websites using Node-RED. We'll start with a demonstration of extracting a table of commodity prices form the public website.
+In this section, we will guide you through the process of scraping data from publicly available websites using Node-RED. We'll start with a demonstration of extracting data from the website that allows specifically available internet for this purpose, we will scrap the countries data from this page https://www.scrapethissite.com/pages/simple/
 
 ### Sending Requests to a Webpage
 
 To start scraping data, follow these steps to send an HTTP GET request to the webpage:
 
 1. Drag the **inject** node onto the canvas. This node will allow you to manually trigger the HTTP request or set it to fire at specific intervals.
-2. Drag the **http request** node onto the canvas. Double-click it to configure and set the **Method** to `GET`. Enter the URL of the webpage you want to scrape (e.g., `https://markets.businessinsider.com/commodities/realtime-list`).
+2. Drag the **http request** node onto the canvas. Double-click it to configure and set the **Method** to `GET`. Enter the URL of the webpage you want to scrape (e.g., `https://www.scrapethissite.com/pages/simple/`).
 3. Drag the **debug** node onto the canvas.
 4. Connect the **inject** node's output to the input of the **http request** node and the **http request** node's output to the input of the **debug** node.
 5. Click **Deploy** to save and deploy your flow.
@@ -57,69 +57,49 @@ Next, we need to process the raw HTML to extract meaningful data. This involves 
 
 #### Analyzing HTML Structure
 
-Begin by analyzing the HTML structure of the webpage. Open your browser’s developer tools (press Ctrl + I or F12) and inspect the elements to locate where the data resides and in which HTML elements it is contained. For example, on a page with commodity prices, you might find that the data is organized within `<table>` tags, with `<tbody>` containing rows `<tr>`, and individual data items within `<td>` tags.
+Begin by analyzing the HTML structure of the webpage. Open your browser’s developer tools (press Ctrl + shift + c) and inspect the elements to locate where the data resides and in which HTML elements it is contained. For example, on a page with, you can see there are countries each having its capital population and area, click your mouse on that element you, in the develper tool you will navigated to that elements html. now find out the selector you can use to select those element, in countires page you will see all of those countries infomation are in the '.countries' class, so that when using that class we can extract all of countries data.
 
-To extract all rows of the table, use the selector "table > tbody > tr". If you need to be more specific (e.g., targeting a specific table), adjust your selector accordingly to ensure you capture the correct data.
-
-![Image showing the structer of the page and the data which we needed to extract](./images/structrer-of-page.png){data-zoomable}
+![Image showing the structer of the page and the data which we needed to extract](./images/html-structer-of-target-website.png){data-zoomable}
 _Image showing the structer of the page and the data which we needed to extract_
 
 #### Using Node-RED to extract data
 
 1. Drag the **html** node onto the canvas.
-2. Double-click the **html** node and enter the selector `table > tbody > tr` into the "Selector" field.
+2. Double-click the **html** node and enter the selector `.countries` into the "Selector" field.
 3. Set the output to "only the text of element" and keep other settings default.
 4. Drag the **debug** node onto the canvas.
 5. Connect the output of the **http request** node to the input of the **html** node and the output of the **html** node to the input of the **debug** node.
 6. Click **Deploy** to save and deploy your flow.
 
-When you click the **inject** button, you will see the array containing the text content from each `<tr>` tag. While this data is a good starting point, it is not yet in a format that is directly useful for analysis. To make the data more useful, you'll need to transform it into objects with meaningful properties.
+When you click the **inject** button, you will see the array containing the text content from each `.countries` div. While this data is a good starting point, it is not yet in a format that is directly useful for analysis. To make the data more useful, you'll need to transform it into objects with meaningful properties.
 
 ### Transforming Data into Structured Objects
 
-To transform the data into structured objects, you can use JavaScript in a Node-RED function node. If you're familiar with JavaScript, this process is straightforward. If not, you can use FlowFuse Assistant to generate the necessary function. For more information, refer to this LinkedIn Post for a quick guide. To follow the steps manually:
+To transform the data into structured objects, you can use JavaScript in a Node-RED function node. If you're familiar with JavaScript, this process is straightforward. If not, you can use FlowFuse Assistant to generate the necessary function. For more information, refer to this [LinkedIn Post]() for a quick guide. To follow the steps manually:
 
 1. Drag the **function** node onto the canvas.
 2. Double-click the **function** node and paste the following JavaScript code:
 
 ```js
-let data = msg.payload;
+const convertArrayToObject = (arr) => {
+    const result = arr.map(item => {
+        const [name, capital, population, area] = item
+            .split(/Capital: |Population: |Area \(km2\): /)
+            .map(part => part.trim());
 
-// Initialize an empty array to hold the result
-const commodities = [];
+        return {
+            name,
+            capital,
+            population: parseInt(population, 10),
+            area: parseFloat(area)
+        };
+    });
 
-// Define the common fields for each commodity
-const fields = [
-    'name',
-    'currentPrice',
-    'previousPrice',
-    'percentChange',
-    'change',
-    'time',
-    'unit'
-];
+    return result;
+};
 
-// Loop through each entry and extract data
-data.forEach(entry => {
-    // Check if the entry is non-empty
-    if (entry.trim()) {
-        // Split the entry into lines
-        const lines = entry.trim().split('\n\t\t\t\t\t\t\t\t\t\t').filter(line => line.trim() !== '');
+msg.payload = convertArrayToObject(msg.payload)
 
-        // Create a new commodity object
-        const commodity = {};
-
-        // Assign values to the commodity object based on the lines
-        fields.forEach((field, index) => {
-            commodity[field] = lines[index] || '';
-        });
-
-        // Add the commodity object to the array
-        commodities.push(commodity);
-    }
-});
-
-msg.payload = commodities;
 return msg;
 ```
 
@@ -127,11 +107,27 @@ return msg;
 4. Connect the output of the html node to the input of the **function** node, and the output of the **function** node to the input of the debug node.
 5. Click **Deploy** to save and deploy your flow.
 
-When you click the inject button again, you will see that the data is now structured and formatted. The output will contain objects with properties such as commodity name, current price, previous price, etc. This data can now be displayed on the FlowFuse dashboard table. For more details, refer to the [FlowFuse table widget](https://dashboard.flowfuse.com/nodes/widgets/ui-table.html).
+When you click the inject button again, you will see that the data is now structured and formatted. The output will contain objects with properties such as name, capital, poplulation and area. This data can now be displayed on the FlowFuse dashboard table. For more details, refer to the [FlowFuse table widget](https://dashboard.flowfuse.com/nodes/widgets/ui-table.html).
 
+![Left side: Image showing the countries table we created on the FlowFuse dashboard. Right side: The original webpage with countries.](./images/webscrapping-result.png){data-zoomable}
+_Left side: Image showing the table we created on the FlowFuse dashboard. Right side: The original webpage with countries._
 
-![Image showing the table we created on the FlowFuse dashboard and the original webpage with the table](./images/comodity-prices-on-the-table.png){data-zoomable}
-_Image showing the table we created on the FlowFuse dashboard and the original webpage with the table]_
+## Legal and Ethical Considerations
+
+While web scraping is a powerful tool for collecting data, it is essential to be aware of the legal and ethical implications. Web scraping itself is not inherently illegal, but its legality depends on various factors, including the website's terms of service and the data being scraped.
+
+### Legal Aspects
+
+- **Respect Terms of Service**: Many websites have terms of service that explicitly prohibit scraping. Always review and adhere to these terms to avoid legal issues.
+- **Intellectual Property**: Be mindful of intellectual property rights. Avoid scraping content that is copyrighted or proprietary without permission.
+- **Data Privacy**: Ensure that you comply with data protection regulations such as GDPR or CCPA when handling personal data. Scraping personal information without consent can lead to legal consequences.
+
+### Ethical Considerations
+
+- **Respect Website Performance**: Avoid overloading a website with excessive requests. Implement rate limiting and respect the website's robots.txt file to prevent disrupting normal operations.
+- **Use Data Responsibly**: Handle the scraped data ethically and responsibly. Do not use it for malicious purposes or in a way that could harm individuals or organizations.
+
+By following these guidelines, you can use web scraping tools like Node-RED effectively while respecting legal and ethical boundaries.
 
 ## Conclusion
 
