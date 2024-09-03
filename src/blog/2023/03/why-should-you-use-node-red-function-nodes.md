@@ -49,7 +49,7 @@ FlowFuse offers a robust platform for building, scaling, and securing your Node-
 
 To continuously enhance the FlowFuse and Node-RED user experience, FlowFuse has recently introduced a new feature: the **"FlowFuse Assistant."** This AI-powered tool simplifies the creation of Function nodes. You only need to provide a prompt, and the assistant generates the Function nodes for you.
 
-For more details on using the FlowFuse Assistant, visit [FlowFuse Documentation](https://flowfuse.com/docs/user/assistant/).
+For more details on using the FlowFuse Assistant, visit [the Assistants Documentation](/docs/user/assistant/).
 
 ## Conclusion:
 
