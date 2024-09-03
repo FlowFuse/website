@@ -53,8 +53,6 @@ For more details on using the FlowFuse Assistant, visit [FlowFuse Documentation]
 
 ## Conclusion:
 
-## Conclusion:
-
 Function nodes are particularly valuable for users who possess JavaScript programming skills. They allow for complex tasks, advanced data manipulation, and integration with external APIs, providing a high level of customization and flexibility. However, they require a good understanding of JavaScript to implement effectively and can be more challenging to manage and debug compared to standard Node-RED nodes.
 
 On the other hand, standard Node-RED nodes offer a simpler and more accessible approach, making it easy for users without programming expertise to create and maintain flows. They are designed for straightforward tasks and provide modularity, benefiting from a supportive community for troubleshooting and knowledge sharing.
