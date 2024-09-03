@@ -48,7 +48,7 @@ If necesarry you can edit the Verdaccio configuration file, usually found at **~
 
 Refer to the [documentation](https://verdaccio.org/docs/configuration/) for all configuration options.
 
-It is important that if you intend to use a private NPM registry with FlowForge Cloud, the registry will need to be publicly exposed to the internet. Please make sure you understand how to secure it appropriately.
+It is important that if you intend to use a private NPM registry with FlowFuse Cloud, the registry will need to be publicly exposed to the internet. Please make sure you understand how to secure it appropriately.
 
 #### Publish your package
 
