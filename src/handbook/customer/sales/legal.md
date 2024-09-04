@@ -40,4 +40,4 @@ we will not allow third parties access to homes or offices of employees.
 
 ## Miscellaneous
 
-- [W9 with signature](https://drive.google.com/file/d/12XE_88XlxxfP5guLgQHxBMPnhJRz5KCQ/view?usp=share_link){rel="nofollow"}
+- [W9 with signature](https://drive.google.com/file/d/1A2_mnPRfc5gWAb4yEYNiViuCHiARkLcD/view){rel="nofollow"}
