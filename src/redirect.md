@@ -66,6 +66,12 @@ redirects:
   - { "from": "/blog/2024/03/using_webcam_with_node-red/", "to": "/node-red/peripheral/webcam/" }
   - { "from": "/blog/2023/05/visualize-production-data-via-modbus-in-node-red/", "to": "/node-red/protocol/modbus/" }
   - { "from": "/blog/flowforge/", "to": "/blog/flowfuse/" }
+  - { "from": "/node-red/core-nodes/httpin/", "to": "/node-red/core-nodes/http-in/" }
+  - { "from": "/node-red/core-nodes/httprequest/", "to": "/node-red/core-nodes/http-request/" }
+  - { "from": "/node-red/core-nodes/file/", "to": "/node-red/core-nodes/write-file/" }
+  - { "from": "/node-red/core-nodes/watch/", "to": "/node-red/core-nodes/read-file/" }
+  - { "from": "/node-red/core-nodes/tcpin/", "to": "/node-red/core-nodes/tcp-in/" }
+  - { "from": "/node-red/core-nodes/httpproxy/", "to": "/node-red/core-nodes/http-proxy/" }
 
 # The "permalink" attribute determines where the output page will be located.
 permalink: "{{ redirect.from }}"
