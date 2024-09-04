@@ -4,7 +4,6 @@ navTitle: FlowFuse Messaging
 
 # {{ navTitle }}
 
-
 ## Audience
 
 FlowFuse is a business to business (B2B) company in the industrial markets to
@@ -35,15 +34,16 @@ See also the description of [our market](/handbook/company/strategy/#the-market)
 
 ### Tagline
 
-Elevating Node-RED
+{{ site.messaging.tagLine }}
 
-### One sentence description
+### Two sentence description
 
-FlowFuse provides a complete platform to scale your production Node-RED applications, increase developer velocity, and enhance security in order to accelerate innovation.
+FlowFuse provides an industrial data platform that increase developer productivity by managing, scaling, and securing your Node-RED solutions. Customers use FlowFuse to accellerate digitalization for processes and operations.
 
 ### About FlowFuse - 50 Words
 
-FlowFuse is a low-code development platform bringing innovation to enterprise companies. Elevating Node-RED, the renowned open-source development tool, FlowFuse empowers companies to transform their production by building custom, adaptable applications. FlowFuse provides enhanced features for security and scalability, making it an ideal platform for complex enterprise applications.
+FlowFuse is a platform for building and operating self-built industrial data solutions that digitalize processes and operations. The platform seamlessly integrates into your IT and OT environments leveraging Node-RED, an open source low-code programming technology, making it easy for OT-engineers to quickly connect, collect, transform, and visualize data to interact with industrial processes. Companies use FlowFuse to manage, scale and secure their industrial Node-RED solutions.
+
 
 ### About FlowFuse - 150 Words
 
