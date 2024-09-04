@@ -9,8 +9,8 @@
     },
     "messaging": {
         "tagLine": "The Fastest Way to Build and Operate Industrial Data Solutions",
-        "subtitle": "Connect, collect, transform, visualise, and interact with your Industrial Data in a single platform. We help manage, scale and secure your Node-RED solutions.",
-        "title": "Node-RED for professionals",
+        "subtitle": "Connect, collect, transform, visualise, and interact with your Industrial Data in a single platform. FlowFuse helps manage, scale and secure your Node-RED solutions.",
+        "title": "Enterprise-ready Node-RED for Rapid Industrial Process Improvement",
         "keywords": "Node-RED, Application Developement, IoT, IIoT, Low-Code, Open-Source, open source"
     }
 }
