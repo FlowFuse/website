@@ -26,7 +26,7 @@ ZJ van de Weg, CEO of FlowFuse will cover
  - Strategies for managing and scaling your Node-RED flows
  - How to secure your Node-RED environment with features like HTTPS, SSO, and regular updates.
 
-Rob Marcer will be joining ZJ to share some real-world examples of how FlowFuse Customers were able to quickly and easily manage their enterprise deployments.  
+Rob Marcer, Customer Success Manager at FlowFuse, will be joining ZJ to share real-world examples of how FlowFuse customers are quickly and easily managing their enterprise deployments.  
 
 Whether you're just starting your Node-RED journey or looking to scale your existing projects, this webinar will provide valuable insights and practical guidance to project success of your large-scale applications. 
 
