@@ -44,7 +44,7 @@ Choosing the right messaging protocol is essential for your project's success. W
 | **Feature**            | **AMQP**                                  | **MQTT**                                   | **Kafka**                                    |
 |------------------------|-------------------------------------------|--------------------------------------------|----------------------------------------------|
 | **Purpose**            | Good for reliable message delivery with complex routing. | Best for lightweight messaging, especially with IoT devices. | Designed to handle large amounts of data quickly. |
-| **Message Delivery**   | Guarantees messages are delivered in the right order. | Tries to deliver messages, but sometimes the order or delivery isn't guaranteed. | Always delivers messages in the right order and ensures they are recovered. |
+| **Message Delivery**   | Guarantees messages are delivered in the right order. | Tries to deliver messages, but in some cases, the order or delivery isn't guaranteed. | Always delivers messages in the right order and ensures they are recovered. |
 | **Setup Complexity**   | Needs setting up of brokers and queues, which can be complex. | Very easy to set up and use.               | More complicated; requires setting up a distributed system. |
 | **Scalability**        | Handles moderate to high traffic well.     | Great for many devices with less data.    | Excellent at handling huge amounts of data and very high traffic. |
 | **Message Handling**   | Can manage multiple queues and complex routing paths. | Simple messages go directly to their destination or multiple destinations. | Organizes data into topics for efficient handling of large streams of data. |
@@ -76,7 +76,7 @@ In this section, we’ll guide you through using AMQP with Node-RED. We'll cover
    - **Port:** This is the network port the AMQP broker communicates with. The default port for AMQP is 5672, but it might differ if configured otherwise.
    - **vhost:** Virtual hosts segregate different environments or applications within the same broker instance. The default is `/,` but you might have specific virtual hosts for various use cases.
    - **Use TLS:** Enable TLS/SSL if the broker requires encrypted communication to ensure data security during transmission.
-   - **User:** The username required for authentication with the broker. RabbitMQ, for example, defaults to `guest`
+   - **User:** The username required for authentication with the broker. RabbitMQ, for example, defaults to `guest`.
    - **Password:** The password associated with the username for authentication. RabbitMQ’s default is `guest`.
 
 Configure the node by dragging an AMQP custom node onto the canvas and double-clicking it to enter the details of your broker server. For added security, ensure you are using environment variables to configure nodes. For more information, refer to the [Using Environment Variables in Node-RED](/blog/2023/01/environment-variables-in-node-red/).
