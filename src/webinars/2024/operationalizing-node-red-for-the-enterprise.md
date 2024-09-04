@@ -1,7 +1,7 @@
 ---
 title: Operationalizing Node-RED for the Enterprise
 subtitle: Join us for this live webinar on operationalizing Node-RED for Enterprise use.
-image: 
+image: /images/webinars/operationalizing-node-rED-webinar-sep-24.jpeg
 date: 2024-09-24
 time: 17:00 CET (11:00am ET) 
 duration: 60
