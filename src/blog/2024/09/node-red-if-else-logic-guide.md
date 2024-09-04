@@ -7,9 +7,19 @@ authors: ["sumit-shinde"]
 image: 
 tags:
    - posts
-   - nodered if else
+   - node red if else
+   - nodered switch
    - node-red conditional flow
-   - node-red switch
+   - node red function if else
+   - node red if then else example
+   - node red switch example
+   - node red switch node example
+   - node red function multiple outputs example
+   - node red function example
+   - node red function if
+   - node red if
+   - node red if node
+   - node red if then
 ---
 
 Human decision-making is often guided by a series of "if this, then that" choices—whether it's deciding what to wear based on the weather or determining the quickest route to work depending on traffic. In systems, especially those built in Node-RED, this kind of logic is equally crucial. Just as we make decisions based on various factors, systems need to evaluate conditions and choose the appropriate course of action.
