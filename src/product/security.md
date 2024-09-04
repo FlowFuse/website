@@ -17,7 +17,8 @@ FlowFuse architecture is described on our [documentation](/docs/contribute/archi
 ### User sessions
 
 Users are identified by an unique combination of username and password, or by a
-SAML compliant server for Single Sign-on. 
+SAML compliant server for Single Sign-on (SSO) or LDAP. FlowFuse by default will  
+close active sessions after 14 days, of when user signs out.
 
 User provisioning is on a per user basis.
 
@@ -33,6 +34,11 @@ system at large. For each section the implementation of FlowFuse Cloud is
 mentioned too. For self managed installs we advise to follow the choices made
 by FlowFuse Cloud.
 
+## Audit logs
+
+FlowFuse features multiple layers of audit logging, both on the administrator level
+as well as on a team level. Audit logs are currently stored indefinitialy.
+
 ### Data storage
 
 #### Data at Rest
@@ -41,6 +47,9 @@ All user data is stored in a relational database.
 
 _FlowFuse Cloud_: Data is stored in a PostgreSQL database. All data is encrypted
 [since October 2022](/blog/2022/10/db-migration-01/).
+
+_FlowFuse Cloud_: All users files are stored at rest in Encrypted AWS EFS volume.
+[Persistent Storage](/changelog/2024/07/persistent-storage/)
 
 #### Data residency
 

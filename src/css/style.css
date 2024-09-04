@@ -1617,6 +1617,12 @@ input[type="range"] {
     width: 100%;
   }
 
+
+  .dashboard-image img, .ebook-images img {
+    border: 2px solid theme(colors.indigo.100);    
+    border-radius: 8px;
+  }
+
 @media (max-width: 768px) {
   .dashboard-image {
     display: grid;
@@ -1641,7 +1647,10 @@ input[type="range"] {
   }
 }
 
-.dashboard-image img {
-  border: 2px solid theme(colors.indigo.100);    
-  border-radius: 8px;
+.ebook-images{
+    display: flex;
 }
+
+.ebook-images > :nth-child(2){
+    height: 100%;
+}    

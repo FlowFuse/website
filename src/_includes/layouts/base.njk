@@ -162,6 +162,9 @@ eleventyComputed:
                     'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
         })(window, document, 'script', 'dataLayer', 'GTM-55L36797');</script>
     <!-- End Google Tag Manager -->
+    <!-- warmly.ai -->
+    <script id="warmly-script-loader" src="https://opps-widget.getwarmly.com/warmly.js?clientId=3657ad04e55b92ef0b5972fcfb0802d1" defer></script>
+    <!-- End warmly.ai -->
     {%- endif -%}
 </head>
 <body class="font-sans ff-website leading-normal tracking-normal gradient text-gray-500 min-h-screen flex flex-col">
@@ -250,14 +253,7 @@ eleventyComputed:
 			            <li class="flex"><a href="{{ site.appURL }}">Sign In</a></li>
 			            <li class="flex"><a href="{{ site.appURL }}/account/create" onclick="capture('cta-join', {'position': 'header'})">Free Trial</a></li>
                         <a class="ml-2 ff-btn ff-btn--primary uppercase text-sm inline-flex" href="/contact-us" onclick="capture('cta-talk-us', {'position': 'header'})">
-                            {% edge "liquid" %}
-                                {% abtesting "ab-talk-to-us", "control" %}
-                                    Talk to us
-                                {% endabtesting %}
-                                {% abtesting "ab-talk-to-us", "contact-us" %}
-                                    Contact us
-                                {% endabtesting %}
-                            {% endedge %}
+                            Contact us
                         </a>
                     </ul>
                 </nav>
@@ -267,7 +263,7 @@ eleventyComputed:
                         <a href="{{ site.appURL }}" class="ff-btn ff-btn--primary-outlined">Sign In</a>
                         <a href="{{ site.appURL }}/account/create" onclick="capture('cta-join', {'position': 'header'})" class="ff-btn ff-btn--primary-outlined">Free Trial</a>
                     </div>
-                    <a class="ff-btn ff-btn--primary" href="/contact-us" onclick="capture('cta-talk-to-sales', {'position': 'header'})">Talk to Sales</a>
+                    <a class="ff-btn ff-btn--primary" href="/contact-us" onclick="capture('cta-talk-to-sales', {'position': 'header'})">Contact Us</a>
                 </div>    
             </header>
             <!-- Main Content -->
@@ -285,7 +281,7 @@ eleventyComputed:
                 </div>
                 <div class="w-full self-end order-last md:order-none">
                     <div class="copyright-statement inline">
-                        <div>Copyright {% year %} FlowForge Inc. DBA FlowFuse. All Rights Reserved.
+                        <div>Copyright {% year %} FlowFuse Inc. All Rights Reserved.
                             <br>This site uses cookies. Click <a class="underline cursor-pointer" type="button" data-cc="show-preferencesModal">here</a> to manage your preferences.
                         </div>
                     </div>
@@ -353,6 +349,19 @@ eleventyComputed:
             </div>
         </div>
     </footer>
+    <script>
+        // Adjust anchors so they don't get hidden behind the sticky header
+        function adjustAnchor() {
+            window.scrollBy(0, -70);
+        }
+
+        window.addEventListener('hashchange', adjustAnchor);
+
+        // Run adjustAnchor on page load if there's a hash
+        if (window.location.hash) {
+            window.addEventListener('load', adjustAnchor);
+        }
+    </script>
 </body>
 <script>
     document.getElementById('nav-toggle').onclick = function(){
@@ -363,7 +372,6 @@ eleventyComputed:
         classes.toggle("mobile-open");
     }
 </script>
-
 <!-- Youtube Facade -->
 <script async src="https://cdn.jsdelivr.net/npm/lite-youtube-embed@0.2.0/src/lite-yt-embed.min.js"></script>
 <link rel="preload" href="https://cdn.jsdelivr.net/npm/lite-youtube-embed@0.2.0/src/lite-yt-embed.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -392,12 +400,31 @@ eleventyComputed:
     }
 
     !function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.async=!0,p.src=s.api_host+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="capture identify alias people.set people.set_once set_config register register_once unregister opt_out_capturing has_opted_out_capturing opt_in_capturing reset isFeatureEnabled onFeatureFlags".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
-    posthog.init('{{ POSTHOG_APIKEY }}', {
-        api_host:'https://eu.posthog.com',
-        bootstrap: phBootstrap,
-        capture_pageleave: false,
-        opt_out_capturing_by_default: true
-    })
+    let optOutByDefault = false;
+
+    fetch('/country')
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Failed to fetch country code from edge function');
+            }
+            return response.text();
+        })
+        .then(countryCode => {
+            const optOutCountries = ['AT', 'BE', 'BG', 'HR', 'CY', 'CZ', 'DK', 'EE', 'ES', 'FI', 'FR', 'DE', 'GR', 'HU', 'IE', 'IT', 'LV', 'LT', 'LU', 'MT', 'NL', 'PL', 'PT', 'RO', 'SK', 'SI', 'SE', 'GB', 'US-CA', 'BR', 'CA', 'AU'];
+            optOutByDefault = optOutCountries.includes(countryCode);
+        })
+        .catch(error => {
+            console.error('Initializing PostHog with opt_out_capturing_by_default set to true due to Fetch failed by:', error);
+            optOutByDefault = true;
+        })
+        .finally(() => {
+            posthog.init('{{ POSTHOG_APIKEY }}', {
+                api_host:'https://eu.posthog.com',
+                bootstrap: phBootstrap,
+                capture_pageleave: false,
+                opt_out_capturing_by_default: optOutByDefault
+            });
+        });
     /*
         Custom pageleave handler to track scroll
     */
@@ -471,11 +498,6 @@ eleventyComputed:
 
 <script type="text/plain" data-category="!analytics">
     posthog.opt_out_capturing();
-</script>
-
-<!-- reoDev Tracking -->
-<script type="text/plain" data-category="analytics">
-   !function(){var e,t,n;e="3696748751783b2",t=function(){Reo.init({clientID:"3696748751783b2"})},(n=document.createElement("script")).src="https://static.reo.dev/"+e+"/reo.js",n.async=!0,n.onload=t,document.head.appendChild(n)}(); 
 </script>
 
 <!-- Clearbit Tracking -->

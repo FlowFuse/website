@@ -35,16 +35,31 @@ Software plays a key part in education, reducing vendor lock-in, and community b
 
 ## The market
 
-Corporations that have many data sources with unpredictable structure.
+Our Target persona is the Industrial engineer: specifically those working in manufacturing, logistics, and other data-intensive industrial sectors where operational efficiency is equivalent to generating profit and creates real business value.
 
-The ideal lead has adopted Node-RED already and is in the following industries:
-1. Manufacturing (IIoT & Industry 4.0)
-1. Logistics
-1. Agriculture
-1. Building management
-1. Mining, Oil & Gas, and renewable energy
+We target them because Industrial engineers are the driving force behind innovations that lead to process optimizations in their organizations. They possess deep domain expertise and understand the intricacies of their operations. In order to improve their systems, they need to actively collect and analyze data.
 
-Due to the breadth of the Node-RED community and the industries they
-apply it in, FlowFuse does not qualify customers based on industry.
+## The problems 
 
+1. Data is in Silos and Inaccessible: Industrial data is often hard to access and extract, fragmented, and trapped within disparate systems, making it difficult to access and consolidate for analysis. Engineers need a way to break down these silos and unify their data sources.
+1. Lack of Visualization and Feedback Loops: Existing industrial data systems often fail to provide intuitive visualizations and real-time feedback mechanisms. Engineers need a platform that allows them to easily visualize data, monitor performance, and quickly identify areas for improvement.
+1. Barriers to Building Solutions: Many industrial engineers lack the correct tools and resources to build custom applications for their specific needs. IT departments typically are focused on business operations and don’t have expertise on industrial systems or processes. However, data analysis applications for industrial processes also need to meet company security and compliance requirements. The industrial side of the organization requires a solution that empowers them to create solutions, within compliance guidelines, without relying heavily on IT departments or external developers.
+1. Overwhelming Complexity of Industrial Systems: Industrial environments are characterized by a vast array of protocols, technologies, and legacy systems. This complexity makes it difficult for teams to integrate and leverage data from different sources into a view of operations that can help identify optimizations.
+
+## Why these problems are significant
+
+1. Suboptimal Decision-Making: When engineers lack access to comprehensive and timely data, they are forced to make decisions based on incomplete or inaccurate information. This can lead to missed opportunities, inefficient processes, and costly errors.
+1. Slow Response to Issues: Without real-time feedback loops and interactive visualizations, it can be difficult to detect and respond to emerging problems promptly. This can result in production delays, quality issues, and increased downtime.
+1. Missed Opportunities for Innovation: The inability to easily build custom solutions stifles innovation. Engineers may have brilliant ideas for improvements but lack the means to implement them, leaving valuable potential untapped.
+
+## The Value
+
+The FlowFuse Platform addresses the problems status above by providing our ICP with the tools they need to:
+
+1. Unify and Access Data: FlowFuse breaks down data silos, aggregate data from disparate sources, and make it easily accessible for analysis and decision making in a secure way. 
+1. Visualize and Interact: FlowFuse offers intuitive visualizations, real-time feedback loops, and interactive dashboards that enable engineers to monitor performance, identify trends, and make data-driven decisions.
+1. Build Custom Solutions: The low-code platform empowers engineers to create custom applications, dashboards, and automation workflows without extensive coding knowledge.
+1. Simplify Complexity: We abstract away the complexities of industrial systems, providing a comprehensive user-friendly interface that allows engineers to focus on solving problems, not wrestling with technology.
 See also our [Messaging page](/handbook/customer/marketing/messaging/).
+
+FlowFuse uses Open-Source technologies like Node-RED, and MQTT to help our customers being successful in remedying their problems.

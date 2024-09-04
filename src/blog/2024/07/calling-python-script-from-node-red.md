@@ -8,8 +8,16 @@ image: /blog/2024/07/images/calling-python-script-from-node-red.png
 tags:
    - post
    - node-red
-   - how-to
-   - python
+   - node red and python
+   - node red call python script
+   - node red exec node python script
+   - node red execute python script
+   - node red for python
+   - node red python example
+   - node red python script
+   - node red run python script
+   - node red with python
+   - python in node red
 ---
 
 Python's robust data processing capabilities and extensive libraries are well-known in programming. When combined with Node-RED, these technologies can synergize to elevate data analytics and automation. This guide walks you through integrating Python scripts with Node-RED. You'll gain practical insights, troubleshooting tips, and effective techniques for executing scripts, enabling you to leverage this powerful combination for your IoT projects.

@@ -9,7 +9,7 @@ tags:
    - posts
    - news
    - flowfuse
-   - dashboard 2.0
+   - dashboard
 ---
 
 It's been a while coming, but we've finally introduced a new set of chart types to FlowFuse Dashboard. We've added Pie, Donut and Grouped (Stacks and Side-by-Side) Bar charts to the UI Chart node. We've also shipped plenty of other improvements and fixes in this release, so let's dive in.

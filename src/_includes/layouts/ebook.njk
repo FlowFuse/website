@@ -9,6 +9,14 @@ hubspot:
         <div class="md:flex md:flex-row gap-6">
             <div class="text-left md:w-1/2">
                 <h1>{{ contentTitle | safe }}</h1>
+                {% if secondaryImage and tertiaryImage %}
+                {% set imageSrc1 = ["./", secondaryImage] | join %}
+                {% set imageSrc2 = ["./", tertiaryImage] | join %}
+                <div class="my-6 flex gap-3 ebook-images">
+                    {% image imageSrc1, "FlowFuse Dashboard", [147] %}
+                    {% image imageSrc2, "FlowFuse Dashboard", [303] %}
+                </div>
+                {% endif %}
             </div>
             <div class="ff-prose md:w-1/2">
                 <div class="prose mt-3">

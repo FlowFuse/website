@@ -42,6 +42,18 @@ date: git Last Modified
             <ul id="toc" class="text-sm border-b mb-4"></ul>
             <div class="text-sm pb-1 text-right mb-4"><a href="{{ page | handbookEditLink }}">Edit this page</a></div>
             <div class="text-xs pb-1 text-right mb-4 italic">Updated: {{ page.date | shortDate }}</div>
+            <div class="rounded-md bg-indigo-50 p-3 flex flex-col items-center gap-3">
+                <div class="w-[50px]">
+                    {% image "./images/node-red-icon.png", "Node-RED icon", [50] %}
+                </div>
+                <h5 class="leading-5 text-center font-medium">
+                Is your Node-RED production ready?</h5>
+                <div class="container button-container" id="maturity-cta">
+                    <a href="/node-red/adoption-maturity/" class="ff-btn ff-btn--primary-outlined flex flex-col uppercase">
+                        Take the quiz
+                    </a>
+                </div>
+            </div>
         </div>
     </div>
 </div>

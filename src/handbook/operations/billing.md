@@ -32,15 +32,14 @@ on the [quote](/handbook/customer/sales/engagements#generating-a-quote-and-order
 
 Email billing@flowfuse.com with the following information:
 
-Start date:
-Name:
-Email:
-Address:
-Terms:
-VAT Number:
-Cloud or Self-Hosted:
-Custom terms (attach if applicable):
-
+* Start date:
+* Name:
+* Email:
+* Address:
+* Terms:
+* VAT Number:
+* Cloud or Self-Hosted:
+* Custom terms (attach if applicable):
 
 ## Coupons
 

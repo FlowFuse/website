@@ -20,3 +20,4 @@ src/blueprints/*
 
 # Eleventy Edge Build Data files
 netlify/edge-functions/_generated/
+deno.lock

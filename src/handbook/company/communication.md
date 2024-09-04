@@ -47,6 +47,12 @@ During the meeting notes should be taken in an inline fashion. Non-participants
 can then read the agenda after the meeting and are up-to-date without having to
 scroll to a notes section.
 
+### No Agenda No Attenda
+
+Most meetings are scheduled to discuss items and make decisions. There's meetings
+that just shouldn't take place when there's nothing to discuss on the agenda
+5 minutes prior to the meeting.
+
 ### Coffee calls
 
 Coffee calls are social of nature and thus are the exception to the rule that
