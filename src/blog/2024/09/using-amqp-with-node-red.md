@@ -11,7 +11,7 @@ tags:
    - node-red amqp
    - node-red rabitmq
    - how to use amqp with node-red
-   - how to use rabitmq with node-red
+   - how to use rabbitmq with node-red
 ---
 
 Imagine your Node-RED flow working well, handling data from different sources, until suddenly, messages start disappearing or arriving out of order. [MQTT](/node-red/protocol/mqtt/) works fine for basic messaging, but it can struggle in more complex situations where you need reliable delivery and advanced routing.
@@ -31,7 +31,7 @@ The broker uses **Exchanges** to determine how to route these messages. There ar
 - **Direct Exchange (point-to-point):** Routes messages to specific queues based on an exact match with the routing key. For example, if a message has a routing key of "error," it will only go to queues set up to receive messages with that key.
 - **Topic Exchange (publish-subscribe):** Routes messages to queues based on patterns in the routing key. This allows messages to be sent to multiple queues based on partial matches or wildcard patterns. For instance, a routing key of "logs.error" could match queues set up to handle "logs.*" or "logs.error".
 - **Fanout Exchange:** Broadcast messages to all queues bound to it without considering the routing key. Every queue connected to this exchange receives a copy of the message.
-- **Headers Exchange (publish-subscribe) :** Routes messages based on attributes in the message headers instead of the routing key. For example, messages with specific header attributes can be directed to particular queues.
+- **Headers Exchange (publish-subscribe):** Routes messages based on attributes in the message headers instead of the routing key. For example, messages with specific header attributes can be directed to particular queues.
 
 Messages are placed in **Queues**, where they are stored until they are processed. Queues ensure that messages are delivered in the correct order and are kept until they are successfully handled.
 
@@ -79,7 +79,7 @@ In this section, we will guide you through integrating AMQP with Node-RED. The g
    - **User:** The username required for authentication with the broker. RabbitMQ, for example, defaults to `guest`.
    - **Password:** The password associated with the username for authentication. RabbitMQ’s default is `guest`.
 
-Configure the node by dragging an AMQP node onto the canvas. Double-click the node, then click the "+" icon next to the pencil icon. In the prompt that opens, enter the details of your broker server. For added security, ensure you use environment variables to configure nodes. For more information, refer to  [Using Environment Variables in Node-RED](/blog/2023/01/environment-variables-in-node-red/).
+Configure the node by dragging an AMQP node onto the canvas. Double-click the node, then click the "+" icon next to the pencil icon. In the prompt that opens, enter the details of your broker server. For added security, ensure you use environment variables to configure nodes. For more information, refer to [Using Environment Variables in Node-RED](/blog/2023/01/environment-variables-in-node-red/).
 
 #### AMQP Out
 
@@ -127,7 +127,7 @@ Configure the node by dragging an AMQP node onto the canvas. Double-click the no
 #### Sending Data using Direct Exchange
 
 1. Drag two `inject` nodes on to the canvas. Configure the first `inject` node to send data with a `msg.routingKey` of `"zone1"` and the second with a `msg.routingKey` of `"zone2"`. Set the payload for each inject node you want to send to zones.
-2. Add an `amqp-out` node. Set the exchange to `irrigation_control, ' where the commands will be sent.
+2. Add an `amqp-out` node. Set the exchange to `irrigation_control`, where the commands will be sent.
 3. Connect the `inject` nodes to the `amqp-out` node.
 
 #### Receiving Data using Direct Exchange
