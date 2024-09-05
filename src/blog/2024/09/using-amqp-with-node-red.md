@@ -12,6 +12,8 @@ tags:
    - node-red rabbitmq
    - how to use amqp with node-red
    - how to use rabbitmq with node-red
+   - amqp node red
+   - rabbitmq node red
 ---
 
 Imagine your Node-RED flow working well, handling data from different sources, until suddenly, messages start disappearing or arriving out of order. [MQTT](/node-red/protocol/mqtt/) works fine for basic messaging, but it can struggle in more complex situations where you need delivery guarantees and advanced routing.
