@@ -20,7 +20,7 @@ The following are the steps to produce a montly webinar.
    5. Create a Zoom webinar page
         * Login to zoom and select the Webinars tab. There is a webinar template that will help getting going.
         *  Use the same description and topic that was used for the web page. 
-        * Turn on Q&A, Enable Practice Session and Automatically record webinar to the cloud.
+        * Turn on Q&A, Enable Practice Session and Automatically record webinar to the cloud, require registration 
         * Under Invitations, invite the speaker as a Panelist.
             - Panelist receive a unique url to join the webinar that grants them access before the webinar starts. It is important the speaker knows to use this url.
         * Under Email Setting ensure the following: Confirmation email sent to panelist, Reminder sent 1 hour and 1 day before.  Turn off email for follow-up since we do that inside Hubspot.
