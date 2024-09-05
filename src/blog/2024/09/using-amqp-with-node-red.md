@@ -181,7 +181,7 @@ Scenario: You have a smart home system with various components, such as lights, 
 
 #### Receiving Data from Fanout Exchange
 
-1. Drag `amqp-in` nodes onto the canvas. Configure one to listen for messages from the "weather_data" exchange.
+1. Drag `amqp-in` nodes onto the canvas. Configure one to listen for messages from the `"weather_data"` exchange.
 2. Connect the `amqp-in` node to a `debug` node to see the update received from all your components' data.
 
 ![Image showing the flow that uses the Fanout exchange type to send messages and receive messages.](./images/fanout.gif){data-zoomable}
