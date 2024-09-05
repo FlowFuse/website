@@ -33,6 +33,8 @@ In this section, I will demonstrate how you can monitor and control IoT devices 
 - **node-red-contrib-lwm2m:** Install the LwM2M contribution node via the Palette Manager in Node-RED.
 - **LwM2M Server:** Ensure you have a running OMA LwM2M server available and have its configuration details on hand. For more information, refer to [Eclipse Leshan](https://eclipse.dev/leshan/).
 
+*Note: In this article, we have used the Eclipse Leshan demo server for testing and demonstration purposes. It is not recommended for production use due to its security and scalability limitations*
+
 ### Configuring LwM2M Node
 
 1. Drag the LwM2M node onto the canvas in Node-RED.
@@ -71,7 +73,7 @@ In this section, I will demonstrate how you can monitor and control IoT devices 
 }
 ```
 
-9. If you are using a public server, make sure you enable "hide sensitive data," which will hide all of the device's sensitive information from the public server.
+9. If you need to manage sensitive data, ensure you enable the "Hide Sensitive Data" option. This will prevent sensitive information about the device from being exposed.
 10. Click "Add" to save the configuration.
 
 Once you've configured the LwM2M node with the server details, you can confirm that the client is connected by visiting the server's web UI. Navigate to `<your-server-host>/#/clients` and enter the endpoint of your client device in the search field. If the client appears in the list, it means it is connected. Alternatively, you can check the node's status in Node-RED, which will display "connected" if the connection is successful.
