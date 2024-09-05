@@ -2,7 +2,7 @@
 title: Using AMQP with Node-RED
 subtitle: Step-by-Step Guide to Enhancing Reliable Messaging in Node-RED with AMQP
 description: Learn how to integrate AMQP with Node-RED for reliable message delivery, advanced routing, and improved data management in your flows.
-date: 2024-08-14
+date: 2024-09-05
 authors: ["sumit-shinde"]
 image: /blog/2024/09/images/amqp-with-node-red.png
 tags:
@@ -11,7 +11,7 @@ tags:
    - node-red amqp
    - node-red rabitmq
    - how to use amqp with node-red
-   - how to use rabitmqq with node-red
+   - how to use rabitmq with node-red
 ---
 
 Imagine your Node-RED flow working well, handling data from different sources, until suddenly, messages start disappearing or arriving out of order. [MQTT](/node-red/protocol/mqtt/) works fine for basic messaging, but it can struggle in more complex situations where you need reliable delivery and advanced routing.
