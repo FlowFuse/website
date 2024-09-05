@@ -76,11 +76,19 @@ For demonstration purposes, let's use the same temperature example where we dete
 4. Deploy the flow by clicking the "Deploy" button in the top-right corner of the Node-RED editor.
 5. Once deployed, click the button on the Inject node to trigger it. You should see the output of the Function node in the debug window, which will show true or false depending on the temperature value.
 
+```mermaid
+flowchart TD
+    A[Start] --> B{Is Temperature > 30?}
+    B -- Yes --> C[Turn on the air conditioner]
+    B -- No --> D[No action required]
+    C --> E[End]
+    D --> E[End]
+```
+
 {% renderFlow %}
 [{"id":"dbd085ed607e41de","type":"inject","z":"70cca09da538731a","name":"Temperature","props":[{"p":"payload"}],"repeat":"","crontab":"","once":false,"onceDelay":0.1,"topic":"","payload":"$random()*100","payloadType":"jsonata","x":250,"y":1200,"wires":[["31d2e8f0c871143d"]]},{"id":"31d2e8f0c871143d","type":"function","z":"70cca09da538731a","name":"function 1","func":"let Temperature = msg.payload;\n    if (Temperature > 30) {\n        msg.payload = \"Turn on the air conditioner\";\n    } else {\n        msg.payload = \"No action required\";\n    }\nreturn msg;","outputs":1,"timeout":0,"noerr":0,"initialize":"","finalize":"","libs":[],"x":480,"y":1200,"wires":[["b169bf385ca85f6c"]]},{"id":"b169bf385ca85f6c","type":"debug","z":"70cca09da538731a","name":"debug 82","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"false","statusVal":"","statusType":"auto","x":700,"y":1200,"wires":[]}]
 {% endrenderFlow %}
 
-![Node-RED flow using the Function node to implement simple If-Else logic for temperature control.](./images/if-else-function-1.png){data-zoomable}
 _Node-RED flow using the Function node to implement simple If-Else logic for temperature control._
 
 ### Handling Multiple Flows with Node-RED's Function Node
@@ -124,12 +132,29 @@ Regarding the outputs we are sending, the Function node initializes an array wit
 4. Deploy the flow by clicking the "Deploy" button in the top-right corner of the Node-RED editor.
 5. Once deployed, click the button on the Inject node to trigger it.
 
+```mermaid
+flowchart TD
+    A[Start] --> B{Is Temperature > 30?}
+    B -- Yes --> C{Is Humidity < 40?}
+    C -- Yes --> D[Turn on the air conditioner and use a humidifier]
+    C -- No --> E[Turn on the air conditioner]
+    B -- No --> F{Is Temperature < 15?}
+    F -- Yes --> G{Is Humidity < 40?}
+    G -- Yes --> H[Turn on the heater and use a humidifier]
+    G -- No --> I[Turn on the heater]
+    F -- No --> J[No specific action required]
+    D --> K[End]
+    E --> K
+    H --> K
+    I --> K
+    J --> K
+
+```
+_Node-RED flow using the Function node with multiple outputs for handling various conditions like temperature and humidity._
+
 {% renderFlow %}
 [{"id":"dbd085ed607e41de","type":"inject","z":"70cca09da538731a","name":"Temperature && Humidity","props":[{"p":"payload.temperature","v":"$random() * 100","vt":"jsonata"},{"p":"payload.humidity","v":"$random() * 100","vt":"jsonata"}],"repeat":"","crontab":"","once":false,"onceDelay":0.1,"topic":"","x":250,"y":1200,"wires":[["31d2e8f0c871143d"]]},{"id":"31d2e8f0c871143d","type":"function","z":"70cca09da538731a","name":"function 1","func":"let Temperature = msg.payload.temperature;\nlet Humidity = msg.payload.humidity;\n\n// Initialize output array\nlet outputs = [null, null, null, null];\n\nif (Temperature > 30 && Humidity < 40) {\n    // High temperature and low humidity\n    outputs[0] = { payload: \"High temperature and low humidity: Turn on the air conditioner and use a humidifier\" };\n} else if (Temperature > 30 && Humidity >= 40) {\n    // High temperature and high humidity\n    outputs[1] = { payload: \"High temperature and high humidity: Turn on the air conditioner\" };\n} else if (Temperature < 15 && Humidity < 40) {\n    // Low temperature and low humidity\n    outputs[2] = { payload: \"Low temperature and low humidity: Turn on the heater and use a humidifier\" };\n} else if (Temperature < 15 && Humidity >= 40) {\n    // Low temperature and high humidity\n    outputs[3] = { payload: \"Low temperature and high humidity: Turn on the heater\" };\n}\n\nreturn outputs;","outputs":4,"timeout":0,"noerr":0,"initialize":"","finalize":"","libs":[],"x":500,"y":1200,"wires":[["b169bf385ca85f6c"],["aa7ab6452f4a7791"],["cc3e6e2c70643f6f"],["800508e428d74f5f"]]},{"id":"b169bf385ca85f6c","type":"debug","z":"70cca09da538731a","name":"debug 82","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"payload","targetType":"msg","statusVal":"","statusType":"auto","x":720,"y":1140,"wires":[]},{"id":"aa7ab6452f4a7791","type":"debug","z":"70cca09da538731a","name":"debug 83","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"false","statusVal":"","statusType":"auto","x":720,"y":1200,"wires":[]},{"id":"cc3e6e2c70643f6f","type":"debug","z":"70cca09da538731a","name":"debug 84","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"payload","targetType":"msg","statusVal":"","statusType":"auto","x":720,"y":1260,"wires":[]},{"id":"800508e428d74f5f","type":"debug","z":"70cca09da538731a","name":"debug 85","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"false","statusVal":"","statusType":"auto","x":720,"y":1320,"wires":[]}]
 {% endrenderFlow %}
-
-![Node-RED flow using the Function node with multiple outputs for handling various conditions like temperature and humidity.](./images/if-else-advance.png){data-zoomable}
-_Node-RED flow using the Function node with multiple outputs for handling various conditions like temperature and humidity._
 
 ### Using Switch Node
 
@@ -159,12 +184,22 @@ Now, notice how messages are routed through the different outputs based on the t
 
 Additionally, we needed to use a second Switch node because we want to route messages based on ranges. A single Switch node does not allow for multiple checks in one rule, which is why adding an additional Switch node was necessary to handle the different temperature ranges effectively.
 
+```mermaid
+graph TD
+    A[Inject Node: Random Temperature] --> B[Switch Node 1]
+    B -->|msg.payload > 30| C[Output: Temperature > 30]
+    B -->|msg.payload <= 30| D[Switch Node 2]
+    B -->|msg.payload <= 20| D[Switch Node 2]
+    B -->|msg.payload <= 10| E[Output: Temperature <= 10]
+
+    D -->|msg.payload > 20| F[Output: 30 > Temperature > 20]
+    D -->|msg.payload <= 20| G[Output: 20 > Temperature > 10]
+```
+_Node-RED flow using the Switch node to route messages based on temperature thresholds._
+
 {% renderFlow %}
 [{"id":"3370bfc8273ad207","type":"debug","z":"70cca09da538731a","name":"high temperature","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"payload","targetType":"msg","statusVal":"","statusType":"auto","x":750,"y":1080,"wires":[]},{"id":"dbd085ed607e41de","type":"inject","z":"70cca09da538731a","name":"Temperature","props":[{"p":"payload"}],"repeat":"","crontab":"","once":false,"onceDelay":0.1,"topic":"","payload":"$random()*100","payloadType":"jsonata","x":250,"y":1200,"wires":[["b3d5ced2ee79426a"]]},{"id":"b3d5ced2ee79426a","type":"switch","z":"70cca09da538731a","name":"","property":"payload","propertyType":"msg","rules":[{"t":"gt","v":"30","vt":"num"},{"t":"lte","v":"30","vt":"num"},{"t":"lte","v":"20","vt":"num"},{"t":"lte","v":"10","vt":"num"}],"checkall":"true","repair":false,"outputs":4,"x":470,"y":1200,"wires":[["3370bfc8273ad207"],["3726786f035371ab"],["3726786f035371ab"],["5a521542f067c363"]]},{"id":"3726786f035371ab","type":"switch","z":"70cca09da538731a","name":"","property":"payload","propertyType":"msg","rules":[{"t":"gt","v":"20","vt":"num"},{"t":"gt","v":"10","vt":"num"}],"checkall":"false","repair":false,"outputs":2,"x":610,"y":1200,"wires":[["9b20ce1a276dfe26"],["44476304690c8434"]]},{"id":"9b20ce1a276dfe26","type":"debug","z":"70cca09da538731a","name":"for medium temperature","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"payload","targetType":"msg","statusVal":"","statusType":"auto","x":870,"y":1160,"wires":[]},{"id":"5a521542f067c363","type":"debug","z":"70cca09da538731a","name":"for very low temperature","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"payload","targetType":"msg","statusVal":"","statusType":"auto","x":750,"y":1320,"wires":[]},{"id":"44476304690c8434","type":"debug","z":"70cca09da538731a","name":"for low temperature","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"payload","targetType":"msg","statusVal":"","statusType":"auto","x":850,"y":1240,"wires":[]}]
 {% endrenderFlow %}
-
-![Node-RED flow using the Switch node to route messages based on temperature thresholds.](./images/if-else-switch.png){data-zoomable}
-_Node-RED flow using the Switch node to route messages based on temperature thresholds._
 
 ## Choosing Between the Function Node and Switch Node
 
