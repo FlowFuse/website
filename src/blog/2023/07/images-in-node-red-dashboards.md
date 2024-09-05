@@ -95,7 +95,7 @@ In this example, the images are static but it's simple to load images depending 
 
 ## Easily Add Images to Node-RED with FlowFuse’s Static Asset Service
 
-[FlowFuse](/) provides a powerful platform for developing, scaling, and securing your Node-RED applications. Used by businesses in industries like manufacturing, automotive, building management, and textiles, FlowFuse helps monitor and control edge devices effectively. Explore our [customer stories](/customer-stories/) to see how FlowFuse enhances operational efficiency.
+[FlowFuse](/) provides a powerful platform for developing, scaling, and securing your Node-RED applications. 
 
 ![FlowFuse Static Assets option](./images/static-assets.png "FlowFuse Static Assets option")
 

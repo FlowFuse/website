@@ -45,9 +45,9 @@ Function nodes are an essential part of Node-RED. They allow you to write custom
 
 ## How to Easily Create Function Nodes in FlowFuse
 
-FlowFuse offers a robust platform for building, scaling, and securing your Node-RED applications. It is utilized by companies in various fields, including manufacturing, automotive, building management, and textiles, for efficient monitoring and control of their edge devices with Node-RED. For more information, refer to our [customer stories](/customer-stories/), where some of our clients share how FlowFuse has transformed their operations.
+FlowFuse offers a robust platform for building, scaling, and securing your Node-RED applications. 
 
-To continuously enhance the FlowFuse and Node-RED user experience, FlowFuse has recently introduced a new feature: the **"FlowFuse Assistant."** This AI-powered tool simplifies the creation of Function nodes. You only need to provide a prompt, and the assistant generates the Function nodes for you.
+We are constantly adding new features to make it easy to use in the enterprise where you can rapidly improve your industrial processes. The **"FlowFuse Assistant."** for example is an AI-powered tool that simplifies the creation of Function nodes. You only need to provide a prompt, and the assistant generates the Function nodes for you.
 
 For more details on using the FlowFuse Assistant, visit [the Assistants Documentation](/docs/user/assistant/).
 
