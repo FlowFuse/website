@@ -125,18 +125,33 @@ To demonstrate the Switch node, we'll set up a flow to make decisions based on t
 
 1. Drag the inject node onto the canvas and set the `msg.payload` to `$random() * 100` as JSONata expression; this inject node will simulate a temperature sensor by generating a random number.
 2. Drag a Switch node onto the canvas. Double-click on it and set Property to `msg.payload`.
-3. To add rules, click the + Add button at the bottom left of the configuration panel. You will see a prompt to select the condition and the prompt to enter the value to compare with. Add the following four rules:
+3. To add rules, click the + Add button at the bottom left of the configuration panel. You will see a prompt to select the condition and the prompt to enter the value to compare with. Add the following four rules and set it for checking all rules:
 
-    - Rule 1: `msg.payload > 30` (for high temperature)
-    - Rule 2: `msg.payload <= 30 && msg.payload > 20` (for medium temperature)
-    - Rule 3: `msg.payload <= 20 && msg.payload > 10` (for low temperature)
-    - Rule 4: `msg.payload <= 10` (for very low temperature)
+    - Rule 1: `msg.payload > 30` 
+    - Rule 2: `msg.payload <= 30` 
+    - Rule 3: `msg.payload <= 20` 
+    - Rule 4: `msg.payload <= 10`
 
-    Each rule corresponds to a different temperature range and will route messages to a different output based on the condition.
+4. Now drag another Switch node and connect its input to the output of Switch nodes 2 and 3. We are adding this because we need to route messages based on ranges. A single Switch node doesn’t allow multiple checks in one rule, so to route the temperature based on ranges, we need to use another Switch node. Add the following rules and set it for stopping after the first match:
 
-4. Connect the output of the Switch node to Debug nodes to display the results for each condition.
-5. Deploy the flow by clicking the "Deploy" button in the top-right corner of the Node-RED editor.
-6. Once deployed, click the button on the Inject node to trigger it. The Debug nodes will show the routed messages based on the temperature value.
+    - Rule 1: `msg.payload > 20` 
+    - Rule 2: `msg.payload > 10` 
+
+5. Now drag the Debug nodes and connect them to the Switch nodes' outputs according to our example. For messages greater than 30, connect the Debug node to the first output of the first Switch node. For the range between 30 to 20, connect the Debug node to the first output of the second Switch node. For the range between 20 to 10, connect the Debug node to the second output of the second Switch node. Finally, for messages less than 10, connect the Debug node to the fourth output of the first Switch node.
+6. Deploy the flow by clicking the "Deploy" button in the top-right corner of the Node-RED editor.
+7. Once deployed, click the button on the Inject node to trigger it. The Debug nodes will show the routed messages based on the temperature value.
+
+Now, notice how messages are routed through the different outputs based on the temperature value. You may also have observed that in the Function node, you can update the msg object based on conditions within the same node. However, in the Switch node, it only evaluates a single value against different conditions and does not allow updating the msg object directly. To make updates, you can use the Change node.
+
+Additionally, we needed to use a second Switch node because we want to route messages based on ranges. A single Switch node does not allow for multiple checks in one rule, which is why adding an additional Switch node was necessary to handle the different temperature ranges effectively.
+
+## Choosing Between the Function Node and Switch Node
+
+When choosing between the Function node and the Switch node in Node-RED, consider the complexity of your logic. The Function node is ideal for handling complex conditions and calculations. It allows for detailed updates to the `msg` object and can evaluate multiple values simultaneously.
+
+On the other hand, the Switch node is simpler and provides an easy way to route messages based on a single value with multiple outputs. It’s perfect for straightforward scenarios where you need to route messages based on simple conditions without the need for complex logic or message modifications.
+
+Use the Function node for intricate decision-making and detailed updates, and the Switch node for easier, value-based routing.
 
 ## Conclusion
 
