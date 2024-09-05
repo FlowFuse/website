@@ -61,12 +61,12 @@ Selecting the right messaging protocol hinges on your specific requirements. AMQ
 
 ## Using AMQP with Node-RED
 
-In this section, we’ll guide you through using AMQP with Node-RED. We'll cover setting up AMQP in Node-RED, configuring different exchange types, and integrating them into your flows. Throughout the guide, we will learn how to send and receive messages based on each exchange method.
+In this section, we will guide you through integrating AMQP with Node-RED. The guide will cover setting up AMQP in Node-RED, configuring various exchange types, and incorporating them into your flows. You will learn how to send and receive messages based on different exchange methods. To effectively demonstrate these concepts, we will use a variety of scenarios and examples.
 
 ### Prequiste
 
 - **AMQP Supported Broker Server:** Ensure you have a running AMQP-supported broker server. For this guide, we are using RabbitMQ.
-- **Node-RED AMQP Node:** Install the AMQP contrib node via Node-RED palette manager.
+- **Node-RED AMQP Node:** Install the [AMQP contrib node](https://flows.nodered.org/node/@stormpass/node-red-contrib-amqp) via Node-RED palette manager.
 
 ### Understanding AMQP Node configuration settings.
 
@@ -79,23 +79,19 @@ In this section, we’ll guide you through using AMQP with Node-RED. We'll cover
    - **User:** The username required for authentication with the broker. RabbitMQ, for example, defaults to `guest`.
    - **Password:** The password associated with the username for authentication. RabbitMQ’s default is `guest`.
 
-Configure the node by dragging an AMQP custom node onto the canvas and double-clicking it to enter the details of your broker server. For added security, ensure you are using environment variables to configure nodes. For more information, refer to the [Using Environment Variables in Node-RED](/blog/2023/01/environment-variables-in-node-red/).
+Configure the node by dragging an AMQP node onto the canvas. Double-click the node, then click the "+" icon next to the pencil icon. In the prompt that opens, enter the details of your broker server. For added security, ensure you use environment variables to configure nodes. For more information, refer to  [Using Environment Variables in Node-RED](/blog/2023/01/environment-variables-in-node-red/).
 
 #### AMQP Out
 
 - **Broker** Select the broker configuration you’ve set up using the AMQP Broker node. This links your outgoing messages to the correct broker instance.
-
 - **Reconnect On Error:** Determines whether the node should attempt to reconnect automatically if it encounters an error. This helps maintain communication with the broker even if temporary issues occur.
-
 - **Exchange Configuration**
    - **Type:** Choose the exchange type that dictates how messages are routed such as fanout, direct, topic and headers:
    - **Exchange Name:** Name of the exchange where messages will be published. This is where the message is sent before being routed to the appropriate queue.
-   **Routing Key:** This key is Used to direct messages to the correct queues based on the exchange type. It helps specify which queue should receive the message.
+   - **Routing Key:** This key is Used to direct messages to the correct queues based on the exchange type. It helps specify which queue should receive the message.
    - **Durable:** Specifies whether the exchange should survive broker restarts. A durable exchange retains its messages through broker restarts.
-
 - **Message Properties**
    - **AMQP Properties:** Allows setting additional properties such as priority, expiration, or delivery mode for messages, influencing their handling and delivery.
-
 - **Remote Procedure Call (RPC) Settings**
    - **Request RPC Response:** Configure whether to request a response for RPC calls:
      - **YES:** Request a response from the server.
@@ -104,25 +100,25 @@ Configure the node by dragging an AMQP custom node onto the canvas and double-cl
 
 #### AMQP In
 
-- **Broker:** Use the broker configuration details added with the AMQP Broker node to ensure your incoming messages are received from the correct broker.
+- **Broker:** Use the broker configuration details provided by the AMQP Broker node to ensure incoming messages are received from the correct broker.
 - **Prefetch:** Determines the number of messages to fetch from the broker in advance. Reducing the number of times the broker needs to send messages can help with performance.
-- **Reconnect On Error:** Configure whether the node should automatically reconnect if it encounters an error. This helps in maintaining a continuous flow of data.
-- **noAck:** When enabled, the node will automatically acknowledge messages as soon as they are received. This can be useful for ensuring messages are processed but might lead to loss if the node fails to process the message correctly.
+- **Reconnect On Error:** Configure whether the node should automatically reconnect if it encounters an error. This helps maintain a continuous flow of data.
+- **noAck:** When enabled, the node will automatically acknowledge messages as soon as they are received. This can be useful for ensuring messages are processed but might lead to message loss if the node fails to process the message correctly.
 - **Exchange Configuration**
    - **Type:** Select the exchange type used to route incoming messages:
      - **Topic**
      - **Direct**
      - **Fanout**
      - **Headers**
-   - **Exchange Name:** The exchange name from which messages are routed. This helps in directing incoming messages to the appropriate queue.
+   - **Exchange Name:** The exchange name from which messages are routed. This helps direct incoming messages to the appropriate queue.
    - **Routing Key:** Specifies how to route messages from the exchange to the correct queue(s). This is essential for ensuring messages are received by the proper consumers.
-   - **Headers:** Set specific headers to filter messages according to routing criteria.
+   - **Headers:** Set specific headers to filter messages according to routing criteria when the headers exchange type is selected.
    - **Durable:** Indicates whether the exchange should survive broker restarts.
 - **Queue Info**
-   - **Queue Name:** Name of the queue where messages are received. This is the storage location for messages before they are processed.
+   - **Queue Name:** Name of the queue where messages are received. This is the storage location for messages before they are processed. Leave it blank if you want it to be generated automatically.
    - **Exclusive:** If set to true, the queue is exclusive to the connection and will be deleted when the connection closes.
    - **Durable:** Whether the queue should survive broker restarts, retaining messages until they are consumed.
-   - **Auto Delete:** This setting determines whether the queue should be deleted automatically when it is no longer in use, helping to manage resources efficiently.
+   - **Auto Delete:** Determines whether the queue should be deleted automatically when it is no longer in use, helping to manage resources efficiently.
 
 ### Direct Exchange
 
