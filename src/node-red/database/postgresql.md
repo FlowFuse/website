@@ -217,3 +217,11 @@ Our Inventory Management System is now complete and ready for deployment. To ini
 2. Environment Variables: The [Twelve Factors](https://12factor.net/) emphasize the importance of separating configuration details from the code (flow) to ensure better security. Storing database credentials within the codebase can pose a security risk. Instead, expose the configuration details, as environment variables. This ensures that sensitive information remains secure and can be managed separately from the codebase.
 
 3. Credential Rotation: Regularly rotating database credentials is essential for maintaining robust security practices. This includes changing login information for managed databases and other database access points. Implementing a scheduled credential rotation process, such as quarterly 'rotation days,' streamlines the task and reduces the risk of unauthorized access.
+
+## Using FlowFuse Persistent Context Storage for Small Data
+
+When managing small datasets, using a full database can feel like overkill. [FlowFuse’s persistent context storage](/blog/2024/05/understanding-node-flow-global-environment-variables-in-node-red/#flowfuse-persistent-storage) offers a streamlined solution, letting you store and retrieve lightweight data directly within your Node-RED instance. This approach simplifies data management and reduces overhead.
+
+[FlowFuse](/) is a powerful platform that enhances IoT and application development with advanced features for secure, scalable, and collaborative Node-RED deployments. 
+
+**Try [FlowFuse](/account/create/) today and see how it simplifies Node-RED application development.**
