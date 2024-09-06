@@ -1,0 +1,20 @@
+[{
+  "id": "testimonial1",
+  "imageFile": "./images/home/power.png",
+  "imageAlt": " a 3d image of an office with sensors.",
+  "quote": "FlowFuse removes concerns about scalability and reliability. It also makes it a lot easier for us to complete security audits for our customers.",
+  "url": "/customer-stories/node-red-building-management/",
+  "author": "Alan Yeung, CTO",
+  "company": "Power Workplace",
+  "companyLogo": "./images/power-workplace-icon.png"
+},
+{
+  "id": "testimonial2",
+  "imageFile": "./images/home/pidd.png",
+  "imageAlt": " a dam in an artificial river.",
+  "quote": "FlowFuse has helped us take our Node-RED from proof-of-concept through to a reliable, scalable solution for the future.",
+  "url": "/customer-stories/leveraging-node-red-and-flowfuse-to-revolutionize-irrigation/",
+  "author": "Robert VanHofwegen",
+  "company": "Paloma Irrigation District",
+  "companyLogo": "./images/pidd-icon.png"
+}]
