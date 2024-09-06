@@ -84,6 +84,14 @@ Excessive link nodes within groups can make a flow much harder to understand, wh
 #### Functionally identical to the example above, it should only take a few seconds to understand this flow now.
 !["Screenshot showing an example of the flow with the avoided link nodes"](./images/groupwires-good.png "Screenshot showing an example of the flow with the avoided link nodes")
 
+### Boost Collaboration with FlowFuse
+
+[FlowFuse](/) is a cloud-based platform that makes working together on Node-RED projects easier and more efficient. It’s trusted by industries like manufacturing and smart building management, as well as textiles, to improve their systems. For more information, refer to our [customer stories](/customer-stories/).
+
+With FlowFuse, you can quickly [set up and manage teams](/docs/user/team/), giving each member the right level of access. It keeps all your [Node-RED instances organized in one place](https://www.youtube.com/watch?v=KOnQnR7yfT0&list=PLpcyqc7kNgp3nRacWBJ9JUVUJqtTjXdvh&index=2), so your team can collaborate seamlessly. Plus, it features [snapshots](https://www.youtube.com/watch?v=m2Onip4Lf4w), which let you restore previous versions of your flows if something goes wrong. FlowFuse simplifies team collaboration, making it easier to manage and work on Node-RED projects.
+
+**[Sign up](https://app.flowfuse.com/account/create/) now for a free trial and experience FlowFuse's powerful collaboration tools!**
+
 ### Conclusion
 
 Working on Node-RED flows as part of a team doesn't have to be a headache. By following some simple best practices you can make collaboration smooth sailing for everyone involved. So next time you're starting work on a new Node-RED flow, remember these tips and make life easier for yourself and your teammates.
