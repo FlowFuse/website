@@ -224,4 +224,4 @@ When managing small datasets, using a full database can feel like overkill. [Flo
 
 [FlowFuse](/) is a powerful platform that enhances IoT and application development with advanced features for secure, scalable, and collaborative Node-RED deployments. 
 
-**Try [FlowFuse](/account/create/) today and see how it simplifies Node-RED application development.**
+**Try [FlowFuse](https://app.flowfuse.com/account/create/) today and see how it simplifies Node-RED application development.**
