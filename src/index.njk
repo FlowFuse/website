@@ -50,89 +50,71 @@ hubspot:
         </div>
     </div>
 
-    <!-- Industrial Automation -->
+    <!-- Unlock data -->
     <div class="about w-full pt-16">
         <div class="max-w-md sm:max-w-screen-lg mx-auto">
-            <div class="mx-auto w-full md:max-w-screen-lg gap-x-8 gap-y-14 pb-14">
-                <h2 class="text-center w-full md:text-left">End-to-end <span class="text-indigo-600">Industrial Data Platform</span></h2>
-                <h4 class="text-center w-full md:text-left">A comprehensive platform for all your industrial data connectivity needs, delivered with enterprise-grade control and security
-</h4>
-                <div class="grid grid-cols-1 gap-6 sm:max-md:grid-cols-2">
-                    {% set sections = [
-                        {
-                            title: "Connect",
-                            text: "Integrate seamlessly with industry-standard protocols to ensure secure communication with your devices.",
-                            svgPath: "components/icons/arrows.svg",
-                            image1: "./images/home/connect_graphic.png",
-                            image1Alt: "Icons of communication protocols",
-                            image2: "./images/home/connect.png",
-                            image2Alt: "Two workers connecting a device",
-                            url: "/solutions/device-management/"
-                        },
-                        {
-                            title: "Collect & Transform",
-                            text: "Gather and standardize data from various sources into a unified format for powerful insights.",
-                            svgPath: "components/icons/data-block.svg",
-                            image1: "./images/home/collect_graphic.png",
-                            image1Alt: "Icons of files formats",
-                            image2: "./images/home/collect.png",
-                            image2Alt: "Data travelling into a single point",
-                            url: "/solutions/data-integration/"
-                        },
-                        {
-                            title: "Visualise",
-                            text: "Turn data into actionable insights with customizable dashboards and real-time monitoring.",
-                            svgPath: "components/icons/chart.svg",
-                            image1: "./images/home/visualise_graphic.png",
-                            image1Alt: "Dashboard charts",
-                            image2: "./images/home/visualise.png",
-                            image2Alt: "A worker looking at four screens with dashboards",
-                            url: "/product/dashboard/"
-                        },
-                        {
-                            title: "Interact",
-                            text: "Control systems directly from the dashboard, enabling real-time adjustments and responsiveness.",
-                            svgPath: "components/icons/bolt.svg",
-                            image1: "./images/home/interact_graphic.png",
-                            image1Alt: "Dashboard charts with interactive elements",
-                            image2: "./images/home/interact.png",
-                            image2Alt: "A worker interacting with a machine through a dashboard",
-                            url: "/product/dashboard/"
-                        }
-                    ] %}
+            <div class="mx-auto w-full md:max-w-screen-lg gap-x-8 gap-y-14">
+                <h2 class="text-center w-full md:text-left">Empowering you to <span class="text-indigo-600">unlock data and build applications faster</span></h2>
+                <p class="text-center w-full md:text-left">
+                    Supporting your OT and IT teams with the tools and safeguards they need to drive operational
+                    efficiency
+                    and deliver real business value.
+                </p>
+                {% set sections = [
+                {
+                title: "Manage",
+                text: "Gain a centralised view of your instances, monitor performance and ensure seamless operations.",
+                svgPath: "components/icons/cog.svg",
+                mdOrder: "md:order-0"
+                },
+                {
+                title: "Scale",
+                text: "Democratise innovation; simplified updates, remote access capabilities, and version control for your deployments.",
+                svgPath: "components/icons/arrows-pointing-out.svg",
+                mdOrder: "md:order-1"
+                },
+                {
+                title: "Secure",
+                text: "Integrate seamlessly with your existing security infrastructure, and maintain comprehensive audit logs to adhere to industry standards.",
+                svgPath: "components/icons/lock-closed.svg",
+                mdOrder: "md:order-6"
+                },
+                {
+                title: "Collaborate",
+                text: "Share and collaborate across teams for rapid improvements and innovation, along with role-based user access controls.",
+                svgPath: "components/icons/user-group.svg",
+                mdOrder: "md:order-7"
+                }]
+                %}
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 md:grid-rows-2 md:grid-flow-col gap-6 mt-10">
+                    <div class="sm:col-span-2 md:row-span-2 md:order-2 self-center m-auto">
+                        <div class="md:max-w-none h-auto max-w-md">
+                            {% image "./images/home/ff_circle.png", "FlowFuse hosting Node-RED connected to many devices", [440] %}
+                        </div>
+                    </div>
                     {% for section in sections %}
-                        <a href="{{ section.url }}" class="border border-indigo-200 rounded-lg bg-white p-5 mt-12 flex flex-col gap-6 md:gap-10 md:flex-row sm:max-md:justify-between items-center {% if loop.index is even %}md:flex-row-reverse{% endif %} hover:drop-shadow-lg hover:border-blue-600 hover:border-2 hover:no-underline transition ease-in-out duration-300">
-                            <div class="md:max-w-[60%] flex flex-col sm:max-md:place-content-between flex-grow">
-                                <div class="max-md:mx-auto flex flex-row text-indigo-600">
-                                    <div class="w-10 h-10 text-indigo-600 mr-2">
-                                        {% set svgPath = section.svgPath %}
-                                        {% include svgPath %}
-                                    </div>
-                                    <h4 class="text-4xl font-light text-indigo-600">{{ section.title }}</h4>
-                                </div>
-                                <p>{{ section.text }}</p>
-                                {% image section.image1, section.image1Alt, [455] %}
-                            </div>
-                            <div class="rounded-md ff-image-cover scale md:max-w-[50%] max-h-[274px] sm:max-md:aspect-video">
-                                {% image section.image2, section.image2Alt, [455] %}
-                            </div>
-                        </a>
+                    <div class="{{ section.mdOrder }}">
+                        <div class="max-sm:mx-auto w-8 h-8 text-indigo-600 mb-3">
+                            {% set svgPath = section.svgPath %}
+                            {% include svgPath %}
+                        </div>
+                        <h4 class="max-sm:text-center font-semibold">{{ section.title }}</h4>
+                        <p class="max-sm:text-center">{{ section.text }}</p>
+                    </div>
                     {% endfor %}
                 </div>
             </div>
         </div>
     </div>
-    
+
     <!-- Testimonials -->
-    <div class="w-full pt-20 pb-12 md:px-0">
+    <div class="w-full mt-24 md:px-0">
         <div class="sm:max-w-screen-lg mx-auto">
             {% include "testimonials.njk" %}
         </div>
     </div>
 </div>
-
-
-
 <div class="pb-10 md:pb-12 pt-14 px-6">
     <!-- Get Started -->
     <div class="ff-blue-card">

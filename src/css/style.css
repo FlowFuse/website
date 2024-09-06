@@ -799,19 +799,16 @@ h4:hover .header-anchor {
                  -3px -3px 9px theme('colors.white');
 }
 
-.testimonial-button {
+.testimonial-button span {
     background-color: theme(colors.gray.100);
-    text-transform: capitalize;
     display: inline-block;
-    padding: 8px;
-    font-weight: 400;
+    padding: 6px;
     border: 1px solid theme(colors.gray.200);
     border-radius: 26px;
     transition: all 0.5s ease;
 }
 
-
-.testimonial-button.active {
+.testimonial-button.active span {
     background-color: theme(colors.indigo.200);
     border: 1px solid theme(colors.indigo.300);
 }
