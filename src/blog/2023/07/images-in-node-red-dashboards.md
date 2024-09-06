@@ -12,7 +12,7 @@ tags:
     - dashboard
 ---
 
-Using images in your Node-RED dashboards can significantly improve your users' experience. The most common method to add images to dashboards, is to store them within the filesystem of an Node-RED instance but sometimes that's not an option. How can you easily use images when working in a containerised environment such as Docker, Kubernetes, we will also explore flowfuse latest feature that makes this step super easy?
+Using images in your Node-RED dashboards can significantly improve your users' experience. The most common method to add images to dashboards is to store them within the filesystem of an Node-RED instance but sometimes that's not an option. How can you easily use images when working in a containerized environment such as Docker, or Kubernetes? We will also explore latest feature from FlowFuse that makes this step super easy.
 
 <!--more-->
 
