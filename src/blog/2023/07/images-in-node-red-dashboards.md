@@ -12,7 +12,7 @@ tags:
     - dashboard
 ---
 
-Using images in your Node-RED dashboards can significantly improve your users' experience. The most common method to add images to dashboards, is to store them within the filesystem of an Node-RED instance but sometimes that's not an option. How can you easily use images when working in a containerised environment such as Docker, Kubernetes, or FlowFuse?
+Using images in your Node-RED dashboards can significantly improve your users' experience. The most common method to add images to dashboards is to store them within the filesystem of an Node-RED instance but sometimes that's not an option. How can you easily use images when working in a containerized environment such as Docker, or Kubernetes? We will also explore latest feature from FlowFuse that makes this step super easy.
 
 <!--more-->
 
@@ -93,8 +93,18 @@ If you import these flows into Node-RED, you should see the images automatically
 
 In this example, the images are static but it's simple to load images depending on the state of the flow. As mentioned in this article's introduction, you could display context aware images guiding the user of the dashboard to a specific location on a map, to complete a maintenance task. If you're interested in seeing examples of dynamic image loading please comment below.
 
+## Easily Add Images to Node-RED with FlowFuse’s Static Asset Service
+
+[FlowFuse](/) provides a powerful platform for developing, scaling, and securing your Node-RED applications. 
+
+![FlowFuse Static Assets option](./images/static-assets.png "FlowFuse Static Assets option")
+
+With our new **Static Asset Service**, adding images and other static assets to your FlowFuse Node-RED instance is simpler than ever. This feature allows you to easily upload and manage assets within your projects.
+
+Start leveraging the Static Asset Service to streamline your Node-RED projects! For more details, check out our [documentation](https://flowfuse.com/docs/user/static-asset-service/).
+
 ## Conclusion
 
-Images can add a lot of value to dashboards, but depending on how you host a given Node-RED instance it can be challenging to ensure the correct images are shown, especially when working with your flows in a DevOps pipeline. The techniques I've discussed above allow you to use images in dashboards, even in containerised environments. 
+Images can significantly enhance dashboards, but ensuring their proper display in different Node-RED hosting environments, especially within DevOps pipelines, can be challenging. The techniques discussed here enable effective use of images in dashboards, even within containerized setups. Additionally, if you are using FlowFuse, the new features simplify adding and managing static assets.
 
 I'd love to hear your comments and suggestions on this article. please tell us what you think about this article, and how you might use these techniques in the comments section below.
