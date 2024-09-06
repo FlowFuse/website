@@ -11,7 +11,7 @@
 {
   "id": "testimonial2",
   "imageFile": "./images/home/pidd.png",
-  "imageAlt": " a damn in an artificial river.",
+  "imageAlt": " a dam in an artificial river.",
   "quote": "FlowFuse has helped us take our Node-RED from proof-of-concept through to a reliable, scalable solution for the future.",
   "url": "/customer-stories/leveraging-node-red-and-flowfuse-to-revolutionize-irrigation/",
   "author": "Robert VanHofwegen",
