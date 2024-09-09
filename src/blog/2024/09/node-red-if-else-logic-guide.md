@@ -2,7 +2,7 @@
 title: "How to Use If-Else Logic in Node-RED: A Step-by-Step Guide"
 subtitle: "Mastering Conditional Flows in Node-RED: A Practical Walkthrough."
 description: Learn how to implement If-Else logic in Node-RED with our step-by-step guide. Use Function and S witch nodes for dynamic, conditional flows.
-date: 2024-09-04
+date: 2024-09-09
 authors: ["sumit-shinde"]
 image: 
 tags:
