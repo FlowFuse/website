@@ -15,6 +15,8 @@ tags:
 
 In traditional programming, managing complex and repetitive tasks can quickly lead to a tangled mess of code that’s hard to maintain and update. To tackle this issue, developers use libraries or modules—reusable chunks of code that help organize functionality, minimize duplication, and keep codebases clean and manageable.
 
+<!--more-->
+
 Node-RED brings a similar solution to its visual programming environment with Subflows. Imagine Subflows as the visual counterpart to libraries. In this guide, we will explore what Subflows are, how to create them, and how to use them effectively to enhance your Node-RED experience.
 
 ## What Exactly Are Subflows?
@@ -36,14 +38,14 @@ To follow along, import the following flow into your Node-RED instance.
 
 ### Creating subflow of selection
 
-![Image showing a Node-RED flow at the top selected for creating a Subflow, and the resulting Subflow at the bottom.](./images/subflow.png){data-zoomable}
-_Image showing a Node-RED flow at the top selected for creating a Subflow, and the resulting Subflow at the bottom._
+![Image showing process of creating subflow from the selection](./images/selecting-and-converting-subflow.gif){data-zoomable}
+_Image showing process of creating subflow from the selection_
 
 1. Select the flow you want to convert into a Subflow.
 2. Open the main menu by clicking the top-right menu icon, and select "Selection to Subflow" under the Subflows option.
 
-![Image showing process of creating subflow from the selection](./images/selecting-and-converting-subflow.gif){data-zoomable}
-_Image showing process of creating subflow from the selection_
+![Image showing subflow node added in the node palette](./images/subflow-showing-in-pallete.png){data-zoomable}
+_Image showing subflow node added in the node palette_
 
 Once selected, the Subflow will be added to the node palette like other nodes. The selected flow will also be converted into a single node representing the Subflow.
 
