@@ -47,9 +47,8 @@ FlowFuse is a platform for building and operating self-built industrial data sol
 
 ### About FlowFuse - 150 Words
 
-For industrial companies, competition is more intense than ever. Achieving growth targets while maintaining profits takes continuous commitment to process improvement. But to innovate, your team needs seamless access to data, and the ability to rapidly build applications that can transform data into operational insights. The faster your team can collect and transform data directly from your operations, the faster you can make process adjustments that create true business value and profit.
+FlowFuse is an open-core company investing in Node-RED. Nick O’Leary, co-creator of Node-RED is FlowFuse co-founder and CTO. 
 
-FlowFuse is the leading open source platform for building and operating self-built industrial data solutions that digitalize processes and operations. The platform leverages Node-RED, a low-code programming technology that makes it easy for your OT-engineers to quickly connect, collect, transform, and visualize data for interacting (optimizing??) with industrial processes. Node-RED seamlessly integrates with thousands of industrial devices and 100s of protocols and data services.
+Node-RED is an open-source low-code programming tool, allowing developers to quickly and easily connect IoT devices, APIs, and online services by creating flow-based applications. It uses a drag-and-drop interface to wire together nodes, which can represent devices, APIs, or functions, to process data, and create powerful automations. 
 
-Founded in 2021 by Nick O’Leary, co-creator of Node-RED, companies use FlowFuse to manage, scale and secure their industrial Node-RED solutions.
-
+FlowFuse is a low-code development platform for building reliable and adaptable applications. FlowFuse eliminates the pain points of digital transformation by empowering companies across industries to create seamless, dynamic applications. Powered by Node-RED, FlowFuse enables teams of all sizes to harness low-code capabilities to build robust applications with unparalleled scalability, and security. FlowFuse’s collaborative environment and scalable architecture ensure that teams can build securely and together for continuous development and operational success.
