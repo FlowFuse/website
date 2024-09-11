@@ -216,6 +216,15 @@ To make things simple, we’ll only track the last event.  But in a production s
 Adding alarms and events to our dashboard creates the following result - 
 
 ![opc-event.gif](./images/opc-ua-3/opc-event.gif){data-zoomable}
+
+## Using FlowFuse to Enhance Your Node-RED Application: Security, Scalability, and Robustness
+
+So, you've successfully built your Node-RED application—congratulations! But now, how do you ensure its security, scalability, and ease of collaboration? What if you want to invite your team to work on the application simultaneously or access it remotely?
+
+Enter [FlowFuse](/), a cloud-based platform designed to add production-grade features to your Node-RED applications. With FlowFuse, you can seamlessly integrate advanced security measures, scale your application as needed, and collaborate effortlessly with your team. It simplifies management and deployment, turning your Node-RED project into a robust, scalable solution.
+
+If you're interested in learning how to use Node-RED for professional use cases, check out our eBook: [Ultimate Beginner's Guide to Professionals](/ebooks/beginner-guide-to-a-professional-nodered/). For additional resources, visit our [Node-RED Learning Resources section](/node-red/core-nodes/), where you can explore integrations with different protocols, messaging services, databases, hardware, and much more.
+
 ## Conclusion
 
 In this final article, we went over building a OPC UA Client dashboard that can browse the address space, read values from an OPC Server, write values to an OPC Server, and get events from an OPC Server.  

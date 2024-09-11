@@ -39,3 +39,11 @@ Open the delay node settings, select Rate Limit then select 1 message per 15 min
 ![Limiting how many alerts are sent](./images/rate-limit.gif "Limiting how many alerts are sent")
 
 We hope you found these tips useful, if you'd like to suggest some of your own tips which you think we should share in our future blog posts please [get in touch](mailto:contact@flowfuse.com).
+
+## Enhance Efficiency with FlowFuse
+
+FlowFuse is a cloud-based platform designed to boost collaboration, security, and scalability for your Node-RED applications. It features [numerous tools and functionalities](/product/features/) that streamline the development-to-deployment process, including one-click deployment, the [FlowFuse Assistant](/docs/user/assistant/), and other capabilities that simplify managing your Node-RED environment.
+
+For more tips, tricks, and professional development techniques with Node-RED, check out our recommended eBook:
+
+[The Ultimate Beginner's Guide to Professional Node-RED](/ebooks/beginner-guide-to-a-professional-nodered/)

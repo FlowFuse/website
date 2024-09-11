@@ -27,7 +27,7 @@ Node-RED allows you to set environment variables, but not to change them when ex
 
 Our first example was using a predefined variable, exposed by Node-RED. As of 3.0 it exposes a few environment variables among which `NR_NODE_NAME`, `NR_GROUP_NAME`, and `NR_FLOW_NAME`.
 
-FlowFuse extends this list with for example a `FF_PROJECT_ID` allowing you to for example understand what group of instances sent a certain message, but also sets them for each [device agent](/docs/user/devices/). This allows users to pinpoint which device sent a message, for example to update a dashboard accordingly.
+[FlowFuse](/) extends this list with for example a `FF_PROJECT_ID` allowing you to for example understand what group of instances sent a certain message, but also sets them for each [device agent](/docs/user/devices/). This allows users to pinpoint which device sent a message, for example to update a dashboard accordingly.
 
 ### Managing environments variables
 
@@ -35,3 +35,17 @@ In FlowFuse it’s easy to manage variables set for instances. Under settings in
 
 !["Setting a environment variable in FlowFuse"](./images/flowforge-set-env-var.png "Setting a environment variable in FlowFuse")
 
+## Boost Your Node-RED Security with FlowFuse
+
+FlowFuse provides a comprehensive platform for managing and securing your Node-RED solutions. It includes advanced security features such as role-based access control, Multi-factor Authentication (MFA), Single Sign-On (SSO), and encryption to protect your data and enhance operational efficiency.
+
+Learn how FlowFuse can boost your Node-RED security and streamline management through the [FlowFuse security statement](/product/security/#application).
+
+### Explore More on Security
+
+- [Role-Based Access Control (RBAC) for Node-RED with FlowFuse](/blog/2024/04/role-based-access-control-rbac-for-node-red-with-flowfuse/)
+- [Protecting Instances from Being Modified](/docs/user/devops-pipelines/#protected-instances)
+- [How to Set Up SSO LDAP for Node-RED](/blog/2024/07/how-to-setup-sso-ldap-for-the-node-red/)
+- [How to Set Up SSO SAML for Node-RED](/blog/2024/07/how-to-setup-sso-saml-for-the-node-red/)
+- [Securing HTTP Traffic for Node-RED with FlowFuse](/blog/2024/03/http-authentication-node-red-with-flowfuse/)
+- [FlowFuse is now SOC 2 Type 1 Compliant](/blog/2024/01/soc2/)

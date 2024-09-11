@@ -57,3 +57,10 @@ We wanted to investigate whether or not we could add backdated data, which in th
 
 Within two minutes, we could wire up a node to retrieve data from our API, and then ingest it into `posthog-node` via the import of a function node.
 
+## Simplify Function Node Creation with FlowFuse
+
+[FlowFuse](/) provides a powerful platform to enhance, scale, and secure your Node-RED applications efficiently. One of our latest features, the **FlowFuse Assistant**, is designed to streamline the process of creating Function nodes.
+
+With the FlowFuse Assistant, you can leverage AI to generate Function nodes effortlessly. Just input your prompt, and the Assistant will handle the creation for you, saving time and reducing manual coding.
+
+To explore how to make the most of the FlowFuse Assistant and its capabilities, check out the [Assistants Documentation](/docs/user/assistant/).
