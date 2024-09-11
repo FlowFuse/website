@@ -65,7 +65,7 @@ but confidence in the tooling isn't sky high.
 
 ### Data extraction at scale; now there's over 100
 
-At FlowFuse we've got regular conversations with customers managing 100s of
+At [FlowFuse](/) we've got regular conversations with customers managing 100s of
 devices. Scaling to that many devices and runtimes requires hours of development
 each week alongside monitoring, maintenance, and auditing.
 
@@ -86,7 +86,9 @@ Many other edge cases itch in the back of our heads, but we can't focus on those
 Node-RED is a great tool, it's got many built-in features that make it easy to
 get started with no coding experience necessary. Running it at scale, in a
 production environment can require a lot of sys-ops and dev-ops time and we
-think FlowFuse is a great solution to keep that admin and tech debt in check.
+think [FlowFuse](/) is a great solution to keep that admin and tech debt in check.
 
 If you're running into these challenges we believe we can help, you can adopt
 our [free and open source edition](/docs/install/).
+
+Additionally, to get a head start or enhance your current setup, explore our [Beginner's Guide to Professional Node-RED](/ebooks/beginner-guide-to-a-professional-nodered/). This concise ebook offers a clear overview of Node-RED’s capabilities and practical tips for making the most of its features.

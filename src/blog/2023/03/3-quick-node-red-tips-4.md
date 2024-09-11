@@ -54,3 +54,11 @@ Note that there are no wires connecting the flow to the error output. This means
 {% endrenderFlow %}
 
 We hope you found these tips useful, if you'd like to suggest some of your own tips which you think we should share in our future blog posts please [get in touch](mailto:contact@flowfuse.com).
+
+### Simplifying Multi-Instance Communication with FlowFuse Project Nodes
+
+Coordinating communication between multiple Node-RED instances can be challenging, but FlowFuse's [Project Nodes](/docs/user/projectnodes/) make it effortless. With these nodes, you can seamlessly send messages between instances without dealing with complicated network configurations.
+
+Simply choose the target instance by name, and FlowFuse handles the connection automatically. This streamlines the management of multi-instance environments, ensuring smooth communication between flows across different devices or locations. Whether you're handling multiple projects or managing large-scale systems, FlowFuse Project Nodes help you save time and minimize errors.
+
+FlowFuse continues to push the boundaries of collaboration and scalability in Node-RED projects. For more details on these features, visit the [FlowFuse website](/).

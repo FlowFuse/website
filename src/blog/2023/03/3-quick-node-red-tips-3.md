@@ -41,3 +41,11 @@ Once you've setup the node as shown above, you will see a counter under the debu
 ![Each message sent to the debug node is counted](./images/counting-debug.gif "Each message sent to the debug node is counted")
 
 We hope you found these tips useful, if you'd like to suggest some of your own tips which you think we should share in our future blog posts please [get in touch](mailto:contact@flowfuse.com).
+
+## Effortless Communication Between Node-RED Instances with FlowFuse Project Nodes
+
+Managing communication between multiple Node-RED instances can be a complex task, but FlowFuse [Project Nodes](/docs/user/projectnodes/) simplify this process dramatically. With these nodes, you can easily send messages between different Node-RED instances without worrying about complex configurations or network setup.
+
+All you need to do is select the target instance by name, and FlowFuse takes care of the rest. This makes it faster and more efficient to handle multi-instance environments, ensuring seamless communication between flows across different devices or locations. Whether you're managing multiple environments or working on large-scale projects, FlowFuse Project Nodes save you time and reduce the risk of errors.
+
+FlowFuse continues to innovate, making collaboration and scalability in Node-RED projects even easier. To learn more about these features, check out the [FlowFuse website](/).
