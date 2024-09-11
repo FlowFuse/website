@@ -91,4 +91,4 @@ think [FlowFuse](/) is a great solution to keep that admin and tech debt in chec
 If you're running into these challenges we believe we can help, you can adopt
 our [free and open source edition](/docs/install/).
 
-Additionally, to get a head start or enhance your current setup, explore our [Beginner's Guide to Professional Node-RED](/ebooks/beginner-guide-to-a-professional-nodered/). This concise ebook offers a clear overview of Node-RED’s capabilities and practical tips for making the most of its features.
+Additionally, to get a head start or enhance your current setup, explore our [Beginner's Guide to Professional Node-RED](/ebooks/beginner-guide-to-a-professional-nodered/). This comprehensive ebook offers a clear overview of Node-RED’s capabilities and practical tips for making the most of its features.
