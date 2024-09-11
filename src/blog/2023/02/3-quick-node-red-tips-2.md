@@ -42,8 +42,8 @@ We hope you found these tips useful, if you'd like to suggest some of your own t
 
 ## Enhance Efficiency with FlowFuse
 
-FlowFuse is a cloud-based platform that enhances collaboration, security, and scalability for your Node-RED applications. It offers [numerous features](/product/features/) that streamline the development-to-deployment process, such as one-click deployment, the FlowFuse Assistant, and many more capabilities that simplify managing your Node-RED environment.
+FlowFuse is a cloud-based platform designed to boost collaboration, security, and scalability for your Node-RED applications. It features [numerous tools and functionalities](/product/features/) that streamline the development-to-deployment process, including one-click deployment, the [FlowFuse Assistant](/docs/user/assistant/), and other capabilities that simplify managing your Node-RED environment.
 
-If you're interested in learning more tips, tricks, and professional development techniques with Node-RED, we recommend checking out the following eBook:
+For more tips, tricks, and professional development techniques with Node-RED, check out our recommended eBook:
 
 [The Ultimate Beginner's Guide to Professional Node-RED](/ebooks/beginner-guide-to-a-professional-nodered/)

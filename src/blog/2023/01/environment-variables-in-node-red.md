@@ -37,13 +37,15 @@ In FlowFuse it’s easy to manage variables set for instances. Under settings in
 
 ## Boost Your Node-RED Security with FlowFuse
 
-FlowFuse offers a comprehensive platform for managing and securing your Node-RED solutions. It features advanced security measures such as role-based access control, Multi-factor Authentication (MFA), Single Sign-On (SSO), authentication with your authenticator, and encryption, among others, to safeguard your data and enhance operational efficiency.
+FlowFuse provides a comprehensive platform for managing and securing your Node-RED solutions. It includes advanced security features such as role-based access control, Multi-factor Authentication (MFA), Single Sign-On (SSO), and encryption to protect your data and enhance operational efficiency.
 
 Learn how FlowFuse can boost your Node-RED security and streamline management through the [FlowFuse security statement](/product/security/#application).
 
 ### Explore More on Security
 
 - [Role-Based Access Control (RBAC) for Node-RED with FlowFuse](/blog/2024/04/role-based-access-control-rbac-for-node-red-with-flowfuse/)
+- [Protecting Instances from Being Modified](docs/user/devops-pipelines/#protected-instances)
 - [How to Set Up SSO LDAP for Node-RED](/blog/2024/07/how-to-setup-sso-ldap-for-the-node-red/)
 - [How to Set Up SSO SAML for Node-RED](https://flowfuse.com/blog/2024/07/how-to-setup-sso-saml-for-the-node-red/)
 - [Securing HTTP Traffic for Node-RED with FlowFuse](/blog/2024/03/http-authentication-node-red-with-flowfuse/)
+- [FlowFuse is now SOC 2 Type 1 Compliant](/blog/2024/01/soc2/)
