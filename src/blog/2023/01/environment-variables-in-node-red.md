@@ -46,6 +46,6 @@ Learn how FlowFuse can boost your Node-RED security and streamline management th
 - [Role-Based Access Control (RBAC) for Node-RED with FlowFuse](/blog/2024/04/role-based-access-control-rbac-for-node-red-with-flowfuse/)
 - [Protecting Instances from Being Modified](docs/user/devops-pipelines/#protected-instances)
 - [How to Set Up SSO LDAP for Node-RED](/blog/2024/07/how-to-setup-sso-ldap-for-the-node-red/)
-- [How to Set Up SSO SAML for Node-RED](https://flowfuse.com/blog/2024/07/how-to-setup-sso-saml-for-the-node-red/)
+- [How to Set Up SSO SAML for Node-RED](/blog/2024/07/how-to-setup-sso-saml-for-the-node-red/)
 - [Securing HTTP Traffic for Node-RED with FlowFuse](/blog/2024/03/http-authentication-node-red-with-flowfuse/)
 - [FlowFuse is now SOC 2 Type 1 Compliant](/blog/2024/01/soc2/)
