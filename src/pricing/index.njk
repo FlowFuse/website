@@ -498,12 +498,13 @@ hubspot:
 
             const discount = ((tempSliderValue - stepSize) / stepSize) * 0.01;
             let discountedPriceMonthly = (basePrice * (1 - discount)) / 12;
+            let regularPriceMonthly = basePrice / 12;
 
-            const [intValue, decValue] = discountedPriceMonthly.toFixed(2).split(".");
+            const [intValue, decValue] = regularPriceMonthly.toFixed(2).split(".");
             priceIntElement.textContent = intValue;
             priceDecElement.textContent = decValue;
 
-            const totalMonthlyPrice = discountedPriceMonthly * tempSliderValue;
+            const totalMonthlyPrice = regularPriceMonthly * tempSliderValue;
 
             priceNoteElement.innerHTML = `/instance a month <br>Billed monthly at <span class="font-semibold">$${totalMonthlyPrice.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</span><br \\>`;
         })
