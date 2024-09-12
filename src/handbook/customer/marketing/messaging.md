@@ -49,7 +49,8 @@ FlowFuse is a platform for building and operating self-built industrial data sol
 
 For industrial companies, competition is more intense than ever. Achieving growth targets while maintaining profits takes continuous commitment to process improvement. But to innovate, your team needs seamless access to data, and the ability to rapidly build applications that can transform data into operational insights. The faster your team can collect and transform data directly from your operations, the faster you can make process adjustments that create true business value and profit.
 
-FlowFuse is the leading open source platform for building and operating self-built industrial data solutions that digitalize processes and operations. The platform leverages Node-RED, a low-code programming technology that makes it easy for your OT-engineers to quickly connect, collect, transform, and visualize data for interacting (optimizing??) with industrial processes. Node-RED seamlessly integrates with thousands of industrial devices and 100s of protocols and data services.
+FlowFuse is the leading open source platform for building and operating self-built industrial data solutions that digitalize processes and operations. The platform leverages Node-RED, a low-code programming technology that makes it easy for your OT-engineers to quickly connect, collect, transform, and visualize data for interacting with industrial processes. Node-RED seamlessly integrates with thousands of industrial devices and 100s of protocols and data services.
 
 Founded in 2021 by Nick O’Leary, co-creator of Node-RED, companies use FlowFuse to manage, scale and secure their industrial Node-RED solutions.
+
 
