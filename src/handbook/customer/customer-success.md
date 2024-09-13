@@ -182,3 +182,22 @@ fixes.
 
 When an annually-billed customer chooses not to renew their subscription, the assigned Account Executive should login into Stripe and cancel the subscription. This will effectively close the account on the platform and prevent invoices to continue being sent.
 
+## Notifying Customers of Downtime for FlowFuse Cloud Kubernetes Migrations
+
+Occasionally, we need to restart customer instances of Node-RED on FlowFuse Cloud to migrate them to a new server at AWS. To manage this, we inform customers in advance, giving them time to restart their instances. If they don’t do so within that time, we’ll restart the instances for them. Sometimes, an instance might not restart properly, so we need to ensure everything works smoothly and notify the customer with instructions if any issues arise.
+
+Our goal is to minimize the number of customers needing to restart their instances and reduce how many we need to handle manually. Ideally, the migration should happen without customers even noticing.
+
+### Steps
+
+1. **Set Up the New Server Early:**  
+   The new server should be ready at least 90 days before the migration deadline. This ensures any new instances or manual restarts automatically move to the new server.
+
+2. **Notify Customers 30 Days Before:**  
+   Create a list of instances that need to be migrated 30 days before the deadline. Send an email to each team, explaining which instances need to be restarted. Make sure the email is clear, concise, and easy to follow.
+
+3. **Review 7 Days Before Deadline:**  
+   A week before the deadline, review any remaining instances. If a customer is particularly important or has many instances left to migrate, consider providing personalized help to ensure a smooth process.
+
+4. **Handle Final Restarts on Deadline Day:**  
+   On the deadline day, go through the remaining instances and restart them. Check that each one comes back online properly, and assist customers with any issues that come up.
