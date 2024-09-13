@@ -136,7 +136,6 @@ Node-RED allows you to add documentation for Subflow nodes, providing guidance o
 
 ![Image showing the description tab of subflow](./images/documentation-tab.png){data-zoomable}
 _Image showing the apperance tab of subflow_
-documentation-tab.png
 
 2. Enter the documentation content in markdown format that provides guidance on how to use the Subflow node effectively.
 3. Click **Done** to save.
@@ -149,7 +148,7 @@ Once saved, the documentation will be displayed in the help sidebar when users c
 
 Now, just like regular Node-RED nodes, you can effectively use this Subflow node in your projects. With its added documentation, customized appearance, and status indicators, it integrates seamlessly into your Node-RED environment, enhancing both usability and functionality.
 
-### Benifits of using subflows.
+### Benefits of using subflows.
 
 - **Modularity**: Subflows allow you to group related nodes into a single, reusable unit, making complex flows easier to manage.
 - **Code Reuse**: They help avoid duplicating similar logic across different parts of your flow, saving time and effort.
