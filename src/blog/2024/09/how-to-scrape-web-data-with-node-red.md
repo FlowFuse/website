@@ -18,25 +18,19 @@ tags:
    - automated web scraping
 ---
 
-Have you ever needed to scrape website data to monitor news, track competitors, or gather insights about your industry? In this guide, you'll learn how to use Node-RED for efficient web scraping, allowing you to extract and manage data from various websites seamlessly. Whether you're looking to keep tabs on the latest articles, product mentions, or market trends, this step-by-step approach will help you set up Node-RED, configure scraping flows, and handle data extraction effectively.
+Web scraping has become an indispensable tool for monitoring news, tracking competitors, and gathering insights. In this guide, you'll learn how to harness the power of Node-RED for efficient web scraping, allowing you to extract and manage data from various websites with ease that are not exposed through an API.
 
 <!--more-->
 
 ## What is Web Scraping?
 
-Web scraping is a technique for automatically extracting data from websites. Instead of manually copying information from web pages, web scraping uses tools or scripts to access and retrieve data from the Internet efficiently. This process allows you to quickly gather large volumes of information, which is helpful for tasks such as tracking market trends, aggregating news, or collecting product details.
-
-By automating data collection, web scraping helps save time and reduce human error. It enables users to extract and analyze structured data from various sources, making it easier to compile and utilize information for research, business intelligence, or other purposes.
-
-## Why Use Web Scraping If APIs Are Available?
-
-APIs are a convenient way to access data from websites, but not all sites offer APIs, or their APIs may not provide the specific data you need.
+Web scraping is a technique for automatically extracting data from websites. Instead of manually copying information from web pages, web scraping uses tools or scripts to access and retrieve data from the Internet efficiently. This process allows you to quickly gather large volumes of information, which is helpful for tasks such as tracking market trends, aggregating news, or collecting product details. By automating data collection, web scraping helps save time and reduce human error. It enables users to extract and analyze structured data from various sources, making it easier to compile and utilize information for research, business intelligence, or other purposes.
 
 Web scraping can be helpful when APIs are unavailable or do not meet your requirements. It allows you to collect data directly from web pages, which can be beneficial for tasks like competitive analysis, market research, or tracking specific online content.
 
-## How Web Scraping Works?
+## How Does Web Scraping Works?
 
-Web scraping involves systematically extracting data from websites using automated tools or scripts. The process begins with sending an HTTP request to a website's server, requesting access to a specific webpage. In response, the server provides the HTML content of the page. This HTML code contains the structured information displayed on the webpage, organized in a format that describes the layout and content.
+Web scraping involves systematically extracting data from websites using automated tools or scripts. The process begins with requesting a specific webpage. The response from the server is the HTML content of the page. This HTML code contains the structured information displayed on the webpage, organized in a format that describes the layout and content.
 
 Once the HTML is received, the next step is parsing it. Parsing involves analyzing the HTML structure to identify and extract the data of interest. This may include navigating through nested elements, locating specific tags, and using selectors to target precise content such as text blocks, images, or links. The extracted data is then processed and stored in a format that suits the user's needs, whether a database, a CSV file, or another format suitable for analysis.
 
@@ -83,7 +77,7 @@ When you click the **inject** button, you will see the array containing the text
 You can use JavaScript in a Node-RED function node to transform data into structured objects. If you are familiar with JavaScript, this process will be straightforward. However, if you are not, you can use FlowFuse Assistant to generate the necessary function. For more details, refer to our [LinkedIn Post](https://www.linkedin.com/posts/flowfuse_flowfuse-nodered-automation-activity-7226171132796637184-vKKt/?utm_source=share&utm_medium=member_desktop) for a quick guide. However, in this section, we will use a low-code approach to transform the data.
 
 1. Drag a **Split** node onto the canvas and connect it to the **HTML** node. This **Split** node will split the input array into individual string messages.
-2. Drag a **Change** node onto the canvas and connect it to the **Split** node. Set `msg.name` to the following Jsonata expression to extract the country name:
+2. Drag a **Change** node onto the canvas and connect it to the **Split** node. Set `msg.name` to the following JSONata expression to extract the country name:
     ```json
     $trim($split(payload, "Capital: ")[0])
     ```
@@ -135,20 +129,7 @@ _Left side: Image showing the table we created on the FlowFuse dashboard. Right 
 
 ## Legal and Ethical Considerations
 
-While web scraping is a powerful tool for collecting data, it is essential to be aware of the legal and ethical implications. Web scraping itself is not inherently illegal, but its legality depends on various factors, including the website's terms of service and the data being scraped.
-
-### Legal Aspects
-
-- **Respect Terms of Service**: Many websites have terms of service that explicitly prohibit scraping. Constantly review and adhere to these terms to avoid legal issues.
-- **Intellectual Property**: Be mindful of intellectual property rights. Avoid scraping content that is copyrighted or proprietary without permission.
-- **Data Privacy**: Ensure you comply with data protection regulations such as GDPR or CCPA when handling personal data. Scraping personal information without consent can lead to legal consequences.
-
-### Ethical Considerations
-
-- **Respect Website Performance**: Avoid overloading a website with excessive requests. Implement rate limiting and respect the website's robots.txt file to prevent disrupting normal operations.
-- **Use Data Responsibly**: Handle the scraped data ethically and responsibly. Please do not use it for malicious purposes or in a way that could harm individuals or organizations.
-
-Following these guidelines, you can use web scraping tools like Node-RED effectively while respecting legal and ethical boundaries.
+Web scraping can be a valuable tool for gathering data, but it's crucial to navigate the legal and ethical landscape responsibly. Adhere to websites' terms of service, respect intellectual property and data privacy laws, and avoid actions that could disrupt a site's operation or misuse the scraped data. By staying informed and adhering to best practices, you can harness the power of web scraping tools like Node-RED while remaining ethically and legally compliant.
 
 ## Conclusion
 
