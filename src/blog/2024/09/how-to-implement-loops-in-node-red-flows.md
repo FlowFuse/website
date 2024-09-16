@@ -1,7 +1,7 @@
 ---
 title: How to implement loops in Node-RED flows
-subtitle: 
-description: 
+subtitle: Learn how to implement while, for, and for...of Loops with Core and Custom Nodes in Node-RED
+description: Learn how to implement while, for, and for...of loops in Node-RED with core and custom nodes for efficient data processing and automation.
 date: 2024-09-13
 authors: ["sumit-shinde"]
 image: 
@@ -12,6 +12,9 @@ tags:
    - nodered loop
    - node red for loop
    - node-red loop
+   - nodered for of
+   - node-red while loop
+   - node-red do while loop
 ---
 
 Loops are the engine that drives repetitive tasks in programming, making automation smooth and efficient. In Node-RED, they help automate processes like iterating over arrays, updating counters, or repeating actions based on conditions. Whether you’re handling data or automating repetitive tasks, loops make your flows more dynamic and streamlined.
