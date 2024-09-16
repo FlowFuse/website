@@ -12,6 +12,11 @@ tags:
   - Industrial protocol converter
   - EtherNet/IP
   - S7 Protocol
+  - node red siemens s7
+  - node red s7 communication
+  - node red s7comm
+  - nodered s7
+  - node red s7
 ---
 
 Frequently in industrial automation, there's a need for two devices that use different protocols to communicate with each other, requiring protocol conversion.  
