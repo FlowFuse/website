@@ -8,7 +8,12 @@ image: /blog/2024/08/images/mysql-with-node-red.png
 tags:
    - post
    - nodered
-   - mysql
+   - nodered mysql
+   - node red mysql
+   - node-red mysql
+   - node-red-node-mysql
+   - mysql nodered
+   - mysql node red
 ---
 
 When discussing popular and widely used databases, MySQL inevitably stands out. This is especially evident within the Node-RED community, where the MySQL contrib node has the highest number of downloads among all database contrib nodes. However, popularity often brings its own set of challenges. We've prepared this comprehensive guide to help our Node-RED community members navigate these challenges. It covers all aspects of using MySQL with Node-RED, including an overview of what MySQL is, the differences between PostgreSQL and MySQL, when to choose one over the other, essential MySQL operations, and more.
