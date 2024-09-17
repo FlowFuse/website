@@ -17,14 +17,14 @@
     "imageFolder": "./images/pictograms/",
     "imageFile": "scalable_pictogram_blue.png",
     "imageAlt": " scalability.",
-    "content": "Node-RED applications can be run in [High Availability](/blog/2023/05/bringing-high-availability-to-node-red/) mode to allow the applications to scale up to meet spikes in demand. Even with instance failures, we ensure continuous operations by automatically switching to another Node-RED instance."
+    "content": "Node-RED applications can be run in <a href='/blog/2023/05/bringing-high-availability-to-node-red/'>High Availability</a> mode to allow the applications to scale up to meet spikes in demand. Even with instance failures, we ensure continuous operations by automatically switching to another Node-RED instance."
   },
   {
     "title": "Data Sharing and Storage",
     "imageFolder": "./images/pictograms/",
     "imageFile": "connect_device_blue.png",
     "imageAlt": " data sharing and storage",
-    "content": "FlowFuse adds to a Node-RED environment the ability to share information between instances and persistent data. [FlowFuse Project Nodes](/docs/user/projectnodes/#flowfuse-project-nodes) facilitate data and message exchange between Node-RED projects, ideal for edge-to-cloud communication."
+    "content": "FlowFuse adds to a Node-RED environment the ability to share information between instances and persistent data. <a href='/docs/user/projectnodes/#flowfuse-project-nodes'>FlowFuse Project Nodes</a> facilitate data and message exchange between Node-RED projects, ideal for edge-to-cloud communication."
   },{
     "title": "Remote Device Management at the Edge",
     "imageFolder": "./images/pictograms/",
@@ -36,7 +36,7 @@
     "imageFolder": "./images/pictograms/",
     "imageFile": "pipeline_blue.png",
     "imageAlt": " a DevOps pipeline.",
-    "content": "[DevOps pipelines](/docs/user/devops-pipelines/#devops-pipelines) can be set up to stage Node-RED instances that have different development stages such as test, development and production."
+    "content": "<a href='/docs/user/devops-pipelines/#devops-pipelines'>DevOps pipelines</a> can be set up to stage Node-RED instances that have different development stages such as test, development and production."
   },{
     "title": "Version History",
     "imageFolder": "./images/pictograms/",
@@ -48,7 +48,7 @@
     "imageFolder": "../images/pictograms/",
     "imageFile": "collaboration_blue.png",
     "imageAlt": " a team.",
-    "content": "Different development team members are able to share and develop on the same Node-RED instance making collaboration easier. [Role based access control (RBAC)](/blog/2024/04/role-based-access-control-rbac-for-node-red-with-flowfuse) allows for restrictions on what team members can access and do while using the FlowFuse platform."
+    "content": "Different development team members are able to share and develop on the same Node-RED instance making collaboration easier. <a href='/blog/2024/04/role-based-access-control-rbac-for-node-red-with-flowfuse'>[Role based access control (RBAC)</a> allows for restrictions on what team members can access and do while using the FlowFuse platform."
   },{
     "title": "Built-in Security",
     "imageFolder": "../images/pictograms/",
