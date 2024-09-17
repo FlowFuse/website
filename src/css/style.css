@@ -1054,6 +1054,7 @@ h4:hover .header-anchor {
     }
 
     .ff-website .ff-btn.ff-btn--primary-outlined {
+        box-sizing: border-box;
         background-color: transparent;
         color: theme(colors.indigo.600);
         border: 1px solid theme(colors.indigo.600);
