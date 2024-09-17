@@ -1,105 +1,65 @@
-{
-  "main":[{
-    "id": "feature1",
-    "buttonText": "Low-code Node-RED",
-    "buttonTextMobile": "Low-code",
-    "title": "Low-code Node-RED",
-    "imageFolder": "./images/features/",
-    "imageFile": "feature-low-code-nr.png",
-    "imageAlt": " low-code programming.",
-    "content": "Node-RED is at the core of the FlowFuse platform. The low-code visually programming environment is the development experience you enjoy when using FlowFuse. This includes having access to the sizeable community of Node-RED nodes for connecting with different protocols, hardware platforms, databases, services, and much more."
+  [{
+    "title": "Simplified Hosting and Maintenance",
+    "imageFolder": "./images/pictograms/",
+    "imageFile": "cloud_nr_blue.png",
+    "imageAlt": " Node-RED hosted in the cloud.",
+    "content": "Experience ease of use with <a href='/product/cloud'>FlowFuse Cloud</a>, handling all your hosting needs. Forget the complexities of maintaining your development environment; we've got it covered."
   },
   {
-    "id": "feature2",
-    "buttonText": "Scalable Node-RED",
-    "buttonTextMobile": "Scalable",
-    "title": "Scalable and Reliable Node-RED Hosting",
-    "imageFolder": "./images/features/",
-    "imageFile": "feature-scalable.png",
-    "imageAlt": " scalable Node-RED.",
-    "content": "FlowFuse makes it possible to host Node-RED applications in a reliable and scalable manner.",
-    "list": [
-    "The FlowFuse platform allows for multiple Node-RED applications to be run simultaneously on the platform.",
-    "Node-RED applications can be run in high availability mode to allow the applications to scale up to meet spikes in demand.",
-    "High availability mode also allows for failover of application traffic from a failed instance to another Node-RED instance thereby keeping the application running."
-    ]
+    "title": "Centralised Instance Management",
+    "imageFolder": "./images/pictograms/",
+    "imageFile": "instance_blue.png",
+    "imageAlt": " three Node-REd instances grouped in a single place.",
+    "content": "FlowFuse enables seamless management of multiple instances from a single platform, streamlining your development and coordination efforts."
   },
   {
-    "id": "feature3",
-    "buttonText": "Data sharing and storage",
-    "buttonTextMobile": "Data",
-    "title": "Data sharing and storage",
+    "title": "Scalable High Availability",
+    "imageFolder": "./images/pictograms/",
+    "imageFile": "scalable_pictogram_blue.png",
+    "imageAlt": " scalability.",
+    "content": "Node-RED applications can be run in High Availability mode to allow the applications to scale up to meet spikes in demand. Even with instance failures, we ensure continuous operations by automatically switching to another Node-RED instance."
+  },
+  {
+    "title": "Data Sharing and Storage",
     "imageFolder": "./images/pictograms/",
     "imageFile": "connect_device_blue.png",
-    "imageAlt": " data sharing and storage.",
-    "content": "FlowFuse adds to a Node-RED environment the ability to share information between instances and persistent data, including:",
-    "list": [
-        "Persistent file storage allows Node-RED flows to read and write files from storage. These files can be shared between instances, persist beyond instance restarts and containers.",
-        "In-memory variables defined in a Node-RED flow can persist across instance restarts and upgrades.",
-        "New FlowFuse Project Nodes enable the passing of data and messages between your Node-RED projects, ideal for communicating between Node-RED instances deployed at the edge and Node-RED instances deployed in the cloud."
-        ]
-  },
-  {
-    "id": "feature4",
-    "buttonText": "Edge Management",
-    "buttonTextMobile": "Edge",
-    "title": "Remote device management at the edge",
+    "imageAlt": " data sharing and storage",
+    "content": "FlowFuse adds to a Node-RED environment the ability to share information between instances and persistent data. FlowFuse Project Nodes facilitate data and message exchange between Node-RED projects, ideal for edge-to-cloud communication."
+  },{
+    "title": "Remote Device Management at the Edge",
     "imageFolder": "./images/pictograms/",
     "imageFile": "edge_blue.png",
     "imageAlt": " edge management.",
-    "content": "FlowFuse allows you to deploy and manage Node-RED instances out to edge devices. This allows you to deploy the exact same instance out to hundreds or thousands of edge devices and monitor their status.",
-    "list": [
-        "Easy onboarding of new devices through an administrative UI or an automated process.",
-        "Management interface to monitor the status of your Node-RED deployment on each device.",
-        "Consistent deployment of Node-RED instance snapshots out to all of you devices that allow for quick deployment and redeployment of versions of flows.",
-        "The ability to remotely access the Node-RED editor on remote devices to debug, troubleshoot and correct production errors."
-        ]
-  }],
-  "secondary":[{
-    "title": "Centralized Instance Management",
-    "content": "FlowFuse enables seamless management of multiple instances from a single platform, streamlining your development and coordination efforts.",
-    "videoid": "KOnQnR7yfT0",
-    "videoThumbnail": "../../images/features/features-instance.jpg"
+    "content": "FlowFuse allows you to deploy and manage Node-RED instances out to <a href='/solutions/device-management/'>edge devices</a>. This allows you to deploy the exact same instance out to hundreds or thousands of edge devices and monitor their status."
   },{
-    "title": "Simplified Hosting and Maintenance",
-    "content": "Experience ease of use with FlowFuse Cloud, handling all your hosting needs. Forget the complexities of maintaining your development environment; we've got it covered.",
-    "videoid": "Ec4yvcvGmu8",
-    "videoThumbnail": "../../images/features/features-hosting.jpg"
+    "title": "Software Delivery Pipelines",
+    "imageFolder": "./images/pictograms/",
+    "imageFile": "pipeline_blue.png",
+    "imageAlt": " a DevOps pipeline.",
+    "content": "DevOps pipelines can be set up to stage Node-RED instances that have different development stages such as test, development and production."
   },{
-    "title": "Software Delivery Pipelines and Version History",
-    "content": "FlowFuse allows software development teams to establish software delivery pipelines that are common for teams that have embraced DevOps practices.",
-    "list": [
-      "DevOps pipelines can be set up to stage Node-RED instances that have different development stages, ex. Test, development and production.",
-      "Snapshots of Node-RED instances can be taken to create a version history of the development work. Previous snapshot versions can be rolled back at any time."
-      ],
-    "videoid": "Pbql22f3vqY",
-    "videoThumbnail": "../../images/features/features-pipelines.jpg"
+    "title": "Version History",
+    "imageFolder": "./images/pictograms/",
+    "imageFile": "snapshot_blue.png",
+    "imageAlt": " snapshots.",
+    "content": "Snapshots of Node-RED instances can be taken to create a version history of the development work. Previous snapshot versions can be rolled back at any time."
   },{
-    "title": "Team Development",
-    "content": "Node-RED team development is made possible with FlowFuse. Different development team members are able to share and collaborate on the same Node-RED instance. This makes for much easier collaboration between Node-RED developers.",
-    "list": [
-      "Team membership and access control is controlled from a central administration console.",
-      "Role based access control allows for restrictions on what team members can access and do while using the FlowFuse platform."
-      ],
+    "title": "Team Collaboration",
     "imageFolder": "../images/pictograms/",
     "imageFile": "collaboration_blue.png",
-    "imageAlt": " a team."
+    "imageAlt": " a team.",
+    "content": "Different development team members are able to share and develop on the same Node-RED instance making collaboration easier. Role based access control (RBAC) allows for restrictions on what team members can access and do while using the FlowFuse platform."
   },{
-    "title": "Security Built-in to your Node-RED instances",
-    "content": "FlowFuse has built-in security for your Node-RED instances.",
-    "list": [
-      "All Node-RED instances are accessed using TLS/SSL.",
-      "Single Sign-on (SSO) allows for users to sign in to FlowFuse using an existing SAML identity provider.",
-      "Audit logs keep track of all changes that occur to a Node-RED instance and which user was responsible for the change."
-      ],
+    "title": "Built-in Security",
     "imageFolder": "../images/pictograms/",
     "imageFile": "security_blue.png",
-    "imageAlt": " a lock."
+    "imageAlt": " a lock.",
+    "content": "All Node-RED instances are accessed using TLS/SSL. Single Sign-on (SSO) allows for users to sign in to FlowFuse using an existing SAML identity provider and Audit logs keep track of all changes that occur to a Node-RED instance and which user was responsible for the change."
   },{
-    "title": "Certified Nodes for Reliability and Security",
-    "content": "FlowFuse offers a curated collection of certified nodes, ensuring top-notch quality, security, and support. Explore our certified nodes on the <a href='/certified-nodes'>Certified Nodes Page</a> and benefit from a robust ecosystem while maintaining operational reliability.",
+    "title": "Certified Nodes",
     "imageFolder": "../images/pictograms/",
     "imageFile": "certified-nodes_blue.png",
-    "imageAlt": " certifying badge."
-  }]
-}
+    "imageAlt": " certifying badge.",
+    "content": "Our curated collection of certified nodes, ensuring top-notch quality, security, and support. Explore our certified nodes on the <a href='/certified-nodes'>Certified Nodes Page</a> and benefit from a robust ecosystem while maintaining operational reliability."
+  }
+]
