@@ -346,19 +346,6 @@ eleventyComputed:
             </div>
         </div>
     </footer>
-    <script>
-        // Adjust anchors so they don't get hidden behind the sticky header
-        function adjustAnchor() {
-            window.scrollBy(0, -70);
-        }
-
-        window.addEventListener('hashchange', adjustAnchor);
-
-        // Run adjustAnchor on page load if there's a hash
-        if (window.location.hash) {
-            window.addEventListener('load', adjustAnchor);
-        }
-    </script>
 </body>
 <script>
     document.getElementById('nav-toggle').onclick = function(){
