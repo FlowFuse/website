@@ -774,31 +774,6 @@ h4:hover .header-anchor {
     text-fill-color: transparent;
 }
 
-.features-card{
-    @apply flex flex-wrap flex-col justify-between h-full bg-gray-50 rounded-3xl px-5 pb-5;
-}
-.feature-button {
-    background-color: transparent;
-    color: theme(colors.gray.500);
-    text-transform: capitalize;
-    display: inline-block;
-    padding: 8px 18px;
-    font-weight: 400;
-    border: 1px solid theme(colors.gray.200);
-    border-radius: 24px;
-    transition: all 0.5s ease;
-}
-
-.feature-button.active {
-    background-color: theme(colors.indigo.100);
-    color: theme(colors.indigo.800);
-    border: 1px solid theme(colors.indigo.200);
-    box-shadow:  inset 4px 4px 9px theme('colors.indigo.100'), 
-                 inset -4px -4px 9px theme('colors.white'), 
-                 3px 3px 9px theme('colors.indigo.100'), 
-                 -3px -3px 9px theme('colors.white');
-}
-
 .testimonial-button span {
     background-color: theme(colors.gray.100);
     display: inline-block;
@@ -813,7 +788,6 @@ h4:hover .header-anchor {
     border: 1px solid theme(colors.indigo.300);
 }
 
-.feature,
 .testimonial {
     transition: opacity 0.7s ease, transform 0.7s ease;
     opacity: 0;
@@ -823,7 +797,6 @@ h4:hover .header-anchor {
     transform: translateX(20px);
 }
 
-.feature.active,
 .testimonial.active {
     opacity: 1;
     visibility: visible;
