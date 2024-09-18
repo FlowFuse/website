@@ -68,7 +68,7 @@ All user data is stored in a relational database.
 
 _FlowFuse Cloud_: Data is stored in a PostgreSQL database. All data is encrypted using the industry standard AES-256 encryption algorithm.
 
-_FlowFuse Cloud_: All users files are stored at rest in an Encrypted AWS EFS volume, using the AES-256 encryption algorithm. [Persistent Storage](/changelog/2024/07/persistent-storage/)
+_FlowFuse Cloud_: All persistent users files are stored at rest in an Encrypted AWS EFS volume, using the AES-256 encryption algorithm. [Persistent Storage](/changelog/2024/07/persistent-storage/)
 
 #### Data residency
 
