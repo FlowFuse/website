@@ -153,6 +153,7 @@ For demonstration purposes, we will implement a `for` loop.
        newMsg.payload = msg.payload[i]; // Set payload to the current item
        node.send(newMsg); // Send the message
    }
+   ```
 3. Drag a **Debug** node onto the canvas and connect it to the output of the **Function** node.
 
 When you deploy the flow and click the Inject button, each item in the array will be sent as a separate message and printed in the debug panel. This works because the `node.send()` method allows you to send messages asynchronously. Unlike `return`, which ends the execution of the **Function** node immediately, `node.send()` continues to process and send each message without halting the loop.
