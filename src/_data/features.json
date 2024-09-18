@@ -48,7 +48,7 @@
     "imageFolder": "../images/pictograms/",
     "imageFile": "collaboration_blue.png",
     "imageAlt": " a team.",
-    "content": "Different development team members are able to share and develop on the same Node-RED instance making collaboration easier. <a href='/blog/2024/04/role-based-access-control-rbac-for-node-red-with-flowfuse'>[Role based access control (RBAC)</a> allows for restrictions on what team members can access and do while using the FlowFuse platform."
+    "content": "Different development team members are able to share and develop on the same Node-RED instance making collaboration easier. <a href='/blog/2024/04/role-based-access-control-rbac-for-node-red-with-flowfuse'>Role based access control (RBAC)</a> allows for restrictions on what team members can access and do while using the FlowFuse platform."
   },{
     "title": "Built-in Security",
     "imageFolder": "../images/pictograms/",
