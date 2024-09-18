@@ -118,9 +118,11 @@ When running the FlowFuse Device Agent on a user's own hardware and network, it 
  - `mqtt.flowfuse.com`
  - `registry.npmjs.org` - to enable installing of Node-RED modules
 
-When running the Node-RED editor on a user's own netwotk, it will require access to the following domains to be fully operational:
+When running the Node-RED editor on a user's own network, it will require access to the following domains to be fully operational:
 
 - `app.flowfuse.com`
+- `mqtt.flowfuse.com`
+- `*.flowfuse.cloud`
 - `catalogue.nodered.org`
   
 Outbound connections from Node-RED instances running within FlowFuse Cloud will always come from the IP address `63.33.85.112`. 
