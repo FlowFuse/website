@@ -9,64 +9,149 @@ sitemapPriority: 0.8
 ---
 
 <div class="nohero w-full">
-    <!--Hero Content-->
-    <div class="w-full pt-12 pb-16 md:px-0 border-b-4 border-gray-100">
-        <div class="container m-auto max-w-screen-lg px-6 max-w-4xl">
-            <div class="text-center">
-                <h1 class="mt-0 md:px-12 m-auto">
-                    FlowFuse Features
-                </h1>
-                <h3 class="mt-6 text-2xl font-light md:px-24">
-                    FlowFuse provides the features companies require to reliably deliver Node-RED applications to devices and cloud in a collaborative, secure manner.
-                </h3>
-            </div>
-            {% include "feature_lists/main-features.njk" %}
-        </div>
-    </div>
-    {%- for f in features.secondary -%}
-    <div class="w-full {% if loop.index is even %}bg-gray-50{% else %}bg-white{% endif %} py-12 px-0">
-        <div class="container m-auto max-w-screen-lg prose">
-            <div class="flex px-6 flex-col flex-col-reverse md:flex-row{% if loop.index is even %}-reverse{% endif %} gap-6 sm:gap-x-8 sm:gap-y-0 md:items-center">
-                <div class="{% if f.videoid %}md:w-[480px]{% endif %}">
-                    <h3 class="flex items-center gap-4 text-center md:text-left w-full">
-                        <div class="flex flex-col leading-9 text-3xl mb-4 w-full">
-                            {{ f.title }}
-                        </div>
+    <div class="w-full px-6">
+        <div class="pt-12 pb-20 max-w-screen-lg mx-auto">
+            <!--Hero Content-->
+            <div class="container text-center max-w-4xl mx-auto">
+                    <h1 class="m-auto leading-normal">
+                        FlowFuse Platform <span class="text-indigo-600">Features</span>
+                    </h1>
+                    <h3 class="text-xl text-indigo-400 mt-6 sm:mt-1">
+                        Low-Code Development Meets Industrial Strength
                     </h3>
-                    <p class="mb-0">
-                        {{ f.content | safe }}
-                    </p>
-                    <ul>
-                        {% if f.list %}
-                        {%- for item in f.list -%}
-                        <li>{{ item }}</li>
-                        {%- endfor -%}
-                        {% endif %}
-                    </ul>
-                </div>
-                {% if f.videoid %}
-                <div class="flex justify-center items-center w-full px-1 md:px-2.5 md:w-[461px] bg-contain bg-center bg-no-repeat md:my-6">
-                    <div class="flex justify-center items-center w-[90%] md:w-full">
-                        <lite-youtube videoid="{{ f.videoid }}" params="rel=0"
-                            class="aspect-video bg-cover bg-top bg-no-repeat border-2 border-indigo-100 rounded-md"
-                            style="background-image: url('{{ f.videoThumbnail }}'); width: 442px; aspect-ratio: 16 / 9; background-repeat: no-repeat;"></lite-youtube>
+                    <p class="text-center m-auto mt-6">Bridging the gaps between OT and IT, FlowFuse provides a comprehensive platform for all your industrial data connectivity needs, delivered with enterprise-grade control and security.</p>
+                    <div class="m-auto my-8 flex gap-6 items-center justify-center flex-row">
+                        <!-- <a class="ff-btn ff-btn--primary flex flex-col max-xl:mb-6" href="future form">
+                            <span class="text-base uppercase items-center">
+                                DOWNLOAD PLATFORM OVERVIEW
+                            </span>
+                        </a> -->
+                        <a class="ff-btn ff-btn--primary-outlined flex flex-col" href="/contact-us"
+                            onclick="capture('cta-contact-us', {'position': 'hero'})">
+                            <span class="text-base flex gap-2 uppercase items-center">
+                                Contact us
+                            </span>
+                        </a>
+                    </div>
+                    <div class="max-w-[750px] m-auto border-indigo-300 border-2 ff-image-cover rounded-md">
+                        {% image "./images/features/flowfuse-features-hero.png", "FlowFuse Features", [750] %}
+                    </div>
+            </div>
+            <!--Low-code-->
+            <div class="mt-24">
+                <h2 class="mb-10 max-sm:text-center">
+                    <span class="text-indigo-600">Low-Code</span> Development
+                </h2>
+                <section>
+                        <div class="float-left min-w-[110px] w-[110px] md:w-[135px] mr-6 mb-3 ff-image-rounded rounded-md border-2 border-white shadow-2xl">
+                            {% image "./images/node-red-icon.png", "Node-RED logo", [131] %}
+                        </div>
+                    <p><a href="/node-red">Node-RED</a> is at the core of the FlowFuse platform. The low-code visual programming environment is the development experience you enjoy when using FlowFuse. This includes accessing the large community of Node-RED nodes to connect with various protocols, hardware platforms, databases, services, and more. Led by the creator of Node-RED and CTO of FlowFuse, Nick O’Leary, our team is deeply invested in the Node-RED Community and is committed to the success of the open-source project.</p>
+            <!-- Industrial Automation -->
+            <div class="w-full pt-2 mt-16">
+                <div class="max-w-md sm:max-w-screen-lg mx-auto">
+                    <div class="mx-auto w-full md:max-w-screen-lg gap-x-8 gap-y-14">
+                        <div class="grid grid-cols-1 gap-6 sm:grid-cols-2">
+                            {% set sections = [
+                            {
+                            title: "Connect",
+                            text: "Integrate seamlessly with industry-standard protocols to ensure secure communication with your
+                            devices.",
+                            svgPath: "components/icons/arrows.svg",
+                            image1: "./images/home/connect_graphic.png",
+                            image1Alt: "Icons of communication protocols",
+                            url: "/solutions/device-management/"
+                            },
+                            {
+                            title: "Collect & Transform",
+                            text: "Gather and standardize data from various sources into a unified format for powerful insights.",
+                            svgPath: "components/icons/data-block.svg",
+                            image1: "./images/home/collect_graphic.png",
+                            image1Alt: "Icons of files formats",
+                            url: "/solutions/data-integration/"
+                            },
+                            {
+                            title: "Visualise",
+                            text: "Turn data into actionable insights with customizable dashboards and real-time monitoring.",
+                            svgPath: "components/icons/chart.svg",
+                            image1: "./images/home/visualise_graphic.png",
+                            image1Alt: "Dashboard charts",
+                            url: "/product/dashboard/"
+                            },
+                            {
+                            title: "Interact",
+                            text: "Control systems directly from the dashboard, enabling real-time adjustments and responsiveness.",
+                            svgPath: "components/icons/bolt.svg",
+                            image1: "./images/home/interact_graphic.png",
+                            image1Alt: "Dashboard charts with interactive elements",
+                            url: "/product/dashboard/"
+                            }
+                            ] %}
+                            {% for section in sections %}
+                            <a href="{{ section.url }}" class="rounded-lg bg-indigo-50/50 p-5 pt-8 flex flex-col gap-6 md:gap-10 md:flex-row hover:bg-indigo-50 hover:no-underline transition ease-in-out duration-300">
+                                <div class="flex flex-col md:min-h-64">
+                                    <div>
+                                        <div class="flex flex-row max-md:justify-center items-center text-indigo-600">
+                                            <div class="w-10 h-10 text-indigo-600 mr-2">
+                                                {% set svgPath = section.svgPath %}
+                                                {% include svgPath %}
+                                            </div>
+                                            <h4 class="text-2xl font-light text-indigo-600">{{ section.title }}</h4>
+                                        </div>
+                                        <p>{{ section.text }}</p>
+                                    </div>
+                                    <div class="flex flex-grow items-center max-md:mt-6">
+                                        {% image section.image1, section.image1Alt, [455] %}
+                                    </div>
+                                </div>
+                            </a>
+                            {% endfor %}
+                        </div>
                     </div>
                 </div>
-                {% else %}
-                <div class="flex justify-center items-center md:w-2/5">
-                    <div class="md:w-[250px] -mt-2 md:mb-0 md:mt-0 max-w-[250px]">
-                        {% set imageSrc = [f.imageFolder, f.imageFile] | join %}
-                        {% set imageDescription = ["Image depicting", f.imageAlt] | join %}
-                        {% image imageSrc, imageDescription, [250] %}
-                    </div>
-                </div>
-                {% endif %}
+            </div>
+                </section>
             </div>
         </div>
     </div>
-    {%- endfor -%}
-    <div class="w-full border-t pt-6">
-        {% include "common-cta.njk" %}
+    <!--FlowFuse-->
+    <div class="w-full bg-gray-50 px-6">
+        <div class="max-w-screen-lg flex flex-col sm:grid sm:grid-cols-2 gap-6 mx-auto pt-16 pb-20">
+            <div class="col-span-2">
+            <h2 class="mb-6 max-sm:text-center">FlowFuse Operationalises Node-RED</h2>
+            <p>In an enterprise environment, Node-RED deployments need to be more robust. FlowFuse bridges the gap, offering key features like robust security protocols to protect sensitive data, streamlined management tools for effortless scaling, and compliance frameworks to ensure adherence to industry standards. With FlowFuse, your Node-RED solutions evolve from agile prototypes to enterprise-grade powerhouses, ready to tackle the complexities of your business operations.</p>
+            </div>
+            {%- for f in features -%}
+            <div class="container prose border-2 border-indigo-100 rounded-lg p-6">
+                <div class="md:items-center">
+                    {% if f.imageFile %}
+                    <div class="flex justify-center items-center w-full">
+                        <div class="w-[100px] sm:w-[143px] mb-2">
+                            {% set imageSrc = [f.imageFolder, f.imageFile] | join %}
+                            {% set imageDescription = ["Image depicting", f.imageAlt] | join %}
+                            {% image imageSrc, imageDescription, [250] %}
+                        </div>
+                    </div>
+                    {% endif %}
+                    <div>
+                        <h4 class="w-full text-center font-semibold max-sm:mt-3">
+                            {{ f.title }}
+                        </h4>
+                        <p class="mb-0">
+                            {{ f.content | safe }}
+                        </p>
+                        <ul>
+                            {% if f.list %}
+                            {%- for item in f.list -%}
+                            <li>{{ item }}</li>
+                            {%- endfor -%}
+                            {% endif %}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        {%- endfor -%}
+        </div>
     </div>
 </div>
 
