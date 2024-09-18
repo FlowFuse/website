@@ -42,7 +42,7 @@
     "imageFolder": "./images/pictograms/",
     "imageFile": "snapshot_blue.png",
     "imageAlt": " snapshots.",
-    "content": "[Snapshots](/docs/user/snapshots/#snapshots) of Node-RED instances can be taken to create a version history of the development work. Previous snapshot versions can be rolled back at any time."
+    "content": "<a href='/docs/user/snapshots/#snapshots'>Snapshots</a> of Node-RED instances can be taken to create a version history of the development work. Previous snapshot versions can be rolled back at any time."
   },{
     "title": "Team Collaboration",
     "imageFolder": "../images/pictograms/",
