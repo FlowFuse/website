@@ -118,7 +118,7 @@ When running the FlowFuse Device Agent on a user's own hardware and network, it 
  - `mqtt.flowfuse.com`
  - `registry.npmjs.org` - to enable installing of Node-RED modules
 
-Outbound connections from Node-RED isntances running within FlowFuse Cloud will always come from the IP address `63.33.85.112`. 
+Outbound connections from Node-RED instances running within FlowFuse Cloud will always come from the IP address `63.33.85.112`. 
  
 ## Organisation
 
