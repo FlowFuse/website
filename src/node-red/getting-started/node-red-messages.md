@@ -29,7 +29,7 @@ Messages are crucial because they carry the data that powers your workflows—wh
 
 A [JavaScript object](https://www.youtube.com/watch?v=BRSg22VacUA) is a data structure used to store multiple values in a single variable. It consists of key-value pairs, where each key (or property) is associated with a specific value. This organization allows you to group and access related data easily.
 
-For example:
+ For example: 
 
 ```javascript
 {
@@ -39,11 +39,11 @@ For example:
 }
 ```
 
-In this example, `name`, `age`, and `married` are properties of the object stored in the `person` variable, each holding a specific piece of information related person. Similarly, Node-RED messages use this structure to organize and transport data within your flows.
+In this example, `name`, `age`, and `married` are properties of the object. Similarly, Node-RED messages use this structure to organize and transport data within your flows.
 
 ## Anatomy of Node-RED Messages
 
-In Node-RED, messages are by default referred to as `msg`, and nodes are designed to work with this naming convention. Even if you modify the message object’s name to something else using a function node, it will still be converted and processed as `msg` by Node-RED.
+In Node-RED, messages are by default referred to as `msg`, and nodes are designed to work with this naming convention.
 
 Node-RED messages consist of several key properties essential for data handling and communication between nodes:
 
@@ -76,8 +76,6 @@ The **Change** node in Node-RED provides a user-friendly way to modify and clone
 
 Here's how you can use the Change node to handle message properties:
 
-#### Cloning Message Properties
-
 1. Double-click on the **Change** node to open its configuration dialog.
 2. You will see an interface with an existing item added by default.
 3. On the left side of the field, you will see options like **"Set"**, **"Change"**, **"Delete"**, and **"Move"**. You can use these options to perform the corresponding operations on the message.
@@ -88,8 +86,6 @@ For more information on the Change node and to explore other actions such as **D
 ### Using Function node
 
 In the function node, you can clone messages or specific properties using JavaScript. Here's how you can do it:
-
-#### Cloning entire message 
 
 ```js
 // Clone the entire message
@@ -112,8 +108,6 @@ newMsg.payload = "Modified data";
 return msg
 ```
 
-#### Cloning Message Properties
-
 If you only need to clone specific properties of a message, you can do this by manually copying the properties you need:
 
 ```js
@@ -131,16 +125,12 @@ Node-RED messages, as mentioned earlier, are JavaScript objects, making them hig
 
 To add new properties to a message, you can use either the **Change** node or the **Function** node.
 
-#### Adding Properties with the Change Node
-
 The **Change** node allows you to easily append new properties to the `msg` object without writing any code. Here's how to do it:
 
 1. Drag a **Change** node into your flow and double-click it to open the configuration.
 2. Select the **"Set"** action from the left dropdown menu.
 3. In the **"Property"** field, enter the new property name (e.g., `msg.customData`).
 4. In the **"To"** field, enter the value you want to assign to this property. This can be a string, number, boolean, or even an expression.
-
-#### Adding Properties with the Function Node
 
 If you prefer more control, you can add new properties directly through the **Function** node using JavaScript.
 
