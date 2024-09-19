@@ -78,7 +78,7 @@ FlowFuse also simplifies [monitoring and controlling remote devices](/solutions/
 
 With FlowFuse, you can easily [monitor logs](/docs/user/logs/#logs) for each instance and receive instant alerts via email if any crashes occur. The platform also provides the ability to add [high availability](/docs/user/high-availability/) to instances quickly, ensuring that your production applications run smoothly and efficiently.
 
-Flowfuse has various other [features](/product/features/) that makes connecting with diffrent hardwares, colllectin data from devices and systems, tranforming them to fit needs and visualizing in in the fully customized powerfull [flowfuse dashboard](dashboard.flowfuse.com)
+Flowfuse has various other [features](/product/features/) that makes connecting with diffrent hardwares, colllectin data from devices and systems, tranforming them to fit needs and visualizing in in the fully customized powerfull [flowfuse dashboard](https://dashboard.flowfuse.com/)
 
 ## How This Platform Helps in Production
 
