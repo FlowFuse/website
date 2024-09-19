@@ -3,7 +3,7 @@ eleventyNavigation:
   key: Node-RED Messages
   parent: Getting Started
 meta:
-  title: Understanding Node-RED Message Objects
+  title: Understanding Node-RED Messages
   description: A practical guide to working with Node-RED messages, ensuring error-free flows and optimized data handling.
   keywords: msg.payload node red, node red message structure, node-red messages, node red msg.payload, msg.payload, node red msg.payload array
 ---
