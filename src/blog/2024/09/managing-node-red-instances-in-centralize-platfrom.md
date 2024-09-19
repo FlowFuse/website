@@ -68,8 +68,6 @@ Imagine a centralized platform that makes managing multiple Node-RED instances e
 
 ## FlowFuse: Centralize Your Node-RED Management
 
-<iframe class="w-full h-auto" src="https://www.youtube.com/embed/PkuCa_wB5jU?autoplay=1" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
 [FlowFuse](/) is a cloud-based platform that simplifies the creation and management of Node-RED instances. With just a few clicks, you can create as many instances as needed. The platform provides a visual interface to manage configurations and settings for each instance easily. 
 
 Instances can be organized into [teams](/docs/user/team/#teams) for better collaboration. FlowFuse allows you to manage permissions for team members, enabling seamless teamwork on projects without needing to move between different instance locations.
