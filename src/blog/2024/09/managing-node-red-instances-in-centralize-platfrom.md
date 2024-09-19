@@ -32,7 +32,7 @@ stories:
       url: "/customer-stories/leveraging-node-red-and-flowfuse-to-automate-precision-manufacturing"
 ---
 
-
+{% from "stories/customer-story.njk" import storyTile %}
 
 Managing a single Node-RED instance involves setting up a server and configuring it—a task that can be intricate. However, the complexity multiplies when overseeing multiple Node-RED instances distributed across various projects, devices, or environments. This scenario presents additional challenges that can make management a daunting task.
 
