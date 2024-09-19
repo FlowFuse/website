@@ -46,13 +46,13 @@
   },{
     "title": "Team Collaboration",
     "imageFolder": "../images/pictograms/",
-    "imageFile": "collaboration_blue.png",
+    "imageFile": "users_blue.png",
     "imageAlt": " a team.",
     "content": "Different development team members are able to share and develop on the same Node-RED instance making collaboration easier. <a href='/blog/2024/04/role-based-access-control-rbac-for-node-red-with-flowfuse'>Role based access control (RBAC)</a> allows for restrictions on what team members can access and do while using the FlowFuse platform."
   },{
     "title": "Built-in Security",
     "imageFolder": "../images/pictograms/",
-    "imageFile": "security_blue.png",
+    "imageFile": "security_pictogram_blue.png",
     "imageAlt": " a lock.",
     "content": "All Node-RED instances are accessed using TLS/SSL. Single Sign-on (SSO) allows for users to sign in to FlowFuse using an existing SAML identity provider and Audit logs keep track of all changes that occur to a Node-RED instance and which user was responsible for the change."
   },{
