@@ -1,14 +1,14 @@
 ---
-title: Understanding Node-RED Message Objects
-subtitle: A practical guide to working with Node-RED messages, ensuring error-free flows and optimized data handling.
-description: Learn how to effectively manage Node-RED message objects, avoid common mistakes, and optimize your flows for better performance. This guide covers the structure of messages, best practices for handling data, and troubleshooting tips to ensure efficient and error-free workflows.
-date: 2024-09-05
-authors: ["sumit-shinde"]
-image: 
-tags:
-   - post
-   - nodered
+eleventyNavigation:
+  key: Node-RED Messages
+  parent: Getting Started
+meta:
+  title: Understanding Node-RED Message Objects
+  description: A practical guide to working with Node-RED messages, ensuring error-free flows and optimized data handling.
+  keywords: msg.payload node red, node red message structure, node-red messages, node red msg.payload, msg.payload, node red msg.payload array
 ---
+
+# {{ meta.title }}
 
 Node-RED relies on passing messages between nodes to build dynamic IoT, automation, and data-processing workflows. Each message carries data that nodes modify, process, or analyze, so understanding how these messages are structured and handled is crucial. Mismanaging messages can lead to subtle bugs, such as overwriting data, infinite loops, or crashes. To prevent errors and build reliable flows, it’s essential to know how to work with messages efficiently.
 
@@ -156,6 +156,30 @@ msg.customData = {
 return msg;
 ```
 
+### Handling JSON Messages
+
+In Node-RED, working with [JSON](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/JSON) is common, especially when dealing with APIs, IoT data. JSON (JavaScript Object Notation) is a lightweight format for data exchange, and Node-RED simplifies the process of sending and receiving JSON objects.
+
+There are two forms of JSON that you may encounter when working with Node-RED:
+
+1. **JSON Object**: This is a simple, structured JavaScript object that can be easily manipulated in Node-RED. You can access its properties, modify its values, and pass it through various nodes in your flow.
+
+2. **JSON String**: A JSON string is a serialized version of a JSON object, commonly used when transmitting data between systems. Unlike a normal object, you cannot manipulate a JSON string directly in the same way you would with a JavaScript object.
+
+#### Converting JSON String to JSON Object
+
+To handle a JSON string as a normal JavaScript object, you first need to convert it into a JSON object. Node-RED provides a `JSON` node that simplifies this process. The `JSON` node parses the string and converts it into an object, allowing you to handle it like any other structured data within your flow.
+
+Here are the steps to achieve this:
+
+1. Drag the JSON node onto the Node-RED canvas.
+2. Double-click on the JSON node to configure it.
+3. Set the action to "Always convert to a JSON object" and click "Done."
+4. Connect the input of the JSON node to the output of the node that is sending the JSON string.
+5. Connect the output of the JSON node to the input of the next node in your flow that needs the parsed JSON object.
+
+By following these steps, the JSON node will convert the incoming JSON string into a usable JavaScript object within your Node-RED flow, for more information refer to [JSON node documentation](/node-red/core-nodes/json/).
+
 ## Common Mistakes to Avoid with Node-RED Messages
 
 When working with messages in Node-RED, avoiding these common mistakes can help ensure your flows run smoothly and as expected:
@@ -202,3 +226,13 @@ This mistake often occurs in the change node where an inject node sends `msg.pay
 - **Returning an Incorrect Data Type**: Node-RED flows expect messages to be passed along as objects. Returning an incorrect data type, such as a string or number break the flow and will throw an error.
 
 - **Forgetting to Return the Message**: In function nodes, if you modify a message but forget to return it, the flow will stop at that node.
+
+By mastering the intricacies of Node-RED message objects and avoiding common pitfalls, you can build more robust and efficient workflows. Understanding how to work with JSON data, cloning messages, and correctly handling properties ensures that your data flows smoothly between nodes.
+
+As you continue exploring and building with Node-RED, keep these best practices in mind to maintain error-free and high-performance flows. 
+
+### Up Next 
+
+- [Understanding Node, Flow, Global, and Environment Variables in Node-RED](/blog/2024/05/understanding-node-flow-global-environment-variables-in-node-red/)
+- [How to Filter, Map, Sort, and Reduce Data in Node-RED](/blog/2024/06/filtering-mapping-sorting-reducing-with-node-red/).
+- [How to Use If-Else Logic in Node-RED: A Step-by-Step Guide](/blog/2024/09/node-red-if-else-logic-guide/)
