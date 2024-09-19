@@ -39,7 +39,7 @@ For example:
 }
 ```
 
-In this example, `name`, `age`, and `married` are properties of the `person` object, each holding a specific piece of information related person. Similarly, Node-RED messages use this structure to organize and transport data within your flows.
+In this example, `name`, `age`, and `married` are properties of the object stored in the `person` variable, each holding a specific piece of information related person. Similarly, Node-RED messages use this structure to organize and transport data within your flows.
 
 ## Anatomy of Node-RED Messages
 
