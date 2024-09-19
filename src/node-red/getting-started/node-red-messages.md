@@ -32,11 +32,11 @@ A [JavaScript object](https://www.youtube.com/watch?v=BRSg22VacUA) is a data str
 For example:
 
 ```javascript
-const person = {
+{
   name: "Bob",
   age: 24,
   married: true
-};
+}
 ```
 
 In this example, `name`, `age`, and `married` are properties of the `person` object, each holding a specific piece of information related person. Similarly, Node-RED messages use this structure to organize and transport data within your flows.
