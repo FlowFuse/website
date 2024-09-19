@@ -16,8 +16,6 @@ Node-RED relies on passing messages between nodes to build dynamic IoT, automati
 
 In this guide, we’ll explore the inner workings of Node-RED messages, common mistakes, and best practices for ensuring smooth data flow without errors.
 
----
-
 ## What Are Node-RED Messages?
 
 In Node-RED, messages are packets of data that travel between nodes in your flow. Node-RED is event-driven, meaning an event emitter triggers events, and a listener reacts to them. In this context, nodes in Node-RED act as both event emitters and listeners, with messages serving as the medium through which these events are communicated. These messages represent the information that nodes read, modify, and act upon. Each node processes these messages and passes them along to the next node in the sequence.
