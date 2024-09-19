@@ -61,9 +61,9 @@ When working with Node-RED messages, it’s essential to understand the data typ
 
 It is possible, however, to send `null` as a message. This is often used when you don't want to send any data further along the flow, as `null` effectively stops the message from propagating to subsequent nodes.
 
-Talking about message properties, there values can be any type of javascript supported data such as [string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String), [number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number), [array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array), [boolean](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean), [object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object), [buffer](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer) and other complex datatypes.
+Talking about message properties, their values can be any type of javascript supported data such as [string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String), [number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number), [array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array), [boolean](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean), [object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object), [buffer](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer) and other complex datatypes.
 
-![Inject node sending diffrent data types](./images/node-red-data-types.gif){data-zoomable}
+![Inject node sending different data types](./images/node-red-data-types.gif){data-zoomable}
 _Image showing the some data types that are supported by Node-RED_
 
 ## How to Clone Messages or Message properties
@@ -76,7 +76,7 @@ The **Change** node in Node-RED provides a user-friendly way to modify and clone
 
 Here's how you can use the Change node to handle message properties:
 
-1. Double-click on the **Change** node to open its configuration dialog.
+1. Double-click on the **Change** node to open its configuration dialogue.
 2. You will see an interface with an existing item added by default.
 3. On the left side of the field, you will see options like **"Set"**, **"Change"**, **"Delete"**, and **"Move"**. You can use these options to perform the corresponding operations on the message.
 4. To clone the property `msg.payload` to `flow.data`, select the **"Set"** action. In the first **"Property"** field, enter `payload`, and in the **"to the value"** field, select **flow** and enter `data`. For cloning `msg` properties to new `msg` properties, select **msg** in the second field and specify the new property name.
@@ -146,7 +146,7 @@ return msg;
 
 ### Handling JSON Messages
 
-In Node-RED, working with [JSON](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/JSON) is common, especially when dealing with APIs, IoT data. JSON (JavaScript Object Notation) is a lightweight format for data exchange, and Node-RED simplifies the process of sending and receiving JSON objects.
+In Node-RED, working with [JSON](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/JSON) is common, especially when dealing with APIs, and IoT data. JSON (JavaScript Object Notation) is a lightweight format for data exchange, and Node-RED simplifies the process of sending and receiving JSON objects.
 
 There are two forms of JSON that you may encounter when working with Node-RED:
 
