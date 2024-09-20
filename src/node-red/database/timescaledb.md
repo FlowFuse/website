@@ -1,23 +1,20 @@
 ---
-title: How to use TimescaleDB with Node-RED
-subtitle: Guide to integrating TimescaleDB into Node-RED for Storing, Updating, and Querying Data.
-description: Learn how to integrate TimescaleDB with Node-RED for storing and managing time-series data efficiently.
-date: 2024-06-19
-authors: ["sumit-shinde"]
-image: /blog/2024/06/images/timescaledb-with-node-red.png
-tags:
-   - posts
-   - node-red
-   - timescaledb
-   - postgresql
-   - time-series database
+eleventyNavigation:
+  key: TimescaleDB
+  parent: Database
+meta:
+  title: Using TimescaleDB with Node-RED
+  description: Learn how to integrate TimescaleDB with Node-RED for storing and managing time-series data efficiently.
+  keywords: node-red timescaledb, nodered postgresql, nodered time-series database
+image: /node-red/database/images/timescaledb-with-node-red.png
 ---
 
-In the context of IoT and IIoT applications, time series databases are essential for storing data based on timestamps. While InfluxDB has been a popular choice for a long time, another time series database, TimescaleDB, is gaining popularity. This article will cover how to use TimescaleDB with Node-RED, how TimescaleDB works, and the queries needed when building IoT applications.
+# {{ meta.title }}
+
+In the context of IoT and IIoT applications, time series databases are essential for storing data based on timestamps. While InfluxDB has been a popular choice for a long time, another time series database, TimescaleDB, is gaining popularity. This guide will cover how to use TimescaleDB with Node-RED, how TimescaleDB works, and the queries needed when building IoT applications.
 
 If you prefer video tutorials, a few months ago, Grey, OT Data & Community Strategist at Flowfuse, conducted a [live session on TimescaleDB](https://www.youtube.com/watch?v=MD1U6LDqJ1c).
 
-<!--more-->
 
 ## What is TimeScaleDB
 
@@ -269,7 +266,3 @@ DROP TABLE IF EXISTS sensor_data;
 1. To test the imported flows, you need to deploy them. To do that, click on the deploy button located in the top right corner.
 
 After deploying the flow, you can test each operation such as creating, deleting, updating, and other queries by clicking on the inject button. Upon successful operation, you will be able to see the results in the debug panel of the sidebar. If you want to learn any additional information about PostgreSQL, you can refer to the [Using PostgreSQL with Node-RED](/blog/2024/02/postgresql-with-node-red/) where you will also find the section which shows the messages received after a successful operation by the PostgresWQL node.
-
-## Conclusion
-
-In this guide, we have demonstrated how to integrate TimescaleDB with Node-RED and covered various operations, including creating hypertables and deleting them, performing data manipulation tasks such as inserting, updating, and deleting data, and executing advanced queries.
