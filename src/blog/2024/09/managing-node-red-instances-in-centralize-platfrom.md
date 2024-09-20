@@ -3,7 +3,7 @@ templateEngineOverride: njk, md
 title: How to Manage Your Node-RED Instances from a Centralized Platform
 subtitle: Simplify Node-RED Instance Management
 description: Learn how to efficiently manage all your Node-RED instances from a single location with FlowFuse, enhancing oversight and streamlining operations.
-date: 2024-09-13
+date: 2024-09-20
 authors: ["sumit-shinde"]
 image: 
 tags:
