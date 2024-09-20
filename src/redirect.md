@@ -73,6 +73,8 @@ redirects:
   - { "from": "/node-red/core-nodes/tcpin/", "to": "/node-red/core-nodes/tcp-in/" }
   - { "from": "/node-red/core-nodes/httpproxy/", "to": "/node-red/core-nodes/http-proxy/" }
   - { "from": "/blueprints/manufacturing/manfacturing-support-request-blueprint/", "to": "/blueprints/manufacturing/manufacturing-support-request/" }
+  - { "from": "/blog/2024/06/filtering-mapping-sorting-reducing-with-node-red/", "to": "/node-red/getting-started/programming/data-tranformation/" }
+  - { "from": "/blog/2024/09/node-red-if-else-logic-guide/", "to": "/node-red/getting-started/programming/if-else/" }
 
 # The "permalink" attribute determines where the output page will be located.
 permalink: "{{ redirect.from }}"
