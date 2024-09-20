@@ -1,6 +1,7 @@
 ---
 eleventyNavigation:
   key: Programming
+  order: 3
   parent: Getting Started
 meta:
   title: Node-RED Programming Concepts

@@ -1,6 +1,7 @@
 ---
 eleventyNavigation:
   key: Editor
+  order: 1
   parent: Getting Started
 meta:
   title: Getting Started with Node-RED Editor
