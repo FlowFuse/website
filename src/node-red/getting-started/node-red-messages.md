@@ -1,6 +1,6 @@
 ---
 eleventyNavigation:
-  key: Node-RED Messages
+  key: Working with Messages
   order: 2
   parent: Getting Started
 meta:
