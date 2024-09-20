@@ -1,24 +1,17 @@
 ---
-title: Using AMQP with Node-RED
-subtitle: Step-by-Step Guide to Enhancing Reliable Messaging in Node-RED with AMQP
-description: Learn how to integrate AMQP with Node-RED for reliable message delivery, advanced routing, and improved data management in your flows.
-date: 2024-09-05
-authors: ["sumit-shinde"]
-image: /blog/2024/09/images/amqp-with-node-red.png
-tags:
-   - post
-   - nodered
-   - node-red amqp
-   - node-red rabbitmq
-   - how to use amqp with node-red
-   - how to use rabbitmq with node-red
-   - amqp node red
-   - rabbitmq node red
+eleventyNavigation:
+  key: AMQP
+  parent: "Communication Protocols"
+meta:
+  title: Using AMQP with Node-RED
+  description: Learn how to integrate AMQP with Node-RED for reliable message delivery, advanced routing, and improved data management in your flows.
+  keywords: node-red amqp, node-red rabbitmq, how to use amqp with node-red, how to use rabbitmq with node-red, rabbitmq node red, amqp node red
+image: /node-red/protocol/images/amqp-with-node-red.png
 ---
 
-Imagine your Node-RED flow working well, handling data from different sources, until suddenly, messages start disappearing or arriving out of order. [MQTT](/node-red/protocol/mqtt/) works fine for basic messaging, but it can struggle in more complex situations where you need delivery guarantees and advanced routing.
+ {{meta.title}}
 
-<!--more-->
+Imagine your Node-RED flow working well, handling data from different sources, until suddenly, messages start disappearing or arriving out of order. [MQTT](/node-red/protocol/mqtt/) works fine for basic messaging, but it can struggle in more complex situations where you need delivery guarantees and advanced routing.
 
 That’s where AMQP comes in. AMQP solves these issues with features that MQTT doesn’t have. In this guide, we'll explain what AMQP is and how to use it with Node-RED.
 
@@ -196,7 +189,3 @@ _Image showing the flow that uses the Headers exchange type to send messages and
 {% endrenderFlow %}
 
 Finally, we configured a Headers type exchange, which routes messages based on attributes in the message headers. The example focused on a factory monitoring system, where updates from machines are routed based on criteria like machine type, status, and priority. This exchange type is powerful for complex routing scenarios where decisions are based on multiple attributes rather than just the routing key.
-
-## Conclusion
-
-In this guide, we delved into the fundamentals of AMQP and its integration with Node-RED. We explored how to set up AMQP nodes, configure various exchange types (Direct, Topic, Fanout, and Headers), and apply them to real-world scenarios. This approach enhances message reliability and routing flexibility in Node-RED flows.

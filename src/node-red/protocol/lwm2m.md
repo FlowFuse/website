@@ -1,22 +1,19 @@
 ---
-title: Using LwM2M with Node-RED
-subtitle: A Step-by-Step Guide to Integrating LwM2M with Node-RED for IoT Device Management
-description: Learn how to integrate LwM2M with Node-RED for effective IoT device management. This guide covers setup, data handling, and remote commands.
-date: 2024-08-27
-authors: ["sumit-shinde"]
-image: /blog/2024/08/images/using-lwm2m-with-node-red.png
-tags:
-   - posts
-   - LwM2M
-   - how to use LwM2M with Node-RED
-   - LwM2M for low-power devices
-   - lwm2m protocol
-   - lightweight m2m
+eleventyNavigation:
+  key: LwM2M
+  parent: "Communication Protocols"
+meta:
+  title: Using LwM2M with Node-RED
+  description: Learn how to integrate LwM2M with Node-RED for effective IoT device management. This guide covers setup, data handling, and remote commands.
+  keywords: how to use lwm2m with node red,  lwm2m protocol, node-red modbus, lightweight m2m with node red
+   modbus
+image: /node-red/protocol/images/using-lwm2m-with-node-red.png
 ---
+
+# {{meta.title}}
 
 IoT devices, especially those designed for low-power operation, can be difficult to manage due to their limited resources and the need for efficient communication and control. This is where LwM2M (Lightweight Machine-to-Machine) comes in. LwM2M is designed to help you monitor, update, and control your devices with minimal overhead, making it ideal for everything from smart sensors to industrial equipment. In this post, we'll explore how you can use LwM2M with Node-RED. It is ideal for anyone starting their journey with LwM2M or Node-RED.
 
-<!--more-->
 
 ## What is LwM2M
 
@@ -33,7 +30,7 @@ In this section, I will demonstrate how you can monitor and control IoT devices 
 - **node-red-contrib-lwm2m:** Install the LwM2M contribution node via the Palette Manager in Node-RED.
 - **LwM2M Server:** Ensure you have a running OMA LwM2M server available and have its configuration details on hand. For more information, refer to [Eclipse Leshan](https://eclipse.dev/leshan/).
 
-*Note: In this article, we have used the Eclipse Leshan demo server for testing and demonstration purposes. It is not recommended for production use due to its security and scalability limitations*
+*Note: In this guide, we have used the Eclipse Leshan demo server for testing and demonstration purposes. It is not recommended for production use due to its security and scalability limitations*
 
 ### Configuring LwM2M Node
 
@@ -133,7 +130,3 @@ _Image showing Node-RED flow that is reading data from LwM2M Server_
 _Image showing Node-RED flow that is writing data to LwM2M Server_
 
 In the same way, you can execute commands from node-red. You have to replace the notion and end that notion with `execute`, like `0/0/4/execute.` When executing the command, you will not have to specify the `msg.payload`.
-
-### Conclusion
-
-Integrating LwM2M with Node-RED provides an efficient way to manage IoT devices remotely. By following the steps in this guide, you can easily monitor, control, and configure your devices, ensuring they operate smoothly and securely.

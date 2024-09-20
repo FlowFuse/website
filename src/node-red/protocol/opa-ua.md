@@ -6,7 +6,7 @@ meta:
    title: Building Secure OPC-UA Server in Node-RED.
    description: Learn how to build Build and Deploy a custom OPC UA Server in Node-RED
    keywords: node-red,flowfuse, opc-ua,
-image: /node-red/hardware/images/opc-ua-2-title-image.png
+image: /node-red/protocol/images/opc-ua-2-title-image.png
 ---
 
 # {{meta.title}}
