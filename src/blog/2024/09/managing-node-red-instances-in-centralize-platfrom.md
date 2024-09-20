@@ -73,8 +73,6 @@ In short, using a centralized platform makes managing many Node-RED instances ea
 
 ## FlowFuse: Centralize Your Node-RED Management
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/PkuCa_wB5jU?autoplay=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
 ![Centralized Node-RED Management](./images/instances.png)
 _Image showing how multiple Node-RED instances are organized and managed under one roof_
 
