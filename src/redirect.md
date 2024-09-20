@@ -79,8 +79,6 @@ redirects:
   - { "from": "/blog/2024/08/using-lwm2m-with-node-red/", "to": "/node-red/protocol/lwm2m/" }
   - { "from": "/blog/2024/07/sending-and-receiving-discord-messages-with-node-red/", "to": "/node-red/notification/discord/" }
 
-
-
 # The "permalink" attribute determines where the output page will be located.
 permalink: "{{ redirect.from }}"
 # The "redirect" layout just has a small html header with the meta tags that do redirection.
