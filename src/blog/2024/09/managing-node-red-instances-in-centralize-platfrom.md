@@ -7,30 +7,31 @@ date: 2024-09-13
 authors: ["sumit-shinde"]
 image: 
 tags:
- - post
- - nodered
+   - post
+   - nodered
 stories:
- - title: "Automating Building Management with FlowFuse & Node-RED"
-      logo: ""
-      image: "/images/stories/power-workplace-diagram.png"
-      brand: "Power Workplace"
-      url: "/customer-stories/node-red-building-management/"
- - title: "The Future of Textile Manufacturing Powered with Node-RED"
-      logo: ""
-      image: "/images/stories/stfi-future-textile.png"
-      brand: "STFI"
-      url: "/customer-stories/stfi-future-of-textile-powered-by-node-red/"
- - title: "Leveraging Node-RED and FlowFuse to Revolutionize Irrigation"
-      logo: ""
-      image: "/images/stories/pidd-view.png"
-      brand: "Paloma Irrigation and Drainage District"
-      url: "/customer-stories/leveraging-node-red-and-flowfuse-to-revolutionize-irrigation"
- - title: "Revolutionizing Precision Manufacturing with Node-RED"
-      logo: ""
-      image: "/images/stories/abrasive_tech.jpg"
-      brand: "Abrasive Technology"
-      url: "/customer-stories/leveraging-node-red-and-flowfuse-to-automate-precision-manufacturing"
+    - title: "Automating Building Management with FlowFuse & Node-RED"
+      logo: ""
+      image: "/images/stories/power-workplace-diagram.svg"
+      brand: "Power Workplace"
+      url: "/customer-stories/node-red-building-management/"
+    - title: "The Future of Textile Manufacturing Powered with Node-RED"
+      logo: ""
+      image: "/images/stories/stfi-future-textile.jpg"
+      brand: "STFI"
+      url: "/customer-stories/stfi-future-of-textile-powered-by-node-red/"
+    - title: "Leveraging Node-RED and FlowFuse to Revolutionize Irrigation"
+      logo: ""
+      image: "/images/stories/pidd-view.png"
+      brand: "Paloma Irrigation and Drainage District"
+      url: "/customer-stories/leveraging-node-red-and-flowfuse-to-revolutionize-irrigation"
+    - title: "Revolutionizing Precision Manufacturing with Node-RED"
+      logo: ""
+      image: "/images/stories/abrasive_tech.jpg"
+      brand: "Abrasive Technology"
+      url: "/customer-stories/leveraging-node-red-and-flowfuse-to-automate-precision-manufacturing"
 ---
+{% from "stories/customer-story.njk" import storyTile %}
 
 Managing a single Node-RED instance involves setting up a server and configuring it—a task that can be intricate. However, the complexity multiplies when overseeing multiple Node-RED instances distributed across various projects, devices, or environments. This scenario presents additional challenges that can make management a daunting task.
 
@@ -100,7 +101,7 @@ _Image showing the snapshot feature in the FlowFuse platform_
 
 With FlowFuse, you can quickly [monitor logs](/docs/user/logs/#logs) for each instance and receive instant alerts via email if any crashes occur. The platform also provides the ability to add [high availability](/docs/user/high-availability/) to instances quickly, ensuring that your production applications run smoothly and efficiently. Additionally, FlowFuse offers an auto-snapshot feature that allows you to recover from accidental changes to flows, ensuring you always have a backup of your application.
 
-FlowFuse has various other [features](/product/features/) that make connecting with different hardware, collecting data from devices and systems, transforming that data to meet your needs, and visualizing it in the fully customized, powerful [FlowFuse dashboard](dashboard.flowfuse.com) easy and efficient.
+FlowFuse has various other [features](/product/features/) that make connecting with different hardware, collecting data from devices and systems, transforming that data to meet your needs, and visualizing it in the fully customized, powerful [FlowFuse dashboard](https://dashboard.flowfuse.com/) easy and efficient.
 
 ## How This Platform Helps in Production
 
