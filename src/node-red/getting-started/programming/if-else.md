@@ -4,7 +4,7 @@ eleventyNavigation:
   parent: Programming
 meta:
   title: How to Use If-Else Logic in Node-RED
-  description:  Learn how to implement If-Else logic in Node-RED with our step-by-step guide. Use Function and S witch nodes for dynamic, conditional flows.
+  description:  Learn how to implement If-Else logic in Node-RED with our step-by-step guide. Use Function and Switch nodes for dynamic, conditional flows.
   keywords: node red if else, nodered switch, node-red conditional flow, node red function if else, node red if then else example, node red switch example, node red switch node example, node red function multiple outputs example, node red function example,node red function if, node red if, node red if node, node red if then
 image: /node-red/getting-started/images/if-else-with-node-red.png
 ---
