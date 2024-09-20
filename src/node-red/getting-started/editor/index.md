@@ -4,7 +4,7 @@ eleventyNavigation:
   order: 1
   parent: Getting Started
 meta:
-  title: Getting Started with Node-RED Editor
+  title: Getting Started with the Node-RED Editor
   description:  Learn about the powerful features of Node-RED Editor.
   keywords: node red editor, node-red editor, nodered flow, node-red flows, nodered workspace
 ---
