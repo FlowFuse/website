@@ -8,6 +8,8 @@ image: /blog/2023/06/images/node-red-dashboard.png
 tags:
     - posts
     - dashboard
+    - nodered dashboard announcement
+    - nodered dashboard depreciated
 ---
 
 For the past several years, the Node-RED Dashboard has been an indispensable tool for many Node-RED users. It has offered a seamless way to create live dashboards, enabling the quick and intuitive creation of user interfaces for Node-RED flows. However, as the saying goes, "all good things must come to an end." 
