@@ -1,19 +1,12 @@
 ---
-title: How to Filter, Map, Sort, and Reduce Data in Node-RED
-subtitle: Step-by-step guide to use the most common data transformation operations like filtering, mapping, sorting and reducing in Node-RED.
-description: Learn how to perform data transformation in Node-RED with a low-code approach.
-date: 2024-06-26
-authors: ["sumit-shinde"]
-image: /blog/2024/06/images/filtering-mapping-sorting-reducing-with-node-red.png
-tags:
-   - posts
-   - node-red
-   - how to filter data in node-red
-   - how to map array in node-red
-   - how to map data in node-red
-   - how to sort data in node-red
-   - how to reduce data in node-red
-   - data transformation in node-red
+eleventyNavigation:
+  key: Data Tranformation
+  parent: Programming
+meta:
+  title: How to Filter, Map, Sort, and Reduce Data in Node-RED
+  description:  Learn how to perform data transformation in Node-RED with a low-code approach.
+  keywords: how to filter data in node-red, how to map array in node-red, how to map data in node-red, how to sort data in node-red, how to reduce data in node-red, data transformation in node-red
+image: /node-red/getting-started/images/filtering-mapping-sorting-reducing-with-node-red.png
 ---
    
 [Node-RED](/node-red/) is a visual programming platform known for its user-friendly interface and low-code approach widely used for IoT application developement. In IoT applications, efficient data processing is crucial, and operations such as filter, map, sort, and reduce are essential for simplifying data transformations. However, many users struggle to implement these operations while sticking to a low-code approach, often relying on function nodes, which can introduce unnecessary complexity. In this guide, we will show you how to filter, map, sort, and reduce data with Node-RED for efficient data tranformation while sticking to low-code approach.
@@ -156,7 +149,3 @@ In this configuration, the Join node is set to reduce sequence mode. The initial
 {% renderFlow %}
 [{"id":"5ff0902202c21e85","type":"inject","z":"977143edb097b685","name":"Inject the sample data","props":[{"p":"payload"}],"repeat":"","crontab":"","once":false,"onceDelay":0.1,"topic":"","payload":"[{\"timestamp\":\"2024-06-17T10:00:00Z\",\"temperature\":298.15},{\"timestamp\":\"2024-06-17T11:00:00Z\",\"temperature\":299.15},{\"timestamp\":\"2024-06-17T10:30:00Z\",\"temperature\":300.15},{\"timestamp\":\"2024-06-17T10:15:00Z\",\"temperature\":301.15},{\"timestamp\":\"2024-06-17T10:45:00Z\",\"temperature\":303.15},{\"timestamp\":\"2024-06-18T09:00:00Z\",\"temperature\":297.15},{\"timestamp\":\"2024-06-18T10:00:00Z\",\"temperature\":300.15},{\"timestamp\":\"2024-06-18T11:00:00Z\",\"temperature\":301.15},{\"timestamp\":\"2024-06-18T12:00:00Z\",\"temperature\":302.15},{\"timestamp\":\"2024-06-19T10:00:00Z\",\"temperature\":298.15},{\"timestamp\":\"2024-06-19T11:00:00Z\",\"temperature\":299.15}]","payloadType":"json","x":580,"y":620,"wires":[["993ffc096c3e8089"]]},{"id":"993ffc096c3e8089","type":"split","z":"977143edb097b685","name":"Splits a message into a sequence of messages.","splt":"\\n","spltType":"str","arraySplt":1,"arraySpltType":"len","stream":false,"addname":"","x":900,"y":620,"wires":[["3bbb68c2dc2a0f5c"]]},{"id":"3bbb68c2dc2a0f5c","type":"change","z":"977143edb097b685","name":"Correcting the temperature property","rules":[{"t":"set","p":"payload.temperature","pt":"msg","to":"payload.temperature - 273.15","tot":"jsonata"}],"action":"","property":"","from":"","to":"","reg":false,"x":1280,"y":620,"wires":[["580210c585730f97"]]},{"id":"01e7066b3ff012e7","type":"join","z":"977143edb097b685","name":"Creating new array by combining message sequence","mode":"custom","build":"array","property":"payload","propertyType":"msg","key":"topic","joiner":"\\n","joinerType":"str","accumulate":false,"timeout":"","count":"","reduceRight":false,"reduceExp":"","reduceInit":"","reduceInitType":"num","reduceFixup":"","x":2060,"y":620,"wires":[["27cc5d5e90f7facd","6116c1efc3f7f682"]]},{"id":"580210c585730f97","type":"switch","z":"977143edb097b685","name":"Routing message sequence based on condition","property":"payload.timestamp","propertyType":"msg","rules":[{"t":"cont","v":"2024-06-17","vt":"str"}],"checkall":"true","repair":true,"outputs":1,"x":1640,"y":620,"wires":[["01e7066b3ff012e7"]]},{"id":"27cc5d5e90f7facd","type":"sort","z":"977143edb097b685","name":"Sorting data based on timestamp","order":"ascending","as_num":false,"target":"payload","targetType":"msg","msgKey":"timestamp","msgKeyType":"jsonata","seqKey":"payload.timestamp","seqKeyType":"jsonata","x":2440,"y":620,"wires":[["f1f93a7b4575daf1"]]},{"id":"362ec9c482688cf6","type":"debug","z":"977143edb097b685","name":"debug 4","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"payload","targetType":"msg","statusVal":"","statusType":"auto","x":3140,"y":740,"wires":[]},{"id":"b9f2f83a330140ca","type":"join","z":"977143edb097b685","name":"Calculating the  the average of temperature","mode":"reduce","build":"object","property":"payload","propertyType":"msg","key":"topic","joiner":"\\n","joinerType":"str","accumulate":true,"timeout":"","count":"","reduceRight":false,"reduceExp":"$A+ payload.temperature","reduceInit":"0","reduceInitType":"num","reduceFixup":"$A/$N","x":2890,"y":740,"wires":[["362ec9c482688cf6"]]},{"id":"f1f93a7b4575daf1","type":"debug","z":"977143edb097b685","name":"debug 3","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"true","targetType":"full","statusVal":"","statusType":"auto","x":2720,"y":620,"wires":[]},{"id":"6116c1efc3f7f682","type":"split","z":"977143edb097b685","name":"Splits a message into a sequence of messages.","splt":"\\n","spltType":"str","arraySplt":1,"arraySpltType":"len","stream":false,"addname":"","x":2460,"y":740,"wires":[["b9f2f83a330140ca"]]}]
 {% endrenderFlow %}
-
-## Conclusion 
-
-Using Node-RED’s low-code approach for filtering, mapping, sorting, and reducing data allows you to process and transform data effectively without relying on complex programming languages. This approach helps maintain flows that are easy to understand and modify which contributes to efficient application development.
