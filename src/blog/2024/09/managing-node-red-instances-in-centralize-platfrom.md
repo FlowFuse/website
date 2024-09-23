@@ -37,7 +37,7 @@ Managing a single Node-RED instance involves setting up a server and configuring
 
 By consolidating control into a single platform, you can simplify deployment, configuration, collaboration, and oversight, making it easier to handle multiple instances efficiently. Lets take a look at how you can centralize the management of your Node-RED instances with FlowFuse. 
 
-## What Is a Node-RED Instance?
+## What is a Node-RED Instance?
 
 A [Node-RED](/node-red/) instance refers to a single, operational setup of the Node-RED application. Whether you start Node-RED on your computer, a cloud server, or an edge device, you create an instance. Each instance operates independently, allowing you to build and run automation flows or applications.
 
