@@ -12,6 +12,8 @@ tags:
 
 Managing a single Node-RED instance involves setting up a server and configuring it—a task that can be complex. The complexity multiplies when overseeing multiple Node-RED instances distributed across various projects, devices, or environments. This scenario presents additional challenges that can make management a daunting task.
 
+<!--more-->
+
 By consolidating control into a single platform, you can simplify deployment, configuration, collaboration, and oversight, making it easier to handle multiple instances efficiently. Lets take a look at how you can centralize the management of your Node-RED instances with FlowFuse. 
 
 ## What is a Node-RED Instance?
