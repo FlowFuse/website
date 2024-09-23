@@ -43,7 +43,7 @@ While there are other tools available that can adapt to a few protocols, or pars
 
 There’s no situation where a vendor provided, off-the-shelf solution handles protocols and formats across vendors, modern and legacy OT, that also satisfies the IT requirements unless the extensibility is handled through an Open-Source community, with compliance and security controls from a professional entity surrounding the open source project.
 
-### How FlowFuse Enhance Node-RED
+### How FlowFuse Enhances Node-RED
 
 While Node-RED is powerful for implementing UNS, its management and deployment can be complex. FlowFuse simplifies this process with a unified platform that offers one-click deployment, secure management, and scalability for Node-RED applications. It enhances collaboration through centralized management of all Node-RED instances, ensuring streamlined operations and increased efficiency.
 
