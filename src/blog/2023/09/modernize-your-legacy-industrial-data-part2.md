@@ -129,7 +129,7 @@ _Image 6: block reads, smart processing, no-code solution_
 
 Node-RED is a powerful tool widely used in IoT and IIoT industries, including manufacturing, automotive, textiles, and building management. It excels at collecting, transforming, visualizing, and analyzing data. While integrating Node-RED into production environments offers numerous benefits, it often involves complex tasks such as deploying the server, managing security, and ensuring scalability. These initial setup challenges can be overwhelming and time-consuming.
 
-FlowFuse simplifies these tasks by providing a unified platform for managing all Node-RED instances. It enhances collaboration, ensures security, and supports scalability, making deployment and management more efficient. With features like snapshots, team collaboration tools, one-click deployment, and multi-factor authentication, FlowFuse streamlines the process and enhances the operational capabilities of Node-RED in production settings.
+FlowFuse simplifies these tasks by providing a unified platform for managing all Node-RED instances. It enhances collaboration, ensures security, and supports scalability, making deployment and management more efficient. With features like [snapshots](/docs/user/snapshots/), team collaboration tools, one-click deployment, and [multi-factor authentication](/docs/user/user-settings/#security), FlowFuse streamlines the process and enhances the operational capabilities of Node-RED in production settings.
 
 **[Sign up](https://app.flowfuse.com/account/create/) now for a free trial and experience FlowFuse's features**
 
