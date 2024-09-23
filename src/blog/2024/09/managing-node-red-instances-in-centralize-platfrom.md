@@ -26,7 +26,7 @@ Managing numerous Node-RED instances can quickly become a complex juggling act a
 
 1. **Deployment and Configuration Management:** Setting up Node-RED instances on a server requires not just solid technical know-how but also ongoing attention. As you scale to thousands of instances, the task becomes a marathon of maintenance and configuration tweaks, consuming valuable time and resources.
 
-2. **Remote Management:** When it comes to managing Node-RED instances on edge devices, the challenges can multiply. Unexpected issues might arise that require an on-site visit for troubleshooting..
+2. **Remote Management:** When it comes to managing Node-RED instances on edge devices, the challenges can multiply. Unexpected issues might arise that require an on-site visit for troubleshooting.
 
 3. **Monitoring and Troubleshooting:** Monitoring the health and performance of multiple instances demands vigilance. You’ll find yourself sifting through logs and responding to alerts across instances, turning monitoring into a crucial yet often overwhelming task.
 
@@ -92,6 +92,5 @@ FlowFuse transforms data handling by providing a centralized, user-friendly plat
 
 #### Conclusion
 
-FlowFuse transforms how you manage Node-RED instances, turning chaos into clarity. With centralized control, teams can reduce operational costs by up to 30% while ensuring critical applications remain available and secure. Automated backups and high availability mean less downtime and more focus on innovation. Streamline your processes and empower your team with FlowFuse—where efficiency meets simplicity.
-
-[**Get started with FlowFuse**](https://app.flowfuse.com/account/create/).
+FlowFuse transforms how you manage Node-RED instances, turning chaos into clarity. With centralized control, teams can reduce operational costs by up to 30% while ensuring critical applications remain available and secure. Automated backups and high availability mean less downtime and more focus on innovation. 
+[**Get started with FlowFuse on the Cloud**](https://app.flowfuse.com/account/create/).
