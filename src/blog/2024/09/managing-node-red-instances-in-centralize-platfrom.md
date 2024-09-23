@@ -9,29 +9,7 @@ image:
 tags:
    - post
    - nodered
-stories:
-    - title: "Automating Building Management with FlowFuse & Node-RED"
-      logo: ""
-      image: "/images/stories/power-workplace-diagram.svg"
-      brand: "Power Workplace"
-      url: "/customer-stories/node-red-building-management/"
-    - title: "The Future of Textile Manufacturing Powered with Node-RED"
-      logo: ""
-      image: "/images/stories/stfi-future-textile.jpg"
-      brand: "STFI"
-      url: "/customer-stories/stfi-future-of-textile-powered-by-node-red/"
-    - title: "Leveraging Node-RED and FlowFuse to Revolutionize Irrigation"
-      logo: ""
-      image: "/images/stories/pidd-view.png"
-      brand: "Paloma Irrigation and Drainage District"
-      url: "/customer-stories/leveraging-node-red-and-flowfuse-to-revolutionize-irrigation"
-    - title: "Revolutionizing Precision Manufacturing with Node-RED"
-      logo: ""
-      image: "/images/stories/abrasive_tech.jpg"
-      brand: "Abrasive Technology"
-      url: "/customer-stories/leveraging-node-red-and-flowfuse-to-automate-precision-manufacturing"
 ---
-{% from "stories/customer-story.njk" import storyTile %}
 
 Managing a single Node-RED instance involves setting up a server and configuring it—a task that can be complex. The complexity multiplies when overseeing multiple Node-RED instances distributed across various projects, devices, or environments. This scenario presents additional challenges that can make management a daunting task.
 
@@ -106,13 +84,3 @@ FlowFuse has various other [features](/product/features/) that make connecting w
 In manufacturing, automotive, and other industrial sectors, managing data from various machines, sensors, and systems can be complex and overwhelming. FlowFuse simplifies this with its ability to connect, collect, transform, and visualize data through Node-RED with centralized and easy management. Imagine a factory floor or automotive assembly line where data from thousands of sensors—tracking machine health, production rates, and environmental conditions—is integrated and displayed in real time. FlowFuse enables you to effortlessly manage this data, allowing you to quickly spot issues, optimize processes, and adapt to changes. This centralized approach enhances operational efficiency, improves security, and fosters better collaboration, making it easier to handle complex production environments across various industries.
 
 [**Start your free trial with FlowFuse today and see how it can transform your production processes!**](https://app.flowfuse.com/account/create/)
-
-### Customer Stories
-
-If you want to dive further into how FlowFuse has been used by our customers in different industries, we have some customer stories that you might find interesting:
-
-<ul class="grid grid-cols-1 sm:grid-cols-2 gap-4 px-0 list-none">
- {%- for story in stories | sort(attribute='item.date') | reverse -%}
- {{ storyTile(title=story.title, url=story.url, brand=story.brand, logo=story.logo, image=story.image) }}
- {%- endfor -%}
-</ul>
