@@ -12,7 +12,7 @@ tags:
 ---
 
 Imagine deploying a critical application flow update in your manufacturing or automotive facility. Without a proper pipeline that includes various stages of testing and validation, a small error could lead to a floor crash or a production halt. In these industries, having a quick and reliable deployment process is essential for maintaining efficiency and safety.
-
+<!--more-->
 For developers using Node-RED, setting up a comprehensive DevOps pipeline can make all the difference. In this blog, we’ll explore how to build and automate DevOps pipelines specifically for Node-RED deployments. You’ll discover practical tips and tools to streamline your process, ensuring your applications are always ready to support your operations.
 
 ## What Exactly is a DevOps Pipeline?
@@ -28,7 +28,7 @@ A DevOps pipeline is an automated process that helps developers move their code 
 Creating DevOps pipelines manually for your Node-RED deployments can be time-consuming, expensive, and require considerable technical expertise. **FlowFuse** simplifies the creation of DevOps pipelines for Node-RED deployments.
 
 <div class="blog-update-notes">
-    <p>[FlowFuse](/) enhances collaboration, security, and scalability for your Node-RED applications, making the deployment and management of edge devices seamless. With a centralized platform and an intuitive visual interface, FlowFuse allows you to connect, collect, transform, and visualize data effortlessly.</p>
+    <p><a href="/">FlowFuse</a> enhances collaboration, security, and scalability for your Node-RED applications, making the deployment and management of edge devices seamless. With a centralized platform and an intuitive visual interface, FlowFuse allows you to connect, collect, transform, and visualize data effortlessly.</p>
 </div>
 
 ### Steps to Create a DevOps Pipeline:
