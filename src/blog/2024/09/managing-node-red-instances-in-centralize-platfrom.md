@@ -69,13 +69,15 @@ FlowFuse also simplifies [monitoring and controlling remote devices](/solutions/
 ![Logs](./images/log.png)
 _Image showing the Node-RED instance logs_
 
+With FlowFuse, you can quickly [monitor logs](/docs/user/logs/#logs) for each instance and receive instant alerts via email if any crashes occur. 
+
 ![High Availability](./images/high-availablity.png)
 _Image showing the 'High Availability' setting option to make your instance highly available_
 
 ![Snapshots](./images/snapshots.png)
 _Image showing the snapshot feature in the FlowFuse platform_
 
-With FlowFuse, you can quickly [monitor logs](/docs/user/logs/#logs) for each instance and receive instant alerts via email if any crashes occur. The platform also provides the ability to add [high availability](/docs/user/high-availability/) to instances quickly, ensuring that your production applications run smoothly and efficiently. Additionally, FlowFuse offers an auto-snapshot feature that allows you to recover from accidental changes to flows, ensuring you always have a backup of your application.
+The platform also provides the ability to add [high availability](/docs/user/high-availability/) to instances quickly, ensuring that your production applications run smoothly and efficiently. Additionally, FlowFuse offers an auto-snapshot feature that allows you to recover from accidental changes to flows, ensuring you always have a backup of your application.
 
 FlowFuse has various other [features](/product/features/) that make connecting with different hardware, collecting data from devices and systems, transforming that data to meet your needs, and visualizing it in the fully customized, powerful [FlowFuse dashboard](https://dashboard.flowfuse.com/) easy and efficient.
 
