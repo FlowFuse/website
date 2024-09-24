@@ -26,7 +26,7 @@ When designing a dashboard, images allow you to significantly enrich your conten
 
 ## Easily Add Images to Node-RED Dashboards with FlowFuse’s Static Asset Service
 
-The FlowFuse static assets service offers a user-friendly and efficient way to manage your static assets within Node-RED. This service simplifies asset management by allowing users to handle everything within the same instance through a convenient interface. For detailed instructions on using the static assets service, refer to the [FlowFuse Assets Service Documentation](/docs/user/static-asset-service/).
+The FlowFuse static assets service offers a user-friendly and efficient way to manage your static assets within Node-RED. This service simplifies asset management by allowing users to handle everything within the same instance through a convenient interface. For detailed instructions on using the static assets service, refer to the [FlowFuse Assets Service Documentation](https://flowfuse.com/docs/user/static-asset-service/).
 
 Using the FlowFuse Static Assets service is highly beneficial when you want to display images in Node-RED dashboards, as it saves time compared to alternative solutions. However, it’s important to note that moving Node-RED instances through a DevOps pipeline currently does not support handling static assets. This feature is expected in future updates. If you want to manage images effectively within your Node-RED dashboards, consider the alternative solutions discussed in this blog, ensuring that the movement of instances does not affect the usage of these assets.
 
