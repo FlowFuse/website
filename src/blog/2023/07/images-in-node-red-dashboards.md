@@ -24,6 +24,12 @@ When designing a dashboard, images allow you to significantly enrich your conten
 
 - displaying physical tools which should be used to resolve a problem.
 
+## Easily Add Images to Node-RED Dashboards with FlowFuse’s Static Asset Service
+
+The FlowFuse static assets service offers a user-friendly and efficient way to manage your static assets within Node-RED. This service simplifies asset management by allowing users to handle everything within the same instance through a convenient interface. For detailed instructions on using the static assets service, refer to the [FlowFuse Assets Service Documentation](/docs/user/static-asset-service/).
+
+Using the FlowFuse Static Assets service is highly beneficial when you want to display images in Node-RED dashboards, as it saves time compared to alternative solutions. However, it’s important to note that moving Node-RED instances through a DevOps pipeline currently does not support handling static assets. This feature is expected in future updates. If you want to manage images effectively within your Node-RED dashboards, consider the alternative solutions discussed in this blog, ensuring that the movement of instances does not affect the usage of these assets.
+
 ## Why not just store them in Node-RED's host operating system?
 
 Storing images locally can work well when you can access and edit the images on an operating system, but that approach doesn't scale if you are moving instances through a DevOps pipeline. It can also not work well when deploying to environments where you don't have easy access to the host operating system.
@@ -92,16 +98,6 @@ If you import these flows into Node-RED, you should see the images automatically
 ## More things to try
 
 In this example, the images are static but it's simple to load images depending on the state of the flow. As mentioned in this article's introduction, you could display context aware images guiding the user of the dashboard to a specific location on a map, to complete a maintenance task. If you're interested in seeing examples of dynamic image loading please comment below.
-
-## Easily Add Images to Node-RED with FlowFuse’s Static Asset Service
-
-[FlowFuse](/) provides a powerful platform for developing, scaling, and securing your Node-RED applications. 
-
-![FlowFuse Static Assets option](./images/static-assets.png "FlowFuse Static Assets option")
-
-With our new **Static Asset Service**, adding images and other static assets to your FlowFuse Node-RED instance is simpler than ever. This feature allows you to easily upload and manage assets within your projects.
-
-Start leveraging the Static Asset Service to streamline your Node-RED projects! For more details, check out our [documentation](https://flowfuse.com/docs/user/static-asset-service/).
 
 ## Conclusion
 
