@@ -22,21 +22,19 @@ In this guide, we’ll show you how to use snapshots in FlowFuse to manage your 
 
 Using **version control** for Node-RED flows can introduce complexity and effort, as it often requires frequent pushes of changes to keep everything in sync. This is especially challenging in environments where modifications occur rapidly and continuously.
 
-**Snapshots** simplify this process by providing point-in-time backups of your flows. In the context of Node-RED, snapshots automatically capture the state of your work, ensuring that you can quickly restore them if needed. This feature is particularly valuable in dynamic development settings, where updates and modifications happen frequently.
-
-With snapshots in [FlowFuse](/), you can focus on developing your projects while having the confidence that your work is protected.
-
-## Managing Snapshots in FlowFuse
-
-Creating snapshots in FlowFuse is straightforward and can be done in just a few steps. But before we start, let’s first understand what a snapshot actually backs up:
-
-A **snapshot** is a point-in-time backup of a Node-RED instance. It captures the following:
+**Snapshots** simplify this process by providing point-in-time backups of your flows. In the context of Node-RED, snapshots automatically capture the state of your work, ensuring that you can quickly restore them if needed. It captures the following:
 
 - **Flows**: The flow, including all nodes and config nodes of your Node-RED flows.
 - **Credentials**: Any sensitive information used within flows using config nodes.
 - **Environment Variables**: Environment variables you have used or defined within that Node-RED instance.
 - **NPM Packages**: The npm packages you have installed, including custom nodes and Node.js packages.
 - **Runtime Settings**: The configurations that govern the behavior of your Node-RED runtime.
+
+With snapshots in [FlowFuse](/), you can focus on developing your projects while having the confidence that your work is protected.
+
+## Managing Snapshots in FlowFuse
+
+Creating snapshots in FlowFuse is straightforward and can be done in just a few steps.
 
 ### Creating Snapshots for Cloud and Device Instances
 
