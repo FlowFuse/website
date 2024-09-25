@@ -29,7 +29,7 @@ It's possible to expand the detail for each entry to see which instances are run
 
 ## Static Assets Service
 
-[Last release](../08/flowfuse-2-8-release.md) we published the new "Static Assets Service". This new feature provided an easy way to upload files alongside your Node-RED instances, and make them easily accessible in your Node-RED Editor.
+[Last release](/blog/2024/08/flowfuse-2-8-release) we published the new "Static Assets Service". This new feature provided an easy way to upload files alongside your Node-RED instances, and make them easily accessible in your Node-RED Editor.
 
 In this new release we've expanded on that feature, now allowing you to make those files publicly accessible via a URL, making them available for consumption in your Dashboards, or wherever else you may want to consume that content.
 
