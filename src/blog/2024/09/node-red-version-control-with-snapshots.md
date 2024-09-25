@@ -2,7 +2,7 @@
 title: "Using Snapshots for Version Control in Node-RED with FlowFuse"
 subtitle: "Effortlessly manage and recover your Node-RED flows with snapshots in FlowFuse."
 description: Learn how to use snapshots for version control in Node-RED with FlowFuse. Explore step-by-step guidance on creating, managing, and restoring flow backups to enhance your Node-RED development and save yourself from accidental changes.
-date: 2024-09-09
+date: 2024-09-25
 authors: ["sumit-shinde", "stephen-mclaughlin"]
 image: 
 tags:
@@ -22,49 +22,56 @@ In this guide, we’ll show you how to use snapshots in FlowFuse to manage your 
 
 Using **version control** for Node-RED flows can introduce complexity and effort, as it often requires frequent pushes of changes to keep everything in sync. This is especially challenging in environments where modifications occur rapidly and continuously.
 
-**Snapshots** simplify this process by providing point-in-time backups of your flows. In the context of Node-RED, snapshots automatically capture the state of your work, ensuring that you can quickly restore them if needed. This feature is particularly valuable in dynamic development settings, where updates and modifications happen frequently.
+**Snapshots** simplify this process by providing point-in-time backups of your flows. In the context of Node-RED, snapshots automatically capture the state of your work, ensuring that you can quickly restore them if needed. It captures the following:
+
+- **Flows**: The flow, including all nodes and config nodes of your Node-RED flows.
+- **Credentials**: Any sensitive information used within flows using config nodes.
+- **Environment Variables**: Environment variables you have used or defined within that Node-RED instance.
+- **Packages**: The packages you have installed, including 3rd party contribution nodes and Node.js packages.
+- **Runtime Settings**: The configurations that govern the behavior of your Node-RED runtime.
 
 With snapshots in [FlowFuse](/), you can focus on developing your projects while having the confidence that your work is protected.
 
 ## Managing Snapshots in FlowFuse
 
-Creating snapshots in FlowFuse is straightforward and can be done in just a few steps. But before we start, let’s first understand what a snapshot actually backs up:
-
-A **snapshot** is a point-in-time backup of a Node-RED instance. It captures the following:
-
-- **Flows**: The flow, including all nodes and config nodes of your Node-RED flows.
-- **Credentials**: Any sensitive information used within flows using config nodes.
-- **Environment Variables**: Environment variables you have used or defined within that Node-RED instance.
-- **NPM Packages**: The npm packages you have installed, including custom nodes and Node.js packages.
-- **Runtime Settings**: The configurations that govern the behavior of your Node-RED runtime.
+Creating snapshots in FlowFuse is straightforward and can be done in just a few steps.
 
 ### Creating Snapshots for Cloud and Device Instances
 
-With this understanding, let’s walk through the steps to create a snapshot in FlowFuse. But before that, let’s understand the differences between a cloud instance and a device instance.
+Before we begin, it’s essential to understand the differences between a cloud instance and a device instance. For more information, refer to the [Documentation](/docs/user/concepts/#what-is-the-difference-between-an-instance-and-a-device%3F).
 
-- **Cloud Instance**: This is a Node-RED instance running on a server's virtual machine.
+Additionally, let’s discuss the two types of device assignments available in FlowFuse:
 
-- **Device Instance**: This refers to a Node-RED instance running on your edge devices, which are connected to the FlowFuse platform through the [FlowFuse Device Agent](/product/device-agent/).
+* Application Device
+  * When a device is assigned to an instance, it can be considered as a mirror of the instance. In Fleet mode, it downloads and runs the target snapshot.
+* Instance Device
+  * When a device is assigned to an application, it can be considered as a standalone entity.
 
-Taking snapshots for cloud instances and device instances is completely different. When a device is not assigned to an instance, it will have the same interface and the snapshot tab for creating snapshots, allowing you to create the snapshot in a similar way as you would for an cloud instance. However, once you assign any device to the cloud instance, you will need to follow a different procedure to create device snapshots manually.
+With that in mind, taking snapshots for an Application Device is a bit different from taking a snapshot for an Instance Device. For example, taking snapshots of an Application Device will have the same user experience as taking a snapshot of a cloud instance. However, since an Instance Device is typically closely coupled with the owner instance, there is a slightly different procedure. We will cover both below.
 
-#### Creating Snapshots for Cloud Instance
+#### Creating Snapshots for Cloud Instance and Application Device
 
-![Image showing the options in the sidebar for managing Node-RED instances in FlowFuse.](./images/instances-option-in-sidebar.png){data-zoomable}
-*Image showing the options in the sidebar for managing Node-RED instances in FlowFuse.*
+![Image showing the "Instances" option in the sidebar](./images/instances-option-in-sidebar.png){data-zoomable}
+*Image showing the "Instances" option in the sidebar*
 
-1. Log in to your FlowFuse account and navigate to the instances by clicking on **"Instances"** in the sidebar.
-2. Click on the instance you want to create a snapshot for. This will take you to the instance management interface, which includes different tabs for various settings.
+![Image showing the "Devices" option in the sidebar](./images/devices-option-in-the-sidebar.png){data-zoomable}
+*Image showing the "Devices" option in the sidebar*
 
-![Image showing the option to switch to the Snapshots tab in FlowFuse.](./images/option-to-switch-to-snapshots-tab.png){data-zoomable}
-*Image showing the option to switch to the Snapshots tab in FlowFuse.*
+1. Log in to your FlowFuse account and navigate to the instances by clicking on **"Instances"** in the sidebar, or if you want to create a snapshot for an Application Device, click on **"Devices."**
+2. Click on the instance or device you want to create a snapshot for. This will take you to the management interface, which includes different tabs for various settings.
+
+![Image showing the option to switch to the Snapshots tab in FlowFuse Cloud Instance.](./images/option-to-switch-to-snapshots-tab.png){data-zoomable}
+*Image showing the option to switch to the Snapshots tab in FlowFuse Cloud Instance.*
+
+![Image showing the option to switch to the Snapshots tab in FlowFuse Application Device.](./images/application-device-snapshot-tab.png){data-zoomable}
+*Image showing the option to switch to the Snapshots tab in FlowFuse Application Device.*
 
 3. Switch to the **“Snapshots”** tab by selecting it from the instance management options. Here, you will find options to create a new snapshot called **"Create Snapshot"**.
 
 ![Image showing the button to create a snapshot in FlowFuse.](./images/button-to-create-snapshot.png){data-zoomable}
 *Image showing the button to create a snapshot in FlowFuse.*
 
-4. Click on the button to **create snapshot**. You will be prompted to enter a **name and description** for the snapshot, helping you identify it later. There’s also an option to restart all devices assigned to the instance with this newly created snapshot — enable this checkbox if needed.
+4. Click on the button to **create snapshot**. You will be prompted to enter a **name and description** for the snapshot, helping you identify it later. There’s also an option to set this snapshot as Device Target Snapshot — enable this checkbox if needed.
 
 ![Image showing the form to provide a name and description for the snapshot.](./images/form-to-give-snapshot-name-desc.png){data-zoomable}
 *Image showing the form to provide a name and description for the snapshot.*
@@ -83,7 +90,7 @@ Clicking on the icon will open different options to manage and operate the snaps
 
 ### Creating Snapshot for Device Instances when assigned to Cloud Instance
 
-To create a snapshot for the device instances when that device is assinged to cloud instance:
+If the device is in fleet mode, it will be running the flows specified by the target snapshot, and there is typically no need to create a snapshot directly from the device. However, if the device is in developer mode, it may have been modified and may have different flows than those in the instances. In this case, you can take a snapshot directly from the device using the Developer Mode tab. Here’s how to do it:
 
 1. Go to **Devices** by clicking on the **Devices** option in the sidebar, and then click on the specific device.
 2. Once clicked, a similar interface will open as with instances, allowing you to manage and monitor its settings and configuration. Ensure that the device has developer mode enabled.
@@ -148,9 +155,8 @@ Created snapshots can be downloaded locally, providing you with a backup of your
 ![Image showing the prompt to download a snapshot in FlowFuse, featuring a highlighted key and the download button.](./images/download-snapshot-prompt.png){data-zoomable}
 *Image showing the prompt to download a snapshot in FlowFuse, featuring a highlighted key and the download button*
 
-2. A new prompt will open, displaying a **secret key**. This key is used to encrypt the configuration details of the snapshot. Copy the key and store it safely, as you will need it for restoring the snapshot.
-   - You can also generate a new secret key by clicking the **Random Secret** button on the right.
-3. After copying the secret key, click the **Download** button located at the bottom right of the prompt to download the snapshot.
+2. A **Download Snapshot** dialog will open, displaying a **secret key** if your snapshot flow has config nodes otherwise it not be displayed copy it if it is avialbe. This is used to encrypt sensitive info in the snapshot. As a convenience, a random secret is auto generated however you should change this to something memorable as it will be needed when you need to upload the snapshot.
+3. Next, click the **Download** button located at the bottom right of the prompt to download the snapshot.
 
 #### Uploading Snapshots:
 
@@ -159,10 +165,10 @@ Created snapshots can be downloaded locally, providing you with a backup of your
 
 1. In the **Snapshots** tab, click the **Upload Snapshot** button at the top-right corner.
 
-![Image showing the prompt to upload a snapshot in FlowFuse.](./images/upload-snapshot-prompt.png){data-zoomable}
+![Image showing the prompt to upload a snapshot in FlowFuse.](./images/upload-prompt.png){data-zoomable}
 *Image showing the prompt to upload a snapshot in FlowFuse.*
 
-2. Select the snapshot file from your local system, and then enter the secret key (the one that was used during the download) to decrypt the snapshot.
+2. Select the snapshot file from your local system. If a secret key was provided during the snapshot download, enter it. Otherwise, you will not be prompted for a key.
 3. Click **Upload** to restore the snapshot to the desired instance.
 
 With this process, you can easily manage your snapshots across different environments, ensuring the safety and portability of your Node-RED flows.
@@ -188,14 +194,15 @@ Creating snapshots is crucial for documenting changes, and manually creating the
 
 Auto Snapshots automatically create backups whenever you deploy changes, ensuring that your work is continuously backed up without requiring manual intervention. These snapshots are labeled as **"Auto snapshot - yyyy-mm-dd hh:mm:ss"** for easy identification.
 
-![Image showing option to enable/disable auto-snapshots for devices](./images/enable-disable-auto-snapshot.png){data-zoomable}
-*Image showing option to enable/disable auto-snapshots for devices*
-
 This feature allows you to focus on developing your Node-RED flows with the assurance that your changes are securely saved. If necessary, you can disable Auto Snapshots for devices only from the **Developer Mode** tab. This can be helpful to avoid excessive data usage when a device is in the field or on a cellular connection, or to prevent reaching the limit of auto snapshots with unnecessary snapshots.
 
 ### Disabling Auto Snapshots
 
 1. Switch to the **Developer Mode** tab by clicking on the "Developer Mode" option at the top.
+
+![Image showing option to enable/disable auto-snapshots for devices](./images/enable-disable-auto-snapshot.png){data-zoomable}
+*Image showing option to enable/disable auto-snapshots for devices*
+
 2. Once inside the Developer Mode tab, you will find the option to enable or disable the Auto Snapshot feature.
 
 **Note:** A limit of 10 auto snapshots is maintained, with the oldest one being deleted when a new one is created. Also this feature is only available to **Team** and **Enterprise** users.
@@ -226,11 +233,11 @@ Once done you will be able to see the green mark in that snapshot showing on how
 
 1. **Neglecting Regular Backups**: Don’t skip those snapshots! Regularly create backups, especially before making significant changes, moving devices through instances or applications, or disabling developer mode. Think of it as your safety net—ensuring you can always bounce back to a stable state if unexpected issues pop up.
 
-2. **Overlooking Auto-Snapshot Limits**: Did you know that your **auto snapshots** have limits? Be mindful of how many you can retain, as older **auto snapshots** will be automatically deleted. If you have important **auto snapshots**, save them locally to keep them safe. Remember, manually created snapshots have no limits, so take advantage of that!
+2. **Overlooking Auto-Snapshot Limits**: Did you know that your **auto snapshots** have limits? Be mindful of how many you can retain, as older **auto snapshots** will be automatically deleted. If you have important **auto snapshots**, either rename them to avoid automatic deletion or download and save them locally to keep them safe. Remember, manually created snapshots have no limits, so take advantage of that!
 
-3. **Inadequate Secret Key Security**: Your secret key is your golden ticket! When downloading snapshots locally, **securely store that key**. Losing it could mean losing access to your snapshot and your ability to recover your work. Treat it like a password—keep it safe!
+3. **Inadequate Secret Key Security**: Your secret key is crucial for accessing snapshots that contain config nodes. When downloading snapshots locally, securely store that key. Losing it could mean losing access to your snapshot and your ability to recover your work. Treat it like a password—keep it safe!
 
-4. **Taking Device Snapshots in the Instance Snapshots Tab**: Make sure you're in the right place! Always take device snapshots in the **Developer Mode** tab. Some users mistakenly capture snapshots for devices in the instance associated with the devices, which only captures the snapshot for the instance itself. This can lead to losing valuable work done on specific device. 
+4. **Taking Device Snapshots in the Instance Snapshots Tab**: Sometimes, device flows may have been modified while in **developer mode.** In that case, always take device snapshots in the **Developer Mode** tab. Some users mistakenly capture snapshots for devices in the instance associated with the devices, which only captures the snapshot for the instance itself and does not include the updates made on the device itself. This can lead to losing valuable work done on specific devices.
 
 5. **Deploying Unverified Snapshots**: A little caution goes a long way! Always review and verify the details of a snapshot before deploying it. Jumping into deployment without checking can lead to unexpected behavior or the loss of critical configurations. Take the time to ensure everything is in order.
 
