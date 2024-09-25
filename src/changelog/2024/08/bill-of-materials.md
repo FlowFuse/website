@@ -10,8 +10,8 @@ tags:
     - enterprise
 ---
 
-Starting with the v2.9.0 release FlowFuse a new Application Dependencies tab will be available for enterprise self-hosted 
-and Team Tier FlowFuse Cloud users where a complete list of dependencies belonging to every Instance associated to the application can be found.
+Starting with the v2.9.0 release FlowFuse a new Application Dependencies tab will be available for Enterprise self-hosted 
+and Enterprise Tier FlowFuse Cloud users where a complete list of dependencies belonging to every Instance associated to the application can be found.
 
 ![bom.png](images/bom.png)
 
