@@ -1,8 +1,7 @@
 ---
 title: Bill of Materials
-description: "A new application dependencies list"
-
-date: 2024-09-19 13:00:00.0
+description: "Get a single view of all dependencies used by your applications"
+date: 2024-09-25 10:00:00.0
 
 authors: ["serban-costin"]
 tags:
