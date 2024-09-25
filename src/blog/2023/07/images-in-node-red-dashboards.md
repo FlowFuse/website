@@ -37,7 +37,7 @@ Before proceeding, ensure that you have the following custom nodes installed, as
 
 ## Easily Add Images to Node-RED Dashboards with FlowFuse’s Static Asset Service
 
-[FlowFuse's static assets](/docs/user/static-asset-service/) service provides a convenient way to manage static assets, such as images, within Node-RED instances. This service streamlines asset management by allowing everything to be handled through the same interface. If you want to display images using this service, follow the steps below for a straightforward process.
+[FlowFuse's static assets](https://flowforge.com/docs/user/static-asset-service/) service provides a convenient way to manage static assets, such as images, within Node-RED instances. This service streamlines asset management by allowing everything to be handled through the same interface. If you want to display images using this service, follow the steps below for a straightforward process.
 
 ### Steps to Add Images Using the Static Asset Service:
 
