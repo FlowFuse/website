@@ -89,13 +89,9 @@ hubspot:
                             <div class="mt-9 md:text-left items-left w-full mb-11 md:mt-20 md:mb-0 flex flex-row">
                                 <h2 class="self-end">$20</h2>
                                 <div class="pl-1 text-sm leading-4 text-left self-end pb-1">
-                                    <note class="note ">/month</note>
+                                    <note class="note ">/month, after free trial of Team</note>
                                 </div>
                             </div>
-                            <a class="md:self-end ff-btn ff-btn--primary uppercase align-baseline w-full"
-                                href="{{ site.appURL }}/account/create"
-                                onclick="capture('cta-join', {'position': 'primary'}, {'plan': 'cloud-starter'})">TRY
-                                FOR FREE</a>
                         </div>
                     </div>
                     <!-- Team -->
@@ -159,8 +155,9 @@ hubspot:
                                 </div>
                             </div>
                             <a class="md:self-end ff-btn ff-btn--primary uppercase align-baseline w-full"
-                                href='#contact-us'
-                                onclick="scrollToAnchor(event, 'contact-us'), capture('cta-contact-us', {'position': 'primary'}, {'plan': 'team'})">Contact Us</a>
+                                href="{{ site.appURL }}/account/create"
+                                onclick="capture('cta-join', {'position': 'primary'}, {'plan': 'cloud-team'})">TRY
+                                 FREE</a>
                         </div>
                     </div>
                     <!-- Enterprise -->
