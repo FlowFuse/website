@@ -62,7 +62,7 @@ Taking snapshots for cloud instances and device instances is completely differen
 ![Image showing the button to create a snapshot in FlowFuse.](./images/button-to-create-snapshot.png){data-zoomable}
 *Image showing the button to create a snapshot in FlowFuse.*
 
-4. Click on the button to **create snapshot**. You will be prompted to enter a **name and description** for the snapshot, helping you identify it later. There’s also an option to restart all devices assigned to the instance with this newly created snapshot — enable this checkbox if needed.
+4. Click on the button to **create snapshot**. You will be prompted to enter a **name and description** for the snapshot, helping you identify it later. There’s also an option to set this snapshot as Device Target Snapshot — enable this checkbox if needed.
 
 ![Image showing the form to provide a name and description for the snapshot.](./images/form-to-give-snapshot-name-desc.png){data-zoomable}
 *Image showing the form to provide a name and description for the snapshot.*
@@ -186,14 +186,15 @@ Creating snapshots is crucial for documenting changes, and manually creating the
 
 Auto Snapshots automatically create backups whenever you deploy changes, ensuring that your work is continuously backed up without requiring manual intervention. These snapshots are labeled as **"Auto snapshot - yyyy-mm-dd hh:mm:ss"** for easy identification.
 
-![Image showing option to enable/disable auto-snapshots for devices](./images/enable-disable-auto-snapshot.png){data-zoomable}
-*Image showing option to enable/disable auto-snapshots for devices*
-
 This feature allows you to focus on developing your Node-RED flows with the assurance that your changes are securely saved. If necessary, you can disable Auto Snapshots for devices only from the **Developer Mode** tab. This can be helpful to avoid excessive data usage when a device is in the field or on a cellular connection, or to prevent reaching the limit of auto snapshots with unnecessary snapshots.
 
 ### Disabling Auto Snapshots
 
 1. Switch to the **Developer Mode** tab by clicking on the "Developer Mode" option at the top.
+
+![Image showing option to enable/disable auto-snapshots for devices](./images/enable-disable-auto-snapshot.png){data-zoomable}
+*Image showing option to enable/disable auto-snapshots for devices*
+
 2. Once inside the Developer Mode tab, you will find the option to enable or disable the Auto Snapshot feature.
 
 **Note:** A limit of 10 auto snapshots is maintained, with the oldest one being deleted when a new one is created. Also this feature is only available to **Team** and **Enterprise** users.
