@@ -66,7 +66,7 @@ Before proceeding, ensure that you have the following custom nodes installed, as
 
 ##### 7. Display the Image in the Dashboard
 - Drag a `ui-template` node onto the canvas.
-- Use the following code to display the image in the dashboard header or wherever needed:
+- Add the code in `ui-template` with an `<img>` tag, configuring the `src` attribute with `msg.payload`, as shown in the following code. Alternatively, you can use the following code directly if you want to display the image in the top-left corner of your dashboard header:
 
     ```javascript
     <template>
