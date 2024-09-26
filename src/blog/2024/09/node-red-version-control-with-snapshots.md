@@ -155,7 +155,7 @@ Created snapshots can be downloaded locally, providing you with a backup of your
 ![Image showing the prompt to download a snapshot in FlowFuse, featuring a highlighted key and the download button.](./images/download-snapshot-prompt.png){data-zoomable}
 *Image showing the prompt to download a snapshot in FlowFuse, featuring a highlighted key and the download button*
 
-2. A **Download Snapshot** dialog will open.  Note: If the flows contain sensitive values, an additional field for **secret key** will be show. This is used to encrypt the sensitive values in the snapshot. As a convenience, a random secret is auto generated however you should change this to something memorable as it will be needed when you later upload the snapshot.
+2. A **Download Snapshot** dialog will open.  Note: If the flows contain sensitive values, an additional field for **secret key** will be displayed. This is used to encrypt the sensitive values in the snapshot. As a convenience, a random secret is auto generated however you should change this to something memorable as it will be needed when you later upload the snapshot.
 3. Next, click the **Download** button located at the bottom right of the prompt to download the snapshot.
 
 #### Uploading Snapshots:
