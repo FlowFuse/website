@@ -2,7 +2,7 @@
 title: "Using Snapshots for Version Control in Node-RED with FlowFuse"
 subtitle: "Effortlessly manage and recover your Node-RED flows with snapshots in FlowFuse."
 description: Learn how to use snapshots for version control in Node-RED with FlowFuse. Explore step-by-step guidance on creating, managing, and restoring flow backups to enhance your Node-RED development and save yourself from accidental changes.
-date: 2024-09-25
+date: 2024-09-26
 authors: ["sumit-shinde", "stephen-mclaughlin"]
 image: /blog/2024/09/images/snapshot-with-node-red-ff.png
 tags:
@@ -12,11 +12,11 @@ tags:
    - node-red flow backup
 ---
 
-Version control is essential, especially when multiple people are working on the same Node-RED project. Without it, changes can easily overlap, or worse—accidental updates could break critical flows. FlowFuse solves this challenge with snapshots, allowing you to create backups of your flows, restore previous versions, and safeguard your project from unexpected issues. 
+Version control is essential, especially when multiple people are working on the same Node-RED project. Without it, changes can easily overlap, or worse — accidental updates could break critical flows. FlowFuse solves this challenge with snapshots, allowing you to create backups of your flows, restore previous versions, and safeguard your project from unexpected issues. 
 
 <!--more-->
 
-In this guide, we’ll show you how to use snapshots in FlowFuse to manage your Node-RED projects with confidence and prevent costly mistakes.
+Let's look at how to use snapshots in FlowFuse to manage your Node-RED projects with confidence and prevent costly mistakes.
 
 ## What is Version Control and Snapshots
 
@@ -155,7 +155,7 @@ Created snapshots can be downloaded locally, providing you with a backup of your
 ![Image showing the prompt to download a snapshot in FlowFuse, featuring a highlighted key and the download button.](./images/download-snapshot-prompt.png){data-zoomable}
 *Image showing the prompt to download a snapshot in FlowFuse, featuring a highlighted key and the download button*
 
-2. A **Download Snapshot** dialog will open, displaying a **secret key** if your snapshot flow has config nodes otherwise it not be displayed copy it if it is avialbe. This is used to encrypt sensitive info in the snapshot. As a convenience, a random secret is auto generated however you should change this to something memorable as it will be needed when you need to upload the snapshot.
+2. A **Download Snapshot** dialog will open.  Note: If the flows contain sensitive values, an additional field for **secret key** will be displayed. This is used to encrypt the sensitive values in the snapshot. As a convenience, a random secret is auto generated however you should change this to something memorable as it will be needed when you later upload the snapshot.
 3. Next, click the **Download** button located at the bottom right of the prompt to download the snapshot.
 
 #### Uploading Snapshots:
@@ -235,9 +235,9 @@ Once done you will be able to see the green mark in that snapshot showing on how
 
 2. **Overlooking Auto-Snapshot Limits**: Did you know that your **auto snapshots** have limits? Be mindful of how many you can retain, as older **auto snapshots** will be automatically deleted. If you have important **auto snapshots**, either rename them to avoid automatic deletion or download and save them locally to keep them safe. Remember, manually created snapshots have no limits, so take advantage of that!
 
-3. **Inadequate Secret Key Security**: Your secret key is crucial for accessing snapshots that contain config nodes. When downloading snapshots locally, securely store that key. Losing it could mean losing access to your snapshot and your ability to recover your work. Treat it like a password—keep it safe!
+3. **Secret Key**: The secret key used to encrypt your snapshot is crucial for when you later need to upload that snapshot. When downloading snapshots locally, securely store that key. Losing it could mean losing access to your snapshot and your ability to recover your work. Treat it like a password—keep it safe!
 
-4. **Taking Device Snapshots in the Instance Snapshots Tab**: Sometimes, device flows may have been modified while in **developer mode.** In that case, always take device snapshots in the **Developer Mode** tab. Some users mistakenly capture snapshots for devices in the instance associated with the devices, which only captures the snapshot for the instance itself and does not include the updates made on the device itself. This can lead to losing valuable work done on specific devices.
+4. **Taking a Snapshots of the wrong thing**: When a device is owned by an instance it typically runs the same flows however, if a device flows may have been modified directly in **developer mode** it will have different flows to the instance that owns it. In this case, before you move the device or switch it out of developer mode, it is recommended that you take a snapshot directly from the device itself. Direct device snapshots are performed on the **Developer Mode** tab of the device.
 
 5. **Deploying Unverified Snapshots**: A little caution goes a long way! Always review and verify the details of a snapshot before deploying it. Jumping into deployment without checking can lead to unexpected behavior or the loss of critical configurations. Take the time to ensure everything is in order.
 
