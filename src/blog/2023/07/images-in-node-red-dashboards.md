@@ -37,23 +37,36 @@ Before proceeding, ensure that you have the following custom nodes installed, as
 
 ## Easily Add Images to Node-RED Dashboards with FlowFuse’s Static Asset Service
 
-[FlowFuse's static assets](https://flowforge.com/docs/user/static-asset-service/) service provides a convenient way to manage static assets, such as images, within Node-RED instances. This service streamlines asset management by allowing everything to be handled through the same interface. If you want to display images using this service, follow the steps below for a straightforward process.
+[FlowFuse's static assets](https://flowforge.com/docs/user/static-asset-service/) service provides a simple way to manage images and other assets in Node-RED. Follow these steps to quickly add images to your Node-RED dashboard.
 
 ### Steps to Add Images Using the Static Asset Service:
 
-1. Log into your FlowFuse account and select the Node-RED instance where your dashboard is developed.
-2. Switch to the **Instances** tab and click on the **Static Assets Service**. Then, click on the "New Folder" button to create a new folder to organize your assets. When prompted, provide a name for the folder and click **Confirm**.
-3. After creating the folder, enter it by clicking its name. Click **Upload** on the top-right corner, and a popup will appear. Select the image files from your local system and click **Confirm** to upload them.
-4.  Once the file is uploaded, it will appear in the list. Click the copy icon next to the file to copy its path.
-5.  Go to the Node-RED instance editor.
-6.  Drag the `inject` node onto the canvas, double-click it, and enable the "Inject once after 0.1 seconds" option to trigger it when the flow is deployed.
-7.  Drag a `read file` node onto the canvas and paste the copied file path into the **Filename** field. Set the output to "Single buffer object."
-8.  Drag a `string` node onto the canvas, double-click it, and set the **From** field to `msg.filename`. Adjust the **Method** to "getmost" and set **To** as `msg.filename`.
-9.  Drag a `change` node onto the canvas and configure three elements as shown in the below image:
+##### 1. Access the Static Assets Service
+- Log into your FlowFuse account, navigate to your **Node-RED instance**, and click on the **Static Assets Service** tab.
 
-![The change node showing added elements](./images/change-node.png "The change node showing added elements")
+##### 2. Create a New Folder (Optional)
+- Click New Folder to organize your assets, provide a folder name, and **confirm**.
 
-10. Drag a `ui-template` widget onto the canvas. and now you can use the display image using `img` tag as shown in the below code, the following code display the logo in the header.
+##### 3. Upload Your Image
+- Enter the folder (or skip this step if not using folders), click **Upload**, select your image file, and **confirm**.
+
+##### 4. Copy the Image Path
+- Once uploaded, click the **copy icon** next to the image to get the path for use in Node-RED.
+
+##### 5. Set Up the Image Flow in Node-RED
+- Open the Node-RED editor for the relevant instance.
+- Drag an `inject` node onto the canvas and set it to trigger immediately when the flow is deployed.
+- Drag a `read file` node, paste the copied file path in the **Filename** field, and set the output to Single buffer object.
+
+##### 6. Prepare the Image for Display
+- Add a `string` node to convert the buffer to a base64 string. Set **From** as `msg.filename` and adjust the **Method** to `getmost`.
+- Add a `change` node to configure the payload to `msg.payload`.
+
+    ![The change node showing added elements](./images/change-node.png "The change node showing added elements")
+
+##### 7. Display the Image in the Dashboard
+- Drag a `ui-template` node onto the canvas.
+- Use the following code to display the image in the dashboard header or wherever needed:
 
     ```javascript
     <template>
@@ -76,7 +89,11 @@ Before proceeding, ensure that you have the following custom nodes installed, as
     </script>
     ```
 
-11. Finally, connect the output of the inject node to the input of the read file node, then link to the string node, followed by the change node, and finally to the ui-template node.
+##### 8. Connect the Nodes
+- Finally connect the nodes in the following order:
+    the **output** of the `inject` node to the **input** of the `read file` node, then link to the `string node`, followed by the `change` node, and finally to the `ui-template` node.
+
+    `inject → read file → string → change → ui-template`
 
 {% renderFlow %}
 [{"id":"e50f7c57189d62f8","type":"group","z":"d4aa6dd5b63a56de","style":{"stroke":"#b2b3bd","stroke-opacity":"1","fill":"#f2f3fb","fill-opacity":"0.5","label":true,"label-position":"nw","color":"#32333b"},"nodes":["3bf4c71150bd0524","4d3ca1b96c181645","315948cc6a2cc9e8","fcf061d4cc732e2e","6563d8715af4cb06","d40caa36040de881"],"x":514,"y":699,"w":1752,"h":82},{"id":"3bf4c71150bd0524","type":"ui-template","z":"d4aa6dd5b63a56de","g":"e50f7c57189d62f8","group":"","page":"","ui":"25f447d87d1ce5c9","name":"Display image","order":0,"width":0,"height":0,"head":"","format":"<template>\n    <!-- Teleport the image to the #app-bar-title area when mounted -->\n    <Teleport v-if=\"mounted\" to=\"#app-bar-title\">\n        <img :src=\"msg.payload\" style=\"height: 32px;\" />\n    </Teleport>\n</template>\n\n<script>\n    export default {\n        data() {\n            return {\n                mounted: false\n            }\n        },\n        mounted() {\n            // Set mounted to true when the component is mounted\n            this.mounted = true\n        }\n    }\n</script>","storeOutMessages":true,"passthru":true,"resendOnRefresh":true,"templateScope":"widget:ui","className":"","x":2160,"y":740,"wires":[[]]},{"id":"4d3ca1b96c181645","type":"inject","z":"d4aa6dd5b63a56de","g":"e50f7c57189d62f8","name":"","props":[{"p":"payload"}],"repeat":"","crontab":"","once":true,"onceDelay":0.1,"topic":"","payload":"","payloadType":"date","x":630,"y":740,"wires":[["315948cc6a2cc9e8"]]},{"id":"315948cc6a2cc9e8","type":"file in","z":"d4aa6dd5b63a56de","g":"e50f7c57189d62f8","name":"","filename":"Images/ff-logo--wordmark--light.png","filenameType":"str","format":"","chunk":false,"sendError":false,"encoding":"none","allProps":false,"x":880,"y":740,"wires":[["d40caa36040de881"]]},{"id":"fcf061d4cc732e2e","type":"change","z":"d4aa6dd5b63a56de","g":"e50f7c57189d62f8","name":"Add the file type to the mimetype, add to image content","rules":[{"t":"set","p":"mimetype","pt":"msg","to":"\"data:image/\"&msg.filetype&\";base64,\"","tot":"jsonata"},{"t":"set","p":"output","pt":"msg","to":"msg.mimetype&msg.payload","tot":"jsonata"},{"t":"move","p":"output","pt":"msg","to":"payload","tot":"msg"}],"action":"","property":"","from":"","to":"","reg":false,"x":1820,"y":740,"wires":[["3bf4c71150bd0524"]]},{"id":"6563d8715af4cb06","type":"string","z":"d4aa6dd5b63a56de","g":"e50f7c57189d62f8","name":"Get file type from file name","methods":[{"name":"getRightMost","params":[{"type":"str","value":"."}]}],"prop":"filename","propout":"filetype","object":"msg","objectout":"msg","x":1480,"y":740,"wires":[["fcf061d4cc732e2e"]]},{"id":"d40caa36040de881","type":"base64","z":"d4aa6dd5b63a56de","g":"e50f7c57189d62f8","name":"Convert Buffer to Base 64 String","action":"","property":"payload","x":1210,"y":740,"wires":[["6563d8715af4cb06"]]},{"id":"25f447d87d1ce5c9","type":"ui-base","name":"Dashboard","path":"/dashboard","includeClientData":true,"acceptsClientConfig":["ui-control","ui-notification"],"showPathInSidebar":false,"showPageTitle":false,"titleBarStyle":"default"}]
