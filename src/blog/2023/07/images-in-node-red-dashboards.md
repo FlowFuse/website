@@ -24,15 +24,12 @@ When designing a dashboard, images allow you to significantly enrich your conten
 
 - displaying physical tools which should be used to resolve a problem.
 
-## Prerequisites
+### Prerequisites
 
-Before proceeding, ensure that you have the following custom nodes installed, as they will be used throughout this guide:
+Before we begin, ensure you have the following custom nodes installed:
 
-- [node-red-contrib-calc](https://flows.nodered.org/node/node-red-contrib-calc) - A Node-RED node to perform basic mathematical calculations.
-- [node-red-contrib-image-output](https://flows.nodered.org/node/node-red-contrib-image-output) - A simple way to preview and examine images in your flows.
-- [node-red-contrib-os](https://flows.nodered.org/node/node-red-contrib-os) - Nodes for obtaining system information like CPU usage.
+- [@flowfuse/node-red-dashboard](https://flows.nodered.org/node/@flowfuse/node-red-dashboard) - A set of dashboard nodes for Node-RED. We will use this dashboard to demonstrate how to quickly display images using static assets. If you're a beginner and want to dive deeper, refer to [Getting started with FlowFuse Dashboarad](/blog/2024/03/dashboard-getting-started/).
 - [node-red-contrib-string](https://flows.nodered.org/node/node-red-contrib-string) - A string manipulation node based on the lightweight stringjs library.
-- [@flowfuse/node-red-dashboard](https://flows.nodered.org/node/@flowfuse/node-red-dashboard) - A set of dashboard nodes for Node-RED.
 - [node-red-node-base64](https://flows.nodered.org/node/node-red-node-base64) - A Node-RED node to encode and decode data to and from base64.
 
 ## Easily Add Images to Node-RED Dashboards with FlowFuse’s Static Asset Service
@@ -125,6 +122,17 @@ It is possible for us to skip step 2, but I wanted to have the images stored loc
 
 The key benefit of pulling the images from URLs this way is, no matter where you are running Node-RED, the correct images will be shown in your dashboard.
 
+## Prequsite
+
+Before moving forward, ensure you have the following nodes installed, as the flows shared later will require them:
+
+- [node-red-contrib-calc](https://flows.nodered.org/node/node-red-contrib-calc) - A Node-RED node to perform basic mathematical calculations.
+- [node-red-contrib-image-output](https://flows.nodered.org/node/node-red-contrib-image-output) - A simple way to preview and examine images in your flows.
+- [node-red-contrib-os](https://flows.nodered.org/node/node-red-contrib-os) - Nodes for obtaining system information like CPU usage.
+- [node-red-contrib-string](https://flows.nodered.org/node/node-red-contrib-string) - A string manipulation node based on the lightweight stringjs library.
+- [@flowfuse/node-red-dashboard](https://flows.nodered.org/node/@flowfuse/node-red-dashboard) - A set of dashboard nodes for Node-RED.
+- [node-red-node-base64](https://flows.nodered.org/node/node-red-node-base64) - A Node-RED node to encode and decode data to and from base64.
+
 ## File and file-in nodes
 
 I've included the flows as json below so you can try them out yourself. Please note, I'm using FlowFuse's own [file and file-in nodes](/docs/user/filenodes/) in these examples. If you want to use these flows on hosting other than FlowFuse, you will need to replace the nodes with the standard Node-RED file and file-in nodes.
@@ -162,5 +170,4 @@ In this example, the images are static but it's simple to load images depending 
 ## Conclusion
 
 Images can significantly enhance dashboards, but ensuring their proper display in different Node-RED hosting environments, especially within DevOps pipelines, can be challenging. The techniques discussed here enable effective use of images in dashboards, even within containerized setups. Additionally, if you are using FlowFuse, the new features simplify adding and managing static assets.
-
 I'd love to hear your comments and suggestions on this article. please tell us what you think about this article, and how you might use these techniques in the comments section below.
