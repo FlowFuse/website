@@ -45,7 +45,7 @@ Before proceeding, ensure that you have the following custom nodes installed, as
 - Log into your FlowFuse account, navigate to your **Node-RED instance**, and click on the **Static Assets Service** tab.
 
 ##### 2. Create a New Folder (Optional)
-- Click New Folder to organize your assets, provide a folder name, and **confirm**.
+- Click the **New Folder** button to create a folder that will help you organize your assets. Provide a folder name and **confirm** the creation.
 
 ##### 3. Upload Your Image
 - Enter the folder (or skip this step if not using folders), click **Upload**, select your image file, and **confirm**.
