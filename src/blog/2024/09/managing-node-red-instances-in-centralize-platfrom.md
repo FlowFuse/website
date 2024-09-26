@@ -10,7 +10,7 @@ tags:
    - nodered
 ---
 
-Managing a single Node-RED instance involves setting up and configuring a server, which can be complex. The complexity multiplies when overseeing multiple Node-RED instances distributed across various projects, devices, or environments. This scenario presents additional challenges that can make management a daunting task.
+Managing a single Node-RED instance involves setting up and configuring a server or edge device, which can be complex. The complexity multiplies when overseeing multiple Node-RED instances distributed across various projects, devices, or environments. This scenario presents additional challenges that can make management a daunting task.
 
 <!--more-->
 
