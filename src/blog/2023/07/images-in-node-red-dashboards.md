@@ -60,7 +60,7 @@ Before proceeding, ensure that you have the following custom nodes installed, as
 
 ##### 6. Prepare the Image for Display
 - Add a `string` node to convert the buffer to a base64 string. Set **From** as `msg.filename` and adjust the **Method** to `getmost`.
-- Add a `change` node to configure the payload to `msg.payload`.
+- Add a `change` node and configure it to add the elements shown in the following image:
 
     ![The change node showing added elements](./images/change-node.png "The change node showing added elements")
 
