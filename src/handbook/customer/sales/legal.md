@@ -41,3 +41,4 @@ we will not allow third parties access to homes or offices of employees.
 ## Miscellaneous
 
 - [W9 with signature](https://drive.google.com/file/d/1A2_mnPRfc5gWAb4yEYNiViuCHiARkLcD/view){rel="nofollow"}
+- [Certificate of Insurance](https://drive.google.com/file/d/1ZYSMFZxCksvyPLDb9vDBcH41T6_SurPE/view?usp=sharing)
