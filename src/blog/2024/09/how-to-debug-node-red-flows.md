@@ -56,6 +56,10 @@ To illustrate how to use the Node-RED Debugger effectively, let’s consider a f
 3. Create a new array from the filtered results.
 4. Split the array and calculate the average temperature.
 
+{% renderFlow %}
+[{"id":"3c012808d6b397e2","type":"group","z":"8d55eeb793510c58","style":{"stroke":"#b2b3bd","stroke-opacity":"1","fill":"#f2f3fb","fill-opacity":"0.5","label":true,"label-position":"nw","color":"#32333b"},"nodes":["5ff0902202c21e85","993ffc096c3e8089","3bbb68c2dc2a0f5c","580210c585730f97","362ec9c482688cf6","b9f2f83a330140ca","6116c1efc3f7f682","01e7066b3ff012e7"],"x":2674,"y":199,"w":532,"h":642},{"id":"5ff0902202c21e85","type":"inject","z":"8d55eeb793510c58","g":"3c012808d6b397e2","name":"Inject the sample data","props":[{"p":"payload"}],"repeat":"","crontab":"","once":false,"onceDelay":0.1,"topic":"","payload":"[{\"timestamp\":\"2024-06-17T10:00:00Z\",\"temperature\":298.15},{\"timestamp\":\"2024-06-17T11:00:00Z\",\"temperature\":299.15},{\"timestamp\":\"2024-06-17T10:30:00Z\",\"temperature\":300.15},{\"timestamp\":\"2024-06-17T10:15:00Z\",\"temperature\":301.15},{\"timestamp\":\"2024-06-17T10:45:00Z\",\"temperature\":303.15},{\"timestamp\":\"2024-06-18T09:00:00Z\",\"temperature\":297.15},{\"timestamp\":\"2024-06-18T10:00:00Z\",\"temperature\":300.15},{\"timestamp\":\"2024-06-18T11:00:00Z\",\"temperature\":301.15},{\"timestamp\":\"2024-06-18T12:00:00Z\",\"temperature\":302.15},{\"timestamp\":\"2024-06-19T10:00:00Z\",\"temperature\":298.15},{\"timestamp\":\"2024-06-19T11:00:00Z\",\"temperature\":299.15}]","payloadType":"json","x":2820,"y":240,"wires":[["993ffc096c3e8089"]]},{"id":"993ffc096c3e8089","type":"split","z":"8d55eeb793510c58","g":"3c012808d6b397e2","name":"Splits a message into a sequence of messages.","splt":"\\n","spltType":"str","arraySplt":1,"arraySpltType":"len","stream":false,"addname":"","property":"payload","x":2920,"y":320,"wires":[["3bbb68c2dc2a0f5c"]]},{"id":"3bbb68c2dc2a0f5c","type":"change","z":"8d55eeb793510c58","g":"3c012808d6b397e2","name":"Kelvin to celcius","rules":[{"t":"set","p":"payload.temperature","pt":"msg","to":"payload.temperature - 273.15","tot":"jsonata"}],"action":"","property":"","from":"","to":"","reg":false,"x":2840,"y":400,"wires":[["580210c585730f97"]]},{"id":"580210c585730f97","type":"switch","z":"8d55eeb793510c58","g":"3c012808d6b397e2","name":"Routing message sequence based on condition","property":"payload.timestamp","propertyType":"msg","rules":[{"t":"cont","v":"2024-06-17","vt":"str"}],"checkall":"true","repair":false,"outputs":1,"x":2940,"y":480,"wires":[["01e7066b3ff012e7"]]},{"id":"362ec9c482688cf6","type":"debug","z":"8d55eeb793510c58","g":"3c012808d6b397e2","name":"debug 4","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"payload","targetType":"msg","statusVal":"","statusType":"auto","x":2940,"y":800,"wires":[]},{"id":"b9f2f83a330140ca","type":"join","z":"8d55eeb793510c58","g":"3c012808d6b397e2","name":"Calculating the  the average of temperature","mode":"reduce","build":"object","property":"payload","propertyType":"msg","key":"topic","joiner":"\\n","joinerType":"str","useparts":true,"accumulate":true,"timeout":"","count":"","reduceRight":false,"reduceExp":"$A+ payload.temperature","reduceInit":"0","reduceInitType":"num","reduceFixup":"$A/$N","x":2970,"y":700,"wires":[["362ec9c482688cf6"]]},{"id":"6116c1efc3f7f682","type":"split","z":"8d55eeb793510c58","g":"3c012808d6b397e2","name":"Splits a message into a sequence of messages.","splt":"\\n","spltType":"str","arraySplt":1,"arraySpltType":"len","stream":false,"addname":"","property":"payload","x":2980,"y":640,"wires":[["b9f2f83a330140ca"]]},{"id":"01e7066b3ff012e7","type":"join","z":"8d55eeb793510c58","g":"3c012808d6b397e2","name":"Creating new array by combining message sequence","mode":"custom","build":"array","property":"payload","propertyType":"msg","key":"topic","joiner":"\\n","joinerType":"str","useparts":true,"accumulate":false,"timeout":"","count":"","reduceRight":false,"reduceExp":"","reduceInit":"","reduceInitType":"num","reduceFixup":"","x":2980,"y":560,"wires":[["6116c1efc3f7f682"]]}]
+{% endrenderFlow %}
+
 But the problem is that when clicking the **Inject** node once, it does not produce the expected results; instead, it requires clicking it again to get the output. This indicates that there might be a timing issue or a logic flaw in the flow that prevents it from processing correctly on the first click. lets debug the flow with debugger now.
 
 ### Understanding the Debugger sidebar tab
@@ -135,18 +139,4 @@ In conclusion, mastering debugging in Node-RED is crucial for creating reliable 
 
 - [Monitoring and Optimizing Node-RED Flows with Open Telemetry](/blog/2024/08/opentelemetry-with-node-red/): Learn how to Monitor and Optimize Node-RED Flows using Open Telemetry that will help you spot and fix delays in your flows quickly.
 
-- [Format your Node-RED flows for better team collaboration](/blog/2022/12/node-red-flow-best-practice/):  Learn how to format your flows for readability to providing clear comments on nodes and groups, a little bit of effort upfront can save your team a lot of headaches down the road
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+- [Format your Node-RED flows for better team collaboration](/blog/2022/12/node-red-flow-best-practice/):  Learn how to format your flows for readability to providing clear comments on nodes and groups, a little bit of effort upfront can save your team a lot of headaches down the road.
