@@ -1,5 +1,5 @@
 {
-    "layout": "layouts/learning-resources.njk",
+    "layout": "layouts/handbook.njk",
     "tags": [
         "learningResources"
     ]
