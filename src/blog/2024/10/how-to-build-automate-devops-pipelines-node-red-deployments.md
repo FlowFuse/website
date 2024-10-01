@@ -66,10 +66,10 @@ _Configure each stage by selecting an instance, device, or device group, and def
 
 Once you’ve created your initial stage, you can add more stages by following the same process. This flexibility allows you to tailor your DevOps pipeline to meet the specific needs of your Node-RED deployment.
 
+For example, in development, you might have a Node-RED instance in the cloud to build your application. During staging, you could test the setup with a single device. Finally, in production, you can deploy the tested application to thousands of devices in a device group, saving time and ensuring smooth deployment at scale.
+
 ![DevOps pipelines animation](./images/devops-pipeline.gif){data-zoomable}
 *Image: DevOps animation showing application deployment to production securely.*
-
-For example, in development, you might have a Node-RED instance in the cloud to build your application. During staging, you could test the setup with a single device. Finally, in production, you can deploy the tested application to thousands of devices in a device group, saving time and ensuring smooth deployment at scale.
 
 ## Running a Pipeline Stage
 
