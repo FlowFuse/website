@@ -19,9 +19,9 @@ For developers using Node-RED, setting up a comprehensive DevOps pipeline can ma
 
 A DevOps pipeline is an process that helps developers move their code from development to production smoothly. In a pipeline, each step depends on the one before it, ensuring every update is properly tested and ready for use. The most common stages of a pipeline are:
 
-1. **Development:** This is where developers build and test their application. Testing ensures that basic issues are caught early.
-2. **Staging/Testing:** In this stage, the code is deployed to a staging environment that closely mimics the live system. Here, the application is tested in real-world conditions to catch any remaining bugs or issues.
-3. **Production:** When everything works fine in staging, the code is deployed to production, making it live and accessible to users.
+1. **Development:** This is where the application flows are created. A level of testing and checking is carried out as a natural step of the development.
+2. **Staging/Testing:** In this stage, the code is deployed to a staging environment that closely mimics the live system. Here, the application goes through a level of QA and is tested in scenarios as close to real-world conditions as possible. This is stage designed to catch any issues that slipped through in the development stage.
+3. **Production:** When the flows are tested and confirmed in staging and are ready to be deployed, this stage can be operated to promote the flows to production.
 
 ## How to Create DevOps Pipelines for Node-RED Deployments
 
@@ -85,4 +85,4 @@ It’s essential to remember that each stage acts as either a source or a target
 
 ## Conclusion
 
-Setting up DevOps pipelines for Node-RED improves safety and efficiency in industrial deployments. Automation allows teams to quickly test and roll out updates, reducing errors and downtime. This clear process not only makes deployments more reliable but also helps organizations adapt to changes more easily. By using a strong DevOps pipeline, businesses can ensure their critical applications run smoothly, supporting continuous operations in manufacturing and automotive environments.
+DevOps pipelines formalize deployment patterns, standardize testing, and streamline updates, minimizing errors and downtime. This clear process improves reliability and helps organizations adapt more easily thus ensuring smooth operation of critical applications in manufacturing and automotive environments.
