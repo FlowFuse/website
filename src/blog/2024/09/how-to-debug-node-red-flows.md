@@ -108,11 +108,11 @@ Follow these steps:
 5. To proceed, click the **step forward** button (represented as an array icon next to the pause button). As you move forward, the **Messages** field will update with the message sent by each node, and the execution will also resume at the next step. Additionally, the input/output of the node sending the message will be highlighted in the flow with a light-bordered rectangle.
 6. As we progress through the execution, everything works fine up to the **Switch** node, where the message passes through correctly. However, when you reach the **Join** node, the highlighted box does not move forward, and no message is printed in the debugger tab. This indicates the issue lies between the **Switch** node and the **Join** node.
 
-Now that we have identified the problem area through manual pausing and stepping through the flow execution, we can utilize breakpoints. Adding breakpoints to the suspected areas is always recommended, as it saves time and effort. Manual stepping through the flow is useful for demonstration purposes, and going through the manual process first can enhance your understanding of how the flow operates, making it easier to identify where breakpoints should be placed effectively.
+Manually stepping through the flow is useful for understanding how the flow operates, making it easier to identify where breakpoints should be placed effectively.
 
 ## Adding Breakpoints for Debugging Flows
 
-Now that we've pinpointed the problem area between the [Switch](/node-red/core-nodes/switch/) node and the [Join](/node-red/core-nodes/join/) node, it’s time to leverage breakpoints for a more efficient debugging experience. Breakpoints allow you to pause the flow automatically at specific points, enabling you to inspect messages and context without having to step through each node manually. This is especially useful for larger or more intricate flows.
+Now that we've pinpointed the problem to be somewhere between the[Switch](/node-red/core-nodes/switch/) node and the [Join](/node-red/core-nodes/join/) node, it’s time to leverage breakpoints for a more efficient debugging experience. These breakpoints allow you to pause the flow automatically allowing you to inspect messages and context without having to step through each node manually. This is especially useful for larger or more intricate flows.
 
 First, let’s discuss where exactly we should add breakpoints. Our previous debugging shows that all 11 messages are coming to the Switch node correctly. Still, we need to determine how many messages pass through the condition and if they contain the part property required by the Join node to create a single value—in this case, an array. So, we add breakpoints at the output of the switch node for conformation and the input of the join node to output the join node.
 
@@ -124,7 +124,7 @@ To add a breakpoint:
 1. In the flow, find the node where you want to add the breakpoint.
 2. Hover over the input or output of the desired node; a dotted rectangle will appear.
 3. Click within that rectangle to add the breakpoint. It will turn solid blue, indicating that your breakpoint has been added.
-4. the breakpoint will appear in the debugger sidebar tab list once added.
+4. The breakpoint will appear in the debugger sidebar tab list once added.
 
 ### Debugging: Pinpointing the Exact Problem and Solving the Issue in the Flow
 
@@ -139,7 +139,7 @@ While the split node previously set the count to 11 automatically, which is corr
 
 ## Disabling and Removing Breakpoints
 
-Now that you’ve learned how to add breakpoints and pinpoint problems, you must know how to manage them effectively. Sometimes you may need to disable specific breakpoints to allow the flow to run without interruption, or you may want to remove them once you’ve finished debugging.
+Now that you’ve learned how to add breakpoints and pinpoint problems, lets look at how to manage them. Sometimes you may need to disable specific breakpoints to allow the flow to run without interruption, or you may want to remove them once you’ve finished debugging.
 
 ### Disabling Breakpoints
 
@@ -159,13 +159,13 @@ To disable a breakpoint without removing it:
 ![Image showing two ways of removing breakpoints](./images/removing-breakpoints.gif){data-zoomable}
 _Image showing two ways of removing breakpoints_
 
-To obliterate a breakpoint:
+To remove a breakpoint:
 
 1. In the **Debugger** tab, find the breakpoint you want to remove.
-2. Click the **X** available on the right side of each breakpoint to remove it.
-3. Alternatively, locate the breakpoints you have added to the flow. Click on the breakpoint twice, turning it into a transparent rectangle with a dotted border, indicating it is removed.
+2. Click the **x** button located to the right of the breakpoint.
+3. Alternatively, locate the breakpoint on the flow and click it twice until it is a transparent rectangle with a dotted border, indicating it is removed.
 
-In conclusion, mastering debugging in Node-RED is crucial for creating reliable flows. While the Debug node is excellent for quick insights, don’t underestimate the power of the Node-RED Debugger. Setting breakpoints can significantly streamline your troubleshooting process and help you identify issues more effectively.
+In conclusion, debugging in Node-RED is a great way to verify and improve your flows. While the Debug node is excellent for quick insights, the Node-RED Debugger adds another level of insight. Setting breakpoints can significantly streamline your troubleshooting process and help you identify issues more effectively.
 
 ## Up Next
 
