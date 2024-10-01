@@ -43,7 +43,7 @@ To install the Node-RED Debugger:
 
 1. Click the menu icon in the top-right corner.
 2. Select **Manage palette** and switch to the **Install** tab.
-3. Search for `[node-red-debugger](https://flows.nodered.org/node/node-red-debugger)`.
+3. Search for [node-red-debugger](https://flows.nodered.org/node/node-red-debugger).
 4. Click **Install** to add the package.
 
 ### Enabling the Debugger
