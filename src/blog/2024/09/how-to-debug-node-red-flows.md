@@ -114,7 +114,9 @@ Manually stepping through the flow is useful for understanding how the flow oper
 
 Now that we've pinpointed the problem to be somewhere between the[Switch](/node-red/core-nodes/switch/) node and the [Join](/node-red/core-nodes/join/) node, it’s time to leverage breakpoints for a more efficient debugging experience. These breakpoints allow you to pause the flow automatically allowing you to inspect messages and context without having to step through each node manually. This is especially useful for larger or more intricate flows.
 
-First, let’s discuss where exactly we should add breakpoints. Our previous debugging shows that all 11 messages are coming to the Switch node correctly. Still, we need to determine how many messages pass through the condition and if they contain the part property required by the Join node to create a single value—in this case, an array. So, we add breakpoints at the output of the switch node for conformation and the input of the join node to output the join node.
+First, let’s discuss where exactly we should add breakpoints. Our previous debugging shows that all 11 messages are correctly reaching the input of the Switch node. However, we need to check how many messages pass through the Switch node's condition and whether they contain the required part object for the Join node to create a single value (array).
+
+To do this, we should add breakpoints at the output of the Switch node to monitor how many messages pass through, as well as at the input and output of the Join node. This will help us determine how many messages are reaching the input of the Join node and whether they contain the part object necessary for the Join node to automatically convert them into an array of those objects.
 
 ![Image showing how to add breakpoints](./images/adding-breakpoints.gif){data-zoomable}
 _Image showing how to add breakpoints_
