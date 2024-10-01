@@ -1,5 +1,5 @@
 {
-    "layout": "layouts/handbook.njk",
+    "layout": "layouts/documentation.njk",
     "nav": "docs",
     "tags": [
         "docs"

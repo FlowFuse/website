@@ -4,10 +4,10 @@ date: git Last Modified
 ---
 <div class="w-full pl-6 bg-white/50">
 <div class="handbook ff-prose text-left pb-24 m-auto">
-    {% if nav %}
-        {% include "./left-nav.njk" %}
-    {% else %}
+    {% if nav == 'node-red' %}
         {% include "./learning-resources-nav.njk" %}
+    {% else %}
+        {% include "./left-nav.njk" %}
     {% endif %}
     <div class="px-10 pt-8">
         <!-- Breadcrumbs - Desktop -->
@@ -51,6 +51,20 @@ date: git Last Modified
             <div class="text-xs pb-1 text-right mb-4 italic max-lg:hidden">Updated: {% filter shortDate %}{{ updated if updated else page.date }}{% endfilter %}</div>
             {% if nav == 'docs' %}
                 {% include "components/docs-banner.njk" %}
+            {% endif %}
+            {% if nav == 'node-red' %}
+            <div class="rounded-md bg-indigo-50 p-3 flex flex-col items-center gap-3">
+                <div class="w-[50px]">
+                    {% image "./images/node-red-icon.png", "Node-RED icon", [50] %}
+                </div>
+                <h5 class="leading-5 text-center font-medium">
+                Is your Node-RED production ready?</h5>
+                <div class="container button-container" id="maturity-cta">
+                    <a href="/node-red/adoption-maturity/" class="ff-btn ff-btn--primary-outlined flex flex-col uppercase">
+                        Take the quiz
+                    </a>
+                </div>
+            </div>
             {% endif %}
         </div>
     </div>
