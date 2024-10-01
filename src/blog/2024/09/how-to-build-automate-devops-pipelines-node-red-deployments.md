@@ -86,11 +86,6 @@ _Click the 'Run Pipeline' button to initiate the automated deployment process ac
 
 It’s essential to remember that each stage acts as either a source or a target: stages (except the last) push forward, while stages (except the first) receive the results from the previous one. This ensures your deployment flows in an organized, left-to-right manner, with no steps overlooked. Also, it is important to note that when deploying to devices, only one Device Group can be included, and it must be the final stage. This ensures that all changes are fully tested and verified before reaching production, guaranteeing a safe and reliable deployment.
 
-## Importance of DevOps Pipelines
-
-- **High Availability:** FlowFuse provides [high availability](/docs/user/high-availability/) features for your Node-RED application, ensuring continuous operation. In an HA instance, flows cannot be directly modified, and the editor is disabled. A DevOps pipeline must be created to deploy new flows to the instance.
-- **Instance Protection Mode:** FlowFuse offers a protection mode that restricts modifications to flows, allowing only Team Owners to trigger a DevOps pipeline deployment to the instance.
-
 ## Conclusion
 
 Setting up DevOps pipelines for Node-RED helps ensure safe and efficient deployments. By automating the process, you can quickly test and roll out updates, minimizing errors and downtime. This approach is essential for maintaining smooth operations in manufacturing and automotive environments.
