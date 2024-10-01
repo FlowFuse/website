@@ -169,9 +169,10 @@ In this section, we will create a flow that allows an external request to trigge
 
 1. Copy or download the flow above and import or upload it to your Raspberry Pi's Node-RED instance. Ensure that you have correctly interfaced the DHT11 sensor with your Raspberry Pi. For more information, refer to our guide on [Setting Up Node-RED on Raspberry Pi 4](/node-red/hardware/raspberry-pi-4/), which explains how to install and set up the device agent, as well as how to read temperature data from the DHT11 sensor.
 
-2. Deploy the flow
+2. Deploy the flow.
 
 Once you deploy the flow, you will see the temperature data point on the debug panel if you do everything correctly. Now, let's add the Project.
+
 3. Drag the Project in node onto the canvas, double-click on it, set the source to "Receive messages sent to this instance," and then enter the topic.
 4. Replace the inject node with the Project in node.
 5. Next, you can add the change node to format the data received by the DHT node.
