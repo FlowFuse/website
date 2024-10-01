@@ -27,45 +27,42 @@ A DevOps pipeline is an process that helps developers move their code from devel
 
 Creating DevOps pipelines manually for your Node-RED deployments can be time-consuming, expensive, and require considerable technical expertise. **FlowFuse** simplifies the creation of DevOps pipelines for Node-RED deployments.
 
-<div class="blog-update-notes">
-    <p><a href="/">FlowFuse</a> enhances collaboration, security, and scalability for your Node-RED applications, making the deployment and management of edge devices seamless. With a centralized platform and an intuitive visual interface, FlowFuse allows you to connect, collect, transform, and visualize data effortlessly.</p>
-</div>
+[FlowFuse](/) enhances collaboration, security, and scalability for your Node-RED applications, making the deployment and management of edge devices seamless. With a centralized platform and an intuitive visual interface, FlowFuse allows you to connect, collect, transform, and visualize data effortlessly.
 
 ### Steps to Create a DevOps Pipeline:
 
 1. Go to the **FlowFuse platform** and navigate to the application where your Node-RED instances are located. Ensure you have instances set up for all stages, including production devices or instances.
+2. Switch to the **DevOps Pipelines** option from the top menu.
 
 ![Image showing option to switch to DevOps pipelines tab from top menu](./images/devops-pipeline-option-in-apps.png){data-zoomable}
 _Image showing option to switch to DevOps pipelines tab from top menu_
 
-2. Switch to the **DevOps Pipelines** option from the top menu.
+3. Click the **Add Pipeline** button in the top right corner to create the pipeline.
 
 ![Screenshot of the FlowFuse dashboard with the 'Add Pipeline' button highlighted at the top-right corner](./images/add-pipeline-button.png){data-zoomable}
 _Click the 'Add Pipeline' button to start creating your DevOps pipeline in FlowFuse_
 
-3. Click the **Add Pipeline** button in the top right corner to create the pipeline.
+4. Once you click **Add Pipeline**, a form opens in the next window. Enter the name for your pipeline and click **Create Pipeline**.
 
 ![Screenshot of the pipeline creation form in FlowFuse, showing fields to enter the pipeline's name](./images/form-to-create-pipeline.png){data-zoomable}
 _Fill out the form to give your pipeline a name_
 
-4. Once you click **Add Pipeline**, a form opens in the next window. Enter the name for your pipeline and click **Create Pipeline**.
+5. Next, you'll see an option to create stages by clicking **Add Stage**.
 
 ![Screenshot highlighting the button to add stages within a DevOps pipeline in FlowFuse.](./images/button-to-add-stages.png){data-zoomable}
 _Add stages to your pipeline for different deployment environments, such as development, testing, and production_
-
-5. Next, you'll see an option to create stages by clicking **Add Stage**.
-
-![Screenshot showing the stage configuration form with options to select instance types and configure actions.](./images/form-to-create-configure-stages.png){data-zoomable}
-_Configure each stage by selecting an instance, device, or device group, and define the deployment actions_
 
 6. In the window that opens, select the **stage type** based on whether it's an instance, device, or device group.
 7. Enter the name for the stage in the **Stage Name** field.
 8. Choose an instance, device, or device group for the stage.
 9. Next, configure which action should be performed when this stage is pushed to the next:
-   - **Create New [Snapshot](/docs/user/high-availability/):** Generates a new snapshot using the current flows and settings.
+   - **Create New Snapshot:** Generates a new [Snapshot](/docs/user/high-availability/) using the current flows and settings.
    - **Use Latest Instance Snapshot:** Uses the most recent existing snapshot of the instance. The deployment will fail if no snapshot exists.
    - **Prompt to Select Snapshot:** Prompts at deploy time to select which snapshot from the source stage should be copied to the next stage.
 10. Check the option **Deploy to Devices** if you want changes to be deployed to all devices connected to this stage’s instance when the stage is deployed.
+
+![Screenshot showing the stage configuration form with options to select instance types and configure actions.](./images/form-to-create-configure-stages.png){data-zoomable}
+_Configure each stage by selecting an instance, device, or device group, and define the deployment actions_
 
 Once you’ve created your initial stage, you can add more stages by following the same process. This flexibility allows you to tailor your DevOps pipeline to meet the specific needs of your Node-RED deployment.
 
