@@ -35,8 +35,6 @@ That’s where the **Node-RED Debugger** steps in, offering a more granular appr
 - **Set breakpoints** to pause the flow at critical points.
 - **Inspect messages** and data in real-time, including message payloads, context, and more.
 
-The Node-RED Debugger transforms troubleshooting from a time-consuming guesswork process into a structured, efficient workflow by offering these advanced debugging capabilities.
-
 ## Installing and Enabling Node-RED Debugger
 
 To install the Node-RED Debugger:
