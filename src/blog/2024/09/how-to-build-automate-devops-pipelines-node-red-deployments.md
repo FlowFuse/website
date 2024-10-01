@@ -11,13 +11,13 @@ tags:
    - node red devops pipeline
 ---
 
-When deploying a critical application flow update in your manufacturing or automotive facility, it is important to include various stages of testing and validation. The smallest errors can lead to a floor crash or a production halt. In such industries, having a quick and reliable deployment process is essential for maintaining efficiency and safety.
+When deploying a critical application flow update in your manufacturing or automotive process, it is important to perform testing and validation. The smallest errors can lead to a production outage. In such cases, having a quick and reliable deployment process is essential for maximising uptime and minimising downtime.
 <!--more-->
 For developers using Node-RED, setting up a comprehensive DevOps pipeline can make all the difference. In this blog, we’ll explore how to build and automate DevOps pipelines specifically for Node-RED deployments. You’ll discover practical tips and tools to streamline your process, ensuring your applications are always ready to support your operations.
 
 ## What Exactly is a DevOps Pipeline?
 
-A DevOps pipeline is an automated process that helps developers move their code from development to production smoothly. In a pipeline, each step depends on the one before it, ensuring every update is properly tested and ready for use. The main stages are:
+A DevOps pipeline is an process that helps developers move their code from development to production smoothly. In a pipeline, each step depends on the one before it, ensuring every update is properly tested and ready for use. The most common stages of a pipeline are:
 
 1. **Development:** This is where developers build and test their application. Testing ensures that basic issues are caught early.
 2. **Staging/Testing:** In this stage, the code is deployed to a staging environment that closely mimics the live system. Here, the application is tested in real-world conditions to catch any remaining bugs or issues.
