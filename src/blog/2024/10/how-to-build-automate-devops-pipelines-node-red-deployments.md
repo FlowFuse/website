@@ -11,7 +11,7 @@ tags:
    - node red devops pipeline
 ---
 
-When deploying a critical application flow update in your manufacturing or automotive process, it is important to perform testing and validation. The smallest errors can lead to a production outage. In such cases, having a quick and reliable deployment process is essential for maximising uptime and minimising downtime.
+When deploying any update in your manufacturing or automotive process, it is important to perform testing and validation. The smallest errors can lead to a production outage. In such cases, having a quick and reliable deployment process is essential for maximising uptime and minimising downtime.
 <!--more-->
 For developers using Node-RED, setting up a comprehensive DevOps pipeline can make all the difference. In this blog, we’ll explore how to build and automate DevOps pipelines specifically for Node-RED deployments. You’ll discover practical tips and tools to streamline your process, ensuring your applications are always ready to support your operations.
 
