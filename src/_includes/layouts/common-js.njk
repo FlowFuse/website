@@ -34,7 +34,9 @@
       pathname = window.location.pathname.split('/').filter(p => p);
 
       if (pathname.length === 1 && pathname.includes('docs') || pathname.includes('handbook')) {
-          config.searchParameters.filters = `category:${pathname[0]}`
+          config.searchParameters = {
+              filters: `category:${pathname[0]}`
+          }
       }
       algoliasearchNetlify(config);
     }
