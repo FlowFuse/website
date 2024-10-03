@@ -18,7 +18,7 @@ For developers using Node-RED, setting up a comprehensive DevOps pipeline can ma
 ## What Exactly is a DevOps Pipeline?
 
 ![Image showing the DevOps Lifecycle](./images/What-is-DevOps.png){data-zoomable}
-_The DevOps Lifecycle illustrates the stages of development, testing, and deployment, ensuring a smooth transition from development to production for efficient and reliable software delivery_
+_The DevOps Lifecycle illustrating the stages of development through to production_
 
 A DevOps pipeline is an process that helps developers move their code from development to production smoothly. In a pipeline, each step depends on the one before it, ensuring every update is properly tested and ready for use. The most common stages of a pipeline are:
 
