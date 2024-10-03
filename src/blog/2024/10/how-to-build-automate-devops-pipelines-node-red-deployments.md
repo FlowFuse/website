@@ -2,7 +2,7 @@
 title: Creating and Automating DevOps Pipelines for Node-RED in Industrial Environments
 subtitle: Streamlining Deployments for Efficiency and Safety in Industrial Environments
 description: Learn how to build and automate DevOps pipelines for Node-RED deployments in manufacturing and automotive industries. Discover practical tips and tools to streamline your deployment process, ensuring efficiency and safety in critical operations.
-date: 2024-10-01
+date: 2024-10-03
 authors: ["sumit-shinde"]
 image: /blog/2024/10/images/creating-and-automating-devops-pipeline-nr.png
 tags:
