@@ -82,9 +82,13 @@ Once your pipeline is set up, you are ready to run it and deploy your changes ac
 _Click the 'Run Pipeline' button to initiate the a deployment process across for the selected given stage_
 
 1. Click the run pipeline stage option of first stage. For each stage, this button will be available, except for the last one. Simply click it to start the deployment process.
-2. Once initiated, the deployment will automatically progress from the current stage to the next stage on the right. For example, if you have three stages—Development, Staging, and Production—clicking the "Run Pipeline" button for the Development stage will advance the deployment to the Staging stage. To proceed from Staging to Production, you will need to click the "Run" button for the Staging stage, As each two adjacent stages operate independently. This will copy all settings, environment variables, and flows to the next stage, but existing environment variables in the target stage will not be overwritten.
+2. Once initiated, the deployment will automatically progress from the current stage to the next stage on the right. For example, if you have three stages—Development, Staging, and Production—clicking the "Run Pipeline" button for the Development stage will advance the deployment to the Staging stage. To proceed from Staging to Production, you will need to click the "Run" button for the Staging stage, as each pair of adjacent stages operates independently.
 
-It’s essential to remember that each stage acts as either a source or a target: stages (except the last) push forward, while stages (except the first) receive the results from the previous one. This ensures your deployment flows in an organized, left-to-right manner, with no steps overlooked. Also, it is important to note that when deploying to devices, only one Device Group can be included, and it must be the final stage. This ensures that all changes are fully tested and verified before reaching production, guaranteeing a safe and reliable deployment.
+This action will create a new snapshot in the current stage and copy all settings, environment variables, and flows to the next stage, but it will not overwrite any existing environment variable keys in the target stage.
+
+It’s essential to remember that each stage acts as either a source or a target: stages (except the last) push forward, while stages (except the first) receive results from the previous one. This ensures an organized, left-to-right flow of deployment without overlooked steps.
+
+Also, when deploying to devices, only one Device Group can be included, and it must be the final stage. This ensures that all changes are fully tested and verified before reaching production, guaranteeing a safe and reliable deployment.
 
 ## Conclusion
 
