@@ -72,14 +72,14 @@ Once you’ve created your initial stage, you can add more stages by following t
 For example, in development, you might have a Node-RED instance in the cloud to build your application. During staging, you could test the setup with a single device. Finally, in production, you can deploy the tested application to thousands of devices in a device group, saving time and ensuring smooth deployment at scale.
 
 ![DevOps pipelines animation](./images/devops-pipeline.gif){data-zoomable}
-*Image: DevOps animation showing application deployment to production securely.*
+*Image: DevOps animation demonstrating pipeline deployments.*
 
 ## Running a Pipeline Stage
 
 Once your pipeline is set up, you are ready to run it and deploy your changes across each stage. Here's how to do it:
 
 ![Screenshot of the 'Run Pipeline' button in FlowFuse, allowing users to trigger the deployment process.](./images/button-to-run-pipeline.png){data-zoomable}
-_Click the 'Run Pipeline' button to initiate the a deployment process across for the selected given stage_
+_Click the 'Run Pipeline' button to initiate a pipeline deployment_
 
 1. Click the run pipeline stage option of first stage. For each stage, this button will be available, except for the last one. Simply click it to start the deployment process.
 2. Once initiated, the deployment will automatically progress from the current stage to the next stage on the right. For example, if you have three stages—Development, Staging, and Production—clicking the "Run Pipeline" button for the Development stage will advance the deployment to the Staging stage. To proceed from Staging to Production, you will need to click the "Run" button for the Staging stage, as each pair of adjacent stages operates independently.
