@@ -42,7 +42,7 @@ _Image showing option to switch to DevOps pipelines tab from top menu_
 ![Screenshot of the FlowFuse dashboard with the 'Add Pipeline' button highlighted at the top-right corner](./images/add-pipeline-button.png){data-zoomable}
 _Click the 'Add Pipeline' button to start creating your DevOps pipeline in FlowFuse_
 
-4. Once you click **Add Pipeline**, a form opens in the next window. Enter the name for your pipeline and click **Create Pipeline**.
+4.  Enter the name for your pipeline and click **Create Pipeline**.
 
 ![Screenshot of the pipeline creation form in FlowFuse, showing fields to enter the pipeline's name](./images/form-to-create-pipeline.png){data-zoomable}
 _Fill out the form to give your pipeline a name_
@@ -76,7 +76,7 @@ For example, in development, you might have a Node-RED instance in the cloud to 
 Once your pipeline is set up, you are ready to run it and deploy your changes across each stage. Here's how to do it:
 
 ![Screenshot of the 'Run Pipeline' button in FlowFuse, allowing users to trigger the deployment process.](./images/button-to-run-pipeline.png){data-zoomable}
-_Click the 'Run Pipeline' button to initiate the automated deployment process across all configured stages_
+_Click the 'Run Pipeline' button to initiate the a deployment process across for the selected given stage_
 
 1. Click the run pipeline stage option. For each stage, this button will be available, except for the last one. Simply click it to start the deployment process.
 2. Once initiated, the deployment will automatically progress from the leftmost stage to the rightmost stage. It will copy all settings, environments, and flows and deploy them to the next stage. However, for environment variables, only the keys will be copied—you will need to manually add the values for each.
