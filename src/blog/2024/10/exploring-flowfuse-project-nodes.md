@@ -203,6 +203,10 @@ _Image showing the project call node triggering the flow deployed on the device 
 
 Now that you understand how to use FlowFuse project nodes, you can significantly improve the way your Node-RED instances communicate with one another.
 
+**Try the FlowFuse platform with its Project Node today to enhance your Node-RED instance management, streamline collaboration, improve security, and effortlessly scale your projects. Accelerate inter-instance communication with Project Nodes—start your [free trial](https://app.flowfuse.com/account/create) now!**
+
+If you are an educator or student, we offer support and provide free licenses. Contact us for more information [here](/education/).
+
 ## Conclusion
 
 FlowFuse project nodes streamline communication between Node-RED instances. By using these nodes, you can easily monitor performance, request data, and more. This makes your workflows smoother and more efficient. Start using [FlowFuse](https://app.flowfuse.com/account/create) to enhance your Node-RED projects today!
