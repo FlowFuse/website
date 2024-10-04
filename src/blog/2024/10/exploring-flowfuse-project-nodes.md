@@ -13,11 +13,9 @@ tags:
    - node red communication protocols
 ---
 
-Node-RED is a powerful visual programming tool that allows users to create applications easily, even without extensive programming knowledge. It excels at integrating a wide variety of services, hardware devices, and communication protocols like MQTT, WebSocket, HTTP, and CoAP and many others. While using this communication are fantastic for communication, setting them up can be time-consuming due to the need for detailed configuration, server setup or other things. As a result, establishing communication between different Node-RED instances can become complex and cumbersome.
-
+Node-RED is a powerful tool for IoT application development, connecting various services and devices. However, establishing communication between different Node-RED instances—whether for monitoring or control—can be complex. This often requires detailed configurations and protocols like MQTT, HTTP, or CoAP, despite its seamless integration with many protocols.
 <!--more-->
-
-FlowFuse addresses this challenge by offering project nodes specifically designed for seamless and efficient communication across multiple Node-RED instances. In this guide, we will explore how to leverage FlowFuse project nodes to simplify inter-instance communication, enabling smooth integration and collaboration.
+FlowFuse addresses this challenge with project nodes designed for easy and efficient communication between Node-RED instances. This guide will show you how to use FlowFuse project nodes to enhance communication and integration, complete with practical demonstrations.
 
 ## What Are FlowFuse Project Nodes?
 
@@ -158,7 +156,7 @@ Before we begin, ensure you have the following prepared:
 
 Throughout this section, we will explore how to utilize the **Project Call** node along with **Project In** and **Project Out** nodes to trigger a flow that retrieves temperature readings from a Raspberry Pi on demand. 
 
-***Note**: Before proceeding, make sure your device is assigned to an instance. If the device is assigned to an application, you cannot use Project nodes to trigger the flow, as they are designed to work with instances.*
+***Note**: Before proceeding, make sure your device is assigned to an instance. If the device is assigned to an application, you cannot use Project nodes, as they are designed to work with instances.*
 
 {% renderFlow %}
 [{"id":"bdb27b9ab0d94897","type":"inject","z":"b152a914653d9fce","name":"Trigger","props":[{"p":"payload"},{"p":"topic","vt":"str"}],"repeat":"5","crontab":"","once":true,"onceDelay":0.1,"topic":"","payload":"","payloadType":"date","x":260,"y":380,"wires":[["8a4fe9cf342b6156"]]},{"id":"4ece54ca3c91f7ff","type":"debug","z":"b152a914653d9fce","name":"debug 1","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"true","targetType":"full","statusVal":"","statusType":"auto","x":680,"y":380,"wires":[]},{"id":"8a4fe9cf342b6156","type":"rpi-dht22","z":"b152a914653d9fce","name":"","topic":"rpi-dht22","dht":"11","pintype":"0","pin":4,"x":460,"y":380,"wires":[["4ece54ca3c91f7ff"]]}]
