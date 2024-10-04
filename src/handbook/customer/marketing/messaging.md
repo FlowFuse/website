@@ -38,7 +38,7 @@ See also the description of [our market](/handbook/company/strategy/#the-market)
 
 ### Two sentence description
 
-FlowFuse is an industrial data platform that enables engineers to build, manage, scale, and secure their Node-RED solutions for digitalizing processes and operations. It integrates seamlessly with IT and OT environments, allowing teams to quickly connect, collect, and transform data to optimize industrial workflows.
+FlowFuse is an industrial data platform that enables engineers to build, manage, scale, and secure their Node-RED solutions for digitalizing processes and operations. The platform empowers customers to seamlessly integrate IT and OT environments allowing teams to quickly connect, collect, transform, and visualise data to optimize industrial workflows.
 
 ### About FlowFuse - 50 Words
 

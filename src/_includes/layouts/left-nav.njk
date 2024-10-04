@@ -1,5 +1,22 @@
+<script>
+    function toggleNavList (el) {
+        const li = el.parentElement
+        li.classList.toggle('open')
+        const ul = li.nextElementSibling
+        ul.classList.toggle('open')
+        if (ul.style.maxHeight) {
+            ul.style.maxHeight = null;
+        } else {
+            if (ul.parentElement.tagName === "UL" && !ul.parentElement.classList.contains('handbook-nav')) {
+                ul.parentElement.style.maxHeight = "initial"
+            }
+            ul.style.maxHeight = ul.scrollHeight + "px";
+        } 
+    }
+</script>
+
 <!-- Navigation -->
-<div class="border-r" data-{{nav}}>
+<div class="border-r lg:pt-2" data-{{nav}}>
     <ul class="handbook-nav" data-el="navigation">
         {% set path = (["node-red/", nav] | join) if nav == "core-nodes" else nav %}
 

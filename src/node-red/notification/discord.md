@@ -1,16 +1,15 @@
 ---
-title: Sending and receiving Discord messages with Node-RED
-subtitle: Step-by-step guide on how to send and receive discord messages with Node-RED.
-description: Learn how to send and receive Discord messages with Node-RED.
-date: 2024-07-01
-authors: ["sumit-shinde"]
-image: /blog/2024/07/images/sending-and-receiving-discord-message-with-node-red.png
-tags:
-   - node-red
-   - discord
-   - flowfuse
-   - discord notification
+eleventyNavigation:
+  key: Discord
+  parent: "Notification Services"
+meta:
+   title: Sending and receiving Discord messages with Node-RED
+   description: Learn how to send and receive Discord messages with Node-RED.
+   keywords: nodered discord, node red discord
+image: /node-red/notification/images/sending-and-receiving-discord-message-with-node-red.png
 ---
+
+# {{meta.title}}
 
 Sending notifications is crucial for IoT applications, especially for critical alerts, and many different services are used, but Discord is a standout among them. In recent months, we've written many articles on integrating other services with Node-RED, including popular notification platforms like [Email](/node-red/notification/email/) and [Telegram](/node-red/notification/telegram/). In this guide, we will delve into sending and receiving messages from Node-RED to users and channels on Discord, along with troubleshooting tips for resolving common errors that may occur.
 
@@ -126,7 +125,3 @@ If your Discord nodes show a status similar to the image above, you might still 
 ![DiscordAPIError:Unknwon user](./images/discord-with-node-red-error-1.png "DiscordAPIError:Unknwon user")
 
 If you are getting errors similar to the images above, it's likely because the `channelId` or `userId` is invalid. Double-check and correct these identifiers to resolve the errors.
-
-## Conclusion
-
-In this guide, we've shown how to seamlessly integrate Discord messaging into Node-RED workflows, covering everything from setting up a Discord bot to sending and receiving messages to and from Discord users and server channels. Furthermore, we have provided some troubleshooting tips to resolve the common errors that can occur during Discord integration with Node-RED.

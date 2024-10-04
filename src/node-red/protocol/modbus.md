@@ -5,7 +5,8 @@ eleventyNavigation:
 meta:
   title: Using Modbus with Node-RED
   description: Learn to use Modbus with Node-RED, including how to build a Modbus server and how to send and read data to and from that server.
-  keywords: node-red, flowfuse, modbus
+  keywords: node red modbus, node-red-contrib-modbus, node-red modbus, modbus node red, modbus nodered, node red modbus rtu, modbus failure on state sending get more about it by logging, node red modbus server
+   modbus
 ---
 
 # {{meta.title}}
