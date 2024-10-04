@@ -42,10 +42,10 @@ For the demonstration, let's consider we have an array of temperatures, and we w
 2. Once open, you will see the block categories on the left side, a plain canvas on the right side, and an option to set output and timeout at the bottom. Set the output to 2.
 3. In the left sidebar, you’ll find different categories starting with Node-RED, each containing related operation blocks. For example, in Node-RED, you’ll find blocks to get the value of `msg.payload`, set `msg.payload`, and more. In the Math category, there are various blocks for different mathematical operations.
 4. We must first calculate the mean to calculate UCL and LCL. Switch to the Math category and drag the block labeled "`sum` of the list." Click on the sum in the block to see other options; select "average" from it. Then, in the Node-RED category, find the block labeled "get the `msg` property from `payload`" and connect it to the end of the "`sum` of the list" block. Now, to create a variable to store the mean, switch to the Variables category, click "create variable," and name it `mean`. Once you make the variable, you’ll get different blocks related to its perform operations on that var, such as setting and changing its value. Drag the block labeled "set to mean" and place it at the start of the "`average` of list" block.
-5. Next, we know the formulas to calculate UCL and LCL (where we pick z = 3):
+6. Next, we know the formulas to calculate UCL and LCL (where we pick z = 3):
 
-   - UCL = mean + (stdDev * z)
-   - LCL = mean - (stdDev * z)
+- UCL = mean + (stdDev * z)
+- LCL = mean - (stdDev * z)
    
 7. To calculate the standard deviation, switch to the Math category and drag the "`sum` of the list" block again. Click on the sum and select the "standard deviation" option. Again, drag the block "get the `msg` property from `payload`" and connect it to the end of the standard deviation block. Create a variable called `stdDev,` drag the "set stdDev to" block, and place it at the start of the "`standard deviation` of the list" block.
 8. Now, it’s time to calculate UCL and LCL. First, create a variable for UCL and then Drag the "set UCL to" block, then switch to the Math category and drag the "1 + 1" block. Place the `mean` variable in one of the positions for "1." Drag the same block again and place it in the second position of 1, then switch to Variables again and drag the `stdDev` variable to replace one of the "1s" in the second 1+1 block, and set the second "1" to 3.
