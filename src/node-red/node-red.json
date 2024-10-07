@@ -2,6 +2,7 @@
     "layout": "layouts/documentation.njk",
     "hideTitle": "true",
     "nav": "node-red",
+    "searchTitle": "Node-RED",
     "tags": [
         "learningResources"
     ]
