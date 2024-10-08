@@ -1,30 +1,17 @@
 ---
-title: "How to Use If-Else Logic in Node-RED: A Step-by-Step Guide"
-subtitle: "Mastering Conditional Flows in Node-RED: A Practical Walkthrough."
-description: Learn how to implement If-Else logic in Node-RED with our step-by-step guide. Use Function and S witch nodes for dynamic, conditional flows.
-date: 2024-09-09
-authors: ["sumit-shinde"]
-image: /blog/2024/09/images/if-else-with-node-red.png
-tags:
-   - posts
-   - node red if else
-   - nodered switch
-   - node-red conditional flow
-   - node red function if else
-   - node red if then else example
-   - node red switch example
-   - node red switch node example
-   - node red function multiple outputs example
-   - node red function example
-   - node red function if
-   - node red if
-   - node red if node
-   - node red if then
+eleventyNavigation:
+  key: If-Else
+  parent: Programming
+meta:
+  title: How to Use If-Else Logic in Node-RED
+  description:  Learn how to implement If-Else logic in Node-RED with our step-by-step guide. Use Function and Switch nodes for dynamic, conditional flows.
+  keywords: node red if else, nodered switch, node-red conditional flow, node red function if else, node red if then else example, node red switch example, node red switch node example, node red function multiple outputs example, node red function example,node red function if, node red if, node red if node, node red if then
+image: /node-red/getting-started/images/if-else-with-node-red.png
 ---
 
-Human decision-making is often guided by a series of "if this, then that" choices—whether it's deciding what to wear based on the weather or determining the quickest route to work depending on traffic. This kind of logic is equally crucial in systems, especially those built in Node-RED. Just as we make decisions based on various factors, systems must evaluate conditions and choose the appropriate course of action.
+# {{meta.title}}
 
-<!--more-->
+Human decision-making is often guided by a series of "if this, then that" choices—whether it's deciding what to wear based on the weather or determining the quickest route to work depending on traffic. This kind of logic is equally crucial in systems, especially those built in Node-RED. Just as we make decisions based on various factors, systems must evaluate conditions and choose the appropriate course of action.
 
 When developing automated solutions in Node-RED, the ability to replicate this human-like decision-making process is essential. By implementing If-Else logic, your system can intelligently navigate different scenarios, adapting its behavior based on the inputs it receives. This guide will show you how to effectively incorporate If-Else logic into your Node-RED flows, ensuring your system can make smart, context-aware decisions—just like you would.
 
@@ -208,9 +195,3 @@ The Function node excels in scenarios where complex logic and detailed message p
 In contrast, the Switch node is designed for simpler, value-based routing. It is ideal for straightforward scenarios where you need to route messages based on a single value with multiple possible outputs. This node enables you to create rules based on specific values or conditions without the need for complex logic or extensive message modifications. If your routing logic involves basic comparisons and does not require advanced processing or calculations, the Switch node provides a more streamlined and intuitive approach.
 
 In summary, choose the Function node for intricate decision-making and detailed message processing, while the Switch node is better suited for scenarios where simple value-based routing is sufficient.
-
-## Conclusion
-
-Whether you choose the Function node for more complex logic or the Switch node for simpler, visual routing, Node-RED provides flexible options to incorporate If-Else logic into your flows. By leveraging these tools, you can create dynamic and responsive systems that make intelligent decisions based on various conditions, just like human decision-making.
-
-Understanding and implementing conditional logic will empower you to build more advanced and adaptable automation, enhancing the functionality and efficiency of your Node-RED applications. So, experiment with both methods and find the best approach for your needs.
