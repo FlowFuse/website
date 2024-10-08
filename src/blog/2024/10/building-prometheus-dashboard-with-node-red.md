@@ -2,7 +2,7 @@
 title: Using Prometheus in Node-RED for monitoring 
 subtitle: Visualizing Metrics Effortlessly with Node-RED and Prometheus
 description: Learn to integrate Prometheus with Node-RED for monitoring and exporting metrics, and create dashboards to visualize  them.
-date: 2024-10-03
+date: 2024-10-12
 authors: ["sumit-shinde"]
 image:
 tags:
