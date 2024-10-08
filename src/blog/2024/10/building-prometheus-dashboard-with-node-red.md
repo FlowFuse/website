@@ -182,7 +182,10 @@ _Image showing the historical chart visualizing CPU usage_
 
 To build the historical dashboard, we need to specify the start time, end time, and the step or window duration. We'll use a form to capture user input. Our first step is to retrieve data for the specified time range.
 
-1. Drag the ** ui-form ** widget onto the canvas. Add the elements shown in the following screenshot to capture the start date, start time, end date, end time, and window.
+1. Drag the **ui-form** widget onto the canvas. Add the elements shown in the following screenshot to capture the start date, start time, end date, end time, and window.
+
+![Image showing elements added in the form widget](./images/form-elements.png){data-zoomable}
+_Image showing elements added in the form widget_
 
 2. Drag the **function** node onto the canvas and insert the following JavaScript code into it to format the date and time correctly:
 
