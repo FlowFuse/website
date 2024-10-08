@@ -66,7 +66,8 @@ cd prometheus-<version>
 
 ### Step 4: Configure Prometheus
 1. Create a configuration file named `prometheus.yml` in the Prometheus directory. This file defines the scrape configurations and other settings. Here’s a basic example:
-   ```yaml
+
+```yaml
    global:
   scrape_interval: 15s ## update the scrape interval according your preference
 
@@ -75,7 +76,7 @@ cd prometheus-<version>
     static_configs:
       - targets: ['your_node_red_instance_url']  # Replace with your Node-RED instance URL
     metrics_path: "/info"  # Specify the path for the metrics   
-   ```
+```
 
 Make sure to replace `your_job_name` and `your_node_red_instance_url` and `metrics_path` with your specific details, avoiding the use of "/metrics" as the `metrics_path`, which is commonly default but blocked in FlowFuse platform.
 
@@ -119,6 +120,7 @@ Before starting, ensure you have installed the following:
 _Image showing the Prometheus Out node configuration_
 
 4. After that, drag the **Change** node onto the canvas. Double-click it and set `msg.payload` to:
+
 ```json
 {
     "op": "set",
@@ -165,7 +167,11 @@ _Image showing a gauge visualizing live CPU usage data._
 _Image showing the message containing the retrieved Prometheus metrics._
 
 4. Drag the **Ui-Gauge** widget onto the canvas.
-5. Connect the **Inject** node's output to the input of the **HTTP Request** node, the **HTTP Request** node's output to the input of the **Change** node, and finally, connect the **Change** node's output to the input of the **Ui-Gauge** widget. 
+5. Connect the **Inject** node's output to the input of the **HTTP Request** node, the **HTTP Request** node's output to the input of the **Change** node, and finally, connect the **Change** node's output to the input of the **Ui-Gauge** widget.
+
+{% renderFlow %}
+[{"id":"945881cf1d2fa817","type":"inject","z":"a3aa840957f658c6","name":"","props":[],"repeat":"2","crontab":"","once":true,"onceDelay":0.1,"topic":"","x":290,"y":160,"wires":[["e66a7d3399a90a0c"]]},{"id":"e66a7d3399a90a0c","type":"http request","z":"a3aa840957f658c6","name":"","method":"GET","ret":"obj","paytoqs":"ignore","url":"http://localhost:9090/api/v1/query?query=machine_cpu_usage","tls":"","persist":false,"proxy":"","insecureHTTPParser":false,"authType":"","senderr":false,"headers":[],"x":530,"y":160,"wires":[["6d95c09a23a436c5"]]},{"id":"6d95c09a23a436c5","type":"change","z":"a3aa840957f658c6","name":"","rules":[{"t":"set","p":"ui_update.label","pt":"msg","to":"payload.data.result[0].metric.machine","tot":"msg"},{"t":"set","p":"payload","pt":"msg","to":"$number(payload.data.result[0].value[1])","tot":"jsonata"}],"action":"","property":"","from":"","to":"","reg":false,"x":760,"y":160,"wires":[["b67e1a281a455fd5"]]},{"id":"b67e1a281a455fd5","type":"ui-gauge","z":"a3aa840957f658c6","name":"","group":"8978d5f4322caefa","order":1,"width":3,"height":"5","gtype":"gauge-half","gstyle":"needle","title":"gauge","units":"units","icon":"","prefix":"","suffix":"","segments":[{"from":"0","color":"#5cd65c"},{"from":"4","color":"#ffc800"},{"from":"7","color":"#ea5353"},{"from":"10","color":"#a30000"}],"min":0,"max":"25","sizeThickness":16,"sizeGap":4,"sizeKeyThickness":8,"styleRounded":true,"styleGlow":false,"className":"","x":970,"y":160,"wires":[]},{"id":"8978d5f4322caefa","type":"ui-group","name":"CPU Performance","page":"6d984257ba12e6f4","width":"3","height":"6","order":1,"showTitle":true,"className":"","visible":"true","disabled":"false"},{"id":"6d984257ba12e6f4","type":"ui-page","name":"Page 1","ui":"c385dfc590b1308d","path":"/","icon":"home","layout":"grid","theme":"6be033291dd76b17","order":1,"className":"","visible":true,"disabled":false},{"id":"c385dfc590b1308d","type":"ui-base","name":"Borg Warner","path":"/dashboard","includeClientData":true,"acceptsClientConfig":["ui-notification","ui-control","ui-button"],"showPathInSidebar":false,"showPageTitle":false,"navigationStyle":"temporary","titleBarStyle":"default"},{"id":"6be033291dd76b17","type":"ui-theme","name":"Default Theme","colors":{"surface":"#202c34","primary":"#202c34","bgPage":"#eeeeee","groupBg":"#ffffff","groupOutline":"#ffffff"},"sizes":{"pagePadding":"12px","groupGap":"12px","groupBorderRadius":"4px","widgetGap":"12px","density":"default"}}]
+{% endrenderFlow %}
 
 Now you will see the live gaguge displaying the performance of node-red instance.
 
@@ -226,7 +232,7 @@ _Image showing the message containing the retrieved Prometheus metrics using tim
 
 7. Drag a **change** node onto the canvas. Set the `msg.payload.x` to:
 
-   ```jsonata
+   ```json
       (payload.data.result[0].values[0]* 1000)
    ```
 
@@ -234,15 +240,19 @@ _Image showing the message containing the retrieved Prometheus metrics using tim
 
    And set the `msg.payload.y` to:
 
-   ```jsonata
+   ```json
    payload.data.result[0].values[1]
    ```
 
-8. Drag the **ui-chart** widget onto the canvas. Configure it to render in the correct group, select the "line" type, and enter `msg.payload.x` in the X field and `msg.payload.y` in the Y field.
+8. Drag the **ui-chart** widget onto the canvas. Configure it to render in the correct group, select the "line" type, select the action to "append"  and enter `msg.payload.x` in the X field and `msg.payload.y` in the Y field.
 
 9. Finally, connect the **http-request** node's output to the input of the **split** node, the **split** node's output to the input of the **change** node, and the **change** node's output to the input of the **ui-chart** widget.
 
 10. Deploy the flow, navigate to the dashboard, and select the start date, start time, end date, end time, and window size in the form, then submit the form.
+
+{% renderFlow %}
+[{"id":"2fb5f71a641b852e","type":"ui-form","z":"a3aa840957f658c6","name":"Date-time Selection Form For Showing Historical Data","group":"bbad16115003a778","label":"","order":1,"width":"9","height":"1","options":[{"label":"Start Date","key":"start-date","type":"date","required":true,"rows":null},{"label":"Start Time","key":"start-time","type":"time","required":true,"rows":null},{"label":"End Date","key":"end-date","type":"date","required":true,"rows":null},{"label":"End Time","key":"end-time","type":"time","required":true,"rows":null},{"label":"Window","key":"window","type":"text","required":false,"rows":null}],"formValue":{"start-date":"","start-time":"","end-date":"","end-time":"","window":""},"payload":"","submit":"submit","cancel":"clear","resetOnSubmit":false,"topic":"topic","topicType":"msg","splitLayout":"","className":"form","x":280,"y":280,"wires":[["45a64f3148671669"]]},{"id":"b2bc474dd7d7363f","type":"ui-chart","z":"a3aa840957f658c6","group":"99a978aa008a01bd","name":"","label":"CPU Usage Historical Chart","order":1,"chartType":"line","category":"cpu_usage","categoryType":"str","xAxisLabel":"","xAxisProperty":"x","xAxisPropertyType":"property","xAxisType":"time","xAxisFormat":"","xAxisFormatType":"auto","yAxisLabel":"","yAxisProperty":"y","ymin":"","ymax":"","action":"append","stackSeries":false,"pointShape":"crossRot","pointRadius":"","showLegend":false,"removeOlder":"1","removeOlderUnit":"60","removeOlderPoints":"","colors":["#d292ff","#aec7e8","#ff7f0e","#2ca02c","#98df8a","#d62728","#ff9896","#9467bd","#c5b0d5"],"textColor":["#666666"],"textColorDefault":true,"gridColor":["#e5e5e5"],"gridColorDefault":true,"width":"12","height":"6","className":"","x":1600,"y":280,"wires":[[]]},{"id":"45a64f3148671669","type":"function","z":"a3aa840957f658c6","name":"Format start and end time and date","func":"// Accessing the properties using bracket notation\nlet startDate = msg.payload[\"start-date\"]; // \"2024-10-08\"\nlet startTime = msg.payload[\"start-time\"]; // \"10:01\"\nlet endDate = msg.payload[\"end-date\"];     // \"2024-10-08\"\nlet endTime = msg.payload[\"end-time\"];     // \"10:03\"\nlet window = msg.payload.window;\n\n// Create a Date object using the local date and time\nlet startDateTime = new Date(`${startDate}T${startTime}:00`); // Construct a date object\nlet endDateTime = new Date(`${endDate}T${endTime}:00`);       // Construct a date object\n\n// Get the UTC date-time strings\nlet finalStart = startDateTime.toISOString(); // Converts to UTC string\nlet finalEnd = endDateTime.toISOString();     // Converts to UTC string\n\n// Assign final start and end to msg payload\nmsg.payload.final_start = finalStart;\nmsg.payload.final_end = finalEnd;\n\nreturn msg;\n\n","outputs":1,"timeout":"","noerr":0,"initialize":"","finalize":"","libs":[],"x":680,"y":280,"wires":[["a0c1bb45b75136d7"]]},{"id":"a0c1bb45b75136d7","type":"http request","z":"a3aa840957f658c6","name":"","method":"GET","ret":"obj","paytoqs":"ignore","url":"http://localhost:9090/api/v1/query_range?query=machine_cpu_usage&start={{payload.final_start}}&end={{payload.final_end}}&step={{payload.window}}","tls":"","persist":false,"proxy":"","insecureHTTPParser":false,"authType":"","senderr":false,"headers":[],"x":930,"y":280,"wires":[["af9fbf75a40d984b","05361ff686e715bc"]]},{"id":"af9fbf75a40d984b","type":"split","z":"a3aa840957f658c6","name":"","splt":"\\n","spltType":"str","arraySplt":1,"arraySpltType":"len","stream":false,"addname":"","property":"payload.data.result[0].values","x":1110,"y":280,"wires":[["4a14bea719eeb6e9"]]},{"id":"05361ff686e715bc","type":"change","z":"a3aa840957f658c6","name":"reset chart","rules":[{"t":"set","p":"payload","pt":"msg","to":"[]","tot":"json"}],"action":"","property":"","from":"","to":"","reg":false,"x":1210,"y":220,"wires":[["b2bc474dd7d7363f"]]},{"id":"4a14bea719eeb6e9","type":"change","z":"a3aa840957f658c6","name":"","rules":[{"t":"set","p":"payload.x","pt":"msg","to":"(payload.data.result[0].values[0]* 1000)","tot":"jsonata"},{"t":"set","p":"payload.y","pt":"msg","to":"payload.data.result[0].values[1]","tot":"msg"}],"action":"","property":"","from":"","to":"","reg":false,"x":1300,"y":280,"wires":[["b2bc474dd7d7363f"]]},{"id":"bbad16115003a778","type":"ui-group","name":"Select","page":"6d984257ba12e6f4","width":"9","height":"1","order":2,"showTitle":true,"className":"chart","visible":"true","disabled":"false"},{"id":"99a978aa008a01bd","type":"ui-group","name":"Historical Chart","page":"6d984257ba12e6f4","width":"12","height":"2","order":3,"showTitle":true,"className":"","visible":"true","disabled":"false"},{"id":"6d984257ba12e6f4","type":"ui-page","name":"Page 1","ui":"c385dfc590b1308d","path":"/","icon":"home","layout":"grid","theme":"6be033291dd76b17","order":1,"className":"","visible":true,"disabled":false},{"id":"c385dfc590b1308d","type":"ui-base","name":"Borg Warner","path":"/dashboard","includeClientData":true,"acceptsClientConfig":["ui-notification","ui-control","ui-button"],"showPathInSidebar":false,"showPageTitle":false,"navigationStyle":"temporary","titleBarStyle":"default"},{"id":"6be033291dd76b17","type":"ui-theme","name":"Default Theme","colors":{"surface":"#202c34","primary":"#202c34","bgPage":"#eeeeee","groupBg":"#ffffff","groupOutline":"#ffffff"},"sizes":{"pagePadding":"12px","groupGap":"12px","groupBorderRadius":"4px","widgetGap":"12px","density":"default"}}]
+{% endrenderFlow %}
 
 Once you submit the form, you will see the historical line chart visualizing the data retrieved from Prometheus.
 
