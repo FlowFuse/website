@@ -1,7 +1,7 @@
 ---
 title: Using Prometheus in Node-RED for monitoring 
 subtitle: Visualizing Metrics Effortlessly with Node-RED and Prometheus
-description: 
+description: Learn to integrate Prometheus with Node-RED for monitoring and exporting metrics, and create dashboards to visualize  them.
 date: 2024-10-03
 authors: ["sumit-shinde"]
 image:
@@ -9,6 +9,8 @@ tags:
    - node-red
    - nodered prometheus 
    - node-red timeseries database
+   - node-red prometheus
+   - system monitoring using prometheus
 ---
 
 Prometheus is a popular tool for monitoring and collecting system metrics, helping you track server performance, resource usage, and application health. It’s widely used in various applications, including IoT, where it can monitor data such as temperature and humidity. By collecting these metrics, you can gain valuable insights into your systems and ensure they run smoothly.
@@ -17,29 +19,22 @@ In this guide, we will learn how to integrate Prometheus with Node-RED for sendi
 
 ## What is Prometheus ?
 
-Prometheus is an open-source monitoring tool and time-series database designed to help you gain deep insights into your systems and applications. It collects and stores metrics over time, allowing you to track performance, resource usage, and overall health. With its powerful querying and alerting capabilities, Prometheus enables developers and operations teams to quickly identify and address issues. Its easy-to-use data visualization tools make it an excellent choice for monitoring cloud-native environments and IoT applications, ensuring that your systems operate smoothly and efficiently.
+Prometheus is a cutting-edge open-source monitoring and alerting toolkit that empowers organizations to gain real-time insights into their systems and applications. Designed for efficient handling of time series data, Prometheus captures critical metrics, organizes them, and stores them alongside timestamps, enabling you to track performance and identify issues as they arise.
 
-Understanding some common concepts and components of Prometheus will enhance your ability to utilize it effectively. Here are key terms and elements you should be familiar with:
+With its unique ability to scrape metrics from various HTTP endpoints, Prometheus transforms raw data into actionable insights, allowing teams to monitor everything from CPU usage to request counts seamlessly. However, it is important to note that Prometheus stores this data in memory. While this design provides quick access to metrics for real-time monitoring, it may not be ideal for long-term storage.
 
-- Metrics: Quantifiable data points collected by Prometheus over time, such as CPU usage, memory consumption, and request counts. Metrics are categorized into two main types: counters (which only increase) and gauges (which can increase or decrease).
+### Key Concepts and Components of Prometheus
 
-- Labels: Key-value pairs attached to metrics that provide additional context and help in filtering and aggregating data. For example, labels can indicate the service name, environment (production, staging), or region.
+Understanding some fundamental concepts will enhance your ability to utilize Prometheus effectively:
 
-- Targets: These are endpoints that expose metrics for Prometheus to scrape. Each target can be a service, application, or system that provides metrics in a format compatible with Prometheus, the common and deaful is /metrics.
+- Metrics: These are quantifiable data points collected by Prometheus over time, such as CPU usage, memory consumption, and request counts. Metrics fall into two primary categories:
 
-### Comparing Prometheus and InfluxDB
+   - Counters: Metrics that only increase, such as the total number of requests.
+   - Gauges: Metrics that can increase or decrease, such as current memory usage.
 
-**Prometheus** and **InfluxDB** are two leading open-source solutions for managing time-series data, each designed for specific use cases. While InfluxDB is widely recognized among IoT professionals, comparing it with Prometheus and InfluxDB can help to understand the prometheus as well and if you are fimilier with influxdb, refer to the [Using influxdb with node-red](/node-red/database/influxdb/):
+- Labels: Key-value pairs associated with metrics that provide additional context and facilitate filtering and aggregation. For example, labels can specify the service name, environment (e.g., production or staging), or geographic region.
 
-| **Feature**                   | **Prometheus**                                   | **InfluxDB**                                   |
-|-------------------------------|--------------------------------------------------|------------------------------------------------|
-| **Purpose**                   | Primarily designed for monitoring and alerting  | Focused on comprehensive time-series data management |
-| **Data Model**                | Employs a multi-dimensional model with metric names and key-value pairs (labels) | Organizes data using a time-series model with measurements and tags |
-| **Query Language**            | Utilizes PromQL, a powerful and expressive query language for complex time-series queries | Offers InfluxQL, similar to SQL, and Flux for advanced data transformations |
-| **Data Collection**           | Operates mainly on a pull-based model, periodically scraping metrics from targets | Supports both push and pull methods, making it versatile for data ingestion |
-| **Storage**                   | Uses a local on-disk storage engine optimized for fast querying; not intended for long-term data retention | Features a pluggable storage architecture, allowing for high scalability and various storage backends |
-| **Best For**                  | Monitoring applications in cloud-native environments, especially microservices and Kubernetes | IoT applications, financial analytics, and any scenario requiring real-time data processing |
-| **Scalability**               | Scalable through sharding and federation, though it may struggle with high cardinality or large data volumes | Highly scalable with built-in clustering and sharding capabilities, accommodating vast amounts of data |
+- Targets: These are endpoints that expose metrics for Prometheus to scrape. Each target can represent a service, application, or system providing metrics in a Prometheus-compatible format, typically accessible at the HTTP endpoint.
 
 ### Installing Prometheus on Your Device or Server
 
@@ -82,7 +77,7 @@ cd prometheus-<version>
     metrics_path: "/info"  # Specify the path for the metrics   
    ```
 
-Make sure to replace `your_job_name` and `your_node_red_instance_url` and `metrics_path` with your specific details, avoiding the use of "metrics" as the `metrics_path`, which is commonly default but blocked in FlowFuse platform.
+Make sure to replace `your_job_name` and `your_node_red_instance_url` and `metrics_path` with your specific details, avoiding the use of "/metrics" as the `metrics_path`, which is commonly default but blocked in FlowFuse platform.
 
 ### Step 5: Start Prometheus
 Run the following command to start Prometheus:
@@ -93,7 +88,10 @@ By default, Prometheus will start on port **9090**. You can access the web inter
 
 ### Step 6: Verify the Installation
 1. Open your web browser and go to `http://localhost:9090`.
-2. You should see the Prometheus dashboard, where you can query metrics and view the status of your targets.
+2. You should see the Prometheus dashboard, where you can query metrics and view the status of your targets or the metrics graphs.
+
+![Image showing the prometheus dashboard ui running locally showing the cpu usage metrics in the graph](./images/prometheus-graph.png){data-zoomable}
+_Image showing the prometheus dashboard ui running locally showing the cpu usage metrics in the graph_
 
 ## Building Prometheus data dashboard
 
@@ -106,7 +104,8 @@ The first instance will expose CPU usage metrics, while Prometheus, running loca
 Before starting, ensure you have installed the following:
 
 - **node-red-contrib-prometheus-exporter**: This Node-RED node will allow you to expose metrics in a format that Prometheus can scrape.
-- **node-red-contrib-cpu** :  This node provides real-time CPU usage metrics, which can be used to monitor the performance of your Node-RED instance running machine
+- **node-red-contrib-cpu** :  This node provides real-time CPU usage metrics, which can be used to monitor the performance of your Node-RED instance running machine.
+- **flowfuse/node-red-dashboard**: Set of UI nodes is designed for building user interfaces within Node-RED 
 
 ### Exposing Data to Prometheus
 
@@ -115,6 +114,9 @@ Before starting, ensure you have installed the following:
 2. Next, drag the **CPU** node onto the canvas. Double-click it and check the option **"Send a message for overall usage."**
 
 3. Then, drag the **Prometheus Out** node onto the canvas. Double-click it and click the pencil icon to open the configuration tab. In this tab, enter the **Metric Name** (ensure there are no spaces), provide the **Metric Help**, add **Labels** (you can add as many labels as needed), and set the **Metric Type**. Once done, click **Done** to save the configuration.
+
+![Image showing the Prometheus Out node configuration](./images/prometheus-out-config.png){data-zoomable}
+_Image showing the Prometheus Out node configuration_
 
 4. After that, drag the **Change** node onto the canvas. Double-click it and set `msg.payload` to:
 ```json
@@ -127,7 +129,7 @@ Before starting, ensure you have installed the following:
 
 This structure assigns the CPU usage value from the payload to `val`, while setting a label and operation. For a Counter metric, use "op": "inc" to increase the counter by val (default is 1 if val is not specified). For a Gauge metric, you can use "op": "set" to assign val (this is required), "op": "inc" to increase the gauge by val (default is 1), or "op": "dec" to decrease the gauge by val (default is 1). Make sure to adapt the operation type based on your metric requirements.
 
-5. Connect the inject node's output to input of cpu node, cpu nodes output to input of change node and then change node's output to input of prometheus out node.
+5. Connect the **Inject** node's output to input of **CPU** node, **CPU** nodes output to input of **Change** node and then **Change** node's output to input of **prometheus-out** node.
 6. Deploy the flow.
 
 ### Configuring Endpoint for the Prometheus Exporter
@@ -138,29 +140,114 @@ To configure the endpoint, follow these steps:
 
 1. Go to the instance settings in the FlowFuse platform.
 2. Switch to the **Environment** tab. In this tab, add a new variable called `PROMETHEUS_METRICS_PATH` and set the desired path for exposing metrics. If you are running Node-RED locally, add `process.env.PROMETHEUS_METRICS_PATH="path"` at the beginning of the `settings.json` file.
+
+![Image showing the Environment tab in the FlowFuse instance settings, highlighting the addition of the environment variable to set the Prometheus metrics path.](./images/instance-setting-env.png){data-zoomable}
+_Image showing the Environment tab in the FlowFuse instance settings, highlighting the addition of the environment variable to set the Prometheus metrics path._
+
 3. Click **Save** and restart the Node-RED instance.
 
 After restarting the Node-RED instance, your data will be exported at the specified endpoint. To confirm that the data is being exported correctly, make an HTTP request to `https://<instance-url>/<endpoint>`. You should receive the metrics in a string format that Prometheus understands.
 
 ### Retriving Data from prometheus
 
-The promethues relies on the http for both pulling data and when querying data..... so to retrive the data we need to use api provided by prometheus...
+Prometheus provides a powerful query language called PromQL, which allows for advanced querying of metrics. It also offers an API for querying, which is commonly used for retrieving data due to its simplicity. In this section, we will utilize the API provided by Prometheus to retrieve data.
 
 ### Building a Live Chart
 
+![Image showing a gauge visualizing live CPU usage data](./images/cpu-usage-historical.gif){data-zoomable}
+_Image showing a gauge visualizing live CPU usage data._
+
 1. Drag the **Inject** node onto the canvas and set it to repeat at the same interval as configured in Prometheus' config file.
 2. Drag the **HTTP Request** node onto the canvas and set the URL to `<ip-address>:9090/api/v1/query?query=machine_cpu_usage`, replacing `<ip-address>` with your actual IP address of machine running prometheus. Set the return type to "a parsed JSON object."
-3. Drag the **Change** node onto the canvas. Set `msg.ui_update.label` to `msg.payload.data.result[0].metric.machine` to assign the label value that will be displayed in the gauge. Next, set `msg.payload` to `$number(payload.data.result[0].value[1])` using JSONata to assign the metric value.
+3. Drag the Change node onto the canvas. Set `msg.ui_update.label` to `msg.payload.data.result[0].metric.machine` to assign the label value that will be displayed in the gauge. Next, set `msg.payload` to `$number(payload.data.result[0].value[1])` using JSONata to assign the metric value. The data property contains the data retrieved from Prometheus, which includes the CPU usage value and associated metadata as shown below image:
+
+![Image showing the message containing the retrieved Prometheus metrics](./images/prometheus-live-retrived-data.png){data-zoomable}
+_Image showing the message containing the retrieved Prometheus metrics._
+
 4. Drag the **Ui-Gauge** widget onto the canvas.
 5. Connect the **Inject** node's output to the input of the **HTTP Request** node, the **HTTP Request** node's output to the input of the **Change** node, and finally, connect the **Change** node's output to the input of the **Ui-Gauge** widget. 
 
 Now you will see the live gaguge displaying the performance of node-red instance.
 
-### Building historical chart
+### Building a Historical Chart
 
+![Image showing the historical chart visualizing cpu usage](./images/cpu-usage-historical.gif){data-zoomable}
+_Image showing the historical chart visualizing cpu usage_
 
+To build the historical dashboard, we need to specify the start time, end time, and the step or window duration. We'll use a form to capture user input. Our first step is to retrieve data for the specified time range.
 
+1. Drag the **ui-form** widget onto the canvas. Add the elements as shown in the following screenshot to capture the start date, start time, end date, end time, and window.
 
+2. Drag the **function** node onto the canvas and insert the following JavaScript code into it to format the date and time correctly:
 
+   ```javascript
+   let startDate = msg.payload["start-date"]; // e.g., "2024-10-08"
+   let startTime = msg.payload["start-time"]; // e.g., "10:01"
+   let endDate = msg.payload["end-date"];     // e.g., "2024-10-08"
+   let endTime = msg.payload["end-time"];     // e.g., "10:03"
+   let window = msg.payload.window;
 
+   // Store window in flow context
+   flow.set("window", window);
 
+   // Create Date objects using the local date and time input
+   let startDateTime = new Date(`${startDate}T${startTime}:00`); // Start time
+   let endDateTime = new Date(`${endDate}T${endTime}:00`);       // End time
+
+   // Convert Date objects to UTC strings
+   let finalStart = startDateTime.toISOString(); // Start in UTC format
+   let finalEnd = endDateTime.toISOString();     // End in UTC format
+
+   // Set final start and end in the message payload
+   msg.payload.final_start = finalStart;
+   msg.payload.final_end = finalEnd;
+
+   return msg;
+   ```
+
+3. Drag the **http-request** node onto the canvas. Set the method to `GET` and configure the URL as follows:
+
+   ```
+   http://localhost:9090/api/v1/query_range?query=machine_cpu_usage&start={{payload.final_start}}&end={{payload.final_end}}&step={{payload.window}}
+   ```
+
+   Ensure that the return type is set to `a parsed JSON object`.
+
+4. Drag the **debug** node onto the canvas and connect it to the output of the **http-request** node. This will allow you to view the data in the debug panel. Connect the input of the **http-request** node to the output of the **ui-form** widget.
+
+5. Deploy the flow, then navigate to the dashboard. Select the start date, start time, end date, end time, and window size in the form, then submit the form.
+
+   If data exists within the specified range, you will see the data in the following format, where each item in the `values` array contains two elements: the first element is the timestamp (in epoch format), and the second element is the metric value:
+
+![Image showing the message containing the retrieved Prometheus metrics using time range](./images/prometheus-retrived-data-format.png){data-zoomable}
+_Image showing the message containing the retrieved Prometheus metrics using time range_
+
+6. Drag the **split** node onto the canvas, and set the path to `payload.data.result[0].values`.
+
+7. Drag a **change** node onto the canvas. Set the `msg.payload.x` to:
+
+   ```jsonata
+      (payload.data.result[0].values[0]* 1000)
+   ```
+
+   Notice that the timestamp is multiplied by 1000 because Prometheus returns the timestamp in seconds, but Node-RED requires it in milliseconds.
+
+   And set the `msg.payload.y` to:
+
+   ```jsonata
+   payload.data.result[0].values[1]
+   ```
+
+8. Drag the **ui-chart** widget onto the canvas. Configure it to render in the correct group, select the "line" type, and enter `msg.payload.x` in the X field and `msg.payload.y` in the Y field.
+
+9. Finally, connect the **http-request** node's output to the input of the **split** node, the **split** node's output to the input of the **change** node, and the **change** node's output to the input of the **ui-chart** widget.
+
+10. Deploy the flow, navigate to the dashboard, and select the start date, start time, end date, end time, and window size in the form, then submit the form.
+
+Once you submit the form, you will see the historical line chart visualizing the data retrieved from Prometheus.
+
+Now that you've learned how to build a Prometheus dashboard and run basic queries, refer to the [Prometheus API documentation](https://prometheus.io/docs/prometheus/latest/querying/api/) for more advanced queries.
+
+## Conclusion
+
+In this guide, we covered the fundamentals of Prometheus, starting with its role as a powerful monitoring and alerting toolkit. We explored the installation process, ensuring that you can set up Prometheus effectively on your system. Then, we demonstrated how to integrate Prometheus with Node-RED for sending and receiving metrics, along with a practical example of monitoring CPU usage. This setup can be easily extended to track various other metrics, providing a holistic view of your system's performance.
