@@ -15,7 +15,7 @@ Node-RED is a powerful tool for building automation flows through its visual int
 <!--more-->
 In this guide, I will share strategies for making writing in Function Nodes straightforward and efficient. You’ll learn how to leverage JavaScript's capabilities without needing extensive knowledge, empowering you to handle more complex logic with confidence and ease.
 
-## What are function nodes and common challenges faced?
+## What are function nodes and the challenges related to them?
 
 ![Image showing the function node](./images/node_function.png){data-zoomable}
 _Image showing the function node_
