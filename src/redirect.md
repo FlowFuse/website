@@ -75,6 +75,11 @@ redirects:
   - { "from": "/blueprints/manufacturing/manfacturing-support-request-blueprint/", "to": "/blueprints/manufacturing/manufacturing-support-request/" }
   - { "from": "/blog/2024/06/filtering-mapping-sorting-reducing-with-node-red/", "to": "/node-red/getting-started/programming/data-tranformation/" }
   - { "from": "/blog/2024/09/node-red-if-else-logic-guide/", "to": "/node-red/getting-started/programming/if-else/" }
+  - { "from": "/blog/2024/08/using-mysql-with-node-red/", "to": "/node-red/database/mysql/" }
+  - { "from": "/blog/2024/06/using-timescaledb-with-node-red/", "to": "/node-red/database/timescaledb/" }
+  - { "from": "/blog/2024/09/using-amqp-with-node-red/", "to": "/node-red/protocol/amqp/" }
+  - { "from": "/blog/2024/08/using-lwm2m-with-node-red/", "to": "/node-red/protocol/lwm2m/" }
+  - { "from": "/blog/2024/07/sending-and-receiving-discord-messages-with-node-red/", "to": "/node-red/notification/discord/" }
 
 # The "permalink" attribute determines where the output page will be located.
 permalink: "{{ redirect.from }}"

@@ -4,20 +4,21 @@
     <div class="m-auto max-w-screen-lg">
       <div class="max-w-none mx-auto sm:grid justify-center items-center" style="grid-template-columns: 35% auto;">
         <div class="w-full h-full aspect-[331/239] ff-image-cover scale rounded-md mb-4 sm:mb-0">
-            {% set imageSrc = t.imageFile %}
-            {% set imageDescription = ["Image depicting", t.imageAlt] | join %}
-            {% image imageSrc, imageDescription, [360] %}
+          {% set imageSrc = t.imageFile %}
+          {% set imageDescription = ["Image depicting", t.imageAlt] | join %}
+          {% image imageSrc, imageDescription, [360] %}
         </div>
-        <div class="items-end justify-end sm:pl-12 flex-1 flex flex-col h-full w-full justify-items-end">
+        <div class="items-end justify-between sm:pl-12 flex-1 flex flex-col h-full w-full justify-items-end">
+          <span class="text-right pb-5 flex gap-1 hover:underline">Read the full story {% include "components/icons/arrow-long-right.svg" %}</span>
           <p class="font-normal italic text-2xl">
             "{{ t.quote }}"
           </p>
           <p class="text-lg mt-4 flex flex-row gap-3 text-right items-center self-end mb-0 mr-0 ">
             <span>{{ t.author }}, <span class="font-medium">{{ t.company }}</span></span>
             <span class="w-16 h-16 min-w-16 rounded-full mx-1 bg-black p-1">
-            {% set imageSrc = t.companyLogo %}
-            {% set imageDescription = [ t.company, "logo"] | join %}
-            {% image imageSrc, imageDescription, [56] %}
+              {% set imageSrc = t.companyLogo %}
+              {% set imageDescription = [ t.company, "logo"] | join %}
+              {% image imageSrc, imageDescription, [56] %}
             </span>
           </p>
         </div>
