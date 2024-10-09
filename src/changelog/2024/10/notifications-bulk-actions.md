@@ -8,6 +8,8 @@ tags:
     - changelog
 ---
 
-Starting with the v2.10.0 of FlowFuse, users have the ability to manage notifications in bulk, allowing users to select/deselect, mark as read, or mark as unread multiple notifications simultaneously.
+We have now added the ability to manage notifications in bulk. This allows users to select more than one notification so that they can be marked as read, or marked as unread, all in one go.
+
+We hope this small improvement saves you bundle of clicks and streamlines your operations.
 
 ![bulk-notifications.png](images/bulk-notifications.png)
