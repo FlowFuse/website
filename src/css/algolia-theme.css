@@ -69,12 +69,10 @@
 
 
 .aa-Panel .aa-ItemContent .aa-ItemContentBody .aa-ItemContentTitle {
-    font-weight: 600;
 }
 
 .aa-Panel .aa-ItemContent .aa-ItemContentBody .aa-ItemContentSubTitle {
     font-size: 12px;
-    font-weight: 600;
     color: #777;
     font-style: italic;
 }
