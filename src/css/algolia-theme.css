@@ -42,24 +42,43 @@
     min-width: 350px;
 }
 
-.aa-Panel .aa-ItemContent .aa-ItemContentTitle {
-    font-weight: 600;
-}
-
-.aa-Panel .aa-ItemContent .aa-ItemContentSubTitle {
-    font-size: 12px;
-    font-weight: 600;
-    color: #777;
-    font-style: italic;
+.aa-Panel .aa-ItemContent {
+    grid-template-columns: repeat(5, 1fr);
 }
 
 .aa-Panel .aa-ItemContent .aa-ItemIcon {
     box-shadow: none;
     background: transparent;
     height: 100%;
-    width: 30%;
+    grid-column: span 1;
+    width: 100%;
+    align-items: baseline;
 }
 
-.aa-Panel .aa-ItemContent .aa-ItemContentDescription {
+.aa-Panel .aa-ItemContent .aa-ItemIcon img {
+    height: auto;
+    width: 100%;
+    max-height: 100%;
+    max-width: 100%;
+    border-radius: 3px;
+}
+
+.aa-Panel .aa-ItemContent .aa-ItemContentBody {
+    grid-column: span 4;
+}
+
+
+.aa-Panel .aa-ItemContent .aa-ItemContentBody .aa-ItemContentTitle {
+    font-weight: 600;
+}
+
+.aa-Panel .aa-ItemContent .aa-ItemContentBody .aa-ItemContentSubTitle {
+    font-size: 12px;
+    font-weight: 600;
+    color: #777;
+    font-style: italic;
+}
+
+.aa-Panel .aa-ItemContent .aa-ItemContentBody .aa-ItemContentDescription {
     color: #777;
 }
