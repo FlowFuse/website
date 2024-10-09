@@ -1,7 +1,7 @@
 ---
 eleventyNavigation:
   key: Node-RED Plugin
-  order: 2
+  order: 3
   parent: Getting Started
 meta:
   title: Building Node-RED Plugin
