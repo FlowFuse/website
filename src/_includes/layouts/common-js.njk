@@ -1,10 +1,10 @@
+
 <!-- Generate "On this page" -->
 {% include "layouts/right-nav.njk" %}
 
 <!-- MermaidJS -->
 <script type="module">
     import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@10.0.0/dist/mermaid.esm.mjs";
-
     mermaid.initialize({
         securityLevel: 'loose',
         startOnLoad  : true
@@ -126,7 +126,3 @@
 <script src="https://cdn.jsdelivr.net/npm/algoliasearch@4.24.0/dist/algoliasearch-lite.umd.js"
         integrity="sha256-b2n6oSgG4C1stMT/yc/ChGszs9EY/Mhs6oltEjQbFCQ=" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/@algolia/autocomplete-js@1.6.1" onload="initSearchBar()"></script>
-
-
-
-
