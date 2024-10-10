@@ -1,3 +1,5 @@
 {
-    "layout": "layouts/ebook.njk"
+    "layout": "layouts/ebook.njk",
+    "nav": "ebooks",
+    "searchTitle": "E-Books"
 }

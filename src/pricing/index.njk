@@ -10,7 +10,7 @@ meta:
     faq:
         - question: "Does FlowFuse offer annual discounts for FlowFuse Cloud?"
           answer: >
-            Yes, we offer a 20% discount for customers who move from monthly to annual subscriptions. Please <a href="/contact-us/">reach out</a> to request the discount.
+            Yes, we offer a 20% discount for Team customers who move from monthly to annual subscriptions. Please <a href="/contact-us/">reach out</a> to request the discount.
         - question: "Is there a minimum for purchase?"
           answer: >
             Yes, 5 instances on Team and 10 instances on Enterprise.
@@ -87,15 +87,15 @@ hubspot:
                                 </div>
                             </div>
                             <div class="mt-9 md:text-left items-left w-full mb-11 md:mt-20 md:mb-0 flex flex-row">
-                                <h2 class="self-end">$20</h2>
-                                <div class="pl-1 text-sm leading-4 text-left self-end pb-1">
-                                    <note class="note ">/month</note>
+                                <h2 class="pb-5">$20</h2>
+                                <div class="pl-3 text-sm leading-4 text-left pt-1">
+                                    <note class="note">
+                                        /month
+                                        <br>
+                                        <span class="text-xs text-gray-500">after free trial of Team</span>
+                                    </note>
                                 </div>
                             </div>
-                            <a class="md:self-end ff-btn ff-btn--primary uppercase align-baseline w-full"
-                                href="{{ site.appURL }}/account/create"
-                                onclick="capture('cta-join', {'position': 'primary'}, {'plan': 'cloud-starter'})">TRY
-                                FOR FREE</a>
                         </div>
                     </div>
                     <!-- Team -->
@@ -159,8 +159,9 @@ hubspot:
                                 </div>
                             </div>
                             <a class="md:self-end ff-btn ff-btn--primary uppercase align-baseline w-full"
-                                href='#contact-us'
-                                onclick="scrollToAnchor(event, 'contact-us'), capture('cta-contact-us', {'position': 'primary'}, {'plan': 'team'})">Contact Us</a>
+                                href="{{ site.appURL }}/account/create"
+                                onclick="capture('cta-join', {'position': 'primary'}, {'plan': 'cloud-team'})">TRY
+                                 FREE</a>
                         </div>
                     </div>
                     <!-- Enterprise -->

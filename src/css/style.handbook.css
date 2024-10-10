@@ -138,6 +138,14 @@
         @apply max-w-full lg:max-w-[calc(100vw-580px)] xl:max-w-[calc(100vw-630px)]  2xl:max-w-[calc(100vw-690px)];
     }
 
+    .handbook .flow-renderer svg {
+        max-width: 100%;
+    }
+
+    .handbook .hbspt-form {
+        max-width: 80ch;
+    }
+
     /* Define animation transitions for all child UL elements */
     .handbook-nav ul {
         max-height: 0;
