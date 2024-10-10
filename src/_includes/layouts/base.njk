@@ -40,7 +40,7 @@ eleventyComputed:
     <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#aa4444">
     <meta name="msapplication-TileColor" content="#00aba9">
     <meta name="theme-color" content="#ffffff">
-    
+
     <!-- Meta Keywords -->
     {% if meta.keywords %}
         <meta name="keywords" content="{{ meta.keywords }}, {{ site.messaging.keywords }}">
@@ -141,6 +141,7 @@ eleventyComputed:
     <!-- Google Consent -->
     <script>
         window.dataLayer = window.dataLayer || [];
+
         function gtag(){dataLayer.push(arguments);}
 
         // Set cookies to denied by default in EU countries, California, Brazil, Canada and Australia
@@ -262,7 +263,7 @@ eleventyComputed:
                         <a href="{{ site.appURL }}/account/create" onclick="capture('cta-join', {'position': 'header'})" class="ff-btn ff-btn--primary-outlined">Free Trial</a>
                     </div>
                     <a class="ff-btn ff-btn--primary" href="/contact-us" onclick="capture('cta-talk-to-sales', {'position': 'header'})">Contact Us</a>
-                </div>    
+                </div>
             </header>
             <!-- Main Content -->
             <main class="flex flex-col mx-auto items-center justify-center gradient-bg">
@@ -305,31 +306,31 @@ eleventyComputed:
                                 <span class="sr-only">Visit our Facebook page</span>
                                 {% include "components/facebook.njk" %}
                             </a>
-                        </li>                          
+                        </li>
                         <li class="inline md:m-0 md:block">
                             <a href="https://www.linkedin.com/company/flowfuse" class="block px-3 py-3 md:p-0">
                                 <span class="sr-only">Visit our LinkedIn page</span>
                                 {% include "components/linkedin.njk" %}
                             </a>
-                        </li>                          
+                        </li>
                         <li class="inline md:m-0 md:block">
                             <a href="https://www.youtube.com/channel/UCbBzP8NZbv3WDtlt4UouA-g" class="block px-3 py-3 md:p-0">
                                 <span class="sr-only">Visit our YouTube channel</span>
                                 {% include "components/youtube.njk" %}
                             </a>
-                        </li>                          
+                        </li>
                         <li class="inline md:m-0 md:block">
                             <a href="https://twitter.com/FlowFuseInc" class="block px-3 py-3 md:p-0">
                                 <span class="sr-only">Visit our Twitter page</span>
                                 {% include "components/twitter.njk" %}
                             </a>
-                        </li>                      
+                        </li>
                         <li class="inline md:m-0 md:block">
                             <a href="https://github.com/FlowFuse" class="block px-3 py-3 md:p-0">
                               <span class="sr-only">Visit our GitHub page</span>
                               {% include "components/github.njk" %}
                             </a>
-                        </li>      
+                        </li>
                         <li class="inline md:m-0 md:block">
                             <a href="https://discord.gg/2RrvW8dkrF" class="block px-3 py-3 md:p-0">
                                 <span class="sr-only">Join our Discord</span>
@@ -352,7 +353,7 @@ eleventyComputed:
     document.getElementById('nav-toggle').onclick = function(){
         // self
         document.getElementById("nav-toggle").classList.toggle("mobile-open");
-        
+
         let classes = document.getElementById("ff-header").classList;
         classes.toggle("mobile-open");
     }
@@ -434,7 +435,7 @@ eleventyComputed:
         // gives a decimal value from 0 -> 1 of the
         // amount of content visible to the user within
         // the pageview before they leave
-        var viewed 
+        var viewed
 
         // scrolled:
         // scale these value to exist between 0 and 1
@@ -447,11 +448,11 @@ eleventyComputed:
             viewed = 1
             // couldn't scroll, so set to 0
             scrolled = 0
-        } else { 
+        } else {
             viewed = MAX_CONTENT_VIEWED
             scrolled = (MAX_CONTENT_VIEWED - NO_SCROLL_HEIGHT) / (1 - NO_SCROLL_HEIGHT)
         }
-        
+
         capture('$pageleave', {
             content_scrolled: scrolled,
             content_viewed: viewed
