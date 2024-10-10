@@ -1,25 +1,16 @@
 ---
-title: How to implement loops in Node-RED flows
-subtitle: Learn how to implement while, for, and for...of Loops with Core and Custom Nodes in Node-RED
-description: Learn how to implement while, for, and for...of loops in Node-RED with core and custom nodes for efficient data processing and automation.
-date: 2024-09-17
-authors: ["sumit-shinde"]
-image: 
-tags:
-   - post
-   - nodered
-   - node red loop
-   - nodered loop
-   - node red for loop
-   - node-red loop
-   - nodered for of
-   - node-red while loop
-   - node-red do while loop
+eleventyNavigation:
+  key: Loop
+  parent: Programming
+meta:
+  title: How to implement loops in Node-RED flows
+  description: Learn how to implement while, for, and for...of loops in Node-RED with core and custom nodes for efficient data processing and automation.
+  keywords: node red loop, nodered loop, node red for loop, node-red loop, nodered for of, node-red while loop, node-red do while loop
 ---
 
-In any automation or data processing scenario, one of the biggest challenges is handling repetitive tasks. Whether it’s iterating over large datasets, running calculations multiple times, loops are an essential tool that allows for efficient and scalable workflows. When your process involves repeating actions, or you need to dynamically update values based on changing conditions, loops are a necessity.
+# {{meta.title}}
 
-<!--more-->
+In any automation or data processing scenario, one of the biggest challenges is handling repetitive tasks. Whether it’s iterating over large datasets, running calculations multiple times, loops are an essential tool that allows for efficient and scalable workflows. When your process involves repeating actions, or you need to dynamically update values based on changing conditions, loops are a necessity.
 
 In this guide, we’ll show you how to leverage loops in Node-RED to enhance your automation and data processing tasks. We’ll cover how to implement core looping constructs such as for, while, and for...of loops using Node-RED’s built-in and custom nodes. By understanding these concepts, you’ll be able to design more efficient flows, handle complex data operations, and automate repetitive tasks with ease.
 
@@ -207,8 +198,3 @@ With the **Enumeration** kind, you can iterate through different types of data s
 {% renderFlow %}
 [{"id":"65d854c9098393e8","type":"group","z":"a3aa840957f658c6","name":"For of/ for each","style":{"label":true},"nodes":["38630ff1.21721","f009e0e9.24576","cf52b6dd.5febb8","33031c0e.1b115c","b28b06f1.38eb48","6e593ff2.dc94c"],"x":334,"y":219,"w":722,"h":222},{"id":"38630ff1.21721","type":"inject","z":"a3aa840957f658c6","g":"65d854c9098393e8","name":"Object","props":[{"p":"payload"},{"p":"topic","vt":"str"}],"repeat":"","crontab":"","once":false,"onceDelay":0.1,"topic":"","payload":"{\"first\":\"Hello World\",\"second\":8,\"third\":true}","payloadType":"json","x":430,"y":260,"wires":[["f009e0e9.24576"]]},{"id":"f009e0e9.24576","type":"loop","z":"a3aa840957f658c6","g":"65d854c9098393e8","name":"","kind":"enum","count":"","initial":"","step":"","condition":"","conditionType":"js","when":"before","enumeration":"payload","enumerationType":"msg","limit":"","loopPayload":"loop-val","finalPayload":"final-orig","x":740,"y":300,"wires":[["cf52b6dd.5febb8"],["33031c0e.1b115c","6e593ff2.dc94c"]]},{"id":"cf52b6dd.5febb8","type":"debug","z":"a3aa840957f658c6","g":"65d854c9098393e8","name":"Loop End","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"loop","targetType":"msg","statusVal":"","statusType":"auto","x":950,"y":280,"wires":[]},{"id":"33031c0e.1b115c","type":"change","z":"a3aa840957f658c6","g":"65d854c9098393e8","name":"Repeat","rules":[],"action":"","property":"","from":"","to":"","reg":false,"x":730,"y":400,"wires":[["f009e0e9.24576"]]},{"id":"b28b06f1.38eb48","type":"inject","z":"a3aa840957f658c6","g":"65d854c9098393e8","name":"Array","props":[{"p":"payload"}],"repeat":"","crontab":"","once":false,"onceDelay":0.1,"topic":"","payload":"[\"foo\",\"bar\",\"foobar\"]","payloadType":"json","x":430,"y":320,"wires":[["f009e0e9.24576"]]},{"id":"6e593ff2.dc94c","type":"debug","z":"a3aa840957f658c6","g":"65d854c9098393e8","name":"","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"true","targetType":"full","statusVal":"","statusType":"auto","x":940,"y":400,"wires":[]}]
 {% endrenderFlow %}
-
-
-## Conclusion
-
-Loops are essential for automating repetitive tasks in Node-RED. Whether using core nodes or custom ones like node-red-contrib-loop, you can implement while, for, and for...of loops to streamline your workflows. Mastering these techniques will enhance your data processing and automation efficiency. Dive in and make your Node-RED flows more powerful and dynamic!
