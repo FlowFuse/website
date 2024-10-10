@@ -70,11 +70,12 @@
                     },
                     item({item, components, html}) {
                         return html`
-                            <a href="${item.url}" class="aa-ItemWrapper">
+                            <a href="#" data-href="${item.url}" class="aa-ItemWrapper">
                                 <div class="aa-ItemContent">
                                     <div class="aa-ItemIcon aa-ItemIcon--alignTop">
                                         <img
-                                                src="${item.image}"
+                                                src="#"
+                                                data-src="${item.image}"
                                                 alt="${item.name}"
                                                 width="40"
                                                 height="40"
@@ -103,17 +104,29 @@
                                 </div>
                             </a>`;
                     },
-                },
+                }
             };
         }
 
         autocomplete({
+            debug: true,
             container: '#algolia-search',
             placeholder,
             getSources({query}) {
                 return [
                     searchQuery(searchClient, query, searchScope)
                 ]
+            },
+            onStateChange({ state, prevState }) {
+                // this is a fix or workaround for untitaker/hyperlink static broken link checker plugin
+                //      the plugin can't resolve dynamic (${item.xxx}) src or href values
+                //      the plugin can't escape/ignore files, code blocks, scripts etc
+                document.querySelectorAll('.aa-Panel a').forEach(item => {
+                    item.href = item.getAttribute('data-href');
+                });
+                document.querySelectorAll('.aa-Panel img').forEach(img => {
+                    img.src = img.getAttribute('data-src');
+                });
             }
         });
     }
