@@ -17,15 +17,15 @@ This guide aims to provide you with an understanding of what Node-RED plugins ar
 
 Node-RED plugins are powerful npm modules designed to extend the functionality of the Node-RED editor and runtime. They enable developers to customize and enhance the Node-RED environment by adding sidebar features, modifying existing ones, or integrating with various tools and services. These plugins can create custom panels or offer additional configuration options tailored to user needs.
 
-For example, imagine a plugin that introduces a new sidebar to the Node-RED editor specifically for monitoring system performance. This plugin could provide real-time insights into CPU and memory usage, helping developers identify bottlenecks and optimize their flows effectively.
+For example, imagine a plugin introducing a new sidebar to the Node-RED editor to monitor system performance. This plugin could provide real-time insights into CPU and memory usage, helping developers identify bottlenecks and optimize their flows effectively.
 
 ## What's the Difference Between Nodes and Plugins?
 
-Many people confuse nodes and plugins, often considering them the same. However, they serve distinct roles. Nodes are the fundamental components used to build flows, with each node performing a specific function, such as data input, processing, or output. They are the building blocks that define the logic and behavior of a flow by connecting various nodes together. In contrast, plugins extend the capabilities of the Node-RED editor and runtime. They allow for customization and enhancement of the environment by adding new sidebars with features. Essentially, plugins do not introduce new nodes to your Node-RED palette.
+Many people confuse nodes and plugins, often considering them the same. However, they serve distinct roles. Nodes are the fundamental components used to build flows, with each node performing a specific function, such as data input, processing, or output. They are the building blocks that define the logic and behavior of a flow by connecting various nodes. In contrast, plugins extend the capabilities of the Node-RED editor and runtime. They allow for customization and enhancement of the environment by adding new sidebars with features. Essentially, plugins do not introduce new nodes to your Node-RED palette.
 
 ## Building a Node-RED Plugin
 
-In this section, we will create a simple Node-RED plugin that adds a new sidebar panel to the Node-RED editor. This example will guide you through setting up the required files and coding the functionality step by step.
+This section will create a simple Node-RED plugin that adds a new sidebar panel to the Node-RED editor. This example will guide you through setting up the required files and coding the functionality step by step.
 
 ### Step 1: Create the Plugin Directory
 
@@ -36,15 +36,15 @@ mkdir node-red-plugin-deploy-count
 cd node-red-plugin-deploy-count
 ```
 
-This creates a folder called `node-red-plugin-deploy-count` and navigates into it. Now you have a dedicated space for your plugin files.
+This creates a folder called `node-red-plugin-deploy-count` and navigates into it. Now, you have a dedicated space for your plugin files.
 
 #### Step 2: Set Up `package.json`
 
-The next step is to create a [package.json](https://nodered.org/docs/creating-nodes/packaging) file. This file is essential for any `Node.js` project, as it describes your project and its dependencies and the configurations that required by node-red to identify plugins or nodes.
+The next step is to create a [package.json](https://nodered.org/docs/creating-nodes/packaging) file. This file is essential for any Node.js project, as it describes your project and its dependencies and the configurations required by node-red to identify plugins or nodes.
 
 Create a file named `package.json` in your plugin directory:
 
-If you are using linux then:
+If you are using Linux, then:
 
 ```bash
 touch package.json
@@ -62,7 +62,7 @@ Now, open it in your favorite text editor and add the following content:
 {
   "name": "node-red-plugin-deploy-count",
   "version": "1.0.0",
-  "description": "An plugin counts how many times you have deployed the flow from start",
+  "description": "A plugin counts how many times you have deployed the flow from start",
   "keywords": [],
   "author": "",
   "license": "Apache-2.0",
@@ -83,7 +83,7 @@ Here’s what each part means:
 
 #### Step 3: Create `deploy-count-plugin.html`
 
-Now, it’s time to create the main HTML file that will contain the JavaScript and HTML code for your sidebar plugin.
+It’s time to create the main HTML file containing the JavaScript and HTML code for your sidebar plugin.
 
 Create a new file called `deploy-count-plugin.html`:
 
@@ -116,7 +116,7 @@ Open `deploy-count-plugin.html` and start by adding the following code to regist
 </script>
 ```
 
-This code registers the plugin using RED.plugins.registerPlugin. The onadd function is called when the plugin is successfully loaded into Node-RED. For now, it logs a message to the console, but you can add any logic you need to execute when developing your plugin.
+This code registers the plugin using RED.plugins.registerPlugin. The onadd function is called when the plugin is successfully loaded into Node-RED. It logs a message to the console for now, but you can add any logic you need to execute when developing your plugin.
 
 #### Step 5: Add a Tab in the Sidebar
 
@@ -142,11 +142,11 @@ RED.plugins.registerPlugin("node-red-plugin-deploy-count", {
 Here, we have added a new tab to the sidebar using the RED.sidebar.addTab function. The configuration for the tab includes the following properties:
 
 - id: A unique identifier for the tab, which can be used to reference it later.
-- name: The name of the tab, displayed in the sidebar.
-- label: The label shown on the tab itself, which can be different from the name.
-- iconClass: The CSS class for the icon that appears on the tab. You can use Font Awesome or any other icon library.
-- content: This is where you will define the HTML content that appears in the tab when it is selected.
-- action: A function that is called when the tab is clicked, allowing you to define what happens when the tab is activated.
+- name: The name of the tab is displayed in the sidebar.
+- label: The label shown on the tab itself can be different from the name.
+- iconClass: The CSS class for the icon on the tab. You can use Font Awesome or any other icon library.
+- content: This is where you will define the HTML content that appears in the tab when selected.
+- action: A function called when the tab is clicked, allowing you to define what happens when the tab is activated.
 
 
 #### Step 6: Add Display Elements
@@ -166,7 +166,7 @@ To add this `content` element in the sidebar, in the object passed to the `addTa
 
 #### Step 7: Adding CSS
 
-To style your plugin content directly in the JavaScript code, you can use the .css() method. This allows you to dynamically apply styles to elements without needing an external stylesheet.
+To style your plugin content directly in the JavaScript code, you can use the .css() method. This lets you dynamically apply styles to elements without needing an external stylesheet.
 
 Here's an example of applying styles using the .css() method in your plugin:
 
@@ -210,7 +210,7 @@ function updateDisplays() {
 
 #### Step 9: Handle Deploy Events
 
-Now, let’s handle deploy events to update our deploy `count` and `last deploy time`. Add the following code inside the `onadd` function, below the `updateDisplays` function:
+Let’s handle deploy events to update our deploy `count` and `last deploy time`. Add the following code inside the `onadd` function, below the `updateDisplays` function:
 
 ```javascript
 RED.events.on("deploy", function() {
@@ -301,7 +301,7 @@ node-red
 Open the Node-RED editor in your web browser. You should see your new "Monitor Deployment" tab in the sidebar.
 
 ![Image showing new added tab in the sidebar](./images/new-added-tab.png){data-zoomable}
-_Image showing new added tab in the sidebar_
+_Image showing newly added tab in the sidebar_
 
 Deploy your flow multiple times and observe how the deploy count and last deploy time update accordingly.
 
