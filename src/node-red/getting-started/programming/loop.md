@@ -102,7 +102,7 @@ graph TD
 
 #### For...of / ForEach Loop
 
-In traditional programming, `for...of` and `forEach` loops are commonly used to iterate through arrays or object properties, allowing us to process each element individually. While Node-RED doesn't offer these exact constructs, you can achieve similar results using a combination of nodes, particularly the **Split** and **Join** nodes.
+In traditional programming, `for...of` and `forEach` loops are commonly used to iterate through arrays or object properties, allowing us to process each element individually. While Node-RED doesn't offer these exact constructs, you can achieve similar results using a combination of nodes, particularly the **[Split](/node-red/core-nodes/split/)** and **Join** nodes.
 
 Here’s how you can replicate this functionality in Node-RED:
 
@@ -131,7 +131,7 @@ graph TD
 
 #### Implementing Loops with the Function Node
 
-Implementing loops with the Function node is straightforward if you're familiar with JavaScript, as it allows you to write custom code. However, a common issue is figuring out how to send a message on each iteration without ending the loop after the first iteration. In this section, we’ll show you how to implement loops in the Function node correctly, ensuring that each iteration is processed and sent out properly without prematurely breaking the loop.
+Implementing loops with the **[Function](/node-red/core-nodes/function/)** node is straightforward if you're familiar with JavaScript, as it allows you to write custom code. However, a common issue is figuring out how to send a message on each iteration without ending the loop after the first iteration. In this section, we’ll show you how to implement loops in the Function node correctly, ensuring that each iteration is processed and sent out properly without prematurely breaking the loop.
 
 For demonstration purposes, we will implement a `for` loop.
 
@@ -144,7 +144,12 @@ For demonstration purposes, we will implement a `for` loop.
        newMsg.payload = msg.payload[i]; // Set payload to the current item
        node.send(newMsg); // Send the message
    }
+   ```
 3. Drag a **Debug** node onto the canvas and connect it to the output of the **Function** node.
+
+When you deploy the flow and click the Inject button, each item in the array will be sent as a separate message and printed in the debug panel. This works because the `node.send()` method allows you to send messages asynchronously. Unlike `return`, which ends the execution of the **Function** node immediately, `node.send()` continues to process and send each message without halting the loop.
+
+By using `node.send()` inside the loop, you ensure that each iteration produces a separate message, and the Function node can handle multiple messages efficiently. For more information on asynchronous handling of messages, refer to [Sending messages asynchronously](https://nodered.org/docs/user-guide/writing-functions#sending-messages-asynchronously).
 
 {% renderFlow %}
 [{"id":"50be2bac3b058be5","type":"group","z":"a3aa840957f658c6","name":"","style":{"label":true},"nodes":["97c288f32955c6ab","7a8404c44ac0749b","0d7b9cb51669ad9b"],"x":414,"y":499,"w":612,"h":82},{"id":"97c288f32955c6ab","type":"inject","z":"a3aa840957f658c6","g":"50be2bac3b058be5","name":"Array","props":[{"p":"payload"}],"repeat":"","crontab":"","once":false,"onceDelay":0.1,"topic":"","payload":"[1, \"hello\", \"%\", true]","payloadType":"json","x":510,"y":540,"wires":[["7a8404c44ac0749b"]]},{"id":"7a8404c44ac0749b","type":"function","z":"a3aa840957f658c6","g":"50be2bac3b058be5","name":"For Loop","func":"for (let i = 0; i < msg.payload.length; i++) {\n    // Create a new message for each item\n    let newMsg = { ...msg }; // Copy the original msg object\n    newMsg.payload = msg.payload[i]; // Set payload to the current item\n    node.send(newMsg)\n}","outputs":1,"timeout":0,"noerr":0,"initialize":"","finalize":"","libs":[],"x":700,"y":540,"wires":[["0d7b9cb51669ad9b"]]},{"id":"0d7b9cb51669ad9b","type":"debug","z":"a3aa840957f658c6","g":"50be2bac3b058be5","name":"debug 1","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"false","statusVal":"","statusType":"auto","x":920,"y":540,"wires":[]}]
