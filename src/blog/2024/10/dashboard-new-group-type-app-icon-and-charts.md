@@ -14,6 +14,8 @@ tags:
 
 At FlowFuse, we strive to improve your dashboard experience by introducing features that enhance data visualization and customization. This update brings new ways to tailor your dashboards with key improvements, including a new chart type, a customizable app icon, and a dialog feature for groups.
 
+<!--more-->
+
 ## New Chart Type: Histogram
 
 Histograms are an essential tool for data analysis, offering a clear way to visualize distributions. The latest FlowFuse update introduces a fully customizable histogram chart type, allowing you to present frequency distributions for data values. Whether analyzing performance metrics or user activity, histograms give you a clear view of how data points are distributed across predefined ranges. You can now easily group data and control the range, providing deeper insights at a glance.
