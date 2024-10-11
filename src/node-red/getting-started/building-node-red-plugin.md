@@ -109,7 +109,7 @@ Here, we have added a new tab to the sidebar using the RED.sidebar.addTab functi
 - id: A unique identifier for the tab, which can be used to reference it later.
 - name: The name of the tab is displayed in the sidebar.
 - label: The label shown on the tab itself can be different from the name.
-- iconClass: The CSS class for the icon on the tab. You can use Font Awesome or any other icon library.
+- iconClass: The CSS class for the icon on the tab. You can use Font Awesome icon classes for this purpose.
 - content: This is where you will define the HTML content that appears in the tab when selected.
 - action: A function called when the tab is clicked, allowing you to define what happens when the tab is activated.
 
