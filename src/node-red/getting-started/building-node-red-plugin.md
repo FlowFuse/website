@@ -11,7 +11,7 @@ meta:
 
 # {{ meta.title }}
 
-This guide aims to provide you with an understanding of what Node-RED plugins are and the differences between nodes and plugins. Additionally, it will walk you through the process of creating a Node-RED plugin from scratch. In this practical guide, we will develop a simple plugin that displays deployment information, including the total deployment count and the timestamp of the last deployment, in a newly added sidebar.
+This documentation explains Node-RED plugins and their differences from nodes. It includes a practical example of creating a plugin that displays deployment information, such as the total deployment count and the timestamp of the last deployment, to help you gain a better understanding.
 
 ## What Node-RED Plugins Are?
 
@@ -29,32 +29,11 @@ This section will create a simple Node-RED plugin that adds a new sidebar panel 
 
 ### Step 1: Create the Plugin Directory
 
-First, let’s create a directory for your Node-RED plugin. This keeps everything organized. Open your terminal and run the following commands:
-
-```bash
-mkdir node-red-plugin-deploy-count
-cd node-red-plugin-deploy-count
-```
-
-This creates a folder called `node-red-plugin-deploy-count` and navigates into it. Now, you have a dedicated space for your plugin files.
+To keep everything organized, create a directory for your Node-RED plugin. You can use your file explorer to create a folder named node-red-plugin-deploy-count. This will be your dedicated space for the plugin files.
 
 #### Step 2: Set Up `package.json`
 
-The next step is to create a [package.json](https://nodered.org/docs/creating-nodes/packaging) file. This file is essential for any Node.js project, as it describes your project and its dependencies and the configurations required by node-red to identify plugins or nodes.
-
-Create a file named `package.json` in your plugin directory:
-
-If you are using Linux, then:
-
-```bash
-touch package.json
-```
-
-or windows then 
-
-```bash
-echo. > package.json
-```
+Next, create a file named [package.json](https://nodered.org/docs/creating-nodes/packaging) in your plugin directory. This file is essential for any Node.js project, as it describes your project and its dependencies and the configurations required by Node-RED to identify plugins or nodes.
 
 Now, open it in your favorite text editor and add the following content:
 
@@ -83,21 +62,7 @@ Here’s what each part means:
 
 #### Step 3: Create `deploy-count-plugin.html`
 
-It’s time to create the main HTML file containing the JavaScript and HTML code for your sidebar plugin.
-
-Create a new file called `deploy-count-plugin.html`:
-
-For linux:
-
-```bash
-touch deploy-count-plugin.html
-```
-
-For Windows:
-
-```bash
-echo. > deploy-count-plugin.html
-```
+Create a new file called `deploy-count-plugin.html` in your plugin directory. This file will contain the `JavaScript` and `HTML` code for your sidebar plugin.
 
 #### Step 4: Register the Plugin
 
@@ -147,7 +112,6 @@ Here, we have added a new tab to the sidebar using the RED.sidebar.addTab functi
 - iconClass: The CSS class for the icon on the tab. You can use Font Awesome or any other icon library.
 - content: This is where you will define the HTML content that appears in the tab when selected.
 - action: A function called when the tab is clicked, allowing you to define what happens when the tab is activated.
-
 
 #### Step 6: Add Display Elements
 
@@ -287,11 +251,14 @@ onadd: function() {
 
 #### Step 10: Testing Your Plugin
 
-1. Install your plugin by running the following command in the Node-RED directory:
+1. Install your plugin by running the following command in the `.node-red` directory, you can find the `.node-red` directory in your user folder, typically located at `C:\Users<YourUsername>.node-red`.
 
 ```bash
-npm install /path/to/node-red-plugin-deploy-count
+npm install /<path-to-plugin-folder>/node-red-plugin-deploy-count
 ```
+
+Replace `<path-to-plugin-folder>` with the actual path where your plugin folder is located.
+
 2. Start Node-RED:
 
 ```bash
