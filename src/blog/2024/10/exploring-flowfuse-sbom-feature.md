@@ -1,6 +1,6 @@
 ---
-title: How the FlowFuse SBOM Feature Enhances Node-RED Application Security and Management
-subtitle: A Guide to Enhancing Your Node-RED Application's Security
+title: FlowFuse SBoM Enhances Node-RED Application Security and Management
+subtitle: Enhancing the Security of Your Node-RED Applications
 description: Learn how the FlowFuse SBOM feature improves the security and management of Node-RED applications by tracking dependencies and identifying vulnerabilities.
 date: 2024-10-14
 authors: ["sumit-shinde"]
@@ -12,11 +12,11 @@ tags:
  - flowfuse software bills of material
 ---
 
-In recent times, open-source projects have become the backbone of the software industry. These projects are free to use, widely adopted, and regularly maintained by active communities to ensure they remain secure. Node-RED, for example, benefits from a dedicated community that updates and monitors the core platform. However, not all open-source projects or components are maintained with the same level of attention. This can lead to security risks and vulnerabilities, particularly with third-party nodes in Node-RED's vast ecosystem. While some nodes have a solid community to contribute, update, and monitor, others may not receive regular updates or security patches, which introduces potential vulnerabilities.
+FlowFuse recently launched its Software Bill of Materials (SBOM) feature for enterprise customers. This powerful tool enhances security and management within projects, particularly in the Node-RED ecosystem. As open-source libraries and software continue to play a pivotal role in the industry, monitoring third-party components used in projects becomes essential. The SBOM enables organizations to track dependencies and identify vulnerabilities, ensuring compliance and mitigating risks.
 
 <!--more-->
 
-To address this challenge, FlowFuse has introduced the Software Bill of Materials (SBOM) feature, which helps users maintain security. This guide will explore what an SBOM is and how it helps secure your Node-RED projects.
+In this article, we will explore the SBOM feature and discuss how it impacts security and management in Node-RED applications.
 
 ## What is an SBOM, and How Does It Enhance Security?
 
@@ -51,9 +51,9 @@ Once you navigate the tab, you will see a list of all the packages installed wit
 ![Image showing the Dependencies tab along with the detailed notes of each item displayed.](./images/the-dependency-tab-info.png){data-zoomable}
 _Image showing the Dependencies tab along with the detailed notes of each item displayed._
 
-### Now What? Make the Most of SBOM
+### Here’s How You Can Use SBOM
 
-Now that you've explored the SBOM interface, you can use it to enhance the security of your Node-RED applications:
+Now that you've explored the SBOM interface, here are ways to enhance the security of your Node-RED applications:
 
 1. **Monitor Regularly**: Check your SBOM often to identify outdated or vulnerable packages. Staying updated can prevent potential security threats.
 
@@ -66,7 +66,3 @@ Adopting these practices in your development routine will enhance your applicati
 **[Sign up](https://app.flowfuse.com/) for FlowFuse now and enjoy a free trial to explore all our features! Discover how you can enhance your Node-RED projects and accelerate your production processes.**
 
 *If you are an educator or student, we offer support and provide free licenses. Contact us for more information [here](/education/).*
-
-### Conclusion
-
-The Software Bill of Materials feature in FlowFuse is a valuable asset for managing Node-RED applications. By leveraging it, you can enhance your project’s security and maintain better control over your dependencies.
