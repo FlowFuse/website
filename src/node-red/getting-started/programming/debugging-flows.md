@@ -1,26 +1,20 @@
 ---
-title: How to Debug Node-RED Flows Using Debugger
-subtitle: Learn Advanced Debugging Techniques for Node-RED
-description: Debug Node-RED flows using the Debugger. Learn to set breakpoints, step through execution, and inspect messages for efficient troubleshooting.
-date: 2024-09-27
-authors: ["sumit-shinde"]
-image: 
-tags:
- - post
- - nodered
- - node-red-debugger
- - node red debug
- - nodered debug
- - node-red debug
- - how to debug nodered flows
- - how to debug node-red flows
+eleventyNavigation:
+  key: Debugging
+  parent: Programming
+meta:
+  title: How to Debug Node-RED Flows Using Debugger
+  description:  Debug Node-RED flows using the Debugger. Learn to set breakpoints, step through execution, and inspect messages for efficient troubleshooting.
+  keywords: node-red-debugger, node red debug, nodered debug, node-red debug, how to debug nodered flows, how to debug node-red flows
 ---
+
+# {{meta.title}}
 
 When it comes to debugging application flows in Node-RED, the tool most Node-RED developers often reach for is the [Debug](/node-red/core-nodes/debug/) node. It provides a simple way to output message payloads or other data to the debug sidebar, helping you gain insights into how your flow is working. But what if you needed more control and visibility over the flow’s execution? What if you wanted to step through each node in detail, inspect variables, or pause the flow at specific points to understand what’s happening?
 
 <!--more-->
 
-In these cases, using the **Node-RED Debugger** becomes invaluable. The debugger allows you to trace the execution of your flows interactively, set breakpoints, and gain deeper insights beyond what the Debug node offers. This guide will show you how to effectively use the Node-RED Debugger to pinpoint issues and fine-tune your applications.
+In these cases, using the **Node-RED Debugger** becomes invaluable. The debugger allows you to trace the execution of your flows interactively, set breakpoints, and gain deeper insights beyond what the Debug node offers. This Documentation will show you how to effectively use the Node-RED Debugger to pinpoint issues and fine-tune your applications.
 
 ## What is Debugging, and Why is it crucial in Node-RED Flows?
 
@@ -48,7 +42,7 @@ To install the Node-RED Debugger:
 
 ### Enabling the Debugger
 
-![Image showing the option to turn the debugger on and off in the sidebar](./images/disable-enable-button.png
+![Image showing the option to turn the debugger on and off in the sidebar](../images/disable-enable-button.png
 ){data-zoomable}
 _Image showing the option to turn the debugger on and off in the sidebar_
 
@@ -75,19 +69,19 @@ However, clicking the **Inject** node once does not produce the expected results
 
 Before proceeding further, let's first understand the Debugger tab and its different sections. The Debugger tab contains two main areas: **Breakpoints** and **Messages**. 
 
-![Image showing the breakpoint section in the sidebar](./images/breakpoints-section.png
+![Image showing the breakpoint section in the sidebar](../images/breakpoints-section.png
 ){data-zoomable}
 _Image showing the breakpoint section in the sidebar_
 
 
 1. **Breakpoints**: This section lists all the breakpoints you have set within your flow. It allows you to manage and navigate through the breakpoints effectively.
 
-![Image showing the messages section in the sidebar](./images/message-section.png){data-zoomable}
+![Image showing the messages section in the sidebar](../images/message-section.png){data-zoomable}
 _Image showing the messages section in the sidebar_
 
 2. **Messages**: This section shows any messages currently queued up in the runtime, giving you visibility into the data being processed at various stages of your flow.
 
-![Image showing the controls in the sidebar](./images/debugger-controls.png){data-zoomable}
+![Image showing the controls in the sidebar](../images/debugger-controls.png){data-zoomable}
 _Image showing the controls in the sidebar_
 
 At the top of the Debugger tab, you will find controls to stop the runtime manually and buttons to resume execution and step through the flow one input or output at a time when it is paused.
@@ -96,7 +90,7 @@ At the top of the Debugger tab, you will find controls to stop the runtime manua
 
 Now, let's diagnose the flow. We’ll manually pause the runtime, then step through each part of the flow using the debugger controls, observing the changes at each step.
 
-![Image shows the execution of flow while debugger enabled and how to proceed to subsequent execution](./images/proceeding-further-execution.gif){data-zoomable}
+![Image shows the execution of flow while debugger enabled and how to proceed to subsequent execution](../images/proceeding-further-execution.gif){data-zoomable}
 _Image show the execution of flow while debugger enabled and how to proceed to subsequent execution_
 
 Follow these steps:
@@ -116,7 +110,7 @@ Now that we've pinpointed the problem area between the [Switch](/node-red/core-n
 
 First, let’s discuss where exactly we should add breakpoints. Our previous debugging shows that all 11 messages are coming to the Switch node correctly. Still, we need to determine how many messages pass through the condition and if they contain the part property required by the Join node to create a single value—in this case, an array. So, we add breakpoints at the output of the switch node for conformation and the input of the join node to output the join node.
 
-![Image showing how to add breakpoints](./images/adding-breakpoints.gif){data-zoomable}
+![Image showing how to add breakpoints](../images/adding-breakpoints.gif){data-zoomable}
 _Image showing how to add breakpoints_
 
 To add a breakpoint:
@@ -128,7 +122,7 @@ To add a breakpoint:
 
 ### Debugging: Pinpointing the Exact Problem and Solving the Issue in the Flow
 
-![Image showing the execution of the flow with added breakpoints, indicating the number of each input/output being sent and received for debugging.](./images/breakpoint-debugging.gif){data-zoomable}
+![Image showing the execution of the flow with added breakpoints, indicating the number of each input/output being sent and received for debugging.](../images/breakpoint-debugging.gif){data-zoomable}
 _Image showing the execution of the flow with added breakpoints, indicating the number of each input/output being sent and received for debugging._
 
 Start by clicking the inject node to trigger execution, which will pause at the output of the switch node. Check the blue rectangle to see how many messages have passed through; it shows only a few, not 11, indicating that only those messages met the condition. As you proceed, you will see those messages also reaching the input of the join node correctly. 
@@ -143,7 +137,7 @@ Now that you’ve learned how to add breakpoints and pinpoint problems, you must
 
 ### Disabling Breakpoints
 
-![Image showing two ways of disabling breakpoints](./images/disabling-breakpoints.gif){data-zoomable}
+![Image showing two ways of disabling breakpoints](../images/disabling-breakpoints.gif){data-zoomable}
 _Image showing two ways of disabling breakpoints_
 
 To disable a breakpoint without removing it:
@@ -156,7 +150,7 @@ To disable a breakpoint without removing it:
 
 ### Removing Breakpoints
 
-![Image showing two ways of removing breakpoints](./images/removing-breakpoints.gif){data-zoomable}
+![Image showing two ways of removing breakpoints](../images/removing-breakpoints.gif){data-zoomable}
 _Image showing two ways of removing breakpoints_
 
 To obliterate a breakpoint:
@@ -165,7 +159,7 @@ To obliterate a breakpoint:
 2. Click the **X** available on the right side of each breakpoint to remove it.
 3. Alternatively, locate the breakpoints you have added to the flow. Click on the breakpoint twice, turning it into a transparent rectangle with a dotted border, indicating it is removed.
 
-In conclusion, mastering debugging in Node-RED is crucial for creating reliable flows. While the Debug node is excellent for quick insights, don’t underestimate the power of the Node-RED Debugger. Setting breakpoints can significantly streamline your troubleshooting process and help you identify issues more effectively.
+In summery, mastering debugging in Node-RED is crucial for creating reliable flows. While the Debug node is excellent for quick insights, don’t underestimate the power of the Node-RED Debugger. Setting breakpoints can significantly streamline your troubleshooting process and help you identify issues more effectively.
 
 ## Up Next
 
