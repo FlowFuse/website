@@ -10,6 +10,8 @@ tags:
  - flowfuse
  - enhancing node-red security
  - flowfuse software bills of material
+ - Sbom in the industrial applications
+ - sbom open source
 ---
 
 FlowFuse recently launched Software Bill of Materials (SBoM) for enterprise customers. This powerful tool enhances security and management within projects, particularly in the Node-RED ecosystem. As open-source libraries and software continue to play a pivotal role in the industry, monitoring third-party components used in projects becomes essential. The SBoM enables organizations to track dependencies and identify vulnerabilities, ensuring compliance and mitigating risks.
@@ -18,13 +20,25 @@ FlowFuse recently launched Software Bill of Materials (SBoM) for enterprise cust
 
 ## What is an SBoM, and How Does It Enhance Security?
 
-A Software Bill of Materials (SBoM) is a detailed list of all the components that make up a software application, just like how a bill of materials for a physical product lists every part used in its construction, an SBoM provides a breakdown of all the software libraries, packages, and dependencies used in a project.
+A Software Bill of Materials (SBoM) is a detailed list of all the components that make up a software application. Just as a bill of materials for a physical product lists every part used in its construction, an SBoM provides a breakdown of all the software libraries, packages, and dependencies in a project.
 
 This transparency is crucial for security, allowing developers and organizations to track what’s inside their software. By knowing precisely what components are in use, you can quickly identify outdated or vulnerable dependencies that may pose security risks. An SBoM helps you monitor third-party nodes, ensuring that any related security issues can be addressed promptly and reducing the chance of vulnerabilities being exploited.
 
+## How You Can Use SBoM to Enhance Security in Your Node-RED Applications
+
+Here are some effective strategies for leveraging SBoM in your Node-RED applications:
+
+1. **Regular Monitoring**: Frequently review your SBoM to identify outdated or vulnerable packages. Proactive monitoring helps catch potential security threats early.
+
+2. **Timely Upgrades**: When you spot vulnerabilities in your packages, prioritize upgrading them. Keeping dependencies up to date is crucial for maintaining security and performance.
+
+3. **Evaluate Third-Party Nodes**: Assess the third-party nodes in your application. If any appear unmaintained or outdated, consider alternatives to ensure ongoing security.
+
+By integrating these practices into your workflow, you can effectively manage dependencies and strengthen the security of your Node-RED solutions.
+
 ## Exploring the FlowFuse SBoM Feature
 
-**[FlowFuse](/)** is an industrial data platform that empowers engineers to build, manage, scale, and secure their Node-RED solutions for digitalizing processes and operations at the edge. It enables engineers to seamlessly integrate IT and OT environments, allowing teams to quickly connect, collect, transform, and visualize data to optimize industrial workflows.
+To support the effective monitoring and assessment of your dependencies, FlowFuse provides a dedicated Software Bill of Materials (SBoM) interface in the platform. For those who may not be familiar, **[FlowFuse](/)** offers a comprehensive platform that enables engineers to effectively build, manage, and secure their applications. By integrating IT and operational technology (OT) environments, FlowFuse streamlines the process of connecting, collecting, transforming, and visualizing industrial data.
 
 ### Accessing FlowFuse SBoM Interface
 
@@ -49,17 +63,7 @@ Once you navigate the tab, you will see a list of all the packages installed wit
 ![Image showing the Dependencies tab along with the detailed notes of each item displayed.](./images/the-dependency-tab-info.png){data-zoomable}
 _Image showing the Dependencies tab along with the detailed notes of each item displayed._
 
-### Here’s How You Can Use SBoM
-
-Now that you've explored the SBoM interface, here are ways to enhance the security of your Node-RED applications:
-
-1. **Monitor Regularly**: Check your SBoM often to identify outdated or vulnerable packages. Staying updated can prevent potential security threats.
-
-2. **Upgrade Packages**: If you find any packages flagged for vulnerabilities, upgrade them promptly. This will help secure your application and improve performance.
-
-3. **Assess Third-Party Nodes**: Review the third-party nodes you use. If any lack regular updates, consider alternatives to ensure your application remains secure and well-maintained.
-
-Adopting these practices in your development routine will enhance your applications' security and cultivate a proactive maintenance culture. Security is a team effort, and staying vigilant about your dependencies is essential for protecting your projects. The FlowFuse SBoM feature is an invaluable auditing tool, accessible to all team members with the appropriate permissions, allowing everyone to contribute to maintaining security seamlessly.
+Incorporating a Software Bill of Materials into your development process not only enhances security but also fosters a culture of accountability and transparency within your team. By understanding your dependencies, you can make informed decisions that protect your applications and ensure compliance with industry standards. 
 
 **Try FlowFuse today with a free trial! Discover how you can enhance your Node-RED projects and accelerate your production processes. [Sign up now](https://app.flowfuse.com/account/create)!**
 
