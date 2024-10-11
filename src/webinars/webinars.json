@@ -2,5 +2,7 @@
     "tags": [
         "webinar", "event"
     ],
-    "layout": "layouts/webinar.njk"
+    "layout": "layouts/webinar.njk",
+    "nav": "webinars",
+    "searchTitle": "Webinars"
 }

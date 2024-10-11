@@ -73,6 +73,8 @@ redirects:
   - { "from": "/node-red/core-nodes/tcpin/", "to": "/node-red/core-nodes/tcp-in/" }
   - { "from": "/node-red/core-nodes/httpproxy/", "to": "/node-red/core-nodes/http-proxy/" }
   - { "from": "/blueprints/manufacturing/manfacturing-support-request-blueprint/", "to": "/blueprints/manufacturing/manufacturing-support-request/" }
+  - { "from": "/blog/2024/06/filtering-mapping-sorting-reducing-with-node-red/", "to": "/node-red/getting-started/programming/data-tranformation/" }
+  - { "from": "/blog/2024/09/node-red-if-else-logic-guide/", "to": "/node-red/getting-started/programming/if-else/" }
   - { "from": "/blog/2024/08/using-mysql-with-node-red/", "to": "/node-red/database/mysql/" }
   - { "from": "/blog/2024/06/using-timescaledb-with-node-red/", "to": "/node-red/database/timescaledb/" }
   - { "from": "/blog/2024/09/using-amqp-with-node-red/", "to": "/node-red/protocol/amqp/" }

@@ -628,7 +628,11 @@ module.exports = function(eleventyConfig) {
         .use(markdownItAnchor, markdownItAnchorOptions)
         .use(markdownItFootnote)
         .use(markdownItAttrs)
-        .use(codeClipboard.markdownItCopyButton)
+        .use(codeClipboard.markdownItCopyButton, {
+            iconifyUrl: '',
+            additionalButtonClass: 'mdi mdi-content-copy',
+            iconStyle: 'background: initial',
+        })
 
     markdownLib.renderer.rules.image = function (tokens, idx, options, env, self) {
         const token = tokens[idx]

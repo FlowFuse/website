@@ -28,3 +28,4 @@ customer expansion. This includes:
  - [Sales playbook (internal)](https://docs.google.com/document/d/1Jrt5sNg46wngQ5UAii8sbN94PTlIAscOWrFcOhSVNPE/edit){rel="nofollow"}
  - [Customer Licenses (internal)](https://docs.google.com/spreadsheets/d/1wM_o8IWjjkwi-WMRueKfS-lrmkQYzV83xm4BIzZNAO0/edit#gid=0)
  - [Ideal Customer Profile](https://docs.google.com/document/d/1krMIUJvosw8xUQog_iq_FEvI9R5WEo9ZyWUCdTb9XnQ/edit#heading=h.3rr2wuny55dl)
+ - [Sales Regions](./regions.md)
