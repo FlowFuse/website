@@ -1,6 +1,6 @@
 ---
 eleventyNavigation:
-  key: Node-RED Plugin
+  key: Node-RED Plugins
   order: 3
   parent: Getting Started
 meta:
@@ -13,9 +13,9 @@ meta:
 
 This documentation explains Node-RED plugins and their differences from nodes. It includes a practical example of creating a plugin that displays deployment information, such as the total deployment count and the timestamp of the last deployment, to help you gain a better understanding.
 
-## What Node-RED Plugins Are?
+## What Are Node-RED Plugins?
 
-Node-RED plugins are powerful npm modules designed to extend the functionality of the Node-RED editor and runtime. They enable developers to customize and enhance the Node-RED environment by adding sidebar features, modifying existing ones, or integrating with various tools and services. These plugins can create custom panels or offer additional configuration options tailored to user needs.
+Node-RED plugins are NPM modules designed to extend the functionality of the Node-RED editor and runtime. They enable developers to customize and enhance the Node-RED environment by adding sidebar features, modifying existing ones, or integrating with various tools and services. These plugins can create custom panels or offer additional configuration options tailored to user needs.
 
 For example, imagine a plugin introducing a new sidebar to the Node-RED editor to monitor system performance. This plugin could provide real-time insights into CPU and memory usage, helping developers identify bottlenecks and optimize their flows effectively.
 
