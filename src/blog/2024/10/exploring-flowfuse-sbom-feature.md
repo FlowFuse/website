@@ -1,7 +1,7 @@
 ---
 title: FlowFuse Software's bills of material helps enhance Application Security and Management
-subtitle: Enhancing the Security of Your Node-RED Applications
-description: Learn how the FlowFuse SBOM feature improves the security and management of Node-RED applications by tracking dependencies and identifying vulnerabilities.
+subtitle: Enhancing the Security and Compliance of Your Solutions
+description: Learn how FlowFuse SBOM improves the security and management of Node-RED solutions by tracking dependencies and identifying vulnerabilities.
 date: 2024-10-14
 authors: ["sumit-shinde"]
 image: 
@@ -12,11 +12,10 @@ tags:
  - flowfuse software bills of material
 ---
 
-FlowFuse recently launched its Software Bill of Materials (SBOM) feature for enterprise customers. This powerful tool enhances security and management within projects, particularly in the Node-RED ecosystem. As open-source libraries and software continue to play a pivotal role in the industry, monitoring third-party components used in projects becomes essential. The SBOM enables organizations to track dependencies and identify vulnerabilities, ensuring compliance and mitigating risks.
+FlowFuse recently launched Software Bill of Materials (SBOM) for enterprise customers. This powerful tool enhances security and management within projects, particularly in the Node-RED ecosystem. As open-source libraries and software continue to play a pivotal role in the industry, monitoring third-party components used in projects becomes essential. The SBoM enables organizations to track dependencies and identify vulnerabilities, ensuring compliance and mitigating risks.
 
 <!--more-->
 
-In this article, we will explore the SBOM feature and discuss how it impacts security and management in Node-RED applications.
 
 ## What is an SBOM, and How Does It Enhance Security?
 
@@ -42,7 +41,7 @@ _Image showing the 'Applications' option in the FlowFuse platform._
 ![Image showing the 'Dependencies' option in the FlowFuse platform for the SBOM interface.](./images/dependencies-tab-option.png){data-zoomable}
 _Image showing the 'Dependencies' option in the FlowFuse platform for the SBOM interface._
 
-*Note: This feature is only available for FlowFuse Enterprise self-hosted and Enterprise Tier users.*
+*Note: This feature is only available for FlowFuse Enterprise customers.*
 
 ### Understanding What the SBOM Interface Shows
 
