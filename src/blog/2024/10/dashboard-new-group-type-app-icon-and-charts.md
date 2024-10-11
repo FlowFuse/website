@@ -12,22 +12,24 @@ tags:
    - dashboard
 ---
 
-At FlowFuse, we strive to improve your dashboard experience by introducing features that enhance data visualization and customization. This update brings new ways to tailor your dashboards with key improvements, including a new chart type, a customizable app icon, and a dialog feature for groups.
+This update introduces new ways to enhance data visualization and customization in your dashboards. With key improvements, including a new chart type, customizable app icon support and a dialog feature for groups, this release helps tailor dashboards for better user interaction and flexibility.
 
 <!--more-->
 
 ## New Chart Type: Histogram
 
-Histograms are an essential tool for data analysis, offering a clear way to visualize distributions. The latest FlowFuse update introduces a fully customizable histogram chart type, allowing you to present frequency distributions for data values. Whether analyzing performance metrics or user activity, histograms give you a clear view of how data points are distributed across predefined ranges. You can now easily group data and control the range, providing deeper insights at a glance.
+Histograms are an essential tool for data analysis, offering a clear way to visualize distributions. The latest Dashboard update introduces a fully customizable histogram chart type, allowing you to present frequency distributions for your data.
 
-![Screenshot showing the new Histogram chart type in the FlowFuse Dashboard](./images/chart-histogram.png){data-zoomable}
-_Screenshot showing the new Histogram chart type in the FlowFuse Dashboard_
+Whether analyzing performance metrics or user activity, histograms can give you a clear view of how data points are distributed across predefined ranges. You can now easily group data and control the range, providing deeper insights at a glance.
 
-With this feature, visualizing data distribution is easier than ever. Histograms are ideal for applications like monitoring error rates, analyzing sensor data, or displaying survey results.
+The real advantage of this new Histogram chart type is that it simplifies the process for you. Just pass in the raw data, and the histogram will automatically organize it into meaningful ranges, then display how often each range occurs. This makes it incredibly easy to extract valuable insights without the need for manual data processing.
+
+![Screenshot showing the new Histogram chart type](./images/chart-histogram.png){data-zoomable}
+_Screenshot showing the new Histogram chart type_
 
 ## Customizable App Icon
 
-Branding is an essential part of any user experience and with this new feature, you can customize your dashboard's app icon. The FlowFuse Dashboard now allows users to provide their own application icon, which appears in the browser tab and when the dashboard is installed as a Progressive Web App (PWA). This customization helps reinforce your brand, whether you’re developing IoT solutions, monitoring systems or creating dashboards for end-users.
+Branding is an essential part of any user experience and with this new feature, you can customize your dashboard's app icon. The Node-Red Dashboard 2.0 now allows users to provide their own application icon, which appears in the browser tab and when the dashboard is installed as a Progressive Web App (PWA). This customization helps reinforce your brand, whether you’re developing IoT solutions, monitoring systems or creating dashboards for end-users.
 
 ![Screenshot showing the customizable app icon in browser and as a PWA](./images/app-icon-installation.png){data-zoomable style="max-width: 400px; margin: auto;"}
 _Screenshot showing the customizable app icon in browser and as a PWA_
@@ -36,7 +38,9 @@ You can configure the icon by navigating to the base UI settings (ui-base) and p
 
 ## Groups as Dialogs
 
-Organizing data on dashboards has become more efficient with the new "Groups as Dialogs" feature. You can now display specific widget groups in dialog windows that are triggered manually. This feature is perfect for decluttering complex dashboards or highlighting important metrics when needed. Dialogs can be opened using `ui-control` nodes, allowing you to decide when and how they appear.
+Organizing data on dashboards has become more efficient with the new "Groups as Dialogs" feature. You can now display specific groups in dialog windows that can be controlled (open/close) via the Control node.
+
+This removes the need for building custom modals and dialogs in a Template node, and makes the entire experience of building your dialogs low-code.
 
 ![Screenshot showing groups rendered as dialogs in the dashboard](./images/ui-group-type-dialog.png){data-zoomable}
 _Screenshot showing groups rendered as dialogs in the dashboard_
