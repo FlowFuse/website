@@ -22,8 +22,6 @@ A [loop](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Loops_and
 
 - **While Loop**: Repeats a block of code as long as a specified condition is true. This type of loop is useful when you don’t know how many times the loop will need to run beforehand. The loop continues executing until the condition becomes false.
 
-- **Do...While Loop**: Similar to the while loop, but with a key difference: it guarantees that the code block will execute at least once before checking the condition. This is because the condition is evaluated after the loop’s code has executed.
-
 - **For...of / ForEach Loop**: These loops are used to iterate over iterable objects such as arrays or maps. They allow you to access each element in a collection. The **for...of** loop is used specifically for iterables, while **forEach** is a method available on arrays that applies a function to each element.
 
 Each type of loop serves a different purpose and can be chosen based on the requirements of the task at hand.
@@ -159,20 +157,25 @@ By using `node.send()` inside the loop, you ensure that each iteration produces 
 
 Throughtout this section we will show you how you can implement loops in Node-RED with custom nodes easily, there are plenty of custom nodes that can be used to achieve the loop but we will going use the popular one [node-red-contrib-loop](https://flows.nodered.org/node/node-red-contrib-loop), before moving further make sure to install it by palette manager also for demostration purpose we will use same example we used in the above sections with loops.
 
-#### While Loop / Do..While Loop
+#### While Loop
 
 1. Drag the **Inject** node onto the canvas.
-2. Drag the **Loop** node onto the canvas, double-click it, and set the kind to **Condition**. Set the condition to `msg.payload.includes("Z") != true` as JavaScript. The condition kind offers a lot of flexibility as it allows adding conditions in JavaScript, regex, and JSONata. Next, set the "When test" option to "after" to make the loop behave like a do-while loop, which will execute at least once before checking the condition or you can set it to before to make it behave like while do loop.
-3. Drag the **Function** node onto the canvas. Add the following JavaScript code to it and connect its input to the second output of the **Loop** node:
+2. Drag the **Loop** node onto the canvas, double-click it, and set the kind to **Condition**. Set the condition to `msg.payload.includes("Z") != true` as JavaScript. The condition kind offers a lot of flexibility as it allows adding conditions in JavaScript, regex, and JSONata.
+
+3. Set the "When test" option:
+  - Choose "after" if you want the loop to execute at least once before checking the condition, similar to how a while loop operates when it checks the condition after the first iteration.
+  - Choose "before" if you want the loop to check the condition before executing, functioning like a traditional while loop that only runs if the condition is true at the start.
+
+4. Drag the **Function** node onto the canvas. Add the following JavaScript code to it and connect its input to the second output of the **Loop** node:
 
     ```javascript
     msg.i += String.fromCharCode(65 + Math.floor(Math.random() * 26)); // Append a random uppercase letter
     return msg;
     ```
 
-4. Drag the **Delay** node onto the canvas, set the delay to 0.5 milliseconds. When using the condition kind of loop, it is important to use the **Delay** node with this loop custom node to avoid creating an infinite loop. Connect the **Delay** node's input to the output of the **Function** node, and connect its output to the input of the **Loop** node.
-5. Drag a **Debug** node onto the canvas and connect its input to the output of the **Function** node. This will print the current `msg.payload` after each iteration.
-6. Drag another **Debug** node onto the canvas and connect its input to the first output of the **Loop** node. This will print when the loop exits, indicating that the condition has been met.
+5. Drag the **Delay** node onto the canvas, set the delay to 0.5 milliseconds. When using the condition kind of loop, it is important to use the **Delay** node with this loop custom node to avoid creating an infinite loop. Connect the **Delay** node's input to the output of the **Function** node, and connect its output to the input of the **Loop** node.
+6. Drag a **Debug** node onto the canvas and connect its input to the output of the **Function** node. This will print the current `msg.payload` after each iteration.
+7. Drag another **Debug** node onto the canvas and connect its input to the first output of the **Loop** node. This will print when the loop exits, indicating that the condition has been met.
 
 {% renderFlow %}
 [{"id":"7ef4d41cf74f75c3","type":"group","z":"a3aa840957f658c6","name":"While Loop","style":{"label":true},"nodes":["3ba931b1.fb48d6","2d297dfa.6e660a","5aef28e.0f9e7d8","90c49008.053a58","9a725668.330148","e88b0e8c.d39858","9c48f336.471ea","66144af4.d1ec9c","75c6b326.e934d4","77ac6763.8e54b8","99b265b4.e2d3c8"],"x":174,"y":139,"w":672,"h":322},{"id":"3ba931b1.fb48d6","type":"loop","z":"a3aa840957f658c6","g":"7ef4d41cf74f75c3","name":"","kind":"cond","count":"10","initial":"1","step":"1","condition":"msg.payload.includes(\"Z\") != true","conditionType":"js","when":"after","enumeration":"enum","enumerationType":"msg","limit":"","loopPayload":"loop-keep","finalPayload":"final-last","x":500,"y":280,"wires":[["5aef28e.0f9e7d8"],["e88b0e8c.d39858"]]},{"id":"2d297dfa.6e660a","type":"inject","z":"a3aa840957f658c6","g":"7ef4d41cf74f75c3","name":"","props":[{"p":"payload"}],"repeat":"","crontab":"","once":false,"onceDelay":0.1,"topic":"","payload":"","payloadType":"str","x":270,"y":280,"wires":[["3ba931b1.fb48d6"]]},{"id":"5aef28e.0f9e7d8","type":"debug","z":"a3aa840957f658c6","g":"7ef4d41cf74f75c3","name":"","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"loop","targetType":"msg","statusVal":"","statusType":"auto","x":720,"y":280,"wires":[]},{"id":"90c49008.053a58","type":"comment","z":"a3aa840957f658c6","g":"7ef4d41cf74f75c3","name":"Example: Conditional loop","info":"","x":310,"y":180,"wires":[]},{"id":"9a725668.330148","type":"comment","z":"a3aa840957f658c6","g":"7ef4d41cf74f75c3","name":"Show final status","info":"","x":740,"y":240,"wires":[]},{"id":"e88b0e8c.d39858","type":"function","z":"a3aa840957f658c6","g":"7ef4d41cf74f75c3","name":"","func":"// add ASCII char from 32 to 126\nmsg.payload += String.fromCharCode(Math.random()*26 + 65);\nreturn msg;","outputs":1,"noerr":0,"initialize":"","finalize":"","x":340,"y":380,"wires":[["66144af4.d1ec9c","9c48f336.471ea"]]},{"id":"9c48f336.471ea","type":"debug","z":"a3aa840957f658c6","g":"7ef4d41cf74f75c3","name":"","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"false","statusVal":"","statusType":"auto","x":730,"y":380,"wires":[]},{"id":"66144af4.d1ec9c","type":"delay","z":"a3aa840957f658c6","g":"7ef4d41cf74f75c3","name":"","pauseType":"delay","timeout":"0.5","timeoutUnits":"milliseconds","rate":"1","nbRateUnits":"1","rateUnits":"second","randomFirst":"1","randomLast":"5","randomUnits":"seconds","drop":false,"allowrate":false,"outputs":1,"x":530,"y":355,"wires":[["3ba931b1.fb48d6"]]},{"id":"75c6b326.e934d4","type":"comment","z":"a3aa840957f658c6","g":"7ef4d41cf74f75c3","name":"Show string","info":"","x":730,"y":420,"wires":[]},{"id":"77ac6763.8e54b8","type":"comment","z":"a3aa840957f658c6","g":"7ef4d41cf74f75c3","name":"Add char to string","info":"","x":370,"y":420,"wires":[]},{"id":"99b265b4.e2d3c8","type":"comment","z":"a3aa840957f658c6","g":"7ef4d41cf74f75c3","name":"Repeat until string doesn't finish with \"Z\"","info":"","x":480,"y":240,"wires":[]}]
