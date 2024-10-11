@@ -1,5 +1,5 @@
 ---
-title: FlowFuse SBoM Enhances Node-RED Application Security and Management
+title: FlowFuse Software's bills of material helps enhance Application Security and Management
 subtitle: Enhancing the Security of Your Node-RED Applications
 description: Learn how the FlowFuse SBOM feature improves the security and management of Node-RED applications by tracking dependencies and identifying vulnerabilities.
 date: 2024-10-14
