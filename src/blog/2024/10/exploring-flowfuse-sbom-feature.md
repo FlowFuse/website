@@ -4,7 +4,7 @@ subtitle: Enhancing the Security and Compliance of Your Solutions
 description: Learn how FlowFuse SBOM improves the security and management of Node-RED solutions by tracking dependencies and identifying vulnerabilities.
 date: 2024-10-14
 authors: ["sumit-shinde"]
-image: 
+image: /blog/2024/10/images/flowfuse-sbom.png
 tags:
  - post
  - flowfuse
