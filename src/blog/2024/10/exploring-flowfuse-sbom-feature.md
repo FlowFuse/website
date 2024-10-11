@@ -1,5 +1,5 @@
 ---
-title: FlowFuse Software's bills of material helps enhance Application Security and Management
+title: FlowFuse's Software bills of material helps enhance Application Security and Management
 subtitle: Enhancing the Security and Compliance of Your Solutions
 description: Learn how FlowFuse SBOM improves the security and management of Node-RED solutions by tracking dependencies and identifying vulnerabilities.
 date: 2024-10-14
