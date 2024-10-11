@@ -16,7 +16,6 @@ FlowFuse recently launched Software Bill of Materials (SBOM) for enterprise cust
 
 <!--more-->
 
-
 ## What is an SBOM, and How Does It Enhance Security?
 
 A Software Bill of Materials (SBOM) is a detailed list of all the components that make up a software application, just like how a bill of materials for a physical product lists every part used in its construction, an SBOM provides a breakdown of all the software libraries, packages, and dependencies used in a project.
@@ -25,7 +24,7 @@ This transparency is crucial for security, allowing developers and organizations
 
 ## Exploring the FlowFuse SBOM Feature
 
-**[FlowFuse](/)** is a platform that makes it easy to remotely manage multiple Node-RED instances from one place. It helps teams collaborate efficiently, share resources, and scale applications with a user-friendly interface. FlowFuse also includes strong security features to prevent unauthorized access and advanced controls to manage the security of each team and application, allowing you to group and manage your Node-RED applications effectively.
+**[FlowFuse](/)** is an industrial data platform that empowers engineers to build, manage, scale, and secure their Node-RED solutions for digitalizing processes and operations at the edge. It enables customers to seamlessly integrate IT and OT environments, allowing teams to quickly connect, collect, transform, and visualize data to optimize industrial workflows.
 
 ### Accessing FlowFuse SBOM Interface
 
@@ -62,6 +61,6 @@ Now that you've explored the SBOM interface, here are ways to enhance the securi
 
 Adopting these practices in your development routine will enhance your applications' security and cultivate a proactive maintenance culture. Security is a team effort, and staying vigilant about your dependencies is essential for protecting your projects. The FlowFuse SBOM feature is an invaluable auditing tool, accessible to all team members with the appropriate permissions, allowing everyone to contribute to maintaining security seamlessly.
 
-**[Sign up](https://app.flowfuse.com/) for FlowFuse now and enjoy a free trial to explore all our features! Discover how you can enhance your Node-RED projects and accelerate your production processes.**
+**Try FlowFuse today with a free trial! Discover how you can enhance your Node-RED projects and accelerate your production processes. [Sign up now](https://app.flowfuse.com/account/create)!**
 
 *If you are an educator or student, we offer support and provide free licenses. Contact us for more information [here](/education/).*
