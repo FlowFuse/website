@@ -22,10 +22,12 @@ Histograms are an essential tool for data analysis, offering a clear way to visu
 
 Whether analyzing performance metrics or user activity, histograms can give you a clear view of how data points are distributed across predefined ranges. You can now easily group data and control the range, providing deeper insights at a glance.
 
-The real advantage of this new Histogram chart type is that it simplifies the process for you. Just pass in the raw data, and the histogram will automatically organize it into meaningful ranges, then display how often each range occurs. This makes it incredibly easy to extract valuable insights without the need for manual data processing.
-
 ![Screenshot showing the new Histogram chart type](./images/chart-histogram.png){data-zoomable}
 _Screenshot showing the new Histogram chart type_
+
+The real advantage of this new Histogram chart type is that it simplifies the process for you. Just pass in the raw data, and the histogram will automatically organize it into meaningful ranges, then display how often each range occurs. This makes it incredibly easy to extract valuable insights without the need for manual data processing.
+
+You can see an example flow for the Histogram chart type [here](https://dashboard.flowfuse.com/nodes/widgets/ui-chart.html#histograms) in our documentation.
 
 ## Customizable App Icon
 
@@ -34,18 +36,22 @@ Branding is an essential part of any user experience and with this new feature, 
 ![Screenshot showing the customizable app icon in browser and as a PWA](./images/app-icon-installation.png){data-zoomable style="max-width: 400px; margin: auto;"}
 _Screenshot showing the customizable app icon in browser and as a PWA_
 
-You can configure the icon by navigating to the base UI settings (ui-base) and providing an icon URL. [App Icon Documentation](https://dashboard.flowfuse.com/nodes/config/ui-base.html#application-icon)
+You can configure the icon by navigating to the base UI settings (ui-base) and providing an icon URL. 
 
-## Groups as Dialogs
+You can read more about how to use this feature in the [App Icon Documentation](https://dashboard.flowfuse.com/nodes/config/ui-base.html#application-icon)
 
-Organizing data on dashboards has become more efficient with the new "Groups as Dialogs" feature. You can now display specific groups in dialog windows that can be controlled (open/close) via the Control node.
+## Building Dialogs
+
+Organizing data on dashboards has become more efficient with the new "Dialog/Modal" feature. Groups in Dashboard now have a new ["Type"](https://dashboard.flowfuse.com/nodes/config/ui-group.html#type) property, so they can be rendered inline as before, or instead rendered as a Dialog. The display of the dialog groups can be controlled (opened/closed) via the [Control](https://dashboard.flowfuse.com/nodes/widgets/ui-control.html#show-hide) node.
 
 This removes the need for building custom modals and dialogs in a Template node, and makes the entire experience of building your dialogs low-code.
 
 ![Screenshot showing groups rendered as dialogs in the dashboard](./images/ui-group-type-dialog.png){data-zoomable}
 _Screenshot showing groups rendered as dialogs in the dashboard_
 
-By utilizing groups as dialogs, users can maintain a clean dashboard while still having quick access to detailed data when required. [UI Group Type Documentation](https://dashboard.flowfuse.com/nodes/config/ui-group.html#type)
+By utilizing groups as dialogs, users can maintain a clean dashboard while still having quick access to detailed data when required. 
+
+You can read more about the new property, and see an example flow in the [UI Group Documentation](https://dashboard.flowfuse.com/nodes/config/ui-group.html#type)
 
 ## What else is new?
 
