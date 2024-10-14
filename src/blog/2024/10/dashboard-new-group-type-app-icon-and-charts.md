@@ -1,10 +1,10 @@
 ---
-title: New Chart Type, Customizable Icon and Groups as Dialogs Now Available in FlowFuse Dashboard
+title: Dialogs, Customizable Icons and Histograms Now Available in FlowFuse Dashboard
 subtitle: Our latest update for FlowFuse Dashboard introduces a new group type, Dialog, a new chart variation, Histogram and customization support for the application icon.
 description: Our latest update for FlowFuse Dashboard introduces a new group type, Dialog, a new chart variation, Histogram and customization support for the application icon.
 date: 2024-10-11
 authors: ["gayan-sandamal"]
-image: /blog/2024/08/images/dashboard-2-1150-release.png
+image: /blog/2024/10/images/dashboard-1-18-0-blog-tile.png
 tags:
    - posts
    - news
