@@ -81,9 +81,9 @@ Now if your Node-RED instance that needs to be migrated can on the remote instan
 5. Execute the saved command on the device.
 6. Start the FlowFuse device agent by executing the following command:
 
-   ```bash
+```bash
    flowfuse-device-agent --port=1881
-   ```
+```
 
 Running on port `1881` ensures it doesn't conflict with your locally running Node-RED instance, allowing both to run without issues.
 
