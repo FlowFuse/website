@@ -1,7 +1,7 @@
 ---
 title: Snapshot Upload and Download Improvements
 description: "Components of a what to include in a snapshot can now be selected."
-date: 2024-10-04 13:00:00.0
+date: 2024-10-14 13:00:00.0
 
 authors: ["stephen-mclaughlin"]
 tags:
