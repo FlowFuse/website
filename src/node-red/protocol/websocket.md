@@ -19,6 +19,9 @@ WebSocket technology facilitates real-time, two-way communication between a clie
 
 ## How Does WebSocket Work?
 
+![WebSocket connection establishment process](./images/websocket-handshake.png){data-zoomable}
+_WebSocket connection establishment process_
+
 WebSocket establishes a persistent connection between a client (such as a web browser or IoT device) and a server. The process begins when the client sends an initial HTTP request to the server, indicating a desire to upgrade to a WebSocket connection. If the server supports WebSocket, it responds with a confirmation, and the connection is established.
 
 Once the connection is open, both the client and server can send messages to each other at any time. This two-way communication allows for real-time data exchange without the need to re-establish connections for each message. When the communication is no longer needed, either party can close the connection.
@@ -59,6 +62,9 @@ Before creating the server, it's important to understand that we will need to li
 
 ### Testing the WebSocket Server
 
+![Testing Server with Client](./images/server-testing.gif){data-zoomable}
+_Testing the WebSocket server with a Websocket client_
+
 Now that you have deployed the Node-RED flow, it is acting as a server that can both send and receive data. To test the server, you can use the [Simple WebSocket Client](https://chromewebstore.google.com/detail/simple-websocket-client/pfdhoblngboilpfeibdedpjgfnlcodoo?hl=en) extension in your browser. Make sure to install this extension if you want to test the server.
 
 1. In the extension interface, enter the URL to connect to your server:
@@ -96,4 +102,9 @@ Now, as the section states, we are going to see how you can connect to the WebSo
 
 ### Testing the WebSocket Client
 
+![Testing Client with Server](./images/client-testing.gif){data-zoomable}
+_Testing Websocket Client with Websocket Server_
+
 Now, to test the client, you can send messages from the server and see the debug window for that message in the client instance. Similarly, you can send messages from the client Instance to the server and observe the responses in the debug window of server instance.
+
+For more information on the advaced websocket node configuration refer to the [Websocket Node Documentation](/node-red/core-nodes/websocket/)
