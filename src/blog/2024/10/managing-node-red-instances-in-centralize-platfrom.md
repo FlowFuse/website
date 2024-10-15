@@ -67,8 +67,11 @@ You can efficiently [monitor logs](/docs/user/logs/#logs) for each instance and 
 
 FlowFuse also allows you to quickly add [high availability](/docs/user/high-availability/) features to your instances, ensuring smooth and efficient operation of your production applications. The platform includes an auto-snapshot feature that lets you recover from accidental changes to flows, ensuring you always have a backup of your application.
 
-![Logs](./images/high-availablity.png)  
+![High availability](./images/high-availablity.png)  
 *Image showing the feature that allows to enable high availability for instances*
+
+![Snapshots](./images/snapshots.png)  
+*Image showing snapshots feature*
 
 We have highlighted just a few features of FlowFuse; there are many more—potentially three to four times what has been presented—and the team is continuously working to develop and introduce new functionalities to improve collaboration, scalability, security, and overall performance.
 
@@ -84,6 +87,6 @@ By transforming the complexity of managing distributed systems into a streamline
 
 [**Get started with FlowFuse on the Cloud**](https://app.flowfuse.com/account/create/)
 
-#### Conclusion
+## Conclusion
 
 FlowFuse transforms how you manage Node-RED instances, turning chaos into clarity. With centralized control, teams can reduce operational costs while ensuring critical applications remain available and secure. Automated backups and high availability translate to less downtime and more focus on innovation. 
