@@ -67,10 +67,10 @@ You can efficiently [monitor logs](/docs/user/logs/#logs) for each instance and 
 
 FlowFuse also allows you to quickly add [high availability](/docs/user/high-availability/) features to your instances, ensuring smooth and efficient operation of your production applications. The platform includes an auto-snapshot feature that lets you recover from accidental changes to flows, ensuring you always have a backup of your application.
 
-![high availability](./images/high-availablity.png)  
+![Logs](./images/high-availablity.png)  
 *Image showing the feature that allows to enable high availability for instances*
 
-we just covered the pills of flowfuse there are even more i i think triple or fouther x what i have shown and team is consistenly working to birng new ones...
+We have highlighted just a few features of FlowFuse; there are many more—potentially three to four times what has been presented—and the team is continuously working to develop and introduce new functionalities to improve collaboration, scalability, security, and overall performance.
 
 ### How FlowFuse Transforms Production Operations
 
