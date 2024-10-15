@@ -3,7 +3,7 @@ layout: layouts/base.njk
 ---
 <!--Hero Content-->
 <div class="w-full page hero">
-    {% if title %}
+    {% if (title and not hideTitle) %}
     <div class="w-full">
         {% if nohero %}
         <div class="container m-auto text-center flex py-12 px-12 md:max-w-screen-lg md:pt-12">

@@ -2,9 +2,6 @@
 @tailwind utilities;
 
 @layer components {
-    .eleventy {
-        margin-top: -3rem;
-    }
 
     .eleventy-nav {
         border-right: 1px solid right;

@@ -1,5 +1,8 @@
 {
-    "layout": "layouts/learning-resources.njk",
+    "layout": "layouts/documentation.njk",
+    "hideTitle": "true",
+    "nav": "node-red",
+    "searchTitle": "Node-RED",
     "tags": [
         "learningResources"
     ]
