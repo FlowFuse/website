@@ -24,7 +24,7 @@ Managing multiple Node-RED instances can quickly become complicated as operation
 
 1. **Deployment and Configuration Management:** Setting up Node-RED instances on a server requires technical knowledge and ongoing maintenance. As the number of instances grows, maintaining them can become time-consuming and resource-intensive.
 
-2. **Edge Device Management:** Managing Node-RED instances on edge devices introduces additional challenges, such as the need for on-site troubleshooting when issues arise.
+2. **Egde Node-RED Management:** Managing Node-RED instances on edge devices introduces additional challenges, such as the need for on-site troubleshooting when issues arise.
 
 3. **Monitoring and Troubleshooting:** Keeping track of the health and performance of multiple instances requires constant attention. Checking logs across different instances can become overwhelming.
 
@@ -42,7 +42,7 @@ A centralized platform is essential to handle deployment, configuration, and man
 
 ## FlowFuse: Centralize Your Node-RED Management
 
-FlowFuse is a powerful platform designed to simplify the management of multiple Node-RED instances. By providing a centralized interface, FlowFuse enables users to streamline deployment, configuration, collaboration, and monitoring across various Node-RED projects and environments.
+FlowFuse is a powerful platform designed to simplify the management of multiple Node-RED instances. By providing a centralized interface, FlowFuse enables users to manage, scale, secure, and collaborate on Node-RED solutions.
 
 ![Centralized Node-RED Management](./images/instances.png)  
 *Image showing how multiple Node-RED instances are organized and managed under one roof.*
@@ -86,7 +86,6 @@ With its intuitive interface, FlowFuse handles deployments, updates, and real-ti
 FlowFuse also enhances security with advanced settings, keeping your systems safe while boosting collaboration. As operations grow, FlowFuse scales seamlessly, integrating new devices and systems without added complexity.
 
 By simplifying system management, FlowFuse cuts costs, keeps production running smoothly, and lets your team focus on growth and innovation.
-
 [**Get started with FlowFuse on the Cloud**](https://app.flowfuse.com/account/create/)
 
 ## Conclusion
