@@ -57,12 +57,20 @@ FlowFuse also simplifies the [monitoring and controlling of edge devices](/solut
 
 Additionally, FlowFuse enables the creation of [DevOps pipelines](/blog/2024/10/how-to-build-automate-devops-pipelines-node-red-deployments/) that ensure your application is well-tested and evaluated before deployment to production. Deploying the same flow to hundreds or thousands of devices becomes effortless with these pipelines.
 
+![Devops Pipeline](./images/devops.png)  
+*Image showing feature to create the devops pipeline for Node-RED instances*
+
 You can efficiently [monitor logs](/docs/user/logs/#logs) for each instance and receive instant email alerts if any crashes occur, facilitating quick troubleshooting.
 
 ![Logs](./images/log.png)  
 *Image showing the Node-RED instance logs.*
 
 FlowFuse also allows you to quickly add [high availability](/docs/user/high-availability/) features to your instances, ensuring smooth and efficient operation of your production applications. The platform includes an auto-snapshot feature that lets you recover from accidental changes to flows, ensuring you always have a backup of your application.
+
+![high availability](./images/high-availablity.png)  
+*Image showing the feature that allows to enable high availability for instances*
+
+we just covered the pills of flowfuse there are even more i i think triple or fouther x what i have shown and team is consistenly working to birng new ones...
 
 ### How FlowFuse Transforms Production Operations
 
