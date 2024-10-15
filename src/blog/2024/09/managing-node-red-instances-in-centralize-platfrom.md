@@ -45,17 +45,17 @@ FlowFuse is a powerful platform designed to simplify the management of multiple 
 ![Centralized Node-RED Management](./images/instances.png)  
 *Image showing how multiple Node-RED instances are organized and managed under one roof.*
 
+With FlowFuse, you can organize your Node-RED instances into teams for improved collaboration. This feature allows for easy management of team members' permissions, enabling seamless teamwork on projects without navigating between different instance locations physically. You can create as many teams as needed, ensuring that instances are organized based on the team members assigned to them.
+
 ![Immersive Editor](./images/imersive-editor.png)  
 *Image showing how FlowFuse's immersive editor simplifies managing settings and configuration within the Node-RED editor.*
 
-With FlowFuse, you can organize your Node-RED instances into teams for improved collaboration. This feature allows for easy management of team members' permissions, enabling seamless teamwork on projects without navigating between different instance locations physically. You can create as many teams as needed, ensuring that instances are organized based on the team members assigned to them.
-
 FlowFuse also simplifies the [monitoring and controlling of edge devices](/solutions/device-management/) through the FlowFuse Device Agent, which quickly connects your devices to the cloud platform and allows you to build and monitor applications remotely.
-
-Additionally, FlowFuse enables the creation of [DevOps pipelines](/blog/2024/10/how-to-build-automate-devops-pipelines-node-red-deployments/) that ensure your application is well-tested and evaluated before deployment to production. Deploying the same flow to hundreds or thousands of devices becomes effortless with these pipelines.
 
 ![Device Management](./images/devices.png)  
 *Image showing remote edge devices connected through the FlowFuse platform for remote monitoring and control.*
+
+Additionally, FlowFuse enables the creation of [DevOps pipelines](/blog/2024/10/how-to-build-automate-devops-pipelines-node-red-deployments/) that ensure your application is well-tested and evaluated before deployment to production. Deploying the same flow to hundreds or thousands of devices becomes effortless with these pipelines.
 
 You can efficiently [monitor logs](/docs/user/logs/#logs) for each instance and receive instant email alerts if any crashes occur, facilitating quick troubleshooting.
 
