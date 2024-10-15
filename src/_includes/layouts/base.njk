@@ -131,6 +131,10 @@ eleventyComputed:
     <meta property="article:section" content="{{ nav }}" />
     {% endif %}
 
+    {% if searchTitle %}
+    <meta property="searchable:title" content="{{ searchTitle }}" />
+    {% endif %}
+
     {% set js %}{% include "base.js" %}{% endset %}
     <script>{{ js | jsmin | safe }}</script>
     {% jsonLdScript meta, type, tags %}
