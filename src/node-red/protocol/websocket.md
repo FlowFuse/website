@@ -70,10 +70,6 @@ Now that you have deployed the Node-RED flow, it is acting as a server that can 
 
 With these steps, you will have successfully set up a WebSocket server in Node-RED and tested its functionality as both a server and client. This setup allows for real-time communication, which is essential for many applications.
 
-### Sending Data from Node-RED
-
-To send a message from Node-RED to the client, click the **Inject** button with `msg.payload` set to the data you want to send. In the extension interface, you will see the sent data in the message log.
-
 ## Connecting to a WebSocket Server as a client in Node-RED and communicating
 
 Now, as the section states, we are going to see how you can connect to the WebSocket server as the client. To move further, ensure that you have a server to connect to, which you can create as shown in the above section in Node-RED.
