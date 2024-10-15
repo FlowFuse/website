@@ -2,7 +2,7 @@
 title: "Transform Chaos into Control: Centralize Node-RED Management with FlowFuse"
 subtitle: With FlowFuse, you can simplify managing all your Node-RED Instances
 description: Discover how FlowFuse streamlines the management of your Node-RED instances from a single platform, transforming chaos into control for efficient operations and enhanced collaboration.
-date: 2024-09-24
+date: 2024-10-15
 authors: ["sumit-shinde"]
 image: 
 tags:
