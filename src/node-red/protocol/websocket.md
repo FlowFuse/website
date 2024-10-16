@@ -11,7 +11,7 @@ image:
 
 # {{meta.title}}
 
-In this documentation, you will learn how to use WebSocket in Node-RED for communication. We will explain the concepts through practical examples, covering how to connect and communicate as a WebSocket client and how to build a WebSocket server using Node-RED to communicate with clients.
+Let's look at how to use WebSocket in Node-RED for communication. We will explain the concepts through practical examples, covering how to connect and communicate as a WebSocket client and how to build a WebSocket server using Node-RED to communicate with clients.
 
 ## What is Websocket?
 
