@@ -6,12 +6,50 @@ navTitle: Engagements & Pricing
 
 Pricing is publicly available at [our pricing page](/pricing/).
 
-## Generating a Quote and Order Form
+## Generating a Quote
 
-Quotes are generated through HubSpot. Each quote should include:
-- A link to the deep copy of the version of the document with the [subscription agreement](/handbook/customer/sales/legal/#subscription-agreement).
-- "Order Form" in the description.
-- The commencement date of the subscription as well as the time period of the subscription.
+Clearly written, easy to understand quotes are crucial for customers to understand what they are purchasing and how much it costs. To create a quote, combine the (1) product plan and (2) other purchased items according to the following guide.
+
+**What to Quote**
+
+When preparing a quote, include both the plan and any extras that go beyond what comes with the plan at the designated tier. Include a note in the Terms section that indicates what comes with the plan. (This will be pre-filled when using one of the HubSpot quote templates). The product plan will be listed as its own line, with a quantity of 1, and the minimum purchase price for that plan. On a separate line(s), include only additional items that are being added to the deal. Do not use line items to enumerate what comes with the plan. This will cause confusion and makes the line item(s) redundant.
+
+EXAMPLE 1:
+
+Suppose that a customer wants to purchase a year of the Team plan with 5 small instances, the minimum number for the Team plan. That quote would look like this (ignoring any discounts or other extras):
+
+| Item & Description | Quantity | Unit Price | Total |
+| ----- | ----- | ----- | ----- |
+| FlowFuse Team Platform \- Cloud | 1 | $X,000/year | $X,000 |
+
+Annual Subtotal	  $2,100  
+**Total**			  $2,100
+
+
+EXAMPLE 2:
+
+Suppose a customer wants to purchase a year of the Enterprise plan with 20 instances, plus 10 additional instances and 10 devices. That quote would look like this (ignoring any discounts or other extras):
+
+| Item & Description | Quantity | Unit Price | Total |
+| ----- | ----- | ----- | ----- |
+| FlowFuse Enterprise Platform \- Cloud | 1 | $X,000/year | $X,000 |
+| Enterprise \- Instance Add-On | 10 | $X,000/year | $X,000 |
+| Enterprise \- Remote Device Add-On | 10 | $X,000 | $X,000 |
+
+Annual Subtotal	  $XX,000  
+**Total**			  $XX,000
+
+**Creating a Quote**
+
+Follow these steps to create a quote.
+
+1. In HubSpot, open the relevant Deal. In the Quotes area, click Add to begin a new quote.  
+2. Fill in the Buyer Information section. This will pre-fill with the information from the contact in the Deal.  
+3. The default Quote creator will be you. Change this if necessary.  
+4. In the Line Items area, select the appropriate Plan that is being quoted. Set billing to Annual, and adjust fields for Term and discount/fee/tax as needed. Add additional line items only for purchases that exceed features that are included with the Plan.  
+5. Set Signature and Payment settings as needed.  
+6. In the Template and Details section, choose the appropriate Quote Template from the dropdown menu. Choosing the correct Quote Template is important because it will pre-fill the correct plan features onto the quote. You can include additional Comments to Buyer or Purchase Terms here. They will not overwrite the Terms and Comments included with the Quote Template.  
+7. Review your Quote, and when everything is correct, click Create to create the quote attached to the relevant Deal.
 
 ## Closing a new deal
 
