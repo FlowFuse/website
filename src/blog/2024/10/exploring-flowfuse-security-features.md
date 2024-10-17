@@ -10,7 +10,7 @@ tags:
 ---
 
 When it comes to securing Node-RED applications and its editor to prevent unauthorized access to data and changes to the flows, you may have experienced just how much effort it can take. Sometimes, even after spending a significant amount of time, it still feels difficult to achieve the desired level of security.
-
+<!--more-->
 FlowFuse takes care of all your security concerns. In this blog, we’ll dive into security features FlowFuse offers to simplify and strengthen your Node-RED deployments, ensuring you’re fully protected without the hassle.
 
 ## Security as a Foundation
@@ -102,4 +102,4 @@ In conclusion, FlowFuse offers a comprehensive suite of security features design
 
 ## Get Started with FlowFuse Today!
 
-Don't wait any longer to enhance the security of your Node-RED applications. [Sign up](/account/create) for FlowFuse now and discover how our powerful security features can protect your data and streamline your workflows. Experience peace of mind with every deployment!
+Don't wait any longer to enhance the security of your Node-RED applications. [Sign up](https://app.flowfuse.com/account/create/) for FlowFuse now and discover how our powerful security features can protect your data and streamline your workflows. Experience peace of mind with every deployment!
