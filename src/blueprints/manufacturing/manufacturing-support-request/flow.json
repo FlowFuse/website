@@ -1,0 +1,4286 @@
+[
+    {
+        "id": "4905164f6a425bac",
+        "type": "tab",
+        "label": "Manufacturing Support Request ",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "6471824e24f18939",
+        "type": "group",
+        "z": "4905164f6a425bac",
+        "name": "Add demo production line and department",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "882e29d2dcc9326c",
+            "34c733b480e41a13"
+        ],
+        "x": 134,
+        "y": 239,
+        "w": 832,
+        "h": 82
+    },
+    {
+        "id": "f6a8f30146a99a20",
+        "type": "group",
+        "z": "4905164f6a425bac",
+        "name": "Control Admin Access",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "851be5844570bb3f",
+            "4415ed2e92b78e33",
+            "6e9e1f9c2e4c69f1",
+            "faf6959a52ca7ee4",
+            "7bbf9d08c4f739ac",
+            "cd07d94e95e563c5",
+            "960fe70d0a3e609e",
+            "eac865417ca6742b",
+            "0384c28bcc16c822",
+            "593b05b11080f543"
+        ],
+        "x": 2074,
+        "y": 1659,
+        "w": 1042,
+        "h": 282
+    },
+    {
+        "id": "fd5f315f792d3cf7",
+        "type": "group",
+        "z": "4905164f6a425bac",
+        "name": "Admin Registration",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "f0cf1cdd9ec95acf",
+            "c49901682b8bc5d4",
+            "d0ac4081bb469fac"
+        ],
+        "x": 1634,
+        "y": 1659,
+        "w": 412,
+        "h": 142
+    },
+    {
+        "id": "02417f3036b14c52",
+        "type": "group",
+        "z": "4905164f6a425bac",
+        "name": "Dashboard URL Access",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "c6dd2dcc537de80c",
+            "7dd62e6a647c1596",
+            "0edf2d4c68c11e6b",
+            "a8da0c434007e8a5",
+            "1f9fddda50deb4bc",
+            "9a114eef8e992d4d",
+            "1c66bc7fd01e098d",
+            "f0eeb308bdd5ee14",
+            "8f8725dc247c2239",
+            "b17888bf6561e112"
+        ],
+        "x": 134,
+        "y": 1899,
+        "w": 1372,
+        "h": 162
+    },
+    {
+        "id": "5bfb21059dfd0840",
+        "type": "group",
+        "z": "4905164f6a425bac",
+        "name": "ADMIN PAGE",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "1a78c20dc03bfe38",
+            "81d751a698d397b4",
+            "9fa130396aaf0d6d",
+            "bf34836aec302e22",
+            "9ffad85c724392ec"
+        ],
+        "x": 1582,
+        "y": 259,
+        "w": 1300,
+        "h": 1374
+    },
+    {
+        "id": "7cce168257a79ab6",
+        "type": "group",
+        "z": "4905164f6a425bac",
+        "name": "SUPPORT REQUEST AND DEPARTMENT WISE UI",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "0f5e7f65d27cfa16",
+            "6af400ee2fa53066",
+            "08b1402a264e4587"
+        ],
+        "x": 138,
+        "y": 367,
+        "w": 1349,
+        "h": 1480
+    },
+    {
+        "id": "1102ce4f58a12d64",
+        "type": "group",
+        "z": "4905164f6a425bac",
+        "name": "Create the table on deployment if it doesn't already exist.",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "08eb234f1e8eac5e",
+            "e4ca3e9886a283cf",
+            "a95b2c2838afd7e0",
+            "8d50e57636b774a9"
+        ],
+        "x": 2954,
+        "y": 299,
+        "w": 672,
+        "h": 82
+    },
+    {
+        "id": "df60d434a52bd6a2",
+        "type": "group",
+        "z": "4905164f6a425bac",
+        "name": "Delete records older than 30 days",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "23fb0462f15023af",
+            "7903e648e5a67c40",
+            "5775dcb91c0feacb",
+            "bb588342c1bc27a3",
+            "74f10f7f705d46bf"
+        ],
+        "x": 2954,
+        "y": 419,
+        "w": 772,
+        "h": 82
+    },
+    {
+        "id": "9fa130396aaf0d6d",
+        "type": "group",
+        "z": "4905164f6a425bac",
+        "g": "5bfb21059dfd0840",
+        "name": "Form to add new lines and departments",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "164c96c714465739",
+            "1d4c8ea12fe2bd84",
+            "1ebd65f9760d07de"
+        ],
+        "x": 1914,
+        "y": 559,
+        "w": 607,
+        "h": 82
+    },
+    {
+        "id": "bf34836aec302e22",
+        "type": "group",
+        "z": "4905164f6a425bac",
+        "g": "5bfb21059dfd0840",
+        "name": "Table of requests",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "3b77ef92cb332f1c",
+            "300d5ac0c043d4bb",
+            "c52fb6a01d9ae843",
+            "4d4d0643380b1f7f",
+            "f560d89917a0971d",
+            "efc5cd87ab60631c",
+            "f75ad477d2b26604"
+        ],
+        "x": 1608,
+        "y": 673,
+        "w": 1204,
+        "h": 934
+    },
+    {
+        "id": "9ffad85c724392ec",
+        "type": "group",
+        "z": "4905164f6a425bac",
+        "g": "5bfb21059dfd0840",
+        "name": "Menu",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "79c1695006354fa9",
+            "870ab5e758bb7e29",
+            "bc688ab799f52184",
+            "92a5d186ece95d63",
+            "72aeb61fdcce3869",
+            "7643b5fd02a5187f",
+            "d845f4ace1264854",
+            "f655b9fae60a84ac",
+            "ad06cde13604d932",
+            "f07358df462f5da0",
+            "6e81d00a13a15409",
+            "95be88fc3f99deab"
+        ],
+        "x": 1694,
+        "y": 339,
+        "w": 1162,
+        "h": 182
+    },
+    {
+        "id": "0f5e7f65d27cfa16",
+        "type": "group",
+        "z": "4905164f6a425bac",
+        "g": "7cce168257a79ab6",
+        "name": "Table of requests",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "eca4797e2a60d7b0",
+            "aa05232f163a9a99",
+            "50838593e751005e",
+            "23f98fde5be1a446",
+            "867e96d227fa62a8",
+            "bc211196337349c5",
+            "9234594ea6342f5e"
+        ],
+        "x": 188,
+        "y": 393,
+        "w": 1229,
+        "h": 994
+    },
+    {
+        "id": "6af400ee2fa53066",
+        "type": "group",
+        "z": "4905164f6a425bac",
+        "g": "7cce168257a79ab6",
+        "name": "update request status and then update ui",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "e6f81ba86ec37391",
+            "0cb80de80bc87a4e",
+            "663625b4f78d1e07",
+            "49bfb0ce338ed731",
+            "6ba3de806b6862fb",
+            "c287cb7b0a4edaf8",
+            "e0ee3dee811104ae",
+            "626ab35c897c3795",
+            "96253a27b8c20592"
+        ],
+        "x": 169,
+        "y": 1699,
+        "w": 1292,
+        "h": 122
+    },
+    {
+        "id": "08b1402a264e4587",
+        "type": "group",
+        "z": "4905164f6a425bac",
+        "g": "7cce168257a79ab6",
+        "name": "Create a new support request",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "c4ee5a28c33fb826",
+            "e7b614800ccc9e7c",
+            "c72f85794babeed7",
+            "1e5cdfe8859428fb",
+            "ff7e45f9f58e41ae",
+            "d4f7a69e90172c7d",
+            "56d7bbef8267a019",
+            "f0d06117d095bcd2",
+            "a1d7ee1b8fcea94d",
+            "2f6487260b827a23",
+            "0da9e11834187f55",
+            "690bddfb420cba47",
+            "70e24e92063897f6",
+            "374f377806c7cc60",
+            "ecbbb57a16b4cc1f"
+        ],
+        "x": 164,
+        "y": 1459,
+        "w": 1242,
+        "h": 202
+    },
+    {
+        "id": "3b77ef92cb332f1c",
+        "type": "group",
+        "z": "4905164f6a425bac",
+        "g": "bf34836aec302e22",
+        "name": "If no rows were returned clear the table and show a message",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "3fe1a79e7dbc36b1",
+            "d4d759e2952bc006",
+            "c192a5dcb06e8aea",
+            "a2153611282480a4",
+            "c6a7b9c74fc91edf",
+            "432570d5412cc5ce",
+            "35ef2993e39644f6",
+            "e70b196b0dae468f"
+        ],
+        "x": 1644,
+        "y": 879,
+        "w": 682,
+        "h": 162
+    },
+    {
+        "id": "300d5ac0c043d4bb",
+        "type": "group",
+        "z": "4905164f6a425bac",
+        "g": "bf34836aec302e22",
+        "name": "Group all rows back into a single array of objects",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "48c79ea0b20a2e1e",
+            "9f039ccfaceba6f9",
+            "0a52d10871851d65"
+        ],
+        "x": 1654,
+        "y": 1399,
+        "w": 310,
+        "h": 82
+    },
+    {
+        "id": "c52fb6a01d9ae843",
+        "type": "group",
+        "z": "4905164f6a425bac",
+        "g": "bf34836aec302e22",
+        "name": "Populate the table",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "4bcd04b2b89da547",
+            "230b01e63c940cc7"
+        ],
+        "x": 1644,
+        "y": 1499,
+        "w": 212,
+        "h": 82
+    },
+    {
+        "id": "4d4d0643380b1f7f",
+        "type": "group",
+        "z": "4905164f6a425bac",
+        "g": "bf34836aec302e22",
+        "name": "Split each row into its own payload",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "4d95e9a2b5aee657",
+            "4e72558f8b7183e3",
+            "e6da8adc3b3f9d3c"
+        ],
+        "x": 1644,
+        "y": 1059,
+        "w": 252,
+        "h": 82
+    },
+    {
+        "id": "f560d89917a0971d",
+        "type": "group",
+        "z": "4905164f6a425bac",
+        "g": "bf34836aec302e22",
+        "name": "Add buttons",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "519ead238c33cc41",
+            "aedab797cb57c44d",
+            "53e5366451aa30fd",
+            "b868e584cd0ce560",
+            "c582ed42ed298ba3",
+            "2bc93fc7f2b504ec"
+        ],
+        "x": 1644,
+        "y": 1279,
+        "w": 862,
+        "h": 102
+    },
+    {
+        "id": "efc5cd87ab60631c",
+        "type": "group",
+        "z": "4905164f6a425bac",
+        "g": "bf34836aec302e22",
+        "name": "Format the dates",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "537f8b41d33eee27",
+            "4e71e51255243ae8",
+            "cf85af98cadb6f5b",
+            "df416de276de5508",
+            "ee609f1dc8163aa0",
+            "abc01444a378070c",
+            "d323b2b252f21430"
+        ],
+        "x": 1644,
+        "y": 1159,
+        "w": 1142,
+        "h": 102
+    },
+    {
+        "id": "f75ad477d2b26604",
+        "type": "group",
+        "z": "4905164f6a425bac",
+        "g": "bf34836aec302e22",
+        "name": "Select the data",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "a4c4ddd524389717",
+            "9147619ddebfcfe4",
+            "4d853d3f2e918ad0",
+            "89db2880f3c68e4f",
+            "a115de70c4b5ab68"
+        ],
+        "x": 1634,
+        "y": 699,
+        "w": 662,
+        "h": 142
+    },
+    {
+        "id": "eca4797e2a60d7b0",
+        "type": "group",
+        "z": "4905164f6a425bac",
+        "g": "0f5e7f65d27cfa16",
+        "name": "Select the data according to selected line or department",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "aac4ffda6235d691",
+            "b9ab16849c936fc8",
+            "eb76cd5935865253",
+            "d88140a2aeb23a80",
+            "e39babd5966bd4cc",
+            "bb8f1201a2343ae0",
+            "d19bc6981d177724"
+        ],
+        "x": 214,
+        "y": 419,
+        "w": 747,
+        "h": 142
+    },
+    {
+        "id": "aa05232f163a9a99",
+        "type": "group",
+        "z": "4905164f6a425bac",
+        "g": "0f5e7f65d27cfa16",
+        "name": "If no rows were returned clear the table and show a message",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "f970904cba0b0e09",
+            "d5940ce909ab72ec",
+            "28b2afbcac2473d4",
+            "01ea12ce14d7df92",
+            "7c94cad0aaf8246d",
+            "8dba094013194f6b",
+            "25056389edc0db64",
+            "861d2d0ace349482"
+        ],
+        "x": 249,
+        "y": 579,
+        "w": 702,
+        "h": 242
+    },
+    {
+        "id": "50838593e751005e",
+        "type": "group",
+        "z": "4905164f6a425bac",
+        "g": "0f5e7f65d27cfa16",
+        "name": "Add 'Acknowledged' and 'Resolved' buttons to each row in the table",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "1bb1ff2eb954ea6f",
+            "b8568ea9f6e7b4a7",
+            "a373b78e72f79b0a",
+            "474932dd77c9f4a6",
+            "14936e36d80db429",
+            "e0aedafe60dd193d"
+        ],
+        "x": 259,
+        "y": 1059,
+        "w": 862,
+        "h": 102
+    },
+    {
+        "id": "23f98fde5be1a446",
+        "type": "group",
+        "z": "4905164f6a425bac",
+        "g": "0f5e7f65d27cfa16",
+        "name": "Format the acknowledged and resolved timestamps.",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "7cf6a140e36b1711",
+            "0bee3fadc51fe3dd",
+            "685498ecbec6733a",
+            "b02925fd8ec6b297",
+            "6f2e810aa0c22fed",
+            "1fa6241c9d58d4db",
+            "89827ff66b4029e8"
+        ],
+        "x": 249,
+        "y": 939,
+        "w": 1142,
+        "h": 102
+    },
+    {
+        "id": "867e96d227fa62a8",
+        "type": "group",
+        "z": "4905164f6a425bac",
+        "g": "0f5e7f65d27cfa16",
+        "name": "Group all rows back into a single array of objects",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "c57857d045f882ca",
+            "6afdfebf85230db5",
+            "98aeecfea0b8913c"
+        ],
+        "x": 259,
+        "y": 1179,
+        "w": 310,
+        "h": 82
+    },
+    {
+        "id": "bc211196337349c5",
+        "type": "group",
+        "z": "4905164f6a425bac",
+        "g": "0f5e7f65d27cfa16",
+        "name": "Populate the table",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "7f5142e8666d47e4",
+            "58c1f4ba82c5635b"
+        ],
+        "x": 249,
+        "y": 1279,
+        "w": 212,
+        "h": 82
+    },
+    {
+        "id": "9234594ea6342f5e",
+        "type": "group",
+        "z": "4905164f6a425bac",
+        "g": "0f5e7f65d27cfa16",
+        "name": "Split each row retrieved from the database into its own payload.",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "6f1a6916eac3585e",
+            "a044a859d5cb1467",
+            "64df57ef4d812581"
+        ],
+        "x": 249,
+        "y": 839,
+        "w": 402,
+        "h": 82
+    },
+    {
+        "id": "b9ab16849c936fc8",
+        "type": "template",
+        "z": "4905164f6a425bac",
+        "g": "eca4797e2a60d7b0",
+        "name": "",
+        "field": "topic",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "SELECT * from requests WHERE \"{{query}}\" =\"{{line}}\" AND resolved IS NULL",
+        "output": "str",
+        "x": 705,
+        "y": 480,
+        "wires": [
+            [
+                "aac4ffda6235d691"
+            ]
+        ]
+    },
+    {
+        "id": "eb76cd5935865253",
+        "type": "change",
+        "z": "4905164f6a425bac",
+        "g": "eca4797e2a60d7b0",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "line",
+                "pt": "msg",
+                "to": "line",
+                "tot": "global"
+            },
+            {
+                "t": "set",
+                "p": "query",
+                "pt": "msg",
+                "to": "query",
+                "tot": "global"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 545,
+        "y": 480,
+        "wires": [
+            [
+                "b9ab16849c936fc8"
+            ]
+        ]
+    },
+    {
+        "id": "d88140a2aeb23a80",
+        "type": "link out",
+        "z": "4905164f6a425bac",
+        "g": "eca4797e2a60d7b0",
+        "name": "link out 1",
+        "mode": "link",
+        "links": [
+            "f970904cba0b0e09"
+        ],
+        "x": 920,
+        "y": 480,
+        "wires": []
+    },
+    {
+        "id": "6f1a6916eac3585e",
+        "type": "link in",
+        "z": "4905164f6a425bac",
+        "g": "9234594ea6342f5e",
+        "name": "link in 1",
+        "links": [
+            "d5940ce909ab72ec"
+        ],
+        "x": 290,
+        "y": 880,
+        "wires": [
+            [
+                "a044a859d5cb1467"
+            ]
+        ]
+    },
+    {
+        "id": "a044a859d5cb1467",
+        "type": "split",
+        "z": "4905164f6a425bac",
+        "g": "9234594ea6342f5e",
+        "name": "",
+        "splt": "\\n",
+        "spltType": "str",
+        "arraySplt": 1,
+        "arraySpltType": "len",
+        "stream": false,
+        "addname": "",
+        "x": 375,
+        "y": 880,
+        "wires": [
+            [
+                "64df57ef4d812581"
+            ]
+        ]
+    },
+    {
+        "id": "64df57ef4d812581",
+        "type": "link out",
+        "z": "4905164f6a425bac",
+        "g": "9234594ea6342f5e",
+        "name": "link out 2",
+        "mode": "link",
+        "links": [
+            "7cf6a140e36b1711"
+        ],
+        "x": 460,
+        "y": 880,
+        "wires": []
+    },
+    {
+        "id": "7f5142e8666d47e4",
+        "type": "link in",
+        "z": "4905164f6a425bac",
+        "g": "bc211196337349c5",
+        "name": "link in 2",
+        "links": [
+            "6afdfebf85230db5",
+            "01ea12ce14d7df92"
+        ],
+        "x": 290,
+        "y": 1320,
+        "wires": [
+            [
+                "58c1f4ba82c5635b"
+            ]
+        ]
+    },
+    {
+        "id": "c57857d045f882ca",
+        "type": "join",
+        "z": "4905164f6a425bac",
+        "g": "867e96d227fa62a8",
+        "name": "",
+        "mode": "auto",
+        "build": "object",
+        "property": "payload",
+        "propertyType": "msg",
+        "key": "topic",
+        "joiner": "\\n",
+        "joinerType": "str",
+        "accumulate": true,
+        "timeout": "",
+        "count": "",
+        "reduceRight": false,
+        "reduceExp": "",
+        "reduceInit": "",
+        "reduceInitType": "",
+        "reduceFixup": "",
+        "x": 395,
+        "y": 1220,
+        "wires": [
+            [
+                "6afdfebf85230db5"
+            ]
+        ]
+    },
+    {
+        "id": "6afdfebf85230db5",
+        "type": "link out",
+        "z": "4905164f6a425bac",
+        "g": "867e96d227fa62a8",
+        "name": "link out 5",
+        "mode": "link",
+        "links": [
+            "7f5142e8666d47e4"
+        ],
+        "x": 480,
+        "y": 1220,
+        "wires": []
+    },
+    {
+        "id": "98aeecfea0b8913c",
+        "type": "link in",
+        "z": "4905164f6a425bac",
+        "g": "867e96d227fa62a8",
+        "name": "link in 5",
+        "links": [
+            "b8568ea9f6e7b4a7"
+        ],
+        "x": 300,
+        "y": 1220,
+        "wires": [
+            [
+                "c57857d045f882ca"
+            ]
+        ]
+    },
+    {
+        "id": "7cf6a140e36b1711",
+        "type": "link in",
+        "z": "4905164f6a425bac",
+        "g": "23f98fde5be1a446",
+        "name": "link in 6",
+        "links": [
+            "64df57ef4d812581"
+        ],
+        "x": 290,
+        "y": 980,
+        "wires": [
+            [
+                "0bee3fadc51fe3dd"
+            ]
+        ]
+    },
+    {
+        "id": "6f2e810aa0c22fed",
+        "type": "link out",
+        "z": "4905164f6a425bac",
+        "g": "23f98fde5be1a446",
+        "name": "link out 6",
+        "mode": "link",
+        "links": [
+            "1bb1ff2eb954ea6f"
+        ],
+        "x": 1350,
+        "y": 980,
+        "wires": []
+    },
+    {
+        "id": "1bb1ff2eb954ea6f",
+        "type": "link in",
+        "z": "4905164f6a425bac",
+        "g": "50838593e751005e",
+        "name": "link in 7",
+        "links": [
+            "6f2e810aa0c22fed"
+        ],
+        "x": 300,
+        "y": 1120,
+        "wires": [
+            [
+                "474932dd77c9f4a6"
+            ]
+        ]
+    },
+    {
+        "id": "b8568ea9f6e7b4a7",
+        "type": "link out",
+        "z": "4905164f6a425bac",
+        "g": "50838593e751005e",
+        "name": "link out 7",
+        "mode": "link",
+        "links": [
+            "98aeecfea0b8913c"
+        ],
+        "x": 1080,
+        "y": 1120,
+        "wires": []
+    },
+    {
+        "id": "89827ff66b4029e8",
+        "type": "switch",
+        "z": "4905164f6a425bac",
+        "g": "23f98fde5be1a446",
+        "name": "acknowledged is null?",
+        "property": "payload.acknowledged",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "null"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 625,
+        "y": 980,
+        "wires": [
+            [
+                "1fa6241c9d58d4db"
+            ],
+            [
+                "685498ecbec6733a"
+            ]
+        ]
+    },
+    {
+        "id": "1fa6241c9d58d4db",
+        "type": "switch",
+        "z": "4905164f6a425bac",
+        "g": "23f98fde5be1a446",
+        "name": "resolved is null?",
+        "property": "payload.resolved",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "null"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 1055,
+        "y": 980,
+        "wires": [
+            [
+                "6f2e810aa0c22fed"
+            ],
+            [
+                "b02925fd8ec6b297"
+            ]
+        ]
+    },
+    {
+        "id": "474932dd77c9f4a6",
+        "type": "switch",
+        "z": "4905164f6a425bac",
+        "g": "50838593e751005e",
+        "name": "acknowledged is null?",
+        "property": "payload.acknowledged",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "null"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 445,
+        "y": 1120,
+        "wires": [
+            [
+                "14936e36d80db429"
+            ],
+            [
+                "a373b78e72f79b0a"
+            ]
+        ]
+    },
+    {
+        "id": "a373b78e72f79b0a",
+        "type": "switch",
+        "z": "4905164f6a425bac",
+        "g": "50838593e751005e",
+        "name": "resolved is null?",
+        "property": "payload.resolved",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "null"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 805,
+        "y": 1120,
+        "wires": [
+            [
+                "e0aedafe60dd193d"
+            ],
+            [
+                "b8568ea9f6e7b4a7"
+            ]
+        ]
+    },
+    {
+        "id": "14936e36d80db429",
+        "type": "template",
+        "z": "4905164f6a425bac",
+        "g": "50838593e751005e",
+        "name": "Build ack link",
+        "field": "payload.acknowledged",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "<a href=\"/dashboard/{{line}}?page={{line}}&action=ack&request={{payload.rowid}}\" style=\"color: #000000\">ACKNOWLEDGE</a>",
+        "output": "str",
+        "x": 635,
+        "y": 1100,
+        "wires": [
+            [
+                "a373b78e72f79b0a"
+            ]
+        ]
+    },
+    {
+        "id": "e0aedafe60dd193d",
+        "type": "template",
+        "z": "4905164f6a425bac",
+        "g": "50838593e751005e",
+        "name": "Build res link",
+        "field": "payload.resolved",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "<a href=\"/dashboard/{{line}}?page={{line}}&action=res&request={{payload.rowid}}\" style=\"color: #000000\">RESOLVE</a>",
+        "output": "str",
+        "x": 975,
+        "y": 1100,
+        "wires": [
+            [
+                "b8568ea9f6e7b4a7"
+            ]
+        ]
+    },
+    {
+        "id": "e39babd5966bd4cc",
+        "type": "link in",
+        "z": "4905164f6a425bac",
+        "g": "eca4797e2a60d7b0",
+        "name": "Refresh data",
+        "links": [
+            "87e83d82a9a62ed3",
+            "690bddfb420cba47"
+        ],
+        "x": 390,
+        "y": 520,
+        "wires": [
+            [
+                "eb76cd5935865253"
+            ]
+        ]
+    },
+    {
+        "id": "f970904cba0b0e09",
+        "type": "link in",
+        "z": "4905164f6a425bac",
+        "g": "aa05232f163a9a99",
+        "name": "link in 8",
+        "links": [
+            "d88140a2aeb23a80"
+        ],
+        "x": 290,
+        "y": 660,
+        "wires": [
+            [
+                "28b2afbcac2473d4"
+            ]
+        ]
+    },
+    {
+        "id": "d5940ce909ab72ec",
+        "type": "link out",
+        "z": "4905164f6a425bac",
+        "g": "aa05232f163a9a99",
+        "name": "link out 11",
+        "mode": "link",
+        "links": [
+            "6f1a6916eac3585e"
+        ],
+        "x": 600,
+        "y": 780,
+        "wires": []
+    },
+    {
+        "id": "28b2afbcac2473d4",
+        "type": "switch",
+        "z": "4905164f6a425bac",
+        "g": "aa05232f163a9a99",
+        "name": "Payload empty?",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "empty"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 435,
+        "y": 660,
+        "wires": [
+            [
+                "7c94cad0aaf8246d",
+                "8dba094013194f6b"
+            ],
+            [
+                "d5940ce909ab72ec",
+                "25056389edc0db64"
+            ]
+        ]
+    },
+    {
+        "id": "01ea12ce14d7df92",
+        "type": "link out",
+        "z": "4905164f6a425bac",
+        "g": "aa05232f163a9a99",
+        "name": "link out 12",
+        "mode": "link",
+        "links": [
+            "7f5142e8666d47e4"
+        ],
+        "x": 820,
+        "y": 620,
+        "wires": []
+    },
+    {
+        "id": "7c94cad0aaf8246d",
+        "type": "change",
+        "z": "4905164f6a425bac",
+        "g": "aa05232f163a9a99",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "[]",
+                "tot": "json"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 645,
+        "y": 620,
+        "wires": [
+            [
+                "01ea12ce14d7df92"
+            ]
+        ]
+    },
+    {
+        "id": "8dba094013194f6b",
+        "type": "change",
+        "z": "4905164f6a425bac",
+        "g": "aa05232f163a9a99",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "There are no outstanding requests",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 645,
+        "y": 680,
+        "wires": [
+            [
+                "861d2d0ace349482"
+            ]
+        ]
+    },
+    {
+        "id": "25056389edc0db64",
+        "type": "change",
+        "z": "4905164f6a425bac",
+        "g": "aa05232f163a9a99",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 645,
+        "y": 740,
+        "wires": [
+            [
+                "861d2d0ace349482"
+            ]
+        ]
+    },
+    {
+        "id": "1e5cdfe8859428fb",
+        "type": "change",
+        "z": "4905164f6a425bac",
+        "g": "08b1402a264e4587",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "support",
+                "pt": "flow",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1000,
+        "y": 1500,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "ff7e45f9f58e41ae",
+        "type": "change",
+        "z": "4905164f6a425bac",
+        "g": "08b1402a264e4587",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "notes",
+                "pt": "flow",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1000,
+        "y": 1540,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "d4f7a69e90172c7d",
+        "type": "change",
+        "z": "4905164f6a425bac",
+        "g": "08b1402a264e4587",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "[]",
+                "tot": "json"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 560,
+        "y": 1500,
+        "wires": [
+            [
+                "c4ee5a28c33fb826"
+            ]
+        ]
+    },
+    {
+        "id": "56d7bbef8267a019",
+        "type": "change",
+        "z": "4905164f6a425bac",
+        "g": "08b1402a264e4587",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "request.support",
+                "pt": "msg",
+                "to": "support",
+                "tot": "flow"
+            },
+            {
+                "t": "set",
+                "p": "request.notes",
+                "pt": "msg",
+                "to": "notes",
+                "tot": "flow"
+            },
+            {
+                "t": "set",
+                "p": "request.line",
+                "pt": "msg",
+                "to": "line",
+                "tot": "global"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 560,
+        "y": 1620,
+        "wires": [
+            [
+                "0da9e11834187f55"
+            ]
+        ]
+    },
+    {
+        "id": "f0d06117d095bcd2",
+        "type": "change",
+        "z": "4905164f6a425bac",
+        "g": "08b1402a264e4587",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 560,
+        "y": 1540,
+        "wires": [
+            [
+                "e7b614800ccc9e7c"
+            ]
+        ]
+    },
+    {
+        "id": "2f6487260b827a23",
+        "type": "template",
+        "z": "4905164f6a425bac",
+        "g": "08b1402a264e4587",
+        "name": "",
+        "field": "topic",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "INSERT INTO requests (rowid,line,support,requested,notes)\nVALUES(NULL,'{{request.line}}','{{request.support}}','{{request.time}}','{{request.notes}}');",
+        "output": "str",
+        "x": 940,
+        "y": 1620,
+        "wires": [
+            [
+                "a1d7ee1b8fcea94d"
+            ]
+        ]
+    },
+    {
+        "id": "690bddfb420cba47",
+        "type": "link out",
+        "z": "4905164f6a425bac",
+        "g": "08b1402a264e4587",
+        "name": "link out 13",
+        "mode": "link",
+        "links": [
+            "e39babd5966bd4cc"
+        ],
+        "x": 1365,
+        "y": 1560,
+        "wires": []
+    },
+    {
+        "id": "70e24e92063897f6",
+        "type": "change",
+        "z": "4905164f6a425bac",
+        "g": "08b1402a264e4587",
+        "name": "",
+        "rules": [
+            {
+                "t": "delete",
+                "p": "support",
+                "pt": "flow"
+            },
+            {
+                "t": "delete",
+                "p": "notes",
+                "pt": "flow"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1240,
+        "y": 1560,
+        "wires": [
+            [
+                "690bddfb420cba47"
+            ]
+        ]
+    },
+    {
+        "id": "e7b614800ccc9e7c",
+        "type": "ui-text-input",
+        "z": "4905164f6a425bac",
+        "g": "08b1402a264e4587",
+        "group": "31a61a6d5c397cf4",
+        "name": "Notes",
+        "label": "Notes",
+        "order": 4,
+        "width": "0",
+        "height": "0",
+        "topic": "topic",
+        "topicType": "msg",
+        "mode": "textarea",
+        "tooltip": "",
+        "delay": 300,
+        "passthru": false,
+        "sendOnDelay": false,
+        "sendOnBlur": true,
+        "sendOnEnter": false,
+        "className": "",
+        "clearable": false,
+        "sendOnClear": false,
+        "icon": "",
+        "iconPosition": "right",
+        "iconInnerPosition": "inside",
+        "x": 790,
+        "y": 1540,
+        "wires": [
+            [
+                "ff7e45f9f58e41ae"
+            ]
+        ]
+    },
+    {
+        "id": "c72f85794babeed7",
+        "type": "ui-button",
+        "z": "4905164f6a425bac",
+        "g": "08b1402a264e4587",
+        "group": "31a61a6d5c397cf4",
+        "name": "",
+        "label": "Request Support",
+        "order": 5,
+        "width": 0,
+        "height": 0,
+        "emulateClick": false,
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "iconPosition": "left",
+        "payload": "send",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 350,
+        "y": 1540,
+        "wires": [
+            [
+                "d4f7a69e90172c7d",
+                "56d7bbef8267a019",
+                "f0d06117d095bcd2"
+            ]
+        ]
+    },
+    {
+        "id": "c4ee5a28c33fb826",
+        "type": "ui-dropdown",
+        "z": "4905164f6a425bac",
+        "g": "08b1402a264e4587",
+        "group": "31a61a6d5c397cf4",
+        "name": "",
+        "label": "Select Option:",
+        "tooltip": "",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "multiple": false,
+        "chips": false,
+        "clearable": false,
+        "options": [
+            {
+                "label": "Maintenance",
+                "value": "Maintenance",
+                "type": "str"
+            },
+            {
+                "label": "Quality",
+                "value": "Quality",
+                "type": "str"
+            },
+            {
+                "label": "Stores",
+                "value": "Stores",
+                "type": "str"
+            },
+            {
+                "label": "Manufacturing Engineering",
+                "value": "Manufacturing Engineering",
+                "type": "str"
+            }
+        ],
+        "payload": "",
+        "topic": "topic",
+        "topicType": "msg",
+        "className": "",
+        "typeIsComboBox": true,
+        "x": 820,
+        "y": 1500,
+        "wires": [
+            [
+                "1e5cdfe8859428fb"
+            ]
+        ]
+    },
+    {
+        "id": "861d2d0ace349482",
+        "type": "ui-text",
+        "z": "4905164f6a425bac",
+        "g": "aa05232f163a9a99",
+        "group": "31a61a6d5c397cf4",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "name": "Alert for no jobs",
+        "label": "",
+        "format": "{{msg.payload}}",
+        "layout": "col-center",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#717171",
+        "className": "",
+        "x": 845,
+        "y": 680,
+        "wires": []
+    },
+    {
+        "id": "58c1f4ba82c5635b",
+        "type": "ui-table",
+        "z": "4905164f6a425bac",
+        "g": "bc211196337349c5",
+        "group": "31a61a6d5c397cf4",
+        "name": "Jobs",
+        "label": "text",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "maxrows": 0,
+        "passthru": false,
+        "autocols": false,
+        "showSearch": true,
+        "selectionType": "none",
+        "columns": [
+            {
+                "title": "Line",
+                "key": "line",
+                "type": "text",
+                "width": "",
+                "align": "start"
+            },
+            {
+                "title": "Support",
+                "key": "support",
+                "type": "text",
+                "width": "",
+                "align": "start"
+            },
+            {
+                "title": "Requested",
+                "key": "requested",
+                "type": "html",
+                "width": "",
+                "align": "start"
+            },
+            {
+                "title": "Acknowledged",
+                "key": "acknowledged",
+                "type": "html",
+                "width": "",
+                "align": "start"
+            },
+            {
+                "title": "Resolved",
+                "key": "resolved",
+                "type": "html",
+                "width": "",
+                "align": "start"
+            },
+            {
+                "title": "Request",
+                "key": "rowid",
+                "type": "text",
+                "width": "",
+                "align": "start"
+            },
+            {
+                "title": "Notes",
+                "key": "notes",
+                "type": "text",
+                "width": "40%",
+                "align": "start"
+            }
+        ],
+        "x": 385,
+        "y": 1320,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "0bee3fadc51fe3dd",
+        "type": "moment",
+        "z": "4905164f6a425bac",
+        "g": "23f98fde5be1a446",
+        "name": "Requested format",
+        "topic": "",
+        "input": "payload.requested",
+        "inputType": "msg",
+        "inTz": "Africa/Abidjan",
+        "adjAmount": 0,
+        "adjType": "days",
+        "adjDir": "add",
+        "format": "HH:mm:ss",
+        "locale": "en-US",
+        "output": "payload.requested",
+        "outputType": "msg",
+        "outTz": "Africa/Abidjan",
+        "x": 415,
+        "y": 980,
+        "wires": [
+            [
+                "89827ff66b4029e8"
+            ]
+        ]
+    },
+    {
+        "id": "685498ecbec6733a",
+        "type": "moment",
+        "z": "4905164f6a425bac",
+        "g": "23f98fde5be1a446",
+        "name": "Acknowledged format",
+        "topic": "",
+        "input": "payload.acknowledged",
+        "inputType": "msg",
+        "inTz": "Africa/Abidjan",
+        "adjAmount": 0,
+        "adjType": "days",
+        "adjDir": "add",
+        "format": "HH:mm:ss",
+        "locale": "en-US",
+        "output": "payload.acknowledged",
+        "outputType": "msg",
+        "outTz": "Africa/Abidjan",
+        "x": 845,
+        "y": 1000,
+        "wires": [
+            [
+                "1fa6241c9d58d4db"
+            ]
+        ]
+    },
+    {
+        "id": "b02925fd8ec6b297",
+        "type": "moment",
+        "z": "4905164f6a425bac",
+        "g": "23f98fde5be1a446",
+        "name": "Resolved format",
+        "topic": "",
+        "input": "payload.resolved",
+        "inputType": "msg",
+        "inTz": "Africa/Abidjan",
+        "adjAmount": 0,
+        "adjType": "days",
+        "adjDir": "add",
+        "format": "HH:mm:ss",
+        "locale": "en-US",
+        "output": "payload.resolved",
+        "outputType": "msg",
+        "outTz": "Africa/Abidjan",
+        "x": 1225,
+        "y": 1000,
+        "wires": [
+            [
+                "6f2e810aa0c22fed"
+            ]
+        ]
+    },
+    {
+        "id": "0da9e11834187f55",
+        "type": "moment",
+        "z": "4905164f6a425bac",
+        "g": "08b1402a264e4587",
+        "name": "",
+        "topic": "",
+        "input": "",
+        "inputType": "date",
+        "inTz": "Africa/Abidjan",
+        "adjAmount": 0,
+        "adjType": "days",
+        "adjDir": "add",
+        "format": "",
+        "locale": "en-US",
+        "output": "request.time",
+        "outputType": "msg",
+        "outTz": "Africa/Abidjan",
+        "x": 760,
+        "y": 1620,
+        "wires": [
+            [
+                "2f6487260b827a23"
+            ]
+        ]
+    },
+    {
+        "id": "aac4ffda6235d691",
+        "type": "sqlite",
+        "z": "4905164f6a425bac",
+        "g": "eca4797e2a60d7b0",
+        "mydb": "31abef4ecbfd6327",
+        "sqlquery": "msg.topic",
+        "sql": "",
+        "name": "",
+        "x": 835,
+        "y": 480,
+        "wires": [
+            [
+                "d88140a2aeb23a80"
+            ]
+        ]
+    },
+    {
+        "id": "a1d7ee1b8fcea94d",
+        "type": "sqlite",
+        "z": "4905164f6a425bac",
+        "g": "08b1402a264e4587",
+        "mydb": "31abef4ecbfd6327",
+        "sqlquery": "msg.topic",
+        "sql": "",
+        "name": "",
+        "x": 1090,
+        "y": 1620,
+        "wires": [
+            [
+                "70e24e92063897f6"
+            ]
+        ]
+    },
+    {
+        "id": "79c1695006354fa9",
+        "type": "ui-button-group",
+        "z": "4905164f6a425bac",
+        "g": "9ffad85c724392ec",
+        "name": "",
+        "group": "4e4fb4a8fa51768f",
+        "order": 1,
+        "width": "8",
+        "height": "2",
+        "label": "Production Line",
+        "rounded": false,
+        "useThemeColors": true,
+        "passthru": false,
+        "options": [
+            {
+                "label": "T1",
+                "icon": "",
+                "value": "T1",
+                "valueType": "str",
+                "color": "#3d2a51"
+            },
+            {
+                "label": "T2",
+                "icon": "",
+                "value": "T2",
+                "valueType": "str",
+                "color": "#3d2a51"
+            }
+        ],
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 2160,
+        "y": 380,
+        "wires": [
+            [
+                "bc688ab799f52184"
+            ]
+        ]
+    },
+    {
+        "id": "870ab5e758bb7e29",
+        "type": "ui-button-group",
+        "z": "4905164f6a425bac",
+        "g": "9ffad85c724392ec",
+        "name": "",
+        "group": "4e4fb4a8fa51768f",
+        "order": 2,
+        "width": "8",
+        "height": "2",
+        "label": "Department",
+        "rounded": false,
+        "useThemeColors": true,
+        "passthru": false,
+        "options": [
+            {
+                "label": "Quality",
+                "icon": "",
+                "value": "Quality",
+                "valueType": "str",
+                "color": "#009933"
+            },
+            {
+                "label": "Maintenance",
+                "icon": "",
+                "value": "Maintenance",
+                "valueType": "str",
+                "color": "#999999"
+            },
+            {
+                "label": "Stores",
+                "icon": "",
+                "value": "Stores",
+                "valueType": "str",
+                "color": "#ff6666"
+            },
+            {
+                "label": "Engeeniring",
+                "icon": "",
+                "value": "Engeeniring",
+                "valueType": "str",
+                "color": "#009999"
+            }
+        ],
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 2190,
+        "y": 420,
+        "wires": [
+            [
+                "92a5d186ece95d63"
+            ]
+        ]
+    },
+    {
+        "id": "bc688ab799f52184",
+        "type": "change",
+        "z": "4905164f6a425bac",
+        "g": "9ffad85c724392ec",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "line",
+                "pt": "global",
+                "to": "payload",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "Support Request",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "class",
+                "pt": "msg",
+                "to": "show",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "query",
+                "pt": "global",
+                "to": "line",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 2460,
+        "y": 380,
+        "wires": [
+            [
+                "72aeb61fdcce3869",
+                "6e81d00a13a15409"
+            ]
+        ]
+    },
+    {
+        "id": "92a5d186ece95d63",
+        "type": "change",
+        "z": "4905164f6a425bac",
+        "g": "9ffad85c724392ec",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "line",
+                "pt": "global",
+                "to": "payload",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "Support Request",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "class",
+                "pt": "msg",
+                "to": "hide",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "query",
+                "pt": "global",
+                "to": "support",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 2480,
+        "y": 420,
+        "wires": [
+            [
+                "72aeb61fdcce3869",
+                "6e81d00a13a15409"
+            ]
+        ]
+    },
+    {
+        "id": "72aeb61fdcce3869",
+        "type": "ui-control",
+        "z": "4905164f6a425bac",
+        "g": "9ffad85c724392ec",
+        "name": "",
+        "ui": "c385dfc590b1308d",
+        "events": "all",
+        "x": 2660,
+        "y": 380,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "374f377806c7cc60",
+        "type": "link in",
+        "z": "4905164f6a425bac",
+        "g": "08b1402a264e4587",
+        "name": "link in 69",
+        "links": [
+            "2a152e7f12ab291f",
+            "cfdc81441d931868",
+            "e1643fae10dd9989",
+            "f0eeb308bdd5ee14"
+        ],
+        "x": 205,
+        "y": 1540,
+        "wires": [
+            [
+                "c72f85794babeed7"
+            ]
+        ]
+    },
+    {
+        "id": "ecbbb57a16b4cc1f",
+        "type": "link in",
+        "z": "4905164f6a425bac",
+        "g": "08b1402a264e4587",
+        "name": "link in 70",
+        "links": [
+            "7643b5fd02a5187f",
+            "f0eeb308bdd5ee14"
+        ],
+        "x": 625,
+        "y": 1580,
+        "wires": [
+            [
+                "e7b614800ccc9e7c",
+                "c4ee5a28c33fb826"
+            ]
+        ]
+    },
+    {
+        "id": "1a78c20dc03bfe38",
+        "type": "ui-template",
+        "z": "4905164f6a425bac",
+        "g": "5bfb21059dfd0840",
+        "group": "",
+        "page": "",
+        "ui": "c385dfc590b1308d",
+        "name": "CSS: Toggle the request form visiblity",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "head": "",
+        "format": ".hide{\n    display: none !important;\n}\n\n.show{\n    display: grid !important;\n}\n\n.form{\n    gap:20px !important;\n}\n\n.form .nrdb-ui-form-rows{\n    display:grid !important;\n    gap:2.5rem !important;\n}\n\n.nrdb-ui-form-actions{\n margin-top:  1.8rem !important;\n}\n",
+        "storeOutMessages": true,
+        "passthru": true,
+        "resendOnRefresh": true,
+        "templateScope": "site:style",
+        "className": "",
+        "x": 2210,
+        "y": 300,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "7643b5fd02a5187f",
+        "type": "link out",
+        "z": "4905164f6a425bac",
+        "g": "9ffad85c724392ec",
+        "name": "link out 91",
+        "mode": "link",
+        "links": [
+            "374f377806c7cc60",
+            "b950bb6923e8ab6c"
+        ],
+        "x": 2815,
+        "y": 420,
+        "wires": []
+    },
+    {
+        "id": "a4c4ddd524389717",
+        "type": "sqlite",
+        "z": "4905164f6a425bac",
+        "g": "f75ad477d2b26604",
+        "mydb": "31abef4ecbfd6327",
+        "sqlquery": "msg.topic",
+        "sql": "",
+        "name": "",
+        "x": 2090,
+        "y": 740,
+        "wires": [
+            [
+                "4d853d3f2e918ad0"
+            ]
+        ]
+    },
+    {
+        "id": "9147619ddebfcfe4",
+        "type": "template",
+        "z": "4905164f6a425bac",
+        "g": "f75ad477d2b26604",
+        "name": "",
+        "field": "topic",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "SELECT * from requests WHERE resolved IS NULL",
+        "output": "str",
+        "x": 1900,
+        "y": 740,
+        "wires": [
+            [
+                "a4c4ddd524389717"
+            ]
+        ]
+    },
+    {
+        "id": "4d853d3f2e918ad0",
+        "type": "link out",
+        "z": "4905164f6a425bac",
+        "g": "f75ad477d2b26604",
+        "name": "link out 82",
+        "mode": "link",
+        "links": [
+            "3fe1a79e7dbc36b1"
+        ],
+        "x": 2255,
+        "y": 740,
+        "wires": []
+    },
+    {
+        "id": "89db2880f3c68e4f",
+        "type": "link in",
+        "z": "4905164f6a425bac",
+        "g": "f75ad477d2b26604",
+        "name": "Refresh data",
+        "links": [
+            "87e83d82a9a62ed3",
+            "4bf64c455f378033"
+        ],
+        "x": 1715,
+        "y": 800,
+        "wires": [
+            [
+                "9147619ddebfcfe4"
+            ]
+        ]
+    },
+    {
+        "id": "537f8b41d33eee27",
+        "type": "moment",
+        "z": "4905164f6a425bac",
+        "g": "efc5cd87ab60631c",
+        "name": "Resolved format",
+        "topic": "",
+        "input": "payload.resolved",
+        "inputType": "msg",
+        "inTz": "Africa/Abidjan",
+        "adjAmount": 0,
+        "adjType": "days",
+        "adjDir": "add",
+        "format": "HH:mm:ss",
+        "locale": "en-US",
+        "output": "payload.resolved",
+        "outputType": "msg",
+        "outTz": "Africa/Abidjan",
+        "x": 2620,
+        "y": 1220,
+        "wires": [
+            [
+                "4e71e51255243ae8"
+            ]
+        ]
+    },
+    {
+        "id": "4e71e51255243ae8",
+        "type": "link out",
+        "z": "4905164f6a425bac",
+        "g": "efc5cd87ab60631c",
+        "name": "link out 85",
+        "mode": "link",
+        "links": [
+            "53e5366451aa30fd"
+        ],
+        "x": 2745,
+        "y": 1200,
+        "wires": []
+    },
+    {
+        "id": "cf85af98cadb6f5b",
+        "type": "switch",
+        "z": "4905164f6a425bac",
+        "g": "efc5cd87ab60631c",
+        "name": "resolved is null?",
+        "property": "payload.resolved",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "null"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 2450,
+        "y": 1200,
+        "wires": [
+            [
+                "4e71e51255243ae8"
+            ],
+            [
+                "537f8b41d33eee27"
+            ]
+        ]
+    },
+    {
+        "id": "519ead238c33cc41",
+        "type": "link out",
+        "z": "4905164f6a425bac",
+        "g": "f560d89917a0971d",
+        "name": "link out 86",
+        "mode": "link",
+        "links": [
+            "0a52d10871851d65"
+        ],
+        "x": 2465,
+        "y": 1340,
+        "wires": []
+    },
+    {
+        "id": "df416de276de5508",
+        "type": "moment",
+        "z": "4905164f6a425bac",
+        "g": "efc5cd87ab60631c",
+        "name": "Acknowledged format",
+        "topic": "",
+        "input": "payload.acknowledged",
+        "inputType": "msg",
+        "inTz": "Africa/Abidjan",
+        "adjAmount": 0,
+        "adjType": "days",
+        "adjDir": "add",
+        "format": "HH:mm:ss",
+        "locale": "en-US",
+        "output": "payload.acknowledged",
+        "outputType": "msg",
+        "outTz": "Africa/Abidjan",
+        "x": 2240,
+        "y": 1220,
+        "wires": [
+            [
+                "cf85af98cadb6f5b"
+            ]
+        ]
+    },
+    {
+        "id": "aedab797cb57c44d",
+        "type": "template",
+        "z": "4905164f6a425bac",
+        "g": "f560d89917a0971d",
+        "name": "Build res link",
+        "field": "payload.resolved",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "<a href=\"/dashboard/{{line}}?page={{line}}&action=res&request={{payload.rowid}}\" style=\"color: #000000\">RESOLVE</a>",
+        "output": "str",
+        "x": 2360,
+        "y": 1320,
+        "wires": [
+            [
+                "519ead238c33cc41"
+            ]
+        ]
+    },
+    {
+        "id": "4d95e9a2b5aee657",
+        "type": "link in",
+        "z": "4905164f6a425bac",
+        "g": "4d4d0643380b1f7f",
+        "name": "link in 63",
+        "links": [
+            "d4d759e2952bc006"
+        ],
+        "x": 1685,
+        "y": 1100,
+        "wires": [
+            [
+                "4e72558f8b7183e3"
+            ]
+        ]
+    },
+    {
+        "id": "4e72558f8b7183e3",
+        "type": "split",
+        "z": "4905164f6a425bac",
+        "g": "4d4d0643380b1f7f",
+        "name": "",
+        "splt": "\\n",
+        "spltType": "str",
+        "arraySplt": 1,
+        "arraySpltType": "len",
+        "stream": false,
+        "addname": "",
+        "x": 1770,
+        "y": 1100,
+        "wires": [
+            [
+                "e6da8adc3b3f9d3c"
+            ]
+        ]
+    },
+    {
+        "id": "e6da8adc3b3f9d3c",
+        "type": "link out",
+        "z": "4905164f6a425bac",
+        "g": "4d4d0643380b1f7f",
+        "name": "link out 83",
+        "mode": "link",
+        "links": [
+            "ee609f1dc8163aa0"
+        ],
+        "x": 1855,
+        "y": 1100,
+        "wires": []
+    },
+    {
+        "id": "4bcd04b2b89da547",
+        "type": "link in",
+        "z": "4905164f6a425bac",
+        "g": "c52fb6a01d9ae843",
+        "name": "link in 64",
+        "links": [
+            "9f039ccfaceba6f9",
+            "a2153611282480a4"
+        ],
+        "x": 1685,
+        "y": 1540,
+        "wires": [
+            [
+                "230b01e63c940cc7"
+            ]
+        ]
+    },
+    {
+        "id": "230b01e63c940cc7",
+        "type": "ui-table",
+        "z": "4905164f6a425bac",
+        "g": "c52fb6a01d9ae843",
+        "group": "b4924dbd6cb1a91b",
+        "name": "Jobs",
+        "label": "text",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "maxrows": "5",
+        "passthru": false,
+        "autocols": false,
+        "showSearch": true,
+        "selectionType": "none",
+        "columns": [
+            {
+                "title": "Line",
+                "key": "line",
+                "type": "text",
+                "width": "",
+                "align": "start"
+            },
+            {
+                "title": "Support",
+                "key": "support",
+                "type": "text",
+                "width": "",
+                "align": "start"
+            },
+            {
+                "title": "Requested",
+                "key": "requested",
+                "type": "html",
+                "width": "",
+                "align": "start"
+            },
+            {
+                "title": "Acknowledged",
+                "key": "acknowledged",
+                "type": "html",
+                "width": "",
+                "align": "start"
+            },
+            {
+                "title": "Resolved",
+                "key": "resolved",
+                "type": "html",
+                "width": "",
+                "align": "start"
+            },
+            {
+                "title": "Request",
+                "key": "rowid",
+                "type": "text",
+                "width": "",
+                "align": "start"
+            },
+            {
+                "title": "Notes",
+                "key": "notes",
+                "type": "text",
+                "width": "40%",
+                "align": "start"
+            }
+        ],
+        "mobileBreakpoint": "sm",
+        "mobileBreakpointType": "defaults",
+        "x": 1780,
+        "y": 1540,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "48c79ea0b20a2e1e",
+        "type": "join",
+        "z": "4905164f6a425bac",
+        "g": "300d5ac0c043d4bb",
+        "name": "",
+        "mode": "auto",
+        "build": "object",
+        "property": "payload",
+        "propertyType": "msg",
+        "key": "topic",
+        "joiner": "\\n",
+        "joinerType": "str",
+        "accumulate": true,
+        "timeout": "",
+        "count": "",
+        "reduceRight": false,
+        "reduceExp": "",
+        "reduceInit": "",
+        "reduceInitType": "",
+        "reduceFixup": "",
+        "x": 1790,
+        "y": 1440,
+        "wires": [
+            [
+                "9f039ccfaceba6f9"
+            ]
+        ]
+    },
+    {
+        "id": "9f039ccfaceba6f9",
+        "type": "link out",
+        "z": "4905164f6a425bac",
+        "g": "300d5ac0c043d4bb",
+        "name": "link out 84",
+        "mode": "link",
+        "links": [
+            "4bcd04b2b89da547"
+        ],
+        "x": 1875,
+        "y": 1440,
+        "wires": []
+    },
+    {
+        "id": "0a52d10871851d65",
+        "type": "link in",
+        "z": "4905164f6a425bac",
+        "g": "300d5ac0c043d4bb",
+        "name": "link in 65",
+        "links": [
+            "519ead238c33cc41"
+        ],
+        "x": 1695,
+        "y": 1440,
+        "wires": [
+            [
+                "48c79ea0b20a2e1e"
+            ]
+        ]
+    },
+    {
+        "id": "ee609f1dc8163aa0",
+        "type": "link in",
+        "z": "4905164f6a425bac",
+        "g": "efc5cd87ab60631c",
+        "name": "link in 66",
+        "links": [
+            "e6da8adc3b3f9d3c"
+        ],
+        "x": 1685,
+        "y": 1200,
+        "wires": [
+            [
+                "abc01444a378070c"
+            ]
+        ]
+    },
+    {
+        "id": "abc01444a378070c",
+        "type": "moment",
+        "z": "4905164f6a425bac",
+        "g": "efc5cd87ab60631c",
+        "name": "Requested format",
+        "topic": "",
+        "input": "payload.requested",
+        "inputType": "msg",
+        "inTz": "Africa/Abidjan",
+        "adjAmount": 0,
+        "adjType": "days",
+        "adjDir": "add",
+        "format": "HH:mm:ss",
+        "locale": "en-US",
+        "output": "payload.requested",
+        "outputType": "msg",
+        "outTz": "Africa/Abidjan",
+        "x": 1810,
+        "y": 1200,
+        "wires": [
+            [
+                "d323b2b252f21430"
+            ]
+        ]
+    },
+    {
+        "id": "d323b2b252f21430",
+        "type": "switch",
+        "z": "4905164f6a425bac",
+        "g": "efc5cd87ab60631c",
+        "name": "acknowledged is null?",
+        "property": "payload.acknowledged",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "null"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 2020,
+        "y": 1200,
+        "wires": [
+            [
+                "cf85af98cadb6f5b"
+            ],
+            [
+                "df416de276de5508"
+            ]
+        ]
+    },
+    {
+        "id": "53e5366451aa30fd",
+        "type": "link in",
+        "z": "4905164f6a425bac",
+        "g": "f560d89917a0971d",
+        "name": "link in 67",
+        "links": [
+            "4e71e51255243ae8"
+        ],
+        "x": 1685,
+        "y": 1340,
+        "wires": [
+            [
+                "c582ed42ed298ba3"
+            ]
+        ]
+    },
+    {
+        "id": "b868e584cd0ce560",
+        "type": "switch",
+        "z": "4905164f6a425bac",
+        "g": "f560d89917a0971d",
+        "name": "resolved is null?",
+        "property": "payload.resolved",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "null"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 2190,
+        "y": 1340,
+        "wires": [
+            [
+                "aedab797cb57c44d"
+            ],
+            [
+                "519ead238c33cc41"
+            ]
+        ]
+    },
+    {
+        "id": "c582ed42ed298ba3",
+        "type": "switch",
+        "z": "4905164f6a425bac",
+        "g": "f560d89917a0971d",
+        "name": "acknowledged is null?",
+        "property": "payload.acknowledged",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "null"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 1830,
+        "y": 1340,
+        "wires": [
+            [
+                "2bc93fc7f2b504ec"
+            ],
+            [
+                "b868e584cd0ce560"
+            ]
+        ]
+    },
+    {
+        "id": "2bc93fc7f2b504ec",
+        "type": "template",
+        "z": "4905164f6a425bac",
+        "g": "f560d89917a0971d",
+        "name": "Build ack link",
+        "field": "payload.acknowledged",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "<a href=\"/dashboard/{{line}}?page={{line}}&action=ack&request={{payload.rowid}}\" style=\"color: #000000\">ACKNOWLEDGE</a>",
+        "output": "str",
+        "x": 2020,
+        "y": 1320,
+        "wires": [
+            [
+                "b868e584cd0ce560"
+            ]
+        ]
+    },
+    {
+        "id": "3fe1a79e7dbc36b1",
+        "type": "link in",
+        "z": "4905164f6a425bac",
+        "g": "3b77ef92cb332f1c",
+        "name": "link in 68",
+        "links": [
+            "4d853d3f2e918ad0"
+        ],
+        "x": 1685,
+        "y": 940,
+        "wires": [
+            [
+                "c192a5dcb06e8aea"
+            ]
+        ]
+    },
+    {
+        "id": "d4d759e2952bc006",
+        "type": "link out",
+        "z": "4905164f6a425bac",
+        "g": "3b77ef92cb332f1c",
+        "name": "link out 87",
+        "mode": "link",
+        "links": [
+            "4d95e9a2b5aee657"
+        ],
+        "x": 1945,
+        "y": 1000,
+        "wires": []
+    },
+    {
+        "id": "c192a5dcb06e8aea",
+        "type": "switch",
+        "z": "4905164f6a425bac",
+        "g": "3b77ef92cb332f1c",
+        "name": "Payload empty?",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "empty"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 1830,
+        "y": 940,
+        "wires": [
+            [
+                "c6a7b9c74fc91edf",
+                "432570d5412cc5ce"
+            ],
+            [
+                "d4d759e2952bc006",
+                "35ef2993e39644f6"
+            ]
+        ]
+    },
+    {
+        "id": "a2153611282480a4",
+        "type": "link out",
+        "z": "4905164f6a425bac",
+        "g": "3b77ef92cb332f1c",
+        "name": "link out 88",
+        "mode": "link",
+        "links": [
+            "4bcd04b2b89da547"
+        ],
+        "x": 2125,
+        "y": 920,
+        "wires": []
+    },
+    {
+        "id": "c6a7b9c74fc91edf",
+        "type": "change",
+        "z": "4905164f6a425bac",
+        "g": "3b77ef92cb332f1c",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "[]",
+                "tot": "json"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 2010,
+        "y": 920,
+        "wires": [
+            [
+                "a2153611282480a4"
+            ]
+        ]
+    },
+    {
+        "id": "432570d5412cc5ce",
+        "type": "change",
+        "z": "4905164f6a425bac",
+        "g": "3b77ef92cb332f1c",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "There are no outstanding requests",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 2040,
+        "y": 960,
+        "wires": [
+            [
+                "e70b196b0dae468f"
+            ]
+        ]
+    },
+    {
+        "id": "35ef2993e39644f6",
+        "type": "change",
+        "z": "4905164f6a425bac",
+        "g": "3b77ef92cb332f1c",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 2060,
+        "y": 1000,
+        "wires": [
+            [
+                "e70b196b0dae468f"
+            ]
+        ]
+    },
+    {
+        "id": "e70b196b0dae468f",
+        "type": "ui-text",
+        "z": "4905164f6a425bac",
+        "g": "3b77ef92cb332f1c",
+        "group": "b4924dbd6cb1a91b",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "name": "Alert for no jobs",
+        "label": "",
+        "format": "{{msg.payload}}",
+        "layout": "col-center",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#717171",
+        "className": "",
+        "x": 2220,
+        "y": 960,
+        "wires": []
+    },
+    {
+        "id": "a115de70c4b5ab68",
+        "type": "ui-control",
+        "z": "4905164f6a425bac",
+        "g": "f75ad477d2b26604",
+        "name": "",
+        "ui": "c385dfc590b1308d",
+        "events": "all",
+        "x": 1720,
+        "y": 740,
+        "wires": [
+            [
+                "9147619ddebfcfe4"
+            ]
+        ]
+    },
+    {
+        "id": "164c96c714465739",
+        "type": "ui-form",
+        "z": "4905164f6a425bac",
+        "g": "9fa130396aaf0d6d",
+        "name": "",
+        "group": "ebdaf2a0563f2ae3",
+        "label": "",
+        "order": 1,
+        "width": "0",
+        "height": "0",
+        "options": [
+            {
+                "label": "New Line",
+                "key": "line",
+                "type": "text",
+                "required": false,
+                "rows": null
+            },
+            {
+                "label": "New Department",
+                "key": "department",
+                "type": "text",
+                "required": false,
+                "rows": null
+            }
+        ],
+        "formValue": {
+            "line": "",
+            "department": ""
+        },
+        "payload": "",
+        "submit": "Add",
+        "cancel": "Cancle",
+        "resetOnSubmit": true,
+        "topic": "topic",
+        "topicType": "msg",
+        "splitLayout": false,
+        "className": "form",
+        "x": 1990,
+        "y": 600,
+        "wires": [
+            [
+                "1d4c8ea12fe2bd84"
+            ]
+        ]
+    },
+    {
+        "id": "1d4c8ea12fe2bd84",
+        "type": "function",
+        "z": "4905164f6a425bac",
+        "g": "9fa130396aaf0d6d",
+        "name": "Add new lines and departments",
+        "func": "let lines = global.get('lines','persistent') || [];\nlet departments = global.get('departments','persistent') || [];\n\nlet line = msg.payload.line || \"\";\nlet department = msg.payload.department || \"\";\n\nif (line !== \"\") {\n    lines.push({ value: line, label: line });\n}\n\nif (department !== \"\") {\n    departments.push({ value: department, label: department });\n}\n\nglobal.set('lines','persistent', lines);\nglobal.set('departments','persistent', departments);\n\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 2275,
+        "y": 600,
+        "wires": [
+            [
+                "1ebd65f9760d07de"
+            ]
+        ]
+    },
+    {
+        "id": "f655b9fae60a84ac",
+        "type": "change",
+        "z": "4905164f6a425bac",
+        "g": "9ffad85c724392ec",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "ui_update.options",
+                "pt": "msg",
+                "to": "#:(persistent)::lines",
+                "tot": "global"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1940,
+        "y": 380,
+        "wires": [
+            [
+                "79c1695006354fa9"
+            ]
+        ]
+    },
+    {
+        "id": "d845f4ace1264854",
+        "type": "change",
+        "z": "4905164f6a425bac",
+        "g": "9ffad85c724392ec",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "ui_update.options",
+                "pt": "msg",
+                "to": "#:(persistent)::departments",
+                "tot": "global"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1970,
+        "y": 420,
+        "wires": [
+            [
+                "870ab5e758bb7e29",
+                "ad06cde13604d932"
+            ]
+        ]
+    },
+    {
+        "id": "ad06cde13604d932",
+        "type": "link out",
+        "z": "4905164f6a425bac",
+        "g": "9ffad85c724392ec",
+        "name": "link out 92",
+        "mode": "link",
+        "links": [
+            "d3e95af43ee60e1e"
+        ],
+        "x": 2175,
+        "y": 480,
+        "wires": []
+    },
+    {
+        "id": "23fb0462f15023af",
+        "type": "inject",
+        "z": "4905164f6a425bac",
+        "g": "df60d434a52bd6a2",
+        "name": "",
+        "props": [],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 3050,
+        "y": 460,
+        "wires": [
+            [
+                "bb588342c1bc27a3"
+            ]
+        ]
+    },
+    {
+        "id": "7903e648e5a67c40",
+        "type": "template",
+        "z": "4905164f6a425bac",
+        "g": "df60d434a52bd6a2",
+        "name": "",
+        "field": "topic",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "DELETE from requests WHERE requested <  DATE('now', '-30 days');",
+        "output": "str",
+        "x": 3360,
+        "y": 460,
+        "wires": [
+            [
+                "74f10f7f705d46bf"
+            ]
+        ]
+    },
+    {
+        "id": "5775dcb91c0feacb",
+        "type": "debug",
+        "z": "4905164f6a425bac",
+        "g": "df60d434a52bd6a2",
+        "name": "debug 59",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 3620,
+        "y": 460,
+        "wires": []
+    },
+    {
+        "id": "bb588342c1bc27a3",
+        "type": "change",
+        "z": "4905164f6a425bac",
+        "g": "df60d434a52bd6a2",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "now",
+                "pt": "msg",
+                "to": "",
+                "tot": "date"
+            },
+            {
+                "t": "set",
+                "p": "30days",
+                "pt": "msg",
+                "to": "msg.now - 0",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 3200,
+        "y": 460,
+        "wires": [
+            [
+                "7903e648e5a67c40"
+            ]
+        ]
+    },
+    {
+        "id": "74f10f7f705d46bf",
+        "type": "sqlite",
+        "z": "4905164f6a425bac",
+        "g": "df60d434a52bd6a2",
+        "mydb": "31abef4ecbfd6327",
+        "sqlquery": "msg.topic",
+        "sql": "",
+        "name": "",
+        "x": 3490,
+        "y": 460,
+        "wires": [
+            [
+                "5775dcb91c0feacb"
+            ]
+        ]
+    },
+    {
+        "id": "08eb234f1e8eac5e",
+        "type": "inject",
+        "z": "4905164f6a425bac",
+        "g": "1102ce4f58a12d64",
+        "name": "",
+        "props": [],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 3050,
+        "y": 340,
+        "wires": [
+            [
+                "a95b2c2838afd7e0"
+            ]
+        ]
+    },
+    {
+        "id": "e4ca3e9886a283cf",
+        "type": "debug",
+        "z": "4905164f6a425bac",
+        "g": "1102ce4f58a12d64",
+        "name": "debug 60",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 3520,
+        "y": 340,
+        "wires": []
+    },
+    {
+        "id": "a95b2c2838afd7e0",
+        "type": "template",
+        "z": "4905164f6a425bac",
+        "g": "1102ce4f58a12d64",
+        "name": "Create",
+        "field": "topic",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "CREATE TABLE IF NOT EXISTS requests (rowid INTEGER PRIMARY KEY,line TEXT NOT NULL, support TEXT NOT NULL, requested TEXT NOT NULL, acknowledged TEXT, resolved TEXT, notes TEXT)",
+        "output": "str",
+        "x": 3190,
+        "y": 340,
+        "wires": [
+            [
+                "8d50e57636b774a9"
+            ]
+        ]
+    },
+    {
+        "id": "8d50e57636b774a9",
+        "type": "sqlite",
+        "z": "4905164f6a425bac",
+        "g": "1102ce4f58a12d64",
+        "mydb": "31abef4ecbfd6327",
+        "sqlquery": "msg.topic",
+        "sql": "",
+        "name": "",
+        "x": 3330,
+        "y": 340,
+        "wires": [
+            [
+                "e4ca3e9886a283cf"
+            ]
+        ]
+    },
+    {
+        "id": "e6f81ba86ec37391",
+        "type": "template",
+        "z": "4905164f6a425bac",
+        "g": "6af400ee2fa53066",
+        "name": "",
+        "field": "topic",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "UPDATE requests SET {{action}} = \"{{now}}\" WHERE rowid={{payload.query.request}}",
+        "output": "str",
+        "x": 1175,
+        "y": 1760,
+        "wires": [
+            [
+                "626ab35c897c3795"
+            ]
+        ]
+    },
+    {
+        "id": "0cb80de80bc87a4e",
+        "type": "change",
+        "z": "4905164f6a425bac",
+        "g": "6af400ee2fa53066",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "query",
+                "pt": "msg",
+                "to": "payload.query",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 395,
+        "y": 1760,
+        "wires": [
+            [
+                "e0ee3dee811104ae"
+            ]
+        ]
+    },
+    {
+        "id": "663625b4f78d1e07",
+        "type": "switch",
+        "z": "4905164f6a425bac",
+        "g": "6af400ee2fa53066",
+        "name": "Update Ack or Res?",
+        "property": "query.action",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "ack",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "res",
+                "vt": "str"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 3,
+        "x": 815,
+        "y": 1760,
+        "wires": [
+            [
+                "49bfb0ce338ed731"
+            ],
+            [
+                "6ba3de806b6862fb"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "49bfb0ce338ed731",
+        "type": "change",
+        "z": "4905164f6a425bac",
+        "g": "6af400ee2fa53066",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "action",
+                "pt": "msg",
+                "to": "acknowledged",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1015,
+        "y": 1740,
+        "wires": [
+            [
+                "e6f81ba86ec37391"
+            ]
+        ]
+    },
+    {
+        "id": "6ba3de806b6862fb",
+        "type": "change",
+        "z": "4905164f6a425bac",
+        "g": "6af400ee2fa53066",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "action",
+                "pt": "msg",
+                "to": "resolved",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1015,
+        "y": 1780,
+        "wires": [
+            [
+                "e6f81ba86ec37391"
+            ]
+        ]
+    },
+    {
+        "id": "c287cb7b0a4edaf8",
+        "type": "ui-event",
+        "z": "4905164f6a425bac",
+        "g": "6af400ee2fa53066",
+        "ui": "c385dfc590b1308d",
+        "name": "",
+        "x": 245,
+        "y": 1760,
+        "wires": [
+            [
+                "0cb80de80bc87a4e"
+            ]
+        ]
+    },
+    {
+        "id": "e0ee3dee811104ae",
+        "type": "moment",
+        "z": "4905164f6a425bac",
+        "g": "6af400ee2fa53066",
+        "name": "",
+        "topic": "",
+        "input": "",
+        "inputType": "date",
+        "inTz": "Africa/Abidjan",
+        "adjAmount": 0,
+        "adjType": "days",
+        "adjDir": "add",
+        "format": "",
+        "locale": "en-US",
+        "output": "now",
+        "outputType": "msg",
+        "outTz": "Africa/Abidjan",
+        "x": 595,
+        "y": 1760,
+        "wires": [
+            [
+                "663625b4f78d1e07"
+            ]
+        ]
+    },
+    {
+        "id": "626ab35c897c3795",
+        "type": "sqlite",
+        "z": "4905164f6a425bac",
+        "g": "6af400ee2fa53066",
+        "mydb": "31abef4ecbfd6327",
+        "sqlquery": "msg.topic",
+        "sql": "",
+        "name": "",
+        "x": 1305,
+        "y": 1760,
+        "wires": [
+            [
+                "96253a27b8c20592"
+            ]
+        ]
+    },
+    {
+        "id": "96253a27b8c20592",
+        "type": "link out",
+        "z": "4905164f6a425bac",
+        "g": "6af400ee2fa53066",
+        "name": "link out 93",
+        "mode": "link",
+        "links": [
+            "bb8f1201a2343ae0"
+        ],
+        "x": 1420,
+        "y": 1760,
+        "wires": []
+    },
+    {
+        "id": "bb8f1201a2343ae0",
+        "type": "link in",
+        "z": "4905164f6a425bac",
+        "g": "eca4797e2a60d7b0",
+        "name": "link in 72",
+        "links": [
+            "96253a27b8c20592"
+        ],
+        "x": 390,
+        "y": 460,
+        "wires": [
+            [
+                "eb76cd5935865253"
+            ]
+        ]
+    },
+    {
+        "id": "1ebd65f9760d07de",
+        "type": "link out",
+        "z": "4905164f6a425bac",
+        "g": "9fa130396aaf0d6d",
+        "name": "link out 94",
+        "mode": "link",
+        "links": [
+            "f07358df462f5da0"
+        ],
+        "x": 2480,
+        "y": 600,
+        "wires": []
+    },
+    {
+        "id": "f07358df462f5da0",
+        "type": "link in",
+        "z": "4905164f6a425bac",
+        "g": "9ffad85c724392ec",
+        "name": "link in 73",
+        "links": [
+            "1ebd65f9760d07de"
+        ],
+        "x": 1785,
+        "y": 440,
+        "wires": [
+            [
+                "f655b9fae60a84ac",
+                "d845f4ace1264854"
+            ]
+        ]
+    },
+    {
+        "id": "6e81d00a13a15409",
+        "type": "change",
+        "z": "4905164f6a425bac",
+        "g": "9ffad85c724392ec",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "ui_update.options",
+                "pt": "msg",
+                "to": "departments",
+                "tot": "global"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 2660,
+        "y": 420,
+        "wires": [
+            [
+                "7643b5fd02a5187f"
+            ]
+        ]
+    },
+    {
+        "id": "81d751a698d397b4",
+        "type": "ui-template",
+        "z": "4905164f6a425bac",
+        "g": "5bfb21059dfd0840",
+        "group": "",
+        "page": "",
+        "ui": "c385dfc590b1308d",
+        "name": "",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "head": "",
+        "format": "<template>\n    <!-- Teleport the button to the #app-bar-actions area when mounted -->\n    <Teleport v-if=\"mounted\" to=\"#app-bar-title\">\n    <img height=\"32px\" src=\"https://app.flowfuse.com/ff-logo--wordmark-caps--dark.png\"></img>\n    </Teleport>\n</template>\n\n<script>\n    export default {\n        data() {\n            return {\n                mounted: false\n            }\n        },\n        mounted() {\n            // Set mounted to true when the component is mounted\n            this.mounted = true\n        }\n    }\n</script>",
+        "storeOutMessages": true,
+        "passthru": true,
+        "resendOnRefresh": true,
+        "templateScope": "widget:ui",
+        "className": "",
+        "x": 2460,
+        "y": 300,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "882e29d2dcc9326c",
+        "type": "change",
+        "z": "4905164f6a425bac",
+        "g": "6471824e24f18939",
+        "name": "Store lines and departments to context store",
+        "rules": [
+            {
+                "t": "set",
+                "p": "#:(persistent)::lines",
+                "pt": "global",
+                "to": "[{\"value\":\"T1\",\"label\":\"T1\"},{\"value\":\"T2\",\"label\":\"T2\"},{\"value\":\"T3\",\"label\":\"T3\"}]",
+                "tot": "json"
+            },
+            {
+                "t": "set",
+                "p": "#:(persistent)::departments",
+                "pt": "global",
+                "to": "[{\"value\":\"Maintenance\",\"label\":\"Maintenance\"},{\"value\":\"Stores\",\"label\":\"Stores\"},{\"value\":\"Quality\",\"label\":\"Quality\"}]",
+                "tot": "json"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 770,
+        "y": 280,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "34c733b480e41a13",
+        "type": "inject",
+        "z": "4905164f6a425bac",
+        "g": "6471824e24f18939",
+        "name": "Add production lines and department for testing",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 360,
+        "y": 280,
+        "wires": [
+            [
+                "882e29d2dcc9326c"
+            ]
+        ]
+    },
+    {
+        "id": "d19bc6981d177724",
+        "type": "inject",
+        "z": "4905164f6a425bac",
+        "g": "eca4797e2a60d7b0",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "1",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 330,
+        "y": 480,
+        "wires": [
+            [
+                "eb76cd5935865253"
+            ]
+        ]
+    },
+    {
+        "id": "c6dd2dcc537de80c",
+        "type": "ui-event",
+        "z": "4905164f6a425bac",
+        "g": "02417f3036b14c52",
+        "ui": "c385dfc590b1308d",
+        "name": "",
+        "x": 210,
+        "y": 1980,
+        "wires": [
+            [
+                "1c66bc7fd01e098d"
+            ]
+        ]
+    },
+    {
+        "id": "7dd62e6a647c1596",
+        "type": "change",
+        "z": "4905164f6a425bac",
+        "g": "02417f3036b14c52",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "line",
+                "pt": "global",
+                "to": "payload.query.line",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "class",
+                "pt": "msg",
+                "to": "show",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 660,
+        "y": 1940,
+        "wires": [
+            [
+                "f0eeb308bdd5ee14"
+            ]
+        ]
+    },
+    {
+        "id": "0edf2d4c68c11e6b",
+        "type": "change",
+        "z": "4905164f6a425bac",
+        "g": "02417f3036b14c52",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "line",
+                "pt": "global",
+                "to": "payload.query.department",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "class",
+                "pt": "msg",
+                "to": "hide",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 660,
+        "y": 1980,
+        "wires": [
+            [
+                "f0eeb308bdd5ee14"
+            ]
+        ]
+    },
+    {
+        "id": "a8da0c434007e8a5",
+        "type": "ui-markdown",
+        "z": "4905164f6a425bac",
+        "g": "02417f3036b14c52",
+        "group": "165815e4f97d2ad3",
+        "name": "Not found page",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "content": "<p align=\"center\">\n  <img src=\"https://cdn.dribbble.com/users/2382015/screenshots/6065978/no_result.gif\" alt=\"No Result\">\n</p>\n",
+        "className": "",
+        "x": 1400,
+        "y": 1980,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "1f9fddda50deb4bc",
+        "type": "ui-control",
+        "z": "4905164f6a425bac",
+        "g": "02417f3036b14c52",
+        "name": "",
+        "ui": "c385dfc590b1308d",
+        "events": "all",
+        "x": 1380,
+        "y": 2020,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "9a114eef8e992d4d",
+        "type": "change",
+        "z": "4905164f6a425bac",
+        "g": "02417f3036b14c52",
+        "name": "Redirect to Not found page",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "Not found",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1160,
+        "y": 2020,
+        "wires": [
+            [
+                "1f9fddda50deb4bc"
+            ]
+        ]
+    },
+    {
+        "id": "1c66bc7fd01e098d",
+        "type": "switch",
+        "z": "4905164f6a425bac",
+        "g": "02417f3036b14c52",
+        "name": "Has line or department key?",
+        "property": "payload.query",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "hask",
+                "v": "line",
+                "vt": "str"
+            },
+            {
+                "t": "hask",
+                "v": "department",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 400,
+        "y": 1980,
+        "wires": [
+            [
+                "7dd62e6a647c1596",
+                "8f8725dc247c2239"
+            ],
+            [
+                "0edf2d4c68c11e6b",
+                "8f8725dc247c2239"
+            ]
+        ]
+    },
+    {
+        "id": "f0eeb308bdd5ee14",
+        "type": "link out",
+        "z": "4905164f6a425bac",
+        "g": "02417f3036b14c52",
+        "name": "link out 95",
+        "mode": "link",
+        "links": [
+            "ecbbb57a16b4cc1f",
+            "374f377806c7cc60"
+        ],
+        "x": 865,
+        "y": 1960,
+        "wires": []
+    },
+    {
+        "id": "8f8725dc247c2239",
+        "type": "function",
+        "z": "4905164f6a425bac",
+        "g": "02417f3036b14c52",
+        "name": "Merge lines and departments array",
+        "func": "let lines = global.get('lines') || [];\nlet departments = global.get('departments') || [];\n\n// Extract label values from both arrays and merge them into a single array\nlet labels = [\n    ...lines.map(obj => obj.label),\n    ...departments.map(obj => obj.label)\n];\n\n// Set the merged labels array in the message\nmsg.payload = labels;\n\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 720,
+        "y": 2020,
+        "wires": [
+            [
+                "b17888bf6561e112"
+            ]
+        ]
+    },
+    {
+        "id": "b17888bf6561e112",
+        "type": "switch",
+        "z": "4905164f6a425bac",
+        "g": "02417f3036b14c52",
+        "name": "",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "cont",
+                "v": "line",
+                "vt": "global"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 950,
+        "y": 2020,
+        "wires": [
+            [],
+            [
+                "9a114eef8e992d4d"
+            ]
+        ]
+    },
+    {
+        "id": "851be5844570bb3f",
+        "type": "ui-event",
+        "z": "4905164f6a425bac",
+        "g": "f6a8f30146a99a20",
+        "ui": "c385dfc590b1308d",
+        "name": "",
+        "x": 2150,
+        "y": 1760,
+        "wires": [
+            [
+                "faf6959a52ca7ee4"
+            ]
+        ]
+    },
+    {
+        "id": "f0cf1cdd9ec95acf",
+        "type": "change",
+        "z": "4905164f6a425bac",
+        "g": "fd5f315f792d3cf7",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "#:(persistent)::admins",
+                "pt": "global",
+                "to": "[\"sumitshinde\"]",
+                "tot": "json"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1930,
+        "y": 1760,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "c49901682b8bc5d4",
+        "type": "comment",
+        "z": "4905164f6a425bac",
+        "g": "fd5f315f792d3cf7",
+        "name": "Define Admins Here",
+        "info": "",
+        "x": 1750,
+        "y": 1700,
+        "wires": []
+    },
+    {
+        "id": "d0ac4081bb469fac",
+        "type": "inject",
+        "z": "4905164f6a425bac",
+        "g": "fd5f315f792d3cf7",
+        "name": "",
+        "props": [],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 1730,
+        "y": 1760,
+        "wires": [
+            [
+                "f0cf1cdd9ec95acf"
+            ]
+        ]
+    },
+    {
+        "id": "4415ed2e92b78e33",
+        "type": "ui-control",
+        "z": "4905164f6a425bac",
+        "g": "f6a8f30146a99a20",
+        "name": "",
+        "ui": "c385dfc590b1308d",
+        "events": "all",
+        "x": 2850,
+        "y": 1760,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "6e9e1f9c2e4c69f1",
+        "type": "change",
+        "z": "4905164f6a425bac",
+        "g": "f6a8f30146a99a20",
+        "name": "Show Admin Page",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "{\"pages\":{\"show\":[\"Admin\"]}}",
+                "tot": "json"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 2660,
+        "y": 1740,
+        "wires": [
+            [
+                "4415ed2e92b78e33"
+            ]
+        ]
+    },
+    {
+        "id": "faf6959a52ca7ee4",
+        "type": "switch",
+        "z": "4905164f6a425bac",
+        "g": "f6a8f30146a99a20",
+        "name": "Is Admin User?",
+        "property": "admins",
+        "propertyType": "global",
+        "rules": [
+            {
+                "t": "cont",
+                "v": "_client.user.username",
+                "vt": "msg"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 2420,
+        "y": 1760,
+        "wires": [
+            [
+                "6e9e1f9c2e4c69f1"
+            ],
+            [
+                "7bbf9d08c4f739ac",
+                "593b05b11080f543"
+            ]
+        ]
+    },
+    {
+        "id": "7bbf9d08c4f739ac",
+        "type": "change",
+        "z": "4905164f6a425bac",
+        "g": "f6a8f30146a99a20",
+        "name": "Hide Admin Page",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "{\"pages\":{\"hide\":[\"Admin\"]}}",
+                "tot": "json"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 2660,
+        "y": 1780,
+        "wires": [
+            [
+                "4415ed2e92b78e33"
+            ]
+        ]
+    },
+    {
+        "id": "cd07d94e95e563c5",
+        "type": "comment",
+        "z": "4905164f6a425bac",
+        "g": "f6a8f30146a99a20",
+        "name": "Show/Hide Admin in Side Navigation",
+        "info": "",
+        "x": 2340,
+        "y": 1700,
+        "wires": []
+    },
+    {
+        "id": "960fe70d0a3e609e",
+        "type": "ui-control",
+        "z": "4905164f6a425bac",
+        "g": "f6a8f30146a99a20",
+        "name": "",
+        "ui": "c385dfc590b1308d",
+        "events": "all",
+        "x": 3030,
+        "y": 1900,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "eac865417ca6742b",
+        "type": "change",
+        "z": "4905164f6a425bac",
+        "g": "f6a8f30146a99a20",
+        "name": "Redirect the User",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "Support Request",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 2820,
+        "y": 1900,
+        "wires": [
+            [
+                "960fe70d0a3e609e"
+            ]
+        ]
+    },
+    {
+        "id": "0384c28bcc16c822",
+        "type": "comment",
+        "z": "4905164f6a425bac",
+        "g": "f6a8f30146a99a20",
+        "name": "Redirect is non-admin trying direct access",
+        "info": "",
+        "x": 2750,
+        "y": 1860,
+        "wires": []
+    },
+    {
+        "id": "593b05b11080f543",
+        "type": "switch",
+        "z": "4905164f6a425bac",
+        "g": "f6a8f30146a99a20",
+        "name": "",
+        "property": "payload.page.name",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "Admin",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 2640,
+        "y": 1900,
+        "wires": [
+            [
+                "eac865417ca6742b"
+            ]
+        ]
+    },
+    {
+        "id": "53716ffe8c008a9a",
+        "type": "comment",
+        "z": "4905164f6a425bac",
+        "name": "README",
+        "info": "# Manufacturing Support Request Blueprint \n\nHave you ever encountered bottlenecks in your manufacturing operations due to delayed support requests or unresolved issues across various departments of different production lines? The Manufacturing Support Request Blueprint is here to solve that problem. Designed to streamline the process of managing and resolving support requests, this blueprint ensures that every issue is addressed promptly and effectively, minimizing downtime and improving overall efficiency.\n\n## What is the Manufacturing Support Request Blueprint?\n\nThe Manufacturing Support Request Blueprint is a structured framework designed to manage and streamline the handling of support requests within manufacturing environments. It provides a standardized process for submitting, tracking, and resolving issues that arise across various departments and production lines, such as Maintenance, Quality, Stores, and Logistics.\n\nThis blueprint includes forms to add new production lines and departments, providing the flexibility to tailor the system to your specific manufacturing setup. For each production line, there are dedicated forms to submit support requests for specific departments, which makes it easy to request and manage support requests by production line.\n\nThe blueprint also provides an intuitive interface to view all support requests, organized by production line and department. Each request is detailed with essential information, such as the production line involved, the time the request was made, detailed notes, and action buttons to:\n\n- **Acknowledge:** Mark the request as acknowledged.\n- **Resolve:** Mark the request as resolved.\n\n## What Problem Does It Solve?\n\nIn manufacturing environments, inefficiencies often arise from the disorganization and delays in handling support requests. The Manufacturing Support Request Blueprint addresses several key problems:\n\n- **Delayed Response Times:** Delays in addressing support requests can lead to prolonged downtime and production delays. This blueprint streamlines the process, ensuring that requests are handled promptly and efficiently.\n- **Lack of Visibility:** Without a centralized system, tracking the status of support requests across different departments and production lines can be challenging. The blueprint provides a clear and intuitive interface to view and manage all requests, organized by production line and department.\n- **Inconsistent Handling:** Different departments might have varying procedures for managing support requests, leading to inconsistency and confusion. This blueprint standardizes the process, ensuring that all requests are managed in a uniform manner.\n- **Communication Gaps:** Poor communication between departments can result in unresolved issues and misunderstandings. The blueprint facilitates better communication by providing detailed request forms and action buttons to acknowledge and resolve issues.\n- **Inefficient Tracking:** Tracking and documenting support requests manually can be cumbersome and error-prone. The blueprint automates this process, storing detailed notes and tracking the progress of each request, which helps in maintaining accurate records.\n\nBy solving these problems, the Manufacturing Support Request Blueprint enhances operational efficiency, reduces downtime, and improves coordination across various departments and production lines.\n\n## Getting Started with Manufacturing Support Request Blueprint\n\n### Prerequisite\n\nBefore moving forward, ensure you have the following prepared:\n\n- Ensure you have a FlowFuse account with the Starter, Team, or Enterprise tier.\n\nStarting with this Manufacturing Support Request Blueprint, note that the blueprint does not require configuring any nodes, as they are already pre-configured.\n\n### Setting Up the Blueprint\n\n1. To get started with the blueprint, click the bottom-most \"Start\" button. This will redirect you to the FlowFuse platform instance creation interface with the blueprint pre-selected.\n2. Select the appropriate settings according to your preferences, such as instance type, application, and Node-RED version.\n3. Click the “Create Instance” button.\n\nOnce the instance is successfully created, you can:\n\n- Click the “Dashboard” button in the top-right corner to test the 5S checklist.\n- Click the “Open Editor” button in the top-right corner to navigate to the Node-RED Editor.\n\n### Testing Blueprint with Simulated Data\n\nThis blueprint does not require simulated data to operate. You can begin submitting support requests immediately. The blueprint utilizes the SQLite node, which runs an SQL database within your Node-RED container once you deploy the flow. This means you do not need to set up a separate database or configure additional nodes for it to function.\n\n### Setting Up the Blueprint in the Real World\n\nTo implement the blueprint in a production environment, you may need to store relevant data in a dedicated database hosted separately. By default, the blueprint uses an SQLite database set up by the SQLite node within the FlowFuse Node-RED instance. While this can handle a reasonable amount of data, you might need a more robust database for larger datasets. Node-RED supports various databases, including MySQL, PostgreSQL, InfluxDB, MongoDB, and more.\n\nTo switch to a different SQL-based database, you simply need to install the appropriate Node-RED node for your chosen database and configure it accordingly. Replace the SQLite nodes in your flows with nodes for the new database. Since the operations are SQL-based, the transition to a different SQL database is straightforward.\n\nFor detailed instructions refer to how to set up and use different databases with Node-RED.\n\n### How to Use This Blueprint\n\n#### Creating a New Production Line and Department:\n\n1. Navigate to the admin page of the support request dashboard.\n2. On the left side of the dashboard, you will find a form. Enter the name of the new production line and department into their respective input fields.\n3. Click the \"Add\" button.\n4. After clicking the \"Add\" button, the production line and department will be added. You can confirm this by checking the top menu, where you will see all available production lines and departments.\n\n#### Requesting Support:\n\n1. Select the production line for which you want to request support from the top header menu.\n2. You will be redirected to the support request page, where you will see all requests submitted for that specific line in the table.\n3. Below the table, you will find the support request form. Select the department for which you want to request support, enter a detailed note related to the request, and click the “Request Support” button.\n4. Once you click the button, the new request will appear in the table above. This table only shows requests related to the selected production line. To view all requests, visit the admin page.\n\n#### Marking a Request as Acknowledged:\n\nTo mark a request as acknowledged, indicating that someone has picked it up and is working on it, follow these steps:\n\n1. In the table where all requests are listed, click the “Acknowledge” button next to the request.\n2. Once you click the \"Acknowledge\" button, it will be replaced with the time when the request was marked as acknowledged.\n\n#### Marking a Request as Resolved:\n\nTo mark a request as resolved, indicating that it has been satisfied or completed, locate the request in the table where all requests are listed.\n\n1. Click the “Resolved” button next to the request.\n2. Once you click the \"Resolved\" button, the request will be removed from the table and will no longer be visible.\n\n#### Viewing Requests by Department:\n\n1. To view requests for a specific department, click on the department name from the top header menu.\n2. Once you click, you will see the requests associated with that department displayed on the page.\n\n#### Accessing the Support Request Dashboard with URL:\n\nThe support request dashboard has two pages: one for the admin and another for users handling specific production lines and departments. To access it, you need to add a query parameter to the URL.\n\n- For example, if you want to access the support request dashboard for production line T1, navigate to:\n  `https://<instance-name>.flowfuse.cloud/dashboard/support-request?line=T1`\n\n- To view requests by department, replace the line query with department.\n\nEnsure that the production line or department you specify in the query exists; otherwise, you will be redirected to a \"Not Found\" page.\n\n#### Adding Users to the Admin List:\n\n1. To add users to the admin list, locate the \"Admin Registration\" flow.\n2. Click on the Change node, and within the node, you will see it setting `global.admin` to an array.\n3. Add your FlowFuse username as a string to this array.\n4. Deploy the flow.\n5. You will now be able to access the admin dashboard as a registered user.\n\n#### Deleting Requests\n\n1. To delete requests stored in the database, find the flow named \"Delete records older than 30 days.\"\n2. Click on the inject button. Once clicked, it will delete the records. If you need to edit the query, click on the template node in the flow and make the necessary changes.\n\n#### Deleting Added Departments and Production Lines\n\n1. When a department or production line is added, it is stored in [FlowFuse’s persistent storage](https://flowfuse.com/docs/install/file-storage/).\n2. To delete it, go to the Node-RED sidebar, switch to the \"Context Data\" tab, and click the delete buttons next to each context variable to remove the entries.\n\n## Conclusion\n\nThe Manufacturing Support Request Blueprint helps you manage support requests more efficiently, ensuring timely resolution and minimizing production delays. By implementing this blueprint, you can streamline communication between departments, maintain better visibility over support requests, and improve overall operational efficiency.",
+        "x": 320,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "7c5e59811d8c51f8",
+        "type": "comment",
+        "z": "4905164f6a425bac",
+        "name": "License",
+        "info": "The FlowForge License\nCopyright (c) 2021-present FlowForge Inc\n\nWith regard to the FlowForge Software:\n\nThis software and associated documentation files (the \"Software\") may only be\nused in production, if you (and any entity that you represent) have agreed to,\nand are in compliance with, the FlowForge Subscription Terms (the \"Terms\"),\nor other agreements governing the use of the Software, as mutually agreed by you\nand FlowForge Inc (\"FlowForge\"), and otherwise have a valid FlowForge Subscription\nfor the active usage. Subject to the foregoing sentence, you are free to modify\nthis Software and publish patches to the Software. You agree that FlowForge and/or\nits licensors (as applicable) retain all right, title and interest in and to all\nsuch modifications and/or patches, and all such modifications and/or patches may\nonly be used, copied, modified, displayed, distributed, or otherwise exploited\nwith a valid Subscription.\nNotwithstanding the foregoing, you may copy and modify the Software for development\nand testing purposes, without requiring a subscription.  You agree that FlowForge\nand/or its licensors (as applicable) retain all right, title and interest in and\nto all such modifications.  You are not granted any other rights beyond what is\nexpressly stated herein. Subject to the foregoing, it is forbidden to copy, merge,\npublish, distribute, sublicense, and/or sell the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE.\n\nFor all third party components incorporated into the FlowForge Software, those\ncomponents are licensed under the original license provided by the owner of the\napplicable component.",
+        "x": 190,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "95be88fc3f99deab",
+        "type": "ui-event",
+        "z": "4905164f6a425bac",
+        "g": "9ffad85c724392ec",
+        "ui": "c385dfc590b1308d",
+        "name": "",
+        "x": 1770,
+        "y": 400,
+        "wires": [
+            [
+                "f655b9fae60a84ac",
+                "d845f4ace1264854"
+            ]
+        ]
+    },
+    {
+        "id": "31a61a6d5c397cf4",
+        "type": "ui-group",
+        "name": " ",
+        "page": "a3eff10a8bb2d0b3",
+        "width": "9",
+        "height": "4",
+        "order": 1,
+        "showTitle": true,
+        "className": "job",
+        "visible": "true",
+        "disabled": "false"
+    },
+    {
+        "id": "31abef4ecbfd6327",
+        "type": "sqlitedb",
+        "db": "sqlite",
+        "mode": "RWC"
+    },
+    {
+        "id": "4e4fb4a8fa51768f",
+        "type": "ui-group",
+        "name": "header",
+        "page": "8722daf1272747fc",
+        "width": "8",
+        "height": "2",
+        "order": 1,
+        "showTitle": false,
+        "className": "",
+        "visible": "true",
+        "disabled": "false"
+    },
+    {
+        "id": "c385dfc590b1308d",
+        "type": "ui-base",
+        "name": "Borg Warner",
+        "path": "/dashboard",
+        "includeClientData": true,
+        "acceptsClientConfig": [
+            "ui-notification",
+            "ui-control",
+            "ui-button"
+        ],
+        "showPathInSidebar": false,
+        "showPageTitle": false,
+        "navigationStyle": "temporary",
+        "titleBarStyle": "default"
+    },
+    {
+        "id": "b4924dbd6cb1a91b",
+        "type": "ui-group",
+        "name": "Table",
+        "page": "8722daf1272747fc",
+        "width": "12",
+        "height": "1",
+        "order": 3,
+        "showTitle": false,
+        "className": "",
+        "visible": "true",
+        "disabled": "false"
+    },
+    {
+        "id": "ebdaf2a0563f2ae3",
+        "type": "ui-group",
+        "name": "Create New Line and Department",
+        "page": "8722daf1272747fc",
+        "width": "4",
+        "height": "1",
+        "order": 2,
+        "showTitle": false,
+        "className": "",
+        "visible": "true",
+        "disabled": "false"
+    },
+    {
+        "id": "165815e4f97d2ad3",
+        "type": "ui-group",
+        "name": "Not found",
+        "page": "d0def7a91d3b7aa1",
+        "width": "12",
+        "height": "1",
+        "order": 1,
+        "showTitle": false,
+        "className": "",
+        "visible": "true",
+        "disabled": "false"
+    },
+    {
+        "id": "a3eff10a8bb2d0b3",
+        "type": "ui-page",
+        "name": "Support Request",
+        "ui": "c385dfc590b1308d",
+        "path": "/support-request",
+        "icon": "",
+        "layout": "notebook",
+        "theme": "6be033291dd76b17",
+        "order": 1,
+        "className": "",
+        "visible": false,
+        "disabled": false
+    },
+    {
+        "id": "8722daf1272747fc",
+        "type": "ui-page",
+        "name": "Admin",
+        "ui": "c385dfc590b1308d",
+        "path": "/admin",
+        "icon": "security",
+        "layout": "grid",
+        "theme": "6be033291dd76b17",
+        "order": 2,
+        "className": "",
+        "visible": "true",
+        "disabled": "false"
+    },
+    {
+        "id": "d0def7a91d3b7aa1",
+        "type": "ui-page",
+        "name": "Not found",
+        "ui": "c385dfc590b1308d",
+        "path": "/404",
+        "icon": "home",
+        "layout": "grid",
+        "theme": "6be033291dd76b17",
+        "order": 3,
+        "className": "",
+        "visible": "false",
+        "disabled": "false"
+    },
+    {
+        "id": "6be033291dd76b17",
+        "type": "ui-theme",
+        "name": "Default Theme",
+        "colors": {
+            "surface": "#202c34",
+            "primary": "#202c34",
+            "bgPage": "#eeeeee",
+            "groupBg": "#ffffff",
+            "groupOutline": "#ffffff"
+        },
+        "sizes": {
+            "pagePadding": "12px",
+            "groupGap": "12px",
+            "groupBorderRadius": "4px",
+            "widgetGap": "12px",
+            "density": "default"
+        }
+    }
+]
