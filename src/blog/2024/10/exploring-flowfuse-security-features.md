@@ -102,4 +102,4 @@ In conclusion, FlowFuse offers a comprehensive suite of security features design
 
 ## Get Started with FlowFuse Today!
 
-Don't wait any longer to enhance the security of your Node-RED applications. [Sign up](/account/create) for FlowFuse now and discover how our powerful security features can protect your data and streamline your workflows. Experience peace of mind with every deployment!
+Don't wait any longer to enhance the security of your Node-RED applications. [Sign up](https://app.flowfuse.com/account/create/) for FlowFuse now and discover how our powerful security features can protect your data and streamline your workflows. Experience peace of mind with every deployment!
