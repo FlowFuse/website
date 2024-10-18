@@ -183,7 +183,7 @@ fixes.
 The Assigned Account Executive is responsible for executing the following steps when an annually-billed customer chooses not to renew their subscription:
 
 1. **Update Contracted Customer Tracker**
-   Access the Contracted Customer Tracker and move the churned customer to the "Churned" tab.
+   Access the [Contracted Customer Tracker](https://docs.google.com/spreadsheets/d/1QcGVeiO_RXwYHCZvGcuBW3oYgR5NMsQ22yi3cOFY73o/edit?gid=1852075496#gid=1852075496) and move the churned customer to the "Churned" tab.
    
 2. **Cancel Subscription in Stripe**
    Use the Stripe link provided in the Tracker to log into Stripe. Cancel the subscription to ensure no further invoices are sent and effectively close the customer's account on the platform.
